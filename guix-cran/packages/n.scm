@@ -998,41 +998,6 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
-(define-public r-nser
-  (package
-    (name "r-nser")
-    (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nser" version))
-              (sha256
-               (base32
-                "0q6gz79pwwsyz6rrjrhwr87mbzq2qv7bbc1dj7q4gfdviggkgar8"))))
-    (properties `((upstream-name . "nser")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-stringr
-                             r-rvest
-                             r-rselenium
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-googlevis
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nandp1/nser/")
-    (synopsis
-     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India for Equities and Equity Derivatives (F&O)")
-    (description
-     "Download Current & Historical Bhavcopy from NSE (National Stock Exchnage) and
-BSE (Bombay Stock Exchange).  Get Live Market data from NSE India of Equities
-and Derivatives(F&O) segment.  Data source <https://www.nseindia.com/>.")
-    (license license:gpl3)))
-
 (define-public r-nse2r
   (package
     (name "r-nse2r")
@@ -9145,13 +9110,13 @@ and WAIC are also provided.")
 (define-public r-networkabc
   (package
     (name "r-networkabc")
-    (version "0.8-0")
+    (version "0.8-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "networkABC" version))
               (sha256
                (base32
-                "1vbabnkc8yvrxzrnaxj2v92620q1922hbcqbf1z3lmar5dbkql7f"))))
+                "0754770z3db7faadh8bxk0h70frjk6v8zjklkhclxnach1vag2k6"))))
     (properties `((upstream-name . "networkABC")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-rcolorbrewer r-network))
@@ -9164,20 +9129,20 @@ and WAIC are also provided.")
 decipher network data and assess the strength of the inferred links between
 network's actors.  It is a new multi-level approximate Bayesian computation
 (ABC) approach.  At the first level, the method captures the global properties
-of the network, such as scale-freeness and clustering coefficients, whereas the
-second level is targeted to capture local properties, including the probability
-of each couple of genes being linked.  Up to now, Approximate Bayesian
-Computation (ABC) algorithms have been scarcely used in that setting and, due to
-the computational overhead, their application was limited to a small number of
-genes.  On the contrary, our algorithm was made to cope with that issue and has
-low computational cost.  It can be used, for instance, for elucidating gene
-regulatory network, which is an important step towards understanding the normal
-cell physiology and complex pathological phenotype.  Reverse-engineering
-consists in using gene expressions over time or over different experimental
-conditions to discover the structure of the gene network in a targeted cellular
-process.  The fact that gene expression data are usually noisy, highly
-correlated, and have high dimensionality explains the need for specific
-statistical methods to reverse engineer the underlying network.")
+of the network, such as a scale-free structure and clustering coefficients,
+whereas the second level is targeted to capture local properties, including the
+probability of each couple of genes being linked.  Up to now, Approximate
+Bayesian Computation (ABC) algorithms have been scarcely used in that setting
+and, due to the computational overhead, their application was limited to a small
+number of genes.  On the contrary, our algorithm was made to cope with that
+issue and has low computational cost.  It can be used, for instance, for
+elucidating gene regulatory network, which is an important step towards
+understanding the normal cell physiology and complex pathological phenotype.
+Reverse-engineering consists in using gene expressions over time or over
+different experimental conditions to discover the structure of the gene network
+in a targeted cellular process.  The fact that gene expression data are usually
+noisy, highly correlated, and have high dimensionality explains the need for
+specific statistical methods to reverse engineer the underlying network.")
     (license license:gpl3)))
 
 (define-public r-netweaver
@@ -11327,13 +11292,13 @@ to reportable printed statistics is covered for basic experimental designs.")
 (define-public r-neatranges
   (package
     (name "r-neatranges")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neatRanges" version))
               (sha256
                (base32
-                "1zfp6f1q7m0bks0shvzr120nd5jxba28xhi7vrd55qfy7g72167g"))))
+                "0673lg8mihz8xwh12q12wfn19w8vvnjb7pnz4x3cn2xhkyzwhxq5"))))
     (properties `((upstream-name . "neatRanges")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -14017,17 +13982,17 @@ in Korea.")
 (define-public r-n1qn1
   (package
     (name "r-n1qn1")
-    (version "6.0.1-10")
+    (version "6.0.1-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "n1qn1" version))
               (sha256
                (base32
-                "1diwhw636cnwjlw291vfp1z53xaxhmhafbqfzk2m0yqs0ih0pm09"))))
+                "17p48wm0wcw46lk9382yd9xpzx4rygdjyrbfdi6xnph1k5phjxpj"))))
     (properties `((upstream-name . "n1qn1")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/nlmixrdevelopment/n1qn1c")
+    (home-page "https://github.com/nlmixr2/n1qn1c")
     (synopsis
      "Port of the 'Scilab' 'n1qn1' Module for Unconstrained BFGS Optimization")
     (description

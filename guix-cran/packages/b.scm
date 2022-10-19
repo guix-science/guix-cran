@@ -3606,13 +3606,13 @@ Priyadarshana and Sofronov (2012b)).")
 (define-public r-breakfast
   (package
     (name "r-breakfast")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "breakfast" version))
               (sha256
                (base32
-                "1bdzi0czhjwiqid6xz1b10p9wqy051sy5jhxnwzh9bxzh94a79lk"))))
+                "03qkablrfgxp5c0kpyj38z831f6dwxwql2xkfpkpfjdiaqs7snrd"))))
     (properties `((upstream-name . "breakfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-plyr r-ggplot2))
@@ -7224,31 +7224,6 @@ of distributions, including Mohammadi and et al. (2013)
 <doi:10.1080/03610918.2011.588358>.")
     (license license:gpl2+)))
 
-(define-public r-bmix
-  (package
-    (name "r-bmix")
-    (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Bmix" version))
-              (sha256
-               (base32
-                "17swhn2p7jv29fkspacg2v181lkc9yd3xww2fx31xs8hsndcm857"))))
-    (properties `((upstream-name . "Bmix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "http://faculty.chicagobooth.edu/matt.taddy")
-    (synopsis "Bayesian Sampling for Stick-Breaking Mixtures")
-    (description
-     "This is a bare-bones implementation of sampling algorithms for a variety of
-Bayesian stick-breaking (marginally DP) mixture models, including particle
-learning and Gibbs sampling for static DP mixtures, particle learning for
-dynamic BAR stick-breaking, and DP mixture regression.  The software is designed
-to be easy to customize to suit different situations and for experimentation
-with stick-breaking models.  Since particles are repeatedly copied, it is not an
-especially efficient implementation.")
-    (license license:gpl2+)))
-
 (define-public r-bmisc
   (package
     (name "r-bmisc")
@@ -9745,13 +9720,13 @@ from examples at <https://bl.ocks.org/NPashaP> (released under GPL-3).")
 (define-public r-bipartite
   (package
     (name "r-bipartite")
-    (version "2.17")
+    (version "2.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bipartite" version))
               (sha256
                (base32
-                "0lgpcvsjj7vpcbb4lgmpbvqay3s06kg3ayrpliqw16dfh3f2xpjq"))))
+                "1n15vs9zpq1arays1xjicfbam0k7v71afcq64skjnh9qmycyzh4v"))))
     (properties `((upstream-name . "bipartite")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17691,13 +17666,13 @@ accompanying Pratola et.  al. (2013) <arXiv:1309.1906>.")
 (define-public r-bcee
   (package
     (name "r-bcee")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BCEE" version))
               (sha256
                (base32
-                "19sg84qw44pa7dmr2l656zv988cj6ap6069l53vza5ynqswckbw2"))))
+                "0ys7gbxjwk28ajxa4pa7wyfc97dwlmysbvpsza1wrf661hjrdn6z"))))
     (properties `((upstream-name . "BCEE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-leaps r-boot r-bma))
@@ -23309,13 +23284,13 @@ data and web metrics in general.")
 (define-public r-bamp
   (package
     (name "r-bamp")
-    (version "2.1.1")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bamp" version))
               (sha256
                (base32
-                "1w5c2a5ncfahkb5a4yczjyrknyad26gs0xyflkv6i09r34aixyqg"))))
+                "0qzcndjdwbgiwyvc7ikb7jr0n7cmn78v56h5in22j24jjj740l2z"))))
     (properties `((upstream-name . "bamp")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda r-abind))
@@ -24136,13 +24111,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "backbone" version))
               (sha256
                (base32
-                "16asj7g76hwvq5rgcdmwha0i0nxbkbyplq4x5dch4y53xzrz4yhr"))))
+                "1b000lpd3wyfzaj6xf36k8281vx091l4fffbklx7k6vk650fsj07"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-igraph))

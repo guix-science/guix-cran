@@ -19,9 +19,10 @@
   #:use-module (guile)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages code)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pdf)
@@ -814,13 +815,13 @@ p-values.")
 (define-public r-pvar
   (package
     (name "r-pvar")
-    (version "2.2.5")
+    (version "2.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pvar" version))
               (sha256
                (base32
-                "1a5dxhki5nd5s1d5wwnc1dkg7mdib2s8w1i0l8mdg3f1g3l00klz"))))
+                "1k651021ga0lwpvgr9wnm8k1zzd47r4jprfp7ki5mqys7947y6a9"))))
     (properties `((upstream-name . "pvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -968,13 +969,13 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Pursuit" version))
               (sha256
                (base32
-                "1dd5idsqx08yyn92mwszad7rgl4hf2vr2a0m0cjqpa00cym43z7l"))))
+                "08hy55k9wmn9si6pa3gdhvnas6clfknqkp3d8qdfpch1z5vg594c"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2768,13 +2769,13 @@ multi-methods, spherical representation of a correlation matrix.")
 (define-public r-psweight
   (package
     (name "r-psweight")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PSweight" version))
               (sha256
                (base32
-                "1bxw41jpy4q3n9dx55ixm4lnzmha1xkpxxrbk12g0zvk84pph55p"))))
+                "0vawkkgm72s17cjfww9175dyr100lxdv4gf35p2lz8wcnbsklnv5"))))
     (properties `((upstream-name . "PSweight")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -9333,13 +9334,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRECAST" version))
               (sha256
                (base32
-                "1n9d3axx5w7b7c2wpn2avri4lsgdmgy8m686igii7r83wx4z6a7z"))))
+                "11h6r28fp2zyxckysgm6xwmdihrcgqjmnl27pxx3zmp3rah68wkn"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -13465,6 +13466,35 @@ Reference: Voorrips and Tumino: PolyHaplotyper: haplotyping in polyploids based
 on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).")
     (license license:gpl2)))
 
+(define-public r-polygonsoup
+  (package
+    (name "r-polygonsoup")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PolygonSoup" version))
+              (sha256
+               (base32
+                "0cdfhy2dgzxw145k15cw9kd398md79q6s8s4wi8s05wy7zfb51dg"))))
+    (properties `((upstream-name . "PolygonSoup")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-gmp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/PolygonSoup")
+    (synopsis "Mesh from Polygon Soup")
+    (description
+     "Allows to get a consistent 3D mesh from a polygon soup, that is an unorganized
+set of polygons.  The mesh can be triangulated and its exterior edges are
+computed.")
+    (license license:gpl3)))
+
 (define-public r-polyfreqs
   (package
     (name "r-polyfreqs")
@@ -15142,13 +15172,13 @@ pharmacometric models.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "0.17-0")
+    (version "0.18-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PMwR" version))
               (sha256
                (base32
-                "0p5gsagpk5w8nmpg49y74bj0gzk1qdpw1q9679p9qpwmc7xl3k6n"))))
+                "1d3bd1k5jqfx0nfac97ghlch5br6d8xh31was4m6skvs1ikqq53h"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16683,20 +16713,19 @@ available mapDK package by Sebastian Barfort.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "0.0.9")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plotdap" version))
               (sha256
                (base32
-                "1jzdlklnl1q32iyspky8k94rgm15nsm4p270q829ljqzq0c7z8z1"))))
+                "1fxay2k7qqd3zy9sx3dbbci7biya8k01kbk5gw95p9kmbwiyyrbr"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-sf
                              r-scales
-                             r-rgeos
                              r-rerddap
                              r-raster
                              r-maps
@@ -16709,7 +16738,7 @@ available mapDK package by Sebastian Barfort.")
                              r-dplyr
                              r-cmocean))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/plotdap")
+    (home-page "https://github.com/rmendels/plotdap")
     (synopsis
      "Easily Visualize Data from 'ERDDAP' Servers via the 'rerddap' Package")
     (description
@@ -19138,13 +19167,13 @@ by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
 (define-public r-pirouette
   (package
     (name "r-pirouette")
-    (version "1.6.4")
+    (version "1.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pirouette" version))
               (sha256
                (base32
-                "05x4d786j8pymhvw2d98p93ln2sz7jhcwkcblkr6aip2yajbi1fd"))))
+                "0fw6hbpywmk1mqfxn480sh403afrmm8shlzcbwx32pjri9ajrx1q"))))
     (properties `((upstream-name . "pirouette")))
     (build-system r-build-system)
     (inputs (list))
@@ -19155,7 +19184,6 @@ by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
                              r-tess
                              r-stringr
                              r-readr
-                             r-rappdirs
                              r-pryr
                              r-plyr
                              r-phytools
@@ -19480,13 +19508,13 @@ within the Description.")
 (define-public r-pinstimation
   (package
     (name "r-pinstimation")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PINstimation" version))
               (sha256
                (base32
-                "09qbid6vgfqq24z6flljfyc69rl9r121fzda5vn1pspy3f6q9hx9"))))
+                "0n1jn33ckd00j6k4ij941gg8b7qq4vr7sk0zls0irxz6gbasz1zn"))))
     (properties `((upstream-name . "PINstimation")))
     (build-system r-build-system)
     (propagated-inputs (list r-skellam
@@ -19496,7 +19524,8 @@ within the Description.")
                              r-knitr
                              r-future
                              r-furrr
-                             r-dplyr))
+                             r-dplyr
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://www.pinstimation.com")
     (synopsis "Estimation of the Probability of Informed Trading")
@@ -25354,21 +25383,21 @@ al., 2010 <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedgene
   (package
     (name "r-pedgene")
-    (version "3.3")
+    (version "3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedgene" version))
               (sha256
                (base32
-                "0y6kr5ad4fmxljsj0czs9h1dkz63wvqiira9ibgsf0707xb0vh7f"))))
+                "0h66yshna10fannpdvi0m83s53b1hmnjym2mvc7ypcgr1glq6j13"))))
     (properties `((upstream-name . "pedgene")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-matrix r-kinship2 r-compquadform))
-    (home-page "http://bioinformaticstools.mayo.edu/research/pedgene")
-    (synopsis "Gene-Level Statistics for Pedigree Data")
+    (home-page "https://bioinformaticstools.mayo.edu/research/pedgene/")
+    (synopsis "Gene-Level Variant Association Tests for Pedigree Data")
     (description
-     "Gene-level association tests with disease status for pedigree data: kernel and
-burden association statistics.")
+     "Gene-level variant association tests with disease status for pedigree data:
+kernel and burden association statistics.")
     (license license:gpl2+)))
 
 (define-public r-pedbuildr
@@ -27096,13 +27125,13 @@ conditional maximum likelihood estimation.")
 (define-public r-pcict
   (package
     (name "r-pcict")
-    (version "0.5-4.2")
+    (version "0.5-4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCICt" version))
               (sha256
                (base32
-                "10in1z9p1d3c57dk3pi028cs4h07hqw4x9m8myar56y8mv54l895"))))
+                "1xihjyhp1mfbm07sy250ijrk4ljz80l5z5w6x2m1j0yss0r6mrqf"))))
     (properties `((upstream-name . "PCICt")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -30055,13 +30084,13 @@ outsourced into a separate package.")
 (define-public r-parbayesianoptimization
   (package
     (name "r-parbayesianoptimization")
-    (version "1.2.4")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ParBayesianOptimization" version))
               (sha256
                (base32
-                "0x6r54gawbfa75qmadhbxw9mgbinwxl84h54w6j6iwg3jbyrnzp8"))))
+                "0g5i4908fl2j1a4jfsg1xs4q92mc29zp8dyf52a370ki2512w6h1"))))
     (properties `((upstream-name . "ParBayesianOptimization")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs
@@ -31137,18 +31166,17 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.9.2")
+    (version "1.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMmisc" version))
               (sha256
                (base32
-                "1w4qgz5lxwmr1zh9nqj99r5ic5ibrpdawqf94hgx5g84q5kg2b46"))))
+                "1jlfp0b2ipvkzk3715igfqhiha294bn99zi1dc5shr9c47rs44v3"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-viridislite
-                             r-viridis
                              r-tuner
                              r-stringr
                              r-seewave

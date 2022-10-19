@@ -5520,13 +5520,13 @@ EPFL Technical Report no.  149300, June 2010.")
 (define-public r-openeo
   (package
     (name "r-openeo")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openeo" version))
               (sha256
                (base32
-                "1lay8z5mm3y961s4q4xwfk2q7rrm39jc2yj7jyn9a8xfbnkvjqhy"))))
+                "10lmkga3pm6h0sv0jccazi3xkda3fzqfk5nv5xf8hkm3g3kccs40"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf

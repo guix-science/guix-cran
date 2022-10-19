@@ -790,13 +790,13 @@ JSON structure).")
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsmodule" version))
               (sha256
                (base32
-                "01wrs6rdyfw424jq3syxrblb521qhypnrn16hfpj6vbza8pgv46p"))))
+                "1n7kl0jmk3dg2vj4fnl85had2flyz16hynwzyzkankn417m25n2z"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc

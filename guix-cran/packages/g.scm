@@ -1065,13 +1065,13 @@ is provided.")
 (define-public r-gunit
   (package
     (name "r-gunit")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gunit" version))
               (sha256
                (base32
-                "0vmm47f21n9f334aj38gzrmv1c4sp76njk95ld9gv6fcfxgsipyh"))))
+                "10n1mjhb3k0npcp3cmw3pm2035vda3341i0gfxni27xdhggpm0rk"))))
     (properties `((upstream-name . "gunit")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-tibble r-stringr r-magrittr))
@@ -1435,13 +1435,13 @@ geographic representation of the results can be displayed.")
 (define-public r-gtreg
   (package
     (name "r-gtreg")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtreg" version))
               (sha256
                (base32
-                "0qzn634y4kivnvp9rfz04mx03qsld7r6lm5hs3qkzjzjyz0w6qi2"))))
+                "0ivg1chwn4igy9df5c8dmq5r2ryjwasqvdi8q4xfysjxij97hd6s"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1449,8 +1449,8 @@ geographic representation of the results can be displayed.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-knitr
                              r-gtsummary
+                             r-glue
                              r-forcats
                              r-dplyr
                              r-cli
@@ -3957,13 +3957,13 @@ support for custom user-defined patterns.")
 (define-public r-gridot
   (package
     (name "r-gridot")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gridOT" version))
               (sha256
                (base32
-                "0lvfvbb21z5s926m7ayjiciiw75pm220p3qyh0m94bk24q8jfsg0"))))
+                "106h1lk2fyfl68iwmbqbm9h8ip75ibanr1dsi6nrmd54pz475ry8"))))
     (properties `((upstream-name . "gridOT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -4365,13 +4365,13 @@ greta forum.")
 (define-public r-greport
   (package
     (name "r-greport")
-    (version "0.7-2")
+    (version "0.7-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greport" version))
               (sha256
                (base32
-                "1p5x4sar88ss8n1m0c73arac10mq4ircjad38kbin6l0nk9z1mh2"))))
+                "189jjnh3yya0v79mdy3mx0859larqh1n1kkzzrcapbqah8b3vr4h"))))
     (properties `((upstream-name . "greport")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4382,7 +4382,7 @@ greta forum.")
                              r-ggplot2
                              r-formula
                              r-data-table))
-    (home-page "http://biostat.mc.vanderbilt.edu/Greport")
+    (home-page "http://hbiostat.org/R/greport/")
     (synopsis "Graphical Reporting for Clinical Trials")
     (description
      "This package contains many functions useful for monitoring and reporting the
@@ -4895,13 +4895,13 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "1.8.7")
+    (version "1.8.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRbase" version))
               (sha256
                (base32
-                "027qk7mcw6jyzkfjx15s5aj36drnbwl88wzh2d72phls08dpxmq1"))))
+                "1nzrmi0sy1jv565csl04nj80mrhh59jrl3115fyyhx6vib5d3mgx"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
@@ -8071,13 +8071,13 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-golem
   (package
     (name "r-golem")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "golem" version))
               (sha256
                (base32
-                "0mkl7wijvl8q2lqcfjawyq9sdyimdahdd7zrwis61i2z1yqlll6i"))))
+                "0rjkl1r83h0hcn30zssx64qm07sdx3g4v5rdxn56gbzfghw7ddcl"))))
     (properties `((upstream-name . "golem")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -11328,13 +11328,13 @@ variational approximation method implemented via TMB (Kristensen et al., (2016),
 (define-public r-gllm
   (package
     (name "r-gllm")
-    (version "0.37")
+    (version "0.38")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gllm" version))
               (sha256
                (base32
-                "169y3yz947d8qdphqv2a6yrdash6v2h9jfvj2fk7rcpmz0r45kl6"))))
+                "06sq7yk11rbqj8i900ss987fg9b232cirjxhdm1yl9xqz4inxvlg"))))
     (properties `((upstream-name . "gllm")))
     (build-system r-build-system)
     (home-page "https://genepi.qimr.edu.au/Staff/davidD/#loglin")

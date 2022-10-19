@@ -15211,13 +15211,13 @@ constraints are supported.  See <doi:10.1002/sim.8291> and
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adobeanalyticsr" version))
               (sha256
                (base32
-                "0p1c2hya3jqsvfvrx8a3fgs995snmkvxh9gv5qpmk312wm2gwb09"))))
+                "1x1mkprp42xyfgiyffkj9lwzfv79dfwdg9alxfcpmgcvcrnbxcwi"))))
     (properties `((upstream-name . "adobeanalyticsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

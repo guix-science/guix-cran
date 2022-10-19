@@ -3701,13 +3701,13 @@ associated uncertainty.  Details are in D'Angelo, et al. (2020)
 (define-public r-multimark
   (package
     (name "r-multimark")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multimark" version))
               (sha256
                (base32
-                "1x194h1jzxm3va933vqqk0qdg7pgrc5hqwdd1bwh0sjavygwanqz"))))
+                "09i3djdpwwxjjr2lcb3ghgz09v4gplh8bd2yr70q032hvs7qb9c3"))))
     (properties `((upstream-name . "multimark")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -6251,13 +6251,13 @@ true and false positive interactions.")
 (define-public r-msimcc
   (package
     (name "r-msimcc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mSimCC" version))
               (sha256
                (base32
-                "1f15r214srcdb4yacmy4hq890a674iqd2s7bry5dk20k46qdl026"))))
+                "1ka2p5ymzaqyasan9j5lsxpxfiz5rp71lv4rdd8g4gh48chqvgaa"))))
     (properties `((upstream-name . "mSimCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -11144,19 +11144,20 @@ should be easy to plug in, or develop from, on top of this canvas.")
 (define-public r-momentuhmm
   (package
     (name "r-momentuhmm")
-    (version "1.5.4")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "momentuHMM" version))
               (sha256
                (base32
-                "1hcgrc7nhccn5bw7mgxahhbc6i3dc607g1109b5ahv94yq2ghj09"))))
+                "0isd18b0fdf75gk6lbm34hgrhwj1fnl7airpv56xffsdvhvj6xjq"))))
     (properties `((upstream-name . "momentuHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-raster
                              r-numderiv
                              r-mvtnorm
                              r-mass
@@ -12329,13 +12330,13 @@ that text derived from a regression model.")
 (define-public r-modeltime-resample
   (package
     (name "r-modeltime-resample")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modeltime.resample" version))
               (sha256
                (base32
-                "09lbx6afd7k8lq6pfp2zq58xp5jy8s1fqx4id2mvfihg3vinfdi5"))))
+                "0gqzxay45k5h4m1vq582w5d8c3xif16yk36w35qjjnqknwhyj065"))))
     (properties `((upstream-name . "modeltime.resample")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -12444,13 +12445,13 @@ Probabilistic Time Series Modeling\" (<https://ts.gluon.ai/index.html>).")
 (define-public r-modeltime-ensemble
   (package
     (name "r-modeltime-ensemble")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modeltime.ensemble" version))
               (sha256
                (base32
-                "1whqmmsybwavhiigsa5d8l6vgisxcyx412rjyhg7jg6vxr79pkdh"))))
+                "1yywl3vnc03wbz9fl3gq9cclvx8rsvnndyqb6d4ws9y5g60hnxhd"))))
     (properties `((upstream-name . "modeltime.ensemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -12489,13 +12490,13 @@ Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modeltime" version))
               (sha256
                (base32
-                "1b4dvcbafrzljdnasxlbiigwdnfhpk3v9v7pfnfxgbqxajxaa6ky"))))
+                "0zb4q7m5wsism4n508hsya6ln0i14iclk6jy0l4cslz99lzb2v9q"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -13220,32 +13221,6 @@ path\" that does not interfere with one another or the user's working
 environment.")
     (license license:gpl3)))
 
-(define-public r-mockthat
-  (package
-    (name "r-mockthat")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mockthat" version))
-              (sha256
-               (base32
-                "12srlafk3ykzhrw65s1qzw3l566j285hi28rzrcpbgyr12720raa"))))
-    (properties `((upstream-name . "mockthat")))
-    (build-system r-build-system)
-    (home-page "https://nbenn.github.io/mockthat/")
-    (synopsis "Function Mocking for Unit Testing in R")
-    (description
-     "With the deprecation of mocking capabilities shipped with testthat as of edition
-3 it is left to third-party packages to replace this functionality, which in
-some test-scenarios is essential in order to run unit tests in limited
-environments (such as no Internet connection).  Mocking in this setting means
-temporarily substituting a function with a stub that acts in some sense like the
-original function (for example by serving a HTTP response that has been cached
-as a file).  The only exported function with_mock() is modeled after the
-eponymous testthat function with the intention of providing a drop-in
-replacement.")
-    (license license:expat)))
-
 (define-public r-mockr
   (package
     (name "r-mockr")
@@ -13941,13 +13916,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmrm" version))
               (sha256
                (base32
-                "0c6nyxrvw2d84a9hvqn4p14ggy7bnpglpigilh9fncvzpadmd47n"))))
+                "03vi2js8yrvsn5xiibnqdb8wskm9dqwr6h8hf8vxjpdscdav8akb"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -13960,14 +13935,14 @@ Rosenbaum and Rubin (1985).")
                              r-lifecycle
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/openpharma/mmrm/")
+    (home-page "https://openpharma.github.io/mmrm/")
     (synopsis "Mixed Models for Repeated Measures")
     (description
      "Mixed models for repeated measures (MMRM) are a popular choice for analyzing
 longitudinal continuous outcomes in randomized clinical trials and beyond; see
 Cnaan, Laird and Slasor (1997)
-<doi:10.1002/(SICI)1097-0258(19971030)16:20<2349::AID-SIM667>3.0.CO;2-E> for a
-tutorial and Mallinckrodt, Lane and Schnell (2008)
+<doi:10.1002/(SICI)1097-0258(19971030)16:20%3C2349::AID-SIM667%3E3.0.CO;2-E> for
+a tutorial and Mallinckrodt, Lane and Schnell (2008)
 <doi:10.1177/009286150804200402> for a review.  This package implements MMRM
 based on the marginal linear model without random effects using Template Model
 Builder ('TMB') which enables fast and robust model fitting.  Users can specify
@@ -15173,13 +15148,13 @@ faithfully reproduced as a paradox ParamSet'.")
 (define-public r-mlrcpo
   (package
     (name "r-mlrcpo")
-    (version "0.3.7-4")
+    (version "0.3.7-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlrCPO" version))
               (sha256
                (base32
-                "18dmmkdi5ygcxisn1fprz9v7q2cmgjsws28h05a8xr43a2jvn03q"))))
+                "0jbsy4ppq0l423fp8m7b0w5kslxmlslr2alm7k7x8s9fn3arnckl"))))
     (properties `((upstream-name . "mlrCPO")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -21493,29 +21468,28 @@ folders.")
 (define-public r-microsimulation
   (package
     (name "r-microsimulation")
-    (version "1.3.7")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microsimulation" version))
               (sha256
                (base32
-                "0cyhxkaqsryi0qg94kj129g8kww84qah2bxy78v83kvgc29ilwjm"))))
+                "1gaxdfv67zyd0hsxfbpxn7b0c0cb4k07gz2h8kb4pw0gh7jwkxr7"))))
     (properties `((upstream-name . "microsimulation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh r-ascii))
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ascii))
     (home-page "https://github.com/mclements/microsimulation")
     (synopsis
      "Discrete Event Simulation in R and C++, with Tools for Cost-Effectiveness Analysis")
     (description
      "Discrete event simulation using both R and C++ (Karlsson et al 2016;
 <doi:10.1109/eScience.2016.7870915>).  The C++ code is adapted from the SSIM
-library <https://www.inf.usi.ch/carzaniga/ssim/>, allowing for both
-event-oriented and process-oriented simulation.  The code includes a
-SummaryReport class for reporting events and costs by age and other covariates.
-The C++ code is available as a static library for linking to other packages.  A
-priority queue implementation is given in C++ together with an S3 closure and a
-reference class implementation.  Finally, some tools are provided for
-cost-effectiveness analysis.")
+library <https://www.inf.usi.ch/carzaniga/ssim/>, allowing for event-oriented
+simulation.  The code includes a SummaryReport class for reporting events and
+costs by age and other covariates.  The C++ code is available as a static
+library for linking to other packages.  A priority queue implementation is given
+in C++ together with an S3 closure and a reference class implementation.
+Finally, some tools are provided for cost-effectiveness analysis.")
     (license license:gpl3+)))
 
 (define-public r-microservices
@@ -36530,13 +36504,13 @@ governance.")
 (define-public r-mantaid
   (package
     (name "r-mantaid")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MantaID" version))
               (sha256
                (base32
-                "1ivzxzlwlw2nwgjmlf228pnxsw417dhhg6i0gbv55gwm17jwap0j"))))
+                "01rc9p4ydq7s2iwqc017ijdbw8w8n0s82f0j69gsl6m5fbqm9a4k"))))
     (properties `((upstream-name . "MantaID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

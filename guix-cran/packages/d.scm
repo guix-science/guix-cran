@@ -2210,13 +2210,13 @@ incorporating functionalities from many other packages.")
 (define-public r-dtsea
   (package
     (name "r-dtsea")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTSEA" version))
               (sha256
                (base32
-                "1b1rpyi24qa5s74n18rcqfqsl0l69sjyng6dx45chshdak0hyg8d"))))
+                "00jndqn4vyjymy6ys2rqxqd1fwf6bdqiv831g905k6nczxh8d7wv"))))
     (properties `((upstream-name . "DTSEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2224,8 +2224,7 @@ incorporating functionalities from many other packages.")
                              r-magrittr
                              r-igraph
                              r-fgsea
-                             r-dplyr
-                             r-biocparallel))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DTSEA")
     (synopsis "Drug Target Set Enrichment Analysis")
@@ -20736,13 +20735,13 @@ function of hat F may also be calculated (but may be slow).")
 (define-public r-dbitest
   (package
     (name "r-dbitest")
-    (version "1.7.2")
+    (version "1.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DBItest" version))
               (sha256
                (base32
-                "0zx58nq6l21g0sbrmrnmckw0x20i2f6lv81cczh02yrv4r968cmh"))))
+                "0749mg3yadbxyixpsicnyi10dmwdjr1f590gfdzfrnpyg1ih5drh"))))
     (properties `((upstream-name . "DBItest")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21427,13 +21426,13 @@ can be performed with different methods including BLADJ (Webb et al. (2008)
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datefixR" version))
               (sha256
                (base32
-                "1a0xc2fkj8ysiwiqri50cs3xmgs1cjcwscybgwjal28qqjkfzvks"))))
+                "0gscak3s2agf28491fmna211vyxcvq2zqdrc817kl6q063bcxj84"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-lifecycle))
@@ -21455,13 +21454,13 @@ user-controlled behavior.")
 (define-public r-date
   (package
     (name "r-date")
-    (version "1.2-39")
+    (version "1.2-40")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "date" version))
               (sha256
                (base32
-                "0mwp1619rxqyyyyxk224fh0x6g4rgyvr97q0kj076cxp71b97cdm"))))
+                "1kqiy0nvdcm8mrkm6kzz5wjxv4f58710sk7fycfcnlpf4ndn30ly"))))
     (properties `((upstream-name . "date")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=date")

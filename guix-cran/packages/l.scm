@@ -977,13 +977,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LSX" version))
               (sha256
                (base32
-                "1yxqz6pq0sxldkdias8f3c6val1lfhbn3cyakwrg5vpyzlvw5skb"))))
+                "0769g5w67549076b2rck7r46gg4jjdbk024qvcczdigr7cshzq39"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1001,7 +1001,7 @@ tabulated data.")
                              r-ggplot2
                              r-digest))
     (home-page "https://cran.r-project.org/package=LSX")
-    (synopsis "Semisupervised Document Scaling by Word-Embedding Models")
+    (synopsis "Semisupervised Document Scaling with Word-Embedding Models")
     (description
      "This package provides a word embeddings-based semisupervised model for document
 scaling Watanabe (2020) <doi:10.1080/19312458.2020.1832976>.  LSS allows users
@@ -1464,13 +1464,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lsirm12pl" version))
               (sha256
                (base32
-                "1lm2r06z8qgkhwappbjqw1xil4ibz0pmyzajvxqmdv78n9zzyxci"))))
+                "193l17z9saqxxyswgy9schrilgr9x2idc900vkblsfhy0nl71chr"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4459,18 +4459,18 @@ illustrate log-concave density estimation are made available.")
 (define-public r-logconcens
   (package
     (name "r-logconcens")
-    (version "0.17-0")
+    (version "0.17-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logconcens" version))
               (sha256
                (base32
-                "0zrnyb25iyr3cm83b3xp21nipv1q0l1kp7nwjaja3173z7wwlvvr"))))
+                "1pbrrjxijpvfxlm81sspjifzfb4siy9fj0xh7f67b2l4w8p0brgy"))))
     (properties `((upstream-name . "logconcens")))
     (build-system r-build-system)
-    (home-page "http://www.dominic.schuhmacher.name")
+    (home-page "https://cran.r-project.org/package=logconcens")
     (synopsis
-     "Maximum Likelihood Estimation of a log-Concave Density Based on Censored Data")
+     "Maximum Likelihood Estimation of a Log-Concave Density Based on Censored Data")
     (description
      "Based on right or interval censored data, compute the maximum likelihood
 estimator of a (sub)probability density under the assumption that it is
@@ -7488,6 +7488,27 @@ Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.")
 by columns while behaving similarly to a base R matrix.  Very large matrices are
 supported if the nodes are file-backed matrices.")
     (license license:expat)))
+
+(define-public r-linkedinadsr
+  (package
+    (name "r-linkedinadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "linkedInadsR" version))
+              (sha256
+               (base32
+                "1849n9lk3j6jryshz9vz6pxsrqarzqjfrnf91xiwws8kiv65v8p4"))))
+    (properties `((upstream-name . "linkedInadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Access to 'LinkedIn' Ads via the 'Windsor.ai' API")
+    (description
+     "Collect marketing data from LinkedIn Ads using the Windsor.ai API
+<https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-linkedgasp
   (package
@@ -11664,13 +11685,13 @@ method please refer to Nguyen and Galelli (2018) <doi:10.1002/2017WR022114>.")
 (define-public r-ldsep
   (package
     (name "r-ldsep")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ldsep" version))
               (sha256
                (base32
-                "0wl446ajx4k8zsfybr4n385phblxpa74gi7d3m86zyn1x4z9md50"))))
+                "1abjb4ybxqipq5383r82ngy19p84331sfpi817wv7jsv6q99igrb"))))
     (properties `((upstream-name . "ldsep")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

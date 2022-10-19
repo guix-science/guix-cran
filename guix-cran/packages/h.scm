@@ -2313,13 +2313,13 @@ links, images, rss feeds, social media handles and page metadata.")
 (define-public r-html5
   (package
     (name "r-html5")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "html5" version))
               (sha256
                (base32
-                "0mb7nzp8bc0910hidfp7lvkphh8hz3zz04xzz92mv2rrf20nrhfg"))))
+                "1icji4y2x7bn4nrsf99n8b6g5v053bb9hpwvmp8bf5wh63d1ns8l"))))
     (properties `((upstream-name . "html5")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=html5")

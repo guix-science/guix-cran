@@ -672,13 +672,13 @@ Prediction with Application to Rice.  Front.  Genet.  7:145.
 (define-public r-krm
   (package
     (name "r-krm")
-    (version "2020.5-20")
+    (version "2022.10-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "krm" version))
               (sha256
                (base32
-                "1b6477cjv5k30djvrlbmwn91ghgwk24cfd58cb0q80xqhgiqvrzb"))))
+                "142scj7cgg7sv0g17mivpgzk3h8jczf40h1padixfgx3204fj4xa"))))
     (properties `((upstream-name . "krm")))
     (build-system r-build-system)
     (propagated-inputs (list r-kyotil))
@@ -1392,17 +1392,19 @@ Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
 (define-public r-koboconnectr
   (package
     (name "r-koboconnectr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KoboconnectR" version))
               (sha256
                (base32
-                "1zgfs6ajnl030ja2bfzg688wjkmmyxzqfkmbgpnsyqjj69c9bxjn"))))
+                "0mb539y80apxzzvfpgq4yj8vcjqnamkszn37p8bibr1yvfzdzy1j"))))
     (properties `((upstream-name . "KoboconnectR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl
+    (propagated-inputs (list r-rlang
+                             r-readxl
                              r-r6
+                             r-purrr
                              r-openssl
                              r-mime
                              r-jsonlite
@@ -4128,13 +4130,13 @@ Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
 (define-public r-kdevine
   (package
     (name "r-kdevine")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kdevine" version))
               (sha256
                (base32
-                "1m8bx1bcbq1wz2ww4pjk3cy9in8a5vj4n6asvw9qgyddy7f5iib1"))))
+                "1508dyjqn4vrs83b70h06ffygrx6iwqcaa360b08j3qlrlq742c6"))))
     (properties `((upstream-name . "kdevine")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula

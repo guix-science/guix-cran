@@ -1388,13 +1388,13 @@ Frühwirth-Schnatter S., Zens G., Wagner H. (2020) <arXiv:2011.06898>.")
 (define-public r-updog
   (package
     (name "r-updog")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "updog" version))
               (sha256
                (base32
-                "0v8a5vlyv1gabjkxj5fnx05pfm1fqf549895gx6gsyzy2iz1652g"))))
+                "1i7dc8msky5g658iwcvdvda2m0ya9cnbzm9d565l01lf184dfhhk"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -1591,13 +1591,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unrtf" version))
               (sha256
                (base32
-                "1h9nwqczpv7k6r605gdqag7pllfpxp0hvihbz0nd38qg4f3jx9x8"))))
+                "1pdii5l0z7dvcyzi7cbwqii1yn4g54nx1k2qshq86pabcjrka05s"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys))
@@ -1776,13 +1776,13 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.4")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unix" version))
               (sha256
                (base32
-                "0wj85h5lljzw4qj4ry79y05gd6vakqff8lzw9f70154i79jq74hl"))))
+                "1js3i1h2arral5x5cm6zl0qnidwjqlp8aqwd0vcj0bp0z5zvks1k"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list))

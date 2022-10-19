@@ -2149,13 +2149,13 @@ combinations.")
 (define-public r-runuran
   (package
     (name "r-runuran")
-    (version "0.36")
+    (version "0.37")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Runuran" version))
               (sha256
                (base32
-                "0m4vv3yc6rwrl6ijshrc7f8n43s2f62dvasylwcs6ka3wm09lmb3"))))
+                "18gvv8kih58dw1xz57xnz86mhd0mpn311m1mkjqhcj0z4gkjiwwh"))))
     (properties `((upstream-name . "Runuran")))
     (build-system r-build-system)
     (home-page "https://statmath.wu.ac.at/unuran/")
@@ -8543,31 +8543,6 @@ and stop Jupyter-lab'.")
      "This package provides access to ArcGIS geoprocessing tools by building an
 interface between R and the ArcPy Python side-package via the reticulate
 package.")
-    (license license:gpl3)))
-
-(define-public r-rpvt
-  (package
-    (name "r-rpvt")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rpvt" version))
-              (sha256
-               (base32
-                "0ggd6ikp2s9z4086y8w3qzb9jcyyqpby41p3ayjwam94skh154mf"))))
-    (properties `((upstream-name . "Rpvt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://susaenergy.github.io/Rpvt_ws/")
-    (synopsis "Estimate the PVT Properties of Reservoir Fluids")
-    (description
-     "Generate the PVT (Pressure-Volume-Temperature) properties of dry gas, wet gas,
-black oil, and water samples in a tabular format at a constant temperature from
-the atmospheric pressure up to the pressure of interest using correlations.
-Spivey, J. P., McCain Jr., W. D. and North, R. (2004) <doi:10.2118/04-07-05>.
-Sutton, R. P. (2007) <doi:10.2118/97099-PA>.  Vasquez, M., and Beggs, H. D.
-(1980) <doi:10.2118/6719-PA>.")
     (license license:gpl3)))
 
 (define-public r-rpushbullet
@@ -16801,13 +16776,13 @@ update profiles.")
 (define-public r-rmixmod
   (package
     (name "r-rmixmod")
-    (version "2.1.6")
+    (version "2.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rmixmod" version))
               (sha256
                (base32
-                "0vrpqyckjsscgdh5yny4d1jkq16w3kd8nl97ycdc2vmz1q6y1a6s"))))
+                "098s00h9r71c3r9k5wrgkn6jyg5n132ikczfxyr38npy6fr00kzq"))))
     (properties `((upstream-name . "Rmixmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -16816,7 +16791,7 @@ update profiles.")
     (synopsis "Classification with Mixture Modelling")
     (description
      "Interface of MIXMOD software for supervised, unsupervised and semi-supervised
-classification with mixture modelling.")
+classification with mixture modelling <doi: 10.18637/jss.v067.i06>.")
     (license license:gpl3)))
 
 (define-public r-rmisbeta
@@ -18619,13 +18594,13 @@ to other interactive elements with just few lines of code.")
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlas" version))
               (sha256
                (base32
-                "034pa5cyazlbvpa84qlcbnm7lyrz6fr8lgga2p3w4j6d6x0fgvnp"))))
+                "1qi1rw45jq0azr7yzpaj18ingfc9kmbsp90g8gcrdfhc964x9h6p"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table r-bh))
@@ -26414,13 +26389,13 @@ which may pass data from one step to another.")
 (define-public r-representr
   (package
     (name "r-representr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "representr" version))
               (sha256
                (base32
-                "0z4bv7n1r8sbk2832sqpkjjpdr4dc6lj6p6c18kbxx9zh660avd4"))))
+                "1nnaghd3v09ifkndlbvi97rlkd07szzwvx17p08hjd25m3aabnqz"))))
     (properties `((upstream-name . "representr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-dplyr r-doparallel))
@@ -26428,10 +26403,10 @@ which may pass data from one step to another.")
     (home-page "https://cran.r-project.org/package=representr")
     (synopsis "Create Representative Records After Entity Resolution")
     (description
-     "An implementation of Kaplan, Betancourt, Steorts (2020) <arXiv:1810.01538> that
-creates representative records for use in downstream tasks after entity
-resolution is performed.  Multiple methods for creating the representative
-records (data sets) are provided.")
+     "An implementation of Kaplan, Betancourt, Steorts (2022)
+<doi:10.1080/00031305.2022.2041482> that creates representative records for use
+in downstream tasks after entity resolution is performed.  Multiple methods for
+creating the representative records (data sets) are provided.")
     (license license:gpl3)))
 
 (define-public r-repplabshiny
@@ -32440,13 +32415,13 @@ high variability of the RDS process.")
 (define-public r-rdssamplesize
   (package
     (name "r-rdssamplesize")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDSsamplesize" version))
               (sha256
                (base32
-                "01xxdgxmnnxlrksllqs2zj1l7gsdar51gp6x1lczw9lj8ipxhjgn"))))
+                "1k45j5zxcjkpqx5vchrv3v987zr80bkiwym6n79hq0isbrswnhcy"))))
     (properties `((upstream-name . "RDSsamplesize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -33449,13 +33424,13 @@ visualisation, estimation and testing.")
 (define-public r-rddi
   (package
     (name "r-rddi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rddi" version))
               (sha256
                (base32
-                "1cp91x8nsf8fx8bnb5a5gw7y4750hdhr6aq2adywf07asmc7qr0m"))))
+                "19izmky8rwz98i6w76mac9b1sppjdpa48jm33gy38zd3k6k2054j"))))
     (properties `((upstream-name . "rddi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-glue))
@@ -33585,35 +33560,6 @@ is accomplished using local linear regression.  A provided function will utilize
 Imbens-Kalyanaraman optimal bandwidth calculation.  A function is also included
 to test the assumption of no-sorting effects.")
     (license license:asl2.0)))
-
-(define-public r-rdca
-  (package
-    (name "r-rdca")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rdca" version))
-              (sha256
-               (base32
-                "06s4n5xpla937q9f55xmsickvdiwiapxmwqvn6k0zsacisscaagl"))))
-    (properties `((upstream-name . "Rdca")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-minpack-lm
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://susaenergy.github.io/Rdca_ws/")
-    (synopsis "DCA Tools for Decline Rate Analysis and EUR Forecast")
-    (description
-     "Arps Decline Curve Analysis (DCA) models for production rate, cumulative
-production, nominal decline rate, the derivative of loss-ratio, and estimated
-ultimate recovery (EUR) predictions for oil and gas wells.  Arps, J. J. (1945)
-<doi:10.2118/945228-G>.  Robertson, S. (1988)
-<https://www.onepetro.org/general/SPE-18731-MS>.")
-    (license license:gpl3)))
 
 (define-public r-rdbnomics
   (package
@@ -34593,13 +34539,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSimdJson" version))
               (sha256
                (base32
-                "0ajbm7qy3fqlaadpzfhzsaczszlw6l5p31mmr1xd2cb31wszpg9r"))))
+                "1fzawv385d2dbplg84s9qxcjjh29q6wfdslfaarlcz1y6m34vnq5"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -39131,21 +39077,21 @@ formats and data structures common to data analysis practitioners.")
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
-    (version "0.3.3")
+    (version "0.4.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rayvertex" version))
               (sha256
                (base32
-                "1xigdspf3jybk48i60141kjk34vig9drl7sdn1pi5zsh3pi4w5rx"))))
+                "19k10p63nhcfn98ljgp15hdcvha1bd1s0kprirrardy4kdj7xs51"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
+    (inputs (list))
     (propagated-inputs (list r-spacefillr
                              r-rcppthread
                              r-rcpp
                              r-rayimage
                              r-png
-                             r-magrittr
                              r-digest))
     (home-page "https://www.rayvertex.com")
     (synopsis "3D Software Rasterizer")
@@ -40874,13 +40820,13 @@ LaTeX, PDF, ODT etc.) with pandoc as the converter backend.")
 (define-public r-rapparmor
   (package
     (name "r-rapparmor")
-    (version "3.2.2")
+    (version "3.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAppArmor" version))
               (sha256
                (base32
-                "0l0f4k666nh00db94sjxz60anr4l9vm0259pcc2a4whk2pmjcq5n"))))
+                "04hxqwi75npayd3ghghswxc51k2xb525drixxk1fvp6hrhdkap5h"))))
     (properties `((upstream-name . "RAppArmor")))
     (build-system r-build-system)
     (inputs (list))

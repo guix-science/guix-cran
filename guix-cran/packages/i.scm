@@ -457,13 +457,13 @@ repos=\"<http://R-Forge.R-project.org>\")'.")
 (define-public r-ivgets
   (package
     (name "r-ivgets")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivgets" version))
               (sha256
                (base32
-                "1s4hs9agng6hqi6z64yv883rp5lvwna80janspwyqdwp9hss13r0"))))
+                "19bqfasrvdqvs2fvxh7h2l16qkm3rmcsv6m83x726i1i6adqj2bq"))))
     (properties `((upstream-name . "ivgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-ivreg r-gets))
@@ -1369,13 +1369,13 @@ data.  The philosophy of the package is described in Guo G. (2020)
 (define-public r-isqg
   (package
     (name "r-isqg")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isqg" version))
               (sha256
                (base32
-                "1988bc5n4b5mgxrfl1774vfgaw7rxm9vlaxnkx26phjzhlr1ix9h"))))
+                "1p7n9y2j45drmmc3qdjvxjgwzdbz17z1i77vp166h5kk36n6fban"))))
     (properties `((upstream-name . "isqg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-r6 r-bh))
@@ -1717,13 +1717,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.0")
+    (version "5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotRgui" version))
               (sha256
                (base32
-                "0hfg1989l8kngyn1qy3arrxav8k01i8k5zckb0m3xfmvdqd0v0sq"))))
+                "1ldxi12z43jgbr4q1b8g0cr89bzrsf11v94w2ny7p6ln0cclv7m8"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1739,13 +1739,13 @@ toolbox.")
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.0")
+    (version "5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotR" version))
               (sha256
                (base32
-                "1rbi67fj740h09yrdgfn1scinycvg59nswsv82fzkng2ss3h4yi9"))))
+                "01mr75zigavsg2385crzf1h6dkdn3zd76l75w53v8ywvp6ha7qz3"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -9936,13 +9936,13 @@ functions.  Preprint is available at bioRxiv (Weber et al., 2019
 (define-public r-immunarch
   (package
     (name "r-immunarch")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "immunarch" version))
               (sha256
                (base32
-                "14sii60wfkajnfdb80b92nz9dk4f3z38vngxpw04i921xz49zgfv"))))
+                "0hd7aayb02hpbg59y0ahyhzkwks4l5b23m0l05yqxbk29ydrsa70"))))
     (properties `((upstream-name . "immunarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -10744,13 +10744,13 @@ data set.")
 (define-public r-image-textlinedetector
   (package
     (name "r-image-textlinedetector")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "image.textlinedetector" version))
               (sha256
                (base32
-                "1h93sd6g2z4l4i1qxmmifmqg7g1nm09jsfvb0hhngpwqis6qyv1l"))))
+                "0zbixw0j241il357n9mljcw4lvq6f1ddadx2a0ahykdf1w0vplyx"))))
     (properties `((upstream-name . "image.textlinedetector")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -10843,13 +10843,13 @@ which have size greater than 10x10 pixels.")
 (define-public r-image-dlib
   (package
     (name "r-image-dlib")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "image.dlib" version))
               (sha256
                (base32
-                "118zwalpxcnn2fgjv8xsp763yvbqcyv81p6fblxizlnimyrjva71"))))
+                "0wrg6cwnrqwvgs5w1wjhc8ald7fij76xr2qbv6yb217v13ahwskm"))))
     (properties `((upstream-name . "image.dlib")))
     (build-system r-build-system)
     (inputs (list zlib))

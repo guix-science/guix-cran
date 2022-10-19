@@ -9143,13 +9143,13 @@ few.")
 (define-public r-stfit
   (package
     (name "r-stfit")
-    (version "0.99.8")
+    (version "0.99.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stfit" version))
               (sha256
                (base32
-                "0js09v04ik5m3d9iz9waq0yigvg2g6n75m4zm5dc0nz3yr1irb88"))))
+                "0668nnsgkdd2v7bx06wnq8sc0asbi19p4752jm0hj2jziiibk0kn"))))
     (properties `((upstream-name . "stfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -13528,13 +13528,13 @@ analyzes the allele frequency data described by Solberg et al. (2008)
 (define-public r-ssh
   (package
     (name "r-ssh")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssh" version))
               (sha256
                (base32
-                "16xlhbqr8fc5z3q8ig42n72d6msdxv5q6a6am0rxadzjm5rsknsd"))))
+                "14sasc28ipjdhb0k8ziby2v4n8gfmsp917y9725h6fsq0n01p002"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -23168,45 +23168,6 @@ response functions, historical decompositions, and forecast error variance
 decompositions.")
     (license license:gpl3)))
 
-(define-public r-sourceset
-  (package
-    (name "r-sourceset")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SourceSet" version))
-              (sha256
-               (base32
-                "159kg4pna24yihkghxc2k5f56dqk8aypxcmj1whgnajmgab29ry1"))))
-    (properties `((upstream-name . "SourceSet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-progress
-                             r-plyr
-                             r-igraph
-                             r-gtools
-                             r-grbase
-                             r-graph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SourceSet")
-    (synopsis
-     "Graphical Model Approach to Identify Primary Genes in Perturbed Biological Pathways")
-    (description
-     "The algorithm pursues the identification of the set of variables driving the
-differences in two different experimental conditions (i.e., the primary genes)
-within a graphical model context.  It uses the idea of simultaneously looking
-for the differences between two multivariate normal distributions in all
-marginal and conditional distributions associated with a decomposable graph,
-which represents the pathway under exam.  The implementation accommodates
-genomics specific issues (low sample size and multiple testing issues) and
-provides a number of functions offering numerical and visual summaries to help
-the user interpret the obtained results.  In order to use the (optional)
-Cytoscape functionalities, the suggested r2cytoscape package must be installed
-from the GitHub repository
-('devtools::install_github('cytoscape/r2cytoscape')').")
-    (license license:agpl3)))
-
 (define-public r-soundshape
   (package
     (name "r-soundshape")
@@ -24523,13 +24484,13 @@ Collaborative Research on Sustainable Intensification (SIIL) projects.")
 (define-public r-soiltaxonomy
   (package
     (name "r-soiltaxonomy")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SoilTaxonomy" version))
               (sha256
                (base32
-                "18ra1al4irhanz0s1vym95xb241a6cgwj49n5h0r3kqbxbd4a0qr"))))
+                "1rb8by70wdpa5mz2jlp2z1a9d81bfahm126vv683f6dl2q4483yi"))))
     (properties `((upstream-name . "SoilTaxonomy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-data-table))
@@ -24673,13 +24634,13 @@ Iden and Durner (2013) <doi:10.1002/2014WR015937>, [5] Peters (2014)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.7.4")
+    (version "2.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "soilDB" version))
               (sha256
                (base32
-                "0lndc6mqvrjg0hphnwzd1gw5jirj1mhnkck9w7kh4pil9mwq142m"))))
+                "0giijrfqgqyiq14bfwckizhplqyigz2vca91z56c8mrgj8ly4fxa"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
@@ -34315,13 +34276,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "signnet" version))
               (sha256
                (base32
-                "0iymm9crvppb7yrp163y5i605bl1mdw7bxzgr5s4zflhzf1njv4s"))))
+                "1j4qp2w2kkcq206k015lw4ll7vj4yn53b2ngkh0h4wdrzgc7p90a"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -35195,13 +35156,13 @@ but with core functions as needed for troubleshooting.")
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shrinkTVP" version))
               (sha256
                (base32
-                "1qzk53l6n3a58ypqdisf2cj1nvgri2fvy0nz72wpvqnfsj3xcswz"))))
+                "1p9s4n3dw95ghcma71ik5zidqk54cbsd30csnbqp2w377241lxd3"))))
     (properties `((upstream-name . "shrinkTVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -36684,13 +36645,13 @@ resulting metrics.")
 (define-public r-shinylight
   (package
     (name "r-shinylight")
-    (version "0.7")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinylight" version))
               (sha256
                (base32
-                "09bvnycyc47k99qx68s336xaga20f7czpqz8fg7q61akrrkld7jz"))))
+                "1z03gqq57j4j3g8k41zhfbfsvfxd7rfciw1mfh87wqsz621y00xm"))))
     (properties `((upstream-name . "shinylight")))
     (build-system r-build-system)
     (propagated-inputs (list r-later r-jsonlite r-httpuv))
@@ -45950,13 +45911,13 @@ visualization (intensity-coded color scale, etc.).")
 (define-public r-scuba
   (package
     (name "r-scuba")
-    (version "1.11-0")
+    (version "1.11-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scuba" version))
               (sha256
                (base32
-                "0g2n8clr2c0cb0jvfz1g9zv8m72yqwmb3p726k89dzma2lkyramd"))))
+                "1gmwzwkj0ylaqwz33djrv3hrqmwhr23q53yp94hv04mhijdh9myl"))))
     (properties `((upstream-name . "scuba")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=scuba")
@@ -52032,16 +51993,16 @@ coefficient.  See the output of function UVError() in this package.")
 (define-public r-saic
   (package
     (name "r-saic")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sAIC" version))
               (sha256
                (base32
-                "1ih63cfs98kb61gwbmrx2yq7iacb5qa1qrh1a264041qd27r5pj5"))))
+                "1gqcnwg7cnknfp36wqay9hibawx6n8z9z5z46vr05bl91m3xxqgs"))))
     (properties `((upstream-name . "sAIC")))
     (build-system r-build-system)
-    (home-page "https://sites.google.com/site/shuichikawanoen/")
+    (home-page "https://doi.org/10.1214/16-EJS1179")
     (synopsis "Akaike Information Criterion for Sparse Estimation")
     (description
      "Computes the Akaike information criterion for the generalized linear models
@@ -53474,13 +53435,13 @@ forecasting.  To find more details, see the review paper Manubens, N.et al.
 (define-public r-s2dv
   (package
     (name "r-s2dv")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s2dv" version))
               (sha256
                (base32
-                "1m5qfsz7d5gx07ix1yqrdi9nyry6va7ss8klc73kb3g0ls9by04l"))))
+                "0g60hby3rq4kpapiimjpyysfid9mr0fkvi4abmr5a5ch35fvazz7"))))
     (properties `((upstream-name . "s2dv")))
     (build-system r-build-system)
     (inputs (list cdo))
@@ -53507,7 +53468,7 @@ designed for the comparison between the experimental and observational datasets.
 post-processing, skill scores against observation, to visualization.  Compared
 to s2dverification', s2dv is more compatible with the package startR', able to
 use multiple cores for computation and handle multi-dimensional arrays with a
-higher flexibility.")
+higher flexibility.  The CDO version used in development is 1.9.8.")
     (license license:asl2.0)))
 
 (define-public r-s20x

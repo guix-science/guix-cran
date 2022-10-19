@@ -1927,13 +1927,13 @@ dtriangmesh functions.")
 (define-public r-quadcleanr
   (package
     (name "r-quadcleanr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quadcleanR" version))
               (sha256
                (base32
-                "1w6mmw3xmnzp0ixax3h8l65frs6p1w6wq1grs9mi74kknvprkx2h"))))
+                "1kiadc6wwq89yb6pdld646afqhh7i3xs1f667vab3svygfqn670x"))))
     (properties `((upstream-name . "quadcleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -4214,13 +4214,13 @@ Please refer to the vignette for additional details and references.")
 (define-public r-qfasa
   (package
     (name "r-qfasa")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QFASA" version))
               (sha256
                (base32
-                "16y8clv9h5crr9x79y0zzc2qmazi1d6qdslk1ranp2llwa42d9sp"))))
+                "1f61mm2wmpnzcr4c77gbpp41gf8lrfydar93zr9r95py9ds1p1h6"))))
     (properties `((upstream-name . "QFASA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -4228,6 +4228,7 @@ Please refer to the vignette for additional details and references.")
                              r-rsolnp
                              r-rcppeigen
                              r-rcpp
+                             r-mvtnorm
                              r-mass
                              r-gamlss-dist
                              r-gamlss

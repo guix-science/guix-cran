@@ -3364,13 +3364,13 @@ developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.2.9")
+    (version "1.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSHShydRology" version))
               (sha256
                (base32
-                "0hg4mxfppq87g4a52ninj2jkfgidmsd76vylr6siyc8y2scxi2rm"))))
+                "1h3lcixsq19si1lbzzm8h9h0k4p01z2s8zzdw5az4vlsbg7wv1gl"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitebox
@@ -4347,13 +4347,13 @@ correlation, autocorrelation, and volatility clustering without power loss.")
 (define-public r-crs
   (package
     (name "r-crs")
-    (version "0.15-35")
+    (version "0.15-36")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crs" version))
               (sha256
                (base32
-                "0v90cydhlki3dh4ib0fzk7w5idj59wz89rlljqlhz39fq7ljln1q"))))
+                "07r08d1cpgvnzlhrpx0xayknh4nai2h6ndv3w0dvp35f1075ksys"))))
     (properties `((upstream-name . "crs")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-np r-boot))
@@ -31216,16 +31216,18 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "1.0.1")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDatanet" version))
               (sha256
                (base32
-                "1ah992z1icmwm04m812fvhdgsjibvbkp4i2gm6fd0v10vr9iczg8"))))
+                "0slw0lz0k6706hww7msfkal1nwq1252cnxswpi9b9yjm9qnmj1hs"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
+                             r-rcppnumerical
+                             r-rcppeigen
                              r-rcppdist
                              r-rcpparmadillo
                              r-rcpp
@@ -34246,13 +34248,13 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.0-8")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cartogramR" version))
               (sha256
                (base32
-                "0k5jnz0yg5yn63k287zzx4q1w0n17k1m08r49yyyh634gi6fyqlz"))))
+                "0j8xa11g3m9sp2vcx0z6lk6cpdd8f83r2qx1ibcz28h5s6nmvn69"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-data-table))

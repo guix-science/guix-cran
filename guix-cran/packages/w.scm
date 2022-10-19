@@ -794,13 +794,13 @@ analysis approaches.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.10.0")
+    (version "1.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "0mx27r9fxjrhs1ps8vx5qc92pwaklkyk6j2cg5gy0ygm1nlmmpc4"))))
+                "11w98d4h748sc8nfn6xcmsh8nqdxwvq72ygwcid6ijfq8i3rr0zg"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -5439,16 +5439,21 @@ it was only tested with PhantomJS'.")
 (define-public r-webdeveloper
   (package
     (name "r-webdeveloper")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webdeveloper" version))
               (sha256
                (base32
-                "1qm12nvxxf1l5lrydffbrsf610s650d4bcbzvrk46kbyy7qcx2l2"))))
+                "1nw97df9q0dpzl82pdybw527hc407ch2xg8f0s2z4kf89yp6ckhg"))))
     (properties `((upstream-name . "webdeveloper")))
     (build-system r-build-system)
-    (propagated-inputs (list r-promises r-httpuv r-html5 r-future))
+    (propagated-inputs (list r-stringi
+                             r-readr
+                             r-promises
+                             r-httpuv
+                             r-html5
+                             r-future))
     (home-page "https://cran.r-project.org/package=webdeveloper")
     (synopsis "Functions for Web Development")
     (description

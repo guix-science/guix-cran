@@ -1835,6 +1835,36 @@ combinatorial analysis using observational data identifies species that govern
 ecosystem functioning\" <doi:10.1371/journal.pone.0201135>.")
     (license license:gpl3)))
 
+(define-public r-functansnp
+  (package
+    (name "r-functansnp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FunctanSNP" version))
+              (sha256
+               (base32
+                "1f1zdwr9pmpscb8va9gd7yl0vyxmv0hy6swfrh7074whvs0dkbn7"))))
+    (properties `((upstream-name . "FunctanSNP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass
+                             r-lava
+                             r-glmnet
+                             r-fundata
+                             r-fda
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=FunctanSNP")
+    (synopsis "Functional Analysis (with Interactions) for Dense SNP Data")
+    (description
+     "An implementation of revised functional regression models for multiple genetic
+variation data, such as single nucleotide polymorphism (SNP) data, which
+provides revised functional linear regression models, partially functional
+interaction regression analysis with penalty-based techniques and corresponding
+drawing functions, etc.(Ruzong Fan, Yifan Wang, James L. Mills, Alexander F.
+Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
+<doi:10.1002/gepi.21757>).")
+    (license license:gpl2+)))
+
 (define-public r-funcnn
   (package
     (name "r-funcnn")
@@ -13807,13 +13837,13 @@ Textbook of Finite Element Analysis. [ISBN-978-81-203-2315-5] -- Mustapha, K. B.
 (define-public r-fdx
   (package
     (name "r-fdx")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FDX" version))
               (sha256
                (base32
-                "0a6apkrq3kvp5vdc97c137cw5nzg06n7dmwnr15rjd3r7zcwp2dq"))))
+                "16d2gwdiqv3i37ad33mvad8hsni0i7zf3y85z9sgxvabhs5igva1"))))
     (properties `((upstream-name . "FDX")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma r-poissonbinomial r-discretefdr))
@@ -13946,13 +13976,13 @@ independent binomial distributions have the same probabilities of success.")
 (define-public r-fdrci
   (package
     (name "r-fdrci")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdrci" version))
               (sha256
                (base32
-                "1vl2shpz8s4j1ym0yr0yqjnm69ivlc77xh4qp9iw8k56vj66679y"))))
+                "0pc1iv7cari3gl5v6w62ix0y7ll4dqsm4sk5a5ipbarfx11irkgj"))))
     (properties `((upstream-name . "fdrci")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

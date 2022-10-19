@@ -8335,13 +8335,13 @@ three-state progressive model.")
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "0.4.4")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Tplyr" version))
               (sha256
                (base32
-                "1lvr04c3apqk3h191qghyk4lx5axc0rh9skzf42dl6prxqc5wbg0"))))
+                "10kai38z0mxm7s6x1vjl2vgvwwkz2lzy04irvxxink5xfs8dqkpd"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8357,10 +8357,10 @@ three-state progressive model.")
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/atorus-research/Tplyr")
-    (synopsis "Grammar of Clinical Data Summary")
+    (synopsis "Traceability Focused Grammar of Clinical Data Summary")
     (description
-     "This package provides a tool created to simplify the data manipulation necessary
-to create clinical reports.")
+     "This package provides a traceability focused tool created to simplify the data
+manipulation necessary to create clinical summaries.")
     (license license:expat)))
 
 (define-public r-tplsr
@@ -10838,13 +10838,13 @@ statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
 (define-public r-tkrplot
   (package
     (name "r-tkrplot")
-    (version "0.0-26")
+    (version "0.0-27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tkrplot" version))
               (sha256
                (base32
-                "086ir77m778y1bs81h5fcdn7v1k17cf6nz19zxx95xjk4m62crnx"))))
+                "19bj4wn1fs4wrx5k4gakhpz4q59fgx0584wyaw7hnh0ljj8i34n9"))))
     (properties `((upstream-name . "tkrplot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tkrplot")
@@ -12886,13 +12886,13 @@ visualizing terra objects with ggplot2'.")
 (define-public r-tidytags
   (package
     (name "r-tidytags")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytags" version))
               (sha256
                (base32
-                "1zcqjjsy4859yb0vqf09n24bggir9h21ndbkw280pfb18qz88k2j"))))
+                "04vz4zxnhnr9as1lwwi7mka7asjk557271iibdf67j02lcxj7zp1"))))
     (properties `((upstream-name . "tidytags")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rtweet r-rlang r-googlesheets4
@@ -15913,13 +15913,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tgp
   (package
     (name "r-tgp")
-    (version "2.4-19")
+    (version "2.4-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tgp" version))
               (sha256
                (base32
-                "0rrghvyz5v839faf013b8wvfhm4yz0c7zgvg3ri46x2nlk8q5rzn"))))
+                "00yw8l05b49qg79gydcv4f4snl92jm7fyy3i5y6vgxcj6jl101g9"))))
     (properties `((upstream-name . "tgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-maptree))
@@ -19559,13 +19559,13 @@ Guangchuang Yu (2022, ISBN:9781032233574).")
 (define-public r-tdavec
   (package
     (name "r-tdavec")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDAvec" version))
               (sha256
                (base32
-                "0ci5fjc39zs365h48cz5xak9840gpvc3jpgz5n5k48hc0dl2694g"))))
+                "1zw5yaym5q358vrppzdgqxwb4hhbqav69pvxb2wlanxap9rkxix8"))))
     (properties `((upstream-name . "TDAvec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tda r-rcpp r-microbenchmark))
@@ -21843,13 +21843,13 @@ geospatial, it corrects for differences in visibility between areas.")
 (define-public r-tabularaster
   (package
     (name "r-tabularaster")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabularaster" version))
               (sha256
                (base32
-                "061nc82svcz37lvwsx549rn6s2q6x75wjs0j9k8zcvlzr5wyyfgi"))))
+                "0b8jl3bf7q0302mlnqh720qs7rllkgyg127n1h25snb34k1wc3pm"))))
     (properties `((upstream-name . "tabularaster")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22143,13 +22143,13 @@ abstraction.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.6")
+    (version "0.9.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tables" version))
               (sha256
                (base32
-                "1y0gnqd2q0gn1dr2nxdlsvyl4g5jnj9y9lx18bhvhrfzb5038j5w"))))
+                "0nf6wp38br81bdckr47xign6j10lsp9vmqccjblgd0jcirgg19fw"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmltools))

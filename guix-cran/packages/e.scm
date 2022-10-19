@@ -10679,28 +10679,28 @@ within-module correlations fitted to each module.")
 (define-public r-emmixssl
   (package
     (name "r-emmixssl")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMMIXSSL" version))
               (sha256
                (base32
-                "14zhb065amcs7w7kr3ygwpclnf0fxil8xbipb2w0pq24d091vlxd"))))
+                "1z8mqh4d0vlxhk2mvpxwypr5labra3z4xsvpm4li1v4hga791h0v"))))
     (properties `((upstream-name . "EMMIXSSL")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=EMMIXSSL")
-    (synopsis "Semi-Supervised Learning via Gaussian Mixture Model")
+    (synopsis
+     "Semi-Supervised Gaussian Mixture Model with a Missing-Data Mechanism")
     (description
-     "The algorithm of semi-supervised learning for a partially classified sample via
-Gaussian mixture model with the missing-label mechanism is designed for a
-fitting g-component Gaussian mixture model via maximum likelihood (ML).  The
-classifier is proposed to treat the labels of the unclassified features as
-missing-data and to introduce a framework for their missing as in the pioneering
-work of Rubin (1976) for missing in incomplete data analysis.  It suggests that
-the missingness of the labels of the features can be modelled by representing
-the probability of a missing-label for a feature via the logistic model
-depending on the entropy of the feature or an appropriate proxy for it.")
+     "The algorithm of semi-supervised learning based on finite Gaussian mixture
+models with a missing-data mechanism is designed for a fitting g-class Gaussian
+mixture model via maximum likelihood (ML).  It is proposed to treat the labels
+of the unclassified features as missing-data and to introduce a framework for
+their missing as in the pioneering work of Rubin (1976) for missing in
+incomplete data analysis.  This dependency in the missingness pattern can be
+leveraged to provide additional information about the optimal classifier as
+specified by Bayesâ rule.")
     (license license:gpl3)))
 
 (define-public r-emmixmfa
@@ -18747,16 +18747,16 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-ease
   (package
     (name "r-ease")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ease" version))
               (sha256
                (base32
-                "11lhzx3kxkhp7x1wzyvwb2pnwnyhy61q395djpb0sxg4grq4dxv3"))))
+                "1aydwpb5wl3jvqkgf9gp4cc72rmh6206ci6p4v77jwbyzak53ldc"))))
     (properties `((upstream-name . "Ease")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rcppprogress r-rcpp r-ggpubr r-ggplot2))
+    (propagated-inputs (list r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Ease")
     (synopsis "Simulating Explicit Population Genetics Models")
