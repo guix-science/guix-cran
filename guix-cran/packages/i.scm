@@ -2446,6 +2446,32 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
 <doi:10.1002/sim.8900>.")
     (license license:gpl2+)))
 
+(define-public r-isetools
+  (package
+    (name "r-isetools")
+    (version "3.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ISEtools" version))
+              (sha256
+               (base32
+                "1dj8q1072j7sn7j9s2mjxm12k6kn5gcqpic8jp2k1f3f7b85dbij"))))
+    (properties `((upstream-name . "ISEtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-coda))
+    (home-page "https://cran.r-project.org/package=ISEtools")
+    (synopsis "Ion Selective Electrodes Analysis Methods")
+    (description
+     "Characterisation and calibration of single or multiple Ion Selective Electrodes
+(ISEs); activity estimation of experimental samples.  Implements methods
+described in: Dillingham, P.W., Radu, T., Diamond, D., Radu, A. and McGraw, C.M.
+(2012) <doi:10.1002/elan.201100510>, Dillingham, P.W., Alsaedi, B.S.O. and
+McGraw, C.M. (2017) <doi:10.1109/ICSENS.2017.8233898>, Dillingham, P.W.,
+Alsaedi, B.S.O., Radu, A., and McGraw, C.M. (2019) <doi:10.3390/s19204544>, and
+Dillingham, P.W., Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and McGraw,
+C.M. (2020) <doi:10.1021/acssensors.9b02133>.")
+    (license license:gpl2)))
+
 (define-public r-isdparser
   (package
     (name "r-isdparser")
@@ -6342,13 +6368,13 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
 (define-public r-interactionpower
   (package
     (name "r-interactionpower")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InteractionPoweR" version))
               (sha256
                (base32
-                "1vkjh5hrpmv2zn1rm7xi7pyjdjsxfhzrqprbnd66k0zw9b6vmjkg"))))
+                "09d3v425nj8ph8qsm85z68rixq7k1yppf5v0jmh8klbhn5rikajn"))))
     (properties `((upstream-name . "InteractionPoweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6367,7 +6393,7 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
     (description
      "Power analysis for regression models which test the interaction of two
 independent variables on a single dependent variable.  Includes options for
-continuous, binary, and/or skewed variables, as well as correlated interacting
+continuous, binary, or ordinal variables, as well as correlated interacting
 variables.  Also includes options to specify variable reliability.  Power
 analyses can be done either analytically or via simulation.  Includes tools for
 simulating single data sets and visualizing power analysis results.  The primary
@@ -10501,13 +10527,13 @@ color variations (by the HSV color code system) with pictures.")
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "1.5.3")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imagine" version))
               (sha256
                (base32
-                "1ss0gm769s8cmma3hnah15vmc2c5wxn0l3s4vas7jbvkwi62am6h"))))
+                "0bbkxhwicjy0h24v93h8cvi17ipy82kb4zwkm7pyg8q48bqssdp0"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10964,7 +10990,6 @@ package provides an interface to the algorithm available at
                 "03p06qmv1s5i08hw4616qf7dqyqp3hrcibz1w66bh5dzv6yl9j7c"))))
     (properties `((upstream-name . "image.binarization")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-magick))
     (home-page "https://github.com/DIGI-VUB/image.binarization")
     (synopsis "Binarize Images for Enhancing Optical Character Recognition")
@@ -11530,13 +11555,13 @@ Version 3 includes information from 1815 to 2014.")
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "3.3.0")
+    (version "3.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iglu" version))
               (sha256
                (base32
-                "1p3mwc0ny6d0i09bacdy9xzpn6rj2idx444wypn3rz98nddr665c"))))
+                "1pki85jxdsd8pvandva6sxqy9ymr18izp88rpmmsvay14wk7jfwx"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11544,7 +11569,6 @@ Version 3 includes information from 1815 to 2014.")
                              r-tibble
                              r-shiny
                              r-scales
-                             r-plotly
                              r-patchwork
                              r-magrittr
                              r-lubridate
@@ -11556,7 +11580,7 @@ Version 3 includes information from 1815 to 2014.")
                              r-dplyr
                              r-catools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=iglu")
+    (home-page "https://irinagain.github.io/iglu/")
     (synopsis "Interpreting Glucose Data from Continuous Glucose Monitors")
     (description
      "This package implements a wide range of metrics for measuring glucose control

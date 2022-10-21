@@ -20,6 +20,7 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1892,24 +1893,25 @@ Physical Sciences of the Oceans).")
 (define-public r-gstsm
   (package
     (name "r-gstsm")
-    (version "0.0.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gstsm" version))
               (sha256
                (base32
-                "14vdgrxxgz18l2k9qi4dg2v6xp3cbc3171iayfzyg4d8ay0094dh"))))
+                "1qkq9ghg49p09wx60k68nh871l1xz0qpzsls8lg4b038kngr9q6l"))))
     (properties `((upstream-name . "gstsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
     (home-page "https://cran.r-project.org/package=gstsm")
     (synopsis "Generalized Spatial-Time Sequence Miner")
     (description
-     "Implementations of the algorithms present in the future article Generalized
-Discovery of Tight Space-Time Sequences, original title (Castro Filho, A. J. ;
-Borges, H. ; Pacitti, Esther ; Porto, F. ; Coutinho, R. ; Ogasawara, E. .
+     "Implementations of the algorithms present article Generalized Spatial-Time
+Sequence Miner, original title (Castro, Antonio; Borges, Heraldo ; Pacitti,
+Esther ; Porto, Fabio ; Coutinho, Rafaelli ; Ogasawara, Eduardo .
 GeneralizaÃ§Ã£o de MineraÃ§Ã£o de SequÃªncias Restritas no EspaÃ§o e no Tempo.
-In: XXXVI SBBD - SimpÃ³sio Brasileiro de Banco de Dados, 2021).")
+In: XXXVI SBBD - SimpÃ³sio Brasileiro de Banco de Dados, 2021
+<doi:10.5753/sbbd.2021.17891>).")
     (license license:expat)))
 
 (define-public r-gstream
@@ -5317,13 +5319,13 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
 (define-public r-graphpaf
   (package
     (name "r-graphpaf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graphPAF" version))
               (sha256
                (base32
-                "1b9azk5y78wxidav4nnhmr64dwylffsadyjqfb66qsj0140br2bm"))))
+                "0jdr4q0wyj9a2s04hgq6gvxgz0akdm35i6sxg4pa09wzh2fgjw0c"))))
     (properties `((upstream-name . "graphPAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5340,14 +5342,10 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
     (description
      "Estimation and display of various types of population attributable fraction and
 impact fractions.  As well as the usual calculations of attributable fractions
-and impact fractions, functions are provided for continuous exposures, for
-pathway specific population attributable fractions, and for joint, average and
-sequential population attributable fractions.  See O'Connell and Ferguson (2022)
-<doi:10.1093/ije/dyac079>, Ferguson et al. (2020)
-<doi:10.1186/s13690-020-00442-x>, Ferguson et al. (2019)
-<doi:10.1186/s12874-019-0827-4>, Ferguson et al. (2019)
-<doi:10.1515/em-2019-0037>, as well the accompanying package vignette, for an
-overview of methods implemented.")
+and impact fractions, functions are provided for attributable fraction nomograms
+and fan plots, continuous exposures, for pathway specific population
+attributable fractions, and for joint, average and sequential population
+attributable fractions.")
     (license license:expat)))
 
 (define-public r-graphon
@@ -5889,7 +5887,7 @@ by the GRANBase package and repositories that are created by it.")
                 "0z9378qimdpxrslib2avimik3xqd41angfg12j8vmcbg7zh3binh"))))
     (properties `((upstream-name . "GRANBase")))
     (build-system r-build-system)
-    (inputs (list git))
+    (inputs (list subversion git))
     (propagated-inputs (list r-switchr
                              r-stringi
                              r-sendmailr
@@ -14569,16 +14567,17 @@ ggplot2.")
 (define-public r-ggpie
   (package
     (name "r-ggpie")
-    (version "0.2.2")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpie" version))
               (sha256
                (base32
-                "0pi3z78lg916v9v3si9666pwsh9yn3nsmv9g7r9175wlp26b940m"))))
+                "15r8cx07y0glwvb5xlqdkxfrxcwhwlp6w6ah13z96mgdpvqh0p3i"))))
     (properties `((upstream-name . "ggpie")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-stringr
                              r-scales
                              r-rlang
                              r-rcolorbrewer
@@ -19894,13 +19893,13 @@ continuous analysis of landscape features.")
 (define-public r-geodist
   (package
     (name "r-geodist")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geodist" version))
               (sha256
                (base32
-                "07mzxf4ngh34m4830sqnndhbdcvhgarpp46c6hmxsxwky6x5kp5k"))))
+                "09758v53r057rjsn844g2dc455ccndw1qlndl1xsm2gcp6ch2hr3"))))
     (properties `((upstream-name . "geodist")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -23321,7 +23320,7 @@ function arguments introduced in GDAL version 3.2.1 or earlier are supported.")
                 "1fx1h2jwp2i72jky44arrlf37in3p8gv7ph6xn1f5qszrgmi4q48"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
-    (inputs (list zlib proj netcdf gdal))
+    (inputs (list zlib sqlite proj netcdf gdal))
     (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/appelmar/gdalcubes_R")

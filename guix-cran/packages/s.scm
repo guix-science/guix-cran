@@ -1372,7 +1372,7 @@ users to publish package and session manifests as gists.")
                 "1fxn75kgnmq9q4jic4jrqvljylwv9fa25nbhyqm4vmlx5wvissgp"))))
     (properties `((upstream-name . "switchr")))
     (build-system r-build-system)
-    (inputs (list git))
+    (inputs (list subversion git))
     (propagated-inputs (list r-rjsonio r-rcurl))
     (home-page "https://github.com/gmbecker/switchr")
     (synopsis
@@ -6980,13 +6980,13 @@ primarily to expose the header file to other R projects.")
 (define-public r-strex
   (package
     (name "r-strex")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "strex" version))
               (sha256
                (base32
-                "0fnrmz7nlwi99fik08fwj03wh0c5xndczfdrsyz4wyc1fiqz1m1q"))))
+                "0a2xwhayk5l8alnn47rxb55kbi8s8fqsx3707yfdrw0gx4r8py8i"))))
     (properties `((upstream-name . "strex")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringi r-rlang r-magrittr
@@ -7160,7 +7160,6 @@ equations.")
                 "1363w0sf7lahcg3dhvl6l7hybgr71r21xbxs718a73zy5pnwm4s2"))))
     (properties `((upstream-name . "streambugs")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-desolve))
     (home-page "https://www.eawag.ch/en/department/siam/projects/streambugs/")
     (synopsis
@@ -7438,17 +7437,18 @@ Cauchy distributions.")
 (define-public r-stratifiedsampling
   (package
     (name "r-stratifiedsampling")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StratifiedSampling" version))
               (sha256
                (base32
-                "190drdcry26rq63i4lzm5s3x79jjjqsngmxgyxwbfgz8hbqj85jx"))))
+                "1a93kxsjvb57g7sv7bwjq2rmwlnbxv503c80l6r9hv91ppqiri5m"))))
     (properties `((upstream-name . "StratifiedSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-transport
                              r-sampling
+                             r-rglpk
                              r-rcpparmadillo
                              r-rcpp
                              r-proxy
@@ -7462,9 +7462,9 @@ Cauchy distributions.")
 considerably reduce the variance of the Horvitz-Thompson estimator.  We propose
 in this package different methods to handle the selection of a balanced sample
 in stratified population.  For more details see RaphaÃ«l Jauslin, Esther
-Eustache and Yves TillÃ© (2021) <arXiv:2101.05568>.  The package propose also a
-method based on optimal transport and balanced sampling, see RaphaÃ«l Jauslin
-and Yves TillÃ© <arXiv:2105.08379>.")
+Eustache and Yves TillÃ© (2021) <doi:10.1007/s42081-021-00134-y>.  The package
+propose also a method based on optimal transport and balanced sampling, see
+RaphaÃ«l Jauslin and Yves TillÃ© <arXiv:2105.08379>.")
     (license license:gpl2+)))
 
 (define-public r-stratifiedrf
@@ -8449,7 +8449,6 @@ and Fast Computation.  Molecular Ecology Resources.")
                 "1il3na3d96k34vj62pvxrs2ah3a9ly8ww3gi3nr0459piw4wd611"))))
     (properties `((upstream-name . "stockfish")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-r6 r-processx))
     (home-page "https://github.com/curso-r/stockfish")
     (synopsis "Analyze Chess Games with the 'Stockfish' Engine")
@@ -16082,7 +16081,7 @@ amount of resources.")
                 "1pbfdyhp5i377g59bg74w026y4sxx12m5x53l1qk2bhvyiib4a12"))))
     (properties `((upstream-name . "sportyR")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-glue r-ggplot2 r-ggfittext))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sportsdataverse/sportyR")
@@ -16614,13 +16613,13 @@ coefficients.  For details see Murakami (2021) <arXiv:1703.04467>.")
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmodel" version))
               (sha256
                (base32
-                "0kvfy2wwnqlinlp1njwrd3nld25i7w0snpz88crlaglgd1k3k2il"))))
+                "00d84xzhmqljz3gxrxp3bg9fk2rn1wiyks6rr3mmcmjqds6c80ln"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -21750,13 +21749,13 @@ Signal Processing, vol.  66, no.  1, pp.  155-170, Jan.  2018.
 (define-public r-sparsehessianfd
   (package
     (name "r-sparsehessianfd")
-    (version "0.3.3.6")
+    (version "0.3.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparseHessianFD" version))
               (sha256
                (base32
-                "0p1l33pzsbpg0x8w5qqaxyqmv8d6sclrnx1s56wl395h8wnqvlhj"))))
+                "1cdjdccbn9l64spgwrsf8vycy0g0bvm7v9y3wivam0drl7qc9df4"))))
     (properties `((upstream-name . "sparseHessianFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -22564,13 +22563,13 @@ detailed in Peruzzi and Dunson (2020) <arXiv:2012.00943>.  Funded by ERC grant
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "3.13.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spaMM" version))
               (sha256
                (base32
-                "1w08cr51yvpx4j4q6wmv33ws8dbci35s9ky0ds713zs1bhrn7q90"))))
+                "1cdba0g6brkl4gmlvb4n1bnh23xlbljk1f911f7wirvy0lzxvghm"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -23587,13 +23586,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "0.9.2")
+    (version "0.9.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sorcering" version))
               (sha256
                (base32
-                "1sh1c9pz2cll3jbijjcrd66kg64l2y2aaxrq1h93fvgznxm01ach"))))
+                "0n7malp67j2s3pp9gxslg9afiad1xckm817dz4prclmw9hgi2042"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mathjaxr))
@@ -34461,13 +34460,13 @@ function, SoftMax preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.1.7")
+    (version "2.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sigminer" version))
               (sha256
                (base32
-                "0icchf4lr74x3lbc3w6h5vgxaq3gqifrw4b4575fj34inx5wz466"))))
+                "0scc56xdv1mqz7jskyd46apqpggl0bgm0xs03q65r7x3rylb3fm8"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -43820,13 +43819,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.0.10")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seeker" version))
               (sha256
                (base32
-                "1wkdakvq8xzrkcdazcwigs1rc89fwadjnmvb2l49zbjjhrb30036"))))
+                "0jrg483c21c6wg0nabsf8655wd8vn3ifs7z388w80vxx4lig81qn"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -50239,13 +50238,13 @@ contain more robust readers for sas7bdat files.")
 (define-public r-sarsop
   (package
     (name "r-sarsop")
-    (version "0.6.12")
+    (version "0.6.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sarsop" version))
               (sha256
                (base32
-                "07cqy41bxjx6rqk1zmhbg3cb90wfh6rakhbz4prfmxrslwkmhmb3"))))
+                "0dfpqmvqjr2f7amqmms4wliccdlk37c53khrkb6z9dvhh88i4gzv"))))
     (properties `((upstream-name . "sarsop")))
     (build-system r-build-system)
     (inputs (list))

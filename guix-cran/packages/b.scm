@@ -1166,16 +1166,16 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "buildmer" version))
               (sha256
                (base32
-                "1bvlr6ccp9nspwksdjm7chn5m2n3xa5w4rqfldlq9qshp6lslkxi"))))
+                "1phd8g7ymv43qhfkxmg5gbjrx8czvbxgxbg0vf0910mnff5j1pjm"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-nlme r-mgcv r-lme4))
+    (propagated-inputs (list r-nlme r-mgcv r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=buildmer")
     (synopsis
@@ -6252,13 +6252,13 @@ the basic and static views offered by existing packages.")
 (define-public r-bnstruct
   (package
     (name "r-bnstruct")
-    (version "1.0.12")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnstruct" version))
               (sha256
                (base32
-                "04rlv2xb7bwbh0dd4kc2k07vpdb6vjhln6kdxim6cja27b9j9h46"))))
+                "0naclrnhnqc87w6nw0yl3rhslqw3784hqqvmyfdg2508k9x913g3"))))
     (properties `((upstream-name . "bnstruct")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-bitops))
@@ -6790,7 +6790,6 @@ inspection.")
                 "07iw6aqcwn4a29b85cavfw6hp66csdzlaqwas40zr5ga3kp72j51"))))
     (properties `((upstream-name . "BMTME")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-tidyr
                              r-snow
                              r-rcpparmadillo
@@ -8048,13 +8047,13 @@ correction with a corresponding set of S3 plot methods.")
 (define-public r-blockforest
   (package
     (name "r-blockforest")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockForest" version))
               (sha256
                (base32
-                "14xggdm34hmdlz3hvvp5layk6mb016yppqf9x9rbia9lmmjbhgfh"))))
+                "11lfwh5skzbvyyh25hk0sxk21833ah9f8zybvqsn3m9109c9whsw"))))
     (properties `((upstream-name . "blockForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix))
@@ -10725,13 +10724,13 @@ permutation test) for fast feature-filtering of the n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.1.4")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogeom" version))
               (sha256
                (base32
-                "1scns8pn7aipndcs7m76izvk421dwqzzvfln0d4pyyyfq6r995yf"))))
+                "0vfqdzgh2x93v52y56mnqh7qf5c71qv3dnzzmbj1avpiqqcx9ksw"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -19271,13 +19270,13 @@ be found in the vignette or
 (define-public r-bayesreversepllh
   (package
     (name "r-bayesreversepllh")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesReversePLLH" version))
               (sha256
                (base32
-                "1wigp9692z0vf1vm3cpbl6wcgp3zyqzfbrkd344hi88421kj1yxj"))))
+                "08zx8paaqg8zkf4d2rfparbi54p1i9wr05iqp7nqy7xv3isq1zfp"))))
     (properties `((upstream-name . "BayesReversePLLH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -22613,13 +22612,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAS" version))
               (sha256
                (base32
-                "0d8sjg8mgjky41mx8r7dhcxrx6a392dywb6p9my2qbfrsj9pzz7c"))))
+                "0l7x1zi1q1yjmaw0wwrp0aarlbjd6zxzi7brc5q4ipb52hw8xljr"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -23491,13 +23490,13 @@ angular distributions.  Chakraborty and Wong (2021) <doi:10.18637/jss.v099.i11>.
 (define-public r-bama
   (package
     (name "r-bama")
-    (version "1.2")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bama" version))
               (sha256
                (base32
-                "1amxls4jl2ys5wkn600xmx0y3d9zhkz2s96vn7h8fnrrv35212yp"))))
+                "1kcpy7j5clj02zkdxrk7fv8xi6rjw6glrxy1vxhp7c6lxvvsviyy"))))
     (properties `((upstream-name . "bama")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-bh))
@@ -23929,13 +23928,13 @@ OutlierTrees\".  To learn more about the base procedure OutlierTree (Cortes,
 (define-public r-baffle
   (package
     (name "r-baffle")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baffle" version))
               (sha256
                (base32
-                "0xcvvnjgi81i6yv45lg29pwyzily4ziww2vvgbbagg02784m9xg4"))))
+                "09yfxxq252sbfx0yh6m0zkjvwdwgsj6ycr4n8llkqpf8qjspk22a"))))
     (properties `((upstream-name . "baffle")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

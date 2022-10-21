@@ -7,9 +7,9 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -187,6 +187,29 @@ continuous, one-dimensional probability distributions.  References used for this
 method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (2).  Paltani, S. (2004). <DOI:10.1051/0004-6361:20034220>.")
     (license license:agpl3)))
+
+(define-public r-ktweedie
+  (package
+    (name "r-ktweedie")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ktweedie" version))
+              (sha256
+               (base32
+                "1yr9rh2r7280kc78vq722vzp0n9mgfrczrhcgmzbdkcfvq1ivgj9"))))
+    (properties `((upstream-name . "ktweedie")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=ktweedie")
+    (synopsis
+     "'Tweedie' Compound Poisson Model in the Reproducing Kernel Hilbert Space")
+    (description
+     "Kernel-based Tweedie compound Poisson gamma model using high-dimensional
+predictors for the analyses of zero-inflated response variables.  The package
+features built-in estimation, prediction and cross-validation tools and supports
+choice of different kernel functions.")
+    (license license:gpl3)))
 
 (define-public r-ktsolve
   (package

@@ -1571,13 +1571,13 @@ Powerpoint')\" documents.")
 (define-public r-autorasch
   (package
     (name "r-autorasch")
-    (version "0.1.5")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoRasch" version))
               (sha256
                (base32
-                "16xwh8v6p3ympn0xljb7d77n04g31gcppv8v39p96yfc9vaxkhsw"))))
+                "15vgmpvcw7hi1i5kaqj9q126qmfa54h8ay9w6wa7yxjbginp9v7c"))))
     (properties `((upstream-name . "autoRasch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lavaan r-foreach
@@ -1589,7 +1589,8 @@ Powerpoint')\" documents.")
      "This package performs Rasch analysis (semi-)automatically, which has been shown
 to be comparable with the standard Rasch analysis (Feri Wijayanto et al. (2021)
 <doi:10.1111/bmsp.12218>, Feri Wijayanto et al. (2022)
-<https://psyarxiv.com/erxuh/>).")
+<doi:10.3758/s13428-022-01947-9>, Feri Wijayanto et al. (2022)
+<doi:10.1177/01466216221125178>).")
     (license license:gpl2)))
 
 (define-public r-autoplotprotein
@@ -3599,13 +3600,13 @@ Gamma, Exponential or Weibull.  For details see Chen (2000), Scaillet (2004)
 (define-public r-asv
   (package
     (name "r-asv")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ASV" version))
               (sha256
                (base32
-                "1h7si63fzxm00iqpm5lz4l403xk5203whhbwn3jid95rxibalxmf"))))
+                "1cwsfc5mylivg65mb93d0v8kalirq5vwjx78fjyylsdc4w33gzqb"))))
     (properties `((upstream-name . "ASV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-freqdom))
@@ -3714,13 +3715,13 @@ scale development and paleoclimate analysis.")
 (define-public r-asterisk
   (package
     (name "r-asterisk")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asteRisk" version))
               (sha256
                (base32
-                "0sisznw8bb77jq3mvygxm5f2iaanvzfcm0j0g7dll0q294dvfnpk"))))
+                "1yk31gccab4i5v1wy954f3hqkdi58s224njiqkw3k4kib6xdasnj"))))
     (properties `((upstream-name . "asteRisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-onion r-nanotime
@@ -3739,7 +3740,7 @@ coefficients and data included in the asteRiskData package, available in a drat
 repository.  To install this data package, run install.packages(\"asteRiskData\",
 repos=\"https://rafael-ayala.github.io/drat/\")'.  Felix R. Hoots, Ronald L.
 Roehrich and T.S. Kelso (1988)
-<https://celestrak.com/NORAD/documentation/spacetrk.pdf>.  David Vallado, Paul
+<https://celestrak.org/NORAD/documentation/spacetrk.pdf>.  David Vallado, Paul
 Crawford, Richard Hujsak and T.S. Kelso (2012) <doi:10.2514/6.2006-6753>.  Felix
 R. Hoots, Paul W. Schumacher Jr.  and Robert A. Glover (2014)
 <doi:10.2514/1.9161>.")
@@ -3814,13 +3815,13 @@ There are also random effects versions of these models.")
 (define-public r-ast2ast
   (package
     (name "r-ast2ast")
-    (version "0.2")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ast2ast" version))
               (sha256
                (base32
-                "02yjs9gc2b9i4qxcbrj7h3sxqc6k4ymg0qpw49qxrkm2xka8nz1h"))))
+                "1dw204l1lq6jlv6rzd6amjbf1vz6vhk6cb0qdjls4254cg01gs3p"))))
     (properties `((upstream-name . "ast2ast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-purrr))
@@ -6386,7 +6387,7 @@ which can be then easily used for further analysis.")
                 "0zq61bvma82fxvczy3bhfy3x8k5s36avmblvfl1vsa2f0rp63nmk"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
-    (inputs (list zlib libarchive))
+    (inputs (list zlib libarchive libarchive libarchive))
     (propagated-inputs (list r-tibble r-rlang r-glue r-cpp11 r-cli))
     (native-inputs (list pkg-config))
     (home-page "https://archive.r-lib.org/")
@@ -8377,13 +8378,13 @@ interpret the oblique random survival forest are described in Jaeger et al.,
 (define-public r-aoristic
   (package
     (name "r-aoristic")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aoristic" version))
               (sha256
                (base32
-                "1i4bihdl4d0ihxf61xdqsb9k8j6im5dfqczy9nlc4xyn68b9m0l8"))))
+                "1zanf21qmnjmwzzccpdm1bwnyhv9zqjirrylfwmbpkzlmvp0a4pb"))))
     (properties `((upstream-name . "aoristic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9950,17 +9951,17 @@ to manipulate the data in an efficient manner.")
 (define-public r-and
   (package
     (name "r-and")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "and" version))
               (sha256
                (base32
-                "0xwpgyw8r050836868wrw7wx0pj10b1awi0a4ya85q86lrwmrw6k"))))
+                "0i4kalmk600f7ri3m8m46xr2p67ik0w82lbm8c3wghawlgiplav0"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue))
-    (home-page "http://and.rossellhayes.com")
+    (home-page "https://and.rossellhayes.com")
     (synopsis "Construct Natural-Language Lists with Internationalization")
     (description
      "Construct language-aware lists.  Make \"and\"-separated and \"or\"-separated lists
@@ -11562,6 +11563,37 @@ manipulating data and summarizing, visualizing, and saving results.")
 alpha-outliers by Davies and Gather (1993) to flag outliers in a data set.  See
 Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
 423, 782-792, <doi:10.1080/01621459.1993.10476339> for details.")
+    (license license:gpl3)))
+
+(define-public r-alphahull3d
+  (package
+    (name "r-alphahull3d")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AlphaHull3D" version))
+              (sha256
+               (base32
+                "11sfnwqjqnll74gxaxjh868av63wj7q85amx4v9yz11snascc12y"))))
+    (properties `((upstream-name . "AlphaHull3D")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rvcg
+                             r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/AlphaHull3D")
+    (synopsis "Alpha Hull Computation")
+    (description
+     "Computation of the alpha hull of a set of points in the 3D space, that is to say
+\"something like the shape formed by these points\".  The alpha hull depends on a
+positive parameter alpha.  When alpha goes to zero, the alpha hull degenerates
+to the set of points, while it is the convex hull of the set of points when
+alpha goes to infinity.  Computations are performed by the CGAL C++ library
+<https://www.cgal.org/>.")
     (license license:gpl3)))
 
 (define-public r-alphahull
@@ -13721,13 +13753,13 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
 (define-public r-agroreg
   (package
     (name "r-agroreg")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroReg" version))
               (sha256
                (base32
-                "07zw0c0w39jps069d6ql27yr999vbjlypnilyxbw44n70skzyf6y"))))
+                "0kn7prhd9fzp2ibj12nz5cj5lag6bn7bmgva2xl7cf2b6pwmfijl"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcompanion
@@ -14382,7 +14414,6 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
                 "1in4wd491y37iwac8k0b4wj0gpvz01r65qg2hc8m6v4mb0572clf"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-writexl
@@ -15040,13 +15071,13 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-ads
   (package
     (name "r-ads")
-    (version "1.5-6")
+    (version "1.5-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ads" version))
               (sha256
                (base32
-                "023s8zydcgimkp8ixxv23vvzp8rgy89cnhnygwzc18birc1zw2hn"))))
+                "016zpkpf1c57djqn31qwpp3qk65xdacl7x7s72y4a02pimk735bv"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom r-ade4))
@@ -15981,13 +16012,13 @@ import and export files from and to such virtual DOS-formatted disks.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-19")
+    (version "0.3-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adespatial" version))
               (sha256
                (base32
-                "08yjsncxybqjwalcw4yh5nmmsd5i16dah56pyv70pr31572g2l6v"))))
+                "1sv4kc30l226x24s3gvv8dq0p2y33h8vv474bfpm4z08cfah13pq"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -16138,13 +16169,13 @@ the data is stored.")
 (define-public r-adephylo
   (package
     (name "r-adephylo")
-    (version "1.1-11")
+    (version "1.1-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adephylo" version))
               (sha256
                (base32
-                "06pnrycc7562h17gxbli935289a48na3p4vpb2w96i5cbrjg4jqm"))))
+                "0vd7khqsfnik7j00hac97khv8b1kmi0az5hakg04m8fhx7z3589a"))))
     (properties `((upstream-name . "adephylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-phylobase r-ape r-adegenet r-ade4))

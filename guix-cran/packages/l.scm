@@ -11,9 +11,9 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages linux)
@@ -2152,13 +2152,13 @@ Gitter (2020) <doi:10.1186/s12859-019-3324-1>.")
 (define-public r-lpsolveapi
   (package
     (name "r-lpsolveapi")
-    (version "5.5.2.0-17.8")
+    (version "5.5.2.0-17.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpSolveAPI" version))
               (sha256
                (base32
-                "17jn2xvlv0hsx0nbh1xx9ip48vxdq0a2xi1iz3h5bac6zsynnd14"))))
+                "04bqa719za6hbbip695190zcq6nkwqmm0qjfw8gpfkqpy7ryqlkv"))))
     (properties `((upstream-name . "lpSolveAPI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=lpSolveAPI")
@@ -9138,7 +9138,7 @@ and quantile functions), random number generation and parameter estimation.")
                 "0baglknb67gmzr4cimlvz44f11np8glcdjdgs3jy8qlz0c8pm95p"))))
     (properties `((upstream-name . "libsoc")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list zlib libxml2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikardn/libsoc")
     (synopsis
@@ -14009,25 +14009,25 @@ gradient descent algorithm.")
 (define-public r-lassobacktracking
   (package
     (name "r-lassobacktracking")
-    (version "0.1.2")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LassoBacktracking" version))
               (sha256
                (base32
-                "1z1cnj6r6cq3b8xa9qck3ijfmzsr70r2p9m1ndakijb36pgwrzcs"))))
+                "0waz4apjvgwn3ss7mqpndz5m9n7cpmhb3s2ngds04v0amprblddv"))))
     (properties `((upstream-name . "LassoBacktracking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
-    (home-page "www.jmlr.org/papers/volume17/13-515/13-515.pdf")
+    (home-page "https://www.jmlr.org/papers/volume17/13-515/13-515.pdf")
     (synopsis
      "Modelling Interactions in High-Dimensional Data with Backtracking")
     (description
      "Implementation of the algorithm introduced in Shah, R. D. (2016)
-<http://www.jmlr.org/papers/volume17/13-515/13-515.pdf>.  Data with thousands of
-predictors can be handled.  The algorithm performs sequential Lasso fits on
+<https://www.jmlr.org/papers/volume17/13-515/13-515.pdf>.  Data with thousands
+of predictors can be handled.  The algorithm performs sequential Lasso fits on
 design matrices containing increasing sets of candidate interactions.  Previous
-fits are used to greatly speed up subsequent fits so the algorithm is very
+fits are used to greatly speed up subsequent fits, so the algorithm is very
 efficient.")
     (license license:gpl2+)))
 
@@ -15699,13 +15699,13 @@ spectral clustering method using l1-regularization\" (2022).")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.41")
+    (version "0.41-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "L1pack" version))
               (sha256
                (base32
-                "02fqv8xgn6ngld7vm3qmdmd4rm9h6pxl86d8v98lf0gf4y8p4szb"))))
+                "0j8sb2rbvd6nrijx18mhykgd4kj9032cwjcg23x12hr3rdlx56fb"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
@@ -15713,9 +15713,10 @@ spectral clustering method using l1-regularization\" (2022).")
     (home-page "http://l1pack.mat.utfsm.cl/")
     (synopsis "Routines for L1 Estimation")
     (description
-     "L1 estimation for linear regression, density, distribution function, quantile
-function and random number generation for univariate and multivariate Laplace
-distribution.")
+     "L1 estimation for linear regression using Barrodale and Roberts method
+<doi:10.1145/355616.361024> and the EM algorithm <doi:10.1023/A:1020759012226>,
+density, distribution function, quantile function and random number generation
+for univariate and multivariate Laplace distribution.")
     (license license:gpl3)))
 
 (define-public r-l1mstate

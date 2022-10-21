@@ -10,9 +10,9 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages php)
-  #:use-module (gnu packages base)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
@@ -23,6 +23,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2415,7 +2416,7 @@ data.")
                 "0gp7c71izpybp0sv7xrm8ndc1sih2bibj2p2404nkfjam559rwp7"))))
     (properties `((upstream-name . "ctrdata")))
     (build-system r-build-system)
-    (inputs (list sed php perl))
+    (inputs (list sed php perl coreutils))
     (propagated-inputs (list r-xml2
                              r-stringi
                              r-rvest
@@ -3277,6 +3278,41 @@ series: A complete periodogram approach\" (2020) by Sourav Das, Suhasini Subba
 Rao, and Junho Yang.")
     (license license:gpl2)))
 
+(define-public r-csodata
+  (package
+    (name "r-csodata")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "csodata" version))
+              (sha256
+               (base32
+                "11y3gr7b5m0zh3vbl4izy454mrcxj144vfvafxlxgp2aplzim3s8"))))
+    (properties `((upstream-name . "csodata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rjstat
+                             r-reshape2
+                             r-r-cache
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=csodata")
+    (synopsis "Download Data from the CSO 'PxStat' API")
+    (description
+     "Imports PxStat data in JSON-stat format and (optionally) reshapes it into wide
+format.  The Central Statistics Office (CSO) is the national statistical
+institute of Ireland and PxStat is the CSOs online database of Official
+Statistics.  This database contains current and historical data series compiled
+from CSO statistical releases and is accessed at <http://data.cso.ie>.  The CSO
+PxStat Application Programming Interface (API), which is accessed in this
+package, provides access to PxStat data in JSON-stat format at
+<http://data.cso.ie>.  This dissemination tool allows developers machine to
+machine access to CSO PxStat data.")
+    (license license:gpl3)))
+
 (define-public r-csn
   (package
     (name "r-csn")
@@ -3875,13 +3911,13 @@ cryptocurrencies.")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "1.4.4")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crypto2" version))
               (sha256
                (base32
-                "008qkcdq20fq7j3qddkwrhy8wjin0s32fms48013yq3vhhhxdkh8"))))
+                "0j4n13c9qcm1f6fwbvr72pqdvfvxrhnakk19dpn2hlxfdmmsk79g"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8036,6 +8072,46 @@ has developed symptoms (which would warrant further investigation) and that
 everyone was tested on a given day, and all tested negative.")
     (license license:gpl3)))
 
+(define-public r-covidmx
+  (package
+    (name "r-covidmx")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "covidmx" version))
+              (sha256
+               (base32
+                "0nlhix98bsbsqainsjchp0w2npqgadpbbdyw5ajxa0y7l2arc402"))))
+    (properties `((upstream-name . "covidmx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rcurl
+                             r-pins
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli))
+    (home-page "https://github.com/RodrigoZepeda/covidmx")
+    (synopsis "Descarga y analiza datos de COVID-19 en MÃ©xico")
+    (description
+     "Herramientas para el anÃ¡lisis de datos de COVID-19 en MÃ©xico.  Descarga y
+analiza los datos para COVID-19 de la Direccion General de EpidemiologÃ­a de
+MÃ©xico (DGE) <https://www.gob.mx/salud/documentos/datos-abiertos-152127>, la
+Red de Infecciones Respiratorias Agudas Graves (Red IRAG)
+<https://www.gits.igg.unam.mx/red-irag-dashboard/reviewHome> y la Iniciativa
+Global para compartir todos los datos de influenza (GISAID)
+<https://www.gisaid.org/>.  English: Downloads and analyzes data of COVID-19
+from the Mexican General Directorate of Epidemiology (DGE), the Network of
+Severe Acute Respiratory Infections (IRAG network),and the Global Initiative on
+Sharing All Influenza Data GISAID.")
+    (license license:expat)))
+
 (define-public r-covidmutations
   (package
     (name "r-covidmutations")
@@ -8677,36 +8753,6 @@ selecting a class of space-time covariance functions
 state-space models.  The functionality can also be used from C++ based model
 builder tools such as Rcpp'/'inline', TMB', or JAGS'.")
     (license license:bsd-2)))
-
-(define-public r-couscous
-  (package
-    (name "r-couscous")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "COUSCOus" version))
-              (sha256
-               (base32
-                "1ykqi72v8v1b3g9qy6h34dvk5fynzf1rl2mby65p08axmaba5798"))))
-    (properties `((upstream-name . "COUSCOus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrixcalc r-bio3d))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=COUSCOus")
-    (synopsis "Residue-Residue Contact Detecting Method")
-    (description
-     "Contact prediction using shrinked covariance (COUSCOus).  COUSCOus is a
-residue-residue contact detecting method approaching the contact inference using
-the glassofast implementation of Matyas and Sustik (2012, The University of
-Texas at Austin UTCS Technical Report 2012:1-3.  TR-12-29.) that solves the L_1
-regularised Gaussian maximum likelihood estimation of the inverse of a
-covariance matrix.  Prior to the inverse covariance matrix estimation we utilise
-a covariance matrix shrinkage approach, the empirical Bayes covariance
-estimator, which has been shown by Haff (1980) <DOI:10.1214/aos/1176345010> to
-be the best estimator in a Bayesian framework, especially dominating estimators
-of the form aS, such as the smoothed covariance estimator applied in a related
-contact inference technique PSICOV.")
-    (license license:gpl3+)))
 
 (define-public r-counttransformers
   (package
@@ -13552,7 +13598,7 @@ Algebraic ellipse fitting with Fitzgibbon-Pilu-Fisher and Taubin.")
                 "19nyn4gh4bnrvbbh2df8459015fkb2bgwwmq17vqq7r2j4gkgxzh"))))
     (properties `((upstream-name . "CoNI")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list python-3))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -15283,13 +15329,13 @@ Zero-inflated CMP regression (Sellers & Raim, 2016)
 (define-public r-compmodels
   (package
     (name "r-compmodels")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CompModels" version))
               (sha256
                (base32
-                "058yvwb7p6rj6g1hcwgdzgjv0lwg7m5hgrv1pjfi4dskaibd4k17"))))
+                "1373m324zq7f3wffb25ypjidvsxki0p64iv4qy8i887g4f8inq6q"))))
     (properties `((upstream-name . "CompModels")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompModels")
@@ -16511,18 +16557,18 @@ combinatory method (S) introduced in (Imane Rezgui et al, 2014)
 (define-public r-combinit
   (package
     (name "r-combinit")
-    (version "1.5.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "combinIT" version))
               (sha256
                (base32
-                "00jwvg822xbjkd5agmsy80lyv38gyglfi55gl33apv7kmgjwyk8g"))))
+                "1l2ypnrm2qi1z10c2qyyaqqcjgk3mgsh80b3j9zrjwq9zdakrhi5"))))
     (properties `((upstream-name . "combinIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=combinIT")
-    (synopsis "Combined Intercation Test for Unreplicated Two-Way Tables")
+    (home-page "https://github.com/haghbinh/combinIT")
+    (synopsis "Combined Interaction Test for Unreplicated Two-Way Tables")
     (description
      "There are several non-functional-form-based interaction tests for testing
 interaction in unreplicated two-way layouts.  However, no single test can detect
@@ -22380,17 +22426,18 @@ model.")
 (define-public r-clockify
   (package
     (name "r-clockify")
-    (version "0.0.10")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clockify" version))
               (sha256
                (base32
-                "1j5krmvl35wfhf7dx8vvrrbfcmx4fh12yrwr5db057gncz3p0aka"))))
+                "039kwx468f9hx1w3nxxay8kvai3n2x63r9w10q20mklz5wx4xi3q"))))
     (properties `((upstream-name . "clockify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rlist
                              r-purrr
                              r-lubridate
                              r-logger
@@ -28337,13 +28384,13 @@ graphs: <arXiv:1911.07494>; 10) univariate mean against adversarial attacks:
 (define-public r-changepoint-np
   (package
     (name "r-changepoint-np")
-    (version "1.0.3")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "changepoint.np" version))
               (sha256
                (base32
-                "04i7bgbsr06iryfm5r0f9ddja0d6zlabjf1pdpic2bpqssdjndbv"))))
+                "1kyj1z0mmbk1i71d5xxw8h3468afvwlqma659yjck3y5dszb1vn9"))))
     (properties `((upstream-name . "changepoint.np")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rdpack r-changepoint))
@@ -32285,28 +32332,6 @@ standard discrete binomial with continuous size parameter and continuous support
 with x in [0, size + 1], following Ilienko (2013) <arXiv:1303.5990>.")
     (license license:gpl2+)))
 
-(define-public r-cbda
-  (package
-    (name "r-cbda")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CBDA" version))
-              (sha256
-               (base32
-                "0qm77vvqjgi83i8izly995ziv9ski8kgzqyq4g81i2k7a5dp8vxv"))))
-    (properties `((upstream-name . "CBDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-superlearner r-prettydoc r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SOCR/CBDA")
-    (synopsis "Compressive Big Data Analytics")
-    (description
-     "Classification performed on Big Data.  It uses concepts from compressive
-sensing, and implements ensemble predictor (i.e., SuperLearner') and knockoff
-filtering as the main machine learning and feature mining engines.")
-    (license license:gpl3)))
-
 (define-public r-cbcgrps
   (package
     (name "r-cbcgrps")
@@ -34367,7 +34392,7 @@ toolbox is also available.  Methods are described in Peduzzi et al. (1996)
                 "10m7fw1zfr9i6v2qg235diwf3fmfr88incxnqpvnhmqcn082mxrp"))))
     (properties `((upstream-name . "caRpools")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list bowtie))
     (propagated-inputs (list r-xlsx
                              r-venndiagram
                              r-sm
@@ -35819,7 +35844,7 @@ API <https://api.covid19tracker.ca>.")
                 "12lhw8r1r3xlazm1w3x73fq3krwpvbv6w3rsmlmksaai4nxp2fn8"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list perl-image-exiftool))
     (propagated-inputs (list r-sp
                              r-sf
                              r-secr
@@ -36008,6 +36033,27 @@ Investigative Reporting Workshop to facilitate work on The Accountability
 Project, an effort to collect public data into a central, standard database that
 is more easily searched: <https://publicaccountability.org/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-campaignmanager
+  (package
+    (name "r-campaignmanager")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "campaignmanageR" version))
+              (sha256
+               (base32
+                "1x240l0jlyg4ldb4j9pa2v2nryxnyg8y14ywcdcpfnw4056ms3f5"))))
+    (properties `((upstream-name . "campaignmanageR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Connect to Campaign Manager via the 'Windsor.ai' API")
+    (description
+     "Collect marketing data from Campaign Manager using the Windsor.ai API
+<https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-camml
   (package

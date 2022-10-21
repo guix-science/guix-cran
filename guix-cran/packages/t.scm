@@ -10,6 +10,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tcl)
@@ -6039,6 +6040,27 @@ programming with RcppThread is used to improve performance converting to
 polynomials and calculating distances.")
     (license license:gpl2+)))
 
+(define-public r-treemisc
+  (package
+    (name "r-treemisc")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "treemisc" version))
+              (sha256
+               (base32
+                "0289grmgcvdszsb9lhgygm1dahlcn1m50lh110ny5yjh1b4627kn"))))
+    (properties `((upstream-name . "treemisc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=treemisc")
+    (synopsis
+     "Data Sets and Functions to Accompany \"Tree-Based Methods for Statistical Learning in R\"")
+    (description
+     "Miscellaneous data sets and functions to accompany Greenwell (2022) \"Tree-Based
+Methods for Statistical Learning in R\" <doi:10.1201/9781003089032>.")
+    (license license:gpl2+)))
+
 (define-public r-treemapify
   (package
     (name "r-treemapify")
@@ -6658,6 +6680,32 @@ Journal of Multivariate Analysis, 169, pages 110-129,
 bivariate negative binomial and the bi- and trivariate logarithmic series
 distributions.")
     (license license:gpl3)))
+
+(define-public r-traudem
+  (package
+    (name "r-traudem")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "traudem" version))
+              (sha256
+               (base32
+                "0qxvh5zfj14yaywjzf83v01v6n064iq16ba8g72yh0pbb8i98w9i"))))
+    (properties `((upstream-name . "traudem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-sys r-rlang r-purrr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucarraro.github.io/traudem/")
+    (synopsis "Use TauDEM")
+    (description
+     "Simple trustworthy utility functions to use TauDEM (Terrain Analysis Using
+Digital Elevation Models <https://hydrology.usu.edu/taudem/taudem5/>)
+command-line interface.  This package provides a guide to installation of TauDEM
+and its dependencies GDAL (Geopatial Data Abstraction Library) and MPI (Message
+Passing Interface) for different operating systems.  Moreover, it checks that
+TauDEM and its dependencies are correctly installed and included to the PATH,
+and it provides wrapper commands for calling TauDEM methods from R.")
+    (license license:expat)))
 
 (define-public r-tratamentos-ad
   (package
@@ -8058,7 +8106,7 @@ tracking software.")
                 "069nl1i73ayjnlsds4dnz6w4n765jijimgz20n9az7r0irvaddhi"))))
     (properties `((upstream-name . "trackdem")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python perl-image-exiftool))
     (propagated-inputs (list r-shiny
                              r-rcpparmadillo
                              r-rcpp
@@ -8982,44 +9030,6 @@ implementation of Chang's intruder words and intruder topics is provided.
 Sample data for the vignette is included in the toscaData package, which is
 available on gitHub: <https://github.com/Docma-TU/toscaData>.")
     (license license:gpl2+)))
-
-(define-public r-torvik
-  (package
-    (name "r-torvik")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "toRvik" version))
-              (sha256
-               (base32
-                "1x5xz6wngn6svkf9awzlr71lsp9mk9w640fx5y12aqjrrw9q2x7v"))))
-    (properties `((upstream-name . "toRvik")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.torvik.dev/")
-    (synopsis "Extensive and Tidy NCAA Men's College Basketball Data")
-    (description
-     "An API wrapper for cbbstat and a suite of functions to pull and clean detailed,
-extensive college basketball statistics from
-Barttorvik<https://barttorvik.com/>.")
-    (license license:expat)))
 
 (define-public r-tornado
   (package
@@ -13055,7 +13065,6 @@ with others or used to report statistics in scientific papers.")
                 "1k4ws5zymrc93rlh8118xxfgjdwr7g99cyhzjp34abcsip1c3g21"))))
     (properties `((upstream-name . "tidysq")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-testthat
@@ -13979,13 +13988,13 @@ information, check its ancestor package tidyfst'.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.3")
+    (version "1.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfst" version))
               (sha256
                (base32
-                "0gl6zgs1dhghsilix2g7izbhibx3i5wx525m6x9wwhjmlh8wcpcg"))))
+                "0d84cgh2kjq9gqmq6a01fwkiijqf0x6nja47mgr5s23nr1q9ddrj"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -15547,7 +15556,7 @@ Discomfort Index and others.")
                 "1623r64v97ii8qq6cfrg0jrdl7nwxswjgif5l85vak8xjkfwsq7q"))))
     (properties `((upstream-name . "Thermimage")))
     (build-system r-build-system)
-    (inputs (list perl imagemagick ffmpeg))
+    (inputs (list perl-image-exiftool perl imagemagick ffmpeg))
     (propagated-inputs (list r-tiff r-png))
     (home-page "https://cran.r-project.org/package=Thermimage")
     (synopsis "Thermal Image Analysis")

@@ -4089,13 +4089,13 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
 (define-public r-vegawidget
   (package
     (name "r-vegawidget")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vegawidget" version))
               (sha256
                (base32
-                "1rlx090vkvxizwfzcxbsxw5a0swgl3xp7v9d1d9r5v6m9yzam7k3"))))
+                "0rnr54h11gd2x2llypdvaai6v8z3nk5fbpb7zd0dcy7hh55ncfcs"))))
     (properties `((upstream-name . "vegawidget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -6493,7 +6493,6 @@ interactive use.")
                 "19ib4b1kf1zg4l571f2asxkwbab44pzs954agj0wx1p6kb2v608q"))))
     (properties `((upstream-name . "VAJointSurv")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-testthat
                              r-survival
                              r-simsurvnmarker

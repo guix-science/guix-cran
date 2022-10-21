@@ -8,6 +8,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages video)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages libreoffice)
@@ -21,6 +22,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages compression)
@@ -834,7 +836,7 @@ power of multicore cpus.")
                 "04026jz4vdyj2a2kry5kk5k84cy4vqqrcn328hxwnwh7r8i7klvn"))))
     (properties `((upstream-name . "dynBiplotGUI")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list gnu-make))
     (propagated-inputs (list r-tcltk2))
     (home-page "https://cran.r-project.org/package=dynBiplotGUI")
     (synopsis "Full Interactive GUI for Dynamic Biplot in R")
@@ -846,13 +848,13 @@ matrices of 2-way and 3-way.  The GUI can be run in multiple languages.")
 (define-public r-dynatree
   (package
     (name "r-dynatree")
-    (version "1.2-13")
+    (version "1.2-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynaTree" version))
               (sha256
                (base32
-                "06kiz2hcllxzn9lmybxa4kryh3jnhg4x9d5hab8ps168yc961g5r"))))
+                "11aq7z6ayz9yi6hjc4nw1fa1sq4c9sgpiqp2ihznfq06zj8rd7nl"))))
     (properties `((upstream-name . "dynaTree")))
     (build-system r-build-system)
     (home-page "https://bobby.gramacy.com/r_packages/dynaTree/")
@@ -3567,13 +3569,13 @@ time series.  Bundesbank Discussion Paper 41/2018.")
 (define-public r-ds4psy
   (package
     (name "r-ds4psy")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ds4psy" version))
               (sha256
                (base32
-                "1yrg25jhqvkar7bvp9qs2rvkn64p3lnz5w2s4gnn543hbj329ba2"))))
+                "1w2234bnvniivivaa9k09fblw3l7dy2fiwk611x1iwp58xjmpr7c"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
     (propagated-inputs (list r-unikn r-ggplot2))
@@ -7405,7 +7407,6 @@ parallel computing.")
                 "1xcpp5jw5xq6a6ccq8jsd4d7ailv3iv8k7b1bbz531vhy9im2dzs"))))
     (properties `((upstream-name . "DNAtools")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rsolnp r-rcppprogress r-rcppparallel r-rcpp
                              r-multicool))
     (native-inputs (list r-knitr))
@@ -12993,13 +12994,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diemr" version))
               (sha256
                (base32
-                "1d6pb2lzr2in1ykqfmjigi771njnjhcrkb4m9rw63r5hrn58by9d"))))
+                "0db42dvacj6xs525cfzyng01qw815hfsw4zqfk1snfszjc54v5s7"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
@@ -13010,7 +13011,8 @@ and calculates electivity indices in R. Borstein (2020)
      "Likelihood-based genome polarisation finds which alleles of genomic markers
 belong to which side of the barrier.  Co-estimates which individuals belong to
 either side of the barrier and barrier strength.  Uses expectation maximisation
-in likelihood framework.")
+in likelihood framework.  The method is described in Baird et al. (2022)
+<doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
 
 (define-public r-dief
@@ -17565,13 +17567,13 @@ Y., & Zhu, B. (2017) <doi:10.1002/sim.7157>.")
 (define-public r-delayed
   (package
     (name "r-delayed")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "delayed" version))
               (sha256
                (base32
-                "04f4k683jzb763sb9knb81lw8df56y1378g4i3c1x8m83bvj1mhs"))))
+                "0a00jwd4c69ba31xddl0gxjza6ydywlrgx21rm3bn8p247q5i37f"))))
     (properties `((upstream-name . "delayed")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -17579,32 +17581,33 @@ Y., & Zhu, B. (2017) <doi:10.1002/sim.7157>.")
                              r-rstackdeque
                              r-rlang
                              r-r6
+                             r-r-utils
+                             r-r-oo
                              r-progress
                              r-igraph
                              r-future
                              r-data-table
-                             r-bbmisc
-                             r-assertthat))
+                             r-bbmisc))
     (native-inputs (list r-knitr))
-    (home-page "https://tlverse.org/delayed")
+    (home-page "https://tlverse.org/delayed/")
     (synopsis "Framework for Parallelizing Dependent Tasks")
     (description
      "Mechanisms to parallelize dependent tasks in a manner that optimizes the compute
 resources available.  It provides access to \"delayed\" computations, which may be
 parallelized using futures.  It is, to an extent, a facsimile of the Dask
-library (<https://dask.org/>), for the Python language.")
+library (<https://www.dask.org/>), for the Python language.")
     (license license:gpl3)))
 
 (define-public r-delaunay
   (package
     (name "r-delaunay")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "delaunay" version))
               (sha256
                (base32
-                "13mjfmsp8adz7x9z8bp6pmp5xz94kiszq27gf3760hg0lxy0b514"))))
+                "088a05hv7nr15bw3c3093ymamls2wlhg6bjv6px0ifvpn88a2rly"))))
     (properties `((upstream-name . "delaunay")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -17751,7 +17754,7 @@ interval with double exponential formulas.")
                 "0p8psbsjxmc456flypdw2kh8kjsy2hw13nfcdilg527iy1dpif6i"))))
     (properties `((upstream-name . "deforestable")))
     (build-system r-build-system)
-    (inputs (list proj geos gdal))
+    (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-terra
                              r-stableestim
                              r-rcpparmadillo
@@ -22010,7 +22013,7 @@ documentation see
                 "1rjm6j1s229j1j9yb5y1sdi03x22qzrkmhc09k4xdmwmwmpi3s58"))))
     (properties `((upstream-name . "dataReporter")))
     (build-system r-build-system)
-    (inputs (list pandoc git))
+    (inputs (list pandoc git coreutils))
     (propagated-inputs (list r-whoami
                              r-stringi
                              r-robustbase
@@ -22376,7 +22379,7 @@ writing code or use alternate functions that will prompt the user to add these."
                 "06jywq3llwafjnpklqimra456crdi752zxci6z1w0v7p8blf4vjw"))))
     (properties `((upstream-name . "dataMaid")))
     (build-system r-build-system)
-    (inputs (list pandoc git))
+    (inputs (list pandoc git coreutils))
     (propagated-inputs (list r-whoami
                              r-stringi
                              r-robustbase

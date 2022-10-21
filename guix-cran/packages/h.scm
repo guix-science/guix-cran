@@ -19,6 +19,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages java)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3741,7 +3742,7 @@ simulations.  It is also possible to consider random data and ACK probabilities.
                 "0rfz3gbsk7kq480bjanznxwqsgk228sj9apmwpb4cp49c4fgjhin"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-usethis
                              r-tidyr
                              r-stringr
@@ -6082,13 +6083,13 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
 (define-public r-highorderportfolios
   (package
     (name "r-highorderportfolios")
-    (version "0.0.2")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highOrderPortfolios" version))
               (sha256
                (base32
-                "1ipfkzscpzfz4qkh7m0pr9zlksklnd60ddn296m0xm54cw6521cz"))))
+                "0qjmxiv5dcpgyl5c9vbbizwwg4lpppc9z09rf4c4lf0dfrcj4c5i"))))
     (properties `((upstream-name . "highOrderPortfolios")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
@@ -7919,13 +7920,13 @@ routes and isolines are returned as sf objects.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.4-1")
+    (version "1.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heplots" version))
               (sha256
                (base32
-                "0j4lh7liswczcrfn3004yhrlxcm051d6pasg86l22sbqmcg78920"))))
+                "1knk7w23x3ycxr79vfp9399xfcrrj46bkzxbav3m9z9r36bx6j2x"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8020,13 +8021,13 @@ algorithms. (Marco Notaro, Max Schubach, Peter N. Robinson and Giorgio Valentini
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "5.6")
+    (version "5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HelpersMG" version))
               (sha256
                (base32
-                "1ca84daf0zr5ngrrkm88ydmar22yhpjy3fwavypcllimclqh2948"))))
+                "1l0hy417r54ljk9mwgx8zzx95v4gvd5s6yhwy5fx7p44lidnanvr"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -10574,7 +10575,7 @@ including most of the delicious Cantonese cuisine.")
                 "0vbyw8017jbad1f1zd6ccaf68p1863r7qrli8nj47si7ivs0qv3s"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
-    (inputs (list proj geos gdal))
+    (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-sf

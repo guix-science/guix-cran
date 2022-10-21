@@ -501,13 +501,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "1.8")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "overlapping" version))
               (sha256
                (base32
-                "01wb5fzr6s0vnaxrnxhirfcx4369jvf40ikv9yjkiby47ivqhjcz"))))
+                "1rxd0pv6knmq0vdqbdch869prw1n4d75vj9l4n9anl0s7w2cz5y4"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-ggplot2))
@@ -1301,16 +1301,16 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm
   (package
     (name "r-osrm")
-    (version "3.5.1")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osrm" version))
               (sha256
                (base32
-                "1fii7xgcnrqmfp9rak6hfn6fh5pgwvww2nj9zfmrz6ams22ac6sw"))))
+                "0lp5idik0lp2jn7mkgz512kpgp1zxxn4c7b1xb7aaia112p9fapp"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-jsonlite r-isoband r-googlepolylines
+    (propagated-inputs (list r-sf r-rcppsimdjson r-mapiso r-googlepolylines
                              r-curl))
     (home-page "https://github.com/riatelab/osrm")
     (synopsis
@@ -1318,9 +1318,9 @@ handle servers that run locally as well as the OSRM webserver.")
     (description
      "An interface between R and the OSRM API. OSRM is a routing service based on
 OpenStreetMap data.  See <http://project-osrm.org/> for more information.  This
-package allows to compute routes, trips, isochrones and travel distances
-matrices (travel time and kilometric distance).")
-    (license license:gpl3)))
+package enables the computation of routes, trips, isochrones and travel
+distances matrices (travel time and kilometric distance).")
+    (license license:gpl3+)))
 
 (define-public r-osqp
   (package
@@ -2222,13 +2222,13 @@ provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
 (define-public r-origami
   (package
     (name "r-origami")
-    (version "1.0.5")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "origami" version))
               (sha256
                (base32
-                "0qsjrfw8szyc7k6a2ivrdl6c2xrpcb9mlqdlbnzwna64xjm0h3cd"))))
+                "0b66alm1mr6vsgj5cgliqxw8vpm1x504qs42crlf0n6339a38h5l"))))
     (properties `((upstream-name . "origami")))
     (build-system r-build-system)
     (propagated-inputs (list r-listenv
@@ -2476,13 +2476,13 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
 (define-public r-ordr
   (package
     (name "r-ordr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ordr" version))
               (sha256
                (base32
-                "1597v4hab6cvq7vkcg1bd576plr7x8ha9ikjp2xj9crkydmikg3h"))))
+                "07nsl6mdm4dmyl8vsqzcpd2mihcxsm68gjx3v1dfqgjqmz477nvf"))))
     (properties `((upstream-name . "ordr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -2497,10 +2497,9 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
                              r-ggrepel
                              r-ggplot2
                              r-generics
-                             r-dplyr
-                             r-broom))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ordr")
+    (home-page "https://github.com/corybrunson/ordr")
     (synopsis "'tidyverse' Extension for Ordinations and Biplots")
     (description
      "Ordination comprises several multivariate exploratory and explanatory techniques
@@ -5106,7 +5105,6 @@ package has been peer-reviewed by rOpenSci (v.  0.2.0.0).")
                 "0m4xp70cq4h76r4qk7krn5p9w3xv44z5lrkpys7kbvxr38g5y0il"))))
     (properties `((upstream-name . "opentimsr")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rsqlite r-rcpp r-dbi))
     (home-page "https://github.com/michalsta/opentims")
     (synopsis "An Open-Source Loader for Bruker's timsTOF Data Files")
@@ -5385,6 +5383,41 @@ toolkit) packages.  By loading and installing openMSE', users have access to the
 full functionality contained within these packages.  Learn more about openMSE at
 <https://openmse.com/>.")
     (license license:gpl3)))
+
+(define-public r-openml
+  (package
+    (name "r-openml")
+    (version "1.12")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OpenML" version))
+              (sha256
+               (base32
+                "0ij4mnbfkckidv9f414fclyhrbbkgmpz5zsjiqa3zlckr3pfaxg7"))))
+    (properties `((upstream-name . "OpenML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml
+                             r-stringi
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-digest
+                             r-data-table
+                             r-curl
+                             r-checkmate
+                             r-bbmisc
+                             r-backports))
+    (home-page "https://github.com/openml/openml-r")
+    (synopsis "Open Machine Learning and Open Data Platform")
+    (description
+     "We provide an R interface to OpenML.org which is an online machine learning
+platform where researchers can access open data, download and upload data sets,
+share their machine learning tasks and experiments and organize them online to
+work and collaborate with other researchers.  The R interface allows to query
+for data sets with specific properties, and allows the downloading and uploading
+of data sets, tasks, flows and runs.  See <https://www.openml.org/guide/api> for
+more information.")
+    (license license:bsd-3)))
 
 (define-public r-openmetrics
   (package
@@ -5801,16 +5834,17 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.4.3")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openairmaps" version))
               (sha256
                (base32
-                "1pfrdsyxzfwrngjaibwr9lb67yc77hq1wjjr3x0i463ha9h17fzy"))))
+                "0b6ibb4846wnmv6pwl83j7544iyma2b0mxjkx6jic0g82m9r7f7a"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -5819,7 +5853,8 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
                              r-lubridate
                              r-leaflet
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://cran.r-project.org/package=openairmaps")
     (synopsis "Create Interactive Web Maps of Air Pollution Data")
     (description
@@ -6350,6 +6385,41 @@ similarity in the context of a collection of terms sets - Greene et al.  2017
 with various graphical options - Greene et al.  2017
 <doi:10.1093/bioinformatics/btw763>.")
     (license license:gpl2+)))
+
+(define-public r-ontologics
+  (package
+    (name "r-ontologics")
+    (version "0.5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ontologics" version))
+              (sha256
+               (base32
+                "074pqjfm24gd332xja6mgdy8grbbwa6r3yhclcpm1d7hx8dhy2g9"))))
+    (properties `((upstream-name . "ontologics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-rdflib
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luckinet/ontologics")
+    (synopsis "Code-Logics to Handle Ontologies")
+    (description
+     "This package provides tools to build and work with an ontology of linked (open)
+data in a tidy workflow.  It is inspired by the Food and Agrilculture
+Organizations (FAO) caliper platform
+<https://www.fao.org/statistics/caliper/web/> and makes use of the Simple
+Knowledge Organisation System (SKOS).")
+    (license license:gpl3+)))
 
 (define-public r-ontofast
   (package
@@ -7136,7 +7206,7 @@ the population.")
                 "0psw7hily07xz61x25mg7iirr8aic32ny0770ks8ldy5rq2qjg86"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -8813,7 +8883,7 @@ of CARET's GLM model class, by returning the final trained model.")
                 "1w48gldbnckbm61ci67b8sdxq9dcm6mxl30gcwkm9n3dqnmdf7n7"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
                              r-rvest
                              r-rlang

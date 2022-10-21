@@ -5500,13 +5500,13 @@ reliability of scenarios with equal or different probabilities of occurrence
 (define-public r-mtb
   (package
     (name "r-mtb")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mtb" version))
               (sha256
                (base32
-                "0zpk19654ymhi0gpxcvp77y8gf5xvpvpndxw4cg2fbrybvxayzmh"))))
+                "1xlm3s34y9g4g6nqzm7zwl08j6587qnzmr5xx0fwgiv5mr45jdz4"))))
     (properties `((upstream-name . "mtb")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-labeling r-htmltools r-ggplot2
@@ -5739,6 +5739,39 @@ is modeled at the protein level.  Methods exist for normalization, modeling,
 visualization, and export of results.  For a general introduction to MS-based
 thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
     (license license:gpl3)))
+
+(define-public r-mstest
+  (package
+    (name "r-mstest")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MSTest" version))
+              (sha256
+               (base32
+                "09njnxfj7i3gf91qayabhadzlwszh81pznyir0fqpsns8hzbmk4p"))))
+    (properties `((upstream-name . "MSTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pso
+                             r-numderiv
+                             r-nloptr
+                             r-lmf
+                             r-gensa
+                             r-ga
+                             r-foreach))
+    (home-page "https://github.com/roga11/MSTest")
+    (synopsis "Hypothesis Testing for Markov Switching Models")
+    (description
+     "Implementation of hypothesis testing procedures described in Hansen (1992)
+<doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
+<doi:10.3982/ECTA8609>, Dufour & Luger (2017)
+<doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2022)
+<https://grodriguezrondon.com/research/> that can be used to identify the number
+of regimes in Markov switching models.")
+    (license license:gpl3+)))
 
 (define-public r-mstem
   (package
@@ -6396,13 +6429,13 @@ more information.  The can also output all messages to a log file.")
 (define-public r-msgps
   (package
     (name "r-msgps")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "msgps" version))
               (sha256
                (base32
-                "0068w10kq0jd9a160n45mg83hxmwhsj1mbrl3bcqg1wckrmmlxvl"))))
+                "1gbkfp1dnvkrxd6rapl6mrzpr8g1acl3xmifvr2aaixfalnh1nif"))))
     (properties `((upstream-name . "msgps")))
     (build-system r-build-system)
     (home-page "https://keihirose.com/")
@@ -6562,13 +6595,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.5.0")
+    (version "3.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSEtool" version))
               (sha256
                (base32
-                "050hmxd8r1g4vzhv0l5zizmx2b2hv9nzdlxamz2fsy1gaqnrv6fk"))))
+                "1hwh55fh9rab1hda6a2ks7r2bdwgy16wz4c6jrfa80ifkfki32hi"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -8357,13 +8390,13 @@ ProteomeDiscoverer', Spectronaut', DIA-NN and MaxQuant'.")
 (define-public r-mpv
   (package
     (name "r-mpv")
-    (version "1.58")
+    (version "1.59")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MPV" version))
               (sha256
                (base32
-                "1dw3xx1dhvfkasn0202fkb6izl0yl793qrznnr5310qrpj6mkyq0"))))
+                "112zcqxjn79d9qyr5wnwycvw0nklmxiiakh7089a66nrj77lpn8n"))))
     (properties `((upstream-name . "MPV")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-kernsmooth))
@@ -9289,13 +9322,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move
   (package
     (name "r-move")
-    (version "4.1.8")
+    (version "4.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "move" version))
               (sha256
                (base32
-                "185xfprx49y7z1sbymqaf3vnfcmz6y594rxbs9ri5dbafgpaqiv3"))))
+                "099yc048ffa73wc6nvnls37vrvnpf2qswm905l6kbmnx0n7as3r1"))))
     (properties `((upstream-name . "move")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -10612,13 +10645,13 @@ to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C. (2016)
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-15")
+    (version "1.9-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "monomvn" version))
               (sha256
                (base32
-                "1i2nj50wxw1i93sk3aljl2ahic7n2mwlnvmx25jkjks60pplr6gr"))))
+                "1pldjm4hd3a62x1b1g0b7mpb46hf9zr113cq8b9cam0j40cdz17i"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -12566,13 +12599,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelsummary" version))
               (sha256
                (base32
-                "119wfl5a5sda72i27h70gsd9qargwngvvy0a863ax2mygsqx0m96"))))
+                "1hfrgl6crmznbx2mkr5grd87zrgx8m5j7zjyq89yr5g0n6gl9ka2"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
@@ -14365,7 +14398,6 @@ package mvtnorm', and mmcm.resamp() gives P-value by using a permutation method.
                 "14kp0n24nxcfnfq8drxfhsvd4apg4f7iwdamzw005rlhi5srmw3r"))))
     (properties `((upstream-name . "mmcif")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn
                              r-alabama))
     (native-inputs (list gfortran))
@@ -15270,13 +15302,13 @@ information about the search space can be queried.")
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3spatial" version))
               (sha256
                (base32
-                "1v618pn2ffgprx9qlhf8xiqh892zni3v1cmxw7dyr2fm7k13gljx"))))
+                "0b36mjk1y3vdrgrhvdmc0qd7l19b7k9qbgyns4w0711riqz37al4"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -19908,21 +19940,22 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai" version))
               (sha256
                (base32
-                "1b1dirfic90ycsv2md23dks0wc0a8iq09ql08kqsl49bkmr0n5k9"))))
+                "0jqvjxphalzchslzdq39d885kr923hg4bvwxd6chdsn2ii6w8aj6"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
-     "Extremely simple and lightweight method for concurrent / parallel code
-execution, built on nanonext and NNG (Nanomsg Next Gen) technology.")
+     "Simple and lightweight parallelism and concurrent code execution, local or
+distributed across the network, built on nanonext and NNG (Nanomsg Next Gen)
+technology.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -22783,52 +22816,58 @@ allowed) considered from multiple layers of categories.")
 (define-public r-mhctools
   (package
     (name "r-mhctools")
-    (version "1.4.3")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MHCtools" version))
               (sha256
                (base32
-                "1cmihangzkbawa49c9shhcsw6iyxvndh6n3my8lvcjph86wvihxr"))))
+                "07qrkwwhvf9qm1002dm03gjm62zahf38pvpafg3ln82m4157qhwy"))))
     (properties `((upstream-name . "MHCtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mgcv))
+    (propagated-inputs (list r-openxlsx r-mgcv))
     (home-page "https://cran.r-project.org/package=MHCtools")
     (synopsis "Analysis of MHC Data in Non-Model Species")
     (description
-     "Twelve tools for bioinformatical processing and analysis of major
+     "Fifteen tools for bioinformatics processing and analysis of major
 histocompatibility complex (MHC) data.  The functions are tailored for amplicon
 data sets that have been filtered using the dada2 method (for more information
-on dada2', visit <https://benjjneb.github.io/dada2/> ), but even other types of
-data sets can be analyzed.  The DistCalc() function calculates Grantham,
-Sandberg, or p-distances from pairwise comparisons of all sequences in a data
-set, and mean distances of all pairwise comparisons within each sample in a data
-set.  The function additionally outputs five tables with physico-chemical
-z-descriptor values (based on Sandberg et al.  1998) for each amino acid
-position in all sequences in the data set.  These tables may be useful for
-further downstream analyses, such as estimation of MHC supertypes.  The
-BootKmeans() function is a wrapper for the kmeans() function of the stats
-package, which allows for bootstrapping.  Bootstrapping k-estimates may be
-desirable in data sets, where e.g. BIC- vs. k-values do not produce clear
-inflection points (\"elbows\"\").  BootKmeans() performs multiple runs of kmeans()
-and estimates optimal k-values based on a user-defined threshold of BIC
-reduction.  The method is an automated and bootstrapped version of visually
-inspecting elbow plots of BIC- vs. k-values.  The ClusterMatch() function is a
-tool for evaluating whether different k-means() clustering models identify
-similar clusters, and summarize bootstrap model stats as means for different
-estimated values of k.  It is designed to take files produced by the
-BootKmeans() function as input, but other data can be analysed if the
-descriptions of the required data formats are observed carefully.  The
-HpltFind() function infers putative haplotypes from families in the data set.
-The GetHpltTable() and GetHpltStats() functions evaluate the accuracy of the
-haplotype inference.  The PapaDiv() function compares parent pairs in the data
+on dada2, visit <https://benjjneb.github.io/dada2/> ), but even other types of
+data sets can be analyzed.  The ReplMatch() function matches replicates in data
+sets in order to evaluate genotyping success.  The GetReplTable() and
+GetReplStats() functions perform such an evaluation.  The CreateFas() function
+creates a fasta file with all the sequences in the data set.  The
+CreateSamplesFas() function creates individual fasta files for each sample in
+the data set.  The DistCalc() function calculates Grantham, Sandberg, or
+p-distances from pairwise comparisons of all sequences in a data set, and mean
+distances of all pairwise comparisons within each sample in a data set.  The
+function additionally outputs five tables with physico-chemical z-descriptor
+values (based on Sandberg et al.  1998) for each amino acid position in all
+sequences in the data set.  These tables may be useful for further downstream
+analyses, such as estimation of MHC supertypes.  The BootKmeans() function is a
+wrapper for the kmeans() function of the stats package, which allows for
+bootstrapping.  Bootstrapping k-estimates may be desirable in data sets, where
+e.g. BIC- vs. k-values do not produce clear inflection points (\"elbows\").
+BootKmeans() performs multiple runs of kmeans() and estimates optimal k-values
+based on a user-defined threshold of BIC reduction.  The method is an automated
+and bootstrapped version of visually inspecting elbow plots of BIC- vs.
+k-values.  The ClusterMatch() function is a tool for evaluating whether
+different k-means() clustering models identify similar clusters, and summarize
+bootstrap model stats as means for different estimated values of k.  It is
+designed to take files produced by the BootKmeans() function as input, but other
+data can be analysed if the descriptions of the required data formats are
+observed carefully.  The PapaDiv() function compares parent pairs in the data
 set and calculate their joint MHC diversity, taking into account sequence
-variants that occur in both parents.  The ReplMatch() function matches
-replicates in data sets in order to evaluate genotyping success.  The
-GetReplTable() and GetReplStats() functions perform such an evaluation.  The
-CreateFas() function creates a fasta file with all the sequences in the data
-set.  The CreateSamplesFas() function creates individual fasta files for each
-sample in the data set.")
+variants that occur in both parents.  The HpltFind() function infers putative
+haplotypes from families in the data set.  The GetHpltTable() and GetHpltStats()
+functions evaluate the accuracy of the haplotype inference.  The
+CreateHpltOccTable() function creates a binary (logical) haplotype-sequence
+occurrence matrix from the output of HpltFind(), for easy overview of which
+sequences are present in which haplotypes.  The HpltMatch() function compares
+haplotypes to help identify overlapping and potentially identical types.  The
+NestTablesXL() function translates the output from HpltFind() to an Excel
+workbook, that provides a convenient overview for evaluation and curating of the
+inferred putative haplotypes.")
     (license license:expat)))
 
 (define-public r-mhcnuggetsr
@@ -30414,17 +30453,17 @@ marginalized zero-inflated Poisson model described in Long et al. (2014)
 (define-public r-mcompanion
   (package
     (name "r-mcompanion")
-    (version "0.5-3")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcompanion" version))
               (sha256
                (base32
-                "0051agyzbhrsxi9wpfpqcq98h7y25627s2czf30qxcq80m7xbhj0"))))
+                "13qqbvz0zq2pbf7r5civ01aqvwv5h7cbm7l72qbqnldr5rpn6ra7"))))
     (properties `((upstream-name . "mcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-mass r-gbutils))
-    (home-page "https://cran.r-project.org/package=mcompanion")
+    (home-page "https://geobosh.github.io/mcompanion/")
     (synopsis "Objects and Methods for Multi-Companion Matrices")
     (description
      "This package provides a class for multi-companion matrices with methods for

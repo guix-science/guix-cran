@@ -4792,13 +4792,13 @@ problems.")
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.7-0")
+    (version "2.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMOF" version))
               (sha256
                (base32
-                "0q1ir20qs6zvxbs8h2qkq71w8nm0cg9p53sds8i8yhb209rxmvhi"))))
+                "08sfckjglrii0hn9ka5pdbx3k5y6s4f1w5wa1jcb0gsvyffk0gmh"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
     (home-page "https://gitlab.com/NMOF")
@@ -5890,13 +5890,13 @@ Research) <doi:10.1177/0962280220903763>.")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "2.0.6")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2plot" version))
               (sha256
                (base32
-                "0awg7xzzdmvsam9zpfdb6bqwdb5glk3a5ssfhcn7bw07cnl1zxvf"))))
+                "0bpb9pxdjpwg3kqldbmw8vlq2w843dgyv0q13265kbcpwqhqmnma"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgxr
@@ -5921,13 +5921,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "2.0.6")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2extra" version))
               (sha256
                (base32
-                "0k9ifhp23cb0r8h6vnq6xwy80m56rpqkqyv7fzhxpz3b4s7zcwzc"))))
+                "1zkv7qr0gwlma9g0b51ij95rlmlnss71cr8871wfaxg40pf8drk2"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -5961,19 +5961,21 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.0.8")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2est" version))
               (sha256
                (base32
-                "07bcwd6cprpyj2s4pk4vz2y9ix4hw1lw87234gkg45gz5adkbdjf"))))
+                "1hliid0v5qlfy7rlrywbi8p4l6gldjk9gjgd2508qxdyx3wy9yij"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
                              r-ucminf
                              r-symengine
                              r-stanheaders
+                             r-rxode2random
+                             r-rxode2parse
                              r-rxode2
                              r-rvmmin
                              r-rex
@@ -13856,7 +13858,7 @@ And Data Analysis: Statistics for Censored Environmental Data\".")
                 "1nd2sxgj8yyjynn0bd6k7pq40isxycr9a5bz0g42ndm4kyd1vjva"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-shinywidgets
                              r-shiny
                              r-rmarkdown

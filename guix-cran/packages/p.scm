@@ -9,6 +9,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages curl)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
@@ -16,7 +17,7 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages maths)
-  #:use-module (guile)
+  #:use-module (gnu packages gettext)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages pkg-config)
@@ -5533,6 +5534,28 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
      "Algorithms and subroutines for patient-reported outcome data analysis.")
     (license license:expat)))
 
+(define-public r-prolific-api
+  (package
+    (name "r-prolific-api")
+    (version "0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prolific.api" version))
+              (sha256
+               (base32
+                "0lnxkap6x4x5wvayfx1lm4h646wb0wsffn7xysrcysfdsaxa817d"))))
+    (properties `((upstream-name . "prolific.api")))
+    (build-system r-build-system)
+    (inputs (list curl))
+    (propagated-inputs (list r-jsonlite r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=prolific.api")
+    (synopsis "User-Friendly Interface for Accessing the Prolific API")
+    (description
+     "This package provides a user-friendly interface for creating and managing
+empirical crowd-sourcing studies via API access to <https://www.prolific.co>.")
+    (license license:gpl3+)))
+
 (define-public r-proliferativeindex
   (package
     (name "r-proliferativeindex")
@@ -9620,6 +9643,29 @@ designs.  A number of example data sets are included.")
 event endpoint.")
     (license license:gpl3)))
 
+(define-public r-pqrfe
+  (package
+    (name "r-pqrfe")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pqrfe" version))
+              (sha256
+               (base32
+                "18jyvaxixi51x3ibw8p6bm9j3sawkkk8ddhzw5nygii6x8prkmni"))))
+    (properties `((upstream-name . "pqrfe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (home-page "https://cran.r-project.org/package=pqrfe")
+    (synopsis "Penalized Quantile Regression with Fixed Effects")
+    (description
+     "Quantile regression with fixed effects is a general model for longitudinal data.
+ Here we proposed to solve it by several methods.  The estimation methods
+include three loss functions as check, asymmetric least square and asymmetric
+Huber functions; and three structures as simple regression, fixed effects and
+fixed effects with penalized intercepts by LASSO.")
+    (license license:gpl2+)))
+
 (define-public r-pqlseq
   (package
     (name "r-pqlseq")
@@ -11060,7 +11106,7 @@ Lindsay, 1988, <doi:10.1090/conm/080>).")
                 "1vn99kh9cpicljs3caz3pw12azm19sx8q9nybk0xfffrldmz6r2q"))))
     (properties `((upstream-name . "potools")))
     (build-system r-build-system)
-    (inputs (list gettext))
+    (inputs (list gnu-gettext))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MichaelChirico/potools")
@@ -11528,7 +11574,6 @@ in any submodels after performing arbitrary model selection.")
                 "1qni2dgxpvr96zp9wf9cinrg2v637q5ab2792ivhf1ld1y08ff02"))))
     (properties `((upstream-name . "POSetR")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rdpack r-rcpp r-igraph))
     (home-page "https://cran.r-project.org/package=POSetR")
     (synopsis "Partially Ordered Sets in R")
@@ -12969,22 +13014,24 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
 (define-public r-pomdpsolve
   (package
     (name "r-pomdpsolve")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomdpSolve" version))
               (sha256
                (base32
-                "0iqpp1y8gz3ihifgln7b5xmwjrvripmkkwg6mr4938yqv7103mz1"))))
+                "0fkh2xamhgrh743b06mi6m7fg3bw989hxmwkf00bq6y7dr9c168b"))))
     (properties `((upstream-name . "pomdpSolve")))
     (build-system r-build-system)
-    (home-page "https://github.com/mhahsler/pomdp")
+    (home-page "https://github.com/mhahsler/pomdpSolve")
     (synopsis
      "Interface to 'pomdp-solve' for Partially Observable Markov Decision Processes")
     (description
-     "Installs pomdp-solve', a program to solve Partially Observable Markov Decision
-Processes (POMDPs) using a variety of exact and approximate value iteration
-algorithms.  Smallwood and Sondik (1973) <doi:10.1287/opre.21.5.1071>.")
+     "Installs an updated version of pomdp-solve', a program to solve Partially
+Observable Markov Decision Processes (POMDPs) using a variety of exact and
+approximate value iteration algorithms.  A convenient R infrastructure is
+provided in package pomdp.  Kaelbling, Littman and Cassandra (1998)
+<doi:10.1016/S0004-3702(98)00023-X>.")
     (license license:gpl3+)))
 
 (define-public r-pomdp
@@ -13283,13 +13330,13 @@ For more background and to reference the package see
 (define-public r-polypoly
   (package
     (name "r-polypoly")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polypoly" version))
               (sha256
                (base32
-                "1l955xgmgnlg7n2xi0bddcl9b8zm13bd9hlvvh6mxhkkdjsibaln"))))
+                "1xd5s2gj3x47dvq02lkjih6rbvmjh3hwybzwsvnq3dxvcj9jjkyw"))))
     (properties `((upstream-name . "polypoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-reshape2 r-ggplot2))
@@ -13469,13 +13516,13 @@ on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).")
 (define-public r-polygonsoup
   (package
     (name "r-polygonsoup")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PolygonSoup" version))
               (sha256
                (base32
-                "0cdfhy2dgzxw145k15cw9kd398md79q6s8s4wi8s05wy7zfb51dg"))))
+                "1b9hwgfcac8jrr8na5g2n779hhm24cy7q4xr3kz9nlr8sp5zymb8"))))
     (properties `((upstream-name . "PolygonSoup")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -13546,6 +13593,36 @@ functions via line integrate() along the polygon boundary (Meyer and Held, 2014,
 Gaussian density based on polygon triangulation.  For simple integration along
 the axes, the cubature package is more appropriate.")
     (license license:gpl2)))
+
+(define-public r-polycrossdesigns
+  (package
+    (name "r-polycrossdesigns")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PolycrossDesigns" version))
+              (sha256
+               (base32
+                "1fl86blzfli3936hg3cpb82hpa3r9wjnrmz0252dfy32zjcqh15r"))))
+    (properties `((upstream-name . "PolycrossDesigns")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PolycrossDesigns")
+    (synopsis "Polycross Designs (\"PolycrossDesigns\"\")")
+    (description
+     "This package provides a polycross is the pollination by natural hybridization of
+a group of genotypes, generally selected, grown in isolation from other
+compatible genotypes in such a way to promote random open pollination.  A
+particular practical application of the polycross method occurs in the
+production of a synthetic variety resulting from cross-pollinated plants.
+Laying out these experiments in appropriate designs, known as polycross designs,
+would not only save experimental resources but also gather more information from
+the experiment.  Different experimental situations may arise in polycross
+nurseries which may be requiring different polycross designs (Varghese et.  al.
+(2015) <doi:10.1080/02664763.2015.1043860>. \" Experimental designs for open
+pollination in polycross trials\").  This package contains a function named PD()
+which generates nine types of polycross designs suitable for various
+experimental situations.")
+    (license license:gpl2+)))
 
 (define-public r-polyapost
   (package
@@ -17307,13 +17384,13 @@ automatic threshold selection proposed by Otsu (1979)
 (define-public r-plgp
   (package
     (name "r-plgp")
-    (version "1.1-11")
+    (version "1.1-12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plgp" version))
               (sha256
                (base32
-                "15dww3k20vivp8d1a33z3bl1mx5cmq0i05q4bmgp06zd6y5xsihl"))))
+                "06sk9i6fn66w0lrzkj5b95m3xb66d9b602kwh6nkxyh9bjryd70l"))))
     (properties `((upstream-name . "plgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tgp r-mvtnorm))
@@ -19063,7 +19140,7 @@ interface to that API, allowing you to query it and work with its responses.")
                 "1svy6va5za7svinh77vhhhd05n8rr1s1ayjqcgxhssd8j98ckmxd"))))
     (properties `((upstream-name . "pivmet")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-runjags
                              r-rstan
                              r-rjags
@@ -25298,7 +25375,6 @@ following the lumpability criteria of Kemeny and Snell (1976), ISBN:0387901922."
                 "1xr98vp2s3s2cw4bjdw6156zas15jxvp9fbyz9rxd68i3zrblplx"))))
     (properties `((upstream-name . "pedmod")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-testthat
                              r-rcpparmadillo
                              r-rcpp
@@ -30790,13 +30866,13 @@ relationships of two variables by unit or in aggregate.")
 (define-public r-panelvar
   (package
     (name "r-panelvar")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelvar" version))
               (sha256
                (base32
-                "1ckllb14k2xrnbwi5z84f6003f61vdbw0wcsa4vsma0yp4iybh0q"))))
+                "11ci5ahgvpf72wk0p16lclca9jm30d2wr4rxw4jvr6n7x5ppmzdr"))))
     (properties `((upstream-name . "panelvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg

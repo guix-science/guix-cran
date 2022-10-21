@@ -2583,6 +2583,27 @@ of the exams package (see <http://www.r-exams.org/>) are transformed into XML
 format required by Sakai'.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-exams2learnr
+  (package
+    (name "r-exams2learnr")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exams2learnr" version))
+              (sha256
+               (base32
+                "0laimld71p3w2r01d0xm7ly7brvahhagmx4972amv4xvn66y3xv4"))))
+    (properties `((upstream-name . "exams2learnr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-learnr r-knitr r-exams))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.R-exams.org/")
+    (synopsis "Interface for 'exams' Exercises in 'learnr' Tutorials")
+    (description
+     "Automatic generation of quizzes or individual questions for learnr tutorials
+based on R/exams exercises.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-exams-mylearn
   (package
     (name "r-exams-mylearn")
@@ -7701,51 +7722,6 @@ include functions to calculate an appropriate sample size for 1- and 2-stage
 representative freedom surveys, functions to estimate surveillance system
 sensitivity and functions to support scenario tree modelling analyses.")
     (license license:gpl2+)))
-
-(define-public r-epinow2
-  (package
-    (name "r-epinow2")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EpiNow2" version))
-              (sha256
-               (base32
-                "1rcyhk0f18asrym9zd7hr5ss7aw2dd2m5wrjcsqkr8q7x6apwh3g"))))
-    (properties `((upstream-name . "EpiNow2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-stanheaders
-                             r-scales
-                             r-runner
-                             r-rstan
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-r-utils
-                             r-purrr
-                             r-progressr
-                             r-patchwork
-                             r-lubridate
-                             r-lifecycle
-                             r-ggplot2
-                             r-future-apply
-                             r-future
-                             r-futile-logger
-                             r-data-table
-                             r-cowplot
-                             r-bh))
-    (home-page "https:/epiforecasts.io/EpiNow2/")
-    (synopsis
-     "Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters")
-    (description
-     "Estimates the time-varying reproduction number, rate of spread, and doubling
-time using a range of open-source tools (Abbott et al. (2020)
-<doi:10.12688/wellcomeopenres.16006.1>), and current best practices (Gostic et
-al. (2020) <doi:10.1101/2020.06.18.20134858>).  It aims to help users avoid some
-of the limitations of naive implementations in a framework that is informed by
-community feedback and is under active development.")
-    (license license:expat)))
 
 (define-public r-epinetr
   (package

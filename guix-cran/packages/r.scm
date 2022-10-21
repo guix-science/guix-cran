@@ -16,12 +16,12 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages gnupg)
@@ -567,20 +567,21 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.0.7")
+    (version "2.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2" version))
               (sha256
                (base32
-                "1a8wbasgrcllr0ypi8gcqd2chp77826lj7iil5l2s3p9f5hykd90"))))
+                "143csj0kjss2mmmnnpnpbdfgbggjas2avd48ijdh97ckmva4wglk"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
-                             r-stanheaders
-                             r-sitmo
+                             r-rxode2random
+                             r-rxode2parse
+                             r-rxode2ll
+                             r-rxode2et
                              r-rex
-                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-qs
@@ -590,12 +591,11 @@ burden of recompiling rxode2'.")
                              r-lotri
                              r-inline
                              r-ggplot2
-                             r-dparser
+                             r-data-table
                              r-cli
                              r-checkmate
                              r-bh
-                             r-backports
-                             r-assertthat))
+                             r-backports))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://nlmixr2.github.io/rxode2/")
     (synopsis "Facilities for Simulating from ODE-Based Models")
@@ -1350,13 +1350,13 @@ MATLAB Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram
 (define-public r-rwave
   (package
     (name "r-rwave")
-    (version "2.6-0")
+    (version "2.6-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rwave" version))
               (sha256
                (base32
-                "1si4iambn5kxagc24gy83hlvv5zgypz6dqxbzk24qxzfwglkhqzb"))))
+                "1yp6bp9md04q27im61k9mgwzyi222gwyv1mxz8163b5ab2rc7hbx"))))
     (properties `((upstream-name . "Rwave")))
     (build-system r-build-system)
     (home-page "https://carmona.princeton.edu/TFbook/tfbook.html")
@@ -4346,7 +4346,6 @@ tracking system.")
                 "0sc9jiscabr72fsx1wwjvq44casvhdsinj77wrcp017a4f9i0k5b"))))
     (properties `((upstream-name . "rsyslog")))
     (build-system r-build-system)
-    (inputs (list))
     (home-page "https://github.com/atheriel/rsyslog")
     (synopsis "Interface to the 'syslog' System Logger")
     (description
@@ -4689,16 +4688,16 @@ information.")
 (define-public r-rstream
   (package
     (name "r-rstream")
-    (version "1.3.6")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rstream" version))
               (sha256
                (base32
-                "1mr869hff5wdpw6a7x71366y8dxf9vljbb11fssfkhcf7hm2ipnj"))))
+                "1ilkndp0jb4p91jmf3f47054sx9wzgk55vic2qlh59vs43mvs99i"))))
     (properties `((upstream-name . "rstream")))
     (build-system r-build-system)
-    (home-page "http://statmath.wu.ac.at/arvag/")
+    (home-page "https://statmath.wu.ac.at/arvag/")
     (synopsis "Streams of Random Numbers")
     (description
      "Unified object oriented interface for multiple independent streams of random
@@ -6427,13 +6426,13 @@ then to estimate a structural equation model.")
 (define-public r-rseis
   (package
     (name "r-rseis")
-    (version "4.1-1")
+    (version "4.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSEIS" version))
               (sha256
                (base32
-                "19qjmdpzh6wgqm654wrvk3qimw569f9w1n66mnqgm3mgav8dyd25"))))
+                "0xpzvcw2blh3zzp7lacrq3zh7hx44d06ksi71nl1z1yk1krwmmbn"))))
     (properties `((upstream-name . "RSEIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rwave r-rpmg))
@@ -6685,13 +6684,13 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.23.0")
+    (version "0.24.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rscorecard" version))
               (sha256
                (base32
-                "0q1sm4fllvk1i0ifif5pms77v6hklw896ib0rxma0jch4jslhx69"))))
+                "097fkpzbri7nvqs931dkm3kbbkajmns6rpmyd6vqdds6yjj3mk2z"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11570,7 +11569,15 @@ outcomes with ties are supported.")
                 "05a8wf2nkw3nssys9xbf40ihgbw4x6vjmzp2dcfsqxhr0wjmd7km"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
-    (inputs (list zlib pandoc libarchive cmake))
+    (inputs (list zstd
+                  zlib
+                  zlib
+                  xz
+                  pandoc
+                  lz4
+                  libarchive
+                  expat
+                  cmake))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/mgondan/rolog")
@@ -12213,7 +12220,6 @@ information can be found on the ROI homepage
                 "00phrxhsszp98wa9wxbx51z2zrrwpdwamym1k19493ppn7vz22ix"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-treetools
                              r-treedist
                              r-rfast
@@ -16126,18 +16132,18 @@ packages such as gnlm', stable', growth', repeated', and event (available at
 (define-public r-rmumps
   (package
     (name "r-rmumps")
-    (version "5.2.1-18")
+    (version "5.2.1-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmumps" version))
               (sha256
                (base32
-                "0c0c1k9ca18mpc8kw36hn0z2n4hn04wnh45hig49rmrz17n3sk7j"))))
+                "17jm7b7rnq5x5jyyj5pc10zpkp55y9l9amm1rq7cd4qs53w01dka"))))
     (properties `((upstream-name . "rmumps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list gfortran))
-    (home-page "http://mumps.enseeiht.fr/")
+    (home-page "http://www.mumps-solver.org/")
     (synopsis "Wrapper for MUMPS Library")
     (description
      "Some basic features of MUMPS (Multifrontal Massively Parallel sparse direct
@@ -16705,13 +16711,13 @@ to facilitate the analysis of MixtComp output.")
 (define-public r-rmixtcompio
   (package
     (name "r-rmixtcompio")
-    (version "4.0.7")
+    (version "4.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RMixtCompIO" version))
               (sha256
                (base32
-                "1z2jw89xrin1hh6scfkvvxag57w558rd8vdf08wzhp2glwdqrfr8"))))
+                "0q8k8arnrgwvrsl6f2p0a53vk5krynwgjfsdp71z9c1wjq22zsa3"))))
     (properties `((upstream-name . "RMixtCompIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-foreach r-doparallel r-bh))
@@ -24343,6 +24349,37 @@ classification and featuring OOB error approximation and importance measure as
 introduced in Kursa (2014) <doi:10.18637/jss.v061.i10>.")
     (license license:gpl2+)))
 
+(define-public r-rfempimp
+  (package
+    (name "r-rfempimp")
+    (version "2.1.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RfEmpImp" version))
+              (sha256
+               (base32
+                "1azcjwf9l4c3ssp565qkvpqx3n28vfdwgcy53z61psgc1nlxnk19"))))
+    (properties `((upstream-name . "RfEmpImp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-mice))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shangzhi-hong/RfEmpImp")
+    (synopsis "Multiple Imputation using Chained Random Forests")
+    (description
+     "An R package for multiple imputation using chained random forests.  Implemented
+methods can handle missing data in mixed types of variables by using
+prediction-based or node-based conditional distributions constructed using
+random forests.  For prediction-based imputation, the method based on the
+empirical distribution of out-of-bag prediction errors of random forests and the
+method based on normality assumption for prediction errors of random forests are
+provided for imputing continuous variables.  And the method based on predicted
+probabilities is provided for imputing categorical variables.  For node-based
+imputation, the method based on the conditional distribution formed by the
+predicting nodes of random forests, and the method based on proximity measures
+of random forests are provided.  More details of the statistical methods can be
+found in Hong et al. (2020) <arXiv:2004.14823>.")
+    (license license:gpl3)))
+
 (define-public r-rfclust
   (package
     (name "r-rfclust")
@@ -27342,13 +27379,13 @@ or block data) can be used in a Maximum-Likelihood framework.")
 (define-public r-rendo
   (package
     (name "r-rendo")
-    (version "2.4.6")
+    (version "2.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REndo" version))
               (sha256
                (base32
-                "0h3578ii419xjz1lllba6709k56b7h7xhyl63rszbn2lyb3wcbsp"))))
+                "0c0jgl71m44igbif529b7n81hip7jyzqwpb64dmazgbi4ha3z0jx"))))
     (properties `((upstream-name . "REndo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -30238,13 +30275,13 @@ Statistik (second edition).")
 (define-public r-redamor
   (package
     (name "r-redamor")
-    (version "0.6.5")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ReDaMoR" version))
               (sha256
                (base32
-                "0hl0yngry9hj0r2mwxgwdfbhwfnba7r53dlf2q1nzd3z0a2hh3cq"))))
+                "0jn0qa3ml7snr1yjzjchj0jxy2gajf7dkwyf82kdgxvyfypj44p6"))))
     (properties `((upstream-name . "ReDaMoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -33185,13 +33222,13 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhs
   (package
     (name "r-rdhs")
-    (version "0.7.5")
+    (version "0.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdhs" version))
               (sha256
                (base32
-                "1lr5bsp63kxiynmhrqzqi7wkzikg4w4nnfhz2pzjrm3lgh41dk1d"))))
+                "1ikh2hq5jb9fifpp496y88xzgqy7k0axg1c70a03wm48nr93xc0y"))))
     (properties `((upstream-name . "rdhs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34586,13 +34623,13 @@ headers.  It now also includes the pub/sub functions from the rredis package.")
 (define-public r-rcppquantuccia
   (package
     (name "r-rcppquantuccia")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppQuantuccia" version))
               (sha256
                (base32
-                "0nclclhrhvdma8s07jly0xrmaf8iqigln137wmjnsmj6hg7r8ph9"))))
+                "06ahzp0rvk3wrrj46dmszkmpnybaa5hrpbs2cs5h3jn633k67zj6"))))
     (properties `((upstream-name . "RcppQuantuccia")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -35642,13 +35679,13 @@ color selection function, which will help users make a beautiful figure.")
 (define-public r-rcoletum
   (package
     (name "r-rcoletum")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RColetum" version))
               (sha256
                (base32
-                "1hgk9p234m3w49sw2j2rg8c14z3gz1mabvb69b1bxrg7f1mz9slg"))))
+                "04gf2689fm9fm1nwsi4yn46rdsxpqznxspxcmjjhg0j1lxdkda39"))))
     (properties `((upstream-name . "RColetum")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -38686,7 +38723,7 @@ distribution and random vectors from the Dirichlet distribution.")
                 "0i9i1hifr7ljccmr3rd1rxfngimwdr88njr7lqba179g87jg1l42"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -39086,7 +39123,6 @@ formats and data structures common to data analysis practitioners.")
                 "19k10p63nhcfn98ljgp15hdcvha1bd1s0kprirrardy4kdj7xs51"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-spacefillr
                              r-rcppthread
                              r-rcpp
@@ -41084,7 +41120,6 @@ rejection.  The method is based on G. Beliakov (2005)
                 "0w9b3vdlx2kjviz4790lrmbzb8i1lrckiy1jxzl9kxycp1kjqkwa"))))
     (properties `((upstream-name . "rankUncertainty")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-magrittr r-cpp11))
     (home-page "https://cran.r-project.org/package=rankUncertainty")
     (synopsis "Methods for Working with Uncertainty in Rankings")

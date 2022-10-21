@@ -6127,13 +6127,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestploter" version))
               (sha256
                (base32
-                "07i0b1bl7qbk4jsi0qr543jmrkwfaply6ahaa2knx2p9fcvf607b"))))
+                "0gmcmjr8r4xklzqdx2i2aimmwas50v6g7lmib3v5xxlq8rfxm0ad"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtable r-gridextra))
@@ -6996,7 +6996,7 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
                 "1q2xcrrw4x2jdvxr5q3l9lh0sfg3wjw06s9qzil11pb93h5l2ik6"))))
     (properties `((upstream-name . "footBayes")))
     (build-system r-build-system)
-    (inputs (list pandoc))
+    (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyverse
                              r-rstan
                              r-reshape2
@@ -9659,13 +9659,13 @@ option for printing decision rules.")
 (define-public r-fixest
   (package
     (name "r-fixest")
-    (version "0.10.4")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fixest" version))
               (sha256
                (base32
-                "0xwjf61k0sxlgpjmzys0j6mcgvvxidr6k47kqv68yjl46j90s0i0"))))
+                "0w08mbqzggk748nfm2rc5rw73zzzph46nspk60pbz0a0zjyjkvsy"))))
     (properties `((upstream-name . "fixest")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rcpp r-numderiv r-nlme r-dreamerr))
@@ -12603,13 +12603,13 @@ well as the classic CUSUM and EWMA methods, are included.")
 (define-public r-ffsimulator
   (package
     (name "r-ffsimulator")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ffsimulator" version))
               (sha256
                (base32
-                "1dl09j2hbdq60j3kdz1vqa0dfyzia929haphcqn8v5klmsg8glbk"))))
+                "1z1jzwsx9p5p8hkdwl7y0mlg2b4nyz2qz1iaajk9rjnjg1g0q2hd"))))
     (properties `((upstream-name . "ffsimulator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -15253,13 +15253,13 @@ another set of genes.")
 (define-public r-fbasics
   (package
     (name "r-fbasics")
-    (version "4021.92")
+    (version "4021.93")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fBasics" version))
               (sha256
                (base32
-                "11y8aid93v5784qff0ivg3r078yr9738i67xxn32n4jm8v73albr"))))
+                "1lmmdwzvqhggy6rr7yc9y5f8hxxgyzsgwm3ry0sz5ljbgfijl7g6"))))
     (properties `((upstream-name . "fBasics")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -15268,7 +15268,8 @@ another set of genes.")
                              r-spatial
                              r-mass
                              r-gss))
-    (home-page "https://www.rmetrics.org")
+    (home-page
+     "https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics")
     (synopsis "Rmetrics - Markets and Basic Statistics")
     (description
      "This package provides a collection of functions to explore and to investigate

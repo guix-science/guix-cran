@@ -3037,13 +3037,13 @@ truncated distribution functions.")
 (define-public r-winch
   (package
     (name "r-winch")
-    (version "0.0.9")
+    (version "0.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "winch" version))
               (sha256
                (base32
-                "182cail3ibkc537hr758hzm8w7nlvwgl7fg7diz21qrkm21kimxb"))))
+                "1hv5b3cqvn4mgxfd62zwn56bwisqj13l5hmjfa1b0rjj82ck8591"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
     (inputs (list zlib))

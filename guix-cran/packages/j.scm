@@ -674,7 +674,6 @@ and formatting JSON, extracting data from JSON, and modifying JSON data.")
                 "0agpkshnqijivvi042f2wkdy34g3z7849rp2p3z0y72bk6a5b2jg"))))
     (properties `((upstream-name . "jsonStrings")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-r6))
     (home-page "https://github.com/stla/jsonStrings")
     (synopsis "Manipulation of JSON Strings")
@@ -2759,13 +2758,13 @@ Derks et al. (2022) <doi:10.31234/osf.io/8nf3e>.")
 (define-public r-jetpack
   (package
     (name "r-jetpack")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jetpack" version))
               (sha256
                (base32
-                "15hmkppq775crmwichg0fsg3ki7xqfavm9bz4li79armyiry44w2"))))
+                "1kpic7smgkrrs7bglj2mp1hkkwpygvj23rq6nx5j1iwibmw3dk0l"))))
     (properties `((upstream-name . "jetpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-remotes r-docopt r-desc))
