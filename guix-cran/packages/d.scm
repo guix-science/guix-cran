@@ -1605,13 +1605,13 @@ offline and online monitoring.See in Danilo Marcondes Filho and Marcio Valk
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dvir" version))
               (sha256
                (base32
-                "0i02q6v7aasb7khnraqh1gljnfqwvv0jw3xyr2mc37rcn94qn62b"))))
+                "0azp25rhxmp4rw1jzhmya4r3v9ash1j6wra4ipkmra77fap83ngy"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedprobr r-forrel))
@@ -11577,13 +11577,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dipsaus" version))
               (sha256
                (base32
-                "1dq8kzi8i2k0hf9dfng2bn3my686d11x9zfppskv9jbxl0nkn4q0"))))
+                "1h0n1cf860shbckl5nzb14pxrh1ri4n9l8zv2wspsxf6sq70gbw9"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -11591,7 +11591,6 @@ the documentation for Rmosek'.")
                              r-shiny
                              r-rstudioapi
                              r-rlang
-                             r-rcppparallel
                              r-rcpp
                              r-r6
                              r-progressr
@@ -11614,10 +11613,10 @@ functions and enhancements to popular packages.  The goal is to provide simple
 solutions that are frequently asked for online, such as how to synchronize shiny
 inputs without freezing the app, or how to get memory size on Linux or MacOS
 system.  The enhancements roughly fall into these four categories: 1.  shiny
-input widgets; 2.  high-performance computing using RcppParallel and future
-package; 3.  modify R calls and convert among numbers, strings, and other
-objects.  4.  utility functions to get system information such like CPU
-chip-set, memory limit, etc.")
+input widgets; 2.  high-performance computing using the future package; 3.
+modify R calls and convert among numbers, strings, and other objects.  4.
+utility functions to get system information such like CPU chip-set, memory
+limit, etc.")
     (license license:gpl3)))
 
 (define-public r-dips
@@ -24398,13 +24397,13 @@ population/community structure inference.")
 (define-public r-d4talink-light
   (package
     (name "r-d4talink-light")
-    (version "2.1.9")
+    (version "2.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "D4TAlink.light" version))
               (sha256
                (base32
-                "14ppfn3zlrj8fz9l3nlb140lw5bbywhksr6kyppbdxni89jqip7a"))))
+                "0app56g8kws30q9a91ipcxmgnfihcx1q6678s4hfxc1w3dq2pq82"))))
     (properties `((upstream-name . "D4TAlink.light")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-openssl r-jsonlite))

@@ -3775,6 +3775,30 @@ active subscription the capability to scrape the website tables and analyze the
 data for themselves.")
     (license license:expat)))
 
+(define-public r-homomorphicencryption
+  (package
+    (name "r-homomorphicencryption")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HomomorphicEncryption" version))
+              (sha256
+               (base32
+                "1agw7s9ccj4hi74scqqs8v65gsavxb5c3217rw0kk9cibq7bma2v"))))
+    (properties `((upstream-name . "HomomorphicEncryption")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-polynom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HomomorphicEncryption")
+    (synopsis "BFV, BGV, CKKS Schema for Fully Homomorphic Encryption")
+    (description
+     "This package implements the Brakerski-Fan-Vercauteren (BFV, 2012)
+<https://eprint.iacr.org/2012/144>, Brakerski-Gentry-Vaikuntanathan (BGV, 2014)
+<doi:10.1145/2633600>, and Cheon-Kim-Kim-Song (CKKS, 2016)
+<https://eprint.iacr.org/2016/421.pdf> schema for Fully Homomorphic Encryption,
+as well as several helper functions.")
+    (license license:gpl3+)))
+
 (define-public r-homomorpher
   (package
     (name "r-homomorpher")

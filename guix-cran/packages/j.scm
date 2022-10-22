@@ -463,13 +463,13 @@ Golden Section Search Method for Numerical Optimization\",
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsTreeR" version))
               (sha256
                (base32
-                "13iyi2d24qzp3r1x2hz1m2w30nc3v1py18xw04iabpi12p8p46vm"))))
+                "0k6qxncvnq2377g83cclf7al0150m4226ilw2h9wrd7m8ciz7wdi"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -3071,13 +3071,13 @@ and Swing implementations are included.")
 (define-public r-jatsdecoder
   (package
     (name "r-jatsdecoder")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JATSdecoder" version))
               (sha256
                (base32
-                "1bjq393mb9284i0490n0bxm79irkzmfygij7ml8jga0x08yd1qwh"))))
+                "1zvsx3970kr7ihmal5wsscwl9lqplknvx3pzgw1n89bc354xg140"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-opennlp r-nlp))
@@ -3341,13 +3341,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.1.6")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jagshelper" version))
               (sha256
                (base32
-                "1nxzzpap2jwg7d5rflxp6zp1wy1qk73i13iqr38x0gq7b0kprinl"))))
+                "0kxgfjq58sx2vmxl12aarz74xqjsdqzbhf2rxnn2rqw09iy0wjgm"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

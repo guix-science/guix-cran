@@ -7069,13 +7069,13 @@ allow easy specification of various GPs.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2022.4-1")
+    (version "2022.10-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPArotation" version))
               (sha256
                (base32
-                "0952kn6v9f54hnrp9055gv7nfj9llk8qhbjgzgngp4f0vkf7w7i3"))))
+                "05qrwbfr19mj4f4fxnh7lwvq8ai7xiiyajwhvzsls84w7a7jvxq4"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
@@ -25042,13 +25042,13 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
 (define-public r-gap
   (package
     (name "r-gap")
-    (version "1.2.3-6")
+    (version "1.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gap" version))
               (sha256
                (base32
-                "08lcqjxqx4j1zi7jl4d9dqbh51850fljfvr5if82ggx3k2m55wqf"))))
+                "1p6cqwwf6wk0m8kj2zyi8mb7h0ymc1x3v5qfq9a7xqq200q2bpwf"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-ggplot2 r-gap-datasets r-dplyr))

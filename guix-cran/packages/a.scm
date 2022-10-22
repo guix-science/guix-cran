@@ -16189,16 +16189,16 @@ traits measured for each taxa.")
 (define-public r-adehabitatma
   (package
     (name "r-adehabitatma")
-    (version "0.3.14")
+    (version "0.3.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatMA" version))
               (sha256
                (base32
-                "0lfqg9g0wpq70md35b7gdgav3lliaxv8c8i13j3k0q436ids68iy"))))
+                "1j1idpr0704x3s9dhzxysr3zkm9lp6wnac1jdp98vvbd0l5h7icc"))))
     (properties `((upstream-name . "adehabitatMA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-filehash))
+    (propagated-inputs (list r-sp))
     (home-page "https://cran.r-project.org/package=adehabitatMA")
     (synopsis "Tools to Deal with Raster Maps")
     (description
@@ -16208,13 +16208,13 @@ traits measured for each taxa.")
 (define-public r-adehabitatlt
   (package
     (name "r-adehabitatlt")
-    (version "0.3.25")
+    (version "0.3.26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatLT" version))
               (sha256
                (base32
-                "1v83iw9argh11fi47hlb8ykigd8xh70hww3i4j8yrzfqwcr9aj4p"))))
+                "0208qi802rn8ys00js843ckhg5pw20c55bz8b95kcl538grn9fs0"))))
     (properties `((upstream-name . "adehabitatLT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-circstats r-adehabitatma r-ade4))
@@ -16228,13 +16228,13 @@ movements.")
 (define-public r-adehabitaths
   (package
     (name "r-adehabitaths")
-    (version "0.3.15")
+    (version "0.3.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatHS" version))
               (sha256
                (base32
-                "1qhdwyjic4q24kk0pwrd0r8vdg5clv4g1hbdq07rl71jbcscdhvz"))))
+                "1983k2819khkbr50v19n2k0jff9q8bcn1gqv4nmy2z8f24s43mnk"))))
     (properties `((upstream-name . "adehabitatHS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitathr r-ade4))
@@ -16248,13 +16248,13 @@ selection.")
 (define-public r-adehabitathr
   (package
     (name "r-adehabitathr")
-    (version "0.4.19")
+    (version "0.4.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatHR" version))
               (sha256
                (base32
-                "1zmsvv651l13pyc1f2jhmnzcv1a620mb7y3gmi7sdfh7jgms3g76"))))
+                "06r07cldrdm3d3kig55vvg505j82c0h38cip8rkgaxc29bf32bfx"))))
     (properties `((upstream-name . "adehabitatHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-deldir r-adehabitatma r-adehabitatlt

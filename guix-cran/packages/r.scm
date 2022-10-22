@@ -21,6 +21,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages databases)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages documentation)
@@ -1350,13 +1351,13 @@ MATLAB Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram
 (define-public r-rwave
   (package
     (name "r-rwave")
-    (version "2.6-4")
+    (version "2.6-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rwave" version))
               (sha256
                (base32
-                "1yp6bp9md04q27im61k9mgwzyi222gwyv1mxz8163b5ab2rc7hbx"))))
+                "1r72kcc5f9k38ks39nh9x1y7k1kxrbyv7lywqpsy7wknnddzg7kc"))))
     (properties `((upstream-name . "Rwave")))
     (build-system r-build-system)
     (home-page "https://carmona.princeton.edu/TFbook/tfbook.html")
@@ -29689,7 +29690,7 @@ data mining approach for longitudinal and clustered data
                 "1bbn2aznhfh78gbqq0g2n5lbg1q9aa7v8py3xv9gk97rg27jz49x"))))
     (properties `((upstream-name . "redux")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list hiredis))
     (propagated-inputs (list r-storr r-r6))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/richfitz/redux")

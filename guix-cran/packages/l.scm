@@ -921,13 +921,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltasr
   (package
     (name "r-ltasr")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LTASR" version))
               (sha256
                (base32
-                "1y95w1ywfrlmmgbfzqc2i1rq0y097l35k6mqiskf25yqrmyf9n1x"))))
+                "00l04zljpy9xjg3zpfchlwchmls1vgjfnjzyj016xvv3iivl9w3b"))))
     (properties `((upstream-name . "LTASR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13196,13 +13196,13 @@ format is provided by fstcore package geared by LZ4 and ZSTD compressors.")
 (define-public r-lazy
   (package
     (name "r-lazy")
-    (version "1.2-17")
+    (version "1.2-18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lazy" version))
               (sha256
                (base32
-                "0w1kkkwx1cw619zgd2c913wihwbxicl0lv78wwpp2832mhb15gr7"))))
+                "02phj1l92dh5qmcl9i8scxgj4v21knbfrwwixq74bgyzwb51ni4r"))))
     (properties `((upstream-name . "lazy")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=lazy")

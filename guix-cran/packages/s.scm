@@ -21037,6 +21037,47 @@ with the updated spatstat package (>= 2.3-0).  The speed of most functions has
 also been substantially increased.")
     (license license:gpl3)))
 
+(define-public r-spate
+  (package
+    (name "r-spate")
+    (version "1.7.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spate" version))
+              (sha256
+               (base32
+                "084iwp1wjrq06f3849iakzkik3gxms9lrq1l07kqyaz53di3dxjx"))))
+    (properties `((upstream-name . "spate")))
+    (build-system r-build-system)
+    (inputs (list fftw))
+    (propagated-inputs (list r-truncnorm r-mvtnorm))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=spate")
+    (synopsis
+     "Spatio-Temporal Modeling of Large Data Using a Spectral SPDE Approach")
+    (description
+     "Functionality for spatio-temporal modeling of large data sets is provided.  A
+Gaussian process in space and time is defined through a stochastic partial
+differential equation (SPDE).  The SPDE is solved in the spectral space, and
+after discretizing in time and space, a linear Gaussian state space model is
+obtained.  When doing inference, the main computational difficulty consists in
+evaluating the likelihood and in sampling from the full conditional of the
+spectral coefficients, or equivalently, the latent space-time process.  In
+comparison to the traditional approach of using a spatio-temporal covariance
+function, the spectral SPDE approach is computationally advantageous.  See
+Sigrist, Kuensch, and Stahel (2015) <doi:10.1111/rssb.12061> for more
+information on the methodology.  This package aims at providing tools for two
+different modeling approaches.  First, the SPDE based spatio-temporal model can
+be used as a component in a customized hierarchical Bayesian model (HBM).  The
+functions of the package then provide parameterizations of the process part of
+the model as well as computationally efficient algorithms needed for doing
+inference with the HBM. Alternatively, the adaptive MCMC algorithm implemented
+in the package can be used as an algorithm for doing inference without any
+additional modeling.  The MCMC algorithm supports data that follow a Gaussian or
+a censored distribution with point mass at zero.  Covariates can be included in
+the model through a regression term.")
+    (license license:gpl2)))
+
 (define-public r-spass
   (package
     (name "r-spass")
@@ -35897,13 +35938,13 @@ Stripe framework.")
 (define-public r-shinyselect
   (package
     (name "r-shinyselect")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinySelect" version))
               (sha256
                (base32
-                "10gv7xjy0n7bgry16pn7bal16cbmrdv0q7z3xw4j7r7w04zgqjcb"))))
+                "0m43082nl81qm7cnm4wklm6g9y4wxpjg6k5pk9ac89zgmsbffjsj"))))
     (properties `((upstream-name . "shinySelect")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactr r-htmltools r-fontawesome))
@@ -36725,13 +36766,13 @@ matching.  Please see the project page for more details.")
 (define-public r-shinyitemanalysis
   (package
     (name "r-shinyitemanalysis")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ShinyItemAnalysis" version))
               (sha256
                (base32
-                "14xmm3zcgr89sanqv4x83g4pmc4m126wcbfl3cgpnygpx9q5q509"))))
+                "1npg1k41ds7x03hhx1f8qxm03n3zbkhv5dcm8r59lcnvrrf543cd"))))
     (properties `((upstream-name . "ShinyItemAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38373,6 +38414,39 @@ library shap'.")
      "Shapley Value Regression for calculating the relative importance of independent
 variables in linear regression with avoiding the collinearity.")
     (license license:expat)))
+
+(define-public r-shapleyoutlier
+  (package
+    (name "r-shapleyoutlier")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ShapleyOutlier" version))
+              (sha256
+               (base32
+                "0nbk8xdn0p365lpl881i2ah4csd8i1z8dmmf0c1x5fm1i0xdl9sj"))))
+    (properties `((upstream-name . "ShapleyOutlier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-robustbase
+                             r-rdpack
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-forcats
+                             r-egg
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ShapleyOutlier")
+    (synopsis
+     "Multivariate Outlier Explanations using Shapley Values and Mahalanobis Distances")
+    (description
+     "Based on Shapley values to explain multivariate outlyingness and to detect and
+impute cellwise outliers.  Includes implementations of methods described in
+Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
+    (license license:gpl3)))
 
 (define-public r-shapeselectforest
   (package
@@ -52487,13 +52561,13 @@ random effects.")
 (define-public r-saemspe
   (package
     (name "r-saemspe")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "saeMSPE" version))
               (sha256
                (base32
-                "1l71skiamx9dawzmnla9axvxc5455f2vwkgabb7a0yqv9gc0hl7n"))))
+                "086nmcx14sjwnydka805il11lc02jv9l39kk9j1h2j5p9gz0b3gp"))))
     (properties `((upstream-name . "saeMSPE")))
     (build-system r-build-system)
     (propagated-inputs (list r-smallarea r-rcpparmadillo r-rcpp r-matrix))

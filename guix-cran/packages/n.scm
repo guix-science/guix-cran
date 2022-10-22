@@ -2983,19 +2983,17 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "1qvcv63pwbsprxaw3nb5qbsr7fwphf62c7fgd5lvjbnnwgqbmnx8"))))
+                "08arc9hkya2ckqp603ppxp6akfdwwgy2l2x6vcqw4saf9b2anzpy"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
-                             r-vcr
                              r-rsqlite
-                             r-progressr
                              r-odbc
                              r-magrittr
                              r-jsonlite
@@ -3004,7 +3002,7 @@ normal model.")
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helseprofil/norgeo")
-    (synopsis "Track Geo Code Changes in all Regional Granularity in Norway")
+    (synopsis "Tracking Geo Code Change of Regional Granularity in Norway")
     (description
      "Regional granularity levels in Norway which are depicted by different codes,
 have undergone several changes over the years.  Identifying when codes have
@@ -10456,6 +10454,31 @@ Burger (2022) <doi:10.1186/s13059-022-02701-2>.")
      "Facilitates building a nesting or hierarchical structure as a list or data frame
 by using a human friendly syntax.")
     (license license:expat)))
+
+(define-public r-nestmrmc
+  (package
+    (name "r-nestmrmc")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NestMRMC" version))
+              (sha256
+               (base32
+                "08zk9g3mkwyli94ry1s762ddniwzjlf89plh86sgxfrcrhx1m908"))))
+    (properties `((upstream-name . "NestMRMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-mvtnorm r-magrittr r-imrmc r-dplyr))
+    (home-page "https://cran.r-project.org/package=NestMRMC")
+    (synopsis "Single Reader Between-Cases AUC Estimator in Nested Data")
+    (description
+     "This R package provides a calculation of between-cases AUC estimate,
+corresponding covariance, and variance estimate in the nested data problem.
+Also, the package has the function to simulate the nested data.  The calculated
+between-cases AUC estimate is used to evaluate the reader's diagnostic
+performance in clinical tasks with nested data.  For more details on the above
+methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
+(2022) <doi:10.1177/09622802221111539>.")
+    (license license:cc0)))
 
 (define-public r-nestfs
   (package

@@ -10888,13 +10888,13 @@ using the tkImg package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.0.3")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TKCat" version))
               (sha256
                (base32
-                "066dh40pklhi7czmxc8hpkrk65ybkc18j8x1m1fx5qbr4prnml4y"))))
+                "1z4ili1hn4nfkg4v84s8xamwxpyfjdyi0b7xpw795d6x80ar3ssk"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -10921,7 +10921,7 @@ using the tkImg package for Tcl/Tk'.")
                              r-clickhousehttp
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/patzaw/TKCat")
+    (home-page "https://patzaw.github.io/TKCat/")
     (synopsis "Tailored Knowledge Catalog")
     (description
      "Facilitate the management of data from knowledge resources that are frequently
@@ -12343,13 +12343,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.15.0")
+    (version "0.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "1hkm8ja6y4mv59vih5d67r8md63hbaw3xcwaf31c3yz1n7k38lz4"))))
+                "1025cvsxb128j5yky5pb57sjkixhy1j4gf5k1f6a8nj48ygqbf6p"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib))

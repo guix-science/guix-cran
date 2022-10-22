@@ -584,13 +584,13 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
 (define-public r-wru
   (package
     (name "r-wru")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wru" version))
               (sha256
                (base32
-                "05z44yllnlj5lxv8wmydwr06yq5k801z9b8h6sfvkl4195j6bbjf"))))
+                "1z7issqzrqykqhmxbny0h39s28xrrwxdx8jmaw0flxyyn96gbcw0"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

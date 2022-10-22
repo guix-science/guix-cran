@@ -4693,6 +4693,43 @@ has been removed.  This package is made available by WHO and the Bloomberg Data
 for Health Initiative.")
     (license license:gpl3)))
 
+(define-public r-crossurr
+  (package
+    (name "r-crossurr")
+    (version "1.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crossurr" version))
+              (sha256
+               (base32
+                "16fq6hdfc6nsdijj63fji3bn3hp40m350qjxhf8a3xs5j86vf43j"))))
+    (properties `((upstream-name . "crossurr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-superlearner
+                             r-sis
+                             r-rlang
+                             r-rcal
+                             r-ranger
+                             r-purrr
+                             r-pbapply
+                             r-glue
+                             r-glmnet
+                             r-gbm
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=crossurr")
+    (synopsis
+     "Cross-Fitting for Doubly Robust Evaluation of High-Dimensional Surrogate Markers")
+    (description
+     "Doubly robust methods for evaluating surrogate markers as outlined in: Agniel D,
+Hejblum BP, Thiebaut R & Parast L (2022). \"Doubly robust evaluation of
+high-dimensional surrogate markers\", Biostatistics
+<doi:10.1093/biostatistics/kxac020>.  You can use these methods to determine how
+much of the overall treatment effect is explained by a (possibly
+high-dimensional) set of surrogate markers.")
+    (license license:expat)))
+
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
@@ -5668,13 +5705,13 @@ team performances.")
 (define-public r-cricketdata
   (package
     (name "r-cricketdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cricketdata" version))
               (sha256
                (base32
-                "0pr2w0lzas5f4i8sy8745f4zznmhnnkwnk5is3vrf6fai6yyij3l"))))
+                "1w9bikx06brq5d02nmqljdx8yhxf8gqlkwr1xkg10zjiclv6kn0r"))))
     (properties `((upstream-name . "cricketdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -21852,39 +21889,6 @@ stability-based parameter assessment for graph-based clustering pipelines
 typical in single-cell data analysis.")
     (license license:expat)))
 
-(define-public r-clustanalytics
-  (package
-    (name "r-clustanalytics")
-    (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clustAnalytics" version))
-              (sha256
-               (base32
-                "0c4cfxj5vb0l519b2llq9snzvqcilf48nlvm3zn2d7bpabwnfrs3"))))
-    (properties `((upstream-name . "clustAnalytics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-rdpack
-                             r-rcpp
-                             r-mclust
-                             r-mcclust
-                             r-kdtools
-                             r-igraph
-                             r-fossil
-                             r-dplyr
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=clustAnalytics")
-    (synopsis "Cluster Evaluation on Graphs")
-    (description
-     "Evaluates the stability and significance of clusters on igraph graphs.  Supports
-weighted and unweighted graphs.  Implements the cluster evaluation methods
-defined by Arratia A, Renedo M (2021) <doi:10.7717/peerj-cs.600>.  Also includes
-an implementation of the Reduced Mutual Information introduced by Newman et al.
-(2020).")
-    (license license:gpl3+)))
-
 (define-public r-clust-bin-pair
   (package
     (name "r-clust-bin-pair")
@@ -27580,13 +27584,13 @@ create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.1.3")
+    (version "6.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChemoSpec" version))
               (sha256
                (base32
-                "0h2jc0hdyi58hmg64vg7qijs7rp05ssxm4p8h3fv70jr58n94633"))))
+                "0dnpwfx1p3p8qfxxiz1r6hipdpklhyz88sd2mq2ap24pn7xqdhf1"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

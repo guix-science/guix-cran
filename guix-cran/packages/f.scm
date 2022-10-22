@@ -16992,13 +16992,13 @@ issues like stepsize selection, acceleration, and stopping conditions for you.")
 (define-public r-fasstr
   (package
     (name "r-fasstr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fasstr" version))
               (sha256
                (base32
-                "0hx3ipjaki02yrvyv8cjp7133bz8whjbrplghvzigwmb95ifmnx9"))))
+                "1cpzihrniyg7scxbj349ahvp9p1ji4r1498fh5hv38qas6pk3vil"))))
     (properties `((upstream-name . "fasstr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zyp
@@ -17010,6 +17010,7 @@ issues like stepsize selection, acceleration, and stopping conditions for you.")
                              r-plyr
                              r-pearsonds
                              r-openxlsx
+                             r-lubridate
                              r-ggplot2
                              r-fitdistrplus
                              r-e1071

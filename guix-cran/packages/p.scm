@@ -13597,17 +13597,17 @@ the axes, the cubature package is more appropriate.")
 (define-public r-polycrossdesigns
   (package
     (name "r-polycrossdesigns")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PolycrossDesigns" version))
               (sha256
                (base32
-                "1fl86blzfli3936hg3cpb82hpa3r9wjnrmz0252dfy32zjcqh15r"))))
+                "0qhjy4pkksg45c6i3axwcnqa5miz4ky52w9qngf1d1x62lckb29i"))))
     (properties `((upstream-name . "PolycrossDesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PolycrossDesigns")
-    (synopsis "Polycross Designs (\"PolycrossDesigns\"\")")
+    (synopsis "Polycross Designs (\"PolycrossDesigns\")")
     (description
      "This package provides a polycross is the pollination by natural hybridization of
 a group of genotypes, generally selected, grown in isolation from other
@@ -25626,13 +25626,13 @@ with asymmetric sources but it works for symmetric sources as well.")
 (define-public r-pearsonds
   (package
     (name "r-pearsonds")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PearsonDS" version))
               (sha256
                (base32
-                "1j1xpay6iqwsb2ghm5k4ba930cliyama4cq7wnjjncr4p0chcfj4"))))
+                "03px5flcnxiqgm17gjn193x0fvzfc4l71hdh48p55lk9jiwqg6na"))))
     (properties `((upstream-name . "PearsonDS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PearsonDS")

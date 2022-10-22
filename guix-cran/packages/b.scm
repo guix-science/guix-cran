@@ -12576,17 +12576,19 @@ also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.10.8")
+    (version "1.11.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigsnpr" version))
               (sha256
                (base32
-                "103s9gl5s2sdwsi9n212xbjkidm94mxsr0yghmysh9r4a5q30g3l"))))
+                "0jvvwrpbf74w999ifm721ckhp42ywffbx3ij6xqg1v9gvzpgni4c"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-vctrs
+                             r-runonce
+                             r-roptim
                              r-rmio
                              r-rcpparmadillo
                              r-rcpp
@@ -23748,6 +23750,25 @@ distribution.  bakR performs multiple-test adjusted statistical inference with
 the output of these model implementations to help biologists separate signal
 from background.  Methods to automatically visualize key results and detect
 batch effects are also provided.")
+    (license license:expat)))
+
+(define-public r-bakeoff
+  (package
+    (name "r-bakeoff")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bakeoff" version))
+              (sha256
+               (base32
+                "0i40vnwgy4db8flfcx23zh5a7mmp4dhckhzayj34smqfmfm5xzkl"))))
+    (properties `((upstream-name . "bakeoff")))
+    (build-system r-build-system)
+    (home-page "https://bakeoff.netlify.app/")
+    (synopsis "Data from \"The Great British Bake Off\"")
+    (description
+     "Data about the bakers, challenges, and ratings for \"The Great British Bake Off\",
+from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
     (license license:expat)))
 
 (define-public r-bain

@@ -2189,13 +2189,13 @@ multivariate cumulative model and the multivariate adjacent categories model.")
 (define-public r-multnonparam
   (package
     (name "r-multnonparam")
-    (version "1.3.6")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultNonParam" version))
               (sha256
                (base32
-                "034a6yx2z93llkg7m3f20ibajwc2m23i13jqsk3fpgzx6f1dnbfk"))))
+                "10a4nsgwhg2sz9byxhng9clgrqp2zqawcrhzwb8jllw38y2mg1wp"))))
     (properties `((upstream-name . "MultNonParam")))
     (build-system r-build-system)
     (propagated-inputs (list r-icsnp))
@@ -2210,7 +2210,7 @@ of multivariate Mann-Whitney-Wilcoxon testing, inversion of these tests to
 produce a confidence region, some permutation tests for linear models, and some
 algorithms for calculating exact probabilities associated with one- and two-
 stage testing involving Mann-Whitney-Wilcoxon statistics.  Supported by grant
-NSF DMS 1712839.")
+NSF DMS 1712839.  See Kolassa and Seifu (2013) <doi:10.1016/j.acra.2013.03.006>.")
     (license license:gpl2)))
 
 (define-public r-multiwayvcov

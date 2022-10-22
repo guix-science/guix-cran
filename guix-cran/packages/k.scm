@@ -4089,28 +4089,6 @@ analysis of air pollution, weather and health data.")
 subscripting.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-kdtools
-  (package
-    (name "r-kdtools")
-    (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kdtools" version))
-              (sha256
-               (base32
-                "0y8sr3r7i8xjxzix5lfrgsq79vk97qvbjhxg87mwvhin9igjkzlf"))))
-    (properties `((upstream-name . "kdtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thk686/kdtools")
-    (synopsis "Tools for Working with Multidimensional Data")
-    (description
-     "This package provides various tools for working with multidimensional data in R
-and C++, including extremely fast nearest-neighbor- and range- queries without
-the overhead of linked tree nodes.")
-    (license license:expat)))
-
 (define-public r-kdpee
   (package
     (name "r-kdpee")

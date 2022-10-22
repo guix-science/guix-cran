@@ -8911,16 +8911,16 @@ base::library() and base::source().")
 (define-public r-envipat
   (package
     (name "r-envipat")
-    (version "2.4")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enviPat" version))
               (sha256
                (base32
-                "1gvb7jmwwh4l44b50xmrq3bysr2iv6442yh9pdk6n81g3bgpz1d0"))))
+                "17qrly8fb6d7gk1xcg3273mykpwc9i7ghnvipp63fwx4cp25crzw"))))
     (properties `((upstream-name . "enviPat")))
     (build-system r-build-system)
-    (home-page "http://www.envipat.eawag.ch/")
+    (home-page "https://www.envipat.eawag.ch/")
     (synopsis
      "Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry")
     (description
@@ -12893,13 +12893,13 @@ effective information, effectiveness and causal emergence.")
 (define-public r-eimpute
   (package
     (name "r-eimpute")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eimpute" version))
               (sha256
                (base32
-                "0m2rvpy7v0y67cc8x71qwi1sbfaakhn0vmxlfm4l60132fibb8v2"))))
+                "11bjvzmf252m3440z5wlsx92ybay5g76j2af0xbcybhqz7wpkk0l"))))
     (properties `((upstream-name . "eimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -16346,6 +16346,40 @@ equations introduced in The Atlas of Economic Complexity and related literature.
  This package provides standard matrix and graph output that can be used
 seamlessly with other packages.  See <doi:10.21105/joss.01866> for a summary of
 these methods and its evolution in literature.")
+    (license license:gpl3)))
+
+(define-public r-econetwork
+  (package
+    (name "r-econetwork")
+    (version "0.7.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "econetwork" version))
+              (sha256
+               (base32
+                "1pn7bx3rch09ddllq9sfzm5ynz6a1mgbsy3rq0qyg19xan9xgmi6"))))
+    (properties `((upstream-name . "econetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdiversity
+                             r-rcppgsl
+                             r-rcppeigen
+                             r-rcpp
+                             r-igraph
+                             r-blockmodels
+                             r-bipartite))
+    (home-page "https://plmlab.math.cnrs.fr/econetproject/econetwork")
+    (synopsis "Analyzing Ecological Networks")
+    (description
+     "This package provides a collection of advanced tools, methods and models
+specifically designed for analyzing different types of ecological networks -
+especially antagonistic (food webs, host-parasite), mutualistic
+(plant-pollinator, plant-fungus, etc) and competitive networks, as well as their
+variability in time and space.  Statistical models are developed to describe and
+understand the mechanisms that determine species interactions, and to decipher
+the organization of these ecological networks (Ohlmann et al. (2019)
+<doi:10.1111/ele.13221>, Gonzalez et al. (2020) <doi:10.1101/2020.04.02.021691>,
+Miele et al. (2021) <doi:10.48550/arXiv.2103.10433>, Botella et al (2021)
+<doi:10.1111/2041-210X.13738>).")
     (license license:gpl3)))
 
 (define-public r-econetgen
