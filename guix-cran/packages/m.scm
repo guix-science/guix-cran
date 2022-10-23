@@ -271,7 +271,7 @@ Data.  Journal of Open Source Software, 7(71), 4180, <doi:10.21105/joss.04180>."
                              r-doparallel
                              r-coxme
                              r-bigmemory))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "http://mensxmachina.org")
     (synopsis
      "Feature Selection (Including Multiple Solutions) and Bayesian Networks")
@@ -586,7 +586,7 @@ Estrada (2009) <DOI: 10.1080/03610920802474465>.")
                              r-matrix
                              r-ape
                              r-abind))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=mvSLOUCH")
     (synopsis
      "Multivariate Stochastic Linear Ornstein-Uhlenbeck Models for Phylogenetic Comparative Hypotheses")
@@ -892,7 +892,7 @@ given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.")
     (properties `((upstream-name . "MVNtestchar")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-hmisc r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-markdown r-knitr))
     (home-page "https://cran.r-project.org/package=MVNtestchar")
     (synopsis
      "Test for Multivariate Normal Distribution Based on a Characterization")
@@ -1371,6 +1371,7 @@ p-values rather than classic approximate F-tests.")
                 "1plrzzj7cr2hxk1npadvjnk7sanhilh99l5vrkjjh3l6li2ym09b"))))
     (properties `((upstream-name . "MVisAGe")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=MVisAGe")
     (synopsis "Compute and Visualize Bivariate Associations")
     (description
@@ -2415,6 +2416,7 @@ alternate ways of performing an analysis step, in R and R Notebooks.")
     (properties `((upstream-name . "MultiVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=MultiVarSel")
     (synopsis "Variable Selection in a Multivariate Linear Model")
     (description
@@ -2551,7 +2553,7 @@ Statistics, Vol.  1, No.  1 (2020), <doi:10.1515/stat-2020-0001>.")
                              r-mass
                              r-glmnet
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=multivar")
     (synopsis
      "Penalized Estimation of Multiple-Subject Vector Autoregressive (multi-VAR) Models")
@@ -3546,7 +3548,7 @@ available at <DOI:10.18637/jss.v005.i06>.")
                              r-copula
                              r-bh
                              r-bayesplot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://dmphillippo.github.io/multinma/")
     (synopsis
      "Bayesian Network Meta-Analysis of Individual and Aggregate Data")
@@ -7043,6 +7045,7 @@ extensions.")
                 "17hsnfipb6mgwhbc9rxzx5azc57ravz7zfnbc8r73sn1b270ydpb"))))
     (properties `((upstream-name . "msBP")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=msBP")
     (synopsis "Multiscale Bernstein Polynomials for Densities")
     (description
@@ -8161,6 +8164,7 @@ created.  The method has first been proposed by Holmstrom, Pasanen, Furrer, Sain
                 "1zf4cf5zbw2wm4da7icwkdp0nb5aanjp578h26lsw7ac3nvmzpyd"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
+    (native-inputs (list))
     (home-page "http://www.kleinomicslab.com/software/")
     (synopsis "Metabolomics Data Analysis Functions")
     (description
@@ -9114,7 +9118,7 @@ several convenience functions to aid in data processing.")
                              r-foreach
                              r-doparallel
                              r-bst))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-r-rsp r-knitr gfortran))
     (home-page "https://github.com/zhuwang46/mpath")
     (synopsis "Regularized Linear Models")
     (description
@@ -9654,13 +9658,13 @@ of S3 objects, with two new classes called motbf and jointmotbf'.")
 (define-public r-mosum
   (package
     (name "r-mosum")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mosum" version))
               (sha256
                (base32
-                "1xbh06sxvqgwqmid2x1lba43b20ma0gpw8mqgjnii51g7masb9kb"))))
+                "1zixjf3s381d44s63qzz4hpx4cd2d3rgzvzgg75gpzfkvxnf5f8c"))))
     (properties `((upstream-name . "mosum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-plot3d))
@@ -9671,10 +9675,11 @@ of S3 objects, with two new classes called motbf and jointmotbf'.")
 detecting multiple changes in the mean.  This comprises the MOSUM procedure for
 estimating multiple mean changes from Eichinger and Kirch (2018)
 <doi:10.3150/16-BEJ887> and the multiscale algorithmic extension from Cho and
-Kirch (2021) <arXiv:1910.12486>, as well as the bootstrap procedure for
-generating confidence intervals about the locations of change points as proposed
-in Cho and Kirch (2021) <arXiv:2106.12844>.  See also Meier, Kirch and Cho
-(2021) <doi:10.18637/jss.v097.i08> which accompanies the R package.")
+Kirch (2022) <doi:10.1007/s10463-021-00811-5>, as well as the bootstrap
+procedure for generating confidence intervals about the locations of change
+points as proposed in Cho and Kirch (2022) <doi:10.1016/j.csda.2022.107552>.
+See also Meier, Kirch and Cho (2021) <doi:10.18637/jss.v097.i08> which
+accompanies the R package.")
     (license license:gpl3+)))
 
 (define-public r-most
@@ -11200,6 +11205,7 @@ should be easy to plug in, or develop from, on top of this canvas.")
                              r-crawl
                              r-circstats
                              r-brobdingnag))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bmcclintock/momentuHMM")
     (synopsis
      "Maximum Likelihood Analysis of Animal Movement Behavior Using Multivariate Hidden Markov Models")
@@ -14400,7 +14406,7 @@ package mvtnorm', and mmcm.resamp() gives P-value by using a permutation method.
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn
                              r-alabama))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-r-rsp gfortran))
     (home-page "https://github.com/boennecd/mmcif")
     (synopsis "Mixed Multivariate Cumulative Incidence Functions")
     (description
@@ -14629,6 +14635,7 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
                 "0s3vlwdcwifl2a2byr0f2cc4vmbdparc55x889a3h115ga7k91w2"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=mmap")
     (synopsis "Map Pages of Memory")
     (description "R interface to POSIX mmap and Window's MapViewOfFile.")
@@ -16743,6 +16750,7 @@ developed.")
     (build-system r-build-system)
     (inputs (list tensorflow))
     (propagated-inputs (list r-tfprobability r-tensorflow r-reticulate r-keras))
+    (native-inputs (list r-r-rsp))
     (home-page "https://converseg.github.io")
     (synopsis "Variational Autoencoder Models for IRT Parameter Estimation")
     (description
@@ -17130,13 +17138,13 @@ solvers hold up quite well for higher-dimensional problems.")
 (define-public r-mixvir
   (package
     (name "r-mixvir")
-    (version "3.3.5")
+    (version "3.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MixviR" version))
               (sha256
                (base32
-                "0fh4g5dmr1pzrgnpm610xkgw26f3rwfpnycy8r825h81wmgz073h"))))
+                "0npwwpb96id4zkrp4qzpiv5sgw6y4aqhhwx7v8vbg54029p6jj6w"))))
     (properties `((upstream-name . "MixviR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -17164,12 +17172,12 @@ created to help analyze environmental SARS-CoV-2/Covid-19 samples from
 environmental sources such as wastewater or dust, but can be applied to any
 microbial group.  Inputs include reference genome information in commonly-used
 file formats (fasta, bed) and one or more variant call format (VCF) files, which
-can be generated with programs such as the Genome Analysis Toolkit or bcftools.
-See DePristo et al (2011) <doi:10.1038/ng.806> and Danecek et al (2021)
-<doi:10.1093/gigascience/giab008> for these tools, respectively.  Available
-outputs include a table of mutations observed in the sample(s), estimates of
-proportions of target lineages in the sample(s), and an R Shiny dashboard to
-interactively explore the data.")
+can be generated with programs such as Illumina's DRAGEN, the Genome Analysis
+Toolkit, or bcftools.  See DePristo et al (2011) <doi:10.1038/ng.806> and
+Danecek et al (2021) <doi:10.1093/gigascience/giab008> for these tools,
+respectively.  Available outputs include a table of mutations observed in the
+sample(s), estimates of proportions of target lineages in the sample(s), and an
+R Shiny dashboard to interactively explore the data.")
     (license license:gpl3)))
 
 (define-public r-mixtwice
@@ -18713,7 +18721,7 @@ t-test, z-test, sample size determination).")
                              r-e1071
                              r-doparallel
                              r-dicekriging))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=mistral")
     (synopsis "Methods in Structural Reliability")
     (description
@@ -19811,7 +19819,7 @@ further information.")
                              r-lme4
                              r-gunifrac
                              r-compquadform))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=MiRKAT")
     (synopsis "Microbiome Regression-Based Analysis Tests")
     (description
@@ -21806,6 +21814,7 @@ incorporated and updated over a discrete time step.")
                              r-maptools
                              r-labeling
                              r-cleangeo))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=micromapST")
     (synopsis "Linked Micromap Plots for U. S. and Other Geographic Areas")
     (description
@@ -22589,6 +22598,7 @@ extraction for reporting purposes.")
     (properties `((upstream-name . "MIAmaxent")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-raster r-e1071 r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/julienvollering/MIAmaxent")
     (synopsis
      "Modular, Integrated Approach to Maximum Entropy Distribution Modeling")
@@ -23240,6 +23250,7 @@ Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (properties `((upstream-name . "mgee2")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=mgee2")
     (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
     (description
@@ -23666,7 +23677,7 @@ translation.  Examples of these methods can be found in Montes de Oca et al
     (properties `((upstream-name . "mFLICA")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dtw))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/DarkEyes/mFLICA")
     (synopsis "Leadership-Inference Framework for Multivariate Time Series")
     (description
@@ -25190,6 +25201,7 @@ et al. (2018) <DOI:10.1097/XEB.0000000000000141>.")
                              r-mass
                              r-lavaan
                              r-ellipse))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/mikewlcheung/metasem")
     (synopsis "Meta-Analysis using Structural Equation Modeling")
     (description
@@ -25413,6 +25425,7 @@ solved MetaPost paths back into R.")
                              r-doparallel
                              r-boot
                              r-bbmle))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=metaplus")
     (synopsis "Robust Meta-Analysis and Meta-Regression")
     (description
@@ -26094,6 +26107,7 @@ simple stylized example and on real-world experimental data.")
     (properties `((upstream-name . "metagear")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-matrix r-mass))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=metagear")
     (synopsis
      "Comprehensive Research Synthesis Tools for Systematic Reviews and Meta-Analysis")
@@ -26245,6 +26259,7 @@ Anderson et al. (2015) <doi:10.1101/2022.03.24.485545>.")
                              r-gbm
                              r-e1071
                              r-caret))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=metaEnsembleR")
     (synopsis "Automated Intuitive Package for Meta-Ensemble Learning")
     (description
@@ -27955,7 +27970,7 @@ values), and fwf (fixed-width format) files.")
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://docs.ropensci.org/melt/")
     (synopsis "Multiple Empirical Likelihood Tests")
     (description
@@ -28173,6 +28188,7 @@ meetups, attendance, and members.  This package requires the use of an API key."
                              r-matrixcalc
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=meerva")
     (synopsis
      "Analysis of Data with Measurement Error Using a Validation Subsample")
@@ -29090,6 +29106,7 @@ are computed in parallel via OpenMP'.")
     (properties `((upstream-name . "mdw")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-kyotil))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=mdw")
     (synopsis "Maximum Diversity Weighting")
     (description
@@ -29186,6 +29203,7 @@ provided in the package function as well as at
                              r-plotrix
                              r-clustersim
                              r-animation))
+    (native-inputs (list r-r-rsp))
     (home-page "http://keii.ue.wroc.pl/mdsOpt/")
     (synopsis
      "Searching for Optimal MDS Procedure for Metric and Interval-Valued Data")
@@ -29215,6 +29233,7 @@ attractiveness of Lower Silesian counties. (Borg, I., Groenen, P.J.F., Mair, P.
     (properties `((upstream-name . "MDSMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-smacof r-rgl r-reshape r-princurve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=MDSMap")
     (synopsis
      "High Density Genetic Linkage Mapping using Multidimensional Scaling")
@@ -29360,6 +29379,7 @@ and also proposes some functions related to Reinforcement Learning.")
     (properties `((upstream-name . "MDplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-mass r-gtools r-gplots))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/MDplot/MDplot")
     (synopsis "Visualising Molecular Dynamics Analyses")
     (description
@@ -29693,7 +29713,7 @@ NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
     (properties `((upstream-name . "mdendro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://deim.urv.cat/~sergio.gomez/mdendro.php")
     (synopsis "Extended Agglomerative Hierarchical Clustering")
     (description
@@ -30703,6 +30723,7 @@ Monte Carlo Markov Chain (MCMC) samples.  For more information see Brooks et al.
                              r-rcpp
                              r-matrix
                              r-combinat))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/danheck/MCMCprecision")
     (synopsis "Precision of Discrete Parameters in Transdimensional MCMC")
     (description
@@ -31998,7 +32019,7 @@ the annual flow.  The method is described in Nguyen et al (2020)
                              r-knitr
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=MBNMAtime")
     (synopsis
      "Run Time-Course Model-Based Network Meta-Analysis (MBNMA) Models")
@@ -32413,7 +32434,7 @@ many different shapes.")
     (properties `((upstream-name . "mazeinda")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=mazeinda")
     (synopsis "Monotonic Association on Zero-Inflated Data")
     (description
@@ -33688,6 +33709,7 @@ design structure.")
     (properties `((upstream-name . "MatchThem")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightit r-survey r-rlang r-mice r-matchit))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/FarhadPishgar/MatchThem")
     (synopsis "Matching and Weighting Multiply Imputed Datasets")
     (description
@@ -33803,6 +33825,7 @@ for outbreak analysis.")
     (properties `((upstream-name . "MatchLinReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-matching r-hmisc))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=MatchLinReg")
     (synopsis "Combining Matching and Linear Regression for Causal Inference")
     (description
@@ -34347,7 +34370,7 @@ is presented in Mashreghi et al. (2016) <doi:10.1214/16-SS113>.")
                 "0453rvfhi4zvjhbkjammy81gxi6ax75gs8iqpnphbrv60agz0bjc"))))
     (properties `((upstream-name . "maSAE")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://gitlab.com/fvafrCU/maSAE")
     (synopsis "Mandallaz' Model-Assisted Small Area Estimators")
     (description
@@ -34512,6 +34535,7 @@ can be retrieved.")
                              r-gdistance
                              r-dbi
                              r-adehabitatma))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ericpante/marmap")
     (synopsis "Import, Plot and Analyze Bathymetric and Topographic Data")
     (description
@@ -34807,7 +34831,7 @@ causal impact at fake interventions).")
     (properties `((upstream-name . "markerpen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcppeigen r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=markerpen")
     (synopsis
      "Marker Gene Detection via Penalized Principal Component Analysis")
@@ -34986,6 +35010,7 @@ the method.")
                 "0kagl9xghq9nsh9qvx165j1a5plh08zxhb6nm8j402mnl8pq7a4z"))))
     (properties `((upstream-name . "marginalizedRisk")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=marginalizedRisk")
     (synopsis "Estimating Marginalized Risk")
     (description
@@ -36612,7 +36637,7 @@ diverse databases.")
                              r-magic
                              r-ellipse
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/smn74/MANOVA.RM")
     (synopsis
      "Resampling-Based Analysis of Multivariate Data and Repeated Measures Designs")
@@ -36778,6 +36803,7 @@ MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
                              r-dt
                              r-dplyr
                              r-base64enc))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ManifestoProject/manifestoR")
     (synopsis "Access and Process Data and Documents of the Manifesto Project")
     (description
@@ -37087,7 +37113,7 @@ irrenunciable del pueblo argentino.")
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mimno/RMallet")
     (synopsis "An R Wrapper for the Java Mallet Topic Modeling Toolkit")
     (description
@@ -38687,7 +38713,7 @@ equivalency.")
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iterators r-icenreg r-foreach
                              r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=mable")
     (synopsis "Maximum Approximate Bernstein/Beta Likelihood Estimation")
     (description
@@ -38879,6 +38905,7 @@ to evaluate the best cluster number from the original data.")
                              r-mpoly
                              r-memoise
                              r-gmp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/coneill-math/m2r")
     (synopsis "Interface to 'Macaulay2'")
     (description

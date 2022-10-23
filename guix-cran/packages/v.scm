@@ -258,7 +258,7 @@ Variable trees display information about nested subsets of a data frame.")
     (properties `((upstream-name . "vtreat")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-digest))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/WinVector/vtreat/")
     (synopsis "Statistically Sound 'data.frame' Processor/Conditioner")
     (description
@@ -1817,6 +1817,7 @@ computation of evaluation criteria.")
                              r-formattable
                              r-dt
                              r-cairo))
+    (native-inputs (list r-r-rsp))
     (home-page "https://www.visiblevowels.org/")
     (synopsis "Visible Vowels: Visualization of Vowel Variation")
     (description "Visualizes vowel variation in f0, F1, F2, F3 and duration.")
@@ -2180,7 +2181,7 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
     (properties `((upstream-name . "visNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://datastorm-open.github.io/visNetwork/")
     (synopsis "Network Visualization using 'vis.js' Library")
     (description
@@ -2761,7 +2762,7 @@ the vehicles, including make, model, model year, and gross vehicle weight rating
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-polychrome r-pcamixdata r-mclust
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=vimpclust")
     (synopsis "Variable Importance in Clustering")
     (description
@@ -2976,6 +2977,7 @@ select steps in a convenient way.")
     (properties `((upstream-name . "vietnameseConverter")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8 r-sf r-gsubfn))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jniedballa/vietnameseConverter")
     (synopsis "Convert Vietnamese Encodings")
     (description
@@ -3418,7 +3420,7 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca r-mass r-gnm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=VFP")
     (synopsis "Variance Function Program")
     (description
@@ -4656,7 +4658,7 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd r-mass r-gnm r-ca))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://friendly.github.io/vcdExtra/")
     (synopsis "'vcd' Extensions and Additions")
     (description
@@ -4709,7 +4711,7 @@ For details on the VCCP methodology, please see Xiong & Cribben (2021).")
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrix r-lme4))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=VCA")
     (synopsis "Variance Component Analysis")
     (description
@@ -6502,6 +6504,7 @@ interactive use.")
                              r-psqn
                              r-matrix
                              r-lme4))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/boennecd/VAJointSurv")
     (synopsis "Variational Approximation for Joint Survival and Marker Models")
     (description

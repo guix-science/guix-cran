@@ -463,7 +463,7 @@ or any function defined by the user) for multiple groups.")
                              r-fpcompare
                              r-data-table
                              r-backports))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://quickplot.predictiveecology.org")
     (synopsis "System of Plotting Optimized for Speed and Modularity")
     (description
@@ -1653,7 +1653,7 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
                 "1c7b7lcyq2l46sslk185r6xfh5fb35z9qihrhnh294sw1k52bffa"))))
     (properties `((upstream-name . "qualvar")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "http://joelgombin.github.io/qualvar/")
     (synopsis
      "Implements Indices of Qualitative Variation Proposed by Wilcox (1973)")
@@ -3177,7 +3177,7 @@ configurations.")
                              r-lattice
                              r-knitr
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-prettydoc r-knitr r-bookdown))
     (home-page "https://github.com/jhmaindonald/qra")
     (synopsis "Quantal Response Analysis for Dose-Mortality Data")
     (description
@@ -4238,7 +4238,7 @@ Please refer to the vignette for additional details and references.")
                              r-compositional
                              r-bootstrap
                              r-boot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://CRAN.R-project.org/package=QFASA")
     (synopsis "Quantitative Fatty Acid Signature Analysis")
     (description

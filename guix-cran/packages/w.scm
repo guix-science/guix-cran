@@ -407,7 +407,7 @@ frequency (MAF) and odds ratio.")
     (properties `((upstream-name . "wsyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-fields))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-mvtnorm r-knitr))
     (home-page "https://cran.r-project.org/package=wsyn")
     (synopsis
      "Wavelet Approaches to Studies of Synchrony in Ecology and Other Fields")
@@ -627,7 +627,7 @@ Political Analysis <DOI:10.1093/pan/mpw001>.")
     (properties `((upstream-name . "wrTopDownFrag")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrproteo r-wrmisc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=wrTopDownFrag")
     (synopsis
      "Internal Fragment Identification from Top-Down Mass Spectrometry")
@@ -1036,7 +1036,7 @@ user in a (hopefully) user-friendly manner.")
                 "1swgf10vg9sh29mn4gsia1rjln47lrqsv765yl19hlpk85qwhsk4"))))
     (properties `((upstream-name . "wrapr")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/WinVector/wrapr")
     (synopsis "Wrap R Tools for Debugging and Parametric Programming")
     (description
@@ -5317,7 +5317,7 @@ or webmorph templates.")
     (properties `((upstream-name . "webglobe")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httpuv r-geojsonio))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/r-barnes/webglobe/")
     (synopsis "3D Interactive Globes")
     (description
@@ -5887,6 +5887,7 @@ survival probabilities together with the specified confidence interval.")
     (properties `((upstream-name . "WCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-plyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=WCE")
     (synopsis "Weighted Cumulative Exposure Models")
     (description
@@ -6041,7 +6042,7 @@ model.")
     (properties `((upstream-name . "wbacon")))
     (build-system r-build-system)
     (propagated-inputs (list r-hexbin))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/tobiasschoch/wbacon")
     (synopsis "Weighted BACON Algorithms")
     (description
@@ -6056,28 +6057,41 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waywiser" version))
               (sha256
                (base32
-                "1dks2c0jv3xgvzv812nzz8blnzl94mkvg79926zk6gpzpcdzsmww"))))
+                "1bx1hmln9z2yaa6r8q30wv3mm0908y0yqqcbyzzgpqpcijvgxxng"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yardstick r-spdep r-sf r-rlang))
+    (propagated-inputs (list r-yardstick
+                             r-tibble
+                             r-spdep
+                             r-sf
+                             r-rsample
+                             r-rlang
+                             r-purrr
+                             r-matrix
+                             r-hardhat
+                             r-glue
+                             r-fields))
     (home-page "https://github.com/mikemahoney218/waywiser")
-    (synopsis
-     "Yardstick Extensions for Measuring Spatial Structure in Model Residuals")
+    (synopsis "Methods for Assessing Spatial Models")
     (description
-     "Predictive models of spatial data may have spatially structured errors, with
-\"hot spots\" of higher than expected error clustered geographically due to
+     "Assessing predictive models of spatial data can be challenging, both because
+these models are typically built for extrapolating outside the original region
+represented by training data and due to potential spatially structured errors,
+with \"hot spots\" of higher than expected error clustered geographically due to
 spatial structure in the underlying data.  These functions provide methods for
-measuring the spatial structure of model errors for models, and are particularly
-useful for models fit using the tidymodels framework.  Methods include Moran's I
-('Moran (1950) <doi:10.2307/2332142>), Geary's C ('Geary (1954)
-<doi:10.2307/2986645>) and Getis-Ord's G ('Ord and Getis (1995)
-<doi:10.1111/j.1538-4632.1995.tb00912.x>).")
+measuring the spatial structure of model errors and evaluating where predictions
+can be made safely, and are particularly useful for models fit using the
+tidymodels framework.  Methods include Moran's I ('Moran (1950)
+<doi:10.2307/2332142>), Geary's C ('Geary (1954) <doi:10.2307/2986645>),
+Getis-Ord's G ('Ord and Getis (1995) <doi:10.1111/j.1538-4632.1995.tb00912.x>),
+as well as an implementation of the area of applicability methodology from Meyer
+and Pebesma (2021) (<doi:10.1111/2041-210X.13650>).")
     (license license:expat)))
 
 (define-public r-waydown
@@ -6207,7 +6221,7 @@ sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
                              r-ggplot2
                              r-dplyr
                              r-caret))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/GoreLab/waves")
     (synopsis "Vis-NIR Spectral Analysis Wrapper")
     (description
@@ -6914,7 +6928,7 @@ this package.")
                              r-dtw
                              r-crayon
                              r-bioacoustics))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://marce10.github.io/warbleR/")
     (synopsis "Streamline Bioacoustic Analysis")
     (description

@@ -25,7 +25,6 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages tcl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1044,7 +1043,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (properties `((upstream-name . "dynamichazard")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-boot))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-r-rsp r-knitr gfortran))
     (home-page "https://github.com/boennecd/dynamichazard")
     (synopsis "Dynamic Hazard Models using State Space Models")
     (description
@@ -2652,7 +2651,7 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
                              r-hmisc
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://precisionmethods.guru/")
     (synopsis "Dose Titration Algorithm Tuning")
     (description
@@ -3415,7 +3414,7 @@ age-conditional references.")
     (properties `((upstream-name . "dsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-magrittr r-limma))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/niaid/dsb")
     (synopsis
      "Normalize & Denoise Droplet Single Cell Protein Data (CITE-Seq)")
@@ -4625,6 +4624,7 @@ settings.  Compatible with and based on the R grid package.")
                 "191yxlj9jccakmz27g7n9izfcy19kj3fgnw4w6zl9iq66787qpm6"))))
     (properties `((upstream-name . "drat")))
     (build-system r-build-system)
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/drat")
     (synopsis "'Drat' R Archive Template")
     (description
@@ -5241,6 +5241,7 @@ Talwar, 2007) <doi:10.1109/FOCS.2007.66>.")
     (properties `((upstream-name . "DPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DPP")
     (synopsis
      "Inference of Parameters of Normal Distributions from a Mixture of Normals")
@@ -7000,6 +7001,7 @@ document using Microsoft Word'.")
     (build-system r-build-system)
     (inputs (list docker))
     (propagated-inputs (list r-sys r-rstudioapi r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=docknitr")
     (synopsis "Use Docker Images to Process Rmarkdown Blocks")
     (description
@@ -10668,7 +10670,7 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/DISOhda/DiscreteFDR")
     (synopsis "Multiple Testing Procedures with Adaptation for Discrete Tests")
     (description
@@ -10815,7 +10817,7 @@ Analysis, Hierarchical Clustering and the K-Means Method.")
                              r-ggplot2
                              r-ggally
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=discourseGT")
     (synopsis
      "Analyze Group Patterns using Graph Theory in Educational Settings")
@@ -11838,6 +11840,7 @@ handle weights and/or missings.")
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-plyr r-dinamic r-biomart))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DiNAMIC.Duo")
     (synopsis "Finding Recurrent DNA Copy Number Alterations and Differences")
     (description
@@ -13003,7 +13006,7 @@ and calculates electivity indices in R. Borstein (2020)
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
     (synopsis "Diagnostic Index Expectation Maximisation in R")
     (description
@@ -16257,7 +16260,12 @@ the event-oriented approach to DES; see the tutorial in Matloff (2008)
     (properties `((upstream-name . "derivmkts")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-tidyr
+                         r-pander
+                         r-knitr
+                         r-ggplot2
+                         r-dplyr
+                         r-bookdown))
     (home-page "https://cran.r-project.org/package=derivmkts")
     (synopsis "Functions and R Code to Accompany Derivatives Markets")
     (description
@@ -16833,7 +16841,7 @@ method is described in <arXiv:1602.01206>.")
                 "18w69gxbnazg5k8bzi76slcqxnbfmrndp548zazz8bpxz3jns699"))))
     (properties `((upstream-name . "denoiSeq")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=denoiSeq")
     (synopsis "Differential Expression Analysis Using a Bottom-Up Model")
     (description
@@ -18891,7 +18899,7 @@ negative effects during normal runtime.")
                              r-mass
                              r-desolve
                              r-coda))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/pboesu/debinfer")
     (synopsis "Bayesian Inference for Differential Equations")
     (description
@@ -18926,6 +18934,7 @@ of the posterior distributions of model parameters and trajectories.")
                              r-rstudioapi
                              r-rootsolve
                              r-desolve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=deBif")
     (synopsis "Bifurcation Analysis of Ordinary Differential Equation Systems")
     (description
@@ -20998,7 +21007,7 @@ step.")
                 "02hmqzfk9sgz4vndnpnpcav7wlpy9xna8zdnlwgcj4a84zz2pyk8"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/vdorie/dbarts")
     (synopsis "Discrete Bayesian Additive Regression Trees Sampler")
     (description
@@ -21285,7 +21294,7 @@ analyzing marketing data from <https://datorama.com>.")
     (properties `((upstream-name . "dateutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-seasonal r-rcpparmadillo r-rcpp r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/macroeconomicdata/dateutils")
     (synopsis "Date Utils")
     (description
@@ -22140,7 +22149,7 @@ efficient way.")
                              r-dplyr
                              r-doparallel
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=dataprep")
     (synopsis "Efficient and Flexible Data Preprocessing Tools")
     (description
@@ -22423,13 +22432,13 @@ types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames."
 (define-public r-datagraph
   (package
     (name "r-datagraph")
-    (version "1.2.5")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DataGraph" version))
               (sha256
                (base32
-                "0f5wh2lyddr48wdcqgk1y1jbs9q9rim86v4g1c7m4xgnvyp81mih"))))
+                "1b08zrv098m637288bjsy7vqwlx8ns9lq2cl9qg9f5x0q7rnzinc"))))
     (properties `((upstream-name . "DataGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -22962,30 +22971,6 @@ user-inputted query.")
 assertr package.  Generate good looking HTML report or print console output to
 display in logs of your data processing pipeline.")
     (license license:expat)))
-
-(define-public r-data-table
-  (package
-    (name "r-data-table")
-    (version "1.14.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "data.table" version))
-              (sha256
-               (base32
-                "1w28wg119w8pnzfdwp5yw7jgk7vv80b6cagms67i02c3dv1afqj8"))))
-    (properties `((upstream-name . "data.table")))
-    (build-system r-build-system)
-    (inputs (list zlib zlib))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://r-datatable.com")
-    (synopsis "Extension of `data.frame`")
-    (description
-     "Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast
-add/modify/delete of columns by group using no copies at all, list columns,
-friendly and fast character-separated-value read/write.  Offers a natural and
-flexible syntax, for faster development.")
-    (license (list (license:fsdg-compatible "MPL-2.0")
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-dat
   (package
@@ -24093,6 +24078,7 @@ which is included in the package.")
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-lattice r-frf2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=daewr")
     (synopsis "Design and Analysis of Experiments with R")
     (description

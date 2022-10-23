@@ -753,6 +753,7 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
                 "07gx6dp0kz4y1jn90hsfvkhn6k7i4flh7ghdz9v5nwda86f55q2s"))))
     (properties `((upstream-name . "extremefit")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=extremefit")
     (synopsis "Estimation of Extreme Conditional Quantiles and Probabilities")
     (description
@@ -3838,6 +3839,7 @@ bivariate maxima models, and for univariate and bivariate threshold models.")
                              r-matrix
                              r-limsolve
                              r-fnn))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=evclust")
     (synopsis "Evidential Clustering")
     (description
@@ -4643,7 +4645,7 @@ function for re-coding vectors.")
                              r-dplyr
                              r-downloader
                              r-dbi))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-ggplot2 r-dplyr r-dbplyr))
     (home-page "https://github.com/beanumber/etl")
     (synopsis "Extract-Transform-Load Framework for Medium Data")
     (description
@@ -6275,7 +6277,7 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
     (properties `((upstream-name . "ergm.rank")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-network r-ergm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
     (synopsis
      "Fit, Simulate and Diagnose Exponential-Family Models for Rank-Order Relational Data")
@@ -6329,7 +6331,7 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
     (properties `((upstream-name . "ergm.count")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-network r-ergm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
     (synopsis
      "Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges")
@@ -8484,6 +8486,7 @@ concentrations.  More information of the model can be found at
                              r-hamlet
                              r-glmnet
                              r-bolstad2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ePCR")
     (synopsis "Ensemble Penalized Cox Regression for Survival Prediction")
     (description
@@ -8983,6 +8986,7 @@ environmental analysis.")
                              r-dofuture
                              r-cvauc
                              r-concaveman))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/lance-waller-lab/envi")
     (synopsis
      "Environmental Interpolation using Spatial Kernel Density Estimation")
@@ -9251,6 +9255,7 @@ certain conditions and will raise appropriate errors if they do not.")
     (properties `((upstream-name . "ensr")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-ggplot2 r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/dewittpe/ensr")
     (synopsis "Elastic Net SearcheR")
     (description
@@ -9403,6 +9408,7 @@ provided in EnsembleBase package as well as this package.")
     (properties `((upstream-name . "EnsemblePCReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-ensemblebase))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EnsemblePCReg")
     (synopsis
      "Extensible Package for Principal-Component-Regression-Based Heterogeneous Ensemble Meta-Learning")
@@ -10731,6 +10737,7 @@ Jones L (2007) <doi:10.1016/j.csda.2006.09.015> Baek J, McLachlan GJ, Flack LK
                              r-mclust
                              r-ggplot2
                              r-bh))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EMMIXgene")
     (synopsis
      "Mixture Model-Based Approach to the Clustering of Microarray Expression Data")
@@ -11095,6 +11102,7 @@ package.")
                              r-ggplot2
                              r-formula-tools
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/SoerenPannier/emdi")
     (synopsis "Estimating and Mapping Disaggregated Indicators")
     (description
@@ -12927,7 +12935,7 @@ highly computational advantage by truncated singular-value decomposition.")
     (properties `((upstream-name . "eikosograms")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/rwoldford/eikosograms")
     (synopsis "The Picture of Probability")
     (description
@@ -13561,6 +13569,7 @@ semi-variogram fitting process.")
                              r-coda
                              r-boot
                              r-bh))
+    (native-inputs (list r-r-rsp))
     (home-page "https://www.math.uzh.ch/pages/eggcount/")
     (synopsis "Hierarchical Modelling of Faecal Egg Counts")
     (description
@@ -16434,6 +16443,7 @@ also included.  Algorithms implemented here are described in de Aguiar et al.
                              r-dplyr
                              r-doparallel
                              r-bbmle))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=econet")
     (synopsis "Estimation of Parameter-Dependent Network Centrality Measures")
     (description
@@ -18074,6 +18084,7 @@ estimating technical efficiency is also included.  More details in:
     (properties `((upstream-name . "easyVerification")))
     (build-system r-build-system)
     (propagated-inputs (list r-specsverification r-rcpp r-pbapply))
+    (native-inputs (list r-rmarkdown r-r-rsp))
     (home-page "http://www.meteoswiss.ch")
     (synopsis "Ensemble Forecast Verification for Large Data Sets")
     (description
@@ -18477,6 +18488,7 @@ ID: identifier code.  The GEO datasets are downloaded from the URL
                              r-fsa
                              r-fitdistrplus
                              r-catt))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EasyDescribe")
     (synopsis "Convenient Way of Descriptive Statistics")
     (description

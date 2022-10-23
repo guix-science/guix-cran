@@ -347,6 +347,7 @@ species distribution modeling.")
                              r-lattice
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-hyperspec.github.io/hyperSpec/")
     (synopsis
      "Work with Hyperspectral Data, i.e. Spectra + Meta Information (Spatial, Time, Concentration, ...)")
@@ -1034,7 +1035,7 @@ approach are: Tang & Carey (2017) <doi:10.1002/hyp.11185>, Kaur et al. (2017)
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-tibble r-reshape2 r-gtools r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/EdM44/hydraulics")
     (synopsis "Basic Pipe and Open Channel Hydraulics")
     (description
@@ -2052,7 +2053,7 @@ performance.")
                              r-magrittr
                              r-desolve
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page
      "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
     (synopsis "High-Throughput Toxicokinetics")
@@ -2410,13 +2411,13 @@ similar to the glm() R function.")
 (define-public r-htlr
   (package
     (name "r-htlr")
-    (version "0.4-3")
+    (version "0.4-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTLR" version))
               (sha256
                (base32
-                "1bxgfiwbnvpdw0d6k34c1wc47z6pvx0imnz36c6r99zls5bm129y"))))
+                "0mi03r9izipvmla5pm0s42vm85ishr3bb8pjdw906s4q7lkxjivz"))))
     (properties `((upstream-name . "HTLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-magrittr r-glmnet
@@ -3671,7 +3672,7 @@ and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
                              r-rcpp
                              r-questionr
                              r-mass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=hopit")
     (synopsis
      "Hierarchical Ordered Probit Models with Application to Reporting Heterogeneity")
@@ -4282,6 +4283,7 @@ current system time and the system time when the timer was started.")
                              r-bayeslogit
                              r-ape
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page
      "https://www.helsinki.fi/en/researchgroups/statistical-ecology/software/hmsc")
     (synopsis "Hierarchical Model of Species Communities")
@@ -6122,7 +6124,7 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
                              r-lpsolveapi
                              r-fitheavytail
                              r-ecosolver))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://github.com/dppalomar/highOrderPortfolios")
     (synopsis
      "Design of High-Order Portfolios Including Skewness and Kurtosis")
@@ -7630,7 +7632,7 @@ fast update functions when adding new observations.")
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HeteroGGM")
     (synopsis "Gaussian Graphical Model-Based Heterogeneity Analysis")
     (description
@@ -8911,7 +8913,7 @@ Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
                              r-dplyr
                              r-broom
                              r-boruta))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/niaid/HDStIM")
     (synopsis "High Dimensional Stimulation Immune Mapping ('HDStIM')")
     (description
@@ -10951,6 +10953,7 @@ measurements at all levels.  Webpage provided at:
                 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
+    (native-inputs (list))
     (home-page "https://gitlab.com/fvafrCU/HandTill2001")
     (synopsis "Multiple Class Area under ROC Curve")
     (description

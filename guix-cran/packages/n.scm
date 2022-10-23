@@ -406,7 +406,7 @@ remember and easy to deploy.")
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=Numero")
     (synopsis "Statistical Framework to Define Subgroups in Complex Datasets")
     (description
@@ -603,6 +603,7 @@ examine the distributions of metrics.")
     (properties `((upstream-name . "NUCOMBog")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jeroenpullens/NUCOMBog/")
     (synopsis
      "NUtrient Cycling and COMpetition Model Undisturbed Open Bog Ecosystems in a Temperate to Sub-Boreal Climate")
@@ -625,7 +626,7 @@ model can downloaded from <https://github.com/jeroenpullens/NUCOMBog>.")
     (properties `((upstream-name . "nucim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fields r-ebimage r-bioimagetools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://bioimaginggroup.github.io/nucim/")
     (synopsis "Nucleome Imaging Toolbox")
     (description
@@ -1616,7 +1617,7 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
                              r-htmltable
                              r-futile-logger
                              r-anytime))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://rmsharp.github.io/nprcgenekeepr/")
     (synopsis "Genetic Tools for Colony Management")
     (description
@@ -2543,6 +2544,7 @@ reports need to be created.")
                 "1h0v92l5jzgiy5rz33pan1l6rb3mykckmvn5c8jm3hhph6ipgqad"))))
     (properties `((upstream-name . "noweb")))
     (build-system r-build-system)
+    (native-inputs (list r-noweb))
     (home-page "https://cran.r-project.org/package=noweb")
     (synopsis "The 'noweb' System for R")
     (description "The noweb system for source code, implemented in R.")
@@ -4437,6 +4439,7 @@ version can only impute for a situation with one missing covariate.")
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/VNNikolaidis/nnlib2Rcpp")
     (synopsis
      "Tool for Creating Custom Neural Networks in C++ and using Them in R")
@@ -5732,7 +5735,7 @@ package.  It also provides four vignettes with extended examples.")
                              r-cvauc
                              r-bde
                              r-assertthat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=nlpred")
     (synopsis
      "Estimators of Non-Linear Cross-Validated Risks Optimized for Small Samples")
@@ -5919,13 +5922,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "2.0.7")
+    (version "2.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2extra" version))
               (sha256
                (base32
-                "1zkv7qr0gwlma9g0b51ij95rlmlnss71cr8871wfaxg40pf8drk2"))))
+                "1sxbkqwhj6lg49c3ah4kylvak1lgj2was6mqsh82klvp72fd61fd"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -5959,13 +5962,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2est" version))
               (sha256
                (base32
-                "1hliid0v5qlfy7rlrywbi8p4l6gldjk9gjgd2508qxdyx3wy9yij"))))
+                "0bnm7zgbzarwj4xbimivpnxmxqih3h52c4hyb6wz1816z35cs8lc"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -6032,13 +6035,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.0.7")
+    (version "2.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2" version))
               (sha256
                (base32
-                "1dn4f5qnsxsmz7r5x6k9jqcya8rq7c174v2v856limcivwdrcspk"))))
+                "14akzman4r99ynkdpif0y6fjgxahbha5bk49g59924azwnhin7hd"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -6046,8 +6049,8 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
                              r-nlmixr2extra
                              r-nlmixr2est
                              r-nlmixr2data
-                             r-magrittr))
-    (native-inputs (list r-knitr))
+                             r-magrittr
+                             r-lotri))
     (home-page "https://nlmixr2.org/")
     (synopsis "Nonlinear Mixed Effects Models in Population PK/PD")
     (description
@@ -6281,7 +6284,7 @@ parameters as a constrained matrix.")
     (properties `((upstream-name . "nlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/jsta/nlaR")
     (synopsis "Interface to the National Lakes Assessment")
     (description
@@ -6310,7 +6313,7 @@ data for hundreds of lakes in the lower 48 states of the contiguous US.")
                              r-httr
                              r-dplyr
                              r-curl))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://gavinrozzi.github.io/njtr1/")
     (synopsis "Download, Analyze & Clean New Jersey Car Crash Data")
     (description
@@ -9809,7 +9812,7 @@ ggplot2 grammar.")
                              r-data-table
                              r-circstats
                              r-abind))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://netlogor.predictiveecology.org")
     (synopsis "Build and Run Spatially Explicit Agent-Based Models")
     (description
@@ -10347,6 +10350,7 @@ the main utility of netClust'.")
     (properties `((upstream-name . "netchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-matrix r-igraph r-gtools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=netchain")
     (synopsis
      "Inferring Causal Effects on Collective Outcomes under Interference")
@@ -11490,6 +11494,7 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
                              r-matrix
                              r-mass
                              r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/idblr/ndi")
     (synopsis "Neighborhood Deprivation Indices")
     (description

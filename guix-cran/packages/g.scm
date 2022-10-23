@@ -3075,6 +3075,7 @@ growth curves) at isolated time points.")
                              r-ggplot2
                              r-ggally
                              r-dae))
+    (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name")
     (synopsis
      "Plotting, Smoothing and Growth Trait Extraction for Longitudinal Data")
@@ -3945,7 +3946,7 @@ with content analysis.")
     (properties `((upstream-name . "gridpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-png r-memoise r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/gridpattern/")
     (synopsis "'grid' Pattern Grobs")
     (description
@@ -5251,6 +5252,7 @@ to build nodes and another create a temporal graph.")
     (properties `((upstream-name . "graphsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-matrix r-igraph r-gplots))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/TomKellyGenetics/graphsim/")
     (synopsis "Simulate Expression Data from 'igraph' Networks")
     (description
@@ -5337,6 +5339,7 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
                              r-ggplot2
                              r-dplyr
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/johnfergusonNUIG/graphPAF")
     (synopsis "Estimating and Displaying Population Attributable Fractions")
     (description
@@ -5583,7 +5586,7 @@ scatter plot.")
                              r-ecodist
                              r-diversity
                              r-adegenet))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=graph4lg")
     (synopsis "Build Graphs for Landscape Genetics Analysis")
     (description
@@ -5972,7 +5975,7 @@ function.")
                              r-raster
                              r-igraph
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://alexchubaty.com/grainscape")
     (synopsis "Landscape Connectivity, Habitat, and Protected Area Networks")
     (description
@@ -8953,6 +8956,7 @@ as well as a tool to estimate and visualize the proportion of missing at random.
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shinydashboard r-shinycssloaders
                              r-shiny))
+    (native-inputs (list r-r-rsp))
     (home-page "https://confoobio.github.io/gmse/")
     (synopsis "Generalised Management Strategy Evaluation Simulator")
     (description
@@ -11251,7 +11255,7 @@ stability for models that may fail to converge using glm.")
                              r-mass
                              r-dfidx
                              r-aer))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://benjaminschlegel.ch/r/glm-predict/")
     (synopsis "Predicted Values and Discrete Changes for GLM")
     (description
@@ -13173,6 +13177,7 @@ genome data and visualising the output and results.  Beissinger et al., (2018)
                              r-e1071
                              r-data-table
                              r-class))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GHap")
     (synopsis "Genome-Wide Haplotyping")
     (description
@@ -13253,7 +13258,7 @@ around the one of wordcloud2.js'.")
     (properties `((upstream-name . "ggvoronoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgeos r-raster r-ggplot2 r-deldir))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-mapproj r-knitr r-ggmap))
     (home-page "https://github.com/garretrc/ggvoronoi/")
     (synopsis "Voronoi Diagrams and Heatmaps with 'ggplot2'")
     (description
@@ -13393,7 +13398,7 @@ with dense datasets that are prone to overplotting.")
     (properties `((upstream-name . "ggTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/thecomeonman/ggTimeSeries")
     (synopsis "Time Series Visualisations Using the Grammar of Graphics")
     (description
@@ -14628,7 +14633,7 @@ the fly.")
     (properties `((upstream-name . "ggpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-gridpattern r-glue r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-ragg r-knitr))
     (home-page "https://github.com/coolbutuseless/ggpattern")
     (synopsis "'ggplot2' Pattern Geoms")
     (description
@@ -17226,7 +17231,7 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
                              r-matrix
                              r-mass
                              r-magic))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=GFD")
     (synopsis "Tests for General Factorial Designs")
     (description
@@ -17333,7 +17338,7 @@ originally by Virtanen et al. (2012), and extended in Klami et al. (2015)
     (properties `((upstream-name . "geysertimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-lubridate r-jsonlite))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/geysertimes/geysertimes-r-package")
     (synopsis "Geyser Data from GeyserTimes.org")
     (description
@@ -17988,6 +17993,7 @@ Markdown HTML documents.")
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GET")
     (synopsis "Global Envelopes")
     (description
@@ -18819,13 +18825,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-geos
   (package
     (name "r-geos")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geos" version))
               (sha256
                (base32
-                "15fwsiw1i7p8b6fjqfn2p356z8mj9kk32x54v1z3wdn25cx2bbfh"))))
+                "0hmiskdwzlgabwhayw7hwi6nqria976xzz6xm95644w7fx723wd7"))))
     (properties `((upstream-name . "geos")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk r-libgeos))
@@ -19667,7 +19673,7 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
                              r-fispro
                              r-data-tree
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://www.geofis.org")
     (synopsis "Spatial Data Processing for Decision Making")
     (description
@@ -21481,7 +21487,7 @@ given, even the generalized linear model output in each group.")
                              r-matrix
                              r-fields
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=GeneralizedWendland")
     (synopsis "Fully Parameterized Generalized Wendland Covariance Function")
     (description
@@ -21616,6 +21622,7 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=generalCorr")
     (synopsis "Generalized Correlations, Causal Paths and Portfolio Selection")
     (description
@@ -23083,13 +23090,13 @@ Conversion at a regional/aggregated level is also possible.")
 (define-public r-gdpc
   (package
     (name "r-gdpc")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdpc" version))
               (sha256
                (base32
-                "0g1mnxm78n928g7qjf0w7jzfm27z6mvz5p1rm25mxv7wsif5m6s6"))))
+                "1ba7ma1y4pxvx7byg19fzgpp1zswcihdaifyhb7zdadizxjzyj43"))))
     (properties `((upstream-name . "gdpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23098,6 +23105,7 @@ Conversion at a regional/aggregated level is also possible.")
                              r-rcpp
                              r-foreach
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=gdpc")
     (synopsis "Generalized Dynamic Principal Components")
     (description
@@ -23264,6 +23272,7 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
                              r-ggplot2
                              r-ggally
                              r-factominer))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/nicolas-robette/GDAtools")
     (synopsis "Toolbox for Geometric Data Analysis and More")
     (description
@@ -24497,6 +24506,7 @@ Existence in the journal Ecology and Evolution.")
                              r-raster
                              r-lifecycle
                              r-fields))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/lance-waller-lab/gateR")
     (synopsis
      "Flow/Mass Cytometry Gating via Spatial Kernel Density Estimation")
@@ -24614,7 +24624,7 @@ likelihood method and the Hessian matrix.")
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table r-aiccmodavg))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=gasfluxes")
     (synopsis "Greenhouse Gas Flux Calculation from Chamber Measurements")
     (description
@@ -25693,6 +25703,7 @@ the characteristic function.")
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolveapi r-kappalab r-ineq r-gtools
                              r-combinat))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GameTheory")
     (synopsis "Cooperative Game Theory")
     (description
@@ -25812,7 +25823,7 @@ copulas.")
     (properties `((upstream-name . "gamclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-randomforest r-latticeextra r-lattice))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-bookdown))
     (home-page "https://cran.r-project.org/package=gamclass")
     (synopsis
      "Functions and Data for a Course on Modern Regression and Classification")

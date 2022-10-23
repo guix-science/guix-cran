@@ -2459,6 +2459,7 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
     (properties `((upstream-name . "ISEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ISEtools")
     (synopsis "Ion Selective Electrodes Analysis Methods")
     (description
@@ -3399,6 +3400,7 @@ L1-regularization.")
     (properties `((upstream-name . "irboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-mpath))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=irboost")
     (synopsis "Iteratively Reweighted Boosting for Robust Analysis")
     (description
@@ -3786,7 +3788,7 @@ proposed by Efford (2004) <doi:10.1111/j.0030-1299.2004.13043.x>.")
                              r-ggplot2
                              r-foreach
                              r-dosnow))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/haziqj/iprior")
     (synopsis "Regression Modelling using I-Priors")
     (description
@@ -6689,6 +6691,7 @@ censored survival data as well as area under the curve (AUC).")
     (build-system r-build-system)
     (propagated-inputs (list r-splines2 r-mass r-foreach r-doparallel
                              r-alabama))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=intccr")
     (synopsis
      "Semiparametric Competing Risks Regression under Interval Censoring")
@@ -8956,7 +8959,7 @@ counts from scratch for each time point.")
                              r-rcpp
                              r-ggplot2
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=IncDTW")
     (synopsis "Incremental Calculation of Dynamic Time Warping")
     (description
@@ -9224,7 +9227,7 @@ Package development and documentation is at
                              r-ggtext
                              r-ggplot2
                              r-forecast))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://github.com/SteffenMoritz/imputeTS")
     (synopsis "Time Series Missing Value Imputation")
     (description
@@ -9355,7 +9358,7 @@ methods like PCA and PLS.")
     (properties `((upstream-name . "imputeMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gtools r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=imputeMulti")
     (synopsis "Imputation Methods for Multivariate Multinomial Data")
     (description
@@ -9451,7 +9454,7 @@ the imputation functions.")
     (properties `((upstream-name . "imputeFin")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-mvtnorm r-mass r-magrittr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://CRAN.R-project.org/package=imputeFin")
     (synopsis
      "Imputation of Financial Time Series with Missing Values and/or Outliers")
@@ -10625,6 +10628,7 @@ through WebGL filters and performing basic high-pass/low-pass filtering.")
                              r-foreach
                              r-dplyr
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=imageseg")
     (synopsis "Deep Learning Models for Image Segmentation")
     (description
@@ -10729,6 +10733,7 @@ background of the methods.")
                              r-ggplot2
                              r-ggally
                              r-dae))
+    (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name")
     (synopsis
      "Aids in Processing and Plotting Data from a Lemna-Tec Scananalyzer")
@@ -12526,7 +12531,14 @@ identity metrics\".")
     (build-system r-build-system)
     (inputs (list pandoc))
     (propagated-inputs (list r-tidyr r-rlang r-plyr r-dplyr r-crayon))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rvcheck
+                         r-rmdformats
+                         r-rmarkdown
+                         r-rentrez
+                         r-rcurl
+                         r-knitr
+                         r-kableextra
+                         r-badger))
     (home-page "https://ferroao.gitlab.io/manualidiogramfish/")
     (synopsis "Shiny App. Idiograms with Marks and Karyotype Indices")
     (description
@@ -15485,7 +15497,7 @@ irregular autoregressive model (Elorrieta et al.(2021)
     (properties `((upstream-name . "IAPWS95")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pander r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=IAPWS95")
     (synopsis "Thermophysical Properties of Water and Steam")
     (description
