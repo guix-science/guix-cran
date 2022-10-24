@@ -298,7 +298,7 @@ CYSTINET, the European Network on taeniosis/cysticercosis, COST ACTION TD1302.")
     (properties `((upstream-name . "cyphr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium r-openssl r-getpass))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/cyphr")
     (synopsis "High Level Encryption Wrappers")
     (description
@@ -2427,7 +2427,6 @@ data.")
                              r-dplyr
                              r-curl
                              r-clipr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ctrdata")
     (synopsis "Retrieve and Analyze Clinical Trials in Public Registers")
     (description
@@ -2687,7 +2686,7 @@ model fitting possible within a Poisson GLM framework.")
     (properties `((upstream-name . "ctmcd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-expm r-coda))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ctmcd")
     (synopsis
      "Estimating the Parameters of a Continuous-Time Markov Chain from Discrete-Time Data")
@@ -2996,7 +2995,7 @@ placing a YAML header on top of a regular CSV.")
                              r-purrr
                              r-magrittr
                              r-jsonlite))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://robsteranium.github.io/csvwr/")
     (synopsis "Read and Write CSV on the Web (CSVW) Tables and Metadata")
     (description
@@ -3855,7 +3854,6 @@ Conicyt-Regional R08C1002 is gratefully acknowledged.")
                              r-lambertw
                              r-ksamples
                              r-gmp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CryptRndTest")
     (synopsis "Statistical Tests for Cryptographic Randomness")
     (description
@@ -5727,7 +5725,7 @@ team performances.")
                              r-lubridate
                              r-janitor
                              r-dplyr))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "http://pkg.robjhyndman.com/cricketdata/")
     (synopsis "International Cricket Data")
     (description
@@ -5920,7 +5918,6 @@ Default Swap - CDS - spreads) and price Credit Default Swaps - CDS.")
                 "19l3vsjxd9lvaf67l61x9l0j4y124p93dfqzw7rl1ya5sxbdzs7a"))))
     (properties `((upstream-name . "credsubs")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=credsubs")
     (synopsis "Credible Subsets")
     (description
@@ -6954,7 +6951,6 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
                              r-mathjaxr
                              r-ggplot2
                              r-crops))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=cpop")
     (synopsis
      "Detection of Multiple Changes in Slope in Univariate Time-Series")
@@ -8856,7 +8852,6 @@ highly variable features in RNA-Seq dataset.")
     (properties `((upstream-name . "CountsEPPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CountsEPPM")
     (synopsis "Mean and Variance Modeling of Count Data")
     (description
@@ -9288,7 +9283,6 @@ to multi-species distribution models <arXiv:2201.13095>.")
                              r-ctsem
                              r-crayon
                              r-abind))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/CoTiMA/CoTiMA")
     (synopsis "Continuous Time Meta-Analysis ('CoTiMA')")
     (description
@@ -10279,7 +10273,6 @@ correlations from two samples in a single correlation matrix or corrgram.")
     (build-system r-build-system)
     (propagated-inputs (list r-mmand r-foreach r-fields r-doparallel
                              r-colorspace))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=corr2D")
     (synopsis "Implementation of 2D Correlation Analysis in R")
     (description
@@ -10638,7 +10631,7 @@ German).")
                              r-ggplot2
                              r-dplyr
                              r-detectseparation))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bryandmartin/corncob")
     (synopsis
      "Count Regression for Correlated Observations with the Beta-Binomial")
@@ -11532,7 +11525,6 @@ adopted in particular.")
                              r-crs
                              r-cordillera
                              r-cmaes))
-    (native-inputs (list r-r-rsp))
     (home-page "http://r-forge.r-project.org/projects/stops/")
     (synopsis "Cluster Optimized Proximity Scaling")
     (description
@@ -11873,7 +11865,7 @@ production programming problems.")
     (properties `((upstream-name . "CoopGame")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcdd r-gtools r-geometry))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CoopGame")
     (synopsis "Important Concepts of Cooperative Game Theory")
     (description
@@ -14740,7 +14732,7 @@ CNVs.  Brucker, A., et al. (2020) <doi:10.1101/666875>.")
     (properties `((upstream-name . "concstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/schneiderpy/concstats")
     (synopsis "Market Structure, Concentration and Inequality Measures")
     (description
@@ -14986,7 +14978,7 @@ concave polygon(s) for one or several set of points.")
                              r-igraph
                              r-dplyr
                              r-ape))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tardipede/concatipede")
     (synopsis "Easy Concatenation of Fasta Sequences")
     (description
@@ -15383,7 +15375,6 @@ Zero-inflated CMP regression (Sellers & Raim, 2016)
                 "1373m324zq7f3wffb25ypjidvsxki0p64iv4qy8i887g4f8inq6q"))))
     (properties `((upstream-name . "CompModels")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CompModels")
     (synopsis "Pseudo Computer Models for Optimization")
     (description
@@ -15544,7 +15535,6 @@ promotions.")
                              r-gparotation
                              r-boot
                              r-benchmarking))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Compind")
     (synopsis "Composite Indicators Functions")
     (description
@@ -16448,7 +16438,6 @@ etc.  More functions will be added later.")
     (properties `((upstream-name . "comf")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-plyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=comf")
     (synopsis "Models and Equations for Human Comfort Research")
     (description
@@ -18151,7 +18140,6 @@ Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppgsl r-rcpp r-cubature))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ChaoranHu/coga")
     (synopsis "Convolution of Gamma Distributions")
     (description
@@ -20026,7 +20014,7 @@ students of the Center for Mathematical Research, Stankin, Moscow.")
     (properties `((upstream-name . "cmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-fields))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://bioimaginggroup.github.io/cmr/")
     (synopsis "Analysis of Cardiac Magnetic Resonance Images")
     (description
@@ -22512,7 +22500,7 @@ updating of components, and rounding.")
                              r-ggplot2
                              r-forecast
                              r-chainladder))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/gpitt71/clmplus")
     (synopsis "Tool-Box of Chain Ladder + Models")
     (description
@@ -23126,7 +23114,6 @@ statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
                              r-sp
                              r-rts
                              r-raster))
-    (native-inputs (list r-r-rsp))
     (home-page "http://r-gis.net")
     (synopsis "Climate Change Metrics")
     (description
@@ -23857,7 +23844,6 @@ anything if needed.")
                 "1lm7k25j16p888xvd7rzzd3sb3namzjlpjn22xmmpzlzyl0h7dhk"))))
     (properties `((upstream-name . "cleandata")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/sherrisherry/cleandata")
     (synopsis
      "To Inspect and Manipulate Data; and to Keep Track of This Process")
@@ -24265,7 +24251,6 @@ analysis, applied to isotope data extracted from clams.")
     (properties `((upstream-name . "clampSeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stepr r-lowpassfilter))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=clampSeg")
     (synopsis "Idealisation of Patch Clamp Recordings")
     (description
@@ -24855,7 +24840,7 @@ as default models.")
                              r-dplyr
                              r-boot
                              r-arm))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jthaman/ciTools")
     (synopsis
      "Confidence or Prediction Intervals, Quantiles, and Probabilities for Statistical Models")
@@ -26782,7 +26767,6 @@ proteins.")
                              r-lme4
                              r-kyotil
                              r-boot))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=chngpt")
     (synopsis "Estimation and Hypothesis Testing for Threshold Regression")
     (description
@@ -27007,7 +26991,7 @@ nonparametric test.")
                              r-outliers
                              r-mass
                              r-lmtest))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/PCRuniversum/chipPCR")
     (synopsis "Toolkit of Helper Functions to Pre-Process Amplification Data")
     (description
@@ -28746,31 +28730,6 @@ that are not second-order stationary.  Important functions in this package are
 CGP, print.CGP, summary.CGP, predict.CGP and plotCGP.")
     (license license:lgpl2.1)))
 
-(define-public r-cgnm
-  (package
-    (name "r-cgnm")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CGNM" version))
-              (sha256
-               (base32
-                "0z9y6z2lpzzq7jzknfc84npraimkvlfm0sr5k9h3h3qjdxwfy2wk"))))
-    (properties `((upstream-name . "CGNM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CGNM")
-    (synopsis "Cluster Gauss-Newton Method")
-    (description
-     "Find multiple solutions of a nonlinear least squares problem.  Cluster
-Gauss-Newton method does not assume uniqueness of the solution of the nonlinear
-least squares problem and compute approximate multiple minimizers.  Please cite
-the following paper when this software is used in your research: Aoki et al.
-(2020) <doi:10.1007/s11081-020-09571-2>.  Cluster GaussâNewton method.
-Optimization and Engineering, 1-31.")
-    (license license:expat)))
-
 (define-public r-cgmquantify
   (package
     (name "r-cgmquantify")
@@ -29949,7 +29908,7 @@ analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
     (properties `((upstream-name . "CEOdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools r-stringr r-jsonlite r-haven r-dplyr))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://ceo.gencat.cat/ca/inici/")
     (synopsis
      "Datasets of the CEO (Centre d'Estudis d'Opinio) for Opinion Polls in Catalonia")
@@ -30757,7 +30716,7 @@ EHR corpora and obtain clinical event dates: <https://cedars.io>.")
                              r-ggprism
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CEDA")
     (synopsis "CRISPR Screen and Gene Expression Differential Analysis")
     (description
@@ -31029,7 +30988,7 @@ complete/identified Q-matrices.")
                              r-cli
                              r-checkmate
                              r-arrow))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CDMConnector")
     (synopsis "Connect to an OMOP Common Data Model")
     (description
@@ -32917,7 +32876,6 @@ Augmented Inverse Propensity Weighted Estimator.\" Political Analysis.  18:
     (properties `((upstream-name . "causaleffect")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/santikka/causaleffect/")
     (synopsis
      "Deriving Expressions of Joint Interventional Distributions and Transport Formulas in Causal Models")
@@ -34226,7 +34184,6 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
                              r-cluster
                              r-animation
                              r-abind))
-    (native-inputs (list r-r-rsp))
     (home-page "http://www-irma.u-strasbg.fr/~fbertran/")
     (synopsis
      "Selection, Reverse-Engineering and Prediction in Cascade Networks")
@@ -34646,22 +34603,24 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretforecast
   (package
     (name "r-caretforecast")
-    (version "0.0.3")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "caretForecast" version))
               (sha256
                (base32
-                "0iqnmqlf9a783gaf0vv51jhldbn9q9650vj0cgvbq0qfpqy7qh0d"))))
+                "0z8r64cb3w0m5a7khysvfmnf1ywa7svi5lvxiwx1a6j6868zbxlr"))))
     (properties `((upstream-name . "caretForecast")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-forecast r-caret))
+    (propagated-inputs (list r-magrittr r-generics r-forecast r-dplyr r-caret))
     (home-page "https://github.com/Akai01/caretForecast")
-    (synopsis "Time Series Forecasting Using Caret Infrastructure")
+    (synopsis
+     "Conformal Time Series Forecasting Using State of Art Machine Learning Algorithms")
     (description
-     "Recursive time series forecast using Caret infrastructure.  The models are
-selected based on time series cross-validation and forecasting is done
-recursively.")
+     "Conformal time series forecasting using the caret infrastructure.  It provides
+access to state-of-the-art machine learning models for forecasting applications.
+ The hyperparameter of each model is selected based on time series
+cross-validation, and forecasting is done recursively.")
     (license license:gpl3+)))
 
 (define-public r-caretensemble
@@ -35875,7 +35834,6 @@ API <https://api.covid19tracker.ca>.")
                              r-ggplot2
                              r-generics
                              r-data-table))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jniedballa/camtrapR")
     (synopsis
      "Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses")

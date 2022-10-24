@@ -430,7 +430,7 @@ package home page documentation.")
     (properties `((upstream-name . "synthACS")))
     (build-system r-build-system)
     (propagated-inputs (list r-retry r-rcpp r-data-table r-acs))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=synthACS")
     (synopsis
      "Synthetic Microdata and Spatial MicroSimulation Modeling for ACS Data")
@@ -871,13 +871,13 @@ package which ensures great performance of the code.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "symengine" version))
               (sha256
                (base32
-                "1zxfa4i2yi7b2a0ll0ml5fjmd4zcdwvfgyhlv30m8iyfzwbrzxfz"))))
+                "1wjw6fbphkxrha859s27rvzjp0niysssicaamw9sm8895j8k5lfk"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (inputs (list mpfr gmp cmake))
@@ -1424,7 +1424,6 @@ been executed.")
     (properties `((upstream-name . "switchboard")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=switchboard")
     (synopsis "An Agile Widget Engine for Real-Time, Dynamic Visualizations")
     (description
@@ -1823,7 +1822,7 @@ user can also use the original JPL DE431 data.")
     (properties `((upstream-name . "sweidnumbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-checkmate))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rOpenGov/sweidnumbr/")
     (synopsis "Handling of Swedish Identity Numbers")
     (description
@@ -2490,7 +2489,6 @@ essentially the same cost as a single SVM fit.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=SVMMaj")
     (synopsis "Implementation of the SVM-Maj Algorithm")
     (description
@@ -2622,7 +2620,7 @@ in a web browser.")
     (properties `((upstream-name . "svgtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-rsvg r-magick))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=svgtools")
     (synopsis "Manipulate SVG (Template) Files of Charts")
     (description
@@ -3676,37 +3674,6 @@ inference, a popular method in machine learning for scalable conditional
 inference.  Although approximate, the variational posterior provides excellent
 point estimates and good control of the false discovery rate.  For more
 information see Komodromos et al. (2021) <arXiv:2112.10270>.")
-    (license license:gpl3)))
-
-(define-public r-survimchd
-  (package
-    (name "r-survimchd")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SurviMChd" version))
-              (sha256
-               (base32
-                "1sj3i950nmam3r70as85kdx6nd88iidb5jpiz2a5a39i5lb7mgf7"))))
-    (properties `((upstream-name . "SurviMChd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-survival
-                             r-rlang
-                             r-rjags
-                             r-readr
-                             r-rdpack
-                             r-r2jags
-                             r-icenreg
-                             r-icbayes
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=SurviMChd")
-    (synopsis
-     "High Dimensional Survival Data Analysis with Markov Chain Monte Carlo")
-    (description
-     "High dimensional survival data analysis with Markov Chain Monte Carlo(MCMC).
-Currently support frailty data analysis.  Allows for Weibull and Exponential
-distribution.  Includes function for interval censored data.")
     (license license:gpl3)))
 
 (define-public r-survidm
@@ -5314,7 +5281,7 @@ WILMA'.")
     (properties `((upstream-name . "supc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/wush978/supc")
     (synopsis "The Self-Updating Process Clustering Algorithms")
     (description
@@ -5525,7 +5492,7 @@ to sum their own low level functions as well.  Based on the paper by Braden
                              r-ggridges
                              r-ggplot2
                              r-data-table))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/richardli/SUMMER")
     (synopsis
      "Small-Area-Estimation Unit/Area Models and Methods for Estimation in R")
@@ -6264,7 +6231,7 @@ procedure.")
                              r-colorspace
                              r-circlize
                              r-alluvial))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SubgrPlots")
     (synopsis "Graphical Displays for Subgroup Analysis in Clinical Trials")
     (description
@@ -6423,7 +6390,7 @@ information about the package and related projects are provided.")
     (properties `((upstream-name . "stylest")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-corpus))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/leslie-huang/stylest")
     (synopsis "Estimating Speaker Style Distinctiveness")
     (description
@@ -9395,7 +9362,7 @@ of the method, please see Du, Kao and Kou (2016)
                              r-memuse
                              r-future-apply
                              r-future))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/steps-dev/steps")
     (synopsis "Spatially- and Temporally-Explicit Population Simulator")
     (description
@@ -11429,7 +11396,6 @@ constructed from stock market prices or returns, as explained in Andersen et al.
                 "00rqvk6acg28ls4p8gfdxvzmpmkgx6gk52vdjxh63l1a50xgymg6"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
-    (native-inputs (list r-startup))
     (home-page "https://henrikbengtsson.github.io/startup/")
     (synopsis "Friendly R Startup Configuration")
     (description
@@ -12149,7 +12115,6 @@ rollouts, using tools proposed by Roth and Sant'Anna (2021) <arXiv:2102.01291>."
     (properties `((upstream-name . "stagePop")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbsddesolve r-desolve))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/HelenKettle/StagePop")
     (synopsis
      "Modelling the Population Dynamics of a Stage-Structured Species in Continuous Time")
@@ -13605,7 +13570,6 @@ directly to the client.")
     (properties `((upstream-name . "ssfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-spatialreg r-sp r-maxlik r-matrix))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ssfa")
     (synopsis "Spatial Stochastic Frontier Analysis")
     (description
@@ -13695,7 +13659,7 @@ information to a Sweave report.")
                              r-dofuture
                              r-chk
                              r-abind))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bcgov/ssdtools")
     (synopsis "Species Sensitivity Distributions")
     (description
@@ -13759,7 +13723,7 @@ concentrations and proportions are produced by parametric bootstrapping.")
                              r-earth
                              r-e1071
                              r-dismo))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/sylvainschmitt/SSDM")
     (synopsis "Stacked Species Distribution Modelling")
     (description
@@ -13859,7 +13823,6 @@ sign correlation as well as a one-sample test for the correlation coefficient.")
     (properties `((upstream-name . "ssc")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/mabelc/SSC")
     (synopsis "Semi-Supervised Classification Methods")
     (description
@@ -14297,7 +14260,6 @@ a partial least squares framework, for more details see Csala et al. (2017)
                 "13zf3cqs53w68f9zc1fkb9ql84rvzn7g1hbykqrbvss8hjaq8x1r"))))
     (properties `((upstream-name . "SRCS")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
     (synopsis
      "Statistical Ranking Color Scheme for Multiple Pairwise Comparisons")
@@ -14866,7 +14828,7 @@ externally.")
     (properties `((upstream-name . "sptotal")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-sp r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://highamm.github.io/sptotal/index.html")
     (synopsis "Predicting Totals and Weighted Sums from Spatial Data")
     (description
@@ -16606,7 +16568,6 @@ are defined by spdep package.")
                              r-fnn
                              r-fields
                              r-doparallel))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=spmoran")
     (synopsis "Fast Spatial Regression using Moran Eigenvectors")
     (description
@@ -17280,7 +17241,6 @@ obtained.  PodgÃ³rski, K. (2021) <arXiv:2102.00733>.")
                              r-mosaic
                              r-mclust
                              r-ggplot2))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/anna-neufeld/splinetree")
     (synopsis "Longitudinal Regression Trees and Forests")
     (description
@@ -18709,7 +18669,7 @@ spectra and visualization of maps.")
                              r-progress
                              r-matrix
                              r-mass))
-    (native-inputs (list r-rmarkdown r-r-rsp r-knitr r-cvxr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/dppalomar/spectralGraphTopology")
     (synopsis "Learning Graphs from Data via Spectral Constraints")
     (description
@@ -20404,7 +20364,6 @@ Ziegler 2017 <DOI:10.18637/jss.v077.i01>).")
     (properties `((upstream-name . "SpatialRegimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-spatialreg r-quantreg r-plm r-gwmodel))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SpatialRegimes")
     (synopsis "Spatial Constrained Clusterwise Regression")
     (description
@@ -20741,7 +20700,6 @@ Lysy (2021) <arXiv:2110.07051>.")
                              r-rcpp
                              r-fields
                              r-deldir))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=spatialfusion")
     (synopsis
      "Multivariate Analysis of Spatial Data Using a Unifying Spatial Fusion Framework")
@@ -20931,7 +20889,7 @@ Greece.")
                              r-irlba
                              r-igraph
                              r-class))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spathial")
     (synopsis "Evolutionary Analysis")
     (description
@@ -21779,7 +21737,7 @@ statistics.")
                 "0bgh29j22jm1yg2jp75xvv9jmqacb66vgv7ygf0xgnrwyrkxkm66"))))
     (properties `((upstream-name . "sparseIndexTracking")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=sparseIndexTracking")
     (synopsis "Design of Portfolio of Stocks to Track an Index")
     (description
@@ -22160,7 +22118,6 @@ Graphical Statistics 23(4):985-1008.")
                              r-fields
                              r-dorng
                              r-dofuture))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/machiela-lab/sparrpowR")
     (synopsis "Power Analysis to Detect Spatial Relative Risk Clusters")
     (description
@@ -22760,7 +22717,7 @@ categorized overview of these additional tools.")
                              r-fastdigest
                              r-data-table
                              r-crayon))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://spades-core.predictiveecology.org/")
     (synopsis
      "Core Utilities for Developing and Running Spatially Explicit Discrete Event Models")
@@ -22795,7 +22752,7 @@ install.packages(\"NLMR\", repos = \"https://PredictiveEcology.r-universe.dev\")
                              r-reproducible
                              r-miniui
                              r-magrittr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://spades-addins.predictiveecology.org/")
     (synopsis "Development Tools for 'SpaDES' and 'SpaDES' Modules")
     (description
@@ -22817,7 +22774,7 @@ development.  See ?SpaDES.addins for an overview of the tools provided.")
     (build-system r-build-system)
     (propagated-inputs (list r-spades-tools r-spades-core r-reproducible
                              r-quickplot))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://spades.predictiveecology.org")
     (synopsis
      "Develop and Run Spatially Explicit Discrete Event Simulation Models")
@@ -26909,7 +26866,6 @@ implemented.")
     (properties `((upstream-name . "SMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr r-discreteweibull))
-    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=SMM")
     (synopsis
      "Simulation and Estimation of Multi-State Discrete-Time Semi-Markov and Markov Models")
@@ -27151,7 +27107,6 @@ Risk for Supporting COVID-19 Quarantine Decisions\" (2021)
                              r-ineq
                              r-hmisc
                              r-formula-tools))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=smicd")
     (synopsis "Statistical Methods for Interval-Censored Data")
     (description
@@ -27828,7 +27783,6 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
                              r-envstats
                              r-dosnow
                              r-doparallel))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ChaoranHu/smam")
     (synopsis "Statistical Modeling of Animal Movements")
     (description
@@ -28641,7 +28595,6 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
@@ -29578,16 +29531,17 @@ package for converting a photo into a sketch style image.
 (define-public r-sketch
   (package
     (name "r-sketch")
-    (version "1.1.17")
+    (version "1.1.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sketch" version))
               (sha256
                (base32
-                "17lb4fnlwvdxgsm8iipcx4v6fn1vkf5wr9zwmm6m4p770651z116"))))
+                "0dq5llbjnvpgzwwp14fqddmmrw6lsis23g21lx4glwmh23j4m1qp"))))
     (properties `((upstream-name . "sketch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-v8
+                             r-shiny
                              r-rstudioapi
                              r-rlang
                              r-purrr
@@ -29596,6 +29550,7 @@ package for converting a photo into a sketch style image.
                              r-htmltools
                              r-glue
                              r-base64enc))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sketch")
     (synopsis "Interactive Sketches")
     (description
@@ -30862,7 +30817,7 @@ Communications, 2020) <doi:10.1038/s41467-020-17900-3>.")
                              r-purrr
                              r-magrittr
                              r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr r-cleanrmd))
+    (native-inputs (list r-knitr))
     (home-page "https://jepusto.github.io/SingleCaseES/")
     (synopsis "Calculator for Single-Case Effect Sizes")
     (description
@@ -31324,7 +31279,6 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
     (properties `((upstream-name . "SimSurvNMarker")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/boennecd/SimSurvNMarker")
     (synopsis "Simulate Survival Time and Markers")
     (description
@@ -32107,7 +32061,6 @@ provides simple functions for making these tasks more straightforward.")
     (properties `((upstream-name . "simplermarkdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson))
-    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/djvanderlaan/simplermarkdown")
     (synopsis "Simple Engine for Generating Reports using R")
     (description
@@ -32544,7 +32497,6 @@ production-constrained, and attraction-constrained models (Wilson 1979)
     (properties `((upstream-name . "simode")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pracma r-desolve))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=simode")
     (synopsis
      "Statistical Inference for Systems of Ordinary Differential Equations using Separable Integral-Matching")
@@ -32908,7 +32860,6 @@ models.")
     (properties `((upstream-name . "SimJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SimJoint")
     (synopsis "Simulate Joint Distribution")
     (description
@@ -33993,7 +33944,7 @@ the user.")
     (properties `((upstream-name . "sim1000G")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readr r-mass r-hapsim))
-    (native-inputs (list r-rmarkdown r-prettydoc r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sim1000G")
     (synopsis
      "Genotype Simulations for Rare or Common Variants Using Haplotypes from 1000 Genomes")
@@ -34635,7 +34586,7 @@ Gibilisco (2019) <doi:10.1017/psrm.2019.58>.")
                              r-msm
                              r-matrix
                              r-formula-tools))
-    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jfieberg/SightabilityModel")
     (synopsis "Wildlife Sightability Modeling")
     (description
@@ -35232,7 +35183,6 @@ but with core functions as needed for troubleshooting.")
                              r-rcpp
                              r-gigrvg
                              r-coda))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=shrinkTVP")
     (synopsis
      "Efficient Bayesian Inference for Time-Varying Parameter Models with Shrinkage")
@@ -38021,7 +37971,7 @@ and <https://github.com/lemire/fast_double_parser>.")
                              r-diptest
                              r-ape
                              r-alakazam))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "http://shazam.readthedocs.io")
     (synopsis "Immunoglobulin Somatic Hypermutation Analysis")
     (description
@@ -38701,7 +38651,6 @@ with shadow elements.  Using this plugin you can handle any custom HTML tags.")
     (properties `((upstream-name . "shadow")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgeos r-raster))
-    (native-inputs (list r-r-rsp))
     (home-page "https://michaeldorman.github.io/shadow/")
     (synopsis "Geometric Shadow Calculations")
     (description
@@ -39268,7 +39217,6 @@ Equations; see Vaughan, G., Aseltine, R., Chen, K., Yan, J., (2017)
                              r-ggplot2
                              r-bigmemory
                              r-bh))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/airoldilab/sgd")
     (synopsis "Stochastic Gradient Descent for Scalable Estimation")
     (description
@@ -39972,7 +39920,6 @@ the vignette and reference manual for examples.")
     (properties `((upstream-name . "SetRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-igraph r-data-table))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SetRank")
     (synopsis "Advanced Gene Set Enrichment Analysis")
     (description
@@ -40301,7 +40248,7 @@ images/containers.")
                              r-pbapply
                              r-iotools
                              r-copynumber))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://sequenzatools.bitbucket.io")
     (synopsis "Copy Number Estimation from Tumor Genome Sequencing Data")
     (description
@@ -40550,7 +40497,7 @@ RNA-Seq.")
     (properties `((upstream-name . "SeqKat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SeqKat")
     (synopsis "Detection of Kataegis")
     (description
@@ -40844,7 +40791,6 @@ problem by Chen (2019) <doi:10.1111/biom.13160>.")
     (properties `((upstream-name . "SeqDetect")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-igraph r-eventdatar r-dplyr))
-    (native-inputs (list r-xtable r-dplyr))
     (home-page "https://cran.r-project.org/package=SeqDetect")
     (synopsis "Sequence and Latent Process Detector")
     (description
@@ -40872,7 +40818,7 @@ Fund under the grant KK.01.1.1.01.0009.")
     (properties `((upstream-name . "seqDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mjuraska/seqDesign")
     (synopsis
      "Simulation and Group Sequential Monitoring of Randomized Two-Stage Treatment Efficacy Trials with Time-to-Event Endpoints")
@@ -41993,7 +41939,6 @@ and Arnold, Voelkle, & Brandmaier (2020) <doi:10.3389/fpsyg.2020.564403>.")
     (properties `((upstream-name . "semTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-stationery r-plyr r-lavaan r-kutils))
-    (native-inputs (list r-stationery))
     (home-page "https://cran.r-project.org/package=semTable")
     (synopsis "Structural Equation Modeling Tables")
     (description
@@ -42045,7 +41990,7 @@ by pseudolikelihood estimators or by method of moments.")
     (properties `((upstream-name . "SEMsens")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SEMsens")
     (synopsis "Tool for Sensitivity Analysis in Structural Equation Modeling")
     (description
@@ -42416,7 +42361,6 @@ graphical representation of structural equation models.")
     (properties `((upstream-name . "SemiCompRisks")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass r-formula))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SemiCompRisks")
     (synopsis
      "Hierarchical Models for Parametric and Semi-Parametric Analyses of Semi-Competing Risks Data")
@@ -45397,7 +45341,7 @@ available at
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-sp r-shiny r-raster))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Abson-dev/sdmApp")
     (synopsis "User-Friendly Application for Species Distribution Modeling")
     (description
@@ -45422,7 +45366,6 @@ provides an interactive graphical user interface (GUI).")
     (properties `((upstream-name . "sdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster))
-    (native-inputs (list r-r-rsp))
     (home-page "https://www.biogeoinformatics.org")
     (synopsis "Species Distribution Modelling")
     (description
@@ -45643,7 +45586,6 @@ and FarrÃ© (2017) <doi:10.2901/EUROSTAT.C2017.001>.")
     (properties `((upstream-name . "SDCNway")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-plyr r-mass r-ggplot2 r-dplyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SDCNway")
     (synopsis "Tools to Evaluate Disclosure Risk")
     (description
@@ -46979,7 +46921,7 @@ et al., (2018) <doi:10.1109/TSE.2018.2794977>].")
                              r-dynwrap
                              r-dynutils
                              r-dplyr))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rcannood/SCORPIUS")
     (synopsis
      "Inferring Developmental Chronologies from Single-Cell RNA Sequencing Data")
@@ -50832,7 +50774,7 @@ times, units and other vectors.")
                              r-dt
                              r-doparallel
                              r-bslib))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/adwolfer/santaR")
     (synopsis "Short Asynchronous Time-Series Analysis")
     (description
@@ -52174,7 +52116,7 @@ plotting functionality to assist with this process.")
     (properties `((upstream-name . "sageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://fbertran.github.io/homepage/")
     (synopsis "Applied Statistics for Economics and Management with R")
     (description
@@ -52497,7 +52439,6 @@ evaluation of Small Area estimators.")
                              r-gridextra
                              r-ggplot2
                              r-emdi))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/NoraWuerz/saeTrafo")
     (synopsis "Transformations for Unit-Level Small Area Models")
     (description
@@ -52972,7 +52913,6 @@ mean and the variation of mean.  For the reference, see Rao and Molina (2015)
                              r-ggplot2
                              r-dplyr
                              r-caret))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/krennpa/SAEforest")
     (synopsis "Mixed Effect Random Forests for Small Area Estimation")
     (description

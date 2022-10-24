@@ -406,7 +406,7 @@ remember and easy to deploy.")
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Numero")
     (synopsis "Statistical Framework to Define Subgroups in Complex Datasets")
     (description
@@ -603,7 +603,6 @@ examine the distributions of metrics.")
     (properties `((upstream-name . "NUCOMBog")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jeroenpullens/NUCOMBog/")
     (synopsis
      "NUtrient Cycling and COMpetition Model Undisturbed Open Bog Ecosystems in a Temperate to Sub-Boreal Climate")
@@ -626,7 +625,7 @@ model can downloaded from <https://github.com/jeroenpullens/NUCOMBog>.")
     (properties `((upstream-name . "nucim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fields r-ebimage r-bioimagetools))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://bioimaginggroup.github.io/nucim/")
     (synopsis "Nucleome Imaging Toolbox")
     (description
@@ -634,31 +633,6 @@ model can downloaded from <https://github.com/jeroenpullens/NUCOMBog>.")
 landscape recorded with super-resolved fluorescence microscopy.  See Volker J.
 Schmid, Marion Cremer, Thomas Cremer (2017) <doi:10.1016/j.ymeth.2017.03.013>.")
     (license license:gpl3)))
-
-(define-public r-nts
-  (package
-    (name "r-nts")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NTS" version))
-              (sha256
-               (base32
-                "02gh9yqflwgqws7a14wwb1y7qx0whw4ss1kkfgh9jp6bxc2dclnf"))))
-    (properties `((upstream-name . "NTS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensor r-rdpack r-mswm r-mass r-dlm))
-    (home-page "https://cran.r-project.org/package=NTS")
-    (synopsis "Nonlinear Time Series Analysis")
-    (description
-     "Simulation, estimation, prediction procedure, and model identification methods
-for nonlinear time series analysis, including threshold autoregressive models,
-Markov-switching models, convolutional functional autoregressive models,
-nonlinearity tests, Kalman filters and various sequential Monte Carlo methods.
-More examples and details about this package can be found in the book \"Nonlinear
-Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
-(ISBN: 978-1-119-26407-1).")
-    (license license:gpl2+)))
 
 (define-public r-nsyllable
   (package
@@ -1617,7 +1591,7 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
                              r-htmltable
                              r-futile-logger
                              r-anytime))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://rmsharp.github.io/nprcgenekeepr/")
     (synopsis "Genetic Tools for Colony Management")
     (description
@@ -2544,7 +2518,6 @@ reports need to be created.")
                 "1h0v92l5jzgiy5rz33pan1l6rb3mykckmvn5c8jm3hhph6ipgqad"))))
     (properties `((upstream-name . "noweb")))
     (build-system r-build-system)
-    (native-inputs (list r-noweb))
     (home-page "https://cran.r-project.org/package=noweb")
     (synopsis "The 'noweb' System for R")
     (description "The noweb system for source code, implemented in R.")
@@ -4439,7 +4412,6 @@ version can only impute for a situation with one missing covariate.")
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/VNNikolaidis/nnlib2Rcpp")
     (synopsis
      "Tool for Creating Custom Neural Networks in C++ and using Them in R")
@@ -5735,7 +5707,7 @@ package.  It also provides four vignettes with extended examples.")
                              r-cvauc
                              r-bde
                              r-assertthat))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=nlpred")
     (synopsis
      "Estimators of Non-Linear Cross-Validated Risks Optimized for Small Samples")
@@ -5851,42 +5823,6 @@ in nlmrt generally works more reliably to get a solution, though this may be one
 of a set of possibilities, and may also be statistically unsatisfactory.  Added
 print and summary as of August 28, 2012.")
     (license license:gpl2)))
-
-(define-public r-nlmm
-  (package
-    (name "r-nlmm")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nlmm" version))
-              (sha256
-               (base32
-                "0q5vz4xqdb510i26zbcq4djcribn7h477akh8f56nzjgq231vhcq"))))
-    (properties `((upstream-name . "nlmm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-statmod
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-qtools
-                             r-numderiv
-                             r-nlme
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-lqmm
-                             r-hi
-                             r-bh))
-    (home-page "https://cran.r-project.org/package=nlmm")
-    (synopsis "Generalized Laplace Mixed-Effects Models")
-    (description
-     "This package provides functions to fit linear mixed models based on convolutions
-of the generalized Laplace (GL) distribution.  The GL mixed-effects model
-includes four special cases with normal random effects and normal errors (NN),
-normal random effects and Laplace errors (NL), Laplace random effects and normal
-errors (LN), and Laplace random effects and Laplace errors (LL).  The methods
-are described in Geraci and Farcomeni (2020, Statistical Methods in Medical
-Research) <doi:10.1177/0962280220903763>.")
-    (license license:gpl2+)))
 
 (define-public r-nlmixr2plot
   (package
@@ -6284,7 +6220,7 @@ parameters as a constrained matrix.")
     (properties `((upstream-name . "nlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jsta/nlaR")
     (synopsis "Interface to the National Lakes Assessment")
     (description
@@ -6313,7 +6249,7 @@ data for hundreds of lakes in the lower 48 states of the contiguous US.")
                              r-httr
                              r-dplyr
                              r-curl))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://gavinrozzi.github.io/njtr1/")
     (synopsis "Download, Analyze & Clean New Jersey Car Crash Data")
     (description
@@ -7307,29 +7243,6 @@ methods are implemented for Markov Switching Vector Autoregressive Models of
 order 1 only.  Most functions of the package handle missing values.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-nhmm
-  (package
-    (name "r-nhmm")
-    (version "3.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NHMM" version))
-              (sha256
-               (base32
-                "1ynxk4dpllb3w8229dmxzjdmf0zh5cgmh3wa55d02disc6yhm77k"))))
-    (properties `((upstream-name . "NHMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-msm r-mcmcpack r-mass r-bayeslogit))
-    (home-page "http://iamrandom.com/nhmm-package")
-    (synopsis
-     "Bayesian Non-Homogeneous Markov and Mixture Models for Multiple Time Series")
-    (description
-     "Holsclaw, Greene, Robertson, and Smyth (2017) <doi:10.1214/16-AOAS1009>.
-Bayesian HMM and NHMM modeling for multiple time series.  The emission
-distribution can be mixtures of Exponential, Gamma, Poisson, or Normal
-distributions, and zero inflation is possible.")
-    (license license:gpl3+)))
-
 (define-public r-nhm
   (package
     (name "r-nhm")
@@ -7547,36 +7460,6 @@ Survey (NHANES) website <https://www.cdc.gov/nchs/nhanes/index.htm>.")
      "Body Shape and related measurements from the US National Health and Nutrition
 Examination Survey (NHANES, 1999-2004).  See http://www.cdc.gov/nchs/nhanes.htm
 for details.")
-    (license license:gpl2+)))
-
-(define-public r-ngsseml
-  (package
-    (name "r-ngsseml")
-    (version "2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NGSSEML" version))
-              (sha256
-               (base32
-                "1jyjjhxq2kmm8hbsp3b27vxyin7j32056wi06gz5s02rmrhld97h"))))
-    (properties `((upstream-name . "NGSSEML")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-interp r-fields r-dlm r-car))
-    (home-page "https://github.com/hadht/NGSSEML-R-Package")
-    (synopsis "Non-Gaussian State-Space with Exact Marginal Likelihood")
-    (description
-     "Due to a large quantity of non-Gaussian time series and reliability data, the
-R-package non-Gaussian state-space with exact marginal likelihood is useful for
-modeling and forecasting non-Gaussian time series and reliability data via
-non-Gaussian state-space models with the exact marginal likelihood easily, see
-Gamerman, Santos and Franco (2013) <doi:10.1111/jtsa.12039> and Santos, Gamerman
-and Franco (2017) <doi:10.1109/TR.2017.2670142>.  The package gives codes for
-formulating and specifying the non-Gaussian state-space models in the R
-language.  Inferences for the parameters of the model can be made under the
-classical and Bayesian.  Furthermore, prediction, filtering, and smoothing
-procedures can be used to perform inferences for the latent parameters.
-Applications include, e.g., count, volatility, piecewise exponential, and
-software reliability data.")
     (license license:gpl2+)))
 
 (define-public r-ngspatial
@@ -8598,13 +8481,13 @@ change-point detection algorithms.")
 (define-public r-neurobase
   (package
     (name "r-neurobase")
-    (version "1.32.2")
+    (version "1.32.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neurobase" version))
               (sha256
                (base32
-                "0yksxyf86da6ihss2f4jwacg2m7fhqp7k87dps393p427qa9idq2"))))
+                "0jg4fspqmdbrisxxwbpql5kv9am3d02m5j2dp8305p8dl0wz5vyj"))))
     (properties `((upstream-name . "neurobase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-r-utils r-oro-nifti r-matrixstats
@@ -9812,7 +9695,7 @@ ggplot2 grammar.")
                              r-data-table
                              r-circstats
                              r-abind))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://netlogor.predictiveecology.org")
     (synopsis "Build and Run Spatially Explicit Agent-Based Models")
     (description
@@ -10350,7 +10233,6 @@ the main utility of netClust'.")
     (properties `((upstream-name . "netchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-matrix r-igraph r-gtools))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=netchain")
     (synopsis
      "Inferring Causal Effects on Collective Outcomes under Interference")
@@ -10567,30 +10449,34 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "0af7rpwrd1wxmdd59cxh8sriicca8yri9kyz94qrqkizqg3krdgk"))))
+                "160d1smwlf83m593n1jgx5qgzqzvj4zxqcxfwzdc1mx9gsng3mgq"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-superlearner
+                             r-rlang
                              r-rfast
                              r-rcppeigen
                              r-randomforest
                              r-proc
                              r-matrixtests
+                             r-matrixstats
                              r-hsstan
                              r-glmnet
                              r-ggplot2
+                             r-foreach
+                             r-doparallel
                              r-data-table
                              r-corelearn
                              r-caret
                              r-boruta))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nestedcv")
+    (home-page "https://github.com/myles-lewis/nestedcv")
     (synopsis "Nested Cross-Validation with 'glmnet' and 'caret'")
     (description
      "This package implements nested k*l-fold cross-validation for lasso and
@@ -11494,7 +11380,6 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
                              r-matrix
                              r-mass
                              r-dplyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/idblr/ndi")
     (synopsis "Neighborhood Deprivation Indices")
     (description
@@ -13186,13 +13071,13 @@ sequentially observed data.")
 (define-public r-nanotime
   (package
     (name "r-nanotime")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanotime" version))
               (sha256
                (base32
-                "1pv8hlw76n7qqrmw9lirjgg0zlp7ffy367ndca3sra8wn5f1lxfz"))))
+                "05fbdhbax6k1glidmgl0zjc7y7v1ppbpz4422q3jmxmfack7hwd7"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))

@@ -339,7 +339,6 @@ plane in the given region and resolution.  Benoit B Mandelbrot (1982).")
     (properties `((upstream-name . "juicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=juicr")
     (synopsis
      "Automated and Manual Extraction of Numerical Data from Scientific Images")
@@ -369,7 +368,6 @@ R-independent extraction reports as fully-embedded .html records.")
                              r-readxl
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=jubilee")
     (synopsis
      "Forecasting Long-Term Growth of the U.S. Stock Market and Business Cycles")
@@ -2275,7 +2273,6 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
     (properties `((upstream-name . "jmcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-roptim r-rcpparmadillo r-rcpp r-formula))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ypan1988/jmcm/")
     (synopsis "Joint Mean-Covariance Models using 'Armadillo' and S4")
     (description
@@ -2675,7 +2672,7 @@ longitudinal data.")
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcolorbrewer r-markdown r-knitr
                              r-ggplot2))
-    (native-inputs (list r-rcolorbrewer r-knitr r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/JGCRI/jgcricolors")
     (synopsis "Manage 'JGCRI' Color Palettes")
     (description
@@ -2882,7 +2879,6 @@ Science.")
     (properties `((upstream-name . "Jdmbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-igraph r-ggplot2))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Jdmbs")
     (synopsis
      "Monte Carlo Option Pricing Algorithms for Jump Diffusion Models with Correlational Companies")

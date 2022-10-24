@@ -854,7 +854,7 @@ special tags (e.g. mentions or hashtags) which may be present.")
     (properties `((upstream-name . "twangRDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-matrixmodels r-ggplot2 r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=twangRDC")
     (synopsis "Gradient Boosting for Linkage Failure in FSRDCs")
     (description
@@ -2171,7 +2171,7 @@ instruction.")
                 "1h8yjnw7f8w6m19jh3a518vkzjcmbhl3lk15d1jyhy8p4ajzzjdx"))))
     (properties `((upstream-name . "tsvr")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tsvr")
     (synopsis "Timescale-Specific Variance Ratio for Use in Community Ecology")
     (description
@@ -3623,7 +3623,6 @@ low-frequency series in the presence of high-dimensional indicator matrices.")
                 "1vjypf9d4rdprpgxfsgpccn412kvar59v341ridq2hcdp7hfb70s"))))
     (properties `((upstream-name . "tsdisagg2")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=tsdisagg2")
     (synopsis "Time Series Disaggregation")
     (description
@@ -3778,7 +3777,7 @@ zoo series).")
     (properties `((upstream-name . "TSCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-rgl r-ggplot2))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TSCS")
     (synopsis "Time Series Cointegrated System")
     (description
@@ -4753,7 +4752,6 @@ learning models.  Find more details in Biecek (2018) <arXiv:1806.08915>.")
     (properties `((upstream-name . "TripleR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-plyr r-ggplot2))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=TripleR")
     (synopsis
      "Social Relation Model (SRM) Analyses for Single or Multiple Groups")
@@ -6470,7 +6468,7 @@ dendroecology, see Zang and Biondi (2015) <doi:10.1111/ecog.01335>.")
                              r-logspline
                              r-hypergeo
                              r-coda))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/danheck/TreeBUGS")
     (synopsis "Hierarchical Multinomial Processing Tree Modeling")
     (description
@@ -7737,7 +7735,6 @@ Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
     (properties `((upstream-name . "trafo")))
     (build-system r-build-system)
     (propagated-inputs (list r-pryr r-moments r-lmtest r-fnn))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=trafo")
     (synopsis "Estimation, Comparison and Selection of Transformations")
     (description
@@ -9743,7 +9740,7 @@ strings, pasting and combining rows together across columns, etc.")
                              r-purrr
                              r-lifecycle
                              r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mountainMath/tongfen")
     (synopsis "Make Data Based on Different Geographies Comparable")
     (description
@@ -11090,7 +11087,6 @@ series, which are compatible with FAME frequencies.")
                              r-ggplot2
                              r-broom
                              r-bh))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=tipsae")
     (synopsis
      "Tools for Handling Indices and Proportions in Small Area Estimation")
@@ -11212,16 +11208,17 @@ rectangles or convex hulls on the basic plot.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "0.3.5")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipmap" version))
               (sha256
                (base32
-                "1qzyiqwbfyqz5xhzfvpwjc97srwn2j5ynv9a5iikypqg23r4ghnl"))))
+                "0w9isg53zvhd2g3icfrdavcq33cg4v9ynljyn5p73p4ifai7mgdz"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbest r-purrr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tipmap")
     (synopsis "Tipping Point Analysis for Bayesian Dynamic Borrowing")
     (description
@@ -12358,7 +12355,7 @@ is proportional to the certain characteristics of the dataset.")
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-nanotime))
-    (native-inputs (list r-simplermarkdown pkg-config))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
      "Universal Storage Engine for Sparse and Dense Multidimensional Arrays")
@@ -14241,7 +14238,6 @@ as HTML files or static images.")
                 "1w6fr4q137ar6557a8x1jpmfmlsga59621jwq0sf37bnn535i4gw"))))
     (properties `((upstream-name . "tidyCpp")))
     (build-system r-build-system)
-    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/tidycpp")
     (synopsis "Tidy C++ Header-Only Definitions for Parts of the C API of R")
     (description
@@ -17055,7 +17051,7 @@ information regarding the methodology see Meier, Mata & Wulff (2022)
                              r-dplyr
                              r-doparallel
                              r-clusterr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/culturalcartography/text2map")
     (synopsis "R Tools for Text Matrices, Embeddings, and Networks")
     (description
@@ -18256,7 +18252,7 @@ exponential random graph models, implemented in the tergm package.")
                              r-mass
                              r-ergm
                              r-coda))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://statnet.org")
     (synopsis
      "Fit, Simulate and Diagnose Models for Network Evolution Based on Exponential-Family Random Graph Models")
@@ -21218,7 +21214,6 @@ in press.")
     (properties `((upstream-name . "tapkee")))
     (build-system r-build-system)
     (inputs (list))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=tapkee")
     (synopsis "Wrapper for 'tapkee' Dimension Reduction Library")
     (description
@@ -21558,7 +21553,6 @@ Markov bound, Cantelli bound, Moment bound, and Chernoff bound.")
     (properties `((upstream-name . "tailDepFun")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatialextremes r-mvtnorm r-cubature r-copula))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=tailDepFun")
     (synopsis "Minimum Distance Estimation of Tail Dependence Models")
     (description

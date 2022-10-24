@@ -505,7 +505,6 @@ environmental covariates.")
                              r-deoptim
                              r-data-table
                              r-bbmle))
-    (native-inputs (list r-r-rsp))
     (home-page "https://CRAN.R-project.org/package=Luminescence")
     (synopsis "Comprehensive Luminescence Dating Data Analysis")
     (description
@@ -819,7 +818,7 @@ Methods are given for loglikelihood computation, forecasting and simulation.")
                              r-interval
                              r-icens
                              r-icenreg))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LTRCtrees")
     (synopsis
      "Survival Trees to Fit Left-Truncated and Right-Censored and Interval-Censored Survival Data")
@@ -3993,7 +3992,6 @@ distribution and calculate the density, distribution and quantile functions.")
     (properties `((upstream-name . "logKDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=logKDE")
     (synopsis
      "Computing Log-Transformed Kernel Density Estimates for Positive Data")
@@ -5601,7 +5599,7 @@ model inference feature through simulation and games.")
     (properties `((upstream-name . "lmvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik r-matrixcalc r-matrix))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lmvar")
     (synopsis "Linear Regression with Non-Constant Variances")
     (description
@@ -5892,7 +5890,6 @@ dependence structures.")
                              r-ggplot2
                              r-emmeans
                              r-copula))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/LMMstar")
     (synopsis "Repeated Measurement Models for Discrete Times")
     (description
@@ -6712,7 +6709,6 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
     (properties `((upstream-name . "littler")))
     (build-system r-build-system)
     (inputs (list))
-    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/littler")
     (synopsis "R at the Command-Line via 'r'")
     (description
@@ -7553,7 +7549,6 @@ SIAM/ASA Journal on Uncertainty Quantification, 6(3): 1151-1171,
     (properties `((upstream-name . "linkcomm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-igraph r-dynamictreecut))
-    (native-inputs (list r-r-rsp))
     (home-page "https://alextkalinka.github.io/linkcomm/")
     (synopsis
      "Tools for Generating, Visualizing, and Analysing Link Communities in Networks")
@@ -8524,7 +8519,6 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
                              r-plyr
                              r-gridextra
                              r-ggplot2))
-    (native-inputs (list))
     (home-page "http://jason.bryer.org/likert")
     (synopsis "Analysis and Visualization Likert Items")
     (description
@@ -9774,7 +9768,6 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
                              r-forecast
                              r-foreach
                              r-e1071))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=lfl")
     (synopsis "Linguistic Fuzzy Logic")
     (description
@@ -9992,7 +9985,6 @@ label.")
     (properties `((upstream-name . "lexRankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowballc r-rcpp r-igraph))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AdamSpannbauer/lexRankr/")
     (synopsis "Extractive Summarization of Text with the LexRank Algorithm")
     (description
@@ -11584,7 +11576,7 @@ agnostic function to add points, lines, polygons to a map.")
                              r-magrittr
                              r-leaflet
                              r-checkmate))
-    (native-inputs (list r-shinycssloaders r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=leafdown")
     (synopsis "Provides Drill Down Functionality for 'leaflet' Choropleths")
     (description
@@ -11941,7 +11933,6 @@ sample).")
                 "0sm2hy1bqp4z78vgd7m4a307mzqz8jwfwdyga683yr2jk5grs9yl"))))
     (properties `((upstream-name . "ldbounds")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ldbounds")
     (synopsis "Lan-DeMets Method for Group Sequential Boundaries")
     (description
@@ -13386,7 +13377,6 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
                              r-lava
                              r-ggplot2
                              r-doparallel))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/lavaSearch2")
     (synopsis "Tools for Model Specification in the Latent Variable Framework")
     (description
@@ -14247,7 +14237,7 @@ in ArXiv (http://arxiv.org/abs/1405.7107).")
                              r-r-matlab
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/KopfLab/lans2r")
     (synopsis "Work with Look at NanoSIMS Data in R")
     (description
@@ -14937,13 +14927,13 @@ simultaneous autoregressive spatial lag, Wagner and Zeileis (2019)
 (define-public r-lagp
   (package
     (name "r-lagp")
-    (version "1.5-7")
+    (version "1.5-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "laGP" version))
               (sha256
                (base32
-                "06iy1pgnwc280l9v2x7z6jz37sm9d5wfqgbzhxalhas0bwqz5cfc"))))
+                "1s6lahzhyyigk5727qa1mdqpgv3dw8yal3la0wcszbl6dghgmnbz"))))
     (properties `((upstream-name . "laGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tgp))
@@ -14989,7 +14979,7 @@ provided.  For details and tutorial, see Gramacy (2016
                              r-lazyeval
                              r-dplyr
                              r-curl))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/cont-limno/LAGOSNE")
     (synopsis
      "Interface to the Lake Multi-Scaled Geospatial and Temporal Database")

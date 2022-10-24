@@ -1043,7 +1043,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (properties `((upstream-name . "dynamichazard")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-boot))
-    (native-inputs (list r-r-rsp r-knitr gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/boennecd/dynamichazard")
     (synopsis "Dynamic Hazard Models using State Space Models")
     (description
@@ -2651,7 +2651,7 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
                              r-hmisc
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://precisionmethods.guru/")
     (synopsis "Dose Titration Algorithm Tuning")
     (description
@@ -3414,7 +3414,7 @@ age-conditional references.")
     (properties `((upstream-name . "dsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-magrittr r-limma))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/niaid/dsb")
     (synopsis
      "Normalize & Denoise Droplet Single Cell Protein Data (CITE-Seq)")
@@ -4624,7 +4624,6 @@ settings.  Compatible with and based on the R grid package.")
                 "191yxlj9jccakmz27g7n9izfcy19kj3fgnw4w6zl9iq66787qpm6"))))
     (properties `((upstream-name . "drat")))
     (build-system r-build-system)
-    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/drat")
     (synopsis "'Drat' R Archive Template")
     (description
@@ -5241,7 +5240,6 @@ Talwar, 2007) <doi:10.1109/FOCS.2007.66>.")
     (properties `((upstream-name . "DPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-coda))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DPP")
     (synopsis
      "Inference of Parameters of Normal Distributions from a Mixture of Normals")
@@ -7001,7 +6999,6 @@ document using Microsoft Word'.")
     (build-system r-build-system)
     (inputs (list docker))
     (propagated-inputs (list r-sys r-rstudioapi r-knitr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=docknitr")
     (synopsis "Use Docker Images to Process Rmarkdown Blocks")
     (description
@@ -10670,7 +10667,7 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/DISOhda/DiscreteFDR")
     (synopsis "Multiple Testing Procedures with Adaptation for Discrete Tests")
     (description
@@ -10817,7 +10814,7 @@ Analysis, Hierarchical Clustering and the K-Means Method.")
                              r-ggplot2
                              r-ggally
                              r-dplyr))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=discourseGT")
     (synopsis
      "Analyze Group Patterns using Graph Theory in Educational Settings")
@@ -11840,7 +11837,6 @@ handle weights and/or missings.")
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-plyr r-dinamic r-biomart))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DiNAMIC.Duo")
     (synopsis "Finding Recurrent DNA Copy Number Alterations and Differences")
     (description
@@ -13006,7 +13002,7 @@ and calculates electivity indices in R. Borstein (2020)
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
     (synopsis "Diagnostic Index Expectation Maximisation in R")
     (description
@@ -16260,12 +16256,7 @@ the event-oriented approach to DES; see the tutorial in Matloff (2008)
     (properties `((upstream-name . "derivmkts")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt))
-    (native-inputs (list r-tidyr
-                         r-pander
-                         r-knitr
-                         r-ggplot2
-                         r-dplyr
-                         r-bookdown))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=derivmkts")
     (synopsis "Functions and R Code to Accompany Derivatives Markets")
     (description
@@ -16580,31 +16571,6 @@ explanations on the subject can be found in papers Liebscher (2014)
 Liebscher (2019, submitted).")
     (license license:gpl2)))
 
-(define-public r-depcens
-  (package
-    (name "r-depcens")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DepCens" version))
-              (sha256
-               (base32
-                "0dqn8y4ljviy7dqknn17hi3ax2576y9w3bgkfzdg04x9czbyg450"))))
-    (properties `((upstream-name . "DepCens")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rootsolve r-matrixstats r-formula
-                             r-dlm))
-    (home-page "https://github.com/GabrielGrandemagne/DepCens")
-    (synopsis "Dependent Censoring Regression Models")
-    (description
-     "Dependent censoring regression models for survival multivariate data.  These
-models are based on extensions of the frailty models, capable to accommodating
-the dependence between failure and censoring times, with Weibull and piecewise
-exponential marginal distributions.  Theoretical details regarding the models
-implemented in the package can be found in Schneider et al. (2019)
-<doi:10.1002/bimj.201800391>.")
-    (license license:gpl2+)))
-
 (define-public r-depcache
   (package
     (name "r-depcache")
@@ -16841,7 +16807,7 @@ method is described in <arXiv:1602.01206>.")
                 "18w69gxbnazg5k8bzi76slcqxnbfmrndp548zazz8bpxz3jns699"))))
     (properties `((upstream-name . "denoiSeq")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=denoiSeq")
     (synopsis "Differential Expression Analysis Using a Bottom-Up Model")
     (description
@@ -18899,7 +18865,7 @@ negative effects during normal runtime.")
                              r-mass
                              r-desolve
                              r-coda))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pboesu/debinfer")
     (synopsis "Bayesian Inference for Differential Equations")
     (description
@@ -18934,7 +18900,6 @@ of the posterior distributions of model parameters and trajectories.")
                              r-rstudioapi
                              r-rootsolve
                              r-desolve))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=deBif")
     (synopsis "Bifurcation Analysis of Ordinary Differential Equation Systems")
     (description
@@ -20423,29 +20388,6 @@ distances matrix, a squared distances matrix, an inner-products matrix or
 computed from observed predictors.")
     (license license:gpl2)))
 
-(define-public r-dbr
-  (package
-    (name "r-dbr")
-    (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DBR" version))
-              (sha256
-               (base32
-                "0mxzyyss0znz4pvw15gilbs08vs6ifv70j499n8r00x458q0xg44"))))
-    (properties `((upstream-name . "DBR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mfusampler r-coda))
-    (home-page "https://cran.r-project.org/package=DBR")
-    (synopsis "Discrete Beta Regression")
-    (description
-     "Bayesian Beta Regression, adapted for bounded discrete responses, commonly seen
-in survey responses.  Estimation is done via Markov Chain Monte Carlo sampling,
-using a Gibbs wrapper around univariate slice sampler (Neal (2003)
-<DOI:10.1214/aos/1056562461>), as implemented in the R package MfUSampler
-(Mahani and Sharabiani (2017) <DOI: 10.18637/jss.v078.c01>).")
-    (license license:gpl2+)))
-
 (define-public r-dbpower
   (package
     (name "r-dbpower")
@@ -21007,7 +20949,7 @@ step.")
                 "02hmqzfk9sgz4vndnpnpcav7wlpy9xna8zdnlwgcj4a84zz2pyk8"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/vdorie/dbarts")
     (synopsis "Discrete Bayesian Additive Regression Trees Sampler")
     (description
@@ -21294,7 +21236,7 @@ analyzing marketing data from <https://datorama.com>.")
     (properties `((upstream-name . "dateutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-seasonal r-rcpparmadillo r-rcpp r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/macroeconomicdata/dateutils")
     (synopsis "Date Utils")
     (description
@@ -22149,7 +22091,7 @@ efficient way.")
                              r-dplyr
                              r-doparallel
                              r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dataprep")
     (synopsis "Efficient and Flexible Data Preprocessing Tools")
     (description
@@ -24078,7 +24020,6 @@ which is included in the package.")
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-lattice r-frf2))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=daewr")
     (synopsis "Design and Analysis of Experiments with R")
     (description

@@ -90,7 +90,6 @@ Transforms.")
                 "18sg9ilx69sbi61v0fny15b4rzssk04rb5ghwkgrpsf5gr4pljvv"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=kyotil")
     (synopsis
      "Utility Functions for Statistical Analysis Report Generation and Monte Carlo Studies")
@@ -4208,7 +4207,6 @@ and bandwidths are supported.")
                              r-qrng
                              r-locfit
                              r-lattice))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/tnagler/kdecopula")
     (synopsis "Kernel Smoothing for Bivariate Copula Densities")
     (description
@@ -4511,7 +4509,6 @@ time series and gap sets.")
                              r-gaussquad
                              r-expm
                              r-abind))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Karen")
     (synopsis "Kalman Reaction Networks")
     (description

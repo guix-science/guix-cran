@@ -753,7 +753,6 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
                 "07gx6dp0kz4y1jn90hsfvkhn6k7i4flh7ghdz9v5nwda86f55q2s"))))
     (properties `((upstream-name . "extremefit")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=extremefit")
     (synopsis "Estimation of Extreme Conditional Quantiles and Probabilities")
     (description
@@ -2158,73 +2157,6 @@ both.  Execution speed is optimized by using a multi-threaded C++ backend, and
 memory issues are solved by by only storing the best results during execution
 and thus keeping memory usage constant.")
     (license license:gpl3+)))
-
-(define-public r-exgaussestim
-  (package
-    (name "r-exgaussestim")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ExGaussEstim" version))
-              (sha256
-               (base32
-                "167y82sqqwmjaxmxag01nvg27c3gb58x8zbjr8ng01ygjc5rpkcb"))))
-    (properties `((upstream-name . "ExGaussEstim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma
-                             r-nloptr
-                             r-invgamma
-                             r-hi
-                             r-gamlss-dist
-                             r-fitdistrplus))
-    (home-page "https://cran.r-project.org/package=ExGaussEstim")
-    (synopsis
-     "Quantile Maximization Likelihood Estimation and Bayesian Ex-Gaussian Estimation")
-    (description
-     "Presents two methods to estimate the parameters mu', sigma', and tau of an
-ex-Gaussian distribution.  Those methods are Quantile Maximization Likelihood
-Estimation ('QMLE') and Bayesian.  The QMLE method allows a choice between three
-different estimation algorithms for these parameters : neldermead ('NEMD'),
-fminsearch ('FMIN'), and nlminb ('NLMI').  For more details about the methods
-you can refer at the following list: Brown, S., & Heathcote, A. (2003)
-<doi:10.3758/BF03195527>; McCormack, P. D., & Wright, N. M. (1964)
-<doi:10.1037/h0083285>; Van Zandt, T. (2000) <doi:10.3758/BF03214357>; El Haj,
-A., Slaoui, Y., Solier, C., & Perret, C. (2021)
-<doi:10.19139/soic-2310-5070-1251>; Gilks, W. R., Best, N. G., & Tan, K. K. C.
-(1995) <doi:10.2307/2986138>.")
-    (license license:gpl2)))
-
-(define-public r-exdqlm
-  (package
-    (name "r-exdqlm")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "exdqlm" version))
-              (sha256
-               (base32
-                "0wkiihdvgf7lyzv02l10spxcn127w1jblz6fbr7yf16mfq0m9mlk"))))
-    (properties `((upstream-name . "exdqlm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-tictoc
-                             r-magic
-                             r-laplacesdemon
-                             r-hyperbolicdist
-                             r-generalizedhyperbolic
-                             r-fnn
-                             r-dlm
-                             r-crch
-                             r-coda
-                             r-brms))
-    (home-page "https://cran.r-project.org/package=exdqlm")
-    (synopsis "Extended Dynamic Quantile Linear Models")
-    (description
-     "Routines for Bayesian estimation and analysis of dynamic quantile linear models
-utilizing the extended asymmetric Laplace error distribution, also known as
-extended dynamic quantile linear models (exDQLM) described in Barata et al
-(2020) <https://www.soe.ucsc.edu/research/technical-reports/UCSC-SOE-20-14>.")
-    (license license:expat)))
 
 (define-public r-exdex
   (package
@@ -3839,7 +3771,6 @@ bivariate maxima models, and for univariate and bivariate threshold models.")
                              r-matrix
                              r-limsolve
                              r-fnn))
-    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=evclust")
     (synopsis "Evidential Clustering")
     (description
@@ -4645,7 +4576,7 @@ function for re-coding vectors.")
                              r-dplyr
                              r-downloader
                              r-dbi))
-    (native-inputs (list r-rmarkdown r-knitr r-ggplot2 r-dplyr r-dbplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/beanumber/etl")
     (synopsis "Extract-Transform-Load Framework for Medium Data")
     (description
@@ -6277,7 +6208,7 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
     (properties `((upstream-name . "ergm.rank")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-network r-ergm))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://statnet.org")
     (synopsis
      "Fit, Simulate and Diagnose Exponential-Family Models for Rank-Order Relational Data")
@@ -6331,7 +6262,7 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
     (properties `((upstream-name . "ergm.count")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-network r-ergm))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://statnet.org")
     (synopsis
      "Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges")
@@ -8486,7 +8417,6 @@ concentrations.  More information of the model can be found at
                              r-hamlet
                              r-glmnet
                              r-bolstad2))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ePCR")
     (synopsis "Ensemble Penalized Cox Regression for Survival Prediction")
     (description
@@ -8986,7 +8916,6 @@ environmental analysis.")
                              r-dofuture
                              r-cvauc
                              r-concaveman))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/lance-waller-lab/envi")
     (synopsis
      "Environmental Interpolation using Spatial Kernel Density Estimation")
@@ -9255,7 +9184,6 @@ certain conditions and will raise appropriate errors if they do not.")
     (properties `((upstream-name . "ensr")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-ggplot2 r-data-table))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/dewittpe/ensr")
     (synopsis "Elastic Net SearcheR")
     (description
@@ -9408,7 +9336,6 @@ provided in EnsembleBase package as well as this package.")
     (properties `((upstream-name . "EnsemblePCReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-ensemblebase))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EnsemblePCReg")
     (synopsis
      "Extensible Package for Principal-Component-Regression-Based Heterogeneous Ensemble Meta-Learning")
@@ -10737,7 +10664,6 @@ Jones L (2007) <doi:10.1016/j.csda.2006.09.015> Baek J, McLachlan GJ, Flack LK
                              r-mclust
                              r-ggplot2
                              r-bh))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EMMIXgene")
     (synopsis
      "Mixture Model-Based Approach to the Clustering of Microarray Expression Data")
@@ -11102,7 +11028,6 @@ package.")
                              r-ggplot2
                              r-formula-tools
                              r-boot))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/SoerenPannier/emdi")
     (synopsis "Estimating and Mapping Disaggregated Indicators")
     (description
@@ -12935,7 +12860,7 @@ highly computational advantage by truncated singular-value decomposition.")
     (properties `((upstream-name . "eikosograms")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rwoldford/eikosograms")
     (synopsis "The Picture of Probability")
     (description
@@ -13569,7 +13494,6 @@ semi-variogram fitting process.")
                              r-coda
                              r-boot
                              r-bh))
-    (native-inputs (list r-r-rsp))
     (home-page "https://www.math.uzh.ch/pages/eggcount/")
     (synopsis "Hierarchical Modelling of Faecal Egg Counts")
     (description
@@ -16443,7 +16367,6 @@ also included.  Algorithms implemented here are described in de Aguiar et al.
                              r-dplyr
                              r-doparallel
                              r-bbmle))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=econet")
     (synopsis "Estimation of Parameter-Dependent Network Centrality Measures")
     (description
@@ -16613,40 +16536,6 @@ runoff), rainfall series by using the marked Poisson process and the vegetation
 growth through the normalized difference vegetation index (NDVI).  Please see
 Souza et al. (2016) <doi:10.1002/hyp.10953>.")
     (license license:gpl2)))
-
-(define-public r-ecoensemble
-  (package
-    (name "r-ecoensemble")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EcoEnsemble" version))
-              (sha256
-               (base32
-                "0nixw872ic7jmy2z4wasks3r6y01mx8k7zwfzi72s809jgx1njmi"))))
-    (properties `((upstream-name . "EcoEnsemble")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-reshape2
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrixcalc
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EcoEnsemble")
-    (synopsis "General Framework for Combining Ecosystem Models")
-    (description
-     "Fit and sample from the ensemble model described in Spence et al (2018): \"A
-general framework for combining ecosystem
-models\"<https://onlinelibrary.wiley.com/doi/abs/10.1111/faf.12310>.")
-    (license license:gpl3+)))
 
 (define-public r-ecodist
   (package
@@ -18084,7 +17973,6 @@ estimating technical efficiency is also included.  More details in:
     (properties `((upstream-name . "easyVerification")))
     (build-system r-build-system)
     (propagated-inputs (list r-specsverification r-rcpp r-pbapply))
-    (native-inputs (list r-rmarkdown r-r-rsp))
     (home-page "http://www.meteoswiss.ch")
     (synopsis "Ensemble Forecast Verification for Large Data Sets")
     (description
@@ -18488,7 +18376,6 @@ ID: identifier code.  The GEO datasets are downloaded from the URL
                              r-fsa
                              r-fitdistrplus
                              r-catt))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EasyDescribe")
     (synopsis "Convenient Way of Descriptive Statistics")
     (description

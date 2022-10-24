@@ -442,7 +442,7 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
                              r-ggplot2
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/cosimameyer/overviewR")
     (synopsis "Easily Extracting Information About Your Data")
     (description
@@ -3954,7 +3954,6 @@ has a reduced set of methods and is intended to be on CRAN.")
                 "178ayfaivkbxkghxbg97lx4gl27kxkmgaaw9y8q5206r4cncd6qg"))))
     (properties `((upstream-name . "optimParallel")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/florafauna/optimParallel-R")
     (synopsis "Parallel Version of the L-BFGS-B Optimization Method")
     (description
@@ -4050,7 +4049,6 @@ for inputs and outputs.")
     (properties `((upstream-name . "optimization")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-colorspace))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/kaihusmann/optimization")
     (synopsis
      "Flexible Optimization of Complex Loss Functions with State and Parameter Space Constraints")
@@ -5013,7 +5011,7 @@ writing, styling and editing worksheets.")
                              r-ggplot2
                              r-crayon
                              r-cli))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/verbal-autopsy-software/openVA")
     (synopsis "Automated Method for Verbal Autopsy")
     (description
@@ -5409,7 +5407,6 @@ full functionality contained within these packages.  Learn more about openMSE at
                              r-checkmate
                              r-bbmisc
                              r-backports))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/openml/openml-r")
     (synopsis "Open Machine Learning and Open Data Platform")
     (description
@@ -8483,7 +8480,7 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
                 "185i81ixrm1mby5ryaymi4ixwxnx84g8f1zv6qbb1aj0wf1rxsng"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-markdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=odr")
     (synopsis
      "Optimal Design and Statistical Power for Multilevel Experiments")
@@ -9616,7 +9613,7 @@ filter, and filter data according to users specifications.")
                              r-curl
                              r-bien
                              r-bib2df))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/occCite/")
     (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")
     (description
@@ -9815,7 +9812,7 @@ combinations of input variables.")
                 "0656dfaz19bmcaiqh988lryj5gql39q8pwnl6c9fab07wwd85w3k"))))
     (properties `((upstream-name . "oblicubes")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://trevorldavis.com/R/oblicubes/")
     (synopsis "3D Rendering Using Obliquely Projected Cubes and Cuboids")
     (description

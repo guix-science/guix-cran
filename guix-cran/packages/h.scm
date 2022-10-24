@@ -347,7 +347,6 @@ species distribution modeling.")
                              r-lattice
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://r-hyperspec.github.io/hyperSpec/")
     (synopsis
      "Work with Hyperspectral Data, i.e. Spectra + Meta Information (Spatial, Time, Concentration, ...)")
@@ -1035,7 +1034,7 @@ approach are: Tang & Carey (2017) <doi:10.1002/hyp.11185>, Kaur et al. (2017)
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-tibble r-reshape2 r-gtools r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/EdM44/hydraulics")
     (synopsis "Basic Pipe and Open Channel Hydraulics")
     (description
@@ -2053,7 +2052,7 @@ performance.")
                              r-magrittr
                              r-desolve
                              r-data-table))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page
      "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
     (synopsis "High-Throughput Toxicokinetics")
@@ -3672,7 +3671,7 @@ and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
                              r-rcpp
                              r-questionr
                              r-mass))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hopit")
     (synopsis
      "Hierarchical Ordered Probit Models with Application to Reporting Heterogeneity")
@@ -4283,7 +4282,6 @@ current system time and the system time when the timer was started.")
                              r-bayeslogit
                              r-ape
                              r-abind))
-    (native-inputs (list r-r-rsp))
     (home-page
      "https://www.helsinki.fi/en/researchgroups/statistical-ecology/software/hmsc")
     (synopsis "Hierarchical Model of Species Communities")
@@ -6124,7 +6122,7 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
                              r-lpsolveapi
                              r-fitheavytail
                              r-ecosolver))
-    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/dppalomar/highOrderPortfolios")
     (synopsis
      "Design of High-Order Portfolios Including Skewness and Kurtosis")
@@ -6755,28 +6753,6 @@ keep on going in enriching it with more features.  References: Meuwissen et al.
 <doi:10.1038/s41467-019-12653-0>; Henderson (1976) <doi:10.2307/2529339>;
 Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
     (license license:gpl3)))
-
-(define-public r-hi
-  (package
-    (name "r-hi")
-    (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HI" version))
-              (sha256
-               (base32
-                "0s63w3nrcw2zvrmkm54h1292y2iscdc1bck1wwf39qjndylcxvf4"))))
-    (properties `((upstream-name . "HI")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=HI")
-    (synopsis "Simulation from Distributions Supported by Nested Hyperplanes")
-    (description
-     "Simulation from distributions supported by nested hyperplanes, using the
-algorithm described in Petris & Tardella, \"A geometric approach to
-transdimensional Markov chain Monte Carlo\", Canadian Journal of Statistics,
-v.31, n.4, (2003).  Also random direction multivariate Adaptive Rejection
-Metropolis Sampling.")
-    (license license:gpl2+)))
 
 (define-public r-hht
   (package
@@ -7632,7 +7608,7 @@ fast update functions when adding new observations.")
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HeteroGGM")
     (synopsis "Gaussian Graphical Model-Based Heterogeneity Analysis")
     (description
@@ -8913,7 +8889,7 @@ Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
                              r-dplyr
                              r-broom
                              r-boruta))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/niaid/HDStIM")
     (synopsis "High Dimensional Stimulation Immune Mapping ('HDStIM')")
     (description
@@ -9069,27 +9045,6 @@ Generalized Linear Model (hdpGLM) presented in the paper Ferrari (2020) Modeling
 Context-Dependent Latent Heterogeneity, Political Analysis
 <DOI:10.1017/pan.2019.13>.")
     (license license:expat)))
-
-(define-public r-hdpenreg
-  (package
-    (name "r-hdpenreg")
-    (version "0.94.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDPenReg" version))
-              (sha256
-               (base32
-                "0izphqcsny1vz4a16h2h0zh4lf69l2qipm0xa56xhm3a9zmcpn1b"))))
-    (properties `((upstream-name . "HDPenReg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtkore r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=HDPenReg")
-    (synopsis "High-Dimensional Penalized Regression")
-    (description
-     "Algorithms for lasso and fused-lasso problems: implementation of the lars
-algorithm for lasso and fusion penalization and EM-based algorithms for
-(logistic) lasso and fused-lasso penalization.")
-    (license license:gpl2+)))
 
 (define-public r-hdpca
   (package
@@ -10157,30 +10112,6 @@ Uses Hill models for each component which are combined under Bliss independence.
  See Saul and Fay, 2007 <DOI:10.1371/journal.pone.0000850>.")
     (license license:gpl3)))
 
-(define-public r-hbglm
-  (package
-    (name "r-hbglm")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HBglm" version))
-              (sha256
-               (base32
-                "1sral7lh5qw5mn31n8459pk52frgw1bjq0z5ckpsnbc4qf3xxcjn"))))
-    (properties `((upstream-name . "HBglm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sns r-mfusampler r-formula r-bayesm))
-    (home-page "https://cran.r-project.org/package=HBglm")
-    (synopsis "Hierarchical Bayesian Regression for GLMs")
-    (description
-     "Convenient and efficient functions for performing 2-level hierarchical Bayesian
-regression analysis for multi-group data.  The lowest level may belong to the
-generalized linear model (GLM) family while the prior level, which effects
-pooling, allows for linear regression on lower level covariates.  Constraints on
-all or part of the parameter set maybe specified with ease.  A rich set of
-methods is included to visualize and analyze results.")
-    (license license:gpl2+)))
-
 (define-public r-hbbr
   (package
     (name "r-hbbr")
@@ -10953,7 +10884,6 @@ measurements at all levels.  Webpage provided at:
                 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
-    (native-inputs (list))
     (home-page "https://gitlab.com/fvafrCU/HandTill2001")
     (synopsis "Multiple Class Area under ROC Curve")
     (description

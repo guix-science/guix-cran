@@ -1035,7 +1035,6 @@ agency.")
     (properties `((upstream-name . "us.census.geoheader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
     (home-page "https://gitlab.com/minshall/us-census-geoheader")
     (synopsis "US 2010 Census SF2 Geographic Header Summary Levels 010-050")
     (description

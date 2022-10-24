@@ -1727,7 +1727,6 @@ history using conventional commit messages
                              r-dplyr
                              r-dorng
                              r-doparallel))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/retowuest/autoMrP")
     (synopsis "Improving MrP with Ensemble Learning")
     (description
@@ -1929,45 +1928,6 @@ the autohrf package on publicly available datasets of task-related fMRI
 activity.  Our results suggest that by using autohrf users can find better task
 related brain activity models in a quick and efficient manner.")
     (license license:gpl3+)))
-
-(define-public r-autohd
-  (package
-    (name "r-autohd")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "autohd" version))
-              (sha256
-               (base32
-                "14wyiqhmbp8v52s1p5svvcjpwg8pwqrqh3zzm17blcl2hr4p9cy8"))))
-    (properties `((upstream-name . "autohd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-tibble
-                             r-survregcenscov
-                             r-survival
-                             r-schoolmath
-                             r-rjags
-                             r-rdpack
-                             r-mlr3
-                             r-missforest
-                             r-icenreg
-                             r-icbayes
-                             r-hmisc
-                             r-hdbm
-                             r-coxme
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=autohd")
-    (synopsis "High Dimensional Bayesian Survival Mediation Analysis")
-    (description
-     "Perform mediation analysis for time to event high-dimensional data.  Mediation
-Analysis proposed by Miocevic et al.(2017) <doi:10.1080/10705511.2017.1342541>
-as a statistical tool in the Bayesian framework.  Time to event data analysis
-methods like Cox proportional hazard model, accelerated failure time model to
-work with high dimensional data with Bayesian approaches are provided.  Missing
-data imputation techniques tool to work with high dimensional data coupled for
-mediation analysis by presented by the active mediator variables.")
-    (license license:gpl3)))
 
 (define-public r-autoharp
   (package
@@ -3076,7 +3036,7 @@ and a client to API(s) implementing the AtomPub SWORD API specification.")
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-desolve))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ATNr")
     (synopsis "Run Allometric Trophic Networks Models")
     (description
@@ -4246,7 +4206,6 @@ principal components using singular spectrum analysis (de Carvalho and Rua
                              r-dplyr
                              r-doparallel
                              r-dae))
-    (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name")
     (synopsis
      "Augments 'ASReml-R' in Fitting Mixed Models and Packages Generally in Exploring Prediction Differences")
@@ -7064,7 +7023,6 @@ pedometric theory and practice.")
                 "10j8qh7m975666ipgdvzrjiraqqb5rn8qj4w76s3ijl83y0v5j3v"))))
     (properties `((upstream-name . "AQLSchemes")))
     (build-system r-build-system)
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AQLSchemes")
     (synopsis "Retrieving Acceptance Sampling Schemes")
     (description
@@ -8776,7 +8734,7 @@ simulate the effects of mergers under different competitive regimes.")
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/m-Py/anticlust")
     (synopsis "Subset Partitioning via Anticlustering")
     (description
@@ -10307,7 +10265,7 @@ simulation of space-use from fitted step-selection functions.")
                 "1d47akk1amf9x28a3ss0j2453hk9rdqkzdklxnv40b13hvjd8l0n"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://msberends.github.io/AMR/")
     (synopsis "Antimicrobial Resistance Data Analysis")
     (description
@@ -10607,7 +10565,6 @@ values.")
     (properties `((upstream-name . "AMModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AMModels")
     (synopsis "Adaptive Management Model Manager")
     (description
@@ -10640,7 +10597,6 @@ GUI.")
                              r-distfree-cr
                              r-coda
                              r-bayesplot))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ammiBayes")
     (synopsis "Bayesian Ammi Model for Continuous Data")
     (description
@@ -11800,7 +11756,7 @@ recurrence bundle's event set.")
                 "0a99iqb01snza0ad07lrzmn88vpq8wvx5vjr8fk0wbzihxzbzn4y"))))
     (properties `((upstream-name . "Allspice")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Allspice")
     (synopsis "RNA-Seq Profile Classifier")
     (description
@@ -11949,7 +11905,6 @@ generations.")
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (propagated-inputs (list r-dynamictreecut))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=allelematch")
     (synopsis
      "Identifying Unique Multilocus Genotypes where Genotyping Error and Missing Data may be Present")
@@ -12318,7 +12273,6 @@ validated and demonstrated on a synthetic sample.")
     (properties `((upstream-name . "ALEPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ALEPlot")
     (synopsis
      "Accumulated Local Effects (ALE) Plots and Partial Dependence (PD) Plots")
@@ -12503,7 +12457,7 @@ also available.")
                              r-biostrings
                              r-ape
                              r-airr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://alakazam.readthedocs.io/")
     (synopsis "Immunoglobulin Clonal Lineage and Diversity Analysis")
     (description
@@ -13942,7 +13896,6 @@ method).  Silva, Teixeira, and Manzione (2019)
                              r-lattice
                              r-ggplot2
                              r-emmeans))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=agriTutorial")
     (synopsis "Tutorial Analysis of Some Agricultural Experiments")
     (description
@@ -14838,7 +14791,6 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
     (properties `((upstream-name . "AEDForecasting")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-forecast r-changepoint))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AEDForecasting")
     (synopsis "Change Point Analysis in ARIMA Forecasting")
     (description
@@ -15912,7 +15864,7 @@ phylogenetic differences between communities.")
                              r-colourpicker
                              r-clipr
                              r-adherer))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ddediu/AdhereR")
     (synopsis "Adherence to Medications")
     (description
@@ -15940,7 +15892,7 @@ implemented using Shiny and HTML/CSS/JavaScript.")
                              r-lubridate
                              r-jpeg
                              r-data-table))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ddediu/AdhereR")
     (synopsis "Adherence to Medications")
     (description
@@ -16742,7 +16694,6 @@ Brezger, L. Fahrmeir, A. Hennerfeind (2007)
                              r-e1071
                              r-doparallel
                              r-comics))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ADAPTS")
     (synopsis
      "Automated Deconvolution Augmentation of Profiles for Tissue Specific Cells")
