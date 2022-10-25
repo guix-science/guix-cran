@@ -293,13 +293,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "0.1-3")
+    (version "0.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kstMatrix" version))
               (sha256
                (base32
-                "1yqf902gf9dgqkcr9hg8yw70ng2jqj66v969j0hnmiw28mnjkn5w"))))
+                "0iy4dnl07pbgsv3343gh0szsab1kls2m5cskha08dchz0vqwpwf6"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -375,13 +375,13 @@ G., Senato D. (2009) <arXiv:0807.5008>, <arXiv:1012.6008>.")
 (define-public r-kst
   (package
     (name "r-kst")
-    (version "0.5-3")
+    (version "0.5-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kst" version))
               (sha256
                (base32
-                "1vv5ahmxax29cg5bz76jd2y5jic5y4jlg0gws7qscry9zrl8wmgp"))))
+                "0drh5zjin73jfa5vksprv43ak4s8jr4y4py6sbcc4835rkl9qzph"))))
     (properties `((upstream-name . "kst")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets r-relations r-proxy))

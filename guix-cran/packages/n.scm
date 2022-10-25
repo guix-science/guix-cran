@@ -9861,13 +9861,13 @@ implements the methodological developments in Behrouzi and Wit (2017)
 (define-public r-netgsa
   (package
     (name "r-netgsa")
-    (version "4.0.3")
+    (version "4.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netgsa" version))
               (sha256
                (base32
-                "1c7l5vmr8mg06ilkwqxdvrqpj9wkgswpvy45rc5ksqgar868jb1d"))))
+                "02127r3vskcksrd893qrs1wqwkbw3b8p33ybgvbwd9j4lxgifmr2"))))
     (properties `((upstream-name . "netgsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

@@ -15250,13 +15250,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3tuningspaces" version))
               (sha256
                (base32
-                "0p6qs168jmpqdrbqkwdkvnzsfy8yk5cgcm46119ca577lgd1xw55"))))
+                "0c1m6cv6p54n3pd1li7ccpmcd830qshsw040swp2m8f75gklv8b1"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

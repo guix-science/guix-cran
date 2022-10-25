@@ -21379,16 +21379,16 @@ can be performed with different methods including BLADJ (Webb et al. (2008)
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datefixR" version))
               (sha256
                (base32
-                "0gscak3s2agf28491fmna211vyxcvq2zqdrc817kl6q063bcxj84"))))
+                "1mc0s0qv90j2qaqkkmx3k054vsir8zb2n6lwx6ybkn5k48cw8zwm"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rlang r-lifecycle))
+    (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/datefixR/")
     (synopsis "Standardize Dates in Different Formats or with Missing Data")

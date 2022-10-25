@@ -11931,13 +11931,13 @@ implemented in the package.")
 (define-public r-timereg
   (package
     (name "r-timereg")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timereg" version))
               (sha256
                (base32
-                "0n9mvdki50j0nbmbs1r91slf7j9nz4cwglscn71kckadsgjjpxmi"))))
+                "0v5hmnppnv9ih29q4zmh8s9qxkdwaqg97093fldsy3fxs7g50dxv"))))
     (properties `((upstream-name . "timereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-lava))

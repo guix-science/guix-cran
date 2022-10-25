@@ -2100,40 +2100,6 @@ wordcloud2.js'.  wordcloud2.js is a JavaScript library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
 
-(define-public r-wordbankr
-  (package
-    (name "r-wordbankr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wordbankr" version))
-              (sha256
-               (base32
-                "1jcls9pw0qwf14d9f1kwyd77yrwmcx7k4hzs1h2dli29mvi6hcxg"))))
-    (properties `((upstream-name . "wordbankr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-robustbase
-                             r-rmysql
-                             r-rlang
-                             r-quantreggrowth
-                             r-purrr
-                             r-lifecycle
-                             r-jsonlite
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://langcog.github.io/wordbankr/")
-    (synopsis "Accessing the Wordbank Database")
-    (description
-     "Connecting to Wordbank, an open repository for developmental vocabulary data.
-For more information on the underlying data, see <http://wordbank.stanford.edu>.")
-    (license license:gpl3)))
-
 (define-public r-word2vec
   (package
     (name "r-word2vec")

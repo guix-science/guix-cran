@@ -11529,13 +11529,13 @@ Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
 (define-public r-alphahull3d
   (package
     (name "r-alphahull3d")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AlphaHull3D" version))
               (sha256
                (base32
-                "11sfnwqjqnll74gxaxjh868av63wj7q85amx4v9yz11snascc12y"))))
+                "131wcx5yagsl42qwwcx84shd4v1sh8g2381njcqq5lsa2y2rsarh"))))
     (properties `((upstream-name . "AlphaHull3D")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))

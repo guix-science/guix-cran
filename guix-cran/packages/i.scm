@@ -7469,17 +7469,18 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.5.3")
+    (version "2.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inlabru" version))
               (sha256
                (base32
-                "04apmcslnf04v2sbml5x3bcv688jyv425qwz21zazml2r707s09a"))))
+                "0fjjw02scf2sr1i6cl6h28pj10vf6i2jysc8iha1gcc4j02qxfs0"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-sp
+                             r-sf
                              r-rlang
                              r-rgeos
                              r-rgdal

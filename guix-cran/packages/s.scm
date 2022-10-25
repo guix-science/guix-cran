@@ -19620,13 +19620,13 @@ Apley (2019b) <doi:10.1016/j.csda.2019.01.019>.")
 (define-public r-spc
   (package
     (name "r-spc")
-    (version "0.6.6")
+    (version "0.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spc" version))
               (sha256
                (base32
-                "0crgbpxf3sqbw48fs8fji4z7dd1sc9nkwxm4frf7rgx3aix71cxk"))))
+                "02dw1hh3ksx119wf7qkg01m7h60pmsc3vkryw5fikyxyfz871ldl"))))
     (properties `((upstream-name . "spc")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")

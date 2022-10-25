@@ -6269,13 +6269,13 @@ R.")
 (define-public r-gpvecchia
   (package
     (name "r-gpvecchia")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPvecchia" version))
               (sha256
                (base32
-                "1rabini84r5fvl630wkcikjzll89mamc6pqiilvcmsik5c6ymz3w"))))
+                "1ag1j3r5q14wp3s3qyq63aw7iydhm4bidi46qsbgg836vkwiqn54"))))
     (properties `((upstream-name . "GPvecchia")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparseinv
@@ -16246,16 +16246,21 @@ multiple uncertainty ribbons.")
 (define-public r-ggdensity
   (package
     (name "r-ggdensity")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdensity" version))
               (sha256
                (base32
-                "00rwv23yz9mmvl6apgbx7slsd62rz1qkx7y6cqiqylnw41rp0f8v"))))
+                "05brrczlvrqkcjizla920490h3fbcfldpysrv7xj4jy7hpzwfn16"))))
     (properties `((upstream-name . "ggdensity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-mass r-isoband r-ggplot2))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-scales
+                             r-mass
+                             r-isoband
+                             r-ggplot2))
     (home-page "https://jamesotto852.github.io/ggdensity/")
     (synopsis "Interpretable Bivariate Density Visualization with 'ggplot2'")
     (description

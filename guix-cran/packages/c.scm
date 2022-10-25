@@ -8740,34 +8740,6 @@ Ornstein-Uhlenbeck process components to be added to linear and non-linear mixed
 effects models using the structures and methods of the nlme package.")
     (license license:gpl3)))
 
-(define-public r-covatest
-  (package
-    (name "r-covatest")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "covatest" version))
-              (sha256
-               (base32
-                "1xr6yrn7w3fkzcrknmvamgf7k1nccbj8yk1slrkavgnfv4b91by6"))))
-    (properties `((upstream-name . "covatest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-spacetime r-sp r-lubridate r-gstat))
-    (home-page "https://cran.r-project.org/package=covatest")
-    (synopsis "Tests on Properties of Space-Time Covariance Functions")
-    (description
-     "Tests on properties of space-time covariance functions.  Tests on symmetry,
-separability and for assessing different forms of non-separability are
-available.  Moreover tests on some classes of covariance functions, such that
-the classes of product-sum models, Gneiting models and integrated product models
-have been provided.  It is the companion R package to the papers of Cappello,
-C., De Iaco, S., Posa, D., 2018, Testing the type of non-separability and some
-classes of space-time covariance function models <doi:10.1007/s00477-017-1472-2>
-and Cappello, C., De Iaco, S., Posa, D., 2020, covatest: an R package for
-selecting a class of space-time covariance functions
-<doi:10.18637/jss.v094.i01>.")
-    (license license:gpl2+)))
-
 (define-public r-covafillr
   (package
     (name "r-covafillr")
@@ -22594,13 +22566,13 @@ Cannings et al. (1978) <doi:10.2307/1426718>.")
 (define-public r-clinutils
   (package
     (name "r-clinutils")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clinUtils" version))
               (sha256
                (base32
-                "0j06plczw3k54yc07dv6x931nmg2cfvkcmza16pji1zlx7nzs3sc"))))
+                "1qv7xxcmvrsm7lldfa4az9vbwzldgg5xs1312xqhalvc4v6pi0bg"))))
     (properties `((upstream-name . "clinUtils")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -28796,13 +28768,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "2.7.5")
+    (version "2.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cgmanalysis" version))
               (sha256
                (base32
-                "0k0dby0l793k0acq8g818p17sw67mdfipprrmg83f3fvxgxrpnih"))))
+                "0vs7n77p4midyfm8ng0sjanalvb9b7qgzhn6gazh51wjzczg759n"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -35380,13 +35352,13 @@ et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS (2007)
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.40.0")
+    (version "1.40.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "canvasXpress" version))
               (sha256
                (base32
-                "15c36ifrxmk4jfd65w8w07a09yvmaqrcz6gp3gzj6g9pzczbx7fx"))))
+                "1jdx3yfl10s1y4wxa48dydrfb3j8a8b9aismvmqyf8gm11l4y218"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))

@@ -718,16 +718,18 @@ Chile.")
 (define-public r-hydrotoolbox
   (package
     (name "r-hydrotoolbox")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydrotoolbox" version))
               (sha256
                (base32
-                "0n2qfw1060szqllvc8vhhv8yy69dhs6m6hh5rnymfhm2wg8994a3"))))
+                "0fikhp7d0annjd3i4885m1in8fh9vnk4v7asip4804a0x9jj9zsz"))))
     (properties `((upstream-name . "hydrotoolbox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-reshape2
                              r-readxl
                              r-rcpp
                              r-plotly
@@ -4887,13 +4889,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlar
   (package
     (name "r-hlar")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hlaR" version))
               (sha256
                (base32
-                "1f1w6hx5976cd2lhdhi54i5jizzjm9ix86zh9wjzdxdh0jmzlm2s"))))
+                "1xfvishb5snrgf0sz3s46wq4v8w2mnyaasncflqvvdkj05xqyl9k"))))
     (properties `((upstream-name . "hlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

@@ -17689,26 +17689,29 @@ the tDCS PlatoWork headset produced by PlatoScience.")
 (define-public r-platformdesign
   (package
     (name "r-platformdesign")
-    (version "1.0.1")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PlatformDesign" version))
               (sha256
                (base32
-                "1mx5q00cqwg5s9pq0c5r7msy4cpyrm0z06m8ylr8dga6gdhz8n0f"))))
+                "1p9dxxlhbg3k0iix6i04gsac4caxx30pf3f3x1nkl0rp49wl0azd"))))
     (properties `((upstream-name . "PlatformDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PlatformDesign")
-    (synopsis "Optimal Two-Period Multi-Arm Platform Design")
+    (synopsis
+     "Optimal Two-Period Multiarm Platform Design with New Experimental Arms Added During the Trial")
     (description
-     "Design parameters can be calculated using this package based on the optimal
-two-period multi-arm platform design allowing pre-planned deferred arms to be
-added during the trial.  More details about the design method can be found in
-the paper: Pan, H., Yuan, X. and Ye, J. (2022) \"An optimal two-period multi-arm
-platform design with adding new arms\".  Manuscript submitted for publication.
-For additional references: Dunnett, C. W. (1955) <doi:10.2307/2281208>.")
+     "Design parameters of the optimal two-period multiarm platform design
+(controlling for either family-wise error rate or pair-wise error rate) can be
+calculated using this package, allowing pre-planned deferred arms to be added
+during the trial.  More details about the design method can be found in the
+paper: Pan, H., Yuan, X. and Ye, J. (2022) \"An optimal two-period multiarm
+platform design with new experimental arms added during the trial\".  Manuscript
+submitted for publication.  For additional references: Dunnett, C. W. (1955)
+<doi:10.2307/2281208>.")
     (license license:gpl3+)))
 
 (define-public r-platetools
@@ -20104,6 +20107,34 @@ course \"Experimentation for Improvement\" found on Coursera.  The package
 contains code for designed experiments, data sets and other convenience
 functions used in the book.")
     (license license:bsd-2)))
+
+(define-public r-picr
+  (package
+    (name "r-picr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "picR" version))
+              (sha256
+               (base32
+                "0x5a9qgn66w06sl2c448ricby1bqiw3cpli1mnpslanym7m60nsb"))))
+    (properties `((upstream-name . "picR")))
+    (build-system r-build-system)
+    (home-page "https://github.com/javenrflo/picR")
+    (synopsis "Predictive Information Criteria for Model Selection")
+    (description
+     "Computation of predictive information criteria (PIC) from select model object
+classes for model selection in predictive contexts.  In contrast to the more
+widely used Akaike Information Criterion (AIC), which are derived under the
+assumption that target(s) of prediction (i.e.  validation data) are
+independently and identically distributed to the fitting data, the PIC are
+derived under less restrictive assumptions and thus generalize AIC to the more
+practically relevant case of training/validation data heterogeneity.  The
+methodology featured in this package is based on Flores (2021)
+<https://iro.uiowa.edu/esploro/outputs/doctoral/A-new-class-of-information-criteria/9984097169902771?institution=01IOWA_INST>
+\"A new class of information criteria for improved prediction in the presence of
+training/validation data heterogeneity\".")
+    (license license:gpl3+)))
 
 (define-public r-picker
   (package
@@ -23337,13 +23368,13 @@ check and connect to SQLite EPPO database'.")
 (define-public r-pesticideloadindicator
   (package
     (name "r-pesticideloadindicator")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PesticideLoadIndicator" version))
               (sha256
                (base32
-                "0mziwrr9lj71ypqvy4jbpxlm7sxpkss2h18jv0ha88xvvw07bp34"))))
+                "109pasc3q0zwwp2pamx1pqz1rvhw269bnbqdh79xy77w82jpma15"))))
     (properties `((upstream-name . "PesticideLoadIndicator")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-readxl r-magrittr r-dplyr))
@@ -24569,21 +24600,24 @@ extensions and algorithms described in Kepplinger, D. (2020)
 (define-public r-penppml
   (package
     (name "r-penppml")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penppml" version))
               (sha256
                (base32
-                "1w3rya4zgllyh2afsgrva7mmxyg76s14ap929mv2qh1sx1z99jc1"))))
+                "0r3wypzndg07vrbifs1h5wm4vcsd27z0gjhvlhgwq0pm1qgsgssc"))))
     (properties `((upstream-name . "penppml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-rcppeigen
                              r-rcpp
+                             r-matrixstats
                              r-magrittr
                              r-glmnet
                              r-fixest
+                             r-dplyr
+                             r-devtools
                              r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tomzylkin/penppml")

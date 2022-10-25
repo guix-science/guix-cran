@@ -7244,21 +7244,20 @@ seals with a mixed effects model.  Ecology 100:e02566 <doi:10.1002/ecy.2566>.")
 (define-public r-foghorn
   (package
     (name "r-foghorn")
-    (version "1.4.2")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "foghorn" version))
               (sha256
                (base32
-                "11riav36ncxybx4yrrrwrykg9xmh2fpp5m92zl9prhi7g0rllg6f"))))
+                "0fbr38hxl2qwr1pbvbwwnkr9dk8saq13w0ld6waky70g7k7va8m4"))))
     (properties `((upstream-name . "foghorn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rvest
                              r-rlang
-                             r-jsonlite
-                             r-httr
+                             r-httr2
                              r-curl
                              r-crayon
                              r-clisymbols))
@@ -15950,13 +15949,13 @@ R code in the book is provided via the snippet() function.")
 (define-public r-fastqq
   (package
     (name "r-fastqq")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastqq" version))
               (sha256
                (base32
-                "1p5xjwcwsgxyva6y6g9d0m6pvdwih97rassw6n2a85dsl8c4kmfk"))))
+                "0009s32zgvm7nnd0zx7rqcvsdfjh27xhlnnrsafbxcxslc3wy496"))))
     (properties `((upstream-name . "fastqq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

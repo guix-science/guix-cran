@@ -6233,13 +6233,13 @@ model criticism plots, data trimming on model residuals, and data visualization.
 (define-public r-lmeinfo
   (package
     (name "r-lmeinfo")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmeInfo" version))
               (sha256
                (base32
-                "0m93alb3phrpzfjdn790xbcg17d2kxv972xbknzpfpbljgs0g2gn"))))
+                "1y1793h5wd6xqj46bkr0xw47287bczhs4kiv1v2cbi70nr628w0d"))))
     (properties `((upstream-name . "lmeInfo")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -10015,13 +10015,13 @@ grid, like cohorts and age groups.")
 (define-public r-lexisnexistools
   (package
     (name "r-lexisnexistools")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LexisNexisTools" version))
               (sha256
                (base32
-                "1yvvvx931lhfzkl5xh34nb75dibr1wpzlvhgfg4r5slxxp335y83"))))
+                "088w6ks1scmzcq74v7izx8v62d99cp7iia4s02n5dj92nyn24w8x"))))
     (properties `((upstream-name . "LexisNexisTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10037,10 +10037,10 @@ grid, like cohorts and age groups.")
     (description
      "My PhD supervisor once told me that everyone doing newspaper analysis starts by
 writing code to read in files from the LexisNexis newspaper archive (retrieved
-e.g., from <http://www.nexis.com/> or any of the partner sites).  However, while
-this is a nice exercise I do recommend, not everyone has the time.  This package
-takes files downloaded from the newspaper archive of LexisNexis', reads them
-into R and offers functions for further processing.")
+e.g., from <https://www.lexisnexis.com/> or any of the partner sites).  However,
+while this is a nice exercise I do recommend, not everyone has the time.  This
+package takes files downloaded from the newspaper archive of LexisNexis', reads
+them into R and offers functions for further processing.")
     (license license:gpl3)))
 
 (define-public r-lexiconpt

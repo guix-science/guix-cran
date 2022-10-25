@@ -4464,13 +4464,13 @@ algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsurveycto" version))
               (sha256
                (base32
-                "0lmfk8fai59qm8pqg6r9vfiyn685rfvascd1v0m3zjjxqlaadgz3"))))
+                "1z51crs7xd0xfrpify3vrq0iwajh3ybg4wsyj602glaxjrj1yyrn"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4482,7 +4482,7 @@ algorithms.")
                              r-curl
                              r-cli
                              r-checkmate))
-    (home-page "https://youth-impact.github.io/rsurveycto/")
+    (home-page "https://agency-fund.github.io/rsurveycto/")
     (synopsis "Interact with Data on 'SurveyCTO'")
     (description
      "SurveyCTO is a platform for mobile data collection in offline settings.  The
@@ -10068,25 +10068,30 @@ referred to as cartoons', are provided.")
 (define-public r-rpanda
   (package
     (name "r-rpanda")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPANDA" version))
               (sha256
                (base32
-                "0a67x2aljyd3nx6akhjwg7aiy0ab721bd7hiapvi14f3a5kijzvb"))))
+                "1nh5b5xgldnnimgrx7kgd02hnrvk16ccsdpprdhcimwyy64s7ljn"))))
     (properties `((upstream-name . "RPANDA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tess
+    (propagated-inputs (list r-vegan
+                             r-tess
                              r-rmpfr
                              r-raster
+                             r-r-utils
                              r-pvclust
                              r-pspline
+                             r-pracma
                              r-picante
                              r-phytools
+                             r-mvtnorm
                              r-mvmorph
                              r-matrix
                              r-igraph
+                             r-gunifrac
                              r-glassofast
                              r-fpc
                              r-fields
@@ -10113,8 +10118,9 @@ Clavel & Morlon (2017) <DOI:10.1073/pnas.1606868114>, Drury et al. (2017)
 <DOI:10.1038/s41559-019-0908-0>, Billaud et al. (2019)
 <DOI:10.1093/sysbio/syz057>, Lewitus et al. (2019) <DOI:10.1093/sysbio/syz061>,
 Aristide & Morlon (2019) <DOI:10.1111/ele.13385>, Maliet et al. (2020)
-<DOI:10.1111/ele.13592> and Drury et al. (2021)
-<DOI:10.1371/journal.pbio.3001270>.")
+<DOI:10.1111/ele.13592>, Drury et al. (2021) <DOI:10.1371/journal.pbio.3001270>,
+Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478> and Perez-Lamarque et al.
+(2022) <DOI:10.1101/2021.08.30.458192>.")
     (license license:gpl2)))
 
 (define-public r-rpaex
@@ -21633,13 +21639,13 @@ Solaris and various Linux distributions.")
 (define-public r-rhsdb
   (package
     (name "r-rhsdb")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RHSDB" version))
               (sha256
                (base32
-                "1vhx5q19pi91283d20cc7950f01cqq8frbmxaf9kvxbv6pijhdk9"))))
+                "0k23vdb9p2c2hnac8rk2dnls47fw5qc66ifhx47q8myi1479vvll"))))
     (properties `((upstream-name . "RHSDB")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RHSDB")
@@ -30865,18 +30871,18 @@ sheets, including recoding variables and converting them to PMML.")
 (define-public r-recocrop
   (package
     (name "r-recocrop")
-    (version "0.3-2")
+    (version "0.4-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Recocrop" version))
               (sha256
                (base32
-                "1kcw0qkxwa58yk6iclbg5c0m3q2ylqwra24y9vxjpr2ajmsr5lf8"))))
+                "1drh1qssnb42p1zl45phpggxhx6is435k9f1vzga0q0dddr5q770"))))
     (properties `((upstream-name . "Recocrop")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpp r-meteor))
     (home-page "https://github.com/cropmodels/Recocrop/")
-    (synopsis "Ecocrop: Estimating Environmental Suitability for Plants")
+    (synopsis "Estimating Environmental Suitability for Plants")
     (description
      "The ecocrop model estimates environmental suitability for plants using a
 limiting factor approach for plant growth following Hackett (1991)

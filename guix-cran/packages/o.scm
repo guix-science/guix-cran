@@ -2197,13 +2197,13 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "0.5.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "origin" version))
               (sha256
                (base32
-                "0am0ynjp1fpgqn7yfwc74wdq4xkg50mwjd0rscdyzhgqykq0y665"))))
+                "0byzia26snxgwqzabbg634y1s2w7gbk065cbv6v9fxxkrjb5ifk3"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi))
@@ -2216,7 +2216,8 @@ filter, organize and further analyze those ordinal relations.")
 dplyr::mutate().  It is up to the user to determine which packages should be
 used explicitly, whether to include base R packages or use the functionality on
 selected text, a file, or a complete directory.  User friendly logging is
-provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.")
+provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
+ Can also be used for checking which packages are actually used in a project.")
     (license license:expat)))
 
 (define-public r-origami
@@ -3123,16 +3124,16 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (define-public r-ordbetareg
   (package
     (name "r-ordbetareg")
-    (version "0.2.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ordbetareg" version))
               (sha256
                (base32
-                "0qxb5vx56250l4l5gk1drrzjwhm74267g98145cn8lwykcwh7vdp"))))
+                "0fla9i98qlxk0harzhr79m1fq4lmcfvslrkmkh5nhm72fis6w0x0"))))
     (properties `((upstream-name . "ordbetareg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-faux r-dplyr r-brms))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-faux r-dplyr r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ordbetareg")
     (synopsis "Ordered Beta Regression Models with Brms")

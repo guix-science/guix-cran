@@ -1503,34 +1503,37 @@ Method described by Masarotto and Varin (2012) <doi:10.1214/12-AOAS581>.")
 (define-public r-btb
   (package
     (name "r-btb")
-    (version "0.1.30.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "btb" version))
               (sha256
                (base32
-                "00asbzjgcjd1cm5m1yndbgr60zpvnhbk5b7rhkhc2z1w513bwi8w"))))
+                "1gm03md6ky134nzmnnp054mi2w8kl4bgcgg4k65zf2cyniz4arxq"))))
     (properties `((upstream-name . "btb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
+    (propagated-inputs (list r-sf
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
+                             r-mapsf
+                             r-magrittr
+                             r-dplyr
                              r-bh))
-    (home-page "https://cran.r-project.org/package=btb")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InseeFr/btb")
     (synopsis
      "Beyond the Border - Kernel Density Estimation for Urban Geography")
     (description
      "The kernelSmoothing() function allows you to square and smooth geolocated data.
 It calculates a classical kernel smoothing (conservative) or a geographically
 weighted median.  There are four major call modes of the function.  The first
-call mode is kernelSmoothing(obs, epsg, cellsize, bandwith) for a classical
+call mode is kernelSmoothing(obs, epsg, cellsize, bandwidth) for a classical
 kernel smoothing and automatic grid.  The second call mode is
-kernelSmoothing(obs, epsg, cellsize, bandwith, quantiles) for a geographically
+kernelSmoothing(obs, epsg, cellsize, bandwidth, quantiles) for a geographically
 weighted median and automatic grid.  The third call mode is kernelSmoothing(obs,
-epsg, cellsize, bandwith, centroids) for a classical kernel smoothing and user
-grid.  The fourth call mode is kernelSmoothing(obs, epsg, cellsize, bandwith,
+epsg, cellsize, bandwidth, centroids) for a classical kernel smoothing and user
+grid.  The fourth call mode is kernelSmoothing(obs, epsg, cellsize, bandwidth,
 quantiles, centroids) for a geographically weighted median and user grid.
 Geographically weighted summary statistics : a framework for localised
 exploratory data analysis, C.Brunsdon & al., in Computers, Environment and Urban
