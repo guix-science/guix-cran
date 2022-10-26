@@ -15905,13 +15905,13 @@ of fields could benefit from the general framework provided by mlmts'.")
 (define-public r-mlmtools
   (package
     (name "r-mlmtools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlmtools" version))
               (sha256
                (base32
-                "0j2l0hfnkya9vylscrywy045vd1yj4f9gyqylznf9dapkcah4cs7"))))
+                "1fwa0cwrrhzxr5zkvmf0q1w2wlrhj58lwmrvqxfn00v0v9d6bi0g"))))
     (properties `((upstream-name . "mlmtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-ggplot2))
@@ -29007,13 +29007,13 @@ product kernels.")
 (define-public r-meanr
   (package
     (name "r-meanr")
-    (version "0.1-4")
+    (version "0.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meanr" version))
               (sha256
                (base32
-                "1k5ygyxa5ixynvh1nfkgm4x9w0wk637m1jnrvkjhyq3jaqwwi859"))))
+                "0db3kjd134f2wbza7py4hpxbbwrbln8dx6rw244my6pi3jifvm5h"))))
     (properties `((upstream-name . "meanr")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/meanr")

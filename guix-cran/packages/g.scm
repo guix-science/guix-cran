@@ -16686,16 +16686,16 @@ ggplot2'.")
 (define-public r-ggborderline
   (package
     (name "r-ggborderline")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggborderline" version))
               (sha256
                (base32
-                "02m7g0fmayp0zscj3x167n96cj6kn62a8nw67d42k6p74bard2sy"))))
+                "1acb3z2dwasmn4ngc7wqk3y4n34ah3fhdxsbdl3dmbc75nmdsn5a"))))
     (properties `((upstream-name . "ggborderline")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-vctrs r-rlang r-ggplot2 r-cli))
     (home-page "https://github.com/wurli/ggborderline")
     (synopsis "Line Plots that Pop")
     (description

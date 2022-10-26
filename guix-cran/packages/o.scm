@@ -5242,19 +5242,18 @@ well as aircraft state vectors.")
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")
-    (version "0.5.1")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OpenRepGrid.ic" version))
               (sha256
                (base32
-                "06yy2c64lrqj6h36swbxqsmphsglynxlbb76s5rc79d1627hsmdc"))))
+                "1h6n44szm5fa04fsnq0yvqp3m8djxsh5v3y409hzjgvb90vjzmyz"))))
     (properties `((upstream-name . "OpenRepGrid.ic")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-tidyverse
                              r-tidyr
-                             r-testthat
                              r-stringr
                              r-shinywidgets
                              r-shinythemes

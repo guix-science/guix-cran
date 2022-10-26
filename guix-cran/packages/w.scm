@@ -1510,6 +1510,38 @@ programmatically download publication and citation data indexed in the Web of
 Science and InCites databases.")
     (license license:expat)))
 
+(define-public r-worrrd
+  (package
+    (name "r-worrrd")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "worrrd" version))
+              (sha256
+               (base32
+                "1czzm30xwssjrhw7kqw23d2s03v9lbwa0crld9qf9q80h5zc0kxi"))))
+    (properties `((upstream-name . "worrrd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-ggfittext
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.stochastic-squirrel.com/worrrd/")
+    (synopsis "Generate Wordsearch and Crossword Puzzles")
+    (description
+     "Generate wordsearch and crossword puzzles using custom lists of words (and
+clues).  Make them easy or hard, and print them to solve offline with paper and
+pencil!")
+    (license license:expat)))
+
 (define-public r-worrms
   (package
     (name "r-worrms")
@@ -5331,13 +5363,13 @@ other pipeline or simultaneously analyze multiple gene lists.")
 (define-public r-webfakes
   (package
     (name "r-webfakes")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webfakes" version))
               (sha256
                (base32
-                "1yc6r1fzl5kig6fxxyqahaiwmq20vgq9rjk099ak3vnzar6k2cm9"))))
+                "1bg8pkbcazzb0ng3i77mflsb09i5qgmrqr5jhz3iylvxrjrv1pxv"))))
     (properties `((upstream-name . "webfakes")))
     (build-system r-build-system)
     (home-page "https://webfakes.r-lib.org/")

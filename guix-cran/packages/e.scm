@@ -8147,52 +8147,6 @@ held by the UK Health Security Agency, UKHSA.")
 data management functions is available at <https://medipe.psu.ac.th/epicalc/>'.")
     (license license:gpl2+)))
 
-(define-public r-epidemia
-  (package
-    (name "r-epidemia")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "epidemia" version))
-              (sha256
-               (base32
-                "1lfbibcpm58a05wrikwfzxkfqxw6yk41b1q07wpchxpz1lfv2v5y"))))
-    (properties `((upstream-name . "epidemia")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-stanheaders
-                             r-scales
-                             r-rstantools
-                             r-rstanarm
-                             r-rstan
-                             r-rlang
-                             r-rdpack
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-magrittr
-                             r-lme4
-                             r-hrbrthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-bh
-                             r-bayesplot))
-    (home-page "https://github.com/ImperialCollegeLondon/epidemia/")
-    (synopsis "Modeling of Epidemics using Hierarchical Bayesian Models")
-    (description
-     "Flexibly specify and fit Bayesian statistical models for epidemics.  epidemia
-leverages Rs formula interface so that users can parameterize reproduction
-numbers and ascertainment rates in terms of predictors.  Infections are
-propagated over time using self-exciting point processes.  Multiple regions can
-be modeled simultaneously with multilevel models.  The models and framework
-behind the package are described in Bhatt et al. (2021) <arXiv:2012.00394>.  The
-design of the package has been inspired by, and has borrowed from, rstanarm
-(Goodrich et al., 2020) <https://mc-stan.org/rstanarm/>.  rstan (Stan
-Development Team, 2020) <https://mc-stan.org/> is used as the back end for
-fitting models.")
-    (license license:gpl3)))
-
 (define-public r-epidata
   (package
     (name "r-epidata")
@@ -15365,13 +15319,13 @@ supported.")
 (define-public r-edecob
   (package
     (name "r-edecob")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edecob" version))
               (sha256
                (base32
-                "1hb0jfc9hyrk31byvjj24ipvb5cgbm5v39vvm60xzs36b08fw8aj"))))
+                "1lb2df0w4hf2gchdfbyw1ykb8db5bkilgyml1lhdnv209anwjh2n"))))
     (properties `((upstream-name . "edecob")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))

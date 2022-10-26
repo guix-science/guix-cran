@@ -14320,13 +14320,13 @@ in Demirtas et al. (2012) <DOI:10.1002/sim.5362>.")
 (define-public r-poismf
   (package
     (name "r-poismf")
-    (version "0.4.0-1")
+    (version "0.4.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poismf" version))
               (sha256
                (base32
-                "1zdnzdwpd329b1i9mlr4pjmg6zhrafq0n8achynp5pvkfih2jl9k"))))
+                "1qnik1i768g8g74w3q846q3sm646ds0dlqq5b8hn9yyiih90n67g"))))
     (properties `((upstream-name . "poismf")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -24545,6 +24545,26 @@ level) tables in Latex, and plotting by factor.")
      "Data sets for statistical inference modeling related to People Analytics.
 Contains various data sets from the book Handbook of Regression Modeling in
 People Analytics by Keith McNulty (2020).")
+    (license license:expat)))
+
+(define-public r-peopleanalytics
+  (package
+    (name "r-peopleanalytics")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "peopleanalytics" version))
+              (sha256
+               (base32
+                "0ay85yxx30p4i8icn8l8ppjddiwkbw1g6ymnmvw5gnd9hgmwbrx0"))))
+    (properties `((upstream-name . "peopleanalytics")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=peopleanalytics")
+    (synopsis
+     "Data Sets for Craig Starbuck's Book, \"The Fundamentals of People Analytics: With Applications in R\"")
+    (description
+     "Data sets associated with modeling examples in Craig Starbuck's book, \"The
+Fundamentals of People Analytics: With Applications in R\".")
     (license license:expat)))
 
 (define-public r-pensim

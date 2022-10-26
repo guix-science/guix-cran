@@ -592,16 +592,16 @@ available in GarcÃ­a-Callejas, D., Godoy, O., and Bartomeus, I. (2020)
 (define-public r-cxhull
   (package
     (name "r-cxhull")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cxhull" version))
               (sha256
                (base32
-                "0dn10shm3g7s3mj3f4p5kxqcf02zjw104pd2pi41inlcplz2k1zz"))))
+                "14aknp7hj8yc5dmgm6h9lp3n8fslii4vlhz08304ri32v75zn0p9"))))
     (properties `((upstream-name . "cxhull")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rvcg r-rgl r-morpho))
+    (propagated-inputs (list r-rvcg r-rgl r-morpho r-data-table))
     (home-page "https://github.com/stla/cxhull")
     (synopsis "Convex Hull")
     (description
@@ -20317,13 +20317,13 @@ multiple surrogate markers.  Details are described in Wang et al (2022)
 (define-public r-cmfrec
   (package
     (name "r-cmfrec")
-    (version "3.4.3")
+    (version "3.4.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmfrec" version))
               (sha256
                (base32
-                "1bfplq66ij073wizaqpvgzpgi52ha7wiv3am0iqv7rgdjwcw6dlc"))))
+                "0qzbkzsgr9haf48rhi70chsxbppmq7l19q3hmggfp12rziaa8y5l"))))
     (properties `((upstream-name . "cmfrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

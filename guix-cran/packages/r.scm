@@ -3422,13 +3422,13 @@ Commodities and Genscape'.")
 (define-public r-rtkore
   (package
     (name "r-rtkore")
-    (version "1.5.5")
+    (version "1.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtkore" version))
               (sha256
                (base32
-                "0srk0ih4gbmhb1pl6zf8sjwrkdmgws9cl1397fcqv6l3bc376622"))))
+                "0v3p2amkkz137v1vqd1xiv9i1jayd265mwyajjzw56ngm8qpr4jv"))))
     (properties `((upstream-name . "rtkore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-inline))
@@ -8348,13 +8348,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.16")
+    (version "0.4.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RQuantLib" version))
               (sha256
                (base32
-                "0vm7w2w1m5cwf29xvlvviqs88dg6n5i9ss9ph16brvnv6vs72qx1"))))
+                "1sb6mpglqzwnf868gg7g6ys3l7z960721xj28y0v2pfc8vfk5ic2"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -20491,21 +20491,27 @@ connectivity.")
 (define-public r-rioja
   (package
     (name "r-rioja")
-    (version "0.9-26")
+    (version "1.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rioja" version))
               (sha256
                (base32
-                "02af6is38nakzr1hf9688n32m5glk1jyp2d9p4irn0mzk7r6r976"))))
+                "19lw6rzcqkdrx8xw12kf096ky4wh4f5xbnksx2iawf4i630nix2l"))))
     (properties `((upstream-name . "rioja")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-mgcv))
+    (propagated-inputs (list r-vegan
+                             r-stringr
+                             r-sjmisc
+                             r-mgcv
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "http://www.staff.ncl.ac.uk/stephen.juggins/")
     (synopsis "Analysis of Quaternary Science Data")
     (description
-     "Constrained clustering, transfer functions, and other methods for analysing
-Quaternary science data.")
+     "Stratigraphic diagrams, constrained clustering, transfer functions, and other
+methods for analysing Quaternary science data.")
     (license license:gpl2)))
 
 (define-public r-rintimg
@@ -20831,13 +20837,13 @@ Region of Interest (ROI) files, to plot the ROIs and to convert them to spatstat
 (define-public r-rim
   (package
     (name "r-rim")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rim" version))
               (sha256
                (base32
-                "0m0fvm3mmi9ydq759287yxr65v7hsmfxqryi67493g7mxyckqqi7"))))
+                "03wx013gd4hraklc56fr50j5ivi2c695xlfs5403rw4ml2ndds4h"))))
     (properties `((upstream-name . "rim")))
     (build-system r-build-system)
     (inputs (list maxima))
@@ -35412,13 +35418,13 @@ R and modern C++.")
 (define-public r-rcpmod
   (package
     (name "r-rcpmod")
-    (version "2.190")
+    (version "2.192")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCPmod" version))
               (sha256
                (base32
-                "1r24g8fcizyqzgp0da90sxpwalgcsgz2b168j2smpylxraiqb037"))))
+                "15frf0g3vd0cpfgsfhg5q9s4s21yr0wkq3fjppciw6bz4p3xqbiv"))))
     (properties `((upstream-name . "RCPmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gtools r-glmnet r-fishmod))
@@ -35428,7 +35434,9 @@ R and modern C++.")
      "Identifies regions of common (species) profiles (RCPs), possibly when sampling
 artefacts are present.  Within a region the probability of sampling all species
 remains approximately constant.  This is performed using mixtures-of-experts
-models.  The package also contains associated methods, such as diagnostics.")
+models.  The package also contains associated methods, such as diagnostics.
+Details of the method can be found in Foster et al (2013) <doi:10.1002/env.2245>
+and Foster et al. (2017) <doi:10.1111/rssc.12211>.")
     (license license:gpl2+)))
 
 (define-public r-rcplex
@@ -38202,13 +38210,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.1.4")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbmi" version))
               (sha256
                (base32
-                "14l9072avfbqir1w8gpiaj97ldlk0mb0skpjns8mliqxgpcqlra2"))))
+                "1jxbjzf1acgpm8hg7y7rg2jsv94qv6wh4f51wwv3zw1rghfsfmn6"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -38218,8 +38226,9 @@ text files and more...")
                              r-rcppeigen
                              r-rcpp
                              r-r6
+                             r-pkgload
+                             r-mmrm
                              r-matrix
-                             r-glmmtmb
                              r-bh
                              r-assertthat))
     (home-page "https://insightsengineering.github.io/rbmi/")

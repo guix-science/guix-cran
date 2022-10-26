@@ -1171,6 +1171,32 @@ generates 3D volcano plots and 3-way polar plots for easier interpretation of
 three-class data.")
     (license license:gpl2)))
 
+(define-public r-volatilitytrader
+  (package
+    (name "r-volatilitytrader")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "volatilityTrader" version))
+              (sha256
+               (base32
+                "1zz6286kmzcj8k66mpj9nidsf86dkw2ms75ck6rrvnl5h1idcacj"))))
+    (properties `((upstream-name . "volatilityTrader")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=volatilityTrader")
+    (synopsis "High Volatility Environment Option Trading Strategies Graphs")
+    (description
+     "Trading Strategies for high Option Volatility environment are represented here
+through their Graphs.  The graphic indicators, strategies, calculations,
+functions and all the discussions are for academic, research, and educational
+purposes only and should not be construed as investment advice and come with
+absolutely no Liability.  Guy Cohen (âThe Bible of Options Strategies (2nd
+ed.)â, 2015, ISBN: 9780133964028).  Zura Kakushadze, Juan A. Serur (â151
+Trading Strategiesâ, 2018, ISBN: 9783030027919).  John C. Hull (âOptions,
+Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
+    (license license:gpl3)))
+
 (define-public r-voice
   (package
     (name "r-voice")

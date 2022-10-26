@@ -768,23 +768,25 @@ data.")
 (define-public r-krippendorffsalpha
   (package
     (name "r-krippendorffsalpha")
-    (version "1.1-2")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "krippendorffsalpha" version))
               (sha256
                (base32
-                "0swhwml6r5cwbrsbqifjdhq85mfgj24v08zx70hr8y2xc47bdl3z"))))
+                "0zzhpdmmaiaqrg1xi9jg6lzrhzpav8wyrc8z38rf8x6kxmr2bx3m"))))
     (properties `((upstream-name . "krippendorffsalpha")))
     (build-system r-build-system)
     (home-page "http://www.johnhughes.org")
     (synopsis "Measuring Agreement Using Krippendorff's Alpha Coefficient")
     (description
      "This package provides tools for applying Krippendorff's Alpha methodology
-<DOI:10.1080/19312450709336664>.  The framework supports common and user-defined
-distance functions, and can accommodate any number of units, any number of
-coders, and missingness.  Bootstrap inference is permitted, and the computation
-can be done in parallel.")
+<DOI:10.1080/19312450709336664>.  Both the customary methodology and Hughes
+methodology <DOI:10.48550/arXiv.2210.13265> are supported, the former being
+preferred for larger datasets, the latter for smaller datasets.  The framework
+supports common and user-defined distance functions, and can accommodate any
+number of units, any number of coders, and missingness.  Interval estimation can
+be done in parallel for either methodology.")
     (license license:gpl2+)))
 
 (define-public r-kriginv

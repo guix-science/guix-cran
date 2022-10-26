@@ -2831,6 +2831,30 @@ Management: Concepts, Techniques and Tools by Alexander J. McNeil, Ruediger
 Frey, and Paul Embrechts.")
     (license license:gpl2+)))
 
+(define-public r-qrlmm
+  (package
+    (name "r-qrlmm")
+    (version "2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qrLMM" version))
+              (sha256
+               (base32
+                "1y612kqnwqzrg5b7c4fc0al8zxycb6g6bgq747yvkm9kqyhbxszh"))))
+    (properties `((upstream-name . "qrLMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-psych r-mvtnorm r-lqr r-ald))
+    (home-page "https://cran.r-project.org/package=qrLMM")
+    (synopsis "Quantile Regression for Linear Mixed-Effects Models")
+    (description
+     "Quantile regression (QR) for Linear Mixed-Effects Models via the asymmetric
+Laplace distribution (ALD).  It uses the Stochastic Approximation of the EM
+(SAEM) algorithm for deriving exact maximum likelihood estimates and full
+inference results for the fixed-effects and variance components.  It also
+provides graphical summaries for assessing the algorithm convergence and fitting
+results.")
+    (license license:gpl2+)))
+
 (define-public r-qrjoint
   (package
     (name "r-qrjoint")

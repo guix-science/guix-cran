@@ -25096,16 +25096,17 @@ use in infectious disease modelling, as discussed in Mossong et al. (2008)
 (define-public r-socialh
   (package
     (name "r-socialh")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "socialh" version))
               (sha256
                (base32
-                "03ms1plsrs7lhxh4fb2kwrhayly4f53q61czzycjmbfp83fg1xmj"))))
+                "134jdhnnjxgnc8k1ws7pni5g44imxblngf106rwp8ff5a2gmrf6c"))))
     (properties `((upstream-name . "socialh")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr r-data-table))
+    (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr r-data-table
+                             r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=socialh")
     (synopsis "Rank and Social Hierarchy for Gregarious Animals")
@@ -25114,7 +25115,8 @@ use in infectious disease modelling, as discussed in Mossong et al. (2008)
 for gregarious animals by the Si method developed by Kondo & Hurnik
 (1990)<doi:10.1016/0168-1591(90)90125-W>.  It is also possible to determine the
 number of agonistic interactions between two individuals, sociometric and
-dyadics matrix from dataset obtained through electronic bins.")
+dyadics matrix from dataset obtained through electronic bins.  In addition, it
+is possible plotting the results using a bar plot, box plot, and sociogram.")
     (license license:gpl3)))
 
 (define-public r-social
@@ -36800,23 +36802,29 @@ models with a user friendly shiny interface.")
 (define-public r-shinyhugeplot
   (package
     (name "r-shinyhugeplot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyHugePlot" version))
               (sha256
                (base32
-                "12xpgjvbmhx8jcdqbcly5nh2fh7lqy65dgrv40viwivpgc4fm9n4"))))
+                "0bz4gf14xay7qc10x6zbgky9sviyic8r89igq25mvdnn47990ml6"))))
     (properties `((upstream-name . "shinyHugePlot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
+                             r-shinyjs
                              r-shiny
+                             r-rlang
                              r-r6
                              r-purrr
                              r-plotly
                              r-nanotime
+                             r-lazyeval
+                             r-jsonlite
+                             r-htmltools
                              r-dplyr
                              r-data-table
                              r-bit64
@@ -46627,13 +46635,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCpubr" version))
               (sha256
                (base32
-                "0x7caw356s2fsb2i1vzshj8awnc3mv79i2bqvwdbqiyn0chaqzkn"))))
+                "0zkp7has7y571kq1bf840mrgwwqi0ks2ka94gax3m8z205w5z3ns"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

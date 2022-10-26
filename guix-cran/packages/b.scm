@@ -10304,42 +10304,35 @@ networks, i.e.  data graph structured.")
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "3.5.1")
+    (version "4.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biomod2" version))
               (sha256
                (base32
-                "065cq36phf7ncd1na440f50aa467qbwkb7pchabsan05k3zk7v9h"))))
+                "1vwcbikpd8x7i9jy6g20wdwxpf0d6n2sbj6npbadj75mxmda0r6c"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sp
+    (propagated-inputs (list r-sp
                              r-rpart
-                             r-rlang
+                             r-reshape2
                              r-reshape
-                             r-rastervis
                              r-raster
                              r-randomforest
-                             r-purrr
                              r-proc
                              r-presenceabsence
                              r-nnet
                              r-mda
                              r-maxnet
                              r-mass
-                             r-lattice
                              r-ggplot2
                              r-gbm
                              r-foreach
-                             r-enmeval
                              r-earth
                              r-dplyr
-                             r-doparallel
-                             r-dismo
-                             r-checkmate
-                             r-caret
+                             r-data-table
                              r-abind))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=biomod2")
     (synopsis "Ensemble Platform for Species Distribution Modeling")
     (description
@@ -22705,13 +22698,13 @@ without bartMachine.")
 (define-public r-bartmachine
   (package
     (name "r-bartmachine")
-    (version "1.3")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartMachine" version))
               (sha256
                (base32
-                "1qh9n3pih6bq2hk56z1ckdnjxj5r670fyy8mxs55vxhlmph7pz0w"))))
+                "0h963cv1i1cjcjk2xm4lrglsf74ngf1m562sx6sgnfmz10gl4ixa"))))
     (properties `((upstream-name . "bartMachine")))
     (build-system r-build-system)
     (inputs (list openjdk))

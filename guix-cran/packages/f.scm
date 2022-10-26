@@ -6490,24 +6490,25 @@ selection.")
 (define-public r-foresight
   (package
     (name "r-foresight")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "foreSIGHT" version))
               (sha256
                (base32
-                "0f1wy7iy3189890qi0gfqwbif3qlp9bfnzzqlg1yvwxi5pw55ikm"))))
+                "0a018hc8pavb8sqizc5922gmiwsdlq3hgwkx29pzpajjlhrybgpj"))))
     (properties `((upstream-name . "foreSIGHT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-viridislite
+    (propagated-inputs (list r-viridislite
                              r-scales
                              r-rlang
                              r-rcpp
                              r-rcorpora
                              r-rcolorbrewer
                              r-progress
+                             r-mvtnorm
                              r-moments
+                             r-lattice
                              r-jsonlite
                              r-ggplot2
                              r-ga
@@ -6542,9 +6543,11 @@ properties, herein called attributes, to be perturbed.  Options are included for
 the easy integration of existing system models both internally in R and
 externally for seamless stress-testing'.  A suite of visualization options for
 the results of a scenario-neutral analysis (e.g. plotting performance spaces and
-overlaying climate projection information) are also included.  As further
-developments in scenario-neutral approaches occur the tool will be updated to
-incorporate these advances.")
+overlaying climate projection information) are also included.  Version 1.0 of
+this package is described in Bennett et al. (2021)
+<doi:10.1016/j.envsoft.2021.104999>.  As further developments in
+scenario-neutral approaches occur the tool will be updated to incorporate these
+advances.")
     (license license:gpl3)))
 
 (define-public r-forectheta
@@ -15796,13 +15799,13 @@ package.")
 (define-public r-fastrhockey
   (package
     (name "r-fastrhockey")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastRhockey" version))
               (sha256
                (base32
-                "1fsplgr542l71f80mywjhbrripms40b0mjr5h2kvsss8xkj47rzi"))))
+                "1xw4ylrsf9wylym79svazrmw2c9fmqk8n0sz1vypsm29dsic879k"))))
     (properties `((upstream-name . "fastRhockey")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15828,8 +15831,8 @@ package.")
      "Functions to Access Premier Hockey Federation and National Hockey League Play by Play Data")
     (description
      "This package provides a utility to scrape and load play-by-play data and
-statistics from the Premier Hockey Federation
-(PHF)<https://www.premierhockeyfederation.com/>, formerly known as the National
+statistics from the Premier Hockey Federation (PHF)
+<https://www.premierhockeyfederation.com/>, formerly known as the National
 Women's Hockey League (NWHL).  Additionally, allows access to the National
 Hockey League's stats API <https://www.nhl.com/>.")
     (license license:expat)))

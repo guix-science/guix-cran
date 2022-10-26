@@ -4049,43 +4049,6 @@ Vostok Paleo carbon dioxide and temperature data:
 <https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html>.")
     (license license:expat)))
 
-(define-public r-hockeyr
-  (package
-    (name "r-hockeyr")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hockeyR" version))
-              (sha256
-               (base32
-                "0nb42c1fbmpmpmc9yjcdrypl5jvlqc2ibrzlvz7n51zwvx4v5gc0"))))
-    (properties `((upstream-name . "hockeyR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xgboost
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-purrr
-                             r-padr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/danmorse314/hockeyR")
-    (synopsis "Collect and Clean Hockey Stats")
-    (description
-     "Various functions to scrape hockey play-by-play data from the
-<https://www.nhl.com/>.  It also contains functions to scrape data from
-<https://www.hockey-reference.com/>, including standings, player stats, and
-jersey number history.")
-    (license license:expat)))
-
 (define-public r-hoardr
   (package
     (name "r-hoardr")

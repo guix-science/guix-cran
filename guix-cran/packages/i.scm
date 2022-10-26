@@ -11614,6 +11614,30 @@ conditional quantities such as the cdf and quantiles.  Generate data from an IG
 or IGL copula.")
     (license license:expat)))
 
+(define-public r-igcities
+  (package
+    (name "r-igcities")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IGCities" version))
+              (sha256
+               (base32
+                "1564bzvi6vgg9q8s97mxjwklr83vkcv8f526savkhnjxdzi1zmy0"))))
+    (properties `((upstream-name . "IGCities")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=IGCities")
+    (synopsis
+     "Simulate Impact of Different Urban Policies Through a General Equilibrium Model")
+    (description
+     "Develops a General Equilibrium (GE) Model, which estimates key variables such as
+wages, the number of residents and workers, the prices of the floor space, and
+its distribution between commercial and residential use, as in Ahlfeldt et al.,
+(2015) <https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA10876>.  By doing
+so, the model allows understanding the economic influence of different urban
+policies.")
+    (license license:expat)))
+
 (define-public r-igate
   (package
     (name "r-igate")

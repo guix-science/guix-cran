@@ -9281,19 +9281,19 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "1y4nqwh3s0phxp6ljifg8qaf40si0r771vwj4hv4aiw2yzgsy89y"))))
+                "04vzis26zarxi3bqhvhiazn1if63k0rfc6b2znd555z3lq6hdd0q"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
+                             r-tidyr
                              r-stringr
                              r-scales
-                             r-readr
                              r-magrittr
                              r-gridextra
                              r-ggrepel
@@ -9303,10 +9303,10 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
     (home-page "https://github.com/GenuityScience/topr")
     (synopsis "Create Custom Plots for Viewing Genetic Association Results")
     (description
-     "This package provides a collection of functions for visualizing, exploring and
-annotating genetic association results.  Association results from multiple
-traits can be viewed simultaneously along with gene annotation, over the entire
-genome (Manhattan plot) or in the more detailed regional view.")
+     "This package provides a collection of functions for visualizing,exploring and
+annotating genetic association results.Association results from multiple traits
+can be viewed simultaneously along with gene annotation, over the entire genome
+(Manhattan plot) or in the more detailed regional view.")
     (license license:lgpl3+)))
 
 (define-public r-topologygsa
@@ -12925,13 +12925,13 @@ Twitter'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytable" version))
               (sha256
                (base32
-                "1iiyinyqhmi80wsqd76n57xi8f1naxkld5fclgh3mscv09c2g9bl"))))
+                "0daw83qjv6qdb45f297fv9rzzx37nji0jdc5p51bwv8azz9bdy2z"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -18723,16 +18723,16 @@ v1.0.3 is described in Pietras (2018) <doi:10.1145/3233547.3233559>.")
 (define-public r-templr
   (package
     (name "r-templr")
-    (version "0.1-0")
+    (version "0.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "templr" version))
               (sha256
                (base32
-                "1lq2nfds9vamgjcgaksf6f3l3g0k8cfp1niawkbw8hvp8nclahzg"))))
+                "1s2awbcf3vaalbrwz5ryfiz69vhapy9h6jhy6zgzqqs5l1aw4ad0"))))
     (properties `((upstream-name . "templr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-remotes))
+    (propagated-inputs (list r-xml2 r-remotes r-jsonlite))
     (home-page "https://github.com/MASCOTNUM/templr")
     (synopsis "MASCOTNUM Algorithms Template Tools")
     (description
@@ -21033,26 +21033,29 @@ ISBN:978-9881443519) and drake (2018, <doi:10.21105/joss.00550>).")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.2.0")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "targeted" version))
               (sha256
                (base32
-                "0xcw2xcvp4yz37djl2m7fwr61hfrarbrr05rcnbqkjs3y4q5p99g"))))
+                "0h05h8pgjjab5clv501m9b2fcycspj0dc7zs72lwp15al2rikmzg"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-survival
+                             r-rcpparmadillo
                              r-rcpp
+                             r-r6
                              r-progressr
                              r-optimx
+                             r-mets
                              r-lava
                              r-future-apply
                              r-futile-logger
                              r-digest
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://www.targetlib.org/r/")
+    (home-page "https://cran.r-project.org/package=targeted")
     (synopsis "Targeted Inference")
     (description
      "Various methods for targeted and semiparametric inference including augmented

@@ -1820,13 +1820,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lrstat" version))
               (sha256
                (base32
-                "01gv98pdgbmqpggfdi9azg7y8yrp0v29id6pwdczrikfv5r4pyh6"))))
+                "0bzld73ilanan6a3rd39y26xyczrb3xv2yd07wpmvf7dzrn78zn0"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4561,13 +4561,13 @@ Boehmke, B., & Greenwell, B. M. (2019) <doi:10.1201/9780367816377> .")
 (define-public r-logan
   (package
     (name "r-logan")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LOGAN" version))
               (sha256
                (base32
-                "00y8kcykw01gv2g20vmpwkc3qqyafwbiw5pa731xlfnh1b8sn0hi"))))
+                "0fjcmfzmjgnks6a8x5v7lmqxpswljzrb9b881qjvyy7hi8asx7gy"))))
     (properties `((upstream-name . "LOGAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4584,9 +4584,9 @@ Boehmke, B., & Greenwell, B. M. (2019) <doi:10.1201/9780367816377> .")
     (description
      "Enables users to handle the dataset cleaning for conducting specific analyses
 with the log files from two international educational assessments: the Programme
-for International Student Assessment (PISA, <http://www.oecd.org/pisa/>) and the
-Programme for the International Assessment of Adult Competencies (PIAAC,
-<http://www.oecd.org/skills/piaac/>).  An illustration of the analyses can be
+for International Student Assessment (PISA, <https://www.oecd.org/pisa/>) and
+the Programme for the International Assessment of Adult Competencies (PIAAC,
+<https://www.oecd.org/skills/piaac/>).  An illustration of the analyses can be
 found on the LOGAN Shiny app (<https://loganpackage.shinyapps.io/shiny/>) on
 your browser.")
     (license license:gpl3)))
