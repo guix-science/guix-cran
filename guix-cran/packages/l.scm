@@ -8533,13 +8533,13 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihoodR" version))
               (sha256
                (base32
-                "1bcrfx3v9xjyb2q44x26wf4d7p0f8nbcp1xhimk7y9rg05s7cxc9"))))
+                "105rkxg9n1mrwkjg3234di1n680yavigpkxdxl6sg6bic241h9zd"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=likelihoodR")
@@ -13664,13 +13664,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "latrend" version))
               (sha256
                (base32
-                "10557h8dgjyj7q88rs4dmhfvm992174qf3cfyvaqw6yyb98wpbsw"))))
+                "1qqh2igwag57mm42nazszvlp5d4wddgaxmv1mh35jvrv0qwhc75j"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -15573,13 +15573,13 @@ the statistical design.")
 (define-public r-la
   (package
     (name "r-la")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LA" version))
               (sha256
                (base32
-                "06mfxz283ifkblhxa35wrkkzbndxv55sh6ckrp92nb4nvdh1zlvy"))))
+                "12fhkrjcj5304pdpgmf8iilxgy5vnixqj3zb87csa4m22ibpkah4"))))
     (properties `((upstream-name . "LA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

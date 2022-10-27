@@ -13509,13 +13509,13 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
 (define-public r-tidync
   (package
     (name "r-tidync")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidync" version))
               (sha256
                (base32
-                "1nm3021m3xnn4xkprkxd9sj9bwvfbwhrdhfdkfhsc9azqy3rgg9f"))))
+                "0w8i8h3rr7mjxbc5zasw6zi9v95z51635pdl91ip4awgkrkyn9f3"))))
     (properties `((upstream-name . "tidync")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13989,13 +13989,13 @@ information, check its ancestor package tidyfst'.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.4")
+    (version "1.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfst" version))
               (sha256
                (base32
-                "0d84cgh2kjq9gqmq6a01fwkiijqf0x6nja47mgr5s23nr1q9ddrj"))))
+                "07sy6yyjpb0qkn8qhc4d228xxihjqrqw42g5afz5ai3h530qhj89"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))

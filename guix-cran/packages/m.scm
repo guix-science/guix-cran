@@ -27843,13 +27843,13 @@ specificity of the alert week.")
 (define-public r-meltt
   (package
     (name "r-meltt")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meltt" version))
               (sha256
                (base32
-                "0pj4z5nlb3ngx50r25d80z275rcf571imapq83yg0djp5lwzml0c"))))
+                "1j2iz05xr9ddj9pk2yw7j7kjfr9rxmxkk123c6336fqdm14wvd21"))))
     (properties `((upstream-name . "meltt")))
     (build-system r-build-system)
     (inputs (list python))

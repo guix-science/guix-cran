@@ -9452,13 +9452,13 @@ Combinatorial, GMDH MIA (Multilayered Iterative Algorithm), GMDH GIA
 (define-public r-gmdh2
   (package
     (name "r-gmdh2")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GMDH2" version))
               (sha256
                (base32
-                "1f7n4fsgvgf97ps4qvz0yjcwmhns9911yqdccfgirbi72fn6j9rn"))))
+                "1cqpwnncxir9gc6vwzclm0av9hzd2a74xvl3w73dpzafvzkg4x67"))))
     (properties `((upstream-name . "GMDH2")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -10792,13 +10792,13 @@ LASSO penalties.")
 (define-public r-glmmml
   (package
     (name "r-glmmml")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmML" version))
               (sha256
                (base32
-                "0z2ylgp37aj5sl0yxnx7zar2vsk5vhjv175x5kahdvdx6h44zqr4"))))
+                "0xs6vn245y32pshlslblrj6517dwwmk0ffp2rzji8d8h0lsxidxx"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

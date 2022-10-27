@@ -4683,16 +4683,17 @@ Kroitor.")
 (define-public r-asciicast
   (package
     (name "r-asciicast")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asciicast" version))
               (sha256
                (base32
-                "006s4p7x84c5pz4cfm692ycbdn0hfb2k2z6w0fj3g53cfyhz7ghm"))))
+                "14pbhywiv99hmmmmsr55yf8i1lwryzxply2gwikpddiqfl07fi96"))))
     (properties `((upstream-name . "asciicast")))
     (build-system r-build-system)
-    (propagated-inputs (list r-v8
+    (propagated-inputs (list r-withr
+                             r-v8
                              r-tibble
                              r-processx
                              r-magick

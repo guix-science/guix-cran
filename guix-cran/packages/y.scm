@@ -405,23 +405,24 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ympes" version))
               (sha256
                (base32
-                "1nv38idb8r7s3q0ijvs9x3wkl4x2r1r2sbbrnxjx34gddj26l5bv"))))
+                "0mqk2w7dwjzaas2ajqd3qg22dz66w2s6wl9xzy140qmnv76vzpvh"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=ympes")
+    (native-inputs (list r-knitr))
+    (home-page "https://timtaylor.github.io/ympes/")
     (synopsis "Collection of Helper Functions")
     (description
      "This package provides a collection of lightweight helper functions (imps) both
 for interactive use and for inclusion within other packages.  These include
 minimal assertion functions with a focus on informative error messaging for both
 missing and incorrect function arguments as well as other functions for
-visualising colour palettes and quoting user input.")
+visualising colour palettes, quoting user input and working with age intervals.")
     (license license:gpl2)))
 
 (define-public r-ymlthis
@@ -877,13 +878,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "0.9.6")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yamlet" version))
               (sha256
                (base32
-                "1ji4bwdmjnv6yx4mrqfg0pzglvfgb1qrj8l7n442pksql489gh3f"))))
+                "0sc6mkqdfzmv9y75b0kqxly3b6amhj899l0dqprlz1ncrx3d2bb3"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

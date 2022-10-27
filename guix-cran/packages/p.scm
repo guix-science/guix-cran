@@ -13713,13 +13713,13 @@ on the indexed corpora.")
 (define-public r-pollster
   (package
     (name "r-pollster")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pollster" version))
               (sha256
                (base32
-                "1b5m5g9v8xbs3zz6as4xvzwaqr39477adi4vzxmjvxjsaij6ih5h"))))
+                "1nvkskqyxng7r4c9z59s5mg9gk8rvd70bd5cfr3wnhps713sripi"))))
     (properties `((upstream-name . "pollster")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18528,13 +18528,13 @@ all other CRAN packages.")
 (define-public r-pkgsearch
   (package
     (name "r-pkgsearch")
-    (version "3.1.1")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgsearch" version))
               (sha256
                (base32
-                "15biq108cmgm7fl4hq3rzrq3f3767xgx44kibmpl51npyxvhb4x5"))))
+                "0j0rckhv1lcwlc05ng637n1jv9yyxb6iws91i3mz9qnl5wis8061"))))
     (properties `((upstream-name . "pkgsearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-prettyunits r-parsedate r-jsonlite r-curl))
@@ -18832,13 +18832,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgcache" version))
               (sha256
                (base32
-                "10gqb7wbgk3wzziijalmp9pm3isprfpa6jxdzp14kwvf0jvvaq38"))))
+                "0a50gnk68gdzmpd26qv3nsfc94gg6wyf2k3dacls1p8m1zbazpl0"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs
@@ -18846,7 +18846,6 @@ on where the error originated.")
                              r-processx
                              r-prettyunits
                              r-jsonlite
-                             r-glue
                              r-filelock
                              r-curl
                              r-cli
@@ -19808,13 +19807,13 @@ with Pinnacle is necessary to use the Pinnacle API.")
 (define-public r-pingr
   (package
     (name "r-pingr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pingr" version))
               (sha256
                (base32
-                "08bjbzr5vvzf48b0k8vr3ads13f1zxvmfc0djpzxd7p90pkm75nl"))))
+                "05crkb3fxz0g2vqlydma8jk85adhgb4xmah1zv2kg4fli6phg71c"))))
     (properties `((upstream-name . "pingr")))
     (build-system r-build-system)
     (propagated-inputs (list r-processx))
@@ -22406,13 +22405,13 @@ characteristics of the design.")
 (define-public r-phase
   (package
     (name "r-phase")
-    (version "1.2.3")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phase" version))
               (sha256
                (base32
-                "0fma95w7n7m3jrxzz4jaz177iazgsa4habwcxzpv3axv9im2wbj4"))))
+                "0nnpki44qyikavx8dpayn0jk0jbznkb1w4jcp06j5b8c70a04gc9"))))
     (properties `((upstream-name . "phase")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -25556,13 +25555,13 @@ likelihoods and forrel for estimating pairwise relatedness.")
 (define-public r-pedbp
   (package
     (name "r-pedbp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedbp" version))
               (sha256
                (base32
-                "0hzm1z5cjvh72gzl85vyk3qr2b3yms9jsjdzib0a1rf8m8j0v9cp"))))
+                "0wc8y9wfv7spwww4l15nmjhlmlx8mpm0l6msn3pymv5kw7jipdip"))))
     (properties `((upstream-name . "pedbp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -25571,11 +25570,12 @@ likelihoods and forrel for estimating pairwise relatedness.")
     (synopsis "Pediatric Blood Pressure")
     (description
      "Data and utilities for estimating pediatric blood pressure percentiles by sex,
-age, and optionally height (stature).  Blood pressure percentiles for children
-under one year of age come from Gemelli et.al. (1990) <doi:10.1007/BF02171556>.
-Estimates of blood pressure percentiles for children at least one year of age
-are informed by data from the National Heart, Lung, and Blood Institute (NHLBI)
-and the Centers for Disease Control and Prevention (CDC)
+age, and optionally height (stature) as described in Martin et.al. (2022)
+<doi:10.1001/jamanetworkopen.2022.36918>.  Blood pressure percentiles for
+children under one year of age come from Gemelli et.al. (1990)
+<doi:10.1007/BF02171556>.  Estimates of blood pressure percentiles for children
+at least one year of age are informed by data from the National Heart, Lung, and
+Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC)
 <doi:10.1542/peds.2009-2107C> or from Lo et.al. (2013)
 <doi:10.1542/peds.2012-1292>.  The flowchart for selecting the informing data
 source comes from Martin et.al. (2022) <doi:10.1542/hpeds.2021-005998>.")
@@ -28268,13 +28268,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
-    (version "0.3-2")
+    (version "0.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pbdSLAP" version))
               (sha256
                (base32
-                "0zriqilakcpj874wv2jrji4djvgj773xf8rz13bir8vyspkyhh10"))))
+                "0c73nkqhysfznmk35qqwb5h9q72pccgpk05q6fgganqqmsv8l7ah"))))
     (properties `((upstream-name . "pbdSLAP")))
     (build-system r-build-system)
     (inputs (list))

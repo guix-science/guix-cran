@@ -18972,13 +18972,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.3")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deaR" version))
               (sha256
                (base32
-                "1lagd21bpqqi3hj6isnhihqa43iqkfmr68s1p4g0ad05n15lxl19"))))
+                "1yrn3d4gnaimzfwq5m1kz9mchp1b2gikqxqplpl08dvlnshajjmr"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

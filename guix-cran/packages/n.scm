@@ -11664,13 +11664,13 @@ of correlated data, and more.")
 (define-public r-ncmeta
   (package
     (name "r-ncmeta")
-    (version "0.3.0")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ncmeta" version))
               (sha256
                (base32
-                "0rip0lb1sccwy94jcr84pimnz5a55gnqf0xwvxyyibmzlwkzsd2b"))))
+                "1w47dn04brqac98k5s8a88nh6d6qnkcilq3w4pfczbdff1rv2xlk"))))
     (properties `((upstream-name . "ncmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rnetcdf r-rlang r-dplyr))

@@ -2518,13 +2518,13 @@ The Things! by Wu et al. (2017), available at <arXiv:1709.03856>.")
 (define-public r-rugarch
   (package
     (name "r-rugarch")
-    (version "1.4-8")
+    (version "1.4-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rugarch" version))
               (sha256
                (base32
-                "1ics70slwv2bwzbyznnmsirkwhgrnxd4lc5dpkbnnsax6gfhzzif"))))
+                "01gayzfslq03dhr2c282fr3rkywb0zhppvls56zh4ljv8gi1zh8g"))))
     (properties `((upstream-name . "rugarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16116,13 +16116,13 @@ datasets with outside programs.")
 (define-public r-rmutil
   (package
     (name "r-rmutil")
-    (version "1.1.9")
+    (version "1.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmutil" version))
               (sha256
                (base32
-                "0g1kf2bf8f34r9qw5x4810kxg6lkml5nh2lnmdmwnkrrb10cqs1s"))))
+                "1yd5gkg4jg3rvqrfl8c5r07lcr37n1p9h1a7b6s45iswd77dg7w1"))))
     (properties `((upstream-name . "rmutil")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -28489,13 +28489,13 @@ from Linear Models to Machine Learning\", N. Matloff, 2017, CRC, ISBN
 (define-public r-regtomean
   (package
     (name "r-regtomean")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regtomean" version))
               (sha256
                (base32
-                "1w5i75iwwc2w2nzw9yap86njhq9jz0pc9cn39ivxdam4a9693jjz"))))
+                "0xw0pany9cwfxdn26ckk6fdjnqx1916288mhphsnvwns3383nq4k"))))
     (properties `((upstream-name . "regtomean")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjplot
@@ -35734,16 +35734,17 @@ R code as input, and returns R code as output.")
 (define-public r-rcnv
   (package
     (name "r-rcnv")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rCNV" version))
               (sha256
                (base32
-                "1lrnwrxy0qila1y64bmfvid51p46scnrbasqndmmcisd43schd6f"))))
+                "1cqimz470aag6c0jp5m3vqki4lj2qslvr040rxk63pm1jrvq31ga"))))
     (properties `((upstream-name . "rCNV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-qgraph r-data-table r-colorspace))
+    (propagated-inputs (list r-stringr r-r-utils r-qgraph r-data-table
+                             r-colorspace))
     (home-page "https://piyalkarum.github.io/rCNV/")
     (synopsis "Detect Copy Number Variants from SNPs Data")
     (description
@@ -44708,13 +44709,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "0.0.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "R2sample" version))
               (sha256
                (base32
-                "1998r3gavzlr846m6mvi22gb8707i8z31yzsmz8dwf5lkyp08rh9"))))
+                "1gvx4npmqnfpl11wvhslm0icwj0alg9bzwvv00acawcv04jv10yz"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-microbenchmark r-ggplot2))

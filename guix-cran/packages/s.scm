@@ -420,13 +420,13 @@ package home page documentation.")
 (define-public r-synthacs
   (package
     (name "r-synthacs")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "synthACS" version))
               (sha256
                (base32
-                "1g8vrv3wpbfwh8s7rynpwsif6fp0q3ypxiqplkh4pyfvbl2g1bln"))))
+                "1s4jawg2g0zy41y0ajacki4nif9m3r0hnaz63yhapcnizc37lyy1"))))
     (properties `((upstream-name . "synthACS")))
     (build-system r-build-system)
     (propagated-inputs (list r-retry r-rcpp r-data-table r-acs))
@@ -440,7 +440,7 @@ tables via a wrapper to library(acs).  Builds synthetic micro-datasets at any
 user-specified geographic level with ten default attributes; and, conducts
 spatial microsimulation modeling (SMSM) via simulated annealing.  SMSM is
 conducted in parallel by default.  Lastly, we provide functionality for
-data-extensibility of micro-datasets.")
+data-extensibility of micro-datasets <doi:10.18637/jss.v104.i07>.")
     (license license:expat)))
 
 (define-public r-synth
@@ -6798,13 +6798,13 @@ specific purposes, such as predict[ing], print[ing], summary[izing], etc.")
 (define-public r-stringx
   (package
     (name "r-stringx")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stringx" version))
               (sha256
                (base32
-                "0dvknhm5336g1axp4d6bnls1srxbvrr5jgwavvkl8hxl6ypk6n1x"))))
+                "1l87y6akq3a6fv1s7imn5g3rsmsbijqk6a3gcfws1i1g59ripznx"))))
     (properties `((upstream-name . "stringx")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -7406,13 +7406,13 @@ Cauchy distributions.")
 (define-public r-stratifiedsampling
   (package
     (name "r-stratifiedsampling")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StratifiedSampling" version))
               (sha256
                (base32
-                "1a93kxsjvb57g7sv7bwjq2rmwlnbxv503c80l6r9hv91ppqiri5m"))))
+                "15gg1qc2znyba2y6kq8qq6wz69lq3kkpps0a3j9jdq8n67x65zkp"))))
     (properties `((upstream-name . "StratifiedSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-transport
@@ -14868,13 +14868,13 @@ sampling.  Statistics in Medicine <DOI:10.1002/sim.6439>.")
 (define-public r-sptimer
   (package
     (name "r-sptimer")
-    (version "3.3.1")
+    (version "3.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spTimer" version))
               (sha256
                (base32
-                "0lf39n32ifsmbcf35h0g60xniw72mlrzvzax3k6kz5c5k1wszlba"))))
+                "0dlsyj0mawpgxr1yn4ldqm3xh148c79lk55fq475zjzyiwz9ynfc"))))
     (properties `((upstream-name . "spTimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacetime r-sp r-extradistr r-coda))
@@ -20599,23 +20599,24 @@ the weights with zeros.")
 (define-public r-spatialkde
   (package
     (name "r-spatialkde")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialKDE" version))
               (sha256
                (base32
-                "0qmky12886bw2i7lnhcqq9zzyzmbh1670c8l2adqjiz9k0cykmp4"))))
+                "0qnyriiy1401darnmjdcpsyp76ib822djz8bsgv4xnx9armhkh6a"))))
     (properties `((upstream-name . "SpatialKDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-sf
                              r-rlang
-                             r-rcpp
                              r-raster
+                             r-progress
                              r-magrittr
                              r-glue
-                             r-dplyr))
+                             r-dplyr
+                             r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://jancaha.github.io/SpatialKDE/index.html")
     (synopsis "Kernel Density Estimation for Spatial Data")
@@ -31814,13 +31815,13 @@ single pipeline, without needing loops or custom functions.")
 (define-public r-simpop
   (package
     (name "r-simpop")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simPop" version))
               (sha256
                (base32
-                "1im8zh0a5dzk1ny271xkwshn6jwb1ffy2wklr547cnghnwq6k9p3"))))
+                "0klhn5w908dl4djnddja8lfrzsk92b244vv68afp502dak7g7f95"))))
     (properties `((upstream-name . "simPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -45610,13 +45611,13 @@ measures and the loglinear model approach.")
 (define-public r-sdcmicro
   (package
     (name "r-sdcmicro")
-    (version "5.7.3")
+    (version "5.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sdcMicro" version))
               (sha256
                (base32
-                "0369c95dln395n7mx2cn00rwjr10pk4jy4lv001g7vj4s9sjzvcp"))))
+                "1jy9i0akyrzvbividfac0ppgfndf6n190lgylja26b8fdlrwhdvy"))))
     (properties `((upstream-name . "sdcMicro")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

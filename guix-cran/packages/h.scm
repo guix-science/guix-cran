@@ -248,13 +248,13 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "0filij34cg9wyhaxfa7nj79znqk8zlj4il7ppnpg0vk35z79jmpw"))))
+                "1jjcjvr2yamvxwgyvypzh54s4q8nkra565gmq00cbrkff41356iv"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -262,9 +262,13 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
                              r-stringr
                              r-sf
                              r-rlang
+                             r-purrr
                              r-pbapply
+                             r-patchwork
                              r-ncdf4
                              r-hydrogof
+                             r-ggpubr
+                             r-ggplot2
                              r-dplyr
                              r-data-table
                              r-clipr))
@@ -4920,21 +4924,22 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
 (define-public r-hkprocess
   (package
     (name "r-hkprocess")
-    (version "0.0-2")
+    (version "0.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HKprocess" version))
               (sha256
                (base32
-                "1j2yhb7k8zf4nlzdf0p6x9ca7ak4lwwak8mcc60kpilw2fws27k5"))))
+                "0kn84ccaypknxymynp6lnr8asd85rlzbk073z7511rriyz96hyj7"))))
     (properties `((upstream-name . "HKprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack r-gtools))
-    (home-page "www.itia.ntua.gr/en/softinfo/31/")
+    (home-page "https://cran.r-project.org/package=HKprocess")
     (synopsis "Hurst-Kolmogorov Process")
     (description
-     "This package provides methods to make inference about the Hurst-Kolmogorov and
-the AR(1) process.")
+     "This package provides methods to make inference about the Hurst-Kolmogorov
+(fractional Gaussian noise, fGn) and the AR(1) process.  Related time series
+trend tests are also included.")
     (license license:gpl3)))
 
 (define-public r-hkex-api
@@ -6181,13 +6186,13 @@ document authors.")
 (define-public r-highfrequency
   (package
     (name "r-highfrequency")
-    (version "0.9.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highfrequency" version))
               (sha256
                (base32
-                "1kdkrq6i9yak5aqs6r7q4f3ajzk3ag01arpy3r29nglx2vkyrs5d"))))
+                "1qx121y90g3cgvxpvjx54lg06arjc79m8hcl7k1m9hr10lhhyi1a"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6207,9 +6212,12 @@ document authors.")
      "Provide functionality to manage, clean and match highfrequency trades and quotes
 data, calculate various liquidity measures, estimate and forecast volatility,
 detect price jumps and investigate microstructure noise and intraday
-periodicity.  A detailed vignette can be found in the paper \"Analyzing intraday
-financial data in R: The highfrequency package\" by Boudt, Kleen, and Sjoerup
-(2022, <doi:10.2139/ssrn.3917548>).")
+periodicity.  A detailed vignette can be found in the paper \"Analyzing Intraday
+Financial Data in R: The highfrequency Package\" by Boudt, Kleen, and Sjoerup
+(2022, <doi:10.18637/jss.v104.i08>).  The DOI in the CITATION is for a new
+Journal of Statistical Software publication that will be registered after
+publication on CRAN. A working paper version can be found on SSRN:
+<doi:10.2139/ssrn.3917548>.")
     (license license:gpl2+)))
 
 (define-public r-highestmedianrules
@@ -7074,13 +7082,13 @@ and non-negative exponential family in each cluster.")
 (define-public r-hgm
   (package
     (name "r-hgm")
-    (version "1.20")
+    (version "1.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hgm" version))
               (sha256
                (base32
-                "0sfyq81r4yrdw8508jsplkxb8kj1jy8dx9v3h1fvmwx3frrh3vm6"))))
+                "0a70iqvxgmd4hcvk946ycap1pizdfvg2rbyi4ngxdmmq69rnfj4q"))))
     (properties `((upstream-name . "hgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))

@@ -10692,13 +10692,13 @@ permutation test) for fast feature-filtering of the n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogeom" version))
               (sha256
                (base32
-                "0vfqdzgh2x93v52y56mnqh7qf5c71qv3dnzzmbj1avpiqqcx9ksw"))))
+                "1hwb99b0yrm6a11jkas0fikcbamzi41a4j5j9qnp474bkj9a5jd2"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -14074,13 +14074,13 @@ various plotting functions and exported into tables.")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.1")
+    (version "2.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BGVAR" version))
               (sha256
                (base32
-                "1a1ckrb4j66d1mkrbawwxcm2pbkilvp4fcpb9j9fldz3f25199n7"))))
+                "0nqlzhdg5z8p5c9qiccldi8fy97w9pnna0nrlvl6n9kxm2si2pp0"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14112,7 +14112,10 @@ Vol.  31(7), pp.  1371-1391 <doi:10.1002/jae.2504>.  Post-processing functions
 allow for doing predictions, structurally identify the model with short-run or
 sign-restrictions and compute impulse response functions, historical
 decompositions and forecast error variance decompositions.  Plotting functions
-are also available.")
+are also available.  The package has a companion paper: Boeck, M., Feldkircher,
+M. and F. Huber (2022) \"BGVAR: Bayesian Global Vector Autoregressions with
+Shrinkage Priors in R\", Journal of Statistical Software, Vol.  104(9), pp.  1-28
+<doi:10.18637/jss.v104.i09>.")
     (license license:gpl3)))
 
 (define-public r-bgumbel
@@ -19245,19 +19248,18 @@ log-hazard models.  Chapple, AG, Peak, T, Hemal, A (2020).  Under Revision.")
 (define-public r-bayesrel
   (package
     (name "r-bayesrel")
-    (version "0.7.4.3")
+    (version "0.7.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Bayesrel" version))
               (sha256
                (base32
-                "08gms32yzyhwdwlvwwmkmncp5skyy4prgrmn5f1k623kxd2f0bs8"))))
+                "0i5kma649f2f079205kki05js0i1aw2j10aj6fgmg3mjj8q9cn0p"))))
     (properties `((upstream-name . "Bayesrel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-progress
                              r-mass
                              r-lavaan
                              r-laplacesdemon
@@ -20048,13 +20050,13 @@ regression.")
 (define-public r-bayesln
   (package
     (name "r-bayesln")
-    (version "0.2.6")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesLN" version))
               (sha256
                (base32
-                "0fykaq17n4n24idasifr3clxgxmkq1cl7z1bqsipddgrz10lax7a"))))
+                "1rgf2j8al7gm8j77b5kjmjpygdv70s994yvdnhxpgg2b1sz8glvw"))))
     (properties `((upstream-name . "BayesLN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -21434,18 +21436,18 @@ based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).
 (define-public r-bayefdr
   (package
     (name "r-bayefdr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayefdr" version))
               (sha256
                (base32
-                "1kjadqw5h63f2w2k2dk81a8k90j55chv4lsvqdhq2nybvmnas1yj"))))
+                "178s559p1mgzp2b23plq3dcl5p0mg1d5cy6477knbaq711awzz3j"))))
     (properties `((upstream-name . "bayefdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ggplot2 r-ggextra r-cowplot
                              r-assertthat))
-    (home-page "https://cran.r-project.org/package=bayefdr")
+    (home-page "https://github.com/VallejosGroup/bayefdr")
     (synopsis
      "Bayesian Estimation and Optimisation of Expected False Discovery Rate")
     (description

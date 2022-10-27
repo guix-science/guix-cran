@@ -2443,13 +2443,13 @@ fluctuations, and solid earth tides.")
 (define-public r-kit
   (package
     (name "r-kit")
-    (version "0.0.11")
+    (version "0.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kit" version))
               (sha256
                (base32
-                "145kk1kjcg2qlgkbws746vz0bzf0zn0nr7hl6hpsd11260pa1bjh"))))
+                "0kj7x8wlwpdpdwxv5ngflzw4xqfyc2n7vx6d2ssz7k47qcm57rdb"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kit")
@@ -3247,13 +3247,13 @@ encrypted with the Windows Data Protection API.")
 (define-public r-keypress
   (package
     (name "r-keypress")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "keypress" version))
               (sha256
                (base32
-                "19l33519f726i3q20y34v1aavrn4fpj3zn5caij3l9q2asw2kqk2"))))
+                "0y9zz4q2kmya85j1dr0a3874k65r57wcwqgsbsa0l0az6lyc4v0i"))))
     (properties `((upstream-name . "keypress")))
     (build-system r-build-system)
     (home-page "https://github.com/gaborcsardi/keypress#readme")

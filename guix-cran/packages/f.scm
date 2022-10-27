@@ -278,16 +278,16 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fwb" version))
               (sha256
                (base32
-                "1ycnvrgminms9nb06pq1ymbi7g7cqx8j388gscxpjvigb55lzi5v"))))
+                "0hgbzmlbj1hhckpxv9zhchk8x8lq0ahcpvhcyibybkwxydii3dd4"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pbapply r-chk))
+    (propagated-inputs (list r-rlang r-pbapply r-chk))
     (home-page "https://github.com/ngreifer/fwb")
     (synopsis "Fractional Weighted Bootstrap")
     (description
@@ -7325,13 +7325,13 @@ dependence\" <arXiv:1910.12327>.")
 (define-public r-fnonlinear
   (package
     (name "r-fnonlinear")
-    (version "4021.80")
+    (version "4021.81")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fNonlinear" version))
               (sha256
                (base32
-                "0p6kyxygac8hirx4hwi7w0wvz2nnvmn1h4x0qsr6wnrhywkdcyjj"))))
+                "1dpzg880wnja357qy3r4v5qbqhx7pkknd0rph75xvvn38p4rc0ca"))))
     (properties `((upstream-name . "fNonlinear")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate r-fbasics))
@@ -15184,26 +15184,27 @@ delete custom audiences, images, campaigns, ad sets, ads and related content.")
 (define-public r-fbnet
   (package
     (name "r-fbnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fbnet" version))
               (sha256
                (base32
-                "024s2f5n0cpc820ab6rpdfh8pjzdq9ivk1xpgwkhy1hyvvxx9bpa"))))
+                "17kafsnzijjkjlp15yv3qy1vga7vsgna74ax5yk0mvdninl3dxha"))))
     (properties `((upstream-name . "fbnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rsolnp r-paramlink r-igraph))
+    (propagated-inputs (list r-rsolnp r-igraph r-assertthat))
     (home-page "https://cran.r-project.org/package=fbnet")
     (synopsis "Forensic Bayesian Networks")
     (description
      "Open-source package for computing likelihood ratios in kinship testing and human
 identification cases (Chernomoretz et al. (2021)
-<doi:10.1016/j.fsir.2020.100132>).  It relies on a Bayesian Networks framework
-and is particularly well suited to efficiently perform large-size queries
-against databases of missing individuals (Darwiche (2009)
+<doi:10.1016/j.fsir.2020.100132>).  It has the core function of the software
+GENis, developed by FundaciÃ³n Sadosky.  It relies on a Bayesian Networks
+framework and is particularly well suited to efficiently perform large-size
+queries against databases of missing individuals (Darwiche (2009)
 <doi:10.1017/CBO9780511811357>).")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-fbfsearch
   (package

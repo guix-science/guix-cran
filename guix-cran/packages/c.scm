@@ -3081,17 +3081,16 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "4.0.1")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSTools" version))
               (sha256
                (base32
-                "1vq5zmp75rzvimih84f9nmyq3n74625y3pjg0ripfycszyd27720"))))
+                "0r7bbaaapk5f32b6qwmmanddk1gqs7vq6461vf29pi7qsr2jlq9y"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
-                             r-s2dverification
                              r-s2dv
                              r-reshape2
                              r-rcolorbrewer
@@ -3117,11 +3116,11 @@ methods for forecast calibration, bias correction, statistical and stochastic
 downscaling, optimal forecast combination and multivariate verification, as well
 as basic and advanced tools to obtain tailored products.  This package was
 developed in the context of the ERA4CS project MEDSCOPE and the H2020 S2S4E
-project.  Doblas-Reyes et al. (2005) <doi:10.1111/j.1600-0870.2005.00104.x>.
-Mishra et al. (2018) <doi:10.1007/s00382-018-4404-z>.  Sanchez-Garcia et al.
-(2019) <doi:10.5194/asr-16-165-2019>.  Straus et al. (2007)
-<doi:10.1175/JCLI4070.1>.  Terzago et al. (2018)
-<doi:10.5194/nhess-18-2825-2018>.  Torralba et al. (2017)
+project.  PÃ©rez-ZanÃ³n et al. (2022) <doi:10.5194/gmd-15-6115-2022>.
+Doblas-Reyes et al. (2005) <doi:10.1111/j.1600-0870.2005.00104.x>.  Mishra et
+al. (2018) <doi:10.1007/s00382-018-4404-z>.  Sanchez-Garcia et al. (2019)
+<doi:10.5194/asr-16-165-2019>.  Straus et al. (2007) <doi:10.1175/JCLI4070.1>.
+Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>.  Torralba et al. (2017)
 <doi:10.1175/JAMC-D-16-0204.1>.  D'Onofrio et al. (2014)
 <doi:10.1175/JHM-D-13-096.1>.  Verfaillie et al. (2017)
 <doi:10.5194/gmd-10-4257-2017>.  Van Schaeybroeck et al. (2019)
@@ -4973,13 +4972,13 @@ Brazilian territory.")
 (define-public r-cropscaper
   (package
     (name "r-cropscaper")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CropScapeR" version))
               (sha256
                (base32
-                "1k09ish6a7wjsa9w5vcvsc8inrbzap0hhx4qjrf5wbniqnv3hgl8"))))
+                "0rs428sz2fd4ysz1k5i2zkjg4vga2rczlbdd042sdjq501nk2462"))))
     (properties `((upstream-name . "CropScapeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -23828,13 +23827,13 @@ other manipulation can produce log files to keep track of process.")
 (define-public r-cleancall
   (package
     (name "r-cleancall")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cleancall" version))
               (sha256
                (base32
-                "1p2n7zqkg93xvhp6w2l37ifazrfpxv975bnzsd3m0j62l1ywzxax"))))
+                "079l5knm3lrvnfbwcvg2g62sqbg7iira5x0gxd4fk1pysnm5hwmf"))))
     (properties `((upstream-name . "cleancall")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/cleancall#readme")
@@ -23939,13 +23938,13 @@ Bayesian classifier results from cld2'.  See
 (define-public r-cld2
   (package
     (name "r-cld2")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cld2" version))
               (sha256
                (base32
-                "1kv3r74j5zl1j2wazg3ac6a5gky5k3m416k48isd3jp6wqcwh7w3"))))
+                "0nv17v1sjdx4xballagm5cfafswj4bqc0h550q29hal16vl4vq3r"))))
     (properties `((upstream-name . "cld2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -29193,25 +29192,26 @@ composed of recommendation and database manipulation functions.  See Aggarwal
 (define-public r-cfid
   (package
     (name "r-cfid")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cfid" version))
               (sha256
                (base32
-                "0hy2vq3izj4938sgzmgpp4m9d49hpiqh9jd1wjf5g54x3v1yzy89"))))
+                "1jd66vy71b5y4ng4k5ln08cm0pa1xrzd9in1l4d1qq4cnw5qa724"))))
     (properties `((upstream-name . "cfid")))
     (build-system r-build-system)
     (home-page "https://github.com/santikka/cfid")
     (synopsis "Identification of Counterfactual Queries in Causal Models")
     (description
      "Facilitates the identification of counterfactual queries in structural causal
-models via the ID* and IDC* algorithms by Shpitser, I. and Pearl, J. (2008)
-<https://jmlr.org/papers/v9/shpitser08a.html>.  Provides a simple interface for
-defining causal graphs and counterfactual conjunctions.  Construction of
-parallel worlds graphs and counterfactual graphs is done automatically based on
-the counterfactual query and the causal graph.")
-    (license license:gpl3)))
+models via the ID* and IDC* algorithms by Shpitser, I. and Pearl, J. (2007,
+2008) <arXiv:1206.5294>, <https://jmlr.org/papers/v9/shpitser08a.html>.
+Provides a simple interface for defining causal diagrams and counterfactual
+conjunctions.  Construction of parallel worlds graphs and counterfactual graphs
+is carried out automatically based on the counterfactual query and the causal
+diagram.")
+    (license license:gpl3+)))
 
 (define-public r-cffr
   (package

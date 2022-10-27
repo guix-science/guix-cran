@@ -5335,13 +5335,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.0.5")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "espadon" version))
               (sha256
                (base32
-                "0cz6nm1kbl7qw73c0k8q9xxrrjfz06hffgb906hhfs1nqrh1kav3"))))
+                "0blawgnw2zg3pyrzzfsf5iriqml0z5fhcws2pnah2b3pzl336q5w"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
