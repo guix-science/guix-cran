@@ -11494,24 +11494,22 @@ See package README.md for basic package usage.")
 (define-public r-starter
   (package
     (name "r-starter")
-    (version "0.1.10")
+    (version "0.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "starter" version))
               (sha256
                (base32
-                "1d15mkl7w94iv65swz0z52pr5xsawhvbbzjwgc4sjpz04vi07ppm"))))
+                "1jxwg09dl6mx4zxz8gx45kd0mfd87nhkai0p64z5wmvhds6syfbz"))))
     (properties `((upstream-name . "starter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
+    (propagated-inputs (list r-rstudioapi
                              r-rlang
                              r-renv
-                             r-readr
                              r-r-utils
                              r-here
                              r-glue
                              r-gert
-                             r-fs
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -25008,13 +25006,13 @@ Arons, S DeSilvey, C Fichtenberg, L Gottlieb (2018)
 (define-public r-socialranking
   (package
     (name "r-socialranking")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "socialranking" version))
               (sha256
                (base32
-                "1adhly6h4jkzq1b79p3p80vs825rsmwsiwi44kicc3xmsc2ap7jb"))))
+                "0n889b6k4yi4xdr3znvzaw82wmfdfprqx28g2bgfbkhfmg1yvpnw"))))
     (properties `((upstream-name . "socialranking")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets r-rlang r-relations r-rdpack r-mathjaxr))
@@ -25066,33 +25064,34 @@ modalities of social position indicators.")
 (define-public r-socialmixr
   (package
     (name "r-socialmixr")
-    (version "0.1.8")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "socialmixr" version))
               (sha256
                (base32
-                "0zhinhjv1ablhdyz41a1ii1s3mzqg8f2ns7xcjnlwa9fx364x5a2"))))
+                "0mdsj0dqgn1wckxm9imkhswmbcy391kfqwv42yp1g9y1rcdkvjp4"))))
     (properties `((upstream-name . "socialmixr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-wpp2015
+    (propagated-inputs (list r-xml2
+                             r-wpp2017
                              r-stringr
                              r-oai
                              r-lubridate
                              r-jsonlite
                              r-httr
+                             r-fields
                              r-data-table
                              r-curl
                              r-countrycode))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=socialmixr")
+    (home-page "https://github.com/epiforecasts/socialmixr")
     (synopsis "Social Mixing Matrices for Infectious Disease Modelling")
     (description
      "This package provides methods for sampling contact matrices from diary data for
 use in infectious disease modelling, as discussed in Mossong et al. (2008)
 <doi:10.1371/journal.pmed.0050074>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-socialh
   (package
@@ -39498,6 +39497,37 @@ Francisco data portal (DataSF)
 <https://data.sfgov.org/Transportation/Air-Traffic-Passenger-Statistics/rkru-6vcg>.")
     (license license:expat)))
 
+(define-public r-sfnetworks
+  (package
+    (name "r-sfnetworks")
+    (version "0.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sfnetworks" version))
+              (sha256
+               (base32
+                "1klfsp49q6ysbam8f8w3x60y2zml0hmlz1rbskw8s8gc1jaicjgq"))))
+    (properties `((upstream-name . "sfnetworks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidygraph
+                             r-tibble
+                             r-sfheaders
+                             r-sf
+                             r-rlang
+                             r-lwgeom
+                             r-igraph
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://luukvdmeer.github.io/sfnetworks/")
+    (synopsis "Tidy Geospatial Networks")
+    (description
+     "This package provides a tidy approach to spatial network analysis, in the form
+of classes and functions that enable a seamless interaction between the network
+analysis package tidygraph and the spatial analysis package sf'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-sfinx
   (package
     (name "r-sfinx")
@@ -42181,6 +42211,32 @@ simulation (Kenett & Austerweil, 2016
 function to compute global network measures.  Significance tests and plotting
 features are also implemented.")
     (license license:gpl3+)))
+
+(define-public r-semnar
+  (package
+    (name "r-semnar")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "semnar" version))
+              (sha256
+               (base32
+                "0njd0l02lnjr59p2pj14ckfdhlg36xxjs7kqg67ap74hqv2v5pja"))))
+    (properties `((upstream-name . "semnar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urlshortener r-parsedate r-lubridate r-leaflet
+                             r-jsonlite))
+    (home-page "https://cran.r-project.org/package=semnar")
+    (synopsis "Constructing and Interacting with Databases of Presentations")
+    (description
+     "This package provides methods for constructing and maintaining a database of
+presentations in R. The presentations are either ones that the user gives or
+gave or presentations at a particular event or event series.  The package also
+provides a plot method for the interactive mapping of the presentations using
+leaflet by grouping them according to country, city, year and other presentation
+attributes.  The markers on the map come with popups providing presentation
+details (title, institution, event, links to materials and events, and so on).")
+    (license license:gpl3)))
 
 (define-public r-semmcmc
   (package
@@ -49362,16 +49418,16 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.1.19")
+    (version "1.1.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sbtools" version))
               (sha256
                (base32
-                "1rqsk4h8ghp564w7bl6yd3g0kww377aa1pkkmydi65z35cs026qc"))))
+                "0kzdi3lynzk2ws975rgc6ijddyp24b6xgsz1g7nrg32462k9m5qj"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mime r-jsonlite r-httr r-curl))
+    (propagated-inputs (list r-mime r-jsonlite r-httr r-curl r-cli))
     (home-page "https://github.com/USGS-R/sbtools")
     (synopsis "USGS ScienceBase Tools")
     (description

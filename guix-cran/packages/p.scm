@@ -12895,6 +12895,28 @@ graph.  Finds total order consistent with partial order or directed graph
 (so-called topological sort).")
     (license license:expat)))
 
+(define-public r-pompp
+  (package
+    (name "r-pompp")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pompp" version))
+              (sha256
+               (base32
+                "05zy47zaifwj1qvvgxpvari26ac354axijqbx5522mbl27x3c6sf"))))
+    (properties `((upstream-name . "pompp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp r-geor r-coda))
+    (home-page "https://cran.r-project.org/package=pompp")
+    (synopsis "Presence-Only for Marked Point Process")
+    (description
+     "Inspired by Moreira and Gamerman (2022) <doi:10.1214/21-AOAS1569>, this
+methodology expands the idea by including Marks in the point process.  Using
+efficient C++ code, the estimation is possible and made faster with OpenMP
+<https://www.openmp.org/> enabled computers.")
+    (license license:gpl3+)))
+
 (define-public r-pompom
   (package
     (name "r-pompom")
@@ -30014,13 +30036,13 @@ statistics and probabilities.")
 (define-public r-parma
   (package
     (name "r-parma")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parma" version))
               (sha256
                (base32
-                "1lqmz1pa9vrrscdks1ri3h5myxkvncx58b81vh5mljkh19wc2bzy"))))
+                "0rv53d3ailqh5a0qarpw9967ghnvslr2kcn02yn8xbkpcvnb7lfk"))))
     (properties `((upstream-name . "parma")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

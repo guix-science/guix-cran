@@ -672,6 +672,27 @@ between the R and the metatrader 5 allows sending buy/sell orders to the
 brokerage.")
     (license license:gpl3)))
 
+(define-public r-twitteradsr
+  (package
+    (name "r-twitteradsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "twitteradsR" version))
+              (sha256
+               (base32
+                "15r6l9rf05xdr1m9zkmsg1v9vrdsyz480jqkgvx7yn27546z5653"))))
+    (properties `((upstream-name . "twitteradsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Twitter Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Twitter Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-twitter
   (package
     (name "r-twitter")
@@ -4873,18 +4894,18 @@ of values of the penalty parameter.  This package is based on Noah Simon, et al.
 (define-public r-trinroc
   (package
     (name "r-trinroc")
-    (version "0.5.1")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trinROC" version))
               (sha256
                (base32
-                "1mx7m50afwjr55svpf4ckk9rfc1qkk4h8n08ghghfaa6vc2ysz1y"))))
+                "0jpnr3l8f057k334sx803cc7kxgi8mxvxjgli88f8682ax9z47k3"))))
     (properties `((upstream-name . "trinROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://git.math.uzh.ch/reinhard.furrer/trinROC")
+    (home-page "https://math.uzh.ch/pages/trinROC/")
     (synopsis "Statistical Tests for Assessing Trinormal ROC Data")
     (description
      "Several statistical test functions as well as a function for exploratory data
@@ -12671,13 +12692,13 @@ get tidy data frames in response, and cache data in a local SQLite database.")
 (define-public r-tidyvpc
   (package
     (name "r-tidyvpc")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyvpc" version))
               (sha256
                (base32
-                "1in9wsgibf3srba6bzfz3b7hpwhmj5xblzydr612w7wp898zclpz"))))
+                "1gcid4n21nkm7z6a91vnj08rzjhzvi9r4nvrgawad6s1grika8q9"))))
     (properties `((upstream-name . "tidyvpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

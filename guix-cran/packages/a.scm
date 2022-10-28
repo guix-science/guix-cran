@@ -10927,6 +10927,27 @@ is based on the groundwater flow equation solved numerically using the finite
 difference explicit scheme.")
     (license license:gpl3+)))
 
+(define-public r-amazonadsr
+  (package
+    (name "r-amazonadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "amazonadsR" version))
+              (sha256
+               (base32
+                "1z4c58swpm6y5h4vlxil5ic9larhnn7xkzd9sgggni4878yk0rng"))))
+    (properties `((upstream-name . "amazonadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Amazon Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Amazon Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-amapvox
   (package
     (name "r-amapvox")

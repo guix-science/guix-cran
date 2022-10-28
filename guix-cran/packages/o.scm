@@ -1515,13 +1515,13 @@ Further information and tutorials can be found at <https://luminescence.de>.")
 (define-public r-oskeyring
   (package
     (name "r-oskeyring")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oskeyring" version))
               (sha256
                (base32
-                "17pavpmv7d5flgci6fhsk5m4m4977wrs8wlzjmnz6ja2w34qgd1h"))))
+                "10ajmkw8sfcafs77flg0050s8vf88lq56rv2dxk9gv4pkvg8z498"))))
     (properties `((upstream-name . "oskeyring")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/oskeyring#readme")

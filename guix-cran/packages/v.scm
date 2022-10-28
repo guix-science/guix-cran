@@ -3295,13 +3295,13 @@ PR2.plot().")
 (define-public r-vglmer
   (package
     (name "r-vglmer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vglmer" version))
               (sha256
                (base32
-                "0lb6f980mvzhdc2a5h9v3zw7j74jkmkzpjxdm8wcp3pm39x9cl8v"))))
+                "0wfl1n6xp6qiv34d4p5qy3mwzrvf3n324hrlksdpa68j5xfw9w0f"))))
     (properties `((upstream-name . "vglmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

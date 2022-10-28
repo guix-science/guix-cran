@@ -4260,30 +4260,6 @@ netCDF files.")
 pre-defined SPARQL queries and GET requests.")
     (license license:gpl3)))
 
-(define-public r-eulerr
-  (package
-    (name "r-eulerr")
-    (version "6.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eulerr" version))
-              (sha256
-               (base32
-                "0lldp2319qd08y87f862gx8a77rvikcnkmdl9xgx4glynfs3hk19"))))
-    (properties `((upstream-name . "eulerr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-polylabelr r-polyclip
-                             r-gensa))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jolars/eulerr")
-    (synopsis "Area-Proportional Euler and Venn Diagrams with Ellipses")
-    (description
-     "Generate area-proportional Euler diagrams using numerical optimization.  An
-Euler diagram is a generalization of a Venn diagram, relaxing the criterion that
-all interactions need to be represented.  Diagrams may be fit with ellipses and
-circles via a wide range of inputs and can be visualized in numerous ways.")
-    (license license:gpl3)))
-
 (define-public r-eulerian
   (package
     (name "r-eulerian")
@@ -8499,6 +8475,26 @@ the assumption that the variable follows an Epanechnikov kernel distribution
 with known mean and range prior to censoring.  Statistical functions related to
 the uncensored Epanechnikov distribution are also provided by this package.")
     (license license:lgpl2.0+)))
+
+(define-public r-epade
+  (package
+    (name "r-epade")
+    (version "0.5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epade" version))
+              (sha256
+               (base32
+                "05g41lslw77v8r2914vpf92348hcyfx7xqbbwknfhl1xld9rk2iz"))))
+    (properties `((upstream-name . "epade")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-plotrix r-hmisc))
+    (home-page "https://cran.r-project.org/package=epade")
+    (synopsis "Easy Plots")
+    (description
+     "This package provides a collection of nice plotting functions directly from a
+data.frame with limited customisation possibilities.")
+    (license license:gpl2+)))
 
 (define-public r-eor
   (package
@@ -18047,13 +18043,13 @@ treatments, including mixed models and non linear models.")
 (define-public r-easyr
   (package
     (name "r-easyr")
-    (version "0.5-9")
+    (version "0.5-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easyr" version))
               (sha256
                (base32
-                "0f9dv71y5bwc4r1czfaqfyidwz7f7mfr8ihzgjq7i66mg62ajc7g"))))
+                "1qiw3bvhn2zdl6gzj90zl09mqk8ba6cd5pbl917hpfa818z98z82"))))
     (properties `((upstream-name . "easyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

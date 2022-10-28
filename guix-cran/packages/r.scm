@@ -2828,13 +2828,13 @@ Tiingo (<https://www.tiingo.com>).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rts2" version))
               (sha256
                (base32
-                "19h3smwmgpapp47iv1p16mx7ar19zrhpjyzlmv4bq3qsgbw8qjm9"))))
+                "1f5w7lpaqi02qw8k56lfmb2b9vhznfwdjwf5kpm40wgkpl81wkf8"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -2857,9 +2857,11 @@ between geographies.  An approximate log-Gaussian Cox Process model is fit using
 rstan or cmdstanr and provides output and analysis as sf objects for simple
 visualisation.  cmdstanr can be downloaded at <https://mc-stan.org/cmdstanr/>.
 Log-Gaussian Cox Processes are described by Diggle et al. (2013)
-<doi:10.1214/13-STS441> and we use the low-rank approximation for Gaussian
-processes described by Solin and SÃ¤rkkÃ¤ (2020)
-<doi:10.1007/s11222-019-09886-w> and Riutort-Mayol (2020) <arXiv:2004.11408>.")
+<doi:10.1214/13-STS441> and we provide both the low-rank approximation for
+Gaussian processes described by Solin and SÃ¤rkkÃ¤ (2020)
+<doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2020)
+<arXiv:2004.11408> and the nearest neighbour Gaussian process described by Datta
+et al (2016) <doi:10.1080/01621459.2015.1044091>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-rts
@@ -27149,13 +27151,13 @@ API. You can request a code and get detailed information at the following page:
 (define-public r-repeated
   (package
     (name "r-repeated")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "repeated" version))
               (sha256
                (base32
-                "1ng2w0zypaa48qrfpdx1mb085yvw9zgk81q96ki2y3rls4g6q84g"))))
+                "0h3dfl157bx39racg9vfsrlfyjx60vn29pyff944fnr3wj7nk1pa"))))
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
@@ -39221,17 +39223,16 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.27.1")
+    (version "0.28.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rayrender" version))
               (sha256
                (base32
-                "06vx6z3yfjbfiav2m25hqm3k83slw067k11yc0f1v84c4dhigi34"))))
+                "0d4vf2g98rc721d9kxiwgqjk6n2b3rfaa5vzxnmjgl3cbrv3fbxk"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-spacefillr
+    (propagated-inputs (list r-spacefillr
                              r-rcppthread
                              r-rcpp
                              r-rayimage

@@ -26307,6 +26307,27 @@ or in R Shiny applications.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-chromer
+  (package
+    (name "r-chromer")
+    (version "0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "chromer" version))
+              (sha256
+               (base32
+                "08sj7x391y8jv3wc3v3blvsl501jkx3li928hb16niszx6a4w58x"))))
+    (properties `((upstream-name . "chromer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-httr r-dplyr))
+    (home-page "https://docs.ropensci.org/chromer/")
+    (synopsis "Interface to Chromosome Counts Database API")
+    (description
+     "This package provides a programmatic interface to the Chromosome Counts Database
+(<http://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.  This
+package is part of the ROpenSci suite (<https://ropensci.org>).")
+    (license license:expat)))
+
 (define-public r-chromconverter
   (package
     (name "r-chromconverter")

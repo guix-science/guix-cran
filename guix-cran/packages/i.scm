@@ -7385,13 +7385,13 @@ gradient-based methods like SmoothGrad described by Smilkov et al. (2017)
 (define-public r-inlpubs
   (package
     (name "r-inlpubs")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inlpubs" version))
               (sha256
                (base32
-                "1hl2n919x263k0kq7j7p52n6kxjls86ff92vrxs0xahhibv9b8my"))))
+                "0yzi5x4kyjnb6mjfknqs6415ryf44r55qifh9d2s9nzbhk5y11mg"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-checkmate))

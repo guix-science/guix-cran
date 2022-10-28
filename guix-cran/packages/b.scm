@@ -3701,16 +3701,16 @@ Design under Acceptance Decision Uncertainty\" by Suiyao Chen et al. (2020)
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BrazilMet" version))
               (sha256
                (base32
-                "0yrc0ha7ysmad7l0kwylgmmd0b5zy86dsba4lrj8qa294lgxl5fa"))))
+                "0pcr665j4balmcm4sq6l19nmhpbs7ayw5dljsdxr91bn6srb33b3"))))
     (properties `((upstream-name . "BrazilMet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-stringr r-readxl r-dplyr))
+    (propagated-inputs (list r-stringr r-readxl r-dplyr))
     (home-page "https://cran.r-project.org/package=BrazilMet")
     (synopsis
      "Download and Processing of Automatic Weather Stations (AWS) Data of INMET-Brazil")
@@ -10347,13 +10347,13 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biometryassist" version))
               (sha256
                (base32
-                "0v3cyjdai9j3cndi23a8wi9bb9xr61jf07l5b01613glipd8zl3z"))))
+                "0r96qkhs05czdvx89ndx3z4yz35va3653waql8ygfhn65r9gzis9"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -10361,9 +10361,9 @@ visualisation tools are also available within the package.")
                              r-scales
                              r-rlang
                              r-predictmeans
+                             r-pracma
                              r-multcompview
                              r-lattice
-                             r-interp
                              r-ggplot2
                              r-farver
                              r-curl
@@ -10375,7 +10375,12 @@ visualisation tools are also available within the package.")
     (description
      "This package provides functions to aid in the design and analysis of agronomic
 and agricultural experiments through easy access to documentation and helper
-functions, especially for users who are learning these concepts.")
+functions, especially for users who are learning these concepts.  While not
+required for most functionality, this package enhances the `asreml` package
+which provides a computationally efficient algorithm for fitting mixed models
+using Residual Maximum Likelihood.  It is a commercial package that can be
+purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
+file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
 (define-public r-biomass

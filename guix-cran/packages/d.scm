@@ -10799,13 +10799,13 @@ Analysis, Hierarchical Clustering and the K-Means Method.")
 (define-public r-discoursegt
   (package
     (name "r-discoursegt")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "discourseGT" version))
               (sha256
                (base32
-                "1nfc1v39y4af5l4zmp00dhp4bzp10wq107gx5ggrvpq9q2nn4hwd"))))
+                "1243ihkn7l9308fqrhfjc83m02vwxk925i89a1wvz0v3q3zks2vp"))))
     (properties `((upstream-name . "discourseGT")))
     (build-system r-build-system)
     (propagated-inputs (list r-network
@@ -11678,13 +11678,13 @@ to facilitate the visual assessment of the test.  See Wei et al. (2016)
 (define-public r-dipm
   (package
     (name "r-dipm")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dipm" version))
               (sha256
                (base32
-                "0dz327436d6bv96ar2qa7p5zxr09dk8xwn73k4bfk6vdqb3yqk1v"))))
+                "1hzcwjnjrhd1s31w8pnyhpfz519jvj820jyq1rdkq8qllny5jbrk"))))
     (properties `((upstream-name . "dipm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-partykit r-ggplot2))

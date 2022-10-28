@@ -7697,6 +7697,28 @@ POST data securely to Google Forms without needing authentication or
 permissioning.")
     (license license:gpl2)))
 
+(define-public r-googleerrorreportingr
+  (package
+    (name "r-googleerrorreportingr")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "googleErrorReportingR" version))
+              (sha256
+               (base32
+                "0x8pzj43apkk7qkx3fv2a8531lp94ir5l83vj3ksmvzrvqjars3l"))))
+    (properties `((upstream-name . "googleErrorReportingR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ixpantia/googleErrorReportingR")
+    (synopsis "Send Error Reports to the Google Error Reporting Service API")
+    (description
+     "Send error reports to the Google Error Reporting service
+<https://cloud.google.com/error-reporting/> and view errors and assign error
+status in the Google Error Reporting user interface.")
+    (license license:expat)))
+
 (define-public r-googlecomputeenginer
   (package
     (name "r-googlecomputeenginer")
@@ -8831,6 +8853,27 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 time series models which take account of network structure.  Such models are
 described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
     (license license:gpl2)))
+
+(define-public r-gmwt
+  (package
+    (name "r-gmwt")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gMWT" version))
+              (sha256
+               (base32
+                "0gy8mm6ajbd2nl059nrb24wkh06qbbbg2h8m6fl58n5wgsjns1va"))))
+    (properties `((upstream-name . "gMWT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-clinfun))
+    (home-page "https://cran.r-project.org/package=gMWT")
+    (synopsis "Generalized Mann-Whitney Type Tests")
+    (description
+     "Generalized Mann-Whitney type tests based on probabilistic indices and new
+diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
+<doi:10.18637/jss.v065.i09>.")
+    (license license:gpl2+)))
 
 (define-public r-gmwmx
   (package
@@ -15736,6 +15779,35 @@ system, which is helpful for operations such as puzzles; 3.  Simple and easy to
 operate; 4.  Optimization of clustering tree visualization.")
     (license license:gpl3)))
 
+(define-public r-gghdr
+  (package
+    (name "r-gghdr")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gghdr" version))
+              (sha256
+               (base32
+                "1id0ky2mf656xqsmg76f627zw8iff4q1wzgih32nryk0hfvm2gfi"))))
+    (properties `((upstream-name . "gghdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-hdrcde
+                             r-ggplot2
+                             r-farver
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Sayani07/gghdr")
+    (synopsis "Visualisation of Highest Density Regions in 'ggplot2'")
+    (description
+     "This package provides ggplot2 framework for visualising Highest Density Regions
+(HDR) <doi:10.1080/00031305.1996.10474359>.  This work is based on the package
+hdrcde'<https://pkg.robjhyndman.com/hdrcde/> and displays highest density
+regions in ggplot2 for one and two dimensions and univariate densities
+conditional on one covariate.")
+    (license license:gpl3)))
+
 (define-public r-gghalfnorm
   (package
     (name "r-gghalfnorm")
@@ -19216,13 +19288,13 @@ from various classes.")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.7")
+    (version "0.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geometa" version))
               (sha256
                (base32
-                "1wld6x9in32pa73vacai86g43xbfhbjynd6242xf1wl0sdrsjq30"))))
+                "18gr82k665y00h8mrq97mrr9l7p4m9m8b49dbgsh22hbz7j7c542"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -19230,7 +19302,8 @@ from various classes.")
                              r-r6
                              r-keyring
                              r-jsonlite
-                             r-httr))
+                             r-httr
+                             r-crayon))
     (home-page "https://github.com/eblondel/geometa/wiki")
     (synopsis "Tools for Reading and Writing ISO/OGC Geographic Metadata")
     (description
@@ -21118,13 +21191,13 @@ metrics, and even larger datasets.")
 (define-public r-geniebpc
   (package
     (name "r-geniebpc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genieBPC" version))
               (sha256
                (base32
-                "1hj0nm43ml7cr6zc01w5qgh75g4m5j9c44ma1nqpl33rkgcxvahl"))))
+                "0zc0qbzj5a6rxzddw6jmk3rbbig09gcnb58003f4qkrm9mzc42gm"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26083,6 +26156,42 @@ others.")
  This packages allows you loading data from ads account and manage your ads
 materials.")
     (license license:expat)))
+
+(define-public r-galah
+  (package
+    (name "r-galah")
+    (version "1.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "galah" version))
+              (sha256
+               (base32
+                "1rpjavkhamqn1ap4zg4m0ch1ykwijrls9v4gz35fwys6a42x6ihq"))))
+    (properties `((upstream-name . "galah")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-digest
+                             r-data-tree
+                             r-data-table
+                             r-crul
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://galah.ala.org.au")
+    (synopsis "Biodiversity Data from the Living Atlas Community")
+    (description
+     "The living atlas community provides tools to enable users of biodiversity
+information to find, access, combine and visualise data on plants, animals and
+fungi.  galah enables the R community to directly access data and resources
+hosted by the living atlases.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-gaipe
   (package

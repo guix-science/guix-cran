@@ -15558,6 +15558,29 @@ multi-lineage single cell transcriptome data.  Herman, J.S., Sagar, GrÃ¼n D.
 under 2-locus and 1-locus models defined by some design matrix.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-fastwavelets
+  (package
+    (name "r-fastwavelets")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fastWavelets" version))
+              (sha256
+               (base32
+                "1w2dbibl3291bqygwl2pn7jdskq6sy713r39hr4jjbh0zf0jlxdd"))))
+    (properties `((upstream-name . "fastWavelets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/johnswyou/fastWavelets")
+    (synopsis
+     "Compute Maximal Overlap Discrete Wavelet Transform (MODWT) and Ã Trous Discrete Wavelet Transform")
+    (description
+     "This package provides a lightweight package to compute Maximal Overlap Discrete
+Wavelet Transform (MODWT) and Ã Trous Discrete Wavelet Transform by leveraging
+the power of Rcpp to make these operations fast.  See Maheswaran and Khosa
+(2012) <doi:10.1016/j.cageo.2011.12.015>.")
+    (license license:expat)))
+
 (define-public r-fastverse
   (package
     (name "r-fastverse")

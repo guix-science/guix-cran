@@ -5497,6 +5497,38 @@ reliability of scenarios with equal or different probabilities of occurrence
 <doi:10.1002/we.1872>.")
     (license license:gpl2)))
 
+(define-public r-mtdesign
+  (package
+    (name "r-mtdesign")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mtdesign" version))
+              (sha256
+               (base32
+                "0fnyw6zcls12b6mmr9pxj3b9vs8pv1ik3h671kmxfgv1k6dwn6b9"))))
+    (properties `((upstream-name . "mtdesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-magrittr
+                             r-logger
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (home-page "https://github.com/openpharma/mtdesign")
+    (synopsis "Mander and Thompson Designs")
+    (description
+     "This package implements Mander & Thompson's (2010)
+<doi:10.1016/j.cct.2010.07.008> methods for two-stage designs optimal under the
+alternative hypothesis for phase II [cancer] trials.  Also provides an
+implementation of Simon's (1989) <doi:10.1016/0197-2456(89)90015-9> original
+methodology and allows exploration of the operating characteristics of
+sub-optimal designs.")
+    (license license:gpl3+)))
+
 (define-public r-mtb
   (package
     (name "r-mtb")
@@ -7507,6 +7539,36 @@ Plangprasopchok, and Suttipong Thajchayapong (2021) <doi:10.1145/3424670>.")
 Difference by applying the Anchor-based method and the Response shift effect by
 applying the Then-Test method.")
     (license license:gpl2+)))
+
+(define-public r-mrpostman
+  (package
+    (name "r-mrpostman")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mRpostman" version))
+              (sha256
+               (base32
+                "18q75hymx13q0vkvfanrqz88j1w482j343sncvhqfljhlyff0m0b"))))
+    (properties `((upstream-name . "mRpostman")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-stringi
+                             r-rvest
+                             r-r6
+                             r-magrittr
+                             r-curl
+                             r-base64enc
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://allanvc.github.io/mRpostman/")
+    (synopsis "An IMAP Client for R")
+    (description
+     "An easy-to-use IMAP client that provides tools for message searching, selective
+fetching of message attributes, mailbox management, attachment extraction, and
+several other IMAP features, paving the way for e-mail data analysis in R.")
+    (license license:gpl3)))
 
 (define-public r-mrpc
   (package
@@ -16326,13 +16388,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "1.29.0")
+    (version "1.30.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlflow" version))
               (sha256
                (base32
-                "13rav83ql8zg36ci4rml98izl4qp5k6x8svr0fg8pm8nmv1bl0s7"))))
+                "1px2ww12gm10np6h9cnikjl3czix8v2hjkggzxckm4fvrlckh4g0"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -20494,13 +20556,13 @@ commonly after converting to a csv file for importing via read.csv().")
 (define-public r-mind
   (package
     (name "r-mind")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mind" version))
               (sha256
                (base32
-                "06anbnwyrsnbrl9x54qy805vyl1bsvscsx35zsw6mz25ymchmqxy"))))
+                "01ncwc1kkfa0gfmrnvl93lvzlcjl6r30a3fs65lq15b132rncgwq"))))
     (properties `((upstream-name . "mind")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -30959,13 +31021,13 @@ algorithm for Gaussian mixtures (Scrucca, 2021 <doi:10.1002/sam.11527>).")
 (define-public r-mclogit
   (package
     (name "r-mclogit")
-    (version "0.9.4.2")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mclogit" version))
               (sha256
                (base32
-                "0nqp8jlq5vv3inmvbwlz89pi136pakqnxjmqmvz16jvq49g1bx6y"))))
+                "0sbglgak6jhhpx65jnj59hbpvzs8qjsdjc4w02z0m5j9hrnmzp4s"))))
     (properties `((upstream-name . "mclogit")))
     (build-system r-build-system)
     (propagated-inputs (list r-memisc r-matrix))
