@@ -7484,35 +7484,6 @@ highlight any differentially expressed genes and all of the gene-gene
 associations that are significantly differentially connected.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-dmwr2
-  (package
-    (name "r-dmwr2")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DMwR2" version))
-              (sha256
-               (base32
-                "1vzfbz2k05j8r2hpig3d2grb99rnnh2s1sviii3prcyqicxfh0i9"))))
-    (properties `((upstream-name . "DMwR2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-rpart
-                             r-readr
-                             r-quantmod
-                             r-dplyr
-                             r-dbi
-                             r-class))
-    (home-page "https://github.com/ltorgo/DMwR2")
-    (synopsis
-     "Functions and Data for the Second Edition of \"Data Mining with R\"")
-    (description
-     "This package provides functions and data accompanying the second edition of the
-book \"Data Mining with R, learning with case studies\" by Luis Torgo, published
-by CRC Press.")
-    (license license:gpl2+)))
-
 (define-public r-dmutate
   (package
     (name "r-dmutate")

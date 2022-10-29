@@ -15314,24 +15314,24 @@ not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sps" version))
               (sha256
                (base32
-                "0lgrzkwbkyzwbk4fyl012qqvnfmq1ina8cdg3qr25bwjhwhscipx"))))
+                "17ljrl3cn18isazi763iff5yxg916a5ck82mzc0clvxav1bcwyxr"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
     (home-page "https://github.com/marberts/sps")
     (synopsis "Sequential Poisson Sampling")
     (description
-     "Sequential Poisson sampling is a method for drawing
+     "Sequential Poisson sampling is a variation of Poisson sampling for drawing
 probability-proportional-to-size samples with a given number of units, and is
 commonly used for price-index surveys.  This package gives functions to draw
 stratified sequential Poisson samples according to the method by Ohlsson (1998,
-ISSN:0282-423X), and generate bootstrap replicate weights according to the
-generalized bootstrap method by Beaumont and Patak (2012,
+ISSN:0282-423X), and generate appropriate bootstrap replicate weights according
+to the generalized bootstrap method by Beaumont and Patak (2012,
 <doi:10.1111/j.1751-5823.2011.00166.x>).")
     (license license:expat)))
 
@@ -18144,34 +18144,31 @@ Finlay-Wilkinson Model for Analysis of Multi-Environment Field Trials.")
 (define-public r-spfsr
   (package
     (name "r-spfsr")
-    (version "1.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spFSR" version))
               (sha256
                (base32
-                "0094plnjlyhnnjqw3i4an5q95bw6hjy1gzc7zr6wy77faivqsbms"))))
+                "0sqsa6spk9mz784abxazs9i3gv046za2la55xslrpn3b7d8wksl5"))))
     (properties `((upstream-name . "spFSR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
-                             r-parallelmap
-                             r-mlr
-                             r-mlbench
+                             r-mlr3pipelines
+                             r-mlr3learners
+                             r-mlr3
+                             r-lgr
                              r-ggplot2
-                             r-class))
-    (native-inputs (list r-knitr))
+                             r-future))
     (home-page "https://www.featureranking.com/")
     (synopsis
-     "Feature Selection and Ranking by Simultaneous Perturbation Stochastic Approximation")
+     "Feature Selection and Ranking via Simultaneous Perturbation Stochastic Approximation")
     (description
-     "An implementation of feature selection and ranking via simultaneous perturbation
-stochastic approximation (SPSA-FSR) based on works by V. Aksakalli and M.
-Malekipirbazari (2015) <arXiv:1508.07630> and Zeren D. Yenice and et al. (2018)
-<arXiv:1804.05589>.  The SPSA-FSR algorithm searches for a locally optimal set
-of features that yield the best predictive performance using a specified error
-measure such as mean squared error (for regression problems) and accuracy rate
-(for classification problems).  This package requires an object of class task
-and an object of class Learner from the mlr package.")
+     "An implementation of feature selection, weighting and ranking via simultaneous
+perturbation stochastic approximation (SPSA).  The SPSA-FSR algorithm searches
+for a locally optimal set of features that yield the best predictive performance
+using some error measures such as mean squared error (for regression problems)
+and accuracy rate (for classification problems).")
     (license license:gpl3)))
 
 (define-public r-spflow
@@ -18267,6 +18264,38 @@ extent, and general spatial-extent and raster-like extent helpers missing from
 the originating packages.  Some latitude-based tools for polar maps are
 included.")
     (license license:gpl3)))
+
+(define-public r-spetestnp
+  (package
+    (name "r-spetestnp")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SpeTestNP" version))
+              (sha256
+               (base32
+                "1767xhnfdq9qm626j8jr0l6vnr7kkljsyarz3y318y33ja3rx71j"))))
+    (properties `((upstream-name . "SpeTestNP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HippolyteBoucher/SpeTestNP")
+    (synopsis "Non-Parametric Tests of Parametric Specifications")
+    (description
+     "This package performs non-parametric tests of parametric specifications.  Five
+tests are available.  Specific bandwidth and kernel methods can be chosen along
+with many other options.  Allows parallel computing to quickly compute p-values
+based on the bootstrap.  Methods implemented in the package are H.J. Bierens
+(1982) <doi:10.1016/0304-4076(82)90105-1>, J.C. Escanciano (2006)
+<doi:10.1017/S0266466606060506>, P.L. Gozalo (1997)
+<doi:10.1016/S0304-4076(97)86571-2>, P. Lavergne and V. Patilea (2008)
+<doi:10.1016/j.jeconom.2007.08.014>, P. Lavergne and V. Patilea (2012)
+<doi:10.1198/jbes.2011.07152>, J.H. Stock and M.W. Watson (2006)
+<doi:10.1111/j.1538-4616.2007.00014.x>, C.F.J. Wu (1986)
+<doi:10.1214/aos/1176350142>, J. Yin, Z. Geng, R. Li, H. Wang (2010)
+<https://www.jstor.org/stable/24309002> and J.X. Zheng (1996)
+<doi:10.1016/0304-4076(95)01760-7>.")
+    (license license:gpl2)))
 
 (define-public r-sperrorest
   (package
@@ -24771,13 +24800,13 @@ to continuous predicted and reference memberships in [0, 1].")
 (define-public r-softbart
   (package
     (name "r-softbart")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SoftBart" version))
               (sha256
                (base32
-                "0yqh2grs0hp3b3f88g6y425pp71qfvfb7zwfd13m3q75n9ldxprb"))))
+                "0s7d2gxh6qnpwzagfrwhacgd7w3hxx3xkxrhk6kqjykpckdwy091"))))
     (properties `((upstream-name . "SoftBart")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -25890,6 +25919,27 @@ imposition of monotonicity and concavity constraints on the estimated frontier."
 cosmological and merger simulations.  To find out more about Gadget see the main
 distribution page at www.mpa-garching.mpg.de/gadget/")
     (license license:gpl2)))
+
+(define-public r-snapchatadsr
+  (package
+    (name "r-snapchatadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "snapchatadsR" version))
+              (sha256
+               (base32
+                "0h1wiwycrafh1wzmdw8dm0zw1xpzvj7w0943kh2bx8wpp7ara2vy"))))
+    (properties `((upstream-name . "snapchatadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Snapchat Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Snapchat Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-snap
   (package
@@ -30307,27 +30357,39 @@ requirements.  Theory and functions are specified in Metzner (2020, ISBN:
 (define-public r-sisir
   (package
     (name "r-sisir")
-    (version "0.1-3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SISIR" version))
               (sha256
                (base32
-                "093a202byak1839d6949yv4f0i43jlcvfmzd41qy4l0i7qdhvr72"))))
+                "08pggcpk96mjz710n4a5yzvmlca4zq2vkl83k48c7l8031zm05bw"))))
     (properties `((upstream-name . "SISIR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rspectra
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rspectra
+                             r-rlang
+                             r-ranger
+                             r-purrr
+                             r-mixomics
                              r-matrix
+                             r-magrittr
                              r-glmnet
                              r-foreach
                              r-expm
-                             r-doparallel))
+                             r-dplyr
+                             r-doparallel
+                             r-corelearn
+                             r-boruta
+                             r-adjclust))
     (home-page "https://cran.r-project.org/package=SISIR")
-    (synopsis "Sparse Interval Sliced Inverse Regression")
+    (synopsis "Select Intervals Suited for Functional Regression")
     (description
-     "An interval fusion procedure for functional data in the semiparametric framework
-of SIR, as described in <doi:10.1007/s11222-018-9806-6>.  Standard ridge and
-sparse SIR are also included in the package.")
+     "Interval fusion and selection procedures for regression with functional inputs.
+Methods include a semiparametric approach based on Sliced Inverse Regression
+(SIR), as described in <doi:10.1007/s11222-018-9806-6> (standard ridge and
+sparse SIR are also included in the package) and a random forest based approach.")
     (license license:gpl2+)))
 
 (define-public r-sisal
@@ -33834,6 +33896,40 @@ reduced Reparameterized Unified Model ('rRUM') from Culpepper and Hudson (2017)
 <doi:10.3102/1076998607309474>.")
     (license license:gpl2+)))
 
+(define-public r-simcausal
+  (package
+    (name "r-simcausal")
+    (version "0.5.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simcausal" version))
+              (sha256
+               (base32
+                "0r87i5m8sd9bf8ddlkgq9dl0pglhxl9pj5b0vx79va9r5wb55vgk"))))
+    (properties `((upstream-name . "simcausal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-matrix
+                             r-igraph
+                             r-data-table
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/osofr/simcausal")
+    (synopsis
+     "Simulating Longitudinal Data with Causal Inference Applications")
+    (description
+     "This package provides a flexible tool for simulating complex longitudinal data
+using structural equations, with emphasis on problems in causal inference.
+Specify interventions and simulate from intervened data generating
+distributions.  Define and evaluate treatment-specific means, the average
+treatment effects and coefficients from working marginal structural models.
+User interface designed to facilitate the conduct of transparent and
+reproducible simulation studies, and allows concise expression of complex
+functional dependencies for a large number of time-varying nodes.  See the
+package vignette for more information, documentation and examples.")
+    (license license:gpl2)))
+
 (define-public r-simboot
   (package
     (name "r-simboot")
@@ -35148,13 +35244,13 @@ testing, see the book by Lehmann and Romano (2005) <doi:10.1007/0-387-27605-X>."
 (define-public r-shroomdk
   (package
     (name "r-shroomdk")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shroomDK" version))
               (sha256
                (base32
-                "1yli5rlkh1jfbbvpvln7j068w59snwaakipck6mjrmpqlis2dyim"))))
+                "1w1zhrr2jygys2slnnlmdh7py6rfs485nhdr3h9r964daggxb42q"))))
     (properties `((upstream-name . "shroomDK")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -49059,6 +49155,37 @@ relationships among different classes and objects.")
      "Import, plot, and diagnose results from statistical catch-at-age models, used in
 fisheries stock assessment.")
     (license license:gpl3)))
+
+(define-public r-scanstatistics
+  (package
+    (name "r-scanstatistics")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scanstatistics" version))
+              (sha256
+               (base32
+                "1982xwnjs6xiqys385m5gn5a49xy2v3smd6ghw8814gx60bgw6w8"))))
+    (properties `((upstream-name . "scanstatistics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sets
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plyr
+                             r-magrittr
+                             r-ismev
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/promerpr/scanstatistics")
+    (synopsis "Space-Time Anomaly Detection using Scan Statistics")
+    (description
+     "Detection of anomalous space-time clusters using the scan statistics
+methodology.  Focuses on prospective surveillance of data streams, scanning for
+clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
+Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
+    (license license:gpl3+)))
 
 (define-public r-scannotate
   (package

@@ -3151,13 +3151,13 @@ effects model <10.31234/osf.io/hpq7w>.")
 (define-public r-vic5
   (package
     (name "r-vic5")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VIC5" version))
               (sha256
                (base32
-                "1q4ayvq0adln9vv3r05gc2rmkd2pbzrsqd8dsgmindzwqbxsps36"))))
+                "1gicnwhmgm1jjw21zry4n1a5r88f7liwpv7nbprgiad9nng74zj2"))))
     (properties `((upstream-name . "VIC5")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lubridate r-foreach))

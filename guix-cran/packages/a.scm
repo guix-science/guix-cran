@@ -5667,27 +5667,22 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "0.5.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arkhe" version))
               (sha256
                (base32
-                "0m3i7l9zhpmdqn3ri0mddlhdnsf3r0l4crp76k88b6y1mwdyxi4q"))))
+                "0n4l4mahblgzhmlwysvfvlx686zix718sp53irgg39553mfzqj8b"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/arkhe/")
-    (synopsis "Representation of Archaeological Data")
+    (synopsis "Tools for Cleaning Rectangular Data")
     (description
-     "This package provides a collection of classes that represent archaeological
-data.  This package provides a set of S4 classes that represent different
-special types of matrix (absolute/relative frequency, presence/absence data,
-co-occurrence matrix, etc.) upon which package developers can build subclasses.
-It also provides a set of generic methods (mutators and coercion mechanisms) and
-functions (e.g. summary statistics, predicates).  In addition, a few classes of
-general interest (e.g. that represent stratigraphic relationships) are
-implemented.")
+     "This package provides a dependency-free collection of simple functions for
+cleaning rectangular data.  This package allows to detect, count and replace
+values or discard rows/columns using a predicate function.  In addition, it
+provides tools to check conditions and return informative error messages.")
     (license license:gpl3+)))
 
 (define-public r-arkdb

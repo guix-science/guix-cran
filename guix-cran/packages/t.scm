@@ -14827,22 +14827,22 @@ algorithm.")
 (define-public r-tibbletime
   (package
     (name "r-tibbletime")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tibbletime" version))
               (sha256
                (base32
-                "0pfph4pyjxkxrir5ca1sh7xz07dylqnq40w0qyqiyaj5s23mbbmb"))))
+                "0l2aaqzf087phyxblkskqfpica12bfama6wyvxkdgbiwmzf6lbzc"))))
     (properties `((upstream-name . "tibbletime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-vctrs
-                             r-tidyselect
                              r-tibble
                              r-rlang
                              r-rcpp
                              r-purrr
+                             r-pillar
                              r-lubridate
                              r-lifecycle
                              r-hms

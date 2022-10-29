@@ -13550,6 +13550,43 @@ modified maximum likelihood (AMML) estimators derived by Tiku and Surucu (2009)
 <https://open.metu.edu.tr/bitstream/handle/11511/19440/index.pdf>.")
     (license license:gpl3+)))
 
+(define-public r-robustbetareg
+  (package
+    (name "r-robustbetareg")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "robustbetareg" version))
+              (sha256
+               (base32
+                "09f4binbi5gcf80fhpxzrmpm2k2xf6f7rcw9g2xzmni8b4cs2l6p"))))
+    (properties `((upstream-name . "robustbetareg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-rstudioapi
+                             r-robustbase
+                             r-rmpfr
+                             r-pracma
+                             r-numderiv
+                             r-misctools
+                             r-matrix
+                             r-mass
+                             r-formula
+                             r-crayon
+                             r-betareg
+                             r-bbmisc))
+    (home-page "https://cran.r-project.org/package=robustbetareg")
+    (synopsis "Robust Beta Regression")
+    (description
+     "Robust estimators for the beta regression, useful for modeling bounded
+continuous data.  Currently, four types of robust estimators are supported.
+They depend on a tuning constant which may be fixed or selected by a data-driven
+algorithm also implemented in the package.  Diagnostic tools associated with the
+fitted model, such as the residuals and goodness-of-fit statistics, are
+implemented.  Robust Wald-type tests are available.  More details about robust
+beta regression are described in Maluf et al. (2022) <arXiv:2209.11315>.")
+    (license license:gpl3)))
+
 (define-public r-robustbayesiancopas
   (package
     (name "r-robustbayesiancopas")
@@ -26307,13 +26344,13 @@ prediction pipeline is built on this R package.  See
 (define-public r-reproj
   (package
     (name "r-reproj")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproj" version))
               (sha256
                (base32
-                "0lxd1vsxcf0r96jkl5jrh3kyklf90wcs4a27cs6ck93x1cxjnnni"))))
+                "0bcg5bz2sl4d31iwr55nwr85p1jna9fpbcli26lf04dwznwmx0rl"))))
     (properties `((upstream-name . "reproj")))
     (build-system r-build-system)
     (inputs (list proj))
@@ -26323,14 +26360,14 @@ prediction pipeline is built on this R package.  See
     (description
      "Transform coordinates from a specified source to a specified target map
 projection.  This uses the PROJ library directly, by wrapping the PROJ package
-(if functional), otherwise the proj4 package.  The reproj() function is generic,
-methods may be added to remove the need for an explicit source definition.  If
-proj4 is in use reproj() handles the requirement for conversion of angular units
-where necessary.  This is for use primarily to transform generic data formats
-and direct leverage of the underlying PROJ library. (There are transformations
-that aren't possible with PROJ and that are provided by the GDAL library, a
-limitation which users of this package should be aware of.) The PROJ library is
-available at <https://proj.org/>.")
+which leverages libproj', otherwise the proj4 package.  The reproj() function is
+generic, methods may be added to remove the need for an explicit source
+definition.  If proj4 is in use reproj() handles the requirement for conversion
+of angular units where necessary.  This is for use primarily to transform
+generic data formats and direct leverage of the underlying PROJ library. (There
+are transformations that aren't possible with PROJ and that are provided by the
+GDAL library, a limitation which users of this package should be aware of.) The
+PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
 (define-public r-reproducible
@@ -32651,13 +32688,13 @@ operations.")
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
-    (version "2.0.3")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdrobust" version))
               (sha256
                (base32
-                "0i1s630s3d4cxfgwh7lxphfskl4z9yc574kgxj00wxz84j33bzqz"))))
+                "132nxql163r71xw63qbg6g90cigfjmg4svaln247jrlfbwwnvjiq"))))
     (properties `((upstream-name . "rdrobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -36842,13 +36879,13 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCLabels" version))
               (sha256
                (base32
-                "1nvjq40labgrrn3lbyvnk9zir0ghgxkqrniddp4w7wffsfz4dj00"))))
+                "1dq4nl78s2dci3nlx52jxg7qkcb1sy0nzws0qb6mpaf88zw63f5l"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-hmisc r-assertthat))
@@ -39469,13 +39506,13 @@ Massidda, D., & Noventa, S. (2010)
 (define-public r-ravenr
   (package
     (name "r-ravenr")
-    (version "2.1.9")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RavenR" version))
               (sha256
                (base32
-                "0c1rcza960jylqx62q0i671aksyrr22v54ann57cahwban31k842"))))
+                "17m6q6v3s3maj3wlic9id4bll4n3waa34sj8580l1kd5knhybmil"))))
     (properties `((upstream-name . "RavenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

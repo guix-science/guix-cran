@@ -2483,13 +2483,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.6.4")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wnl" version))
               (sha256
                (base32
-                "0157q09paiyvg9almsq8bp5z8kj8bclc4rak7n1qrsx2asjyl2py"))))
+                "06jw2crz4dfm9xpivapc8ipjjiziqn2ahgn0ssgzagkmv3idc7h1"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -3580,13 +3580,13 @@ Office of Germany (DESTATIS) using their SOAP XML web service
 (define-public r-wienr
   (package
     (name "r-wienr")
-    (version "0.3-6")
+    (version "0.3-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WienR" version))
               (sha256
                (base32
-                "1y5vdvh055pvphbjpva9bm2vidqv1gq1dnzpl3qwjrj9vvqgyqk5"))))
+                "1z0adlw9gr966035gkmkrnsl89r8llqfpl7ya31s4c9ijbjdap87"))))
     (properties `((upstream-name . "WienR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WienR")

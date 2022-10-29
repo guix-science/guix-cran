@@ -7902,22 +7902,24 @@ parallel using mclapply() or future_lapply()
 (define-public r-mrfse
   (package
     (name "r-mrfse")
-    (version "0.2")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrfse" version))
               (sha256
                (base32
-                "1dx21m54jsprlngj20q1bgvbw1bbm0sm8i01xanj68bx796ng14j"))))
+                "1kwnpmkrgc2ca90nszj4d1p04prv7rjd03qvk1bb2sclkfbhz4yp"))))
     (properties `((upstream-name . "mrfse")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-rcpp r-gtools))
     (home-page "https://cran.r-project.org/package=mrfse")
     (synopsis "Markov Random Field Structure Estimator")
     (description
-     "This package provides a Markov random field structure estimator that uses a
-penalized maximum conditional likelihood method similar to the Bayesian
-Information Criterion (Frondana, 2016)
-<doi:10.11606/T.45.2018.tde-02022018-151123>.")
+     "Three algorithms for estimating a Markov random field structure.Two of them are
+an exact version and a simulated annealing version of a penalized maximum
+conditional likelihood method similar to the Bayesian Information Criterion
+(Frondana, 2016) <doi:10.11606/T.45.2018.tde-02022018-151123>.The third one is a
+greedy algorithm based on information theory (Bresler, 2015).")
     (license license:gpl3+)))
 
 (define-public r-mrfdepth
@@ -10062,6 +10064,44 @@ standard life table as well as plots the relevant indices (percentage of deaths,
 survivorship, probability of death, life expectancy, percentage of population).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-morse
+  (package
+    (name "r-morse")
+    (version "3.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "morse" version))
+              (sha256
+               (base32
+                "0534k96fhfdkfr3dh6q85fmsqqld7xv1zxvikwcb6z6by3nr9cpp"))))
+    (properties `((upstream-name . "morse")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-rjags
+                             r-reshape2
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-epitools
+                             r-dplyr
+                             r-desolve
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=morse")
+    (synopsis "Modelling Reproduction and Survival Data in Ecotoxicology")
+    (description
+     "Advanced methods for a valuable quantitative environmental risk assessment using
+Bayesian inference of survival and reproduction Data.  Among others, it
+facilitates Bayesian inference of the general unified threshold model of
+survival (GUTS).  See our companion paper Baudrot and Charles (2021)
+<doi:10.21105/joss.03200>, as well as complementary details in Baudrot et al.
+(2018) <doi:10.1021/acs.est.7b05464> and Delignette-Muller et al. (2017)
+<doi:10.1021/acs.est.6b05326>.")
+    (license license:expat)))
 
 (define-public r-morphotools2
   (package
@@ -15814,17 +15854,17 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "3.4.2.1")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlpack" version))
               (sha256
                (base32
-                "0fqpajcmqn9rijzjg7qj0zd2lik4xmhp5dmhbm3mdc9ssdg0axbr"))))
+                "1wly4md76hm75c4vhvgmd3akc1py4f19s6c4rbpq41qn3sf5iqmj"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp r-bh))
-    (home-page "https://www.mlpack.org/doc/mlpack-3.4.2/r_documentation.html")
+    (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
+    (home-page "https://www.mlpack.org/doc/mlpack-4.0.0/r_documentation.html")
     (synopsis "'Rcpp' Integration for the 'mlpack' Library")
     (description
      "This package provides a fast, flexible machine learning library, written in C++,
@@ -20177,6 +20217,36 @@ to the minMSE-method as proposed by Schneider and Schlather (2017)
 <DOI:10419/161931>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-minkowskisum
+  (package
+    (name "r-minkowskisum")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MinkowskiSum" version))
+              (sha256
+               (base32
+                "1v7i3jzj65y8xy8kyl4jp651pqk5xd9bbfj8az1443ng9l39n57h"))))
+    (properties `((upstream-name . "MinkowskiSum")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-polygonsoup
+                             r-gmp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/MinkowskiSum")
+    (synopsis "Minkowski Addition Between 3D Meshes")
+    (description
+     "Computes the Minkowski sum of two 3D meshes, resulting in a new 3D mesh.  The
+Minkowski addition has applications in mathematical morphology and 3D computer
+graphics.  The computations are performed by the C++ library CGAL
+(<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-minirand
   (package
     (name "r-minirand")
@@ -21106,19 +21176,20 @@ datasets used in the book in addition to other network data.")
 (define-public r-migest
   (package
     (name "r-migest")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "migest" version))
               (sha256
                (base32
-                "14gfslx3fpqw8170qkwf1155q3936m8kmwdqc8vqyli5nafbjf9w"))))
+                "0v59yai9xs2yj17lvm7nmw7jzfgglilixwmwy9czi3z4bhb7gknl"))))
     (properties `((upstream-name . "migest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-purrr
+                             r-mipfp
                              r-migration-indices
                              r-matrixstats
                              r-magrittr
@@ -24557,6 +24628,34 @@ proximity.  SWG relies on reanalyses.  Multi-variable dependence is taking into
 account by using the decomposition of the product rule (in statistics) into
 conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.")
     (license license:gpl2+)))
+
+(define-public r-metevalue
+  (package
+    (name "r-metevalue")
+    (version "0.1.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metevalue" version))
+              (sha256
+               (base32
+                "1kwcxrp077zghpc04aykm0zcijdbvq00izf7dilk4s6llgmcacq2"))))
+    (properties `((upstream-name . "metevalue")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sqldf r-psych r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metevalue")
+    (synopsis "E-Value in the Omics Data Association Studies")
+    (description
+     "In the omics data association studies, it is common to conduct the p-value
+corrections to control the false significance.  Among those p-value correction
+methods, E-value is recently studied based on V. Vovk and R. Wang (2021)
+<doi:10.1214/20-AOS2020>.  This package provides e-value calculation for several
+types of omics data association studies.  Currently, four data formats are
+supported: BiSeq, MDRfinder, methylKit and metilene data.  The relevant
+references are listed below: Katja Hebestreit and Hans-Ulrich Klein (2022)
+<doi:10.18129/B9.bioc.BiSeq>; Altuna Akalin et.al (2012)
+<doi:10.18129/B9.bioc.methylKit>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-metest
   (package
@@ -28618,6 +28717,51 @@ identify patterns in respective media reporting.  The media channels used in
 this package are print media.  The data (or news) used are publicly available to
 consumers.")
     (license license:lgpl3)))
+
+(define-public r-medianadesigner
+  (package
+    (name "r-medianadesigner")
+    (version "0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MedianaDesigner" version))
+              (sha256
+               (base32
+                "0vvmp6bf5ka8ivi1z6rl6rcvbks14c7g1f0sisqqjwsza3fi5s9m"))))
+    (properties `((upstream-name . "MedianaDesigner")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-shinymatrix
+                             r-shinydashboard
+                             r-shiny
+                             r-rootsolve
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-pbkrtest
+                             r-officer
+                             r-mvtnorm
+                             r-mass
+                             r-lmertest
+                             r-lme4
+                             r-foreach
+                             r-flextable
+                             r-dorng
+                             r-doparallel
+                             r-devemf))
+    (home-page "https://github.com/medianasoft/MedianaDesigner")
+    (synopsis "Power and Sample Size Calculations for Clinical Trials")
+    (description
+     "The package supports efficient simulation-based power and sample size
+calculations for a broad class of late-stage clinical trials.  The following
+modules are included in the package: Adaptive designs with data-driven sample
+size or event count re-estimation, Adaptive designs with data-driven treatment
+selection, Adaptive designs with data-driven population selection, Optimal
+selection of a futility stopping rule, Event prediction in event-driven trials,
+Adaptive trials with response-adaptive randomization (experimental module),
+Traditional trials with multiple objectives (experimental module).  Traditional
+trials with cluster-randomized designs (experimental module).")
+    (license license:gpl3)))
 
 (define-public r-mediana
   (package
@@ -36651,13 +36795,13 @@ Friedrich, S., Konietschke, F. and Pauly, M. (2019) <doi:10.32614/RJ-2019-051>."
 (define-public r-manorm2
   (package
     (name "r-manorm2")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MAnorm2" version))
               (sha256
                (base32
-                "1w4knxcgzi630py8b2w1nhmmvxfmbb10m35j6yxlk47zxf66h2jw"))))
+                "0bs6x09mm8ln2c7himavm6bskdkxvx7id4dxpg20k4a5hcqpj3ab"))))
     (properties `((upstream-name . "MAnorm2")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-scales r-locfit))

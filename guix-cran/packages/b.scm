@@ -13020,13 +13020,13 @@ crossproduct, and matrix multiplication.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigDM" version))
               (sha256
                (base32
-                "0f8nil56bws24h4dh6f3x2pf3civ993s3f2cymrs11x4wj4ia131"))))
+                "12g21jrgcp0fczfpw8x4lh53wpw99bq5qkbfdnkik0igyv8gqg2x"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -13039,6 +13039,7 @@ crossproduct, and matrix multiplication.")
                              r-mass
                              r-future-apply
                              r-future
+                             r-fastdummies
                              r-crayon))
     (home-page "https://github.com/spatialstatisticsupna/bigDM")
     (synopsis
@@ -13047,11 +13048,12 @@ crossproduct, and matrix multiplication.")
      "This package implements several spatial and spatio-temporal scalable disease
 mapping models for high-dimensional count data using the INLA technique for
 approximate Bayesian inference in latent Gaussian models (Orozco-Acosta et al.,
-2021 <doi:10.1016/j.spasta.2021.100496> and Orozco-Acosta et al., 2022
-<arXiv:2201.08323>).  The creation and develpment of this package has been
-supported by Project MTM2017-82553-R (AEI/FEDER, UE) and Project
-PID2020-113125RB-I00/MCIN/AEI/10.13039/501100011033.  It has also been partially
-funded by the Public University of Navarra (project PJUPNA2001).")
+2021 <doi:10.1016/j.spasta.2021.100496>; Orozco-Acosta et al., 2022
+<arXiv:2201.08323> and Vicente et al., 2022 <arXiv:2210.14849>).  The creation
+and develpment of this package has been supported by Project MTM2017-82553-R
+(AEI/FEDER, UE) and Project PID2020-113125RB-I00/MCIN/AEI/10.13039/501100011033.
+ It has also been partially funded by the Public University of Navarra (project
+PJUPNA2001).")
     (license license:gpl3)))
 
 (define-public r-bigdist
@@ -18795,13 +18797,13 @@ such as rng, quantile, and distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.1-1")
+    (version "7.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesTFR" version))
               (sha256
                (base32
-                "0grkrcgn1x1qaajyamzlp7csmsmmslbjbmajk42m5g7cxxljvylr"))))
+                "0iax6z6c6vxgq5v1n357i8grdrbymgc7dv091bhdgrd7352cpqxc"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -23188,6 +23190,34 @@ time when drafting R scripts that will need to be navigated and maintained by
 other programmers.")
     (license license:gpl2+)))
 
+(define-public r-bangladesh
+  (package
+    (name "r-bangladesh")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bangladesh" version))
+              (sha256
+               (base32
+                "1vjrashph4n8njm6yk8slywmfwxqrvdmb2ybgp23vdxjhk3rlrzl"))))
+    (properties `((upstream-name . "bangladesh")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmap r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bangladesh")
+    (synopsis
+     "Provides Ready to Use Shapefiles for Geographical Map of Bangladesh")
+    (description
+     "Usually, it is difficult to plot choropleth maps for Bangladesh in R'.  The
+bangladesh package provides ready-to-use shapefiles for different administrative
+regions of Bangladesh (e.g., Division, District, Upazila, and Union).  This
+package helps users to draw thematic maps of administrative regions of
+Bangladesh easily as it comes with the sf objects for the boundaries.  It also
+provides functions allowing users to efficiently get specific area maps and
+center coordinates for regions.  Users can also search for a specific area and
+calculate the centroids of those areas.")
+    (license license:expat)))
+
 (define-public r-bang
   (package
     (name "r-bang")
@@ -24346,6 +24376,45 @@ BEAUti 2', Tracer and DensiTree'.  babette provides for an alternative workflow
 of using all these tools separately.  This allows doing complex Bayesian
 phylogenetics easily and reproducibly from R'.")
     (license license:gpl3)))
+
+(define-public r-babelmixr2
+  (package
+    (name "r-babelmixr2")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "babelmixr2" version))
+              (sha256
+               (base32
+                "1h9q3szl3svfryvnmsgnvlm5vrm4sp30sayh6xc1dbcbhrnh9df0"))))
+    (properties `((upstream-name . "babelmixr2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rxode2parse
+                             r-rxode2
+                             r-rex
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-qs
+                             r-nlmixr2est
+                             r-nlmixr2
+                             r-lotri
+                             r-digest
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=babelmixr2")
+    (synopsis
+     "Use 'nlmixr2' to Interact with Open Source and Commercial Software")
+    (description
+     "Run other estimation and simulation software via the nlmixr2 (Fidler et al
+(2019) <doi:10.1002/psp4.12445>) interface including PKNCA', NONMEM and
+Monolix'.  While not required, you can get/install the lixoftConnectors package
+in the Monolix installation, as described at the following url
+<https://monolix.lixoft.com/monolix-api/lixoftconnectors_installation/>.  When
+lixoftConnectors is available, Monolix can be run directly instead of setting up
+command line usage.")
+    (license license:gpl3+)))
 
 (define-public r-babel
   (package

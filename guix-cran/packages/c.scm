@@ -8739,6 +8739,34 @@ Ornstein-Uhlenbeck process components to be added to linear and non-linear mixed
 effects models using the structures and methods of the nlme package.")
     (license license:gpl3)))
 
+(define-public r-covatest
+  (package
+    (name "r-covatest")
+    (version "1.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "covatest" version))
+              (sha256
+               (base32
+                "1njanyl00w7b2dxij9cdli7l1cizi4ndinhpnp1s543vnq3ifi2q"))))
+    (properties `((upstream-name . "covatest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-spacetime r-sp r-lubridate r-gstat))
+    (home-page "https://cran.r-project.org/package=covatest")
+    (synopsis "Tests on Properties of Space-Time Covariance Functions")
+    (description
+     "Tests on properties of space-time covariance functions.  Tests on symmetry,
+separability and for assessing different forms of non-separability are
+available.  Moreover tests on some classes of covariance functions, such that
+the classes of product-sum models, Gneiting models and integrated product models
+have been provided.  It is the companion R package to the papers of Cappello,
+C., De Iaco, S., Posa, D., 2018, Testing the type of non-separability and some
+classes of space-time covariance function models <doi:10.1007/s00477-017-1472-2>
+and Cappello, C., De Iaco, S., Posa, D., 2020, covatest: an R package for
+selecting a class of space-time covariance functions
+<doi:10.18637/jss.v094.i01>.")
+    (license license:gpl2+)))
+
 (define-public r-covafillr
   (package
     (name "r-covafillr")
@@ -17761,13 +17789,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-coinr
   (package
     (name "r-coinr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COINr" version))
               (sha256
                (base32
-                "0i78d485hfpbih61ibzfpfdfm1jqmnrfdq2j9h8blba7shz7v293"))))
+                "0vi89kfma2r8wkfxrfi8hb5m6pvhqbl5ja3kzqriwv4qpzg8syyg"))))
     (properties `((upstream-name . "COINr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-readxl r-openxlsx r-ggplot2))
@@ -19830,13 +19858,13 @@ provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsafops
   (package
     (name "r-cmsafops")
-    (version "1.2.5")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmsafops" version))
               (sha256
                (base32
-                "1vz7s5pids6jkx8ai270fgljb8s0d755samcs3h81v00z7fy5iqd"))))
+                "0glxw15hq1bh052wsavc1af93m67l3vz8y9bh42l8n8n06p89alw"))))
     (properties `((upstream-name . "cmsafops")))
     (build-system r-build-system)
     (propagated-inputs (list r-trend
@@ -37009,6 +37037,33 @@ networks.")
     (description
      "Easily cache and retrieve computation results.  The package works seamlessly
 across interactive R sessions, R scripts and Rmarkdown documents.")
+    (license license:expat)))
+
+(define-public r-cacc
+  (package
+    (name "r-cacc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cacc" version))
+              (sha256
+               (base32
+                "0dl2n5shjagr7zjsl6cyw3jxz29h9dbjfwrhphqdaymjv6yaxxj9"))))
+    (properties `((upstream-name . "cacc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://github.com/amoneva/cacc")
+    (synopsis "Conjunctive Analysis of Case Configurations")
+    (description
+     "This package provides a set of functions to conduct Conjunctive Analysis of Case
+Configurations (CACC) as described in Miethe, Hart, and Regoeczi (2008)
+<doi:10.1007/s10940-008-9044-8>, and identify and quantify situational
+clustering in dominant case configurations as described in Hart (2019)
+<doi:10.1177/0011128719866123>.  Initially conceived as an exploratory technique
+for multivariate analysis of categorical data, CACC has developed to include
+formal statistical tests that can be applied in a wide variety of contexts.
+This technique allows examining composite profiles of different units of
+analysis in an alternative way to variable-oriented methods.")
     (license license:expat)))
 
 (define-public r-cabootcrs
