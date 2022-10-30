@@ -4577,13 +4577,13 @@ Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiblock" version))
               (sha256
                (base32
-                "0p81vrfbni7xnzv1xi51bjabsy2mbm752yd90ds2aancrhw6yxpd"))))
+                "0n1pyi3swq0hbabd2x5jp3jlnfjlbvpk09p0as61d34fwq97bs0b"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -11690,6 +11690,35 @@ complete enumeration, and is suitable for data sets with large number of
 variables.  For more information, see Sinha, Malo & Kuosmanen (2015)
 <doi:10.1080/10618600.2014.899236>.")
     (license license:gpl2)))
+
+(define-public r-mofat
+  (package
+    (name "r-mofat")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MOFAT" version))
+              (sha256
+               (base32
+                "00b9ss777zr5ysh98yllyicqwgnzccmjf20g7w20zvn2blhs2np0"))))
+    (properties `((upstream-name . "MOFAT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slhd))
+    (home-page "https://cran.r-project.org/package=MOFAT")
+    (synopsis "Maximum One-Factor-at-a-Time Designs")
+    (description
+     "Identifying important factors from a large number of potentially important
+factors of a highly nonlinear and computationally expensive black box model is a
+difficult problem.  Xiao, Joseph, and Ray (2022)
+<doi:10.1080/00401706.2022.2141897> proposed Maximum One-Factor-at-a-Time
+(MOFAT) designs for doing this.  A MOFAT design can be viewed as an improvement
+to the random one-factor-at-a-time (OFAT) design proposed by Morris (1991)
+<doi:10.1080/00401706.1991.10484804>.  The improvement is achieved by exploiting
+the connection between Morris screening designs and Monte Carlo-based Sobol
+designs, and optimizing the design using a space-filling criterion.  This work
+is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
+<https://www.nsf.gov/awardsearch/showAward?AWD_ID=1921646>.")
+    (license license:gpl2+)))
 
 (define-public r-moexer
   (package
@@ -27267,6 +27296,38 @@ statistical functions, some of which may even be referenced in The R Primer
 book.")
     (license license:gpl2)))
 
+(define-public r-meshestools
+  (package
+    (name "r-meshestools")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MeshesTools" version))
+              (sha256
+               (base32
+                "0vr7l9g53h1rxyhn8c8l3hmbsh7c2cfl3jvlrnm2jhpfcsp8851g"))))
+    (properties `((upstream-name . "MeshesTools")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rvcg
+                             r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-polygonsoup
+                             r-gmp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/MeshesTools")
+    (synopsis "Some Tools for 3D Meshes")
+    (description
+     "This package provides some utilities for 3D meshes: clipping of a mesh to the
+volume bounded by another mesh, decomposition into convex parts, distance
+between a mesh and a point, volume, area, and centroid.  All algorithms are
+performed by the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-meshed
   (package
     (name "r-meshed")
@@ -34060,13 +34121,13 @@ problem, the college admissions problem, and the house allocation problem.")
 (define-public r-matching
   (package
     (name "r-matching")
-    (version "4.10-2")
+    (version "4.10-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Matching" version))
               (sha256
                (base32
-                "1q7crkamzn6qjinc3dp4hm1fihh9hil55p10nnr8f5iwamhxqx8y"))))
+                "1ssgcq4n3sm2j3xbclfqqhkbs8i320yn7d8g69aymv28q67kh2ky"))))
     (properties `((upstream-name . "Matching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -34523,6 +34584,34 @@ synthetic-regression estimator proposed by Mandallaz (2013)
 It yields smaller variances than the standard bias correction, the generalised
 regression estimator.")
     (license license:bsd-2)))
+
+(define-public r-marvel
+  (package
+    (name "r-marvel")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MARVEL" version))
+              (sha256
+               (base32
+                "0016y7nycqpqaxcybgrdicp1q9kw7pbinbi54rja6npcyiz3li86"))))
+    (properties `((upstream-name . "MARVEL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MARVEL")
+    (synopsis "Revealing Splicing Dynamics at Single-Cell Resolution")
+    (description
+     "Alternative splicing represents an additional and underappreciated layer of
+complexity underlying gene expression profiles.  Nevertheless, there remains
+hitherto a paucity of software to investigate splicing dynamics at single-cell
+resolution.  MARVEL quantifies percent spliced-in (PSI) values for the all
+exon-level splicing events.  Additionally, MARVEL performs differential splicing
+analysis to identify splicing events whose PSI distribution differ between
+groups of cells.  Finally, MARVEL models the PSI distribution for each event as
+a beta distribution and categorises each distribution into modalities (inspired
+by Song (2017) <doi:10.1016/j.molcel.2017.06.003>).")
+    (license license:gpl3)))
 
 (define-public r-marssvrhybrid
   (package

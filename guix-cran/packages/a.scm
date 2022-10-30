@@ -2443,13 +2443,13 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "auk" version))
               (sha256
                (base32
-                "0mf2rwf7sihmk6mla87gznh0s1rqxpijcjjv035iq3id6c81h03l"))))
+                "1l37izfjsypq2pbbifajilhi00fpbjdkpp6ahy3nxfsc7v22ldwr"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

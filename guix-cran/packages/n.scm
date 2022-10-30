@@ -973,28 +973,6 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
-(define-public r-nse2r
-  (package
-    (name "r-nse2r")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nse2r" version))
-              (sha256
-               (base32
-                "1gwq8x3sn2f4p3yivmg2dljpdjcwsy2s6467pnwlcjdmr3sqgv2b"))))
-    (properties `((upstream-name . "nse2r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-magrittr r-jsonlite r-httr))
-    (home-page "https://github.com/rsquaredacademy/nse2r")
-    (synopsis "Fetch Data from 'National Stock Exchange (India)'")
-    (description
-     "Fetch data related to stocks, index, futures & options from the NSE (National
-Stock Exchange, India)'.  This package is community maintained and is not
-officially supported by NSE'.  The accuracy of data is only as correct as
-provided on <https://www.nseindia.com>.")
-    (license license:expat)))
-
 (define-public r-nsdr
   (package
     (name "r-nsdr")
@@ -12914,35 +12892,6 @@ see <https://power.larc.nasa.gov/>.")
      "This package provides functions to access NASA's Earth Imagery and Assets API
 and the Earth Observatory Natural Event Tracker (EONET) webservice.")
     (license license:cc0)))
-
-(define-public r-naryn
-  (package
-    (name "r-naryn")
-    (version "2.6.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "naryn" version))
-              (sha256
-               (base32
-                "1ipgayb0fcnbaqd9jzkf1lnpvb2jcxjiz2yvzwk9a26iz88ja6pc"))))
-    (properties `((upstream-name . "naryn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=naryn")
-    (synopsis
-     "Native Access Medical Record Retriever for High Yield Analytics")
-    (description
-     "This package provides a toolkit for medical records data analysis.  The naryn
-package implements an efficient data structure for storing medical records, and
-provides a set of functions for data extraction, manipulation and analysis.")
-    (license license:expat)))
 
 (define-public r-narray
   (package

@@ -2755,28 +2755,6 @@ statistical underpinnings are described in Derks et al. (2021)
 Derks et al. (2022) <doi:10.31234/osf.io/8nf3e>.")
     (license license:gpl3+)))
 
-(define-public r-jetpack
-  (package
-    (name "r-jetpack")
-    (version "0.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jetpack" version))
-              (sha256
-               (base32
-                "0rhr313lfvy160ccjdpvyfacskhqcdvglj0dl0krs1r8vv4fcc6m"))))
-    (properties `((upstream-name . "jetpack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-renv r-remotes r-docopt r-desc))
-    (home-page "https://github.com/ankane/jetpack")
-    (synopsis "Friendly Package Manager")
-    (description
-     "Manage project dependencies from your DESCRIPTION file.  Create a reproducible
-virtual environment with minimal additional files in your project.  Provides
-tools to add, remove, and update dependencies as well as install existing
-dependencies with a single function.")
-    (license license:expat)))
-
 (define-public r-jenga
   (package
     (name "r-jenga")

@@ -6699,13 +6699,13 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
 (define-public r-littler
   (package
     (name "r-littler")
-    (version "0.3.16")
+    (version "0.3.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "littler" version))
               (sha256
                (base32
-                "0q86kcyaa57vb3kg6mlqmz9msd6c8rs1x9kr1bm98wv6qdjr0nk5"))))
+                "0m555k5h405najcg4xsz9csyf0qn088xc60i7nhvwa7b47zf3ssc"))))
     (properties `((upstream-name . "littler")))
     (build-system r-build-system)
     (inputs (list))

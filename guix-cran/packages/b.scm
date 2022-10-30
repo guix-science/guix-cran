@@ -43,13 +43,13 @@
 (define-public r-bzinb
   (package
     (name "r-bzinb")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bzinb" version))
               (sha256
                (base32
-                "1424lwsm2ra124h0ahbl42szbx500fqkf9ccw9k1688iwxnfg7f2"))))
+                "1sfc6sfnc2hrwwr7f3nrpy6cprpicrqf12k8d3h9i8846idybw16"))))
     (properties `((upstream-name . "bzinb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -3621,6 +3621,39 @@ detection/estimation (data segmentation) in data sequences.")
 Down Table shows contributions of every variable to a final prediction.  Break
 Down Plot presents variable contributions in a concise graphical way.  This
 package work for binary classifiers and general regression models.")
+    (license license:gpl2)))
+
+(define-public r-breakaway
+  (package
+    (name "r-breakaway")
+    (version "4.8.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "breakaway" version))
+              (sha256
+               (base32
+                "1mfbzfsqqyfmhkm32qb5237q9n8qwjbqk5vsszs5lkfwi42fz3by"))))
+    (properties `((upstream-name . "breakaway")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-phyloseq
+                             r-mass
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://adw96.github.io/breakaway/")
+    (synopsis "Species Richness Estimation and Modeling")
+    (description
+     "Understanding the drivers of microbial diversity is an important frontier of
+microbial ecology, and investigating the diversity of samples from microbial
+ecosystems is a common step in any microbiome analysis.  breakaway is the
+premier package for statistical analysis of microbial diversity.  breakaway
+implements the latest and greatest estimates of species richness, described in
+Willis and Bunge (2015) <doi:10.1111/biom.12332>, Willis et al. (2017)
+<doi:10.1111/rssc.12206>, and Willis (2016) <arXiv:1604.02598>, as well as the
+most commonly used estimates, including the objective Bayes approach described
+in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
     (license license:gpl2)))
 
 (define-public r-bread
@@ -11733,6 +11766,27 @@ wide variety of situations.")
     (synopsis "Binary Graph Analysis Tools")
     (description "Tools to analyze binary graph objects.")
     (license license:asl2.0)))
+
+(define-public r-bingadsr
+  (package
+    (name "r-bingadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bingadsR" version))
+              (sha256
+               (base32
+                "071j30fmskfw513yf9fdcm711r17kcxpn5ly20dk11chkxk6mcsc"))))
+    (properties `((upstream-name . "bingadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Bing Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from bing Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-binfunest
   (package

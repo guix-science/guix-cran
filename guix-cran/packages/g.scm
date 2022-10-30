@@ -16485,18 +16485,19 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdag" version))
               (sha256
                (base32
-                "13hnp59qzsvmmqgmnym9zz7gjaqdzsv78hilqbpdnpwlpkaciqyl"))))
+                "1p31806zm2fg8b3lq1v1j0k4bzak0yi73sqzc0gm7piwqswfny70"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-pillar
                              r-magrittr

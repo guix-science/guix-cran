@@ -4240,6 +4240,29 @@ Frobenius metric as a special case), Cholesky and log-Cholesky metrics.
 References: Petersen, A., & MÃ¼ller, H.-G. (2019) <doi:10.1214/17-AOS1624>.")
     (license license:bsd-3)))
 
+(define-public r-frcc
+  (package
+    (name "r-frcc")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FRCC" version))
+              (sha256
+               (base32
+                "18i2lrx2qkwj8j1c3q2vx901hx1f68bnjyrzyhkfmnswyy358368"))))
+    (properties `((upstream-name . "FRCC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-corpcor r-ccp r-calibrate))
+    (home-page "https://cran.r-project.org/package=FRCC")
+    (synopsis "Fast Regularized Canonical Correlation Analysis")
+    (description
+     "This package contains the core functions associated with Fast Regularized
+Canonical Correlation Analysis.  Please see the following for details: Raul
+Cruz-Cano, Mei-Ling Ting Lee, Fast regularized canonical correlation analysis,
+Computational Statistics & Data Analysis, Volume 70, 2014, Pages 88-100, ISSN
+0167-9473 <doi:10.1016/j.csda.2013.09.020>.")
+    (license license:gpl2+)))
+
 (define-public r-frbs
   (package
     (name "r-frbs")
@@ -10000,6 +10023,36 @@ estimates and predictions with bootstrap or parametric methods, and provides
 convenient plotting methods.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-fitode
+  (package
+    (name "r-fitode")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fitode" version))
+              (sha256
+               (base32
+                "18c5sgvkv9w370zli2kc2gdcbpnb3f5s3ivp0zyd6rqlwdy0c6cg"))))
+    (properties `((upstream-name . "fitode")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv
+                             r-mvtnorm
+                             r-mass
+                             r-desolve
+                             r-deriv
+                             r-coda
+                             r-bbmle))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fitode")
+    (synopsis "Tools for Ordinary Differential Equations Model Fitting")
+    (description
+     "This package provides methods and functions for fitting ordinary differential
+equations (ODE) model in R'.  Sensitivity equations are used to compute the
+gradients of ODE trajectories with respect to underlying parameters, which in
+turn allows for more stable fitting.  Other fitting methods, such as MCMC
+(Markov chain Monte Carlo), are also available.")
+    (license license:gpl2+)))
+
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
@@ -15230,6 +15283,36 @@ graph.  The algorithm is implemented by using Armadillo: an open-source C++
 linear algebra library.")
     (license license:gpl2+)))
 
+(define-public r-fbcrm
+  (package
+    (name "r-fbcrm")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FBCRM" version))
+              (sha256
+               (base32
+                "0smv6snyyxwnac9d7rygsylplpv1sgbg9anya0rsdzv7jl84v7q3"))))
+    (properties `((upstream-name . "FBCRM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=FBCRM")
+    (synopsis
+     "Phase I Optimal Dose Assignment using the FBCRM and MFBCRM Methods")
+    (description
+     "This package performs dose assignment and trial simulation for the FBCRM (Fully
+Bayesian Continual Reassessment Method) and MFBCRM (Mixture Fully Bayesian
+Continual Reassessment Method) phase I clinical trial designs.  These trial
+designs extend the Continual Reassessment Method (CRM) and Bayesian Model
+Averaging Continual Reassessment Method (BMA-CRM) by allowing the prior toxicity
+skeleton itself to be random, with posterior distributions obtained from Markov
+Chain Monte Carlo.  On average, the FBCRM and MFBCRM methods outperformed the
+CRM and BMA-CRM methods in terms of selecting an optimal dose level across
+thousands of randomly generated simulation scenarios.  Details on the methods
+and results of this simulation study are available on request, and the
+manuscript is currently under review.")
+    (license license:gpl2)))
+
 (define-public r-fbati
   (package
     (name "r-fbati")
@@ -17577,31 +17660,6 @@ data.  Three different testing methods are available in the package, including
 one based on L-2 distance, one based on an ANOVA statistic, and one based on
 variance estimators.")
     (license license:gpl3)))
-
-(define-public r-fanc
-  (package
-    (name "r-fanc")
-    (version "2.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fanc" version))
-              (sha256
-               (base32
-                "17zvd3y81vqc1cwk5xidgikjxclx36ydp3mj1ps0zxzl3dz5a50f"))))
-    (properties `((upstream-name . "fanc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-ellipse))
-    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
-    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
-    (description
-     "Computes the penalized maximum likelihood estimates of factor loadings and
-unique variances for various tuning parameters.  The pathwise coordinate descent
-along with EM algorithm is used.  This package also includes a new graphical
-tool which outputs path diagram, goodness-of-fit indices and model selection
-criteria for each regularization parameter.  The user can change the
-regularization parameter by manipulating scrollbars, which is helpful to find a
-suitable value of regularization parameter.")
-    (license license:gpl2+)))
 
 (define-public r-famt
   (package

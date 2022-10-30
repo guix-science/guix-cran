@@ -12,8 +12,8 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tcl)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
@@ -8649,48 +8649,6 @@ toxpiR package behaves nearly identically to the GUI; the package documentation
 includes notes about all differences.  The vignettes download example files from
 <https://github.com/ToxPi/ToxPi-example-files>.")
     (license license:gpl3+)))
-
-(define-public r-toxicr
-  (package
-    (name "r-toxicr")
-    (version "22.8.1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ToxicR" version))
-              (sha256
-               (base32
-                "0sc7i3jzqhjwhcz83p7vgjmlpz4f27k0phbi2q5c8gxcnkzbffwp"))))
-    (properties `((upstream-name . "ToxicR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-shiny
-                             r-scales
-                             r-rcppgsl
-                             r-rcppeigen
-                             r-rcpp
-                             r-multcomp
-                             r-ggridges
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-doby
-                             r-coda))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://github.com/NIEHS/ToxicR")
-    (synopsis "Analyzing Toxicology Dose-Response Data")
-    (description
-     "Toxicology routines for analyzing dose-response data include dose-response
-analysis and trend tests.  Dose-Response methods are based upon the US EPA's
-benchmark dose software 3.  Methods have been extended to include additional
-functionality based on World Health Organization guidelines.  It further
-supports the European Food Safety Authority's draft guidance on model averaging.
- The dose-response methods and datasets used in this package are described in
-Wheeler et al. (2019) <doi:10.1111/risa.13218>, Wheeler et al. (2020)
-<doi:10.1111/risa.13537>, and Wheeler et al. (2022) <doi:10.1002/env.2728>.  NTP
-routines are described in Bailer and Portier (1988) <doi:10.2307/2531856>,
-Bieler and Williams (1993) <doi:10.2307/2532200>, Williams (1971)
-<doi:10.2307/2528930>, and Shirley (1977) <doi:10.2307/2529789>.")
-    (license license:lgpl3+)))
 
 (define-public r-toxeval
   (package

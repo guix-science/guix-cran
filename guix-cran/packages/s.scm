@@ -781,46 +781,6 @@ approximation.  Reference: McArdle and McDonald (1984)
 <doi:10.1111/j.2044-8317.1984.tb00802.x>.")
     (license license:gpl2+)))
 
-(define-public r-symphony
-  (package
-    (name "r-symphony")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "symphony" version))
-              (sha256
-               (base32
-                "0pwl9ahiv0xxc7j6448cja77fvcng28gdwhhr1z0qmhjsdcxadxq"))))
-    (properties `((upstream-name . "symphony")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uwot
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-rann
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-irlba
-                             r-harmony
-                             r-ggrepel
-                             r-ggrastr
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-class))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=symphony")
-    (synopsis "Efficient and Precise Single-Cell Reference Atlas Mapping")
-    (description
-     "This package implements the Symphony single-cell reference building and query
-mapping algorithms and additional functions described in Kang et al
-<https://www.biorxiv.org/content/10.1101/2020.11.18.389189v2>.")
-    (license license:gpl3+)))
-
 (define-public r-symmoments
   (package
     (name "r-symmoments")
@@ -15091,13 +15051,13 @@ for right-censored data.  RV Panaro (2020) <arXiv:2003.10548>.")
 (define-public r-spsur
   (package
     (name "r-spsur")
-    (version "1.0.2.4")
+    (version "1.0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spsur" version))
               (sha256
                (base32
-                "0v9l53y129k5p7xm6327hbmfh1g36k7fwbcli21ihxmc0sjp4cq7"))))
+                "0ar1b48r2hi50rvzkr432lpcc4c9r72hxkz74gip5gf12i7mx2ci"))))
     (properties `((upstream-name . "spsur")))
     (build-system r-build-system)
     (propagated-inputs (list r-sphet
@@ -15128,9 +15088,10 @@ SUR-SDM), SUR with Spatial Durbin Error Model (called SUR-SDEM), SUR with
 Spatial Autoregressive terms and Spatial Autoregressive Disturbances (called
 SUR-SARAR), SUR-SARAR with Spatial Lag of X regressors (called SUR-GNM) and SUR
 with Spatially Independent Model (called SUR-SIM).  The methodology of these
-models can be found in next references Mur, J., Lopez, F., and Herrera, M.
-(2010) <doi:10.1080/17421772.2010.516443> Lopez, F.A., Mur, J., and Angulo, A.
-(2014) <doi:10.1007/s00168-014-0624-2>.")
+models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
+(2022) <doi:10.18637/jss.v104.i11> Mur, J., Lopez, F.A., and Herrera, M. (2010)
+<doi:10.1080/17421772.2010.516443> Lopez, F.A., Mur, J., and Angulo, A. (2014)
+<doi:10.1007/s00168-014-0624-2>.")
     (license license:gpl3)))
 
 (define-public r-spsp
@@ -35447,13 +35408,13 @@ web-based graphical user interfaces.")
 (define-public r-shorts
   (package
     (name "r-shorts")
-    (version "2.1.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shorts" version))
               (sha256
                (base32
-                "0m5wcgq7jx1krhm6hvr8qf78gss139dp09j1vc9gzvd0ziaw7zj0"))))
+                "0vhgbj4q4fgz607yzw264s0r9kmmjxyah0siw2qf4pdimjvb9l7i"))))
     (properties `((upstream-name . "shorts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-purrr r-minpack-lm r-lambertw r-ggplot2))
@@ -35469,7 +35430,8 @@ The modeling method utilized in this package is based on the works of Chelly SM,
 Denis C. (2001) <doi: 10.1097/00005768-200102000-00024>, Clark KP, Rieger RH,
 Bruno RF, Stearne DJ. (2017) <doi: 10.1519/JSC.0000000000002081>, Furusawa K,
 Hill AV, Parkinson JL (1927) <doi: 10.1098/rspb.1927.0035>, Greene PR. (1986)
-<doi: 10.1016/0025-5564(86)90063-5>, and Samozino P. (2018) <doi:
+<doi: 10.1016/0025-5564(86)90063-5>, Samozino P. and Peyrot N., et al (2022)
+<doi: 10.1111/sms.14097>, and Samozino P. (2018) <doi:
 10.1007/978-3-319-05633-3_11>.")
     (license license:expat)))
 
@@ -49186,32 +49148,6 @@ methodology.  Focuses on prospective surveillance of data streams, scanning for
 clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
 Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
     (license license:gpl3+)))
-
-(define-public r-scannotate
-  (package
-    (name "r-scannotate")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scAnnotate" version))
-              (sha256
-               (base32
-                "0fz3bchszykqjb6dr3vybxzrwia5lm5rb87hi1f2ajz9z8i8vlyc"))))
-    (properties `((upstream-name . "scAnnotate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seurat r-mtps r-harmony r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1101/2022.02.19.481159")
-    (synopsis
-     "An Automated Cell Type Annotation Tool for Single-Cell RNA-Sequencing Data")
-    (description
-     "An entirely data-driven cell type annotation tools, which requires training data
-to learn the classifier, but not biological knowledge to make subjective
-decisions.  It consists of three steps: preprocessing training and test data,
-model fitting on training data, and cell classification on test data.  See
-Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
-Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
-    (license license:gpl3)))
 
 (define-public r-scan
   (package

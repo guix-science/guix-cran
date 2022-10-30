@@ -11926,6 +11926,31 @@ from the Ministry of Economy of Argentina.  Forecasts are built with the
 forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
     (license license:gpl3)))
 
+(define-public r-port4me
+  (package
+    (name "r-port4me")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "port4me" version))
+              (sha256
+               (base32
+                "0fs279qmxn0hz6w3app8dfcdhshymqrkgj53il4dzlw27ascw105"))))
+    (properties `((upstream-name . "port4me")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HenrikBengtsson/port4me")
+    (synopsis "Get the Same, Personal, Free 'TCP' Port over and over")
+    (description
+     "An implementation of the cross-platform, language-independent \"port4me\"
+algorithm (<https://github.com/HenrikBengtsson/port4me>), which (1) finds a free
+Transmission Control Protocol ('TCP') port in [1024,65535] that the user can
+open, (2) is designed to work in multi-user environments, (3), gives different
+users, different ports, (4) gives the user the same port over time with high
+probability, (5) gives different ports for different software tools, and (6)
+requires no configuration.")
+    (license license:expat)))
+
 (define-public r-porridge
   (package
     (name "r-porridge")
@@ -16014,13 +16039,13 @@ important implications for the correct interpretation of these models.")
 (define-public r-plsvarsel
   (package
     (name "r-plsvarsel")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plsVarSel" version))
               (sha256
                (base32
-                "16ldyqxky5cxgymgjp6mkwr43znh8y08dbls30my3c04ynr62bhs"))))
+                "10hjyngz6yq957gk7b62158fd08ajfb0mps55y2216f7886x9ljb"))))
     (properties `((upstream-name . "plsVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -27638,6 +27663,30 @@ classification system using R and C++.")
 <https://pcats.research.cchmc.org/api/__docs__/>, allowing R users to submit
 tasks and retrieve results.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-pcaone
+  (package
+    (name "r-pcaone")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pcaone" version))
+              (sha256
+               (base32
+                "0lpi4y8alddaplq2pjpgkbias1k08y02jg1zd236dh3n2qkfmamw"))))
+    (properties `((upstream-name . "pcaone")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://github.com/Zilong-Li/PCAoneR")
+    (synopsis
+     "Randomized Singular Value Decomposition Algorithms with 'RcppEigen'")
+    (description
+     "Randomized Singular Value Decomposition (RSVD) methods proposed in the PCAone
+paper by Li (2022) <doi:10.1101/2022.05.25.493261>, where we implement and
+propose two RSVD methods.  One is based on Yu (2017) <arXiv:1704.07669> single
+pass RSVD but with power iteration scheme.  The other is our new window based
+RSVD.")
+    (license license:gpl3+)))
 
 (define-public r-pcamixdata
   (package

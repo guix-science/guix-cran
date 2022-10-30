@@ -335,40 +335,40 @@ Bogon and Malware Hash Data Services.")
 (define-public r-cylcop
   (package
     (name "r-cylcop")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cylcop" version))
               (sha256
                (base32
-                "1cj76614jqvs2k5n5lbws0jgabr93yd6nvzr4zkgh9zdicxh731h"))))
+                "1kh1h7zmk2d2p81ih1xyf3rv1g9gpjrdwyj3j812kp0krz71km4n"))))
     (properties `((upstream-name . "cylcop")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
+                             r-transport
                              r-stringr
                              r-rlang
                              r-rgl
                              r-rdpack
                              r-purrr
                              r-plotly
-                             r-mvtnorm
                              r-movmf
+                             r-mixr
                              r-mass
                              r-infotheo
                              r-gofkernel
                              r-ggplot2
-                             r-extradistr
                              r-dplyr
                              r-data-table
                              r-cowplot
                              r-copula
                              r-circular))
-    (home-page "https://cran.r-project.org/package=cylcop")
+    (home-page "https://github.com/r-lib/devtools")
     (synopsis
      "Circular-Linear Copulas with Angular Symmetry for Movement Data")
     (description
      "Classes (S4) of circular-linear, symmetric copulas with corresponding methods,
-extending the copula package.  These copulas are especially useful for modelling
+extending the copula package.  These copulas are especially useful for modeling
 correlation in discrete-time movement data.  Methods for density, (conditional)
 distribution, random number generation, bivariate dependence measures and
 fitting parameters using maximum likelihood and other approaches.  The package
@@ -12730,48 +12730,6 @@ Antonio Punzo, Angelo Mazza, and Paul D McNicholas (2018)
 research.")
     (license license:expat)))
 
-(define-public r-contact
-  (package
-    (name "r-contact")
-    (version "1.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "contact" version))
-              (sha256
-               (base32
-                "1db3vgjlz0ivw3sx37mwy7ngjx0in3rxlm3i3akh4xzbfp9gjj87"))))
-    (properties `((upstream-name . "contact")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-lubridate
-                             r-igraph
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=contact")
-    (synopsis "Creating Contact and Social Networks")
-    (description
-     "Process spatially- and temporally-discrete data into contact and social
-networks, and facilitate network analysis by randomizing individuals movement
-paths and/or related categorical variables.  To use this package, users need
-only have a dataset containing spatial data (i.e., latitude/longitude, or planar
-x & y coordinates), individual IDs relating spatial data to specific
-individuals, and date/time information relating spatial locations to temporal
-locations.  The functionality of this package ranges from data \"cleaning\" via
-multiple filtration functions, to spatial and temporal data interpolation, and
-network creation and analysis.  Functions within this package are not limited to
-describing interpersonal contacts.  Package functions can also identify and
-quantify \"contacts\" between individuals and fixed areas (e.g., home ranges,
-water bodies, buildings, etc.).  As such, this package is an incredibly useful
-resource for facilitating epidemiological, ecological, ethological and
-sociological research.")
-    (license license:cc0)))
-
 (define-public r-construct
   (package
     (name "r-construct")
@@ -23807,13 +23765,13 @@ doing spatial data processing.")
 (define-public r-cleaner
   (package
     (name "r-cleaner")
-    (version "1.5.3")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cleaner" version))
               (sha256
                (base32
-                "0glrymsfqh3lq9n0xr202i30jm6lqwgcj0r8czy0a3066qh7hjbm"))))
+                "1rkyrp8pa5sznjszxfwgkiymmdwrm87k56ghgk39yp8f919ifkpl"))))
     (properties `((upstream-name . "cleaner")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -23822,7 +23780,7 @@ doing spatial data processing.")
                              r-knitr
                              r-crayon
                              r-backports))
-    (home-page "https://github.com/msberends/cleaner")
+    (home-page "https://msberends.github.io/cleaner/")
     (synopsis "Fast and Easy Data Cleaning")
     (description
      "Data cleaning functions for classes logical, factor, numeric, character,
@@ -27454,39 +27412,6 @@ logistic regression, negative binomial regression, Cox proportional hazards
 model and conditional logistic regression.")
     (license license:gpl2)))
 
-(define-public r-chessr
-  (package
-    (name "r-chessr")
-    (version "1.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "chessR" version))
-              (sha256
-               (base32
-                "1czv5y4ybbi15b87959vri25fy31yv2l2cdd5q6p9fw291kj1qnp"))))
-    (properties `((upstream-name . "chessR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JaseZiv/chessR")
-    (synopsis "Functions to Extract, Clean and Analyse Online Chess Game Data")
-    (description
-     "This package provides a set of functions to enable users to extract chess game
-data from popular chess sites, including Lichess'<https://lichess.org/> and
-Chess.com <https://www.chess.com/> and then perform analysis on that game data.")
-    (license license:gpl3)))
-
 (define-public r-chess
   (package
     (name "r-chess")
@@ -30745,29 +30670,6 @@ EHR corpora and obtain clinical event dates: <https://cedars.io>.")
 different levels of gene expression.  Multi-component normal mixture models and
 EM algorithms are used for modeling.")
     (license license:asl2.0)))
-
-(define-public r-ced
-  (package
-    (name "r-ced")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ced" version))
-              (sha256
-               (base32
-                "0xrf3y1cr4dylhh2xr1gggnwdwn7riz37g6yw55hyryg03hxkms6"))))
-    (properties `((upstream-name . "ced")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://artemklevtsov.gitlab.io/ced")
-    (synopsis "The Compact Encoding Detector")
-    (description
-     "R bindings of the Google Compact Encoding Detection library
-(<https://github.com/google/compact_enc_det>).  The library takes as input a
-source buffer of raw text bytes and probabilistically determines the most likely
-encoding for that text.  It was designed with accuracy, robustness, small size,
-and speed in mind.")
-    (license license:gpl2)))
 
 (define-public r-cdvinecopulaconditional
   (package

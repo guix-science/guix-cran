@@ -483,13 +483,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.11")
+    (version "2.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2parse" version))
               (sha256
                (base32
-                "0zriaxzx4rbr7km0ypwzk75qgz90i9sdi5ilp6n9w53p1zc77arq"))))
+                "1yir8wjwhm7xahc47lbdach0695d25yfvwg59qk1lh32qbdp885j"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -498,7 +498,6 @@ computational burden of recompiling rxode2'.")
                              r-qs
                              r-knitr
                              r-dparser
-                             r-devtools
                              r-crayon
                              r-checkmate
                              r-bh))
@@ -509,8 +508,8 @@ computational burden of recompiling rxode2'.")
 (2016) <doi:10.1002/psp4.12052>).  It also provides the stan based advan linear
 compartment model solutions with gradients (Carpenter et al (2015),
 <arXiv:1509.07164>) needed in nlmixr2 (Fidler et al (2019)
-<doi:10.1002/psp4.12445>) needed in nlmixr2'.  This split will reduce
-computational burden of recompiling rxode2'.")
+<doi:10.1002/psp4.12445>).  This split will reduce computational burden of
+recompiling rxode2'.")
     (license license:gpl3+)))
 
 (define-public r-rxode2ll
@@ -12019,6 +12018,27 @@ solver.")
      "Enhances the R Optimization Infrastructure ('ROI') package by registering the
 ipop solver from package kernlab'.")
     (license license:gpl3)))
+
+(define-public r-roi-plugin-highs
+  (package
+    (name "r-roi-plugin-highs")
+    (version "1.0-2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ROI.plugin.highs" version))
+              (sha256
+               (base32
+                "0069nfjad3f2kl2bh4il5kbf46kfkxr8k3gcsqahapa48ncfggvi"))))
+    (properties `((upstream-name . "ROI.plugin.highs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roi r-highs))
+    (home-page "https://cran.r-project.org/package=ROI.plugin.highs")
+    (synopsis "'HiGHS' Plugin for the 'R' Optimization Infrastructure")
+    (description
+     "Enhances the R Optimization Infrastructure ('ROI') package with the quadratic
+solver HiGHS'.  More information about HiGHS can be found at
+<https://highs.dev>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-roi-plugin-glpk
   (package
@@ -43887,54 +43907,6 @@ Nowosad (2020) <doi:10.1016/j.apgeog.2020.102239>).  It is a reimagined approach
 for analyzing residential segregation and racial diversity based on the concept
 of landscapeâ used in the domain of landscape ecology.")
     (license license:expat)))
-
-(define-public r-raceid
-  (package
-    (name "r-raceid")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RaceID" version))
-              (sha256
-               (base32
-                "0kx56ibp4kf8k6m9mx2cgvra53wanfi7q99pwzlhcj7a3p2xs7yf"))))
-    (properties `((upstream-name . "RaceID")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-umap
-                             r-runner
-                             r-rtsne
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-randomforest
-                             r-quadprog
-                             r-propr
-                             r-princurve
-                             r-pheatmap
-                             r-matrixstats
-                             r-matrix
-                             r-mass
-                             r-locfit
-                             r-leiden
-                             r-irlba
-                             r-igraph
-                             r-ica
-                             r-harmony
-                             r-ggplot2
-                             r-fpc
-                             r-fnn
-                             r-fateid
-                             r-coop
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RaceID")
-    (synopsis
-     "Identification of Cell Types and Inference of Lineage Trees from Single-Cell RNA-Seq Data")
-    (description
-     "Application of RaceID allows inference of cell types and prediction of lineage
-trees by he StemID2 algorithm.  Herman, J.S., Sagar, GrÃ¼n D. (2018)
-<DOI:10.1038/nmeth.4662>.")
-    (license license:gpl3)))
 
 (define-public r-racademyocean
   (package

@@ -7321,6 +7321,40 @@ reporting functions and an abstraction layer to facilitate automated reporting
 workflows that can be replicated across different organizational templates.")
     (license license:bsd-2)))
 
+(define-public r-onboardclient
+  (package
+    (name "r-onboardclient")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OnboardClient" version))
+              (sha256
+               (base32
+                "15ymf163a80s4yvi5z884irvkb1ivnxpr505z96s23hs8ibhk2bh"))))
+    (properties `((upstream-name . "OnboardClient")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rstudioapi
+                             r-rrapply
+                             r-plyr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=OnboardClient")
+    (synopsis "Bindings for Onboard Data's Building Data API")
+    (description
+     "This package provides a wrapper for the Onboard Data building data API
+<https://api.onboarddata.io/swagger>.  Along with streamlining access to the
+API, this package simplifies access to sensor time series data, metadata
+(sensors, equipment, and buildings), and details about the Onboard data
+model/ontology.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-onbabynames
   (package
     (name "r-onbabynames")

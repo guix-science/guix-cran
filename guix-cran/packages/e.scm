@@ -907,16 +907,17 @@ package.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extras" version))
               (sha256
                (base32
-                "0c2r5b3fhwv2spvakxilz46pdv8q9b0s0sii2gl8zm2cv83zmsyj"))))
+                "1y9i2vxp06yy0p26n8l4ky9i5zwdhdny1nw62lk6h3yk4rn63qca"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
+    (native-inputs (list r-knitr))
     (home-page "https://poissonconsulting.github.io/extras/")
     (synopsis "Helper Functions for Bayesian Analyses")
     (description
@@ -16610,49 +16611,6 @@ agnostic format, from source data published across repositories, and with
 methods that keep the derived data up-to-date as the underlying sources change.
 Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
     (license license:expat)))
-
-(define-public r-ecochange
-  (package
-    (name "r-ecochange")
-    (version "2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ecochange" version))
-              (sha256
-               (base32
-                "1sz58rxwkq387pbc1hdc7g0swk054shz5xpfij9wdz7llx0pjvk4"))))
-    (properties `((upstream-name . "ecochange")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-rastervis
-                             r-rasterdt
-                             r-raster
-                             r-lattice
-                             r-landscapemetrics
-                             r-httr
-                             r-ggplot2
-                             r-getpass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ecochange")
-    (synopsis
-     "Integrating Ecosystem Remote Sensing Products to Derive EBV Indicators")
-    (description
-     "Essential Biodiversity Variables (EBV) are state variables with dimensions on
-time, space, and biological organization that document biodiversity change.
-Freely available ecosystem remote sensing products (ERSP) are downloaded and
-integrated with data for national or regional domains to derive indicators for
-EBV in the class ecosystem structure (Pereira et al., 2013)
-<doi:10.1126/science.1229931>, including horizontal ecosystem extents,
-fragmentation, and information-theory indices.  To process ERSP, users must
-provide a polygon or geographic administrative data map.  Downloadable ERSP
-include Global Surface Water (Peckel et al., 2016) <doi:10.1038/nature20584>,
-Forest Change (Hansen et al., 2013) <doi:10.1126/science.1244693>, and
-Continuous Tree Cover data (Sexton et al., 2013)
-<doi:10.1080/17538947.2013.786146>.")
-    (license license:gpl3)))
 
 (define-public r-ecmwfr
   (package

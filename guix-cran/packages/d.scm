@@ -5473,13 +5473,13 @@ can be used for clustering of RNA methylation sequencing data.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-7")
+    (version "1.3.1-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dparser" version))
               (sha256
                (base32
-                "0i25y9sab9ffw5sapk1cv1fakramzdaz5ndj0xc541kr3mb8zvg4"))))
+                "096zpbfyi3pja17i3wgi85fm7j8abrqpp20fy52nfy1pzrm4mmhi"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))

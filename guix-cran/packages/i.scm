@@ -681,40 +681,6 @@ CMCC-BioClimInd (see Noce, S., Caporaso, L. and Santini, M. (2020)
 <doi:10.1038/s41597-020-00726-5>.")
     (license license:expat)))
 
-(define-public r-itscalledsoccer
-  (package
-    (name "r-itscalledsoccer")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "itscalledsoccer" version))
-              (sha256
-               (base32
-                "1ckb7qwy90pr676imr25j89cfy9mvgdy8c7xhrznkvyp154y7wdi"))))
-    (properties `((upstream-name . "itscalledsoccer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringi
-                             r-rlang
-                             r-r6
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-httpcache
-                             r-glue
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-clisymbols))
-    (home-page
-     "https://github.com/American-Soccer-Analysis/itscalledsoccer/tree/main/R-package")
-    (synopsis "American Soccer Analysis API Client")
-    (description
-     "This package provides a wrapper around the same API
-<https://app.americansocceranalysis.com/api/v1/__docs__/> that powers the
-American Soccer Analysis app.")
-    (license license:expat)))
-
 (define-public r-its-analysis
   (package
     (name "r-its-analysis")
@@ -13274,13 +13240,13 @@ a likelihood ratio test statistic.")
 (define-public r-icrf
   (package
     (name "r-icrf")
-    (version "2.0.0")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icrf" version))
               (sha256
                (base32
-                "0kx687q0fv5agjwfsqx12wbayrzr02x316gg3y0rklqyq5aapvfv"))))
+                "1apd9klng8dhd9z9nzqzpx8i84rvpwgyam9mzyh8jk6vd49cgjaf"))))
     (properties `((upstream-name . "icrf")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icrf")
