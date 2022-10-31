@@ -19872,13 +19872,13 @@ under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
 (define-public r-dcifer
   (package
     (name "r-dcifer")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcifer" version))
               (sha256
                (base32
-                "1lsfwla9dhdcdkyms10djac0vvns4f341z2467j0djgkdafdilc3"))))
+                "0h7wir2xd2lr6h9hh8wr335lxr5w7grf7gjhqpg3a36ycd8mibbv"))))
     (properties `((upstream-name . "dcifer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19890,7 +19890,7 @@ relatedness), an identity by descent (IBD) based method to calculate genetic
 relatedness between polyclonal infections from biallelic and multiallelic data.
 The package includes functions that format and preprocess the data, implement
 the method, and visualize the results.  Gerlovina et al. (2022)
-<doi:10.1101/2022.04.14.488406>.")
+<doi:10.1093/genetics/iyac126>.")
     (license license:expat)))
 
 (define-public r-dchipio

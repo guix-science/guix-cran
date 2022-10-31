@@ -12801,42 +12801,6 @@ PostgreSQL, MariaDB and SQLite.  The purpose is having an intuitive object
 allowing straightforward handling of SQL databases.")
     (license license:expat)))
 
-(define-public r-rock
-  (package
-    (name "r-rock")
-    (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rock" version))
-              (sha256
-               (base32
-                "1c6g563fmm1anwhfnfiirlinrdzkb6z1c1zn4hr4c331wkyvihcm"))))
-    (properties `((upstream-name . "rock")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yum
-                             r-yaml
-                             r-purrr
-                             r-markdown
-                             r-htmltools
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-diagrammersvg
-                             r-diagrammer
-                             r-data-tree))
-    (native-inputs (list r-knitr))
-    (home-page "https://r-packages.gitlab.io/rock")
-    (synopsis "Reproducible Open Coding Kit")
-    (description
-     "The Reproducible Open Coding Kit ('ROCK', and this package, rock') was developed
-to facilitate reproducible and open coding, specifically geared towards
-qualitative research methods.  Although it is a general-purpose toolkit, three
-specific applications have been implemented, specifically an interface to the
-rENA package that implements Epistemic Network Analysis ('ENA'), means to
-process notes from Cognitive Interviews ('CIs'), and means to work with
-decentralized construct taxonomies ('DCTs').")
-    (license license:gpl3)))
-
 (define-public r-rocit
   (package
     (name "r-rocit")
@@ -21269,13 +21233,13 @@ restriction of species.")
 (define-public r-ricu
   (package
     (name "r-ricu")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ricu" version))
               (sha256
                (base32
-                "1y5v42hw6wqkllg0kahwj4akaf85svyl5r8g5jbq9dpr85dnyvgx"))))
+                "062dzfygi3zc1bn40073hmd0bq4xisz3l8winrqk540sw08mv7mm"))))
     (properties `((upstream-name . "ricu")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -22023,13 +21987,13 @@ SNPs by default.")
 (define-public r-rheroicons
   (package
     (name "r-rheroicons")
-    (version "0.4.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rheroicons" version))
               (sha256
                (base32
-                "152949yy5kna10f68g06dc7h0m9jql5n2rp5z6hmp8xg3508yz9x"))))
+                "02yknpdgfjjkkk9456pxfl9qhaphwrhbxw7fh04ki9a1rgalk0xw"))))
     (properties `((upstream-name . "rheroicons")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-shiny r-htmltools))
@@ -35411,13 +35375,13 @@ factorize function in the gmp package.")
 (define-public r-rcppbdt
   (package
     (name "r-rcppbdt")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppBDT" version))
               (sha256
                (base32
-                "1yx6rlidcz5yygzk1kvc5b5vclvdkv96v1y3nghj1523nnapbyxy"))))
+                "11l70rlayg2xzmg34sg3896adzpfpvplciyicjpk963bddjb2ys8"))))
     (properties `((upstream-name . "RcppBDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -41082,13 +41046,13 @@ that generate RapiDoc documentation from an OpenAPI Specification:
 (define-public r-rapidatetime
   (package
     (name "r-rapidatetime")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RApiDatetime" version))
               (sha256
                (base32
-                "15j6vb6rm4ykwjachqyyfvjshiilyjqnpj8x6qc93savk04rf279"))))
+                "0a6wnx87cizs3cfx94mczf8cm7hwkn9rfckmk738cajgs4ahnwwr"))))
     (properties `((upstream-name . "RApiDatetime")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/rapidatetime")

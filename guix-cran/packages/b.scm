@@ -2872,13 +2872,13 @@ Tierney, Dianne Cook, Tania Prvan (2020) <arXiv:2012.01619>.")
 (define-public r-brokenstick
   (package
     (name "r-brokenstick")
-    (version "2.3.0")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brokenstick" version))
               (sha256
                (base32
-                "18bxfj79s4gynp1g13gav7lf3xi8cf3ff7dkfs997lg1ajqfkmq2"))))
+                "012r5y2w8y721a3n027j6mc6iz78q1rylr89bshnq0r6g522vw2c"))))
     (properties `((upstream-name . "brokenstick")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3884,13 +3884,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "1.3.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BranchGLM" version))
               (sha256
                (base32
-                "0isxc8r6i9iiklm9kwvk7lp9yp9kbz2s3jsk4d4l50z2vrkkw9qd"))))
+                "16f1q3jrg07kd89syjngg844m8x5r4fk0j01w8iisbi7pk17x20v"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -4421,39 +4421,6 @@ MCMC (Markov chain Monte Carlo) are used for parameter estimation.  The RJMCMC
 (Reversible-jump Markov chain Monte Carlo) is used for model selection.  GREEN
 et al. (1995) <doi:10.1093/biomet/82.4.711>.")
     (license license:gpl3)))
-
-(define-public r-bpec
-  (package
-    (name "r-bpec")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BPEC" version))
-              (sha256
-               (base32
-                "0jvq56cq1wnhwd6wvg02hbx4b5vc2hz1lyxi63pl41rk0xva615a"))))
-    (properties `((upstream-name . "BPEC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-phytools
-                             r-openstreetmap
-                             r-mvtnorm
-                             r-maptools
-                             r-igraph
-                             r-ggplot2
-                             r-ggmap
-                             r-fields
-                             r-coda
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=BPEC")
-    (synopsis "Bayesian Phylogeographic and Ecological Clustering")
-    (description
-     "Model-based clustering for phylogeographic data comprising mtDNA sequences and
-geographical locations along with optional environmental characteristics, aiming
-to identify migration events that led to homogeneous population clusters.  The
-package vignette, I. Manolopoulou, A. Hille, B. C. Emerson (2020)
-<doi:10.18637/jss.v092.i03>, provides detailed descriptions of the package.")
-    (license license:gpl2)))
 
 (define-public r-bpdir
   (package
@@ -19696,13 +19663,13 @@ cyjShiny package from GitHub.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.0.2.4")
+    (version "2.0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "1jiyx9kmlabximslmp8m0f35qc7ngh59jxkf4im3qmqfn36b6q3m"))))
+                "0mfmpbfwysk298lc81g9yp29jj3ayral3p9fd8vf0vby3jkmppbc"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

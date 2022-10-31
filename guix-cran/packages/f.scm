@@ -447,13 +447,13 @@ output probabilities.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.3")
+    (version "4.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuzzySim" version))
               (sha256
                (base32
-                "1dzjl8d9kal4rvlgb0y5jdmakgnhgzpmzqpbac50qq5zqc34462c"))))
+                "1l6mmpla0azayqsyqdlrgb40fr5vnmy82wl6a54qwinnz7vghmdn"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeva))
@@ -13658,13 +13658,13 @@ importance in general can be found here:
 (define-public r-featurehashing
   (package
     (name "r-featurehashing")
-    (version "0.9.1.4")
+    (version "0.9.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FeatureHashing" version))
               (sha256
                (base32
-                "00yrji3grqgzg8c1hwqq5kb9xgqlnzwymy0b38cwixadc5w5lq8m"))))
+                "1hfa2p78a7hhn5p0xhsha6pl2aisvkjd791j61s73w99vbysmmpl"))))
     (properties `((upstream-name . "FeatureHashing")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-magrittr r-digest r-bh))
@@ -15766,18 +15766,18 @@ shortcuts to facilitate operations on very large data.")
 (define-public r-fasttextr
   (package
     (name "r-fasttextr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastTextR" version))
               (sha256
                (base32
-                "1ggmwsw2qnq8v3s8iaxi8q66c898pc15wfgpsp6h0mc761qih5lf"))))
+                "1f1b9dsir0dxw2psp721vgpjj6pwrx1xxsd0cqxnfq8mpwswf125"))))
     (properties `((upstream-name . "fastTextR")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fastTextR")
+    (home-page "https://github.com/EmilHvitfeldt/fastTextR")
     (synopsis "An Interface to the 'fastText' Library")
     (description
      "An interface to the fastText library

@@ -427,16 +427,22 @@ the update date from the service.")
 (define-public r-ustfd
   (package
     (name "r-ustfd")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ustfd" version))
               (sha256
                (base32
-                "0r8vdh1gak0vkqfm2cjcc43jf8jpin9kvv9rv2zfzsdkylkpcpxd"))))
+                "1q2i1jlvgdyvx55r3h3f0g6zqyv197yyfkkiaixy4kzdzp9rxy9d"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr r-purrr r-lubridate r-httr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-httr
+                             r-dplyr))
     (home-page "https://github.com/groditi/ustfd")
     (synopsis "API Client for US Treasury Fiscal Data")
     (description
@@ -624,13 +630,13 @@ R for Introductory Statistics,\" second edition.")
 (define-public r-usincometaxes
   (package
     (name "r-usincometaxes")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usincometaxes" version))
               (sha256
                (base32
-                "0m816hw9hczr32adq49dl5d78r4imc97mrbyh3npdpwpzyrakhay"))))
+                "1ccga22afagdlyyw33p7rk8lr8l54li64vqav7yyqc7hz7r1mzbd"))))
     (properties `((upstream-name . "usincometaxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom r-v8 r-tidyselect r-tibble r-httr))

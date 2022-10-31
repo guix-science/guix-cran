@@ -6823,13 +6823,13 @@ regression analysis.")
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.12-4")
+    (version "0.13-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "transport" version))
               (sha256
                (base32
-                "0wvrsrlzv56lgn60c5w6fjg1zg1yvnnmnw7rm55zdycrjrkar5al"))))
+                "0msz7z4mcz4s8sffqxsxjv5pwg2cwsg55fg477pr4vp3jgfznpn5"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
@@ -12096,13 +12096,13 @@ Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 (define-public r-timechange
   (package
     (name "r-timechange")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timechange" version))
               (sha256
                (base32
-                "15qyvhs96n2s5ply2dbs07i9mpvpvffd7ni5w668f10l3hixfhq8"))))
+                "1aqbvvppyg2058fg56a769knhh3pyrcvwzkzdxmflzn9jflbz9jx"))))
     (properties `((upstream-name . "timechange")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -19696,13 +19696,13 @@ the topic.")
 (define-public r-tda
   (package
     (name "r-tda")
-    (version "1.8.7")
+    (version "1.8.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDA" version))
               (sha256
                (base32
-                "0jppqk7h9nq1ysdgkqbywsc313v9gvmnlrmsvidgdc9sa1qxw6di"))))
+                "174fy3m5l1hlkhiyg2zbi4aq4anmyb1gm0nqmydbp80mbf84krj1"))))
     (properties `((upstream-name . "TDA")))
     (build-system r-build-system)
     (inputs (list gmp))

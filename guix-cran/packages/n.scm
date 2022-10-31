@@ -3087,13 +3087,13 @@ work with data coming from a non-probabilistic sample.")
 (define-public r-nonparrolcor
   (package
     (name "r-nonparrolcor")
-    (version "0.6.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NonParRolCor" version))
               (sha256
                (base32
-                "0z4c5f2x995k2lgfwnylag69sgrzq1n3qg9c8fn1mhzkdw4y4108"))))
+                "1rh345vydbg31pbkagyb2xmsy8riam9zj7sc86m6dqvl19lglvg5"))))
     (properties `((upstream-name . "NonParRolCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -3104,21 +3104,22 @@ work with data coming from a non-probabilistic sample.")
                              r-colorspace))
     (home-page "https://cran.r-project.org/package=NonParRolCor")
     (synopsis
-     "a Non-Parametric Statistical Significance Test for Rolling Correlation")
+     "a Non-Parametric Statistical Significance Test for Rolling Window Correlation")
     (description
-     "Estimates and plots (as a heat map) the statistical significance of rolling
-window correlation coefficients, which is carried out through a non-parametric
-computing-intensive method.  This method addresses the effects due to the
-multiple testing (inflation of the Type I error) when the statistical
-significance is estimated for the rolling window correlation coefficients.  The
-method is based on Monte Carlo simulations by permuting one of the variables
-(dependent) under analysis and keeping fixed the other variable (independent).
-We improve the computational efficiency of this method to reduce the computation
+     "Estimates and plots (as a single plot and as a heat map) the rolling window
+correlation coefficients between two time series and computes their statistical
+significance, which is carried out through a non-parametric computing-intensive
+method.  This method addresses the effects due to the multiple testing
+(inflation of the Type I error) when the statistical significance is estimated
+for the rolling window correlation coefficients.  The method is based on Monte
+Carlo simulations by permuting one of the variables (e.g., the dependent) under
+analysis and keeping fixed the other variable (e.g., the independent).  We
+improve the computational efficiency of this method to reduce the computation
 time through parallel computing.  The NonParRolCor package also provides
-examples with synthetic and real-life ecological time series to exemplify its
+examples with synthetic and real-life environmental time series to exemplify its
 use.  Methods derived from R. Telford (2013)
-<https://quantpalaeo.wordpress.com/2013/01/04/> and J.M. Polanco-Martinez (2020)
-<doi:10.1016/j.ecoinf.2020.101163>.")
+<https://quantpalaeo.wordpress.com/2013/01/04/> and J.M. Polanco-Martinez and
+J.L. Lopez-Martinez (2021) <doi:10.1016/j.ecoinf.2021.101379>.")
     (license license:gpl2+)))
 
 (define-public r-nonpareil

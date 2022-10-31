@@ -16000,13 +16000,13 @@ amount of resources.")
 (define-public r-sportyr
   (package
     (name "r-sportyr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sportyR" version))
               (sha256
                (base32
-                "1pbfdyhp5i377g59bg74w026y4sxx12m5x53l1qk2bhvyiib4a12"))))
+                "0wbhj2r1b19x4qc1dfj1nk7wjrap0fzf1k7pmqq9xl3dyrgc8rch"))))
     (properties `((upstream-name . "sportyR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))

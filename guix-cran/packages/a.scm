@@ -17590,13 +17590,13 @@ available at <https://shahlab.stanford.edu/start>.")
 (define-public r-acep
   (package
     (name "r-acep")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ACEP" version))
               (sha256
                (base32
-                "1xpn3x89zdwkwvki4hij2r2fknn75qhjxhdcmlj8hk86fwhsqfm4"))))
+                "0rvmcj3my54bdkmy0qx3d9lrsc3qp2cjjsw2a9cz3cvjb2gq0krs"))))
     (properties `((upstream-name . "ACEP")))
     (build-system r-build-system)
     (home-page "https://github.com/agusnieto77/ACEP")

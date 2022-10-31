@@ -4975,13 +4975,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "1hxz98nn09y86whx2z0dr0hxgg7cz8h10jz75ri4xpgcmlfxhhw6"))))
+                "027bw6lbi6jk7x9kx743p568p5a3nd5zq1lzbsji45c58s6lkcv4"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))

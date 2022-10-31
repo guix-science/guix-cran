@@ -687,13 +687,13 @@ approaches for working with textual data.")
 (define-public r-cvxr
   (package
     (name "r-cvxr")
-    (version "1.0-10")
+    (version "1.0-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CVXR" version))
               (sha256
                (base32
-                "0cklfwsr3p4x4w7n6y3h3m4i3si8q0pwyp2vzv7kzawrmqc80484"))))
+                "0alp1g4bszxqcrjbn54bz1zswg8y10372fwwlbi0jjazycw9cap9"))))
     (properties `((upstream-name . "CVXR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scs
@@ -4968,33 +4968,6 @@ calibrated with automatic weather stations of National Meteorological Institute
 of Brazil.  The climate crop zoning of this package can be run for all the
 Brazilian territory.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-cropscaper
-  (package
-    (name "r-cropscaper")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CropScapeR" version))
-              (sha256
-               (base32
-                "0rs428sz2fd4ysz1k5i2zkjg4vga2rczlbdd042sdjq501nk2462"))))
-    (properties `((upstream-name . "CropScapeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rjsonio
-                             r-raster
-                             r-magrittr
-                             r-httr
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=CropScapeR")
-    (synopsis
-     "Access Cropland Data Layer Data via the 'CropScape' Web Service")
-    (description
-     "Interface to easily access Cropland Data Layer (CDL) data for any area of
-interest via the CropScape <https://nassgeodata.gmu.edu/CropScape/> web service.")
-    (license license:gpl2+)))
 
 (define-public r-crops
   (package

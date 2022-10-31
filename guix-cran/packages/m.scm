@@ -8216,26 +8216,26 @@ created.  The method has first been proposed by Holmstrom, Pasanen, Furrer, Sain
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.6.5")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrbin" version))
               (sha256
                (base32
-                "1zf4cf5zbw2wm4da7icwkdp0nb5aanjp578h26lsw7ac3nvmzpyd"))))
+                "1packr6j094r6z9p3cwdhbq093sliwxb8ill1dk9fh8z44ykixhi"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (home-page "http://www.kleinomicslab.com/software/")
     (synopsis "Metabolomics Data Analysis Functions")
     (description
      "This package provides a collection of functions for processing and analyzing
-metabolite data.  The namesake function \"mrbin\" converts 1D or 2D Nuclear
+metabolite data.  The namesake function mrbin() converts 1D or 2D Nuclear
 Magnetic Resonance data into a matrix of values suitable for further data
 analysis and performs basic processing steps in a reproducible way.  Negative
-values, a common issue in such data, are replaced by positive values
+values, a common issue in such data, can be replaced by positive values
 (<doi:10.1021/acs.jproteome.0c00684>).  All used parameters are stored in a
 readable text file and can be restored from that file to enable exact
-reproduction of the data at a later time.  The function \"fia\" ranks features
+reproduction of the data at a later time.  The function fia() ranks features
 according to their impact on classifier models, especially artificial neural
 network models.")
     (license license:gpl3)))
@@ -10106,13 +10106,13 @@ survival (GUTS).  See our companion paper Baudrot and Charles (2021)
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")
-    (version "1.0.0.0")
+    (version "1.0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MorphoTools2" version))
               (sha256
                (base32
-                "09s00spslzsf4x8i29fs0nggwa1afh772hkg7r6pvkam88p0x1y8"))))
+                "096siq21z4gsyn7hhkddmxvc6n9vl2diiybfjimycrb0dh17xgy4"))))
     (properties `((upstream-name . "MorphoTools2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -12291,13 +12291,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.5")
+    (version "3.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modEvA" version))
               (sha256
                (base32
-                "17rhp2i09ps04vz43k0drjwwsdx5g1615grrg1b0bf7gzbc5b9iy"))))
+                "1vq028rn4d5hlkvdp2z7a95dglw6vp4xdaia7wsbkhy3fv41mqzq"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -12308,7 +12308,8 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 includes functions for performing variation partitioning, calculating several
 measures of model discrimination and calibration, optimizing prediction
 thresholds based on a number of criteria, performing multivariate environmental
-similarity surface (MESS) analysis, and displaying various analytical plots.")
+similarity surface (MESS) analysis, and displaying various analytical plots.
+Initially described in Barbosa et al. (2013) <doi:10.1111/ddi.12100>.")
     (license license:gpl3)))
 
 (define-public r-modesto
