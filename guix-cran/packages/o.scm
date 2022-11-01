@@ -6549,6 +6549,27 @@ Index data is retrieved from the Public Health Ontario website:
 <https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm>.")
     (license license:gpl3)))
 
+(define-public r-onls
+  (package
+    (name "r-onls")
+    (version "0.1-2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "onls" version))
+              (sha256
+               (base32
+                "19pgrhr7xzas4s592l4sgv1dfynf3s3d227zwcdv6z6wrxh40hyj"))))
+    (properties `((upstream-name . "onls")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minpack-lm))
+    (home-page "https://cran.r-project.org/package=onls")
+    (synopsis "Orthogonal Nonlinear Least-Squares Regression")
+    (description
+     "Fits two-dimensional data by means of orthogonal nonlinear least-squares using
+Levenberg-Marquardt minimization and provides functionality for fit diagnostics
+and plotting.")
+    (license license:gpl2+)))
+
 (define-public r-onlineretail
   (package
     (name "r-onlineretail")
@@ -7912,13 +7933,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.1.0")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "0cmd6clj18ix64iax6j93ydgbr8gad4pn8cwh401sbbilsc9yi31"))))
+                "1p5ywrhy2bg7gdi0i05mp1pikid67ndfdx2bfsd8vpqxl6cpa6ps"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

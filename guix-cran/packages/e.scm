@@ -1768,6 +1768,35 @@ two-stage randomized experiments, randomized experiments with noncompliance, and
 randomized experiments with missing data.")
     (license license:gpl2+)))
 
+(define-public r-experiences
+  (package
+    (name "r-experiences")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "experiences" version))
+              (sha256
+               (base32
+                "1fqcq9jaw79nafm4qqbwm9qg2xlscjcyx3rmk7677xxrz7kywn94"))))
+    (properties `((upstream-name . "experiences")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
+                             r-magrittr
+                             r-huxtable
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=experiences")
+    (synopsis "Experience Research")
+    (description
+     "This package provides convenience functions for researching experiences
+including user, customer, patient, employee, and other human experiences.  It
+provides a suite of tools to simplify data exploration such as benchmarking,
+comparing groups, and checking for differences.  The outputs translate
+statistical approaches in applied experience research to human readable output.")
+    (license license:expat)))
+
 (define-public r-experdesign
   (package
     (name "r-experdesign")
@@ -18560,35 +18589,6 @@ and to retrieve the simulation outputs in an appropriate format for
 post-processing treatments.  Five sequential sampling schemes and three
 coupled-to-MCMC schemes are implemented.")
     (license license:gpl3)))
-
-(define-public r-ease
-  (package
-    (name "r-ease")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Ease" version))
-              (sha256
-               (base32
-                "1aydwpb5wl3jvqkgf9gp4cc72rmh6206ci6p4v77jwbyzak53ldc"))))
-    (properties `((upstream-name . "Ease")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Ease")
-    (synopsis "Simulating Explicit Population Genetics Models")
-    (description
-     "Implementation in a simple and efficient way of fully customisable population
-genetics simulations, considering multiple loci that have epistatic
-interactions.  Specifically suited to the modelling of multilocus
-nucleocytoplasmic systems (with both diploid and haploid loci), it is
-nevertheless possible to simulate purely diploid (or purely haploid) genetic
-models.  Examples of models that can be simulated with Ease are numerous, for
-example models of genetic incompatibilities as presented by Marie-Orleach et al.
-(2022) <doi:10.1101/2022.07.25.501356>.  Many others are conceivable, although
-few are actually explored, Ease having been developed in particular to provide a
-solution so that these kinds of models can be simulated simply.")
-    (license license:expat)))
 
 (define-public r-earthtones
   (package

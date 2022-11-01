@@ -9071,16 +9071,16 @@ surface model.")
 (define-public r-torchvisionlib
   (package
     (name "r-torchvisionlib")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchvisionlib" version))
               (sha256
                (base32
-                "172kspvyv7fkd86cj16xdifzl8cln0fi227pvxsfqpr6d6rkzqg5"))))
+                "01l04zabja3ancay7ynb5i7knqm1gd5101sx07fbid185w5j8yh4"))))
     (properties `((upstream-name . "torchvisionlib")))
     (build-system r-build-system)
-    (propagated-inputs (list r-torch r-rlang r-rcpp r-glue))
+    (propagated-inputs (list r-withr r-torch r-rlang r-rcpp r-glue))
     (home-page "https://cran.r-project.org/package=torchvisionlib")
     (synopsis "Additional Operators for Image Models")
     (description
@@ -9152,13 +9152,13 @@ Yarats(2019), <arXiv:1810.06801>; (h) radam by Liu et al. (2019),
 (define-public r-torchdatasets
   (package
     (name "r-torchdatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchdatasets" version))
               (sha256
                (base32
-                "1iliz3iv143zmffd4jvvfxzsqn8bzp1sg5573rqjjbhnvy958mgg"))))
+                "0h558d5vzxibigb5hvvfllbaxfqkdjjrl51zzj89jwmmpkcjc8zd"))))
     (properties `((upstream-name . "torchdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -12611,13 +12611,13 @@ formulas.  Supports .xlsx and .xlsm via the embedded RapidXML C++ library
 (define-public r-tidywikidatar
   (package
     (name "r-tidywikidatar")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidywikidatar" version))
               (sha256
                (base32
-                "1cw71d8zs399xmdyi0xjb8h6r6wc55kp9zys1rffqr3nrxalmr0w"))))
+                "0fy1s36f6nsxxnyc5jb35r3mxzxhq5qcj71kv0d3avnfahhcjmgc"))))
     (properties `((upstream-name . "tidywikidatar")))
     (build-system r-build-system)
     (propagated-inputs (list r-wikipedir
@@ -13990,6 +13990,41 @@ extension of data.table'.  While enjoying a tidy syntax, it also wraps
 combinations of efficient functions to facilitate frequently-used data
 operations.")
     (license license:expat)))
+
+(define-public r-tidyfit
+  (package
+    (name "r-tidyfit")
+    (version "0.5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyfit" version))
+              (sha256
+               (base32
+                "16y10bax971fqijlzkfbs6g9sgag78643j4qq11lwfk6zwpilzb4"))))
+    (properties `((upstream-name . "tidyfit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-mass
+                             r-magrittr
+                             r-furrr
+                             r-dplyr
+                             r-dials
+                             r-crayon
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidyfit")
+    (synopsis "Regularized Linear Modeling with Tidy Data")
+    (description
+     "An extension to the R tidy data environment for automated machine learning.  The
+package allows fitting and cross validation of linear regression and
+classification algorithms on grouped data.")
+    (license license:gpl3)))
 
 (define-public r-tidyfast
   (package
@@ -18407,6 +18442,31 @@ are multidimensional generalizations of matrices (two dimensional) and vectors
 (one dimensional).")
     (license license:gpl3)))
 
+(define-public r-tensorfun
+  (package
+    (name "r-tensorfun")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tensorFun" version))
+              (sha256
+               (base32
+                "0ij3dshnj448scws6d2pdw2ik34hbhq9mksmllgy0g8l257a3x8d"))))
+    (properties `((upstream-name . "tensorFun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psychtools r-mass r-climprojdiags))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tensorFun")
+    (synopsis "Basic Functions to Handle Tensor Data in Array Class")
+    (description
+     "Basic functions to handle higher-order tensor data.  See Kolda and Bader (2009)
+<doi:10.1137/07070111X> for details on tensor.  While existing packages on
+tensor data extend the base array class to some S4 classes, this package serves
+as an alternative resort to handle tensor only as array class.  Some
+functionalities related to missingness and rearrangement, discussed in Bai and
+Ng (2021) <arXiv:1910.06677>, are also supported.")
+    (license license:gpl3)))
+
 (define-public r-tensorcomplete
   (package
     (name "r-tensorcomplete")
@@ -19548,13 +19608,13 @@ Guangchuang Yu (2022, ISBN:9781032233574).")
 (define-public r-tdavec
   (package
     (name "r-tdavec")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDAvec" version))
               (sha256
                (base32
-                "1zw5yaym5q358vrppzdgqxwb4hhbqav69pvxb2wlanxap9rkxix8"))))
+                "0g449p1y16sl35md9c4qnj3n7i5nx9appqx22d7ijjhr7zpv0p1s"))))
     (properties `((upstream-name . "TDAvec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tda r-rcpp r-microbenchmark))
@@ -19900,6 +19960,63 @@ computationally very efficient.  The variance of the random error in computing
 power and sample size arising from the simulation approach is analytically
 derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
+    (license license:gpl3)))
+
+(define-public r-tciu
+  (package
+    (name "r-tciu")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TCIU" version))
+              (sha256
+               (base32
+                "1jk62c5s1nqg3aah04f8i9s52d8hqw5s1ckxj52p5bgkx55q83kw"))))
+    (properties `((upstream-name . "TCIU")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-spatstat-geom
+                             r-spatstat-core
+                             r-scales
+                             r-rrcov
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pracma
+                             r-plotly
+                             r-multiwayregression
+                             r-icsnp
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-geometry
+                             r-forecast
+                             r-foreach
+                             r-fmri
+                             r-fancycut
+                             r-extradistr
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-cubature))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/SOCR/TCIU")
+    (synopsis
+     "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
+    (description
+     "Provide the core functionality to transform longitudinal data to complex-time
+(kime) data using analytic and numerical techniques, visualize the original
+time-series and reconstructed kime-surfaces, perform model based (e.g.,
+tensor-linear regression) and model-free classification and clustering methods
+in the book Dinov, ID and Velev, MV. (2021) \"Data Science: Time Complexity,
+Inferential Uncertainty, and Spacekime Analytics\", De Gruyter STEM Series, ISBN
+978-3-11-069780-3. <https://www.degruyter.com/view/title/576646>.  The package
+includes 18 core functions which can be separated into three groups.  1) draw
+longitudinal data, such as fMRI time-series, and forecast or transform the
+time-series data.  2) simulate real-valued time-series data, e.g., fMRI
+time-courses, detect the activated areas, report the corresponding p-values, and
+visualize the p-values in the 3D brain space.  3) Laplace transform and
+kimesurface reconstructions of the fMRI data.")
     (license license:gpl3)))
 
 (define-public r-tciapathfinder
@@ -21076,13 +21193,13 @@ constructs beyond sentiment.")
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tarchetypes" version))
               (sha256
                (base32
-                "1k654w5v8vc8sn0d8qj0xbdrzaqdnngff9an9mb9rjq3jyc2k2nn"))))
+                "0fxwia3jgf85149iarzbdq9ml12icz18yf3d69pf399ld948pfl4"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

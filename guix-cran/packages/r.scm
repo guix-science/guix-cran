@@ -1803,13 +1803,13 @@ described in B. Efron. (1979) <doi:10.1214/aos/1176344552> and P. Massart (1990)
 (define-public r-rvcg
   (package
     (name "r-rvcg")
-    (version "0.21")
+    (version "0.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rvcg" version))
               (sha256
                (base32
-                "13b3l72ii7ndzmglf48xz1lm7kkpsca2q6148ihgbrpnv9n0w5r1"))))
+                "1c9s0wp4n5bz32s5h9h18sxk69fri7ikl8yx490inb6znwh7hkgc"))))
     (properties `((upstream-name . "Rvcg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
@@ -12275,13 +12275,13 @@ RogueNaRok (Aberer et al.  2013) <doi:10.1093/sysbio/sys078>.")
 (define-public r-roger
   (package
     (name "r-roger")
-    (version "1.2-0")
+    (version "1.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "roger" version))
               (sha256
                (base32
-                "0a61qfizg1xl0vw8z6hr3kxwxd2fn2762p90cpqrpnx7hpnk9v6n"))))
+                "10bwyzqd6dq2krr3gjg4mjj74mz2zlvsw764b9b8fhlwknjr13c4"))))
     (properties `((upstream-name . "roger")))
     (build-system r-build-system)
     (inputs (list))
@@ -20514,27 +20514,21 @@ connectivity.")
 (define-public r-rioja
   (package
     (name "r-rioja")
-    (version "1.0-2")
+    (version "1.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rioja" version))
               (sha256
                (base32
-                "19lw6rzcqkdrx8xw12kf096ky4wh4f5xbnksx2iawf4i630nix2l"))))
+                "1xggjapks2hipn946r65drq45xb7shhbac56r0njh0fm4wwmdzrj"))))
     (properties `((upstream-name . "rioja")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-stringr
-                             r-sjmisc
-                             r-mgcv
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-vegan r-mgcv))
     (home-page "http://www.staff.ncl.ac.uk/stephen.juggins/")
     (synopsis "Analysis of Quaternary Science Data")
     (description
-     "Stratigraphic diagrams, constrained clustering, transfer functions, and other
-methods for analysing Quaternary science data.")
+     "Constrained clustering, transfer functions, and other methods for analysing
+Quaternary science data.")
     (license license:gpl2)))
 
 (define-public r-rintimg
@@ -21690,13 +21684,13 @@ used in this package are referenced from John Ludbrook (2000)
 (define-public r-rhrv
   (package
     (name "r-rhrv")
-    (version "4.2.6")
+    (version "4.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RHRV" version))
               (sha256
                (base32
-                "1rdfq1xnimli709waypwhw1v277hxhmiy7ziizgqi4522nip4h49"))))
+                "0w4r2sk1h9wxmhs5l2dk9gzr85wrss3m4qi67mj37cjd4qmmn1wi"))))
     (properties `((upstream-name . "RHRV")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim r-nonlineartseries r-lomb))
@@ -24489,6 +24483,38 @@ data analysis.  Functions for regression, maximum likelihood, column-wise
 statistics and many more have been included.  C++ has been utilized to speed up
 the functions.")
     (license license:gpl2+)))
+
+(define-public r-rfars
+  (package
+    (name "r-rfars")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rfars" version))
+              (sha256
+               (base32
+                "1shw96m11l9119ngrsc6p4l5i2f5vfd0snj75jjwpjl8gx4m58fv"))))
+    (properties `((upstream-name . "rfars")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timetk
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-dplyr
+                             r-downloader
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/s87jackson/rfars")
+    (synopsis "Download and Analyze Fatal Crash Data")
+    (description
+     "Download raw data from the Fatality Analysis Reporting System
+(<https://cdan.dot.gov/query>) and prepare it for research.")
+    (license license:cc0)))
 
 (define-public r-rfacts
   (package
@@ -28794,13 +28820,13 @@ for multiple test procedures.  Technical Report.")
 (define-public r-regr-easy
   (package
     (name "r-regr-easy")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regr.easy" version))
               (sha256
                (base32
-                "1mdp3c0hn0y71ygnpr7jg3rifm77a2x8kmza34gln7w808avdxvf"))))
+                "18b4lznnyqyz4y5ig1dp21kmxqc488c199ss5j91i2v5d1qj2sk8"))))
     (properties `((upstream-name . "regr.easy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stargazer r-ggplot2))
@@ -30164,6 +30190,27 @@ series in a specified pair of coordinates and creates grids.")
     (description
      "This package provides a collection of tools for extracting structured data from
 <https://www.reddit.com/>.")
+    (license license:gpl3)))
+
+(define-public r-redditadsr
+  (package
+    (name "r-redditadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "redditadsR" version))
+              (sha256
+               (base32
+                "00kn34d8277f8m4xigr28lpq4s55lvli4xw70g4cbsir7m6ibklv"))))
+    (properties `((upstream-name . "redditadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Reddit Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from reddit Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
 (define-public r-redcaptidier
@@ -34637,13 +34684,13 @@ or remote URLs under a variety of settings.")
 (define-public r-rcppredis
   (package
     (name "r-rcppredis")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppRedis" version))
               (sha256
                (base32
-                "1pcfdg499vakn5rn3jald2hhrzhzsggwg95zm2293ma3pihrjvqa"))))
+                "1xlmw410bli99wjlh6kv5q1nz886vapma23mzrh083fizw3adzfk"))))
     (properties `((upstream-name . "RcppRedis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rapiserialize))

@@ -1909,27 +1909,6 @@ undecimated version and spectral bias correction described in Nelson et al.
 Python library.")
     (license license:expat)))
 
-(define-public r-dual-spls
-  (package
-    (name "r-dual-spls")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dual.spls" version))
-              (sha256
-               (base32
-                "0cy3l715bf8l6yx5sdqmz9v5an3jr0zqhc99hzqv8iyzrdrd8hwd"))))
-    (properties `((upstream-name . "dual.spls")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pdist))
-    (home-page "https://cran.r-project.org/package=dual.spls")
-    (synopsis "Dual Sparse Partial Least Squares Regression")
-    (description
-     "This package provides a series of functions for fitting a dual sparse partial
-least squares (Dual-SPLS) regression.  These functions differ by the choice of
-the underlying norm.")
-    (license license:expat)))
-
 (define-public r-dual
   (package
     (name "r-dual")

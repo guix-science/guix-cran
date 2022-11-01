@@ -130,13 +130,13 @@ by Zellner (1962) <doi:10.2307/2281644>, Zellner and Theil (1962)
 (define-public r-sysrecon
   (package
     (name "r-sysrecon")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Sysrecon" version))
               (sha256
                (base32
-                "190djsdiqrkz21hpmzgf0ip3np60plpj0a34qxvp2y6lwygvmxpa"))))
+                "1ny25nc7dzfp6r7b0qbrsd5ny6z22zgvpkax8n3kfd08fafvidyb"))))
     (properties `((upstream-name . "Sysrecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -156,8 +156,10 @@ by Zellner (1962) <doi:10.2307/2281644>, Zellner and Theil (1962)
     (home-page "https://cran.r-project.org/package=Sysrecon")
     (synopsis "Systematical Metabolic Reconstruction")
     (description
-     "Visualize the steps, transformation information, databases used in a metabolic
-reconstruction, by inputting an article in the form of txt.")
+     "The tool that quantitatively and qualitatively specifies each reconstruction
+steps and can generate a template list of reconstruction steps dynamically
+selected from a reconstruction step reservoir, constructed based on all
+available published GSM papers.")
     (license license:gpl3)))
 
 (define-public r-syslognet
@@ -11454,13 +11456,13 @@ See package README.md for basic package usage.")
 (define-public r-starter
   (package
     (name "r-starter")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "starter" version))
               (sha256
                (base32
-                "1jxwg09dl6mx4zxz8gx45kd0mfd87nhkai0p64z5wmvhds6syfbz"))))
+                "1ydqz8m9zfis0gv9sx12gs4m9kz7xk9f2l55pzifwl0m61a04c65"))))
     (properties `((upstream-name . "starter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -26074,36 +26076,6 @@ differentially expressed genes from gene expression data.")
      "Testing the mediation effect of multiple SNPs on an outcome through a mediator.")
     (license license:gpl2+)))
 
-(define-public r-smurf
-  (package
-    (name "r-smurf")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "smurf" version))
-              (sha256
-               (base32
-                "0n99dzsb17r0a6d8nkijfg6rdvvc2g4pard2dnmyjq0p69j3f3gb"))))
-    (properties `((upstream-name . "smurf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-glmnet
-                             r-catdata))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/TReynkens/smurf")
-    (synopsis "Sparse Multi-Type Regularized Feature Modeling")
-    (description
-     "Implementation of the SMuRF algorithm of Devriendt et al. (2021)
-<doi:10.1016/j.insmatheco.2020.11.010> to fit generalized linear models (GLMs)
-with multiple types of predictors via regularized maximum likelihood.")
-    (license license:gpl2+)))
-
 (define-public r-smss
   (package
     (name "r-smss")
@@ -29003,6 +28975,27 @@ transport statistics for urban studies based on publicly available data from the
 Bureau of Transport Statistics (BTS) in the United States
 <https://www.transtats.bts.gov/databases.asp?Z1qr_VQ=E&Z1qr_Qr5p=N8vn6v10&f7owrp6_VQF=D>.")
     (license license:expat)))
+
+(define-public r-skylight
+  (package
+    (name "r-skylight")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "skylight" version))
+              (sha256
+               (base32
+                "06snpj5jdr5wzv87587izvkxnxn24xl11jm7l2x2sj6s6rw16p9w"))))
+    (properties `((upstream-name . "skylight")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bluegreen-labs/skylight")
+    (synopsis "Simple Sky Illuminance Model")
+    (description
+     "This package provides a tool to calculate sky illuminance values (in lux) for
+both sun and moon.  The model is a verbatim translation of the code by Janiczek
+and DeYoung (1987) <https://archive.org/details/DTIC_ADA182110>.")
+    (license license:agpl3)))
 
 (define-public r-sky
   (package
@@ -32738,16 +32731,16 @@ of the method.  The main function of this package is simml().")
 (define-public r-simmetric
   (package
     (name "r-simmetric")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simMetric" version))
               (sha256
                (base32
-                "070va0k6inhpvzvg6zakf1w92r0547c4xhlm9vx8k2rqz1snlsd4"))))
+                "09jpjlvmvb9z2v71n8cb14b0zfi78k609c7xvs78rghdiswqfv23"))))
     (properties `((upstream-name . "simMetric")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-dplyr r-assertthat))
+    (propagated-inputs (list r-dplyr r-assertthat))
     (home-page "https://cran.r-project.org/package=simMetric")
     (synopsis
      "Metrics (with Uncertainty) for Simulation Studies that Evaluate Statistical Methods")
@@ -50787,6 +50780,33 @@ provides alternatives ranking given decision makers preferences: criteria
 preferences and alternatives preferences for each criterion.This method is
 described in Gomes et al. (2020) <doi: 10.1590/0101-7438.2020.040.00226524 >.")
     (license license:gpl3)))
+
+(define-public r-sap
+  (package
+    (name "r-sap")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SAP" version))
+              (sha256
+               (base32
+                "129szqkh4snlqn5q09yaqf6sd04nvai3a0ifk0b36yrqj92v6fd1"))))
+    (properties `((upstream-name . "SAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsda))
+    (home-page "https://cran.r-project.org/package=SAP")
+    (synopsis "Statistical Analysis and Programming")
+    (description
+     "The Hypothesis tests for the means of independent or paired groups.  This
+package investigates the normality assumption automatically.  Then, it tests the
+hypothesis tests for two independent or paired group means by using parametric
+or non-parametric tests.  It uses the Shapiro-Wilk test to test the normality
+assumption.  For independent two groups, If data comes from the normal
+distribution, the package uses the Z or t-test according to whether variances
+are known.  For paired groups, it uses paired t-test under normal data sets.  If
+data does not come from the normal distribution, the package uses the Wilcoxon
+test for independent and paired cases.")
+    (license license:gpl2)))
 
 (define-public r-saotd
   (package

@@ -2345,6 +2345,41 @@ accommodated.  Rizopoulos (2012, ISBN:9781439872864).")
 data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
     (license license:gpl2+)))
 
+(define-public r-jmatrix
+  (package
+    (name "r-jmatrix")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jmatrix" version))
+              (sha256
+               (base32
+                "1wagyc3kzgmab7z885vcgp94xn3inap6284hcghv1937yjbwr57m"))))
+    (properties `((upstream-name . "jmatrix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-memuse))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=jmatrix")
+    (synopsis
+     "Read from/Write to Disk Matrices with any Data Type in a Binary Format")
+    (description
+     "This package provides a mainly instrumental package meant to allow other
+packages whose core is written in C++ to read, write and manipulate matrices in
+a binary format so that the memory used for them is no more than strictly
+needed.  Its functionality is already inside parallelpam and scellpam', so if
+you have installed any of these, you do not need to install jmatrix'.  Using
+just the needed memory is not always true with R matrices or vectors, since by
+default they are of double type.  Trials like the float package have been done,
+but to use them you have to coerce a matrix already loaded in R memory to a
+float matrix, and then you can delete it.  The problem comes when your computer
+has not memory enough to hold the matrix in the first place, so you are forced
+to load it by chunks.  This is the problem this package tries to address (with
+partial success, but this is a difficult problem since R is not a strictly typed
+language, which is anyway quite hard to get in an interpreted language).  This
+package allows the creation and manipulation of full, sparse and symmetric
+matrices of any standard data type.")
+    (license license:gpl2+)))
+
 (define-public r-jm
   (package
     (name "r-jm")
@@ -2754,6 +2789,28 @@ statistical underpinnings are described in Derks et al. (2021)
 <doi:10.1111/ijau.12240>, Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and
 Derks et al. (2022) <doi:10.31234/osf.io/8nf3e>.")
     (license license:gpl3+)))
+
+(define-public r-jetpack
+  (package
+    (name "r-jetpack")
+    (version "0.5.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jetpack" version))
+              (sha256
+               (base32
+                "0c2vvayci7jm1p97ccgb5nccrgvdyid4fgh12cab18xwrwx1hzxx"))))
+    (properties `((upstream-name . "jetpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-renv r-remotes r-docopt r-desc))
+    (home-page "https://github.com/ankane/jetpack")
+    (synopsis "Friendly Package Manager")
+    (description
+     "Manage project dependencies from your DESCRIPTION file.  Create a reproducible
+virtual environment with minimal additional files in your project.  Provides
+tools to add, remove, and update dependencies as well as install existing
+dependencies with a single function.")
+    (license license:expat)))
 
 (define-public r-jenga
   (package
@@ -3278,13 +3335,13 @@ between MCMC samplers.")
 (define-public r-jagstargets
   (package
     (name "r-jagstargets")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jagstargets" version))
               (sha256
                (base32
-                "0zq7jz2m4y8l7rd7gli2z4bg4q8v2p4yz0y9b3mgmbvqm6yr3xbf"))))
+                "08940ki6rfs014kkwsdsnvp45zd52j217n8y0z6mch8kpyawyial"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

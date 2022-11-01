@@ -9,6 +9,8 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
@@ -5046,6 +5048,35 @@ comparison of all possible elementary treatment contrasts.  The package also
 provides an optional method of using the graphical user interface (GUI) R
 package tcltk to ensure that it is user friendly.")
     (license license:gpl2)))
+
+(define-public r-boov
+  (package
+    (name "r-boov")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Boov" version))
+              (sha256
+               (base32
+                "0vj57rlgabgs08sxi8vghkij22av99mbihrqw69d99xy8vjaf277"))))
+    (properties `((upstream-name . "Boov")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-polygonsoup
+                             r-gmp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/Boov")
+    (synopsis "Boolean Operations on Volumes")
+    (description
+     "This package performs Boolean operations on volumes: union, difference and
+intersection.  The computations are done by the C++ library CGAL
+<https://www.cgal.org/>.")
+    (license license:gpl3)))
 
 (define-public r-bootwptos
   (package
@@ -14632,13 +14663,13 @@ al. (2021) <DOI:10.18637/jss.v100.i18>.")
 (define-public r-bfp
   (package
     (name "r-bfp")
-    (version "0.0-45")
+    (version "0.0-46")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bfp" version))
               (sha256
                (base32
-                "1vgzf3nxavnydbfcg539xb0kr220yqd053697yhq84j0g2an10xg"))))
+                "129pnd3hkaan26dxjs9qp49yhbq9r7mhmp780x6yzcdn74xzwfnw"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

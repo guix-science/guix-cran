@@ -5432,6 +5432,43 @@ censored data.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mtlgmm
+  (package
+    (name "r-mtlgmm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mtlgmm" version))
+              (sha256
+               (base32
+                "0q2nl9sk03w0x8khsgwycp1c66nbgrf88hdp6gys7fmvgmaz3yj9"))))
+    (properties `((upstream-name . "mtlgmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mclust r-foreach r-doparallel r-caret))
+    (home-page "https://cran.r-project.org/package=mtlgmm")
+    (synopsis
+     "Unsupervised Multi-Task and Transfer Learning on Gaussian Mixture Models")
+    (description
+     "Unsupervised learning has been widely used in many real-world applications.  One
+of the simplest and most important unsupervised learning models is the Gaussian
+mixture model (GMM).  In this work, we study the multi-task learning problem on
+GMMs, which aims to leverage potentially similar GMM parameter structures among
+tasks to obtain improved learning performance compared to single-task learning.
+We propose a multi-task GMM learning procedure based on the
+Expectation-Maximization (EM) algorithm that not only can effectively utilize
+unknown similarity between related tasks but is also robust against a fraction
+of outlier tasks from arbitrary sources.  The proposed procedure is shown to
+achieve minimax optimal rate of convergence for both parameter estimation error
+and the excess mis-clustering error, in a wide range of regimes.  Moreover, we
+generalize our approach to tackle the problem of transfer learning for GMMs,
+where similar theoretical results are derived.  Finally, we demonstrate the
+effectiveness of our methods through simulations and a real data analysis.  To
+the best of our knowledge, this is the first work studying multi-task and
+transfer learning on GMMs with theoretical guarantees.  This package implements
+the algorithms proposed in Tian, Y., Weng, H., & Feng, Y. (2022)
+<arXiv:2209.15224>.")
+    (license license:gpl2)))
+
 (define-public r-mthapower
   (package
     (name "r-mthapower")
@@ -13361,6 +13398,33 @@ path\" that does not interfere with one another or the user's working
 environment.")
     (license license:gpl3)))
 
+(define-public r-mockthat
+  (package
+    (name "r-mockthat")
+    (version "0.2.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mockthat" version))
+              (sha256
+               (base32
+                "02j74gpppspf8ll3mvz879mnjm9wsj8dq5y3i0r8kzdizc6rxk3k"))))
+    (properties `((upstream-name . "mockthat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
+    (home-page "https://nbenn.github.io/mockthat/")
+    (synopsis "Function Mocking for Unit Testing")
+    (description
+     "With the deprecation of mocking capabilities shipped with testthat as of edition
+3 it is left to third-party packages to replace this functionality, which in
+some test-scenarios is essential in order to run unit tests in limited
+environments (such as no Internet connection).  Mocking in this setting means
+temporarily substituting a function with a stub that acts in some sense like the
+original function (for example by serving a HTTP response that has been cached
+as a file).  The only exported function with_mock() is modeled after the
+eponymous testthat function with the intention of providing a drop-in
+replacement.")
+    (license license:expat)))
+
 (define-public r-mockr
   (package
     (name "r-mockr")
@@ -15118,13 +15182,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.4-2")
+    (version "1.4-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlt" version))
               (sha256
                (base32
-                "0ris1wfcyslbnn43b7s2p0nk01wzd5m3mm6dnzra73kgkjrdr8hz"))))
+                "06jkskmixzn70i7m0zj0rgqzknmrd6jnqrwadrhf7mva38rqvw99"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -20198,6 +20262,30 @@ polymorphism sets diagnostic for groups of bacterial and viral genetic
 variants.\"")
     (license license:expat)))
 
+(define-public r-minsample2
+  (package
+    (name "r-minsample2")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "minsample2" version))
+              (sha256
+               (base32
+                "0q1rp6mdyhcp806a0m0sr4ldm5rj78wk2fljzylxfjs4c734lpbk"))))
+    (properties `((upstream-name . "minsample2")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=minsample2")
+    (synopsis "The Minimum Sample Size")
+    (description
+     "Using this package, one can determine the minimum sample size required so that
+the mean square error of the sample mean and the population mean of a
+distribution becomes less than some pre-determined epsilon, i.e.  it helps the
+user to determine the minimum sample size required to attain the pre-fixed
+precision level by minimizing the difference between the sample mean and
+population mean.")
+    (license license:gpl3)))
+
 (define-public r-minque
   (package
     (name "r-minque")
@@ -24102,13 +24190,13 @@ including dozens of shades graded from red to green.")
 (define-public r-mexhaz
   (package
     (name "r-mexhaz")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mexhaz" version))
               (sha256
                (base32
-                "14zfk9wnb062zvqj1szkas02s5pvw0i7gc618x5dwddffvl6kpfi"))))
+                "1dh92gawq6hdq0594m5ayzrafxi2mz3362dx3dgvdmznwcyqvsbz"))))
     (properties `((upstream-name . "mexhaz")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-numderiv r-mass r-lamw))
@@ -34589,16 +34677,16 @@ regression estimator.")
 (define-public r-marvel
   (package
     (name "r-marvel")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MARVEL" version))
               (sha256
                (base32
-                "0016y7nycqpqaxcybgrdicp1q9kw7pbinbi54rja6npcyiz3li86"))))
+                "1zsgj3dbqpfjv2x6xpp75n9jxf04svqffiy9gxlbxkns3clwqz5i"))))
     (properties `((upstream-name . "MARVEL")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-plyr r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MARVEL")
     (synopsis "Revealing Splicing Dynamics at Single-Cell Resolution")
@@ -34606,12 +34694,8 @@ regression estimator.")
      "Alternative splicing represents an additional and underappreciated layer of
 complexity underlying gene expression profiles.  Nevertheless, there remains
 hitherto a paucity of software to investigate splicing dynamics at single-cell
-resolution.  MARVEL quantifies percent spliced-in (PSI) values for the all
-exon-level splicing events.  Additionally, MARVEL performs differential splicing
-analysis to identify splicing events whose PSI distribution differ between
-groups of cells.  Finally, MARVEL models the PSI distribution for each event as
-a beta distribution and categorises each distribution into modalities (inspired
-by Song (2017) <doi:10.1016/j.molcel.2017.06.003>).")
+resolution.  MARVEL enables splicing analysis of single-cell RNA-sequencing data
+generated from plate- and droplet-based library preparation methods.")
     (license license:gpl3)))
 
 (define-public r-marssvrhybrid
@@ -36349,21 +36433,21 @@ uses WebGL for visualising large data sets.")
 (define-public r-mapdata
   (package
     (name "r-mapdata")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapdata" version))
               (sha256
                (base32
-                "0xnxh73rgcq55zrw81a2bq8yd67bxc2rafp4shf6nyrqj04iip0y"))))
+                "1m2r4c8f7fp900g3sdjbfxxnxjla86hn75jd8hi96ms188p0j8b0"))))
     (properties `((upstream-name . "mapdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-maps))
     (home-page "https://cran.r-project.org/package=mapdata")
     (synopsis "Extra Map Databases")
     (description
-     "Supplement to maps package, providing the larger and/or higher-resolution
-databases.")
+     "Supplement to maps package, providing some larger and/or higher-resolution
+databases.  NOTE: this is a legacy package.  The world map is out-dated.")
     (license license:gpl2)))
 
 (define-public r-mapchina

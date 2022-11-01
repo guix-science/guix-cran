@@ -4064,6 +4064,32 @@ saved locally to a location of the user's choice.  User-friendly readable files
 can also be produced for purposes of data review and validation.")
     (license license:expat)))
 
+(define-public r-ipeds
+  (package
+    (name "r-ipeds")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IPEDS" version))
+              (sha256
+               (base32
+                "122v4m3lf5ix10a1ihw1qi8w975iamscaqg2vc5f5k6z8dy9s6ph"))))
+    (properties `((upstream-name . "IPEDS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rlang r-readr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IPEDS")
+    (synopsis "Data from the Integrated Post-Secondary Education Data System")
+    (description
+     "This package contains data on Post-Secondary Institution Statistics in 2020
+<https://nces.ed.gov/ipeds/use-the-data>.  The package allows easy access to a
+wide variety of information regarding Post-secondary Institutions, its students,
+faculty, and their demographics, financial aid, educational and recreational
+offerings, and completions.  This package can be used by students, college
+counselors, or involved parents interested in pursuing higher education,
+considering their options, and securing admission into their school of choice.")
+    (license license:expat)))
+
 (define-public r-ipec
   (package
     (name "r-ipec")

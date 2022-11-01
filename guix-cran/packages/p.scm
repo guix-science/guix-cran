@@ -206,13 +206,13 @@ and Statistics Finland.")
 (define-public r-pxweb
   (package
     (name "r-pxweb")
-    (version "0.16.1")
+    (version "0.16.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pxweb" version))
               (sha256
                (base32
-                "0yjq8967c7b4qp2gw7r8mwyvh8jggqff4hf0bkvi3mix3claz3zj"))))
+                "08lwi9adf5wavpc2cbqgyyf3cygih79wkrzf2naydnlf8xn3jcm4"))))
     (properties `((upstream-name . "pxweb")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-checkmate))
@@ -13841,6 +13841,35 @@ days (Baskerville and Emin (1969) <doi:10.2307/1933912>), and determination of
 the base temperature for growing degree days (Yang et al. (1995)
 <doi:10.1016/0168-1923(94)02185-M).")
     (license license:expat)))
+
+(define-public r-polle
+  (package
+    (name "r-polle")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "polle" version))
+              (sha256
+               (base32
+                "13b59z0z6a4971bjc2b273khjcf3d8h9249b2p9bgxnyn725fws0"))))
+    (properties `((upstream-name . "polle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-targeted
+                             r-survival
+                             r-superlearner
+                             r-policytree
+                             r-lava
+                             r-future-apply
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=polle")
+    (synopsis "Policy Learning")
+    (description
+     "Framework for evaluating and learning realistic policies based on doubly robust
+loss functions.  Policy learning methods include Q-learning, see Tsiatis et al.
+(2019) <doi:10.1201/9780429192692>, (doubly robust) V-restricted Q-learning, see
+Luedtke & van der Laan (2016) <doi:10.1515/ijb-2015-0052>, and (doubly robust)
+sequential policy tree learning, see Zhou et al. <arXiv:1810.04778>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-politeness
   (package
@@ -32066,6 +32095,40 @@ et al.  2020 <doi:10.1007/s11634-019-00375-6>).  For the optional shrinkage,
 install ashr (<https://github.com/stephens999/ashr>) and CorShrink
 (<https://github.com/kkdey/CorShrink>) from GitHub (see README).")
     (license license:gpl3)))
+
+(define-public r-palaeoverse
+  (package
+    (name "r-palaeoverse")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "palaeoverse" version))
+              (sha256
+               (base32
+                "0p70y0vp3afmfk73p7dnykcn7adssrckq8di0y0znfmya6mqk8gr"))))
+    (properties `((upstream-name . "palaeoverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringdist
+                             r-sf
+                             r-pbapply
+                             r-httr
+                             r-h3jsr
+                             r-geosphere
+                             r-deeptime
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://palaeoverse.org")
+    (synopsis "Prepare and Explore Data for Palaeobiological Analyses")
+    (description
+     "This package provides functionality to support data preparation and exploration
+for palaeobiological analyses, improving code reproducibility and accessibility.
+ The wider aim of palaeoverse is to bring the palaeobiological community
+together to establish agreed standards.  The package currently includes
+functionality for data cleaning, binning (time and space), exploration,
+summarisation and visualisation.  Reference datasets (i.e.  Geological Time
+Scales <https://stratigraphy.org/chart>) and auxiliary functions are also
+provided.  Details can be found in: Jones et al., (2022) <doi:10.31223/X5Z94Q>.")
+    (license license:gpl3+)))
 
 (define-public r-palaeosig
   (package

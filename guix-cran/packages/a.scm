@@ -1679,13 +1679,13 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autonewsmd" version))
               (sha256
                (base32
-                "0r642l1ifkj9dnzi7jbxfx9l40sm4yyjrbzb9v9w5dlmswlbay3b"))))
+                "0bpwg9gr55c9fyj9xhm8hr2zhw2skghqahdw4k2l402kx8aciq1p"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-r6 r-magrittr r-git2r r-data-table))
@@ -12808,6 +12808,31 @@ functions for measuring distances.  Data is licensed under the Open Database
 License.")
     (license license:expat)))
 
+(define-public r-airnow
+  (package
+    (name "r-airnow")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "airnow" version))
+              (sha256
+               (base32
+                "0dpx2hkh0y6769pi8xzyi327lygxysckqz85z40ps50ghw02r8bh"))))
+    (properties `((upstream-name . "airnow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (home-page "https://github.com/briandconnelly/airnow")
+    (synopsis "Retrieve 'AirNow' Air Quality Observations and Forecasts")
+    (description
+     "Retrieve air quality data via the AirNow <https://www.airnow.gov/> API.")
+    (license license:expat)))
+
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
@@ -14217,6 +14242,26 @@ duration are supported.  There is also support for dummy variables in predictive
 contexts.  Code has been completely re-written in data.table for computational
 speed.")
     (license license:gpl2+)))
+
+(define-public r-ageg
+  (package
+    (name "r-ageg")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ageg" version))
+              (sha256
+               (base32
+                "0dcmwgznxf1jjsifpm3nn3jk25mm27l6f6f6jfi2n3crxgqfizyv"))))
+    (properties `((upstream-name . "ageg")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ageg")
+    (synopsis "Age Grouping Functions")
+    (description
+     "Pair of simple convenience functions to convert a vector of birth dates to age
+and age distributions.  These functions may be helpful when related age and
+custom age distributions are desired given a vector of birth dates.")
+    (license license:expat)))
 
 (define-public r-agd
   (package

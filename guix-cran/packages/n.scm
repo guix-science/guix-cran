@@ -3995,32 +3995,27 @@ Leskovec(2016),available at <arXiv:1607.00653>.")
 (define-public r-nodbi
   (package
     (name "r-nodbi")
-    (version "0.8.1")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nodbi" version))
               (sha256
                (base32
-                "0zslvf2hivc1hfp6c9sijc12mzdxy0byrhcs74f2bf0q0v9vcmx6"))))
+                "0jdjm7n885nkyg3n432qmirz4vn2dkff8y4zp669d9vilb0kp9mi"))))
     (properties `((upstream-name . "nodbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
                              r-stringi
-                             r-sofa
-                             r-rsqlite
-                             r-rpostgres
-                             r-mongolite
                              r-jsonlite
                              r-jsonify
                              r-jqr
-                             r-elastic
                              r-dbi))
     (home-page "https://docs.ropensci.org/nodbi/")
     (synopsis "'NoSQL' Database Connector")
     (description
      "Simplified document database access and manipulation, providing a common API
 across supported NoSQL databases Elasticsearch', CouchDB', MongoDB as well as
-SQLite/JSON1 and PostgreSQL'.")
+SQLite/JSON1', PostgreSQL', and DuckDB'.")
     (license license:expat)))
 
 (define-public r-noctua
@@ -5834,6 +5829,30 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
 nlmixr2 objects.")
     (license license:gpl3+)))
 
+(define-public r-nlmixr2lib
+  (package
+    (name "r-nlmixr2lib")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nlmixr2lib" version))
+              (sha256
+               (base32
+                "12nzkhz68kw4k21bgmp7w9dhcwq7q7lz09riambgyr8gqbmvzn3s"))))
+    (properties `((upstream-name . "nlmixr2lib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rxode2 r-nlmixr2est r-cli r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nlmixr2/nlmixr2lib")
+    (synopsis "Model Library for 'nlmixr2'")
+    (description
+     "This package provides a model library for nlmixr2'.  The models include (and
+plan to include) pharmacokinetic, pharmacodynamic, and disease models used in
+pharmacometrics.  Where applicable, references for each model are included in
+the meta-data for each individual model.  The package also includes model
+composition and modification functions to make model updates easier.")
+    (license license:gpl2+)))
+
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
@@ -7522,13 +7541,13 @@ rJava'/'RWeka dependency.")
 (define-public r-ngram
   (package
     (name "r-ngram")
-    (version "3.2.1")
+    (version "3.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ngram" version))
               (sha256
                (base32
-                "1zjp5gn82b733a0glqrpvm1rqmqk0apni9fbm0jszbnc3y9h478z"))))
+                "04cafc0i3605vlxmiwfyf91572ppg3wmm0hi50y9x7ai12bznchc"))))
     (properties `((upstream-name . "ngram")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/ngram")

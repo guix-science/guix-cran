@@ -4245,13 +4245,13 @@ scatterplots of data when plotting fitted logistic regressions.")
 (define-public r-logicreg
   (package
     (name "r-logicreg")
-    (version "1.6.4")
+    (version "1.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LogicReg" version))
               (sha256
                (base32
-                "0517rp55c1h8hwrz3dmnkdc6wzs6ialzdpw50icadcg9q8d0h9i0"))))
+                "052rrjr3d01c3k1ifw639jhifc4qqy3bnmysckb5mfylwfqn00yy"))))
     (properties `((upstream-name . "LogicReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -14457,13 +14457,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "1.5.4")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landscapemetrics" version))
               (sha256
                (base32
-                "1qsm0h6lcg4a7s6g1am305rcxbrrf2hb6ypd29g5k7kj80fwg1rl"))))
+                "1bk7zjmby5blpi9i51dz2ry6zjz4zm8frl61l27qw12dkhhyiyaj"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14479,12 +14479,11 @@ are raster dataset exportable to any common GIS format.")
     (description
      "Calculates landscape metrics for categorical landscape patterns in a tidy
 workflow.  landscapemetrics reimplements the most common metrics from FRAGSTATS
-(<https://www.umass.edu/landeco/research/fragstats/fragstats.html>) and new ones
-from the current literature on landscape metrics.  This package supports raster
-spatial objects and takes RasterLayer, RasterStacks, RasterBricks or lists of
-RasterLayer from the raster package as input arguments.  It further provides
-utility functions to visualize patches, select metrics and building blocks to
-develop new metrics.")
+(<https://www.umass.edu/landeco/>) and new ones from the current literature on
+landscape metrics.  This package supports raster spatial objects and takes
+RasterLayer, RasterStacks, RasterBricks or lists of RasterLayer from the raster
+package as input arguments.  It further provides utility functions to visualize
+patches, select metrics and building blocks to develop new metrics.")
     (license license:gpl3)))
 
 (define-public r-landsat8

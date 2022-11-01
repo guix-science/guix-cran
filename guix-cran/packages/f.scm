@@ -3414,37 +3414,6 @@ summarise these papers and provide additional examples.")
 this package to practice data wrangling, text analysis and network analysis.")
     (license license:expat)))
 
-(define-public r-frictionless
-  (package
-    (name "r-frictionless")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "frictionless" version))
-              (sha256
-               (base32
-                "0risjx7ahs2ysqfrlvyb88ab2r6wsfqsz4yiyac02j52lmgxncp4"))))
-    (properties `((upstream-name . "frictionless")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/frictionlessdata/frictionless-r")
-    (synopsis "Read and Write Frictionless Data Packages")
-    (description
-     "Read and write Frictionless Data Packages.  A Data Package
-(<https://specs.frictionlessdata.io/data-package/>) is a simple container format
-and standard to describe and package a collection of (tabular) data.  It is
-typically used to publish FAIR (<https://www.go-fair.org/fair-principles/>) and
-open datasets.")
-    (license license:expat)))
-
 (define-public r-fri
   (package
     (name "r-fri")
@@ -6169,31 +6138,6 @@ multiple columns by groups can be done easily.  Editing plot, inserting/adding
 text, applying theme to the plot and much more.")
     (license license:expat)))
 
-(define-public r-forestplot
-  (package
-    (name "r-forestplot")
-    (version "3.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "forestplot" version))
-              (sha256
-               (base32
-                "0xk30mpb87sab2afnk2j474qjjf4j6x1ifh9j5n7w690f481iqqb"))))
-    (properties `((upstream-name . "forestplot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-checkmate r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://gforge.se/packages/")
-    (synopsis "Advanced Forest Plot Using 'grid' Graphics")
-    (description
-     "This package provides a forest plot that allows for multiple confidence
-intervals per row, custom fonts for each text element, custom confidence
-intervals, text mixed with expressions, and more.  The aim is to extend the use
-of forest plots beyond meta-analyses.  This is a more general version of the
-original rmeta package's forestplot() function and relies heavily on the grid
-package.")
-    (license license:gpl2)))
-
 (define-public r-forestmodel
   (package
     (name "r-forestmodel")
@@ -7172,13 +7116,13 @@ format similar to shiny', form validation and more.")
 (define-public r-folio
   (package
     (name "r-folio")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "folio" version))
               (sha256
                (base32
-                "1d5xf0bhzmmh7n9rsysbp4cxipcxplmlj154lrnbwzic5jmjn80m"))))
+                "1jkix4hjb6whv1bz8gjrclwlsc415vccvldvi5l998r0bsnbm04c"))))
     (properties `((upstream-name . "folio")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/folio/")
@@ -12842,17 +12786,23 @@ public leagues, rosters, athletes, and matches.")
 (define-public r-ffdownload
   (package
     (name "r-ffdownload")
-    (version "1.0.6")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FFdownload" version))
               (sha256
                (base32
-                "1n5mmx7mgdfbxqqgv1hv3l9z7vwykp17r1ca9l7d8jcwslygbbyz"))))
+                "050mn48q36585s2xf0dbsb385rla1jnnlkppnagrijdpmkvjzfy9"))))
     (properties `((upstream-name . "FFdownload")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-xml2 r-rvest r-plyr))
-    (home-page "https://cran.r-project.org/package=FFdownload")
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xml2
+                             r-timetk
+                             r-rvest
+                             r-plyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sstoeckl/ffdownload")
     (synopsis "Download Data from Kenneth French's Website")
     (description
      "Downloads all the datasets (you can exclude the daily ones or specify a list of
@@ -14285,16 +14235,16 @@ Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-8")
+    (version "1.1-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdaPDE" version))
               (sha256
                (base32
-                "0na5rylh5lcs33xgxb4zjwmr3in5220vjhml0hlh5017hbxfgcam"))))
+                "1g5lsr06mhav9dj9072vl2sxcv3bpcv9jgnfr3vjh64asipgia39"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-rcppeigen r-plot3d r-matrix r-geometry))
+    (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
     (home-page "https://cran.r-project.org/package=fdaPDE")
     (synopsis
      "Functional Data Analysis and Partial Differential Equations (PDE); Statistical Analysis of Functional and Spatial Data, Based on Regression with PDE Regularization")
@@ -14307,7 +14257,8 @@ information about the spatial structure of the phenomenon under study can be
 incorporated in the model via the differential regularization.  See Sangalli, L.
 M. (2021).  Spatial Regression With Partial Differential Equation
 Regularisation.  International Statistical Review, 89(3), 505-531.  for an
-overview.")
+overview.  The release 1.1-9 requires R (>= 4.2.0) to be installed on windows
+machines.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-fdapaceshiny

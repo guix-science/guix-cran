@@ -571,13 +571,13 @@ adjusted effect sizes.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yfR" version))
               (sha256
                (base32
-                "11xm37i2fdvsk56q42kg1rdy82czfxl83p17c96bh63vhpj9iqp9"))))
+                "1cfz7fym2agjwna7bqscjd6mkpx07zgc3xvmp1xyrcvjs2dzwn93"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

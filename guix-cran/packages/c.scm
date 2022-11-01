@@ -4948,13 +4948,13 @@ balance.")
 (define-public r-cropzoning
   (package
     (name "r-cropzoning")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropZoning" version))
               (sha256
                (base32
-                "19082p5c322m684fkjcxa1bcmk3vzga2x75lid9zrsrh6knrqsbz"))))
+                "134spdw7qfp0f7xsjyz35xfmabqdbx37z8isf5mfg6q8rqnjhc9y"))))
     (properties `((upstream-name . "cropZoning")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rgdal r-raster r-ncdf4 r-ggplot2))
@@ -4963,7 +4963,7 @@ balance.")
     (description
      "Climate crop zoning based in minimum and maximum air temperature.  The data used
 in the package are from TerraClimate dataset
-(<http://www.climatologylab.org/terraclimate.html>), but, it have been
+(<https://www.climatologylab.org/terraclimate.html>), but, it have been
 calibrated with automatic weather stations of National Meteorological Institute
 of Brazil.  The climate crop zoning of this package can be run for all the
 Brazilian territory.")
@@ -5059,13 +5059,13 @@ Otsu Thresholding
 (define-public r-cropdemand
   (package
     (name "r-cropdemand")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropDemand" version))
               (sha256
                (base32
-                "0h4blvddk2ma3dm1k9r8gl54fg384r214hsx31w1qndwcj7gfpbh"))))
+                "0fffrwwk91gzhb2gn8m0nlnv3gmhdv2srzjblysgkh4bnqmrjvq2"))))
     (properties `((upstream-name . "cropDemand")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5079,7 +5079,7 @@ Otsu Thresholding
     (description
      "Estimation of crop water demand can be processed via this package.  As example,
 the data from TerraClimate dataset
-(<http://www.climatologylab.org/terraclimate.html>) calibrated with automatic
+(<https://www.climatologylab.org/terraclimate.html>) calibrated with automatic
 weather stations of National Meteorological Institute of Brazil is available in
 a coarse spatial resolution to do the crop water demand.  However, the user have
 also the option to download the variables directly from TerraClimate repository
@@ -11955,6 +11955,38 @@ health outcome.  International Journal of Epidemiology
 <doi:10.1093/ije/dyac078>.  The optional ggtree package can be obtained through
 Bioconductor.")
     (license license:gpl2)))
+
+(define-public r-cookies
+  (package
+    (name "r-cookies")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cookies" version))
+              (sha256
+               (base32
+                "0a5jpq698a1w6x6jrpn61zbp27xns2fr0429vcp7bncnb0vprlvd"))))
+    (properties `((upstream-name . "cookies")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httpuv
+                             r-htmltools
+                             r-glue
+                             r-clock
+                             r-cli))
+    (home-page "https://github.com/r4ds/cookies")
+    (synopsis "Use Browser Cookies with 'shiny'")
+    (description
+     "Browser cookies are name-value pairs that are saved in a user's browser by a
+website.  Cookies allow websites to persist information about the user and their
+use of the website.  Here we provide tools for working with cookies in shiny
+apps, in part by wrapping the js-cookie JavaScript library
+<https://github.com/js-cookie/js-cookie>.")
+    (license license:expat)))
 
 (define-public r-cooccur
   (package
@@ -33567,27 +33599,6 @@ were automatically produced from the source
 be found in the GitHub repository.")
     (license license:gpl2+)))
 
-(define-public r-catdata
-  (package
-    (name "r-catdata")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "catdata" version))
-              (sha256
-               (base32
-                "14kx7yi0cv6dyh9wjasb8gn6cp1bhglgwql7dc2a7lqvdcp0d5vj"))))
-    (properties `((upstream-name . "catdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=catdata")
-    (synopsis "Categorical Data")
-    (description
-     "This R-package contains examples from the book \"Regression for Categorical
-Data\", Tutz 2012, Cambridge University Press.  The names of the examples refer
-to the chapter and the data set that is used.")
-    (license license:gpl2)))
-
 (define-public r-catcont
   (package
     (name "r-catcont")
@@ -33872,6 +33883,31 @@ bipartite networks.  Includes tools to fit a variety of statistical network
 models and sample coverage estimators to highlight most likely missing links.
 Also includes simple functions to resample from observed networks to generate
 confidence intervals for common ecological network metrics.")
+    (license license:gpl3)))
+
+(define-public r-casmi
+  (package
+    (name "r-casmi")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CASMI" version))
+              (sha256
+               (base32
+                "0nhjkvaa27l8j390sl220ckkjbgqj3dm8pnvw58fnprjhi9203sc"))))
+    (properties `((upstream-name . "CASMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-entropyestimation r-entropy))
+    (home-page "https://cran.r-project.org/package=CASMI")
+    (synopsis "'CASMI'-Based Functions")
+    (description
+     "This package contains Coverage Adjusted Standardized Mutual Information
+('CASMI')-based functions.  CASMI is a fundamental concept of a series of
+methods.  For more information about CASMI and CASMI'-related methods, please
+refer to the corresponding publications (for example, a feature selection
+method, Shi, J., Zhang, J., & Ge, Y. (2019) <doi:10.3390/e21121179>, and a
+dataset quality measurement method, Shi, J., Zhang, J., & Ge, Y. (2019)
+<doi:10.1109/ICHI.2019.8904553>) or contact the package author.")
     (license license:gpl3)))
 
 (define-public r-casmap
