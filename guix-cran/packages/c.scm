@@ -2407,13 +2407,13 @@ data.")
 (define-public r-ctrdata
   (package
     (name "r-ctrdata")
-    (version "1.10.2")
+    (version "1.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctrdata" version))
               (sha256
                (base32
-                "0gp7c71izpybp0sv7xrm8ndc1sih2bibj2p2404nkfjam559rwp7"))))
+                "0njg4xgrshnx3mdpzvciah25zkmgs50f9xcd2q1bfb0q9lckw66p"))))
     (properties `((upstream-name . "ctrdata")))
     (build-system r-build-system)
     (inputs (list sed php perl coreutils))
@@ -2436,11 +2436,11 @@ the European Union Clinical Trials Register ('EUCTR',
 <https://www.clinicaltrialsregister.eu/>), ClinicalTrials.gov ('CTGOV',
 <https://clinicaltrials.gov/>) and the ISRCTN (<http://www.isrctn.com/>).  Trial
 information is downloaded, converted and stored in a database ('PostgreSQL',
-SQLite or MongoDB'; via package nodbi').  Functions are included to identify
-deduplicated records, to easily find and extract variables (fields) of interest
-even from complex nesting as used by the registers, and to update previous
-queries.  The package can be used for meta-analysis and trend-analysis of the
-design and conduct as well as for results of clinical trials.")
+SQLite', DuckDB or MongoDB'; via package nodbi').  Functions are included to
+identify deduplicated records, to easily find and extract variables (fields) of
+interest even from complex nesting as used by the registers, and to update
+previous queries.  The package can be used for meta-analysis and trend-analysis
+of the design and conduct as well as for results of clinical trials.")
     (license license:expat)))
 
 (define-public r-ctqr
@@ -5710,13 +5710,13 @@ analysis.")
 (define-public r-crfsuite
   (package
     (name "r-crfsuite")
-    (version "0.4")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crfsuite" version))
               (sha256
                (base32
-                "0arxbszaf1y8cqgzbq9a5l58n3c3rhjfp78lnhdxg95cdmdzhcfd"))))
+                "0vm4gpyb9qxlj0xixnmjs8hv3xi3ydzd8dbymk7f78nafdvqwkxy"))))
     (properties `((upstream-name . "crfsuite")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -7321,13 +7321,13 @@ doi:10.1016/j.csda.2010.03.010")
 (define-public r-cpc
   (package
     (name "r-cpc")
-    (version "2.2.1")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CPC" version))
               (sha256
                (base32
-                "0nb5ghcrzjncqwpk0x7k4l4mkhrra46dqbbk5clpld56r7j4cn0b"))))
+                "1lh6g2d2xk41nnafcx2qvcigb957ccwq19vp1fcmxq8gmzcg3yr4"))))
     (properties `((upstream-name . "CPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-dbscan r-cluster))
@@ -9196,13 +9196,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.4-1")
+    (version "0.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cotram" version))
               (sha256
                (base32
-                "1myfyx1bp50jywccns65hkxd2vs2zr0jmwj4i6h986n2zs6vdy60"))))
+                "0qgbckdjp53xd40b83xbnadgn375lmm69hvilmc4ka9h5drj2igb"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -11959,13 +11959,13 @@ Bioconductor.")
 (define-public r-cookies
   (package
     (name "r-cookies")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cookies" version))
               (sha256
                (base32
-                "0a5jpq698a1w6x6jrpn61zbp27xns2fr0429vcp7bncnb0vprlvd"))))
+                "1p7xf86qp9w50g401b12amfx609k349skvqrbzh3x0sq80k1miyx"))))
     (properties `((upstream-name . "cookies")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16631,6 +16631,26 @@ estimator are nested.")
 events competitions.  The functions are based on the scoring tables for combined
 events set forth by the International Association of Athletics Federation
 (2001).")
+    (license license:gpl3)))
+
+(define-public r-combinatorics
+  (package
+    (name "r-combinatorics")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "combinatorics" version))
+              (sha256
+               (base32
+                "02v0fz6qw08v4krnaj6ph76d6n2al12c48vl81ajj5hvlnjwldhg"))))
+    (properties `((upstream-name . "combinatorics")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=combinatorics")
+    (synopsis "Introduction to Some Combinatorial Relations")
+    (description
+     "Determining the value of Stirling numbers of 1st kind and 2nd kind,references:
+BÃ³na,MiklÃ³s(2017,ISBN 9789813148840).")
     (license license:gpl3)))
 
 (define-public r-combinationpvalues
@@ -28680,6 +28700,31 @@ that are not second-order stationary.  Important functions in this package are
 CGP, print.CGP, summary.CGP, predict.CGP and plotCGP.")
     (license license:lgpl2.1)))
 
+(define-public r-cgnm
+  (package
+    (name "r-cgnm")
+    (version "0.5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CGNM" version))
+              (sha256
+               (base32
+                "0li1cg0hxj5i9dxl2s06rwnssiyd2af90g34knmhlpn3f2pzb690"))))
+    (properties `((upstream-name . "CGNM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CGNM")
+    (synopsis "Cluster Gauss-Newton Method")
+    (description
+     "Find multiple solutions of a nonlinear least squares problem.  Cluster
+Gauss-Newton method does not assume uniqueness of the solution of the nonlinear
+least squares problem and compute approximate multiple minimizers.  Please cite
+the following paper when this software is used in your research: Aoki et al.
+(2020) <doi:10.1007/s11081-020-09571-2>.  Cluster GaussâNewton method.
+Optimization and Engineering, 1-31.")
+    (license license:expat)))
+
 (define-public r-cgmquantify
   (package
     (name "r-cgmquantify")
@@ -31165,39 +31210,6 @@ stopping rules.  Functions for generating item banks and responses are also
 provided.  To guide item bank calibration, model comparison at the item level
 can be conducted using the two-step likelihood ratio test statistic by Sorrel,
 de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
-    (license license:gpl3)))
-
-(define-public r-cdatanet
-  (package
-    (name "r-cdatanet")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CDatanet" version))
-              (sha256
-               (base32
-                "0slw0lz0k6706hww7msfkal1nwq1252cnxswpi9b9yjm9qnmj1hs"))))
-    (properties `((upstream-name . "CDatanet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcppdist
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-formula-tools
-                             r-formula
-                             r-ddpcr))
-    (home-page "https://github.com/ahoundetoungan/CDatanet")
-    (synopsis "Modeling Count Data with Peer Effects")
-    (description
-     "Likelihood-based estimation and data generation from a class of models used to
-estimate peer effects on count data by controlling for the network endogeneity.
-This class includes count data models with social interactions (Houndetoungan
-2022; <doi:10.2139/ssrn.3721250>), spatial tobit models (Xu and Lee 2015;
-<doi:10.1016/j.jeconom.2015.05.004>), and spatial linear-in-means models (Lee
-2004; <doi:10.1111/j.1468-0262.2004.00558.x>).")
     (license license:gpl3)))
 
 (define-public r-cdata

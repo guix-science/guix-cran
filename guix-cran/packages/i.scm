@@ -5688,24 +5688,35 @@ merging.")
 (define-public r-intervalquestionstat
   (package
     (name "r-intervalquestionstat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IntervalQuestionStat" version))
               (sha256
                (base32
-                "17q9y2if60g4546jwkyyi9p2vbkzbzgnf4zwbxw4fz3473w84sls"))))
+                "0pvz5l0pvw8akmvv51c48fx1ppms9iq6s4bwscja8jk56akx2wlq"))))
     (properties `((upstream-name . "IntervalQuestionStat")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=IntervalQuestionStat")
+    (home-page "https://github.com/garciagarjose/IntervalQuestionStat/")
     (synopsis "Tools to Deal with Interval-Valued Responses in Questionnaires")
     (description
-     "S4 classes, methods and functions to deal with interval-valued responses in
-questionnaires.  They allow for computing any arithmetic and statistical
-operations with interval-valued data, preparing plots, transforming
-interval-valued responses into Likert-type and visual analogue scales responses,
-analysing respondents answers reliability and simulating interval-valued
-responses in a questionnaire.")
+     "This package provides a user-friendly toolbox for doing the statistical analysis
+of interval-valued responses in questionnaires measuring intrinsically imprecise
+human attributes or features (attitudes, perceptions, opinions, feelings, etc.).
+ In particular, this package provides S4 classes, methods, and functions in
+order to compute basic arithmetic and statistical operations with
+interval-valued data; prepare customized plots; associate each interval-valued
+response to its equivalent Likert-type and visual analogue scales answers
+through the minimum theta-distance and the mid-point criteria; analyze the
+reliability of respondents answers from the internal consistency point of view
+by means of Cronbach's alpha coefficient; and simulate interval-valued responses
+in this type of questionnaires.  The package also incorporates some real-life
+data that can be used to illustrate its working with several non-trivial
+reproducible examples.  The methodology used in this package is based in many
+theoretical and applied publications from SMIRE+CoDiRE (Statistical Methods with
+Imprecise Random Elements and Comparison of Distributions of Random Elements)
+Research Group (<https://bellman.ciencias.uniovi.es/smire+codire/>) from the
+University of Oviedo (Spain).")
     (license license:lgpl3+)))
 
 (define-public r-intervalaverage
@@ -6483,38 +6494,6 @@ please consult: Aldwaik,Safaa Zakaria and Robert Gilmore Pontius Jr. (2012).
 changes by interval, category, and transition\".  Landscape and Urban Planning.
 106, 103-114. <doi:10.1016/j.landurbplan.2012.02.010>.")
     (license license:gpl2+)))
-
-(define-public r-intensegrid
-  (package
-    (name "r-intensegrid")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intensegRid" version))
-              (sha256
-               (base32
-                "15vjf39fx6bkay15nbmqnv5vp8w6xy6fzf1lglqr6506pyaqh8w8"))))
-    (properties `((upstream-name . "intensegRid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/KKulma/intensegRid")
-    (synopsis "R Wrapper for the Carbon Intensity API")
-    (description
-     "Electricity is not made equal and it vary in its carbon footprint (or carbon
-intensity) depending on its source.  This package enables to access and query
-data provided by the Carbon Intensity API (<https://carbonintensity.org.uk/>).
-National Gridâs Carbon Intensity API provides an indicative trend of regional
-carbon intensity of the electricity system in Great Britain.")
-    (license license:cc0)))
 
 (define-public r-integratedmrf
   (package
@@ -11893,13 +11872,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ifaa
   (package
     (name "r-ifaa")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IFAA" version))
               (sha256
                (base32
-                "0shgcwbcllf9xb97pdpf4mb1xzvh5b2q784qdliac7hzymd2jg62"))))
+                "0rk9xwpcm2dhf1fxm9adyhmpvf8ibg8m2v4jn5x1alynnzwdm25j"))))
     (properties `((upstream-name . "IFAA")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -12168,25 +12147,21 @@ other analyses useful for understanding the spread of infectious disease.")
 (define-public r-idsl-ufax
   (package
     (name "r-idsl-ufax")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFAx" version))
               (sha256
                (base32
-                "09ghkvwywhi0790wql1lrpcgylpx3pxzclw1cbq2lcpmi9lyq0xw"))))
+                "09g7zbvimhcfj2zwngsfgjfrrkj3ljfdibwdq4zrwijd0n09g9b3"))))
     (properties `((upstream-name . "IDSL.UFAx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rnetcdf
-                             r-readxl
+    (propagated-inputs (list r-readxl
                              r-rcppalgos
                              r-idsl-ufa
-                             r-idsl-mxp
                              r-idsl-ipa
                              r-foreach
-                             r-doparallel
-                             r-base64enc))
+                             r-doparallel))
     (home-page
      "https://ufa.idsl.me/enumerating-chemical-space/exhaustive-enumeration")
     (synopsis "Exhaustive Chemical Enumeration for United Formula Annotation")
@@ -12200,26 +12175,16 @@ C, B, Br, Cl, K, S, Se, Si, N, H, As, F, I, Na, O, and P.")
 (define-public r-idsl-ufa
   (package
     (name "r-idsl-ufa")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFA" version))
               (sha256
                (base32
-                "17x703za3smx2mlb1hvyx8agq8anw0932ssf2l14c09h5n139yh6"))))
+                "0g3q2qih21kv72cl2bpcf84mdc9kg3jqcbpyd4phbsdq9bj519q8"))))
     (properties `((upstream-name . "IDSL.UFA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rnetcdf
-                             r-readxl
-                             r-idsl-mxp
-                             r-idsl-ipa
-                             r-gridextra
-                             r-ggplot2
-                             r-ga
-                             r-foreach
-                             r-doparallel
-                             r-base64enc))
+    (propagated-inputs (list r-readxl r-idsl-ipa r-foreach r-doparallel))
     (home-page "https://ufa.idsl.me")
     (synopsis "United Formula Annotation (UFA) for HRMS Data Processing")
     (description
@@ -12253,16 +12218,16 @@ process user-defined adduct formulas.")
 (define-public r-idsl-mxp
   (package
     (name "r-idsl-mxp")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.MXP" version))
               (sha256
                (base32
-                "0mc3p7s9y0nm1xpajq06039bpfsq8qfwk1azicrkd53dsvqbbg45"))))
+                "0mh15bcrv3iy033l9ry0j0b0my3xxyn32p52rrfya5ybc0d35c79"))))
     (properties `((upstream-name . "IDSL.MXP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rnetcdf r-base64enc))
+    (propagated-inputs (list r-xml2 r-base64enc))
     (home-page "https://ipa.idsl.me/mxp")
     (synopsis
      "Parser for mzML, mzXML, and netCDF Files (Mass Spectrometry Data)")
@@ -12275,33 +12240,24 @@ files.")
 (define-public r-idsl-ipa
   (package
     (name "r-idsl-ipa")
-    (version "2.4")
+    (version "2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.IPA" version))
               (sha256
                (base32
-                "1ppbq27nw3xgvpr6lswx3hfx2jkr9rnkcq7hvzpz44x5mk8dc3vw"))))
+                "0zfskczgpw57z94la0n5883mhcmijgknb7sf87cr5wz3kgp19qxd"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rnetcdf
-                             r-readxl
-                             r-png
-                             r-idsl-mxp
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-base64enc))
+    (propagated-inputs (list r-readxl r-idsl-mxp r-foreach r-doparallel))
     (home-page "https://ipa.idsl.me")
     (synopsis "Intrinsic Peak Analysis (IPA) for HRMS Data")
     (description
      "This package provides a sophisticated pipeline for processing LC/HRMS data to
-extract signals of organic compounds.  The package performs isotope pairing,
-peak detection, alignment, RT correction, gap filling, peak annotation and
-visualization of extracted ion chromatograms (EIC) and total ion chromatograms
-(TIC).")
+extract signals of organic compounds.  The package performs ion pairing, peak
+detection, alignment, RT correction, gap filling, peak annotation and
+visualization of extracted ion chromatograms (EICs) and total ion chromatograms
+(TICs).")
     (license license:expat)))
 
 (define-public r-idsa

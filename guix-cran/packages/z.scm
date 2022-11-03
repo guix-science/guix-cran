@@ -364,6 +364,33 @@ Autoregressive (ZINAR(p)) processes, as described in Garay et al. (2020)
 <doi:10.1080/00949655.2020.1754819>.")
     (license license:gpl3+)))
 
+(define-public r-zinar1
+  (package
+    (name "r-zinar1")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ZINAR1" version))
+              (sha256
+               (base32
+                "1didfjb4215k9q82n1vaqln6f7fszsycsflydak2zl7xwficwhy6"))))
+    (properties `((upstream-name . "ZINAR1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-statmod
+                             r-scales
+                             r-mass
+                             r-gtools
+                             r-gamlss-dist))
+    (home-page "https://cran.r-project.org/package=ZINAR1")
+    (synopsis
+     "Simulates ZINAR(1) Model and Estimates Its Parameters Under Frequentist Approach")
+    (description
+     "Generates Realizations of First-Order Integer Valued Autoregressive Processes
+with Zero-Inflated Innovations (ZINAR(1)) and Estimates its Parameters as
+described in Garay et al. (2021) <doi:10.1007/978-3-030-82110-4_2>.")
+    (license license:gpl3+)))
+
 (define-public r-zillowr
   (package
     (name "r-zillowr")

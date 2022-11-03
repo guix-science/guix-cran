@@ -393,32 +393,6 @@ Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
 <doi:10.1016/j.envsoft.2020.104907>.")
     (license license:gpl2+)))
 
-(define-public r-synthcast
-  (package
-    (name "r-synthcast")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SynthCast" version))
-              (sha256
-               (base32
-                "0gln7x1vlfdnr0qaqgagr93r484hv3dp65n24b3wl3p02msz9bgn"))))
-    (properties `((upstream-name . "SynthCast")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-synth r-forcats r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://viniciusmsousa.github.io/SynthCast/")
-    (synopsis "Synthetic Control Method to Forecast Series")
-    (description
-     "Not a new method implementation.  Usage of the Synthetic Control Method, see
-Abadie et al. (2011) <doi:10.18637/jss.v042.i13>, as an ad-hoc approach to
-forecast series with panel in a specific context.  The context being: There are
-units in different stages of a certain journey, there the assumption that the
-unitsâ behavior throw out the journey are similar is valid and there are not
-enough data to use traditional forecasting methods.  For a usage example see the
-package home page documentation.")
-    (license license:gpl3+)))
-
 (define-public r-synthacs
   (package
     (name "r-synthacs")
@@ -14113,13 +14087,13 @@ expression level in the parent species.")
 (define-public r-srm
   (package
     (name "r-srm")
-    (version "0.3-6")
+    (version "0.4-26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "srm" version))
               (sha256
                (base32
-                "0mc97pv1hsmia4v2wyb8yi37i3v1xypfv9xmhjb989xnnysf1lm3"))))
+                "1cw0a0n1chnri6jmcav04qa52s8jakviwjpq1yx1x5z2ya978r26"))))
     (properties `((upstream-name . "srm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -21000,13 +20974,13 @@ also been substantially increased.")
 (define-public r-spate
   (package
     (name "r-spate")
-    (version "1.7.3")
+    (version "1.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spate" version))
               (sha256
                (base32
-                "084iwp1wjrq06f3849iakzkik3gxms9lrq1l07kqyaz53di3dxjx"))))
+                "0fc09y54g1h9pmc0rfwbrlzsck27kxhsynzwyxydysmda133spdf"))))
     (properties `((upstream-name . "spate")))
     (build-system r-build-system)
     (inputs (list fftw))
@@ -25374,13 +25348,13 @@ characteristics among a social network.")
 (define-public r-sns
   (package
     (name "r-sns")
-    (version "1.1.2")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sns" version))
               (sha256
                (base32
-                "132zd57xb2y0nshw4lakf49r2mvvkv7j32f7l7hqrh91mw7wyqpr"))))
+                "1zb0s89lp2049i7l919dpd7bd396y9s6v8913qz56fvsq95sbvcn"))))
     (properties `((upstream-name . "sns")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-coda))
@@ -25400,7 +25374,9 @@ be improved via state space partitioning strategy, in which SNS is applied to
 disjoint subsets of state space, wrapped in a Gibbs cycle.  Numerical
 differentiation is available when analytical expressions for gradient and
 Hessian are not available.  Facilities for validation and numerical
-differentiation of log-density are provided.")
+differentiation of log-density are provided.  Note: Formerly available versions
+of the MfUSampler can be obtained from the archive
+<https://cran.r-project.org/src/contrib/Archive/MfUSampler/>.")
     (license license:gpl2+)))
 
 (define-public r-snpsettest
@@ -26095,6 +26071,36 @@ differentially expressed genes from gene expression data.")
      "Datasets used in \"Statistical Methods for the Social Sciences\" (SMSS) by Alan
 Agresti and Barbara Finlay.")
     (license license:gpl3)))
+
+(define-public r-smsroc
+  (package
+    (name "r-smsroc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sMSROC" version))
+              (sha256
+               (base32
+                "16fllr09mjxqwjm4rq9bc89bl1hz1kq6bs6m75qwwwm73j0xk40h"))))
+    (properties `((upstream-name . "sMSROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-thregi
+                             r-survival
+                             r-rms
+                             r-risca
+                             r-plotroc
+                             r-icenreg
+                             r-ggplot2
+                             r-foreach
+                             r-flextable))
+    (home-page "https://cran.r-project.org/package=sMSROC")
+    (synopsis "Assessment of Diagnostic and Prognostic Markers")
+    (description
+     "This package provides estimations of the Receiver Operating Characteristic (ROC)
+curve and the Area Under the Curve (AUC) based on the two-stages mixed-subjects
+ROC curve estimator (Diaz-Coto et al. (2020) <doi:10.1515/ijb-2019-0097> and
+Diaz-Coto et al. (2020) <doi:10.1080/00949655.2020.1736071>).")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-sms
   (package
@@ -35176,17 +35182,17 @@ and noise variance under mild noise correlations.")
 (define-public r-sht
   (package
     (name "r-sht")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SHT" version))
               (sha256
                (base32
-                "0dj6z07qagk9wjp50b9w078zcvdss99cj0xalykwl63l1l96w6cw"))))
+                "03mzjm0hx1i8jz7gam19zyr5w6whwk7a3gfid68h5hj8x60p04wx"))))
     (properties `((upstream-name . "SHT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-pracma r-flare))
-    (home-page "https://kisungyou.com/SHT/")
+    (home-page "https://www.kisungyou.com/SHT/")
     (synopsis "Statistical Hypothesis Testing Toolbox")
     (description
      "We provide a collection of statistical hypothesis testing procedures ranging
@@ -35499,6 +35505,27 @@ within a R script and returns all valid arguments of a selected function.")
     (description
      "An interface to the Admin API of the E-commerce service Shopify,
 (<https://help.shopify.com/en/api/reference>).")
+    (license license:gpl3)))
+
+(define-public r-shopifyadsr
+  (package
+    (name "r-shopifyadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shopifyadsR" version))
+              (sha256
+               (base32
+                "0vd8md4w4v05l9d5v7kx21kw3rkbkx8iqf4da44x95kfnnxiqjcx"))))
+    (properties `((upstream-name . "shopifyadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get 'Shopify' Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Shopify Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
 (define-public r-shock
@@ -35866,13 +35893,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "0.6")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyStorePlus" version))
               (sha256
                (base32
-                "1j9ilkgr7ar4hdv2lwsvai53s9l7p2scy32qjd0y7d8irayqwrmv"))))
+                "17hccmfw9nhgmh2hkphjj5lq3y4k7xp1bb9l3mbwlpiy7a38v0xr"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
@@ -38306,13 +38333,13 @@ Nost, J Chiquet, M Chadeau-Hyam (2021) <arXiv:2106.02521>).")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shar" version))
               (sha256
                (base32
-                "1zg7hh72inqdz39ddrnsc5ddh5qk5qwr3prb17p9jfa80apyp5px"))))
+                "0klkqly8wdnfkg43d1fwvvlaavyd810jn289y83d9pmny58cmwm8"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-spatstat-random r-spatstat-geom
@@ -47186,6 +47213,27 @@ situations.  Covers both parametric forecast distributions (such as mixtures of
 Gaussians) and distributions generated via simulation.")
     (license license:gpl2+)))
 
+(define-public r-scoringfunctions
+  (package
+    (name "r-scoringfunctions")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scoringfunctions" version))
+              (sha256
+               (base32
+                "140fz1zlx8841xnx4m74lkl7x18ysksqyikjxl60vwmaidbcfhhv"))))
+    (properties `((upstream-name . "scoringfunctions")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=scoringfunctions")
+    (synopsis "Collection of Scoring Functions for Assessing Point Forecasts")
+    (description
+     "This package implements multiple consistent scoring functions (Gneiting T (2011)
+<doi:10.1198/jasa.2011.r10138>) for assessing point forecasts and point
+predictions.  Detailed documentation of scoring functions properties is included
+for facilitating interpretation of results.")
+    (license license:gpl3)))
+
 (define-public r-scoring
   (package
     (name "r-scoring")
@@ -48150,16 +48198,16 @@ series of all time.")
 (define-public r-schorsch
   (package
     (name "r-schorsch")
-    (version "1.9.1")
+    (version "1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "schoRsch" version))
               (sha256
                (base32
-                "0f823z48s50jhcphqqivchrmkiwqg25nc01c17kjpzzryd2fi5zs"))))
+                "0bf4lahfzi6dchqfnykh4saiagcka12h82d9mvd1ddv5phmbyi10"))))
     (properties `((upstream-name . "schoRsch")))
     (build-system r-build-system)
-    (home-page "http://www.tqmp.org/RegularArticles/vol12-2/p147/index.html")
+    (home-page "https://www.tqmp.org/RegularArticles/vol12-2/p147/index.html")
     (synopsis "Tools for Analyzing Factorial Experiments")
     (description
      "Offers a helping hand to psychologists and other behavioral scientists who
@@ -50459,6 +50507,31 @@ functions are provided.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-sarp-snowprofile-pyface
+  (package
+    (name "r-sarp-snowprofile-pyface")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sarp.snowprofile.pyface" version))
+              (sha256
+               (base32
+                "0nnl4bdvvbn6wf3zhv7n710y8fn07rnsb2f9j9lkr5g9a52356bf"))))
+    (properties `((upstream-name . "sarp.snowprofile.pyface")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sarp-snowprofile r-reticulate r-data-table))
+    (home-page "http://www.avalancheresearch.ca")
+    (synopsis "'python' Modules from Snowpack and Avalanche Research")
+    (description
+     "The development of post-processing functionality for simulated snow profiles by
+the snow and avalanche community is often done in python'.  This package aims to
+make these tools accessible to R users.  Currently integrated modules contain
+functions to calculate dry snow layer instabilities in support of avalache
+hazard assessments following the publications of Richter, Schweizer, Rotach, and
+Van Herwijnen (2019) <doi:10.5194/tc-13-3353-2019>, and Mayer, Van Herwijnen,
+Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-sarp-snowprofile-alignment
   (package
     (name "r-sarp-snowprofile-alignment")
@@ -50874,13 +50947,13 @@ of Wada's color combinations: 20 duos, 20 trios, and 20 quads.")
 (define-public r-santoku
   (package
     (name "r-santoku")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "santoku" version))
               (sha256
                (base32
-                "0xqbc1qbjnpd39z3ahvmpdqw14f0ym0l62gjc8fg8qissiwv0r1q"))))
+                "08pl03b94i3p3zza071ai62zb21rxs18vb0dscfrnyy383pxh5cy"))))
     (properties `((upstream-name . "santoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

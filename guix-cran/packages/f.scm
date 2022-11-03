@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages julia)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
@@ -184,53 +183,6 @@ area is known previously) to get the projected area.  After that, the projected
 area is used as input to the machine learning model (Linear Model, Artificial
 Neural Network, and Support Vector Regression) to determine the plant's fresh
 weight.")
-    (license license:gpl3)))
-
-(define-public r-fwildclusterboot
-  (package
-    (name "r-fwildclusterboot")
-    (version "0.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fwildclusterboot" version))
-              (sha256
-               (base32
-                "08rcyqh0nwpjjybks05klpb3ghry5n2652y5vxz7f5wdvlzjkhwz"))))
-    (properties `((upstream-name . "fwildclusterboot")))
-    (build-system r-build-system)
-    (inputs (list julia))
-    (propagated-inputs (list r-summclust
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-juliaconnector
-                             r-gtools
-                             r-generics
-                             r-formula
-                             r-dreamerr
-                             r-dqrng
-                             r-collapse))
-    (native-inputs (list r-knitr))
-    (home-page "https://s3alfisc.github.io/fwildclusterboot/")
-    (synopsis "Fast Wild Cluster Bootstrap Inference for Linear Models")
-    (description
-     "Implementation of fast algorithms for wild cluster bootstrap inference developed
-in Roodman et al (2019, STATA Journal, <doi:10.1177/1536867X19830877>) and
-MacKinnon et al (2022), which makes it feasible to quickly calculate bootstrap
-test statistics based on a large number of bootstrap draws even for large
-samples.  Multiple bootstrap types as described in MacKinnon, Nielsen & Webb
-(2022) are supported.  Further, multiway clustering, regression weights,
-bootstrap weights, fixed effects and subcluster bootstrapping are supported.
-Further, both restricted ('WCR') and unrestricted ('WCU') bootstrap are
-supported.  Methods are provided for a variety of fitted models, including
-lm()', feols() (from package fixest') and felm() (from package lfe').
-Additionally implements a heteroskedasticity-robust ('HC1') wild bootstrap.
-Further, the package provides an R binding to WildBootTests.jl', which provides
-additional speed gains and functionality, including the WRE bootstrap for
-instrumental variable models (based on models of type ivreg() from package
-ivreg') and hypotheses with q > 1.")
     (license license:gpl3)))
 
 (define-public r-fwi-fbp
@@ -2135,6 +2087,25 @@ Perspectives on Psychological Science, 15(3), 589-607.
      "We facilitate the analysis of full factorial mating designs with mixed-effects
 models.  There are now six vignettes containing detailed examples.")
     (license license:gpl2+)))
+
+(define-public r-fuj
+  (package
+    (name "r-fuj")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fuj" version))
+              (sha256
+               (base32
+                "1zmgy24b5nl931q6n32nfsdas3lw2nbhcnfh8bf62zq2j1yvr8w9"))))
+    (properties `((upstream-name . "fuj")))
+    (build-system r-build-system)
+    (home-page "https://jmbarbone.github.io/fuj/")
+    (synopsis "Functions and Utilities for Jordan")
+    (description
+     "This package provides core functions and utilities for packages and other code
+developed by Jordan Mark Barbone.")
+    (license license:expat)))
 
 (define-public r-fugue
   (package
@@ -8698,13 +8669,13 @@ Flickr.")
 (define-public r-flexsurvcure
   (package
     (name "r-flexsurvcure")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexsurvcure" version))
               (sha256
                (base32
-                "0zbbjfc8inqwhafb8202djy05h577qjy2xrkbkjy2kcfj8lvqps2"))))
+                "0mhpzcrqxsi7f2m565qy648vg26rsvy7d249ia7y7kd5wcildw8b"))))
     (properties `((upstream-name . "flexsurvcure")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-flexsurv r-boot))
@@ -11670,6 +11641,29 @@ production task.")
     (description
      "For including external figures into an assembled {patchwork}.  This enables the
 creation of more complex figures that include images alongside plots.")
+    (license license:expat)))
+
+(define-public r-figma
+  (package
+    (name "r-figma")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "figma" version))
+              (sha256
+               (base32
+                "10lznzqlrnnp44sfqdv6x2c2prp9yb7g64dv59b0bv094jx1cg82"))))
+    (properties `((upstream-name . "figma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedropark99/figma")
+    (synopsis "Web Client/Wrapper to the 'Figma API'")
+    (description
+     "An easy-to-use web client/wrapper for the Figma API
+<https://www.figma.com/developers/api>.  It allows you to bring all data from a
+Figma file to your R session.  This includes the data of all objects that you
+have drawn in this file, and their respective canvas/page metadata.")
     (license license:expat)))
 
 (define-public r-fig

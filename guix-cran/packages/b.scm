@@ -2108,13 +2108,13 @@ and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
 (define-public r-bsl
   (package
     (name "r-bsl")
-    (version "3.2.4")
+    (version "3.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BSL" version))
               (sha256
                (base32
-                "16w5lkzwq8b393cxga4cdcwk1f185g24k7lq0xr842g94cc8jdpl"))))
+                "12fksih33a4r6dd8flv7s1hidazhfqcbyvvnppp25rn6jb7p6344"))))
     (properties `((upstream-name . "BSL")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitening
@@ -2129,7 +2129,6 @@ and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
                              r-ggplot2
                              r-foreach
                              r-dorng
-                             r-dbi
                              r-copula
                              r-coda))
     (home-page "https://cran.r-project.org/package=BSL")
@@ -22622,13 +22621,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.6.3")
+    (version "1.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAS" version))
               (sha256
                (base32
-                "0l7x1zi1q1yjmaw0wwrp0aarlbjd6zxzi7brc5q4ipb52hw8xljr"))))
+                "1w7y3cp6j1pak2wq6wf9wffas0yvsz716qbva2bx9nln72gr05z5"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

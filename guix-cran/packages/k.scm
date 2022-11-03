@@ -191,13 +191,13 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (define-public r-ktweedie
   (package
     (name "r-ktweedie")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ktweedie" version))
               (sha256
                (base32
-                "1yr9rh2r7280kc78vq722vzp0n9mgfrczrhcgmzbdkcfvq1ivgj9"))))
+                "1q946qdsbs7cjzfl97npi1lyqwrwxc72w4wv602faj74x33n0hjp"))))
     (properties `((upstream-name . "ktweedie")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -3064,6 +3064,34 @@ Refer to Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang. (2021)
 <arXiv:2102.01286>.  Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang. (2021)
 <doi:10.1016/j.jmva.2021.104864>.")
     (license license:gpl3+)))
+
+(define-public r-kfino
+  (package
+    (name "r-kfino")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kfino" version))
+              (sha256
+               (base32
+                "14gpc72nin96g2sqzbj7z9ca2gs3kjl2k0yg1zfdrv8fgjsn9s6i"))))
+    (properties `((upstream-name . "kfino")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://forgemia.inra.fr/isabelle.sanchez/kfino")
+    (synopsis "Kalman Filter for Impulse Noised Outliers")
+    (description
+     "This package provides a method for detecting outliers with a Kalman filter on
+impulsed noised outliers and prediction on cleaned data.  kfino is a robust
+sequential algorithm allowing to filter data with a large number of outliers.
+This algorithm is based on simple latent linear Gaussian processes as in the
+Kalman Filter method and is devoted to detect impulse-noised outliers.  These
+are data points that differ significantly from other observations.  ML
+(Maximization Likelihood) and EM (Expectation-Maximization algorithm) algorithms
+were implemented in kfino'.  The method is described in full details in the
+following arXiv e-Print: <arXiv:2208.00961>.")
+    (license license:gpl3)))
 
 (define-public r-kfigr
   (package

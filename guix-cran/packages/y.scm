@@ -405,13 +405,13 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ympes" version))
               (sha256
                (base32
-                "0mqk2w7dwjzaas2ajqd3qg22dz66w2s6wl9xzy140qmnv76vzpvh"))))
+                "018wvzaxcr0npgjvdwmgjm8cdkd449lpcmppdwy461zdxs8p1wrl"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

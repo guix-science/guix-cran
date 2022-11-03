@@ -5625,6 +5625,44 @@ test statistics, conduct the simulation studies in AED, SSR, AED1-SSR, AED2-SSR
 and AED3-SSR.")
     (license license:gpl2)))
 
+(define-public r-escvtmle
+  (package
+    (name "r-escvtmle")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EScvtmle" version))
+              (sha256
+               (base32
+                "09sh9njnrv8bh6xlni3jmhwrp3yb6xxfx6di2ykam6mi50djknbf"))))
+    (properties `((upstream-name . "EScvtmle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-superlearner
+                             r-stringr
+                             r-origami
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/Lauren-EylerDang/EScvtmle/tree/main")
+    (synopsis
+     "Experiment-Selector CV-TMLE for Integration of Observational and RCT Data")
+    (description
+     "The experiment selector cross-validated targeted maximum likelihood estimator
+(ES-CVTMLE) aims to select the experiment that optimizes the bias-variance
+tradeoff for estimating a causal average treatment effect (ATE) where different
+experiments may include a randomized controlled trial (RCT) alone or an RCT
+combined with real-world data.  Using cross-validation, the ES-CVTMLE separates
+the selection of the optimal experiment from the estimation of the ATE for the
+chosen experiment.  The estimated bias term in the selector is a function of the
+difference in conditional mean outcome under control for the RCT compared to the
+combined experiment.  In order to help include truly unbiased external data in
+the analysis, the estimated average treatment effect on a negative control
+outcome may be added to the bias term in the selector.  For more details about
+this method, please see Dang et al. (2022) <arXiv:2210.05802>.")
+    (license license:gpl3)))
+
 (define-public r-escalation
   (package
     (name "r-escalation")
@@ -10485,13 +10523,13 @@ designs; visual fast count estimation.")
 (define-public r-emoji
   (package
     (name "r-emoji")
-    (version "0.2.0")
+    (version "15.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emoji" version))
               (sha256
                (base32
-                "06bsz0hsaqa2lzqpyqhsfp07p8ri5frvhiza0s8aali7w3cr2szh"))))
+                "1xscypzz17a7nrajnl7isy2nrm9cyr97l0mi9vp0daqvzgyfajba"))))
     (properties `((upstream-name . "emoji")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-glue))
@@ -16640,6 +16678,49 @@ agnostic format, from source data published across repositories, and with
 methods that keep the derived data up-to-date as the underlying sources change.
 Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
     (license license:expat)))
+
+(define-public r-ecochange
+  (package
+    (name "r-ecochange")
+    (version "2.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecochange" version))
+              (sha256
+               (base32
+                "1m27m0m7ccirjdr4c76lnj1ilw979i8wfc2xjja0drcnihlbspqa"))))
+    (properties `((upstream-name . "ecochange")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-rastervis
+                             r-rasterdt
+                             r-raster
+                             r-lattice
+                             r-landscapemetrics
+                             r-httr
+                             r-ggplot2
+                             r-getpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ecochange")
+    (synopsis
+     "Integrating Ecosystem Remote Sensing Products to Derive EBV Indicators")
+    (description
+     "Essential Biodiversity Variables (EBV) are state variables with dimensions on
+time, space, and biological organization that document biodiversity change.
+Freely available ecosystem remote sensing products (ERSP) are downloaded and
+integrated with data for national or regional domains to derive indicators for
+EBV in the class ecosystem structure (Pereira et al., 2013)
+<doi:10.1126/science.1229931>, including horizontal ecosystem extents,
+fragmentation, and information-theory indices.  To process ERSP, users must
+provide a polygon or geographic administrative data map.  Downloadable ERSP
+include Global Surface Water (Peckel et al., 2016) <doi:10.1038/nature20584>,
+Forest Change (Hansen et al., 2013) <doi:10.1126/science.1244693>, and
+Continuous Tree Cover data (Sexton et al., 2013)
+<doi:10.1080/17538947.2013.786146>.")
+    (license license:gpl3)))
 
 (define-public r-ecmwfr
   (package

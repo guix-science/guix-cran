@@ -13019,13 +13019,13 @@ Brandenberger, L., Casiraghi, G., Nanumyan, V., Schweitzer, F. (2019)
 (define-public r-ghyp
   (package
     (name "r-ghyp")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ghyp" version))
               (sha256
                (base32
-                "0ci3xz5v5r9vysfx2y3cgy706wssk9pw505mb57rb4yy0mhry19i"))))
+                "0jc4rrw0ny0x15im2r9kyrlg9qdnljnbpg5pq4avy997nfdgyhav"))))
     (properties `((upstream-name . "ghyp")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -15432,16 +15432,17 @@ array of four standard diagnostic plots.")
 (define-public r-gglgbtq
   (package
     (name "r-gglgbtq")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gglgbtq" version))
               (sha256
                (base32
-                "1a5hnmmiw3prqg8w34da0g9x59a7zywlp1fcn6bdv589m68kbx53"))))
+                "0z03rckalci6g9cd69mz3b7mz8q5z8313ci0q0qcfpkvfxmrz2py"))))
     (properties `((upstream-name . "gglgbtq")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/turtletopia/gglgbtq")
     (synopsis "Show Pride on 'ggplot2' Plots")
     (description
@@ -17894,13 +17895,13 @@ requests.")
 (define-public r-getip
   (package
     (name "r-getip")
-    (version "0.1-0")
+    (version "0.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "getip" version))
               (sha256
                (base32
-                "0l7692ddgidy3jyg7mw5nnh0agkyj7pf8v8clcinzs2y3q5qic6f"))))
+                "0qk994ip5d4m827n0lz6lhpvdbmz2gqpl4513r82s7ckkzg2rvyp"))))
     (properties `((upstream-name . "getip")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=getip")
@@ -23607,25 +23608,22 @@ sensitivities.")
 (define-public r-gcpbayes
   (package
     (name "r-gcpbayes")
-    (version "3.1.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GCPBayes" version))
               (sha256
                (base32
-                "1239pr1i9q4sfy7az6jc8sh10xil5m2a70v9sm29ll53vsza73jj"))))
+                "1ab0vp948dyj9b6yh5gixlqim2xklhy6gsbgi641knzc30paiwj4"))))
     (properties `((upstream-name . "GCPBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-wiqid
-                             r-usethis
                              r-truncnorm
-                             r-rcpp
                              r-postpack
                              r-mvtnorm
                              r-mass
                              r-invgamma
-                             r-gdata
-                             r-arm))
+                             r-gdata))
     (home-page "https://cran.r-project.org/package=GCPBayes")
     (synopsis
      "Bayesian Meta-Analysis of Pleiotropic Effects Using Group Structure")
@@ -26373,13 +26371,13 @@ sum of residuals squared).")
 (define-public r-gadget2
   (package
     (name "r-gadget2")
-    (version "2.3.7")
+    (version "2.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gadget2" version))
               (sha256
                (base32
-                "1p7jpwy65gdl6kli1h2m9yi5p5ah1vm23xs03sm9l42fcbn7ffdw"))))
+                "1cha4n0bd1imlvpzsgd337p0my75kakjsxdmmgx8p519r2dl07vz"))))
     (properties `((upstream-name . "gadget2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=gadget2")
@@ -26397,8 +26395,8 @@ more species, each of which may be split into multiple stocks; multiple areas
 with migration between areas; predation between and within species; maturation;
 reproduction and recruitment; multiple commercial and survey fleets taking
 catches from the populations.  For more details see
-<https://hafro.github.io/gadget2/>.  This is the C++ Gadget2 runtime, making it
-available for R.")
+<https://gadget-framework.github.io/gadget2/>.  This is the C++ Gadget2 runtime,
+making it available for R.")
     (license license:gpl2)))
 
 (define-public r-gadag

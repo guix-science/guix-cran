@@ -1760,13 +1760,13 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-ls2w
   (package
     (name "r-ls2w")
-    (version "1.3.5")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LS2W" version))
               (sha256
                (base32
-                "1lckwdc9jfnx5plslh72inkssnck217lrrqyfpm8zgbd47c3iwa0"))))
+                "0qsrf9x45z0waiv10fh0a8rw0zyr5raj6l832yhq76vd9gjfpn9i"))))
     (properties `((upstream-name . "LS2W")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-mass))
@@ -6361,13 +6361,13 @@ component analysis (pca) and multidimensional unfolding (mdu).")
 (define-public r-lm-br
   (package
     (name "r-lm-br")
-    (version "2.9.5")
+    (version "2.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lm.br" version))
               (sha256
                (base32
-                "0q9s2drfmbq78pbkk466nqli5wwqrgyszgp0g7f2hmpazhj89y3g"))))
+                "1gy6j7fk8maa98c0srx03jsjrhj8gcxq32gszxh95zl268hnyspy"))))
     (properties `((upstream-name . "lm.br")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

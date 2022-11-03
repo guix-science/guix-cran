@@ -1252,31 +1252,6 @@ objective calibration in regional water balance modelling: case study in 320
 Austrian catchments, Hydrological Processes, 21, 435-446.")
     (license license:gpl2+)))
 
-(define-public r-tutorial
-  (package
-    (name "r-tutorial")
-    (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tutorial" version))
-              (sha256
-               (base32
-                "0sxdlpw0w4azlaxdlk36ycrric6pbj2zi4nyv26pgsp0cr1hrx6r"))))
-    (properties `((upstream-name . "tutorial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-markdown r-knitr r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.datacamp.com")
-    (synopsis "Convert R Markdown Files to DataCamp Light HTML Files")
-    (description
-     "DataCamp Light (<https://github.com/datacamp/datacamp-light>) is a light-weight
-implementation of the DataCamp UI, that allows you to embed interactive
-exercises inside HTML documents.  The tutorial package makes it easy to create
-these HTML files from R Markdown files.  An extension to knitr, tutorial detects
-appropriately formatted code chunks and replaces them with DataCamp Light
-readable chunks in the resulting HTML file.")
-    (license license:expat)))
-
 (define-public r-tushare
   (package
     (name "r-tushare")
@@ -3375,23 +3350,21 @@ waiting for the acceptance.")
 (define-public r-tsentiment
   (package
     (name "r-tsentiment")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsentiment" version))
               (sha256
                (base32
-                "173m4ry58rz5cgffrwzxd9wr22w2ziny82zzby958w6vpyysdsc0"))))
+                "1sa1xy1v7p166r3sc3mg66zzw72n8vsy8q636knhyl71zzbvacsw"))))
     (properties `((upstream-name . "tsentiment")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wordcloud2
-                             r-wordcloud
+    (propagated-inputs (list r-wordcloud
                              r-tidytext
                              r-tibble
                              r-syuzhet
                              r-stringi
                              r-reshape2
-                             r-progress
                              r-httr
                              r-ggplot2
                              r-dplyr))
@@ -7378,18 +7351,19 @@ among them.  A user's guide can be found on the TraMineR web page.")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "0.7-2")
+    (version "0.8-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tram" version))
               (sha256
                (base32
-                "0wnj5c93by6svbh8b749khcjn9ksygddmnhg1v4i743snm1gl9l9"))))
+                "00jqg9pfy14l18ydgds5mylchb0rnyn80wy7f9w9y9nms5ri579j"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
                              r-survival
                              r-sandwich
+                             r-mvtnorm
                              r-multcomp
                              r-mlt
                              r-matrix
@@ -11455,18 +11429,18 @@ for expression data, to analyze and display the data concisely and intuitively."
 (define-public r-tint
   (package
     (name "r-tint")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tint" version))
               (sha256
                (base32
-                "00830n5nl6p73v9w0yzsak56phz4w1fh5lhf1c42gg1i81x7swnx"))))
+                "1vkdgxxgcj3qk3858sp3zi7c2id3dq0zxz23xd4i8lgbqgvvh2s3"))))
     (properties `((upstream-name . "tint")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-htmltools))
     (native-inputs (list r-knitr))
-    (home-page "http://dirk.eddelbuettel.com/code/tint.html")
+    (home-page "https://github.com/eddelbuettel/tint/")
     (synopsis "'tint' is not 'Tufte'")
     (description
      "This package provides a tufte'-alike style for rmarkdown'.  A modern take on the
@@ -11650,31 +11624,28 @@ Program/Honolulu Asia Aging Study (HHP/HAAS).")
 (define-public r-timevis
   (package
     (name "r-timevis")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timevis" version))
               (sha256
                (base32
-                "07padnd90s8s62sfcmg5l6b64md1cl4cfsxp5xm92nrlz82ksbbs"))))
+                "16b2iwf1lrw5b8am8c5xqkyg6inwac09qgbp0yigf3isd3qqs829"))))
     (properties `((upstream-name . "timevis")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-magrittr
-                             r-lubridate
                              r-jsonlite
                              r-htmlwidgets
                              r-htmltools))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/daattali/timevis")
     (synopsis "Create Interactive Timeline Visualizations in R")
     (description
      "Create rich and fully interactive timeline visualizations.  Timelines can be
-included in Shiny apps and R markdown documents, or viewed from the R console
-and RStudio Viewer.  timevis includes an extensive API to manipulate a timeline
-after creation, and supports getting data out of the visualization into R. Based
-on the vis.js Timeline module and the htmlwidgets R package.")
+included in Shiny apps or R markdown documents.  timevis includes an extensive
+API to manipulate a timeline after creation, and supports getting data out of
+the visualization into R. Based on the vis.js Timeline JavaScript library.")
     (license license:expat)))
 
 (define-public r-timevarconcurrentmodel
@@ -21088,13 +21059,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.13.5")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "targets" version))
               (sha256
                (base32
-                "08sdbl6366nqalrzx8cc0kmgkjlq2sky25bq0bziyqsy9slxlld6"))))
+                "04gl5wz3mf6wh2q1x763lh6g014b719ch53prliq9y102ym976mq"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

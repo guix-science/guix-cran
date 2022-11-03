@@ -187,6 +187,34 @@ function with variance estimation based on Bebu and Lachin (2016)
 outputting confidence interval for win difference.")
     (license license:gpl2+)))
 
+(define-public r-wwntests
+  (package
+    (name "r-wwntests")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wwntests" version))
+              (sha256
+               (base32
+                "0lp5xipf1lq8mlpdamsvan82s3fr3g5xbxpdnqjc68abnify0r8s"))))
+    (properties `((upstream-name . "wwntests")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sde r-rainbow r-mass r-ftsa))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wwntests")
+    (synopsis "Hypothesis Tests for Functional Time Series")
+    (description
+     "This package provides an array of white noise hypothesis tests for functional
+data and related visualizations.  These include tests based on the norms of
+autocovariance operators that are built under both strong and weak white noise
+assumptions.  Additionally, tests based on the spectral density operator and on
+principal component dimensional reduction are included, which are built under
+strong white noise assumptions.  These methods are described in Kokoszka et al.
+(2017) <doi:10.1016/j.jmva.2017.08.004>, Characiejus and Rice (2019)
+<doi:10.1016/j.ecosta.2019.01.003>, and Gabrys and Kokoszka (2007)
+<doi:10.1198/016214507000001111>, respectively.")
+    (license license:gpl3)))
+
 (define-public r-wwgbook
   (package
     (name "r-wwgbook")
@@ -794,13 +822,13 @@ analysis approaches.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.10.1")
+    (version "1.10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "11w98d4h748sc8nfn6xcmsh8nqdxwvq72ygwcid6ijfq8i3rr0zg"))))
+                "1mz2a7bmzblky9z1d32zxnbdjiap6v8jhiah38lln2s4vrbx67yd"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -5464,13 +5492,13 @@ to web development.")
 (define-public r-webchem
   (package
     (name "r-webchem")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webchem" version))
               (sha256
                (base32
-                "13dkf4py4nkf7fqnsb7jnjrrcasjj8rndvdkff0g48zfh0ypyaxf"))))
+                "0mvd0hppdrqngg1j7x2sdh3nkdb3zmsdf1gwqvzm128v6clsi7ls"))))
     (properties `((upstream-name . "webchem")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

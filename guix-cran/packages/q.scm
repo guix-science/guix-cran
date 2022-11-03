@@ -200,6 +200,27 @@ arguments, may sometimes evaluate them in the environment where they were
 quoted, and may pass them as quoted to other functions.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-quoradsr
+  (package
+    (name "r-quoradsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quoradsR" version))
+              (sha256
+               (base32
+                "1gdb5zvi7hs2mpzv07w1mbm9w4ksidbz28mjb6w20bfpy6casfz5"))))
+    (properties `((upstream-name . "quoradsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get 'Quora' Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Quora Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-quint
   (package
     (name "r-quint")

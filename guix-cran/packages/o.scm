@@ -2197,16 +2197,16 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "origin" version))
               (sha256
                (base32
-                "0byzia26snxgwqzabbg634y1s2w7gbk065cbv6v9fxxkrjb5ifk3"))))
+                "132ccdh40rz2rxabqjfjrmhpjrm5b5hm9zfqm3qwssgligf30vg3"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi))
+    (propagated-inputs (list r-rstudioapi r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mnist91/origin")
     (synopsis
@@ -4867,13 +4867,13 @@ manipulating visual field data.")
 (define-public r-opgmmassessment
   (package
     (name "r-opgmmassessment")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opGMMassessment" version))
               (sha256
                (base32
-                "0b57hkd7h0l5xdcg196dc2la67aslrrg30qzhaj33nirgy8cig81"))))
+                "1d9ll5shhbk93hjvxc3nhaffjg31l14w9nqcbwqjv43gjaz0yq3a"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4898,7 +4898,8 @@ manipulating visual field data.")
      "Necessary functions for optimized automated evaluation of the number and
 parameters of Gaussian mixtures in one-dimensional data.  Various methods are
 available for parameter estimation and for determining the number of modes in
-the mixture.")
+the mixture.  A detailed description of the methods ca ben found in Lotsch, J.,
+Malkusch, S. and A. Ultsch. (2022) <doi:10.1016/j.imu.2022.101113>.")
     (license license:gpl3)))
 
 (define-public r-operators

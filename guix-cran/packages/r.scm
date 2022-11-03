@@ -567,13 +567,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.0.10")
+    (version "2.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2" version))
               (sha256
                (base32
-                "143csj0kjss2mmmnnpnpbdfgbggjas2avd48ijdh97ckmva4wglk"))))
+                "1z038b2p0laxlapwv8mrm9p960yggw9dyqny7da39qzmgj6lqa3z"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -676,28 +676,6 @@ XMCDA standard.")
 <https://xkcd.com> web comic content is provided under the Creative Commons
 Attribution-NonCommercial 2.5 License.")
     (license license:gpl2)))
-
-(define-public r-rxcecolinf
-  (package
-    (name "r-rxcecolinf")
-    (version "0.1-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RxCEcolInf" version))
-              (sha256
-               (base32
-                "01n74xnhz1fdvb63g0lxkzsdp1frspin4a764l358immjivdrx2v"))))
-    (properties `((upstream-name . "RxCEcolInf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mcmcpack r-mass r-lattice r-coda))
-    (home-page "https://cran.r-project.org/package=RxCEcolInf")
-    (synopsis
-     "'R x C Ecological Inference With Optional Incorporation of Survey Information'")
-    (description
-     "Fits the R x C inference model described in Greiner and Quinn (2009)
-<DOI:10.1111/j.1467-985X.2008.00551.x> and Greiner and Quinn (2010)
-<DOI:10.1214/10-AOAS353>.  Allows incorporation of survey results.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rwunderground
   (package
@@ -8698,13 +8676,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.19")
+    (version "0.4.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RProtoBuf" version))
               (sha256
                (base32
-                "0iwaclf5xh4792l7pmp64y9lymq1jy8dv6byc0059jak1p7wsyb3"))))
+                "1q5wd586334472584r93whnwxy4yyycn9l891g6m6wh7v0884q76"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15318,13 +15296,13 @@ al. (2017) <doi:10.1007/s11306-017-1178-y>.")
 (define-public r-rnmamod
   (package
     (name "r-rnmamod")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rnmamod" version))
               (sha256
                (base32
-                "0dncj3dldb4d1j5m1dypk9lyg5jb2m2fi1k7p9sl52a6bfadcbb4"))))
+                "1cb6f5s0m7cciwyy8pd16qf4615k2vh58lgx5mdp9mpybwnvwapx"))))
     (properties `((upstream-name . "rnmamod")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -15342,10 +15320,9 @@ al. (2017) <doi:10.1007/s11306-017-1178-y>.")
                              r-ggfittext
                              r-gemtc
                              r-fdrtool
-                             r-dplyr
-                             r-coda))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/LoukiaSpin/rnmamod")
+    (home-page "https://CRAN.R-project.org/package=rnmamod")
     (synopsis "Bayesian Network Meta-Analysis with Missing Participants")
     (description
      "This package provides a comprehensive suite of functions to perform and
@@ -23167,6 +23144,37 @@ GenDataPopulation() function. <DOI: 10.1080/00273170802285693>. <DOI:
 armadillo through a header file approach.")
     (license license:gpl2+)))
 
+(define-public r-rgeedim
+  (package
+    (name "r-rgeedim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgeedim" version))
+              (sha256
+               (base32
+                "0s60rgm8j7s4vd8djfx0m4sqs9xwqqnk5lvrbgbr39g3y9ads41n"))))
+    (properties `((upstream-name . "rgeedim")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://humus.rocks/rgeedim/")
+    (synopsis
+     "Search, Composite, and Download 'Google Earth Engine' Imagery with the 'Python' Module 'geedim'")
+    (description
+     "Search, composite, and download Google Earth Engine imagery with reticulate
+bindings for the Python module geedim'.  Read the geedim documentation here:
+<https://geedim.readthedocs.io/>.  Wrapper functions are provided to make it
+more convenient to use geedim to download images larger than the Google Earth
+Engine size limit
+<https://developers.google.com/earth-engine/apidocs/ee-image-getdownloadurl>.
+By default the \"High Volume\" API endpoint
+<https://developers.google.com/earth-engine/cloud/highvolume> is used to
+download data and this URL can be customized during initialization of the
+package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-rgee
   (package
     (name "r-rgee")
@@ -25698,6 +25706,39 @@ Detrended Fluctuation Analysis(MFDFA) ('Jan W.Kantelhardt (2002)
 respiratory data.")
     (license license:expat)))
 
+(define-public r-respbibd
+  (package
+    (name "r-respbibd")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ResPBIBD" version))
+              (sha256
+               (base32
+                "00a3qbam4dc9lwfyqq63j8q9yppd4nr7pk0wbikjfw6rnbjsl1sh"))))
+    (properties `((upstream-name . "ResPBIBD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ResPBIBD")
+    (synopsis
+     "\"Resolvable Partially Balanced Incomplete Block Designs (PBIBDs)\"")
+    (description
+     "This package provides a collection of several utility functions related to
+resolvable and affine resolvable Partially Balanced Incomplete Block Designs
+(PBIBDs), have been developed.  In the class of resolvable designs, affine
+resolvable designs are said to be optimal, Bailey (1995) <doi:10.2307/2337638>.
+Here, the package contains three functions to generate and study the
+characterization properties of these designs.  Developed functions are named as
+PBIBD1(), PBIBD2() and PBIBD3(), in which first two functions are used to
+generate two new series of affine resolvable PBIBDs and last one is used to
+generate a new series of resolvable PBIBDs, respectively.  In addition, these
+functions can also be used to generate design parameters (v, b, r and k),
+canonical efficiency factors, variance factor between associates and average
+variance factors of the generated designs.  Here v is the number of treatments,
+b (= b1 + b2, in case of non-proper design) is the number of blocks, r is the
+number of replications and k (= k1 + k2; k1 is the size of b1 and k2 is the size
+of b2) is the block size.")
+    (license license:gpl3)))
+
 (define-public r-resourceselection
   (package
     (name "r-resourceselection")
@@ -27582,26 +27623,21 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.0.9")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rempsyc" version))
               (sha256
                (base32
-                "0hm0d2743x1g79n6cl3mhffhhxxq4ia8104frxpc6c3fxnr0fjj0"))))
+                "1by47r69frid5skbm46msrpif22h7vsq6fjwqydp7cg7h901q3sz"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
-                             r-qqplotr
-                             r-lmtest
-                             r-ggsignif
-                             r-ggrepel
-                             r-ggplot2
+                             r-performance
+                             r-insight
                              r-flextable
                              r-effectsize
-                             r-dplyr
-                             r-car
-                             r-boot))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rempsyc.remi-theriault.com")
     (synopsis "Convenience Functions for Psychology")
@@ -34506,13 +34542,13 @@ analysis application.  For details see Khalil and Fakir (2017)
 (define-public r-rcppxts
   (package
     (name "r-rcppxts")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppXts" version))
               (sha256
                (base32
-                "1vzq6z5m48cpkbcx2fw7r102jdjfc776d5q3b7yxqsv07r6y2lav"))))
+                "1ljwscw8ykyqadjc98r9p6z4qjjfm79n9l618pmhh842l68kag28"))))
     (properties `((upstream-name . "RcppXts")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts r-rcpp))
@@ -35631,13 +35667,13 @@ arc length of an ellipse, polar lines, etc.).")
 (define-public r-rconfig
   (package
     (name "r-rconfig")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rconfig" version))
               (sha256
                (base32
-                "075rq5bkzdbyxvrs23glhhyl7g69pp2f9h4dkwxkickk893glzy5"))))
+                "1h7g2b87ff3ga97pc3mrhh3dzxx5pq97wyadqfz46j3h79lhzvkc"))))
     (properties `((upstream-name . "rconfig")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite))
@@ -36436,6 +36472,34 @@ primarily for teaching ecological models using simulations.")
      "Rcmdr plug-in GUI extension for Evidence Based Medicine medical indicators
 calculations (Sensitivity, specificity, absolute risk reduction, relative risk,
 ...).")
+    (license license:gpl2+)))
+
+(define-public r-rcmdrplugin-eacspir
+  (package
+    (name "r-rcmdrplugin-eacspir")
+    (version "0.2-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RcmdrPlugin.EACSPIR" version))
+              (sha256
+               (base32
+                "0v7pw0m8cxpnkdm47b8jb3z94p1igi98s4r8i0gm7x7ad4fzccww"))))
+    (properties `((upstream-name . "RcmdrPlugin.EACSPIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape
+                             r-rcmdrmisc
+                             r-rcmdr
+                             r-r2html
+                             r-nortest
+                             r-ez
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=RcmdrPlugin.EACSPIR")
+    (synopsis "Plugin de R-Commander para el Manual 'EACSPIR'")
+    (description
+     "Este paquete proporciona una interfaz grafica de usuario (GUI) para algunos de
+los procedimientos estadisticos detallados en un curso de Estadistica aplicada a
+las Ciencias Sociales mediante el programa informatico R (EACSPIR).  LA GUI se
+ha desarrollado como un Plugin del programa R-Commander.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-doe
@@ -43918,6 +43982,52 @@ Nowosad (2020) <doi:10.1016/j.apgeog.2020.102239>).  It is a reimagined approach
 for analyzing residential segregation and racial diversity based on the concept
 of landscapeâ used in the domain of landscape ecology.")
     (license license:expat)))
+
+(define-public r-raceid
+  (package
+    (name "r-raceid")
+    (version "0.2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RaceID" version))
+              (sha256
+               (base32
+                "0dw7i5flvbk7m11q805n8afwr3mv98n39xayvsiwqs53ii89xhdr"))))
+    (properties `((upstream-name . "RaceID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-umap
+                             r-runner
+                             r-rtsne
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-randomforest
+                             r-quadprog
+                             r-princurve
+                             r-pheatmap
+                             r-matrixstats
+                             r-matrix
+                             r-mass
+                             r-locfit
+                             r-leiden
+                             r-irlba
+                             r-igraph
+                             r-ica
+                             r-ggplot2
+                             r-fpc
+                             r-fnn
+                             r-fateid
+                             r-coop
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RaceID")
+    (synopsis
+     "Identification of Cell Types and Inference of Lineage Trees from Single-Cell RNA-Seq Data")
+    (description
+     "Application of RaceID allows inference of cell types and prediction of lineage
+trees by he StemID2 algorithm.  Herman, J.S., Sagar, GrÃ¼n D. (2018)
+<DOI:10.1038/nmeth.4662>.")
+    (license license:gpl3)))
 
 (define-public r-racademyocean
   (package

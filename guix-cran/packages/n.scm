@@ -973,6 +973,28 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
+(define-public r-nse2r
+  (package
+    (name "r-nse2r")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nse2r" version))
+              (sha256
+               (base32
+                "0b7ll490xf8r4787qkaz01z3djc7dzgzqg3w4nmmrnrfv36mkybf"))))
+    (properties `((upstream-name . "nse2r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yahoofinancer r-magrittr r-jsonlite))
+    (home-page "https://github.com/rsquaredacademy/nse2r")
+    (synopsis "Fetch Data from 'National Stock Exchange (India)'")
+    (description
+     "Fetch data related to stocks, index, futures & options from the NSE (National
+Stock Exchange, India)'.  This package is community maintained and is not
+officially supported by NSE'.  The accuracy of data is only as correct as
+provided on <https://www.nseindia.com>.")
+    (license license:expat)))
+
 (define-public r-nsdr
   (package
     (name "r-nsdr")
@@ -5896,13 +5918,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2est" version))
               (sha256
                (base32
-                "0bnm7zgbzarwj4xbimivpnxmxqih3h52c4hyb6wz1816z35cs8lc"))))
+                "08aqx9piz3r157q0jh71fypj54lj6fgz6756gh94inz7cl5d5jxs"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -9232,13 +9254,13 @@ examples.")
 (define-public r-netsem
   (package
     (name "r-netsem")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netSEM" version))
               (sha256
                (base32
-                "0f8d9lw2ahap8i4dcl7039q4959wpq7d8h5n3kz5kwylmkf70lmh"))))
+                "01yhqlax9vyhipw5cjg2mg9cbxj44g7mxlrsfa4mfsw22bd6dc6i"))))
     (properties `((upstream-name . "netSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -9262,11 +9284,11 @@ on a data frame of coincident observations of multiple continuous variables [1].
 candidate statistical relationships between each of the variable pairs,
 selecting the best fit on the basis of a specific criteria such as adjusted
 r-squared value.  This material is based upon work supported by the U.S.
-Department of Energy Office of Energy, Efficiency and Renewable Energy (EERE)
-under Solar Energy Technologies Office (SETO) Agreement Number DE-EE0007140. [1]
-Bruckman, Laura S., Nicholas R. Wheeler, Junheng Ma, Ethan Wang, Carl K. Wang,
-Ivan Chou, Jiayang Sun, and Roger H. French. (2013)
-<doi:10.1109/ACCESS.2013.2267611>.")
+National Science Foundation Award EEC-2052776 and EEC-2052662 for the MDS-Rely
+IUCRC Center, under the NSF Solicitation: NSF 20-570 Industry-University
+Cooperative Research Centers Program [1] Bruckman, Laura S., Nicholas R.
+Wheeler, Junheng Ma, Ethan Wang, Carl K. Wang, Ivan Chou, Jiayang Sun, and Roger
+H. French. (2013) <doi:10.1109/ACCESS.2013.2267611>.")
     (license license:gpl2+)))
 
 (define-public r-netseg

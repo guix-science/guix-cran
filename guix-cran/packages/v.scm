@@ -275,13 +275,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.3.4")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtable" version))
               (sha256
                (base32
-                "1b26kqdvvp8d0467b3x7jhpk01lcf1jyfikc7lzn4qs60q0ndgwl"))))
+                "1mvcmhy58kibwrjbqm07pynk1rin179nb94j1c6ym8sgq2by1h3g"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
@@ -2835,6 +2835,26 @@ Williamson et al. (arXiv, 2020+) <arXiv:2004.03683>, and Williamson and Feng
 (ICML, 2020).")
     (license license:expat)))
 
+(define-public r-vimean
+  (package
+    (name "r-vimean")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VIMean" version))
+              (sha256
+               (base32
+                "0kxrcigp94h2j1vx5pj24sp73iqxldc1ygm5bak4jrld66r0nb5b"))))
+    (properties `((upstream-name . "VIMean")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=VIMean")
+    (synopsis "Variability Independent of Mean")
+    (description
+     "To computed the variability independent of mean (VIM) or variation independent
+of mean (VIM).  The methodology can be found at Peter M Rothwell et al. (2010)
+<doi:10.1016/S1474-4422(10)70067-3>.")
+    (license license:gpl3)))
+
 (define-public r-villager
   (package
     (name "r-villager")
@@ -2926,13 +2946,13 @@ procedure via VIF regression, Computational Statistics, 31(2): 671-691.")
 (define-public r-viewpoly
   (package
     (name "r-viewpoly")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "viewpoly" version))
               (sha256
                (base32
-                "1vnh97iqq1k67lxlj4488ymwpd5p9pqvjawiqdi0qj9s2vz4j35d"))))
+                "1say30d46vj67ng5mprhwl02jf9d0kv573j80r05z08szmcm4sxb"))))
     (properties `((upstream-name . "viewpoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -4035,16 +4055,16 @@ import/export routines for exchange of data with Juice
 (define-public r-vegperiod
   (package
     (name "r-vegperiod")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vegperiod" version))
               (sha256
                (base32
-                "178zp7hw7bicygzl4ql0a9llkmrk4kyszcvvl430pvsc5y6srg75"))))
+                "0m10m85cf0qk2q2ln1qziqicv79rbjqqi9py18r412j7m43pn013"))))
     (properties `((upstream-name . "vegperiod")))
     (build-system r-build-system)
-    (home-page "https://github.com/rnuske/vegperiod")
+    (home-page "https://rnuske.github.io/vegperiod/")
     (synopsis "Determine Thermal Vegetation Periods")
     (description
      "Collection of common methods to determine growing season length in a simple

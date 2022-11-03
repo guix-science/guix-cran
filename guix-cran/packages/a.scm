@@ -11433,13 +11433,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AlphaSimR" version))
               (sha256
                (base32
-                "1i972xax6axrmxjqh5v217f3zwmdbfhm0zfjc6gkmhydddp0zn8k"))))
+                "0yps81a9ah9snm1g92adxd4dj19jqmz2j5x4zdsdffhzls0rhw9c"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
@@ -16837,6 +16837,34 @@ implemented sampling algorithm was proposed by Vihola (2012)
 <DOI:10.1007/s11222-011-9269-5> and achieves often a high efficiency by tuning
 the proposal distributions to a user defined acceptance rate.")
     (license license:gpl2+)))
+
+(define-public r-adaptivpt
+  (package
+    (name "r-adaptivpt")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adaptIVPT" version))
+              (sha256
+               (base32
+                "1zjz61zk0q9d1ih3ghzmiz1sxjpdypbx1vl72iw51sqz0nl89n95"))))
+    (properties `((upstream-name . "adaptIVPT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-rcppprogress r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=adaptIVPT")
+    (synopsis "Adaptive Bioequivalence Design for In-Vitro Permeation Tests")
+    (description
+     "This package contains functions carrying out adaptive procedures using mixed
+scaling approach to establish bioequivalence for in-vitro permeation test (IVPT)
+data.  Currently, the package provides procedures based on parallel replicate
+design and balanced data, according to the U.S. Food and Drug Administration's
+\"Draft Guidance on Acyclovir\"
+<https:www.accessdata.fda.gov/drugsatfda_docs/psg/Acyclovir_topical cream_RLD
+21478_RV12-16.pdf>.  Potvin et al. (2008) <doi:10.1002/pst.294> provides the
+basis for our adaptive design (see Method B).  This package reflects the views
+of the authors and should not be construed to represent the views or policies of
+the U.S. Food and Drug Administration.")
+    (license license:gpl3+)))
 
 (define-public r-adaptivetau
   (package

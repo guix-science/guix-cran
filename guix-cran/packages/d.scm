@@ -17624,6 +17624,45 @@ modeling. \"degreenet\" is a part of the \"statnet\" suite of packages for netwo
 analysis.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
+(define-public r-degre
+  (package
+    (name "r-degre")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DEGRE" version))
+              (sha256
+               (base32
+                "040hfpvqwl8r0iazwpnq7fmkydsxqc7mck7wbjqf6c19cw3zziz7"))))
+    (properties `((upstream-name . "DEGRE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-parglm
+                             r-glmmtmb
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-car))
+    (home-page "https://cran.r-project.org/package=DEGRE")
+    (synopsis
+     "Inferring Differentially Expressed Genes using Generalized Linear Mixed Models")
+    (description
+     "Genes that are differentially expressed between two or more experimental
+conditions can be detected in RNA-Seq.  A high biological variability may impact
+the discovery of these genes once it may be divergent between the fixed effects.
+ However, this variability can be covered by the random effects.  DEGRE was
+designed to identify the differentially expressed genes considering fixed and
+random effects on individuals.  These effects are identified earlier in the
+experimental design matrix.  DEGRE has the implementation of preprocessing
+procedures to clean the near zero gene reads in the count matrix, normalize by
+RLE published in the DESeq2 package, Love et al. (2014)
+<doi:10.1186/s13059-014-0550-8> and it fits a regression for each gene using the
+Generalized Linear Mixed Model with the negative binomial distribution, followed
+by a Wald test to assess the regression coefficients.")
+    (license license:artistic2.0)))
+
 (define-public r-degday
   (package
     (name "r-degday")

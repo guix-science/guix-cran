@@ -9,11 +9,11 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
@@ -4542,16 +4542,16 @@ p-values for trend in individual outcomes and power calculation is available.")
 (define-public r-multibridge
   (package
     (name "r-multibridge")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multibridge" version))
               (sha256
                (base32
-                "17xcngn6q2wgaxcspfigcvzp6zh2bq8vhmfb3gn9ryq1rf2fchfv"))))
+                "0akl9i3fhgd0pqsvgp7cv2l2l84cqc3cc4lambnjmwdyh7x4qcvd"))))
     (properties `((upstream-name . "multibridge")))
     (build-system r-build-system)
-    (inputs (list mpfr))
+    (inputs (list mpfr gmp))
     (propagated-inputs (list r-stringr
                              r-rdpack
                              r-rcpp
@@ -4561,7 +4561,7 @@ p-values for trend in individual outcomes and power calculation is available.")
                              r-magrittr
                              r-coda
                              r-brobdingnag))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/asarafoglou/multibridge/")
     (synopsis "Evaluating Multinomial Order Restrictions with Bridge Sampling")
     (description
@@ -7936,29 +7936,6 @@ parallel using mclapply() or future_lapply()
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
 
-(define-public r-mrfse
-  (package
-    (name "r-mrfse")
-    (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mrfse" version))
-              (sha256
-               (base32
-                "1kwnpmkrgc2ca90nszj4d1p04prv7rjd03qvk1bb2sclkfbhz4yp"))))
-    (properties `((upstream-name . "mrfse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-rcpp r-gtools))
-    (home-page "https://cran.r-project.org/package=mrfse")
-    (synopsis "Markov Random Field Structure Estimator")
-    (description
-     "Three algorithms for estimating a Markov random field structure.Two of them are
-an exact version and a simulated annealing version of a penalized maximum
-conditional likelihood method similar to the Bayesian Information Criterion
-(Frondana, 2016) <doi:10.11606/T.45.2018.tde-02022018-151123>.The third one is a
-greedy algorithm based on information theory (Bresler, 2015).")
-    (license license:gpl3+)))
-
 (define-public r-mrfdepth
   (package
     (name "r-mrfdepth")
@@ -9845,13 +9822,13 @@ time to apply a treatment or multiple treatments.")
 (define-public r-mosmafs
   (package
     (name "r-mosmafs")
-    (version "0.1.2")
+    (version "0.1.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mosmafs" version))
               (sha256
                (base32
-                "04syr5qr91hyv1m5hfrjsriq0qgidaln06m7f3jgc1qyrni930rw"))))
+                "0xv9gf85d2fy9xdiik2dqd44xygsr6yr8fvmqkak1bpxnrkkb4hl"))))
     (properties `((upstream-name . "mosmafs")))
     (build-system r-build-system)
     (propagated-inputs (list r-smoof
@@ -9864,7 +9841,7 @@ time to apply a treatment or multiple treatments.")
                              r-checkmate
                              r-bbmisc))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/compstat-lmu/mosmafs")
+    (home-page "https://github.com/slds-lmu/mosmafs")
     (synopsis "Multi-Objective Simultaneous Model and Feature Selection")
     (description
      "This package performs simultaneous hyperparameter tuning and feature selection
@@ -15410,13 +15387,13 @@ Precision-Recall curves.")
 (define-public r-mlr3verse
   (package
     (name "r-mlr3verse")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3verse" version))
               (sha256
                (base32
-                "1mgspiibjbcv12vb2mqyj2n53vvmdqn8wcqcdhn6lzvblkpi2nbg"))))
+                "1wjd9igpnh86g3kwmmxsvbylsgvrjfzi7gwnhcir26w35501xagj"))))
     (properties `((upstream-name . "mlr3verse")))
     (build-system r-build-system)
     (propagated-inputs (list r-paradox
@@ -15746,13 +15723,13 @@ mlr3 is loaded.")
 (define-public r-mlr3cluster
   (package
     (name "r-mlr3cluster")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3cluster" version))
               (sha256
                (base32
-                "1infwd275j0jkm62nzzpblkn67hjsbpxw0l1plc4gz8p9q1gwjj5"))))
+                "049gxl66frhi0nhy0nlcbw5f969j5disln2cdj6sqdhz9hqjrm54"))))
     (properties `((upstream-name . "mlr3cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -20280,6 +20257,30 @@ variants.\"")
     (description
      "Using this package, one can determine the minimum sample size required so that
 the mean square error of the sample mean and the population mean of a
+distribution becomes less than some pre-determined epsilon, i.e.  it helps the
+user to determine the minimum sample size required to attain the pre-fixed
+precision level by minimizing the difference between the sample mean and
+population mean.")
+    (license license:gpl3)))
+
+(define-public r-minsample1
+  (package
+    (name "r-minsample1")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "minsample1" version))
+              (sha256
+               (base32
+                "13kmqxa3pbllv16fzn0v7msffsaar79y8xnvnbrcfhwa76031f8f"))))
+    (properties `((upstream-name . "minsample1")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=minsample1")
+    (synopsis "The Minimum Sample Size")
+    (description
+     "Using this package, one can determine the minimum sample size required so that
+the absolute deviation of the sample mean and the population mean of a
 distribution becomes less than some pre-determined epsilon, i.e.  it helps the
 user to determine the minimum sample size required to attain the pre-fixed
 precision level by minimizing the difference between the sample mean and
@@ -28871,13 +28872,13 @@ consumers.")
 (define-public r-medianadesigner
   (package
     (name "r-medianadesigner")
-    (version "0.9")
+    (version "0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MedianaDesigner" version))
               (sha256
                (base32
-                "0vvmp6bf5ka8ivi1z6rl6rcvbks14c7g1f0sisqqjwsza3fi5s9m"))))
+                "04say70f7wsa245apak44r7jz2gp2vp3zppg1sqs5pxn9009ah9m"))))
     (properties `((upstream-name . "MedianaDesigner")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -28902,15 +28903,15 @@ consumers.")
     (home-page "https://github.com/medianasoft/MedianaDesigner")
     (synopsis "Power and Sample Size Calculations for Clinical Trials")
     (description
-     "The package supports efficient simulation-based power and sample size
-calculations for a broad class of late-stage clinical trials.  The following
-modules are included in the package: Adaptive designs with data-driven sample
-size or event count re-estimation, Adaptive designs with data-driven treatment
-selection, Adaptive designs with data-driven population selection, Optimal
-selection of a futility stopping rule, Event prediction in event-driven trials,
-Adaptive trials with response-adaptive randomization (experimental module),
-Traditional trials with multiple objectives (experimental module).  Traditional
-trials with cluster-randomized designs (experimental module).")
+     "Efficient simulation-based power and sample size calculations are supported for
+a broad class of late-stage clinical trials.  The following modules are included
+in the package: Adaptive designs with data-driven sample size or event count
+re-estimation, Adaptive designs with data-driven treatment selection, Adaptive
+designs with data-driven population selection, Optimal selection of a futility
+stopping rule, Event prediction in event-driven trials, Adaptive trials with
+response-adaptive randomization (experimental module), Traditional trials with
+multiple objectives (experimental module).  Traditional trials with
+cluster-randomized designs (experimental module).")
     (license license:gpl3)))
 
 (define-public r-mediana
@@ -35335,13 +35336,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.7.1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "1pvqjdy0j5d9gsplnw58c2fpsap6vv97bf2jz339dg9yrfl7af92"))))
+                "19ja59vnhkj685dif9zm4vw2br4r0xsclsn9vldv7n2iw8x9n0v1"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-insight r-generics r-data-table r-checkmate))
@@ -35350,7 +35351,7 @@ a conditional risk model.")
     (synopsis "Marginal Effects, Marginal Means, Predictions, and Contrasts")
     (description
      "Compute and plot adjusted predictions, contrasts, marginal effects, and marginal
-means for over 65 classes of statistical models in R. Conduct linear and
+means for over 70 classes of statistical models in R. Conduct linear and
 non-linear hypothesis tests using the delta method.")
     (license license:gpl3+)))
 
@@ -37272,6 +37273,30 @@ model under overlapping clusters.  Submitted.")
     (description "Estimates membership for the Mandelbrot set.")
     (license license:expat)))
 
+(define-public r-mandalar
+  (package
+    (name "r-mandalar")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MandalaR" version))
+              (sha256
+               (base32
+                "13shj6r416cz11qlwrha468gx1y76vx28xyhap3k0c0b2jxn699b"))))
+    (properties `((upstream-name . "MandalaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://lucianealcoforado.shinyapps.io/Mandala/")
+    (synopsis
+     "Building Mandalas from Parametric Equations of Classical Curves")
+    (description
+     "This package provides an algorithm for creating mandalas.  From the perspective
+of classic mathematical curves and rigid movements on the plane, the package
+allows you to select curves and produce mandalas from the curve.  The algorithm
+was developed based on the book by Alcoforado et.  al.  entitled \"Art, Geometry
+and Mandalas with R\" (2022) in press by the USP Open Books Portal.")
+    (license license:gpl3)))
+
 (define-public r-mand
   (package
     (name "r-mand")
@@ -38228,13 +38253,13 @@ R, as well as for uploading local data to magma'.")
 (define-public r-magmaclustr
   (package
     (name "r-magmaclustr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MagmaClustR" version))
               (sha256
                (base32
-                "0gf0xlsh5wkvbp331z7c55ypfkg9rmmakykbqliswiyrfgbczk9g"))))
+                "19sx1wv0iswfkhrg9jj9s3900q59rv4h46baxlaasmvhy9b7kwnb"))))
     (properties `((upstream-name . "MagmaClustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -38242,6 +38267,8 @@ R, as well as for uploading local data to magma'.")
                              r-tibble
                              r-rlang
                              r-rcpp
+                             r-purrr
+                             r-plyr
                              r-mvtnorm
                              r-magrittr
                              r-ggplot2

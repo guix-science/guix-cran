@@ -3854,6 +3854,38 @@ frequency, but modified for computational stability.  The same procedure can now
 be used to calculate the cross spectrum (multivariate analyses).")
     (license license:gpl2+)))
 
+(define-public r-pscr
+  (package
+    (name "r-pscr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PScr" version))
+              (sha256
+               (base32
+                "0376dddwydgnwdpxdvv9cp8nk2j57dsqmfa94njxw9a19r7g3xw5"))))
+    (properties `((upstream-name . "PScr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-survival
+                             r-pracma
+                             r-nlme
+                             r-mstate
+                             r-lambertw
+                             r-gtools))
+    (home-page "https://cran.r-project.org/package=PScr")
+    (synopsis "Estimation for the Power Series Cure Rate Model")
+    (description
+     "Provide estimation for particular cases of the power series cure rate model
+<doi:10.1080/03610918.2011.639971>.  For the distribution of the concurrent
+causes the alternative models are the Poisson, logarithmic, negative binomial
+and Bernoulli (which are includes in the original work) and the polylogarithm
+model <doi:10.1080/00949655.2018.1451850>.  The estimation procedure is based on
+the EM algorithm discussed in <doi:10.1080/03610918.2016.1202276>.  For the
+distribution of the time-to-event the alternative models are slash half-normal,
+Weibull, gamma and Birnbaum-Saunders distributions.")
+    (license license:gpl2+)))
+
 (define-public r-pscore
   (package
     (name "r-pscore")
@@ -5426,13 +5458,13 @@ API. Alteryx Promote is available at the URL:
 (define-public r-promor
   (package
     (name "r-promor")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "promor" version))
               (sha256
                (base32
-                "1p61z7rfyxykxxzb97byiw4pjgxiqw4yam4yx2ggn2rp0vlkac6y"))))
+                "1wn87cijc04zycfvpvpjd6d816r3bpicw9wfv38nswvrhpdds9k2"))))
     (properties `((upstream-name . "promor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -15198,13 +15230,13 @@ survey'.")
 (define-public r-pnar
   (package
     (name "r-pnar")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PNAR" version))
               (sha256
                (base32
-                "0m11c07c34cfmjdrb21xb5blbgrkyjgvnighh20jf1skxbl6i1wl"))))
+                "0flc02rmyw8q410xcyg2ad00ck7b8jyjqw7xym3yaxg6nfbq8w77"))))
     (properties `((upstream-name . "PNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2
@@ -21877,18 +21909,19 @@ history, Laloe J-O, ..., Girondot M, Hays GC (2020)
 (define-public r-phenofit
   (package
     (name "r-phenofit")
-    (version "0.3.2")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phenofit" version))
               (sha256
                (base32
-                "1mmsaca52m4k73fbq8m29f118q02qps91glfxpw1jjbm5hqgazsv"))))
+                "0i9pvbvnk648gjzxdvwhxl705lkfd4dml8jg9gp7wfnnka4jxpw9"))))
     (properties `((upstream-name . "phenofit")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-zeallot
                              r-ucminf
+                             r-stringr
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
@@ -21896,7 +21929,6 @@ history, Laloe J-O, ..., Girondot M, Hays GC (2020)
                              r-numderiv
                              r-magrittr
                              r-lubridate
-                             r-juliacall
                              r-gridextra
                              r-ggplot2
                              r-dplyr
@@ -28754,28 +28786,6 @@ your unit tests.  Parameterized unit tests are often easier to read and more
 reliable, since they follow the DNRY (do not repeat yourself) rule.")
     (license license:asl2.0)))
 
-(define-public r-patpro
-  (package
-    (name "r-patpro")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "patPRO" version))
-              (sha256
-               (base32
-                "1l6q6glklmfgivs4gw0v8q4qa57wr2bna477sn2v401hcwmgnfyn"))))
-    (properties `((upstream-name . "patPRO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-rcolorbrewer r-plyr r-gridextra
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=patPRO")
-    (synopsis "Visualizing Temporal Microbiome Data")
-    (description
-     "Quickly and easily visualize longitudinal microbiome profiles using standard
-output from the QIIME microbiome analysis toolkit (see <http://qiime.org> for
-more information).")
-    (license license:gpl3)))
-
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
@@ -30689,13 +30699,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-paralleldsm
   (package
     (name "r-paralleldsm")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ParallelDSM" version))
               (sha256
                (base32
-                "02sixlx3lmr58hkcxlbmiw27pvz777ngkz3mfz4qaii8yhxsjvy9"))))
+                "1yvxr6qcy4z03zzv8ivnkzxsmsig78rynaiv2ydnkv1ngfgf4w45"))))
     (properties `((upstream-name . "ParallelDSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
