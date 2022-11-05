@@ -1567,49 +1567,6 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (2006). <doi:10.1016/j.advwatres.2005.08.007>.")
     (license license:gpl3)))
 
-(define-public r-nprcgenekeepr
-  (package
-    (name "r-nprcgenekeepr")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nprcgenekeepr" version))
-              (sha256
-               (base32
-                "1j6pfc694yf1m42a0fhlbh5wdbmgs61fswbw7083h69d2sr2zq05"))))
-    (properties `((upstream-name . "nprcgenekeepr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexls
-                             r-stringi
-                             r-shiny
-                             r-rlang
-                             r-rlabkey
-                             r-readxl
-                             r-plotrix
-                             r-matrix
-                             r-lubridate
-                             r-htmltable
-                             r-futile-logger
-                             r-anytime))
-    (native-inputs (list r-knitr))
-    (home-page "https://rmsharp.github.io/nprcgenekeepr/")
-    (synopsis "Genetic Tools for Colony Management")
-    (description
-     "This package provides genetic tools for colony management and is a derivation of
-the work in Amanda Vinson and Michael J Raboin (2015)
-<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4671785/> \"A Practical Approach
-for Designing Breeding Groups to Maximize Genetic Diversity in a Large Colony of
-Captive Rhesus Macaques ('Macaca mulatto')\".  It provides a Shiny application
-with an exposed API. The application supports five groups of functions: (1)
-Quality control of studbooks contained in text files or Excel workbooks and of
-pedigrees within LabKey Electronic Health Records (EHR); (2) Creation of
-pedigrees from a list of animals using the LabKey EHR integration; (3) Creation
-and display of an age by sex pyramid plot of the living animals within the
-designated pedigree; (4) Generation of genetic value analysis reports; and (5)
-Creation of potential breeding groups with and without proscribed sex ratios and
-defined maximum kinships.")
-    (license license:expat)))
-
 (define-public r-npphen
   (package
     (name "r-npphen")
@@ -4334,13 +4291,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.2.1")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "05prbxvbrkg00kj78m6i9402z1mwswh780va20dc5cm7bm4in0si"))))
+                "0scfzl4k2yww4jwls2kysakwsq9ilcdr8pw0bdrfi5kny859a1li"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4351,7 +4308,6 @@ chi-square tests.")
                              r-rcppparallel
                              r-rcpp
                              r-quantmod
-                             r-mess
                              r-meboot
                              r-doparallel
                              r-data-table
@@ -9591,13 +9547,13 @@ NetMHCIIpan from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.5-0")
+    (version "2.6-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmeta" version))
               (sha256
                (base32
-                "07fr06za4k57kr84ni35gbfjwaxdfgrf9jpds7nlmkwhwybm4462"))))
+                "1xihabkyv5hljyklmsi2h2w63yngibkbfv595r9nfgyp4b9pgslp"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
@@ -10410,13 +10366,13 @@ regression.")
 (define-public r-nestedmodels
   (package
     (name "r-nestedmodels")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedmodels" version))
               (sha256
                (base32
-                "1r0h520m98ys2bdam0gggzac7ij62f2i2s4d8v3y6p2jvz0kmkhd"))))
+                "065x6ggbn0naybbi5gjnyx2ryxg6062ya0fgj1k4sz3i2nrhjvwq"))))
     (properties `((upstream-name . "nestedmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13210,13 +13166,13 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 (define-public r-nametagger
   (package
     (name "r-nametagger")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nametagger" version))
               (sha256
                (base32
-                "17g8y7x83p1pkgj5hgildndchxsp70va25h93p7r1yjllm56zqv8"))))
+                "1s3rsplia53cxqpxxkb7l7p56bkgvl5jcjcxgf1a8qaxxf5qngi5"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -13227,7 +13183,7 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 find and extract entities (names, persons, locations, addresses, ...) in raw
 text and build your own entity recognition models.  Based on a maximum entropy
 Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
-<http://ufal.mff.cuni.cz/~straka/papers/2013-tsd_ner.pdf>.")
+<https://ufal.mff.cuni.cz/~straka/papers/2013-tsd_ner.pdf>.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-namespace
@@ -13496,13 +13452,13 @@ take advantage of sparse data.")
 (define-public r-naive
   (package
     (name "r-naive")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naive" version))
               (sha256
                (base32
-                "0kgj9dixrdmyl7vgc9a9kxmz751kgrh7rzy3sfs7ihnxdvd2yyp4"))))
+                "10364ammzwhixz3s17f8vdag3zac0pwvcziy9z0ji19knyhdigmb"))))
     (properties `((upstream-name . "naive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -13729,26 +13685,6 @@ for Censored Environmental Data using Minitab and R\" (2011) and courses and
 videos at <https://practicalstats.com>.  This package adds new functions to the
 `NADA` Package.")
     (license license:expat)))
-
-(define-public r-nada
-  (package
-    (name "r-nada")
-    (version "1.6-1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NADA" version))
-              (sha256
-               (base32
-                "0jp4mqr77cx7q5lff84s6wb0dwjy9mi0jyhbjc5fsx50bdczc3v7"))))
-    (properties `((upstream-name . "NADA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=NADA")
-    (synopsis "Nondetects and Data Analysis for Environmental Data")
-    (description
-     "This package contains methods described by Dennis Helsel in his book \"Nondetects
-And Data Analysis: Statistics for Censored Environmental Data\".")
-    (license license:gpl2+)))
 
 (define-public r-nacho
   (package

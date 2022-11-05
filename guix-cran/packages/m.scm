@@ -2310,13 +2310,13 @@ Gannaz (2016) <doi:10.1111/jtsa.12170>).")
 (define-public r-multiview
   (package
     (name "r-multiview")
-    (version "0.4")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiview" version))
               (sha256
                (base32
-                "0yw4sn79rkw4sxpz25l1l153kbgm6wzg1cz51n38dm73y34k3y3y"))))
+                "135krs4cz8d45jy6rqddq12jp8z1c2q3caw04h25839xxzamxcdl"))))
     (properties `((upstream-name . "multiview")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2337,7 +2337,7 @@ Cooperative learning chooses the degree of agreement (or fusion) in an adaptive
 manner, using a validation set or cross-validation to estimate test set
 prediction error.  In the setting of cooperative regularized linear regression,
 the method combines the lasso penalty with the agreement penalty (Ding, D., Li,
-S., Narasimhan, B., Tibshirani, R. (2021) <arXiv:2112.12337>).")
+S., Narasimhan, B., Tibshirani, R. (2021) <doi:10.1073/pnas.2202113119>).")
     (license license:gpl2)))
 
 (define-public r-multiverse
@@ -11363,13 +11363,13 @@ method.")
 (define-public r-mombf
   (package
     (name "r-mombf")
-    (version "3.1.4")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mombf" version))
               (sha256
                (base32
-                "08ppgryb6wgnl333dsm1schpw9gzjcq0a70h43k1f7s4m6r6549i"))))
+                "1a20bx37fpvyaal7ld279grym1fjciqsh03qxl6mkdiz6lxq4as3"))))
     (properties `((upstream-name . "mombf")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -14243,6 +14243,40 @@ avoids the dependence of the estimated number of assays on any specific ordering
 of the samples to form pools.")
     (license license:expat)))
 
+(define-public r-mmodely
+  (package
+    (name "r-mmodely")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mmodely" version))
+              (sha256
+               (base32
+                "08qiqa2g0h3ycxipq1xn8w5p3cixc0dfmzn5nvwaa1n1rb5w5q0d"))))
+    (properties `((upstream-name . "mmodely")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-caroline r-caper r-ape))
+    (home-page "https://cran.r-project.org/package=mmodely")
+    (synopsis
+     "Modeling Multivariate Origins Determinants - Evolutionary Lineages in Ecology")
+    (description
+     "Perform multivariate modeling of evolved traits, with special attention to
+understanding the interplay of the multi-factorial determinants of their origins
+in complex ecological settings (Stephens, 2007
+<doi:10.1016/j.tree.2006.12.003>).  This software primarily concentrates on
+phylogenetic regression analysis, enabling implementation of tree transformation
+averaging and visualization functionality.  Functions additionally support
+information theoretic approaches (Grueber, 2011
+<doi:10.1111/j.1420-9101.2010.02210.x>; Garamszegi, 2011
+<doi:10.1007/s00265-010-1028-7>) such as model averaging and selection of
+phylogenetic models.  There are other numerous functions for visualizing
+confounded variables, plotting phylogenetic trees, as well as reporting and
+exporting modeling results.  Lastly, as challenges to ecology are inherently
+multifarious, and therefore often multi-dataset, this package features several
+functions to support the identification, interpolation, merging, and updating of
+missing data and outdated nomenclature.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-mmod
   (package
     (name "r-mmod")
@@ -16281,6 +16315,34 @@ Rubin's or using a likelihood score based approach based on theory by Wang and
 Robins (1998) <doi:10.1093/biomet/85.4.935>.")
     (license license:gpl3)))
 
+(define-public r-mlmhelpr
+  (package
+    (name "r-mlmhelpr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mlmhelpr" version))
+              (sha256
+               (base32
+                "1liqawmdz3a8jxnlbhxx9iz5nlybkyz7jr719y0xkqz4h741bj5s"))))
+    (properties `((upstream-name . "mlmhelpr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-mathjaxr r-lme4))
+    (home-page "https://github.com/lrocconi/mlmhelpr")
+    (synopsis "Multilevel/Mixed Model Helper Functions")
+    (description
+     "This package provides a collection of miscellaneous helper function for running
+multilevel/mixed models in lme4'.  This package aims to provide functions to
+compute common tasks when estimating multilevel models such as computing the
+intraclass correlation and design effect, centering variables, estimating the
+proportion of variance explained at each level, pseudo-R squared, random
+intercept and slope reliabilities, tests for homogeneity of variance at level-1,
+and cluster robust and bootstrap standard errors.  The tests and statistics
+reported in the package are from Raudenbush & Bryk (2002, ISBN:9780761919049),
+Hox et al. (2018, ISBN:9781138121362), and Snijders & Bosker (2012,
+ISBN:9781849202015).")
+    (license license:expat)))
+
 (define-public r-mlmetrics
   (package
     (name "r-mlmetrics")
@@ -17168,18 +17230,18 @@ for a particular purpose.")
 (define-public r-mkdescr
   (package
     (name "r-mkdescr")
-    (version "0.7")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKdescr" version))
               (sha256
                (base32
-                "056gp5fig8l4wgv3hzphr5q81z1zi6x88abc4kzgg8f1ljpn37xf"))))
+                "0y4mg3lg94nvyvj8rns5lffd6qjw1yn6yw8kn03n94rig857amwp"))))
     (properties `((upstream-name . "MKdescr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://www.stamats.de/")
+    (home-page "https://github.com/stamats/MKdescr")
     (synopsis "Descriptive Statistics")
     (description
      "Computation of standardized interquartile range (IQR), Huber-type skipped mean
@@ -18296,6 +18358,32 @@ and rank (Plackett-Luce).  The extended GoM model with fixed stayers from
 Erosheva et al (2007) is now also supported.  See Airoldi et al (2014) for other
 examples of mixed membership models.")
     (license license:gpl2+)))
+
+(define-public r-mixedlsr
+  (package
+    (name "r-mixedlsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mixedLSR" version))
+              (sha256
+               (base32
+                "0a514w88k1lwcdmq7ginn4qmf0mdj747lhgxzx15nh0hp0xq26lc"))))
+    (properties `((upstream-name . "mixedLSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-mass r-grpreg r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://alexanderjwhite.github.io/mixedLSR/")
+    (synopsis
+     "Mixed, Low-Rank, and Sparse Multivariate Regression on High-Dimensional Data")
+    (description
+     "Mixed, low-rank, and sparse multivariate regression ('mixedLSR') provides tools
+for performing mixture regression when the coefficient matrix is low-rank and
+sparse.  mixedLSR allows subgroup identification by alternating optimization
+with simulated annealing to encourage global optimum convergence.  This method
+is data-adaptive, automatically performing parameter selection to identify
+low-rank substructures in the coefficient matrix.")
+    (license license:expat)))
 
 (define-public r-mixedindtests
   (package
@@ -28209,13 +28297,13 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "melt" version))
               (sha256
                (base32
-                "0gfg09idkqvlvahxipabcipwqv6f11c4wcw9i0p1c66j70b5dcy3"))))
+                "04k8w06siskwn8g2x9p6p8gxl4l9mjmrk759czglpfb1h6lb953z"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-bh))
@@ -30326,13 +30414,13 @@ methodology is described in Gandy and Scott (2020) <arXiv:2001.06465>.")
 (define-public r-mctq
   (package
     (name "r-mctq")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mctq" version))
               (sha256
                (base32
-                "09wdikzwfln7xmp7lsv58pzpwi08nx7srhsv9fjf40f6y39dvqv3"))))
+                "0ylk0bsgfs34b6213qsb1hrjfaqxnh6rz6in37l0xg00sqkl3ab2"))))
     (properties `((upstream-name . "mctq")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate
@@ -34211,13 +34299,13 @@ problem, the college admissions problem, and the house allocation problem.")
 (define-public r-matching
   (package
     (name "r-matching")
-    (version "4.10-4")
+    (version "4.10-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Matching" version))
               (sha256
                (base32
-                "1ssgcq4n3sm2j3xbclfqqhkbs8i320yn7d8g69aymv28q67kh2ky"))))
+                "16m4mmlvyslnn77idragbjf2ygmd7r6kwrgwkwcfnphzvlnjwhal"))))
     (properties `((upstream-name . "Matching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

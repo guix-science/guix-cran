@@ -3026,13 +3026,13 @@ and a client to API(s) implementing the AtomPub SWORD API specification.")
 (define-public r-atnr
   (package
     (name "r-atnr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ATNr" version))
               (sha256
                (base32
-                "1ryh99yifldml6fpprz01lap1nzlifjb2w8wgnmx95byz7gayrm9"))))
+                "0p6pya91aklylig80xca68n5xx0ngzn8p0ba8sfrznqj53g8x4r5"))))
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-desolve))
@@ -6115,6 +6115,37 @@ the axes; 2.the sample points; 3.  the vector endpoint representing some
 variable.")
     (license license:expat)))
 
+(define-public r-ardl-nardl
+  (package
+    (name "r-ardl-nardl")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ardl.nardl" version))
+              (sha256
+               (base32
+                "1dssbv48i4d2janqddjnpiwixczy681v8pf9b4gq9h7x0srgbpdh"))))
+    (properties `((upstream-name . "ardl.nardl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries
+                             r-texreg
+                             r-stringr
+                             r-rlist
+                             r-nardl
+                             r-lmtest
+                             r-dplyr
+                             r-car))
+    (home-page "https://cran.r-project.org/package=ardl.nardl")
+    (synopsis "Linear and Nonlinear Autoregressive Distributed Lag Models")
+    (description
+     "Estimate the linear and nonlinear autoregressive distributed lag (ARDL & NARDL)
+models and the corresponding error correction models, and test for longrun and
+short-run asymmetric.  The Pesaran, Shin & Smith (2001) (<doi:10.1002/jae.616>)
+bounds test for level relationships is also provided.  The ardl.nardl package
+also performs short-run and longrun symmetric restrictions available at Shin et
+al. (2014) <doi:10.1007/978-1-4899-8008-3_9> and their corresponding tests.")
+    (license license:gpl2+)))
+
 (define-public r-ardl
   (package
     (name "r-ardl")
@@ -6166,29 +6197,6 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 West (1997).  Particular cases include the extraction of trend and seasonal
 components.")
     (license license:gpl2+)))
-
-(define-public r-arctools
-  (package
-    (name "r-arctools")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "arctools" version))
-              (sha256
-               (base32
-                "0ldhmv2fs3gi5v5d36y8i1mbw3w4vf2h8f7avlk5zgywn46j75zf"))))
-    (properties `((upstream-name . "arctools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-runstats r-lubridate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=arctools")
-    (synopsis
-     "Processing and Physical Activity Summaries of Minute Level Activity Data")
-    (description
-     "This package provides functions to process minute level actigraphy-measured
-activity counts data and extract commonly used physical activity volume and
-fragmentation metrics.")
-    (license license:gpl3)))
 
 (define-public r-arcpullr
   (package
@@ -12666,6 +12674,26 @@ solve other tasks in text mining as well.")
 JavaScript.  See <http://epoberezkin.github.io/ajv/> for details.")
     (license license:gpl2)))
 
+(define-public r-aisoph
+  (package
+    (name "r-aisoph")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aisoph" version))
+              (sha256
+               (base32
+                "02kh0810brz0yrgwyx8qjpy5wn1f1g0q9h483q9nqhmvddgljmkk"))))
+    (properties `((upstream-name . "aisoph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpp r-iso))
+    (home-page "https://cran.r-project.org/package=aisoph")
+    (synopsis "Additive Isotonic Proportional Hazards Model")
+    (description
+     "Nonparametric estimation of additive isotonic covariate effects for proportional
+hazards model.")
+    (license license:gpl2+)))
+
 (define-public r-airthermo
   (package
     (name "r-airthermo")
@@ -13247,8 +13275,12 @@ using xtable methods included in the package.")
                 "1w2rvw1kc4a9b2mi3bh10siv3j89xb3qrx7nydw4kqrgi5c4v3i4"))))
     (properties `((upstream-name . "aIc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zcompositions r-vegan r-shiny r-matrixcalc
-                             r-edger))
+    (propagated-inputs (list r-zcompositions
+                             r-vegan
+                             r-shiny
+                             r-matrixcalc
+                             r-edger
+                             r-aldex2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ggloor/aIc")
     (synopsis "Testing for Compositional Pathologies in Datasets")

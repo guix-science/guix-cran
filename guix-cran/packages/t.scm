@@ -7749,37 +7749,6 @@ maximum likelihood approaches, moments optimization and divergence minimization
 to estimate the optimal transformation parameter.")
     (license license:gpl2)))
 
-(define-public r-trafficbde
-  (package
-    (name "r-trafficbde")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TrafficBDE" version))
-              (sha256
-               (base32
-                "03cr1cmiygi0kq37zs8dnp1rd670yzd4z1wgj31ahnld1siqb30g"))))
-    (properties `((upstream-name . "TrafficBDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-rcurl
-                             r-lubridate
-                             r-dplyr
-                             r-descriptivestats-obeu
-                             r-data-table
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/okgreece/TrafficBDE")
-    (synopsis "Traffic Predictions Using Neural Networks")
-    (description
-     "Estimate and return either the traffic speed or the car entries in the city of
-Thessaloniki using historical traffic data.  It's used in transport pilot of the
-BigDataEurope project.  There are functions for processing these data, training
-a neural network, select the most appropriate model and predict the traffic
-speed or the car entries for a selected time date.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-trading
   (package
     (name "r-trading")
@@ -9234,13 +9203,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "04vzis26zarxi3bqhvhiazn1if63k0rfc6b2znd555z3lq6hdd0q"))))
+                "1c5m4422rx3hv62s0v2b2n3scfd66vhpq5gpxh81wzn32p0wcvii"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -11019,16 +10988,17 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "0.0.7")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipsae" version))
               (sha256
                (base32
-                "1mvik61p9031p4d409ff1ymz6bq1izhwnrid1f9snlrdm9n7inkk"))))
+                "0mrv3jw219jra70jr5lj87jvsr6pphmr7nbcns41qiynnaddrfad"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
+                             r-sp
                              r-shiny
                              r-rstan
                              r-rdpack
@@ -12067,18 +12037,18 @@ Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 (define-public r-timechange
   (package
     (name "r-timechange")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timechange" version))
               (sha256
                (base32
-                "1aqbvvppyg2058fg56a769knhh3pyrcvwzkzdxmflzn9jflbz9jx"))))
+                "0w3zbmzhg3zr5d9aa83kmr6gyhk75l7jysa7zs0pnz9x4ffr20w5"))))
     (properties `((upstream-name . "timechange")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-cpp11))
     (home-page "https://github.com/vspinu/timechange/")
-    (synopsis "Efficient Changing of Date-Times")
+    (synopsis "Efficient Manipulation of Date-Times")
     (description
      "Efficient routines for manipulation of date-time objects while accounting for
 time-zones and daylight saving times.  The package includes utilities for

@@ -2405,13 +2405,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PsychWordVec" version))
               (sha256
                (base32
-                "1b8s1w391f81adw4im1w5nw3g495iq9d2fmg4535zmh5kyqpkhpa"))))
+                "00wgkwz9jdqjrq4y8786fggj1l9lrca1hl6b3dijwzq4s6dqmv2p"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
@@ -2421,24 +2421,27 @@ and easy-to-read output.")
                              r-rtsne
                              r-rsparse
                              r-rgl
+                             r-purrr
                              r-ggrepel
                              r-ggplot2
                              r-fasttextr
                              r-dplyr
                              r-data-table
+                             r-cli
                              r-brucer))
     (home-page "https://psychbruce.github.io/PsychWordVec/")
     (synopsis "Word Embedding Research Framework for Psychological Science")
     (description
-     "An integrated toolkit of word embedding research that provides: (1) a collection
+     "An integrated toolbox of word embedding research that provides: (1) a collection
 of pre-trained word vectors in the .RData compressed format
 <https://psychbruce.github.io/WordVector_RData.pdf>; (2) a variety of functions
 to process, analyze, and visualize word vectors; (3) a range of tests to examine
 conceptual associations, including the Word Embedding Association Test
 <doi:10.1126/science.aal4230> and the Relative Norm Distance
-<doi:10.1073/pnas.1720347115>; (4) a set of training methods to locally train
-word vectors from text corpora, including Word2Vec <arXiv:1301.3781>, GloVe
-<doi:10.3115/v1/D14-1162>, and FastText <arXiv:1607.04606>.")
+<doi:10.1073/pnas.1720347115>, with permutation test of significance; (4) a set
+of training methods to locally train word vectors from text corpora, including
+Word2Vec <arXiv:1301.3781>, GloVe <doi:10.3115/v1/D14-1162>, and FastText
+<arXiv:1607.04606>.")
     (license license:gpl3)))
 
 (define-public r-psychtools
@@ -10728,6 +10731,34 @@ requirements, or minimum detectable effect sizes.  Package also allows users to
 work with absolute effects rather than effect sizes, to specify an additional
 assumption to narrow the bounds, and to incorporate covariate adjustment.")
     (license license:gpl2+)))
+
+(define-public r-powerjoin
+  (package
+    (name "r-powerjoin")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "powerjoin" version))
+              (sha256
+               (base32
+                "19b7y7aqf5159x2fi5nrx179nc673qqzkv9c8kgw85hmmjzjgnb3"))))
+    (properties `((upstream-name . "powerjoin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/moodymudskipper/powerjoin")
+    (synopsis "Extensions of 'dplyr' and 'fuzzyjoin' Join Functions")
+    (description
+     "We extend dplyr and fuzzyjoin join functions with features to preprocess the
+data, apply various data checks, and deal with conflicting columns.")
+    (license license:expat)))
 
 (define-public r-powergwasinteraction
   (package
@@ -25323,13 +25354,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "1.3.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedtools" version))
               (sha256
                (base32
-                "0nn6vax46b8lrqrkq153kvnd9708zfz0wn07qkfhi3dj73inh8c9"))))
+                "0svr7n5vy315dw3chj4q0xyc1wvc1z7kgb7n6izzgzjx4vaykwnp"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-kinship2))
@@ -25341,9 +25372,8 @@ server of the Peer Models Network.")
 manipulating and visualising pedigrees and genetic marker data.  Pedigrees can
 be read from text files or created on the fly with built-in functions.  A range
 of utilities enable modifications like adding or removing individuals, breaking
-loops, and merging pedigrees.  Pedigree plots are produced by wrapping the
-plotting functionality of the kinship2 package.  A Shiny app for creating
-pedigrees, based on pedtools', is available at
+loops, and merging pedigrees.  An online tool for creating pedigrees
+interactively, based on pedtools', is available at
 <https://magnusdv.shinyapps.io/quickped>.  pedtools is the hub of the ped
 suite', a collection of packages for pedigree analysis.  A detailed presentation
 of the ped suite is given in the book Pedigree Analysis in R (Vigeland, 2021,
@@ -25554,31 +25584,6 @@ Carlo suggested by <doi:10.1198/106186002394> with a similar procedure to
 approximate the derivatives.  The minimax tilting method suggested by
 <doi:10.1111/rssb.12162> is also supported.  Graph-based methods are also
 provided that can be used to simplify pedigrees.")
-    (license license:gpl3)))
-
-(define-public r-pedigreetools
-  (package
-    (name "r-pedigreetools")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pedigreeTools" version))
-              (sha256
-               (base32
-                "0kgbjyw9dlp4s91cyg5w0p2vn2h9pg9ixrhc5pwvkp3v1acd0xfm"))))
-    (properties `((upstream-name . "pedigreeTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (home-page "https://github.com/Rpedigree/pedigreeTools/")
-    (synopsis "Versatile Functions for Working with Pedigrees")
-    (description
-     "Tools to sort, edit and prune pedigrees and to extract the inbreeding
-coefficients and the relationship matrix (includes code for pedigrees from
-self-pollinated species).  The use of pedigree data is central to genetics
-research within the animal and plant breeding communities to predict breeding
-values.  The relationship matrix between the individuals can be derived from
-pedigree structure following the algorithms described for example in Vazquez et
-al., 2010 <doi:10.2527/jas.2009-1952>.")
     (license license:gpl3)))
 
 (define-public r-pedigreemm
@@ -29565,6 +29570,33 @@ Hothorn et al. (2006) <doi:10.1198/106186006X133933>, Zeileis et al. (2008)
 <doi:10.1186/1471-2105-8-25>.")
     (license license:gpl2)))
 
+(define-public r-parttime
+  (package
+    (name "r-parttime")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "parttime" version))
+              (sha256
+               (base32
+                "0zc0gbmycbrp3f0wr5mw3mp6ighvrb0rw3d8ilr4b1kqa20ws54q"))))
+    (properties `((upstream-name . "parttime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-pillar r-lubridate r-crayon))
+    (home-page "https://dgkf.github.io/parttime/")
+    (synopsis "Partial Datetime Handling")
+    (description
+     "Datetimes and timestamps are invariably an imprecise notation, with any partial
+representation implying some amount of uncertainty.  To handle this, parttime
+provides classes for embedding partial missingness as a central part of its
+datetime classes.  This central feature allows for more ergonomic use of
+datetimes for challenging datetime computation, including calculations of
+overlapping date ranges, imputations, and more thoughtful handling of ambiguity
+that arises from uncertain time zones.  This package was developed first and
+foremost with pharmaceutical applications in mind, but aims to be agnostic to
+application to accommodate general use cases just as conveniently.")
+    (license license:expat)))
+
 (define-public r-partsm
   (package
     (name "r-partsm")
@@ -29836,13 +29868,13 @@ overlapping samples.  Journal of Applied Quantitative Methods, 10(3).")
 (define-public r-partialised
   (package
     (name "r-partialised")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "partialised" version))
               (sha256
                (base32
-                "19rm2fcv5am5512y1p77nss715dcdfrg3hvrgy2b49jr0f9i8d25"))))
+                "0rb9d5p21f1y0c8arwh1lf516vw30qinf15rkrv49qw97dvvb9db"))))
     (properties `((upstream-name . "partialised")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-purrr r-pillar))
@@ -33151,13 +33183,13 @@ partly supported.")
 (define-public r-pacotest
   (package
     (name "r-pacotest")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pacotest" version))
               (sha256
                (base32
-                "1ry0lwzphgivmlc8swhk6l26q4ca6x36rm8r7vvjb64y0fvayqk5"))))
+                "0zdrvcrf6ynid2wpngdslxzkpc4grcvrf6bzbrni9rvp94sfzjlf"))))
     (properties `((upstream-name . "pacotest")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -33172,12 +33204,12 @@ partly supported.")
     (description
      "Routines for two different test types, the Constant Conditional Correlation
 (CCC) test and the Vectorial Independence (VI) test are provided (Kurz and
-Spanhel (2017) <arXiv:1706.02338>).  The tests can be applied to check whether a
-conditional copula coincides with its partial copula.  Functions to test whether
-a regular vine copula satisfies the so-called simplifying assumption or to test
-a single copula within a regular vine copula to be a (j-1)-th order partial
-copula are available.  The CCC test comes with a decision tree approach to allow
-testing in high-dimensional settings.")
+Spanhel (2022) <doi:10.1214/22-EJS2051>).  The tests can be applied to check
+whether a conditional copula coincides with its partial copula.  Functions to
+test whether a regular vine copula satisfies the so-called simplifying
+assumption or to test a single copula within a regular vine copula to be a
+(j-1)-th order partial copula are available.  The CCC test comes with a decision
+tree approach to allow testing in high-dimensional settings.")
     (license license:expat)))
 
 (define-public r-paco

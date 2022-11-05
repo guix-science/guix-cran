@@ -62,24 +62,6 @@
 <arXiv:1703.08644>.")
     (license license:gpl3)))
 
-(define-public r-lxb
-  (package
-    (name "r-lxb")
-    (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lxb" version))
-              (sha256
-               (base32
-                "16x1mvhxqhvibzmv6mlqcmkgic2sha1xagf7r2azmn4z8x1m9w6n"))))
-    (properties `((upstream-name . "lxb")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=lxb")
-    (synopsis "Fast LXB File Reader")
-    (description
-     "This package provides functions to quickly read LXB parameter data.")
-    (license license:expat)))
-
 (define-public r-lwqs
   (package
     (name "r-lwqs")
@@ -4481,13 +4463,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-5")
+    (version "1.6-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LogConcDEAD" version))
               (sha256
                (base32
-                "0pwq1bdmn040bkwal7xsmjv2asvpyshipbglqb16h2z7yq0vwmv7"))))
+                "0ig808d4zqmp4vli25g50s97b1iggrb92ih2s89w6l4vgixmrs92"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mclust r-mass))

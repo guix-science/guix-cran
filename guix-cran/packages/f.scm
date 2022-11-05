@@ -14229,13 +14229,13 @@ Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-10")
+    (version "1.1-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdaPDE" version))
               (sha256
                (base32
-                "1g5lsr06mhav9dj9072vl2sxcv3bpcv9jgnfr3vjh64asipgia39"))))
+                "09ba71fnblv9r2c22amy92wv3xpa395rf7x681p8zs5rldhk8i5a"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
@@ -18194,16 +18194,21 @@ Useful when using the book.")
 (define-public r-fadpclust
   (package
     (name "r-fadpclust")
-    (version "0.1.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FADPclust" version))
               (sha256
                (base32
-                "0b4b77wi25ldrq4w2vqhh3g1sm89ad0ghajfmfaqp84v30d8hcpw"))))
+                "0sr71piairiig8lc7avd04j041kkrhqs9vlq4y5f4p0hxms5adlk"))))
     (properties `((upstream-name . "FADPclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mfpca r-fundata r-fda-usc r-fda r-cluster))
+    (propagated-inputs (list r-mfpca
+                             r-fundata
+                             r-fpc
+                             r-fda-usc
+                             r-fda
+                             r-cluster))
     (home-page "https://cran.r-project.org/package=FADPclust")
     (synopsis
      "Functional Data Clustering Using Adaptive Density Peak Detection")

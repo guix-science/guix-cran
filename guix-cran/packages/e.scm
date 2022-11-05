@@ -2087,6 +2087,37 @@ this package converts gene expression values to the FBA boundaries for each
 reaction based in the boolean rules described in its associated GPR.")
     (license license:gpl2)))
 
+(define-public r-exomedepth
+  (package
+    (name "r-exomedepth")
+    (version "1.1.16")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ExomeDepth" version))
+              (sha256
+               (base32
+                "1r7b9h5i562fa67ghisyw6ciwawfyjwrpn95kdws4dd4gqgbb9kv"))))
+    (properties `((upstream-name . "ExomeDepth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-rsamtools
+                             r-magrittr
+                             r-iranges
+                             r-genomicranges
+                             r-genomicalignments
+                             r-dplyr
+                             r-biostrings
+                             r-aod))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ExomeDepth")
+    (synopsis "Calls Copy Number Variants from Targeted Sequence Data")
+    (description
+     "Calls copy number variants (CNVs) from targeted sequence data, typically exome
+sequencing experiments designed to identify the genetic basis of Mendelian
+disorders.  The method is presented in details in Plagnol et al (2012)
+<https://pubmed.ncbi.nlm.nih.gov/22942019/>.")
+    (license license:gpl3)))
+
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
@@ -2986,13 +3017,13 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 (define-public r-evophylo
   (package
     (name "r-evophylo")
-    (version "0.3")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EvoPhylo" version))
               (sha256
                (base32
-                "102f45wgyxrkz4snmv03z5xjli92z54l9mas38ndpg0fs8czqznv"))))
+                "1jgvvi355dxrjqniwcga7gzfj0jw3hgwbii2cv055rq9z5f442mr"))))
     (properties `((upstream-name . "EvoPhylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-unglue
@@ -3003,6 +3034,7 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
+                             r-devtools
                              r-deeptime
                              r-cluster
                              r-ape))
@@ -15383,13 +15415,13 @@ supported.")
 (define-public r-edecob
   (package
     (name "r-edecob")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edecob" version))
               (sha256
                (base32
-                "1lb2df0w4hf2gchdfbyw1ykb8db5bkilgyml1lhdnv209anwjh2n"))))
+                "1k9790xamyw8ksfgvd8gka1f5mghfma6akdj7bqmlqv3yrlpgbxr"))))
     (properties `((upstream-name . "edecob")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))
@@ -16555,6 +16587,40 @@ growth through the normalized difference vegetation index (NDVI).  Please see
 Souza et al. (2016) <doi:10.1002/hyp.10953>.")
     (license license:gpl2)))
 
+(define-public r-ecoensemble
+  (package
+    (name "r-ecoensemble")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EcoEnsemble" version))
+              (sha256
+               (base32
+                "1b0zm8d4dc2drdy08s5gskjdjl0i91ng78xk6aga17bjgm5hjqsi"))))
+    (properties `((upstream-name . "EcoEnsemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-reshape2
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrixcalc
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EcoEnsemble")
+    (synopsis "General Framework for Combining Ecosystem Models")
+    (description
+     "Fit and sample from the ensemble model described in Spence et al (2018): \"A
+general framework for combining ecosystem
+models\"<https://onlinelibrary.wiley.com/doi/abs/10.1111/faf.12310>.")
+    (license license:gpl3+)))
+
 (define-public r-ecodist
   (package
     (name "r-ecodist")
@@ -16721,6 +16787,36 @@ Forest Change (Hansen et al., 2013) <doi:10.1126/science.1244693>, and
 Continuous Tree Cover data (Sexton et al., 2013)
 <doi:10.1080/17538947.2013.786146>.")
     (license license:gpl3)))
+
+(define-public r-eco
+  (package
+    (name "r-eco")
+    (version "4.0-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eco" version))
+              (sha256
+               (base32
+                "06ac1xbys94k6xybhyjvn2vzrl3db329612i6h7s76nl9v4gww0a"))))
+    (properties `((upstream-name . "eco")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/kosukeimai/eco")
+    (synopsis "Ecological Inference in 2x2 Tables")
+    (description
+     "This package implements the Bayesian and likelihood methods proposed in Imai,
+Lu, and Strauss (2008 <DOI: 10.1093/pan/mpm017>) and (2011
+<DOI:10.18637/jss.v042.i05>) for ecological inference in 2 by 2 tables as well
+as the method of bounds introduced by Duncan and Davis (1953).  The package fits
+both parametric and nonparametric models using either the
+Expectation-Maximization algorithms (for likelihood models) or the Markov chain
+Monte Carlo algorithms (for Bayesian models).  For all models, the
+individual-level data can be directly incorporated into the estimation whenever
+such data are available.  Along with in-sample and out-of-sample predictions,
+the package also provides a functionality which allows one to quantify the
+effect of data aggregation on parameter estimation and hypothesis testing under
+the parametric likelihood models.")
+    (license license:gpl2+)))
 
 (define-public r-ecmwfr
   (package

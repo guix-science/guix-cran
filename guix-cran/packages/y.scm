@@ -938,21 +938,21 @@ the help page for this function).")
 (define-public r-yaimpute
   (package
     (name "r-yaimpute")
-    (version "1.0-32")
+    (version "1.0-33")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yaImpute" version))
               (sha256
                (base32
-                "1zvkrmlj48ahg9jq0fkbn7j603fmmld57yc0gjfas2mqa7cfbvh8"))))
+                "0b2i0aymwb150068ji27i574p8lf8566cy6amppgzj8vxdi54naq"))))
     (properties `((upstream-name . "yaImpute")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=yaImpute")
+    (home-page "https://github.com/jeffreyevans/yaImpute")
     (synopsis "Nearest Neighbor Observation Imputation and Evaluation Tools")
     (description
      "This package performs nearest neighbor-based imputation using one or more
 alternative approaches to processing multivariate data.  These include methods
-based on canonical correlation analysis, canonical correspondence analysis, and
+based on canonical correlation: analysis, canonical correspondence analysis, and
 a multivariate adaptation of the random forest classification and regression
 techniques of Leo Breiman and Adele Cutler.  Additional methods are also
 offered.  The package includes functions for comparing the results from running

@@ -827,28 +827,6 @@ articles for more information about the z-curves, expected discovery and
 replicability rates, validation studies, and limitations.")
     (license license:gpl3)))
 
-(define-public r-zcompositions
-  (package
-    (name "r-zcompositions")
-    (version "1.4.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zCompositions" version))
-              (sha256
-               (base32
-                "1rrhja9iaq123r2gqw1bzrn1ri0s3z4wzq8p0sfcr1yb6pv13vik"))))
-    (properties `((upstream-name . "zCompositions")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm r-nada r-mass))
-    (home-page "https://github.com/Japal/zCompositions")
-    (synopsis
-     "Treatment of Zeros, Left-Censored and Missing Values in Compositional Data Sets")
-    (description
-     "Principled methods for the imputation of zeros, left-censored and missing data
-in compositional data sets (Palarea-Albaladejo and Martin-Fernandez (2015)
-<doi:10.1016/j.chemolab.2015.02.019>).")
-    (license license:gpl2+)))
-
 (define-public r-zbank
   (package
     (name "r-zbank")

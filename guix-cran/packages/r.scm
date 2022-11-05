@@ -6068,13 +6068,13 @@ input (image and tiles) or output (mosaic transformed image).")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.3.13")
+    (version "1.3.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSiena" version))
               (sha256
                (base32
-                "0rc56g4f75s4nxmja4117mhynwh340kidp0amm2jdm1gda9wwp32"))))
+                "1g36l9j68d4lgwx5m67ccny7kjjv3lk5lxqawv1pz1l0d4vdmhsd"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-matrix r-mass r-lattice))
@@ -10167,13 +10167,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.3.1")
+    (version "3.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpact" version))
               (sha256
                (base32
-                "152kmlw4q7jlhhp1xx3hamkyyflhsbxr1v3kb57x705v64h3qp54"))))
+                "1fpy36rr1zcbqxbnmzi154h9iws3xss14b3xrjzz6l1k7gralr65"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10710,6 +10710,45 @@ quickly and add hillshade to vector-based maps.")
 More information can be found at <https://developer.rosette.com>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-rosetta
+  (package
+    (name "r-rosetta")
+    (version "0.3.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rosetta" version))
+              (sha256
+               (base32
+                "0f7b60xj5kcb5dwjk194kr1hz3hbzzd61bqkg4wpjgwyiai75v8y"))))
+    (properties `((upstream-name . "rosetta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-ufs
+                             r-rmdpartials
+                             r-pwr
+                             r-psych
+                             r-plyr
+                             r-pander
+                             r-multcompview
+                             r-lme4
+                             r-lavaan
+                             r-knitr
+                             r-kableextra
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-car))
+    (home-page "https://r-packages.gitlab.io/rosetta/")
+    (synopsis "Parallel Use of Statistical Packages in Teaching")
+    (description
+     "When teaching statistics, it can often be desirable to uncouple the content from
+specific software packages.  To ease such efforts, the Rosetta Stats website
+(<https://rosettastats.com>) allows comparing analyses in different packages.
+This package is the companion to the Rosetta Stats website, aiming to provide
+functions that produce output that is similar to output from other statistical
+packages, thereby facilitating software-agnostic teaching of statistics.")
+    (license license:gpl3+)))
 
 (define-public r-rosenbrock
   (package
@@ -22913,6 +22952,31 @@ creation of a grid based on the GeoPAT 2 grid header file and reading a GeoPAT 2
 text outputs.")
     (license license:expat)))
 
+(define-public r-rgeomstats
+  (package
+    (name "r-rgeomstats")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgeomstats" version))
+              (sha256
+               (base32
+                "1fy5fvkifv80sf3x0d2y3vyv7adn0h57q1hvip1phcvxg8p5prff"))))
+    (properties `((upstream-name . "rgeomstats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reticulate
+                             r-rdpack
+                             r-r6
+                             r-purrr
+                             r-cli))
+    (home-page "https://github.com/LMJL-Alea/rgeomstats")
+    (synopsis "Interface to 'Geomstats'")
+    (description
+     "This package provides an interface to the Python package Geomstats authored by
+Miolane et al. (2020) <arXiv:2004.04667>.")
+    (license license:expat)))
+
 (define-public r-rgeolocate
   (package
     (name "r-rgeolocate")
@@ -31317,13 +31381,13 @@ used by package developers.")
 (define-public r-rebus-datetimes
   (package
     (name "r-rebus-datetimes")
-    (version "0.0-1")
+    (version "0.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rebus.datetimes" version))
               (sha256
                (base32
-                "09lv41mywm13avxb0xp8x1a2xz50zxazh3lpg27m16d4cgijmhm5"))))
+                "1hq5mr1v8ziikmkncb9ix11877rmzbjhz54nigwbkswbjwj7vhdf"))))
     (properties `((upstream-name . "rebus.datetimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rebus-base))
@@ -34652,22 +34716,24 @@ R by providing both the header files and all examples.")
 (define-public r-rcppspdlog
   (package
     (name "r-rcppspdlog")
-    (version "0.0.8")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSpdlog" version))
               (sha256
                (base32
-                "1z5fg1i9splph4nfxnra07yjgss9g6g5rcsz492aa0zd8xi7z3za"))))
+                "0yi0d3iznja03fr9208jkvcplf8n8h7v54mybbrrmway6rsrx5wn"))))
     (properties `((upstream-name . "RcppSpdlog")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/eddelbuettel/rcppspdlog")
-    (synopsis "'spdlog' C++ Header Library for Logging")
+    (synopsis
+     "R and C++ Interfaces to 'spdlog' C++ Header Library for Logging")
     (description
      "The mature and widely-used C++ logging library spdlog by Gabi Melman provides
 many desirable features.  This package bundles these header files for easy use
-by R packages via a simple LinkingTo: inclusion.")
+by R packages from both their R and C++ code.  More explicit use via LinkingTo:
+is also supported.")
     (license license:gpl2+)))
 
 (define-public r-rcppsmc
@@ -37220,13 +37286,13 @@ Game notations.")
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.2.1.0")
+    (version "4.2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcheology" version))
               (sha256
                (base32
-                "0i4yda90kjfpi9jwqwgrg36qq5h1vm1sb6aq9b61ab80vw7w0nng"))))
+                "09s6b702kla15bkvbjr9b0a0l9cs9z83f73alspid9k1i42fc765"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -39177,6 +39243,28 @@ both f and s.  The MCMC uses the recent innovations in Efficient
 Metropolis--Hastings proposal mechanisms for Bayesian regression tree models
 (Pratola, 2015, Bayesian Analysis, <doi:10.1214/16-BA999>).")
     (license license:gpl2+)))
+
+(define-public r-rbahadur
+  (package
+    (name "r-rbahadur")
+    (version "0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rBahadur" version))
+              (sha256
+               (base32
+                "1wfhn4k32jnvw5gxvc8izwfgi8xbg9v3wr7m7w08hyp4n8k6fnfz"))))
+    (properties `((upstream-name . "rBahadur")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rBahadur")
+    (synopsis
+     "Assortative Mating Simulation and Multivariate Bernoulli Variates")
+    (description
+     "Simulation of phenotype / genotype data under assortative mating.  Includes
+functions for generating Bahadur order-2 multivariate Bernoulli variables with
+general and diagonal-plus-low-rank correlation structures.  Further details are
+provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
+    (license license:gpl3+)))
 
 (define-public r-rbacon
   (package
@@ -44337,13 +44425,13 @@ data structures.")
 (define-public r-r6causal
   (package
     (name "r-r6causal")
-    (version "0.6.1")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "R6causal" version))
               (sha256
                (base32
-                "0ykwcymqzjcvin6agy5yyzjw484rz4zmhajq0w3dpd8hgy8vyclg"))))
+                "17dfr8gl83qsarj538zd4010mhp5lzgd9awasq1x4yb4973q3sv1"))))
     (properties `((upstream-name . "R6causal")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-igraph r-dosearch r-data-table
@@ -45177,13 +45265,13 @@ goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2dii.match" version))
               (sha256
                (base32
-                "030lvmi34fsbllwz0vhfxfmyar08x83hl7gkf6q6g5s54d1am1lr"))))
+                "19k6g7pa7jdsbpclkvppj3m08vji79jnijywzplwy01c84by5gf8"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -45199,18 +45287,18 @@ goals.")
                              r-glue
                              r-dplyr
                              r-data-table))
-    (home-page "https://2degreesinvesting.github.io/r2dii.match//")
+    (home-page "https://rmi-pacta.github.io/r2dii.match/")
     (synopsis "Tools to Match Corporate Lending Portfolios with Climate Data")
     (description
      "These tools implement in R a fundamental part of the software PACTA (Paris
 Agreement Capital Transition Assessment), which is a free tool that calculates
 the alignment between financial portfolios and climate scenarios
-(<https://2degrees-investing.org/>).  Financial institutions use PACTA to study
-how their capital allocation decisions align with climate change mitigation
-goals.  This package matches data from corporate lending portfolios to asset
-level data from market-intelligence databases (e.g. power plant capacities,
-emission factors, etc.).  This is the first step to assess if a financial
-portfolio aligns with climate goals.")
+(<https://www.transitionmonitor.com/>).  Financial institutions use PACTA to
+study how their capital allocation decisions align with climate change
+mitigation goals.  This package matches data from corporate lending portfolios
+to asset level data from market-intelligence databases (e.g. power plant
+capacities, emission factors, etc.).  This is the first step to assess if a
+financial portfolio aligns with climate goals.")
     (license license:expat)))
 
 (define-public r-r2dii-data
@@ -45243,13 +45331,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2dii.analysis" version))
               (sha256
                (base32
-                "1bd1byr7n488d0ig393vdg7mdg902hmhwaim6hcx31brqzz19kam"))))
+                "0408r5vlq5kgd0b653sywi62rkfw1sg3m4via072c5bdr207bj8d"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -45261,7 +45349,7 @@ development and use of PACTA in R.")
                              r-lifecycle
                              r-glue
                              r-dplyr))
-    (home-page "https://github.com/2DegreesInvesting/r2dii.analysis")
+    (home-page "https://github.com/RMI-PACTA/r2dii.analysis")
     (synopsis "Measure Climate Scenario Alignment of Corporate Loans")
     (description
      "These tools help you to assess if a corporate lending portfolio aligns with
@@ -45269,9 +45357,9 @@ climate goals.  They summarize key climate indicators attributed to the
 portfolio (e.g. production, emission factors), and calculate alignment targets
 based on climate scenarios.  They implement in R the last step of the free
 software PACTA (Paris Agreement Capital Transition Assessment;
-<https://2degrees-investing.org/>).  Financial institutions use PACTA to study
-how their capital allocation decisions align with climate change mitigation
-goals.")
+<https://www.transitionmonitor.com/>).  Financial institutions use PACTA to
+study how their capital allocation decisions align with climate change
+mitigation goals.")
     (license license:expat)))
 
 (define-public r-r2dictionary

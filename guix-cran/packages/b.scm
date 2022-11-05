@@ -7871,13 +7871,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.13")
+    (version "1.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blogdown" version))
               (sha256
                (base32
-                "1ag7hidz43zd3kdmm25v7x6w02v0lzw7l4hspwh4zrvigar3dbhc"))))
+                "1spgncw7m4csv19npv3iydy30v55a6q5mdgn6a2g19rw3wr50vsx"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15771,13 +15771,13 @@ execution time of R expressions.")
 (define-public r-benchmarking
   (package
     (name "r-benchmarking")
-    (version "0.30")
+    (version "0.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Benchmarking" version))
               (sha256
                (base32
-                "0jmdp8qkbg0vjxbvx7mjh3l0yfq2zs63g6bsm6ksi56yvx7l9rvi"))))
+                "0gg4yay098ga08ns5ybn7s467prwbq0a94a0nfah30jy36ggdfs2"))))
     (properties `((upstream-name . "Benchmarking")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-rcpp r-quadprog r-lpsolveapi))
@@ -18630,13 +18630,13 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-2")
+    (version "3.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesXsrc" version))
               (sha256
                (base32
-                "04p17d87b2gg3p08jmdmg570ppdzci8r4qxcq115qs58bvqih47v"))))
+                "1c598sir81xpb35famip6lcfr4cnvm903f1vhajjz04yd13fbwh9"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (home-page "https://www.uni-goettingen.de/de/bayesx/550513.html")
@@ -19998,13 +19998,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMallows" version))
               (sha256
                (base32
-                "1dgvrr6ihfxrvpp5s2fmbl4kp8sh0xvpjggv47gb2c917ppjpjrq"))))
+                "100mfsar76yk8cqp55r6lwd973l8s7yg249vfssx327a31rh665m"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -20014,7 +20014,6 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-permallows
                              r-igraph
                              r-hdinterval
                              r-ggplot2
@@ -24008,13 +24007,13 @@ nowadays popular in various infographics to visualize any proportional ratios.")
 (define-public r-badger
   (package
     (name "r-badger")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "badger" version))
               (sha256
                (base32
-                "0ni3ns235n1haxrldk7s3zbgsg8q245jhki9b3r10yxlp94c2djs"))))
+                "1y2yfd31nb16g0zwhwaqwb2k3v9f5yr5fvgd0y458v4066svhk70"))))
     (properties `((upstream-name . "badger")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-rvcheck r-dlstats r-desc))

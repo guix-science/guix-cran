@@ -1631,13 +1631,13 @@ feature format.")
 (define-public r-gtextras
   (package
     (name "r-gtextras")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtExtras" version))
               (sha256
                (base32
-                "0vy93jjibkgak2ml9a1a98rxrk0d15xqvavh7d1ysk3vc6b7h61f"))))
+                "0xx33hbizc3lmyhqxc9lnpy28kyqcr8ri2cksqsi1nwrvjyh16sl"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -3142,13 +3142,13 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "growthcleanr" version))
               (sha256
                (base32
-                "07icwy0zdba1l0gac0zmd97xsk3lilfa2r565pf74fi29mp85y9z"))))
+                "1qdm91mpa36vpxz43fx2dv7qwg9wd6zasc7plalqyf60p3iw8r7d"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4755,42 +4755,49 @@ standalone package without GreedyExperimentalDesign.")
 (define-public r-greedyexperimentaldesign
   (package
     (name "r-greedyexperimentaldesign")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GreedyExperimentalDesign" version))
               (sha256
                (base32
-                "0j2grrnd4yn4d1ly62dzqq0y7l7mh3lpnlfpf5n41a9w489m03hw"))))
+                "0g49fqcgvhbcmmdf1wylpf2xzz46lavdbcbzwq4njmijvmcilvc8"))))
     (properties `((upstream-name . "GreedyExperimentalDesign")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-survey
+                             r-stringr
+                             r-stringi
                              r-rjava
                              r-rcpp
                              r-nbpmatching
                              r-kernlab
-                             r-greedyexperimentaldesignjars
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=GreedyExperimentalDesign")
+    (home-page "https://github.com/kapelner/GreedyExperimentalDesign")
     (synopsis "Greedy Experimental Design Construction")
     (description
      "Computes experimental designs for a two-arm experiment with covariates via a
-number of methods. (0) complete randomization and randomization with
-forced-balance. (1) Greedily optimizing a balance objective function via
+number of methods: (0) complete randomization and randomization with
+forced-balance, (1) Greedily optimizing a balance objective function via
 pairwise switching.  This optimization provides lower variance for the treatment
 effect estimator (and higher power) while preserving a design that is close to
 complete randomization.  We return all iterations of the designs for use in a
-permutation test. (2) The second is via numerical optimization (via gurobi which
+permutation test, (2) The second is via numerical optimization (via gurobi which
 must be installed, see
 <https://www.gurobi.com/documentation/9.1/quickstart_windows/r_ins_the_r_package.html>)
-a la Bertsimas and Kallus. (3) rerandomization, (4) Karp's method for one
+a la Bertsimas and Kallus, (3) rerandomization, (4) Karp's method for one
 covariate, (5) exhaustive enumeration to find the optimal solution (only for
-small sample sizes) (6) Binary pair matching using the nbpMatching library (7)
-Binary pair matching plus (1) to further optimize balance (8) Binary pair
-matching plus (3) to further optimize balance (9) Hadamard designs We also allow
-for three objective functions: Mahalanobis distance, Sum of absolute differences
-standardized and Kernel distances via the kernlab library.")
+small sample sizes), (6) Binary pair matching using the nbpMatching library, (7)
+Binary pair matching plus design number (1) to further optimize balance, (8)
+Binary pair matching plus design number (3) to further optimize balance, (9)
+Hadamard designs, (10) Simultaneous Multiple Kernels.  In (1-9) we allow for
+three objective functions: Mahalanobis distance, Sum of absolute differences
+standardized and Kernel distances via the kernlab library.  This package is the
+result of a stream of research that can be found in Krieger, A, Azriel, D and
+Kapelner, A \"Nearly Random Designs with Greatly Improved Balance\" (2016)
+<arXiv:1612.02315>, Krieger, A, Azriel, D and Kapelner, A \"Better Experimental
+Design by Hybridizing Binary Matching with Imbalance Optimization\" (2021)
+<arXiv:2012.03330>.")
     (license license:gpl3)))
 
 (define-public r-greedyepl
@@ -10024,13 +10031,13 @@ use of continuous glucose monitoring.Diabetes Care, 2017
 (define-public r-gluedown
   (package
     (name "r-gluedown")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gluedown" version))
               (sha256
                (base32
-                "1rvaac27kc4mppmw9kdwjaqsa7lwfzwffv63c8cky1z0xrsc5zz1"))))
+                "0dy75njc4fg2r5m3rqp0kcsv2x183wahfphcqvz0dhxnk2jmn0gl"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-glue))
@@ -10821,13 +10828,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "04xhp70wnxhfkbj7zqkyvggll22gwdm1fhhg6dg0kn7xmklkbjp3"))))
+                "06qg6xwal37bbzsm1jq7hcg5hfhz186h22llk2cz7q6sl4w2gr3x"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-r6
@@ -16817,6 +16824,48 @@ ggplot2'.")
      "An implementation of scale functions for setting axis breaks of a gg plot.")
     (license license:artistic2.0)))
 
+(define-public r-ggbrain
+  (package
+    (name "r-ggbrain")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggbrain" version))
+              (sha256
+               (base32
+                "1c5lcmvsgjvwabwvkq7g19p35fzb25q5919ia1adzqfwr8a2zhpy"))))
+    (properties `((upstream-name . "ggbrain")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rnifti
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-patchwork
+                             r-matrix
+                             r-imager
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://michaelhallquist.github.io/ggbrain/")
+    (synopsis
+     "Create Images of Volumetric Brain Data in NIfTI Format Using 'ggplot2' Syntax")
+    (description
+     "This package provides a ggplot2'-consistent approach to generating 2D displays
+of volumetric brain imaging data.  Display data from multiple NIfTI images using
+standard ggplot2 conventions such scales, limits, and themes to control the
+appearance of displays.  The resulting plots are returned as patchwork objects,
+inheriting from ggplot', allowing for any standard modifications of display
+aesthetics supported by ggplot2'.")
+    (license license:gpl3+)))
+
 (define-public r-ggborderline
   (package
     (name "r-ggborderline")
@@ -16968,6 +17017,28 @@ which are loglike but appropriate for negative data; interp_trans() and
 warp_trans() which provide scale transforms based on interpolation; and an infix
 compose operator for scale transforms.")
     (license license:lgpl3)))
+
+(define-public r-ggalignment
+  (package
+    (name "r-ggalignment")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggalignment" version))
+              (sha256
+               (base32
+                "1rqndv1xqz350v6a23pfrl4zkwjyh4zg633kwcxnv57v0g01mmif"))))
+    (properties `((upstream-name . "ggalignment")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-ggimage r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggalignment")
+    (synopsis "Plots 'D&D'-Style Alignment Charts")
+    (description
+     "D&D alignment charts show 9 boxes with values for good through evil and values
+for chaotic through lawful.  This package easily creates these alignment charts
+from user-provided image paths and alignment values.")
+    (license license:expat)))
 
 (define-public r-gfpop
   (package
@@ -23658,13 +23729,13 @@ O'Reilly Media.")
 (define-public r-gconsensus
   (package
     (name "r-gconsensus")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gconsensus" version))
               (sha256
                (base32
-                "0zray67q5saqs4n3k2v3hm7ly7hpfibvpvlzvqfhbfj98accm7in"))))
+                "065i587611nh3fiaxlp88qzd12cjxpbdvxn8pvd99fmk88d809zs"))))
     (properties `((upstream-name . "gconsensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-mass r-coda))
@@ -23679,9 +23750,9 @@ this package provides an evaluation of the variance components according to the
 selected statistical method for consensus building.  It also implements the
 comparison among different consensus builders and evaluates the participating
 method or sources against the consensus reference value.  Based on a diverse set
-of references, DerSimonian-Laird (1986) <doi:10.1016/0197-2456(86)90046-2>,
-Vangel-Ruhkin (1999) <doi:10.1111/j.0006-341X.1999.00129.x>, for a complete list
-of references look at the reference section in the package documentation.")
+of references, DerSimonian-Laird (1986) <doi:10.1016/0197-2456(86)90046-2>, for
+a complete list of references look at the reference section in the package
+documentation.")
     (license license:gpl3+)))
 
 (define-public r-gcmr

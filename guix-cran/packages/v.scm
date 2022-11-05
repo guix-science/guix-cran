@@ -4591,13 +4591,13 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
 (define-public r-vcr
   (package
     (name "r-vcr")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcr" version))
               (sha256
                (base32
-                "0d7g67adnjhhaikz61nc3ivl8pzyvsk8ah0a34d8wgxknfva29sb"))))
+                "09czjh17lsrfi4h8qjivzb4b0hvsssqp6n4lbj04y5nnrfm0j8ma"))))
     (properties `((upstream-name . "vcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

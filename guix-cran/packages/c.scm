@@ -1139,17 +1139,17 @@ the covariance matrix from among a prespecified set of candidates.")
 (define-public r-cvar
   (package
     (name "r-cvar")
-    (version "0.4.1")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvar" version))
               (sha256
                (base32
-                "14mivxlgsx1fz3602pzhd9b5p5aa9hhdif6dhg9q82kd4kz58bdy"))))
+                "066vn8flw9j0idmpi9wzvybgihdhwg3fjslx2isbrb11ldl1lwky"))))
     (properties `((upstream-name . "cvar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-gbutils r-fgarch))
-    (home-page "https://github.com/GeoBosh/cvar")
+    (propagated-inputs (list r-rdpack r-gbutils))
+    (home-page "https://geobosh.github.io/cvar/")
     (synopsis
      "Compute Expected Shortfall and Value at Risk for Continuous Distributions")
     (description
@@ -2575,13 +2575,13 @@ Analysis with R and MATLAB\".")
 (define-public r-ctmm
   (package
     (name "r-ctmm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctmm" version))
               (sha256
                (base32
-                "0c8xw8fhgnnagldqid6hnk4ql7dyjw2zqwfysnhgcgvc7hmcbpk9"))))
+                "1npx017c4w8689ig36r54fbl40h0hd0crh3n64ypbid2xxb2j0ck"))))
     (properties `((upstream-name . "ctmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -2606,11 +2606,11 @@ Analysis with R and MATLAB\".")
     (synopsis "Continuous-Time Movement Modeling")
     (description
      "This package provides functions for identifying, fitting, and applying
-continuous-space, continuous-time stochastic movement models to animal tracking
-data.  The package is described in Calabrese et al (2016)
+continuous-space, continuous-time stochastic-process movement models to animal
+tracking data.  The package is described in Calabrese et al (2016)
 <doi:10.1111/2041-210X.12559>, with models and methods based on those introduced
-in Fleming & Calabrese et al (2014) <doi:10.1086/675504>, Fleming et al (2014)
-<doi:10.1111/2041-210X.12176>, Fleming et al (2015)
+and detailed in Fleming & Calabrese et al (2014) <doi:10.1086/675504>, Fleming
+et al (2014) <doi:10.1111/2041-210X.12176>, Fleming et al (2015)
 <doi:10.1103/PhysRevE.91.032107>, Fleming et al (2015) <doi:10.1890/14-2010.1>,
 Fleming et al (2016) <doi:10.1890/15-1607>, PÃ©ron & Fleming et al (2016)
 <doi:10.1186/s40462-016-0084-7>, Fleming & Calabrese (2017)
@@ -2621,8 +2621,9 @@ Fleming et al (2017) <doi:10.1016/j.ecoinf.2017.04.008>, Fleming et al (2018)
 <doi:10.1111/2041-210X.13270>, Noonan & Fleming et al (2019)
 <doi:10.1186/s40462-019-0177-1>, Fleming et al (2020)
 <doi:10.1101/2020.06.12.130195>, Noonan et al (2021)
-<doi:10.1111/2041-210X.13597>, and Fleming et al (2022)
-<doi:10.1111/2041-210X.13815>.")
+<doi:10.1111/2041-210X.13597>, Fleming et al (2022)
+<doi:10.1111/2041-210X.13815>, and Silva et al (2022)
+<doi:10.1111/2041-210X.13786>.")
     (license license:gpl3)))
 
 (define-public r-ctmle
@@ -5118,13 +5119,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropcircles" version))
               (sha256
                (base32
-                "1y4bnavz8bkp9b3yxnqzfai4hsn8cag4walkwa0vi5892gma5az5"))))
+                "1as2znv307mzsnq4rh9zfi3g7jff77dgsbn3hp47qm97jznvhgkg"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -19139,13 +19140,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.4.0")
+    (version "4.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cobalt" version))
               (sha256
                (base32
-                "00zggkpqvgsabddrg1cmdvwk8rx4zfdyila9qdg000x7bbbm8nix"))))
+                "1h4z6v5k9v4fsgygbc6v20p1ld1d7f9jgygasyk40abx1rd0r8sf"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -20489,6 +20490,26 @@ simulators.  Additive and multiplicative discrepancy models are currently
 supported.  See <http://www.matthewpratola.com/software> for more information
 and examples.")
     (license license:agpl3)))
+
+(define-public r-cmbclust
+  (package
+    (name "r-cmbclust")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cmbClust" version))
+              (sha256
+               (base32
+                "01yjiscnligy6wpn752sqm53xhx0qxjbfd4dc8p7c31kbzfpif2x"))))
+    (properties `((upstream-name . "cmbClust")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cmbClust")
+    (synopsis "Conditional Mixture Modeling and Model-Based Clustering")
+    (description
+     "Conditional mixture model fitted via EM (Expectation Maximization) algorithm for
+model-based clustering, including parsimonious procedure, optimal conditional
+order exploration, and visualization.")
+    (license license:gpl2+)))
 
 (define-public r-cmars
   (package
@@ -28430,13 +28451,13 @@ should be your first point of call.  References: Grundy et al. (2020)
 (define-public r-changepoint
   (package
     (name "r-changepoint")
-    (version "2.2.3")
+    (version "2.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "changepoint" version))
               (sha256
                (base32
-                "1hpdxz9kqgvn5059sj2pmr7bg208ba950aidy256lad5hdjz2mcj"))))
+                "16v4p2c9zi2w3anwf5y9snl5dy1g5aidiqz1vn2p64qhfvg6yqxc"))))
     (properties `((upstream-name . "changepoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
@@ -37071,25 +37092,6 @@ package.")
 three-way symmetrical ca, three-way non-symmetrical ca, three-way ordered
 symmetrical ca and three-way ordered non-symmetrical ca.")
     (license license:gpl3+)))
-
-(define-public r-ca
-  (package
-    (name "r-ca")
-    (version "0.71.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ca" version))
-              (sha256
-               (base32
-                "095lk7p2b9835hc3a03c4019wg0baf0dhz6c2vqpaq1m9k4jy304"))))
-    (properties `((upstream-name . "ca")))
-    (build-system r-build-system)
-    (home-page "http://www.carme-n.org/")
-    (synopsis "Simple, Multiple and Joint Correspondence Analysis")
-    (description
-     "Computation and visualization of simple, multiple and joint correspondence
-analysis.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-c50
   (package

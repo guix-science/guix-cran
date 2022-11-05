@@ -2032,13 +2032,13 @@ model of a dynamic treatment experiment proposed in literature.")
 (define-public r-qtlrel
   (package
     (name "r-qtlrel")
-    (version "1.11")
+    (version "1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QTLRel" version))
               (sha256
                (base32
-                "1ylqzccjrysg7mhyphgzfbbdm7ylpvzjq02lirng1kbm1b8dxiyy"))))
+                "1cc89z8yzvxcyx85q0bdn8c4y73db7i81pzqjhw8yssmkhxjwgww"))))
     (properties `((upstream-name . "QTLRel")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-gdata))

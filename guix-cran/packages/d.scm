@@ -3294,13 +3294,13 @@ the API that is to be implemented by DataSHIELD compliant data repositories.")
 (define-public r-dsfa
   (package
     (name "r-dsfa")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsfa" version))
               (sha256
                (base32
-                "13y25bgy9qyncgm3z10irpnjw5bgqsqq2wmkmi5yqpdw3xm5d5f6"))))
+                "0ai7hdr1jbp842ixjcvadksi4pcjplyglp27dlmfkjp0p0jsfbww"))))
     (properties `((upstream-name . "dsfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-rdpack r-mgcv r-gratia r-copula))
@@ -6694,13 +6694,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.2.16")
+    (version "0.2.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dodgr" version))
               (sha256
                (base32
-                "0djml4z5hbr4xdj1a7syijysjxi9myb5xfrsy5r2db5m609s27sj"))))
+                "106jmi9laxvq8l97a4cb1xam1qmxx77x3qgqphkg85cg96wfays8"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread
@@ -12130,39 +12130,6 @@ meaningful information provided by scRNA-Seq data.  See Torroja and Sanchez-Cabo
 (2019) <doi:10.3389/fgene.2019.00978> for more details.")
     (license license:gpl3)))
 
-(define-public r-digirhythm
-  (package
-    (name "r-digirhythm")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "digiRhythm" version))
-              (sha256
-               (base32
-                "15q6iiwp9dznvmc81hwb1ni46gmkra5m9cwdf41jgv5bb35qyc0g"))))
-    (properties `((upstream-name . "digiRhythm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tidyr
-                             r-stringr
-                             r-readr
-                             r-pracma
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=digiRhythm")
-    (synopsis "Analyzing Animal's Rhythmicity")
-    (description
-     "Analyze and visualize the rhythmic behavior of animals using the degree of
-functional coupling (See Scheibe (1999) <doi:10.1076/brhm.30.2.216.1420>),
-compute and visualize harmonic power, actograms, average activity and diurnality
-index.")
-    (license license:gpl3)))
-
 (define-public r-diftree
   (package
     (name "r-diftree")
@@ -15044,13 +15011,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.1")
+    (version "4.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devEMF" version))
               (sha256
                (base32
-                "1n10rpripqz7x7xcrylbdq2mgzf5bprkplbxqkpws5as1rnz4q21"))))
+                "0mfj2brd8rcs84v5yx2hszc21qnn5jqihb50s85nnpi8n1gj36cp"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (inputs (list freetype))
@@ -22249,6 +22216,28 @@ observations contained within the data nugget) deemed too large.  Data nuggets
 are clustered by using a weighted form of k-means clustering which uses both the
 centers and weights of data nuggets to optimize the clustering assignments.")
     (license license:gpl2)))
+
+(define-public r-datana
+  (package
+    (name "r-datana")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datana" version))
+              (sha256
+               (base32
+                "1rx0ml7xr34rnfqyp1f8k0n1y0x6njy1haiav5w3l4kby7yzl411"))))
+    (properties `((upstream-name . "datana")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://eljatib.com/rlibro")
+    (synopsis "Data and Functions to Accompany Analisis De Datos Con R")
+    (description
+     "Datasets and Functions to Accompany Salas-Eljatib (2021, ISBN: 9789566086109)
+\"Analisis de datos con el programa estadistico R: una introduccion aplicada\".
+The package helps carry out data management, exploratory analyses, and model
+fitting.")
+    (license license:gpl3)))
 
 (define-public r-datamods
   (package

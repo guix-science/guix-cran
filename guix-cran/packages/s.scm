@@ -1014,13 +1014,13 @@ subscribe to the koRpus-dev mailing list (<http://korpusml.reaktanz.de>).")
 (define-public r-sylcount
   (package
     (name "r-sylcount")
-    (version "0.2-4")
+    (version "0.2-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sylcount" version))
               (sha256
                (base32
-                "1qwxag92bpyi5sjr4373divw5zfgzvj2ji99ilcssnqwi46c4w77"))))
+                "0934vic6mdrgpralrfvlv7y83kc1h7df7jm37spapy370mzq50lp"))))
     (properties `((upstream-name . "sylcount")))
     (build-system r-build-system)
     (home-page "https://github.com/wrathematics/sylcount")
@@ -1800,13 +1800,13 @@ data frames with sw_sweep'.")
 (define-public r-sweater
   (package
     (name "r-sweater")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sweater" version))
               (sha256
                (base32
-                "0ij9mryxl9cjl4yxycn8yxp1qvj5s897h3ay5zz6j4cnpm65s7hv"))))
+                "03fq3vbcvbv8fwdp6smxyzb5gj8qp03qf88l99f2na9bax302sr3"))))
     (properties `((upstream-name . "sweater")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -2526,16 +2526,16 @@ copula models for time series, see Nagler et al. (2022)
 (define-public r-svgviewr
   (package
     (name "r-svgviewr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svgViewR" version))
               (sha256
                (base32
-                "0xppvrfl7q3viahvwvmn498wli74ldwijapf6n432gvc4phmy7wi"))))
+                "0xlz86knvxxh96yr1z3px3lm0myaq6csqig11g8rrdg46lxnih3n"))))
     (properties `((upstream-name . "svgViewR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rook r-rjson r-rcpp))
+    (propagated-inputs (list r-rjson r-rcpp))
     (home-page "https://aaronolsen.github.io/tutorials/visualization3d.html")
     (synopsis "3D Animated Interactive Visualizations Using SVG and WebGL")
     (description
@@ -9755,6 +9755,45 @@ used to retrieve tree height and diameter at breast height (DBH).
      "Manages and display stellar tracks and isochrones from Pisa low-mass database.
 Includes tools for isochrones construction and tracks interpolation.")
     (license license:gpl2+)))
+
+(define-public r-stelfi
+  (package
+    (name "r-stelfi")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stelfi" version))
+              (sha256
+               (base32
+                "0rjkvrn3vwd4mzb2042syfhds4za4cqqlhjs6l95d09rn1q7nahx"))))
+    (properties `((upstream-name . "stelfi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-sf
+                             r-rcppeigen
+                             r-matrix
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/cmjt/stelfi/")
+    (synopsis
+     "Hawkes and Log-Gaussian Cox Point Processes Using Template Model Builder")
+    (description
+     "Fit Hawkes and log-Gaussian Cox process models with extensions.  Introduced in
+Hawkes (1971) <doi:10.2307/2334319> a Hawkes process is a self-exciting temporal
+point process where the occurrence of an event immediately increases the chance
+of another.  We extend this to consider self-inhibiting process and a
+non-homogeneous background rate.  A log-Gaussian Cox process is a Poisson point
+process where the log-intensity is given by a Gaussian random field.  We extend
+this to a joint likelihood formulation fitting a marked log-Gaussian Cox model.
+In addition, the package offers functionality to fit self-exciting
+spatiotemporal point processes.  Models are fitted via maximum likelihood using
+TMB (Template Model Builder).  Where included 1) random fields are assumed to be
+Gaussian and are integrated over using the Laplace approximation and 2) a
+stochastic partial differential equation model, introduced by Lindgren, Rue, and
+LindstrÃ¶m. (2011) <doi:10.1111/j.1467-9868.2011.00777.x>, is defined for the
+field(s).")
+    (license license:gpl3+)))
 
 (define-public r-steiniv
   (package
@@ -19888,6 +19927,45 @@ Baddeley and Nair (2019).")
     (synopsis "Interactive Graphics Functions for the 'spatstat' Package")
     (description
      "Extension to the spatstat package, containing interactive graphics capabilities.")
+    (license license:gpl2+)))
+
+(define-public r-spatstat-explore
+  (package
+    (name "r-spatstat-explore")
+    (version "3.0-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spatstat.explore" version))
+              (sha256
+               (base32
+                "19v3v6zb9dwa9cfqdqyg529nl03vxmiwxvkg6d0q5n16dnj48x0k"))))
+    (properties `((upstream-name . "spatstat.explore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-sparse
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat-data
+                             r-nlme
+                             r-matrix
+                             r-goftest
+                             r-abind))
+    (home-page "http://spatstat.org/")
+    (synopsis "Exploratory Data Analysis for the 'spatstat' Family")
+    (description
+     "Functionality for exploratory data analysis and nonparametric analysis of
+spatial data, mainly spatial point patterns, in the spatstat family of packages.
+(Excludes analysis of spatial data on a linear network, which is covered by the
+separate package spatstat.linnet'.) Methods include quadrat counts, K-functions
+and their simulation envelopes, nearest neighbour distance and empty space
+statistics, Fry plots, pair correlation function, kernel smoothed intensity,
+relative risk estimation with cross-validated bandwidth selection, mark
+correlation functions, segregation indices, mark dependence diagnostics, and
+kernel estimates of covariate effects.  Formal hypothesis tests of random
+pattern (chi-squared, Kolmogorov-Smirnov, Monte Carlo,
+Diggle-Cressie-Loosmore-Ford, Dao-Genton, two-stage Monte Carlo) and tests for
+covariate effects (Cox-Berman-Waller-Lawson, Kolmogorov-Smirnov, ANOVA) are also
+supported.")
     (license license:gpl2+)))
 
 (define-public r-spatsoc
@@ -39445,30 +39523,6 @@ mining.  Some functions offer several computational techniques and deal with the
 out of memory for large big data by using the ff package.")
     (license license:gpl3)))
 
-(define-public r-sftime
-  (package
-    (name "r-sftime")
-    (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sftime" version))
-              (sha256
-               (base32
-                "1ymi60ag8kqb3293bdcvb83zwsgrz000ylifjvlpzzmh1xsisanq"))))
-    (properties `((upstream-name . "sftime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sftime")
-    (synopsis
-     "Classes and Methods for Simple Feature Objects that Have a Time Column")
-    (description
-     "Classes and methods for spatial objects that have a registered time column, in
-particular for irregular spatiotemporal data.  The time column can be of any
-type, but needs to be ordinal.  Regularly laid out spatiotemporal data (vector
-or raster data cubes) are handled by package stars'.")
-    (license (license:fsdg-compatible "Apache License"))))
-
 (define-public r-sft
   (package
     (name "r-sft")
@@ -39703,26 +39757,6 @@ and through Rcpp'.")
      "Gives design points from a sequential full factorial-based Latin hypercube
 design, as described in Duan, Ankenman, Sanchez, and Sanchez (2015,
 Technometrics, <doi:10.1080/00401706.2015.1108233>).")
-    (license license:gpl3)))
-
-(define-public r-sfdep
-  (package
-    (name "r-sfdep")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sfdep" version))
-              (sha256
-               (base32
-                "04arbp8n1vpl5kksc0893vv8qh81m2mhb8fwk55r6y7zb6wpphwk"))))
-    (properties `((upstream-name . "sfdep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep r-sf r-rlang r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://sfdep.josiahparry.com")
-    (synopsis "Spatial Dependence for Simple Features")
-    (description
-     "An interface to spdep to integrate with sf objects and the tidyverse'.")
     (license license:gpl3)))
 
 (define-public r-sfdct
@@ -42293,13 +42327,13 @@ features are also implemented.")
 (define-public r-semnar
   (package
     (name "r-semnar")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semnar" version))
               (sha256
                (base32
-                "0njd0l02lnjr59p2pj14ckfdhlg36xxjs7kqg67ap74hqv2v5pja"))))
+                "18c509yh52sdmvm60p0kzyz86fmzi0by4gnb2jw8nppv8qlnz6zb"))))
     (properties `((upstream-name . "semnar")))
     (build-system r-build-system)
     (propagated-inputs (list r-urlshortener r-parsedate r-lubridate r-leaflet
@@ -49522,16 +49556,21 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.1.20")
+    (version "1.1.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sbtools" version))
               (sha256
                (base32
-                "0kzdi3lynzk2ws975rgc6ijddyp24b6xgsz1g7nrg32462k9m5qj"))))
+                "1b52lq2xdwaz37jnnwi7lp151448g2gr2nykm32bdwbrxm68smx1"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mime r-jsonlite r-httr r-curl r-cli))
+    (propagated-inputs (list r-mime
+                             r-keyring
+                             r-jsonlite
+                             r-httr
+                             r-curl
+                             r-cli))
     (home-page "https://github.com/USGS-R/sbtools")
     (synopsis "USGS ScienceBase Tools")
     (description
