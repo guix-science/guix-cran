@@ -17614,37 +17614,6 @@ in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
 <doi:10.3389/fendo.2016.00057>.")
     (license license:bsd-3)))
 
-(define-public r-spillover
-  (package
-    (name "r-spillover")
-    (version "0.1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Spillover" version))
-              (sha256
-               (base32
-                "0a9gvr2p4xdd47k8vfjyq952svfxvfvqzp6bkbsjj0mdjvjq3kaj"))))
-    (properties `((upstream-name . "Spillover")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-vars
-                             r-tidyr
-                             r-ggplot2
-                             r-fastsom
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Spillover")
-    (synopsis "Spillover/Connectedness Index Based on VAR Modelling")
-    (description
-     "This package provides a user-friendly tool for estimating both total and
-directional connectedness spillovers based on Diebold and Yilmaz (2009, 2012).
-It also provides the user with rolling estimation for total and net indices.
-User can find both orthogonalized and generalized versions for each kind of
-measures.  See Diebold and Yilmaz (2009, 2012) find them at
-<doi:10.1111/j.1468-0297.2008.02208.x> and
-<doi:10.1016/j.ijforecast.2011.02.006>.")
-    (license license:gpl2)))
-
 (define-public r-spikeslabgam
   (package
     (name "r-spikeslabgam")
@@ -29694,36 +29663,56 @@ other hosted services for building and test automation.")
 (define-public r-skedastic
   (package
     (name "r-skedastic")
-    (version "1.0.4")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skedastic" version))
               (sha256
                (base32
-                "07i9sgqc96h9ih8r1n9fvryyw8znpap1bpmvbm62sm3qcj7m856p"))))
+                "0faj5lv6axpg8ra5pa49j9ha41cmxynhf6fc7dn5ym2g0f497k9l"))))
     (properties `((upstream-name . "skedastic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr
+    (propagated-inputs (list r-slam
+                             r-roi-plugin-qpoases
+                             r-roi
+                             r-rfast
                              r-rdpack
-                             r-quantreg
+                             r-quadprogxt
+                             r-quadprog
                              r-pracma
-                             r-mvtnorm
+                             r-osqp
+                             r-mgcv
+                             r-matrix
                              r-mass
-                             r-gmp
-                             r-expm
-                             r-data-table
-                             r-cubature
+                             r-inflection
                              r-compquadform
+                             r-caret
                              r-broom
-                             r-boot
-                             r-bazar
-                             r-arrangements))
+                             r-bazar))
     (home-page "https://github.com/tjfarrar/skedastic")
-    (synopsis "Heteroskedasticity Diagnostics for Linear Regression Models")
+    (synopsis "Handling Heteroskedasticity in the Linear Regression Model")
     (description
-     "This package implements numerous methods for detecting heteroskedasticity
-(sometimes called heteroscedasticity) in the classical linear regression model.
-These include a test based on Anscombe (1961)
+     "This package implements numerous methods for testing for, modelling, and
+correcting for heteroskedasticity in the classical linear regression model.  The
+most novel contribution of the package is found in the functions that implement
+the as-yet-unpublished auxiliary linear variance models and auxiliary nonlinear
+variance models that are designed to estimate error variances in a
+heteroskedastic linear regression model.  These models follow principles of
+statistical learning described in Hastie (2009) <doi:10.1007/978-0-387-21606-5>.
+ The nonlinear version of the model is estimated using quasi-likelihood methods
+as described in Seber and Wild (2003, ISBN: 0-471-47135-6).  Bootstrap methods
+for approximate confidence intervals for error variances are implemented as
+described in Efron and Tibshirani (1993, ISBN: 978-1-4899-4541-9), including
+also the expansion technique described in Hesterberg (2014)
+<doi:10.1080/00031305.2015.1089789>.  The wild bootstrap employed here follows
+the description in Davidson and Flachaire (2008)
+<doi:10.1016/j.jeconom.2008.08.003>.  Tuning of hyper-parameters makes use of a
+golden section search function that is modelled after the MATLAB function of
+Zarnowiec (2022)
+<https://www.mathworks.com/matlabcentral/fileexchange/25919-golden-section-method-algorithm>.
+ A methodological description of the algorithm can be found in Fox (2021, ISBN:
+978-1-003-00957-3).  There are 25 different functions that implement hypothesis
+tests for heteroskedasticity.  These include a test based on Anscombe (1961)
 <https://projecteuclid.org/euclid.bsmsp/1200512155>, Ramsey's (1969) BAMSET Test
 <doi:10.1111/j.2517-6161.1969.tb00796.x>, the tests of Bickel (1978)
 <doi:10.1214/aos/1176344124>, Breusch and Pagan (1979) <doi:10.2307/1911963>
@@ -29755,10 +29744,17 @@ Thompson (2015) <doi:10.1002/cjs.11252>.  Besides these heteroskedasticity
 tests, there are supporting functions that compute the BLUS residuals of Theil
 (1965) <doi:10.1080/01621459.1965.10480851>, the conditional two-sided p-values
 of Kulinskaya (2008) <arXiv:0810.2124v1>, and probabilities for the
-nonparametric trend statistic of Lehmann (1975, ISBN: 0-816-24996-1).
-Homoskedasticity refers to the assumption of constant variance that is imposed
-on the model errors (disturbances); heteroskedasticity is the violation of this
-assumption.")
+nonparametric trend statistic of Lehmann (1975, ISBN: 0-816-24996-1).  For
+handling heteroskedasticity, in addition to the new auxiliary variance model
+methods, there is a function to implement various existing
+Heteroskedasticity-Consistent Covariance Matrix Estimators from the literature,
+such as those of White (1980) <doi:10.2307/1912934>, MacKinnon and White (1985)
+<doi:10.1016/0304-4076(85)90158-7>, Cribari-Neto (2004)
+<doi:10.1016/S0167-9473(02)00366-3>, Cribari-Neto et al. (2007)
+<doi:10.1080/03610920601126589>, Cribari-Neto and da Silva (2011)
+<doi:10.1007/s10182-010-0141-2>, Aftab and Chang (2016)
+<doi:10.18187/pjsor.v12i2.983>, and Li et al. (2017)
+<doi:10.1080/00949655.2016.1198906>.")
     (license license:expat)))
 
 (define-public r-skater

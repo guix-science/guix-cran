@@ -3592,63 +3592,6 @@ models using a greedy projected subset gradient descent algorithm.  The sparsity
 and diversity tuning parameters are selected by cross-validation.")
     (license license:gpl2+)))
 
-(define-public r-psfmi
-  (package
-    (name "r-psfmi")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "psfmi" version))
-              (sha256
-               (base32
-                "19hm8qswvrg1a1nsby3nfd6avgxl84q77xi2y2frnlh7j92wm63x"))))
-    (properties `((upstream-name . "psfmi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-rsample
-                             r-rms
-                             r-resourceselection
-                             r-purrr
-                             r-proc
-                             r-norm
-                             r-mitools
-                             r-mitml
-                             r-miceadds
-                             r-mice
-                             r-magrittr
-                             r-lme4
-                             r-ggplot2
-                             r-dplyr
-                             r-cvauc
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://mwheymans.github.io/psfmi/")
-    (synopsis
-     "Prediction Model Pooling, Selection and Performance Evaluation Across Multiply Imputed Datasets")
-    (description
-     "Pooling, backward and forward selection of linear, logistic and Cox regression
-models in multiply imputed datasets.  Backward and forward selection can be done
-from the pooled model using Rubin's Rules (RR), the D1, D2, D3, D4 and the
-median p-values method.  This is also possible for Mixed models.  The models can
-contain continuous, dichotomous, categorical and restricted cubic spline
-predictors and interaction terms between	all these type of predictors.  The
-stability of the models	can be evaluated using bootstrapping and cluster
-bootstrapping.  The package further contains functions to pool the model
-performance as ROC/AUC, R-squares, scaled Brier score, H&L test and
-calibration	plots for logistic regression models.  Internal validation can
-be	done with cross-validation or bootstrapping.  The adjusted intercept after
-shrinkage of pooled regression coefficients can be obtained.  Backward and
-forward selection as part of internal validation is possible.  A function to
-externally validate logistic prediction models in multiple imputed datasets is
-available and a function to compare models.  Eekhout (2017)
-<doi:10.1186/s12874-017-0404-7>.  Wiel (2009)
-<doi:10.1093/biostatistics/kxp011>.  Marshall (2009)
-<doi:10.1186/1471-2288-9-57>.")
-    (license license:gpl2+)))
-
 (define-public r-psf
   (package
     (name "r-psf")
@@ -22544,13 +22487,13 @@ characteristics of the design.")
 (define-public r-phase
   (package
     (name "r-phase")
-    (version "1.2.5")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phase" version))
               (sha256
                (base32
-                "0nnpki44qyikavx8dpayn0jk0jbznkb1w4jcp06j5b8c70a04gc9"))))
+                "1nwxyw6ysnxivlcwrc2x91862ljmw6zq80ncxfd1qwf3b9c9npdg"))))
     (properties `((upstream-name . "phase")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

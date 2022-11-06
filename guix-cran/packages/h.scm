@@ -4624,16 +4624,25 @@ curves and related statistics.")
 (define-public r-hmdhfdplus
   (package
     (name "r-hmdhfdplus")
-    (version "1.9.18")
+    (version "1.9.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HMDHFDplus" version))
               (sha256
                (base32
-                "1npl0q75vfb7wi4fi6mn2grxswd0n612gxldggwkyz35s3fc4hbk"))))
+                "0wvlbgi95wibl40xhib0jlnxiddwhjv9v9qljxcg1bh7b76y7al5"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rvest r-httr))
+    (propagated-inputs (list r-xml
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-lubridate
+                             r-janitor
+                             r-httr
+                             r-dplyr))
     (home-page "https://github.com/timriffe/TR1")
     (synopsis
      "Read Human Mortality Database and Human Fertility Database Data from the Web")

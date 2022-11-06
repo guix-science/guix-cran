@@ -5714,13 +5714,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.10")
+    (version "0.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Boom" version))
               (sha256
                (base32
-                "1w513z3bqr9fbvml1qycaaivsvwyx77wq11w76dzggddwgwisg20"))))
+                "17kp3vla2z9kgcqgwcslcp0wl7k1k2rbc8nr3b785hv23gww11bi"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -9915,13 +9915,13 @@ The package also includes 19 datasets which are used in the tutorials.")
 (define-public r-biostat3
   (package
     (name "r-biostat3")
-    (version "0.1.6")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biostat3" version))
               (sha256
                (base32
-                "12i8ki1yair4sycfcwrhl10khfxzx5q2slzqjwcrqfxg69q8ak4l"))))
+                "19qsg42nyisqfxl5y9ayd6hj82plnnqvryqkwdd6nfascn0zw44y"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-muhaz r-mass))
@@ -13931,13 +13931,13 @@ Staats and Soman Abraham.")
 (define-public r-bhsbvar
   (package
     (name "r-bhsbvar")
-    (version "3.0.1")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BHSBVAR" version))
               (sha256
                (base32
-                "0k4iklbazw4fbwfd0nhg943ndwrhpxxlbzmfj3c10in84vz2p6v0"))))
+                "184dhaajjzplslbfjmdm9zyr7h39zi1h3p549lac2sy6mrkglrc0"))))
     (properties `((upstream-name . "BHSBVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

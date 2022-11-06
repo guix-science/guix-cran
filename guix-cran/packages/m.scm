@@ -11803,31 +11803,6 @@ in terms of the number of components, the GPCM covariance parameterisation, and
 the subsets of gating/expert network covariates.")
     (license license:gpl2+)))
 
-(define-public r-moeadr
-  (package
-    (name "r-moeadr")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MOEADr" version))
-              (sha256
-               (base32
-                "0aqkqw5ph5rvsgpasc94i264lxapr37gpjhk4rkkynph2gnvq1zx"))))
-    (properties `((upstream-name . "MOEADr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fnn r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://fcampelo.github.io/MOEADr/")
-    (synopsis "Component-Wise MOEA/D Implementation")
-    (description
-     "Modular implementation of Multiobjective Evolutionary Algorithms based on
-Decomposition (MOEA/D) [Zhang and Li (2007), <DOI:10.1109/TEVC.2007.892759>] for
-quick assembling and testing of new algorithmic components, as well as easy
-replication of published MOEA/D proposals.  The full framework is documented in
-a paper published in the Journal of Statistical Software
-[<doi:10.18637/jss.v092.i06>].")
-    (license license:gpl2)))
-
 (define-public r-modygliani
   (package
     (name "r-modygliani")
@@ -14246,13 +14221,13 @@ of the samples to form pools.")
 (define-public r-mmodely
   (package
     (name "r-mmodely")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmodely" version))
               (sha256
                (base32
-                "08qiqa2g0h3ycxipq1xn8w5p3cixc0dfmzn5nvwaa1n1rb5w5q0d"))))
+                "1xbnivb5xvivz8by5hrr3g8g5w7yyw5n65jl1qhxf2lzvdr3prcw"))))
     (properties `((upstream-name . "mmodely")))
     (build-system r-build-system)
     (propagated-inputs (list r-caroline r-caper r-ape))

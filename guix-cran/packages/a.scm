@@ -11800,38 +11800,6 @@ visual presentations of the classification results.  Samples with mixed features
 from multiple classes or atypical values are also identified.")
     (license license:gpl2+)))
 
-(define-public r-allhomes
-  (package
-    (name "r-allhomes")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "allhomes" version))
-              (sha256
-               (base32
-                "1z39qd7hkl2xy0lhf8sgc4rjf4ihi3zbsadchc97h7p7cn9mjbpk"))))
-    (properties `((upstream-name . "allhomes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-htmltab
-                             r-dplyr))
-    (home-page "https://mevers.github.io/allhomes/")
-    (synopsis "Extract Past Sales Data from Allhomes.com.au")
-    (description
-     "Extract past sales data for specific suburb(s) and year(s) from the Australian
-property website <https://www.allhomes.com.au>.  Allhomes data include the
-address and property details, date and price of the sale, block size and
-unimproved value of properties mainly in the ACT and NSW.")
-    (license license:expat)))
-
 (define-public r-allestimates
   (package
     (name "r-allestimates")
@@ -17695,22 +17663,23 @@ available at <https://shahlab.stanford.edu/start>.")
 (define-public r-acep
   (package
     (name "r-acep")
-    (version "0.0.2")
+    (version "0.0.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ACEP" version))
               (sha256
                (base32
-                "0rvmcj3my54bdkmy0qx3d9lrsc3qp2cjjsw2a9cz3cvjb2gq0krs"))))
+                "1c3krdxfpdmpj8z3bwi6gqq621n1hvna593bhcmrzkyv2jkc0k7a"))))
     (properties `((upstream-name . "ACEP")))
     (build-system r-build-system)
+    (propagated-inputs (list r-httr))
     (home-page "https://github.com/agusnieto77/ACEP")
-    (synopsis "AnÃ¡lisis Computacional de Eventos de Protesta")
+    (synopsis "Analisis Computacional de Eventos de Protesta")
     (description
-     "La librerÃ­a ACEP contiene funciones especÃ­ficas para desarrollar anÃ¡lisis
+     "La libreria ACEP contiene funciones especificas para desarrollar analisis
 computacional de eventos de protesta.  Asimismo, contiene base de datos con
 colecciones de notas sobre protestas y diccionarios de palabras conflictivas.
-ColecciÃ³n de diccionarios que reÃºne diccionarios de diferentes orÃ­genes.  The
+Coleccion de diccionarios que reune diccionarios de diferentes origenes.  The
 ACEP library contains specific functions to perform computational analysis of
 protest events.  It also contains a database with collections of notes on
 protests and dictionaries of conflicting words.  Collection of dictionaries that
@@ -18086,13 +18055,13 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
 (define-public r-abess
   (package
     (name "r-abess")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "abess" version))
               (sha256
                (base32
-                "0lv9cggbc33xpc3h6a8nsa72r7217lb4qzwvxmy7kg4f6ny1r0rs"))))
+                "08dyhn8a5lnizlyj33i1fr4mh52yzcnla4q9sanfg17705vvjk6m"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
@@ -18101,16 +18070,17 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
     (synopsis "Fast Best Subset Selection")
     (description
      "Extremely efficient toolkit for solving the best subset selection problem
-<arXiv:2110.09697>.  This package is its R interface.  The package implements
-and generalizes algorithms designed in <doi:10.1073/pnas.2014241117> that
-exploits a novel sequencing-and-splicing technique to guarantee exact support
-recovery and globally optimal solution in polynomial times for linear model.  It
-also supports best subset selection for logistic regression, Poisson regression,
-Cox proportional hazard model, Gamma regression, multiple-response regression,
-multinomial logistic regression, ordinal regression, (sequential) principal
-component analysis, and robust principal component analysis.  The other valuable
-features such as the best subset of group selection <arXiv:2104.12576> and sure
-independence screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
+<https://www.jmlr.org/papers/v23/21-1060.html>.  This package is its R
+interface.  The package implements and generalizes algorithms designed in
+<doi:10.1073/pnas.2014241117> that exploits a novel sequencing-and-splicing
+technique to guarantee exact support recovery and globally optimal solution in
+polynomial times for linear model.  It also supports best subset selection for
+logistic regression, Poisson regression, Cox proportional hazard model, Gamma
+regression, multiple-response regression, multinomial logistic regression,
+ordinal regression, (sequential) principal component analysis, and robust
+principal component analysis.  The other valuable features such as the best
+subset of group selection <arXiv:2104.12576> and sure independence screening
+<doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 

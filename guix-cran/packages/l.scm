@@ -9337,13 +9337,13 @@ multiple platforms.")
 (define-public r-libbib
   (package
     (name "r-libbib")
-    (version "1.6.3")
+    (version "1.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "libbib" version))
               (sha256
                (base32
-                "04skv3l8f48wbzm304l8fzk354wia102mrlbfysklszmxzy9vidx"))))
+                "1jcdsvg5xgc7yzdc00k2brsiviyzflsdgiyk77icw08bwlbxh9mk"))))
     (properties `((upstream-name . "libbib")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-pbapply r-data-table r-curl))
@@ -10617,32 +10617,6 @@ on multivariate models, such as Vector Exponential Smoothing, Vector ETS
 Smoothing (VES, de Silva et al., 2010, <doi:10.1177/1471082X0901000401>), Vector
 ETS and simulation function for VES.")
     (license license:gpl2+)))
-
-(define-public r-legco
-  (package
-    (name "r-legco")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "legco" version))
-              (sha256
-               (base32
-                "0fd1d2zf510lyrwclsy57d8lgqprk6p8c6ghxglgm6gbx9d2yrgg"))))
-    (properties `((upstream-name . "legco")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/elgarteo/legco")
-    (synopsis "R Bindings for the Hong Kong Legislative Council API")
-    (description
-     "Fetching data from Hong Kong Legislative Council's open data API in R. Functions
-correspond to the data endpoints of the API. Documentations of supported API
-databases: <https://www.legco.gov.hk/odata/english/billsdb.html>,
-<https://www.legco.gov.hk/odata/english/hansard-db.html>,
-<https://www.legco.gov.hk/odata/english/attendance-db.html>,
-<https://www.legco.gov.hk/odata/english/schedule-db.html> and
-<https://www.legco.gov.hk/odata/english/vrdb.html>.")
-    (license license:expat)))
 
 (define-public r-lefko3
   (package

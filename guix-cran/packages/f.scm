@@ -3498,27 +3498,6 @@ components (two or three) may be supplied.  The package also provides an
 efficient implementation of the generic magging estimator.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-fresh
-  (package
-    (name "r-fresh")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fresh" version))
-              (sha256
-               (base32
-                "1787mm6w2s5x9scxy7r9cb77rgpmy4ngwkn4z8g3gs48mrab4bd9"))))
-    (properties `((upstream-name . "fresh")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-sass r-rstudioapi r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dreamRs/fresh")
-    (synopsis "Create Custom 'Bootstrap' Themes to Use in 'Shiny'")
-    (description
-     "Customize Bootstrap and Bootswatch themes, like colors, fonts, grid layout, to
-use in Shiny applications, rmarkdown documents and flexdashboard'.")
-    (license license:gpl3)))
-
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
@@ -12470,17 +12449,21 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fgarch
   (package
     (name "r-fgarch")
-    (version "4021.88")
+    (version "4022.89")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fGarch" version))
               (sha256
                (base32
-                "10wrbcgi6v0cpy6rpwln42bhlwds1nm40mg6jwqv4pxzxhx4zlwi"))))
+                "1v60k30lsdhpilpqwl9yl6mifr6aanwd8bq9byhl9wfmv5xp5a5l"))))
     (properties `((upstream-name . "fGarch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-timeseries r-timedate r-matrix r-fbasics
-                             r-fastica))
+    (propagated-inputs (list r-timeseries
+                             r-timedate
+                             r-matrix
+                             r-fbasics
+                             r-fastica
+                             r-cvar))
     (native-inputs (list gfortran))
     (home-page "https://www.rmetrics.org")
     (synopsis

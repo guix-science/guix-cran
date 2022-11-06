@@ -7810,13 +7810,13 @@ analysis in ggplot2'.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "4.4.0")
+    (version "4.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflfastR" version))
               (sha256
                (base32
-                "0nbizfrc0cv9vi8izjc8r15jq4pyrxd0av37kycxfqmb6kr8z8ax"))))
+                "0q88csinbns5khcnls891j3a8npskjr47g0rcqk5bxrr51p9i5yg"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

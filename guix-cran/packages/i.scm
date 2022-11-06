@@ -13034,6 +13034,29 @@ compliance.")
 semiparametric regression models will be included in later versions.")
     (license license:gpl2+)))
 
+(define-public r-icssmoothing
+  (package
+    (name "r-icssmoothing")
+    (version "1.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ICSsmoothing" version))
+              (sha256
+               (base32
+                "14rs07594xzvsy62k3qacx5va4k7wq595bnp28vnvrmnqb219kk1"))))
+    (properties `((upstream-name . "ICSsmoothing")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-polynom r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ICSsmoothing")
+    (synopsis "Data Smoothing by Interpolating Cubic Splines")
+    (description
+     "We construct the explicit form of clamped cubic interpolating spline (both
+uniform - knots are equidistant and non-uniform - knots are arbitrary).  Using
+this form, we propose a linear regression model suitable for real data
+smoothing.")
+    (license license:gpl2)))
+
 (define-public r-icsshiny
   (package
     (name "r-icsshiny")

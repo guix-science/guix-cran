@@ -1234,13 +1234,13 @@ completing repetitive code therefore increasing time for analysis and insight.")
 (define-public r-expss
   (package
     (name "r-expss")
-    (version "0.11.2")
+    (version "0.11.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "expss" version))
               (sha256
                (base32
-                "12hg75k1mmbkf9rcdz9c13c36cjh7x2zj0mpwh3kwk6jv63cqn1c"))))
+                "1c7a50dv265872ng891jcipa5anrq5c5xpx81rix85l95mzwfzix"))))
     (properties `((upstream-name . "expss")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-maditr r-htmltable r-data-table))

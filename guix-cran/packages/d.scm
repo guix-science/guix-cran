@@ -580,41 +580,6 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
     (description "Dynamic linear models and time series regression.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-dynforest
-  (package
-    (name "r-dynforest")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DynForest" version))
-              (sha256
-               (base32
-                "1ldwhn971sr6cxbk2z5kd6wfwqhv5bjcb5rqzf29wqskqb5rjh4p"))))
-    (properties `((upstream-name . "DynForest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-survival
-                             r-stringr
-                             r-prodlim
-                             r-pec
-                             r-pbapply
-                             r-lcmm
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-desctools
-                             r-cmprsk))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/anthonydevaux/DynForest")
-    (synopsis "Random Forest with Multivariate Longitudinal Predictors")
-    (description
-     "Based on random forest principle, DynForest is able to include multiple
-longitudinal predictors to provide individual predictions.  Longitudinal
-predictors are modeled through the random forest.  The methodology is fully
-described for a survival outcome in: Devaux, Helmer, Dufouil, Genuer &
-Proust-Lima (2022) <doi: 10.48550/arXiv.2208.05801>.")
-    (license license:lgpl3+)))
-
 (define-public r-dynfeature
   (package
     (name "r-dynfeature")
@@ -16511,15 +16476,16 @@ a file as long as both the expression and its dependencies stay the same.")
 (define-public r-deoptim
   (package
     (name "r-deoptim")
-    (version "2.2-6")
+    (version "2.2-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEoptim" version))
               (sha256
                (base32
-                "1qg2d4d076a99qdjfg0yyq5z1xc1zlwydwry00nj2rx0hdykjqwc"))))
+                "0y4lmnccihrvlh7cfql8am4nxnd9g4awk45fb7bcd1kg4hapxb20"))))
     (properties `((upstream-name . "DEoptim")))
     (build-system r-build-system)
+    (propagated-inputs (list r-parallelly))
     (home-page "https://github.com/ArdiaD/DEoptim")
     (synopsis "Global Optimization by Differential Evolution")
     (description

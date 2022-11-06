@@ -2125,13 +2125,13 @@ facilities and fitting measures are also provided.")
 (define-public r-ctv
   (package
     (name "r-ctv")
-    (version "0.9-3")
+    (version "0.9-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctv" version))
               (sha256
                (base32
-                "0rwsiipnxjlj3pq97zh2hnbv1jigys32yl3zdp34x9z2xj3v4kg9"))))
+                "1m9gmfy05zn51qsvck2rg4nshn3rrpgbbsxvap2f3hp7mgc8nizw"))))
     (properties `((upstream-name . "ctv")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2297,13 +2297,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.7.1")
+    (version "3.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctsem" version))
               (sha256
                (base32
-                "1m07mha1nfss1ilcx7dna0k1p5jh4659p6rvy1hk8dk87f9kqyd8"))))
+                "0pr98lqga6lw7lp2l084jcda5b9j0wn3bwxg243p9qbqlf5q495l"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23423,13 +23423,13 @@ than processx::run().")
 (define-public r-clidatajp
   (package
     (name "r-clidatajp")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clidatajp" version))
               (sha256
                (base32
-                "15nqv6b7hwsh97wjwlanfbzaiilz2lwmb2pm89vm3lsik3m3nvph"))))
+                "1s64vsnam64n1jvwc7sw5nd256gs2w69f7ywgcpq1ypa8vaw0qs4"))))
     (properties `((upstream-name . "clidatajp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23439,7 +23439,9 @@ than processx::run().")
                              r-rvest
                              r-rlang
                              r-magrittr
-                             r-dplyr))
+                             r-httr
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=clidatajp")
     (synopsis "Data from Japan Meteorological Agency")

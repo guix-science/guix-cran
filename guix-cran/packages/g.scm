@@ -10031,13 +10031,13 @@ use of continuous glucose monitoring.Diabetes Care, 2017
 (define-public r-gluedown
   (package
     (name "r-gluedown")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gluedown" version))
               (sha256
                (base32
-                "0dy75njc4fg2r5m3rqp0kcsv2x183wahfphcqvz0dhxnk2jmn0gl"))))
+                "1rvkgfsjlp9zrpgb0kvr2n6wfja5j1yz62sc9kmbizbph6yvrins"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-glue))
