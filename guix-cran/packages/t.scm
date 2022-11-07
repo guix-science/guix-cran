@@ -18085,13 +18085,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ternary" version))
               (sha256
                (base32
-                "119jb2j17qhahybl46h8bnijaq5mprssk58c1lbyc57agk0pafiw"))))
+                "11g5ya43xgw45y8lngqj3xgbxxglnankj8fj40qij3f1qjggzwnw"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-sp r-shiny))
@@ -21925,16 +21925,16 @@ special handling for the format currently in use.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "1.8.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabula" version))
               (sha256
                (base32
-                "0nqm1100xgnr74zifscqw1hfqi4lz73fsm5xm5kbmqlf94mvk45x"))))
+                "13mg0cacwx606942n40icr83yzq3px50wqfpxync0zraf6kr4zpp"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-kairos r-ggplot2 r-boot r-arkhe))
+    (propagated-inputs (list r-rlang r-ggplot2 r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/tabula/")
     (synopsis "Analysis and Visualization of Archaeological Count Data")

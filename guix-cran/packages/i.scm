@@ -11030,13 +11030,13 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.2.8")
+    (version "2.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ijtiff" version))
               (sha256
                (base32
-                "0r7r2pxs0q97sm56ypg372aazvv85dx516sziw33gg4dn59b1qz3"))))
+                "1v8np6m8dqc6a3crz3gi6yl8i5y2a9sc2nxlds7as0m6gdqrwc69"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (inputs (list zlib zlib libtiff libjpeg))

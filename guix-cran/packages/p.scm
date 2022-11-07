@@ -3592,6 +3592,62 @@ models using a greedy projected subset gradient descent algorithm.  The sparsity
 and diversity tuning parameters are selected by cross-validation.")
     (license license:gpl2+)))
 
+(define-public r-psfmi
+  (package
+    (name "r-psfmi")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "psfmi" version))
+              (sha256
+               (base32
+                "1f5781j676cf0wvybyxh4rylzawfh949gndqfpcdl3kql1bd2215"))))
+    (properties `((upstream-name . "psfmi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-rsample
+                             r-rms
+                             r-resourceselection
+                             r-purrr
+                             r-proc
+                             r-norm
+                             r-mitools
+                             r-mitml
+                             r-mice
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-cvauc
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://mwheymans.github.io/psfmi/")
+    (synopsis
+     "Prediction Model Pooling, Selection and Performance Evaluation Across Multiply Imputed Datasets")
+    (description
+     "Pooling, backward and forward selection of linear, logistic and Cox regression
+models in multiply imputed datasets.  Backward and forward selection can be done
+from the pooled model using Rubin's Rules (RR), the D1, D2, D3, D4 and the
+median p-values method.  This is also possible for Mixed models.  The models can
+contain continuous, dichotomous, categorical and restricted cubic spline
+predictors and interaction terms between	all these type of predictors.  The
+stability of the models	can be evaluated using bootstrapping and cluster
+bootstrapping.  The package further contains functions to pool the model
+performance as ROC/AUC, R-squares, scaled Brier score, H&L test and
+calibration	plots for logistic regression models.  Internal validation can
+be	done with cross-validation or bootstrapping.  The adjusted intercept after
+shrinkage of pooled regression coefficients can be obtained.  Backward and
+forward selection as part of internal validation is possible.  A function to
+externally validate logistic prediction models in multiple imputed datasets is
+available and a function to compare models.  Eekhout (2017)
+<doi:10.1186/s12874-017-0404-7>.  Wiel (2009)
+<doi:10.1093/biostatistics/kxp011>.  Marshall (2009)
+<doi:10.1186/1471-2288-9-57>.")
+    (license license:gpl2+)))
+
 (define-public r-psf
   (package
     (name "r-psf")
@@ -9285,13 +9341,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "0.4.0")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRecipe" version))
               (sha256
                (base32
-                "0k8800043dq9ddx0xwvpqvzkfdklbmsb1svn9kvls20c93rxwvf0"))))
+                "0z1jsnc5f2j2gq55sgqxys94l9cpqynlrhn8nqqxg4a2vc2b59yp"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj netcdf gdal))
@@ -13321,13 +13377,13 @@ Pete Mohanty (<arXiv:1806.06850>).")
 (define-public r-polyrad
   (package
     (name "r-polyrad")
-    (version "1.6")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polyRAD" version))
               (sha256
                (base32
-                "1xvhjzryf35vrnf6iz82g14vbmbbm4g88il02ss5pmvsgxq70x5n"))))
+                "12qlws0d6s94rand1a7azd7yv22qzij1aqmhrvw4az0y7jy2wka4"))))
     (properties `((upstream-name . "polyRAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rcpp r-pcamethods r-fastmatch))
@@ -13341,9 +13397,10 @@ site-associated DNA sequencing (RAD-seq) are imported and used to make Bayesian
 probability estimates of genotypes in polyploids or diploids.  The genotype
 probabilities, posterior mean genotypes, or most probable genotypes can then be
 exported for downstream analysis.  polyRAD is described by Clark et al. (2019)
-<doi:10.1534/g3.118.200913>.  A variant calling pipeline for highly duplicated
-genomes is also included and is described by Clark et al. (2020)
-<doi:10.1101/2020.01.11.902890>.")
+<doi:10.1534/g3.118.200913>, and the Hind/He statistic for marker filtering is
+described by Clark et al. (2022) <doi:10.1186/s12859-022-04635-9>.  A variant
+calling pipeline for highly duplicated genomes is also included and is described
+by Clark et al. (2020, Version 1) <doi:10.1101/2020.01.11.902890>.")
     (license license:gpl2+)))
 
 (define-public r-polyqtlr
@@ -20093,13 +20150,13 @@ indirect effects.  See <http://jslefche.github.io/piecewiseSEM/> for more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.12.0")
+    (version "1.12.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "piecepackr" version))
               (sha256
                (base32
-                "0w4dgxkvi339lxj37hmaa5pwb3a8smk27drdidrg36rwjbkkai79"))))
+                "0ky3nib84za7v27acpq5f5x8vpc6hsp5an7fid1vdzc6i1467mvr"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (inputs (list ghostscript))
@@ -21883,13 +21940,13 @@ history, Laloe J-O, ..., Girondot M, Hays GC (2020)
 (define-public r-phenofit
   (package
     (name "r-phenofit")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phenofit" version))
               (sha256
                (base32
-                "0i9pvbvnk648gjzxdvwhxl705lkfd4dml8jg9gp7wfnnka4jxpw9"))))
+                "1wmih8s56w54yi6wq5wrswi89i9wdyfsgz1xa1ca8vicmrn313br"))))
     (properties `((upstream-name . "phenofit")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

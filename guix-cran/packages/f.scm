@@ -18177,13 +18177,13 @@ Useful when using the book.")
 (define-public r-fadpclust
   (package
     (name "r-fadpclust")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FADPclust" version))
               (sha256
                (base32
-                "0sr71piairiig8lc7avd04j041kkrhqs9vlq4y5f4p0hxms5adlk"))))
+                "111lpq5hdrpyj8wdscjswk5p4akxhj3jbj5xk6ias2s5gfprla14"))))
     (properties `((upstream-name . "FADPclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mfpca

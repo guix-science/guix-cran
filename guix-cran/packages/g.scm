@@ -15027,16 +15027,16 @@ normal distributions and confidence intervals.")
 (define-public r-ggmulti
   (package
     (name "r-ggmulti")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggmulti" version))
               (sha256
                (base32
-                "1dgx161xsnvv2bg5ja2caxyc9sc6wahx4gwc3nk70m3nq9ibmqva"))))
+                "0cynzl5aamm8ra6jz3j6n2frd680f35p3f38gcx12zsk1vzsl4fr"))))
     (properties `((upstream-name . "ggmulti")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggmulti")
     (synopsis "High Dimensional Data Visualization")

@@ -2915,13 +2915,13 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "08arc9hkya2ckqp603ppxp6akfdwwgy2l2x6vcqw4saf9b2anzpy"))))
+                "0ac0qc3vg012ndk8c50xma636k32mzhd7z9i434d1d6iz2fy3gn9"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -13103,13 +13103,13 @@ for optimization using multi-criteria algorithms (e.g. Pareto methods).")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "05naxc45y05w1x3qly3jqq8fs93z77vj950ggnlmvksp8nks6mdz"))))
+                "0h4i0smcqiigg8gjlphd772q7mzl6aii0jdfsxnd5bbd6xrmfxda"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

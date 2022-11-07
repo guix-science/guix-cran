@@ -325,13 +325,13 @@ University.")
 (define-public r-lvec
   (package
     (name "r-lvec")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lvec" version))
               (sha256
                (base32
-                "0f8bn1p3i2myz8nbw2iw48wm1v81f34zk0aqiqbvhsbpcxba2gdf"))))
+                "12q486xvnfyga15yx8av56sflahcni2wm09rx8abj8yzkjgfdiva"))))
     (properties `((upstream-name . "lvec")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

@@ -2155,27 +2155,29 @@ incorporating functionalities from many other packages.")
 (define-public r-dtsea
   (package
     (name "r-dtsea")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTSEA" version))
               (sha256
                (base32
-                "00jndqn4vyjymy6ys2rqxqd1fwf6bdqiv831g905k6nczxh8d7wv"))))
+                "1f1di9ypq6f0929pq15xncf7zw16wlqap4rchbia27n39cv15dni"))))
     (properties `((upstream-name . "DTSEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
                              r-magrittr
                              r-igraph
                              r-fgsea
-                             r-dplyr))
+                             r-dplyr
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DTSEA")
     (synopsis "Drug Target Set Enrichment Analysis")
     (description
      "It is a novel tool used to identify the candidate drugs against a particular
-disease based on a drug target set enrichment analysis.  It assumes the most
+disease based on the drug target set enrichment analysis.  It assumes the most
 effective drugs are those with a closer affinity in the protein-protein
 interaction network to the specified disease. (See GÃ³mez-Carballa et al. (2022)
 <doi: 10.1016/j.envres.2022.112890> and Feng et al. (2022) <doi:
@@ -10859,28 +10861,6 @@ metrics.  The methods are described in J. L. Sabo, D. M. Post (2008)
 M. E. Arias, P. B. Ngor, T. A. RÃ¤sÃ¤nsen, S. Nam (2017)
 <doi:10.1126/science.aao1053>.")
     (license license:gpl3)))
-
-(define-public r-discgolf
-  (package
-    (name "r-discgolf")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "discgolf" version))
-              (sha256
-               (base32
-                "07clh1awnibgrh7vl4a51r8dbya2rbmicm8v8x8mq8h8am2b3j0s"))))
-    (properties `((upstream-name . "discgolf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-jsonlite r-crul))
-    (home-page "https://github.com/sckott/discgolf")
-    (synopsis "Discourse API Client")
-    (description
-     "Client for the Discourse API. Discourse is a open source discussion forum
-platform (<https://www.discourse.org/>).  It comes with RESTful API access to an
-installation.  This client requires that you are authorized to access a
-Discourse installation, either yours or another.")
-    (license license:expat)))
 
 (define-public r-discfrail
   (package
@@ -22186,13 +22166,13 @@ centers and weights of data nuggets to optimize the clustering assignments.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datana" version))
               (sha256
                (base32
-                "1rx0ml7xr34rnfqyp1f8k0n1y0x6njy1haiav5w3l4kby7yzl411"))))
+                "00a6r4af96v4wqbqk28hr8k75wqy24z5hann1rkglifw2vj1q6vn"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

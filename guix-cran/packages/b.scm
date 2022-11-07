@@ -1630,13 +1630,13 @@ R. There is also an interactive shiny app for monitoring the job status.")
 (define-public r-bsts
   (package
     (name "r-bsts")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bsts" version))
               (sha256
                (base32
-                "14008fcrnpvnwgx7dp0v14ax4iw8p3772jf7fbz26vfv5g6z73lc"))))
+                "0zaic91yw214bq3285kw7wj8h1jf4g1z9lahgpmikvlqhgy5744g"))))
     (properties `((upstream-name . "bsts")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-boomspikeslab r-boom))
@@ -7871,13 +7871,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.14")
+    (version "1.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blogdown" version))
               (sha256
                (base32
-                "1spgncw7m4csv19npv3iydy30v55a6q5mdgn6a2g19rw3wr50vsx"))))
+                "0299pf06ls16cyk5f3k73zwp2g094zgafdja9ibmwcpv64qmb1hs"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -12600,13 +12600,13 @@ also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.11.4")
+    (version "1.11.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigsnpr" version))
               (sha256
                (base32
-                "0jvvwrpbf74w999ifm721ckhp42ywffbx3ij6xqg1v9gvzpgni4c"))))
+                "0d7ysy4zwv4fkivn05lfi1bwdix6ms1b0h9n4nl3qbyangfcz52a"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -16183,13 +16183,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.4.8")
+    (version "1.4.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BED" version))
               (sha256
                (base32
-                "0626v6qrj2rhjfq0pbk2js5asrc810hxq5169xq5armmg7hblg4r"))))
+                "0rhpy80fc5vm6zphcs34fxmy0jlpx3dsapcsksxagprm7ijjdmh0"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -16202,7 +16202,7 @@ assessing model adequacy.")
                              r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/patzaw/BED")
+    (home-page "https://patzaw.github.io/BED/")
     (synopsis "Biological Entity Dictionary (BED)")
     (description
      "An interface for the Neo4j database providing mapping between different

@@ -3697,13 +3697,13 @@ capture much of the structure of the original data.")
 (define-public r-uchardet
   (package
     (name "r-uchardet")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uchardet" version))
               (sha256
                (base32
-                "1dnvi45npk7l7sqbv3c1mrg0m7vrrp7iya9kjndcg9x3h0iial9z"))))
+                "0m3xy807smqdxhkhd9cwrcf3ljlyvfmnkd7831qzpgcadam2jcdj"))))
     (properties `((upstream-name . "uchardet")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

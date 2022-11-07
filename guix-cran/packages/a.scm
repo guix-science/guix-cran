@@ -1351,17 +1351,16 @@ ISBN:978-1-4462-4918-5).")
 (define-public r-autostats
   (package
     (name "r-autostats")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autostats" version))
               (sha256
                (base32
-                "1yn1p7zkswx0jswvfnizh5lzzwihn2wlwjw7bcv55zjpm9r3mhi8"))))
+                "0xyfv2akv308g3r0wq2dcg7l24p6bf3524x1ikj1lfmw07hca6k6"))))
     (properties `((upstream-name . "autostats")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
-                             r-xicor
                              r-xgboost
                              r-workflows
                              r-tune
@@ -1374,7 +1373,6 @@ ISBN:978-1-4462-4918-5).")
                              r-rlang
                              r-recosystem
                              r-recipes
-                             r-readr
                              r-purrr
                              r-presenter
                              r-patchwork
@@ -1382,7 +1380,6 @@ ISBN:978-1-4462-4918-5).")
                              r-parsnip
                              r-nnet
                              r-magrittr
-                             r-lubridate
                              r-jtools
                              r-janitor
                              r-gtools
@@ -1390,15 +1387,10 @@ ISBN:978-1-4462-4918-5).")
                              r-ggplot2
                              r-ggeasy
                              r-framecleaner
-                             r-forcats
-                             r-foci
-                             r-flextable
                              r-dplyr
-                             r-doparallel
                              r-dials
                              r-data-table
-                             r-broom
-                             r-agtboost))
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://harrison4192.github.io/autostats/")
     (synopsis "Auto Stats")
@@ -2998,13 +2990,13 @@ to the grid and vice versa.  It also allows to create a choreograph map.")
 (define-public r-atom4r
   (package
     (name "r-atom4r")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atom4R" version))
               (sha256
                (base32
-                "0a3q76rl2gr2yvsbq5czbglvrwvkndbw6sskbrf86gmdksyb3ssc"))))
+                "044ja5f9jnl5b8ch4ksimhf1plm4qg6869bvkg0fp375v5wgrbmy"))))
     (properties `((upstream-name . "atom4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8318,16 +8310,16 @@ such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aorsf" version))
               (sha256
                (base32
-                "1ckv7bz62cxmlj7i00piqyqk851fqk8rq2xk54hchvhbqi9x9s1w"))))
+                "1pq4cllksky81qw0pblygsssxmw1rarygzzkmsln9jlcjgwxvw3f"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/aorsf")
     (synopsis "Accelerated Oblique Random Survival Forests")
@@ -15094,13 +15086,13 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-ads
   (package
     (name "r-ads")
-    (version "1.5-7")
+    (version "1.5-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ads" version))
               (sha256
                (base32
-                "016zpkpf1c57djqn31qwpp3qk65xdacl7x7s72y4a02pimk735bv"))))
+                "01iyjkxk2d86nl3kd498xaaw4b8y9l142pkbyr49w1h299d3d7f7"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom r-ade4))
@@ -15688,13 +15680,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-adlift
   (package
     (name "r-adlift")
-    (version "1.4-3")
+    (version "1.4-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adlift" version))
               (sha256
                (base32
-                "1lj99vm014fglw57qc00wzxbx4kzb4ky5iisqd756dfg3k41wa55"))))
+                "1rxwsmic17kgbhh50m87mh8ag8l6b1n4p96k0qn6mkgqfiqngam5"))))
     (properties `((upstream-name . "adlift")))
     (build-system r-build-system)
     (propagated-inputs (list r-ebayesthresh))

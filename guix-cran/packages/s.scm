@@ -10190,13 +10190,13 @@ Analysis.")
 (define-public r-statsexpressions
   (package
     (name "r-statsexpressions")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statsExpressions" version))
               (sha256
                (base32
-                "12ji5j8y62j44f4zzxhvxhzw3zr0dgdfnmi5y09k3j66mx8spv77"))))
+                "0phjaxyq04ysrchimq5q9i3zzy0qhrs5r08m2l14k35s2303s285"))))
     (properties `((upstream-name . "statsExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -10224,7 +10224,8 @@ Bayesian t-test, one-way ANOVA, correlation analyses, contingency table
 analyses, and meta-analyses.  The functions are pipe-friendly and provide a
 consistent syntax to work with tidy data.  These dataframes additionally contain
 expressions with statistical details, and can be used in graphing packages.
-This package also forms the statistical processing backend for ggstatsplot'.")
+This package also forms the statistical processing backend for ggstatsplot'.
+References: Patil (2021) <doi:10.21105/joss.03236>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -19814,6 +19815,49 @@ flexible spatial survival models.  See Benjamin M. Taylor, Barry S. Rowlingson
 (2017) <doi:10.18637/jss.v077.i04>.")
     (license license:gpl3)))
 
+(define-public r-spatstat-model
+  (package
+    (name "r-spatstat-model")
+    (version "3.0-2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spatstat.model" version))
+              (sha256
+               (base32
+                "0a6lf5y0k13h60s0lnwwfrmxswl7avcg4fhqmha1nmycidhga8z9"))))
+    (properties `((upstream-name . "spatstat.model")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensor
+                             r-spatstat-utils
+                             r-spatstat-sparse
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-spatstat-data
+                             r-rpart
+                             r-nlme
+                             r-mgcv
+                             r-matrix
+                             r-goftest
+                             r-abind))
+    (home-page "http://spatstat.org/")
+    (synopsis "Parametric Statistical Modelling for the 'spatstat' Family")
+    (description
+     "Functionality for exploratory data analysis and nonparametric analysis of
+spatial data, mainly spatial point patterns, in the spatstat family of packages.
+(Excludes analysis of spatial data on a linear network, which is covered by the
+separate package spatstat.linnet'.) Methods include quadrat counts, K-functions
+and their simulation envelopes, nearest neighbour distance and empty space
+statistics, Fry plots, pair correlation function, kernel smoothed intensity,
+relative risk estimation with cross-validated bandwidth selection, mark
+correlation functions, segregation indices, mark dependence diagnostics, and
+kernel estimates of covariate effects.  Formal hypothesis tests of random
+pattern (chi-squared, Kolmogorov-Smirnov, Monte Carlo,
+Diggle-Cressie-Loosmore-Ford, Dao-Genton, two-stage Monte Carlo) and tests for
+covariate effects (Cox-Berman-Waller-Lawson, Kolmogorov-Smirnov, ANOVA) are also
+supported.")
+    (license license:gpl2+)))
+
 (define-public r-spatstat-local
   (package
     (name "r-spatstat-local")
@@ -19967,13 +20011,13 @@ for GPS data.")
 (define-public r-spats
   (package
     (name "r-spats")
-    (version "1.0-17")
+    (version "1.0-18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpATS" version))
               (sha256
                (base32
-                "0f8mwycm0344crvp8y04ccq6rvxmvwcz43l24av3hlx7wk392c3a"))))
+                "1p7ibi4593a6f5ww02l74afxaxgk2nh8h67l43vm2p7zfmdxx2b3"))))
     (properties `((upstream-name . "SpATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-fields r-data-table))
@@ -31367,13 +31411,13 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
 (define-public r-simsurvnmarker
   (package
     (name "r-simsurvnmarker")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimSurvNMarker" version))
               (sha256
                (base32
-                "1k62n56mzxv40j0g7631g6r18sgddwsl59wlyi0s5rzwjmiwpbgk"))))
+                "0ngr6cbhg3ccsm0v5mf3871pzxzmdprdap3kljfi8w6rrah830fx"))))
     (properties `((upstream-name . "SimSurvNMarker")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -31910,13 +31954,13 @@ single pipeline, without needing loops or custom functions.")
 (define-public r-simpop
   (package
     (name "r-simpop")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simPop" version))
               (sha256
                (base32
-                "0klhn5w908dl4djnddja8lfrzsk92b244vv68afp502dak7g7f95"))))
+                "0x66i2k9s16lsjm79sjszkqa1j9nzwdnbb19lpgxbf1fcdwm5lrh"))))
     (properties `((upstream-name . "simPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -40660,13 +40704,13 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
 (define-public r-seqimpute
   (package
     (name "r-seqimpute")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seqimpute" version))
               (sha256
                (base32
-                "05bxxin46zf843fz5l1zspmq8agfp6xdy57d4ybmkzgdnf47hrw8"))))
+                "1vivs790zbwm8c7fwifz0nj0n9wzjmr8whz0f4pwp44gvcickxwn"))))
     (properties `((upstream-name . "seqimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -40692,7 +40736,7 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
 based on either a random forest or a multinomial regression model.  Covariates
 and time-dependant covariates can be included in the model.  The prediction of
 the missing values is based on the method of Halpin (2012)
-<https://ulir.ul.ie/handle/10344/3639>.")
+<https://researchrepository.ul.ie/articles/report/Multiple_imputation_for_life-course_sequence_data/19839736>.")
     (license license:gpl2)))
 
 (define-public r-seqicp
@@ -41936,13 +41980,13 @@ Microscopic findings.  These database types are supported: SQLite and Oracle'.")
 (define-public r-sendgridr
   (package
     (name "r-sendgridr")
-    (version "0.5.1")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sendgridr" version))
               (sha256
                (base32
-                "11lhiif6k40dxg0nj7hs4bi64yj5fq12ns8h009vnisa5fl9hq9d"))))
+                "1lw17lhd3iwkp5mcbpwvwhlzgwk1nbz7xxic8fid8i22z1js22gc"))))
     (properties `((upstream-name . "sendgridr")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -46800,13 +46844,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCpubr" version))
               (sha256
                (base32
-                "0zkp7has7y571kq1bf840mrgwwqi0ks2ka94gax3m8z205w5z3ns"))))
+                "10np0w5zqmqjg6k8cnipclh8pqrw81187q0zlicm42w4q4dyvgzn"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -47393,13 +47437,13 @@ underwriting scorecard development, extensively used in financial domain.")
 (define-public r-scorecard
   (package
     (name "r-scorecard")
-    (version "0.3.9")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scorecard" version))
               (sha256
                (base32
-                "0ljbxf73ab65mzrn2c9g1l5qvw1hgybr8syr806xnmxxb1ar7nqm"))))
+                "0s8z8aav71z70hfqqsg9fann4v3k508iij1l4wq8ng8jlpvjiswz"))))
     (properties `((upstream-name . "scorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -47408,7 +47452,8 @@ underwriting scorecard development, extensively used in financial domain.")
                              r-ggplot2
                              r-foreach
                              r-doparallel
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ShichenXie/scorecard")
     (synopsis "Credit Risk Scorecard")
@@ -48791,13 +48836,13 @@ of (conditional) mutual information for discrete data.")
 (define-public r-sccatch
   (package
     (name "r-sccatch")
-    (version "3.2")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scCATCH" version))
               (sha256
                (base32
-                "1nc9z7q5za5p8h9705zzpmji05y8xynm9mc6s9w8h3dd52gpmc4w"))))
+                "00z1lqs04i251gkp9c4iih9hspkgw7jafj66gb6rj1ql6kqhkny1"))))
     (properties `((upstream-name . "scCATCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-progress r-matrix r-crayon))
@@ -50390,13 +50435,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sasLM" version))
               (sha256
                (base32
-                "17c9l4v7rkyf65awvkdijz4lk101mclns122w4li63w5nhxckpyl"))))
+                "1v5n0vm68fq683myfd105av11h7fw732f0n66kjmgxfkkgx3nqxy"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

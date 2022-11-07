@@ -4293,13 +4293,13 @@ netCDF files.")
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurlex" version))
               (sha256
                (base32
-                "0xyxdn0qqp7irwj0g6fpm16c1qr88l7bq0s3bjb8anrk0fisfghp"))))
+                "114myfzlj5k4qmsjyihqfmmzil906a2smyylfyczc1r89b1pnji1"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6352,13 +6352,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.2.3")
+    (version "4.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm" version))
               (sha256
                (base32
-                "124jmrjqwiia542dn33f15r4phvadhfch4rpxdr5hi58sirm7l9m"))))
+                "1lqfh287wzlj6i37mx8xgx7n5524c4pcszr4g46aqqa0xa0krxiz"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (inputs (list openmpi))

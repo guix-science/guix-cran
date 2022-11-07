@@ -2951,13 +2951,13 @@ examples.  Full documentation is available in Bauke (2021)
 (define-public r-rtriplexcwflux
   (package
     (name "r-rtriplexcwflux")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rTRIPLEXCWFlux" version))
               (sha256
                (base32
-                "1fh4xnfg7b90gqc10g7dxffc9kan644684vmc5p4h27bs53b5b5p"))))
+                "0gliwrbwynxm0ldnvpqs8yl6k63y54kr4ggx21zsvjbqbxs2q4v3"))))
     (properties `((upstream-name . "rTRIPLEXCWFlux")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2966,7 +2966,7 @@ examples.  Full documentation is available in Bauke (2021)
     (description
      "This package provides a carbon-water coupled model (TRIPLEX-CW-Flux) is based on
 two well-established models, TRIPLEX-Flux model and PenmanâMonteith model,
-integrates soil water and water vapor pressure deficits into the stomatal
+integrates soil water and water vapor pressure deficits into the stomata
 conductance submodule to estimate net ecosystem production and
 evapotranspiration in forest
 ecosystems.<https://github.com/ShulanSun/rTRIPLEX_CW_Flux>.")
@@ -3043,13 +3043,13 @@ result of parsed and anonymised raw log data from that CRAN mirror.")
 (define-public r-rtrend
   (package
     (name "r-rtrend")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtrend" version))
               (sha256
                (base32
-                "0figwgxbb1ir7qc4f0138xgj6lry1v6jpq03dyfnp5xsqq3z22yg"))))
+                "1l5vlqjxsgin0pjr4gfdf1ba0zapzjs7c4j4mrjpb8p4hvk3wgzz"))))
     (properties `((upstream-name . "rtrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -3058,9 +3058,10 @@ result of parsed and anonymised raw log data from that CRAN mirror.")
                              r-plyr
                              r-matrixstats
                              r-magrittr
-                             r-ggplot2
+                             r-lubridate
                              r-fftwtools
                              r-boot))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rpkgs/rtrend")
     (synopsis "Trend Estimating Tools")
     (description
@@ -8780,13 +8781,13 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 (define-public r-rprobitb
   (package
     (name "r-rprobitb")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RprobitB" version))
               (sha256
                (base32
-                "1f5bnzqj58m07lp17fckwc9h55ngv5l3da54xzrvyzasvjk79031"))))
+                "1acxgxv4v7id7smrg9f8dfxx9y17pvqwsbfg0n8zdd99q724bpx5"))))
     (properties `((upstream-name . "RprobitB")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -8802,7 +8803,8 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
                              r-ggplot2
                              r-foreach
                              r-dosnow
-                             r-crayon))
+                             r-crayon
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/RprobitB/")
     (synopsis "Bayesian Probit Choice Modeling")
@@ -14548,13 +14550,13 @@ for further details.")
 (define-public r-robfilter
   (package
     (name "r-robfilter")
-    (version "4.1.2")
+    (version "4.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robfilter" version))
               (sha256
                (base32
-                "0mvpaf6g694b7175bl3yr6lxbwla4pwp7g4y34qb4klgl5n3nw03"))))
+                "1r56p25c0624dxbd9lh8vbdqp69m0fzcfbzdx1kg4v0c25106ysw"))))
     (properties `((upstream-name . "robfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-mass r-lattice))
@@ -30635,13 +30637,13 @@ parallel computing is supported in this package.")
 (define-public r-recordtest
   (package
     (name "r-recordtest")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RecordTest" version))
               (sha256
                (base32
-                "0a5hbhqx97kllwf5k6lrhcqixhqqj8ndklcvpmsp9jdf011b1100"))))
+                "01l16i0i58nsaa2vpfywmqa6srgym4vzybrgbgcv8cpf31w8ly7w"))))
     (properties `((upstream-name . "RecordTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -34281,13 +34283,13 @@ This separates the aesthetics from the data crunching in plots and charts.")
 (define-public r-rcssci
   (package
     (name "r-rcssci")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcssci" version))
               (sha256
                (base32
-                "0pivvzf19ms242lpm8k217iv4apxx02m95zg0hz5j8kgip42r2xj"))))
+                "1kq94mxxadr08ybsql1mdw70g4sl9vb6jmv3rkypscpr6gb8gfxd"))))
     (properties `((upstream-name . "rcssci")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -35472,13 +35474,13 @@ Moreover, it has a function that performs spatial prediction in new locations.")
 (define-public r-rcppcctz
   (package
     (name "r-rcppcctz")
-    (version "0.2.11")
+    (version "0.2.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppCCTZ" version))
               (sha256
                (base32
-                "0vpz34ri1p41kcdzm3ymxz2zg2lqighrfy5adsbamhrz941n99jw"))))
+                "1jr4hi3zbm935q6ykkvnywlma36d3jl7fxmqhxs62jxbnyyqf81a"))))
     (properties `((upstream-name . "RcppCCTZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36449,13 +36451,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.60")
+    (version "1.61")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcmdrPlugin.EZR" version))
               (sha256
                (base32
-                "1wamdlhd2zi5ykd5f32is4n4nwn26h6dldvxnnd5k340wvd30bhn"))))
+                "1d97lans5w14scfn4z0nxpgfdlmspbzq2c6vl02pf5z3rrqfnbrq"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -41324,27 +41326,6 @@ Rapporteket
 <https://rapporteket.github.io/rapporteket/articles/short_introduction.html>.
 This package is relevant for developers of packages/registries at Rapporteket.")
     (license license:gpl3)))
-
-(define-public r-ranlip
-  (package
-    (name "r-ranlip")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ranlip" version))
-              (sha256
-               (base32
-                "04jh7m8gmz0b4h507amnj708sg5qf4fzawybss01681hsnb3swnz"))))
-    (properties `((upstream-name . "ranlip")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=ranlip")
-    (synopsis "Generation of Random Vectors with User-Defined Density")
-    (description
-     "Random vectors with arbitrary Lipschitz density are generated using acceptance/
-rejection.  The method is based on G. Beliakov (2005)
-<doi:10.1016/j.cpc.2005.03.105>.")
-    (license license:lgpl3)))
 
 (define-public r-rankuncertainty
   (package

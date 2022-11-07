@@ -10791,13 +10791,13 @@ for a list of copyright holders and contributors.")
 (define-public r-corelearn
   (package
     (name "r-corelearn")
-    (version "1.56.0")
+    (version "1.57.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CORElearn" version))
               (sha256
                (base32
-                "0zdx9ljxjzkj4kbrv856l3jaiv2s7dqycr3b3x7k5g05iv1ic6lv"))))
+                "02i73r5fi8kyp4b4b3zjgx17d7zzvdp0jy9v290l1z2ia2mm70j4"))))
     (properties `((upstream-name . "CORElearn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot r-plotrix r-nnet r-cluster))
@@ -15153,13 +15153,13 @@ multi-criteria paired comparison data.")
 (define-public r-compoundevents
   (package
     (name "r-compoundevents")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CompoundEvents" version))
               (sha256
                (base32
-                "03shw3016xc41a6by8pnpqs7mmnhs0qmg5aqd4hlfcy3dv2w9wkf"))))
+                "0dlkkr26f07g0q3kcg0byvvlnf2hd5i8h9p1mkba333wh6af21ic"))))
     (properties `((upstream-name . "CompoundEvents")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompoundEvents")
@@ -18890,17 +18890,16 @@ log-ratios (ILR or SLR) that are maximally associated to a dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coda4microbiome" version))
               (sha256
                (base32
-                "0ckd20wajqj2mxz7l8w12pvc54xys0a9fg0h2qw7kjbhgx5hmi6j"))))
+                "1f05lnv59scq2m3jj9fajmcivnfkpnwzqdxkmxa9ik0ydsa4h5wn"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
-    (propagated-inputs (list r-qpdf
-                             r-proc
+    (propagated-inputs (list r-proc
                              r-plyr
                              r-glmnet
                              r-ggpubr
@@ -32318,13 +32317,13 @@ statistics based on the variable types.")
 (define-public r-cba
   (package
     (name "r-cba")
-    (version "0.2-21")
+    (version "0.2-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cba" version))
               (sha256
                (base32
-                "0j2hbp0xlfp28gqgnkcvmb4yp1kc5m2bp5x7pr4m1pz2b1s7h7m6"))))
+                "0h4hpkyd7ljz4hknf0pm105xlpyskr6gnfc94prmn6xlyy9qkp7i"))))
     (properties `((upstream-name . "cba")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))
@@ -33305,13 +33304,13 @@ Meira-Machado, C Esteban, I Arostegui (2017)
 (define-public r-catnet
   (package
     (name "r-catnet")
-    (version "1.15.7")
+    (version "1.16.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "catnet" version))
               (sha256
                (base32
-                "015qh9k0jj5plp777j3kl20601qiwadkaqrdb0483h3gwqwy828g"))))
+                "1qfmc8wkk9wqmcds48cc0ziw2hjbqndhjbbcz8rhblb2v1f0a3zv"))))
     (properties `((upstream-name . "catnet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=catnet")
@@ -35647,13 +35646,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cancensus" version))
               (sha256
                (base32
-                "0lrw983bml8l130kcampzacrdxa0frm80h7vpr9n6wwnq4vmcbr4"))))
+                "0pzm58fxhd330m5iq2k6527p5jsbfp2fj05mma39ib3gxliniwni"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-httr r-dplyr r-digest))

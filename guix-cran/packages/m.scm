@@ -9136,25 +9136,24 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mpathsenser" version))
               (sha256
                (base32
-                "13l64fkvbhgsi1p1fjwybgagxhnwcrkgy26z4bpjfc3xhc7mjnww"))))
+                "1xi3bn91lgy0vmwiyiv96qnzxxjsi2da6r4c4bjdz0km8vq20297"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rsqlite
                              r-rlang
-                             r-rjson
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
-                             r-future
                              r-furrr
                              r-dplyr
                              r-dbplyr
@@ -10996,13 +10995,13 @@ database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.6.2")
+    (version "2.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mongolite" version))
               (sha256
                (base32
-                "0xk49lsn8q9wm14zld1kmy0r4y7fzgj2av6sid9i43y7lr64dckg"))))
+                "1n4mrzimk7i3jgdp0yxgs02ki76v5c8cnnfqy5zrxjrhgvhz4vq0"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -15557,13 +15556,13 @@ uploading to OpenML', see the OpenML package.")
 (define-public r-mlr3hyperband
   (package
     (name "r-mlr3hyperband")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3hyperband" version))
               (sha256
                (base32
-                "1ybdbfsd7d8z8nhclrpp2by2yrfwfy1pgm2kbslqzvyhm7wpf038"))))
+                "1lcycylpcsk56g8m0fvngna62h14y4z456c8fypbb47k41l5v9jm"))))
     (properties `((upstream-name . "mlr3hyperband")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -17139,18 +17138,23 @@ dimensions, any initial center, and any number of clusters to expect.")
 (define-public r-mkinfer
   (package
     (name "r-mkinfer")
-    (version "0.7")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKinfer" version))
               (sha256
                (base32
-                "1b1qwz6dwkwh0wc61j7jxkrcf5h97p56vj15zpki13lmaw779swi"))))
+                "1kghplpz3kg14i6y7f1q6wcgd7wwm197576arqnpmgfl6q6fw418"))))
     (properties `((upstream-name . "MKinfer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-mkdescr r-ggplot2 r-boot r-arrangements))
+    (propagated-inputs (list r-nlme
+                             r-mkdescr
+                             r-ggplot2
+                             r-exactranktests
+                             r-boot
+                             r-arrangements))
     (native-inputs (list r-knitr))
-    (home-page "https://www.stamats.de/")
+    (home-page "https://github.com/stamats/MKinfer")
     (synopsis "Inferential Statistics")
     (description
      "Computation of various confidence intervals (Altman et al. (2000),
@@ -22237,29 +22241,6 @@ data preprocessing, taxa abundance plotting, alpha diversity analysis, beta
 diversity analysis, differential abundance test, null model analysis, network
 analysis, machine learning, environmental data analysis and functional analysis.")
     (license license:gpl3)))
-
-(define-public r-microdemic
-  (package
-    (name "r-microdemic")
-    (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "microdemic" version))
-              (sha256
-               (base32
-                "1w4zh0vagnar95l5b8cgmcvp8q7vk2iba5g8d8g2ywynqiqcx5fc"))))
-    (properties `((upstream-name . "microdemic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-httpcode r-data-table
-                             r-crul))
-    (home-page "https://github.com/ropensci/microdemic")
-    (synopsis "'Microsoft Academic' API Client")
-    (description
-     "The Microsoft Academic Knowledge API provides programmatic access to scholarly
-articles in the Microsoft Academic Graph (<https://academic.microsoft.com/>).
-Includes methods matching all Microsoft Academic API routes, including search,
-graph search, text similarity, and interpret natural language query string.")
-    (license license:expat)))
 
 (define-public r-microdatoses
   (package
@@ -30546,36 +30527,6 @@ The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
 
-(define-public r-mcr
-  (package
-    (name "r-mcr")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mcr" version))
-              (sha256
-               (base32
-                "066hj3kpj252izq36a0m6a54kqybg52l7pxzaw1hjxx6yyr90aiv"))))
-    (properties `((upstream-name . "mcr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robslopes))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=mcr")
-    (synopsis "Method Comparison Regression")
-    (description
-     "Regression methods to quantify the relation between two measurement methods are
-provided by this package.  In particular it addresses regression problems with
-errors in both variables and without repeated measurements.  It implements the
-CLSI recommendations (see J. A. Budd et al. (2018,
-<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
-analytical method comparison and bias estimation using patient samples.
-Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
-are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
-Raymaekers and F. Dufey (2022, <arXiv:2202:08060>).  A comprehensive overview
-over the implemented methods and references can be found in the manual pages
-\"mcr-package\" and \"mcreg\".")
-    (license license:gpl3+)))
-
 (define-public r-mcptests
   (package
     (name "r-mcptests")
@@ -36853,16 +36804,16 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.1.4.3")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "manymome" version))
               (sha256
                (base32
-                "19snld2vanbdi0k0dqixx97m83k8nyn3pf6085gvcnvci73655bp"))))
+                "06fxaanmmzvvmq68bjwrq63ndw16w8jg23b8v4cn1j543x7gaqxb"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pbapply r-lavaan r-ggplot2 r-boot))
+    (propagated-inputs (list r-pbapply r-lavaan r-igraph r-ggplot2 r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://sfcheung.github.io/manymome/")
     (synopsis
