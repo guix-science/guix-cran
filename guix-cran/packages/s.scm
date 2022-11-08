@@ -2621,21 +2621,25 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SVDNF" version))
               (sha256
                (base32
-                "13cangmx4srinrm42vc9qy24qghs2m8zb7lf0p3mc412z9n0r4px"))))
+                "1di3x4yx5hv0lzy7mydaq927qyl69dybqd6mh99h9scyxdilvjyd"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=SVDNF")
     (synopsis "Discrete Nonlinear Filtering for Stochastic Volatility Models")
     (description
-     "Generates simulated paths from various financial models and applies the discrete
-nonlinear filter (DNF) of Kitagawa (1987) <doi:10.1080/01621459.1987.10478534>.")
+     "Generates simulated paths from various financial stochastic volatility models
+with jumps and applies the discrete nonlinear filter (DNF) of Kitagawa (1987)
+<doi:10.1080/01621459.1987.10478534> to compute likelihood evaluations,
+filtering distribution estimates, and maximum likelihood parameter estimates.
+The algorithm is implemented following the work of BÃ©gin and Boudreault (2021)
+<doi:10.1080/10618600.2020.1840995>.")
     (license license:gpl3)))
 
 (define-public r-svdialogstcltk
@@ -4121,6 +4125,29 @@ sequence survplot(), confIntArea(), survCurve() and nrAtRisk().  The separation
 of the plot in this 4 functions allows for great flexibility to make a custom
 plot for publication.")
     (license license:expat)))
+
+(define-public r-survcorr
+  (package
+    (name "r-survcorr")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SurvCorr" version))
+              (sha256
+               (base32
+                "0pccjc9zdvbb869wfywm23l63h1bpi5px4q5x7fq54pm0iyi1k73"))))
+    (properties `((upstream-name . "SurvCorr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-fields))
+    (home-page "https://cran.r-project.org/package=SurvCorr")
+    (synopsis "Correlation of Bivariate Survival Times")
+    (description
+     "Estimates correlation coefficients with associated confidence limits for
+bivariate, partially censored survival times.  Uses the iterative multiple
+imputation approach proposed by Schemper, Kaider, Wakounig and Heinze (2013)
+<doi:10.1002/sim.5874>.  Provides a scatterplot function to visualize the
+bivariate distribution, either on the original time scale or as copula.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-survc1
   (package
@@ -7941,13 +7968,13 @@ are they related?\" by Yashin A. et al. (2007), Biogerontology 8(3), 291(302),
 (define-public r-stplanr
   (package
     (name "r-stplanr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stplanr" version))
               (sha256
                (base32
-                "0x4v7c6cdg6hdw5f65jk6bb4cp85khhc1dgvwcxy1yjzjd4g7b3k"))))
+                "0wp9vxv9z7qm6k5kmsilpdaabgmwx4r3hyr4bggjwrpcf0bd59x9"))))
     (properties `((upstream-name . "stplanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
@@ -8947,6 +8974,34 @@ cross-validation (which includes information on 95% confidence interval
 empirical coverage), and to produce contour plots over 2D slices in model
 parameter space.")
     (license license:gpl3)))
+
+(define-public r-stickyr
+  (package
+    (name "r-stickyr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stickyr" version))
+              (sha256
+               (base32
+                "0wqk4w732xb8dhbjfy1q613pia9rrmilsbpngacgw9sinsd1iq6m"))))
+    (properties `((upstream-name . "stickyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-generics
+                             r-ellipsis
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=stickyr")
+    (synopsis "Data Frames with Persistent Columns and Attributes")
+    (description
+     "This package provides data frames that hold certain columns and attributes
+persistently for data processing in dplyr'.")
+    (license license:expat)))
 
 (define-public r-sticky
   (package
@@ -18090,16 +18145,17 @@ Finlay-Wilkinson Model for Analysis of Multi-Environment Field Trials.")
 (define-public r-spfsr
   (package
     (name "r-spfsr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spFSR" version))
               (sha256
                (base32
-                "0sqsa6spk9mz784abxazs9i3gv046za2la55xslrpn3b7d8wksl5"))))
+                "0xc6fj8wa0xzgzggiy0adjs69f5qfqv7gg9cackcpv16v54sgvzz"))))
     (properties `((upstream-name . "spFSR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
+                             r-ranger
                              r-mlr3pipelines
                              r-mlr3learners
                              r-mlr3
@@ -20129,20 +20185,20 @@ al. (2018) <doi:10.1111/2041-210X.13058>).")
 (define-public r-spatialvx
   (package
     (name "r-spatialvx")
-    (version "1.0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialVx" version))
               (sha256
                (base32
-                "1320dl8sr9zqka2pa361gsi3sr4clzz7bp7zj1p07khyz3xchinf"))))
+                "06l2p3p24s08diq6g6301hk8fmc4wd43wc94a4jl31lq6zjihiwc"))))
     (properties `((upstream-name . "SpatialVx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
                              r-turboem
+                             r-spatstat-model
                              r-spatstat-linnet
                              r-spatstat-geom
-                             r-spatstat-core
                              r-spatstat
                              r-smoothie
                              r-smatr
@@ -22539,13 +22595,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.3.0")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "1zp2wdqsc5plxwnzy8jidzmi18gvcwq87xnwzbxg60q794y09fql"))))
+                "1b5415i00gczy2fn4ks61n0xmhapkyiyvrg05lvrnx6qyiv92scl"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -27425,13 +27481,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smcfcs" version))
               (sha256
                (base32
-                "10barbr4869ispdg8as6j8gfcc683dxv249vqlpk0p1cv3mvy6nj"))))
+                "1i57rgibm5fqdw8gk61f79mvz60ygzgbfsb2nyckfxiamy25nfq2"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -33183,6 +33239,28 @@ of R functions by means of program dependence graphs.  Possible use cases
 include detection of code clones for improving software quality and of
 plagiarism amongst students assignments.")
     (license license:gpl3+)))
+
+(define-public r-simico
+  (package
+    (name "r-simico")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIMICO" version))
+              (sha256
+               (base32
+                "0szw8xlryl9fhdvrviiiylkjvkqq3hxm9bkm6nk7d7g8p3zz12qa"))))
+    (properties `((upstream-name . "SIMICO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-icskat r-fastghquad r-compquadform r-bindata))
+    (home-page "https://cran.r-project.org/package=SIMICO")
+    (synopsis "Set-Based Inference for Multiple Interval-Censored Outcomes")
+    (description
+     "This package contains tests for association between a set of genetic variants
+and multiple correlated outcomes that are interval censored.  Interval-censored
+data arises when the exact time of the onset of an outcome of interest is
+unknown but known to fall between two time points.")
+    (license license:gpl3)))
 
 (define-public r-simhelpers
   (package
@@ -48607,16 +48685,22 @@ description of the methodology.")
 (define-public r-scdhlm
   (package
     (name "r-scdhlm")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scdhlm" version))
               (sha256
                (base32
-                "1x0z1yl8fmnnpm9h1nwlczbk2vnmqpq5sg5l6yn2z35j4wn458qz"))))
+                "1sf8pgj4zq45lpv37c6h3gpp8qbmszwzlcr41bjki75mqbariksd"))))
     (properties `((upstream-name . "scdhlm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-nlme r-lmeinfo))
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-readxl
+                             r-nlme
+                             r-magrittr
+                             r-lmeinfo
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://jepusto.github.io/scdhlm/")
     (synopsis "Estimating Hierarchical Linear Models for Single-Case Designs")

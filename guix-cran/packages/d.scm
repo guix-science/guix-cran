@@ -1024,13 +1024,13 @@ filters and smoothers are also supported more general state space models.")
 (define-public r-dynamicgp
   (package
     (name "r-dynamicgp")
-    (version "1.1-8")
+    (version "1.1-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DynamicGP" version))
               (sha256
                (base32
-                "1ivrxm0asagvp0ay6hp1l29fv3mcfmad938mwxdcq3iaaj31ilvc"))))
+                "00hf3r39b9xid129kzgdnwdfrwrspxkz7dydgna3c5lrl7670paz"))))
     (properties `((upstream-name . "DynamicGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs))
@@ -8060,13 +8060,13 @@ G. (2020) <doi:10.1080/02331888.2020.1823979>.")
 (define-public r-dlookr
   (package
     (name "r-dlookr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dlookr" version))
               (sha256
                (base32
-                "0i1w3cakp72qlq9yc6ija0qb12gyb043mj1wj6f25hh75jrg3brw"))))
+                "0lnnx9r0ai79cbg4dq2aqprfql7s31y7777v1bw0931ia3nd9s51"))))
     (properties `((upstream-name . "dlookr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14804,13 +14804,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dexter" version))
               (sha256
                (base32
-                "1v96wgr07qj39i2vh675fsp2zv11hzfksv1ipq7jpy0y7fiyn1v7"))))
+                "1bvrxbg564y5wwndl92xhz628c7qpjz7vh44a0r0rc7lrc8h0hsx"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14827,7 +14827,7 @@ educational and psychological tests.")
     (description
      "This package provides a system for the management, assessment, and psychometric
 analysis of data from educational and psychological tests.")
-    (license license:gpl3)))
+    (license license:lgpl3)))
 
 (define-public r-devtreatrules
   (package
@@ -15404,13 +15404,13 @@ maximum.")
 (define-public r-detect
   (package
     (name "r-detect")
-    (version "0.4-4")
+    (version "0.4-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "detect" version))
               (sha256
                (base32
-                "1gzd98b4kg5rw0kpgznrb1wmr3iavdq5983n6wqx33lga1lqq9d6"))))
+                "12z7ci5vblksyiprlcv8gw61cl19swq0jxk0cidlfqhwvhp19inb"))))
     (properties `((upstream-name . "detect")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-matrix r-formula))
@@ -15420,8 +15420,7 @@ maximum.")
      "Models for analyzing site occupancy and count data models with detection error,
 including single-visit based models, conditional distance sampling and
 time-removal models.  Package development was supported by the Alberta
-Biodiversity Monitoring Institute (<https://www.abmi.ca>) and the Boreal Avian
-Modelling Project (<https://borealbirds.ualberta.ca>).")
+Biodiversity Monitoring Institute and the Boreal Avian Modelling Project.")
     (license license:gpl2)))
 
 (define-public r-details
@@ -20455,13 +20454,13 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.7-10")
+    (version "2.7-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbmss" version))
               (sha256
                (base32
-                "0fr28wvv8c4h4flklxaffxijgk5cy96p5sbf90yqfascqgmvvd9y"))))
+                "0d5pvn7k6m39m0bs76y5p9qbbrahsbdxx1fkmv33gg4kpk83bbl9"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -20469,7 +20468,7 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
                              r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-rlang
                              r-reshape2
                              r-rcppparallel

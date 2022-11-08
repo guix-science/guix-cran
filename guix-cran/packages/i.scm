@@ -681,6 +681,39 @@ CMCC-BioClimInd (see Noce, S., Caporaso, L. and Santini, M. (2020)
 <doi:10.1038/s41597-020-00726-5>.")
     (license license:expat)))
 
+(define-public r-itscalledsoccer
+  (package
+    (name "r-itscalledsoccer")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "itscalledsoccer" version))
+              (sha256
+               (base32
+                "03nic9v4bc2blncqp7hjgj7381bw7d8izp76kv7pdpvjvrwz1yxc"))))
+    (properties `((upstream-name . "itscalledsoccer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-rlang
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-httpcache
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-clisymbols))
+    (home-page "https://github.com/American-Soccer-Analysis/itscalledsoccer-r")
+    (synopsis "American Soccer Analysis API Client")
+    (description
+     "This package provides a wrapper around the same API
+<https://app.americansocceranalysis.com/api/v1/__docs__/> that powers the
+American Soccer Analysis app.")
+    (license license:expat)))
+
 (define-public r-its-analysis
   (package
     (name "r-its-analysis")
@@ -757,13 +790,13 @@ will be added at later versions.")
 (define-public r-itraxr
   (package
     (name "r-itraxr")
-    (version "1.4")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itraxR" version))
               (sha256
                (base32
-                "0gybgzc37q1i2zdik1xjn1l6p98jx8r8k722fsgfb17pxj4l4bkf"))))
+                "1fl843dwvn92i4h0ccdp4xn5jwkkhzng367mmrr1ilwa3bq6ziqr"))))
     (properties `((upstream-name . "itraxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff
@@ -772,9 +805,9 @@ will be added at later versions.")
                              r-stringr
                              r-rlang
                              r-readr
+                             r-munsellinterpol
                              r-janitor
                              r-ggplot2
-                             r-ggfortify
                              r-ggcorrplot
                              r-dplyr
                              r-compositions
@@ -787,8 +820,8 @@ multi-parameter scanners manufactured by Cox Analytical Systems, Sweden.
 Functions are provided for parsing XRF-peak area files, line-scan optical
 images, and radiographic images, alongside accompanying metadata.  A variety of
 data wrangling tasks like trimming, joining and reducing XRF-peak area data are
-simplified.  Principle component analysis (PCA), cluster analysis and associated
-multivariate methods are implemented with appropriate data transformation.")
+simplified.  Multivariate methods are implemented with appropriate data
+transformation.")
     (license license:gpl3)))
 
 (define-public r-itp
@@ -4592,6 +4625,31 @@ for multiple testing and does not depend on normal DNA controls.  Budczies (2016
 Mar 15) <doi:10.18632/oncotarget.7451>.")
     (license license:gpl3)))
 
+(define-public r-iols
+  (package
+    (name "r-iols")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IOLS" version))
+              (sha256
+               (base32
+                "0q2js5010qzslrn7a7dw50ff3vlf2d9za9dcilhmv4z5001dzp2m"))))
+    (properties `((upstream-name . "IOLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-sandwich r-randomcolor r-matlib
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=IOLS")
+    (synopsis "Iterated Ordinary Least Squares Regression")
+    (description
+     "Addresses the log of zero by developing a new family of estimators called
+iterated Ordinary Least Squares.  This family nests standard approaches such as
+log-linear and Poisson regressions, offers several computational advantages, and
+corresponds to the correct way to perform the popular log(Y + 1) transformation.
+ For more details about how to use it, see the notebook at:
+<https://www.davidbenatia.com/>.")
+    (license license:gpl3)))
+
 (define-public r-iohexperimenter
   (package
     (name "r-iohexperimenter")
@@ -6494,6 +6552,38 @@ please consult: Aldwaik,Safaa Zakaria and Robert Gilmore Pontius Jr. (2012).
 changes by interval, category, and transition\".  Landscape and Urban Planning.
 106, 103-114. <doi:10.1016/j.landurbplan.2012.02.010>.")
     (license license:gpl2+)))
+
+(define-public r-intensegrid
+  (package
+    (name "r-intensegrid")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intensegRid" version))
+              (sha256
+               (base32
+                "1dhk14rxy7c2pawcg89bhbnx30nzi5hppywmf41aa7f40x2m7wxs"))))
+    (properties `((upstream-name . "intensegRid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KKulma/intensegRid")
+    (synopsis "R Wrapper for the Carbon Intensity API")
+    (description
+     "Electricity is not made equal and it vary in its carbon footprint (or carbon
+intensity) depending on its source.  This package enables to access and query
+data provided by the Carbon Intensity API (<https://carbonintensity.org.uk/>).
+National Gridâs Carbon Intensity API provides an indicative trend of regional
+carbon intensity of the electricity system in Great Britain.")
+    (license license:cc0)))
 
 (define-public r-integratedmrf
   (package

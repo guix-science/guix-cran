@@ -90,17 +90,22 @@ LaBB-CAT', see Robert Fromont and Jennifer Hay (2008)
 (define-public r-nzffdr
   (package
     (name "r-nzffdr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nzffdr" version))
               (sha256
                (base32
-                "1g32bra2z6a20jjqm6d7irccmr0x36h576bws6kh5x3h25i3plfv"))))
+                "14s2dfrrknaswg4l69lncsdbd7algpd9pzgrhpip0vbmyq9pa2ni"))))
     (properties `((upstream-name . "nzffdr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-stringi r-httr r-curl))
-    (home-page "https://cran.r-project.org/package=nzffdr")
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringi
+                             r-rlang
+                             r-httr
+                             r-curl))
+    (home-page "https://flee598.github.io/nzffdr/")
     (synopsis
      "Import, Clean and Update Data from the New Zealand Freshwater Fish Database")
     (description
@@ -3641,13 +3646,13 @@ return spatial objects on sf format.")
 (define-public r-nomclust
   (package
     (name "r-nomclust")
-    (version "2.5.0")
+    (version "2.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nomclust" version))
               (sha256
                (base32
-                "17vqxbx5bpja2fxp83w0sbgbs61b2vaak9zzvvxkicxqwk09ix2v"))))
+                "16pxv2vqikias18835crjfx5yignckvrw4imwqi18463mg6y7v9b"))))
     (properties `((upstream-name . "nomclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-cluster))

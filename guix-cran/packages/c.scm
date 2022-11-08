@@ -2037,13 +2037,13 @@ can be used to focus on different areas of the cube.")
 (define-public r-cubelyr
   (package
     (name "r-cubelyr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cubelyr" version))
               (sha256
                (base32
-                "1g3pvam1fkqh63snibqcfaazvj7lrkfip8w9pjvwdclj0l8382kl"))))
+                "154vwf5pj2jh66wqdh78nc0v722b4rh88hss24g5lc31wlghzc8q"))))
     (properties `((upstream-name . "cubelyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9231,13 +9231,13 @@ to multi-species distribution models <arXiv:2201.13095>.")
 (define-public r-cotima
   (package
     (name "r-cotima")
-    (version "0.5.4")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CoTiMA" version))
               (sha256
                (base32
-                "02bg0bckg5h8bk4plxjni5kya9rmqhz5d9dvfa19hmyd384hdxhv"))))
+                "0394a6m1hg9klcgpk4s51rql8k2084cbs6bzpgrsbk3gnvcxy8s3"))))
     (properties `((upstream-name . "CoTiMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-zcurve
@@ -26392,48 +26392,6 @@ libraries, such as Aston <https://github.com/bovee/aston>, Entab
 <https://github.com/compomics/ThermoRawFileParser>.")
     (license license:gpl3+)))
 
-(define-public r-chromatographr
-  (package
-    (name "r-chromatographr")
-    (version "0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "chromatographR" version))
-              (sha256
-               (base32
-                "15m74ijyh7dw4g2yigw4nf0gwbx7qlqb05pd2kzxbjckyhd449nb"))))
-    (properties `((upstream-name . "chromatographR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-smoother
-                             r-scales
-                             r-pvclust
-                             r-ptw
-                             r-minpack-lm
-                             r-lattice
-                             r-fastcluster
-                             r-dynamictreecut
-                             r-chromconverter))
-    (native-inputs (list r-knitr))
-    (home-page "https://ethanbass.github.io/chromatographR/")
-    (synopsis "Chromatographic Data Analysis Toolset")
-    (description
-     "Tools for high-throughput analysis of HPLC-DAD/UV chromatograms (or similar
-data).  Includes functions for preprocessing, alignment, peak-finding and
-fitting, peak-table construction, data-visualization, etc.  Preprocessing and
-peak-table construction follow the rough formula laid out in alsace (Wehrens,
-R., Bloemberg, T.G., and Eilers P.H.C., 2015.
-<doi:10.1093/bioinformatics/btv299>.  Alignment of chromatograms is available
-using parametric time warping (ptw) (Wehrens, R., Bloemberg, T.G., and Eilers
-P.H.C. 2015. <doi:10.1093/bioinformatics/btv299>) or variable penalty dynamic
-time warping (VPdtw) (Clifford, D., & Stone, G. 2012.
-<doi:10.18637/jss.v047.i08>).  Peak-finding uses the algorithm by Tom O'Haver
-<http://terpconnect.umd.edu/~toh/spectrum/PeakFindingandMeasurement.htm>.  Peaks
-are then fitted to a gaussian or exponential-gaussian hybrid peak shape using
-non-linear least squares (Lan, K. & Jorgenson, J. W. 2001.
-<doi:10.1016/S0021-9673(01)00594-5>).  See the vignette for more details and
-suggested workflow.")
-    (license license:gpl2+)))
-
 (define-public r-christmas
   (package
     (name "r-christmas")
@@ -35391,13 +35349,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.12")
+    (version "0.3.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cansim" version))
               (sha256
                (base32
-                "1vc92kv5d517gzwp6mbi3913d8bkikjxbaj4jyf9981zdqzgc3b8"))))
+                "0jxgrybrilqbnsrrd9k3hnjcyi1pvrdlb6ni3qgi3sj1x3zbkj3i"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

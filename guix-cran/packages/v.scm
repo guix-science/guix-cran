@@ -10,6 +10,9 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3454,13 +3457,13 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
 (define-public r-vfp
   (package
     (name "r-vfp")
-    (version "1.4")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VFP" version))
               (sha256
                (base32
-                "0p964fag5a0p23x6jgyc5bx4kp3ar9jdh88n4nybiv884sdfbk90"))))
+                "14idww1vy695mp9v2h0nxqi6flmm41cr30i0yd2nwjsnriwqgzak"))))
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca r-mass r-gnm))
@@ -5812,6 +5815,32 @@ available at <https://arxiv.org/abs/1604.07451>.")
      "This package provides a collection of the functions for estimation, hypothesis
 testing, prediction for stationary vector autoregressive models.")
     (license license:gpl2)))
+
+(define-public r-vapour
+  (package
+    (name "r-vapour")
+    (version "0.9.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vapour" version))
+              (sha256
+               (base32
+                "013yx2s9swhvca5jdjfagxql69srzvj340hlivp2jc1cx95mjp30"))))
+    (properties `((upstream-name . "vapour")))
+    (build-system r-build-system)
+    (inputs (list zlib proj gdal))
+    (propagated-inputs (list r-rcpp r-jsonlite))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://github.com/hypertidy/vapour")
+    (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
+    (description
+     "This package provides low-level access to GDAL functionality.  GDAL is the
+Geospatial Data Abstraction Library a translator for raster and vector
+geospatial data formats that presents a single raster abstract data model and
+single vector abstract data model to the calling application for all supported
+formats <https://gdal.org/>.  This package is focussed on providing exactly and
+only what GDAL does, to enable developing further tools.")
+    (license license:gpl3)))
 
 (define-public r-vanquish
   (package

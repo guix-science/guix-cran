@@ -3361,19 +3361,21 @@ is possible to use parallel processing to speed-up the routines.")
 (define-public r-rtl
   (package
     (name "r-rtl")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RTL" version))
               (sha256
                (base32
-                "0k68505zs08l8gpn7f5r3la5f2053laganl8af3b8shi5ymqv68g"))))
+                "0iqhl227qhv35p27f5jly6v0hj0m3l2flphsgwny3n9hp8vzrp6y"))))
     (properties `((upstream-name . "RTL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
+                             r-ttr
                              r-tsibble
                              r-timetk
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -5141,13 +5143,13 @@ citation(\"Rssa\") for details.")
 (define-public r-rsqmed
   (package
     (name "r-rsqmed")
-    (version "0.1.7.1")
+    (version "0.2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RsqMed" version))
               (sha256
                (base32
-                "18r78svwbnri5283s5nxg4vrp29r6xx13h0n6w634jdpwaiw56gk"))))
+                "0answ66a9gi38lw48xjvb0f2cpifxi9c5iwlghwh26baffqp9m64"))))
     (properties `((upstream-name . "RsqMed")))
     (build-system r-build-system)
     (propagated-inputs (list r-sis r-gmmat))
@@ -5158,9 +5160,11 @@ citation(\"Rssa\") for details.")
      "An implementation of calculating the R-squared measure as a total mediation
 effect size measure and its confidence interval for moderate- or
 high-dimensional mediator model.  It gives an option to filter out non-mediators
-using variable selection method.  This R package is directly related to the
-paper \"Estimation of mediation effect for high-dimensional omics mediators with
-application to the Framingham Heart Study\" with <doi:10.1101/774877>.")
+using variable selection method.  The original R package is directly related to
+the paper \"Estimation of mediation effect for high-dimensional omics mediators
+with application to the Framingham Heart Study\" with <doi:10.1101/774877>.  The
+new version contains a choice of using cross-fitting, which is computationally
+faster.")
     (license license:gpl3)))
 
 (define-public r-rsqlparser
@@ -10615,13 +10619,13 @@ partitions of the feature set.")
 (define-public r-rotasym
   (package
     (name "r-rotasym")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rotasym" version))
               (sha256
                (base32
-                "1sknhvwmy1r0sa76lp8qv5h7lx05mvw04ip7cvxcamwg6l2bifis"))))
+                "08xprp6jmf91lvg3y6wh9mdrxpv0vv9aqynlch842294fy0wzgl1"))))
     (properties `((upstream-name . "rotasym")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -16052,16 +16056,17 @@ data by ads, campaigns, agency clients and statistic from your ads account.")
 (define-public r-rmweather
   (package
     (name "r-rmweather")
-    (version "0.1.51")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmweather" version))
               (sha256
                (base32
-                "0qd49lr12hc39dwg348b021aqxw57pfcb9xxhp51fvnw6gw6bgqd"))))
+                "18ajzwm0jb6wklrxp8cmifym4wn22y2rw4llhjxrc98fkis3jgk3"))))
     (properties `((upstream-name . "rmweather")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
+                             r-tidyr
                              r-tibble
                              r-strucchange
                              r-stringr
@@ -30680,13 +30685,13 @@ times")
 (define-public r-recordlinkage
   (package
     (name "r-recordlinkage")
-    (version "0.4-12.3")
+    (version "0.4-12.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RecordLinkage" version))
               (sha256
                (base32
-                "11nlmg1hcf4nv69ampc4mdq2lz27mq9yn4q7c0k45g0ilydb0pg3"))))
+                "0jfissk9gcf1w78dhly01dpjlb8nyk32iz1s2n38ggk8ywd4zgbk"))))
     (properties `((upstream-name . "RecordLinkage")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -31955,13 +31960,13 @@ in a form directly compatible with the rgl package.")
 (define-public r-readmzxmldata
   (package
     (name "r-readmzxmldata")
-    (version "2.8.1")
+    (version "2.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readMzXmlData" version))
               (sha256
                (base32
-                "03lnhajj75i3imy95n2npr5qpm4birbli922kphj0w3458nq8g8w"))))
+                "1kq1v9y013n12ic3dwxxnvncq635w71d6wkpcvcz6dw45bjkc68k"))))
     (properties `((upstream-name . "readMzXmlData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-digest r-base64enc))
@@ -45469,13 +45474,13 @@ BayesX'.")
 (define-public r-r2admb
   (package
     (name "r-r2admb")
-    (version "0.7.16.2")
+    (version "0.7.16.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "R2admb" version))
               (sha256
                (base32
-                "1gwp850ff76lqqn6amj75rjqb1szk6x2vlhqgwng4z45i56bmdf7"))))
+                "1sv20hkgz3vvqkwzj7i2xn7sb8skzhdl7jnrk85m6zza65917f32"))))
     (properties `((upstream-name . "R2admb")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-coda))

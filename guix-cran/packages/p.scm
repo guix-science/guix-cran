@@ -9111,13 +9111,13 @@ models (glm) and local polynomial regression fittings (loess).")
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predhy" version))
               (sha256
                (base32
-                "0iwlv9j0xpsl2xkvy7yb1irjg67d8xq13bzgjj8i4rqqhv12ap57"))))
+                "1m0c35r3h63vdimixskqviyqfblj8cxaf5b1085wb72fasanak5n"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -18070,6 +18070,64 @@ stomatal conductance models, leaf energy balance using Penman-Monteith,
 Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 <doi:10.1371/journal.pone.0143346>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-planningml
+  (package
+    (name "r-planningml")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "planningML" version))
+              (sha256
+               (base32
+                "1qndw6jxk2jgliw996h2qkqqdd22ycc8kvs8z0jmk43dmiyjqzfx"))))
+    (properties `((upstream-name . "planningML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-proc
+                             r-mess
+                             r-matrix
+                             r-lubridate
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=planningML")
+    (synopsis
+     "Sample Size Calculator for Machine Learning Applications in Healthcare")
+    (description
+     "Advances in automated document classification has led to identifying massive
+numbers of clinical concepts from handwritten clinical notes.  These high
+dimensional clinical concepts can serve as highly informative predictors in
+building classification algorithms for identifying patients with different
+clinical conditions, commonly referred to as patient phenotyping.  However, from
+a planning perspective, it is critical to ensure that enough data is available
+for the phenotyping algorithm to obtain a desired classification performance.
+This challenge in sample size planning is further exacerbated by the high
+dimension of the feature space and the inherent imbalance of the response class.
+ Currently available sample size planning methods can be categorized into: (i)
+model-based approaches that predict the sample size required for achieving a
+desired accuracy using a linear machine learning classifier and (ii) learning
+curve-based approaches (Figueroa et al. (2012) <doi:10.1186/1472-6947-12-8>)
+that fit an inverse power law curve to pilot data to extrapolate performance.
+We develop model-based approaches for imbalanced data with correlated features,
+deriving sample size formulas for performance metrics that are sensitive to
+class imbalance such as Area Under the receiver operating characteristic Curve
+(AUC) and Matthews Correlation Coefficient (MCC).  This is done using a two-step
+approach where we first perform feature selection using the innovated High
+Criticism thresholding method (Hall and Jin (2010) <doi:10.1214/09-AOS764>),
+then determine the sample size by optimizing the two performance metrics.
+Further, we develop software in the form of an R package named planningML and an
+R Shiny app to facilitate the convenient implementation of the developed
+model-based approaches and learning curve approaches for imbalanced data.  We
+apply our methods to the problem of phenotyping rare outcomes using the
+MIMIC-III electronic health record database.  We show that our developed methods
+which relate training data size and performance on AUC and MCC, can predict the
+true or observed performance from linear ML classifiers such as LASSO and SVM at
+different training data sizes.  Therefore, in high-dimensional classification
+analysis with imbalanced data and correlated features, our approach can
+efficiently and accurately determine the sample size needed for machine-learning
+based classification.")
+    (license license:gpl2)))
 
 (define-public r-planets
   (package

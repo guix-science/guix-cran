@@ -651,13 +651,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.13")
+    (version "0.4.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xpose" version))
               (sha256
                (base32
-                "0sbr5br8jzszn6j7jccrdfn95svdlqxn8xqjp29zdxnp3zjlkkd5"))))
+                "0ppnhnyi3xh7bcss6i1fpwz1rli3m5v20w3ia7azga09xfqycnyk"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -671,7 +671,7 @@ diagnostics.")
                              r-ggforce
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/UUPharmacometrics/xpose")
+    (home-page "https://uupharmacometrics.github.io/xpose/")
     (synopsis "Diagnostics for Pharmacometric Models")
     (description
      "Diagnostics for non-linear mixed-effects (population) models from NONMEM
@@ -1590,13 +1590,13 @@ whole lot more!")
 (define-public r-xaringan
   (package
     (name "r-xaringan")
-    (version "0.26")
+    (version "0.27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xaringan" version))
               (sha256
                (base32
-                "1p9y6pjdpk4s5xz3zvmdzx9x8wla668cr075yaxc482kl7snskr6"))))
+                "1f1xam86sgrdh0h1kgpl6yvfrhw1r22wkjl18jwx2qnrfd3bxwcx"))))
     (properties `((upstream-name . "xaringan")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-servr r-rmarkdown r-knitr r-htmltools))

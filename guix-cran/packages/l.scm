@@ -11,11 +11,11 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages xml)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -593,13 +593,13 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 (define-public r-lucidus
   (package
     (name "r-lucidus")
-    (version "2.2")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LUCIDus" version))
               (sha256
                (base32
-                "02dnhswmddyqq5vhmm7wfn76h4i8id2gfcfmc1cpclwyy006srb9"))))
+                "00qzx94hwkhm5yszkx1wkj592img5n504ybld272x0wps2bk6snp"))))
     (properties `((upstream-name . "LUCIDus")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -613,14 +613,14 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/USCbiostats/LUCIDus")
-    (synopsis "Latent Unknown Clustering with Integrated Data")
+    (synopsis "Latent Unknown Clustering Integrating Multi-View Data")
     (description
-     "An implementation of LUCID model (Peng (2019)
+     "An implementation of the LUCID model (Peng (2019)
 <doi:10.1093/bioinformatics/btz667>).  LUCID conducts integrated clustering
-using exposures, omics data (and outcome of interest).  An EM algorithm is
-implemented to estimate MLE of LUCID model.  LUCID features integrated variable
-selection, incorporation of missing omics data, bootstrap inference and
-visualization via Sankey diagram.")
+using exposures, omics data (and outcome as an option).  An EM algorithm is
+implemented to estimate MLE of the LUCID model.  LUCIDus features integrated
+variable selection, incorporation of missing omics data, bootstrap inference,
+prediction and visualization of the model.")
     (license license:gpl3)))
 
 (define-public r-lucid
@@ -4900,13 +4900,13 @@ Lock^5 Includes version of datasets from earlier editions.")
 (define-public r-locits
   (package
     (name "r-locits")
-    (version "1.7.5")
+    (version "1.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "locits" version))
               (sha256
                (base32
-                "0il7wf3373kcziy6bia3w57mm7i5wcqbzarzr1v9d8r5zw7h96p1"))))
+                "15jalcaqz5yymrhlzlsr3xmy34dspnv08lmychqjps8vv0irpr3j"))))
     (properties `((upstream-name . "locits")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-igraph))
@@ -5172,13 +5172,13 @@ in ElÃ­as, A., JimÃ©nez, R. and Yukich, J. (2020) <arXiv:2007.16059>.")
 (define-public r-localcontrolstrategy
   (package
     (name "r-localcontrolstrategy")
-    (version "1.3.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LocalControlStrategy" version))
               (sha256
                (base32
-                "05vggk5d0w3f9w5217c9hzy5jhwv24p2g8pcj0l6zxkhic01nbrl"))))
+                "1slkhgac7izkmp5g203lhzvh991mnqf2qz1m0nd1k89084wvkv7b"))))
     (properties `((upstream-name . "LocalControlStrategy")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-cluster))
@@ -5191,21 +5191,23 @@ selection bias and confounding are revealed by using the Nonparametric and
 Unsupervised \"preprocessing\" methods central to Local Control (LC) Strategy.
 The LC objective is to estimate the \"effect-size distribution\" that best
 quantifies a potentially causal relationship between a numeric y-Outcome
-variable and a t-Treatment variable.  This t-variable may be either binary {1 =
-\"new\" vs 0 = \"control\"} or a numeric measure of Exposure level.  LC Strategy
-starts by CLUSTERING experimental units (patients) on their pre-exposure
-X-Covariates, forming mutually exclusive and exhaustive BLOCKS of relatively
-well-matched units.  The implicit statistical model for LC is thus simple
-one-way ANOVA. The Within-Block measures of effect-size are Local Rank
-Correlations (LRCs) when Exposure is numeric with more than two levels.
+variable and a t-Treatment or e-Exposure variable.  Treatment variables are
+binary {either 1 = \"new\" or 0 = \"control\"}, while Exposure variables vary
+continuously over a finite range.  LC Strategy starts by CLUSTERING experimental
+units (individual patients, US Counties, etc.) on their X-confounder
+characteristics.  Clusters represent exclusive and exhaustive BLOCKS of
+relatively well-matched units.  The implicit statistical model for LC is thus
+simple one-way ANOVA. Within-Block measures of effect-size are Local Rank
+Correlations (LRCs) when Exposure is numeric with (many) more than two levels.
 Otherwise, Treatment choice is Nested within BLOCKS, and effect-sizes are LOCAL
-Treatment Differences (LTDs) between within-cluster y-Outcome Means [\"new\" minus
+Treatment Differences (LTDs) between Within-Cluster y-Outcome Means [\"new\" minus
 \"control\"].  An Instrumental Variable (IV) method is also provided so that Local
 Average y-Outcomes (LAOs) within BLOCKS may also contribute information for
 effect-size inferences ...assuming that X-Covariates influence only Treatment
 choice or Exposure level and otherwise have no direct effects on y-Outcome.
 Finally, a \"Most-Like-Me\" function provides histograms of effect-size
-distributions to aid Doctor-Patient communications about Personalized Medicine.")
+distributions to aid Doctor-Patient or Researcher-Society communications about
+Heterogeneous Outcomes.")
     (license license:gpl2)))
 
 (define-public r-localcontrol
@@ -9108,29 +9110,6 @@ philosophy of the package is described in Guo G. (2022)
 and quantile functions), random number generation and parameter estimation.")
     (license license:gpl3)))
 
-(define-public r-libsoc
-  (package
-    (name "r-libsoc")
-    (version "0.7.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "libsoc" version))
-              (sha256
-               (base32
-                "0baglknb67gmzr4cimlvz44f11np8glcdjdgs3jy8qlz0c8pm95p"))))
-    (properties `((upstream-name . "libsoc")))
-    (build-system r-build-system)
-    (inputs (list zlib libxml2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rikardn/libsoc")
-    (synopsis
-     "Read, Create and Write 'PharmML' Standard Output (so) XML Files")
-    (description
-     "Handle PharmML (Pharmacometrics Markup Language) standard output (SO) XML files.
- SO files can be created, read, manipulated and written through a data binding
-from the XML structure to a tree structure of R objects.")
-    (license license:lgpl3)))
-
 (define-public r-librarysnapshot
   (package
     (name "r-librarysnapshot")
@@ -9694,6 +9673,37 @@ implementing locally Gaussian multivariate density estimation, conditional
 density estimation, various independence tests for iid and time series data, a
 test for conditional independence and a test for financial contagion.")
     (license license:gpl3)))
+
+(define-public r-lfstat
+  (package
+    (name "r-lfstat")
+    (version "0.9.12")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lfstat" version))
+              (sha256
+               (base32
+                "0hl5b78llydcphbrg04fi5b4v7p6xxwlcwpl70m2537gra52wvdr"))))
+    (properties `((upstream-name . "lfstat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-scales
+                             r-plyr
+                             r-lmomrfa
+                             r-lmom
+                             r-latticeextra
+                             r-lattice
+                             r-dygraphs))
+    (home-page "https://cran.r-project.org/package=lfstat")
+    (synopsis "Calculation of Low Flow Statistics for Daily Stream Flow Data")
+    (description
+     "The \"Manual on Low-flow Estimation and Prediction\" (Gustard & Demuth (2009,
+ISBN:978-92-63-11029-9)), published by the World Meteorological Organisation,
+gives a comprehensive summary on how to analyse stream flow data focusing on
+low-flows.  This packages provides functions to compute the described statistics
+and produces plots similar to the ones in the manual.")
+    (license license:gpl2+)))
 
 (define-public r-lfmm
   (package

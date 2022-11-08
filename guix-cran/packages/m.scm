@@ -8230,13 +8230,13 @@ created.  The method has first been proposed by Holmstrom, Pasanen, Furrer, Sain
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrbin" version))
               (sha256
                (base32
-                "1packr6j094r6z9p3cwdhbq093sliwxb8ill1dk9fh8z44ykixhi"))))
+                "0k0jhssacy19l45pcypfg3g1cw9dz6fpf3dkgihx7pldyw4zfh5g"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (home-page "http://www.kleinomicslab.com/software/")
@@ -24095,13 +24095,13 @@ fisheries data and aggregating ready for use within a Gadget
 (define-public r-mfd
   (package
     (name "r-mfd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mFD" version))
               (sha256
                (base32
-                "1hq3981xar786bhg4xdvp17v4nds0fd1pgj7pcn8zyykr3r44g84"))))
+                "0zayaz92l1j9fky7mpl3a2wrq0gbgpaa3248yqkpzmakwznf5szn"))))
     (properties `((upstream-name . "mFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

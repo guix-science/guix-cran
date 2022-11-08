@@ -3935,13 +3935,13 @@ with content analysis.")
 (define-public r-gridpattern
   (package
     (name "r-gridpattern")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gridpattern" version))
               (sha256
                (base32
-                "0ia0n5k72a3a2c2hhgg0ykmbbq42yr1jf81xvmqq28jd4nzvzqn1"))))
+                "13yypjsbpr61yn15y4cyz6s8jvcgg3mmr8rncskinpk8lsa8h2h4"))))
     (properties `((upstream-name . "gridpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-png r-memoise r-glue))
@@ -13267,6 +13267,29 @@ genome data and visualising the output and results.  Beissinger et al., (2018)
 <doi:10.1534/genetics.118.300857>.")
     (license license:expat)))
 
+(define-public r-ghapps
+  (package
+    (name "r-ghapps")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ghapps" version))
+              (sha256
+               (base32
+                "12z234lc7iy8svnm37ybj9ym0zd3jq5q9fng9h7dxdw2p9id7y30"))))
+    (properties `((upstream-name . "ghapps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openssl r-jose r-gh))
+    (home-page "https://github.com/r-lib/ghapps")
+    (synopsis "Authenticate as a 'GitHub' App")
+    (description
+     "GitHub apps provide a powerful way to manage fine grained programmatic access to
+specific git repositories, without having to create dummy users, and which are
+safer than a personal access token for automated tasks.  This package extends
+the gh package to let you authenticate and interact with GitHub
+<https://docs.github.com/en/rest/overview> in R as an app.")
+    (license license:expat)))
+
 (define-public r-ghap
   (package
     (name "r-ghap")
@@ -13762,16 +13785,16 @@ geometries to add alternative background color to a plot.")
 (define-public r-ggstar
   (package
     (name "r-ggstar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstar" version))
               (sha256
                (base32
-                "0d96qsx0id82isaz62plkxwc8a6zcs19s1asyx316ciq9a325pr3"))))
+                "0m2knp1jf1x62nqd8ln4haw90jv69l7vjrhn4pdrywgmwhdrp8gd"))))
     (properties `((upstream-name . "ggstar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-gridextra r-ggplot2))
+    (propagated-inputs (list r-scales r-gridextra r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xiangpin/ggstar/")
     (synopsis "Multiple Geometric Shape Point Layer for 'ggplot2'")

@@ -2127,13 +2127,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "htsr" version))
               (sha256
                (base32
-                "1iz1zbcz6w06x83bj5dw4w6vlqx1gcpy0qhmdjbavn90a3rr2gq7"))))
+                "126nxqllsinky22zb8s9rwlms4daw664v9s8jqcffflab2v2xr7j"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4560,13 +4560,13 @@ Missing rate).  Takada, M., Fujisawa, H., & Nishikawa, T. (2019)
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.0.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmer" version))
               (sha256
                (base32
-                "0rywb6xhgmyhg0lpjdz7n3n28bbx2b9npic7kjp2ksq18m9bwq7x"))))
+                "0piz1imjfhn3lqnl4j8rph79vrix3z1cjqcmxrq1fky1gcjsgwl1"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -4575,6 +4575,7 @@ Missing rate).  Takada, M., Fujisawa, H., & Nishikawa, T. (2019)
                              r-rlang
                              r-r6
                              r-purrr
+                             r-pdist
                              r-mvtnorm
                              r-mclust
                              r-mass
@@ -8933,13 +8934,13 @@ DABO-NIANG and Michael GENIN (2021) <arXiv:2103.14401>.")
 (define-public r-hdshop
   (package
     (name "r-hdshop")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDShOP" version))
               (sha256
                (base32
-                "0qnxgp7fjinj9c96w724nxvmb2xbihj2wd6ysibr5dk4rvlq16p0"))))
+                "18i17vv71wc0rqfl2i9bcfl1ry3bd61x9nd6g57x37ggjp7i6j5k"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))

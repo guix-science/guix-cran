@@ -5391,13 +5391,13 @@ other pipeline or simultaneously analyze multiple gene lists.")
 (define-public r-webfakes
   (package
     (name "r-webfakes")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webfakes" version))
               (sha256
                (base32
-                "1bg8pkbcazzb0ng3i77mflsb09i5qgmrqr5jhz3iylvxrjrv1pxv"))))
+                "0aqa315a8ymfjgg3n7nri7r135r60gwkz118r2jy2bigml31szd4"))))
     (properties `((upstream-name . "webfakes")))
     (build-system r-build-system)
     (home-page "https://webfakes.r-lib.org/")

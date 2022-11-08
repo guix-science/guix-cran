@@ -3444,6 +3444,30 @@ Marinela Capanu, Mihai Giurcanu, Colin B Begg, Mithat Gonen, Subsampling based
 variable selection for generalized linear models.")
     (license license:gpl2)))
 
+(define-public r-optrefine
+  (package
+    (name "r-optrefine")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "optrefine" version))
+              (sha256
+               (base32
+                "0s5gwshphjwl02vw22h9dckqix7yw0zzyvasfy594c7d1qw46y4p"))))
+    (properties `((upstream-name . "optrefine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sampling r-rglpk r-mass r-ggplot2))
+    (home-page "https://github.com/kkbrum/optrefine")
+    (synopsis "Optimally Refine Strata")
+    (description
+     "Splits initial strata into refined strata that optimize covariate balance.  For
+more information, please email the author for a copy of the accompanying
+manuscript.  To solve the linear program, the Gurobi commercial optimization
+software is recommended, but not required.  The gurobi R package can be
+installed following the instructions at
+<https://www.gurobi.com/documentation/9.1/refman/ins_the_r_package.html>.")
+    (license license:gpl3+)))
+
 (define-public r-optrcdmaeat
   (package
     (name "r-optrcdmaeat")
@@ -5868,16 +5892,17 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.11")
+    (version "2.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "0yak0n9ay7ikbmm8fchb2zpzk1sq9hnrrhjhcd5ak839k91lhj7c"))))
+                "1mgawgf6y8bfb606y8ka7g920sqn3c322l1xkis25zgq2r1gk6js"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-rlang
                              r-readr
                              r-rcpp
                              r-purrr
@@ -8701,13 +8726,13 @@ interpolation, and for integrating quantities that represent arrays.")
 (define-public r-odetector
   (package
     (name "r-odetector")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odetector" version))
               (sha256
                (base32
-                "041diyzap14gfj73pi4qrfnmikm8xchyii9vrz8y411dgi17aiqg"))))
+                "094i6ykv3s0c5yhdnlgpkz1wb6pr9k6r3vsh7zgkxyy5iayi6dlv"))))
     (properties `((upstream-name . "odetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-ppclust))

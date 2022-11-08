@@ -16092,13 +16092,13 @@ text with solutions to exercises.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "3.3")
+    (version "3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecospat" version))
               (sha256
                (base32
-                "0gh4n6d4fcnlpp1xd12j881v40lvph4f4pg1j4hj0w17xjzz9zcf"))))
+                "0l93v8rbq41ll36riq6vhb22g5prp2rnlbn8i4lq85vvg1l00zfy"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -18766,6 +18766,35 @@ and to retrieve the simulation outputs in an appropriate format for
 post-processing treatments.  Five sequential sampling schemes and three
 coupled-to-MCMC schemes are implemented.")
     (license license:gpl3)))
+
+(define-public r-ease
+  (package
+    (name "r-ease")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Ease" version))
+              (sha256
+               (base32
+                "0llx3pdpzjsw94nk62h6cif4gn97rhbq38vsqpdarx201q8qq2qx"))))
+    (properties `((upstream-name . "Ease")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Ease")
+    (synopsis "Simulating Explicit Population Genetics Models")
+    (description
+     "Implementation in a simple and efficient way of fully customisable population
+genetics simulations, considering multiple loci that have epistatic
+interactions.  Specifically suited to the modelling of multilocus
+nucleocytoplasmic systems (with both diploid and haploid loci), it is
+nevertheless possible to simulate purely diploid (or purely haploid) genetic
+models.  Examples of models that can be simulated with Ease are numerous, for
+example models of genetic incompatibilities as presented by Marie-Orleach et al.
+(2022) <doi:10.1101/2022.07.25.501356>.  Many others are conceivable, although
+few are actually explored, Ease having been developed in particular to provide a
+solution so that these kinds of models can be simulated simply.")
+    (license license:expat)))
 
 (define-public r-earthtones
   (package

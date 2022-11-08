@@ -8347,13 +8347,13 @@ three-state progressive model.")
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Tplyr" version))
               (sha256
                (base32
-                "10kai38z0mxm7s6x1vjl2vgvwwkz2lzy04irvxxink5xfs8dqkpd"))))
+                "1wnhw2y6pl6i3syg7qrl16k9gids6qr7sp2z6b88vphz7p9jqi9p"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8952,6 +8952,44 @@ implementation of Chang's intruder words and intruder topics is provided.
 Sample data for the vignette is included in the toscaData package, which is
 available on gitHub: <https://github.com/Docma-TU/toscaData>.")
     (license license:gpl2+)))
+
+(define-public r-torvik
+  (package
+    (name "r-torvik")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "toRvik" version))
+              (sha256
+               (base32
+                "09b4c5j3wsiawx5pc1n6ga4qs1s0ybavh1drz6s2ikrpdvb62724"))))
+    (properties `((upstream-name . "toRvik")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.torvik.dev/")
+    (synopsis "Extensive and Tidy NCAA Men's College Basketball Data")
+    (description
+     "An API wrapper for cbbstat and a suite of functions to pull and clean detailed,
+extensive college basketball statistics from
+Barttorvik<https://barttorvik.com/>.")
+    (license license:expat)))
 
 (define-public r-tornado
   (package
@@ -18189,13 +18227,13 @@ exponential random graph models, implemented in the tergm package.")
 (define-public r-tergm
   (package
     (name "r-tergm")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tergm" version))
               (sha256
                (base32
-                "0l2a0j4bz4q101hqhcn2jnv5j4ny1cjcay2c8bcq58akifs3bzxb"))))
+                "09axlhf5n2jwc84ih05ywz8addqfai7g1cdlzhsbmjnsn1d89kai"))))
     (properties `((upstream-name . "tergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -18381,6 +18419,38 @@ interactive side information.")
      "This package provides methods to manipulate and store sparse tensors.  Tensors
 are multidimensional generalizations of matrices (two dimensional) and vectors
 (one dimensional).")
+    (license license:gpl3)))
+
+(define-public r-tensorpreave
+  (package
+    (name "r-tensorpreave")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TensorPreAve" version))
+              (sha256
+               (base32
+                "01dd9ny8ikrhdsi3rv9nhs10rn0ps8dly8qpqk576qqc8yb0d506"))))
+    (properties `((upstream-name . "TensorPreAve")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtensor r-pracma r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/William-Chenwl/TensorPreAve")
+    (synopsis
+     "Rank and Factor Loadings Estimation in Time Series Tensor Factor Models")
+    (description
+     "This package provides a set of functions to estimate rank and factor loadings of
+time series tensor factor models.  A tensor is a multidimensional array.  To
+analyze high-dimensional tensor time series, factor model is a major dimension
+reduction tool.  TensorPreAve provides functions to estimate the rank of core
+tensors and factor loading spaces of tensor time series.  More specifically, a
+pre-averaging method that accumulates information from tensor fibres is used to
+estimate the factor loading spaces.  The estimated directions corresponding to
+the strongest factors are then used for projecting the data for a potentially
+improved re-estimation of the factor loading spaces themselves.  A new rank
+estimation method is also implemented to utilizes correlation information from
+the projected data.  See Chen and Lam (2022) <arXiv:2208.04012> for more
+details.")
     (license license:gpl3)))
 
 (define-public r-tensorfun
@@ -19036,6 +19106,37 @@ Economic Journal API to offer data in R. For more information go to
 structure) via the expectation conditional-maximization algorithm under a
 clustering or classification paradigm.")
     (license license:gpl2+)))
+
+(define-public r-tehtuner
+  (package
+    (name "r-tehtuner")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tehtuner" version))
+              (sha256
+               (base32
+                "1dr3xrhwszv75w8iz7yy44a7kxac5n1dirjhjfqgvjz529m8ycqb"))))
+    (properties `((upstream-name . "tehtuner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superlearner
+                             r-stringr
+                             r-rpart
+                             r-rdpack
+                             r-randomforestsrc
+                             r-party
+                             r-glmnet
+                             r-earth))
+    (home-page "https://github.com/jackmwolf/tehtuner")
+    (synopsis "Fit and Tune Models to Detect Treatment Effect Heterogeneity")
+    (description
+     "This package implements methods to fit Virtual Twins models (Foster et al.
+(2011) <doi:10.1002/sim.4322>) for identifying subgroups with differential
+effects in the context of clinical trials while controlling the probability of
+falsely detecting a differential effect when the conditional average treatment
+effect is uniform across the study population using parameter selection methods
+proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
+    (license license:gpl3+)))
 
 (define-public r-teda
   (package
@@ -19802,13 +19903,13 @@ concentration) value.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tcpl" version))
               (sha256
                (base32
-                "1d6536wdqjy7j9v3zcg1piga6gnjkrjslrn2zw30nx195cwc8ysj"))))
+                "1xsw532xdf4xksrggsszwbh7rj818hvi9xmndhdhdk6wq6bg7xh4"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20436,13 +20537,13 @@ applied to both experimental and observational data.")
 (define-public r-taylor
   (package
     (name "r-taylor")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "taylor" version))
               (sha256
                (base32
-                "0w1r3vy6c03h14cxmxf938rmgmxnnhdfavivp6749xxd2qdca997"))))
+                "1zmih8gkkcfpydxxc4dfg3ypqs4qwbanfhckmjl9s4wl99k8q9mi"))))
     (properties `((upstream-name . "taylor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

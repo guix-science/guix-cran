@@ -1381,6 +1381,31 @@ scoring, and plotting for the BG/BB (Fader, Hardie, and Shang 2010
 Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
     (license license:gpl3)))
 
+(define-public r-btsr
+  (package
+    (name "r-btsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BTSR" version))
+              (sha256
+               (base32
+                "1cd9l089fz0vpl9ldwq0zpr546wxwxw3q94777bmxkj53mmk6xns"))))
+    (properties `((upstream-name . "BTSR")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=BTSR")
+    (synopsis "Bounded Time Series Regression")
+    (description
+     "Simulate, estimate and forecast a wide range of regression based dynamic models
+for bounded time series, covering the most commonly applied models in the
+literature.  The main calculations are done in FORTRAN', which translates into
+very fast algorithms.  The main references are Bayer et al. (2017)
+<doi:10.1016/j.jhydrol.2017.10.006>, Pumi et al. (2019)
+<doi:10.1016/j.jspi.2018.10.001>, Pumi et al. (2021) <doi:10.1111/sjos.12439>
+and Pumi et al. (2022) <arXiv:2211.02097>.")
+    (license license:gpl3+)))
+
 (define-public r-btspas
   (package
     (name "r-btspas")
@@ -18523,22 +18548,20 @@ ci_margin and ci_level]).")
 (define-public r-baymds
   (package
     (name "r-baymds")
-    (version "1.6")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayMDS" version))
               (sha256
                (base32
-                "1g4haskms28rn5wpkqn7rgaqpx5n4x3rz48n292l1vknb4mjwm8n"))))
+                "1l5srpaichn598a3a9pj7pwp35jvbwb65d37l9ngvdq3rja8xm0s"))))
     (properties `((upstream-name . "bayMDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
                              r-shiny
-                             r-rgl
                              r-rcpparmadillo
                              r-rcpp
                              r-progress
-                             r-gridextra
                              r-ggpubr
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=bayMDS")
@@ -23064,6 +23087,26 @@ be any dimensions.  Recommended use is with eps=10^-10, but can be run with
 package, simple gradient method (Gradmod) and Powell method (Powell).  These are
 not recommended for use, their purpose are purely for comparison.")
     (license license:gpl3)))
+
+(define-public r-bar
+  (package
+    (name "r-bar")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BAR" version))
+              (sha256
+               (base32
+                "01i2sys8w9d4jxnn16rx2hqqflhfyhghma0x176xxjiid2dvy5l5"))))
+    (properties `((upstream-name . "BAR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BAR")
+    (synopsis "Bayesian Adaptive Randomization")
+    (description
+     "Bayesian adaptive randomization is also called outcome adaptive randomization,
+which is increasingly used in clinical trials.")
+    (license license:gpl2)))
 
 (define-public r-baprestopro
   (package

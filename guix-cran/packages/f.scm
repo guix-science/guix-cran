@@ -12791,13 +12791,13 @@ process them and convert them to list of xts (time series).")
 (define-public r-ffd
   (package
     (name "r-ffd")
-    (version "1.0-8")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FFD" version))
               (sha256
                (base32
-                "0kb654pvb0z0zpf88yc3dkd8n3qfiqjhdmv9rk5y06f2hjydn0i3"))))
+                "1478sxfz4cv43nmvhg0d0w82kmyr4rfhhrrlrq4aanbxnriggkxr"))))
     (properties `((upstream-name . "FFD")))
     (build-system r-build-system)
     (inputs (list))
