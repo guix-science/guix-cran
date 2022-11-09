@@ -4497,6 +4497,36 @@ requires IP2Location Python module.  At the terminal, please run pip install
 IP2Location to install the module.")
     (license license:expat)))
 
+(define-public r-iotarelr
+  (package
+    (name "r-iotarelr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "iotarelr" version))
+              (sha256
+               (base32
+                "0dsbcjbval74xlcljjhl2lmr146kg8q3fwx9aw6y6spdfidj9cdc"))))
+    (properties `((upstream-name . "iotarelr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://fberding.github.io/iotarelr/")
+    (synopsis "Iota Inter Coder Reliability for Content Analysis")
+    (description
+     "Routines and tools for assessing the quality of content analysis on the basis of
+the Iota Reliability Concept.  The concept is inspired by item response theory
+and can be applied to any kind of content analysis which uses a standardized
+coding scheme and discrete categories.  It is also applicable for content
+analysis conducted by artificial intelligence.  The package provides reliability
+measures for a complete scale as well as for every single category.  Analysis of
+subgroup-invariance and error corrections are implemented.  This information can
+support the development process of a coding scheme and allows a detailed
+inspection of the quality of the generated data.  Equations and formulas working
+in this package are part of Berding et al. (2022)<doi:10.3389/feduc.2022.818365>
+and Berding and Pargmann (2022,ISBN:978-3-8325-5581-8).")
+    (license license:gpl3)))
+
 (define-public r-iotables
   (package
     (name "r-iotables")
@@ -12440,6 +12470,44 @@ D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
      "Integrate molecular profiles to discover candidate oncogenic drivers.")
     (license license:gpl2)))
 
+(define-public r-idopnetwork
+  (package
+    (name "r-idopnetwork")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idopNetwork" version))
+              (sha256
+               (base32
+                "1xahhisqc55kh2x0fy1imwnjx535qjl88g4shh588d1qf2vkfjc2"))))
+    (properties `((upstream-name . "idopNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-patchwork
+                             r-orthopolynom
+                             r-mvtnorm
+                             r-igraph
+                             r-glmnet
+                             r-ggplot2
+                             r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=idopNetwork")
+    (synopsis
+     "Cartographic Tool to Chart Spatial Microbial Interaction Networks")
+    (description
+     "Most existing approaches for network reconstruction can only infer an overall
+network and, also, fail to capture a complete set of network properties.  To
+address these issues, a new model has been developed, which converts static data
+into their dynamic form.  idopNetwork is an R interface to this model, it can
+inferring informative, dynamic, omnidirectional and personalized networks.  For
+more information on functional clustering part, see Kim et al. (2008)
+<doi:10.1534/genetics.108.093690>, Wang et al. (2011) <doi:10.1093/bib/bbr032>.
+For more information on our model, see Chen et al. (2019)
+<doi:10.1038/s41540-019-0116-1>, and Cao et al. (2022)
+<doi:10.1080/19490976.2022.2106103>.")
+    (license license:gpl3+)))
+
 (define-public r-idmtpreg
   (package
     (name "r-idmtpreg")
@@ -12970,18 +13038,18 @@ visit
 (define-public r-idar
   (package
     (name "r-idar")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idar" version))
               (sha256
                (base32
-                "16n2vpc6zx8sz2pr8nmza7127s3vwinjrrmmxc63q8cmb1ifi3gv"))))
+                "082p469ng6gmn48l45n6j2wivv4nq9mkl0pb1nclri2f566l95mf"))))
     (properties `((upstream-name . "idar")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-spatstat
                              r-picante
                              r-fd

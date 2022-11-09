@@ -3376,13 +3376,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.1.9")
+    (version "0.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jagshelper" version))
               (sha256
                (base32
-                "06l3dpddzdhdmgsvc6rcfl2jr6y87hswpwmdwg1w6wj1gb6m1y64"))))
+                "0n8jzzqy4zpzqx461dkma5sg4hvdr15hz2xg1jy7dhf6gz4yljls"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))
@@ -3423,6 +3423,31 @@ anticipated that a manuscript will be provided to Taylor and Francis around
 February 2020, with bibliographic details to follow at that point.  Until such
 time, further information can be obtained by emailing James Curran.")
     (license license:gpl2+)))
+
+(define-public r-jadelizardoptions
+  (package
+    (name "r-jadelizardoptions")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jadeLizardOptions" version))
+              (sha256
+               (base32
+                "1919qm9b5nb6bjwbqhsnimgn5lhcrrhd90ndnsc9kj3z3khw9mkd"))))
+    (properties `((upstream-name . "jadeLizardOptions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=jadeLizardOptions")
+    (synopsis "Trading Jade Lizard Option Strategies")
+    (description
+     "Jade Lizard and Reverse Jade Lizard Option Strategies are presented here through
+their Graphs.  The graphic indicators, strategies, calculations, functions and
+all the discussions are for academic, research, and educational purposes only
+and should not be construed as investment advice and come with absolutely no
+Liability.  Russell A. Stultz (âThe option strategy desk reference: an
+essential reference for option traders (First edition.)â, 2019, ISBN:
+9781949443912).")
+    (license license:gpl3)))
 
 (define-public r-jade
   (package

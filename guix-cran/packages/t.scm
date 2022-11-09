@@ -6999,13 +6999,13 @@ translation, please visit <http://www.openstatistics.net>.")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "transfR" version))
               (sha256
                (base32
-                "1lmxdy5fj23sg9c27biyca8vzvs1x5cfhayyzicv4c7jjp09z5vd"))))
+                "0g8spbs526la0ja1lp3yac94bcyji6kaibgsp4fr8af3qfak863a"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -11889,13 +11889,13 @@ implemented in the package.")
 (define-public r-timereg
   (package
     (name "r-timereg")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timereg" version))
               (sha256
                (base32
-                "0v5hmnppnv9ih29q4zmh8s9qxkdwaqg97093fldsy3fxs7g50dxv"))))
+                "1960z7r41v1bp9k0i74kah5933sv6mxdmrbijzky6a3dlzmmsn11"))))
     (properties `((upstream-name . "timereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-lava))
@@ -12822,13 +12822,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyterra" version))
               (sha256
                (base32
-                "1sn6nw1lhvs98qca27m9cbvb90injkvaj6anvq8k2iz413awdw5c"))))
+                "16zw7zw17a2qh777nhv8iyzq5g7hxp4hqh3cb9lhmrscdfg9r5qw"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19731,13 +19731,13 @@ et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "0.1.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDApplied" version))
               (sha256
                (base32
-                "17x9mfvygv5jmrymkkig1b882j3w7cww0xxcb4hvnc9ia01xcj8y"))))
+                "07vw667v5cnh6dxsggxb6028yl2xlxbqw0wr90whd45q61cjmfkv"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist
@@ -19756,12 +19756,14 @@ structure in whole datasets.  TDApplied aims to bridge topological data analysis
 with data, statistical and machine learning practitioners so that more analyses
 may benefit from the power of topological data analysis.  The main tool of
 topological data analysis is persistent homology, which computes a shape
-descriptor of a dataset, called a persistence diagram.  There are three goals of
+descriptor of a dataset, called a persistence diagram.  There are five goals of
 this package: (1) convert persistence diagrams computed using the two main R
 packages for topological data analysis into a data frame, (2) implement fast
 versions of both distance and kernel calculations for pairs of persistence
-diagrams, and (3) provide methods for machine learning and inference for
-persistence diagrams which scale well.")
+diagrams, (3) provide methods for machine learning and inference for persistence
+diagrams which scale well, (4) deliver a fast implementation of persistent
+homology via a python interface, and (5) contribute tools for the interpretation
+of persistence diagrams.")
     (license license:gpl3)))
 
 (define-public r-tdakit

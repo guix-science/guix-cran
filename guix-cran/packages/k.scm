@@ -4850,13 +4850,13 @@ Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kairos" version))
               (sha256
                (base32
-                "16lpza2vl32vhprz4a30jhqm99gd4pcg2k12hngcd4vf50z8cmqy"))))
+                "1fivyh61wqkq77aicqc90pihrn2kwir4mpbcp5jl9sklcdmh3l3w"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4864,14 +4864,13 @@ Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
                              r-ggplot2
                              r-extradistr
                              r-dimensio
-                             r-boot
                              r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/kairos/")
     (synopsis
      "Analysis of Chronological Patterns from Archaeological Count Data")
     (description
-     "This package provides a toolkit for absolute dating and analysis of
+     "This package provides a toolkit for absolute and relative dating and analysis of
 chronological patterns.  This package includes functions for chronological
 modeling and dating of archaeological assemblages from count data.  It provides
 methods for matrix seriation.  It also allows to compute time point estimates

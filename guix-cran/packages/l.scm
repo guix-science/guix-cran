@@ -6935,13 +6935,13 @@ tests can be applied under the assumption of continuity of X and Y.")
 (define-public r-listdown
   (package
     (name "r-listdown")
-    (version "0.5.2")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "listdown" version))
               (sha256
                (base32
-                "0h36m1m598zrr37fsam51b54aqs0mi8qfj5pvhkl77n9c67y347f"))))
+                "1pb738s1pm86k51yaffdzlkyhgsxs383mrlvpsqp8a7ii4nmbg3j"))))
     (properties `((upstream-name . "listdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-tibble r-rmarkdown r-fs r-checkmate))

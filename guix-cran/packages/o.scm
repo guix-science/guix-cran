@@ -189,13 +189,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ows4R" version))
               (sha256
                (base32
-                "0xi2xxyc6lxkwgaans0v2xj9jd0pvgxlyc5rmjilnc0afzwdv3x9"))))
+                "0p2yyzjxfkj3pr490ddcqxniyb3635rg26jmnc1hs29bv7aq014s"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -204,7 +204,6 @@ condition.")
                              r-r6
                              r-openssl
                              r-keyring
-                             r-jsonlite
                              r-httr
                              r-geometa))
     (native-inputs (list r-knitr))
@@ -214,10 +213,12 @@ condition.")
      "This package provides an Interface to Web-Services defined as standards by the
 Open Geospatial Consortium (OGC), including Web Feature Service (WFS) for vector
 data, Web Coverage Service (WCS), Catalogue Service (CSW) for ISO/OGC metadata,
-and associated standards such as the common web-service specification (OWS) and
-OGC Filter Encoding.  Partial support is provided for the Web Map Service (WMS)
-and Web Processing Service (WPS).  The purpose is to add support for additional
-OGC service standards such as Web Coverage Processing Service (WCPS) or OGC API.")
+Web Processing Service (WPS) for data processes, and associated standards such
+as the common web-service specification (OWS) and OGC Filter Encoding.  Partial
+support is provided for the Web Map Service (WMS).  The purpose is to add
+support for additional OGC service standards such as Web Coverage Processing
+Service (WCPS), the Sensor Observation Service (SOS), or even new standard
+services emerging such OGC API or SensorThings.")
     (license license:expat)))
 
 (define-public r-owmr
@@ -4297,13 +4298,13 @@ Krieger, Michael Sklar and David Azriel (2020) <arXiv:1905.03337>.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimall" version))
               (sha256
                (base32
-                "15cq4b50j39ahpx84g0wrg7gs9n36rx4ij2srm14zcjsmvnxbv9p"))))
+                "1lq1pd8ns6ivffp5kh3w1vczdwp41mgsywlaykyc7vb6j55qycy4"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
@@ -8616,13 +8617,13 @@ squared error.")
 (define-public r-odns
   (package
     (name "r-odns")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odns" version))
               (sha256
                (base32
-                "00ihccylkn7q70f5c4qw19i82a80c5akwr7wh6whmqcmgj6bdq4i"))))
+                "0a2ifmyrsfih5a7jwc0b6l9wl7c1s5x08fq5bfm27xm9jnb8fwsn"))))
     (properties `((upstream-name . "odns")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-glue r-data-table))

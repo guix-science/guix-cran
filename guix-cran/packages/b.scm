@@ -15924,13 +15924,13 @@ allowing calculations on data with missing values.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BEKKs" version))
               (sha256
                (base32
-                "0awlvd20gsrzbpnhkk7sqsxb4g13y6h42pxgj3isck9d0kdfs7i3"))))
+                "12amk1p99nrh747m832b8sd4lrm88s0dax6fphxcx9dm57r94av5"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -21908,13 +21908,13 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.0")
+    (version "2.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAT" version))
               (sha256
                (base32
-                "1i47yr0q9v4ryqwx0rlyp0kjjczgiprm7by4ykbwmgzyl9y0gkgp"))))
+                "1h90fqcnd6w4w0bjccz5zghqb05gddbiz3imfpbw14p23h11w3wq"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -23091,13 +23091,13 @@ not recommended for use, their purpose are purely for comparison.")
 (define-public r-bar
   (package
     (name "r-bar")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAR" version))
               (sha256
                (base32
-                "01i2sys8w9d4jxnn16rx2hqqflhfyhghma0x176xxjiid2dvy5l5"))))
+                "0bcq6lvijq1vxri2dbhnqcn46f799h3ag974zgcdpx4c5apph04w"))))
     (properties `((upstream-name . "BAR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -23414,13 +23414,13 @@ models using Bayes factors, and more.")
 (define-public r-bamlss
   (package
     (name "r-bamlss")
-    (version "1.1-8")
+    (version "1.1-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bamlss" version))
               (sha256
                (base32
-                "1338g401rvpi5ch7z50hm5zp375zpqvwv6b3szn4llf7pfr316fr"))))
+                "1zlcgjd08adr5c8jk16aw98lp5bsr1c03f29lhr4nzxjyppfn98c"))))
     (properties `((upstream-name . "bamlss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

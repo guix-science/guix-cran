@@ -30156,13 +30156,13 @@ values of the joint and conditional PDFs and CDFs.  Nagao M, Kadoya M (1971)
 (define-public r-mdatools
   (package
     (name "r-mdatools")
-    (version "0.13.0")
+    (version "0.13.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mdatools" version))
               (sha256
                (base32
-                "0mirlj79g2zy58dgg1yy2f1m5yr8w4rvf4hgs7q9vl50fiypv5hp"))))
+                "19l51va1fl0cx18ml6n1kfgbc8in9isb1mzhl84gshs9f6hnrmzh"))))
     (properties `((upstream-name . "mdatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -30526,6 +30526,36 @@ simulation.  Based on the mcreplicate() function from the rethinking package.
 The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
+
+(define-public r-mcr
+  (package
+    (name "r-mcr")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mcr" version))
+              (sha256
+               (base32
+                "0ybhskszzs05m0ql231jj7c7039dwmghnq4gfzp2ww6vj1agshpl"))))
+    (properties `((upstream-name . "mcr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robslopes))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=mcr")
+    (synopsis "Method Comparison Regression")
+    (description
+     "Regression methods to quantify the relation between two measurement methods are
+provided by this package.  In particular it addresses regression problems with
+errors in both variables and without repeated measurements.  It implements the
+CLSI recommendations (see J. A. Budd et al. (2018,
+<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
+analytical method comparison and bias estimation using patient samples.
+Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
+are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
+Raymaekers and F. Dufey (2022, <arXiv:2202:08060>).  A comprehensive overview
+over the implemented methods and references can be found in the manual pages
+\"mcr-package\" and \"mcreg\".")
+    (license license:gpl3+)))
 
 (define-public r-mcptests
   (package
@@ -34688,6 +34718,26 @@ synthetic-regression estimator proposed by Mandallaz (2013)
 It yields smaller variances than the standard bias correction, the generalised
 regression estimator.")
     (license license:bsd-2)))
+
+(define-public r-mas
+  (package
+    (name "r-mas")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mas" version))
+              (sha256
+               (base32
+                "07z0a6yis23zib16msjgx22mrag5xjbjpczj4kanvn8m3xikxrz3"))))
+    (properties `((upstream-name . "mas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=mas")
+    (synopsis "Membership Association Studies")
+    (description
+     "Genome-wide association analysis with membership information, variance
+adjustment, and correlated responses.")
+    (license license:gpl3)))
 
 (define-public r-marvel
   (package

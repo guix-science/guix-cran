@@ -7501,6 +7501,36 @@ with shapes and markers.  Also provides access to Google Maps APIs, including
 places, directions, roads, distances, geocoding, elevation and timezone.")
     (license license:expat)))
 
+(define-public r-googletraffic
+  (package
+    (name "r-googletraffic")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "googletraffic" version))
+              (sha256
+               (base32
+                "14wpra27z4jqgyc9mzfjh4k0f6z3cdp01fbv833ld11l5ays0qnb"))))
+    (properties `((upstream-name . "googletraffic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-webshot
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-raster
+                             r-png
+                             r-plotwidgets
+                             r-htmlwidgets
+                             r-googleway
+                             r-dplyr))
+    (home-page "https://dime-worldbank.github.io/googletraffic/")
+    (synopsis "Google Traffic")
+    (description
+     "Create geographically referenced traffic data from the Google Maps JavaScript
+API
+<https://developers.google.com/maps/documentation/javascript/examples/layer-traffic>.")
+    (license license:expat)))
+
 (define-public r-googletagmanager
   (package
     (name "r-googletagmanager")
@@ -8592,17 +8622,18 @@ diagrams, NMDS stress plots, species response curves and rank-abundance curves."
 (define-public r-gocompare
   (package
     (name "r-gocompare")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GOCompare" version))
               (sha256
                (base32
-                "0ssppp61ssirkcz9wni48n9jm6yv89lzxkgb90njslhb3aa07pbh"))))
+                "1363ppdaz8dpnxzv5avmc6gg58d9c7v1q462hswxa1xjgh4k38vi"))))
     (properties `((upstream-name . "GOCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-stringr
+                             r-mathjaxr
                              r-igraph
                              r-ggrepel
                              r-ggplot2
@@ -8612,8 +8643,9 @@ diagrams, NMDS stress plots, species response curves and rank-abundance curves."
     (description
      "Supports the assessment of functional enrichment analyses obtained for several
 lists of genes and provides a workflow to analyze them between two species via
-weighted graphs.  Methods are described in Sosa et al. (2022) (to be submitted).")
-    (license license:gpl3)))
+weighted graphs.  Methods are described in Sosa et al. (2022) (Submitted to
+Genomics).")
+    (license license:gpl3+)))
 
 (define-public r-go2bigq
   (package
@@ -10686,28 +10718,6 @@ linear models and Cox proportional hazards model.")
 Models, 2nd edition, by Jeff Gill and Michelle Torres.  Examples to create all
 models, tables, and plots are included for each data set.")
     (license license:gpl3+)))
-
-(define-public r-glmnetutils
-  (package
-    (name "r-glmnetutils")
-    (version "1.1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "glmnetUtils" version))
-              (sha256
-               (base32
-                "1k8ivzjgpkm2a948qxx3wmkhlppbk31qc76spv2pscmp24x0lxyn"))))
-    (properties `((upstream-name . "glmnetUtils")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hongooi73/glmnetUtils")
-    (synopsis "Utilities for 'Glmnet'")
-    (description
-     "This package provides a formula interface for the glmnet package for elasticnet
-regression, a method for cross-validating the alpha parameter, and other
-quality-of-life tools.")
-    (license license:gpl2)))
 
 (define-public r-glmnetse
   (package
@@ -18936,23 +18946,28 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "1.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geosimilarity" version))
               (sha256
                (base32
-                "1pailxz87f50p7w8r2ryb7zsvwzgiz1l4iwj47kj633h5vbakx5r"))))
+                "1mkab3377r04zybqsswakcgqwgby9iwb8bhxkr8s27blxha44jcp"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-secdim))
+    (propagated-inputs (list r-secdim r-ggrepel r-ggplot2 r-dplyr r-desctools))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geosimilarity")
     (synopsis "Geographically Optimal Similarity")
     (description
-     "Spatial prediction can be performed based on the geographical similarity theory.
- Geographically optimal similarity (GOS) model is a generalized model for
-accurate and reliable spatial prediction based on the geographical similarity
-theory.")
+     "Understanding spatial association is essential for spatial statistical
+inference, including factor exploration and spatial prediction.  Geographically
+optimal similarity (GOS) model is an effective method for spatial prediction, as
+described in Yongze Song (2022) <doi:10.1007/s11004-022-10036-8>.  GOS was
+developed based on the geographical similarity principle, as described in Axing
+Zhu (2018) <doi:10.1080/19475683.2018.1534890>.  GOS has advantages in more
+accurate spatial prediction using fewer samples and critically reduced
+prediction uncertainty.")
     (license license:gpl2)))
 
 (define-public r-geosed
@@ -19629,13 +19644,13 @@ US.")
 (define-public r-geoknife
   (package
     (name "r-geoknife")
-    (version "1.6.8")
+    (version "1.6.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geoknife" version))
               (sha256
                (base32
-                "0qxj86zb5zvjp9p235z16vkbydfykw3dx2xdcvkjcfxzg0c5ym3z"))))
+                "1x2q3g31nha9dc96a0ch4pbxyx090wr4hndk704b5rm646ifv6pz"))))
     (properties `((upstream-name . "geoknife")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

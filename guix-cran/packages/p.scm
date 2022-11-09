@@ -329,6 +329,43 @@ accounts converted to international prices for 189 countries for some or all of
 the years 1950-2010.")
     (license license:gpl2)))
 
+(define-public r-pwrss
+  (package
+    (name "r-pwrss")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pwrss" version))
+              (sha256
+               (base32
+                "16dyfi1qn50grs7dad15qqqrq5cxzkvfxy1pzr27cnp5rxyp0g5m"))))
+    (properties `((upstream-name . "pwrss")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pwrss")
+    (synopsis "Power and Sample Size Calculation Tools")
+    (description
+     "Statistical power and minimum required sample size calculations for (1) testing
+a proportion (one-sample) against a constant, (2) testing a mean (one-sample)
+against a constant, (3) testing difference between two proportions (independent
+samples), (4) testing difference between two means (independent and paired
+samples), (5) testing a correlation (one-sample) against a constant, (6) testing
+difference between two correlations (independent samples), (7) testing an
+R-squared against zero in linear regression, (8) testing an R-squared difference
+against zero in hierarchical regression, (9) testing an eta-squared or f-squared
+(for main and interaction effects) against zero in analysis of variance (could
+be one-way, two-way, and three-way), (10) testing an eta-squared or f-squared
+(for main and interaction effects) against zero in analysis of covariance (could
+be one-way, two-way, and three-way), (11) testing an eta-squared or f-squared
+(for between, within, and interaction effects) against zero in one-way repeated
+measures analysis of variance (with non-sphericity correction and repeated
+measures correlation).  Alternative hypothesis can be formulated as \"not equal\",
+\"less\", \"greater\", \"non-inferior\", \"superior\", or \"equivalent\" in (1), (2), (3),
+and (4); as \"not equal\", \"less\", or \"greater\" in (5) and (6); but always as
+\"greater\" in (7), (8), (9), (10), and (11).  Reference: Bulus & Polat (2022)
+<https://osf.io/download/sx3rk/>.")
+    (license license:gpl3+)))
+
 (define-public r-pwrrasch
   (package
     (name "r-pwrrasch")
@@ -15515,13 +15552,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.10")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmparser" version))
               (sha256
                (base32
-                "0p8fd4xrfvn27739m1rsal8sgddycbjzla5i2v0jkrkjr76sakl3"))))
+                "1mcy5rkblbv26yrq1wwh11d86dp68yyq246kkwn28rniyi3lm149"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -21144,22 +21181,21 @@ reactive-transport, and inverse geochemical calculations.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.0.3")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photosynthesis" version))
               (sha256
                (base32
-                "1f90j1a140nsxnibg3hz3vmad4542vny5ab331i887nkg0f5n5ar"))))
+                "10z5vg516hd654lcwha6krpm3q457d19kd8441wh2256ps7r37zx"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
-                             r-tidyselect
+                             r-tibble
                              r-tealeaves
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-pkgnet
                              r-nlme
                              r-minpack-lm
                              r-magrittr
@@ -28926,13 +28962,13 @@ biomarker of prognostic and predictive for cancer immunotherapy.")
 (define-public r-pathviewr
   (package
     (name "r-pathviewr")
-    (version "1.1.3")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pathviewr" version))
               (sha256
                (base32
-                "1xx73ah9af1q422rf346ip3w8jbxvs14qn9jv6bj7vnpw3nxndxq"))))
+                "0b518jhksv790zzgmykr5panh8dgl8v4abbxlbr1zayhbfz213c0"))))
     (properties `((upstream-name . "pathviewr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31409,13 +31445,13 @@ by the intervention.")
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "0.16.0")
+    (version "0.17.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMpal" version))
               (sha256
                (base32
-                "0chpsqwrimn6v5i24r77dr4ib9kgi71ppmjzjyhck1ygv702g260"))))
+                "09rd9h67y27xwgwfxp6k8nvhi0ccsw6h2kx1m1dd90iicbb03yk2"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -31424,7 +31460,6 @@ by the intervention.")
                              r-stringr
                              r-signal
                              r-seewave
-                             r-rstudioapi
                              r-rsqlite
                              r-rlang
                              r-reticulate
@@ -31685,27 +31720,6 @@ incorporating the covariate information.  More information can be found in the
 paper \"Integrated Partition-Mallows Model and Its Inference for Rank
 Aggregation\".")
     (license license:gpl2+)))
-
-(define-public r-pals
-  (package
-    (name "r-pals")
-    (version "1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pals" version))
-              (sha256
-               (base32
-                "18pbivmqs9yqsb6p8anv42alny0njaq3dajibhzysax0b7rsk2js"))))
-    (properties `((upstream-name . "pals")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-maps r-mapproj r-dichromat r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://kwstat.github.io/pals/")
-    (synopsis "Color Palettes, Colormaps, and Tools to Evaluate Them")
-    (description
-     "This package provides a comprehensive collection of color palettes, colormaps,
-and tools to evaluate them.")
-    (license license:gpl3)))
 
 (define-public r-palr
   (package

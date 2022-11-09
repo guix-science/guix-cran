@@ -3611,6 +3611,37 @@ beat() in bpm.  Together the two functions can be used to create many different
 drum patterns.")
     (license license:gpl3)))
 
+(define-public r-drugsim2dr
+  (package
+    (name "r-drugsim2dr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DrugSim2DR" version))
+              (sha256
+               (base32
+                "16m1gqs5m7pi8nlr6n8wh7dk3wjjiwhiqm96h8jxavfizv0bkj6n"))))
+    (properties `((upstream-name . "DrugSim2DR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sp
+                             r-rvest
+                             r-reshape2
+                             r-pheatmap
+                             r-igraph
+                             r-chemminer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DrugSim2DR")
+    (synopsis "Predict Drug Functional Similarity to Drug Repurposing")
+    (description
+     "This package provides a systematic biology tool was developed to repurpose drugs
+via a drug-drug functional similarity network.  DrugSim2DR first predict
+drug-drug functional similarity in the context of specific disease, and then
+using the similarity constructed a weighted drug similarity network.  Finally,
+it used a network propagation algorithm on the network to identify drugs with
+significant target abnormalities as candidate drugs.")
+    (license license:gpl2+)))
+
 (define-public r-drugprepr
   (package
     (name "r-drugprepr")
@@ -17785,13 +17816,13 @@ human differential gene expression. (In Preparation).")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deeptime" version))
               (sha256
                (base32
-                "0lzivg7nv9jyybjwcqpp3czj34f5jmwy6j0mbggq6rm935cn0jfn"))))
+                "1pl3zrdjq66bq8z97a55gksx13qmibdk8shfx8h43j7mlplv9bxn"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -17803,7 +17834,8 @@ human differential gene expression. (In Preparation).")
                              r-ggnewscale
                              r-ggforce
                              r-ggfittext
-                             r-curl))
+                             r-curl
+                             r-cli))
     (home-page "https://github.com/willgearty/deeptime")
     (synopsis "Plotting Tools for Anyone Working in Deep Time")
     (description

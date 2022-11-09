@@ -5582,6 +5582,39 @@ to fit into the tidyverse and grammar of graphics framework for handling
 temporal data.")
     (license license:gpl3+)))
 
+(define-public r-sugarbag
+  (package
+    (name "r-sugarbag")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sugarbag" version))
+              (sha256
+               (base32
+                "0xgazjr55cdjcxngpfasq17pc72lkg2p9jfzfpmwkjrpvsqw8dff"))))
+    (properties `((upstream-name . "sugarbag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rmapshaper
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://srkobakian.github.io/sugarbag/")
+    (synopsis "Create Tessellated Hexagon Maps")
+    (description
+     "Create a hexagon tile map display from spatial polygons.  Each polygon is
+represented by a hexagon tile, placed as close to it's original centroid as
+possible, with a focus on maintaining spatial relationship to a focal point.
+Developed to aid visualisation and analysis of spatial distributions across
+Australia, which can be challenging due to the concentration of the population
+on the coast and wide open interior.")
+    (license license:expat)))
+
 (define-public r-suessr
   (package
     (name "r-suessr")
@@ -7543,13 +7576,13 @@ An R package for modelling the dynamics of marine food webs and fisheries.  8pp.
 (define-public r-stratest
   (package
     (name "r-stratest")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stratEst" version))
               (sha256
                (base32
-                "1g764h17sh499p0a5ixs61q8l1hssvi7v4c34i90rdf81l72i0mg"))))
+                "1famcdvryij983v6xcrj06gmxr534ywpr2bpzn0d4mw36ka4xy20"))))
     (properties `((upstream-name . "stratEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -34726,13 +34759,13 @@ function, SoftMax preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.1.8")
+    (version "2.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sigminer" version))
               (sha256
                (base32
-                "0scc56xdv1mqz7jskyd46apqpggl0bgm0xs03q65r7x3rylb3fm8"))))
+                "1pyvyn41xfvdsaij5qz70jr1b04s9kqzg8nx0ifqakdlpg82hbx9"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -41441,13 +41474,13 @@ GPU acceleration is supported on Windows and Linux.")
 (define-public r-sentencepiece
   (package
     (name "r-sentencepiece")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sentencepiece" version))
               (sha256
                (base32
-                "0mwmgnkmahlik8nl14pkzi351jv9c00iylj7f5h6wkjbrizkdd34"))))
+                "16r13bdsi4s106y6j4ivdbsb4y5nzgbhizz043d43vjdmsibgpzf"))))
     (properties `((upstream-name . "sentencepiece")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -43078,17 +43111,21 @@ R client implementing the W3C specification.")
 (define-public r-selectspm
   (package
     (name "r-selectspm")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "selectspm" version))
               (sha256
                (base32
-                "0yw5xwhv8kw3sizhq0r3wak8a32chkjil3lmxac8c6g9k47q8yrq"))))
+                "1qa2qnv6zwbxdbz78lgrmix7s1w1s91d9118nl8cdmj59k64x9q6"))))
     (properties `((upstream-name . "selectspm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-core
-                             r-spatstat r-ecespa))
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-model
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-spatstat
+                             r-ecespa))
     (home-page "https://cran.r-project.org/package=selectspm")
     (synopsis
      "Select Point Pattern Models Based on Minimum Contrast, AIC and Goodness of Fit")
@@ -50567,6 +50604,31 @@ Reference: Littell RC, Stroup WW, Freund RJ (2002, ISBN:0-471-22174-0).")
 classify a sample of curves into homogeneous groups while jointly detecting the
 most informative portions of domain.")
     (license license:gpl3)))
+
+(define-public r-sasdates
+  (package
+    (name "r-sasdates")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SASdates" version))
+              (sha256
+               (base32
+                "1413x0biid7972zz2qqv22h26a738mp7n97gpxxs9rykxkw3bfr5"))))
+    (properties `((upstream-name . "SASdates")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SASdates")
+    (synopsis "Convert the Dates to 'SAS' Formats")
+    (description
+     "Converts the dates to different SAS date formats.  In SAS dates are a special
+case of numeric values.  Each day is assigned a specific numeric value, starting
+from January 1, 1960.  This date is assigned the date value 0, and the next date
+has a date value of 1 and so on.  The previous days to this date are represented
+by -1 , -2 and so on.  With this approach, SAS can represent any date in the
+future or any date in the past.  There are many date formats used in SAS to
+represent date-time.  Here, we try to develop functions which will convert the
+date to different SAS date formats.")
+    (license license:expat)))
 
 (define-public r-sascii
   (package

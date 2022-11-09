@@ -9088,6 +9088,35 @@ functions are build upon igraph'.")
 data portal.  Mowinckel (2021) <doi:10.5281/zenodo.4745481>.")
     (license license:expat)))
 
+(define-public r-nett
+  (package
+    (name "r-nett")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nett" version))
+              (sha256
+               (base32
+                "1prb1zskhc50jzqmh1cdk4lljr4xqp4aaaaw1r66hmpy0d9ghhph"))))
+    (properties `((upstream-name . "nett")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-magrittr
+                             r-foreach))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aaamini/nett")
+    (synopsis "Network Analysis and Community Detection")
+    (description
+     "Features tools for the network data analysis and community detection.  Provides
+multiple methods for fitting, model selection and goodness-of-fit testing in
+degree-corrected stochastic blocks models.  Most of the computations are fast
+and scalable for sparse networks, esp.  for Poisson versions of the models.
+Implements the following: Amini, Chen, Bickel and Levina (2013)
+<doi:10.1214/13-AOS1138> Bickel and Sarkar (2015) <doi:10.1111/rssb.12117> Lei
+(2016) <doi:10.1214/15-AOS1370> Wang and Bickel (2017) <doi:10.1214/16-AOS1457>
+Zhang and Amini (2020) <arXiv:2012.15047> Le and Levina (2022)
+<doi:10.1214/21-EJS1971>.")
+    (license license:expat)))
+
 (define-public r-netswan
   (package
     (name "r-netswan")
@@ -10130,13 +10159,13 @@ libraries of JavaScript in one package.")
 (define-public r-netcmc
   (package
     (name "r-netcmc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netcmc" version))
               (sha256
                (base32
-                "06484f7i0rf7p6c6i3g1kshbnm6h30qj4xjryjmxcm7yy09m9hdb"))))
+                "0w5xnnfglg0nm59wwqh2dpwkz0zlly3r2997wncf5whz5j4vcy88"))))
     (properties `((upstream-name . "netcmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -11731,13 +11760,13 @@ navigate nested lists of raw metadata.")
 (define-public r-ncdfgeom
   (package
     (name "r-ncdfgeom")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ncdfgeom" version))
               (sha256
                (base32
-                "0218cv2jbb9n6wli8zlvmmqkiys09ccpphk506m8xqahq7w8ric7"))))
+                "15sl701snp3pm5wjhiabvwfa0x0vdfzp8ks3b9j8vgc3vsj7dlid"))))
     (properties `((upstream-name . "ncdfgeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars r-sf r-rnetcdf r-ncmeta r-dplyr))

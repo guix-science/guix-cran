@@ -17256,17 +17256,17 @@ to create, manipulate, plot, and analyze those and similar data sets.")
 (define-public r-ecespa
   (package
     (name "r-ecespa")
-    (version "1.1-15")
+    (version "1.1-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecespa" version))
               (sha256
                (base32
-                "1rr9b9bz8xqadj7mnix6dbs04dfbw8p9wyfilks9slkf1232nyav"))))
+                "1hlfrbwy119gwqf39z81j3nsc1y6gsyh2jy7qid7hp5llbmym10k"))))
     (properties `((upstream-name . "ecespa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-core
-                             r-spatstat))
+    (propagated-inputs (list r-spatstat-random r-spatstat-model
+                             r-spatstat-geom r-spatstat-explore r-spatstat))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ecespa")
     (synopsis "Functions for Spatial Point Pattern Analysis")
@@ -17448,6 +17448,43 @@ the drc package in a way that is displayed a tidy data.frame as output.  Info
 about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
+
+(define-public r-ebvcube
+  (package
+    (name "r-ebvcube")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ebvcube" version))
+              (sha256
+               (base32
+                "1768i2by5s57wzfrpiy905v10lf0ka83dghg9cb54p3rrnpr54ky"))))
+    (properties `((upstream-name . "ebvcube")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyterra
+                             r-terra
+                             r-stringr
+                             r-rhdf5
+                             r-reshape2
+                             r-ncmeta
+                             r-ncdf4
+                             r-memuse
+                             r-jsonlite
+                             r-hdf5array
+                             r-ggplot2
+                             r-delayedarray
+                             r-curl
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=ebvcube")
+    (synopsis "Working with netCDF for Essential Biodiversity Variables")
+    (description
+     "The concept of Essential Biodiversity Variables (EBV) comes with a data
+structure based on the Network Common Data Form (netCDF).  The ebvcube R package
+provides functionality to easily create, access and visualise this data.  The
+EBV netCDFs can be downloaded from the EBV Data Portal: Christian Langer/ iDiv
+(2020) <https://portal.geobon.org/>.")
+    (license license:gpl3+)))
 
 (define-public r-ebsc
   (package

@@ -23,6 +23,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1913,13 +1914,13 @@ GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cubist
   (package
     (name "r-cubist")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Cubist" version))
               (sha256
                (base32
-                "0y2mjqg8285vprm42z1dsqhs5k6g3703ysg3225a7qq08ga787rs"))))
+                "0ab1zdc1ddc6x7j2y53ccvqwaap6v26i447hn8lwlnz6i7c3idlz"))))
     (properties `((upstream-name . "Cubist")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-lattice))
@@ -3620,13 +3621,13 @@ etc.).")
 (define-public r-cscnet
   (package
     (name "r-cscnet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSCNet" version))
               (sha256
                (base32
-                "02kv2d0xjmkmzzys04r8jczc51kdrm77rk48q6j3cl73zpcv3z99"))))
+                "0amsrjzpfga66mh6x589whz70xpl0sg10f80x87apxz312rb4r8m"))))
     (properties `((upstream-name . "CSCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -21891,6 +21892,38 @@ stability-based parameter assessment for graph-based clustering pipelines
 typical in single-cell data analysis.")
     (license license:expat)))
 
+(define-public r-clustanalytics
+  (package
+    (name "r-clustanalytics")
+    (version "0.5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clustAnalytics" version))
+              (sha256
+               (base32
+                "1p9417l9ccfgng616cy6rl2i3rik4i5m4frpcw5k4szrxa3rdb81"))))
+    (properties `((upstream-name . "clustAnalytics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-rdpack
+                             r-rcpp
+                             r-mclust
+                             r-mcclust
+                             r-igraph
+                             r-fossil
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clustAnalytics")
+    (synopsis "Cluster Evaluation on Graphs")
+    (description
+     "Evaluates the stability and significance of clusters on igraph graphs.  Supports
+weighted and unweighted graphs.  Implements the cluster evaluation methods
+defined by Arratia A, Renedo M (2021) <doi:10.7717/peerj-cs.600>.  Also includes
+an implementation of the Reduced Mutual Information introduced by Newman et al.
+(2020) <doi:10.1103/PhysRevE.101.042304>.")
+    (license license:gpl3+)))
+
 (define-public r-clust-bin-pair
   (package
     (name "r-clust-bin-pair")
@@ -22544,20 +22577,22 @@ structure in the residual variance matrix.")
 (define-public r-cliquepercolation
   (package
     (name "r-cliquepercolation")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CliquePercolation" version))
               (sha256
                (base32
-                "0wd8pbi0p19vyhnf6yjwhfzc4s95hhpp26hy97jwx9bg8ahcd4hj"))))
+                "17m8pj8wg2ngzip1ag3jm5fqi083ilrsi0rvpcg5jmqflwlka8h3"))))
     (properties `((upstream-name . "CliquePercolation")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
                              r-polychrome
                              r-pbapply
+                             r-ohenery
                              r-matrix
                              r-magrittr
+                             r-lessr
                              r-igraph
                              r-colorspace))
     (native-inputs (list r-knitr))
@@ -28981,6 +29016,39 @@ assumptions.  See Liao X, Meyer MC (2019)<doi:10.18637/jss.v089.i05> for more
 details.")
     (license license:gpl2+)))
 
+(define-public r-cgalmeshes
+  (package
+    (name "r-cgalmeshes")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cgalMeshes" version))
+              (sha256
+               (base32
+                "0580yf3sy7xxs629zhdl16agawfm7db7zvdi99a0sr0ab9h7nhj3"))))
+    (properties `((upstream-name . "cgalMeshes")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-r6
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/cgalMeshes")
+    (synopsis "R6 Based Utilities for 3D Meshes using 'CGAL'")
+    (description
+     "This package provides some utilities for 3D meshes: clipping of a mesh to the
+volume bounded by another mesh, decomposition into convex parts, distance
+between a mesh and a point, triangulation, geodesic distance, Boolean operations
+(intersection, union, difference), connected components, volume, area, and
+centroid.  Also provides an algorithm for surface reconstruction from a cloud of
+points.  Meshes are represented by R6 classes.  All algorithms are performed by
+the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-cgal4h
   (package
     (name "r-cgal4h")
@@ -32691,21 +32759,16 @@ Bauer and Peters (2018) <arXiv:1810.11776>.")
 (define-public r-causalimpact
   (package
     (name "r-causalimpact")
-    (version "1.2.7")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalImpact" version))
               (sha256
                (base32
-                "1sbi58zs39cxyq4h8d9h9w2s2qbnj5jkpc68cibwxlzkyllaks52"))))
+                "0h3sh35962vdph72svfdvk6b1gl7wnj2kfkkpcjldbiszlfxp7wx"))))
     (properties `((upstream-name . "CausalImpact")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-ggplot2
-                             r-dplyr
-                             r-bsts
-                             r-boom
-                             r-assertthat))
+    (propagated-inputs (list r-zoo r-ggplot2 r-bsts r-boom r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://google.github.io/CausalImpact/")
     (synopsis
@@ -37055,13 +37118,13 @@ symmetrical ca and three-way ordered non-symmetrical ca.")
 (define-public r-c50
   (package
     (name "r-c50")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "C50" version))
               (sha256
                (base32
-                "1d4cy6xps17c97r5hipa2ar9hrw17iq1ld7afv5fd1v2cpic086c"))))
+                "1q76bnnw79i7q7afxdh2pdampbacbkvscc5q8r78jailx5cr18dy"))))
     (properties `((upstream-name . "C50")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-cubist))

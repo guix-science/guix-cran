@@ -12,13 +12,13 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages tcl)
-  #:use-module (gnu packages algebra)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages tcl)
+  #:use-module (gnu packages algebra)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages databases)
@@ -4416,6 +4416,38 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
     (description
      "An R interface to the SYMPHONY solver for mixed-integer linear programs.")
     (license (license:fsdg-compatible "EPL"))))
+
+(define-public r-rswipl
+  (package
+    (name "r-rswipl")
+    (version "8.5.20")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rswipl" version))
+              (sha256
+               (base32
+                "1qkaq2gnqq42h4f5rcmdmwlb4903fh5b73zrczf85xb4nrdq36sh"))))
+    (properties `((upstream-name . "rswipl")))
+    (build-system r-build-system)
+    (inputs (list zstd
+                  zlib
+                  zlib
+                  xz
+                  pandoc
+                  lz4
+                  libarchive
+                  expat
+                  cmake))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/mgondan/rswipl")
+    (synopsis "Embed 'SWI'-'Prolog'")
+    (description
+     "Interface to SWI'-'Prolog', <https://www.swi-prolog.org/>.  This package is
+normally not loaded directly, please refer to package rolog instead.  The
+purpose of this package is to provide the Prolog runtime on systems that do not
+have a software installation of SWI'-'Prolog'.")
+    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rsvddpd
   (package
@@ -13641,13 +13673,13 @@ errors using a filtered tau-estimate.")
 (define-public r-robustanova
   (package
     (name "r-robustanova")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RobustANOVA" version))
               (sha256
                (base32
-                "1qxmrf115iyzfafd52m3sy87hbhga5byrwq83l13bxwairvfy0ar"))))
+                "04syvysh3bh04g1l78yvjmy1qlb94dm45qh051lv34ymfvi6ails"))))
     (properties `((upstream-name . "RobustANOVA")))
     (build-system r-build-system)
     (propagated-inputs (list r-peip r-optimbase))
@@ -19390,24 +19422,23 @@ For a detailed description of the package, see Gelling, Schofield & Barker
 (define-public r-rje
   (package
     (name "r-rje")
-    (version "1.11.0")
+    (version "1.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rje" version))
               (sha256
                (base32
-                "1nwd6ym353iw8am1qvcifivp7r892yb1cq9la8nh2hb19rqh8597"))))
+                "0ykyv8sx6hm9qavca7zvdnyyl5haq6yvp0kkbhy58v76pwqwmmvz"))))
     (properties `((upstream-name . "rje")))
     (build-system r-build-system)
-    (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rje")
     (synopsis "Miscellaneous Useful Functions for Statistics")
     (description
      "This package provides a series of functions in some way considered useful to the
-author.  These include functions for subsetting tables and generating indices
-for arrays, conditioning and intervening in probability distributions,
-generating combinations and more...")
+author.  These include methods for subsetting tables and generating indices for
+arrays, conditioning and intervening in probability distributions, generating
+combinations, fast transformations, and more...")
     (license license:gpl2+)))
 
 (define-public r-rjdqa
@@ -19553,13 +19584,13 @@ capabilities accessible from R and Python and also through a REST API.
 (define-public r-rjafroc
   (package
     (name "r-rjafroc")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RJafroc" version))
               (sha256
                (base32
-                "1rv1daz1d5iak5s71ldvdqwcrxzgfzd2cl27hgd9y2spwfk81fns"))))
+                "1immjb2313ss7pc61m3y59h6m3i0257lhvrkkvhrprl9jsyanfca"))))
     (properties `((upstream-name . "RJafroc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -20985,6 +21016,36 @@ errors are returned by default, and multiple partial F-tests and tests for
 contrasts are easy to specify.  A single regression function can fit both linear
 and generalized linear models, allowing students to more easily make connections
 between different classes of models.")
+    (license license:expat)))
+
+(define-public r-rigma
+  (package
+    (name "r-rigma")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rigma" version))
+              (sha256
+               (base32
+                "0javcbpps07vh841sgf32bv1smdmnblnz9kls9j1fvrnh51csjv6"))))
+    (properties `((upstream-name . "Rigma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AleKoure/Rigma")
+    (synopsis "Access to the 'Figma' API")
+    (description
+     "The Figma API allows for interactions and read access to Figma files
+<https://www.figma.com/developers/api>.  This enables you to inspect any objects
+or layers, as well as their properties, and extract them so you may render them
+as images outside of Figma'.  Then you can present your designs, extract design
+data that can be used for Shiny and Rmarkdown', integrate them with other
+systems, or use them to realize your original ideas.")
     (license license:expat)))
 
 (define-public r-rifs
@@ -26495,13 +26556,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "1.2.10")
+    (version "1.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducible" version))
               (sha256
                (base32
-                "0agphafd2khv2xk0fwqr2y3imn8fzwa3crpqbp4n3i9qkpmkmvpw"))))
+                "1kgkayf7clmq31r1nlvyywjxc9avzq913xqnhfzmkbsq5jl2rk0r"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -27089,17 +27150,17 @@ The statistical underpinnings are described in Zondervan-Zwijnenburg (2019)
 (define-public r-replicatedpp2w
   (package
     (name "r-replicatedpp2w")
-    (version "0.1-3")
+    (version "0.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "replicatedpp2w" version))
               (sha256
                (base32
-                "1h680xn403fm98ywyxqwhq7llsaghgd4ffjq7r5bdb1r9ahvxrv0"))))
+                "04rppb9fvympa5zgasjb8ybk8n3pb2nlvmwpdx3lsvfcpsmnibmg"))))
     (properties `((upstream-name . "replicatedpp2w")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-utils r-spatstat-geom r-spatstat-core
-                             r-spatstat))
+    (propagated-inputs (list r-spatstat-utils r-spatstat-geom
+                             r-spatstat-explore r-spatstat))
     (home-page "https://cran.r-project.org/package=replicatedpp2w")
     (synopsis "Two-Way ANOVA-Like Method to Analyze Replicated Point Patterns")
     (description
@@ -38414,37 +38475,6 @@ encouraged to make their own data visualizations using BMRB data.")
      "Creation, manipulation, simulation of linear Gaussian Bayesian networks from
 text files and more...")
     (license license:gpl2+)))
-
-(define-public r-rbmi
-  (package
-    (name "r-rbmi")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rbmi" version))
-              (sha256
-               (base32
-                "1jxbjzf1acgpm8hg7y7rg2jsv94qv6wh4f51wwv3zw1rghfsfmn6"))))
-    (properties `((upstream-name . "rbmi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-pkgload
-                             r-mmrm
-                             r-matrix
-                             r-bh
-                             r-assertthat))
-    (home-page "https://insightsengineering.github.io/rbmi/")
-    (synopsis "Reference Based Multiple Imputation")
-    (description
-     "This package implements reference based multiple imputation allowing for the
-imputation of longitudinal datasets using predefined strategies.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rbmf
   (package

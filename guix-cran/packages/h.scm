@@ -1030,16 +1030,21 @@ approach are: Tang & Carey (2017) <doi:10.1002/hyp.11185>, Kaur et al. (2017)
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydraulics" version))
               (sha256
                (base32
-                "1dhy4mafivp4c2l6klr98xi6963gcrnvgf88bzb0j30fwxqwwhyb"))))
+                "03mas99x8761lxg0msqpb16v9i34f2ms5i4p6wq48vrz68aciqyh"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units r-tibble r-reshape2 r-gtools r-ggplot2))
+    (propagated-inputs (list r-units
+                             r-tibble
+                             r-reshape2
+                             r-purrr
+                             r-gtools
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EdM44/hydraulics")
     (synopsis "Basic Pipe and Open Channel Hydraulics")
@@ -1056,9 +1061,10 @@ diagram, the original citation being Colebrook (1939)
 <doi:10.1680/ijoti.1939.13150>.  For gravity flow, the Manning equation is used,
 again solving for missing parameters.  The derivation of and solutions using the
 Darcy-Weisbach equation and the Manning equation are outlined in many fluid
-mechanics texts such as Finnemore and Franzini (2002, ISBN:978-0072432022).  For
-the Manning equation solutions, this package uses modifications of original code
-from the iemisc package by Irucka Embry.")
+mechanics texts such as Finnemore and Franzini (2002, ISBN:978-0072432022).
+Some gradually- and rapidly-varied flow functions are included.  For the Manning
+equation solutions, this package uses modifications of original code from the
+iemisc package by Irucka Embry.")
     (license license:gpl3+)))
 
 (define-public r-hydra
@@ -7841,13 +7847,13 @@ Arabidopsis thaliana.")
 (define-public r-hergm
   (package
     (name "r-hergm")
-    (version "4.1-9")
+    (version "4.1-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hergm" version))
               (sha256
                (base32
-                "0jqgkvg4kypialb0lrp4p8idxq9c3yalq5k1bv7602mlikyzy5w8"))))
+                "04vr5mmsr39rpjnans8xwp1z304rd3hi5za7qhjv7dn5s8c8pw9h"))))
     (properties `((upstream-name . "hergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
