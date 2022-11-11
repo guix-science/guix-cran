@@ -326,6 +326,32 @@ language like Julia'.")
 plane in the given region and resolution.  Benoit B Mandelbrot (1982).")
     (license license:gpl3)))
 
+(define-public r-juicyjuice
+  (package
+    (name "r-juicyjuice")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "juicyjuice" version))
+              (sha256
+               (base32
+                "0ap1nsyihlagc1yqvwr2x9s16kzb3c8azfi50mzv95275a5l3xb4"))))
+    (properties `((upstream-name . "juicyjuice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-v8))
+    (home-page "https://github.com/rich-iannone/juicyjuice")
+    (synopsis "Inline CSS Properties into HTML Tags Using 'juice'")
+    (description
+     "There are occasions where you need a piece of HTML with integrated styles.  A
+prime example of this is HTML email.  This transformation involves moving the
+CSS and associated formatting instructions from the style block in the head of
+your document into the body of the HTML. Many prominent email clients require
+integrated styles in HTML email; otherwise a received HTML email will be
+displayed without any styling.  This package will quickly and precisely perform
+these CSS transformations when given HTML text and it does so by using the
+JavaScript juice library.")
+    (license license:expat)))
+
 (define-public r-juicr
   (package
     (name "r-juicr")
@@ -729,13 +755,13 @@ documents.")
 (define-public r-jsonify
   (package
     (name "r-jsonify")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsonify" version))
               (sha256
                (base32
-                "1kpv6whi6bggi0ij7krzfr0fly6c2j9y54fr5ahgcjp36amr34cj"))))
+                "0bxgyj5b1hnijq5315g050giixy4k5mjz2zdx8yil0igb5ifji9p"))))
     (properties `((upstream-name . "jsonify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rapidjsonr))

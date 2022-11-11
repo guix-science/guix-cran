@@ -2259,35 +2259,6 @@ Z-score variable importance is also implemented.")
 dynamically sortable tables.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-htmltab
-  (package
-    (name "r-htmltab")
-    (version "0.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htmltab" version))
-              (sha256
-               (base32
-                "09hnf339f3hzll7a0shq615h9d6f6xqrcv0c9iid6575m5qsallf"))))
-    (properties `((upstream-name . "htmltab")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/htmltab/htmltab")
-    (synopsis "Assemble Data Frames from HTML Tables")
-    (description
-     "HTML tables are a valuable data source but extracting and recasting these data
-into a useful format can be tedious.  This package allows to collect structured
-information from HTML tables.  It is similar to `readHTMLTable()` of the XML
-package but provides three major advantages.  First, the function automatically
-expands row and column spans in the header and body cells.  Second, users are
-given more control over the identification of header and body rows which will
-end up in the R table, including semantic header information that appear
-throughout the body.  Third, the function preprocesses table code, corrects
-common types of malformations, removes unneeded parts and so helps to alleviate
-the need for tedious post-processing.")
-    (license license:expat)))
-
 (define-public r-htmldf
   (package
     (name "r-htmldf")
@@ -8012,13 +7983,13 @@ algorithms. (Marco Notaro, Max Schubach, Peter N. Robinson and Giorgio Valentini
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "5.7")
+    (version "5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HelpersMG" version))
               (sha256
                (base32
-                "1l0hy417r54ljk9mwgx8zzx95v4gvd5s6yhwy5fx7p44lidnanvr"))))
+                "1ijibkb48qggvj51kyn5fnmq903pyf0w1ambvc5ksx199774ccf4"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -8509,13 +8480,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ts" version))
               (sha256
                (base32
-                "0kiq0jkp99pi8l367v6iy255g44yw3cm6b8laayzvanfaq7zdn89"))))
+                "1r0jwra98hwkzzv43x7nq49qm1qx2k18p0m2l95kja8iks4rlwyd"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets

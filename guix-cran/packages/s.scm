@@ -8880,17 +8880,17 @@ diagnostics.")
 (define-public r-stlnpp
   (package
     (name "r-stlnpp")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stlnpp" version))
               (sha256
                (base32
-                "1lx2fkqal2mf55xx0rwy9wf9fkr9n0vrp8fwic4grjcq0v5cf75k"))))
+                "0d8afddz7gwdmrciz8bvwfxil7bfpf9h81rcb52mmr7j9da36mp4"))))
     (properties `((upstream-name . "stlnpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-linnet
-                             r-spatstat-geom r-spatstat-core r-spatstat))
+                             r-spatstat-geom r-spatstat-explore r-spatstat))
     (home-page "https://cran.r-project.org/package=stlnpp")
     (synopsis "Spatio-Temporal Analysis of Point Patterns on Linear Networks")
     (description
@@ -9225,13 +9225,13 @@ presentation, data recoding, and data simulation.")
 (define-public r-stevedore
   (package
     (name "r-stevedore")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevedore" version))
               (sha256
                (base32
-                "0qf7qid8sv3agzci7kvgh204h3p6bk60bh45zri987j2qqjjxiiy"))))
+                "0xxslmll3xg2a71k3bgxfdkz0xcvlsy0cgm9l5din0ml55f3xz5n"))))
     (properties `((upstream-name . "stevedore")))
     (build-system r-build-system)
     (inputs (list docker))
@@ -16480,13 +16480,13 @@ on a simple biological intuition.")
 (define-public r-spnetwork
   (package
     (name "r-spnetwork")
-    (version "0.4.3.2")
+    (version "0.4.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spNetwork" version))
               (sha256
                (base32
-                "1srf7s22izqhh09ri0vsnb39mc8isjxcbik71iwxilykds6bh34x"))))
+                "055h6xxs9kpl1yzcl5ha4pbgbzvp15vqr43xhbdic58flfgc13mr"))))
     (properties `((upstream-name . "spNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -16645,25 +16645,26 @@ coefficients.  For details see Murakami (2021) <arXiv:1703.04467>.")
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmodel" version))
               (sha256
                (base32
-                "00d84xzhmqljz3gxrxp3bg9fk2rn1wiyks6rr3mmcmjqds6c80ln"))))
+                "16cawihxf9kn4q4jrv3qqmddkin323wcsrl3zl7js65q4dqkk6ka"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spmodel")
+    (home-page "https://usepa.github.io/spmodel/")
     (synopsis "Spatial Statistical Modeling and Prediction")
     (description
-     "Fit, summarize, and predict for a variety of spatial statistical models.
-Parameters are estimated using various methods.  Additional modeling features
-include anisotropy, random effects, partition factors, big data approaches, and
-more.  Model-fit statistics are used to summarize, visualize, and compare
-models.  Predictions at unobserved locations are readily obtainable.")
+     "Fit, summarize, and predict for a variety of spatial statistical models applied
+to point-referenced and areal (lattice) data.  Parameters are estimated using
+various methods.  Additional modeling features include anisotropy, random
+effects, partition factors, big data approaches, and more.  Model-fit statistics
+are used to summarize, visualize, and compare models.  Predictions at unobserved
+locations are readily obtainable.")
     (license license:gpl3)))
 
 (define-public r-spmlficmcm
@@ -20034,13 +20035,13 @@ Baddeley and Nair (2019).")
 (define-public r-spatstat-explore
   (package
     (name "r-spatstat-explore")
-    (version "3.0-3")
+    (version "3.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatstat.explore" version))
               (sha256
                (base32
-                "19v3v6zb9dwa9cfqdqyg529nl03vxmiwxvkg6d0q5n16dnj48x0k"))))
+                "0qn8dmymbnh9vdw0hysijkk2nwz5q69i62smpp8f3wy3z898lhwz"))))
     (properties `((upstream-name . "spatstat.explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
@@ -21547,13 +21548,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparseR" version))
               (sha256
                (base32
-                "0agvynyv89msghwvc2ap98pdsmg2bvwa6kwc74fmmgpnzlxcjysf"))))
+                "0b9k96p66j2vn9yvcjw652lh9l6j5dbswhqhq0i4ps06jm5ks5av"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-recipes r-ncvreg r-magrittr r-dplyr))
@@ -22278,19 +22279,19 @@ F. Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-sparr
   (package
     (name "r-sparr")
-    (version "2.2-16")
+    (version "2.2-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparr" version))
               (sha256
                (base32
-                "0qhlkx7byx3245yzsk30zr4lgndjx5g1vr0s4azmcya245pp6rkw"))))
+                "0cdqhwx6qm9ngfc2lcafjqmrvqqi3kfrjl66n4dv65fpvprixmv3"))))
     (properties `((upstream-name . "sparr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-spatstat
                              r-misc3d
                              r-foreach
@@ -22802,140 +22803,6 @@ of infectious diseases from surveillance time series.  Also provides support for
 computational experiments testing the performance of such methods.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-spades-tools
-  (package
-    (name "r-spades-tools")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpaDES.tools" version))
-              (sha256
-               (base32
-                "1p1mj9gfgikqng5p9yj01ykxnrqvxcgd6ghi7amgqlkhv9mbjwhi"))))
-    (properties `((upstream-name . "SpaDES.tools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-require
-                             r-rcpp
-                             r-raster
-                             r-quickplot
-                             r-magrittr
-                             r-fpcompare
-                             r-fastmatch
-                             r-data-table
-                             r-circstats
-                             r-checkmate
-                             r-backports))
-    (home-page "https://spades-tools.predictiveecology.org")
-    (synopsis
-     "Additional Tools for Developing Spatially Explicit Discrete Event Simulation (SpaDES) Models")
-    (description
-     "This package provides GIS and map utilities, plus additional modeling tools for
-developing cellular automata, dynamic raster models, and agent based models in
-SpaDES'.  Included are various methods for spatial spreading, spatial agents,
-GIS operations, random map generation, and others.  See ?SpaDES.tools for an
-categorized overview of these additional tools.")
-    (license license:gpl3)))
-
-(define-public r-spades-core
-  (package
-    (name "r-spades-core")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpaDES.core" version))
-              (sha256
-               (base32
-                "0rmdwyk4733skf3mgi879lcg5hjiv72mf96yby3a0x9v2lzlzbv7"))))
-    (properties `((upstream-name . "SpaDES.core")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-whisker
-                             r-require
-                             r-reproducible
-                             r-raster
-                             r-quickplot
-                             r-qs
-                             r-lobstr
-                             r-igraph
-                             r-fastdigest
-                             r-data-table
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://spades-core.predictiveecology.org/")
-    (synopsis
-     "Core Utilities for Developing and Running Spatially Explicit Discrete Event Models")
-    (description
-     "This package provides the core framework for a discrete event system (DES) to
-implement a complete data-to-decisions, reproducible workflow.  The core DES
-components facilitate modularity, and easily enable the user to include
-additional functionality by running user-built modules.  Includes conditional
-scheduling, restart after interruption, packaging of reusable modules, tools for
-developing arbitrary automated workflows, automated interweaving of modules of
-different temporal resolution, and tools for visualizing and understanding the
-DES project.  The suggested package NLMR can be installed with
-install.packages(\"NLMR\", repos = \"https://PredictiveEcology.r-universe.dev\")'.")
-    (license license:gpl3)))
-
-(define-public r-spades-addins
-  (package
-    (name "r-spades-addins")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpaDES.addins" version))
-              (sha256
-               (base32
-                "0ly411y95rcm30slaj02vn7clmyq3dvinzg1x40vbsqzcjjg1h6l"))))
-    (properties `((upstream-name . "SpaDES.addins")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-spades-core
-                             r-shiny
-                             r-rstudioapi
-                             r-reproducible
-                             r-miniui
-                             r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://spades-addins.predictiveecology.org/")
-    (synopsis "Development Tools for 'SpaDES' and 'SpaDES' Modules")
-    (description
-     "This package provides RStudio addins for SpaDES packages and SpaDES module
-development.  See ?SpaDES.addins for an overview of the tools provided.")
-    (license license:gpl3)))
-
-(define-public r-spades
-  (package
-    (name "r-spades")
-    (version "2.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpaDES" version))
-              (sha256
-               (base32
-                "11acb05b957qwbii701y1b4lvcnvmiixkrlmqkccc8n9icqq107n"))))
-    (properties `((upstream-name . "SpaDES")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spades-tools r-spades-core r-reproducible
-                             r-quickplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://spades.predictiveecology.org")
-    (synopsis
-     "Develop and Run Spatially Explicit Discrete Event Simulation Models")
-    (description
-     "Metapackage for implementing a variety of event-based models, with a focus on
-spatially explicit models.  These include raster-based, event-based, and
-agent-based models.  The core simulation components (provided by SpaDES.core')
-are built upon a discrete event simulation (DES; see Matloff (2011) ch 7.8.3
-<https://nostarch.com/artofr.htm>) framework that facilitates modularity, and
-easily enables the user to include additional functionality by running
-user-built simulation modules (see also SpaDES.tools').  Included are numerous
-tools to visualize rasters and other maps (via quickPlot'), and caching methods
-for reproducible simulations (via reproducible').  Tools for running simulation
-experiments are provided by SpaDES.experiment'.  Additional functionality is
-provided by the SpaDES.addins and SpaDES.shiny packages.")
-    (license license:gpl3)))
 
 (define-public r-spader
   (package

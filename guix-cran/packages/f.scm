@@ -7378,6 +7378,28 @@ which are also called finite moment log stable distributions.")
 of Skew Heavy-Tailed Errors.")
     (license license:gpl2+)))
 
+(define-public r-fmritools
+  (package
+    (name "r-fmritools")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fMRItools" version))
+              (sha256
+               (base32
+                "0c4gkjrki9126blaq1iy32q1rraw8kp3vwqf50ncwhhc7msjsf37"))))
+    (properties `((upstream-name . "fMRItools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase r-pesel))
+    (home-page "https://github.com/mandymejia/fMRItools")
+    (synopsis "Routines for Common fMRI Processing Tasks")
+    (description
+     "Supports fMRI (functional magnetic resonance imaging) analysis tasks including
+reading in CIFTI', GIFTI and NIFTI data, temporal filtering, nuisance
+regression, and aCompCor (anatomical Components Correction) (Muschelli et al.
+(2014) <doi:10.1016/j.neuroimage.2014.03.028>).")
+    (license license:gpl3)))
+
 (define-public r-fmriscrub
   (package
     (name "r-fmriscrub")
@@ -15066,13 +15088,13 @@ forward-pipe operator, %>%.")
 (define-public r-fbst
   (package
     (name "r-fbst")
-    (version "1.9")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fbst" version))
               (sha256
                (base32
-                "0lfi2rh84qijjcwxycf6v78qfk8d67vpbcjlaaplvaq6k2h68bby"))))
+                "15d73hngw8607la36cpl5z7ac18cpwkmqzp67ga2c5n94z2h8asc"))))
     (properties `((upstream-name . "fbst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-rstanarm r-ks r-cubature r-bayestestr))

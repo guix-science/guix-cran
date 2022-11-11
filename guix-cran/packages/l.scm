@@ -7653,13 +7653,13 @@ Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.9")
+    (version "1.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingtypology" version))
               (sha256
                (base32
-                "09z3fraycgzykwqiaidsnzgcq8zgl0msa40nz0gmxirrksw8dcq0"))))
+                "0ir90f0zkafdmhmnsa8i24xhzn7bddfa7f2nfigpwxpll6q22113"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -13630,13 +13630,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.4.3")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "latrend" version))
               (sha256
                (base32
-                "1qqh2igwag57mm42nazszvlp5d4wddgaxmv1mh35jvrv0qwhc75j"))))
+                "0dh1l1fax7s46z6nh4srqnyhj881rb6mh1cjmcd5cy6xmv95wps9"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown

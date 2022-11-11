@@ -16721,6 +16721,33 @@ multi-dimensional outputs with diagnostic plots following Santner et al (2003)
 that includes sensitivity analysis.")
     (license license:gpl2+)))
 
+(define-public r-mlece
+  (package
+    (name "r-mlece")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MLEce" version))
+              (sha256
+               (base32
+                "0h3x008zi540akjdwww4v04faff34siqzjrsbrzr7iy3rjvxga9n"))))
+    (properties `((upstream-name . "MLEce")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sirt
+                             r-reshape
+                             r-nleqslv
+                             r-mvtnorm
+                             r-laplacesdemon
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=MLEce")
+    (synopsis
+     "Statistical Inference for Asymptotic Efficient Closed-Form Estimators")
+    (description
+     "Estimate asymptotic efficient closed-form estimators and provide goodness of
+fit, estimates, plot and etc.  Yue, S. (2001) <doi:10.1002/hyp.259>.  Mosimann,
+James E. (1962) <doi:10.1093/biomet/49.1-2.65>.")
+    (license license:gpl2)))
+
 (define-public r-mle-tools
   (package
     (name "r-mle-tools")
@@ -17868,6 +17895,25 @@ assumed over the single variables.")
      "Simple tools to perform mixture optimization based on the desirability package
 by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
     (license license:gpl2)))
+
+(define-public r-mixopt
+  (package
+    (name "r-mixopt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mixopt" version))
+              (sha256
+               (base32
+                "0a3v7kc4sp9rq7z8fx02i9ck5vzq9g12hrjxklrqrkc4nm0cz4yp"))))
+    (properties `((upstream-name . "mixopt")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mixopt")
+    (synopsis "Mixed Variable Optimization")
+    (description
+     "Mixed variable optimization for non-linear functions.  Can optimize function
+whose inputs are a combination of continuous, ordered, and unordered variables.")
+    (license license:lgpl3+)))
 
 (define-public r-mixmeta
   (package
@@ -21411,6 +21457,38 @@ Parametric Fieller confidence intervals and nonparametric bootstrap confidence
 intervals can be obtained for the variance explained by different numbers of
 principal components.  The method is described in Nassiri et al. (2018)
 <doi:10.3758/s13428-017-1013-4>.")
+    (license license:expat)))
+
+(define-public r-miesmuschel
+  (package
+    (name "r-miesmuschel")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "miesmuschel" version))
+              (sha256
+               (base32
+                "0yvj40chnb5i2b8x94bj3hfs0apqah1h8m62n2xpr5hffj723c66"))))
+    (properties `((upstream-name . "miesmuschel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-paradox
+                             r-mlr3misc
+                             r-matrixstats
+                             r-lgr
+                             r-data-table
+                             r-checkmate
+                             r-bbotk))
+    (home-page "https://github.com/mlr-org/miesmuschel")
+    (synopsis "Mixed Integer Evolution Strategies")
+    (description
+     "Evolutionary black box optimization algorithms building on the bbotk package.
+miesmuschel offers both ready-to-use optimization algorithms, as well as their
+fundamental building blocks that can be used to manually construct specialized
+optimization loops.  The Mixed Integer Evolution Strategies as described by Li
+et al. (2013) <doi:10.1162/EVCO_a_00059> can be implemented, as well as the
+multi-objective optimization algorithms NSGA-II by Deb, Pratap, Agarwal, and
+Meyarivan (2002) <doi:10.1109/4235.996017>.")
     (license license:expat)))
 
 (define-public r-midrangemcp
@@ -32866,26 +32944,23 @@ Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
 (define-public r-mazamaspatialutils
   (package
     (name "r-mazamaspatialutils")
-    (version "0.7.6")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MazamaSpatialUtils" version))
               (sha256
                (base32
-                "07qr6cwa29brsp567vjhfv8pkqijxhhz98bxvagrpjj5gbx1179s"))))
+                "1pw4hgd4bjzm0vbkry6ajndlb337x257amr5zwxr8zaal4j0zrgq"))))
     (properties `((upstream-name . "MazamaSpatialUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-sp
+                             r-sf
                              r-rmapshaper
                              r-rlang
-                             r-rgeos
-                             r-rgdal
                              r-mazamacoreutils
                              r-magrittr
                              r-dplyr
-                             r-countrycode
-                             r-cleangeo))
+                             r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MazamaScience/MazamaSpatialUtils")
     (synopsis "Spatial Data Download and Utility Functions")
@@ -36913,28 +36988,33 @@ read syntax.  Kuhn(2014) <arXiv:1405.6974>.")
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "0.7.5")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "manydata" version))
               (sha256
                (base32
-                "0msk835fq9py7ff7cglzpx0dnv3z2r0cqiv6q0cavhd4qliccyvn"))))
+                "0hikgjm09m7bj2f3593gppi96sp9lcamwqgh2s2y8g4chwppkf2s"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
+    (propagated-inputs (list r-zoo
+                             r-usethis
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-remotes
                              r-purrr
-                             r-progress
+                             r-plyr
+                             r-migraph
                              r-messydates
-                             r-lubridate
                              r-jsonlite
+                             r-janitor
                              r-httr
+                             r-ggraph
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cshapes))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/globalgov/manydata")
     (synopsis "Portal for Global Governance Data")
@@ -38132,6 +38212,27 @@ specify the subject line of the email.  Any {} braces in the email will be
 encoded with glue::glue()'.  You can preview the email in the RStudio viewer
 pane, and send (draft) email using gmailr'.")
     (license license:expat)))
+
+(define-public r-mailchimpr
+  (package
+    (name "r-mailchimpr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mailchimpR" version))
+              (sha256
+               (base32
+                "1f7zjclgcky1qb88638lqhr71gi5myk3d3vxkjl1xnikhcr5l9mp"))))
+    (properties `((upstream-name . "mailchimpR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Mailchimp Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Mailchimp using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-mail
   (package

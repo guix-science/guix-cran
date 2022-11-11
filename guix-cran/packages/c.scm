@@ -3083,13 +3083,13 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSTools" version))
               (sha256
                (base32
-                "0r7bbaaapk5f32b6qwmmanddk1gqs7vq6461vf29pi7qsr2jlq9y"))))
+                "1a05wv9isrlf7pzhychczvnpvsppnnriaz4jsm78ccg0m9y3wabj"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
@@ -6909,13 +6909,13 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cpop" version))
               (sha256
                (base32
-                "1vyjfxd9j5k1ya4bzi3gsdy34pvgi0y1a8h4qgr24bc661s48c66"))))
+                "0n4pqdx6yp65h1hb2z327ql72mwm89avb3p34g5yq1gm8adhm9nd"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -6930,7 +6930,7 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
      "Detection of Multiple Changes in Slope in Univariate Time-Series")
     (description
      "Detects multiple changes in slope using the CPOP dynamic programming approach of
-Fearnhead, Maidstone, and Letchford (2018) <doi:10.1080/10618600.2018.1512868>.
+Fearnhead, Maidstone, and Letchford (2019) <doi:10.1080/10618600.2018.1512868>.
 This method finds the best continuous piecewise linear fit to data under a
 criterion that measures fit to data using the residual sum of squares, but
 penalizes complexity based on an L0 penalty on changes in slope.")
@@ -12570,13 +12570,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contingencytables" version))
               (sha256
                (base32
-                "09biny56xvp9bmhm53vcw6985hk2b4bbzyj8y25wzg3idznxihlf"))))
+                "0d8270n1crag42an53mhjx82pp3j8ayly6rz5dmxmmdgx9i0nxlk"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -15404,13 +15404,13 @@ i.e.  geoms of ggplot2'.  For introduction to UpSet concept, see Lex et al.
 (define-public r-complexnet
   (package
     (name "r-complexnet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "complexNet" version))
               (sha256
                (base32
-                "0jswxr16j7irjbfc5p5vgdaksh3gs8gyx3cwbs0acrpyykxpi5k7"))))
+                "199zxqsbasd1j598srpb10y8mjw2l4plra1121i9sdsf40bvd7aw"))))
     (properties `((upstream-name . "complexNet")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -16320,6 +16320,27 @@ multisample) dissimilarity indexes and nestedness for phylogenetic, functional
 and other diversity metrics.  This should be a complement to available packages,
 particularly vegan'.")
     (license license:gpl2)))
+
+(define-public r-commafree
+  (package
+    (name "r-commafree")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "commafree" version))
+              (sha256
+               (base32
+                "0dn6ps6nvinwaxc8js5bq2kg78nzrf7ijbi77c7jan8z50d19m0p"))))
+    (properties `((upstream-name . "commafree")))
+    (build-system r-build-system)
+    (home-page "https://github.com/t-kalinowski/commafree")
+    (synopsis "Call Functions Without Commas Between Arguments")
+    (description
+     "This package provides the \"comma-free call\" operator: %(%'.  Use it to call a
+function without commas between the arguments.  Just replace the ( with %(% in a
+function call, supply your arguments as standard R expressions enclosed by { }',
+and be free of commas (for that call).")
+    (license license:gpl3+)))
 
 (define-public r-comix
   (package
@@ -32012,16 +32033,17 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.0.1")
+    (version "4.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CCAMLRGIS" version))
               (sha256
                (base32
-                "0jfk1ii6001xp2j13dwhb58dy1b7bq5rhmy9fdfyr3ss4kqdnqaq"))))
+                "1spjf6rjqqn90c9acdb0z7ysdkzia9fgnwbp4n0cycd3wc7pngf0"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
+                             r-stars
                              r-sp
                              r-sf
                              r-raster
@@ -32029,7 +32051,7 @@ robust and nonparametric methods.")
                              r-geosphere
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ccamlr/CCAMLRGIS")
+    (home-page "https://github.com/ccamlr/CCAMLRGIS#readme")
     (synopsis "Antarctic Spatial Data Manipulation")
     (description
      "Loads and creates spatial data, including layers and tools that are relevant to
@@ -33022,6 +33044,31 @@ TensorFlow from R'.  Install greta using instructions available here:
 documentation.")
     (license license:expat)))
 
+(define-public r-cauchypca
+  (package
+    (name "r-cauchypca")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cauchypca" version))
+              (sha256
+               (base32
+                "1325cr6799ky3hxvhkb30xjq9pvk1wsm3rj0y11slwhs33hvl621"))))
+    (properties `((upstream-name . "cauchypca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=cauchypca")
+    (synopsis
+     "Robust Principal Component Analysis Using the Cauchy Distribution")
+    (description
+     "This package provides a new robust principal component analysis algorithm is
+implemented that relies upon the Cauchy Distribution.  The algorithm is suitable
+for high dimensional data even if the sample size is less than the number of
+variables.  The methodology is described in this paper: Fayomi A., Pantazis Y.,
+Tsagris M. and Wood A.T.A. (2022).  Cauchy robust principal component analysis
+with applications to high-dimensional data sets. <arXiv:2211.03181>.")
+    (license license:gpl2+)))
+
 (define-public r-cauchycp
   (package
     (name "r-cauchycp")
@@ -33807,13 +33854,13 @@ Chapman and Hall.")
 (define-public r-castor
   (package
     (name "r-castor")
-    (version "1.7.4")
+    (version "1.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "castor" version))
               (sha256
                (base32
-                "0d0i974sa289pv0yw7wi3cdd8gpn3nyxfvm3vjgvr0hdr7bah6cp"))))
+                "0dfs0rjrw9zrs9n0avy3fq5r7vi4alvd55l7582j47dbwj82i1a5"))))
     (properties `((upstream-name . "castor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpp r-naturalsort r-matrix))
@@ -34035,38 +34082,6 @@ machine.  Try to build your fortune before you succumb to the gambler's ruin!")
      "Allows users to identify similar cases for qualitative case studies using
 statistical matching methods.")
     (license license:gpl2+)))
-
-(define-public r-casebase
-  (package
-    (name "r-casebase")
-    (version "0.10.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "casebase" version))
-              (sha256
-               (base32
-                "0yrzl961apslhk77gdnl9mmh1sdxw1az8lpl393n30qs1kl6g4zv"))))
-    (properties `((upstream-name . "casebase")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://sahirbhatnagar.com/casebase/")
-    (synopsis
-     "Fitting Flexible Smooth-in-Time Hazards and Risk Functions via Logistic and Multinomial Regression")
-    (description
-     "Fit flexible and fully parametric hazard regression models to survival data with
-single event type or multiple competing causes via logistic and multinomial
-regression.  Our formulation allows for arbitrary functional forms of time and
-its interactions with other predictors for time-dependent hazards and hazard
-ratios.  From the fitted hazard model, we provide functions to readily calculate
-and plot cumulative incidence and survival curves for a given covariate profile.
- This approach accommodates any log-linear hazard function of prognostic time,
-treatment, and covariates, and readily allows for non-proportionality.  We also
-provide a plot method for visualizing incidence density via population time
-plots.  Based on the case-base sampling approach of Hanley and Miettinen (2009)
-<DOI:10.2202/1557-4679.1125>, Saarela and Arjas (2015) <DOI:10.1111/sjos.12125>,
-and Saarela (2015) <DOI:10.1007/s10985-015-9352-x>.")
-    (license license:expat)))
 
 (define-public r-cascsim
   (package

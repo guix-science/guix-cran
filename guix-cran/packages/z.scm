@@ -827,29 +827,6 @@ articles for more information about the z-curves, expected discovery and
 replicability rates, validation studies, and limitations.")
     (license license:gpl3)))
 
-(define-public r-zbank
-  (package
-    (name "r-zbank")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zbank" version))
-              (sha256
-               (base32
-                "0vzvlri3sncvbz2cdg8wzlpskm1lq9ji0jrfy5cx4ib19m6gxhpc"))))
-    (properties `((upstream-name . "zbank")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-crul))
-    (home-page "https://github.com/ropenscilabs/zbank")
-    (synopsis "'ZooBank' API Client")
-    (description
-     "Interface to the ZooBank API (<http://zoobank.org/Api>) client.  ZooBank
-(<http://zoobank.org/>) is the official registry of zoological nomenclature.
-Methods are provided for using each of the API endpoints, including for querying
-by author, querying for publications, get statistics on ZooBank activity, and
-more.")
-    (license license:expat)))
-
 (define-public r-zalpha
   (package
     (name "r-zalpha")

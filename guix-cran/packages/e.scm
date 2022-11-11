@@ -1428,13 +1428,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "0.9.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "explore" version))
               (sha256
                (base32
-                "0hi4aqjgj66v69ip821jd7l7c8viq39g9mp9jhxy8h79cf6k65br"))))
+                "0ihg4yd9k979aidjmcnvy65zlwqpyssw1d7p8i0d8z7aim7g2kqd"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4290,38 +4290,6 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 netCDF files.")
     (license license:gpl3)))
 
-(define-public r-eurlex
-  (package
-    (name "r-eurlex")
-    (version "0.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eurlex" version))
-              (sha256
-               (base32
-                "114myfzlj5k4qmsjyihqfmmzil906a2smyylfyczc1r89b1pnji1"))))
-    (properties `((upstream-name . "eurlex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-pdftools
-                             r-magrittr
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-antiword))
-    (native-inputs (list r-knitr))
-    (home-page "https://michalovadek.github.io/eurlex/")
-    (synopsis "Retrieve Data on European Union Law")
-    (description
-     "Access to data on European Union laws and court decisions made easy with
-pre-defined SPARQL queries and GET requests.")
-    (license license:gpl3)))
-
 (define-public r-eulerian
   (package
     (name "r-eulerian")
@@ -6861,13 +6829,13 @@ polynomials).")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.12.0")
+    (version "0.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eq5d" version))
               (sha256
                (base32
-                "0gf7xs66j6x7yf1g7h1krig4956c2f86q9lcm9zx29dimyrq4yas"))))
+                "1l4867x00iz6wq1w7glcpbmsyxy881wpng3hjf3pmr5yb8lhqmxm"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6889,15 +6857,15 @@ economic evaluation of health care as well as in population health surveys.  The
 eq5d package provides methods to calculate index scores from a subject's
 dimension scores.  29 TTO and 11 VAS EQ-5D-3L value sets including those for
 countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and Szende et al
-(2014) <doi:10.1007/978-94-007-7596-1>, 35 EQ-5D-5L EQ-VT value sets from the
-EuroQol website, the EQ-5D-5L crosswalk value sets developed by van Hout et al.
-(2012) <doi:10.1016/j.jval.2012.02.008>, the crosswalk value set for Russia and
-reverse crosswalk value sets.  Four EQ-5D-Y value sets are also included as are
-the NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L
-mappings.  Methods are also included for the analysis of EQ-5D profiles along
-with a shiny web tool to enable the calculation, visualisation and automated
-statistical analysis of EQ-5D data via a web browser using EQ-5D dimension
-scores stored in CSV or Excel files.")
+(2014) <doi:10.1007/978-94-007-7596-1>, 36 EQ-5D-5L EQ-VT value sets, the
+EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
+<doi:10.1016/j.jval.2012.02.008>, the crosswalk value set for Russia and reverse
+crosswalk value sets.  Seven EQ-5D-Y value sets are also included as are the
+NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.
+Methods are also included for the analysis of EQ-5D profiles along with a shiny
+web tool to enable the calculation, visualisation and automated statistical
+analysis of EQ-5D data via a web browser using EQ-5D dimension scores stored in
+CSV or Excel files.")
     (license license:expat)))
 
 (define-public r-epxtor
@@ -17690,13 +17658,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "1.2020.1")
+    (version "1.2021.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "16k4w1nn5f2pj57k9mrgknw67svdngwmykajvcwdps763kl3s28j"))))
+                "19hpmganxw1yrbq2mrnygrzsm3mbgnilbggfwi36yzk83fxlb3wm"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -17903,13 +17871,13 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.3")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatTools" version))
               (sha256
                (base32
-                "13i5ldaqxx3qch6pwm647m73k7wqzv585bf6krb0yns1a3kagm76"))))
+                "0qmbwwvqfkyd4z41hihza0996dvsvqshs3pqblfzdlbzyn7glh5b"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

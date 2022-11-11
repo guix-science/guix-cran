@@ -2066,40 +2066,6 @@ optimal usage of hardness in a game.")
 outside the Unit circle.  You can also easily draw an unit circle.")
     (license license:gpl3)))
 
-(define-public r-uniswapper
-  (package
-    (name "r-uniswapper")
-    (version "0.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "uniswappeR" version))
-              (sha256
-               (base32
-                "0n180v0kya6djkd3zngn4zvqzga3dhav41r94ckbzb1yww5ck1vd"))))
-    (properties `((upstream-name . "uniswappeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-rlang
-                             r-reticulate
-                             r-purrr
-                             r-patchwork
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-ghql
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/Omni-Analytics-Group/uniswappeR")
-    (synopsis "Interact with the Uniswap Platform")
-    (description
-     "Routines to interact with the Uniswap trading platform and its API
-<https://uniswap.org>.  The package contains codebase to interact with the
-uniswap platform directly from R console, Ability to pull and export data
-related to the platform and analyse some aspects.")
-    (license license:gpl3)))
-
 (define-public r-uniset
   (package
     (name "r-uniset")
@@ -2259,13 +2225,13 @@ stemming procedure for French is described in (Savoy, 1999)
 (define-public r-unikn
   (package
     (name "r-unikn")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unikn" version))
               (sha256
                (base32
-                "0qvqj80cqp90qvm2nacl49mnyi0ay91wngr4wk7xsrq67nv4vf22"))))
+                "06y2jsx8hjbxdjm03w4ipjpxxp65fj10l2p3zjck82lyhw1llxxw"))))
     (properties `((upstream-name . "unikn")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-crayon))
@@ -2276,11 +2242,12 @@ stemming procedure for French is described in (Savoy, 1999)
     (description
      "Define and use graphical elements of corporate design manuals in R. The unikn
 package provides color functions (by defining dedicated colors and color
-palettes, and commands for changing, viewing, and using them) and styled text
-elements (e.g., for marking, underlining, or plotting colored titles).  The
-pre-defined range of colors and text functions is based on the corporate design
-of the University of Konstanz <https://www.uni-konstanz.de/>, but can be adapted
-and extended for other institutions and purposes.")
+palettes, and commands for finding, changing, viewing, and using them) and
+styled text elements (e.g., for marking, underlining, or plotting colored
+titles).  The pre-defined range of colors and text decoration functions is based
+on the corporate design of the University of Konstanz
+<https://www.uni-konstanz.de/>, but can be adapted and extended for other
+purposes or institutions.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-uniisoregression
@@ -3495,13 +3462,13 @@ and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.9")
+    (version "0.8.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "udpipe" version))
               (sha256
                (base32
-                "1pdxfr3523imyygm26zhisy3x0a8ay6wd4ndda93ic0lqxb5lapd"))))
+                "0ipns4wzp7j0ms6i2mfkfkgqqd5cqbrv79valiz6r7ffx4yxys14"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-data-table))
@@ -3772,13 +3739,13 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.1.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ubms" version))
               (sha256
                (base32
-                "016rdjba3h2hm6ps4jrnqzy1hwm0nmn3yq922dbfw8396qvmr2zf"))))
+                "0d83i27cc4wlw5pivmkf5msvxyj99yr0fb5fibxa3knfz8hwwaxw"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked

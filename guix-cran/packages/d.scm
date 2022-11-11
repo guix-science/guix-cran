@@ -5450,13 +5450,13 @@ can be used for clustering of RNA methylation sequencing data.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-8")
+    (version "1.3.1-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dparser" version))
               (sha256
                (base32
-                "096zpbfyi3pja17i3wgi85fm7j8abrqpp20fy52nfy1pzrm4mmhi"))))
+                "0ln3dg3mwfqf3pjvssqnqasq87yqqp3raf5f88zrzmibvq13d6i7"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -8788,13 +8788,13 @@ related packages in a single step.")
 (define-public r-divemove
   (package
     (name "r-divemove")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diveMove" version))
               (sha256
                (base32
-                "0ddlc89wi76kja8zz9j72p57hz3rw9xjzrj6k5h60573c5b9b1ig"))))
+                "1jq24qys802s9cab3r9fag9jq994wjg6vni6sxd2psng846hixic"))))
     (properties `((upstream-name . "diveMove")))
     (build-system r-build-system)
     (propagated-inputs (list r-unireg r-quantreg r-plotly r-kernsmooth
@@ -18935,13 +18935,13 @@ DEA models.See: Banker, R.; Charnes, A.; Cooper, W.W. (1984).
 (define-public r-deal
   (package
     (name "r-deal")
-    (version "1.2-39")
+    (version "1.2-42")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deal" version))
               (sha256
                (base32
-                "0sw0v1mm004ky1gjw3dmvf2vb7nf2j9s9386bhqxijw63j7xnjd3"))))
+                "0d516gvhqw6nfv9ijda9j04nlcjgdnnlgcf5774n8fgwjhm4azx1"))))
     (properties `((upstream-name . "deal")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=deal")
@@ -21942,13 +21942,13 @@ Software_, *90*(6), 1-38 <doi:10.18637/jss.v090.i06> for more information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "1.0.11")
+    (version "1.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataquieR" version))
               (sha256
                (base32
-                "16i3kwy6ash8fw4v1bpsc32y6nf3jnsbq0pi05vp0k5dz3p3ji1w"))))
+                "07wm30xij8vpw0zddhgihqv9lx8nbs20lp8lkipnbnwiamb4grjw"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -23783,6 +23783,42 @@ accuracy.  daiR gives R users programmatic access to this processor and
 additional tools to handle and visualize the output.  See the package website
 <https://dair.info/> for more information and examples.")
     (license license:expat)))
+
+(define-public r-daiquiri
+  (package
+    (name "r-daiquiri")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "daiquiri" version))
+              (sha256
+               (base32
+                "0arrhqbizglyyikmv4piiwc5n55znlmz3wx182wkidmfrdj175fv"))))
+    (properties `((upstream-name . "daiquiri")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rmarkdown
+                             r-readr
+                             r-reactable
+                             r-ggplot2
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/daiquiri")
+    (synopsis "Data Quality Reporting for Temporal Datasets")
+    (description
+     "Generate reports that enable quick visual review of temporal shifts in
+record-level data.  Time series plots showing aggregated values are
+automatically created for each data field (column) depending on its contents
+(e.g. min/max/mean values for numeric data, no.  of distinct values for
+categorical data), as well as overviews for missing values, non-conformant
+values, and duplicated rows.  The resulting reports are shareable and can
+contribute to forming a transparent record of the entire analysis process.  It
+is designed with Electronic Health Records in mind, but can be used for any type
+of record-level temporal data (i.e.  tabular data where each row represents a
+single \"event\", one column contains the \"event date\", and other columns contain
+any associated values for the event).")
+    (license license:gpl3+)))
 
 (define-public r-daime
   (package

@@ -6171,13 +6171,13 @@ index and windowed scale index (Benitez et al. (2010)
 (define-public r-wavethresh
   (package
     (name "r-wavethresh")
-    (version "4.7.0")
+    (version "4.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wavethresh" version))
               (sha256
                (base32
-                "0b7mm8m6wrfj8x36x2igpwzmvmdjlmdk0j69wly6v5babmb2a1zm"))))
+                "1780jnlcx4fw1k5h023fmc5nh8srivq14h2yis9xw9szfpmg231k"))))
     (properties `((upstream-name . "wavethresh")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

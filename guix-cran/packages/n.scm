@@ -1000,6 +1000,33 @@ officially supported by NSE'.  The accuracy of data is only as correct as
 provided on <https://www.nseindia.com>.")
     (license license:expat)))
 
+(define-public r-nse
+  (package
+    (name "r-nse")
+    (version "1.21")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nse" version))
+              (sha256
+               (base32
+                "0mw2ijc6z0l8sa7z5fbcapp1rl87zhh5v32iw1mcjw4khwc93bk7"))))
+    (properties `((upstream-name . "nse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-rcpp
+                             r-np
+                             r-mcmcse
+                             r-mcmc
+                             r-coda))
+    (home-page "https://github.com/keblu/nse")
+    (synopsis "Numerical Standard Errors Computation in R")
+    (description
+     "Collection of functions designed to calculate numerical standard error (NSE) of
+univariate time series as described in Ardia et al. (2018)
+<doi:10.1515/jtse-2017-0011> and Ardia and Bluteau (2017)
+<doi:10.21105/joss.00172>.")
+    (license license:gpl2+)))
+
 (define-public r-nsdr
   (package
     (name "r-nsdr")
@@ -2172,34 +2199,36 @@ and Yang Feng, 2021), which will be posted on arXiv soon.")
 (define-public r-npcp
   (package
     (name "r-npcp")
-    (version "0.2-2")
+    (version "0.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "npcp" version))
               (sha256
                (base32
-                "187vz2nvv7352qv9nry96rcjf0w4zi19xhpbg0jljbqqjfn7abi5"))))
+                "0w3zimljr2cz1bjhpgcv8qvkrhhh3jbd7bqi2yvrh05lpcxxagh0"))))
     (properties `((upstream-name . "npcp")))
     (build-system r-build-system)
+    (propagated-inputs (list r-sandwich))
     (home-page "https://cran.r-project.org/package=npcp")
     (synopsis
      "Some Nonparametric CUSUM Tests for Change-Point Detection in Possibly Multivariate Observations")
     (description
      "This package provides nonparametric CUSUM tests for detecting changes in
-possibly serially dependent univariate or multivariate observations.
-Retrospective tests sensitive to changes in the expectation, the variance, the
-covariance, the autocovariance, the distribution function, Spearman's rho,
-Kendall's tau, Gini's mean difference, and the copula are provided, as well as a
-test for detecting changes in the distribution of independent block maxima (with
-environmental studies in mind).  The package also contains a test sensitive to
-changes in the autocopula and a combined test of stationarity sensitive to
-changes in the distribution function and the autocopula.  The latest additions
-are a closed-end sequential test based on empirical distribution functions that
-can be used for monitoring changes in the contemporary distribution of possibly
-serially dependent univariate or multivariate observations, and an open-end
-sequential test based on the retrospective CUSUM statistic that can be used for
-monitoring changes in the mean of possibly serially dependent univariate
-observations.")
+possibly serially dependent univariate or low-dimensional multivariate
+observations.  Retrospective tests sensitive to changes in the expectation, the
+variance, the covariance, the autocovariance, the distribution function,
+Spearman's rho, Kendall's tau, Gini's mean difference, and the copula are
+provided, as well as a test for detecting changes in the distribution of
+independent block maxima (with environmental studies in mind).  The package also
+contains a test sensitive to changes in the autocopula and a combined test of
+stationarity sensitive to changes in the distribution function and the
+autocopula.  The latest additions are an open-end sequential test based on the
+retrospective CUSUM statistic that can be used for monitoring changes in the
+mean of possibly serially dependent univariate observations, as well as
+closed-end and open-end sequential tests based on empirical distribution
+functions that can be used for monitoring changes in the contemporary
+distribution of possibly serially dependent univariate or low-dimensional
+multivariate observations.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -2228,28 +2257,31 @@ justification and examples are published in Rohmer (2016)
 (define-public r-npcirc
   (package
     (name "r-npcirc")
-    (version "3.0.1")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NPCirc" version))
               (sha256
                (base32
-                "0hljqfyrb8r76f6lkjn0jgr15wnyqv3pc3bv23bdw0hxq574aiwc"))))
+                "0qcam9n9llsblrpa2w0yj0axh79qwinz4wwbf4gvyrajfv935i8i"))))
     (properties `((upstream-name . "NPCirc")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape
                              r-rgl
+                             r-rcpparmadillo
+                             r-rcpp
                              r-plotrix
                              r-movmf
                              r-misc3d
-                             r-circular))
+                             r-circular
+                             r-bolstad2))
     (home-page "https://www.jstatsoft.org/v61/i09/")
     (synopsis "Nonparametric Circular Methods")
     (description
      "Nonparametric smoothing methods for density and regression estimation involving
-circular data, including methods described in Oliveira et al. (2014) and
-proposals in Alonso-Pena et al. (2021).")
-    (license license:gpl2)))
+circular data, including the estimation of the mean regression function and
+other conditional characteristics.")
+    (license license:gpl2+)))
 
 (define-public r-npcd
   (package
@@ -2850,13 +2882,13 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
 (define-public r-normalityassessment
   (package
     (name "r-normalityassessment")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NormalityAssessment" version))
               (sha256
                (base32
-                "0i02mqxgyzm6y02rbk6skqp58hf35cg4wpfa9abx8rsmbg09jpxj"))))
+                "0r9a51z614si3b45g01lfgapmgc4smjf2hylgy5kvq8w0yh0w5y6"))))
     (properties `((upstream-name . "NormalityAssessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2864,6 +2896,7 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
                              r-shinybs
                              r-shinyalert
                              r-shiny
+                             r-rmatio
                              r-rio
                              r-ggplot2
                              r-dt
@@ -5879,13 +5912,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2est" version))
               (sha256
                (base32
-                "08aqx9piz3r157q0jh71fypj54lj6fgz6756gh94inz7cl5d5jxs"))))
+                "1mxax6r5zlj96a5khfq4q7ksgzq577axll1aniqa76d1j9vjm5nq"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -5909,7 +5942,6 @@ covariate selection.")
                              r-lotri
                              r-lbfgsb3c
                              r-knitr
-                             r-dparser
                              r-cli
                              r-checkmate
                              r-bh
@@ -7492,13 +7524,13 @@ rJava'/'RWeka dependency.")
 (define-public r-ngramr
   (package
     (name "r-ngramr")
-    (version "1.9.0")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ngramr" version))
               (sha256
                (base32
-                "1imvfawavrr83bnmhwwr5icm43f7nmr77nwsz262zh39s4a55f4z"))))
+                "0vvlml9s6v5vix1h723bs3mbz6cpa2mv4gbh0mqvfxssba7ki05i"))))
     (properties `((upstream-name . "ngramr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -9683,54 +9715,6 @@ Mustillo (2018) <doi:10.1177/0049124118799374>.  Mize, Trenton D. (2019)
 features in an sf object as a network graph surmising a sf plot.  Fits into
 ggplot2 grammar.")
     (license license:gpl3+)))
-
-(define-public r-netlogor
-  (package
-    (name "r-netlogor")
-    (version "0.3.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetLogoR" version))
-              (sha256
-               (base32
-                "0pppcpij4wn1gig7lyh122x52dx8x1dy98v5cphmrap8mpj4x7h2"))))
-    (properties `((upstream-name . "NetLogoR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spades-tools
-                             r-sp
-                             r-sf
-                             r-raster
-                             r-quickplot
-                             r-matrixstats
-                             r-data-table
-                             r-circstats
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://netlogor.predictiveecology.org")
-    (synopsis "Build and Run Spatially Explicit Agent-Based Models")
-    (description
-     "Build and run spatially explicit agent-based models using only the R platform.
-NetLogoR follows the same framework as the NetLogo software (Wilensky, 1999
-<http://ccl.northwestern.edu/netlogo/>) and is a translation in R of the
-structure and functions of NetLogo'.  NetLogoR provides new R classes to define
-model agents and functions to implement spatially explicit agent-based models in
-the R environment.  This package allows benefiting of the fast and easy coding
-phase from the highly developed NetLogo framework, coupled with the versatility,
-power and massive resources of the R software.  Examples of three models (Ants
-<http://ccl.northwestern.edu/netlogo/models/Ants>, Butterfly (Railsback and
-Grimm, 2012) and Wolf-Sheep-Predation
-<http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation>) written using
-NetLogoR are available.  The NetLogo code of the original version of these
-models is provided alongside.  A programming guide inspired from the NetLogo
-Programming Guide (<https://ccl.northwestern.edu/netlogo/docs/programming.html>)
-and a dictionary of NetLogo primitives
-(<https://ccl.northwestern.edu/netlogo/docs/dictionary.html>) equivalences are
-also available.  NOTE: To increment time', these functions can use a for loop or
-can be integrated with a discrete event simulator, such as SpaDES
-(<https://cran.r-project.org/package=SpaDES>).  The suggested package fastshp
-can be installed with install.packages(\"fastshp\", repos = \"https://rforge.net\",
-type = \"source\")'.")
-    (license license:gpl3)))
 
 (define-public r-netjack
   (package

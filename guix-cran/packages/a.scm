@@ -6040,13 +6040,13 @@ interactively visualize Arena's results.")
 (define-public r-areaplot
   (package
     (name "r-areaplot")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "areaplot" version))
               (sha256
                (base32
-                "0vyhf3662ppcahaw2zrxgpcxcn8fysd6lhl8vgr7cs8kl6fm4x47"))))
+                "1j342mgjfxca38j4xx0bp35fjdx1xsfp1czdlpahavg5xm94lwbf"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=areaplot")
@@ -6189,6 +6189,29 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 West (1997).  Particular cases include the extraction of trend and seasonal
 components.")
     (license license:gpl2+)))
+
+(define-public r-arctools
+  (package
+    (name "r-arctools")
+    (version "1.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "arctools" version))
+              (sha256
+               (base32
+                "01a1kmkmnwm8ryv1hr0w79ghbk844w7fnv1yiq9mmwrs4jbgfrcf"))))
+    (properties `((upstream-name . "arctools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-runstats r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=arctools")
+    (synopsis
+     "Processing and Physical Activity Summaries of Minute Level Activity Data")
+    (description
+     "This package provides functions to process minute level actigraphy-measured
+activity counts data and extract commonly used physical activity volume and
+fragmentation metrics.")
+    (license license:gpl3)))
 
 (define-public r-arcpullr
   (package
@@ -7419,6 +7442,27 @@ API
 to extract content information, app ratings and reviews.")
     (license license:gpl2)))
 
+(define-public r-appleadsr
+  (package
+    (name "r-appleadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "appleadsR" version))
+              (sha256
+               (base32
+                "19xkzykk6zdbswdkfix9nqnfgab4r9c21rqwpma1r6fjapsp81jf"))))
+    (properties `((upstream-name . "appleadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Apple Search Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Apple Search Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-appestimation
   (package
     (name "r-appestimation")
@@ -7941,13 +7985,13 @@ Peterson and Robert Jenq (2020) Bioinformatics, Volume 36, Issue 13, 4099-4101."
 (define-public r-apci
   (package
     (name "r-apci")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "APCI" version))
               (sha256
                (base32
-                "0wkpcjsgzk01x4qc395wwqr856fr096v8vhydcw84yrmp8w3clxx"))))
+                "0lfbx067vqh2yn15jmiicva8h38k0vgdr3s6m2jgswfbp11a8pjh"))))
     (properties `((upstream-name . "APCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey

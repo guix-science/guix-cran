@@ -1672,6 +1672,26 @@ R. There is also an interactive shiny app for monitoring the job status.")
 Varian (2014) <DOI:10.1504/IJMMNO.2014.059942>, among many other sources.")
     (license (list license:lgpl2.1 license:expat))))
 
+(define-public r-bstrl
+  (package
+    (name "r-bstrl")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bstrl" version))
+              (sha256
+               (base32
+                "10ncaicda2rwwrl2ykbrdhh51fziy3ahwp8z859cr2k4v19lviv0"))))
+    (properties `((upstream-name . "bstrl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-extradistr r-doparallel r-brl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bstrl")
+    (synopsis "Bayesian Streaming Record Linkage")
+    (description
+     "Perform record linkage on streaming files using recursive Bayesian updating.")
+    (license license:expat)))
+
 (define-public r-bstools
   (package
     (name "r-bstools")
@@ -1739,6 +1759,33 @@ Wang (2018) <doi:10.1214/18-EJS1404>.")
  A fast implementation of whitening for BSS is implemented to serve as a
 lightweight dependency for packages providing BSS methods.")
     (license license:gpl2+)))
+
+(define-public r-bssoverspace
+  (package
+    (name "r-bssoverspace")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BSSoverSpace" version))
+              (sha256
+               (base32
+                "117av0y5bw44z6293fvbxmf1xqhar7c4lf5z09xrs78dn1xdsnbs"))))
+    (properties `((upstream-name . "BSSoverSpace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialbss r-rspde r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BSSoverSpace")
+    (synopsis
+     "Blind Source Separation for Multivariate Spatial Data using Eigen Analysis")
+    (description
+     "This package provides functions for blind source separation over multivariate
+spatial data, and useful statistics for evaluating performance of estimation on
+mixing matrix.  BSSoverSpace is based on an eigen analysis of a positive
+definite matrix defined in terms of multiple normalized spatial local covariance
+matrices, and thus can handle moderately high-dimensional random fields.  This
+package is an implementation of the method described in Zhang, Hao and Yao
+(2022)<arXiv:2201.02023>.")
+    (license license:gpl3)))
 
 (define-public r-bssn
   (package
@@ -16888,13 +16935,13 @@ to determine and visualize operating characteristics.  See Kopp-Schneider et al.
 (define-public r-bdots
   (package
     (name "r-bdots")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bdots" version))
               (sha256
                (base32
-                "02lgpgkhzyq9qaf18mzq2708ps00lsxm69apfsaq5m34zxkynq5z"))))
+                "0k1865vkg0s6jhw2k3w7gqw9v94rchfwpsbaf1cxbg0rpy1f0c0b"))))
     (properties `((upstream-name . "bdots")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mvtnorm r-gridextra r-ggplot2
@@ -19325,44 +19372,6 @@ covariates in the Cox model.  Functions included to return the posterior mean
 hazard and survival functions for the piecewise exponential and piecewise linear
 log-hazard models.  Chapple, AG, Peak, T, Hemal, A (2020).  Under Revision.")
     (license license:gpl2)))
-
-(define-public r-bayesrel
-  (package
-    (name "r-bayesrel")
-    (version "0.7.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Bayesrel" version))
-              (sha256
-               (base32
-                "0i5kma649f2f079205kki05js0i1aw2j10aj6fgmg3mjj8q9cn0p"))))
-    (properties `((upstream-name . "Bayesrel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-lavaan
-                             r-laplacesdemon
-                             r-coda))
-    (home-page "https://github.com/juliuspf/Bayesrel")
-    (synopsis "Bayesian Reliability Estimation")
-    (description
-     "Functionality for reliability estimates.  For unidimensional tests: Coefficient
-alpha, Guttman's lambda-2/-4/-6, the Greatest lower bound and coefficient
-omega_u ('unidimensional') in a Bayesian and a frequentist version.  For
-multidimensional tests: omega_t (total) and omega_h (hierarchical).  The results
-include confidence and credible intervals, the probability of a coefficient
-being larger than a cutoff, and a check for the factor models, necessary for the
-omega coefficients.  The method for the Bayesian unidimensional estimates,
-except for omega_u, is sampling from the posterior inverse Wishart for the
-covariance matrix based measures (see Murphy', 2007,
-<https://groups.seas.harvard.edu/courses/cs281/papers/murphy-2007.pdf>.  The
-Bayesian omegas (u, t, and h) are obtained by Gibbs sampling from the
-conditional posterior distributions of (1) the single factor model and (2) the
-second-order factor model ('Lee', 2007,
-<https://onlinelibrary.wiley.com/doi/book/10.1002/9780470024737>).")
-    (license license:gpl3)))
 
 (define-public r-bayesreg
   (package
@@ -23107,28 +23116,6 @@ not recommended for use, their purpose are purely for comparison.")
      "Bayesian adaptive randomization is also called outcome adaptive randomization,
 which is increasingly used in clinical trials.")
     (license license:gpl2)))
-
-(define-public r-baprestopro
-  (package
-    (name "r-baprestopro")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BaPreStoPro" version))
-              (sha256
-               (base32
-                "0zyyyrr5h8dhjsmgaii8jmb8ignvixpc9nzbfishw9yymjswvm57"))))
-    (properties `((upstream-name . "BaPreStoPro")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=BaPreStoPro")
-    (synopsis "Bayesian Prediction of Stochastic Processes")
-    (description
-     "Bayesian estimation and prediction for stochastic processes based on the Euler
-approximation.  Considered processes are: jump diffusion, (mixed) diffusion
-models, hidden (mixed) diffusion models, non-homogeneous Poisson processes
-(NHPP), (mixed) regression models for comparison and a regression model
-including a NHPP.")
-    (license license:gpl2+)))
 
 (define-public r-bapred
   (package

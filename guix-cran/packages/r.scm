@@ -483,13 +483,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.12")
+    (version "2.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2parse" version))
               (sha256
                (base32
-                "1yir8wjwhm7xahc47lbdach0695d25yfvwg59qk1lh32qbdp885j"))))
+                "0bgvf4a99nhw5wjqzivsk55nyq5k82ibqh3qfs1pa4x90w83vsaz"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -3215,6 +3215,28 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
      "Geostatistical interpolation of data with irregular spatial support such as
 runoff related data or data from administrative units.")
     (license license:gpl2+)))
+
+(define-public r-rtoot
+  (package
+    (name "r-rtoot")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rtoot" version))
+              (sha256
+               (base32
+                "02amyj90gb82ndvpxkir10ak54lq29mn6y30l7xnbhh0wyxss9y4"))))
+    (properties `((upstream-name . "rtoot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rtoot")
+    (synopsis "Collecting and Analyzing Mastodon Data")
+    (description
+     "An implementation of calls designed to collect and organize Mastodon data via
+its Application Program Interfaces (API), which can be found at the following
+URL: <https://docs.joinmastodon.org/>.")
+    (license license:expat)))
 
 (define-public r-rtomo
   (package
@@ -7472,6 +7494,41 @@ estimation method is partly described in Zhao, Z., & Palomar, D. P. (2017)
 successive upper-bound minimisation method and the sample average approximation
 can be found in Razaviyayn, M., Sanjabi, M., & Luo, Z. Q. (2016)
 <doi:10.1007/s10107-016-1021-7>.")
+    (license license:gpl3)))
+
+(define-public r-rrreg
+  (package
+    (name "r-rrreg")
+    (version "0.7.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RRreg" version))
+              (sha256
+               (base32
+                "1vrx6hz9hg6g980hpdx65x2sb3bc7zjhiq47qwf01l7qwl0sjm7h"))))
+    (properties `((upstream-name . "RRreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lme4 r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/danheck/RRreg")
+    (synopsis
+     "Correlation and Regression Analyses for Randomized Response Data")
+    (description
+     "Univariate and multivariate methods to analyze randomized response (RR) survey
+designs (e.g., Warner, S. L. (1965).  Randomized response: A survey technique
+for eliminating evasive answer bias.  Journal of the American Statistical
+Association, 60, 63â69, <doi:10.2307/2283137>).  Besides univariate estimates
+of true proportions, RR variables can be used for correlations, as dependent
+variable in a logistic regression (with or without random effects), or as
+predictors in a linear regression (Heck, D. W., & Moshagen, M. (2018).  RRreg:
+An R package for correlation and regression analyses of randomized response
+data.  Journal of Statistical Software, 85(2), 1â29,
+<doi:10.18637/jss.v085.i02>).  For simulations and the estimation of statistical
+power, RR data can be generated according to several models.  The implemented
+methods also allow to test the link between continuous covariates and dishonesty
+in cheating paradigms such as the coin-toss or dice-roll task (Moshagen, M., &
+Hilbig, B. E. (2017).  The statistical analysis of cheating paradigms.  Behavior
+Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
     (license license:gpl3)))
 
 (define-public r-rrr
@@ -14990,41 +15047,6 @@ the R Journal publication of Ieva et al. (2019) <doi:10.32614/RJ-2019-032> for
 an in-depth presentation of the roahd package.  See Aleman-Gomez et al. (2021)
 <arXiv:2103.08874> for details about the concept of depthgram.")
     (license license:gpl3)))
-
-(define-public r-roads
-  (package
-    (name "r-roads")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "roads" version))
-              (sha256
-               (base32
-                "02gkxvlngf23xv3sh578ynd5jzhlsslnllbvppyasbf4izisng16"))))
-    (properties `((upstream-name . "roads")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-tidyselect
-                             r-stars
-                             r-spades-tools
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-raster
-                             r-igraph
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LandSciTech/roads")
-    (synopsis "Road Network Projection")
-    (description
-     "Project road network development based on an existing road network, target
-locations to be connected by roads and a cost surface.  Road projection methods
-include minimum spanning tree with least cost path (Kruskalâs algorithm (1956)
-<doi:10.2307/2033241>), least cost path (Dijkstra's algorithm (1959)
-<doi:10.1007/BF01386390>) or snapping.  These road network projection methods
-are ideal for use with land cover change projection models.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-roadoi
   (package
@@ -25623,13 +25645,13 @@ information regarding the web services this package invokes can be found at
 (define-public r-restez
   (package
     (name "r-restez")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restez" version))
               (sha256
                (base32
-                "13h84qxfpmq6mfa2xkaimjisz71jy4fbap8y8zdla43zlyhnrvv6"))))
+                "1q008ykk75h19zqnkv339qx7zb7vmab8f9ywvr8qb7l1n3yxah76"))))
     (properties `((upstream-name . "restez")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -26370,34 +26392,6 @@ interdependencies.  Inspired by RequireJS'<http://requirejs.org/>.")
 a string containing diverse packages from several resources like Github or CRAN.")
     (license license:gpl3)))
 
-(define-public r-require
-  (package
-    (name "r-require")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Require" version))
-              (sha256
-               (base32
-                "132sawllsw4vnm5b836rmzzimqy9rralvkigi5jqiv07z37xlmqn"))))
-    (properties `((upstream-name . "Require")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
-    (home-page "https://Require.predictiveecology.org")
-    (synopsis "Installing and Loading R Packages for Reproducible Workflows")
-    (description
-     "This package provides a single key function, Require that makes rerun-tolerant
-versions of install.packages and `require` for CRAN packages, packages no longer
-on CRAN (i.e., archived), specific versions of packages, and GitHub packages.
-This approach is developed to create reproducible workflows that are flexible
-and fast enough to use while in development stages, while able to build
-snapshots once a stable package collection is found.  As with other functions in
-a reproducible workflow, this package emphasizes functions that return the same
-result whether it is the first or subsequent times running the function, with
-subsequent times being sufficiently fast that they can be run every time without
-undue waiting burden on the user or developer.")
-    (license license:gpl3)))
-
 (define-public r-request
   (package
     (name "r-request")
@@ -26551,47 +26545,6 @@ generic data formats and direct leverage of the underlying PROJ library. (There
 are transformations that aren't possible with PROJ and that are provided by the
 GDAL library, a limitation which users of this package should be aware of.) The
 PROJ library is available at <https://proj.org/>.")
-    (license license:gpl3)))
-
-(define-public r-reproducible
-  (package
-    (name "r-reproducible")
-    (version "1.2.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "reproducible" version))
-              (sha256
-               (base32
-                "1kgkayf7clmq31r1nlvyywjxc9avzq913xqnhfzmkbsq5jl2rk0r"))))
-    (properties `((upstream-name . "reproducible")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rsqlite
-                             r-rlang
-                             r-require
-                             r-raster
-                             r-magrittr
-                             r-lobstr
-                             r-glue
-                             r-fpcompare
-                             r-digest
-                             r-dbi
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://reproducible.predictiveecology.org")
-    (synopsis
-     "Set of Tools that Enhance Reproducibility Beyond Package Management")
-    (description
-     "Collection of high-level, machine- and OS-independent tools for making deeply
-reproducible and reusable content in R. The two workhorse functions are Cache
-and prepInputs; these allow for: nested caching, robust to environments, and
-objects with environments (like functions); and data retrieval and processing in
-continuous workflow environments.  In all cases, efforts are made to make the
-first and subsequent calls of functions have the same result, but vastly faster
-at subsequent times by way of checksums and digesting.  Several features are
-still under active development, including cloud storage of cached objects,
-allowing for sharing between users.  Several advanced options are available, see
-?reproducibleOptions.")
     (license license:gpl3)))
 
 (define-public r-reproducer
@@ -27958,13 +27911,13 @@ in Wagstaff (2021) <https://digitalcommons.usu.edu/etd/8065/>.")
 (define-public r-remacor
   (package
     (name "r-remacor")
-    (version "0.0.9")
+    (version "0.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "remaCor" version))
               (sha256
                (base32
-                "1rddxwhwn5m34p1ga2i42sfv6m9lmj4ffsn3jv2f9g82nh6q6gv3"))))
+                "0hhk1zrjz6sxg219h9ca7jya0vc8dmrvwaddajkcdns6bv3rj1km"))))
     (properties `((upstream-name . "remaCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-runit
@@ -27974,7 +27927,7 @@ in Wagstaff (2021) <https://digitalcommons.usu.edu/etd/8065/>.")
                              r-ggplot2
                              r-clustergeneration))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/GabrielHoffman/remaCor")
+    (home-page "https://diseaseneurogenomics.github.io/remaCor/")
     (synopsis "Random Effects Meta-Analysis for Correlated Test Statistics")
     (description
      "Meta-analysis is widely used to summarize estimated effects sizes across
@@ -39898,13 +39851,13 @@ front-end widgets, and event handlers.")
 (define-public r-ravages
   (package
     (name "r-ravages")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ravages" version))
               (sha256
                (base32
-                "0fabwbrkgj48m0hgq2s2c3ah7r7xbbbkz4svrkfb2jpaw2dq8vhk"))))
+                "1lkdw9ilkrsa6zc7s3ljjnjzjwhxfy0w9p6jlqmrj9j81kydyxbz"))))
     (properties `((upstream-name . "Ravages")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -39922,10 +39875,11 @@ front-end widgets, and event handlers.")
     (home-page "https://cran.r-project.org/package=Ravages")
     (synopsis "Rare Variant Analysis and Genetic Simulations")
     (description
-     "Rare variant association tests: burden tests (Bocher et al.  2019
-<doi:10.1002/gepi.22210>) and the Sequence Kernel Association Test (Bocher et
-al.  2021 <doi:10.1038/s41431-020-00792-8>) in the whole genome; and genetic
-simulations.")
+     "Genetic simulations and rare variant association tests: burden tests (Bocher et
+al.  2019 <doi:10.1002/gepi.22210>) and the Sequence Kernel Association Test
+(Bocher et al.  2021 <doi:10.1038/s41431-020-00792-8>).  Ravages also implements
+a dedicated procedure to perform rare variant association tests in the whole
+genome (Bocher et al.  2022, <doi:10.1371/journal.pgen.1009923>).")
     (license license:gpl3)))
 
 (define-public r-rattle

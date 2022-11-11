@@ -2875,18 +2875,18 @@ likelihood estimates are available.")
 (define-public r-irt
   (package
     (name "r-irt")
-    (version "0.2.5")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "irt" version))
               (sha256
                (base32
-                "13cfmzr7bw5jbcwykvjli5lsnbcr7n8w6nljwsmnsa42fa7f2159"))))
+                "1qckf91pady8gbp0bdbskijyqmmv2d9icb6ihmf0d2r49f37q4fh"))))
     (properties `((upstream-name . "irt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=irt")
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/egonulates/irt")
     (synopsis
      "Item Response Theory and Computerized Adaptive Testing Functions")
     (description
@@ -10514,13 +10514,13 @@ and unique cellular labeling.")
 (define-public r-imbibe
   (package
     (name "r-imbibe")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imbibe" version))
               (sha256
                (base32
-                "0l7wn7vcbb466a4i3w302ficdy0jvy2jh5qizfn7ahpcs7lpx6hr"))))
+                "03vaz5vippnmbgs2l4gxpmsnrkxjw7d156ng13r07zicq43g9gwp"))))
     (properties `((upstream-name . "imbibe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp r-magrittr))
@@ -11344,13 +11344,13 @@ format.")
 (define-public r-iheiddown
   (package
     (name "r-iheiddown")
-    (version "0.9.5")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iheiddown" version))
               (sha256
                (base32
-                "06daza20mxki18kxjc9ycyjm7vvvrrd44gzb9pcfd5cyfbg4h12v"))))
+                "1h7cb52wk0z5na543v78vjj2xh77kj3nwgl5vgqnf5186mrknh5v"))))
     (properties `((upstream-name . "iheiddown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xaringan

@@ -2772,6 +2772,31 @@ catalogs.")
 experiments based on the General Recognition Theory.")
     (license license:gpl2+)))
 
+(define-public r-grsxe
+  (package
+    (name "r-grsxe")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GRSxE" version))
+              (sha256
+               (base32
+                "1mfsfkfgz12vm99jsln8fimmy852dx20xfnj6ibqrjhjpniv8x5d"))))
+    (properties `((upstream-name . "GRSxE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-glmnet))
+    (home-page "https://cran.r-project.org/package=GRSxE")
+    (synopsis
+     "Testing Gene-Environment Interactions Through Genetic Risk Scores")
+    (description
+     "Statistical testing procedures for detecting GxE (gene-environment)
+interactions.  The main focus lies on GRSxE interaction tests that aim at
+detecting GxE interactions through GRS (genetic risk scores).  Moreover, a novel
+testing procedure based on bagging and OOB predictions is implemented for
+incorporating all available observations at both GRS construction and GxE
+testing.")
+    (license license:expat)))
+
 (define-public r-grs-test
   (package
     (name "r-grs-test")
@@ -4964,13 +4989,13 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "1.8.8")
+    (version "1.8.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRbase" version))
               (sha256
                (base32
-                "1nzrmi0sy1jv565csl04nj80mrhh59jrl3115fyyhx6vib5d3mgx"))))
+                "0zix34w60l94qsfh6gxw9qf4l564fmml9s4nc4y5kr4nv11b9jns"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
@@ -4998,7 +5023,7 @@ of the package are documented in the book by HÃ¸jsgaard, Edwards and Lauritzen
 (2012, <doi:10.1007/978-1-4614-2299-0>) and in the paper by Dethlefsen and
 HÃ¸jsgaard, (2005, <doi:10.18637/jss.v014.i17>).  Please see citation(\"gRbase\")
 for citation details.  NOTICE gRbase requires that the packages graph, Rgraphviz
-and RBGL are installed from bioconductor'; for installation instructions please
+and RBGL are installed from bioconductor'.  For installation instructions please
 refer to the web page given below.")
     (license license:gpl2+)))
 
@@ -5209,13 +5234,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grates" version))
               (sha256
                (base32
-                "0ycgh6fzrsjv3n0wzcaybk686lq074krayz5jfx690iqj5fjkjqi"))))
+                "1a7f0ij415spfg20h5qqvmk46zh768l34jk61a45y1ywzs1cb3ki"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-ellipsis r-clock))
@@ -8953,27 +8978,6 @@ time series models which take account of network structure.  Such models are
 described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
     (license license:gpl2)))
 
-(define-public r-gmwt
-  (package
-    (name "r-gmwt")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gMWT" version))
-              (sha256
-               (base32
-                "0gy8mm6ajbd2nl059nrb24wkh06qbbbg2h8m6fl58n5wgsjns1va"))))
-    (properties `((upstream-name . "gMWT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-clinfun))
-    (home-page "https://cran.r-project.org/package=gMWT")
-    (synopsis "Generalized Mann-Whitney Type Tests")
-    (description
-     "Generalized Mann-Whitney type tests based on probabilistic indices and new
-diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
-<doi:10.18637/jss.v065.i09>.")
-    (license license:gpl2+)))
-
 (define-public r-gmwmx
   (package
     (name "r-gmwmx")
@@ -10130,13 +10134,13 @@ analysis under heterogeneity.")
 (define-public r-glpkapi
   (package
     (name "r-glpkapi")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glpkAPI" version))
               (sha256
                (base32
-                "07bksiqmq2n7ki3f3sxph4v44k7q2b0d88jwjgfxzdn33i65wqyq"))))
+                "1cr40jksm27h0j1j0q1ngcf4cbrhrjz48m6z3c3jns8h17h8g8qh"))))
     (properties `((upstream-name . "glpkAPI")))
     (build-system r-build-system)
     (inputs (list glpk))
@@ -10144,7 +10148,8 @@ analysis under heterogeneity.")
     (synopsis "R Interface to C API of GLPK")
     (description
      "R Interface to C API of GLPK, depends on GLPK Version >= 4.42.")
-    (license license:gpl3)))
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-glow
   (package
@@ -14764,13 +14769,13 @@ the fly.")
 (define-public r-ggpattern
   (package
     (name "r-ggpattern")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpattern" version))
               (sha256
                (base32
-                "09djvwdzvmqj6jk56vspbcvp598vkb9zvyvf83ym5mfp05yf3sf7"))))
+                "1b9bfxlg64gr39bz58fp6jmg4nziwk8rk94rzpjsqhfhpwi2lrgr"))))
     (properties `((upstream-name . "ggpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-gridpattern r-glue r-ggplot2))
@@ -15667,13 +15672,13 @@ Also the package allows for external function embedding.")
 (define-public r-ggip
   (package
     (name "r-ggip")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggip" version))
               (sha256
                (base32
-                "1mqjd3bf05dln15s3qlf508260dzz888sm3n0a2ghd67x5jnxpqi"))))
+                "1wh7yj445152p9ynq2l1cp1cm2si88s3dbb9qpszimlzgqvzv8la"))))
     (properties `((upstream-name . "ggip")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15681,9 +15686,9 @@ Also the package allows for external function embedding.")
                              r-rlang
                              r-rcpp
                              r-ipaddress
-                             r-glue
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://davidchall.github.io/ggip/")
     (synopsis "Data Visualization for IP Addresses and Networks")
@@ -21581,39 +21586,6 @@ bird and bat mortality at wind and solar power facilities, following Dalthorp,
 et al. (2018) <doi:10.3133/tm7A2>.")
     (license license:cc0)))
 
-(define-public r-geneset
-  (package
-    (name "r-geneset")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geneset" version))
-              (sha256
-               (base32
-                "19a1ngw3916mykh2a99jaw80bpgrflqh6qs12mj7slgwih12g5px"))))
-    (properties `((upstream-name . "geneset")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-stringi r-rcurl r-fst r-dplyr))
-    (home-page "https://github.com/GangLiLab/geneset")
-    (synopsis "Get Gene Sets for Gene Enrichment Analysis")
-    (description
-     "Gene sets are fundamental for gene enrichment analysis.  The package geneset
-enables querying gene sets from public databases including GO (Gene Ontology
-Consortium. (2004) <doi:10.1093/nar/gkh036>), KEGG (Minoru et al. (2000)
-<doi:10.1093/nar/28.1.27>), WikiPathway (Marvin et al. (2020)
-<doi:10.1093/nar/gkaa1024>), MsigDb (Arthur et al. (2015)
-<doi:10.1016/j.cels.2015.12.004>), Reactome (David et al. (2011)
-<doi:10.1093/nar/gkq1018>), MeSH (Ish et al. (2014)
-<doi:10.4103/0019-5413.139827>), DisGeNET (Janet et al. (2017)
-<doi:10.1093/nar/gkw943>), Disease Ontology (Lynn et al. (2011)
-<doi:10.1093/nar/gkr972>), Network of Cancer Genes (Dimitra et al. (2019)
-<doi:10.1186/s13059-018-1612-0>) and COVID-19 (Maxim et al. (2020)
-<doi:10.21203/rs.3.rs-28582/v1>).  Gene sets are stored in the list object which
-provides data frame of geneset and geneset_name'.  The geneset has two columns
-of term ID and gene ID. The geneset_name has two columns of terms ID and term
-description.")
-    (license license:gpl3)))
-
 (define-public r-genero
   (package
     (name "r-genero")
@@ -21960,46 +21932,6 @@ distance from pairwise comparisons of individuals or population samples.")
 plots of alternatively spliced gene variants and the positions of mutations and
 other gene features.")
     (license license:gpl2)))
-
-(define-public r-genekitr
-  (package
-    (name "r-genekitr")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "genekitr" version))
-              (sha256
-               (base32
-                "0s4hzfbc41pxlhc0ra4l6ip0zmzx8vr2xwklm3lmkqip6i7m00dq"))))
-    (properties `((upstream-name . "genekitr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-venndiagram
-                             r-tidyr
-                             r-stringr
-                             r-stringi
-                             r-rlang
-                             r-openxlsx
-                             r-magrittr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-geneset
-                             r-fst
-                             r-europepmc
-                             r-dplyr
-                             r-dose
-                             r-clusterprofiler))
-    (home-page "https://www.genekitr.fun/")
-    (synopsis "Gene Analysis Toolkit in R")
-    (description
-     "An analysis toolkit focused on genes.  It mainly includes five features (search,
-convert, analysis, plot, and export).  The user just needs to input feature id
-('entrez', symbol', ensembl or uniprot') to retrieve feature information and
-PubMed records, to convert id types, to easily do enrichment analysis and draw
-publication-level plots of GO, KEGG and GSEA, to plot group interaction and
-export results as sheets in one excel file to easily share and communicate with
-others.")
-    (license license:gpl3)))
 
 (define-public r-genehummus
   (package

@@ -1326,13 +1326,13 @@ distances matrices (travel time and kilometric distance).")
 (define-public r-osqp
   (package
     (name "r-osqp")
-    (version "0.6.0.6")
+    (version "0.6.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osqp" version))
               (sha256
                (base32
-                "1q669vscwypz0vf6s38b5yzn178miql4xf5dg7b7y2fnjqdl6gw5"))))
+                "00w2hr0pagnvpsk84z99c7alhv7xvs9wpcmkzbcg3qs14g888rgf"))))
     (properties `((upstream-name . "osqp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6 r-matrix))
@@ -8402,17 +8402,16 @@ national level.  Metropolitan data is not included.")
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
-    (version "0.1.2")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OenoKPM" version))
               (sha256
                (base32
-                "1rw740zw38k3q9kl89rvn740d5v4k1hhmlz4bp9ynhnq34g9p9rq"))))
+                "199sh1vzzrx2nx7wn5qrv0zkqwy02j5xcdx9y4474ci1hqc65r87"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-openxlsx r-minpack-lm r-ggtext r-ggplot2
-                             r-extrafont))
+    (propagated-inputs (list r-openxlsx r-minpack-lm r-ggplot2))
     (home-page "https://cran.r-project.org/package=OenoKPM")
     (synopsis
      "Modeling the Kinetics of CO2 Production in Alcoholic Fermentation")

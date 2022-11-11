@@ -7137,13 +7137,13 @@ files, retrieve transcriptions, and monitor jobs.")
 (define-public r-tramvs
   (package
     (name "r-tramvs")
-    (version "0.0-2")
+    (version "0.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tramvs" version))
               (sha256
                (base32
-                "0rwfs5yjpz9k1qls5jsk0w8f0ck417m03r7wjcsrxjndqk7pnymi"))))
+                "1fn119wliap4947gma0d7lvqbbwqavyd449m38pzvf9425i7a5ns"))))
     (properties `((upstream-name . "tramvs")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables r-tram r-cotram))

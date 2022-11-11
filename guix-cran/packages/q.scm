@@ -811,13 +811,13 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryup
   (package
     (name "r-queryup")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryup" version))
               (sha256
                (base32
-                "0a7y1vagv635cf40w208z17b8r3rlj4zidfcx8r3lnasbama7jpl"))))
+                "0yr73g4a5aghdxn3qc9y1al8n9m499x5vppzx9adrnhl0y0nigsf"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl r-jsonlite))
@@ -4915,16 +4915,17 @@ configuration associated with a given phenomenon.")
 (define-public r-qbr
   (package
     (name "r-qbr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qbr" version))
               (sha256
                (base32
-                "1n8arim3gmi2f6n75aqc2lzzvh6i87dv1wgs8c4jphd71fzqwqn4"))))
+                "16nvf4qna4vbn2jcadl0klddgpgviqn8v0mv3mmc8namrvighxww"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-purrr
                              r-magrittr

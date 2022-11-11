@@ -856,15 +856,16 @@ PLOS One <doi:10.1371/journal.pone.0229845>.")
 (define-public r-yamlme
   (package
     (name "r-yamlme")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yamlme" version))
               (sha256
                (base32
-                "1cknx8ndcb9rz1j7z27244vba8hxyh5sa9zwsv6rwk9g1c52vmyg"))))
+                "1019nzchqif4r3c7ywq23bjx711g359q44s8jy0rxyv03rij6xh9"))))
     (properties `((upstream-name . "yamlme")))
     (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-rmarkdown))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kamapu/yamlme")
     (synopsis "Writing 'YAML' Headers for 'R-Markdown' Documents")
