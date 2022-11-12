@@ -6470,21 +6470,21 @@ advances.")
 (define-public r-forectheta
   (package
     (name "r-forectheta")
-    (version "2.2")
+    (version "2.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forecTheta" version))
               (sha256
                (base32
-                "1a7ip3czm8k82kb8dx95m8q47kjhifdj51gzavd1zj9ni3vwbhfn"))))
+                "0xw5xl6famx0wy68a32f8vgqk02lkymvxq082yp16giidvzvqjwd"))))
     (properties `((upstream-name . "forecTheta")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-forecast))
-    (home-page "http://arxiv.org/abs/1503.03529")
+    (home-page
+     "https://www.sciencedirect.com/science/article/pii/S0169207016300243")
     (synopsis "Forecasting Time Series by Theta Models")
     (description
-     "Routines for forecasting univariate time series using Theta Models.  Contains
-several cross-validation routines.")
+     "Routines for forecasting univariate time series using Theta Models.")
     (license license:gpl2+)))
 
 (define-public r-foreco
@@ -8509,17 +8509,16 @@ accompanying paper.")
 (define-public r-flimo
   (package
     (name "r-flimo")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flimo" version))
               (sha256
                (base32
-                "0a7azwrxfwj66672s1rpvp1nqkbd9g7gyppkzf779yg0phisva8w"))))
+                "0xgxbcik40fjqzz55wraljcp8j1pvhm5zzgin7l50xk24yyiyvrh"))))
     (properties `((upstream-name . "flimo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-latex2exp r-juliaconnector r-gridextra
-                             r-ggplot2))
+    (propagated-inputs (list r-juliaconnector r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=flimo")
     (synopsis "Fixed Landscape Inference Method")
@@ -17169,13 +17168,13 @@ between-series correlation (2015) <arXiv:1505.05660>.")
 (define-public r-fasano-franceschini-test
   (package
     (name "r-fasano-franceschini-test")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fasano.franceschini.test" version))
               (sha256
                (base32
-                "1vxkq7pj2gsln3vyj3g0qx1ycvar1qrrv4hla33wz3a5g2fy9fnx"))))
+                "0h28ph562ac345l022x9jblzhkk7qn2knrp5jh38flw0xkv9g2yf"))))
     (properties `((upstream-name . "fasano.franceschini.test")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp))

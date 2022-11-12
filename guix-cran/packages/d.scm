@@ -6769,13 +6769,13 @@ documents.  There is also nascent support for .doc and .pptx files.")
 (define-public r-docxtools
   (package
     (name "r-docxtools")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "docxtools" version))
               (sha256
                (base32
-                "0ds8qy21x7cq9qmnn6gggzf8kxdphq7nf2mx5gqx829zgkripsfq"))))
+                "0zfmmwnjzja80krflg2cl9a1ldg6qj1m0gppralfs59ag1jr7kqh"))))
     (properties `((upstream-name . "docxtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16486,16 +16486,15 @@ a file as long as both the expression and its dependencies stay the same.")
 (define-public r-deoptim
   (package
     (name "r-deoptim")
-    (version "2.2-7")
+    (version "2.2-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEoptim" version))
               (sha256
                (base32
-                "0y4lmnccihrvlh7cfql8am4nxnd9g4awk45fb7bcd1kg4hapxb20"))))
+                "0k7mvf7j8y1sqv8zpiwkw4xcmgki37drkxjijrsmmhkfybfan7k3"))))
     (properties `((upstream-name . "DEoptim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-parallelly))
     (home-page "https://github.com/ArdiaD/DEoptim")
     (synopsis "Global Optimization by Differential Evolution")
     (description

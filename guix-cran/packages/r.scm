@@ -7968,13 +7968,13 @@ Redshift'.")
 (define-public r-rredlist
   (package
     (name "r-rredlist")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rredlist" version))
               (sha256
                (base32
-                "1w77cnfrybmqnadsmfkpjv5m49kkr7yc6kcqq165lmj3bijnprnj"))))
+                "11dfad1r93b8q6jbn319lz9w7qbw7nqwxyck3fs1kp0il8vhr8cj"))))
     (properties `((upstream-name . "rredlist")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-crul))
@@ -17208,16 +17208,16 @@ time-series.  Psychotherapy research, 1-14. <doi:10.1080/10503307.2020.1844334>.
 (define-public r-rmdwc
   (package
     (name "r-rmdwc")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmdwc" version))
               (sha256
                (base32
-                "0zbwfi0rsx7mhk6s5798qg1zr7yv8hgw8qazznsd30diyprnyzbq"))))
+                "0s7k54ggf0zdkkjg8k5jz2kfjpw99i59k82xqgvj7qaxvakm7vss"))))
     (properties `((upstream-name . "rmdwc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-knitr))
+    (propagated-inputs (list r-rstudioapi r-knitr))
     (home-page "https://cran.r-project.org/package=rmdwc")
     (synopsis "Count Words, Chars and Non-Whitespace Chars in R Markdown Docs")
     (description
@@ -19259,13 +19259,13 @@ separate package rkafkajars'.")
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rjwsacruncher" version))
               (sha256
                (base32
-                "0kqr2pd3smqxx0h35k8mf7wamdqpqrncjhmvbiap8bwbkhm4sqhb"))))
+                "0g9wbcgj97pn2z6b9lbh10pr54c3qaam5cxghvn2ppzd8ccwkkbb"))))
     (properties `((upstream-name . "rjwsacruncher")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml))
@@ -19444,13 +19444,13 @@ For a detailed description of the package, see Gelling, Schofield & Barker
 (define-public r-rje
   (package
     (name "r-rje")
-    (version "1.12.0")
+    (version "1.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rje" version))
               (sha256
                (base32
-                "0ykyv8sx6hm9qavca7zvdnyyl5haq6yvp0kkbhy58v76pwqwmmvz"))))
+                "07a1wbn5ps9ygfi25fffgmrzw90izj4yk8gxb47r85x6lvqv1p0h"))))
     (properties `((upstream-name . "rje")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19507,13 +19507,13 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RJDemetra" version))
               (sha256
                (base32
-                "1l97zicd0n3kvyjcrfq09wc8wawnfrs59n5nrx6s2dzh3cvyxvxr"))))
+                "1g54kzfb97zba5898bz90cba5nyjkhd00hw3azsaic6xa7dwz5gr"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
@@ -25221,13 +25221,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.4.9")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "revdbayes" version))
               (sha256
                (base32
-                "1m9xsqhgkx47wa4ya6f4yagyzjvrz3br9800h5zpaxj7smd86lbd"))))
+                "16dlsc5fqbsijnq3rlvvdd2bdyvx05fhzz7cbazfdxl3akpsc136"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-rcpparmadillo r-rcpp r-exdex r-bayesplot))
@@ -25584,13 +25584,13 @@ Core et al., (2022) <doi:10.1101/2022.05.31.494100>.")
 (define-public r-restoptr
   (package
     (name "r-restoptr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restoptr" version))
               (sha256
                (base32
-                "1dx1ksymil7mbdkargmhdnzp5x8hnjlxznxhxbqksz3iw6549503"))))
+                "0ksvzpikhbxjass2kbl70s5jjras2ylldnw3bgwz9499vbpn9raa"))))
     (properties `((upstream-name . "restoptr")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -25617,7 +25617,7 @@ Furthermore, multiple near-optimal solutions can be generated to explore
 multiple options in restoration planning.  The package leverages the
 Choco-solver software to perform optimization using constraint programming (CP)
 techniques (<https://choco-solver.org/>).")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-restimizeapi
   (package
@@ -34403,13 +34403,13 @@ GPGTools (https://gpgtools.org/).")
 (define-public r-rcrossref
   (package
     (name "r-rcrossref")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcrossref" version))
               (sha256
                (base32
-                "1n33skb3mwcn9xfd49p8m72z3kqz8n6dj48d286xdpd0zlcahqbh"))))
+                "0hqvhqmfmbhvxv555x3vjwz7rh4r2cw6wj8p3wq4hcf107r555c0"))))
     (properties `((upstream-name . "rcrossref")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -41581,13 +41581,13 @@ monotonically-transformed data.")
 (define-public r-rankcluster
   (package
     (name "r-rankcluster")
-    (version "0.94.5")
+    (version "0.98.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rankcluster" version))
               (sha256
                (base32
-                "1ddfcmiqy20s7sfjbxax0rvc9vb1ckr46icy1zsa103hhbp5pjqb"))))
+                "0lipl57xx6ik66579vmhammy86iwjlnc7qmkjn9xcj3prkqy5p2i"))))
     (properties `((upstream-name . "Rankcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))

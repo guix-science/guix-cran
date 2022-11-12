@@ -8014,13 +8014,13 @@ describing and investigating inter-cohort differences and life course dynamics."
 (define-public r-apcf
   (package
     (name "r-apcf")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apcf" version))
               (sha256
                (base32
-                "0r107kl7s2zaa5mvm3926ww01k4brh4qn7y729f7l2lnmy3zidx5"))))
+                "194w409gz052a8gcsdn3v68sqjcwrhb1ck712nljd0iy1mgdz6cs"))))
     (properties `((upstream-name . "apcf")))
     (build-system r-build-system)
     (inputs (list geos))
@@ -8031,9 +8031,10 @@ describing and investigating inter-cohort differences and life course dynamics."
     (description
      "The adapted pair correlation function transfers the concept of the pair
 correlation function from point patterns to patterns of objects of finite size
-and irregular shape (e.g. lakes within a country).  This is a reimplementation
-of the method suggested by Nuske et al. (2009)
-<doi:10.1016/j.foreco.2009.09.050> using the library GEOS'.")
+and irregular shape (e.g. lakes within a country).  The pair correlation
+function describes the spatial distribution of objects, e.g. random, aggregated
+or regularly spaced.  This is a reimplementation of the method suggested by
+Nuske et al. (2009) <doi:10.1016/j.foreco.2009.09.050> using the library GEOS'.")
     (license license:gpl3+)))
 
 (define-public r-apcanalysis

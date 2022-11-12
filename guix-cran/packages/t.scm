@@ -17927,13 +17927,13 @@ tune the detection algorithms and obtain the best possible results.")
 (define-public r-tesselle
   (package
     (name "r-tesselle")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tesselle" version))
               (sha256
                (base32
-                "11afr475gnaa0g2f0a2gx9zcsaqbfw5rfxy27f4pllccqapl6hys"))))
+                "1kbz26rinxwd8h3kazdalkb32l1hl623r9f3x072j857g2x9v5my"))))
     (properties `((upstream-name . "tesselle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tabula

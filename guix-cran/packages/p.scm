@@ -25503,19 +25503,17 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedquant" version))
               (sha256
                (base32
-                "1idi1vfhc8hs6lm6xzcn5jkgbjsn3fcj6c1c3c5ifzq1jckg48fa"))))
+                "0kg29nsywrx8xczk6zw2xl83f5g0wxf6iwkhgawq1am3anr64ck6"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-xml2
                              r-xefun
-                             r-webdriver
                              r-ttr
                              r-stringi
                              r-rvest

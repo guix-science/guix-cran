@@ -6546,13 +6546,13 @@ WaveD Transform in R, Journal of Statistical Software Volume 21, No.  3, 2007.")
 (define-public r-waveband
   (package
     (name "r-waveband")
-    (version "4.7.1")
+    (version "4.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waveband" version))
               (sha256
                (base32
-                "1ja8jfvv790s6ih50iz6zykpq06dbzqi28cp8vyqcd1iz2bkdixp"))))
+                "1aa1rdwpfj3fx3xc7i9h0la268yv7hsm1fxndq3rk5slzy12zq8z"))))
     (properties `((upstream-name . "waveband")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))

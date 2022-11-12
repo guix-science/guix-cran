@@ -24543,13 +24543,13 @@ analysis.")
 (define-public r-metrix
   (package
     (name "r-metrix")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metrix" version))
               (sha256
                (base32
-                "121g2vflwrrix1jjx26g4jxd6chdw6wghyp2adyvky45zckc9zi7"))))
+                "0ixp868pag05a6h4l8q4x55w0dg4xki4q6klfi9dzx82knzb7s9l"))))
     (properties `((upstream-name . "metrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-stringr r-matrix))
@@ -24557,8 +24557,7 @@ analysis.")
     (synopsis "Water Quality Metrics Calculator")
     (description
      "Calculate different metrics based on aquatic macroinvertebrate density data
-(individuals per square meter) to assess water quality (Prat N et al. (2009)
-<http://www.ub.edu/riosandes/docs/MacroIndLatinAmcompag0908.pdf>).")
+(individuals per square meter) to assess water quality (Prat N et al.  2009).")
     (license license:gpl3+)))
 
 (define-public r-metricsweighted

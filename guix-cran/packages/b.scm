@@ -13846,13 +13846,13 @@ co-word analysis.")
 (define-public r-biblio
   (package
     (name "r-biblio")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biblio" version))
               (sha256
                (base32
-                "079p0qzmi3sg2ff7ln9lg65lf7r402rldqfpxmfvckhm9s6b29b4"))))
+                "1mknfrkpapa88hlnzssv4k79xx9lg0ab34v88yhbnkm1xmmwrwq8"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlme r-stringr))
@@ -19451,17 +19451,18 @@ segmentation wrapper for all algorithms.")
 (define-public r-bayesppd
   (package
     (name "r-bayesppd")
-    (version "1.0.7")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesPPD" version))
               (sha256
                (base32
-                "1px8qkkranycj9q3ym7cj3g24y0wkayvp23175x1xp1i3k9k2ray"))))
+                "0nyzkg2lcvfk61xmxv7fjz626ik5bf9dbxfh6zyvjd9kjzw9kgdl"))))
     (properties `((upstream-name . "BayesPPD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
                              r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesPPD")
     (synopsis "Bayesian Power Prior Design")
     (description

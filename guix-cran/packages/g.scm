@@ -16451,13 +16451,13 @@ regions instead of the traditional height of the estimated density surface.")
 (define-public r-ggdemetra
   (package
     (name "r-ggdemetra")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdemetra" version))
               (sha256
                (base32
-                "1j0nwmv2acyrkpn230jj6yf5nnl40kpqdqaglrnrfqw5rp357krp"))))
+                "1vyjg7kzf9xq0kxrcjzr2nmd74dc35i9kpahz1wf9jvvq8l33w60"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjdemetra r-gridextra r-ggrepel r-ggplot2))
@@ -24591,13 +24591,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gausscov" version))
               (sha256
                (base32
-                "1k58x5ksf76ilj4h3qmknq60vq0mwwgxzllyh5r33jindn5q8nmh"))))
+                "0kyhxk38za6g5cflvibda8pvbwqzbqlpgwvg8603a50y0vg7vhhc"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -25681,17 +25681,18 @@ resulting fitted object.")
 (define-public r-gamlss-ggplots
   (package
     (name "r-gamlss-ggplots")
-    (version "1.0-0")
+    (version "2.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamlss.ggplots" version))
               (sha256
                (base32
-                "0z19jvgan08jijijcx5aswq2c4c5pbdyhhgb9idvhv7bir5qim06"))))
+                "1nzjfki007zky79xwi1mld7pxl6yg8snxdyh3zd9prndnbj6c85s"))))
     (properties `((upstream-name . "gamlss.ggplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggridges
                              r-ggplot2
+                             r-gamlss-inf
                              r-gamlss-foreach
                              r-gamlss-dist
                              r-gamlss

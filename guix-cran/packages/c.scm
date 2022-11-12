@@ -15240,13 +15240,13 @@ anomalize to detect time series outliers (Kandanaarachchi, Menendez 2020)
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "5.9")
+    (version "6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Compositional" version))
               (sha256
                (base32
-                "1w5ybdsbshlxd82zks2jiwbc2jnn5fjcj0pmdffq6n0z36myxgzd"))))
+                "0f17yj4zr69g70kayp0r25j6z2nqmhh06byp4vks8xiphah3jx4w"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -15299,8 +15299,11 @@ C. (2020).  A folded model for compositional data analysis.  Australian and New
 Zealand Journal of Statistics, 62(2):249--277. <doi:10.1111/anzs.12289>.  j)
 Alenazi A. (2021).  Alenazi, A. (2021).  A review of compositional data analysis
 and recent advances.  Communications in Statistics-Theory and Methods (Accepted
-for publication). <doi:10.1080/03610926.2021.2014890>.  k) Tsagris M., Alenazi
-A. and Stewart C. (2022).  Flexible non-parametric regression models for
+for publication). <doi:10.1080/03610926.2021.2014890>.  k) Tsagris M. and
+Stewart C. (2022).  A Review of Flexible Transformations for Modeling
+Compositional Data.  In Advances and Innovations in Statistics and Data Science,
+pp.  225--234. <doi:10.1007/978-3-031-08329-7_10>.  l) Tsagris M., Alenazi A.
+and Stewart C. (2022).  Flexible non-parametric regression models for
 compositional response data with zeros. <arXiv:2002.05137>.")
     (license license:gpl2+)))
 
@@ -26208,13 +26211,13 @@ the umbrella of the DFG (Deutsche Forschungsgemeinschaft) Research Unit TERSANE2
 (define-public r-chronochrt
   (package
     (name "r-chronochrt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chronochrt" version))
               (sha256
                (base32
-                "0jk9qw82nq5db3b4lzny3mmbynahs862yxgs2zliliwpzfgb8vxm"))))
+                "0r8aqx74c4rxacqf47hinpf5fy3lypxd5a1g7iqb1rbk1z4mkfj6"))))
     (properties `((upstream-name . "chronochrt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34424,13 +34427,13 @@ research, such as basic characteristic tables or descriptive statistics.")
 (define-public r-caroline
   (package
     (name "r-caroline")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "caroline" version))
               (sha256
                (base32
-                "0xhr4g020xyd2jzzpknw6zdh33ihsclwxrkkl4mclybj3xqn9x2q"))))
+                "1j1s4jli3pjl815fhmhz063y8aimz1qr14gacf9rvs7hyandlcbj"))))
     (properties `((upstream-name . "caroline")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=caroline")
@@ -34440,11 +34443,12 @@ research, such as basic characteristic tables or descriptive statistics.")
      "The caroline R library contains dozens of functions useful for: database
 migration (dbWriteTable2), database style joins & aggregation (nerge, groupBy &
 bestBy), data structure conversion (nv, tab2df), legend table making (sstable &
-leghead), plot annotation (labsegs & mvlabs), data visualization (violins, pies
-& raPlot), character string manipulation (m & pad), file I/O (write.delim),
-batch scripting and more.  The package's greatest contributions lie in the
-database style merge, aggregation and interface functions as well as in it's
-extensive use and propagation of row, column and vector names in most functions.")
+leghead), plot annotation (labsegs & mvlabs), data visualization (pies, distro
+dots, & raPlot), character string manipulation (m & pad), file I/O
+(write.delim), batch scripting and more.  The package's greatest contributions
+lie in the database style merge, aggregation and interface functions as well as
+in it's extensive use and propagation of row, column and vector names in most
+functions.")
     (license license:artistic2.0)))
 
 (define-public r-caroc
@@ -35382,13 +35386,13 @@ et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS (2007)
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.40.6")
+    (version "1.40.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "canvasXpress" version))
               (sha256
                (base32
-                "1jdx3yfl10s1y4wxa48dydrfb3j8a8b9aismvmqyf8gm11l4y218"))))
+                "05f78bah4h2phb6926x8gg1nbf094796jfg85c6hqaabks8f4qk9"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))

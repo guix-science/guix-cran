@@ -1397,13 +1397,13 @@ problems.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.0")
+    (version "5.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "huxtable" version))
               (sha256
                (base32
-                "0xc5ahbxprzlj6z5gj680b61na340vcvk3bc0gh9qjgknhdwgk8v"))))
+                "1ybfqldsla9y04qr4svcw1v7f38kcn6fjsgikdhnfngdz79md3x3"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list))
@@ -11261,13 +11261,13 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
 (define-public r-hablar
   (package
     (name "r-hablar")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hablar" version))
               (sha256
                (base32
-                "12gm5n3p2kmjwhkf60n4bjn3lrj7lrs5sgmvads9sfp2ckhaiysk"))))
+                "02d5rssggf8n67psjn8sw106y4vzndyp7sq43hfm4zqnpsxp0hgq"))))
     (properties `((upstream-name . "hablar")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-lubridate r-dplyr))
