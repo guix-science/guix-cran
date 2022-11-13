@@ -6462,21 +6462,22 @@ workflows (see <http://www.dominodatalab.com> for more information).")
 (define-public r-dogesr
   (package
     (name "r-dogesr")
-    (version "0.1.0")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dogesr" version))
               (sha256
                (base32
-                "1465vq5yhvhmc0apj8vlwmrqsy3g51iyn3ndv8rwd2zgbbfzcp30"))))
+                "086x3hvsmx5phxrp5mpy9l6z28xxgc4n3mgrg2byix2l8klhp0cg"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-rmarkdown r-qpdf r-knitr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dogesr")
     (synopsis "Work with the Doges/Dogaresse Dataset")
     (description
      "Work with data on Venetian doges and dogaresse, and use it for social network
-analysis.")
+analysis, as used in Merelo (2022) <arXiv:2209.07334>.")
     (license license:gpl3)))
 
 (define-public r-doex
@@ -8980,13 +8981,13 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (define-public r-distrtest
   (package
     (name "r-distrtest")
-    (version "2.8.0")
+    (version "2.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrTEst" version))
               (sha256
                (base32
-                "06rdcwfgbhc81zqisg414nj0kji59xvhm782b63hk54a8b2zwhh5"))))
+                "0s22g7sf2q0kj8qcl09vq8prnahmm3iqc0v66kzm6hmhc314k509"))))
     (properties `((upstream-name . "distrTEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-setrng r-distrsim))
@@ -9000,13 +9001,13 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (define-public r-distrteach
   (package
     (name "r-distrteach")
-    (version "2.8.1")
+    (version "2.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrTeach" version))
               (sha256
                (base32
-                "0ssy72clpffby4b07ynvmyfm5q4m93c204v70w5428kkjq6imf5w"))))
+                "0jf1v4nb900z7jcy3d34z86ykrn52xnimir1l0iv78dkh1kvwsqn"))))
     (properties `((upstream-name . "distrTeach")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-distrex r-distr))
@@ -9021,13 +9022,13 @@ secondary school.")
 (define-public r-distrsim
   (package
     (name "r-distrsim")
-    (version "2.8.0")
+    (version "2.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrSim" version))
               (sha256
                (base32
-                "0g16mljlz7fnb5k6c9h5vplm3n51sdbybv9cifbia0y6p9zml383"))))
+                "1z6x3bsxp9mrnnygx1048v4iadjs8kkqywjclsixmngb0nm69h61"))))
     (properties `((upstream-name . "distrSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-setrng r-distr))
@@ -9041,13 +9042,13 @@ family of packages.")
 (define-public r-distrrmetrics
   (package
     (name "r-distrrmetrics")
-    (version "2.8.0")
+    (version "2.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrRmetrics" version))
               (sha256
                (base32
-                "17kbl8b4q8w7il1f02yqr11filhbd5axjwwna20gvjim501jizwi"))))
+                "12ig5yqn0k1f14zi96ladl3f491jrmlpii2zi49n17rp7214ny14"))))
     (properties `((upstream-name . "distrRmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-fgarch r-fbasics r-distr))
@@ -9316,13 +9317,13 @@ special computational programs.")
 (define-public r-distrellipse
   (package
     (name "r-distrellipse")
-    (version "2.8.0")
+    (version "2.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrEllipse" version))
               (sha256
                (base32
-                "1ymfa8xpgs8zjp4psiwmll5z0vji496fivxmcavspzxy31cw70wx"))))
+                "0nv87i05aa72x9pj26z37j9cwlyzyhgjbv8bphnhvzf7df1a40r2"))))
     (properties `((upstream-name . "distrEllipse")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -9372,13 +9373,13 @@ explored and visualized.")
 (define-public r-distrdoc
   (package
     (name "r-distrdoc")
-    (version "2.8.0")
+    (version "2.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distrDoc" version))
               (sha256
                (base32
-                "1iq2gbfbsf3h279yh3fnqsi39gdw15vc6r1g33xcb8kgmmqmvf0p"))))
+                "1lrh3ml47h3d3j59dfqlbza1vh11b5m16am8ilc2dfbm230xnmf9"))))
     (properties `((upstream-name . "distrDoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -9402,13 +9403,13 @@ distrEllipse'.")
 (define-public r-distr
   (package
     (name "r-distr")
-    (version "2.8.0")
+    (version "2.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distr" version))
               (sha256
                (base32
-                "1dyff4m33xmw6hxb3jxzr8vvajg3qz3rfcrfxjxwsswlddfz0zdv"))))
+                "0fbxg7s8lx2xwrrnysnszhfhqgq0i6p8z135valwddv0s9d4dca4"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-sfsmisc r-mass))
@@ -21769,13 +21770,13 @@ comprehensive and up-to-date collection of open data from Switzerland.")
 (define-public r-datasailr
   (package
     (name "r-datasailr")
-    (version "0.8.10")
+    (version "0.8.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datasailr" version))
               (sha256
                (base32
-                "03bnrgpwhmh67zrvap3cbaqd5k6nkp63b2h8m08xrdp1ngp5inik"))))
+                "0ym1aqrlglha36z883yf92rm0fydg1qsdgdy48z32yk41xbhp5iy"))))
     (properties `((upstream-name . "datasailr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

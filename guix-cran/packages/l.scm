@@ -2380,13 +2380,13 @@ Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <arXiv:1810.01724>.")
 (define-public r-lpirfs
   (package
     (name "r-lpirfs")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpirfs" version))
               (sha256
                (base32
-                "13wqf9c5pf1dgingy02y1cx2iw3grx7vkqiqhw2dc78q26mpwmlq"))))
+                "01cvdznz1pyvxj0vixwq9av4vys23mrzzbjd8vnngsm6rmrwci2z"))))
     (properties `((upstream-name . "lpirfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -3083,13 +3083,13 @@ selfsame shiny app.")
 (define-public r-loon-ggplot
   (package
     (name "r-loon-ggplot")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loon.ggplot" version))
               (sha256
                (base32
-                "1cla27s6dd0mz2sann42waia800a7s42wchs7zb97qwjfl2gpmw5"))))
+                "15by2z3iy5p3frhb1y8rg17gbdds45b01qpcya210hia52b9vdlq"))))
     (properties `((upstream-name . "loon.ggplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -3098,7 +3098,8 @@ selfsame shiny app.")
                              r-loon
                              r-gridextra
                              r-ggplot2
-                             r-ggmulti))
+                             r-ggmulti
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=loon.ggplot")
     (synopsis "Grammar of Interactive Graphics")
@@ -13544,13 +13545,13 @@ Atmospheric Research.")
 (define-public r-latticedesign
   (package
     (name "r-latticedesign")
-    (version "2.0-4")
+    (version "2.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LatticeDesign" version))
               (sha256
                (base32
-                "1spmm9gk09i5dkz6xh4qvmq9r7wd9r8a84xqh8d21678kvl2j3fc"))))
+                "06pndvsp3v6gid46hcixh559pcmh2ckr9ss5065nbbrxhg2rf98b"))))
     (properties `((upstream-name . "LatticeDesign")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LatticeDesign")

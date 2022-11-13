@@ -130,13 +130,13 @@ by Zellner (1962) <doi:10.2307/2281644>, Zellner and Theil (1962)
 (define-public r-sysrecon
   (package
     (name "r-sysrecon")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Sysrecon" version))
               (sha256
                (base32
-                "1ny25nc7dzfp6r7b0qbrsd5ny6z22zgvpkax8n3kfd08fafvidyb"))))
+                "0qj0yvbfig6aphc7s10v5hhd30mn7rvdbzxkjfqnbzbfbvr5r2mz"))))
     (properties `((upstream-name . "Sysrecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -156,10 +156,15 @@ by Zellner (1962) <doi:10.2307/2281644>, Zellner and Theil (1962)
     (home-page "https://cran.r-project.org/package=Sysrecon")
     (synopsis "Systematical Metabolic Reconstruction")
     (description
-     "The tool that quantitatively and qualitatively specifies each reconstruction
-steps and can generate a template list of reconstruction steps dynamically
-selected from a reconstruction step reservoir, constructed based on all
-available published GSM papers.")
+     "In the past decade, genome-scale metabolic reconstructions have widely been used
+to comprehend the systems biology of metabolic pathways within an organism.
+Different GSMs are constructed using various techniques that require distinct
+steps, but the input data, information conversion and software tools are neither
+concisely defined nor mathematically or programmatically formulated in a
+context-specific manner.The tool that quantitatively and qualitatively specifies
+each reconstruction steps and can generate a template list of reconstruction
+steps dynamically selected from a reconstruction step reservoir, constructed
+based on all available published papers.")
     (license license:gpl3)))
 
 (define-public r-syslognet
@@ -18179,13 +18184,13 @@ Finlay-Wilkinson Model for Analysis of Multi-Environment Field Trials.")
 (define-public r-spfsr
   (package
     (name "r-spfsr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spFSR" version))
               (sha256
                (base32
-                "0xc6fj8wa0xzgzggiy0adjs69f5qfqv7gg9cackcpv16v54sgvzz"))))
+                "177yx24fgkdx8b82sd49cjp8dwghy85qbhns2a26ag05c1hcnwzp"))))
     (properties `((upstream-name . "spFSR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -19951,22 +19956,23 @@ supported.")
 (define-public r-spatstat-local
   (package
     (name "r-spatstat-local")
-    (version "4.1-5")
+    (version "5.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatstat.local" version))
               (sha256
                (base32
-                "0iq2xppfxp9aa3878z3l4q13qqzn3hg5v7cfv8z8m1mzmnw1r1y8"))))
+                "02ip6d2mr07n3lv4i5xdmb1j55syk5hwjwr7j81ibxkp3gj8gm61"))))
     (properties `((upstream-name . "spatstat.local")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor
                              r-spatstat-utils
                              r-spatstat-sparse
                              r-spatstat-random
+                             r-spatstat-model
                              r-spatstat-geom
+                             r-spatstat-explore
                              r-spatstat-data
-                             r-spatstat-core
                              r-spatstat))
     (home-page "https://cran.r-project.org/package=spatstat.local")
     (synopsis "Extension to 'spatstat' for Local Composite Likelihood")
@@ -19979,22 +19985,23 @@ regression').")
 (define-public r-spatstat-knet
   (package
     (name "r-spatstat-knet")
-    (version "2.0-1")
+    (version "3.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatstat.Knet" version))
               (sha256
                (base32
-                "1mxynbk5sclf94fbrf6vicc48hwmdpxhyxylcmpmlqji4nhs97vx"))))
+                "1yvdasrxmsa2m9016kclb33kv5893fsz5rcr416yhpf6jixdsfh8"))))
     (properties `((upstream-name . "spatstat.Knet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-sparse
                              r-spatstat-random
+                             r-spatstat-model
                              r-spatstat-linnet
                              r-spatstat-geom
+                             r-spatstat-explore
                              r-spatstat-data
-                             r-spatstat-core
                              r-spatstat
                              r-matrix))
     (home-page "https://cran.r-project.org/package=spatstat.Knet")
@@ -20009,21 +20016,22 @@ Baddeley and Nair (2019).")
 (define-public r-spatstat-gui
   (package
     (name "r-spatstat-gui")
-    (version "2.0-1")
+    (version "3.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatstat.gui" version))
               (sha256
                (base32
-                "1snvy4q0w4yn24n2yxyqvdi70i70zpqa7q13cm38d9135hm35cgk"))))
+                "1y6z3gdad0nhqg494b5pjq4h0mr3mcrhnnc0chy56lf8chb6p5jb"))))
     (properties `((upstream-name . "spatstat.gui")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-random
+                             r-spatstat-model
                              r-spatstat-linnet
                              r-spatstat-geom
+                             r-spatstat-explore
                              r-spatstat-data
-                             r-spatstat-core
                              r-spatstat
                              r-rpanel))
     (home-page "https://cran.r-project.org/package=spatstat.gui")
@@ -41341,13 +41349,13 @@ GPU acceleration is supported on Windows and Linux.")
 (define-public r-sentencepiece
   (package
     (name "r-sentencepiece")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sentencepiece" version))
               (sha256
                (base32
-                "16r13bdsi4s106y6j4ivdbsb4y5nzgbhizz043d43vjdmsibgpzf"))))
+                "1cfk450asadp3bbv1px64kf62rdhfak2drnq4y913jjjq4radxwh"))))
     (properties `((upstream-name . "sentencepiece")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

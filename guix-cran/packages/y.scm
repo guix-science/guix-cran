@@ -673,18 +673,18 @@ factorial experiment using Yates algorithm.")
 (define-public r-yatah
   (package
     (name "r-yatah")
-    (version "0.1.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yatah" version))
               (sha256
                (base32
-                "0ayy0h399g3csn106vvq6j4h6w0sgzw33b7gj1hk05nc8hdzrmna"))))
+                "0cckmslzm19kg7vkv28aq8h4yx8m2khqs9d6y98gwl64qrjiz42g"))))
     (properties `((upstream-name . "yatah")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-purrr r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/abichat/yatah")
+    (home-page "https://abichat.github.io/yatah/")
     (synopsis "Yet Another TAxonomy Handler")
     (description
      "This package provides functions to manage taxonomy when lineages are described

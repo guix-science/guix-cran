@@ -572,16 +572,16 @@ Census bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usmap" version))
               (sha256
                (base32
-                "1jdn9rl6kkfmr9d6wrg1673nr7xh5h14ynv2mx64xcn581c9jzis"))))
+                "1q27xxvfrwin61jxba2k91brgcam7hqq5yv5hha4f8s7h3rqam6b"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usmapdata))
+    (propagated-inputs (list r-usmapdata r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://usmap.dev")
     (synopsis "US Maps Including Alaska and Hawaii")

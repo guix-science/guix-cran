@@ -34969,13 +34969,13 @@ can be retrieved.")
 (define-public r-marmap
   (package
     (name "r-marmap")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marmap" version))
               (sha256
                (base32
-                "16r7in3m63l7fdwxwfdphcd4fr073fb675zabjxphpxmclikyxdz"))))
+                "01sglxz1hw3m767x1dy9fj1vwwm82dj8dcyqflnixp0df4bbk7pg"))))
     (properties `((upstream-name . "marmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

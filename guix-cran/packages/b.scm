@@ -1384,13 +1384,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BTSR" version))
               (sha256
                (base32
-                "1cd9l089fz0vpl9ldwq0zpr546wxwxw3q94777bmxkj53mmk6xns"))))
+                "1gb2fams84x682019wzx86aqpg64cnpz6bs9jp9pw8c8vhjkhj83"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

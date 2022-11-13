@@ -8856,13 +8856,13 @@ convert between coding schemes, and assign region descriptors.")
 (define-public r-countr
   (package
     (name "r-countr")
-    (version "3.5.5")
+    (version "3.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Countr" version))
               (sha256
                (base32
-                "0w2bdcr84zjcgcn2vrx2nib7dxq8vm12di3ni57z4yx4syskg3ik"))))
+                "0zmg0hy9h2rjj3a6h05q8xxg0q2q65agmpm0gxk0qjl97wrh1fcy"))))
     (properties `((upstream-name . "Countr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -8885,14 +8885,13 @@ convert between coding schemes, and assign region descriptors.")
                              r-car
                              r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Countr")
+    (home-page "https://geobosh.github.io/Countr/")
     (synopsis "Flexible Univariate Count Models Based on Renewal Processes")
     (description
      "Flexible univariate count models based on renewal processes.  The models may
 include covariates and can be specified with familiar formula syntax as in glm()
-and package flexsurv'.  The methodology is described in a forthcoming paper in
-the Journal of Statistical Software <doi:10.18637/jss.v090.i13> (included as
-vignette Countr_guide in the package).")
+and package flexsurv'.  The methodology is described by Kharrat et all (2019)
+<doi:10.18637/jss.v090.i13> (included as vignette Countr_guide in the package).")
     (license license:gpl2+)))
 
 (define-public r-countland
@@ -13742,13 +13741,13 @@ they take into account the dependence structure in the data.")
 (define-public r-confreq
   (package
     (name "r-confreq")
-    (version "1.6.0-3")
+    (version "1.6.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "confreq" version))
               (sha256
                (base32
-                "0lijjj355y5ihf3djh9swfk0x0xa4307y6a1i864xp2jh2v79hs9"))))
+                "05bwsj4xa3k7gngnf3ni8j0qw7yd7iycqkarpxm60dy8ayy68bs8"))))
     (properties `((upstream-name . "confreq")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd r-gmp))

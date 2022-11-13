@@ -6934,13 +6934,13 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-installr
   (package
     (name "r-installr")
-    (version "0.23.2")
+    (version "0.23.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "installr" version))
               (sha256
                (base32
-                "1xyzap1injimyib16srhbm0hchh1bcd5vg9d9wbvhf8dlpkaxw4q"))))
+                "1qlwcww3bgbdfqk2qi1vvis11bnvkkwa6h2l195knhx0i0ha8pfj"))))
     (properties `((upstream-name . "installr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))

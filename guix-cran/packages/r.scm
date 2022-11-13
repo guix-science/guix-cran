@@ -19,6 +19,7 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages prolog)
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages databases)
@@ -11680,31 +11681,23 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.4")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolog" version))
               (sha256
                (base32
-                "05a8wf2nkw3nssys9xbf40ihgbw4x6vjmzp2dcfsqxhr0wjmd7km"))))
+                "1j7pw9f0g2c6fvv8f7fsddfrmhkrxw8xa4k3byfqb2vdbygqndb1"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
-    (inputs (list zstd
-                  zlib
-                  zlib
-                  xz
-                  pandoc
-                  lz4
-                  libarchive
-                  expat
-                  cmake))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr pkg-config))
+    (inputs (list swi-prolog))
+    (propagated-inputs (list r-rswipl r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mgondan/rolog")
     (synopsis "Query 'SWI'-'Prolog' from R")
     (description
-     "This R package embeds SWI'-'Prolog', <https://www.swi-prolog.org/>, so that R
-can send deterministic and non-deterministic queries to prolog ('consult',
+     "This R package connects to SWI'-'Prolog', <https://www.swi-prolog.org/>, so that
+R can send deterministic and non-deterministic queries to prolog ('consult',
 query'/'submit', once', findall').")
     (license (license:fsdg-compatible "FreeBSD"))))
 
