@@ -1628,6 +1628,46 @@ GTFS data in time and space and to convert both representations to simple
 feature format.")
     (license license:expat)))
 
+(define-public r-gtfs2emis
+  (package
+    (name "r-gtfs2emis")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gtfs2emis" version))
+              (sha256
+               (base32
+                "1nh3m57xhh12sm18d5lvf0i9z4ayn6kgbmp036lw89wz10s42w6z"))))
+    (properties `((upstream-name . "gtfs2emis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-terra
+                             r-sfheaders
+                             r-sf
+                             r-gtfs2gps
+                             r-future
+                             r-furrr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ipeagit.github.io/gtfs2emis/")
+    (synopsis
+     "Estimating Public Transport Emissions from General Transit Feed Specification (GTFS) Data")
+    (description
+     "This package provides a bottom up model to estimate the emission levels of
+public transport systems based on General Transit Feed Specification (GTFS)
+data.  The package requires two main inputs: i) Public transport data in the
+GTFS standard format; and ii) Some basic information on fleet characteristics
+such as fleet age, technology, fuel and Euro stage.  As it stands, the package
+estimates several pollutants at high spatial and temporal resolutions.
+Pollution levels can be calculated for specific transport routes, trips, time of
+the day or for the transport system as a whole.  The output with emission
+estimates can be extracted in different formats, supporting analysis on how
+emission levels vary across space, time and by fleet characteristics.  A full
+description of the methods used in the gtfs2emis model is presented in Vieira,
+J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>.")
+    (license license:expat)))
+
 (define-public r-gtextras
   (package
     (name "r-gtextras")
@@ -7100,13 +7140,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "0.7.9")
+    (version "0.7.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpboost" version))
               (sha256
                (base32
-                "1xvm0z132dn5in3j06qz4bsixa8dw215amrvlbb4g7dkg2934am4"))))
+                "1ycvkf3k90qv61axdxlj4gfq3n7paaqwpryng0rxd0rb636i0hzi"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -7118,8 +7158,9 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 mixed effects models.  It also allows for independently doing tree-boosting as
 well as inference and prediction for Gaussian process and mixed effects models.
 See <https://github.com/fabsig/GPBoost> for more information on the software and
-Sigrist (2020) <arXiv:2004.02653> and Sigrist (2021) <arXiv:2105.08966> for more
-information on the methodology.")
+Sigrist (2022, JMLR) <https://www.jmlr.org/papers/v23/20-322.html> and Sigrist
+(2022, TPAMI) <doi:10.1109/TPAMI.2022.3168152> for more information on the
+methodology.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 

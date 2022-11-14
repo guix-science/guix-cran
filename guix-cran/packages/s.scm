@@ -4977,6 +4977,36 @@ Ryan (2017, ISBN: 978-1138819832) in their introductory textbook, Data Analysis.
 the transition between the book and R.")
     (license license:agpl3+)))
 
+(define-public r-superml
+  (package
+    (name "r-superml")
+    (version "0.5.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "superml" version))
+              (sha256
+               (base32
+                "159a80v9a1z2xq0xriqaa5xb7r5slww899vhng5l73c14615jzqw"))))
+    (properties `((upstream-name . "superml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-metrics
+                             r-data-table
+                             r-bh
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/saraswatmks/superml")
+    (synopsis
+     "Build Machine Learning Models Like Using Python's Scikit-Learn Library in R")
+    (description
+     "The idea is to provide a standard interface to users who use both R and Python
+for building machine learning models.  This package provides a scikit-learn's
+fit, predict interface to train machine learning models in R.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-supermice
   (package
     (name "r-supermice")

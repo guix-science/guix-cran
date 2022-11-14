@@ -16310,6 +16310,39 @@ separates signal from noise.  By using the algorithm, the modular structure of a
 matrix - or of the corresponding network - can be unraveled.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-rmt4ds
+  (package
+    (name "r-rmt4ds")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RMT4DS" version))
+              (sha256
+               (base32
+                "05fwhd36lvi21gr5nz8mgxk5qzw4vxkrgw499p11aa9qhcn8xq4g"))))
+    (properties `((upstream-name . "RMT4DS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rootsolve
+                             r-rmtstat
+                             r-rarpack
+                             r-quadprog
+                             r-pracma
+                             r-nleqslv
+                             r-mpoly
+                             r-mass
+                             r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RMT4DS")
+    (synopsis "Computation of Random Matrix Models")
+    (description
+     "We generate random variables following general Marchenko-Pastur distribution and
+Tracy-Widom distribution.  We compute limits and distributions of eigenvalues
+and generalized components of spiked covariance matrices.  We give estimation of
+all population eigenvalues of spiked covariance matrix model.  We give tests of
+population covariance matrix.  We also perform matrix denoising for
+signal-plus-noise model.")
+    (license license:expat)))
+
 (define-public r-rmt
   (package
     (name "r-rmt")
@@ -16545,6 +16578,35 @@ Yang (2018) <doi:10.3102/1076998617749561>.")
 Space.  It uses a Variation of Pattern Search Technique.  Described in the paper
 : Das (2016) <arXiv:1604.08616> .")
     (license license:gpl3)))
+
+(define-public r-rmost
+  (package
+    (name "r-rmost")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rMOST" version))
+              (sha256
+               (base32
+                "0v67mwp7p461vd9d7prvj5mpqa30z7i3bm5hfnbwgyw54c9j8ykf"))))
+    (properties `((upstream-name . "rMOST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rMOST")
+    (synopsis "Estimates Pareto-Optimal Solution for Hiring with 3 Objectives")
+    (description
+     "Estimates Pareto-optimal solution for personnel selection with 3 objectives
+using Normal Boundary Intersection (NBI) algorithm introduced by Das and Dennis
+(1998) <doi:10.1137/S1052623496307510>.  Takes predictor intercorrelations and
+predictor-objective relations as input and generates a series of solutions
+containing predictor weights as output.  Accepts between 3 and 10 selection
+predictors.  Maximum 2 objectives could be adverse impact objectives.  Partially
+modeled after De Corte (2006) TROFSS Fortran program
+<https://users.ugent.be/~wdecorte/trofss.pdf> and updated from ParetoR package
+described in Song et al. (2017) <doi:10.1037/apl0000240>.  For details, see Song
+et al. (in press).")
+    (license license:expat)))
 
 (define-public r-rmosek
   (package
@@ -19274,6 +19336,45 @@ JWSACruncher (<https://github.com/jdemetra/jwsacruncher/releases>) is a console
 tool that re-estimates all the multi-processing defined in a workspace and to
 export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
     (license license:gpl3)))
+
+(define-public r-rjtools
+  (package
+    (name "r-rjtools")
+    (version "1.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rjtools" version))
+              (sha256
+               (base32
+                "0l6l77i584g11p9xgp6mhvlgas3wmxc34xd0vw9ws42v7k1fpv8x"))))
+    (properties `((upstream-name . "rjtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yesno
+                             r-yaml
+                             r-xfun
+                             r-whisker
+                             r-tinytex
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-hunspell
+                             r-glue
+                             r-fs
+                             r-distill
+                             r-cranlogs
+                             r-cli
+                             r-callr
+                             r-bookdown))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rjournal/rjtools")
+    (synopsis
+     "Preparing, Checking, and Submitting Articles to the 'R Journal'")
+    (description
+     "Create an R Journal Rmarkdown template article, that will generate html and pdf
+versions of your paper.  Check that the paper folder has all the required
+components needed for submission.  Examples of R Journal publications can be
+found at <https://journal.r-project.org>.")
+    (license license:expat)))
 
 (define-public r-rjstat
   (package
@@ -23862,6 +23963,27 @@ prediction intervals with boosted forests (PIBF) as described in Alakus et al.
 (2021) <arXiv:2106.08217> and rfpi() builds 15 distinct variations of prediction
 intervals with random forests (RFPI) proposed by Roy and Larocque (2020)
 <doi:10.1177/0962280219829885>.")
+    (license license:gpl3+)))
+
+(define-public r-rfpm
+  (package
+    (name "r-rfpm")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RFPM" version))
+              (sha256
+               (base32
+                "1rhi1nn1xxc5qvxk2vwd96325pqwz45b2bvaq994glvlxniki3c1"))))
+    (properties `((upstream-name . "RFPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-lawstat r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RFPM")
+    (synopsis "Floating Percentile Model")
+    (description
+     "Floating Percentile Model with additional functions for optimizing inputs and
+evaluating outputs and assumptions.")
     (license license:gpl3+)))
 
 (define-public r-rfpermute
@@ -38421,6 +38543,37 @@ encouraged to make their own data visualizations using BMRB data.")
      "Creation, manipulation, simulation of linear Gaussian Bayesian networks from
 text files and more...")
     (license license:gpl2+)))
+
+(define-public r-rbmi
+  (package
+    (name "r-rbmi")
+    (version "1.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rbmi" version))
+              (sha256
+               (base32
+                "1l8jnp24a01s0acv529bmxdbxzalh1i9i8h35ikkagvrhbwss8sb"))))
+    (properties `((upstream-name . "rbmi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-pkgload
+                             r-mmrm
+                             r-matrix
+                             r-bh
+                             r-assertthat))
+    (home-page "https://insightsengineering.github.io/rbmi/")
+    (synopsis "Reference Based Multiple Imputation")
+    (description
+     "This package implements reference based multiple imputation allowing for the
+imputation of longitudinal datasets using predefined strategies.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rbmf
   (package

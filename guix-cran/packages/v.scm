@@ -2808,13 +2808,13 @@ Lacaille, A. Mourer and M. Olteanu
 (define-public r-vimp
   (package
     (name "r-vimp")
-    (version "2.2.5")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vimp" version))
               (sha256
                (base32
-                "13461pcvyc6rad1rf2ymmkyzcwjxw7g4fs8qd51baljhjnjmifv0"))))
+                "0gdxb1f5s3r15639zw5l1d2c5074k2xvn5dgdwc4ccqyh5ziqx08"))))
     (properties `((upstream-name . "vimp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2834,8 +2834,7 @@ Lacaille, A. Mourer and M. Olteanu
 algorithm-agnostic variable importance measures in high and low dimensions,
 using flexible estimators of the underlying regression functions.  For more
 information about the methods, please see Williamson et al. (Biometrics, 2020),
-Williamson et al. (arXiv, 2020+) <arXiv:2004.03683>, and Williamson and Feng
-(ICML, 2020).")
+Williamson et al. (JASA, 2021), and Williamson and Feng (ICML, 2020).")
     (license license:expat)))
 
 (define-public r-vimean

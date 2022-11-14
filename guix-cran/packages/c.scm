@@ -31283,6 +31283,39 @@ can be conducted using the two-step likelihood ratio test statistic by Sorrel,
 de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
     (license license:gpl3)))
 
+(define-public r-cdatanet
+  (package
+    (name "r-cdatanet")
+    (version "2.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CDatanet" version))
+              (sha256
+               (base32
+                "1lkkzi59vfy0j3427brr685c3qcw1axfr1f7zfgnam96hyb21p8b"))))
+    (properties `((upstream-name . "CDatanet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-formula-tools
+                             r-formula
+                             r-ddpcr))
+    (home-page "https://github.com/ahoundetoungan/CDatanet")
+    (synopsis "Modeling Count Data with Peer Effects")
+    (description
+     "Likelihood-based estimation and data generation from a class of models used to
+estimate peer effects on count data by controlling for the network endogeneity.
+This class includes count data models with social interactions (Houndetoungan
+2022; <doi:10.2139/ssrn.3721250>), spatial tobit models (Xu and Lee 2015;
+<doi:10.1016/j.jeconom.2015.05.004>), and spatial linear-in-means models (Lee
+2004; <doi:10.1111/j.1468-0262.2004.00558.x>).")
+    (license license:gpl3)))
+
 (define-public r-cdata
   (package
     (name "r-cdata")

@@ -16724,13 +16724,13 @@ that includes sensitivity analysis.")
 (define-public r-mlece
   (package
     (name "r-mlece")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MLEce" version))
               (sha256
                (base32
-                "0h3x008zi540akjdwww4v04faff34siqzjrsbrzr7iy3rjvxga9n"))))
+                "0m5fa2167dyprcc3agmdvfjgd0qvnnqn5y6xqm2w3rmgvilhp24r"))))
     (properties `((upstream-name . "MLEce")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt

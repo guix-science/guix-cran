@@ -1916,6 +1916,41 @@ aligned REGULAR, one on the FRIEDMAN, and one on the KOCH ranks.  In these rank
 tests, only the resulting values for the interaction are relevant.")
     (license license:gpl2+)))
 
+(define-public r-npi
+  (package
+    (name "r-npi")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "npi" version))
+              (sha256
+               (base32
+                "0akf9m46iy18nqm678sga1dxq1135jj33yrxz30yhd75w6nicgri"))))
+    (properties `((upstream-name . "npi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-checkmate
+                             r-checkluhn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/npi/")
+    (synopsis "Access the U.S. National Provider Identifier Registry API")
+    (description
+     "Access the United States National Provider Identifier Registry API
+<https://npiregistry.cms.hhs.gov/api/>.  Obtain and transform administrative
+data linked to a specific individual or organizational healthcare provider, or
+perform advanced searches based on provider name, location, type of service,
+credentials, and other attributes exposed by the API.")
+    (license license:expat)))
+
 (define-public r-nphrct
   (package
     (name "r-nphrct")

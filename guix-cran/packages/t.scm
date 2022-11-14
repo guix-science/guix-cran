@@ -11266,6 +11266,40 @@ Ecology Resources, 17: 608-613.
 point in the circadian cycle at which the stimulus occurs.")
     (license license:gpl2)))
 
+(define-public r-tip
+  (package
+    (name "r-tip")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tip" version))
+              (sha256
+               (base32
+                "11khhkszd5a81q0h6acx5rvp1k97qj1srcvz2jilwf3v6nrz7daz"))))
+    (properties `((upstream-name . "tip")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-network
+                             r-mniw
+                             r-laplacesdemon
+                             r-igraph
+                             r-ggplot2
+                             r-ggally
+                             r-foreach
+                             r-doparallel
+                             r-changepoint))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tip")
+    (synopsis "Bayesian Clustering Using the Table Invitation Prior (TIP)")
+    (description
+     "Cluster data without specifying the number of clusters using the Table
+Invitation Prior (TIP) introduced in the paper \"Clustering Gene Expression Using
+the Table Invitation Prior\" by Charles W. Harrison, Qing He, and Hsin-Hsiung
+Huang (2022) <doi:10.3390/genes13112036>.  TIP is a Bayesian prior that uses
+pairwise distance and similarity information to cluster vectors, matrices, or
+tensors.")
+    (license license:expat)))
+
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")

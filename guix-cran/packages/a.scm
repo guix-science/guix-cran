@@ -9429,6 +9429,35 @@ names may vary among accessions.  Borstein & O'Meara (2018)
 idea of what the packages we are loading are meant for.")
     (license license:expat)))
 
+(define-public r-annoprobe
+  (package
+    (name "r-annoprobe")
+    (version "0.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AnnoProbe" version))
+              (sha256
+               (base32
+                "0715bpifj8r4ji0m89wk4x7vd3pwx8kqy9vs8m0ivmq7bb56nx0b"))))
+    (properties `((upstream-name . "AnnoProbe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-pheatmap
+                             r-httr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dt
+                             r-curl
+                             r-biobase))
+    (home-page "https://github.com/jmzeng1314/AnnoProbe")
+    (synopsis "Annotate the Gene Symbols for Probes in Expression Array")
+    (description
+     "We curated 147 of expression array, from 3 species(human,mouse,rat), 3
+companies('Affymetrix','Illumina','Agilent'), by aligning the Fasta sequences of
+all probes of each platform to their corresponding reference genome, and then
+annotate them to genes.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-ann2
   (package
     (name "r-ann2")

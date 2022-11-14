@@ -12307,6 +12307,32 @@ changes than first-order differences across heterogeneous patterns.")
 images, and data frames).")
     (license license:expat)))
 
+(define-public r-diffval
+  (package
+    (name "r-diffval")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "diffval" version))
+              (sha256
+               (base32
+                "1jz5zqk6pkprkiln8finnifh3l2859mql156rklsaabhbb6x2ras"))))
+    (properties `((upstream-name . "diffval")))
+    (build-system r-build-system)
+    (home-page "https://gitlab.com/point-veg/diffval")
+    (synopsis "Vegetation Patterns")
+    (description
+     "Find, visualize and explore patterns of differential taxa in vegetation data
+(namely in a phytosociological table), using the Differential Value (DiffVal).
+Patterns are searched through mathematical optimization algorithms.  Ultimately,
+Total Differential Value (TDV) optimization aims at obtaining classifications of
+vegetation data based on differential taxa, as in the traditional geobotanical
+approach.  The Gurobi optimizer, as well as the R package gurobi', can be
+installed from <https://www.gurobi.com/products/gurobi-optimizer/>.  The useful
+vignette Gurobi Installation Guide, from package prioritizr', can be found here:
+<https://prioritizr.net/articles/gurobi_installation_guide.html>.")
+    (license license:gpl3+)))
+
 (define-public r-diffusr
   (package
     (name "r-diffusr")
@@ -20726,6 +20752,41 @@ taking an initial sample, fitting in memory, then evaluating the score function
 for the full data in the database.  Thomas Lumley
 <doi:10.1080/10618600.2019.1610312>.")
     (license license:expat)))
+
+(define-public r-dbgapcheckup
+  (package
+    (name "r-dbgapcheckup")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dbGaPCheckup" version))
+              (sha256
+               (base32
+                "0gi1n4nbzz2d3z2y39x6n8l15w6x4vh47332rkpl2iba69xhjcb5"))))
+    (properties `((upstream-name . "dbGaPCheckup")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rmarkdown
+                             r-rlang
+                             r-readxl
+                             r-questionr
+                             r-purrr
+                             r-pander
+                             r-magrittr
+                             r-labelled
+                             r-ggplot2
+                             r-formatr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lwheinsberg.github.io/dbGaPCheckup/")
+    (synopsis "dbGaP Checkup")
+    (description
+     "This package contains functions that check for formatting of the Subject
+Phenotype data set and data dictionary as specified by the National Center for
+Biotechnology Information (NCBI) Database of Genotypes and Phenotypes (dbGaP)
+<https://www.ncbi.nlm.nih.gov/gap/docs/submissionguide/>.")
+    (license license:gpl2)))
 
 (define-public r-dbflobr
   (package

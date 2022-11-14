@@ -12859,6 +12859,27 @@ maxima modelling, (v) estimation of VaR and CVaR, and (vi) the computation of
 the extreme index.")
     (license license:gpl2+)))
 
+(define-public r-fetchsalesforcer
+  (package
+    (name "r-fetchsalesforcer")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fetchSalesforceR" version))
+              (sha256
+               (base32
+                "1826i031wndasgcxxa0bh88vp1r49flzphyfk79pixvlrfjn6gi8"))))
+    (properties `((upstream-name . "fetchSalesforceR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Data from Salesforce via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Salesforce using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-festa
   (package
     (name "r-festa")

@@ -3696,39 +3696,6 @@ Down Plot presents variable contributions in a concise graphical way.  This
 package work for binary classifiers and general regression models.")
     (license license:gpl2)))
 
-(define-public r-breakaway
-  (package
-    (name "r-breakaway")
-    (version "4.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "breakaway" version))
-              (sha256
-               (base32
-                "1mfbzfsqqyfmhkm32qb5237q9n8qwjbqk5vsszs5lkfwi42fz3by"))))
-    (properties `((upstream-name . "breakaway")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-phyloseq
-                             r-mass
-                             r-magrittr
-                             r-lme4
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://adw96.github.io/breakaway/")
-    (synopsis "Species Richness Estimation and Modeling")
-    (description
-     "Understanding the drivers of microbial diversity is an important frontier of
-microbial ecology, and investigating the diversity of samples from microbial
-ecosystems is a common step in any microbiome analysis.  breakaway is the
-premier package for statistical analysis of microbial diversity.  breakaway
-implements the latest and greatest estimates of species richness, described in
-Willis and Bunge (2015) <doi:10.1111/biom.12332>, Willis et al. (2017)
-<doi:10.1111/rssc.12206>, and Willis (2016) <arXiv:1604.02598>, as well as the
-most commonly used estimates, including the objective Bayes approach described
-in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
-    (license license:gpl2)))
-
 (define-public r-bread
   (package
     (name "r-bread")
@@ -19660,6 +19627,41 @@ also uses Stochastic Search Variable Selection to determine what covariates
 drive the risk of the event.  This function outputs trace plots depicting the
 number of split points in the hazard and the number of variables included in the
 hazard.  The function saves all posterior quantities to the desired path.")
+    (license license:gpl2)))
+
+(define-public r-bayesorddesign
+  (package
+    (name "r-bayesorddesign")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesOrdDesign" version))
+              (sha256
+               (base32
+                "1417zd1n5sip999n6q6bgs85c0000ksl73a4p94y0lmdn27i8pmj"))))
+    (properties `((upstream-name . "BayesOrdDesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superdiag
+                             r-schoolmath
+                             r-rjmcmc
+                             r-rjags
+                             r-r2jags
+                             r-ordinal
+                             r-madness
+                             r-gsdesign
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=BayesOrdDesign")
+    (synopsis "Bayesian Group Sequential Design for Ordinal Data")
+    (description
+     "The proposed group-sequential trial design is based on Bayesian methods for
+ordinal endpoints, including three methods, the proportional-odds-model
+(PO)-based, non-proportional-odds-model (NPO)-based, and PO/NPO
+switch-model-based designs, which makes our proposed methods generic to be able
+to deal with various scenarios.  Richard J. Barker, William A. Link (2013)
+<doi:10.1080/00031305.2013.791644>.  Thomas A. Murray, Ying Yuan, Peter F.
+Thall, Joan H. Elizondo, Wayne L.Hofstetter (2018) <doi:10.1111/biom.12842>.
+Chengxue Zhong, Haitao Pan, Hongyu Miao (2021) <arXiv:2108.06568>.")
     (license license:gpl2)))
 
 (define-public r-bayesnsgp
