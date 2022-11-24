@@ -229,16 +229,20 @@ as at <https://predanalyticssessions1.shinyapps.io/chisquareVarianceTest/>.")
 (define-public r-vtree
   (package
     (name "r-vtree")
-    (version "5.4.6")
+    (version "5.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtree" version))
               (sha256
                (base32
-                "03n79xn4wr4hqrj571781igd07dw0sxfi6cnvmhmshc0brzkz7s9"))))
+                "1skx7njbr1wmzbmbm876zp9ci971r9q49wc6g38mk4y83vhggwy2"))))
     (properties `((upstream-name . "vtree")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rsvg r-htmlwidgets r-diagrammersvg
+    (propagated-inputs (list r-utf8
+                             r-shiny
+                             r-rsvg
+                             r-htmlwidgets
+                             r-diagrammersvg
                              r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nbarrowman/vtree")
@@ -1052,13 +1056,13 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voluModel" version))
               (sha256
                (base32
-                "0v8b9icr4sbfrbcv7skrwvgz7z2mk9bf9n5sqyl7wycbbgjim6x5"))))
+                "1v534vqn08i73rw79wjqajdykq9jyfdddi04p59r71qwql125321"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1068,6 +1072,7 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
                              r-raster
                              r-rangebuilder
                              r-latticeextra
+                             r-lattice
                              r-ggtext
                              r-ggplot2
                              r-fields
@@ -1299,6 +1304,27 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
 and build package in a clean environment.  Vagrant tool and a provider (such as
 Virtualbox') have to be installed.")
     (license license:gpl3+)))
+
+(define-public r-vmf
+  (package
+    (name "r-vmf")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vMF" version))
+              (sha256
+               (base32
+                "1sygiqyzqikrpdiav0117hnv6zynq1d415v73ygjfj4c1v5l05h0"))))
+    (properties `((upstream-name . "vMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahoundetoungan/vMF")
+    (synopsis "Sampling from von Mises-Fisher Distribution")
+    (description
+     "This package provides fast sampling from von Mises-Fisher distribution using the
+method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.")
+    (license license:gpl3)))
 
 (define-public r-vmeasur
   (package
@@ -2045,13 +2071,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vistla" version))
               (sha256
                (base32
-                "1cbhx2kc5ha25hv0y3hq73iivvq8j96128c4r03hl9j853374wap"))))
+                "1x5iighpdx1mf3gips1b5j39z2f52kjs2dd3b3l58v391j4q36sx"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
@@ -4622,13 +4648,13 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
 (define-public r-vcr
   (package
     (name "r-vcr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcr" version))
               (sha256
                (base32
-                "09czjh17lsrfi4h8qjivzb4b0hvsssqp6n4lbj04y5nnrfm0j8ma"))))
+                "12xiw53dba7dcsdfb8c2cg4v6i9jzhf42plw6hwfp9v65bmq3b83"))))
     (properties `((upstream-name . "vcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -4638,7 +4664,6 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
                              r-r6
                              r-httr
                              r-crul
-                             r-cpp11
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page
@@ -5847,13 +5872,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.9.0")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vapour" version))
               (sha256
                (base32
-                "013yx2s9swhvca5jdjfagxql69srzvj340hlivp2jc1cx95mjp30"))))
+                "0g7jikkagqnqblyskfsd9wv2czx75v172z6rrdn2bf25m0hwcpw0"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (inputs (list zlib proj gdal))

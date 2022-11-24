@@ -571,13 +571,13 @@ adjusted effect sizes.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yfR" version))
               (sha256
                (base32
-                "1cfz7fym2agjwna7bqscjd6mkpx07zgc3xvmp1xyrcvjs2dzwn93"))))
+                "1zqsa6d69klwz95q47fkr5vh6vzcx48ypfyhwbwz7r2krbma8lbh"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -588,13 +588,13 @@ adjusted effect sizes.")
                              r-readr
                              r-quantmod
                              r-purrr
+                             r-pingr
                              r-magrittr
                              r-lubridate
                              r-humanize
                              r-future
                              r-furrr
                              r-dplyr
-                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/yfR")
@@ -879,13 +879,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "0.9.8")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yamlet" version))
               (sha256
                (base32
-                "0sc6mkqdfzmv9y75b0kqxly3b6amhj899l0dqprlz1ncrx3d2bb3"))))
+                "1snsvfshj7xw4lpzk4jgfpzzcqgxmy80jppqig5k27kk3v7a53lf"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

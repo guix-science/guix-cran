@@ -1384,13 +1384,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BTSR" version))
               (sha256
                (base32
-                "1gb2fams84x682019wzx86aqpg64cnpz6bs9jp9pw8c8vhjkhj83"))))
+                "0zxqnf17qs4507k754wj5lzzfx1304yv8k07qk4zzdsi10mamdf4"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1967,13 +1967,13 @@ APT, ALPM.")
 (define-public r-bsplus
   (package
     (name "r-bsplus")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bsplus" version))
               (sha256
                (base32
-                "1grn2i2xxq5fhkqb7lqsfhbfckr6i3ddy7mikgxz6lifk4rc4mxx"))))
+                "0bf8qvj7pk3xn7g4p89as1xzx56c75n842g27rj6lcgsf9rdmv9g"))))
     (properties `((upstream-name . "bsplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2252,6 +2252,26 @@ based on Matsuoka et al. (2012) <doi:10.1525/auk.2012.11190>, Solymos et al.
 <doi:10.1650/CONDOR-18-32.1>, and sound attenuation experiments by Yip et al.
 (2017) <doi:10.1650/CONDOR-16-93.1>.")
     (license license:gpl2)))
+
+(define-public r-bsicons
+  (package
+    (name "r-bsicons")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bsicons" version))
+              (sha256
+               (base32
+                "1506p4sskwgszam1vk5slw9nznki6gdf1s95s8cpfa3dih3lbjby"))))
+    (properties `((upstream-name . "bsicons")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-htmltools))
+    (home-page "https://github.com/rstudio/bsicons")
+    (synopsis "Easily Work with 'Bootstrap' Icons")
+    (description
+     "Easily use Bootstrap icons inside Shiny apps and R Markdown documents.  More
+generally, icons can be inserted in any htmltools document through inline SVG'.")
+    (license license:expat)))
 
 (define-public r-bshazard
   (package
@@ -3696,19 +3716,52 @@ Down Plot presents variable contributions in a concise graphical way.  This
 package work for binary classifiers and general regression models.")
     (license license:gpl2)))
 
+(define-public r-breakaway
+  (package
+    (name "r-breakaway")
+    (version "4.8.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "breakaway" version))
+              (sha256
+               (base32
+                "08mxp41d79iaqbz96bpzw7halasijghv0557ccz5p563y5lk3n3m"))))
+    (properties `((upstream-name . "breakaway")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-phyloseq
+                             r-mass
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://adw96.github.io/breakaway/")
+    (synopsis "Species Richness Estimation and Modeling")
+    (description
+     "Understanding the drivers of microbial diversity is an important frontier of
+microbial ecology, and investigating the diversity of samples from microbial
+ecosystems is a common step in any microbiome analysis.  breakaway is the
+premier package for statistical analysis of microbial diversity.  breakaway
+implements the latest and greatest estimates of species richness, described in
+Willis and Bunge (2015) <doi:10.1111/biom.12332>, Willis et al. (2017)
+<doi:10.1111/rssc.12206>, and Willis (2016) <arXiv:1604.02598>, as well as the
+most commonly used estimates, including the objective Bayes approach described
+in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
+    (license license:gpl2)))
+
 (define-public r-bread
   (package
     (name "r-bread")
-    (version "0.2.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bread" version))
               (sha256
                (base32
-                "04kgr0f6m1mfczyp46gafkcfxs6lz2yf6qwzbyh04z4psnn3xpyh"))))
+                "0pgcrasqmsa5hq9a50w03fay898zzh2h0lb755pfbna70s6gxxgs"))))
     (properties `((upstream-name . "bread")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-dplyr r-data-table))
+    (propagated-inputs (list r-data-table))
     (home-page "https://github.com/MagicHead99/bread/")
     (synopsis "Analyze Big Files Without Loading Them in Memory")
     (description
@@ -6487,39 +6540,6 @@ by a tree.  Method described in Ochoa and Storey (2021)
 <doi:10.1371/journal.pgen.1009241>.")
     (license license:gpl3+)))
 
-(define-public r-bnpmixcluster
-  (package
-    (name "r-bnpmixcluster")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BNPMIXcluster" version))
-              (sha256
-               (base32
-                "1dnylvag24zqp93acdbn0ilbdzbn250pjjp6hjdd9d1zvla2ck85"))))
-    (properties `((upstream-name . "BNPMIXcluster")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plyr
-                             r-mvtnorm
-                             r-matrixcalc
-                             r-mass
-                             r-gplots))
-    (home-page "https://github.com/christianu7/BNPMIXcluster")
-    (synopsis
-     "Bayesian Nonparametric Model for Clustering with Mixed Scale Variables")
-    (description
-     "Model-based approach for clustering of multivariate data, capable of combining
-different types of variables (continuous, ordinal and nominal) and accommodating
-for different sampling probabilities in a complex survey design.  The model is
-based on a location mixture model with a Poisson-Dirichlet process prior on the
-location parameters of the associated latent variables.  Details of the
-underlying model is described in Carmona, C., Nieto-Barajas, L. E., Canale, A.
-(2016) <arXiv:1612.00083>.")
-    (license license:expat)))
-
 (define-public r-bnpmix
   (package
     (name "r-bnpmix")
@@ -6797,13 +6817,13 @@ number of clusters.  References: P. Suter et al. (2021)
 (define-public r-bnclassify
   (package
     (name "r-bnclassify")
-    (version "0.4.6")
+    (version "0.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnclassify" version))
               (sha256
                (base32
-                "00akv7mg4mn7kk98r6ja3yx9h822b8hnv1k890i8kwsra3c2qgid"))))
+                "010447r21i5r2nk843v8dmfncqgmp4yf71ahcrppqv8vxfywcg6i"))))
     (properties `((upstream-name . "bnclassify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -7937,6 +7957,36 @@ site generator Hugo (<https://gohugo.io>) best, and it also supports Jekyll
 (<https://jekyllrb.com>) and Hexo (<https://hexo.io>).")
     (license license:gpl3)))
 
+(define-public r-blocs
+  (package
+    (name "r-blocs")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blocs" version))
+              (sha256
+               (base32
+                "18bajdr56d60fp1irgc3iyq758c1gwprvm3v9cvx9zvx9kdgnpa3"))))
+    (properties `((upstream-name . "blocs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-mgcv
+                             r-ks
+                             r-ggplot2
+                             r-dplyr
+                             r-collapse))
+    (home-page "https://cran.r-project.org/package=blocs")
+    (synopsis "Estimate and Visualize Voting Blocs' Partisan Contributions")
+    (description
+     "This package provides functions to combine data on voting blocs size, turnout,
+and vote choice to estimate each bloc's vote contributions to the Democratic and
+Republican parties.  The package also includes functions for uncertainty
+estimation and plotting.  Users may define voting blocs along a discrete or
+continuous variable.  The package implements methods described in Grimmer,
+Marble, and Tanigawa-Lau (2022) <doi:10.31235/osf.io/c9fkg>.")
+    (license license:gpl3+)))
+
 (define-public r-blocksdesign
   (package
     (name "r-blocksdesign")
@@ -8291,6 +8341,34 @@ as logistic regression, Bayesian additive regression trees (BART), or random
 forests.  The experiments are reproducible and illustrated using a simple
 vignette.  LICENSE: GPL-3 + file license.")
     (license license:gpl3)))
+
+(define-public r-blindrecalc
+  (package
+    (name "r-blindrecalc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blindrecalc" version))
+              (sha256
+               (base32
+                "0ymcmakk8wwg72rcwj1nankw3bbdp29mr5vymaw04padwsrmbf20"))))
+    (properties `((upstream-name . "blindrecalc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/imbi-heidelberg/blindrecalc")
+    (synopsis "Blinded Sample Size Recalculation")
+    (description
+     "Computation of key characteristics and plots for blinded sample size
+recalculation.  Continuous as well as binary endpoints are supported in
+superiority and non-inferiority trials.  See Baumann, Pilz, Kieser (2022)
+<doi:10.32614/RJ-2022-001> for a detailed description.  The implemented methods
+include the approaches by Lu, K. (2019) <doi:10.1002/pst.1737>, Kieser, M. and
+Friede, T. (2000)
+<doi:10.1002/(SICI)1097-0258(20000415)19:7%3C901::AID-SIM405%3E3.0.CO;2-L>,
+Friede, T. and Kieser, M. (2004) <doi:10.1002/pst.140>, Friede, T., Mitchell,
+C., Mueller-Veltern, G. (2007) <doi:10.1002/bimj.200610373>, and Friede, T. and
+Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
+    (license license:expat)))
 
 (define-public r-blendstat
   (package
@@ -9422,13 +9500,13 @@ for examples and test script templates.")
 (define-public r-bisdata
   (package
     (name "r-bisdata")
-    (version "0.2-0")
+    (version "0.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BISdata" version))
               (sha256
                (base32
-                "0d5dxb0jmiazbkmjmm0babv3hxgx74b9v7j08yhy5w3zl1fvlyr2"))))
+                "0xmm40d9ag2g5j0lsy46ig3plzcqrw2p3iaciimw2y0v4fa8n3gh"))))
     (properties `((upstream-name . "BISdata")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/BISdata/")
@@ -9469,6 +9547,33 @@ appropriate for bivariate mapping and scale functions for ggplot2 calls that
 adds those palettes to maps.  Tools for creating bivariate legends are also
 included.")
     (license license:gpl3)))
+
+(define-public r-bis
+  (package
+    (name "r-bis")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BIS" version))
+              (sha256
+               (base32
+                "1nmbcdk4p34grss2bwwqw5zynp5c2xfhhqs9h9s85nhdm7ark78v"))))
+    (properties `((upstream-name . "BIS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tidyr
+                             r-rvest
+                             r-readr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.bis.org")
+    (synopsis "Programmatic Access to Bank for International Settlements Data")
+    (description
+     "This package provides an interface to data provided by the Bank for
+International Settlements <https://www.bis.org>, allowing for programmatic
+retrieval of a large quantity of (central) banking data.")
+    (license license:cc0)))
 
 (define-public r-birtr
   (package
@@ -10855,33 +10960,6 @@ additional, optional data.  Lastly, inoculum and substrate mass can be
 determined for planning BMP experiments.")
     (license license:gpl2)))
 
-(define-public r-bioftf
-  (package
-    (name "r-bioftf")
-    (version "1.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BioFTF" version))
-              (sha256
-               (base32
-                "03r6fhpc4dqrcnbl73j9kav1l7rblgfldpbkl2p367vv20xggqih"))))
-    (properties `((upstream-name . "BioFTF")))
-    (build-system r-build-system)
-    (home-page "https://www.r-project.org")
-    (synopsis "Biodiversity Assessment Using Functional Tools")
-    (description
-     "The main drawback of the most common biodiversity indices is that different
-measures may lead to different rankings among communities.  This instrument
-overcomes this limit using some functional tools with the diversity profiles.
-In particular, the derivatives, the curvature, the radius of curvature, the arc
-length, and the surface area are proposed.  The goal of this method is to
-interpret in detail the diversity profiles and obtain an ordering between
-different ecological communities on the basis of diversity.  In contrast to the
-typical indices of diversity, the proposed method is able to capture the
-multidimensional aspect of biodiversity, because it takes into account both the
-evenness and the richness of the species present in an ecological community.")
-    (license license:gpl2+)))
-
 (define-public r-biodry
   (package
     (name "r-biodry")
@@ -10911,13 +10989,13 @@ muleMan() functions.")
 (define-public r-biodosetools
   (package
     (name "r-biodosetools")
-    (version "3.6.0")
+    (version "3.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biodosetools" version))
               (sha256
                (base32
-                "06i6vg0n98x91j8mkh0mbh4m7a34ghr22x6msrhdig0xh522ia5z"))))
+                "013nqdqrv5h3swzqss2kazsp06wrs57zri3aaidy92wrd6v24bsh"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10927,13 +11005,11 @@ muleMan() functions.")
                              r-rmarkdown
                              r-rlang
                              r-rhandsontable
-                             r-pkgload
                              r-msm
                              r-mixtools
                              r-maxlik
                              r-mass
                              r-magrittr
-                             r-htmltools
                              r-golem
                              r-ggplot2
                              r-dplyr
@@ -12752,13 +12828,13 @@ data.table'.")
 (define-public r-bigquic
   (package
     (name "r-bigquic")
-    (version "1.1-11")
+    (version "1.1-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BigQuic" version))
               (sha256
                (base32
-                "1dxzkj26hd05mi02i35k7dknlikjfbsgvjrqwf42k3kjpf501xh4"))))
+                "14mz9ry72zc4c0fhc59dima66qnksr1masvhzm1j8z8r11w7qjhd"))))
     (properties `((upstream-name . "BigQuic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scalreg r-rcpp r-matrix))
@@ -18748,17 +18824,16 @@ Science Framework (May 18).")
 (define-public r-bayesvarsel
   (package
     (name "r-bayesvarsel")
-    (version "2.0.1")
+    (version "2.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesVarSel" version))
               (sha256
                (base32
-                "1107amhj3bclc434qizffjfmsa2w36qkp6gq7vgl0hwv0ncc0vyn"))))
+                "0kdi1v7wi22p83fl7ldyzhc6gh4pn8ig339yz7a36wl5xr80cij0"))))
     (properties `((upstream-name . "BayesVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/comodin19/BayesVarSel")
     (synopsis
      "Bayes Factors, Model Choice and Variable Selection in Linear Models")
@@ -19339,6 +19414,44 @@ covariates in the Cox model.  Functions included to return the posterior mean
 hazard and survival functions for the piecewise exponential and piecewise linear
 log-hazard models.  Chapple, AG, Peak, T, Hemal, A (2020).  Under Revision.")
     (license license:gpl2)))
+
+(define-public r-bayesrel
+  (package
+    (name "r-bayesrel")
+    (version "0.7.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Bayesrel" version))
+              (sha256
+               (base32
+                "06y3f69hccpf92mrdw03alcmnn5r4rg9svcqyvz44x1hjn02l2ah"))))
+    (properties `((upstream-name . "Bayesrel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-lavaan
+                             r-laplacesdemon
+                             r-coda))
+    (home-page "https://github.com/juliuspf/Bayesrel")
+    (synopsis "Bayesian Reliability Estimation")
+    (description
+     "Functionality for reliability estimates.  For unidimensional tests: Coefficient
+alpha, Guttman's lambda-2/-4/-6, the Greatest lower bound and coefficient
+omega_u ('unidimensional') in a Bayesian and a frequentist version.  For
+multidimensional tests: omega_t (total) and omega_h (hierarchical).  The results
+include confidence and credible intervals, the probability of a coefficient
+being larger than a cutoff, and a check for the factor models, necessary for the
+omega coefficients.  The method for the Bayesian unidimensional estimates,
+except for omega_u, is sampling from the posterior inverse Wishart for the
+covariance matrix based measures (see Murphy', 2007,
+<https://groups.seas.harvard.edu/courses/cs281/papers/murphy-2007.pdf>.  The
+Bayesian omegas (u, t, and h) are obtained by Gibbs sampling from the
+conditional posterior distributions of (1) the single factor model and (2) the
+second-order factor model ('Lee', 2007,
+<https://onlinelibrary.wiley.com/doi/book/10.1002/9780470024737>).")
+    (license license:gpl3)))
 
 (define-public r-bayesreg
   (package
@@ -24295,45 +24408,6 @@ group for their support in developing the BACCT package.")
 vignette that illustrates the constituent packages (emulator, approximator,
 calibrator) in use.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-bacarena
-  (package
-    (name "r-bacarena")
-    (version "1.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BacArena" version))
-              (sha256
-               (base32
-                "1fv3hmr8frqgdl22cvp5w5089ppmqzw42llw2ls054dvsdadlqm9"))))
-    (properties `((upstream-name . "BacArena")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sybil
-                             r-stringr
-                             r-reshape2
-                             r-reactran
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r-matlab
-                             r-plyr
-                             r-matrix
-                             r-igraph
-                             r-glpkapi
-                             r-ggplot2
-                             r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://BacArena.github.io/")
-    (synopsis
-     "Modeling Framework for Cellular Communities in their Environments")
-    (description
-     "Can be used for simulation of organisms living in communities (Bauer and
-Zimmermann (2017) <doi:10.1371/journal.pcbi.1005544>).  Each organism is
-represented individually and genome scale metabolic models determine the uptake
-and release of compounds.  Biological processes such as movement, diffusion,
-chemotaxis and kinetics are available along with data analysis techniques.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-babynamesil
   (package

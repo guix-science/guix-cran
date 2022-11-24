@@ -737,17 +737,18 @@ further details.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyClass" version))
               (sha256
                (base32
-                "1kp6zl90fpcjh95bxvaapnjb0k7n7zc2jv5nbqjdxaid86s4x09y"))))
+                "0vlx0l6zlfghabikssi29n275frb3if6w0qyjldm6ypkgangnzmn"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
                              r-rdpack
+                             r-purrr
                              r-mass
                              r-foreach
                              r-envstats
@@ -880,13 +881,13 @@ Colorado State University Vice President for Research.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.tests" version))
               (sha256
                (base32
-                "1ssr0sd9h10151m5iaad17zqii7d18nnszq2svj0i8izk83xhrik"))))
+                "1knm3zxc61g6xgvp2wws405jp7ygva8nzqm9q8cvxdl7fk2l9q0a"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
@@ -1665,25 +1666,26 @@ by modeling the curves within a common and discriminative functional subspace.")
 (define-public r-fundiversity
   (package
     (name "r-fundiversity")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fundiversity" version))
               (sha256
                (base32
-                "1vkr955rl7ws1ypf6lpwx4pbqjhdqkvg6i3ca8q03ym4hdmcr0yz"))))
+                "1wp2v7bd1vc8gs9g41s77pazkrv3mdw2m3pgjr7k6wdch0a9qhx2"))))
     (properties `((upstream-name . "fundiversity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-matrix r-geometry r-future-apply))
     (native-inputs (list r-knitr))
-    (home-page "https://hugogruson.fr/fundiversity/")
-    (synopsis "Easy Computation of Alpha Functional Diversity Indices")
+    (home-page "https://funecology.github.io/fundiversity/")
+    (synopsis "Easy Computation of Functional Diversity Indices")
     (description
-     "Computes 5 alpha-functional diversity indices: Functional Divergence (FDiv),
-Function Evenness (FEve), Functional Richness (FRic), Functional Dispersion
-(FDis) and Rao's entropy (Q) (reviewed in VillÃ©ger et al.  2008
+     "Computes six functional diversity indices.  These are namely, Functional
+Divergence (FDiv), Function Evenness (FEve), Functional Richness (FRic),
+Functional Richness intersections (FRic_intersect), Functional Dispersion
+(FDis), and Rao's entropy (Q) (reviewed in VillÃ©ger et al.  2008
 <doi:10.1890/07-1206.1>).  Provides efficient, modular, and parallel functions
-to compute functional diversity indices.")
+to compute functional diversity indices (preprint: <doi:10.32942/osf.io/dg7hw>).")
     (license license:gpl3)))
 
 (define-public r-fundata
@@ -2091,13 +2093,13 @@ models.  There are now six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuj" version))
               (sha256
                (base32
-                "1zmgy24b5nl931q6n32nfsdas3lw2nbhcnfh8bf62zq2j1yvr8w9"))))
+                "14q2qzvpapm1qi5r0dqcw47ngakl2ppd5zmx2lalqwvi012xh25b"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (home-page "https://jmbarbone.github.io/fuj/")
@@ -3383,6 +3385,37 @@ summarise these papers and provide additional examples.")
     (description
      "The complete scripts from the American sitcom Friends in tibble format.  Use
 this package to practice data wrangling, text analysis and network analysis.")
+    (license license:expat)))
+
+(define-public r-frictionless
+  (package
+    (name "r-frictionless")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "frictionless" version))
+              (sha256
+               (base32
+                "0821j53jnkak4nfzqyqrm07qz79laxvwsx78bbn4y1765awyxvaw"))))
+    (properties `((upstream-name . "frictionless")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/frictionlessdata/frictionless-r")
+    (synopsis "Read and Write Frictionless Data Packages")
+    (description
+     "Read and write Frictionless Data Packages.  A Data Package
+(<https://specs.frictionlessdata.io/data-package/>) is a simple container format
+and standard to describe and package a collection of (tabular) data.  It is
+typically used to publish FAIR (<https://www.go-fair.org/fair-principles/>) and
+open datasets.")
     (license license:expat)))
 
 (define-public r-fri
@@ -5861,6 +5894,30 @@ formatters for transforming values or sets of values into ASCII-ready display
 strings.")
     (license license:asl2.0)))
 
+(define-public r-formatdown
+  (package
+    (name "r-formatdown")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "formatdown" version))
+              (sha256
+               (base32
+                "0hfpn7j8svv9yj1zpbszl79xshyi7kc20vv3kmp0z0r0lnv89vpg"))))
+    (properties `((upstream-name . "formatdown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wrapr r-data-table r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/graphdr/formatdown/")
+    (synopsis "Formatting Tools for 'rmarkdown' Documents")
+    (description
+     "This package provides a small set of tools for formatting tasks when creating
+documents in rmarkdown or quarto'.  Convert the elements of a numerical vector
+to character strings in which the numbers are formatted using powers-of-ten
+notation in scientific or engineering form and delimited for rendering as inline
+equations.")
+    (license license:expat)))
+
 (define-public r-forit
   (package
     (name "r-forit")
@@ -6069,13 +6126,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestploter" version))
               (sha256
                (base32
-                "0gmcmjr8r4xklzqdx2i2aimmwas50v6g7lmib3v5xxlq8rfxm0ad"))))
+                "1x63sz8diw2agyxkmhr2li29vz0x8j9v8v9y14v8qsmh5gfnwska"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtable r-gridextra))
@@ -8689,13 +8746,13 @@ Flickr.")
 (define-public r-flexsiteboard
   (package
     (name "r-flexsiteboard")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexsiteboard" version))
               (sha256
                (base32
-                "1wrzm3nm5hngk30zzcn18f8jcvfsxw751zgvw4fkff6hqbj2yf6l"))))
+                "0msbz3x7lsi6xcw8dcqzwnylaj76f8mgj6cf3hqscrfjzhs86rym"))))
     (properties `((upstream-name . "flexsiteboard")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8706,7 +8763,7 @@ Flickr.")
                              r-htmltools
                              r-flexdashboard))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=flexsiteboard")
+    (home-page "https://gitlab.com/libreumg/flexsiteboard/")
     (synopsis
      "Breaks Single Page Applications from 'flexdashboard' in Multiple Files")
     (description
@@ -9167,6 +9224,37 @@ Finally a function to use the Benjamini-Hochberg procedure for multiple
 hypothesis testing is provided (Benjamini and Hochberg, 1995,
 <doi:10.1111/j.2517-6161.1995.tb02031.x>).")
     (license license:gpl3)))
+
+(define-public r-flashr
+  (package
+    (name "r-flashr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "flashr" version))
+              (sha256
+               (base32
+                "0w3fs6psarqp19zc8qpmg2744cd64lxgi4hbkp5nl6v00p53nkvc"))))
+    (properties `((upstream-name . "flashr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-rmarkdown
+                             r-revealjs
+                             r-memoise
+                             r-httr
+                             r-gh
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JeffreyRStevens/flashr")
+    (synopsis "Create Flashcards of Terms and Definitions")
+    (description
+     "This package provides functions for creating flashcard decks of terms and
+definitions.  This package creates HTML slides using revealjs that can be viewed
+in the RStudio viewer or a web browser.  Users can create flashcards from either
+existing built-in decks or create their own from CSV files or vectors of
+function names.")
+    (license license:expat)))
 
 (define-public r-flashlight
   (package
@@ -10677,13 +10765,13 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finnts" version))
               (sha256
                (base32
-                "113nwwy494vghqrmxdnbgnkd6kzmdkba144q46ldfiif2gyx44g3"))))
+                "0ih4z51n3g1villz59l0fbb9lwrs4cv46chmh9nv6ry3rmskrj41"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -11567,13 +11655,13 @@ logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "file2meco" version))
               (sha256
                (base32
-                "1wfg1mfj52ghkvyb84q2j9kxq7szx6mr64v3bspi410gr7n1vpd2"))))
+                "04rvmkw9b640ras11z8na9ac8kddrdphbjhq8il3pyh0jrf15yvh"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -12099,13 +12187,13 @@ reference.")
 (define-public r-fhircrackr
   (package
     (name "r-fhircrackr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fhircrackr" version))
               (sha256
                (base32
-                "1vjlslf3zg1c3vmblfsh8brmy4ikvir22xnmbp1529fs9kyr8b3y"))))
+                "07zngm3dad242aabi4gz9vzvhdcfksbg18vlswvp036fbyw63p4j"))))
     (properties `((upstream-name . "fhircrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-lifecycle r-httr r-data-table))
@@ -12877,6 +12965,27 @@ the extreme index.")
     (synopsis "Get Data from Salesforce via the 'Windsor.ai' API")
     (description
      "Collect your data on digital marketing campaigns from Salesforce using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
+(define-public r-fetchgoogleanalyticsr
+  (package
+    (name "r-fetchgoogleanalyticsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fetchGoogleAnalyticsR" version))
+              (sha256
+               (base32
+                "12s18jicx9rd5dhc8l7hm09lr71nhz6k72j3w4c1j5ds9h522krg"))))
+    (properties `((upstream-name . "fetchGoogleAnalyticsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Data from Google Analytics via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Google Analytics using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
@@ -14923,13 +15032,13 @@ for modeling and simulating dynamic systems.")
 (define-public r-fclust
   (package
     (name "r-fclust")
-    (version "2.1.1")
+    (version "2.1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fclust" version))
               (sha256
                (base32
-                "11dsf7mb075m1m1ilqsacc0s4907wq6alvdfh6nizsyr01wiqw3b"))))
+                "1d5qa30jlx6qn6npvccl97fcmh5a4wf3nw0d7jvn3y7mcb5yqlqk"))))
     (properties `((upstream-name . "fclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -15614,13 +15723,13 @@ under 2-locus and 1-locus models defined by some design matrix.")
 (define-public r-fastwavelets
   (package
     (name "r-fastwavelets")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastWavelets" version))
               (sha256
                (base32
-                "1w2dbibl3291bqygwl2pn7jdskq6sy713r39hr4jjbh0zf0jlxdd"))))
+                "1kz49iw3d37kby6hdk7zvsahms735w46pky186jz0qq9vh4agxn9"))))
     (properties `((upstream-name . "fastWavelets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15630,43 +15739,39 @@ under 2-locus and 1-locus models defined by some design matrix.")
     (description
      "This package provides a lightweight package to compute Maximal Overlap Discrete
 Wavelet Transform (MODWT) and Ã Trous Discrete Wavelet Transform by leveraging
-the power of Rcpp to make these operations fast.  See Maheswaran and Khosa
-(2012) <doi:10.1016/j.cageo.2011.12.015>.")
+the power of Rcpp to make these operations fast.  This package was designed for
+use in forecasting, and allows users avoid the inclusion of future data when
+performing wavelet decomposition of time series.  See Quilty and Adamowski
+(2018) <doi:10.1016/j.jhydrol.2018.05.003>.")
     (license license:expat)))
 
 (define-public r-fastverse
   (package
     (name "r-fastverse")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastverse" version))
               (sha256
                (base32
-                "07nzhyfvs52b4bhm7c0m9iizw4mwkgnj1h5vvpxr04d5zkrkk7y0"))))
+                "0sr2nwqwxcvn118srrpws2cw0vpimchrv0k03z0f7i07989fqfc7"))))
     (properties `((upstream-name . "fastverse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrixstats
-                             r-magrittr
-                             r-kit
-                             r-fst
-                             r-data-table
-                             r-collapse))
+    (propagated-inputs (list r-magrittr r-kit r-data-table r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://fastverse.github.io/fastverse/")
     (synopsis
      "Suite of High-Performance Packages for Statistics and Data Manipulation")
     (description
-     "Easy installation, loading and management, of a complementary set of
-high-performance packages for statistical computing and data manipulation.  The
-core fastverse consists of 6 packages: data.table', collapse', matrixStats',
-kit', magrittr and fst', that jointly only depend on Rcpp'.  These packages are
-attached and harmonized through the fastverse'.  In addition, the fastverse can
-be freely and permanently extended with additional packages, both globally or
-for individual projects.  Entirely separate package verses can also be created.
-Selected fast and low-dependency packages are suggested for various topics such
-as time series, dates and times, strings, spatial data, statistics and data
-serialization (see GitHub / website).")
+     "Easy installation, loading and management, of high-performance packages for
+statistical computing and data manipulation in R. The core fastverse consists of
+4 packages: data.table', collapse', kit and magrittr', that jointly only depend
+on Rcpp'.  The fastverse can be freely and permanently extended with additional
+packages, both globally or for individual projects.  Separate package verses can
+also be created.  Fast packages for many common tasks such as time series, dates
+and times, strings, spatial data, statistics, data serialization,
+larger-than-memory processing, and compilation of R code are listed in the
+README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
     (license license:gpl3)))
 
 (define-public r-fasttopics
@@ -17631,6 +17736,31 @@ one based on L-2 distance, one based on an ANOVA statistic, and one based on
 variance estimators.")
     (license license:gpl3)))
 
+(define-public r-fanc
+  (package
+    (name "r-fanc")
+    (version "2.3.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fanc" version))
+              (sha256
+               (base32
+                "02w10lm4nggab5q16ld9xgpa4x4bygfiigs8m12yiah5ah1n5vk8"))))
+    (properties `((upstream-name . "fanc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-ellipse))
+    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
+    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
+    (description
+     "Computes the penalized maximum likelihood estimates of factor loadings and
+unique variances for various tuning parameters.  The pathwise coordinate descent
+along with EM algorithm is used.  This package also includes a new graphical
+tool which outputs path diagram, goodness-of-fit indices and model selection
+criteria for each regularization parameter.  The user can change the
+regularization parameter by manipulating scrollbars, which is helpful to find a
+suitable value of regularization parameter.")
+    (license license:gpl2+)))
+
 (define-public r-famt
   (package
     (name "r-famt")
@@ -17783,13 +17913,13 @@ children and oldest old parents) in virtual population produced by VirtualPop'."
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "familiar" version))
               (sha256
                (base32
-                "1m73pyhq28qxhz90l9l2hvxh9cisa42f2m9355fcfjwrmwff97xw"))))
+                "1q8h7z4d545s1md5m37g2033yw0q7f2jdc0jf2mrf1hqj12vmvak"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))
@@ -17832,6 +17962,42 @@ testing centers belonging to the Huber family.  Testing is carried out using the
 Bayesian bootstrap.  One- and two-sample tests are supported, as are directional
 tests.  Methods for visualizing output are provided.")
     (license license:gpl3)))
+
+(define-public r-famevent
+  (package
+    (name "r-famevent")
+    (version "3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FamEvent" version))
+              (sha256
+               (base32
+                "1f2cfbd799gkva0jyf7x6x37x95nlg1zv85h85irkwh0kfwk55gh"))))
+    (properties `((upstream-name . "FamEvent")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-survival
+                             r-pracma
+                             r-mass
+                             r-kinship2
+                             r-eha
+                             r-cmprsk))
+    (home-page "https://cran.r-project.org/package=FamEvent")
+    (synopsis "Family Age-at-Onset Data Simulation and Penetrance Estimation")
+    (description
+     "Simulates age-at-onset traits associated with a segregating major gene in family
+data obtained from population-based, clinic-based, or multi-stage designs.
+Appropriate ascertainment correction is utilized to estimate age-dependent
+penetrance functions either parametrically from the fitted model or
+nonparametrically from the data.  The Expectation and Maximization algorithm can
+infer missing genotypes and carrier probabilities estimated from family's
+genotype and phenotype information or from a fitted model.  Plot functions
+include pedigrees of simulated families and predicted penetrance curves based on
+specified parameter values.  For more information see Choi, Y.-H., Briollais,
+L., He, W. and Kopciuk, K. (2021) FamEvent: An R Package for Generating and
+Modeling Time-to-Event Data in Family Designs, Journal of Statistical Software
+97 (7), 1-30.")
+    (license license:gpl2+)))
 
 (define-public r-fameta
   (package
@@ -18551,23 +18717,31 @@ Follmann DA. (2020)
 (define-public r-factorcopula
   (package
     (name "r-factorcopula")
-    (version "0.8.1")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FactorCopula" version))
               (sha256
                (base32
-                "1hdmmm9vl1kyg4i4gchl837q6lfga5qfay6wv5z0xn84rmifqnpr"))))
+                "09mr31j6v63hiqz6isx87fxdqpnhzl48br3c2f5vz1rd25zcbhw2"))))
     (properties `((upstream-name . "FactorCopula")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vinecopula r-statmod r-polycor r-matlab r-abind))
+    (propagated-inputs (list r-vinecopula
+                             r-statmod
+                             r-polycor
+                             r-matlab
+                             r-igraph
+                             r-abind))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=FactorCopula")
-    (synopsis "Factor, Bi-Factor and Second-Order Copula Models")
+    (synopsis "Factor, Bi-Factor, Second-Order and Factor Tree Copula Models")
     (description
      "Estimation, model selection and goodness-of-fit of (1) factor copula models for
 mixed continuous and discrete data in Kadhem and Nikoloulopoulos (2021)
 <doi:10.1111/bmsp.12231>; (2) bi-factor and second-order copula models for item
-response data in Kadhem and Nikoloulopoulos (2021) <arXiv:2102.10660>.")
+response data in Kadhem and Nikoloulopoulos (2021) <arXiv:2102.10660>; (3)
+factor tree copula models for item response data in Kadhem and Nikoloulopoulos
+(2022) <arXiv:2201.00339>.")
     (license license:gpl2+)))
 
 (define-public r-factorassumptions
@@ -18773,6 +18947,27 @@ experiments with noncompliance.")
 <https://kairos.com/face-recognition-api>.  The API detects faces in images and
 returns estimates for demographics like gender, ethnicity and age.")
     (license license:expat)))
+
+(define-public r-facebookleadsr
+  (package
+    (name "r-facebookleadsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "facebookleadsR" version))
+              (sha256
+               (base32
+                "0azy822s5266vxk0fvxfkgl9i3q3djv7yh3w53znjjvfmmzj1qwz"))))
+    (properties `((upstream-name . "facebookleadsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Facebook Leads Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Facebook Leads Ads using
+the Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-facebookadsr
   (package
@@ -19045,53 +19240,6 @@ These models work within the fable framework provided by the fabletools package,
 which provides the tools to evaluate, visualise, and combine models in a
 workflow consistent with the tidyverse.")
     (license license:gpl3)))
-
-(define-public r-fabisearch
-  (package
-    (name "r-fabisearch")
-    (version "0.0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fabisearch" version))
-              (sha256
-               (base32
-                "02xpndws34wh6kfk677kmpnhhxyxnwpg6asdfdn3wr44rcr7zk2v"))))
-    (properties `((upstream-name . "fabisearch")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl
-                             r-reshape2
-                             r-pkgmaker
-                             r-nmf
-                             r-foreach
-                             r-dorng
-                             r-doparallel))
-    (home-page "https://github.com/mondrus96/FaBiSearch")
-    (synopsis
-     "Change Point Detection in High-Dimensional Time Series Networks")
-    (description
-     "Implementation of the Factorized Binary Search (FaBiSearch) methodology for the
-estimation of the number and the location of multiple change points in the
-network (or clustering) structure of multivariate high-dimensional time series.
-The method is motivated by the detection of change points in functional
-connectivity networks for functional magnetic resonance imaging (fMRI) data.
-FaBiSearch uses non-negative matrix factorization (NMF), an unsupervised
-dimension reduction technique, and a new binary search algorithm to identify
-multiple change points.  It requires minimal assumptions.  Lastly, we provide
-interactive, 3-dimensional, brain-specific network visualization capability in a
-flexible, stand-alone function.  This function can be conveniently used with any
-node coordinate atlas, and nodes can be color coded according to community
-membership, if applicable.  The output is an elegantly displayed network laid
-over a cortical surface, which can be rotated in the 3-dimensional space.  The
-main routines of the package are detect.cps(), for multiple change point
-detection, est.net(), for estimating a network between stationary multivariate
-time series, net.3dplot(), for plotting the estimated functional connectivity
-networks, and opt.rank(), for finding the optimal rank in NMF for a given data
-set.  The functions have been extensively tested on simulated multivariate
-high-dimensional time series data and fMRI data.  For details on the FaBiSearch
-methodology, please see Ondrus et al. (2021) <arXiv:2103.06347>.  For a more
-detailed explanation and applied examples of the fabisearch package, please see
-Ondrus and Cribben (2022), preprint.")
-    (license license:expat)))
 
 (define-public r-fabinference
   (package

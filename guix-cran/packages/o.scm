@@ -2370,17 +2370,17 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
 (define-public r-org
   (package
     (name "r-org")
-    (version "2022.7.21")
+    (version "2022.11.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "org" version))
               (sha256
                (base32
-                "0gc01im9mpb7kj0dc4blgry868jrr1wy4v5wbfdsnbf5zy4xxivl"))))
+                "0ppiwdzy7x0fnqq5j23dim4g64cn3bq72v2vd91c2i3sg4n5ahlk"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://docs.sykdomspulsen.no/org/")
+    (home-page "https://www.csids.no/org/")
     (synopsis "Organising Projects")
     (description
      "This package provides a system to help you organize projects.  Most analyses
@@ -4018,13 +4018,13 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 (define-public r-optimlanduse
   (package
     (name "r-optimlanduse")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimLanduse" version))
               (sha256
                (base32
-                "0n30si6znvcyncvzbcm2149dvpqdmawamb5raz2fg19jjkj5qpfl"))))
+                "0vrn794y6fp02ara6xa1vlfx7vim0gbx5bc1pkns2fh76gqpsa4n"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-lpsolveapi r-dplyr))
@@ -4590,28 +4590,20 @@ backward gradient approximation codes.")
 (define-public r-optedr
   (package
     (name "r-optedr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optedr" version))
               (sha256
                (base32
-                "0ywq5s3y30r0il2vsd99qgd8m7c1xsk59fgzz8zs5ips3xsjmnwg"))))
+                "17r0axfh7yjv5xj9060vi5vysnmi38pz5dsvm0fazfcpzzlxnld7"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs
-                             r-shinydashboard
-                             r-shinyalert
-                             r-shiny
+    (propagated-inputs (list r-shiny
                              r-rlang
                              r-purrr
-                             r-plotly
-                             r-orthopolynom
                              r-nleqslv
-                             r-magrittr
-                             r-hrbrthemes
                              r-ggplot2
-                             r-dt
                              r-dplyr
                              r-crayon
                              r-cli))
@@ -5579,13 +5571,13 @@ EPFL Technical Report no.  149300, June 2010.")
 (define-public r-openeo
   (package
     (name "r-openeo")
-    (version "1.2.2")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openeo" version))
               (sha256
                (base32
-                "10lmkga3pm6h0sv0jccazi3xkda3fzqfk5nv5xf8hkm3g3kccs40"))))
+                "002zrvrm417ix80vrqnl2wygqh0vjymfi5hl88v6ajfspp9r73qn"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -6501,17 +6493,17 @@ and creating simple queries using ontological relationships.")
 (define-public r-onpoint
   (package
     (name "r-onpoint")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onpoint" version))
               (sha256
                (base32
-                "0l1dblj6cr2qagxmgx5ma455qazg1br5y0zpl2dv7jcdb24f7pnq"))))
+                "0g0i88s4hwgjnwqljjgbibc6bks0hy0f27v94w0br45yklrdh73f"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-core
-                             r-ggplot2))
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom
+                             r-spatstat-explore r-ggplot2))
     (home-page "https://r-spatialecology.github.io/onpoint/")
     (synopsis "Helper Functions for Point Pattern Analysis")
     (description
@@ -6791,6 +6783,27 @@ search and interact with occupational data from the O*NET API
 custom interactions, or pre-packaged functions for easy extraction of specific
 data (e.g., Knowledge, Skills, Abilities, Work Styles, etc.).")
     (license license:gpl3)))
+
+(define-public r-onetime
+  (package
+    (name "r-onetime")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "onetime" version))
+              (sha256
+               (base32
+                "17snjkldm11ry5f1mp18jkmlw7hk0zw5yl1qrmakh1lx7fq1326v"))))
+    (properties `((upstream-name . "onetime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rappdirs r-filelock))
+    (home-page "https://github.com/hughjonesd/onetime")
+    (synopsis "Run Code Only Once")
+    (description
+     "Allows code to be run only once on a given computer, using lockfiles.  Typical
+use cases include startup messages shown only when a package is loaded for the
+very first time.")
+    (license license:expat)))
 
 (define-public r-onestep
   (package
@@ -7960,13 +7973,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.2.0")
+    (version "3.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "1p5ywrhy2bg7gdi0i05mp1pikid67ndfdx2bfsd8vpqxl6cpa6ps"))))
+                "1fbq3pw8x9bfnr42is0l4vfzdzp52lf9p9j6x0qgndhqiw9rzg90"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8402,35 +8415,35 @@ national level.  Metropolitan data is not included.")
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
-    (version "2.1.1")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OenoKPM" version))
               (sha256
                (base32
-                "199sh1vzzrx2nx7wn5qrv0zkqwy02j5xcdx9y4474ci1hqc65r87"))))
+                "14hl749zbvw45gnd8iqg630iwfd694rjgjasc91vcrfylaqqhyhj"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-minpack-lm r-ggplot2))
     (home-page "https://cran.r-project.org/package=OenoKPM")
     (synopsis
-     "Modeling the Kinetics of CO2 Production in Alcoholic Fermentation")
+     "Modeling the Kinetics of Carbon Dioxide Production in Alcoholic Fermentation")
     (description
      "Developed to help researchers who need to model the kinetics of carbon dioxide
 (CO2) production in alcoholic fermentation of wines, beers and other fermented
-products.  The following models are available for modeling the CO2 production
-curve as a function of time: 5PL, Gompertz and 4PL. This package has different
-functions, which applied can: perform the modeling of the data obtained in the
-fermentation and return the coefficients, analyze the model fit and return
-different statistical metrics, and calculate the kinetic parameters: Maximum
-production of carbon dioxide; Maximum rate of production of CO2; Moment in which
-maximum fermentation rate occurs; Duration of the latency phase for CO2
-production; CO2 Produced until Maximum fermentation rate occurs.  In addition, a
-function that generates graphs with the observed and predicted data from the
-models, isolated and combined, is available.  Gava, A., Borsato, D., & Ficagna,
-E. (2020). \"Effect of mixture of fining agents on the fermentation kinetics of
-base wine for sparkling wine production: Use of methodology for modeling\".
-<doi:10.1016/j.lwt.2020.109660>.")
+products.  The following models are available for modeling the carbon dioxide
+production curve as a function of time: 5PL, Gompertz and 4PL. This package has
+different functions, which applied can: perform the modeling of the data
+obtained in the fermentation and return the coefficients, analyze the model fit
+and return different statistical metrics, and calculate the kinetic parameters:
+Maximum production of carbon dioxide; Maximum rate of production of carbon
+dioxide; Moment in which maximum fermentation rate occurs; Duration of the
+latency phase for carbon dioxide production; Carbon dioxide produced until
+maximum fermentation rate occurs.  In addition, a function that generates graphs
+with the observed and predicted data from the models, isolated and combined, is
+available.  Gava, A., Borsato, D., & Ficagna, E. (2020).\"Effect of mixture of
+fining agents on the fermentation kinetics of base wine for sparkling wine
+production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>.")
     (license license:gpl3)))
 
 (define-public r-oem
@@ -9620,13 +9633,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occtest
   (package
     (name "r-occtest")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "occTest" version))
               (sha256
                (base32
-                "1ligcwdwjq7hix7xn6k0ykvlnnsh3v7cx33xz52zrpbz2ljy29jr"))))
+                "11dqkah6z50zbxiyniv4f2f0n742gmgzqdaarvc17vn750b6b595"))))
     (properties `((upstream-name . "occTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

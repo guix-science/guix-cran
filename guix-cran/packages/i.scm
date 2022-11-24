@@ -1785,6 +1785,28 @@ Lu-Hf, Rb-Sr and 230Th-U isochrons as well as 230Th-U evolution plots.")
 chemical formula.")
     (license license:gpl2)))
 
+(define-public r-isopam
+  (package
+    (name "r-isopam")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "isopam" version))
+              (sha256
+               (base32
+                "0kkjhp47yns7iwjvlk00nzqwkzgivbwdhiziyl20zfdpjhpxrl10"))))
+    (properties `((upstream-name . "isopam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-proxy r-future-apply r-future r-cluster))
+    (home-page "https://cran.r-project.org/package=isopam")
+    (synopsis "Clustering of Sites with Species Data using Indicative Species")
+    (description
+     "Clustering algorithm developed for use with plot inventories of species.  It
+groups plots by indicative species rather than overall species composition.
+There is an unsupervised and a supervised mode, the latter accepting predefined
+indicative species and cluster medoids.")
+    (license license:gpl2+)))
+
 (define-public r-isoorbi
   (package
     (name "r-isoorbi")
@@ -2256,13 +2278,13 @@ Warfield,J.N. (1974, E-ISSN:2168-2909).")
 (define-public r-islr2
   (package
     (name "r-islr2")
-    (version "1.3-1")
+    (version "1.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ISLR2" version))
               (sha256
                (base32
-                "1hmcpw3nrldxayklp0whlgd5xi1zap8j5g2231i5hp3lsqh6skg6"))))
+                "0ljz5lb5srilziyqgka4rcp7d5r4hs6jq9fm3gi1g57agn896vyn"))))
     (properties `((upstream-name . "ISLR2")))
     (build-system r-build-system)
     (home-page "https://www.statlearning.com")
@@ -2757,6 +2779,32 @@ reliability coefficient estimators, derived in Andersson, B. and Xin, T. (2018)
      "Helper functions and example data sets to facilitate the estimation of IRTree
 models from data with different shape and using different software.")
     (license license:gpl2+)))
+
+(define-public r-irtpwr
+  (package
+    (name "r-irtpwr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "irtpwr" version))
+              (sha256
+               (base32
+                "009m14v1frwwqxi0vlvxk740ky34xj4k7pn4csl69yk429r8l9a2"))))
+    (properties `((upstream-name . "irtpwr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random r-mirt r-ggplot2 r-digest
+                             r-deriv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/flxzimmer/irtpwr")
+    (synopsis
+     "Power Analysis for IRT Models Using the Wald, LR, Score, and Gradient Statistics")
+    (description
+     "Implementation of analytical and sampling-based power analyses for the Wald,
+likelihood ratio (LR), score, and gradient tests.  Can be applied to item
+response theory (IRT) models that are fitted using marginal maximum likelihood
+estimation.  The methods are described in our paper (Zimmer et al. (2022)
+<doi:10.1007/s11336-022-09883-5>).")
+    (license license:gpl3+)))
 
 (define-public r-irtgui
   (package
@@ -3874,13 +3922,13 @@ discuss the problem of unintentional eviction.")
 (define-public r-ipmbook
   (package
     (name "r-ipmbook")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPMbook" version))
               (sha256
                (base32
-                "0wjzp3l7w4cp0g6c1q84l18pkb0sjjnspidxdv32pn7rqj7wsmcf"))))
+                "152y6d949jjfdfmcjfi0g4p2d02pmqgamxmx5bi3wb352jbjxl08"))))
     (properties `((upstream-name . "IPMbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
@@ -5660,13 +5708,13 @@ functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.5.7")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inti" version))
               (sha256
                (base32
-                "19b3f776aaldwiy7fpkgr92jnkajyz1fgci8s619qqq986jj7pah"))))
+                "1czzbf8lmhx7wh1skcv2fc2cizyrdr9hyjavl0cwicanq4jpvhmi"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5698,13 +5746,13 @@ technical writing.  Learn more about the inkaverse project at
 (define-public r-intextsummarytable
   (package
     (name "r-intextsummarytable")
-    (version "3.2.0")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inTextSummaryTable" version))
               (sha256
                (base32
-                "0c8kkvpiq4djfg1qc127iql4g1b4mzmhhx5hc9f2vi0rhicyng9k"))))
+                "0g4ckd7hicm62ki8yg0a7bkw91gjzdlcrhhvvgsyxb8xq66x28gx"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -5944,26 +5992,25 @@ plots for (cross-validated) randomForest and ada models.")
 (define-public r-interpretmsspectrum
   (package
     (name "r-interpretmsspectrum")
-    (version "1.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InterpretMSSpectrum" version))
               (sha256
                (base32
-                "1iaw4i14l2vp1f163g2q4pwv9cnqrx14ik4s8zw0iha4zwcrc3ja"))))
+                "1nvi5l0m5118b0m65l52mby34vw05nhp37pl6rba1220a10iasih"))))
     (properties `((upstream-name . "InterpretMSSpectrum")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rsqlite
-                             r-plyr
-                             r-foreach
-                             r-envipat
-                             r-doparallel
-                             r-dbi))
-    (home-page "http://dx.doi.org/10.1021/acs.analchem.6b02743")
+    (propagated-inputs (list r-plyr r-envipat))
+    (home-page "<doi:10.1021/acs.analchem.6b02743>")
     (synopsis "Interpreting High Resolution Mass Spectra")
     (description
-     "Annotate and interpret deconvoluted mass spectra (mass*intensity pairs) from
-high resolution mass spectrometry devices.")
+     "High resolution mass spectrometry yields often large data sets of spectra from
+compounds which are not present in available libraries.  These spectra need to
+be annotated and interpreted.'InterpretMSSpectrum provides a set of functions to
+perform such tasks for Electrospray-Ionization and
+Atmospheric-Pressure-Chemical-Ionization derived data in positive and negative
+ionization mode.")
     (license license:gpl3)))
 
 (define-public r-interpretci
@@ -7797,31 +7844,6 @@ Imputation described in <DOI:10.1002/sim.3480>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-informationvalue
-  (package
-    (name "r-informationvalue")
-    (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "InformationValue" version))
-              (sha256
-               (base32
-                "1b5g2wyp7x5cdhmf4325n3q7afa6i352lh80j28c8s4356pr3w9j"))))
-    (properties `((upstream-name . "InformationValue")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://r-statistics.co/Information-Value-With-R.html")
-    (synopsis
-     "Performance Analysis and Companion Functions for Binary Classification Models")
-    (description
-     "This package provides companion function for analysing the performance of
-classification models.  Also, provides function to optimise probability cut- off
-score based on used specified objectives, Plot ROC Curve in ggplot2', AUROC',
-IV', WOE Calculation, KS Statistic etc to aid accuracy improvement in binary
-classification models.")
-    (license license:gpl2+)))
-
 (define-public r-information
   (package
     (name "r-information")
@@ -9588,6 +9610,33 @@ by the strategy presented in Fink and Crossman (2013)
 original imprecise information gain of Abellan and Moral (2003)
 <doi:10.1002/int.10143> is covered.")
     (license license:gpl2+)))
+
+(define-public r-imprinting
+  (package
+    (name "r-imprinting")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "imprinting" version))
+              (sha256
+               (base32
+                "1rw9x9prw0by4r2prdypqkgs7d2vj5gdjxhw6gk9ikkb3zyvfgmz"))))
+    (properties `((upstream-name . "imprinting")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-tidyr r-ggplot2 r-dplyr r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cobeylab.github.io/imprinting/")
+    (synopsis
+     "Calculate Birth Year-Specific Probabilities of Immune Imprinting to Influenza")
+    (description
+     "Reconstruct birth-year specific probabilities of immune imprinting to influenza
+A, using the methods of Gostic et al. (2016) <doi:10.1126/science.aag1322>.
+Plot, save, or export the calculated probabilities for use in your own research.
+ By default, the package calculates subtype-specific imprinting probabilities,
+but with user-provided frequency data, it is possible to calculate probabilities
+for arbitrary kinds of primary exposure to influenza A, including primary
+vaccination and exposure to specific clades, strains, etc.")
+    (license license:expat)))
 
 (define-public r-impressionist-colors
   (package
@@ -11647,13 +11696,13 @@ Version 3 includes information from 1815 to 2014.")
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "3.3.2")
+    (version "3.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iglu" version))
               (sha256
                (base32
-                "1pki85jxdsd8pvandva6sxqy9ymr18izp88rpmmsvay14wk7jfwx"))))
+                "0ilfkmwmh3xshd67y45v9kvyd69xgf8wmxcw3hxi9zpsb0r4vmsb"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12473,13 +12522,13 @@ D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
 (define-public r-idopnetwork
   (package
     (name "r-idopnetwork")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idopNetwork" version))
               (sha256
                (base32
-                "1xahhisqc55kh2x0fy1imwnjx535qjl88g4shh588d1qf2vkfjc2"))))
+                "0cqnand3yfw2pwanmradwqdd9dyrxw99iric023w12bva826aalz"))))
     (properties `((upstream-name . "idopNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13867,13 +13916,13 @@ VMS database, the ICES DATSU web services, and the ICES SharePoint site.")
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IceSat2R" version))
               (sha256
                (base32
-                "1jlrp2rhxsmcryhcxn124m5m8cak148q5856j4ay1xn0bi4nwqxq"))))
+                "1jwy1fwnc2rq3c643maa2h7hrwzq0sm6iv35kil95n3pw7pkgdy3"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -14963,13 +15012,13 @@ B-spline function with a given set of knots and order and set of de Boor points
 (define-public r-ibrokers
   (package
     (name "r-ibrokers")
-    (version "0.10-1")
+    (version "0.10-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IBrokers" version))
               (sha256
                (base32
-                "0fvbgcbxmgjnzqrxwc4iq14li9gxkg0bd4yj9wgx4y6akn7xaykw"))))
+                "06pp2fgzbwpk95r0pvaskx44q33mlady8bq5i13c4qc60vkafyag"))))
     (properties `((upstream-name . "IBrokers")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -15632,13 +15681,13 @@ and melting pressure.")
 (define-public r-iapws
   (package
     (name "r-iapws")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iapws" version))
               (sha256
                (base32
-                "1njbarbl0a146x8y9g9y1r0yd2hjr2r67nqzaqha85dgfxn4x84j"))))
+                "115m678kb2bz450pjg8a5jrjj3g2q2cgpyg9cksz3ysm6j5vrb1a"))))
     (properties `((upstream-name . "iapws")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iapws")
@@ -15647,9 +15696,9 @@ and melting pressure.")
     (description
      "Implementation of some of the formulations for the thermodynamic and transport
 properties released by the International Association for the Properties of Water
-and Steam (IAPWS).  More specifically, the releases referenced R1-76(2014),
-R6-95(2018), R7-97(2012), R8-97, R10-06(2009), R12-08 and R15-11 at
-<http://iapws.org>.")
+and Steam (IAPWS).  More specifically, the releases R1-76(2014), R5-85(1994),
+R6-95(2018), R7-97(2012), R8-97, R9-97, R10-06(2009), R11-07(2019), R12-08,
+R15-11, R16-17(2018), R17-20 and R18-21 at <http://iapws.org>.")
     (license license:gpl3+)))
 
 (define-public r-ialiquor

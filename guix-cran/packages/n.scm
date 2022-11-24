@@ -453,13 +453,13 @@ comparisons in big datasets.")
 (define-public r-numbers
   (package
     (name "r-numbers")
-    (version "0.8-2")
+    (version "0.8-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "numbers" version))
               (sha256
                (base32
-                "0gapcnk6zw9n77yddwsj0v6lzxm7ly2myjjj8kw5wjyng0l27b61"))))
+                "02r2mlq3jygvwi7anbrrid6693qc7iklxhc9ksmqjdlmgzdxxmbp"))))
     (properties `((upstream-name . "numbers")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=numbers")
@@ -467,7 +467,7 @@ comparisons in big datasets.")
     (description
      "This package provides number-theoretic functions for factorization, prime
 numbers, twin primes, primitive roots, modular logarithm and inverses, extended
-GCD, Farey series and continuous fractions.  Includes Legendre and Jacobi
+GCD, Farey series and continued fractions.  Includes Legendre and Jacobi
 symbols, some divisor functions, Euler's Phi function, etc.")
     (license license:gpl3+)))
 
@@ -2148,21 +2148,16 @@ the input.")
 (define-public r-npde
   (package
     (name "r-npde")
-    (version "3.2")
+    (version "3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "npde" version))
               (sha256
                (base32
-                "17p24djwl9nxhvzb9hg2iqj2vak0h55zshwgnsk98gj4z4zaqwwr"))))
+                "1my925wrl3izhidim49z787pc6fvh41kzgdqx24llgz8wsa9xb6q"))))
     (properties `((upstream-name . "npde")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-scales
-                             r-rlang
-                             r-mclust
-                             r-gridextra
-                             r-ggplot2))
+    (propagated-inputs (list r-scales r-rlang r-mclust r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=npde")
     (synopsis
      "Normalised Prediction Distribution Errors for Nonlinear Mixed-Effect Models")
@@ -4047,13 +4042,13 @@ Leskovec(2016),available at <arXiv:1607.00653>.")
 (define-public r-nodbi
   (package
     (name "r-nodbi")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nodbi" version))
               (sha256
                (base32
-                "0jdjm7n885nkyg3n432qmirz4vn2dkff8y4zp669d9vilb0kp9mi"))))
+                "1hn0wy2ry9l3wwqrshmf82cxigkm16wycwprv458bcvb5k6ayy5m"))))
     (properties `((upstream-name . "nodbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -4246,13 +4241,13 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
 (define-public r-nntensor
   (package
     (name "r-nntensor")
-    (version "1.1.8")
+    (version "1.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnTensor" version))
               (sha256
                (base32
-                "12f2mfkzamrjd9yjgrljbw5y1jg5805pc8371zs7qfn6bganmhv8"))))
+                "16lv17dgzyb5jgsl1j50q84jv78ppnfwk5hm7y4m9962c2dyqw33"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tagcloud
@@ -4269,7 +4264,7 @@ CANDECOMP/PARAFAC (CP) decomposition, non-negative Tucker decomposition, and
 generating toy model data.  See Andrzej Cichock et al (2009) and the reference
 section of GitHub README.md <https://github.com/rikenbit/nnTensor>, for details
 of the methods.")
-    (license license:artistic2.0)))
+    (license license:expat)))
 
 (define-public r-nntbiomarker
   (package
@@ -4950,13 +4945,13 @@ in network analysis.")
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.0.13")
+    (version "0.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMdata" version))
               (sha256
                (base32
-                "038zps1017yw6varc3dgijhakx3z2sp5hrp9k03pgp6g2ygchi6v"))))
+                "18v5chxvk32cfbp326dmcxj6qpzj6hi4v3bwbwx7pf0f4zqvhipi"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -6732,13 +6727,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "0.12.2")
+    (version "0.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimble" version))
               (sha256
                (base32
-                "06qs22q0l1iv82q5q48f5hpn0jxy8pds378k9cxhnzws2nms7xra"))))
+                "06y745jch8glixnxcgxi1dcawk8xz2gjjl4zb8c23xwfwa5lxp36"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-igraph r-coda))
@@ -8868,13 +8863,13 @@ network mazes.")
 (define-public r-networkextinction
   (package
     (name "r-networkextinction")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetworkExtinction" version))
               (sha256
                (base32
-                "0mnvidqbmd11aq6kh7m4y36lxaz0ks5h69ilskl49562ggxm741q"))))
+                "0di8azmzcb5rfry32h6fdxw57nvmxa39p2p8zfq62bwm5bv9263l"))))
     (properties `((upstream-name . "NetworkExtinction")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8892,9 +8887,9 @@ network mazes.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://derek-corcoran-barrios.github.io/NetworkExtinction/")
-    (synopsis "Extinction Simulation in Food Webs")
+    (synopsis "Extinction Simulation in Ecological Networks")
     (description
-     "Simulates the extinction of species in the food web and it analyzes its
+     "Simulates the extinction of species in ecological networks and it analyzes its
 cascading effects, described in Dunne et al. (2002)
 <doi:10.1073/pnas.192407699>.")
     (license license:gpl2+)))
@@ -9576,13 +9571,13 @@ estimation performance analysis and visualization.")
 (define-public r-netmix
   (package
     (name "r-netmix")
-    (version "0.2.0")
+    (version "0.2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetMix" version))
               (sha256
                (base32
-                "097cyk0lf3h4v3ff0icqj7a80yvs06damw1sc4hdqf2f21d6qihh"))))
+                "0363z06y7ildk7bifhj2lmva0hf591nyp10x9ccd6csj387n968p"))))
     (properties `((upstream-name . "NetMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -10650,13 +10645,13 @@ respective references are given.  In addition, the software includes Stevens
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.1.4")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neonUtilities" version))
               (sha256
                (base32
-                "1nx0d6r8ai3035rkk2s52q9kz1kg2w3cpcrqjk06f84wqd8cxyiv"))))
+                "0azzi8qybxfkrz4wmn7z2420jkq9z5klyqqdbs18w5zpr3x30hyy"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11073,29 +11068,6 @@ confounders in observational studies of vaccine efficacy using negative control
 outcomes.")
     (license license:gpl2)))
 
-(define-public r-needy
-  (package
-    (name "r-needy")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "needy" version))
-              (sha256
-               (base32
-                "1ixgpnwrg6ph1n5vy91qhl1mqirli9586nzkmfvzjrhdvrm0j5l0"))))
-    (properties `((upstream-name . "needy")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=needy")
-    (synopsis "needy")
-    (description
-     "needy is a small utility library designed to make testing function inputs less
-difficult.  R is a dynamically typed language, but larger projects need input
-checking for scalabity.  needy offers a single function, require_a( ), which
-lets you specify the traits an input object should have, such as class, size,
-numerical properties or number of parameters, while reducing boilerplate code
-and aiding debugging.")
-    (license license:expat)))
-
 (define-public r-needs
   (package
     (name "r-needs")
@@ -11320,13 +11292,13 @@ details see the help files.")
 (define-public r-ndtv
   (package
     (name "r-ndtv")
-    (version "0.13.2")
+    (version "0.13.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ndtv" version))
               (sha256
                (base32
-                "0symd0rwzk8kcq7f0flbw3pnyigybgsypjaaq5b5p1pjm1dz0c8j"))))
+                "05kaqd7p77rfls0s1gqv74j3svh5xdvqni0jin5vxl8y900yc56j"))))
     (properties `((upstream-name . "ndtv")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -12484,21 +12456,22 @@ average outcomes in missing outcome cases.")
 (define-public r-navigatr
   (package
     (name "r-navigatr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "navigatr" version))
               (sha256
                (base32
-                "05gmi2i15gfz2sjkxrfdypih7wzqnw439l8glkc1zci0clk0qwkw"))))
+                "0gx8rv56j1jc0jgsbbvfham2cb80419sghda1i9mz1b5i99igdk1"))))
     (properties `((upstream-name . "navigatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyselect
+                             r-stickyr
                              r-rlang
                              r-purrr
                              r-pillar
-                             r-dplyr
+                             r-lifecycle
                              r-cli))
     (home-page "https://github.com/UchidaMizuki/navigatr")
     (synopsis "Navigation Menu for Pipe-Friendly Data Processing")
@@ -12944,6 +12917,35 @@ see <https://power.larc.nasa.gov/>.")
 and the Earth Observatory Natural Event Tracker (EONET) webservice.")
     (license license:cc0)))
 
+(define-public r-naryn
+  (package
+    (name "r-naryn")
+    (version "2.6.12")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "naryn" version))
+              (sha256
+               (base32
+                "0lz0vcgp0llwr94234aqa7na0rl1120db8mga5wryp3hhs8w7qc1"))))
+    (properties `((upstream-name . "naryn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=naryn")
+    (synopsis
+     "Native Access Medical Record Retriever for High Yield Analytics")
+    (description
+     "This package provides a toolkit for medical records data analysis.  The naryn
+package implements an efficient data structure for storing medical records, and
+provides a set of functions for data extraction, manipulation and analysis.")
+    (license license:expat)))
+
 (define-public r-narray
   (package
     (name "r-narray")
@@ -13156,13 +13158,13 @@ for optimization using multi-criteria algorithms (e.g. Pareto methods).")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "0h4i0smcqiigg8gjlphd772q7mzl6aii0jdfsxnd5bbd6xrmfxda"))))
+                "0kiykizj2pirdg0sx5931nsvmx61aq53hpcz0chqhfi7h8i555j7"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
@@ -13171,8 +13173,8 @@ for optimization using multi-criteria algorithms (e.g. Pareto methods).")
      "R binding for NNG (Nanomsg Next Gen), a successor to ZeroMQ. NNG is a socket
 library providing high-performance scalability protocols, implementing a
 cross-platform standard for messaging and communications.  Serves as a
-concurrency framework for building distributed applications, utilising Aio
-objects which automatically resolve upon completion of asynchronous operations.")
+concurrency framework for building distributed applications, utilising aio
+objects which resolve automatically upon completion of asynchronous operations.")
     (license license:gpl3+)))
 
 (define-public r-nandb
@@ -13780,16 +13782,16 @@ size factors in an interactive web application.")
 (define-public r-naaccr
   (package
     (name "r-naaccr")
-    (version "1.0.0")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naaccr" version))
               (sha256
                (base32
-                "1hw74a2gjm3gxq0s0qlndhqw0vij6p31walz1ic741z7hqsffqq7"))))
+                "1j30fb7qvxzpx0y7hq8sbqvszwjfnc4r2g0j8885fmn2wxvcgzdx"))))
     (properties `((upstream-name . "naaccr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-data-table))
+    (propagated-inputs (list r-xml r-stringi r-data-table))
     (home-page "https://github.com/WerthPADOH/naaccr")
     (synopsis "Read Cancer Records in the NAACCR Format")
     (description

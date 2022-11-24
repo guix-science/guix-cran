@@ -1998,13 +1998,13 @@ analyses of the cumulative incidence functions (Allignol and Beyersmann, 2010
 (define-public r-kmedians
   (package
     (name "r-kmedians")
-    (version "0.2.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Kmedians" version))
               (sha256
                (base32
-                "1cyvmlyg44d8pyx3w9z02xkkr4zbqlnlfzix660bqnihs3ss6fhk"))))
+                "10akh0jbnk7hrgqp414p66ddlhs6rdgd1ifjx18wpnfn4c81xcnj"))))
     (properties `((upstream-name . "Kmedians")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -2104,17 +2104,17 @@ Huang, Z. and B. Sen (2022) <arXiv:2210.00634>.")
 (define-public r-kmc
   (package
     (name "r-kmc")
-    (version "0.2-4")
+    (version "0.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kmc" version))
               (sha256
                (base32
-                "0y8bdgdxsz53fiqc2yr39agndxs4zxj7mmplj273map9k0slnnqk"))))
+                "0rnrwqsmxcmf4sjd9p2xz7w12lv58wmy2p349s0x4b34b5arf75d"))))
     (properties `((upstream-name . "kmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-rcpp r-emplik))
-    (home-page "http://github.com/yfyang86/kmc")
+    (home-page "https://github.com/yfyang86/kmc/")
     (synopsis
      "Kaplan-Meier Estimator with Constraints for Right Censored Data -- a Recursive Computational Algorithm")
     (description
@@ -2126,8 +2126,8 @@ right censored data and accelerated failure time model with given coefficients.
 EM algorithm from emplik package is used to get the initial value.  The
 properties and performance of the EM algorithm is discussed in Mai Zhou and
 Yifan Yang (2015)<doi: 10.1007/s00180-015-0567-9> and Mai Zhou and Yifan Yang
-(2017) <10.1002/wics.1400>.  More applications could be found in Mai Zhou (2015)
-<doi: 10.1201/b18598>.")
+(2017) <doi: 10.1002/wics.1400>.  More applications could be found in Mai Zhou
+(2015) <doi: 10.1201/b18598>.")
     (license license:lgpl3)))
 
 (define-public r-klustr
@@ -3522,19 +3522,19 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 (define-public r-kernstadapt
   (package
     (name "r-kernstadapt")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernstadapt" version))
               (sha256
                (base32
-                "1b5gc2l1yf142pkw3bd5rnnvynwmnh90lqfpra9n4sbs9x9zmsci"))))
+                "0hbzc0xqlgs3kbblm247hkaic7s9a5slz22slh5dz9ddgfdy1z21"))))
     (properties `((upstream-name . "kernstadapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-sparr
                              r-misc3d))
     (native-inputs (list r-knitr))
@@ -3636,13 +3636,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernelshap" version))
               (sha256
                (base32
-                "04y4z8zqafpy0a0191avx10rr7yvbdi748cgb86kabgzn5yzvhm6"))))
+                "0y3cypdllmm9s4s3nca58962laxsd73zvy4iz9mbvgdpqwfxzk9h"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-foreach r-dorng))
@@ -4367,6 +4367,30 @@ selection is then used to determine the optimal k>0.")
 K-copula by WollschlÃ¤ger and SchÃ¤fer (2016) <doi:10.21314/JOR.2016.342>.")
     (license license:gpl3)))
 
+(define-public r-kcop
+  (package
+    (name "r-kcop")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Kcop" version))
+              (sha256
+               (base32
+                "0p9ik4z2jc2ib70v8lxxa40f13jbqgq6bb9s7yx335na9l43h1j8"))))
+    (properties `((upstream-name . "Kcop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-orthopolynom r-gtools r-dplyr r-copula))
+    (home-page "https://cran.r-project.org/package=Kcop")
+    (synopsis
+     "Smooth Test for Equality of Copulas and Clustering Multivariate")
+    (description
+     "This package implements approaches of non-parametric smooth test to compare
+simultaneously K(K>1) copulas and non-parametric clustering of multivariate
+populations with arbitrary sizes.  See Yves I. Ngounou Bakam and Denys Pommeret
+(2022) <arXiv:2112.05623> and Yves I. Ngounou Bakam and Denys Pommeret (2022)
+<arXiv:2211.06338>.")
+    (license license:gpl3+)))
+
 (define-public r-kbmvtskew
   (package
     (name "r-kbmvtskew")
@@ -4629,13 +4653,13 @@ multinomial outcomes and two through six raters.")
 (define-public r-kappalab
   (package
     (name "r-kappalab")
-    (version "0.4-7")
+    (version "0.4-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kappalab" version))
               (sha256
                (base32
-                "16bwbwwqmq2w7vy8p3wg0y80wfgc8q5l1ly1mqh51xi240z1qmq0"))))
+                "1ybr3nci04f9j91hwb5rv6ahwy89rdicxx2b2bl8rm70pj0vaq4r"))))
     (properties `((upstream-name . "kappalab")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-lpsolve r-kernlab))

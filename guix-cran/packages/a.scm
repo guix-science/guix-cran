@@ -1870,13 +1870,13 @@ package relies on the base graphics system, so graphics are rendered rapidly.")
 (define-public r-autohrf
   (package
     (name "r-autohrf")
-    (version "1.0.4")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autohrf" version))
               (sha256
                (base32
-                "1fg3zxq39fiwj8jgxjzp71df7dkxy4srn2z3lfabacvlxg4q3r5k"))))
+                "1zmnrfak91q10aa9a3i816hln2skvbnamigcbsc1dbkj0j6mdqwd"))))
     (properties `((upstream-name . "autohrf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -2990,13 +2990,13 @@ to the grid and vice versa.  It also allows to create a choreograph map.")
 (define-public r-atom4r
   (package
     (name "r-atom4r")
-    (version "0.3-2")
+    (version "0.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atom4R" version))
               (sha256
                (base32
-                "044ja5f9jnl5b8ch4ksimhf1plm4qg6869bvkg0fp375v5wgrbmy"))))
+                "08n9apmliwri1vyqwfvyqi7m8b9nj7zpi1vg8gcqlg17skxndm2m"))))
     (properties `((upstream-name . "atom4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -4177,16 +4177,49 @@ principal components using singular spectrum analysis (de Carvalho and Rua
 <doi:10.1016/j.econlet.2011.09.007>).")
     (license license:gpl3+)))
 
+(define-public r-asrgenomics
+  (package
+    (name "r-asrgenomics")
+    (version "1.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ASRgenomics" version))
+              (sha256
+               (base32
+                "1v0gwa7i50ilmbhgccaxn172sdfr6clqnmi2f29ax6dwcdyhfik8"))))
+    (properties `((upstream-name . "ASRgenomics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superheat
+                             r-scattermore
+                             r-matrix
+                             r-ggplot2
+                             r-factoextra
+                             r-ellipse
+                             r-data-table
+                             r-crayon
+                             r-cowplot
+                             r-aghmatrix))
+    (home-page "https://cran.r-project.org/package=ASRgenomics")
+    (synopsis "'ASReml-R' Genomics Tools")
+    (description
+     "Presents a series of molecular and genetic routines in the R environment with
+the aim of assisting in analytical pipelines before and after the use of asreml
+or another library to perform analyses such as Genomic Selection or Genome-Wide
+Association Analyses.  Methods and examples are described in Gezan, Oliveira,
+Galli, and Murray (2022)
+<https://asreml.kb.vsni.co.uk/wp-content/uploads/sites/3/ASRgenomics_Manual.pdf>.")
+    (license license:expat)))
+
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.36")
+    (version "4.3.40")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "0hbg7asd7z0112jarprxkanqh3f2rlrbm6hkayv0spyn4z6hpqgl"))))
+                "03w16mlri6mb4zigb9fj8rfz10kwwwdkqf4l9x8az5z52aq7b7zc"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4675,13 +4708,13 @@ Kroitor.")
 (define-public r-asciicast
   (package
     (name "r-asciicast")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asciicast" version))
               (sha256
                (base32
-                "14pbhywiv99hmmmmsr55yf8i1lwryzxply2gwikpddiqfl07fi96"))))
+                "1x3dr3lr5hz53xl0z4y4i10qfmp8jakvr0r0jglcz3r66ajcghhk"))))
     (properties `((upstream-name . "asciicast")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4746,13 +4779,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.8-2")
+    (version "1.8-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asbio" version))
               (sha256
                (base32
-                "05f0b9zl5zayrkqxfmpljwp2q3sbw8khrdqg5m3f6ic339f8iyka"))))
+                "1p0hfgkfcnxdf2jivn1mm3rjdqs4arik6ajc1gc1mmdwfwh82s5x"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (inputs (list))
@@ -5421,13 +5454,13 @@ specimen, to build virtual cavities as endocast (Profico et al, 2021
 (define-public r-aroma-core
   (package
     (name "r-aroma-core")
-    (version "3.2.2")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aroma.core" version))
               (sha256
                (base32
-                "0ma84hhqn0g4pw0b8zkdcrz96z3j3lnw3yka0gd9861s80p33q1m"))))
+                "12118xdb74c4b2ca5dq57zxkrrcjjji10b5a1qxpixkrc36bfskv"))))
     (properties `((upstream-name . "aroma.core")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -6110,44 +6143,49 @@ variable.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ardl.nardl" version))
               (sha256
                (base32
-                "1dssbv48i4d2janqddjnpiwixczy681v8pf9b4gq9h7x0srgbpdh"))))
+                "06b113rnclx7b5cpkh0phapnxh5sn8sp3ps74irmidhd4n5jyxzf"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
                              r-texreg
                              r-stringr
+                             r-sandwich
                              r-rlist
                              r-nardl
                              r-lmtest
+                             r-gets
                              r-dplyr
                              r-car))
     (home-page "https://cran.r-project.org/package=ardl.nardl")
-    (synopsis "Linear and Nonlinear Autoregressive Distributed Lag Models")
+    (synopsis
+     "Linear and Nonlinear Autoregressive Distributed Lag Models: General-to-Specific Approach")
     (description
      "Estimate the linear and nonlinear autoregressive distributed lag (ARDL & NARDL)
 models and the corresponding error correction models, and test for longrun and
-short-run asymmetric.  The Pesaran, Shin & Smith (2001) (<doi:10.1002/jae.616>)
-bounds test for level relationships is also provided.  The ardl.nardl package
-also performs short-run and longrun symmetric restrictions available at Shin et
-al. (2014) <doi:10.1007/978-1-4899-8008-3_9> and their corresponding tests.")
+short-run asymmetric.  The general-to-specific approach is also available in
+estimating the ARDL and NARDL models.  The Pesaran, Shin & Smith (2001)
+(<doi:10.1002/jae.616>) bounds test for level relationships is also provided.
+The ardl.nardl package also performs short-run and longrun symmetric
+restrictions available at Shin et al. (2014) <doi:10.1007/978-1-4899-8008-3_9>
+and their corresponding tests.")
     (license license:gpl2+)))
 
 (define-public r-ardl
   (package
     (name "r-ardl")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARDL" version))
               (sha256
                (base32
-                "19ggs0ipqnivdwvx5ry7i7p2yvrrqj8bydcka44plh44kqa35kc8"))))
+                "151mw6z67ssa3pykmbcijgcw4msbrpn1l4b5qj3pz9v9k3j05idl"))))
     (properties `((upstream-name . "ARDL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8904,13 +8942,13 @@ online: <https://www.who.int/tools/child-growth-standards>.")
 (define-public r-antaresviz
   (package
     (name "r-antaresviz")
-    (version "0.17")
+    (version "0.17.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresViz" version))
               (sha256
                (base32
-                "18f398qvy88w9rlkd08h5gvk7vwh349cjxi4pa59s5fs4ihhmdd2"))))
+                "072nh0x0qrbi9va27r20vjzjsbjriqbzbpwc7vl40pimjd0hd2x4"))))
     (properties `((upstream-name . "antaresViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
@@ -9376,6 +9414,33 @@ annuity-immediate considering interest rate as a random variable.  Cruz Rambaud
 et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 <doi:10.23755/rm.v28i1.25>.")
     (license license:gpl2+)))
+
+(define-public r-annotator
+  (package
+    (name "r-annotator")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "annotator" version))
+              (sha256
+               (base32
+                "1llr17ac1sr5ih8k5gy8rzmbjhqr3iv0xz3bh3havhlcwlcrpvj0"))))
+    (properties `((upstream-name . "annotator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-shiny
+                             r-knitr
+                             r-imager
+                             r-htmlwidgets
+                             r-glue))
+    (home-page "https://cran.r-project.org/package=annotator")
+    (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
+    (description
+     "This package provides functions to create image annotations through polygon
+outlining.  Annotator has the same function as graphics::locator() but achieves
+its purpose through drawing, rather than multiple mouse clicks.  It is based on
+the htmlwidgets package and fabric.js JavaScript library <http://fabricjs.com/>.")
+    (license license:gpl3+)))
 
 (define-public r-annotationbustr
   (package
@@ -10357,13 +10422,13 @@ distribution across split samples, and to filter the false positive reads.")
 (define-public r-ample
   (package
     (name "r-ample")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AMPLE" version))
               (sha256
                (base32
-                "1lcwwf41i0mkg2bv8z5mzrj6h3pa31h33mrmbxbndjgb3ivz2wf5"))))
+                "1bi39liky0lmv56rxcrf4m9vc3s4xi1z2wcigfkpvsap4gy67qph"))))
     (properties `((upstream-name . "AMPLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyscreenshot
@@ -10375,8 +10440,7 @@ distribution across split samples, and to filter the false positive reads.")
                              r-markdown
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/PacificCommunity/ofp-sam-amped/tree/master/AMPLE")
+    (home-page "https://github.com/PacificCommunity/ofp-sam-ample")
     (synopsis
      "Shiny Apps to Support Capacity Building on Harvest Control Rules")
     (description
@@ -10834,16 +10898,16 @@ Ozgur, Jaideep Srivastava (2003) <doi:10.1137/1.9781611972733.3>.")
 (define-public r-amelia
   (package
     (name "r-amelia")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Amelia" version))
               (sha256
                (base32
-                "0plrnmlwn91bmrx8ip83nqb15ykjxjl6m49788sinq5cinkdbh9y"))))
+                "1r27zjlr8ld932lr6dn79cravss17gry6p0mxgdlbj6g58mfc30j"))))
     (properties `((upstream-name . "Amelia")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreign))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-foreign))
     (native-inputs (list r-knitr))
     (home-page "https://gking.harvard.edu/amelia")
     (synopsis "Program for Missing Data")
@@ -11542,13 +11606,13 @@ three-dimensional graphical visualization of the estimated set.")
 (define-public r-alphapart
   (package
     (name "r-alphapart")
-    (version "0.9.7")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AlphaPart" version))
               (sha256
                (base32
-                "0v1ywxlx248v6nqxcfh0d1mgpzs08vxww807c60mq7d4hqdlar82"))))
+                "1ih76v3kgnladqq3nvlqrz5sqkg1j97m778kchz6k05cjxhj8l4q"))))
     (properties `((upstream-name . "AlphaPart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11843,6 +11907,29 @@ the models with their own data as well.  The output includes both numerical and
 visual presentations of the classification results.  Samples with mixed features
 from multiple classes or atypical values are also identified.")
     (license license:gpl2+)))
+
+(define-public r-allomr
+  (package
+    (name "r-allomr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "allomr" version))
+              (sha256
+               (base32
+                "0iprldmqww928m3mic3lcb8vhsr4ihrn83lvlx3wr3n7zch72771"))))
+    (properties `((upstream-name . "allomr")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=allomr")
+    (synopsis
+     "Removing Allometric Effects of Body Size in Morphological Analysis")
+    (description
+     "Implementation of the technique of Lleonart et al. (2000)
+<doi:10.1006/jtbi.2000.2043> to scale body measurements that exhibit an
+allometric growth.  This procedure is a theoretical generalization of the
+technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
+Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
+    (license license:gpl3+)))
 
 (define-public r-allestimates
   (package
@@ -12689,13 +12776,13 @@ JavaScript.  See <http://epoberezkin.github.io/ajv/> for details.")
 (define-public r-aisoph
   (package
     (name "r-aisoph")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aisoph" version))
               (sha256
                (base32
-                "02kh0810brz0yrgwyx8qjpy5wn1f1g0q9h483q9nqhmvddgljmkk"))))
+                "1c64slva2yb3phflxslxbpp4iydxx92hrj9xi7dv1bsbag8n9xd7"))))
     (properties `((upstream-name . "aisoph")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-iso))
@@ -13831,13 +13918,13 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
 (define-public r-agror
   (package
     (name "r-agror")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroR" version))
               (sha256
                (base32
-                "1a08wm33rpnchxwy1pn298wwgg2zw5a9xih92i843ch43pw02dis"))))
+                "098ichvfsx7v1mawwy4mcxw7llfxkp7iqhnkawqq5f4lsjhr376h"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -13847,6 +13934,7 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
                              r-mass
                              r-lmtest
                              r-lme4
+                             r-knitr
                              r-gtools
                              r-gridextra
                              r-ggrepel
@@ -15776,13 +15864,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adjustedCurves" version))
               (sha256
                (base32
-                "1p8zfswd9b98mgffq9znq7npajr7gh0v82faxajxh4mxqfb1rdjk"))))
+                "1mhl4mzw4286kp9khlv2kpfvzhnvwkmdicwc0z7mlqyi46znylib"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -16982,34 +17070,6 @@ Kolmogorov-Smirnov test.  The package is based on the publication of Ultsch, A.,
 Thrun, M.C., Hansen-Goos, O., Lotsch, J. (2015) <DOI:10.3390/ijms161025897>.")
     (license license:gpl3)))
 
-(define-public r-adaptfitos
-  (package
-    (name "r-adaptfitos")
-    (version "0.69")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AdaptFitOS" version))
-              (sha256
-               (base32
-                "0mclsnsxjyg1q7p7654gjsczzdzpa6avx3b9jpmdb0n63zdgmwy3"))))
-    (properties `((upstream-name . "AdaptFitOS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-semipar r-nlme r-mgcv r-mass))
-    (home-page "https://cran.r-project.org/package=AdaptFitOS")
-    (synopsis
-     "Adaptive Semiparametric Additive Regression with Simultaneous Confidence Bands and Specification Tests")
-    (description
-     "Fits semiparametric additive regression models with spatially adaptive penalized
-splines and computes simultaneous confidence bands and associated specification
-(lack-of-fit) tests.  Simultaneous confidence bands cover the entire curve with
-a prescribed level of confidence and allow us to assess the estimation
-uncertainty for the whole curve.  In contrast to pointwise confidence bands,
-they permit statements about the statistical significance of certain features
-(e.g. bumps) in the underlying curve.The method allows for handling of spatially
-heterogeneous functions and their derivatives as well as heteroscedasticity in
-the data.  See Wiesenfarth et al. (2012) <doi:10.1080/01621459.2012.682809>.")
-    (license license:gpl2+)))
-
 (define-public r-adaptdiag
   (package
     (name "r-adaptdiag")
@@ -17445,6 +17505,38 @@ fully integrated with the app, the app uses some functions from the
 actigraph.sleepr package developed by Petkova (2021)
 <https://github.com/dipetkov/actigraph.sleepr/>.")
     (license license:gpl3+)))
+
+(define-public r-actisleep
+  (package
+    (name "r-actisleep")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ActiSleep" version))
+              (sha256
+               (base32
+                "0nkfddfv0g1bvsg6811lrmy0cx7knmi225snyp22bh9ly9fnlqp8"))))
+    (properties `((upstream-name . "ActiSleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rsqlite
+                             r-lubridate
+                             r-lazyeval
+                             r-dplyr
+                             r-dbi
+                             r-accelerometry))
+    (home-page "https://cran.r-project.org/package=ActiSleep")
+    (synopsis "Sleep Duration Estimate Algorithm")
+    (description
+     "Estimate sleep duration using a Pruned Dynamic Programming (PDP) algorithm that
+quickly and efficiently identifies changepoints.  When applied to physical
+activity data it can identify transitions from wakefulness to sleep and vice
+versa.  Baek, Jonggyu, Banker, Margaret, Jansen, Erica C., She, Xichen,
+Peterson, Karen E., Pitchford, E. Andrew, Song, Peter X. K. (2021) \"An Efficient
+Segmentation Algorithm to Estimate Sleep Duration from Actigraphy Data\"
+<doi:10.1007/s12561-021-09309-3>.")
+    (license license:gpl2+)))
 
 (define-public r-actilifecounts
   (package

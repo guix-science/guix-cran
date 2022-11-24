@@ -19,11 +19,10 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages code)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pdf)
@@ -232,13 +231,13 @@ disseminate PC-Axis files.")
 (define-public r-pxr
   (package
     (name "r-pxr")
-    (version "0.42.4")
+    (version "0.42.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pxR" version))
               (sha256
                (base32
-                "1r0ffr5wxf67i1jh67v06vcmifw4hhhasd4aivic94bkvq4sqmn5"))))
+                "05i1cg35hq0z37xnh2qfcp8mnrphadrg7av5d0mcgi9nx6c1w80j"))))
     (properties `((upstream-name . "pxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rjsonio r-reshape2 r-plyr))
@@ -1075,13 +1074,13 @@ Philip D. (2018) <doi:10.1177/1532673X18759644>.")
 (define-public r-purger
   (package
     (name "r-purger")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "purgeR" version))
               (sha256
                (base32
-                "1r93jy5m9x9qgbnnh1a342479gv7f4xxz8w7g0idqd83pzsfasn0"))))
+                "0pa7ifpcmvy85bknpqcprh7plsxs6lmaqbripw1h304jmxg3lbg1"))))
     (properties `((upstream-name . "purgeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-progress r-foreach
@@ -2273,18 +2272,18 @@ with these extensions.")
 (define-public r-psyverse
   (package
     (name "r-psyverse")
-    (version "0.1.0")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psyverse" version))
               (sha256
                (base32
-                "0q402z884fwnd812bs44xqbsank89risli13v3njhjc337lj29wx"))))
+                "10v1fwi5rcmsr5d4lylp7j23vc06mvkr3g4shvhw84yhba78g201"))))
     (properties `((upstream-name . "psyverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum r-yaml))
     (native-inputs (list r-knitr))
-    (home-page "https://r-packages.gitlab.io/psyverse")
+    (home-page "https://psyverse.one")
     (synopsis "Decentralized Unequivocality in Psychological Science")
     (description
      "The constructs used to study the human psychology have many definitions and
@@ -3358,13 +3357,13 @@ models with penalized basis splines (P-Splines).  See
 (define-public r-pspatreg
   (package
     (name "r-pspatreg")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pspatreg" version))
               (sha256
                (base32
-                "1rnlcxb95yzcihjsah31g94fk57gmw5cyjf83mi67mrx037zzxsr"))))
+                "1ml3vyz76lb2qgsqm5223pmx686l79hwplwj63fr7pm3vikdcsnm"))))
     (properties `((upstream-name . "pspatreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3611,13 +3610,13 @@ intamap package.  More details on implementation (Barillec et.  al.', 2010,
 (define-public r-psgd
   (package
     (name "r-psgd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PSGD" version))
               (sha256
                (base32
-                "0yf1cmanm41i71c3fzkp1mmd2v9sn5yn3hadxrmvmrql1i9j2s4x"))))
+                "1dqm1pv6cqcf69bxywwg0q5n98g95b363gszi2k19bkwvh4a1jq9"))))
     (properties `((upstream-name . "PSGD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -4476,13 +4475,13 @@ Luis Perez (2018), Using Introspection to Collect Provenance in R, Informatics,
 (define-public r-proverbs
   (package
     (name "r-proverbs")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "proverbs" version))
               (sha256
                (base32
-                "1i3aqlk4xb6zrjb7izyz7m9ys950cc6msvac8ixx74a7s57j99p1"))))
+                "1kfc8vghrzszgvjx5pq221cw20cn990h5s7l1di5m61wx29siakc"))))
     (properties `((upstream-name . "proverbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -4491,6 +4490,7 @@ Luis Perez (2018), Using Introspection to Collect Provenance in R, Informatics,
                              r-httr
                              r-crayon
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bradlindblad/proverbs")
     (synopsis "Print a Daily Bible Proverb to Console")
     (description
@@ -6981,6 +6981,28 @@ optional).")
 <http://www.prisonstudies.org/>.")
     (license license:expat)))
 
+(define-public r-prismjs
+  (package
+    (name "r-prismjs")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prismjs" version))
+              (sha256
+               (base32
+                "0v4l8b867lzwrnqcms25hy73a5h06vxs48aca0qvv5iwzsqqlcl5"))))
+    (properties `((upstream-name . "prismjs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-v8))
+    (home-page "https://github.com/ropensci/prismjs")
+    (synopsis "Server-Side Syntax Highlighting")
+    (description
+     "Prism <https://prismjs.com/> is a lightweight, extensible syntax highlighter,
+built with modern web standards in mind.  This package provides server-side
+rendering in R using V8 such that no JavaScript library is required in the
+resulting HTML documents.  Over 400 languages are supported.")
+    (license license:expat)))
+
 (define-public r-prismastatement
   (package
     (name "r-prismastatement")
@@ -7775,13 +7797,13 @@ prevalence to incidence - a new approach in the hospital setting;
 (define-public r-prevr
   (package
     (name "r-prevr")
-    (version "4.0.0")
+    (version "4.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prevR" version))
               (sha256
                (base32
-                "11biwj4qhynsqxgibgcgiprk5bs9ym9sja14lj6m8s43lyi6jyjb"))))
+                "0r70ns7qg72bva712pqw3djp0lzz8bpm00d9s3q9qm30lhgcl124"))))
     (properties `((upstream-name . "prevR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -10058,35 +10080,6 @@ pleiotropy, and can provide the accurate estimates of both causal effect and
 horizontal pleiotropy effect as well as the two corresponding p-values.  There
 are two main functions in the PPMR package.  One is PMR_individual() for
 individual level data, the other is PMR_summary() for summary data.")
-    (license license:gpl3)))
-
-(define-public r-ppmlasso
-  (package
-    (name "r-ppmlasso")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ppmlasso" version))
-              (sha256
-               (base32
-                "0pdafk8f8z92v4rs0n78sj9gy80l2nr9n91y2icbchgh8fa1hi1m"))))
-    (properties `((upstream-name . "ppmlasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat-core
-                             r-spatstat
-                             r-plyr
-                             r-lattice
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=ppmlasso")
-    (synopsis "Point Process Models with LASSO-Type Penalties")
-    (description
-     "Toolkit for fitting point process models with sequences of LASSO penalties
-(\"regularisation paths\"), as described in Renner, I.W. and Warton, D.I. (2013)
-<doi:10.1111/j.1541-0420.2012.01824.x>.  Regularisation paths of Poisson point
-process models or area-interaction models can be fitted with LASSO, adaptive
-LASSO or elastic net penalties.  A number of criteria are available to judge the
-bias-variance tradeoff.")
     (license license:gpl3)))
 
 (define-public r-ppmhr
@@ -12478,31 +12471,6 @@ to the comprehensive tutorials or visit <http://www.popgenreport.org/>.")
 ISBN:9780198829546).")
     (license license:cc0)))
 
-(define-public r-popgenome
-  (package
-    (name "r-popgenome")
-    (version "2.7.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PopGenome" version))
-              (sha256
-               (base32
-                "0xdwgih1n7bkykbzrnp293yzrlj80vr2v6rlsww61nxlhynbh9yn"))))
-    (properties `((upstream-name . "PopGenome")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-ff))
-    (home-page "https://cran.r-project.org/package=PopGenome")
-    (synopsis "An Efficient Swiss Army Knife for Population Genomic Analyses")
-    (description
-     "This package provides efficient tools for population genomics data analysis,
-able to process individual loci, large sets of loci, or whole genomes.
-PopGenome <DOI:10.1093/molbev/msu136> not only implements a wide range of
-population genetics statistics, but also facilitates the easy implementation of
-new algorithms by other researchers.  PopGenome is optimized for speed via the
-seamless integration of C code.")
-    (license license:gpl3)))
-
 (define-public r-popepi
   (package
     (name "r-popepi")
@@ -13047,13 +13015,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "4.3")
+    (version "4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomp" version))
               (sha256
                (base32
-                "0581b1q2scmr57kr83kb3k1dp4bz3jny6h5v6lm7mxsychca4dl7"))))
+                "11c0dzs34ks1vp0gdbzg6ls5q4z3gyd9m2kbdi9nrspammg0h138"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -14115,13 +14083,13 @@ et al. (2004) <doi:10.1177/1532673X04263801>.")
 (define-public r-policytree
   (package
     (name "r-policytree")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "policytree" version))
               (sha256
                (base32
-                "0ixw6b1zy4h51dzhmrfsghnqxm3mw221v5armsxnc88xpw2rac93"))))
+                "1a0rfpn7dd8qsgaz5gfxpip7i897j8lmb86sjmpdafdyw5p3fl8m"))))
     (properties `((upstream-name . "policytree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-grf r-bh))
@@ -15519,41 +15487,6 @@ inconsistencies), probability models (Luce models, distance-based models, and
 rank-ordered logit models) and visualization with multidimensional preference
 analysis for ranking data are provided.  Current, only complete rankings are
 supported by this package.")
-    (license license:gpl2)))
-
-(define-public r-pmparser
-  (package
-    (name "r-pmparser")
-    (version "1.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pmparser" version))
-              (sha256
-               (base32
-                "1mcy5rkblbv26yrq1wwh11d86dp68yyq246kkwn28rniyi3lm149"))))
-    (properties `((upstream-name . "pmparser")))
-    (build-system r-build-system)
-    (inputs (list unzip sqlite))
-    (propagated-inputs (list r-xml2
-                             r-withr
-                             r-rcurl
-                             r-r-utils
-                             r-jsonlite
-                             r-iterators
-                             r-glue
-                             r-foreach
-                             r-dbi
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://pmparser.hugheylab.org")
-    (synopsis
-     "Create and Maintain a Relational Database of Data from PubMed/MEDLINE")
-    (description
-     "This package provides a simple interface for extracting various elements from
-the publicly available PubMed XML files, incorporating PubMed's regular updates,
-and combining the data with the NIH Open Citation Collection.  See Schoenbachler
-and Hughey (2021) <doi:10.7717/peerj.11071>.")
     (license license:gpl2)))
 
 (define-public r-pmmltransformations
@@ -17171,13 +17104,13 @@ implemented in nlminb.")
 (define-public r-plnr
   (package
     (name "r-plnr")
-    (version "2022.6.8")
+    (version "2022.11.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plnr" version))
               (sha256
                (base32
-                "0nm6zzahl3chgj1sj07izdxb8gprjca7nr87wxcjkzh19xrix7dd"))))
+                "1qi24zpvclamxxfppgll7rcmq7fysxf8chk6wlkwkzmjl5c3cs4n"))))
     (properties `((upstream-name . "plnr")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -17190,7 +17123,7 @@ implemented in nlminb.")
                              r-digest
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.sykdomspulsen.no/plnr/")
+    (home-page "https://www.csids.no/plnr/")
     (synopsis "System for Planing Analyses")
     (description
      "This package provides a system to plan analyses within the mental model where
@@ -18808,13 +18741,13 @@ website for vignettes and other supplementary information.")
 (define-public r-pkgndep
   (package
     (name "r-pkgndep")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgndep" version))
               (sha256
                (base32
-                "17l9xpv7k3v4gy163cma3i1z87y10gxkw0a6w0b63djgjb3h0nhg"))))
+                "1d2h1rgr803aw3n43iaacvqdv6b9ng97bwwsmrqc4rdyn0v532i7"))))
     (properties `((upstream-name . "pkgndep")))
     (build-system r-build-system)
     (propagated-inputs (list r-hash
@@ -21150,13 +21083,13 @@ reactive-transport, and inverse geochemical calculations.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photosynthesis" version))
               (sha256
                (base32
-                "10z5vg516hd654lcwha6krpm3q457d19kd8441wh2256ps7r37zx"))))
+                "17ipcgk11fnfrka5x95s4x5hncbfa38laav91475ghsni3hll4ay"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -21168,6 +21101,7 @@ reactive-transport, and inverse geochemical calculations.")
                              r-nlme
                              r-minpack-lm
                              r-magrittr
+                             r-lifecycle
                              r-gunit
                              r-glue
                              r-ggplot2
@@ -22607,13 +22541,13 @@ characteristics of the design.")
 (define-public r-phase
   (package
     (name "r-phase")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phase" version))
               (sha256
                (base32
-                "1nwxyw6ysnxivlcwrc2x91862ljmw6zq80ncxfd1qwf3b9c9npdg"))))
+                "168b76kqfzazaszc2k6iha58pffi1g6rpq69ndr3p2xscvb9jcy8"))))
     (properties `((upstream-name . "phase")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24209,33 +24143,6 @@ the principal coordinates of the group means.  There are some original results
 that will be published soon.")
     (license license:gpl2+)))
 
-(define-public r-permallows
-  (package
-    (name "r-permallows")
-    (version "1.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PerMallows" version))
-              (sha256
-               (base32
-                "0ny2vc8f0npixaw1kp2d93xr4g46nsg8jjwvi6afv9xjvaz0i6wy"))))
-    (properties `((upstream-name . "PerMallows")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=PerMallows")
-    (synopsis "Permutations and Mallows Distributions")
-    (description
-     "Includes functions to work with the Mallows and Generalized Mallows Models.  The
-considered distances are Kendall's-tau, Cayley, Hamming and Ulam and it includes
-functions for making inference, sampling and learning such distributions, some
-of which are novel in the literature.  As a by-product, PerMallows also includes
-operations for permutations, paying special attention to those related with the
-Kendall's-tau, Cayley, Ulam and Hamming distances.  It is also possible to
-generate random permutations at a given distance, or with a given number of
-inversions, or cycles, or fixed points or even with a given length on LIS
-(longest increasing subsequence).")
-    (license license:gpl2+)))
-
 (define-public r-permalgo
   (package
     (name "r-permalgo")
@@ -25350,6 +25257,40 @@ regularization, roughness constraints, and procedures for estimating smoothing
 parameters are included.")
     (license license:gpl2+)))
 
+(define-public r-peiman2
+  (package
+    (name "r-peiman2")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PEIMAN2" version))
+              (sha256
+               (base32
+                "01jsyp9yk576v3bc0a33y0f8w9v4b47g5hc0zahf3zl4bkp8i4wv"))))
+    (properties `((upstream-name . "PEIMAN2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PEIMAN2")
+    (synopsis
+     "Post-Translational Modification Enrichment, Integration, and Matching Analysis")
+    (description
+     "This package provides functions and mined database from UniProt focusing on
+post-translational modifications to do single enrichment analysis (SEA) and
+protein set enrichment analysis (PSEA).  Payman Nickchi, Mehdi Mirzaie, Marc
+Baumann, Amir Ata Saei, Mohieddin Jafari (2022)
+<bioRxiv:10.1101/2022.11.09.515610>.")
+    (license license:gpl3+)))
+
 (define-public r-pegrouptesting
   (package
     (name "r-pegrouptesting")
@@ -25595,13 +25536,13 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedmut" version))
               (sha256
                (base32
-                "0w42jhgrkf5f1baz2jb94fyccm0wx94vg0g1px4p39jvpknz9d6a"))))
+                "19m09mwxs58qsbc7h9vjax6dhjlcz65razhmdb6l5y8w1dq2v9gw"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (home-page "https://github.com/magnusdv/pedmut")
@@ -25729,13 +25670,13 @@ likelihoods and forrel for estimating pairwise relatedness.")
 (define-public r-pedbp
   (package
     (name "r-pedbp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedbp" version))
               (sha256
                (base32
-                "0wc8y9wfv7spwww4l15nmjhlmlx8mpm0l6msn3pymv5kw7jipdip"))))
+                "0yc6185i3jzpwkpmkm38vggyfba0pvz6hvzqfkl6ch591dvkldch"))))
     (properties `((upstream-name . "pedbp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -26210,13 +26151,13 @@ neighborhoods.")
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
-    (version "0.4.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDtoolkit" version))
               (sha256
                (base32
-                "02gw4l4wqz6hccb35ip4ynjqs6dhllkpvglmlzav9djvv3yj83fg"))))
+                "170f5cwq3v8qhj39jms291khz72x9ajswx2sx9m6d2gpf89nwwh5"))))
     (properties `((upstream-name . "PDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-monobin r-dplyr))
@@ -26850,30 +26791,6 @@ models.  Some original methods including Boshnakov & Iqelan (2009)
 <doi:10.1111/j.1467-9892.1996.tb00281.x>.")
     (license license:gpl2+)))
 
-(define-public r-pct
-  (package
-    (name "r-pct")
-    (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pct" version))
-              (sha256
-               (base32
-                "1y3cmqirh003hyg80bnl0rpbcp9h9bzlv0lbjxq0wmvsb84hbqbn"))))
-    (properties `((upstream-name . "pct")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stplanr r-sf r-readr r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://itsleeds.github.io/pct/")
-    (synopsis "Propensity to Cycle Tool")
-    (description
-     "This package provides functions and example data to teach and increase the
-reproducibility of the methods and code underlying the Propensity to Cycle Tool
-(PCT), a research project and web application hosted at <https://www.pct.bike/>.
- For an academic paper on the methods, see Lovelace et al (2017)
-<doi:10.5198/jtlu.2016.862>.")
-    (license license:gpl3)))
-
 (define-public r-pcsteiner
   (package
     (name "r-pcsteiner")
@@ -27263,13 +27180,13 @@ described in Mitov and Stadler (2018) <doi:10.1111/2041-210X.13136>.")
 (define-public r-pcmbase
   (package
     (name "r-pcmbase")
-    (version "1.2.12")
+    (version "1.2.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCMBase" version))
               (sha256
                (base32
-                "0p18g660yax8mmnhq1pd4nax4saf8syqj7c1xpspjbfkr78kh15q"))))
+                "152zs0v64rcw2mgqd2pxydxpdx5ygvl3hd3m9xjv70im6zw43myv"))))
     (properties `((upstream-name . "PCMBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -28855,13 +28772,13 @@ reliable, since they follow the DNRY (do not repeat yourself) rule.")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.2")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "patientProfilesVis" version))
               (sha256
                (base32
-                "0w85y74n46665w8d4lv9pb88hmarn6ax9qsv0sl1xw1q7iby2pzx"))))
+                "0kb84jpcmnyakggbb8m96qbbc3a7yj1025k13nhirx4i459d0913"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
     (inputs (list))
@@ -30623,27 +30540,6 @@ can in general be programmed on.  A useful OptPath object (archive) to log
 function evaluations is also provided.")
     (license license:bsd-2)))
 
-(define-public r-paramgui
-  (package
-    (name "r-paramgui")
-    (version "2.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "paramGUI" version))
-              (sha256
-               (base32
-                "0k2wkl99ji3w7xmd9k7zzvrr3dbf3237q7lxm527dnrq331pmxmi"))))
-    (properties `((upstream-name . "paramGUI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timp r-shinydashboard r-shiny r-fields
-                             r-colorspace))
-    (home-page "https://cran.r-project.org/package=paramGUI")
-    (synopsis "Shiny GUI for some Parameter Estimation Examples")
-    (description
-     "Allows specification and fitting of some parameter estimation examples inspired
-by time-resolved spectroscopy via a Shiny GUI.")
-    (license license:gpl2+)))
-
 (define-public r-parallelplot
   (package
     (name "r-parallelplot")
@@ -30792,13 +30688,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-paralleldsm
   (package
     (name "r-paralleldsm")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ParallelDSM" version))
               (sha256
                (base32
-                "1yvxr6qcy4z03zzv8ivnkzxsmsig78rynaiv2ydnkv1ngfgf4w45"))))
+                "10yqq7hki08qvymlw6f1w6rrg6381bzhyqa1v2ryxszx3prxxcps"))))
     (properties `((upstream-name . "ParallelDSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -31660,33 +31556,6 @@ files created by Pamguard (<https://www.pamguard.org/>).  All functions for
 directly reading the binary data files are based on MATLAB code written by
 Michael Oswald.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-pama
-  (package
-    (name "r-pama")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PAMA" version))
-              (sha256
-               (base32
-                "12fvkcdkn66gzr193fq9byf64qlq2x9dkjv9hpfw770l4yw496jn"))))
-    (properties `((upstream-name . "PAMA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-rankdist r-permallows r-mc2d
-                             r-extmallows))
-    (home-page "https://cran.r-project.org/package=PAMA")
-    (synopsis "Rank Aggregation with Partition Mallows Model")
-    (description
-     "Rank aggregation aims to achieve a better ranking list given multiple
-observations.  PAMA implements Partition-Mallows model for rank aggregation
-where the rankers quality are different.  Both Bayesian inference and Maximum
-likelihood estimation (MLE) are provided.  It can handle partial list as well.
-When covariates information is available, this package can make inference by
-incorporating the covariate information.  More information can be found in the
-paper \"Integrated Partition-Mallows Model and Its Inference for Rank
-Aggregation\".")
-    (license license:gpl2+)))
 
 (define-public r-palr
   (package
@@ -32823,13 +32692,13 @@ Fisher's product method is included as well.")
 (define-public r-pagoo
   (package
     (name "r-pagoo")
-    (version "0.3.13")
+    (version "0.3.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pagoo" version))
               (sha256
                (base32
-                "0y28y62sg3l5k840xm6pajc0rygqm822ypbzcwx1ks5iw288dgbp"))))
+                "0scf40vyw7lh5jh4p28894fa05nfl8n71g55w9bs9gbkszmn792k"))))
     (properties `((upstream-name . "pagoo")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -33099,13 +32968,13 @@ Financial Data with R\" by Marcelo Perlin (2017) available at
 (define-public r-padr
   (package
     (name "r-padr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "padr" version))
               (sha256
                (base32
-                "0xgzkvygg4ss3c4q1fspmarbagr14i1z1ka6lnfcxmh4m5zcir17"))))
+                "0mgjdva2yj9m0mps69gafy3w1c4zhik002b5b2j2zvbv3m34mw97"))))
     (properties `((upstream-name . "padr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-lubridate r-dplyr))

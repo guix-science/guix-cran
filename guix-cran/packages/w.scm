@@ -1027,13 +1027,13 @@ desired number/specific colors.")
 (define-public r-wrassp
   (package
     (name "r-wrassp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrassp" version))
               (sha256
                (base32
-                "02f4r6ax91sxv05mjbz33g04i33gd3548zym5iszzx26mbr6rwkv"))))
+                "1zk2rwlm8baf5pyzlcdxbkp40bji3vb64ybiy9pk947gzhpzyz4i"))))
     (properties `((upstream-name . "wrassp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -1042,7 +1042,7 @@ desired number/specific colors.")
     (synopsis "Interface to the 'ASSP' Library")
     (description
      "This package provides a wrapper around Michel Scheffers's libassp
-(<http://libassp.sourceforge.net/>).  The libassp (Advanced Speech Signal
+(<https://libassp.sourceforge.net/>).  The libassp (Advanced Speech Signal
 Processor) library aims at providing functionality for handling speech signal
 files in most common audio formats and for performing analyses common in
 phonetic science/speech science.  This includes the calculation of formants,
@@ -2816,13 +2816,13 @@ takes the precision of each observation (one over the variance).")
 (define-public r-wiqid
   (package
     (name "r-wiqid")
-    (version "0.3.1")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wiqid" version))
               (sha256
                (base32
-                "0ccx009r53yz52q3jjh6kify640qgc895y226p1gacnv9sdajssp"))))
+                "1d5bckkr6cnixccxaa14n7vbsya5cc00y9mryy1j69shhsmxp5ks"))))
     (properties `((upstream-name . "wiqid")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -6171,13 +6171,13 @@ index and windowed scale index (Benitez et al. (2010)
 (define-public r-wavethresh
   (package
     (name "r-wavethresh")
-    (version "4.7.1")
+    (version "4.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wavethresh" version))
               (sha256
                (base32
-                "1780jnlcx4fw1k5h023fmc5nh8srivq14h2yis9xw9szfpmg231k"))))
+                "0mmn8f5x8iw8vn0zsskzs3g41bm28prvzy9bmbng8va94g5795ws"))))
     (properties `((upstream-name . "wavethresh")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -6679,17 +6679,17 @@ Johansen et al. (2019) <doi:10.21079/11681/35053>.")
 (define-public r-waterfalls
   (package
     (name "r-waterfalls")
-    (version "0.1.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waterfalls" version))
               (sha256
                (base32
-                "01gby1mlhrwcalizpywxcakkx2zifswb0188nrl6z9dkkd1866lm"))))
+                "1wj1wlih1fh3y3wj3czhz5fzik7i499l6pycj44rq8rpvi7bkj0d"))))
     (properties `((upstream-name . "waterfalls")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=waterfalls")
+    (home-page "https://github.com/hughparsonage/waterfalls")
     (synopsis "Create Waterfall Charts using 'ggplot2' Simply")
     (description
      "This package provides a not uncommon task for quants is to create waterfall

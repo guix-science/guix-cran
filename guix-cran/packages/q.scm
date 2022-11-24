@@ -703,13 +703,13 @@ calculators.  This work is dedicated to the memory of D. Sixto Rios Insua.")
 (define-public r-queuecomputer
   (package
     (name "r-queuecomputer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queuecomputer" version))
               (sha256
                (base32
-                "1lzc0hfva8dpz2q5g0abjc2avyqdffi8g1qi5h6mvx8qn5kx7bmw"))))
+                "0qlcj4rqfkp8qanzwi1p2s7r89x5w6aa8zwkcl7rqapbd4nwayhc"))))
     (properties `((upstream-name . "queuecomputer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rcpparmadillo r-rcpp r-dplyr))
@@ -1686,13 +1686,13 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
 (define-public r-qualtrics
   (package
     (name "r-qualtrics")
-    (version "3.1.6")
+    (version "3.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qualtRics" version))
               (sha256
                (base32
-                "163m0lmrcnxhx3f73fdd0bw6h5z4pqn8bbvxhk95pm2yn7pnbx9y"))))
+                "0jfzghqj8qz5wz13j4v0h58l7mflmz7jm324j2agr109q2kl2vma"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1708,7 +1708,7 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
                              r-httr
                              r-glue
                              r-dplyr
-                             r-assertthat))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/qualtRics/")
     (synopsis "Download 'Qualtrics' Survey Data")
@@ -1869,6 +1869,30 @@ purpose (cross-validation, stability selection).")
     (description
      "It will assist the user to find simple quadratic roots from any quadratic
 equation.")
+    (license license:gpl3)))
+
+(define-public r-quadraticsd
+  (package
+    (name "r-quadraticsd")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quadraticSD" version))
+              (sha256
+               (base32
+                "07v71anh0kz898x6j677bxx5lyarc4r0z1j0vx501ffi38icc1f0"))))
+    (properties `((upstream-name . "quadraticSD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-ggplot2))
+    (home-page "https://cran.r-project.org/package=quadraticSD")
+    (synopsis "Visualizing the SD using a Quadratic Curve")
+    (description
+     "Given a dataset, the user is invited to utilize the Empirical Cumulative
+Distribution Function (ECDF) to guess interactively the mean and the mean
+deviation.  Thereafter, using the quadratic curve the user can guess the Root
+Mean Squared Deviation (RMSD) and visualize the standard deviation (SD).  For
+details, see Sarkar and Rashid (2019)<doi:10.3126/njs.v3i0.25574>, Have You Seen
+the Standard Deviaton?, Nepalese Journal of Statistics, Vol.  3, 1-10.")
     (license license:gpl3)))
 
 (define-public r-quadprogxt
@@ -2899,13 +2923,13 @@ regression setting.")
 (define-public r-qrisk3
   (package
     (name "r-qrisk3")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QRISK3" version))
               (sha256
                (base32
-                "0aqqncmlhb5iks8081y34ydlls3g31j994fqqzsbsc3ckcks87qj"))))
+                "1cya1va5msjrlfn49npvfqiyq9sm4kfxsaszxqwkxvxk8aw9ns1i"))))
     (properties `((upstream-name . "QRISK3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QRISK3")
@@ -3047,16 +3071,16 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
 (define-public r-qrcode
   (package
     (name "r-qrcode")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qrcode" version))
               (sha256
                (base32
-                "1ajn7lmyaxyk1dgmhz5y8cl61g23g0cjva68ac604ffa14kfv76q"))))
+                "0472vfk3nlc0d99pc21909g554r9x9b8zhnlf9b995qz6jlmif2x"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-r-utils r-assertthat))
+    (propagated-inputs (list r-knitr r-assertthat))
     (home-page "https://thierryo.github.io/qrcode/")
     (synopsis "Generate QRcodes with R")
     (description "Create QRcode in R.")
@@ -3365,13 +3389,13 @@ chi-square expected distribution inappropriate.")
 (define-public r-qqboxplot
   (package
     (name "r-qqboxplot")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qqboxplot" version))
               (sha256
                (base32
-                "0v83kjkq674ql55d9dfyw4bgybbqyvqivphn925a7wl9zqi1b3lh"))))
+                "1rsipw7cn2gqpqpa0ysj99ms5jpnbynjs4gkkmbr2w0c2466fhgx"))))
     (properties `((upstream-name . "qqboxplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

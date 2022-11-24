@@ -652,13 +652,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extremeStat" version))
               (sha256
                (base32
-                "1cq1wfjdq3kmcaygyd158g660hr3b7zbl7hy6sn7gcz83fycihnq"))))
+                "17l7ccnyg09dg9a3204b51axmj46gghmlqkd4kq6fsldmwic1zv6"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-renext
@@ -1610,29 +1610,27 @@ and illustrated for models from packages randomForest', nnet', and e1071'.")
 (define-public r-expirest
   (package
     (name "r-expirest")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "expirest" version))
               (sha256
                (base32
-                "0bjwia1fvavids4yfac085wqg6sraxs30vwmk6jbls5r0ki1ijva"))))
+                "08gwy1fikj7kg7h6fc7w15621jc0prdqdhzx14ad6dvdi5rd33gv"))))
     (properties `((upstream-name . "expirest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://github.com/piusdahinden/expirest")
     (synopsis "Expiry Estimation Procedures")
     (description
      "The Australian Regulatory Guidelines for Prescription Medicines (ARGPM),
-guidance on \"Stability testing for prescription medicines\"
-<https://www.tga.gov.au/stability-testing-prescription-medicines>, recommends to
+guidance on \"Stability testing for prescription medicines\", recommends to
 predict the shelf life of chemically derived medicines from stability data by
 taking the worst case situation at batch release into account.  Consequently, if
 a change over time is observed, a release limit needs to be specified.  Finding
 a release limit and the associated shelf life is supported, as well as the
 standard approach that is recommended by guidance Q1E \"Evaluation of stability
-data\" from the International Council for Harmonisation (ICH)
-<https://database.ich.org/sites/default/files/Q1E%20Guideline.pdf>.")
+data\" from the International Council for Harmonisation (ICH).")
     (license license:gpl2+)))
 
 (define-public r-expimage
@@ -2065,28 +2063,6 @@ multiple regression models are fitted and response surface graphs are plotted
 (Hair JF, 2016) <ISBN:13:978-0138132637>).")
     (license license:gpl3)))
 
-(define-public r-exp2flux
-  (package
-    (name "r-exp2flux")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "exp2flux" version))
-              (sha256
-               (base32
-                "1b3ychb4wcf6dbccx2ddms5xygdgc296cnw4474fm81yrfjznplv"))))
-    (properties `((upstream-name . "exp2flux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sybil r-igraph r-gage))
-    (home-page "https://cran.r-project.org/package=exp2flux")
-    (synopsis "Convert Gene EXPression Data to FBA FLUXes")
-    (description
-     "For a given metabolic model with well formed Gene-Protein-Reaction (GPR)
-associations and an expressionSet with their associated gene expression values,
-this package converts gene expression values to the FBA boundaries for each
-reaction based in the boolean rules described in its associated GPR.")
-    (license license:gpl2)))
-
 (define-public r-exomedepth
   (package
     (name "r-exomedepth")
@@ -2256,6 +2232,33 @@ from different years, and can incorporate information from right-censored
 inter-exceedance times.  Graphical diagnostics for the threshold level and the
 respective tuning parameters K and D are provided.")
     (license license:gpl2+)))
+
+(define-public r-exde
+  (package
+    (name "r-exde")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exDE" version))
+              (sha256
+               (base32
+                "15z1gdbpnps9idlw8bw3n0wsayjpvv0f5mb8hihi0kvbys8q4sfa"))))
+    (properties `((upstream-name . "exDE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-expm r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://dd-harp.github.io/exDE/")
+    (synopsis
+     "Extensible Differential Equations for Mosquito-Borne Pathogen Modeling")
+    (description
+     "This package provides tools to set up modular ordinary and delay differential
+equation models for mosquito-borne pathogens, focusing on malaria.  Modular
+design is achieved by S3 dispatch on parameter lists for each component which is
+used to compute the full set of differential equations which may be solved using
+any of the packages for numerical simulation of differential equations in R. The
+methods implemented by this package are described in Wu et al. (2022)
+<doi:10.1101/2022.11.07.22282044>.")
+    (license license:expat)))
 
 (define-public r-excursions
   (package
@@ -2754,6 +2757,41 @@ causal mediation analysis of binary outcomes as described in Samoilenko, Blais
 and Lefebvre (2018) <doi:10.1353/obs.2018.0013> and Samoilenko, Lefebvre (2021)
 <doi:10.1093/aje/kwab055>.")
     (license license:gpl3)))
+
+(define-public r-exactltre
+  (package
+    (name "r-exactltre")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exactLTRE" version))
+              (sha256
+               (base32
+                "0fhzymvsmp1hcq32nwka745jhbf51iyb9hp6ix9rm88kyclcwhrl"))))
+    (properties `((upstream-name . "exactLTRE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-popdemo r-matrixcalc))
+    (home-page "https://cran.r-project.org/package=exactLTRE")
+    (synopsis
+     "An Exact Method for Life Table Response Experiment (LTRE) Analysis")
+    (description
+     "Life Table Response Experiments (LTREs) are a method of comparative demographic
+analysis.  The purpose is to quantify how the difference or variance in vital
+rates (stage-specific survival, growth, and fertility) among populations
+contributes to difference or variance in the population growth rate, \"lambda.\"
+We provide functions for one-way fixed design and random design LTRE, using
+either the classical methods that have been in use for several decades, or an
+fANOVA-based exact method that directly calculates the impact on lambda of
+changes in matrix elements, for matrix elements and their interactions.  The
+equations and descriptions for the classical methods of LTRE analysis can be
+found in \"Matrix Population Models: Construction, Analysis, and Interpretation
+(2nd edition)\" Caswell (2001, ISBN: 0878930965), and the fANOVA-based exact
+methods will be published in a forthcoming paper.  We also provide some
+demographic functions, including generation time from Bienvenu and Legendre
+(2015) <doi:10.1086/681104>.  For implementation of exactLTRE where all possible
+interactions are calculated, we use an operator matrix presented in Poelwijk,
+Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
+    (license license:expat)))
 
 (define-public r-exactcidiff
   (package
@@ -4290,6 +4328,39 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 netCDF files.")
     (license license:gpl3)))
 
+(define-public r-eurlex
+  (package
+    (name "r-eurlex")
+    (version "0.4.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eurlex" version))
+              (sha256
+               (base32
+                "0ncbzixrr0fxjgyhwjwa2y8aqpq7c9m9v3g733n2zg88jpkqqr0q"))))
+    (properties `((upstream-name . "eurlex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-pdftools
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-antiword))
+    (native-inputs (list r-knitr))
+    (home-page "https://michalovadek.github.io/eurlex/")
+    (synopsis "Retrieve Data on European Union Law")
+    (description
+     "Access to data on European Union laws and court decisions made easy with
+pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
+<doi:10.1080/2474736X.2020.1870150> .")
+    (license license:gpl3)))
+
 (define-public r-eulerian
   (package
     (name "r-eulerian")
@@ -4727,38 +4798,6 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
 (2017)<doi:10.18637/jss.v076.i03>.")
     (license license:gpl2+)))
 
-(define-public r-etas
-  (package
-    (name "r-etas")
-    (version "0.4.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ETAS" version))
-              (sha256
-               (base32
-                "11sv5slr3s6w82ksgbw0qlzi9palznbzprq2n9iiifxz6ff5drvd"))))
-    (properties `((upstream-name . "ETAS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-rcpp
-                             r-maps
-                             r-lattice
-                             r-goftest
-                             r-fields))
-    (home-page "https://github.com/jalilian/ETAS")
-    (synopsis "Modeling Earthquake Data Using 'ETAS' Model")
-    (description
-     "Fits the space-time Epidemic Type Aftershock Sequence ('ETAS') model to
-earthquake catalogs using a stochastic declustering approach.  The ETAS model is
-a spatio-temporal marked point process model and a special case of the Hawkes
-process.  The package is based on a Fortran program by Jiancang Zhuang
-(available at <http://bemlar.ism.ac.jp/zhuang/software.html>), which is modified
-and translated into C++ and C such that it can be called from R. Parallel
-computing with OpenMP is possible on supported platforms.")
-    (license license:gpl2+)))
-
 (define-public r-etable
   (package
     (name "r-etable")
@@ -4779,6 +4818,36 @@ computing with OpenMP is possible on supported platforms.")
      "This package creates simple to highly customized tables for a wide selection of
 descriptive statistics, with or without weighting the data.")
     (license license:gpl3+)))
+
+(define-public r-et-nwfva
+  (package
+    (name "r-et-nwfva")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "et.nwfva" version))
+              (sha256
+               (base32
+                "01jhy5043axgmv51ri2k3gl1shvsh569h9xy4y1ya1qjpdlbv0ky"))))
+    (properties `((upstream-name . "et.nwfva")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rnuske/et.nwfva")
+    (synopsis
+     "Forest Yield Tables for Northwest Germany and their Application")
+    (description
+     "The new yield tables developed by the Northwest German Forest Research Institute
+(NW-FVA) provide a forest management tool for the five main commercial tree
+species oak, beech, spruce, Douglas-fir and pine for northwestern Germany.  The
+new method applied for deriving yield tables combines measurements of growth and
+yield trials with growth simulations using a state-of-the-art single-tree growth
+simulator.  By doing so, the new yield tables reflect the current increment
+level and the recommended graduated thinning from above is the underlying
+management concept.  The yield tables are provided along with methods for
+deriving the site index and for interpolating between age and site indices and
+extrapolating beyond age and site index ranges.  The inter-/extrapolations are
+performed traditionally by the rule of proportion or with a functional approach.")
+    (license license:gpl2+)))
 
 (define-public r-esvis
   (package
@@ -6122,40 +6191,6 @@ for users to create their own validator functions.  The error message style used
 is adopted from <https://style.tidyverse.org/error-messages.html>.")
     (license license:expat)))
 
-(define-public r-ergmito
-  (package
-    (name "r-ergmito")
-    (version "0.3-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ergmito" version))
-              (sha256
-               (base32
-                "0ajfx8g31p0lf0ajrgssb9lkhs1bxkz19z3q99l500znlivc2fy2"))))
-    (properties `((upstream-name . "ergmito")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-texreg
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-network
-                             r-mass
-                             r-ergm))
-    (native-inputs (list r-knitr))
-    (home-page "https://muriteams.github.io/ergmito/")
-    (synopsis "Exponential Random Graph Models for Small Networks")
-    (description
-     "Simulation and estimation of Exponential Random Graph Models (ERGMs) for small
-networks using exact statistics as shown in Vega Yon et al. (2020)
-<DOI:10.1016/j.socnet.2020.07.005>.  As a difference from the ergm package,
-ergmito circumvents using Markov-Chain Maximum Likelihood Estimator (MC-MLE) and
-instead uses Maximum Likelihood Estimator (MLE) to fit ERGMs for small networks.
- As exhaustive enumeration is computationally feasible for small networks, this
-R package takes advantage of this and provides tools for calculating likelihood
-functions, and other relevant functions, directly, meaning that in many cases
-both estimation and simulation of ERGMs for small networks can be faster and
-more accurate than simulation-based algorithms.")
-    (license license:expat)))
-
 (define-public r-ergmharris
   (package
     (name "r-ergmharris")
@@ -6437,13 +6472,13 @@ Package implementation is described in Domingo-Almenara et al. (2016)
 (define-public r-era
   (package
     (name "r-era")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "era" version))
               (sha256
                (base32
-                "1r726zcaayg6chh1466z9q4y3vd1z5hbz3kvqbfp6dqj7dx8qhgw"))))
+                "10hrbdxdvfgz8namczzfwwdhzwf5gsfv6jp9ikiasmjdlyn9jpps"))))
     (properties `((upstream-name . "era")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-pillar))
@@ -7225,13 +7260,13 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.15.2")
+    (version "0.15.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eplusr" version))
               (sha256
                (base32
-                "0zcxmgqpc9v50b4dl1ksadrh4g5dpk9f5icv757pr08sp55qkrmv"))))
+                "04qbvawxzily2cd76lahi3nba49c2j4skjvqk8xy2rin7p0w6fxs"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -7795,21 +7830,16 @@ Full methods for EpiModel are detailed in Jenness et al. (2018,
 (define-public r-epimdr2
   (package
     (name "r-epimdr2")
-    (version "1.0-7")
+    (version "1.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epimdr2" version))
               (sha256
                (base32
-                "1gxbp6vqk5124pi6xq7ga8dd9456b3idq2qm8wviryc1d05dqfih"))))
+                "02iiam536jfd1wpr3glrksdpx0lqdh4k21ayy7igkv71p4y071i9"))))
     (properties `((upstream-name . "epimdr2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-polspline
-                             r-plotly
-                             r-phaser
-                             r-ggplot2
-                             r-desolve))
+    (propagated-inputs (list r-shiny r-plotly r-phaser r-ggplot2 r-desolve))
     (home-page "<https://github.com/objornstad/epimdr2>")
     (synopsis
      "Functions and Data for \"Epidemics: Models and Data in R (2nd Edition)\"")
@@ -9592,6 +9622,48 @@ model applicability domain evaluation, and ensemble predictive modeling with
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-enmtools
+  (package
+    (name "r-enmtools")
+    (version "1.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ENMTools" version))
+              (sha256
+               (base32
+                "1sm64c9d5ph8sp5lzkzkd93iy8hls73xfshvjgnmqmd6zh4xp70g"))))
+    (properties `((upstream-name . "ENMTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
+                             r-sp
+                             r-rgeos
+                             r-rgdal
+                             r-raster
+                             r-magrittr
+                             r-lhs
+                             r-knitr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-enmeval
+                             r-dismo))
+    (home-page "https://cran.r-project.org/package=ENMTools")
+    (synopsis
+     "Analysis of Niche Evolution using Niche and Distribution Models")
+    (description
+     "Constructing niche models and analyzing patterns of niche evolution.  Acts as an
+interface for many popular modeling algorithms, and allows users to conduct
+Monte Carlo tests to address basic questions in evolutionary ecology and
+biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
+<doi:10.1111/j.1558-5646.2008.00482.x> Glor, R.E., and D.L. Warren (2011)
+<doi:10.1111/j.1558-5646.2010.01177.x> Warren, D.L., R.E. Glor, and M. Turelli
+(2010) <doi:10.1111/j.1600-0587.2009.06142.x> Cardillo, M., and D.L. Warren
+(2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
+Baumgartner (2019) <doi:10.1111/ecog.03900>.")
+    (license license:gpl2)))
+
 (define-public r-enmeval
   (package
     (name "r-enmeval")
@@ -10679,24 +10751,26 @@ provides deterministic and robust protocols for that purpose.")
 (define-public r-emli
   (package
     (name "r-emli")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMLI" version))
               (sha256
                (base32
-                "17gcrqw3dnv48jiqxldf0y00ncr75521r4cp4p4q0v2cj3h6fl2h"))))
+                "0zwbbxsmkyrgmva5h8l78f181nz5asc7dpdcmajvj2y3yl1rb278"))))
     (properties `((upstream-name . "EMLI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EMLI")
-    (synopsis "Efficient Maximum Likelihood Identification")
+    (synopsis
+     "Computationally Efficient Maximum Likelihood Identification of Linear Dynamical Systems")
     (description
      "This package provides implementations of computationally efficient maximum
-likelihood estimation algorithms for system identification tasks.  Currently,
-one such algorithm is implemented which identifies the one-dimensional
-cumulative structural equation model with normality assumptions.  The
+likelihood parameter estimation algorithms for models that represent linear
+dynamical systems.  Currently, one such algorithm is implemented for the
+one-dimensional cumulative structural equation model with shock-error output
+measurement equation and assumptions of normality and independence.  The
 corresponding scientific paper is yet to be published, therefore the relevant
-reference is not available yet.")
+reference will be provided later.")
     (license license:gpl2)))
 
 (define-public r-emleloglin
@@ -12165,6 +12239,27 @@ state deputy, federal deputy, governor, and president) aggregated by state,
 city, and electoral zones.")
     (license license:gpl2+)))
 
+(define-public r-elections-dtree
+  (package
+    (name "r-elections-dtree")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "elections.dtree" version))
+              (sha256
+               (base32
+                "0px0n6qdirbh464zmg0jhs0q05wxy3xax9fa5s0r43pdaa7615cn"))))
+    (properties `((upstream-name . "elections.dtree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat r-rdpack r-rcppthread r-rcpp r-r6))
+    (home-page "https://fleverest.github.io/elections.dtree/")
+    (synopsis "Ranked Voting Election Audits with Dirichlet-Trees")
+    (description
+     "Perform ballot-polling Bayesian audits for ranked voting elections using
+Dirichlet-tree prior distributions.  Everest et al. (2022) <arXiv:2206.14605>,
+<arXiv:2209.03881>.")
+    (license license:gpl3)))
+
 (define-public r-elections
   (package
     (name "r-elections")
@@ -12475,30 +12570,6 @@ explore your laboratory data from different perspectives.")
     (description
      "This package provides functions for computing critical values and implementing
 the one-sided/two-sided EL tests.")
-    (license license:gpl2+)))
-
-(define-public r-el
-  (package
-    (name "r-el")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EL" version))
-              (sha256
-               (base32
-                "0a6zbsq37miy7mv1b2gn3nlddlxpl6v5338lqxa2hn8ykj4vbs63"))))
-    (properties `((upstream-name . "EL")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=EL")
-    (synopsis "Two-Sample Empirical Likelihood")
-    (description
-     "Empirical likelihood (EL) inference for two-sample problems.  The following
-statistics are included: the difference of two-sample means, smooth Huber
-estimators, quantile (qdiff) and cumulative distribution functions (ddiff),
-probability-probability (P-P) and quantile-quantile (Q-Q) plots as well as
-receiver operating characteristic (ROC) curves.  EL calculations are based on J.
-Valeinis, E. Cers (2011)
-<http://home.lu.lv/~valeinis/lv/petnieciba/EL_TwoSample_2011.pdf>.")
     (license license:gpl2+)))
 
 (define-public r-eks
@@ -13271,13 +13342,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.10.0")
+    (version "2.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eha" version))
               (sha256
                (base32
-                "03lxrdwf6kkjl6qh21xfj13956wd0b85hcj6grprnjh3hwv73m14"))))
+                "132n988b4wpx5m2bilc9cqgpxf8j8gkhymh3xvbp88am6iy8155f"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -13328,6 +13399,30 @@ expectation-maximization (EM) algorithm to estimate the tissue-specific
 posterior probability across individuals.  Methodology is available from: A
 Majumdar, C Giambartolomei, N Cai, MK Freund, T Haldar, T Schwarz, J Flint, B
 Pasaniuc (2019) <doi:10.1101/674226>.")
+    (license license:gpl3)))
+
+(define-public r-egrni
+  (package
+    (name "r-egrni")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EGRNi" version))
+              (sha256
+               (base32
+                "0wgdhlmnch6gpypqlwd5z56ia03lbbimr4ci9gcfs8f881dh92dy"))))
+    (properties `((upstream-name . "EGRNi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-mass r-gdata r-fdrtool))
+    (home-page "https://cran.r-project.org/package=EGRNi")
+    (synopsis "Ensemble Gene Regulatory Network Inference")
+    (description
+     "Gene regulatory network constructed using combined score obtained from
+individual network inference method.  The combined score measures the
+significance of edges in the ensemble network.  Fisher's weighted method has
+been implemented to combine the outcomes of different methods based on the
+probability values.  The combined score follows chi-square distribution with 2n
+degrees of freedom. <doi:10.22271/09746315.2020.v16.i3.1358>.")
     (license license:gpl3)))
 
 (define-public r-egretci
@@ -14861,13 +14956,13 @@ Rahman(2018)<https://hdl.handle.net/10012/13365>.")
 (define-public r-edlibr
   (package
     (name "r-edlibr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edlibR" version))
               (sha256
                (base32
-                "008wyzmrnzga470p88hg6zxqj6jn5y27vadxk03nx9qx0ap6f97r"))))
+                "0ibl8zcaf2p2xb3498zbin7g4ipanyxc9m9zkcj43h2r0304xgsk"))))
     (properties `((upstream-name . "edlibR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp))
@@ -15169,13 +15264,13 @@ JavaScript library.  See <http://d3js.org/> for more information on D3.")
 (define-public r-edgebundle
   (package
     (name "r-edgebundle")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edgebundle" version))
               (sha256
                (base32
-                "0f6kqyvx52qgm9qzl0vjlh53bdjiwscfjhk9yqvgxf9ih33718hi"))))
+                "196np22ibvj31f5f45gl5ni5byj1z2h4vyxxcqarny2zfk00qg9j"))))
     (properties `((upstream-name . "edgebundle")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-rcpp r-interp r-igraph))
@@ -15837,21 +15932,28 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ECOTOXr" version))
               (sha256
                (base32
-                "1pwncfvjcaniixc3iljjapp1d2pvf5xqj060jbf9bpdfyn6lrcdj"))))
+                "0gpzf957ya02695ga8cv3mw17jb027w10pjxq9r5ziky54wnh7qh"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
                              r-rvest
                              r-rsqlite
+                             r-rlang
                              r-readr
                              r-rappdirs
+                             r-purrr
+                             r-httr
                              r-dplyr
+                             r-dbplyr
                              r-crayon))
     (home-page "<https://github.com/pepijn-devries/ECOTOXr>")
     (synopsis "Download and Extract Data from US EPA's ECOTOX Database")
@@ -16424,13 +16526,13 @@ Computation.")
 (define-public r-ecolmod
   (package
     (name "r-ecolmod")
-    (version "1.2.6.3")
+    (version "1.2.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecolMod" version))
               (sha256
                (base32
-                "17lsakz4kjc34v04c2j1blnskxpv4qv6phlp5ah691f2v4p147hx"))))
+                "1kbllyh986468182q28g0hhyf2y58lcqd0wc7izi0fcw3ww2xyh6"))))
     (properties `((upstream-name . "ecolMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rootsolve r-diagram r-desolve))
@@ -16714,36 +16816,6 @@ Continuous Tree Cover data (Sexton et al., 2013)
 <doi:10.1080/17538947.2013.786146>.")
     (license license:gpl3)))
 
-(define-public r-eco
-  (package
-    (name "r-eco")
-    (version "4.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eco" version))
-              (sha256
-               (base32
-                "06ac1xbys94k6xybhyjvn2vzrl3db329612i6h7s76nl9v4gww0a"))))
-    (properties `((upstream-name . "eco")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://github.com/kosukeimai/eco")
-    (synopsis "Ecological Inference in 2x2 Tables")
-    (description
-     "This package implements the Bayesian and likelihood methods proposed in Imai,
-Lu, and Strauss (2008 <DOI: 10.1093/pan/mpm017>) and (2011
-<DOI:10.18637/jss.v042.i05>) for ecological inference in 2 by 2 tables as well
-as the method of bounds introduced by Duncan and Davis (1953).  The package fits
-both parametric and nonparametric models using either the
-Expectation-Maximization algorithms (for likelihood models) or the Markov chain
-Monte Carlo algorithms (for Bayesian models).  For all models, the
-individual-level data can be directly incorporated into the estimation whenever
-such data are available.  Along with in-sample and out-of-sample predictions,
-the package also provides a functionality which allows one to quantify the
-effect of data aggregation on parameter estimation and hypothesis testing under
-the parametric likelihood models.")
-    (license license:gpl2+)))
-
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
@@ -17011,13 +17083,13 @@ clusters using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.4.7")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echarty" version))
               (sha256
                (base32
-                "0h2zassbc3r99466swlc5j991xpmiwqql57vwls74yn2pi1cavdc"))))
+                "0ipnci76yn8gqa5jk51aprywd54933fgqf2mdp2zfwcwirgz1642"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -17856,13 +17928,13 @@ Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.14.5")
+    (version "0.14.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatRep" version))
               (sha256
                (base32
-                "12s2qpacb15jx1ra0n8423mdk00waqhp1lb7b3cm11c5kp6kag5n"))))
+                "1pmjfz2m7z0n32cdzhxjxx3cllvhrd8nap9lqbfj8avd5sbsvfbp"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

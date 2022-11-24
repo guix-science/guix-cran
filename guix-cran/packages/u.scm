@@ -313,13 +313,13 @@ and other variables in a data set.")
 (define-public r-utile-visuals
   (package
     (name "r-utile-visuals")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.visuals" version))
               (sha256
                (base32
-                "1j13pvzgi8rv38clxl421ji3c47vg8scragg246xpgmd24yk64a5"))))
+                "12crzqcap4s0ji9839ykmvp31b5p10c59z95wmklhcsnpc7n3k6w"))))
     (properties `((upstream-name . "utile.visuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-dplyr))
@@ -334,13 +334,13 @@ tools for building survival curves with risk tables.")
 (define-public r-utile-tools
   (package
     (name "r-utile-tools")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.tools" version))
               (sha256
                (base32
-                "1hclxfq7ccrhsirpnpl3kpybd2zn4dc4pk49adqfik5lg9xi8kxh"))))
+                "1zlib1ydy8919xngp7rzz7shixwqpsk3ljgjyqzcxa5y1gyzb461"))))
     (properties `((upstream-name . "utile.tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-purrr r-lubridate))
@@ -356,13 +356,13 @@ duration of time, and simplistic hypothesis testing tools.")
 (define-public r-utile-tables
   (package
     (name "r-utile-tables")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.tables" version))
               (sha256
                (base32
-                "0bj3rg4f9dby7qzf0m95dg626ws4nz5v2vn3m50x8g3pqq8m7lmp"))))
+                "139y2a60kxj9x4nx2rb3cd7q69if370vzyikbrnf36h8v62dcr3q"))))
     (properties `((upstream-name . "utile.tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-utile-tools r-tidyselect r-rlang r-purrr
@@ -1090,13 +1090,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.9.7")
+    (version "3.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ursa" version))
               (sha256
                (base32
-                "0z8sld9x4xs7dfhv462v47732md37hvpxv6iq3lm0xzbqc3adxx7"))))
+                "0700kspd64mmk9nrfs49maxlj1x2hysfvkyhn275lp8498am7yka"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-png r-jpeg))
@@ -3365,13 +3365,13 @@ Mika Meitz, Daniel Preve, Pentti Saikkonen (2021)
 (define-public r-ugatsdb
   (package
     (name "r-ugatsdb")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ugatsdb" version))
               (sha256
                (base32
-                "0f5fgys80b5nlj5f8jadh5jpylhhb5hsknrsspfac5amncmb0yyv"))))
+                "098dzh6slaxj22730nm9g6b5653600ms2ahxr87iblh5xq0dcidl"))))
     (properties `((upstream-name . "ugatsdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl r-rmysql r-dbi r-data-table r-collapse))

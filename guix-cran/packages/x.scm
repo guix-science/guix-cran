@@ -800,6 +800,37 @@ that allows to include R code to interact with the returns of the explained
 function.")
     (license license:gpl3)))
 
+(define-public r-xpectr
+  (package
+    (name "r-xpectr")
+    (version "0.4.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xpectr" version))
+              (sha256
+               (base32
+                "0qpv2r4dz5g37v2b6y5jscsxm1hdmimq8pm0dwwf8df0pp351r3b"))))
+    (properties `((upstream-name . "xpectr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-testthat
+                             r-rstudioapi
+                             r-rlang
+                             r-plyr
+                             r-lifecycle
+                             r-fansi
+                             r-dplyr
+                             r-clipr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ludvigolsen/xpectr")
+    (synopsis "Generates Expectations for 'testthat' Unit Testing")
+    (description
+     "Helps systematize and ease the process of building unit tests with the testthat
+package by providing tools for generating expectations.")
+    (license license:expat)))
+
 (define-public r-xoi
   (package
     (name "r-xoi")

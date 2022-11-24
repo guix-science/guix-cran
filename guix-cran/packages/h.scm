@@ -286,13 +286,13 @@ model analysis.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.0.4")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hypervolume" version))
               (sha256
                (base32
-                "0wncmffj5rjpwwnfminjrmd3wj8x4yav87bbliffd520wrv758jz"))))
+                "1zyp7w2mc5icp928m3lgvil6lk5ck8877kxbgz0wiimsxm0sdgcp"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -888,13 +888,13 @@ welcomed (in English, Spanish or Italian).  See Zambrano-Bigiarini and Rojas
 (define-public r-hydropeak
   (package
     (name "r-hydropeak")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydropeak" version))
               (sha256
                (base32
-                "0hddzvk8bjc31l3qh2pmhxwi8c1zgv3mycw5ki786x4kaym23qiq"))))
+                "06x1qahavvhaqwdsjg65ixgc6migbm188v3w3vjng5xl2g2ybhqc"))))
     (properties `((upstream-name . "hydropeak")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2002,7 +2002,7 @@ requests'.  Designed to work with httr'.")
                 "0pzkydsgfnszzcvc9qfaksw4rp97ir63kq9164l0k0ha2nncvmpk"))))
     (properties `((upstream-name . "httpgd")))
     (build-system r-build-system)
-    (inputs (list zlib libpng fontconfig cairo))
+    (inputs (list zlib libpng freetype fontconfig cairo))
     (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/nx10/httpgd")
@@ -2572,6 +2572,36 @@ can be given by the user or learned by the algorithm.  A paper describing all
 these methods will be submitted soon.  The reference will be added to this file
 as soon as available.")
     (license license:lgpl3)))
+
+(define-public r-hspm
+  (package
+    (name "r-hspm")
+    (version "1.0-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hspm" version))
+              (sha256
+               (base32
+                "1fp2mf9rs7l3dhhc7njf2fbkq9pyszm3r3409jzrhmfjzfk61qwl"))))
+    (properties `((upstream-name . "hspm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sphet r-spdep r-matrix r-formula))
+    (home-page "https://github.com/gpiras/hspm")
+    (synopsis "Heterogeneous Spatial Models")
+    (description
+     "Spatial heterogeneity can be specified in various ways.  hspm is an ambitious
+project that aims at implementing various methodologies to control for
+heterogeneity in spatial models.  The current version of hspm deals with spatial
+and (non-spatial) regimes models.  In particular, the package allows to estimate
+a general spatial regimes model with additional endogenous variables, specified
+in terms of a spatial lag of the dependent variable, the spatially lagged
+regressors, and, potentially, a spatially autocorrelated error term.  Spatial
+regime models are estimated by instrumental variables and generalized methods of
+moments (see Arraiz et al., (2010) <doi:10.1111/j.1467-9787.2009.00618.x>,
+Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
+<doi:10.1080/07474938.2013.741020>, Kelejian and Prucha, (2010)
+<doi:10.1016/j.jeconom.2009.10.025>).")
+    (license license:gpl2+)))
 
 (define-public r-hsphase
   (package
@@ -3221,13 +3251,13 @@ charts.")
 (define-public r-hpa
   (package
     (name "r-hpa")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hpa" version))
               (sha256
                (base32
-                "0z60j7ydbifwsp2flksgswnw3zrr0gamkng4nrbbsz7zxmagsxml"))))
+                "0vhpvvzwxbqv4qm9489rxs50pz0jcpd5dqpg5wi96i9npcymmqcb"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
@@ -5179,6 +5209,27 @@ correlated covariates applicable to high-dimensional settings.")
 history in R sessions and dynamic documents.")
     (license license:artistic2.0)))
 
+(define-public r-histoslider
+  (package
+    (name "r-histoslider")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "histoslider" version))
+              (sha256
+               (base32
+                "1458bh7by00izx4q9idl479f08i3gk2g59mmzfvh945vbf399km0"))))
+    (properties `((upstream-name . "histoslider")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rlang r-reactr r-htmltools))
+    (home-page "https://cran.r-project.org/package=histoslider")
+    (synopsis "Histogram Slider Input for 'Shiny'")
+    (description
+     "This package provides a histogram slider input binding for use in Shiny'.
+Currently supports creating histograms from numeric, date, and date-time
+vectors.")
+    (license license:expat)))
+
 (define-public r-historydata
   (package
     (name "r-historydata")
@@ -6029,18 +6080,18 @@ optimization problems with quadratic or linear objective and linear constraints.
 (define-public r-highriskzone
   (package
     (name "r-highriskzone")
-    (version "1.4.7")
+    (version "1.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highriskzone" version))
               (sha256
                (base32
-                "1ylbmk6a2d6prwips2da6syzxpbfhda93abdw98pjj658p7l3m0r"))))
+                "167xj46v3m85pbwxw8cm0jcb1b8srqggsnk6wbjv2b0vgxm65rzg"))))
     (properties `((upstream-name . "highriskzone")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-spatstat
                              r-rgeos
                              r-mvtnorm
@@ -6672,16 +6723,17 @@ topological domain borders.")
 (define-public r-hibayes
   (package
     (name "r-hibayes")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hibayes" version))
               (sha256
                (base32
-                "0zypyrp0wlawbslavc8gj3vydr6jcrgg92ygfp4xi7s64l1gcqw3"))))
+                "15kk6jpm9brrl6257dh57z57dd3zndqxz0qwj1nxfc06zrs3bppi"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress
+    (propagated-inputs (list r-stringr
+                             r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -6781,6 +6833,35 @@ state-switching models (Langrock et al., 2018 <doi:10.1111/stan.12133>) and many
 other useful tools (read for more description: Amini et al., 2022
 <doi:10.1007/s00180-022-01248-x> and its arxiv version: <arXiv:2109.12489>).")
     (license license:gpl3)))
+
+(define-public r-hhp
+  (package
+    (name "r-hhp")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HhP" version))
+              (sha256
+               (base32
+                "0rmvw52a7a75gcwsyv30wvxrb9ykhg4ji3pj2jhgbzjqdc4s9xzw"))))
+    (properties `((upstream-name . "HhP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HhP")
+    (synopsis "Hierarchical Heterogeneity Analysis via Penalization")
+    (description
+     "In medical research, supervised heterogeneity analysis has important
+implications.  Assume that there are two types of features.  Using both types of
+features, our goal is to conduct the first supervised heterogeneity analysis
+that satisfies a hierarchical structure.  That is, the first type of features
+defines a rough structure, and the second type defines a nested and more refined
+structure.  A penalization approach is developed, which has been motivated by
+but differs significantly from penalized fusion and sparse group penalization.
+Reference: Ren, M., Zhang, Q., Zhang, S., Zhong, T., Huang, J. & Ma, S. (2022).
+\"Hierarchical cancer heterogeneity analysis based on histopathological imaging
+features\".  Biometrics, <doi:10.1111/biom.13426>.")
+    (license license:gpl2)))
 
 (define-public r-hhi
   (package
@@ -7684,20 +7765,20 @@ cheese, lettuce, and tomatoes.")
 (define-public r-hermiter
   (package
     (name "r-hermiter")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hermiter" version))
               (sha256
                (base32
-                "1z9zrmyxx7dgsi0zblp15saw1iz79sc2r9zyirdzqmz010rnm19y"))))
+                "0cfww9klf6iziac6p8psjbjixq1p85bsb2fl8nldhjz9psi9fk5x"))))
     (properties `((upstream-name . "hermiter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
+    (propagated-inputs (list r-rcppparallel r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MikeJaredS/hermiter")
     (synopsis
-     "Efficient Sequential and Batch Estimation of Univariate and Bivariate Probability Density Functions and Cumulative Distribution Functions along with Quantiles (Univariate) and Spearman's Correlation (Bivariate)")
+     "Efficient Sequential and Batch Estimation of Univariate and Bivariate Probability Density Functions and Cumulative Distribution Functions along with Quantiles (Univariate) and Nonparametric Correlation (Bivariate)")
     (description
      "Facilitates estimation of full univariate and bivariate probability density
 functions and cumulative distribution functions along with full quantile
@@ -8039,6 +8120,27 @@ existing currently
  The package allows the user to query by host species, parasite species, and
 geographic location.")
     (license license:gpl3)))
+
+(define-public r-hellorust
+  (package
+    (name "r-hellorust")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hellorust" version))
+              (sha256
+               (base32
+                "09935qalhnr4ghmws38knfc99vly12b08pibqniclyyyy4a6ifv6"))))
+    (properties `((upstream-name . "hellorust")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://github.com/r-rust/hellorust")
+    (synopsis "Minimal Example of Using 'Rust' Code in 'R'")
+    (description
+     "Template R package that calls out to Rust code in a way that complies with CRAN
+policy.  Includes simple examples of passing numbers and strings from Rust to R
+and using threads.")
+    (license license:expat)))
 
 (define-public r-hellojavaworld
   (package
@@ -8480,13 +8582,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ts" version))
               (sha256
                (base32
-                "1r0jwra98hwkzzv43x7nq49qm1qx2k18p0m2l95kja8iks4rlwyd"))))
+                "1v35l9q6a3naszs9mi3ahjkv8yknli5h6h22dzbshr9r9f6d7gjh"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -8539,13 +8641,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.0.9")
+    (version "0.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ai" version))
               (sha256
                (base32
-                "053bvzw41qlqrii133cnjfx430vjd46b0gzpfa4359vzpwl71win"))))
+                "0yzi2gnzhsp1rxcq5c38d4ih14ix5mbcmz7yyrxmcq61zqpgfhgx"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -9267,13 +9369,13 @@ arXiv preprint <arXiv:2009.08011>.")
 (define-public r-hdir
   (package
     (name "r-hdir")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDiR" version))
               (sha256
                (base32
-                "0hkpc5sap1xvl8difmivharfbxh6vzimh9642d9l48kmp7i1g9hb"))))
+                "1qwd3y9645m8v2gdrb4xjpq86ixs9rgrw7iv3m5lm7nnf87qm350"))))
     (properties `((upstream-name . "HDiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-npcirc r-movmf r-directional r-circular))
@@ -9293,13 +9395,13 @@ occurrences.")
 (define-public r-hdinterval
   (package
     (name "r-hdinterval")
-    (version "0.2.2")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDInterval" version))
               (sha256
                (base32
-                "1vb5fn9zfig0jqs3mvkpik4wvrndj4qmxqx8rg0iv8nvqc4fnzh4"))))
+                "1xlljhzd30mi7pic7q55h7hv0bccxfc2g32piv8jx830svnz01xv"))))
     (properties `((upstream-name . "HDInterval")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDInterval")
@@ -9793,17 +9895,21 @@ provided in the multi-split algorithm.")
 (define-public r-hctdesign
   (package
     (name "r-hctdesign")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HCTDesign" version))
               (sha256
                (base32
-                "0gwj4z2qwxqzx8b3hnb4bfg1pm78n9g4j5x8gis1rcfrk68sl7d5"))))
+                "1nncyyw1dlbdl9f1pncwa9xdqrd7w2aw4ghnf01vwyq0m7pj90l1"))))
     (properties `((upstream-name . "HCTDesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rdpack r-mvtnorm r-flexsurv
-                             r-diversitree))
+    (propagated-inputs (list r-survival
+                             r-rdpack
+                             r-mvtnorm
+                             r-flexsurv
+                             r-diversitree
+                             r-crayon))
     (home-page "https://cran.r-project.org/package=HCTDesign")
     (synopsis
      "Group Sequential Design for Historical Control Trial with Survival Outcome")
@@ -9892,21 +9998,22 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.0.2")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hce" version))
               (sha256
                (base32
-                "1h8ixf93x97gcfzlf2mk796lqq92vmk2g74s8811087rlkcdk8ik"))))
+                "10wxr6v4mwr6map3rl3ds3bfpqw2jq3vlqyhic1jiwjx7dl41913"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hce")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
      "Simulate and analyze hierarchical composite endpoints.  Win odds is the main
 analysis method.  See Gasparyan SB et al (2022)
-<doi:10.1007/s43441-022-00420-1>).")
+<doi:10.1007/s43441-022-00420-1>.")
     (license license:expat)))
 
 (define-public r-hcci
@@ -9958,13 +10065,13 @@ German, Danish, English, Spanish and French.")
 (define-public r-hbv-ianigla
   (package
     (name "r-hbv-ianigla")
-    (version "0.2.1")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HBV.IANIGLA" version))
               (sha256
                (base32
-                "08876xg44md619m8cj1xb34g8xyrp8231nh5z0q6dzggdyfvicir"))))
+                "1ngvw17k4i4cxdr59fsbm437fn1wqxjz7zn1l6aciygy3rlcncw9"))))
     (properties `((upstream-name . "HBV.IANIGLA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10363,13 +10470,13 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
 (define-public r-harmonizer
   (package
     (name "r-harmonizer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "harmonizer" version))
               (sha256
                (base32
-                "116vby0n3vj2gc46s629ppq3kxsjvgdfmc6fdjz0rxyjcgjdqwxz"))))
+                "1zckf30bpjxnpb5ymz1razdbzjpvq8gf3a3si5grm0c5m4gmypj7"))))
     (properties `((upstream-name . "harmonizer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10483,13 +10590,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "happign" version))
               (sha256
                (base32
-                "0vbyw8017jbad1f1zd6ccaf68p1863r7qrli8nj47si7ivs0qv3s"))))
+                "1zxm9hg9jq0xzw6has9blskvy0cz6c8b3qqysaca1569zmyfgw8n"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
@@ -10498,8 +10605,8 @@ including most of the delicious Cantonese cuisine.")
                              r-sf
                              r-magrittr
                              r-httr2
+                             r-geojsonsf
                              r-dplyr
-                             r-curl
                              r-checkmate
                              r-archive))
     (native-inputs (list r-knitr))

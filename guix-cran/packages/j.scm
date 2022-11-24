@@ -691,13 +691,13 @@ and formatting JSON, extracting data from JSON, and modifying JSON data.")
 (define-public r-jsonstrings
   (package
     (name "r-jsonstrings")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsonStrings" version))
               (sha256
                (base32
-                "0agpkshnqijivvi042f2wkdy34g3z7849rp2p3z0y72bk6a5b2jg"))))
+                "0936nhm6zx4la7i6fwigz0kvgf9dirz422vhrzjr45f37pyfvkxy"))))
     (properties `((upstream-name . "jsonStrings")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))
@@ -1237,35 +1237,35 @@ Bootstrap.")
 (define-public r-jpstat
   (package
     (name "r-jpstat")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpstat" version))
               (sha256
                (base32
-                "1z7j5q081gs0qh7x0dcb4mrqmvnzymhmrbw3m0xs85sx5v88akca"))))
+                "1q1zc2micb62sdkar9w9pn3sb42lhhbr5pkfn4rg5iyl0iqpn5sa"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-stringi
+                             r-stickyr
                              r-rlang
                              r-purrr
                              r-progress
                              r-pillar
                              r-navigatr
-                             r-lubridate
+                             r-lifecycle
                              r-httr
                              r-dplyr))
     (home-page "https://github.com/UchidaMizuki/jpstat")
-    (synopsis "Tools for Easy Use of 'e-Stat' API")
+    (synopsis "Tools for Easy Use of 'e-Stat', 'RESAS' API, Etc")
     (description
-     "This package provides tools for using the API of e-Stat
-(<https://www.e-stat.go.jp/>), a portal site for Japanese government statistics.
- Includes functions for automatic query generation, data collection and
-formatting.")
+     "This package provides tools to use API such as e-Stat
+(<https://www.e-stat.go.jp/>), the portal site for Japanese government
+statistics, and RESAS (Regional Economy and Society Analyzing System,
+<https://resas.go.jp>).")
     (license license:expat)))
 
 (define-public r-jpmesh
@@ -2042,13 +2042,13 @@ easy transfer of analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.3.12")
+    (version "2.3.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvcore" version))
               (sha256
                (base32
-                "1vmjf9sszskf767n92rzpg8lai2g1qgkncgn96j39mgck92vrnqn"))))
+                "0cwchz7n50sxin65nc1k5bygci2yxp68yypmvq2a0fyf56r53gdg"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rlang r-r6 r-jsonlite r-base64enc))
@@ -2374,13 +2374,13 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
 (define-public r-jmatrix
   (package
     (name "r-jmatrix")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmatrix" version))
               (sha256
                (base32
-                "1wagyc3kzgmab7z885vcgp94xn3inap6284hcghv1937yjbwr57m"))))
+                "1rww7fji1angch5az9cs599fii96189p9f92s8h4fpw54snz2hrw"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))

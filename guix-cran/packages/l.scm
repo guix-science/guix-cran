@@ -15,6 +15,7 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
@@ -4643,6 +4644,26 @@ etymology.")
 antagonism, or Loewe's Additivity.")
     (license license:expat)))
 
+(define-public r-loedata
+  (package
+    (name "r-loedata")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "loedata" version))
+              (sha256
+               (base32
+                "01w0f83n1jzchw12w1wg18lq6idlp9ywr52nipg2l7pn9aa30gvv"))))
+    (properties `((upstream-name . "loedata")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=loedata")
+    (synopsis "Data Sets from \"Lectures on Econometrics\" by Chirok Han")
+    (description
+     "Data sets for Chirok Han (2022, ISBN:979-11-303-1497-6, \"Lectures on
+Econometrics\").  Students, teachers, and self-learners will find the data sets
+essential for replicating the results in the book.")
+    (license license:gpl3)))
+
 (define-public r-loe
   (package
     (name "r-loe")
@@ -7709,13 +7730,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingglosses" version))
               (sha256
                (base32
-                "19nsdqvxj8xa0xaf5qbmwxs6fakax9invg36fc1npscf48d3fjl7"))))
+                "0rwilnqv1lzmw61y1prjp3mvl4q61jr3pwkifq2mmw5vj307iciz"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools))
@@ -9593,18 +9614,18 @@ Multi-Ethnic Study of Atherosclerosis (MESA)\".")
 (define-public r-lgcp
   (package
     (name "r-lgcp")
-    (version "1.8")
+    (version "1.8-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lgcp" version))
               (sha256
                (base32
-                "1dw7zvl9mmwdx0kjrbfiq4c9x8ydg8kyf426xjpnmzf2jawmlqb0"))))
+                "0q7w95gpvdzlli60dgpixl0rn05f4707xwyw215dsrc1z8znyk73"))))
     (properties `((upstream-name . "lgcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-sp
                              r-rpanel
                              r-rgeos
@@ -9914,13 +9935,13 @@ in Erhard & Zimmer (2015) <doi:10.1093/nar/gkv696> and Erhard (2018)
 (define-public r-lfapp
   (package
     (name "r-lfapp")
-    (version "1.3")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LFApp" version))
               (sha256
                (base32
-                "0jyzn5k1h629ybx8f09vsnvdmc2qbigaqy6rrcica2sh5if2b4w4"))))
+                "1vvlf3bwxkyl9gyzswc4wd201pav1q2hfbhwmiic4j4d8azsd2r8"))))
     (properties `((upstream-name . "LFApp")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -13070,6 +13091,30 @@ in-memory data frames.  Basic features works with any drawing format ('GDAL
 vector data source') supported by the sf package.")
     (license license:gpl3)))
 
+(define-public r-lazynumbers
+  (package
+    (name "r-lazynumbers")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lazyNumbers" version))
+              (sha256
+               (base32
+                "0dc0j79cv7j3y04mpb2pp3qrjwhiv74rypl9yplwyr36z6fgl00l"))))
+    (properties `((upstream-name . "lazyNumbers")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/lazyNumbers")
+    (synopsis "Exact Floating-Point Arithmetic")
+    (description
+     "This package provides a new type of numbers called the lazy numbers.  Arithmetic
+on lazy numbers is exact, contrary to ordinary floating-point arithmetic.  The
+lazy numbers are implemented in C++ with the CGAL library
+(<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-lazygreedy
   (package
     (name "r-lazygreedy")
@@ -13784,13 +13829,13 @@ Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
 (define-public r-latentfactor
   (package
     (name "r-latentfactor")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "latentFactoR" version))
               (sha256
                (base32
-                "0bm0avimfdhf9lgm4v5vrjbn7833klfp6166g6r8kmyvmn6gigqc"))))
+                "0kgzgympcfp6l4jysccrlxrbmqasz1v95wkmfsw8qgi7dzfsgywc"))))
     (properties `((upstream-name . "latentFactoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -13799,6 +13844,7 @@ Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
                              r-psych
                              r-mvtnorm
                              r-mlr
+                             r-matrix
                              r-ineq
                              r-googledrive
                              r-fspe
@@ -14815,6 +14861,34 @@ width, mean width, maximum depth, mean depth, shoreline development, shoreline
 length, surface area, and volume.")
     (license license:cc0)))
 
+(define-public r-lakemetabolizer
+  (package
+    (name "r-lakemetabolizer")
+    (version "1.5.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LakeMetabolizer" version))
+              (sha256
+               (base32
+                "09j4k5r441jpbxv9x6j9j5mlcl7yh2ydhfy55wx614wdlv862jn9"))))
+    (properties `((upstream-name . "LakeMetabolizer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlakeanalyzer r-plyr))
+    (home-page "https://www.tandfonline.com/doi/abs/10.1080/IW-6.4.883")
+    (synopsis "Tools for the Analysis of Ecosystem Metabolism")
+    (description
+     "This package provides a collection of tools for the calculation of freewater
+metabolism from in situ time series of dissolved oxygen, water temperature, and,
+optionally, additional environmental variables.  LakeMetabolizer implements 5
+different metabolism models with diverse statistical underpinnings: bookkeeping,
+ordinary least squares, maximum likelihood, Kalman filter, and Bayesian.  Each
+of these 5 metabolism models can be combined with 1 of 7 models for computing
+the coefficient of gas exchange across the airâwater interface (k).
+LakeMetabolizer also features a variety of supporting functions that compute
+conversions and implement calculations commonly applied to raw data prior to
+estimating metabolism (e.g., oxygen saturation and optical conversion models).")
+    (license license:gpl2+)))
+
 (define-public r-lahman
   (package
     (name "r-lahman")
@@ -15005,17 +15079,17 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-lacunaritycovariance
   (package
     (name "r-lacunaritycovariance")
-    (version "1.1-3")
+    (version "1.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lacunaritycovariance" version))
               (sha256
                (base32
-                "0rf74mxylg9j5apcxk40wyfbwgsjwh322kc6wxbqxm4rgscs6shw"))))
+                "0w0xlc4xxy7yzscxvk3ls9pv1vw5ddx1zvx02pzvm4gc9mrfz2qr"))))
     (properties `((upstream-name . "lacunaritycovariance")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-core
-                             r-spatstat r-rcpproll))
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom
+                             r-spatstat-explore r-spatstat r-rcpproll))
     (home-page "https://github.com/kasselhingee/lacunaritycovariance")
     (synopsis
      "Gliding Box Lacunarity and Other Metrics for 2D Random Closed Sets")

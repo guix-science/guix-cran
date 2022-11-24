@@ -863,13 +863,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.3.6")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvms" version))
               (sha256
                (base32
-                "1smz0xcbg0a69wlzlva4vicw97qylyla359zjw8q0kwa1hna0c8y"))))
+                "1n46bg760ad0r4fy27fp9rljwn2q6yyj3jn71hnww6ph0jp5f76s"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -885,6 +885,7 @@ validation.")
                              r-mumin
                              r-lme4
                              r-lifecycle
+                             r-groupdata2
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -1449,6 +1450,28 @@ class predictions offer the possibility to dynamically determine cutoff values
 for transforming real-valued probability predictions into class predictions.")
     (license license:gpl2+)))
 
+(define-public r-custom-gauss-quad
+  (package
+    (name "r-custom-gauss-quad")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "custom.gauss.quad" version))
+              (sha256
+               (base32
+                "1rpg3wrpvmn24a8kmm3mwyqmrcx2pxhhrf40wp31nv8jfy7cfm7c"))))
+    (properties `((upstream-name . "custom.gauss.quad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmpfr))
+    (home-page "https://cran.r-project.org/package=custom.gauss.quad")
+    (synopsis "Custom Made Gauss Quadrature Nodes and Weights")
+    (description
+     "Use the high-precision arithmetic provided by the R package Rmpfr to compute a
+custom-made Gauss quadrature nodes and weights, with up to 33 nodes, using a
+moment-based method via moment determinants.  Paul Kabaila (2022)
+<arXiv:2211.04729>.")
+    (license license:expat)))
+
 (define-public r-cusp
   (package
     (name "r-cusp")
@@ -1474,13 +1497,13 @@ to linear regression and logistic curve models.")
 (define-public r-curvhdr
   (package
     (name "r-curvhdr")
-    (version "1.2-1")
+    (version "1.2-1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "curvHDR" version))
               (sha256
                (base32
-                "1a6b29kklyphv9iirm8xaxcdfcssk7ah4wm9ll53ls0alnzb15nw"))))
+                "0fr1qiq2qkd2nmkz6n9vrc42jdsyaz1h7qf2n5aapnpk7155c869"))))
     (properties `((upstream-name . "curvHDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -2064,22 +2087,20 @@ compatibility.")
 (define-public r-cubble
   (package
     (name "r-cubble")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cubble" version))
               (sha256
                (base32
-                "1dibxxcp92grjk4x0fgkqi37xvmb851gqc5h1za45if8fidd5zsw"))))
+                "1ldlbqbgd4sd8k1srpmjxvn3jad03bknzgfv5m09ki980m9vjq2d"))))
     (properties `((upstream-name . "cubble")))
     (build-system r-build-system)
-    (propagated-inputs (list r-whisker
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tsibble
                              r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-styler
                              r-stringr
                              r-sf
                              r-rlang
@@ -2090,7 +2111,6 @@ compatibility.")
                              r-ggplot2
                              r-geosphere
                              r-dplyr
-                             r-clipr
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/huizezhang-sherry/cubble")
@@ -2408,13 +2428,13 @@ data.")
 (define-public r-ctrdata
   (package
     (name "r-ctrdata")
-    (version "1.11.0")
+    (version "1.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctrdata" version))
               (sha256
                (base32
-                "0njg4xgrshnx3mdpzvciah25zkmgs50f9xcd2q1bfb0q9lckw66p"))))
+                "076v3bll8s6m61wcbwgrgrm34g0wa7gsc90mbwxwap1xfxyzjjsg"))))
     (properties `((upstream-name . "ctrdata")))
     (build-system r-build-system)
     (inputs (list sed php perl coreutils))
@@ -2885,13 +2905,13 @@ functions to read and write CTF data from R.")
 (define-public r-ctbi
   (package
     (name "r-ctbi")
-    (version "1.0.1")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctbi" version))
               (sha256
                (base32
-                "1p6qv4187qjnz36gs328bm337f72jybyf3x490qn18pxjwkczj4x"))))
+                "15dvxrir9rahr50kp1q884l06sjlb4fd9b92k3ib4d75c58bp72q"))))
     (properties `((upstream-name . "ctbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -2982,13 +3002,13 @@ placing a YAML header on top of a regular CSV.")
 (define-public r-csvwr
   (package
     (name "r-csvwr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csvwr" version))
               (sha256
                (base32
-                "1wwj0zx4jawfl5264qxa90qwll971c24hyk645r0c7wwvwa8dd9r"))))
+                "1yh330kh1q06f2vn8jvgirz4q7wld1ylnkjpnjh17nqq0d2lsmk2"))))
     (properties `((upstream-name . "csvwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2996,7 +3016,8 @@ placing a YAML header on top of a regular CSV.")
                              r-readr
                              r-purrr
                              r-magrittr
-                             r-jsonlite))
+                             r-jsonlite
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://robsteranium.github.io/csvwr/")
     (synopsis "Read and Write CSV on the Web (CSVW) Tables and Metadata")
@@ -3051,6 +3072,31 @@ further type transformations to the user.")
      "Reads and writes CSV with selected conventions.  Uses the same generic function
 for reading and writing to promote consistent formats.")
     (license license:gpl3)))
+
+(define-public r-csutil
+  (package
+    (name "r-csutil")
+    (version "2022.11.24")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "csutil" version))
+              (sha256
+               (base32
+                "0wa7isv73f7hn5s58w0wrbfb91i6j01vsy3n5iryj19wjw9a34cq"))))
+    (properties `((upstream-name . "csutil")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/csutil/")
+    (synopsis "Common Base-R Problems Relating to Lists")
+    (description
+     "Utility functions that help with common base-R problems relating to lists.
+Lists in base-R are very flexible.  This package provides functions to quickly
+and easily characterize types of lists.  That is, to identify if all elements in
+a list are null, data.frames, lists, or fully named lists.  Other functionality
+is provided for the handling of lists, such as the easy splitting of lists into
+equally sized groups, and the unnesting of data.frames within fully named lists.")
+    (license license:expat)))
 
 (define-public r-csurvey
   (package
@@ -3401,13 +3447,13 @@ developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.2.10")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSHShydRology" version))
               (sha256
                (base32
-                "1h3lcixsq19si1lbzzm8h9h0k4p01z2s8zzdw5az4vlsbg7wv1gl"))))
+                "0jmc0d3lpnjf0srh3s3zy2d941xah4y7sq1zkw21a6gmxd82a3ww"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitebox
@@ -3424,7 +3470,8 @@ developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
                              r-ggspatial
                              r-ggplot2
                              r-fields
-                             r-dplyr))
+                             r-dplyr
+                             r-circular))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CSHS-hydRology/CSHShydRology")
     (synopsis "Canadian Hydrological Analyses")
@@ -3617,6 +3664,28 @@ approach), as well as several tests and typical postestimation procedures (e.g.,
 verify admissibility of the estimates, assess the model fit, test the model fit
 etc.).")
     (license license:gpl3)))
+
+(define-public r-csdata
+  (package
+    (name "r-csdata")
+    (version "2022.11.22")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "csdata" version))
+              (sha256
+               (base32
+                "0gcjdkhbfg3dwivk0w23rdrjcq5vsa96x8l1fwjr86q4h4dyl8lw"))))
+    (properties `((upstream-name . "csdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/csdata/")
+    (synopsis "Structural Data for Norway")
+    (description
+     "Datasets relating to population in municipalities, municipality/county matching,
+and how different municipalities have merged/redistricted over time from 2006 to
+2020.")
+    (license license:expat)))
 
 (define-public r-cscnet
   (package
@@ -4086,13 +4155,13 @@ for use in RStudio'.")
 (define-public r-crunch
   (package
     (name "r-crunch")
-    (version "1.30.0")
+    (version "1.30.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crunch" version))
               (sha256
                (base32
-                "0ysk4hpymkby80j8snyziqigsr4nda8zm3b8frxmvk42psy7m7hh"))))
+                "1qq9qddabq3x5kznxi6c9bm6jnr43559rmfdsp4xwqhgqpffrcfy"))))
     (properties `((upstream-name . "crunch")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite
@@ -4734,13 +4803,13 @@ high-dimensional) set of surrogate markers.")
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstalkr" version))
               (sha256
                (base32
-                "07wimbwm521l88xcidn78gxl4hwfksd5xxvkydzy372ybqqi5aqk"))))
+                "0zydsyi0banjwkk4q1b231f1smww3xwmxfm5ibj2az41ppj39m2j"))))
     (properties `((upstream-name . "crosstalkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5576,28 +5645,6 @@ package helps you read data from various sources, clean it, fix column names,
 and graph the data.")
     (license license:expat)))
 
-(define-public r-crimelinkage
-  (package
-    (name "r-crimelinkage")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crimelinkage" version))
-              (sha256
-               (base32
-                "1zzk50kyccvnp51vzp28c9yi23hsp25arrgdn88lwfwa0m43rlar"))))
-    (properties `((upstream-name . "crimelinkage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crimelinkage")
-    (synopsis "Statistical Methods for Crime Series Linkage")
-    (description
-     "Statistical Methods for Crime Series Linkage.  This package provides code for
-criminal case linkage, crime series identification, crime series clustering, and
-suspect identification.")
-    (license license:gpl3)))
-
 (define-public r-crimedata
   (package
     (name "r-crimedata")
@@ -5796,39 +5843,6 @@ private data.  An ensemble of graphical outputs were designed to facilitate the
 use of the package and the interpretation of the results.  More information can
 be obtained from Chevalier (2022) <doi:10.5194/cp-18-821-2022>.")
     (license license:expat)))
-
-(define-public r-cregulome
-  (package
-    (name "r-cregulome")
-    (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cRegulome" version))
-              (sha256
-               (base32
-                "0cvxad73l85zsgqmis5p24v71kkzi784b8v5z07f0dh9yp41p96q"))))
-    (properties `((upstream-name . "cRegulome")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-venndiagram
-                             r-upsetr
-                             r-rsqlite
-                             r-r-utils
-                             r-igraph
-                             r-httr
-                             r-ggridges
-                             r-ggplot2
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/cRegulome")
-    (synopsis
-     "Obtain and Visualize Regulome-Gene Expression Correlations in Cancer")
-    (description
-     "Builds a SQLite database file of pre-calculated transcription
-factor/microRNA-gene correlations (co-expression) in cancer from the Cistrome
-Cancer Liu et al. (2011) <doi:10.1186/gb-2011-12-8-r83> and miRCancerdb
-databases (in press).  Provides custom classes and functions to query, tidy and
-plot the correlation data.")
-    (license license:gpl3)))
 
 (define-public r-cregg
   (package
@@ -6909,13 +6923,13 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cpop" version))
               (sha256
                (base32
-                "0n4pqdx6yp65h1hb2z327ql72mwm89avb3p34g5yq1gm8adhm9nd"))))
+                "0f7rxyh8m6w45cja02mip91p72bjlygrc0rdggbls50l63w1qczj"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -7148,13 +7162,13 @@ and outcomes.")
 (define-public r-cpglib
   (package
     (name "r-cpglib")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CPGLIB" version))
               (sha256
                (base32
-                "01klcg6ik7f9p2cy8m0j8qrmy4rah49pv2fyhqvqfbcxibmjbgxy"))))
+                "10pv9f36cg4ahgcbl3agc6zvgh3bmv78rc2vl6xhm1jpijhxqk93"))))
     (properties `((upstream-name . "CPGLIB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -9618,13 +9632,13 @@ and ATAC-Seq signatures as described in the article by Giorgi lab (2020)
 (define-public r-cortestsrd
   (package
     (name "r-cortestsrd")
-    (version "0.9-2")
+    (version "1.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corTESTsrd" version))
               (sha256
                (base32
-                "18mrcdqw853v2x57kg4zfpygnsxvcpc2sh61lrg3higdkb8svcpd"))))
+                "0as1xnc38jm1hay2dqib6y8mas9ip1qz55d1bcnpkaxdfaydzpcw"))))
     (properties `((upstream-name . "corTESTsrd")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=corTESTsrd")
@@ -10791,13 +10805,13 @@ for a list of copyright holders and contributors.")
 (define-public r-corelearn
   (package
     (name "r-corelearn")
-    (version "1.57.1")
+    (version "1.57.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CORElearn" version))
               (sha256
                (base32
-                "02i73r5fi8kyp4b4b3zjgx17d7zzvdp0jy9v290l1z2ia2mm70j4"))))
+                "1kgnjl8g2njrc4xnsvz76mjzp2z93klps6k1msni1fsjbg0vvl05"))))
     (properties `((upstream-name . "CORElearn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot r-plotrix r-nnet r-cluster))
@@ -11405,13 +11419,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-0")
+    (version "1.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "copula" version))
               (sha256
                (base32
-                "096rfnm14lp2pldqdphhf1v8bqv7ihxi901qinhv4kakari6xdws"))))
+                "1qz1hpqn7nsajsfvnyn4l1zqzkvmv1174dbb7cjps0q9dsvalx2l"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist
@@ -12591,18 +12605,18 @@ organized in contingency tables.  This package is a companion to the
 (define-public r-contingency
   (package
     (name "r-contingency")
-    (version "0.0.6")
+    (version "0.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contingency" version))
               (sha256
                (base32
-                "0bwvrwsa41s24j612w4jyhlfp2r6qa37ljsb3lxx27mkd9r0286d"))))
+                "155pzw1ifm1c4pjd5wxj9lb89a6wc9l5g1v2rhq8rfswzds89gjv"))))
     (properties `((upstream-name . "contingency")))
     (build-system r-build-system)
     (propagated-inputs (list r-rje))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=contingency")
+    (home-page "https://github.com/rje42/contingency")
     (synopsis "Discrete Multivariate Probability Distributions")
     (description
      "This package provides an object class for dealing with many multivariate
@@ -12713,6 +12727,28 @@ algorithm under a clustering or classification paradigm Methods are described in
 Antonio Punzo, Angelo Mazza, and Paul D McNicholas (2018)
 <doi:10.18637/jss.v085.i10>.")
     (license license:gpl2)))
+
+(define-public r-container
+  (package
+    (name "r-container")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "container" version))
+              (sha256
+               (base32
+                "18vid1yc0r4ji81v2193dz0rzhfs9za2wpi2qyhm063ba0364f3l"))))
+    (properties `((upstream-name . "container")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://rpahl.github.io/container/")
+    (synopsis "Extending Base 'R' Lists")
+    (description
+     "Extends the functionality of base R lists and provides specialized data
+structures deque', set', dict', and dict.table', the latter to extend the
+data.table package.")
+    (license license:gpl3)))
 
 (define-public r-contactdata
   (package
@@ -15174,16 +15210,16 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.21")
+    (version "3.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "0n0g56698w8mhlhizx8ji0q0r3qjmsjpyv5pfgy4xp4k3hi518l5"))))
+                "1kgjg41g3pmpgjj9id7ckran1v2a75czmp6mrkzh1jpgvsx55r15"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-numderiv))
+    (propagated-inputs (list r-survival r-numderiv r-mass))
     (home-page "https://cran.r-project.org/package=compound.Cox")
     (synopsis
      "Univariate Feature Selection and Compound Covariate for Predicting Survival")
@@ -15850,13 +15886,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.5.1")
+    (version "4.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compareGroups" version))
               (sha256
                (base32
-                "0ll770lj2j6nnjdpkij1wadd2nqppkdjcfglfx13kk5r5ldmfyq1"))))
+                "0w44dk3ba9dq68kl2y5665h6l8j0w59mx70rwi58c77w3bqz0jry"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -16347,18 +16383,25 @@ and be free of commas (for that call).")
 (define-public r-comix
   (package
     (name "r-comix")
-    (version "0.1.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COMIX" version))
               (sha256
                (base32
-                "0x3x09jvplap1wgg4y80gymxzh9mac8np7wmqldhjnmkqs9bwc42"))))
+                "0dhc3zb8jkfq8b9vj8m2a9jbd9fc7xxvhz16l8xhz9v5iffgk6hh"))))
     (properties `((upstream-name . "COMIX")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
-                             r-rcpp))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
     (home-page "https://cran.r-project.org/package=COMIX")
     (synopsis "Coarsened Mixtures of Hierarchical Skew Kernels")
     (description
@@ -17929,17 +17972,18 @@ also available individually for efficient and targeted analysis of barcode data.
 (define-public r-cohorttools
   (package
     (name "r-cohorttools")
-    (version "0.1.4")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cohorttools" version))
               (sha256
                (base32
-                "1zpf3qgzkn34wc36r89ymzfx4fvlgl7x1yiwdwzzd20xv3nx2b5h"))))
+                "17gz4887vhkk0qr5mcv0vcfaxiws1pk1fdd4y8wqbl57ikn5i9vs"))))
     (properties `((upstream-name . "cohorttools")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rsvg
+                             r-mgcv
                              r-ggplot2
                              r-epi
                              r-diagrammersvg
@@ -18364,13 +18408,13 @@ bootstrap confidence intervals were added.")
 (define-public r-coefa
   (package
     (name "r-coefa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coefa" version))
               (sha256
                (base32
-                "1zi5x3wpdjbf22p50aax8h22hw96knwp9s3fzaz2v5p6j0b13dnj"))))
+                "0qb78kbr7z307165j7q17bm1p9aq6p4iy2j1sbpqks4bvkih9drs"))))
     (properties `((upstream-name . "coefa")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-psych r-openxlsx))
@@ -20247,16 +20291,16 @@ programming algorithm.")
 (define-public r-cml
   (package
     (name "r-cml")
-    (version "0.0.5")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cml" version))
               (sha256
                (base32
-                "0j1awj84b68j13f7s0bs294sx7cdn9dch0vjclsnarwzv2alavx1"))))
+                "10qwpgs64zhizid3l7i9ryx214w0kx0121dfkjmvmf00pdb685im"))))
     (properties `((upstream-name . "cml")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-mass))
+    (propagated-inputs (list r-vegan))
     (home-page "https://cran.r-project.org/package=cml")
     (synopsis "Conditional Manifold Learning")
     (description
@@ -22007,24 +22051,26 @@ cells.")
 (define-public r-clusroc
   (package
     (name "r-clusroc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClusROC" version))
               (sha256
                (base32
-                "0nndzm5ap5fmvgc74kcx1h3jv4wpjg9rr4vj1lvxz8zyw3kacfrh"))))
+                "055ppcnzwkapnyf9xvld4bvkccwf494gqcb2qq0vnsa8n6bz5k46"))))
     (properties `((upstream-name . "ClusROC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-snow
-                             r-rgl
+    (propagated-inputs (list r-rgl
+                             r-rcpparmadillo
+                             r-rcpp
                              r-numderiv
                              r-nlme
+                             r-iterators
                              r-ggpubr
                              r-ggplot2
                              r-foreach
-                             r-dosnow
-                             r-car))
+                             r-ellipse
+                             r-doparallel))
     (home-page "https://github.com/toduckhanh/ClusROC")
     (synopsis
      "ROC Analysis in Three-Class Classification Problems for Clustered Data")
@@ -22041,7 +22087,7 @@ Youden Index (GYI), Closest to Perfection (CtP) and Maximum Volume (MV).
 Methods considered in point (iii) are proposed and discussed in Xiong et al.
 (2018) <doi:10.1177/0962280217742539>.  Visualization tools are also provided.
 We refer readers to the articles cited above for all details.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-clusrank
   (package
@@ -22685,13 +22731,13 @@ to demonstrate the package functionalities.")
 (define-public r-clintools
   (package
     (name "r-clintools")
-    (version "0.9.6")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clintools" version))
               (sha256
                (base32
-                "0zgv8vwa3ab2zwdrj8r7rc65ajpc2av9zks5vs9q93byzrxnz0f7"))))
+                "0v74706imgk5kkya3cj14c78dxji2zgxyasfm4x7k2jda20z3fap"))))
     (properties `((upstream-name . "clintools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-signal r-lme4 r-ggplot2))
@@ -23048,13 +23094,13 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (define-public r-climprojdiags
   (package
     (name "r-climprojdiags")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClimProjDiags" version))
               (sha256
                (base32
-                "1grhg0ajf5lfm7pi5mm0hgp0cmln1jwrgkrfb4ci85fpqn96ddji"))))
+                "1gj2rpp918llr086hcmkcfkfl51j8x8gis7nqpxf10mgxychwd0v"))))
     (properties `((upstream-name . "ClimProjDiags")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-pcict r-multiapply r-climdex-pcic))
@@ -25505,6 +25551,26 @@ package].  Users are able to set the styles of lines and points.  This package
 contains the function to calculate odds ratios and their confidence intervals
 from the result of logistic regression.")
     (license license:gpl2+)))
+
+(define-public r-cipher
+  (package
+    (name "r-cipher")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cipheR" version))
+              (sha256
+               (base32
+                "01h8mh2xlz1kkwm3nbiw8lpjlkjc19x5x8dq1yxfwdkq5yjjkyaa"))))
+    (properties `((upstream-name . "cipheR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cipheR")
+    (synopsis "Encryption and Decryption with Text Ciphers")
+    (description
+     "Encrypts and decrypts using basic ciphers.  None of these should be used in
+place of real encryption using state of the art tools.  The ciphers included use
+methods described in the ciphers's Wikipedia and cryptography hobby websites.")
+    (license license:gpl3+)))
 
 (define-public r-ciperm
   (package
@@ -28180,13 +28246,13 @@ user-friendly graphical interface for package ChannelAttribution'.")
 (define-public r-channelattribution
   (package
     (name "r-channelattribution")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChannelAttribution" version))
               (sha256
                (base32
-                "09qdj93al6r7pg9s2xvwks7d73bgjsn1k7h8rcdzf245r89l8726"))))
+                "174mv7b9jfw240i29b457994iza3wwqx0mjxbpl28af0fba1h4xl"))))
     (properties `((upstream-name . "ChannelAttribution")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -28203,6 +28269,42 @@ customer journey data.  The package also contains three heuristic algorithms
 algorithms are implemented in C++.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-changeranger
+  (package
+    (name "r-changeranger")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "changeRangeR" version))
+              (sha256
+               (base32
+                "0v8yfn587grmvx5a6gnj21rzi2wy0149cs8k6lyg1x7mv847b8wa"))))
+    (properties `((upstream-name . "changeRangeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-rgeos
+                             r-raster
+                             r-rangemodelmetadata
+                             r-phylobase
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=changeRangeR")
+    (synopsis "Change Metrics for Species Geographic Ranges")
+    (description
+     "Facilitates workflows to reproducibly transform estimates of speciesâ
+distributions into metrics relevant for conservation.  For example, combining
+predictions from species distribution models with other maps of environmental
+data to characterize the proportion of a speciesâ range that is under
+protection, calculating metrics used under the IUCN Criteria A and B guidelines
+(Area of Occupancy and Extent of Occurrence), and calculating more general
+metrics such as taxonomic and phylogenetic diversity, as well as endemism.  Also
+facilitates temporal comparisons among biodiversity metrics to inform efforts
+towards complementarity and consideration of future scenarios in conservation
+decisions.  changeRangeR also provides tools to determine the effects of
+modeling decisions through sensitivity tests.")
+    (license license:gpl3)))
 
 (define-public r-changer
   (package
@@ -28651,34 +28753,6 @@ CUSUM and risk-adjusted funnel plot for survival data.  These procedures can be
 used to monitor survival processes and detect problems in their quality.")
     (license license:gpl3+)))
 
-(define-public r-cgraph
-  (package
-    (name "r-cgraph")
-    (version "6.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cgraph" version))
-              (sha256
-               (base32
-                "0hmp07iz7ya3j8jaghm4pa0b84lsinc48rsibbh47sd3i6pkxfik"))))
-    (properties `((upstream-name . "cgraph")))
-    (build-system r-build-system)
-    (home-page "https://cgraph.org/")
-    (synopsis "Computational Graphs")
-    (description
-     "Allows to create, evaluate, and differentiate computational graphs in R. A
-computational graph is a graph representation of a multivariate function
-decomposed by its (elementary) operations.  Nodes in the graph represent arrays
-while edges represent dependencies among the arrays.  An advantage of expressing
-a function as a computational graph is that this enables to differentiate the
-function by automatic differentiation.  The cgraph package supports various
-operations including basic arithmetic, trigonometry operations, and linear
-algebra operations.  It differentiates computational graphs by reverse automatic
-differentiation.  The flexible architecture of the package makes it applicable
-to solve a variety of problems including local sensitivity analysis,
-gradient-based optimization, and machine learning.")
-    (license license:asl2.0)))
-
 (define-public r-cgpfunctions
   (package
     (name "r-cgpfunctions")
@@ -29008,13 +29082,13 @@ with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.19")
+    (version "1.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cgam" version))
               (sha256
                (base32
-                "1iw5wky4fr24jggwvink0frxy7qpgnvf08csfk240qk54spjbi81"))))
+                "0mrd574zyajs46wgdyyly3vxpbpnvp5p8m4n1hsqyrjn6ba3lws4"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-svdialogs r-statmod r-matrix r-lme4 r-coneproj))
@@ -29311,13 +29385,13 @@ diagram.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cffr" version))
               (sha256
                (base32
-                "1hncf2bd8s7a77aay3iaz3k8l5wba7c89yiz1yap506ihjzbb94j"))))
+                "0vyg3cl1vkz40ds2birlxn5ip24gfn5i4405vvnnb6gjp9ymmcpv"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-crayon))
@@ -30364,31 +30438,32 @@ which flip the role of response variable and the covariate, is also considered."
 (define-public r-censable
   (package
     (name "r-censable")
-    (version "0.0.3")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "censable" version))
               (sha256
                (base32
-                "15274slkqkmwvipjb7p58knwpmq6iahpik2dg80j96fjdrpppl0g"))))
+                "15p4ggnkcddm2lglf798bcjghppx0pqzc8nyljyiw0hwsw14c7yg"))))
     (properties `((upstream-name . "censable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidycensus
+    (propagated-inputs (list r-tinytiger
                              r-tibble
                              r-stringr
                              r-sf
                              r-rlang
+                             r-purrr
                              r-memoise
                              r-magrittr
-                             r-dplyr))
-    (home-page "https://www.christophertkenny.com/censable/")
+                             r-dplyr
+                             r-censusapi))
+    (home-page "https://christophertkenny.com/censable/")
     (synopsis "Making Census Data More Usable")
     (description
      "This package creates a common framework for organizing, naming, and gathering
 population, age, race, and ethnicity data from the Census Bureau.  Accesses the
-API <https://www.census.gov/data/developers/data-sets.html> via the package
-tidycensus.  Provides tools for adding information to existing data to line up
-with Census data.")
+API <https://www.census.gov/data/developers/data-sets.html>.  Provides tools for
+adding information to existing data to line up with Census data.")
     (license license:expat)))
 
 (define-public r-cengam
@@ -31286,13 +31361,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDatanet" version))
               (sha256
                (base32
-                "1lkkzi59vfy0j3427brr685c3qcw1axfr1f7zfgnam96hyb21p8b"))))
+                "0736j23qnds21qsblwh08dj4ylcs70bpqw5pr0hxmnilkk6jgyj2"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -32273,16 +32348,17 @@ variable estimates.")
 (define-public r-cbl
   (package
     (name "r-cbl")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cbl" version))
               (sha256
                (base32
-                "0hk2c92vmka17hbc1dy0mz86v888drh6qbgd1dvjzszqimx1si4i"))))
+                "1yrhpzwj1mzyrb38fxljq3w93s2ab2ann2ryywai3g7gdmfsn20q"))))
     (properties `((upstream-name . "cbl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lightgbm r-glmnet r-foreach r-data-table))
+    (propagated-inputs (list r-lightgbm r-glmnet r-foreach r-dorng
+                             r-data-table))
     (home-page "https://github.com/dswatson/cbl")
     (synopsis "Causal Discovery under a Confounder Blanket")
     (description
@@ -32456,13 +32532,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-cavariants
   (package
     (name "r-cavariants")
-    (version "5.6")
+    (version "5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAvariants" version))
               (sha256
                (base32
-                "1rv3r27m43q8z9hiac5fj3kx77j0sfmcgxwcl6mdfgx0jwq7pi3s"))))
+                "0jxz0db034fhiqbfbpzqakrmlibay9rzyxavprvans93k45zigfs"))))
     (properties `((upstream-name . "CAvariants")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-gridextra r-ggrepel r-ggplot2
@@ -32732,16 +32808,16 @@ preprint by Sachs, Gabriel, and SjÃ¶lander (2021)
 (define-public r-causalmodels
   (package
     (name "r-causalmodels")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalModels" version))
               (sha256
                (base32
-                "0njvszf6b161lq8g94aawwb9pwbf0gdb2by8g8n6s67vbl7lyq0w"))))
+                "19m1qfzssrwmsxiiyqiqby102qmxxcmbyxhggd9bb44z2iicf8cl"))))
     (properties `((upstream-name . "CausalModels")))
     (build-system r-build-system)
-    (propagated-inputs (list r-multcomp r-causaldata r-boot))
+    (propagated-inputs (list r-multcomp r-geepack r-causaldata r-boot))
     (home-page "https://github.com/ander428/CausalModels")
     (synopsis "Causal Inference Modeling for Estimation of Causal Effects")
     (description
@@ -33403,27 +33479,6 @@ ability of the model.  I Barrio, I Arostegui, MX Rodriguez-Alvarez, JM Quintana
 Meira-Machado, C Esteban, I Arostegui (2017)
 <https://www.idescat.cat/sort/sort411/41.1.3.barrio-etal.pdf>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-catnet
-  (package
-    (name "r-catnet")
-    (version "1.16.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "catnet" version))
-              (sha256
-               (base32
-                "1qfmc8wkk9wqmcds48cc0ziw2hjbqndhjbbcz8rhblb2v1f0a3zv"))))
-    (properties `((upstream-name . "catnet")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=catnet")
-    (synopsis "Categorical Bayesian Network Inference")
-    (description
-     "Structure learning and parameter estimation of discrete Bayesian networks using
-likelihood-based criteria.  Exhaustive search for fixed node orders and
-stochastic search of optimal orders via simulated annealing algorithm are
-implemented.")
-    (license license:gpl2+)))
 
 (define-public r-catmaply
   (package
@@ -34118,6 +34173,38 @@ machine.  Try to build your fortune before you succumb to the gambler's ruin!")
 statistical matching methods.")
     (license license:gpl2+)))
 
+(define-public r-casebase
+  (package
+    (name "r-casebase")
+    (version "0.10.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "casebase" version))
+              (sha256
+               (base32
+                "0my4vsirm4n8qd3b81ml1hkllimz41l0819njc92znfyg7y6pj63"))))
+    (properties `((upstream-name . "casebase")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://sahirbhatnagar.com/casebase/")
+    (synopsis
+     "Fitting Flexible Smooth-in-Time Hazards and Risk Functions via Logistic and Multinomial Regression")
+    (description
+     "Fit flexible and fully parametric hazard regression models to survival data with
+single event type or multiple competing causes via logistic and multinomial
+regression.  Our formulation allows for arbitrary functional forms of time and
+its interactions with other predictors for time-dependent hazards and hazard
+ratios.  From the fitted hazard model, we provide functions to readily calculate
+and plot cumulative incidence and survival curves for a given covariate profile.
+ This approach accommodates any log-linear hazard function of prognostic time,
+treatment, and covariates, and readily allows for non-proportionality.  We also
+provide a plot method for visualizing incidence density via population time
+plots.  Based on the case-base sampling approach of Hanley and Miettinen (2009)
+<DOI:10.2202/1557-4679.1125>, Saarela and Arjas (2015) <DOI:10.1111/sjos.12125>,
+and Saarela (2015) <DOI:10.1007/s10985-015-9352-x>.")
+    (license license:expat)))
+
 (define-public r-cascsim
   (package
     (name "r-cascsim")
@@ -34173,6 +34260,27 @@ compared to CASCORE in our paper, such as Spectral Clustering On Ratios-of
 Eigenvectors (SCORE), normalized PCA, ordinary PCA and covariate-assisted
 spectral clustering (CASC) and ADMM.")
     (license license:gpl2)))
+
+(define-public r-caschrono
+  (package
+    (name "r-caschrono")
+    (version "2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "caschrono" version))
+              (sha256
+               (base32
+                "06q327cqa0hb0q60zyyj6r7ydcw9big597nwmmhb8px9j9d4pxdr"))))
+    (properties `((upstream-name . "caschrono")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-hmisc))
+    (home-page "http://www.seriestemporelles.com")
+    (synopsis "S<e9>ries Temporelles Avec R")
+    (description
+     "Functions, data sets and exercises solutions for the book Séries Temporelles
+Avec R (Yves Aragon, edp sciences, 2016).  For all chapters, a vignette is
+available with some additional material and exercises solutions.")
+    (license license:gpl2+)))
 
 (define-public r-cascadedata
   (package
@@ -36765,13 +36873,13 @@ IJCAI International Joint Conference on Artificial Intelligence, pp.  635-640.")
 (define-public r-caiser
   (package
     (name "r-caiser")
-    (version "1.0.16")
+    (version "1.0.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAISEr" version))
               (sha256
                (base32
-                "08br6hdpgf9y2fix299diwd8r3q4gylpbzll4knpxq0vi18a3hz3"))))
+                "01gxxq9bfrrishzawmqh47byhc3szfss9bmcsh1p2gi9ml6aqcay"))))
     (properties `((upstream-name . "CAISEr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbmcapply r-gridextra r-ggplot2 r-assertthat))
@@ -37190,19 +37298,19 @@ the work of Quinlan (1993, ISBN:1-55860-238-0).")
 (define-public r-c443
   (package
     (name "r-c443")
-    (version "3.2.3")
+    (version "3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "C443" version))
               (sha256
                (base32
-                "0zjnwkn17213x2zhflmmrplp6kr8zg04pfynpkwsgmf4rqyfyjvx"))))
+                "1ngk95m67aplpvcva02y3njwv4gcdh4yf0jgkdjzw6prg4h70jla"))))
     (properties `((upstream-name . "C443")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
-                             r-reshape2
                              r-rcolorbrewer
-                             r-qgraph
+                             r-ranger
+                             r-randomforest
                              r-plyr
                              r-partykit
                              r-mass
