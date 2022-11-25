@@ -2196,16 +2196,16 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
 (define-public r-htrx
   (package
     (name "r-htrx")
-    (version "1.0.7")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTRX" version))
               (sha256
                (base32
-                "0ydzakwz1cy96z0fg29snxdwcn5czsvgxk2p1al9fh51llqrpbvb"))))
+                "0hi52vamlhr81v6q9dk8gs199j6bzx0j9336nx97wzbxz2swkrbh"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
-    (propagated-inputs (list r-fastglm r-caret))
+    (propagated-inputs (list r-glmnet r-fastglm r-caret))
     (home-page "https://cran.r-project.org/package=HTRX")
     (synopsis "Haplotype Trend Regression with eXtra Flexibility (HTRX)")
     (description

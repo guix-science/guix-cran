@@ -13744,13 +13744,13 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NACHO" version))
               (sha256
                (base32
-                "1nd2sxgj8yyjynn0bd6k7pq40isxycr9a5bz0g42ndm4kyd1vjva"))))
+                "0kin9cs1wcayqcr82c7906fs9cg86iy61wmmxh9nd52n7nqa2jxw"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))

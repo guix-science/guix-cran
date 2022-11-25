@@ -1528,20 +1528,23 @@ measurement facets (e.g., items and raters).")
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtfstools" version))
               (sha256
                (base32
-                "1ms4xjbnaggakccwmd8bhi061rlbznx3bczaa35df19saw5z66cz"))))
+                "03gc784dvskvg8m0fcqc966ka0slnh10in5gk7bba8h7lnfb893w"))))
     (properties `((upstream-name . "gtfstools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units
+    (propagated-inputs (list r-zip
+                             r-units
                              r-sfheaders
                              r-sf
+                             r-processx
                              r-gtfsio
                              r-data-table
+                             r-curl
                              r-cpp11
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -2096,27 +2099,6 @@ of group sparse learning.  For details, please refer to the paper \"Y. Hu, C. Li
 K. Meng, J. Qin and X. Yang.  Group sparse optimization via l_{p,q}
 regularization.  Journal of Machine Learning Research, to appear, 2017\".")
     (license license:gpl2+)))
-
-(define-public r-gson
-  (package
-    (name "r-gson")
-    (version "0.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gson" version))
-              (sha256
-               (base32
-                "065ify3i7zqwi7h5jzr7kdgr358kwgw6xrkvvmrznbl7s9f7d57n"))))
-    (properties `((upstream-name . "gson")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-jsonlite))
-    (home-page "https://cran.r-project.org/package=gson")
-    (synopsis "Base Class and Methods for 'gson' Format")
-    (description
-     "Proposes a new file format ('gson') for storing gene set and related
-information, and provides read, write and other utilities to process this file
-format.")
-    (license license:artistic2.0)))
 
 (define-public r-gsodr
   (package
@@ -18267,13 +18249,13 @@ keeping a tabular (long) structure for easier processing.")
 (define-public r-getdesigns
   (package
     (name "r-getdesigns")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GETdesigns" version))
               (sha256
                (base32
-                "0nyv61yhd3w2gjsjr1wr54jw5garpnm6ds28hyy649fdxrn8px39"))))
+                "1rc8vcpfv240qmg3xgqx1rlygw7l3hjkh1napj3pc9j6ffpyyk2a"))))
     (properties `((upstream-name . "GETdesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GETdesigns")
@@ -19592,13 +19574,13 @@ also a facility to check the validity of ISO 19139 XML encoded metadata.")
 (define-public r-geomerge
   (package
     (name "r-geomerge")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geomerge" version))
               (sha256
                (base32
-                "1i6n88k8icwihr9w7ipjb50f68zad602dipb3hd887y4kyf14wni"))))
+                "043dg8q9jjfql4wlya17zqz33wg6c6crvxbsq3srlp7mppvapylh"))))
     (properties `((upstream-name . "geomerge")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -19606,7 +19588,6 @@ also a facility to check the validity of ISO 19139 XML encoded metadata.")
                              r-scales
                              r-raster
                              r-lubridate
-                             r-inlmisc
                              r-gridextra
                              r-ggplot2
                              r-geosphere))

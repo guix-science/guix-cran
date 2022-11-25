@@ -3437,30 +3437,6 @@ and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
 ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
     (license license:gpl3)))
 
-(define-public r-qpmin
-  (package
-    (name "r-qpmin")
-    (version "0.5-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QPmin" version))
-              (sha256
-               (base32
-                "1hfvbi2qfynnkg2pmr7qsw75bmijwglnxchbzxcbikm5yw3sd2mz"))))
-    (properties `((upstream-name . "QPmin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (home-page "https://cran.r-project.org/package=QPmin")
-    (synopsis "Linearly Constrained Indefinite Quadratic Program Solver")
-    (description
-     "Active set method solver for the solution of indefinite quadratic programs,
-subject to lower bounds on linear functions of the variables and simple bounds
-on the variables themselves.  The function QPmin() implements an algorithm
-similar to the one described in Gould (1991) <doi:10.1093/imanum/11.3.299> with
-the exception that an efficient sparse internal representation of the basis
-matrix is maintained thus allowing the solution of somewhat large problems.")
-    (license license:gpl2+)))
-
 (define-public r-qpmadr
   (package
     (name "r-qpmadr")

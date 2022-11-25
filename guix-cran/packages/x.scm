@@ -135,36 +135,6 @@ Currently it only contains a very efficient function of decoding HTML entities
 in character vectors by Rcpp routine.")
     (license license:expat)))
 
-(define-public r-xtreg2way
-  (package
-    (name "r-xtreg2way")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xtreg2way" version))
-              (sha256
-               (base32
-                "0wllz0frakmadavgpqhd2b8fiw6wgwh5wzd270czc6cm5bq9gfng"))))
-    (properties `((upstream-name . "xtreg2way")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-matrix r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulosomaini/xtreg2way")
-    (synopsis "Feasible Estimation of the Two-Way Fixed Effect Model")
-    (description
-     "Implemented is an algorithm to estimate the two-way fixed effect linear model.
-The coefficients of interest are computed using the residuals from the
-projection of all variables on the two sets of fixed effects.  Our algorithm has
-three desirable features.  First, it manages memory and computational resources
-efficiently which speeds up the computation of the estimates.  Second, it allows
-the researcher to estimate multiple specifications using the same set of fixed
-effects at a very low computational cost.  Third, the asymptotic variance of the
-parameters of interest can be consistently estimated using standard routines on
-the residualized data.  Somaini P., Wolak F. A. (2016)
-<doi:10.1515/jem-2014-0008> Arellano, M. (1987)
-<https://ideas.repec.org/a/bla/obuest/v49y1987i4p431-34.html>.")
-    (license license:expat)))
-
 (define-public r-xtermstyle
   (package
     (name "r-xtermstyle")

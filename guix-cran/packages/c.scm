@@ -685,42 +685,6 @@ infrastructure to support the combination of quantitative and qualitative
 approaches for working with textual data.")
     (license license:gpl3)))
 
-(define-public r-cvxr
-  (package
-    (name "r-cvxr")
-    (version "1.0-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CVXR" version))
-              (sha256
-               (base32
-                "0alp1g4bszxqcrjbn54bz1zswg8y10372fwwlbi0jjazycw9cap9"))))
-    (properties `((upstream-name . "CVXR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scs
-                             r-rmpfr
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-osqp
-                             r-matrix
-                             r-gmp
-                             r-ecosolver
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://cvxr.rbind.io")
-    (synopsis "Disciplined Convex Optimization")
-    (description
-     "An object-oriented modeling language for disciplined convex programming (DCP) as
-described in Fu, Narasimhan, and Boyd (2020, <doi:10.18637/jss.v094.i14>).  It
-allows the user to formulate convex optimization problems in a natural way
-following mathematical convention and DCP rules.  The system analyzes the
-problem, verifies its convexity, converts it into a canonical form, and hands it
-off to an appropriate solver to obtain the solution.  Interfaces to solvers on
-CRAN and elsewhere are provided, both commercial and open source.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-cvwrapr
   (package
     (name "r-cvwrapr")
@@ -3618,16 +3582,17 @@ using CSESA before doing the traditional serotyping.")
 (define-public r-csem
   (package
     (name "r-csem")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cSEM" version))
               (sha256
                (base32
-                "1h9n33akvh7cyl1r3pa64nxzr9z1723fqcfxa4p3kh6jp5ysqlvp"))))
+                "0a0pv01ynlac53rdwjhw20alx72ip23izvcxv8bdkdxa41ai3bi5"))))
     (properties `((upstream-name . "cSEM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-symmoments
+    (propagated-inputs (list r-truncatednormal
+                             r-symmoments
                              r-rlang
                              r-rdpack
                              r-purrr
@@ -3646,10 +3611,9 @@ using CSESA before doing the traditional serotyping.")
                              r-expm
                              r-crayon
                              r-cli
-                             r-alabama
-                             r-abind))
+                             r-alabama))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/M-E-Rademaker/cSEM")
+    (home-page "https://github.com/M-E-Rademaker/cSEM/")
     (synopsis "Composite-Based Structural Equation Modeling")
     (description
      "Estimate, assess, test, and study linear, nonlinear, hierarchical and multigroup
@@ -11121,18 +11085,20 @@ distributed estimation.  The philosophy of the package is described in Guo G.
 (define-public r-copyseparator
   (package
     (name "r-copyseparator")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "copyseparator" version))
               (sha256
                (base32
-                "0v0z5fnbvhvpbx9gr6wnq22ijjyvlnnh7q4nbvffh7wdsnwijmi8"))))
+                "0dywnrqjb6x7v8icx117vsjb6zzb0brmmz1xwdc8a26lgcqmbvgv"))))
     (properties `((upstream-name . "copyseparator")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-seqinr
                              r-kmer
+                             r-foreach
+                             r-doparallel
                              r-decipher
                              r-biostrings
                              r-beepr
@@ -12642,39 +12608,6 @@ probability distributions at once, useful for simulation.")
      "This library provides functions to convert numbers to continued fractions and
 back again.")
     (license license:lgpl3)))
-
-(define-public r-context
-  (package
-    (name "r-context")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "conText" version))
-              (sha256
-               (base32
-                "04zqahx01rqpa6wm4krnr7vfafcxgqblrd911qw7pfwvmjl2w92s"))))
-    (properties `((upstream-name . "conText")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-text2vec
-                             r-stringr
-                             r-reshape2
-                             r-quanteda
-                             r-matrix
-                             r-ggplot2
-                             r-fastdummies
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/prodriguezsosa/EmbeddingRegression")
-    (synopsis "'a la Carte' on Text (ConText) Embedding Regression")
-    (description
-     "This package provides a fast, flexible and transparent framework to estimate
-context-specific word and short document embeddings using the a la carte
-embeddings approach developed by Khodak et al. (2018) <arXiv:1805.05388> and
-evaluate hypotheses about covariate effects on embeddings using the regression
-framework developed by Rodriguez et al.
-(2021)<https://github.com/prodriguezsosa/EmbeddingRegression>.")
-    (license license:gpl3)))
 
 (define-public r-contentid
   (package

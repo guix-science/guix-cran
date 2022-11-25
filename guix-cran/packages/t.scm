@@ -14437,6 +14437,44 @@ univariate cumulative incidence estimates and competing risk regression.
 Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>.")
     (license license:agpl3+)))
 
+(define-public r-tidyclust
+  (package
+    (name "r-tidyclust")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyclust" version))
+              (sha256
+               (base32
+                "1b6is25xsip3x6ps5x3n8g8jmy7brq0rjcf5w4rdlqcrn1f43v32"))))
+    (properties `((upstream-name . "tidyclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-rfast
+                             r-prettyunits
+                             r-parsnip
+                             r-modelenv
+                             r-hardhat
+                             r-glue
+                             r-generics
+                             r-foreach
+                             r-flexclust
+                             r-dplyr
+                             r-dials
+                             r-cli))
+    (home-page "https://github.com/tidymodels/tidyclust")
+    (synopsis "Common API to Clustering")
+    (description
+     "This package provides a common interface to specifying clustering models, in the
+same style as parsnip'.  Creates unified interface across different functions
+and computational engines.")
+    (license license:expat)))
+
 (define-public r-tidycharts
   (package
     (name "r-tidycharts")
@@ -17587,13 +17625,13 @@ DoseFinding package, which is used for the fitting of the models.  See
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestGardener" version))
               (sha256
                (base32
-                "1d479myp6f8w358ywjjvpayz1kx5rmyzkgr72nhxjwg0rgw9chgp"))))
+                "1fwad1hanslrxi8vhwd2v99qsd5bnz8nd0knxcq1q0mdp6i7lbxb"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -17621,9 +17659,7 @@ would be provided by a first course in statistics in a social science
 department.  There the user would encounter the concept of probability and how
 it is used to model data and make decisions, and would become familiar with
 basic mathematical and statistical notation.  Most of the output is in graphical
-form.  Two recent papers on the methodology are Ramsay, James; Li, Juan; Wiberg,
-Marie (2020) <doi:10.3390/psych2040026> and Ramsay, James; Wiberg, Marie; Li,
-Juan (2019) <doi:10.3102/1076998619885636>.")
+form.")
     (license license:gpl2+)))
 
 (define-public r-testfunctions

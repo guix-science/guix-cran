@@ -779,13 +779,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.6.0")
+    (version "1.7.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "0iq75zdip51aw8y37ckah1mddm69cp0lds2cj0xaavrdbaarww49"))))
+                "17lsq5zn74n5a4diaylz7fqc867dl14b2r4rkjxwm36vhx736h19"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -798,25 +798,30 @@ this collection of functions mostly dedicated to the analysis of (bottom-up)
 quantitative (XIC) data.  Fasta-formatted proteomes (eg from UniProt Consortium
 <doi:10.1093/nar/gky1049>) can be read with automatic parsing and multiple
 annotation types (like species origin, abbreviated gene names, etc) extracted.
-Quantitative proteomics measurements frequently contain multiple NA values, due
-to physical absence of given peptides in some samples, limitations in
-sensitivity or other reasons.  The functions provided here help to inspect
-graphically the data to investigate the nature of NA-values via their respective
-replicate measurements and to help/confirm the choice of NA-replacement by low
-random values.  Dedicated filtering and statistical testing using the framework
-of package limma <doi:10.18129/B9.bioc.limma> can be run, enhanced by multiple
-rounds of NA-replacements to provide robustness towards rare stochastic events.
-Multi-species samples, as frequently used in benchmark-tests (eg Navarro et al
-2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
+Initial results from multiple software for protein (and peptide) quantitation
+can be imported (to a common format): Fragpipe(da Veiga et al 2020,
+<doi:10.1038/s41592-020-0912-y>), MaxQuant (Tyanova et al 2016
+<doi:10.1038/nprot.2016.136>), MassChroq (Valot et al 2011]
+<doi:10.1002/pmic.201100120>), ProteomeDiscoverer, OpenMS
+(<doi:10.1038/nmeth.3959>) and Proline (Bouyssie et al 2020
+<doi:10.1093/bioinformatics/btaa118>).  Meta-data provided in sdrf format can be
+integrated to the analysis.  Quantitative proteomics measurements frequently
+contain multiple NA values, due to physical absence of given peptides in some
+samples, limitations in sensitivity or other reasons.  The functions provided
+here help to inspect graphically the data to investigate the nature of NA-values
+via their respective replicate measurements and to help/confirm the choice of
+NA-replacement by low random values.  Dedicated filtering and statistical
+testing using the framework of package limma <doi:10.18129/B9.bioc.limma> can be
+run, enhanced by multiple rounds of NA-replacements to provide robustness
+towards rare stochastic events.  Multi-species samples, as frequently used in
+benchmark-tests (eg Navarro et al 2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
 <doi:10.1016/j.jprot.2015.11.011>), can be run with special options separating
-the data into sub-groups during normalization and testing.  As example the
-data-set from Ramus et al 2016 <doi:10.1016/j.jprot.2015.11.011>) is provided
-quantified by MaxQuant (Tyanova et al 2016 <doi:10.1038/nprot.2016.136>),
-ProteomeDiscoverer, OpenMS (<doi:10.1038/nmeth.3959>) and Proline (Bouyssie et
-al 2020 <doi:10.1093/bioinformatics/btaa118>).  Meta-data provided in sdrf
-format can be integrated to the analysis.  Subsequently, ROC curves (Hand and
-Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to compare multiple
-analysis approaches.")
+the data into sub-groups during normalization and testing.  Subsequently, ROC
+curves (Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to
+compare multiple analysis approaches.  As detailed example the data-set from
+Ramus et al 2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by MaxQuant,
+ProteomeDiscoverer, and Proline is provided with a detailed analysis of
+heterologous spike-in proteins.")
     (license license:gpl3)))
 
 (define-public r-wrmisc

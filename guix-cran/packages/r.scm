@@ -4501,13 +4501,13 @@ algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsurveycto" version))
               (sha256
                (base32
-                "1z51crs7xd0xfrpify3vrq0iwajh3ybg4wsyj602glaxjrj1yyrn"))))
+                "0716zzmfq3an83vij996cnbddmw28yvl1mmmha53f3xpvn109qyn"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -10898,32 +10898,6 @@ holdout, bootstrap or cross-validation methods.")
      "Predicts morphological parameters of rorquals (e.g. body mass, flipper length,
 maximum engulfment capacity) from body length using allometric equations from
 Kahane-Rapport and Goldbogen (2018) <doi:10.1002/jmor.20846>.")
-    (license license:expat)))
-
-(define-public r-rorcid
-  (package
-    (name "r-rorcid")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rorcid" version))
-              (sha256
-               (base32
-                "1d0s5w48ksyj152nc4xq5w0nsimab8jc5fgspdwnbas2g8a52igr"))))
-    (properties `((upstream-name . "rorcid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-jsonlite
-                             r-httr
-                             r-fauxpas
-                             r-data-table
-                             r-crul))
-    (home-page "https://github.com/ropensci/rorcid")
-    (synopsis "Interface to the 'Orcid.org' API")
-    (description
-     "Client for the Orcid.org API (<https://orcid.org/>).  Functions included for
-searching for people, searching by DOI', and searching by Orcid ID'.")
     (license license:expat)))
 
 (define-public r-roracle
@@ -26354,28 +26328,6 @@ distribution.  The package also allows the users to specify different model
 forms for both the recurrent event process and the terminal event.")
     (license license:gpl3+)))
 
-(define-public r-rerefact
-  (package
-    (name "r-rerefact")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "REREFACT" version))
-              (sha256
-               (base32
-                "0nggva4qfqlcs58df3sgiigw0z75l5kg8c1yh0k5qsvjnhiq19vn"))))
-    (properties `((upstream-name . "REREFACT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-psych r-matrix r-gdata r-combinat))
-    (home-page "https://cran.r-project.org/package=REREFACT")
-    (synopsis
-     "Reordering and/or Reflecting Factors for Simulation Studies with Exploratory Factor Analysis")
-    (description
-     "Executes a post-rotation algorithm that REorders and/or REflects FACTors
-(REREFACT) for each replication of a simulation study with exploratory factor
-analysis.")
-    (license license:gpl2+)))
-
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
@@ -26506,6 +26458,34 @@ interdependencies.  Inspired by RequireJS'<http://requirejs.org/>.")
     (description
      "Helper function to install packages for R using an external requirements.txt or
 a string containing diverse packages from several resources like Github or CRAN.")
+    (license license:gpl3)))
+
+(define-public r-require
+  (package
+    (name "r-require")
+    (version "0.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Require" version))
+              (sha256
+               (base32
+                "1crj73a22cap9www7fjvqzr3qb2mwx4cwmm02mpv9npqrvv9ybpp"))))
+    (properties `((upstream-name . "Require")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (home-page "https://Require.predictiveecology.org")
+    (synopsis "Installing and Loading R Packages for Reproducible Workflows")
+    (description
+     "This package provides a single key function, Require that makes rerun-tolerant
+versions of install.packages and `require` for CRAN packages, packages no longer
+on CRAN (i.e., archived), specific versions of packages, and GitHub packages.
+This approach is developed to create reproducible workflows that are flexible
+and fast enough to use while in development stages, while able to build
+snapshots once a stable package collection is found.  As with other functions in
+a reproducible workflow, this package emphasizes functions that return the same
+result whether it is the first or subsequent times running the function, with
+subsequent times being sufficiently fast that they can be run every time without
+undue waiting burden on the user or developer.")
     (license license:gpl3)))
 
 (define-public r-request
@@ -27662,13 +27642,13 @@ power generation for hydro power, wind power, and solar power.")
 (define-public r-renext
   (package
     (name "r-renext")
-    (version "3.1-0")
+    (version "3.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Renext" version))
               (sha256
                (base32
-                "074djs4y71667aylpgh514pzijr90rgpzm4w5ayq9cgaqz22m3am"))))
+                "0m5br76n0vd6q1kkjp6w7qxhvrplc63dxm5zcw6cy9f302x76jdk"))))
     (properties `((upstream-name . "Renext")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-evd))
@@ -27676,8 +27656,8 @@ power generation for hydro power, wind power, and solar power.")
     (synopsis "Renewal Method for Extreme Values Extrapolation")
     (description
      "Peaks Over Threshold (POT) or methode du renouvellement'.  The distribution for
-the exceedances can be chosen, and heterogeneous data (including historical data
-or block data) can be used in a Maximum-Likelihood framework.")
+the excesses can be chosen, and heterogeneous data (including historical data or
+block data) can be used in a Maximum-Likelihood framework.")
     (license license:gpl2+)))
 
 (define-public r-rendo

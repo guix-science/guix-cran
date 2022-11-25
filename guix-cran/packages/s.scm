@@ -34397,6 +34397,30 @@ Landscape ecology, 31: 1383-1394, <doi:10.1007/s10980-016-0380-z>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-siie
+  (package
+    (name "r-siie")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "siie" version))
+              (sha256
+               (base32
+                "1wdvvy36qz3s7qh25ng29nzwivc1mqzv3b1kxx16infb7xs07av0"))))
+    (properties `((upstream-name . "siie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=siie")
+    (synopsis "Superior Identification Index and Its Extensions")
+    (description
+     "Calculate superior identification index and its extensions.  Measure the
+performance of journals based on how well they could identify the top papers by
+any index (e.g. citation indices) according to Huang & Yang. (2022)
+<doi:10.1007/s11192-022-04372-z>.  These methods could be extended to evaluate
+other entities such as institutes, countries, etc.")
+    (license license:expat)))
+
 (define-public r-sihr
   (package
     (name "r-sihr")
@@ -44307,6 +44331,7 @@ implementation of the FFORMS algorithm.  For more details see our paper at
                              r-checkmate
                              r-biomart
                              r-biocmanager
+                             r-arrayexpress
                              r-annotationdbi
                              r-affy))
     (native-inputs (list r-knitr))
@@ -46539,30 +46564,6 @@ function in the analyzed cells.")
 type.")
     (license license:gpl3)))
 
-(define-public r-scs
-  (package
-    (name "r-scs")
-    (version "3.0-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scs" version))
-              (sha256
-               (base32
-                "04srf33zw4dxv22b1h5qwjch5yg7hrvk4iq8yvxqnbr8qzp1x26n"))))
-    (properties `((upstream-name . "scs")))
-    (build-system r-build-system)
-    (home-page "https://github.com/FlorianSchwendinger/scs")
-    (synopsis "Splitting Conic Solver")
-    (description
-     "Solves convex cone programs via operator splitting.  Can solve: linear programs
-('LPs'), second-order cone programs ('SOCPs'), semidefinite programs ('SDPs'),
-exponential cone programs ('ECPs'), and power cone programs ('PCPs'), or
-problems with any combination of those cones.  SCS uses AMD (a set of routines
-for permuting sparse matrices prior to factorization) and LDL (a sparse LDL
-factorization and solve package) from SuiteSparse
-(<https://people.engr.tamu.edu/davis/suitesparse.html>).")
-    (license license:gpl3)))
-
 (define-public r-scryr
   (package
     (name "r-scryr")
@@ -48093,17 +48094,18 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scistreer
   (package
     (name "r-scistreer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scistreer" version))
               (sha256
                (base32
-                "1zcprycg5mzpj23snk32cm5cb3alvl7ysr7fdkgsp5d57kkqca4w"))))
+                "1p8nga48lr87rdrkqcc6y4zgr85dc4cwqplyvp5s2i58jz5n296b"))))
     (properties `((upstream-name . "scistreer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
                              r-stringr
+                             r-rhpcblasctl
                              r-reshape2
                              r-rcppparallel
                              r-rcpparmadillo
@@ -49505,6 +49507,32 @@ methodology.  Focuses on prospective surveillance of data streams, scanning for
 clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
 Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
     (license license:gpl3+)))
+
+(define-public r-scannotate
+  (package
+    (name "r-scannotate")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scAnnotate" version))
+              (sha256
+               (base32
+                "05akid10d1h8636v5pic4kxn0dby3a864yjwbd5rv6zc4wxq1znr"))))
+    (properties `((upstream-name . "scAnnotate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat r-mtps r-harmony r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.1101/2022.02.19.481159")
+    (synopsis
+     "An Automated Cell Type Annotation Tool for Single-Cell RNA-Sequencing Data")
+    (description
+     "An entirely data-driven cell type annotation tools, which requires training data
+to learn the classifier, but not biological knowledge to make subjective
+decisions.  It consists of three steps: preprocessing training and test data,
+model fitting on training data, and cell classification on test data.  See
+Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
+Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
+    (license license:gpl3)))
 
 (define-public r-scan
   (package
@@ -52767,13 +52795,13 @@ charts using an interactive web-based interface created with Shiny.")
 (define-public r-safestats
   (package
     (name "r-safestats")
-    (version "0.8.6")
+    (version "0.8.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "safestats" version))
               (sha256
                (base32
-                "1rn3hawh6jn8dszdjr80l15g83n52agch2j3znzb0jmg7qkxd383"))))
+                "1jxdnvmf6w8hgd5wcfjcmm796nchig1xizhngbzdgl85yi6nw1yy"))))
     (properties `((upstream-name . "safestats")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

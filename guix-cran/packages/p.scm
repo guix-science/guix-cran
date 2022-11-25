@@ -21,8 +21,9 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages code)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pdf)
@@ -1383,31 +1384,6 @@ continuous changes in transcriptional dynamics.  More importantly, it is able to
 predict the trend of mRNA (Mature RNA) transcription and expression changes in
 the future.")
     (license license:gpl2)))
-
-(define-public r-pulsar
-  (package
-    (name "r-pulsar")
-    (version "0.3.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pulsar" version))
-              (sha256
-               (base32
-                "0lrhz22s4622pcf9qz040sacg2myg6l3qym695v8f0a0zvabnix8"))))
-    (properties `((upstream-name . "pulsar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zdk123/pulsar")
-    (synopsis
-     "Parallel Utilities for Lambda Selection along a Regularization Path")
-    (description
-     "Model selection for penalized graphical models using the Stability Approach to
-Regularization Selection ('StARS'), with options for speed-ups including Bounded
-StARS (B-StARS), batch computing, and other stability metrics (e.g., graphlet
-stability G-StARS).  Christian L. MÃ¼ller, Richard Bonneau, Zachary Kurtz (2016)
-<arXiv:1605.07072>.")
-    (license license:gpl2+)))
 
 (define-public r-puls
   (package
@@ -15487,6 +15463,41 @@ inconsistencies), probability models (Luce models, distance-based models, and
 rank-ordered logit models) and visualization with multidimensional preference
 analysis for ranking data are provided.  Current, only complete rankings are
 supported by this package.")
+    (license license:gpl2)))
+
+(define-public r-pmparser
+  (package
+    (name "r-pmparser")
+    (version "1.0.13")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pmparser" version))
+              (sha256
+               (base32
+                "1c58kdy25hjd0glw6hym082jbp8jjvxdn6j3kg859w4pf6kssm57"))))
+    (properties `((upstream-name . "pmparser")))
+    (build-system r-build-system)
+    (inputs (list unzip sqlite))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-rcurl
+                             r-r-utils
+                             r-jsonlite
+                             r-iterators
+                             r-glue
+                             r-foreach
+                             r-dbi
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://pmparser.hugheylab.org")
+    (synopsis
+     "Create and Maintain a Relational Database of Data from PubMed/MEDLINE")
+    (description
+     "This package provides a simple interface for extracting various elements from
+the publicly available PubMed XML files, incorporating PubMed's regular updates,
+and combining the data with the NIH Open Citation Collection.  See Schoenbachler
+and Hughey (2021) <doi:10.7717/peerj.11071>.")
     (license license:gpl2)))
 
 (define-public r-pmmltransformations
@@ -30579,6 +30590,45 @@ function evaluations is also provided.")
      "Parallelise constraint based causality discovery and causal inference methods.
 The parallelised algorithms in the package will generate the same results as
 that of the pcalg package but will be much more efficient.")
+    (license license:gpl2+)))
+
+(define-public r-parallelpam
+  (package
+    (name "r-parallelpam")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "parallelpam" version))
+              (sha256
+               (base32
+                "0fml4cgwqpwj8dqfbih1py2pvqksfiqd9v9442g0ls6kacjdmaph"))))
+    (properties `((upstream-name . "parallelpam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-memuse))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=parallelpam")
+    (synopsis
+     "Parallel Partitioning-Around-Medoids (PAM) for Big Sets of Data")
+    (description
+     "Application of the Partitioning-Around-Medoids (PAM) clustering algorithm
+described in Schubert, E. and Rousseeuw, P.J.: \"Fast and eager k-medoids
+clustering: O(k) runtime improvement of the PAM, CLARA, and CLARANS algorithms.\"
+Information Systems, vol.  101, p.  101804, (2021).
+<doi:10.1016/j.is.2021.101804>.  It uses a binary format for storing and
+retrieval of matrices developed for the jmatrix package but the functionality of
+jmatrix is included here, so you do not need to install it.  Also, it is used by
+package scellpam', so if you have installed it, you do not need to install this
+package.  PAM can be applied to sets of data whose dissimilarity matrix can be
+very big.  It has been tested with up to 100.000 points.  It does this with the
+help of the code developed for other package, jmatrix', which allows the matrix
+not to be loaded in R memory (which would force it to be of double type) but it
+gets from disk, which allows using float (or even smaller data types).
+Moreover, the dissimilarity matrix is calculated in parallel if the computer has
+several cores so it can open many threads.  The initial part of the PAM
+algorithm can be done with the BUILD or LAB algorithms; the BUILD algorithm has
+been implemented in parallel.  The optimization phase implements the FastPAM1
+algorithm, also in parallel.  Finally, calculation of silhouette is available
+and also implemented in parallel.")
     (license license:gpl2+)))
 
 (define-public r-parallelml

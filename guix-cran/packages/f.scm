@@ -11239,16 +11239,16 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finbif" version))
               (sha256
                (base32
-                "0sfmmxnbr3x6fgjg13b0i0va8vbqvqpf4y661z6mn3yrq0rizrva"))))
+                "1fsap2saq8xr9s440h195851987sp3aaw8bjg66s3bsk78bvap1s"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lutz r-lubridate r-jsonlite r-httr r-digest))
+    (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luomus/finbif")
     (synopsis

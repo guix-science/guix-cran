@@ -4706,13 +4706,13 @@ Mar 15) <doi:10.18632/oncotarget.7451>.")
 (define-public r-iols
   (package
     (name "r-iols")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IOLS" version))
               (sha256
                (base32
-                "0q2js5010qzslrn7a7dw50ff3vlf2d9za9dcilhmv4z5001dzp2m"))))
+                "196lbdz5154j7s20cn1qb10kx6fk6mvn4dvm4pwrg8d1lj4nznfr"))))
     (properties `((upstream-name . "IOLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sandwich r-randomcolor r-matlib
@@ -5112,25 +5112,6 @@ regression models with or without confidence/prediction bands that may be of use
 to the general user.  For a general overview of these methods, see Greenwell and
 Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
     (license license:gpl2+)))
-
-(define-public r-invertiforms
-  (package
-    (name "r-invertiforms")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "invertiforms" version))
-              (sha256
-               (base32
-                "131h5dlyj38bis2rk2ji3dpdd45iiavfwb4d6cf0gn8rr7ldkwgl"))))
-    (properties `((upstream-name . "invertiforms")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparselrmatrix r-matrix r-glue))
-    (home-page "https://rohelab.github.io/invertiforms/")
-    (synopsis "Invertible Transforms for Matrices")
-    (description
-     "This package provides composable invertible transforms for (sparse) matrices.")
-    (license license:expat)))
 
 (define-public r-inverseregex
   (package
@@ -7007,28 +6988,27 @@ the installation file, copy and updating old packages to the new R installation.
 (define-public r-install-load
   (package
     (name "r-install-load")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "install.load" version))
               (sha256
                (base32
-                "0z4klcpwdlmhwvk41z9q4c4382z8glad27h0gai93zyciy44sdyx"))))
+                "0ylis31bxyqhjpwb1fwadgb8wwrcjq4p8mrznqckrx6a0f6sai0m"))))
     (properties `((upstream-name . "install.load")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatch r-checkmate r-assertthat))
     (home-page "https://gitlab.com/iembry/install.load")
     (synopsis "Check, Install and Load CRAN & USGS GRAN Packages")
     (description
-     "The function `install_load` checks the local R library(ies) to see if the
-required package(s) is/are installed or not.  If the package(s) is/are not
-installed, then the package(s) will be installed along with the required
-dependency(ies).  This function pulls source or binary packages from the
-Rstudio-sponsored CRAN mirror and/or the USGS GRAN Repository.  Lastly, the
-chosen package(s) is/are loaded.  The function `load_package` simply loads the
-provided packages.  If this package does not fit your needs, then you may want
-to consider these other R packages: needs', easypackages', pacman', pak',
-anyLib', and/or librarian'.")
+     "The function install_load checks the local R library(ies) to see if the required
+package(s) is/are installed or not.  If the package(s) is/are not installed,
+then the package(s) will be installed along with the required dependency(ies).
+This function pulls source or binary packages from the Rstudio-sponsored CRAN
+mirror and/or the USGS GRAN Repository.  Lastly, the chosen package(s) is/are
+loaded.  The function load_package simply loads the provided packages.  If this
+package does not fit your needs, then you may want to consider these other R
+packages: needs', easypackages', pacman', pak', anyLib', and/or librarian'.")
     (license (list license:cc-by-sa4.0 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -7310,13 +7290,13 @@ sequence classification trees.  See Wilkinson et al (2018)
 (define-public r-insane
   (package
     (name "r-insane")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "insane" version))
               (sha256
                (base32
-                "144fq1lys6wy78vnmz1vd4ghs8agraj1hgg0vwlxcnbykmf50i95"))))
+                "1vlqp4sj7jqn6bd5qkrwqralvw923zmx3drm6mjnl76nlh2inspa"))))
     (properties `((upstream-name . "insane")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7333,7 +7313,7 @@ sequence classification trees.  See Wilkinson et al (2018)
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mcanouil/insane")
+    (home-page "https://github.com/mcanouil/insane/")
     (synopsis "INsulin Secretion ANalysEr")
     (description
      "This package provides a user-friendly interface, using Shiny, to analyse
@@ -12239,13 +12219,13 @@ Survey (USGS) Contractor and/or USGS employee.")
 (define-public r-ie2misc
   (package
     (name "r-ie2misc")
-    (version "0.8.8")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ie2misc" version))
               (sha256
                (base32
-                "06nf5g6lcn8wif9k3qd580s2w30yyqqvybzg36q2mil8fnpl2568"))))
+                "0cawlkhyfrwwcnqcp1lc1wc4a42ax4r9g9nzbl88sfjxy3fyirkx"))))
     (properties `((upstream-name . "ie2misc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -12254,7 +12234,6 @@ Survey (USGS) Contractor and/or USGS employee.")
                              r-openxlsx
                              r-mgsub
                              r-lubridate
-                             r-gwidgets2tcltk
                              r-gwidgets2
                              r-data-table
                              r-checkmate
@@ -15632,13 +15611,13 @@ ISBN:978-1-84821-222-0).")
 (define-public r-iar
   (package
     (name "r-iar")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iAR" version))
               (sha256
                (base32
-                "1zzfazrkxpfv6nsy5x2ik14zhslda6xnl5wcl059hjbj3vvlhlcp"))))
+                "0svxn81a0yq3m51594zrpy99i8p9zcfjzbxsi19yyfcm6iymzv24"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-ggplot2))

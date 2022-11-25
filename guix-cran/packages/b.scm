@@ -536,6 +536,32 @@ stratification, non-prioritized endpoints (O Brien test), and can handle
 right-censoring and competing-risks.")
     (license license:gpl3)))
 
+(define-public r-butterflyoptions
+  (package
+    (name "r-butterflyoptions")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "butterflyOptions" version))
+              (sha256
+               (base32
+                "0kmzrk8gqyqrpp4wfsl04cff13m6aiag7d6fbq7kbb6ln8fa6as9"))))
+    (properties `((upstream-name . "butterflyOptions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=butterflyOptions")
+    (synopsis "Trading Butterfly Options Strategies")
+    (description
+     "Trading of Butterfly Options Strategies is represented here through their
+Graphs.  The graphic indicators, strategies, calculations, functions and all the
+discussions are for academic, research, and educational purposes only and should
+not be construed as investment advice and come with absolutely no Liability.
+Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
+9780133964028).  Zura Kakushadze, Juan A. Serur (â151 Trading Strategiesâ,
+2018, ISBN: 9783030027919).  John C. Hull (âOptions, Futures, and Other
+Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
+    (license license:gpl3)))
+
 (define-public r-butcher
   (package
     (name "r-butcher")
@@ -1942,13 +1968,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.3.10")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "1yv9wmsa9xipgv3l1rgdkfbr5ysx5b317xsw0smwsyn7rd6fj02d"))))
+                "05v0sxa9cs8k0c47hwkfmadfy9ibl0nhs9gjpf6p2hh56q75fbsq"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -2073,20 +2099,19 @@ but without notable impact on computing speed.")
 (define-public r-bspbss
   (package
     (name "r-bspbss")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BSPBSS" version))
               (sha256
                (base32
-                "05wfcybcygwswm4syhcaa8fzbmk044lh7mm85m1fapgwgqviswkl"))))
+                "0ax92x657f8jm731wc1qry19mbi4d3xxcxh5zd07w3705va4k82y"))))
     (properties `((upstream-name . "BSPBSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd
                              r-rstiefel
                              r-rcpparmadillo
                              r-rcpp
-                             r-randomfieldsutils
                              r-oro-nifti
                              r-neurobase
                              r-movmf

@@ -3603,13 +3603,13 @@ multilayer social networks <doi:10.18637/jss.v098.i08>.")
 (define-public r-multiness
   (package
     (name "r-multiness")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiness" version))
               (sha256
                (base32
-                "0am3c4yd76p4b3040kdg3mg4n439hz9w0441msiy0s4py3gzsq1q"))))
+                "08bgjs2mrmsdvha10dr74262yk5ghyflvs8pqbl7bc8aws7lv8f5"))))
     (properties `((upstream-name . "multiness")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-matrix r-glmnet))

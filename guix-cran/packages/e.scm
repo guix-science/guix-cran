@@ -6355,13 +6355,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.3.1")
+    (version "4.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm" version))
               (sha256
                (base32
-                "1lqfh287wzlj6i37mx8xgx7n5524c4pcszr4g46aqqa0xa0krxiz"))))
+                "0dghylkwy7acwjpydkbxgfp4sfs9gcgl9l038rm0393cbyfs1phq"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (inputs (list openmpi))
@@ -16190,29 +16190,6 @@ functional ecology statistical dynamics as a function of species richness.
 Functions are written so they will work in a parallel-computing environment.")
     (license license:cc0)))
 
-(define-public r-ecosolver
-  (package
-    (name "r-ecosolver")
-    (version "0.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ECOSolveR" version))
-              (sha256
-               (base32
-                "0973m346vakgddp92dzqlky0wa196hj341r9y7rz67bc2zl8jx2x"))))
-    (properties `((upstream-name . "ECOSolveR")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://bnaras.github.io/ECOSolveR/")
-    (synopsis "Embedded Conic Solver in R")
-    (description
-     "R interface to the Embedded COnic Solver (ECOS), an efficient and robust C
-library for convex problems.  Conic and equality constraints can be specified in
-addition to integer and boolean variable constraints for mixed-integer problems.
- This R interface is inspired by the python interface and has similar calling
-conventions.")
-    (license license:gpl3+)))
-
 (define-public r-ecosim
   (package
     (name "r-ecosim")
@@ -17450,13 +17427,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebvcube" version))
               (sha256
                (base32
-                "1768i2by5s57wzfrpiy905v10lf0ka83dghg9cb54p3rrnpr54ky"))))
+                "02zmq4437r6d2988vwlb21x6i4hgvg3mn790qqxsz5qjivpnfz21"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

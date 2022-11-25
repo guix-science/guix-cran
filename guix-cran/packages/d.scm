@@ -12517,37 +12517,6 @@ function sensitivity; combined with the generic mechanisms, it permits turn-key
 privatization of arbitrary programs.")
     (license license:expat)))
 
-(define-public r-diffnet
-  (package
-    (name "r-diffnet")
-    (version "1.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DiffNet" version))
-              (sha256
-               (base32
-                "04dvf0qxnc6jizwfjxw731j7d2fxyapk06rmqvga6h3p075q0mqk"))))
-    (properties `((upstream-name . "DiffNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpp
-                             r-qlcmatrix
-                             r-matrix
-                             r-lsa
-                             r-igraph
-                             r-hmisc
-                             r-gplots
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://www.r-project.org")
-    (synopsis
-     "Detection of Statistically Significant Changes in Complex Biological Networks")
-    (description
-     "This package provides an implementation of statistically significant
-differential sub-network analysis for paired biological networks.")
-    (license license:gpl3+)))
-
 (define-public r-diffmeshgp
   (package
     (name "r-diffmeshgp")
@@ -22341,17 +22310,19 @@ fitting.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.3.4")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datamods" version))
               (sha256
                (base32
-                "07ya01ifif6rjrzmy4asn6y6wkvd7a5amjmiq954iv03iyrkgvsp"))))
+                "04qgfbmnf6rcfca5dmvjcfi6mnn4xmqpivhdblr7gv4qab1javqv"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-writexl
+                             r-tibble
                              r-shinywidgets
+                             r-shinybusy
                              r-shiny
                              r-rlang
                              r-rio
