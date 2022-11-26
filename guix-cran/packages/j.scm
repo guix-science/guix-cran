@@ -812,6 +812,31 @@ an encoded JSON) and transform it to a data.frame (or list, depending of the
 JSON structure).")
     (license license:expat)))
 
+(define-public r-json2args
+  (package
+    (name "r-json2args")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "json2aRgs" version))
+              (sha256
+               (base32
+                "0n1kj1kll6x7ar00y32pf8z38z7z1bnj29nlv9dx068n4kmy89v7"))))
+    (properties `((upstream-name . "json2aRgs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-jsonlite))
+    (home-page "https://github.com/VForWaTer/json2aRgs")
+    (synopsis "Parse Parameters Inside a Docker Container")
+    (description
+     "The function get_parameters() is intended to be used within a docker container
+to read keyword arguments from a .json file automagically.  A tool.yaml file
+contains specifications on these keyword arguments, which are then passed as
+input to containerized R tools in the [tool-runner
+framework](<https://github.com/hydrocode-de/tool-runner>).  A template for a
+containerized R tool, which can be used as a basis for developing new tools, is
+available at the following URL: <https://github.com/VForWaTer/tool_template_r>.")
+    (license license:gpl3)))
+
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
@@ -3564,6 +3589,49 @@ j-function, Dedekind eta function, lambda modular function, Jacobi elliptic
 functions, Neville theta functions, and Eisenstein series.  Complex values of
 the variable are supported.")
     (license license:gpl3)))
+
+(define-public r-jackstraw
+  (package
+    (name "r-jackstraw")
+    (version "1.3.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jackstraw" version))
+              (sha256
+               (base32
+                "04d0ribg8nbxazv92hmzzks2krsx024glfc90cm9dxz7if44cwc9"))))
+    (properties `((upstream-name . "jackstraw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsvd
+                             r-qvalue
+                             r-irlba
+                             r-corpcor
+                             r-clusterr
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=jackstraw")
+    (synopsis "Statistical Inference for Unsupervised Learning")
+    (description
+     "Test for association between the observed data and their estimated latent
+variables.  The jackstraw package provides a resampling strategy and testing
+scheme to estimate statistical significance of association between the observed
+data and their latent variables.  Depending on the data type and the analysis
+aim, the latent variables may be estimated by principal component analysis
+(PCA), factor analysis (FA), K-means clustering, and related algorithms.  The
+jackstraw methods learn over-fitting characteristics inherent in this circular
+analysis, where the observed data are used to estimate the latent variables and
+used again to test against that estimated latent variables.  When latent
+variables are estimated by PCA, the jackstraw enables statistical testing for
+association between observed variables and latent variables, as estimated by
+low-dimensional principal components (PCs).  This essentially leads to
+identifying variables that are significantly associated with PCs.  Similarly,
+unsupervised clustering, such as K-means clustering, partition around medoids
+(PAM), and others, finds coherent groups in high-dimensional data.  The
+jackstraw estimates statistical significance of cluster membership, by testing
+association between data and cluster centers.  Clustering membership can be
+improved by using the resulting jackstraw p-values and posterior inclusion
+probabilities (PIPs), with an application to unsupervised evaluation of cell
+identities in single cell RNA-seq.")
+    (license license:gpl2)))
 
 (define-public r-jackstrap
   (package

@@ -6937,18 +6937,17 @@ excessive data cleaning.")
 (define-public r-onemap
   (package
     (name "r-onemap")
-    (version "2.8.2")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onemap" version))
               (sha256
                (base32
-                "14p3p3bvcgl63fk8sivwgqdcm7cydyh106rz26zk30gcjgvn91rm"))))
+                "0h5bi4zyiglic60msrkfny28k1rb7avqbs87ipzwwayb452b970c"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
                              r-tidyr
-                             r-stringi
                              r-smacof
                              r-reshape2
                              r-rebus

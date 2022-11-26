@@ -33253,16 +33253,17 @@ plagiarism amongst students assignments.")
 (define-public r-simico
   (package
     (name "r-simico")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIMICO" version))
               (sha256
                (base32
-                "0szw8xlryl9fhdvrviiiylkjvkqq3hxm9bkm6nk7d7g8p3zz12qa"))))
+                "0inyiv2ccz6amdwy94liln0lfs9f12nwq6l0wcqvj42idyjas4ky"))))
     (properties `((upstream-name . "SIMICO")))
     (build-system r-build-system)
     (propagated-inputs (list r-icskat r-fastghquad r-compquadform r-bindata))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SIMICO")
     (synopsis "Set-Based Inference for Multiple Interval-Censored Outcomes")
     (description
@@ -36727,16 +36728,21 @@ poorly predicted points.")
 (define-public r-shinymobile
   (package
     (name "r-shinymobile")
-    (version "0.9.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyMobile" version))
               (sha256
                (base32
-                "1v3qs6s3k7s1rnliv06ljx06cgkw154xbl0c1aiv9jjqq16rxh01"))))
+                "0wwmcirnmdwz43900c8x93ycbrypx40xqvm2hpafmkzlljav47fb"))))
     (properties `((upstream-name . "shinyMobile")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-magrittr r-jsonlite r-httr r-htmltools))
+    (propagated-inputs (list r-shiny
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-htmltools
+                             r-gplots))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RinteRface/shinyMobile")
     (synopsis "Mobile Ready 'shiny' Apps with Standalone Capabilities")
@@ -41730,13 +41736,13 @@ data analysis.  S. Le and F. Husson (2008)
 (define-public r-sensobol
   (package
     (name "r-sensobol")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sensobol" version))
               (sha256
                (base32
-                "1s8f0fql7h7qan3a45pqmixxzvry9g2wqyd8473c2267bqlppv5b"))))
+                "0i82zs7cxymic7b7g5q7glrbva25gd61fbhkw8qdp1incsmxxvhi"))))
     (properties `((upstream-name . "sensobol")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -44609,27 +44615,32 @@ dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.7.3")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "see" version))
               (sha256
                (base32
-                "0k7r8pqmngbv389y5hcri27ld9ygkhfhxj185vfkcnnj63m1ff2z"))))
+                "0772ahq11zzrwx8wwd7krg0a3phx28fli6gcs78rrwl8l2cl8y42"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
-    (propagated-inputs (list r-parameters
+    (propagated-inputs (list r-performance
+                             r-parameters
+                             r-modelbased
                              r-insight
                              r-ggplot2
                              r-effectsize
                              r-datawizard
+                             r-correlation
                              r-bayestestr))
     (home-page "https://easystats.github.io/see/")
     (synopsis "Model Visualisation Toolbox for 'easystats' and 'ggplot2'")
     (description
-     "This package provides plotting utilities supporting easystats-packages
-(<https://github.com/easystats/easystats>) and some extra themes, geoms, and
-scales for ggplot2'.  Color scales are based on <https://materialui.co/colors>.")
+     "This package provides plotting utilities supporting packages in the easystats
+ecosystem (<https://github.com/easystats/easystats>) and some extra themes,
+geoms, and scales for ggplot2'.  Color scales are based on
+<https://materialui.co/colors>.  References: LÃ¼decke et al. (2021)
+<doi:10.21105/joss.03393>.")
     (license license:gpl3)))
 
 (define-public r-sedproxy

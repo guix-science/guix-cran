@@ -5113,6 +5113,25 @@ to the general user.  For a general overview of these methods, see Greenwell and
 Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
     (license license:gpl2+)))
 
+(define-public r-invertiforms
+  (package
+    (name "r-invertiforms")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "invertiforms" version))
+              (sha256
+               (base32
+                "0n3ksfdryk0g6f60acxh4i9f5z6gi9bsbal95z9pcd1vgvyhr1xw"))))
+    (properties `((upstream-name . "invertiforms")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparselrmatrix r-matrix r-glue))
+    (home-page "https://rohelab.github.io/invertiforms/")
+    (synopsis "Invertible Transforms for Matrices")
+    (description
+     "This package provides composable invertible transforms for (sparse) matrices.")
+    (license license:expat)))
+
 (define-public r-inverseregex
   (package
     (name "r-inverseregex")

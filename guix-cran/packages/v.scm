@@ -358,6 +358,37 @@ items within a project without logging into Azure DevOps'.  There is the ability
 to use any API service with a shell for any non-predefined call.")
     (license license:gpl2)))
 
+(define-public r-vsolassobag
+  (package
+    (name "r-vsolassobag")
+    (version "0.99.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VSOLassoBag" version))
+              (sha256
+               (base32
+                "1pp1rycxfzg3cif73q5z6c06ln6h31b24mxgbh48nhirjgp8b6g1"))))
+    (properties `((upstream-name . "VSOLassoBag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-summarizedexperiment
+                             r-pot
+                             r-pbapply
+                             r-glmnet
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VSOLassoBag")
+    (synopsis "Variable Selection Oriented LASSO Bagging Algorithm")
+    (description
+     "This package provides a wrapped LASSO approach by integrating an ensemble
+learning strategy to help select efficient, stable, and high confidential
+variables from omics-based data.  Using a bagging strategy in combination of a
+parametric method or inflection point search method for cut-off threshold
+determination.  This package can integrate and vote variables generated from
+multiple LASSO models to determine the optimal candidates.  Luo H, Zhao Q, et al
+(2020) <doi:10.1126/scitranslmed.aax7533> for more details.")
+    (license license:gpl3)))
+
 (define-public r-vsgoftest
   (package
     (name "r-vsgoftest")
@@ -1887,13 +1918,13 @@ also many practical uses.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VisualizeSimon2Stage" version))
               (sha256
                (base32
-                "19x4x6liv6782pxc9ai82m4g2z5xv9m5d3snl7k7vfnpqia71rh1"))))
+                "1xb001jdhf0z96zg51pkg9jng4nb4f7asqip7s5kx46fmzd1343s"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

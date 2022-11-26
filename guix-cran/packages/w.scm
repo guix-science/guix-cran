@@ -1691,13 +1691,13 @@ Atmospheric Administration (NOAA) Integrated Surface Database (ISD, see
 (define-public r-worldfootballr
   (package
     (name "r-worldfootballr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worldfootballR" version))
               (sha256
                (base32
-                "0w1r7d2xsz0gavzq9yh7gpvkyrx8y9v1ppxg5pj8cxly0w20ikfq"))))
+                "1s11qa30x2an8ndjahnx3wxbwf51xdwfqs42qw14wh83m35q2zn2"))))
     (properties `((upstream-name . "worldfootballR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5196,6 +5196,48 @@ documents.  webshot2 uses headless Chrome or Chromium as the browser back-end.")
      "This package provides functions that allow for accessing domains and a number of
 search engines.")
     (license license:expat)))
+
+(define-public r-websdm
+  (package
+    (name "r-websdm")
+    (version "1.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "webSDM" version))
+              (sha256
+               (base32
+                "0qxiqba10dbnc6ndv6w50ax6726shn8pc3yqjvbqi1bk7yg03plr"))))
+    (properties `((upstream-name . "webSDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstantools
+                             r-rstanarm
+                             r-matrix
+                             r-jtools
+                             r-igraph
+                             r-gridextra
+                             r-glmnet
+                             r-ggplot2
+                             r-ggally
+                             r-dplyr
+                             r-dismo
+                             r-broom-mixed
+                             r-brms
+                             r-bayesplot
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/giopogg/webSDM")
+    (synopsis "Including Known Interactions in Species Distribution Models")
+    (description
+     "This package provides a collection of tools to fit and work with trophic Species
+Distribution Models.  Trophic Species Distribution Models combine knowledge of
+trophic interactions with Bayesian structural equation models that model each
+species as a function of its prey (or predators) and environmental conditions.
+It exploits the topological ordering of the known trophic interaction network to
+predict species distribution in space and/or time, where the prey (or predator)
+distribution is unavailable.  The method implemented by the package is described
+in Poggiato, AndrÃ©oletti, Pollock and Thuiller (2022)
+<doi:10.22541/au.166853394.45823739/v1>.")
+    (license license:gpl3)))
 
 (define-public r-webreadr
   (package

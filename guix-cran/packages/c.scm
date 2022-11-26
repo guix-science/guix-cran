@@ -14538,13 +14538,13 @@ assumption for the length of the censored gap time.")
 (define-public r-condformat
   (package
     (name "r-condformat")
-    (version "0.9.0")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "condformat" version))
               (sha256
                (base32
-                "151rpnrnbj5ilckf99m6k3c26r1sr94496kws9w91faxilvl180b"))))
+                "1iyvghcz5x9kg4jbh4fl97rcwcvi8rcp6rngvgqiyzdg8sbfxkr6"))))
     (properties `((upstream-name . "condformat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14561,7 +14561,7 @@ assumption for the length of the censored gap time.")
                              r-gridextra
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/zeehio/condformat")
+    (home-page "https://condformat.sergioller.com")
     (synopsis "Conditional Formatting in Data Frames")
     (description
      "Apply and visualize conditional formatting to data frames in R. It renders a

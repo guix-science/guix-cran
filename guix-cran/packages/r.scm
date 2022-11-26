@@ -7476,13 +7476,13 @@ can be found in Razaviyayn, M., Sanjabi, M., & Luo, Z. Q. (2016)
 (define-public r-rrreg
   (package
     (name "r-rrreg")
-    (version "0.7.4")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RRreg" version))
               (sha256
                (base32
-                "1vrx6hz9hg6g980hpdx65x2sb3bc7zjhiq47qwf01l7qwl0sjm7h"))))
+                "105hv4izzbm5b89mg1k99zkms8ppjafj6x2fvh71yhaszh79fh88"))))
     (properties `((upstream-name . "RRreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-foreach r-doparallel))

@@ -14015,13 +14015,13 @@ operations.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfit" version))
               (sha256
                (base32
-                "16y10bax971fqijlzkfbs6g9sgag78643j4qq11lwfk6zwpilzb4"))))
+                "0jdjz20rw3r47w1h14zx5pfiynr0fnlqwbv1bkn42aqjzm6jdfgh"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14039,7 +14039,7 @@ operations.")
                              r-crayon
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tidyfit")
+    (home-page "https://tidyfit.unchartedml.com")
     (synopsis "Regularized Linear Modeling with Tidy Data")
     (description
      "An extension to the R tidy data environment for automated machine learning.  The

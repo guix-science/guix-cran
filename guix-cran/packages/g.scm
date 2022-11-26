@@ -20530,6 +20530,31 @@ parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
 
+(define-public r-genwin
+  (package
+    (name "r-genwin")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GenWin" version))
+              (sha256
+               (base32
+                "0fy5ws481xxk16x6wj7z8mwdzy044lqkqkw36xf1yxq18yxcg9xj"))))
+    (properties `((upstream-name . "GenWin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pspline))
+    (home-page "https://cran.r-project.org/package=GenWin")
+    (synopsis "Spline Based Window Boundaries for Genomic Analyses")
+    (description
+     "Defines window or bin boundaries for the analysis of genomic data.  Boundaries
+are based on the inflection points of a cubic smoothing spline fitted to the raw
+data.  Along with defining boundaries, a technique to evaluate results obtained
+from unequally-sized windows is provided.  Applications are particularly
+pertinent for, though not limited to, genome scans for selection based on
+variability between populations (e.g. using Wright's fixations index, Fst, which
+measures variability in subpopulations relative to the total population).")
+    (license license:expat)))
+
 (define-public r-gents
   (package
     (name "r-gents")
@@ -26565,6 +26590,29 @@ Y. Ding, and D. Cabezon (2019) <arXiv:1906.05776>.")
      "Tools for using genetic markers, stable isotope data, and habitat suitability
 data to calculate posterior probabilities of breeding origin of migrating birds.")
     (license license:cc0)))
+
+(define-public r-gagas
+  (package
+    (name "r-gagas")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GAGAs" version))
+              (sha256
+               (base32
+                "0wkgj4crzfsz7p07s7jaw7f80xglvxgj685cq6f0qd5i01jdjzj0"))))
+    (properties `((upstream-name . "GAGAs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcppeigen r-rcpp))
+    (home-page "https://arxiv.org/abs/1911.00658")
+    (synopsis
+     "Global Adaptive Generative Adjustment Algorithm for Generalized Linear Models")
+    (description
+     "Fits linear regression, logistic and multinomial regression models, Poisson
+regression, Cox model via Global Adaptive Generative Adjustment Algorithm.  For
+more information, see Bin Wang, Xiaofei Wang and Jianhua Guo (2022)
+<arXiv:1911.00658>.")
+    (license license:gpl2)))
 
 (define-public r-gafit
   (package

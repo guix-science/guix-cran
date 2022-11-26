@@ -72,13 +72,13 @@ tries to make validation of financial years quicker while retaining clarity.")
 (define-public r-fxtwapls
   (package
     (name "r-fxtwapls")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fxTWAPLS" version))
               (sha256
                (base32
-                "1c3zdzyh8dz0vmbvd6942az95wqwrg70yr6xqsd7014p119dklb0"))))
+                "1bxrwkf65qw3k6mqvp27lqw6i2r7bdbilnl9406k1nva353gcxxm"))))
     (properties `((upstream-name . "fxTWAPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr
@@ -8801,13 +8801,13 @@ method can be referenced at: Toshiro Tango and Kunihiko Takahashi (2005)
 (define-public r-flexrsurv
   (package
     (name "r-flexrsurv")
-    (version "2.0.11")
+    (version "2.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexrsurv" version))
               (sha256
                (base32
-                "0wxv4zch353zmkfmcm61w39sli6h553bpj27mf4hi51n1p8ajkx1"))))
+                "06xzfbn8i6jkgq0q71a5wxq6f1g6nkw47akp1bhj93qfyvfryp9l"))))
     (properties `((upstream-name . "flexrsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

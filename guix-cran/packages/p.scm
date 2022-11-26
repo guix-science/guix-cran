@@ -8951,29 +8951,37 @@ Learning, Support Vector Machines and Bayesian Methods.")
 (define-public r-predictmeans
   (package
     (name "r-predictmeans")
-    (version "1.0.6")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predictmeans" version))
               (sha256
                (base32
-                "1mg37vd5nlfvv3mx6hrdmxj0aavm9wy1j70117hp4sasvlvsccdi"))))
+                "1w5kszqqqg4xx1zq6y4a93b00aa67riqsb1dq21xqpscvyiz5nv9"))))
     (properties `((upstream-name . "predictmeans")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr
+    (propagated-inputs (list r-splines2
+                             r-plyr
+                             r-plotly
                              r-pbkrtest
+                             r-numderiv
                              r-nlme
                              r-matrix
+                             r-mass
+                             r-lmesplines
+                             r-lmertest
                              r-lmeinfo
                              r-lme4
-                             r-ggplot2))
+                             r-hrw
+                             r-ggplot2
+                             r-car))
     (home-page "https://CRAN.R-project.org/package=predictmeans")
-    (synopsis "Calculate Predicted Means for Linear Models")
+    (synopsis "Predicted Means for Linear and Semi Parametric Models")
     (description
      "Providing functions to diagnose and make inferences from various linear models,
-such as those obtained from aov', lm', glm', gls', lme', and lmer'.  Inferences
-include predicted means and standard errors, contrasts, multiple comparisons,
-permutation tests and graphs.")
+such as those obtained from aov', lm', glm', gls', lme', lmer and semireg'.
+Inferences include predicted means and standard errors, contrasts, multiple
+comparisons, permutation tests and graphs.")
     (license license:gpl2+)))
 
 (define-public r-predictme

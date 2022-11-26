@@ -7950,13 +7950,13 @@ plays in the National Football League and obtain fourth down plays from
 (define-public r-nfer
   (package
     (name "r-nfer")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nfer" version))
               (sha256
                (base32
-                "0kl7yks8m7ylm3vlmffjy1fgjchf4pym49jgpnq9jbkysvvbxpb0"))))
+                "0g54jfy6cdzd9kamyqqcyx1v9pml2vzyi8jfmdpnw8r0jj6n7x2l"))))
     (properties `((upstream-name . "nfer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

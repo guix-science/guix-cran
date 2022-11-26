@@ -10546,13 +10546,13 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biometryassist" version))
               (sha256
                (base32
-                "0r96qkhs05czdvx89ndx3z4yz35va3653waql8ygfhn65r9gzis9"))))
+                "176j3qvvhg9qj87zqzxyc95npjwrv346lsa8f0plgp0llk9ka8vj"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

@@ -1769,13 +1769,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "0pn1d7jvv6hd8glaj4vd60q2clb68l5ncm85mw057nhqllqjzram"))))
+                "1aj1p3i9cjxr1p0a7b9rxfksim0x9skn1r0zfmcip902ylqy692a"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -4418,13 +4418,13 @@ to estimate the nuisance functions.")
 (define-public r-drda
   (package
     (name "r-drda")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "drda" version))
               (sha256
                (base32
-                "1ilcjlcryi7yyqm2k27ylk8gvmkjcr308px97ija69gynjbg981s"))))
+                "0vp6i62j0jgw1vh6vrlj5svzbxrpxpkgv4m4fp33k8nq4zz7af6v"))))
     (properties `((upstream-name . "drda")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11875,16 +11875,16 @@ of the competitive or collaborative transition.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DImodels" version))
               (sha256
                (base32
-                "0767xanj4dck6hxx392fcavwsjz8d30wymxnabr5v8s7pcsmv18p"))))
+                "0fylyadx7dph8iv5q25s86laxgwlsi399fj9l36g9dm3ngsffbsf"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-hnp))
+    (propagated-inputs (list r-rootsolve r-multcomp r-hnp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DImodels")
     (synopsis "Diversity-Interactions (DI) Models")
@@ -19368,13 +19368,13 @@ Election.\" Survey estimates from the Cooperative Congressional Election Study
 (define-public r-ddhfm
   (package
     (name "r-ddhfm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DDHFm" version))
               (sha256
                (base32
-                "0lgh6kcfas06p2yy7zy21r05k5521xbj5af3wwwssp5li1cia35g"))))
+                "1xkjbhqipz6kqd6kw9682q5sbrvbpq4jn8nms3cv63b8x9nl1k55"))))
     (properties `((upstream-name . "DDHFm")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-lokern))
