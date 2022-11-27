@@ -12756,13 +12756,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelsummary" version))
               (sha256
                (base32
-                "1hfrgl6crmznbx2mkr5grd87zrgx8m5j7zjyq89yr5g0n6gl9ka2"))))
+                "0fcr1x1gjwhl46vikac2phms4ahlr1cpigj8p7kcdbhs9sc29drk"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
@@ -15516,13 +15516,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3tuningspaces" version))
               (sha256
                (base32
-                "0c1m6cv6p54n3pd1li7ccpmcd830qshsw040swp2m8f75gklv8b1"))))
+                "091klvffi9mdj2hmbidp2g1aqhvgxzcszy20qiayzixx2h75yl8a"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -15709,13 +15709,13 @@ optimization algorithms include Efficient Global Optimization by Jones et al.
 (define-public r-mlr3hyperband
   (package
     (name "r-mlr3hyperband")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3hyperband" version))
               (sha256
                (base32
-                "1lcycylpcsk56g8m0fvngna62h14y4z456c8fypbb47k41l5v9jm"))))
+                "02zyw4wir8gnqfv7g4b19ldfmnbxqgvbcnp744fcv67gigh8glsh"))))
     (properties `((upstream-name . "mlr3hyperband")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

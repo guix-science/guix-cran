@@ -1407,31 +1407,6 @@ scoring, and plotting for the BG/BB (Fader, Hardie, and Shang 2010
 Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
     (license license:gpl3)))
 
-(define-public r-btsr
-  (package
-    (name "r-btsr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BTSR" version))
-              (sha256
-               (base32
-                "0zxqnf17qs4507k754wj5lzzfx1304yv8k07qk4zzdsi10mamdf4"))))
-    (properties `((upstream-name . "BTSR")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=BTSR")
-    (synopsis "Bounded Time Series Regression")
-    (description
-     "Simulate, estimate and forecast a wide range of regression based dynamic models
-for bounded time series, covering the most commonly applied models in the
-literature.  The main calculations are done in FORTRAN', which translates into
-very fast algorithms.  The main references are Bayer et al. (2017)
-<doi:10.1016/j.jhydrol.2017.10.006>, Pumi et al. (2019)
-<doi:10.1016/j.jspi.2018.10.001>, Pumi et al. (2021) <doi:10.1111/sjos.12439>
-and Pumi et al. (2022) <arXiv:2211.02097>.")
-    (license license:gpl3+)))
-
 (define-public r-btspas
   (package
     (name "r-btspas")
@@ -6434,13 +6409,13 @@ any common GIS format.")
 (define-public r-bnsp
   (package
     (name "r-bnsp")
-    (version "2.1.6")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BNSP" version))
               (sha256
                (base32
-                "0ig531n9sj50wn5nwljc2x4wijv5i28jx73knzz2kshb56p8sl7l"))))
+                "105564bhknhrcv92fbzk4vka8jsvq75rdzvlzgxy8cgiraxqldv0"))))
     (properties `((upstream-name . "BNSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-threejs
@@ -6454,8 +6429,7 @@ any common GIS format.")
                              r-cubature
                              r-corrplot
                              r-coda))
-    (home-page
-     "https://www.bbk.ac.uk/our-staff/profile/8005165/georgios-papageorgiou")
+    (home-page "https://cran.r-project.org/package=BNSP")
     (synopsis "Bayesian Non- And Semi-Parametric Model Fitting")
     (description
      "MCMC algorithms & processing functions for: 1.  single response multiple

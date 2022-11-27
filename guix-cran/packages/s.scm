@@ -38640,13 +38640,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "0avsj51fm42xd9wnp8qlprgs9f7dzh7ni33r453igw9w06ff850s"))))
+                "07ap5w7q13krr3aiwwap2fwly6b1nb8awb30nmrsqvq05f79m031"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

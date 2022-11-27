@@ -12939,16 +12939,21 @@ few minutes.")
 (define-public r-giedata
   (package
     (name "r-giedata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "giedata" version))
               (sha256
                (base32
-                "0hz8kr1qsbg89icqvpx3d8rhi3vakhsnnq97jmnxj5d6s7c41qiv"))))
+                "19sr8phsay7bpqrbh776ms0aw9xgiv0x9knmn88ydzpkcdcd1z9j"))))
     (properties `((upstream-name . "giedata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-magrittr r-lubridate r-httr r-dplyr))
+    (propagated-inputs (list r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-curl))
     (home-page "https://cran.r-project.org/package=giedata")
     (synopsis
      "API Wrapper for GIE's AGSI+/ALSI+ Natural Gas Storage Transparency Platform")

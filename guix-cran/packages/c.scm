@@ -20328,13 +20328,13 @@ multiple surrogate markers.  Details are described in Wang et al (2022)
 (define-public r-cmfrec
   (package
     (name "r-cmfrec")
-    (version "3.4.3-2")
+    (version "3.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmfrec" version))
               (sha256
                (base32
-                "0qzbkzsgr9haf48rhi70chsxbppmq7l19q3hmggfp12rziaa8y5l"))))
+                "1x51pfjyxyjrpzrh0aglnm8z9wa9dqdjxpzwirxw8099wf647w67"))))
     (properties `((upstream-name . "cmfrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -112,13 +112,13 @@ variables.")
 (define-public r-ezplot
   (package
     (name "r-ezplot")
-    (version "0.7.3")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ezplot" version))
               (sha256
                (base32
-                "07lndf2g4z6gcrg85linjiph04464k3ccxcw0n3zd75zxqbsrhfr"))))
+                "1706cb52pl9v7r3mrlcjvybb2b2r5x92sw7dmk1hk34w7wp4sifx"))))
     (properties `((upstream-name . "ezplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-ggplot2 r-forcats r-dplyr))
