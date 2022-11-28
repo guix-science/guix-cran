@@ -2657,16 +2657,16 @@ tagging.  This package provides the data files required by jiebaR.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jgsbook" version))
               (sha256
                (base32
-                "0n03qfi101ln5bp1fzck2dik5zwscl7lq4yxngqnx6rwpfyx8mlk"))))
+                "0fkxbka4fcsa3bb0zh2fh58q44izsl1q0swa7ink2agl6yxxpmk3"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statip))
+    (propagated-inputs (list r-statip r-jsonlite))
     (home-page "https://cran.r-project.org/package=jgsbook")
     (synopsis
      "Package of the German Book \"Statistik mit R und RStudio\" by Joerg grosse Schlarmann")

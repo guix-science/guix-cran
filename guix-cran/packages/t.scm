@@ -15060,17 +15060,16 @@ observations is considered.")
 (define-public r-thresholdrocsurvival
   (package
     (name "r-thresholdrocsurvival")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ThresholdROCsurvival" version))
               (sha256
                (base32
-                "1mk2ijh86y065z8y9p255dj09s0nh2h7i33d0z9ww81g6wxbvagy"))))
+                "19xgyrdnwfv4rqvrj7d2603jy0wvi5r17l85lvvv0z56pdcqagl3"))))
     (properties `((upstream-name . "ThresholdROCsurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresholdroc
-                             r-survivalroc
                              r-survival
                              r-psych
                              r-proc

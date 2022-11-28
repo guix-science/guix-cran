@@ -1680,13 +1680,13 @@ J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>."
 (define-public r-gtextras
   (package
     (name "r-gtextras")
-    (version "0.4.3")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtExtras" version))
               (sha256
                (base32
-                "0xx33hbizc3lmyhqxc9lnpy28kyqcr8ri2cksqsi1nwrvjyh16sl"))))
+                "04vl7i9qllfn5977y47kc4355rpk9m63rii2c0v27i9lbvr3z4fr"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -3716,13 +3716,13 @@ aesthetically pleasing tables, images, plots and/or text.")
 (define-public r-groan
   (package
     (name "r-groan")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GROAN" version))
               (sha256
                (base32
-                "0gkb1bg5sls2kc6qqy0nigqyk6iq3bfnmj0lf7z7f8nddd33i9ca"))))
+                "1g6n00gnz47w06wkx0sha97qxxyhc8n2y8zaagqx7krgzx7lkha3"))))
     (properties `((upstream-name . "GROAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrblup r-plyr))
@@ -4212,13 +4212,13 @@ survival regression, all with support for missing covariates.")
 (define-public r-greymodels
   (package
     (name "r-greymodels")
-    (version "1.0")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Greymodels" version))
               (sha256
                (base32
-                "1libv79qvh925ar8pyd9k18xcyvwbksr5gmlsbwin3z5q765ksgx"))))
+                "0aylacv3vn2ipy2k2ngrsb0c0hfiy3vcml9k7gjn4flmxvml11g6"))))
     (properties `((upstream-name . "Greymodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -4233,7 +4233,7 @@ survival regression, all with support for missing covariates.")
                              r-expm
                              r-dplyr
                              r-cmna))
-    (home-page "https://github.com/havishaJ/greymodels")
+    (home-page "https://github.com/havishaJ/Greymodels")
     (synopsis "Shiny App for Grey Forecasting Model")
     (description
      "The Greymodels Shiny app is an interactive interface for statistical modelling
@@ -13741,13 +13741,13 @@ magnitude trends over time.")
 (define-public r-ggstatsplot
   (package
     (name "r-ggstatsplot")
-    (version "0.9.5")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstatsplot" version))
               (sha256
                (base32
-                "0csgbqr8b9ar5x52y79fi91p6hpf4w94rj6pzl41a29d6x91d1fb"))))
+                "1baph4gkih2f7wbgrr4xpcghmz9srzk1a5a8bi8r88217mx6ssjr"))))
     (properties `((upstream-name . "ggstatsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14275,13 +14275,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.2.4")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrcs" version))
               (sha256
                (base32
-                "193alhp305flr1pbpi7szp6i2h1idalfd4z7n2fpbhwnkdxpvhv4"))))
+                "1hvyvvm6nlgqfh7lmgqyqsi2gy43k5n5a6205hx85da9h9qw8n8s"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2))
@@ -14809,6 +14809,36 @@ ggplot2.")
 the fly.")
     (license license:gpl3)))
 
+(define-public r-ggpcp
+  (package
+    (name "r-ggpcp")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggpcp" version))
+              (sha256
+               (base32
+                "1xkxsxnxcyy8rrazzbl38g405cxjjjz6a720cdm4bsk03q2q4rar"))))
+    (properties `((upstream-name . "ggpcp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/heike/ggpcp")
+    (synopsis "Parallel Coordinate Plots in the 'ggplot2' Framework")
+    (description
+     "Modern Parallel Coordinate Plots have been introduced in the 1980s as a way to
+visualize arbitrarily many numeric variables.  This Grammar of Graphics
+implementation also incorporates categorical variables into the plots in a
+principled manner.  By separating the data managing part from the visual
+rendering, we give full access to the users while keeping the number of
+parameters manageably low.")
+    (license license:gpl3)))
+
 (define-public r-ggpattern
   (package
     (name "r-ggpattern")
@@ -14954,35 +14984,6 @@ the architectural layout of the legislative chamber.")
 represented as rectangles with sizes relating to the length of the words.  Which
 then is divided in lines and pages for easy overview of up to quite large texts.")
     (license license:expat)))
-
-(define-public r-ggpacman
-  (package
-    (name "r-ggpacman")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggpacman" version))
-              (sha256
-               (base32
-                "1040d6aciyllrpszh7l7y55fw4dx8cya2yvj0x4i2fibvygz83p6"))))
-    (properties `((upstream-name . "ggpacman")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-ggforce
-                             r-gganimate
-                             r-dplyr))
-    (home-page "https://github.com/mcanouil/pacman")
-    (synopsis "'ggplot2' and 'gganimate' Version of Pac-Man")
-    (description
-     "This package provides a funny coding challenge to reproduce the game Pac-Man
-using ggplot2 and gganimate'.  It provides a pre-defined moves set for Pac-Man
-and the ghosts for the first level of the game Pac-Man as well as polygon
-datasets to draw ghosts in ggplot2'.")
-    (license license:gpl3)))
 
 (define-public r-ggpackets
   (package
@@ -21867,13 +21868,13 @@ Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 (define-public r-generalizedumatrix
   (package
     (name "r-generalizedumatrix")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeneralizedUmatrix" version))
               (sha256
                (base32
-                "1hlq7q3pq7vh2jba82rwm6lrxsv8nr7xyp6fji78ar4rlcqi071i"))))
+                "0rdqf9idrgkl7b1pz0ys7a4j73jkz748rnk23v388vl7948zvxsa"))))
     (properties `((upstream-name . "GeneralizedUmatrix")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -24770,44 +24771,6 @@ probability density functions, such as the Euclidea mean, the Mahalanobis
 distance, the Kullback-Leibler divergence, the J-Coefficient, the Minkowski
 L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
     (license license:gpl2+)))
-
-(define-public r-gausscov
-  (package
-    (name "r-gausscov")
-    (version "0.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gausscov" version))
-              (sha256
-               (base32
-                "0kyhxk38za6g5cflvibda8pvbwqzbqlpgwvg8603a50y0vg7vhhc"))))
-    (properties `((upstream-name . "gausscov")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=gausscov")
-    (synopsis "The Gaussian Covariate Method for Variable Selection")
-    (description
-     "Given the standard linear model the traditional way of deciding whether to
-include the jth covariate is to apply the F-test to decide whether the
-corresponding beta coefficient is zero.  The Gaussian covariate method is
-completely different.  The question as to whether the beta coefficient is or is
-not zero is replaced by the question as to whether the covariate is better or
-worse than i.i.d.  Gaussian noise.  The P-value for the covariate is the
-probability that Gaussian noise is better.  Surprisingly this can be given
-exactly and it is the same a the P-value for the classical model based on the
-F-distribution.  The Gaussian covariate P-value is model free, it is the same
-for any data set.  Using the idea it is possible to do covariate selection for a
-small number of covariates 25 by considering all subsets.  Post selection
-inference causes no problems as the P-values hold whatever the data.  The idea
-extends to stepwise regression again with exact probabilities.  In the simplest
-version the only parameter is a specified cut-off P-value which can be
-interpreted as the probability of a false positive being included in the final
-selection.  For more information see the web site below and the accompanying
-papers: L. Davies and L. Duembgen, \"Covariate Selection Based on a Model-free
-Approach to Linear Regression with Exact Probabilities\", 2022,
-<arxiv:2202.01553>.  L. Davies, \"Linear Regression, Covariate Selection and the
-Failure of Modelling\", 2022, <arXiv:2112.08738>.")
-    (license license:gpl3)))
 
 (define-public r-gauser
   (package

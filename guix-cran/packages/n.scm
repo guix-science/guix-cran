@@ -1027,32 +1027,6 @@ univariate time series as described in Ardia et al. (2018)
 <doi:10.21105/joss.00172>.")
     (license license:gpl2+)))
 
-(define-public r-nsdr
-  (package
-    (name "r-nsdr")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsdr" version))
-              (sha256
-               (base32
-                "1p73aj465lk52n3dikkqi54zm2f9v00ikpmry10p42qhfkgrw61l"))))
-    (properties `((upstream-name . "nsdr")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=nsdr")
-    (synopsis "Nonlinear Sufficient Dimension Reduction")
-    (description
-     "This package provides tools to implement both unsupervised and supervised
-nonlinear dimension reduction methods.  Principal Component Analysis (PCA),
-Sliced Inverse Regression (SIR), and Sliced Average Variance Estimation (SAVE)
-are useful methods to reduce the dimensionality of covariates.  However, they
-produce linear combinations of covariates.  Kernel PCA, generalized SIR, and
-generalized SAVE address this problem by extending the applicability of the
-dimension reduction problem to nonlinear settings.  This package includes a
-comprehensive algorithm for kernel PCA, generalized SIR, and generalized SAVE,
-including methods for choosing tuning parameters and some essential functions.")
-    (license license:gpl2+)))
-
 (define-public r-nscluster
   (package
     (name "r-nscluster")

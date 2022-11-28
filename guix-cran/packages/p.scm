@@ -11498,6 +11498,28 @@ randomized objective functions\" <arXiv:1806.11544>.")
      "Use rmarkdown and pagedown to generate HTML and PDF conference posters.")
     (license license:expat)))
 
+(define-public r-postdoc
+  (package
+    (name "r-postdoc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "postdoc" version))
+              (sha256
+               (base32
+                "0f111y5hhahjv44c1v0rjx88n3wg9xmn6jv7fwydspib9mh0n389"))))
+    (properties `((upstream-name . "postdoc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite))
+    (home-page "https://github.com/ropensci/postdoc")
+    (synopsis "Minimal and Uncluttered Package Documentation")
+    (description
+     "Generates simple and beautiful one-page HTML reference manuals with package
+documentation.  Math rendering and syntax highlighting are done server-side in R
+such that no JavaScript libraries are needed in the browser, which makes the
+documentation portable and fast to load.")
+    (license license:expat)))
+
 (define-public r-postcodesior
   (package
     (name "r-postcodesior")
@@ -18600,13 +18622,13 @@ al. (2021) <arXiv:2109.10150>.")
 (define-public r-pki
   (package
     (name "r-pki")
-    (version "0.1-11")
+    (version "0.1-12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PKI" version))
               (sha256
                (base32
-                "17czxqilgbh2v1kgjvqcz8m1cbjv4iygi5vn27wh1pyaga6sv8z9"))))
+                "0nidg6l9nrmpyimi502fydy22r247w9i4ngb2xdbxjvfhr17m0xd"))))
     (properties `((upstream-name . "PKI")))
     (build-system r-build-system)
     (inputs (list zlib))

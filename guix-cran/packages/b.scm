@@ -4753,6 +4753,33 @@ directories (e.g. box_fetch(), box_push()).")
 style.  Visualize the effect of factor.")
     (license license:expat)))
 
+(define-public r-boxfilter
+  (package
+    (name "r-boxfilter")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "boxfilter" version))
+              (sha256
+               (base32
+                "1q3vs2js1l5416rc1krsglfv4hz00xdgb2cmmxdmhr6bzxq8mxdc"))))
+    (properties `((upstream-name . "boxfilter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=boxfilter")
+    (synopsis "Filter Noisy Data")
+    (description
+     "Noise filter based on determining the proportion of neighboring points.  A false
+point will be rejected if it has only few neighbors, but accepted if the
+proportion of neighbors in a rectangular frame is high.  The size of the
+rectangular frame as well as the cut-off value, i.e.  of a minimum proportion of
+neighbor-points, may be supplied or can be calculated automatically.  Originally
+designed for the cleaning of heart rates, but suitable for filtering any
+slowly-changing physiological variable.For more information see Signer
+(2010)<doi: 10.1111/j.2041-210X.2009.00010.x>.")
+    (license license:gpl3+)))
+
 (define-public r-box
   (package
     (name "r-box")

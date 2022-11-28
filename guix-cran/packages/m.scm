@@ -11994,13 +11994,13 @@ functions, such as variable importance and a tuning function for the parameters.
 (define-public r-modstatr
   (package
     (name "r-modstatr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ModStatR" version))
               (sha256
                (base32
-                "16mfggplpmjz2kspfa99q4gbm4avm306d83n8hiki382094li1ni"))))
+                "18xsdflns5w5p5aqxmjh8xcnh13r5wy1m4skm257r3mg1d5b2agw"))))
     (properties `((upstream-name . "ModStatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jmuoutlier r-hypergeo r-gsl r-ellipse r-boot))
@@ -15740,13 +15740,13 @@ Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3fselect" version))
               (sha256
                (base32
-                "1yn1g6b2xd69h4hzwmfwxjyjf9as96x6z7hvr9p704yjailg6ww8"))))
+                "1yilsw5vjmcr3v0mykxcgkl1qbkz8x20970bz0nk4diadfycd519"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -15761,10 +15761,11 @@ Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
     (home-page "https://mlr3fselect.mlr-org.com")
     (synopsis "Feature Selection for 'mlr3'")
     (description
-     "This package implements methods for feature selection with mlr3', e.g. random
-search and sequential selection.  Various termination criteria can be set and
-combined.  The class AutoFSelector provides a convenient way to perform nested
-resampling in combination with mlr3'.")
+     "Feature selection package of the mlr3 ecosystem.  It selects the optimal feature
+set for any mlr3 learner.  The package works with several optimization
+algorithms e.g. Random Search, Recursive Feature Elimination, and Genetic
+Search.  Moreover, it can automatically optimize learners and estimate the
+performance of optimized feature sets with nested resampling.")
     (license license:lgpl3)))
 
 (define-public r-mlr3filters
@@ -24262,13 +24263,13 @@ fisheries data and aggregating ready for use within a Gadget
 (define-public r-mfd
   (package
     (name "r-mfd")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mFD" version))
               (sha256
                (base32
-                "0zayaz92l1j9fky7mpl3a2wrq0gbgpaa3248yqkpzmakwznf5szn"))))
+                "1kxiyvq7cs2hjprnj7snrdm5i2cnd00l1k59v18612d3z78b0nih"))))
     (properties `((upstream-name . "mFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -31964,16 +31965,21 @@ threshold of binary classification.")
 (define-public r-mccca
   (package
     (name "r-mccca")
-    (version "0.1.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mccca" version))
               (sha256
                (base32
-                "1rvyn4b72xa45r95jjl80b3wiq152hh3pndwbngmq1078wl84xbk"))))
+                "0iw4pgypdhxwny93b80y69kwwpqvmbv71qa05jlhylx7lqbsnbyb"))))
     (properties `((upstream-name . "mccca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wordcloud r-stringr r-rcolorbrewer r-magic
+    (propagated-inputs (list r-wordcloud
+                             r-stringr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-magic
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=mccca")
     (synopsis

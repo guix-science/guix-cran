@@ -49,13 +49,13 @@
 (define-public r-hystreet
   (package
     (name "r-hystreet")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hystReet" version))
               (sha256
                (base32
-                "01nrbk48r1hf1yc953yf1pzryzrjjckwdqhb3pbnwfza8q0aqsfq"))))
+                "1vrby9lgy0nm5wa5r1y3k3l2s9fc8vdf4szy8isvnzayr464xvwi"))))
     (properties `((upstream-name . "hystReet")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-jsonlite r-httr))

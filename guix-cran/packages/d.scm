@@ -6956,13 +6956,13 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doconv" version))
               (sha256
                (base32
-                "1vg45x3wwqhkwq9sw4lrni31bmzql7a70ncbjw2dj5ja8l22jjdk"))))
+                "1pvzpxv60ghninmn5sawqqx988yl2151kqs4qj5qrb7fpgph481w"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (inputs (list libreoffice))

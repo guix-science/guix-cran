@@ -4180,13 +4180,13 @@ principal components using singular spectrum analysis (de Carvalho and Rua
 (define-public r-asrgenomics
   (package
     (name "r-asrgenomics")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ASRgenomics" version))
               (sha256
                (base32
-                "1v0gwa7i50ilmbhgccaxn172sdfr6clqnmi2f29ax6dwcdyhfik8"))))
+                "1yl3q1fjfyl0v0wpbgnbh8zj5j8zi1imf19cj66fdvji3i4c4lsi"))))
     (properties `((upstream-name . "ASRgenomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-superheat
@@ -16140,6 +16140,27 @@ care.  The methodologies in referenced in this package come from Canfield SL, et
 al (2019) \"Navigating the Wild West of Medication Adherence Reporting in
 Specialty Pharmacy\" <doi:10.18553/jmcp.2019.25.10.1073>.")
     (license license:gpl2+)))
+
+(define-public r-adformr
+  (package
+    (name "r-adformr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adformR" version))
+              (sha256
+               (base32
+                "02krkpqsj53j4mprbw25bycbb2xlhcgnglcp0dl24zw44mfxy9n7"))))
+    (properties `((upstream-name . "adformR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Adform Ads Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Adform Ads using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-adfexplorer
   (package

@@ -6620,6 +6620,27 @@ Barber, S., Nason, G.P. and Silverman, B.W. (2002)
 <doi:10.1111/1467-9868.00332>.")
     (license license:gpl2+)))
 
+(define-public r-wav
+  (package
+    (name "r-wav")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wav" version))
+              (sha256
+               (base32
+                "1f5y53max7vliq4sq66hqjjns8s9lsx9pkdjk6rm929gk371x7by"))))
+    (properties `((upstream-name . "wav")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/mlverse/wav")
+    (synopsis "Read and Write WAV Files")
+    (description
+     "Efficiently read and write Waveform (WAV) audio files
+<https://en.wikipedia.org/wiki/WAV>.  Support for unsigned 8 bit Pulse-code
+modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
+    (license license:expat)))
+
 (define-public r-watson
   (package
     (name "r-watson")

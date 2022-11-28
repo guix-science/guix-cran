@@ -34218,13 +34218,13 @@ available with some additional material and exercises solutions.")
 (define-public r-cascadedata
   (package
     (name "r-cascadedata")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CascadeData" version))
               (sha256
                (base32
-                "0vmr9gfmgrgan9q5hsavqfdd76dpm19a53m9s8jkj14rsd47bpll"))))
+                "0cbnp8mqv3alsz7b5fa8djg1yd46zkn1f3b0pqww2yn8zavd4fih"))))
     (properties `((upstream-name . "CascadeData")))
     (build-system r-build-system)
     (home-page "https://fbertran.github.io/CascadeData/")
@@ -34241,13 +34241,13 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
 (define-public r-cascade
   (package
     (name "r-cascade")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Cascade" version))
               (sha256
                (base32
-                "0zd9krlklmsy03kya5bdx2hj25fvfhwcx431q618ccw44c11b590"))))
+                "1hfbv9129rnrjqspjd8wnhw0qrp1m142bixlwddzr6j2sg7r8s20"))))
     (properties `((upstream-name . "Cascade")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -34262,7 +34262,7 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
                              r-cluster
                              r-animation
                              r-abind))
-    (home-page "http://www-irma.u-strasbg.fr/~fbertran/")
+    (home-page "https://fbertran.github.io/Cascade/")
     (synopsis
      "Selection, Reverse-Engineering and Prediction in Cascade Networks")
     (description

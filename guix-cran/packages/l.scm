@@ -4578,13 +4578,13 @@ your browser.")
 (define-public r-log4r
   (package
     (name "r-log4r")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "log4r" version))
               (sha256
                (base32
-                "0d7yxp3h7iy0miaprgp16n5vbxk0mvy8aci8r0mmml6wcl2h4jlj"))))
+                "0k4hyln1mqxkp8y383mgs0ds0h05hs7d2mpicfnz7n586nfx9qyz"))))
     (properties `((upstream-name . "log4r")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

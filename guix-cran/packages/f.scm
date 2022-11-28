@@ -8590,13 +8590,13 @@ of the project: <https://metabarcoding.org/flimo>.")
 (define-public r-flightsbr
   (package
     (name "r-flightsbr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flightsbr" version))
               (sha256
                (base32
-                "16cn3m73pd2lp6p5ixswxjdbzwj6hq60jwzymp3r30rwzcqrh4wh"))))
+                "10bsfn7a8zzsrf2fr9svsfx50dv1vlivq8dd82yn18i1vf1hzaib"))))
     (properties `((upstream-name . "flightsbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-pbapply r-parzer r-httr r-data-table))
@@ -11754,6 +11754,32 @@ Figma file to your R session.  This includes the data of all objects that you
 have drawn in this file, and their respective canvas/page metadata.")
     (license license:expat)))
 
+(define-public r-figir
+  (package
+    (name "r-figir")
+    (version "0.1.6.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "figir" version))
+              (sha256
+               (base32
+                "0jbl6bxms4g6m3qamcgl5z0k57f2r3444577hi78gpsbwwx0n022"))))
+    (properties `((upstream-name . "figir")))
+    (build-system r-build-system)
+    (home-page "https://github.com/philaris/figir")
+    (synopsis "Check Validity of FIGI, CUSIP, ISIN, SEDOL")
+    (description
+     "With the functions in this package you can check the validity of the following
+financial instrument identifiers: FIGI (Financial Instrument Global Identifier
+<https://www.openfigi.com/about/figi>), CUSIP (Committee on Uniform Security
+Identification Procedures <https://www.cusip.com/identifiers.html#/CUSIP>), ISIN
+(International Securities Identification Number
+<https://www.cusip.com/identifiers.html#/ISIN>), SEDOL (Stock Exchange Daily
+Official List <https://www2.lseg.com/SEDOL-masterfile-service-tech-guide-v8.6>).
+ You can also calculate the FIGI checksum of 11-character strings, which can be
+useful if you want to create your own FIGI identifiers.")
+    (license license:expat)))
+
 (define-public r-fig
   (package
     (name "r-fig")
@@ -13470,13 +13496,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FedData" version))
               (sha256
                (base32
-                "0qvjm909cj7l2v6rwvvx1kbv2rmca30dahkmsx5w664cqdfdbzgg"))))
+                "1k02icjqghv2hklhqjn63l8phmaxj6vclqcrsm35aa4clax8hhr2"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))

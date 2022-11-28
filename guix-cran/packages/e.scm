@@ -11328,13 +11328,13 @@ can also be found.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.7.11")
+    (version "0.7.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emayili" version))
               (sha256
                (base32
-                "1x9wjvb314995bi0sv06p62n5x2b0lqdjjdcm2in8gdljnah0vqs"))))
+                "13ndi1khnsf75xrh04jy9jpqi94rwnwlyp3jp8b8jyyd1pplhxlw"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12242,13 +12242,13 @@ city, and electoral zones.")
 (define-public r-elections-dtree
   (package
     (name "r-elections-dtree")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elections.dtree" version))
               (sha256
                (base32
-                "0px0n6qdirbh464zmg0jhs0q05wxy3xax9fa5s0r43pdaa7615cn"))))
+                "1j0knxi2vv65pizpz8v26az9k422msn8i7d55hyzy8h1q1bbcy8y"))))
     (properties `((upstream-name . "elections.dtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rdpack r-rcppthread r-rcpp r-r6))

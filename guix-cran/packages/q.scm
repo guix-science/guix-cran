@@ -1774,6 +1774,28 @@ features.  For each area identified on the map, the id numbers of these polygons
 can be entered as vectors and transformed using qualmap.")
     (license license:gpl3)))
 
+(define-public r-qualitycontrol
+  (package
+    (name "r-qualitycontrol")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qualitycontrol" version))
+              (sha256
+               (base32
+                "134dksflv43bixqa5lhcjgwqnahzpb2fnzl4dhc81wdb9pcqsg7v"))))
+    (properties `((upstream-name . "qualitycontrol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-readxl r-openxlsx r-janitor r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luisgarcez11/qualitycontrol")
+    (synopsis "Unified Framework for Data Quality Control")
+    (description
+     "An easy framework to set a quality control workflow on a dataset.  Includes a
+various range of functions that allow to establish an adaptable data quality
+control.")
+    (license license:expat)))
+
 (define-public r-qualci
   (package
     (name "r-qualci")

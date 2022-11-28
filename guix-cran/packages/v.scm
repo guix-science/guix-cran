@@ -1054,23 +1054,21 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voluModel" version))
               (sha256
                (base32
-                "1v534vqn08i73rw79wjqajdykq9jyfdddi04p59r71qwql125321"))))
+                "1vaqwavjjs1ff32l5zxhczb72b5f7ls09v2s9z4vrnjajpf5av5g"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-terra
-                             r-sp
-                             r-rgeos
+                             r-sf
                              r-raster
                              r-rangebuilder
                              r-latticeextra
-                             r-lattice
                              r-ggtext
                              r-ggplot2
                              r-fields

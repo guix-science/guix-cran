@@ -21089,31 +21089,43 @@ between different classes of models.")
 (define-public r-rigma
   (package
     (name "r-rigma")
-    (version "0.1.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rigma" version))
               (sha256
                (base32
-                "0javcbpps07vh841sgf32bv1smdmnblnz9kls9j1fvrnh51csjv6"))))
+                "0h0fblnsbrkkvd0cimywa3gq4q7ay9p39f7x2rpis58kj28ra6fn"))))
     (properties `((upstream-name . "Rigma")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-withr
+                             r-tidyr
+                             r-tibble
+                             r-rlang
                              r-purrr
+                             r-png
                              r-magrittr
                              r-lubridate
                              r-httr2
-                             r-checkmate))
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-checkmate
+                             r-bslib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AleKoure/Rigma")
     (synopsis "Access to the 'Figma' API")
     (description
-     "The Figma API allows for interactions and read access to Figma files
-<https://www.figma.com/developers/api>.  This enables you to inspect any objects
-or layers, as well as their properties, and extract them so you may render them
-as images outside of Figma'.  Then you can present your designs, extract design
-data that can be used for Shiny and Rmarkdown', integrate them with other
-systems, or use them to realize your original ideas.")
+     "The goal of Rigma is to provide a user friendly client to the Figma API
+<https://www.figma.com/developers/api>.  It uses the latest `httr2` for a stable
+interface with the REST API. More than 20 methods are provided to interact with
+Figma files, and teams.  Get design data into R by reading published components
+and styles, converting and downloading images, getting access to the full Figma
+file as a hierarchical data structure, and much more.  Enhance your creativity
+and streamline the application development by automating the extraction,
+transformation, and loading of design data to your applications and HTML
+documents.")
     (license license:expat)))
 
 (define-public r-rifs
@@ -21520,13 +21532,13 @@ position type and the chromosome number.")
 (define-public r-ribench
   (package
     (name "r-ribench")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RIbench" version))
               (sha256
                (base32
-                "0l42yf2gzsi1c46gijc7581bdc856345ylsw10acmzhhhlj16sw1"))))
+                "0dfxwcm3q8bgwprv0vn440w3186g04a4rm4i33pnpvg2c0qph0sp"))))
     (properties `((upstream-name . "RIbench")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-optparse r-digest r-data-table))
@@ -22096,13 +22108,13 @@ applications; Tools for building customized graphical user interfaces.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhino" version))
               (sha256
                (base32
-                "1d3krs76hcdlkbnwip5pq2i7wwf5wp9q4c9jkgsd9fgq85x7qqjs"))))
+                "1zm62l3p1lmn0priig1d4295aw87sqlymvid428azxlhpn723pkc"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -42609,13 +42621,13 @@ kernel learning.  C. Zhang, Y. Liu, J. Wang and H. Zhu. (2016)
 (define-public r-rams
   (package
     (name "r-rams")
-    (version "1.0.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RaMS" version))
               (sha256
                (base32
-                "101vdghn18w2cj8n5bm1gd81c298w2drs1d2sjaijkji7i74z2c6"))))
+                "0428ys9mpw483g8i5cvnps7nhvcfg7iafma8vwf641hf7c9da0f6"))))
     (properties `((upstream-name . "RaMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-data-table r-base64enc))

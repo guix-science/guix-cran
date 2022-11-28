@@ -25688,26 +25688,6 @@ directory in standard vcf format using the vcfR package, for downstream
 population genetic and phylogenetic analyses.")
     (license license:expat)))
 
-(define-public r-snpenrichment
-  (package
-    (name "r-snpenrichment")
-    (version "1.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "snpEnrichment" version))
-              (sha256
-               (base32
-                "1lja1n26nr8lgbca2kraryv933jwa2w3h41appzylflf0w3liz9y"))))
-    (properties `((upstream-name . "snpEnrichment")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-snpstats r-ggplot2))
-    (home-page "https://github.com/mcanouil/snpEnrichment")
-    (synopsis "SNPs Enrichment Analysis")
-    (description
-     "This package implements classes and methods for large scale SNP enrichment
-analysis (e.g. SNPs associated with genes expression in a GWAS signal).")
-    (license license:gpl2+)))
-
 (define-public r-snpassoc
   (package
     (name "r-snpassoc")
@@ -48795,6 +48775,36 @@ and Arun Srinivasan. (2019) \"New Statistical Approaches to Intra-Individual
 Isotopic Analysis and Modeling Birth Seasonality in Studies of Herd Animals.\"
 <doi:10.1111/arcm.12432>.")
     (license license:gpl3)))
+
+(define-public r-scellpam
+  (package
+    (name "r-scellpam")
+    (version "1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scellpam" version))
+              (sha256
+               (base32
+                "1hhl3mikxbzvvw2xb3vhjw7gly503g2mnjblr9z257dgc6zgxflg"))))
+    (properties `((upstream-name . "scellpam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-memuse r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scellpam")
+    (synopsis
+     "Applying Partitioning Around Medoids to Single Cell Data with High Number of Cells")
+    (description
+     "PAM (Partitioning Around Medoids) algorithm application to samples of single
+cell sequencing techniques with a high number of cells (as many as the computer
+memory allows).  The package uses a binary format to store matrices (either
+full, sparse or symmetric) in files written in the disk that can contain any
+data type (not just double) which allows its manipulation when memory is
+sufficient to load them as int or float, but not as double.  The PAM
+implementation is done in parallel, using several/all the cores of the machine,
+if it has them.  This package shares a great part of its code with packages
+jmatrix and parallelpam but their functionality is included here so there is no
+need to install them.")
+    (license license:gpl2+)))
 
 (define-public r-scdiftest
   (package
