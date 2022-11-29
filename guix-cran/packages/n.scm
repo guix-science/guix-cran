@@ -6160,6 +6160,31 @@ Neural Network) prediction model, the Augmented test of stationarity, and the
 discrete and continuous entropy and mutual information.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-nlgm
+  (package
+    (name "r-nlgm")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nlgm" version))
+              (sha256
+               (base32
+                "03byqqj8ayq7hbaab4cfrk0nbxmiiq2c2i98szfydzkimhrw922a"))))
+    (properties `((upstream-name . "nlgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2 r-rfast r-ggplot2))
+    (home-page "https://cran.r-project.org/package=nlgm")
+    (synopsis "Non Linear Growth Models")
+    (description
+     "Six growth models are fitted using non-linear least squares.  These are the
+Richards, the 3, 4 and 5 parameter logistic, the Gompetz and the Weibull growth
+models.  Reference: Reddy T., Shkedy Z., van Rensburg C. J., Mwambi H., Debba
+P., Zuma K. and Manda, S. (2021). \"Short-term real-time prediction of total
+number of reported COVID-19 cases and deaths in South Africa: a data driven
+approach\".  BMC medical research methodology, 21(1), 1-11.
+<doi:10.1186/s12874-020-01165-x>.")
+    (license license:gpl2+)))
+
 (define-public r-nlcv
   (package
     (name "r-nlcv")
@@ -7397,13 +7422,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "0.5.7")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhdplusTools" version))
               (sha256
                (base32
-                "00xr2s1ih86kfbxihqaar1drqqy6n967sxq19k669d0dg0r3pjzq"))))
+                "04wv9762wjrp9zfw0ac1rqbyq83sjfx0rx99n47kxz4nvcbja4d8"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -7412,6 +7437,7 @@ datasets.")
                              r-tidyr
                              r-sf
                              r-rosm
+                             r-rlang
                              r-rann
                              r-r-utils
                              r-prettymapr

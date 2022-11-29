@@ -2511,18 +2511,19 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
 (define-public r-hsrecombi
   (package
     (name "r-hsrecombi")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hsrecombi" version))
               (sha256
                (base32
-                "1d2dah63gl8gfzjz9rq9d3d62fqc3q6p0yc81rbx543220q3ll7v"))))
+                "09jsrfwxfkhykyzcwlgym90gcs120684qljb0dwjanzlybhkffav"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
                              r-rcpp
                              r-quadprog
+                             r-matrix
                              r-hsphase
                              r-dplyr
                              r-data-table
@@ -8124,22 +8125,26 @@ geographic location.")
 (define-public r-hellorust
   (package
     (name "r-hellorust")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hellorust" version))
               (sha256
                (base32
-                "09935qalhnr4ghmws38knfc99vly12b08pibqniclyyyy4a6ifv6"))))
+                "10vkj15jz0qdgxcj2dksizkw2x15bhwnh4q0sp0g8854x88b7f7x"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (inputs (list))
     (home-page "https://github.com/r-rust/hellorust")
-    (synopsis "Minimal Example of Using 'Rust' Code in 'R'")
+    (synopsis "Minimal Examples of Using Rust Code in R")
     (description
-     "Template R package that calls out to Rust code in a way that complies with CRAN
-policy.  Includes simple examples of passing numbers and strings from Rust to R
-and using threads.")
+     "Template R package with minimal setup to use Rust code in R without hacks or
+frameworks.  Includes basic examples of importing cargo dependencies, spawning
+threads and passing numbers or strings from Rust to R. The GitHub repository for
+this package has more details and also explains how to set up CI. This project
+was first presented at Erum2018 to showcase R-Rust integration
+<https://jeroen.github.io/erum2018/>; for a real world use-case, see the gifski
+package on CRAN'.")
     (license license:expat)))
 
 (define-public r-hellojavaworld

@@ -6807,31 +6807,37 @@ methods for finding parsimonious B-spline regression models.")
 (define-public r-cpprouting
   (package
     (name "r-cpprouting")
-    (version "2.0")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cppRouting" version))
               (sha256
                (base32
-                "0yfiyg1clnl85lk5ah8dcchv71drk6r093vpl82xnczyan5z94sr"))))
+                "1963s0xrzkqpqwirx5cmqndwa65ggm0kry5v603jivnnq4wxiadd"))))
     (properties `((upstream-name . "cppRouting")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcppparallel r-rcpp r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vlarmet/cppRouting")
-    (synopsis "Fast Implementation of Dijkstra Algorithm")
+    (synopsis
+     "Algorithms for Routing and Solving the Traffic Assignment Problem")
     (description
      "Calculation of distances, shortest paths and isochrones on weighted graphs using
 several variants of Dijkstra algorithm.  Proposed algorithms are unidirectional
 Dijkstra (Dijkstra, E. W. (1959) <doi:10.1007/BF01386390>), bidirectional
 Dijkstra (Goldberg, Andrew & Fonseca F. Werneck, Renato (2005)
-<https://pdfs.semanticscholar.org/0761/18dfbe1d5a220f6ac59b4de4ad07b50283ac.pdf>),
-A* search (P. E. Hart, N. J. Nilsson et B. Raphael (1968)
-<doi:10.1109/TSSC.1968.300136>), new bidirectional A* (Pijls & Post (2009)
-<http://repub.eur.nl/pub/16100/ei2009-10.pdf>), Contraction hierarchies (R.
+<https://archive.siam.org/meetings/alenex05/papers/03agoldberg.pdf>), A* search
+(P. E. Hart, N. J. Nilsson et B. Raphael (1968) <doi:10.1109/TSSC.1968.300136>),
+new bidirectional A* (Pijls & Post (2009)
+<https://repub.eur.nl/pub/16100/ei2009-10.pdf>), Contraction hierarchies (R.
 Geisberger, P. Sanders, D. Schultes and D. Delling (2008)
 <doi:10.1007/978-3-540-68552-4_24>), PHAST (D. Delling, A.Goldberg, A. Nowatzyk,
-R. Werneck (2011) <doi:10.1016/j.jpdc.2012.02.007>).")
+R. Werneck (2011) <doi:10.1016/j.jpdc.2012.02.007>).  Algorithms for solving the
+traffic assignment problem are All-or-Nothing assignment, Method of Successive
+Averages, Frank-Wolfe algorithm (M. Fukushima (1984)
+<doi:10.1016/0191-2615(84)90029-8>), Conjugate and Bi-Conjugate Frank-Wolfe
+algorithms (M. Mitradjieva, P. O. Lindberg (2012) <doi:10.1287/trsc.1120.0409>),
+Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
     (license license:gpl2+)))
 
 (define-public r-cppcheckr
@@ -28206,13 +28212,13 @@ algorithms are implemented in C++.")
 (define-public r-changeranger
   (package
     (name "r-changeranger")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "changeRangeR" version))
               (sha256
                (base32
-                "0v8yfn587grmvx5a6gnj21rzi2wy0149cs8k6lyg1x7mv847b8wa"))))
+                "1lqml0lran2ggq0f855517lxbyscbymn7f5zvjwak433yr8y8p95"))))
     (properties `((upstream-name . "changeRangeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

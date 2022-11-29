@@ -6143,13 +6143,13 @@ variable.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ardl.nardl" version))
               (sha256
                (base32
-                "06b113rnclx7b5cpkh0phapnxh5sn8sp3ps74irmidhd4n5jyxzf"))))
+                "1ylciaxq218j28zjrmlmj43sz7hz2zvjgfrm72ijdqqj133z9g9r"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -15762,13 +15762,13 @@ of admiral and admiral extension packages.")
 (define-public r-admiral-test
   (package
     (name "r-admiral-test")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral.test" version))
               (sha256
                (base32
-                "14b53g951aay1xq9qz1dw07lm00ijd244laabcxmid1ndqyqbjfr"))))
+                "1abf7zrqj2bia784rvl3y4awyi3vpaj57lqyak2zpxiykhs8fg4s"))))
     (properties `((upstream-name . "admiral.test")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=admiral.test")

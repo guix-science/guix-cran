@@ -1788,23 +1788,28 @@ chemical formula.")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isopam" version))
               (sha256
                (base32
-                "0kkjhp47yns7iwjvlk00nzqwkzgivbwdhiziyl20zfdpjhpxrl10"))))
+                "0cj8gn5m7r1fs4riiw1d3cmpg7zy3dyfpcr40dy18zmp4kg6ff7m"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-proxy r-future-apply r-future r-cluster))
+    (propagated-inputs (list r-vegan
+                             r-proxy
+                             r-progressr
+                             r-future-apply
+                             r-future
+                             r-cluster))
     (home-page "https://cran.r-project.org/package=isopam")
-    (synopsis "Clustering of Sites with Species Data using Indicative Species")
+    (synopsis "Clustering of Sites with Species Data")
     (description
      "Clustering algorithm developed for use with plot inventories of species.  It
-groups plots by indicative species rather than overall species composition.
-There is an unsupervised and a supervised mode, the latter accepting predefined
-indicative species and cluster medoids.")
+groups plots by subsets of species rather than overall species composition.
+There is an unsupervised and a supervised mode, the latter accepting suggestions
+for species with greater weight and cluster medoids.")
     (license license:gpl2+)))
 
 (define-public r-isoorbi
@@ -11979,25 +11984,25 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
 (define-public r-ifc
   (package
     (name "r-ifc")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IFC" version))
               (sha256
                (base32
-                "0nw0bkw9qk535q1cdhhb8j8k7hx56m62swlz91d57kqs064j9mkn"))))
+                "16ipdrn423x09wngv86a86gqh19fcpdy9gv2f08asfmyhz8jxkv6"))))
     (properties `((upstream-name . "IFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-visnetwork
                              r-tiff
-                             r-rcppprogress
                              r-rcpp
                              r-png
                              r-latticeextra
                              r-lattice
                              r-kernsmooth
                              r-jpeg
+                             r-gridgraphics
                              r-gridextra
                              r-dt))
     (home-page "https://cran.r-project.org/package=IFC")

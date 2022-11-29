@@ -4481,13 +4481,13 @@ energy supply.")
 (define-public r-katex
   (package
     (name "r-katex")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "katex" version))
               (sha256
                (base32
-                "0kgz2qck90h9kaxvy40nii03ib02z757bmw8sgacik82hmj0fxx8"))))
+                "18cziglz8qy1v9gfcjiixq2d3l3na5p51zrxpy3x8asjiddq13d3"))))
     (properties `((upstream-name . "katex")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))

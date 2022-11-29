@@ -22811,19 +22811,19 @@ resulting paper of that study will be published soon.")
 (define-public r-databionicswarm
   (package
     (name "r-databionicswarm")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabionicSwarm" version))
               (sha256
                (base32
-                "1m5ydlyj54ybw38b6i78krrvqj29bp24x19xbqz9fgwpqimnv79y"))))
+                "0i96664h4d6b76xk7c2vdma2am627acfzr79wyy8i17ciis452ph"))))
     (properties `((upstream-name . "DatabionicSwarm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-generalizedumatrix
                              r-deldir))
     (native-inputs (list r-knitr))
-    (home-page "http://www.deepbionics.org")
+    (home-page "https://www.deepbionics.org/")
     (synopsis "Swarm Intelligence for Self-Organized Clustering")
     (description
      "Algorithms implementing populations of agents that interact with one another and
@@ -22847,8 +22847,7 @@ apply its algorithms for visualization and/or clustering to data sets with
 completely different structures drawn from diverse research fields.  The
 comparison to common projection methods can be found in the book of Thrun, M.C.:
 \"Projection Based Clustering through Self-Organization and Swarm Intelligence\"
-(2018) <DOI:10.1007/978-3-658-20540-9>.  A comparison to 26 common clustering
-algorithms on 15 datasets is presented on the website.")
+(2018) <DOI:10.1007/978-3-658-20540-9>.")
     (license license:gpl3)))
 
 (define-public r-databaseconnectorjars

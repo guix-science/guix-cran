@@ -5829,16 +5829,17 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openairmaps" version))
               (sha256
                (base32
-                "0b6ibb4846wnmv6pwl83j7544iyma2b0mxjkx6jic0g82m9r7f7a"))))
+                "15w5pwgdkmnyasrv3dwanaf9jz6iplq18zx53iz60nnn9bndy29n"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -6904,13 +6905,13 @@ download credentials.")
 (define-public r-onemapsgapi
   (package
     (name "r-onemapsgapi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onemapsgapi" version))
               (sha256
                (base32
-                "11w3xkjxhjf0b78hfjxjk650giswaf1js471backz4pcb97gaigl"))))
+                "0q1i17dkgcxqswa9wckxzsf1wr118zsw7yhbrbkbikvm27hqrrva"))))
     (properties `((upstream-name . "onemapsgapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6925,8 +6926,8 @@ download credentials.")
     (home-page "https://cran.r-project.org/package=onemapsgapi")
     (synopsis "R Wrapper for the 'OneMap.Sg API'")
     (description
-     "An R wrapper for the OneMap.Sg API <https://docs.onemap.sg/>.  Functions help
-users query data from the API and return raw JSON data in \"tidy\" formats.
+     "An R wrapper for the OneMap.Sg API <https://www.onemap.gov.sg/docs/>.  Functions
+help users query data from the API and return raw JSON data in \"tidy\" formats.
 Support is also available for users to retrieve data from multiple API calls and
 integrate results into single dataframes, without needing to clean and merge the
 data themselves.  This package is best suited for users who would like to

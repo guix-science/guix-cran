@@ -4798,6 +4798,38 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
 (2017)<doi:10.18637/jss.v076.i03>.")
     (license license:gpl2+)))
 
+(define-public r-etas
+  (package
+    (name "r-etas")
+    (version "0.5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ETAS" version))
+              (sha256
+               (base32
+                "03721z7fsbkqv5wiybm01nxbl99x8wf2214y3w139k0zr42xk94s"))))
+    (properties `((upstream-name . "ETAS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-rcpp
+                             r-maps
+                             r-lattice
+                             r-goftest
+                             r-fields))
+    (home-page "https://github.com/jalilian/ETAS")
+    (synopsis "Modeling Earthquake Data Using 'ETAS' Model")
+    (description
+     "Fits the space-time Epidemic Type Aftershock Sequence ('ETAS') model to
+earthquake catalogs using a stochastic declustering approach.  The ETAS model is
+a spatio-temporal marked point process model and a special case of the Hawkes
+process.  The package is based on a Fortran program by Jiancang Zhuang
+(available at <http://bemlar.ism.ac.jp/zhuang/software.html>), which is modified
+and translated into C++ and C such that it can be called from R. Parallel
+computing with OpenMP is possible on supported platforms.")
+    (license license:gpl2+)))
+
 (define-public r-etable
   (package
     (name "r-etable")
@@ -18029,13 +18061,13 @@ the data as if it was a single spreadsheet.")
 (define-public r-eatata
   (package
     (name "r-eatata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatATA" version))
               (sha256
                (base32
-                "15fwwvgvjk87llaslz2n0sy51178b97f1apcrycw3mc23iib5r4h"))))
+                "1pm66hvjqcgjbdkvfwxn3myzb6a458hkwg7cd6lhkp1mmj7anigs"))))
     (properties `((upstream-name . "eatATA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-matrix r-mathjaxr r-lpsolve))

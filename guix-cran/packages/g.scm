@@ -6327,20 +6327,21 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
 (define-public r-gquad
   (package
     (name "r-gquad")
-    (version "2.1-1")
+    (version "2.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gquad" version))
               (sha256
                (base32
-                "19k7cqp2j5vb6m9hxdm951wfjh6nsswb64pdz9g93ypcqrg02wa4"))))
+                "09hcs2lgqnim29gpd805b5ndxi22z2xwsf25rb1zckxf9c7bn7sj"))))
     (properties `((upstream-name . "gquad")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gquad")
     (synopsis "Prediction of G Quadruplexes and Other Non-B DNA Motifs")
     (description
-     "Genomic biology is not limited to the confines of the canonical B- forming DNA
+     "Genomic biology is not limited to the confines of the canonical B-forming DNA
 duplex, but includes over ten different types of other secondary structures that
 are collectively termed non-B DNA structures.  Of these non-B DNA structures,
 the G-quadruplexes are highly stable four-stranded structures that are
@@ -8704,6 +8705,30 @@ diagrams, NMDS stress plots, species response curves and rank-abundance curves."
 lists of genes and provides a workflow to analyze them between two species via
 weighted graphs.  Methods are described in Sosa et al. (2022) (Submitted to
 Genomics).")
+    (license license:gpl3+)))
+
+(define-public r-goalp
+  (package
+    (name "r-goalp")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "goalp" version))
+              (sha256
+               (base32
+                "1xr9bgizzsjr4nn41q1zi049wg9cw6qril60bri96x0xgc00qdpz"))))
+    (properties `((upstream-name . "goalp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=goalp")
+    (synopsis "Weighted and Lexicographic Goal Programming Interface")
+    (description
+     "Solves goal programming problems of the weighted and lexicographic type, as well
+as combinations of the two, as described by Ignizio (1983)
+<doi:10.1016/0305-0548(83)90003-5>.  Allows for a simple human-readable input
+describing the problem as a series of equations.  Relies on the lpSolve package
+to solve the underlying linear optimisation problem.")
     (license license:gpl3+)))
 
 (define-public r-go2bigq
@@ -14114,6 +14139,36 @@ Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 features.  The largest component of the package is the data for the two built-in
 atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
+
+(define-public r-ggsector
+  (package
+    (name "r-ggsector")
+    (version "1.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggsector" version))
+              (sha256
+               (base32
+                "1sj7kmizzy91x79gwrkpayxhxhd5nqvs9lddbfplj0s5vz7vmhh5"))))
+    (properties `((upstream-name . "ggsector")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-seurat
+                             r-rlang
+                             r-prettydoc
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggsector")
+    (synopsis "Draw Sectors")
+    (description
+     "Some useful functions that can use grid and ggplot2 to plot sectors and interact
+with Seurat to plot gene expression percentages.  Also, there are some examples
+of how to draw sectors in ComplexHeatmap'.")
+    (license license:artistic2.0)))
 
 (define-public r-ggseas
   (package
@@ -23651,13 +23706,13 @@ CramÃ©r V, correlation coefficient, eta-squared...).")
 (define-public r-gdalutilities
   (package
     (name "r-gdalutilities")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalUtilities" version))
               (sha256
                (base32
-                "172a47dcd6virqxg15vanypi2lwkjb4n4k2pkpd75ybv0w6cqpcg"))))
+                "0k777x18w2r86jz5gk96fyjjyg7wd0phn57dwfq18kg9vrzs1d73"))))
     (properties `((upstream-name . "gdalUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -23673,7 +23728,7 @@ their output to other files.  Therefore, to process data stored in any of R's
 more common spatial formats (i.e.  those supported by the sp', sf', and raster
 packages), first write them to disk, then process them with the package's
 wrapper functions before reading the outputted results back into R. GDAL
-function arguments introduced in GDAL version 3.2.1 or earlier are supported.")
+function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
     (license license:gpl2+)))
 
 (define-public r-gdalcubes

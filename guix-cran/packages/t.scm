@@ -5739,13 +5739,13 @@ Ranging) data.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeTools" version))
               (sha256
                (base32
-                "1gi8k60paliid6jlbagw14j3873rfrn0p22i52lskxq6dhhm4clh"))))
+                "05h9l71mg1b9wx4w9ls25qm3agx9rp6hs0rkn6aqyll9js8mcfh7"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -13746,13 +13746,13 @@ unpublished research.")
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.5.7")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyhydat" version))
               (sha256
                (base32
-                "00jrczg2355pvbrbf50pn8b1v89nc4ir78bjpbn91il45iq05yc0"))))
+                "1bk3a0cgb0311xbni52zrpb7fa4vgdi022g7rap2af961fcbl6bz"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

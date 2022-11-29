@@ -3364,6 +3364,29 @@ options than many techniques in the literature.  Torrente and Romo (2021)
 kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
     (license license:gpl3+)))
 
+(define-public r-brif
+  (package
+    (name "r-brif")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brif" version))
+              (sha256
+               (base32
+                "1rjzpr5alll19mbiaj32vz5zjmlb9b0z0kfga7fcdawh4554j9vm"))))
+    (properties `((upstream-name . "brif")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=brif")
+    (synopsis "Tree and Forest Tool for Classification and Regression")
+    (description
+     "Build decision trees and random forests for classification and regression.  The
+implementation strikes a balance between minimizing computing efforts and
+maximizing the expected predictive accuracy, thus scales well to large data
+sets.  Multi-threading is available through OpenMP
+<https://gcc.gnu.org/wiki/openmp>.")
+    (license license:gpl2+)))
+
 (define-public r-bridger2
   (package
     (name "r-bridger2")
@@ -10042,21 +10065,21 @@ methodological bases considered are described in: Arita et al. (2011)
 (define-public r-biostatr
   (package
     (name "r-biostatr")
-    (version "3.1.2")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BioStatR" version))
               (sha256
                (base32
-                "1fs5hzsb770ygcysmwl8dyfkrq3nwhsfw4jd73gbdw3x8dqxc6c4"))))
+                "0gfwjvxbgfaw7mrbac011x09lxcmsdbp3ljc36hpfa54gqj2ckkc"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
-    (home-page "http://www-irma.u-strasbg.fr/~fbertran/")
+    (home-page "https://fbertran.github.io/BioStatR/")
     (synopsis "Initiation Ã  La Statistique Avec R")
     (description
      "Datasets and functions for the book \"Initiation Ã  la Statistique avec R\", F.
-Bertrand and M. Maumy-Bertrand (2018, ISBN:978-2100782826 Dunod, 3eme edition).")
+Bertrand and M. Maumy-Bertrand (2022, ISBN:978-2100782826 Dunod, 4Ã¨me edition).")
     (license license:gpl3)))
 
 (define-public r-biostatistics
@@ -19968,6 +19991,34 @@ tool for mode inference.  Currently the package supports a flexible mixture of
 shifted Poisson distributions (see Basturk, Hoogerheide and van Dijk (2021)
 <doi:10.2139/ssrn.3783351>).")
     (license license:gpl3+)))
+
+(define-public r-bayesmrm
+  (package
+    (name "r-bayesmrm")
+    (version "2.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bayesMRM" version))
+              (sha256
+               (base32
+                "1am9valflwzs71vbfsz4glfzb4wnqsn4baryjk8srwkg37p5v2mm"))))
+    (properties `((upstream-name . "bayesMRM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-rjags
+                             r-rgl
+                             r-gridextra
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=bayesMRM")
+    (synopsis "Bayesian Multivariate Receptor Modeling")
+    (description
+     "Bayesian analysis of multivariate receptor modeling.  The package consists of
+implementations of the methods of Park and Oh (2015)
+<doi:10.1016/j.chemolab.2015.08.021>.The package uses JAGS'(Just Another Gibbs
+Sampler) to generate Markov chain Monte Carlo samples of parameters.")
+    (license license:gpl2+)))
 
 (define-public r-bayesmra
   (package

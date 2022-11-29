@@ -1498,6 +1498,41 @@ details.")
 of a data matrix where each entry of the matrix is a function or a time series.")
     (license license:gpl2+)))
 
+(define-public r-funkyheatmap
+  (package
+    (name "r-funkyheatmap")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "funkyheatmap" version))
+              (sha256
+               (base32
+                "0q5cfn7k0rh8694sldichvakqq4mxbfsya610dzn07q8jlri6ax5"))))
+    (properties `((upstream-name . "funkyheatmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-ggplot2
+                             r-ggforce
+                             r-dynutils
+                             r-dplyr
+                             r-cowplot
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://funkyheatmap.dynverse.org")
+    (synopsis "Generating Funky Heatmaps for Data Frames")
+    (description
+     "Allows generating heatmap-like visualisations for benchmark data frames.  Funky
+heatmaps can be fine-tuned by providing annotations of the columns and rows,
+which allows assigning multiple palettes or geometries or grouping rows and
+columns together in categories.  Saelens et al. (2019)
+<doi:10.1038/s41587-019-0071-9>.")
+    (license license:expat)))
+
 (define-public r-funitroots
   (package
     (name "r-funitroots")
@@ -11803,13 +11838,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTAutils" version))
               (sha256
                (base32
-                "0c3b17i01cikryj3yiixjd589jsz9i5f7fn2mvknv9rwls3wpjri"))))
+                "0zciqzp7cwgz5awxnfhdi9d8akaylvicwnnwkpn3lv4135rvkwhi"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

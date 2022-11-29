@@ -6798,13 +6798,13 @@ for deployment.")
 (define-public r-rsclient
   (package
     (name "r-rsclient")
-    (version "0.7-8")
+    (version "0.7-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSclient" version))
               (sha256
                (base32
-                "0iy2y63yl35im6n8hg77gzfr6mk7z4yi4lpl50mig1jj9rvqw3n5"))))
+                "04xppfz2gxf21jmcz9phxpaxys06kqnw77v1sy9qqd3n0yywzihv"))))
     (properties `((upstream-name . "RSclient")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -26925,13 +26925,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.3.7")
+    (version "1.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reporter" version))
               (sha256
                (base32
-                "0snxidccxc65x7bpj4hcidphpr74wpx9dybwr4k0bshgdgs1nq1k"))))
+                "1m7bjk58fj8gzckn803zz8yz5hjj4ccyz5l1dnd14ccp3r6im5lp"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -26955,7 +26955,7 @@ in printing wide and long tables with automatic page wrapping and splitting.
 Reports can be produced with a minimum of function calls, and without relying on
 other table packages.  The package supports titles, footnotes, page header, page
 footers, spanning headers, page by variables, and automatic page numbering.")
-    (license (license:fsdg-compatible "CC BY-NC 4.0"))))
+    (license license:cc0)))
 
 (define-public r-report
   (package
@@ -39741,13 +39741,13 @@ details from Thrasher (1992) <doi:10.1002/dir.4000060408> and pyks
 (define-public r-rawhummus
   (package
     (name "r-rawhummus")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RawHummus" version))
               (sha256
                (base32
-                "04lj7dxfz7hhcwlwbigra2sgf1aafmx88169mdsw381m9c29xaj2"))))
+                "0g20qlv9vij6cw8b3smg26i0qxh83w9z4gvnpp9h0sc2qg4incr1"))))
     (properties `((upstream-name . "RawHummus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyvalidate

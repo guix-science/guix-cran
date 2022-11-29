@@ -13662,13 +13662,13 @@ Molecular Ecology Resources: Blischak et al. (2016)
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polyCub" version))
               (sha256
                (base32
-                "1f63ikiz988hdihvgd5f2p897qfgv54ysgp2h8avmlc4cj6hgkgl"))))
+                "09a4n69f9m5y57wkxlhwn5xfhzpqrcyzfc6n5zywn5jkj5h7wijl"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))

@@ -7157,6 +7157,37 @@ package was supported in part by NSF IIS-0948893, NSF CMMI 1728612, and NIH
 R21HG005912.  Hahsler et al (2017) <doi:10.18637/jss.v076.i14>.")
     (license license:gpl3)))
 
+(define-public r-streak
+  (package
+    (name "r-streak")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "STREAK" version))
+              (sha256
+               (base32
+                "0y6m7m2wpksymqnp4h1vangg70nz3qk1crd12g69smr02lg3amnk"))))
+    (properties `((upstream-name . "STREAK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vam r-speck r-seurat r-matrix r-ckmeans-1d-dp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=STREAK")
+    (synopsis
+     "Receptor Abundance Estimation using Feature Selection and Gene Set Scoring")
+    (description
+     "This package performs receptor abundance estimation for single cell
+RNA-sequencing data using a supervised feature selection mechanism and a
+thresholded gene set scoring procedure.  Seurat's normalization method is
+described in: Hao et al., (2021) <doi:10.1016/j.cell.2021.04.048>, Stuart et
+al., (2019) <doi:10.1016/j.cell.2019.05.031>, Butler et al., (2018)
+<doi:10.1038/nbt.4096> and Satija et al., (2015) <doi:10.1038/nbt.3192>.  Method
+for reduced rank reconstruction and rank-k selection is detailed in: Javaid et
+al., (2022) <doi:10.1101/2022.10.08.511197>.  Gene set scoring procedure is
+described in: Frost et al., (2020) <doi:10.1093/nar/gkaa582>.  Clustering method
+is outlined in: Song et al., (2020) <doi:10.1093/bioinformatics/btaa613> and
+Wang et al., (2011) <doi:10.32614/RJ-2011-015>.")
+    (license license:gpl2+)))
+
 (define-public r-stray
   (package
     (name "r-stray")
@@ -15761,19 +15792,22 @@ to simulate spreading activation in a network.  Behavior Research Methods, 51,
 (define-public r-spray
   (package
     (name "r-spray")
-    (version "1.0-20")
+    (version "1.0-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spray" version))
               (sha256
                (base32
-                "0p8xwjwjrpfk5nwrap5vbnab4gpn6cjsgzkxbk70xdwbx3r1cv5z"))))
+                "1dzv0ciimiprxsmqb9b49sx4j3i6jakx4sw4bhhmfklsj0p018r2"))))
     (properties `((upstream-name . "spray")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-partitions r-mathjaxr r-magic r-disordr))
     (home-page "https://github.com/RobinHankin/spray")
     (synopsis "Sparse Arrays and Multivariate Polynomials")
-    (description "Sparse arrays interpreted as multivariate polynomials.")
+    (description
+     "Sparse arrays interpreted as multivariate polynomials.  Uses disordR discipline
+(Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package in
+publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
     (license license:gpl2+)))
 
 (define-public r-spqr
@@ -22022,13 +22056,13 @@ on code from www.sparse-grids.de")
 (define-public r-sparsegl
   (package
     (name "r-sparsegl")
-    (version "0.5.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparsegl" version))
               (sha256
                (base32
-                "0s30gh65w1vvl13qgxwy907cyqzkv4rcdzs1zik4hfnl323g5lmq"))))
+                "1khf6r7fzddq2vxqvj70vsvjmk7ksivjz1vipwxnc6a3fr4lbg73"))))
     (properties `((upstream-name . "sparsegl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22038,7 +22072,7 @@ on code from www.sparse-grids.de")
                              r-magrittr
                              r-ggplot2
                              r-dotcall64
-                             r-assertthat))
+                             r-cli))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/dajmcdon/sparsegl/")
     (synopsis "Sparse Group Lasso")
@@ -44836,13 +44870,13 @@ Extensions in version 2.5.0 include costing and evaluation of detector spacing."
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.5.7")
+    (version "4.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secr" version))
               (sha256
                (base32
-                "0vhsik8p8f3cvmlxq1ff3qh5jgzy5s0z6savrsmfb56vf3l5462p"))))
+                "1kdl6lshd00zvfd77p66qqinb7qwxhaqkb38dpvpmr8xc75r82lg"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -50605,13 +50639,13 @@ been studied by Davis (1973) <doi:10.1037/h0033951>; MacCoun & Kerr (1988)
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.0.8")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sassy" version))
               (sha256
                (base32
-                "0sswnif8jg4zlvs2r867pjz670q63p20w4mrxwr7x8f9m7ll7wv6"))))
+                "0iimj7wncdsx6h0fk4cg79dqbhyrlg76bl8jkz8rl2ac6ywdyz2p"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reporter r-logr r-libr r-fmtr r-common))
@@ -50624,8 +50658,8 @@ especially programmers who have a background in SASÂ® software.  This set of
 packages brings many useful concepts to R', including data libraries, data
 dictionaries, formats and format catalogs, a data step, and a traceable log.
 The flagship package is a reporting package that can output in text, rich text,
-PDF and HTML file formats.")
-    (license (license:fsdg-compatible "CC BY-NC 4.0"))))
+PDF', HTML', and DOCX file formats.")
+    (license license:cc0)))
 
 (define-public r-sasmixed
   (package

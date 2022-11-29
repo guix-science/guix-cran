@@ -3597,13 +3597,13 @@ probability of success for a prospective trial.")
 (define-public r-long2lstmarray
   (package
     (name "r-long2lstmarray")
-    (version "0.0.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "long2lstmarray" version))
               (sha256
                (base32
-                "1ms47aa5r8cr2w69nv11qjpzy4sh6acys8kq2n548jsdx4z1sc26"))))
+                "1d0w5qqqq3jak72ci7p12rcs4hjwmvwlaf47pibc6y9lax609kxw"))))
     (properties `((upstream-name . "long2lstmarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr r-abind))

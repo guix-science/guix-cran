@@ -9174,13 +9174,13 @@ Perakis (2002) and Wang (2005).  Two datasets are included.")
 (define-public r-mpboost
   (package
     (name "r-mpboost")
-    (version "0.1-4")
+    (version "0.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MPBoost" version))
               (sha256
                (base32
-                "1sr2cxngfm8ykr4cagx7r6fbn5g6rdpxrxzq3sz7g9acy329qzxx"))))
+                "13ijn48dg20kz0zwr0f0vp4162dv9hqnmnzzbdp30nhh0bqdbk4k"))))
     (properties `((upstream-name . "MPBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -32917,13 +32917,13 @@ E.M. Qannari (2021) <doi:10.1016/j.chemolab.2021.104388>.")
 (define-public r-mba
   (package
     (name "r-mba")
-    (version "0.0-9")
+    (version "0.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBA" version))
               (sha256
                (base32
-                "06kmrdkhwwvr3kd5w8ws6r528hhpvbhixyj98lv36kkwlx14x06g"))))
+                "1bw3a8xcbjmhb3mfzblx8kpj3jiag8c95wm5g6xy52xrql2rj0vq"))))
     (properties `((upstream-name . "MBA")))
     (build-system r-build-system)
     (propagated-inputs (list r-bh))
