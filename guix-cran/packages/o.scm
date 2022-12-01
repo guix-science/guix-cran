@@ -1933,7 +1933,6 @@ the gradient is enabled through OpenMP'.")
     (properties `((upstream-name . "orsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-bhh2 r-bb))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=orsk")
     (synopsis
      "Converting Odds Ratio to Relative Risk in Cohort Studies with Partial Data Information")
@@ -2708,13 +2707,13 @@ monotone incremental forward stagewise method.")
 (define-public r-ordinalforest
   (package
     (name "r-ordinalforest")
-    (version "2.4-2")
+    (version "2.4-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ordinalForest" version))
               (sha256
                (base32
-                "0s5isf8z6rrksl4jv1aizffxy3bcl726qjpj5j6z7642wkdkpygi"))))
+                "06blmwmn42dv6sri3j3473arrql5rihdlp7kgh56b2w1j2wdqq7s"))))
     (properties `((upstream-name . "ordinalForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification r-rcpp r-nnet r-combinat))
@@ -9246,7 +9245,7 @@ methods.")
                              r-rgdal
                              r-igraph
                              r-fields))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OCNet")
     (synopsis "Optimal Channel Networks")
     (description
@@ -9380,7 +9379,6 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
     (properties `((upstream-name . "OceanView")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rgl r-plot3drgl r-plot3d))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=OceanView")
     (synopsis "Visualisation of Oceanographic Data and Model Output")
     (description
@@ -9548,7 +9546,7 @@ quality checks are described in several papers, which can be found here:
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gsw))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://dankelley.github.io/oce/")
     (synopsis "Analysis of Oceanographic Data")
     (description
@@ -9751,7 +9749,6 @@ sensitivity analysis for regression (linear, logistic, and cox) style models.")
                 "0jvvcx2lc39rdnlbhykam6cf94lbci9zc1vshwfhvygblnmjgrzr"))))
     (properties `((upstream-name . "OBsMD")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=OBsMD")
     (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
     (description

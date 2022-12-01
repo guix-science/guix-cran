@@ -7,9 +7,9 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages image-processing)
   #:use-module (gnu packages haskell-xyz)
@@ -1546,7 +1546,6 @@ columns together in categories.  Saelens et al. (2019)
     (properties `((upstream-name . "fUnitRoots")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-timeseries r-fbasics))
-    (native-inputs (list gfortran))
     (home-page "https://www.rmetrics.org")
     (synopsis "Rmetrics - Modelling Trends and Unit Roots")
     (description
@@ -2679,7 +2678,6 @@ Bork (Preprint) <https://psyarxiv.com/qktsd>.")
     (properties `((upstream-name . "fso")))
     (build-system r-build-system)
     (propagated-inputs (list r-labdsv))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=fso")
     (synopsis "Fuzzy Set Ordination")
     (description
@@ -3251,7 +3249,6 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
                              r-micecon
                              r-lmtest
                              r-formula))
-    (native-inputs (list gfortran))
     (home-page "http://frontier.r-forge.r-project.org/")
     (synopsis "Stochastic Frontier Analysis")
     (description
@@ -3970,7 +3967,6 @@ is, with the first and last point of the curve at the initial point.")
                              r-mass
                              r-lmtest
                              r-fbasics))
-    (native-inputs (list gfortran))
     (home-page "https://www.rmetrics.org")
     (synopsis "Rmetrics - Regression Based Decision and Prediction")
     (description
@@ -7366,7 +7362,6 @@ processes and to simulate different types of chaotic time series maps.")
     (properties `((upstream-name . "fMultivar")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-mvtnorm r-fbasics r-cubature))
-    (native-inputs (list gfortran))
     (home-page "https://www.rmetrics.org")
     (synopsis
      "Rmetrics - Modeling of Multivariate Financial Return Distributions")
@@ -7716,7 +7711,6 @@ effects-model formulation proposed by Li et al. (2021) <arXiv:2003.04787>.")
                              r-mass
                              r-desolve
                              r-coda))
-    (native-inputs (list gfortran))
     (home-page "http://fme.r-forge.r-project.org/")
     (synopsis
      "Flexible Modelling Environment for Inverse Modelling, Sensitivity, Identifiability and Monte Carlo Analysis")
@@ -10014,6 +10008,29 @@ as complex and array descriptor data types in binary tables.")
 low-level package with which most users will not interact but upon which other
 packages modeling fitness landscapes and fitness seascapes will depend.")
     (license license:expat)))
+
+(define-public r-fitps
+  (package
+    (name "r-fitps")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fitPS" version))
+              (sha256
+               (base32
+                "13xn30nbq928v6dmcjjl2vhrvc8qs6m7ldc2wzl14aanprcjiw18"))))
+    (properties `((upstream-name . "fitPS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-readxl r-dplyr))
+    (home-page "https://github.com/jmcurran/fitPS")
+    (synopsis "Fit Zeta Distributions to Forensic Data")
+    (description
+     "Fits zeta distributions (discrete power laws) to data that arises from forensic
+surveys of clothing on the presence of glass and paint in various populations.
+The general method is described to some extent in Coulson, S.A., Buckleton,
+J.S., Gummer, A.B., and Triggs, C.M. (2001) <doi:10.1016/S1355-0306(01)71847-3>,
+although the implementation differs.")
+    (license license:gpl2+)))
 
 (define-public r-fitpoly
   (package
@@ -12634,7 +12651,6 @@ accepts fundamental items and digital elevation models.")
                              r-fbasics
                              r-fastica
                              r-cvar))
-    (native-inputs (list gfortran))
     (home-page "https://www.rmetrics.org")
     (synopsis
      "Rmetrics - Autoregressive Conditional Heteroskedastic Modelling")
@@ -14797,7 +14813,6 @@ classification, unsupervised classification and functional analysis of variance.
     (properties `((upstream-name . "FD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-geometry r-ape r-ade4))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=FD")
     (synopsis
      "Measuring Functional Diversity (FD) from Multiple Traits, and Other Tools for Functional Ecology")
@@ -16432,7 +16447,6 @@ metric spaces.")
                 "0wyqs5kcvii2ss8nwn14c396yvvh8k0hlb0zlb68aifsvjsi4bpf"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://faosorios.github.io/fastmatrix/")
     (synopsis "Fast Computation of some Matrices Useful in Statistics")
     (description

@@ -188,7 +188,6 @@ an extension to model binary outcome.")
     (properties `((upstream-name . "BwQuant")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-nleqslv r-kernsmooth))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BwQuant")
     (synopsis "Bandwidth Selectors for Local Linear Quantile Regression")
     (description
@@ -365,7 +364,6 @@ Mazzia, F., J.R. Cash and K. Soetaert, 2014.")
                 "18aaf7kk5mks3a59wwqhm1ckpn6s704l9m5nzy0x5iw0s98ijbm2"))))
     (properties `((upstream-name . "bvls")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bvls")
     (synopsis "The Stark-Parker algorithm for bounded-variable least squares")
     (description
@@ -2171,7 +2169,6 @@ and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
                 "1842a4hq7pa3bxw18hnw8fva0x3jzi27rkrib92idsc92n0r44n2"))))
     (properties `((upstream-name . "BsMD")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BsMD")
     (synopsis "Bayes Screening and Model Discrimination")
     (description "Bayes screening and model discrimination follow-up designs.")
@@ -2551,7 +2548,7 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
                 "1sz1nx9lgl7pwgx9a5m59svajsk4qv0ajzzkw9123vrh0wydy6j3"))))
     (properties `((upstream-name . "brunnermunzel")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/toshi-ara/brunnermunzel")
     (synopsis "(Permuted) Brunner-Munzel Test")
     (description
@@ -2872,13 +2869,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.9.0")
+    (version "1.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "broom.helpers" version))
               (sha256
                (base32
-                "09ygd6fpm5hb5gjaqy7ihc4k6gj1mbb54f95saj49wmdkcsm292m"))))
+                "1kimf5i3i9c5s383rvn1cdwzs1rcknxahhmcn63hkydds0wx2car"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5946,13 +5943,13 @@ text.  No need to struggle in YAML and LaTeX'.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bonsai" version))
               (sha256
                (base32
-                "0haqdvvh5ydyzifr9mzyyfa2sj6n9kfvj5w5wj815n9p0mw67r8h"))))
+                "048nfgnzsi0zz0nsxl30nsjg63nszy44881s49g9hgs3vng2vmp2"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5960,9 +5957,9 @@ text.  No need to struggle in YAML and LaTeX'.")
                              r-purrr
                              r-parsnip
                              r-glue
-                             r-foreach
                              r-dplyr
-                             r-dials))
+                             r-dials
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://bonsai.tidymodels.org/")
     (synopsis "Model Wrappers for Tree-Based Models")
@@ -6399,13 +6396,13 @@ the basic and static views offered by existing packages.")
 (define-public r-bnstruct
   (package
     (name "r-bnstruct")
-    (version "1.0.13")
+    (version "1.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnstruct" version))
               (sha256
                (base32
-                "0naclrnhnqc87w6nw0yl3rhslqw3784hqqvmyfdg2508k9x913g3"))))
+                "1igdr538d2nfx3ap13y6p6wb6jfvb3hcg80fapjvnzc2304sk95p"))))
     (properties `((upstream-name . "bnstruct")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-bitops))
@@ -7585,7 +7582,6 @@ analyzing them with a Bayesian model averaging approach.")
     (properties `((upstream-name . "BMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rrcov r-robustbase r-leaps r-inline))
-    (native-inputs (list gfortran))
     (home-page "http://stats.research.att.com/volinsky/bma.html")
     (synopsis "Bayesian Model Averaging")
     (description
@@ -9172,7 +9168,6 @@ equivalence in method comparison studies,
     (properties `((upstream-name . "BivRec")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-stringr r-rcpp r-mass r-dplyr))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/SandraCastroPearson/BivRec")
     (synopsis "Bivariate Alternating Recurrent Event Data Analysis")
     (description
@@ -9799,7 +9794,6 @@ can be found in the help of each procedure.")
                              r-kernsmooth
                              r-deldir
                              r-colorspace))
-    (native-inputs (list gfortran))
     (home-page "http://biplotgui.r-forge.r-project.org/")
     (synopsis "Interactive Biplots in R")
     (description
@@ -11659,7 +11653,6 @@ The details of the method are explained in Demirtas et al. (2012)
     (properties `((upstream-name . "binomSamSize")))
     (build-system r-build-system)
     (propagated-inputs (list r-binom))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=binomSamSize")
     (synopsis
      "Confidence Intervals and Sample Size Determination for a Binomial Proportion under Simple Random Sampling and Pooled Sampling")
@@ -12432,7 +12425,6 @@ features of a lot of the songs and lyrics for several of the songs as well.")
                 "0aygx77fn2w249q6ghpxclhm9xb2ngdzrirldr3lpidg6ivc443v"))))
     (properties `((upstream-name . "bild")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bild")
     (synopsis "Package for BInary Longitudinal Data")
     (description
@@ -12726,7 +12718,6 @@ linear supervised models, utility functions and more
     (properties `((upstream-name . "bigsplines")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bigsplines")
     (synopsis "Smoothing Splines for Large Samples")
     (description
@@ -13090,7 +13081,6 @@ algorithm (Garriga J. and Bartumeus F. (2018), <arXiv:1812.09869>).")
     (properties `((upstream-name . "biglmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=biglmm")
     (synopsis "Bounded Memory Linear and Generalized Linear Models")
     (description
@@ -13111,7 +13101,6 @@ like the biglm package, but works with later versions of R.")
     (properties `((upstream-name . "biglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=biglm")
     (synopsis "Bounded Memory Linear and Generalized Linear Models")
     (description "Regression for data too large to fit in memory.")
@@ -13455,7 +13444,6 @@ synchronicity'.")
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bigmemory r-bh))
-    (native-inputs (list gfortran))
     (home-page "https://fbertran.github.io/bigalgebra/")
     (synopsis
      "'BLAS' and 'LAPACK' Routines for Native R Matrices and 'big.matrix' Objects")
@@ -17319,7 +17307,6 @@ for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bda")
     (synopsis "Binned Data Analysis")
     (description

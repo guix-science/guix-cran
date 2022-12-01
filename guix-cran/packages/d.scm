@@ -870,16 +870,16 @@ are facilitated by demos in the package; see demo(package=\"dynaTree\").")
 (define-public r-dynatopgis
   (package
     (name "r-dynatopgis")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynatopGIS" version))
               (sha256
                (base32
-                "00mzyq2fl725yq8laijdi8v8ibq2c9ndjxx6xddbiqfyisy6g1x1"))))
+                "0g4v48nvzsby6h2rr65s7palc3bsp552cmrsins56kmh0dmwdm0c"))))
     (properties `((upstream-name . "dynatopGIS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster r-r6 r-jsonlite))
+    (propagated-inputs (list r-terra r-r6 r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://waternumbers.github.io/dynatopGIS/")
     (synopsis
@@ -1043,7 +1043,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (properties `((upstream-name . "dynamichazard")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-boot))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/boennecd/dynamichazard")
     (synopsis "Dynamic Hazard Models using State Space Models")
     (description
@@ -1069,7 +1069,6 @@ filters and smoothers are also supported more general state space models.")
     (properties `((upstream-name . "DynamicGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=DynamicGP")
     (synopsis "Modelling and Analysis of Dynamic Computer Experiments")
     (description
@@ -1971,7 +1970,7 @@ avoided.")
                              r-dtw
                              r-data-table
                              r-caret))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://www.victor-maus.com/dtwSat/")
     (synopsis
      "Time-Weighted Dynamic Time Warping for Satellite Image Time Series Analysis")
@@ -2419,7 +2418,6 @@ statdistr determines the stationary distribution of a Markov Chain.")
                              r-awsmethods
                              r-aws
                              r-adimpro))
-    (native-inputs (list gfortran))
     (home-page "http://www.wias-berlin.de/research/ats/imaging/")
     (synopsis "Analysis of Diffusion Weighted Imaging (DWI) Data")
     (description
@@ -3337,7 +3335,6 @@ package.  For more details see Schmidt R, Kneib T (2022)
     (properties `((upstream-name . "dse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tframe r-tfplot r-setrng))
-    (native-inputs (list gfortran))
     (home-page "http://tsanalysis.r-forge.r-project.org/")
     (synopsis "Dynamic Systems Estimation (Time Series Package)")
     (description
@@ -5148,7 +5145,6 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
-    (native-inputs (list gfortran))
     (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis "Density, Probability, Quantile ('DPQ') Computations")
     (description
@@ -8498,7 +8494,6 @@ removal or further analyses.")
     (properties `((upstream-name . "dixon")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-spatstat-geom r-spatstat))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dixon")
     (synopsis "Nearest Neighbour Contingency Table Analysis")
     (description
@@ -17456,24 +17451,25 @@ can be found on
 (define-public r-delayedeffect-design
   (package
     (name "r-delayedeffect-design")
-    (version "0.0.4")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DelayedEffect.Design" version))
               (sha256
                (base32
-                "0n1dw9bqisfarg7him49mzqn60gcfr660d5x9k6b37r12dnmy48v"))))
+                "1qx82r04d0bnr8k961fgp4rmy62rw0xfzzdamyfc8f5r92lk18yr"))))
     (properties `((upstream-name . "DelayedEffect.Design")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-msm))
     (home-page "https://cran.r-project.org/package=DelayedEffect.Design")
     (synopsis
-     "Sample Size and Power Calculations using the APPLE and SEPPLE Methods")
+     "Sample Size and Power Calculations using the APPLE, SEPPLE, APPLE+ and SEPPLE+ Methods")
     (description
      "This package provides sample size and power calculations when the treatment
-time-lag effect is present and the lag duration is homogeneous across the
-individual subject.  The methods used are described in Xu, Z., Zhen, B., Park,
-Y., & Zhu, B. (2017) <doi:10.1002/sim.7157>.")
+time-lag effect is present and the lag duration is either homogeneous across the
+individual subject, or varies heterogeneously from individual to individual
+within a certain domain and following a specific pattern.  The methods used are
+described in Xu, Z., Zhen, B., Park, Y., & Zhu, B. (2017)
+<doi:10.1002/sim.7157>.")
     (license license:gpl2)))
 
 (define-public r-delayed
@@ -19855,17 +19851,18 @@ parallel MCMC support for JAGS', WinBUGS', OpenBUGS', and Stan'.")
 (define-public r-dclear
   (package
     (name "r-dclear")
-    (version "1.0.8")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DCLEAR" version))
               (sha256
                (base32
-                "1riqsrzx9liq9fq9b4bfyfkixq879rzwa2yl202if8py42k1rnk5"))))
+                "0s56qyp9jrfkqf946w9hin2qfkmxcgg3ymcwj3v24gabvyqivjdm"))))
     (properties `((upstream-name . "DCLEAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
                              r-tidyr
+                             r-tensorflow
                              r-stringr
                              r-rlang
                              r-rcpparmadillo
@@ -19886,8 +19883,9 @@ parallel MCMC support for JAGS', WinBUGS', OpenBUGS', and Stan'.")
     (description
      "R codes for distance based cell lineage reconstruction.  Our methods won both
 sub-challenges 2 and 3 of the Allen Institute Cell Lineage Reconstruction DREAM
-Challenge in 2020.  The challenge paper is Gong et al. (2021)
-<doi:10.1016/j.cels.2021.05.008>.")
+Challenge in 2020.  References: Gong et al. (2021)
+<doi:10.1016/j.cels.2021.05.008>, Gong et al. (2022)
+<doi:10.1186/s12859-022-04633-x>.")
     (license license:gpl3)))
 
 (define-public r-dcl
@@ -20663,7 +20661,6 @@ variables for other statistical analysis.")
                 "0c1hvawb9gw6vckims3g8kzn2c4f0as5x1vw39sdvkwc92xy26lv"))))
     (properties `((upstream-name . "dBlockmodeling")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dBlockmodeling")
     (synopsis
      "Deterministic Blockmodeling of Signed, One-Mode and Two-Mode Networks")
@@ -24380,13 +24377,13 @@ U.S. FDA.")
 (define-public r-d4storagehub4r
   (package
     (name "r-d4storagehub4r")
-    (version "0.4-1")
+    (version "0.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "d4storagehub4R" version))
               (sha256
                (base32
-                "0z8y61b0sl8y7hbpvpp8aiyvq574m4pdipmshnbg114swyx52d0k"))))
+                "0fkg14zjnlgz988pb76ihi5ajilnqji7mwnc4a3qsfjkx1acib96"))))
     (properties `((upstream-name . "d4storagehub4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

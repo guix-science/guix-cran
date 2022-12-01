@@ -2957,7 +2957,6 @@ different ways (i.e., model structures).")
                 "0w41k25vss806m5vpwmmcfsmwaixmln0pliql3a6xlwsihha5i34"))))
     (properties `((upstream-name . "VIFCP")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=VIFCP")
     (synopsis "Detecting Change-Points via VIFCP Method")
     (description
@@ -4552,7 +4551,7 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (properties `((upstream-name . "vdg")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-proxy r-gridextra r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vdg")
     (synopsis "Variance Dispersion Graphs and Fraction of Design Space Plots")
     (description
@@ -6292,6 +6291,29 @@ analysis of large datasets in few minutes
 Based on vectors of observed and predicted values.  Method: Kristin Piikki,
 Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
 <doi:10.1111/SUM.12694>.")
+    (license license:expat)))
+
+(define-public r-validiclust
+  (package
+    (name "r-validiclust")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VALIDICLUST" version))
+              (sha256
+               (base32
+                "1glcvzrbc7glxmbmas3zzb114a5cfl7gsf7xlxaifrrgvcahrvnx"))))
+    (properties `((upstream-name . "VALIDICLUST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr r-diptest))
+    (home-page "https://cran.r-project.org/package=VALIDICLUST")
+    (synopsis "VALID Inference for Clusters Separation Testing")
+    (description
+     "Given a partition resulting from any clustering algorithm, the implemented tests
+allow valid post-clustering inference by testing if a given variable
+significantly separates two of the estimated clusters.  Methods are detailed in:
+Hivert B, Agniel D, Thiebaut R & Hejblum BP (2022). \"Post-clustering difference
+testing: valid inference and practical considerations\", <arXiv:2210.13172>.")
     (license license:expat)))
 
 (define-public r-validatetools

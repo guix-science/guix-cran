@@ -754,7 +754,6 @@ used to plot vectors, matrices, data frames, time series (in ts or zoo format)."
                 "1zrcfhsm4599dj8dywzgpqabcc4sbfm7d99lxxmhqagqiqwamqyc"))))
     (properties `((upstream-name . "ltsk")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ltsk")
     (synopsis "Local Time Space Kriging")
     (description
@@ -2222,7 +2221,6 @@ gene expression data are also provided.")
                 "0jk4l95z9rcdqkc8lpp4sf1mg2dqj67rhqw1iafrxy5lx4jfaqqx"))))
     (properties `((upstream-name . "lpridge")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=lpridge")
     (synopsis "Local Polynomial (Ridge) Regression")
     (description "Local Polynomial Regression with Ridging.")
@@ -2516,13 +2514,13 @@ used in the package to calculate the indicator.")
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
-    (version "2.3.1")
+    (version "2.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpdensity" version))
               (sha256
                (base32
-                "13yqllfffhkzsy8h8kisllw467vaajg4dk51sc6lmc63hs6v7y4r"))))
+                "1pyvqhxxvcd3l0wr0a3a39pxfbg7d66qdhynfb4jchd5sqj2p6a5"))))
     (properties `((upstream-name . "lpdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -3760,7 +3758,6 @@ diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
     (properties `((upstream-name . "lokern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=lokern")
     (synopsis
      "Kernel Regression Smoothing with Local or Global Plug-in Bandwidth")
@@ -4239,7 +4236,6 @@ scatterplots of data when plotting fitted logistic regressions.")
     (properties `((upstream-name . "LogicReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=LogicReg")
     (synopsis "Logic Regression")
     (description
@@ -5772,7 +5768,6 @@ Cancer informatics, 13, CIN-S14021.")
     (properties `((upstream-name . "lmomRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmom))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=lmomRFA")
     (synopsis "Regional Frequency Analysis using L-Moments")
     (description
@@ -5998,7 +5993,6 @@ cores which repeat until convergence.")
                 "13b5rvdbzljir1fn4zxv2lshbga64vwzn6884izif9v5dkd5b29j"))))
     (properties `((upstream-name . "lmm")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://github.com/jinghuazhao/R")
     (synopsis "Linear Mixed Models")
     (description
@@ -6147,7 +6141,7 @@ directional and fluctuating selection in age-structured populations.")
                              r-mass
                              r-formula
                              r-diagram))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LMest")
     (synopsis "Generalized Latent Markov Models")
     (description
@@ -10478,7 +10472,6 @@ the coordinates.")
                              r-rcpp
                              r-matrix
                              r-igraph))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/kharchenkolab/leidenAlg")
     (synopsis "Implements the Leiden Algorithm via an R Interface")
     (description
@@ -12916,7 +12909,7 @@ convergence issues.")
     (properties `((upstream-name . "lbfgsb3c")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lbfgsb3c")
     (synopsis
      "Limited Memory BFGS Minimizer with Bounds on Parameters with optim() 'C' Interface")
@@ -15749,7 +15742,6 @@ spectral clustering method using l1-regularization\" (2022).")
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
-    (native-inputs (list gfortran))
     (home-page "http://l1pack.mat.utfsm.cl/")
     (synopsis "Routines for L1 Estimation")
     (description

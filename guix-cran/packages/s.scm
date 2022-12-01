@@ -1140,13 +1140,13 @@ United States Environmental Protection Agency (2015)
 (define-public r-swmpr
   (package
     (name "r-swmpr")
-    (version "2.4.1")
+    (version "2.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SWMPr" version))
               (sha256
                (base32
-                "1dqhsqigfbfj167mp2h0wfybaymj9zlywh5d3syrrmpr694f9kz5"))))
+                "0lllfc5ixhhpx17fmm6rziphikc3r4k3i8cr8gjwghg9j94rc5mp"))))
     (properties `((upstream-name . "SWMPr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3618,7 +3618,6 @@ functions.")
     (properties `((upstream-name . "survIDINRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-survc1))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=survIDINRI")
     (synopsis
      "IDI and NRI for Comparing Competing Risk Prediction Models with Censored Survival Data")
@@ -3873,21 +3872,16 @@ take folds based on survey design is useful.")
 (define-public r-survex
   (package
     (name "r-survex")
-    (version "0.1.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survex" version))
               (sha256
                (base32
-                "1ppjdnlprf2kqhlsclmx1qvyps29v772nx47f49khasm9am9pk9b"))))
+                "1ch3q44rwilbw52s50yfzi98q3s8r0a660z6v8w16i71s2yfb90g"))))
     (properties `((upstream-name . "survex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-pec
-                             r-ingredients
-                             r-gridextra
-                             r-ggplot2
-                             r-dalex))
+    (propagated-inputs (list r-survival r-pec r-patchwork r-ggplot2 r-dalex))
     (native-inputs (list r-knitr))
     (home-page "https://modeloriented.github.io/survex/")
     (synopsis "Explainable Machine Learning in Survival Analysis")
@@ -4115,7 +4109,6 @@ bivariate distribution, either on the original time scale or as copula.")
     (properties `((upstream-name . "survC1")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=survC1")
     (synopsis
      "C-Statistics for Risk Prediction Models with Censored Survival Data")
@@ -4352,29 +4345,33 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "2.4")
+    (version "2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "1fp9dps1z8wjdbhzkz1wnr7ffpv2nm9cbqns03x5aj290h83bpza"))))
+                "1zbzsjxsrmz1xh3ldxgas0yv2v9l6jqdr9hr002gq9hk5qhspk9m"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
-                             r-rootsolve
+                             r-rvinecopulib
                              r-rms
                              r-pbapply
                              r-nlme
+                             r-mvtnorm
                              r-msm
-                             r-mixtools
                              r-mass
                              r-logistf
                              r-lme4
                              r-latticeextra
                              r-lattice
                              r-ks
-                             r-extradistr))
+                             r-kdecopula
+                             r-flexsurv
+                             r-extradistr
+                             r-dplyr
+                             r-copula))
     (home-page "https://cran.r-project.org/package=Surrogate")
     (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
     (description
@@ -5938,7 +5935,6 @@ authored by Stephanie Sapp, Mark J. van der Laan & John Canny (2014)
     (properties `((upstream-name . "subselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-iswr r-corpcor))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=subselect")
     (synopsis "Selecting Variable Subsets")
     (description
@@ -7590,13 +7586,13 @@ An R package for modelling the dynamics of marine food webs and fisheries.  8pp.
 (define-public r-stratest
   (package
     (name "r-stratest")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stratEst" version))
               (sha256
                (base32
-                "1famcdvryij983v6xcrj06gmxr534ywpr2bpzn0d4mw36ka4xy20"))))
+                "0m41866xr21h4mih4z98y6pcrp2ws0mxxx157vdhbv7rhlh5djvp"))))
     (properties `((upstream-name . "stratEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -7946,26 +7942,26 @@ data for a wide range of research in social and life sciences.")
 (define-public r-stpp
   (package
     (name "r-stpp")
-    (version "2.0-6")
+    (version "2.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stpp" version))
               (sha256
                (base32
-                "0ii799kqn8ydgi4bqs292fff7my5fdbrvwnizqphbk7k8xf4w5vx"))))
+                "1w9jn71ha817gldfhkmr2vfx3nkr78g1y662rfxg6flx2wyxs3kq"))))
     (properties `((upstream-name . "stpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs
                              r-spatstat-random
                              r-spatstat-geom
-                             r-spatstat-core
+                             r-spatstat-explore
                              r-rpanel
                              r-rgl
                              r-plot3d
                              r-kernsmooth
                              r-gridextra
                              r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=stpp")
     (synopsis
      "Space-Time Point Pattern Simulation, Visualisation and Analysis")
@@ -8402,7 +8398,7 @@ annualized growth, maximum drawdown, Sharpe/Sortino ratio), and creating graphs.
     (properties `((upstream-name . "stockR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-gtools))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=stockR")
     (synopsis "Identifying Stocks in Genetic Data")
     (description
@@ -9494,7 +9490,6 @@ change-point locations and bands for the unknown signal can be obtained.")
                 "1i54nyz8z5vq3mzfh6h2vd1q0hsdazc4mhrj9ad0zdvn0qnz61lv"))))
     (properties `((upstream-name . "stepPlr")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=stepPlr")
     (synopsis
      "L2 Penalized Logistic Regression with Stepwise Variable Selection")
@@ -9562,7 +9557,6 @@ known (or guessed) in advance.  The method is introduced in Hussey and Hughes
     (properties `((upstream-name . "stepp")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-scales r-rstudioapi r-car))
-    (native-inputs (list gfortran))
     (home-page "https://www.r-project.org")
     (synopsis "Subpopulation Treatment Effect Pattern Plot (STEPP)")
     (description
@@ -17513,7 +17507,6 @@ air temperature, and cloudiness.  Davis et al. (2017)
     (properties `((upstream-name . "splancs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
-    (native-inputs (list gfortran))
     (home-page "https://www.maths.lancs.ac.uk/~rowlings/Splancs/")
     (synopsis "Spatial and Space-Time Point Pattern Analysis")
     (description
@@ -20001,49 +19994,6 @@ flexible spatial survival models.  See Benjamin M. Taylor, Barry S. Rowlingson
 (2017) <doi:10.18637/jss.v077.i04>.")
     (license license:gpl3)))
 
-(define-public r-spatstat-model
-  (package
-    (name "r-spatstat-model")
-    (version "3.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spatstat.model" version))
-              (sha256
-               (base32
-                "0a6lf5y0k13h60s0lnwwfrmxswl7avcg4fhqmha1nmycidhga8z9"))))
-    (properties `((upstream-name . "spatstat.model")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensor
-                             r-spatstat-utils
-                             r-spatstat-sparse
-                             r-spatstat-random
-                             r-spatstat-geom
-                             r-spatstat-explore
-                             r-spatstat-data
-                             r-rpart
-                             r-nlme
-                             r-mgcv
-                             r-matrix
-                             r-goftest
-                             r-abind))
-    (home-page "http://spatstat.org/")
-    (synopsis "Parametric Statistical Modelling for the 'spatstat' Family")
-    (description
-     "Functionality for exploratory data analysis and nonparametric analysis of
-spatial data, mainly spatial point patterns, in the spatstat family of packages.
-(Excludes analysis of spatial data on a linear network, which is covered by the
-separate package spatstat.linnet'.) Methods include quadrat counts, K-functions
-and their simulation envelopes, nearest neighbour distance and empty space
-statistics, Fry plots, pair correlation function, kernel smoothed intensity,
-relative risk estimation with cross-validated bandwidth selection, mark
-correlation functions, segregation indices, mark dependence diagnostics, and
-kernel estimates of covariate effects.  Formal hypothesis tests of random
-pattern (chi-squared, Kolmogorov-Smirnov, Monte Carlo,
-Diggle-Cressie-Loosmore-Ford, Dao-Genton, two-stage Monte Carlo) and tests for
-covariate effects (Cox-Berman-Waller-Lawson, Kolmogorov-Smirnov, ANOVA) are also
-supported.")
-    (license license:gpl2+)))
-
 (define-public r-spatstat-local
   (package
     (name "r-spatstat-local")
@@ -20129,45 +20079,6 @@ Baddeley and Nair (2019).")
     (synopsis "Interactive Graphics Functions for the 'spatstat' Package")
     (description
      "Extension to the spatstat package, containing interactive graphics capabilities.")
-    (license license:gpl2+)))
-
-(define-public r-spatstat-explore
-  (package
-    (name "r-spatstat-explore")
-    (version "3.0-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spatstat.explore" version))
-              (sha256
-               (base32
-                "0qn8dmymbnh9vdw0hysijkk2nwz5q69i62smpp8f3wy3z898lhwz"))))
-    (properties `((upstream-name . "spatstat.explore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-utils
-                             r-spatstat-sparse
-                             r-spatstat-random
-                             r-spatstat-geom
-                             r-spatstat-data
-                             r-nlme
-                             r-matrix
-                             r-goftest
-                             r-abind))
-    (home-page "http://spatstat.org/")
-    (synopsis "Exploratory Data Analysis for the 'spatstat' Family")
-    (description
-     "Functionality for exploratory data analysis and nonparametric analysis of
-spatial data, mainly spatial point patterns, in the spatstat family of packages.
-(Excludes analysis of spatial data on a linear network, which is covered by the
-separate package spatstat.linnet'.) Methods include quadrat counts, K-functions
-and their simulation envelopes, nearest neighbour distance and empty space
-statistics, Fry plots, pair correlation function, kernel smoothed intensity,
-relative risk estimation with cross-validated bandwidth selection, mark
-correlation functions, segregation indices, mark dependence diagnostics, and
-kernel estimates of covariate effects.  Formal hypothesis tests of random
-pattern (chi-squared, Kolmogorov-Smirnov, Monte Carlo,
-Diggle-Cressie-Loosmore-Ford, Dao-Genton, two-stage Monte Carlo) and tests for
-covariate effects (Cox-Berman-Waller-Lawson, Kolmogorov-Smirnov, ANOVA) are also
-supported.")
     (license license:gpl2+)))
 
 (define-public r-spatsoc
@@ -20748,7 +20659,6 @@ spatially varying relationships among the variables.")
     (properties `((upstream-name . "SpatialPack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
-    (native-inputs (list gfortran))
     (home-page "http://spatialpack.mat.utfsm.cl")
     (synopsis
      "Tools for Assessment the Association Between Two Spatial Processes")
@@ -21751,7 +21661,6 @@ Erichson et al. (2018) <arXiv:1804.00341>.")
     (properties `((upstream-name . "sparsenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-matrix))
-    (native-inputs (list gfortran))
     (home-page
      "http://www.stanford.edu/~hastie/Papers/Sparsenet/jasa_MFH_final.pdf")
     (synopsis "Fit Sparse Linear Regression Models via Nonconvex Optimization")
@@ -22725,7 +22634,6 @@ statements in parallel on top of SAS data.")
                 "138krflvfdlx4hlh90mswds51i8aw2vv00gm5lgkfsvxj4w324jg"))))
     (properties `((upstream-name . "sparcl")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sparcl")
     (synopsis
      "Perform Sparse Hierarchical Clustering and Sparse K-Means Clustering")
@@ -22764,7 +22672,7 @@ of the American Statistical Association 105(490): 713-726.")
                              r-fields
                              r-expm
                              r-abind))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://martin3141.github.io/spant/")
     (synopsis "MR Spectroscopy Analysis Tools")
     (description
@@ -22880,7 +22788,6 @@ quasi-likelihood and other variants discussed in the h-likelihood literature
                 "1k2ah76l38xwzn7c541b7nip2yx8n8yh6p9j80rpkc3jdni2n9dq"))))
     (properties `((upstream-name . "spam64")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://git.math.uzh.ch/reinhard.furrer/spam")
     (synopsis "64-Bit Extension of the SPArse Matrix R Package 'spam'")
     (description
@@ -22985,13 +22892,13 @@ by the mapproj package.")
 (define-public r-spacetimebss
   (package
     (name "r-spacetimebss")
-    (version "0.1-0")
+    (version "0.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpaceTimeBSS" version))
               (sha256
                (base32
-                "0rf07v3hcdqd0lp1jzbr08ijg23z6dp6kypxnq1fh1yvyq9nzy87"))))
+                "1s4q7nb00616s229p7jrap8df8d8p5bxflskprq2h62mx22dlfsz"))))
     (properties `((upstream-name . "SpaceTimeBSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-jade))
@@ -29351,7 +29258,6 @@ the selected 2 service provider.")
                              r-hash
                              r-extradistr
                              r-dfoptim))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sklarsomega")
     (synopsis "Measuring Agreement Using Sklar's Omega Coefficient")
     (description
@@ -34415,13 +34321,13 @@ Landscape ecology, 31: 1383-1394, <doi:10.1007/s10980-016-0380-z>.")
 (define-public r-siie
   (package
     (name "r-siie")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "siie" version))
               (sha256
                (base32
-                "1wdvvy36qz3s7qh25ng29nzwivc1mqzv3b1kxx16infb7xs07av0"))))
+                "0xqhi8xbfccm09iwsnxva4idwk50hm4z8skyhbbj4727c71117h1"))))
     (properties `((upstream-name . "siie")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -36987,13 +36893,13 @@ resulting metrics.")
 (define-public r-shinylight
   (package
     (name "r-shinylight")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinylight" version))
               (sha256
                (base32
-                "18p6rzfgzfycyxxi0ph1353afr9j4r8rjhqqk608z832b6dw53hi"))))
+                "0y2gmi8y5b595dca1sch9mzhq2mbbj7mv879md0ajc16ycfi17rp"))))
     (properties `((upstream-name . "shinylight")))
     (build-system r-build-system)
     (propagated-inputs (list r-later r-jsonlite r-httpuv))
@@ -37131,13 +37037,13 @@ models with a user friendly shiny interface.")
 (define-public r-shinyhugeplot
   (package
     (name "r-shinyhugeplot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyHugePlot" version))
               (sha256
                (base32
-                "1sij6rcmh6i5cjy1s84fbrzb1i82i9471dpw06y9nlk9gl87rw0v"))))
+                "1d0rij3zi9bs5ziwfplq4k1689ibqwlr9zq3v0np2j2kkfbh63gf"))))
     (properties `((upstream-name . "shinyHugePlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -37161,10 +37067,10 @@ models with a user friendly shiny interface.")
     (home-page "https://cran.r-project.org/package=shinyHugePlot")
     (synopsis "Efficient Plotting of Large-Sized Data")
     (description
-     "This package provides a tool to plot data with large sample size using shiny and
-plotly'.  Relatively small samples are chosen from the data using an appropriate
-algorithm according to a user-defined x range.  Jonas Van Der Donckt, Jeroen Van
-Der Donckt, Emiel Deprost (2022)
+     "This package provides a tool to plot data with a large sample size using shiny
+and plotly'.  Relatively small samples are obtained from the original data using
+a specific algorithm.  The samples are updated according to a user-defined x
+range.  Jonas Van Der Donckt, Jeroen Van Der Donckt, Emiel Deprost (2022)
 <https://github.com/predict-idlab/plotly-resampler>.")
     (license license:expat)))
 
@@ -38503,7 +38409,6 @@ Alham Saadat, Li Wang, Melina Claussnitzer, Manolis Kellis (2017)
     (properties `((upstream-name . "sharpPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-np r-matrix r-mass r-kernsmooth r-glmnet))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sharpPen")
     (synopsis "Penalized Data Sharpening for Local Polynomial Regression")
     (description
@@ -38572,7 +38477,6 @@ Course <doi:10.2139/ssrn.3036276>.")
     (properties `((upstream-name . "sharpData")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-kernsmooth))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sharpData")
     (synopsis "Data Sharpening")
     (description
@@ -39581,7 +39485,6 @@ logistic and Cox models.")
                 "1iq9p2jk8bpv1h853a1l91d5c5dxnhkk3cmkd01siqqvj04hv4vb"))))
     (properties `((upstream-name . "sgeostat")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=sgeostat")
     (synopsis "An Object-Oriented Framework for Geostatistical Modeling in S+")
     (description
@@ -40983,13 +40886,13 @@ methods.")
 (define-public r-seqhmm
   (package
     (name "r-seqhmm")
-    (version "1.2.1-1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seqHMM" version))
               (sha256
                (base32
-                "1gxrv0mhja0mqvm69s4mrvb31wxlk60v47a8vvhcrpa8l0b2kb4j"))))
+                "171vs3wm3vy7b61v4c0gwy27sfsqspnvcv5yc033zig8pnsnbn4f"))))
     (properties `((upstream-name . "seqHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -43392,13 +43295,13 @@ selection index method.")
 (define-public r-selectboost
   (package
     (name "r-selectboost")
-    (version "2.2.0")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SelectBoost" version))
               (sha256
                (base32
-                "1j525phl1b2b0f4b08az8p74mcgcnmv261d0sqrii8p44474zsy4"))))
+                "189hdr50sikg6pr9x9amjmgg9z0c95j65bddmifsy7zvjhllzjiy"))))
     (properties `((upstream-name . "SelectBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-varbvs
@@ -43411,7 +43314,7 @@ selection index method.")
                              r-cascade
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/fbertran/SelectBoost")
+    (home-page "https://fbertran.github.io/SelectBoost/")
     (synopsis
      "General Algorithm to Enhance the Performance of Variable Selection Methods in Correlated Datasets")
     (description
@@ -51184,7 +51087,6 @@ server space has been provided by Ricardo Energy & Environment.")
                 "1lb148s8rdx1phmx8ihncgb45iqxzracxznys7zyzs8qcf6hm5wq"))))
     (properties `((upstream-name . "SAPP")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=SAPP")
     (synopsis "Statistical Analysis of Point Processes")
     (description
@@ -52215,7 +52117,6 @@ Pearson).")
     (properties `((upstream-name . "SamplerCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=SamplerCompare")
     (synopsis "Framework for Comparing the Performance of MCMC Samplers")
     (description

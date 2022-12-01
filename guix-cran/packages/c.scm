@@ -1288,7 +1288,6 @@ before analysis.")
                 "1qxq1a8b5pnmlq6rpjzvcp32scn2qknafch3h7qjsy8499zzbxx8"))))
     (properties `((upstream-name . "CUSUMdesign")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=CUSUMdesign")
     (synopsis
      "Compute Decision Interval and Average Run Length for CUSUM Charts")
@@ -1780,6 +1779,28 @@ median, mode, variance, skewness and kurtosis.")
 constant) models.  Particularly useful (but not confined) to model genomic
 sequences of continuous measurements.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-cumprinc
+  (package
+    (name "r-cumprinc")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cumprinc" version))
+              (sha256
+               (base32
+                "153cjl6x6mm6dix77bv9614nrd7x7qimwkw96mgxwarfpf1172nn"))))
+    (properties `((upstream-name . "cumprinc")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cumprinc")
+    (synopsis "Functions Centered Around Microsoft Excel Cumprinc Function")
+    (description
+     "This package provides similar functionality to Microsoft Excel CUMPRINC function
+<https://support.microsoft.com/en-us/office/cumprinc-function-94a4516d-bd65-41a1-bc16-053a6af4c04d>.
+ Returns principal remaining at a given month, principal paid in a month, and
+accumulated principal paid at a given month based on original loan amount,
+monthly interest rate, and term of loan.")
+    (license license:gpl2+)))
 
 (define-public r-cump
   (package
@@ -4513,7 +4534,7 @@ MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
                              r-matrix
                              r-gplots
                              r-fsa))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=crqa")
     (synopsis
      "Recurrence Quantification Analysis for Categorical and Continuous Time-Series")
@@ -5391,6 +5412,53 @@ very flexible for adaptation to new models, escalation or stopping rules.")
 Normalization (CCMN) method described in Redestig et al. (2009) Analytical
 Chemistry <doi:10.1021/ac901143w> and other normalization algorithms.")
     (license license:gpl3+)))
+
+(define-public r-crmetrics
+  (package
+    (name "r-crmetrics")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CRMetrics" version))
+              (sha256
+               (base32
+                "0q0d0g1iblwgm21kdrcj06ish9aif223rj9ykh0j9lvafgigc77f"))))
+    (properties `((upstream-name . "CRMetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sparsematrixstats
+                             r-sccore
+                             r-scales
+                             r-r6
+                             r-matrix
+                             r-magrittr
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggpmisc
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://github.com/khodosevichlab/CRMetrics")
+    (synopsis "Cell Ranger Output Filtering and Metrics Visualization")
+    (description
+     "Sample and cell filtering as well as visualisation of output metrics from Cell
+Ranger by Grace X.Y. Zheng et al. (2017) <doi:10.1038/ncomms14049>.  CRMetrics
+allows for easy plotting of output metrics across multiple samples as well as
+comparative plots including statistical assessments of these.  CRMetrics allows
+for easy removal of ambient RNA using SoupX by Matthew D Young and Sam Behjati
+(2020) <doi:10.1093/gigascience/giaa151> or CellBender by Stephen J Fleming et
+al. (2022) <doi:10.1101/791699>.  Furthermore, it is possible to preprocess data
+using Pagoda2 by Nikolas Barkas et al. (2021)
+<https://github.com/kharchenkolab/pagoda2> or Seurat by Yuhan Hao et al. (2021)
+<doi:10.1016/j.cell.2021.04.048> followed by embedding of cells using Conos by
+Nikolas Barkas et al. (2019) <doi:10.1038/s41592-019-0466-z>.  Finally, doublets
+can be detected using scrublet by Samuel L. Wolock et al. (2019)
+<doi:10.1016/j.cels.2018.11.005> or DoubletDetection by Gayoso et al. (2020)
+<doi:10.5281/zenodo.2678041>.  In the end, cells are filtered based on user
+input for use in downstream applications.")
+    (license license:gpl3)))
 
 (define-public r-crm
   (package
@@ -11410,7 +11478,7 @@ revision).")
                              r-gsl
                              r-colorspace
                              r-adgoftest))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://copula.r-forge.r-project.org/")
     (synopsis "Multivariate Dependence with Copulas")
     (description
@@ -11702,7 +11770,6 @@ methods based on L2 distance from empirical copula function are also included.")
     (properties `((upstream-name . "copCAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-rcpparmadillo r-rcpp r-numderiv r-mcmcse))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=copCAR")
     (synopsis "Fitting the copCAR Regression Model for Discrete Areal Data")
     (description
@@ -11946,13 +12013,13 @@ Bioconductor.")
 (define-public r-cookies
   (package
     (name "r-cookies")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cookies" version))
               (sha256
                (base32
-                "1p7xf86qp9w50g401b12amfx609k349skvqrbzh3x0sq80k1miyx"))))
+                "14rz7wfv3pfgj7j6i11kawavz161k7kdpz0lzjyy756mbrd5cpky"))))
     (properties `((upstream-name . "cookies")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17686,7 +17753,6 @@ offers a formula syntax similar to lm().")
     (properties `((upstream-name . "cold")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-cubature))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=cold")
     (synopsis "Count Longitudinal Data")
     (description
@@ -18260,7 +18326,6 @@ and Renkewitz (2018, ISBN:978-3868943214).")
     (properties `((upstream-name . "coenoflex")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=coenoflex")
     (synopsis "Gradient-Based Coenospace Vegetation Simulator")
     (description
@@ -22500,31 +22565,6 @@ model.")
 update time keeping data.")
     (license license:gpl3)))
 
-(define-public r-clock
-  (package
-    (name "r-clock")
-    (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clock" version))
-              (sha256
-               (base32
-                "00hp7k24d599dzkzhhb6xky2pj6xaggdfwgviyb3i592v1gkh37q"))))
-    (properties `((upstream-name . "clock")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://clock.r-lib.org")
-    (synopsis "Date-Time Types and Tools")
-    (description
-     "This package provides a comprehensive library for date-time manipulations using
-a new family of orthogonal date-time classes (durations, time points,
-zoned-times, and calendars) that partition responsibilities so that the
-complexities of time zones are only considered when they are really needed.
-Capabilities include: date-time parsing, formatting, arithmetic, extraction and
-updating of components, and rounding.")
-    (license license:expat)))
-
 (define-public r-clmplus
   (package
     (name "r-clmplus")
@@ -22904,7 +22944,6 @@ of it to make your results publication ready as proposed by Jacobson et al.,
     (properties `((upstream-name . "clinfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=clinfun")
     (synopsis "Clinical Trial Design and Data Analysis Functions")
     (description
@@ -24815,13 +24854,13 @@ interval is proposed by Kabaila, P. and Giri, K. (2009)
 (define-public r-ciu
   (package
     (name "r-ciu")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ciu" version))
               (sha256
                (base32
-                "01fg5awbf35qparry0z3kl60kww8rbaqgi2b81vmbl77bls0my7l"))))
+                "0pqs8ivbybbrjar978bl05awgaks33nqfm7l9z68iv2sj4a9hv21"))))
     (properties `((upstream-name . "ciu")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2 r-crayon))
@@ -26171,7 +26210,6 @@ limited memory using the LaF package.")
     (properties `((upstream-name . "CHsharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-kernsmooth))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=CHsharp")
     (synopsis "Choi and Hall Style Data Sharpening")
     (description
@@ -26773,7 +26811,7 @@ and other tradeoffs).")
                 "0hckcvrl9hk3gin5v3jbb6wp40k4vhqdnwb2z34fmaksdngnag3y"))))
     (properties `((upstream-name . "CHNOSZ")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "http://www.chnosz.net/")
     (synopsis "Thermodynamic Calculations and Diagrams for Geochemistry")
     (description
@@ -29860,7 +29898,6 @@ objects.  Facilities for AWS terrain
     (properties `((upstream-name . "cepreader")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/")
     (synopsis "Read 'CEP' and Legacy 'CANOCO' Files")
     (description
@@ -31019,42 +31056,6 @@ also available.  Lastly, the package provides some useful functions for CDM
 simulation studies, such as random Q-matrix generation and detection of
 complete/identified Q-matrices.")
     (license license:gpl3)))
-
-(define-public r-cdmconnector
-  (package
-    (name "r-cdmconnector")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CDMConnector" version))
-              (sha256
-               (base32
-                "0872k9a2xm6y55qb17hjjsh7kygx0grfkf064i1f9cvmdyw9mw7a"))))
-    (properties `((upstream-name . "CDMConnector")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waldo
-                             r-tidyselect
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cli
-                             r-checkmate
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CDMConnector")
-    (synopsis "Connect to an OMOP Common Data Model")
-    (description
-     "This package provides tools for working with observational health data in the
-Observational Medical Outcomes Partnership (OMOP) Common Data Model format with
-a pipe friendly syntax.  Common data model database table references are stored
-in a single compound object along with metadata.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cdltools
   (package
@@ -33870,7 +33871,6 @@ to each of them.  This procedure was invented and implemented in the paper by
                 "1a5csycaddg7cmfn51sw520b9bbpp07a08hsi2f6lpzqiszhczj1"))))
     (properties `((upstream-name . "cat")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=cat")
     (synopsis
      "Analysis and Imputation of Categorical-Variable Datasets with Missing Values")
@@ -35065,13 +35065,13 @@ NE/N007352/1 and the TB Alliance.")
 (define-public r-carat
   (package
     (name "r-carat")
-    (version "2.0.2")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "carat" version))
               (sha256
                (base32
-                "0f6r4x5skjq7vcmwfhnrzrf69ry360y7wqrr5gsys8l5nv6qbjii"))))
+                "12b6n99m1zcqxqsa2dk36i6g9qwmd8lzr3mlvj5454n4bgvqb4h0"))))
     (properties `((upstream-name . "carat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-gridextra

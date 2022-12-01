@@ -1535,26 +1535,20 @@ classifications for each vote.")
 (define-public r-unusualprofile
   (package
     (name "r-unusualprofile")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unusualprofile" version))
               (sha256
                (base32
-                "0dasknh8hwbvc530d8i0xfizqxygrlz3w2bdnsgdd9sf84flqajl"))))
+                "0p429w51jb3cz3gkxdzn55pya0xxwilrg4z7hkw0i6jijpwvisia"))))
     (properties `((upstream-name . "unusualprofile")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-simstandard
-                             r-scales
                              r-rlang
-                             r-ragg
                              r-purrr
-                             r-patchwork
                              r-magrittr
-                             r-lifecycle
-                             r-lavaan
                              r-ggplot2
                              r-ggnormalviolin
                              r-dplyr))

@@ -622,7 +622,6 @@ confidence bands for the extremograms.")
     (properties `((upstream-name . "extremis")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-evd r-emplik))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=extremis")
     (synopsis "Statistics of Extremes")
     (description
@@ -3201,39 +3200,6 @@ stability or various evolutionary dynamics, for teaching and academic research
 is provided.")
     (license license:gpl2)))
 
-(define-public r-evolqg
-  (package
-    (name "r-evolqg")
-    (version "0.2-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "evolqg" version))
-              (sha256
-               (base32
-                "1y1pq2hdilqkj6hk02km9aaaynz1calcw00r5k1rxlc4wfq1wx70"))))
-    (properties `((upstream-name . "evolqg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plyr
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-expm
-                             r-coda
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=evolqg")
-    (synopsis "Tools for Evolutionary Quantitative Genetics")
-    (description
-     "This package provides functions for covariance matrix comparisons, estimation of
-repeatabilities in measurements and matrices, and general evolutionary
-quantitative genetics tools.")
-    (license license:expat)))
-
 (define-public r-evobir
   (package
     (name "r-evobir")
@@ -5442,13 +5408,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "espadon" version))
               (sha256
                (base32
-                "0blawgnw2zg3pyrzzfsf5iriqml0z5fhcws2pnah2b3pzl336q5w"))))
+                "06lri62bpv4hspvwwxq5r1qypj63jw9kshz4wplmywazf8bpif61"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -7327,13 +7293,13 @@ parametric simulations and analysis.")
 (define-public r-epitweetr
   (package
     (name "r-epitweetr")
-    (version "2.0.3")
+    (version "2.2.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epitweetr" version))
               (sha256
                (base32
-                "0wxzhhx7l0w5g6zihglxhgzibj69pj929zsh54zp5qg1jr00znyj"))))
+                "0vv4y1c8nfcdv2hmv6vvi5jh6ykrbvna2p2gwpcl9q4j7b4wp9jc"))))
     (properties `((upstream-name . "epitweetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -7349,11 +7315,14 @@ parametric simulations and analysis.")
                              r-rnaturalearthdata
                              r-rmarkdown
                              r-rlang
+                             r-rgdal
                              r-readxl
+                             r-processx
                              r-plyr
                              r-plotly
                              r-openxlsx
                              r-magrittr
+                             r-lifecycle
                              r-knitr
                              r-keyring
                              r-jsonlite
@@ -7371,13 +7340,15 @@ parametric simulations and analysis.")
                              r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EU-ECDC/epitweetr")
-    (synopsis "Early Detection of Public Health Threats from Twitter Data")
+    (synopsis "Early Detection of Public Health Threats from 'Twitter' Data")
     (description
      "It allows you to automatically monitor trends of tweets by time, place and topic
 aiming at detecting public health threats early through the detection of signals
 (e.g. an unusual increase in the number of tweets).  It was designed to focus on
 infectious diseases, and it can be extended to all hazards or other fields of
-study by modifying the topics and keywords.")
+study by modifying the topics and keywords.  More information is available in
+the epitweetr peer-review publication
+(<https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2022.27.39.2200177>).")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-epitrix
@@ -11085,13 +11056,13 @@ package.")
 (define-public r-emdi
   (package
     (name "r-emdi")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emdi" version))
               (sha256
                (base32
-                "072izm7rs728zhwa3zf30kklfy3q8xldhw62bc274dwd7axms5yh"))))
+                "0s190p6zhsj2yc1xy1px5sk8aqn6q8b26g7zsnpa9rvih9h2667r"))))
     (properties `((upstream-name . "emdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -12607,13 +12578,13 @@ the one-sided/two-sided EL tests.")
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eks" version))
               (sha256
                (base32
-                "0vl5q4n3jk4zx8wgq5cx6x3yrr8ivbm0ha2z0rsicf7c6ky9pmvj"))))
+                "101dq01ngixaab7zj09bcy7jyaa27qf9rb3jsz03j1mrapzipnlv"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -13384,7 +13355,7 @@ Error (NMSE).")
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "http://ehar.se/r/eha/")
     (synopsis "Event History Analysis")
     (description
@@ -16545,7 +16516,6 @@ Computation.")
     (properties `((upstream-name . "ecolMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rootsolve r-diagram r-desolve))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ecolMod")
     (synopsis
      "\"A Practical Guide to Ecological Modelling - Using R as a Simulation Platform\"")
@@ -17274,7 +17244,6 @@ to create, manipulate, plot, and analyze those and similar data sets.")
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-model
                              r-spatstat-geom r-spatstat-explore r-spatstat))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ecespa")
     (synopsis "Functions for Spatial Point Pattern Analysis")
     (description
@@ -18166,13 +18135,13 @@ output SVG elements into a SVG file.")
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.5.2")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easystats" version))
               (sha256
                (base32
-                "0yyvcla46yvbaa0ss2adfz5arxw6pw1if2bjf2lg9k1p6knhvs64"))))
+                "09a2gshg0h01w79g3zq66v5h0vbkrz9pgj3dijmccix28bmmqar3"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-see
@@ -18901,7 +18870,6 @@ tidal catalogs.")
     (properties `((upstream-name . "earth")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos r-plotmo r-formula))
-    (native-inputs (list gfortran))
     (home-page "http://www.milbo.users.sonic.net/earth/")
     (synopsis "Multivariate Adaptive Regression Splines")
     (description

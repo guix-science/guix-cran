@@ -597,7 +597,7 @@ burden of recompiling rxode2'.")
                              r-checkmate
                              r-bh
                              r-backports))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://nlmixr2.github.io/rxode2/")
     (synopsis "Facilities for Simulating from ODE-Based Models")
     (description
@@ -2515,7 +2515,6 @@ The Things! by Wu et al. (2017), available at <arXiv:1709.03856>.")
                              r-numderiv
                              r-ks
                              r-chron))
-    (native-inputs (list gfortran))
     (home-page "http://www.unstarched.net")
     (synopsis "Univariate GARCH Models")
     (description
@@ -3209,7 +3208,6 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-gstat))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rtop")
     (synopsis "Interpolation of Data with Variable Spatial Support")
     (description
@@ -3220,18 +3218,23 @@ runoff related data or data from administrative units.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtoot" version))
               (sha256
                (base32
-                "02amyj90gb82ndvpxkir10ak54lq29mn6y30l7xnbhh0wyxss9y4"))))
+                "1ni9w17balj45p4h83imny4fcjbswspd5h8ii5vlk788jl4qbhmb"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-httr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-clipr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rtoot")
+    (home-page "https://schochastics.github.io/rtoot/")
     (synopsis "Collecting and Analyzing Mastodon Data")
     (description
      "An implementation of calls designed to collect and organize Mastodon data via
@@ -7806,7 +7809,6 @@ errors, e.g., clustered errors, or doubly-clustered errors.")
                 "1kdyw0v1m3ajf88gzs70p6l6pic4g46ccwqxi9iznimayby6ygjb"))))
     (properties `((upstream-name . "RRF")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://sites.google.com/site/houtaodeng/rrf")
     (synopsis "Regularized Random Forest")
     (description
@@ -8045,7 +8047,6 @@ Generator\".")
     (properties `((upstream-name . "rrcovNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-norm r-lattice r-cluster))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rrcovNA")
     (synopsis
      "Scalable Robust Estimators with High Breakdown Point for Incomplete Data")
@@ -8463,7 +8464,6 @@ investigation.")
                              r-hrqglas
                              r-hqreg
                              r-data-table))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rqPen")
     (synopsis "Penalized Quantile Regression")
     (description
@@ -11712,7 +11712,7 @@ different colour metrics for the conversion.")
     (properties `((upstream-name . "rollRegres")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/boennecd/rollRegres")
     (synopsis "Fast Rolling and Expanding Window Linear Regression")
     (description
@@ -13693,7 +13693,6 @@ Copas-like selection model of Ning et al. (2017)
     (properties `((upstream-name . "robustarima")))
     (build-system r-build-system)
     (propagated-inputs (list r-splustimeseries r-splustimedate))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/spkaluzny/robustarima")
     (synopsis "Robust ARIMA Modeling")
     (description
@@ -13742,7 +13741,6 @@ proposed by Tiku(1967, 1968) <doi:10.2307/2333859>,
     (properties `((upstream-name . "RobustAFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-robustbase))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RobustAFT")
     (synopsis
      "Truncated Maximum Likelihood Fit and Robust Accelerated Failure Time Regression for Gaussian and Log-Weibull Case")
@@ -13883,7 +13881,6 @@ package extends the survey <https://CRAN.R-project.org/package=survey> package."
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RobStatTM")
     (synopsis "Robust Statistics: Theory and Methods")
     (description
@@ -14594,24 +14591,25 @@ Beyaztas, U., and Shang, H. L. (2022) <arXiv:2203.05065>.")
 (define-public r-robfitcongraph
   (package
     (name "r-robfitcongraph")
-    (version "0.1.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robFitConGraph" version))
               (sha256
                (base32
-                "092nc0xnjs2zxd9ij0dl1xggb8mwl8nly284yjhhygmwlwsvhzxm"))))
+                "0w5x4ndv5r8v7ji3dhmch0di4krphxrclyidfg5b3qbmn1hlhlih"))))
     (properties `((upstream-name . "robFitConGraph")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-mvtnorm r-mass))
-    (home-page "https://cran.r-project.org/package=robFitConGraph")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://arxiv.org/abs/2204.04291")
     (synopsis "Graph-Constrained Robust Covariance Estimation")
     (description
-     "This package contains a single function named robFitConGraph() which includes
-two algorithms for robust estimation of scatter matrices subject to
-zero-constraints in its inverse.  The methodology is described in Vogel & Tyler
-(2014) <doi:10.1093/biomet/asu041>.  See robFitConGraph() function documentation
-for further details.")
+     "This package contains a function by the same name, which provides two types of
+robust t-M-estimators of scatter subject to zero-constraints in the inverse.
+The methodology is described in Vogel & Tyler (2014)
+<doi:10.1093/biomet/asu041>.  See the robFitConGraph function documentation for
+further details.  A tutorial including background information is given by Vogel,
+Watt & Wiedemann (2022) <arXiv:2204.04291>.")
     (license license:gpl3)))
 
 (define-public r-robfilter
@@ -14717,7 +14715,6 @@ and Croux (2016) <DOI:10.13140/RG.2.2.11791.18080>.")
                 "1x0hzgq7jwl83wwmy581ia8009v0j95aksnr5ywpflnqm76rj6v2"))))
     (properties `((upstream-name . "robeth")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=robeth")
     (synopsis "R Functions for Robust Statistics")
     (description
@@ -16199,7 +16196,6 @@ datasets with outside programs.")
                 "1yd5gkg4jg3rvqrfl8c5r07lcr37n1p9h1a7b6s45iswd77dg7w1"))))
     (properties `((upstream-name . "rmutil")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://www.commanster.eu/rcode.html")
     (synopsis
      "Utilities for Nonlinear Regression and Repeated Measurements Models")
@@ -16223,7 +16219,6 @@ packages such as gnlm', stable', growth', repeated', and event (available at
     (properties `((upstream-name . "rmumps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
     (home-page "http://www.mumps-solver.org/")
     (synopsis "Wrapper for MUMPS Library")
     (description
@@ -20160,13 +20155,13 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2022.11.21")
+    (version "2022.11.28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riskRegression" version))
               (sha256
                (base32
-                "0lxzalif7z41b6vf3z2zcxckjs3awbryhr1cw961zmjnh8mihiyp"))))
+                "1qj8rpqz8i6c4bc3wcvlp28icrr2yaw38azp7d0h495k9klx87b0"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -22108,13 +22103,13 @@ applications; Tools for building customized graphical user interfaces.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhino" version))
               (sha256
                (base32
-                "1zm62l3p1lmn0priig1d4295aw87sqlymvid428azxlhpn723pkc"))))
+                "1qrm9apiy51khan8v63i60kwmd2axp8qg04mqc5cqinbvdd3qps5"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -24030,13 +24025,13 @@ division operator \"/\".")
 (define-public r-rforestry
   (package
     (name "r-rforestry")
-    (version "0.9.0.116")
+    (version "0.9.0.144")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rforestry" version))
               (sha256
                (base32
-                "0px9w40d5qd5br1ypbdfdwmhfj9mxdn915ijg077bs3h52fv00z0"))))
+                "1hgrphvjkl9794fmbpismh30z4gw5lfcx8vh2f1cljp4wg7h94ca"))))
     (properties `((upstream-name . "Rforestry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -24188,13 +24183,13 @@ and source type maps are included for statistical analysis of moment tensors.")
 (define-public r-rfmtool
   (package
     (name "r-rfmtool")
-    (version "4.1.8")
+    (version "4.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rfmtool" version))
               (sha256
                (base32
-                "1p4b9wgcdvlhfcf1rq15wcx2qjn2hgqp6gv7wx40dziqa8csrlpk"))))
+                "1rkzczif7v8dqmivyfc4wblymf482ddjllabzz14bswv7mfnly5k"))))
     (properties `((upstream-name . "Rfmtool")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Rfmtool")
@@ -24387,7 +24382,6 @@ the document.")
                 "1b3pza2xdpifvrcqbdp5r2wy82ws1844bnpna01hqj65xbw2iix8"))))
     (properties `((upstream-name . "Rfit")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=Rfit")
     (synopsis "Rank-Based Estimation for Linear Models")
     (description
@@ -24904,7 +24898,6 @@ crate extendr is used to do all the heavy lifting.")
     (properties `((upstream-name . "rexpokit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
     (home-page "http://phylo.wikidot.com/rexpokit")
     (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
     (description
@@ -27442,7 +27435,6 @@ API. You can request a code and get detailed information at the following page:
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
-    (native-inputs (list gfortran))
     (home-page "https://www.commanster.eu/rcode.html")
     (synopsis "Non-Normal Repeated Measurements Models")
     (description
@@ -32448,7 +32440,6 @@ not related to the FoxPro or CANdb DBC file formats.")
     (properties `((upstream-name . "ReacTran")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rootsolve r-desolve))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ReacTran")
     (synopsis "Reactive Transport Modelling in 1d, 2d and 3d")
     (description
@@ -32987,7 +32978,6 @@ conduct exploratory data analysis (RD plots).")
     (properties `((upstream-name . "rDppDiversity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rDppDiversity")
     (synopsis "Subset Searching Algorithm Using DPP Greedy MAP")
     (description
@@ -33796,13 +33786,13 @@ DDI Codebook 2.5 with flexible API creation.")
 (define-public r-rddensity
   (package
     (name "r-rddensity")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rddensity" version))
               (sha256
                (base32
-                "00xmdy3885j3j5sh3civlgggscr946gh7ibd6namqhbzhsnpwrd3"))))
+                "160sxsxqq20s5k9c8vccws17v73ninlpjr9wws9y47204ihxx27r"))))
     (properties `((upstream-name . "rddensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpdensity r-ggplot2))
@@ -39268,7 +39258,7 @@ reported in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
                 "1vndnip3rpvlgmnmi91r23nyr59v6dmm8m5i2yxi7pim1l35323r"))))
     (properties `((upstream-name . "rBDAT")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/vochr/rbdat")
     (synopsis "Implementation of BDAT Tree Taper Fortran Functions")
     (description
@@ -40570,6 +40560,31 @@ Internally, the package plots each individual page as a PNG, and then combines
 them in one PDF file.")
     (license license:expat)))
 
+(define-public r-rasterlist
+  (package
+    (name "r-rasterlist")
+    (version "0.5.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rasterList" version))
+              (sha256
+               (base32
+                "1c2l3p1353nfpib5xcsyyipgcvidj1kl8q9p076hs7j7341xgrfg"))))
+    (properties `((upstream-name . "rasterList")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-raster))
+    (home-page "https://cran.r-project.org/package=rasterList")
+    (synopsis "Raster Where Cells are Generic Objects")
+    (description
+     "This package provides a S4 class has been created such that complex operations
+can be executed on each cells of a raster map.  The raster of objects contains
+the traditional raster map with the addition of a list of generic objects: one
+object for each raster cells.  It allows to write few lines of R code for
+complex map algebra.  Two environmental applications about frequency analysis of
+raster map of precipitation and creation of a raster map of soil water retention
+curves have been presented.")
+    (license license:gpl3+)))
+
 (define-public r-rasterkernelestimates
   (package
     (name "r-rasterkernelestimates")
@@ -41353,6 +41368,28 @@ expensive.  Here, we exploit kd-trees as efficient nearest neighbor search
 algorithm to dramatically reduce the effective number of polygons being
 searched.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rapidphylo
+  (package
+    (name "r-rapidphylo")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rapidphylo" version))
+              (sha256
+               (base32
+                "1mhfhvpm09r0jw6dvjszz139fw4m2fb3509xbw5dwpxnhjc2350n"))))
+    (properties `((upstream-name . "rapidphylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-phangorn r-ape))
+    (home-page "https://github.com/ArindamRoyChoudhury/rapidphylo")
+    (synopsis
+     "Rapidly Estimate Phylogeny from Large Allele Frequency Data Using Root Distances Method")
+    (description
+     "Rapidly estimates tree-topology from large allele frequency data using Root
+Distances Method, under a Brownian Motion Model.  See Jing Peng et al. (2021)
+<doi:10.1016/j.ympev.2021.107142>.")
+    (license license:agpl3)))
 
 (define-public r-rapidopgs
   (package
@@ -42385,7 +42422,6 @@ Kogalur and Eiran Z. Gorodeski and Andy J. Minn and Michael S. Lauer (2010)
                 "0bjfz3bla6pr7wq4mqqcd4gmxqdx32gci4f71arfski31yx8ihlc"))))
     (properties `((upstream-name . "RandomFieldsUtils")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RandomFieldsUtils")
     (synopsis
      "Utilities for the Simulation and Analysis of Random Fields and Genetic Data")
@@ -42706,7 +42742,6 @@ models.")
                 "0836fiycrsxiwdw7srz1rvsf639iqh2rk89gavx4kvn0i0sc8d2x"))))
     (properties `((upstream-name . "RAMP")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RAMP")
     (synopsis "Regularized Generalized Linear Models with Interaction Effects")
     (description

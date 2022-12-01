@@ -2417,43 +2417,50 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PsychWordVec" version))
               (sha256
                (base32
-                "00wgkwz9jdqjrq4y8786fggj1l9lrca1hl6b3dijwzq4s6dqmv2p"))))
+                "0afl7n8zzkylm51nm5hhjrahk8h96jvxz6hysyc2bmhpkrh9bp94"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
                              r-vroom
                              r-text2vec
+                             r-text
                              r-stringr
                              r-rtsne
                              r-rsparse
                              r-rgl
+                             r-reticulate
                              r-purrr
+                             r-psych
                              r-ggrepel
                              r-ggplot2
                              r-fasttextr
                              r-dplyr
                              r-data-table
+                             r-corrplot
                              r-cli
                              r-brucer))
     (home-page "https://psychbruce.github.io/PsychWordVec/")
     (synopsis "Word Embedding Research Framework for Psychological Science")
     (description
      "An integrated toolbox of word embedding research that provides: (1) a collection
-of pre-trained word vectors in the .RData compressed format
-<https://psychbruce.github.io/WordVector_RData.pdf>; (2) a variety of functions
+of pre-trained static word vectors in the .RData compressed format
+<https://psychbruce.github.io/WordVector_RData.pdf>; (2) a series of functions
 to process, analyze, and visualize word vectors; (3) a range of tests to examine
 conceptual associations, including the Word Embedding Association Test
 <doi:10.1126/science.aal4230> and the Relative Norm Distance
 <doi:10.1073/pnas.1720347115>, with permutation test of significance; (4) a set
-of training methods to locally train word vectors from text corpora, including
-Word2Vec <arXiv:1301.3781>, GloVe <doi:10.3115/v1/D14-1162>, and FastText
-<arXiv:1607.04606>.")
+of training methods to locally train (static) word vectors from text corpora,
+including Word2Vec <arXiv:1301.3781>, GloVe <doi:10.3115/v1/D14-1162>, and
+FastText <arXiv:1607.04606>; (5) a group of functions to download pre-trained
+language models (e.g., GPT', BERT'), extract contextualized (dynamic) word
+vectors (based on the R package text'), and perform language analysis tasks
+(e.g., fill in the blank masks).")
     (license license:gpl3)))
 
 (define-public r-psychtools
@@ -3305,7 +3312,6 @@ models with penalized basis splines (P-Splines).  See
                 "0h7y9l64knx291ms5mlc65dl3ljzgmrfzdqk1rd7iy8x7wcvymds"))))
     (properties `((upstream-name . "pspline")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=pspline")
     (synopsis "Penalized Smoothing Splines")
     (description "Smoothing splines with penalties on order m derivatives.")
@@ -5925,13 +5931,13 @@ and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "0p83gvm7xhnwfmrn2fr31rz84sllws92rpmhjvxfcc6ylsp0hj0n"))))
+                "05dzsxf6kbx3jkw1f574brjlm1j4h1r72w8zgb2w182756qzbk3c"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -6676,7 +6682,7 @@ for a description of the methods.")
     (properties `((upstream-name . "probout")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-mass r-fnn))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis
      "Unsupervised Multivariate Outlier Probabilities for Large Datasets")
@@ -10023,7 +10029,6 @@ Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry (pp.
                 "0qpd5a35x7fbdjwfr0cnx00wf0hwzlah6z3giajgcv0d7wzrvczn"))))
     (properties `((upstream-name . "ppmSuite")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ppmSuite")
     (synopsis
      "Collection of Models that Employ a Product Partition Distribution as a Prior on Partitions")
@@ -10413,7 +10418,6 @@ Distribution.  The PPCC test is performed with a fast Monte-Carlo simulation.")
                 "1g36al9w1rxyhfzbvpw9siqq57h2xl0zr94wysz8i0jzqkkqkrvf"))))
     (properties `((upstream-name . "PP3")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "http://www.stats.bris.ac.uk/~guy")
     (synopsis "Three-Dimensional Exploratory Projection Pursuit")
     (description
@@ -12374,7 +12378,6 @@ version 2.0 described in Kamvar, Brooks, and GrÃ¼nwald (2015)
     (properties `((upstream-name . "popPCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=popPCR")
     (synopsis
      "Classify Digital PCR Droplets by Fitting Fluorescence Populations")
@@ -14316,7 +14319,6 @@ and Hong (2022) <arXiv:2201.04237>.")
     (properties `((upstream-name . "poissonMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-robcbi r-mass r-checkmate))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=poissonMT")
     (synopsis "Robust M-Estimators Based on Transformations for Poisson Model")
     (description
@@ -16165,13 +16167,13 @@ available.")
 (define-public r-plsrcox
   (package
     (name "r-plsrcox")
-    (version "1.7.6")
+    (version "1.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plsRcox" version))
               (sha256
                (base32
-                "0dg4vpy15z4x61qyqc9nvqa1788g6phlrzjrk1xhns5x2h8cicma"))))
+                "1fkbynjlwi070yshnqcmw2f331yzr61f1mvm5dbw3iwg9ldhcbwr"))))
     (properties `((upstream-name . "plsRcox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -16333,13 +16335,13 @@ of the sparse PLS.")
 (define-public r-plsdof
   (package
     (name "r-plsdof")
-    (version "0.3-0")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plsdof" version))
               (sha256
                (base32
-                "1axi8bailiq9mjs0dvasy895b7c62114hdsaygxwz4zymfa6a3ny"))))
+                "1bqk98f9zyi4hvna1sfx4fwiivndlwanjaphlqa03bg6bghcj60p"))))
     (properties `((upstream-name . "plsdof")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -17126,7 +17128,6 @@ prediction model with less overfitting and robust to noise.")
     (properties `((upstream-name . "PLordprob")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=PLordprob")
     (synopsis "Multivariate Ordered Probit Model via Pairwise Likelihood")
     (description
@@ -22235,16 +22236,17 @@ quantile estimates, mean estimates, or any statistical function of interest.")
 (define-public r-pheindicatormethods
   (package
     (name "r-pheindicatormethods")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PHEindicatormethods" version))
               (sha256
                (base32
-                "0w3qnlvh7mpzninmhfcifygh2mlwmr5hzfkfnigvsxr8jfnn2s25"))))
+                "1qlb0qd4iljgjkpj0yj63p588k4qw8af8civ3hvf32iq8pmnfrkr"))))
     (properties `((upstream-name . "PHEindicatormethods")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
@@ -25615,7 +25617,6 @@ following the lumpability criteria of Kemeny and Snell (1976), ISBN:0387901922."
                              r-psqn
                              r-bh
                              r-alabama))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/pedmod")
     (synopsis "Pedigree Models")
     (description
@@ -27332,7 +27333,7 @@ classes.  For more information, see Wang and Liu (2021)
     (properties `((upstream-name . "pcLasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://arxiv.org/abs/1810.04651")
     (synopsis "Principal Components Lasso")
     (description
@@ -27797,13 +27798,13 @@ variables.")
 (define-public r-pcamatchr
   (package
     (name "r-pcamatchr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCAmatchR" version))
               (sha256
                (base32
-                "1dpilm3f6jylm2zggdpdz1gx0z6i56p8rxj744d9lqs1lp6nf37y"))))
+                "0ycplivjiz2w3wiqnqga0ywwdbd9mxqzm92k3bjva8009jxxijax"))))
     (properties `((upstream-name . "PCAmatchR")))
     (build-system r-build-system)
     (home-page "https://github.com/machiela-lab/PCAmatchR")
@@ -28435,7 +28436,6 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-rlecuyer r-pbdmpi))
-    (native-inputs (list gfortran))
     (home-page "https://pbdr.org/")
     (synopsis "Programming with Big Data -- Scalable Linear Algebra Packages")
     (description

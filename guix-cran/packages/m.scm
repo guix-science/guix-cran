@@ -870,7 +870,7 @@ help files.")
                              r-mass
                              r-dfoptim
                              r-bb))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mvord")
     (synopsis "Multivariate Ordinal Regression Models")
     (description
@@ -1481,7 +1481,6 @@ first-order or a fully exponential Laplace approximation.")
                 "1inh9hs5942k37jcl84ljx7fsvma73apmmjjq6jlsdvsh4xn4cag"))))
     (properties `((upstream-name . "mvgb")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://github.com/swihart/mvgb")
     (synopsis
      "Multivariate Probabilities of Scale Mixtures of Multivariate Normal Distributions via the Genz and Bretz (2002) QRSVN Method")
@@ -2189,13 +2188,13 @@ multivariate cumulative model and the multivariate adjacent categories model.")
 (define-public r-multnonparam
   (package
     (name "r-multnonparam")
-    (version "1.3.7")
+    (version "1.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultNonParam" version))
               (sha256
                (base32
-                "10a4nsgwhg2sz9byxhng9clgrqp2zqawcrhzwb8jllw38y2mg1wp"))))
+                "0j6ma63yq4nj22vqlpbid24cdva8pj2d03ym9irwx5mp70f5zk55"))))
     (properties `((upstream-name . "MultNonParam")))
     (build-system r-build-system)
     (propagated-inputs (list r-icsnp))
@@ -3905,7 +3904,6 @@ transformations.")
     (properties `((upstream-name . "MultiLCIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-limsolve))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=MultiLCIRT")
     (synopsis "Multidimensional Latent Class Item Response Theory Models")
     (description
@@ -6984,7 +6982,7 @@ delete this entity in the less sensible mode and combine both matrices.")
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MSCMT")
     (synopsis "Multivariate Synthetic Control Method Using Time Series")
     (description
@@ -7087,13 +7085,13 @@ and
 (define-public r-mschart
   (package
     (name "r-mschart")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mschart" version))
               (sha256
                (base32
-                "1ryl221hl0ydpmfanhm3hk063kxvvzqfgwwz3ra37dgy1yamn1kq"))))
+                "0znylmkzqsk9qw640bhqnn4np748s9q1zcwgyavb3b808nfcv6ri"))))
     (properties `((upstream-name . "mschart")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8018,7 +8016,6 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
                              r-ggplot2
                              r-geometry
                              r-abind))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/PSegaert/mrfDepth")
     (synopsis
      "Depth Measures in Multivariate, Regression and Functional Settings")
@@ -9253,7 +9250,7 @@ several convenience functions to aid in data processing.")
                              r-foreach
                              r-doparallel
                              r-bst))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/zhuwang46/mpath")
     (synopsis "Regularized Linear Models")
     (description
@@ -10758,7 +10755,6 @@ nonparametric ordinal regression model described in Saarela, Rohrbeck & Arjas
     (properties `((upstream-name . "MonoPoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=MonoPoly")
     (synopsis "Functions to Fit Monotone Polynomials")
     (description
@@ -10807,7 +10803,6 @@ to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C. (2016)
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
-    (native-inputs (list gfortran))
     (home-page "https://bobby.gramacy.com/r_packages/monomvn/")
     (synopsis
      "Estimation for MVN and Student-t Data with Monotone Missingness")
@@ -11381,7 +11376,7 @@ and simulation.  See McClintock and Michelot (2018)
     (properties `((upstream-name . "momentfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=momentfit")
     (synopsis "Methods of Moments")
     (description
@@ -13055,28 +13050,6 @@ outcomes.  These are generic tools, but we also include specific examples for
 many common classifiers.")
     (license license:asl2.0)))
 
-(define-public r-modelenv
-  (package
-    (name "r-modelenv")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modelenv" version))
-              (sha256
-               (base32
-                "18wgl3hslvwq4z8ab91514p5nhzxzb727s61ccawvx3ixfjfrid4"))))
-    (properties `((upstream-name . "modelenv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-tibble r-rlang r-glue))
-    (home-page "https://github.com/tidymodels/modelenv")
-    (synopsis "Provide Tools to Register Models for Use in 'tidymodels'")
-    (description
-     "An developer focused, low dependency package in tidymodels that provides
-functions to register how models are to be used.  Functions to register models
-are complimented with accessor functions to retrieve registered model
-information to aid in model fitting and error handling.")
-    (license license:expat)))
-
 (define-public r-modeldown
   (package
     (name "r-modeldown")
@@ -14641,7 +14614,6 @@ package mvtnorm', and mmcm.resamp() gives P-value by using a permutation method.
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn
                              r-alabama))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/mmcif")
     (synopsis "Mixed Multivariate Cumulative Incidence Functions")
     (description
@@ -16118,7 +16090,6 @@ learning algorithms.  See also Curtin et al. (2018) <doi:10.21105/joss.00726>.")
     (properties `((upstream-name . "mlogitBMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik r-bma r-abind))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mlogitBMA")
     (synopsis "Bayesian Model Averaging for Multinomial Logit Models")
     (description
@@ -16181,68 +16152,6 @@ Liang and Zeger (1986) <doi:10.1093/biomet/73.1.13> and Bell and McCaffrey
 <https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2002002/article/9058-eng.pdf?st=NxMjN1YZ>
 is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
-    (license license:gpl2)))
-
-(define-public r-mlmts
-  (package
-    (name "r-mlmts")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mlmts" version))
-              (sha256
-               (base32
-                "1zh14sw4l552bl16v6v2f42nnsm1z5iknlzwy3bag5yxiwh8186z"))))
-    (properties `((upstream-name . "mlmts")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waveslim
-                             r-tsfeatures
-                             r-tserieschaos
-                             r-tseries
-                             r-tsdist
-                             r-tsclust
-                             r-tsa
-                             r-rfast
-                             r-rdpack
-                             r-ranger
-                             r-randomforest
-                             r-quantspec
-                             r-psych
-                             r-pspline
-                             r-pracma
-                             r-multiwave
-                             r-mts
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-ggplot2
-                             r-geigen
-                             r-freqdom
-                             r-forecast
-                             r-fda-usc
-                             r-evolqg
-                             r-e1071
-                             r-dtw
-                             r-desctools
-                             r-complexplus
-                             r-clusterr
-                             r-caret
-                             r-aid))
-    (home-page "https://cran.r-project.org/package=mlmts")
-    (synopsis "Machine Learning Algorithms for Multivariate Time Series")
-    (description
-     "An implementation of several machine learning algorithms for multivariate time
-series.  The package includes functions allowing the execution of clustering,
-classification or outlier detection methods, among others.  It also incorporates
-a collection of multivariate time series datasets which can be used to analyse
-the performance of new proposed algorithms.  Some of these datasets are stored
-in GitHub data packages ueadata1 to ueadata8'.  To access these data packages,
-run install.packages(c('ueadata1', ueadata2', ueadata3', ueadata4', ueadata5',
-ueadata6', ueadata7', ueadata8'), repos='<https://anloor7.github.io/drat/>')'.
-The installation takes a couple of minutes but we strongly encourage the users
-to do it if they want to have available all datasets of mlmts.  Practitioners
-from a broad variety of fields could benefit from the general framework provided
-by mlmts'.")
     (license license:gpl2)))
 
 (define-public r-mlmtools
@@ -16361,7 +16270,6 @@ marginal predictive likelihood (MPL) and the mean squared prediction error
                 "1m5ziiqs3ll1xjm1yf7x4sdc910jypn3kjnbadf95xxkvqmfrsqq"))))
     (properties `((upstream-name . "mlmmm")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "http://www.albany.edu/~ry491374")
     (synopsis
      "ML estimation under multivariate linear mixed models with missing values")
@@ -18375,7 +18283,6 @@ Effect Models using Markov Chains Monte Carlo for continuous and discrete data."
     (properties `((upstream-name . "mixexp")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-daewr))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mixexp")
     (synopsis "Design and Analysis of Mixture Experiments")
     (description
@@ -18882,7 +18789,6 @@ mixture of multivariate generalized linear mixed models.")
                 "1q565ymc1lh24lv0v70qwqb0p0nagg2jcz2nf7dz964bsnp20wjf"))))
     (properties `((upstream-name . "mix")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mix")
     (synopsis
      "Estimation/Multiple Imputation for Mixed Categorical and Continuous Data")
@@ -21482,13 +21388,13 @@ Schuermann, T. (2008) <doi:10.1002/9780470061596.risk0409>.  2.  Perederiy, V.
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "0.12.1")
+    (version "0.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "migraph" version))
               (sha256
                (base32
-                "1p81k4ifch10i60xz2b5rm360n2bzaj7dysw21ada93whgszj2f8"))))
+                "0xf9yr7mlw9xkb8jacchyf8j7670xhvzbgakvxc6bclyys9gp7rh"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21517,9 +21423,9 @@ functions operate with matrices, edge lists, and igraph', network', and
 tidygraph objects, and on one-mode, two-mode (bipartite), and sometimes
 three-mode networks.  It includes functions for measuring centrality,
 centralization, cohesion, closure, and constraint, as well as for network
-block-modelling and regression.  The package is released as a complement to
-Multimodal Political Networks (2021, ISBN:9781108985000), and includes various
-datasets used in the book in addition to other network data.")
+block-modelling, regression, and diffusion models.  The package is released as a
+complement to Multimodal Political Networks (2021, ISBN:9781108985000), and
+includes various datasets used in the book in addition to other network data.")
     (license license:expat)))
 
 (define-public r-migest
@@ -23118,7 +23024,7 @@ proteomics.")
                              r-margins
                              r-generics
                              r-formula))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://www.R-project.org")
     (synopsis "Multiple Hurdle Tobit Models")
     (description
@@ -24546,7 +24452,7 @@ is possible with or without available data from a pilot study.")
                              r-numderiv
                              r-mvtnorm
                              r-lava))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://kkholst.github.io/mets/")
     (synopsis "Analysis of Multivariate Event Times")
     (description
@@ -27522,6 +27428,36 @@ is useful for describing and analysing temporal information, whether historical
 or recent, where date precision may vary.")
     (license license:expat)))
 
+(define-public r-messy-cats
+  (package
+    (name "r-messy-cats")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "messy.cats" version))
+              (sha256
+               (base32
+                "0znjp1wcrkpgm778z5iqw91bnk8vv0x04dpng8pcmh0igsmc3j68"))))
+    (properties `((upstream-name . "messy.cats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-varhandle
+                             r-stringr
+                             r-stringdist
+                             r-rapportools
+                             r-gt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=messy.cats")
+    (synopsis "Employs String Distance Tools to Help Clean Categorical Data")
+    (description
+     "Matching with string distance has never been easier! messy.cats contains various
+functions that employ string distance tools in order to make data management
+easier for users working with categorical data.  Categorical data, especially
+user inputted categorical data that often tends to be plagued by typos, can be
+difficult to work with.  messy.cats aims to provide functions that make cleaning
+categorical data simple and easy.")
+    (license license:expat)))
+
 (define-public r-messaging
   (package
     (name "r-messaging")
@@ -27637,33 +27573,6 @@ as described in Peruzzi, Banerjee, Finley (2020)
 (2021) <arXiv:2101.03579>, Peruzzi and Dunson (2022) <arXiv:2201.10080>.  Funded
 by ERC grant 856506 and NIH grant R01ES028804.")
     (license license:gpl3+)))
-
-(define-public r-meshagreement
-  (package
-    (name "r-meshagreement")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MeshAgreement" version))
-              (sha256
-               (base32
-                "1vvmdf9m91qnx1xv4k00gzyv48q8flgj29g0awrsb07wfp1460zi"))))
-    (properties `((upstream-name . "MeshAgreement")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvcg r-cgalmeshes))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dwoll/MeshAgreement/")
-    (synopsis "Agreement Measures for 3D Meshes")
-    (description
-     "Calculates distance-based and volume-overlap-based agreement measures for
-triangular 3D meshes.  These include the Hausdorff distance, the average surface
-distance, the Dice similarity coefficient, and the Jaccard similarity
-coefficient as documented in Stockinger et al. (2021)
-<doi:10.1186/s13014-021-01965-5>.  Overall agreement for a set of meshes is
-calculated as the aggregate agreement for all pairwise comparisons.  Based on
-algorithms provided by the VCGLIB <http://vcg.isti.cnr.it/vcglib/> and CGAL
-<https://www.cgal.org/> libraries.  Includes web-based graphical user interface.")
-    (license license:gpl2+)))
 
 (define-public r-mertools
   (package
@@ -30146,7 +30055,6 @@ random-effect models.")
     (properties `((upstream-name . "mdgc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn r-bh))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/mdgc")
     (synopsis "Missing Data Imputation Using Gaussian Copulas")
     (description
@@ -30694,7 +30602,6 @@ while also not adding capabilities to this function.")
     (properties `((upstream-name . "mcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-robslopes))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mcr")
     (synopsis "Method Comparison Regression")
     (description
@@ -31524,32 +31431,6 @@ package provides 25 methods that play a role somewhat similar to distance or
 metric that measures similarity of two clusterings - or partitions.  For a more
 detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
     (license license:gpl3+)))
-
-(define-public r-mclustaddons
-  (package
-    (name "r-mclustaddons")
-    (version "0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mclustAddons" version))
-              (sha256
-               (base32
-                "122cl8f1x5s4bkbdajxh5j44i30fl0zasfi95szhzb1ddv7blm3l"))))
-    (properties `((upstream-name . "mclustAddons")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-iterators
-                             r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://mclust-org.github.io/mclustAddons/")
-    (synopsis "Addons for the 'mclust' Package")
-    (description
-     "Extend the functionality of the mclust package for Gaussian finite mixture
-modeling by including: density estimation for data with bounded support
-(Scrucca, 2019 <doi:10.1002/bimj.201800174>); modal clustering using MEM
-algorithm for Gaussian mixtures (Scrucca, 2021 <doi:10.1002/sam.11527>); entropy
-estimation via Gaussian mixture modeling (Robin & Scrucca, 2023
-<doi:10.1016/j.csda.2022.107582>).")
-    (license license:gpl2+)))
 
 (define-public r-mclogit
   (package
@@ -35443,7 +35324,7 @@ information with bulk transcriptome data.")
                              r-data-table
                              r-coda
                              r-bookdown))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=marked")
     (synopsis "Mark-Recapture Analysis for Survival and Abundance Estimation")
     (description
@@ -35728,7 +35609,6 @@ maps.")
     (properties `((upstream-name . "marelac")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-seacarb))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=marelac")
     (synopsis "Tools for Aquatic Sciences")
     (description
@@ -38492,7 +38372,6 @@ version is its slenderized form for compatable and flexible implementation.")
                 "0q0v1mx4k1hry0l21611z9jx967l89xpjddvw2v1v9c3kl11kfi6"))))
     (properties `((upstream-name . "magree")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=magree")
     (synopsis
      "Implements the O'Connell-Dobson-Schouten Estimators of Agreement for Multiple Observers")

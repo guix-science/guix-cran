@@ -499,13 +499,13 @@ related according to a provided pedigree.")
 (define-public r-numbat
   (package
     (name "r-numbat")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "numbat" version))
               (sha256
                (base32
-                "0qh37mw8kpajxxvnljla4bc590nd0br17zs9x3k8jhzsc25mffdc"))))
+                "0b7wdrkgswjp5pc9f3h86d0v0xmpifbv4q0zda46r7ijwxys1p9w"))))
     (properties `((upstream-name . "numbat")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -515,11 +515,10 @@ related according to a provided pedigree.")
                              r-tidygraph
                              r-tibble
                              r-stringr
+                             r-scistreer
                              r-scales
                              r-roptim
                              r-rhpcblasctl
-                             r-reshape2
-                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-r-utils
@@ -527,6 +526,7 @@ related according to a provided pedigree.")
                              r-pryr
                              r-patchwork
                              r-paralleldist
+                             r-optparse
                              r-matrix
                              r-magrittr
                              r-logger
@@ -541,7 +541,6 @@ related according to a provided pedigree.")
                              r-dendextend
                              r-data-table
                              r-catools
-                             r-argparse
                              r-ape))
     (home-page "https://github.com/kharchenkolab/numbat")
     (synopsis "Haplotype-Aware CNV Analysis from scRNA-Seq")
@@ -558,7 +557,7 @@ require tumor/normal-paired DNA or genotype data, but operates solely on the
 donor scRNA-data data (for example, 10x Cell Ranger output).  Additional
 examples and documentations are available at
 <https://kharchenkolab.github.io/numbat/>.  For details on the method please see
-Gao et al. (2022) <doi:10.1101/2022.02.07.479314>.")
+Gao et al.  Nature Biotechnology (2022) <doi:10.1038/s41587-022-01468-y>.")
     (license license:expat)))
 
 (define-public r-nullabor
@@ -757,7 +756,6 @@ and performing meta-analysis studies, among others.")
                 "004dm143v032b80knpz7pj3z71lci7vgd6hz1zz22rpfg27ghgdd"))))
     (properties `((upstream-name . "nsRFA")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=nsRFA")
     (synopsis "Non-Supervised Regional Frequency Analysis")
     (description
@@ -1039,7 +1037,6 @@ univariate time series as described in Ardia et al. (2018)
                 "1z078aixk2f6xxnwz7gbdwfgviha3bv8sfvpz7g56v9v3c1g6bgy"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=NScluster")
     (synopsis
      "Simulation and Estimation of the Neyman-Scott Type Spatial Cluster Models")
@@ -1561,7 +1558,7 @@ parameter selection, and flexible tools for prediction and inference.")
                 "1mdnjfh100hckyqkyq4651ymi6lzbgfy6dy4xjxbal2q5rn6swvl"))))
     (properties `((upstream-name . "NPRED")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/zejiang-unsw/NPRED#readme")
     (synopsis "Predictor Identifier: Nonparametric Prediction")
     (description
@@ -4919,13 +4916,13 @@ in network analysis.")
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.0.14")
+    (version "0.0.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMdata" version))
               (sha256
                (base32
-                "18v5chxvk32cfbp326dmcxj6qpzj6hi4v3bwbwx7pf0f4zqvhipi"))))
+                "11nj9s7bzzhgxgniyxlwakk06xkjhw1j8lv0skgwxb1lw6nb3maa"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -6598,13 +6595,13 @@ Filtering 2', and Liu-West', as described in Michaud et al. (2021),
 (define-public r-nimblescr
   (package
     (name "r-nimblescr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimbleSCR" version))
               (sha256
                (base32
-                "19y93cvnp3x4jnff4210fc1cp04mv0mnm1as6svsp8swizm2sb95"))))
+                "1gyc93isivvq0b8fv4pb2g3mpr1n7jfpj9bs86a417iwbf34x4a4"))))
     (properties `((upstream-name . "nimbleSCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -12095,7 +12092,6 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))
-    (native-inputs (list gfortran))
     (home-page
      "http://biostat.mc.vanderbilt.edu/wiki/Main/MatchedRandomization")
     (synopsis "Functions for Optimal Non-Bipartite Matching")

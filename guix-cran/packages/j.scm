@@ -3136,17 +3136,17 @@ Rao (2016) <doi:10.5267/j.ijiec.2015.8.004> .")
 (define-public r-javagd
   (package
     (name "r-javagd")
-    (version "0.6-4")
+    (version "0.6-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JavaGD" version))
               (sha256
                (base32
-                "1q48iykjzy22avmx0yy03vv9c7h87qsphg5hsrzfmx5gvck61m06"))))
+                "1wl31k02x3j9hpf8c8gsmi3k3b3vz9a3y38pz6wa9r41r791rnr1"))))
     (properties `((upstream-name . "JavaGD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
-    (home-page "http://www.rforge.net/JavaGD/")
+    (home-page "https://www.rforge.net/JavaGD/")
     (synopsis "Java Graphics Device")
     (description
      "Graphics device routing all graphics commands to a Java program.  The actual

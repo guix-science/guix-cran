@@ -872,6 +872,27 @@ to be used in downstream R packages interacting with AWS'.  See
 Java.")
     (license license:agpl3)))
 
+(define-public r-awinr
+  (package
+    (name "r-awinr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "awinR" version))
+              (sha256
+               (base32
+                "09cp9wfb4aslfddlk72n0kawfghyn1fcjya5afjhiffwww5ps3iy"))))
+    (properties `((upstream-name . "awinR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Data from 'Awin' via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Awin using the Windsor.ai
+API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-awesom
   (package
     (name "r-awesom")
@@ -3960,7 +3981,6 @@ trial.  Includes facilities for design, exploration and analysis of such trials.
     (properties `((upstream-name . "assist")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lattice))
-    (native-inputs (list gfortran))
     (home-page "https://yuedong.faculty.pstat.ucsb.edu/software.html")
     (synopsis "Suite of R Functions Implementing Spline Smoothing Techniques")
     (description
@@ -5998,7 +6018,6 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
     (properties `((upstream-name . "arfima")))
     (build-system r-build-system)
     (propagated-inputs (list r-ltsa))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=arfima")
     (synopsis "Fractional ARIMA (and Other Long Memory) Time Series Modeling")
     (description
@@ -8987,13 +9006,13 @@ explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresRead" version))
               (sha256
                (base32
-                "12pvg2w7j0aaqn2xf5rgr4d25002xjbisxiva0q7rmi35jl1xkqh"))))
+                "1hiyjg4qa6qpyfbwlwa787sacf23z1mjaws24nj3h18zvwq2wk87"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -11468,13 +11487,13 @@ in the `alr3` package as well, so only one of them should be used.")
 (define-public r-alqrfe
   (package
     (name "r-alqrfe")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alqrfe" version))
               (sha256
                (base32
-                "0prrrbkbqq9k9xx2b6ism6wvn90iwy9sx57g9f9c8djhkmyd90pc"))))
+                "0lzw1sk4iaqzmg1a39v3wxcgj9hchyjcxq7b3nm83al8r75rfvdk"))))
     (properties `((upstream-name . "alqrfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -12659,7 +12678,6 @@ Fraiman and Li (2020) <arXiv:2009.04550>.")
     (properties `((upstream-name . "akima")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=akima")
     (synopsis "Interpolation of Irregularly and Regularly Spaced Data")
     (description
@@ -14530,13 +14548,13 @@ Details on the least-squares estimation can be found in Chiou et al. (2014)
 (define-public r-africamonitor
   (package
     (name "r-africamonitor")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "africamonitor" version))
               (sha256
                (base32
-                "02fgl63f460v3ssh5z5nd0gw3rny3nxs245am6slnk1l3v1pi5cj"))))
+                "06k600wbvzxy3lk7niil84xndcnbar88z07qxyqwklvl07jcpc9h"))))
     (properties `((upstream-name . "africamonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql r-dbi r-data-table r-collapse))
@@ -15729,13 +15747,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiraldev" version))
               (sha256
                (base32
-                "07lbb0cgadbs0yvn0rm713hm66pwqmzmfryy0h7p6jd6kqmx014a"))))
+                "0rclhf3d2mhsbxc4imp14kpjxw6g0hdy6v4y86qnvvyrb3cik46v"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15747,16 +15765,15 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
                              r-lubridate
                              r-lifecycle
                              r-hms
-                             r-dplyr
-                             r-assertthat))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pharmaverse.github.io/admiraldev/main/")
     (synopsis "Development Tools for the Admiral Package Family")
     (description
      "Utility functions to check data, variables and conditions for functions used in
 admiral and admiral extension packages.  Additional utility helper functions to
-to assist developers with maintaining documentation, testing and general upkeep
-of admiral and admiral extension packages.")
+assist developers with maintaining documentation, testing and general upkeep of
+admiral and admiral extension packages.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-admiral-test

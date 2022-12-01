@@ -2516,13 +2516,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wnl" version))
               (sha256
                (base32
-                "06jw2crz4dfm9xpivapc8ipjjiziqn2ahgn0ssgzagkmv3idc7h1"))))
+                "0191z30rq92xy2lzg6mpk4yvj67frfmqzavy7xvmsv96n4pcwbay"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -6603,7 +6603,6 @@ WaveD Transform in R, Journal of Statistical Software Volume 21, No.  3, 2007.")
     (properties `((upstream-name . "waveband")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=waveband")
     (synopsis "Computes Credible Intervals for Bayesian Wavelet Shrinkage")
     (description

@@ -2938,7 +2938,7 @@ likelihood estimates are available.")
     (properties `((upstream-name . "irt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/egonulates/irt")
     (synopsis
      "Item Response Theory and Computerized Adaptive Testing Functions")
@@ -11530,7 +11530,7 @@ binary and continuous phenotypes.")
                 "1287mx1fpbq9y8jbyb43hlignkqg313rn3kc52pm6b2n77ipkrc6"))))
     (properties `((upstream-name . "igrf")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/igrf")
     (synopsis "International Geomagnetic Reference Field")
     (description
@@ -13106,7 +13106,6 @@ visit
                              r-picante
                              r-fd
                              r-ape))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=idar")
     (synopsis "Individual Diversity-Area Relationships")
     (description

@@ -1238,7 +1238,6 @@ PURPOSE. See the GNU General Public License for more details.")
                 "1am3ywcj1rqgz5i2g9c6d6fgiv8b2nabllfy84xx1n18pin7mfbk"))))
     (properties `((upstream-name . "TUWmodel")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TUWmodel")
     (synopsis
      "Lumped/Semi-Distributed Hydrological Model for Education Purposes")
@@ -2351,7 +2350,6 @@ forecasting.")
                 "06wnbj741yyi5b483zhbaccvqpbg8lh3z9vnrxy64x28hnn79cly"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TSSS")
     (synopsis "Time Series Analysis with State Space Model")
     (description
@@ -2982,7 +2980,6 @@ aggregating over calendar periods.")
                 "13x5l0y0nh972p39s32dv8byds19g8265s2mphbrzz1v59aq0xk3"))))
     (properties `((upstream-name . "TSHRC")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TSHRC")
     (synopsis "Two Stage Hazard Rate Comparison")
     (description
@@ -4797,7 +4794,6 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
                 "1ghza4by6shalsnqybn5qgv076dxh59b6vycg9v6ii216zbgi0kz"))))
     (properties `((upstream-name . "tripack")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=tripack")
     (synopsis "Triangulation of Irregularly Spaced Data")
     (description
@@ -8988,44 +8984,6 @@ Sample data for the vignette is included in the toscaData package, which is
 available on gitHub: <https://github.com/Docma-TU/toscaData>.")
     (license license:gpl2+)))
 
-(define-public r-torvik
-  (package
-    (name "r-torvik")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "toRvik" version))
-              (sha256
-               (base32
-                "09b4c5j3wsiawx5pc1n6ga4qs1s0ybavh1drz6s2ikrpdvb62724"))))
-    (properties `((upstream-name . "toRvik")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.torvik.dev/")
-    (synopsis "Extensive and Tidy NCAA Men's College Basketball Data")
-    (description
-     "An API wrapper for cbbstat and a suite of functions to pull and clean detailed,
-extensive college basketball statistics from
-Barttorvik<https://barttorvik.com/>.")
-    (license license:expat)))
-
 (define-public r-tornado
   (package
     (name "r-tornado")
@@ -10632,7 +10590,6 @@ squares method.  See Golub and Van Loan (1980) <doi:10.1137/0717073>, Gleser
     (properties `((upstream-name . "tlrmvnmvt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=tlrmvnmvt")
     (synopsis "Low-Rank Methods for MVN and MVT Probabilities")
     (description
@@ -11632,7 +11589,6 @@ data.tables'.")
                 "186919qka9j3kfpdw2gbh16n48d6xgz9lfqgk4b17f1d7l72iplg"))))
     (properties `((upstream-name . "timsac")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=timsac")
     (synopsis "Time Series Analysis and Control Package")
     (description
@@ -12112,30 +12068,6 @@ time delay between doubly-lensed light curves observed in two bands.  See also
 Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 <doi:10.1080/10618600.2017.1415911>, Hu and Tak (2020) <arXiv:2005.08049>.")
     (license license:gpl2)))
-
-(define-public r-timechange
-  (package
-    (name "r-timechange")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "timechange" version))
-              (sha256
-               (base32
-                "0w3zbmzhg3zr5d9aa83kmr6gyhk75l7jysa7zs0pnz9x4ffr20w5"))))
-    (properties `((upstream-name . "timechange")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cpp11))
-    (home-page "https://github.com/vspinu/timechange/")
-    (synopsis "Efficient Manipulation of Date-Times")
-    (description
-     "Efficient routines for manipulation of date-time objects while accounting for
-time-zones and daylight saving times.  The package includes utilities for
-updating of date-time components (year, month, day etc.), modification of
-time-zones, rounding of date-times, period addition and subtraction etc.  Parts
-of the CCTZ source code, released under the Apache 2.0 License, are included in
-this package.  See <https://github.com/google/cctz> for more details.")
-    (license license:gpl3)))
 
 (define-public r-time-slots
   (package
@@ -19092,7 +19024,7 @@ seeks to create a profile that define a social group.")
                              r-fs
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tpilz/telemac")
     (synopsis "R Interface to the TELEMAC Model Suite")
     (description
@@ -20178,7 +20110,7 @@ derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
                              r-dplyr
                              r-doparallel
                              r-cubature))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/SOCR/TCIU")
     (synopsis
      "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
@@ -21267,13 +21199,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.14.0")
+    (version "0.14.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "targets" version))
               (sha256
                (base32
-                "04gl5wz3mf6wh2q1x763lh6g014b719ch53prliq9y102ym976mq"))))
+                "1zf8dapdy1ds59282vy3b1s6q0ra6a8v1llp1g6xaijih4pcl3r8"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21374,13 +21306,13 @@ constructs beyond sentiment.")
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tarchetypes" version))
               (sha256
                (base32
-                "0fxwia3jgf85149iarzbdq9ml12icz18yf3d69pf399ld948pfl4"))))
+                "03v2w9jk9bryrlcmzpa1y72k0kp4v0fw8mc1w1gl1kggqbkd0936"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21389,6 +21321,7 @@ constructs beyond sentiment.")
                              r-tibble
                              r-targets
                              r-rlang
+                             r-furrr
                              r-fs
                              r-dplyr
                              r-digest))

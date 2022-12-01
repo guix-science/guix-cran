@@ -2093,6 +2093,34 @@ dosimetry (also known as \"RTK\") (Wetmore et al., 2015
 <doi:10.1093/toxsci/kfv171>).")
     (license license:gpl3)))
 
+(define-public r-htt
+  (package
+    (name "r-htt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HTT" version))
+              (sha256
+               (base32
+                "0zzqv45im9wwaplpabh9i9vyzdayg82vldxkl156s943mm1r3w9f"))))
+    (properties `((upstream-name . "HTT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-igraph r-ggraph r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTT")
+    (synopsis "Hypothesis Testing Tree")
+    (description
+     "This package provides a novel decision tree algorithm in the hypothesis testing
+framework.  The algorithm examines the distribution difference between two child
+nodes over all possible binary partitions.  The test statistic of the hypothesis
+testing is equivalent to the generalized energy distance, which enables the
+algorithm to be more powerful in detecting the complex structure, not only the
+mean difference.  It is applicable for numeric, nominal, ordinal explanatory
+variables and the response in general metric space of strong negative type.  The
+algorithm has superior performance compared to other tree models in type I
+error, power, prediction accuracy, and complexity.")
+    (license license:gpl3)))
+
 (define-public r-htssip
   (package
     (name "r-htssip")
@@ -2462,7 +2490,6 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
     (properties `((upstream-name . "htdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
     (home-page "https://github.com/jbuonagurio/RHTDP")
     (synopsis "Horizontal Time Dependent Positioning")
     (description
@@ -4530,7 +4557,6 @@ pseudo-observations defined as normalized ranks.")
     (properties `((upstream-name . "hmm.discnp")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=hmm.discnp")
     (synopsis
      "Hidden Markov Models with Discrete Non-Parametric Observation Distributions")
@@ -6588,7 +6614,6 @@ the survey are high.")
     (properties `((upstream-name . "hier.part")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gtools r-betareg))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=hier.part")
     (synopsis "Hierarchical Partitioning")
     (description
@@ -6612,7 +6637,6 @@ provided by using a randomisation test.")
                 "0gxkxzys9mcy33xvsim8klaqmb2xwvy5bvgkn9r400j4qfjd3cgg"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "http://www.r-project.org")
     (synopsis "High Dimensional Discriminant Analysis")
     (description
@@ -6770,21 +6794,16 @@ Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
 (define-public r-hht
   (package
     (name "r-hht")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hht" version))
               (sha256
                (base32
-                "0i4rjr507k555pvf7q6y6b3df56rjc6igrv8dk0mhyfws49jw9m9"))))
+                "06znfxl5qh3wz1bn5qzl45nqgy94y6h0rcl2wzg94czv5d1a9ym0"))))
     (properties `((upstream-name . "hht")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-linnet
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-spatstat
-                             r-fields
-                             r-emd))
+    (propagated-inputs (list r-spatstat-geom r-spatstat-core r-fields r-emd))
     (home-page "https://cran.r-project.org/package=hht")
     (synopsis "The Hilbert-Huang Transform: Tools and Methods")
     (description
@@ -8926,7 +8945,6 @@ Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
                              r-doparallel
                              r-clime
                              r-checkmate))
-    (native-inputs (list gfortran))
     (home-page "http://www.stat.colostate.edu/~riczw/SW.html")
     (synopsis
      "High Dimensional Hypothesis Testing for Mean Vectors, Covariance Matrices, and White Noise of Vector Time Series")
@@ -9621,7 +9639,6 @@ a non-hierarchical setting the package produces a single derivative curve.")
                 "0ai35d9df5pmva52sb1rr20f11h0mbal6d179g865b7w6n90kfr1"))))
     (properties `((upstream-name . "HDcpDetect")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HDcpDetect")
     (synopsis "Detect Change Points in Means of High Dimensional Data")
     (description
