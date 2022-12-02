@@ -2490,6 +2490,7 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
     (properties `((upstream-name . "htdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/jbuonagurio/RHTDP")
     (synopsis "Horizontal Time Dependent Positioning")
     (description
@@ -2538,13 +2539,13 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
 (define-public r-hsrecombi
   (package
     (name "r-hsrecombi")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hsrecombi" version))
               (sha256
                (base32
-                "09jsrfwxfkhykyzcwlgym90gcs120684qljb0dwjanzlybhkffav"))))
+                "0ghkn5nbf5r4dy3z3kk1pnhmd6ds0xnhvkpx1dz6jgi55hswg3x3"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
@@ -4557,6 +4558,7 @@ pseudo-observations defined as normalized ranks.")
     (properties `((upstream-name . "hmm.discnp")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=hmm.discnp")
     (synopsis
      "Hidden Markov Models with Discrete Non-Parametric Observation Distributions")
@@ -6614,6 +6616,7 @@ the survey are high.")
     (properties `((upstream-name . "hier.part")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gtools r-betareg))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=hier.part")
     (synopsis "Hierarchical Partitioning")
     (description
@@ -6637,6 +6640,7 @@ provided by using a randomisation test.")
                 "0gxkxzys9mcy33xvsim8klaqmb2xwvy5bvgkn9r400j4qfjd3cgg"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "http://www.r-project.org")
     (synopsis "High Dimensional Discriminant Analysis")
     (description
@@ -8052,13 +8056,13 @@ algorithms. (Marco Notaro, Max Schubach, Peter N. Robinson and Giorgio Valentini
 (define-public r-helsinki
   (package
     (name "r-helsinki")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "helsinki" version))
               (sha256
                (base32
-                "1vf023n93cq67dk139rszj3y8bc91z7rlagrv2z0y8mqpndi03am"))))
+                "1hsmxnfzbi8xvqz97rmq225w9prhxc558slmfxg03y5wpjqdpq4a"))))
     (properties `((upstream-name . "helsinki")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8066,19 +8070,15 @@ algorithms. (Marco Notaro, Max Schubach, Peter N. Robinson and Giorgio Valentini
                              r-purrr
                              r-jsonlite
                              r-httr
-                             r-httpcache
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "http://ropengov.github.io/helsinki/")
     (synopsis "R Tools for Helsinki Open Data")
     (description
-     "Tools for accessing various open data sources in the Helsinki region in Finland.
- Current data sources include the Real Estate Department
-(<http://ptp.hel.fi/avoindata/>), Service Map API
-(<http://api.hel.fi/servicemap/v2/>), Linked Events API
-(<http://api.hel.fi/linkedevents/v1/>), Helsinki Region Infoshare statistics API
-(<https://dev.hel.fi/stats/>).")
+     "Tools for accessing various open data APIs in the Helsinki region in Finland.
+Current data sources include the Service Map API, Linked Events API, and
+Helsinki Region Infoshare statistics API.")
     (license license:bsd-2)))
 
 (define-public r-helpersmg
@@ -8945,6 +8945,7 @@ Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
                              r-doparallel
                              r-clime
                              r-checkmate))
+    (native-inputs (list gfortran))
     (home-page "http://www.stat.colostate.edu/~riczw/SW.html")
     (synopsis
      "High Dimensional Hypothesis Testing for Mean Vectors, Covariance Matrices, and White Noise of Vector Time Series")
@@ -9639,6 +9640,7 @@ a non-hierarchical setting the package produces a single derivative curve.")
                 "0ai35d9df5pmva52sb1rr20f11h0mbal6d179g865b7w6n90kfr1"))))
     (properties `((upstream-name . "HDcpDetect")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HDcpDetect")
     (synopsis "Detect Change Points in Means of High Dimensional Data")
     (description

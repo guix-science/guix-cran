@@ -2076,6 +2076,7 @@ expectation-maximization algorithm.")
                 "0jr45lkpcndg5nynjsfnxn1wwkh4gkhsgv4hlvw6jn2frw0n8c14"))))
     (properties `((upstream-name . "gss")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=gss")
     (synopsis "General Smoothing Splines")
     (description
@@ -3266,6 +3267,7 @@ records.")
     (properties `((upstream-name . "growth")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
+    (native-inputs (list gfortran))
     (home-page "http://www.commanster.eu/rcode.html")
     (synopsis
      "Multivariate Normal and Elliptically-Contoured Repeated Measurements Models")
@@ -7161,13 +7163,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "0.7.10")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpboost" version))
               (sha256
                (base32
-                "1ycvkf3k90qv61axdxlj4gfq3n7paaqwpryng0rxd0rb636i0hzi"))))
+                "066qd921pxcb2frlnia7zdldg49rgd5qrpk2gzkbxcklmjf8j923"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -9424,7 +9426,7 @@ burden test and SKAT, based on user-defined variant sets.")
     (properties `((upstream-name . "gmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=gmm")
     (synopsis
      "Generalized Method of Moments and Generalized Empirical Likelihood")
@@ -10988,7 +10990,7 @@ LASSO penalties.")
                 "0xs6vn245y32pshlslblrj6517dwwmk0ffp2rzji8d8h0lsxidxx"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=glmmML")
     (synopsis "Generalized Linear Models with Clustering")
     (description
@@ -11076,6 +11078,7 @@ is conducted with Stan'.  References: Anderson and Ward (2019)
     (properties `((upstream-name . "glmmEP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-lme4))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=glmmEP")
     (synopsis
      "Generalized Linear Mixed Model Analysis via Expectation Propagation")
@@ -12946,6 +12949,7 @@ dithering with thousands of colors per frame.")
     (properties `((upstream-name . "Gifi")))
     (build-system r-build-system)
     (propagated-inputs (list r-colorspace))
+    (native-inputs (list gfortran))
     (home-page "https://r-forge.r-project.org/projects/psychor/")
     (synopsis "Multivariate Analysis with Optimal Scaling")
     (description
@@ -15243,6 +15247,7 @@ package exploits).")
     (properties `((upstream-name . "GGMselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lars r-gtools))
+    (native-inputs (list gfortran))
     (home-page "https://CRAN.R-project.org/package=GGMselect")
     (synopsis "Gaussian Graphs Models Selection")
     (description
@@ -19542,6 +19547,7 @@ package provides the R interface to Python modules, classes and functions.")
                              r-dfoptim
                              r-data-table
                              r-codetools))
+    (native-inputs (list gfortran))
     (home-page "https://vmoprojs.github.io/GeoModels-page/")
     (synopsis
      "Procedures for Gaussian and Non Gaussian Geostatistical (Large) Data Analysis")
@@ -20439,13 +20445,13 @@ everything related to geosciences.")
 (define-public r-geodata
   (package
     (name "r-geodata")
-    (version "0.4-13")
+    (version "0.5-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geodata" version))
               (sha256
                (base32
-                "1xzfm06i1p4rwr5dw90xhfqsdwbcq8ff9i5c26pycq3riz7w9768"))))
+                "1341wia70hmiaw4cwlld5x83mc10b85ji0mxfc75ar4w4yzplh6z"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -22128,6 +22134,7 @@ distance from pairwise comparisons of individuals or population samples.")
                 "1whhdlq9p8gmygv7464hvfz6dhm65gqq1dqls6hgpmw822zxgbd5"))))
     (properties `((upstream-name . "genepi")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=genepi")
     (synopsis "Genetic Epidemiology Design and Inference")
     (description
@@ -23053,6 +23060,7 @@ phylogenetic trees Pennell (2014) <doi:10.1093/bioinformatics/btu181>.")
                 "0blg4w9wjprbax8z6md3285v12ajcjmcrpca52l3kd5qmxlvizy7"))))
     (properties `((upstream-name . "geigen")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=geigen")
     (synopsis
      "Calculate Generalized Eigenvalues, the Generalized Schur Decomposition and the Generalized Singular Value Decomposition of a Matrix Pair with Lapack")
@@ -23558,13 +23566,13 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.5.0-3")
+    (version "1.5.0-9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdm" version))
               (sha256
                (base32
-                "1vj38p7l36znha56c9dfm75z8rfpjhpmhzrsp3sqiwpvb650mmk8"))))
+                "10c4fk6pbd946is8h8cr8qblrq6cch5zhlhrxqd8ix5wknm8cqn8"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -24023,6 +24031,7 @@ documentation.")
                 "0b1nr8k8m48x78m6fkga11ikkcxyjsjpvqcd1lp6n9n4hv7akmfp"))))
     (properties `((upstream-name . "gclm")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://github.com/gherardovarando/gclm")
     (synopsis "Graphical Continuous Lyapunov Models")
     (description
@@ -24908,13 +24917,13 @@ Gaussian process software, see Erickson et al. (2018)
 (define-public r-gater
   (package
     (name "r-gater")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gateR" version))
               (sha256
                (base32
-                "0c40wbymirc72l14hpz1gknhhhpinh7z50vdhbshi0iii6nlcmcr"))))
+                "1yc400fq58zbl467rdr5rqsgf4gs9yalg7bibsdfdwh7wavd6zj0"))))
     (properties `((upstream-name . "gateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -25480,7 +25489,7 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-ggplot2 r-gap-datasets r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/jinghuazhao/R")
     (synopsis "Genetic Analysis Package")
     (description
@@ -25734,6 +25743,7 @@ penalty lambda, both for gaussian and binomial families.")
     (properties `((upstream-name . "gammSlice")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-lattice r-kernsmooth))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=gammSlice")
     (synopsis "Generalized Additive Mixed Model Analysis via Slice Sampling")
     (description

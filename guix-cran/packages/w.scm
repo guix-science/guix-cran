@@ -4914,16 +4914,16 @@ ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
 (define-public r-weibullness
   (package
     (name "r-weibullness")
-    (version "1.19.8")
+    (version "1.22.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "weibullness" version))
               (sha256
                (base32
-                "19s44mxxcnhngifxshsyjr3a9zvbwywmqgby5dxd73yid1p2k9mr"))))
+                "1xksidplbdx7p5phi66dpyca4n701zhxmp6zp78d9z9lh8k67zwx"))))
     (properties `((upstream-name . "weibullness")))
     (build-system r-build-system)
-    (home-page "https://github.com/AppliedStat/R")
+    (home-page "https://AppliedStat.GitHub.io/R/")
     (synopsis "Goodness-of-Fit Test for Weibull Distribution (Weibullness)")
     (description
      "This package performs a goodness-of-fit test of Weibull distribution
@@ -4931,8 +4931,8 @@ ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
 three-parameter Weibull distribution.  Note that the threshold parameter is
 estimated based on the correlation from the Weibull plot.  For more details, see
 Park (2018) <doi:10.1155/2018/6056975>.  This work was supported by the National
-Research Foundation of Korea (NRF) grant funded by the Korea government (No.
-NRF-2017R1A2B4004169).")
+Research Foundation of Korea (NRF) grant funded by the Korea government (MSIT)
+(No.  2022R1A2C1091319).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-weibullfit
@@ -6603,6 +6603,7 @@ WaveD Transform in R, Journal of Statistical Software Volume 21, No.  3, 2007.")
     (properties `((upstream-name . "waveband")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=waveband")
     (synopsis "Computes Credible Intervals for Bayesian Wavelet Shrinkage")
     (description

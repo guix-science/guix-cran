@@ -3312,6 +3312,7 @@ models with penalized basis splines (P-Splines).  See
                 "0h7y9l64knx291ms5mlc65dl3ljzgmrfzdqk1rd7iy8x7wcvymds"))))
     (properties `((upstream-name . "pspline")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=pspline")
     (synopsis "Penalized Smoothing Splines")
     (description "Smoothing splines with penalties on order m derivatives.")
@@ -6682,7 +6683,7 @@ for a description of the methods.")
     (properties `((upstream-name . "probout")))
     (build-system r-build-system)
     (propagated-inputs (list r-mclust r-mass r-fnn))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://www.r-project.org")
     (synopsis
      "Unsupervised Multivariate Outlier Probabilities for Large Datasets")
@@ -9701,13 +9702,13 @@ event endpoint.")
 (define-public r-pqrfe
   (package
     (name "r-pqrfe")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pqrfe" version))
               (sha256
                (base32
-                "18jyvaxixi51x3ibw8p6bm9j3sawkkk8ddhzw5nygii6x8prkmni"))))
+                "0apsrlgricjmv202yg1h3iz2715nmf05wcvyznnha0nil7cqg0qi"))))
     (properties `((upstream-name . "pqrfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -10029,6 +10030,7 @@ Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry (pp.
                 "0qpd5a35x7fbdjwfr0cnx00wf0hwzlah6z3giajgcv0d7wzrvczn"))))
     (properties `((upstream-name . "ppmSuite")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ppmSuite")
     (synopsis
      "Collection of Models that Employ a Product Partition Distribution as a Prior on Partitions")
@@ -10069,6 +10071,36 @@ pleiotropy, and can provide the accurate estimates of both causal effect and
 horizontal pleiotropy effect as well as the two corresponding p-values.  There
 are two main functions in the PPMR package.  One is PMR_individual() for
 individual level data, the other is PMR_summary() for summary data.")
+    (license license:gpl3)))
+
+(define-public r-ppmlasso
+  (package
+    (name "r-ppmlasso")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ppmlasso" version))
+              (sha256
+               (base32
+                "1kqqb7wxqdmymfn4hkdmqakj3n64bbg2acf671asm2civ94rmc1m"))))
+    (properties `((upstream-name . "ppmlasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-model
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-spatstat
+                             r-plyr
+                             r-lattice
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=ppmlasso")
+    (synopsis "Point Process Models with LASSO-Type Penalties")
+    (description
+     "Toolkit for fitting point process models with sequences of LASSO penalties
+(\"regularisation paths\"), as described in Renner, I.W. and Warton, D.I. (2013)
+<doi:10.1111/j.1541-0420.2012.01824.x>.  Regularisation paths of Poisson point
+process models or area-interaction models can be fitted with LASSO, adaptive
+LASSO or elastic net penalties.  A number of criteria are available to judge the
+bias-variance tradeoff.")
     (license license:gpl3)))
 
 (define-public r-ppmhr
@@ -10418,6 +10450,7 @@ Distribution.  The PPCC test is performed with a fast Monte-Carlo simulation.")
                 "1g36al9w1rxyhfzbvpw9siqq57h2xl0zr94wysz8i0jzqkkqkrvf"))))
     (properties `((upstream-name . "PP3")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "http://www.stats.bris.ac.uk/~guy")
     (synopsis "Three-Dimensional Exploratory Projection Pursuit")
     (description
@@ -11934,13 +11967,13 @@ generating tradelists and calculating exposures to user-specified risk factors."
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "portalr" version))
               (sha256
                (base32
-                "0bgk25j528p972hxcymvvk1x6dhir5gb9y15rlhwxax9bh52dgiq"))))
+                "0li3simzryaakb96z6k64d2fzz1r5wpyzy9ib04xq8dvsfypb9fx"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12378,6 +12411,7 @@ version 2.0 described in Kamvar, Brooks, and GrÃ¼nwald (2015)
     (properties `((upstream-name . "popPCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=popPCR")
     (synopsis
      "Classify Digital PCR Droplets by Fitting Fluorescence Populations")
@@ -14319,6 +14353,7 @@ and Hong (2022) <arXiv:2201.04237>.")
     (properties `((upstream-name . "poissonMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-robcbi r-mass r-checkmate))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=poissonMT")
     (synopsis "Robust M-Estimators Based on Transformations for Poisson Model")
     (description
@@ -15280,13 +15315,13 @@ for network autoregressive models. <arXiv:2202.03852>.")
 (define-public r-pnadcibge
   (package
     (name "r-pnadcibge")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PNADcIBGE" version))
               (sha256
                (base32
-                "0bjqahrnsgc5i506jcjcin62lgn9zx2hrpflpnqzhshkhinnxnbz"))))
+                "0dxbx8585irfaaf1yll8jmfa719s07b6aflj8g39zw79lry5fl9d"))))
     (properties `((upstream-name . "PNADcIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -17128,6 +17163,7 @@ prediction model with less overfitting and robust to noise.")
     (properties `((upstream-name . "PLordprob")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=PLordprob")
     (synopsis "Multivariate Ordered Probit Model via Pairwise Likelihood")
     (description
@@ -25617,6 +25653,7 @@ following the lumpability criteria of Kemeny and Snell (1976), ISBN:0387901922."
                              r-psqn
                              r-bh
                              r-alabama))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/pedmod")
     (synopsis "Pedigree Models")
     (description
@@ -26678,13 +26715,13 @@ sample.")
 (define-public r-pdfcluster
   (package
     (name "r-pdfcluster")
-    (version "1.0-3")
+    (version "1.0-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pdfCluster" version))
               (sha256
                (base32
-                "13m7b2wivvf58vyqbysj4r04w0nj2b5x0xnaxip712a6c66x1h7l"))))
+                "0d52xmrzsjc51j0gzd3729rjqh391643yq840b6hlpc2w4ycc46m"))))
     (properties `((upstream-name . "pdfCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-geometry))
@@ -27333,7 +27370,7 @@ classes.  For more information, see Wang and Liu (2021)
     (properties `((upstream-name . "pcLasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://arxiv.org/abs/1810.04651")
     (synopsis "Principal Components Lasso")
     (description
@@ -28436,6 +28473,7 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-rlecuyer r-pbdmpi))
+    (native-inputs (list gfortran))
     (home-page "https://pbdr.org/")
     (synopsis "Programming with Big Data -- Scalable Linear Algebra Packages")
     (description
@@ -28651,29 +28689,26 @@ bout detection algorithm performance.")
 (define-public r-patterns
   (package
     (name "r-patterns")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Patterns" version))
               (sha256
                (base32
-                "1jmj7jr7q5f6iqrrlv6dz0n2igbppnxfvbdh5nwf5bndyxlldqxn"))))
+                "12ci26i0ks23ff11g3pmsns5f3crnrac2hnlqc2pglhrv180m37r"))))
     (properties `((upstream-name . "Patterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna
                              r-vgam
                              r-tnet
-                             r-survival
                              r-selectboost
+                             r-repmis
                              r-plotrix
                              r-nnls
-                             r-msgps
                              r-movmf
-                             r-magic
                              r-limma
                              r-lattice
                              r-lars
-                             r-kernsmooth
                              r-jetset
                              r-igraph
                              r-gplots

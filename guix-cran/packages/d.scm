@@ -1043,7 +1043,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (properties `((upstream-name . "dynamichazard")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-boot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/boennecd/dynamichazard")
     (synopsis "Dynamic Hazard Models using State Space Models")
     (description
@@ -1069,6 +1069,7 @@ filters and smoothers are also supported more general state space models.")
     (properties `((upstream-name . "DynamicGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=DynamicGP")
     (synopsis "Modelling and Analysis of Dynamic Computer Experiments")
     (description
@@ -1970,7 +1971,7 @@ avoided.")
                              r-dtw
                              r-data-table
                              r-caret))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://www.victor-maus.com/dtwSat/")
     (synopsis
      "Time-Weighted Dynamic Time Warping for Satellite Image Time Series Analysis")
@@ -2418,6 +2419,7 @@ statdistr determines the stationary distribution of a Markov Chain.")
                              r-awsmethods
                              r-aws
                              r-adimpro))
+    (native-inputs (list gfortran))
     (home-page "http://www.wias-berlin.de/research/ats/imaging/")
     (synopsis "Analysis of Diffusion Weighted Imaging (DWI) Data")
     (description
@@ -3335,6 +3337,7 @@ package.  For more details see Schmidt R, Kneib T (2022)
     (properties `((upstream-name . "dse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tframe r-tfplot r-setrng))
+    (native-inputs (list gfortran))
     (home-page "http://tsanalysis.r-forge.r-project.org/")
     (synopsis "Dynamic Systems Estimation (Time Series Package)")
     (description
@@ -5135,16 +5138,17 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-2")
+    (version "0.5-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DPQ" version))
               (sha256
                (base32
-                "1x7rri6jh7832hka11wfm49qrxmk8kxbmcr79fq6flzmad64g5gv"))))
+                "1jhvbyciqpbxsyi4zgn827nr3fywjc5q3ynji4i8x39i3lbwarw5"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
+    (native-inputs (list gfortran))
     (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis "Density, Probability, Quantile ('DPQ') Computations")
     (description
@@ -8494,6 +8498,7 @@ removal or further analyses.")
     (properties `((upstream-name . "dixon")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-spatstat-geom r-spatstat))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dixon")
     (synopsis "Nearest Neighbour Contingency Table Analysis")
     (description
@@ -18981,13 +18986,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deaR" version))
               (sha256
                (base32
-                "1yrn3d4gnaimzfwq5m1kz9mchp1b2gikqxqplpl08dvlnshajjmr"))))
+                "0si8yxbx6zvzai046gjrdyb5yv33hxijizkmgsd5p9q3h3g54aq0"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -19666,6 +19671,39 @@ See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Riz
 <doi:10.1214/14-AOS1255>; Huo and SzÃ©kely (2016)
 <doi:10.1080/00401706.2015.1054435>.")
     (license license:gpl2)))
+
+(define-public r-dcortools
+  (package
+    (name "r-dcortools")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dcortools" version))
+              (sha256
+               (base32
+                "169zvcwhdgc9dbvx02sfbqzh9c35gllijm4ir66mi6sa1v8l862a"))))
+    (properties `((upstream-name . "dcortools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pheatmap
+                             r-hmisc
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=dcortools")
+    (synopsis
+     "Providing Fast and Flexible Functions for Distance Correlation Analysis")
+    (description
+     "This package provides methods for distance covariance and distance correlation
+(Szekely, et al. (2007) <doi:10.1214/009053607000000505>), generalized version
+thereof (Sejdinovic, et al. (2013) <doi:10.1214/13-AOS1140>) and corresponding
+tests (Berschneider, Bottcher (2018) <arXiv:1808.07280>.  Distance standard
+deviation methods (Edelmann, et al. (2020) <doi:10.1214/19-AOS1935>) and
+distance correlation methods for survival endpoints (Edelmann, et al. (2021)
+<doi:10.1111/biom.13470>) are also included.")
+    (license license:gpl3)))
 
 (define-public r-dcode
   (package
@@ -20661,6 +20699,7 @@ variables for other statistical analysis.")
                 "0c1hvawb9gw6vckims3g8kzn2c4f0as5x1vw39sdvkwc92xy26lv"))))
     (properties `((upstream-name . "dBlockmodeling")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dBlockmodeling")
     (synopsis
      "Deterministic Blockmodeling of Signed, One-Mode and Two-Mode Networks")

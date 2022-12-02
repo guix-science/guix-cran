@@ -3949,13 +3949,13 @@ directions.  For more details see Saad M and Wijsman EM (2017)
 (define-public r-assistant
   (package
     (name "r-assistant")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ASSISTant" version))
               (sha256
                (base32
-                "1vh1glk83lg010v2fc289gr6xy0dzbrqcjfva2mmaymk6v78a1w5"))))
+                "0apaj4lfkbg08xrw8mknf50s1vyd4j5mbwciwgblq7ydh3pyjxaj"))))
     (properties `((upstream-name . "ASSISTant")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mvtnorm r-magrittr r-knitr r-dplyr))
@@ -3964,8 +3964,10 @@ directions.  For more details see Saad M and Wijsman EM (2017)
     (synopsis "Adaptive Subgroup Selection in Group Sequential Trials")
     (description
      "Clinical trial design for subgroup selection in three-stage group sequential
-trial.  Includes facilities for design, exploration and analysis of such trials.
- An implementation of the initial DEFUSE-3 trial is also provided as a vignette.")
+trial as described in Lai, Lavori and Liao (2014,
+<doi:10.1016/j.cct.2014.09.001>).  Includes facilities for design, exploration
+and analysis of such trials.  An implementation of the initial DEFUSE-3 trial is
+also provided as a vignette.")
     (license license:gpl2+)))
 
 (define-public r-assist
@@ -3981,6 +3983,7 @@ trial.  Includes facilities for design, exploration and analysis of such trials.
     (properties `((upstream-name . "assist")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lattice))
+    (native-inputs (list gfortran))
     (home-page "https://yuedong.faculty.pstat.ucsb.edu/software.html")
     (synopsis "Suite of R Functions Implementing Spline Smoothing Techniques")
     (description
@@ -6018,6 +6021,7 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
     (properties `((upstream-name . "arfima")))
     (build-system r-build-system)
     (propagated-inputs (list r-ltsa))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=arfima")
     (synopsis "Fractional ARIMA (and Other Long Memory) Time Series Modeling")
     (description
@@ -8266,16 +8270,16 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apache.sedona" version))
               (sha256
                (base32
-                "0iif2j6nsafjs496vj8k04z9bgzfv4y92j0a6r0a51c0i7a9k5yx"))))
+                "0d9l0n0qnjx42ia53s9fss856iz9caxaa876ccbcaxavh7l7km56"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparklyr r-rlang r-dplyr r-dbplyr r-dbi))
+    (propagated-inputs (list r-sparklyr r-rlang r-dplyr r-dbplyr))
     (home-page "https://cran.r-project.org/package=apache.sedona")
     (synopsis "R Interface for Apache Sedona")
     (description
@@ -12545,13 +12549,13 @@ and has been tested on a wide range of R versions.")
 (define-public r-alassosurvic
   (package
     (name "r-alassosurvic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ALassoSurvIC" version))
               (sha256
                (base32
-                "0q02rz947bp6i7sbb5nzxq8ky74iprdnpbwnmnn7vg29vhca4b09"))))
+                "0asaip7mq1brahirm025d57gk1fgysbmhi6jypf2jihai7dl4jg2"))))
     (properties `((upstream-name . "ALassoSurvIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -12678,6 +12682,7 @@ Fraiman and Li (2020) <arXiv:2009.04550>.")
     (properties `((upstream-name . "akima")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=akima")
     (synopsis "Interpolation of Irregularly and Regularly Spaced Data")
     (description

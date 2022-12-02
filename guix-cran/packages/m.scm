@@ -870,7 +870,7 @@ help files.")
                              r-mass
                              r-dfoptim
                              r-bb))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=mvord")
     (synopsis "Multivariate Ordinal Regression Models")
     (description
@@ -1481,6 +1481,7 @@ first-order or a fully exponential Laplace approximation.")
                 "1inh9hs5942k37jcl84ljx7fsvma73apmmjjq6jlsdvsh4xn4cag"))))
     (properties `((upstream-name . "mvgb")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://github.com/swihart/mvgb")
     (synopsis
      "Multivariate Probabilities of Scale Mixtures of Multivariate Normal Distributions via the Genz and Bretz (2002) QRSVN Method")
@@ -3904,6 +3905,7 @@ transformations.")
     (properties `((upstream-name . "MultiLCIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-limsolve))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=MultiLCIRT")
     (synopsis "Multidimensional Latent Class Item Response Theory Models")
     (description
@@ -6982,7 +6984,7 @@ delete this entity in the less sensible mode and combine both matrices.")
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=MSCMT")
     (synopsis "Multivariate Synthetic Control Method Using Time Series")
     (description
@@ -8016,6 +8018,7 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
                              r-ggplot2
                              r-geometry
                              r-abind))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/PSegaert/mrfDepth")
     (synopsis
      "Depth Measures in Multivariate, Regression and Functional Settings")
@@ -9250,7 +9253,7 @@ several convenience functions to aid in data processing.")
                              r-foreach
                              r-doparallel
                              r-bst))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/zhuwang46/mpath")
     (synopsis "Regularized Linear Models")
     (description
@@ -10755,6 +10758,7 @@ nonparametric ordinal regression model described in Saarela, Rohrbeck & Arjas
     (properties `((upstream-name . "MonoPoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=MonoPoly")
     (synopsis "Functions to Fit Monotone Polynomials")
     (description
@@ -10803,6 +10807,7 @@ to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C. (2016)
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
+    (native-inputs (list gfortran))
     (home-page "https://bobby.gramacy.com/r_packages/monomvn/")
     (synopsis
      "Estimation for MVN and Student-t Data with Monotone Missingness")
@@ -11376,7 +11381,7 @@ and simulation.  See McClintock and Michelot (2018)
     (properties `((upstream-name . "momentfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=momentfit")
     (synopsis "Methods of Moments")
     (description
@@ -12462,13 +12467,13 @@ schools effectiveness.  The standard value-added model is also an option.")
 (define-public r-moderndive
   (package
     (name "r-moderndive")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moderndive" version))
               (sha256
                (base32
-                "0w4xj84f8dcq3ikxy3vhsyb85brsgcvnhzwawigh34mz64m7nhlc"))))
+                "0bgq6wsyyi6nsxqqh2k3zsmk64pfvb57z8pzk8ych3xih491hzlm"))))
     (properties `((upstream-name . "moderndive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14614,6 +14619,7 @@ package mvtnorm', and mmcm.resamp() gives P-value by using a permutation method.
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn
                              r-alabama))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/mmcif")
     (synopsis "Mixed Multivariate Cumulative Incidence Functions")
     (description
@@ -16090,6 +16096,7 @@ learning algorithms.  See also Curtin et al. (2018) <doi:10.21105/joss.00726>.")
     (properties `((upstream-name . "mlogitBMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik r-bma r-abind))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mlogitBMA")
     (synopsis "Bayesian Model Averaging for Multinomial Logit Models")
     (description
@@ -16270,6 +16277,7 @@ marginal predictive likelihood (MPL) and the mean squared prediction error
                 "1m5ziiqs3ll1xjm1yf7x4sdc910jypn3kjnbadf95xxkvqmfrsqq"))))
     (properties `((upstream-name . "mlmmm")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "http://www.albany.edu/~ry491374")
     (synopsis
      "ML estimation under multivariate linear mixed models with missing values")
@@ -18283,6 +18291,7 @@ Effect Models using Markov Chains Monte Carlo for continuous and discrete data."
     (properties `((upstream-name . "mixexp")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-daewr))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mixexp")
     (synopsis "Design and Analysis of Mixture Experiments")
     (description
@@ -18789,6 +18798,7 @@ mixture of multivariate generalized linear mixed models.")
                 "1q565ymc1lh24lv0v70qwqb0p0nagg2jcz2nf7dz964bsnp20wjf"))))
     (properties `((upstream-name . "mix")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mix")
     (synopsis
      "Estimation/Multiple Imputation for Mixed Categorical and Continuous Data")
@@ -23024,7 +23034,7 @@ proteomics.")
                              r-margins
                              r-generics
                              r-formula))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://www.R-project.org")
     (synopsis "Multiple Hurdle Tobit Models")
     (description
@@ -24452,7 +24462,7 @@ is possible with or without available data from a pilot study.")
                              r-numderiv
                              r-mvtnorm
                              r-lava))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://kkholst.github.io/mets/")
     (synopsis "Analysis of Multivariate Event Times")
     (description
@@ -30055,6 +30065,7 @@ random-effect models.")
     (properties `((upstream-name . "mdgc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn r-bh))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/boennecd/mdgc")
     (synopsis "Missing Data Imputation Using Gaussian Copulas")
     (description
@@ -30602,6 +30613,7 @@ while also not adding capabilities to this function.")
     (properties `((upstream-name . "mcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-robslopes))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mcr")
     (synopsis "Method Comparison Regression")
     (description
@@ -35324,7 +35336,7 @@ information with bulk transcriptome data.")
                              r-data-table
                              r-coda
                              r-bookdown))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=marked")
     (synopsis "Mark-Recapture Analysis for Survival and Abundance Estimation")
     (description
@@ -35609,6 +35621,7 @@ maps.")
     (properties `((upstream-name . "marelac")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-seacarb))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=marelac")
     (synopsis "Tools for Aquatic Sciences")
     (description
@@ -36142,19 +36155,19 @@ handling, and result caching.")
 (define-public r-mappoly
   (package
     (name "r-mappoly")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mappoly" version))
               (sha256
                (base32
-                "12lxn4angyac1vaq2vb0xvfd2m9f40l53h9d0ywn3qqiwa77q737"))))
+                "14prd8aqqbdfjnc923vcxh5ph2d6wi2dfzzvxmj19hff30vimpb2"))))
     (properties `((upstream-name . "mappoly")))
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-zoo
                              r-vcfr
-                             r-scatterplot3d
+                             r-smacof
                              r-rstudioapi
                              r-reshape2
                              r-rcurl
@@ -36162,6 +36175,7 @@ handling, and result caching.")
                              r-rcpp
                              r-princurve
                              r-plotly
+                             r-plot3d
                              r-magrittr
                              r-ggsci
                              r-ggpubr
@@ -36177,11 +36191,11 @@ handling, and result caching.")
     (description
      "Construction of genetic maps in autopolyploid full-sib populations.  Uses
 pairwise recombination fraction estimation as the first source of information to
-sequentially position allelic variants in specific homologues.  For situations
-where pairwise analysis has limited power, the algorithm relies on the
-multilocus likelihood obtained through a hidden Markov model (HMM).  For more
-detail, please see Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378> and
-Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
+sequentially position allelic variants in specific homologous chromosomes.  For
+situations where pairwise analysis has limited power, the algorithm relies on
+the multilocus likelihood obtained through a hidden Markov model (HMM).  For
+more detail, please see Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378>
+and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
     (license license:gpl3)))
 
 (define-public r-mappings
@@ -38372,6 +38386,7 @@ version is its slenderized form for compatable and flexible implementation.")
                 "0q0v1mx4k1hry0l21611z9jx967l89xpjddvw2v1v9c3kl11kfi6"))))
     (properties `((upstream-name . "magree")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=magree")
     (synopsis
      "Implements the O'Connell-Dobson-Schouten Estimators of Agreement for Multiple Observers")

@@ -2957,6 +2957,7 @@ different ways (i.e., model structures).")
                 "0w41k25vss806m5vpwmmcfsmwaixmln0pliql3a6xlwsihha5i34"))))
     (properties `((upstream-name . "VIFCP")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=VIFCP")
     (synopsis "Detecting Change-Points via VIFCP Method")
     (description
@@ -3707,13 +3708,13 @@ filter, and Frangi vesselness filter of 3-dimensional volumes.")
 (define-public r-verylargeintegers
   (package
     (name "r-verylargeintegers")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VeryLargeIntegers" version))
               (sha256
                (base32
-                "0yvm3kkc7ssk85ripdgbxj8gazqb1dfswgjy63c3gb135zi2cbqk"))))
+                "08gpsi6vrink2dd1ngwbhi8yxrasgh0xi5klc64v7ig49hky9wma"))))
     (properties `((upstream-name . "VeryLargeIntegers")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4551,7 +4552,7 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (properties `((upstream-name . "vdg")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-proxy r-gridextra r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=vdg")
     (synopsis "Variance Dispersion Graphs and Fraction of Design Space Plots")
     (description

@@ -1238,6 +1238,7 @@ PURPOSE. See the GNU General Public License for more details.")
                 "1am3ywcj1rqgz5i2g9c6d6fgiv8b2nabllfy84xx1n18pin7mfbk"))))
     (properties `((upstream-name . "TUWmodel")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TUWmodel")
     (synopsis
      "Lumped/Semi-Distributed Hydrological Model for Education Purposes")
@@ -2298,6 +2299,28 @@ data.table backed time series I/O that allows the user to export / import long
 format, wide format and transposed wide format data to various file types.")
     (license license:gpl2)))
 
+(define-public r-tssvm
+  (package
+    (name "r-tssvm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TSSVM" version))
+              (sha256
+               (base32
+                "07jf5s557j2xr5918fa0rkzz0ivb01acyzw2cbky92wjd21qa97s"))))
+    (properties `((upstream-name . "TSSVM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-forecast r-e1071))
+    (home-page "https://cran.r-project.org/package=TSSVM")
+    (synopsis "Time Series Forecasting using SVM Model")
+    (description
+     "Implementation and forecasting univariate time series data using the Support
+Vector Machine model.  Support Vector Machine is one of the prominent machine
+learning approach for non-linear time series forecasting.  For method details
+see Kim, K. (2003) <doi:10.1016/S0925-2312(03)00372-2>.")
+    (license license:gpl3)))
+
 (define-public r-tsstudio
   (package
     (name "r-tsstudio")
@@ -2350,6 +2373,7 @@ forecasting.")
                 "06wnbj741yyi5b483zhbaccvqpbg8lh3z9vnrxy64x28hnn79cly"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TSSS")
     (synopsis "Time Series Analysis with State Space Model")
     (description
@@ -2980,6 +3004,7 @@ aggregating over calendar periods.")
                 "13x5l0y0nh972p39s32dv8byds19g8265s2mphbrzz1v59aq0xk3"))))
     (properties `((upstream-name . "TSHRC")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=TSHRC")
     (synopsis "Two Stage Hazard Rate Comparison")
     (description
@@ -4794,6 +4819,7 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
                 "1ghza4by6shalsnqybn5qgv076dxh59b6vycg9v6ii216zbgi0kz"))))
     (properties `((upstream-name . "tripack")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=tripack")
     (synopsis "Triangulation of Irregularly Spaced Data")
     (description
@@ -7350,13 +7376,13 @@ as the relative frequency plot and methods for polyadic data.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-5")
+    (version "2.2-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TraMineR" version))
               (sha256
                (base32
-                "0xjyfqac96nf9zrbc5v03253lzyqvzib7j1j27nrxsslkq7dwpk5"))))
+                "1rqkhfns0i1nfjs6kdvpvjzy6zwiclxhhiscr4zmp4mzj9b5pxp7"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
@@ -7365,18 +7391,19 @@ as the relative frequency plot and methods for polyadic data.")
     (synopsis
      "Trajectory Miner: a Toolbox for Exploring and Rendering Sequences")
     (description
-     "Toolbox for the manipulation, description and rendering of sequences, and more
-generally the mining of sequence data in the field of social sciences.  Although
-the toolbox is primarily intended for analyzing state or event sequences that
-describe life courses such as family formation histories or professional
-careers, its features also apply to many other kinds of categorical sequence
-data.  It accepts many different sequence representations as input and provides
-tools for converting sequences from one format to another.  It offers several
-functions for describing and rendering sequences, for computing distances
-between sequences with different metrics (among which optimal matching),
-original dissimilarity-based analysis tools, and simple functions for extracting
-the most frequent subsequences and identifying the most discriminating ones
-among them.  A user's guide can be found on the TraMineR web page.")
+     "Toolbox for the manipulation, description and rendering of categorical
+sequences, and more generally the mining of sequence data in the field of social
+sciences.  Although this sequence analysis toolbox is primarily intended for
+analyzing state or event sequences that describe life courses such as family
+formation histories or professional careers, its features also apply to many
+other kinds of categorical sequence data.  It accepts many different sequence
+representations as input and provides tools for converting sequences from one
+format to another.  It offers several functions for describing and rendering
+sequences, for computing distances between sequences with different metrics
+(among which optimal matching), original dissimilarity-based analysis tools, and
+functions for extracting the most frequent subsequences and identifying the most
+discriminating ones among them.  A user's guide can be found on the TraMineR web
+page.")
     (license license:gpl2+)))
 
 (define-public r-tram
@@ -10590,6 +10617,7 @@ squares method.  See Golub and Van Loan (1980) <doi:10.1137/0717073>, Gleser
     (properties `((upstream-name . "tlrmvnmvt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=tlrmvnmvt")
     (synopsis "Low-Rank Methods for MVN and MVT Probabilities")
     (description
@@ -11589,6 +11617,7 @@ data.tables'.")
                 "186919qka9j3kfpdw2gbh16n48d6xgz9lfqgk4b17f1d7l72iplg"))))
     (properties `((upstream-name . "timsac")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=timsac")
     (synopsis "Time Series Analysis and Control Package")
     (description
@@ -12275,17 +12304,17 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.16.0")
+    (version "0.17.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "1025cvsxb128j5yky5pb57sjkixhy1j4gf5k1f6a8nj48ygqbf6p"))))
+                "0s7fs80x4alzl0z1ssxzcjm6ydy71qk4bpsrhqg8wi4kmxzfmqyr"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-nanotime))
+    (propagated-inputs (list r-spdl r-rcppspdlog r-rcpp r-nanotime))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
@@ -15397,13 +15426,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "0bvz5sl2im9720068bglclwahv75pns2qck6306hyfvrzzga2sal"))))
+                "0mzb8scdv1f0ppc2hcpkbwn89iqrvf3asncch974q1zfy8q36xbj"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -15412,8 +15441,8 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (description
      "Determine the full path of the executing script.  Works when running a line or
 selection from a script in RStudio', Rgui', and VSCode', when using source',
-sys.source', debugSource in RStudio', and testthat::source_file', and when
-running from a shell.")
+sys.source', debugSource in RStudio', testthat::source_file', and knitr::knit',
+and when running from a shell.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -19024,7 +19053,7 @@ seeks to create a profile that define a social group.")
                              r-fs
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/tpilz/telemac")
     (synopsis "R Interface to the TELEMAC Model Suite")
     (description
@@ -20110,7 +20139,7 @@ derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
                              r-dplyr
                              r-doparallel
                              r-cubature))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/SOCR/TCIU")
     (synopsis
      "Spacekime Analytics, Time Complexity and Inferential Uncertainty")

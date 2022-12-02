@@ -597,7 +597,7 @@ burden of recompiling rxode2'.")
                              r-checkmate
                              r-bh
                              r-backports))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://nlmixr2.github.io/rxode2/")
     (synopsis "Facilities for Simulating from ODE-Based Models")
     (description
@@ -2515,6 +2515,7 @@ The Things! by Wu et al. (2017), available at <arXiv:1709.03856>.")
                              r-numderiv
                              r-ks
                              r-chron))
+    (native-inputs (list gfortran))
     (home-page "http://www.unstarched.net")
     (synopsis "Univariate GARCH Models")
     (description
@@ -3208,6 +3209,7 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-gstat))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rtop")
     (synopsis "Interpolation of Data with Variable Spatial Support")
     (description
@@ -7809,6 +7811,7 @@ errors, e.g., clustered errors, or doubly-clustered errors.")
                 "1kdyw0v1m3ajf88gzs70p6l6pic4g46ccwqxi9iznimayby6ygjb"))))
     (properties `((upstream-name . "RRF")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://sites.google.com/site/houtaodeng/rrf")
     (synopsis "Regularized Random Forest")
     (description
@@ -8047,6 +8050,7 @@ Generator\".")
     (properties `((upstream-name . "rrcovNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-norm r-lattice r-cluster))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rrcovNA")
     (synopsis
      "Scalable Robust Estimators with High Breakdown Point for Incomplete Data")
@@ -8464,6 +8468,7 @@ investigation.")
                              r-hrqglas
                              r-hqreg
                              r-data-table))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rqPen")
     (synopsis "Penalized Quantile Regression")
     (description
@@ -11270,13 +11275,13 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.60.2")
+    (version "4.60.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ROpenCVLite" version))
               (sha256
                (base32
-                "1k9s5irb1k01f7y5islyvh6wm23fpys7wzkqgv2zgbmvqqaxj7ji"))))
+                "1529c5wnz7y50pzgq9m7gg7p2pmasdzpyqfmab6zxg87bmab4y61"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (inputs (list cmake))
@@ -11287,8 +11292,9 @@ authorized to a free, registered account.")
     (description
      "Installs OpenCV for use by other packages.  OpenCV <https://opencv.org/> is
 library of programming functions mainly aimed at real-time computer vision.
-This Lite version contains the stable base version of OpenCV and does not
-contain any of its externally contributed modules.")
+This Lite version installs the stable base version of OpenCV and some of its
+experimental externally contributed modules.  It does not provide R bindings
+directly.")
     (license license:gpl3)))
 
 (define-public r-ropenblas
@@ -11712,7 +11718,7 @@ different colour metrics for the conversion.")
     (properties `((upstream-name . "rollRegres")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/boennecd/rollRegres")
     (synopsis "Fast Rolling and Expanding Window Linear Regression")
     (description
@@ -13693,6 +13699,7 @@ Copas-like selection model of Ning et al. (2017)
     (properties `((upstream-name . "robustarima")))
     (build-system r-build-system)
     (propagated-inputs (list r-splustimeseries r-splustimedate))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/spkaluzny/robustarima")
     (synopsis "Robust ARIMA Modeling")
     (description
@@ -13741,6 +13748,7 @@ proposed by Tiku(1967, 1968) <doi:10.2307/2333859>,
     (properties `((upstream-name . "RobustAFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-robustbase))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RobustAFT")
     (synopsis
      "Truncated Maximum Likelihood Fit and Robust Accelerated Failure Time Regression for Gaussian and Log-Weibull Case")
@@ -13881,6 +13889,7 @@ package extends the survey <https://CRAN.R-project.org/package=survey> package."
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RobStatTM")
     (synopsis "Robust Statistics: Theory and Methods")
     (description
@@ -14715,6 +14724,7 @@ and Croux (2016) <DOI:10.13140/RG.2.2.11791.18080>.")
                 "1x0hzgq7jwl83wwmy581ia8009v0j95aksnr5ywpflnqm76rj6v2"))))
     (properties `((upstream-name . "robeth")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=robeth")
     (synopsis "R Functions for Robust Statistics")
     (description
@@ -16196,6 +16206,7 @@ datasets with outside programs.")
                 "1yd5gkg4jg3rvqrfl8c5r07lcr37n1p9h1a7b6s45iswd77dg7w1"))))
     (properties `((upstream-name . "rmutil")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://www.commanster.eu/rcode.html")
     (synopsis
      "Utilities for Nonlinear Regression and Repeated Measurements Models")
@@ -16219,6 +16230,7 @@ packages such as gnlm', stable', growth', repeated', and event (available at
     (properties `((upstream-name . "rmumps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
     (home-page "http://www.mumps-solver.org/")
     (synopsis "Wrapper for MUMPS Library")
     (description
@@ -20698,16 +20710,16 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "0.5.0")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rintcal" version))
               (sha256
                (base32
-                "1vmy92932hapkkjprf785xqxas0dr55hyqpj0w4nvywln4mspdbr"))))
+                "0ka401xy6hpmaw2ap2aq29zh3ppqgql5kkhai0vlp74bxfilg8q3"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-jsonlite r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rintcal")
     (synopsis "Radiocarbon Calibration Curves")
@@ -24382,6 +24394,7 @@ the document.")
                 "1b3pza2xdpifvrcqbdp5r2wy82ws1844bnpna01hqj65xbw2iix8"))))
     (properties `((upstream-name . "Rfit")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=Rfit")
     (synopsis "Rank-Based Estimation for Linear Models")
     (description
@@ -24898,6 +24911,7 @@ crate extendr is used to do all the heavy lifting.")
     (properties `((upstream-name . "rexpokit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
     (home-page "http://phylo.wikidot.com/rexpokit")
     (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
     (description
@@ -27435,6 +27449,7 @@ API. You can request a code and get detailed information at the following page:
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
+    (native-inputs (list gfortran))
     (home-page "https://www.commanster.eu/rcode.html")
     (synopsis "Non-Normal Repeated Measurements Models")
     (description
@@ -32440,6 +32455,7 @@ not related to the FoxPro or CANdb DBC file formats.")
     (properties `((upstream-name . "ReacTran")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rootsolve r-desolve))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ReacTran")
     (synopsis "Reactive Transport Modelling in 1d, 2d and 3d")
     (description
@@ -32978,6 +32994,7 @@ conduct exploratory data analysis (RD plots).")
     (properties `((upstream-name . "rDppDiversity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=rDppDiversity")
     (synopsis "Subset Searching Algorithm Using DPP Greedy MAP")
     (description
@@ -39258,7 +39275,7 @@ reported in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
                 "1vndnip3rpvlgmnmi91r23nyr59v6dmm8m5i2yxi7pim1l35323r"))))
     (properties `((upstream-name . "rBDAT")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://gitlab.com/vochr/rbdat")
     (synopsis "Implementation of BDAT Tree Taper Fortran Functions")
     (description
@@ -42422,6 +42439,7 @@ Kogalur and Eiran Z. Gorodeski and Andy J. Minn and Michael S. Lauer (2010)
                 "0bjfz3bla6pr7wq4mqqcd4gmxqdx32gci4f71arfski31yx8ihlc"))))
     (properties `((upstream-name . "RandomFieldsUtils")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RandomFieldsUtils")
     (synopsis
      "Utilities for the Simulation and Analysis of Random Fields and Genetic Data")
@@ -42742,6 +42760,7 @@ models.")
                 "0836fiycrsxiwdw7srz1rvsf639iqh2rk89gavx4kvn0i0sc8d2x"))))
     (properties `((upstream-name . "RAMP")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RAMP")
     (synopsis "Regularized Generalized Linear Models with Interaction Effects")
     (description

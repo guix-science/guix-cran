@@ -756,6 +756,7 @@ and performing meta-analysis studies, among others.")
                 "004dm143v032b80knpz7pj3z71lci7vgd6hz1zz22rpfg27ghgdd"))))
     (properties `((upstream-name . "nsRFA")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=nsRFA")
     (synopsis "Non-Supervised Regional Frequency Analysis")
     (description
@@ -1037,6 +1038,7 @@ univariate time series as described in Ardia et al. (2018)
                 "1z078aixk2f6xxnwz7gbdwfgviha3bv8sfvpz7g56v9v3c1g6bgy"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=NScluster")
     (synopsis
      "Simulation and Estimation of the Neyman-Scott Type Spatial Cluster Models")
@@ -1558,7 +1560,7 @@ parameter selection, and flexible tools for prediction and inference.")
                 "1mdnjfh100hckyqkyq4651ymi6lzbgfy6dy4xjxbal2q5rn6swvl"))))
     (properties `((upstream-name . "NPRED")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/zejiang-unsw/NPRED#readme")
     (synopsis "Predictor Identifier: Nonparametric Prediction")
     (description
@@ -4330,13 +4332,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "0scfzl4k2yww4jwls2kysakwsq9ilcdr8pw0bdrfi5kny859a1li"))))
+                "0yr9pw198wdd064lvxbnnw8nd6x94xf80im0r02kwf6b2l3zxz8g"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6951,6 +6953,30 @@ tools Koscik TR, Man V, Jahn A, Lee CH, Cunningham WA (2020)
 <doi:10.1016/j.neuroimage.2020.116764> \"Decomposing the neural pathways in a
 simple, value-based choice.\" Neuroimage, 214, 116764.")
     (license license:expat)))
+
+(define-public r-nieve
+  (package
+    (name "r-nieve")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nieve" version))
+              (sha256
+               (base32
+                "07996izhcyab7h2cqg0mpl6nwph3mvqxjxx7mswy3b8q20qxj4xs"))))
+    (properties `((upstream-name . "nieve")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yvesdeville/nieve/")
+    (synopsis "Miscellaneous Utilities for Extreme Value Analysis")
+    (description
+     "This package provides utility functions and objects for Extreme Value Analysis.
+These include probability functions with their exact derivatives w.r.t.  the
+parameters that can be used for estimation and inference, even with censored
+observations.  The transformations exchanging the two parameterizations of Peaks
+Over Threshold (POT) models: Poisson-GP and Point-Process are also provided with
+their derivatives.")
+    (license license:gpl2+)))
 
 (define-public r-nicherover
   (package
@@ -11361,13 +11387,13 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
 (define-public r-ndi
   (package
     (name "r-ndi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ndi" version))
               (sha256
                (base32
-                "0h9asj7dgbl3kd3a3xvsi02jkh00wl80d17ankdw46yra9dwv9vh"))))
+                "0f24lfw9mzhdf2afjjzsh0bhlj2gwndry7pgd7i4s0497w26ycbl"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11392,15 +11418,16 @@ each census geography.  Two types of aspatial neighborhood deprivation indices
 <doi:10.1016/j.dib.2022.108002> who use variables chosen by Roux and Mair (2010)
 <doi:10.1111/j.1749-6632.2009.05333.x>.  Both are a decomposition of multiple
 demographic characteristics from the U.S. Census Bureau American Community
-Survey 5-year estimates (ACS-5; 2010 onward).  Using data from the ACS-5 (2009
-onward), the package can also (1) compute the spatial Racial Isolation Index
-(RI) based on Anthopolos et al. (2011) <doi:10.1016/j.sste.2011.06.002>, (2)
-compute the spatial Educational Isolation Index (EI) based on Bravo et al.
-(2021) <doi:10.3390/ijerph18179384>, (3) compute the aspatial Index of
-Concentration at the Extremes (ICE) based on Feldman et al. (2015)
-<doi:10.1136/jech-2015-205728> and Krieger et al. (2016)
-<doi:10.2105/AJPH.2015.302955>, and (4) retrieve the aspatial Gini Index based
-on Gini (1921) <doi:10.2307/2223319>.")
+Survey 5-year estimates (ACS-5; 2006-2010 onward).  Using data from the ACS-5
+(2005-2009 onward), the package can also (1) compute the spatial Racial
+Isolation Index (RI) based on Anthopolos et al. (2011)
+<doi:10.1016/j.sste.2011.06.002>, (2) compute the spatial Educational Isolation
+Index (EI) based on Bravo et al. (2021) <doi:10.3390/ijerph18179384>, (3)
+compute the aspatial Index of Concentration at the Extremes (ICE) based on
+Feldman et al. (2015) <doi:10.1136/jech-2015-205728> and Krieger et al. (2016)
+<doi:10.2105/AJPH.2015.302955>, (4) compute the aspatial Dissimilarity Index
+based on Duncan & Duncan (1955) <doi:10.2307/2088328>, and (5) retrieve the
+aspatial Gini Index based on Gini (1921) <doi:10.2307/2223319>.")
     (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-nda
@@ -12092,6 +12119,7 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))
+    (native-inputs (list gfortran))
     (home-page
      "http://biostat.mc.vanderbilt.edu/wiki/Main/MatchedRandomization")
     (synopsis "Functions for Optimal Non-Bipartite Matching")

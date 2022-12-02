@@ -2938,7 +2938,7 @@ likelihood estimates are available.")
     (properties `((upstream-name . "irt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/egonulates/irt")
     (synopsis
      "Item Response Theory and Computerized Adaptive Testing Functions")
@@ -7611,26 +7611,26 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.6.0")
+    (version "2.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inlabru" version))
               (sha256
                (base32
-                "0fjjw02scf2sr1i6cl6h28pj10vf6i2jysc8iha1gcc4j02qxfs0"))))
+                "1b6ykgb1l1bq8mz4b40li6ypxh1r9yxl4jlcv8mwmkkfrgmz9rvp"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-sp
                              r-sf
                              r-rlang
-                             r-rgeos
                              r-rgdal
                              r-plyr
                              r-patchwork
                              r-matrixmodels
                              r-matrix
-                             r-magrittr))
+                             r-magrittr
+                             r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "http://www.inlabru.org")
     (synopsis "Bayesian Latent Gaussian Modelling using INLA and Extensions")
@@ -11530,7 +11530,7 @@ binary and continuous phenotypes.")
                 "1287mx1fpbq9y8jbyb43hlignkqg313rn3kc52pm6b2n77ipkrc6"))))
     (properties `((upstream-name . "igrf")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/bluegreen-labs/igrf")
     (synopsis "International Geomagnetic Reference Field")
     (description
@@ -13106,6 +13106,7 @@ visit
                              r-picante
                              r-fd
                              r-ape))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=idar")
     (synopsis "Individual Diversity-Area Relationships")
     (description
