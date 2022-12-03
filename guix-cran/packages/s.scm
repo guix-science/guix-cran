@@ -10932,13 +10932,13 @@ international (<https://vsni.co.uk/software/asreml-r>).")
 (define-public r-statgenmpp
   (package
     (name "r-statgenmpp")
-    (version "1.0.1.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statgenMPP" version))
               (sha256
                (base32
-                "1i7ybvpxs1n1abvk2in5ydhcr5dcvmwqik6w7hn6nw7ak4dg3jws"))))
+                "1qpf9gic9671hr6zyj56sqwx9wl51qr6gj84rfssdla718h766im"))))
     (properties `((upstream-name . "statgenMPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -24722,17 +24722,17 @@ Iden and Durner (2013) <doi:10.1002/2014WR015937>, [5] Peters (2014)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.7.5")
+    (version "2.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "soilDB" version))
               (sha256
                (base32
-                "0giijrfqgqyiq14bfwckizhplqyigz2vca91z56c8mrgj8ly4fxa"))))
+                "1fw7wk9py5ifxrq2p08i9fdh5zass00b8gl6bw4lrpzpqdkzpfpk"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
-    (home-page "http://ncss-tech.github.io/soilDB/")
+    (home-page "https://ncss-tech.github.io/soilDB/")
     (synopsis "Soil Database Interface")
     (description
      "This package provides a collection of functions for reading data from USDA-NCSS
@@ -49375,13 +49375,13 @@ increasing, or concave decreasing.  For details, see Chen and Samworth (2016)
 (define-public r-scapgnn
   (package
     (name "r-scapgnn")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scapGNN" version))
               (sha256
                (base32
-                "1szsy39y8bcmv2wi2z9qhmqvmsmr3v2vp2nwsisz0wjxkam5a2ig"))))
+                "15j0xqxyidlmgq0m66y59ppbi8vn1qxicrrm1dfybg2yn0vb0kcj"))))
     (properties `((upstream-name . "scapGNN")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -52442,15 +52442,16 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.0")
+    (version "0.3.27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "salso" version))
               (sha256
                (base32
-                "05nsnhbb5w69064ddmdkpvx7nw2gbd2l446b89myllw0jzaycza3"))))
+                "10b8hbd3kjdbh38qfnd3pg16z9fzs726ahm6d6ypg4hfjigpzhfg"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
+    (inputs (list))
     (home-page "https://cran.r-project.org/package=salso")
     (synopsis "Search Algorithms and Loss Functions for Bayesian Clustering")
     (description
@@ -52461,7 +52462,7 @@ including the Binder loss and a generalization of the variation of information
 loss, both of which allow for unequal weights on the two types of clustering
 mistakes.  Efficient implementations are also provided for Monte Carlo
 estimation of the posterior expected loss of a given clustering estimate.  See
-Dahl, Johnson, MÃ¼ller (2021) <arXiv:2105.04451>.")
+Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
     (license (list license:expat license:asl2.0))))
 
 (define-public r-salesforcer

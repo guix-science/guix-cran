@@ -13303,27 +13303,24 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.0-4")
+    (version "3.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robustlmm" version))
               (sha256
                (base32
-                "1knyc8c9846hidq8s1zdzagmfvf1rfsx9avhkjdzxaf38n5ai092"))))
+                "1bynfzmdb9w7b41x0kd199j1q67x8w8m1a3988a5pp86qwzj3bhm"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-robustbase
                              r-rlang
-                             r-rcppeigen
                              r-rcpp
                              r-nlme
                              r-matrix
                              r-lme4
                              r-lattice
-                             r-ggplot2
-                             r-fastghquad
-                             r-cubature))
+                             r-fastghquad))
     (home-page "https://github.com/kollerma/robustlmm")
     (synopsis "Robust Linear Mixed Effects Models")
     (description
@@ -39358,13 +39355,13 @@ with Gaussian Processes.")
 (define-public r-rbasex
   (package
     (name "r-rbasex")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RBaseX" version))
               (sha256
                (base32
-                "03p0c89pcx3inxa4qlyhvf3hm48rfp5j46b0qkszm96yf3g2b01m"))))
+                "1f7lgfsxwqjplv8kk81sw3zmwqi9kxc8g328ylb2c2hiyq4fg49k"))))
     (properties `((upstream-name . "RBaseX")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -4022,21 +4022,20 @@ portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimizeR" version))
               (sha256
                (base32
-                "1laxj4x77ws3q1bvdb5vqx2i3fspqws65x5jfsfj73j4qlc04z56"))))
+                "10pnf20p544ppa6q5arzay73pakin8yc04ywh5k49v5px2j0l8zc"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lifecycle))
     (home-page "https://github.com/loelschlaeger/optimizeR")
     (synopsis "Unified Framework for Numerical Optimizer")
     (description
-     "This package provides a unified framework for numerical optimizer, particularly
-for inputs and outputs.")
+     "This package provides a unified framework for numerical optimizer in R,
+particularly for their inputs and outputs.")
     (license license:gpl3+)))
 
 (define-public r-optimization
@@ -6208,13 +6207,13 @@ patterns including Abstract and Decorator classes.")
 (define-public r-oompadata
   (package
     (name "r-oompadata")
-    (version "3.1.2")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oompaData" version))
               (sha256
                (base32
-                "11c5h55xjvbavyqy9z2ch03ngy739zs61r8r4lc2gijscc7wn1s4"))))
+                "0gdp7bghgpz3q0h06w8r926x7wkpcvkpyf0v5qfi1qixbpvk5fdf"))))
     (properties `((upstream-name . "oompaData")))
     (build-system r-build-system)
     (home-page "http://oompa.r-forge.r-project.org/")

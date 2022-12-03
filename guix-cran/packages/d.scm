@@ -3925,13 +3925,13 @@ Bioinformatics <doi:10.1186/s12859-021-04203-7>.")
 (define-public r-driveml
   (package
     (name "r-driveml")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DriveML" version))
               (sha256
                (base32
-                "0177bglwzxsglv5aaddl03fvxyq31ikcwfyws36jg8q8s7p60w49"))))
+                "0gbrrlz40cs95ml92k7q1lrxkm9iv5bjsr2sy9c7jzygnrlmnmms"))))
     (properties `((upstream-name . "DriveML")))
     (build-system r-build-system)
     (propagated-inputs (list r-smarteda
@@ -18512,19 +18512,18 @@ and sector levels (No.  w19677).  National Bureau of Economic Research.")
 (define-public r-decomposer
   (package
     (name "r-decomposer")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DecomposeR" version))
               (sha256
                (base32
-                "0px999jzxnsl9mg4nch0zwzfjpm5mfj1yk5q42vbb7q42iv1ifbf"))))
+                "011j577gslh8nfykpxph4bprvv48nw9asy2j40dw016ai07h8n0s"))))
     (properties `((upstream-name . "DecomposeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-tictoc
                              r-stratigrapher
-                             r-hht
                              r-hexbin
                              r-dplyr
                              r-colorramps))
@@ -19108,6 +19107,30 @@ package, you can used WGCNA package which you can learn in Peter et al. (2008)
 analysis, two enrichment analysis, Planner maximally filtered graph extraction
 and hub analysis.")
     (license license:gpl2)))
+
+(define-public r-ddplot
+  (package
+    (name "r-ddplot")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ddplot" version))
+              (sha256
+               (base32
+                "03zcnc6is4qdpz3krhhz820j0an6dr7562bnmzj787xf5parwq6r"))))
+    (properties `((upstream-name . "ddplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r2d3))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feddelegrand7/ddplot")
+    (synopsis "Create D3 Based SVG Graphics")
+    (description
+     "Create D3 based SVG ('Scalable Vector Graphics') graphics using a simple R API.
+The package aims to simplify the creation of many SVG plot types using a
+straightforward R API. The package relies on the r2d3 R package and the D3
+JavaScript library.  See <https://rstudio.github.io/r2d3/> and
+<https://d3js.org/> respectively.")
+    (license license:gpl3+)))
 
 (define-public r-ddpcr
   (package
@@ -21874,6 +21897,36 @@ in some case studies throughout the text.")
      "Graphical interface for loading datasets in RStudio from all installed
 (including unloaded) packages, also includes command line interfaces.")
     (license license:gpl3)))
+
+(define-public r-dataset
+  (package
+    (name "r-dataset")
+    (version "0.1.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dataset" version))
+              (sha256
+               (base32
+                "1yhr7yk1gw98macfvjz4ckgsaqw7yrszqdf11gj5b1qwgp0l53pk"))))
+    (properties `((upstream-name . "dataset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-isocodes r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dataobservatory-eu/dataset")
+    (synopsis "Create Data Frames that are Easier to Exchange and Reuse")
+    (description
+     "The aim of the dataset package is to make tidy datasets easier to release,
+exchange and reuse.  It organizes and formats data frame R objects into
+well-referenced, well-described, interoperable datasets into release and reuse
+ready form.  A subjective interpretation of the W3C DataSet recommendation and
+the datacube model <https://www.w3.org/TR/vocab-data-cube/>, which is also used
+in the global Statistical Data and Metadata eXchange standards, the application
+of the connected Dublin Core
+<https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> and DataCite
+<https://support.datacite.org/docs/datacite-metadata-schema-44/> standards
+preferred by European open science repositories to improve the findability,
+accessibility, interoperability and reusability of the datasets.")
+    (license license:gpl3+)))
 
 (define-public r-dataseries
   (package

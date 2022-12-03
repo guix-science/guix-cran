@@ -5581,23 +5581,31 @@ regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
 (define-public r-graphicalextremes
   (package
     (name "r-graphicalextremes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graphicalExtremes" version))
               (sha256
                (base32
-                "1cc4xcb72yci2gq2zn3g1nh3ba802anpymm0hajdbz3kb0wz1gyn"))))
+                "00nfm6dkmx9cv9j6462vvkd72x72r4yyibg5hh9jifnss9p7smjh"))))
     (properties `((upstream-name . "graphicalExtremes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-mvtnorm r-matrixcalc r-igraph))
-    (home-page "https://cran.r-project.org/package=graphicalExtremes")
+    (propagated-inputs (list r-rdpack
+                             r-osqp
+                             r-mvtnorm
+                             r-igraph
+                             r-glmnet
+                             r-glassofast
+                             r-edmcr
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sebastian-engelke/graphicalExtremes")
     (synopsis "Statistical Methodology for Graphical Extreme Value Models")
     (description
      "Statistical methodology for sparse multivariate extreme value models.  Methods
 are provided for exact simulation and statistical inference for multivariate
 Pareto distributions on graphical structures as described in the paper Graphical
-Models for Extremes by Engelke and Hitz (2018) <arXiv:1812.01734>.")
+Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
     (license license:gpl3)))
 
 (define-public r-graphhopper
@@ -6777,13 +6785,13 @@ accuracy and computed several scores of importance for variable selection.")
 (define-public r-gplsim
   (package
     (name "r-gplsim")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gplsim" version))
               (sha256
                (base32
-                "1gkirnjjlja4z2ynrjc83wqf4q7zib44jgfsljpxmlala797qp7f"))))
+                "16xanzrapz0gnbd4zm6jm305w00c3qspcvjq7vw2r4zry0sr96pa"))))
     (properties `((upstream-name . "gplsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm r-mgcv))
@@ -10908,16 +10916,16 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "1khl6l0kj6gwf02cfz54z7fjr2rbyfpwfab9lpmlgw9qm3gbi2rb"))))
+                "085qpzz4amis9csw619k091hi933igg5bya4lgzyaifsr6is1p3y"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp r-r6 r-matrix))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix r-digest))
     (home-page "https://github.com/samuel-watson/glmmrBase")
     (synopsis "Specification of Generalised Linear Mixed Models")
     (description
@@ -11427,13 +11435,13 @@ stability for models that may fail to converge using glm.")
 (define-public r-glm-predict
   (package
     (name "r-glm-predict")
-    (version "4.1-0")
+    (version "4.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glm.predict" version))
               (sha256
                (base32
-                "10grj73lwiv1czim787vq5h4cyn3xl028rs3a8l3l4vbg8z7y6py"))))
+                "1696zjn6mqxvvzvbg282p2rxy2r81v46gx1vv0hxkphcrarv4dxs"))))
     (properties `((upstream-name . "glm.predict")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11441,6 +11449,7 @@ stability for models that may fail to converge using glm.")
                              r-nnet
                              r-mlogit
                              r-mass
+                             r-lme4
                              r-dfidx
                              r-aer))
     (native-inputs (list r-knitr))
@@ -11451,9 +11460,9 @@ stability for models that may fail to converge using glm.")
 between the two cases with confidence interval for lm() [linear model], glm()
 [generalised linear model], glm.nb() [negative binomial model], polr() [ordinal
 logistic model], multinom() [multinomial model] and tobit() [tobit model],
-svyglm() [survey-weighted generalised linear models] using Monte Carlo
-simulations or bootstrap.  Reference: Bennet A. Zelner (2009)
-<doi:10.1002/smj.783>.")
+svyglm() [survey-weighted generalised linear models], lmer() [linear multilevel
+models] using Monte Carlo simulations or bootstrap.  Reference: Bennet A. Zelner
+(2009) <doi:10.1002/smj.783>.")
     (license license:gpl2+)))
 
 (define-public r-glm-deploy
@@ -12719,13 +12728,13 @@ tools for navigating output.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-8")
+    (version "0.7-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gimme" version))
               (sha256
                (base32
-                "1rapjjivhpj1fv9p9wcdvgzz2vjlsmndi3kkpyhn0sqvycyb2453"))))
+                "1z6rqgk42p1zzf5vjz6hbzpnpal5mvhfbv30g8n7shnxpim7zakv"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph

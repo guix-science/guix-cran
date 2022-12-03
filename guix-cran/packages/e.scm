@@ -1636,13 +1636,13 @@ data\" from the International Council for Harmonisation (ICH).")
 (define-public r-expimage
   (package
     (name "r-expimage")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExpImage" version))
               (sha256
                (base32
-                "1m6s5prwas82s1ypylwcpmfqkrjskb7ms1592bj4gvvhgmlqc9h3"))))
+                "0wzq10qv6m3r65g8gzv4ikpwmymmf5rspba5slrqrclmpl1wgvn5"))))
     (properties `((upstream-name . "ExpImage")))
     (build-system r-build-system)
     (propagated-inputs (list r-schemr
@@ -9962,22 +9962,29 @@ effect modification.")
 (define-public r-endogeneity
   (package
     (name "r-endogeneity")
-    (version "2.0.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "endogeneity" version))
               (sha256
                (base32
-                "1a71w8pqi54g4m814r7z7ywd4fkhlnvrxbrb7s5zlfb5r829b69h"))))
+                "1dmb3gnkb6nxvcyzh7vhh0ra8164b337ir7higc5d3dmmssn81yy"))))
     (properties `((upstream-name . "endogeneity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod r-pbivnorm r-maxlik r-mass))
+    (propagated-inputs (list r-statmod
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbivnorm
+                             r-maxlik
+                             r-mass
+                             r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=endogeneity")
     (synopsis "Recursive Two-Stage Models to Address Endogeneity")
     (description
      "Various recursive two-stage models to address the endogeneity issue of treatment
 variables in observational study or mediators in experiments.  The details of
-the models are discussed in Peng (2022) <doi:10.2139/ssrn.3494856>.")
+the models are discussed in Peng (2022) <doi:10.1287/isre.2022.1113>.")
     (license license:gpl3+)))
 
 (define-public r-encryptr
@@ -15549,6 +15556,37 @@ Both are specific applications of computing the side length of a Durfee square
      "This is the course package for the exercise portion of the \"Ecological Data
 Collection and Processing\" course.")
     (license license:expat)))
+
+(define-public r-edcimport
+  (package
+    (name "r-edcimport")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EDCimport" version))
+              (sha256
+               (base32
+                "1d80dsfi94yg95lcnq60nnfpfd2bphqrd68k7ilcs809v95da4nx"))))
+    (properties `((upstream-name . "EDCimport")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-labelled
+                             r-haven
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/DanChaltiel/EDCimport")
+    (synopsis "Import Data from EDC Software")
+    (description
+     "This package provides a convenient toolbox to import data exported from
+Electronic Data Capture (EDC) software TrialMaster and Macro'.")
+    (license license:gpl3)))
 
 (define-public r-edbuildmapr
   (package

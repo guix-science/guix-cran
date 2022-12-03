@@ -12667,21 +12667,25 @@ probability distributions at once, useful for simulation.")
 (define-public r-contfracr
   (package
     (name "r-contfracr")
-    (version "1.0")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contFracR" version))
               (sha256
                (base32
-                "115gx38lqf2059fr76xyms2kzjqkg6g7inmfdh7a0c9qn4xjhk3q"))))
+                "1pb1xbmgdpg1svxvhq3jx5dmxszivwzmhd18hmg4rlhym454sh1b"))))
     (properties `((upstream-name . "contFracR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-go2bigq r-gmp))
     (home-page "https://cran.r-project.org/package=contFracR")
     (synopsis "Continued Fraction Generators and Evaluators")
     (description
-     "This library provides functions to convert numbers to continued fractions and
-back again.")
+     "Converts numbers to continued fractions and back again.  A solver for Pell's
+Equation is provided.  The method for calculating roots in continued fraction
+form is provided without published attribution in such places as Professor
+Emeritus Jonathan Lubin, <http://www.math.brown.edu/jlubin/> and his post to
+StackOverflow, <https://math.stackexchange.com/questions/2215918> , or Professor
+Ron Knott, e.g., <https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html> .")
     (license license:lgpl3)))
 
 (define-public r-contentid
@@ -15353,16 +15357,17 @@ compositional response data with zeros. <arXiv:2002.05137>.")
 (define-public r-compoissonreg
   (package
     (name "r-compoissonreg")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COMPoissonReg" version))
               (sha256
                (base32
-                "144vf3vfn5msc8p67q65frza8xyi9nqccjq47fnv33w5h0d9wlxj"))))
+                "0yaq7mfqcdyp077xhmqd3rx0b77y2rg1yz89q4llgiwfg244y6mp"))))
     (properties `((upstream-name . "COMPoissonReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-numderiv))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/lotze/COMPoissonReg")
     (synopsis "Conway-Maxwell Poisson (COM-Poisson) Regression")
     (description

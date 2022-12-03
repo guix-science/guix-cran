@@ -9286,16 +9286,16 @@ based on ACF is much faster than standard LIBLINEAR on many problems.")
 (define-public r-liblinear
   (package
     (name "r-liblinear")
-    (version "2.10-12")
+    (version "2.10-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LiblineaR" version))
               (sha256
                (base32
-                "0r5xbklbfgflwlmkh4i0bsdyqcjs1b4lvxr20f4fhajmkj83gqrs"))))
+                "1gkp9q99n8cw8s0qamlpjpnlw597fn71dsr05haiyykkqi2l5h5w"))))
     (properties `((upstream-name . "LiblineaR")))
     (build-system r-build-system)
-    (home-page "<https://www.dnalytics.com/software/liblinear/>")
+    (home-page "<https://dnalytics.com/software/liblinear/>")
     (synopsis "Linear Predictive Models Based on the LIBLINEAR C/C++ Library")
     (description
      "This package provides a wrapper around the LIBLINEAR C/C++ library for machine

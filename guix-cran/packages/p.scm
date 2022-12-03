@@ -6967,13 +6967,13 @@ optional).")
 (define-public r-prismjs
   (package
     (name "r-prismjs")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prismjs" version))
               (sha256
                (base32
-                "0v4l8b867lzwrnqcms25hy73a5h06vxs48aca0qvv5iwzsqqlcl5"))))
+                "0siga7l60d0axlnjwbl4smw28rggyxrjwzv8ypw9bhb6x1xnn8in"))))
     (properties `((upstream-name . "prismjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-v8))
@@ -13236,6 +13236,35 @@ checking if the proportional odds assumption holds for a cumulative logit model.
      "POM-aSPU test evaluates an association between an ordinal response and multiple
 phenotypes, for details see Kim and Pan (2017) <DOI:10.1002/gepi.22033>.")
     (license license:gpl3+)))
+
+(define-public r-pomade
+  (package
+    (name "r-pomade")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "POMADE" version))
+              (sha256
+               (base32
+                "1f9r7bmmc1lblvmb834ss38x2ki4c19mkx9h8i8ygkcdsb931xdv"))))
+    (properties `((upstream-name . "POMADE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://mikkelvembye.github.io/POMADE/")
+    (synopsis "Power for Meta-Analysis of Dependent Effects")
+    (description
+     "This package provides functions to compute and plot power levels, minimum
+detectable effect sizes, and minimum required sample sizes for the test of the
+overall average effect size in meta-analysis of dependent effect sizes.")
+    (license license:expat)))
 
 (define-public r-polywog
   (package
@@ -22466,6 +22495,28 @@ reward-transformation; and functions for plotting the distributions as networks.
 (2017, ISBN: 978-1-4939-8377-3) and Campillo Navarro (2019)
 <https://orbit.dtu.dk/en/publications/order-statistics-and-multivariate-discrete-phase-type-distributio>.")
     (license license:gpl3)))
+
+(define-public r-phasetype
+  (package
+    (name "r-phasetype")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PhaseType" version))
+              (sha256
+               (base32
+                "0vcmvixb2flrn7qz3568whg5njkxny4hxlmf3ybyi9shfb7jss0a"))))
+    (properties `((upstream-name . "PhaseType")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape r-ggplot2 r-coda))
+    (home-page "https://www.louisaslett.com/PhaseType/")
+    (synopsis "Inference for Phase-Type Distributions")
+    (description
+     "This package provides functions to perform Bayesian inference on absorption time
+data for Phase-type distributions.  The methods of Bladt et al (2003)
+<doi:10.1080/03461230110106435> and Aslett (2012)
+<https://www.louisaslett.com/PhD_Thesis.pdf> are provided.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-phaser
   (package

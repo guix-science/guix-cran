@@ -10040,6 +10040,44 @@ linear, multilayer and force Layout; 3) Network live exploration and 4) SVG
 exportation.")
     (license license:gpl3+)))
 
+(define-public r-netdiffuser
+  (package
+    (name "r-netdiffuser")
+    (version "1.22.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "netdiffuseR" version))
+              (sha256
+               (base32
+                "1brcqkxvc7h015hgmxff4449zvgzl7rx6lm52x0hchc6zjb0fi16"))))
+    (properties `((upstream-name . "netdiffuseR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-sparsem
+                             r-sna
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-networkdynamic
+                             r-network
+                             r-matrix
+                             r-matchit
+                             r-mass
+                             r-igraph
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCCANA/netdiffuseR")
+    (synopsis "Analysis of Diffusion and Contagion Processes on Networks")
+    (description
+     "Empirical statistical analysis, visualization and simulation of diffusion and
+contagion processes on networks.  The package implements algorithms for
+calculating network diffusion statistics such as transmission rate, hazard
+rates, exposure models, network threshold levels, infectiousness (contagion),
+and susceptibility.  The package is inspired by work published in Valente, et
+al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
+9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
+<DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
+    (license license:expat)))
+
 (define-public r-netda
   (package
     (name "r-netda")
@@ -13565,13 +13603,13 @@ summarizing the most relevant patterns in time sequences.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naijR" version))
               (sha256
                (base32
-                "1z57r70iv3bbdc6v00wnfpcq7bjqgpcsqhnrswqbngp5xl83xz1w"))))
+                "04wcdq0rw3may5hl7md31yiim730y6w5ly80bcdgjli9376qqkil"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi

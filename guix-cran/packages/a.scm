@@ -7337,6 +7337,27 @@ profiling tools and is not a wrapper for them.")
 Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
     (license license:gpl3)))
 
+(define-public r-appsflyer
+  (package
+    (name "r-appsflyer")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "appsflyeR" version))
+              (sha256
+               (base32
+                "1ch0cjxl7jzrdch3mz1cayc88mbf2dgp0l775c3li44204pxp8wl"))))
+    (properties `((upstream-name . "appsflyeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Data from 'Appsflyer' via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Appsflyer using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-approxot
   (package
     (name "r-approxot")
@@ -17500,13 +17521,13 @@ plot the activity in a variety of ways.")
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
-    (version "1.0.5")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "activAnalyzer" version))
               (sha256
                (base32
-                "1xy98lrlq9rn3v5699jw031wka4fyd7gydgxd5897amnc9in9z31"))))
+                "1fmh7jyvxlik229g136qvd1flzgklv8yn1i60lvngw29zkw95cvn"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

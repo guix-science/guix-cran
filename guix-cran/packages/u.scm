@@ -2293,13 +2293,13 @@ simplices.")
 (define-public r-unifir
   (package
     (name "r-unifir")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unifir" version))
               (sha256
                (base32
-                "0d9wb0af2sjipz47aqgy78f7ddbxs4qa7imwr2z46gigkfa8vb5s"))))
+                "1l563qxym1srjj5xzcz8jks3577jpk33k1gb95lcyg7r9bh35j85"))))
     (properties `((upstream-name . "unifir")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-proceduralnames r-glue))

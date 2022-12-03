@@ -5906,13 +5906,13 @@ Schwartzman (2015) <arXiv:1504.06384>.")
 (define-public r-mstdif
   (package
     (name "r-mstdif")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mstDIF" version))
               (sha256
                (base32
-                "0zhslqzvvk8wbgqvcipmzhy94awwfmkv5yfl812m8wmwgpkcqzpb"))))
+                "0krb3g1njm97cnjjhc2p5r8djgnzarn5gm65x76h1k43qxfb5iw1"))))
     (properties `((upstream-name . "mstDIF")))
     (build-system r-build-system)
     (propagated-inputs (list r-scdiftest
@@ -39122,13 +39122,13 @@ lift, and other performance curves.")
 (define-public r-macer
   (package
     (name "r-macer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MACER" version))
               (sha256
                (base32
-                "1m3p1vkhs9f42xj99gnw66wds7jsrkihg3i1qq3cr94ahlp05b4v"))))
+                "02qqcaccw671773lp1zva340fd6wqbsx9v0yxy62cbjnyh3k260r"))))
     (properties `((upstream-name . "MACER")))
     (build-system r-build-system)
     (propagated-inputs (list r-rentrez

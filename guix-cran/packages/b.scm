@@ -8978,13 +8978,13 @@ when dealing with crime statistics.")
 (define-public r-bizicount
   (package
     (name "r-bizicount")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bizicount" version))
               (sha256
                (base32
-                "0bmp2x2wdqy0dsax375fl57m6w6xjapnn6rhkrvrmc8wj1cklvqw"))))
+                "10alimshxvbd755w655b0h1zwi2nakjinf4nlhiyz9mw2sclaars"))))
     (properties `((upstream-name . "bizicount")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg
@@ -10862,13 +10862,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.0-3")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogrowth" version))
               (sha256
                (base32
-                "0hyx6j1lj1igm0c2pgjbx3gk77q8x2jlcpslky7p9fplc92baig6"))))
+                "0hlpnx86bfk16mw5yhrwlf8qz9f52wx88n5iy3lw6qhq65a6ja2f"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
