@@ -33274,13 +33274,13 @@ default.")
 (define-public r-catsurv
   (package
     (name "r-catsurv")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "catSurv" version))
               (sha256
                (base32
-                "02hrq51yk7zxz6vr4ykjwjnim9g09d63vpy3g0sm9hidbxryq139"))))
+                "0jw7jlam7d44g9sbwmxckm4mywhky2a6h1w5w849g47p7mvi32dc"))))
     (properties `((upstream-name . "catSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel

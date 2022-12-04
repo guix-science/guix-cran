@@ -7893,13 +7893,13 @@ oncology trial.")
 (define-public r-blpestimator
   (package
     (name "r-blpestimator")
-    (version "0.3.2")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BLPestimatoR" version))
               (sha256
                (base32
-                "0prc2m3hixv8hmnyhr5549406ln509llkhpqra2ifpzif0waw704"))))
+                "07q5ifsvw1ccxys6y01ldh2n9v7chyv88rda1jbznb3nnwka2wh0"))))
     (properties `((upstream-name . "BLPestimatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -15278,33 +15278,33 @@ functional and phylogenetic beta diversity.")
 (define-public r-betafunctions
   (package
     (name "r-betafunctions")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "betafunctions" version))
               (sha256
                (base32
-                "0naydz3l37pd1jciachi5ra3pv07fhjpfhbfqvf3qgqvnmvanbwl"))))
+                "0xvg5d04icsb0v9f7gnvpw345sik8xla5p55cdpbm8c3wwfk1d1m"))))
     (properties `((upstream-name . "betafunctions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=betafunctions")
     (synopsis
-     "Functions for Working with Two- And Four-Parameter Beta Probability Distributions")
+     "Functions for Working with Two- And Four-Parameter Beta Probability Distributions and Psychometric Analysis of Classifications")
     (description
      "Package providing a number of functions for working with Two- and Four-parameter
 Beta and closely related distributions (i.e., the Gamma- Binomial-, and
-Beta-Binomial distributions).  Includes d/p/q/r functions for Four-Parameter
-Beta distributions and d/p/r- functions for Beta-Binomial distributions.
-Includes moment-generating functions for Beta distributions, Binomial
-distributions, Beta-Binomial distributions, and observed value distributions.
-Includes functions for estimating classification accuracy, and consistency,
-making use of the Classical Test-Theory based Livingston and Lewis (L&L) and
-Hanson and Brennan approaches.  A shiny app is available, providing a GUI for
-the L&L approach when used for binary classifications.  For url to the app, see
-documentation for the LL.CA() function.  Livingston and Lewis (1995)
-<doi:10.1111/j.1745-3984.1995.tb00462.x>.  Lord (1965) <doi:10.1007/BF02289490>.
- Hanson (1991) <https://files.eric.ed.gov/fulltext/ED344945.pdf>.  Tharwat
-(2020) <doi:10.1016/j.aci.2018.08.003>.")
+Beta-Binomial distributions).  Includes, among other things: - d/p/q/r functions
+for Four-Parameter Beta distributions and Generalized \"Binomial\" (continuous)
+distributions, and d/p/r- functions for Beta- Binomial distributions. - Moment
+generating functions for Binomial distributions, Beta-Binomial distributions,
+and observed value distributions. - Functions for estimating classification
+accuracy and consistency, making use of the Classical Test-Theory based
+Livingston and Lewis (L&L) and Hanson and Brennan approaches.  A shiny app is
+available, providing a GUI for the L&L approach when used for binary
+classifications.  For url to the app, see documentation for the LL.CA()
+function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
+ Lord (1965) <doi:10.1007/BF02289490>.  Hanson (1991)
+<https://files.eric.ed.gov/fulltext/ED344945.pdf>.")
     (license license:cc0)))
 
 (define-public r-betacal

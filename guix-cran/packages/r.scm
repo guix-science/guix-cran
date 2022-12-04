@@ -25168,6 +25168,43 @@ using the REDCap API. See the ReviewR website for additional information,
 documentation, and examples.")
     (license license:bsd-3)))
 
+(define-public r-revgadgets
+  (package
+    (name "r-revgadgets")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RevGadgets" version))
+              (sha256
+               (base32
+                "1d14wf6zya1p9wrh1yvrl1gryldvnq7zvhi3b99002w9jph5zp25"))))
+    (properties `((upstream-name . "RevGadgets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treeio
+                             r-tidytree
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-reshape
+                             r-png
+                             r-phytools
+                             r-ggtree
+                             r-ggthemes
+                             r-ggpp
+                             r-ggplotify
+                             r-ggplot2
+                             r-gginnards
+                             r-ggimage
+                             r-dplyr
+                             r-deeptime
+                             r-ape))
+    (home-page "https://github.com/revbayes/RevGadgets")
+    (synopsis "Visualization and Post-Processing of 'RevBayes' Analyses")
+    (description
+     "Processes and visualizes the output of complex phylogenetic analyses from the
+RevBayes phylogenetic graphical modeling software.")
+    (license license:gpl3)))
+
 (define-public r-reverser
   (package
     (name "r-reverser")

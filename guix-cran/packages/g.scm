@@ -15749,13 +15749,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.4")
+    (version "0.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggiraph" version))
               (sha256
                (base32
-                "03v2srfgv0zscwz8g3hpxpnvw9bixn00xy8yyk8znbds6nr9hfil"))))
+                "1fnv4bsm2avgaklmsbqs1gbixipifb8sfwiwnrbnsqycqh56n6wc"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (inputs (list zlib libpng))
@@ -19606,40 +19606,6 @@ more complex shapes being lists of matrices (polygons).  Geometries will convert
 various R objects into these shapes.  Conversion functions are available at both
 the R level, and through Rcpp'.")
     (license license:expat)))
-
-(define-public r-geometr
-  (package
-    (name "r-geometr")
-    (version "0.2.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geometr" version))
-              (sha256
-               (base32
-                "00yhw6k9wj3q0mmhwrjvhybsz5fcx86ms5n1q2l492jljplp46cr"))))
-    (properties `((upstream-name . "geometr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-rgdal
-                             r-rcpp
-                             r-raster
-                             r-purrr
-                             r-dplyr
-                             r-deldir
-                             r-crayon
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ehrmanns.github.io/geometr/")
-    (synopsis "Generate and Modify Interoperable Geometric Shapes")
-    (description
-     "This package provides tools that generate and process fully accessible and tidy
-geometric shapes.  The package improves interoperability of spatial and other
-geometric classes by providing getters and setters that produce identical output
-from various classes.")
-    (license license:gpl3)))
 
 (define-public r-geometa
   (package
@@ -26656,13 +26622,13 @@ data to calculate posterior probabilities of breeding origin of migrating birds.
 (define-public r-gagas
   (package
     (name "r-gagas")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GAGAs" version))
               (sha256
                (base32
-                "0wkgj4crzfsz7p07s7jaw7f80xglvxgj685cq6f0qd5i01jdjzj0"))))
+                "13cppa848n48p4h27cfi35d6c1hcz0yjd0nz8czbcb4zmnqyd04c"))))
     (properties `((upstream-name . "GAGAs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp))
@@ -26672,8 +26638,11 @@ data to calculate posterior probabilities of breeding origin of migrating birds.
     (description
      "Fits linear regression, logistic and multinomial regression models, Poisson
 regression, Cox model via Global Adaptive Generative Adjustment Algorithm.  For
-more information, see Bin Wang, Xiaofei Wang and Jianhua Guo (2022)
-<arXiv:1911.00658>.")
+more detailed information, see Bin Wang, Xiaofei Wang and Jianhua Guo (2022)
+<arXiv:1911.00658>.  This paper provides the theoretical properties of Gaga
+linear model when the load matrix is orthogonal.  Further study is going on for
+the nonorthogonal cases and generalized linear models.  These works are in part
+supported by the National Natural Foundation of China (No.12171076).")
     (license license:gpl2)))
 
 (define-public r-gafit

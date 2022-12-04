@@ -6070,13 +6070,13 @@ determines the finalists', i.e., the important features, from the semifinalist'.
 (define-public r-subrank
   (package
     (name "r-subrank")
-    (version "0.9.9.1")
+    (version "0.9.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "subrank" version))
               (sha256
                (base32
-                "19lgw7248jq6b34i17c7vw208wsvmppni7njswd02i9xdgyjn95z"))))
+                "19mxmapxjqv1k26bnis4zkrqpgvl8m0gdxqqzkdvgq89c6y9v3mj"))))
     (properties `((upstream-name . "subrank")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=subrank")
@@ -27686,13 +27686,13 @@ Office of Poland, MojePanstwo, Eurostat, WHO and other sources.")
 (define-public r-smarteda
   (package
     (name "r-smarteda")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SmartEDA" version))
               (sha256
                (base32
-                "07686x8l25pd0166n6s86zlnj8s10g6by2kd55rfh5didqx8zmsv"))))
+                "0fmqi3kl20xdrnpbbsk22rrhj2xqckb777mcwdjgwxvc77r88bjf"))))
     (properties `((upstream-name . "SmartEDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -44766,16 +44766,21 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.6.0")
+    (version "2.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secrdesign" version))
               (sha256
                (base32
-                "0iaby8qpik6g5060m3cykrqslj8cl1ddg0hsqy6vjgy6gg9r6ach"))))
+                "0a0m78xf2avy4yx7zc8rmzjzai2pi4iy5bzh80yrc95s3m0nn24g"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-secr r-abind))
+    (propagated-inputs (list r-sf
+                             r-secr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-kofnga
+                             r-bh))
     (home-page "https://www.otago.ac.nz/density/")
     (synopsis "Sampling Design for Spatially Explicit Capture-Recapture")
     (description

@@ -960,13 +960,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LSX" version))
               (sha256
                (base32
-                "0769g5w67549076b2rck7r46gg4jjdbk024qvcczdigr7cshzq39"))))
+                "0imghgi95rdsxjfm4w2i6n8hb5p6y2dsdls0cw56hwlxcv5p2b4l"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -9253,35 +9253,6 @@ optimum-path forests (OPF), JoÃ£o P. Papa and Alexandre X. FalcÃ£o (2008)
 <doi:10.1007/978-3-540-89639-5_89>, with methods for supervised learning and
 data clustering.")
     (license license:bsd-2)))
-
-(define-public r-liblinear-acf
-  (package
-    (name "r-liblinear-acf")
-    (version "1.94-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LiblineaR.ACF" version))
-              (sha256
-               (base32
-                "1ldkb63yhm1ki8i585wp5byx6y0kvclwy3ncacgcdqqk0p41cyi6"))))
-    (properties `((upstream-name . "LiblineaR.ACF")))
-    (build-system r-build-system)
-    (home-page "http://github.com/aydindemircioglu/liblineaR.ACF/")
-    (synopsis
-     "Linear Classification with Online Adaptation of Coordinate Frequencies")
-    (description
-     "Solving the linear SVM problem with coordinate descent is very efficient and is
-implemented in one of the most often used packages, LIBLINEAR (available at
-http://www.csie.ntu.edu.tw/~cjlin/liblinear).  It has been shown that the
-uniform selection of coordinates can be accelerated by using an online
-adaptation of coordinate frequencies (ACF).  This package implements ACF and is
-based on LIBLINEAR as well as the LiblineaR package
-(<https://cran.r-project.org/package=LiblineaR>).  It currently supports
-L2-regularized L1-loss as well as L2-loss linear SVM. Similar to LIBLINEAR
-multi-class classification (one-vs-the rest, and Crammer & Singer method) and
-cross validation for model selection is supported.  The training of the models
-based on ACF is much faster than standard LIBLINEAR on many problems.")
-    (license license:gpl2)))
 
 (define-public r-liblinear
   (package

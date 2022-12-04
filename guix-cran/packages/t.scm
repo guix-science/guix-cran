@@ -12261,25 +12261,6 @@ Scott Hale (2017) <doi:10.1111/cgf.13200>.  Functions allow users to generate,
 plot, and compare square or hexagon tile maps.")
     (license license:gpl3)))
 
-(define-public r-tilemanager
-  (package
-    (name "r-tilemanager")
-    (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TileManager" version))
-              (sha256
-               (base32
-                "0pcskdqxxm07j47bw1j4d3jqf64pk0jqwcp5379hnpi6kr7f5gvh"))))
-    (properties `((upstream-name . "TileManager")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-sp r-rgeos r-raster r-apfun))
-    (home-page "https://cran.r-project.org/package=TileManager")
-    (synopsis "Tile Manager")
-    (description
-     "Tools for creating and detecting tiling schemes for geospatial datasets.")
-    (license license:gpl3+)))
-
 (define-public r-tilegramsr
   (package
     (name "r-tilegramsr")
