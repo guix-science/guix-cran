@@ -6055,34 +6055,6 @@ and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
 
-(define-public r-interpret
-  (package
-    (name "r-interpret")
-    (version "0.1.26")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interpret" version))
-              (sha256
-               (base32
-                "0f7bhz5gj0f5dxjcc9xlrx4y474akn6q0d7z71yypyw6bawvqkbn"))))
-    (properties `((upstream-name . "interpret")))
-    (build-system r-build-system)
-    (home-page "https://github.com/interpretml/interpret")
-    (synopsis "Fit Interpretable Machine Learning Models")
-    (description
-     "Package for training interpretable machine learning models.  Historically, the
-most interpretable machine learning models were not very accurate, and the most
-accurate models were not very interpretable.  Microsoft Research has developed
-an algorithm called the Explainable Boosting Machine (EBM) which has both high
-accuracy and interpretable characteristics.  EBM uses machine learning
-techniques like bagging and boosting to breathe new life into traditional GAMs
-(Generalized Additive Models).  This makes them as accurate as random forests
-and gradient boosted trees, and also enhances their intelligibility and
-editability.  Details on the EBM algorithm can be found in the paper by Rich
-Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
-(2015, <doi:10.1145/2783258.2788613>).")
-    (license license:expat)))
-
 (define-public r-interplot
   (package
     (name "r-interplot")
@@ -7314,13 +7286,13 @@ sequence classification trees.  See Wilkinson et al (2018)
 (define-public r-insane
   (package
     (name "r-insane")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "insane" version))
               (sha256
                (base32
-                "1vlqp4sj7jqn6bd5qkrwqralvw923zmx3drm6mjnl76nlh2inspa"))))
+                "0hzznlmvyw0v0a78q7mfnjps8453mmb3pig7srn98bkxv6f6vcp8"))))
     (properties `((upstream-name . "insane")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7332,7 +7304,6 @@ sequence classification trees.  See Wilkinson et al (2018)
                              r-ggthemes
                              r-ggpubr
                              r-ggplot2
-                             r-ggbeeswarm
                              r-dt
                              r-dplyr
                              r-broom))
@@ -7543,48 +7514,6 @@ gradient-based methods like SmoothGrad described by Smilkov et al. (2017)
     (description
      "This package contains bibliographic information for the U.S. Geological Survey
 (USGS) Idaho National Laboratory (INL) Project Office.")
-    (license license:cc0)))
-
-(define-public r-inlmisc
-  (package
-    (name "r-inlmisc")
-    (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "inlmisc" version))
-              (sha256
-               (base32
-                "0d7yqbd7bqsk312g28pqgdpcpqd06abyra2inmnj8fkgpmv3wjf6"))))
-    (properties `((upstream-name . "inlmisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xtable
-                             r-wordcloud2
-                             r-webshot
-                             r-tinytex
-                             r-sp
-                             r-scales
-                             r-rmarkdown
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-leaflet
-                             r-knitr
-                             r-igraph
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ga
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://github.com/USGS-R/inlmisc")
-    (synopsis "Miscellaneous Functions for the USGS INL Project Office")
-    (description
-     "This package provides a collection of functions for creating high-level
-graphics, performing raster-based analysis, processing MODFLOW-based models,
-selecting subsets using a genetic algorithm, creating interactive web maps,
-accessing color palettes, etc.  Used to support packages and scripts written by
-researchers at the United States Geological Survey (USGS) Idaho National
-Laboratory (INL) Project Office.")
     (license license:cc0)))
 
 (define-public r-inlinedocs
@@ -11315,30 +11244,6 @@ origin, with the three functions of iGini(), iTheiT(), and iTheilL().  For
 details, see Tim F. Liao (2019) <doi:10.1177/0049124119875961>.")
     (license license:gpl2)))
 
-(define-public r-iilasso
-  (package
-    (name "r-iilasso")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iilasso" version))
-              (sha256
-               (base32
-                "043m1n5840459zsknkb54801apb0a2cqfprncmj2wp235rbqj832"))))
-    (properties `((upstream-name . "iilasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrix r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "http://proceedings.mlr.press/v84/takada18a/takada18a.pdf")
-    (synopsis "Independently Interpretable Lasso")
-    (description
-     "Efficient algorithms for fitting linear / logistic regression model with
-Independently Interpretable Lasso.  Takada, M., Suzuki, T., & Fujisawa, H.
-(2018).  Independently Interpretable Lasso: A New Regularizer for Sparse
-Regression with Uncorrelated Variables.  AISTATS.
-<http://proceedings.mlr.press/v84/takada18a/takada18a.pdf>.")
-    (license license:expat)))
-
 (define-public r-ihsep
   (package
     (name "r-ihsep")
@@ -11883,13 +11788,13 @@ Instagram is a web photo sharing service.  It can be found at:
 (define-public r-ifs
   (package
     (name "r-ifs")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ifs" version))
               (sha256
                (base32
-                "0gz2zwbv0qvlsc6cv9dk2wfni72ahb6rh1vcsbd52cd6bflh3nh0"))))
+                "0w27z3fjv007717dsn72bm9hbpgzd6pfib6maf9ihnsjllb6k0v5"))))
     (properties `((upstream-name . "ifs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ifs")
@@ -14737,25 +14642,6 @@ parameters.")
      "Running Focused Identification of the Germplasm Strategy (FIGS) to make best
 subsets from Genebank Collection.")
     (license license:expat)))
-
-(define-public r-icapca
-  (package
-    (name "r-icapca")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icapca" version))
-              (sha256
-               (base32
-                "131gdrk8vsbac0krmsryvsp21bn9hzxqxq847zn16cxjf6y5i3xb"))))
-    (properties `((upstream-name . "icapca")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=icapca")
-    (synopsis "Mixed ICA/PCA")
-    (description
-     "This package implements mixed ICA/PCA model for blind source separation,
-potentially with inclusion of Gaussian sources")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-icaod
   (package

@@ -3352,38 +3352,31 @@ and state-space model reduction techniques are implemented.  An introduction and
 User's Guide is available in a vignette.")
     (license license:gpl2)))
 
-(define-public r-dscore
+(define-public r-dsdp
   (package
-    (name "r-dscore")
-    (version "1.4.0")
+    (name "r-dsdp")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
-              (uri (cran-uri "dscore" version))
+              (uri (cran-uri "dsdp" version))
               (sha256
                (base32
-                "0vjrxdgss79pmd8vkarvgqqm465byz17r7r93k5i3923xm02kavr"))))
-    (properties `((upstream-name . "dscore")))
+                "02646y75gng5ifblib834i19qc9jgl6i3grlk4p3nsy7xs8cl02s"))))
+    (properties `((upstream-name . "dsdp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/d-score/dscore")
-    (synopsis "D-Score for Child Development")
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://tsuchiya-lab.github.io/dsdp/")
+    (synopsis "Density Estimation with Semidefinite Programming")
     (description
-     "The D-score is a quantitative measure of child development.  The D-score follows
-the Rasch model.  See Jacobusse, van Buuren and Verkerk (2006)
-<doi:10.1002/sim.2351>.  The user can convert milestone scores from 19
-assessment instruments into the D-score and the DAZ (D-score adjusted for age).
-Several tools assist in mapping milestone names into the 9-position Global Scale
-of Early Development (GSED) convention.  Supports calculation of the D-score
-using dutch <doi:10.1177/0962280212473300>, gcdg <doi:10.1136/bmjgh-2019-001724>
-and gsed conversion keys.  The user can calculate DAZ using dutch and gcdg
-age-conditional references.")
-    (license license:agpl3)))
+     "The models of probability density functions are Gaussian or exponential
+distributions with polynomial correction terms.  Using a maximum likelihood
+method, dsdp computes parameters of Gaussian or exponential distributions
+together with degrees of polynomials by a grid search, and coefficient of
+polynomials by a variant of semidefinite programming.  It adopts Akaike
+Information Criterion for model selection.  See a vignette for a tutorial and
+more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
+    (license license:expat)))
 
 (define-public r-dsb
   (package
@@ -9705,6 +9698,28 @@ applications are provided (via shiny') for the implemented methods to help in
 designing and deploying the computations.")
     (license license:lgpl2.0+)))
 
+(define-public r-distatisr
+  (package
+    (name "r-distatisr")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DistatisR" version))
+              (sha256
+               (base32
+                "0r8gp84kbl8kbsw3kbp8sk0xc2gav074qc9qlkq06bp0sxycwhyw"))))
+    (properties `((upstream-name . "DistatisR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytext r-readxl r-prettygraphs r-dplyr r-car))
+    (home-page "https://cran.r-project.org/package=DistatisR")
+    (synopsis "DiSTATIS Three Way Metric Multidimensional Scaling")
+    (description
+     "Implement DiSTATIS and CovSTATIS (three-way multidimensional scaling).  DiSTATIS
+and CovSTATIS are used to analyze multiple distance/covariance matrices
+collected on the same set of observations.  These methods are based on Abdi, H.,
+Williams, L.J., Valentin, D., & Bennani-Dosse, M. (2012) <doi:10.1002/wics.198>.")
+    (license license:gpl2)))
+
 (define-public r-distantia
   (package
     (name "r-distantia")
@@ -15070,34 +15085,6 @@ U-Pb age and Lu-Hf data, in a shiny'-based user-interface.  Outputs publication
 quality figures using ggplot2', and tables of statistics currently in use in the
 detrital zircon geochronology community.")
     (license license:gpl3)))
-
-(define-public r-detsel
-  (package
-    (name "r-detsel")
-    (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DetSel" version))
-              (sha256
-               (base32
-                "01mpjy1cmgbrchdjl0gmrq3zx3mlkznml1qcradj2v5mgz26ifrv"))))
-    (properties `((upstream-name . "DetSel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ash))
-    (home-page "https://cran.r-project.org/package=DetSel")
-    (synopsis "Computer Program to Detect Markers Responding to Selection")
-    (description
-     "In the new era of population genomics, surveys of genetic polymorphism (\"genome
-scans\") offer the opportunity to distinguish locus-specific from genome wide
-effects at many loci.  Identifying presumably neutral regions of the genome that
-are assumed to be influenced by genome-wide effects only, and excluding
-presumably selected regions, is therefore critical to infer population
-demography and phylogenetic history reliably.  Conversely, detecting
-locus-specific effects may help identify those genes that have been, or still
-are, targeted by natural selection.  The software package DetSel has been
-developed to identify markers that show deviation from neutral expectation in
-pairwise comparisons of diverging populations.")
-    (license license:gpl2+)))
 
 (define-public r-dets
   (package

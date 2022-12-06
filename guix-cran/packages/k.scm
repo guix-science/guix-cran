@@ -4784,38 +4784,6 @@ set.  The Kantorovich distance is also known as the Monge-Kantorovich distance
 or the first Wasserstein distance.")
     (license license:gpl3)))
 
-(define-public r-kangar00
-  (package
-    (name "r-kangar00")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kangar00" version))
-              (sha256
-               (base32
-                "0cgyxvgk6bxvh77y9vl0p024dya9ffr9fhmwlcxbysbr4p3kyiaj"))))
-    (properties `((upstream-name . "kangar00")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sqldf
-                             r-lattice
-                             r-kegggraph
-                             r-igraph
-                             r-data-table
-                             r-compquadform
-                             r-biomart
-                             r-bigmemory))
-    (home-page "https://cran.r-project.org/package=kangar00")
-    (synopsis "Kernel Approaches for Nonlinear Genetic Association Regression")
-    (description
-     "This package provides methods to extract information on pathways, genes and
-various single-nucleotid polymorphisms (SNPs) from online databases.  It
-provides functions for data preparation and evaluation of genetic influence on a
-binary outcome using the logistic kernel machine test (LKMT).  Three different
-kernel functions are offered to analyze genotype information in this variance
-component test: A linear kernel, a size-adjusted kernel and a network-based
-kernel (Friedrichs et al., 2017, <doi:10.1155/2017/6742763>).")
-    (license license:gpl2)))
-
 (define-public r-kamila
   (package
     (name "r-kamila")

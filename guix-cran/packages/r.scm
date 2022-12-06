@@ -16,8 +16,8 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages tcl)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages llvm)
@@ -1453,28 +1453,6 @@ comparison.  Note that this package contains an embedded older version of Vowpal
 Wabbit'.  The package rvw at the GitHub repo
 <https://github.com/rvw-org/rvw-legacy> can provide an alternative using an
 external Vowpal Wabbit library installation.")
-    (license license:gpl2+)))
-
-(define-public r-rvoterdistance
-  (package
-    (name "r-rvoterdistance")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rvoterdistance" version))
-              (sha256
-               (base32
-                "16il36hkq1j6gyl5d8bx5khiiv6fy2m8vkhwiaaiqsliw2sspy4j"))))
-    (properties `((upstream-name . "Rvoterdistance")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=Rvoterdistance")
-    (synopsis
-     "Calculates the Distance Between Voter and Multiple Polling Locations")
-    (description
-     "Designed to calculate the distance between each voter in a voter file -- given
-lat/long coordinates -- and many potential (early) polling or vote by mail drop
-box locations, then return the minimum distance.")
     (license license:gpl2+)))
 
 (define-public r-rvmmin
@@ -3348,44 +3326,6 @@ program we use the free and open source GNU Scientific Library (GSL).  There is
 also the possibility to suppress single process completion times.")
     (license license:gpl2+)))
 
-(define-public r-rtls
-  (package
-    (name "r-rtls")
-    (version "0.2.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rTLS" version))
-              (sha256
-               (base32
-                "10fkd8ylj9xwvgwnirjw4n6c4vl8y5x8q4mq2zmwlpjryknx82kv"))))
-    (properties `((upstream-name . "rTLS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgl
-                             r-rgeos
-                             r-rcppprogress
-                             r-rcpphnsw
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-foreach
-                             r-dosnow
-                             r-data-table
-                             r-boot
-                             r-alphashape3d))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Antguz/rTLS")
-    (synopsis
-     "Tools to Process Point Clouds Derived from Terrestrial Laser Scanning")
-    (description
-     "This package provides a set of tools to process and calculate metrics on point
-clouds derived from terrestrial LiDAR (Light Detection and Ranging; TLS).  Its
-creation is based on key aspects of the TLS application in forestry and ecology.
- Currently, the main routines are based on filtering, neighboring features of
-points, voxelization, canopy structure, and the creation of artificial stands.
-It is written using data.table and C++ language and in most of the functions it
-is possible to use parallel processing to speed-up the routines.")
-    (license license:gpl3+)))
-
 (define-public r-rtl
   (package
     (name "r-rtl")
@@ -4534,33 +4474,6 @@ to read datasets and forms from a SurveyCTO server into R as data.table's and to
 download file attachments.  The package also has limited support to write
 datasets to a server.")
     (license license:expat)))
-
-(define-public r-rsurvey
-  (package
-    (name "r-rsurvey")
-    (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RSurvey" version))
-              (sha256
-               (base32
-                "0yk969jdvpgv01zbmk4zyxcmrbdizh37bddj1k128ndyf191z37x"))))
-    (properties `((upstream-name . "RSurvey")))
-    (build-system r-build-system)
-    (inputs (list tcl))
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-mba
-                             r-inlmisc
-                             r-colorspace))
-    (home-page "https://github.com/USGS-R/RSurvey")
-    (synopsis "Geographic Information System Application")
-    (description
-     "This package provides a geographic information system (GIS) graphical user
-interface (GUI) that provides data viewing, management, and analysis tools.")
-    (license license:cc0)))
 
 (define-public r-rsurveillance
   (package
@@ -12480,13 +12393,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-19")
+    (version "1.3-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RODBC" version))
               (sha256
                (base32
-                "1zjf5mfv906kxy4cn2l10z35l7m5878aqjx9yj6pr2ydfxlbvz1s"))))
+                "1mpv2315jbbg085wbrgzvlk11apkn32slq3j4jjbw0i5rb8pn5bz"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RODBC")
@@ -13707,13 +13620,13 @@ errors using a filtered tau-estimate.")
 (define-public r-robustanova
   (package
     (name "r-robustanova")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RobustANOVA" version))
               (sha256
                (base32
-                "04syvysh3bh04g1l78yvjmy1qlb94dm45qh051lv34ymfvi6ails"))))
+                "1kpvahxipcmsqk6mv2zagcvw0glmsj0xkpf6f3gjnckin6mxnjyv"))))
     (properties `((upstream-name . "RobustANOVA")))
     (build-system r-build-system)
     (propagated-inputs (list r-peip r-optimbase))
@@ -18665,34 +18578,6 @@ LDCP systems.  It main goal is increasing the visibility and practical use of
 this research line.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rlda
-  (package
-    (name "r-rlda")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rlda" version))
-              (sha256
-               (base32
-                "0i8n01h9072q339p1kiqhcpwphw0d2x6bsszbhgfqc2b160dk2bl"))))
-    (properties `((upstream-name . "Rlda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-gtools
-                             r-foreach
-                             r-doparallel
-                             r-coda))
-    (home-page
-     "https://www.sciencedirect.com/science/article/pii/S0950705118305100")
-    (synopsis "Bayesian LDA for Mixed-Membership Clustering Analysis")
-    (description
-     "Estimates the Bayesian LDA model for mixed-membership clustering based on
-different types of data (i.e., Multinomial, Bernoulli, and Binomial entries).
-Albuquerque, Valle and Li (2019) <doi:10.1016/j.knosys.2018.10.024>.")
-    (license license:gpl2)))
 
 (define-public r-rlcv
   (package
@@ -28707,38 +28592,6 @@ populations.  Various plotting functions are included to facilitate
 visualization and interpretation of these statistics.")
     (license license:gpl2+)))
 
-(define-public r-regweight
-  (package
-    (name "r-regweight")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "regweight" version))
-              (sha256
-               (base32
-                "1ziqii9xlp86n6ga99glwnh2kf6pkm8m326yra40yf2w3h180pbm"))))
-    (properties `((upstream-name . "regweight")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-scales
-                             r-rlang
-                             r-lpdensity
-                             r-gt
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=regweight")
-    (synopsis "Convenience Functions for Implicit Regression Weights")
-    (description
-     "This package provides a simple wrapper for calculating regression weights as
-defined by Aronow and Samii (2015) <doi:10.1111/ajps.12185>.  Given a model
-object and a term of interest, regweight will calculate implicit regression
-weights and provide a variety of useful visualizations and summary statistics.")
-    (license license:expat)))
-
 (define-public r-regularizedsca
   (package
     (name "r-regularizedsca")
@@ -32585,23 +32438,23 @@ into cells.  Save the final table output as a static image or interactive file."
 (define-public r-reactable
   (package
     (name "r-reactable")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reactable" version))
               (sha256
                (base32
-                "0k9h1im0ncz0iv3l7d1y1gghx1i5r52k5cywszk00saz4fdd9r1q"))))
+                "09kwpzchap3y6vcym0z3gizmpn4j3jf67laaifnq07vs63a5xc8k"))))
     (properties `((upstream-name . "reactable")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactr r-jsonlite r-htmlwidgets r-htmltools
                              r-digest))
     (home-page "https://glin.github.io/reactable/")
-    (synopsis "Interactive Data Tables Based on 'React Table'")
+    (synopsis "Interactive Data Tables for R")
     (description
      "Interactive data tables for R, based on the React Table JavaScript library.
-Provides an HTML widget that can be used in R Markdown documents and Shiny
-applications, or viewed from an R console.")
+Provides an HTML widget that can be used in R Markdown or Quarto documents,
+Shiny applications, or viewed from an R console.")
     (license license:expat)))
 
 (define-public r-re2
@@ -32990,13 +32843,13 @@ operations.")
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdrobust" version))
               (sha256
                (base32
-                "132nxql163r71xw63qbg6g90cigfjmg4svaln247jrlfbwwnvjiq"))))
+                "18345w89w3phkfp4s59k10iha2ywgnrgdm61f8a9ixvhd3vv2qr0"))))
     (properties `((upstream-name . "rdrobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -42460,28 +42313,6 @@ Kogalur and Eiran Z. Gorodeski and Andy J. Minn and Michael S. Lauer (2010)
 <doi:10.1198/jasa.2009.tm08622>, Leo Breiman (2001)
 <doi:10.1023/A:1010933404324>).")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-randomfieldsutils
-  (package
-    (name "r-randomfieldsutils")
-    (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RandomFieldsUtils" version))
-              (sha256
-               (base32
-                "0bjfz3bla6pr7wq4mqqcd4gmxqdx32gci4f71arfski31yx8ihlc"))))
-    (properties `((upstream-name . "RandomFieldsUtils")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=RandomFieldsUtils")
-    (synopsis
-     "Utilities for the Simulation and Analysis of Random Fields and Genetic Data")
-    (description
-     "Various utilities are provided that might be used in spatial statistics and
-elsewhere.  It delivers a method for solving linear equations that checks the
-sparsity of the matrix before any algorithm is used.")
-    (license license:gpl3+)))
 
 (define-public r-randomcolor
   (package

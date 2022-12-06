@@ -2549,27 +2549,6 @@ with RStudio', modeling, formatting, determining users operating system, feature
 scaling, and more!")
     (license license:gpl2+)))
 
-(define-public r-jjanno
-  (package
-    (name "r-jjanno")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jjAnno" version))
-              (sha256
-               (base32
-                "1xqkkqzdalpzc9d9kibc7b2lfmpzxn84f9y8pl1wjs7ins4dhsck"))))
-    (properties `((upstream-name . "jjAnno")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-magick r-ggplot2 r-ggiraphextra
-                             r-dplyr))
-    (home-page "https://github.com/junjunlab/jjAnno")
-    (synopsis "An Annotation Package for 'ggplot2' Output")
-    (description
-     "To make the plot more elegant with some multiple type annotations including
-rect', text', point', image and segment elements.")
-    (license license:expat)))
-
 (define-public r-jipapprox
   (package
     (name "r-jipapprox")

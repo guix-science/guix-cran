@@ -3162,6 +3162,28 @@ Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>.  Torralba et al. (2017)
 <doi:10.1007/s00382-012-1626-3>.")
     (license license:asl2.0)))
 
+(define-public r-cstime
+  (package
+    (name "r-cstime")
+    (version "2022.11.22")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cstime" version))
+              (sha256
+               (base32
+                "12nammfv9abf888zkhg3ng59r1v2pmxk9363p97mv8ssbjiil46x"))))
+    (properties `((upstream-name . "cstime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-purrr r-magrittr r-dplyr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/cstime/")
+    (synopsis "Date and Time Functions for Public Health Purposes")
+    (description
+     "This package provides easy and consistent time conversion for public health
+purposes.  The time conversion functions provided here are between date, ISO
+week, ISO yearweek, ISO year, calendar month/year, season, season week.")
+    (license license:expat)))
+
 (define-public r-cste
   (package
     (name "r-cste")
@@ -10638,13 +10660,13 @@ German).")
 (define-public r-corncob
   (package
     (name "r-corncob")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corncob" version))
               (sha256
                (base32
-                "1ahlhc3vjqiw87xk03ws4ii295gimjwxzs6lk9nz94qyc4hq200h"))))
+                "0y1iw8kdd8smw2j590s4ndnzihh3g9hlq49dcw38zcf7jqydjw28"))))
     (properties `((upstream-name . "corncob")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -14379,32 +14401,6 @@ normal (Horrace (2005) p.  4, <doi:10.1016/j.jmva.2004.10.007>).  Also draws
 random samples from this distribution.")
     (license license:gpl3)))
 
-(define-public r-condsurv
-  (package
-    (name "r-condsurv")
-    (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "condSURV" version))
-              (sha256
-               (base32
-                "1zw79rll44dx5vysfixfp684gf8c3c37xazwgrfzjbq54i3jwmir"))))
-    (properties `((upstream-name . "condSURV")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-np
-                             r-kernsmooth
-                             r-foreach
-                             r-dorng
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=condSURV")
-    (synopsis
-     "Estimation of the Conditional Survival Function for Ordered Multivariate Failure Time Data")
-    (description
-     "Method to implement some newly developed methods for the estimation of the
-conditional survival function.")
-    (license license:gpl2+)))
-
 (define-public r-condmvt
   (package
     (name "r-condmvt")
@@ -15222,13 +15218,13 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.22")
+    (version "3.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "1kgjg41g3pmpgjj9id7ckran1v2a75czmp6mrkzh1jpgvsx55r15"))))
+                "1iqhqwnrvvrzk0jyqgpsq7aa1pglmqsgxinxpv20588nhvjkxn60"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
@@ -15750,29 +15746,6 @@ between two groups, including overall hypothesis tests described in Li et al.
 <doi:10.1002/sim.2864>, short-term tests, and long-term tests in Logan et al.
 (2008) <doi:10.1111/j.1541-0420.2007.00975.x>.  Some commonly used descriptive
 statistics and plots are also included.")
-    (license license:gpl2)))
-
-(define-public r-comparisoncr
-  (package
-    (name "r-comparisoncr")
-    (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ComparisonCR" version))
-              (sha256
-               (base32
-                "10xw3ppkzpc3njc409ln7g6bg33csf2ilw3f11hn60ry5xbnn82y"))))
-    (properties `((upstream-name . "ComparisonCR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cmprsk r-cifsmry r-boot))
-    (home-page "https://cran.r-project.org/package=ComparisonCR")
-    (synopsis
-     "Comparison of Cumulative Incidence Between Two Groups Under Competing Risks")
-    (description
-     "Statistical methods for competing risks data in comparing cumulative incidence
-function curves between two groups, including overall hypothesis tests and
-arbitrary tests in Lyu et al. (2020) <doi:10.1002/pst.2028>, and the fixed-point
-tests in Chen et al. (2018) <doi:10.1080/03610918.2018.1476697>.")
     (license license:gpl2)))
 
 (define-public r-comparison
@@ -25921,25 +25894,6 @@ medical imaging data in the form of CIFTI files
 <https://www.nitrc.org/projects/cifti/>.")
     (license license:gpl2)))
 
-(define-public r-cifsmry
-  (package
-    (name "r-cifsmry")
-    (version "1.0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CIFsmry" version))
-              (sha256
-               (base32
-                "1m2m2zvg9ghy3bm2sll7jp4xm2vw58kc5xaxd2c9k82771m3a4j0"))))
-    (properties `((upstream-name . "CIFsmry")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=CIFsmry")
-    (synopsis "Weighted summary of cumulative incidence functions")
-    (description
-     "Estimate of cumulative incidence function in two samples.  Provide weighted
-summary statistics based on various methods and weights.")
-    (license license:gpl2+)))
-
 (define-public r-cif
   (package
     (name "r-cif")
@@ -27382,43 +27336,6 @@ methodologies that aggregate milestone data into informative measures of child
 development.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-chickn
-  (package
-    (name "r-chickn")
-    (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "chickn" version))
-              (sha256
-               (base32
-                "1d3xl2pigan6vb29nk2ks04dsl5vy16cv9z7miskmhcqcx2wm1qb"))))
-    (properties `((upstream-name . "chickn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zipfr
-                             r-rmio
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-nloptr
-                             r-mvnfast
-                             r-mass
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-bigstatsr))
-    (home-page "https://cran.r-project.org/package=chickn")
-    (synopsis "'Compressive' Hierarchical Kernel Clustering Toolbox")
-    (description
-     "Routines for efficient cluster analysis of large scale data.  This package
-implements the CHICKN clustering algorithm (see Permiakova et al. (2020)
-\"'CHICKN': Extraction of peptide chromatographic elution profiles from large
-scale mass spectrometry data by means of Wasserstein compressive hierarchical
-cluster analysis\").  Functions for data compression, hierarchical clustering and
-post processing are provided.")
-    (license license:gpl2+)))
-
 (define-public r-chicane
   (package
     (name "r-chicane")
@@ -27595,16 +27512,17 @@ Solari (2011) <doi:10.1214/11-STS356>.")
 (define-public r-chemospecutils
   (package
     (name "r-chemospecutils")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChemoSpecUtils" version))
               (sha256
                (base32
-                "15w9v4g7myw0ygd9dvalz900yzgz5j2jnmw4j3zfp04fgm3wgbfq"))))
+                "0px9aqkkpkhcnjjan22cr43d1qrgrkb2fgdam5cpmv1cfygckwvj"))))
     (properties `((upstream-name . "ChemoSpecUtils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-plotly r-magrittr r-ggrepel r-ggplot2))
+    (propagated-inputs (list r-plotly r-magrittr r-ggrepel r-ggplot2
+                             r-data-table))
     (home-page "https://github.com/bryanhanson/ChemoSpecUtils")
     (synopsis "Functions Supporting Packages ChemoSpec and ChemoSpec2D")
     (description
@@ -27851,43 +27769,6 @@ designated for specific statistical tasks such building a custom univariate
 descriptive table, computing pairwise association statistics, etc.  These are
 built on a collection of data manipulation tools designed for general use that
 are motivated by the functional programming concept.")
-    (license license:expat)))
-
-(define-public r-cheem
-  (package
-    (name "r-cheem")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cheem" version))
-              (sha256
-               (base32
-                "0l8mbhl8jhwsikhy2nakdp21zz9k71fanhznjcqlpy7m7aqagp7i"))))
-    (properties `((upstream-name . "cheem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spinifex
-                             r-shinythemes
-                             r-shinycssloaders
-                             r-shiny
-                             r-rcpp
-                             r-plotly
-                             r-magrittr
-                             r-ggplot2
-                             r-dt
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nspyrison/cheem/")
-    (synopsis
-     "Interactively Explore the Support of Local Explanations with the Radial Tour")
-    (description
-     "Given a tree-based model, calculate the tree SHAP <arXiv:1802.03888>;
-<https://github.com/ModelOriented/treeshap> local explanation of every
-observation.  View the data space, explanation space, and residual plot as
-ensemble graphic interactive on a shiny application.  After an observation of
-interest is identified, the normalized variable importance of the local
-explanation is used as a 1D projection basis.  The support of the local
-explanation is then explored by changing the basis with the use of the radial
-tour <doi:10.32614/RJ-2020-027>; <doi:10.1080/10618600.1997.10474754>.")
     (license license:expat)))
 
 (define-public r-cheddar
@@ -33664,28 +33545,6 @@ sklearn.preprocessing package (see
 <http://scikit-learn.org/stable/modules/preprocessing.html>).")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-catenary
-  (package
-    (name "r-catenary")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "catenary" version))
-              (sha256
-               (base32
-                "1n64kq3lkaf00a2mghs67hnxvi4dp6g12pwifyx0bd418wkw9wf3"))))
-    (properties `((upstream-name . "catenary")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse r-ggplot2 r-dplyr r-broom r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=catenary")
-    (synopsis "Fits a Catenary to Given Points")
-    (description
-     "Gives methods to create a catenary object and then plot it and get properties of
-it.  Can construct from parameters or endpoints.  Also can get catenary fitted
-to data.")
-    (license license:gpl3)))
-
 (define-public r-categoryencodings
   (package
     (name "r-categoryencodings")
@@ -36603,13 +36462,13 @@ the objective function from simulated model outputs.  See
 (define-public r-caliberrfimpute
   (package
     (name "r-caliberrfimpute")
-    (version "1.0-6")
+    (version "1.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CALIBERrfimpute" version))
               (sha256
                (base32
-                "0ghi6pkv9ki0iz4lkli3hkrsk6xiph2ha2pij6dg4wi7mcjdhsbi"))))
+                "1fspn6wgr0kc7j4ixx24c706kzrgjhi1b1w28izpfxm4r89zk08s"))))
     (properties `((upstream-name . "CALIBERrfimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-mvtnorm r-mice))

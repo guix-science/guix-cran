@@ -3012,26 +3012,6 @@ aggregating over calendar periods.")
 each other.")
     (license license:expat)))
 
-(define-public r-tsgui
-  (package
-    (name "r-tsgui")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tsgui" version))
-              (sha256
-               (base32
-                "0crm2ripxpjaz1cqz9lkj3y9xj4ia0hlq4lvz1rff0wq6d5w79dn"))))
-    (properties `((upstream-name . "tsgui")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tkrplot r-tcltk2 r-randomfieldsutils))
-    (home-page "http://ms.math.uni-mannheim.de/de/publications/software/tsgui")
-    (synopsis "Gui for Simulating Time Series")
-    (description
-     "This gui shows realisations of times series, currently ARMA and GARCH processes.
- It might be helpful for teaching and studying.")
-    (license license:gpl3+)))
-
 (define-public r-tsgsis
   (package
     (name "r-tsgsis")
@@ -15288,35 +15268,6 @@ Wang, and Beauchamp (2020, <doi:10.1016/j.neuroimage.2020.117341>), or see
 citation(\"threeBrain\") for details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-threearmedtrials
-  (package
-    (name "r-threearmedtrials")
-    (version "1.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ThreeArmedTrials" version))
-              (sha256
-               (base32
-                "06jhgl1fzvkvnhrjs4xcyw6yymwl499rw9xnfwpx44dzxi7nynxj"))))
-    (properties `((upstream-name . "ThreeArmedTrials")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tobiasmuetze/ThreeArmedTrials")
-    (synopsis
-     "Design and Analysis of Clinical Non-Inferiority or Superiority Trials with Active and Placebo Control")
-    (description
-     "Design and analyze three-arm non-inferiority or superiority trials which follow
-a gold-standard design, i.e.  trials with an experimental treatment, an active,
-and a placebo control.  Method for the following distributions are implemented:
-Poisson (Mielke and Munk (2009) <arXiv:0912.4169>), negative binomial (Muetze et
-al. (2016) <doi:10.1002/sim.6738>), normal (Pigeot et al. (2003)
-<doi:10.1002/sim.1450>; Hasler et al. (2009) <doi:10.1002/sim.3052>), binary
-(Friede and Kieser (2007) <doi:10.1002/sim.2543>), nonparametric (Muetze et al.
-(2017) <doi:10.1002/sim.7176>), exponential (Mielke and Munk (2009)
-<arXiv:0912.4169>).")
-    (license license:gpl2+)))
 
 (define-public r-thredds
   (package

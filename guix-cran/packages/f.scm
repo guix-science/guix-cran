@@ -5706,52 +5706,6 @@ Regression Analysis, First Edition.  New York: Springer.")
      "This package provides a collection of fortunes from the R community.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-fortls
-  (package
-    (name "r-fortls")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FORTLS" version))
-              (sha256
-               (base32
-                "08g674ig8fn2mlwqrhd5lkvy64n9jqvla7nflswpbp4vhjgcmy9k"))))
-    (properties `((upstream-name . "FORTLS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vroom
-                             r-voxr
-                             r-tidyr
-                             r-sp
-                             r-sf
-                             r-scales
-                             r-rcsf
-                             r-rcppeigen
-                             r-rcpp
-                             r-raster
-                             r-progress
-                             r-plotly
-                             r-moments
-                             r-lidr
-                             r-htmlwidgets
-                             r-distance
-                             r-dbscan))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Molina-Valero/FORTLS")
-    (synopsis
-     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
-    (description
-     "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Simultaneous
-Localization and Mapping (SLAM).  FORTLS enables (i) detection of trees and
-estimation of tree-level attributes (e.g. diameters and heights), (ii)
-estimation of stand-level variables (e.g. density, basal area, mean and dominant
-height), (iii) computation of metrics related to important forest attributes
-estimated in Forest Inventories at stand-level, and (iv) optimization of plot
-design for combining TLS data and field measured data.  Documentation about
-FORTLS is described in Molina-Valero et al. (2022,
-<doi:10.1016/j.envsoft.2022.105337>).")
-    (license license:gpl3)))
-
 (define-public r-forsearch
   (package
     (name "r-forsearch")
@@ -11407,6 +11361,28 @@ including batch graphs generation, beta calculation, descriptive statistics,
 annuity calculation, bond pricing and financial data download.")
     (license license:gpl2+)))
 
+(define-public r-finalsize
+  (package
+    (name "r-finalsize")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "finalsize" version))
+              (sha256
+               (base32
+                "0ir5xgr4qc0bl5c3gl06afcvbkhixaadwlyh0np5fmzlfsl8mpv1"))))
+    (properties `((upstream-name . "finalsize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/finalsize/")
+    (synopsis "Calculate the Final Size of an Epidemic")
+    (description
+     "Calculate the final size of a susceptible-infectious-recovered epidemic in a
+population with demographic variation in contact patterns and susceptibility to
+disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
+    (license license:expat)))
+
 (define-public r-finalfit
   (package
     (name "r-finalfit")
@@ -14267,27 +14243,6 @@ package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatiq
 DÃ©cisionnelle\".")
     (license license:gpl3)))
 
-(define-public r-fdistr
-  (package
-    (name "r-fdistr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fdistr" version))
-              (sha256
-               (base32
-                "1i9nq4jmszbmwk4m6jfn7rifsn7aay40cj6kz23b9ihj3phqffi8"))))
-    (properties `((upstream-name . "fdistr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis r-magrittr r-ggplot2 r-dplyr))
-    (home-page "https://github.com/dtminnick/fdistr")
-    (synopsis "Frequency Distribution Tables")
-    (description
-     "This package provides functionality to generate a frequency distribution table
-from a set of observations and plot the frequency distribution using a Pareto
-chart.")
-    (license license:expat)))
-
 (define-public r-fddm
   (package
     (name "r-fddm")
@@ -17055,30 +17010,6 @@ The package is an implementation of Yang, Y. and Zou, H. (2013) DOI:
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
 
-(define-public r-fastcorrdiff
-  (package
-    (name "r-fastcorrdiff")
-    (version "0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fastCorrDiff" version))
-              (sha256
-               (base32
-                "0fis04xfarvmhpdkh7524ffga8f8svpcn3837rqwy0g039dcfa64"))))
-    (properties `((upstream-name . "fastCorrDiff")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-plyr r-matrix r-irlba))
-    (home-page "https://cran.r-project.org/package=fastCorrDiff")
-    (synopsis "Fast Differential Correlation Matrix Screening")
-    (description
-     "Fast spectral algorithms for differential analysis on large-scale correlation
-matrices of Li et.  al. (2021) <arXiv:2111.03721> are implemented.  The methods
-can identify a group of genes exhibiting differential correlation patterns
-between two groups.  For high-dimensional matrices, compressed spectral
-screening methods are also provided based on random subsampling.  The work to
-build this package is partially supported by the NSF grant DMS-2015298.")
-    (license license:gpl2+)))
-
 (define-public r-fastcmprsk
   (package
     (name "r-fastcmprsk")
@@ -17775,6 +17706,28 @@ The equivalent function plotTk() bases on CRAN Repository packages only.  For
 further information on the method see Fruth, J., Roustant, O., Kuhnt, S. (2014)
 <doi:10.1016/j.jspi.2013.11.007>.")
     (license license:gpl3)))
+
+(define-public r-fangs
+  (package
+    (name "r-fangs")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fangs" version))
+              (sha256
+               (base32
+                "0gcwrnp06g0rwlkfi7qz2i2l56pqmrlb6knkqsaa3n3nx2d46x1k"))))
+    (properties `((upstream-name . "fangs")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=fangs")
+    (synopsis "Feature Allocation Neighborhood Greedy Search Algorithm")
+    (description
+     "This package provides a neighborhood-based, greedy search algorithm is performed
+to estimate a feature allocation by minimizing the expected loss based on
+posterior samples from the feature allocation distribution.  The method is
+currently under peer review but an earlier draft is available in Dahl, Johnson,
+and Andros (2022+) <doi:10.48550/arXiv.2207.13824>.")
+    (license (list license:expat license:asl2.0))))
 
 (define-public r-fancycut
   (package

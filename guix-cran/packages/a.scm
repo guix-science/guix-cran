@@ -4731,13 +4731,13 @@ Kroitor.")
 (define-public r-asciicast
   (package
     (name "r-asciicast")
-    (version "2.2.1")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asciicast" version))
               (sha256
                (base32
-                "1x3dr3lr5hz53xl0z4y4i10qfmp8jakvr0r0jglcz3r66ajcghhk"))))
+                "1nz0gbfk92p8c4940wmhm28l1jvgx459hspjbjl6b52v897wv3q2"))))
     (properties `((upstream-name . "asciicast")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -7794,55 +7794,21 @@ inference.  Additionally, supports \"A Progressive Introduction to Linear Models
 by Joshua French (<https://jfrench.github.io/LinearRegression/>).")
     (license license:gpl3)))
 
-(define-public r-aphylo
-  (package
-    (name "r-aphylo")
-    (version "0.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aphylo" version))
-              (sha256
-               (base32
-                "0kvxz5r1z63610k127ji7dangrq7pd0zfgf5yqsvn0v7j4c9c5v5"))))
-    (properties `((upstream-name . "aphylo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-fmcmc
-                             r-coda
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCbiostats/aphylo")
-    (synopsis
-     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
-    (description
-     "This package implements a parsimonious evolutionary model to analyze and predict
-gene-functional annotations in phylogenetic trees as described in Vega Yon et
-al. (2021) <doi:10.1371/journal.pcbi.1007948>.  With a focus on computational
-efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
-including thousands (hundreds) of annotations (trees) in the same run.  The
-package also provides the tools for visualization of annotated phylogenies,
-calculation of posterior probabilities (prediction,) and goodness-of-fit
-assessment featured in Vega Yon et al. (2021).")
-    (license license:expat)))
-
 (define-public r-aphid
   (package
     (name "r-aphid")
-    (version "1.3.3")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aphid" version))
               (sha256
                (base32
-                "1jqpn7w5sgy4k49qd9ci6yj89s55gzwl5w5ldw793mzpg6if7lfn"))))
+                "1pwr1i3wxh0l24cqp59q6n59p21v81fmgxkb4jmf50a3ggb1lcdj"))))
     (properties `((upstream-name . "aphid")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-openssl r-kmer))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/shaunpwilkinson/aphid")
+    (home-page "https://github.com/shaunpwilkinson/aphid")
     (synopsis "Analysis with Profile Hidden Markov Models")
     (description
      "Designed for the development and application of hidden Markov models and profile
@@ -8178,41 +8144,6 @@ model for panel data is ordinary least squares.  The canonical parametrisation
 of Kuang, Nielsen and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus,
 the analysis does not rely on ad hoc identification.")
     (license license:gpl3)))
-
-(define-public r-apatree
-  (package
-    (name "r-apatree")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "APAtree" version))
-              (sha256
-               (base32
-                "0vhvx2xp62avyq405jqn4i3z8awlifcs1lb527brxxhybrhnk4rv"))))
-    (properties `((upstream-name . "APAtree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-sf
-                             r-rcpp
-                             r-raster
-                             r-lwgeom
-                             r-fd
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JonasGlatthorn/APAtree/")
-    (synopsis "Computation of the 'Area Potentially Available' (APA) to Trees")
-    (description
-     "Maps of the area potentially available (APA) of trees is calculated from mapped
-forest stands using the approach from Gspaltl et al. (2012)
-<doi:10.1093/forestry/cps052>.  This is done by computing a rasterized version
-of weighted voronoi diagrams using a an approximation of the trees competitive
-ability (e.g., crown radius, leaf area) as weight.  The main output are
-Raster*'- objects from the raster package that are stored together with the raw
-data in apa_list's, the main class of the APAtree package.  Aggregation
-functions are provided to calculate stand characteristics based on APA-maps such
-as relative proportions according to APA-size and the neighborhood diversity
-index NDiv (Glatthorn (2021) <doi:10.1016/j.ecolind.2021.108073>).")
-    (license license:gpl2+)))
 
 (define-public r-apatext
   (package
@@ -8610,16 +8541,16 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ao" version))
               (sha256
                (base32
-                "165hgrxj2gsvkczb32480i31zs82c5mamvy2c47gsz777mw9sw1h"))))
+                "1wdnb1hlhi52y0jg9fpxzvhmn1sjgsh4g3vg7vc0jlbsjw9fssp9"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-optimizer r-lifecycle r-ggplot2))
+    (propagated-inputs (list r-rlang r-optimizer r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/loelschlaeger/ao/")
     (synopsis "Alternating Optimization")
@@ -11106,13 +11037,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-amapvox
   (package
     (name "r-amapvox")
-    (version "0.12.0")
+    (version "0.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AMAPVox" version))
               (sha256
                (base32
-                "11achgmgh42q3m50ilxw7laa5v93nq254rl373z7zqk1hvpyy3xk"))))
+                "0hn9c0kasyvmfavk8ppfasl3p171xi5p3qzydsk41szvkm9wx6qy"))))
     (properties `((upstream-name . "AMAPVox")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15289,34 +15220,6 @@ univariate, multivariate and marked mapped data in rectangular, circular or
 irregular shaped sampling windows, with tests of statistical significance based
 on Monte Carlo simulations.")
     (license license:gpl2)))
-
-(define-public r-adpss
-  (package
-    (name "r-adpss")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adpss" version))
-              (sha256
-               (base32
-                "0p2gyfc4rxmms8zdsq4hjsh1njfl2s736arq8aq1am2wh1w9k5ch"))))
-    (properties `((upstream-name . "adpss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ca4wa/R-adpss")
-    (synopsis
-     "Design and Analysis of Locally or Globally Efficient Adaptive Designs")
-    (description
-     "This package provides the functions for planning and conducting a clinical trial
-with adaptive sample size determination.  Maximal statistical efficiency will be
-exploited even when dramatic or multiple adaptations are made.  Such a trial
-consists of adaptive determination of sample size at an interim analysis and
-implementation of frequentist statistical test at the interim and final analysis
-with a prefixed significance level.  The required assumptions for the stage-wise
-test statistics are independent and stationary increments and normality.
-Predetermination of adaptation rule is not required.")
-    (license license:gpl2+)))
 
 (define-public r-adpf
   (package

@@ -1288,6 +1288,61 @@ univariate meta-analysis and meta-regression.")
 tubes.  Directional and other multivariate histograms are provided.")
     (license license:gpl3+)))
 
+(define-public r-mvmapit
+  (package
+    (name "r-mvmapit")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mvMAPIT" version))
+              (sha256
+               (base32
+                "0r4pg8m142l1qjm4hggrj0f9g3y927rbva8mj2q16bzdh6fbxbzd"))))
+    (properties `((upstream-name . "mvMAPIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-rcppspdlog
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-logging
+                             r-harmonicmeanp
+                             r-foreach
+                             r-dplyr
+                             r-compquadform
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcrawlab/mvMAPIT")
+    (synopsis "Multivariate Genome Wide Marginal Epistasis Test")
+    (description
+     "Epistasis, commonly defined as the interaction between genetic loci, is known to
+play an important role in the phenotypic variation of complex traits.  As a
+result, many statistical methods have been developed to identify genetic
+variants that are involved in epistasis, and nearly all of these approaches
+carry out this task by focusing on analyzing one trait at a time.  Previous
+studies have shown that jointly modeling multiple phenotypes can often
+dramatically increase statistical power for association mapping.  In this
+package, we present the multivariate MArginal ePIstasis Test ('mvMAPIT') â a
+multi-outcome generalization of a recently proposed epistatic detection method
+which seeks to detect marginal epistasis or the combined pairwise interaction
+effects between a given variant and all other variants.  By searching for
+marginal epistatic effects, one can identify genetic variants that are involved
+in epistasis without the need to identify the exact partners with which the
+variants interact â thus, potentially alleviating much of the statistical and
+computational burden associated with conventional explicit search based methods.
+ Our proposed mvMAPIT builds upon this strategy by taking advantage of
+correlation structure between traits to improve the identification of variants
+involved in epistasis.  We formulate mvMAPIT as a multivariate linear mixed
+model and develop a multi-trait variance component estimation algorithm for
+efficient parameter inference and P-value computation.  Together with reasonable
+model approximations, our proposed approach is scalable to moderately sized
+genome-wide association studies.  Crawford et al. (2017)
+<doi:10.1371/journal.pgen.1006869>.  Stamp et al. (2022)
+<doi:10.1101/2022.11.30.518547>.")
+    (license license:gpl3+)))
+
 (define-public r-mvlswimpute
   (package
     (name "r-mvlswimpute")
@@ -6654,13 +6709,13 @@ Wan SK (2014). <doi:10.1016/j.jeconom.2013.11.003>, Hansen BE (2007).
 (define-public r-msgarch
   (package
     (name "r-msgarch")
-    (version "2.50")
+    (version "2.51")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSGARCH" version))
               (sha256
                (base32
-                "0gq0n9v2vdsg899bic24hdp72sr39xcmc3iam4h4yx2b8bl7mxdb"))))
+                "1n8v9017p8iw9mai3yqh294v7kyj458a6vj9ma20gzd94nhyhlxh"))))
     (properties `((upstream-name . "MSGARCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6889,43 +6944,6 @@ website <https://www.microsoft.com/cognitive-services/> in order to obtain a
      "Statistical tests for validating multispecies coalescent gene tree simulators,
 using pairwise distances and rooted triple counts.  Background is given by
 Allman, Banos, and Rhodes (2019) <arXiv:1908.01424>.")
-    (license license:expat)))
-
-(define-public r-mscquartets
-  (package
-    (name "r-mscquartets")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MSCquartets" version))
-              (sha256
-               (base32
-                "1dv6g860yxhkk6dd0sr0vvnpwb3fbpz7fvqjlcs5kcqisvcv5ya0"))))
-    (properties `((upstream-name . "MSCquartets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zipfr
-                             r-rdpack
-                             r-randomfieldsutils
-                             r-phangorn
-                             r-foreach
-                             r-doparallel
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=MSCquartets")
-    (synopsis
-     "Analyzing Gene Tree Quartets under the Multi-Species Coalescent")
-    (description
-     "This package provides methods for analyzing and using quartets displayed on a
-collection of gene trees, primarily to make inferences about the species tree or
-network under the multi-species coalescent model.  These include quartet
-hypothesis tests for the model, as developed by Mitchell et al. (2019)
-<doi:10.1214/19-EJS1576>, simplex plots of quartet concordance factors as
-presented by Allman et al. (2020) <doi:10.1101/2020.02.13.948083>, species tree
-inference methods based on quartet distances of Rhodes (2019)
-<doi:10.1109/TCBB.2019.2917204> and Yourdkhani and Rhodes (2019)
-<doi:10.1007/s11538-020-00773-4>, and the NANUQ algorithm for inference of
-level-1 species networks of Allman et al. (2019)
-<doi:10.1186/s13015-019-0159-2>.  Software announcement by Rhodes et al. (2020)
-<doi:10.1093/bioinformatics/btaa868>.")
     (license license:expat)))
 
 (define-public r-mscp
@@ -8746,28 +8764,6 @@ type I G distribution, log gamma type II G distribution, Marshall Olkin G
 distribution, Marshall Olkin Kumaraswamy G distribution, modified beta G
 distribution, odd log-logistic G distribution, truncated-exponential
 skew-symmetric G distribution, and Weibull G distribution.")
-    (license license:gpl2+)))
-
-(define-public r-mpr-genotyping
-  (package
-    (name "r-mpr-genotyping")
-    (version "0.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MPR.genotyping" version))
-              (sha256
-               (base32
-                "0lsrbks7nhfnrmk8kclh09rc132j3divjxrzjfrg8zijbzkfx1pn"))))
-    (properties `((upstream-name . "MPR.genotyping")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-qtl))
-    (home-page "https://cran.r-project.org/package=MPR.genotyping")
-    (synopsis "Maximum Parsimony of Recombination to Infer Parental Genotypes")
-    (description
-     "Infer parental genotypes based on low-coverage population sequencing data and
-thus can genotype mapping populations and construct ultra-high density linkage
-map in a parent-independent manner.  Weibo Xie et al. (2010)
-<doi:10.1073/pnas.1005931107>.")
     (license license:gpl2+)))
 
 (define-public r-mpr
@@ -12820,36 +12816,6 @@ produces a customisable dashboard, which consists of multiple panels for plots
 with their short descriptions.  It is possible to easily save the dashboard and
 share it with others.  Tools for Explanatory Model Analysis unite with tools for
 Exploratory Data Analysis to give a broad overview of the model behavior.")
-    (license license:gpl3)))
-
-(define-public r-modelroc
-  (package
-    (name "r-modelroc")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modelROC" version))
-              (sha256
-               (base32
-                "0iyx7c98ym7dy6pfssj7474h9wjpzjwy0fyc5bnqyi1lmjgd508k"))))
-    (properties `((upstream-name . "modelROC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmcn r-survivalroc r-rocit r-ggplot2 r-do))
-    (home-page "https://cran.r-project.org/package=modelROC")
-    (synopsis "Model Based ROC Analysis")
-    (description
-     "The ROC curve method is one of the most important and commonly used methods for
-model accuracy assessment, which is one of the most important elements of model
-evaluation.  The modelROC package is a model-based ROC assessment tool, which
-directly works for ROC analysis of regression results for logistic regression of
-binary variables, including the glm() and lrm() commands, and COX regression for
-survival analysis, including the cph() and coxph() commands.  The most important
-feature of modelROC is that both the model and the independent variables can be
-analysed simultaneously, and for survival analysis multiple time points and area
-under the curve analysis are supported.  Still, flexible visualisation is
-possible with the ggplot2 package.  Reference are Kelly H. Zou (1998)
-<doi:10.1002/(sici)1097-0258(19971015)16:19%3C2143::aid-sim655%3E3.0.co;2-3> and
-P J Heagerty (2000) <doi:10.1111/j.0006-341x.2000.00337.x>.")
     (license license:gpl3)))
 
 (define-public r-modelplotr
@@ -17994,29 +17960,6 @@ matrix variate normal and t distributions described in Thompson et al. (2019)
 normal and t mixture models.")
     (license license:gpl3)))
 
-(define-public r-mixmap
-  (package
-    (name "r-mixmap")
-    (version "1.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MixMAP" version))
-              (sha256
-               (base32
-                "0gxghym5ghbyxf589hda2fhv5l3x5jvm6i40x5xdwx4hadcn8k9a"))))
-    (properties `((upstream-name . "MixMAP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lme4))
-    (home-page "https://cran.r-project.org/package=MixMAP")
-    (synopsis "Implements the MixMAP Algorithm")
-    (description
-     "This package provides a collection of functions to implement the MixMAP
-algorithm, which performs gene level tests of association using data from a
-previous GWAS or data from a meta-analysis of several GWAS. Conceptually, genes
-are detected as significant if the collection of p-values within a gene are
-determined to be collectively smaller than would be observed by chance.")
-    (license license:gpl3)))
-
 (define-public r-mixlm
   (package
     (name "r-mixlm")
@@ -20313,28 +20256,6 @@ distributions (which, in turn can be multidimensional).  The package also
 provides an application of the IPFP to simulate multivariate Bernoulli
 distributions.")
     (license license:gpl2)))
-
-(define-public r-minval
-  (package
-    (name "r-minval")
-    (version "0.8-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "minval" version))
-              (sha256
-               (base32
-                "06anbb90c8wg0374ykmb6chcwrcdyi903jkbrmrv3kgx511l699z"))))
-    (properties `((upstream-name . "minval")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gibbslab/minval")
-    (synopsis "MINimal VALidation for Stoichiometric Reactions")
-    (description
-     "For a given set of stoichiometric reactions, this package evaluates the mass and
-charge balance, extracts all reactants, products, orphan metabolites, metabolite
-names and compartments.  Also are included some options to characterize and
-write models in TSV and SBML formats.")
-    (license license:gpl2+)))
 
 (define-public r-mintplates
   (package
@@ -23754,13 +23675,13 @@ England et al. (2017) <doi:10.3133/tm4B5>.")
 (define-public r-mgarchbekk
   (package
     (name "r-mgarchbekk")
-    (version "0.0.2")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mgarchBEKK" version))
               (sha256
                (base32
-                "1k4c34srnckbh5kchzmm44l91ma9sw0gi4y225igs3cl79212q9c"))))
+                "0i5f8xghdch9d1cvfgiq2pscpq53ms7ik7jk16gss8i0cx2d3m94"))))
     (properties `((upstream-name . "mgarchBEKK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-mvtnorm))
@@ -25890,6 +25811,41 @@ meta-analyses.  Please read the reference in metansue for details of the
 procedure.")
     (license license:gpl3)))
 
+(define-public r-metanetwork
+  (package
+    (name "r-metanetwork")
+    (version "0.7.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metanetwork" version))
+              (sha256
+               (base32
+                "0rlnalmfmiih154zq6rk4sq12y7nr8fn1ws8mrlryy04gznz6igw"))))
+    (properties `((upstream-name . "metanetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-sna
+                             r-rlang
+                             r-rcolorbrewer
+                             r-network
+                             r-matrix
+                             r-magrittr
+                             r-intergraph
+                             r-igraph
+                             r-ggplot2
+                             r-ggimage
+                             r-ggally
+                             r-dplyr))
+    (home-page "https://github.com/MarcOhlmann/metanetwork")
+    (synopsis "Handling and Representing Trophic Networks in Space and Time")
+    (description
+     "This package provides a toolbox to handle and represent trophic networks in
+space or time across aggregation levels.  This package contains a layout
+algorithm specifically designed for trophic networks, using dimension reduction
+on a diffusion graph kernel and trophic levels.  Importantly, this package
+provides a layout method applicable for large trophic networks.")
+    (license license:gpl3)))
+
 (define-public r-metan
   (package
     (name "r-metan")
@@ -27412,6 +27368,29 @@ meta-regression; - cumulative meta-analysis and leave-one-out meta-analysis; -
 import data from RevMan 5'; - produce forest plot summarising several (subgroup)
 meta-analyses.")
     (license license:gpl2+)))
+
+(define-public r-mestim
+  (package
+    (name "r-mestim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Mestim" version))
+              (sha256
+               (base32
+                "1alav9xihq7mdz9cd24sh5nkblh8nm5h2zsrqizqg3w4dw288dgj"))))
+    (properties `((upstream-name . "Mestim")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Mestim")
+    (synopsis
+     "Computes the Variance-Covariance Matrix of a Set of Parameters using M-Estimation")
+    (description
+     "This package provides a flexible framework for estimating the
+variance-covariance matrix of a set of estimated parameters.  Estimation relies
+on unbiased estimating functions to compute the empirical sandwich variance.
+(i.e., M-estimation in the vein of Stefanski and Boos (2002)
+<doi:10.1198/000313002753631330>.")
+    (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-messydates
   (package
@@ -36331,35 +36310,6 @@ primary use case of the package is to support evidence based reporting of an
 organization's effort to protect biodiversity areas under threat and to identify
 regions were intervention is most duly needed.")
     (license license:gpl3+)))
-
-(define-public r-maple
-  (package
-    (name "r-maple")
-    (version "0.99.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "maple" version))
-              (sha256
-               (base32
-                "1cg7grvnrfzdqghlfv5bsii6ips3mykgaw85vx0z9jafhdfpd32f"))))
-    (properties `((upstream-name . "maple")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spruce
-                             r-shiny
-                             r-seurat
-                             r-rlang
-                             r-plotly
-                             r-ggplot2
-                             r-ggalluvial
-                             r-dplyr
-                             r-dbarts))
-    (home-page "https://cran.r-project.org/package=maple")
-    (synopsis
-     "Bayesian Analysis of Multi-Sample Spatial Transcriptomics Experiments")
-    (description
-     "Allows for robust probabilistic analysis of multi-sample spatial transcriptomics
-experiments (Allen et.  al, 2021 <doi:10.1101/2021.06.23.449615>).")
-    (license license:gpl2+)))
 
 (define-public r-mapitr
   (package

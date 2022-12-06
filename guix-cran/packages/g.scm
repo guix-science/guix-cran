@@ -4241,13 +4241,13 @@ survival regression, all with support for missing covariates.")
 (define-public r-greymodels
   (package
     (name "r-greymodels")
-    (version "2.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Greymodels" version))
               (sha256
                (base32
-                "0aylacv3vn2ipy2k2ngrsb0c0hfiy3vcml9k7gjn4flmxvml11g6"))))
+                "0gv4kqgn10l3pknx7w26yas1h70gsb2h8a82w2ykxs134xl4vpll"))))
     (properties `((upstream-name . "Greymodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -8210,40 +8210,6 @@ directed acyclic graph (DAG) for the organisms Rat and Mouse.  The methods are
 explicitly discussed in the following article : Manjang et al (2020)
 <doi:10.1038/s41598-020-73326-3>.")
     (license license:gpl2)))
-
-(define-public r-gompertztrunc
-  (package
-    (name "r-gompertztrunc")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gompertztrunc" version))
-              (sha256
-               (base32
-                "1qcx4s4lz2gsjr0nmwaih7pdh2anibrri7zfpsrl65lndkwy6hg4"))))
-    (properties `((upstream-name . "gompertztrunc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-modelr
-                             r-magrittr
-                             r-ggsci
-                             r-ggplot2
-                             r-flexsurv
-                             r-dplyr
-                             r-data-table
-                             r-cowplot
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://caseybreen.github.io/gompertztrunc/")
-    (synopsis
-     "Conducting Maximum Likelihood Estimation with Truncated Mortality Data")
-    (description
-     "Estimates hazard ratios and mortality differentials for doubly-truncated data
-without population denominators.")
-    (license license:gpl3+)))
 
 (define-public r-gomogomonomi
   (package
@@ -14180,13 +14146,13 @@ atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
 (define-public r-ggsector
   (package
     (name "r-ggsector")
-    (version "1.6.1")
+    (version "1.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggsector" version))
               (sha256
                (base32
-                "1sj7kmizzy91x79gwrkpayxhxhd5nqvs9lddbfplj0s5vz7vmhh5"))))
+                "0qaf8wl1mmwl3razyif08sh329p9j1jgqc0ls5szqirq3db4315i"))))
     (properties `((upstream-name . "ggsector")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15687,13 +15653,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.2.4")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGIRread" version))
               (sha256
                (base32
-                "0pqh7cs1zp0mdmkbbiyarjvijcgsxa0p0c0vmia2gkbb072f2ajw"))))
+                "10zgdac4vjf63s3d210v6b5lgfwj7an6xfjr4m1rfg7cm5qr2pps"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner r-rcpp r-matlab r-bitops))
@@ -16786,27 +16752,6 @@ visualizations as required.  Users can create corset plots using data in either
 wide or long format using the functions gg_corset() or gg_corset_elongated(),
 respectively.")
     (license license:expat)))
-
-(define-public r-ggconf
-  (package
-    (name "r-ggconf")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggconf" version))
-              (sha256
-               (base32
-                "0g4xasqhdiqfqahakv6p5npl56f2iakx4bnc9v9zcjr077kdda4n"))))
-    (properties `((upstream-name . "ggconf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rly r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/caprice-j/ggconf")
-    (synopsis "Simpler Appearance Modification of 'ggplot2'")
-    (description
-     "This package provides a flexible interface for ggplot2::theme(), potentially
-saving 50% of your typing.")
-    (license license:gpl3)))
 
 (define-public r-ggcleveland
   (package
@@ -19000,13 +18945,13 @@ background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geostan" version))
               (sha256
                (base32
-                "1lp1bfpcj7809wmw9hkdzqxdfld9vlr3g5x1m0zhi61zz6g73nld"))))
+                "0ld8mhlii8hrzlxqm9wj4kzwafink5zm45mah804qa7p4i78l363"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -19524,13 +19469,13 @@ package provides the R interface to Python modules, classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1kvkkpmiaalaisqar3wa9nvs13arx4aq2p1364334xgz1dhbq0k5"))))
+                "1aac0srxva1pyqriwk7dykx2nh05bnagi2nm1vhvqwb2y24lsk42"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21033,37 +20978,6 @@ genes.  Pathways can be obtained from within the package or can be provided by
 the user.")
     (license license:gpl2)))
 
-(define-public r-genomicmating
-  (package
-    (name "r-genomicmating")
-    (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GenomicMating" version))
-              (sha256
-               (base32
-                "02v1pkarmardf7g8hf2n4jj4cq4707g5lcc7gnwsiyyh7pknd1y6"))))
-    (properties `((upstream-name . "GenomicMating")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sombrero
-                             r-scatterplot3d
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-qtl
-                             r-plotly
-                             r-magrittr
-                             r-lowrankqp
-                             r-kohonen
-                             r-emoa
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=GenomicMating")
-    (synopsis "Efficient Breeding by Genomic Mating")
-    (description
-     "This package implements the genomic mating approach in the recently published
-article: Akdemir, D., & Sanchez, J. I. (2016).  Efficient Breeding by Genomic
-Mating.  Frontiers in Genetics, 7. <DOI:10.3389/fgene.2016.00210>.")
-    (license license:gpl2)))
-
 (define-public r-genomic-autocorr
   (package
     (name "r-genomic-autocorr")
@@ -21703,16 +21617,16 @@ specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
 (define-public r-genesysr
   (package
     (name "r-genesysr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genesysr" version))
               (sha256
                (base32
-                "05jp8z7313r5wi9a5yw7fh198l7nd2ywzwg4f23yp4kfrkkgawn5"))))
+                "0p1mzhwcffifph640qvb2g7qkj0gpjivsmwvih52fd9nwvqpmk9q"))))
     (properties `((upstream-name . "genesysr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-readr r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.croptrust.org/genesys-pgr/genesysr")
     (synopsis "Genesys PGR Client")

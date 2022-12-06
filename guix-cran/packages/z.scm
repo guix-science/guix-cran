@@ -157,28 +157,6 @@ details for the method at the following preprint e.g.:
 cbind.")
     (license license:gpl3)))
 
-(define-public r-ziphsmm
-  (package
-    (name "r-ziphsmm")
-    (version "2.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ziphsmm" version))
-              (sha256
-               (base32
-                "0lm6m2g9jd1v7gxv4viych8c59phbvz1yly1ydgajl8q251d8n87"))))
-    (properties `((upstream-name . "ziphsmm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma))
-    (home-page "https://cran.r-project.org/package=ziphsmm")
-    (synopsis "Zero-Inflated Poisson Hidden (Semi-)Markov Models")
-    (description
-     "Fit zero-inflated Poisson hidden (semi-)Markov models with or without covariates
-by directly minimizing the negative log likelihood function using the gradient
-descent algorithm.  Multiple starting values should be used to avoid local
-minima.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-zipfr
   (package
     (name "r-zipfr")

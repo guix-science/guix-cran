@@ -7260,32 +7260,6 @@ identifications, J. Biomol.  NMR. 32 (2005) 13â22.
 <doi:10.1007/s10858-005-1717-0>.")
     (license license:gpl3)))
 
-(define-public r-bmotif
-  (package
-    (name "r-bmotif")
-    (version "2.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bmotif" version))
-              (sha256
-               (base32
-                "1zy153z7kasfivj0mvrkyn96s0sgdp34w4pdjpcvfnym3lr02f0m"))))
-    (properties `((upstream-name . "bmotif")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensor r-reshape2 r-rcpp r-gtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bmotif")
-    (synopsis "Motif Analyses of Bipartite Networks")
-    (description
-     "Counts occurrences of motifs in bipartite networks, as well as the number of
-times each node or link appears in each unique position within motifs.  Has
-support for both binary and weighted motifs: can calculate the mean weight of
-motifs and the standard deviation of their mean weights.  Intended for use in
-ecology, but its methods are general and can be applied to any bipartite
-network.  Full details are given in Simmons et al. (2019)
-<doi:10.1111/2041-210X.13149>.")
-    (license license:expat)))
-
 (define-public r-bmlm
   (package
     (name "r-bmlm")
@@ -10444,35 +10418,6 @@ broader patient population (R. Temple (2010) <DOI:10.1038/clpt.2010.233>).  A
 higher event rate translates to a lower sample size for the clinical trial,
 which can have both practical and ethical advantages.  This package is a tool to
 help evaluate biomarkers for prognostic enrichment of clinical trials.")
-    (license license:gpl2+)))
-
-(define-public r-biopeak
-  (package
-    (name "r-biopeak")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Biopeak" version))
-              (sha256
-               (base32
-                "1l08m1jl8yygbdfzk8klpj1q2m7icvxi98vmk7akxs0sswjc6wd2"))))
-    (properties `((upstream-name . "Biopeak")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-gplots r-factoextra r-dbscan
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Biopeak")
-    (synopsis
-     "Identification of Impulse-Like Gene Expression Changes in Short Genomic Series Data")
-    (description
-     "Enables the user to systematically identify and visualize impulse-like gene
-expression changes within short genomic series experiments.  In order to detect
-such activation peaks, the gene expression is treated as a signal that
-propagates along an experimental axis (time, temperature or other series
-conditions).  Peaks are selected by exhaustive identification of local maximums
-and subsequent filtering based on a range of controllable parameters.  Moreover,
-the Biopeak package provides a series of data exploration tools including:
-expression profile plots, correlation heat maps and clustering functionalities.")
     (license license:gpl2+)))
 
 (define-public r-biooed
@@ -15307,6 +15252,36 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
 <https://files.eric.ed.gov/fulltext/ED344945.pdf>.")
     (license license:cc0)))
 
+(define-public r-betaclust
+  (package
+    (name "r-betaclust")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "betaclust" version))
+              (sha256
+               (base32
+                "1h3fcvs22spxhphcfg7zl75cpa5yycyl2yy0bgyy0hwkwh8cwpza"))))
+    (properties `((upstream-name . "betaclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-plotly r-ggplot2 r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=betaclust")
+    (synopsis
+     "Family of Beta Mixture Models for Clustering Beta-Valued DNA Methylation Data")
+    (description
+     "This package provides a family of novel beta mixture models (BMMs) has been
+developed by Majumdar et al. (2022) <arXiv:2211.01938v1> to appositely model the
+beta-valued cytosine-guanine dinucleotide (CpG) sites, to objectively identify
+methylation state thresholds and to identify the differentially methylated CpG
+(DMC) sites using a model-based clustering approach.  The family of beta mixture
+models employs different parameter constraints applicable to different study
+settings.  The EM algorithm is used for parameter estimation, with a novel
+approximation during the M-step providing tractability and ensuring
+computational feasibility.")
+    (license license:gpl3)))
+
 (define-public r-betacal
   (package
     (name "r-betacal")
@@ -19094,13 +19069,13 @@ thus offer reliable uncertainty quantification.")
 (define-public r-bayessurv
   (package
     (name "r-bayessurv")
-    (version "3.5")
+    (version "3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesSurv" version))
               (sha256
                (base32
-                "0bk3yd7myycfbmfrw9nbsdzqf1qzmzdckgi951fdqllj3m037gyx"))))
+                "1y1jqd1c2rg4s73ffyq8wjkpq35321nzywigcgh6vkjpd8r8xhpx"))))
     (properties `((upstream-name . "bayesSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-smoothsurv r-coda))
@@ -21541,6 +21516,29 @@ shrinkage estimation for the case of unequal variances.")
      "Fully Bayesian inference for estimating the number of clusters and related
 parameters to heterogeneous binary data.")
     (license license:gpl2)))
+
+(define-public r-bayesbekk
+  (package
+    (name "r-bayesbekk")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesBEKK" version))
+              (sha256
+               (base32
+                "1vlljv7xdfvbrbxqdi91xrz1aga04aa1pb23kvnmahm2s261map1"))))
+    (properties `((upstream-name . "BayesBEKK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-mts r-coda))
+    (home-page "https://cran.r-project.org/package=BayesBEKK")
+    (synopsis "Bayesian Estimation of Bivariate Volatility Model")
+    (description
+     "The Multivariate Generalized Autoregressive Conditional Heteroskedasticity
+(MGARCH) models are used for modelling the volatile multivariate data sets.  In
+this package a variant of MGARCH called BEKK (Baba, Engle, Kraft, Kroner)
+proposed by Engle and Kroner (1995) <http://www.jstor.org/stable/3532933> has
+been used to estimate the bivariate time series data using Bayesian technique.")
+    (license license:gpl3)))
 
 (define-public r-bayesassurance
   (package

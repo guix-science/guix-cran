@@ -4969,13 +4969,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.3.1")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "027bw6lbi6jk7x9kx743p568p5a3nd5zq1lzbsji45c58s6lkcv4"))))
+                "0rfp82abrhfc094xxa634r850gw8nx79ariw6kib6z1dh9bli17p"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -5898,13 +5898,13 @@ papers.")
 (define-public r-openai
   (package
     (name "r-openai")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openai" version))
               (sha256
                (base32
-                "19h6sbsgqa81dq23whxxymp97f83x2bfyl2a5brim6l809xv5w1v"))))
+                "1yd914ld6fdv91llw67l0qbkjwqd78jf4z7arn5flqarmfyhcavp"))))
     (properties `((upstream-name . "openai")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr

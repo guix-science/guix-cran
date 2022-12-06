@@ -358,6 +358,39 @@ items within a project without logging into Azure DevOps'.  There is the ability
 to use any API service with a shell for any non-predefined call.")
     (license license:gpl2)))
 
+(define-public r-vsp
+  (package
+    (name "r-vsp")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vsp" version))
+              (sha256
+               (base32
+                "0aa3vqzazh0x5irbmqh9ac1xiprwnbgbrjl9bybxzynl91hwg9yw"))))
+    (properties `((upstream-name . "vsp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-rspectra
+                             r-rlang
+                             r-matrix
+                             r-magrittr
+                             r-lrmf3
+                             r-invertiforms
+                             r-glue
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RoheLab/vsp")
+    (synopsis "Vintage Sparse PCA for Semi-Parametric Factor Analysis")
+    (description
+     "This package provides fast spectral estimation of latent factors in random dot
+product graphs using the vsp estimator.  Under mild assumptions, the vsp
+estimator is consistent for (degree-corrected) stochastic blockmodels,
+(degree-corrected) mixed-membership stochastic blockmodels, and degree-corrected
+overlapping stochastic blockmodels.")
+    (license license:expat)))
+
 (define-public r-vsolassobag
   (package
     (name "r-vsolassobag")

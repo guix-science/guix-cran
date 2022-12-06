@@ -901,6 +901,36 @@ Gamma, Weibull, and Lognormal Distributions.  Blostein, Martin & Miljkovic,
 Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
     (license license:gpl3)))
 
+(define-public r-lterpalettefinder
+  (package
+    (name "r-lterpalettefinder")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lterpalettefinder" version))
+              (sha256
+               (base32
+                "1rrivlzrk2fzcnhyy3sv0n76v7lv4c1nwiwbr9f6rinqwx02k2dd"))))
+    (properties `((upstream-name . "lterpalettefinder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tiff
+                             r-tidyr
+                             r-png
+                             r-magrittr
+                             r-magick
+                             r-jpeg
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lterpalettefinder")
+    (synopsis
+     "Extract Color Palettes from Photos and Pick Official LTER Palettes")
+    (description
+     "Allows identification of palettes derived from LTER (Long Term Ecological
+Research) photographs based on user criteria.  Also facilitates extraction of
+palettes from users photos directly.")
+    (license license:bsd-3)))
+
 (define-public r-ltasr
   (package
     (name "r-ltasr")
@@ -5781,6 +5811,36 @@ methods of J. R. M. Hosking and J. R. Wallis (1997), \"Regional frequency
 analysis: an approach based on L-moments\".")
     (license (license:fsdg-compatible "Common Public License Version 1.0"))))
 
+(define-public r-lmompi
+  (package
+    (name "r-lmompi")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lmomPi" version))
+              (sha256
+               (base32
+                "0k1clrl3pbbnjaz1yp5syzdvy64zz1q1nd3xsbacwrl0q865xs3n"))))
+    (properties `((upstream-name . "lmomPi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-lmom))
+    (home-page "https://cran.r-project.org/package=lmomPi")
+    (synopsis
+     "(Precipitation) Frequency Analysis and Variability with L-Moments from 'lmom'")
+    (description
+     "It is an extension of lmom R package: pel...()','cdf...()',qua...() function
+families are lumped and called from one function per each family respectively in
+order to create robust automatic tools to fit data with different probability
+distributions and then to estimate probability values and return periods.  The
+implemented functions are able to manage time series with constant and/or
+missing values without stopping the execution with error messages.  The package
+also contains tools to calculate several indices based on variability (e.g. SPI
+, Standardized Precipitation Index, see
+<https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi>
+and <http://spei.csic.es/>) for multiple time series or spatially gridded
+values.")
+    (license license:gpl3+)))
+
 (define-public r-lmomco
   (package
     (name "r-lmomco")
@@ -7346,13 +7406,13 @@ of possibilities to customize the graphical output are useful features as well."
 (define-public r-linpk
   (package
     (name "r-linpk")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "linpk" version))
               (sha256
                (base32
-                "0bii49b19kf50gbnv2am7kwy2gb9gkxv8vplcwlmm6k9b4gw9pjb"))))
+                "0i87sfh01dl3xqs5vy3ha2prg952zpiq8fbl2amaiamg1qwl2y34"))))
     (properties `((upstream-name . "linpk")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

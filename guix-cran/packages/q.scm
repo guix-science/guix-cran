@@ -1234,13 +1234,13 @@ ability to automatically perform leave-one-out cross validation.")
 (define-public r-quantities
   (package
     (name "r-quantities")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quantities" version))
               (sha256
                (base32
-                "0kz95q8npiir8nadvfnpnnm9z5jg9mqk7b1fp6l0bj8asmjyw1l3"))))
+                "0lp6s9kwgs7vw36nq2qq40n68wqzycr94q0hc4rlgc4gvwwm1sj6"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-rcpp r-errors))
@@ -1821,13 +1821,13 @@ information available.")
 (define-public r-quadtree
   (package
     (name "r-quadtree")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quadtree" version))
               (sha256
                (base32
-                "1qmy4ndqjy237b5d6k3viir5barnzgq4873qz7fdr6igmz7wnpvk"))))
+                "07n5fllbgd9n36hra373fbvwav43w6wil5iabncah4x6a49a5aha"))))
     (properties `((upstream-name . "quadtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-raster))

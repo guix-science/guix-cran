@@ -4571,28 +4571,6 @@ observations given the parameters of the model.  Auxiliary predictors are
 accommodated in the univariate setting.")
     (license license:gpl2+)))
 
-(define-public r-hmlasso
-  (package
-    (name "r-hmlasso")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hmlasso" version))
-              (sha256
-               (base32
-                "0ydcyz9pw30ji8ghrvkgcbmp27d661vajl97b8cwis52605a3gfx"))))
-    (properties `((upstream-name . "hmlasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-rcpp r-matrix r-mass r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hmlasso")
-    (synopsis "Lasso with High Missing Rate")
-    (description
-     "This package provides a simple implementation of HMLasso (Lasso with High
-Missing rate).  Takada, M., Fujisawa, H., & Nishikawa, T. (2019)
-<arXiv:1811.00255>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-hmer
   (package
     (name "r-hmer")
@@ -5008,30 +4986,6 @@ trend tests are also included.")
 Kong Stock Exchange), see <https://www.hkex.com.hk/> for more information.  In
 addition, a function generates insert SQL statements from a dataframe.")
     (license license:gpl3)))
-
-(define-public r-hkevp
-  (package
-    (name "r-hkevp")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hkevp" version))
-              (sha256
-               (base32
-                "01m5yywi4vjnwhdayaqaqcp5lz70mllj5ifnwdb4c60wm9aby9pm"))))
-    (properties `((upstream-name . "hkevp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=hkevp")
-    (synopsis
-     "Spatial Extreme Value Analysis with the Hierarchical Model of Reich and Shaby (2012)")
-    (description
-     "Several procedures around a particular hierarchical model for extreme value: the
-HKEVP of Reich and Shaby (2012) <DOI:10.1214/12-AOAS591>.  Simulation,
-estimation and spatial extrapolation of this model are available for extreme
-value data.  A special case of this process is also handled: the Latent Variable
-Model of Davison et al. (2012) <DOI:10.1214/11-STS376>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hkdatasets
   (package
@@ -5752,13 +5706,13 @@ al. (2019) <arXiv:1905.11052>.")
 (define-public r-himach
   (package
     (name "r-himach")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "himach" version))
               (sha256
                (base32
-                "1v9pykliqrwab6vmjlbqbyq4i7xx7xy1l1fbmim45a924fx8ghqs"))))
+                "11p6g1w77yx8cxrvhy53dllyjk4z3jiq9mhz3bjr2kbzi954mysf"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8773,53 +8727,6 @@ details on managerial accounting techniques, see Brewer et al. (2015,
 ISBN:9780078025792).")
     (license license:gpl3)))
 
-(define-public r-healthcareai
-  (package
-    (name "r-healthcareai")
-    (version "2.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "healthcareai" version))
-              (sha256
-               (base32
-                "0ah855wvb2v8b8zz5a64q8psjrkpgq9xzyrla3mdpm5xx2gh0z0p"))))
-    (properties `((upstream-name . "healthcareai")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rocr
-                             r-rlang
-                             r-recipes
-                             r-ranger
-                             r-purrr
-                             r-mlmetrics
-                             r-lubridate
-                             r-glmnet
-                             r-ggplot2
-                             r-generics
-                             r-e1071
-                             r-dplyr
-                             r-data-table
-                             r-cowplot
-                             r-caret))
-    (home-page "https://docs.healthcare.ai/")
-    (synopsis "Tools for Healthcare Machine Learning")
-    (description
-     "Aims to make machine learning in healthcare as easy as possible.  You can
-develop customized, reliable, high-performance machine learning models with
-minimal code.  Models are created with automatic preprocessing, hyperparameter
-tuning, and algorithm selection (between xgboost Chen, T. & Guestrin, C. (2016)
-<arXiv:1603.02754>, ranger Wright, M. N., & Ziegler, A. (2017)
-<doi:10.18637/jss.v077.i01>, and glm Friedman J, Hastie T, Tibshirani R. (2010)
-<doi:10.18637/jss.v033.i01>) so that they can be easily put into production.
-Additionally, there are tools to help understand how a model makes its
-predictions, select prediction threshholds for operational use, and evaluate
-model performance over time.  Code uses tidyverse syntax and most methods have
-an associated visualization.")
-    (license license:expat)))
-
 (define-public r-headliner
   (package
     (name "r-headliner")
@@ -9994,6 +9901,35 @@ Zhenjie Zhang and Zhifeng Hao (2018)
 <https://nips.cc/Conferences/2018/Schedule?showEvent=11274> for a description of
 some of our methods.")
     (license license:gpl2+)))
+
+(define-public r-hcidata
+  (package
+    (name "r-hcidata")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hcidata" version))
+              (sha256
+               (base32
+                "16qzll0rhfc6szi9y5hxycq5462jm78kla70fnv1sqw7n34pvpg5"))))
+    (properties `((upstream-name . "hcidata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/henningpohl/hcidata")
+    (synopsis "HCI Datasets")
+    (description
+     "This package provides a collection of datasets of human-computer interaction
+(HCI) experiments.  Each dataset is from an HCI paper, with all fields described
+and the original publication linked.  All paper authors of included data have
+consented to the inclusion of their data in this package.  The datasets include
+data from a range of HCI studies, such as pointing tasks, user experience
+ratings, and steering tasks.  Dataset sources: BergstrÃ¶m et al. (2022)
+<doi:10.1145/3490493>; Dalsgaard et al. (2021) <doi:10.1145/3489849.3489853>;
+Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
+<doi:10.1145/3290605.3300676>; Pohl and Murray-Smith (2013)
+<doi:10.1145/2470654.2481307>; Pohl and Mottelson (2022)
+<doi:10.3389/frvir.2022.719506>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-hchinamap
   (package

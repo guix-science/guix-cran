@@ -2612,49 +2612,6 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
     (description "R bindings to SVD and eigensolvers (PROPACK, nuTRLan).")
     (license license:bsd-3)))
 
-(define-public r-svars
-  (package
-    (name "r-svars")
-    (version "1.3.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "svars" version))
-              (sha256
-               (base32
-                "1i9wnfrgr9x6qfqhl9bc4wiz4wxmzjfcmg7wvy3zjrfszmibaf78"))))
-    (properties `((upstream-name . "svars")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-vars
-                             r-strucchange
-                             r-steadyica
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pbapply
-                             r-ggplot2
-                             r-expm
-                             r-deoptim
-                             r-copula
-                             r-clue))
-    (home-page "https://cran.r-project.org/package=svars")
-    (synopsis "Data-Driven Identification of SVAR Models")
-    (description
-     "This package implements data-driven identification methods for structural vector
-autoregressive (SVAR) models as described in Lange et al. (2021)
-<doi:10.18637/jss.v097.i05>.  Based on an existing VAR model object (provided by
-e.g. VAR() from the vars package), the structural impact matrix is obtained via
-data-driven identification techniques (i.e.  changes in volatility (Rigobon, R.
-(2003) <doi:10.1162/003465303772815727>), patterns of GARCH (Normadin, M.,
-Phaneuf, L. (2004) <doi:10.1016/j.jmoneco.2003.11.002>), independent component
-analysis (Matteson, D. S, Tsay, R. S., (2013)
-<doi:10.1080/01621459.2016.1150851>), least dependent innovations (Herwartz, H.,
-Ploedt, M., (2016) <doi:10.1016/j.jimonfin.2015.11.001>), smooth transition in
-variances (Luetkepohl, H., Netsunajev, A. (2017)
-<doi:10.1016/j.jedc.2017.09.001>) or non-Gaussian maximum likelihood (Lanne, M.,
-Meitz, M., Saikkonen, P. (2017) <doi:10.1016/j.jeconom.2016.06.002>)).")
-    (license license:expat)))
-
 (define-public r-svalues
   (package
     (name "r-svalues")
@@ -3258,29 +3215,6 @@ survJamda'.  This package contains the gene expression and phenotype data of
 GSE1992, GSE3143 and GSE4335.")
     (license license:gpl2+)))
 
-(define-public r-survjamda
-  (package
-    (name "r-survjamda")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "survJamda" version))
-              (sha256
-               (base32
-                "14ly1g548ysm8jgsyrhj12zmd6i2lca7rsgby3jbwikyqyk1mx5q"))))
-    (properties `((upstream-name . "survJamda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survjamda-data r-survivalroc r-survival
-                             r-ecodist))
-    (home-page "https://cran.r-project.org/package=survJamda")
-    (synopsis
-     "Survival Prediction by Joint Analysis of Microarray Gene Expression Data")
-    (description
-     "Microarray gene expression data can be analyzed individually or jointly using
-merging methods or meta-analysis to predict patients survival and risk
-assessment.")
-    (license license:gpl2+)))
-
 (define-public r-survivor
   (package
     (name "r-survivor")
@@ -3340,70 +3274,6 @@ the objective to maximize the concordance index for comparable pairs of
 observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-survivalrec
-  (package
-    (name "r-survivalrec")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "survivalREC" version))
-              (sha256
-               (base32
-                "1c4qvk2qd5ffn4kfkglwn3iyisnd2y0hzzn92c57vb94d4h057hx"))))
-    (properties `((upstream-name . "survivalREC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-kernsmooth))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=survivalREC")
-    (synopsis
-     "Nonparametric Estimation of the Distribution of Gap Times for Recurrent Events")
-    (description
-     "This package provides estimates for the bivariate and trivariate distribution
-functions and bivariate and trivariate survival functions for censored gap
-times.  Two approaches, using existing methodologies, are considered: (i) the
-Lin's estimator, which is based on the extension the Kaplan-Meier estimator of
-the distribution function for the first event time and the Inverse Probability
-of Censoring Weights for the second time (Lin DY, Sun W, Ying Z (1999)
-<doi:10.1093/biomet/86.1.59> and (ii) another estimator based on Kaplan-Meier
-weights (Una-Alvarez J, Meira-Machado L (2008)
-<https://w3.math.uminho.pt/~lmachado/Biometria_conference.pdf>).  The proposed
-methods are the landmark estimators based on subsampling approach, and the
-estimator based on weighted cumulative hazard estimator.  The package also
-provides nonparametric estimator conditional to a given continuous covariate.
-All these methods have been submitted to be published.")
-    (license license:gpl3)))
-
-(define-public r-survivalpath
-  (package
-    (name "r-survivalpath")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SurvivalPath" version))
-              (sha256
-               (base32
-                "17glrkz63ms76cmg7lfz0nay131ngwxigwfs0rzgfjna9gy06dgi"))))
-    (properties `((upstream-name . "SurvivalPath")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treeio
-                             r-survminer
-                             r-survivalroc
-                             r-survival
-                             r-rms
-                             r-hmisc
-                             r-ggtree
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/zhangt369/SurvivalPath")
-    (synopsis
-     "Construction and Visualization of Survival Path Tree using Time-Series Survival Data")
-    (description
-     "Facilitates building personalized survival path models.  The function
-survivalpath() return tree structure results, which can be used to draw easily
-beautiful and ready-to-publish survival path tree.  See Shen L, et al (2018)
-<doi:10.1038/s41467-018-04633-7> .")
-    (license license:expat)))
 
 (define-public r-survivalmpldc
   (package
@@ -7341,13 +7211,13 @@ create dyadic data sets.")
 (define-public r-stratigrapher
   (package
     (name "r-stratigrapher")
-    (version "1.2.5")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StratigrapheR" version))
               (sha256
                (base32
-                "0wc4q3y8n9wd79dwjn5i4y4b5h8yk3g9x3ifg7dxsryk5i2wml0c"))))
+                "01pj1in36cjsfpavhlx56by3pxxxqy1chvfpa73xsdbrqmjs975s"))))
     (properties `((upstream-name . "StratigrapheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -8577,6 +8447,41 @@ cells.  We used this on pheno-seq data, see: Tirier, S.M., Park, J., Preusser,
 F. et al.  Pheno-seq - linking visual features and gene expression in 3D cell
 culture systems.  Sci Rep 9, 12367 (2019) <doi:10.1038/s41598-019-48771-4>).")
     (license license:gpl2+)))
+
+(define-public r-stochlab
+  (package
+    (name "r-stochlab")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stochLAB" version))
+              (sha256
+               (base32
+                "11vk5vd8y4md29cawf2x9m9zrmd0rl6vbfmhs4fzkcm4xsyp1brh"))))
+    (properties `((upstream-name . "stochLAB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-pracma
+                             r-msm
+                             r-magrittr
+                             r-logr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HiDef-Aerial-Surveying/stochLAB")
+    (synopsis "Stochastic Collision Risk Model")
+    (description
+     "Collision Risk Models for avian fauna (seabird and migratory birds) at offshore
+wind farms.  The base deterministic model is derived from Band (2012)
+<https://tethys.pnnl.gov/publications/using-collision-risk-model-assess-bird-collision-risks-offshore-wind-farms>.
+ This was further expanded on by Masden (2015) <doi:10.7489/1659-1> and code
+used here is heavily derived from this work with input from Dr A. Cook at the
+British Trust for Ornithology.")
+    (license license:gpl3+)))
 
 (define-public r-stocc
   (package
@@ -15470,42 +15375,6 @@ to the generalized bootstrap method by Beaumont and Patak (2012,
 <doi:10.1111/j.1751-5823.2011.00166.x>).")
     (license license:expat)))
 
-(define-public r-spruce
-  (package
-    (name "r-spruce")
-    (version "0.99.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spruce" version))
-              (sha256
-               (base32
-                "1kklv4d2ycjcxv183cpqa6qn46zn8nww1z8xn4sy7ipz394i10cf"))))
-    (properties `((upstream-name . "spruce")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-tidyselect
-                             r-tidyr
-                             r-seurat
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-patchwork
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr
-                             r-bayeslogit))
-    (home-page "https://cran.r-project.org/package=spruce")
-    (synopsis "Spatial Random Effects Clustering of Single Cell Data")
-    (description
-     "Allows for identification of cell sub-populations within tissue samples using
-Bayesian multivariate mixture models with spatial random effects to account for
-a wide range of spatial gene expression patterns, as described in Allen et.  al,
-2021 <doi:10.1101/2021.06.23.449615>.  Bayesian inference is conducted using
-efficient Gibbs sampling implemented using Rcpp'.")
-    (license license:gpl2+)))
-
 (define-public r-sprtt
   (package
     (name "r-sprtt")
@@ -18865,57 +18734,6 @@ MCMC).  It uses R environments to store GP objects as references/pointers.")
 Clustering, see F. Mbuga and, C. Tortora (2022) <doi:10.3390/stats5010001>.")
     (license license:gpl2+)))
 
-(define-public r-spectralanalysis
-  (package
-    (name "r-spectralanalysis")
-    (version "3.12.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spectralAnalysis" version))
-              (sha256
-               (base32
-                "0mz01hx86qi65k6vzz9k1j9q7gi10dh14cqvrlfy93f3kmi52q0x"))))
-    (properties `((upstream-name . "spectralAnalysis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-signal
-                             r-rcolorbrewer
-                             r-plyr
-                             r-plotly
-                             r-nnls
-                             r-nmf
-                             r-magrittr
-                             r-jsonlite
-                             r-hnmf
-                             r-ggplot2
-                             r-data-table
-                             r-biocgenerics
-                             r-baseline))
-    (home-page "http://www.openanalytics.eu")
-    (synopsis
-     "Pre-Process, Visualize and Analyse Process Analytical Data, by Spectral Data Measurements Made During a Chemical Process")
-    (description
-     "Infrared, near-infrared and Raman spectroscopic data measured during chemical
-reactions, provide structural fingerprints by which molecules can be identified
-and quantified.  The application of these spectroscopic techniques as inline
-process analytical tools (PAT), provides the (pharma-)chemical industry with
-novel tools, allowing to monitor their chemical processes, resulting in a better
-process understanding through insight in reaction rates, mechanistics,
-stability, etc.  Data can be read into R via the generic spc-format, which is
-generally supported by spectrometer vendor software.  Versatile pre-processing
-functions are available to perform baseline correction by linking to the
-baseline package; noise reduction via the signal package; as well as time
-alignment, normalization, differentiation, integration and interpolation.
-Implementation based on the S4 object system allows storing a pre-processing
-pipeline as part of a spectral data object, and easily transferring it to other
-datasets.  Interactive plotting tools are provided based on the plotly package.
-Non-negative matrix factorization (NMF) has been implemented to perform
-multivariate analyses on individual spectral datasets or on multiple datasets at
-once.  NMF provides a parts-based representation of the spectral data in terms
-of spectral signatures of the chemical compounds and their relative proportions.
- The functionality to read in spc-files was adapted from the hyperSpec package.")
-    (license license:gpl3)))
-
 (define-public r-spectral
   (package
     (name "r-spectral")
@@ -20726,35 +20544,6 @@ geographically weighted random forest regression including a function to find
 the optical bandwidth. (Georganos and Kalogirou (2022)
 <https://www.mdpi.com/2220-9964/11/9/471>).")
     (license license:gpl2+)))
-
-(define-public r-spatialkwd
-  (package
-    (name "r-spatialkwd")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpatialKWD" version))
-              (sha256
-               (base32
-                "0nsrf30bl3yc1h1kldv1ah1jjb4qh4hd99rd1nz9q9rqmdp0dcrw"))))
-    (properties `((upstream-name . "SpatialKWD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=SpatialKWD")
-    (synopsis "Spatial KWD for Large Spatial Maps")
-    (description
-     "This package contains efficient implementations of Discrete Optimal Transport
-algorithms for the computation of Kantorovich-Wasserstein distances between
-pairs of large spatial maps (Bassetti, Gualandi, Veneroni (2020),
-<doi:10.1137/19M1261195>).  All the algorithms are based on an ad-hoc
-implementation of the Network Simplex algorithm.  The package has four main
-helper functions: compareOneToOne() (to compare two spatial maps),
-compareOneToMany() (to compare a reference map with a list of other maps),
-compareAll() (to compute a matrix of distances between a list of maps), and
-focusArea() (to compute the KWD distance within a focus area).  In non-convex
-maps, the helper functions first build the convex-hull of the input bins and pad
-the weights with zeros.")
-    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
 (define-public r-spatialkde
   (package
@@ -30240,6 +30029,51 @@ spend a proportionately longer time there.  The aim of this package is to
 identify both the position and size of these sites of interest from high
 resolution (sub-second) positional data.")
     (license license:expat)))
+
+(define-public r-sitepickr
+  (package
+    (name "r-sitepickr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sitepickR" version))
+              (sha256
+               (base32
+                "1cqvf4d2jpav53v7h7vzknm8cbr5kqk1djqkhmjrwv2zjnx3fg97"))))
+    (properties `((upstream-name . "sitepickR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-sampling
+                             r-reshape2
+                             r-matchit
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sitepickR")
+    (synopsis "Two-Level Sample Selection with Optimal Site Replacement")
+    (description
+     "Carries out a two-level sample selection where the possibility of an initially
+selected site not wanting to participate is anticipated, and the site is
+optimally replaced.  The procedure aims to reduce bias (and/or loss of external
+validity) with respect to the target population.  In selecting units and
+sub-units, sitepickR uses the cube method developed by Deville & TillÃ©', (2004)
+<http://www.math.helsinki.fi/msm/banocoss/Deville_Tille_2004.pdf> and described
+in TillÃ© (2011)
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2011002/article/11609-eng.pdf?st=5-sx8Q8n>.
+ The cube method is a probability sampling method that is designed to satisfy
+criteria for balance between the sample and the population.  Recent research has
+shown that this method performs well in simulations for studies of educational
+programs (see Fay & Olsen (2021, under review).  To implement the cube method,
+sitepickR uses the sampling R package
+<https://cran.r-project.org/package=sampling>.  To implement statistical
+matching, sitepickR uses the MatchIt R package
+<https://cran.r-project.org/package=MatchIt>.")
+    (license license:gpl3+)))
 
 (define-public r-siteadapt
   (package
@@ -43038,31 +42872,6 @@ proximity values between pairs of observations.")
      "It offers functions for creating dashboard with Fomantic UI.")
     (license license:expat)))
 
-(define-public r-selvarmix
-  (package
-    (name "r-selvarmix")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SelvarMix" version))
-              (sha256
-               (base32
-                "02d16ffw5syq0d3yiim9jgrjlz99n956zxp23idpsmq6lb2whq66"))))
-    (properties `((upstream-name . "SelvarMix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmixmod r-rcpparmadillo r-rcpp r-glasso))
-    (home-page "https://cran.r-project.org/package=SelvarMix")
-    (synopsis
-     "Regularization for Variable Selection in Model-Based Clustering and Discriminant Analysis")
-    (description
-     "This package performs a regularization approach to variable selection in the
-model-based clustering and classification frameworks.  First, the variables are
-arranged in order with a lasso-like procedure.  Second, the method of Maugis,
-Celeux, and Martin-Magniette (2009, 2011) <doi:10.1016/j.csda.2009.04.013>,
-<doi:10.1016/j.jmva.2011.05.004> is adapted to define the role of variables in
-the two frameworks.")
-    (license license:gpl3+)))
-
 (define-public r-selfingtree
   (package
     (name "r-selfingtree")
@@ -47011,30 +46820,6 @@ publication ready plots for known Single-Cell transcriptomics data in a
 âpublication readyâ format.  This is, the goal is to automatically generate
 plots with the highest quality possible, that can be used right away or with
 minimal modifications for a research article.")
-    (license license:gpl3)))
-
-(define-public r-scpop
-  (package
-    (name "r-scpop")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scPOP" version))
-              (sha256
-               (base32
-                "0bi9dmqj9cd8f09qmfl3d65922xn3j3jipxi6615jbk6bz67kkh9"))))
-    (properties `((upstream-name . "scPOP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-rann r-matrix r-cluster))
-    (home-page "https://cran.r-project.org/package=scPOP")
-    (synopsis "Metrics for Benchmarking scRNA-Seq Batch Correction")
-    (description
-     "Evaluate batch effect correction algorithms for scRNA-seq using multiple
-established methods, including the Adjusted Rand Index, Normalized Mutual
-Information, Local Inverse Simpson Index, and Silhouette Width.  Methods for
-aggregating and weighing multiple metrics together are also included.  For
-further explanation of methods, see Swamy et al.
-(2021)<doi:10.1101/2021.03.26.437190> .")
     (license license:gpl3)))
 
 (define-public r-scpoisson

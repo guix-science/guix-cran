@@ -5817,6 +5817,43 @@ of a set of possibilities, and may also be statistically unsatisfactory.  Added
 print and summary as of August 28, 2012.")
     (license license:gpl2)))
 
+(define-public r-nlmixr2rpt
+  (package
+    (name "r-nlmixr2rpt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nlmixr2rpt" version))
+              (sha256
+               (base32
+                "0imkjshj2cibxs0zqddwfizpdf7v4b74m5p813j2laaydfnnlkyr"))))
+    (properties `((upstream-name . "nlmixr2rpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xpose-nlmixr2
+                             r-xpose
+                             r-stringr
+                             r-rxode2
+                             r-onbrand
+                             r-nlmixr2extra
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce
+                             r-flextable
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://nlmixr2.github.io/nlmixr2rpt/")
+    (synopsis
+     "Templated Word and PowerPoint Reporting of 'nlmixr2' Fitting Results")
+    (description
+     "This allows you to generate reporting workflows around nlmixr2 analyses with
+outputs in Word and PowerPoint.  You can specify figures, tables and report
+structure in a user-definable YAML file.  Also you can use the internal
+functions to access the figures and tables to allow their including in other
+outputs (e.g. R Markdown).")
+    (license license:gpl3+)))
+
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
@@ -10534,13 +10571,13 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.4.0")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "160d1smwlf83m593n1jgx5qgzqzvj4zxqcxfwzdc1mx9gsng3mgq"))))
+                "1zfdr42idrr7v76mkpvv58di8rqlw79c2k2pynfyaqxj3ac53dq0"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -13190,33 +13227,6 @@ batch effects.  Raw NanoString data can be imported in the form of Reporter Code
 Count (RCC) files.")
     (license license:expat)))
 
-(define-public r-nanop
-  (package
-    (name "r-nanop")
-    (version "2.0-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nanop" version))
-              (sha256
-               (base32
-                "007gdc93pk0vpfmsw7zgfma2k1045n2cxwwsyy276smy0ys9fdhp"))))
-    (properties `((upstream-name . "nanop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-distrex))
-    (home-page "http://scripts.iucr.org/cgi-bin/paper?S1600576714001046")
-    (synopsis
-     "Tools for Nanoparticle Simulation and Calculation of PDF and Total Scattering Structure Function")
-    (description
-     "This software package implements functions to simulate spherical, ellipsoid and
-cubic polyatomic nanoparticles with arbitrary crystal structures and to
-calculate the associated pair-distribution function and X-ray/neutron
-total-scattering signals.  It also provides a target function that can be used
-for simultaneous fitting of small- and wide-angle total scattering data in real
-and reciprocal spaces.  The target function can be generated either as a sum of
-weighted residuals for individual datasets or as a vector of residuals suitable
-for optimization using multi-criteria algorithms (e.g. Pareto methods).")
-    (license license:gpl2+)))
-
 (define-public r-nanonext
   (package
     (name "r-nanonext")
@@ -13806,13 +13816,13 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NACHO" version))
               (sha256
                (base32
-                "0kin9cs1wcayqcr82c7906fs9cg86iy61wmmxh9nd52n7nqa2jxw"))))
+                "1y1169r8cm5dv4sir5840y9vr78jfzym917807hydrkplr8ifh4h"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -13823,7 +13833,6 @@ videos at <https://practicalstats.com>.  This package adds new functions to the
                              r-ggrepel
                              r-ggplot2
                              r-ggforce
-                             r-ggbeeswarm
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mcanouil/NACHO/")

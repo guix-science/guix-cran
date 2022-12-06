@@ -5996,13 +5996,13 @@ model (ErRUM) described by Culpepper and Chen (2018)
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.3.6")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "errors" version))
               (sha256
                (base32
-                "1404314glbqnicrwnfzmxxf7l97pgrb2gjkgkwn100p0sj83kjdg"))))
+                "15hmsyfcsjy33601a7v2r7sfk2kxbm4a8xwkgjppmf84vhpqplbx"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6210,34 +6210,6 @@ text by Jenine K. Harris.  Network data set consists of 1283 local health
 departments and the communication links among them along with several
 attributes.")
     (license license:gpl3)))
-
-(define-public r-ergmclust
-  (package
-    (name "r-ergmclust")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ergmclust" version))
-              (sha256
-               (base32
-                "18vx02vr2wi0gw09g4hxb8glf38y06v4a0c6q666qv8bgcb0pgkw"))))
-    (properties `((upstream-name . "ergmclust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quadprog
-                             r-mass
-                             r-lda
-                             r-igraph))
-    (home-page "https://sites.psu.edu/sldm/netclust/")
-    (synopsis "ERGM-Based Network Clustering")
-    (description
-     "This package implements clustering and estimates parameters in
-Exponential-Family Random Graph Models (ERGMs) for static undirected and
-directed networks, developed in Vu et.  al. (2013)
-<https://projecteuclid.org/euclid.aoas/1372338477>.")
-    (license license:gpl2)))
 
 (define-public r-ergmargins
   (package
@@ -10132,29 +10104,6 @@ nucleic acid sequences of equal length.")
 character vectors.  Also contains routines to portably read and write UTF-8
 encoded text files, to convert all strings in an object to UTF-8', and to create
 character vectors with various encodings.")
-    (license license:gpl3)))
-
-(define-public r-emvs
-  (package
-    (name "r-emvs")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EMVS" version))
-              (sha256
-               (base32
-                "1aikms2i77hwv6hrk8kn9wrh1v5j5zm918cwdwm5s6cy8fcqf406"))))
-    (properties `((upstream-name . "EMVS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1080/01621459.2013.869223")
-    (synopsis
-     "The Expectation-Maximization Approach to Bayesian Variable Selection")
-    (description
-     "An efficient expectation-maximization algorithm for fitting Bayesian
-spike-and-slab regularization paths for linear regression.  Rockova and George
-(2014) <doi:10.1080/01621459.2013.869223>.")
     (license license:gpl3)))
 
 (define-public r-emur

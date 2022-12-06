@@ -11538,13 +11538,13 @@ randomized objective functions\" <arXiv:1806.11544>.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "postdoc" version))
               (sha256
                (base32
-                "0f111y5hhahjv44c1v0rjx88n3wg9xmn6jv7fwydspib9mh0n389"))))
+                "02j7jsjmyd643bimhvvaaak7nx6w99shas8l588ny2abygxb915m"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite))
@@ -18039,6 +18039,33 @@ Mutations are assessed by comparing the minor-allele frequency at each position
 to the measured PER in control samples.")
     (license license:expat)))
 
+(define-public r-plasma
+  (package
+    (name "r-plasma")
+    (version "0.9.21")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "plasma" version))
+              (sha256
+               (base32
+                "09in7kh2pfz0mkz0mic3nk4vxh7f9hmlv5xyv502d2q3cc5s26lm"))))
+    (properties `((upstream-name . "plasma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-survival
+                             r-polychrome
+                             r-plsrcox
+                             r-pls
+                             r-oompabase
+                             r-beanplot))
+    (home-page "http://oompa.r-forge.r-project.org/")
+    (synopsis "Partial LeAst Squares for Multiomic Analysis")
+    (description
+     "This package contains tools for supervised analyses of incomplete, overlapping
+multiomics datasets.  Applies partial least squares in multiple steps to find
+models that predict survival outcomes.")
+    (license license:asl2.0)))
+
 (define-public r-plaqr
   (package
     (name "r-plaqr")
@@ -20960,21 +20987,21 @@ Bastide et al. (2017) <doi:10.1111/rssb.12206> and Bastide et al. (2018)
 (define-public r-phylocomr
   (package
     (name "r-phylocomr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylocomr" version))
               (sha256
                (base32
-                "1qdhf6a7cqp12i4macy5wcbk6mf01fqbm4rc11yl63qr72zwrbhy"))))
+                "0l9ap65m927pqwxs051y4q7fmipn3kkpk1nkgis6q5fqgfxy0igi"))))
     (properties `((upstream-name . "phylocomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sys))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/phylocomr")
+    (home-page "https://docs.ropensci.org/phylocomr/")
     (synopsis "Interface to 'Phylocom'")
     (description
-     "Interface to Phylocom (<http://phylodiversity.net/phylocom/>), a library for
+     "Interface to Phylocom (<https://phylodiversity.net/phylocom/>), a library for
 analysis of phylogenetic community structure and character evolution.  Includes
 low level methods for interacting with the three executables, as well as higher
 level interfaces for methods like aot', ecovolve', bladj', phylomatic', and
@@ -25084,39 +25111,6 @@ penalization methods is provided.")
      "Estimating Non-Simplified Vine Copulas Using Penalized Splines.")
     (license license:gpl2+)))
 
-(define-public r-pencal
-  (package
-    (name "r-pencal")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pencal" version))
-              (sha256
-               (base32
-                "05fx8avdqhgshvx6q5yhkndjg77szls8i2n263kqzyk7qf8p0c4x"))))
-    (properties `((upstream-name . "pencal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survivalroc
-                             r-survival
-                             r-purrr
-                             r-nlme
-                             r-matrix
-                             r-mass
-                             r-magic
-                             r-lcmm
-                             r-glmnet
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://mirkosignorelli.github.io/r")
-    (synopsis "Penalized Regression Calibration (PRC)")
-    (description
-     "Computes penalized regression calibration (PRC), a statistical method that
-allows to predict survival from high-dimensional longitudinal predictors.  PRC
-is described in Signorelli et al. (2021, <doi:10.1002/sim.9178>)).")
-    (license license:gpl3)))
-
 (define-public r-penaltylearning
   (package
     (name "r-penaltylearning")
@@ -26883,6 +26877,27 @@ summary statistics from collaborating sites, with one or few iterations.  For
 more information, please visit our software websites:
 <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
     (license license:asl2.0)))
+
+(define-public r-pcv
+  (package
+    (name "r-pcv")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pcv" version))
+              (sha256
+               (base32
+                "1kszyww5n8j7kfb6s5wvn19ch7h1d64dhqgz6wvgx6vp21ya6qks"))))
+    (properties `((upstream-name . "pcv")))
+    (build-system r-build-system)
+    (home-page "https://github.com/svkucheryavski/pcv")
+    (synopsis "Procrustes Cross-Validation")
+    (description
+     "This package implements Procrustes cross-validation method for Principal
+Component Analysis, Principal Component Regression and Partial Least Squares
+regression models.  S. Kucheryavskiy (2020)
+<doi:10.1016/j.chemolab.2020.103937>.")
+    (license license:expat)))
 
 (define-public r-pcts
   (package
