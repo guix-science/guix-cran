@@ -1030,13 +1030,13 @@ approach are: Tang & Carey (2017) <doi:10.1002/hyp.11185>, Kaur et al. (2017)
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydraulics" version))
               (sha256
                (base32
-                "03mas99x8761lxg0msqpb16v9i34f2ms5i4p6wq48vrz68aciqyh"))))
+                "1yk1s9fnphzmkpx9pfawm72i07kdj099q6i6cry9p08bzvac80xk"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

@@ -4329,45 +4329,6 @@ in that string.  The double-period-separated numeric integer expansion also
 supports padding the resulting numbers with zeros.")
     (license license:expat)))
 
-(define-public r-bracatus
-  (package
-    (name "r-bracatus")
-    (version "1.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bRacatus" version))
-              (sha256
-               (base32
-                "0rwa452izd453nllirdvngcrf1inpc7njfhdlpwjvgsx9k3ri908"))))
-    (properties `((upstream-name . "bRacatus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rworldmap
-                             r-rgeos
-                             r-rgdal
-                             r-rgbif
-                             r-raster
-                             r-plotfunctions
-                             r-maptools
-                             r-jsonlite
-                             r-geojsonio
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EduardoArle/bRacatus")
-    (synopsis
-     "Method to Estimate the Accuracy and Biogeographical Status of Georeferenced Biological Data")
-    (description
-     "Automated assessment of accuracy and geographical status of georeferenced
-biological data.  The methods rely on reference regions, namely checklists and
-range maps.  Includes functions to obtain data from the Global Biodiversity
-Information Facility <https://www.gbif.org/> and from the Global Inventory of
-Floras and Traits <https://gift.uni-goettingen.de/home>.  Alternatively, the
-user can input their own data.  Furthermore, provides easy visualisation of the
-data and the results through the plotting functions.  Especially suited for
-large datasets.  The reference for the methodology is: ArlÃ© et al. (under
-review).")
-    (license license:gpl2+)))
-
 (define-public r-bqror
   (package
     (name "r-bqror")
@@ -5730,13 +5691,13 @@ corresponding visualization functions, as introduced by Tian et al (2021)
 (define-public r-boot-pval
   (package
     (name "r-boot-pval")
-    (version "0.4")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "boot.pval" version))
               (sha256
                (base32
-                "05gxpky92f9jhvhv4faj49ql8a9mrfqdgk802i0hdw4lmnn90k7j"))))
+                "0igrxp5ii7wxpx7i8z8dws41yjhiysdhvl19ppcicfx54z62c09d"))))
     (properties `((upstream-name . "boot.pval")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rdpack r-lme4 r-car r-boot))
@@ -12801,13 +12762,13 @@ operating systems.")
 (define-public r-bigreadr
   (package
     (name "r-bigreadr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigreadr" version))
               (sha256
                (base32
-                "0650mbgbzl2582d02ma3kd8iqdimjajk9gnx70hdjl489q15w80f"))))
+                "15wy5rphk2l59k8fk68a15xsvy8nxj1srnc2c86i7y5ym04a856k"))))
     (properties `((upstream-name . "bigreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-parallelly r-data-table r-bigassertr))

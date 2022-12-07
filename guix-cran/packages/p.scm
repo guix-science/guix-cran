@@ -13957,13 +13957,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "0.1")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polle" version))
               (sha256
                (base32
-                "13b59z0z6a4971bjc2b273khjcf3d8h9249b2p9bgxnyn725fws0"))))
+                "11585rm5pw41nbwsgm5zx0vlnrj25fjg44ps68jjyvdzs8191fhl"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (propagated-inputs (list r-targeted
@@ -13972,15 +13972,16 @@ the base temperature for growing degree days (Yang et al. (1995)
                              r-policytree
                              r-lava
                              r-future-apply
+                             r-dyntxregime
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=polle")
+    (home-page "https://arxiv.org/abs/2212.02335")
     (synopsis "Policy Learning")
     (description
-     "Framework for evaluating and learning realistic policies based on doubly robust
-loss functions.  Policy learning methods include Q-learning, see Tsiatis et al.
-(2019) <doi:10.1201/9780429192692>, (doubly robust) V-restricted Q-learning, see
-Luedtke & van der Laan (2016) <doi:10.1515/ijb-2015-0052>, and (doubly robust)
-sequential policy tree learning, see Zhou et al. <arXiv:1810.04778>.")
+     "Framework for evaluating user-specified finite stage policies and learning
+realistic policies via doubly robust loss functions.  Policy learning methods
+include doubly robust restricted Q-learning, sequential policy tree learning and
+outcome weighted learning.  See Nordland and Holst (2022) for documentation and
+references.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-politeness
@@ -26935,6 +26936,30 @@ models.  Some original methods including Boshnakov & Iqelan (2009)
 <doi:10.1111/j.1467-9892.2009.00617.x>, Boshnakov (1996)
 <doi:10.1111/j.1467-9892.1996.tb00281.x>.")
     (license license:gpl2+)))
+
+(define-public r-pct
+  (package
+    (name "r-pct")
+    (version "0.9.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pct" version))
+              (sha256
+               (base32
+                "08cw92b5kr3fwz9dj1hnfxiygcg6aqka4v90i7km86bsbicvia7j"))))
+    (properties `((upstream-name . "pct")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stplanr r-sf r-readr r-crul r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://itsleeds.github.io/pct/")
+    (synopsis "Propensity to Cycle Tool")
+    (description
+     "This package provides functions and example data to teach and increase the
+reproducibility of the methods and code underlying the Propensity to Cycle Tool
+(PCT), a research project and web application hosted at <https://www.pct.bike/>.
+ For an academic paper on the methods, see Lovelace et al (2017)
+<doi:10.5198/jtlu.2016.862>.")
+    (license license:gpl3)))
 
 (define-public r-pcsteiner
   (package

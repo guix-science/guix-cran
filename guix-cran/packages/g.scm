@@ -1410,13 +1410,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "0naa0jzv6cgnrglcis4h3i0y11sgh8fj0mm9wg8rzdg9hir861hq"))))
+                "0hwl4vzny8xzi8bzlmaj9i4rlxxs851m8jsx1p96j9j7ncdsmpsc"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13662,18 +13662,17 @@ the swiss federal statistical office.")
 (define-public r-ggsurvfit
   (package
     (name "r-ggsurvfit")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggsurvfit" version))
               (sha256
                (base32
-                "0q7vg9sp1jwc29mdjwpp308h1wpzx6llriziql0w43lzxlrq34nl"))))
+                "021gb8sdai7bsqjbq94bmzgszk2mibjdkg86rzm4grx8v91cr6lk"))))
     (properties `((upstream-name . "ggsurvfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-survival
-                             r-scales
                              r-rlang
                              r-patchwork
                              r-gtable
@@ -18032,13 +18031,13 @@ statistical statistical theory, documentation and examples.")
 (define-public r-getlattesdata
   (package
     (name "r-getlattesdata")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GetLattesData" version))
               (sha256
                (base32
-                "0bfvkq5i8b0qz98c5ycv5v1sjp0jvv6la7bl3di6q7c3651nh7nl"))))
+                "13g54m19lw9nw1a8f45fysxzgf66g94mrgvyqrhx6mfdw6lkig72"))))
     (properties `((upstream-name . "GetLattesData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -22120,13 +22119,13 @@ conserved domains that specifically define that family.  See Die et al. (2018)
 (define-public r-genehapr
   (package
     (name "r-genehapr")
-    (version "1.1.1")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geneHapR" version))
               (sha256
                (base32
-                "037yy4xpw5vfxbf0z12hdaibzzppbkbsyb0xgvj5hilwj4ar57jy"))))
+                "09nxqm4lcbqnvqip8yqsd6n4f575i8i9ladn0znkkw5v5gzdgzfg"))))
     (properties `((upstream-name . "geneHapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -22134,16 +22133,18 @@ conserved domains that specifically define that family.  See Die et al. (2018)
                              r-tibble
                              r-stringr
                              r-stringdist
+                             r-shinyjs
+                             r-shiny
                              r-rtracklayer
                              r-rlang
                              r-reshape2
                              r-pegas
                              r-maps
-                             r-magrittr
                              r-iranges
                              r-ggpubr
                              r-ggplot2
                              r-genomicranges
+                             r-genetics
                              r-biostrings
                              r-ape))
     (native-inputs (list r-knitr))

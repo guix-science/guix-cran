@@ -6994,13 +6994,13 @@ simple, value-based choice.\" Neuroimage, 214, 116764.")
 (define-public r-nieve
   (package
     (name "r-nieve")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nieve" version))
               (sha256
                (base32
-                "07996izhcyab7h2cqg0mpl6nwph3mvqxjxx7mswy3b8q20qxj4xs"))))
+                "10g3krcjzyjqhw6wdyk8ck009jalav1ybla93klzr894ildl1agh"))))
     (properties `((upstream-name . "nieve")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10018,13 +10018,13 @@ Vehicle-Routing-Problems or Travelling Salesperson Problems.")
 (define-public r-netfacs
   (package
     (name "r-netfacs")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetFACS" version))
               (sha256
                (base32
-                "1g4m4iwdyfvs9cfmcagxs5j0pm223m0p73szg8np16y2rappk55m"))))
+                "05lqfawirdw4fh0hawm815hjdpyli7025dz3a5fsm6jh3l906z9i"))))
     (properties `((upstream-name . "NetFACS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

@@ -12713,13 +12713,13 @@ Ron Knott, e.g., <https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html> .")
 (define-public r-contentid
   (package
     (name "r-contentid")
-    (version "0.0.15")
+    (version "0.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contentid" version))
               (sha256
                (base32
-                "0r5lrq82vfv698g8md8kdhl83gi8rx5hrhk2qddykxlxk4krzagi"))))
+                "17zb7fpnr1a2ixanxmgk9awwmb3njw1lk97s3a0w6cvd7dwz8iz2"))))
     (properties `((upstream-name . "contentid")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-httr r-fs r-curl))
@@ -19310,38 +19310,6 @@ found in Paradis (2020) <doi:10.1201/9780429466700>.  For details on the MCMC
 algorithm, see Kuhner et al. (1995) <doi:10.1093/genetics/140.4.1421> and
 Drummond et al. (2002) <doi:10.1093/genetics/161.3.1307>.")
     (license license:gpl2+)))
-
-(define-public r-coala
-  (package
-    (name "r-coala")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "coala" version))
-              (sha256
-               (base32
-                "00rwjdl3nscrl7ldb9j5l12xhjg1fi8li5l9xyx9gw28ixkznl6a"))))
-    (properties `((upstream-name . "coala")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scrm
-                             r-rehh
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-digest
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/statgenlmu/coala")
-    (synopsis "Framework for Coalescent Simulation")
-    (description
-     "Coalescent simulators can rapidly simulate biological sequences evolving
-according to a given model of evolution.  You can use this package to specify
-such models, to conduct the simulations and to calculate additional statistics
-from the results (Staab, Metzler, 2016 <doi:10.1093/bioinformatics/btw098>).  It
-relies on existing simulators for doing the simulation, and currently supports
-the programs ms', msms and scrm'.  It also supports finite-sites mutation models
-by combining the simulators with the program seq-gen'.")
-    (license license:expat)))
 
 (define-public r-cnvscope
   (package
@@ -30026,21 +29994,21 @@ engine can be found at
 (define-public r-censusxy
   (package
     (name "r-censusxy")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "censusxy" version))
               (sha256
                (base32
-                "07xjkkfgr9q4g3hs6fr24rvmhhg4abxp6zxzq6qwc0r499qbx33y"))))
+                "1gdry73xzcixa3hfchlf2xmmlnhk1vsg7k3axvynvlr493i7qf2a"))))
     (properties `((upstream-name . "censusxy")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://chris-prener.github.io/censusxy/")
-    (synopsis "Access the U.S. Census Bureau's Geocoding A.P.I. System")
+    (synopsis "Access the U.S. Census Bureau's Geocoding API System")
     (description
-     "This package provides access to the U.S. Census Bureau's A.P.I for matching
+     "This package provides access to the U.S. Census Bureau's API for matching
 American street addresses with their longitude and latitude.  This includes both
 single address matching as well as batch functionality for multiple addresses.
 Census geographies can be appended to addresses if desired, and reverse

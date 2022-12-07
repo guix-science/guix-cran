@@ -3378,6 +3378,39 @@ Information Criterion for model selection.  See a vignette for a tutorial and
 more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
     (license license:expat)))
 
+(define-public r-dscore
+  (package
+    (name "r-dscore")
+    (version "1.7.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dscore" version))
+              (sha256
+               (base32
+                "0nkfx4ghnsn8ks6cxmyfhm61jli73ybv477i7q86xj2yb013vdyp"))))
+    (properties `((upstream-name . "dscore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/d-score/dscore")
+    (synopsis "D-Score for Child Development")
+    (description
+     "The D-score is a quantitative measure of child development.  The D-score follows
+the Rasch model.  See Jacobusse, van Buuren and Verkerk (2006)
+<doi:10.1002/sim.2351>.  The user can convert milestone scores from many
+assessment instruments into the D-score and the DAZ (D-score adjusted for age).
+Several tools assist in mapping milestone names into the 9-position Global Scale
+of Early Development (GSED) convention.  Supports calculation of the D-score
+using dutch <doi:10.1177/0962280212473300>, gcdg <doi:10.1136/bmjgh-2019-001724>
+and gsed conversion keys.  The user can calculate DAZ using phase1 (default),
+gcdg and dutch age-conditional references.")
+    (license license:agpl3)))
+
 (define-public r-dsb
   (package
     (name "r-dsb")
@@ -20942,6 +20975,58 @@ generalization process by setting an additional parameter of
 generalization-percentage.")
     (license license:gpl2)))
 
+(define-public r-dberlibr
+  (package
+    (name "r-dberlibr")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DBERlibR" version))
+              (sha256
+               (base32
+                "19hqp0q7j6b7h9bamn3v2d1kdwzi0mlqvx7b618fkixpibqndzn7"))))
+    (properties `((upstream-name . "DBERlibR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rstatix
+                             r-reshape
+                             r-readr
+                             r-psych
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DBERlibR")
+    (synopsis
+     "Automated Assessment Data Analysis for Discipline-Based Education Research")
+    (description
+     "Discipline-Based Education Research scientists repeatedly analyze assessment
+data to ensure question itemsâ reliability and examine the efficacy of a new
+educational intervention.  Analyzing assessment data comprises multiple steps
+and statistical techniques that consume much of researchersâ time and are
+error-prone.  While education research continues to grow across many disciplines
+of science, technology, engineering, and mathematics (STEM), the
+discipline-based education research community lacks tools to streamline
+education research data analysis.  âDBERlibRââan âRâ package to
+streamline and automate assessment data processing and analysisâfills this
+gap.  The package reads user-provided assessment data, cleans them, merges
+multiple datasets (as necessary), checks assumption(s) for specific statistical
+techniques (as necessary), applies various statistical tests (e.g., one-way
+analysis of covariance, one-way repeated-measures analysis of variance), and
+presents and interprets the results all at once.  By providing the most
+frequently used analytic techniques, this package will contribute to education
+research by facilitating the creation and widespread use of evidence-based
+knowledge and practices.  The outputs contain a sample interpretation of the
+results for usersâ convenience.  User inputs are minimal; they only need to
+prepare the data files as instructed and type a function in the R console to
+conduct a specific data analysis.\\n For descriptions of the statistical methods
+employed in package, refer to the following Encyclopedia of Research Design,
+edited by Salkind, N. (2010) <doi:10.4135/9781412961288>.")
+    (license license:agpl3)))
+
 (define-public r-dbd
   (package
     (name "r-dbd")
@@ -23218,6 +23303,65 @@ sets are either based on actual data (but reduced in size) and/or simulated data
 sets to allow the fast execution of examples and demonstration of the functions.")
     (license license:gpl3+)))
 
+(define-public r-dartr
+  (package
+    (name "r-dartr")
+    (version "2.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dartR" version))
+              (sha256
+               (base32
+                "0fl78j67dab8rgddjlqvnck5qy3la7phimjrm170hirzx2dy8gah"))))
+    (properties `((upstream-name . "dartR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-stampp
+                             r-sp
+                             r-shiny
+                             r-reshape2
+                             r-raster
+                             r-popgenreport
+                             r-plyr
+                             r-patchwork
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-fields
+                             r-dplyr
+                             r-data-table
+                             r-dartr-data
+                             r-crayon
+                             r-ape
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis
+     "Importing and Analysing 'SNP' and 'Silicodart' Data Generated by Genome-Wide Restriction Fragment Analysis")
+    (description
+     "This package provides functions are provided that facilitate the import and
+analysis of SNP (single nucleotide polymorphism) and silicodart
+(presence/absence) data.  The main focus is on data generated by DarT (Diversity
+Arrays Technology), however, data from other sequencing platforms can be used
+once SNP or related fragment presence/absence data from any source is imported.
+Genetic datasets are stored in a derived genlight format (package adegenet'),
+that allows for a very compact storage of data and metadata.  Functions are
+available for importing and exporting of SNP and silicodart data, for reporting
+on and filtering on various criteria (e.g. CallRate', heterozygosity,
+reproducibility, maximum allele frequency).  Additional functions are available
+for visualization (e.g. Principle Coordinate Analysis) and creating a spatial
+representation using maps.  dartR supports also the analysis of 3rd party
+software package such as newhybrid', structure', NeEstimator and blast'.  Since
+version 2.0.3 we also implemented simulation functions, that allow to forward
+simulate SNP dynamics under different population and evolutionary dynamics.
+Comprehensive tutorials and support can be found at our github repository:
+github.com/green-striped-gecko/dartR/.  If you want to cite dartR', you find the
+information by typing citation('dartR') in the console.")
+    (license license:gpl3+)))
+
 (define-public r-darksky
   (package
     (name "r-darksky")
@@ -23926,13 +24070,13 @@ additional tools to handle and visualize the output.  See the package website
 (define-public r-daiquiri
   (package
     (name "r-daiquiri")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daiquiri" version))
               (sha256
                (base32
-                "0pfmgxl63fz5n7azb0igsikzc7bg9mmdrq7l4368da02zs6nlch0"))))
+                "1fgblq35fm73d7ck9mqdyv1sza371fdky9d97lkmn05gdnqr1xj7"))))
     (properties `((upstream-name . "daiquiri")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -24114,6 +24258,44 @@ with data on population, age and gender from Statistics Denmark
 for Forensic Scientists.\" This book was written by James Curran and published by
 CRC Press in 2010 (ISBN: 978-1-4200-8826-7).")
     (license license:gpl2+)))
+
+(define-public r-dafishr
+  (package
+    (name "r-dafishr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dafishr" version))
+              (sha256
+               (base32
+                "1n6b1r1awwxvdhn4znwp1p4jp3gvrjz017darjagx4cix0iisw1p"))))
+    (properties `((upstream-name . "dafishr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-mixtools
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-fst
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CBMC-GCMP/dafishr")
+    (synopsis "Download, Wrangle, and Analyse Vessel Monitoring System Data")
+    (description
+     "Allows to download, clean and analyse raw Vessel Monitoring System, VMS, data
+from Mexican government.  You can use the vms_download() function to download
+raw data, or you can use the sample_dataset provided within the package.  You
+can follow the tutorial in the vignette available at
+<https://cbmc-gcmp.github.io/dafishr/index.html>.")
+    (license license:expat)))
 
 (define-public r-daewr
   (package

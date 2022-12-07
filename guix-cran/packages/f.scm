@@ -13081,6 +13081,28 @@ sum of efforts expended by different fishing gears.  This necessitates
 standardisation of fishing effort in unit base.")
     (license license:gpl2+)))
 
+(define-public r-fertilmodel
+  (package
+    (name "r-fertilmodel")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fertilmodel" version))
+              (sha256
+               (base32
+                "1mznpay0ibdgm67k5xjfwfb5lp07r4163h3ad33k2zsyk2f31nsq"))))
+    (properties `((upstream-name . "fertilmodel")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=fertilmodel")
+    (synopsis "Fertility Models")
+    (description
+     "Four fertility models are fitted using non-linear least squares.  These are the
+Hadwiger, the Gamma, the Model1 and Model2, following the terminology of the
+following paper: Peristera P. and Kostaki A. (2007). \"Modeling fertility in
+modern populations\".  Demographic Research, 16(6): 141--194.
+<doi:10.4054/DemRes.2007.16.6>.")
+    (license license:gpl2+)))
+
 (define-public r-fertboot
   (package
     (name "r-fertboot")
@@ -18754,13 +18776,13 @@ Follmann DA. (2020)
 (define-public r-factorcopula
   (package
     (name "r-factorcopula")
-    (version "0.9")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FactorCopula" version))
               (sha256
                (base32
-                "09mr31j6v63hiqz6isx87fxdqpnhzl48br3c2f5vz1rd25zcbhw2"))))
+                "129ik9fxjhkb4z94nv8xp8qizbypx2v0kbmfvqy0ljifrskbga75"))))
     (properties `((upstream-name . "FactorCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -18776,9 +18798,9 @@ Follmann DA. (2020)
      "Estimation, model selection and goodness-of-fit of (1) factor copula models for
 mixed continuous and discrete data in Kadhem and Nikoloulopoulos (2021)
 <doi:10.1111/bmsp.12231>; (2) bi-factor and second-order copula models for item
-response data in Kadhem and Nikoloulopoulos (2021) <arXiv:2102.10660>; (3)
-factor tree copula models for item response data in Kadhem and Nikoloulopoulos
-(2022) <arXiv:2201.00339>.")
+response data in Kadhem and Nikoloulopoulos (2022)
+<doi:10.1007/s11336-022-09894-2>; (3) factor tree copula models for item
+response data in Kadhem and Nikoloulopoulos (2022) <arXiv:2201.00339>.")
     (license license:gpl2+)))
 
 (define-public r-factorassumptions

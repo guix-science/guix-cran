@@ -1554,13 +1554,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.6.2.1.2")
+    (version "0.6.2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rvinecopulib" version))
               (sha256
                (base32
-                "1bnrwxy05cvz1yjs7wpjbzmhl4b33x1y835irf7iczs4ckhk53lx"))))
+                "0sn928ng4krllaskv900pxl9s13va79fyxr6n5l6i40qrlglmggr"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -10481,17 +10481,17 @@ indiscernibility that are expressed with fuzzy sets (as proposed by Zadeh, in
 (define-public r-roughnet
   (package
     (name "r-roughnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "roughnet" version))
               (sha256
                (base32
-                "063aibj0a906vmyk5qyah9z45dbvpxribvs856pgim0lr3y5fhzg"))))
+                "1brl1zwmmczbismgvbq2m1i1n1v85m410z2ap6r7jqxpfn111kis"))))
     (properties `((upstream-name . "roughnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-igraph r-htmlwidgets r-graphlayouts))
-    (home-page "https://cran.r-project.org/package=roughnet")
+    (home-page "https://github.com/schochastics/roughnet/")
     (synopsis "Visualize Networks using 'roughjs'")
     (description
      "Visualize networks using the javascript library roughjs'.  This allows to draw
@@ -22218,13 +22218,13 @@ target distribution.")
 (define-public r-rgv
   (package
     (name "r-rgv")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rGV" version))
               (sha256
                (base32
-                "079nrlyywzk3cgy6mkizyzd8z0w2a4ghjcp9jpv15zcznzdnaqzp"))))
+                "0hqn1lh1bjjsdmj10drdflag5nrakh73b2m53iy4vhsr47gz07n9"))))
     (properties `((upstream-name . "rGV")))
     (build-system r-build-system)
     (propagated-inputs (list r-chron))
@@ -23480,13 +23480,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.3")
+    (version "3.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgbif" version))
               (sha256
                (base32
-                "0d8cdqrr6idwhkqqqjylix66h7b4pfx53c2ywaj8adcsv0051dhz"))))
+                "0q0y0jk4lx5s47a7fp2nifjp2nimrr8rjny451863vq6gij80zcz"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

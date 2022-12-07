@@ -16104,6 +16104,38 @@ are useful for checking whether packages are installed, omitting missing data,
 and showing in-use connections.")
     (license license:expat)))
 
+(define-public r-tfrmt
+  (package
+    (name "r-tfrmt")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tfrmt" version))
+              (sha256
+               (base32
+                "1b23ylm7ad4yhcxsm1qgv9lk8nf9bivws0h2z9cxpnrcjc309sw6"))))
+    (properties `((upstream-name . "tfrmt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-gt
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://GSK-Biostatistics.github.io/tfrmt/")
+    (synopsis "Applies Display Metadata to Analysis Results Datasets")
+    (description
+     "This package creates a framework to store and apply display metadata to Analysis
+Results Datasets (ARDs).  The use of tfrmt allows users to define table format
+and styling without the data, and later apply the format to the data.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-tframeplus
   (package
     (name "r-tframeplus")

@@ -2660,13 +2660,13 @@ automatically evaluated.")
 (define-public r-exampletestr
   (package
     (name "r-exampletestr")
-    (version "1.6.5")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exampletestr" version))
               (sha256
                (base32
-                "144rfi83g79xhw3v5vn4qfqmxixy9pk2ir8dm42qk0jhd9v2awng"))))
+                "0853p0w4qcd76h964bxvmlnzbhgxp7cv057lczgw0y4h73hk85fq"))))
     (properties `((upstream-name . "exampletestr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -2679,7 +2679,6 @@ automatically evaluated.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-ore
                              r-magrittr
                              r-fs
                              r-checkmate))
@@ -5088,6 +5087,29 @@ optim from base package, and DEoptim Mullen (2011) <doi: 10.18637/jss.v040.i06>.
 <https://CRAN.R-project.org/package=numDeriv> or the option Hessian = TRUE of
 optim function.")
     (license license:gpl3)))
+
+(define-public r-estimatew
+  (package
+    (name "r-estimatew")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "estimateW" version))
+              (sha256
+               (base32
+                "0fgbyfnxxs6kp9p17ljvj72q5vd4xn7kwh4zbmzjx45cdq101bjv"))))
+    (properties `((upstream-name . "estimateW")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-plot-matrix r-matrixcalc r-matrix))
+    (home-page "https://cran.r-project.org/package=estimateW")
+    (synopsis "Estimation of Spatial Weight Matrices")
+    (description
+     "Bayesian estimation of spatial weight matrices in spatial econometric panel
+models.  Allows for estimation of spatial autoregressive (SAR), spatial Durbin
+(SDM), and spatially lagged explanatory variable (SLX) type specifications
+featuring an unknown spatial weight matrix.  Methodological details are given in
+Krisztin and Piribauer (2022) <doi:10.1080/17421772.2022.2095426>.")
+    (license license:gpl3+)))
 
 (define-public r-estimategroupnetwork
   (package

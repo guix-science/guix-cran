@@ -22444,13 +22444,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.4.0")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "1b5415i00gczy2fn4ks61n0xmhapkyiyvrg05lvrnx6qyiv92scl"))))
+                "1f7xiy4c0b43qj8jf0a2s5fzp9l4qhnc5ysk8dq75hj7pabbhjbg"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

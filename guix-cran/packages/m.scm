@@ -13404,6 +13404,65 @@ substitute it for testing.  Designed as a drop-in replacement for the now
 deprecated testthat::with_mock() and testthat::local_mock()'.")
     (license license:gpl3)))
 
+(define-public r-mocha
+  (package
+    (name "r-mocha")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MOCHA" version))
+              (sha256
+               (base32
+                "1cc817p7v9zs8nmbl7461m5hfwg0swb9y8dygljq2gfkvbxjqfb5"))))
+    (properties `((upstream-name . "MOCHA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wcorr
+                             r-tidyr
+                             r-summarizedexperiment
+                             r-stringr
+                             r-scales
+                             r-s4vectors
+                             r-rlang
+                             r-qvalue
+                             r-organismdbi
+                             r-multiassayexperiment
+                             r-matrixstats
+                             r-magrittr
+                             r-iranges
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggbio
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-ensembldb
+                             r-dplyr
+                             r-data-table
+                             r-biovizbase
+                             r-biocgenerics
+                             r-assertthat
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MOCHA")
+    (synopsis "Modeling for Single-Cell Open Chromatin Analysis")
+    (description
+     "This package provides a statistical framework and analysis tool for open
+chromatin analysis designed specifically for single cell ATAC-seq (Assay for
+Transposase-Accessible Chromatin) data, after cell type/cluster identification.
+These novel modules remove unwanted technical variation, identify open
+chromatin, robustly models repeated measures in single cell data, implement
+advanced statistical frameworks to model zero-inflation for differential and
+co-accessibility analyses, and integrate with existing databases and modules for
+downstream analyses to reveal biological insights.  MOCHA provides a statistical
+foundation for complex downstream analysis to help advance the potential of
+single cell ATAC-seq for applied studies.  Methods for zero-inflated statistics
+are as described in: Ghazanfar, S., Lin, Y., Su, X. et al. (2020)
+<doi:10.1038/s41592-020-0885-x>.  Pimentel, Ronald Silva, \"Kendall's Tau and
+Spearman's Rho for Zero-Inflated Data\" (2009)
+<https://scholarworks.wmich.edu/dissertations/721/>.")
+    (license license:gpl3+)))
+
 (define-public r-mocca
   (package
     (name "r-mocca")

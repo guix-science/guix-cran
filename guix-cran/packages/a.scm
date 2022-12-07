@@ -9023,19 +9023,22 @@ consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresEditObject" version))
               (sha256
                (base32
-                "04rdq3kbliac1iaxqflf3qhh58qgl9pxb2qh44wkknb91ga0845x"))))
+                "03zpg86hx3a99vvhbyj06b34lqd791l0qbs4a3g8xnd2gkmmjr75"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
                              r-pbapply
+                             r-jsonlite
+                             r-httr
                              r-doparallel
                              r-data-table
+                             r-cli
                              r-assertthat
                              r-antaresread))
     (native-inputs (list r-knitr))
@@ -13417,6 +13420,37 @@ defining the cumulative hazard and hazard rate functions.  See Chen and Wang
 <doi:10.1007/s10985-015-9349-5> for more details.")
     (license license:gpl3)))
 
+(define-public r-ahpwr
+  (package
+    (name "r-ahpwr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AHPWR" version))
+              (sha256
+               (base32
+                "1g7d1vbjxb232fk6wjah73kjm6pj81acls8wqssphgnfiffgrrq6"))))
+    (properties `((upstream-name . "AHPWR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-formattable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AHPWR")
+    (synopsis "Compute Analytic Hierarchy Process")
+    (description
+     "Compute a tree level hierarchy, judgment matrix, consistency index and ratio,
+priority vectors, hierarchic synthesis and rank.  Based on the book entitled
+\"Models, Methods, Concepts and Applications of the Analytic Hierarchy Process\"
+by Saaty and Vargas (2012, ISBN 978-1-4614-3597-6).")
+    (license license:gpl3)))
+
 (define-public r-ahptopsis2n
   (package
     (name "r-ahptopsis2n")
@@ -15729,13 +15763,13 @@ admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.8.4")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "0d7ikgxyvb14p3g3vjjkqhr5yhm7pa3wfr9mb3ann42lnzn5950b"))))
+                "1qylcl7s4sh91h18qpj6s9l61pc1c8iy1nmp7qgl1rcb6xhkn49x"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15748,7 +15782,6 @@ admiral package.")
                              r-lifecycle
                              r-hms
                              r-dplyr
-                             r-assertthat
                              r-admiraldev))
     (native-inputs (list r-knitr))
     (home-page "https://pharmaverse.github.io/admiral/")
