@@ -32319,13 +32319,13 @@ statistics based on the variable types.")
 (define-public r-cba
   (package
     (name "r-cba")
-    (version "0.2-22")
+    (version "0.2-23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cba" version))
               (sha256
                (base32
-                "0h4hpkyd7ljz4hknf0pm105xlpyskr6gnfc94prmn6xlyy9qkp7i"))))
+                "18al5kavn3q2h6gl4s1hgxhy9ysv9fq602ffmzla251g380b166n"))))
     (properties `((upstream-name . "cba")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))

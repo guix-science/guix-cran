@@ -37937,16 +37937,16 @@ Clean, Func, Do\" structure described by Josh Reich.")
 (define-public r-makepipe
   (package
     (name "r-makepipe")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "makepipe" version))
               (sha256
                (base32
-                "1vkhjas5d55n6rs73rccjh53r5cr1i6cn8gnspwir6gmw5fp445a"))))
+                "0mhabnmpvjamgam63nrjdimn94azn8crafr9jcwsr08lzlbv9kmv"))))
     (properties `((upstream-name . "makepipe")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-nomnoml r-cli))
+    (propagated-inputs (list r-roxygen2 r-r6 r-nomnoml r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://kinto-b.github.io/makepipe/")
     (synopsis "Pipeline Tools Inspired by 'GNU Make'")
