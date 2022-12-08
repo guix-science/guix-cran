@@ -13216,13 +13216,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.1-1")
+    (version "3.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robustlmm" version))
               (sha256
                (base32
-                "1bynfzmdb9w7b41x0kd199j1q67x8w8m1a3988a5pp86qwzj3bhm"))))
+                "0kvgqf89nf83yr3rcy5lrq7xyjpl157zf3hz7879qpg5swxr1cyz"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -25779,13 +25779,13 @@ free at http://www.auriq.com/documentation/source/install/index.html.")
 (define-public r-respr
   (package
     (name "r-respr")
-    (version "2.0.2")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "respR" version))
               (sha256
                (base32
-                "0670hy7gg8bbjkjqcvchm83jr57725r8szix66mqggwx0xwjcxj0"))))
+                "0xq34bv6r88rr9b3gfwqj8d8m9jqz1ryv80r4anj212fbblbji58"))))
     (properties `((upstream-name . "respR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -30340,13 +30340,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapTidieR" version))
               (sha256
                (base32
-                "1s479fcxgm5wmk2jf8psi921q8vzhv3zjqs5lsakjjfahj7md4gh"))))
+                "1hgxj0vp5k9hc1fids2379qkja0s3jankiqvi9pm7h4gvk33p7fx"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -30357,10 +30357,14 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
                              r-rlang
                              r-redcapr
                              r-purrr
+                             r-lobstr
+                             r-lifecycle
+                             r-formattable
                              r-dplyr
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/CHOP-CGTDataOps/REDCapTidieR")
+    (home-page "https://github.com/CHOP-CGTInformatics/REDCapTidieR")
     (synopsis "Extract 'REDCap' Databases into Tidy 'Tibble's")
     (description
      "Convert REDCap exports into tidy tables for easy handling of REDCap repeat
@@ -32438,13 +32442,13 @@ into cells.  Save the final table output as a static image or interactive file."
 (define-public r-reactable
   (package
     (name "r-reactable")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reactable" version))
               (sha256
                (base32
-                "09kwpzchap3y6vcym0z3gizmpn4j3jf67laaifnq07vs63a5xc8k"))))
+                "1kcxxlrc6ww70anqrcnrvj7kn0i15cf2ylpaq6fh2kdkyy57d05k"))))
     (properties `((upstream-name . "reactable")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactr r-jsonlite r-htmlwidgets r-htmltools
@@ -44957,6 +44961,29 @@ descriptive statistics, common hypothesis tests, ANOVA, and linear regression,
 as well as box plots, histograms, scatter plots, and line plots (including
 profile plots).")
     (license license:gpl3+)))
+
+(define-public r-r2social
+  (package
+    (name "r-r2social")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "r2social" version))
+              (sha256
+               (base32
+                "1jmhq2qfh3wn47ysl8lairhj7zibiq0dw5nfx0ki1d3vi6f7bv5r"))))
+    (properties `((upstream-name . "r2social")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://r2social.obi.obianom.com")
+    (synopsis "App Inclusion of Social Sharing and Connect Buttons")
+    (description
+     "Implementation of JavaScript and CSS styles to allow easy incorporation of
+various social media elements on a page.  The elements include addition of share
+buttons or connect with us buttons or hyperlink buttons to Shiny applications or
+dashboards and Rmardown documents.")
+    (license license:expat)))
 
 (define-public r-r2shortcode
   (package

@@ -13886,13 +13886,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.3.4")
+    (version "1.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSBtools" version))
               (sha256
                (base32
-                "11hmabl79p67j5yn6wan4ahiqn84mbsw0k6zkasc5wkfscxl1p5d"))))
+                "1vc15wcg8469vplxykzs3g5nb7a5nr2v8zdypj1gaghalv00iadf"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))

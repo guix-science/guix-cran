@@ -10241,13 +10241,13 @@ originals.")
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.3")
+    (version "4.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lessR" version))
               (sha256
                (base32
-                "0yirj4ai20ydnjr5xx7dxk4yxfjdimwgbkizx0jnr39ypq08314s"))))
+                "1lcylsb70i7wyaqkwgwq8k62p265aa7azfq1a8n90lghjadckcck"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

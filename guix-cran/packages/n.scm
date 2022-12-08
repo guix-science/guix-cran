@@ -961,13 +961,13 @@ al. (2002) <doi:10.1109/4235.996017>.")
 (define-public r-nseval
   (package
     (name "r-nseval")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nseval" version))
               (sha256
                (base32
-                "17zs7x86qv01c6s6mw49xdvslpxbz0cm3pfalli58qh83hh3rlks"))))
+                "07pabn4msb6q50x67z84flb8fpzf43s1dy61cnqd7rn4l7zgc181"))))
     (properties `((upstream-name . "nseval")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nseval")
@@ -7482,13 +7482,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhdplusTools" version))
               (sha256
                (base32
-                "04wv9762wjrp9zfw0ac1rqbyq83sjfx0rx99n47kxz4nvcbja4d8"))))
+                "063vskxilrhx801cgp7hl8w81k4qig6hsyj9xlfdzjjrhyan31pi"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8923,13 +8923,13 @@ network mazes.")
 (define-public r-networkextinction
   (package
     (name "r-networkextinction")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetworkExtinction" version))
               (sha256
                (base32
-                "0di8azmzcb5rfry32h6fdxw57nvmxa39p2p8zfq62bwm5bv9263l"))))
+                "19rgz2v4p0q6j7q3gs695j2jpxzlwvx06bhcji68hkrn78745ag0"))))
     (properties `((upstream-name . "NetworkExtinction")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11271,13 +11271,13 @@ structure in multi-subject single-cell data.  See He et al. (2021)
 (define-public r-neatstats
   (package
     (name "r-neatstats")
-    (version "1.11.0")
+    (version "1.13.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neatStats" version))
               (sha256
                (base32
-                "1vrpnd7xgp96rikjx50rh1mc3n2j6k86g0ax322s5ljlymwdh6sp"))))
+                "1fj042mwmmjza8giv0f2m7y11j8rnzrcmifyxrv4z9rfqddcvh2s"))))
     (properties `((upstream-name . "neatStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -13717,13 +13717,13 @@ constants were all homogenized to \"univariate\".")
 (define-public r-nadiv
   (package
     (name "r-nadiv")
-    (version "2.17.1")
+    (version "2.17.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nadiv" version))
               (sha256
                (base32
-                "1v1fbnps55pbaz0q88y8vrxjd503krymc7f8i0xx3yxgdxl56x8q"))))
+                "0v2jw0md4bjn15g6slx2bx7ipr3r0s1zv3frjach3rd7b1bs9z7k"))))
     (properties `((upstream-name . "nadiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -13735,7 +13735,7 @@ a pedigree to be used in linear mixed effect models (A.K.A. the animal model').
 Also includes other functions to facilitate the use of animal models.  Some
 functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
-international (<https://www.vsni.co.uk/software/asreml>).")
+international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
 
 (define-public r-nadia

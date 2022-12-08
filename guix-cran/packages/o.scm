@@ -9895,13 +9895,13 @@ isocubes package <https://github.com/coolbutuseless/isocubes>.")
 (define-public r-obl
   (package
     (name "r-obl")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OBL" version))
               (sha256
                (base32
-                "03a8xk7gakziw9bd25izpsby0r7b28wyhd785p22m4dfl46663pg"))))
+                "06icw1dnmavgaf51fs2nfi6582cpjrnlii1j9s62nwnwfnqw00v3"))))
     (properties `((upstream-name . "OBL")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

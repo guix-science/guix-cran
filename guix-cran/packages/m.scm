@@ -15519,13 +15519,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3tuningspaces" version))
               (sha256
                (base32
-                "091klvffi9mdj2hmbidp2g1aqhvgxzcszy20qiayzixx2h75yl8a"))))
+                "16yaah9zncl0daq453cl00mbpk9pvap8wv3myb5azj27v7pp1fb6"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -15536,11 +15536,12 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
                              r-data-table
                              r-checkmate))
     (home-page "https://mlr3tuningspaces.mlr-org.com")
-    (synopsis "Search Spaces for Hyperparameter Tuning")
+    (synopsis "Search Spaces for 'mlr3'")
     (description
-     "Collection of search spaces for hyperparameter tuning.  Includes various search
-spaces that can be directly applied on an `mlr3` learner.  Additionally, meta
-information about the search space can be queried.")
+     "Collection of search spaces for hyperparameter optimization in the mlr3
+ecosystem.  It features ready-to-use search spaces for many popular machine
+learning algorithms.  The search spaces are from scientific articles and work
+for a wide range of data sets.")
     (license license:lgpl3)))
 
 (define-public r-mlr3spatiotempcv
@@ -23775,6 +23776,29 @@ output.  Greene (2008, pp.  780-7) provides a textbook introduction to this
 topic.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mfusampler
+  (package
+    (name "r-mfusampler")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MfUSampler" version))
+              (sha256
+               (base32
+                "0jzql2hs335gd4kwj18yi8ygsi3190wacfs3mgrmshdjb2frkh15"))))
+    (properties `((upstream-name . "MfUSampler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dlm r-coda r-ars))
+    (home-page "https://cran.r-project.org/package=MfUSampler")
+    (synopsis "Multivariate-from-Univariate (MfU) MCMC Sampler")
+    (description
+     "Convenience functions for multivariate MCMC using univariate samplers including:
+slice sampler with stepout and shrinkage (Neal (2003)
+<DOI:10.1214/aos/1056562461>), adaptive rejection sampler (Gilks and Wild (1992)
+<DOI:10.2307/2347565>), adaptive rejection Metropolis (Gilks et al (1995)
+<DOI:10.2307/2986138>), and univariate Metropolis with Gaussian proposal.")
+    (license license:gpl2+)))
+
 (define-public r-mft
   (package
     (name "r-mft")
@@ -26780,13 +26804,13 @@ community by interacting with the Metaculus API, currently located at
 (define-public r-metacore
   (package
     (name "r-metacore")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metacore" version))
               (sha256
                (base32
-                "1m7mri6mkk39m7311igvfv31v4fa8m38cljbzlmrl2rjmw544fnj"))))
+                "0hcaf4fq5z1nv910yvs5gav9scfwrm0b60n80ycsspkimmg86cmj"))))
     (properties `((upstream-name . "metacore")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34751,13 +34775,13 @@ generate thresholds for binary masks.")
 (define-public r-mashr
   (package
     (name "r-mashr")
-    (version "0.2.57")
+    (version "0.2.69")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mashr" version))
               (sha256
                (base32
-                "1jjmqd3z3f7bxj6zw7yw6k9j6aiwnihd8cm14271kkpyy0id8slm"))))
+                "1m52bdyfni193fh8xhq6z372zj0cqc8x6wb8cwyls4qjwx3x263c"))))
     (properties `((upstream-name . "mashr")))
     (build-system r-build-system)
     (propagated-inputs (list r-softimpute

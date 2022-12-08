@@ -1067,13 +1067,13 @@ randomized trials.")
 (define-public r-cvcovest
   (package
     (name "r-cvcovest")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvCovEst" version))
               (sha256
                (base32
-                "1imz2aync46s4ji7i5pnnv8shy247pazxa79m120k3pgq7p5bnly"))))
+                "1787dw3vg1w6mv621qhcdcfmfcxwrjwrwc3hwxqqkhgimnwrn0hy"))))
     (properties `((upstream-name . "cvCovEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5672,16 +5672,17 @@ Journal of Machine Learning Research, 17(94): 1-31
 (define-public r-crimeutils
   (package
     (name "r-crimeutils")
-    (version "0.3.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crimeutils" version))
               (sha256
                (base32
-                "1g7na36k1na7bsq8xqi01ja2fpb09r2davpi56jn5k1lih93kp8k"))))
+                "0jsh2b1kv8r9x8sx1s2x6dpc8jyfnjsinycqb5wck5jcsswswgd6"))))
     (properties `((upstream-name . "crimeutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-scales
                              r-rlang
                              r-readr
@@ -23130,33 +23131,6 @@ statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
 <doi:10.1016/j.wace.2018.01.002>.")
     (license license:bsd-3)))
 
-(define-public r-climetrics
-  (package
-    (name "r-climetrics")
-    (version "1.0-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "climetrics" version))
-              (sha256
-               (base32
-                "0jy6npilv21hm0cwv5dmxwbz1x5lw75a14n9nbp743864z6jrz30"))))
-    (properties `((upstream-name . "climetrics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-yaimpute
-                             r-xts
-                             r-terra
-                             r-sp
-                             r-rts
-                             r-raster))
-    (home-page "http://r-gis.net")
-    (synopsis "Climate Change Metrics")
-    (description
-     "This package provides a framework that facilitates spatio-temporal analysis of
-climate dynamics through exploring and measuring different dimensions of climate
-change in space and time.")
-    (license license:gpl3+)))
-
 (define-public r-clime
   (package
     (name "r-clime")
@@ -32372,6 +32346,31 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 <doi:10.1093/bioinformatics/btg173>.")
     (license license:expat)))
 
+(define-public r-caviarpd
+  (package
+    (name "r-caviarpd")
+    (version "0.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "caviarpd" version))
+              (sha256
+               (base32
+                "1rc2h6a4i0n4wf0masyrq21vazm96kzhb7gz73h08a2ig1s66vhp"))))
+    (properties `((upstream-name . "caviarpd")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=caviarpd")
+    (synopsis "Cluster Analysis via Random Partition Distributions")
+    (description
+     "Cluster analysis is performed using pairwise distance information and a random
+partition distribution.  The method is implemented for two random partition
+distributions.  It draws samples and then obtains and plots clustering
+estimates.  An implementation of a selection algorithm is provided for the mass
+parameter of the partition distribution.  Since pairwise distances are the
+principal input to this procedure, it is most comparable to the hierarchical and
+k-medoids clustering methods.  The method is Dahl, Andros, Carter (2022+)
+<doi:10.1002/sam.11602>.")
+    (license (list license:expat license:asl2.0))))
+
 (define-public r-cavariants
   (package
     (name "r-cavariants")
@@ -36215,13 +36214,13 @@ method and microarray technology, e.g. Affymetrix and Illumina.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "calidad" version))
               (sha256
                (base32
-                "1wqb3bc5y0dlny2h476li8zqm83y8388zqhmaiy8hvh350wnq3s5"))))
+                "1b64wqfr4zb1r5bjbw5jbhs2yi1w91nv66s57h0fnija839zr9kw"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

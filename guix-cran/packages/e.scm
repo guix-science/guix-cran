@@ -1401,6 +1401,48 @@ Foster (2001) <doi:10.1890/0012-9615(2001)071[0027:LARIOH]2.0.CO;2>, and Boose,
 Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
     (license license:gpl3)))
 
+(define-public r-export
+  (package
+    (name "r-export")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "export" version))
+              (sha256
+               (base32
+                "1b238d6aa1m2pcg7vdjbrvjj748j3fim5zvhng7lgkag2rzjqa56"))))
+    (properties `((upstream-name . "export")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-xml2
+                             r-stargazer
+                             r-rvg
+                             r-rgl
+                             r-openxlsx
+                             r-officer
+                             r-flextable
+                             r-devemf
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=export")
+    (synopsis "Streamlined Export of Graphs and Data Tables")
+    (description
+     "Easily export R graphs and statistical output to Microsoft Office /
+LibreOffice', Latex and HTML Documents, using sensible defaults that result in
+publication-quality output with simple, straightforward commands.  Output to
+Microsoft Office is in editable DrawingML vector format for graphs, and can use
+corporate template documents for styling.  This enables the production of
+standardized reports and also allows for manual tidy-up of the layout of R
+graphs in Powerpoint before final publication.  Export of graphs is flexible,
+and functions enable the currently showing R graph or the currently showing R
+stats object to be exported, but also allow the graphical or tabular output to
+be passed as objects.  The package relies on package officer for export to
+Office documents,and output files are also fully compatible with LibreOffice'.
+Base R', ggplot2 and lattice plots are supported, as well as a wide variety of R
+stats objects, via wrappers to xtable(), broom::tidy() and stargazer(),
+including aov(), lm(), glm(), lme(), glmnet() and coxph() as well as matrices
+and data frames and many more...")
+    (license license:gpl2)))
+
 (define-public r-explorer
   (package
     (name "r-explorer")
@@ -17367,29 +17409,6 @@ routines.")
 modified rejection sampling or uniformization.")
     (license license:gpl3)))
 
-(define-public r-ecb
-  (package
-    (name "r-ecb")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ecb" version))
-              (sha256
-               (base32
-                "0hn1d1hxilwxxmxzzpdcj81d4vy8fbjk1z09kw7j0b2p04wrdlkc"))))
-    (properties `((upstream-name . "ecb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rsdmx r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://sdw.ecb.europa.eu/")
-    (synopsis
-     "Programmatic Access to the European Central Bank's Statistical Data Warehouse")
-    (description
-     "This package provides an interface to the European Central Bank's Statistical
-Data Warehouse API, allowing for programmatic retrieval of a vast quantity of
-statistical data.")
-    (license license:cc0)))
-
 (define-public r-ecar
   (package
     (name "r-ecar")
@@ -17678,13 +17697,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "1.2021.0")
+    (version "1.2021.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "19hpmganxw1yrbq2mrnygrzsm3mbgnilbggfwi36yzk83fxlb3wm"))))
+                "19hz86a0za72av6gdbjsxx0m0cmgrnsbqnj1kksw7zhcwsa4za6p"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

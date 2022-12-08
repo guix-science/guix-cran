@@ -4519,13 +4519,13 @@ image processing.  REFERENCES. i.  Chander and Markham (2003)
 (define-public r-asioheaders
   (package
     (name "r-asioheaders")
-    (version "1.22.1-1")
+    (version "1.22.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AsioHeaders" version))
               (sha256
                (base32
-                "15cd85zkjzpz321pnnjwn0g2v4rza6cdqanx89p5j3nrfihjrh32"))))
+                "192qxayrpvi02wrqq2h5cjc92aaxrsgw7z32r8qk5imqg3mc0a8n"))))
     (properties `((upstream-name . "AsioHeaders")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/asioheaders")
@@ -4908,13 +4908,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-26")
+    (version "0.2-27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arulesSequences" version))
               (sha256
                (base32
-                "09571bqqbf19w80nbs34k1zq54c6yyfcqm2a2jpkd41jmij6pvj5"))))
+                "12x9zfl1qp88d28k7lpai0ksgkwvanqf7cw7ig6sjsg067x7pzz1"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (propagated-inputs (list r-arules))
@@ -15677,19 +15677,20 @@ quantities of interest for the target density itself.")
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralonco" version))
               (sha256
                (base32
-                "17c52zaqw3p9bd4gi93rbam367rldp12xsk1ayl4dyxyamazcksg"))))
+                "1dimbbj2yb24zyfgxqkhgkq0rk69hs8yy8xq4k05v99rwj3lyng8"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-rlang
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-dplyr
                              r-admiraldev
                              r-admiral))

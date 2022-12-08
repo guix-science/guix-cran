@@ -11169,13 +11169,13 @@ rectangles or convex hulls on the basic plot.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "0.3.7")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipmap" version))
               (sha256
                (base32
-                "0w9isg53zvhd2g3icfrdavcq33cg4v9ynljyn5p73p4ifai7mgdz"))))
+                "186k7d4hvbk5yrz0h23s2k1nakd2fjsc38jj4c0w6f94ldnbp00k"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbest r-purrr r-ggplot2 r-dplyr))
@@ -12341,22 +12341,19 @@ arbitrary LaTeX code to be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "1.6.1")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tigris" version))
               (sha256
                (base32
-                "1cid3cpjlc56mskyx0phd7h969jihxbdkpmly08cq2qjyyiqszlj"))))
+                "0fbhq2jznwxnvqk2zndnp923az8kvbq667i15m5xx9lq42zfzwix"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
                              r-stringr
-                             r-sp
                              r-sf
-                             r-rgdal
                              r-rappdirs
-                             r-maptools
                              r-magrittr
                              r-httr
                              r-dplyr))
@@ -18103,13 +18100,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terrainr
   (package
     (name "r-terrainr")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "terrainr" version))
               (sha256
                (base32
-                "0marwkn3mzrrm8xghc3f2fnxgbcfvzq76lpac92gahhvfmxhjp39"))))
+                "1w91vdn859m1rxg5av3gix5rff1wndrkkn13nvc1ygqgwd25hc76"))))
     (properties `((upstream-name . "terrainr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -22475,13 +22472,13 @@ examples.")
 (define-public r-tablehtml
   (package
     (name "r-tablehtml")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tableHTML" version))
               (sha256
                (base32
-                "01bffjqi2qs66w67l5nc0imqdcaf4cky930srkd2wmvvawv85kwc"))))
+                "0xqvk4smc8z6l4vpg39y1rxkx22spx7nvdsvp6xq6x7pmbsl0m8m"))))
     (properties `((upstream-name . "tableHTML")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot

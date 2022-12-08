@@ -1075,13 +1075,13 @@ Philip D. (2018) <doi:10.1177/1532673X18759644>.")
 (define-public r-purger
   (package
     (name "r-purger")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "purgeR" version))
               (sha256
                (base32
-                "0pa7ifpcmvy85bknpqcprh7plsxs6lmaqbripw1h304jmxg3lbg1"))))
+                "0jcvfrgm7b85xf1lqjnidxrp0dmnqk8pjg2sj581jmkimrpf6cad"))))
     (properties `((upstream-name . "purgeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-progress r-foreach

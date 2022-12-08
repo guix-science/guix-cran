@@ -292,13 +292,13 @@ groups through time, developed in Matias and Miele (2016)
 (define-public r-dynrb
   (package
     (name "r-dynrb")
-    (version "0.17")
+    (version "0.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynRB" version))
               (sha256
                (base32
-                "0zihmhky087l8hl5jmwlkjmiihn4v3bqwfzyjzzc62g8kcmq0mkp"))))
+                "0sz0a1g6z48f0s7ch86y9mvazwk4gdswjj179a13d0yjhy9rgpk0"))))
     (properties `((upstream-name . "dynRB")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -712,23 +712,20 @@ and derivatives.")
 (define-public r-dynconfir
   (package
     (name "r-dynconfir")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynConfiR" version))
               (sha256
                (base32
-                "1ndm5ccs8lpp00mb184paq84kzs9p7a39yzqpcyfdy7w7cl618bd"))))
+                "11grish5x9xiw6gkr2bmg1vpi2hdqw7j52czhgc9d9gxvxlyjxp8"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rtdists
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-rcpp
                              r-progress
                              r-minqa
                              r-magrittr
-                             r-logger
-                             r-hmisc
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SeHellmann/dynConfiR")
@@ -1769,13 +1766,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "1aj1p3i9cjxr1p0a7b9rxfksim0x9skn1r0zfmcip902ylqy692a"))))
+                "085cpb0rhiyipffzdqqscblrwav5hfz57r3475ccjn9xyf7n0pmw"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -6735,13 +6732,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.2.17")
+    (version "0.2.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dodgr" version))
               (sha256
                (base32
-                "106jmi9laxvq8l97a4cb1xam1qmxx77x3qgqphkg85cg96wfays8"))))
+                "1xnb4kdqjllg048y2bnl1pzq7xq15fg1nizr7ibhsfscjsgysgqg"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread
@@ -13624,13 +13621,13 @@ frame with many numeric columns and a factor column.")
 (define-public r-dialrjars
   (package
     (name "r-dialrjars")
-    (version "8.12.54")
+    (version "8.13.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dialrjars" version))
               (sha256
                (base32
-                "1xzkxn8lvlgw0y0nhp411ikqpdqj5kfd605ycmx643rbz7m2fnjd"))))
+                "1h9b2mvjbsxyclklc8lx8mymkbq8c5p06j5dxnxgk4mkpiazgr7i"))))
     (properties `((upstream-name . "dialrjars")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -16472,6 +16469,45 @@ functions to ask a user to install other packages.  Finally, you find a set of
 thematic sets of packages you may use to set up new environments quickly,
 installing them in a single call.")
     (license license:gpl3)))
+
+(define-public r-dependencyreviewer
+  (package
+    (name "r-dependencyreviewer")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DependencyReviewer" version))
+              (sha256
+               (base32
+                "1pa5cvh29kvv80nfganfd16xmrwpp51qwy6q0qwk0y8wy66isd26"))))
+    (properties `((upstream-name . "DependencyReviewer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidygraph
+                             r-stringr
+                             r-shinyace
+                             r-shiny
+                             r-rlang
+                             r-readr
+                             r-pak
+                             r-magrittr
+                             r-lintr
+                             r-knitr
+                             r-here
+                             r-glue
+                             r-ggraph
+                             r-ggplot2
+                             r-ggally
+                             r-dt
+                             r-dplyr
+                             r-desc
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=DependencyReviewer")
+    (synopsis "Tool Suite to Investigate Other Packages")
+    (description
+     "Helps investigating other packages during code review by looking at their
+dependencies.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-depend-truncation
   (package
@@ -19718,13 +19754,13 @@ See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Riz
 (define-public r-dcortools
   (package
     (name "r-dcortools")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcortools" version))
               (sha256
                (base32
-                "169zvcwhdgc9dbvx02sfbqzh9c35gllijm4ir66mi6sa1v8l862a"))))
+                "1swshgxgrsv4s3w1aq7ll4izvdfks4ha5hixh4rl7xh7pl2ikq75"))))
     (properties `((upstream-name . "dcortools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -20461,13 +20497,13 @@ functions must be read into the R environment (perhaps using base::source()).")
 (define-public r-dbstats
   (package
     (name "r-dbstats")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbstats" version))
               (sha256
                (base32
-                "1njgl7slfwp9ymnz2lf1bbw99cddkwwwldjz9f86q1gfnhi5a8lj"))))
+                "1sa33ir8hj0z0d2ry4w7bhilx94alhdvjc4bzaj09alv6w39gpcn"))))
     (properties `((upstream-name . "dbstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-pls r-cluster))
