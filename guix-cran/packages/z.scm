@@ -291,13 +291,13 @@ internal validation scenario.")
 (define-public r-zipangu
   (package
     (name "r-zipangu")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zipangu" version))
               (sha256
                (base32
-                "0cl9zzl203nc7yf2v7a1mz19aqs3wlxc3d8l3ajszxy5pxvgfxdm"))))
+                "0l5jhv0xl0rh7z546zn2p3gaci1v7d9d3ha6040kixclkmhb5dp6"))))
     (properties `((upstream-name . "zipangu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

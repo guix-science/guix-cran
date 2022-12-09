@@ -1392,16 +1392,16 @@ information as well as data that requires an API token.")
 (define-public r-kodama
   (package
     (name "r-kodama")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KODAMA" version))
               (sha256
                (base32
-                "0qis85v9g23f17grb1d69l8s7qdlya72fscvqh75k7sly5jlbpix"))))
+                "0b8kgr2y623nrw1658s3daja1x25sg4icxcmvlm1fvp0bs2k1w54"))))
     (properties `((upstream-name . "KODAMA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rtsne r-rcpparmadillo r-rcpp r-minerva))
+    (propagated-inputs (list r-umap r-rtsne r-rcpparmadillo r-rcpp r-minerva))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KODAMA")
     (synopsis "Knowledge Discovery by Accuracy Maximization")

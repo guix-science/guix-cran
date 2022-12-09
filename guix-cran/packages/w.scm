@@ -7231,44 +7231,49 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "1.1.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wallace" version))
               (sha256
                (base32
-                "0q9nppyiijzbmdi6dvgnh8l8i1vassqcl5wc7bv08hidxbkw3pqs"))))
+                "11yxiz1gf50jmridh04j0z768mv2cbwganpryrc980rc1anrbm27"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-spthin
                              r-spocc
-                             r-sp
+                             r-shinywidgets
                              r-shinyjs
+                             r-shinyalert
                              r-shiny
                              r-rmarkdown
+                             r-rlang
                              r-rgeos
                              r-rgdal
                              r-rcolorbrewer
-                             r-raster
                              r-magrittr
                              r-leaflet-extras
                              r-leaflet
-                             r-jsonlite
+                             r-leafem
+                             r-knitcitations
+                             r-glue
                              r-enmeval
                              r-ecospat
                              r-dt
-                             r-dplyr
-                             r-dismo))
-    (home-page "https://wallaceEcoMod.github.io")
+                             r-dplyr))
+    (home-page "http://wallaceecomod.github.io/wallace/")
     (synopsis
      "Modular Platform for Reproducible Modeling of Species Niches and Distributions")
     (description
-     "The shiny application wallace is a modular platform for reproducible modeling of
-species niches and distributions.  wallace guides users through a complete
+     "The shiny application Wallace is a modular platform for reproducible modeling of
+species niches and distributions.  Wallace guides users through a complete
 analysis, from the acquisition of species occurrence and environmental data to
 visualizing model predictions on an interactive map, thus bundling complex
-workflows into a single, streamlined interface.")
+workflows into a single, streamlined interface.  An extensive vignette, which
+guides users through most package functionality can be found on the package's
+GitHub Pages website:
+<https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
     (license license:gpl3)))
 
 (define-public r-walkscoreapi

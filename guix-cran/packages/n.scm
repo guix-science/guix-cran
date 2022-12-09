@@ -2235,6 +2235,29 @@ multivariate observations.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-npcox
+  (package
+    (name "r-npcox")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NPCox" version))
+              (sha256
+               (base32
+                "09cyaj2xlad8277bw5nbdi51imhw5dr78zqks0cz3513igc262sa"))))
+    (properties `((upstream-name . "NPCox")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=NPCox")
+    (synopsis "Nonparametric and Semiparametric Proportional Hazards Model")
+    (description
+     "An estimation procedure for the analysis of nonparametric proportional hazards
+model (e.g. h(t) = h0(t)exp(b(t)'Z)), providing estimation of b(t) and its
+pointwise standard errors, and semiparametric proportional hazards model (e.g.
+h(t) = h0(t)exp(b(t)'Z1 + c*Z2)), providing estimation of b(t), c and their
+standard errors.  More details can be found in Lu Tian et al. (2005)
+<doi:10.1198/016214504000000845>.")
+    (license license:gpl3)))
+
 (define-public r-npcoptest
   (package
     (name "r-npcoptest")
@@ -4187,13 +4210,13 @@ at <https://api.tidesandcurrents.noaa.gov/api/prod/>.")
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
-    (version "0.1.4")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NO.PING.PONG" version))
               (sha256
                (base32
-                "10q5h9kafni3wlnn1gdsgd9a90km5snrjz1nr0ilafmdvw9vg6v1"))))
+                "1i8pwk4p43yqmk8irkmvza080sngmng0wv1yr847253a0frjg9mr"))))
     (properties `((upstream-name . "NO.PING.PONG")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-mcmcglmm r-mass))

@@ -18205,13 +18205,13 @@ hybrid method Fuzzy ART and K-Means by Sengupta, Ghosh & Dan (2011)
 (define-public r-fake
   (package
     (name "r-fake")
-    (version "1.0.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fake" version))
               (sha256
                (base32
-                "0c2vgqm45sg2n0mjzi1qpvy63vm4k3bdymxfkifhw6z34f3lw3c3"))))
+                "09pl3q8q9pxmqbz19p4gi4xxqzyg99gs6wgd6wa80vjfc7xjqh87"))))
     (properties `((upstream-name . "fake")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rdpack r-mass r-igraph r-huge))
@@ -18219,11 +18219,13 @@ hybrid method Fuzzy ART and K-Means by Sengupta, Ghosh & Dan (2011)
     (synopsis
      "Flexible Data Simulation Using the Multivariate Normal Distribution")
     (description
-     "Simulation of data from Gaussian Graphical Models (B Bodinier, S Filippi, TH
-Nost, J Chiquet, M Chadeau-Hyam (2021) <arXiv:2106.02521>).  By controlling the
-conditional independence structure between the variables, these multivariate
-simulation tools can be used to evaluate the performance of regression,
-dimensionality reduction or graphical models.")
+     "This R package can be used to generate artificial data conditionally on
+pre-specified (simulated or user-defined) relationships between the variables
+and/or observations.  Each observation is drawn from a multivariate Normal
+distribution where the mean vector and covariance matrix reflect the desired
+relationships.  Outputs can be used to evaluate the performances of variable
+selection, graphical modelling, or clustering approaches by comparing the true
+and estimated structures (B Bodinier et al (2021) <arXiv:2106.02521>).")
     (license license:gpl3+)))
 
 (define-public r-fairsubset
@@ -19006,6 +19008,27 @@ experiments with noncompliance.")
 <https://kairos.com/face-recognition-api>.  The API detects faces in images and
 returns estimates for demographics like gender, ethnicity and age.")
     (license license:expat)))
+
+(define-public r-facebookorganicr
+  (package
+    (name "r-facebookorganicr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "facebookorganicR" version))
+              (sha256
+               (base32
+                "0j4zx4gf3k81pv5kfq3ki44rfn1411n7840m1zih3hfvpdd761a0"))))
+    (properties `((upstream-name . "facebookorganicR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Data from 'Facebook Organic' via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Facebook Organic using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-facebookleadsr
   (package

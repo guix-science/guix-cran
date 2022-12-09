@@ -16272,13 +16272,13 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spOccupancy" version))
               (sha256
                (base32
-                "1f2114mhvpc2rbmv5p7cif9p643b2jlkf1cd03yyiijb6nigbvlm"))))
+                "0c4mm0qczr1pc0k6nb3ms2i1lsrm6qfjwyv2szdd6ci66ac01kc6"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -22252,13 +22252,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.7.8")
+    (version "1.7.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparklyr" version))
               (sha256
                (base32
-                "13a4cl0ybmx53azp4fvgrmdk25c6k6dradfick1sighsqrav3q7i"))))
+                "0l495jxhdbj4wjc0chp3j32gd3sab9sd9pcm3977zsjyfhcp5i3g"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (inputs (list))
@@ -37218,6 +37218,26 @@ Shiny Server Pro').  See demo online at
 <https://daattali.com/shiny/shinydisconnect-demo/>.")
     (license license:expat)))
 
+(define-public r-shinydatetimepickers
+  (package
+    (name "r-shinydatetimepickers")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shinyDatetimePickers" version))
+              (sha256
+               (base32
+                "1a19jll6dips6gca363byyf97aidbishnb3jynylgm9ys8va6rap"))))
+    (properties `((upstream-name . "shinyDatetimePickers")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-reactr r-lubridate r-htmltools))
+    (home-page "https://cran.r-project.org/package=shinyDatetimePickers")
+    (synopsis "Some Datetime Pickers for 'Shiny'")
+    (description
+     "This package provides three types of datetime pickers for usage in a Shiny UI. A
+datetime picker is an input field for selecting both a date and a time.")
+    (license license:gpl3)))
+
 (define-public r-shinydashboardplus
   (package
     (name "r-shinydashboardplus")
@@ -38405,13 +38425,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "07ap5w7q13krr3aiwwap2fwly6b1nb8awb30nmrsqvq05f79m031"))))
+                "0pprjqm33ydm0sshgxcafwd3g0lms24ix7nha1h7pkj6d1nimh40"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -38419,8 +38439,7 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
                              r-ggrepel
                              r-ggplot2
                              r-gggenes
-                             r-ggfittext
-                             r-ggbeeswarm))
+                             r-ggfittext))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mayer79/shapviz")
     (synopsis "SHAP Visualizations")

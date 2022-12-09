@@ -6166,13 +6166,13 @@ variable.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ardl.nardl" version))
               (sha256
                (base32
-                "1ylciaxq218j28zjrmlmj43sz7hz2zvjgfrm72ijdqqj133z9g9r"))))
+                "1hx2zhb1qxvg9adyx72ddw2b0b1c93qxk4zy6r7zqybcd3lrmqwb"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -15255,6 +15255,34 @@ irregular shaped sampling windows, with tests of statistical significance based
 on Monte Carlo simulations.")
     (license license:gpl2)))
 
+(define-public r-adpss
+  (package
+    (name "r-adpss")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adpss" version))
+              (sha256
+               (base32
+                "1nk12yn1n483scnphf8pab8w633dk64c8n17zlq851zywbncs0gk"))))
+    (properties `((upstream-name . "adpss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ca4wa/R-adpss")
+    (synopsis
+     "Design and Analysis of Locally or Globally Efficient Adaptive Designs")
+    (description
+     "This package provides the functions for planning and conducting a clinical trial
+with adaptive sample size determination.  Maximal statistical efficiency will be
+exploited even when dramatic or multiple adaptations are made.  Such a trial
+consists of adaptive determination of sample size at an interim analysis and
+implementation of frequentist statistical test at the interim and final analysis
+with a prefixed significance level.  The required assumptions for the stage-wise
+test statistics are independent and stationary increments and normality.
+Predetermination of adaptation rule is not required.")
+    (license license:gpl2+)))
+
 (define-public r-adpf
   (package
     (name "r-adpf")
@@ -17025,13 +17053,13 @@ Rustom Antia.")
 (define-public r-adaptivegpca
   (package
     (name "r-adaptivegpca")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adaptiveGPCA" version))
               (sha256
                (base32
-                "0bb6hw77dfa66b12xyazlp992gwjb1plylixlmq4cv4yjhnl9n5z"))))
+                "1766b3d9ysa9axfxqwy6gzj0z8hsl34pic6l63nbidqas55vnjqa"))))
     (properties `((upstream-name . "adaptiveGPCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-phyloseq r-ggplot2 r-ape))

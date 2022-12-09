@@ -1659,23 +1659,23 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.2.5")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rvg" version))
               (sha256
                (base32
-                "1i0alsr9ahl54gwszvaqz5qgiqs85wwzs5d31z97x315sk3n994j"))))
+                "14kihypdp571f5l9711hacxrv5bjp2wwxly9q6k0z9g28nlqakvd"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
+    (inputs (list zlib))
     (propagated-inputs (list r-xml2 r-rlang r-rcpp r-officer r-gdtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://davidgohel.github.io/rvg")
-    (synopsis "R Graphics Devices for Vector Graphics Output")
+    (home-page "https://ardata-fr.github.io/officeverse/")
+    (synopsis "R Graphics Devices for 'Office' Vector Graphics Output")
     (description
-     "Vector Graphics devices for Microsoft PowerPoint and Excel.  Functions extending
-package officer are provided to embed DrawingML graphics into Microsoft
-PowerPoint presentations and Microsoft Excel workbooks.")
+     "Vector Graphics devices for Microsoft PowerPoint and Microsoft Excel'.
+Functions extending package officer are provided to embed DrawingML graphics
+into Microsoft PowerPoint presentations and Microsoft Excel workbooks.")
     (license license:gpl3)))
 
 (define-public r-rvertnet
@@ -5826,13 +5826,13 @@ version of the package is documented in Journal of Statistical Software
 (define-public r-rsleep
   (package
     (name "r-rsleep")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsleep" version))
               (sha256
                (base32
-                "0rb9dpy1ks04mqb0aismkj0zg9sigyrbgb6j0rl9cw2npp0jz7vg"))))
+                "1lrjghj8i1q6b1hr97kfy35c75xzwlijcnzmp9wy129m9xygkk2r"))))
     (properties `((upstream-name . "rsleep")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal
@@ -5840,7 +5840,8 @@ version of the package is documented in Journal of Statistical Software
                              r-phontools
                              r-jsonlite
                              r-ggplot2
-                             r-edfreader))
+                             r-edfreader
+                             r-abind))
     (home-page "https://cran.r-project.org/package=rsleep")
     (synopsis "Analysis of Sleep Data")
     (description
@@ -26381,13 +26382,13 @@ interdependencies.  Inspired by RequireJS'<http://requirejs.org/>.")
 (define-public r-requirements
   (package
     (name "r-requirements")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "requiRements" version))
               (sha256
                (base32
-                "17afbpny5j2rssi173k7sxi9q2syskjh8h0h89z24dqsbh3947mz"))))
+                "1y98fdqrql1jg18jqwcxwn511jl5ccv3w12q36gc488m3ym1qcyc"))))
     (properties `((upstream-name . "requiRements")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes))

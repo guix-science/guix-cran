@@ -22851,13 +22851,13 @@ Yang (2018, <doi:10.1002/sim.7676>).")
 (define-public r-clinicalsignificance
   (package
     (name "r-clinicalsignificance")
-    (version "1.0.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clinicalsignificance" version))
               (sha256
                (base32
-                "0nkf60jgl2w4f0j8kxb7pf2xf9718lnia2sl0ihj29fnl4kmhxs1"))))
+                "017myylm3hh256zqis80f3y7y44p706wzkf8klw4d0frai7mrfwv"))))
     (properties `((upstream-name . "clinicalsignificance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22872,7 +22872,7 @@ Yang (2018, <doi:10.1002/sim.7676>).")
                              r-crayon
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=clinicalsignificance")
+    (home-page "https://pedscience.github.io/clinicalsignificance/")
     (synopsis "Determine the Clinical Significance in Clinical Trials")
     (description
      "This package provides a clinical significance analysis can be used to determine

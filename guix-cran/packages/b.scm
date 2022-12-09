@@ -11342,19 +11342,19 @@ adjustment, smoothness restrictions and clustering.")
 (define-public r-binspp
   (package
     (name "r-binspp")
-    (version "0.1.24")
+    (version "0.1.26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "binspp" version))
               (sha256
                (base32
-                "0k4ljmw5snjvyad8vgx370q91v7yj39c479q9jzld1brh2gpasr9"))))
+                "0ah002lvimniwmwgn2syw9saxgzpdhs5vins0f3kb98p5k3gdxqk"))))
     (properties `((upstream-name . "binspp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
                              r-spatstat-random
+                             r-spatstat-model
                              r-spatstat-geom
-                             r-spatstat-core
                              r-spatstat
                              r-rcppeigen
                              r-rcpparmadillo

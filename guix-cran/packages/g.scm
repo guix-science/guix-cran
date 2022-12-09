@@ -7253,6 +7253,28 @@ allow easy specification of various GPs.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gparotatedf
+  (package
+    (name "r-gparotatedf")
+    (version "2022.12-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GPArotateDF" version))
+              (sha256
+               (base32
+                "0j1hi761grjsv6bgvgjigbysk565f3kf8ynf93q7wsx1m38wv4pk"))))
+    (properties `((upstream-name . "GPArotateDF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gparotation))
+    (home-page "https://cran.r-project.org/package=GPArotateDF")
+    (synopsis "Derivative Free Gradient Projection Factor Rotation")
+    (description
+     "Derivative Free Gradient Projection Algorithms for Factor Rotation.  For more
+details see ?GPArotateDF. Theory for these functions can be found in the
+following publications: Jennrich (2004) <doi:10.1007/BF02295647>.  Bernaards and
+Jennrich (2005) <doi:10.1177/0013164404272507>.")
+    (license license:gpl2+)))
+
 (define-public r-gpareto
   (package
     (name "r-gpareto")
@@ -10912,13 +10934,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "085qpzz4amis9csw619k091hi933igg5bya4lgzyaifsr6is1p3y"))))
+                "0anf428nv1h3xabn0268kr6miwiwcsrmscdhnjbfkp6ckd5247hc"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix r-digest))
@@ -22149,13 +22171,13 @@ conserved domains that specifically define that family.  See Die et al. (2018)
 (define-public r-genehapr
   (package
     (name "r-genehapr")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geneHapR" version))
               (sha256
                (base32
-                "09nxqm4lcbqnvqip8yqsd6n4f575i8i9ladn0znkkw5v5gzdgzfg"))))
+                "0wh2778vwslfvcv85f86nsr086msm21p578grqpnrk2iivp3wp48"))))
     (properties `((upstream-name . "geneHapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -26605,13 +26627,13 @@ data to calculate posterior probabilities of breeding origin of migrating birds.
 (define-public r-gagas
   (package
     (name "r-gagas")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GAGAs" version))
               (sha256
                (base32
-                "13cppa848n48p4h27cfi35d6c1hcz0yjd0nz8czbcb4zmnqyd04c"))))
+                "1qh5cnxjb2fjl442iva4pbln019ycv13vngvlds30ql17cnf679b"))))
     (properties `((upstream-name . "GAGAs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp))

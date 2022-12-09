@@ -1192,13 +1192,13 @@ and generation of common plots and tables with publish-ready quality.")
 (define-public r-expstudy
   (package
     (name "r-expstudy")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "expstudy" version))
               (sha256
                (base32
-                "1c83lad5pva1wsbgmdcbl10c3xnkmiklpjk6hiik0p79n8vqv2mm"))))
+                "0xvrwhgfwddgn943shpmh8ifsa7hyandrpgp1yg9n9iqwmmddg77"))))
     (properties `((upstream-name . "expstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7992,27 +7992,26 @@ intervals.  This is part of the R4Epis project <https://r4epis.netlify.com>.")
 (define-public r-epiinvert
   (package
     (name "r-epiinvert")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiInvert" version))
               (sha256
                (base32
-                "0ghfs8g4fj4yr8scmvnqbc7j1pj5yjwlvqb2xbkisvvli82qhrk3"))))
+                "03xvcrh2gf5rnisq0kza5ny066asjq2igk53a423xq7i09xlr1zg"))))
     (properties `((upstream-name . "EpiInvert")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/lalvarezmat/EpiInvert")
-    (synopsis
-     "Incidence Curve Decomposition by Inverting the Renewal Equation")
+    (synopsis "Variational Techniques in Epidemiology")
     (description
-     "Estimation, by inverting a renewal equation, of time-varying reproduction
-numbers, 7-day seasonality, and restored incidence curves with festive days bias
-corrected as described in Alvarez et al. (2021) <doi:10.1073/pnas.2105112118>
-and Alvarez et al. (2022) <doi:10.3390/biology11040540>.  EpiInvert can manage
-daily incidence data and weekly aggregated incidence data.  This version of the
-package also includes EpiInvertForecast', a learning method for the short time
-forecast of the restored incidence curve.")
+     "Using variational techniques we address some epidemiological problems as the
+incidence curve decomposition by inverting the renewal equation as described in
+Alvarez et al. (2021) <doi:10.1073/pnas.2105112118> and Alvarez et al. (2022)
+<doi:10.3390/biology11040540> or the estimation of the functional relationship
+between epidemiological indicators.  We also propose a learning method for the
+short time forecast of the trend incidence curve as described in Morel et al.
+(2022) <doi:10.1101/2022.11.05.22281904>.")
     (license license:gpl2+)))
 
 (define-public r-epiilmct

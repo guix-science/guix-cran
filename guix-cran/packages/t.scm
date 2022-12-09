@@ -7114,6 +7114,37 @@ necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
 <arXiv:2004.11490>.")
     (license license:expat)))
 
+(define-public r-transform-hazards
+  (package
+    (name "r-transform-hazards")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "transform.hazards" version))
+              (sha256
+               (base32
+                "1k9p40dp3s4ylrh91cj06k4ryazw6b870yj5vdsd30j95pwnf3wi"))))
+    (properties `((upstream-name . "transform.hazards")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=transform.hazards")
+    (synopsis
+     "Transforms Cumulative Hazards to Parameter Specified by ODE System")
+    (description
+     "Targets parameters that solve Ordinary Differential Equations (ODEs) driven by a
+vector of cumulative hazard functions.  The package provides a method for
+estimating these parameters using an estimator defined by a corresponding
+Stochastic Differential Equation (SDE) system driven by cumulative hazard
+estimates.  By providing cumulative hazard estimates as input, the package gives
+estimates of the parameter as output, along with pointwise (co)variances derived
+from an asymptotic expression.  Examples of parameters that can be targeted in
+this way include the survival function, the restricted mean survival function,
+cumulative incidence functions, among others; see Ryalen, Stensrud, and
+RÃ¸ysland (2018) <doi:10.1093/biomet/asy035>, and further applications in
+Stensrud, RÃ¸ysland, and Ryalen (2019) <doi:10.1111/biom.13102> and Ryalen et
+al. (2021) <doi:10.1093/biostatistics/kxab009>.")
+    (license license:gpl3+)))
+
 (define-public r-transforemotion
   (package
     (name "r-transforemotion")
@@ -21477,43 +21508,6 @@ J., Kaendler, G. (2013) <doi:10.1007/s10342-013-0715-0>.")
 for each row, as well as how to handle missing data and the types of comparison
 tests to run on the table columns.")
     (license license:expat)))
-
-(define-public r-tangram
-  (package
-    (name "r-tangram")
-    (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tangram" version))
-              (sha256
-               (base32
-                "1vmh3wk4vk25x6i5z9wrxdlhald406a6rfw1pivv7xrw659kaznv"))))
-    (properties `((upstream-name . "tangram")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-stringi
-                             r-r6
-                             r-magrittr
-                             r-knitr
-                             r-htmltools
-                             r-digest
-                             r-base64enc))
-    (home-page "https://github.com/spgarbet/tangram")
-    (synopsis "The Grammar of Tables")
-    (description
-     "This package provides an extensible formula system to quickly and easily create
-production quality tables.  The steps of the process are formula parser,
-statistical content generation from data, to rendering.  Each step of the
-process is separate and user definable thus creating a set of building blocks
-for highly extensible table generation.  A user is not limited by any of the
-choices of the package creator other than the formula grammar.  For example, one
-could chose to add a different S3 rendering function and output a format not
-provided in the default package.  Or possibly one would rather have Gini
-coefficients for their statistical content.  Routines to achieve New England
-Journal of Medicine style, Lancet style and Hmisc::summaryM() statistics are
-provided.  The package contains rendering for HTML5, Rmarkdown and an indexing
-format for use in tracing and tracking are provided.")
-    (license license:gpl3)))
 
 (define-public r-tangpoemr
   (package

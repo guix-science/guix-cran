@@ -7179,22 +7179,16 @@ multiscale testing of group differences with multiscale Bernstein polynomials
 (define-public r-msbox
   (package
     (name "r-msbox")
-    (version "1.4.6")
+    (version "1.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSbox" version))
               (sha256
                (base32
-                "1wlfbkjsw2bzznh6fwhfllgnj80zpfab82x43a83k3mjd41rf9f9"))))
+                "1cppzy3kri2zmhyk34scffix28v1bjb0fhk51kb33amg6vz5mnj3"))))
     (properties `((upstream-name . "MSbox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-reshape2
-                             r-plotly
-                             r-ggplot2
-                             r-ggfortify
-                             r-crayon))
+    (propagated-inputs (list r-xml2 r-stringr r-crayon))
     (home-page "https://github.com/YonghuiDong/MSbox")
     (synopsis "Mass Spectrometry Tools")
     (description
@@ -34013,13 +34007,13 @@ development of items.")
 (define-public r-matlib
   (package
     (name "r-matlib")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matlib" version))
               (sha256
                (base32
-                "0m03zygd43r0z7cldiwsc91p1xyni6pdvwm8pz4jcg5bmqasfg0w"))))
+                "0sm1mm5m242j472hddj9nzfyf235i7w8qxhcbgqwxf35fvdmah2h"))))
     (properties `((upstream-name . "matlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-rgl r-mass r-car))

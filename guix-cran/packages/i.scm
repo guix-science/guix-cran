@@ -13577,20 +13577,20 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "0jv7jli3kv8iqffhn6xvz0dhzkxgly546l154xx95jdapgvwmjgy"))))
+                "11vmjmi1csmnhwbkd4lspa7cmvh2rs2qrq7ncnl5wnnjf9ljrn2m"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-shiny
+                             r-rcppsimdjson
                              r-nanonext
-                             r-jsonlite
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://shikokuchuo.net/ichimoku/")

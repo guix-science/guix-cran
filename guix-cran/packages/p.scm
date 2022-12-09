@@ -24836,18 +24836,18 @@ Fundamentals of People Analytics: With Applications in R\".")
 (define-public r-pensim
   (package
     (name "r-pensim")
-    (version "1.3.3")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pensim" version))
               (sha256
                (base32
-                "1raap4zlqgcqh8x83kp1ss5qcn0p7bwribp4dhfhrh9rl92hh92a"))))
+                "18z43p1iswmnvwaf3k5vhv6rzzmfn618har0a0bl9j5nfzx20rpx"))))
     (properties `((upstream-name . "pensim")))
     (build-system r-build-system)
     (propagated-inputs (list r-penalized r-mass))
     (native-inputs (list r-knitr))
-    (home-page "https://waldronlab.io/pensim")
+    (home-page "https://waldronlab.io/pensim/")
     (synopsis
      "Simulation of High-Dimensional Data and Parallelized Repeated Penalized Regression")
     (description
@@ -30870,13 +30870,13 @@ to switch on parallel execution for exactly this operation.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.0.1")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ParallelLogger" version))
               (sha256
                (base32
-                "14kqqyfgj5mhm42fqpqw5r409qjnrk38nsls4svm4p7qvyvvhxm2"))))
+                "1cjm498831wzcdfbj6r75agbhw99mccrfvzjcvj7jzz0k82ha4b7"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-snow r-jsonlite))

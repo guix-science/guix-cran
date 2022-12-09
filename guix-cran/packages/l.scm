@@ -14053,13 +14053,13 @@ gradient descent algorithm.")
 (define-public r-lassobacktracking
   (package
     (name "r-lassobacktracking")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LassoBacktracking" version))
               (sha256
                (base32
-                "0waz4apjvgwn3ss7mqpndz5m9n7cpmhb3s2ngds04v0amprblddv"))))
+                "0xd9y11k1wqmmjb8jjws6ivgcr2x6n7ra27d7mpa3adbvyxzj8dl"))))
     (properties `((upstream-name . "LassoBacktracking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))

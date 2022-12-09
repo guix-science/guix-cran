@@ -764,32 +764,6 @@ series.  This package provides a measure for complexity in a time series that
 does not rely on long time series (Kaiser (2017), <doi:10.17605/OSF.IO/GWTKX>).")
     (license license:expat)))
 
-(define-public r-dyncomm
-  (package
-    (name "r-dyncomm")
-    (version "2020.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DynComm" version))
-              (sha256
-               (base32
-                "09nhcp9rldwrybwhyg86mgpgwq4hzlpp4rm5a5gl33nnhvcdm0mx"))))
-    (properties `((upstream-name . "DynComm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=DynComm")
-    (synopsis "Dynamic Network Communities Detection and Generation")
-    (description
-     "Used for evolving network analysis regarding community detection.  Implements
-several algorithms that calculate communities for graphs whose nodes and edges
-change over time.  Edges, which can have new nodes, can be added or deleted.
-Changes in the communities are calculated without recalculating communities for
-the entire graph.  REFERENCE: M. Cordeiro et al. (2016)
-<DOI:10.1007/s13278-016-0325-1> G. Rossetti et al. (2017)
-<DOI:10.1007/s10994-016-5582-8> G. Rossetti (2017) <DOI:10.1093/comnet/cnx016>
-R. Sarmento (2019) <arXiv:1904.12593>.")
-    (license license:gpl2)))
-
 (define-public r-dynclust
   (package
     (name "r-dynclust")
@@ -1107,6 +1081,37 @@ experiments.  The current version only supports 64-bit version of R.")
 tailored to the user's model statement, model type, and sample size.  This is
 the counterpart of the Shiny Application, <https://dynamicfit.app>.")
     (license license:agpl3)))
+
+(define-public r-dynamaedes
+  (package
+    (name "r-dynamaedes")
+    (version "2.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dynamAedes" version))
+              (sha256
+               (base32
+                "0a4wc8sx4mh2dpsp998raapi2bd5gb9bfd0b0a54z6j0lfsjkv5v"))))
+    (properties `((upstream-name . "dynamAedes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-slam
+                             r-raster
+                             r-insol
+                             r-foreach
+                             r-fields
+                             r-drc
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://mattmar.github.io/dynamAedes/")
+    (synopsis
+     "Unified Mechanistic Model for the Population Dynamics of Invasive Aedes Mosquitoes")
+    (description
+     "Generalised model for population dynamics of invasive Aedes mosquitoes.
+Rationale and model structure are described here: Da Re et al. (2021)
+<doi:10.1016/j.ecoinf.2020.101180> and Da Re et al. (2022)
+<doi:10.1101/2021.12.21.473628>.")
+    (license license:gpl2+)))
 
 (define-public r-dynamac
   (package

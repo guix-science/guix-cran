@@ -113,17 +113,16 @@ they test.  This allows to keep functional and unit test code together.")
 (define-public r-hyrim
   (package
     (name "r-hyrim")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HyRiM" version))
               (sha256
                (base32
-                "09njf2gscn13x5mfd7g76cam9bzbibcnc383gb8h0kks7x16d3p9"))))
+                "02hb8kl02872xvyhg0k19xavcmhqmf0ddfnxx5nxlpzgzb432csd"))))
     (properties `((upstream-name . "HyRiM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rglpk r-purrr r-orthopolynom r-grimport2
-                             r-compare))
+    (propagated-inputs (list r-rglpk r-purrr r-polynom r-grimport2 r-compare))
     (home-page "https://cran.r-project.org/package=HyRiM")
     (synopsis
      "Multicriteria Risk Management using Zero-Sum Games with Vector-Valued Payoffs that are Probability Distributions")
@@ -2096,13 +2095,13 @@ dosimetry (also known as \"RTK\") (Wetmore et al., 2015
 (define-public r-htt
   (package
     (name "r-htt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTT" version))
               (sha256
                (base32
-                "0zzqv45im9wwaplpabh9i9vyzdayg82vldxkl156s943mm1r3w9f"))))
+                "14a96p8vhb6acsjic66nsc9llvxyqd0ry1yccsjlxw12mami0vs0"))))
     (properties `((upstream-name . "HTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-igraph r-ggraph r-ggplot2))
@@ -4047,6 +4046,38 @@ explanation of the game see Schoenberg, F. (2011).  An Introduction to
 Probability with Texas Hold'em Examples.  Taylor and Francis, New York, ISBN-13:
 978-1439827680.")
     (license license:gpl2)))
+
+(define-public r-hodgestools
+  (package
+    (name "r-hodgestools")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HodgesTools" version))
+              (sha256
+               (base32
+                "02i87pd5ah3mmf03878354p8nqh3bgn9cnrl1pnnrb3qw7afj19q"))))
+    (properties `((upstream-name . "HodgesTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-recordlinkage
+                             r-readr
+                             r-rcolorbrewer
+                             r-qqman
+                             r-magrittr
+                             r-ini
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=HodgesTools")
+    (synopsis "Common Use Tools for Genomic Analysis")
+    (description
+     "Built by Hodges lab members for current and future Hodges lab members.  Other
+individuals are welcome to use as well.  Provides useful functions that the lab
+uses everyday to analyze various genomic datasets.  Critically, only general use
+functions are provided; functions specific to a given technique are reserved for
+a separate package.  As the lab grows, we expect to continue adding functions to
+the package to build on previous lab members code.")
+    (license license:gpl3+)))
 
 (define-public r-hockeystick
   (package
@@ -8065,13 +8096,13 @@ time.")
 (define-public r-helminthr
   (package
     (name "r-helminthr")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "helminthR" version))
               (sha256
                (base32
-                "1s5vxpii1zryflafqxn0fwx3xnkbi2115f36fd7jq9l9y7grpqz9"))))
+                "0ssw0smxc5zx3d189fq8c6kdg6d7db1sd5iblhz54pg41j9fvqhq"))))
     (properties `((upstream-name . "helminthR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
