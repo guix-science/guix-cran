@@ -25112,6 +25112,39 @@ penalization methods is provided.")
      "Estimating Non-Simplified Vine Copulas Using Penalized Splines.")
     (license license:gpl2+)))
 
+(define-public r-pencal
+  (package
+    (name "r-pencal")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pencal" version))
+              (sha256
+               (base32
+                "139hdgdpl55ag9azdm2rklnjmbg251517k4mi56xphzn78ji6ncc"))))
+    (properties `((upstream-name . "pencal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survivalroc
+                             r-survival
+                             r-purrr
+                             r-nlme
+                             r-matrix
+                             r-mass
+                             r-magic
+                             r-lcmm
+                             r-glmnet
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://mirkosignorelli.github.io/r")
+    (synopsis "Penalized Regression Calibration (PRC)")
+    (description
+     "Computes penalized regression calibration (PRC), a statistical method that
+allows to predict survival from high-dimensional longitudinal predictors.  PRC
+is described in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
+    (license license:gpl3)))
+
 (define-public r-penaltylearning
   (package
     (name "r-penaltylearning")
@@ -32285,48 +32318,6 @@ summarisation and visualisation.  Reference datasets (i.e.  Geological Time
 Scales <https://stratigraphy.org/chart>) and auxiliary functions are also
 provided.  Details can be found in: Jones et al., (2022) <doi:10.31223/X5Z94Q>.")
     (license license:gpl3+)))
-
-(define-public r-palaeosig
-  (package
-    (name "r-palaeosig")
-    (version "2.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "palaeoSig" version))
-              (sha256
-               (base32
-                "1sn2nbiq037l81qvrqbg7gf1312g8vy574hsfng07qk1jpx7vwkk"))))
-    (properties `((upstream-name . "palaeoSig")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-tibble
-                             r-teachingdemos
-                             r-rlang
-                             r-rioja
-                             r-purrr
-                             r-mgcv
-                             r-mass
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-assertr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richardjtelford/palaeoSig")
-    (synopsis "Significance Tests for Palaeoenvironmental Reconstructions")
-    (description
-     "Several tests of quantitative palaeoenvironmental reconstructions from
-microfossil assemblages, including the null model tests of the statistically
-significant of reconstructions developed by Telford and Birks (2011)
-<doi:10.1016/j.quascirev.2011.03.002>, and tests of the effect of spatial
-autocorrelation on transfer function model performance using methods from
-Telford and Birks (2009) <doi:10.1016/j.quascirev.2008.12.020> and Trachsel and
-Telford (2016) <doi:10.5194/cp-12-1215-2016>.  Age-depth models with generalized
-mixed-effect regression from Heegaard et al (2005)
-<doi:10.1191/0959683605hl836rr> are also included.")
-    (license license:gpl3)))
 
 (define-public r-pakpmics2018mn
   (package

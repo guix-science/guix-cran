@@ -8180,13 +8180,13 @@ error.")
 (define-public r-stokes
   (package
     (name "r-stokes")
-    (version "1.1-3")
+    (version "1.1-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stokes" version))
               (sha256
                (base32
-                "0d15x80vn6g0fwvphdqdl7fyldzw5pcrjlx5c93bdcx1kx2g7sqa"))))
+                "074kzvzgk83n2bzcvygxiy8cm5sxswkp593rjixa4kvaqc7g7w0y"))))
     (properties `((upstream-name . "stokes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spray r-permutations r-partitions r-mathjaxr
@@ -8195,11 +8195,12 @@ error.")
     (home-page "https://github.com/RobinHankin/stokes")
     (synopsis "The Exterior Calculus")
     (description
-     "This package provides functionality for working with tensors, alternating
-tensors, wedge products, Stokes's theorem, and related concepts from the
-exterior calculus.  Functionality for Grassman algebra is provided.  The
-canonical reference would be: M. Spivak (1965, ISBN:0-8053-9021-9) \"Calculus on
-Manifolds\".")
+     "This package provides functionality for working with tensors, alternating forms,
+wedge products, Stokes's theorem, and related concepts from the exterior
+calculus.  Uses disordR discipline (Hankin, 2022,
+<doi:10.48550/ARXIV.2210.03856>).  The canonical reference would be M. Spivak
+(1965, ISBN:0-8053-9021-9) \"Calculus on Manifolds\".  To cite the package in
+publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.17008>.")
     (license license:gpl2)))
 
 (define-public r-stoichcalc
@@ -20545,6 +20546,35 @@ the optical bandwidth. (Georganos and Kalogirou (2022)
 <https://www.mdpi.com/2220-9964/11/9/471>).")
     (license license:gpl2+)))
 
+(define-public r-spatialkwd
+  (package
+    (name "r-spatialkwd")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SpatialKWD" version))
+              (sha256
+               (base32
+                "0b5vfsmpl3zxcwsg7bj85kfbyv8a2bgfq72b3rk4r6ms7ngc5i16"))))
+    (properties `((upstream-name . "SpatialKWD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=SpatialKWD")
+    (synopsis "Spatial KWD for Large Spatial Maps")
+    (description
+     "This package contains efficient implementations of Discrete Optimal Transport
+algorithms for the computation of Kantorovich-Wasserstein distances between
+pairs of large spatial maps (Bassetti, Gualandi, Veneroni (2020),
+<doi:10.1137/19M1261195>).  All the algorithms are based on an ad-hoc
+implementation of the Network Simplex algorithm.  The package has four main
+helper functions: compareOneToOne() (to compare two spatial maps),
+compareOneToMany() (to compare a reference map with a list of other maps),
+compareAll() (to compute a matrix of distances between a list of maps), and
+focusArea() (to compute the KWD distance within a focus area).  In non-convex
+maps, the helper functions first build the convex-hull of the input bins and pad
+the weights with zeros.")
+    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
+
 (define-public r-spatialkde
   (package
     (name "r-spatialkde")
@@ -31360,6 +31390,35 @@ standardized loading.  Data generation methods are described in Schneider (2013)
 <doi:10.1177/0734282913478046>.")
     (license license:cc0)))
 
+(define-public r-simsst
+  (package
+    (name "r-simsst")
+    (version "0.0.4.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SimSST" version))
+              (sha256
+               (base32
+                "0gjk9crif1z2kcqrk8ry6v72ykn0y5k9b1ar9qa8rqbq860f7wmx"))))
+    (properties `((upstream-name . "SimSST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gamlss-dist r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SimSST")
+    (synopsis "Simulated Stop Signal Task Data")
+    (description
+     "Stop signal task data of go and stop trials is generated per participant.  The
+simulation process is based on the independent horse race model and fixed stop
+signal delay or tracking method.  Each of go and stop process is assumed having
+exponentially modified Gaussian(ExG) or Shifted Wald (SW) distributions.  The
+output data can be converted to BEESTS software input data enabling researchers
+to test and evaluate various brain stopping processes manifested by ExG or SW
+distributional parameters of interest.  Methods are described in: Soltanifar M
+(2020) <https://hdl.handle.net/1807/101208>, Matzke D, Love J, Wiecki TV, Brown
+SD, Logan GD and Wagenmakers E-J (2013) <doi:10.3389/fpsyg.2013.00918>, Logan
+GD, Van Zandt T, Verbruggen F, Wagenmakers EJ. (2014) <doi:10.1037/a0035230>.")
+    (license license:gpl3)))
+
 (define-public r-simsl
   (package
     (name "r-simsl")
@@ -38206,13 +38265,13 @@ and Biogeography 21, 109-120).")
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "1.11")
+    (version "1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharpshootR" version))
               (sha256
                (base32
-                "1z1w4ci76d3yasdxhsspn7ybypcigmvzcfm5m12nfjl3441zp9zh"))))
+                "1jilrpnqmmxmz4w7508s5gb8yyggprr3pxm1xh8xq8zgdwh75i3j"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -38362,34 +38421,34 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharp" version))
               (sha256
                (base32
-                "113z21rxa57q527sbfivhdfdgdd0zdbrfcb8x6jpbzrz232n0lyr"))))
+                "0f7zavv0pk5nm81208cgxhmamp6vbpmwinv26mxwpaf7w9j5a2sk"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-rdpack
                              r-mclust
-                             r-mass
                              r-igraph
-                             r-huge
                              r-glmnet
                              r-glassofast
-                             r-fake))
+                             r-fake
+                             r-beepr))
     (home-page "https://github.com/barbarabodinier/sharp")
     (synopsis "Stability-enHanced Approaches using Resampling Procedures")
     (description
-     "Implementation of stability selection for graphical modelling and variable
-selection in regression and dimensionality reduction.  These models use on
-resampling approaches to estimate selection probabilities (N Meinshausen, P
-BÃ¼hlmann (2010) <doi:10.1111/j.1467-9868.2010.00740.x>).  Calibration of the
-hyper-parameters is done via maximisation of a stability score measuring the
-likelihood of informative (non-uniform) selection (B Bodinier, S Filippi, TH
-Nost, J Chiquet, M Chadeau-Hyam (2021) <arXiv:2106.02521>).")
+     "In stability selection (N Meinshausen, P BÃ¼hlmann (2010)
+<doi:10.1111/j.1467-9868.2010.00740.x>), resampling techniques are used to
+enhance the reliability of the results.  In this package, hyper-parameters are
+calibrated by maximising model stability, which is measured by the negative
+log-likelihood under the null hypothesis that all selection probabilities are
+identical (B Bodinier et al (2021) <arXiv:2106.02521>).  Functions are readily
+implemented for the use of LASSO regression, sparse PCA, sparse (group) PLS or
+graphical LASSO.")
     (license license:gpl3+)))
 
 (define-public r-shar

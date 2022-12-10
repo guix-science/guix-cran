@@ -6998,17 +6998,16 @@ this package.")
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.27")
+    (version "1.1.28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "warbleR" version))
               (sha256
                (base32
-                "1fd008v3di7z5ixljk5zwaw2wcc4zfqlnw9546894ybw5m9jsk26"))))
+                "061scws8a3jkpnfkpcpwdcxnnqpszshj409qjgcdqrcl0s5d1jh0"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
-                             r-stringi
                              r-seewave
                              r-rjson
                              r-rcurl

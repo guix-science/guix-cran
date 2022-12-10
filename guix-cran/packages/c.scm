@@ -27955,13 +27955,13 @@ range.")
 (define-public r-chaosgame
   (package
     (name "r-chaosgame")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChaosGame" version))
               (sha256
                (base32
-                "0xayap1gs36p9cvlyf5s562vy5pahqcwlwnr355i34zw616yg76l"))))
+                "06d2jm8b3l242yqgbfsr1cclph0l8xdxqfq7xvbghsavzk3lf367"))))
     (properties `((upstream-name . "ChaosGame")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl

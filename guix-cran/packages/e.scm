@@ -612,23 +612,23 @@ confidence bands for the extremograms.")
 (define-public r-extremis
   (package
     (name "r-extremis")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extremis" version))
               (sha256
                (base32
-                "1gvizxv1ay788a21qjslrmi7qdbr8s2ryibyri6sp7xdkaqiixsn"))))
+                "11y3cb5z6vsrpdffdr44afz3is0ikxvpb81a8pwc7p8q63rxq4a2"))))
     (properties `((upstream-name . "extremis")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-evd r-emplik))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=extremis")
     (synopsis "Statistics of Extremes")
     (description
      "Conducts inference in statistical models for extreme values (de Carvalho et al
 (2012), <doi:10.1080/03610926.2012.709905>; de Carvalho and Davison (2014),
-<10.1080/01621459.2013.872651>; Einmahl et al (2016), <doi:10.1111/rssb.12099>).")
+<doi:10.1080/01621459.2013.872651>; Einmahl et al (2016),
+<doi:10.1111/rssb.12099>).")
     (license license:gpl3+)))
 
 (define-public r-extremevalues
@@ -5097,20 +5097,21 @@ introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
 (define-public r-estimationtools
   (package
     (name "r-estimationtools")
-    (version "2.1.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EstimationTools" version))
               (sha256
                (base32
-                "1dpn4jb746ax3s7p7hkrk85hkxjayxp641vxbfp155v0m2gr8ar2"))))
+                "1hwlrsxl42n4i25f1izhccj755aydl2r98w1jn12z9a62wk9nnzy"))))
     (properties `((upstream-name . "EstimationTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-stringr
                              r-rdpack
                              r-numderiv
-                             r-matrixstats
+                             r-gaussquad
+                             r-ga
                              r-deoptim
                              r-boot
                              r-bbmisc
@@ -5120,14 +5121,16 @@ introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
     (synopsis
      "Maximum Likelihood Estimation for Probability Functions from Data Sets")
     (description
-     "Routines for parameter estimation for any probability density or mass function
-implemented in R via maximum likelihood (ML) given a data set.  The main
-routines maxlogL and maxlogLreg are wrapper functions specifically developed for
-ML estimation.  There are included optimization procedures such as nlminb and
-optim from base package, and DEoptim Mullen (2011) <doi: 10.18637/jss.v040.i06>.
- Standard errors are estimated with numDeriv Gilbert (2011)
-<https://CRAN.R-project.org/package=numDeriv> or the option Hessian = TRUE of
-optim function.")
+     "Total Time on Test plot and routines for parameter estimation of any lifetime
+distribution implemented in R via maximum likelihood (ML) given a data set.  It
+is implemented thinking on parametric survival analysis, but it feasible to use
+in parameter estimation of probability density or mass functions in any field.
+The main routines maxlogL and maxlogLreg are wrapper functions specifically
+developed for ML estimation.  There are included optimization procedures such as
+nlminb and optim from base package, and DEoptim Mullen (2011) <doi:
+10.18637/jss.v040.i06>.  Standard errors are estimated with numDeriv Gilbert
+(2011) <https://CRAN.R-project.org/package=numDeriv> or the option Hessian =
+TRUE of optim function.")
     (license license:gpl3)))
 
 (define-public r-estimatew
@@ -10964,19 +10967,18 @@ described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
 (define-public r-emir
   (package
     (name "r-emir")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EmiR" version))
               (sha256
                (base32
-                "0cf05k8iaa18j4hqyz713ibaw03h9pcf440n0yc6l256iq5xwsrx"))))
+                "1xhsf9n5af6z7v62vpnqjlp20s6fp7jf1wmgxgv77hxm4g5cm0q7"))))
     (properties `((upstream-name . "EmiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tictoc
                              r-tibble
-                             r-testthat
                              r-rdpack
                              r-rcppprogress
                              r-rcpp
@@ -12520,13 +12522,13 @@ least absolute shrinkage and selection operator for regression model.")
 (define-public r-elasdics
   (package
     (name "r-elasdics")
-    (version "0.2.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elasdics" version))
               (sha256
                (base32
-                "059mcnf8ym8xjibs0lkr7drvwls3qcfivlls10yl7ss4ial324qp"))))
+                "1zpwkch4h463d1ad681iid668909w74xb0wyfjqshdvznb4pxp5i"))))
     (properties `((upstream-name . "elasdics")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))

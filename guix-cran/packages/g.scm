@@ -8707,13 +8707,13 @@ diagrams, NMDS stress plots, species response curves and rank-abundance curves."
 (define-public r-gocompare
   (package
     (name "r-gocompare")
-    (version "1.0.2")
+    (version "1.0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GOCompare" version))
               (sha256
                (base32
-                "1363ppdaz8dpnxzv5avmc6gg58d9c7v1q462hswxa1xjgh4k38vi"))))
+                "0h4235bs9aszil20bxyscxv2z96rw9gdp87va8bmvj15cg2lfvgv"))))
     (properties `((upstream-name . "GOCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -8728,8 +8728,8 @@ diagrams, NMDS stress plots, species response curves and rank-abundance curves."
     (description
      "Supports the assessment of functional enrichment analyses obtained for several
 lists of genes and provides a workflow to analyze them between two species via
-weighted graphs.  Methods are described in Sosa et al. (2022) (Submitted to
-Genomics).")
+weighted graphs.  Methods are described in Sosa et al. (2023)
+<doi:10.1016/j.ygeno.2022.110528>.")
     (license license:gpl3+)))
 
 (define-public r-goalp
@@ -17991,35 +17991,6 @@ database id.  In short, it is an alternative to package Quandl', with faster
 data importation in the tidy/long format.")
     (license license:gpl2)))
 
-(define-public r-getpublist
-  (package
-    (name "r-getpublist")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "getpublist" version))
-              (sha256
-               (base32
-                "0p6l7qha6i7vhqvav74yxpa6qph35g41v00173mjjqsvyhd0qc5i"))))
-    (properties `((upstream-name . "getpublist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=getpublist")
-    (synopsis
-     "Obtain a List of Publications from 'PubMed' and 'Google Scholar'")
-    (description
-     "Use web scraping for PubMed'(<https://pubmed.ncbi.nlm.nih.gov>) and Google
-Scholar profile page (for example
-<https://scholar.google.com/citations?user=lOOV8rwAAAAJ&hl=en>) to get all of
-the published information from the search page.  Then placing it on a table.")
-    (license license:gpl3)))
-
 (define-public r-getproxy
   (package
     (name "r-getproxy")
@@ -26670,6 +26641,35 @@ user-defined expression, the sample points are lists of parameters with values
 that may be substituted into that expression.  The genetic algorithm attempts to
 make the result of the expression as low as possible (usually this would be the
 sum of residuals squared).")
+    (license license:gpl2)))
+
+(define-public r-gadget3
+  (package
+    (name "r-gadget3")
+    (version "0.8-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gadget3" version))
+              (sha256
+               (base32
+                "12s91c0wy0xvy5f89w05rsa8299hbywsp98z0a14l8s18dbgwfrf"))))
+    (properties `((upstream-name . "gadget3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb r-rlang r-matrix r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://gadget-framework.github.io/gadget3/")
+    (synopsis
+     "Globally-Applicable Area Disaggregated General Ecosystem Toolbox V3")
+    (description
+     "This package provides a framework to assist creation of marine ecosystem models,
+generating either R or C++ code which can then be optimised using the TMB
+package and standard R tools.  Principally designed to reproduce gadget2 models
+in TMB', but can be extended beyond gadget2's capabilities.  Kasper Kristensen,
+Anders Nielsen, Casper W. Berg, Hans Skaug, Bradley M. Bell (2016)
+<doi:10.18637/jss.v070.i05> \"TMB: Automatic Differentiation and Laplace
+Approximation.\".  Begley, J., & Howell, D. (2004)
+<https://core.ac.uk/download/pdf/225936648.pdf> \"An overview of Gadget, the
+globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
     (license license:gpl2)))
 
 (define-public r-gadget2

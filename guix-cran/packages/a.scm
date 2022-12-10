@@ -11527,13 +11527,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.3.2")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AlphaSimR" version))
               (sha256
                (base32
-                "0yps81a9ah9snm1g92adxd4dj19jqmz2j5x4zdsdffhzls0rhw9c"))))
+                "0b8qp3azia9sfl458y8zgxxxpzs7l2bwpkdnh1vza2ak61f4q85w"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))

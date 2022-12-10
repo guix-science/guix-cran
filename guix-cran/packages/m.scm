@@ -6946,6 +6946,42 @@ using pairwise distances and rooted triple counts.  Background is given by
 Allman, Banos, and Rhodes (2019) <arXiv:1908.01424>.")
     (license license:expat)))
 
+(define-public r-mscquartets
+  (package
+    (name "r-mscquartets")
+    (version "1.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MSCquartets" version))
+              (sha256
+               (base32
+                "1q85h3jm2llkm8dpqdxgjxzg7iwlmhx41n3hlk1ybvxw2c0jb3rd"))))
+    (properties `((upstream-name . "MSCquartets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zipfr
+                             r-rdpack
+                             r-phangorn
+                             r-foreach
+                             r-doparallel
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=MSCquartets")
+    (synopsis
+     "Analyzing Gene Tree Quartets under the Multi-Species Coalescent")
+    (description
+     "This package provides methods for analyzing and using quartets displayed on a
+collection of gene trees, primarily to make inferences about the species tree or
+network under the multi-species coalescent model.  These include quartet
+hypothesis tests for the model, as developed by Mitchell et al. (2019)
+<doi:10.1214/19-EJS1576>, simplex plots of quartet concordance factors as
+presented by Allman et al. (2020) <doi:10.1101/2020.02.13.948083>, species tree
+inference methods based on quartet distances of Rhodes (2019)
+<doi:10.1109/TCBB.2019.2917204> and Yourdkhani and Rhodes (2019)
+<doi:10.1007/s11538-020-00773-4>, and the NANUQ algorithm for inference of
+level-1 species networks of Allman et al. (2019)
+<doi:10.1186/s13015-019-0159-2>.  Software announcement by Rhodes et al. (2020)
+<doi:10.1093/bioinformatics/btaa868>.")
+    (license license:expat)))
+
 (define-public r-mscp
   (package
     (name "r-mscp")
@@ -19770,13 +19806,13 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-2")
+    (version "1.5-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "miscFuncs" version))
               (sha256
                (base32
-                "17vy9934ndd8wyhvnyixp2j7ckrksgyx2y8kgvryyp3xxw3bxsz7"))))
+                "09pprwqbwz8iiggjqvnv3m2mkiy26zncvs9rn0mba2wk0yfzq4py"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm))
@@ -39036,6 +39072,40 @@ advantage of these functions is that they directly download and harmonize the
 information in R's environment.  No need to import or download additional files.
  You only need an internet connection!")
     (license license:asl2.0)))
+
+(define-public r-macrobiome
+  (package
+    (name "r-macrobiome")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "macroBiome" version))
+              (sha256
+               (base32
+                "04fv6vrc4lmz23y0g1yzrgf0r4rm8k1v6vnizb1h0g4xyjw4ij80"))))
+    (properties `((upstream-name . "macroBiome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-strex
+                             r-sp
+                             r-rworldxtra
+                             r-rworldmap
+                             r-raster
+                             r-palinsol))
+    (home-page "https://github.com/szelepcsenyi/macroBiome")
+    (synopsis "Tool for Mapping the Distribution of the Biomes and Bioclimate")
+    (description
+     "Procedures for simulating biomes by equilibrium vegetation models, with a
+special focus on paleoenvironmental applications.  Two widely used equilibrium
+biome models are currently implemented in the package: the Holdridge Life Zone
+(HLZ) system (Holdridge 1947, <doi:10.1126/science.105.2727.367>) and the BIOME
+model (Prentice et al.  1992, <doi:10.2307/2845499>).  Three climatic
+forest-steppe models are also implemented.  An approach for estimating monthly
+time series of relative sunshine duration from temperature and precipitation
+data (Yin 1999, <doi:10.1007/s007040050111>) is also adapted, allowing
+process-based biome models to be combined with high-resolution paleoclimate
+simulation datasets (e.g., CHELSA-TraCE21k v1.0 dataset:
+<https://chelsa-climate.org/chelsa-trace21k/>).")
+    (license license:gpl3+)))
 
 (define-public r-maclogp
   (package

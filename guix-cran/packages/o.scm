@@ -7231,6 +7231,45 @@ identification by correcting for general level of drug sensitivity shared among
 the population.")
     (license license:gpl2)))
 
+(define-public r-oncomsm
+  (package
+    (name "r-oncomsm")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oncomsm" version))
+              (sha256
+               (base32
+                "13h5ydw11kdjcdr48hqa4dv81qixj4l5qxrzwv4x3lqdnsvvnll1"))))
+    (properties `((upstream-name . "oncomsm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-rstan
+                             r-rlang
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr
+                             r-checkmate
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://boehringer-ingelheim.github.io/oncomsm/")
+    (synopsis "Bayesian Multi-State Models for Early Oncology")
+    (description
+     "This package implements methods to fit a parametric Bayesian multi-state model
+to tumor response data.  The model can be used to sample from the predictive
+distribution to impute missing data and calculate probability of success for
+custom decision criteria in early clinical trials during an ongoing trial.  The
+inference is implemented using stan'.")
+    (license license:asl2.0)))
+
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")

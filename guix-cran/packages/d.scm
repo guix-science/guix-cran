@@ -8044,13 +8044,13 @@ pipe-friendly syntax.")
 (define-public r-dlstats
   (package
     (name "r-dlstats")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dlstats" version))
               (sha256
                (base32
-                "00lk6fnyziaqz3hc5jvdybgsywlad755dcr9l41aqwx6gx2k1wrg"))))
+                "0bs7kgllii2nhb1sspajhlldhjav9gl0y96c949pgfijwbr01vn0"))))
     (properties `((upstream-name . "dlstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rcolorbrewer r-magrittr r-jsonlite
@@ -19759,13 +19759,13 @@ See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Riz
 (define-public r-dcortools
   (package
     (name "r-dcortools")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcortools" version))
               (sha256
                (base32
-                "1swshgxgrsv4s3w1aq7ll4izvdfks4ha5hixh4rl7xh7pl2ikq75"))))
+                "1qcblwcv2rwrl502hiv0l0r137sa4k0kx892k2w1chm40y5vri3b"))))
     (properties `((upstream-name . "dcortools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast

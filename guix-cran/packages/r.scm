@@ -5138,6 +5138,49 @@ the book Golyandina (2018, <doi:10.1007/978-3-662-57380-8>).  See
 citation(\"Rssa\") for details.")
     (license license:gpl2+)))
 
+(define-public r-rsrd
+  (package
+    (name "r-rsrd")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rSRD" version))
+              (sha256
+               (base32
+                "10fx367ya9knl715jxc67fiq8ykz6sp4chyvj62dfisnnaiqq5bk"))))
+    (properties `((upstream-name . "rSRD")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-janitor
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=rSRD")
+    (synopsis "Sum of Ranking Differences Statistical Test")
+    (description
+     "We provide an implementation for Sum of Ranking Differences (SRD), a novel
+statistical test introduced by HÃ©berger (2010)
+<doi:10.1016/j.trac.2009.09.009>.  The test allows the comparison of different
+solutions through a reference by first performing a rank transformation on the
+input, then calculating and comparing the distances between the solutions and
+the reference - the latter is measured in the L1 norm.  The reference can be an
+external benchmark (e.g. an established gold standard) or can be aggregated from
+the data.  The calculated distances, called SRD scores, are validated in two
+ways, see HÃ©berger and KollÃ¡r-Hunek (2011) <doi:10.1002/cem.1320>.  A
+randomization test (also called permutation test) compares the SRD scores of the
+solutions to the SRD scores of randomly generated rankings.  The second
+validation option is cross-validation that checks whether the rankings generated
+from the solutions come from the same distribution or not.  For a detailed
+analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
+(2021) <arXiv:2105.11939>.  The package offers a wide array of features related
+to SRD including the computation of the SRD scores, validation options, input
+preprocessing and plotting tools.")
+    (license license:gpl3)))
+
 (define-public r-rsqmed
   (package
     (name "r-rsqmed")
@@ -7118,21 +7161,16 @@ macOS.")
 (define-public r-rsaga
   (package
     (name "r-rsaga")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSAGA" version))
               (sha256
                (base32
-                "1y1zhy2bxkfsv8vmnxjdg9i5rqkvs32kw8h5z1mclv953srgkpn9"))))
+                "0mdirx7d3z4l0k54wa6rb1c5gma470ypifd3flj2287m8y2wjqq5"))))
     (properties `((upstream-name . "RSAGA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-shapefiles
-                             r-rgdal
-                             r-plyr
-                             r-magrittr
-                             r-gstat))
+    (propagated-inputs (list r-stringr r-shapefiles r-plyr r-magrittr r-gstat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/r-spatial/RSAGA")
     (synopsis "SAGA Geoprocessing and Terrain Analysis")
@@ -7143,8 +7181,8 @@ Geoscientific Analyses) from within R by running the command line version of
 SAGA. This package furthermore provides several R functions for handling ASCII
 grids, including a flexible framework for applying local functions (including
 predict methods of fitted models) and focal functions to multiple grids.  SAGA
-GIS is available under GPLv2 / LGPLv2 licence from
-<http://sourceforge.net/projects/saga-gis/>.")
+GIS is available under GPL-2 / LGPL-2 licences from
+<https://sourceforge.net/projects/saga-gis/>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -26061,6 +26099,49 @@ function.  This package thereby allows for highly mechanistic social-ecological
 models of the evolution of pesticide resistance under different types of crop
 rotation and pesticide application regimes.")
     (license license:gpl2+)))
+
+(define-public r-reservr
+  (package
+    (name "r-reservr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reservr" version))
+              (sha256
+               (base32
+                "1p6k561hj4127g1mi5xwic8zmnj3mvklpc4a38ki5cgvw84kb6xa"))))
+    (properties `((upstream-name . "reservr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-numderiv
+                             r-nloptr
+                             r-matrixstats
+                             r-keras
+                             r-glue
+                             r-generics
+                             r-bh
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://ashesitr.github.io/reservr/")
+    (synopsis
+     "Fit Distributions and Neural Networks to Censored and Truncated Data")
+    (description
+     "Define distribution families and fit them to interval-censored and
+interval-truncated data, where the truncation bounds may depend on the
+individual observation.  The defined distributions feature density, probability,
+sampling and fitting methods as well as efficient implementations of the
+log-density log f(x) and log-probability log P(x0 <= X <= x1) for use in
+TensorFlow neural networks via the tensorflow package.  Allows training
+parametric neural networks on interval-censored and interval-truncated data with
+flexible parameterization.  Applications include Claims Development in Non-Life
+Insurance, e.g. modelling reporting delay distributions from incomplete data,
+see BÃ¼cher, Rosenstock (2022) <doi:10.1007/s13385-022-00314-4>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-reservoir
   (package
