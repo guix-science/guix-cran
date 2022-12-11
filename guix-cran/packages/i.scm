@@ -4461,13 +4461,13 @@ at Chainarong Amornbunchornvej, Pongsakorn Wangkumhang, and Sissades Tongsima
 (define-public r-ipaddress
   (package
     (name "r-ipaddress")
-    (version "0.5.5")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipaddress" version))
               (sha256
                (base32
-                "0p6w6qbrpv68akpggqml4krgnazj14jbcafhkv0vk8z3sqskhxk5"))))
+                "1hyb29mwg16xk1887kiz68vvw4jpipylyqis16siwiwlzd2yjfn2"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-rcpp r-asioheaders))

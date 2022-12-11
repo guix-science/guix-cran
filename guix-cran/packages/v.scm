@@ -229,13 +229,13 @@ as at <https://predanalyticssessions1.shinyapps.io/chisquareVarianceTest/>.")
 (define-public r-vtree
   (package
     (name "r-vtree")
-    (version "5.6.4")
+    (version "5.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtree" version))
               (sha256
                (base32
-                "1skx7njbr1wmzbmbm876zp9ci971r9q49wc6g38mk4y83vhggwy2"))))
+                "0qszya11qh2xzq1blbrcli3l8hhf0dannhh2hn3gi59c9dn3jr16"))))
     (properties `((upstream-name . "vtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8

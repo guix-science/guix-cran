@@ -10177,13 +10177,13 @@ implementation of the algorithm supports both directed and undirected networks."
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.0-9-2")
+    (version "0.0-9-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disordR" version))
               (sha256
                (base32
-                "168k9hybndrwaspxq5sax2aa6431cj5x5gr0vpngjfwkkq51x6l4"))))
+                "1p8lfwyc3214nc0lm2limnnx0d7vrwq7gxp18fgdxbxknd1rfk0s"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-digest))
@@ -10203,7 +10203,9 @@ operation (such as accessing an element at a particular location).  A useful
 heuristic is that one is only allowed to access or modify a disord object using
 a python list comprehension.  The idea is to prevent ill-defined operations on
 values (or keys) of associative maps, whose order is undefined or at best
-implementation-specific, while allowing and facilitating sensible operations.")
+implementation-specific, while allowing and facilitating sensible operations.
+To cite the package in publications please use Hankin (2022)
+<doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
 
 (define-public r-diskimager

@@ -17750,18 +17750,18 @@ given in Klein and Moeschberger (2003,ISBN:0-387-95399-X).")
 (define-public r-bcfrailph
   (package
     (name "r-bcfrailph")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcfrailph" version))
               (sha256
                (base32
-                "0l5v3bc8xw71cj012sbmq1f0glg7m545jzqyg01gzl8kbgm3lbbj"))))
+                "0qq885wfd7sr8cjxygw33l321q7jk4b6996p0j6inzlwycs8d6bc"))))
     (properties `((upstream-name . "bcfrailph")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=bcfrailph")
-    (synopsis "Semiparametric Bivariate Correlated Frailty Model")
+    (synopsis "Semiparametric Bivariate Correlated Frailty Models Fit")
     (description
      "Fit and simulate a semiparametric bivariate correlated frailty models with
 proportional hazard structure.  Frailty distributions, such as gamma and

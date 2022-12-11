@@ -19514,52 +19514,6 @@ using the ggplot2 package.")
 by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-pirouette
-  (package
-    (name "r-pirouette")
-    (version "1.6.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pirouette" version))
-              (sha256
-               (base32
-                "0fw6hbpywmk1mqfxn480sh403afrmm8shlzcbwx32pjri9ajrx1q"))))
-    (properties `((upstream-name . "pirouette")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-xtable
-                             r-tracerer
-                             r-tidyr
-                             r-tibble
-                             r-tess
-                             r-stringr
-                             r-readr
-                             r-pryr
-                             r-plyr
-                             r-phytools
-                             r-phangorn
-                             r-nodesub
-                             r-mcbette
-                             r-mauricer
-                             r-magrittr
-                             r-forcats
-                             r-ddd
-                             r-beautier
-                             r-beastier
-                             r-babette
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richelbilderbeek/pirouette/")
-    (synopsis "Create a Bayesian Posterior from a Phylogeny")
-    (description
-     "Theoretical biologists are interested in measuring the extent at which we can
-measure the truth.  This package allows to create a Bayesian posterior from a
-phylogeny that depicts the true evolutionary relationships.  The given and true
-phylogeny can than be compared to the posterior phylogenies.  RichÃ¨l J. C.
-Bilderbeek, Giovanni Laudanno, Rampal S. Etienne (2020) \"Quantifying the impact
-of an inference model in Bayesian phylogenetics\" <doi:10.1111/2041-210X.13514>.")
-    (license license:gpl3)))
-
 (define-public r-pirf
   (package
     (name "r-pirf")
@@ -29188,13 +29142,13 @@ require the use of an API key which can be obtained at
 (define-public r-pathfindr-data
   (package
     (name "r-pathfindr-data")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pathfindR.data" version))
               (sha256
                (base32
-                "0p0infg5hxw40bacgni5w1a8xb29wc0xrd8mjsnlfarr8wygd9fl"))))
+                "1gvlfkpk4fxh10vs792qdj5k3yvlc3dizh780c5a2xvdy1jj6gwm"))))
     (properties `((upstream-name . "pathfindR.data")))
     (build-system r-build-system)
     (home-page "https://github.com/egeulgen/pathfindR.data")

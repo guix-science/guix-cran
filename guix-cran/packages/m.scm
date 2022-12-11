@@ -32092,39 +32092,6 @@ implicants are typically composed of a maximum of 4 or 5 literals.")
 power and performs better than Welch's t-approximation, see Ullah et al. (2019).")
     (license license:gpl2+)))
 
-(define-public r-mcbette
-  (package
-    (name "r-mcbette")
-    (version "1.15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mcbette" version))
-              (sha256
-               (base32
-                "0wilbz4zwjnzxfa3nail10a8y1cjq1myb2lqyj01k8s5kpwb0isq"))))
-    (properties `((upstream-name . "mcbette")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-txtplot
-                             r-testit
-                             r-rmpfr
-                             r-mauricer
-                             r-devtools
-                             r-curl
-                             r-beautier
-                             r-beastier
-                             r-babette))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/mcbette/")
-    (synopsis "Model Comparison Using 'babette'")
-    (description
-     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
-that uses DNA/RNA/protein data and many model priors to create a posterior of
-jointly estimated phylogenies and parameters.  mcbette allows to do a Bayesian
-model comparison over some site and clock models, using babette
-(<https://github.com/ropensci/babette/>).")
-    (license license:gpl3)))
-
 (define-public r-mcbackscattering
   (package
     (name "r-mcbackscattering")

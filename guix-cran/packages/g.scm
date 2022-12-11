@@ -16777,13 +16777,13 @@ transcript annotation, ideogram annotation and peak annotation.")
 (define-public r-ggcorset
   (package
     (name "r-ggcorset")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggcorset" version))
               (sha256
                (base32
-                "1md6krsq4qmdix4x141azyaa02f64shzkw591zz9ay7jhpx70r59"))))
+                "0j6wg4bsr3jwy1hnicp45w0y9m0w0rwl2nn1wihs7w3a3yczxw2p"))))
     (properties `((upstream-name . "ggcorset")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggstance r-ggplot2 r-gghalves r-dplyr))
@@ -21380,33 +21380,6 @@ are given to improve stability and speed.  See Taylor Arnold and Ryan Tibshirani
      "This package provides tools to interact nicely with the Genius API
 <https://docs.genius.com/>.  Search hosted content, extract associated metadata
 and retrieve lyrics with ease.")
-    (license license:expat)))
-
-(define-public r-genius
-  (package
-    (name "r-genius")
-    (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "genius" version))
-              (sha256
-               (base32
-                "03j6yry39nn8bccrnwjx1y36rdw167gjlkzl56g5lqwbrgx26bqy"))))
-    (properties `((upstream-name . "genius")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidytext
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-reshape2
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://github.com/josiahparry/genius")
-    (synopsis "Easily Access Song Lyrics from Genius.com")
-    (description "Easily access song lyrics in a tidy way.")
     (license license:expat)))
 
 (define-public r-genio

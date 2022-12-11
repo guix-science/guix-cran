@@ -6072,13 +6072,13 @@ University and lead by Drs.  Herman Staats and Soman Abraham.")
 (define-public r-highs
   (package
     (name "r-highs")
-    (version "0.1-4")
+    (version "0.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highs" version))
               (sha256
                (base32
-                "0yyfyk8dw1q7firqnq83ymwknbnaw3r9rzxdmw3f9pbvkcpgi4n3"))))
+                "1b59ip3y2kqcp4q035857ds1y75sll1n78x51zhfpqfwkdx5258j"))))
     (properties `((upstream-name . "highs")))
     (build-system r-build-system)
     (inputs (list cmake bash))

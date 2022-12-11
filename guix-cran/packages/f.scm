@@ -3113,16 +3113,16 @@ only, and visualize data and statistical results directly in R'.")
 (define-public r-fsadata
   (package
     (name "r-fsadata")
-    (version "0.3.9")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSAdata" version))
               (sha256
                (base32
-                "1ycllz83lmbd93fdrkj0sjg8bygivp60fv768kk0diamjb16xlmq"))))
+                "0wqviw5achsl9q7v8z8zzbnhq9gryfj793hi61js2z30m5dgjvm7"))))
     (properties `((upstream-name . "FSAdata")))
     (build-system r-build-system)
-    (home-page "http://derekogle.com/fishR/")
+    (home-page "https://fishr-core-team.github.io/FSAdata/")
     (synopsis "Data to Support Fish Stock Assessment ('FSA') Package")
     (description
      "The datasets to support the Fish Stock Assessment ('FSA') package.")

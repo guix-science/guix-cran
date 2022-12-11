@@ -15907,43 +15907,6 @@ Bartz-Beielstein T, Rehbach F, Sen A, Zaefferer M <arXiv:2105.14625>.
 Bettonvil, B, Kleijnen JPC (1996) <doi:10.1016/S0377-2217(96)00156-7>.")
     (license license:gpl2+)))
 
-(define-public r-spotifyr
-  (package
-    (name "r-spotifyr")
-    (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spotifyr" version))
-              (sha256
-               (base32
-                "1gpi7d40rdx4dvx5699xj5zisz48arwni18sszvp8phvhgqbj0lh"))))
-    (properties `((upstream-name . "spotifyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-ggridges
-                             r-genius
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://github.com/charlie86/spotifyr")
-    (synopsis "R Wrapper for the 'Spotify' Web API")
-    (description
-     "An R wrapper for pulling data from the Spotify Web API
-<https://developer.spotify.com/documentation/web-api/> in bulk, or post items on
-a Spotify user's playlist.")
-    (license license:expat)))
-
 (define-public r-spotidy
   (package
     (name "r-spotidy")

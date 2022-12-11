@@ -2769,37 +2769,6 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (2016).  A continuous threshold expectile regression, submitted.\"")
     (license license:gpl2+)))
 
-(define-public r-cthist
-  (package
-    (name "r-cthist")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cthist" version))
-              (sha256
-               (base32
-                "1v377i3d26m6arl04iqqvj2ghc0bhns8nrgvk677gkki34ndbcz5"))))
-    (properties `((upstream-name . "cthist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-selectr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-rcurl
-                             r-polite
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://github.com/bgcarlisle/cthist")
-    (synopsis "Clinical Trial Registry History")
-    (description
-     "Retrieves historical versions of clinical trial registry entries.")
-    (license license:agpl3+)))
-
 (define-public r-ctgt
   (package
     (name "r-ctgt")
@@ -12766,13 +12735,13 @@ Antonio Punzo, Angelo Mazza, and Paul D McNicholas (2018)
 (define-public r-container
   (package
     (name "r-container")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "container" version))
               (sha256
                (base32
-                "18vid1yc0r4ji81v2193dz0rzhfs9za2wpi2qyhm063ba0364f3l"))))
+                "0vpha9s5d8mxqdzmbfy92qz78b6gfibwgp1ijq70c5vqs2clkzb1"))))
     (properties `((upstream-name . "container")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-data-table))
@@ -20452,13 +20421,13 @@ on an extension for the continuous setting.")
 (define-public r-cmcr
   (package
     (name "r-cmcr")
-    (version "0.1.9")
+    (version "0.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmcR" version))
               (sha256
                (base32
-                "06pw7lbp85xfnglcc86h1b4ipy1igvf43ihpqm9m67d4jc9r6acs"))))
+                "15d85mjy6y68jysji0910kg9vp69iz4pbb2l4vmn501xq4md3kx3"))))
     (properties `((upstream-name . "cmcR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -20470,12 +20439,13 @@ on an extension for the continuous setting.")
                              r-rlang
                              r-quantreg
                              r-purrr
+                             r-patchwork
                              r-magrittr
                              r-imager
+                             r-ggplotify
                              r-ggplot2
                              r-ggnewscale
-                             r-dplyr
-                             r-assertthat))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=cmcR")
     (synopsis "An Implementation of the 'Congruent Matching Cells' Method")
@@ -20483,8 +20453,8 @@ on an extension for the continuous setting.")
      "An open-source implementation of the Congruent Matching Cells method for
 cartridge case identification as proposed by Song (2013)
 <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911193> as well as an
-extension of the method proposed by Tong et al. (2015) <doi:10.6028>
-(10.6028/jres.120.008).  Provides a wide range of pre, inter, and
+extension of the method proposed by Tong et al. (2015)
+<doi:10.6028/jres.120.008>.  Provides a wide range of pre, inter, and
 post-processing options when working with cartridge case scan data and their
 associated comparisons.  See the cmcR package website for more details and
 examples.")
@@ -30381,16 +30351,17 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.4.0")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cellWise" version))
               (sha256
                (base32
-                "1pqs7zw06ycr7413xxrnyrvq7m8ykhvni42n9s236822a0pbrpyb"))))
+                "1ls455d4y3mfkhz0g45qkhhd4jl7awipakcrsi87lskixzza73rr"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd
+                             r-shape
                              r-scales
                              r-rrcov
                              r-robustbase
@@ -30408,12 +30379,14 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 may contain them.  Contains the implementation of the algorithms described in
 Rousseeuw and Van den Bossche (2018) <doi:10.1080/00401706.2017.1340909> (open
 access) Hubert et al. (2019) <doi:10.1080/00401706.2018.1562989> (open access),
-Raymaekers and Rousseeuw (2019) <doi:10.1080/00401706.2019.1677270> (open
-access), Raymaekers and Rousseeuw (2020) <doi:10.1007/s10994-021-05960-5> (open
-access), Raymaekers and Rousseeuw (2020) <doi:10.52933/jdssv.v1i3.18> (open
-access).  Examples can be found in the vignettes: \"DDC_examples\",
-\"MacroPCA_examples\", \"wrap_examples\", \"transfo_examples\", \"DI_examples\" and
-\"cellMCD_examples\".")
+Raymaekers and Rousseeuw (2021) <doi:10.1080/00401706.2019.1677270> (open
+access), Raymaekers and Rousseeuw (2021) <doi:10.1007/s10994-021-05960-5> (open
+access), Raymaekers and Rousseeuw (2021) <doi:10.52933/jdssv.v1i3.18> (open
+access), Raymaekers and Rousseeuw (2022) <arXiv:2207.13493> (open access)
+Rousseeuw (2022) <arXiv:2209.12697> (open access).  Examples can be found in the
+vignettes: \"DDC_examples\", \"MacroPCA_examples\", \"wrap_examples\",
+\"transfo_examples\", \"DI_examples\", \"cellMCD_examples\" ,
+\"Correspondence_analysis_examples\", and \"cellwise_weights_examples\".")
     (license license:gpl2+)))
 
 (define-public r-cellvolumedist
