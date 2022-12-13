@@ -1830,34 +1830,6 @@ Results (2015) <doi:10.1021/acs.jproteome.5b00780>.")
 from the Portuguese Wikipedia (<https://pt.wikipedia.org/>).")
     (license license:expat)))
 
-(define-public r-ptw
-  (package
-    (name "r-ptw")
-    (version "1.9-16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ptw" version))
-              (sha256
-               (base32
-                "0rma3h9ksc5qigdvk5vappb4ipd4rpk64wckzcxvxspakr5w71vy"))))
-    (properties `((upstream-name . "ptw")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppde))
-    (home-page "https://github.com/rwehrens/ptw")
-    (synopsis "Parametric Time Warping")
-    (description
-     "Parametric Time Warping aligns patterns, i.e.  it aims to put corresponding
-features at the same locations.  The algorithm searches for an optimal
-polynomial describing the warping.  It is possible to align one sample to a
-reference, several samples to the same reference, or several samples to several
-references.  One can choose between calculating individual warpings, or one
-global warping for a set of samples and one reference.  Two optimization
-criteria are implemented: RMS (Root Mean Square error) and WCC (Weighted Cross
-Correlation).  Both warping of peak profiles and of peak lists are supported.  A
-vignette for the latter is contained in the inst/doc directory of the source
-package - the vignette source can be found on the package github site.")
-    (license license:gpl2+)))
-
 (define-public r-ptvapi
   (package
     (name "r-ptvapi")
@@ -7955,13 +7927,13 @@ graphic parameters upon completion.")
 (define-public r-prettyglm
   (package
     (name "r-prettyglm")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prettyglm" version))
               (sha256
                (base32
-                "1qxfiynry2fhmdrqkn7hf2llx18gdi8an3crkx0s116yp3dlv5xl"))))
+                "1ccq5l3m4q1h44pdgk00avch0kldr00632n681dlw8wkdgb0x8wf"))))
     (properties `((upstream-name . "prettyglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vip
@@ -7970,6 +7942,7 @@ graphic parameters upon completion.")
                              r-tidycat
                              r-tibble
                              r-stringr
+                             r-rcolorbrewer
                              r-plotly
                              r-knitr
                              r-kableextra
@@ -7978,13 +7951,16 @@ graphic parameters upon completion.")
                              r-car
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=prettyglm")
+    (home-page "https://jared-fowler.github.io/prettyglm/")
     (synopsis "Pretty Summaries of Generalized Linear Model Coefficients")
     (description
      "One of the main advantages of using Generalised Linear Models is their
 interpretability.  The goal of prettyglm is to provide a set of functions which
 easily create beautiful coefficient summaries which can readily be shared and
-explained.")
+explained.  prettyglm helps users create coefficient summaries which include
+categorical base levels, variable importance and type III p.values.  prettyglm
+also creates beautiful relativity plots for categorical, continuous and splined
+coefficients.")
     (license license:gpl3)))
 
 (define-public r-prettydoc
@@ -13005,13 +12981,13 @@ graph.  Finds total order consistent with partial order or directed graph
 (define-public r-pompp
   (package
     (name "r-pompp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pompp" version))
               (sha256
                (base32
-                "05zy47zaifwj1qvvgxpvari26ac354axijqbx5522mbl27x3c6sf"))))
+                "0svlzhsm1kfwgjpx2cas63jm8v5b9cxlksipv758vxlnc3jiarvk"))))
     (properties `((upstream-name . "pompp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp r-geor r-coda))
@@ -13021,7 +12997,9 @@ graph.  Finds total order consistent with partial order or directed graph
      "Inspired by Moreira and Gamerman (2022) <doi:10.1214/21-AOAS1569>, this
 methodology expands the idea by including Marks in the point process.  Using
 efficient C++ code, the estimation is possible and made faster with OpenMP
-<https://www.openmp.org/> enabled computers.")
+<https://www.openmp.org/> enabled computers.  This package was developed under
+the project PTDC/MAT-STA/28243/2017, supported by Portuguese funds through the
+Portuguese Foundation for Science and Technology (FCT).")
     (license license:gpl3+)))
 
 (define-public r-pompom
@@ -16596,30 +16574,6 @@ support grid graphics such as lattice and ggplot.  See \"example('devsize')\" an
     (description
      "This package provides functions for making visual exploratory data analysis with
 nested data easier.")
-    (license license:expat)))
-
-(define-public r-plotroc
-  (package
-    (name "r-plotroc")
-    (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "plotROC" version))
-              (sha256
-               (base32
-                "0kaz9hrimi9gi7cf7flag9kc9yrg5fdyylqa5hn53x4dy8vhj37g"))))
-    (properties `((upstream-name . "plotROC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rlang r-plyr r-gridsvg r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://sachsmc.github.io/plotROC/")
-    (synopsis "Generate Useful ROC Curve Charts for Print and Interactive Use")
-    (description
-     "Most ROC curve plots obscure the cutoff values and inhibit interpretation and
-comparison of multiple curves.  This attempts to address those shortcomings by
-providing plotting and interactive tools.  Functions are provided to generate an
-interactive ROC curve plot for web use, and print versions.  A Shiny application
-implementing the functions is also included.")
     (license license:expat)))
 
 (define-public r-plotprotein
@@ -26791,13 +26745,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.0")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDE" version))
               (sha256
                (base32
-                "0qizclfaig2a6ybpa1qid2lhzasfb6i30vy6n4mv2765db7h5dkf"))))
+                "032r72dmxv8far305y9738grylp0g96p7jkmk0dg5cwm02570zy5"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -33007,13 +32961,13 @@ graphics.")
 (define-public r-pagedown
   (package
     (name "r-pagedown")
-    (version "0.19")
+    (version "0.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pagedown" version))
               (sha256
                (base32
-                "1x26na8mqfrnlj5h3v1wxw1dhdxm891ckh0d23854fmss0yf6qrx"))))
+                "1900694r5l289y9yn176hbngiyk26jrslshqf5saq8zdxa67ad0x"))))
     (properties `((upstream-name . "pagedown")))
     (build-system r-build-system)
     (inputs (list pandoc))

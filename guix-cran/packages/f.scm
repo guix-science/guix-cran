@@ -13,11 +13,11 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages image-processing)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -4134,13 +4134,13 @@ package relies on the optimization software MOSEK', <https://www.mosek.com>.")
 (define-public r-freealg
   (package
     (name "r-freealg")
-    (version "1.0-8")
+    (version "1.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "freealg" version))
               (sha256
                (base32
-                "1mpqda4xk3hkr24a47kg8jzd23y7svvs5pcfgbhlmvpchsgxqzsd"))))
+                "10xc8d4ymx53hifmji3ag0svxpp833vndiylsrk5brhv9rg8wfb5"))))
     (properties `((upstream-name . "freealg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-partitions r-mathjaxr r-disordr))
@@ -4148,8 +4148,9 @@ package relies on the optimization software MOSEK', <https://www.mosek.com>.")
     (home-page "https://github.com/RobinHankin/freealg")
     (synopsis "The Free Algebra")
     (description
-     "The free algebra in R; multivariate polynomials with non-commuting
-indeterminates.  Uses disordR discipline.")
+     "The free algebra in R with non-commuting indeterminates.  Uses disordR
+discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package
+in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
     (license license:gpl2+)))
 
 (define-public r-free
@@ -6252,35 +6253,6 @@ total assessment process, and help foresters to further assess and management
 forest resources.")
     (license license:gpl2+)))
 
-(define-public r-forestgapr
-  (package
-    (name "r-forestgapr")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ForestGapR" version))
-              (sha256
-               (base32
-                "1m3fn7gqwch14nilid9fmxwlm4x9qslr3czb44iwiff9i69csnvk"))))
-    (properties `((upstream-name . "ForestGapR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-vgam
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-sp
-                             r-rgeos
-                             r-raster
-                             r-powerlaw
-                             r-igraph))
-    (home-page "https://cran.r-project.org/package=ForestGapR")
-    (synopsis "Tropical Forest Canopy Gaps Analysis")
-    (description
-     "Set of tools for detecting and analyzing Airborne Laser Scanning-derived
-Tropical Forest Canopy Gaps.  Details were published in Silva et al. (2019)
-<doi:10.1111/2041-210X.13211>.")
-    (license license:gpl3)))
-
 (define-public r-forestfit
   (package
     (name "r-forestfit")
@@ -7154,58 +7126,6 @@ intermediate table outputs, etc.  This package makes it easier to do that by
 providing a quick and easy way to create and use functions for project-level
 directories.")
     (license license:bsd-2)))
-
-(define-public r-foiegras
-  (package
-    (name "r-foiegras")
-    (version "0.7-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "foieGras" version))
-              (sha256
-               (base32
-                "0g4c9id7q3jgjcgwmncp4bkw9njwb41cp6ycv7psiidkhmnzi03d"))))
-    (properties `((upstream-name . "foieGras")))
-    (build-system r-build-system)
-    (inputs (list proj pandoc geos gdal))
-    (propagated-inputs (list r-trip
-                             r-tmvtnorm
-                             r-tmb
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rcppeigen
-                             r-purrr
-                             r-patchwork
-                             r-mvtnorm
-                             r-lubridate
-                             r-lifecycle
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr
-                             r-circstats
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ianjonsen/foieGras/")
-    (synopsis
-     "Fit Continuous-Time State-Space and Latent Variable Models for Quality Control of Argos Satellite (and Other) Telemetry Data and for Estimating Movement Behaviour")
-    (description
-     "Fits continuous-time random walk and correlated random walk state-space models
-for quality control animal tracking data ('Argos', processed light-level
-geolocation', GPS').  Template Model Builder ('TMB') is used for fast
-estimation.  The Argos data can be: (older) least squares-based locations;
-(newer) Kalman filter-based locations with error ellipse information; or a
-mixture of both.  The models estimate two sets of location states corresponding
-to: 1) each observation, which are (usually) irregularly timed; and 2)
-user-specified time intervals (regular or irregular).  Latent variable models
-are provided to estimate move persistence along tracks as an index of behaviour.
- Track simulation functions are provided.  Jonsen I', McMahon CR', Patterson
-TA', Auger-MÃ©thÃ© M', Harcourt R', Hindell MA', Bestley S (2019) Movement
-responses to environment: fast inference of variation among southern elephant
-seals with a mixed effects model.  Ecology 100:e02566 <doi:10.1002/ecy.2566>.")
-    (license license:expat)))
 
 (define-public r-foghorn
   (package
@@ -10314,13 +10234,13 @@ Iwayama, K., Aisaka, Y., Kutsuna, N., and Nagano, A. J. (2017).
 (define-public r-fispro
   (package
     (name "r-fispro")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FisPro" version))
               (sha256
                (base32
-                "0h3n64pw262arcl5wvz8ipwgmgxqn4vqhy21h9lzqpnw03qw5shl"))))
+                "15zj3ffagjlby8c57gjl9mzpasjkszcc90m4y81jzjrw74axyw93"))))
     (properties `((upstream-name . "FisPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-bh))
@@ -15475,36 +15395,6 @@ manuscript is currently under review.")
 gene-environment interaction test, and a test of a set of genes conditional on
 another set of genes.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-fbasics
-  (package
-    (name "r-fbasics")
-    (version "4021.93")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fBasics" version))
-              (sha256
-               (base32
-                "1lmmdwzvqhggy6rr7yc9y5f8hxxgyzsgwm3ry0sz5ljbgfijl7g6"))))
-    (properties `((upstream-name . "fBasics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timeseries
-                             r-timedate
-                             r-stabledist
-                             r-spatial
-                             r-mass
-                             r-gss))
-    (home-page
-     "https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics")
-    (synopsis "Rmetrics - Markets and Basic Statistics")
-    (description
-     "This package provides a collection of functions to explore and to investigate
-basic properties of financial returns and related quantities.  The covered
-fields include techniques of explorative data analysis and the investigation of
-distributional properties, including parameter estimation and hypothesis
-testing.  Even more there are several utility functions for data handling and
-management.")
-    (license license:gpl2+)))
 
 (define-public r-fbar
   (package

@@ -10514,13 +10514,13 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 (define-public r-nestfs
   (package
     (name "r-nestfs")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestfs" version))
               (sha256
                (base32
-                "18w8bp02w7p1k0dm85523rhmsxww581ma4srvxbxq39kp8mfyabk"))))
+                "0qaxkg8m64admpw3zpwrd6z5lxdn0i5kl7dlixrp5r7c1j40aw3l"))))
     (properties `((upstream-name . "nestfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-dgof))
@@ -10531,6 +10531,28 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 regression.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-nestedpp
+  (package
+    (name "r-nestedpp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nestedpp" version))
+              (sha256
+               (base32
+                "0c7vp3bwmxhyk8dpm0jvm876hsw76kp0gwi5kckyqh2dfgczvyfz"))))
+    (properties `((upstream-name . "nestedpp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-ggplot2))
+    (home-page "https://cran.r-project.org/package=nestedpp")
+    (synopsis "Performance Profiles and Nested Performance Profiles")
+    (description
+     "Library to plot performance profiles (Dolan and More (2002)
+<doi:10.1007/s101070100263>) and nested performance profiles (Hekmati and
+Mirhajianmoghadam (2019) <doi:10.19139/soic-2310-5070-679>) for a given data
+frame.")
+    (license license:gpl3)))
 
 (define-public r-nestedmodels
   (package
@@ -10985,6 +11007,31 @@ functions are either lists or data.frames with very few post-processing.  It
 allows fast processing of queries returning many records.  And it let the user
 handle post-processing according to the data model and his needs.")
     (license license:gpl3)))
+
+(define-public r-nembm
+  (package
+    (name "r-nembm")
+    (version "1.00.00")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nemBM" version))
+              (sha256
+               (base32
+                "19yz33yf26v2dx47xhl85sidg5mx0h9xwafzswbs0hw65vinms79"))))
+    (properties `((upstream-name . "nemBM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ergm r-blockmodeling))
+    (home-page "https://cran.r-project.org/package=nemBM")
+    (synopsis
+     "Using Network Evolution Models to Generate Networks with Selected Blockmodel Type")
+    (description
+     "To study network evolution models and different blockmodeling approaches.
+Various functions enable generating (temporal) networks with a selected
+blockmodel type, taking into account selected local network mechanisms.  The
+development of this package is financially supported by the Slovenian Research
+Agency (www.arrs.gov.si) within the research programs P5-0168 and the research
+project J7-8279 (Blockmodeling multilevel and temporal networks).")
+    (license license:gpl2)))
 
 (define-public r-neldermead
   (package
@@ -13253,13 +13300,13 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "0kiykizj2pirdg0sx5931nsvmx61aq53hpcz0chqhfi7h8i555j7"))))
+                "0xnvnmph3wzdlw4hnwa73qiqdn1xyg12q21bkkk4r17cjilvjbz5"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

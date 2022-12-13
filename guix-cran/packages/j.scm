@@ -2636,23 +2636,22 @@ tagging.  This package provides the data files required by jiebaR.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jgsbook" version))
               (sha256
                (base32
-                "0fkxbka4fcsa3bb0zh2fh58q44izsl1q0swa7ink2agl6yxxpmk3"))))
+                "0q2k2fff6qzn9mgf629arpc055xjhych0bj412kq9yp68kgmzr46"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statip r-jsonlite))
+    (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))
     (home-page "https://cran.r-project.org/package=jgsbook")
     (synopsis
      "Package of the German Book \"Statistik mit R und RStudio\" by Joerg grosse Schlarmann")
     (description
      "All datasets and functions used in the german book \"Statistik mit R und RStudio\"
-by Joerg grosse Schlarmann.  You can read it online at
-<https://www.produnis.de/R/> .")
+by grosse Schlarmann (2022) <https://www.produnis.de/R/>.")
     (license license:gpl2+)))
 
 (define-public r-jgr

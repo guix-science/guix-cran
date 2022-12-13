@@ -5141,13 +5141,13 @@ citation(\"Rssa\") for details.")
 (define-public r-rsrd
   (package
     (name "r-rsrd")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rSRD" version))
               (sha256
                (base32
-                "10fx367ya9knl715jxc67fiq8ykz6sp4chyvj62dfisnnaiqq5bk"))))
+                "1kmivz5qlfqq300lcg8qjl79dhcbdmq9xxx18bn57yks7g7ksk8s"))))
     (properties `((upstream-name . "rSRD")))
     (build-system r-build-system)
     (inputs (list))
@@ -12819,6 +12819,43 @@ PostgreSQL, MariaDB and SQLite.  The purpose is having an intuitive object
 allowing straightforward handling of SQL databases.")
     (license license:expat)))
 
+(define-public r-rock
+  (package
+    (name "r-rock")
+    (version "0.6.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rock" version))
+              (sha256
+               (base32
+                "0ms21446jd6imrb9j9ncy7p94gqxi408wgp7b0l8g1h5f027qfsc"))))
+    (properties `((upstream-name . "rock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yum
+                             r-yaml
+                             r-purrr
+                             r-markdown
+                             r-htmltools
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer
+                             r-data-tree))
+    (native-inputs (list r-knitr))
+    (home-page "https://rock.opens.science")
+    (synopsis "Reproducible Open Coding Kit")
+    (description
+     "The Reproducible Open Coding Kit ('ROCK', and this package, rock') was developed
+to facilitate reproducible and open coding, specifically geared towards
+qualitative research methods.  Although it is a general-purpose toolkit, three
+specific applications have been implemented, specifically an interface to the
+rENA package that implements Epistemic Network Analysis ('ENA'), means to
+process notes from Cognitive Interviews ('CIs'), and means to work with
+decentralized construct taxonomies ('DCTs').  The ROCK and this rock package are
+described in the ROCK book <https:rockbook.org>.")
+    (license license:gpl3)))
+
 (define-public r-rocit
   (package
     (name "r-rocit")
@@ -16143,29 +16180,6 @@ standalone C library.  libMVL has simple C API making it easy to interchange
 datasets with outside programs.")
     (license license:lgpl2.1)))
 
-(define-public r-rmutil
-  (package
-    (name "r-rmutil")
-    (version "1.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rmutil" version))
-              (sha256
-               (base32
-                "1yd5gkg4jg3rvqrfl8c5r07lcr37n1p9h1a7b6s45iswd77dg7w1"))))
-    (properties `((upstream-name . "rmutil")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://www.commanster.eu/rcode.html")
-    (synopsis
-     "Utilities for Nonlinear Regression and Repeated Measurements Models")
-    (description
-     "This package provides a toolkit of functions for nonlinear regression and
-repeated measurements not to be used by itself but called by other Lindsey
-packages such as gnlm', stable', growth', repeated', and event (available at
-<https://www.commanster.eu/rcode.html>).")
-    (license license:gpl2+)))
-
 (define-public r-rmumps
   (package
     (name "r-rmumps")
@@ -18898,38 +18912,6 @@ facilitate research that aims to develop new molecular markers for identifying
 species-specific minicircles, or to study the ancestry of parasites for
 complementary insights into their evolutionary history.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-rkolada
-  (package
-    (name "r-rkolada")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rKolada" version))
-              (sha256
-               (base32
-                "1c1ci6dn3yqgp7qm1fih8dlq67dpbc1wlxhzcrzs0zzign47vgvd"))))
-    (properties `((upstream-name . "rKolada")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-urltools
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://lchansson.github.io/rKolada/")
-    (synopsis "Access Data from the 'Kolada' Database")
-    (description
-     "This package provides methods for downloading and processing data and metadata
-from Kolada', the official Swedish regions and municipalities database
-<https://kolada.se/>.")
-    (license license:agpl3)))
 
 (define-public r-rkmetrics
   (package
@@ -26389,13 +26371,13 @@ the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rerddap" version))
               (sha256
                (base32
-                "13fl8d5x6gmnd1m2x3byikdyy8pv96nikh4nnbd6p8jamxcyjbrc"))))
+                "1fw678w5jyxlkpxfg88w0lxfyvgqwj4qffqn0hi5wzzysz70y0x7"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -31344,13 +31326,13 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 (define-public r-receptiviti
   (package
     (name "r-receptiviti")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "receptiviti" version))
               (sha256
                (base32
-                "17i9amb20nrxy4lj8f98jfkkpg6hr8lw7j90ngidznyrprlwnwr7"))))
+                "1phq2b2v9gdiarnksc4icijb1wapq3lin91cr55al7nr7p1g9hmr"))))
     (properties `((upstream-name . "receptiviti")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr
@@ -34827,13 +34809,13 @@ R by providing both the header files and all examples.")
 (define-public r-rcppspdlog
   (package
     (name "r-rcppspdlog")
-    (version "0.0.10")
+    (version "0.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSpdlog" version))
               (sha256
                (base32
-                "19931fgjmzrp65vci3s8gypipg761ajalnn75pdi1x8a2bgz1jhf"))))
+                "120vwj8h3cz1y66frdciqlvv182958ybxppg9alw8bdf46am1cbi"))))
     (properties `((upstream-name . "RcppSpdlog")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -34843,7 +34825,7 @@ R by providing both the header files and all examples.")
     (description
      "The mature and widely-used C++ logging library spdlog by Gabi Melman provides
 many desirable features.  This package bundles these header files for easy use
-by R packages from both their R and C++ code.  More explicit use via LinkingTo:
+by R packages from both their R and C or C++ code.  Explicit use via LinkingTo:
 is also supported.")
     (license license:gpl2+)))
 
@@ -35314,31 +35296,6 @@ distribution; a truncated location-scale t distribution; the triangle
 distribution; the multivariate normal distribution*; the multivariate t
 distribution*; the Wishart distribution*; and the inverse Wishart distribution*.
  Distributions marked with an asterisk rely on RcppArmadillo'.")
-    (license license:gpl2+)))
-
-(define-public r-rcppde
-  (package
-    (name "r-rcppde")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RcppDE" version))
-              (sha256
-               (base32
-                "1i9jj595nqpb16y22z2b8fcf0gq1fg0pbiisbd837p1cyw4nff69"))))
-    (properties `((upstream-name . "RcppDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=RcppDE")
-    (synopsis "Global Optimization by Differential Evolution in C++")
-    (description
-     "An efficient C++ based implementation of the DEoptim function which performs
-global optimization by differential evolution.  Its creation was motivated by
-trying to see if the old approximation \"easier, shorter, faster: pick any two\"
-could in fact be extended to achieving all three goals while moving the code
-from plain old C to modern C++.  The initial version did in fact do so, but a
-good part of the gain was due to an implicit code review which eliminated a few
-inefficiencies which have since been eliminated in DEoptim'.")
     (license license:gpl2+)))
 
 (define-public r-rcppdate

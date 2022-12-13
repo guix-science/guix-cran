@@ -1089,50 +1089,6 @@ is provided.")
 different units: m/s, mol/m^2/s, and umol/m^2/s/Pa.")
     (license license:expat)))
 
-(define-public r-gunifrac
-  (package
-    (name "r-gunifrac")
-    (version "1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GUniFrac" version))
-              (sha256
-               (base32
-                "13qb5fw9km6p5x8li9x3liqbh833wf2v73npj8jl3msplzfk82vp"))))
-    (properties `((upstream-name . "GUniFrac")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-statmod
-                             r-rmutil
-                             r-rcpp
-                             r-modeest
-                             r-matrixstats
-                             r-matrix
-                             r-mass
-                             r-ggrepel
-                             r-ggplot2
-                             r-foreach
-                             r-dirmult
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GUniFrac")
-    (synopsis
-     "Generalized UniFrac Distances, Distance-Based Multivariate Methods and Feature-Based Univariate Methods for Microbiome Data Analysis")
-    (description
-     "This package provides a suite of methods for powerful and robust microbiome data
-analysis including data normalization, data simulation, community-level
-association testing and differential abundance analysis.  It implements
-generalized UniFrac distances, Geometric Mean of Pairwise Ratios (GMPR)
-normalization, semiparametric data simulator, distance-based statistical
-methods, and feature-based statistical methods.  The distance-based statistical
-methods include three extensions of PERMANOVA: (1) PERMANOVA using the
-Freedman-Lane permutation scheme, (2) PERMANOVA omnibus test using multiple
-matrices, and (3) analytical approach to approximating PERMANOVA p-value.
-Feature-based statistical methods include linear model-based methods for
-differential abundance analysis of zero-inflated high-dimensional compositional
-data.")
-    (license license:gpl3)))
-
 (define-public r-gumboot
   (package
     (name "r-gumboot")
@@ -2064,26 +2020,6 @@ baseline hazard function.  The estimators are calculated via an
 expectation-maximization algorithm.")
     (license license:gpl2+)))
 
-(define-public r-gss
-  (package
-    (name "r-gss")
-    (version "2.2-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gss" version))
-              (sha256
-               (base32
-                "0jr45lkpcndg5nynjsfnxn1wwkh4gkhsgv4hlvw6jn2frw0n8c14"))))
-    (properties `((upstream-name . "gss")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=gss")
-    (synopsis "General Smoothing Splines")
-    (description
-     "This package provides a comprehensive package for structural multivariate
-function estimation using smoothing splines.")
-    (license license:gpl2+)))
-
 (define-public r-gsrs
   (package
     (name "r-gsrs")
@@ -2470,13 +2406,13 @@ Turnbull (2013) <doi:10.1002/sim.5738>.")
 (define-public r-gse
   (package
     (name "r-gse")
-    (version "4.2")
+    (version "4.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GSE" version))
               (sha256
                (base32
-                "0vrxn6j5brhwd38zqnr6m3in3hp1xfs1mfhps9qsj20d4w8d1rf9"))))
+                "0hxz2m8fn7zkxchvpn0kdw77mxgczff9mk1k0xy2ml50b9vzssm2"))))
     (properties `((upstream-name . "GSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov
@@ -3441,6 +3377,30 @@ groups, group subset selection selects a small number of groups to explain
 response variable linearly using least squares.")
     (license license:gpl2)))
 
+(define-public r-groupseq
+  (package
+    (name "r-groupseq")
+    (version "1.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GroupSeq" version))
+              (sha256
+               (base32
+                "01207wc0z9z7m38lnmaf4hml6nva5bcld52clpr2dy9pfcd1x1pd"))))
+    (properties `((upstream-name . "GroupSeq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tcltk2 r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://rpahl.github.io/GroupSeq/")
+    (synopsis
+     "Group Sequential Design Probabilities - With Graphical User Interface")
+    (description
+     "Computes probabilities related to group sequential designs for normally
+distributed test statistics.  Enables to derive critical boundaries, power,
+drift, and confidence intervals of such designs.  Supports the alpha spending
+approach by Lan-DeMets (1994) <doi:10.1002/sim.4780131308>.")
+    (license license:gpl3)))
+
 (define-public r-groupremmap
   (package
     (name "r-groupremmap")
@@ -3944,28 +3904,6 @@ Documentation about gRim is provided by vignettes included in this package and
 the book by HÃ¸jsgaard, Edwards and Lauritzen (2012,
 <doi:10.1007/978-1-4614-2299-0>); see citation(\"gRim\") for details.")
     (license license:gpl2+)))
-
-(define-public r-gridsvg
-  (package
-    (name "r-gridsvg")
-    (version "1.7-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gridSVG" version))
-              (sha256
-               (base32
-                "1jspjn56yrkx98hhs98npzm0k0kwpv8x1hg40kphx5ikhvincxmr"))))
-    (properties `((upstream-name . "gridSVG")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-jsonlite))
-    (home-page "https://cran.r-project.org/package=gridSVG")
-    (synopsis "Export 'grid' Graphics as SVG")
-    (description
-     "This package provides functions to export graphics drawn with package grid to
-SVG format.  Additional functions provide access to SVG features that are not
-available in standard R graphics, such as hyperlinks, animation, filters, masks,
-clipping paths, and gradient and pattern fills.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-gridstacker
   (package
@@ -8273,41 +8211,6 @@ applications.  The animations are activated using the Animate.css library.  See
 similarity between samples visually in a low (2 or 3) dimensional space.")
     (license license:gpl2+)))
 
-(define-public r-golem
-  (package
-    (name "r-golem")
-    (version "0.3.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "golem" version))
-              (sha256
-               (base32
-                "0rjkl1r83h0hcn30zssx64qm07sdx3g4v5rdxn56gbzfghw7ddcl"))))
-    (properties `((upstream-name . "golem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-usethis
-                             r-shiny
-                             r-rstudioapi
-                             r-roxygen2
-                             r-pkgload
-                             r-htmltools
-                             r-here
-                             r-fs
-                             r-desc
-                             r-crayon
-                             r-config
-                             r-cli
-                             r-attempt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ThinkR-open/golem")
-    (synopsis "Framework for Robust Shiny Applications")
-    (description
-     "An opinionated framework for building a production-ready Shiny application.
-This package contains a series of tools for building a robust Shiny application
-from start to finish.")
-    (license license:expat)))
-
 (define-public r-goldilocks
   (package
     (name "r-goldilocks")
@@ -9906,56 +9809,6 @@ implement the simulation methods described in CÃ³rdoba et al. (2018)
      "Get distance and travel time between two points from Google Maps.  Four possible
 modes of transportation (bicycling, walking, driving and public transportation).")
     (license license:gpl3+)))
-
-(define-public r-gmamisc
-  (package
-    (name "r-gmamisc")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GmAMisc" version))
-              (sha256
-               (base32
-                "0rvdphdgk1bdfamwf6spy5k9qa5ws92mvf3q3dlhn6qfazp7j4hr"))))
-    (properties `((upstream-name . "GmAMisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-rcmdrmisc
-                             r-raster
-                             r-proc
-                             r-plyr
-                             r-maptools
-                             r-lsr
-                             r-kimisc
-                             r-inposition
-                             r-hmisc
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-dismo
-                             r-desctools
-                             r-corrplot
-                             r-coin
-                             r-cluster
-                             r-classint
-                             r-catools))
-    (home-page "https://cran.r-project.org/package=GmAMisc")
-    (synopsis "'Gianmarco Alberti' Miscellaneous")
-    (description
-     "This package contains many functions useful for univariate outlier detection,
-permutation-based t-test, permutation-based chi-square test, visualization of
-residuals, and bootstrap Cramer V', plotting of the results of the Mann-Whitney
-and Kruskal-Wallis test, calculation of Brainerd-Robinson similarity coefficient
-and subsequent clustering, validation of logistic regression models,
-optimism-corrected AUC, robust Bland-Altman plot, calculation of posterior
-probability for different chronological relationships between two Bayesian
-radiocarbon phases, point pattern analysis, clustering of spatial features.")
-    (license license:gpl2+)))
 
 (define-public r-gmailr
   (package
@@ -16777,13 +16630,13 @@ transcript annotation, ideogram annotation and peak annotation.")
 (define-public r-ggcorset
   (package
     (name "r-ggcorset")
-    (version "0.4.0")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggcorset" version))
               (sha256
                (base32
-                "0j6wg4bsr3jwy1hnicp45w0y9m0w0rwl2nn1wihs7w3a3yczxw2p"))))
+                "18i7xj3h0v556y2m7b1cnlqhzfp9jv5gpchhz5rmm8d6y3k4czii"))))
     (properties `((upstream-name . "ggcorset")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggstance r-ggplot2 r-gghalves r-dplyr))
@@ -19333,38 +19186,6 @@ supplementary cartography for spatial representation.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-geonet
-  (package
-    (name "r-geonet")
-    (version "0.7.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geonet" version))
-              (sha256
-               (base32
-                "0kp0a1bd8yyvp8w044arawyfmxwmqln3dqk0jzvz1vhbhldgy27s"))))
-    (properties `((upstream-name . "geonet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-linnet
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-mgcv
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=geonet")
-    (synopsis
-     "Intensity Estimation on Geometric Networks with Penalized Splines")
-    (description
-     "Fitting the intensity function of point processes on geometric networks.  The
-method makes use of generalized additive models (GAM).  The method is described
-in Marc Schneble, GÃ¶ran Kauermann. \"Intensity estimation on geometric networks
-with penalized splines.\" The Annals of Applied Statistics, 16(2) 843-865 June
-2022. <doi:10.1214/21-AOAS1522>.  A new class for representing linear networks
-as geometric networks is the core of the package.")
-    (license license:expat)))
-
 (define-public r-geonapi
   (package
     (name "r-geonapi")
@@ -21304,13 +21125,13 @@ initial values for ease of included optimization and simulating.")
 (define-public r-genlib
   (package
     (name "r-genlib")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GENLIB" version))
               (sha256
                (base32
-                "1f4ybng05dsbw6sd7s93y3b8ls0s139zhzpwajzjq4340czshkg2"))))
+                "0zbx4fz0qvm4l81lazkhwyf8lcw174vw44ziwjayrmd6xf52zkck"))))
     (properties `((upstream-name . "GENLIB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp

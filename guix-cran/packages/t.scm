@@ -12,8 +12,8 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages tcl)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tcl)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
@@ -4091,51 +4091,6 @@ dump files).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-truthiness
-  (package
-    (name "r-truthiness")
-    (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "truthiness" version))
-              (sha256
-               (base32
-                "0cssqlrilx2lglr2f53yysqgf604g4y326ijf8avlg6v5l6hlcr1"))))
-    (properties `((upstream-name . "truthiness")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rmarkdown
-                             r-readr
-                             r-rdpack
-                             r-purrr
-                             r-ordinal
-                             r-mass
-                             r-magrittr
-                             r-lme4
-                             r-ggplot2
-                             r-forcats
-                             r-ez
-                             r-emmeans
-                             r-dt
-                             r-dplyr))
-    (home-page "https://github.com/dalejbarr/truthiness")
-    (synopsis "Illusory Truth Longitudinal Study")
-    (description
-     "Data and functions for analyzing and simulating illusory truth datasets,
-developed as part of a longitudinal study by Henderson, Barr, and Simons (2020).
- The illusory truth effect is the observation that people rate repeated
-statements as more likely to be true than novel statements.  We tested the
-trajectory of the illusory truth effect by collecting truth ratings for
-statements repeated across four time intervals: immediately, one day, one week,
-and one month following initial presentation.  The package contains the
-anonymized data from the study along with stimulus materials, as well as
-functions for analyzing the data, running simulations, and calculating power.
-Further details about the project are available at <https://osf.io/nvugt/>,
-which includes Stage 1 of the Registered Report at the Journal of Cognition
-(<https://osf.io/vqnx2/>).")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-trustvdj
   (package
     (name "r-trustvdj")
@@ -4809,44 +4764,6 @@ irregular spaced data.")
     (license (list (license:fsdg-compatible "ACM")
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-trip
-  (package
-    (name "r-trip")
-    (version "1.8.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "trip" version))
-              (sha256
-               (base32
-                "160dp9ji8j4w2fwh62l6cp485iy5n5is451rbgf28d5q0prd912c"))))
-    (properties `((upstream-name . "trip")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-traipse
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-sp
-                             r-rlang
-                             r-reproj
-                             r-raster
-                             r-mass
-                             r-glue
-                             r-geodist
-                             r-dplyr
-                             r-crsmeta))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Trackage/trip")
-    (synopsis "Tools for the Analysis of Animal Track Data")
-    (description
-     "This package provides functions for accessing and manipulating spatial data for
-animal tracking, with straightforward coercion from and to other formats.
-Filter for speed and create time spent maps from animal track data.  There are
-coercion methods to convert between trip and ltraj from adehabitatLT', and
-between trip and psp and ppp from spatstat'.  Trip objects can be created from
-raw or grouped data frames, and from types in the sp', sf', amt', trackeR',
-mousetrap', and other packages.")
-    (license license:gpl3)))
-
 (define-public r-triosgl
   (package
     (name "r-triosgl")
@@ -5147,22 +5064,24 @@ onerous calculations - these calculations are automated by this package.")
 (define-public r-triangle
   (package
     (name "r-triangle")
-    (version "0.12")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "triangle" version))
               (sha256
                (base32
-                "1cv3l97myhkyl0c4xjympqghlk0av8xfk00av8kj93ndgkv5bfj7"))))
+                "0vl8rgasmxb64kkk4vph4b7jzmyq9c0lp5jfr9ybmd8czaz6947l"))))
     (properties `((upstream-name . "triangle")))
     (build-system r-build-system)
+    (propagated-inputs (list r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://bertcarnell.github.io/triangle/")
     (synopsis
-     "Provides the Standard Distribution Functions for the Triangle Distribution")
+     "Distribution Functions and Parameter Estimates for the Triangle Distribution")
     (description
      "This package provides the \"r, q, p, and d\" distribution functions for the
-triangle distribution.")
+triangle distribution.  Also includes maximum likelihood estimation of
+parameters.")
     (license license:gpl2+)))
 
 (define-public r-trialsize
@@ -5701,42 +5620,6 @@ functions for generating customized palettes that are on theme.  The package
 also offers functions for applying the palettes to plots made using the ggplot2
 package.")
     (license license:expat)))
-
-(define-public r-treetop
-  (package
-    (name "r-treetop")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "treetop" version))
-              (sha256
-               (base32
-                "0lisrbmzkil723jwcj422zglr78lbryny02wmnaw7zv2w9gw3xac"))))
-    (properties `((upstream-name . "treetop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stars
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-sp
-                             r-shiny
-                             r-sf
-                             r-rgl
-                             r-rgeos
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-rastervis
-                             r-raster
-                             r-pryr
-                             r-lidr
-                             r-geometry))
-    (home-page "https://github.com/carlos-alberto-silva/weblidar-treetop")
-    (synopsis
-     "Shiny-Based Application for Extracting Forest Information from LiDAR Data")
-    (description
-     "Set of tools implemented into a shiny-based application for extracting and
-analyzing individual tree forest attributes from LiDAR (Light Detection and
-Ranging) data.")
-    (license license:gpl3)))
 
 (define-public r-treetools
   (package
@@ -8661,6 +8544,48 @@ toxpiR package behaves nearly identically to the GUI; the package documentation
 includes notes about all differences.  The vignettes download example files from
 <https://github.com/ToxPi/ToxPi-example-files>.")
     (license license:gpl3+)))
+
+(define-public r-toxicr
+  (package
+    (name "r-toxicr")
+    (version "22.12.1.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ToxicR" version))
+              (sha256
+               (base32
+                "1znhn72pwaqpfkmyn4qx30gspyfxhx2kdrawh78xjzf26k2d0bva"))))
+    (properties `((upstream-name . "ToxicR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-shiny
+                             r-scales
+                             r-rcppgsl
+                             r-rcppeigen
+                             r-rcpp
+                             r-multcomp
+                             r-ggridges
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-doby
+                             r-coda))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://github.com/NIEHS/ToxicR")
+    (synopsis "Analyzing Toxicology Dose-Response Data")
+    (description
+     "Toxicology routines for analyzing dose-response data include dose-response
+analysis and trend tests.  Dose-Response methods are based upon the US EPA's
+benchmark dose software 3.  Methods have been extended to include additional
+functionality based on World Health Organization guidelines.  It further
+supports the European Food Safety Authority's draft guidance on model averaging.
+ The dose-response methods and datasets used in this package are described in
+Wheeler et al. (2019) <doi:10.1111/risa.13218>, Wheeler et al. (2020)
+<doi:10.1111/risa.13537>, and Wheeler et al. (2022) <doi:10.1002/env.2728>.  NTP
+routines are described in Bailer and Portier (1988) <doi:10.2307/2531856>,
+Bieler and Williams (1993) <doi:10.2307/2532200>, Williams (1971)
+<doi:10.2307/2528930>, and Shirley (1977) <doi:10.2307/2529789>.")
+    (license license:lgpl3+)))
 
 (define-public r-toxeval
   (package
@@ -11637,6 +11562,40 @@ of time series based mainly on Akaike and Nakagawa (1988) <ISBN
 978-90-277-2786-2>.")
     (license license:gpl2+)))
 
+(define-public r-timp
+  (package
+    (name "r-timp")
+    (version "1.13.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TIMP" version))
+              (sha256
+               (base32
+                "1if2qm40nlz54pylqvdp4pk2jmicn8wkdlywrkr5hn80c0yyy879"))))
+    (properties `((upstream-name . "TIMP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnls
+                             r-minpack-lm
+                             r-gplots
+                             r-gclus
+                             r-fields
+                             r-desolve
+                             r-colorspace))
+    (home-page "https://github.com/glotaran/TIMP")
+    (synopsis
+     "Fitting Separable Nonlinear Models in Spectroscopy and Microscopy")
+    (description
+     "This package provides a problem solving environment (PSE) for fitting separable
+nonlinear models to measurements arising in physics and chemistry experiments,
+as described by Mullen & van Stokkum (2007) <doi:10.18637/jss.v018.i03> for its
+use in fitting time resolved spectroscopy data, and as described by Laptenok et
+al. (2007) <doi:10.18637/jss.v018.i08> for its use in fitting Fluorescence
+Lifetime Imaging Microscopy (FLIM) data, in the study of FÃ¶rster Resonance
+Energy Transfer (FRET). `TIMP` also serves as the computation backend for the
+`GloTarAn` software, a graphical user interface for the package, as described in
+Snellenburg et al. (2012) <doi:10.18637/jss.v049.i03>.")
+    (license license:gpl2+)))
+
 (define-public r-timevtree
   (package
     (name "r-timevtree")
@@ -11850,28 +11809,6 @@ to extract visualization parameters convert them to JSON format and use them as
 input in a different graphical interface.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-timeseries
-  (package
-    (name "r-timeseries")
-    (version "4021.105")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "timeSeries" version))
-              (sha256
-               (base32
-                "1k6vihbs20m7zjrxh13y9mmsvnia3844c7j13p0b7m5i9fb6rqxz"))))
-    (properties `((upstream-name . "timeSeries")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timedate))
-    (home-page
-     "https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics")
-    (synopsis "Financial Time Series Objects (Rmetrics)")
-    (description
-     "S4 classes and various tools for financial time series: Basic functions such as
-scaling and sorting, subsetting, mathematical operations and statistical
-functions.")
-    (license license:gpl2+)))
 
 (define-public r-timeseq
   (package
@@ -20092,63 +20029,6 @@ computationally very efficient.  The variance of the random error in computing
 power and sample size arising from the simulation approach is analytically
 derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
-    (license license:gpl3)))
-
-(define-public r-tciu
-  (package
-    (name "r-tciu")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TCIU" version))
-              (sha256
-               (base32
-                "1jk62c5s1nqg3aah04f8i9s52d8hqw5s1ckxj52p5bgkx55q83kw"))))
-    (properties `((upstream-name . "TCIU")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-scales
-                             r-rrcov
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-pracma
-                             r-plotly
-                             r-multiwayregression
-                             r-icsnp
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-geometry
-                             r-forecast
-                             r-foreach
-                             r-fmri
-                             r-fancycut
-                             r-extradistr
-                             r-dt
-                             r-dplyr
-                             r-doparallel
-                             r-cubature))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/SOCR/TCIU")
-    (synopsis
-     "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
-    (description
-     "Provide the core functionality to transform longitudinal data to complex-time
-(kime) data using analytic and numerical techniques, visualize the original
-time-series and reconstructed kime-surfaces, perform model based (e.g.,
-tensor-linear regression) and model-free classification and clustering methods
-in the book Dinov, ID and Velev, MV. (2021) \"Data Science: Time Complexity,
-Inferential Uncertainty, and Spacekime Analytics\", De Gruyter STEM Series, ISBN
-978-3-11-069780-3. <https://www.degruyter.com/view/title/576646>.  The package
-includes 18 core functions which can be separated into three groups.  1) draw
-longitudinal data, such as fMRI time-series, and forecast or transform the
-time-series data.  2) simulate real-valued time-series data, e.g., fMRI
-time-courses, detect the activated areas, report the corresponding p-values, and
-visualize the p-values in the 3D brain space.  3) Laplace transform and
-kimesurface reconstructions of the fMRI data.")
     (license license:gpl3)))
 
 (define-public r-tciapathfinder

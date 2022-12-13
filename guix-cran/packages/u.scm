@@ -3550,13 +3550,13 @@ explored and downloaded.")
 (define-public r-ucscxenashiny
   (package
     (name "r-ucscxenashiny")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UCSCXenaShiny" version))
               (sha256
                (base32
-                "0am18hxmcr671pzpms2x6gyndnd8h0dsq72v28ik6c2fjh2wz5x1"))))
+                "0bqj6vbhjn2wgq2486qyfl8wfsgz1gd0kwxrvjxp8fvx96nsrx1l"))))
     (properties `((upstream-name . "UCSCXenaShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucscxenatools

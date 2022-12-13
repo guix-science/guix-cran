@@ -2295,6 +2295,34 @@ B-splines from the perspective of generalized linear mixed models.  Left
 truncated and right censoring data are allowed.")
     (license license:gpl2)))
 
+(define-public r-bsgw
+  (package
+    (name "r-bsgw")
+    (version "0.9.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BSGW" version))
+              (sha256
+               (base32
+                "05gr0p9fmj5560s083iss8j4gyh5rk0kdi3qhq5dzr9mfzy0n12q"))))
+    (properties `((upstream-name . "BSGW")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mfusampler r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=BSGW")
+    (synopsis
+     "Bayesian Survival Model with Lasso Shrinkage Using Generalized Weibull Regression")
+    (description
+     "Bayesian survival model using Weibull regression on both scale and shape
+parameters.  Dependence of shape parameter on covariates permits deviation from
+proportional-hazard assumption, leading to dynamic - i.e.  non-constant with
+time - hazard ratios between subjects.  Bayesian Lasso shrinkage in the form of
+two Laplace priors - one for scale and one for shape coefficients - allows for
+many covariates to be included.  Cross-validation helper functions can be used
+to tune the shrinkage parameters.  Monte Carlo Markov Chain (MCMC) sampling
+using a Gibbs wrapper around Radford Neal's univariate slice sampler (R package
+MfUSampler) is used for coefficient estimation.")
+    (license license:gpl2+)))
+
 (define-public r-bsearchtools
   (package
     (name "r-bsearchtools")
@@ -7914,13 +7942,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.15")
+    (version "1.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blogdown" version))
               (sha256
                (base32
-                "0299pf06ls16cyk5f3k73zwp2g094zgafdja9ibmwcpv64qmb1hs"))))
+                "15d89ii4ky6daflpv9iw7xrxfswylmj2mijmwysar4h2djs2wpn4"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10567,33 +10595,6 @@ lasso/elastic net, PCLDA, PLSDA, and several t-tests.  Two approaches for
 selecting cutoffs can be used, one based on the stability of model coefficients
 under perturbation, and the other on higher criticism.")
     (license license:gpl2+)))
-
-(define-public r-biolinv
-  (package
-    (name "r-biolinv")
-    (version "0.1-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Biolinv" version))
-              (sha256
-               (base32
-                "1c081rhbgl6n76p2knaiyvjx0l02slix92vgfl2spss5cb9qzkln"))))
-    (properties `((upstream-name . "Biolinv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat-core
-                             r-spatstat
-                             r-sp
-                             r-raster
-                             r-fields
-                             r-classint))
-    (home-page "https://doi.org/10.1371/journal.pone.0205591")
-    (synopsis "Modelling and Forecasting Biological Invasions")
-    (description
-     "Analysing and forecasting biological invasions time series with a stochastic
-approach that accounts for human-aided dispersal, habitat suitability and
-provides estimates confidence level.")
-    (license license:gpl3)))
 
 (define-public r-biolink
   (package
@@ -18945,13 +18946,13 @@ such as rng, quantile, and distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.2-0")
+    (version "7.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesTFR" version))
               (sha256
                (base32
-                "0iax6z6c6vxgq5v1n357i8grdrbymgc7dv091bhdgrd7352cpqxc"))))
+                "1z816jdva0z103bibx1c8f5yn5zbfxr4cfwh1wn29p6f1j6madcc"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019

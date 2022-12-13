@@ -2860,30 +2860,6 @@ H. Martin (2022, ISBN:978-0131873216) <https://web.stanford.edu/~jurafsky/slp3/>
 Learning\".")
     (license license:gpl3+)))
 
-(define-public r-attempt
-  (package
-    (name "r-attempt")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "attempt" version))
-              (sha256
-               (base32
-                "1ylgg7jcp8wqmxgf1mydnvh26k0mr8jyjla4hw06730r40yrs58m"))))
-    (properties `((upstream-name . "attempt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ColinFay/attempt")
-    (synopsis "Tools for Defensive Programming")
-    (description
-     "Tools for defensive programming, inspired by purrr mappers and based on
-rlang'.'attempt extends and facilitates defensive programming by providing a
-consistent grammar, and provides a set of easy to use functions for common tests
-and conditions.  attempt only depends on rlang', and focuses on speed, so it can
-be easily integrated in other functions and used in data analysis.")
-    (license license:expat)))
-
 (define-public r-attachment
   (package
     (name "r-attachment")
@@ -8561,27 +8537,6 @@ parameter subsets.  For a reference on the method, see Bezdek and Hathaway
 (2002) \"Some Notes on Alternating Optimization\" <doi:10.1007/3-540-45631-7_39>.")
     (license license:gpl3)))
 
-(define-public r-anytime
-  (package
-    (name "r-anytime")
-    (version "0.3.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "anytime" version))
-              (sha256
-               (base32
-                "0jjpqynai5nd7mfy1smb44356f3d5bmpxhs1i9x9jw5c959c35hh"))))
-    (properties `((upstream-name . "anytime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "http://dirk.eddelbuettel.com/code/anytime.html")
-    (synopsis "Anything to 'POSIXct' or 'Date' Converter")
-    (description
-     "Convert input in any one of character, integer, numeric, factor, or ordered type
-into POSIXct (or Date') objects, using one of a number of predefined formats,
-and relying on Boost facilities for date and time parsing.")
-    (license license:gpl2+)))
-
 (define-public r-anylib
   (package
     (name "r-anylib")
@@ -8659,6 +8614,26 @@ format.  This is useful for a company to use internally, where it may not be
 possible to create badges through external providers.  This project was inspired
 by the anybadge library in python.")
     (license license:expat)))
+
+(define-public r-anxietysleep
+  (package
+    (name "r-anxietysleep")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AnxietySleep" version))
+              (sha256
+               (base32
+                "07im2gjq62y3vgim9j0ar29qhmi7r79zbjdi024h04mxrwpic5z6"))))
+    (properties `((upstream-name . "AnxietySleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lifecycle r-data-table))
+    (home-page "https://github.com/NIM-ACh/AnxietySleep")
+    (synopsis "Sleep Quality and Anxiety in Confinement")
+    (description
+     "Data from the anxiety and confinement study from Alvarado-Aravena et al. (2022)
+<doi:10.3390/bs12100398>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ants
   (package
@@ -11016,6 +10991,27 @@ is based on the groundwater flow equation solved numerically using the finite
 difference explicit scheme.")
     (license license:gpl3+)))
 
+(define-public r-amazons3r
+  (package
+    (name "r-amazons3r")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "amazons3R" version))
+              (sha256
+               (base32
+                "1h39cm0vyrr299wfpq9p1dpbgrjhkr28wm2q23lq8627i4b8bn5m"))))
+    (properties `((upstream-name . "amazons3R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Amazon S3 Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Amazon S3 using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
+
 (define-public r-amazonadsr
   (package
     (name "r-amazonadsr")
@@ -13073,6 +13069,29 @@ functions allowing to perform the assimilation of observed discharges via the
 Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
 (2021) <doi:10.1029/2020WR028390>.")
     (license license:gpl2)))
+
+(define-public r-airgrdatasets
+  (package
+    (name "r-airgrdatasets")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "airGRdatasets" version))
+              (sha256
+               (base32
+                "1gz7irz0kzdni0dksi4qa0xa6n018l31xjdh4w1r40v38g4c6hai"))))
+    (properties `((upstream-name . "airGRdatasets")))
+    (build-system r-build-system)
+    (home-page
+     "https://gitlab.irstea.fr/HYCAR-Hydro/airgrgalaxy/airgrdatasets")
+    (synopsis
+     "Hydro-Meteorological Catchments Datasets for the 'airGR' Packages")
+    (description
+     "Sample of hydro-meteorological datasets extracted from the CAMELS-FR French
+database <https://hal.inrae.fr/hal-03687235>.  It provides metadata and
+catchment-scale aggregated hydro-meteorological time series on a pool of French
+catchments for use by the airGR packages.")
+    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-airgr
   (package
@@ -16932,13 +16951,13 @@ Profiles for Tissue Specific cells <doi:10.1371/journal.pone.0224693>.")
 (define-public r-adaptr
   (package
     (name "r-adaptr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adaptr" version))
               (sha256
                (base32
-                "0vq3qavydqyd3vyv6jpgig2qrv8lcnbyy81n3k8sbfcf16p7p0ip"))))
+                "17yfwzvcfmr2k7d4zjhwa55kifjbj5rwxd2gdyr56lb5pk6zrn15"))))
     (properties `((upstream-name . "adaptr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -3895,18 +3895,18 @@ Based on Hohmann (2019) <arXiv:1901.10754>.")
 (define-public r-ipmr
   (package
     (name "r-ipmr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipmr" version))
               (sha256
                (base32
-                "14hls6cvdfgkc253514vjrfw049ms846llv4677zsi0nqjzgbqkz"))))
+                "1h4y0ayq9bnspr17y65fwpa157iylrf0y0iza1zwy4scrvs39aw5"))))
     (properties `((upstream-name . "ipmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-purrr r-magrittr))
     (native-inputs (list r-knitr))
-    (home-page "https://levisc8.github.io/ipmr/")
+    (home-page "https://padrinoDB.github.io/ipmr/")
     (synopsis "Integral Projection Models")
     (description
      "Flexibly implements Integral Projection Models using a mathematical(ish) syntax.
@@ -12199,27 +12199,6 @@ very simple file format designed for storing vectors and multidimensional
 matrices in binary format.  The format is described on the website from Yann
 LeCun <http://yann.lecun.com/exdb/mnist/>.")
     (license license:expat)))
-
-(define-public r-idspatialstats
-  (package
-    (name "r-idspatialstats")
-    (version "0.3.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IDSpatialStats" version))
-              (sha256
-               (base32
-                "0gkicafnzq8aq9bmbbr9n868sh91dwkhs1dk4wry5vkbfaawfxis"))))
-    (properties `((upstream-name . "IDSpatialStats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-spatstat-core r-igraph
-                             r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=IDSpatialStats")
-    (synopsis "Estimate Global Clustering in Infectious Disease")
-    (description
-     "This package implements various novel and standard clustering statistics and
-other analyses useful for understanding the spread of infectious disease.")
-    (license license:gpl2+)))
 
 (define-public r-idsl-ufax
   (package

@@ -7745,13 +7745,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.53")
+    (version "2.0.54")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "17y63pk2ldqjryfxs0n8iwjixm77dlc0lajwmjqyqm8ja28kaw7l"))))
+                "0x8h4ry4dx01s0rvihv7qjdyhdgncjip10xi13iac6ra910znzdr"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9705,6 +9705,49 @@ biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
 (2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
 Baumgartner (2019) <doi:10.1111/ecog.03900>.")
     (license license:gpl2)))
+
+(define-public r-enmsdmx
+  (package
+    (name "r-enmsdmx")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "enmSdmX" version))
+              (sha256
+               (base32
+                "1j0yz5s7c7sk8sk6scb389py64r6f3fqbxq0a1bi1z4ddzmiaviw"))))
+    (properties `((upstream-name . "enmSdmX")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-scales
+                             r-randomforest
+                             r-omnibus
+                             r-mumin
+                             r-mgcv
+                             r-maxnet
+                             r-ks
+                             r-gbm
+                             r-foreach
+                             r-doparallel
+                             r-dismo
+                             r-boot))
+    (home-page "https://github.com/adamlilith/enmSdmX")
+    (synopsis "Species Distribution Modeling and Ecological Niche Modeling")
+    (description
+     "This package implements species distribution modeling and ecological niche
+modeling, including: bias correction, spatial cross-validation, model
+evaluation, raster interpolation, biotic \"velocity\" (speed and direction of
+movement of a \"mass\" represented by a raster), interpolating across a time
+series of rasters, and use of spatially imprecise records.  The heart of the
+package is a set of \"training\" functions which automatically optimize model
+complexity based number of available occurrences.  These algorithms include
+MaxEnt, MaxNet, boosted regression trees/gradient boosting machines, generalized
+additive models, generalized linear models, natural splines, and random forests.
+ To enhance interoperability with other modeling packages, no new classes are
+created.  The package works with PROJ6 geodetic objects and coordinate reference
+systems.")
+    (license license:expat)))
 
 (define-public r-enmeval
   (package

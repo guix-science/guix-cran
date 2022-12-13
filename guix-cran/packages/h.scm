@@ -803,41 +803,6 @@ plant-specific model.  The approach is proposed and validated in Greimel et al.
 is based on the event detection implemented in hydropeak'.")
     (license license:gpl2)))
 
-(define-public r-hydrorecipes
-  (package
-    (name "r-hydrorecipes")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hydrorecipes" version))
-              (sha256
-               (base32
-                "0if79msr8rn1ylk36sqa7maynz20v4y6q7h6xiqijlbnikm7n502"))))
-    (properties `((upstream-name . "hydrorecipes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-recipes
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-generics
-                             r-fftw
-                             r-earthtide
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jkennel/hydrorecipes")
-    (synopsis "Hydrogeology Steps for the 'recipes' Package")
-    (description
-     "Additional steps to be used with the recipes package.  New steps were designed
-for regression deconvolution on datasets with millions of rows with applications
-to signal decomposition and response characterization.  The methods in this
-package were developed as part of PhD thesis titled High Frequency Water Level
-Responses to Natural Signals <http://hdl.handle.net/10214/17890> by Jonathan
-Kennel in 2020.")
-    (license license:gpl3)))
-
 (define-public r-hydropso
   (package
     (name "r-hydropso")
@@ -6779,31 +6744,6 @@ keep on going in enriching it with more features.  References: Meuwissen et al.
 <doi:10.1038/s41467-019-12653-0>; Henderson (1976) <doi:10.2307/2529339>;
 Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
     (license license:gpl3)))
-
-(define-public r-hht
-  (package
-    (name "r-hht")
-    (version "2.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hht" version))
-              (sha256
-               (base32
-                "06znfxl5qh3wz1bn5qzl45nqgy94y6h0rcl2wzg94czv5d1a9ym0"))))
-    (properties `((upstream-name . "hht")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-spatstat-core r-fields r-emd))
-    (home-page "https://cran.r-project.org/package=hht")
-    (synopsis "The Hilbert-Huang Transform: Tools and Methods")
-    (description
-     "Builds on the EMD package to provide additional tools for empirical mode
-decomposition (EMD) and Hilbert spectral analysis.  It also implements the
-ensemble empirical decomposition (EEMD) and the complete ensemble empirical mode
-decomposition (CEEMD) methods to avoid mode mixing and intermittency problems
-found in EMD analysis.  The package comes with several plotting methods that can
-be used to view intrinsic mode functions, the HHT spectrum, and the Fourier
-spectrum.")
-    (license license:gpl3+)))
 
 (define-public r-hhsmm
   (package

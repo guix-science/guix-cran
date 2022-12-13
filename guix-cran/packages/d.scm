@@ -8065,6 +8065,32 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
 
+(define-public r-dlssm
+  (package
+    (name "r-dlssm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DLSSM" version))
+              (sha256
+               (base32
+                "0ca9z48kfzximk6b49mqcfw50av9zh3jf9frjjsc8xwyyc6fq381"))))
+    (properties `((upstream-name . "DLSSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DLSSM")
+    (synopsis "Dynamic Logistic State Space Prediction Model")
+    (description
+     "This package implements the dynamic logistic state space model for binary
+outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
+provides a computationally efficient way to update the prediction whenever new
+data becomes available.  It allows for both time-varying and time-invariant
+coefficients, and use cubic smoothing splines to model varying coefficients.
+The smoothing parameters are objectively chosen by maximum likelihood.  The
+model is updated using batch data accumulated at pre-specified time intervals.")
+    (license license:gpl3)))
+
 (define-public r-dlsem
   (package
     (name "r-dlsem")
@@ -11256,24 +11282,6 @@ bandwidth selectors in Hall, Watson and Cabrera (1987)
 <doi:10.1093/biomet/74.4.751> and the plug-in bandwidth selectors in
 GarcÃ­a-PortuguÃ©s (2013) <doi:10.1214/13-ejs821>.")
     (license license:gpl3)))
-
-(define-public r-dirmult
-  (package
-    (name "r-dirmult")
-    (version "0.1.3-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dirmult" version))
-              (sha256
-               (base32
-                "05whzhl81nyag7321hw98xa63r440s9bgj1764346yvm9bvzjqi4"))))
-    (properties `((upstream-name . "dirmult")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=dirmult")
-    (synopsis "Estimation in Dirichlet-Multinomial Distribution")
-    (description
-     "Estimate parameters in Dirichlet-Multinomial and compute log-likelihoods.")
-    (license license:gpl2+)))
 
 (define-public r-dirmcmc
   (package

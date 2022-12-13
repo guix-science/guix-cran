@@ -4390,26 +4390,6 @@ data pipelines, modeling work flows, and more.  Please see the vignettes for
 detailed example use cases.")
     (license license:expat)))
 
-(define-public r-logging
-  (package
-    (name "r-logging")
-    (version "0.10-108")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "logging" version))
-              (sha256
-               (base32
-                "13gd40ygx586vs6xcp6clg69a92aj8zxlk1rn3xzkx8klfjimjc5"))))
-    (properties `((upstream-name . "logging")))
-    (build-system r-build-system)
-    (home-page "https://github.com/WLOGSolutions/r-logging")
-    (synopsis "R Logging Package")
-    (description
-     "Pure R implementation of the ubiquitous log4j package.  It offers hierarchic
-loggers, multiple handlers per logger, level based filtering, space handling in
-messages and custom formatting.")
-    (license license:gpl3)))
-
 (define-public r-logcondiscr
   (package
     (name "r-logcondiscr")

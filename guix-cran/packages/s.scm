@@ -1432,6 +1432,27 @@ immediate feedback as they are guided through self-paced lessons in data science
 and R programming.")
     (license license:expat)))
 
+(define-public r-swiper
+  (package
+    (name "r-swiper")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "swipeR" version))
+              (sha256
+               (base32
+                "15n4kgiq1v2kjdkcimi0cs1psj0224598px1yw2xhlsjvb6x6p1f"))))
+    (properties `((upstream-name . "swipeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-htmlwidgets r-htmltools))
+    (home-page "https://github.com/stla/swipeR")
+    (synopsis "Carousels using the 'JavaScript' Library 'Swiper'")
+    (description
+     "Create carousels using the JavaScript library Swiper and the package
+htmlwidgets'.  The carousels can be displayed in the RStudio viewer pane, in
+Shiny applications and in R markdown documents.")
+    (license license:gpl3)))
+
 (define-public r-swimplot
   (package
     (name "r-swimplot")
@@ -2246,25 +2267,25 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svrep" version))
               (sha256
                (base32
-                "104mwkappywssmcfygvxrcfsi4m7jhyak10z7c78if4f7v3h3mfa"))))
+                "04mvhmkhavz1a96y5r8sr8fc8cyxi9hq0cbrsilfdpy096dkksgc"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey))
+    (propagated-inputs (list r-survey r-mvtnorm))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bschneidr/svrep")
+    (home-page "https://bschneidr.github.io/svrep/")
     (synopsis
      "Tools for Creating, Updating, and Analyzing Survey Replicate Weights")
     (description
      "This package provides tools for creating and working with survey replicate
 weights, extending functionality of the survey package from Lumley (2004)
 <doi:10.18637/jss.v009.i08>.  Methods are provided for applying nonresponse
-adjustments to both full-sample and replicate weights as suggested by Rust and
+adjustments to both full-sample and replicate weights as described by Rust and
 Rao (1996) <doi:10.1177/096228029600500305>.  Implements methods for
 sample-based calibration described by Opsomer and Erciulescu (2021)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2021002/article/00006-eng.htm>.
@@ -6474,26 +6495,33 @@ structure information.")
 (define-public r-strucdiv
   (package
     (name "r-strucdiv")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StrucDiv" version))
               (sha256
                (base32
-                "0wg49rgm1ipkxwgziaqwk2rr7xx6m4hjbnww67n2yfd11z407yrk"))))
+                "0z8i8dk5m0ll0dixn3d0mjb6brzrmwnik4vzz5n4rmvjv47flj8b"))))
     (properties `((upstream-name . "StrucDiv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpp r-raster))
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpp
+                             r-raster
+                             r-glue
+                             r-foreach
+                             r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=StrucDiv")
+    (home-page "https://github.com/leilsc/StrucDiv")
     (synopsis "Spatial Structural Diversity Quantification in Raster Data")
     (description
-     "Spatial structural diversity refers to the spatial arrangement of landscape
-elements and can reveal itself as landscape features, such as patches and line
-features.  The R package StrucDiv provides methods to quantify spatial
-structural diversity in continuous remote sensing data, or in other data in
-gridded field format.  The methods are based on second-order texture metrics,
-considering the spatial arrangement of pixel pairs.")
+     "Spatial structural diversity refers to the spatial, i.e.  horizontal arrangement
+of landscape elements and can reveal itself as landscape features, such as
+patches and linear features.  The R package StrucDiv provides methods to
+quantify spatial structural diversity in continuous remote sensing data, or in
+other data in raster format.  Structure is based on the spatial arrangement of
+value pairs.  The R package StrucDiv includes methods to combine information
+from different spatial scales, which allows to quantify multi-scale spatial
+structural diversity.")
     (license license:gpl3+)))
 
 (define-public r-strucchangercpp
@@ -10517,18 +10545,16 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
 (define-public r-statnipokladna
   (package
     (name "r-statnipokladna")
-    (version "0.7.0")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statnipokladna" version))
               (sha256
                (base32
-                "0xds27abs9x853nhy5xljldmxh5xrkxfgn5q6qw8b093ynrsvbrp"))))
+                "1n7gvr57c27ilxrnpmr0bz6hc0d39lp6rnn4dkqdwdapzyhfymq4"))))
     (properties `((upstream-name . "statnipokladna")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-usethis
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -10542,7 +10568,8 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
                              r-jsonlite
                              r-httr
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/petrbouchal/statnipokladna")
     (synopsis "Use Data from the Czech Public Finance Database")
@@ -10657,34 +10684,6 @@ Wobbrock et al.  2011 <doi:10.1145/1978942.1978963>), 2-D histograms and
 histograms with overlapping bins, a function for making all possible formulae
 within a set of constraints, amongst others.")
     (license license:gpl3+)))
-
-(define-public r-statip
-  (package
-    (name "r-statip")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "statip" version))
-              (sha256
-               (base32
-                "0kymc3ds1nx0h11ffmm3vmqr1w34gd0k788vf72x2v45h8c1ma2n"))))
-    (properties `((upstream-name . "statip")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rpart r-clue))
-    (home-page "https://github.com/paulponcet/statip")
-    (synopsis
-     "Statistical Functions for Probability Distributions and Regression")
-    (description
-     "This package provides a collection of miscellaneous statistical functions for
-probability distributions: dbern()', pbern()', qbern()', rbern() for the
-Bernoulli distribution, and distr2name()', name2distr() for distribution names;
-probability density estimation: densityfun()'; most frequent value estimation:
-mfv()', mfv1()'; other statistical measures of location: cv() (coefficient of
-variation), midhinge()', midrange()', trimean()'; construction of histograms:
-histo()', find_breaks()'; calculation of the Hellinger distance: hellinger()';
-use of classical kernels: kernelfun()', kernel_properties()'; univariate
-piecewise-constant regression: picor()'.")
-    (license license:gpl3)))
 
 (define-public r-stationery
   (package
@@ -12520,32 +12519,6 @@ properties of the estimators (covariance matrix, confidence intervals) are also
 provided.")
     (license license:gpl2+)))
 
-(define-public r-stable
-  (package
-    (name "r-stable")
-    (version "1.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stable" version))
-              (sha256
-               (base32
-                "194xsa291v5f0jya1c3aigbclg8cci427ffpb8brxamm6n57hf12"))))
-    (properties `((upstream-name . "stable")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmutil))
-    (home-page "https://www.commanster.eu/rcode.html")
-    (synopsis
-     "Probability Functions and Generalized Regression Models for Stable Distributions")
-    (description
-     "Density, distribution, quantile and hazard functions of a stable variate;
-generalized regression models for the parameters of a stable distribution.  See
-the README for how to make equivalent calls to those of stabledist (i.e.,
-Nolan's 0-parameterization and 1-parameterization as detailed in Nolan (2020)).
-See github for Lambert and Lindsey 1999 JRSS-C journal article, which details
-the parameterization of the Buck (1995) stable.  See the Details section of the
-`?dstable` help file for context and references.")
-    (license license:gpl2+)))
-
 (define-public r-stabilizedregression
   (package
     (name "r-stabilizedregression")
@@ -13105,13 +13078,13 @@ loss, squared-hinge loss, and logistic loss.")
 (define-public r-ssnbayes
   (package
     (name "r-ssnbayes")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSNbayes" version))
               (sha256
                (base32
-                "0kp7c4pynisqji6lfwnklsvjbwx44424qkyd4syhsn3rrr510ph5"))))
+                "0y5n9c9a6kd53ijai18arpsm09jp3v3f31zgg22y0pz6i3y24hm3"))))
     (properties `((upstream-name . "SSNbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn r-rstan r-plyr r-dplyr))
@@ -13456,13 +13429,13 @@ Can also expand schedules into flights.")
 (define-public r-sship
   (package
     (name "r-sship")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sship" version))
               (sha256
                (base32
-                "0khmi81pw5vqv42v9iynq7r9jwan8g2xzlapp26y9i3kyxfavg17"))))
+                "0h0cbbvqfmik2z0qp34gym81p01x01yndymczb8vpqnj0nfnmyhc"))))
     (properties `((upstream-name . "sship")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rcurl r-openssl r-jsonlite r-httr))
@@ -14857,16 +14830,16 @@ externally.")
 (define-public r-sptotal
   (package
     (name "r-sptotal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sptotal" version))
               (sha256
                (base32
-                "0lcq7ldrgy93i1pk2hhwfmhqhmijv9g5p7jdsh9hrfky51w8vrql"))))
+                "09wkcc1lbc9d0m19ncqcb3xxgl30lyii6r5nqb9rbjqyf2jl2iak"))))
     (properties `((upstream-name . "sptotal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis r-sp r-ggplot2))
+    (propagated-inputs (list r-viridis r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://highamm.github.io/sptotal/index.html")
     (synopsis "Predicting Totals and Weighted Sums from Spatial Data")
@@ -16422,39 +16395,6 @@ functions estimation for point pattern analysis on network, k nearest neighbours
 on network, reachable area calculation, and graph generation References: Okabe
 et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
 ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
-    (license license:gpl2)))
-
-(define-public r-spnetprep
-  (package
-    (name "r-spnetprep")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SpNetPrep" version))
-              (sha256
-               (base32
-                "1jhjyrb0k5z21vn9bc444rxax3lxsyzyhggrcy7zl9ps7p4ra990"))))
-    (properties `((upstream-name . "SpNetPrep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-linnet
-                             r-spatstat-geom
-                             r-spatstat-core
-                             r-spatstat
-                             r-sp
-                             r-shinythemes
-                             r-shiny
-                             r-rgdal
-                             r-raster
-                             r-prodlim
-                             r-maptools
-                             r-leaflet))
-    (home-page "https://cran.r-project.org/package=SpNetPrep")
-    (synopsis "Linear Network Preprocessing for Spatial Statistics")
-    (description
-     "Launches a Shiny application that allows users to carry out some of the steps
-that are required to curate both a linear network object based on a road
-structure and a point pattern that lies on such a network, becoming two previous
-steps to the performance of a spatial statistics analysis.")
     (license license:gpl2)))
 
 (define-public r-spnet
@@ -22527,13 +22467,13 @@ detailed in Peruzzi and Dunson (2020) <arXiv:2012.00943>.  Funded by ERC grant
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "4.1.0")
+    (version "4.1.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spaMM" version))
               (sha256
                (base32
-                "05i3nn2pnr9nv9vvhx4ndpx1nd55m9d4ra6jqxgz4mhdrklgj1h4"))))
+                "112jw1y95s704k230vnpa8lmzcallzvgrx4xkypdg0w8pp8ap7l3"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -23076,13 +23016,13 @@ SoundShape repository on GitHub for news and updates
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.5.2")
+    (version "2.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "soundgen" version))
               (sha256
                (base32
-                "1jbcn6rvch8w6myrmlbp19vlvpk9hnnqg06c2idlmxn52z5ga60g"))))
+                "0mbf9c640gqx7amc94z0dc0b8lky1b6db4w60lsk0lad11f5zl9m"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23097,7 +23037,6 @@ SoundShape repository on GitHub for news and updates
                              r-foreach
                              r-dtw
                              r-doparallel))
-    (native-inputs (list r-knitr))
     (home-page "http://cogsci.se/soundgen.html")
     (synopsis "Sound Synthesis and Acoustic Analysis")
     (description
@@ -28244,13 +28183,13 @@ categorical predictor.")
 (define-public r-slfpca
   (package
     (name "r-slfpca")
-    (version "2.0")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SLFPCA" version))
               (sha256
                (base32
-                "1lcyqxqjpzw6zcyhr8c1wb6j10l2z341fma5pmmii8lc6y0qmd14"))))
+                "1zib01240ds8q0cafp0dpz70jvjy322hnxg26f16h1lpmn55l0aj"))))
     (properties `((upstream-name . "SLFPCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-fdapace r-fda))
@@ -37310,26 +37249,6 @@ model like node or edge with customized attributes for R. shinyCyJS is built
 with cytoscape.js and htmlwidgets R package.")
     (license license:expat)))
 
-(define-public r-shinycustomloader
-  (package
-    (name "r-shinycustomloader")
-    (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "shinycustomloader" version))
-              (sha256
-               (base32
-                "1klx71vr26g0gjf6hbiia1qidqii5d467i1sdjvlrg1hxdcggqff"))))
-    (properties `((upstream-name . "shinycustomloader")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-glue))
-    (home-page "https://cran.r-project.org/package=shinycustomloader")
-    (synopsis "Custom Loader for Shiny Outputs")
-    (description
-     "This package provides a custom css/html or gif/image file for the loading screen
-in R shiny'.  It also can use the marquee to have custom text loading screen.")
-    (license license:gpl3)))
-
 (define-public r-shinycohortbuilder
   (package
     (name "r-shinycohortbuilder")
@@ -40775,13 +40694,13 @@ methods.")
 (define-public r-seqhmm
   (package
     (name "r-seqhmm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seqHMM" version))
               (sha256
                (base32
-                "171vs3wm3vy7b61v4c0gwy27sfsqspnvcv5yc033zig8pnsnbn4f"))))
+                "0pyr2a54g5709z57cw1hm33q06i3h0yhdinkxqiqf2a3jm7ih975"))))
     (properties `((upstream-name . "seqHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -45442,6 +45361,37 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 <doi:10.1007/s43071-021-00008-1>.")
     (license license:expat)))
 
+(define-public r-sdpdmod
+  (package
+    (name "r-sdpdmod")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SDPDmod" version))
+              (sha256
+               (base32
+                "17wyymjip84dxpncz6kqg32wlwn5qgw7x54djg301wqmvpjyl2y8"))))
+    (properties `((upstream-name . "SDPDmod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sp
+                             r-sf
+                             r-rspectra
+                             r-plm
+                             r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SDPDmod")
+    (synopsis "Spatial Dynamic Panel Data Modeling")
+    (description
+     "Spatial model calculation for static and dynamic panel data models, weights
+matrix creation and Bayesian model comparison.  Bayesian model comparison
+methods were described by LeSage (2014) <doi:10.1016/j.spasta.2014.02.002>.  The
+Lee'-'Yu transformation approach is described in Yu', De Jong and Lee (2008)
+<doi:10.1016/j.jeconom.2008.08.002>, Lee and Yu (2010)
+<doi:10.1016/j.jeconom.2009.08.001> and Lee and Yu (2010)
+<doi:10.1017/S0266466609100099>.")
+    (license license:gpl3+)))
+
 (define-public r-sdmvspecies
   (package
     (name "r-sdmvspecies")
@@ -46385,13 +46335,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scrutiny" version))
               (sha256
                (base32
-                "0wz9zjfww6lgabsp6m9fvjrnf351srhdxa5cmih5lj9vy296nmk5"))))
+                "13b257sl375rp2nzp2h2p1zlw7xcvxk59blnyn7pf9snmkncsi7j"))))
     (properties `((upstream-name . "scrutiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

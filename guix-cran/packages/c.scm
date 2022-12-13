@@ -4817,6 +4817,31 @@ repositories.  For more details on core method, refer to Nibbe et al. (2010)
 <doi:10.1371/journal.pcbi.1000639>.")
     (license license:gpl3+)))
 
+(define-public r-crosstabs-loglinear
+  (package
+    (name "r-crosstabs-loglinear")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Crosstabs.Loglinear" version))
+              (sha256
+               (base32
+                "0238652k1mv396wjxm058xvhp7rss0nkmn48bvkhq6pcryna2lzb"))))
+    (properties `((upstream-name . "Crosstabs.Loglinear")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Crosstabs.Loglinear")
+    (synopsis "Cross Tabulation and Loglinear Analyses of Categorical Data")
+    (description
+     "This package provides SPSS'- and SAS'-like output for cross tabulations of two
+categorical variables (CROSSTABS) and for hierarchical loglinear analyses of two
+or more categorical variables (LOGLINEAR).  The methods are described in Agresti
+(2013, ISBN:978-0-470-46363-5), Ajzen & Walker (2021, ISBN:9780429330308), Field
+(2018, ISBN:9781526440273), Norusis (2012, ISBN:978-0-321-74843-0), Nussbaum
+(2015, ISBN:978-1-84872-603-1), Stevens (2009, ISBN:978-0-8058-5903-4),
+Tabachnik & Fidell (2019, ISBN:9780134790541), and von Eye & Mun (2013,
+ISBN:978-1-118-14640-8).")
+    (license license:gpl2+)))
+
 (define-public r-crosstable
   (package
     (name "r-crosstable")
@@ -12616,13 +12641,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contingencytables" version))
               (sha256
                (base32
-                "0d8270n1crag42an53mhjx82pp3j8ayly6rz5dmxmmdgx9i0nxlk"))))
+                "18j7iaficb0lhl6g83cgr346a1wq19s20nmiclrxryyk88pswzak"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -21577,24 +21602,6 @@ estimands arising from population-level treatment policies.  The estimands and
 estimators are introduced in Barkley et al. (2017) <arXiv:1711.04834>.")
     (license license:gpl3)))
 
-(define-public r-clustercrit
-  (package
-    (name "r-clustercrit")
-    (version "1.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clusterCrit" version))
-              (sha256
-               (base32
-                "10pz1bikdbkm2ky3xnagp0qv60whalavp6j39b4p7d75jj5xcxgk"))))
-    (properties `((upstream-name . "clusterCrit")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "http:www.r-project.org")
-    (synopsis "Clustering Indices")
-    (description "Compute clustering validation indices.")
-    (license license:gpl2+)))
-
 (define-public r-clustercons
   (package
     (name "r-clustercons")
@@ -29293,35 +29300,6 @@ compute an encoding (real functional variable) for each state
 statistical analysis on categorical functional data.")
     (license license:agpl3)))
 
-(define-public r-cfc
-  (package
-    (name "r-cfc")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CFC" version))
-              (sha256
-               (base32
-                "0k0685cgsd0lm7id6h216r4x236xn3nqj4h906qn2i0kvwmx4nda"))))
-    (properties `((upstream-name . "CFC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-foreach
-                             r-doparallel
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=CFC")
-    (synopsis "Cause-Specific Framework for Competing-Risk Analysis")
-    (description
-     "Numerical integration of cause-specific survival curves to arrive at
-cause-specific cumulative incidence functions, with three usage modes: 1)
-Convenient API for parametric survival regression followed by competing-risk
-analysis, 2) API for CFC, accepting user-specified survival functions in R, and
-3) Same as 2, but accepting survival functions in C++.")
-    (license license:gpl2+)))
-
 (define-public r-cfbfastr
   (package
     (name "r-cfbfastr")
@@ -30650,6 +30628,28 @@ EHR corpora and obtain clinical event dates: <https://cedars.io>.")
 different levels of gene expression.  Multi-component normal mixture models and
 EM algorithms are used for modeling.")
     (license license:asl2.0)))
+
+(define-public r-cec
+  (package
+    (name "r-cec")
+    (version "0.11.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CEC" version))
+              (sha256
+               (base32
+                "0qa46iq3m510sjb3ap4m5lkaajk15vi3xjwqgnpdw0jh0m0vkabf"))))
+    (properties `((upstream-name . "CEC")))
+    (build-system r-build-system)
+    (home-page "https://github.com/swarm-lab/cec")
+    (synopsis "Cross-Entropy Clustering")
+    (description
+     "Splits data into Gaussian type clusters using the Cross-Entropy Clustering
+('CEC') method.  This method allows for the simultaneous use of various types of
+Gaussian mixture models, for performing the reduction of unnecessary clusters,
+and for discovering new clusters by splitting them.  CEC is based on the work of
+Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
+    (license license:gpl3)))
 
 (define-public r-cdvinecopulaconditional
   (package

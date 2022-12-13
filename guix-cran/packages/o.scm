@@ -6,8 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
@@ -1371,36 +1371,6 @@ Factorization\" which will be submitted to BBRC.")
 background maps and add a correct scale bar to OpenStreetMap plots in any map
 projection.")
     (license license:gpl2+)))
-
-(define-public r-osmplotr
-  (package
-    (name "r-osmplotr")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "osmplotr" version))
-              (sha256
-               (base32
-                "0p94phv7jn0q9k25300zz59ldfphm9xgy6i7n3r8xj4zay0c7mf2"))))
-    (properties `((upstream-name . "osmplotr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat-core
-                             r-spatstat
-                             r-sp
-                             r-rgeos
-                             r-osmdata
-                             r-mapproj
-                             r-ggplot2
-                             r-ggm
-                             r-e1071))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/osmplotr/")
-    (synopsis "Bespoke Images of 'OpenStreetMap' Data")
-    (description
-     "Bespoke images of OpenStreetMap ('OSM') data and data visualisation using OSM
-objects.")
-    (license license:gpl3)))
 
 (define-public r-osmextract
   (package
@@ -5898,13 +5868,13 @@ papers.")
 (define-public r-openai
   (package
     (name "r-openai")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openai" version))
               (sha256
                (base32
-                "1yd914ld6fdv91llw67l0qbkjwqd78jf4z7arn5flqarmfyhcavp"))))
+                "18kr3g6896phmyjywx70nj8yy391w6bl83in9wz4fjrnn7b8j88l"))))
     (properties `((upstream-name . "openai")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -5918,8 +5888,8 @@ papers.")
     (description
      "An R wrapper of OpenAI API endpoints (see
 <https://beta.openai.com/docs/introduction> for details).  This package covers
-Engines, Completions, Edits, Files, Fine-tunes, Embeddings and legacy Searches,
-Classifications, and Answers endpoints.")
+Models, Completions, Edits, Images, Embeddings, Files, Fine-tunes, Moderations,
+and legacy Engines endpoints.")
     (license license:expat)))
 
 (define-public r-openadds

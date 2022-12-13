@@ -6195,13 +6195,13 @@ function for non gradient fields.  More information in RodrÃ­guez-SÃ¡nchez
 (define-public r-wavscalogram
   (package
     (name "r-wavscalogram")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wavScalogram" version))
               (sha256
                (base32
-                "15y5gqp39jx0ggsimmf7k22qg1142c55apd04q05jqi50ljzda70"))))
+                "08yxx0szgxa903majjjv4y7lkkc8kp3j0q0lq9sfjcqcjvk850gn"))))
     (properties `((upstream-name . "wavScalogram")))
     (build-system r-build-system)
     (propagated-inputs (list r-fields r-colorramps r-abind))
@@ -7407,33 +7407,6 @@ archives.  It can also read models in MDL and MD2 formats.")
      "Full screen and partial loading screens for Shiny with spinners, progress bars,
 and notifications.")
     (license license:expat)))
-
-(define-public r-waffle
-  (package
-    (name "r-waffle")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "waffle" version))
-              (sha256
-               (base32
-                "1qjmai33p96cyavi9lgi6k30h6fj7db5sr569v9jf4kwx92c61df"))))
-    (properties `((upstream-name . "waffle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-gtable r-gridextra r-ggplot2
-                             r-extrafont))
-    (home-page "https://github.com/hrbrmstr/waffle/tree/cran")
-    (synopsis "Create Waffle Chart Visualizations in R")
-    (description
-     "Square pie charts (a.k.a.  waffle charts) can be used to communicate parts of a
-whole for categorical quantities.  To emulate the percentage view of a pie
-chart, a 10x10 grid should be used with each square representing 1% of the
-total.  Modern uses of waffle charts do not necessarily adhere to this rule and
-can be created with a grid of any rectangular shape.  Best practices suggest
-keeping the number of categories small, just as should be done when creating pie
-charts.  Tools are provided to create waffle charts as well as stitch them
-together, and to use glyphs for making isotype pictograms.")
-    (license license:gpl2+)))
 
 (define-public r-wactor
   (package

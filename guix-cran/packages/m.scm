@@ -9224,13 +9224,13 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mpathsenser" version))
               (sha256
                (base32
-                "1xi3bn91lgy0vmwiyiv96qnzxxjsi2da6r4c4bjdz0km8vq20297"))))
+                "1ykaxkidkihqsv2mrb67gy1xmpsnr0byd9gng0d30m8wc5f827gk"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13223,26 +13223,6 @@ properties.  The latter is again asymptotically equivalent to the first and was
 introduced in Rufibach and Walther (2010).")
     (license license:gpl2+)))
 
-(define-public r-modeest
-  (package
-    (name "r-modeest")
-    (version "2.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeest" version))
-              (sha256
-               (base32
-                "087dw0013y4m7fcl06mxylh9lnp6acysl80d80r9srv4pw4r950s"))))
-    (properties `((upstream-name . "modeest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-statip r-stabledist r-stable r-fbasics))
-    (home-page "https://github.com/paulponcet/modeest")
-    (synopsis "Mode Estimation")
-    (description
-     "This package provides estimators of the mode of univariate data or univariate
-distributions.")
-    (license license:gpl3)))
-
 (define-public r-modchart
   (package
     (name "r-modchart")
@@ -14471,6 +14451,37 @@ for modeling, and the trained model can be applied to predict metabolites of
 analogous environments using new microbial feature abundances.")
     (license license:gpl3+)))
 
+(define-public r-mmeta
+  (package
+    (name "r-mmeta")
+    (version "2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mmeta" version))
+              (sha256
+               (base32
+                "0l1jsqdcpnp5800pbf5kimwyh3n4i7z50l08v5pqddw4v3jx0ls9"))))
+    (properties `((upstream-name . "mmeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-aod))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=mmeta")
+    (synopsis "Multivariate Meta-Analysis")
+    (description
+     "Multiple 2 by 2 tables often arise in meta-analysis which combines statistical
+evidence from multiple studies.  Two risks within the same study are possibly
+correlated because they share some common factors such as environment and
+population structure.  This package implements a set of novel Bayesian
+approaches for multivariate meta analysis when the risks within the same study
+are independent or correlated.  The exact posterior inference of odds ratio,
+relative risk, and risk difference given either a single 2 by 2 table or
+multiple 2 by 2 tables is provided.  Luo, Chen, Su, Chu, (2014)
+<doi:10.18637/jss.v056.i11>, Chen, Luo, (2011) <doi:10.1002/sim.4248>, Chen,
+Chu, Luo, Nie, Chen, (2015) <doi:10.1177/0962280211430889>, Chen, Luo, Chu, Su,
+Nie, (2014) <doi:10.1080/03610926.2012.700379>, Chen, Luo, Chu, Wei, (2013)
+<doi:10.1080/19466315.2013.791483>.")
+    (license license:gpl2+)))
+
 (define-public r-mmem
   (package
     (name "r-mmem")
@@ -15670,13 +15681,13 @@ framework.")
 (define-public r-mlr3oml
   (package
     (name "r-mlr3oml")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3oml" version))
               (sha256
                (base32
-                "1h7i0bczksv81gwyachcyv4wxfz02bm3j3i5azb0lykvrvfljkjh"))))
+                "1gg60x5ysnhlkgqqrqkgkxz3b55yfmlz45bx1x18rjwr4szal26j"))))
     (properties `((upstream-name . "mlr3oml")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -32589,6 +32600,48 @@ polymorphism (SNP) allele and the genotypes of two potential source samples.
 Lobo et al. (2019) <doi:10.1101/529040>.")
     (license license:expat)))
 
+(define-public r-mbmethpred
+  (package
+    (name "r-mbmethpred")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MBMethPred" version))
+              (sha256
+               (base32
+                "1w25nl2pzfdck707h04havv9qlp3d5q1yd1j6kw5lqga6wphsg2q"))))
+    (properties `((upstream-name . "MBMethPred")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-tensorflow
+                             r-stringr
+                             r-snftool
+                             r-rtsne
+                             r-rgl
+                             r-reticulate
+                             r-reshape2
+                             r-readr
+                             r-randomforest
+                             r-proc
+                             r-mass
+                             r-keras
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-class
+                             r-catools
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MBMethPred")
+    (synopsis "Medulloblastoma Subgroups Prediction")
+    (description
+     "Utilizing a combination of machine learning models (Random Forest, Naive Bayes,
+K-Nearest Neighbor, Support Vector Machines, Extreme Gradient Boosting, and
+Linear Discriminant Analysis) and a deep Artificial Neural Network model,
+MBMethPred can predict medulloblastoma subgroups, including wingless (WNT),
+sonic hedgehog (SHH), Group 3, and Group 4 from methylation data.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-mbmca
   (package
     (name "r-mbmca")
@@ -34422,6 +34475,37 @@ are also provided.  For details, see the paper by Jasjeet Sekhon (2007,
 <doi:10.18637/jss.v042.i07>).")
     (license license:gpl3)))
 
+(define-public r-matchfeat
+  (package
+    (name "r-matchfeat")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matchFeat" version))
+              (sha256
+               (base32
+                "0jh484rr71b7887igfslbg7xbr661l9c34d650xd7ajx4gfpn540"))))
+    (properties `((upstream-name . "matchFeat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-clue))
+    (home-page "https://cran.r-project.org/package=matchFeat")
+    (synopsis "One-to-One Feature Matching")
+    (description
+     "Statistical methods to match feature vectors between multiple datasets in a
+one-to-one fashion.  Given a fixed number of classes/distributions, for each
+unit, exactly one vector of each class is observed without label.  The goal is
+to label the feature vectors using each label exactly once so to produce the
+best match across datasets, e.g. by minimizing the variability within classes.
+Statistical solutions based on empirical loss functions and probabilistic
+modeling are provided.  The Gurobi software and its R interface package are
+required for one of the package functions (match.2x()) and can be obtained at
+<https://www.gurobi.com/> (free academic license).  For more details, refer to
+Degras (2022) <doi:10.1080/10618600.2022.2074429> \"Scalable feature matching for
+large data collections\" and Bandelt, Maas, and Spieksma (2004)
+<doi:10.1057/palgrave.jors.2601723> \"Local search heuristics for multi-index
+assignment problems with decomposable costs\".")
+    (license license:gpl2)))
+
 (define-public r-matchbook
   (package
     (name "r-matchbook")
@@ -36009,18 +36093,18 @@ and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "0.5.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapsf" version))
               (sha256
                (base32
-                "04fzrv1qjh0n1h1jzsj5drzi7ax56bj9bwlrqiscy1v3w9cjbavz"))))
+                "0gzqz94d5skrvl41qh1iyjc1r1dd6ag1d5s00l9dlhaawhhz2wfz"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp r-classint))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/riatelab/mapsf/")
+    (home-page "https://riatelab.github.io/mapsf/")
     (synopsis "Thematic Cartography")
     (description
      "Create and integrate thematic maps in your workflow.  This package helps to
