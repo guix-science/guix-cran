@@ -4065,23 +4065,24 @@ approach).")
 (define-public r-freegroup
   (package
     (name "r-freegroup")
-    (version "1.1-3")
+    (version "1.1-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "freegroup" version))
               (sha256
                (base32
-                "11v0ph0mhk8g9zwapcp2wgr1sbdwdqh7nhbrci87myapypdncqjc"))))
+                "17hrcgl3gy99j4mkg019556yk1nxbksmhwcwpkp8fa1lkpmnqr7x"))))
     (properties `((upstream-name . "freegroup")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-magrittr r-magic))
+    (propagated-inputs (list r-plyr r-magrittr r-magic r-freealg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/freegroup")
     (synopsis "The Free Group")
     (description
      "The free group in R; juxtaposition is represented by a plus.  Includes
 inversion, multiplication by a scalar, group-theoretic power operation, and
-Tietze forms.")
+Tietze forms.  To cite the package in publications please use Hankin (2022)
+<doi:10.48550/ARXIV.2212.05883>.")
     (license license:gpl2)))
 
 (define-public r-freedom

@@ -16958,16 +16958,16 @@ library for memory mapped file IO <https://github.com/mandreyel/mio>.")
 (define-public r-rminqa
   (package
     (name "r-rminqa")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rminqa" version))
               (sha256
                (base32
-                "04msdk96qqpk6sshqiinfds42ry30k96mpncbkxg25v0yqa21h72"))))
+                "02r0bwajsaz3s2libwld816bccc9m4rc3fggd8cciwphh4wmykvw"))))
     (properties `((upstream-name . "rminqa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=rminqa")
     (synopsis "Derivative-Free Optimization in R using C++")
     (description
@@ -17451,13 +17451,13 @@ cross-validation is also provided.")
 (define-public r-rmcorr
   (package
     (name "r-rmcorr")
-    (version "0.5.2")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmcorr" version))
               (sha256
                (base32
-                "1q7qa7y6vv4194r9zfrw5arryw5ygbhcm294a90r9wwzpbk6sqhw"))))
+                "09s2c7cv15lss0f388dkppgdcvpa6vy43a8yx19kmsi8zaqdvdbr"))))
     (properties `((upstream-name . "rmcorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-psych))
@@ -23418,6 +23418,32 @@ GDAX) cryptocurrency exchange.  For authenticated flow, users must have valid
 api, secret and passphrase to be able to connect.")
     (license license:expat)))
 
+(define-public r-rgcxgc
+  (package
+    (name "r-rgcxgc")
+    (version "1.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RGCxGC" version))
+              (sha256
+               (base32
+                "1hz363pqlx0l3wi4di69fmrv4awl37lz8fzl4g070zchwzbffcpc"))))
+    (properties `((upstream-name . "RGCxGC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rnetcdf r-rdpack r-ptw r-colorramps))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DanielQuiroz97/RGCxGC")
+    (synopsis
+     "Preprocessing and Multivariate Analysis of Bidimensional Gas Chromatography Data")
+    (description
+     "Toolbox for chemometrics analysis of bidimensional gas chromatography data.
+This package import data for common scientific data format (NetCDF) and fold it
+to 2D chromatogram.  Then, it can perform preprocessing and multivariate
+analysis.  In the preprocessing algorithms, baseline correction, smoothing, and
+peak alignment are available.  While in multivariate analysis, multiway
+principal component analysis is incorporated.")
+    (license license:expat)))
+
 (define-public r-rgcca
   (package
     (name "r-rgcca")
@@ -26333,13 +26359,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rerddapXtracto" version))
               (sha256
                (base32
-                "0c8cq7hrc10i758ywwf4brwdk1082biiwzl3h2lcn54fdmj7pkm9"))))
+                "1f2x45p63821amj6v5fvfbhdxvv51qyapl6al0x4yh247wqxiivd"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -34431,16 +34457,16 @@ approximation of the ground surface
 (define-public r-rcsdp
   (package
     (name "r-rcsdp")
-    (version "0.1.57.2")
+    (version "0.1.57.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rcsdp" version))
               (sha256
                (base32
-                "07rjqllimd78801v0np56nj1sc98wa0v34azgmjli8ah6z9q82m7"))))
+                "0gjbmfbmb0fwdklzc7prywd7na50yph0vfwx4cws9psfzxy7lcaa"))))
     (properties `((upstream-name . "Rcsdp")))
     (build-system r-build-system)
-    (home-page "https://projects.coin-or.org/Csdp/")
+    (home-page "https://github.com/coin-or/Csdp/")
     (synopsis "R Interface to the CSDP Semidefinite Programming Library")
     (description
      "R interface to the CSDP semidefinite programming library.  Installs version
@@ -39418,20 +39444,22 @@ but does not enforce it themselves; we enforce that rate limit.")
 (define-public r-rb3
   (package
     (name "r-rb3")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rb3" version))
               (sha256
                (base32
-                "1lcq196v155h2ah7d7wg1bvjjxm4p9ydhvg4csfsjy5im25wmd3v"))))
+                "1drgh4cq26jadm18ilqyk676fzlkrvz6xzhbg1c1j2p8rmxkjbil"))))
     (properties `((upstream-name . "rb3")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-xml
+                             r-tidyr
                              r-stringr
                              r-rvest
                              r-rlang
+                             r-readxl
                              r-readr
                              r-purrr
                              r-proto
@@ -45806,28 +45834,6 @@ structure) 3) Processing (run SamBada on multiple cores using Supervision') 4)
 Post-processing (calculate p-values and q-values, produce interactive Manhattan
 plots and query Ensembl database, produce maps).")
     (license license:gpl2+)))
-
-(define-public r-r-proxy
-  (package
-    (name "r-r-proxy")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "r.proxy" version))
-              (sha256
-               (base32
-                "0k7bcgp1d53ps6aalqz764v33mkamz5czdp72fc69zwrfb9rz63w"))))
-    (properties `((upstream-name . "r.proxy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-curl))
-    (home-page "https://github.com/xiayh17/r.proxy")
-    (synopsis "Set Proxy in R Console")
-    (description
-     "The use of proxies is required in certain network environments.  Despite the
-power of system level software, it is still inconvenient to switch proxy
-networks at random in R's console.  This package is designed to provide
-one-click switching between proxy and non-proxy states.")
-    (license license:expat)))
 
 (define-public r-r-matlab
   (package

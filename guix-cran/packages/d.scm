@@ -11198,18 +11198,18 @@ low-frequency series in the presence of high-dimensional indicator matrices.")
 (define-public r-disaggr
   (package
     (name "r-disaggr")
-    (version "1.0.3.1")
+    (version "1.0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disaggR" version))
               (sha256
                (base32
-                "1nl19kr14i73c165nagb8crhzn8yr18q21f2i7508n90yl61cnfk"))))
+                "0ly2w9lmd6fkf5ywnn4dcs71j8if1c00i0yn2r4l47avj0hfzbp0"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=disaggR")
+    (home-page "https://inseefr.github.io/disaggR/")
     (synopsis "Two-Steps Benchmarks for Time Series Disaggregation")
     (description
      "The twoStepsBenchmark() and threeRuleSmooth() functions allow you to
@@ -19540,6 +19540,34 @@ innovations.  See Etienne et al.  2012, Proc.  Roy.  Soc.  B 279: 1300-1309,
 1092-1099, <DOI:10.1111/2041-210X.12565>.  Also contains functions to simulate
 the diversity-dependent process.")
     (license license:gpl3)))
+
+(define-public r-ddc
+  (package
+    (name "r-ddc")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ddc" version))
+              (sha256
+               (base32
+                "1l5ljfhhyqcj4s4247vndqrz6qfcygi014l59d4gpxym810iqr26"))))
+    (properties `((upstream-name . "ddc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-dtwclust r-dtw))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ddc")
+    (synopsis "Distance Density Clustering Algorithm")
+    (description
+     "This package provides a distance density clustering (DDC) algorithm in R. DDC
+uses dynamic time warping (DTW) to compute a similarity matrix, based on which
+cluster centers and cluster assignments are found.  DDC inherits dynamic time
+warping (DTW) arguments and constraints.  The cluster centers are centroid
+points that are calculated using the DTW Barycenter Averaging (DBA) algorithm.
+The clustering process is divisive.  At each iteration, cluster centers are
+updated and data is reassigned to cluster centers.  Early stopping is possible.
+The output includes cluster centers and clustering assignment, as described in
+the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
+    (license license:gpl2+)))
 
 (define-public r-dcurves
   (package

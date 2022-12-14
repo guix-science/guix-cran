@@ -5433,13 +5433,13 @@ Chemistry <doi:10.1021/ac901143w> and other normalization algorithms.")
 (define-public r-crmetrics
   (package
     (name "r-crmetrics")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CRMetrics" version))
               (sha256
                (base32
-                "0q0d0g1iblwgm21kdrcj06ish9aif223rj9ykh0j9lvafgigc77f"))))
+                "02kkrzbqna9wg1hkrahax60awj6dzm0w22mz2mc4y9jsswzdlb5p"))))
     (properties `((upstream-name . "CRMetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14394,6 +14394,32 @@ pipeline.")
      "Computes the density and probability for the conditional truncated multivariate
 normal (Horrace (2005) p.  4, <doi:10.1016/j.jmva.2004.10.007>).  Also draws
 random samples from this distribution.")
+    (license license:gpl3)))
+
+(define-public r-condoroptions
+  (package
+    (name "r-condoroptions")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "condorOptions" version))
+              (sha256
+               (base32
+                "05bc0l62v2js1wd7ll006gjh3iqz99kjw28c7811kgqw3rkdda76"))))
+    (properties `((upstream-name . "condorOptions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=condorOptions")
+    (synopsis "Trading Condor Options Strategies")
+    (description
+     "Trading of Condor Options Strategies is represented here through their Graphs.
+The graphic indicators, strategies, calculations, functions and all the
+discussions are for academic, research, and educational purposes only and should
+not be construed as investment advice and come with absolutely no Liability.
+Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
+9780133964028).  Zura Kakushadze, Juan A. Serur (â151 Trading Strategiesâ,
+2018, ISBN: 9783030027919).  John C. Hull (âOptions, Futures, and Other
+Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
 
 (define-public r-condmvt
@@ -31605,13 +31631,13 @@ Studies. (AOAS: In revision).")
 (define-public r-ccml
   (package
     (name "r-ccml")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ccml" version))
               (sha256
                (base32
-                "1ama9qxvqn2x5zw7m0jdym73b5b0d25gf820apylfgmy2i7si2xa"))))
+                "1m70d5jzabqwgwzp5zfhvwg4mqzgl06m4p0fip8my32cialbih1c"))))
     (properties `((upstream-name . "ccml")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -4493,6 +4493,37 @@ permutations, combinations and subsets of objects taken from a vector.
 Simplifies working with structures commonly encountered in combinatorics.")
     (license license:gpl3)))
 
+(define-public r-trophicposition
+  (package
+    (name "r-trophicposition")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tRophicPosition" version))
+              (sha256
+               (base32
+                "0ap7j15qfywilyx8zsnq061mis69yja16hjnla5grlqc0mcrdd7d"))))
+    (properties `((upstream-name . "tRophicPosition")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags
+                             r-rcolorbrewer
+                             r-plyr
+                             r-mcmcglmm
+                             r-hdrcde
+                             r-gridextra
+                             r-ggplot2
+                             r-data-table
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/clquezada/tRophicPosition")
+    (synopsis "Bayesian Trophic Position Estimation with Stable Isotopes")
+    (description
+     "Estimates the trophic position of a consumer relative to a baseline species.  It
+implements a Bayesian approach which combines an interface to the JAGS MCMC
+library of rjags and stable isotopes.  Users are encouraged to test the package
+and send bugs and/or errors to trophicposition-support@@googlegroups.com.")
+    (license license:gpl2+)))
+
 (define-public r-tropfishr
   (package
     (name "r-tropfishr")
@@ -4763,6 +4794,44 @@ package providing both triangulation and generation of voronoi mosaics of
 irregular spaced data.")
     (license (list (license:fsdg-compatible "ACM")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-trip
+  (package
+    (name "r-trip")
+    (version "1.8.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "trip" version))
+              (sha256
+               (base32
+                "137vzrxpy3p5z2cpdm9qqyy3zxi8qnv55b16dqf0i3dm6n6z75zl"))))
+    (properties `((upstream-name . "trip")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-traipse
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-sp
+                             r-rlang
+                             r-reproj
+                             r-raster
+                             r-mass
+                             r-glue
+                             r-geodist
+                             r-dplyr
+                             r-crsmeta))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Trackage/trip")
+    (synopsis "Tracking Data")
+    (description
+     "Access and manipulate spatial tracking data, with straightforward coercion from
+and to other formats.  Filter for speed and create time spent maps from tracking
+data.  There are coercion methods to convert between trip and ltraj from
+adehabitatLT', and between trip and psp and ppp from spatstat'.  Trip objects
+can be created from raw or grouped data frames, and from types in the sp', sf',
+amt', trackeR', mousetrap', and other packages, Sumner, MD (2011)
+<https://eprints.utas.edu.au/12273/3/sumner.pdf>.")
+    (license license:gpl3)))
 
 (define-public r-triosgl
   (package
@@ -8812,16 +8881,17 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.4.2")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOSTER" version))
               (sha256
                (base32
-                "0g5d2pgxqpfjhach10lhcb1nml2abvlsgrap5bfrw93hj2mf077r"))))
+                "1vbmzbv1cngzmpd2683q2lsq8hgfxm9gk7h093g7i96hqp7fqjmd"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-r6
                              r-jmvcore
                              r-ggplot2
                              r-ggdist

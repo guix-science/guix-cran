@@ -8344,13 +8344,13 @@ such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aorsf" version))
               (sha256
                (base32
-                "1pq4cllksky81qw0pblygsssxmw1rarygzzkmsln9jlcjgwxvw3f"))))
+                "181nzlpq6wi2cdjhhsx8pnpi5sa092b45imzn5y2y8gcm2nxj6lb"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
@@ -12750,16 +12750,16 @@ JavaScript.  See <http://epoberezkin.github.io/ajv/> for details.")
 (define-public r-aisoph
   (package
     (name "r-aisoph")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aisoph" version))
               (sha256
                (base32
-                "1c64slva2yb3phflxslxbpp4iydxx92hrj9xi7dv1bsbag8n9xd7"))))
+                "01df9c6q9lxp4xijs1q3xkvy11nqhw2xs6hlilg56942x24q96l7"))))
     (properties `((upstream-name . "aisoph")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpp r-iso))
+    (propagated-inputs (list r-survival r-isosurv r-iso))
     (home-page "https://cran.r-project.org/package=aisoph")
     (synopsis "Additive Isotonic Proportional Hazards Model")
     (description

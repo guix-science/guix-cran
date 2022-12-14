@@ -332,13 +332,13 @@ the years 1950-2010.")
 (define-public r-pwrss
   (package
     (name "r-pwrss")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pwrss" version))
               (sha256
                (base32
-                "16dyfi1qn50grs7dad15qqqrq5cxzkvfxy1pzr27cnp5rxyp0g5m"))))
+                "0c7nmn0hcbmn7081xsfyv2s5z46i11gmsczg56axh0h3ab3gal77"))))
     (properties `((upstream-name . "pwrss")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -350,20 +350,22 @@ a proportion (one-sample) against a constant, (2) testing a mean (one-sample)
 against a constant, (3) testing difference between two proportions (independent
 samples), (4) testing difference between two means (independent and paired
 samples), (5) testing a correlation (one-sample) against a constant, (6) testing
-difference between two correlations (independent samples), (7) testing an
-R-squared against zero in linear regression, (8) testing an R-squared difference
-against zero in hierarchical regression, (9) testing an eta-squared or f-squared
-(for main and interaction effects) against zero in analysis of variance (could
-be one-way, two-way, and three-way), (10) testing an eta-squared or f-squared
-(for main and interaction effects) against zero in analysis of covariance (could
-be one-way, two-way, and three-way), (11) testing an eta-squared or f-squared
-(for between, within, and interaction effects) against zero in one-way repeated
-measures analysis of variance (with non-sphericity correction and repeated
-measures correlation).  Alternative hypothesis can be formulated as \"not equal\",
-\"less\", \"greater\", \"non-inferior\", \"superior\", or \"equivalent\" in (1), (2), (3),
-and (4); as \"not equal\", \"less\", or \"greater\" in (5) and (6); but always as
-\"greater\" in (7), (8), (9), (10), and (11).  Reference: Bulus & Polat (2022)
-<https://osf.io/download/sx3rk/>.")
+difference between two correlations (independent samples), (7) testing a
+coefficient against a constant in multiple linear regression, (8) testing an
+indirect effect in the mediation analysis (Sobel, Joint, and Monte Carlo), (9)
+testing an R-squared against zero in linear regression, (10) testing an
+R-squared difference against zero in hierarchical regression, (11) testing an
+eta-squared or f-squared (for main and interaction effects) against zero in
+analysis of variance (could be one-way, two-way, and three-way), (12) testing an
+eta-squared or f-squared (for main and interaction effects) against zero in
+analysis of covariance (could be one-way, two-way, and three-way), (13) testing
+an eta-squared or f-squared (for between, within, and interaction effects)
+against zero in one-way repeated measures analysis of variance (with
+non-sphericity correction and repeated measures correlation).  Alternative
+hypothesis can be formulated as \"not equal\", \"less\", \"greater\", \"non-inferior\",
+\"superior\", or \"equivalent\" in (1), (2), (3), and (4); as \"not equal\", \"less\",
+or \"greater\" in (5) and (6); but always as \"greater\" in (7), (8), (9), (10), and
+(11).  Reference: Bulus & Polat (2022) <https://edarxiv.org/tfyxq/>.")
     (license license:gpl3+)))
 
 (define-public r-pwrrasch
@@ -4430,16 +4432,17 @@ Luis Perez (2018), Using Introspection to Collect Provenance in R, Informatics,
 (define-public r-proverbs
   (package
     (name "r-proverbs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "proverbs" version))
               (sha256
                (base32
-                "1kfc8vghrzszgvjx5pq221cw20cn990h5s7l1di5m61wx29siakc"))))
+                "05pqjz83awa7l971vclg3c3f7hj3nfq0dlrzbxmr2zhysnqjnd62"))))
     (properties `((upstream-name . "proverbs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-stringr
+                             r-purrr
                              r-magrittr
                              r-lubridate
                              r-httr
@@ -12978,6 +12981,38 @@ graph.  Finds total order consistent with partial order or directed graph
 (so-called topological sort).")
     (license license:expat)))
 
+(define-public r-poms
+  (package
+    (name "r-poms")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "POMS" version))
+              (sha256
+               (base32
+                "1ndry1csq7zsccdwd8nq9x4b9zq5j2ffykmhm38ari8n0zxxyrwy"))))
+    (properties `((upstream-name . "POMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xnomial
+                             r-phylolm
+                             r-phangorn
+                             r-mass
+                             r-data-table
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=POMS")
+    (synopsis "Phylogenetic Organization of Metagenomic Signals")
+    (description
+     "Code to identify functional enrichments across diverse taxa in phylogenetic
+tree, particularly where these taxa differ in abundance across samples in a
+non-random pattern.  The motivation for this approach is to identify microbial
+functions encoded by diverse taxa that are at higher abundance in certain
+samples compared to others, which could indicate that such functions are broadly
+adaptive under certain conditions.  See GitHub repository for tutorial and
+examples: <https://github.com/gavinmdouglas/POMS/wiki>.  Citation: Gavin M.
+Douglas, Molly G. Hayes, Morgan G. I. Langille, Elhanan Borenstein (2022)
+<doi:10.1093/bioinformatics/btac655>.")
+    (license license:gpl3)))
+
 (define-public r-pompp
   (package
     (name "r-pompp")
@@ -15543,13 +15578,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.13")
+    (version "1.0.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmparser" version))
               (sha256
                (base32
-                "1c58kdy25hjd0glw6hym082jbp8jjvxdn6j3kg859w4pf6kssm57"))))
+                "0hsswq844sqmdx45c5m7bv5h7jpw0g7fdzn3rgdlxnv4gvd2szjx"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -23919,21 +23954,21 @@ parsing as described in Rudolph and Cox 2018 <doi:10.1101/447268>.")
 (define-public r-persdx
   (package
     (name "r-persdx")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "persDx" version))
               (sha256
                (base32
-                "18cbwanqgqjibdmxslnviym4n1mgg74hsqyzs6031hxwg21hpzvj"))))
+                "0d6wn42hj17cw6ffkcbvbn7llklw41j2h0y8sg1xlx06l2lr93q9"))))
     (properties `((upstream-name . "persDx")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc))
     (home-page "https://cran.r-project.org/package=persDx")
     (synopsis "Estimating Personalized Diagnostics Rules")
     (description
-     "Recommend the optimal biomarker (or test) for disease screening or diagnosis
-based on patients individual characteristics.")
+     "Recommend the optimal biomarker for disease screening or diagnosis based on
+patients individual characteristics.")
     (license license:gpl2+)))
 
 (define-public r-perryexamples

@@ -9613,6 +9613,40 @@ bootstrap method to obtain confidence intervals.  Choices for regression models
 are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
     (license license:gpl2)))
 
+(define-public r-hdcate
+  (package
+    (name "r-hdcate")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hdcate" version))
+              (sha256
+               (base32
+                "1jv6y38lzvm75s44n1pjvkkf5xcvrvclil318gvx54b16hvgggcg"))))
+    (properties `((upstream-name . "hdcate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-locpol r-kernsmooth r-hdm r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hdcate")
+    (synopsis
+     "Estimation of Conditional Average Treatment Effects with High-Dimensional Data")
+    (description
+     "This package provides a two-step double-robust method to estimate the
+conditional average treatment effects (CATE) with potentially high-dimensional
+covariate(s).  In the first stage, the nuisance functions necessary for
+identifying CATE are estimated by machine learning methods, allowing the number
+of covariates to be comparable to or larger than the sample size.  The second
+stage consists of a low-dimensional local linear regression, reducing CATE to a
+function of the covariate(s) of interest.  The CATE estimator implemented in
+this package not only allows for high-dimensional data, but also has the
+âdouble robustnessâ property: either the model for the propensity score or
+the models for the conditional means of the potential outcomes are allowed to be
+misspecified (but not both).  This package is based on the paper by Fan et al.,
+\"Estimation of Conditional Average Treatment Effects With High-Dimensional Data\"
+(2022), Journal of Business & Economic Statistics
+<doi:10.1080/07350015.2020.1811102>.")
+    (license license:gpl3+)))
+
 (define-public r-hdbrr
   (package
     (name "r-hdbrr")

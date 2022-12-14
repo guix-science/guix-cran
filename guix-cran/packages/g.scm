@@ -1015,6 +1015,37 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (2016) <doi:10.1371/journal.pcbi.1004978>).")
     (license license:gpl2+)))
 
+(define-public r-gutenbergr
+  (package
+    (name "r-gutenbergr")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gutenbergr" version))
+              (sha256
+               (base32
+                "1jffisx1sycxw3f09n13jnzn7h47zj34g82n6vww6gwliznfsvvz"))))
+    (properties `((upstream-name . "gutenbergr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lazyeval
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/gutenbergr/")
+    (synopsis
+     "Download and Process Public Domain Works from Project Gutenberg")
+    (description
+     "Download and process public domain works in the Project Gutenberg collection
+<http://www.gutenberg.org/>.  Includes metadata for all Project Gutenberg works,
+so that they can be searched and retrieved.")
+    (license license:gpl2)))
+
 (define-public r-gustave
   (package
     (name "r-gustave")
@@ -10694,6 +10725,51 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (2011) <doi:10.18637/jss.v039.i05>.")
     (license license:gpl3)))
 
+(define-public r-glmnetr
+  (package
+    (name "r-glmnetr")
+    (version "0.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "glmnetr" version))
+              (sha256
+               (base32
+                "18w2b8jlc1xd6igzq7m7l34qwn6dbbbdnw7g60pqd4cpvmdagzvh"))))
+    (properties `((upstream-name . "glmnetr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-matrix r-glmnet))
+    (home-page "https://cran.r-project.org/package=glmnetr")
+    (synopsis
+     "Relaxed Lasso Model for Data Which Might Have Long Run Times Using 'glmnet'")
+    (description
+     "For some datasets, for example when the design matrix is not of full rank,
+glmnet may have very long run times when fitting the relaxed lasso model, in
+particular when fitting a Cox based model, making it difficult to get solutions
+either from glmnet() or cv.glmnet().  In this package, glmnetr', we provide a
+workaround and solve for the non penalized relaxed model where gamma=0 for model
+structures analogue to R functions like glm() or coxph() of the survival
+package.  If you are not fitting relaxed lasso models, or if you are able to get
+convergence using glmnet', then this package may not be of much benefit to you.
+Note, while this package may allow one to fit relaxed lasso models that have
+difficulties converging using glmnet', this package does not afford the full
+function and versatility of glmnet'.  In addition to fitting the relaxed lasso
+model this package also includes the function cv.glmnetr() to perform a cross
+validation to identify hyper-parameters for a lasso fit, much like the
+cv.glmnet() function of the glmnet package.  Additionally, the package includes
+the function nested.glmnetr() to perform a nested cross validation to assess the
+fit of a cross validated derived lasso model fit.  If though you are fitting not
+a relaxed lasso model but an elastic-net model, then the R-packages nestedcv
+<https://cran.r-project.org/package=nestedcv>, glmnetSE
+<https://cran.r-project.org/package=glmnetSE> or others may provide greater
+functionality when performing a nested CV. As with the glmnet package, this
+package passes most relevant output to the output object and tabular and
+graphical summaries can be generated using the summary and plot functions.  Use
+of the glmnetr has many similarities to the glmnet package and it is recommended
+that the user of glmnetr first become familiar with the glmnet package
+<https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
+glmnet'\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
+    (license license:gpl3)))
+
 (define-public r-glmnetcr
   (package
     (name "r-glmnetcr")
@@ -10812,13 +10888,13 @@ detailed manual.")
 (define-public r-glmmpen
   (package
     (name "r-glmmpen")
-    (version "1.5.1.10")
+    (version "1.5.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmPen" version))
               (sha256
                (base32
-                "0qgmyp708qm8pvb62bw8qqk5is1bdbkwmkf0f3cn6z4hkjfgjfns"))))
+                "0lagmbrr074frrd4fl3fp2b6d2j0n6h3hlyv8y0x6a9fzrzwblf6"))))
     (properties `((upstream-name . "glmmPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13209,17 +13285,17 @@ around creating and distributing assignments.")
 (define-public r-ghat
   (package
     (name "r-ghat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ghat" version))
               (sha256
                (base32
-                "1w5agphnbngc0ldb3gbgh4b8ww956lf31bfyxw2zp56crx4akcxf"))))
+                "0xvr3xpi3d00ns55bwbj7k74ccs0lf0vf8f74qxhi5389bf3l0zr"))))
     (properties `((upstream-name . "Ghat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrblup))
-    (home-page "https://www.genetics.org/content/209/1/321")
+    (home-page "https://academic.oup.com/genetics/article/209/1/321/5931021")
     (synopsis "Quantifying Evolution and Selection on Complex Traits")
     (description
      "This package provides functions are provided for quantifying evolution and
@@ -14237,13 +14313,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrcs" version))
               (sha256
                (base32
-                "1hvyvvm6nlgqfh7lmgqyqsi2gy43k5n5a6205hx85da9h9qw8n8s"))))
+                "0k5qma9jplm7jd8zgc7q8vfxaadi9ssmwmwhhrqn73cpk059hafp"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2))
@@ -24943,13 +25019,13 @@ of triggers, so that reactive contexts can be invalidated with more control.")
 (define-public r-garcom
   (package
     (name "r-garcom")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GARCOM" version))
               (sha256
                (base32
-                "1fgr03gw86fjrj6hx32qvl6jsc6ax9i1ss4bbfmi8iz2f1nq43wi"))))
+                "15lnnyw6cxldc799ls0jn2lwmrwfxkj41gkdjx09xmk2ddqahr8k"))))
     (properties `((upstream-name . "GARCOM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr r-data-table))

@@ -26026,29 +26026,6 @@ manipulating, summarizing and plotting typical multi-environment trial data are
 also provided.")
     (license license:gpl3)))
 
-(define-public r-metamix
-  (package
-    (name "r-metamix")
-    (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "metaMix" version))
-              (sha256
-               (base32
-                "17qkwg9iz5v63ybyvqppbf044l0pi0ym5pw283174dlx8lfac60q"))))
-    (properties `((upstream-name . "metaMix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmpi r-matrix r-gtools r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=metaMix")
-    (synopsis "Bayesian Mixture Analysis for Metagenomic Community Profiling")
-    (description
-     "Resolves complex metagenomic mixtures by analysing deep sequencing data, using a
-mixture model based approach.  The use of parallel Monte Carlo Markov chains for
-the exploration of the species space enables the identification of the set of
-species more likely to contribute to the mixture.")
-    (license license:gpl3)))
-
 (define-public r-metamisc
   (package
     (name "r-metamisc")

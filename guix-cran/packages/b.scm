@@ -8076,16 +8076,26 @@ without covariates.")
 (define-public r-blockmodelinggui
   (package
     (name "r-blockmodelinggui")
-    (version "1.8.3")
+    (version "1.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BlockmodelingGUI" version))
               (sha256
                (base32
-                "0s2mznnqinvnzbrvxr73c65kza7c4g98qsvq1idplkb2vj82wg3k"))))
+                "09sbxwzvnnzjv5gy0zyd1lvm1z44ywqvanj99i15l0lp66l54572"))))
     (properties `((upstream-name . "BlockmodelingGUI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny))
+    (propagated-inputs (list r-visnetwork
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinybusy
+                             r-shiny
+                             r-network
+                             r-intergraph
+                             r-igraph
+                             r-htmlwidgets
+                             r-dt
+                             r-blockmodeling))
     (home-page "https://cran.r-project.org/package=BlockmodelingGUI")
     (synopsis "GUI for the Generalised Blockmodeling of Valued Networks")
     (description
@@ -8094,7 +8104,11 @@ generalised blockmodeling of single-relation, one-mode networks.  The user can
 execute blockmodeling without having to write a line code by using the app's
 visual helps.  Moreover, there are several ways to visualisations networks and
 their partitions.  Finally, the results can be exported as if they were produced
-by writing code.")
+by writing code.  The development of this package is financially supported by
+the Slovenian Research Agency (www.arrs.gov.si) within the research project
+J5-2557 (Comparison and evaluation of different approaches to blockmodeling
+dynamic networks by simulations with application to Slovenian co-authorship
+networks).")
     (license license:gpl3+)))
 
 (define-public r-blockmatrix
@@ -14661,13 +14675,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "0n57g1kvy1s7j79ivd5ld98sgxh20gvnpdlq12v4cqyjxgcflvr9"))))
+                "0jv01ka72s649li1islb0q06d7spslkql73bvp2hrqhxrw5b3mc7"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14676,7 +14690,6 @@ the bfsl solution.")
                              r-rvest
                              r-pxweb
                              r-magrittr
-                             r-lifecycle
                              r-jsonlite
                              r-janitor))
     (home-page "https://felixluginbuhl.com/BFS/")
@@ -17722,13 +17735,13 @@ These are required for the correct installation of nimble
 (define-public r-bcfrailphdv
   (package
     (name "r-bcfrailphdv")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcfrailphdv" version))
               (sha256
                (base32
-                "06xzz5m4s5fp36j3saxmpw1p0bhh42cjd35cadwkk3vg836kj1na"))))
+                "1amfpyb9y7ngfq1npnjwzgbs6g3dmpp979q7ajf0khjgj55fkirw"))))
     (properties `((upstream-name . "bcfrailphdv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-bcfrailph))
@@ -17737,15 +17750,14 @@ These are required for the correct installation of nimble
     (description
      "Fit and simulate bivariate correlated frailty models with proportional hazard
 structure.  Frailty distributions, such as gamma and lognormal models are
-supported.  Frailty variances of the two subjects can be varied or equal.
-Details on the models are available in book of Wienke
+supported for semiparametric procedures.  Frailty variances of the two subjects
+can be varied or equal.  Details on the models are available in book of Wienke
 (2011,ISBN:978-1-4200-7388-1).  Bivariate gamma fit is obtained using the
 approach given in Iachine (1995) with modifications.  Lognormal fit is based on
 the approach by Ripatti and Palmgren (2000)
-<doi:10.1111/j.0006-341X.2000.01016.x>.  Univariate and bivariate shared gamma
-frailty model fits are possible.  Standard errors of the estimated covariate
-coefficients and frailty variance parameter are obtained using the approach
-given in Klein and Moeschberger (2003,ISBN:0-387-95399-X).")
+<doi:10.1111/j.0006-341X.2000.01016.x>.  Frailty distributions, such as gamma,
+inverse gaussian and power variance frailty models are supported for parametric
+approach.")
     (license license:gpl2+)))
 
 (define-public r-bcfrailph
@@ -19932,13 +19944,13 @@ shifted Poisson distributions (see Basturk, Hoogerheide and van Dijk (2021)
 (define-public r-bayesmrm
   (package
     (name "r-bayesmrm")
-    (version "2.3.0")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesMRM" version))
               (sha256
                (base32
-                "1am9valflwzs71vbfsz4glfzb4wnqsn4baryjk8srwkg37p5v2mm"))))
+                "1qdc4y0l6v4axp47pnxcnq96hl7kbi9r4jiknd5i934smcr2bsza"))))
     (properties `((upstream-name . "bayesMRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes

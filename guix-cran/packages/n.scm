@@ -977,6 +977,40 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
+(define-public r-nser
+  (package
+    (name "r-nser")
+    (version "1.4.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nser" version))
+              (sha256
+               (base32
+                "0dbilzbc6ajfrsx5zlfcnhh73zqf7z0d672kj4c2k8iaslkv4n8s"))))
+    (properties `((upstream-name . "nser")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-stringr
+                             r-rvest
+                             r-rselenium
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-googlevis
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nandp1/nser/")
+    (synopsis
+     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
+    (description
+     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
+Equities and Derivatives (F&O) segment.  Data source
+<https://www.nseindia.com/>.")
+    (license license:gpl3)))
+
 (define-public r-nse2r
   (package
     (name "r-nse2r")
@@ -2979,13 +3013,13 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "0ac0qc3vg012ndk8c50xma636k32mzhd7z9i434d1d6iz2fy3gn9"))))
+                "0in0ngsy2mypnjv6jmdj5b3f15r82hg1nirxm5r0dfb56zg3033r"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -5839,6 +5873,41 @@ in nlmrt generally works more reliably to get a solution, though this may be one
 of a set of possibilities, and may also be statistically unsatisfactory.  Added
 print and summary as of August 28, 2012.")
     (license license:gpl2)))
+
+(define-public r-nlmm
+  (package
+    (name "r-nlmm")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nlmm" version))
+              (sha256
+               (base32
+                "0pmw3a8mqmdli2rx8pgmq8i5l045jvcdidx9a7pgcfyymv9sqfpv"))))
+    (properties `((upstream-name . "nlmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-qtools
+                             r-numderiv
+                             r-nlme
+                             r-mvtnorm
+                             r-matrix
+                             r-mass
+                             r-lqmm
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=nlmm")
+    (synopsis "Generalized Laplace Mixed-Effects Models")
+    (description
+     "This package provides functions to fit linear mixed models based on convolutions
+of the generalized Laplace (GL) distribution.  The GL mixed-effects model
+includes four special cases with normal random effects and normal errors (NN),
+normal random effects and Laplace errors (NL), Laplace random effects and normal
+errors (LN), and Laplace random effects and Laplace errors (LL).  The methods
+are described in Geraci and Farcomeni (2020, Statistical Methods in Medical
+Research) <doi:10.1177/0962280220903763>.")
+    (license license:gpl2+)))
 
 (define-public r-nlmixr2rpt
   (package
@@ -11011,13 +11080,13 @@ handle post-processing according to the data model and his needs.")
 (define-public r-nembm
   (package
     (name "r-nembm")
-    (version "1.00.00")
+    (version "1.00.01")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nemBM" version))
               (sha256
                (base32
-                "19yz33yf26v2dx47xhl85sidg5mx0h9xwafzswbs0hw65vinms79"))))
+                "0zr2bxrla436yj5qba0jnrxw94alq9cp7zfkrvjwiyil4byj0a6c"))))
     (properties `((upstream-name . "nemBM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ergm r-blockmodeling))
@@ -11028,9 +11097,11 @@ handle post-processing according to the data model and his needs.")
      "To study network evolution models and different blockmodeling approaches.
 Various functions enable generating (temporal) networks with a selected
 blockmodel type, taking into account selected local network mechanisms.  The
-development of this package is financially supported by the Slovenian Research
-Agency (www.arrs.gov.si) within the research programs P5-0168 and the research
-project J7-8279 (Blockmodeling multilevel and temporal networks).")
+development of this package is financially supported the Slovenian Research
+Agency (www.arrs.gov.si) within the research program P5<96>0168 and the research
+project J5-2557 (Comparison and evaluation of different approaches to
+blockmodeling dynamic networks by simulations with application to Slovenian
+co-authorship networks).")
     (license license:gpl2)))
 
 (define-public r-neldermead
@@ -13089,13 +13160,13 @@ and the Earth Observatory Natural Event Tracker (EONET) webservice.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.12")
+    (version "2.6.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naryn" version))
               (sha256
                (base32
-                "0lz0vcgp0llwr94234aqa7na0rl1120db8mga5wryp3hhs8w7qc1"))))
+                "04i4mfnc6y12k1a84vdwilf83p39zfzmrin3p2l1xxv6c999zpri"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

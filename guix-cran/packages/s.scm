@@ -6495,13 +6495,13 @@ structure information.")
 (define-public r-strucdiv
   (package
     (name "r-strucdiv")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StrucDiv" version))
               (sha256
                (base32
-                "0z8i8dk5m0ll0dixn3d0mjb6brzrmwnik4vzz5n4rmvjv47flj8b"))))
+                "1mzkcij7mrmjj5ccmy0l3xbb75w0bi7vc2cxap3qkycqm1ajk1dr"))))
     (properties `((upstream-name . "StrucDiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -10900,20 +10900,23 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statgenHTP" version))
               (sha256
                (base32
-                "1lclxc4al3h7z5cbjhmm6p1hr22gysz16hlvfams37czbc2prlha"))))
+                "01xp6ipaf8w52kkq0p43qj12i0jd4i2a7lzkiyfv0y91c0j0hha4"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (propagated-inputs (list r-spats
+                             r-spam
                              r-scales
                              r-reshape2
+                             r-matrix
                              r-lubridate
                              r-locfit
+                             r-lmmsolver
                              r-gridextra
                              r-ggplot2
                              r-ggnewscale
@@ -10930,7 +10933,7 @@ parameter estimation.  The package is being developed within the EPPN2020
 project (<https://eppn2020.plant-phenotyping.eu/>).  Some functions have been
 created to be used in conjunction with the R package asreml for the ASReml
 software, which can be obtained upon purchase from VSN international
-(<https://www.vsni.co.uk/software/asreml>).")
+(<https://vsni.co.uk/software/asreml>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-statgengxe
@@ -12261,13 +12264,13 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stacks" version))
               (sha256
                (base32
-                "19z8gi75sj7nm7d3ws2xwqpcfiviw2557siif6q7jq7mn7x4cw43"))))
+                "1abd0h1nqxp4mmsgi6g6ki0j6v2gacq687d83zsixrx3vfvpwkn4"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -45458,13 +45461,13 @@ viewer pane during their execution.")
 (define-public r-sdmpredictors
   (package
     (name "r-sdmpredictors")
-    (version "0.2.13")
+    (version "0.2.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sdmpredictors" version))
               (sha256
                (base32
-                "0b0904pixcxv1x8mbksbh6vvivcncp2kyaygfys6hgijn3dbndla"))))
+                "1vrl6cb2m26xlyx5wxcxnblcykajjf8rj51598zyffy5kx4xjzyl"))))
     (properties `((upstream-name . "sdmpredictors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-raster r-r-utils))
@@ -50569,13 +50572,13 @@ simulating POMDP problems and their solutions.")
 (define-public r-sars
   (package
     (name "r-sars")
-    (version "1.3.5")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sars" version))
               (sha256
                (base32
-                "07jaagf3q8x4iwjh1avy5vzv9y62ipnjd43acbw0hizh983qlq3r"))))
+                "198dz3gbzm7iqa2p813anifzpjkna3blf4yzyy73j43h8w4k5v0b"))))
     (properties `((upstream-name . "sars")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv

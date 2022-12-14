@@ -2136,6 +2136,35 @@ disorders.  The method is presented in details in Plagnol et al (2012)
 <https://pubmed.ncbi.nlm.nih.gov/22942019/>.")
     (license license:gpl3)))
 
+(define-public r-exnruleensemble
+  (package
+    (name "r-exnruleensemble")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ExNRuleEnsemble" version))
+              (sha256
+               (base32
+                "1w2p71if27z8r3pdj4fryd6r2gnv4zs608kg0qrw3nsi6lylf7kh"))))
+    (properties `((upstream-name . "ExNRuleEnsemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fnn))
+    (home-page "https://cran.r-project.org/package=ExNRuleEnsemble")
+    (synopsis
+     "k Nearest Neibour Ensemble Based on Extended Neighbourhood Rule")
+    (description
+     "The extended neighbourhood rule for the k nearest neighbour ensemble where the
+neighbours are determined in k steps.  Starting from the first nearest
+observation of the test point, the algorithm identifies a single observation
+that is closest to the observation at the previous step.  At each base learner
+in the ensemble, this search is extended to k steps on a random bootstrap sample
+with a random subset of features selected from the feature space.  The final
+predicted class of the test point is determined by using a majority vote in the
+predicted classes given by all base models.  Amjad Ali, Muhammad Hamraz, Naz
+Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
+<doi:10.48550/arXiv.2205.15111>.")
+    (license license:gpl3+)))
+
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
@@ -4278,13 +4307,13 @@ including both their metadata and their associated media files.")
 (define-public r-eurodata
   (package
     (name "r-eurodata")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurodata" version))
               (sha256
                (base32
-                "00h8pnfvg5bq7174pzj7773xcm2h2gw88kjh9skxjs8zhrqafipk"))))
+                "1g9ykm0v0rlszv1i6xhppf95j339x3ms6sji5fg46dig9pmn09i7"))))
     (properties `((upstream-name . "eurodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -4492,6 +4521,28 @@ population SD (the same as the RMSD) and the sample SD (sqrt(n/(n-1))*RMSD) by
 clicking the respective buttons.  If the mean is chosen incorrectly, the user is
 asked to correct it.")
     (license license:gpl3)))
+
+(define-public r-etwfe
+  (package
+    (name "r-etwfe")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "etwfe" version))
+              (sha256
+               (base32
+                "0wyfpnh2pcziiikjr58wbfid085c0ack6mn5n4m97pk4lg9sh6sw"))))
+    (properties `((upstream-name . "etwfe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-marginaleffects r-formula r-fixest))
+    (native-inputs (list r-knitr))
+    (home-page "https://grantmcdermott.com/etwfe/")
+    (synopsis "Extended Two-Way Fixed Effects")
+    (description
+     "Convenience functions for implementing extended two-way fixed effect regressions
+a la Wooldridge (2021, 2022) <doi:10.2139/ssrn.3906345>,
+<doi:10.2139/ssrn.4183726>.")
+    (license license:expat)))
 
 (define-public r-etrm
   (package
@@ -7995,13 +8046,13 @@ intervals.  This is part of the R4Epis project <https://r4epis.netlify.com>.")
 (define-public r-epiinvert
   (package
     (name "r-epiinvert")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiInvert" version))
               (sha256
                (base32
-                "03xvcrh2gf5rnisq0kza5ny066asjq2igk53a423xq7i09xlr1zg"))))
+                "0afmgzx7ryvwb8ajkm0v077lrnahac8g3jqkk86imx4101dfg70q"))))
     (properties `((upstream-name . "EpiInvert")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
