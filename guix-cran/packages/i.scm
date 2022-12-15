@@ -7436,37 +7436,6 @@ subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
 
-(define-public r-ino
-  (package
-    (name "r-ino")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ino" version))
-              (sha256
-               (base32
-                "16b38gf30n25dz205y77lr8aj0f39bamc6sbgjfq2kg2vbq700iw"))))
-    (properties `((upstream-name . "ino")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-progress
-                             r-optimizer
-                             r-mvtnorm
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-dosnow
-                             r-crayon
-                             r-cli
-                             r-ao))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/loelschlaeger/ino")
-    (synopsis "Initialization of Numerical Optimization")
-    (description
-     "Implementation of initialization strategies for the numerical optimization of
-real-valued functions, in particular likelihood functions of statistical models.")
-    (license license:gpl3+)))
-
 (define-public r-innsight
   (package
     (name "r-innsight")
@@ -10036,13 +10005,13 @@ functions.  Preprint is available at bioRxiv (Weber et al., 2019
 (define-public r-immunarch
   (package
     (name "r-immunarch")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "immunarch" version))
               (sha256
                (base32
-                "0hd7aayb02hpbg59y0ahyhzkwks4l5b23m0l05yqxbk29ydrsa70"))))
+                "1yjmr7n352xnkrw9pa122kb716y02bmjr6lw6413gn77bwkxnfpy"))))
     (properties `((upstream-name . "immunarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid

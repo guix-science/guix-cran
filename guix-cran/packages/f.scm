@@ -430,13 +430,13 @@ analysing and dealing with multicollinearity.  Initially described in Barbosa
 (define-public r-fuzzyresampling
   (package
     (name "r-fuzzyresampling")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyResampling" version))
               (sha256
                (base32
-                "1cryrz18zyp5mzjixhfn4d5207csaadspp3hhbly1k5wwcf6mnyf"))))
+                "1jnsxyiadyp26xlam913wvynb3sh18hrrxc5wkv70fpy1iqjlxcq"))))
     (properties `((upstream-name . "FuzzyResampling")))
     (build-system r-build-system)
     (home-page "https://github.com/mroman-ibs/FuzzyResampling")
@@ -458,10 +458,10 @@ al. (2020) <doi:10.34768/amcs-2020-0022>, Grzegorzewski and Romaniuk (2022)
 resampling methods are also provided, like calculation of the Bertoluzza et
 al.'s distance (aka the mid/spread distance, see Bertoluzza et al. (1995) \"On a
 new class of distances between fuzzy numbers\") and estimation of the p-value of
-the one-sample bootstrapped test for the mean (see Lubiano et al. (2016,
-<doi:10.1016/j.ejor.2015.11.016>)).  Additionally, there are procedures which
-randomly generate trapezoidal fuzzy numbers using some well-known statistical
-distributions.")
+the one- and two- sample bootstrapped test for the mean (see Lubiano et al.
+(2016, <doi:10.1016/j.ejor.2015.11.016>)).  Additionally, there are procedures
+which randomly generate trapezoidal fuzzy numbers using some well-known
+statistical distributions.")
     (license license:gpl3)))
 
 (define-public r-fuzzyreg
@@ -905,13 +905,13 @@ package tests and in Continuous Integration (CI) pipelines.")
 (define-public r-future-callr
   (package
     (name "r-future-callr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.callr" version))
               (sha256
                (base32
-                "1nhkmxaaii647gizrxa8zj1iakivml7zrqi4bvvs5yshc7m9slg9"))))
+                "1w7wq2nrvj65a25nsb5h99258p9565qwnlvcc07nyc21gm5zrg9k"))))
     (properties `((upstream-name . "future.callr")))
     (build-system r-build-system)
     (propagated-inputs (list r-future r-callr))
@@ -929,17 +929,17 @@ processes.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.10.0")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.batchtools" version))
               (sha256
                (base32
-                "1ly98h2g7wpfxp2r8vl1hy7wqqgwgawjagz0m2iczjmcj4ix6avk"))))
+                "0d1bykchldn0gmn67nzmrfzmsm2965kjdymssw38qc6p6x4lr26v"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-future r-batchtools))
-    (home-page "https://github.com/HenrikBengtsson/future.batchtools")
+    (propagated-inputs (list r-parallelly r-future r-batchtools))
+    (home-page "https://future.batchtools.futureverse.org")
     (synopsis
      "Future API for Parallel and Distributed Processing using 'batchtools'")
     (description
@@ -5711,21 +5711,26 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "2.3.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "1464skjcq8pzpln98rf3w04c78wjckzni4klzsi3hnka9clyhap6"))))
+                "0rdl34h58hx4ccqp8km2126ws98n6n02rxz05dc78i7cswrm90pa"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
-    (propagated-inputs (list r-tibble r-nlme r-hmisc r-ggplot2 r-cairo))
+    (propagated-inputs (list r-tibble
+                             r-nlme
+                             r-hmisc
+                             r-ggplot2
+                             r-formula-tools
+                             r-cairo))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=forsearch")
     (synopsis
-     "Outlier Diagnostics for Some Linear Effects and Linear Mixed Effects Models")
+     "Diagnostic Analysis Using Forward Search Procedure for Various Models")
     (description
      "Identifies potential data outliers and their impact on estimates and analyses.
 Uses the forward search approach of Atkinson and Riani, \"Robust Diagnostic

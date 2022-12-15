@@ -502,13 +502,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "overlapping" version))
               (sha256
                (base32
-                "1rxd0pv6knmq0vdqbdch869prw1n4d75vj9l4n9anl0s7w2cz5y4"))))
+                "1dq2xsinl5rh8sf2bayv6xs7x8i0d54c405p8l82ji3xrkz49clf"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-ggplot2))
@@ -2334,6 +2334,39 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
 have three (or more) main sections: code, results, and data, each with different
 requirements (version control/sharing/encryption).  You provide folder locations
 and org helps you take care of the details.")
+    (license license:expat)))
+
+(define-public r-orfid
+  (package
+    (name "r-orfid")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ORFID" version))
+              (sha256
+               (base32
+                "11g4l45x3jwyffamr2qd0h7y15kyynqqwxh1mp1mnv0lchmdyr89"))))
+    (properties `((upstream-name . "ORFID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-openxlsx
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hugo-marques/ORFID")
+    (synopsis
+     "Manage and Summarize Data from Oregon RFID ORMR and ORSR Antenna Readers")
+    (description
+     "Automates and standardizes the import of raw data from Oregon RFID
+(radio-frequency identification) ORMR (Oregon RFID Multi-Reader) and ORSR
+(Oregon RFID Single Reader) antenna readers.  Compiled data can then be combined
+within multi-reader arrays for further analysis, including summarizing tag and
+reader detections, determining tag direction, and calculating antenna
+efficiency.")
     (license license:expat)))
 
 (define-public r-orf
@@ -9238,13 +9271,13 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OCNet" version))
               (sha256
                (base32
-                "111sk662a3qrkknlvw1x605gg5rskyayd1scafbswp6zjgrczgh4"))))
+                "0nl97srp0g947zgp05nmbk80jcj7n6d9869c77p3201q1zr9k488"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn

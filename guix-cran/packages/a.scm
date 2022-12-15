@@ -2576,22 +2576,22 @@ data visualization and report generation functions.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "audubon" version))
               (sha256
                (base32
-                "0mswnghq46s41zcyvk5ksrbx2f2zm8dap4df1k1377d7nmjb1rgl"))))
+                "1pm88grq0sjixjsm4pwlpsp4yxdy44232x4z662dzzx5bymz1j9w"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
-                             r-tidyselect
                              r-stringi
                              r-rlang
                              r-readr
                              r-purrr
                              r-memoise
+                             r-matrix
                              r-magrittr
                              r-dplyr))
     (home-page "https://github.com/paithiov909/audubon")
@@ -11854,13 +11854,13 @@ recurrence bundle's event set.")
 (define-public r-allspice
   (package
     (name "r-allspice")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Allspice" version))
               (sha256
                (base32
-                "0a99iqb01snza0ad07lrzmn88vpq8wvx5vjr8fk0wbzihxzbzn4y"))))
+                "0fsfmyz1jmayvqk6xacx4fnr5jhadsbq140fwlcb7qjlwr26p2kf"))))
     (properties `((upstream-name . "Allspice")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12995,13 +12995,13 @@ program:
 (define-public r-airgrteaching
   (package
     (name "r-airgrteaching")
-    (version "0.2.13")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "airGRteaching" version))
               (sha256
                (base32
-                "1j95b1rz83f1x8gp6107rdk9g81j47yhgdlf8y17f0ffgrvwwfky"))))
+                "18mqwv5a4aj0j49li1xp759qhgqgj4ylkcgrk3hn6yb4qqq271xy"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

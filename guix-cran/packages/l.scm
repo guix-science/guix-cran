@@ -5955,13 +5955,13 @@ also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMMsolver" version))
               (sha256
                (base32
-                "0vymn14lhwjjgxpjiz2hnpq7pada7cj6jc774407m08r0b91ija8"))))
+                "0yqgirl01kjgday8g4jj5ixa07qs740q9g97w41mnysmnxnlmmpd"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -6025,6 +6025,47 @@ cores which repeat until convergence.")
     (synopsis "Multiple Ordinal Tobit (MOT) Model")
     (description "Fit right censored Multiple Ordinal Tobit (MOT) model.")
     (license license:gpl3)))
+
+(define-public r-lmmelsm
+  (package
+    (name "r-lmmelsm")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LMMELSM" version))
+              (sha256
+               (base32
+                "0m57hsfpgxch5lmpdxqp720jv18as12drpx1p5x3y4w0navslslz"))))
+    (properties `((upstream-name . "LMMELSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-nlme
+                             r-mass
+                             r-loo
+                             r-formula
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=LMMELSM")
+    (synopsis "Fit Latent Multivariate Mixed Effects Location Scale Models")
+    (description
+     "In addition to modeling the expectation (location) of an outcome, mixed effects
+location scale models (MELSMs) include submodels on the variance components
+(scales) directly.  This allows models on the within-group variance with mixed
+effects, and between-group variances with fixed effects.  The MELSM can be used
+to model volatility, intraindividual variance, uncertainty, measurement error
+variance, and more.  Multivariate MELSMs (MMELSMs) extend the model to include
+multiple correlated outcomes, and therefore multiple locations and scales.  The
+latent multivariate MELSM (LMMELSM) further includes multiple correlated latent
+variables as outcomes.  This package implements two-level mixed effects location
+scale models on multiple observed or latent outcomes, and between-group variance
+modeling.  Williams, Martin, Liu, and Rast (2020)
+<doi:10.1027/1015-5759/a000624>.  Hedeker, Mermelstein, and Demirtas (2008)
+<doi:10.1111/j.1541-0420.2007.00924.x>.")
+    (license license:expat)))
 
 (define-public r-lmm
   (package
@@ -9060,13 +9101,13 @@ insurances calculations are contained therein.  See Spedicato
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.0.1")
+    (version "4.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lidR" version))
               (sha256
                (base32
-                "0bfnnshnc3wcz8zghr71srfdhd32wmmwadg5qw85ydvz7bpsgv8i"))))
+                "0b4x95m1qmnb45yw8220brw9xryfdgdhprhwb4digfg12g324akp"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -11766,13 +11807,13 @@ with the rest of the inputs.")
 (define-public r-ldlinkr
   (package
     (name "r-ldlinkr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDlinkR" version))
               (sha256
                (base32
-                "0zy44459mxvqd7vxcp697nf8pkvxb18sqc1gacm6ccvwm1jsih2a"))))
+                "1lbrh70jhcfkk3d8mfyv8x7nk5hfw8prxjr7vqxvcmw6ikp6mgiw"))))
     (properties `((upstream-name . "LDlinkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))

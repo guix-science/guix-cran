@@ -3305,20 +3305,22 @@ Rao, and Junho Yang.")
 (define-public r-csodata
   (package
     (name "r-csodata")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csodata" version))
               (sha256
                (base32
-                "11y3gr7b5m0zh3vbl4izy454mrcxj144vfvafxlxgp2aplzim3s8"))))
+                "0ld1yj98vkbw5bw70c13d1w2lg16idq4p6qip8adln0zyyvpp747"))))
     (properties `((upstream-name . "csodata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf
+    (propagated-inputs (list r-tidyr
+                             r-sf
                              r-rjstat
                              r-reshape2
                              r-r-cache
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-dplyr))
@@ -3388,6 +3390,30 @@ selection (CSMES) (as described in De bock et al. (2020)
 <doi:10.1016/j.ejor.2020.01.052>) for cost-sensitive learning under unknown cost
 conditions.")
     (license license:gpl2+)))
+
+(define-public r-csmaps
+  (package
+    (name "r-csmaps")
+    (version "2022.12.15")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "csmaps" version))
+              (sha256
+               (base32
+                "0qr68jbq6wzrrx6a701cwighcgbyg1ppbys0iajgc1v04z625jhh"))))
+    (properties `((upstream-name . "csmaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/csmaps/")
+    (synopsis "Preformatted Maps of Norway that Don't Need Geolibraries")
+    (description
+     "This package provides datasets containing preformatted maps of Norway at the
+county, municipality, and ward (Oslo only) level for redistricting in 2017,
+2018, and 2020.  Multiple layouts are provided (normal, split, and with an
+insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
+without any geolibraries.")
+    (license license:expat)))
 
 (define-public r-csindicators
   (package
@@ -21077,13 +21103,13 @@ penalized criteria with penalty function to be data driven calibrated.")
 (define-public r-clustmixtype
   (package
     (name "r-clustmixtype")
-    (version "0.2-15")
+    (version "0.3-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clustMixType" version))
               (sha256
                (base32
-                "1m43xhqc7jcdj1h5nlp0daz99s1nfss7rwwjn7qqf1hvscblyp3s"))))
+                "0ijinldyb55chs2llklzk8c7pxxhhfy5cc6ar4fd1gbaasgkadx2"))))
     (properties `((upstream-name . "clustMixType")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcolorbrewer))
@@ -21093,7 +21119,7 @@ penalized criteria with penalty function to be data driven calibrated.")
      "This package provides functions to perform k-prototypes partitioning clustering
 for mixed variable-type data according to Z.Huang (1998): Extensions to the
 k-Means Algorithm for Clustering Large Data Sets with Categorical Variables,
-Data Mining and Knowledge Discovery 2, 283-304, <DOI:10.1023/A:1009769707641>.")
+Data Mining and Knowledge Discovery 2, 283-304.")
     (license license:gpl2+)))
 
 (define-public r-clustmd
@@ -22522,13 +22548,13 @@ update time keeping data.")
 (define-public r-clmplus
   (package
     (name "r-clmplus")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clmplus" version))
               (sha256
                (base32
-                "06aya89qraj5hy7rd4k6lfyipgybq1cyigvpnnnr525yrc27ivig"))))
+                "0flnrfs5ymz0ki85zcwmdg605xyfpdc73c71xk35q0ak7l7mbz44"))))
     (properties `((upstream-name . "clmplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stmomo
@@ -22539,7 +22565,7 @@ update time keeping data.")
                              r-chainladder))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gpitt71/clmplus")
-    (synopsis "Tool-Box of Chain Ladder + Models")
+    (synopsis "Tool-Box of Chain Ladder Plus Models")
     (description
      "Implementation of the chain ladder model under the reverse time framework
 introduced in Hiabu (2017) <doi:10.1080/03461238.2016.1240709>.  It also
@@ -33763,13 +33789,13 @@ Chapman and Hall.")
 (define-public r-castor
   (package
     (name "r-castor")
-    (version "1.7.5")
+    (version "1.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "castor" version))
               (sha256
                (base32
-                "0dfs0rjrw9zrs9n0avy3fq5r7vi4alvd55l7582j47dbwj82i1a5"))))
+                "1qbndwmzzpkzgiah0hgid9z5f9iv2j53d515bjcci1591gx1fk36"))))
     (properties `((upstream-name . "castor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpp r-naturalsort r-matrix))

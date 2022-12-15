@@ -7506,6 +7506,29 @@ analysis of while-alive loss (or event) rate for possibly recurrent nonfatal
 event in the presence of death.")
     (license license:gpl2+)))
 
+(define-public r-w4mrutils
+  (package
+    (name "r-w4mrutils")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "W4MRUtils" version))
+              (sha256
+               (base32
+                "12yqy4066qj5k6imnqd6brkklhrx8a827fn8lhqcr6hfycm5p2ym"))))
+    (properties `((upstream-name . "W4MRUtils")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=W4MRUtils")
+    (synopsis "Utils List for W4M - Workflow for Metabolomics")
+    (description
+     "This package provides a set of utility function to prevent the spread of
+utilities script in W4M (Workflow For Metabolomics) scripts, and centralize them
+in a single package.  Some are meant to be replaced by real packages in a near
+future, like the parse_args() function: it is here only to prepare the ground
+for more global changes in W4M scripts and tools.")
+    (license license:agpl3+)))
+
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")

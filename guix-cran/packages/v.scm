@@ -305,21 +305,16 @@ statistics.  See the vignette \"vtable\" for a package overview.")
 (define-public r-vsurf
   (package
     (name "r-vsurf")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VSURF" version))
               (sha256
                (base32
-                "1azfd4sb89mp27l86k293qj81x94gfiy1ihwnb6c558p8h69xsgf"))))
+                "14rkd1n7ffy7hz3xgqqysbphy89h6lpmkhjrlpsfmwb2jzhv29y0"))))
     (properties `((upstream-name . "VSURF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rpart
-                             r-rborist
-                             r-ranger
-                             r-randomforest
-                             r-foreach
-                             r-doparallel))
+    (propagated-inputs (list r-rpart r-randomforest r-foreach r-doparallel))
     (home-page "https://github.com/robingenuer/VSURF")
     (synopsis "Variable Selection Using Random Forests")
     (description
@@ -1708,6 +1703,36 @@ Partial Dependence Profiles.")
 two-way variable interaction jointly.  Can also display partial dependence plots
 laid out in a pairs plot or zenplots style.")
     (license license:gpl2+)))
+
+(define-public r-vivaldi
+  (package
+    (name "r-vivaldi")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vivaldi" version))
+              (sha256
+               (base32
+                "1v1lqx2ky99skf0iib4s26hw6b4caj0aiz2b785jgxgk9wc4905h"))))
+    (properties `((upstream-name . "vivaldi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcfr
+                             r-tidyverse
+                             r-tidyselect
+                             r-tidyr
+                             r-seqinr
+                             r-plotly
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GreshamLab/vivaldi")
+    (synopsis "Viral Variant Location and Diversity")
+    (description
+     "Analysis of minor alleles in Illumina sequencing data of viral genomes.
+Functions in vivaldi primarily operate on vcf files.")
+    (license license:expat)))
 
 (define-public r-vivainsights
   (package

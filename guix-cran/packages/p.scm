@@ -21807,16 +21807,21 @@ predictive capacity of the proportional hazards model.")
 (define-public r-phers
   (package
     (name "r-phers")
-    (version "0.0.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phers" version))
               (sha256
                (base32
-                "1gyigamjsyfkmflp1i654csfsarx6jq984jbhbgwnsz6br0xppzh"))))
+                "0g98w7a1p5r9wi5v36p248ihvydjy21kcjh2fq18ns445rydlgkc"))))
     (properties `((upstream-name . "phers")))
     (build-system r-build-system)
-    (propagated-inputs (list r-iterators r-foreach r-data-table r-checkmate
+    (propagated-inputs (list r-survival
+                             r-speedglm
+                             r-iterators
+                             r-foreach
+                             r-data-table
+                             r-checkmate
                              r-bedmatrix))
     (home-page "https://phers.hugheylab.org")
     (synopsis "Calculate Phenotype Risk Scores")
@@ -25058,13 +25063,13 @@ penalization methods is provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pencal" version))
               (sha256
                (base32
-                "139hdgdpl55ag9azdm2rklnjmbg251517k4mi56xphzn78ji6ncc"))))
+                "0yafajg4axkk7szrbi00kp2iskm0dc870i4zs8sg1f13nzmjg8zs"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc

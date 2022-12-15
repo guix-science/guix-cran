@@ -565,13 +565,13 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-butcher
   (package
     (name "r-butcher")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "butcher" version))
               (sha256
                (base32
-                "1pq86hn6fcrcwccx82msmmn2s0qxp1k6mybip3yygfpl0cvl0zd3"))))
+                "1ymz4p887f8z54bxwih0zycbs2wmy5rlmw9z0gl0y89q4l8vyygw"))))
     (properties `((upstream-name . "butcher")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1054,13 +1054,13 @@ which identifies the groove locations.")
 (define-public r-bulkanalyser
   (package
     (name "r-bulkanalyser")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bulkAnalyseR" version))
               (sha256
                (base32
-                "1j86qx90rjj1bm6jm107rqs8s1g7cz69302gjip0h6iwd77kmim1"))))
+                "008vnkcaa26d8620i1l49mbcr7px5x16s5x2wlq1vm0jkxya4c3z"))))
     (properties `((upstream-name . "bulkAnalyseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -1082,6 +1082,7 @@ which identifies the groove locations.")
                              r-magrittr
                              r-gprofiler2
                              r-glue
+                             r-ggvenndiagram
                              r-ggrepel
                              r-ggrastr
                              r-ggplot2
@@ -13960,13 +13961,13 @@ more easily accessible.  Publication: Kapsner et al. (2021)
 (define-public r-bi
   (package
     (name "r-bi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BI" version))
               (sha256
                (base32
-                "1iv721wbh64qyij58llkxgz1s1rsc3x68h5gz69fxbf4x9cv2vlr"))))
+                "12x8l5v703b142cixnw9fz0i1j7sx6cphjcsw7ywvhrfy7z8yc35"))))
     (properties `((upstream-name . "BI")))
     (build-system r-build-system)
     (home-page "https://github.com/marcschwartz/BI")
@@ -15970,13 +15971,13 @@ implemented in the package can be found in Castellares et al. (2018)
 (define-public r-belg
   (package
     (name "r-belg")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "belg" version))
               (sha256
                (base32
-                "0v7ljy6xkbck880fd8v54cnbjp8dr662wn7wm87g9888nzps327a"))))
+                "12yfqzz98c4377xjqw9biq83mp8gb009xy4fnnsgxrqb8d4r6i2i"))))
     (properties `((upstream-name . "belg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -19839,13 +19840,13 @@ cyjShiny package from GitHub.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.0.2.5")
+    (version "2.1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "0mfmpbfwysk298lc81g9yp29jj3ayral3p9fd8vf0vby3jkmppbc"))))
+                "0zg7x2zls6abfrz083lhq9djfgdl9bnc433pjid85cvzw7di3syh"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19858,6 +19859,7 @@ cyjShiny package from GitHub.")
                              r-extradistr
                              r-evaluate
                              r-dplyr
+                             r-chk
                              r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://open-aims.github.io/bayesnec/")

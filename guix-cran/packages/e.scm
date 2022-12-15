@@ -17504,6 +17504,29 @@ routines.")
 modified rejection sampling or uniformization.")
     (license license:gpl3)))
 
+(define-public r-ecb
+  (package
+    (name "r-ecb")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecb" version))
+              (sha256
+               (base32
+                "1qs3si47bpvc7gvvzaq3sna0s241p6kygvhp1xwcn4117lhjlz5j"))))
+    (properties `((upstream-name . "ecb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rsdmx r-httr r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://sdw.ecb.europa.eu/")
+    (synopsis
+     "Programmatic Access to the European Central Bank's Statistical Data Warehouse")
+    (description
+     "This package provides an interface to the European Central Bank's Statistical
+Data Warehouse API <https://sdw.ecb.europa.eu/>, allowing for programmatic
+retrieval of a vast quantity of statistical data.")
+    (license license:cc0)))
+
 (define-public r-ecar
   (package
     (name "r-ecar")

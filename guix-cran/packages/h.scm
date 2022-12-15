@@ -1199,6 +1199,30 @@ the results are also provided.  There is also a function to assess the
 importance of the predictors.")
     (license license:gpl2+)))
 
+(define-public r-hybriddesign
+  (package
+    (name "r-hybriddesign")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HybridDesign" version))
+              (sha256
+               (base32
+                "19hgljm7mhd00s2lvvxmdr35zifnl0kymmcx06jfqkld3qd3zli6"))))
+    (properties `((upstream-name . "HybridDesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testit r-resourceselection))
+    (home-page "https://cran.r-project.org/package=HybridDesign")
+    (synopsis "Hybrid Design for Phase I Dose-Finding Studies")
+    (description
+     "The Hybrid design is a combination of model-assisted design (e.g., the modified
+Toxicity Probability Interval design) with dose-toxicity model-based design for
+phase I dose-finding studies.  The hybrid design controls the overdosing
+toxicity well and leads to a recommended dose closer to the true maximum
+tolerated dose (MTD) due to its ability to calibrate for an intermediate dose.
+More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
+    (license license:gpl3)))
+
 (define-public r-hwwntest
   (package
     (name "r-hwwntest")
@@ -6037,13 +6061,13 @@ University and lead by Drs.  Herman Staats and Soman Abraham.")
 (define-public r-highs
   (package
     (name "r-highs")
-    (version "0.1-5")
+    (version "0.1-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highs" version))
               (sha256
                (base32
-                "1b59ip3y2kqcp4q035857ds1y75sll1n78x51zhfpqfwkdx5258j"))))
+                "1wfpgwqmz08dlfz33wlzswrk9b6sywa1g30srzpb1rfkdzv3ark0"))))
     (properties `((upstream-name . "highs")))
     (build-system r-build-system)
     (inputs (list cmake bash))

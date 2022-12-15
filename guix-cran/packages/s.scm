@@ -1892,13 +1892,13 @@ well as other swatch file formats can be found at
 (define-public r-swarmsvm
   (package
     (name "r-swarmsvm")
-    (version "0.1-6")
+    (version "0.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SwarmSVM" version))
               (sha256
                (base32
-                "09xq7jx70qjyhblzh6kc40hdr0636rqqdnbka7m6rawhd8ivp8yz"))))
+                "03q9sv51lvf64gdzmcb8sskghqib3afy5hx9nwxba1sk2cziinpb"))))
     (properties `((upstream-name . "SwarmSVM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem
@@ -15883,6 +15883,40 @@ Bartz-Beielstein T, Rehbach F, Sen A, Zaefferer M <arXiv:2105.14625>.
 Bettonvil, B, Kleijnen JPC (1996) <doi:10.1016/S0377-2217(96)00156-7>.")
     (license license:gpl2+)))
 
+(define-public r-spotifyr
+  (package
+    (name "r-spotifyr")
+    (version "2.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spotifyr" version))
+              (sha256
+               (base32
+                "14rq4yzvly3yl1xnndpzp6mp2mmbvc0qwkx75lb85gad8271a4ij"))))
+    (properties `((upstream-name . "spotifyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/charlie86/spotifyr")
+    (synopsis "R Wrapper for the 'Spotify' Web API")
+    (description
+     "An R wrapper for pulling data from the Spotify Web API
+<https://developer.spotify.com/documentation/web-api/> in bulk, or post items on
+a Spotify user's playlist.")
+    (license license:expat)))
+
 (define-public r-spotidy
   (package
     (name "r-spotidy")
@@ -19187,13 +19221,13 @@ Models) using quantile-quantile bias correction technique.")
 (define-public r-spdl
   (package
     (name "r-spdl")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spdl" version))
               (sha256
                (base32
-                "18iw1sx2cig2qw85d0vwa8s531pxvqkv9v9fyx0n1afq80pa93d7"))))
+                "028my0q09021dxwgf2bwzhnrkly37wgz1acpbi3zws2cm9ixgf08"))))
     (properties `((upstream-name . "spdl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppspdlog))
@@ -25366,13 +25400,13 @@ population genetic and phylogenetic analyses.")
 (define-public r-snpassoc
   (package
     (name "r-snpassoc")
-    (version "2.0-18")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SNPassoc" version))
               (sha256
                (base32
-                "0karxsv4ilxscm51sj9yhm17xfnxvh3bkxvsmmvsypf4mpa1ks0a"))))
+                "0ffsxlvdpd77sav5jjzv6vx5vwhh5gmw55ndzvf4299nnx5l2xka"))))
     (properties `((upstream-name . "SNPassoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25381,8 +25415,7 @@ population genetic and phylogenetic analyses.")
                              r-plyr
                              r-mvtnorm
                              r-haplo-stats
-                             r-ggplot2
-                             r-biostrings))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/isglobal-brge/SNPassoc")
     (synopsis "SNPs-Based Whole Genome Association Studies")
@@ -26225,22 +26258,30 @@ convolution theorem (see Gilleland 2013, <doi:10.5065/D61834G2>).")
 (define-public r-smoothic
   (package
     (name "r-smoothic")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smoothic" version))
               (sha256
                (base32
-                "11bi3xyw1ia1p8hqfz4rcp1qxz0lkpwl1yc8m12819mgsliswgn8"))))
+                "1h0nvnqkjvd283qzymwpmxbb5mz4vp0wy7s1f748czrgjgpbllkm"))))
     (properties `((upstream-name . "smoothic")))
     (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-mass))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/meadhbh-oneill/smoothic")
     (synopsis "Variable Selection Using a Smooth Information Criterion")
     (description
      "Implementation of the SIC epsilon-telescope method, either using single or
-multi-parameter regression.  This package contains the data analyses from
-O'Neill and Burke (2021). \"Variable Selection Using a Smooth Information
-Criterion for Multi-Parameter Regression Models\". <arXiv:2110.02643>.")
+multi-parameter regression.  Includes classical regression with normally
+distributed errors and robust regression, where the errors are from the Laplace
+distribution.  The \"smooth generalized normal distribution\" is used, where the
+estimation of an additional shape parameter allows the user to move smoothly
+between both types of regression.  See O'Neill and Burke (2022) \"Robust
+Distributional Regression with Automatic Variable Selection\" for more details.
+<arXiv:2212.07317>.  This package also contains the data analyses from O'Neill
+and Burke (2021). \"Variable Selection Using a Smooth Information Criterion for
+Multi-Parameter Regression Models\". <arXiv:2110.02643>.")
     (license license:gpl3)))
 
 (define-public r-smoothhr
@@ -31764,16 +31805,47 @@ The package was developed with support of the International Household Survey
 Network, DFID Trust Fund TF011722 and funds from the World bank.")
     (license license:gpl2+)))
 
+(define-public r-simplybee
+  (package
+    (name "r-simplybee")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIMplyBee" version))
+              (sha256
+               (base32
+                "0013sdgyq29w9yah1yafkd0vj9sgw5lkhi5g5fcb59w386nlfhm5"))))
+    (properties `((upstream-name . "SIMplyBee")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-extradistr r-alphasimr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HighlanderLab/SIMplyBee")
+    (synopsis
+     "'AlphaSimR' Extension for Simulating Honeybee Populations and Breeding Programmes")
+    (description
+     "An extension of the AlphaSimR package
+(<https://cran.r-project.org/package=AlphaSimR>) for stochastic simulations of
+honeybee populations and breeding programmes.  SIMplyBee enables simulation of
+individual bees that form a colony, which includes a queen, fathers (drones the
+queen mated with), virgin queens, workers, and drones.  Multiple colony can be
+merged into a population of colonies, such as an apiary or a whole country of
+colonies.  Functions enable operations on castes, colony, or colonies, to ease R
+scripting of whole populations.  All AlphaSimR functionality with respect to
+genomes and genetic and phenotype values is available and further extended for
+honeybees, including haplo-diploidy, complementary sex determiner locus, colony
+events (swarming, supersedure, etc.), and colony phenotype values.")
+    (license license:expat)))
+
 (define-public r-simplyagree
   (package
     (name "r-simplyagree")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimplyAgree" version))
               (sha256
                (base32
-                "03ms1j2dlw6az8jdsgsfv7qcy0hzwkahkba76mjgp21nqxkrys8d"))))
+                "0lcy2hjhni46z5m1zip77jlxl8jscq2rczfajdh1xwbpin484f9v"))))
     (properties `((upstream-name . "SimplyAgree")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -36974,17 +37046,18 @@ assistant-like user interfaces.")
 (define-public r-shinygizmo
   (package
     (name "r-shinygizmo")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyGizmo" version))
               (sha256
                (base32
-                "0z4f2z6czijyjlysn2i1fx4bf8996pqv2ldabycak37hgqhb9bbc"))))
+                "0nlf5pybrw3mvcafi3ilv9kh0k6z2qfvjgk5mnipfk72zrag9yf1"))))
     (properties `((upstream-name . "shinyGizmo")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
                              r-shiny
+                             r-rlang
                              r-purrr
                              r-magrittr
                              r-htmlwidgets
@@ -45423,29 +45496,30 @@ occur.")
 (define-public r-sdmtune
   (package
     (name "r-sdmtune")
-    (version "1.1.6")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDMtune" version))
               (sha256
                (base32
-                "13q3yy6jj6b42k2bgwv40m06kpl5hpc9f4ysvdh6p3x80qxq3cgh"))))
+                "0vrz9zl4zqgava10lylgwr6qwwifrxwv1m9vi0qxp9ihyakdcigb"))))
     (properties `((upstream-name . "SDMtune")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-whisker
+                             r-terra
                              r-stringr
                              r-rstudioapi
                              r-rlang
                              r-rcpp
-                             r-raster
                              r-randomforest
-                             r-progress
                              r-nnet
                              r-maxnet
                              r-jsonlite
                              r-ggplot2
                              r-gbm
-                             r-dismo))
+                             r-dismo
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://consbiol-unibern.github.io/SDMtune/")
     (synopsis "Species Distribution Model Selection")
@@ -52460,13 +52534,13 @@ example datasets are shipped with the package as well as some new functions.")
 (define-public r-safetygraphics
   (package
     (name "r-safetygraphics")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "safetyGraphics" version))
               (sha256
                (base32
-                "0vsyx9d157syz9qp8cnqgf2jgf4jkwyyi3mkf88zg51xl93dx19l"))))
+                "1bvmxhy2giprf4cy1xfc42rl8hcw0pi3691kzfgqhj65sawdjwfd"))))
     (properties `((upstream-name . "safetyGraphics")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -4182,13 +4182,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grf" version))
               (sha256
                (base32
-                "0cpiqy6nf8v7q6dr4v3f8b79m5jgkqnc5210a2jsprq8ksjil88s"))))
+                "0b8zhynfal3km5zsixn076z03d1gjd4if1bs8mll8pvg1dhgpqs9"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -8925,6 +8925,46 @@ methods for diagnostics etc.")
 regression with a large selection of distributions.")
     (license license:gpl2+)))
 
+(define-public r-gngtools
+  (package
+    (name "r-gngtools")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GNGTools" version))
+              (sha256
+               (base32
+                "0rhl2mx2m4l0xzkv91k11l5x5vvqg6bzg3cldjs8ssi9ks0i4192"))))
+    (properties `((upstream-name . "GNGTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-plyr
+                             r-mvtnorm
+                             r-latex2exp
+                             r-knitr
+                             r-janitor
+                             r-gtable
+                             r-gridextra
+                             r-ggplot2
+                             r-extradistr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gcicc/GNGTools")
+    (synopsis "Tools for Go/No-Go Decision-Making Framework")
+    (description
+     "Go/No-Go Decision-making Framework based on Bayesian posterior probabilities
+linked to the target product profile.")
+    (license license:gpl2)))
+
 (define-public r-gnfit
   (package
     (name "r-gnfit")
@@ -12675,13 +12715,13 @@ tools for navigating output.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-9")
+    (version "0.7-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gimme" version))
               (sha256
                (base32
-                "1z6rqgk42p1zzf5vjz6hbzpnpal5mvhfbv30g8n7shnxpim7zakv"))))
+                "1aimhdma0lyv90wqwy4zinfzdg07bxl60nz313rn2kyxqd4h1j3p"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
@@ -19658,13 +19698,13 @@ US.")
 (define-public r-geoknife
   (package
     (name "r-geoknife")
-    (version "1.6.9")
+    (version "1.6.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geoknife" version))
               (sha256
                (base32
-                "1x2q3g31nha9dc96a0ch4pbxyx090wr4hndk704b5rm646ifv6pz"))))
+                "0hqcmm4n2svv643pg8q1v1kq5rb5j80cazdibnva1diz6brd2v76"))))
     (properties `((upstream-name . "geoknife")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -19674,7 +19714,7 @@ US.")
                              r-httr
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/USGS-R/geoknife")
+    (home-page "https://github.com/DOI-USGS/geoknife")
     (synopsis "Web-Processing of Large Gridded Datasets")
     (description
      "Processes gridded datasets found on the U.S. Geological Survey Geo Data Portal

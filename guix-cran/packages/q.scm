@@ -9,6 +9,8 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2631,6 +2633,35 @@ is intended to work as a drop-in replacement for the write_*() and read_*()
 functions provided by similar packages.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-qspray
+  (package
+    (name "r-qspray")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qspray" version))
+              (sha256
+               (base32
+                "1a7hcz82qzns57psvnb0y5aigx95i2h1bjy2lzx9g4afj9apyhlj"))))
+    (properties `((upstream-name . "qspray")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-ryacas
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-purrr
+                             r-gmp
+                             r-desctools
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/qspray")
+    (synopsis "Multivariate Polynomials with Rational Coefficients")
+    (description
+     "Symbolic calculation and evaluation of multivariate polynomials with rational
+coefficients.  This package is strongly inspired by the spray package.")
+    (license license:gpl3)))
+
 (define-public r-qsplines
   (package
     (name "r-qsplines")
@@ -5156,13 +5187,13 @@ multiple-choice type of items (see Embretson, Kingston (2018)
 (define-public r-qad
   (package
     (name "r-qad")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qad" version))
               (sha256
                (base32
-                "0v659mvvjzlj77mfl62ff2lhhr256zr1z9mncvnmawmx2j0mhmn3"))))
+                "1pvdm6h5zilvrpggvy5qq5lhxxblslkjvjjfdj1f5zaick2hmf3s"))))
     (properties `((upstream-name . "qad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

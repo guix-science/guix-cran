@@ -8794,13 +8794,13 @@ and includes new measures from interdisciplinary research.")
 (define-public r-diverge
   (package
     (name "r-diverge")
-    (version "2.0.4")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diverge" version))
               (sha256
                (base32
-                "11hhak3ldnf83aaq7wd8f2wqcd3lqgmda78zdgcd6ksljq3mvwcx"))))
+                "0rgmzcy2kk1bc6v27qcj4ckyvidzvldqx3cz1prccq5bhw2m8cdz"))))
     (properties `((upstream-name . "diverge")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm))
@@ -17888,13 +17888,13 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
 (define-public r-deet
   (package
     (name "r-deet")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEET" version))
               (sha256
                (base32
-                "0mx3v8bylckh808wdgbinnm9rl4jhgazfl8fh2xrlj4yxfwcsrd5"))))
+                "0nak64lp8ijsm94i580dsppwlima9wg4lqq3a7sw4z7awymsf2vd"))))
     (properties `((upstream-name . "DEET")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -17908,27 +17908,25 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
     (home-page "https://cran.r-project.org/package=DEET")
     (synopsis "Differential Expression Enrichment Tool")
     (description
-     "RNA sequencing (RNA-seq) followed by differential gene expression analyses is a
-fundamental approach for making biological discoveries.  Ongoing large-scale
-efforts to systematically process and normalize publicly available gene
-expression data facilitate rapid reanalyses of specific studies and the
-development of new methods for querying it.  While there are several powerful
-tools for querying systematically processed publicly available RNA-seq data at
-the individual sample level, there are fewer options for querying differentially
-expressed gene (DEG) lists generated from these experiments.  Here, we present
-the Differential Expression Enrichment Tool (DEET), which allows users to
-interact with 3162 consistently processed DEG lists curated from 142 RNA-seq
-datasets obtained from recount2 database, which contains data from consortiums
-(GTex, TCGA) and individual labs (SRA).  To establish DEET we integrated
-systematically processed human RNA-seq data from recount2 with reported and
-predicted metadata from multiple sources and developed a CRAN R package and
-Shiny App where users can compare their genes, p-values, and coefficients
-against the DEG lists within DEET. Here we present DEET and demonstrate how it
-can facilitate hypothesis generation and provide biological insight from
-user-defined differential gene expression results.  Reference: Sokolowski,D.J.,
-Ahn J., Erdman,L., Hou,H., Ellis,K., Wang L., Goldenberg,A., and Wilson,M.D.
-(2022) Differential Expression Enrichment Tool (DEET): An interactive atlas of
-human differential gene expression. (In Preparation).")
+     "Abstract of Manuscript.  Differential gene expression analysis using RNA
+sequencing (RNA-seq) data is a standard approach for making biological
+discoveries.  Ongoing large-scale efforts to process and normalize publicly
+available gene expression data enable rapid and systematic reanalysis.  While
+several powerful tools systematically process RNA-seq data, enabling their
+reanalysis, few resources systematically recompute differentially expressed
+genes (DEGs) generated from individual studies.  We developed a robust
+differential expression analysis pipeline to recompute 3162 human DEG lists from
+The Cancer Genome Atlas, Genotype-Tissue Expression Consortium, and 142 studies
+within the Sequence Read Archive.  After measuring the accuracy of the
+recomputed DEG lists, we built the Differential Expression Enrichment Tool
+(DEET), which enables users to interact with the recomputed DEG lists.  DEET,
+available through CRAN and RShiny, systematically queries which of the
+recomputed DEG lists share similar genes, pathways, and TF targets to their own
+gene lists.  DEET identifies relevant studies based on shared results with the
+userâs gene lists, aiding in hypothesis generation and data-driven literature
+review.  Sokolowski, Dustin J., et al. \"Differential Expression Enrichment Tool
+(DEET): an interactive atlas of human differential gene expression.\" bioRxiv
+(2022).")
     (license license:gpl3)))
 
 (define-public r-deeptrafo
@@ -18171,13 +18169,13 @@ service (see <https://www.deepl.com/pro#developer).")
 (define-public r-deepgp
   (package
     (name "r-deepgp")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepgp" version))
               (sha256
                (base32
-                "0n3awf535jin1m7sirlcdj2b3skzssl6my7chlq392rrxfhpqnyr"))))
+                "0kad8vfw5c6d5qggvdb8n80pqlz4j15yrgvh75xgsyphz9vp2r4f"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -18188,6 +18186,7 @@ service (see <https://www.deepl.com/pro#developer).")
                              r-foreach
                              r-fnn
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=deepgp")
     (synopsis "Deep Gaussian Processes using MCMC")
     (description
@@ -18202,8 +18201,7 @@ and Higdon, 2020) and optimization through expected improvement (EI; Gramacy,
 Sauer, and Wycoff, 2021 <arXiv:2112.07457>).  Models extend up to three layers
 deep; a one layer model is equivalent to typical Gaussian process regression.
 Covariance kernel options are matern (default) and squared exponential.
-Applicable to both noisy and deterministic functions.  Incorporates SNOW
-parallelization and utilizes C and C++ under the hood.")
+Incorporates OpenMP and SNOW parallelization and utilizes C/C++ under the hood.")
     (license license:lgpl2.0+)))
 
 (define-public r-deepgmm
@@ -19056,13 +19054,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deaR" version))
               (sha256
                (base32
-                "0si8yxbx6zvzai046gjrdyb5yv33hxijizkmgsd5p9q3h3g54aq0"))))
+                "0fj0dm52gccafpd7dwlv9zpns1pkvha2372sk4g03ng3jf799ccz"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -19077,7 +19075,7 @@ the vast majority of the time (>95%).")
     (synopsis "Conventional and Fuzzy Data Envelopment Analysis")
     (description
      "Set of functions for Data Envelopment Analysis.  It runs both classic and fuzzy
-DEA models.See: Banker, R.; Charnes, A.; Cooper, W.W. (1984).
+DEA models.  See: Banker, R.; Charnes, A.; Cooper, W.W. (1984).
 <doi:10.1287/mnsc.30.9.1078>, Charnes, A.; Cooper, W.W.; Rhodes, E. (1978).
 <doi:10.1016/0377-2217(78)90138-8> and Charnes, A.; Cooper, W.W.; Rhodes, E.
 (1981). <doi:10.1287/mnsc.27.6.668>.")
@@ -22052,13 +22050,13 @@ in some case studies throughout the text.")
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.1.9")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataset" version))
               (sha256
                (base32
-                "1yhr7yk1gw98macfvjz4ckgsaqw7yrszqdf11gj5b1qwgp0l53pk"))))
+                "1mh58b0l56dj8qlyy4dbhyqys99gbwr1z4rqnzzv8g33ap89s6iq"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (propagated-inputs (list r-isocodes r-assertthat))
