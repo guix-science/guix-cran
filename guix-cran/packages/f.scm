@@ -318,16 +318,16 @@ foreseen.")
 (define-public r-fuzzystattraeoo
   (package
     (name "r-fuzzystattraeoo")
-    (version "0.1.0")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyStatTraEOO" version))
               (sha256
                (base32
-                "1dclpa62ihn7qldqd8b4nzzdrdd0xhbk5bp0cligcj1vg276wsdb"))))
+                "0jxjnmsznab0nf6nrjvdcy2gjmzn7fa0va993f7ylasr2pjawgsd"))))
     (properties `((upstream-name . "FuzzyStatTraEOO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-r6))
+    (propagated-inputs (list r-r6))
     (home-page
      "https://bellman.ciencias.uniovi.es/smire+codire/FuzzyStatTraRpackage.html")
     (synopsis
@@ -881,13 +881,13 @@ Colorado State University Vice President for Research.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.tests" version))
               (sha256
                (base32
-                "1knm3zxc61g6xgvp2wws405jp7ygva8nzqm9q8cvxdl7fk2l9q0a"))))
+                "0ddjm9nrmjylyi8k2fywpnr0g13lrm047xm6v0ky6b6dr3gnmpr1"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
@@ -3353,13 +3353,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.1.0")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRK" version))
               (sha256
                (base32
-                "0lsqd043xyy951yqms5393kshnjcrjq2gckkjyj10q8lp75iyw3m"))))
+                "09fvr52w82hm06nq29cmfyd2i4h62za6w3j5hccbyvkgfg6v4hb3"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -5867,6 +5867,29 @@ packages provides methods for accessing and modifying this structures as well as
 extracting and replacing names and symbols from these objects.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-formshare
+  (package
+    (name "r-formshare")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FormShare" version))
+              (sha256
+               (base32
+                "14j8dmjm8k2hi7m43ipnigp10zqqwajz46c23j7lw3l1w7ibprxl"))))
+    (properties `((upstream-name . "FormShare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-jsonlite r-httr))
+    (home-page "https://github.com/qlands/formshare-R-package")
+    (synopsis
+     "Simple Connection Between the 'FormShare App' and 'R' for Advanced Analytics")
+    (description
+     "This package provides analytics directly from R. It requires: FormShare App':
+<https://github.com/qlands/FormShare >= 2.22.0> .  Analytics plugin:
+<https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL plugin:
+<https://github.com/qlands/formshare_sql_plugin> .")
+    (license license:gpl3)))
 
 (define-public r-formatters
   (package

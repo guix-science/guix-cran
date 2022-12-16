@@ -5419,13 +5419,13 @@ dataset has been analyzed.")
 (define-public r-dpcp
   (package
     (name "r-dpcp")
-    (version "1.0.4")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dPCP" version))
               (sha256
                (base32
-                "1wxni1m9iaak0isc1sl205dnx3v8pzqyj22aj7alzwim6d6a4hjq"))))
+                "120m0b3r8bfw4whv2maw8a086rmgwspx0mvdzkk14nkffr8acng5"))))
     (properties `((upstream-name . "dPCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5438,9 +5438,10 @@ dataset has been analyzed.")
                              r-ggplot2
                              r-exactci
                              r-e1071
-                             r-dbscan))
+                             r-dbscan
+                             r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dPCP")
+    (home-page "https://github.com/alfodefalco/dPCP")
     (synopsis "Automated Analysis of Multiplex Digital PCR Data")
     (description
      "The automated clustering and quantification of the digital PCR data is based on
@@ -6984,13 +6985,13 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doconv" version))
               (sha256
                (base32
-                "1pvzpxv60ghninmn5sawqqx988yl2151kqs4qj5qrb7fpgph481w"))))
+                "0316q24j8qj70pdqz31a46vp143bw3mpqsgqsady4ljpj530357s"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (inputs (list libreoffice))
@@ -21552,13 +21553,13 @@ the JavaScript library daterangepicker which is available at
 (define-public r-datelife
   (package
     (name "r-datelife")
-    (version "0.6.5")
+    (version "0.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datelife" version))
               (sha256
                (base32
-                "1ss0387y360rqaahipxadmhcqh4gww4dk1lvzip0glcx65mk7lj7"))))
+                "1cmi274xsv7zandfkps780972ghw7cplpg099pkcp7bjyvk2xrx1"))))
     (properties `((upstream-name . "datelife")))
     (build-system r-build-system)
     (inputs (list))
@@ -21577,6 +21578,7 @@ the JavaScript library daterangepicker which is available at
                              r-httr
                              r-geiger
                              r-data-table
+                             r-curl
                              r-compare
                              r-cluster
                              r-bold
@@ -21591,7 +21593,7 @@ the JavaScript library daterangepicker which is available at
 phylogenetic trees with branch lengths proportional to time), using open,
 peer-reviewed, state-of-the-art scientific data on time of lineage divergence.
 This package constitutes the main underlying code of the DateLife web service at
-<www.datelife.org>.  To obtain a single summary chronogram from a group of
+<https:www.datelife.org>.  To obtain a single summary chronogram from a group of
 relevant chronograms, we implement the Super Distance Matrix (SDM) method
 described in Criscuolo et al. (2006) <doi:10.1080/10635150600969872>.  To find
 the grove of chronograms with a sufficiently overlapping set of taxa for

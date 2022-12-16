@@ -15279,17 +15279,17 @@ computational feasibility.")
 (define-public r-betabit
   (package
     (name "r-betabit")
-    (version "1.4")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BetaBit" version))
               (sha256
                (base32
-                "11cvl9m20ycc0zsxbdapjflgsiaxx4dzaygjhv948adjfi5fycbn"))))
+                "06xrsdjmsn6rmd0kywqs4mwikfdph49fqkxk8r8jsdpq4w75fdli"))))
     (properties `((upstream-name . "BetaBit")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
-    (home-page "https://betabit.wiki")
+    (home-page "https://github.com/BetaAndBit/Wykresy")
     (synopsis "Mini Games from Adventures of Beta and Bit")
     (description
      "Three games: proton, frequon and regression.  Each one is a console-based
@@ -15304,7 +15304,7 @@ ciphered messages.  This time seven sub-tasks are pushing the bar much higher.
 Do you accept the challenge? In regression you will test your modeling skills in
 a series of eight sub-tasks.  Try only if ANOVA is your close friend.  It's a
 part of Beta and Bit project.  You will find more about the Beta and Bit project
-at <https://betabit.wiki>.")
+at <https://github.com/BetaAndBit/Wykresy>.")
     (license license:gpl2)))
 
 (define-public r-betabayes

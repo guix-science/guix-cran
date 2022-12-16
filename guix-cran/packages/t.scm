@@ -11751,16 +11751,16 @@ the hypothesis test.")
 (define-public r-timetools
   (package
     (name "r-timetools")
-    (version "1.14")
+    (version "1.15.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timetools" version))
               (sha256
                (base32
-                "13jchgd9fc8hxj74wm1kg4rwcng4yxblkq04i33djsqghgb5f9mj"))))
+                "0d861nsq5xh9gnzvf3alzk6yjk8afxf3a7z39c1rrprfhwqxmxgx"))))
     (properties `((upstream-name . "timetools")))
     (build-system r-build-system)
-    (home-page "http://sourceforge.net/projects/timetools/")
+    (home-page "https://sourceforge.net/projects/timetools/")
     (synopsis
      "Seasonal/Sequential (Instants/Durations, Even or not) Time Series")
     (description
@@ -15303,6 +15303,35 @@ Wang, and Beauchamp (2020, <doi:10.1016/j.neuroimage.2020.117341>), or see
 citation(\"threeBrain\") for details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-threearmedtrials
+  (package
+    (name "r-threearmedtrials")
+    (version "1.0-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ThreeArmedTrials" version))
+              (sha256
+               (base32
+                "1czlr94mgs99pzd1a80wqfjhrwrfsk8fvbbr37nwcixs0fw431yw"))))
+    (properties `((upstream-name . "ThreeArmedTrials")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tobiasmuetze/ThreeArmedTrials")
+    (synopsis
+     "Design and Analysis of Clinical Non-Inferiority or Superiority Trials with Active and Placebo Control")
+    (description
+     "Design and analyze three-arm non-inferiority or superiority trials which follow
+a gold-standard design, i.e.  trials with an experimental treatment, an active,
+and a placebo control.  Method for the following distributions are implemented:
+Poisson (Mielke and Munk (2009) <arXiv:0912.4169>), negative binomial (Muetze et
+al. (2016) <doi:10.1002/sim.6738>), normal (Pigeot et al. (2003)
+<doi:10.1002/sim.1450>; Hasler et al. (2009) <doi:10.1002/sim.3052>), binary
+(Friede and Kieser (2007) <doi:10.1002/sim.2543>), nonparametric (Muetze et al.
+(2017) <doi:10.1002/sim.7176>), exponential (Mielke and Munk (2009)
+<arXiv:0912.4169>).")
+    (license license:gpl3+)))
 
 (define-public r-thredds
   (package

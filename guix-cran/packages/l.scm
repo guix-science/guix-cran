@@ -4762,13 +4762,13 @@ limit of detection.")
 (define-public r-loder
   (package
     (name "r-loder")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loder" version))
               (sha256
                (base32
-                "0m6g8c25dmq0wgpy8y6cbggymxdvqwb6lp2yzs5bgpq183512spb"))))
+                "19l3rim2k3kd15i86gdbwlma63w68n1cjqbahqbrgck2irx9f6vy"))))
     (properties `((upstream-name . "loder")))
     (build-system r-build-system)
     (home-page "https://github.com/jonclayden/loder")

@@ -33394,13 +33394,13 @@ subcommunities.  Richard Reeve, et al. (2016) <arXiv:1404.6520v3>.")
 (define-public r-rdimtools
   (package
     (name "r-rdimtools")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rdimtools" version))
               (sha256
                (base32
-                "0mih0ad04ipk9mmcp7i78v7zsdi6np4sl1x1z4gg1s5ww8ci02sk"))))
+                "0bl8ffyy9jb6xp1jb350fj5pw3zvc1dnrdhl4vi25kl84pp30xl6"))))
     (properties `((upstream-name . "Rdimtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -40647,13 +40647,13 @@ nice axis and other useful features.")
 (define-public r-rasterdt
   (package
     (name "r-rasterdt")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rasterDT" version))
               (sha256
                (base32
-                "1dl083jm4x0shl7lq4in2alksgi63hp1p7j2cnsvkmwjaxygzm9v"))))
+                "1fj038qa6ivm2w2zzxjcl2dh90ydw1sypchz18sn33zg37wzc7mz"))))
     (properties `((upstream-name . "rasterDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-raster r-fasterize r-data-table))

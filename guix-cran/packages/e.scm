@@ -6482,6 +6482,31 @@ and Morris (2008) <doi:10.18637/jss.v024.i03> and Krivitsky, Hunter, Morris, and
 Klumb (2021) <arXiv:2106.04997>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
+(define-public r-erfe
+  (package
+    (name "r-erfe")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "erfe" version))
+              (sha256
+               (base32
+                "1v6xca2zwdg494mdb97dwg2xlqsr51919plylnl04d8dgg5adhz9"))))
+    (properties `((upstream-name . "erfe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrix))
+    (home-page "https://arxiv.org/abs/2108.04737")
+    (synopsis "Fits Expectile Regression for Panel Fixed Effect Model")
+    (description
+     "Fits the Expectile Regression for Fixed Effect (ERFE) estimator.  The ERFE model
+extends the within-transformation strategy to solve the incidental parameter
+problem within the expectile regression framework.  The ERFE model estimates the
+regressor effects on the expectiles of the response distribution.  The ERFE
+estimate corresponds to the classical fixed-effect within-estimator when the
+asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
+<arXiv:2108.04737>) gives more details about the ERFE model.")
+    (license license:gpl3)))
+
 (define-public r-erer
   (package
     (name "r-erer")
@@ -7924,16 +7949,21 @@ Full methods for EpiModel are detailed in Jenness et al. (2018,
 (define-public r-epimdr2
   (package
     (name "r-epimdr2")
-    (version "1.0-8")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epimdr2" version))
               (sha256
                (base32
-                "02iiam536jfd1wpr3glrksdpx0lqdh4k21ayy7igkv71p4y071i9"))))
+                "1lx1zibp2ziwdyj180jf9y5xczfs2xfkb5bw7q4f7i9p70jlqcrz"))))
     (properties `((upstream-name . "epimdr2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-plotly r-phaser r-ggplot2 r-desolve))
+    (propagated-inputs (list r-shiny
+                             r-polspline
+                             r-plotly
+                             r-phaser
+                             r-ggplot2
+                             r-desolve))
     (home-page "<https://github.com/objornstad/epimdr2>")
     (synopsis
      "Functions and Data for \"Epidemics: Models and Data in R (2nd Edition)\"")

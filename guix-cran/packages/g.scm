@@ -11113,13 +11113,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.0-5")
+    (version "0.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmm.hp" version))
               (sha256
                (base32
-                "0v50p2j5xq35vm89snagnhysjiilwskpg008155wlwnpyyk1aya4"))))
+                "1s4kf8r4il3608qa9hccjsbzw9hs9lx08d7wprb7gngwjvphrkgf"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mumin r-lme4 r-ggplot2))
@@ -11130,10 +11130,9 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
      "Conducts hierarchical partitioning to calculate individual contributions of each
 fixed effects towards marginal R2 for generalized mixed-effect model based on
 output of r.squaredGLMM() in MuMIn', applying the algorithm of Lai J.,Zou Y.,
-Zhang J.,Peres-Neto P.(2022) Generalizing hierarchical and variation
-partitioning in multiple regression and canonical analyses using the rdacca.hp R
-package.Methods in Ecology and
-Evolution,13:782-788<DOI:10.1111/2041-210X.13800>.")
+Zhang S.,Zhang X.,Mao L.(2022)glmm.hp: an R package for computing individual
+effect of predictors in generalized linear mixed models.Journal of Plant
+Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-glmm
@@ -14005,16 +14004,16 @@ Risk and Solvency Assessment).")
 (define-public r-ggsoccer
   (package
     (name "r-ggsoccer")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggsoccer" version))
               (sha256
                (base32
-                "1b3cx2ym3pknshrxmdgwzyx92c1hl6kyvxm2s8izlaa21z8v6z59"))))
+                "13icxd9w3dfwpjl4yaw0gp09mviwf7xrrfs30z66nga459h6gf1d"))))
     (properties `((upstream-name . "ggsoccer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://torvaney.github.io/ggsoccer/")
     (synopsis "Plot Soccer Event Data")
     (description
@@ -23559,13 +23558,13 @@ CramÃ©r V, correlation coefficient, eta-squared...).")
 (define-public r-gdalutilities
   (package
     (name "r-gdalutilities")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalUtilities" version))
               (sha256
                (base32
-                "0k777x18w2r86jz5gk96fyjjyg7wd0phn57dwfq18kg9vrzs1d73"))))
+                "0aisbppbrrnl4cyrz4y37nv31fln0ng2bq1n90npij8h0ld9f2md"))))
     (properties `((upstream-name . "gdalUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))

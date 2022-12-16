@@ -2391,13 +2391,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PsychWordVec" version))
               (sha256
                (base32
-                "0afl7n8zzkylm51nm5hhjrahk8h96jvxz6hysyc2bmhpkrh9bp94"))))
+                "19i4zx9qs8fcf2n9m38g96wd9i7rr0s8rva1bd09q75h62gw4v7k"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
@@ -2409,6 +2409,7 @@ and easy-to-read output.")
                              r-rsparse
                              r-rgl
                              r-reticulate
+                             r-qgraph
                              r-purrr
                              r-psych
                              r-ggrepel
@@ -5907,13 +5908,13 @@ and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "05dzsxf6kbx3jkw1f574brjlm1j4h1r72w8zgb2w182756qzbk3c"))))
+                "0h77vgdiakgl9n381vsmi5njsv9yqig1nyhka466dsn7i9nx4vmz"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -17864,13 +17865,13 @@ the tDCS PlatoWork headset produced by PlatoScience.")
 (define-public r-platformdesign
   (package
     (name "r-platformdesign")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PlatformDesign" version))
               (sha256
                (base32
-                "1p9dxxlhbg3k0iix6i04gsac4caxx30pf3f3x1nkl0rp49wl0azd"))))
+                "0nnvi40lq6rxjxvf3p5mdn9gp4kp8nr73yzxgrpbg125cqf23vhm"))))
     (properties `((upstream-name . "PlatformDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -19092,13 +19093,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgcache" version))
               (sha256
                (base32
-                "0a50gnk68gdzmpd26qv3nsfc94gg6wyf2k3dacls1p8m1zbazpl0"))))
+                "0nqgdpb3wh9zl9j566l6ih8snk7mi78fkhhrwl9x5g3hiwg13n88"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs
@@ -24834,13 +24835,13 @@ extensions and algorithms described in Kepplinger, D. (2020)
 (define-public r-penppml
   (package
     (name "r-penppml")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penppml" version))
               (sha256
                (base32
-                "0r3wypzndg07vrbifs1h5wm4vcsd27z0gjhvlhgwq0pm1qgsgssc"))))
+                "0zlxm379l9ik3152wmvqqin7wrnx9q8d89b4afdqssj24ab88jdl"))))
     (properties `((upstream-name . "penppml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

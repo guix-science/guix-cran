@@ -15617,13 +15617,13 @@ cross-validation if ignored.")
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3spatial" version))
               (sha256
                (base32
-                "0b36mjk1y3vdrgrhvdmc0qd7l19b7k9qbgyns4w0711riqz37al4"))))
+                "02az0phdfv43353k36w7zhjwajh44dbigjxw0x31rrhx1ag3dv7z"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -15634,6 +15634,7 @@ cross-validation if ignored.")
                              r-lgr
                              r-data-table
                              r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://mlr3spatial.mlr-org.com")
     (synopsis "Support for Spatial Objects Within the 'mlr3' Ecosystem")
     (description
@@ -16531,6 +16532,53 @@ provided built-in.")
 The analysis method is described in Yu and Li (2020), \"Third-Variable Effect
 Analysis with Multilevel Additive Models\", PLoS ONE 15(10): e0241072.")
     (license license:gpl2+)))
+
+(define-public r-mlim
+  (package
+    (name "r-mlim")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mlim" version))
+              (sha256
+               (base32
+                "16p3nprnxc0cghfbwcs3hf57aasqpvd4qv3wajhzrajqhmclzn0q"))))
+    (properties `((upstream-name . "mlim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-missranger
+                             r-mice
+                             r-memuse
+                             r-md-log
+                             r-h2o
+                             r-curl))
+    (home-page "https://github.com/haghish/mlim")
+    (synopsis "Single and Multiple Imputation with Automated Machine Learning")
+    (description
+     "Machine learning algorithms have been used for performing single missing data
+imputation and most recently, multiple imputations.  However, this is the first
+attempt for using automated machine learning algorithms for performing both
+single and multiple imputation.  Automated machine learning is a procedure for
+fine-tuning the model automatic, performing a random search for a model that
+results in less error, without overfitting the data.  The main idea is to allow
+the model to set its own parameters for imputing each variable separately
+instead of setting fixed predefined parameters to impute all variables of the
+dataset.  Using automated machine learning, the package fine-tunes an Elastic
+Net (default) or Gradient Boosting, Random Forest, Deep Learning, Extreme
+Gradient Boosting, or Stacked Ensemble machine learning model (from one or a
+combination of other supported algorithms) for imputing the missing
+observations.  This procedure has been implemented for the first time by this
+package and is expected to outperform other packages for imputing missing data
+that do not fine-tune their models.  The multiple imputation is implemented via
+bootstrapping without letting the duplicated observations to harm the
+cross-validation procedure, which is the way imputed variables are evaluated.
+Most notably, the package implements automated procedure for handling imputing
+imbalanced data (class rarity problem), which happens when a factor variable has
+a level that is far more prevalent than the other(s).  This is known to result
+in biased predictions, hence, biased imputation of missing data.  However, the
+autobalancing procedure ensures that instead of focusing on maximizing accuracy
+(classification error) in imputing factor variables, a fairer procedure and
+imputation method is practiced.")
+    (license license:expat)))
 
 (define-public r-mlid
   (package
@@ -29088,13 +29136,13 @@ consumers.")
 (define-public r-medianadesigner
   (package
     (name "r-medianadesigner")
-    (version "0.10")
+    (version "0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MedianaDesigner" version))
               (sha256
                (base32
-                "04say70f7wsa245apak44r7jz2gp2vp3zppg1sqs5pxn9009ah9m"))))
+                "00hdh22ngz8q39awijfqjbj6fq4pgh8wb7b8ayg0nc87sg4fbq6p"))))
     (properties `((upstream-name . "MedianaDesigner")))
     (build-system r-build-system)
     (inputs (list zlib))

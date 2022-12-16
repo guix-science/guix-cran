@@ -10289,13 +10289,13 @@ Analysis.")
 (define-public r-statsexpressions
   (package
     (name "r-statsexpressions")
-    (version "1.3.5")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statsExpressions" version))
               (sha256
                (base32
-                "0phjaxyq04ysrchimq5q9i3zzy0qhrs5r08m2l14k35s2303s285"))))
+                "18ym0vq3nzi2bama2h8pdngywxwx86sv3df9s4iglfx5dz2cy84s"))))
     (properties `((upstream-name . "statsExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -39798,6 +39798,26 @@ and through Rcpp'.")
      "Gives design points from a sequential full factorial-based Latin hypercube
 design, as described in Duan, Ankenman, Sanchez, and Sanchez (2015,
 Technometrics, <doi:10.1080/00401706.2015.1108233>).")
+    (license license:gpl3)))
+
+(define-public r-sfdep
+  (package
+    (name "r-sfdep")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sfdep" version))
+              (sha256
+               (base32
+                "14wqnx4yavx5snnzray4fli3lbf9avwi2w5qj1xvnks7zjqzvqx2"))))
+    (properties `((upstream-name . "sfdep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep r-sf r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfdep.josiahparry.com")
+    (synopsis "Spatial Dependence for Simple Features")
+    (description
+     "An interface to spdep to integrate with sf objects and the tidyverse'.")
     (license license:gpl3)))
 
 (define-public r-sfdct

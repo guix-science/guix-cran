@@ -2769,6 +2769,38 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (2016).  A continuous threshold expectile regression, submitted.\"")
     (license license:gpl2+)))
 
+(define-public r-cthist
+  (package
+    (name "r-cthist")
+    (version "1.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cthist" version))
+              (sha256
+               (base32
+                "0r8glciyscwcjp5avknsrdybzaxci1piqj19rplgm7gx7q454krn"))))
+    (properties `((upstream-name . "cthist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-rcurl
+                             r-polite
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/bgcarlisle/cthist")
+    (synopsis "Clinical Trial Registry History")
+    (description
+     "Retrieves historical versions of clinical trial registry entries from
+<https://ClinicalTrials.gov>.  Package functionality and implementation is
+documented in Carlisle (2022) <DOI:10.1371/journal.pone.0270909>.")
+    (license license:agpl3+)))
+
 (define-public r-ctgt
   (package
     (name "r-ctgt")
@@ -29873,17 +29905,17 @@ data stored in the servers of the CEO and returns it in a tidy format.")
 (define-public r-centrifuger
   (package
     (name "r-centrifuger")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "centrifugeR" version))
               (sha256
                (base32
-                "0bc88nlz19j661m4zss51j3j8pxvpva08p84ph4gc9k9615ar4mw"))))
+                "078rm1i1qqx15qj75yajc11zfsnp6mcb391v5vc0dl03xjzsiz7q"))))
     (properties `((upstream-name . "centrifugeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma))
-    (home-page "https://cran.r-project.org/package=centrifugeR")
+    (propagated-inputs (list r-shinythemes r-shiny r-pracma))
+    (home-page "https://phamdn.shinyapps.io/centrifugeR/")
     (synopsis "Non-Trivial Balance of Centrifuge Rotors")
     (description
      "Find the numbers of test tubes that can be balanced in centrifuge rotors and
@@ -32784,33 +32816,31 @@ get started.")
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalGPS" version))
               (sha256
                (base32
-                "1frzxmnqfskvlpxy7byy96i1yw88h9vjxc54fhn523d4676k6bmj"))))
+                "1m1cr4xqna4sv0jz9hjr54w0r805r9kh0002x8hiqxc3750qc1mr"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-wcorr
-                             r-tidyr
                              r-superlearner
                              r-rlang
                              r-rcpp
-                             r-ranger
                              r-polycor
                              r-mass
                              r-logger
-                             r-kernsmooth
+                             r-locpol
                              r-gnm
                              r-ggplot2
                              r-gam
-                             r-earth
+                             r-ecume
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/fasrc/CausalGPS")
+    (home-page "https://github.com/NSAPH-Software/CausalGPS")
     (synopsis
      "Matching on Generalized Propensity Scores with Continuous Exposures")
     (description

@@ -6008,6 +6008,37 @@ GitHub (at <https://github.com/JQVeenstra/arfima>), where the development
 version of this package lives; it can be installed using devtools.")
     (license license:expat)))
 
+(define-public r-arf
+  (package
+    (name "r-arf")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "arf" version))
+              (sha256
+               (base32
+                "1zq88yl17cvkz1as9c16dvgxz44gkqlmxpn8vc7pivjbfjba60bm"))))
+    (properties `((upstream-name . "arf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm r-ranger r-matrixstats r-foreach
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bips-hb/arf")
+    (synopsis "Adversarial Random Forests")
+    (description
+     "Adversarial random forests (ARFs) recursively partition data into fully
+factorized leaves, where features are jointly independent.  The procedure is
+iterative, with alternating rounds of generation and discrimination.  Data
+becomes increasingly realistic at each round, until original and synthetic
+samples can no longer be reliably distinguished.  This is useful for several
+unsupervised learning tasks, such as density estimation and data synthesis.
+Methods for both are implemented in this package.  ARFs naturally handle
+unstructured data with mixed continuous and categorical covariates.  They
+inherit many of the benefits of random forests, including speed, flexibility,
+and solid performance with default parameters.  For details, see Watson et al.
+(2022) <arXiv:2205.09435>.")
+    (license license:gpl3+)))
+
 (define-public r-arenar
   (package
     (name "r-arenar")
@@ -6142,13 +6173,13 @@ variable.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ardl.nardl" version))
               (sha256
                (base32
-                "1hx2zhb1qxvg9adyx72ddw2b0b1c93qxk4zy6r7zqybcd3lrmqwb"))))
+                "19dvigz1i2f3bnpqswl6f3l5wjpgm5b18vcpk15qanp650vk6jxw"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries

@@ -3288,6 +3288,41 @@ search for articles, fetch journal information by identifier, and search for
 journals.")
     (license license:expat)))
 
+(define-public r-janus
+  (package
+    (name "r-janus")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "janus" version))
+              (sha256
+               (base32
+                "0dpd24qxwlnrrjyx2gffsmfbsf1schfnq9ck75k9935gmwy2ig04"))))
+    (properties `((upstream-name . "janus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tictoc
+                             r-tensorflow
+                             r-statrank
+                             r-rmpfr
+                             r-reticulate
+                             r-readr
+                             r-rcppalgos
+                             r-purrr
+                             r-narray
+                             r-metrics
+                             r-lubridate
+                             r-keras
+                             r-hash
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://rpubs.com/giancarlo_vercellino/janus")
+    (synopsis "Optimized Recommending System Based on 'tensorflow'")
+    (description
+     "Proposes a coarse-to-fine optimization of a recommending system based on
+deep-neural networks using tensorflow'.")
+    (license license:gpl3)))
+
 (define-public r-jamendor
   (package
     (name "r-jamendor")

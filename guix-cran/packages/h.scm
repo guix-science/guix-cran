@@ -1385,13 +1385,13 @@ problems.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.1")
+    (version "5.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "huxtable" version))
               (sha256
                (base32
-                "1ybfqldsla9y04qr4svcw1v7f38kcn6fjsgikdhnfngdz79md3x3"))))
+                "1rpyqkdck6cmh2a7f5j71ypk2v9gzl3jf2b0z9jjlfrv1d1b8x7l"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list))
@@ -7580,6 +7580,31 @@ Reardon, Shear, Castellano and Ho (2017) <doi:10.3102/1076998616666279>.  It
 also provides a general function to compute the triple-goal estimators of Shen
 and Louis (1998) <doi:10.1111/1467-9868.00135>.")
     (license license:gpl2+)))
+
+(define-public r-hetools
+  (package
+    (name "r-hetools")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HEtools" version))
+              (sha256
+               (base32
+                "02mm6vy6iicl4jazcpg60slcnjgsdr1cd5j82dmjwzbm8b81az5m"))))
+    (properties `((upstream-name . "HEtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-polynom))
+    (home-page "https://cran.r-project.org/package=HEtools")
+    (synopsis "Homomorphic Encryption Polynomials")
+    (description
+     "Homomorphic encryption (Brakerski and Vaikuntanathan (2014)
+<doi:10.1137/120868669>) using Ring Learning with Errors (Lyubashevsky et al.
+(2012) <https://eprint.iacr.org/2012/230>) is a form of Learning with Errors
+(Regev (2005) <doi:10.1145/1060590.1060603>) using polynomial rings over finite
+fields.  Functions to generate the required polynomials (using \"polynom\"), with
+various distributions of coefficients are provided.  Additionally, functions to
+generate and take coefficient modulo are provided.")
+    (license license:expat)))
 
 (define-public r-hetgp
   (package
