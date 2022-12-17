@@ -925,13 +925,13 @@ repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ottr" version))
               (sha256
                (base32
-                "0m88ijqyvm1yls7z6dihly5rr2i2s27sbypfljfb630051dnw44h"))))
+                "1p65asprzrdg9z2qpvgwpgn522b2rc0ndlbdgfrh2phzbfjxzwrl"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
@@ -9303,21 +9303,26 @@ Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
 (define-public r-oclust
   (package
     (name "r-oclust")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oclust" version))
               (sha256
                (base32
-                "005ml6vhi9rw6js2v4f1dc2ci8kcd7iwrkgbs4c1qxc836ygq0yx"))))
+                "08247vcjs7hhzbj69f2x39n5y5ycns0qd7pdlvpwyn4j7yd1ji31"))))
     (properties `((upstream-name . "oclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mclust r-entropy))
+    (propagated-inputs (list r-mvtnorm
+                             r-mixture
+                             r-mclust
+                             r-mass
+                             r-entropy
+                             r-dbscan))
     (home-page "https://cran.r-project.org/package=oclust")
     (synopsis "Gaussian Model-Based Clustering with Outliers")
     (description
      "This package provides a function to detect and trim outliers in Gaussian mixture
-model-based clustering using methods described in Clark and McNicholas (2019)
+model-based clustering using methods described in Clark and McNicholas (2022)
 <arXiv:1907.01136>.")
     (license license:gpl2+)))
 

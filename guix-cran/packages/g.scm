@@ -7592,25 +7592,27 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googletraffic" version))
               (sha256
                (base32
-                "14wpra27z4jqgyc9mzfjh4k0f6z3cdp01fbv833ld11l5ays0qnb"))))
+                "1ibzp7fcw2d6ma2r6gv6idf220wczx4fyl6bsxrg4lsxdrclx9bz"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
                              r-stringr
                              r-sp
                              r-sf
+                             r-schemr
                              r-raster
                              r-png
                              r-plotwidgets
                              r-htmlwidgets
                              r-googleway
-                             r-dplyr))
+                             r-dplyr
+                             r-colornamer))
     (home-page "https://dime-worldbank.github.io/googletraffic/")
     (synopsis "Google Traffic")
     (description
@@ -11482,23 +11484,26 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gllvm" version))
               (sha256
                (base32
-                "1im5q5137jf8cwpydy6p8lip9v43fvgb5hi11ff2wwhc9yw74gyd"))))
+                "0z465qg15wj13cpd5m6cva5s1gcz1j0663g3yicdwgnypkxryahg"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-statmod
                              r-rcppeigen
+                             r-nloptr
                              r-mvabund
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-fishmod))
+                             r-fishmod
+                             r-alabama))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/JenniNiku/gllvm")
     (synopsis "Generalized Linear Latent Variable Models")
     (description
@@ -19949,41 +19954,6 @@ curves in the functional dataset are smoothed using Fourier series.  The
 functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
-
-(define-public r-geofis
-  (package
-    (name "r-geofis")
-    (version "1.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GeoFIS" version))
-              (sha256
-               (base32
-                "095lwn9kldhs8nhpp0b6fzhwn5b8ar8511b4144xjks70f7kg7ym"))))
-    (properties `((upstream-name . "GeoFIS")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rdpack
-                             r-rcpp
-                             r-r6
-                             r-nnls
-                             r-foreach
-                             r-fispro
-                             r-data-tree
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.geofis.org")
-    (synopsis "Spatial Data Processing for Decision Making")
-    (description
-     "This package provides methods for processing spatial data for decision-making.
-This package is an R implementation of methods provided by the open source
-software GeoFIS <https://www.geofis.org> (Leroux et al.  2018)
-<doi:10.3390/agriculture8060073>.  The main functionalities are the management
-zone delineation (Pedroso et al.  2010) <doi:10.1016/j.compag.2009.10.007> and
-data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.")
-    (license license:cecill)))
 
 (define-public r-geofi
   (package

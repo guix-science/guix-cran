@@ -13395,13 +13395,13 @@ references.")
 (define-public r-tidyplus
   (package
     (name "r-tidyplus")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyplus" version))
               (sha256
                (base32
-                "0pia8dn9b6ic0b3jzvjmy74g3g9q6gikm9b5rmapkqrr10kwxbi9"))))
+                "0a8wdl2jz4fijfnzph0g9a1861lvgspl5ppa2hwihrxwr4srv98g"))))
     (properties `((upstream-name . "tidyplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13413,7 +13413,7 @@ references.")
                              r-rlang
                              r-dplyr
                              r-chk))
-    (home-page "https://cran.r-project.org/package=tidyplus")
+    (home-page "https://github.com/poissonconsulting/tidyplus")
     (synopsis "Additional 'tidyverse' Functions")
     (description
      "This package provides functions such as str_crush(), add_missing_column(),
@@ -17797,13 +17797,13 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
 (define-public r-testdesign
   (package
     (name "r-testdesign")
-    (version "1.3.4")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestDesign" version))
               (sha256
                (base32
-                "1fz1krvl62bk97sw2swj5cwji34kwc6ni3l10p2xnisfnhll28m7"))))
+                "0f841js9lngvr57q5dm03pgp8ijprj6z525ccda1wm61r7lhxrpp"))))
     (properties `((upstream-name . "TestDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -17820,9 +17820,8 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
      "Uses the optimal test design approach by Birnbaum (1968, ISBN:9781593119348) and
 van der Linden (2018) <doi:10.1201/9781315117430> to construct fixed, adaptive,
 and parallel tests.  Supports the following mixed-integer programming (MIP)
-solver packages: lpsymphony', Rsymphony', gurobi', lpSolve', and Rglpk'.  The
-gurobi package is not available from CRAN; see
-<https://www.gurobi.com/downloads/>.")
+solver packages: Rsymphony', gurobi', lpSolve', and Rglpk'.  The gurobi package
+is not available from CRAN; see <https://www.gurobi.com/downloads/>.")
     (license license:gpl2+)))
 
 (define-public r-testdataimputation

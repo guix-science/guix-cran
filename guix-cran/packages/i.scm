@@ -9516,13 +9516,13 @@ original imprecise information gain of Abellan and Moral (2003)
 (define-public r-imprinting
   (package
     (name "r-imprinting")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imprinting" version))
               (sha256
                (base32
-                "1rw9x9prw0by4r2prdypqkgs7d2vj5gdjxhw6gk9ikkb3zyvfgmz"))))
+                "0s2qrby2sx7ikalfagvqaz0cx953m44x0fms3pcmjdgyvfzhdyvz"))))
     (properties `((upstream-name . "imprinting")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-tidyr r-ggplot2 r-dplyr r-cowplot))
@@ -10541,31 +10541,6 @@ working protocol without ensuring first that the items meet the required
 psychometric quality standards (see Blum & Holling, 2018)
 <DOI:10.3389/fpsyg.2018.01286>.")
     (license license:gpl3)))
-
-(define-public r-imaginr
-  (package
-    (name "r-imaginr")
-    (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ImaginR" version))
-              (sha256
-               (base32
-                "12ypfrqw6xym84i1axd3h0qd2md96rc0glas3rgzpdhdyw4lbfmn"))))
-    (properties `((upstream-name . "ImaginR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jpeg r-imager))
-    (home-page "https://cran.r-project.org/package=ImaginR")
-    (synopsis "Delimit and Characterize Color Phenotype of the Pearl Oyster")
-    (description
-     "The pearl oyster, Pinctada margaritifera (Linnaeus, 1758), represents the second
-economic resource of French Polynesia.  It is one of the only bivalves
-expressing a large varied range of inner shell color, & by correlation, of pearl
-color.  This phenotypic variability is partly under genetic control, but also
-under environmental influence.  With ImaginR, it's now possible to delimit the
-color phenotype of the pearl oyster's inner shell and to characterize their
-color variations (by the HSV color code system) with pictures.")
-    (license license:gpl2+)))
 
 (define-public r-imagine
   (package

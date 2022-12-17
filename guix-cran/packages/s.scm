@@ -3239,13 +3239,13 @@ GSE1992, GSE3143 and GSE4335.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.0.1")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survivoR" version))
               (sha256
                (base32
-                "120li3dnbvsvbs54s7vmz9hhcszygz4d2famba3pv343v89l345b"))))
+                "0d5h922ahvi473v2s0hym6k88j95ay13ysk2ca14jz7j85kihin9"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6754,13 +6754,13 @@ character vectors.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "string2path" version))
               (sha256
                (base32
-                "1wlyrx7gbqjbzhd6xgmbhr3x09lk48yb110dmgxqh48gjky2ngvh"))))
+                "0bp9ysih19aiiy690w2zkqhz5p7j4m3cvib4v8cvsgnb0kl909q5"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (inputs (list))
@@ -9370,16 +9370,17 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StepReg" version))
               (sha256
                (base32
-                "0c9zxrm5nrxnibrg59gzlz4axnj1c9m6y5wawpak6k41c61q6x2y"))))
+                "1lqwaxf6alk4y5mfrmhsnrchijpzv67n8lmhmpyx1qr4hv0lcfjp"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-stringr r-purrr r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=StepReg")
     (synopsis "Stepwise Regression Analysis")
     (description
@@ -9388,7 +9389,7 @@ logistic regression and cox proportional hazard regression can be performed to
 select best model with methods of forward selection, backward elimination,
 bidirectional selection and best subset selection.  A widely used selection
 criteria are available for variable selection.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-stepr
   (package
@@ -42465,13 +42466,13 @@ different omics expressions for different platforms.")
 (define-public r-semmcci
   (package
     (name "r-semmcci")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semmcci" version))
               (sha256
                (base32
-                "13p65d97j5b7nn9jrqx4bd2ih7ckrwq8nf2za7ci6lgjrlckx304"))))
+                "1pyb6l8y3mkh6jdxjk2mi2jif3i1s3cvnmlq95gyahpnwf4mi5jw"))))
     (properties `((upstream-name . "semmcci")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -45883,53 +45884,6 @@ formed by key variables and their interactions.  Funded by the National Center
 for Education Statistics.  See Skinner and Shlomo (2008)
 <doi:10.1198/016214507000001328> for a description of the file-level risk
 measures and the loglinear model approach.")
-    (license license:gpl2)))
-
-(define-public r-sdcmicro
-  (package
-    (name "r-sdcmicro")
-    (version "5.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sdcMicro" version))
-              (sha256
-               (base32
-                "1jy9i0akyrzvbividfac0ppgfndf6n190lgylja26b8fdlrwhdvy"))))
-    (properties `((upstream-name . "sdcMicro")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-vim
-                             r-shinybs
-                             r-shiny
-                             r-robustbase
-                             r-rmarkdown
-                             r-rhandsontable
-                             r-rcpp
-                             r-prettydoc
-                             r-mass
-                             r-knitr
-                             r-haven
-                             r-ggplot2
-                             r-e1071
-                             r-dt
-                             r-data-table
-                             r-cluster
-                             r-cardata
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sdcTools/sdcMicro")
-    (synopsis
-     "Statistical Disclosure Control Methods for Anonymization of Data and Risk Estimation")
-    (description
-     "Data from statistical agencies and other institutions are mostly confidential.
-This package (see also Templ, Kowarik and Meindl (2017)
-<doi:10.18637/jss.v067.i04>) can be used for the generation of anonymized
-(micro)data, i.e.  for the creation of public- and scientific-use files.  The
-theoretical basis for the methods implemented can be found in Templ (2017)
-<doi:10.1007/978-3-319-50272-4>.  Various risk estimation and anonymisation
-methods are included.  Note that the package includes a graphical user interface
-(Meindl and Templ, 2019 <doi:10.3390/a12090191>) that allows to use various
-methods of this package.")
     (license license:gpl2)))
 
 (define-public r-sdclog

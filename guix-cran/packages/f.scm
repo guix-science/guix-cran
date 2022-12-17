@@ -10260,31 +10260,6 @@ Iwayama, K., Aisaka, Y., Kutsuna, N., and Nagano, A. J. (2017).
     (license (list (license:fsdg-compatible "MPL (>= 2)")
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-fispro
-  (package
-    (name "r-fispro")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FisPro" version))
-              (sha256
-               (base32
-                "15zj3ffagjlby8c57gjl9mzpasjkszcc90m4y81jzjrw74axyw93"))))
-    (properties `((upstream-name . "FisPro")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.fispro.org")
-    (synopsis "Fuzzy Inference System Design and Optimization")
-    (description
-     "Fuzzy inference systems are based on fuzzy rules, which have a good capability
-for managing progressive phenomenons.  This package is a basic implementation of
-the main functions to use a Fuzzy Inference System (FIS) provided by the open
-source software FisPro <https://www.fispro.org>.  FisPro allows to create fuzzy
-inference systems and to use them for reasoning purposes, especially for
-simulating a physical or biological system.")
-    (license license:cecill)))
-
 (define-public r-fishualize
   (package
     (name "r-fishualize")
@@ -17891,13 +17866,13 @@ children and oldest old parents) in virtual population produced by VirtualPop'."
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "familiar" version))
               (sha256
                (base32
-                "1q8h7z4d545s1md5m37g2033yw0q7f2jdc0jf2mrf1hqj12vmvak"))))
+                "0nm000lbq1va7r1x12q1yzy4mqzr8zc4ac2nlvw9cn3l9jmgdyj7"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))

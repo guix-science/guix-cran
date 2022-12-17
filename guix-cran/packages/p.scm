@@ -19031,13 +19031,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.3.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgdepends" version))
               (sha256
                (base32
-                "08ba89d198kcdqd277fhr99rka17cmawcdqk9mxq8wzrcncm5nv1"))))
+                "0n648l0h2gczpwgkhd89ivwgygrcalry298vx4az41ib4ha02k0z"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -19055,7 +19055,6 @@ base of multiple R packages.")
                              r-filelock
                              r-desc
                              r-curl
-                             r-crayon
                              r-cli
                              r-callr))
     (home-page "https://github.com/r-lib/pkgdepends#readme")

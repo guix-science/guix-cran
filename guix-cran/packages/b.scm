@@ -7439,13 +7439,13 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 (define-public r-bmem
   (package
     (name "r-bmem")
-    (version "1.8")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmem" version))
               (sha256
                (base32
-                "1nhybz8aarzlqjx4443hsflflgy2jcprz5dv6mwxacnyspm93vlq"))))
+                "1sfxjy8bh4120a321b7qbds182ccd0pddivg8qywnab6wccknp86"))))
     (properties `((upstream-name . "bmem")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-sem r-mass r-lavaan r-amelia))
@@ -10288,13 +10288,13 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bioRad" version))
               (sha256
                (base32
-                "01pqjf5n3glx822q64v3f0bpg4bqxky9zdm73c1d9yspv66j618d"))))
+                "0rqdcbf37r4m5ig9gp1njx4bbjc7n96fmz5vc6mif0z81kdcrzs8"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -15073,13 +15073,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betasandwich
   (package
     (name "r-betasandwich")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "betaSandwich" version))
               (sha256
                (base32
-                "035rkz27c156kwaibz0jrhfrdfvxv20fcynqgflxll62n4zhw010"))))
+                "0n6wvyl89xcy8w8vvcgk7y4h0i1ph8ixmn9mnib5dbp3whjs3ckr"))))
     (properties `((upstream-name . "betaSandwich")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaSandwich")

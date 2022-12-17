@@ -4754,13 +4754,13 @@ data.")
 (define-public r-ethnobotanyr
   (package
     (name "r-ethnobotanyr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ethnobotanyR" version))
               (sha256
                (base32
-                "1ipwh4kxraa7rx6kvjpwq3b6jb7b4aa9kwcj7vrd4xhj4yxymqzb"))))
+                "1bdylx3in2hj3989kbp5xgpas5y84m3nrl9jpqr05rv19l6i4350"))))
     (properties `((upstream-name . "ethnobotanyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

@@ -8566,13 +8566,13 @@ the original dixon2002() function of the ecespa package to improve speed.")
 (define-public r-divseg
   (package
     (name "r-divseg")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "divseg" version))
               (sha256
                (base32
-                "0iwxckdfsb28wgpv6d1r8idyn974c38ylpiaxsvn9m8x1wnpnbp7"))))
+                "0fbh5qpjszpmkrvb2p7f9rbbc4zj1dchhwk28zclnbxazlg116fs"))))
     (properties `((upstream-name . "divseg")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -8587,7 +8587,7 @@ the original dixon2002() function of the ecespa package to improve speed.")
     (description
      "This package implements common measures of diversity and spatial segregation.
 This package has tools to compute the majority of measures are reviewed in
-Douglas and Massey (1988) <doi:10.2307/2579183>.  Multiple common measures of
+Massey and Denton (1988) <doi:10.2307/2579183>.  Multiple common measures of
 within-geography diversity are implemented as well.  All functions operate on
 data frames with a tidyselect based workflow.")
     (license license:expat)))

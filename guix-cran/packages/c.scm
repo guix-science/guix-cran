@@ -3278,13 +3278,13 @@ years that pertain to state politics and policy in the United States.")
 (define-public r-cspp
   (package
     (name "r-cspp")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cspp" version))
               (sha256
                (base32
-                "13iy6kz1v0dbrry18lkjmmgd6bsazbjbaa0bdabpg0hyw241j8b4"))))
+                "1x3swcgqffqcpw4w6dwafqh9cikd6c714lbbnzwirvqvfswnmmgw"))))
     (properties `((upstream-name . "cspp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -3310,7 +3310,7 @@ pertain to state politics and policy in the United States.  Users with only a
 basic understanding of R can subset this data across multiple dimensions, export
 their search results, create map visualizations, export the citations associated
 with their searches, and more.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-cspec
   (package
@@ -11402,16 +11402,17 @@ Study (NELS) of 1988 and nursing home data from Wisconsin.")
 (define-public r-copulacenr
   (package
     (name "r-copulacenr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CopulaCenR" version))
               (sha256
                (base32
-                "0dkjdzd720wnmfashvg3q0hl0dw9w99m972jwrjrzh24498rlq1m"))))
+                "1fk91adsahim1a6idpp4kpd2i607gh88j0xfgjnsdk94vlgx6wbs"))))
     (properties `((upstream-name . "CopulaCenR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-vinecopula
+                             r-survival
                              r-pracma
                              r-plotly
                              r-magrittr
@@ -11419,7 +11420,9 @@ Study (NELS) of 1988 and nursing home data from Wisconsin.")
                              r-flexsurv
                              r-corpcor
                              r-copula
-                             r-caret))
+                             r-copbasic
+                             r-caret
+                             r-boot))
     (home-page "https://cran.r-project.org/package=CopulaCenR")
     (synopsis "Copula-Based Regression Models for Multivariate Censored Data")
     (description
@@ -11429,10 +11432,11 @@ interval-censored semi-competing risks data.  Currently supports Clayton,
 Gumbel, Frank, Joe, AMH and Copula2 copula models.  For marginal models, it
 supports parametric (Weibull, Loglogistic, Gompertz) and semiparametric (Cox and
 transformation) models.  Includes methods for convenient prediction and
-plotting.  Also provides a bivariate time-to-event simulation function.  Method
-details can be found in Sun et.al (2019) Lifetime Data Analysis, Sun et.al
-(2021) Biostatistics, and Sun et.al (2022) Statistical Methods in Medical
-Research.")
+plotting.  Also provides a bivariate time-to-event simulation function and an
+information ratio-based goodness-of-fit test for copula.  Method details can be
+found in Sun et.al (2019) Lifetime Data Analysis, Sun et.al (2021)
+Biostatistics, Sun et.al (2022) Statistical Methods in Medical Research, and Sun
+et.al (2022) Biometrics.")
     (license license:gpl3+)))
 
 (define-public r-copulaboost
