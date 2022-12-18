@@ -23924,13 +23924,13 @@ time series.")
 (define-public r-mfsis
   (package
     (name "r-mfsis")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MFSIS" version))
               (sha256
                (base32
-                "0c49zvqj78x5xw675mjcmkg2hhps2j0mz2jhkq7ppci3y3s5hlgw"))))
+                "0cr7ygnx2jqk0zvpfmqww38qkkrlrzkp5gkqmg4s1k6j0vjkm3lf"))))
     (properties `((upstream-name . "MFSIS")))
     (build-system r-build-system)
     (inputs (list python))
@@ -23960,7 +23960,8 @@ SIRS(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
 <doi:10.1214/14-AOS1303>), MVSIS (Cui et al. (2015)
 <doi:10.1080/01621459.2014.920256>), PSIS (Pan et al. (2016)
 <doi:10.1080/01621459.2014.998760>), CAS (Xie et al. (2020)
-<doi:10.1080/01621459.2019.1573734>), CSIS and CI-SIS.")
+<doi:10.1080/01621459.2019.1573734>), CI-SIS (Cheng and Wang. (2022)
+<doi:10.1016/j.cmpb.2022.107269>)and CSIS.")
     (license license:gpl2+)))
 
 (define-public r-mfpp
@@ -32451,17 +32452,18 @@ estimates problem (data separation).")
 (define-public r-mbres
   (package
     (name "r-mbres")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mbRes" version))
               (sha256
                (base32
-                "1kqrrvfkszpm39kxic154jbjzymdmlzxnj9sc62l69b5pyvgx39c"))))
+                "1n7gp3c08zb268f04ybddmwfhz7rffwnh74x9v4zfvpnkcs97sqg"))))
     (properties `((upstream-name . "mbRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-scales
                              r-purrr
                              r-magrittr
                              r-ggplot2

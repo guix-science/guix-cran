@@ -7593,40 +7593,6 @@ NCBI (<https://www.ncbi.nlm.nih.gov/>), plant trait data from BETYdb', data from
 EOL Traitbank', Birdlife International, and more.")
     (license license:expat)))
 
-(define-public r-traitdataform
-  (package
-    (name "r-traitdataform")
-    (version "0.6.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "traitdataform" version))
-              (sha256
-               (base32
-                "0p2i7fqfkq5zq4bvgdk9my31m0r0crqpld3ql1x8y8xyp94a6rsp"))))
-    (properties `((upstream-name . "traitdataform")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-units
-                             r-taxize
-                             r-suppdata
-                             r-reshape2
-                             r-rcurl
-                             r-plyr
-                             r-getpass
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://ecologicaltraitdata.github.io/traitdataform/")
-    (synopsis "Formatting and Harmonizing Ecological Trait-Data")
-    (description
-     "Assistance for handling ecological trait data and applying the Ecological
-Trait-Data Standard terminology (Schneider et al.  2019
-<doi:10.1111/2041-210X.13288>).  There are two major use cases: (1) preparation
-of own trait datasets for publication, and (2) harmonizing trait datasets from
-different sources by re-formatting them into a unified format.  See
-traitdataform website for full documentation.")
-    (license license:expat)))
-
 (define-public r-traipse
   (package
     (name "r-traipse")

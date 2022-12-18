@@ -4972,13 +4972,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.4")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "0rfp82abrhfc094xxa634r850gw8nx79ariw6kib6z1dh9bli17p"))))
+                "047377nv5739hfqk0hfjv1ba2w5ncvdag36p33416pixgk1d8g7m"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -5507,13 +5507,13 @@ of Windows operating system.")
 (define-public r-openimager
   (package
     (name "r-openimager")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OpenImageR" version))
               (sha256
                (base32
-                "05yk5my2lqhbbdqcsafrv3rmg39jxb5bdjab05sns0qibjiq0alh"))))
+                "1n6wmpg3ir3f23lv036p4k1ccc5mzs2i3m21xljkj4q87mic6nfn"))))
     (properties `((upstream-name . "OpenImageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff

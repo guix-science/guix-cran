@@ -3584,13 +3584,13 @@ collection of functions and datas used in the german WikiBook \"GNU R\".")
 (define-public r-wiesbaden
   (package
     (name "r-wiesbaden")
-    (version "1.2.5")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wiesbaden" version))
               (sha256
                (base32
-                "04xr757lhcfafcc8xfcbqrg982ifig50lx1khw718kzydf7xwr7w"))))
+                "1wvndgixy484mjqjxs4rqzz70msqrfh4ap83jyqq4bbqs8jhag0a"))))
     (properties `((upstream-name . "wiesbaden")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

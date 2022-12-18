@@ -16014,13 +16014,13 @@ allowing calculations on data with missing values.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BEKKs" version))
               (sha256
                (base32
-                "12amk1p99nrh747m832b8sd4lrm88s0dax6fphxcx9dm57r94av5"))))
+                "14ws2zdz8fx0sarfw1pz52n855sh1s54052m2isrclsh4l8sigxj"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

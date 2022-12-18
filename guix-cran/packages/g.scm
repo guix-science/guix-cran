@@ -11976,13 +11976,13 @@ distributions.")
 (define-public r-gjrm
   (package
     (name "r-gjrm")
-    (version "0.2-6")
+    (version "0.2-6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GJRM" version))
               (sha256
                (base32
-                "0yb7bwxj1gar9zj61vbfls5vzyj23bdjrikbx6g2m2c31a8f3azq"))))
+                "03awbjalklp7fvp7p95a3pkz1d2indw2na8i2pa353inmf0a1jyb"))))
     (properties `((upstream-name . "GJRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula

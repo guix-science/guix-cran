@@ -14898,13 +14898,13 @@ response theory models using Stan easy.")
 (define-public r-edotrans
   (package
     (name "r-edotrans")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EDOtrans" version))
               (sha256
                (base32
-                "0bycq28ajyvwx7h4wpk6b1cijgy12fv8f8x42sm7glwbmfx3aw3z"))))
+                "0n397z0nwz1my8d27dl5x61lzl5q1773lgqmxxj0a5a83i8srbx0"))))
     (properties `((upstream-name . "EDOtrans")))
     (build-system r-build-system)
     (propagated-inputs (list r-opgmmassessment r-abcanalysis))

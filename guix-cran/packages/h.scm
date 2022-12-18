@@ -4071,16 +4071,17 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.6.3")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hockeystick" version))
               (sha256
                (base32
-                "06mzwv81vi7ccdxmnqqcl55w1rjxgd6vs2jrnwsqj4g7rkn8n6hk"))))
+                "13hbqx91qnnw0cf6mw88fgj39v7m7jq6ivmyp5smyxrg0pzck383"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-treemapify
+                             r-tidyr
                              r-tibble
                              r-scales
                              r-rvest
@@ -4095,12 +4096,13 @@ the package to build on previous lab members code.")
      "This package provides easy access to essential climate change datasets to
 non-climate experts.  Users can download the latest raw data from authoritative
 sources and view it via pre-defined ggplot2 charts.  Datasets include
-atmospheric CO2, emissions, instrumental and proxy temperature records, sea
-levels, Arctic/Antarctic sea-ice, Hurricanes, and Paleoclimate data.  Sources
-include: NOAA Mauna Loa Laboratory <https://gml.noaa.gov/ccgg/trends/data.html>,
-Global Carbon Project <https://www.globalcarbonproject.org/carbonbudget/>, NASA
-GISTEMP <https://data.giss.nasa.gov/gistemp/>, National Snow and Sea Ice Data
-Center <https://nsidc.org/home>, CSIRO
+atmospheric CO2, methane, emissions, instrumental and proxy temperature records,
+sea levels, Arctic/Antarctic sea-ice, Hurricanes, and Paleoclimate data.
+Sources include: NOAA Mauna Loa Laboratory
+<https://gml.noaa.gov/ccgg/trends/data.html>, Global Carbon Project
+<https://www.globalcarbonproject.org/carbonbudget/>, NASA GISTEMP
+<https://data.giss.nasa.gov/gistemp/>, National Snow and Sea Ice Data Center
+<https://nsidc.org/home>, CSIRO
 <https://research.csiro.au/slrwavescoast/sea-level/measurements-and-data/sea-level-data/>,
 NOAA Laboratory for Satellite Altimetry
 <https://www.star.nesdis.noaa.gov/socd/lsa/SeaLevelRise/> and HURDAT Atlantic

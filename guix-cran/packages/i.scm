@@ -535,13 +535,13 @@ cluster effect ratio.  To test the third estimand, user needs to install Gurobi
 (define-public r-ivdesc
   (package
     (name "r-ivdesc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivdesc" version))
               (sha256
                (base32
-                "06jqnh6i8szygc00d6ys0wwvh9br33zmwc430q2ann1qmrkaxxj5"))))
+                "0b28xghncvq182kl19m8k1frnr2cqj7nvnhcd831kfd84bk2sz13"))))
     (properties `((upstream-name . "ivdesc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsample r-purrr r-knitr))
@@ -5479,13 +5479,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intRinsic" version))
               (sha256
                (base32
-                "123s1pyqidff48v4lljiszfbbzs4vkwkgndbrsm29g2xla6ldhpg"))))
+                "0slwys4vn8s6w46vc6phj74b97m4r9vkmidsp7292ns9h4ilf1qr"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-salso
@@ -5507,9 +5507,10 @@ via likelihood-based approaches.  Specifically, the package implements the
 TWO-NN and Gride estimators and the Hidalgo Bayesian mixture model.  In
 addition, the first reference contains an extended vignette on the usage of the
 TWO-NN and Hidalgo models.  References: Denti (2022+, <arXiv:2102.11425>);
-Allegra et al. (2020, <doi:10.1038/s41598-020-72222-0>); Denti et al. (2022+,
-<arXiv:2104.13832>); Facco et al. (2017, <doi:10.1038/s41598-017-11873-y>);
-Santos-Fernandez et al. (2021, <arXiv:1902.10459>).")
+Allegra et al. (2020, <doi:10.1038/s41598-020-72222-0>); Denti et al. (2022,
+<doi:10.1038/s41598-022-20991-1>); Facco et al. (2017,
+<doi:10.1038/s41598-017-11873-y>); Santos-Fernandez et al. (2021,
+<doi:10.1038/s41598-022-20991-1>).")
     (license license:expat)))
 
 (define-public r-intrigue

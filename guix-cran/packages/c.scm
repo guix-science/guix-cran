@@ -26468,13 +26468,13 @@ libraries, such as Aston <https://github.com/bovee/aston>, Entab
 (define-public r-christmas
   (package
     (name "r-christmas")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "christmas" version))
               (sha256
                (base32
-                "0lxz71vbfqngkn4mg0c74ainww3vbzn8f4s5kmnw5bsd2mmwism7"))))
+                "0ir9fn1hdv6if263dlwam8m3gyiw59q7p26hdxav2dil8q8r4f2g"))))
     (properties `((upstream-name . "christmas")))
     (build-system r-build-system)
     (propagated-inputs (list r-animation))

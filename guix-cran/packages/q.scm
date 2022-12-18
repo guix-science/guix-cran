@@ -3124,16 +3124,16 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
 (define-public r-qrcode
   (package
     (name "r-qrcode")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qrcode" version))
               (sha256
                (base32
-                "0472vfk3nlc0d99pc21909g554r9x9b8zhnlf9b995qz6jlmif2x"))))
+                "1sxaqyp35k8cj5ilrrkifnf4icsm306arsfk2xq2vbx4qzxv96hq"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-knitr r-assertthat))
+    (propagated-inputs (list r-assertthat))
     (home-page "https://thierryo.github.io/qrcode/")
     (synopsis "Generate QRcodes with R")
     (description "Create QRcode in R.")

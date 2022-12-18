@@ -9402,21 +9402,16 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 (define-public r-annotator
   (package
     (name "r-annotator")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "annotator" version))
               (sha256
                (base32
-                "1llr17ac1sr5ih8k5gy8rzmbjhqr3iv0xz3bh3havhlcwlcrpvj0"))))
+                "0q44dcb0kpy7062j7iwxl98aisdh3l851zi9khv2d79v0hb4cpnf"))))
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-shiny
-                             r-knitr
-                             r-imager
-                             r-htmlwidgets
-                             r-glue))
+    (propagated-inputs (list r-xfun r-shiny r-htmlwidgets))
     (home-page "https://cran.r-project.org/package=annotator")
     (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
     (description

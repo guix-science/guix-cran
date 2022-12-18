@@ -7753,6 +7753,35 @@ common conventions or those defined by International Swap Dealer Association
 (ISDA, <https://www.isda.org>) legal documentation.")
     (license license:gpl2)))
 
+(define-public r-fmadist
+  (package
+    (name "r-fmadist")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FMAdist" version))
+              (sha256
+               (base32
+                "09lv6zk36qrrrjs0wkda5rr4pjm7q317gc5dr197w7ggsqibp4b6"))))
+    (properties `((upstream-name . "FMAdist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog
+                             r-mass
+                             r-fitdistrplus
+                             r-extradistr
+                             r-envstats
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=FMAdist")
+    (synopsis "Frequentist Model Averaging Distribution")
+    (description
+     "Creation of an input model (fitted distribution) via the frequentist model
+averaging (FMA) approach and generate random-variates from the distribution
+specified by \"myfit\" which is the fitted input model via the FMA approach.  See
+W. X. Jiang and B. L. Nelson (2018), \"Better Input Modeling via Model
+Averaging,\" Proceedings of the 2018 Winter Simulation Conference, IEEE Press,
+1575-1586.")
+    (license license:gpl2)))
+
 (define-public r-fma
   (package
     (name "r-fma")

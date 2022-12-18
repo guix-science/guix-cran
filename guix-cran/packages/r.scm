@@ -26621,17 +26621,17 @@ servers.")
 (define-public r-repurrrsive
   (package
     (name "r-repurrrsive")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "repurrrsive" version))
               (sha256
                (base32
-                "1nmy88h2bfv2bad282kbrmnkjx9d8klgzv4mm8nspm049s09ydmz"))))
+                "123hf7qhhs4jyjbmw4246zmhyngjq7r9ihgg3nxg594kja40khd9"))))
     (properties `((upstream-name . "repurrrsive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
-    (home-page "https://github.com/jennybc/repurrrsive")
+    (home-page "https://jennybc.github.io/repurrrsive/")
     (synopsis "Examples of Recursive Lists and Nested or Split Data Frames")
     (description
      "Recursive lists in the form of R objects, JSON', and XML', for use in teaching

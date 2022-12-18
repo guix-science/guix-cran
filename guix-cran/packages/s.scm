@@ -2267,13 +2267,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svrep" version))
               (sha256
                (base32
-                "04mvhmkhavz1a96y5r8sr8fc8cyxi9hq0cbrsilfdpy096dkksgc"))))
+                "0k494m751lmil58887jc74p34bw08x15zmnf7vr3ijnyfifmz2v4"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
