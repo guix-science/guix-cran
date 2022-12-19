@@ -9410,38 +9410,6 @@ A., Witten, D., and Simon, N. (2016).  Fused Lasso Additive Model.  Journal of
 Computational and Graphical Statistics, 25(4): 1005-1025.")
     (license license:gpl2+)))
 
-(define-public r-flair
-  (package
-    (name "r-flair")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "flair" version))
-              (sha256
-               (base32
-                "0hvg9k7l6vdhmbmql1viyn54f07r31ssyyhdv2v242i0npa2l25r"))))
-    (properties `((upstream-name . "flair")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rmarkdown
-                             r-purrr
-                             r-magrittr
-                             r-knitr
-                             r-glue
-                             r-ggplot2
-                             r-evaluate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kbodwin/flair")
-    (synopsis "Highlight, Annotate, and Format your R Source Code")
-    (description
-     "Facilitates easier formatting and highlighting of R source code in a R
-Markdown-based presentation.  The main goal of the package is to allow users to
-preserve their code creation process within code chunks, then to specify
-formatting details for the source code, such as highlighting of particular
-syntactical elements.")
-    (license license:expat)))
-
 (define-public r-flagr
   (package
     (name "r-flagr")
@@ -9724,13 +9692,13 @@ the Liland distribution.  Simulation functions are included for comparison.")
 (define-public r-fixedpoint
   (package
     (name "r-fixedpoint")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FixedPoint" version))
               (sha256
                (base32
-                "1jgqc7m3cvyvxlpkvcqqyfmjl8harsb4kl7msk3qd8mn4qjvvyms"))))
+                "04f3x2akphfm6d84vbf9nfrn281d5hbbnb57n4cwy9hgrs835h6w"))))
     (properties `((upstream-name . "FixedPoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

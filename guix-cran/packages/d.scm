@@ -14201,13 +14201,13 @@ regression models.")
 (define-public r-dglm
   (package
     (name "r-dglm")
-    (version "1.8.4")
+    (version "1.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dglm" version))
               (sha256
                (base32
-                "09b74s7xdqv6y2qrlk67c7nfi7sw6azmpyvnan2rpbvxqlky9xgd"))))
+                "087pvd3r9w4920xml3hrlwa95lknhmffyn8lqbw627y2d1zwsx1c"))))
     (properties `((upstream-name . "dglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod))

@@ -2486,13 +2486,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dash
   (package
     (name "r-bs4dash")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bs4Dash" version))
               (sha256
                (base32
-                "1kw59hdwhwsrx76ir0c4hqsw42va6cvhzpvgzz8n976i1rrpml0x"))))
+                "07s4q01bqk31pqpynlgfgbdr75hcffk9g7h9x5spzix0lddsmmv6"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -10784,13 +10784,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogrowth" version))
               (sha256
                (base32
-                "0hlpnx86bfk16mw5yhrwlf8qz9f52wx88n5iy3lw6qhq65a6ja2f"))))
+                "04k89fnfc85wiq09b5cff4k4yvhi8h87nzscig1lcznxxwljyi3j"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11593,6 +11593,34 @@ e.g. of interest when investigating the incidence or prevalence in populations.
 The package contains functions to compute coverage probabilities and coverage
 coefficients of the provided confidence intervals procedures.  Sample size
 calculations are based on expected length.")
+    (license license:gpl3)))
+
+(define-public r-binomialtrend
+  (package
+    (name "r-binomialtrend")
+    (version "0.0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "binomialtrend" version))
+              (sha256
+               (base32
+                "1rrs8sg1dfzgb6005pm5nj3fwp5fy89pjx0af59clybj6lyqp25d"))))
+    (properties `((upstream-name . "binomialtrend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pheatmap))
+    (home-page "https://cran.r-project.org/package=binomialtrend")
+    (synopsis
+     "Calculates the Statistical Significance of a Trend in a Set of Measurements")
+    (description
+     "Detection of a statistically significant trend in the data provided by the user.
+ This is based on the a signed test based on the binomial distribution.  The
+package returns a trend test value, T, and also a p-value.  A T value close to 1
+indicates a rising trend, whereas a T value close to -1 indicates a decreasing
+trend.  A T value close to 0 indicates no trend.  There is also a command to
+visualize the trend.  A test data set called gtsa_data is also available, which
+has global mean temperatures for January, April, July, and October for the years
+1851 to 2022.  Reference: Walpole, Myers, Myers, Ye. (2007, ISBN:
+0-13-187711-9).")
     (license license:gpl3)))
 
 (define-public r-binomialrf
@@ -15227,6 +15255,27 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
  Lord (1965) <doi:10.1007/BF02289490>.  Hanson (1991)
 <https://files.eric.ed.gov/fulltext/ED344945.pdf>.")
     (license license:cc0)))
+
+(define-public r-betadelta
+  (package
+    (name "r-betadelta")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "betaDelta" version))
+              (sha256
+               (base32
+                "1kl76z4bkas52fxch4vw0kab5am4y4m8kv9xsii710pglngz1ahg"))))
+    (properties `((upstream-name . "betaDelta")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jeksterslab/betaDelta")
+    (synopsis "Confidence Intervals for Standardized Regression Coefficients")
+    (description
+     "Generates confidence intervals for standardized regression coefficients using
+delta method standard errors for models fitted by lm() as described in Yuan and
+Chan (2011) <doi:10.1007/s11336-011-9224-6> and Jones and Waller (2015)
+<doi:10.1007/s11336-013-9380-y>.")
+    (license license:expat)))
 
 (define-public r-betaclust
   (package

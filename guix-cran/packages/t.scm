@@ -11129,35 +11129,6 @@ confounder may tip our result to insignificance.")
      "Htmlwidget of Tippyjs to add tooltips to Shiny apps and R markdown documents.")
     (license license:expat)))
 
-(define-public r-tippingpoint
-  (package
-    (name "r-tippingpoint")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TippingPoint" version))
-              (sha256
-               (base32
-                "00m7v94rr3xpqw7r0jgs4g7ylxjpbbnzihc5jniw7m876yxa17kw"))))
-    (properties `((upstream-name . "TippingPoint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-rcolorbrewer r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/XikunHan/TippingPoint")
-    (synopsis
-     "Enhanced Tipping Point Displays the Results of Sensitivity Analysis for Missing Data")
-    (description
-     "Using the idea of \"tipping point\" (proposed in Gregory Campbell, Gene Pennello
-and Lilly Yue(2011) <DOI:10.1080/10543406.2011.550094>) to visualize the results
-of sensitivity analysis for missing data, the package provides a set of
-functions to list out all the possible combinations of missing values in two
-treatment arms, calculate corresponding estimated treatment effects and p
-values, and draw a colored heat-map.  It could deal with randomized experiments
-with a binary outcome or a continuous outcome.  In addition, the package
-provides a visualized method to compare various imputation methods by adding the
-rectangles or convex hulls on the basic plot.")
-    (license license:gpl2)))
-
 (define-public r-tipmap
   (package
     (name "r-tipmap")
@@ -13884,30 +13855,6 @@ sheets retrieved from Gapminder data web tools.  It will therefore contribute to
 reduce the time used in data cleaning of Gapminder indicator data sheets as they
 are very messy.")
     (license license:gpl2)))
-
-(define-public r-tidyft
-  (package
-    (name "r-tidyft")
-    (version "0.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidyft" version))
-              (sha256
-               (base32
-                "0l6ixaqj356q319ms0bf655f530cgiia9saqdx9lryaf0b6i2hxb"))))
-    (properties `((upstream-name . "tidyft")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-fst r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hope-data-science/tidyft")
-    (synopsis "Tidy Verbs for Fast Data Operations by Reference")
-    (description
-     "Tidy syntax for data.table', using modification by reference whenever possible.
-This toolkit is designed for big data analysis in high-performance desktop or
-laptop computers.  The syntax of the package is similar or identical to
-tidyverse'.  It is user friendly, memory efficient and time saving.  For more
-information, check its ancestor package tidyfst'.")
-    (license license:expat)))
 
 (define-public r-tidyfst
   (package
@@ -17579,13 +17526,13 @@ DoseFinding package, which is used for the fitting of the models.  See
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestGardener" version))
               (sha256
                (base32
-                "1fwad1hanslrxi8vhwd2v99qsd5bnz8nd0knxcq1q0mdp6i7lbxb"))))
+                "1rs2zpnhgyr4cqr1lq4gzq79ng0k28h0ra64v5g46xmi4whklc8a"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8

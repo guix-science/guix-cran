@@ -2139,13 +2139,13 @@ disorders.  The method is presented in details in Plagnol et al (2012)
 (define-public r-exnruleensemble
   (package
     (name "r-exnruleensemble")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExNRuleEnsemble" version))
               (sha256
                (base32
-                "1w2p71if27z8r3pdj4fryd6r2gnv4zs608kg0qrw3nsi6lylf7kh"))))
+                "0sfrfnhba5940kyc1y5g8zp2wdrr44i498fbwrpbnjxfby4cdx4r"))))
     (properties `((upstream-name . "ExNRuleEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-fnn))
@@ -12721,6 +12721,30 @@ explore your laboratory data from different perspectives.")
 the one-sided/two-sided EL tests.")
     (license license:gpl2+)))
 
+(define-public r-el
+  (package
+    (name "r-el")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EL" version))
+              (sha256
+               (base32
+                "1ygvb8m33szf2xl6fcvyqhgpj7ppn4kc9wd1fcaq4ppbvv6c17ka"))))
+    (properties `((upstream-name . "EL")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=EL")
+    (synopsis "Two-Sample Empirical Likelihood")
+    (description
+     "Empirical likelihood (EL) inference for two-sample problems.  The following
+statistics are included: the difference of two-sample means, smooth Huber
+estimators, quantile (qdiff) and cumulative distribution functions (ddiff),
+probability-probability (P-P) and quantile-quantile (Q-Q) plots as well as
+receiver operating characteristic (ROC) curves.  EL calculations are based on J.
+Valeinis, E. Cers (2011)
+<http://home.lu.lv/~valeinis/lv/petnieciba/EL_TwoSample_2011.pdf>.")
+    (license license:gpl2+)))
+
 (define-public r-eks
   (package
     (name "r-eks")
@@ -13344,13 +13368,13 @@ non-experienced in R coding. (SÃ¡ez et al.  2020)
 (define-public r-ehr
   (package
     (name "r-ehr")
-    (version "0.4-10")
+    (version "0.4-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EHR" version))
               (sha256
                (base32
-                "062smk24f3jv7m0833h6nygrk7pq3n85a5sq1j752i0z1j2px3np"))))
+                "0iz69bk5l164c7qpmnwlbrpxn99d8jm0x6hck2bj8jd52q4kvfvi"))))
     (properties `((upstream-name . "EHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pkdata r-lubridate r-data-table))

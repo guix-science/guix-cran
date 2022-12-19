@@ -17066,13 +17066,13 @@ overlapping lines - Draw more realistic worms.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "1.6.1")
+    (version "1.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "1yjmyjs1s50zds5qmlvi8j0q3d97sivd4ra2b7418wm7qnkl9zjz"))))
+                "1pg0f8i54mx3xy2zi431rgjl20s451rxll941i80jn2sn1pv9a96"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -25403,29 +25403,28 @@ Reference: Goodfellow et al. (2014) <arXiv:1406.2661v1>.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.0.2")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganDataModel" version))
               (sha256
                (base32
-                "0pqf22bi213mba2g782727sq56n0jjql4z4d2hpfk8gdpw1bm2hv"))))
+                "0d8m0frd9pbny95bmhgz96fq98366g70fy312bvi8mcijklxnblz"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))
     (propagated-inputs (list r-tensorflow r-rcpp))
     (home-page "https://cran.r-project.org/package=ganDataModel")
-    (synopsis
-     "Create a Hierarchical, Categorical Data Model for a Data Source")
+    (synopsis "Build a Metric Subspaces Data Model for a Data Source")
     (description
      "Neural networks are applied to create a density value function which
 approximates density values for a data source.  The trained neural network is
-analysed for different levels.  For each level subspaces with density values
-above a level are determined.  The obtained set of subspaces categorizes the
-data source hierarchically.  A prerequisite is the definition of a data source,
-the generation of generative data and the calculation of density values.  These
-tasks are executed using package ganGenerativeData
-<https://cran.r-project.org/package=ganGenerativeData>.")
+analyzed for different levels.  For each level metric subspaces with density
+values above a level are determined.  The obtained set of metric subspaces and
+the trained neural network are assembled into a data model.  A prerequisite is
+the definition of a data source, the generation of generative data and the
+calculation of density values.  These tasks are executed using package
+ganGenerativeData <https://cran.r-project.org/package=ganGenerativeData>.")
     (license license:gpl2+)))
 
 (define-public r-ganalytics

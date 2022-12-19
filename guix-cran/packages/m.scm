@@ -8539,42 +8539,6 @@ Hall in their \"Using R series\".  There are numerous functions and data-sets th
 are used in the book's many practical examples.")
     (license license:gpl3)))
 
-(define-public r-mpwr
-  (package
-    (name "r-mpwr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mpwR" version))
-              (sha256
-               (base32
-                "03zy8cw2x285cvfpax2p865c1pf46y7g47g6k1gyfazkj303jgqc"))))
-    (properties `((upstream-name . "mpwR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-upsetr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-plotly
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-flowtracer
-                             r-dplyr
-                             r-data-table
-                             r-comprehenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mpwR")
-    (synopsis
-     "Standardized Comparison of Workflows in Mass Spectrometry-Based Bottom-Up Proteomics")
-    (description
-     "Useful functions to analyze proteomic workflows including number of
-identifications, data completeness, missed cleavages, quantitative and retention
-time precision etc.  Various software outputs are supported such as
-ProteomeDiscoverer', Spectronaut', DIA-NN and MaxQuant'.")
-    (license license:expat)))
-
 (define-public r-mpv
   (package
     (name "r-mpv")
@@ -11670,13 +11634,13 @@ changed.")
 (define-public r-molar
   (package
     (name "r-molar")
-    (version "5.1")
+    (version "5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "molaR" version))
               (sha256
                (base32
-                "1wqxyrsql36aqiwh0mcyv1ynbzn6p2was4wmaqrkpyxvnbl0f25y"))))
+                "1wv296ak6lhndagc9l5ipj5s4w6ralp4fysl6yl39k7x1904h6yd"))))
     (properties `((upstream-name . "molaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-pracma r-alphahull))
@@ -27522,24 +27486,24 @@ meta-analyses.")
 (define-public r-mestim
   (package
     (name "r-mestim")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Mestim" version))
               (sha256
                (base32
-                "1alav9xihq7mdz9cd24sh5nkblh8nm5h2zsrqizqg3w4dw288dgj"))))
+                "186jdygnh6y38414flmmd8qw660fsvnhydfjnjlvh57fk4djj1wa"))))
     (properties `((upstream-name . "Mestim")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Mestim")
     (synopsis
-     "Computes the Variance-Covariance Matrix of a Set of Parameters using M-Estimation")
+     "Computes the Variance-Covariance Matrix of Multidimensional Parameters Using M-Estimation")
     (description
      "This package provides a flexible framework for estimating the
-variance-covariance matrix of a set of estimated parameters.  Estimation relies
-on unbiased estimating functions to compute the empirical sandwich variance.
-(i.e., M-estimation in the vein of Stefanski and Boos (2002)
-<doi:10.1198/000313002753631330>.")
+variance-covariance matrix of estimated parameters.  Estimation relies on
+unbiased estimating functions to compute the empirical sandwich variance. (i.e.,
+M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-messydates
@@ -38719,13 +38683,13 @@ particular emphasis on making attractive log axis plots.")
 (define-public r-magi
   (package
     (name "r-magi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "magi" version))
               (sha256
                (base32
-                "1psl3rxhhlm4a1qd3xv1k4lcbj52wpg5aj1lwb83rcpwp3h5blsr"))))
+                "15v8hmq3vlwwn2b1jnbgiinjjxycdccnd8y0x6yis20zkghjq56n"))))
     (properties `((upstream-name . "magi")))
     (build-system r-build-system)
     (propagated-inputs (list r-roptim

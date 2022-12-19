@@ -10361,6 +10361,31 @@ autocorrelation of process jumps on time intervals separated by a lag.")
 partially ordered set.")
     (license license:expat)))
 
+(define-public r-hassani-sacf
+  (package
+    (name "r-hassani-sacf")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Hassani.SACF" version))
+              (sha256
+               (base32
+                "03p9q53wp9jwk4hkpixg6smwm7yngk92lpg5h8r09qmwxvkhphnq"))))
+    (properties `((upstream-name . "Hassani.SACF")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Hassani.SACF")
+    (synopsis "Computing Lower Bound of Ljung-Box Test")
+    (description
+     "The Ljung-Box test is one of the most important tests for time series
+diagnostics and model selection.  The Hassani SACF (Sum of the Sample
+Autocorrelation Function) Theorem , however, indicates that the sum of sample
+autocorrelation function is always fix for any stationary time series with
+arbitrary length.  This package confirms for sensitivity of the Ljung-Box test
+to the number of lags involved in the test and therefore it should be used with
+extra caution.  The Hassani SACF Theorem has been described in : Hassani,
+Yeganegi and M. R. (2019) <doi:10.1016/j.physa.2018.12.028>.")
+    (license license:gpl3)))
+
 (define-public r-hashr
   (package
     (name "r-hashr")

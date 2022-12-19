@@ -3640,6 +3640,30 @@ from <https://www.gurobi.com>).  Additionally, the JAGS software (available from
 linear models.")
     (license license:gpl3)))
 
+(define-public r-surveysd
+  (package
+    (name "r-surveysd")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "surveysd" version))
+              (sha256
+               (base32
+                "16l17ying9xshfn563kp7nn3hdqrg03ny578sgi08b7zfds5yf8b"))))
+    (properties `((upstream-name . "surveysd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-laeken r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/statistikat/surveysd")
+    (synopsis
+     "Survey Standard Error Estimation for Cumulated Estimates and their Differences in Complex Panel Designs")
+    (description
+     "Calculate point estimates and their standard errors in complex household surveys
+using bootstrap replicates.  Bootstrapping considers survey design with a
+rotating panel.  A comprehensive description of the methodology can be found
+under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
+    (license license:gpl2+)))
+
 (define-public r-surveyplanning
   (package
     (name "r-surveyplanning")
@@ -37047,13 +37071,13 @@ assistant-like user interfaces.")
 (define-public r-shinygizmo
   (package
     (name "r-shinygizmo")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyGizmo" version))
               (sha256
                (base32
-                "0nlf5pybrw3mvcafi3ilv9kh0k6z2qfvjgk5mnipfk72zrag9yf1"))))
+                "1d3rd67nq3a4nwij1qphcy7gv1pz0522jhzwy3rkmsvhbmyr2ffq"))))
     (properties `((upstream-name . "shinyGizmo")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -53883,13 +53907,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-31")
+    (version "3.1-32")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "0gnp703blgawfymd6nxz98w8g7sabagrnk3qc3d3cxj887w83gih"))))
+                "12pkl5jdikbha1n00k23k88igpm9csfc9y2xqvfy33s8i8i0wbnn"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

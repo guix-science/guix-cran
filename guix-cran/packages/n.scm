@@ -9251,13 +9251,13 @@ analysis features.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netUtils" version))
               (sha256
                (base32
-                "02ik399hq58lfy2l4rhc21kkfcjkzycgjhdhgrvycn34gkw3ahjl"))))
+                "0z6wl5g19xzbfsgbxrw9rnnsn7v21zbx1ql9rl51w23f92l5b784"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))

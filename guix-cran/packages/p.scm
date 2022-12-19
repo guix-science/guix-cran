@@ -16465,13 +16465,13 @@ nonparametric regression models.")
 (define-public r-plreg
   (package
     (name "r-plreg")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLreg" version))
               (sha256
                (base32
-                "1639wclggbhq7pm0l350sk6fg6rinfidw4imdg4839wzifh16bjz"))))
+                "1mp2gvqqbla29mj2m3ax87ald0nfdd43i5dvxcq5xb0a29n3lqc0"))))
     (properties `((upstream-name . "PLreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -16485,16 +16485,15 @@ nonparametric regression models.")
     (home-page "https://github.com/ffqueiroz/PLreg")
     (synopsis "Power Logit Regression for Modeling Bounded Data")
     (description
-     "Fitting power logit regression models for bounded continuous data, in which the
-density generator may be normal, Student-t, power exponential, slash,
-hyperbolic, sinh-normal, or type II logistic.  Diagnostic tools associated with
-the fitted model, such as the residuals, local influence measures, leverage
-measures, and goodness-of-fit statistics, are implemented.  The estimation
-process follows the maximum likelihood approach and, currently, the package
-supports two types of estimators: the usual maximum likelihood estimator and the
-penalized maximum likelihood estimator.  More details about power logit
-regression models are described in Queiroz and Ferrari (2022)
-<arXiv:2202.01697>.")
+     "Power logit regression models for bounded continuous data, in which the density
+generator may be normal, Student-t, power exponential, slash, hyperbolic,
+sinh-normal, or type II logistic.  Diagnostic tools associated with the fitted
+model, such as the residuals, local influence measures, leverage measures, and
+goodness-of-fit statistics, are implemented.  The estimation process follows the
+maximum likelihood approach and, currently, the package supports two types of
+estimators: the usual maximum likelihood estimator and the penalized maximum
+likelihood estimator.  More details about power logit regression models are
+described in Queiroz and Ferrari (2022) <arXiv:2202.01697>.")
     (license license:gpl3+)))
 
 (define-public r-plpoisson
@@ -16966,13 +16965,13 @@ available mapDK package by Sebastian Barfort.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plotdap" version))
               (sha256
                (base32
-                "1fxay2k7qqd3zy9sx3dbbci7biya8k01kbk5gw95p9kmbwiyyrbr"))))
+                "1g4dfkbwj6673w76ysn236cz05m25y14fnwqbnm0kra3y18a339l"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -24538,21 +24537,22 @@ considered.")
 (define-public r-peramo
   (package
     (name "r-peramo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "peramo" version))
               (sha256
                (base32
-                "1747dxppffnwwhmxmybcm21wzpvzbxdrr91kya87yhimpfdf3ff4"))))
+                "1v57anfh0dayhf3vqiqmp9zh311vd1dwdr19j1i05hg7ap1qssrx"))))
     (properties `((upstream-name . "peramo")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=peramo")
     (synopsis "Permutation Tests for Randomization Model")
     (description
-     "Perform permutation-based hypothesis testing for randomized experiments, as
-described in Ernst (2004) <doi:10.1214/088342304000000396>.")
+     "Perform permutation-based hypothesis testing for randomized experiments as
+described in Ernst (2004) <doi:10.1214/088342304000000396> and Manly (2007)
+<isbn:978-1-58488-541-2>.")
     (license license:gpl3)))
 
 (define-public r-pequod
@@ -31965,6 +31965,39 @@ image.  The first 386 Pokemon are currently provided.")
 GPL3 (<https://www.gimp.org/about/COPYING>), and Inkscape distributed under GPL2
 (<https://inkscape.org/about/license/>).")
     (license license:gpl2)))
+
+(define-public r-palettes
+  (package
+    (name "r-palettes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "palettes" version))
+              (sha256
+               (base32
+                "192m81rh1181zfjnjg2qw7347sdynbvby9bddmqzpvjpx5hzirkz"))))
+    (properties `((upstream-name . "palettes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-prismatic
+                             r-pillar
+                             r-ggplot2
+                             r-farver
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://mccarthy-m-g.github.io/palettes/")
+    (synopsis "Methods for Colour Vectors and Colour Palettes")
+    (description
+     "This package provides a comprehensive library for colour vectors and colour
+palettes using a new family of colour classes (palettes_colour and
+palettes_palette) that always print as hex codes with colour previews.
+Capabilities include: formatting, casting and coercion, extraction and updating
+of components, plotting, colour mixing arithmetic, and colour interpolation.")
+    (license license:expat)))
 
 (define-public r-paletteknife
   (package

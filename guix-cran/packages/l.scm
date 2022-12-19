@@ -7811,13 +7811,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingglosses" version))
               (sha256
                (base32
-                "0rwilnqv1lzmw61y1prjp3mvl4q61jr3pwkifq2mmw5vj307iciz"))))
+                "1sgf0rag150cc1qsvinbjags9pxj8pxxvq1qfhxm3wb93bqc86l3"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools))

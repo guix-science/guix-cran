@@ -3768,21 +3768,22 @@ outputs can be written to standard file formats.")
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "3.0.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jack" version))
               (sha256
                (base32
-                "191daxlkkz4494nvnqq6rdk8gkm6ial39cp63dfmkhhd021ay9ld"))))
+                "1vwmly72d1rakz30ik2c87s96k9dfl992ps39n758481cxwy6v04"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ryacas
+    (propagated-inputs (list r-spray
+                             r-ryacas
+                             r-qspray
                              r-partitions
                              r-mvp
                              r-multicool
                              r-juliaconnector
-                             r-gmpoly
                              r-gmp
                              r-desctools))
     (home-page "https://github.com/stla/jackR")

@@ -2990,39 +2990,6 @@ for the degree of ordering. `ordering` provides a numeric indication of ordering
 -2 (strictly decreasing) to 2 (strictly increasing).")
     (license license:gpl2+)))
 
-(define-public r-ordensity
-  (package
-    (name "r-ordensity")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ORdensity" version))
-              (sha256
-               (base32
-                "1g9d85dyfhlqmwsigdn64hifasbvw70g3wpph2h9v2ksvia0cd31"))))
-    (properties `((upstream-name . "ORdensity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rfast
-                             r-plyr
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-distances
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=ORdensity")
-    (synopsis "Identification of Differentially Expressed Genes")
-    (description
-     "Automated discovery of differentially expressed genes.  The method (called
-ORdensity) is composed of two phases: discovering potential differentially
-expressed genes and recognizing differentially expressed genes.  It makes use of
-a permutation resampling procedure to build outlying and density indexes.
-References: a) Irigoien, I. and Arenas, C. (2018). \"Identification of
-differentially expressed genes by means of outlier detection\".
-<doi:10.1186/s12859-018-2318-8>.  b) MartÃ­nez-Otzeta, J. M., Irigoien, I.,
-Sierra, B., and Arenas, C. (2020). \"ORdensity: user-friendly R package to
-identify differentially expressed genes\". <doi:10.1186/s12859-020-3463-4>.")
-    (license license:gpl2+)))
-
 (define-public r-orddisp
   (package
     (name "r-orddisp")
@@ -8059,13 +8026,13 @@ validating, encoding and decoding entries that follow this standard.")
 (define-public r-oknne
   (package
     (name "r-oknne")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OkNNE" version))
               (sha256
                (base32
-                "0ggx508cqkqc51qw10cajm8r3k5h474n7y8dgck2fr4db047zmcm"))))
+                "10kkg6n6fsqm1kir1ay96br1m8adykarmp57bnw900fiblqqa2i0"))))
     (properties `((upstream-name . "OkNNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-fnn))
@@ -8139,6 +8106,42 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
+
+(define-public r-ohun
+  (package
+    (name "r-ohun")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ohun" version))
+              (sha256
+               (base32
+                "1i8ri0fsy15m23j0h3g58i1qm0icz7k5f03k5lrg3c7jz9a8l7jn"))))
+    (properties `((upstream-name . "ohun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-warbler
+                             r-viridis
+                             r-tuner
+                             r-sp
+                             r-sim-diffproc
+                             r-seewave
+                             r-rlang
+                             r-rjson
+                             r-rcurl
+                             r-pbapply
+                             r-knitr
+                             r-igraph
+                             r-fftw
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://marce10.github.io/ohun/")
+    (synopsis "Optimizing Acoustic Signal Detection")
+    (description
+     "Facilitates the automatic detection of acoustic signals, providing functions to
+diagnose and optimize the performance of detection routines.  Detections from
+other software can also be explored and optimized.  Reference: Hossin & Sulaiman
+(2015) <doi:10.5121/ijdkp.2015.5201>.")
+    (license license:gpl2+)))
 
 (define-public r-ohtadstats
   (package

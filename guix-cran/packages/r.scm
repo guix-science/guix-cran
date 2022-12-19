@@ -14605,30 +14605,6 @@ scalar-on-function linear regression and function-on-function linear regression.
 Beyaztas, U., and Shang, H. L. (2022) <arXiv:2203.05065>.")
     (license license:gpl3)))
 
-(define-public r-robfitcongraph
-  (package
-    (name "r-robfitcongraph")
-    (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "robFitConGraph" version))
-              (sha256
-               (base32
-                "0w5x4ndv5r8v7ji3dhmch0di4krphxrclyidfg5b3qbmn1hlhlih"))))
-    (properties `((upstream-name . "robFitConGraph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://arxiv.org/abs/2204.04291")
-    (synopsis "Graph-Constrained Robust Covariance Estimation")
-    (description
-     "This package contains a function by the same name, which provides two types of
-robust t-M-estimators of scatter subject to zero-constraints in the inverse.
-The methodology is described in Vogel & Tyler (2014)
-<doi:10.1093/biomet/asu041>.  See the robFitConGraph function documentation for
-further details.  A tutorial including background information is given by Vogel,
-Watt & Wiedemann (2022) <arXiv:2204.04291>.")
-    (license license:gpl3)))
-
 (define-public r-robfilter
   (package
     (name "r-robfilter")
@@ -41369,13 +41345,13 @@ searched.")
 (define-public r-rapidphylo
   (package
     (name "r-rapidphylo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rapidphylo" version))
               (sha256
                (base32
-                "1mhfhvpm09r0jw6dvjszz139fw4m2fb3509xbw5dwpxnhjc2350n"))))
+                "0mljvfpam40nh4h3513xbw2wnbgfwqx8l7k2g0x6j1yk9qxcffh5"))))
     (properties `((upstream-name . "rapidphylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-phangorn r-ape))

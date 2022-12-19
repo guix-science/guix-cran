@@ -5653,45 +5653,6 @@ operations in nuclear facilities, based on Zywiec et al (2021)
 <doi:10.1016/j.ress.2020.107322>.")
     (license license:expat)))
 
-(define-public r-crisprdesignr
-  (package
-    (name "r-crisprdesignr")
-    (version "1.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crispRdesignR" version))
-              (sha256
-               (base32
-                "1h9153iv55qkx9hyf3gs118m99mkzj5mbj6i3jg58chfp0m6jx78"))))
-    (properties `((upstream-name . "crispRdesignR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vtreat
-                             r-stringr
-                             r-shiny
-                             r-s4vectors
-                             r-rtracklayer
-                             r-iranges
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-gbm
-                             r-dt
-                             r-biostrings
-                             r-biocgenerics))
-    (home-page "<https://github.com/dylanbeeber/crispRdesignR>")
-    (synopsis "Guide Sequence Design for CRISPR/Cas9")
-    (description
-     "Designs guide sequences for CRISPR/Cas9 genome editing and provides information
-on sequence features pertinent to guide efficiency.  Sequence features include
-annotated off-target predictions in a user-selected genome and a predicted
-efficiency score based on the model described in Doench et al. (2016)
-<doi:10.1038/nbt.3437>.  Users are able to import additional genomes and genome
-annotation files to use when searching and annotating off-target hits.  All
-guide sequences and off-target data can be generated through the R console with
-sgRNA_Design() or through crispRdesignR's user interface with crispRdesignRUI().
- CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) and the
-associated protein Cas9 refer to a technique used in genome editing.")
-    (license license:gpl3)))
-
 (define-public r-crisp
   (package
     (name "r-crisp")
@@ -10191,6 +10152,30 @@ in function of another one X, where X can in turn be made up of the combination
 of various categorical variables.  Consequently, correspondence regression can
 be used to analyze the effects for a polytomous or multinomial outcome variable.")
     (license license:gpl3)))
+
+(define-public r-correctr
+  (package
+    (name "r-correctr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "correctR" version))
+              (sha256
+               (base32
+                "0mjknma3ffhkmqxfq6lslc6ywc4pmm973s6nn4xsjwai9n4nc1qi"))))
+    (properties `((upstream-name . "correctR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://hendersontrent.github.io/correctR/")
+    (synopsis
+     "Corrected Test Statistics for Comparing Machine Learning Models on Correlated Samples")
+    (description
+     "Calculate a set of corrected test statistics for cases when samples are not
+independent, such as when classification accuracy values are obtained over
+resamples or through k-fold cross-validation, as proposed by Nadeau and Bengio
+(2003) <doi:10.1023/A:1024068626366> and presented in Bouckaert and Frank (2004)
+<doi:10.1007/978-3-540-24775-3_3>.")
+    (license license:expat)))
 
 (define-public r-correctoverloadedpeaks
   (package
@@ -21875,39 +21860,6 @@ Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
 curve.  Then fit a set of appropriate models to it according to the identified
 pattern, followed by model averaging to estimate the effective dose.")
     (license license:gpl2+)))
-
-(define-public r-clustcurv
-  (package
-    (name "r-clustcurv")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clustcurv" version))
-              (sha256
-               (base32
-                "1xkl84pd1a3phl5yfm21yr5c0gbmmg1wk9b0lyl2x8466v5hl53q"))))
-    (properties `((upstream-name . "clustcurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-rcolorbrewer
-                             r-npregfast
-                             r-gmedian
-                             r-ggplot2
-                             r-ggfortify
-                             r-foreach
-                             r-dorng
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/noramvillanueva/clustcurv")
-    (synopsis "Determining Groups in Multiples Curves")
-    (description
-     "This package provides a method for determining groups in multiple curves with an
-automatic selection of their number based on k-means or k-medians algorithms.
-The selection of the optimal number is provided by bootstrap methods.  The
-methodology can be applied both in regression and survival framework.
-Implemented methods are: Grouping multiple survival curves described by
-Villanueva et al. (2018) <doi:10.1002/sim.8016>.")
-    (license license:expat)))
 
 (define-public r-clustblock
   (package

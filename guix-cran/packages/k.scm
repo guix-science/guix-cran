@@ -1904,26 +1904,6 @@ creating (potentially) tighter clusters than standard k-means and simultaneously
 finding outliers inexpensively in multidimensional space.")
     (license license:gpl3)))
 
-(define-public r-kmlshape
-  (package
-    (name "r-kmlshape")
-    (version "0.9.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kmlShape" version))
-              (sha256
-               (base32
-                "1p35ihjq84jnzq78yksdblc0c1qcn13f8n4khddsxcqvk3a44xb1"))))
-    (properties `((upstream-name . "kmlShape")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-longitudinaldata r-lattice r-kml r-class))
-    (home-page "http:www.r-project.org")
-    (synopsis "K-Means for Longitudinal Data using Shape-Respecting Distance")
-    (description
-     "K-means for longitudinal data using shape-respecting distance and
-shape-respecting means.")
-    (license license:gpl2+)))
-
 (define-public r-kml3d
   (package
     (name "r-kml3d")
