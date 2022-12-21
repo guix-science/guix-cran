@@ -4335,13 +4335,13 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
 (define-public r-weyl
   (package
     (name "r-weyl")
-    (version "0.0-1")
+    (version "0.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "weyl" version))
               (sha256
                (base32
-                "0gpfs0a20hxjkpakmfdpf9a98hipjwgaajdm4364qvqrx8y5ifna"))))
+                "17qfr4rdyn4apxpzfmn1kc2msqgi2vsd9d2vxcb9x13cczq48n5a"))))
     (properties `((upstream-name . "weyl")))
     (build-system r-build-system)
     (propagated-inputs (list r-spray r-mathjaxr r-freealg r-disordr))
@@ -4350,7 +4350,9 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
     (synopsis "The Weyl Algebra")
     (description
      "This package provides a suite of routines for Weyl algebras.  Notation follows
-Coutinho (1995, ISBN 0-521-55119-6, \"A Primer of Algebraic D-Modules\").")
+Coutinho (1995, ISBN 0-521-55119-6, \"A Primer of Algebraic D-Modules\").  Uses
+disordR discipline (Hankin 2022 <doi:10.48550/ARXIV.2210.03856>).  To cite the
+package in publications, use Hankin 2022 <doi:10.48550/ARXIV.2212.09230>.")
     (license license:gpl2+)))
 
 (define-public r-wevid

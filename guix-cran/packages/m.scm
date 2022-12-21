@@ -11822,13 +11822,13 @@ particular security, obtain its profile information and so on.")
 (define-public r-moeclust
   (package
     (name "r-moeclust")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MoEClust" version))
               (sha256
                (base32
-                "1w9xb35xlh0j020fpf7ivji46rbg7fyvqrf7a695rr8da6lpiiif"))))
+                "0kfylrq6079bp1l2pc6qlzqnm6a42xbywj0gi5zi57lh9wx7bslb"))))
     (properties `((upstream-name . "MoEClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -14110,13 +14110,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.1.5")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmrm" version))
               (sha256
                (base32
-                "03vi2js8yrvsn5xiibnqdb8wskm9dqwr6h8hf8vxjpdscdav8akb"))))
+                "1kfrzgl942fcfc0yhjjca2pqc28w37fy1313brfwcg1b9qi60grl"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -14124,6 +14124,7 @@ Rosenbaum and Rubin (1985).")
                              r-stringr
                              r-rdpack
                              r-rcppeigen
+                             r-rcpp
                              r-numderiv
                              r-nlme
                              r-lifecycle
@@ -14142,7 +14143,7 @@ based on the marginal linear model without random effects using Template Model
 Builder ('TMB') which enables fast and robust model fitting.  Users can specify
 a variety of covariance matrices, weight observations, fit models with
 restricted or standard maximum likelihood inference, perform hypothesis testing
-with Satterthwaite adjusted degrees of freedom, and extract least square means
+with Satterthwaite or Kenward-Roger adjustment, and extract least square means
 estimates by using emmeans'.")
     (license license:asl2.0)))
 
@@ -21432,13 +21433,13 @@ Schuermann, T. (2008) <doi:10.1002/9780470061596.risk0409>.  2.  Perederiy, V.
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "0.13.0")
+    (version "0.13.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "migraph" version))
               (sha256
                (base32
-                "0xf9yr7mlw9xkb8jacchyf8j7670xhvzbgakvxc6bclyys9gp7rh"))))
+                "06p5s5cmx62ggf69czc7nq8961094nn7h071wv97frdn3xbc4v7v"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25212,6 +25213,32 @@ package.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-metchem
+  (package
+    (name "r-metchem")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MetChem" version))
+              (sha256
+               (base32
+                "1gqhxnwgki5lax9kcixzl444hc7m3r61r650mdvk2r7l0kf1wn90"))))
+    (properties `((upstream-name . "MetChem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-rcdk r-kodama r-httr r-fingerprint))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MetChem")
+    (synopsis "Chemical Structural Similarity Analysis")
+    (description
+     "This package provides a new pipeline to explore chemical structural similarity
+across metabolite.  It allows to classify metabolites in structurally-related
+modules and identify common shared functional groups.  KODAMA algorithm is used
+to highlight structural similarity between metabolites.  See Cacciatore S,
+Tenori L, Luchinat C, Bennett PR, MacIntyre DA. (2017) Bioinformatics
+<doi:10.1093/bioinformatics/btw705> and Cacciatore S, Luchinat C, Tenori L.
+(2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
+    (license license:gpl2+)))
+
 (define-public r-metbrewer
   (package
     (name "r-metbrewer")
@@ -28740,13 +28767,13 @@ of MedSurvey do not necessarily represent the policy of the ALSAC.")
 (define-public r-medseq
   (package
     (name "r-medseq")
-    (version "1.3.3")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MEDseq" version))
               (sha256
                (base32
-                "0nz7v95b3fpaacw240bwbm00vp0gvxz0dqi9la504da1rvh9rm71"))))
+                "0wx56q99h15s4qqpp355vck03gbk9xcwshcal90w64msrr646bfn"))))
     (properties `((upstream-name . "MEDseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightedcluster
@@ -28766,7 +28793,7 @@ introduced by Murphy et al. (2021) <doi:10.1111/rssa.12712>.  A range of
 flexible precision parameter settings corresponding to weighted generalisations
 of the Hamming distance metric are considered, along with the potential
 inclusion of a noise component.  Gating covariates can be supplied in order to
-relate sequences to baseline characteristics.  Sampling weights are also
+relate sequences to baseline characteristics and sampling weights are also
 accommodated.  The models are fitted using the EM algorithm and tools for
 visualising the results are also provided.")
     (license license:gpl2+)))

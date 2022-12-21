@@ -13072,13 +13072,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "4.4")
+    (version "4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomp" version))
               (sha256
                (base32
-                "11c0dzs34ks1vp0gdbzg6ls5q4z3gyd9m2kbdi9nrspammg0h138"))))
+                "17bza7vcglx8fqjcym578p1q8byhg5ab1amnjzfw7w6lqysa77qf"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -31239,6 +31239,39 @@ bootstrapped confidence intervals for impulse response analysis and forecast
 error variance decompositions.")
     (license license:gpl2+)))
 
+(define-public r-panelsummary
+  (package
+    (name "r-panelsummary")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "panelsummary" version))
+              (sha256
+               (base32
+                "1kyykqcxazwapqh68gf9rv36js3d084qcncdhfv1ljdnzbrjk6zn"))))
+    (properties `((upstream-name . "panelsummary")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-modelsummary
+                             r-kableextra
+                             r-fixest
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/michaeltopper1/panelsummary")
+    (synopsis "Create Publication-Ready Regression Tables with Panels")
+    (description
+     "Create an automated regression table that is well-suited for models that are
+estimated with multiple dependent variables.  panelsummary extends modelsummary
+(Arel-Bundock, V. (2022) <doi:10.18637/jss.v103.i01>) by allowing regression
+tables to be split into multiple sections with a simple function call.  Utilize
+familiar arguments such as fmt, estimate, statistic, vcov, conf_level, stars,
+coef_map, coef_omit, coef_rename, gof_map, and gof_omit from modelsummary to
+clean the table, and additionally, add a row for the mean of the dependent
+variable without external manipulation.")
+    (license license:gpl3+)))
+
 (define-public r-panelr
   (package
     (name "r-panelr")
@@ -31581,18 +31614,19 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.9.5")
+    (version "1.10.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMmisc" version))
               (sha256
                (base32
-                "1jlfp0b2ipvkzk3715igfqhiha294bn99zi1dc5shr9c47rs44v3"))))
+                "1bk1q6j5kzqjnlicb8lsz3833nr5p13jd8gqjhwr46f3h05k7anc"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-viridislite
                              r-tuner
+                             r-suncalc
                              r-stringr
                              r-seewave
                              r-rsqlite
@@ -31607,7 +31641,8 @@ visualization.")
                              r-hoardr
                              r-ggplot2
                              r-geosphere
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=PAMmisc")
     (synopsis "Miscellaneous Functions for Passive Acoustic Analysis")
     (description

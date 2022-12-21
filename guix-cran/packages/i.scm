@@ -1291,13 +1291,13 @@ H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D., Lindon, J. C., Holmes, E.
 (define-public r-istacr
   (package
     (name "r-istacr")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "istacr" version))
               (sha256
                (base32
-                "0g5acsma8h2lbl8225bafksa0773xfqmpzag67c1c81vl5k85bfw"))))
+                "1hg94p0b5zkj50ckxrgas2a8rdwh0avspykscincxkfi0wk1cx0r"))))
     (properties `((upstream-name . "istacr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -6916,13 +6916,13 @@ calibrate radiocarbon dates.")
 (define-public r-insurancerating
   (package
     (name "r-insurancerating")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "insurancerating" version))
               (sha256
                (base32
-                "0sd8bwfb7gv4yq2slm1msw5an19f5fc7a1w7c6byc26whkhdzj10"))))
+                "0yllp7r1jmv09py3v8blir7nc3vpd8y5a8b3r8k5ncyx7k56nbwh"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10269,13 +10269,13 @@ Ziqiao Wang and Peng Wei (2020) <doi:10.1093/bioinformatics/btaa1001>.")
 (define-public r-imifa
   (package
     (name "r-imifa")
-    (version "2.1.9")
+    (version "2.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IMIFA" version))
               (sha256
                (base32
-                "1fa3jbpcm9k4hnw2z86545d59spgag36kv7mjjzc670015dkp2cs"))))
+                "033y5y3i63z0gj7pqhf6d73l3lcfnv2srfs244p3wsal4xv11hg4"))))
     (properties `((upstream-name . "IMIFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

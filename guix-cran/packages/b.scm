@@ -16,6 +16,8 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2486,13 +2488,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dash
   (package
     (name "r-bs4dash")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bs4Dash" version))
               (sha256
                (base32
-                "07s4q01bqk31pqpynlgfgbdr75hcffk9g7h9x5spzix0lddsmmv6"))))
+                "1rn3v7nrvayccl58cnfql1vdl1z24wnr2p3sk7q05k22bcmadp1c"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -23613,6 +23615,57 @@ phylogenies, estimating evolutionary rates through time, comparing posterior
 distributions of evolutionary rates across clades, comparing diversification
 models using Bayes factors, and more.")
     (license license:gpl2+)))
+
+(define-public r-bamm
+  (package
+    (name "r-bamm")
+    (version "0.4.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bamm" version))
+              (sha256
+               (base32
+                "1dda2inq8afcp09qwqjfkg572glkw9rpf6c477wcrslkcnlpkc9x"))))
+    (properties `((upstream-name . "bamm")))
+    (build-system r-build-system)
+    (inputs (list sqlite geos))
+    (propagated-inputs (list r-sp
+                             r-rspectra
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-purrr
+                             r-matrix
+                             r-magrittr
+                             r-leaflet
+                             r-igraph
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-animation))
+    (native-inputs (list r-knitr))
+    (home-page "https://luismurao.github.io/bamm/")
+    (synopsis
+     "Species Distribution Models as a Function of Biotic, Abiotic and Movement Factors (BAM)")
+    (description
+     "Species Distribution Modeling (SDM) is a practical methodology that aims to
+estimate the area of distribution of a species.  However, most of the work has
+focused on estimating static expressions of the correlation between
+environmental variables.  The outputs of correlative species distribution models
+can be interpreted as maps of the suitable environment for a species but not
+generally as maps of its actual distribution.  SoberÃ³n and Peterson (2005)
+<doi:10.17161/bi.v2i0.4> presented the BAM scheme, a heuristic framework that
+states that the occupied area of a species occurs on sites that have been
+accessible through dispersal (M) and have both favorable biotic (B) and abiotic
+conditions (A).  The bamm package implements classes and functions to operate on
+each element of the BAM and by using a cellular automata model where the
+occupied area of a species at time t is estimated by the multiplication of three
+binary matrices: one matrix represents movements (M), another abiotic -niche-
+tolerances (A), and a third, biotic interactions (B).  The theoretical
+background of the package can be found in SoberÃ³n and Osorio-Olvera (2022)
+<arXiv:2212.06308>.")
+    (license license:gpl3+)))
 
 (define-public r-bamlss
   (package

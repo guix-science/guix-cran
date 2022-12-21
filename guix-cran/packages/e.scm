@@ -1470,13 +1470,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "explore" version))
               (sha256
                (base32
-                "0ihg4yd9k979aidjmcnvy65zlwqpyssw1d7p8i0d8z7aim7g2kqd"))))
+                "13kagxk9av6ns3dw2yxfxrz2ficlknbflf0s0j3rgkmh25icswg9"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6764,6 +6764,32 @@ A.Tresch: Survival analysis under non-proportional hazards: investigating
 non-inferiority or equivalence in time-to-event data <arXiv:2009.06699>.")
     (license license:gpl2+)))
 
+(define-public r-equil2
+  (package
+    (name "r-equil2")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "equil2" version))
+              (sha256
+               (base32
+                "1dmd8ssgv0a0ccmk906vbx61qqdq4h033a8173i7s8c58qfz8yhb"))))
+    (properties `((upstream-name . "equil2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units))
+    (native-inputs (list r-knitr))
+    (home-page "https://billdenney.github.io/equil2/")
+    (synopsis "Calculate Urinary Saturation with the EQUIL2 Algorithm")
+    (description
+     "Saturation of ionic substances in urine is calculated based on sodium,
+potassium, calcium, magnesium, ammonia, chloride, phosphate, sulfate, oxalate,
+citrate, ph, and urate.  This program is intended for research use, only.  The
+code within is translated from EQUIL2 Visual Basic code based on Werness, et al
+(1985) \"EQUIL2: a BASIC computer program for the calculation of urinary
+saturation\" <doi:10.1016/s0022-5347(17)47703-2> to R. The Visual Basic code was
+kindly provided by Dr. John Lieske of the Mayo Clinic.")
+    (license license:expat)))
+
 (define-public r-equatiomatic
   (package
     (name "r-equatiomatic")
@@ -7549,6 +7575,36 @@ Dhanda SK, Martini S, Cantrell JR, Wheeler DK, Sette A, Peters B.
      "Tools for training and practicing epidemiologists including methods for two-way
 and multi-way contingency tables.")
     (license license:gpl2+)))
+
+(define-public r-epitest
+  (package
+    (name "r-epitest")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EpiTest" version))
+              (sha256
+               (base32
+                "0fr6lkn1782x9q91y12idbzsh40xz5vzqfag259g6p8m3gyjiq25"))))
+    (properties `((upstream-name . "EpiTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-mm4lmm
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=EpiTest")
+    (synopsis "Test for Gene x Gene Interactions in Bi-Parental Populations")
+    (description
+     "This package provides functions to test for gene x gene interactions in a
+bi-parental population of inbred lines.  The data are fitted with the mixed
+linear model described in Rio et al. (2022) <doi:10.1101/2022.12.18.520958>,
+that accounts for gene x gene interactions at both the fixed effect and variance
+levels.  The package also provides graphical tools to display the gene x gene
+interaction trend at the mean level and the variance component analysis.")
+    (license license:gpl3+)))
 
 (define-public r-epitab
   (package
@@ -11735,13 +11791,13 @@ model and model terms of interest for exact inference.  See Zamar et al. (2007)
 (define-public r-elosteepness
   (package
     (name "r-elosteepness")
-    (version "0.4.6")
+    (version "0.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EloSteepness" version))
               (sha256
                (base32
-                "09rdiy50zxj61vs1pq522l36g0zkhvrdf6kgb1r11jjryxrik8zq"))))
+                "11kfq8w6ywnzprhkv77aqyvak0h85kv51zfnmahpa8jw3amhkkl1"))))
     (properties `((upstream-name . "EloSteepness")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -11759,7 +11815,7 @@ model and model terms of interest for exact inference.  See Zamar et al. (2007)
      "Bayesian Dominance Hierarchy Steepness via Elo Rating and David's Scores")
     (description
      "Obtain Bayesian posterior distributions of dominance hierarchy steepness
-(Neumann and Fischer (2022) <doi:10.1101/2022.01.28.478016>).  Steepness
+(Neumann and Fischer (2022) <doi:10.1111/2041-210X.14021>).  Steepness
 estimation is based on Bayesian implementations of either Elo-rating or David's
 scores.")
     (license license:gpl2+)))
@@ -13657,13 +13713,13 @@ Cicco (2015) <doi:10.3133/tm4A10>.")
 (define-public r-egor
   (package
     (name "r-egor")
-    (version "1.22.5")
+    (version "1.22.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "egor" version))
               (sha256
                (base32
-                "03bsqldkvwfxwk5hy74ilhkkyhpd6sx7x39ayl0ap354gmyfmzgg"))))
+                "0ynih22imb8nb7m7zwnccma8icw60jgg4q6ijvb8cnsvwn2zy94i"))))
     (properties `((upstream-name . "egor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13672,6 +13728,7 @@ Cicco (2015) <doi:10.3133/tm4A10>.")
                              r-srvyr
                              r-rlang
                              r-purrr
+                             r-pillar
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tilltnet/egor")

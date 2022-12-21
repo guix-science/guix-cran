@@ -4902,13 +4902,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlar
   (package
     (name "r-hlar")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hlaR" version))
               (sha256
                (base32
-                "1xfvishb5snrgf0sz3s46wq4v8w2mnyaasncflqvvdkj05xqyl9k"))))
+                "0kn4qcn9yvz0z30y59pqmx8l50wmqq89b9x6mnsc3c4apjs0ygip"))))
     (properties `((upstream-name . "hlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -8752,13 +8752,13 @@ ISBN:9780078025792).")
 (define-public r-headliner
   (package
     (name "r-headliner")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "headliner" version))
               (sha256
                (base32
-                "0ylvibi8nlsz5is5rv4m25a7jajidy59k2d19dqw059qh49jd64f"))))
+                "1llq007b032q526csfxxwrrwaxkzgq8wl4g4cr65j8biwwynpaba"))))
     (properties `((upstream-name . "headliner")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8769,7 +8769,7 @@ ISBN:9780078025792).")
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rjake/headliner")
+    (home-page "https://rjake.github.io/headliner/")
     (synopsis "Compose Sentences to Describe Comparisons")
     (description
      "Create dynamic, data-driven text.  Given two values, a list of talking points is

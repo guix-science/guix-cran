@@ -2554,13 +2554,13 @@ team), UDS and UOS are largely interchangeable.")
 (define-public r-ctmva
   (package
     (name "r-ctmva")
-    (version "1.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctmva" version))
               (sha256
                (base32
-                "0pf113y62kfdc717bmbh82d8x42wd54fk8p6q8i9zh83ylazkpf0"))))
+                "0cc5nxd0c51qpq87j3wp4accj5fwizan3ln2f91g52z8k5lz96hy"))))
     (properties `((upstream-name . "ctmva")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-fda))
@@ -10991,6 +10991,32 @@ sediment characterization, see: Davey, E., C. Wigand, R. Johnson, K. Sundberg,
 J. Morris, and C. Roman. (2011) <DOI: 10.1890/10-2037.1>.")
     (license license:gpl3)))
 
+(define-public r-corecollection
+  (package
+    (name "r-corecollection")
+    (version "0.9.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "coreCollection" version))
+              (sha256
+               (base32
+                "1r5x5j91k0zfa2krcd0v2hsifv8a3f7czv6yb7zi7qx5wqak5kk9"))))
+    (properties `((upstream-name . "coreCollection")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6))
+    (home-page "https://cran.r-project.org/package=coreCollection")
+    (synopsis "Core Collection")
+    (description
+     "Create a custom sized Core Collection based on a distance matrix and applying
+the A-NE (accession nearest entry), E-NE (entry nearest entry) or E-E (entry
+entry) method as introduced in Jansen and van Hintum (2007)
+<doi:10.1007/s00122-006-0433-9> and further elaborated on in Odong, T.L. (2012)
+<https://edepot.wur.nl/212422>.  Optionally a list of preselected accessions to
+be included into the core can be set.  For each accession in the computed core,
+if available nearby accessions are retrievable that can be used as an
+alternative.")
+    (license license:gpl2+)))
+
 (define-public r-core
   (package
     (name "r-core")
@@ -12501,13 +12527,13 @@ details, see Robin Denz, Nina Timmesfeld (2022) <arXiv:2208.04644v1>.")
 (define-public r-controlfunctioniv
   (package
     (name "r-controlfunctioniv")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "controlfunctionIV" version))
               (sha256
                (base32
-                "1glfp13cf3jp68yxxms1rcaw2f9a5nnvvn2k54alrx5dwky21m3y"))))
+                "0g0nakc1mss7837xhs8bymy4cncljjkj7k0n4dvw44gxbc2l8j15"))))
     (properties `((upstream-name . "controlfunctionIV")))
     (build-system r-build-system)
     (propagated-inputs (list r-orthodr r-formula r-dr r-aer))
@@ -19012,13 +19038,13 @@ log-ratios (ILR or SLR) that are maximally associated to a dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coda4microbiome" version))
               (sha256
                (base32
-                "1f05lnv59scq2m3jj9fajmcivnfkpnwzqdxkmxa9ik0ydsa4h5wn"))))
+                "1c8rrlr9gng8dbdf7m8rc7l6hq8fj55ihgckkc3bv80fyifm60fw"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc
@@ -32178,17 +32204,16 @@ variable estimates.")
 (define-public r-cbl
   (package
     (name "r-cbl")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cbl" version))
               (sha256
                (base32
-                "1yrhpzwj1mzyrb38fxljq3w93s2ab2ann2ryywai3g7gdmfsn20q"))))
+                "1wgc9nsc875s2h583gigh9hyr9d15dp35rnmb1znwqy11jrswbw3"))))
     (properties `((upstream-name . "cbl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lightgbm r-glmnet r-foreach r-dorng
-                             r-data-table))
+    (propagated-inputs (list r-lightgbm r-glmnet r-foreach r-data-table))
     (home-page "https://github.com/dswatson/cbl")
     (synopsis "Causal Discovery under a Confounder Blanket")
     (description
@@ -32362,13 +32387,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.4")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "caviarpd" version))
               (sha256
                (base32
-                "1rc2h6a4i0n4wf0masyrq21vazm96kzhb7gz73h08a2ig1s66vhp"))))
+                "0mzn7hh9n6r5qiqblraklawl3qcqpzmyfvnan3v174bhwyfxbj7v"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=caviarpd")

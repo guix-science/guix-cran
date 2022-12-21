@@ -6392,13 +6392,13 @@ GitHub API, git2r packages and httr package.")
 (define-public r-archiveretriever
   (package
     (name "r-archiveretriever")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archiveRetriever" version))
               (sha256
                (base32
-                "0m6f0a5ymwmxwa43rh06hw49dl1dilk20lskrsgcfmkq2hy6wr7i"))))
+                "11n79h953926pynyd2spbjgx7fgsp82sjhalqnlkamv9zsx6pnwg"))))
     (properties `((upstream-name . "archiveRetriever")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7800,6 +7800,40 @@ assignment function.")
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
 by Joshua French (<https://jfrench.github.io/LinearRegression/>).")
     (license license:gpl3)))
+
+(define-public r-aphylo
+  (package
+    (name "r-aphylo")
+    (version "0.3-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aphylo" version))
+              (sha256
+               (base32
+                "1qc24pfg2ilkxs1ajjywz7kfvgv125jhk91isahpblgja8908nn5"))))
+    (properties `((upstream-name . "aphylo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-fmcmc
+                             r-coda
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCbiostats/aphylo")
+    (synopsis
+     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
+    (description
+     "This package implements a parsimonious evolutionary model to analyze and predict
+gene-functional annotations in phylogenetic trees as described in Vega Yon et
+al. (2021) <doi:10.1371/journal.pcbi.1007948>.  With a focus on computational
+efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
+including thousands (hundreds) of annotations (trees) in the same run.  The
+package also provides the tools for visualization of annotated phylogenies,
+calculation of posterior probabilities (prediction,) and goodness-of-fit
+assessment featured in Vega Yon et al. (2021).")
+    (license license:expat)))
 
 (define-public r-aphid
   (package

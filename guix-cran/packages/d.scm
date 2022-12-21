@@ -8515,16 +8515,16 @@ notification messages and to avoid redundancy.")
 (define-public r-diyar
   (package
     (name "r-diyar")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diyar" version))
               (sha256
                (base32
-                "0ydpwvjg1vlqn571lwcgsi1ahczqd316c8qc1szg36ashn1imj7f"))))
+                "1cv6bmv0866yg6hwmkvlcqd1bb2w1hcvyy455axq73rpb91m4s7s"))))
     (properties `((upstream-name . "diyar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rfast r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://olisansonwu.github.io/diyar/index.html")
     (synopsis "Record Linkage and Epidemiological Case Definitions in R")
@@ -15093,18 +15093,18 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.1-1")
+    (version "4.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devEMF" version))
               (sha256
                (base32
-                "0mfj2brd8rcs84v5yx2hszc21qnn5jqihb50s85nnpi8n1gj36cp"))))
+                "1v12yiq0pjz48mib4mmb3qnp340ghxnx42ffzvya9zp6xc0grnng"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (inputs (list freetype))
     (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=devEMF")
+    (home-page "https://github.com/plfjohnson/devEMF")
     (synopsis "EMF Graphics Output Device")
     (description "Output graphics to EMF+/EMF.")
     (license license:gpl3)))
@@ -21641,13 +21641,13 @@ user-controlled behavior.")
 (define-public r-date
   (package
     (name "r-date")
-    (version "1.2-40")
+    (version "1.2-41")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "date" version))
               (sha256
                (base32
-                "1kqiy0nvdcm8mrkm6kzz5wjxv4f58710sk7fycfcnlpf4ndn30ly"))))
+                "06ah5zb413rscgxax8xzmgwvz2x6kxp648gggaibvb6f7n4nvbzm"))))
     (properties `((upstream-name . "date")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=date")

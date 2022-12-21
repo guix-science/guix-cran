@@ -2413,6 +2413,38 @@ incorporating subgroup selection\" (GSED) method proposed by Magnusson and
 Turnbull (2013) <doi:10.1002/sim.5738>.")
     (license license:gpl3)))
 
+(define-public r-gseavis
+  (package
+    (name "r-gseavis")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GseaVis" version))
+              (sha256
+               (base32
+                "01c5rl05lf9abmasw9w8rxlgl55jr3faiwi1ndx993r3j8xvbcqj"))))
+    (properties `((upstream-name . "GseaVis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-purrr
+                             r-magrittr
+                             r-ggsci
+                             r-ggrepel
+                             r-ggpp
+                             r-ggplot2
+                             r-dplyr
+                             r-dose
+                             r-aplot))
+    (home-page "https://github.com/junjunlab/GseaVis")
+    (synopsis "Implement for 'GSEA' Enrichment Visualization")
+    (description
+     "Mark your interesting genes on plot and support more parameters to handle your
+own gene set enrichment analysis plot.")
+    (license license:expat)))
+
 (define-public r-gseasy
   (package
     (name "r-gseasy")

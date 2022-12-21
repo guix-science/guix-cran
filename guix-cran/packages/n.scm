@@ -4098,13 +4098,13 @@ SQLite/JSON1', PostgreSQL', and DuckDB'.")
 (define-public r-noctua
   (package
     (name "r-noctua")
-    (version "2.6.0")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "noctua" version))
               (sha256
                (base32
-                "17j23sjr0wf9jipc12piq51w7drdm84qqd7jp4mvkym3lg4d19yb"))))
+                "18wyf69f2j78sarjmzmsdwjfbm79r44s2lf0cslbr8gprnwc6kq8"))))
     (properties `((upstream-name . "noctua")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-paws r-dbi r-data-table))

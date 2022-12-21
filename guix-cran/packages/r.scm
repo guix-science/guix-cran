@@ -3326,6 +3326,45 @@ program we use the free and open source GNU Scientific Library (GSL).  There is
 also the possibility to suppress single process completion times.")
     (license license:gpl2+)))
 
+(define-public r-rtls
+  (package
+    (name "r-rtls")
+    (version "0.2.5.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rTLS" version))
+              (sha256
+               (base32
+                "0xjcqmjq3s9bfzfzndj2fi3830c3p1rrjr511amp186wmfnslmyd"))))
+    (properties `((upstream-name . "rTLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rgl
+                             r-rgeos
+                             r-rcppprogress
+                             r-rcpphnsw
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-dosnow
+                             r-data-table
+                             r-boot
+                             r-alphashape3d))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Antguz/rTLS")
+    (synopsis
+     "Processing of Point Clouds Derived from Terrestrial Laser Scanning")
+    (description
+     "This package provides a set of tools to process and calculate metrics on point
+clouds derived from terrestrial laser scanning (TLS) also know as terrestrial
+LiDAR (Light Detection and Ranging).  Its creation is based on key aspects of
+the TLS application in forestry and ecology.  Currently, the main routines are
+based on filtering, neighboring features of points, voxelization, canopy
+structure, and the creation of artificial stands.  It is written using
+data.table and C++ language and in most of the functions it is possible to use
+parallel processing to speed-up the routines.")
+    (license license:gpl3+)))
+
 (define-public r-rtl
   (package
     (name "r-rtl")
@@ -4388,13 +4427,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "8.5.20")
+    (version "9.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "1qkaq2gnqq42h4f5rcmdmwlb4903fh5b73zrczf85xb4nrdq36sh"))))
+                "01q71fkbb40apyl89sldcqg4l8dycgkiw10fjb73cinv4z5iwwzq"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -13390,13 +13429,13 @@ linear regression, these methods are not sensitive to outliers.  Theil, H.
 (define-public r-robustiv
   (package
     (name "r-robustiv")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RobustIV" version))
               (sha256
                (base32
-                "0ln3w789a50rjb6yx7c1li6gls95zckih9faz00vgz11phzsnd7v"))))
+                "1iz5g0ynkx38vdsf7rm8haai7a8igw3rdqrgxllahnbykwhm4d51"))))
     (properties `((upstream-name . "RobustIV")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix
@@ -19769,29 +19808,6 @@ files, to analyse the network structure and network paths and regions consisting
 of sections and nodes that fulfill prescribed criteria, and to plot the river
 network and associated properties.")
     (license license:gpl3)))
-
-(define-public r-riverload
-  (package
-    (name "r-riverload")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RiverLoad" version))
-              (sha256
-               (base32
-                "01nrkj75smnsfrl0x82dif67q9xs15ngksz0p73i7xf6dqprjjcf"))))
-    (properties `((upstream-name . "RiverLoad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-imputets))
-    (home-page "https://cran.r-project.org/package=RiverLoad")
-    (synopsis "Load Estimation of River Compounds with Different Methods")
-    (description
-     "This package implements several of the most popular load estimation procedures,
-including averaging methods, ratio estimators and regression methods.  The
-package provides an easy-to-use tool to rapidly calculate the load for various
-compounds and to compare different methods.  The package also supplies
-additional functions to easily organize and analyze the data.")
-    (license license:gpl2+)))
 
 (define-public r-riverdist
   (package
@@ -40188,13 +40204,13 @@ global max).  The function order is replaced by sort.list.")
 (define-public r-rathena
   (package
     (name "r-rathena")
-    (version "2.6.0")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAthena" version))
               (sha256
                (base32
-                "1i4jp10qlnpg9acq6jh6ypd8n4kix05czazm7qwdpppvmv1s6vj0"))))
+                "1zncmkx93c28z0xf4n5rdc7fzlrdqw3x9ab2ci07f00gjf9gwkf1"))))
     (properties `((upstream-name . "RAthena")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-reticulate r-dbi r-data-table))

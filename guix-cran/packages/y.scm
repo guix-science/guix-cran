@@ -92,13 +92,13 @@ functionality).")
 (define-public r-yuima
   (package
     (name "r-yuima")
-    (version "1.15.18")
+    (version "1.15.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yuima" version))
               (sha256
                (base32
-                "0jvx8rfpq6xkzfqj2nb90sq8mn90vfj839f7n23n5r11sp4l7jaz"))))
+                "04qhb8w0f5ix4f99lsfcnfkx0xpwn12rfdvkg1fk484n0l7gli0r"))))
     (properties `((upstream-name . "yuima")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

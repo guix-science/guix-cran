@@ -3353,13 +3353,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRK" version))
               (sha256
                (base32
-                "09fvr52w82hm06nq29cmfyd2i4h62za6w3j5hccbyvkgfg6v4hb3"))))
+                "0fz3l6hrc8hbkqwj9nv74fjhz5cbaxmc46m7hdzmjqj8jqg6crlm"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -17623,13 +17623,13 @@ further information on the method see Fruth, J., Roustant, O., Kuhnt, S. (2014)
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.2")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fangs" version))
               (sha256
                (base32
-                "0gcwrnp06g0rwlkfi7qz2i2l56pqmrlb6knkqsaa3n3nx2d46x1k"))))
+                "15v5xbdbd7laf75a010kxw4rzqncjgizjizmyl6kq1gs9pm5g8b0"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fangs")

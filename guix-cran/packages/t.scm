@@ -14310,13 +14310,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyclust" version))
               (sha256
                (base32
-                "1b6is25xsip3x6ps5x3n8g8jmy7brq0rjcf5w4rdlqcrn1f43v32"))))
+                "1qv4d0s5n8wkf6wb07xyxfc2n3amk995mx1mzhr1kzhpfrzympzd"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

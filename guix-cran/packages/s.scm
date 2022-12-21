@@ -25171,6 +25171,41 @@ trials (snSMARTs).\" (2018) Statistics in medicine, 37(26), pp.3723-3732
 <doi:10.1002/sim.7900>.")
     (license license:gpl2)))
 
+(define-public r-snsequate
+  (package
+    (name "r-snsequate")
+    (version "1.3-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SNSequate" version))
+              (sha256
+               (base32
+                "122x0l6lkih99n9ay3mj76ssk5h2cqh477xpizqvp3b6nkj8wkf3"))))
+    (properties `((upstream-name . "SNSequate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod
+                             r-progress
+                             r-plyr
+                             r-magic
+                             r-knitr
+                             r-emdbook))
+    (home-page "https://www.mat.uc.cl/~jorge.gonzalez/")
+    (synopsis
+     "Standard and Nonstandard Statistical Models and Methods for Test Equating")
+    (description
+     "This package contains functions to perform various models and methods for test
+equating.  It currently implements the traditional mean, linear and
+equipercentile equating methods.  Both IRT observed-score and true-score
+equating are also supported, as well as the mean-mean, mean-sigma, Haebara and
+Stocking-Lord IRT linking methods.  It also supports newest methods such that
+local equating, kernel equating (using Gaussian, logistic, Epanechnikov, uniform
+and adaptive kernels) with presmoothing, and IRT parameter linking methods based
+on asymmetric item characteristic functions.  Functions to obtain both standard
+error of equating (SEE) and standard error of equating differences between two
+equating functions (SEED) are also implemented for the kernel method of
+equating.")
+    (license license:gpl2+)))
+
 (define-public r-snschart
   (package
     (name "r-snschart")
@@ -26042,6 +26077,29 @@ regression; illustrate key concepts in statistical hypothesis testing.  Also
 provided are dpqr functions for the distribution of the Fisher transformation of
 the correlation coefficient under sampling from a bivariate normal distribution.")
     (license license:gpl2+)))
+
+(define-public r-smotewb
+  (package
+    (name "r-smotewb")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SMOTEWB" version))
+              (sha256
+               (base32
+                "090l6f3fvc4zx33v6k6gsjly93bcjq6zcnn0c1mjaxyb975ryvfr"))))
+    (properties `((upstream-name . "SMOTEWB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fnn r-ada))
+    (home-page "https://cran.r-project.org/package=SMOTEWB")
+    (synopsis "Imbalanced Resampling using SMOTE with Boosting")
+    (description
+     "This package provides Random Oversampling, Random Undersampling, Synthetic
+Oversampling Minority Technique and SMOTE with Boosting by Saglam and Cengiz
+(2022) <doi:10.1016/j.eswa.2022.117023> for imbalanced data resampling.  SMOTE
+with Boosting is a SMOTE-based oversampling method which can determine the
+number of links for each positive sample and robust to noise.")
+    (license license:expat)))
 
 (define-public r-smotefamily
   (package
@@ -30140,6 +30198,29 @@ Lindstrom (1995) <doi:10.1002/sim.4780141807> and developed as the SITAR method
 by Cole et al (2010) <doi:10.1093/ije/dyq115>.")
     (license license:gpl2+)))
 
+(define-public r-sit
+  (package
+    (name "r-sit")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIT" version))
+              (sha256
+               (base32
+                "0s6fqw6gh96d0a194jh6qnph90zjvgjbh9fhprwncb4k2zma40rm"))))
+    (properties `((upstream-name . "SIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=SIT")
+    (synopsis "Association Measurement Through Sliced Independence Test (SIT)")
+    (description
+     "Computes the sit coefficient between two vectors x and y, possibly all paired
+coefficients for a matrix.  The reference for the methods implemented here is
+Zhang, Yilin, Canyi Chen, and Liping Zhu.  2022. \"Sliced Independence Test.\"
+Statistica Sinica. <doi:10.5705/ss.202021.0203>.  This package incorporates the
+Galton peas example.")
+    (license license:expat)))
+
 (define-public r-sisvive
   (package
     (name "r-sisvive")
@@ -30722,31 +30803,35 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlecellhaystack
   (package
     (name "r-singlecellhaystack")
-    (version "0.3.4")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "singleCellHaystack" version))
               (sha256
                (base32
-                "08s31z15v4px3sfm2q2ips64qknahw04xhh6d5nmlsl65wbd143x"))))
+                "05xvdxq4mhpxiq1l12brbqmh4cb79djjhh5ap2x3gvhrv0wd7mrd"))))
     (properties `((upstream-name . "singleCellHaystack")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=singleCellHaystack")
     (synopsis
-     "Finding Needles (=differentially Expressed Genes) in Haystacks (=single Cell Data)")
+     "Universal Differential Expression Prediction Tool for Single-Cell and Spatial Genomics Data")
     (description
-     "Identification of differentially expressed genes (DEGs) is a key step in
-single-cell transcriptomics data analysis.  singleCellHaystack predicts DEGs
-without relying on clustering of cells into arbitrary clusters.  Single-cell
-RNA-seq (scRNA-seq) data is often processed to fewer dimensions using Principal
-Component Analysis (PCA) and represented in 2-dimensional plots (e.g. t-SNE or
-UMAP plots).  singleCellHaystack uses Kullback-Leibler divergence to find genes
-that are expressed in subsets of cells that are non-randomly positioned in a
-these multi-dimensional spaces or 2D representations.  For the theoretical
-background of singleCellHaystack we refer to Vandenbon and Diez (Nature
-Communications, 2020) <doi:10.1038/s41467-020-17900-3>.")
+     "One key exploratory analysis step in single-cell genomics data analysis is the
+prediction of features with different activity levels.  For example, we want to
+predict differentially expressed genes (DEGs) in single-cell RNA-seq data,
+spatial DEGs in spatial transcriptomics data, or differentially accessible
+regions (DARs) in single-cell ATAC-seq data.  singleCellHaystack predicts
+differentially active features in single cell omics datasets without relying on
+the clustering of cells into arbitrary clusters.  singleCellHaystack uses
+Kullback-Leibler divergence to find features (e.g., genes, genomic regions, etc)
+that are active in subsets of cells that are non-randomly positioned inside an
+input space (such as 1D trajectories, 2D tissue sections, multi-dimensional
+embeddings, etc).  For the theoretical background of singleCellHaystack we refer
+to our original paper Vandenbon and Diez (Nature Communications, 2020)
+<doi:10.1038/s41467-020-17900-3> and our update Vandenbon and Diez (bioRxiv,
+2022) <doi:10.1101/2022.11.13.516355>.")
     (license license:expat)))
 
 (define-public r-singlecasees
@@ -48479,6 +48564,50 @@ estimation in the multivariate context.  Covariates can also be grouped in
 themes.")
     (license (list (license:fsdg-compatible "CeCILL-2") license:gpl2))))
 
+(define-public r-scgate
+  (package
+    (name "r-scgate")
+    (version "1.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scGate" version))
+              (sha256
+               (base32
+                "04m9vwdvwylxndyrkq8h5v0w9py5xvznd35arfg1h6y0l4dskwpz"))))
+    (properties `((upstream-name . "scGate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-reshape2
+                             r-patchwork
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/carmonalab/scGate")
+    (synopsis
+     "Marker-Based Cell Type Purification for Single-Cell Sequencing Data")
+    (description
+     "This package provides a common bioinformatics task in single-cell data analysis
+is to purify a cell type or cell population of interest from heterogeneous
+datasets.  scGate automatizes marker-based purification of specific cell
+populations, without requiring training data or reference gene expression
+profiles.  Briefly, scGate takes as input: i) a gene expression matrix stored in
+a Seurat object and ii) a âgating modelâ (GM), consisting of a set of marker
+genes that define the cell population of interest.  The GM can be as simple as a
+single marker gene, or a combination of positive and negative markers.  More
+complex GMs can be constructed in a hierarchical fashion, akin to gating
+strategies employed in flow cytometry.  scGate evaluates the strength of
+signature marker expression in each cell using the rank-based method UCell', and
+then performs k-nearest neighbor (kNN) smoothing by calculating the mean UCell
+score across neighboring cells.  kNN-smoothing aims at compensating for the
+large degree of sparsity in scRNA-seq data.  Finally, a universal threshold over
+kNN-smoothed signature scores is applied in binary decision trees generated from
+the user-provided gating model, to annotate cells as either âpureâ or
+âimpureâ, with respect to the cell population of interest.  See the related
+publication Andreatta et al. (2022) <doi:10.1093/bioinformatics/btac141>.")
+    (license license:gpl3)))
+
 (define-public r-scepterbinary
   (package
     (name "r-scepterbinary")
@@ -52298,13 +52427,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.27")
+    (version "0.3.29")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "salso" version))
               (sha256
                (base32
-                "10b8hbd3kjdbh38qfnd3pg16z9fzs726ahm6d6ypg4hfjigpzhfg"))))
+                "1p35ga847k7jlw41zba7kvhmcb55m82xrc935qbd6zghxhxvy9d5"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (inputs (list))
