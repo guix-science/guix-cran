@@ -10,6 +10,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages cmake)
@@ -29,7 +30,6 @@
   #:use-module (gnu packages gnupg)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages fontutils)
-  #:use-module (gnu packages image)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -862,6 +862,27 @@ evaluation.")
 be plotted in rworldmap.")
     (license license:gpl2+)))
 
+(define-public r-rworkflows
+  (package
+    (name "r-rworkflows")
+    (version "0.99.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rworkflows" version))
+              (sha256
+               (base32
+                "0l16ap7fpzac2mzl2akjy97y6saxzw0cghpbr03pqf7d1kxjb2c2"))))
+    (properties `((upstream-name . "rworkflows")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-here r-desc r-badger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/rworkflows")
+    (synopsis "Test, Document, Containerise, and Deploy R Packages")
+    (description
+     "Continuous integration for R packages.  Automates testing, documentation website
+building, and containerised deployment.")
+    (license license:gpl3)))
+
 (define-public r-rwordseg
   (package
     (name "r-rwordseg")
@@ -1659,16 +1680,16 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rvg" version))
               (sha256
                (base32
-                "14kihypdp571f5l9711hacxrv5bjp2wwxly9q6k0z9g28nlqakvd"))))
+                "12z6j7555z01phz70x275w53c0fvxw1726d23qn895c8pzspv17n"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list zlib libpng))
     (propagated-inputs (list r-xml2 r-rlang r-rcpp r-officer r-gdtools))
     (home-page "https://ardata-fr.github.io/officeverse/")
     (synopsis "R Graphics Devices for 'Office' Vector Graphics Output")
@@ -13013,16 +13034,17 @@ problems.")
 (define-public r-rocbc
   (package
     (name "r-rocbc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rocbc" version))
               (sha256
                (base32
-                "1zmnhih7d29bqly0jwdhsbk9z6dxvqm7r2ghzaf9w3xva8q0wapi"))))
+                "0k5k28hp3wqyqzha7svk65k6a2vrbsndj4qlksy72ayrvqjinig7"))))
     (properties `((upstream-name . "rocbc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-splancs r-pracma r-mvtnorm r-clinfun))
+    (propagated-inputs (list r-splancs r-pracma r-mvtnorm r-formattable
+                             r-clinfun))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rocbc")
     (synopsis
@@ -23980,13 +24002,13 @@ division operator \"/\".")
 (define-public r-rforestry
   (package
     (name "r-rforestry")
-    (version "0.9.0.144")
+    (version "0.9.0.152")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rforestry" version))
               (sha256
                (base32
-                "1hgrphvjkl9794fmbpismh30z4gw5lfcx8vh2f1cljp4wg7h94ca"))))
+                "0pjbzgba9ngiyb9fgra29xavs2ly8wwqy3px5y0p0fv6bdx92fbq"))))
     (properties `((upstream-name . "Rforestry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

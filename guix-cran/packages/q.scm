@@ -2636,13 +2636,13 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qspray" version))
               (sha256
                (base32
-                "1a7hcz82qzns57psvnb0y5aigx95i2h1bjy2lzx9g4afj9apyhlj"))))
+                "05nw1swnym4789n6h4xn1m7gw3x4pk0981x48njxq9jl5mz52b0z"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))

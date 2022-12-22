@@ -4360,6 +4360,45 @@ in that string.  The double-period-separated numeric integer expansion also
 supports padding the resulting numbers with zeros.")
     (license license:expat)))
 
+(define-public r-bracatus
+  (package
+    (name "r-bracatus")
+    (version "1.0.11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bRacatus" version))
+              (sha256
+               (base32
+                "0mj9bqgvmss9jdaphc4rgmxp4909lnwgi3c86pr6yfsd9zcjgd74"))))
+    (properties `((upstream-name . "bRacatus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rworldmap
+                             r-rgeos
+                             r-rgdal
+                             r-rgbif
+                             r-raster
+                             r-plotfunctions
+                             r-maptools
+                             r-jsonlite
+                             r-geojsonio
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EduardoArle/bRacatus")
+    (synopsis
+     "Method to Estimate the Accuracy and Biogeographical Status of Georeferenced Biological Data")
+    (description
+     "Automated assessment of accuracy and geographical status of georeferenced
+biological data.  The methods rely on reference regions, namely checklists and
+range maps.  Includes functions to obtain data from the Global Biodiversity
+Information Facility <https://www.gbif.org/> and from the Global Inventory of
+Floras and Traits <https://gift.uni-goettingen.de/home>.  Alternatively, the
+user can input their own data.  Furthermore, provides easy visualisation of the
+data and the results through the plotting functions.  Especially suited for
+large datasets.  The reference for the methodology is: ArlÃ© et al. (under
+review).")
+    (license license:gpl2+)))
+
 (define-public r-bqror
   (package
     (name "r-bqror")
@@ -13579,13 +13618,13 @@ implementation of the estimators proposed in Roll (1984)
 (define-public r-bidag
   (package
     (name "r-bidag")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiDAG" version))
               (sha256
                (base32
-                "0a4s8jfvfds53sdhcirv04ziiblhxs07z7xvrdcj4fjxc5knq7b5"))))
+                "1w6q506jj4an251bp13szfp4fh11wq725dd788yilc2qgfpr6d0a"))))
     (properties `((upstream-name . "BiDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz

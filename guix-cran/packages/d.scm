@@ -13788,13 +13788,13 @@ edges of the matrix.")
 (define-public r-diagmeta
   (package
     (name "r-diagmeta")
-    (version "0.5-0")
+    (version "0.5-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diagmeta" version))
               (sha256
                (base32
-                "0gpns5yivmnckmpr5wmcwh8bq0r8vzszpzzifkfhz2rlsl724zw1"))))
+                "1wilkpwb8vzjx8zpgq0zmvfcd35dij4jxk5gn0x1xyhlfvj9nxrj"))))
     (properties `((upstream-name . "diagmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta r-lme4))
@@ -14732,6 +14732,27 @@ post-hoc power calculations (Cervantes, 2017, <doi:10.18637/jss.v076.i05>).")
      "This package provides extended data frames, with a special data frame column
 which contains two indexes, with potentially a nesting structure.")
     (license license:gpl2+)))
+
+(define-public r-dfdr
+  (package
+    (name "r-dfdr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dfdr" version))
+              (sha256
+               (base32
+                "0mbwibhdnbf9v55fd8bhqkpb6i6djv8i7bl008mzj5snq3rqkqxi"))))
+    (properties `((upstream-name . "dfdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-r6 r-purrr r-pryr))
+    (home-page "https://cran.r-project.org/package=dfdr")
+    (synopsis "Automatic Differentiation of Simple Functions")
+    (description
+     "Implementation of automatically computing derivatives of functions (see Mailund
+Thomas (2017) <doi:10.1007/978-1-4842-2881-4>).  Moreover, calculating
+gradients, Hessian and Jacobian matrices is possible.")
+    (license license:gpl3)))
 
 (define-public r-dfcrm
   (package
@@ -17886,50 +17907,6 @@ Gumbel and Weibull Kernel.  See Salha et al. (2014) <doi:10.4236/ojs.2014.48061>
 and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
     (license license:gpl2)))
 
-(define-public r-deet
-  (package
-    (name "r-deet")
-    (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DEET" version))
-              (sha256
-               (base32
-                "0nak64lp8ijsm94i580dsppwlima9wg4lqq3a7sw4z7awymsf2vd"))))
-    (properties `((upstream-name . "DEET")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pbapply
-                             r-glmnet
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-downloader
-                             r-activepathways))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DEET")
-    (synopsis "Differential Expression Enrichment Tool")
-    (description
-     "Abstract of Manuscript.  Differential gene expression analysis using RNA
-sequencing (RNA-seq) data is a standard approach for making biological
-discoveries.  Ongoing large-scale efforts to process and normalize publicly
-available gene expression data enable rapid and systematic reanalysis.  While
-several powerful tools systematically process RNA-seq data, enabling their
-reanalysis, few resources systematically recompute differentially expressed
-genes (DEGs) generated from individual studies.  We developed a robust
-differential expression analysis pipeline to recompute 3162 human DEG lists from
-The Cancer Genome Atlas, Genotype-Tissue Expression Consortium, and 142 studies
-within the Sequence Read Archive.  After measuring the accuracy of the
-recomputed DEG lists, we built the Differential Expression Enrichment Tool
-(DEET), which enables users to interact with the recomputed DEG lists.  DEET,
-available through CRAN and RShiny, systematically queries which of the
-recomputed DEG lists share similar genes, pathways, and TF targets to their own
-gene lists.  DEET identifies relevant studies based on shared results with the
-userâs gene lists, aiding in hypothesis generation and data-driven literature
-review.  Sokolowski, Dustin J., et al. \"Differential Expression Enrichment Tool
-(DEET): an interactive atlas of human differential gene expression.\" bioRxiv
-(2022).")
-    (license license:gpl3)))
-
 (define-public r-deeptrafo
   (package
     (name "r-deeptrafo")
@@ -18885,13 +18862,13 @@ differentials and compares the estimates obtained from two datasets.")
 (define-public r-decafs
   (package
     (name "r-decafs")
-    (version "3.3.1")
+    (version "3.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DeCAFS" version))
               (sha256
                (base32
-                "1508pl1jwp9ypfg31ygyrx1abckivv3xb69qd7hq6w1xvlkc83qr"))))
+                "0rgrh0k3h3rq5bs6nskg6b9lgms9y7hkqhym4vww1y9ndv4ksk0s"))))
     (properties `((upstream-name . "DeCAFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-rcpp r-ggplot2))

@@ -952,23 +952,24 @@ Piper-Hill diagrams) of water analyses for major ions.")
 (define-public r-hydroevents
   (package
     (name "r-hydroevents")
-    (version "0.10")
+    (version "0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydroEvents" version))
               (sha256
                (base32
-                "1w7nswdmg52ldzzz4gphqnp5gfgh9pvgyq9w0phpzj5ff19bxbxz"))))
+                "1w433lmzk6lr2lnqn1qcq13c980kpi0r881cdzm56n53s89zdh36"))))
     (properties `((upstream-name . "hydroEvents")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=hydroEvents")
+    (home-page "https://github.com/conradwasko/hydroEvents")
     (synopsis "Extract Event Statistics in Hydrologic Time Series")
     (description
      "Events from individual hydrologic time series are extracted, and events from
-multiple time series can be matched to each other.  The key references for
-approach are: Tang & Carey (2017) <doi:10.1002/hyp.11185>, Kaur et al. (2017)
-<doi:10.1080/24705357.2016.1276418> and Ladson et al. (2013)
-<https://www.tandfonline.com/doi/abs/10.7158/13241583.2013.11465417>.")
+multiple time series can be matched to each other.  Tang, W. & Carey, S. K.
+(2017) <doi:10.1002/hyp.11185>.  Kaur, S., Horne, A., Stewardson, M.J., Nathan,
+R., Costa, A.M., Szemis, J.M., & Webb, J.A. (2017)
+<doi:10.1080/24705357.2016.1276418>.  Ladson, A., Brown, R., Neal, B., & Nathan,
+R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
     (license license:gpl3)))
 
 (define-public r-hydrocode

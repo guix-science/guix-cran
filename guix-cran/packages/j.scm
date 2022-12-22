@@ -1638,6 +1638,36 @@ Choose two Excel files via a dialog box, and then follow prompts at the console
 to choose a base or source file and columns to merge or minus on.")
     (license license:gpl3)))
 
+(define-public r-jointvip
+  (package
+    (name "r-jointvip")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jointVIP" version))
+              (sha256
+               (base32
+                "1f3lpv3mgwqs76g59rhmwrbxhr9zawi483cnv523w8cl8b09jfpw"))))
+    (properties `((upstream-name . "jointVIP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ldliao/jointVIP")
+    (synopsis
+     "Prioritize Variables with Joint Variable Importance Plot in Observational Study Design")
+    (description
+     "In the observational study design stage, matching/weighting methods are
+conducted.  However, when many background variables are present, the decision as
+to which variables to prioritize for matching/weighting is not trivial.  Thus,
+the joint treatment-outcome variable importance plots are created to guide
+variable selection.  The joint variable importance plots enhance variable
+comparisons via bias curves, derived using the classical omitted variable bias
+framework.  The joint variable importance plots translate variable importance
+into recommended values for tuning parameters in existing methods.
+Post-matching and/or weighting plots can also be used to visualize and assess
+the quality of the observational study design.")
+    (license license:expat)))
+
 (define-public r-jointseg
   (package
     (name "r-jointseg")

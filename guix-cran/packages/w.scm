@@ -4387,13 +4387,13 @@ and controls can be calculated and plotted.")
 (define-public r-wemix
   (package
     (name "r-wemix")
-    (version "3.2.4")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeMix" version))
               (sha256
                (base32
-                "0ikq7ykxa7dz3463ppwx8kpbzmlbv4kjm97vc45xd39pv21ici9r"))))
+                "0476zxzzkcyq5lv3mmkw4r43gvz8zgyjfwnlrbhj6v58xgl688xb"))))
     (properties `((upstream-name . "WeMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod

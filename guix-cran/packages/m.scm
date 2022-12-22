@@ -4401,13 +4401,13 @@ package, both methodological and graphical.")
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multid" version))
               (sha256
                (base32
-                "1i812yxhd3gzmsy5yvlsqm5wy037cg9xmrgn75963l6y8rcz0dzk"))))
+                "0gvh7lfz47zy050wfjxdvy3s2q4gcvmbp5vb13xxgz0xl7iq8qlf"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -15751,13 +15751,13 @@ Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.8.1")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3fselect" version))
               (sha256
                (base32
-                "1yilsw5vjmcr3v0mykxcgkl1qbkz8x20970bz0nk4diadfycd519"))))
+                "06ddy5yym85bbvfsrk8zv8wqizwin9x77mgr98md09sm459lwivb"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -25589,13 +25589,13 @@ statistics to carry out gene-based meta-analysis for rare variants.")
 (define-public r-metasens
   (package
     (name "r-metasens")
-    (version "1.5-0")
+    (version "1.5-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metasens" version))
               (sha256
                (base32
-                "1y5sab8q1jjpbiawxm3950zqjiny6r54bl9nlprfrv0x8578q3vh"))))
+                "194ixaxm2lwl6i22hg1piajc4mzd0gcmp16vj6w5chgh0nv1v360"))))
     (properties `((upstream-name . "metasens")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta))
@@ -27484,13 +27484,13 @@ al.(2021) <doi:10.3390/axioms10040267>.")
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "6.0-0")
+    (version "6.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meta" version))
               (sha256
                (base32
-                "153xdf7hwiy4wd1j58wmg8jraj9l4qmghiyxqi7x7n83wqaxw1g8"))))
+                "1nfljrb6vd3la8jhd4dbhla46dmd8pa074jfgjsczd9nc7kgvw9y"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-metafor r-lme4 r-compquadform))
@@ -27513,13 +27513,13 @@ meta-analyses.")
 (define-public r-mestim
   (package
     (name "r-mestim")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Mestim" version))
               (sha256
                (base32
-                "186jdygnh6y38414flmmd8qw660fsvnhydfjnjlvh57fk4djj1wa"))))
+                "1dl1fx6aqdz584d79nbm4ykgn915d6mr0m48m83pbr3k6q18varg"))))
     (properties `((upstream-name . "Mestim")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -27536,13 +27536,13 @@ M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
 (define-public r-messydates
   (package
     (name "r-messydates")
-    (version "0.3.1")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "messydates" version))
               (sha256
                (base32
-                "125jb6sv00i1f89p12dy0z4zfynlz829gvxs7rlvhlyaznj9csvk"))))
+                "1rgqrk9b1mcrbw2liz6ypr3bwlsl8a8262994s418wpmbkxr4clm"))))
     (properties `((upstream-name . "messydates")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-purrr r-lubridate r-dplyr))

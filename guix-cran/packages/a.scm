@@ -271,13 +271,13 @@ Azure Machine Learning visit the website:
 (define-public r-azurekusto
   (package
     (name "r-azurekusto")
-    (version "1.0.7")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureKusto" version))
               (sha256
                (base32
-                "16yxfc6pvb8bmv66h25bbjhwl7p42x6gxbzikjz9sy61lhlm76hw"))))
+                "1g1gsy4m6l8f20vzwlc0rg7syipc0hx01ygdblavqgwn76mbd2if"))))
     (properties `((upstream-name . "AzureKusto")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -297,7 +297,7 @@ Azure Machine Learning visit the website:
     (description
      "An interface to Azure Data Explorer', also known as Kusto', a fast, highly
 scalable data exploration service from Microsoft:
-<https://azure.microsoft.com/en-us/services/data-explorer/>.  Includes DBI and
+<https://azure.microsoft.com/en-us/products/data-explorer/>.  Includes DBI and
 dplyr interfaces, with the latter modelled after the dbplyr package, whereby
 queries are translated from R into the native KQL query language and executed
 lazily.  On the admin side, the package extends the object framework provided by
@@ -7804,13 +7804,13 @@ by Joshua French (<https://jfrench.github.io/LinearRegression/>).")
 (define-public r-aphylo
   (package
     (name "r-aphylo")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aphylo" version))
               (sha256
                (base32
-                "1qc24pfg2ilkxs1ajjywz7kfvgv125jhk91isahpblgja8908nn5"))))
+                "0w1bg3vb347gimz5v316d44jv30amjxc8lhjz8bl8cxyh5b1rhyl"))))
     (properties `((upstream-name . "aphylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

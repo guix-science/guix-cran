@@ -7643,20 +7643,20 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/curConverter.do>.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriceIndices" version))
               (sha256
                (base32
-                "109glkgbnc30a5754w8s6m0aadiy5p2ixa3w3kchid4jia55h91c"))))
+                "0nbskpx2b3cs8lpdrxvwqk4ffq782a6rwad23v6zx2n9qbfsv3rb"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-stringr
                              r-strex
                              r-reshape
-                             r-reclin
+                             r-reclin2
                              r-lubridate
                              r-ggplot2
                              r-dplyr
@@ -11229,13 +11229,13 @@ user guide is available in the vignette.")
 (define-public r-postpack
   (package
     (name "r-postpack")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "postpack" version))
               (sha256
                (base32
-                "0sij749ayw0f8pjz2b6x5df4wsz333q5bz7x2rnxaqwmjiiwm7rp"))))
+                "01h2la7ih7s9110162apbqjjn2i6il5m4300ga0r44r0fyw340a5"))))
     (properties `((upstream-name . "postpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-mcmcse r-coda r-abind))
@@ -27973,13 +27973,13 @@ tests and the F-test.")
 (define-public r-pcalg
   (package
     (name "r-pcalg")
-    (version "2.7-7")
+    (version "2.7-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcalg" version))
               (sha256
                (base32
-                "0bf81cbziyl13y20xdhs0zfxzgc8rzdv0mra57dlic8cdjx3wxaj"))))
+                "1phjycamc1m5jk8lg730q2cvbwgkm5paizyp0xminlb4p56za8kr"))))
     (properties `((upstream-name . "pcalg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd

@@ -15484,13 +15484,13 @@ indices, but each function can also be run separately.  Allstadt et al. (2015)
 (define-public r-springer
   (package
     (name "r-springer")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "springer" version))
               (sha256
                (base32
-                "197zmn90zrqv9g0kzwnzs14g1sh3cx2hnp5x92dfp96xcb650dz1"))))
+                "0k4n2v362m0n4msa8bjs7lfpccyvis8ksrzp3qpxw9ixq30778k9"))))
     (properties `((upstream-name . "springer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -16271,13 +16271,13 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spOccupancy" version))
               (sha256
                (base32
-                "0c4mm0qczr1pc0k6nb3ms2i1lsrm6qfjwyv2szdd6ci66ac01kc6"))))
+                "00cv7h10awx87ghhrvpn095f9v8zldydalinjjhvfjdw6pzms6l3"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -28237,16 +28237,20 @@ cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
 (define-public r-slickr
   (package
     (name "r-slickr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "slickR" version))
               (sha256
                (base32
-                "1zxj6ivdhi9wvqcrl0p8clwk8nxqmg1bijqamp0lhq82dpyrdngp"))))
+                "01p72l3h8izg9pphjhkm83rgfsvlimf8aa5asa5lfgfbma60ivhb"))))
     (properties `((upstream-name . "slickR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-lifecycle r-htmlwidgets r-htmltools
+    (propagated-inputs (list r-xml2
+                             r-lifecycle
+                             r-htmlwidgets
+                             r-htmltools
+                             r-checkmate
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yonicd/slickR")
@@ -47753,58 +47757,6 @@ separately (see description at <https://github.com/fuchslab/scModels>).  This
 package is supplement to the paper \"A mechanistic model for the negative
 binomial distribution of single-cell mRNA counts\" by Lisa Amrhein, Kumar Harsha
 and Christiane Fuchs (2019) <doi:10.1101/657619> available on bioRxiv.")
-    (license license:gpl3)))
-
-(define-public r-scmappr
-  (package
-    (name "r-scmappr")
-    (version "1.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scMappR" version))
-              (sha256
-               (base32
-                "1b2jrbqy9dcvv9ng7mz8xxggqc5iy4n0h59xksin3m9gvpvsc0sw"))))
-    (properties `((upstream-name . "scMappR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seurat
-                             r-reshape
-                             r-pheatmap
-                             r-pcamethods
-                             r-pbapply
-                             r-limsolve
-                             r-gprofiler2
-                             r-gprofiler
-                             r-ggplot2
-                             r-downloader
-                             r-adapts))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scMappR")
-    (synopsis "Single Cell Mapper")
-    (description
-     "The single cell mapper (scMappR) R package contains a suite of bioinformatic
-tools that provide experimentally relevant cell-type specific information to a
-list of differentially expressed genes (DEG).  The function
-\"scMappR_and_pathway_analysis\" reranks DEGs to generate cell-type specificity
-scores called cell-weighted fold-changes.  Users input a list of DEGs,
-normalized counts, and a signature matrix into this function.  scMappR then
-re-weights bulk DEGs by cell-type specific expression from the signature matrix,
-cell-type proportions from RNA-seq deconvolution and the ratio of cell-type
-proportions between the two conditions to account for changes in cell-type
-proportion.  With cwFold-changes calculated, scMappR uses two approaches to
-utilize cwFold-changes to complete cell-type specific pathway analysis.  The
-\"process_dgTMatrix_lists\" function in the scMappR package contains an automated
-scRNA-seq processing pipeline where users input scRNA-seq count data, which is
-made compatible for scMappR and other R packages that analyze scRNA-seq data.
-We further used this to store hundreds up regularly updating signature matrices.
- The functions \"tissue_by_celltype_enrichment\", \"tissue_scMappR_internal\", and
-\"tissue_scMappR_custom\" combine these consistently processed scRNAseq count data
-with gene-set enrichment tools to allow for cell-type marker enrichment of a
-generic gene list (e.g. GWAS hits).  Reference: Sokolowski,D.J.,
-Faykoo-Martinez,M., Erdman,L., Hou,H., Chan,C., Zhu,H., Holmes,M.M.,
-Goldenberg,A. and Wilson,M.D. (2021) Single-cell mapper (scMappR): using
-scRNA-seq to infer cell-type specificities of differentially expressed genes.
-NAR Genomics and Bioinformatics.  3(1).  Iqab011. <doi:10.1093/nargab/lqab011>.")
     (license license:gpl3)))
 
 (define-public r-scma

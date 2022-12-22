@@ -81,13 +81,13 @@ Transforms.")
 (define-public r-kyotil
   (package
     (name "r-kyotil")
-    (version "2022.9-17")
+    (version "2022.12-20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kyotil" version))
               (sha256
                (base32
-                "18sg9ilx69sbi61v0fny15b4rzssk04rb5ghwkgrpsf5gr4pljvv"))))
+                "08j1pdg8mwypcpidpkb1rxkh9rdj58640qh9f5dsmn8y875qxna8"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kyotil")
@@ -2934,13 +2934,13 @@ generation and more.")
 (define-public r-kgp
   (package
     (name "r-kgp")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kgp" version))
               (sha256
                (base32
-                "0w5c507s7k7al0dc68iv8hjkz2r1zc5kzg7pm5nk7gq7gixpzpxp"))))
+                "021113hqs7ack852mksssaac1lj0k4mpf94yiws67qiygmsa693k"))))
     (properties `((upstream-name . "kgp")))
     (build-system r-build-system)
     (home-page "https://github.com/stephenturner/kgp")

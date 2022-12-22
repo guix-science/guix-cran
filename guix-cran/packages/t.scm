@@ -13859,13 +13859,13 @@ are very messy.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.5")
+    (version "1.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfst" version))
               (sha256
                (base32
-                "07sy6yyjpb0qkn8qhc4d228xxihjqrqw42g5afz5ai3h530qhj89"))))
+                "0iz7wk58a3f55vpmw6mbx9jd1ky6p7b5dn7ljibvr2ykzw2cfxm5"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -16607,29 +16607,30 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "textrecipes" version))
               (sha256
                (base32
-                "198x9fgmdqf9bznyvxbb6nwvj3qvl2r8w2mnb1a25m5zxgz8m0a0"))))
+                "1m6g60g3rbn5rw7pcdp2aq71w1wfkc9r1aiqx47qsfaalrpdg6i2"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
+    (inputs (list))
     (propagated-inputs (list r-vctrs
                              r-tokenizers
                              r-tibble
                              r-snowballc
                              r-rlang
                              r-recipes
-                             r-rcpp
                              r-purrr
                              r-matrix
                              r-magrittr
                              r-lifecycle
                              r-glue
                              r-generics
-                             r-dplyr))
+                             r-dplyr
+                             r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/textrecipes")
     (synopsis "Extra 'Recipes' for Text Processing")

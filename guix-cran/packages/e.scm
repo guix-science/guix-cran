@@ -544,6 +544,34 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 <http:michaelbach.de/sci/acuity.html>.")
     (license license:expat)))
 
+(define-public r-exvatools
+  (package
+    (name "r-exvatools")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exvatools" version))
+              (sha256
+               (base32
+                "0axvdc220xkcvl7pf0a9i4y9x8clg0i0cvyldwz1bxs7yfdg7dwa"))))
+    (properties `((upstream-name . "exvatools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=exvatools")
+    (synopsis
+     "Value Added in Exports with International Input-Output Table Tools")
+    (description
+     "Decomposition of value added in exports in an international input-output table
+framework using the methodologies of Borin and Mancini (2019)
+<https://openknowledge.worldbank.org/handle/10986/31533>, Miroudot and Ye (2021)
+<doi:10.1080/09535314.2020.1730308>, Wang et al. (2013)
+<https://econpapers.repec.org/paper/nbrnberwo/19677.htm> and Koopman et al.
+(2014) <doi:10.1257/aer.104.2.459>.  Includes commands for easy data extraction,
+calculation of complex matrices and other useful tools for geographical and
+sector trade analysis.")
+    (license license:gpl3)))
+
 (define-public r-exuber
   (package
     (name "r-exuber")
