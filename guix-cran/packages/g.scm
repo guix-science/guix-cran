@@ -4321,16 +4321,17 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greybox" version))
               (sha256
                (base32
-                "0y8w06mkziks9ra2d8l0xdi0s5fcy6qnn8viij0ns2zlbpcnrx9p"))))
+                "0j58592b3c6brwk9cdj1qsjswvlfwzvl0a2n6x4lia50dhmvp1yk"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-xtable
                              r-texreg
                              r-statmod
                              r-rcpp
@@ -5163,6 +5164,31 @@ or multiple-order-up granularities, check the feasibility of creating plots for
 any two cyclic granularities and recommend probability distributions plots for
 exploring periodicity in the data.")
     (license license:gpl3)))
+
+(define-public r-graven
+  (package
+    (name "r-graven")
+    (version "1.0.12")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gRaven" version))
+              (sha256
+               (base32
+                "12s9c873xjyg24bfw9hb8srmn7dnyv197ya4ca1dp640sydqzf4k"))))
+    (properties `((upstream-name . "gRaven")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-grbase r-grain))
+    (home-page "https://cran.r-project.org/package=gRaven")
+    (synopsis "Bayes Nets: 'RHugin' Emulation with 'gRain'")
+    (description
+     "Wrappers for functions in the gRain package to emulate some RHugin
+functionality, allowing the building of Bayesian networks incrementally, through
+adding nodes, edges and conditional probability tables, the setting of evidence,
+both hard (boolean) or soft (likelihoods), and querying marginal probabilities
+and normalizing constants.  Computations will typically not be so fast as they
+are with RHugin', but this package should assist users without access to Hugin
+to use code written to use RHugin'.")
+    (license license:gpl2+)))
 
 (define-public r-grattan
   (package
@@ -20796,16 +20822,16 @@ Human Genetics.  October 2018, San Diego.")
 (define-public r-genpathmox
   (package
     (name "r-genpathmox")
-    (version "0.9")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genpathmox" version))
               (sha256
                (base32
-                "011nkjck6cx4akb799054ivxikswrdkk5vgcckr7nii4df7vg1r3"))))
+                "0yxxaylcqscymhydrjcxd8gi11ih2p100j6qsdxdcifwc4sr1qi0"))))
     (properties `((upstream-name . "genpathmox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-diagram r-csem))
+    (propagated-inputs (list r-matrixcalc r-diagram r-csem))
     (home-page "https://cran.r-project.org/package=genpathmox")
     (synopsis "Pathmox Approach Segmentation Tree Analysis")
     (description

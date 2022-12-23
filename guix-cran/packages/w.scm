@@ -4087,13 +4087,13 @@ testing.")
 (define-public r-whereami
   (package
     (name "r-whereami")
-    (version "0.1.9")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "whereami" version))
               (sha256
                (base32
-                "0mjq9haacsf0zkgh7xxx8dr67hnw5ijjdhaz8c69mfjmd2zfzfwq"))))
+                "0vg1vcs0b660zm08rwd6kg7vs8956pgdkjlba0z9f5ff9z69j1rr"))))
     (properties `((upstream-name . "whereami")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-jsonlite r-cli))

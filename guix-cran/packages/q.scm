@@ -2015,6 +2015,29 @@ ecological data collected using quadrats and can crop quadrats to ensure
 comparability between quadrats collected under different methodologies.")
     (license license:gpl3+)))
 
+(define-public r-qtwacademic
+  (package
+    (name "r-qtwacademic")
+    (version "2022.12.13")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qtwAcademic" version))
+              (sha256
+               (base32
+                "1llckj25x2wr3g3wa1m43fqa6v9ddyf444wbwwjdfwc9ix9j5fkj"))))
+    (properties `((upstream-name . "qtwAcademic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fs))
+    (native-inputs (list r-knitr))
+    (home-page "https://andreaczhang.github.io/qtwAcademic/")
+    (synopsis "'Quarto' Website Templates for Academics")
+    (description
+     "This package provides three Quarto website templates as an R project, which are
+commonly used by academics.  Templates for personal websites and course/workshop
+websites are included, as well as a template with minimal content for
+customization.")
+    (license license:expat)))
+
 (define-public r-qtools
   (package
     (name "r-qtools")

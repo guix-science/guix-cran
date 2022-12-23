@@ -9062,6 +9062,40 @@ odds, US odds, Decimal odds, Indonesian odds, Malaysian odds, and raw
 Probability are covered in this package.")
     (license license:gpl3)))
 
+(define-public r-oddnet
+  (package
+    (name "r-oddnet")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oddnet" version))
+              (sha256
+               (base32
+                "00r6pl0s715gk7sybl725sriqdpddabxhnjjz4y51vzl5fwwfcyv"))))
+    (properties `((upstream-name . "oddnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pcapp
+                             r-lookout
+                             r-igraph
+                             r-fabletools
+                             r-fable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://sevvandi.github.io/oddnet/")
+    (synopsis "Anomaly Detection in Temporal Networks")
+    (description
+     "Anomaly detection in dynamic, temporal networks.  The package oddnet uses a
+feature-based method to identify anomalies.  First, it computes many features
+for each network.  Then it models the features using time series methods.  Using
+time series residuals it detects anomalies.  This way, the temporal dependencies
+are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
+<arXiv:2210.07407>.")
+    (license license:gpl3+)))
+
 (define-public r-odbc
   (package
     (name "r-odbc")

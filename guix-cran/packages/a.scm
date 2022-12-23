@@ -13474,6 +13474,30 @@ Dahl (2016)
 <https://ww2.amstat.org/meetings/jsm/2016/onlineprogram/ActivityDetails.cfm?SessionID=213038>.")
     (license license:gpl3)))
 
+(define-public r-ahw
+  (package
+    (name "r-ahw")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ahw" version))
+              (sha256
+               (base32
+                "1dq40qf5r5h011d9fk2c4qjj6dbh0kxl2xfjaflr69r2dlsslgds"))))
+    (properties `((upstream-name . "ahw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timereg r-plyr r-data-table))
+    (home-page "https://cran.r-project.org/package=ahw")
+    (synopsis
+     "Calculates Continuous Time Likelihood Ratio Weights Assuming Multiplicative Intensity Models and Additive Hazard Models")
+    (description
+     "Estimates continuous time weights for performing causal survival analysis.  For
+instance, weighted Nelson-Aalen or Kaplan-Meier estimates can be given a causal
+interpretation.  See Ryalen, Stensrud, and RÃ¸ysland (2019)
+<doi:10.1007/s10985-019-09468-y> and Ryalen (2019)
+<https://www.duo.uio.no/handle/10852/70353> for theory and examples.")
+    (license license:gpl3+)))
+
 (define-public r-ahsurv
   (package
     (name "r-ahsurv")

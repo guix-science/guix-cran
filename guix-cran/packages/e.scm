@@ -11658,6 +11658,29 @@ Turner, S. D. (2018) <doi:10.21105/joss.00731>, Rosseel, D. (2012)
 <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
 
+(define-public r-emailjsr
+  (package
+    (name "r-emailjsr")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "emailjsr" version))
+              (sha256
+               (base32
+                "1pxqw0r95pgpnvhmyw46py6bnchswb9wcyl42lsg5ccz74dynmh0"))))
+    (properties `((upstream-name . "emailjsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinybrowser r-shiny-i18n r-shiny r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=emailjsr")
+    (synopsis "'emailjs' Support")
+    (description
+     "Use emailjs API easily in R'.  This package is not official.
+<https://www.emailjs.com/docs/rest-api/send/>.  You can send e-mail with emailjs
+with function, based on httr'.  You can also make a shiny ui and server
+function.  It can be used for making feedback form, inquiry, and so on.")
+    (license license:expat)))
+
 (define-public r-em-fuzzy
   (package
     (name "r-em-fuzzy")
@@ -17993,6 +18016,33 @@ global bird abundances, range boundaries, and habitat associations at a high
 spatial and temporal resolution.")
     (license license:gpl3)))
 
+(define-public r-ebglmnet
+  (package
+    (name "r-ebglmnet")
+    (version "5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EBglmnet" version))
+              (sha256
+               (base32
+                "1nby88gflwx3y2bk4f1ga5bww14s2jb0005d6q91a5ivw2xj9ry8"))))
+    (properties `((upstream-name . "EBglmnet")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://sites.google.com/site/anhuihng/")
+    (synopsis
+     "Empirical Bayesian Lasso and Elastic Net Methods for Generalized Linear Models")
+    (description
+     "This package provides empirical Bayesian lasso and elastic net algorithms for
+variable selection and effect estimation.  Key features include sparse variable
+selection and effect estimation via generalized linear regression models, high
+dimensionality with p>>n, and significance test for nonzero effects.  This
+package outperforms other popular methods such as lasso and elastic net methods
+in terms of power of detection, false discovery rate, and power of detecting
+grouping effects.  Please reference its use as A Huang and D Liu (2016) <doi:
+10.1093/bioinformatics/btw143>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-ebgenotyping
   (package
     (name "r-ebgenotyping")
@@ -18459,29 +18509,29 @@ and visualizations with minimal programming.")
 (define-public r-easysdctable
   (package
     (name "r-easysdctable")
-    (version "1.0.3")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easySdcTable" version))
               (sha256
                (base32
-                "05r8g9d7qp4naarpr1ipxk8vx4czg9yz3qkghj8abvkmwww838wn"))))
+                "0wvnyhjq94cqjx9dw2nc5v66a11qbi972g0shvzz7q4llkgm21if"))))
     (properties `((upstream-name . "easySdcTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-shiny r-sdctable r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/easySdcTable")
     (synopsis
-     "Easy Interface to the Statistical Disclosure Control Package 'sdcTable' Extended with the 'GaussSuppression' Method")
+     "Easy Interface to the Statistical Disclosure Control Package 'sdcTable' Extended with Own Implementation of 'GaussSuppression'")
     (description
      "The main function, ProtectTable(), performs table suppression according to a
 frequency rule with a data set as the only required input.  Within this
 function, protectTable(), protect_linked_tables() or runArgusBatchFile() in
 package sdcTable is called.  Lists of level-hierarchy (parameter dimList') and
 other required input to these functions are created automatically.  The
-suppression method Gauss (default) is an additional method that is not available
-in sdcTable'.  The function, PTgui(), starts a graphical user interface based on
-the shiny package.")
+suppression method Gauss (default) is implemented independently of sdcTable'.
+The function, PTgui(), starts a graphical user interface based on the shiny
+package.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 

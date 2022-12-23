@@ -7461,13 +7461,13 @@ University Press.  and Noel (2022), <https://orbilu.uni.lu/>, thesis.")
 (define-public r-trajectories
   (package
     (name "r-trajectories")
-    (version "0.2-5")
+    (version "0.2-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trajectories" version))
               (sha256
                (base32
-                "0wijsv6j0w0a0lz6y1iflznnr7aa2vbbwl5xzixjvq3ivwjdcgcl"))))
+                "1z1vy3f5llx3xhviakkhxwg03sb71wnkgifnwg7sx0ilgmh7sbz7"))))
     (properties `((upstream-name . "trajectories")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-spacetime r-sp r-lattice))

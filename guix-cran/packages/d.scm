@@ -20883,6 +20883,30 @@ DBHYDRO database at <https://www.sfwmd.gov/science-data/dbhydro>, with functions
 for accessing hydrologic and water quality data.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-dbhc
+  (package
+    (name "r-dbhc")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DBHC" version))
+              (sha256
+               (base32
+                "0r9c2vjnrahi3kbg7gz3z9k1i8vdqc44rc6nq7xk1j2xs1s6wsxp"))))
+    (properties `((upstream-name . "DBHC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-traminer r-seqhmm r-reshape2 r-ggplot2))
+    (home-page "https://github.com/gabybudel/DBHC")
+    (synopsis "Sequence Clustering with Discrete-Output HMMs")
+    (description
+     "This package provides an implementation of a mixture of hidden Markov models
+(HMMs) for discrete sequence data in the Discrete Bayesian HMM Clustering (DBHC)
+algorithm.  The DBHC algorithm is an HMM Clustering algorithm that finds a
+mixture of discrete-output HMMs while using heuristics based on Bayesian
+Information Criterion (BIC) to search for the optimal number of HMM states and
+the optimal number of clusters.")
+    (license license:gpl3+)))
+
 (define-public r-dbglm
   (package
     (name "r-dbglm")
@@ -20920,13 +20944,13 @@ for the full data in the database.  Thomas Lumley
 (define-public r-dbgapcheckup
   (package
     (name "r-dbgapcheckup")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbGaPCheckup" version))
               (sha256
                (base32
-                "0gi1n4nbzz2d3z2y39x6n8l15w6x4vh47332rkpl2iba69xhjcb5"))))
+                "0mixrdvqhy5a43dxkx46wgs7yn44zjpigkpw04xkh4m4vvq5l5qf"))))
     (properties `((upstream-name . "dbGaPCheckup")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22658,6 +22682,31 @@ a data frame, collection of data frames and sequences of data frames and
 individual vectors.  For more information see
 <https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
     (license license:gpl2+)))
+
+(define-public r-datagovsgr
+  (package
+    (name "r-datagovsgr")
+    (version "0.3.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datagovsgR" version))
+              (sha256
+               (base32
+                "17gvqbvcbsdnbp8rp0a27rflni328mdn70v5jj4ywhgykmlk9k8r"))))
+    (properties `((upstream-name . "datagovsgR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-purrr r-httr r-dplyr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=datagovsgR")
+    (synopsis "Calls Real Time APIs from Data Gov Singapore")
+    (description
+     "This package provides a wrapper for the Data Gov Singapore developer resources
+endpoints developer tools, which provide real time and historical information,
+ranging from carpark availability to weather forecasts.  This tools makes the
+API calls for a given date and time, before returning the relevant information
+in a data frame.  Relevant information can be found here
+<https://data.gov.sg/developer>.")
+    (license license:expat)))
 
 (define-public r-datagovindia
   (package

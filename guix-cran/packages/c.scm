@@ -19009,6 +19009,34 @@ method is described in Mouresan, Selle and Ronnegard (2019)
 <doi:10.1101/636746>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-codaredistlm
+  (package
+    (name "r-codaredistlm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "codaredistlm" version))
+              (sha256
+               (base32
+                "1i046kxf71yvgqychj6a3lqrdsgcfhgz1i02mm91ih5nrg2613rg"))))
+    (properties `((upstream-name . "codaredistlm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr r-ggplot2 r-compositions r-broom))
+    (home-page "https://github.com/tystan/codaredistlm")
+    (synopsis
+     "Compositional Data Linear Models with Composition Redistribution")
+    (description
+     "Provided data containing an outcome variable, compositional variables and
+additional covariates (optional); linearly regress the outcome variable on an
+isometric log ratio (ilr) transformation of the linearly dependent compositional
+variables.  The package provides predictions (with confidence intervals) in the
+change (delta) in the outcome/response variable based on the multiple linear
+regression model and evenly spaced reallocations of the compositional values.
+The compositional data analysis approach implemented is outlined in Dumuid et
+al. (2017a) <doi:10.1177/0962280217710835> and Dumuid et al. (2017b)
+<doi:10.1177/0962280217737805>.")
+    (license license:gpl2)))
+
 (define-public r-codalm
   (package
     (name "r-codalm")
@@ -28150,13 +28178,13 @@ algorithms are implemented in C++.")
 (define-public r-changeranger
   (package
     (name "r-changeranger")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "changeRangeR" version))
               (sha256
                (base32
-                "1lqml0lran2ggq0f855517lxbyscbymn7f5zvjwak433yr8y8p95"))))
+                "06i4r6ylwq551lm2l7mg2av1l04ijwrj2d8y0avdf1c83spir7dy"))))
     (properties `((upstream-name . "changeRangeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

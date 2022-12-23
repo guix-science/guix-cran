@@ -8504,13 +8504,13 @@ culture systems.  Sci Rep 9, 12367 (2019) <doi:10.1038/s41598-019-48771-4>).")
 (define-public r-stochlab
   (package
     (name "r-stochlab")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stochLAB" version))
               (sha256
                (base32
-                "11vk5vd8y4md29cawf2x9m9zrmd0rl6vbfmhs4fzkcm4xsyp1brh"))))
+                "1gixw8rjhivcz71ypmbn0cs27gi5bsmmm37nsx0psas7nvw8zwxi"))))
     (properties `((upstream-name . "stochLAB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8533,7 +8533,11 @@ wind farms.  The base deterministic model is derived from Band (2012)
 <https://tethys.pnnl.gov/publications/using-collision-risk-model-assess-bird-collision-risks-offshore-wind-farms>.
  This was further expanded on by Masden (2015) <doi:10.7489/1659-1> and code
 used here is heavily derived from this work with input from Dr A. Cook at the
-British Trust for Ornithology.")
+British Trust for Ornithology.  These collision risk models are useful for
+marine ornithologists who are working in the offshore wind industry,
+particularly in UK waters.  However, many of the species included in the
+stochastic collision risk models can also be found in the North Atlantic in the
+United States and Canada, and could be applied there.")
     (license license:gpl3+)))
 
 (define-public r-stocc
@@ -14477,13 +14481,13 @@ which can be used to visualize experimental results and analyses.")
 (define-public r-squat
   (package
     (name "r-squat")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "squat" version))
               (sha256
                (base32
-                "0sbcki52qgyzkjksk5bximhcvyhvkrg9yxpiins72j0ff4158mrx"))))
+                "1sxdfqn18xfky3z1wxl82fb0c7glvhfm670xymgp4q3dri60a5r1"))))
     (properties `((upstream-name . "squat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14494,7 +14498,7 @@ which can be used to visualize experimental results and analyses.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
-                             r-pbapply
+                             r-progressr
                              r-mfpca
                              r-ggrepel
                              r-ggplot2
@@ -34491,13 +34495,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "0.8.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "signnet" version))
               (sha256
                (base32
-                "1j4qp2w2kkcq206k015lw4ll7vj4yn53b2ngkh0h4wdrzgc7p90a"))))
+                "187lflgdbm59swlclnb4d0mjmpba8hj5phfds6mhpyhwazfca7qv"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -39917,13 +39921,13 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
 (define-public r-sfdep
   (package
     (name "r-sfdep")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sfdep" version))
               (sha256
                (base32
-                "14wqnx4yavx5snnzray4fli3lbf9avwi2w5qj1xvnks7zjqzvqx2"))))
+                "0g8y15plh9nnh9rsnc35fd8lnnl9lralcsd586w73q8vzyqz6zxn"))))
     (properties `((upstream-name . "sfdep")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sf r-rlang r-cli))

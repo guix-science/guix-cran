@@ -3482,13 +3482,13 @@ bidding sequences.")
 (define-public r-bridgedist
   (package
     (name "r-bridgedist")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bridgedist" version))
               (sha256
                (base32
-                "1jvjfbk4p5n02xx74bis0z9nzpbn8c5in9qlfr2wpwfqdplprxhl"))))
+                "1bsvwh2c1i9z37d363gk5nzrbg9bcjfkarr0a2l8xrv4r1zwj43j"))))
     (properties `((upstream-name . "bridgedist")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10883,13 +10883,13 @@ permutation test) for fast feature-filtering of the n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.2.1")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biogeom" version))
               (sha256
                (base32
-                "1hwb99b0yrm6a11jkas0fikcbamzi41a4j5j9qnp474bkj9a5jd2"))))
+                "11x4bnnvszmd47iviy8w9nz9wx3ba3d0hwxv9sl51fxmfgqln53d"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -14282,6 +14282,54 @@ small samples such as individual countries.  The Burden of Healthcare-Associated
 Infections (BHAI) is estimated in disability-adjusted life years, number of
 infections as well as number of deaths per year.  Results can be visualized with
 various plotting functions and exported into tables.")
+    (license license:gpl3)))
+
+(define-public r-bgw
+  (package
+    (name "r-bgw")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bgw" version))
+              (sha256
+               (base32
+                "044rn881948y5b3dy6dxqx3i9vny81qpv594ndaapy1himb0lipa"))))
+    (properties `((upstream-name . "bgw")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=bgw")
+    (synopsis "Bunch-Gay-Welsch Statistical Estimation")
+    (description
+     "This package performs statistical estimation and inference-related computations
+by accessing and executing modified versions of Fortran subroutines originally
+published in the Association for Computing Machinery (ACM) journal Transactions
+on Mathematical Software (TOMS) by Bunch, Gay and Welsch (1993)
+<doi:10.1145/151271.151279>.  The acronym BGW (from the authors last names) will
+be used when making reference to technical content (e.g., algorithm,
+methodology) that originally appeared in ACM TOMS. A key feature of BGW is that
+it exploits the special structure of statistical estimation problems within a
+trust-region-based optimization approach to produce an estimation algorithm that
+is much more effective than the usual practice of using optimization methods and
+codes originally developed for general optimization.  The bgw package bundles R
+wrapper (and related) functions with modified Fortran source code so that it can
+be compiled and linked in the R environment for fast execution.  This version
+implements a function ('bgw_mle.R') that performs maximum likelihood estimation
+(MLE) for a user-provided model object that computes probabilities (a.k.a.
+probability densities).  The motivation for producing this initial version is to
+provide fast, efficient, and reliable MLE for discrete choice models that can be
+called from the Apollo choice modelling R package: see
+<http://www.apollochoicemodelling.com>.  However, estimation can also be
+performed in a stand-alone fashion without using Apollo (as shown in simple
+examples).  After this initial version is available on CRAN, an updated version
+of Apollo (0.2.9) will be made available that automatically loads bgw'.
+Additional development can then occur, including more detailed examples in bgw
+that refer to Apollo.  Note also that BGW capabilities are not limited to MLE,
+and future extension to other estimators (e.g., nonlinear least squares,
+generalized method of moments, etc.) is possible.  The Fortran code included in
+bgw was modified by one of the original BGW authors (Bunch) under his rights as
+confirmed by direct consultation with the ACM Intellectual Property and Rights
+Manager.  See <https://authors.acm.org/author-resources/author-rights>.  The
+main requirement is clear citation of the original publication (see above).")
     (license license:gpl3)))
 
 (define-public r-bgvar

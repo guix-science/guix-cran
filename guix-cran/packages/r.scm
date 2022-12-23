@@ -1609,6 +1609,36 @@ under the GNU GPL version 3.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-rvif
+  (package
+    (name "r-rvif")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rvif" version))
+              (sha256
+               (base32
+                "0aqzh8n889avbjdf4244h4a5y5a6w9hxxgm15ygxvysrw5rjb37f"))))
+    (properties `((upstream-name . "rvif")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-multicoll))
+    (home-page "http://colldetreat.r-forge.r-project.org/")
+    (synopsis
+     "Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods")
+    (description
+     "The detection of troubling approximate collinearity in a multiple linear
+regression model is a classical problem in Econometrics.  The objective of this
+package is to detect it using the variance inflation factor redefined and the
+scatterplot between the variance inflation factor and the coefficient of
+variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
+(2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
+GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
+RodrÃ­guez, A. and GarcÃ­a, C. \"Limitations in Detecting Multicollinearity due
+to Scaling Issues in the mcvis Package\" (2022, to appear in The R Journal) and
+SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
+<arXiv:2005.02245>.")
+    (license license:gpl2+)))
+
 (define-public r-rviewgraph
   (package
     (name "r-rviewgraph")
@@ -5422,13 +5452,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rspm" version))
               (sha256
                (base32
-                "0qfyk4ars77d6a7llbyvyc6095zb4690salgym8kgqlq8dzag3k2"))))
+                "1715vsdij3c8c0n4ngkvvplvx0nbh11jrfqm0l9rz745g3k4i90f"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://enchufa2.github.io/rspm/")
@@ -5437,9 +5467,9 @@ format.  See rsppfp website for more information, documentation an examples.")
      "Enables binary package installations on Linux distributions.  Provides access to
 RStudio public repositories at <https://packagemanager.rstudio.com>, and
 transparent management of system requirements without administrative privileges.
- Currently supported distributions are CentOS / RHEL 7 and 8, and several RHEL
-derivatives ('Rocky Linux 8, AlmaLinux 8, Oracle Linux 7 and 8, Amazon Linux 2),
-openSUSE / SLES 15.3, and Ubuntu 18.04, 20.04 and 22.04.")
+ Currently supported distributions are CentOS / RHEL 7-9, and several RHEL
+derivatives ('Rocky Linux', AlmaLinux', Oracle Linux', and Amazon Linux 2),
+openSUSE / SLES 15.3-4, and Ubuntu 18.04, 20.04 and 22.04.")
     (license (list license:gpl2 license:gpl3 license:expat))))
 
 (define-public r-rspiro
@@ -5610,13 +5640,13 @@ for more information).")
 (define-public r-rspa
   (package
     (name "r-rspa")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rspa" version))
               (sha256
                (base32
-                "0vkb584xqxd2qw8g7p6yx0c59111k1pbkkgfbqj5mfb11fpmpck9"))))
+                "0cl00y9xy5iwmx003zja7b21db5sib7izs8qgmp6731w68bvdj2q"))))
     (properties `((upstream-name . "rspa")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate r-lintools))
@@ -5929,23 +5959,24 @@ version of the package is documented in Journal of Statistical Software
 (define-public r-rsleep
   (package
     (name "r-rsleep")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsleep" version))
               (sha256
                (base32
-                "1lrjghj8i1q6b1hr97kfy35c75xzwlijcnzmp9wy129m9xygkk2r"))))
+                "08rv44a7f8ylp7vgf15pz9nvvziyjcchjnmybqixv4bpk14j8mpl"))))
     (properties `((upstream-name . "rsleep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-signal
+    (propagated-inputs (list r-xml2
+                             r-signal
                              r-psd
-                             r-phontools
                              r-jsonlite
                              r-ggplot2
                              r-edfreader
                              r-abind))
-    (home-page "https://cran.r-project.org/package=rsleep")
+    (native-inputs (list r-knitr))
+    (home-page "https://rsleep.org/")
     (synopsis "Analysis of Sleep Data")
     (description
      "This package provides users functions for sleep data management and analysis
@@ -8537,13 +8568,13 @@ Codd-style data manipulation tools.")
 (define-public r-rqcc
   (package
     (name "r-rqcc")
-    (version "2.22.5")
+    (version "2.22.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rQCC" version))
               (sha256
                (base32
-                "1d59g01di88dl7kwpvf8xc9j9dgjfsfa5rd852ry136bgmlmlahr"))))
+                "0z5gq6pgdp3hxlngcr5lxzj01sf9h9bmdyr1hh6ikr5wjb36wjzx"))))
     (properties `((upstream-name . "rQCC")))
     (build-system r-build-system)
     (home-page "https://AppliedStat.GitHub.io/R/")
@@ -8555,9 +8586,9 @@ Shamos estimator (scale).  The estimators used for the robust control charts are
 all unbiased with a sample of finite size.  For more details, see Park, Kim and
 Wang (2022) <doi:10.1080/03610918.2019.1699114>.  In addition, using this R
 package, the conventional quality control charts such as X-bar, S, R, p, np, u,
-c, g and h charts are also easily constructed.  This work was partially
-supported by the National Research Foundation of Korea (NRF) grant funded by the
-Korea government (NRF-2017R1A2B4004169).")
+c, g, h, and t charts are also easily constructed.  This work was supported by
+the National Research Foundation of Korea (NRF) grant funded by the Korea
+government (MSIT) (No.  2022R1A2C1091319).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-rpymat
@@ -22054,13 +22085,13 @@ applications; Tools for building customized graphical user interfaces.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhino" version))
               (sha256
                (base32
-                "1qrm9apiy51khan8v63i60kwmd2axp8qg04mqc5cqinbvdd3qps5"))))
+                "1f3mh3f3ygbifxnfrfxjx0c7d0wy9zjqy982ayds7f9iqbxh5ysj"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -23328,13 +23359,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeedim" version))
               (sha256
                (base32
-                "0s60rgm8j7s4vd8djfx0m4sqs9xwqqnk5lvrbgbr39g3y9ads41n"))))
+                "1n8wyfifba3bh6a4546issclcrsk9y3f1zd89hpan13hrizrv2dg"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -23345,10 +23376,10 @@ armadillo through a header file approach.")
      "Search, Composite, and Download 'Google Earth Engine' Imagery with the 'Python' Module 'geedim'")
     (description
      "Search, composite, and download Google Earth Engine imagery with reticulate
-bindings for the Python module geedim'.  Read the geedim documentation here:
-<https://geedim.readthedocs.io/>.  Wrapper functions are provided to make it
-more convenient to use geedim to download images larger than the Google Earth
-Engine size limit
+bindings for the Python module geedim by Dugal Harris.  Read the geedim
+documentation here: <https://geedim.readthedocs.io/>.  Wrapper functions are
+provided to make it more convenient to use geedim to download images larger than
+the Google Earth Engine size limit
 <https://developers.google.com/earth-engine/apidocs/ee-image-getdownloadurl>.
 By default the \"High Volume\" API endpoint
 <https://developers.google.com/earth-engine/cloud/highvolume> is used to
@@ -26707,6 +26738,48 @@ GDAL library, a limitation which users of this package should be aware of.) The
 PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
+(define-public r-reproducible
+  (package
+    (name "r-reproducible")
+    (version "1.2.16")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reproducible" version))
+              (sha256
+               (base32
+                "1bj6hm2q8747iawwicjlljvn1jz34vrfyrff1385qc6z3bf4ql7c"))))
+    (properties `((upstream-name . "reproducible")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rsqlite
+                             r-rlang
+                             r-raster
+                             r-magrittr
+                             r-lobstr
+                             r-glue
+                             r-fpcompare
+                             r-digest
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://reproducible.predictiveecology.org")
+    (synopsis "Set of Tools that Enhance Reproducibility of R Code")
+    (description
+     "This package provides a collection of high-level, machine- and OS-independent
+tools for making deeply reproducible and reusable content in R. The two
+workhorse functions are Cache() and prepInputs()'. `Cache()` allows for nested
+caching, is robust to environments and objects with environments (like
+functions), and has deals with some classes of file-backed R objects e.g., from
+`terra` and `raster` packages.  Both functions have been developed to be
+foundational components of data retrieval and processing in continuous workflow
+situations.  In both functions, efforts are made to make the first and
+subsequent calls of functions have the same result, but faster at subsequent
+times by way of checksums and digesting.  Several features are still under
+development, including cloud storage of cached objects, allowing for sharing
+between users.  Several advanced options are available, see
+?reproducibleOptions()'.")
+    (license license:gpl3)))
+
 (define-public r-reproducer
   (package
     (name "r-reproducer")
@@ -28166,13 +28239,13 @@ similarities, cycles or triads can be calculated and analyzed over time.")
 (define-public r-relsurv
   (package
     (name "r-relsurv")
-    (version "2.2-8")
+    (version "2.2-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "relsurv" version))
               (sha256
                (base32
-                "07wqihyzg6fsvb6n28w3xag66q3rxfv154kqpg2hxj348c58chgb"))))
+                "0y2dsyiqqzyc0rnnf3nna1saww3ipngknz462h9qv5y02rf46rp9"))))
     (properties `((upstream-name . "relsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-scales r-pammtools r-ggplot2 r-date))
@@ -28454,6 +28527,37 @@ electoral process.  The methods are described in: OÃ±ate, Pablo and OcaÃ±a,
 Francisco A. (1999, ISBN:9788474762815); Ruiz RodrÃ­guez, Leticia M. and Otero
 Felipe, Patricia (2011, ISBN:9788474766226).")
     (license license:gpl2)))
+
+(define-public r-reldists
+  (package
+    (name "r-reldists")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RelDists" version))
+              (sha256
+               (base32
+                "1dxgn8gs80cvk0i8q1j4fpayazv01hly16jawf32m03irml6kl6c"))))
+    (properties `((upstream-name . "RelDists")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zipfr
+                             r-vgam
+                             r-survival
+                             r-rdpack
+                             r-lamw
+                             r-gamlss-dist
+                             r-gamlss
+                             r-estimationtools
+                             r-bbmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://ousuga.github.io/RelDists/")
+    (synopsis "Estimation for some Reliability Distributions")
+    (description
+     "Parameters estimation and linear regression models for Reliability distributions
+families reviewed by Almalki & Nadarajah (2014) <doi:10.1016/j.ress.2013.11.010>
+using Generalized Additive Models for Location, Scale and Shape, aka GAMLSS by
+Rigby & Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
+    (license license:gpl3)))
 
 (define-public r-relations
   (package
@@ -30554,6 +30658,43 @@ The exported (meta)data will be processed and formatted into a stand alone R
 data package which can be installed and shared between researchers.  Several
 default reports are generated as vignettes in the resulting package.")
     (license license:gpl2)))
+
+(define-public r-redcapdm
+  (package
+    (name "r-redcapdm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "REDCapDM" version))
+              (sha256
+               (base32
+                "0xp1098klr10w54qml728ncf45arl5ggvlhwrzfkcj1gza53vf5p"))))
+    (properties `((upstream-name . "REDCapDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-redcapr
+                             r-purrr
+                             r-magrittr
+                             r-janitor
+                             r-hmisc
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=REDCapDM")
+    (synopsis "'REDCap' Data Management")
+    (description
+     "Access and manage REDCap data.  REDCap (Research Electronic Data CAPture;
+<https://projectredcap.org>) is a web application for building and managing
+online surveys and databases developed at Vanderbilt University.  The API allows
+users to programmatic access data and project meta data (such as the data
+dictionary) from the web.  This package allows us to read REDCap data, exported
+or using an API connection, identify missing or extreme values, identify missing
+REDCap events in each observation, do a follow-up of the queries initially
+identified and it also facilitates the process of data management.")
+    (license license:expat)))
 
 (define-public r-redcapapi
   (package
@@ -39432,16 +39573,16 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "2.5.8")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbacon" version))
               (sha256
                (base32
-                "10i3kbk8wssh2v7ry37bswf1wxsvg5nxdw4ap58fxcn7wsblzjrk"))))
+                "0ajzl38x36lcb3r1ackk1z9vdvcgspgqj3varjm61pip13n333cd"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-intcal r-coda))
+    (propagated-inputs (list r-rintcal r-rcpp r-data-table r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rbacon")
     (synopsis "Age-Depth Modelling using Bayesian Statistics")

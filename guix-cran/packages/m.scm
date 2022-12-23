@@ -15896,13 +15896,13 @@ mlr3 is loaded.")
 (define-public r-mlr3cluster
   (package
     (name "r-mlr3cluster")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3cluster" version))
               (sha256
                (base32
-                "049gxl66frhi0nhy0nlcbw5f969j5disln2cdj6sqdhz9hqjrm54"))))
+                "1ghssx5dlbvxpc9dgm951nhnwn3a3hp1dbmhhnkrpsiy6cs2i7pl"))))
     (properties `((upstream-name . "mlr3cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -35377,13 +35377,13 @@ test suites.")
 (define-public r-markets
   (package
     (name "r-markets")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markets" version))
               (sha256
                (base32
-                "1q0c7w6mhmlm57835rmbkq3srkmw2iz8qc5qfk79xz6s0fcc2j0y"))))
+                "0v17vy5py8b7fxpj52qjmqzv7g8k5i602qcndfabys9pm8g5xcn5"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -36103,13 +36103,13 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.6.2")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapSpain" version))
               (sha256
                (base32
-                "03j1i5sxxhdvg0g16jwx0n1nnf925clx3cig8bn8l61ab6grlmwm"))))
+                "0hi0z6vs8ba7bgkvqyfihxj1mli1qyxb06f6aay9h9849laaapp5"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-giscor r-countrycode))

@@ -6146,13 +6146,13 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
 (define-public r-nlmevpc
   (package
     (name "r-nlmevpc")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmeVPC" version))
               (sha256
                (base32
-                "0jrbwai8q3qvr6zm5q8pn89gslh2kp2sddwkggcjisjcri3cny9f"))))
+                "0ymiif377c6rjplzvs3s4bgc62ymw2l3cigx8rh779blb0w90qf8"))))
     (properties `((upstream-name . "nlmeVPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -8029,13 +8029,13 @@ analysis in ggplot2'.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "4.5.0")
+    (version "4.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflfastR" version))
               (sha256
                (base32
-                "0q88csinbns5khcnls891j3a8npskjr47g0rcqk5bxrr51p9i5yg"))))
+                "0416bc4b40ydc842yg3y9safbrwgqlc431qxdzrh8zp4vcmg3lac"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -9795,13 +9795,13 @@ NetMHCIIpan from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.6-0")
+    (version "2.7-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmeta" version))
               (sha256
                (base32
-                "1xihabkyv5hljyklmsi2h2w63yngibkbfv595r9nfgyp4b9pgslp"))))
+                "08gmg94jlq35w7wygqvgqxjgbfd51af6f5xhj0y07g9ip8xwk182"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))

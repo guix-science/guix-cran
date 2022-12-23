@@ -3441,13 +3441,13 @@ L1-regularization.")
 (define-public r-irboost
   (package
     (name "r-irboost")
-    (version "0.1-1.1")
+    (version "0.1-1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "irboost" version))
               (sha256
                (base32
-                "03rgcmaahq1mhv15lid41n39wiqn4lrnc4q0rq25q7xg328vc9d5"))))
+                "179l9693b2x1nxmj60gml4rsqa6kwvfhpf43gwwgwm12r918hjcc"))))
     (properties `((upstream-name . "irboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-mpath))
@@ -3457,12 +3457,12 @@ L1-regularization.")
      "Fit a predictive model with the iteratively reweighted boosting (IRBoost) that
 minimizes the robust loss functions in the CC-family (concave-convex).  The
 convex optimization is conducted by functional descent boosting algorithm in the
-R package xgboost.  The IRBoost reduces the weight of the observation that leads
-to a large loss; it also provides weights to help identify outliers.
+R package xgboost'.  The IRBoost reduces the weight of the observation that
+leads to a large loss; it also provides weights to help identify outliers.
 Applications include the robust generalized linear models and extensions, where
 the mean is related to the predictors by boosting, and robust accelerated
-failure time models.  The package supersedes the R package ccboost.  Wang (2021)
-<arXiv:2101.07718>.")
+failure time models.  The package supersedes the R package ccboost'.  Wang
+(2021) <arXiv:2101.07718>.")
     (license license:gpl3+)))
 
 (define-public r-irafnet
@@ -14863,6 +14863,42 @@ implemented in this package.")
 B-spline function with a given set of knots and order and set of de Boor points
 (coefficients), or the integral of a B-spline function.")
     (license license:gpl2+)))
+
+(define-public r-ibrtools
+  (package
+    (name "r-ibrtools")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IBRtools" version))
+              (sha256
+               (base32
+                "19i0dh8gnw8fkd4khaggljfmr6rn1r82vz5i9zvjxarqh0pfcqv7"))))
+    (properties `((upstream-name . "IBRtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-gtools
+                             r-fmsb
+                             r-dplyr
+                             r-data-table
+                             r-binhf))
+    (home-page "https://cran.r-project.org/package=IBRtools")
+    (synopsis
+     "Integrating Biomarker-Based Assessments and Radarchart Creation")
+    (description
+     "Several functions to calculate two important indexes (IBR (Integrated Biomarker
+Response) and IBRv2 (Integrated Biological Response version 2)), it also
+calculates the standardized values for enzyme activity for each index, and it
+has a graphing function to perform radarplots that make great data visualization
+for this type of data.  Beliaeff, B., & Burgeot, T. (2002).
+<https://pubmed.ncbi.nlm.nih.gov/12069320/>.  Sanchez, W., Burgeot, T., &
+Porcher, J.-M. (2013).<doi:10.1007/s11356-012-1359-1>.  Devin, S., Burgeot, T.,
+GiambÃ©rini, L., Minguez, L., & Pain-Devin, S. (2014).
+<doi:10.1007/s11356-013-2169-9>.  Minato N. (2022).
+<https://minato.sip21c.org/msb/>.")
+    (license license:gpl3)))
 
 (define-public r-ibrokers
   (package
