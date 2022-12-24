@@ -6488,13 +6488,13 @@ and standard data types.")
 (define-public r-onmarg
   (package
     (name "r-onmarg")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onmaRg" version))
               (sha256
                (base32
-                "1gvxnw53r5yan5dsp379psz3mnxpnc0wqmwmb2s5qf8ldq688zi1"))))
+                "0pdzbfkli44cm83q3zfgnd6n9inkgk50nr7jrlwg4zmi3r0f8pdj"))))
     (properties `((upstream-name . "onmaRg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sf r-readxl r-httr r-dplyr))
@@ -9366,13 +9366,13 @@ model-based clustering using methods described in Clark and McNicholas (2022)
 (define-public r-ockc
   (package
     (name "r-ockc")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ockc" version))
               (sha256
                (base32
-                "0chzrs3ipa2518r4d35z4fxffgq12p1mwj0hzkxw19gdgq6aa8s7"))))
+                "1iqv9vjdcv96a8k5ccrh6r3jpjq39g4g0qjhb4hzvfv17p28rpcb"))))
     (properties `((upstream-name . "ockc")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeltools r-flexclust))

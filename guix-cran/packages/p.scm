@@ -5908,13 +5908,13 @@ and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "0.9.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "0h77vgdiakgl9n381vsmi5njsv9yqig1nyhka466dsn7i9nx4vmz"))))
+                "07cxgz0446d5vamwc7km7csz25c3h152i0jlfyxldkjbp1gngxac"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -5922,6 +5922,7 @@ and photometry in its own right.")
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
+                             r-lifecycle
                              r-abind))
     (home-page "https://profoc.berrisch.biz/")
     (synopsis "Probabilistic Forecast Combination Using CRPS Learning")
@@ -9781,6 +9782,47 @@ antimalarials in sub-Saharan Africa\", 2014.  Paper submitted.")
      "Tools for exploring projection pursuit classification tree using various
 projection pursuit indexes.")
     (license license:gpl2+)))
+
+(define-public r-pptreeregviz
+  (package
+    (name "r-pptreeregviz")
+    (version "2.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PPtreeregViz" version))
+              (sha256
+               (base32
+                "0yg67fg4rjvpwp1xvznsbv635wmf6jvhp38irffccx915qvj7r51"))))
+    (properties `((upstream-name . "PPtreeregViz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-shapr
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pptreeviz
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-dalex))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sunsmiling/PPtreeregViz")
+    (synopsis "Projection Pursuit Regression Tree Visualization")
+    (description
+     "It was developed as a tool for exploring PPTreereg (Projection Pursuit TREE of
+REGression).  It uses various projection pursuit indexes and XAI (eXplainable
+Artificial Intelligence) methods to help understand the model by finding
+connections between the input variables and prediction values of the model.  The
+KernelSHAP (Aas, Jullum and LÃ¸land (2019) <arXiv:1903.10464>) algorithm was
+modified to fit âPPTreeregâ, and some codes were modified from the shapr
+package (Sellereite, Nikolai, and Martin Jullum (2020)
+<doi:10.21105/joss.02027>).  The implemented methods help to explore the model
+at the single instance level as well as at the whole dataset level.  Users can
+compare with other machine learning models by applying it to the DALEX package
+of R'.")
+    (license license:gpl3)))
 
 (define-public r-pptcirc
   (package

@@ -702,13 +702,13 @@ comids, etc.")
 (define-public r-gwasrapidd
   (package
     (name "r-gwasrapidd")
-    (version "0.99.13")
+    (version "0.99.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gwasrapidd" version))
               (sha256
                (base32
-                "0sgxvbb5zqqjygxlqcfksdrlv584lw1q00nq5kg123dc433q9jhx"))))
+                "07i71z44gkvwcx2dcbccz0sf68161drrhhd86jvq30nv20wxhmhx"))))
     (properties `((upstream-name . "gwasrapidd")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -3860,13 +3860,13 @@ GRMs, with twin-research-based SEM techniques, St Pourcain et al. (2017)
 (define-public r-grizbayr
   (package
     (name "r-grizbayr")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grizbayr" version))
               (sha256
                (base32
-                "0jg319b15b54i358rndg3kj4zimr3jqgv9yimmyx5c2v0qh4s4z6"))))
+                "1gimywjhgpc5xsxq0s0l4bfval4rqki36c3pa1kw5yq6xazy3iwx"))))
     (properties `((upstream-name . "grizbayr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3885,7 +3885,7 @@ the baseline for various marketing objectives.  References: Fink, Daniel (1997)
 \"A Compendium of Conjugate Priors\"
 <https://www.johndcook.com/CompendiumOfConjugatePriors.pdf>.  Stucchio, Chris
 (2015) \"Bayesian A/B Testing at VWO\"
-<https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf>.")
+<https://vwo.com/downloads/VWO_SmartStats_technical_whitepaper.pdf>.")
     (license license:expat)))
 
 (define-public r-gripp
@@ -8261,6 +8261,40 @@ directed acyclic graph (DAG) for the organisms Rat and Mouse.  The methods are
 explicitly discussed in the following article : Manjang et al (2020)
 <doi:10.1038/s41598-020-73326-3>.")
     (license license:gpl2)))
+
+(define-public r-gompertztrunc
+  (package
+    (name "r-gompertztrunc")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gompertztrunc" version))
+              (sha256
+               (base32
+                "1af0fz501lzhr4gn435c5379zd38krr7sxgv3kdv2ip7q35b1y2x"))))
+    (properties `((upstream-name . "gompertztrunc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-modelr
+                             r-magrittr
+                             r-ggsci
+                             r-ggplot2
+                             r-flexsurv
+                             r-dplyr
+                             r-data-table
+                             r-cowplot
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://caseybreen.github.io/gompertztrunc/")
+    (synopsis
+     "Conducting Maximum Likelihood Estimation with Truncated Mortality Data")
+    (description
+     "Estimates hazard ratios and mortality differentials for doubly-truncated data
+without population denominators.")
+    (license license:gpl3+)))
 
 (define-public r-gomogomonomi
   (package
@@ -23254,13 +23288,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GE" version))
               (sha256
                (base32
-                "0fl06kdaxq39xhjb0mm19vq1kkdvl2ab7c2f08sqf2vnlxn8irrz"))))
+                "14qb40hv7zidgklm7phi0983v35szdlnshw3giszfhp0b50v41s9"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -25086,13 +25120,13 @@ of triggers, so that reactive contexts can be invalidated with more control.")
 (define-public r-garcom
   (package
     (name "r-garcom")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GARCOM" version))
               (sha256
                (base32
-                "15lnnyw6cxldc799ls0jn2lwmrwfxkj41gkdjx09xmk2ddqahr8k"))))
+                "0fz8i4zidw47p6zpb83988k6rwb12scv90n1lvy2jb1fq29zp63q"))))
     (properties `((upstream-name . "GARCOM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr r-data-table))

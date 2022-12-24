@@ -2150,13 +2150,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "1.1.5")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "htsr" version))
               (sha256
                (base32
-                "126nxqllsinky22zb8s9rwlms4daw664v9s8jqcffflab2v2xr7j"))))
+                "031i8dqa74f6rilv7byhpi6qgqidbxg3i2inciai9cyrnr6gg7mk"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

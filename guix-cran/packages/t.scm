@@ -19768,13 +19768,13 @@ et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDApplied" version))
               (sha256
                (base32
-                "07vw667v5cnh6dxsggxb6028yl2xlxbqw0wr90whd45q61cjmfkv"))))
+                "11riwk0jg3lcac9a4653kdrkbbsfmmmh3mw1sp332ybdmcdpfgs2"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist
@@ -19794,13 +19794,13 @@ with data, statistical and machine learning practitioners so that more analyses
 may benefit from the power of topological data analysis.  The main tool of
 topological data analysis is persistent homology, which computes a shape
 descriptor of a dataset, called a persistence diagram.  There are five goals of
-this package: (1) convert persistence diagrams computed using the two main R
-packages for topological data analysis into a data frame, (2) implement fast
+this package: (1) deliver a fast implementation of persistent homology via a
+python interface, (2) convert persistence diagrams computed using the two main R
+packages for topological data analysis into a data frame, (3) implement fast
 versions of both distance and kernel calculations for pairs of persistence
-diagrams, (3) provide methods for machine learning and inference for persistence
-diagrams which scale well, (4) deliver a fast implementation of persistent
-homology via a python interface, and (5) contribute tools for the interpretation
-of persistence diagrams.")
+diagrams, (4) contribute tools for the interpretation of persistence diagrams,
+and (5) provide parallelized methods for machine learning and inference for
+persistence diagrams.")
     (license license:gpl3)))
 
 (define-public r-tdakit

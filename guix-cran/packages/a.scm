@@ -6392,13 +6392,13 @@ GitHub API, git2r packages and httr package.")
 (define-public r-archiveretriever
   (package
     (name "r-archiveretriever")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archiveRetriever" version))
               (sha256
                (base32
-                "11n79h953926pynyd2spbjgx7fgsp82sjhalqnlkamv9zsx6pnwg"))))
+                "0y01am255i682iaj55aiza6arlb0whqhamd09nqjrnwy4hmkbidq"))))
     (properties `((upstream-name . "archiveRetriever")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8263,13 +8263,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apache.sedona" version))
               (sha256
                (base32
-                "0d9l0n0qnjx42ia53s9fss856iz9caxaa876ccbcaxavh7l7km56"))))
+                "0g3rbz8mrnnr66vi6a97ynan3ck9q9mr6lk3d77qmdwa0na0sskm"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-dplyr r-dbplyr))
@@ -15895,13 +15895,13 @@ admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "1qylcl7s4sh91h18qpj6s9l61pc1c8iy1nmp7qgl1rcb6xhkn49x"))))
+                "0nlmb481cppw9k2p2yzahp53fvbv92bn28w4a5fmlz1findx2ba1"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

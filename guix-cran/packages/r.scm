@@ -9565,16 +9565,17 @@ analysis sessions with simple R commands.")
 (define-public r-rplum
   (package
     (name "r-rplum")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rplum" version))
               (sha256
                (base32
-                "119gs1g45gl985nrvps438z4zhzwqqv6yvqzddvpz8zhsbfzgpa7"))))
+                "1rqyv367hy8b66dnqk0v9hd1bib0mbf1wvw7fskccs5l7ldbkyki"))))
     (properties `((upstream-name . "rplum")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-rbacon r-coda))
+    (propagated-inputs (list r-rintcal r-rbacon))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rplum")
     (synopsis "Bayesian Age-Depth Modelling of Cores Dated by Pb-210")
     (description
@@ -11685,17 +11686,17 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.6")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolog" version))
               (sha256
                (base32
-                "1j7pw9f0g2c6fvv8f7fsddfrmhkrxw8xa4k3byfqb2vdbygqndb1"))))
+                "1789s3fhlqhavjwjmzj7n8cq11plkwrmps8pqsmxgwajzp6xzc2w"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
-    (propagated-inputs (list r-rswipl r-rcpp))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mgondan/rolog")
     (synopsis "Query 'SWI'-'Prolog' from R")
@@ -21318,6 +21319,37 @@ points return lists of information.  iDigBio is a US project focused on
 digitizing and serving museum specimen collections on the web.  See
 <https://www.idigbio.org> for information on iDigBio.")
     (license license:expat)))
+
+(define-public r-ridgetorus
+  (package
+    (name "r-ridgetorus")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ridgetorus" version))
+              (sha256
+               (base32
+                "031ls3q41jacawnmx1q180gwiyfwnnsknhzsnwr6yknlnwgfd7w0"))))
+    (properties `((upstream-name . "ridgetorus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sphunif
+                             r-sdetorus
+                             r-rootsolve
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/egarpor/ridgetorus")
+    (synopsis "PCA on the Torus via Density Ridges")
+    (description
+     "Implementation of a Principal Component Analysis (PCA) in the torus via density
+ridge estimation.  The main function, ridge_pca(), obtains the relevant density
+ridge for bivariate sine von Mises and bivariate wrapped Cauchy distribution
+models and provides the associated scores and variance decomposition.  Auxiliary
+functions for evaluating, fitting, and sampling these models are also provided.
+The package provides replicability to GarcÃ­a-PortuguÃ©s and Prieto-Tirado
+(2022) <arXiv:2212.10856>.")
+    (license license:gpl3)))
 
 (define-public r-ridge
   (package

@@ -15417,13 +15417,13 @@ computational feasibility.")
 (define-public r-betabit
   (package
     (name "r-betabit")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BetaBit" version))
               (sha256
                (base32
-                "06xrsdjmsn6rmd0kywqs4mwikfdph49fqkxk8r8jsdpq4w75fdli"))))
+                "1c7hrv21pllcv766hlyc47ivsip0vhi2ld6mj8r42icssgw3jsgn"))))
     (properties `((upstream-name . "BetaBit")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))

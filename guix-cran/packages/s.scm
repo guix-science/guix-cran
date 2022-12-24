@@ -12551,6 +12551,32 @@ properties of the estimators (covariance matrix, confidence intervals) are also
 provided.")
     (license license:gpl2+)))
 
+(define-public r-stabilo
+  (package
+    (name "r-stabilo")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stabilo" version))
+              (sha256
+               (base32
+                "1fkfp3jhy5r73lz9lsbw3wwcqprjrqad36aq4bg4mk3wls49zprh"))))
+    (properties `((upstream-name . "stabilo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-ggplot2))
+    (home-page "https://cran.r-project.org/package=stabilo")
+    (synopsis "Stabilometric Signal Quantification")
+    (description
+     "This package provides functions for stabilometric signal quantification.  The
+input is a data frame containing the x, y coordinates of the center-of-pressure
+displacement.  Jose Magalhaes de Oliveira (2017) <doi:10.3758/s13428-016-0706-4>
+\"Statokinesigram normalization method\"; T E Prieto, J B Myklebust, R G Hoffmann,
+E G Lovett, B M Myklebust (1996) <doi:10.1109/10.532130> \"Measures of postural
+steadiness: Differences between healthy young and elderly adults\"; L F Oliveira
+et al (1996) <doi:10.1088/0967-3334/17/4/008> \"Calculation of area of
+stabilometric signals using principal component analisys\".")
+    (license license:gpl3)))
+
 (define-public r-stabilizedregression
   (package
     (name "r-stabilizedregression")
@@ -20547,13 +20573,13 @@ the weights with zeros.")
 (define-public r-spatialkde
   (package
     (name "r-spatialkde")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialKDE" version))
               (sha256
                (base32
-                "0qnyriiy1401darnmjdcpsyp76ib822djz8bsgv4xnx9armhkh6a"))))
+                "1k5rjn3523ivqzhcsw84s1ksj3grwdkl7a7dxcfaqsw67qlfh6sv"))))
     (properties `((upstream-name . "SpatialKDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -29141,13 +29167,13 @@ supported for continuous scores only.")
 (define-public r-skimr
   (package
     (name "r-skimr")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skimr" version))
               (sha256
                (base32
-                "1xfma7h488sjhqz3mj1zz5xlm075arzp85rny24rckvn7nj6avkg"))))
+                "11w32vfwm6pz4cvmm60na6pjbyjvw2xq489ij5xqzx0n3pma7wq6"))))
     (properties `((upstream-name . "skimr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -53992,13 +54018,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-32")
+    (version "3.1-33")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "12pkl5jdikbha1n00k23k88igpm9csfc9y2xqvfy33s8i8i0wbnn"))))
+                "171vjmc9l2q3ci3g9s93gix4rbs6a96h2kawcdvs04k2zy1n549i"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

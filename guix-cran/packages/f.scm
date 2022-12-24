@@ -14560,6 +14560,26 @@ equivalents with linear computational complexity.  Markussen (2013)
 <doi:10.3150/11-BEJ389>.")
     (license license:gpl2)))
 
+(define-public r-fdakma
+  (package
+    (name "r-fdakma")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fdakma" version))
+              (sha256
+               (base32
+                "170vjw0f45f5x4r5fq37k8mmfn8z878qfyfyw4ix1gfxsfl27j1h"))))
+    (properties `((upstream-name . "fdakma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fdacluster r-cli))
+    (home-page "https://github.com/astamm/fdakma")
+    (synopsis "Functional Data Analysis: K-Mean Alignment")
+    (description
+     "It performs simultaneously clustering and alignment of a multidimensional or
+unidimensional functional dataset by means of k-mean alignment.")
+    (license license:gpl3+)))
+
 (define-public r-fdadensity
   (package
     (name "r-fdadensity")

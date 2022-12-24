@@ -17402,13 +17402,13 @@ number needed to treat (Porta (2014),
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.3.1")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mizer" version))
               (sha256
                (base32
-                "1r14mpwb96xhibf7j3735q67xl17pkjx9pb2m1j4l8rjjpdxl3l0"))))
+                "0y8lvrvk6pb28zr5cxnjw5pm2bgn59j6skcchsvdhnpmhbw32k71"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -32993,6 +32993,27 @@ implements methods developed by Lee, Wolberg and Shin (1997;
 <doi:10.1109/2945.620490>).")
     (license license:gpl2+)))
 
+(define-public r-mb
+  (package
+    (name "r-mb")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MB" version))
+              (sha256
+               (base32
+                "1p8v3hvvf69bn89l233l0d22zgxaay1xr9izz91asda4q5di9z5r"))))
+    (properties `((upstream-name . "MB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MB")
+    (synopsis "The Use of Marginal Distributions in Conditional Forecasting")
+    (description
+     "This package provides a new way to predict time series using the marginal
+distribution table in the absence of the significance of traditional models.")
+    (license license:gpl3)))
+
 (define-public r-mazing
   (package
     (name "r-mazing")
@@ -34163,13 +34184,13 @@ to R.matlab', which creates a MATLAB server.")
 (define-public r-matlab2r
   (package
     (name "r-matlab2r")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matlab2r" version))
               (sha256
                (base32
-                "1g99wv3ngfbc7c8lnx0pwzf4n7zmx2zb9nv50byz0avax99y4dwj"))))
+                "0yi7x34z3ssvbg8mq6swcsg2jvdb02pa05k50if7dzi36r2jzfwf"))))
     (properties `((upstream-name . "matlab2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-styler))

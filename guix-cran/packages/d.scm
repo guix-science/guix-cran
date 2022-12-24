@@ -1001,6 +1001,43 @@ hierarchies, which describe dominance relationships and their dynamics in a
 single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (license license:gpl2)))
 
+(define-public r-dynamite
+  (package
+    (name "r-dynamite")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dynamite" version))
+              (sha256
+               (base32
+                "14l0djjbgmagi2ra5h6wr3ymzv5xpnkf2r8ryxl8k544s9p65412"))))
+    (properties `((upstream-name . "dynamite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rstan
+                             r-rlang
+                             r-posterior
+                             r-mass
+                             r-loo
+                             r-glue
+                             r-ggplot2
+                             r-data-table
+                             r-cli
+                             r-checkmate
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/dynamite/")
+    (synopsis
+     "Bayesian Modeling and Causal Inference for Multivariate Longitudinal Data")
+    (description
+     "Easy-to-use and efficient interface for Bayesian inference of complex panel
+(time series) data using dynamic multivariate panel models by Helske and Tikka
+(2022) <doi:10.31235/osf.io/mdwu5>.  The package supports joint modeling of
+multiple measurements per individual, time-varying and time-invariant effects,
+and a wide range of discrete and continuous distributions.  Estimation of these
+dynamic multivariate panel models is carried out via Stan'.")
+    (license license:gpl3+)))
+
 (define-public r-dynamichazard
   (package
     (name "r-dynamichazard")
@@ -8515,13 +8552,13 @@ notification messages and to avoid redundancy.")
 (define-public r-diyar
   (package
     (name "r-diyar")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diyar" version))
               (sha256
                (base32
-                "1cv6bmv0866yg6hwmkvlcqd1bb2w1hcvyy455axq73rpb91m4s7s"))))
+                "1c7nq3z3p282a75mgv8w2y4dyhbny26nazs0dmnj233l4mf507pz"))))
     (properties `((upstream-name . "diyar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))
@@ -19548,13 +19585,13 @@ the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
 (define-public r-dcurves
   (package
     (name "r-dcurves")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcurves" version))
               (sha256
                (base32
-                "0aw297hgvy25hs7cajm3xbh1q1gwk55491cs0d0gxdca58vr08sl"))))
+                "1hlpii7ba19g4gg3cj071hy3mhp80rya079118xmrcxzhn68102c"))))
     (properties `((upstream-name . "dcurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
