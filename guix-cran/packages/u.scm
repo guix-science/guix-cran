@@ -41,17 +41,27 @@
 (define-public r-uxr
   (package
     (name "r-uxr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uxr" version))
               (sha256
                (base32
-                "0iasxwxfk52311mb3gikk3j2cs21wssg9yv06bv15dl7zm9sh14i"))))
+                "0zq89xjbmbc4pmzb3w8frnrqafpxbj2s8lhgj7kvmf6k0yqvpyd3"))))
     (properties `((upstream-name . "uxr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-dplyr))
-    (home-page "https://cran.r-project.org/package=uxr")
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-huxtable
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://joe-chelladurai.github.io/uxr/")
     (synopsis "User Experience Research")
     (description
      "This package provides convenience functions for user experience research with an

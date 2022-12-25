@@ -13595,13 +13595,13 @@ directly to the client.")
 (define-public r-ssgraph
   (package
     (name "r-ssgraph")
-    (version "1.14")
+    (version "1.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssgraph" version))
               (sha256
                (base32
-                "06cqa9q311jy4iggwh7vksxxkzy2lvrppqx2apc7gwmrslw1qzgl"))))
+                "1ya5pbdjsi34bqv8r89jc7pr7p0smq7bpwfllvzjrviq08r935nd"))))
     (properties `((upstream-name . "ssgraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-bdgraph))
@@ -19951,13 +19951,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.30.0.1")
+    (version "0.30.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatPomp" version))
               (sha256
                (base32
-                "1aswvp49vl62pfr6gxb7ji2bqzkv3bv8mi9iyz4xl6sz0rj2xwzv"))))
+                "10l22mqm425f2p1hlfx2rgxq1szn6i19dsn6jzsgq8azrslvwr88"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -37851,23 +37851,24 @@ from and write to relational databases.")
 (define-public r-shiny-react
   (package
     (name "r-shiny-react")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shiny.react" version))
               (sha256
                (base32
-                "19k1rvq47s56cipxqbalgzmhwdxw3ic5bd9qqnvsw75ynbhpa959"))))
+                "0s4v2k0x04qcpjsb44c3rhgkzh0004r4hga3dkghcpzkgz6pfx2h"))))
     (properties `((upstream-name . "shiny.react")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-rlang
+                             r-purrr
                              r-logger
                              r-jsonlite
                              r-htmltools
                              r-glue))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=shiny.react")
+    (home-page "https://appsilon.github.io/shiny.react/")
     (synopsis "Tools for Using React in Shiny")
     (description
      "This package provides a toolbox for defining React component wrappers which can
@@ -47074,13 +47075,13 @@ sequencing) data <https://github.com/fumi-github/scPloidy>.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scpi" version))
               (sha256
                (base32
-                "1msni5mfz8gkf9ff7c06w99p86l85v7in2kh73vnfzykw561x944"))))
+                "178c70zwg11qdfan1pj19c9ymfkk422b1g6z4n8yhb0ksrhfpnz8"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -47099,14 +47100,13 @@ sequencing) data <https://github.com/fumi-github/scPloidy>.")
                              r-ecosolver
                              r-dplyr
                              r-dosnow
-                             r-dorng
                              r-cvxr
                              r-abind))
-    (home-page "https://cran.r-project.org/package=scpi")
+    (home-page "https://nppackages.github.io/scpi/")
     (synopsis
      "Prediction Intervals for Synthetic Control Methods with Multiple Treated Units and Staggered Adoption")
     (description
-     "Implementation of estimation and inference procedures for Synthetic Control
+     "Implementation of prediction and inference procedures for Synthetic Control
 methods using least square, lasso, ridge, or simplex-type constraints.
 Uncertainty is quantified with prediction intervals as developed in Cattaneo,
 Feng, and Titiunik (2021)

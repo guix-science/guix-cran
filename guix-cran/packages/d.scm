@@ -12735,13 +12735,13 @@ representing real or categorical variables at original and multiple resolutions.
 (define-public r-diffeqr
   (package
     (name "r-diffeqr")
-    (version "1.1.1")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diffeqr" version))
               (sha256
                (base32
-                "1wkbb3nm0vjjk1pbfsbr167s038gqsb5mcpzj05wkk57b649nrhk"))))
+                "0b8aq1chpvfzxmlfhgr9fav1wmhw03k5msnzbk9aq46064q9ybdl"))))
     (properties `((upstream-name . "diffeqr")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -13574,13 +13574,13 @@ dice.")
 (define-public r-dibble
   (package
     (name "r-dibble")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dibble" version))
               (sha256
                (base32
-                "14gzr7wpfv10pkk794bnvainf8z01s0nkaz9q6by8jllbpl49pm3"))))
+                "02sf7d50a8w14xjwzdc5fq2xprlzl03yc4xs8qr4p8ycwvmlwwb1"))))
     (properties `((upstream-name . "dibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
