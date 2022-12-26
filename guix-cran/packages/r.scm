@@ -4787,34 +4787,6 @@ numbers from different sources.")
 <https://developers.strava.com/>.")
     (license license:cc0)))
 
-(define-public r-rstoxdata
-  (package
-    (name "r-rstoxdata")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RstoxData" version))
-              (sha256
-               (base32
-                "0xfznv0nl7xymlxbd7g0lbxqw1zcyc9mm4mx0nwpw896vz7dvyvw"))))
-    (properties `((upstream-name . "RstoxData")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xslt
-                             r-xml2
-                             r-units
-                             r-stringi
-                             r-rcpp
-                             r-data-table))
-    (home-page "https://github.com/StoXProject/RstoxData")
-    (synopsis "Tools to Read and Manipulate Fisheries Data")
-    (description
-     "Set of tools to read and manipulate various data formats for fisheries.  Mainly
-catered towards scientific trawl survey sampling ('biotic') data, acoustic trawl
-data, and commercial fishing catch ('landings') data.  Among the supported data
-formats are the data products from the Norwegian Institute Marine Research
-('IMR') and the International Council for the Exploration of the Sea (ICES).")
-    (license license:lgpl3)))
-
 (define-public r-rstorm
   (package
     (name "r-rstorm")
