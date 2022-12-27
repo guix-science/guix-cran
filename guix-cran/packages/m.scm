@@ -34082,23 +34082,6 @@ multiplication type computes in parallel, then the package computation is also
 parallel.")
     (license license:gpl2+)))
 
-(define-public r-matmanlymix
-  (package
-    (name "r-matmanlymix")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MatManlyMix" version))
-              (sha256
-               (base32
-                "1d2vd5b9lirdybjclxh0nn4mghq64qjj4l8vnj95cni5pfa18a2c"))))
-    (properties `((upstream-name . "MatManlyMix")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=MatManlyMix")
-    (synopsis "Matrix Clustering with Gaussian and Manly Mixture Models")
-    (description "Matrix clustering with finite mixture models.")
-    (license license:gpl2+)))
-
 (define-public r-matman
   (package
     (name "r-matman")
@@ -37364,27 +37347,6 @@ calling hypervariable ChIP-seq signals across samples.  Refer to Tu et al.
 (2021) <doi:10.1101/gr.262675.120> and Chen et al. (2022)
 <doi:10.1186/s13059-022-02627-9> for associated statistical details.")
     (license license:gpl3)))
-
-(define-public r-manlymix
-  (package
-    (name "r-manlymix")
-    (version "0.1.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ManlyMix" version))
-              (sha256
-               (base32
-                "0zpcc74965n435d4fah41r9nz0kjyn46hkjl1s0kvlllqj6n69wg"))))
-    (properties `((upstream-name . "ManlyMix")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=ManlyMix")
-    (synopsis "Manly Mixture Modeling and Model-Based Clustering")
-    (description
-     "The utility of this package includes finite mixture modeling and model-based
-clustering through Manly mixture models by Zhu and Melnykov (2016)
-<DOI:10.1016/j.csda.2016.01.015>.  It also provides capabilities for forward and
-backward model selection procedures.")
-    (license license:gpl2+)))
 
 (define-public r-manipulate
   (package

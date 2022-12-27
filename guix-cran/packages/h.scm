@@ -7926,41 +7926,6 @@ Arabidopsis thaliana.")
 Schweinberger and Luna (2018) <doi:10.18637/jss.v085.i01>.")
     (license license:gpl3)))
 
-(define-public r-herer
-  (package
-    (name "r-herer")
-    (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hereR" version))
-              (sha256
-               (base32
-                "1p5qvhqmh64dc9kxzv0cxf8v65q3d30yn6znd69bnaf3qn020lxw"))))
-    (properties `((upstream-name . "hereR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-jsonlite
-                             r-flexpolyline
-                             r-data-table
-                             r-curl
-                             r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://munterfi.github.io/hereR/")
-    (synopsis "'sf'-Based Interface to the 'HERE' REST APIs")
-    (description
-     "Interface to the HERE REST APIs <https://developer.here.com/develop/rest-apis>:
-(1) geocode and autosuggest addresses or reverse geocode POIs using the Geocoder
-API; (2) route directions, travel distance or time matrices and isolines using
-the Routing', Matrix Routing and Isoline Routing APIs; (3) request real-time
-traffic flow and incident information from the Traffic API; (4) find request
-public transport connections and nearby stations from the Public Transit API;
-(5) request intermodal routes using the Intermodal Routing API; (6) get weather
-forecasts, reports on current weather conditions, astronomical information and
-alerts at a specific location from the Destination Weather API. Locations,
-routes and isolines are returned as sf objects.")
-    (license license:gpl3)))
-
 (define-public r-heplots
   (package
     (name "r-heplots")

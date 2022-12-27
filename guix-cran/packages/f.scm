@@ -8841,32 +8841,6 @@ predictives, goodness-of-fit measures, convergence diagnostics, and graphical
 representations are provided.")
     (license license:gpl2+)))
 
-(define-public r-flexpolyline
-  (package
-    (name "r-flexpolyline")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "flexpolyline" version))
-              (sha256
-               (base32
-                "1h4csrcx193372aw6di2wr0zzd71w1bdf0b9zqqwak1q3mdszgl6"))))
-    (properties `((upstream-name . "flexpolyline")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://munterfi.github.io/flexpolyline/")
-    (synopsis "Flexible Polyline Encoding")
-    (description
-     "Binding to the C++ implementation of the flexible polyline encoding by HERE
-<https://github.com/heremaps/flexible-polyline>.  The flexible polyline encoding
-is a lossy compressed representation of a list of coordinate pairs or coordinate
-triples.  The encoding is achieved by: (1) Reducing the decimal digits of each
-value; (2) encoding only the offset from the previous point; (3) using variable
-length for each coordinate delta; and (4) using 64 URL-safe characters to
-display the result.")
-    (license license:gpl3)))
-
 (define-public r-flexparamcurve
   (package
     (name "r-flexparamcurve")
