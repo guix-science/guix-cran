@@ -1823,28 +1823,6 @@ monthly interest rate, and term of loan.")
 Detecting Pleiotropy.")
     (license license:gpl2+)))
 
-(define-public r-cuml4r
-  (package
-    (name "r-cuml4r")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cuml4r" version))
-              (sha256
-               (base32
-                "0zwm8laprwhkjn2ji16f08952hri3bk1qvpj8yhwaqiv4cj2q43k"))))
-    (properties `((upstream-name . "cuml4r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zeallot r-rlang r-rcpp r-magrittr))
-    (home-page "https://cran.r-project.org/package=cuml4r")
-    (synopsis "R Interface for the RAPIDS cuML Suite of Libraries")
-    (description
-     "The purpose of cuml4r is to provide a simple and intuitive R interface for cuML
-(<https://github.com/rapidsai/cuml>).  CuML is a suite of GPU-accelerated
-machine learning libraries powered by CUDA
-(<https://en.wikipedia.org/wiki/CUDA>).")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
-
 (define-public r-cultevo
   (package
     (name "r-cultevo")
