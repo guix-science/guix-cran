@@ -4874,33 +4874,6 @@ Daedlow, Daniel (2015, doctoral dissertation: University of Rostock, Faculty of
 Agriculture and Environmental Sciences.)")
     (license license:gpl3)))
 
-(define-public r-prospectr
-  (package
-    (name "r-prospectr")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "prospectr" version))
-              (sha256
-               (base32
-                "1p53hcgcs2p09zhc2n7byjzrgvcgz6w7q00mlsn4kmnz7l4p7rrm"))))
-    (properties `((upstream-name . "prospectr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mathjaxr
-                             r-lifecycle
-                             r-iterators
-                             r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/l-ramirez-lopez/prospectr")
-    (synopsis
-     "Miscellaneous Functions for Processing and Sample Selection of Spectroscopic Data")
-    (description
-     "This package provides functions to preprocess spectroscopic data and conduct
-(representative) sample selection/calibration sampling.")
-    (license license:expat)))
-
 (define-public r-prosgpv
   (package
     (name "r-prosgpv")
@@ -19466,28 +19439,6 @@ initializing the centers of the classical k-means algorithm in order to obtain a
 better clustering solution.  For further details see Egidi, PappadÃ , Pauli and
 Torelli (2018b)<ISBN:9788891910233>.")
     (license license:gpl2)))
-
-(define-public r-piton
-  (package
-    (name "r-piton")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "piton" version))
-              (sha256
-               (base32
-                "1krf6zi238m275nxjlpyayv8y2drbgs2kg19dpkqm0lmlz5y5ar8"))))
-    (properties `((upstream-name . "piton")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/Ironholds/piton")
-    (synopsis "Parsing Expression Grammars in Rcpp")
-    (description
-     "This package provides a wrapper around the Parsing Expression Grammar Template
-Library', a C++11 library for generating Parsing Expression Grammars, that makes
-it accessible within Rcpp.  With this, developers can implement their own
-grammars and easily expose them in R packages.")
-    (license license:expat)))
 
 (define-public r-pitchrx
   (package

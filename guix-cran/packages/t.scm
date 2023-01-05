@@ -6056,33 +6056,6 @@ Methods for Statistical Learning in R\" <doi:10.1201/9781003089032>.")
     (description "This package provides ggplot2 geoms for drawing treemaps.")
     (license license:gpl3+)))
 
-(define-public r-treemap
-  (package
-    (name "r-treemap")
-    (version "2.4-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "treemap" version))
-              (sha256
-               (base32
-                "1fg8gygw38x7msn32barx2irvcv8flm6wqvipnbj1qkh9w89y3q4"))))
-    (properties `((upstream-name . "treemap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-rcolorbrewer
-                             r-igraph
-                             r-gridbase
-                             r-ggplot2
-                             r-data-table
-                             r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=treemap")
-    (synopsis "Treemap Visualization")
-    (description
-     "This package provides a treemap is a space-filling visualization of hierarchical
-structures.  This package offers great flexibility to draw treemaps.")
-    (license license:gpl3)))
-
 (define-public r-treeheatr
   (package
     (name "r-treeheatr")

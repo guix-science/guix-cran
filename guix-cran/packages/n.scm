@@ -13,6 +13,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages c)
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -5575,7 +5576,8 @@ global minimum.")
                 "1w788fs9zkcbg99csiynd6cw9p8na2g5sg85065d17l6wxmxk7va"))))
     (properties `((upstream-name . "nlrx")))
     (build-system r-build-system)
-    (inputs (list proj.4
+    (inputs (list udunits
+                  proj.4
                   pandoc
                   openssl
                   openjdk

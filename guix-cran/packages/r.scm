@@ -9270,34 +9270,6 @@ available.  The case r equals 1 is treated in separate functions that were used
 in Lafaye de Micheaux et al. (2014) <doi:10.1080/10543406.2013.860156>.")
     (license license:gpl3+)))
 
-(define-public r-rpostgres
-  (package
-    (name "r-rpostgres")
-    (version "1.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RPostgres" version))
-              (sha256
-               (base32
-                "1z6diaq4kwinl97d1v9cb96j8mrkj2s2v4ml1vykgy1jqi40dk69"))))
-    (properties `((upstream-name . "RPostgres")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-rcpp
-                             r-plogr
-                             r-lubridate
-                             r-hms
-                             r-dbi
-                             r-blob
-                             r-bit64))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://rpostgres.r-dbi.org")
-    (synopsis "Rcpp Interface to PostgreSQL")
-    (description
-     "Fully DBI-compliant Rcpp-backed interface to PostgreSQL
-<https://www.postgresql.org/>, an open-source relational database.")
-    (license license:gpl3)))
-
 (define-public r-rpostgis
   (package
     (name "r-rpostgis")

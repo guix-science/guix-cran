@@ -2531,25 +2531,6 @@ detailed description of the method and applications see Rizzi et al. (2015)
 <doi:10.1093/aje/kwv020>.")
     (license license:expat)))
 
-(define-public r-unglue
-  (package
-    (name "r-unglue")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "unglue" version))
-              (sha256
-               (base32
-                "0w8ld4xllx0lj1jz8i2sj92f8136hlwri1d8ldpg1ymxj7aw93vg"))))
-    (properties `((upstream-name . "unglue")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=unglue")
-    (synopsis "Extract Matched Substrings Using a Pattern")
-    (description
-     "Use syntax inspired by the package glue to extract matched substrings in a more
-intuitive and compact way than by using standard regular expressions.")
-    (license license:gpl3)))
-
 (define-public r-understandbpmn
   (package
     (name "r-understandbpmn")

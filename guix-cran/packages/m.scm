@@ -4336,37 +4336,6 @@ the analyses of the corresponding paper
 (<https://github.com/alexvolkmann/multifammPaper>).")
     (license license:gpl2+)))
 
-(define-public r-multidplyr
-  (package
-    (name "r-multidplyr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "multidplyr" version))
-              (sha256
-               (base32
-                "081x9n46dl6vpp5q6pilw3w5wpdi3r9kwi9n6h4k2p2iqg1s96lb"))))
-    (properties `((upstream-name . "multidplyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-r6
-                             r-qs
-                             r-magrittr
-                             r-dplyr
-                             r-crayon
-                             r-cli
-                             r-callr))
-    (native-inputs (list r-knitr))
-    (home-page "https://multidplyr.tidyverse.org")
-    (synopsis "Multi-Process 'dplyr' Backend")
-    (description
-     "Partition a data frame across multiple worker processes to provide simple
-multicore parallelism.")
-    (license license:expat)))
-
 (define-public r-multidimbio
   (package
     (name "r-multidimbio")
@@ -36777,26 +36746,6 @@ Highchart', also the package uses Stan for Bayesian analysis.")
 interactive maps, and Deck.gl (<https://deck.gl/>), a javascript library which
 uses WebGL for visualising large data sets.")
     (license license:gpl3)))
-
-(define-public r-mapdata
-  (package
-    (name "r-mapdata")
-    (version "2.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mapdata" version))
-              (sha256
-               (base32
-                "1m2r4c8f7fp900g3sdjbfxxnxjla86hn75jd8hi96ms188p0j8b0"))))
-    (properties `((upstream-name . "mapdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-maps))
-    (home-page "https://cran.r-project.org/package=mapdata")
-    (synopsis "Extra Map Databases")
-    (description
-     "Supplement to maps package, providing some larger and/or higher-resolution
-databases.  NOTE: this is a legacy package.  The world map is out-dated.")
-    (license license:gpl2)))
 
 (define-public r-mapchina
   (package
