@@ -1121,13 +1121,13 @@ Applications,â 2020, ISBN: 9780135285015).")
 (define-public r-tvm
   (package
     (name "r-tvm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvm" version))
               (sha256
                (base32
-                "1disznln4xgkr9q6sj978nadbwg43xv28fq3r3zyy6icg4x9h6gs"))))
+                "0isvsz7fgs8a74wxq9i3d3zah4nfa31rnv8xsqnqp93rbr947x6y"))))
     (properties `((upstream-name . "tvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reshape2 r-ggplot2))
@@ -9700,13 +9700,13 @@ their sources.")
 (define-public r-tokenizers-bpe
   (package
     (name "r-tokenizers-bpe")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tokenizers.bpe" version))
               (sha256
                (base32
-                "1pwgjrzdcsafpv9rlyly6fckcjiymz0xcjm9byavj069kc4c69mi"))))
+                "1d382pimyv4mdg2wsv5jzxgq3rhhxjrlv2kbqkqnbr2y5djz3xhv"))))
     (properties `((upstream-name . "tokenizers.bpe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -9716,7 +9716,7 @@ their sources.")
      "Unsupervised text tokenizer focused on computational efficiency.  Wraps the
 YouTokenToMe library <https://github.com/VKCOM/YouTokenToMe> which is an
 implementation of fast Byte Pair Encoding (BPE)
-<https://www.aclweb.org/anthology/P16-1162>.")
+<https://aclanthology.org/P16-1162/>.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-tokenbrowser
@@ -9868,6 +9868,30 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
      "Create interactive tables, calendars and charts with TOAST UI
 <https://ui.toast.com/> libraries to integrate in shiny applications or
 rmarkdown HTML documents.")
+    (license license:expat)))
+
+(define-public r-tnrs
+  (package
+    (name "r-tnrs")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TNRS" version))
+              (sha256
+               (base32
+                "11wbpj0yvdjx0x03mv79r82h2ipz7x0yxkagi8g9jn6iria3266g"))))
+    (properties `((upstream-name . "TNRS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TNRS")
+    (synopsis "Taxonomic Name Resolution Service")
+    (description
+     "This package provides access to the Taxonomic Name Resolution Service
+<https://github.com/ojalaquellueva/tnrsapi> through R. The user supplies plant
+taxonomic names and the package returns resolved taxonomic names along with
+information on decisions.  Optionally, the package can also be used to parse
+taxonomic names.")
     (license license:expat)))
 
 (define-public r-tnet
@@ -12213,13 +12237,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.17.0")
+    (version "0.17.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "0s7fs80x4alzl0z1ssxzcjm6ydy71qk4bpsrhqg8wi4kmxzfmqyr"))))
+                "1rjdz60jmzrj5y3igpbw4xy4vvk2kbxpnllp50j5jqadkw5spw3l"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -13587,13 +13611,13 @@ unpublished research.")
 (define-public r-tidyjson
   (package
     (name "r-tidyjson")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyjson" version))
               (sha256
                (base32
-                "1rx5ncp20j9mhcziyqb0vgfq9061qylgvfwz27dsyz58r8fygwnq"))))
+                "0znm590kpvkh8zl08saasnsi77x459640mqv0pq15gmsjnycldp6"))))
     (properties `((upstream-name . "tidyjson")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13828,6 +13852,30 @@ sheets retrieved from Gapminder data web tools.  It will therefore contribute to
 reduce the time used in data cleaning of Gapminder indicator data sheets as they
 are very messy.")
     (license license:gpl2)))
+
+(define-public r-tidyft
+  (package
+    (name "r-tidyft")
+    (version "0.5.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyft" version))
+              (sha256
+               (base32
+                "00qcsr2sx8fwyil384vgppx0q72qjrkj7h5nv4mdxdi8f9h6ph2r"))))
+    (properties `((upstream-name . "tidyft")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-fst r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hope-data-science/tidyft")
+    (synopsis "Fast and Memory Efficient Data Operations in Tidy Syntax")
+    (description
+     "Tidy syntax for data.table', using modification by reference whenever possible.
+This toolkit is designed for big data analysis in high-performance desktop or
+laptop computers.  The syntax of the package is similar or identical to
+tidyverse'.  It is user friendly, memory efficient and time saving.  For more
+information, check its ancestor package tidyfst'.")
+    (license license:expat)))
 
 (define-public r-tidyfst
   (package
@@ -15222,13 +15270,13 @@ al. (2016) <doi:10.1002/sim.6738>), normal (Pigeot et al. (2003)
 (define-public r-thredds
   (package
     (name "r-thredds")
-    (version "0.1-2")
+    (version "0.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thredds" version))
               (sha256
                (base32
-                "0428j1c1zfc42kydsbnvpznwprq62nwxh41i7pf4873g3canmjkx"))))
+                "08jlvi0z0rdqc46pgzpv84x0r8qxpvnh2w34g1hyprgcwh0b7537"))))
     (properties `((upstream-name . "thredds")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-r6 r-magrittr r-httr))
@@ -15236,8 +15284,8 @@ al. (2016) <doi:10.1002/sim.6738>), normal (Pigeot et al. (2003)
     (synopsis "Crawler for Navigating THREDDS Catalogs")
     (description
      "This package provides a crawler for programmatically navigating THREDDS Data
-Server (<https://www.unidata.ucar.edu/software/thredds/current/tds/TDS.html>)
-catalogs, and access dataset metadata and resources.")
+Server (<https://www.unidata.ucar.edu/software/tds/>) catalogs, and access
+dataset metadata and resources.")
     (license license:expat)))
 
 (define-public r-thorn
@@ -15896,13 +15944,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tgp
   (package
     (name "r-tgp")
-    (version "2.4-20")
+    (version "2.4-21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tgp" version))
               (sha256
                (base32
-                "00yw8l05b49qg79gydcv4f4snl92jm7fyy3i5y6vgxcj6jl101g9"))))
+                "12ifd7rm3wskhbpnhfvz92z3graxzryq0iy1jiqmdk6bvhxkiww8"))))
     (properties `((upstream-name . "tgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-maptree))
@@ -21085,13 +21133,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.14.1")
+    (version "0.14.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "targets" version))
               (sha256
                (base32
-                "1zf8dapdy1ds59282vy3b1s6q0ra6a8v1llp1g6xaijih4pcl3r8"))))
+                "0g3isshhhz1q2106gl7hwiwc2qbks6i7xbb01504m7kq8nfwxfg7"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21111,16 +21159,16 @@ implementation and the implementation available from IHME.")
                              r-base64url))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/targets/")
-    (synopsis "Dynamic Function-Oriented 'Make'-Like Declarative Workflows")
+    (synopsis "Dynamic Function-Oriented 'Make'-Like Declarative Pipelines")
     (description
-     "As a pipeline toolkit for Statistics and data science in R, the targets package
-brings together function-oriented programming and Make'-like declarative
-workflows.  It analyzes the dependency relationships among the tasks of a
-workflow, skips steps that are already up to date, runs the necessary
+     "This package provides a pipeline toolkit for Statistics and data science in R,
+the targets package brings function-oriented programming to Make'-like
+declarative pipelines.  targets orchestrates a pipeline as a graph of
+dependencies, skips steps that are already up to date, runs the necessary
 computation with optional parallel workers, abstracts files as R objects, and
-provides tangible evidence that the results match the underlying code and data.
-The methodology in this package borrows from GNU Make (2015,
-ISBN:978-9881443519) and drake (2018, <doi:10.21105/joss.00550>).")
+provides tangible evidence that the results are reproducible given the
+underlying code and data.  The methodology in this package borrows from GNU Make
+(2015, ISBN:978-9881443519) and drake (2018, <doi:10.21105/joss.00550>).")
     (license license:expat)))
 
 (define-public r-targeted
@@ -21192,13 +21240,13 @@ constructs beyond sentiment.")
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.7.3")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tarchetypes" version))
               (sha256
                (base32
-                "03v2w9jk9bryrlcmzpa1y72k0kp4v0fw8mc1w1gl1kggqbkd0936"))))
+                "1yg34m39qkyxd3q03z2dk7dvc31iv50795r5nxx180f97iiakf7s"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21207,6 +21255,8 @@ constructs beyond sentiment.")
                              r-tibble
                              r-targets
                              r-rlang
+                             r-future-callr
+                             r-future
                              r-furrr
                              r-fs
                              r-dplyr
@@ -21214,11 +21264,11 @@ constructs beyond sentiment.")
     (home-page "https://docs.ropensci.org/tarchetypes/")
     (synopsis "Archetypes for Targets")
     (description
-     "Function-oriented Make-like declarative workflows for Statistics and data
+     "Function-oriented Make-like declarative pipelines for Statistics and data
 science are supported in the targets R package.  As an extension to targets',
 the tarchetypes package provides convenient user-side functions to make targets
 easier to use.  By establishing reusable archetypes for common kinds of targets
-and pipelines, these functions help express complicated reproducible workflows
+and pipelines, these functions help express complicated reproducible pipelines
 concisely and compactly.  The methods in this package were influenced by the
 drake R package by Will Landau (2018) <doi:10.21105/joss.00550>.")
     (license license:expat)))
@@ -22527,13 +22577,13 @@ v1.2 - fixed \"missing \"no visible global function definition for ..\"")
 (define-public r-table1
   (package
     (name "r-table1")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "table1" version))
               (sha256
                (base32
-                "1cw85nj6w9fk66wjbyz08ya6g027cfj3brb0sx7ar0n7zyc8rhb4"))))
+                "1wr5cqc6a81b5b2fjvw4swb579q5llf63658l6srhxbxx0qba5l3"))))
     (properties `((upstream-name . "table1")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-knitr r-htmltools r-formula))

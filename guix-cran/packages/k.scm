@@ -3374,18 +3374,19 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "keyATM" version))
               (sha256
                (base32
-                "0p6miqzmfm79j6j2yvgw6mwi51ad41pg0dgqz7zn7picwpya3h2p"))))
+                "0zjdg5q38a1pw74id1hk9sxkk2k0gbwy1irvmg76i2q4x8cayd0w"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-scales
                              r-rlang
                              r-rcppprogress
                              r-rcppeigen
@@ -3714,13 +3715,13 @@ kernels, and tools for identifying appropriate bandwidths for these.")
 (define-public r-kernelknn
   (package
     (name "r-kernelknn")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KernelKnn" version))
               (sha256
                (base32
-                "07sjf3ambfih34gm2gkall4h60jy9am8dvakr71wk0lsabih3wqx"))))
+                "1b361qqkicbdwcmh7fj8rfqqj5yaf2ygmh4hwy5qxbpw8zkagccj"))))
     (properties `((upstream-name . "KernelKnn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

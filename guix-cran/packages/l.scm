@@ -2572,13 +2572,13 @@ bandwidth selection.")
 (define-public r-lpcm
   (package
     (name "r-lpcm")
-    (version "0.46-7")
+    (version "0.47-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LPCM" version))
               (sha256
                (base32
-                "1gdinsfn7y3fmv2zr1y8cvy0qwc9zwzf0q1xsnpbmcwljgxb6zdh"))))
+                "19ak8n52drjip0p9343g0vqgg2cv3yz2lc82basr84r3p3v6r3x3"))))
     (properties `((upstream-name . "LPCM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LPCM")
@@ -2586,7 +2586,8 @@ bandwidth selection.")
     (description
      "Fitting multivariate data patterns with local principal curves, including tools
 for data compression (projection) and measuring goodness-of-fit; with some
-additional functions for mean shift clustering.")
+additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
+(2005) <doi:10.1007/s11222-005-4073-8> and Einbeck (2011) <doi:10.13176/11.288>.")
     (license license:gpl2+)))
 
 (define-public r-lpcde
@@ -4420,13 +4421,13 @@ mass at k.")
 (define-public r-logcondens
   (package
     (name "r-logcondens")
-    (version "2.1.6")
+    (version "2.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logcondens" version))
               (sha256
                (base32
-                "0rd3wzmryfp5503pp35hz3yz1yww46n5c4z181jfa9cs1fhbsnvq"))))
+                "1y6b7acgxg7v6hc0lkx1mlzs2bzvv0pb6nbccxk3ybgy39bqgn0s"))))
     (properties `((upstream-name . "logcondens")))
     (build-system r-build-system)
     (propagated-inputs (list r-ks))
@@ -5918,16 +5919,17 @@ dependence structures.")
 (define-public r-lmmstar
   (package
     (name "r-lmmstar")
-    (version "0.7.6")
+    (version "0.8.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMMstar" version))
               (sha256
                (base32
-                "0h88xpasn5fcmkxqm9p7frnzjnjxwrdhlq673c6ck8hrzf75g6i2"))))
+                "12ncz9qqmxdyaa3c0jaz8kxwjfc0ybfigcwvssslgaajgigwbi2k"))))
     (properties `((upstream-name . "LMMstar")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
+                             r-pbapply
                              r-numderiv
                              r-nlme
                              r-multcomp
@@ -5943,13 +5945,13 @@ dependence structures.")
 repeated measurements for health science researchers\" taught by the section of
 Biostatistics of the University of Copenhagen.  It implements linear mixed
 models where the model for the variance-covariance of the residuals is specified
-via patterns (compound symmetry, unstructured, ...).  Statistical inference for
-mean, variance, and correlation parameters is performed based on the observed
-information and a Satterthwaite degrees of freedom.  Normalized residuals are
-provided to assess model misspecification.  Statistical inference can be
-performed for arbitrary linear or non-linear combination(s) of model
-coefficients.  Predictions can be computed conditional to covariates only or
-also to outcome values.")
+via patterns (compound symmetry, toeplitz, unstructured, ...).  Statistical
+inference for mean, variance, and correlation parameters is performed based on
+the observed information and a Satterthwaite approximation of the degrees of
+freedom.  Normalized residuals are provided to assess model misspecification.
+Statistical inference can be performed for arbitrary linear or non-linear
+combination(s) of model coefficients.  Predictions can be computed conditional
+to covariates only or also to outcome values.")
     (license license:gpl3)))
 
 (define-public r-lmmsolver
@@ -9568,16 +9570,16 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lgrExtra" version))
               (sha256
                (base32
-                "19f75x0hpqsvjjkwk7nzsclq6dn3pf7661rjicmxhbhlv123bn6s"))))
+                "19qg67mjq0n5zbrcfhjhxfwl1jlq11iblhczl3m22n2nplpi70q8"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lgr r-data-table))
+    (propagated-inputs (list r-r6 r-lgr r-data-table))
     (home-page "https://cran.r-project.org/package=lgrExtra")
     (synopsis "Extra Appenders for 'lgr'")
     (description
@@ -10292,13 +10294,13 @@ originals.")
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.4")
+    (version "4.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lessR" version))
               (sha256
                (base32
-                "1lcylsb70i7wyaqkwgwq8k62p265aa7azfq1a8n90lghjadckcck"))))
+                "18brxqcgfc32155xwhwy1maq90f4csmrvg347nvlg4livr6drax1"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

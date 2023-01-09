@@ -1506,13 +1506,13 @@ surfaces.")
 (define-public r-mvglmmrank
   (package
     (name "r-mvglmmrank")
-    (version "1.2-2")
+    (version "1.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvglmmRank" version))
               (sha256
                (base32
-                "00zxqby8syb959fqgw9i7b0yamgjwddq32jlin6qmnzys5bg1556"))))
+                "09mkjx3xrpnv681d07z91g60fq7bna6142b2hh9xvh5nxcqixdnf"))))
     (properties `((upstream-name . "mvglmmRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrix r-mass))
@@ -1521,7 +1521,13 @@ surfaces.")
      "Multivariate Generalized Linear Mixed Models for Ranking Sports Teams")
     (description
      "Maximum likelihood estimates are obtained via an EM algorithm with either a
-first-order or a fully exponential Laplace approximation.")
+first-order or a fully exponential Laplace approximation as documented by
+Broatch and Karl (2018) <doi:10.48550/arXiv.1710.05284>, Karl, Yang, and Lohr
+(2014) <doi:10.1016/j.csda.2013.11.019>, and by Karl (2012)
+<doi:10.1515/1559-0410.1471>.  Karl and Zimmerman
+<doi:10.1016/j.jspi.2020.06.004> use this package to illustrate how the home
+field effect estimator from a mixed model can be biased under nonrandom
+scheduling.")
     (license license:gpl2)))
 
 (define-public r-mvgb
@@ -4403,13 +4409,13 @@ grant 338891.")
 (define-public r-multicolor
   (package
     (name "r-multicolor")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multicolor" version))
               (sha256
                (base32
-                "19l564rfsq0l9ipw6p5m1zp0ada2szmk1nxcsll95z4v5z2da2rv"))))
+                "1b1i49l1qc0n7y2a6pf5hr7cjh2pny92zvxhmvb1hxw5r94aym2f"))))
     (properties `((upstream-name . "multicolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6726,13 +6732,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.6.0")
+    (version "3.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSEtool" version))
               (sha256
                (base32
-                "1hwh55fh9rab1hda6a2ks7r2bdwgy16wz4c6jrfa80ifkfki32hi"))))
+                "026pi8ygbh1mbmnwmw6p5zj27aadzhgmfswxwfpnp87l97pxjavd"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -8754,26 +8760,34 @@ for example, proportional hazards.  See Burke & MacKenzie (2016)
 (define-public r-mppr
   (package
     (name "r-mppr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mppR" version))
               (sha256
                (base32
-                "12fjb8q3yhhpsdb0wiv6bamw6a4igv2as9vqq6ac1gab454b9fxn"))))
+                "1w2jldamfb2vl0v2f5wz7gj1zgr3a0cxrmj27x9rkhpqjfrik4ly"))))
     (properties `((upstream-name . "mppR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-qtl r-igraph r-ggplot2))
+    (propagated-inputs (list r-qtl
+                             r-nlme
+                             r-matrix
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/vincentgarin/mppR")
     (synopsis "Multi-Parent Population QTL Analysis")
     (description
      "Analysis of experimental multi-parent populations to detect regions of the
-genome (called quantitative trait loci, QTLs) influencing phenotypic traits.
-The population must be composed of crosses between a set of at least three
-parents (e.g. factorial design, diallel', or nested association mapping).  The
-functions cover data processing, QTL detection, and results visualization.  The
-implemented methodology is described by Garin, Wimmer, Mezmouk, Malosetti and
-van Eeuwijk (2017) <doi:10.1007/s00122-017-2923-3>.")
+genome (called quantitative trait loci, QTLs) influencing phenotypic traits
+measured in unique and multiple environments.  The population must be composed
+of crosses between a set of at least three parents (e.g. factorial design,
+diallel', or nested association mapping).  The functions cover data processing,
+QTL detection, and results visualization.  The implemented methodology is
+described in Garin, Wimmer, Mezmouk, Malosetti and van Eeuwijk (2017)
+<doi:10.1007/s00122-017-2923-3> as well as in Garin, Malosetti and van Eeuwijk
+(2020) <doi: 10.1007/s00122-020-03621-0>.")
     (license license:gpl3)))
 
 (define-public r-mpower
@@ -9194,13 +9208,13 @@ several convenience functions to aid in data processing.")
 (define-public r-mpath
   (package
     (name "r-mpath")
-    (version "0.4-2.22")
+    (version "0.4-2.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mpath" version))
               (sha256
                (base32
-                "0i4vyli3sr1lzrj0ayzsq55cpsv0xrwn216lgzmfyjr5n8r9aw7r"))))
+                "16gd2z40551cn4fg0ljd09q64a4darsh72f8nw6dwvc2sxfj220n"))))
     (properties `((upstream-name . "mpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightsvm
@@ -10756,13 +10770,13 @@ to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C. (2016)
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-16")
+    (version "1.9-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "monomvn" version))
               (sha256
                (base32
-                "1pldjm4hd3a62x1b1g0b7mpb46hf9zr113cq8b9cam0j40cdz17i"))))
+                "0hzwcmdg0j2jrp5a19mixih4ng4xa8p315g77adardp6k6z2wcjk"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -11016,13 +11030,13 @@ database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.7.0")
+    (version "2.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mongolite" version))
               (sha256
                (base32
-                "1n4mrzimk7i3jgdp0yxgs02ki76v5c8cnnfqy5zrxjrhgvhz4vq0"))))
+                "1yk9j474q63551ixlhpb859x3al3dmlrbazph417kyizf9z86x00"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -11757,13 +11771,13 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 (define-public r-moexer
   (package
     (name "r-moexer")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moexer" version))
               (sha256
                (base32
-                "0dk87g9141x03d0c0780458dh1icxd93ibqqrjz12wwdsa96hnxz"))))
+                "039mww0rkk9s6452zl5skgnhlbnwf19nnf1xa75rsr6ikznvnppd"))))
     (properties `((upstream-name . "moexer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11771,11 +11785,11 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
                              r-rlang
                              r-readr
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-httr
                              r-glue
+                             r-ggplot2
                              r-dplyr
                              r-cli
                              r-assertthat))
@@ -11822,6 +11836,31 @@ forward stepwise search algorithm is provided for identifying the optimal model
 in terms of the number of components, the GPCM covariance parameterisation, and
 the subsets of gating/expert network covariates.")
     (license license:gpl2+)))
+
+(define-public r-moeadr
+  (package
+    (name "r-moeadr")
+    (version "1.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MOEADr" version))
+              (sha256
+               (base32
+                "19x7km2bpq0srm2lyafg3jcc4khwv077kjsqhhbgkv7r4c7xl6id"))))
+    (properties `((upstream-name . "MOEADr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fnn r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://fcampelo.github.io/MOEADr/")
+    (synopsis "Component-Wise MOEA/D Implementation")
+    (description
+     "Modular implementation of Multiobjective Evolutionary Algorithms based on
+Decomposition (MOEA/D) [Zhang and Li (2007), <DOI:10.1109/TEVC.2007.892759>] for
+quick assembling and testing of new algorithmic components, as well as easy
+replication of published MOEA/D proposals.  The full framework is documented in
+a paper published in the Journal of Statistical Software
+[<doi:10.18637/jss.v092.i06>].")
+    (license license:gpl2)))
 
 (define-public r-modygliani
   (package
@@ -12161,18 +12200,23 @@ additional documentation refer to the following article: Busetto and Ranghetti
 (define-public r-modistools
   (package
     (name "r-modistools")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MODISTools" version))
               (sha256
                (base32
-                "1br5kpkz3addnndh6740ppkg3xswpdc6fj9x776rswrjmrhazzm7"))))
+                "0l204kk006yfkffn9znqbdhhw4nphkzhg9ww9alzy2biw8hz0bk7"))))
     (properties `((upstream-name . "MODISTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-raster r-memoise r-jsonlite r-httr))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-memoise
+                             r-jsonlite
+                             r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/MODISTools/")
+    (home-page "https://github.com/bluegreen-labs/MODISTools")
     (synopsis "Interface to the 'MODIS Land Products Subsets' Web Services")
     (description
      "Programmatic interface to the Oak Ridge National Laboratories MODIS Land
@@ -12184,19 +12228,17 @@ downloads of MODIS time series directly to your R workspace or your computer.")
 (define-public r-modis
   (package
     (name "r-modis")
-    (version "1.2.9")
+    (version "1.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MODIS" version))
               (sha256
                (base32
-                "1272b0swij6h6xm18vpjzv0n0l47ck391wgik665bjsdky21d3sm"))))
+                "03nzij7gg24vkmlvm0k3mb4aj54wfbwh8hcq153p9wamm5xk9i9z"))))
     (properties `((upstream-name . "MODIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
                              r-sf
-                             r-rgeos
-                             r-rgdal
                              r-raster
                              r-ptw
                              r-maptools
@@ -12715,13 +12757,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelsummary" version))
               (sha256
                (base32
-                "0fcr1x1gjwhl46vikac2phms4ahlr1cpigj8p7kcdbhs9sc29drk"))))
+                "1fgb2swyxnxx9g1p6c01krdsj8qcamcsg34rmrrcqn4544lrhq92"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
@@ -12865,6 +12907,39 @@ for modeling.  But it does not save any parameter used in transformation, so it
 is hard to apply the same transformation to test dataset or new dataset.  This
 package is created to solve the problem.")
     (license license:gpl3)))
+
+(define-public r-modelmap
+  (package
+    (name "r-modelmap")
+    (version "3.4.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ModelMap" version))
+              (sha256
+               (base32
+                "182rs708aqbi59njndp1ibh9dlx8x83ip7grnwy70qm9fykyf9wy"))))
+    (properties `((upstream-name . "ModelMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgdal
+                             r-raster
+                             r-randomforest
+                             r-presenceabsence
+                             r-mgcv
+                             r-handtill2001
+                             r-fields
+                             r-corrplot))
+    (home-page "https://cran.r-project.org/package=ModelMap")
+    (synopsis
+     "Modeling and Map Production using Random Forest and Related Stochastic Models")
+    (description
+     "This package creates sophisticated models of training data and validates the
+models with an independent test set, cross validation, or Out Of Bag (OOB)
+predictions on the training data.  Create graphs and tables of the model
+validation results.  Applies these models to GIS .img files of predictors to
+create detailed prediction surfaces.  Handles large predictor files for map
+making, by reading in the .img files in chunks, and output to the .txt file the
+prediction for each data chunk, before reading the next chunk of data.")
+    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-modelltest
   (package
@@ -15751,13 +15826,13 @@ performance of optimized feature sets with nested resampling.")
 (define-public r-mlr3filters
   (package
     (name "r-mlr3filters")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3filters" version))
               (sha256
                (base32
-                "0v0jdgmdc7ihnpan1iqhldqd6qjpridaajnpzn2ga3bfl9g1nim0"))))
+                "014wyzbfjghf58w82djdlwx6vnafnj1gw76sjb1v0cib6g4pxj7i"))))
     (properties `((upstream-name . "mlr3filters")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -18974,13 +19049,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.4.6")
+    (version "0.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "10vg51ag5zpy9mqxsaaw7yvn4r3y62fz666l4scqyvhg2xvqz6i2"))))
+                "1pdpzrh8q556fz05dkwp4wsqji58xh1j1dlzpsmirz70cg7pms37"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -18998,14 +19073,14 @@ DNA Heteroplasmy calculated from single-cell datasets
      "Miscellaneous functions for descriptive statistics (e.g., frequency table, cross
 tabulation, multilevel descriptive statistics, multilevel R-squared measures,
 within-group and between-group correlation matrix, various effect size
-measures), data management (e.g., grand-mean and group-mean centering, recode
-variables and reverse code items, scale and group scores, reading and writing
+measures), data management (e.g., grand-mean and group-mean centering, coding
+variables and reverse coding items, scale and group scores, reading and writing
 SPSS and Excel files), missing data (e.g., descriptive statistics for missing
 data, missing data pattern, Little's test of Missing Completely at Random, and
 auxiliary variable analysis), item analysis (e.g., coefficient alpha and omega,
 confirmatory factor analysis), and statistical analysis (e.g., confidence
-intervals, collinearity diagnostics, analysis of variance, Levene's test,
-t-test, z-test, sample size determination).")
+intervals, collinearity diagnostics, analysis of variance, t-test, z-test,
+sample size determination).")
     (license license:expat)))
 
 (define-public r-mistral
@@ -22762,13 +22837,13 @@ and calculating elasticities and shadow prices.")
 (define-public r-miceconces
   (package
     (name "r-miceconces")
-    (version "1.0-0")
+    (version "1.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micEconCES" version))
               (sha256
                (base32
-                "1j2ri0pjfmclklqs3z1wijcw0b57vsndc9nrw1770za6in17izwl"))))
+                "039hv274xbs3syw0nxgkvxgfyn594fpcrlgmfwd2mfv6y78hc796"))))
     (properties `((upstream-name . "micEconCES")))
     (build-system r-build-system)
     (propagated-inputs (list r-systemfit
@@ -22788,7 +22863,8 @@ the Kmenta approximation, or non-linear least-squares using various
 gradient-based or global optimisation algorithms.  Some of these algorithms can
 constrain the parameters to certain ranges, e.g. economically meaningful values.
  Furthermore, the non-linear least-squares estimation can be combined with a
-grid-search for the rho-parameter(s).")
+grid-search for the rho-parameter(s).  The estimation methods are described in
+Henningsen et al. (2021) <doi:10.4337/9781788976480.00030>.")
     (license license:gpl2+)))
 
 (define-public r-miceconaids
@@ -22881,13 +22957,13 @@ Lott (2018) <doi:10.1080/00031305.2018.1473796>.  Grund (2021)
 (define-public r-miceadds
   (package
     (name "r-miceadds")
-    (version "3.15-21")
+    (version "3.16-18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "miceadds" version))
               (sha256
                (base32
-                "0ybjxny2v0dd357pk0a8rg3llm5qglr4q3jrgcjjxkxzl2m879bc"))))
+                "0xfgh3i6k9c15hwqxp60x4phg3flc7ymrh98x9lsmahanb96rifv"))))
     (properties `((upstream-name . "miceadds")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mitools r-mice))
@@ -25587,13 +25663,13 @@ et al. (2018) <DOI:10.1097/XEB.0000000000000141>.")
 (define-public r-metasem
   (package
     (name "r-metasem")
-    (version "1.2.5.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metaSEM" version))
               (sha256
                (base32
-                "027qwbnn63c09ac560gr99fxv4ccfzd1drdcp2r610y5z9079i7i"))))
+                "136r59z0hf16crpaf1ph2fwjkls8n5rps5cixy6cgybkcv8vb4fl"))))
     (properties `((upstream-name . "metaSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openmx
@@ -29236,13 +29312,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "2.8.0")
+    (version "2.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "medfate" version))
               (sha256
                (base32
-                "1xs794al5lzcd7hjncakfp62syfjv59d1xxvqpdv3khivnfcq7kp"))))
+                "1a6n0n1db425av6hi0smxh87rv4a1bgq2j8ha39b7xrxrp7k3p9p"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))
@@ -29678,6 +29754,44 @@ titles with individual words highlighted in different colors.")
 of the dentin.  Corresponding age range of dentin serial sections, that is used
 in stable isotope analyses, can be calculated by using this package.")
     (license license:gpl3+)))
+
+(define-public r-mdsr
+  (package
+    (name "r-mdsr")
+    (version "0.2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mdsr" version))
+              (sha256
+               (base32
+                "0b1z1ng6zzqwrn0a5i17jcqwh5yyv7nqyghp8w9r6ik1q46hmvz1"))))
+    (properties `((upstream-name . "mdsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-webshot2
+                             r-tibble
+                             r-stringr
+                             r-skimr
+                             r-rmariadb
+                             r-kableextra
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-downloader
+                             r-dbplyr
+                             r-dbi
+                             r-babynames))
+    (home-page "https://github.com/mdsr-book/mdsr")
+    (synopsis "Complement to 'Modern Data Science with R'")
+    (description
+     "This package provides a complement to *Modern Data Science with R*, both the
+first and second editions (ISBN: 978-0367191498, publisher URL:
+<https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498>).
+ This package contains data and code to complete exercises and reproduce
+examples from the text.  It also facilitates connections to the SQL database
+server used in the book.  Both editions of the book are supported by this
+package.")
+    (license license:cc0)))
 
 (define-public r-mdspcashiny
   (package
@@ -31533,6 +31647,32 @@ metric that measures similarity of two clusterings - or partitions.  For a more
 detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
     (license license:gpl3+)))
 
+(define-public r-mclustaddons
+  (package
+    (name "r-mclustaddons")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mclustAddons" version))
+              (sha256
+               (base32
+                "1sj1fbw5afhf6h92riw8wk79fzchiaw6rrkfwjq4fx1n87vp4s6q"))))
+    (properties `((upstream-name . "mclustAddons")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-iterators
+                             r-foreach))
+    (native-inputs (list r-knitr))
+    (home-page "https://mclust-org.github.io/mclustAddons/")
+    (synopsis "Addons for the 'mclust' Package")
+    (description
+     "Extend the functionality of the mclust package for Gaussian finite mixture
+modeling by including: density estimation for data with bounded support
+(Scrucca, 2019 <doi:10.1002/bimj.201800174>); modal clustering using MEM (Modal
+EM) algorithm for Gaussian mixtures (Scrucca, 2021 <doi:10.1002/sam.11527>);
+entropy estimation via Gaussian mixture modeling (Robin & Scrucca, 2023
+<doi:10.1016/j.csda.2022.107582>).")
+    (license license:gpl2+)))
+
 (define-public r-mclogit
   (package
     (name "r-mclogit")
@@ -32314,13 +32454,13 @@ Biostatistics, 2020 <doi:10.1093/biostatistics/kxy067>).")
 (define-public r-mbsts
   (package
     (name "r-mbsts")
-    (version "2.2")
+    (version "3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mbsts" version))
               (sha256
                (base32
-                "07sizvj627vhkpkg044593gh8lsmhw7ahqavmrindzjlfwwlfidb"))))
+                "0qgb74ah1jq6rla2qkid1i75xjp2l9qxkpbbqilhzqg64rkcn9ha"))))
     (properties `((upstream-name . "mbsts")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -32332,6 +32472,7 @@ Biostatistics, 2020 <doi:10.1093/biostatistics/kxy067>).")
                              r-kfas
                              r-ggplot2
                              r-bbmisc))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mbsts")
     (synopsis "Multivariate Bayesian Structural Time Series")
     (description
@@ -32491,33 +32632,6 @@ penalty term to minimize the differences between the total sub-annual flows and
 the annual flow.  The method is described in Nguyen et al (2020)
 <DOI:10.1002/essoar.10504791.1>.")
     (license license:gpl2+)))
-
-(define-public r-mboxr
-  (package
-    (name "r-mboxr")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mboxr" version))
-              (sha256
-               (base32
-                "1d11fpz17k65dzw9sjc7zfs1jpajzrh2pvr2s435p83g3mpf40vz"))))
-    (properties `((upstream-name . "mboxr")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-reticulate
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jooyoungseo/mboxr")
-    (synopsis "Reading, Extracting, and Converting an Mbox File into a Tibble")
-    (description "Importing and converting an mbox file into a tibble object.")
-    (license license:gpl3)))
 
 (define-public r-mbnmatime
   (package
@@ -32965,13 +33079,13 @@ implements methods developed by Lee, Wolberg and Shin (1997;
 (define-public r-mb
   (package
     (name "r-mb")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MB" version))
               (sha256
                (base32
-                "1p8v3hvvf69bn89l233l0d22zgxaay1xr9izz91asda4q5di9z5r"))))
+                "15ynrx2w5h5m18ws63syp29n8qc9dfk8q0riidskynijz3p7wz7w"))))
     (properties `((upstream-name . "MB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -35205,13 +35319,13 @@ Markowitz portfolios.")
 (define-public r-markovmsm
   (package
     (name "r-markovmsm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovMSM" version))
               (sha256
                (base32
-                "1y5brgpf52jws5s4hmki4q67pnji8vq9xbwiqp5pgdxz60byz1zx"))))
+                "148cbxjs5i7mbb39889fsvh25jh2gp5iiixy3939ic7nfgma7ayp"))))
     (properties `((upstream-name . "markovMSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-survidm r-mstate))
@@ -35350,13 +35464,13 @@ test suites.")
 (define-public r-markets
   (package
     (name "r-markets")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markets" version))
               (sha256
                (base32
-                "0v17vy5py8b7fxpj52qjmqzv7g8k5i602qcndfabys9pm8g5xcn5"))))
+                "1s2c991m11c28xff7h5dg09qzs28f6gizn1frsxqfdddp03x70cg"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -35366,7 +35480,7 @@ test suites.")
                              r-mass
                              r-formula
                              r-dplyr))
-    (native-inputs (list r-knitr pkg-config))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pi-kappa-devel/markets/")
     (synopsis
      "Estimation Methods for Markets in Equilibrium and Disequilibrium")
@@ -36322,13 +36436,13 @@ handling, and result caching.")
 (define-public r-mappoly
   (package
     (name "r-mappoly")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mappoly" version))
               (sha256
                (base32
-                "14prd8aqqbdfjnc923vcxh5ph2d6wi2dfzzvxmj19hff30vimpb2"))))
+                "0rfp4b5flc4ip2c6z6wq4yyqj99jnl1vrwv6277vhlfpv91fxjr1"))))
     (properties `((upstream-name . "mappoly")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -37086,13 +37200,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.1.6")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "manymome" version))
               (sha256
                (base32
-                "06fxaanmmzvvmq68bjwrq63ndw16w8jg23b8v4cn1j543x7gaqxb"))))
+                "0yylf7s5wasiln9d4mb9fymjjw6dimb3a14v3sh6b318dp21kwy8"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-lavaan r-igraph r-ggplot2 r-boot))

@@ -1094,6 +1094,35 @@ expected utility under competing policies, value of information) involving
 decision and utility nodes are also supported.")
     (license license:expat)))
 
+(define-public r-hyd1d
+  (package
+    (name "r-hyd1d")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hyd1d" version))
+              (sha256
+               (base32
+                "0kjypkpkykk6rfagh7ic2ygq2vdz32laalm26c9rm8gcaxa9vsbd"))))
+    (properties `((upstream-name . "hyd1d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjsonio r-rdpack r-rcurl r-plotrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://hyd1d.bafg.de")
+    (synopsis
+     "Algorithms to Compute 1d Water Levels along the German Federal Waterways Elbe and Rhine")
+    (description
+     "An S4 class and several functions which utilize internally stored datasets and
+gauging data enable 1d water level interpolation.  The S4 class
+(WaterLevelDataFrame) structures the computation and visualisation of 1d water
+level information along the German federal waterways Elbe and Rhine.  hyd1d
+delivers 1d water level data - extracted from the FLYS database - and validated
+gauging data - extracted from the hydrological database HyDaBa -
+package-internally.  For computations near real time gauging data are queried
+externally from the PEGELONLINE REST API
+<https://pegelonline.wsv.de/webservice/dokuRestapi>.")
+    (license license:gpl2+)))
+
 (define-public r-hybridogram
   (package
     (name "r-hybridogram")
@@ -1627,13 +1656,13 @@ provided.")
 (define-public r-humanleague
   (package
     (name "r-humanleague")
-    (version "2.1.8")
+    (version "2.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "humanleague" version))
               (sha256
                (base32
-                "148ipf1yhpz1n1nikbz1iz29qap28z7qz1apys3kyq9pjj30m7yl"))))
+                "0i8lp04qrv3d7qdlmmglbcym2jgxylkg13qfycwfdkxkmbfqz42z"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6775,13 +6804,13 @@ Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
 (define-public r-hhsmm
   (package
     (name "r-hhsmm")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hhsmm" version))
               (sha256
                (base32
-                "1bi0jbzc8gk8l9x748281hlid9r8zrfzwjdjx3vhbsjcqf55299x"))))
+                "072r944s60sz9rrwk4m55hykqq0zwxl7di5l4xj0i3dkix56c5nj"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -8548,13 +8577,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ts" version))
               (sha256
                (base32
-                "1v35l9q6a3naszs9mi3ahjkv8yknli5h6h22dzbshr9r9f6d7gjh"))))
+                "001nca8a01z53cfjn8rp77khw5qngvh9pnkzlbcpl7yj5ahbnha5"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -8769,13 +8798,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDTSA" version))
               (sha256
                (base32
-                "09b3jz552v3hmnhi6ag0dhc7nr5gdc688mcf3n9q8qzvc3l6dglc"))))
+                "1a2bc86047mla0dr89sf1xrin47v0mmdz6j5sil258hjxrl434hy"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rcppeigen r-rcpp r-clime))
@@ -8786,9 +8815,11 @@ elastic net methods.")
 proposed by Lam and Yao (2012) <doi:10.1214/12-AOS970> and Chang, Guo and Yao
 (2015) <doi:10.1016/j.jeconom.2015.03.024>, martingale difference test proposed
 by Chang, Jiang and Shao (2021) preprint, principal component analysis proposed
-by Chang, Guo and Yao (2018) <doi:10.1214/17-AOS1613>, unit root test proposed
-by Chang, Cheng and Yao (2021) <arXiv:2006.07551> and white noise test proposed
-by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
+by Chang, Guo and Yao (2018) <doi:10.1214/17-AOS1613>, identifying
+conintegration proposed by Zhang, Robinson and Yao (2019)
+<doi:10.1080/01621459.2018.1458620>, unit root test proposed by Chang, Cheng and
+Yao (2021) <doi:10.1093/biomet/asab034> and white noise test proposed by Chang,
+Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
     (license license:gpl3)))
 
 (define-public r-hdtg
@@ -9980,13 +10011,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.0.8")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hce" version))
               (sha256
                (base32
-                "10wxr6v4mwr6map3rl3ds3bfpqw2jq3vlqyhic1jiwjx7dl41913"))))
+                "0s9pb1gw838gz1la1qlv7awhdjhixyw580hbc5d8f6k72lzhpwx2"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

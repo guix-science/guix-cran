@@ -1111,13 +1111,13 @@ customised to contain more panels by the user.")
 (define-public r-bujar
   (package
     (name "r-bujar")
-    (version "0.2-9")
+    (version "0.2-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bujar" version))
               (sha256
                (base32
-                "1hx9yrry1v3vl14y1wpfp1l3cymyqhnff86sv6b112b9cfjpwmvq"))))
+                "0nkhwrmbkjx2wkrvflzs6a7hghdrpgyfk3f4qjycqmz5y14zswwi"))))
     (properties `((upstream-name . "bujar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1197,13 +1197,13 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.7")
+    (version "2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "buildmer" version))
               (sha256
                (base32
-                "1phd8g7ymv43qhfkxmg5gbjrx8czvbxgxbg0vf0910mnff5j1pjm"))))
+                "0czkv2cpdxwj118f37zh81am4my1l6xmbbjr47k8mlw5kkahfh3l"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mgcv r-lme4))
@@ -1722,13 +1722,13 @@ more at <https://getbootstrap.com/>.")
 (define-public r-bst
   (package
     (name "r-bst")
-    (version "0.3-23")
+    (version "0.3-24")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bst" version))
               (sha256
                (base32
-                "1wx039cl8s1j1dwjg50ivn39fckkf8mzgrm953bg02w0p0fpz5bh"))))
+                "1x297sv9px7ipd7a6xprlff8rgkdr2z379xsm8rfqd8xal9nxnb4"))))
     (properties `((upstream-name . "bst")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-gbm r-foreach r-doparallel))
@@ -2903,13 +2903,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.10.0")
+    (version "1.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "broom.helpers" version))
               (sha256
                (base32
-                "1kimf5i3i9c5s383rvn1cdwzs1rcknxahhmcn63hkydds0wx2car"))))
+                "1vwjlgy1a3a1inw79pbl72p8s4y9mss6wpczfhmjfy27j9n2qcpj"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3282,20 +3282,22 @@ organization into R.")
 (define-public r-brinton
   (package
     (name "r-brinton")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brinton" version))
               (sha256
                (base32
-                "1zhiz93n9pclib2aczp7qslydjn9l5j17881gg0cga59f96bkwfw"))))
+                "1z2d7a1wq5ms5j0mn2hgqvvp9x3mfvxw4llia8d0bs0mpm0jkjvn"))))
     (properties `((upstream-name . "brinton")))
     (build-system r-build-system)
     (inputs (list pandoc))
     (propagated-inputs (list r-tibble
                              r-sm
+                             r-scales
                              r-rmarkdown
                              r-rcolorbrewer
+                             r-patchwork
                              r-pander
                              r-lubridate
                              r-gridextra
@@ -4858,13 +4860,13 @@ projects via a flexible, declarative dependency loading syntax.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.0.3")
+    (version "7.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BoutrosLab.plotting.general" version))
               (sha256
                (base32
-                "07vfaxgxnzj3dlv116x32bndzqmdbpc5szpjw73a9km8f2fkkb2k"))))
+                "0l8fz1bl1bxmlgvsg5l94ahf0rxc4yr3da53sxv5r2x4kyq2ymx7"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass
@@ -4877,7 +4879,7 @@ projects via a flexible, declarative dependency loading syntax.")
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page
-     "https://cran.r-project.org/package=BoutrosLab.plotting.general")
+     "https://github.com/uclahs-cds/public-R-BoutrosLab-plotting-general")
     (synopsis "Functions to Create Publication-Quality Plots")
     (description
      "This package contains several plotting functions such as barplots, scatterplots,
@@ -4889,8 +4891,8 @@ settings to make plotting data more efficient and producing high quality plots
 with standard colour schemes simpler.  All functions within this package are
 capable of producing plots that are of the quality to be presented in scientific
 publications and journals.  P'ng et al.; BPG: Seamless, automated and
-interactive visualization of scientific data; BMC Bioinformatics 2019 <doi:
-10.1186/s12859-019-2610-2>.")
+interactive visualization of scientific data; BMC Bioinformatics 2019
+<doi:10.1186/s12859-019-2610-2>.")
     (license license:gpl2)))
 
 (define-public r-boutliers
@@ -7174,13 +7176,13 @@ Balancing Mechanism Reporting System API (<https://bmreports.com/>).")
 (define-public r-bmrmm
   (package
     (name "r-bmrmm")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BMRMM" version))
               (sha256
                (base32
-                "1wpj5pnm9hhc4gzk5lqxhzvg3j4mbwzhdg0hx2a5gqck9rvpvzni"))))
+                "1ank4fhbfx3g3mzfznvi9r8c2q7a99sjbwv7vmvbs2zlskm804jd"))))
     (properties `((upstream-name . "BMRMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -7209,7 +7211,7 @@ as relevant plots and graphs.  It also includes a synthetic data set to
 demonstrate the desired format of input data set and the utility of various
 functions.  Methods for Bayesian Markov renewal mixed models are as described
 in: Abhra Sarkar et al., (2018) <doi:10.1080/01621459.2018.1423986> and Yutong
-Wu et al., (2021) <arXiv:2107.07648>.")
+Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
     (license license:expat)))
 
 (define-public r-bmrm
@@ -8297,6 +8299,38 @@ respect to the dimension of the matrix.  The method is described in the paper
 Perrot-DockÃ¨s et al. (2019) <arXiv:1806.10093>.")
     (license license:gpl2+)))
 
+(define-public r-blockcluster
+  (package
+    (name "r-blockcluster")
+    (version "4.5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blockcluster" version))
+              (sha256
+               (base32
+                "09ayx3g3vgdz85b6nlyy7vzajm0mwv2j2j17zvrk9z6dgd9jlpzc"))))
+    (properties `((upstream-name . "blockcluster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtkore r-rcpp))
+    (home-page "https://gitlab.inria.fr/iovleff/blockcluster")
+    (synopsis
+     "Co-Clustering Package for Binary, Categorical, Contingency and Continuous Data-Sets")
+    (description
+     "Simultaneous clustering of rows and columns, usually designated by biclustering,
+co-clustering or block clustering, is an important technique in two way data
+analysis.  It consists of estimating a mixture model which takes into account
+the block clustering problem on both the individual and variables sets.  The
+blockcluster package provides a bridge between the C++ core library build on top
+of the STK++ library, and the R statistical computing environment.  This package
+allows to co-cluster binary <doi:10.1016/j.csda.2007.09.007>, contingency
+<doi:10.1080/03610920903140197>, continuous <doi:10.1007/s11634-013-0161-3> and
+categorical data-sets <doi:10.1007/s11222-014-9472-2>.  It also provides utility
+functions to visualize the results.  This package may be useful for various
+applications in fields of Data mining, Information retrieval, Biology, computer
+vision and many more.  More information about the project and comprehensive
+tutorial can be found on the link mentioned in URL.")
+    (license license:gpl3+)))
+
 (define-public r-blmodel
   (package
     (name "r-blmodel")
@@ -8657,13 +8691,13 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
 (define-public r-blastula
   (package
     (name "r-blastula")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blastula" version))
               (sha256
                (base32
-                "084mk6xb8ivqrp8anvisfk8rvwi7qfrp5kmy66vpihmjmqh7dkyc"))))
+                "0n7cfz6m9wi7jdw8r093vmhld3q669drm9v59740dsan9s1kqq5i"))))
     (properties `((upstream-name . "blastula")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -8683,15 +8717,14 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
                              r-curl
                              r-commonmark
                              r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rich-iannone/blastula")
+    (home-page "https://github.com/rstudio/blastula")
     (synopsis "Easily Send HTML Email Messages")
     (description
      "Compose and send out responsive HTML email messages that render perfectly across
 a range of email clients and device sizes.  Helper functions let the user insert
 embedded images, web link buttons, and ggplot2 plot objects into the message
 body.  Messages can be sent through an SMTP server, through the RStudio Connect
-service, or through the Mailgun API service <http://mailgun.com/>.")
+service, or through the Mailgun API service <https://www.mailgun.com/>.")
     (license license:expat)))
 
 (define-public r-blapsr
@@ -11039,13 +11072,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.14-4")
+    (version "2.15-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiodiversityR" version))
               (sha256
                (base32
-                "05080cfqcmhxnbd4fyxhdd2kxp4ps413mk44wdh7hijayk4df7q0"))))
+                "05ryfn517dwcdl84k4p9h66g4dzwqqmykylyvz5gsjj3x1gh9aa8"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
@@ -11213,13 +11246,13 @@ integrated in R Markdown documents and Shiny applications.")
 (define-public r-bioc-logs
   (package
     (name "r-bioc-logs")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bioC.logs" version))
               (sha256
                (base32
-                "16hbw8mbr3nn1k7hr8ihp4lcvd22jk396kbaw2jjd1gw9lvbhicd"))))
+                "092hdrfkdij3s8871z4c1lb0rf5pp07ggliaz76iyfxrbvy9hcxj"))))
     (properties `((upstream-name . "bioC.logs")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11365,13 +11398,13 @@ recursive partition methods and clustering.")
 (define-public r-binsreg
   (package
     (name "r-binsreg")
-    (version "0.7")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "binsreg" version))
               (sha256
                (base32
-                "1qxf5096vzf2j9d7yya0pr1hgxgkxm5llvz5ddyf0hqp22cjcsf7"))))
+                "1v4y8s28apip8dzp7jzgyv681awf379r0fwm5r3kmxpc9a8gybfq"))))
     (properties `((upstream-name . "binsreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-quantreg r-matrixstats r-ggplot2))
@@ -11379,8 +11412,8 @@ recursive partition methods and clustering.")
     (synopsis "Binscatter Estimation and Inference")
     (description
      "This package provides tools for statistical analysis using the binscatter
-methods developed by Cattaneo, Crump, Farrell and Feng (2021a)
-<arXiv:1902.09608> and Cattaneo, Crump, Farrell and Feng (2021b)
+methods developed by Cattaneo, Crump, Farrell and Feng (2022a)
+<arXiv:1902.09608> and Cattaneo, Crump, Farrell and Feng (2022b)
 <arXiv:1902.09615>.  Binscatter provides a flexible way of describing the
 relationship between two variables based on partitioning/binning of the
 independent variable of interest.  binsreg(), binsqreg() and binsglm() implement
@@ -15313,6 +15346,30 @@ nestedness-resultant components of taxonomic (incidence and abundance based),
 functional and phylogenetic beta diversity.")
     (license license:gpl2+)))
 
+(define-public r-betamc
+  (package
+    (name "r-betamc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "betaMC" version))
+              (sha256
+               (base32
+                "01vig8mnizgxb0xh0a9aywmjfpii6xqfyy19hj0ngsksafbvydf0"))))
+    (properties `((upstream-name . "betaMC")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jeksterslab/betaMC")
+    (synopsis
+     "Monte Carlo Confidence Intervals for Standardized Regression Coefficients")
+    (description
+     "Generates Monte Carlo confidence intervals for standardized regression
+coefficients for models fitted by lm().  betaMC combines ideas from Monte Carlo
+confidence intervals for the indirect effect (Preacher and Selig, 2012
+<doi:10.1080/19312458.2012.679848>) and the sampling covariance matrix of
+regression coefficients (Dudgeon, 2017 <doi:10.1007/s11336-017-9563-z>) to
+generate confidence intervals for standardized regression coefficients.")
+    (license license:expat)))
+
 (define-public r-betafunctions
   (package
     (name "r-betafunctions")
@@ -16874,13 +16931,13 @@ You must have an API key to use this library.  Register for a key at
 (define-public r-be
   (package
     (name "r-be")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BE" version))
               (sha256
                (base32
-                "1k2895w8jd0scd6nxh3jyxd7vz9hcapna9xkmis6i3byly5bvvan"))))
+                "17cm4vfvrv29rfxr6v58x04y4v1ncd23cpxfpdv7lq9saq8i82ag"))))
     (properties `((upstream-name . "BE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtf))
@@ -17116,13 +17173,13 @@ to determine and visualize operating characteristics.  See Kopp-Schneider et al.
 (define-public r-bdots
   (package
     (name "r-bdots")
-    (version "1.2.0")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bdots" version))
               (sha256
                (base32
-                "0k1865vkg0s6jhw2k3w7gqw9v94rchfwpsbaf1cxbg0rpy1f0c0b"))))
+                "18sciji8xy1s53d7d5q1g5zqdn25wd7w5vyiisigf54sbz13vqg6"))))
     (properties `((upstream-name . "bdots")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mvtnorm r-gridextra r-ggplot2
@@ -17689,13 +17746,13 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcmaps" version))
               (sha256
                (base32
-                "1qr7jkybrg80pb0hhqmcpp66gkk5w74cjgyg7mnm9czz1j47wsl4"))))
+                "1317xqhd222aj6qcdhb1xpbfqsf9n3ww8rap90sm98rljvp5zdca"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18068,13 +18125,13 @@ method and various plotting features.")
 (define-public r-bcdata
   (package
     (name "r-bcdata")
-    (version "0.3.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcdata" version))
               (sha256
                (base32
-                "0wmhk80r0d5k5f97r379g743a8r49jv7lj3i7fjaxb21az063ga6"))))
+                "19xsl07xpa73y0fkvghhxbl74h93pkn15bb7dwf55wkrwxp16ak6"))))
     (properties `((upstream-name . "bcdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -24304,13 +24361,13 @@ found in Zhang, Ding and Yang (2021) <arXiv:1911.03063v2>.")
 (define-public r-baggr
   (package
     (name "r-baggr")
-    (version "0.6.21")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baggr" version))
               (sha256
                (base32
-                "08f6wn1r3rxdlvchgxkrwpl08qlqqj6arvw4kkncvnb94g83cy4y"))))
+                "0nfi3syvdm29822zclxfngq2qp8idqrhfk0hqp1b90p5ywa2qphf"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

@@ -450,13 +450,13 @@ et al (2017) <doi: 10.1051/epjnbp/2017000>, Sheppard et al (2019) <doi:
 (define-public r-wsrf
   (package
     (name "r-wsrf")
-    (version "1.7.27")
+    (version "1.7.30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wsrf" version))
               (sha256
                (base32
-                "1pw4z6a91yyx0j2wnf4y29smdxan1ws0l2jgvqckfqmx5y101czk"))))
+                "0myb8hyjyapiahrar4zz1b4larv9nwxlk11mz5vyqyjwm98dxlvf"))))
     (properties `((upstream-name . "wsrf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -827,13 +827,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.10.2")
+    (version "1.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "1mz2a7bmzblky9z1d32zxnbdjiap6v8jhiah38lln2s4vrbx67yd"))))
+                "15l1y0qapipgpv3ylbbv78fn9d2i4s0nnc34kp8a77g62qzqcz6b"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1084,13 +1084,13 @@ gtools::strmacro() and base::bquote()'), and more.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrappedtools" version))
               (sha256
                (base32
-                "1dr70w2y556l664067crrl7ly68d1pb0chyz00cl1sfiyma7nj6x"))))
+                "1d51ciw28a7g87b548m9kv6csbv46b3hr4b5g51gvxsmm053wh97"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -1099,7 +1099,6 @@ gtools::strmacro() and base::bquote()'), and more.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lifecycle
                              r-knitr
                              r-kableextra
@@ -1126,13 +1125,13 @@ well.")
 (define-public r-wrangle
   (package
     (name "r-wrangle")
-    (version "0.5.7")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrangle" version))
               (sha256
                (base32
-                "0gap15hinsgfjrxajr9kvs0rp76gl5kk2dqs92s9mfyh10kxxqpa"))))
+                "18zylawg38bnmy6s95fr3xihg6gn4vszsy63vs0q56061smm4rd4"))))
     (properties `((upstream-name . "wrangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))
@@ -1738,13 +1737,13 @@ export data tables to files before being able to complete their analysis.")
 (define-public r-worldflora
   (package
     (name "r-worldflora")
-    (version "1.11")
+    (version "1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WorldFlora" version))
               (sha256
                (base32
-                "1c99h56bhx4zsgwpn0d1jjjgjcfs6k6cvml3kbv08z3j2s5pg8v0"))))
+                "1xfvrg15665kwqr5hgxbzjighp0x9ynqk1inwx2ijxlf9rjpqifc"))))
     (properties `((upstream-name . "WorldFlora")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WorldFlora")
@@ -3436,13 +3435,13 @@ for Multiplex networks: an application to networks of researchers, ArXiv
 (define-public r-wikilake
   (package
     (name "r-wikilake")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wikilake" version))
               (sha256
                (base32
-                "1zz5v6kfg5blpz9kl6pz4z9xqs8xpcklncq4k8996hjn4a8mpvyz"))))
+                "0niym9azy4qzcr4rriw0bfd97scx1mdpx67szinj7qsh569xb61m"))))
     (properties `((upstream-name . "wikilake")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4422,13 +4421,13 @@ up to three levels.")
 (define-public r-welo
   (package
     (name "r-welo")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "welo" version))
               (sha256
                (base32
-                "1byhqlh2nykvqira0fqbbdzsgpn3alhkd16snsl3783mlcl3cp7f"))))
+                "1sbrkpajqwnpghcr551gccpksw3lqjwk4n0gjl7j3g4lkm54bf54"))))
     (properties `((upstream-name . "welo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -7232,13 +7231,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wallace" version))
               (sha256
                (base32
-                "18vn477wdi5iipav9sjj11d35kmfqfcf0kbijngd683x8izx0jvd"))))
+                "0i0widw8niv0348hjfzqs88y898c1bqfr8vhl0mq0ppqqgdj93dp"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

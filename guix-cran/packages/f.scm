@@ -5708,16 +5708,64 @@ Regression Analysis, First Edition.  New York: Springer.")
      "This package provides a collection of fortunes from the R community.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fortls
+  (package
+    (name "r-fortls")
+    (version "1.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FORTLS" version))
+              (sha256
+               (base32
+                "0jrc4myifx9syddi03hrp9vfa7vl0lm68r11f043frd3nrnxi3fl"))))
+    (properties `((upstream-name . "FORTLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-voxr
+                             r-tidyr
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rgeos
+                             r-rcsf
+                             r-rcppeigen
+                             r-rcpp
+                             r-raster
+                             r-progress
+                             r-plotly
+                             r-moments
+                             r-lidr
+                             r-htmlwidgets
+                             r-distance
+                             r-dbscan
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Molina-Valero/FORTLS")
+    (synopsis
+     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
+    (description
+     "Process automation of point cloud data derived from terrestrial-based
+technologies such as Terrestrial Laser Scanner (TLS) or Simultaneous
+Localization and Mapping (SLAM).  FORTLS enables (i) detection of trees and
+estimation of tree-level attributes (e.g. diameters and heights), (ii)
+estimation of stand-level variables (e.g. density, basal area, mean and dominant
+height), (iii) computation of metrics related to important forest attributes
+estimated in Forest Inventories at stand-level, and (iv) optimization of plot
+design for combining TLS data and field measured data.  Documentation about
+FORTLS is described in Molina-Valero et al. (2022,
+<doi:10.1016/j.envsoft.2022.105337>).")
+    (license license:gpl3)))
+
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "0rdl34h58hx4ccqp8km2126ws98n6n02rxz05dc78i7cswrm90pa"))))
+                "1li8y1lkqlbvpc85xnjqg8cxxr58xk5c9a3j1grd50qp8w8s2p07"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -8841,6 +8889,32 @@ predictives, goodness-of-fit measures, convergence diagnostics, and graphical
 representations are provided.")
     (license license:gpl2+)))
 
+(define-public r-flexpolyline
+  (package
+    (name "r-flexpolyline")
+    (version "0.2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "flexpolyline" version))
+              (sha256
+               (base32
+                "1cxw92ling249kasx1d7sw8vm1h895h9fwd4giybxyvrn19svabg"))))
+    (properties `((upstream-name . "flexpolyline")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://munterfi.github.io/flexpolyline/")
+    (synopsis "Flexible Polyline Encoding")
+    (description
+     "Binding to the C++ implementation of the flexible polyline encoding by HERE
+<https://github.com/heremaps/flexible-polyline>.  The flexible polyline encoding
+is a lossy compressed representation of a list of coordinate pairs or coordinate
+triples.  The encoding is achieved by: (1) Reducing the decimal digits of each
+value; (2) encoding only the offset from the previous point; (3) using variable
+length for each coordinate delta; and (4) using 64 URL-safe characters to
+display the result.")
+    (license license:gpl3)))
+
 (define-public r-flexparamcurve
   (package
     (name "r-flexparamcurve")
@@ -10102,13 +10176,13 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
 (define-public r-fitbitviz
   (package
     (name "r-fitbitviz")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitbitViz" version))
               (sha256
                (base32
-                "1cp5nkaj9ikqcv3yp030id1wklj3jnx002sz2ib0vzza81zyw8bw"))))
+                "04kpx6h4kj0b92ick5kkihs2x9fjycxsi8fky8jpwdvvrivnk620"))))
     (properties `((upstream-name . "fitbitViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -10118,12 +10192,14 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
                              r-sf
                              r-scales
                              r-rstudioapi
+                             r-reshape2
                              r-rayshader
                              r-raster
                              r-patchwork
                              r-paletteer
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-leaflet
                              r-leafgl
                              r-jsonlite
@@ -10132,7 +10208,8 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
                              r-glue
                              r-ggthemes
                              r-ggplot2
-                             r-data-table))
+                             r-data-table
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/fitbitViz")
     (synopsis "'Fitbit' Visualizations")
@@ -11663,16 +11740,21 @@ creation of more complex figures that include images alongside plots.")
 (define-public r-figma
   (package
     (name "r-figma")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "figma" version))
               (sha256
                (base32
-                "10lznzqlrnnp44sfqdv6x2c2prp9yb7g64dv59b0bv094jx1cg82"))))
+                "0031sz7nbnlhv9iqaandq9sscxsy29p82s3c63z89jin4dkfjq4x"))))
     (properties `((upstream-name . "figma")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rlang r-purrr r-httr r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pedropark99/figma")
     (synopsis "Web Client/Wrapper to the 'Figma API'")
@@ -12578,13 +12660,13 @@ transform in the west (FFTW) library <http://www.fftw.org/>.")
 (define-public r-fftrees
   (package
     (name "r-fftrees")
-    (version "1.7.5")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FFTrees" version))
               (sha256
                (base32
-                "0aqi8r5nrsvlzlw9aiqmqk8r0h5nng3cj57h23a3iqgzv7nwb443"))))
+                "0snjqj0fzc93fams26h4vglhl91cqkphc1f2i3jar7f3ilj1qn2a"))))
     (properties `((upstream-name . "FFTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12599,7 +12681,7 @@ transform in the west (FFTW) library <http://www.fftw.org/>.")
                              r-knitr
                              r-e1071
                              r-dplyr
-                             r-crayon
+                             r-cli
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=FFTrees")
@@ -12979,15 +13061,16 @@ standardisation of fishing effort in unit base.")
 (define-public r-fertilmodel
   (package
     (name "r-fertilmodel")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fertilmodel" version))
               (sha256
                (base32
-                "1mznpay0ibdgm67k5xjfwfb5lp07r4163h3ad33k2zsyk2f31nsq"))))
+                "0q0mf8n3fc53bqjsv5c4mcfm4vjhyy2hw8rh1bsjsj71xmih50a4"))))
     (properties `((upstream-name . "fertilmodel")))
     (build-system r-build-system)
+    (propagated-inputs (list r-quadprog))
     (home-page "https://cran.r-project.org/package=fertilmodel")
     (synopsis "Fertility Models")
     (description
@@ -12995,7 +13078,7 @@ standardisation of fishing effort in unit base.")
 Hadwiger, the Gamma, the Model1 and Model2, following the terminology of the
 following paper: Peristera P. and Kostaki A. (2007). \"Modeling fertility in
 modern populations\".  Demographic Research, 16(6): 141--194.
-<doi:10.4054/DemRes.2007.16.6>.")
+<doi:10.4054/DemRes.2007.16.6>.  Model based averaging is also supported.")
     (license license:gpl2+)))
 
 (define-public r-fertboot
@@ -14902,13 +14985,13 @@ should handle when facing real world data, see Thrun, M.C., Ultsch A.:
 (define-public r-fcopulae
   (package
     (name "r-fcopulae")
-    (version "4021.84")
+    (version "4022.85")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fCopulae" version))
               (sha256
                (base32
-                "1c0alrrf85biqdwwdjcnn2k06jkhbligvlkgxbbj5jv3pjvf6s19"))))
+                "18gjlh254wm2yjyxrhrlbhjp6qvan3yway2m3fb0dqskd6dwmgq2"))))
     (properties `((upstream-name . "fCopulae")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate r-fmultivar r-fbasics))
@@ -18257,16 +18340,16 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAIRmaterials" version))
               (sha256
                (base32
-                "169hcwjm0plhkqbhz3b5cqgc2nnkibn94cimrs39sn9z62radb7x"))))
+                "03rxrbry956naslq5v0s8zxz9prh16d85vmr0fb1iqianf5nzdmp"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-glue r-dplyr))
+    (propagated-inputs (list r-stringr r-jsonlite))
     (home-page "https://cran.r-project.org/package=FAIRmaterials")
     (synopsis "Make Materials Data FAIR")
     (description

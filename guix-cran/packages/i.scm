@@ -3614,13 +3614,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.9.6")
+    (version "1.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iq" version))
               (sha256
                (base32
-                "18myhc0ilh2ngj67xq0inx88dzmn6c2q10qyzfpxy3al4zzg98fz"))))
+                "1fy893a54ramnfqmzpxjdlz9aasj7q58mgpip2rjk1sh7ny766x3"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -3711,6 +3711,30 @@ probabilities can be given by the practitioner or modelled using auxiliary
 covariates.  The paper of \"Zhang, Z., Chen, Z., Troendle, J. F. and Zhang,
 J.(2012) <doi:10.1111/j.1541-0420.2011.01712.x>\", proposes estimators of
 marginal quantiles based on the Inverse Probability Weighting method.")
+    (license license:gpl2+)))
+
+(define-public r-ipw
+  (package
+    (name "r-ipw")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ipw" version))
+              (sha256
+               (base32
+                "12acf71pc0xxpr5h1vhx8kxjlr5kymyhld97pp4bkikw5jykfl2a"))))
+    (properties `((upstream-name . "ipw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-nnet r-mass r-geepack))
+    (home-page "https://cran.r-project.org/package=ipw")
+    (synopsis "Estimate Inverse Probability Weights")
+    (description
+     "This package provides functions to estimate the probability to receive the
+observed treatment, based on individual characteristics.  The inverse of these
+probabilities can be used as weights when estimating causal effects from
+observational data via marginal structural models.  Both point treatment
+situations and longitudinal studies can be analysed.  The same functions can be
+used to correct for informative censoring.")
     (license license:gpl2+)))
 
 (define-public r-ipv
@@ -4275,16 +4299,16 @@ R package uses the Ipeadata API. For more information, see
 (define-public r-ipdw
   (package
     (name "r-ipdw")
-    (version "1.0-0")
+    (version "2.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipdw" version))
               (sha256
                (base32
-                "1xar3i4d5pmhcfqjfh54d3qpjglsmnpyidxk29jziy6hwc4rsnaa"))))
+                "0lgxassvdd8vc4fyc84rbwwgdis7h4p5psqxxyb7xznm3zdzxc7h"))))
     (properties `((upstream-name . "ipdw")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-raster r-gdistance))
+    (propagated-inputs (list r-sf r-raster r-gdistance))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jsta/ipdw")
     (synopsis "Spatial Interpolation by Inverse Path Distance Weighting")
@@ -4595,16 +4619,16 @@ IP2Location to install the module.")
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iotarelr" version))
               (sha256
                (base32
-                "0dsbcjbval74xlcljjhl2lmr146kg8q3fwx9aw6y6spdfidj9cdc"))))
+                "1qygvv36rh2v70fr0cq7khr5846453fn9636dm8zdjx0ljb36fdz"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2))
+    (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2 r-ggalluvial))
     (native-inputs (list r-knitr))
     (home-page "https://fberding.github.io/iotarelr/")
     (synopsis "Iota Inter Coder Reliability for Content Analysis")
@@ -4619,7 +4643,7 @@ subgroup-invariance and error corrections are implemented.  This information can
 support the development process of a coding scheme and allows a detailed
 inspection of the quality of the generated data.  Equations and formulas working
 in this package are part of Berding et al. (2022)<doi:10.3389/feduc.2022.818365>
-and Berding and Pargmann (2022,ISBN:978-3-8325-5581-8).")
+and Berding and Pargmann (2022) <doi:10.30819/5581>.")
     (license license:gpl3)))
 
 (define-public r-iotables
@@ -7275,13 +7299,13 @@ bdm macroeconomic database.")
 (define-public r-insectdisease
   (package
     (name "r-insectdisease")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "insectDisease" version))
               (sha256
                (base32
-                "0aa85sxmrhvhjrqnrv264bns577v0n0n6rqzm9m4cg9q7dilhxsn"))))
+                "1ncj5fgmx19caf8m2p3ij5iamk941m9y725gs0nqpa9m6zfnzgf8"))))
     (properties `((upstream-name . "insectDisease")))
     (build-system r-build-system)
     (propagated-inputs (list r-taxize r-plyr))
@@ -12190,13 +12214,13 @@ LeCun <http://yann.lecun.com/exdb/mnist/>.")
 (define-public r-idsl-ufax
   (package
     (name "r-idsl-ufax")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFAx" version))
               (sha256
                (base32
-                "09g7zbvimhcfj2zwngsfgjfrrkj3ljfdibwdq4zrwijd0n09g9b3"))))
+                "1ip56fjmk1j5nv87zrxc46949v3whj5927w3px4jbw5pl1agbm51"))))
     (properties `((upstream-name . "IDSL.UFAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl
@@ -12205,48 +12229,47 @@ LeCun <http://yann.lecun.com/exdb/mnist/>.")
                              r-idsl-ipa
                              r-foreach
                              r-doparallel))
-    (home-page
-     "https://ufa.idsl.me/enumerating-chemical-space/exhaustive-enumeration")
+    (home-page "https://github.com/idslme/idsl.ufax")
     (synopsis "Exhaustive Chemical Enumeration for United Formula Annotation")
     (description
      "This package provides a pipeline to annotate a number of peaks from the IDSL.IPA
 peaklists using an exhaustive chemical enumeration-based approach.  This package
 can perform elemental composition calculations using the following 15 elements :
-C, B, Br, Cl, K, S, Se, Si, N, H, As, F, I, Na, O, and P.")
+C, B, Br, Cl, K, S, Si, N, H, As, F, I, Na, O, and P.")
     (license license:expat)))
 
 (define-public r-idsl-ufa
   (package
     (name "r-idsl-ufa")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFA" version))
               (sha256
                (base32
-                "0g3q2qih21kv72cl2bpcf84mdc9kg3jqcbpyd4phbsdq9bj519q8"))))
+                "0lgl8ilr5xsi3ivc59qzvdjbcmp0wd8s359cs739iaidk7rbnccz"))))
     (properties `((upstream-name . "IDSL.UFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-ipa r-foreach r-doparallel))
-    (home-page "https://ufa.idsl.me")
+    (home-page "https://github.com/idslme/idsl.ufa")
     (synopsis "United Formula Annotation (UFA) for HRMS Data Processing")
     (description
-     "This package provides a pipeline to annotate peaklists from the IDSL.IPA package
-with molecular formula of a prioritized chemical space using an isotopic profile
-matching approach.  The IDSL.UFA pipeline only requires MS1 for formula
-annotation.")
+     "This package provides a pipeline to annotate chromatography peaks from the
+IDSL.IPA pipeline with molecular formulas of a prioritized chemical space using
+an isotopic profile matching approach.  The IDSL.UFA pipeline only requires mass
+spectrometry level 1 (MS1) data for formula annotation.")
     (license license:expat)))
 
 (define-public r-idsl-sufa
   (package
     (name "r-idsl-sufa")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.SUFA" version))
               (sha256
                (base32
-                "1jfw96xgwd55lpif3wm0xj4ly48rff7ay8g0bx898jd4jyr05idz"))))
+                "1dksi8fcif6vg811ska7fqfq79m31x3v4lsqra17danv02w3wn5b"))))
     (properties `((upstream-name . "IDSL.SUFA")))
     (build-system r-build-system)
     (home-page "https://ufa.idsl.me")
@@ -12261,13 +12284,13 @@ process user-defined adduct formulas.")
 (define-public r-idsl-mxp
   (package
     (name "r-idsl-mxp")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.MXP" version))
               (sha256
                (base32
-                "0mh15bcrv3iy033l9ry0j0b0my3xxyn32p52rrfya5ybc0d35c79"))))
+                "1zdzrlblrrql58r7h4zcd3fnsbvfnnr3fzjzrj2w7yjccf3ff90c"))))
     (properties `((upstream-name . "IDSL.MXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-base64enc))
@@ -12283,22 +12306,23 @@ files.")
 (define-public r-idsl-ipa
   (package
     (name "r-idsl-ipa")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.IPA" version))
               (sha256
                (base32
-                "0zfskczgpw57z94la0n5883mhcmijgknb7sf87cr5wz3kgp19qxd"))))
+                "046jszpg6ac9w910cjy55wn19jnikcnlxkd0lqsaxz5la65k9bzg"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp r-foreach r-doparallel))
-    (home-page "https://ipa.idsl.me")
+    (home-page "https://github.com/idslme/idsl.ipa")
     (synopsis "Intrinsic Peak Analysis (IPA) for HRMS Data")
     (description
-     "This package provides a sophisticated pipeline for processing LC/HRMS data to
-extract signals of organic compounds.  The package performs ion pairing, peak
-detection, alignment, RT correction, gap filling, peak annotation and
+     "This package provides a multi-layered untargeted pipeline for high-throughput
+LC/HRMS data processing to extract signals of organic small molecules.  The
+package performs ion pairing, peak detection, peak table alignment, retention
+time correction, aligned peak table gap filling, peak annotation and
 visualization of extracted ion chromatograms (EICs) and total ion chromatograms
 (TICs).")
     (license license:expat)))
@@ -12961,13 +12985,13 @@ visit
 (define-public r-idar
   (package
     (name "r-idar")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idar" version))
               (sha256
                (base32
-                "082p469ng6gmn48l45n6j2wivv4nq9mkl0pb1nclri2f566l95mf"))))
+                "0433kyhwzaicb10jmb6b6b6lbfhd5g2zsdrg6v02lndb2j7dlk5c"))))
     (properties `((upstream-name . "idar")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -13118,13 +13142,13 @@ semiparametric regression models will be included in later versions.")
 (define-public r-icssmoothing
   (package
     (name "r-icssmoothing")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICSsmoothing" version))
               (sha256
                (base32
-                "14rs07594xzvsy62k3qacx5va4k7wq595bnp28vnvrmnqb219kk1"))))
+                "141ly37ccj1ky9lr37baa3vkbbkr73z8nxfkyavjrzhzw8d5r2rr"))))
     (properties `((upstream-name . "ICSsmoothing")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-ggplot2))
@@ -13543,13 +13567,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "11vmjmi1csmnhwbkd4lspa7cmvh2rs2qrq7ncnl5wnnjf9ljrn2m"))))
+                "15kdpxqfhfsar8nhwkqxj7ll9w5gcnvvwm8kkxs1l5lbpvq25hh2"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14964,21 +14988,18 @@ Insights service output.")
 (define-public r-ibmpopsim
   (package
     (name "r-ibmpopsim")
-    (version "0.3.1")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IBMPopSim" version))
               (sha256
                (base32
-                "1infqxfwqg6y4d8g3wmi3wg243hqjjmzirm00dhxiav4ps8yrg1q"))))
+                "03q65ysg2najjqqrjd9jnm7069q8gxhkyqwb7r7l6171wipwdi3y"))))
     (properties `((upstream-name . "IBMPopSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-reshape
+    (propagated-inputs (list r-rlang
                              r-readr
                              r-rcpp
-                             r-purrr
                              r-ggplot2
                              r-dplyr
                              r-checkmate))

@@ -1706,18 +1706,19 @@ data\" from the International Council for Harmonisation (ICH).")
 (define-public r-expimage
   (package
     (name "r-expimage")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExpImage" version))
               (sha256
                (base32
-                "0wzq10qv6m3r65g8gzv4ikpwmymmf5rspba5slrqrclmpl1wgvn5"))))
+                "1c54lgz2206bilqxhy8s7r19vnnkahw3h6bhp8h6bzbx5d7714iv"))))
     (properties `((upstream-name . "ExpImage")))
     (build-system r-build-system)
     (propagated-inputs (list r-schemr
                              r-rstudioapi
                              r-raster
+                             r-randomforest
                              r-progress
                              r-ggplot2
                              r-foreach
@@ -3952,23 +3953,24 @@ Neural-Network-based Evidential Clustering.")
 (define-public r-evclass
   (package
     (name "r-evclass")
-    (version "1.1.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evclass" version))
               (sha256
                (base32
-                "00lbhcgswpv0amz0mb93kx9p91sf0d7zvxfw9i8x1zpmpfd6nhcj"))))
+                "1pa1vb5lzglq0sdiwy2xgy5b76h43vfdajs346jbmrzm7xvximpj"))))
     (properties `((upstream-name . "evclass")))
     (build-system r-build-system)
-    (propagated-inputs (list r-fnn))
+    (propagated-inputs (list r-r-utils r-ibelief r-fnn))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evclass")
     (synopsis "Evidential Distance-Based Classification")
     (description
-     "Different evidential distance-based classifiers, which provide outputs in the
-form of Dempster-Shafer mass functions.  The methods are: the evidential
-K-nearest neighbor rule and the evidential neural network.")
+     "Different evidential classifiers, which provide outputs in the form of
+Dempster-Shafer mass functions.  The methods are: the evidential K-nearest
+neighbor rule, the evidential neural network, radial basis function neural
+networks, logistic regression, feed-forward neural networks.")
     (license license:gpl3)))
 
 (define-public r-evapotranspiration
@@ -4642,13 +4644,13 @@ described in Giubilei et al. (2022) <arXiv:2207.04430>.")
 (define-public r-etrader
   (package
     (name "r-etrader")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etrader" version))
               (sha256
                (base32
-                "1iq80vn7j2sywlla01f6vrfyjjs4lk606kc8z4xlfqj8d27r9r9w"))))
+                "1yy7l9030pkwfashybkrpyzpip8camxsy503s1si2myrpjf93chj"))))
     (properties `((upstream-name . "etrader")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -5842,13 +5844,13 @@ and AED3-SSR.")
 (define-public r-escvtmle
   (package
     (name "r-escvtmle")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EScvtmle" version))
               (sha256
                (base32
-                "09sh9njnrv8bh6xlni3jmhwrp3yb6xxfx6di2ykam6mi50djknbf"))))
+                "0bp5ykqczj6zyb9g5rg9zwwdyvd3l530km927wwxdi862sh5ri5g"))))
     (properties `((upstream-name . "EScvtmle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6413,6 +6415,40 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 <doi:10.1177/0081175017692623> and Krivitsky, Hunter, Morris, and Klumb (2021)
 <arXiv:2106.04997>.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-ergm-multi
+  (package
+    (name "r-ergm-multi")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ergm.multi" version))
+              (sha256
+               (base32
+                "1nvr7f4ilhf9f3kyahaxhzq6wr4c2vx3afl5p6za72v8g6cnqjq0"))))
+    (properties `((upstream-name . "ergm.multi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-statnet-common
+                             r-rle
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-network
+                             r-matrix
+                             r-glue
+                             r-ergm))
+    (native-inputs (list r-knitr))
+    (home-page "https://statnet.org")
+    (synopsis
+     "Fit, Simulate and Diagnose Exponential-Family Models for Multiple or Multilayer Networks")
+    (description
+     "This package provides a set of extensions for the ergm package to fit
+multilayer/multiplex/multirelational networks and samples of multiple networks.
+ergm.multi is a part of the Statnet suite of packages for network analysis.  See
+Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and
+Krivitsky, Coletti, and Hens (2022) <doi:10.48550/arXiv.2202.03685>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm-ego
@@ -7324,13 +7360,13 @@ function call.")
 (define-public r-epocakir
   (package
     (name "r-epocakir")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epocakir" version))
               (sha256
                (base32
-                "0zid17100gj50dfb6l305jvsnzaixlr5w482f061gl50bxaplgg2"))))
+                "19dlwr7dm8dgpd4pkzz9z979ijq0rkampjw5mxjrbq8xgliz0mfr"))))
     (properties `((upstream-name . "epocakir")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -7677,31 +7713,6 @@ choice c(i) which is optimal, there is one type that expresses common belief in
 rationality.")
     (license license:gpl3)))
 
-(define-public r-epistats
-  (package
-    (name "r-epistats")
-    (version "1.5-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EpiStats" version))
-              (sha256
-               (base32
-                "0swxww4x0qqlby4m8xw58jr5x2ml5z896m8w0f1v0mr7kf1v6fpi"))))
-    (properties `((upstream-name . "EpiStats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-epir r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EpiStats")
-    (synopsis "Tools for Epidemiologists")
-    (description
-     "This package provides set of functions aimed at epidemiologists.  They include
-commands for measures of association and impact for case control studies and
-cohort studies.  They may be particularly useful for outbreak investigations and
-include univariate and stratified analyses.  The functions for cohort studies
-include the CS(), CSTable() and CSInter() commands.  The functions for case
-control studies include the CC(), CCTable() and CCInter() commands.")
-    (license license:lgpl3)))
-
 (define-public r-epistasis
   (package
     (name "r-epistasis")
@@ -7937,6 +7948,40 @@ include functions to calculate an appropriate sample size for 1- and 2-stage
 representative freedom surveys, functions to estimate surveillance system
 sensitivity and functions to support scenario tree modelling analyses.")
     (license license:gpl2+)))
+
+(define-public r-epiomics
+  (package
+    (name "r-epiomics")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epiomics" version))
+              (sha256
+               (base32
+                "1ma0irgjicmnim47h4l085pg909jysri5njkr7brcf7sc3ikv19a"))))
+    (properties `((upstream-name . "epiomics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-qgcomp
+                             r-lmertest
+                             r-lme4
+                             r-ggrepel
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=epiomics")
+    (synopsis "Analysis of Omics Data in Observational Studies")
+    (description
+     "This package provides a collection of fast and flexible functions for analyzing
+omics data in observational studies.  Multiple different approaches for
+integrating environmental/genetic factors, omics data, and/or phenotype data are
+implemented.  This includes functions for performing omics wide association
+studies with one or more variables of interest as the exposure or outcome; a
+function for performing a meet in the middle analysis for linking exposures,
+omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
+<doi:10.3109/1354750X.2010.533285>); and a function for performing a mixtures
+analysis across all omics features using quantile-based g-Computation (as
+described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
+    (license license:gpl3+)))
 
 (define-public r-epinetr
   (package
@@ -13529,13 +13574,13 @@ gradients including no response, monotone, plateau, unimodal and bimodal models.
 (define-public r-ehelp
   (package
     (name "r-ehelp")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ehelp" version))
               (sha256
                (base32
-                "0264nx4bidrbwhlxx9llarvh4zb3xnzln8km14823q1hclkpm2fq"))))
+                "1kqd6mzzcf2b0hslpm2zvxyi3i4vhzxsmvdmfqgrs6703n1dx62g"))))
     (properties `((upstream-name . "ehelp")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14374,13 +14419,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFAtools" version))
               (sha256
                (base32
-                "1bs4j4d09h12yahf75r1ki18wmmvcmj5lkjsi0dw0cq7vr7swd85"))))
+                "1fzkmvadkcd88d81420lw9mhpmxbjymp4jada2c79bxq1h6b3mw2"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -16244,13 +16289,13 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "0.2.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ECOTOXr" version))
               (sha256
                (base32
-                "0gpzf957ya02695ga8cv3mw17jb027w10pjxq9r5ziky54wnh7qh"))))
+                "1nc0kgi6ii6kdfl29c1f2ahdk943fzlrxm216a5r3hbipmaw9k64"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16260,9 +16305,12 @@ metrics to relate pairs of trajectories (dissimilarity and convergence).")
                              r-rvest
                              r-rsqlite
                              r-rlang
+                             r-readxl
                              r-readr
                              r-rappdirs
                              r-purrr
+                             r-lifecycle
+                             r-jsonlite
                              r-httr
                              r-dplyr
                              r-dbplyr
@@ -16964,17 +17012,17 @@ with further statistical detail in Goslee (2010)
 (define-public r-ecodiet
   (package
     (name "r-ecodiet")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoDiet" version))
               (sha256
                (base32
-                "1yc120fs4bprn9ifh59n6y671wa5vi7r6k0ldp9fzy5asax00ds8"))))
+                "1lgjymm2anb7f11gvg0875wyjjfzbh0y1vwinbidpn2kmgm9b05h"))))
     (properties `((upstream-name . "EcoDiet")))
     (build-system r-build-system)
     (inputs (list jags))
-    (propagated-inputs (list r-rjags r-ggplot2 r-coda))
+    (propagated-inputs (list r-jagsui r-ggplot2 r-ggmcmc r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pyhernvann/EcoDiet")
     (synopsis
@@ -16983,7 +17031,7 @@ with further statistical detail in Goslee (2010)
      "Biotracers and stomach content analyses are combined in a Bayesian hierarchical
 model to estimate a probabilistic topology matrix (all trophic link
 probabilities) and a diet matrix (all diet proportions).  The package relies on
-the JAGS software and the rjags package to run a Markov chain Monte Carlo
+the JAGS software and the jagsUI package to run a Markov chain Monte Carlo
 approximation of the different variables.")
     (license license:gpl2+)))
 
@@ -17543,13 +17591,13 @@ to create, manipulate, plot, and analyze those and similar data sets.")
 (define-public r-ecespa
   (package
     (name "r-ecespa")
-    (version "1.1-16")
+    (version "1.1-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecespa" version))
               (sha256
                (base32
-                "1hlfrbwy119gwqf39z81j3nsc1y6gsyh2jy7qid7hp5llbmym10k"))))
+                "1n96nxb8spyi914m21yybb2yajawz22fmjldbr9j76dl7s36ygcd"))))
     (properties `((upstream-name . "ecespa")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-model
@@ -17977,13 +18025,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "1.2021.1")
+    (version "1.2021.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "19hz86a0za72av6gdbjsxx0m0cmgrnsbqnj1kksw7zhcwsa4za6p"))))
+                "1192w29bsypb2krg3y9pnyk4xd18rjaq2b8zhljkw6ziz41190rw"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -19094,13 +19142,13 @@ conducted easily.")
 (define-public r-easyabc
   (package
     (name "r-easyabc")
-    (version "1.5")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EasyABC" version))
               (sha256
                (base32
-                "17qv6y8sf2iwwqcv5wfg6sii259gv5jyr72dnfpir2bw78wb3mqx"))))
+                "173830655knpmc9qb7i2n4332rn3d3qp6566kmr2hrw60gh94v1j"))))
     (properties `((upstream-name . "EasyABC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensora

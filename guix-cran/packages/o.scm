@@ -1893,13 +1893,13 @@ the gradient is enabled through OpenMP'.")
 (define-public r-orsk
   (package
     (name "r-orsk")
-    (version "1.0-6")
+    (version "1.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "orsk" version))
               (sha256
                (base32
-                "18qhjnpp4cmgr2ynnkxd2lych2jfkxqc9m71xmh9dp6934qc8n0b"))))
+                "0kdy8d9idnhhjhviriq22pyj543zrw83yc9qb1h190lspizdd2bs"))))
     (properties `((upstream-name . "orsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-bhh2 r-bb))
@@ -3120,22 +3120,21 @@ previous residuals.")
 (define-public r-orcs
   (package
     (name "r-orcs")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Orcs" version))
               (sha256
                (base32
-                "1sn1kj4wlcsri40s36jnhrpqp9gc5g2nf71ljznzifq9ivrn9sfh"))))
+                "0b2h0vyvp6hnp9i03c8yxfhrlbdq0akdlw2ik0k5c09wfiq7amq6"))))
     (properties `((upstream-name . "Orcs")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-terra
+                             r-sp
                              r-sf
-                             r-rgdal
                              r-remotes
                              r-rcpp
-                             r-raster
                              r-plotrix
                              r-latticeextra
                              r-lattice
@@ -3747,6 +3746,27 @@ analytics and perform graphical analysis of various option strategies.  Provides
 functions to calculate the option premium and option greeks of European-style
 options.")
     (license license:gpl3)))
+
+(define-public r-options
+  (package
+    (name "r-options")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "options" version))
+              (sha256
+               (base32
+                "1s1mm4ir5q1wh8xjv4z5wyzkz7c1jpx7nlf0lmpv2lq9zgsjl9ps"))))
+    (properties `((upstream-name . "options")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://dgkf.github.io/options/")
+    (synopsis "Simple, Consistent Package Options")
+    (description
+     "Simple mechanisms for defining and interpreting package options.  Provides
+helpers for interpreting environment variables, global options, defining default
+values and more.")
+    (license license:expat)))
 
 (define-public r-optionpricing
   (package
@@ -5000,20 +5020,21 @@ method.")
 (define-public r-opentripplanner
   (package
     (name "r-opentripplanner")
-    (version "0.4.0")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opentripplanner" version))
               (sha256
                (base32
-                "1q0szrbgcjzc7ny08gilv2q0v1x81i626mzsahkii79qqb7capr1"))))
+                "113qlpz8sypvj7wy8b3cqck12vs39366c2cwj5gp4wywl32l4amh"))))
     (properties `((upstream-name . "opentripplanner")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
                              r-sf
                              r-rjson
-                             r-pbapply
-                             r-lubridate
+                             r-rcppsimdjson
+                             r-purrr
+                             r-progressr
                              r-googlepolylines
                              r-geodist
                              r-data-table
@@ -5798,13 +5819,13 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openairmaps" version))
               (sha256
                (base32
-                "15w5pwgdkmnyasrv3dwanaf9jz6iplq18zx53iz60nnn9bndy29n"))))
+                "19zwphalihdwar9y3k3gmyh97j608ki2rnsra1l678klz7flq8ik"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5832,16 +5853,17 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.12")
+    (version "2.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "1mgawgf6y8bfb606y8ka7g920sqn3c322l1xkis25zgq2r1gk6js"))))
+                "1cflwn28b7vzmhvq6nnr2157frrka2jy9r68ga9z9c95nfhhlaj5"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-readr
                              r-rcpp
@@ -6024,13 +6046,13 @@ the R server side.  DataSHIELD administration tools are also provided.")
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.5.3")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opa" version))
               (sha256
                (base32
-                "14y3q7mblxc65lpsndsij1wgwd29wfzfc58g666dgs5fz7vdqf72"))))
+                "1l52cmhjp5xm91lgwsvvxych6f0fqcf35dbd70kmy9w2s836bk1p"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-cpp11))
@@ -8357,13 +8379,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "officedown" version))
               (sha256
                (base32
-                "0h2zd7dzg63chakxsdb9n1w3sz684p63r6g1fphh4jcdmsbs5z2n"))))
+                "086wx177n5yar531n6l2dxwq009ns5x14f4dhf9gd96f12fq4wra"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8989,19 +9011,20 @@ of CARET's GLM model class, by returning the final trained model.")
 (define-public r-oddsapir
   (package
     (name "r-oddsapir")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oddsapiR" version))
               (sha256
                (base32
-                "1w48gldbnckbm61ci67b8sdxq9dcm6mxl30gcwkm9n3dqnmdf7n7"))))
+                "0p0zl8ibsqlfhwllcmkfi9nxcplr7xwlrq3qdmkmr58fq796apr5"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
                              r-rvest
                              r-rlang
+                             r-purrr
                              r-magrittr
                              r-jsonlite
                              r-janitor
@@ -9547,13 +9570,13 @@ technology). - Create frozen maps with the possibility to add labels.")
 (define-public r-oceanic
   (package
     (name "r-oceanic")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oceanic" version))
               (sha256
                (base32
-                "06yfqyxs190b2c15z737y4nw2k7l4486rg9syv5wwdxl25rcxc1k"))))
+                "0mpvp19nmwk1wqiy4k938504ykrsklc37bkgv6r69kdx48i7pi14"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdata
@@ -10125,6 +10148,44 @@ needs.  For more detail: Chorus et al., 2021, Obfuscation maximization-based
 decision-making: Theory, methodology and first empirical evidence, Mathematical
 Social Sciences, 109, 28-44.")
     (license license:gpl3)))
+
+(define-public r-obcost
+  (package
+    (name "r-obcost")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "obcost" version))
+              (sha256
+               (base32
+                "1i2a4xzgagx9f8fs1jh9pgmvsd7hkyhhr3dj349fijbis6fvq6v5"))))
+    (properties `((upstream-name . "obcost")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (home-page "https://cran.r-project.org/package=obcost")
+    (synopsis "Obesity Cost Database")
+    (description
+     "This database contains necessary data relevant to medical costs on obesity
+throughout the United States.  This database, in form of an R package, could
+output necessary data frames relevant to obesity costs, where the clients could
+easily manipulate the output using difference parameters, e.g. relative risks
+for each illnesses.  This package contributes to parts of our published journal
+named \"Modeling the Economic Cost of Obesity Risk and Its Relation to the Health
+Insurance Premium in the United States: A State Level Analysis\".  Please use the
+following citation for the journal: Woods Thomas, Tatjana Miljkovic (2022)
+\"Modeling the Economic Cost of Obesity Risk and Its Relation to the Health
+Insurance Premium in the United States: A State Level Analysis\"
+<doi:10.3390/risks10100197>.  The database is composed of the following main
+tables: 1.  Relative_Risks: (constant) Relative risks for a given disease group
+with a risk factor of obesity; 2.  Disease_Cost: (obesity_cost_disease)
+Supplementary output with all variables related to individual disease groups in
+a given state and year; 3.  Full_Cost: (obesity_cost_full) Complete output with
+all variables used to make cost calculations, as well as cost calculations in a
+given state and year; 4.  National_Summary: (obesity_cost_national_summary)
+National summary cost calculations in a given year.  Three functions are
+included to assist users in calling and adjusting the mentioned tables and they
+are data_load(), data_produce(), and rel_risk_fun().")
+    (license license:lgpl2.0+)))
 
 (define-public r-obaspatial
   (package

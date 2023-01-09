@@ -2099,13 +2099,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "3.1.6")
+    (version "3.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GSODR" version))
               (sha256
                (base32
-                "0slz4b4x3mmhqnshx2fc46sf22zmkjjqqq21bd0y98gvhr7cbspv"))))
+                "1brlg3hz8ma5gq5lbhxq30xxvixwbv7j83msd2r319shcqn61lk4"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-httr r-data-table r-curl
@@ -5168,13 +5168,13 @@ exploring periodicity in the data.")
 (define-public r-graven
   (package
     (name "r-graven")
-    (version "1.0.12")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRaven" version))
               (sha256
                (base32
-                "12s9c873xjyg24bfw9hb8srmn7dnyv197ya4ca1dp640sydqzf4k"))))
+                "087zsgmr6vhbp7ggqfrgm65jrqy32x9xg971lc6i0qn2lb2kfky1"))))
     (properties `((upstream-name . "gRaven")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-grbase r-grain))
@@ -5182,12 +5182,13 @@ exploring periodicity in the data.")
     (synopsis "Bayes Nets: 'RHugin' Emulation with 'gRain'")
     (description
      "Wrappers for functions in the gRain package to emulate some RHugin
-functionality, allowing the building of Bayesian networks incrementally, through
-adding nodes, edges and conditional probability tables, the setting of evidence,
-both hard (boolean) or soft (likelihoods), and querying marginal probabilities
-and normalizing constants.  Computations will typically not be so fast as they
-are with RHugin', but this package should assist users without access to Hugin
-to use code written to use RHugin'.")
+functionality, allowing the building of Bayesian networks consisting on discrete
+chance nodes incrementally, through adding nodes, edges and conditional
+probability tables, the setting of evidence, both hard (boolean) or soft
+(likelihoods), querying marginal probabilities and normalizing constants, and
+generating sets of high-probability configurations.  Computations will typically
+not be so fast as they are with RHugin', but this package should assist users
+without access to Hugin to use code written to use RHugin'.")
     (license license:gpl2+)))
 
 (define-public r-grattan
@@ -6491,13 +6492,13 @@ Guinness (2018) <arXiv:1609.05372>.")
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.0-8")
+    (version "3.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPvam" version))
               (sha256
                (base32
-                "1ky3k3b3549y5gm3cwm24pjzjcfj67a6imlbd271xnfrrhvdrnvn"))))
+                "15y17z1l23n7kyrgn3q8br70ym1jdqkkysrhkal2flci70b1c7ij"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
@@ -7174,16 +7175,15 @@ Causal effects of exposure to air pollution on health outcomes.\" arXiv preprint
 (define-public r-gpbstat
   (package
     (name "r-gpbstat")
-    (version "0.3.5")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpbStat" version))
               (sha256
                (base32
-                "1inmh8r02fn48p2f150d3prxlkf61549027vc64a3kyyk5q167ib"))))
+                "00s9zys6awwimdzqql7prbbpg45nyrsccjjb59pzwsr234bqpmwl"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nandp1/gpbStat/")
     (synopsis
@@ -10661,13 +10661,13 @@ relevant paper is available on arXiv: <arXiv:2105.14328>.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.4")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmtoolbox" version))
               (sha256
                (base32
-                "1gj391am5k0xd044allvnvcv3x4wvav1d34rpfzcvwifl9lqxm8v"))))
+                "0bg1d7whdihjsm6rzq40a36dlg2v3asav9g2955i3w57kp0f8wwa"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-numderiv r-formula))
@@ -10677,10 +10677,10 @@ relevant paper is available on arXiv: <arXiv:2105.14328>.")
      "Set of tools to the statistical analysis of data using: (1) normal linear
 models; (2) generalized linear models; (3) negative binomial regression models
 as alternative to the Poisson regression models under the presence of
-overdispersion; (4) beta-binomial and random-cumpled binomial regression models
+overdispersion; (4) beta-binomial and random-clumped binomial regression models
 as alternative to the binomial regression models under the presence of
 overdispersion; (5) Zero-inflated and zero-altered regression models to deal
-with zero-excess in count data;(6) generalized estimating equations for cluster
+with zero-excess in count data; (6) generalized estimating equations for cluster
 correlated data.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -11576,13 +11576,13 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gllvm" version))
               (sha256
                (base32
-                "0z465qg15wj13cpd5m6cva5s1gcz1j0663g3yicdwgnypkxryahg"))))
+                "1l91ngxmb7bn4g654faphmlp6spwnq6rihmq1n7h13pkwfbhdx9n"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -13929,17 +13929,18 @@ analysis, meta-analysis, and regression analyses.  References: Patil (2021)
 (define-public r-ggstats
   (package
     (name "r-ggstats")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstats" version))
               (sha256
                (base32
-                "1rjasjgyg64wcj2w701xkwg31rn2pirh2r5m7kj153k8gx3bx356"))))
+                "005qww0hglrf2bic7i5ir5ncljsfkgq4xkd6pflj1r3169bp74z4"))))
     (properties `((upstream-name . "ggstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-scales
+                             r-rlang
                              r-magrittr
                              r-lifecycle
                              r-ggplot2
@@ -13955,7 +13956,7 @@ analysis, meta-analysis, and regression analyses.  References: Patil (2021)
 (\"forest plots\").  The suite also includes new statistics to compute
 proportions, weighted mean and cross-tabulation statistics, as well as new
 geometries to add alternative background color to a plot.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-ggstar
   (package
@@ -17379,13 +17380,13 @@ incorporation of a priori knowledge of the data structure.")
 (define-public r-gfonts
   (package
     (name "r-gfonts")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gfonts" version))
               (sha256
                (base32
-                "0dbpw93pa3asjddl2f2ih7149mkjfz3kywmz2623mfl0sm1x5g71"))))
+                "19ja087k767bq71v2w4jcpynd62ysrqmjf6rpfnmmd40aanyxqkj"))))
     (properties `((upstream-name . "gfonts")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -17395,7 +17396,7 @@ incorporation of a priori knowledge of the data structure.")
                              r-crul
                              r-crayon))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dreamRs/gfonts")
+    (home-page "https://dreamrs.github.io/gfonts/")
     (synopsis "Offline 'Google' Fonts for 'Markdown' and 'Shiny'")
     (description
      "Download Google fonts and generate CSS to use in rmarkdown documents and shiny
@@ -17943,13 +17944,13 @@ callable from R. The package also builds on Windows, but just returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GetTDData" version))
               (sha256
                (base32
-                "0w77bc03k6qdpx1c87rdmnz976q9a5n84bav5xv78rg7yw7q5ksy"))))
+                "1ablrimcfif3kkzkyw9m2wwb2y39yzgvi96i14n8j4ddwdkalbn5"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17957,6 +17958,7 @@ callable from R. The package also builds on Windows, but just returns NULL.")
                              r-stringr
                              r-rvest
                              r-readxl
+                             r-fs
                              r-dplyr
                              r-curl
                              r-bizdays))
@@ -19001,13 +19003,13 @@ Endrizzi et al, 2014
 (define-public r-geostats
   (package
     (name "r-geostats")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geostats" version))
               (sha256
                (base32
-                "18f4b6l2qm72dc561q304azi5z4nrlg99zzgkxc406473qadqy0w"))))
+                "0fmp6883a3xqay3wcc3bz7czhyik1mki3zn5z195iag11yvc5wr6"))))
     (properties `((upstream-name . "geostats")))
     (build-system r-build-system)
     (home-page "https://github.com/pvermees/geostats/")
@@ -19231,13 +19233,13 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.6-4")
+    (version "0.6-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geosapi" version))
               (sha256
                (base32
-                "1h3yfhp68i4zm53mgpfq323fw3v9c3z5va2y296jgwhazypjhz9r"))))
+                "0gwzr1ya5a32smwi7841abh3j8zipyg3y430qbdgnchm1f349x20"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -19524,13 +19526,13 @@ package provides the R interface to Python modules, classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1aac0srxva1pyqriwk7dykx2nh05bnagi2nm1vhvqwb2y24lsk42"))))
+                "0z7p4ai7s643nbnj7szs49q3dsmq9yhacdwxx86v3md8xwk7kjkq"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -20428,16 +20430,17 @@ at the University of Chicago.  Datasets are stored as sf objects.")
 (define-public r-geocmeans
   (package
     (name "r-geocmeans")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geocmeans" version))
               (sha256
                (base32
-                "1h51sxn8clw62j0r5rk4zi7s1hyrjzslmgrv2lgwx4s816cdhy19"))))
+                "0c87m0ram8lqcygxg60abgf9pm3aiydgagdhgqh6pd49bzizgibx"))))
     (properties `((upstream-name . "geocmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
+                             r-terra
                              r-spdep
                              r-shiny
                              r-sf
@@ -20446,7 +20449,6 @@ at the University of Chicago.  Datasets are stored as sf objects.")
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-progressr
                              r-plotly
                              r-matrixstats
@@ -21383,13 +21385,13 @@ and retrieve lyrics with ease.")
 (define-public r-genio
   (package
     (name "r-genio")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genio" version))
               (sha256
                (base32
-                "0cqn17k4is8lf8yym2h6l7nc51nzpx6br71z4bi12dm4ni0c0k6y"))))
+                "0izx8yv8mvnfxdqnqpnp2ldw1hzs6ggxi7jgmjlgxkgmm4vngbgl"))))
     (properties `((upstream-name . "genio")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-rcpp r-dplyr))
@@ -23288,13 +23290,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GE" version))
               (sha256
                (base32
-                "14qb40hv7zidgklm7phi0983v35szdlnshw3giszfhp0b50v41s9"))))
+                "165khm0x183v6f4bd9swfmldi9kh28fjygipvkh95dcd3x39vi2w"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -23387,13 +23389,13 @@ use moments.")
 (define-public r-gdpuc
   (package
     (name "r-gdpuc")
-    (version "0.9.2")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GDPuc" version))
               (sha256
                (base32
-                "13izxvkl250jw66fkwwnj3s0mgmiwkza9marrrfhwvpx6ja2w37i"))))
+                "1a7854ycwcaqlqvyv9lgcjljbwi4a2p0cyfchkcdnkfh60b3gn0i"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -24927,16 +24929,48 @@ nonlinear mixed-model population fits with nlme and Bayesian methods with Stan;
 computes derived parameters such as t50 and AUC.")
     (license license:gpl3+)))
 
+(define-public r-gasper
+  (package
+    (name "r-gasper")
+    (version "1.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gasper" version))
+              (sha256
+               (base32
+                "0zg65ix07clrbhwwx9wsy4zclw039k1xsmcl5cf67n41v66nr4ng"))))
+    (properties `((upstream-name . "gasper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-httr
+                             r-ggplot2
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fabnavarro/gasper")
+    (synopsis "Graph Signal Processing")
+    (description
+     "This package provides the standard operations for signal processing on graphs:
+graph Fourier transform, spectral graph wavelet transform, visualization tools.
+It also implements a data driven method for graph signal denoising/regression,
+for details see De Loynes, Navarro, Olivier (2019) <arxiv:1906.01882>.  The
+package also provides an interface to the SuiteSparse Matrix Collection,
+<https://sparse.tamu.edu/>, a large and widely used set of sparse matrix
+benchmarks collected from a wide range of applications.")
+    (license license:lgpl2.0+)))
+
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasmodel" version))
               (sha256
                (base32
-                "0xyhkafjyh6x87l79yz1g8byj6gdvppci46d4brl32gcf2n28kh8"))))
+                "0b3z2b1n6m5cspy0mc41lm01q1frccbziha4fxya007pv15fhdlm"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -24954,7 +24988,8 @@ computes derived parameters such as t50 and AUC.")
 (GAS) models of Creal, Koopman, and Lucas (2013) <doi:10.1002/jae.1279> and
 Harvey (2013) <doi:10.1017/cbo9781139540933>.  Model specification allows for
 various conditional distributions, different parametrizations, exogenous
-variables, higher score and autoregressive orders, custom and unconditional
+variables, joint and separate modeling of exogenous variables and
+dynamics,higher score and autoregressive orders, custom and unconditional
 initial values of time-varying parameters, fixed and bounded values of
 coefficients, and missing values.  Model estimation is performed by the maximum
 likelihood method and the Hessian matrix.")

@@ -380,13 +380,13 @@ Excel file without advanced programming background knowledge.")
 (define-public r-yorkr
   (package
     (name "r-yorkr")
-    (version "0.0.34")
+    (version "0.0.36")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yorkr" version))
               (sha256
                (base32
-                "06y410klfnq2n0lgilgdgmh2cjsz1vphy3wvmjgcpbld89yv0q7g"))))
+                "1rk0wlsp8854qjy0sy9a0k02bknwyb9rk6n2s53c84gvcx8xgyrk"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -405,13 +405,13 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ympes" version))
               (sha256
                (base32
-                "018wvzaxcr0npgjvdwmgjm8cdkd449lpcmppdwy461zdxs8p1wrl"))))
+                "1m8za5igr20dbpmwwhyvqv1mammxfhkf96kwwgjzbx6ryaamg3bg"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -571,16 +571,17 @@ adjusted effect sizes.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yfR" version))
               (sha256
                (base32
-                "1zqsa6d69klwz95q47fkr5vh6vzcx48ypfyhwbwz7r2krbma8lbh"))))
+                "1yslfx95k7lq296njm2c3m34sncnzgais82f7si58f7jiq2hbg3a"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr

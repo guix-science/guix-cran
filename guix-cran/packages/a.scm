@@ -4949,13 +4949,13 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 (define-public r-artsy
   (package
     (name "r-artsy")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aRtsy" version))
               (sha256
                (base32
-                "195022z55733vi52kz739fwk49zvsifnma0z98zcgzymynyqq0ki"))))
+                "0dr3qmw1i9gj1vag247f48k59jr3x0ywn5rlddczhnkpglhdmm1h"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -6173,13 +6173,13 @@ variable.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ardl.nardl" version))
               (sha256
                (base32
-                "19dvigz1i2f3bnpqswl6f3l5wjpgm5b18vcpk15qanp650vk6jxw"))))
+                "0havazgn9vblnp0sy8hc9r42sngj7lbm0ni13h148a9pcnpc8ax3"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -7910,13 +7910,13 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apexcharter" version))
               (sha256
                (base32
-                "1kvlsnsvgiz3akcqpiyxin264qpjbz3m8g98jgfwyiqkjhqs441a"))))
+                "11qrjdcciy507q8v7w89zpln0fs3qn4lxndsrk002hbqrsdmxa5v"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -8409,13 +8409,13 @@ such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aorsf" version))
               (sha256
                (base32
-                "181nzlpq6wi2cdjhhsx8pnpi5sa092b45imzn5y2y8gcm2nxj6lb"))))
+                "0jrg0ffbghg33rk4qbdq0ypysgp9za5qrbwa9yc6av85djvz56j5"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
@@ -9436,17 +9436,17 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 (define-public r-annotator
   (package
     (name "r-annotator")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "annotator" version))
               (sha256
                (base32
-                "0q44dcb0kpy7062j7iwxl98aisdh3l851zi9khv2d79v0hb4cpnf"))))
+                "0d0lkizdafinyqjg7xzgn375b6m8gfkhsdf6c73hm9r8h2kik2sq"))))
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-shiny r-htmlwidgets))
-    (home-page "https://cran.r-project.org/package=annotator")
+    (home-page "https://github.com/cran/annotator")
     (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
     (description
      "This package provides functions to create image annotations through polygon
@@ -10034,6 +10034,26 @@ evaluation of the outputs.")
      "Storing very large data objects on a local drive, while still making it possible
 to manipulate the data in an efficient manner.")
     (license license:asl2.0)))
+
+(define-public r-andrews
+  (package
+    (name "r-andrews")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "andrews" version))
+              (sha256
+               (base32
+                "1rx1nh9ykbhpvnkdb624kc9gyib1grnk235sdnrzqk6sc501c19x"))))
+    (properties `((upstream-name . "andrews")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-primes))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sigbertklinke/andrews")
+    (synopsis "Various Andrews Curves")
+    (description
+     "Visualisation of multidimensional data through different Andrews curves.")
+    (license license:gpl3)))
 
 (define-public r-and
   (package
@@ -12750,13 +12770,13 @@ procedure are also implemented for bandwidth selection.")
 (define-public r-akc
   (package
     (name "r-akc")
-    (version "0.9.8.1")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "akc" version))
               (sha256
                (base32
-                "0prqvjbcm9aagjhxpzidi2jr2yddzqwqrwp5rm3ki8215fwr9mln"))))
+                "0m3n9qyz4z0xd535ma1nhh9qkg8abc4psa3xhzpq4spmgvk3an13"))))
     (properties `((upstream-name . "akc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -14487,6 +14507,29 @@ contexts.  Code has been completely re-written in data.table for computational
 speed.")
     (license license:gpl2+)))
 
+(define-public r-ageutils
+  (package
+    (name "r-ageutils")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ageutils" version))
+              (sha256
+               (base32
+                "1li9vd1qq2pf1prxxlqb3a8ff2rjr7796j3bhqj3s2qp6g09395a"))))
+    (properties `((upstream-name . "ageutils")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://timtaylor.github.io/ageutils/")
+    (synopsis "Collection of Functions for Working with Age Intervals")
+    (description
+     "This package provides a collection of efficient functions for working with
+individual ages and corresponding intervals.  These include functions for
+efficient conversion from an age to an interval, aggregation of ages with
+associated counts in to intervals and the splitting of interval counts based on
+specified age distributions.")
+    (license license:gpl2)))
+
 (define-public r-ageg
   (package
     (name "r-ageg")
@@ -14962,13 +15005,13 @@ package AFheritability Dahlqwist E et al. (2019)
 (define-public r-aerosampler
   (package
     (name "r-aerosampler")
-    (version "0.1.14")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AeroSampleR" version))
               (sha256
                (base32
-                "027lf82kpllz8v0g2mbbjx1yc2nmw5i0pfhmnhay3ms0yc4p4sbm"))))
+                "0prdw8yjdrcyc8msk2a8ia5cjd4gm88isg8dqp9yj2aqbfz6pin7"))))
     (properties `((upstream-name . "AeroSampleR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

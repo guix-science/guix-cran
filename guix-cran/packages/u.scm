@@ -1739,13 +1739,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-unnest
   (package
     (name "r-unnest")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unnest" version))
               (sha256
                (base32
-                "1as245gzviq3394g36q82m1cv2rdrwjlm3icd18lcz6sl13wggdy"))))
+                "1ajap4r3f4sbp9lnpk1c2if0g30lg4ds9l2l222mxrl45ysrknxa"))))
     (properties `((upstream-name . "unnest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2230,16 +2230,16 @@ stemming procedure for French is described in (Savoy, 1999)
 (define-public r-unikn
   (package
     (name "r-unikn")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unikn" version))
               (sha256
                (base32
-                "06y2jsx8hjbxdjm03w4ipjpxxp65fj10l2p3zjck82lyhw1llxxw"))))
+                "03v23j65pxbl3ddvaj71v2fc90kzv7pysa2xrmyfaxalrwc495bp"))))
     (properties `((upstream-name . "unikn")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-crayon))
+    (propagated-inputs (list r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=unikn")
     (synopsis
@@ -3155,6 +3155,35 @@ retrieve genetic metadata, read and write standard file formats for genetic
 analyses.")
     (license license:gpl2)))
 
+(define-public r-ukbnmr
+  (package
+    (name "r-ukbnmr")
+    (version "1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ukbnmr" version))
+              (sha256
+               (base32
+                "1nn3a9np4l9m60j7h8wcsn51574gs8056hs15bavrpmr1ad5gpdm"))))
+    (properties `((upstream-name . "ukbnmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ukbnmr")
+    (synopsis
+     "Removal of Unwanted Technical Variation from UK Biobank NMR Metabolomics Biomarker Data")
+    (description
+     "This package provides a suite of utilities for working with the UK Biobank
+<https://www.ukbiobank.ac.uk/> Nuclear Magnetic Resonance spectroscopy (NMR)
+metabolomics data <https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=220>.
+Includes functions for extracting biomarkers from decoded UK Biobank field data,
+removing unwanted technical variation from biomarker concentrations, computing
+an extended set of lipid, fatty acid, and cholesterol fractions, and for
+re-deriving composite biomarkers and ratios after adjusting data for unwanted
+biological variation.  For further details on methods see Ritchie SC et al.
+medRxiv (2021) <doi:10.1101/2021.09.24.21264079>.")
+    (license license:expat)))
+
 (define-public r-ukbabynames
   (package
     (name "r-ukbabynames")
@@ -3448,13 +3477,13 @@ and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.10")
+    (version "0.8.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "udpipe" version))
               (sha256
                (base32
-                "0ipns4wzp7j0ms6i2mfkfkgqqd5cqbrv79valiz6r7ffx4yxys14"))))
+                "0crjcfrpb0m7f58w7ksz7kvglvmc45axy9kbbvqz9w6i4kg00aaj"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-data-table))

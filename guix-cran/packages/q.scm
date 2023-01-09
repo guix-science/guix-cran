@@ -5116,21 +5116,22 @@ meteorological data.")
 (define-public r-qardl
   (package
     (name "r-qardl")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Qardl" version))
               (sha256
                (base32
-                "1kjnc0cqs526xv34pq26zsb6mh4gmnaxg4jz6ikpvlflgp0ca6nw"))))
+                "1sb6xp8hm4rh30dfnw9n5x10hr3sd9p0cv98fr31kdaiqji0vglw"))))
     (properties `((upstream-name . "Qardl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quantreg r-pbapply r-mass r-dplyr))
+    (propagated-inputs (list r-quantreg r-pbapply r-matrix r-mass r-dplyr))
     (home-page "https://cran.r-project.org/package=Qardl")
     (synopsis "Quantile Autoregressive Distributed Lag Model")
     (description
-     "Fit the quantile autoregressive distributed lag model proposed by ( Cho et al.
-(2015) <doi:10.1016/j.jeconom.2015.05.003>).")
+     "Compute the quantile autoregressive distributed lag model of Cho, Jin Seo & Kim,
+Tae-hwan & Shin, Yongcheol,(2015) <DOI:10.1016/j.jeconom.2015.05.003> and the
+short and long-run wald tests.")
     (license license:gpl2+)))
 
 (define-public r-qapprox

@@ -458,26 +458,6 @@ a piped work flow, in particular when passing and processing a data.frame using
 dplyr or similar packages.")
     (license license:expat)))
 
-(define-public r-zfa
-  (package
-    (name "r-zfa")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "zfa" version))
-              (sha256
-               (base32
-                "0lddwpifkzggzvy56ans5pfknfr8laxcg264f3ph2z150gw1plsh"))))
-    (properties `((upstream-name . "zfa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-skat))
-    (home-page "https://cran.r-project.org/package=zfa")
-    (synopsis "Zoom-Focus Algorithm")
-    (description
-     "This package performs Zoom-Focus Algorithm (ZFA) to optimize testing regions for
-rare variant association tests in exome sequencing data.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-zetasuite
   (package
     (name "r-zetasuite")
@@ -781,13 +761,13 @@ the software).")
 (define-public r-zcurve
   (package
     (name "r-zcurve")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zcurve" version))
               (sha256
                (base32
-                "0hxjizans42y936pfmcwgkjc6kk9c61xz8b8lglpzzqz48fyvcaw"))))
+                "1bgc2inc5wmimbhmxqlyg02hcf3n06z2fx26dnqr9baabmdgkpfa"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-nleqslv r-evmix))

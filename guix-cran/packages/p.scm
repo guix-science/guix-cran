@@ -16,7 +16,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
@@ -1387,6 +1386,31 @@ predict the trend of mRNA (Mature RNA) transcription and expression changes in
 the future.")
     (license license:gpl2)))
 
+(define-public r-pulsar
+  (package
+    (name "r-pulsar")
+    (version "0.3.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pulsar" version))
+              (sha256
+               (base32
+                "0hkg7gq56wq6xi71xh2kxzap48wjwak2a8n20dgndlppdz09v8z9"))))
+    (properties `((upstream-name . "pulsar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zdk123/pulsar")
+    (synopsis
+     "Parallel Utilities for Lambda Selection along a Regularization Path")
+    (description
+     "Model selection for penalized graphical models using the Stability Approach to
+Regularization Selection ('StARS'), with options for speed-ups including Bounded
+StARS (B-StARS), batch computing, and other stability metrics (e.g., graphlet
+stability G-StARS).  Christian L. MÃ¼ller, Richard Bonneau, Zachary Kurtz (2016)
+<arXiv:1605.07072>.")
+    (license license:gpl2+)))
+
 (define-public r-puls
   (package
     (name "r-puls")
@@ -1860,6 +1884,36 @@ with results returned as familiar R data structures.  Retrieve information on
 stops, routes, disruptions, departures, and more.")
     (license license:expat)))
 
+(define-public r-pttstability
+  (package
+    (name "r-pttstability")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pttstability" version))
+              (sha256
+               (base32
+                "1k6la75f4195ld9dndzxc6v49381r56djmc7ir1wzwvhxjchp8pa"))))
+    (properties `((upstream-name . "pttstability")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-redm))
+    (home-page "https://cran.r-project.org/package=pttstability")
+    (synopsis "Particle-Takens Stability")
+    (description
+     "Includes a collection of functions presented in \"Measuring stability in
+ecological systems without static equilibria\" by Clark et al. (2022)
+<doi:10.1002/ecs2.4328> in Ecosphere.  These can be used to estimate the
+parameters of a stochastic state space model (i.e.  a model where a time series
+is observed with error).  The goal of this package is to estimate the
+variability around a deterministic process, both in terms of observation error -
+i.e.  variability due to imperfect observations that does not influence system
+state - and in terms of process noise - i.e.  stochastic variation in the actual
+state of the process.  Unlike classical methods for estimating variability, this
+package does not necessarily assume that the deterministic state is fixed (i.e.
+a fixed-point equilibrium), meaning that variability around a dynamic trajectory
+can be estimated (e.g. stochastic fluctuations during predator-prey dynamics).")
+    (license license:gpl3)))
+
 (define-public r-ptsuite
   (package
     (name "r-ptsuite")
@@ -1960,13 +2014,13 @@ Log\".")
 (define-public r-ptools
   (package
     (name "r-ptools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ptools" version))
               (sha256
                (base32
-                "12i76cpi7sxsn23rj56y17askmyza1sayra8rv3pvwhhq89mbjlg"))))
+                "1mrpwg456afyqlzn7g48k7xmi4vjchni9rg7jyd1axkazw0zy7hy"))))
     (properties `((upstream-name . "ptools")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
@@ -7299,16 +7353,16 @@ nodes and edges based on functional information.")
 (define-public r-prinvars
   (package
     (name "r-prinvars")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prinvars" version))
               (sha256
                (base32
-                "1fajvl041sxwf6ydqyixqmxinj0k8d413h332gvkqkyyfmx5gnys"))))
+                "10cxp5dqjmi0kbx8g2qvpvwv2lcdg4sd2njg81l9g8dphx0c662f"))))
     (properties `((upstream-name . "prinvars")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack))
+    (propagated-inputs (list r-rdpack r-pma r-elasticnet))
     (home-page "https://github.com/Ronho/prinvars")
     (synopsis "Principal Variables")
     (description
@@ -7542,13 +7596,13 @@ simplex method, see Haotian Pang (2017)
 (define-public r-prim
   (package
     (name "r-prim")
-    (version "1.0.20")
+    (version "1.0.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prim" version))
               (sha256
                (base32
-                "0z07ddpz6r3sbi5141n9a0snzcc26rdlxiivfnacs8zavs1sk73x"))))
+                "085dwmflag45qg0p4w2f9v000zj2kfaijp6jm11dj85swxmx7vjm"))))
     (properties `((upstream-name . "prim")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-plot3d))
@@ -7617,13 +7671,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/curConverter.do>.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriceIndices" version))
               (sha256
                (base32
-                "0nbskpx2b3cs8lpdrxvwqk4ffq782a6rwad23v6zx2n9qbfsv3rb"))))
+                "0iyy1mbgwq7m1p2fkc2k16bdlhkrhkzlrii7dj21ym06811s8v1j"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8248,13 +8302,13 @@ by PreSens.")
 (define-public r-presenceabsence
   (package
     (name "r-presenceabsence")
-    (version "1.1.10")
+    (version "1.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PresenceAbsence" version))
               (sha256
                (base32
-                "0z4wc0ahqb5n6ikharpamcaim3g3mww0bkyblz61xaq2yzyny9jr"))))
+                "1dz4psinvj5zizj663rfigfr14z9d6khj2jqkk3bfr9qg19n8fn6"))))
     (properties `((upstream-name . "PresenceAbsence")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PresenceAbsence")
@@ -9317,19 +9371,21 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "0.4.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRecipe" version))
               (sha256
                (base32
-                "0z1jsnc5f2j2gq55sgqxys94l9cpqynlrhn8nqqxg4a2vc2b59yp"))))
+                "0vwyb6mlb2qv1dqkmywl0r8zwckqxs2q6mdmk6kj5giwxysb1hbk"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
-    (inputs (list proj netcdf gdal))
+    (inputs (list proj gdal))
     (propagated-inputs (list r-sf
+                             r-scales
                              r-raster
                              r-r-utils
+                             r-openair
                              r-ncdf4
                              r-ggpubr
                              r-ggplot2
@@ -11697,13 +11753,13 @@ deprivation\", Social Indicators Research <DOI:10.1007/s11205-016-1501-4>.")
 (define-public r-portvine
   (package
     (name "r-portvine")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "portvine" version))
               (sha256
                (base32
-                "1d97xishvwphq41755a99bm9rl856ymn97i7w4iy6bh60kcx73zr"))))
+                "1lhr4nxlr47sr77gk1q790rl7lwxs58gsaacl9rq7lyw24h8w7rs"))))
     (properties `((upstream-name . "portvine")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -12422,16 +12478,16 @@ to Fluorescence-Activated Cell Sorting Data\" <doi:10.1109/DICTA.2009.88>.")
 (define-public r-popkin
   (package
     (name "r-popkin")
-    (version "1.3.17")
+    (version "1.3.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "popkin" version))
               (sha256
                (base32
-                "1rmdsb9sdh2f8nx0nydwv8wpxafqaivkqqwd0g6qibx45h012920"))))
+                "07wlja7c96az0d82c3b0m1kmc04sbgp73asbaks26jwvjw4vmby5"))))
     (properties `((upstream-name . "popkin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-rcolorbrewer r-ape))
+    (propagated-inputs (list r-rcolorbrewer r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/StoreyLab/popkin/")
     (synopsis "Estimate Kinship and FST under Arbitrary Population Structure")
@@ -13172,13 +13228,13 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
 (define-public r-pomdpsolve
   (package
     (name "r-pomdpsolve")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomdpSolve" version))
               (sha256
                (base32
-                "0fkh2xamhgrh743b06mi6m7fg3bw989hxmwkf00bq6y7dr9c168b"))))
+                "1hva274g5ky0v9m0k3gfrfa9z5xvxnlfbi0fcbnv9n95m2hf4yfs"))))
     (properties `((upstream-name . "pomdpSolve")))
     (build-system r-build-system)
     (home-page "https://github.com/mhahsler/pomdpSolve")
@@ -13188,7 +13244,7 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
      "Installs an updated version of pomdp-solve', a program to solve Partially
 Observable Markov Decision Processes (POMDPs) using a variety of exact and
 approximate value iteration algorithms.  A convenient R infrastructure is
-provided in package pomdp.  Kaelbling, Littman and Cassandra (1998)
+provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 <doi:10.1016/S0004-3702(98)00023-X>.")
     (license license:gpl3+)))
 
@@ -17251,16 +17307,17 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "0.11.7")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLNmodels" version))
               (sha256
                (base32
-                "1035xn5z21c7l75z9dpcrcdvwsqgifyplay0fahj99jqyl6wkfiz"))))
+                "1wz40n9n3d502kal0qj80iwgj8ax4hl5qf87slbdda9bc19137vn"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-torch
+                             r-tidyr
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -21238,13 +21295,13 @@ used for the final data analysis.")
 (define-public r-photobiologywavebands
   (package
     (name "r-photobiologywavebands")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photobiologyWavebands" version))
               (sha256
                (base32
-                "04i2bm1chwj4mjfrvbiwl8p9h0jz4j04g6fg80fmppyd5mznay6r"))))
+                "0ckfs0kc14478fab35ayilmmvq72ph5bpdhbbb1kmwv3lf40lnc8"))))
     (properties `((upstream-name . "photobiologyWavebands")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -21440,13 +21497,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.10.14")
+    (version "0.10.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photobiology" version))
               (sha256
                (base32
-                "0k4l9mfpjbpc10yqhqqvciiyd64253sb8wa4vwax877qxlih2w21"))))
+                "0wf8fbvgqrf8qdrlg35a8c563dp0wl3g1v68wl69qdawq30ycr96"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23371,21 +23428,28 @@ MentrÃ© F (2007) <doi:10.1002/sim.2910>, Bazzoli C, Retout S, MentrÃ© F (200
 (define-public r-pfica
   (package
     (name "r-pfica")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pfica" version))
               (sha256
                (base32
-                "0v6wz2ig88z4pvwkmsxniy7cl2415091r6kn17dbgaw2qwqxgbxn"))))
+                "10njqflljcp8rxm5l7aqg6x93wbivdzvkjh7q6z01syblgb9755l"))))
     (properties `((upstream-name . "pfica")))
     (build-system r-build-system)
-    (propagated-inputs (list r-moments r-fda r-expm r-corpcor))
+    (propagated-inputs (list r-whitening r-fda r-expm))
     (home-page "https://github.com/m-vidal/pfica")
-    (synopsis "Independent Component Analysis for Univariate Functional Data")
+    (synopsis "Independent Components Analysis Techniques for Functional Data")
     (description
-     "This package performs penalized independent component analysis for univariate
-functional data [<doi:10.3390/math9111243>].")
+     "This package performs smoothed (and non-smoothed) principal/independent
+components analysis of functional data.  Various functional pre-whitening
+approaches are implemented as discussed in Vidal and Aguilera (2022) âNovel
+whitening approaches in functional settings\", <doi:10.1002/sta4.516>.  Further
+whitening representations of functional data can be derived in terms of a few
+principal components, providing an avenue to explore hidden structures in low
+dimensional settings: see Vidal, Rosso and Aguilera (2021) âBi-smoothed
+functional independent component analysis for EEG artifact removalâ,
+<doi:10.3390/math9111243>.")
     (license license:gpl2+)))
 
 (define-public r-pfa
@@ -25457,13 +25521,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.0.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedtools" version))
               (sha256
                (base32
-                "0svr7n5vy315dw3chj4q0xyc1wvc1z7kgb7n6izzgzjx4vaykwnp"))))
+                "1xj8bz63ylb14wdrplf4f1519gnnzlnpij0plvr07z611s6nf5yw"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-kinship2))
@@ -27735,16 +27799,22 @@ dataset to be considered for model fitting.")
 (define-public r-pcds
   (package
     (name "r-pcds")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcds" version))
               (sha256
                (base32
-                "0fqd5hxnmg4yybwn7wva224paxhnxx4fb2pymrxp716brxwi7gaf"))))
+                "00gwcqa66vbwsxar4q18j30wfi0d5dxzljhyanacb64bgddqsshx"))))
     (properties `((upstream-name . "pcds")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-plotrix r-plot3d r-interp r-combinat))
+    (propagated-inputs (list r-rdpack
+                             r-plotrix
+                             r-plot3d
+                             r-interp
+                             r-gmoip
+                             r-combinat))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=pcds")
     (synopsis "Proximity Catch Digraphs and Their Applications")
     (description
@@ -29406,6 +29476,28 @@ clipboard as a comment block or as roxygen lines.  This is very useful to insert
 an example in the roxygen block.")
     (license license:gpl3)))
 
+(define-public r-pastclim
+  (package
+    (name "r-pastclim")
+    (version "1.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pastclim" version))
+              (sha256
+               (base32
+                "0an1x7zhhnj7w4dfj3zc57fx2sbwzwknp5s3v7bgdi0ydxpkxp62"))))
+    (properties `((upstream-name . "pastclim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-ncdf4 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EvolEcolGroup/pastclim")
+    (synopsis "Manipulate Time Series of Palaeoclimate Reconstructions")
+    (description
+     "This package provides methods to easily extract and manipulate palaeoclimate
+reconstructions for ecological and anthropological analyses, as described in
+Leonardi et al. (2022) <doi:10.1101/2022.05.18.492456>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-password
   (package
     (name "r-password")
@@ -30681,6 +30773,26 @@ can in general be programmed on.  A useful OptPath object (archive) to log
 function evaluations is also provided.")
     (license license:bsd-2)))
 
+(define-public r-paramgui
+  (package
+    (name "r-paramgui")
+    (version "2.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "paramGUI" version))
+              (sha256
+               (base32
+                "16z7fbrykyfysiqfrj00ks567wwrz2mpcwx75crbg45spdw0dck6"))))
+    (properties `((upstream-name . "paramGUI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timp r-shinydashboard r-shiny r-fields))
+    (home-page "https://github.com/glotaran/paramGUI/")
+    (synopsis "Shiny GUI for some Parameter Estimation Examples")
+    (description
+     "Allows specification and fitting of some parameter estimation examples inspired
+by time-resolved spectroscopy via a Shiny GUI.")
+    (license license:gpl2+)))
+
 (define-public r-parallelplot
   (package
     (name "r-parallelplot")
@@ -30725,13 +30837,13 @@ that of the pcalg package but will be much more efficient.")
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parallelpam" version))
               (sha256
                (base32
-                "0fml4cgwqpwj8dqfbih1py2pvqksfiqd9v9442g0ls6kacjdmaph"))))
+                "04r4ccgq99damfvh1arzn83ggl6m9xkkz4b0z3zdd8y3p6hvk3x2"))))
     (properties `((upstream-name . "parallelpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))
@@ -31199,13 +31311,13 @@ relationships of two variables by unit or in aggregate.")
 (define-public r-panelvar
   (package
     (name "r-panelvar")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelvar" version))
               (sha256
                (base32
-                "11ci5ahgvpf72wk0p16lclca9jm30d2wr4rxw4jvr6n7x5ppmzdr"))))
+                "15bks8aqy29rslgbjp4w8xw7w2mcpgcc77bya7a9jcs5715j9xdb"))))
     (properties `((upstream-name . "panelvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg
@@ -33563,6 +33675,44 @@ for analyzing package usage.")
      "Compute and visualize the cross-sectional and longitudinal number and rank
 percentile of package downloads from RStudio's CRAN mirror.")
     (license license:gpl2+)))
+
+(define-public r-packagefinder
+  (package
+    (name "r-packagefinder")
+    (version "0.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "packagefinder" version))
+              (sha256
+               (base32
+                "1bbapqa0f7ql27hlsrrvgx5pqw5bwv2c1r4ylgzhzgvyp4j5808a"))))
+    (properties `((upstream-name . "packagefinder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-textutils
+                             r-stringr
+                             r-shinyjs
+                             r-shinybusy
+                             r-shiny
+                             r-reactable
+                             r-pander
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-htmltable
+                             r-formattable
+                             r-crayon
+                             r-clipr))
+    (home-page "https://github.com/jsugarelli/packagefinder/")
+    (synopsis
+     "Comfortable Search for R Packages on CRAN, Either Directly from the R Console or with an R Studio Add-in")
+    (description
+     "Search for R packages on CRAN directly from the R console, based on the packages
+titles, short and long descriptions, or other fields.  Combine multiple keywords
+with logical operators ('and', or'), view detailed information on any package
+and keep track of the latest package contributions to CRAN. If you don't want to
+search from the R console, use the comfortable R Studio add-in.")
+    (license license:gpl3)))
 
 (define-public r-packagediff
   (package

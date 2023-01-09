@@ -6179,16 +6179,16 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.0-2")
+    (version "1.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoseFinding" version))
               (sha256
                (base32
-                "15wpr8wiqjar9hlgcv8y2gjxv6531q3b69jxh2kq10k7bni3rshb"))))
+                "09456a5b2cjjsx45fmlzpcyg5mc7di0mh6v80pmil717qklxc0w6"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-lattice))
+    (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DoseFinding")
     (synopsis "Planning and Analyzing Dose Finding Experiments")
@@ -6901,16 +6901,16 @@ embedded signing, and sending of documents.")
 (define-public r-documenter
   (package
     (name "r-documenter")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "documenter" version))
               (sha256
                (base32
-                "1q04b95h6va3178lwp56zc45vh838vxl071w1ym60n5v6v4jsc4f"))))
+                "0azwak0hm7xydamvaj42hy1kl8an9f90i2lm91va7n08vmn8k064"))))
     (properties `((upstream-name . "documenter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-xml2 r-officer r-magrittr r-htmltools))
+    (propagated-inputs (list r-yaml r-officer r-magrittr r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=documenter")
     (synopsis "Documents Files")
@@ -7022,13 +7022,13 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doconv" version))
               (sha256
                (base32
-                "0316q24j8qj70pdqz31a46vp143bw3mpqsgqsady4ljpj530357s"))))
+                "0zhk9janaywih237dh36q8pi2s87shsi1g9gdaca9dz8gxbql2k0"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (inputs (list libreoffice))
@@ -8655,13 +8655,13 @@ systems.")
 (define-public r-divest
   (package
     (name "r-divest")
-    (version "0.10.2")
+    (version "0.10.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "divest" version))
               (sha256
                (base32
-                "1r49glh66vdrj7hp8xlqc3g1c13hjl24x7rhd27vv6l1jgvhllgb"))))
+                "1blg70i3v7269jlgrzdqdvi3f64ly8zhzmsl2fl3jzf3nigxbkhp"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp))
@@ -11941,13 +11941,13 @@ model parameters using the Gibbs sampler described by Culpepper (2015)
 (define-public r-dimora
   (package
     (name "r-dimora")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIMORA" version))
               (sha256
                (base32
-                "11cq1fxlzs8m7hp6jchkz7fq7k50xm62aylv62m2ywyigk52hg84"))))
+                "07gf1d7w1r6xpwnqnybnp22hrjqk47l1bjcpp4zhkb9ran3mc2gc"))))
     (properties `((upstream-name . "DIMORA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-numderiv r-minpack-lm r-forecast
@@ -14833,13 +14833,13 @@ deleted records.")
 (define-public r-dfcomb
   (package
     (name "r-dfcomb")
-    (version "3.0-0")
+    (version "3.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfcomb" version))
               (sha256
                (base32
-                "1vsqlhmajv33nbnh8igisyv3rzzh2fdwbk5y0zlnrwvr79r19k5w"))))
+                "04ply2jfbkrf5zylii24qfzhrnyksdxfj6647mkxq26a9j9r65x1"))))
     (properties `((upstream-name . "dfcomb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-bh))
@@ -16428,27 +16428,28 @@ multivariate generalization of QQ-plots).")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.1.6")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEPONS2R" version))
               (sha256
                (base32
-                "1r37w7j46djpdcw1zw82c83r5ndqpdwham0g95qsqlhmvg709i9q"))))
+                "1q5vbm0l388crazkmy3nx9kq1nc5c4p80m48mg5izpi33bssmxy8"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-terra
                              r-sp
-                             r-rgeos
-                             r-rgdal
+                             r-sf
                              r-raster
                              r-jsonlite))
     (home-page "https://cran.r-project.org/package=DEPONS2R")
     (synopsis "Read, Plot and Analyse Output from the DEPONS Model")
     (description
      "This package provides methods for analyzing population dynamics and movement
-tracks simulated using the DEPONS model <https://www.depons.eu>, and for
-manipulating input raster files and shipping routes.")
+tracks simulated using the DEPONS model <https://www.depons.eu> (v.3.0), for
+manipulating input raster files, shipping routes and for analyzing sound
+propagated from ships.")
     (license license:gpl3)))
 
 (define-public r-depmix
@@ -17944,6 +17945,50 @@ Gumbel and Weibull Kernel.  See Salha et al. (2014) <doi:10.4236/ojs.2014.48061>
 and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
     (license license:gpl2)))
 
+(define-public r-deet
+  (package
+    (name "r-deet")
+    (version "1.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DEET" version))
+              (sha256
+               (base32
+                "1kbl329hks3i5sf89rg54l24dw1alxnvv3y9l65z6yfzs2kn3gjn"))))
+    (properties `((upstream-name . "DEET")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pbapply
+                             r-glmnet
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-downloader
+                             r-activepathways))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DEET")
+    (synopsis "Differential Expression Enrichment Tool")
+    (description
+     "Abstract of Manuscript.  Differential gene expression analysis using RNA
+sequencing (RNA-seq) data is a standard approach for making biological
+discoveries.  Ongoing large-scale efforts to process and normalize publicly
+available gene expression data enable rapid and systematic reanalysis.  While
+several powerful tools systematically process RNA-seq data, enabling their
+reanalysis, few resources systematically recompute differentially expressed
+genes (DEGs) generated from individual studies.  We developed a robust
+differential expression analysis pipeline to recompute 3162 human DEG lists from
+The Cancer Genome Atlas, Genotype-Tissue Expression Consortium, and 142 studies
+within the Sequence Read Archive.  After measuring the accuracy of the
+recomputed DEG lists, we built the Differential Expression Enrichment Tool
+(DEET), which enables users to interact with the recomputed DEG lists.  DEET,
+available through CRAN and RShiny, systematically queries which of the
+recomputed DEG lists share similar genes, pathways, and TF targets to their own
+gene lists.  DEET identifies relevant studies based on shared results with the
+userâs gene lists, aiding in hypothesis generation and data-driven literature
+review.  Sokolowski, Dustin J., et al. \"Differential Expression Enrichment Tool
+(DEET): an interactive atlas of human differential gene expression.\" bioRxiv
+(2022).")
+    (license license:gpl3)))
+
 (define-public r-deeptrafo
   (package
     (name "r-deeptrafo")
@@ -18899,13 +18944,13 @@ differentials and compares the estimates obtained from two datasets.")
 (define-public r-decafs
   (package
     (name "r-decafs")
-    (version "3.3.2")
+    (version "3.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DeCAFS" version))
               (sha256
                (base32
-                "0rgrh0k3h3rq5bs6nskg6b9lgms9y7hkqhym4vww1y9ndv4ksk0s"))))
+                "0dj32rck6ssyv82d8b75qgsqw319q02iqd3xxazy6251wcjn321i"))))
     (properties `((upstream-name . "DeCAFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-rcpp r-ggplot2))
@@ -20737,27 +20782,32 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.7-11")
+    (version "2.8-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbmss" version))
               (sha256
                (base32
-                "0d5pvn7k6m39m0bs76y5p9qbbrahsbdxx1fkmv33gg4kpk83bbl9"))))
+                "145p4vv375nwglb7k6c97cfj9325rhv28nxy8i2b3486bjnkyvc7"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (inputs (list pandoc))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
                              r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
+                             r-sp
                              r-rlang
                              r-reshape2
                              r-rcppparallel
                              r-rcpp
                              r-ggplot2
-                             r-cubature))
+                             r-dplyr
+                             r-cubature
+                             r-automap))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EricMarcon/dbmss")
     (synopsis "Distance-Based Measures of Spatial Structures")
@@ -21265,16 +21315,21 @@ at patient level are denoted with â-Pt-â.")
 (define-public r-daymetr
   (package
     (name "r-daymetr")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daymetr" version))
               (sha256
                (base32
-                "04dyc890kqr24n0lv1dl23p6s086hcgh5l6r496yycjzlyi8bm44"))))
+                "0rambqnvw3wv8nb5ldzx8wbsjv6vwqhp144lw052i7y9i9jdyn93"))))
     (properties `((upstream-name . "daymetr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-sf r-raster r-httr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-sf
+                             r-ncdf4
+                             r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/daymetr")
     (synopsis "Interface to the 'Daymet' Web Services")
@@ -24268,19 +24323,20 @@ and rates.  Based on Hohmann (2018) <doi:10.13140/RG.2.2.23372.51841> .")
 (define-public r-dail
   (package
     (name "r-dail")
-    (version "1.4")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dail" version))
               (sha256
                (base32
-                "0v6kx4lcrizx1mpdh5dly1clmdv7aa14xc5qlhk73zqi1shc3h6r"))))
+                "0h9ipsqwvinydd03faanhr2778q4md6r5j0jrs8ckjqjw295m2lc"))))
     (properties `((upstream-name . "dail")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
                              r-stringr
                              r-stopwords
                              r-readr
+                             r-rcurl
                              r-magrittr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=dail")

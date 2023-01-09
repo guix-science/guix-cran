@@ -943,17 +943,16 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jskm" version))
               (sha256
                (base32
-                "04bm4haylhjj5wf09jmpznav7shnlnhag7kxl4yqp3z5572dvj1g"))))
+                "0v5cphgpdkgkfqlvcxlmk5969klj297mgs3g3dd01gb4w6py2jrd"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-survey r-scales r-gridextra
-                             r-ggplot2))
+    (propagated-inputs (list r-survival r-survey r-scales r-ggpubr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jinseob2kim/jskm")
     (synopsis "Kaplan-Meier Plot with 'ggplot2'")
@@ -3429,13 +3428,13 @@ between MCMC samplers.")
 (define-public r-jagstargets
   (package
     (name "r-jagstargets")
-    (version "1.0.4")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jagstargets" version))
               (sha256
                (base32
-                "08940ki6rfs014kkwsdsnvp45zd52j217n8y0z6mch8kpyawyial"))))
+                "12iiqma5b114rnbcknid0qhhc1wr5hm4p2hg8d0bmxhsxnr9hfkr"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3453,7 +3452,7 @@ between MCMC samplers.")
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/jagstargets/")
-    (synopsis "Targets for JAGS Workflows")
+    (synopsis "Targets for JAGS Pipelines")
     (description
      "Bayesian data analysis usually incurs long runtimes and cumbersome custom code.
 A pipeline toolkit tailored to Bayesian statisticians, the jagstargets R package
@@ -3878,13 +3877,13 @@ information about vaccination$/immunization$ hazards, visit
 (define-public r-jaatha
   (package
     (name "r-jaatha")
-    (version "3.2.2")
+    (version "3.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jaatha" version))
               (sha256
                (base32
-                "1if21hlbf0gz6p6f9h21cxdxcqxv3b54wx5zl4hmiaq9i6zrf8rr"))))
+                "0dj9i5z69bh6hq0bbxq1yn71s4wna62rly0j9gadz5rhnfq9ci5a"))))
     (properties `((upstream-name . "jaatha")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-assertthat))

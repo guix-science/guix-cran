@@ -402,13 +402,13 @@ remember and easy to deploy.")
 (define-public r-numero
   (package
     (name "r-numero")
-    (version "1.9.3")
+    (version "1.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Numero" version))
               (sha256
                (base32
-                "0vwir11xzn9qicvgbirjk4pfl8qaiw6nfg961yc8qnrfdjqvlyd6"))))
+                "0bii7d4hggdhid81a7scp1lwbw8pi0vh2j9cb3z8hfpp88j2g16j"))))
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -4390,13 +4390,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "0yr9pw198wdd064lvxbnnw8nd6x94xf80im0r02kwf6b2l3zxz8g"))))
+                "0r94f7ih0rjfbpnfl0chsqvhprda1npp2f3yvnl18l11mhk1gms9"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -7854,13 +7854,13 @@ Probabilistic Prediction.")
 (define-public r-nftbart
   (package
     (name "r-nftbart")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nftbart" version))
               (sha256
                (base32
-                "1xg3p2bi4j6ijg20kj1wp3alrd8bnda02fk50vm5k507wcxf4473"))))
+                "1cdvfjr60nxjy79f41vm9p3dc9mn813w2py9pl4wzgdlq7wilm0b"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet))
@@ -7938,30 +7938,27 @@ Analytics at the NFL, Lopez (2019)
 (define-public r-nflseedr
   (package
     (name "r-nflseedr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflseedR" version))
               (sha256
                (base32
-                "16qpmhb9i220blihy6r8ak9rf3pb228q305qszz57zkz1hhk0508"))))
+                "0nk6264alv0d8d1wj7xqk4m57rl1w185jj5qj58d9hwiy2wmzvqz"))))
     (properties `((upstream-name . "nflseedR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
-                             r-readr
                              r-purrr
                              r-progressr
                              r-nflreadr
                              r-magrittr
                              r-gsubfn
-                             r-glue
                              r-future
                              r-furrr
                              r-dplyr
-                             r-curl
-                             r-crayon
+                             r-data-table
                              r-cli))
     (home-page "https://nflseedr.com")
     (synopsis "Functions to Efficiently Simulate and Evaluate NFL Seasons")
@@ -7973,13 +7970,13 @@ seasons including the sophisticated tie-breaking procedures.")
 (define-public r-nflreadr
   (package
     (name "r-nflreadr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nflreadr" version))
               (sha256
                (base32
-                "1zh5dhj6fv7f1x36k597qwi28csbvvj4n6dgpsqzx0al0b0na44v"))))
+                "063cdp5x5f0jx5x0ydb9cbg3x6zlbk3rxsjmpshlwx89szslszjd"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10606,16 +10603,16 @@ regression.")
 (define-public r-nestedpp
   (package
     (name "r-nestedpp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedpp" version))
               (sha256
                (base32
-                "0c7vp3bwmxhyk8dpm0jvm876hsw76kp0gwi5kckyqh2dfgczvyfz"))))
+                "0maw7ik209vdmm1fdnbi7chqy8wb1j1ql8jnry1y3af1g80lpa78"))))
     (properties `((upstream-name . "nestedpp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-ggplot2))
+    (propagated-inputs (list r-xtable r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=nestedpp")
     (synopsis "Performance Profiles and Nested Performance Profiles")
     (description
@@ -10628,13 +10625,13 @@ frame.")
 (define-public r-nestedmodels
   (package
     (name "r-nestedmodels")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedmodels" version))
               (sha256
                (base32
-                "065x6ggbn0naybbi5gjnyx2ryxg6062ya0fgj1k4sz3i2nrhjvwq"))))
+                "11qfmkhc7c4w7bppcw8kwf5d2c941ikw9zy6a52hmmkg4n1imisp"))))
     (properties `((upstream-name . "nestedmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10650,7 +10647,6 @@ frame.")
                              r-lifecycle
                              r-glue
                              r-generics
-                             r-forcats
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -13115,13 +13111,13 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.0.8")
+    (version "4.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nasapower" version))
               (sha256
                (base32
-                "1f3hpbfkfqvfv23fajmica1wql8qjsr55m3mmzvmcwpz7hvlky0i"))))
+                "0yzd0y58m9gd8hfg4lzb8apr1naf67i45jn8vzlli2nd9j5qmn8b"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-lubridate r-jsonlite r-crul))
@@ -13722,13 +13718,13 @@ take advantage of sparse data.")
 (define-public r-naive
   (package
     (name "r-naive")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naive" version))
               (sha256
                (base32
-                "10364ammzwhixz3s17f8vdag3zac0pwvcziy9z0ji19knyhdigmb"))))
+                "0mxxs3fg88986zpjdsa6jw8dvdppmm6rw881byzfsn65xzvdya11"))))
     (properties `((upstream-name . "naive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc

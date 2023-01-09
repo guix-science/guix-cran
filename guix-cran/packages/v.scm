@@ -1996,13 +1996,13 @@ design.")
 (define-public r-visualize-cran-downloads
   (package
     (name "r-visualize-cran-downloads")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Visualize.CRAN.Downloads" version))
               (sha256
                (base32
-                "0z2v2izn4aj3i6f5gh8r7pkrqpbb82bv9v4s4vqxgm066a51m4p2"))))
+                "0nz4cpwymawn6xx4gpz0zp2a77797yzi5axlhc734hzlkklr5zvr"))))
     (properties `((upstream-name . "Visualize.CRAN.Downloads")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-htmlwidgets r-cranlogs))
@@ -2076,6 +2076,38 @@ research.  The package is described in Marin-Franch and Swanson (2013)
 <doi:10.1167/13.4.10> and is part of the Open Perimetry Initiative (OPI)
 [Turpin, Artes, and McKendrick (2012) <doi:10.1167/12.11.22>].")
     (license license:gpl3)))
+
+(define-public r-visualdom
+  (package
+    (name "r-visualdom")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VisualDom" version))
+              (sha256
+               (base32
+                "14qg44sivfhnvjac5yq4n5llhwq669m3j7a2z84rlz0737x7x5xd"))))
+    (properties `((upstream-name . "VisualDom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveslim r-wavemulcor r-plot3d))
+    (home-page "https://cran.r-project.org/package=VisualDom")
+    (synopsis "Visualize Dominant Variables in Wavelet Multiple Correlation")
+    (description
+     "Estimates and plots as a heat map the correlation coefficients obtained via the
+wavelet local multiple correlation WLMC (FernÃ¡ndez-Macho 2018) and the dominant
+variable/s, i.e., the variable/s that maximizes the multiple correlation through
+time and scale (Polanco-MartÃ­nez et al.  2020, Polanco-MartÃ­nez 2022).  We
+improve the graphical outputs of WLMC proposing a didactic and useful way to
+visualize the dominant variable(s) for a set of time series.  The WLMC was
+designed for financial time series, but other kinds of data (e.g., climatic,
+ecological, etc.) can be used.  The functions contained in VisualDom are highly
+flexible since these contains several parameters to personalize the time series
+under analysis and the heat maps.  In addition, we have also included two data
+sets (named rdata_climate and rdata_Lorenz') to exemplify the use of the
+functions contained in VisualDom'.  Methods derived from FernÃ¡ndez-Macho (2018)
+<doi:10.1016/j.physa.2017.11.050>, Polanco-MartÃ­nez et al. (2020)
+<doi:10.1038/s41598-020-77767-8> and Polanco-MartÃ­nez (2023, in press).")
+    (license license:gpl2+)))
 
 (define-public r-vistributions
   (package
@@ -3684,13 +3716,13 @@ Research.  International Livestock Research Institute.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.14")
+    (version "0.2.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetr" version))
               (sha256
                (base32
-                "1j9871aqbm99p3hzrwmcskf7bj14z0lmk5c54vz3ga9fgqw6fy0h"))))
+                "0858wivgdbjs4qww6szi32ifc4l0a3nx0c0zf2778d4nxs9zgxk2"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4907,6 +4939,33 @@ allows to set up a vine copula model using the copula API. Corresponding objects
 from the VineCopula API can easily be converted.")
     (license license:gpl3)))
 
+(define-public r-vbv
+  (package
+    (name "r-vbv")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VBV" version))
+              (sha256
+               (base32
+                "1nrdcvkdv38xl67qi9igcp3l5j4hckiyg3klg7z0rfj6zzpszm71"))))
+    (properties `((upstream-name . "VBV")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=VBV")
+    (synopsis "The Generalized Berlin Method for Time Series Decomposition")
+    (description
+     "Time series decomposition for univariate time series using the \"Verallgemeinerte
+Berliner Verfahren\" (Generalized Berlin Method) as described in Kontinuierliche
+MessgrÃ¶Ãen und Stichprobenstrategien in Raum und Zeit mit Anwendungen in den
+Natur-, Umwelt-, Wirtschafts- und Finanzwissenschaften', by Hebbel and Steuer,
+Springer Berlin Heidelberg, 2022 <doi:10.1007/978-3-662-65638-9>, or
+Decomposition of Time Series using the Generalised Berlin Method (VBV) by Hebbel
+and Steuer, in Jan Beran, Yuanhua Feng, Hartmut Hebbel (Eds.): Empirical
+Economic and Financial Research - Theory, Methods and Practice, Festschrift in
+Honour of Prof. Siegfried Heiler.  Series: Advanced Studies in Theoretical and
+Applied Econometrics.  Springer 2014, p.  9-40.")
+    (license license:gpl3+)))
+
 (define-public r-vbsparsepca
   (package
     (name "r-vbsparsepca")
@@ -5926,13 +5985,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vapour" version))
               (sha256
                (base32
-                "0g7jikkagqnqblyskfsd9wv2czx75v172z6rrdn2bf25m0hwcpw0"))))
+                "0yj2p7mc9n6ii9cn2a79gdnx68l60m3a79gkflj04ibsn9xsz6sb"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (inputs (list zlib proj gdal))
