@@ -11556,13 +11556,13 @@ data with weak signals.  The Annals of Applied Statistics.  7(3) 1334-1361.
 (define-public r-dire
   (package
     (name "r-dire")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Dire" version))
               (sha256
                (base32
-                "1hpa8mgb7mpnq679qbb37wll9ng1ar4zbqr0ca16kn26rg95ywbp"))))
+                "1ccy1g600196qc4chnjcd6gffbhj6mzhc5kszpyb0w4szxmdag55"))))
     (properties `((upstream-name . "Dire")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

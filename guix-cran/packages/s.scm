@@ -3766,6 +3766,34 @@ Guerin, and McMahon (2022) <doi:10.1002/sta4.454> explains why differing how we
 take folds based on survey design is useful.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-surveybootstrap
+  (package
+    (name "r-surveybootstrap")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "surveybootstrap" version))
+              (sha256
+               (base32
+                "1ci6gqs1kiizpmddkw9r5nsq9wqdhha3kxhnn6b28fczrsypilf8"))))
+    (properties `((upstream-name . "surveybootstrap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-plyr
+                             r-functional
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=surveybootstrap")
+    (synopsis "Bootstrap with Survey Data")
+    (description
+     "This package implements different kinds of bootstraps to estimate sampling
+variation from survey data with complex designs.  Includes the rescaled
+bootstrap described in Rust and Rao (1996) <doi:10.1177/096228029600500305> and
+Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
+    (license license:expat)))
+
 (define-public r-survexp-fr
   (package
     (name "r-survexp-fr")
@@ -31553,30 +31581,31 @@ standardized loading.  Data generation methods are described in Schneider (2013)
 (define-public r-simsst
   (package
     (name "r-simsst")
-    (version "0.0.4.7")
+    (version "0.0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimSST" version))
               (sha256
                (base32
-                "0gjk9crif1z2kcqrk8ry6v72ykn0y5k9b1ar9qa8rqbq860f7wmx"))))
+                "1c3bkcvq4767yabw7ifv3akhlavscgxwx5rp18c23icjd3pk9avx"))))
     (properties `((upstream-name . "SimSST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gamlss-dist r-dplyr))
+    (propagated-inputs (list r-mass r-gamlss-dist r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SimSST")
     (synopsis "Simulated Stop Signal Task Data")
     (description
      "Stop signal task data of go and stop trials is generated per participant.  The
-simulation process is based on the independent horse race model and fixed stop
-signal delay or tracking method.  Each of go and stop process is assumed having
-exponentially modified Gaussian(ExG) or Shifted Wald (SW) distributions.  The
-output data can be converted to BEESTS software input data enabling researchers
-to test and evaluate various brain stopping processes manifested by ExG or SW
-distributional parameters of interest.  Methods are described in: Soltanifar M
-(2020) <https://hdl.handle.net/1807/101208>, Matzke D, Love J, Wiecki TV, Brown
-SD, Logan GD and Wagenmakers E-J (2013) <doi:10.3389/fpsyg.2013.00918>, Logan
-GD, Van Zandt T, Verbruggen F, Wagenmakers EJ. (2014) <doi:10.1037/a0035230>.")
+simulation process is based on the generally non-independent horse race model
+and fixed stop signal delay or tracking method.  Each of go and stop process is
+assumed having exponentially modified Gaussian(ExG) or Shifted Wald (SW)
+distributions.  The output data can be converted to BEESTS software input data
+enabling researchers to test and evaluate various brain stopping processes
+manifested by ExG or SW distributional parameters of interest.  Methods are
+described in: Soltanifar M (2020) <https://hdl.handle.net/1807/101208>, Matzke
+D, Love J, Wiecki TV, Brown SD, Logan GD and Wagenmakers E-J (2013)
+<doi:10.3389/fpsyg.2013.00918>, Logan GD, Van Zandt T, Verbruggen F, Wagenmakers
+EJ. (2014) <doi:10.1037/a0035230>.")
     (license license:gpl3)))
 
 (define-public r-simsl
@@ -33466,13 +33495,13 @@ SimFin API key (and thus to use this package), you need to register at
 (define-public r-simfam
   (package
     (name "r-simfam")
-    (version "1.0.3")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simfam" version))
               (sha256
                (base32
-                "0biz3dz1mrzj601p99h4k58p4ybh5f42qzbqivk8irz1wsbm6n4v"))))
+                "0fvg9fwq6j8qraxxr4686i1vp7wv2z52qq61i14dh455i85picc2"))))
     (properties `((upstream-name . "simfam")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp))
@@ -33490,8 +33519,8 @@ and with variable children sizes to result in a target population size per
 generation.  Auxiliary functions calculate kinship matrices, admixture matrices,
 and draw random genotypes across arbitrary pedigree structures starting from the
 corresponding founder values.  The code is built around the plink FAM table
-format for pedigrees.  Partially described in Yao and Ochoa (2019)
-<doi:10.1101/858399>.")
+format for pedigrees.  Described in Yao and Ochoa (2022)
+<doi:10.1101/2022.03.25.485885>.")
     (license license:gpl3+)))
 
 (define-public r-simexboost
@@ -46146,6 +46175,53 @@ formed by key variables and their interactions.  Funded by the National Center
 for Education Statistics.  See Skinner and Shlomo (2008)
 <doi:10.1198/016214507000001328> for a description of the file-level risk
 measures and the loglinear model approach.")
+    (license license:gpl2)))
+
+(define-public r-sdcmicro
+  (package
+    (name "r-sdcmicro")
+    (version "5.7.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sdcMicro" version))
+              (sha256
+               (base32
+                "071m7szdwmlzljrlms4lpz4cdka5lwms925zkkixfbx5j4i0vray"))))
+    (properties `((upstream-name . "sdcMicro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-vim
+                             r-shinybs
+                             r-shiny
+                             r-robustbase
+                             r-rmarkdown
+                             r-rhandsontable
+                             r-rcpp
+                             r-prettydoc
+                             r-mass
+                             r-knitr
+                             r-haven
+                             r-ggplot2
+                             r-e1071
+                             r-dt
+                             r-data-table
+                             r-cluster
+                             r-cardata
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sdcTools/sdcMicro")
+    (synopsis
+     "Statistical Disclosure Control Methods for Anonymization of Data and Risk Estimation")
+    (description
+     "Data from statistical agencies and other institutions are mostly confidential.
+This package (see also Templ, Kowarik and Meindl (2017)
+<doi:10.18637/jss.v067.i04>) can be used for the generation of anonymized
+(micro)data, i.e.  for the creation of public- and scientific-use files.  The
+theoretical basis for the methods implemented can be found in Templ (2017)
+<doi:10.1007/978-3-319-50272-4>.  Various risk estimation and anonymisation
+methods are included.  Note that the package includes a graphical user interface
+(Meindl and Templ, 2019 <doi:10.3390/a12090191>) that allows to use various
+methods of this package.")
     (license license:gpl2)))
 
 (define-public r-sdclog

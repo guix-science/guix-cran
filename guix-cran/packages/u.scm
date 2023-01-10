@@ -1522,6 +1522,47 @@ characterizes the uncertainty of the person.  The method was originally proposed
 by Tutz and Schauberger (2020) <doi:10.1177/0146621620920932>.")
     (license license:gpl2+)))
 
+(define-public r-uotm
+  (package
+    (name "r-uotm")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "uotm" version))
+              (sha256
+               (base32
+                "0f8mkamgkyn97n6795hi385lakws6nm8aqwrccpdxhpj1ymmrjv7"))))
+    (properties `((upstream-name . "uotm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-hash r-ggplot2 r-forecast r-boot))
+    (home-page "https://cran.r-project.org/package=uotm")
+    (synopsis "Uncertainty of Time Series Model Selection Methods")
+    (description
+     "We propose a new procedure, called model uncertainty variance, which can
+quantify the uncertainty of model selection on Autoregressive Moving Average
+models.  The model uncertainty variance not pay attention to the accuracy of
+prediction, but focus on model selection uncertainty and providing more
+information of the model selection results.  And to estimate the model measures,
+we propose an simplify and faster algorithm based on bootstrap method, which is
+proven to be effective and feasible by Monte-Carlo simulation.  At the same
+time, we also made some optimizations and adjustments to the Model Confidence
+Bounds algorithm, so that it can be applied to the time series model selection
+method.  The consistency of the algorithm result is also verified by Monte-Carlo
+simulation.  We propose a new procedure, called model uncertainty variance,
+which can quantify the uncertainty of model selection on Autoregressive Moving
+Average models.  The model uncertainty variance focuses on model selection
+uncertainty and providing more information of the model selection results.  To
+estimate the model uncertainty variance, we propose an simplified and faster
+algorithm based on bootstrap method, which is proven to be effective and
+feasible by Monte-Carlo simulation.  At the same time, we also made some
+optimizations and adjustments to the Model Confidence Bounds algorithm, so that
+it can be applied to the time series model selection method.  The consistency of
+the algorithm result is also verified by Monte-Carlo simulation.  Please see
+Li,Y., Luo,Y., Ferrari,D., Hu,X. and Qin,Y. (2019) Model Confidence Bounds for
+Variable Selection.  Biometrics, 75:392-403.<DOI:10.1111/biom.13024> for more
+information.")
+    (license license:gpl3)))
+
 (define-public r-unvotes
   (package
     (name "r-unvotes")

@@ -741,13 +741,13 @@ GWAS Catalog data by accessing the REST API
 (define-public r-gwasinspector
   (package
     (name "r-gwasinspector")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GWASinspector" version))
               (sha256
                (base32
-                "0d2r5l7934ksxjqmqa3c7vy0p81vzdqlamlrj3r26cxwpm3icyhw"))))
+                "0nymvx6a8wys1aby2ffmmflrab1gp7ig443b24y1j2ccpwkjvxl2"))))
     (properties `((upstream-name . "GWASinspector")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
@@ -25436,13 +25436,13 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
 (define-public r-gap
   (package
     (name "r-gap")
-    (version "1.3-1")
+    (version "1.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gap" version))
               (sha256
                (base32
-                "1p6cqwwf6wk0m8kj2zyi8mb7h0ymc1x3v5qfq9a7xqq200q2bpwf"))))
+                "13vn0rmcad2iy44hh435fn12v6xf33f8fhqwc7y4xsqh0xjwi038"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-ggplot2 r-gap-datasets r-dplyr))

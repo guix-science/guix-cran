@@ -21867,23 +21867,24 @@ are constrained to be non-negative.")
 (define-public r-micsim
   (package
     (name "r-micsim")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MicSim" version))
               (sha256
                (base32
-                "0nkprbb9lgnfzl1bj0k4rkd7v8g35cvhl9bqa91q2lc2rimzfl20"))))
+                "1pkwhp81gi0pzs1sypk7ckhd79gz977n2ly9lwlsm5l3xs72v5cy"))))
     (properties `((upstream-name . "MicSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-snowfall r-rlecuyer r-chron))
+    (propagated-inputs (list r-snowfall r-rlecuyer))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MicSim")
     (synopsis "Performing Continuous-Time Microsimulation")
     (description
-     "This entry-level toolkit allows performing continuous-time microsimulation for a
-wide range of life science (demography, social sciences, epidemiology)
-applications.  Individual life-courses are specified by a continuous-time
-multi-state model.")
+     "This toolkit allows performing continuous-time microsimulation for a wide range
+of life science (demography, social sciences, epidemiology) applications.
+Individual life-courses are specified by a continuous-time multi-state model as
+described in Zinn (2014) <doi:10.34196/IJM.00105>.")
     (license license:gpl2)))
 
 (define-public r-microsynth
@@ -27999,13 +28000,13 @@ method.")
 (define-public r-mendelianrandomization
   (package
     (name "r-mendelianrandomization")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MendelianRandomization" version))
               (sha256
                (base32
-                "0qf2kb04ia5rdasvs34ziwyan5k327gi45frjkhmi5qsz64z51bg"))))
+                "1islp2b9fac1wmc1jskrhfm7r57xqna8cdv4k0lpvz34d4dwrmya"))))
     (properties `((upstream-name . "MendelianRandomization")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -35263,13 +35264,13 @@ can be retrieved.")
 (define-public r-marmap
   (package
     (name "r-marmap")
-    (version "1.0.8")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marmap" version))
               (sha256
                (base32
-                "06s5sqk63h160z3ly01aw4bjjqsl2585d94ln2vs1f1qhlqvs9ni"))))
+                "137zn8w8hvcbjgbrs4v14h3pqj7mynp7lx5qzkgqxjl21wabsvkh"))))
     (properties `((upstream-name . "marmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

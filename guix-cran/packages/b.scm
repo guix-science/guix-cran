@@ -1946,13 +1946,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "05v0sxa9cs8k0c47hwkfmadfy9ibl0nhs9gjpf6p2hh56q75fbsq"))))
+                "1256as1lhj9nms6rl7yw8942jcxkxgkzcfbmif1qjjdrw0y9yz6m"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -12525,13 +12525,13 @@ additional metadata on stations and weather.")
 (define-public r-bigvar
   (package
     (name "r-bigvar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BigVAR" version))
               (sha256
                (base32
-                "1pv2xc6j7szcaqqqjnriaxd17snls37b7nckmk97dan4zxc2vr6v"))))
+                "1f67gk54gzdlil79gqqws0i6j0rvjqk4k0bhdb9adcvcsdxfkwwy"))))
     (properties `((upstream-name . "BigVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12544,7 +12544,10 @@ additional metadata on stations and weather.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wbnicholson/BigVAR")
     (synopsis "Dimension Reduction Methods for Multivariate Time Series")
-    (description "Estimates VAR and VARX models with Structured Penalties.")
+    (description
+     "Estimates VAR and VARX models with Structured Penalties using the methods
+developed by Nicholson et al (2017)<doi:10.1016/j.ijforecast.2017.01.003> and
+Nicholson et al (2020) <doi:10.48550/arXiv.1412.5250>.")
     (license license:gpl2+)))
 
 (define-public r-bigutilsr

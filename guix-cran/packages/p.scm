@@ -14072,13 +14072,13 @@ references.")
 (define-public r-politeness
   (package
     (name "r-politeness")
-    (version "0.8.7")
+    (version "0.8.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "politeness" version))
               (sha256
                (base32
-                "05c606cra65cizxi266x2ka7bh911ipdy62sdbg47zi90nmcpnci"))))
+                "16snnzf2fwm2mz7kav2420hcms61jyd1kq5fajwc2c9bgihxlzgn"))))
     (properties `((upstream-name . "politeness")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm

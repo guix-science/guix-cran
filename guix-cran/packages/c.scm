@@ -6493,16 +6493,24 @@ congruence class.  See also Louca & Pennell (2020)
 (define-public r-cr2
   (package
     (name "r-cr2")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CR2" version))
               (sha256
                (base32
-                "1p6wl1lhsh4gfbq6gs0199xi9wdd1ys2cgha0iprqmnjkaqfr15l"))))
+                "1j9wkpfr6bk07sj1swcjih12qz0cin811k69ihizsi4190m5f49k"))))
     (properties `((upstream-name . "CR2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-matrix r-lme4))
+    (propagated-inputs (list r-tibble
+                             r-performance
+                             r-nlme
+                             r-matrix
+                             r-magrittr
+                             r-lme4
+                             r-generics
+                             r-dplyr
+                             r-broom))
     (home-page "https://github.com/flh3/CR2")
     (synopsis
      "Compute Cluster Robust Standard Errors with Degrees of Freedom Adjustments")
@@ -7758,6 +7766,34 @@ monotone likelihood (nonconvergence of likelihood function), see Heinze and
 Schemper (2001) and Heinze and Dunkler (2008).  The program fits profile
 penalized likelihood confidence intervals which were proved to outperform Wald
 confidence intervals.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-coxmeg
+  (package
+    (name "r-coxmeg")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "coxmeg" version))
+              (sha256
+               (base32
+                "0wviaylrahfv3cr5dira80vns1429i1vwr99n8iqljd7sjcs65r1"))))
+    (properties `((upstream-name . "coxmeg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-rarpack
+                             r-nloptr
+                             r-microbenchmark
+                             r-matrix
+                             r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=coxmeg")
+    (synopsis "Cox Mixed-Effects Models for Genome-Wide Association Studies")
+    (description
+     "Fast algorithms for fitting a Cox mixed-effects model for e.g., genome-wide
+association studies.  See Liang He and Alexander Kulminski (2020) <doi:
+10.1534/genetics.119.302940>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-coxme
@@ -21714,32 +21750,6 @@ the same alleles in the entire sequence of SNP's.  Moreover, clusterhap
 calculates such probability from relative frequencies.")
     (license license:gpl3)))
 
-(define-public r-clustergeneration
-  (package
-    (name "r-clustergeneration")
-    (version "1.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clusterGeneration" version))
-              (sha256
-               (base32
-                "0p1dwl08bf20h7pnspnsycrp3v48nm2miwcnlklyc4gdyzc2jksk"))))
-    (properties `((upstream-name . "clusterGeneration")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=clusterGeneration")
-    (synopsis
-     "Random Cluster Generation (with Specified Degree of Separation)")
-    (description
-     "We developed the clusterGeneration package to provide functions for generating
-random clusters, generating random covariance/correlation matrices, calculating
-a separation index (data and population version) for pairs of clusters or
-cluster distributions, and 1-D and 2-D projection plots to visualize clusters.
-The package also contains a function to generate random clusters based on
-factorial designs with factors such as degree of separation, number of clusters,
-number of variables, number of noisy variables.")
-    (license license:gpl2+)))
-
 (define-public r-clusteredmutations
   (package
     (name "r-clusteredmutations")
@@ -32491,13 +32501,13 @@ k-medoids clustering methods.  The method is Dahl, Andros, Carter (2022+)
 (define-public r-cavariants
   (package
     (name "r-cavariants")
-    (version "5.7")
+    (version "5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAvariants" version))
               (sha256
                (base32
-                "0jxz0db034fhiqbfbpzqakrmlibay9rzyxavprvans93k45zigfs"))))
+                "1cbvrjhl87ypzp9yv3wajvq4pcyynp992vwifw83xivfn3qwhlz8"))))
     (properties `((upstream-name . "CAvariants")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-gridextra r-ggrepel r-ggplot2

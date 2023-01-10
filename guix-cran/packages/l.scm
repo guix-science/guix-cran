@@ -6472,22 +6472,24 @@ changepoint.  Based on Knowles, Siegmund and Zhang (1991)
 (define-public r-lm-beta
   (package
     (name "r-lm-beta")
-    (version "1.6-2")
+    (version "1.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lm.beta" version))
               (sha256
                (base32
-                "01ys268xx1bhirr6axbc3l6jqnks7d9y1wyqy66bf0fgyz6z4ppb"))))
+                "0y84f2zv76h26dw4hjsk37s6qdjsf66f6jzwmj2vg0r9q7b748wc"))))
     (properties `((upstream-name . "lm.beta")))
     (build-system r-build-system)
+    (propagated-inputs (list r-xtable))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lm.beta")
-    (synopsis "Add Standardized Regression Coefficients to lm-Objects")
+    (synopsis
+     "Add Standardized Regression Coefficients to Linear-Model-Objects")
     (description
-     "Adds standardized regression coefficients to objects created by lm.  Also
-extends the S3 methods print, summary and coef with additional boolean argument
-standardized.")
+     "Adds standardized regression coefficients to objects created by lm'.  Also
+extends the S3 methods print', summary and coef with additional boolean argument
+standardized an provides xtable'-support.")
     (license license:gpl2+)))
 
 (define-public r-llsr

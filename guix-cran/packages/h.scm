@@ -1862,37 +1862,6 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 French National APIs on water <https://hubeau.eaufrance.fr/>.")
     (license license:expat)))
 
-(define-public r-httr2
-  (package
-    (name "r-httr2")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httr2" version))
-              (sha256
-               (base32
-                "1gzjsw3w7c3rsp3gb9rdbfmmnmd2sq09s3wza49730gp84jvc6jx"))))
-    (properties `((upstream-name . "httr2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-rlang
-                             r-rappdirs
-                             r-r6
-                             r-openssl
-                             r-magrittr
-                             r-glue
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://httr2.r-lib.org")
-    (synopsis "Perform HTTP Requests and Process the Responses")
-    (description
-     "Tools for creating and modifying HTTP requests, then performing them and
-processing the results.  httr2 is a modern re-imagining of httr that uses a
-pipe-based interface and solves more of the problems that API wrapping packages
-face.")
-    (license license:expat)))
-
 (define-public r-httptest2
   (package
     (name "r-httptest2")
@@ -7953,6 +7922,41 @@ Arabidopsis thaliana.")
     (description
      "Hierarchical exponential-family random graph models with local dependence.  See
 Schweinberger and Luna (2018) <doi:10.18637/jss.v085.i01>.")
+    (license license:gpl3)))
+
+(define-public r-herer
+  (package
+    (name "r-herer")
+    (version "0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hereR" version))
+              (sha256
+               (base32
+                "1csy6lh0hbfdrm0pmcmmwp8gm8ykr4sx78sgjrp18xm4axx3a5j7"))))
+    (properties `((upstream-name . "hereR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-jsonlite
+                             r-flexpolyline
+                             r-data-table
+                             r-curl
+                             r-crul))
+    (native-inputs (list r-knitr))
+    (home-page "https://munterfi.github.io/hereR/")
+    (synopsis "'sf'-Based Interface to the 'HERE' REST APIs")
+    (description
+     "Interface to the HERE REST APIs <https://developer.here.com/develop/rest-apis>:
+(1) geocode and autosuggest addresses or reverse geocode POIs using the Geocoder
+API; (2) route directions, travel distance or time matrices and isolines using
+the Routing', Matrix Routing and Isoline Routing APIs; (3) request real-time
+traffic flow and incident information from the Traffic API; (4) find request
+public transport connections and nearby stations from the Public Transit API;
+(5) request intermodal routes using the Intermodal Routing API; (6) get weather
+forecasts, reports on current weather conditions, astronomical information and
+alerts at a specific location from the Destination Weather API. Locations,
+routes and isolines are returned as sf objects.")
     (license license:gpl3)))
 
 (define-public r-heplots

@@ -9962,18 +9962,16 @@ systems.")
 (define-public r-enmeval
   (package
     (name "r-enmeval")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ENMeval" version))
               (sha256
                (base32
-                "0h9wikxs01xhpkp1khhxnnqvg4fgmdvh37jh15nz7i4xilx1ffab"))))
+                "1lb4bgnvig1sb88nfgylzps6kkw0jb5lz46yrqqk3ax71x33r7vd"))))
     (properties `((upstream-name . "ENMeval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-sp
                              r-rlang
                              r-raster
                              r-rangemodelmetadata
@@ -9986,7 +9984,7 @@ systems.")
                              r-dosnow
                              r-doparallel
                              r-dismo))
-    (home-page "https://cran.r-project.org/package=ENMeval")
+    (home-page "https://jamiemkass.github.io/ENMeval/")
     (synopsis "Automated Tuning and Evaluations of Ecological Niche Models")
     (description
      "Runs ecological niche models over all combinations of user-defined settings
@@ -10001,7 +9999,7 @@ al.  2006, Phillips et al.  2017), but the current version allows possible
 extensions for any modeling algorithm.  The extensive vignette, which guides
 users through most package functionality but unfortunately has a file size too
 big for CRAN, can be found here on the package's Github Pages website:
-<https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0.0-vignette.html>.")
+<https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0-vignette.html>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-engsoccerdata
@@ -10077,27 +10075,22 @@ parameters for elastic net penalties are done via cross-validation.")
 (define-public r-enerscape
   (package
     (name "r-enerscape")
-    (version "0.1.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enerscape" version))
               (sha256
                (base32
-                "0m4dalrm11pyxxbcfsq9mcblm35v77vxyryal4p9mnv7pc4fc352"))))
+                "103zikp56kbr64y6198xic401dc1nal34walfzwry73y0g7gmz69"))))
     (properties `((upstream-name . "enerscape")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-matrix
-                             r-gdistance))
+    (propagated-inputs (list r-terra r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=enerscape")
     (synopsis "Compute Energy Landscapes")
     (description
      "Compute energy landscapes using a digital elevation model raster and body mass
-of animals.  Vignette available at:
-<https://emilio-berti.github.io/enerscape.html>.")
+of animals.")
     (license license:gpl3)))
 
 (define-public r-energyr

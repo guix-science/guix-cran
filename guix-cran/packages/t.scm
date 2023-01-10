@@ -14409,13 +14409,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.3")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "0hh5inc1nlw4khckdvy1kb243z8rd8bhbkvxjmpqys657bw52v39"))))
+                "08fc8hhry141kxfazjzmr8c4n0lzgrkdb4mn40wxpy9135d7vj39"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

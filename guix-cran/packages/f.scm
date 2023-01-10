@@ -8982,13 +8982,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexiblas
   (package
     (name "r-flexiblas")
-    (version "3.1.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexiblas" version))
               (sha256
                (base32
-                "0kgkxzx8lgw0lmszwd4fipvhpgak753bdcm81w25ilp5pzd8x6ii"))))
+                "1gcj4679hy2pa76s3sx6q3x2zmf9xkb5hgk2y9nk3v6yf9l10w6h"))))
     (properties `((upstream-name . "flexiblas")))
     (build-system r-build-system)
     (home-page "https://github.com/Enchufa2/r-flexiblas")
@@ -10307,6 +10307,31 @@ Iwayama, K., Aisaka, Y., Kutsuna, N., and Nagano, A. J. (2017).
 <doi:10.1093/bioinformatics/btx049>.")
     (license (list (license:fsdg-compatible "MPL (>= 2)")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-fispro
+  (package
+    (name "r-fispro")
+    (version "1.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FisPro" version))
+              (sha256
+               (base32
+                "0xfmqqzil16ikjv0bwp5i1k9nngx8kjjlljrjimd6j900bs5m8am"))))
+    (properties `((upstream-name . "FisPro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.fispro.org")
+    (synopsis "Fuzzy Inference System Design and Optimization")
+    (description
+     "Fuzzy inference systems are based on fuzzy rules, which have a good capability
+for managing progressive phenomenons.  This package is a basic implementation of
+the main functions to use a Fuzzy Inference System (FIS) provided by the open
+source software FisPro <https://www.fispro.org>.  FisPro allows to create fuzzy
+inference systems and to use them for reasoning purposes, especially for
+simulating a physical or biological system.")
+    (license license:cecill)))
 
 (define-public r-fishualize
   (package

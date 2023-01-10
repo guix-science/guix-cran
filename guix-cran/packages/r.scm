@@ -18397,17 +18397,18 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-2")
+    (version "0.7-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "1516q6rgbh4ma3m038d7yjh06czcyi2vl3jbwqmj9digc7f27rqy"))))
+                "0djxk1r12304dmy0h2wn96q6c8rpax7p6975796mf50hqw5rfpi0"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/libKriging")
     (synopsis "Kriging Models using the 'libKriging' Library")
     (description
@@ -28121,38 +28122,6 @@ across the spatial dimensions, even at region borders.  Methodology is described
 in Wagstaff (2021) <https://digitalcommons.usu.edu/etd/8065/>.")
     (license license:gpl3)))
 
-(define-public r-remacor
-  (package
-    (name "r-remacor")
-    (version "0.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "remaCor" version))
-              (sha256
-               (base32
-                "0hhk1zrjz6sxg219h9ca7jya0vc8dmrvwaddajkcdns6bv3rj1km"))))
-    (properties `((upstream-name . "remaCor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-runit
-                             r-reshape2
-                             r-rdpack
-                             r-mvtnorm
-                             r-ggplot2
-                             r-clustergeneration))
-    (native-inputs (list r-knitr))
-    (home-page "https://diseaseneurogenomics.github.io/remaCor/")
-    (synopsis "Random Effects Meta-Analysis for Correlated Test Statistics")
-    (description
-     "Meta-analysis is widely used to summarize estimated effects sizes across
-multiple statistical tests.  Standard fixed and random effect meta-analysis
-methods assume that the estimated of the effect sizes are statistically
-independent.  Here we relax this assumption and enable meta-analysis when the
-correlation matrix between effect size estimates is known.  Fixed effect
-meta-analysis uses the method of Lin and Sullivan (2009)
-<doi:10.1016/j.ajhg.2009.11.001>, and random effects meta-analysis uses the
-method of Han, et al. <doi:10.1093/hmg/ddw049>.")
-    (license license:artistic2.0)))
-
 (define-public r-rema
   (package
     (name "r-rema")
@@ -30169,13 +30138,13 @@ of several Microsoft(r) products.  Forked from RColorBrewer v1.1-2.")
 (define-public r-redm
   (package
     (name "r-redm")
-    (version "1.13.1")
+    (version "1.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rEDM" version))
               (sha256
                (base32
-                "1jf987fnq99j06fmxill92ydb9fl1ks2pwd5ih6b0vx2yv1ddz30"))))
+                "0lgvwmhxzi76sh16a81qwn7sp1kriwq83x5py8835icvygdsrpyx"))))
     (properties `((upstream-name . "rEDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcpp))

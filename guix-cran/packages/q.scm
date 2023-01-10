@@ -834,13 +834,13 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryparser
   (package
     (name "r-queryparser")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryparser" version))
               (sha256
                (base32
-                "1pz66f3wxvvv42l5hib7hbpy14s8a13gn0n57vf6v5zdnz423kdr"))))
+                "0va2h1midvf8adymqwg79flpqq7ciznk285kmyqdskkn87argjd2"))))
     (properties `((upstream-name . "queryparser")))
     (build-system r-build-system)
     (home-page "https://github.com/ianmcook/queryparser")
