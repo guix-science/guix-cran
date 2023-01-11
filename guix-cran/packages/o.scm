@@ -2200,16 +2200,16 @@ implementation was first described by Coyle and Hejazi (2018)
 (define-public r-orientlib
   (package
     (name "r-orientlib")
-    (version "0.10.4")
+    (version "0.10.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "orientlib" version))
               (sha256
                (base32
-                "0lds3y05byag466asi8hmv1yfllsdx7z5i8hq21r6dx3w4n4f46x"))))
+                "05xwx040l1ln06rkmsg8l4394b3inaf663mw4fng54wwacgv9jfj"))))
     (properties `((upstream-name . "orientlib")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=orientlib")
+    (home-page "https://github.com/dmurdoch/orientlib")
     (synopsis "Support for Orientation Data")
     (description
      "Representations, conversions and display of orientation SO(3) data.  See the
@@ -3048,17 +3048,17 @@ dose finding designs under various scenarios.")
 (define-public r-ordcd
   (package
     (name "r-ordcd")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OrdCD" version))
               (sha256
                (base32
-                "0b8jnv2h6by4yagwhizfxmnwn1ppgv6vpzp0ibhhzm86pj6ahl9d"))))
+                "1rn9zl2l30dcyngd8r7cwvaljfaj03py0sj04vy0hbdpbnm709z4"))))
     (properties `((upstream-name . "OrdCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-igraph r-grbase r-bnlearn))
-    (home-page "https://github.com/nySTAT/OCD")
+    (home-page "https://github.com/nySTAT/OrdCD")
     (synopsis "Ordinal Causal Discovery")
     (description
      "Algorithms for ordinal causal discovery.  This package aims to enable users to
@@ -8458,13 +8458,13 @@ national level.  Metropolitan data is not included.")
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
-    (version "2.1.3")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OenoKPM" version))
               (sha256
                (base32
-                "14hl749zbvw45gnd8iqg630iwfd694rjgjasc91vcrfylaqqhyhj"))))
+                "0ppp8ijzgv6qvgjl7cnnp1zkcqnyx4h6gyk1f1qskr9izbz84sv6"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-minpack-lm r-ggplot2))

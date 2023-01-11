@@ -5853,44 +5853,6 @@ fields (CRF) model as well as other probabilistic undirected graphical models of
 discrete data with pairwise and unary potentials.")
     (license license:gpl2+)))
 
-(define-public r-crestr
-  (package
-    (name "r-crestr")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crestr" version))
-              (sha256
-               (base32
-                "1bhsy26kk9rjbbym35isf9a9qwxbyy7p14qj9i3373ki4mr1mnz2"))))
-    (properties `((upstream-name . "crestr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-stringr
-                             r-sp
-                             r-scales
-                             r-rsqlite
-                             r-rpostgres
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-plyr
-                             r-plot3d
-                             r-openxlsx
-                             r-dbi
-                             r-clipr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mchevalier2/crestr")
-    (synopsis
-     "Probabilistic Approach to Reconstruct Past Climates Using Palaeoecological Datasets")
-    (description
-     "Applies the CREST climate reconstruction method.  It can be used using the
-calibration data that can be obtained through the package or by importing
-private data.  An ensemble of graphical outputs were designed to facilitate the
-use of the package and the interpretation of the results.  More information can
-be obtained from Chevalier (2022) <doi:10.5194/cp-18-821-2022>.")
-    (license license:expat)))
-
 (define-public r-cregg
   (package
     (name "r-cregg")
@@ -6864,29 +6826,6 @@ press), \"Robust estimation of the effect of an exposure on the change in a
 continuous outcome\", BMC Medical Research Methodology.")
     (license license:lgpl3)))
 
-(define-public r-cprob
-  (package
-    (name "r-cprob")
-    (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Cprob" version))
-              (sha256
-               (base32
-                "1m4ys8xpj1jbn3lf8fym935y94dxipiimsf9zxwyw5sy71y7skgq"))))
-    (properties `((upstream-name . "Cprob")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tpr r-prodlim r-lgtdl r-lattice r-geepack))
-    (home-page "https://cran.r-project.org/package=Cprob")
-    (synopsis "The Conditional Probability Function of a Competing Event")
-    (description
-     "Permits to estimate the conditional probability function of a competing event,
-and to fit, using the temporal process regression or the pseudo-value approach,
-a proportional-odds model to the conditional probability function (or other
-models by specifying another link function).  See
-<doi:10.1111/j.1467-9876.2010.00729.x>.")
-    (license license:gpl2+)))
-
 (define-public r-cpr
   (package
     (name "r-cpr")
@@ -7771,13 +7710,13 @@ confidence intervals.")
 (define-public r-coxmeg
   (package
     (name "r-coxmeg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coxmeg" version))
               (sha256
                (base32
-                "0wviaylrahfv3cr5dira80vns1429i1vwr99n8iqljd7sjcs65r1"))))
+                "01yhpfb9qmcfgs9634czhxyj9j4gfpahia6wizq8vk5ljx8hg3c1"))))
     (properties `((upstream-name . "coxmeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -9792,43 +9731,6 @@ Statistical Methods for Constructing Robust Differential Correlation Networks to
 characterize the interactions among microRNAs published in Scientific Reports.
 Please see the reference: Yu et al. (2019) <doi:10.1038/s41598-019-40167-8>.")
     (license license:gpl2+)))
-
-(define-public r-cort
-  (package
-    (name "r-cort")
-    (version "0.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cort" version))
-              (sha256
-               (base32
-                "1iayvgwjmpmb96w5841jxhwivca7s4v5bpsdy0lrbk121saqq5z1"))))
-    (properties `((upstream-name . "cort")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-rcpp
-                             r-purrr
-                             r-osqp
-                             r-nloptr
-                             r-furrr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lrnv/cort")
-    (synopsis "Some Empiric and Nonparametric Copula Models")
-    (description
-     "This package provides S4 classes and methods to fit several copula models: The
-classic empirical checkerboard copula and the empirical checkerboard copula with
-known margins, see Cuberos, Masiello and Maume-Deschamps (2019)
-<doi:10.1080/03610926.2019.1586936> are proposed.  These two models allow to fit
-copulas in high dimension with a small number of observations, and they are
-always proper copulas.  Some flexibility is added via a possibility to
-differentiate the checkerboard parameter by dimension.  The last model consist
-of the implementation of the Copula Recursive Tree algorithm proposed by
-Laverny, Maume-Deschamps, Masiello and RulliÃ¨re (2020) <arXiv:2005.02912>,
-including the localised dimension reduction, which fits a copula by recursive
-splitting of the copula domain.  We also provide an efficient way of mixing
-copulas, allowing to bag the algorithm into a forest, and a generic way of
-measuring d-dimensional boxes with a copula.")
-    (license license:expat)))
 
 (define-public r-corset
   (package
@@ -12142,13 +12044,13 @@ Bioconductor.")
 (define-public r-cookies
   (package
     (name "r-cookies")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cookies" version))
               (sha256
                (base32
-                "14rz7wfv3pfgj7j6i11kawavz161k7kdpz0lzjyy756mbrd5cpky"))))
+                "14l4g82i7ivyydiawl4xqswzdan9p42izfsazd45hyfizf1229h4"))))
     (properties `((upstream-name . "cookies")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13431,45 +13333,6 @@ data in R. Though primarily oriented towards marine larval dispersal, many of
 the methods are general and useful for terrestrial systems as well.")
     (license license:gpl2+)))
 
-(define-public r-connectwidgets
-  (package
-    (name "r-connectwidgets")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "connectwidgets" version))
-              (sha256
-               (base32
-                "0sj8nik6dyyzflpq9vqd8wzlhky6jl2wfiaz788i6a2wdhckyc1m"))))
-    (properties `((upstream-name . "connectwidgets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sass
-                             r-rlang
-                             r-reactr
-                             r-reactable
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-glue
-                             r-dplyr
-                             r-digest
-                             r-crosstalk
-                             r-bslib))
-    (native-inputs (list r-knitr))
-    (home-page "https://rstudio.github.io/connectwidgets/")
-    (synopsis "Organize and Curate Your Content Within 'RStudio Connect'")
-    (description
-     "This package provides a collection of helper functions and htmlwidgets to help
-publishers curate content collections on RStudio Connect'.  The components,
-Card, Grid, Table, Search, and Filter can be used to produce a showcase page or
-gallery contained within a static or interactive R Markdown page.")
-    (license license:expat)))
-
 (define-public r-connectednessapproach
   (package
     (name "r-connectednessapproach")
@@ -13510,47 +13373,6 @@ connectedness index, influence index and corrected total connectedness index.
 Finally, a battery of datasets are available allowing to replicate a variety of
 connectedness papers.")
     (license license:gpl3)))
-
-(define-public r-connectapi
-  (package
-    (name "r-connectapi")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "connectapi" version))
-              (sha256
-               (base32
-                "0l9wqk3lz2r2naspgb77jlgk9addmkmgq1b501x8bv15j1b74ybc"))))
-    (properties `((upstream-name . "connectapi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-vctrs
-                             r-uuid
-                             r-tibble
-                             r-rlang
-                             r-r6
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-fs
-                             r-dplyr
-                             r-config
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rstudio/connectapi")
-    (synopsis
-     "Utilities for Interacting with the 'RStudio Connect' Server API")
-    (description
-     "This package provides a helpful R6 class and methods for interacting with the
-RStudio Connect Server API along with some meaningful utility functions for
-regular tasks.  API documentation varies by RStudio Connect installation and
-version, but the latest documentation is also hosted publicly at
-<https://docs.rstudio.com/connect/api/>.")
-    (license license:expat)))
 
 (define-public r-connect
   (package
@@ -28714,13 +28536,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and plotCGP.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.5.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CGNM" version))
               (sha256
                (base32
-                "0li1cg0hxj5i9dxl2s06rwnssiyd2af90g34knmhlpn3f2pzb690"))))
+                "1fpmm8q25wnqf3l6126vhbjhlls0a8cwqrmy97hqssinh10b3kls"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -33172,33 +32994,6 @@ test 1) controls the type I error better at small alpha levels; 2) increases the
 power of detecting time-varying effects; and 3) is more computationally
 efficient.")
     (license license:gpl2)))
-
-(define-public r-cattonum
-  (package
-    (name "r-cattonum")
-    (version "0.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cattonum" version))
-              (sha256
-               (base32
-                "11h9nh2i2bmd0b562l5avhwpj9ppnfmzd9nsv94cymhwn5h6nmg6"))))
-    (properties `((upstream-name . "cattonum")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bfgray3/cattonum")
-    (synopsis "Encode Categorical Features")
-    (description
-     "This package provides functions and S3 classes for the following methods of
-encoding categorical features as numerics: aggregate, dummy, frequency, label,
-leave-one-out, mean, median, and one-hot.")
-    (license license:expat)))
 
 (define-public r-cattexact
   (package

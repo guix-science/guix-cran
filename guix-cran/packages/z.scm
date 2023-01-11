@@ -33,6 +33,38 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-zoomr
+  (package
+    (name "r-zoomr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "zoomr" version))
+              (sha256
+               (base32
+                "19nxpa4qlln6ical269dfwq6axln508fvz78qgaa39dxsfg4m3f7"))))
+    (properties `((upstream-name . "zoomr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/chrisumphlett/zoomr")
+    (synopsis "Connect to Your 'Zoom' Data")
+    (description
+     "Facilitates making a connection to the Zoom API and executing various queries.
+You can use it to get data on Zoom webinars and Zoom meetings.  The Zoom
+documentation is available at
+<https://marketplace.zoom.us/docs/api-reference/zoom-api/>.  This package is not
+supported by Zoom (owner of the software).")
+    (license license:cc0)))
+
 (define-public r-zoid
   (package
     (name "r-zoid")

@@ -1389,31 +1389,6 @@ the KOF Datenservice API. The kofdata package is able to consume public
 information as well as data that requires an API token.")
     (license license:gpl2)))
 
-(define-public r-kodama
-  (package
-    (name "r-kodama")
-    (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "KODAMA" version))
-              (sha256
-               (base32
-                "0b8kgr2y623nrw1658s3daja1x25sg4icxcmvlm1fvp0bs2k1w54"))))
-    (properties `((upstream-name . "KODAMA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-umap r-rtsne r-rcpparmadillo r-rcpp r-minerva))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=KODAMA")
-    (synopsis "Knowledge Discovery by Accuracy Maximization")
-    (description
-     "An unsupervised and semi-supervised learning algorithm that performs feature
-extraction from noisy and high-dimensional data.  It facilitates identification
-of patterns representing underlying groups on all samples in a data set.  Based
-on Cacciatore S, Tenori L, Luchinat C, Bennett PR, MacIntyre DA. (2017)
-Bioinformatics <doi:10.1093/bioinformatics/btw705> and Cacciatore S, Luchinat C,
-Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
-    (license license:gpl2+)))
-
 (define-public r-koboconnectr
   (package
     (name "r-koboconnectr")
@@ -3018,6 +2993,28 @@ supported by the DOE-EERE SunShot award DE-EE-0007140. [1] W. Koeppen, (2011)
 <doi:10.1127/0941-2948/2010/0430>. [3] F. Rubel, K. Brugger, K. Haslinger, and
 I. Auer, (2016) <doi:10.1127/metz/2016/0816>.")
     (license license:bsd-2)))
+
+(define-public r-kfpls
+  (package
+    (name "r-kfpls")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "KFPLS" version))
+              (sha256
+               (base32
+                "1bdba738mhsa6yw515fyaw96pycvflw596fh9dkhhns498lg7356"))))
+    (properties `((upstream-name . "KFPLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fda))
+    (home-page "https://cran.r-project.org/package=KFPLS")
+    (synopsis "Kernel Functional Partial Least Squares")
+    (description
+     "Implementation for kernel functional partial least squares (KFPLS) method.
+KFPLS method is developed for functional nonlinear models, and the method does
+not require strict constraints for the nonlinear structures.  The crucial
+function of this package is KFPLS().")
+    (license license:gpl3+)))
 
 (define-public r-kfpca
   (package

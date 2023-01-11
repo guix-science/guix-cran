@@ -1125,13 +1125,13 @@ well.")
 (define-public r-wrangle
   (package
     (name "r-wrangle")
-    (version "0.5.8")
+    (version "0.5.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrangle" version))
               (sha256
                (base32
-                "18zylawg38bnmy6s95fr3xihg6gn4vszsy63vs0q56061smm4rd4"))))
+                "135160r3hlzxkqh97nycp5ad9b6628f61k6mbm0s8rprxwmcslhq"))))
     (properties `((upstream-name . "wrangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))

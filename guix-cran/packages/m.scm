@@ -1288,61 +1288,6 @@ univariate meta-analysis and meta-regression.")
 tubes.  Directional and other multivariate histograms are provided.")
     (license license:gpl3+)))
 
-(define-public r-mvmapit
-  (package
-    (name "r-mvmapit")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mvMAPIT" version))
-              (sha256
-               (base32
-                "0r4pg8m142l1qjm4hggrj0f9g3y927rbva8mj2q16bzdh6fbxbzd"))))
-    (properties `((upstream-name . "mvMAPIT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-rcppspdlog
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-logging
-                             r-harmonicmeanp
-                             r-foreach
-                             r-dplyr
-                             r-compquadform
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lcrawlab/mvMAPIT")
-    (synopsis "Multivariate Genome Wide Marginal Epistasis Test")
-    (description
-     "Epistasis, commonly defined as the interaction between genetic loci, is known to
-play an important role in the phenotypic variation of complex traits.  As a
-result, many statistical methods have been developed to identify genetic
-variants that are involved in epistasis, and nearly all of these approaches
-carry out this task by focusing on analyzing one trait at a time.  Previous
-studies have shown that jointly modeling multiple phenotypes can often
-dramatically increase statistical power for association mapping.  In this
-package, we present the multivariate MArginal ePIstasis Test ('mvMAPIT') â a
-multi-outcome generalization of a recently proposed epistatic detection method
-which seeks to detect marginal epistasis or the combined pairwise interaction
-effects between a given variant and all other variants.  By searching for
-marginal epistatic effects, one can identify genetic variants that are involved
-in epistasis without the need to identify the exact partners with which the
-variants interact â thus, potentially alleviating much of the statistical and
-computational burden associated with conventional explicit search based methods.
- Our proposed mvMAPIT builds upon this strategy by taking advantage of
-correlation structure between traits to improve the identification of variants
-involved in epistasis.  We formulate mvMAPIT as a multivariate linear mixed
-model and develop a multi-trait variance component estimation algorithm for
-efficient parameter inference and P-value computation.  Together with reasonable
-model approximations, our proposed approach is scalable to moderately sized
-genome-wide association studies.  Crawford et al. (2017)
-<doi:10.1371/journal.pgen.1006869>.  Stamp et al. (2022)
-<doi:10.1101/2022.11.30.518547>.")
-    (license license:gpl3+)))
-
 (define-public r-mvlswimpute
   (package
     (name "r-mvlswimpute")
@@ -7859,6 +7804,37 @@ possible high dimension in the region-based methylated sites and account for
 their location information.")
     (license license:gpl2+)))
 
+(define-public r-mrmcaov
+  (package
+    (name "r-mrmcaov")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MRMCaov" version))
+              (sha256
+               (base32
+                "0nq4i1ymv3ifp39liz99l51605q2iiin75a02wp9pyaxf6k7b5hd"))))
+    (properties `((upstream-name . "MRMCaov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trust r-tibble r-progress r-mvtnorm r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/brian-j-smith/MRMCaov")
+    (synopsis "Multi-Reader Multi-Case Analysis of Variance")
+    (description
+     "Estimation and comparison of the performances of diagnostic tests in
+multi-reader multi-case studies where true case statuses (or ground truths) are
+known and one or more readers provide test ratings for multiple cases.  Reader
+performance metrics are provided for area under and expected utility of ROC
+curves, likelihood ratio of positive or negative tests, and sensitivity and
+specificity.  ROC curves can be estimated empirically or with binormal or
+binormal likelihood-ratio models.  Statistical comparisons of diagnostic tests
+are based on the ANOVA model of Obuchowski-Rockette and the unified framework of
+Hillis (2005) <doi:10.1002/sim.2024>.  The ANOVA can be conducted with data from
+a full factorial, nested, or partially paired study design; with random or fixed
+readers or cases; and covariances estimated with the DeLong method, jackknifing,
+or an unbiased method.  Smith and Hillis (2020) <doi:10.1117/12.2549075>.")
+    (license license:gpl3)))
+
 (define-public r-mri
   (package
     (name "r-mri")
@@ -12224,40 +12200,6 @@ Products Subsets web services
 (<https://modis.ornl.gov/data/modis_webservice.html>).  Allows for easy
 downloads of MODIS time series directly to your R workspace or your computer.")
     (license license:agpl3)))
-
-(define-public r-modis
-  (package
-    (name "r-modis")
-    (version "1.2.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MODIS" version))
-              (sha256
-               (base32
-                "03nzij7gg24vkmlvm0k3mb4aj54wfbwh8hcq153p9wamm5xk9i9z"))))
-    (properties `((upstream-name . "MODIS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-raster
-                             r-ptw
-                             r-maptools
-                             r-maps
-                             r-mapedit
-                             r-mapdata
-                             r-devtools
-                             r-curl
-                             r-bitops))
-    (home-page "https://github.com/fdetsch/MODIS")
-    (synopsis "Acquisition and Processing of MODIS Products")
-    (description
-     "Download and processing functionality for the Moderate Resolution Imaging
-Spectroradiometer (MODIS).  The package provides automated access to the global
-online data archives LP DAAC (<https://lpdaac.usgs.gov/>), LAADS
-(<https://ladsweb.modaps.eosdis.nasa.gov/>) and NSIDC (<https://nsidc.org/home>)
-as well as processing capabilities such as file conversion, mosaicking,
-subsetting and time series filtering.")
-    (license license:expat)))
 
 (define-public r-modifiedmk
   (package
@@ -25258,32 +25200,6 @@ spatio-temporal models calculated using publicly available data are stored in
 package.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
-
-(define-public r-metchem
-  (package
-    (name "r-metchem")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MetChem" version))
-              (sha256
-               (base32
-                "1gqhxnwgki5lax9kcixzl444hc7m3r61r650mdvk2r7l0kf1wn90"))))
-    (properties `((upstream-name . "MetChem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rcdk r-kodama r-httr r-fingerprint))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MetChem")
-    (synopsis "Chemical Structural Similarity Analysis")
-    (description
-     "This package provides a new pipeline to explore chemical structural similarity
-across metabolite.  It allows to classify metabolites in structurally-related
-modules and identify common shared functional groups.  KODAMA algorithm is used
-to highlight structural similarity between metabolites.  See Cacciatore S,
-Tenori L, Luchinat C, Bennett PR, MacIntyre DA. (2017) Bioinformatics
-<doi:10.1093/bioinformatics/btw705> and Cacciatore S, Luchinat C, Tenori L.
-(2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
-    (license license:gpl2+)))
 
 (define-public r-metbrewer
   (package

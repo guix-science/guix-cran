@@ -2785,6 +2785,49 @@ reliability coefficient estimators, derived in Andersson, B. and Xin, T. (2018)
 models from data with different shape and using different software.")
     (license license:gpl2+)))
 
+(define-public r-irtq
+  (package
+    (name "r-irtq")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "irtQ" version))
+              (sha256
+               (base32
+                "0730mf4b8al7ibljbi3ksl7mkm8yh54x68x5zrd3v4151azbpaq2"))))
+    (properties `((upstream-name . "irtQ")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-statmod
+                             r-rlang
+                             r-rfast
+                             r-reshape2
+                             r-purrr
+                             r-mirt
+                             r-matrix
+                             r-janitor
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=irtQ")
+    (synopsis "Unidimensional Item Response Theory Modeling")
+    (description
+     "Fit unidimensional item response theory (IRT) models to a mixture of dichotomous
+and polytomous data, calibrate online item parameters (i.e., pretest and
+operational items), estimate examinees abilities, and examine the IRT model-data
+fit on item-level in different ways as well as provide useful functions related
+to IRT analyses such as IRT model-data fit evaluation and differential item
+functioning analysis.  The bring.flexmirt() and write.flexmirt() functions were
+written by modifying the read.flexmirt() function (Pritikin & Falk (2022)
+<doi:10.1177/0146621620929431>).  The bring.bilog() and bring.parscale()
+functions were written by modifying the read.bilog() and read.parscale()
+functions, respectively (Weeks (2010) <doi:10.18637/jss.v035.i12>).  The
+bisection() function was written by modifying the bisection() function (Howard
+(2017, ISBN:9780367657918)).  The code of the inverse test characteristic curve
+scoring in the est_score() function was written by modifying the irt.eq.tse()
+function (GonzÃ¡lez (2014) <doi:10.18637/jss.v059.i07>).")
+    (license license:gpl2+)))
+
 (define-public r-irtpwr
   (package
     (name "r-irtpwr")
@@ -6021,13 +6064,13 @@ and protein expression.")
 (define-public r-inters
   (package
     (name "r-inters")
-    (version "0.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inters" version))
               (sha256
                (base32
-                "0z0sx02ami2mk5ppdawy9j9lb7nmn25b9g6lanchqhxmiffzg3r1"))))
+                "1is65lid6v5ip6858i7mxjqaj0hgcr1xgk92zsh3qxpr8gn07cij"))))
     (properties `((upstream-name . "inters")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-fixest))
@@ -6037,7 +6080,7 @@ and protein expression.")
     (description
      "This package provides a set of functions to estimate interactions flexibly in
 the face of possibly many controls.  Implements the procedures described in
-Blackwell and Olson (2022) <doi:10.1093/restud/rdt044>.")
+Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
     (license license:gpl2+)))
 
 (define-public r-interpretr

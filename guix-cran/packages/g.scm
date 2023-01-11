@@ -12493,6 +12493,44 @@ efficiency of file storage, git repository size and speed for writing and
 reading.")
     (license license:gpl3)))
 
+(define-public r-gissb
+  (package
+    (name "r-gissb")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GISSB" version))
+              (sha256
+               (base32
+                "0clhch4xvklrmk7h6b7vz83zzlj5r1lzrszy73agmpdbs5cax5sy"))))
+    (properties `((upstream-name . "GISSB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidygraph
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-reshape2
+                             r-rcurl
+                             r-purrr
+                             r-nabor
+                             r-magrittr
+                             r-leaflet
+                             r-igraph
+                             r-httr
+                             r-here
+                             r-dplyr
+                             r-cpprouting))
+    (native-inputs (list r-knitr))
+    (home-page "https://statisticsnorway.github.io/GISSB/")
+    (synopsis "Network Analysis on the Norwegian Road Network")
+    (description
+     "This package provides a collection of GIS (Geographic Information System)
+functions in R, created for use in Statistics Norway.  The functions are
+primarily related to network analysis on the Norwegian road network.")
+    (license license:expat)))
+
 (define-public r-giscor
   (package
     (name "r-giscor")
@@ -24742,44 +24780,6 @@ probability density functions, such as the Euclidea mean, the Mahalanobis
 distance, the Kullback-Leibler divergence, the J-Coefficient, the Minkowski
 L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
     (license license:gpl2+)))
-
-(define-public r-gausscov
-  (package
-    (name "r-gausscov")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gausscov" version))
-              (sha256
-               (base32
-                "0xc7cp56f5a3y9pghhmpvqb67dbs11n3irla1xdzf06yddzndnb6"))))
-    (properties `((upstream-name . "gausscov")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=gausscov")
-    (synopsis "The Gaussian Covariate Method for Variable Selection")
-    (description
-     "Given the standard linear model the traditional way of deciding whether to
-include the jth covariate is to apply the F-test to decide whether the
-corresponding beta coefficient is zero.  The Gaussian covariate method is
-completely different.  The question as to whether the beta coefficient is or is
-not zero is replaced by the question as to whether the covariate is better or
-worse than i.i.d.  Gaussian noise.  The P-value for the covariate is the
-probability that Gaussian noise is better.  Surprisingly this can be given
-exactly and it is the same a the P-value for the classical model based on the
-F-distribution.  The Gaussian covariate P-value is model free, it is the same
-for any data set.  Using the idea it is possible to do covariate selection for a
-small number of covariates 25 by considering all subsets.  Post selection
-inference causes no problems as the P-values hold whatever the data.  The idea
-extends to stepwise regression again with exact probabilities.  In the simplest
-version the only parameter is a specified cut-off P-value which can be
-interpreted as the probability of a false positive being included in the final
-selection.  For more information see the web site below and the accompanying
-papers: L. Davies and L. Duembgen, \"Covariate Selection Based on a Model-free
-Approach to Linear Regression with Exact Probabilities\", 2022,
-<arxiv:2202.01553>.  L. Davies, \"Linear Regression, Covariate Selection and the
-Failure of Modelling\", 2022, <arXiv:2112.08738>.")
-    (license license:gpl3)))
 
 (define-public r-gauser
   (package

@@ -5214,13 +5214,13 @@ performance without return to baseline).")
 (define-public r-arrapply
   (package
     (name "r-arrapply")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arrApply" version))
               (sha256
                (base32
-                "0qy7iwi580rrf3sycsbv6qgxsqcdy9pdbnkdrx81j68qni9iw737"))))
+                "0bp30622md9zzdgv9g1kqp5k450cd5yzpqji51wwcjp8l347fb6y"))))
     (properties `((upstream-name . "arrApply")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5228,15 +5228,15 @@ performance without return to baseline).")
     (synopsis "Apply a Function to a Margin of an Array")
     (description
      "High performance variant of apply() for a fixed set of functions.  Considerable
-speedup is a trade-off for universality, user defined functions cannot be used
-with this package.  However, 21 most currently employed functions are available
-for usage.  They can be divided in three types: reducing functions (like mean(),
-sum() etc., giving a scalar when applied to a vector), mapping function (like
-normalise(), cumsum() etc., giving a vector of the same length as the input
-vector) and finally, vector reducing function (like diff() which produces result
-vector of a length different from the length of input vector).  Optional or
-mandatory additional arguments required by some functions (e.g. norm type for
-norm() or normalise() functions) can be passed as named arguments in ...'.")
+speedup of this implementation is a trade-off for universality: user defined
+functions cannot be used with this package.  However, about 20 most currently
+employed functions are available for usage.  They can be divided in three types:
+reducing functions (like mean(), sum() etc., giving a scalar when applied to a
+vector), mapping function (like normalise(), cumsum() etc., giving a vector of
+the same length as the input vector) and finally, vector reducing function (like
+diff() which produces result vector of a length different from the length of
+input vector).  Optional or mandatory additional arguments required by some
+functions (e.g. norm type for norm()) can be passed as named arguments in ...'.")
     (license license:gpl2+)))
 
 (define-public r-arrangements
@@ -6590,6 +6590,40 @@ Christopoulos, DT (2015) <doi:10.1016/j.jastp.2015.03.009> .  Murari, A.,
 Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 <doi:10.3390/e21040394>.")
     (license license:gpl2+)))
+
+(define-public r-archeoviz
+  (package
+    (name "r-archeoviz")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "archeoViz" version))
+              (sha256
+               (base32
+                "0g00nspry4m4dwbsjnksidc0igaj4wsq1f90gqp4ja40ic61dyfs"))))
+    (properties `((upstream-name . "archeoViz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-svglite
+                             r-shinythemes
+                             r-shiny
+                             r-reshape2
+                             r-plotly
+                             r-mgcv
+                             r-ggplot2
+                             r-cxhull))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sebastien-plutniak/archeoviz")
+    (synopsis
+     "Visualisation, Exploration, and Web Communication of Archaeological Excavation Data")
+    (description
+     "An R Shiny application for the visualisation, interactive exploration, and web
+communication of archaeological excavation data.  It includes interactive 3D and
+2D visualisations, generation of cross sections and map of the remains, basic
+spatial analysis methods (convex hull, regression surfaces, 2D kernel density
+estimation), and excavation timeline visualisation.  archeoViz can be used
+locally or deployed on a server, either with interactive input of data or with a
+static data set.")
+    (license license:gpl3)))
 
 (define-public r-archeofrag
   (package
@@ -8404,31 +8438,6 @@ Graybill (1992, ISBN-13: 978-0824786441); Weerahandi (1995)
     (description
      "Trigger animation effects on scroll on any HTML element of shiny and rmarkdown',
 such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
-    (license license:expat)))
-
-(define-public r-aorsf
-  (package
-    (name "r-aorsf")
-    (version "0.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aorsf" version))
-              (sha256
-               (base32
-                "0jrg0ffbghg33rk4qbdq0ypysgp9za5qrbwa9yc6av85djvz56j5"))))
-    (properties `((upstream-name . "aorsf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/aorsf")
-    (synopsis "Accelerated Oblique Random Survival Forests")
-    (description
-     "Fit, interpret, and make predictions with oblique random survival forests.
-Oblique decision trees are notoriously slow compared to their axis based
-counterparts, but aorsf runs as fast or faster than axis-based decision tree
-algorithms for right-censored time-to-event outcomes.  Methods to accelerate and
-interpret the oblique random survival forest are described in Jaeger et al.,
-(2022) <arXiv:2208.01129>.")
     (license license:expat)))
 
 (define-public r-aoristic
@@ -14019,16 +14028,17 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
 (define-public r-agroreg
   (package
     (name "r-agroreg")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroReg" version))
               (sha256
                (base32
-                "0kn7prhd9fzp2ibj12nz5cj5lag6bn7bmgva2xl7cf2b6pwmfijl"))))
+                "1d13h78ikxsd3almzzb3aialxl03xdiy2ndykpvklqml9ckdgj45"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcompanion
+                             r-purrr
                              r-minpack-lm
                              r-ggplot2
                              r-egg
@@ -14036,7 +14046,7 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
                              r-dplyr
                              r-broom
                              r-boot))
-    (home-page "https://agror.shinyapps.io/agroreg_shiny/")
+    (home-page "https://fisher.uel.br/AgroReg_shiny/")
     (synopsis "Regression Analysis Linear and Nonlinear for Agriculture")
     (description
      "Linear and nonlinear regression analysis common in agricultural science articles

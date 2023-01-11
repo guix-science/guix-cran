@@ -709,38 +709,6 @@ intervals for pairs of longitudinal responses, including consideration of lags
 and derivatives.")
     (license license:gpl2)))
 
-(define-public r-dynconfir
-  (package
-    (name "r-dynconfir")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dynConfiR" version))
-              (sha256
-               (base32
-                "11grish5x9xiw6gkr2bmg1vpi2hdqw7j52czhgc9d9gxvxlyjxp8"))))
-    (properties `((upstream-name . "dynConfiR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rcpp
-                             r-progress
-                             r-minqa
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SeHellmann/dynConfiR")
-    (synopsis "Dynamic Models for Confidence and Response Time Distributions")
-    (description
-     "This package provides density functions for the joint distribution of choice,
-response time and confidence for discrete confidence judgments as well as
-functions for parameter fitting, prediction and simulation for various dynamical
-models of decision confidence.  All models are explained in detail by Hellmann
-et al. (preprint; <https://osf.io/9jfqr/>).  Implemented models are the dynWEV
-model, the 2DSD model (Pleskac & Busemeyer, 2010, <doi:10.1037/a0019737>), and
-various race models.  C++ code for dynWEV and 2DSD is based on the rtdists
-package by Henrik Singmann.")
-    (license license:gpl3+)))
-
 (define-public r-dyncomp
   (package
     (name "r-dyncomp")
@@ -2889,34 +2857,6 @@ White, D. Sun, P. Speckman (2019) <arXiv:1906.05575>.  The basic model assumes a
 Gaussian likelihood and derives a spatial prior based on thin-plate splines.")
     (license license:gpl3+)))
 
-(define-public r-dssd
-  (package
-    (name "r-dssd")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dssd" version))
-              (sha256
-               (base32
-                "1svzd3d32lw6qvrpkgnidyrpq1903y2a1xplyq51gf2niwjyaxa0"))))
-    (properties `((upstream-name . "dssd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rgdal r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dssd")
-    (synopsis "Distance Sampling Survey Design")
-    (description
-     "This package creates survey designs for distance sampling surveys.  These
-designs can be assessed for various effort and coverage statistics.  Once the
-user is satisfied with the design characteristics they can generate a set of
-transects to use in their distance sampling survey.  Many of the designs
-implemented in this R package were first made available in our Distance for
-Windows software and are detailed in Chapter 7 of Advanced Distance Sampling,
-Buckland et.  al. (2008, ISBN-13: 978-0199225873).  Find out more about
-estimating animal/plant abundance with distance sampling at
-<http://distancesampling.org/>.")
-    (license license:gpl2+)))
-
 (define-public r-dssat
   (package
     (name "r-dssat")
@@ -3270,50 +3210,6 @@ implemented based on the DStorage class.")
      "Dataset containing information about job listings for data science job roles.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-dsims
-  (package
-    (name "r-dsims")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dsims" version))
-              (sha256
-               (base32
-                "15yy3kivg26pmzaby0kaj4vq4526jrnvpiqj24bcvh7sskv8myif"))))
-    (properties `((upstream-name . "dsims")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rstudioapi
-                             r-rlang
-                             r-rgeos
-                             r-mrds
-                             r-mgcv
-                             r-gridextra
-                             r-ggplot2
-                             r-dssd
-                             r-distance))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/DistanceDevelopment/dsims")
-    (synopsis "Distance Sampling Simulations")
-    (description
-     "This package performs distance sampling simulations.  dsims repeatedly generates
-instances of a user defined population within a given survey region.  It then
-generates realisations of a survey design and simulates the detection process.
-The data are then analysed so that the results can be compared for accuracy and
-precision across all replications.  This process allows users to optimise survey
-designs for their specific set of survey conditions.  The effects of uncertainty
-in population distribution or parameters can be investigated under a number of
-simulations so that users can be confident that they have achieved a robust
-survey design before deploying vessels into the field.  The distance sampling
-designs used in this package from dssd are detailed in Chapter 7 of Advanced
-Distance Sampling, Buckland et.  al. (2008, ISBN-13: 978-0199225873).  General
-distance sampling methods are detailed in Introduction to Distance Sampling:
-Estimating Abundance of Biological Populations, Buckland et.  al. (2004,
-ISBN-13: 978-0198509271).  Find out more about estimating animal/plant abundance
-with distance sampling at <http://distancesampling.org/>.")
-    (license license:gpl2+)))
-
 (define-public r-dsi
   (package
     (name "r-dsi")
@@ -3390,32 +3286,6 @@ Kalman filter and smoother estimates can be obtained from the state space model,
 and state-space model reduction techniques are implemented.  An introduction and
 User's Guide is available in a vignette.")
     (license license:gpl2)))
-
-(define-public r-dsdp
-  (package
-    (name "r-dsdp")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dsdp" version))
-              (sha256
-               (base32
-                "02646y75gng5ifblib834i19qc9jgl6i3grlk4p3nsy7xs8cl02s"))))
-    (properties `((upstream-name . "dsdp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://tsuchiya-lab.github.io/dsdp/")
-    (synopsis "Density Estimation with Semidefinite Programming")
-    (description
-     "The models of probability density functions are Gaussian or exponential
-distributions with polynomial correction terms.  Using a maximum likelihood
-method, dsdp computes parameters of Gaussian or exponential distributions
-together with degrees of polynomials by a grid search, and coefficient of
-polynomials by a variant of semidefinite programming.  It adopts Akaike
-Information Criterion for model selection.  See a vignette for a tutorial and
-more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
-    (license license:expat)))
 
 (define-public r-dscore
   (package
@@ -18747,13 +18617,13 @@ Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DeclareDesign" version))
               (sha256
                (base32
-                "151139zq0sx4mlskc054jn408j90l8603shrwx1qcgr2dljbwnfh"))))
+                "0js3v2v9df8i2ay44bk6qql14a3v621r11pi0fmi352wlzyg5s9v"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
@@ -22800,38 +22670,6 @@ in a data frame.  Relevant information can be found here
 <https://data.gov.sg/developer>.")
     (license license:expat)))
 
-(define-public r-datagovindia
-  (package
-    (name "r-datagovindia")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "datagovindia" version))
-              (sha256
-               (base32
-                "1k04k2bz56d3k1nbx8p8pc1x3cxrdmnpgbrgmxl5i1qg3yashj91"))))
-    (properties `((upstream-name . "datagovindia")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-plyr
-                             r-magrittr
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/econabhishek/datagovindia")
-    (synopsis "Data.gov.in API Wrapper")
-    (description
-     "This wrapper allows the user to communicate with more than 80,000 API posted on
-data.gov.in - open data platform of the government of India
-<https:data.gov.in/ogpl_apis>.  It also allows the user to search for the API
-required through the universe of the API with a better interface than the one
-the official website provides.  Once a user has the ID by using the API
-discovery functionalities, it allows one to converse with the API using a
-consistent format across all available API.")
-    (license license:expat)))
-
 (define-public r-datafsm
   (package
     (name "r-datafsm")
@@ -22907,34 +22745,6 @@ formatting.")
 tedious and bringing the data to right shape alone is a major chunk of work.
 Functions in this package help us get an understanding of dataframes to
 dramatically reduces data coding time.")
-    (license license:expat)))
-
-(define-public r-datafaker
-  (package
-    (name "r-datafaker")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DataFakeR" version))
-              (sha256
-               (base32
-                "0158ffj6yfvdirxar39rl6n730sza0lzq48v65p43whz6jbf9ybb"))))
-    (properties `((upstream-name . "DataFakeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-tidygraph
-                             r-tibble
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DataFakeR")
-    (synopsis "Generate Fake Data for Relational Databases")
-    (description
-     "Based on provided database description and/or database connection generate data
-sample preserving source structure.")
     (license license:expat)))
 
 (define-public r-dataexplorer
@@ -24435,6 +24245,41 @@ models, and includes a simple facility for data simulation.")
 with data on population, age and gender from Statistics Denmark
 <https://www.dst.dk/da/>.")
     (license license:expat)))
+
+(define-public r-daghmm
+  (package
+    (name "r-daghmm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dagHMM" version))
+              (sha256
+               (base32
+                "1dw4clv2x71km1sqz1mydscwyj6y9yqx06v3rkmdz13qqcacfmhi"))))
+    (properties `((upstream-name . "dagHMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-prroc
+                             r-matrixstats
+                             r-gtools
+                             r-future
+                             r-bnlearn
+                             r-bnclassify))
+    (home-page "https://cran.r-project.org/package=dagHMM")
+    (synopsis "Directed Acyclic Graph HMM with TAN Structured Emissions")
+    (description
+     "Hidden Markov models (HMMs) are a formal foundation for making probabilistic
+models of linear sequence.  They provide a conceptual toolkit for building
+complex models just by drawing an intuitive picture.  They are at the heart of a
+diverse range of programs, including genefinding, profile searches, multiple
+sequence alignment and regulatory site identification.  HMMs are the Legos of
+computational sequence analysis.  In graph theory, a tree is an undirected graph
+in which any two vertices are connected by exactly one path, or equivalently a
+connected acyclic undirected graph.  Tree represents the nodes connected by
+edges.  It is a non-linear data structure.  A poly-tree is simply a directed
+acyclic graph whose underlying undirected graph is a tree.  The model proposed
+in this package is the same as an HMM but where the states are linked via a
+polytree structure rather than a simple path.")
+    (license (license:fsdg-compatible "GPL (>= 2.0.0)"))))
 
 (define-public r-dafs
   (package

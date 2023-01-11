@@ -17704,25 +17704,26 @@ binary three-way data.")
 (define-public r-plfd
   (package
     (name "r-plfd")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLFD" version))
               (sha256
                (base32
-                "0zzvrhjv7jxil326sqp0xmna0lc708wx1wv33qf0jf1ggr4hhqqm"))))
+                "0w6d3sy4cnn7sj5d2fbn510gc3y6hipd006jnyvkariaqwlh3fa0"))))
     (properties `((upstream-name . "PLFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mathjaxr))
     (native-inputs (list r-knitr))
-    (home-page "https://gitee.com/xu-zc/PLFD")
+    (home-page "https://github.com/paradoxical-rhapsody/PLFD")
     (synopsis
      "Portmanteau Local Feature Discrimination for Matrix-Variate Data")
     (description
      "The portmanteau local feature discriminant approach first identifies the local
 discriminant features and their differential structures, then constructs the
 discriminant rule by pooling the identified local features together.  This
-method is applicable to high-dimensional matrix-variate data.")
+method is applicable to high-dimensional matrix-variate data.  See the paper by
+Xu, Luo and Chen (2021, <doi:10.1007/s13171-021-00255-2>).")
     (license license:gpl3)))
 
 (define-public r-plelma
@@ -32272,34 +32273,6 @@ with or without scaling, and compute standard or vector correlation and
 covariance matrices (congruence coefficients) of 3D landmarks.  Tolerates
 missing data for all analyses.")
     (license license:expat)))
-
-(define-public r-paleofire
-  (package
-    (name "r-paleofire")
-    (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "paleofire" version))
-              (sha256
-               (base32
-                "1vgai4my6kl0fldghp6a1qr8xhxiyw137kd80d0zir6q47nlnc2x"))))
-    (properties `((upstream-name . "paleofire")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgdal
-                             r-raster
-                             r-plyr
-                             r-locfit
-                             r-lattice
-                             r-ggplot2
-                             r-gcd))
-    (home-page "http://gpwg.paleofire.org")
-    (synopsis "Analysis of Charcoal Records from the Global Charcoal Database")
-    (description
-     "Tools to extract and analyse charcoal sedimentary data stored in the Global
-Charcoal Database.  Main functionalities includes data extraction and sites
-selection, transformation and interpolation of the charcoal records as well as
-compositing.")
-    (license license:gpl2+)))
 
 (define-public r-paleobuddy
   (package

@@ -40043,26 +40043,6 @@ design, as described in Duan, Ankenman, Sanchez, and Sanchez (2015,
 Technometrics, <doi:10.1080/00401706.2015.1108233>).")
     (license license:gpl3)))
 
-(define-public r-sfdep
-  (package
-    (name "r-sfdep")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sfdep" version))
-              (sha256
-               (base32
-                "0g8y15plh9nnh9rsnc35fd8lnnl9lralcsd586w73q8vzyqz6zxn"))))
-    (properties `((upstream-name . "sfdep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep r-sf r-rlang r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://sfdep.josiahparry.com")
-    (synopsis "Spatial Dependence for Simple Features")
-    (description
-     "An interface to spdep to integrate with sf objects and the tidyverse'.")
-    (license license:gpl3)))
-
 (define-public r-sfdct
   (package
     (name "r-sfdct")
@@ -43870,17 +43850,17 @@ within-series and/or cross-sectional correlation structure.")
 (define-public r-segmetric
   (package
     (name "r-segmetric")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "segmetric" version))
               (sha256
                (base32
-                "1nirb5gnbs3vw74fmpapng0bqqwrz5a6c59apkg8s8x0vqxwhfvx"))))
+                "1cpkak3d91xjz6z4ls29ys1m5gmkqm7pq86vs88xy51z0av4kji7"))))
     (properties `((upstream-name . "segmetric")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-magrittr))
-    (home-page "https://cran.r-project.org/package=segmetric")
+    (home-page "https://michellepicoli.github.io/segmetric/")
     (synopsis
      "Metrics for Assessing Segmentation Accuracy for Geospatial Data")
     (description
@@ -45844,6 +45824,44 @@ hyperparameters have an interactive real-time chart displayed in the RStudio
 viewer pane during their execution.")
     (license license:gpl3)))
 
+(define-public r-sdmtmb
+  (package
+    (name "r-sdmtmb")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sdmTMB" version))
+              (sha256
+               (base32
+                "00gyi6np254ii3dh41mv3vrby2hpa16jxsj2bha0i9pwjy11mbqs"))))
+    (properties `((upstream-name . "sdmTMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-rlang
+                             r-rcppeigen
+                             r-nlme
+                             r-mvtnorm
+                             r-mgcv
+                             r-matrix
+                             r-lifecycle
+                             r-glmmtmb
+                             r-generics
+                             r-fishmod
+                             r-clisymbols
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://pbs-assess.github.io/sdmTMB/index.html")
+    (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
+    (description
+     "This package implements spatial and spatiotemporal predictive-process GLMMs
+(Generalized Linear Mixed Effect Models) using TMB', INLA', and the SPDE
+(Stochastic Partial Differential Equation) approximation to Gaussian random
+fields.  One common application is for spatially explicit (and optionally
+dynamic) species distribution models (SDMs).  See Anderson et al. (2022)
+<doi:10.1101/2022.03.24.485545>.")
+    (license license:gpl3)))
+
 (define-public r-sdmpredictors
   (package
     (name "r-sdmpredictors")
@@ -45994,6 +46012,36 @@ alternative probability-based approach as described in Shimada et al. (2021)
 <doi:10.1111/2041-210X.13506>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-sdgdetector
+  (package
+    (name "r-sdgdetector")
+    (version "2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SDGdetector" version))
+              (sha256
+               (base32
+                "1xkbpx2s1q0fikai44dsr9c1h7yrsfhfzb7khz55nax3gsl6fd76"))))
+    (properties `((upstream-name . "SDGdetector")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rnaturalearth
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SDGdetector")
+    (synopsis "Detecting Sustainable Development Goals (SDGs) in Text")
+    (description
+     "This package provides a tool for identifying 17 Sustainable Development Goals
+(SDGs) and associated 169 targets in text, as described in Yingjie Li (2022)
+<https://github.com/Yingjie4Science/SDGdetector/blob/main/paper/paper.pdf> .  It
+uses natural language processing to transform unstructured text into normalized
+and structured data suitable for analysis and visualization.  It thus enables a
+unique way to monitor individuals and organizations commitments and efforts
+towards advancing SDGs and targets.")
+    (license license:gpl3)))
 
 (define-public r-sdetorus
   (package
@@ -46804,6 +46852,33 @@ ReturnModel() uses SCRSELECTRUN() and DICTAUG() to return a summary of the
 posterior coefficient vectors for the optimal model along with saving this
 posterior sample to a desired path location.")
     (license license:gpl2)))
+
+(define-public r-scroshi
+  (package
+    (name "r-scroshi")
+    (version "1.0.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scROSHI" version))
+              (sha256
+               (base32
+                "15mgbgb21wz1gnkw6mxkvckxj345cxi4w5hzwgxfqjvxq9wx6bik"))))
+    (properties `((upstream-name . "scROSHI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uwot r-summarizedexperiment
+                             r-singlecellexperiment r-s4vectors r-limma))
+    (home-page "https://cran.r-project.org/package=scROSHI")
+    (synopsis "Robust Supervised Hierarchical Identification of Single Cells")
+    (description
+     "Identifying cell types based on expression profiles is a pillar of single cell
+analysis.  scROSHI identifies cell types based on expression profiles of single
+cell analysis by utilizing previously obtained cell type specific gene sets.  It
+takes into account the hierarchical nature of cell type relationship and does
+not require training or annotated data.  A detailed description of the method
+can be found at: Prummer, Bertolini, Bosshard, Barkmann, Yates, Boeva, The Tumor
+Profiler Consortium, Stekhoven, and Singer (2022)
+<doi:10.1101/2022.04.05.487176>.")
+    (license license:expat)))
 
 (define-public r-scrollrevealr
   (package
@@ -48343,47 +48418,6 @@ in each category.  See Zhang Z, et al (2019) <doi:10.3390/genes10070531> for
 more details.")
     (license license:gpl2)))
 
-(define-public r-scimmunegraph
-  (package
-    (name "r-scimmunegraph")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scImmuneGraph" version))
-              (sha256
-               (base32
-                "0mvajasskcl4v0bjwzvkqjdicxb0329nxk93ich7qr37wfcp2n1n"))))
-    (properties `((upstream-name . "scImmuneGraph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-plyr
-                             r-gtools
-                             r-ggplot2
-                             r-forcats
-                             r-easypackages
-                             r-dplyr
-                             r-cowplot
-                             r-biocstyle))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zff-excellent/scImmuneGraph")
-    (synopsis
-     "Visualize the Basic Characteristics of Single-Cell Immune Repertoire")
-    (description
-     "Statistics and visualization of the distribution, diversity and composition of
-clonotypes, the abundance and length distribution of CDR3, the respective
-abundance distribution of V and J genes, and the abundance of V-J gene pairs are
-the basic requirements for single-cell immune group analysis.  scImmuneGraph is
-designed to process data from 10x Genomics Chromium Immune Profiling for T cell
-receptor (TCR) and immunoglobulin (Ig) enrichment workflows.")
-    (license license:gpl2+)))
-
 (define-public r-scifigure
   (package
     (name "r-scifigure")
@@ -48979,13 +49013,13 @@ description of the methodology.")
 (define-public r-scdhlm
   (package
     (name "r-scdhlm")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scdhlm" version))
               (sha256
                (base32
-                "1sf8pgj4zq45lpv37c6h3gpp8qbmszwzlcr41bjki75mqbariksd"))))
+                "0ynypqp7yki32yml8yqxbbcka1kl21h6h0ksa1iswysiyc172cys"))))
     (properties `((upstream-name . "scdhlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -50926,13 +50960,13 @@ contain more robust readers for sas7bdat files.")
 (define-public r-sarsop
   (package
     (name "r-sarsop")
-    (version "0.6.13")
+    (version "0.6.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sarsop" version))
               (sha256
                (base32
-                "0dfpqmvqjr2f7amqmms4wliccdlk37c53khrkb6z9dvhh88i4gzv"))))
+                "0y315gg3masbpvsf9zk0abj0mh0834h1yhmjg1fwwbqvygg64cjp"))))
     (properties `((upstream-name . "sarsop")))
     (build-system r-build-system)
     (inputs (list))
@@ -54214,13 +54248,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-33")
+    (version "3.1-34")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "171vjmc9l2q3ci3g9s93gix4rbs6a96h2kawcdvs04k2zy1n549i"))))
+                "0fa58qrjh5m8l04xb9qc1lrb49xfiwihjkxvs2h55l5hbbdw3fbp"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

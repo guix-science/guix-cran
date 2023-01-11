@@ -7999,16 +7999,16 @@ contributions, the final document can be downloaded and rendered locally.")
 (define-public r-trackdf
   (package
     (name "r-trackdf")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trackdf" version))
               (sha256
                (base32
-                "110m7dmciyqbcb69sxi02h5djnf098wzfr84d6yppyc73a81989y"))))
+                "1dx86ckxpadaw092fsdlwwpxacpglgzn8r7irykq4zk9kv8p2ij9"))))
     (properties `((upstream-name . "trackdf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-sp r-lubridate r-data-table))
+    (propagated-inputs (list r-tibble r-sf r-lubridate r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://swarm-lab.github.io/trackdf/")
     (synopsis "Data Frame Class for Tracking Data")
@@ -8307,13 +8307,13 @@ three-state progressive model.")
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Tplyr" version))
               (sha256
                (base32
-                "1wnhw2y6pl6i3syg7qrl16k9gids6qr7sp2z6b88vphz7p9jqi9p"))))
+                "077xhbhn00g265x6aciay75cziw2jhx2pkwgx64slhaksgyd3idm"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11015,13 +11015,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "0.0.9")
+    (version "0.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipsae" version))
               (sha256
                (base32
-                "0mrv3jw219jra70jr5lj87jvsr6pphmr7nbcns41qiynnaddrfad"))))
+                "0g4js7fx51yliq5lkzm8p3180a5wyp17l53nx4iix36i3k17arn9"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -12787,13 +12787,13 @@ visualizing terra objects with ggplot2'.")
 (define-public r-tidytags
   (package
     (name "r-tidytags")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytags" version))
               (sha256
                (base32
-                "1416kkd9ibi4l5xc1wfx22lhb0w6fi3g8dq2lp746w6kqlqbiqpz"))))
+                "0x4gv6k9ccs9r6s73xsk25ixwgmz5818s6jpndg0yqczybw3y5dm"))))
     (properties `((upstream-name . "tidytags")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rtweet r-rlang r-googlesheets4

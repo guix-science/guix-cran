@@ -13313,34 +13313,6 @@ automatically adjusts the bandwidth on a query-by-query basis through a
 leave-one-out cross-validation.")
     (license license:gpl2+)))
 
-(define-public r-layer
-  (package
-    (name "r-layer")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "layer" version))
-              (sha256
-               (base32
-                "0mmijkk4ppbmhlp6ah88a9v3iwdd9j6yw7ff8kk7p1iw63qkiyxi"))))
-    (properties `((upstream-name . "layer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stars
-                             r-sf
-                             r-scico
-                             r-raster
-                             r-ggplot2
-                             r-ggnewscale
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=layer")
-    (synopsis "Tilts your Maps and Turns Them into Ggplot Objects")
-    (description
-     "Simplifies the whole process of creating stacked tilted maps, that are often
-used in scientific publications to show different environmental layers for a
-geographical region.  Tilting maps and layering them allows to easily draw
-visual correlations between these environmental layers.")
-    (license license:cc0)))
-
 (define-public r-lax
   (package
     (name "r-lax")

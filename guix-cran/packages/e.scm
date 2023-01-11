@@ -4757,13 +4757,13 @@ relational database management system.")
 (define-public r-ethseq
   (package
     (name "r-ethseq")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EthSEQ" version))
               (sha256
                (base32
-                "1gmyf0qsixc8nsl9zzk7rb230zjv0p9vvp2zhr5q3xsic594mf1v"))))
+                "0xljl3phv0zgdz7zyq16qvwhd3r9bza1rr8waip36qgvaasjlvg3"))))
     (properties `((upstream-name . "EthSEQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -9873,48 +9873,6 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (sparse) partial least squares regressions.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-enmtools
-  (package
-    (name "r-enmtools")
-    (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ENMTools" version))
-              (sha256
-               (base32
-                "1sm64c9d5ph8sp5lzkzkd93iy8hls73xfshvjgnmqmd6zh4xp70g"))))
-    (properties `((upstream-name . "ENMTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
-                             r-spatstat-geom
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-magrittr
-                             r-lhs
-                             r-knitr
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-forcats
-                             r-enmeval
-                             r-dismo))
-    (home-page "https://cran.r-project.org/package=ENMTools")
-    (synopsis
-     "Analysis of Niche Evolution using Niche and Distribution Models")
-    (description
-     "Constructing niche models and analyzing patterns of niche evolution.  Acts as an
-interface for many popular modeling algorithms, and allows users to conduct
-Monte Carlo tests to address basic questions in evolutionary ecology and
-biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
-<doi:10.1111/j.1558-5646.2008.00482.x> Glor, R.E., and D.L. Warren (2011)
-<doi:10.1111/j.1558-5646.2010.01177.x> Warren, D.L., R.E. Glor, and M. Turelli
-(2010) <doi:10.1111/j.1600-0587.2009.06142.x> Cardillo, M., and D.L. Warren
-(2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
-Baumgartner (2019) <doi:10.1111/ecog.03900>.")
-    (license license:gpl2)))
 
 (define-public r-enmsdmx
   (package
@@ -18433,13 +18391,13 @@ repository; see <https://www.gurobi.com/downloads/>.")
 (define-public r-eat
   (package
     (name "r-eat")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eat" version))
               (sha256
                (base32
-                "09lbgzc6qzvgksk0gdwlldd928mdibh5w2397nnjg4qx27lvj9yq"))))
+                "1s286b6wx0d59n2v3hf6s1zy1f15mwf6ssrpwciard3giccnf556"))))
     (properties `((upstream-name . "eat")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

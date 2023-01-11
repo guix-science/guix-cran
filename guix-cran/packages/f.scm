@@ -734,6 +734,32 @@ Conn, Ngun, T., C. Ramirez, and G. Li (2019) <doi:10.18637/jss.v091.i09> for
 further details.")
     (license license:gpl3)))
 
+(define-public r-fuzzydbscan
+  (package
+    (name "r-fuzzydbscan")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FuzzyDBScan" version))
+              (sha256
+               (base32
+                "1a974s5j03caifcypk1c7la96754gh6n20xak7qaf9hrbm5i7vr9"))))
+    (properties `((upstream-name . "FuzzyDBScan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-ggplot2 r-dbscan r-data-table r-checkmate))
+    (home-page "https://cran.r-project.org/package=FuzzyDBScan")
+    (synopsis "Run and Predict a Fuzzy DBScan")
+    (description
+     "An interface for training Fuzzy DBScan with both Fuzzy Core and Fuzzy Border.
+Therefore, the package provides a method to initialize and run the algorithm and
+a function to predict new data w.t.h.  of R6'.  The package is build upon the
+paper \"Fuzzy Extensions of the DBScan algorithm\" from Ienco and Bordogna (2018)
+<doi:10.1007/s00500-016-2435-0>.  A predict function assigns new data according
+to the same criteria as the algorithm itself.  However, the prediction function
+freezes the algorithm to preserve the trained cluster structure and treats each
+new prediction object individually.")
+    (license license:lgpl3)))
+
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
@@ -9670,13 +9696,13 @@ option for printing decision rules.")
 (define-public r-fixest
   (package
     (name "r-fixest")
-    (version "0.11.0")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fixest" version))
               (sha256
                (base32
-                "0w08mbqzggk748nfm2rc5rw73zzzph46nspk60pbz0a0zjyjkvsy"))))
+                "1q771z9m7sdzq4pbx4fwcz26d4cbjkmqjrdac0wnr9pbv81y3z0k"))))
     (properties `((upstream-name . "fixest")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rcpp r-numderiv r-nlme r-dreamerr))
@@ -12747,75 +12773,6 @@ implementations of the fixed forgetting factor scheme from the same paper, as
 well as the classic CUSUM and EWMA methods, are included.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-ffsimulator
-  (package
-    (name "r-ffsimulator")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ffsimulator" version))
-              (sha256
-               (base32
-                "1z1jzwsx9p5p8hkdwl7y0mlg2b4nyz2qz1iaajk9rjnjg1g0q2hd"))))
-    (properties `((upstream-name . "ffsimulator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidytable
-                             r-rlang
-                             r-rglpk
-                             r-nflreadr
-                             r-magrittr
-                             r-glue
-                             r-ffscrapr
-                             r-data-table
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ffsimulator.ffverse.com")
-    (synopsis "Simulate Fantasy Football Seasons")
-    (description
-     "Uses bootstrap resampling to run fantasy football season simulations supported
-by historical rankings and nflfastR data, calculating optimal lineups, and
-returning aggregated results.")
-    (license license:expat)))
-
-(define-public r-ffscrapr
-  (package
-    (name "r-ffscrapr")
-    (version "1.4.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ffscrapr" version))
-              (sha256
-               (base32
-                "1qfclfvz1xa9mamn9rjmwyrrpsj8cr6ri5040g2gfxjag0by5n21"))))
-    (properties `((upstream-name . "ffscrapr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-ratelimitr
-                             r-rappdirs
-                             r-purrr
-                             r-nflreadr
-                             r-memoise
-                             r-magrittr
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-checkmate
-                             r-cachem))
-    (native-inputs (list r-knitr))
-    (home-page "https://ffscrapr.ffverse.com")
-    (synopsis "API Client for Fantasy Football League Platforms")
-    (description
-     "Helps access various Fantasy Football APIs by handling authentication and
-rate-limiting, forming appropriate calls, and returning tidy dataframes which
-can be easily connected to other data sources.")
-    (license license:expat)))
-
 (define-public r-ffp
   (package
     (name "r-ffp")
@@ -14028,29 +13985,30 @@ selection method that recommends the intersection of features subsets.")
 (define-public r-fea
   (package
     (name "r-fea")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FEA" version))
               (sha256
                (base32
-                "0rg7l5hmaksiz5hg8llwa5kk17by29qvqncyksv16bf8rsjlm732"))))
+                "1p2lsfhxih25i6rdwh64p4i5z72ds4a3x8a5p8db1jmx1qi07kq5"))))
     (properties `((upstream-name . "FEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-ptinpoly r-mass r-geosphere r-geometry))
     (home-page "https://cran.r-project.org/package=FEA")
     (synopsis "Finite Element Modeling for R")
     (description
-     "Finite element modeling of 2D geometries using constant strain triangles.
-Applies material properties and boundary conditions (load and constraint) to
-generate a finite element model.  The model produces stress, strain, and nodal
-displacements; a heat map is available to demonstrate regions where output
-variables are high or low.  Also provides options for creating a triangular mesh
-of 2D geometries.  Package developed with reference to: Bathe, K. J. (1996).
-Finite Element Procedures.[ISBN 978-0-9790049-5-7] -- Seshu, P. (2012).
-Textbook of Finite Element Analysis. [ISBN-978-81-203-2315-5] -- Mustapha, K. B.
-(2018).  Finite Element Computations in Mechanics with R. [ISBN 9781315144474].")
-    (license license:gpl3)))
+     "Finite element modeling of beam structures and 2D geometries using constant
+strain triangles.  Applies material properties and boundary conditions (load and
+constraint) to generate a finite element model.  The model produces stress,
+strain, and nodal displacements; a heat map is available to demonstrate regions
+where output variables are high or low.  Also provides options for creating a
+triangular mesh of 2D geometries.  Package developed with reference to: Bathe,
+K. J. (1996).  Finite Element Procedures.[ISBN 978-0-9790049-5-7] -- Seshu, P.
+(2012).  Textbook of Finite Element Analysis. [ISBN-978-81-203-2315-5] --
+Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
+9781315144474].")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-fdx
   (package

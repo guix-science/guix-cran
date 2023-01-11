@@ -418,29 +418,6 @@ detection in morphological, resource or environmental dimensions.  More details
 can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
     (license license:gpl3)))
 
-(define-public r-hypergeomat
-  (package
-    (name "r-hypergeomat")
-    (version "4.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HypergeoMat" version))
-              (sha256
-               (base32
-                "0l000hanjlyz76vvvp7sh6d03m3mj7wld4ph9dzhf1z9b4x9i2bz"))))
-    (properties `((upstream-name . "HypergeoMat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
-                             r-eigenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/HypergeoMat")
-    (synopsis "Hypergeometric Function of a Matrix Argument")
-    (description
-     "Evaluates the hypergeometric functions of a matrix argument, which appear in
-random matrix theory.  This is an implementation of Koev & Edelman's algorithm
-(2006) <doi:10.1090/S0025-5718-06-01824-2>.")
-    (license license:gpl3)))
-
 (define-public r-hypergate
   (package
     (name "r-hypergate")

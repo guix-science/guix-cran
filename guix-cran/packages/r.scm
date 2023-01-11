@@ -5182,49 +5182,6 @@ the book Golyandina (2018, <doi:10.1007/978-3-662-57380-8>).  See
 citation(\"Rssa\") for details.")
     (license license:gpl2+)))
 
-(define-public r-rsrd
-  (package
-    (name "r-rsrd")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rSRD" version))
-              (sha256
-               (base32
-                "1kmivz5qlfqq300lcg8qjl79dhcbdmq9xxx18bn57yks7g7ksk8s"))))
-    (properties `((upstream-name . "rSRD")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rcpp
-                             r-janitor
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=rSRD")
-    (synopsis "Sum of Ranking Differences Statistical Test")
-    (description
-     "We provide an implementation for Sum of Ranking Differences (SRD), a novel
-statistical test introduced by HÃ©berger (2010)
-<doi:10.1016/j.trac.2009.09.009>.  The test allows the comparison of different
-solutions through a reference by first performing a rank transformation on the
-input, then calculating and comparing the distances between the solutions and
-the reference - the latter is measured in the L1 norm.  The reference can be an
-external benchmark (e.g. an established gold standard) or can be aggregated from
-the data.  The calculated distances, called SRD scores, are validated in two
-ways, see HÃ©berger and KollÃ¡r-Hunek (2011) <doi:10.1002/cem.1320>.  A
-randomization test (also called permutation test) compares the SRD scores of the
-solutions to the SRD scores of randomly generated rankings.  The second
-validation option is cross-validation that checks whether the rankings generated
-from the solutions come from the same distribution or not.  For a detailed
-analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
-(2021) <arXiv:2105.11939>.  The package offers a wide array of features related
-to SRD including the computation of the SRD scores, validation options, input
-preprocessing and plotting tools.")
-    (license license:gpl3)))
-
 (define-public r-rsqmed
   (package
     (name "r-rsqmed")
@@ -10279,28 +10236,6 @@ topographer, to compute the irregularity indices mentioned before, and to
 display summary plots that are easy to interpret for a clinician.")
     (license license:gpl3)))
 
-(define-public r-roxytest
-  (package
-    (name "r-roxytest")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "roxytest" version))
-              (sha256
-               (base32
-                "166m0pklgryh3vildg0bvzh9gs3p71sf61ivgkvkvyy9vhvnp3jf"))))
-    (properties `((upstream-name . "roxytest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roxygen2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=roxytest")
-    (synopsis "Various Tests with 'roxygen2'")
-    (description
-     "Various tests as roxygen2 roclets: e.g. testthat and tinytest tests.  Also other
-static analysis tools as checking parameter documentation consistency and
-others.")
-    (license license:gpl2+)))
-
 (define-public r-roxygen2md
   (package
     (name "r-roxygen2md")
@@ -10939,6 +10874,33 @@ Hull, John C. \"Options, Futures, and Other Derivatives\" (1997,
 ISBN:0-13-601589-1).  Fischer Black, Myron Scholes (1973) \"The Pricing of
 Options and Corporate Liabilities\" <doi:10.1086/260062>.")
     (license license:gpl3)))
+
+(define-public r-roptimus
+  (package
+    (name "r-roptimus")
+    (version "3.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ROptimus" version))
+              (sha256
+               (base32
+                "1sc65dzpgd12wjqbbhzkhj9p09ynd4gj9icminz0yrr9igzw2z2j"))))
+    (properties `((upstream-name . "ROptimus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-iterators r-foreach r-doparallel))
+    (home-page "https://github.com/SahakyanLab/ROptimus")
+    (synopsis "Parallel General-Purpose Adaptive Optimisation Engine")
+    (description
+     "This package provides a general-purpose optimisation engine that supports i)
+Monte Carlo optimisation with Metropolis criterion [Metropolis et al. (1953)
+<doi:10.1063/1.1699114>, Hastings (1970) <doi:10.1093/biomet/57.1.97>] and
+Acceptance Ratio Simulated Annealing [Kirkpatrick et al. (1983)
+<doi:10.1126/science.220.4598.671>, ÄernÃ½ (1985) <doi:10.1007/BF00940812>] on
+multiple cores, and ii) Acceptance Ratio Replica Exchange Monte Carlo
+Optimisation.  In each case, the system pseudo-temperature is dynamically
+adjusted such that the observed acceptance ratio is kept near to the desired
+(fixed or changing) acceptance ratio.")
+    (license license:gpl3+)))
 
 (define-public r-roptim
   (package
@@ -14576,21 +14538,21 @@ bootstrap procedure of Trucios, Hotta and Ruiz (2017)
 (define-public r-robflreg
   (package
     (name "r-robflreg")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robflreg" version))
               (sha256
                (base32
-                "0b0iwpn2rdwydwzabf2b5030fma78gjy9640ky0xhhpyfvm28z3z"))))
+                "03vz43phq805am0d38lyqfn969dl3fqnfivb9l46k9vbcqmdsx1y"))))
     (properties `((upstream-name . "robflreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
-                             r-plot3d
                              r-pcapp
                              r-mvtnorm
                              r-mass
                              r-goffda
+                             r-fields
                              r-fda-usc
                              r-fda
                              r-expm))
@@ -21286,13 +21248,13 @@ digitizing and serving museum specimen collections on the web.  See
 (define-public r-ridgetorus
   (package
     (name "r-ridgetorus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ridgetorus" version))
               (sha256
                (base32
-                "031ls3q41jacawnmx1q180gwiyfwnnsknhzsnwr6yknlnwgfd7w0"))))
+                "1agvxk27db60ggjz102d0gdv8apx2plfbyb44mkhhwmfwcpqmvvs"))))
     (properties `((upstream-name . "ridgetorus")))
     (build-system r-build-system)
     (propagated-inputs (list r-sphunif
@@ -38616,31 +38578,6 @@ information, and economic indicators.  This package provides a method to
 download those spreadsheets and read them directly into R.")
     (license license:expat)))
 
-(define-public r-rbmrb
-  (package
-    (name "r-rbmrb")
-    (version "2.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RBMRB" version))
-              (sha256
-               (base32
-                "09x7zaigflc0d3pbdrvfv1kdklrlzgd4v2ma3dcr96l36n1iqqns"))))
-    (properties `((upstream-name . "RBMRB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-plotly r-httr r-ggplot2 r-data-table))
-    (home-page "https://github.com/uwbmrb/RBMRB")
-    (synopsis "BMRB Data Access and Visualization")
-    (description
-     "The Biological Magnetic Resonance Data Bank (BMRB,<http:// www.bmrb.io/>)
-collects, annotates, archives, and disseminates (worldwide in the public domain)
-the important spectral and quantitative data derived from NMR(Nuclear Magnetic
-Resonance) spectroscopic investigations of biological macromolecules and
-metabolites.  This package provides an interface to BMRB database for easy data
-access and includes a minimal set of data visualization functions.  Users are
-encouraged to make their own data visualizations using BMRB data.")
-    (license license:gpl2)))
-
 (define-public r-rbmn
   (package
     (name "r-rbmn")
@@ -40188,13 +40125,13 @@ for installation instructions.")
 (define-public r-rattains
   (package
     (name "r-rattains")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rATTAINS" version))
               (sha256
                (base32
-                "0zc710ydpxda5vbyw1d29abrk94nj253qylxrirr89mhlv5fnac1"))))
+                "11wbhlz5riv1dhxww70l7r44fkc6vdgjnn9rbq6w1ckhr1bc34z6"))))
     (properties `((upstream-name . "rATTAINS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -40205,7 +40142,6 @@ for installation instructions.")
                              r-purrr
                              r-magrittr
                              r-janitor
-                             r-hoardr
                              r-fs
                              r-fauxpas
                              r-dplyr
@@ -40213,7 +40149,7 @@ for installation instructions.")
                              r-crul
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rATTAINS")
+    (home-page "https://github.com/mps9506/rATTAINS")
     (synopsis "Access EPA 'ATTAINS' Data")
     (description
      "An R interface to United States Environmental Protection Agency (EPA)
@@ -43969,13 +43905,13 @@ application extends the functionality in radiant.data'.")
 (define-public r-radiant-design
   (package
     (name "r-radiant-design")
-    (version "1.4.4")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radiant.design" version))
               (sha256
                (base32
-                "1kq2imqh0ddc4ylpgmnd139y9mzww1adnlpg0033fsjbg9s4yxd5"))))
+                "16wsq2gfs6rkbn79c4a0mgnsdribjhj1c7rln9nnnaxf8mq0jmnh"))))
     (properties `((upstream-name . "radiant.design")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -44000,18 +43936,19 @@ radiant.data'.")
 (define-public r-radiant-basics
   (package
     (name "r-radiant-basics")
-    (version "1.4.4")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radiant.basics" version))
               (sha256
                (base32
-                "1l3l3b2j0brcrkrmddzv0dczlgkx6b5d2fkdb0g4rv3l0znlix23"))))
+                "0b6fj447hcj2q2qr24lwz9xy5n9dkxrfzzcmhlvz4197xxnfhbam"))))
     (properties `((upstream-name . "radiant.basics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-scales
+                             r-rlang
                              r-radiant-data
                              r-psych
                              r-polycor

@@ -1221,27 +1221,6 @@ Information Criterion, the explained deviance, or the F-test of the change in
 RÂ².")
     (license (license:fsdg-compatible "FreeBSD"))))
 
-(define-public r-buffers
-  (package
-    (name "r-buffers")
-    (version "0.31")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "buffeRs" version))
-              (sha256
-               (base32
-                "1yr2bg2cyl8sm4g7jrjw9apj5lqhbqscw5mshs8r8niz0fkyq6lg"))))
-    (properties `((upstream-name . "buffeRs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tlhenvironment/buffeRs")
-    (synopsis "Buffer Generation for Spatial Models")
-    (description
-     "Generates non-circular simple feature geometries e.g. for the use as buffers in
-model-building.")
-    (license license:gpl2+)))
-
 (define-public r-buddle
   (package
     (name "r-buddle")
@@ -13429,13 +13408,13 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
 (define-public r-bigassertr
   (package
     (name "r-bigassertr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigassertr" version))
               (sha256
                (base32
-                "00vdg8r4nv495kqdskig0hd1b7m93fygx8xjr7lvaav0lkxlaim9"))))
+                "0bk11jinlc1cvm6aaq9mccs9i328b8s2lbwq63a42fgf1qng103p"))))
     (properties `((upstream-name . "bigassertr")))
     (build-system r-build-system)
     (home-page "https://github.com/privefl/bigassertr")
@@ -24249,6 +24228,32 @@ batch effects are also provided.")
     (description
      "Data about the bakers, challenges, and ratings for \"The Great British Bake Off\",
 from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
+    (license license:expat)))
+
+(define-public r-baizer
+  (package
+    (name "r-baizer")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "baizer" version))
+              (sha256
+               (base32
+                "0vv4cv98y9z4cpgmp6gxkbwq0nh46lc3l6rv6dps1hnlk187i7vd"))))
+    (properties `((upstream-name . "baizer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/william-swl/baizer")
+    (synopsis "Useful Functions for Data Processing")
+    (description
+     "In ancient Chinese mythology, Bai Ze is a divine creature that knows the needs
+of everything.  baizer provides data processing functions frequently used by the
+author.  Hope this package also knows what you want!")
     (license license:expat)))
 
 (define-public r-bain

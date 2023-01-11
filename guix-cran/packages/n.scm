@@ -265,6 +265,28 @@ with the group lasso, group smoothly clipped absolute deviation, and group
 minimax concave penalty.")
     (license license:gpl3)))
 
+(define-public r-nutrition
+  (package
+    (name "r-nutrition")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nutrition" version))
+              (sha256
+               (base32
+                "0jxpa4wxjcv0j03xq5g97bm1czx0d5mm2rixgckncfjijy5c092j"))))
+    (properties `((upstream-name . "nutrition")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=nutrition")
+    (synopsis "Useful Functions for People on a Diet")
+    (description
+     "This package contains a collection of functions for performing different kinds
+of calculation that are of interest to someone following a diet plan.
+Calculators for the Basal Metabolic Rate are based on Mifflin et al. (1990)
+<doi:10.1093/ajcn/51.2.241> and McArdle, W. D., Katch, F. I., & Katch, V. L.
+(2010, ISBN:9780812109917).")
+    (license license:gpl3+)))
+
 (define-public r-nutrinetwork
   (package
     (name "r-nutrinetwork")
@@ -500,18 +522,17 @@ related according to a provided pedigree.")
 (define-public r-numbat
   (package
     (name "r-numbat")
-    (version "1.1.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "numbat" version))
               (sha256
                (base32
-                "0b7wdrkgswjp5pc9f3h86d0v0xmpifbv4q0zda46r7ijwxys1p9w"))))
+                "1jkz24j99cd333mvisp8x5swwr0iyix1kc962d2yx3mv5cn28xdb"))))
     (properties `((upstream-name . "numbat")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-vcfr
-                             r-tidyverse
                              r-tidyr
                              r-tidygraph
                              r-tibble
