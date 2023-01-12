@@ -1807,13 +1807,13 @@ problem with both equalities and inequalities constraints.")
 (define-public r-kmunicate
   (package
     (name "r-kmunicate")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KMunicate" version))
               (sha256
                (base32
-                "13lkblm4kn8m4fr6cms8jz1ankxkynics04ajzfrxf6rd6b1xhc8"))))
+                "0qy3qh4jfmyznwy4lhia9xzvi5xh0id9xx12lsmd1blklaia4593"))))
     (properties `((upstream-name . "KMunicate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3614,16 +3614,16 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernelshap" version))
               (sha256
                (base32
-                "07k4hy1pcy6p2sxw971ifaqfagj4plp3k8wcjlqn114i2m0zqsw4"))))
+                "0yab42kacyi9w7hzf6dg9p6hpn0fqa4m4hp3bsgb5cx3zyv6i8dn"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-foreach r-dorng))
+    (propagated-inputs (list r-foreach))
     (home-page "https://github.com/mayer79/kernelshap")
     (synopsis "Kernel SHAP")
     (description

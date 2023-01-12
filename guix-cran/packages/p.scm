@@ -8901,6 +8901,27 @@ statistical or machine-learning prediction model as long as it uses baseline
 covariates to predict outcomes under treatment and control.")
     (license license:gpl2+)))
 
+(define-public r-predicts
+  (package
+    (name "r-predicts")
+    (version "0.1-6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "predicts" version))
+              (sha256
+               (base32
+                "061pp5kjxlbjs9adq8sxhcgsiqj78g89paa024gqrl7bv3pssk94"))))
+    (properties `((upstream-name . "predicts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (home-page "https://rspatial.org/terra/sdm/")
+    (synopsis "Spatial Prediction Tools")
+    (description
+     "This package provides methods for spatial predictive modeling, especially for
+spatial distribution models.  This includes algorithms for model fitting and
+prediction, as well as methods for model evaluation.")
+    (license license:gpl3+)))
+
 (define-public r-predictrace
   (package
     (name "r-predictrace")
@@ -13143,23 +13164,17 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "4.5")
+    (version "4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomp" version))
               (sha256
                (base32
-                "17bza7vcglx8fqjcym578p1q8byhg5ab1amnjzfw7w6lqysa77qf"))))
+                "0xrd9ymhgk2xkchyhr1gky88fsvbbx4gpy6spd6pc2qg788wnci4"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-reshape2
-                             r-plyr
-                             r-mvtnorm
-                             r-magrittr
-                             r-digest
-                             r-desolve
-                             r-coda))
+    (propagated-inputs (list r-plyr r-mvtnorm r-digest r-desolve r-coda))
     (home-page "https://kingaa.github.io/pomp/")
     (synopsis "Statistical Inference for Partially Observed Markov Processes")
     (description
@@ -16682,6 +16697,27 @@ support grid graphics such as lattice and ggplot.  See \"example('devsize')\" an
 nested data easier.")
     (license license:expat)))
 
+(define-public r-plotrcs
+  (package
+    (name "r-plotrcs")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "plotRCS" version))
+              (sha256
+               (base32
+                "0qllalg3hklr4h85g81n78nyrwjl48k68bap24nfrpbb4j089hj3"))))
+    (properties `((upstream-name . "plotRCS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rms r-ggplot2))
+    (home-page "https://github.com/KunHuo/plotRCS")
+    (synopsis "Plot Restricted Cubic Splines Curves")
+    (description
+     "Simple drawing of restricted cubic spline (RCS) curves through ggplot2 package
+from a logistic regression model or a Cox proportional hazards regression model.
+ This method was described by Harrell FE (2015) <doi:10.1007/978-3-319-19425-7>.")
+    (license license:gpl3+)))
+
 (define-public r-plotprotein
   (package
     (name "r-plotprotein")
@@ -18151,6 +18187,31 @@ plotting partially linear additive quantile regression models.  Uses and works
 with functions from the quantreg package.")
     (license license:gpl2+)))
 
+(define-public r-planttracker
+  (package
+    (name "r-planttracker")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "plantTracker" version))
+              (sha256
+               (base32
+                "14q63fvp5r3hh36ydyj8cdhmmfirc7xzmx418jl2cljrn9c72rwl"))))
+    (properties `((upstream-name . "plantTracker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units r-sf r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aestears/plantTracker")
+    (synopsis "Extract Demographic and Competition Data from Fine-Scale Maps")
+    (description
+     "Extracts growth, survival, and local neighborhood density information from
+repeated, fine-scale maps of organism occurrence.  Further information about
+this package can be found in our journal article, \"plantTracker: An R package to
+translate maps of plant occurrence into demographic data\" published in 2022 in
+Methods in Ecology and Evolution (Stears, et al., 2022)
+<doi:10.1111/2041-210X.13950>.")
+    (license license:expat)))
+
 (define-public r-plantecowrap
   (package
     (name "r-plantecowrap")
@@ -18704,13 +18765,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pknca
   (package
     (name "r-pknca")
-    (version "0.10.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PKNCA" version))
               (sha256
                (base32
-                "1vivg8mh5aizqnw6a47k9i0sv8s7sidfaap4n5nv078vncmh9l96"))))
+                "1haf3yd645rcw6nbrj1l5hvqlwmd35fnji9ibrqsqbj1fb5m70r9"))))
     (properties `((upstream-name . "PKNCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

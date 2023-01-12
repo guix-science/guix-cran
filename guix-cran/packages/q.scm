@@ -3796,13 +3796,13 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qlcal" version))
               (sha256
                (base32
-                "1xb74pwfg21plp6y06vdj9r6vdn6lrx5jmak5gvs91wn8csjh1m6"))))
+                "11smsvbrdn2arlj8z54nwb667dgqsr3xmyfbywl8s93101pxbjsx"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

@@ -17381,13 +17381,13 @@ log-log representation.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gfoRmula" version))
               (sha256
                (base32
-                "1y12bgj6r07g8kiysfacxfdvprir8lzbajcsym3lx5wzfg29spcq"))))
+                "074whz4ajah0l38a5hslfp5vjwakgzj5vr2dajsfypyw34jifyfs"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg

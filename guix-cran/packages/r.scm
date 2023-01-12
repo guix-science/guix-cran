@@ -6550,13 +6550,13 @@ incorporating neighbour effects.")
 (define-public r-rsdmx
   (package
     (name "r-rsdmx")
-    (version "0.6")
+    (version "0.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsdmx" version))
               (sha256
                (base32
-                "1sw8pp2j22rs1nlsyphyqbhywgplan9qmrs5wm9wvrn5g26k4bg9"))))
+                "0f1awcrlz1k57al5j54yyaxj2avjp4c01iqzlm7v34i7pvjl82da"))))
     (properties `((upstream-name . "rsdmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-r6 r-plyr r-httr))
@@ -10236,6 +10236,28 @@ topographer, to compute the irregularity indices mentioned before, and to
 display summary plots that are easy to interpret for a clinician.")
     (license license:gpl3)))
 
+(define-public r-roxytest
+  (package
+    (name "r-roxytest")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "roxytest" version))
+              (sha256
+               (base32
+                "17cxhdlywng6nky6c5m49yjs2pgrs1jqrzw6rj8kb6cp2zssclas"))))
+    (properties `((upstream-name . "roxytest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roxygen2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=roxytest")
+    (synopsis "Various Tests with 'roxygen2'")
+    (description
+     "Various tests as roxygen2 roclets: e.g. testthat and tinytest tests.  Also other
+static analysis tools as checking parameter documentation consistency and
+others.")
+    (license license:gpl2+)))
+
 (define-public r-roxygen2md
   (package
     (name "r-roxygen2md")
@@ -13729,13 +13751,13 @@ robust accelerated failure time regression for gaussian and log-Weibull case.")
 (define-public r-robust2sls
   (package
     (name "r-robust2sls")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robust2sls" version))
               (sha256
                (base32
-                "1dcg8pmyyywspcdn95g41673wf89mmbggwn9gwsr9225w5jl26pl"))))
+                "1q12lvb5kifcn6qjaw1zpzq8p59lw92x79jfj9ffgy3sswhznpq4"))))
     (properties `((upstream-name . "robust2sls")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -13743,8 +13765,7 @@ robust accelerated failure time regression for gaussian and log-Weibull case.")
                              r-mass
                              r-ivreg
                              r-foreach
-                             r-exactci
-                             r-dorng))
+                             r-exactci))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jkurle/robust2sls")
     (synopsis "Outlier Robust Two-Stage Least Squares Inference and Testing")
@@ -16272,6 +16293,34 @@ signal-plus-noise model.")
      "This package contains inferential and graphical routines for comparing two
 treatment arms in terms of the restricted mean time in favor of treatment.")
     (license license:gpl2+)))
+
+(define-public r-rmstcompsens
+  (package
+    (name "r-rmstcompsens")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rmstcompsens" version))
+              (sha256
+               (base32
+                "1bjwf4s5mgl60i3psdzga0nmngnx2a90j2kpf6zysd2939rirv1n"))))
+    (properties `((upstream-name . "rmstcompsens")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-dplyr))
+    (home-page "https://cran.r-project.org/package=rmstcompsens")
+    (synopsis
+     "Comparing Restricted Mean Survival Time as Sensitivity Analysis")
+    (description
+     "This package performs two-sample comparisons using the restricted mean survival
+time (RMST) when survival curves end at different time points between groups.
+This package implements a sensitivity approach that allows the threshold
+timepoint tau to be specified after the longest survival time in the shorter
+survival group.  Two kinds of between-group contrast estimators (the difference
+in RMST and the ratio of RMST) are computed: Uno et
+al(2014)<doi:10.1200/JCO.2014.55.2208>, Uno et
+al(2022)<https://CRAN.R-project.org/package=survRM2>, Ueno and
+Morita(2023)<doi:10.1007/s43441-022-00484-z>.")
+    (license license:gpl2)))
 
 (define-public r-rmst
   (package
@@ -18922,6 +18971,38 @@ mortality rates can be expressed as a function of the area under the curve
 between the crude mortality rates plots and the tangential transform of the
 force of mortality.")
     (license license:gpl3)))
+
+(define-public r-rkin
+  (package
+    (name "r-rkin")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rKIN" version))
+              (sha256
+               (base32
+                "1pd124v18is75j6bs2hdmbzrwggwh6pvkb1fs1k9wayava0rc36f"))))
+    (properties `((upstream-name . "rKIN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rgeos
+                             r-rcolorbrewer
+                             r-mass
+                             r-maptools
+                             r-ks
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/salbeke/rKIN")
+    (synopsis "(Kernel) Isotope Niche Estimation")
+    (description
+     "Applies methods used to estimate animal homerange, but instead of geospatial
+coordinates, we use isotopic coordinates.  The estimation methods include: 1)
+2-dimensional bivariate normal kernel utilization density estimator, 2)
+bivariate normal ellipse estimator, and 3) minimum convex polygon estimator, all
+applied to stable isotope data.  Additionally, functions to determine niche
+area, polygon overlap between groups and levels (confidence contours) and
+plotting capabilities.")
+    (license license:gpl3+)))
 
 (define-public r-rkhsmetamod
   (package
@@ -43855,17 +43936,18 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.4.8")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radiant.model" version))
               (sha256
                (base32
-                "05kp48kzcxdfrj5zjdc4w7nj39vdbldac48sxrx52jzph92c95is"))))
+                "1sawrlazjmgzsd9j2l6va6f62khxfmxi9kdkjjy8xbp87s8ka6wj"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-xgboost
+                             r-vip
                              r-tidyr
                              r-stringr
                              r-stringi

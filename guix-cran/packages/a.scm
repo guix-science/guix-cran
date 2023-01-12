@@ -513,6 +513,28 @@ JavaScript snippet.  Allows app developers to submit page tracking and submit
 events.")
     (license license:expat)))
 
+(define-public r-azlogr
+  (package
+    (name "r-azlogr")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "azlogr" version))
+              (sha256
+               (base32
+                "089pxr6mxz2lqf8kms3iixlyxkj6czf0c8wkhhl70irka815gq9m"))))
+    (properties `((upstream-name . "azlogr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-logger r-jsonlite r-httr r-digest r-catools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=azlogr")
+    (synopsis "Logging in 'R' and Post to 'Azure Log Analytics' Workspace")
+    (description
+     "It extends the functionality of logger package.  Additional logging metadata can
+be configured to be collected.  Logging messages are displayed on console and
+optionally they are sent to Azure Log Analytics workspace in real-time.")
+    (license license:expat)))
+
 (define-public r-aziztest
   (package
     (name "r-aziztest")

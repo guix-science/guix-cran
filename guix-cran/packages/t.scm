@@ -12,8 +12,8 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tcl)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
@@ -5249,6 +5249,32 @@ Disequilibrium and a Spiked in Genetic Effect\" Shi, M., Umbach, D.M., Wise A.S.
 Weinberg, C.R.")
     (license license:gpl3)))
 
+(define-public r-triact
+  (package
+    (name "r-triact")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "triact" version))
+              (sha256
+               (base32
+                "0aw0k3l342l93rm31kls9bc4g0w4rlavvww2awnc164wj96xd9zr"))))
+    (properties `((upstream-name . "triact")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-lubridate r-data-table r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=triact")
+    (synopsis "Analyzing the Lying Behavior of Cows from Accelerometer Data")
+    (description
+     "Assists in analyzing the lying behavior of cows from raw data recorded with a
+triaxial accelerometer attached to the hind leg of a cow.  Allows the
+determination of common measures for lying behavior including total lying
+duration, the number of lying bouts, and the mean duration of lying bouts.
+Further capabilities are the description of lying laterality and the calculation
+of proxies for the level of physical activity of the cow.  Reference: Simmler
+M., Brouwers S. (2023) <https://gitlab.com/AgroSimi/triact_manuscript>.")
+    (license license:gpl3+)))
+
 (define-public r-trexselector
   (package
     (name "r-trexselector")
@@ -8553,48 +8579,6 @@ includes notes about all differences.  The vignettes download example files from
 <https://github.com/ToxPi/ToxPi-example-files>.")
     (license license:gpl3+)))
 
-(define-public r-toxicr
-  (package
-    (name "r-toxicr")
-    (version "22.12.1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ToxicR" version))
-              (sha256
-               (base32
-                "1znhn72pwaqpfkmyn4qx30gspyfxhx2kdrawh78xjzf26k2d0bva"))))
-    (properties `((upstream-name . "ToxicR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-shiny
-                             r-scales
-                             r-rcppgsl
-                             r-rcppeigen
-                             r-rcpp
-                             r-multcomp
-                             r-ggridges
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-doby
-                             r-coda))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://github.com/NIEHS/ToxicR")
-    (synopsis "Analyzing Toxicology Dose-Response Data")
-    (description
-     "Toxicology routines for analyzing dose-response data include dose-response
-analysis and trend tests.  Dose-Response methods are based upon the US EPA's
-benchmark dose software 3.  Methods have been extended to include additional
-functionality based on World Health Organization guidelines.  It further
-supports the European Food Safety Authority's draft guidance on model averaging.
- The dose-response methods and datasets used in this package are described in
-Wheeler et al. (2019) <doi:10.1111/risa.13218>, Wheeler et al. (2020)
-<doi:10.1111/risa.13537>, and Wheeler et al. (2022) <doi:10.1002/env.2728>.  NTP
-routines are described in Bailer and Portier (1988) <doi:10.2307/2531856>,
-Bieler and Williams (1993) <doi:10.2307/2532200>, Williams (1971)
-<doi:10.2307/2528930>, and Shirley (1977) <doi:10.2307/2529789>.")
-    (license license:lgpl3+)))
-
 (define-public r-toxeval
   (package
     (name "r-toxeval")
@@ -9873,13 +9857,13 @@ rmarkdown HTML documents.")
 (define-public r-tnrs
   (package
     (name "r-tnrs")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TNRS" version))
               (sha256
                (base32
-                "11wbpj0yvdjx0x03mv79r82h2ipz7x0yxkagi8g9jn6iria3266g"))))
+                "1ad1168gm937dsjmrxan0c90viszjv76l5pd2xcx0sf67b28nf4d"))))
     (properties `((upstream-name . "TNRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -11977,6 +11961,33 @@ package supports <doi:10.1371/journal.pone.0020298>.")
 exploratory graphics (boxplot/histogram/density plot/scatter plot/line plot).
 Filter, summarize date data by duration and convert to calendar units.")
     (license license:gpl2)))
+
+(define-public r-timelinegraphics
+  (package
+    (name "r-timelinegraphics")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "timeLineGraphics" version))
+              (sha256
+               (base32
+                "06i2palpc19g0480d53232fj4jd5j0brhdkmj5vcr6p58qsvhyhm"))))
+    (properties `((upstream-name . "timeLineGraphics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r2html r-pdftools r-magick r-berryfunctions))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=timeLineGraphics")
+    (synopsis
+     "HTML with Horizontal Strips Symbolizing Events in a Person's Life")
+    (description
+     "Produce an HTML page containing horizontal strips that symbolize events in a
+person's lsife.  Since this is entirely a visualization, the image
+<https://barryzee.github.io/henry-timeline/henry.html> will show the basic use
+to show a timeline of events.  The image
+<https://barryzee.github.io/vermeer/cssOverlay.html> shows how to correlate two
+timelines of events.  A brief description is available at
+<https://barryzee.github.io/timeLineGraphics_manuscript/golden_age.html>.")
+    (license license:gpl2+)))
 
 (define-public r-timedeppar
   (package

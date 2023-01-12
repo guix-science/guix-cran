@@ -13333,6 +13333,45 @@ data in R. Though primarily oriented towards marine larval dispersal, many of
 the methods are general and useful for terrestrial systems as well.")
     (license license:gpl2+)))
 
+(define-public r-connectwidgets
+  (package
+    (name "r-connectwidgets")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "connectwidgets" version))
+              (sha256
+               (base32
+                "1p2sl6689ylx6d6vf0xch8754hnwi53xhjy7ai3wnr72m6ld3a3d"))))
+    (properties `((upstream-name . "connectwidgets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sass
+                             r-rlang
+                             r-reactr
+                             r-reactable
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-crosstalk
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://rstudio.github.io/connectwidgets/")
+    (synopsis "Organize and Curate Your Content Within 'Posit Connect'")
+    (description
+     "This package provides a collection of helper functions and htmlwidgets to help
+publishers curate content collections on Posit Connect'.  The components, Card,
+Grid, Table, Search, and Filter can be used to produce a showcase page or
+gallery contained within a static or interactive R Markdown page.")
+    (license license:expat)))
+
 (define-public r-connectednessapproach
   (package
     (name "r-connectednessapproach")
@@ -13488,13 +13527,13 @@ Details are available in the function documentation and in the vignette.")
 (define-public r-conjurer
   (package
     (name "r-conjurer")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conjurer" version))
               (sha256
                (base32
-                "11bxnbfmm19z06364k7l1kq50qxfkhclsjw5i6hal8hw1lg4zc1b"))))
+                "09nfimyld91xsb93rf0hnv2152f7xvvahyk9p1l57md9yfwkj7z5"))))
     (properties `((upstream-name . "conjurer")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -13503,9 +13542,10 @@ Details are available in the function documentation and in the vignette.")
      "https://www.foyi.co.nz/posts/documentation/documentationconjurer/")
     (synopsis "Parametric Method for Generating Synthetic Data")
     (description
-     "Builds synthetic data applicable across multiple domains.  This package also
-provides flexibility to control data distribution to make it relevant to many
-industry examples.")
+     "Generates synthetic data distributions to enable testing various modelling
+techniques in ways that real data does not allow.  Noise can be added in a
+controlled manner such that the data seems real.  This methodology is generic
+and therefore benefits both the academic and industrial research.")
     (license license:expat)))
 
 (define-public r-conjoint
@@ -18703,13 +18743,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codecollection
   (package
     (name "r-codecollection")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "codeCollection" version))
               (sha256
                (base32
-                "0jimahw008l2x4c646dwf6f5vw9xlh8rfm7l6kgj8q4iymzbr8rm"))))
+                "1isw4h0cr6knxn4h00wpv0rzqhgrnidrs9ybppn2i5jds24awc3k"))))
     (properties `((upstream-name . "codeCollection")))
     (build-system r-build-system)
     (propagated-inputs (list r-epi))

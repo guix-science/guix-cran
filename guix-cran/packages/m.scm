@@ -16156,16 +16156,24 @@ underlying methods in Train (2009) <doi:10.1017/CBO9780511805271>.")
 (define-public r-mlmusingr
   (package
     (name "r-mlmusingr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MLMusingR" version))
               (sha256
                (base32
-                "1q4401l1rp8wyms0j7x1pjg3mmn9x3cjnxjapv330f9sdw881yxp"))))
+                "0d05amwsc4zg474676qma20bba8ihq8dmh1md9r3wdqwilhsb4bh"))))
     (properties `((upstream-name . "MLMusingR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-matrix r-lme4))
+    (propagated-inputs (list r-tibble
+                             r-performance
+                             r-nlme
+                             r-matrix
+                             r-magrittr
+                             r-lme4
+                             r-generics
+                             r-dplyr
+                             r-broom))
     (home-page "https://github.com/flh3/MLMusingR")
     (synopsis "Practical Multilevel Modeling")
     (description

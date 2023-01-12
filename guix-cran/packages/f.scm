@@ -12813,30 +12813,6 @@ scenario analysis as described in Meucci, Attilio (2008) and Meucci, Attilio
 (2010) <doi:10.2139/ssrn.1696802>.")
     (license license:expat)))
 
-(define-public r-ffmetadata
-  (package
-    (name "r-ffmetadata")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ffmetadata" version))
-              (sha256
-               (base32
-                "0gjv5fl3p0kz28c91l4qf34a2685a24l5841ixdg7wivfs5v9npv"))))
-    (properties `((upstream-name . "ffmetadata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fragilefamilieschallenge/ffmetadata")
-    (synopsis "Access to Fragile Families Metadata")
-    (description
-     "This package provides a collection of functions that allows users to retrieve
-metadata for the Fragile Families challenge via a Web API
-(<http://api.metadata.fragilefamilies.princeton.edu>).  Users can select and
-search metadata for relevant variables by filtering on different attribute
-names.")
-    (license license:expat)))
-
 (define-public r-ffmanova
   (package
     (name "r-ffmanova")
@@ -18012,13 +17988,13 @@ Modeling Time-to-Event Data in Family Designs, Journal of Statistical Software
 (define-public r-fameta
   (package
     (name "r-fameta")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAMetA" version))
               (sha256
                (base32
-                "1c5y3x06ln1w8nkwmnc13hn8jhj0vbmwbx70kylcf93a1fq5rkbz"))))
+                "0s963nk5igwv14mnw8pp0snaiygq3xrx1irfzb2r4pgs04sn38an"))))
     (properties `((upstream-name . "FAMetA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -3423,13 +3423,13 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
 (define-public r-evidencesynthesis
   (package
     (name "r-evidencesynthesis")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EvidenceSynthesis" version))
               (sha256
                (base32
-                "1qpvbs8a1xbm6vim82xxarhmbj999f4wangav5hcnmbwbrvxihxx"))))
+                "0ipqqk7n6m9l32q0mj835fgv8vjf4ksdh4gcjmjr20n6jbn2k63c"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4555,13 +4555,13 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etwfe" version))
               (sha256
                (base32
-                "0wyfpnh2pcziiikjr58wbfid085c0ack6mn5n4m97pk4lg9sh6sw"))))
+                "0b34kfcl2id2x2636i1y9655842my6vlcwk3igkrm45s18mn5hlg"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-marginaleffects r-formula r-fixest))
@@ -11704,6 +11704,37 @@ defined as the conditional probability of the fuzzy data; for more details and
 formulas see Denoeux (2011) <doi:10.1016/j.fss.2011.05.022>.")
     (license license:lgpl3+)))
 
+(define-public r-em
+  (package
+    (name "r-em")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "em" version))
+              (sha256
+               (base32
+                "16xmksz1zdr61gxycsbia28kj16nrrcdvjcdd3nk6n6zjiy3ca3v"))))
+    (properties `((upstream-name . "em")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plm
+                             r-numderiv
+                             r-nnet
+                             r-mclust
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/wudongjie/em")
+    (synopsis "Generic EM Algorithm")
+    (description
+     "This package provides a generic function for running the
+Expectation-Maximization (EM) algorithm within a maximum likelihood framework,
+based on Dempster, Laird, and Rubin (1977)
+<doi:10.1111/j.2517-6161.1977.tb01600.x> is implemented.  It can be applied
+after a model fitting using R's existing functions and packages.")
+    (license license:gpl3+)))
+
 (define-public r-elyp
   (package
     (name "r-elyp")
@@ -14441,13 +14472,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.7.4")
+    (version "0.1.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFA.dimensions" version))
               (sha256
                (base32
-                "0798kmgh1d7k389kgw31qg617vhqqgz3ychw7ji4xqkxjadvm34n"))))
+                "18zwpcpr16cchy8v2gr189gdisjpxh887a1v8a4prwkpk3pv8j51"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-polycor r-efatools))
@@ -14467,10 +14498,10 @@ promax rotation, and Procrustes rotations can be performed.  Additional
 functions focus on the factorability of a correlation matrix, the congruences
 between factors from different datasets, the assessment of local independence,
 the assessment of factor solution complexity, and internal consistency.
+Auerswald & Moshagen (2019, <doi:10.1037/met0000200>); Fabrigar & Wegener (2012,
+ISBN:978-0-19-973417-7); Field, Miles, & Field (2012, ISBN:978-1-4462-0045-2);
 O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001,
-<doi:10.1177/01466216010251011>); Auerswald & Moshagen (2019,
-<doi:10.1037/met0000200>); Fabrigar & Wegener (2012, ISBN:978-0-19-973417-7);
-Field, Miles, & Field (2012, ISBN:978-1-4462-0045-2).")
+<doi:10.1177/01466216010251011>).")
     (license license:gpl2+)))
 
 (define-public r-ef
@@ -14953,13 +14984,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-edsurvey
   (package
     (name "r-edsurvey")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EdSurvey" version))
               (sha256
                (base32
-                "172ximyg96qdjkkyjj54n8mr1jj9nihhm0fhmqgxhc0xlfj24lgs"))))
+                "1cwpr52fa88la9mia9fyw4ipw7458p5c43nyz43rh631vnv0pxwy"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -17976,13 +18007,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "1.2021.2")
+    (version "1.2021.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "1192w29bsypb2krg3y9pnyk4xd18rjaq2b8zhljkw6ziz41190rw"))))
+                "0fyh86gjzqxfzvvdx17x6izkyl2kmip68cwjlh9x6qzdimqz76c1"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

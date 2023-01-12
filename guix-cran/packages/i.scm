@@ -13708,13 +13708,13 @@ Council for the Exploration of the Sea) Vocabularies database
 (define-public r-icestaf
   (package
     (name "r-icestaf")
-    (version "4.0.0")
+    (version "4.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesTAF" version))
               (sha256
                (base32
-                "1qzy0hplrxvdkvly25ny3fysqdhw538phwgnhshq761sa8gdq8vf"))))
+                "17gli8vq6gnscyvm9q1xi72nm2yxl8zzl7b5agjv2hx2xc8gx2zv"))))
     (properties `((upstream-name . "icesTAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-taf r-roxygen2 r-purrr))

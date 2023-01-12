@@ -3361,13 +3361,13 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
 (define-public r-longpower
   (package
     (name "r-longpower")
-    (version "1.0.23")
+    (version "1.0.24")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "longpower" version))
               (sha256
                (base32
-                "0fxs3zaciyydl3w0a4d5pi8bbr8yhmh17wi0n39j073pacvzmqf6"))))
+                "121nzgn5y7zmnc58xz0fxs168bxy6ywjgm2xcf42zlfc8dkh8rvp"))))
     (properties `((upstream-name . "longpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lme4))
@@ -3377,9 +3377,10 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
     (description
      "Compute power and sample size for linear models of longitudinal data.  Supported
 models include mixed-effects models and models fit by generalized least squares
-and generalized estimating equations.  Relevant formulas are derived by Liu and
-Liang (1997) <DOI:10.2307/2533554>, Diggle et al (2002) <ISBN:9780199676750>,
-and Lu, Luo, and Chen (2008) <DOI:10.2202/1557-4679.1098>.")
+and generalized estimating equations.  The package is described in Iddi and
+Donohue (2022) <DOI:10.32614/RJ-2022-022>.  Relevant formulas are derived by Liu
+and Liang (1997) <DOI:10.2307/2533554>, Diggle et al (2002)
+<ISBN:9780199676750>, and Lu, Luo, and Chen (2008) <DOI:10.2202/1557-4679.1098>.")
     (license license:gpl2+)))
 
 (define-public r-longmixr
@@ -7479,18 +7480,18 @@ Single or multiple doses may be specified.  Secondary (derived) PK parameters
 (define-public r-linl
   (package
     (name "r-linl")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "linl" version))
               (sha256
                (base32
-                "1wq0wm3k12sfvg0nzdsdxb4qc79kny7qvckxplfgaj6y62vcjxxl"))))
+                "00pjrsv227hjzjz2cgvx4ika3jy1cszia1cyi5ak200sr4sv1n4x"))))
     (properties `((upstream-name . "linl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "http://dirk.eddelbuettel.com/code/linl.html")
+    (home-page "https://github.com/eddelbuettel/linl")
     (synopsis "'linl' is not 'Letter'")
     (description
      "This package provides a LaTeX Letter class for rmarkdown', using the

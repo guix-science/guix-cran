@@ -4366,6 +4366,39 @@ hypothesis testing, power and sample size calculations for human microbiome
 experiments.")
     (license license:asl2.0)))
 
+(define-public r-hmmtmb
+  (package
+    (name "r-hmmtmb")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hmmTMB" version))
+              (sha256
+               (base32
+                "0mzgg0srqqamb2zn6imdq71rl5r4d7wamqzpcxk282cr2lwh68lb"))))
+    (properties `((upstream-name . "hmmTMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmbstan
+                             r-tmb
+                             r-stringr
+                             r-rcppeigen
+                             r-r6
+                             r-optimx
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-circstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TheoMichelot/hmmTMB")
+    (synopsis "Fit Hidden Markov Models using Template Model Builder")
+    (description
+     "Fitting hidden Markov models using automatic differentiation and Laplace
+approximation, allowing for fast inference and flexible covariate effects
+(including random effects and smoothing splines) on model parameters.  The
+package is described by Michelot (2022) <arXiv:2211.14139>.")
+    (license license:gpl3)))
+
 (define-public r-hmmr
   (package
     (name "r-hmmr")

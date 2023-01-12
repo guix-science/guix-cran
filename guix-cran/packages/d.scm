@@ -11306,13 +11306,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "5.6")
+    (version "5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Directional" version))
               (sha256
                (base32
-                "1yf628s991qaf7pra6ci41yhc88m70j0i3wjdda16layhlbvnjwi"))))
+                "0whrshqlwnnm8vyva04p6asaf1ak6ri9a5fngd59g1fmcmicjcpd"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -21464,6 +21464,32 @@ only on R's standard classes to represent dates and times ('Date and POSIXt');
 it aims to provide efficient implementations, through vectorisation and the use
 of R's native numeric representations of timestamps where possible.")
     (license license:gpl3)))
+
+(define-public r-datetimeoffset
+  (package
+    (name "r-datetimeoffset")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datetimeoffset" version))
+              (sha256
+               (base32
+                "10m7rqszdkdkgsizxg15y23y0wxj2y0pkk54syl9j21cyg5g7aww"))))
+    (properties `((upstream-name . "datetimeoffset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-purrr r-clock))
+    (native-inputs (list r-knitr))
+    (home-page "https://trevorldavis.com/R/datetimeoffset/dev/")
+    (synopsis
+     "Datetimes with Optional UTC Offsets and/or Heterogeneous Time Zones")
+    (description
+     "Supports import/export for a number of datetime string standards and R datetime
+classes often including lossless re-export of any original reduced precision
+including ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601> and pdfmark
+<https://opensource.adobe.com/dc-acrobat-sdk-docs/library/pdfmark/> datetime
+strings.  Supports local/global datetimes with optional UTC offsets and/or
+(possibly heterogeneous) time zones with up to nanosecond precision.")
+    (license license:expat)))
 
 (define-public r-datetime
   (package

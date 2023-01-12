@@ -1916,6 +1916,28 @@ well as other swatch file formats can be found at
 train support vector machines on subset of data and combine the result.")
     (license license:gpl2)))
 
+(define-public r-swarm
+  (package
+    (name "r-swarm")
+    (version "0.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "swaRm" version))
+              (sha256
+               (base32
+                "0p29dyig4zyrjp5gbm17q4s4g2jxl2idq6cqp6zyhsr0n197d38h"))))
+    (properties `((upstream-name . "swaRm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splancs r-mass r-lubridate r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://swarm-lab.github.io/swaRm/")
+    (synopsis "Processing Collective Movement Data")
+    (description
+     "Function library for processing collective movement data (e.g. fish schools,
+ungulate herds, baboon troops) collected from GPS trackers or computer vision
+tracking software.")
+    (license license:gpl3)))
+
 (define-public r-swamp
   (package
     (name "r-swamp")
@@ -10529,13 +10551,13 @@ database by key term tags, or authors or creating a word cloud.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statpsych" version))
               (sha256
                (base32
-                "1vi2zja65ypny3p4wxb27aw9hl1mb7xbrdpl602bv1wxxbvw87ql"))))
+                "04zvp8qliydly3r89h5sghjjvbx0mpl4i1m3f9214nksm63yxps2"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mnonr r-mathjaxr))
@@ -10862,19 +10884,20 @@ Cerqueira et al. (2017) <doi:10.1109/TNSE.2017.2674026>, Fraiman and Fraiman
 (define-public r-statgensta
   (package
     (name "r-statgensta")
-    (version "1.0.10")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statgenSTA" version))
               (sha256
                (base32
-                "0ki6k1j8fxfys787bmk6drl900c5qkqp2271l4zyh1nn2750z35s"))))
+                "0lashqhahmb0n01a1cy6clv95z5ypm5kgmdiwhvdvdq1l50cz92z"))))
     (properties `((upstream-name . "statgenSTA")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-xtable
                              r-spats
                              r-scales
+                             r-rlang
                              r-qtl
                              r-maps
                              r-mapproj
@@ -14717,13 +14740,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.11.0")
+    (version "1.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "0n2gxfvzjsg3p0wgras394lf182gi9nwn9v3cn8isyqg61zsl2p1"))))
+                "044q7hih5r39lyawgv04jvfs4dwy00bvicxxd16c25rijhk7700q"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjava r-checkmate))
@@ -18762,6 +18785,62 @@ MCMC).  It uses R environments to store GP objects as references/pointers.")
      "This package performs cluster analysis of mixed-type data using Spectral
 Clustering, see F. Mbuga and, C. Tortora (2022) <doi:10.3390/stats5010001>.")
     (license license:gpl2+)))
+
+(define-public r-spectralanalysis
+  (package
+    (name "r-spectralanalysis")
+    (version "4.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spectralAnalysis" version))
+              (sha256
+               (base32
+                "17d8b27v4d2557hgkk169xkvv4ffkkk7xr4h3wxb6rkvn2pzl9gi"))))
+    (properties `((upstream-name . "spectralAnalysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-signal
+                             r-rcolorbrewer
+                             r-plyr
+                             r-pls
+                             r-plotly
+                             r-nnls
+                             r-nmf
+                             r-magrittr
+                             r-jsonlite
+                             r-hnmf
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-biocgenerics
+                             r-baseline))
+    (native-inputs (list r-knitr))
+    (home-page "https://openanalytics.eu")
+    (synopsis "Pre-Process, Visualize and Analyse Spectral Data")
+    (description
+     "Infrared, near-infrared and Raman spectroscopic data measured during chemical
+reactions, provide structural fingerprints by which molecules can be identified
+and quantified.  The application of these spectroscopic techniques as inline
+process analytical tools (PAT), provides the pharmaceutical and chemical
+industry with novel tools, allowing to monitor their chemical processes,
+resulting in a better process understanding through insight in reaction rates,
+mechanistics, stability, etc.  Data can be read into R via the generic
+spc-format, which is generally supported by spectrometer vendor software.
+Versatile pre-processing functions are available to perform baseline correction
+by linking to the baseline package; noise reduction via the signal package; as
+well as time alignment, normalization, differentiation, integration and
+interpolation.  Implementation based on the S4 object system allows storing a
+pre-processing pipeline as part of a spectral data object, and easily
+transferring it to other datasets.  Interactive plotting tools are provided
+based on the plotly package.  Non-negative matrix factorization (NMF) has been
+implemented to perform multivariate analyses on individual spectral datasets or
+on multiple datasets at once.  NMF provides a parts-based representation of the
+spectral data in terms of spectral signatures of the chemical compounds and
+their relative proportions.  See hNMF'-package for references on available
+methods.  The functionality to read in spc-files was adapted from the hyperSpec
+package.")
+    (license license:gpl3)))
 
 (define-public r-spectral
   (package
@@ -38685,13 +38764,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "0pprjqm33ydm0sshgxcafwd3g0lms24ix7nha1h7pkj6d1nimh40"))))
+                "0az64j8ajiq5lnh7m9wb575aaf5ybzis27ydpz5hvapgxhk4lwab"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -40041,6 +40120,26 @@ and through Rcpp'.")
      "Gives design points from a sequential full factorial-based Latin hypercube
 design, as described in Duan, Ankenman, Sanchez, and Sanchez (2015,
 Technometrics, <doi:10.1080/00401706.2015.1108233>).")
+    (license license:gpl3)))
+
+(define-public r-sfdep
+  (package
+    (name "r-sfdep")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sfdep" version))
+              (sha256
+               (base32
+                "18m6lvkkgmyq7x335bhj5arv45k9093ph1y4wlh1lviwv8r3phf5"))))
+    (properties `((upstream-name . "sfdep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep r-sf r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfdep.josiahparry.com")
+    (synopsis "Spatial Dependence for Simple Features")
+    (description
+     "An interface to spdep to integrate with sf objects and the tidyverse'.")
     (license license:gpl3)))
 
 (define-public r-sfdct
@@ -47256,13 +47355,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "1.0.4")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCpubr" version))
               (sha256
                (base32
-                "10np0w5zqmqjg6k8cnipclh8pqrw81187q0zlicm42w4q4dyvgzn"))))
+                "1winw6fyw15zfcljwlsamgl4praixx3zmj0619x5z2d5acvs45kd"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
