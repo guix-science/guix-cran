@@ -189,13 +189,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-2")
+    (version "0.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ows4R" version))
               (sha256
                (base32
-                "0p2yyzjxfkj3pr490ddcqxniyb3635rg26jmnc1hs29bv7aq014s"))))
+                "1yxinwjs7zm9xiz45gvl1s3zn38bk80hc120742b7nqj7gn0d1ih"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -7787,13 +7787,13 @@ as DNA methylation and gene expression profiles.")
 (define-public r-omicnavigator
   (package
     (name "r-omicnavigator")
-    (version "1.11.5")
+    (version "1.13.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OmicNavigator" version))
               (sha256
                (base32
-                "0c34gcwwqsl1sxsq54i4lx6ih19jqcfxqbq948rknxz3l5f00jm6"))))
+                "18612sicjjx47h45azg8kkqf73shy8xq37b3ra3wgbryp82amqw0"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))

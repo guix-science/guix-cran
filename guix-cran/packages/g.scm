@@ -5264,23 +5264,24 @@ including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
 (define-public r-graticule
   (package
     (name "r-graticule")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graticule" version))
               (sha256
                (base32
-                "0y8cyhlfm8amdb23cvxy508mpd4d64xgnk1xlr37ss2pqrxdhpir"))))
+                "0wz3yr8ylh4aj6i70dippsmqnkbjclf21fndrk6xbbkvwzvgl7kg"))))
     (properties `((upstream-name . "graticule")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster r-quadmesh r-geosphere))
+    (propagated-inputs (list r-sp r-reproj r-raster r-geosphere))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mdsumner/graticule")
+    (home-page "https://github.com/hypertidy/graticule")
     (synopsis "Meridional and Parallel Lines for Maps")
     (description
-     "Create graticule lines and labels for maps.  Control the creation of lines by
-setting their placement (at particular meridians and parallels) and extent
-(along parallels and meridians).  Labels are created independently of lines.")
+     "Create graticule lines and labels for maps.  Control the creation of lines or
+tiles by setting their placement (at particular meridians and parallels) and
+extent (along parallels and meridians).  Labels are created independently of
+lines.")
     (license license:gpl3)))
 
 (define-public r-gratia
@@ -5738,6 +5739,29 @@ customizable graphs in R. It aims to be a valuable help to quickly draw
 publishable graphs without any knowledge of R commands.  Six kinds of graph are
 available: histogram, box-and-whisker plot, bar plot, pie chart, curve and
 scatter plot.")
+    (license license:gpl2)))
+
+(define-public r-graphclust
+  (package
+    (name "r-graphclust")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "graphclust" version))
+              (sha256
+               (base32
+                "0lahnjz604394k0vy6zqyii73qvpcjg5fmyczsgjxz8dk20flxvk"))))
+    (properties `((upstream-name . "graphclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sclust r-igraph r-blockmodels))
+    (home-page "https://cran.r-project.org/package=graphclust")
+    (synopsis "Hierarchical Graph Clustering for a Collection of Networks")
+    (description
+     "Graph clustering using an agglomerative algorithm to maximize the integrated
+classification likelihood criterion and a mixture of stochastic block models.
+The method is described in the article \"Model-based graph clustering of a
+collection of networks using an agglomerative algorithm\" by T. Rebafka (2022)
+<arXiv:2211.02314>.")
     (license license:gpl2)))
 
 (define-public r-graph4lg
@@ -7225,13 +7249,13 @@ methodology.")
 (define-public r-gpbayes
   (package
     (name "r-gpbayes")
-    (version "0.1.0-4")
+    (version "0.1.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPBayes" version))
               (sha256
                (base32
-                "1lng6ghbwqdrir17n9x0arch55ynaw37fyj8nbppmfwn3drdndcv"))))
+                "1jp1xdvbzi6zrrg11dbbl6f7pp92xwasfyy6l8myl6kc2b0afs1m"))))
     (properties `((upstream-name . "GPBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
@@ -7361,6 +7385,33 @@ when one or more variables are categorical but coded as numerical.  The
 generalized pairs plot offers a range of displays of paired combinations of
 categorical and quantitative variables.  Emerson et al. (2013)
 <DOI:10.1080/10618600.2012.694762>.")
+    (license license:gpl2+)))
+
+(define-public r-gp
+  (package
+    (name "r-gp")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gp" version))
+              (sha256
+               (base32
+                "1av0kk6z6mvbwi3arqx3r1nj8kvdjshgzbn2msbcaw7kqii8kzrf"))))
+    (properties `((upstream-name . "gp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rngforgpd r-rfast))
+    (home-page "https://cran.r-project.org/package=gp")
+    (synopsis
+     "Maximum Likelihood Estimation of the Generalized Poisson Distribution")
+    (description
+     "This package provides functions to estimate the parameters of the generalized
+Poisson distribution with or without covariates using maximum likelihood.  The
+references include Nikoloulopoulos A.K. & Karlis D. (2008). \"On modeling count
+data: a comparison of some well-known discrete distributions\".  Journal of
+Statistical Computation and Simulation, 78(3): 437--457,
+<doi:10.1080/10629360601010760> and Consul P.C. & Famoye F. (1992). \"Generalized
+Poisson regression model\".  Communications in Statistics - Theory and Methods,
+21(1): 89--109, <doi:10.1080/03610929208830766>.")
     (license license:gpl2+)))
 
 (define-public r-goxygen
@@ -13967,13 +14018,13 @@ analysis, meta-analysis, and regression analyses.  References: Patil (2021)
 (define-public r-ggstats
   (package
     (name "r-ggstats")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstats" version))
               (sha256
                (base32
-                "005qww0hglrf2bic7i5ir5ncljsfkgq4xkd6pflj1r3169bp74z4"))))
+                "04g1f3kpm9agqq3303i3lhx7nndmvgmgab6qdbax4rmrwjxqr9kh"))))
     (properties `((upstream-name . "ggstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18779,6 +18830,38 @@ techniques for evaluate the seed germination process in ecophysiological studies
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gerbil
+  (package
+    (name "r-gerbil")
+    (version "0.1.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gerbil" version))
+              (sha256
+               (base32
+                "1ra1piza922sigxk61v55dbpkmzha716drmb6m1qxn892vykmm8w"))))
+    (properties `((upstream-name . "gerbil")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-pbapply
+                             r-openxlsx
+                             r-mvtnorm
+                             r-mass
+                             r-lattice
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gerbil")
+    (synopsis
+     "Generalized Efficient Regression-Based Imputation with Latent Processes")
+    (description
+     "This package implements a new multiple imputation method that draws imputations
+from a latent joint multivariate normal model which underpins generally
+structured data.  This model is constructed using a sequence of flexible
+conditional linear models that enables the resulting procedure to be efficiently
+implemented on high dimensional datasets in practice.  See Robbins (2021)
+<arXiv:2008.02243>.")
+    (license license:gpl2)))
+
 (define-public r-gepaf
   (package
     (name "r-gepaf")
@@ -19884,13 +19967,13 @@ algorithms that are available on remote web processing servers (Read et al.
 (define-public r-geojsonr
   (package
     (name "r-geojsonr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geojsonR" version))
               (sha256
                (base32
-                "0yqmz5snl5mpkbp2m5nddvqy7y72kcpgzy3d5b55l4sfzh7wfg4d"))))
+                "0l4zwyf3f827jpwbsv097d0h8i7pjwpkvdr89hc6vv9pzavfymhp"))))
     (properties `((upstream-name . "geojsonR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6))
@@ -19900,10 +19983,10 @@ algorithms that are available on remote web processing servers (Read et al.
     (description
      "Includes functions for processing GeoJson objects
 <https://en.wikipedia.org/wiki/GeoJSON> relying on RFC 7946
-<https://tools.ietf.org/pdf/rfc7946.pdf>.  The geojson encoding is based on
-json11', a tiny JSON library for C++11 <https://github.com/dropbox/json11>.
-Furthermore, the source code is exported in R through the Rcpp and RcppArmadillo
-packages.")
+<https://datatracker.ietf.org/doc/pdf/rfc7946.pdf>.  The geojson encoding is
+based on json11', a tiny JSON library for C++11
+<https://github.com/dropbox/json11>.  Furthermore, the source code is exported
+in R through the Rcpp and RcppArmadillo packages.")
     (license license:expat)))
 
 (define-public r-geojsonlint

@@ -18480,6 +18480,28 @@ variables exceed the sample size and is also substantially faster than the EM
 algorithms.")
     (license license:gpl3)))
 
+(define-public r-factset-protobuf-stachextensions
+  (package
+    (name "r-factset-protobuf-stachextensions")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "factset.protobuf.stachextensions" version))
+              (sha256
+               (base32
+                "1v1sizb95x2h6zcxzi0ib5nbbfiki8qsj4lp41ap6xp6qr6fwn0f"))))
+    (properties `((upstream-name . "factset.protobuf.stachextensions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-r6 r-jsonlite))
+    (home-page "https://github.com/factset/stach-extensions")
+    (synopsis "'FactSet' 'STACH' Extensions Package")
+    (description
+     "Allow clients to convert FactSet STACH formatted data to simpler tabular formats
+in the form of data frames.  This package also provides helper methods to
+extract the meta data from FactSet STACH formatted data.  See documentation on
+the GitHub repository for more information.")
+    (license license:asl2.0)))
+
 (define-public r-factset-protobuf-stach-v2
   (package
     (name "r-factset-protobuf-stach-v2")
@@ -19249,6 +19271,52 @@ These models work within the fable framework provided by the fabletools package,
 which provides the tools to evaluate, visualise, and combine models in a
 workflow consistent with the tidyverse.")
     (license license:gpl3)))
+
+(define-public r-fabisearch
+  (package
+    (name "r-fabisearch")
+    (version "0.0.4.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fabisearch" version))
+              (sha256
+               (base32
+                "0yxmw7d7j3llcfs4d0dn2vv4ajalwz0qxrg7bqgql8dvwrb9jgkh"))))
+    (properties `((upstream-name . "fabisearch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl
+                             r-reshape2
+                             r-nmf
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://github.com/mondrus96/FaBiSearch")
+    (synopsis
+     "Change Point Detection in High-Dimensional Time Series Networks")
+    (description
+     "Implementation of the Factorized Binary Search (FaBiSearch) methodology for the
+estimation of the number and the location of multiple change points in the
+network (or clustering) structure of multivariate high-dimensional time series.
+The method is motivated by the detection of change points in functional
+connectivity networks for functional magnetic resonance imaging (fMRI) data.
+FaBiSearch uses non-negative matrix factorization (NMF), an unsupervised
+dimension reduction technique, and a new binary search algorithm to identify
+multiple change points.  It requires minimal assumptions.  Lastly, we provide
+interactive, 3-dimensional, brain-specific network visualization capability in a
+flexible, stand-alone function.  This function can be conveniently used with any
+node coordinate atlas, and nodes can be color coded according to community
+membership, if applicable.  The output is an elegantly displayed network laid
+over a cortical surface, which can be rotated in the 3-dimensional space.  The
+main routines of the package are detect.cps(), for multiple change point
+detection, est.net(), for estimating a network between stationary multivariate
+time series, net.3dplot(), for plotting the estimated functional connectivity
+networks, and opt.rank(), for finding the optimal rank in NMF for a given data
+set.  The functions have been extensively tested on simulated multivariate
+high-dimensional time series data and fMRI data.  For details on the FaBiSearch
+methodology, please see Ondrus et al. (2021) <arXiv:2103.06347>.  For a more
+detailed explanation and applied examples of the fabisearch package, please see
+Ondrus and Cribben (2022), preprint.")
+    (license license:expat)))
 
 (define-public r-fabinference
   (package

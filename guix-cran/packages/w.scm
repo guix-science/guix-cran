@@ -1916,13 +1916,13 @@ reproducibility and correctness.")
 (define-public r-wordr
   (package
     (name "r-wordr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WordR" version))
               (sha256
                (base32
-                "1jlhdh6ysxlx3b7v4bdxi652038lixldh7vfs7hf80dzn3vyk4f9"))))
+                "096b6msnl1rmikx40j7abb9rhw1vayvf9fjq6i8hrjvv38dbaa1d"))))
     (properties `((upstream-name . "WordR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-officer r-flextable r-dplyr))
@@ -5307,13 +5307,13 @@ statistic for the object of class htest'.")
 (define-public r-webpower
   (package
     (name "r-webpower")
-    (version "0.8.6")
+    (version "0.8.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebPower" version))
               (sha256
                (base32
-                "1k7wx9jpi300zy9gfy1riq8rynwi5pvdxkk28s41dmaan2lncb2w"))))
+                "1ikdg4l9l95pygkn51ig0pl4bnvi4nn7vmgcfg4g3mnqcdzhybgw"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan))

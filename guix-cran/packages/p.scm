@@ -12198,24 +12198,25 @@ included for reference and examples.")
 (define-public r-populr
   (package
     (name "r-populr")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "populR" version))
               (sha256
                (base32
-                "1mxpi3jwd5fp1r4fhh7p1r5xz5dddwfj1p1a7fpk8jvlyzj81sww"))))
+                "06hxgkzamip32c05h9d5a0436rrg42nkd66whhxik2arda9wikyp"))))
     (properties `((upstream-name . "populR")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
+                             r-units
                              r-sf
                              r-rlang
-                             r-microbenchmark
+                             r-osmdata
                              r-metrics
-                             r-areal))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mbatsaris/populR/")
-    (synopsis "Population Downscaling")
+    (synopsis "Population Downscaling Using Areal Interpolation")
     (description
      "Downscaling of population data obtained by census surveys using areal
 interpolation.  Given a set of source zone polygons such as census tracts or
@@ -16281,13 +16282,13 @@ important implications for the correct interpretation of these models.")
 (define-public r-plsvarsel
   (package
     (name "r-plsvarsel")
-    (version "0.9.9")
+    (version "0.9.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plsVarSel" version))
               (sha256
                (base32
-                "10hjyngz6yq957gk7b62158fd08ajfb0mps55y2216f7886x9ljb"))))
+                "0aqg4vw16s80ajss8pjlmm9n2650srqi1v8rr7hz1mjpvzc9626g"))))
     (properties `((upstream-name . "plsVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -26404,6 +26405,31 @@ functions for testing homogeneity, heterogeneity, discriminatory and predictive
 power of the model.")
     (license license:gpl3+)))
 
+(define-public r-pdt
+  (package
+    (name "r-pdt")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pdt" version))
+              (sha256
+               (base32
+                "1a6h1877vpl0giwjkz7q7p1mzjp9ngkhijhn6l57a1q4sbl84way"))))
+    (properties `((upstream-name . "pdt")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=pdt")
+    (synopsis "Permutation Distancing Test")
+    (description
+     "Permutation (randomisation) test for single-case phase design data with two
+phases (e.g., pre- and post-treatment).  Correction for dependency of
+observations is done through stepwise resampling the time series while varying
+the distance between observations.  The required distance 0,1,2,3..  is
+determined based on repeated dependency testing while stepwise increasing the
+distance.  In preparation: Vroegindeweij et al. \"A Permutation distancing test
+for single-case observational AB phase design data: A Monte Carlo simulation
+study\".")
+    (license license:gpl3)))
+
 (define-public r-pdspecest
   (package
     (name "r-pdspecest")
@@ -32171,13 +32197,13 @@ GPL3 (<https://www.gimp.org/about/COPYING>), and Inkscape distributed under GPL2
 (define-public r-palettes
   (package
     (name "r-palettes")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palettes" version))
               (sha256
                (base32
-                "192m81rh1181zfjnjg2qw7347sdynbvby9bddmqzpvjpx5hzirkz"))))
+                "1ahang7c5g4n7wyk6g8abhimzm95281wgyn8wgvs4vmy2was3zgh"))))
     (properties `((upstream-name . "palettes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -32443,13 +32469,13 @@ install ashr (<https://github.com/stephens999/ashr>) and CorShrink
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palaeoverse" version))
               (sha256
                (base32
-                "0p70y0vp3afmfk73p7dnykcn7adssrckq8di0y0znfmya6mqk8gr"))))
+                "0175xyrw48pvbfrs5qs7gfa206f7zk3av17g8nk0fpvza7jz23cs"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist
@@ -32459,9 +32485,10 @@ install ashr (<https://github.com/stephens999/ashr>) and CorShrink
                              r-h3jsr
                              r-geosphere
                              r-deeptime
+                             r-curl
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://palaeoverse.org")
+    (home-page "https://palaeoverse.palaeoverse.org")
     (synopsis "Prepare and Explore Data for Palaeobiological Analyses")
     (description
      "This package provides functionality to support data preparation and exploration

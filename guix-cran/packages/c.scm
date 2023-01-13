@@ -5008,17 +5008,19 @@ described by Hamza et al.  2022 <DOI:10.48550/arXiv.2203.06350>.")
 (define-public r-crossmap
   (package
     (name "r-crossmap")
-    (version "0.3.3")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crossmap" version))
               (sha256
                (base32
-                "1nsnzv1i8cmadrfbsc3zr6cs2wxf88hqnz6dkhvm64rgbhplggkv"))))
+                "079ibxhm6877nfdqf88fhg9fjdn3vbs44jprrbhxmmbbd30nma4v"))))
     (properties `((upstream-name . "crossmap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-vctrs
+                             r-rlang
                              r-purrr
+                             r-lifecycle
                              r-generics
                              r-dplyr
                              r-cli
@@ -21446,13 +21448,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.8.95.3")
+    (version "0.8.95.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clustermq" version))
               (sha256
                (base32
-                "1h6s31ni8q5x062sgp7mhm1aw099nsj21diw00mr3m76yizsram7"))))
+                "0azlzl7n8k6m3lkp1pwyrd70b24qvfm3g38sdzwmj75yh4ixzxsv"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (inputs (list zlib zeromq))
@@ -24252,13 +24254,13 @@ polynomial regression, and a range of splines.  See Blaauw (2010).
 (define-public r-claimsproblems
   (package
     (name "r-claimsproblems")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClaimsProblems" version))
               (sha256
                (base32
-                "1qqhamibrsn8xshfsxs7vrf5mnp421pd0apy6ch3lad9p9fbkxvx"))))
+                "10ylcikss9ld393cb40ddkkz7as1d5bnrna0sqwdrn1cb3p9p4w2"))))
     (properties `((upstream-name . "ClaimsProblems")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-pracma r-geometry))
@@ -27524,13 +27526,13 @@ Chemometrics\" written by K. Varmuza and P. Filzmoser (2009).")
 (define-public r-chemodiv
   (package
     (name "r-chemodiv")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chemodiv" version))
               (sha256
                (base32
-                "0bmwbf5913iqkvh3f352valc2ah09cl6qv7vh0iqxx7w3ks1lzxk"))))
+                "1i9ypq045bmh8sw5sz92hlyv9gbdrwdg1rv4nhg8myvx9nrv1zwx"))))
     (properties `((upstream-name . "chemodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
@@ -27560,7 +27562,7 @@ for phytochemical compounds and other sets of chemical composition data.
 Importantly, these measures can incorporate biosynthetic and/or structural
 properties of the chemical compounds, resulting in a more comprehensive
 quantification of diversity and dissimilarity.  For details, see PetrÃ©n,
-KÃ¶llner and Junker (2022) <doi:10.1101/2022.06.08.495236>.")
+KÃ¶llner and Junker (2023) <doi:10.1111/nph.18685>.")
     (license license:gpl3+)))
 
 (define-public r-chemmodlab
@@ -28403,13 +28405,13 @@ structure.")
 (define-public r-chainladder
   (package
     (name "r-chainladder")
-    (version "0.2.16")
+    (version "0.2.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChainLadder" version))
               (sha256
                (base32
-                "04ch0aimxc81i1isv6clpwx0bsbrpq5ncjww9dapa4v5rgxc4n2q"))))
+                "0pkiyapqz6mvg9j37b2m1i4qisq9sl3qska72qljp64vjfmsx9a5"))))
     (properties `((upstream-name . "ChainLadder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tweedie

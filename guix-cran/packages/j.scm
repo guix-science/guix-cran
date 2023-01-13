@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
@@ -1202,29 +1201,6 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
      "An httpuv based bridge between R and JavaScript'.  Provides an easy way to
 exchange commands and data between a web page and a currently running R session.")
     (license license:gpl3)))
-
-(define-public r-jqr
-  (package
-    (name "r-jqr")
-    (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jqr" version))
-              (sha256
-               (base32
-                "1a91zcjxdilhqdyr2lipnwc35f90h0wyqlbg0vw9ay7sq6llxgs9"))))
-    (properties `((upstream-name . "jqr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-lazyeval))
-    (native-inputs (list pkg-config))
-    (home-page "https://docs.ropensci.org/jqr/")
-    (synopsis "Client for 'jq', a 'JSON' Processor")
-    (description
-     "Client for jq', a JSON processor (<https://stedolan.github.io/jq/>), written in
-C. jq allows the following with JSON data: index into, parse, do calculations,
-cut up and filter, change key names and values, perform conditionals and
-comparisons, and more.")
-    (license license:expat)))
 
 (define-public r-jql
   (package

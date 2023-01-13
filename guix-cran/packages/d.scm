@@ -14536,13 +14536,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfms" version))
               (sha256
                (base32
-                "0k5fcy0hnz38mdj2ib9v498hxr2wvmm9b4r1r65vzgqclf62yzkr"))))
+                "0mhqcv301lrwdw44vrdp59wwfamh6i523jwp2k7cjr1kiy5q6ici"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))
@@ -14552,19 +14552,18 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
     (description
      "Efficient estimation of Dynamic Factor Models using the Expectation Maximization
 (EM) algorithm or Two-Step (2S) estimation, supporting datasets with missing
-data.  The implementation follows advances in the econometric literature:
-estimation can be done either by running the Kalman Filter and Smoother once
-with initial values from PCA - 2S estimation following Doz, Giannone and
-Reichlin (2011) <doi:10.1016/j.jeconom.2011.02.012> - or via iterated Kalman
-Filtering and Smoothing until EM convergence - following Doz, Giannone and
-Reichlin (2012) <doi:10.1162/REST_a_00225> - or using the adapted EM algorithm
-of Banbura and Modugno (2014) <doi:10.1002/jae.2306>, allowing arbitrary
-patterns of missing data.  The implementation makes heavy use of the Armadillo
-C++ library and the collapse package, providing for particularly speedy
-estimation.  A comprehensive set of methods supports interpretation and
-visualization of the model as well as forecasting.  Information criteria to
-choose the number of factors are also provided - following Bai and Ng (2002)
-<doi:10.1111/1468-0262.00273>.")
+data.  The estimation options follow advances in the econometric literature:
+either running the Kalman Filter and Smoother once with initial values from PCA
+- 2S estimation as in Doz, Giannone and Reichlin (2011)
+<doi:10.1016/j.jeconom.2011.02.012> - or via iterated Kalman Filtering and
+Smoothing until EM convergence - following Doz, Giannone and Reichlin (2012)
+<doi:10.1162/REST_a_00225> - or using the adapted EM algorithm of Banbura and
+Modugno (2014) <doi:10.1002/jae.2306>, allowing arbitrary patterns of missing
+data.  The implementation makes heavy use of the Armadillo C++ library and the
+collapse package, providing for particularly speedy estimation.  A comprehensive
+set of methods supports interpretation and visualization of the model as well as
+forecasting.  Information criteria to choose the number of factors are also
+provided - following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
     (license license:gpl3)))
 
 (define-public r-dfmeta

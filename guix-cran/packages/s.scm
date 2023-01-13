@@ -25675,13 +25675,13 @@ genetic risk-allele score exact distributions are also possible to be estimated.
 (define-public r-snpannotator
   (package
     (name "r-snpannotator")
-    (version "0.2.5.0")
+    (version "0.2.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SNPannotator" version))
               (sha256
                (base32
-                "1fkiv1xifkwcsh26dca6jr6plqxwbnmlbs9amimdn3hljkzmlxbf"))))
+                "0g2k6ijsrqnwqj6llrfvsgzk1hgf96c0pd8rg5ry633jvjngf5v2"))))
     (properties `((upstream-name . "SNPannotator")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -47355,13 +47355,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCpubr" version))
               (sha256
                (base32
-                "1winw6fyw15zfcljwlsamgl4praixx3zmj0619x5z2d5acvs45kd"))))
+                "1h9d22465jhm95r7vj8bk2ymjm206zzrqan0cai040p1zaif01ch"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

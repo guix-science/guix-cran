@@ -8462,6 +8462,31 @@ Graybill (1992, ISBN-13: 978-0824786441); Weerahandi (1995)
 such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
     (license license:expat)))
 
+(define-public r-aorsf
+  (package
+    (name "r-aorsf")
+    (version "0.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aorsf" version))
+              (sha256
+               (base32
+                "1shx7i6qf0w9w2ir5p7mdjh1kva2xqxm6qm9blqwp7s418ykvk6b"))))
+    (properties `((upstream-name . "aorsf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table r-collapse))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/aorsf")
+    (synopsis "Accelerated Oblique Random Survival Forests")
+    (description
+     "Fit, interpret, and make predictions with oblique random survival forests.
+Oblique decision trees are notoriously slow compared to their axis based
+counterparts, but aorsf runs as fast or faster than axis-based decision tree
+algorithms for right-censored time-to-event outcomes.  Methods to accelerate and
+interpret the oblique random survival forest are described in Jaeger et al.,
+(2022) <arXiv:2208.01129>.")
+    (license license:expat)))
+
 (define-public r-aoristic
   (package
     (name "r-aoristic")
@@ -11743,6 +11768,29 @@ alpha-outliers by Davies and Gather (1993) to flag outliers in a data set.  See
 Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
 423, 782-792, <doi:10.1080/01621459.1993.10476339> for details.")
     (license license:gpl3)))
+
+(define-public r-alphan
+  (package
+    (name "r-alphan")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "alphaN" version))
+              (sha256
+               (base32
+                "0asm0r1cqbqan0d5dbb7jffqgrcai2kcpw1l2p9s4qxfff9vliva"))))
+    (properties `((upstream-name . "alphaN")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jespernwulff/alphaN")
+    (synopsis "Set Alpha Based on Sample Size Using Bayes Factors")
+    (description
+     "Sets the alpha level for coefficients in a regression model as a decreasing
+function of the sample size through the use of Jeffreys Approximate Bayes
+factor.  You tell alphaN() your sample size, and it tells you to which value you
+must lower alpha to avoid Lindley's Paradox.  For details, see Wulff and Taylor
+(2023) <doi:10.31234/osf.io/3cbh7>.")
+    (license license:expat)))
 
 (define-public r-alphahull3d
   (package
@@ -18278,6 +18326,35 @@ store collected data, and encourage regular storage of data to mitigate loss
 when collecting large volumes of tweets.  They also provide workarounds to
 manage and reshape the format in which data is provided on the client side.")
     (license license:expat)))
+
+(define-public r-absurvtdc
+  (package
+    (name "r-absurvtdc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ABSurvTDC" version))
+              (sha256
+               (base32
+                "1k0c60z0npgjaz1w3vhh21k6x1l8alkzmms1r89h2p874cqn7y6x"))))
+    (properties `((upstream-name . "ABSurvTDC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-readxl))
+    (home-page "https://cran.r-project.org/package=ABSurvTDC")
+    (synopsis
+     "Survival Analysis using Time Dependent Covariate for Animal Breeding")
+    (description
+     "Survival analysis is employed to model the time it takes for events to occur.
+Survival model examines the relationship between survival and one or more
+predictors, usually termed covariates in the survival-analysis literature.  To
+this end, Cox-proportional (Cox-PH) hazard rate model introduced in a seminal
+paper by Cox (1972) <doi:10.1111/j.2517-6161.1972.tb00899.x>, is a broadly
+applicable and the most widely used method of survival analysis.  This package
+can be used to estimate the effect of fixed and time-dependent covariates and
+also to compute the survival probabilities of the lactation of dairy animal.
+This package has been developed using algorithm of Klein and Moeschberger (2003)
+<doi:10.1007/b97377>.")
+    (license license:gpl3)))
 
 (define-public r-abstr
   (package

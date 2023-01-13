@@ -342,13 +342,13 @@ keyword bids management.")
 (define-public r-ryacas0
   (package
     (name "r-ryacas0")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ryacas0" version))
               (sha256
                (base32
-                "1qsj6hbydi923bvc8qy1k34nl73xf3fsmr5ww3dw9gzn1kzg2470"))))
+                "0xjpsn3n3x0v37qqypb86vr45fc9cd5dc8n7szzcf87nxa8k5imb"))))
     (properties `((upstream-name . "Ryacas0")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-settings r-rcpp))
@@ -363,13 +363,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-ryacas
   (package
     (name "r-ryacas")
-    (version "1.1.3.1")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ryacas" version))
               (sha256
                (base32
-                "0c258p7ibas4xbq1wh8c1nfqf6r9d0hicrf8mkkyriw4mb6wmzqq"))))
+                "0bplhd4lqi3zrx2mvx73wg5zjwmxy953p15yj14dngh1ax93c9c5"))))
     (properties `((upstream-name . "Ryacas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr))
@@ -845,13 +845,13 @@ be plotted in rworldmap.")
 (define-public r-rworkflows
   (package
     (name "r-rworkflows")
-    (version "0.99.3")
+    (version "0.99.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rworkflows" version))
               (sha256
                (base32
-                "0l16ap7fpzac2mzl2akjy97y6saxzw0cghpbr03pqf7d1kxjb2c2"))))
+                "1svqkwjcrc4waagrxa9vb2i7z6q6kvi5sb4419ibav77qgpw63g2"))))
     (properties `((upstream-name . "rworkflows")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-here r-desc r-badger))
@@ -7261,13 +7261,13 @@ maintainer of the package.")
 (define-public r-rsa
   (package
     (name "r-rsa")
-    (version "0.10.4")
+    (version "0.10.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSA" version))
               (sha256
                (base32
-                "0i0li587i6bjnmz9d1j1dyhpy7bfnq6298wr67fygcxfaszij16b"))))
+                "137izjrvicf02bnc6q00wn187754f25dh22swpb46vid18cf1q9h"))))
     (properties `((upstream-name . "RSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -11576,13 +11576,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.9")
+    (version "0.9.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolog" version))
               (sha256
                (base32
-                "1f7krnda31s2k9lsa80phqlf7xcaganbvd116r9rfwhwapb8v8iy"))))
+                "0g9bhb2bjhmxmpsz3ywrdv6vm2zfxqj9fdqzj4zx77z7if3y8wag"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -15901,13 +15901,13 @@ product uses the NASS API but is not endorsed or certified by NASS.")
 (define-public r-rnasmc
   (package
     (name "r-rnasmc")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RNAsmc" version))
               (sha256
                (base32
-                "13biayrgs9qb06w3rkwrmplnrm93zlygsfm7chy6jbp15xl3bf0c"))))
+                "0lssw4qwcsdwcd3chkb1kslqh7yn25prl1npp1464nvmvz9yqdwm"))))
     (properties `((upstream-name . "RNAsmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrna r-circlize))
@@ -16163,13 +16163,13 @@ datasets with outside programs.")
 (define-public r-rmumps
   (package
     (name "r-rmumps")
-    (version "5.2.1-20")
+    (version "5.2.1-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmumps" version))
               (sha256
                (base32
-                "17jm7b7rnq5x5jyyj5pc10zpkp55y9l9amm1rq7cd4qs53w01dka"))))
+                "18wqy82hwnbiwqcyldg8ci0jmxfiaj65ila0fjzzv40d3kl8hx76"))))
     (properties `((upstream-name . "rmumps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18408,13 +18408,13 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-3")
+    (version "0.7-3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "0djxk1r12304dmy0h2wn96q6c8rpax7p6975796mf50hqw5rfpi0"))))
+                "049j18xyahw1vm0j3173c1cyf6gb4g973jglrp94ncbi63x1dgaj"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -33574,13 +33574,13 @@ more details on the package, see the paper by You and Shung (2022)
 (define-public r-rdieharder
   (package
     (name "r-rdieharder")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDieHarder" version))
               (sha256
                (base32
-                "09fir4fia55fppbajy9gjqv2s2wn0k203nmy1jafvy8xhq9fc5p9"))))
+                "1djgy6al9f92i295bzc65lny7lz8gpk5js6hmfbflwfwcl9wg05b"))))
     (properties `((upstream-name . "RDieHarder")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/rdieharder")
@@ -43895,13 +43895,13 @@ for the package home page.")
 (define-public r-radiant-multivariate
   (package
     (name "r-radiant-multivariate")
-    (version "1.4.4")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radiant.multivariate" version))
               (sha256
                (base32
-                "0daj0993z2dfcx7akqxz76wf95x3ybfnhgdm7i4dsrqsqxrcldc1"))))
+                "158a7ihs4mlkl4vc0lbgi6xcx8w4l57d1d9qj576c4s8718bjy84"))))
     (properties `((upstream-name . "radiant.multivariate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -45253,13 +45253,13 @@ plot_power() draws the corresponding power graphs.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "0.3.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2rtf" version))
               (sha256
                (base32
-                "1dhmkv2qv1rqkmd53ca2r85178p05jm5l8m01inyz96vqjdk1h4z"))))
+                "15sih195h1xbz596bqahlc1ixpab68r5az218s5q82fv9i01q7yr"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

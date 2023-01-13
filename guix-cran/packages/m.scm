@@ -334,13 +334,13 @@ Journal of Statistical Theory and Practice, 5:4, 627-648,
 (define-public r-mwtensor
   (package
     (name "r-mwtensor")
-    (version "0.99.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mwTensor" version))
               (sha256
                (base32
-                "17pq5hlp56dl3pdd53m75fz51bg38hdim00p4hvy9a52b28j1bn0"))))
+                "08c3yyl4lsha5a4sjs8xac5bdgcvnqpah4bgii26fa4awnz86y4j"))))
     (properties `((upstream-name . "mwTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor
@@ -358,7 +358,7 @@ originally extended MWCA is also implemented to specify and decompose multiple
 matrices and tensors simultaneously (CoupledMWCA).  See the reference section of
 GitHub README.md <https://github.com/rikenbit/mwTensor>, for details of the
 methods.")
-    (license license:artistic2.0)))
+    (license license:expat)))
 
 (define-public r-mwshiny
   (package
@@ -15446,13 +15446,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.5.10")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3viz" version))
               (sha256
                (base32
-                "0bd7sgqfn4lkafzyrpjbgkm16hmzwlpl7yjkdjxxaj03g6dk7yf1"))))
+                "03gvxkwsa18pzrckky0c02nx77r4w63d0l5r7lazhzv7cv4yx2s0"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -15464,12 +15464,11 @@ composed to form preprocessing pipelines.")
     (home-page "https://mlr3viz.mlr-org.com")
     (synopsis "Visualizations for 'mlr3'")
     (description
-     "This package provides visualizations for mlr3 objects such as tasks,
-predictions, resample results or benchmark results via the autoplot() generic of
-ggplot2'.  The returned ggplot objects are intended to provide sensible
-defaults, yet can easily be customized to create camera-ready figures.
-Visualizations include barplots, boxplots, histograms, ROC curves, and
-Precision-Recall curves.")
+     "Visualization package of the mlr3 ecosystem.  It features plots for mlr3 objects
+such as task, learners, predictions, benchmark results, tuning instances and
+filters via the autoplot() generic of ggplot2'.  The package draws plots with
+the viridis color palette and applies the minimal theme.  Visualizations include
+barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
     (license license:lgpl3)))
 
 (define-public r-mlr3verse
@@ -26254,28 +26253,24 @@ meta-regression models.")
 (define-public r-metalandsim
   (package
     (name "r-metalandsim")
-    (version "1.0.10")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MetaLandSim" version))
               (sha256
                (base32
-                "05ib0yh6qxym1k5mmv4qscvsqckdab4m42xs6p2x0izx7y61psn7"))))
+                "0dx8vya0w8n9f53g7ppjmz3a9vhs3h6fb7z4fb2c1bhp4yjkbl23"))))
     (properties `((upstream-name . "MetaLandSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
+                             r-terra
                              r-spatstat-random
                              r-spatstat-geom
                              r-sp
-                             r-rgrass7
-                             r-rgeos
-                             r-raster
                              r-minpack-lm
-                             r-maptools
                              r-knitr
                              r-igraph
                              r-googlevis
-                             r-fgui
                              r-e1071
                              r-coda))
     (home-page "https://cran.r-project.org/package=MetaLandSim")
@@ -29098,13 +29093,13 @@ consumers.")
 (define-public r-medianadesigner
   (package
     (name "r-medianadesigner")
-    (version "0.11")
+    (version "0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MedianaDesigner" version))
               (sha256
                (base32
-                "00hdh22ngz8q39awijfqjbj6fq4pgh8wb7b8ayg0nc87sg4fbq6p"))))
+                "028s66n7908fccpjc500sim50w1xayvqb9cg2jrzqj42mmmfbnj4"))))
     (properties `((upstream-name . "MedianaDesigner")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -29123,7 +29118,6 @@ consumers.")
                              r-lme4
                              r-foreach
                              r-flextable
-                             r-dorng
                              r-doparallel
                              r-devemf))
     (home-page "https://github.com/medianasoft/MedianaDesigner")
@@ -36139,13 +36133,13 @@ and the ability of downloading and processing static tiles.")
 (define-public r-mapsfinland
   (package
     (name "r-mapsfinland")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapsFinland" version))
               (sha256
                (base32
-                "0kx9r28lvc6bbl478i9gyy58kbp5hi7akysyld87fxk5x0601j19"))))
+                "1diybv66ngns9ci6zafk5vnywis4vliwmprpkdpjc5wrapzz6c3f"))))
     (properties `((upstream-name . "mapsFinland")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mapsFinland")

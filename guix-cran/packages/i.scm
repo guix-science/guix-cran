@@ -4570,19 +4570,19 @@ at Chainarong Amornbunchornvej, Pongsakorn Wangkumhang, and Sissades Tongsima
 (define-public r-ipaddress
   (package
     (name "r-ipaddress")
-    (version "0.5.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipaddress" version))
               (sha256
                (base32
-                "1hyb29mwg16xk1887kiz68vvw4jpipylyqis16siwiwlzd2yjfn2"))))
+                "1jq6c9krk3j9l43v1s9c81jcsmqmcb3k1pdpkdknfwb2x3j5l3vp"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-rlang r-rcpp r-asioheaders))
+    (propagated-inputs (list r-vctrs r-rlang r-rcpp r-cli r-asioheaders))
     (native-inputs (list r-knitr))
     (home-page "https://davidchall.github.io/ipaddress/")
-    (synopsis "Tidy IP Addresses")
+    (synopsis "Data Analysis for IP Addresses and Networks")
     (description
      "Classes and functions for working with IP (Internet Protocol) addresses and
 networks, inspired by the Python ipaddress module.  Offers full support for both
@@ -12004,13 +12004,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ifaa
   (package
     (name "r-ifaa")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IFAA" version))
               (sha256
                (base32
-                "0rk9xwpcm2dhf1fxm9adyhmpvf8ibg8m2v4jn5x1alynnzwdm25j"))))
+                "0phy8g1b0z1cv8sd1ynfnn29clm57wfj7qszlwnz12p20l7viwdd"))))
     (properties `((upstream-name . "IFAA")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -12033,15 +12033,15 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
      "This package offers a robust approach to make inference on the association of
 covariates with the absolute abundance (AA) of microbiome in an ecosystem.  It
 can be also directly applied to relative abundance (RA) data to make inference
-on AA because the ratio of two RA is equal ratio of their AA. This algorithm can
-estimate and test the associations of interest while adjusting for potential
-confounders.  High-dimensional covariates are handled with regularization.  The
-estimates of this method have easy interpretation like a typical regression
-analysis.  High-dimensional covariates are handled with regularization and it is
-implemented by parallel computing.  False discovery rate is automatically
-controlled by this approach.  Zeros do not need to be imputed by a positive
-value for the analysis.  The IFAA package also offers the MZILN function for
-estimating and testing associations of abundance ratios with covariates.")
+on AA because the ratio of two RA is equal to the ratio of their AA. This
+algorithm can estimate and test the associations of interest while adjusting for
+potential confounders.  The estimates of this method have easy interpretation
+like a typical regression analysis.  High-dimensional covariates are handled
+with regularization and it is implemented by parallel computing.  False
+discovery rate is automatically controlled by this approach.  Zeros do not need
+to be imputed by a positive value for the analysis.  The IFAA package also
+offers the MZILN function for estimating and testing associations of abundance
+ratios with covariates.")
     (license license:gpl2)))
 
 (define-public r-ietd
@@ -14887,25 +14887,25 @@ averaging over R-squared for different orderings of regressors is also included.
 (define-public r-ibst
   (package
     (name "r-ibst")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iBST" version))
               (sha256
                (base32
-                "0nyyzhscysc7dail5mwnw5w044q88m8sk2lg4xdkw52pdkw1a9z0"))))
+                "0z7v679s5w270dfls61hh4fab9pzzj4lsqwsx06r59s0hlsrv5nw"))))
     (properties `((upstream-name . "iBST")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rpart r-rcpp))
     (home-page "https://cran.r-project.org/package=iBST")
     (synopsis "Improper Bagging Survival Tree")
     (description
-     "Fit a bagging survival tree on a mixture of population (susceptible and
-nonsusceptible) using either a pseudo R2 criterion or an adjusted Logrank
-criterion.  The predictor is evaluated using the Out Of Bag Integrated Brier
-Score (IBS) and several scores of importance are computed for variable
-selection.  The thresholds values for variable selection are computed using a
-nonparametric permutation test.  See Cyprien Mbogning and Philippe Broet
+     "Fit a full or subsampling bagging survival tree on a mixture of population
+(susceptible and nonsusceptible) using either a pseudo R2 criterion or an
+adjusted Logrank criterion.  The predictor is evaluated using the Out Of Bag
+Integrated Brier Score (IBS) and several scores of importance are computed for
+variable selection.  The thresholds values for variable selection are computed
+using a nonparametric permutation test.  See Cyprien Mbogning and Philippe Broet
 (2016)<doi:10.1186/s12859-016-1090-x> for an overview about the methods
 implemented in this package.")
     (license license:gpl2+)))

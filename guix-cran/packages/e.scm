@@ -12,6 +12,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages mpi)
+  #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -19437,16 +19438,17 @@ data, and for performing genome-wide analysis.")
 (define-public r-eaf
   (package
     (name "r-eaf")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eaf" version))
               (sha256
                (base32
-                "1xn8h826fpb0ba6ihlbj5i42haylxz2q51ig7q0sas2mag2ggpap"))))
+                "0ajiz5ap5i2n35yq85mrwrkix9n7z2qqqp6jmyj9qblp8300kq97"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-modeltools))
+    (propagated-inputs (list r-rdpack r-modeltools r-matrixstats))
+    (native-inputs (list pkg-config))
     (home-page "https://mlopez-ibanez.github.io/eaf/")
     (synopsis "Plots of the Empirical Attainment Function")
     (description

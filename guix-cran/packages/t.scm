@@ -19800,13 +19800,13 @@ et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDApplied" version))
               (sha256
                (base32
-                "11riwk0jg3lcac9a4653kdrkbbsfmmmh3mw1sp332ybdmcdpfgs2"))))
+                "034ix6mm7s4vmbvz5w0x1shz9iayfp2lm3pnwkbb2my91ym3n8gw"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist

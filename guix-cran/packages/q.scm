@@ -162,6 +162,55 @@ Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
 <arXiv:1708.02908>.")
     (license license:gpl2)))
 
+(define-public r-qurve
+  (package
+    (name "r-qurve")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "QurvE" version))
+              (sha256
+               (base32
+                "0zkacaraxnb8br5yympc9fpbfri9pxn5nnsii9nq91ryqyzz3bf9"))))
+    (properties `((upstream-name . "QurvE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-scales
+                             r-rmarkdown
+                             r-readxl
+                             r-rcolorbrewer
+                             r-plyr
+                             r-minpack-lm
+                             r-magrittr
+                             r-labeling
+                             r-knitr
+                             r-kableextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggh4x
+                             r-foreach
+                             r-dt
+                             r-drc
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NicWir/QurvE")
+    (synopsis
+     "Robust and User-Friendly Analysis of Growth and Fluorescence Curves")
+    (description
+     "High-throughput analysis of growth curves and fluorescence data using three
+methods: linear regression, growth model fitting, and smooth spline fit.
+Analysis of dose-response relationships via smoothing splines or dose-response
+models.  Complete data analysis workflows can be executed in a single step via
+user-friendly wrapper functions.  The results of these workflows are summarized
+in detailed reports as well as intuitively navigable R data containers.  A shiny
+application provides access to all features without requiring any programming
+knowledge.")
+    (license license:gpl3+)))
+
 (define-public r-quran
   (package
     (name "r-quran")

@@ -8650,13 +8650,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.0.10")
+    (version "0.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ai" version))
               (sha256
                (base32
-                "0yzi2gnzhsp1rxcq5c38d4ih14ix5mbcmz7yyrxmcq61zqpgfhgx"))))
+                "0rr1av7pgnp2kswf869vqg37cq9p1di4ly0h73bkl31yb4d5r53d"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -8757,6 +8757,28 @@ inputs provided historical volume and revenue data is available.  For more
 details on managerial accounting techniques, see Brewer et al. (2015,
 ISBN:9780078025792).")
     (license license:gpl3)))
+
+(define-public r-healthcare-antitrust
+  (package
+    (name "r-healthcare-antitrust")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "healthcare.antitrust" version))
+              (sha256
+               (base32
+                "0m839fjklx2m52ilpbxpigjl7qphgk0hbi4rvjvx9y8gsp9xfnmd"))))
+    (properties `((upstream-name . "healthcare.antitrust")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mpanhans/healthcare.antitrust")
+    (synopsis "Healthcare Antitrust Analysis")
+    (description
+     "Antitrust analysis of healthcare markets.  Contains functions to implement the
+semiparametric estimation technique described in Raval, Rosenbaum, and Tenn
+(2017) \"A Semiparametric Discrete Choice Model: An Application to Hospital
+Mergers\" <doi:10.1111/ecin.12454>.")
+    (license license:cc0)))
 
 (define-public r-headliner
   (package

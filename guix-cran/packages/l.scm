@@ -5404,6 +5404,44 @@ which are loaded into the variable environment for later retrieval.")
 (Q) and suspended sediment concentration (SSC) relationship.")
     (license license:expat)))
 
+(define-public r-loader
+  (package
+    (name "r-loader")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "loadeR" version))
+              (sha256
+               (base32
+                "1g3ycnppgxhciwigcy7bii0aw8w2j31nzjk2vkz92lmfc169x0c7"))))
+    (properties `((upstream-name . "loadeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlconnect
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycustomloader
+                             r-shinyace
+                             r-shiny
+                             r-rlang
+                             r-htmlwidgets
+                             r-htmltools
+                             r-golem
+                             r-echarts4r
+                             r-dt
+                             r-data-table
+                             r-config
+                             r-colourpicker
+                             r-caret))
+    (home-page "https://www.promidat.com")
+    (synopsis "Load Data for Analysis System")
+    (description
+     "This package provides a framework to load text and excel files through a shiny
+graphical interface.  It allows renaming, transforming, ordering and removing
+variables.  It includes basic exploratory methods such as the mean, median,
+mode, normality test, histogram and correlation.")
+    (license license:gpl2+)))
+
 (define-public r-loa
   (package
     (name "r-loa")
@@ -15531,6 +15569,42 @@ elementary territorial units.  It provides tools for automatic tuning based on
 spatial contiguity.  It also allows for statistical analyses and visualisation
 of the new functional geography.")
     (license license:gpl2+)))
+
+(define-public r-labnorm
+  (package
+    (name "r-labnorm")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "labNorm" version))
+              (sha256
+               (base32
+                "008qmwm03l5yldba5y2y4i8vg30j7wjc7r3kdhchdpb72dj318c3"))))
+    (properties `((upstream-name . "labNorm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yesno
+                             r-withr
+                             r-tibble
+                             r-scales
+                             r-rappdirs
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=labNorm")
+    (synopsis "Normalize Laboratory Measurements by Age and Sex")
+    (description
+     "This package provides functions for normalizing standard laboratory measurements
+(e.g. hemoglobin, cholesterol levels) according to age and sex, based on the
+algorithms described in \"Personalized lab test models to quantify disease
+potentials in healthy individuals\" (Netta Mendelson Cohen, Omer Schwartzman, Ram
+Jaschek, Aviezer Lifshitz, Michael Hoichman, Ran Balicer, Liran I. Shlush, Gabi
+Barbash & Amos Tanay, <doi:10.1038/s41591-021-01468-6>).  Allows users to easily
+obtain normalized values for standard lab results, and to visualize their
+distributions.  See more at <https://tanaylab.weizmann.ac.il/labs/>.")
+    (license license:expat)))
 
 (define-public r-lablaster
   (package
