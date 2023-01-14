@@ -3404,13 +3404,13 @@ kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
 (define-public r-brif
   (package
     (name "r-brif")
-    (version "1.2.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brif" version))
               (sha256
                (base32
-                "1z9jz2diwy5n07dd370wsbjl7dz62cai2biwnlk29cfp4rq5l83k"))))
+                "1wnsyhvj2g6j5szajm27v2w0mg5d9fc200gfvdzgi75rhvi1nl97"))))
     (properties `((upstream-name . "brif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -13920,18 +13920,18 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.0.1")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bibliometrix" version))
               (sha256
                (base32
-                "00c0dfnv989sf206qsh6gk2s0h73xqq0vd2a9sr2zh5rxf9x9c24"))))
+                "1d14p0cw9qh1z43n0hys8il44rx5dgmgb94ppr0j1n33hhz9wwva"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
                              r-tidyr
-                             r-stringr
+                             r-stringi
                              r-stringdist
                              r-snowballc
                              r-shiny
@@ -18221,6 +18221,54 @@ and progressive type-II censoring plans.  The methods of Cox and Snell (1968)
 <doi:10.1111/j.2517-6161.1968.tb00724.x> and bootstrap method for computing the
 bias-corrected maximum likelihood estimator.")
     (license license:gpl2+)))
+
+(define-public r-bcclong
+  (package
+    (name "r-bcclong")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BCClong" version))
+              (sha256
+               (base32
+                "02vfmqbwildlpqp44s3ff70aalqyjlv3vx80hk8j87fqjbd976g7"))))
+    (properties `((upstream-name . "BCClong")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist
+                             r-rmpfr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nnet
+                             r-mvtnorm
+                             r-mixak
+                             r-mcmcpack
+                             r-mclust
+                             r-mass
+                             r-lme4
+                             r-laplacesdemon
+                             r-label-switching
+                             r-ggplot2
+                             r-coda
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BCClong")
+    (synopsis
+     "Bayesian Consensus Clustering for Multiple Longitudinal Features")
+    (description
+     "It is very common nowadays for a study to collect multiple features and
+appropriately integrating multiple longitudinal features simultaneously for
+defining individual clusters becomes increasingly crucial to understanding
+population heterogeneity and predicting future outcomes.  BCClong implements a
+Bayesian consensus clustering (BCC) model for multiple longitudinal features via
+a generalized linear mixed model.  Compared to existing packages, several key
+features make the BCClong package appealing: (a) it allows simultaneous
+clustering of mixed-type (e.g., continuous, discrete and categorical)
+longitudinal features, (b) it allows each longitudinal feature to be collected
+from different sources with measurements taken at distinct sets of time points
+(known as irregularly sampled longitudinal data), (c) it relaxes the assumption
+that all features have the same clustering structure by estimating the
+feature-specific (local) clusterings and consensus (global) clustering.")
+    (license license:expat)))
 
 (define-public r-bcc1997
   (package

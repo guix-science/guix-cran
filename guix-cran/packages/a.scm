@@ -8063,16 +8063,17 @@ subject to seasonality.")
 (define-public r-apctools
   (package
     (name "r-apctools")
-    (version "1.0.1")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "APCtools" version))
               (sha256
                (base32
-                "1aq55a3glsqyp7gzly1nfaxxlyiq2ki6h9i5qwgz7dbni4vwggd4"))))
+                "0xp90p7q3a33cqsyh6n2gcsfnq9gchm5vcl13s72gqyfx4jjcnv7"))))
     (properties `((upstream-name . "APCtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-scales
                              r-mgcv
                              r-knitr
@@ -12098,6 +12099,35 @@ currently has functions for linear regression: all_lm(), logistic and Poisson
 regression: all_glm() and all_speedglm(), and Cox proportional hazards
 regression: all_cox().")
     (license license:gpl2)))
+
+(define-public r-allelicseries
+  (package
+    (name "r-allelicseries")
+    (version "0.0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AllelicSeries" version))
+              (sha256
+               (base32
+                "0frklwxszjh6x746pk3sb013wm8vri88b9qn1iqy5xqmvmwix2vs"))))
+    (properties `((upstream-name . "AllelicSeries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-skat r-rnomni r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AllelicSeries")
+    (synopsis "Allelic Series Test")
+    (description
+     "Implementation of gene-level rare variant association tests targeting allelic
+series: genes where increasingly deleterious mutations have increasingly large
+phenotypic effects.  The COding-variant Allelic Series Test (COAST) operates on
+the benign missense variants (BMVs), deleterious missense variants (DMVs), and
+protein truncating variants (PTVs) within a gene.  COAST uses a set of
+adjustable weights that tailor the test towards rejecting the null hypothesis
+for genes where the average magnitude of effect increases monotonically from
+BMVs to DMVs to PTVs.  See McCaw ZR, Somineni H, Bereket M, Klein C, Karaletsos
+T, Casale FP, Koller D, Soare TW. (2022) \"An allelic series rare variant
+association test for candidate gene discovery\" <doi:10.1101/2022.12.23.521658>.")
+    (license license:bsd-3)))
 
 (define-public r-alleleshift
   (package

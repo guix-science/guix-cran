@@ -8916,13 +8916,13 @@ extended with Monte Carlo simulations following the method of Crouch et al
 (define-public r-rpresto
   (package
     (name "r-rpresto")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPresto" version))
               (sha256
                (base32
-                "04xvy6mnmi6aymwm7wp97i85q7hh80fkjibjnbpi76i0lpa06wzh"))))
+                "1n9pgjzdrwk6k328943p9gr6ggikyjfnrvxlny2a10jdf3jz9wzq"))))
     (properties `((upstream-name . "RPresto")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -26978,17 +26978,18 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
 (define-public r-reportrmd
   (package
     (name "r-reportrmd")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reportRmd" version))
               (sha256
                (base32
-                "1vxjb4sq353nzv3q3cymp02g6y6z338xv29v0nf0j7v6kik0xzq0"))))
+                "07vk3wmcr47bfjnldfrs2j3dhq5yw9h6l14jahn7hzz5ap2zj0jq"))))
     (properties `((upstream-name . "reportRmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-scales
+                             r-rstatix
                              r-rlang
                              r-plyr
                              r-pander
@@ -33410,13 +33411,13 @@ used in bioinformatics and chemogenomics.")
 (define-public r-rdmulti
   (package
     (name "r-rdmulti")
-    (version "0.9")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdmulti" version))
               (sha256
                (base32
-                "0wnv3x3xi2vi34bjb73vxbpc8f7f9clsfx1a2a4d03lyxhjlnkpi"))))
+                "18rw6sk1hvl49nd90m9cjf606i93mz7a758r07didn3a1xlrz79m"))))
     (properties `((upstream-name . "rdmulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdrobust r-ggplot2))
@@ -38268,13 +38269,13 @@ age-specific trends, bar chart and period-cohort trends.")
 (define-public r-rcali
   (package
     (name "r-rcali")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCALI" version))
               (sha256
                (base32
-                "0b6gqslq0ni0s259lxqbqdnla375rdn6v303vbravsmi6fnnla57"))))
+                "0wvpypp724rnzbs01y8md660ckj2r0xb9n96hz8rzai2f84rbjif"))))
     (properties `((upstream-name . "RCALI")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs))
@@ -44053,13 +44054,13 @@ in radiant.data'.")
 (define-public r-radiant
   (package
     (name "r-radiant")
-    (version "1.4.4")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radiant" version))
               (sha256
                (base32
-                "0i7yfqp02q70h87spypw54amymkmbqdn8ihirhx3nk5rxccn7nk5"))))
+                "1kzbslf6bqi9h7znfp0hj1i7ljagb38sfri016m1xsywmc1s7cl5"))))
     (properties `((upstream-name . "radiant")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

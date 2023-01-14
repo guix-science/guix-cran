@@ -7712,13 +7712,13 @@ confidence intervals.")
 (define-public r-coxmeg
   (package
     (name "r-coxmeg")
-    (version "1.1.2")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coxmeg" version))
               (sha256
                (base32
-                "01yhpfb9qmcfgs9634czhxyj9j4gfpahia6wizq8vk5ljx8hg3c1"))))
+                "10g4l33iwv09lm9j32kh1i003b3351v9ss3wrd6a497xgz20krhr"))))
     (properties `((upstream-name . "coxmeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -12718,6 +12718,39 @@ Emeritus Jonathan Lubin, <http://www.math.brown.edu/jlubin/> and his post to
 StackOverflow, <https://math.stackexchange.com/questions/2215918> , or Professor
 Ron Knott, e.g., <https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html> .")
     (license license:lgpl3)))
+
+(define-public r-context
+  (package
+    (name "r-context")
+    (version "1.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "conText" version))
+              (sha256
+               (base32
+                "0ncb7hpzvg1dp52rd8pbgdparjdb94ci10szpc3y90phh57z3lgy"))))
+    (properties `((upstream-name . "conText")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-text2vec
+                             r-stringr
+                             r-reshape2
+                             r-quanteda
+                             r-matrix
+                             r-ggplot2
+                             r-fastdummies
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/prodriguezsosa/EmbeddingRegression")
+    (synopsis "'a la Carte' on Text (ConText) Embedding Regression")
+    (description
+     "This package provides a fast, flexible and transparent framework to estimate
+context-specific word and short document embeddings using the a la carte
+embeddings approach developed by Khodak et al. (2018) <arXiv:1805.05388> and
+evaluate hypotheses about covariate effects on embeddings using the regression
+framework developed by Rodriguez et al.
+(2021)<https://github.com/prodriguezsosa/EmbeddingRegression>.")
+    (license license:gpl3)))
 
 (define-public r-contentid
   (package

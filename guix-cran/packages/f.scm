@@ -1527,20 +1527,22 @@ of a data matrix where each entry of the matrix is a function or a time series."
 (define-public r-funkyheatmap
   (package
     (name "r-funkyheatmap")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funkyheatmap" version))
               (sha256
                (base32
-                "0q5cfn7k0rh8694sldichvakqq4mxbfsya610dzn07q8jlri6ax5"))))
+                "1vsz19wc53rm1rrxq2dcv44ggpl3dsbybjj8271w2i701a17ijgv"))))
     (properties `((upstream-name . "funkyheatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rdpack
                              r-rcolorbrewer
                              r-purrr
+                             r-jsonlite
                              r-ggplot2
                              r-ggforce
                              r-dynutils
@@ -12746,32 +12748,6 @@ problems.  FFTs can be preferable to more complex algorithms because they
 require very little information, are easy to communicate, and are robust against
 overfitting.")
     (license license:cc0)))
-
-(define-public r-ffstream
-  (package
-    (name "r-ffstream")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ffstream" version))
-              (sha256
-               (base32
-                "036ikhah4y85khgfmvxwsn3vavvw1is8i9k2lw474wxlh4cxa3kd"))))
-    (properties `((upstream-name . "ffstream")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.deanbodenham.com/ffstream")
-    (synopsis
-     "Forgetting Factor Methods for Change Detection in Streaming Data")
-    (description
-     "An implementation of the adaptive forgetting factor scheme described in Bodenham
-and Adams (2016) <doi:10.1007/s11222-016-9684-8> which adaptively estimates the
-mean and variance of a stream in order to detect multiple changepoints in
-streaming data.  The implementation is in C++ and uses Rcpp.  Additionally,
-implementations of the fixed forgetting factor scheme from the same paper, as
-well as the classic CUSUM and EWMA methods, are included.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ffp
   (package

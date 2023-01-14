@@ -7561,24 +7561,30 @@ the epitweetr peer-review publication
 (define-public r-epitrix
   (package
     (name "r-epitrix")
-    (version "0.2.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epitrix" version))
               (sha256
                (base32
-                "1rqpvdky002h6mz636b77l4kd0im16pww62l6vnwh83si1m9pkki"))))
+                "08cz2p9xxa966a2v8kay00l3pmgfgmwzlh5pnx04s19rmar13z02"))))
     (properties `((upstream-name . "epitrix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-sodium r-distcrete))
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-sodium
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-distcrete))
     (native-inputs (list r-knitr))
-    (home-page "http://www.repidemicsconsortium.org/epitrix")
+    (home-page "http://www.repidemicsconsortium.org/epitrix/")
     (synopsis "Small Helpers and Tricks for Epidemics Analysis")
     (description
      "This package provides a collection of small functions useful for epidemics
 analysis and infectious disease modelling.  This includes computation of basic
-reproduction numbers from growth rates, generation of hashed labels to anonymise
-data, and fitting discretised Gamma distributions.")
+reproduction numbers from growth rates, generation of hashed labels to anonymize
+data, and fitting discretized Gamma distributions.")
     (license license:expat)))
 
 (define-public r-epitopr
@@ -10616,6 +10622,30 @@ appropriate test, especially denominator for F-statistic which depends on EMS.")
     (description
      "Collection of functions related to benchmark with prediction models for data
 analysis and editing of clinical and epidemiological data.")
+    (license license:gpl2+)))
+
+(define-public r-emplikauc
+  (package
+    (name "r-emplikauc")
+    (version "0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "emplikAUC" version))
+              (sha256
+               (base32
+                "0ifh661xknqin0k9vs92p00c4n6npkwn5cxyj970cj8l689yndrr"))))
+    (properties `((upstream-name . "emplikAUC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rootsolve r-emplik2))
+    (home-page "https://cran.r-project.org/package=emplikAUC")
+    (synopsis
+     "Empirical Likelihood Ratio Test/Confidence Interval for AUC or pAUC")
+    (description
+     "Test hypotheses and construct confidence intervals for AUC (area under Receiver
+Operating Characteristic curve) and pAUC (partial area under ROC curve), from
+the given two samples of test data with disease/healthy subjects.  The method
+used is based on two sample empirical likelihood, as described in
+<https://www.ms.uky.edu/~mai/research/eAUC1.pdf>.")
     (license license:gpl2+)))
 
 (define-public r-emplik2

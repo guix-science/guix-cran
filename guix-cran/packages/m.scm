@@ -334,13 +334,13 @@ Journal of Statistical Theory and Practice, 5:4, 627-648,
 (define-public r-mwtensor
   (package
     (name "r-mwtensor")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mwTensor" version))
               (sha256
                (base32
-                "08c3yyl4lsha5a4sjs8xac5bdgcvnqpah4bgii26fa4awnz86y4j"))))
+                "1706lia8vhj470hsvncvzw97228g2971rrm3w59qihxbajfqb52v"))))
     (properties `((upstream-name . "mwTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor
@@ -3873,6 +3873,40 @@ Models include longitudinal generalized linear models (Liang and Zeger, 1986)
 <doi:10.1007/978-1-4419-0318-1_1>.")
     (license license:expat)))
 
+(define-public r-multilevelcoda
+  (package
+    (name "r-multilevelcoda")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multilevelcoda" version))
+              (sha256
+               (base32
+                "0mydxghscxnxnbk69wlj6v5skig41mx54b2v1s378kr9gvilh99m"))))
+    (properties `((upstream-name . "multilevelcoda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zcompositions
+                             r-insight
+                             r-ggsci
+                             r-ggplot2
+                             r-foreach
+                             r-extraoperators
+                             r-emmeans
+                             r-data-table
+                             r-compositions
+                             r-brms
+                             r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://florale.github.io/multilevelcoda/")
+    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
+    (description
+     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
+framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
+at between and within-person levels, fit Bayesian multilevel models for
+compositional predictors and outcomes, and run post-hoc analyses such as
+isotemporal substitution models.")
+    (license license:gpl3+)))
+
 (define-public r-multilevel
   (package
     (name "r-multilevel")
@@ -6388,27 +6422,25 @@ Sanjose S, Esnaola M, Bosch F X, Diaz M (2016)
 (define-public r-msigtools
   (package
     (name "r-msigtools")
-    (version "1.0.5")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mSigTools" version))
               (sha256
                (base32
-                "0s5ns2m787l14gc6hwy8wash0sgiansdg71bfyhfzrz07k1lmw6j"))))
+                "11xjrfgifh491bzrzh1vw7sawdrlj1yb1yfvj09gjggszn9wn40r"))))
     (properties `((upstream-name . "mSigTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-philentropy r-clue))
+    (propagated-inputs (list r-sets r-quadprog r-philentropy r-clue))
     (home-page "https://github.com/Rozen-Lab/mSigTools")
     (synopsis "Mutational Signature Analysis Tools")
     (description
-     "Utility functions for mutational signature analysis.  This package provides two
-groups of functions.  One is for dealing with mutational signature \"exposures\"
-(i.e.  the counts of mutations in a sample that are due to each mutational
-signature).  The other group of functions is for matching two sets of mutational
-signatures.  The match minimizes the total distance between paired signatures by
-using the \"Hungarian algorithm\" described in : Kuhn, H. W. (1955)
-<doi:10.1002/nav.3800020109>.  mSigTools stands for mutational Signature
-analysis Tools.")
+     "Utility functions for mutational signature analysis as described in Alexandrov,
+L. B. (2020) <doi:10.1038/s41586-020-1943-3>.  This package provides two groups
+of functions.  One is for dealing with mutational signature \"exposures\" (i.e.
+the counts of mutations in a sample that are due to each mutational signature).
+The other group of functions is for matching or comparing sets of mutational
+signatures.  mSigTools stands for mutational Signature analysis Tools.")
     (license license:gpl3)))
 
 (define-public r-msig
@@ -12284,13 +12316,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.8.4")
+    (version "3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modEvA" version))
               (sha256
                (base32
-                "1vq028rn4d5hlkvdp2z7a95dglw6vp4xdaia7wsbkhy3fv41mqzq"))))
+                "14f58h9zkj211i9kfdgp5zr8g6bflc3d138chyab2n8v2z4wal00"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -13117,13 +13149,13 @@ supported.")
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.8.5")
+    (version "0.8.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelbased" version))
               (sha256
                (base32
-                "1fm5d94bck4vkp0lf6qfjbjg1561hapr2dq06g8hahfw9wq6ak3l"))))
+                "0l8jhmainrc30n30aq5pcpwk6n13qwiy5a4xb0ndgfj401y37c78"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -16083,17 +16115,17 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.0.0")
+    (version "4.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlpack" version))
               (sha256
                (base32
-                "1wly4md76hm75c4vhvgmd3akc1py4f19s6c4rbpq41qn3sf5iqmj"))))
+                "1vim94lib1w6f3m5j6pv9s53zwl935bxq5p5ma6ag0nsdzskr29r"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
-    (home-page "https://www.mlpack.org/doc/mlpack-4.0.0/r_documentation.html")
+    (home-page "https://www.mlpack.org/doc/mlpack-4.0.1/r_documentation.html")
     (synopsis "'Rcpp' Integration for the 'mlpack' Library")
     (description
      "This package provides a fast, flexible machine learning library, written in C++,
@@ -36133,13 +36165,13 @@ and the ability of downloading and processing static tiles.")
 (define-public r-mapsfinland
   (package
     (name "r-mapsfinland")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapsFinland" version))
               (sha256
                (base32
-                "1diybv66ngns9ci6zafk5vnywis4vliwmprpkdpjc5wrapzz6c3f"))))
+                "0s52hv36dib2833sxb8i1fvwb7l6hyx8n7y4qr3maia1g01xbj34"))))
     (properties `((upstream-name . "mapsFinland")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mapsFinland")

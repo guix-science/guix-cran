@@ -4369,13 +4369,13 @@ experiments.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmmTMB" version))
               (sha256
                (base32
-                "0mzgg0srqqamb2zn6imdq71rl5r4d7wamqzpcxk282cr2lwh68lb"))))
+                "0iy0n4hy33a4lj62xz953a80lg1pkghw32x0mk5bx8fb7z8hq4n8"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmbstan
@@ -10393,6 +10393,34 @@ autocorrelation of process jumps on time intervals separated by a lag.")
      "Drawing Hasse diagram - visualization of transitive reduction of a finite
 partially ordered set.")
     (license license:expat)))
+
+(define-public r-hassani-silva
+  (package
+    (name "r-hassani-silva")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Hassani.Silva" version))
+              (sha256
+               (base32
+                "0rhi3mrlyxksgd34xxha73m0x6aqdf2xk8bshdnmm463rkzyy31l"))))
+    (properties `((upstream-name . "Hassani.Silva")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Hassani.Silva")
+    (synopsis
+     "Test for Comparing the Predictive Accuracy of Two Sets of Forecasts")
+    (description
+     "This package provides a non-parametric test founded upon the principles of the
+Kolmogorov-Smirnov (KS) test, referred to as the KS Predictive Accuracy (KSPA)
+test.  The KSPA test is able to serve two distinct purposes.  Initially, the
+test seeks to determine whether there exists a statistically significant
+difference between the distribution of forecast errors, and secondly it exploits
+the principles of stochastic dominance to determine whether the forecasts with
+the lower error also reports a stochastically smaller error than forecasts from
+a competing model, and thereby enables distinguishing between the predictive
+accuracy of forecasts.  KSPA test has been described in : Hassani and Silva
+(2015) <doi:10.3390/econometrics3030590>.")
+    (license license:gpl3)))
 
 (define-public r-hassani-sacf
   (package

@@ -4421,6 +4421,39 @@ reservoirs of lipid in many predators, led to the development of quantitative
 fatty acid signature analysis (QFASA) to study predator diets.")
     (license license:expat)))
 
+(define-public r-qfa
+  (package
+    (name "r-qfa")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qfa" version))
+              (sha256
+               (base32
+                "045s80vwrj9id5gr5avz0f0q2vf7jhvb03y9ahxcj7x55lixfnhv"))))
+    (properties `((upstream-name . "qfa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rhpcblasctl
+                             r-quantreg
+                             r-nlme
+                             r-mgcv
+                             r-foreach
+                             r-fields
+                             r-doparallel
+                             r-colorramps))
+    (native-inputs (list gfortran))
+    (home-page "https://www.r-project.org")
+    (synopsis "Quantile-Frequency Analysis (QFA) of Time Series")
+    (description
+     "Quantile-frequency analysis (QFA) of univariate or multivariate time series
+based on the method of trigonometric quantile regression.  See Li, T.-H. (2012)
+\"Quantile periodograms\", Journal of the American Statistical Association, 107,
+765â776, <doi:10.1080/01621459.2012.682815>; Li, T.-H. (2014) Time Series with
+Mixed Spectra, CRC Press, <doi:10.1201/b15154>; Li, T.-H. (2022) \"Quantile
+Fourier transform, quantile series, and nonparametric estimation of quantile
+spectra\", <doi:10.48550/arXiv.2211.05844>.")
+    (license license:gpl2+)))
+
 (define-public r-qf
   (package
     (name "r-qf")

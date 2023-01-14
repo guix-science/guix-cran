@@ -6645,13 +6645,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.2.18")
+    (version "0.2.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dodgr" version))
               (sha256
                (base32
-                "1xnb4kdqjllg048y2bnl1pzq7xq15fg1nizr7ibhsfscjsgysgqg"))))
+                "0k0b5d8vcggw0z94d71b5ywijaffqyg6if915vvs75xs0fs3wnc6"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread
@@ -20762,6 +20762,34 @@ variables for other statistical analysis.")
 weights are assigned to the links), one-mode and valued one-mode and two-mode
 (two sets of nodes are considered, e.g. employees and organizations) networks
 (Brusco et al. (2019) <doi:10.1111/bmsp.12192>).")
+    (license license:gpl2+)))
+
+(define-public r-dblcens
+  (package
+    (name "r-dblcens")
+    (version "1.1.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dblcens" version))
+              (sha256
+               (base32
+                "1m5v8hx9n5rh5f230m8f0iss6s29qjbg4wp1mjihckw8df5qf1aj"))))
+    (properties `((upstream-name . "dblcens")))
+    (build-system r-build-system)
+    (home-page "https://github.com/yfyang86/dblcens/")
+    (synopsis
+     "Compute the NPMLE of Distribution Function from Doubly Censored Data, Plus the Empirical Likelihood Ratio for F(T)")
+    (description
+     "Doubly censored data, as described in Chang and Yang (1987) <doi:
+10.1214/aos/1176350608>), are commonly seen in many fields.  We use EM algorithm
+to compute the non-parametric MLE (NPMLE) of the cummulative probability
+function/survival function and the two censoring distributions.  One can also
+specify a constraint F(T)=C, it will return the constrained NPMLE and the -2 log
+empirical likelihood ratio for this constraint.  This can be used to test the
+hypothesis about the constraint and, by inverting the test, find confidence
+intervals for probability or quantile via empirical likelihood ratio theorem.
+Influence functions of hat F may also be calculated, but currently, the it may
+be slow.")
     (license license:gpl2+)))
 
 (define-public r-dbitest

@@ -8312,13 +8312,13 @@ truncated positive normal model.")
 (define-public r-tpmsm
   (package
     (name "r-tpmsm")
-    (version "1.2.5")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TPmsm" version))
               (sha256
                (base32
-                "1aj0gj74w7ak2csdybfmzwq873kj12jhs0rnqa0lbw6627h0g7pc"))))
+                "0xh1cmnwn7agd607ns1fdfz7gggms6jmy6ndb1r9icgbiqhy1z5d"))))
     (properties `((upstream-name . "TPmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-kernsmooth))
@@ -8834,13 +8834,13 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 (define-public r-tosr
   (package
     (name "r-tosr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tosr" version))
               (sha256
                (base32
-                "1hif33q73pbzgrs92ffkfiisxgxk35fyf37bvxb5kccrpwly9zih"))))
+                "1jv5bh1b7x242rb97i1w6x0w76cjyva4p6w5xr5qazgz7lfm6ysb"))))
     (properties `((upstream-name . "tosr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9190,13 +9190,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "1c5m4422rx3hv62s0v2b2n3scfd66vhpq5gpxh81wzn32p0wcvii"))))
+                "0918bjdf0jswj5j5cv99m0xggd5zrr2f8xk292xgzg06kb507dk6"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -12826,13 +12826,13 @@ Twitter'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytable" version))
               (sha256
                (base32
-                "0daw83qjv6qdb45f297fv9rzzx37nji0jdc5p51bwv8azz9bdy2z"))))
+                "19hh9b85635cbaiasdmsvlcyr382blhyy7i7j91m83bplzwz7fpn"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12840,6 +12840,7 @@ Twitter'.")
                              r-rlang
                              r-pillar
                              r-magrittr
+                             r-lifecycle
                              r-glue
                              r-data-table))
     (home-page "https://github.com/markfairbanks/tidytable")

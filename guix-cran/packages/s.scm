@@ -9041,13 +9041,13 @@ parameter space.")
 (define-public r-stickyr
   (package
     (name "r-stickyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stickyr" version))
               (sha256
                (base32
-                "0wqk4w732xb8dhbjfy1q613pia9rrmilsbpngacgw9sinsd1iq6m"))))
+                "0xyima0bypb0j7rix3sky2r0zrjm7h5yv1fwzxml2qfmbpk7h91k"))))
     (properties `((upstream-name . "stickyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -9059,7 +9059,7 @@ parameter space.")
                              r-generics
                              r-ellipsis
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=stickyr")
+    (home-page "https://github.com/UchidaMizuki/stickyr")
     (synopsis "Data Frames with Persistent Columns and Attributes")
     (description
      "This package provides data frames that hold certain columns and attributes
@@ -14124,13 +14124,13 @@ this package.")
 (define-public r-srtsim
   (package
     (name "r-srtsim")
-    (version "0.99.3")
+    (version "0.99.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SRTsim" version))
               (sha256
                (base32
-                "1l59x6gv6ya2s2wn7ccrn0jvb0hsc6f8wxvn3pwklz37467b94s6"))))
+                "1436lhpjbciln8xmr9sd7d0akh5kap8a9f0az7209c1zqc46i576"))))
     (properties `((upstream-name . "SRTsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -14151,6 +14151,8 @@ this package.")
                              r-magrittr
                              r-ggpubr
                              r-ggplot2
+                             r-fnn
+                             r-dplyr
                              r-dashboardthemes
                              r-concaveman))
     (native-inputs (list r-knitr))
@@ -48988,6 +48990,33 @@ over a grid of pre-computed stellar models, as described in Valle et al. (2014)
 and homogeneity of genes amongst the cell population.  From the work of Michael
 J. Casey, Ruben J. Sanchez-Garcia and Ben D. MacArthur.")
     (license license:gpl3+)))
+
+(define-public r-scenes
+  (package
+    (name "r-scenes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scenes" version))
+              (sha256
+               (base32
+                "068x0f9j9apdrv07m4facxxs60axv43q57laypfavxsns3r4dk30"))))
+    (properties `((upstream-name . "scenes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-cookies
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r4ds/scenes")
+    (synopsis "Switch Between Alternative 'shiny' UIs")
+    (description
+     "Sometimes it is useful to serve up alternative shiny UIs depending on
+information passed in the request object, such as the value of a cookie or a
+query parameter.  This packages facilitates such switches.")
+    (license license:expat)))
 
 (define-public r-scem
   (package

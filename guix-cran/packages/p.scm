@@ -5935,13 +5935,13 @@ and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "07cxgz0446d5vamwc7km7csz25c3h152i0jlfyxldkjbp1gngxac"))))
+                "1s2m7a8iyfcacvcgp543wgxv121difhjas5h2cdba8p8s5zn6px3"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -14610,13 +14610,13 @@ in Demirtas et al. (2012) <DOI:10.1002/sim.5362>.")
 (define-public r-poismf
   (package
     (name "r-poismf")
-    (version "0.4.0-2")
+    (version "0.4.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poismf" version))
               (sha256
                (base32
-                "1qnik1i768g8g74w3q846q3sm646ds0dlqq5b8hn9yyiih90n67g"))))
+                "0axvld2mzhgdl47x951528hdxxr7mxvkxpgny24x0rngw9rn890f"))))
     (properties `((upstream-name . "poismf")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -30376,6 +30376,38 @@ on the analysis of poverty.  References, Fattore M. (2016)
 <doi:10.1007/s11205-016-1501-4> Arcagni A. (2017)
 <doi:10.1007/978-3-319-45421-4_19>.")
     (license license:gpl2+)))
+
+(define-public r-parquetize
+  (package
+    (name "r-parquetize")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "parquetize" version))
+              (sha256
+               (base32
+                "0ir3pyapiwkmv601s593ygkxjsxfx5x8kgppwlwy1d8952a9q3bv"))))
+    (properties `((upstream-name . "parquetize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-readr
+                             r-jsonlite
+                             r-haven
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://ddotta.github.io/parquetize/")
+    (synopsis "Convert Files to Parquet Format")
+    (description
+     "Collection of functions to get files in parquet format.  Parquet is a columnar
+storage file format <https://parquet.apache.org/>.  The files to convert can be
+of several formats (\"csv\", \"duckdb\", \"RData\", \"rds\", \"RSQLite\", \"json\",
+\"ndjson\", \"SAS\", \"SPSS\"...).")
+    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-parqr
   (package
