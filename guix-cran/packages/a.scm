@@ -516,13 +516,13 @@ events.")
 (define-public r-azlogr
   (package
     (name "r-azlogr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "azlogr" version))
               (sha256
                (base32
-                "089pxr6mxz2lqf8kms3iixlyxkj6czf0c8wkhhl70irka815gq9m"))))
+                "1bpvqwhvw2a2g0np1z485jds21a69h1hqc9xa0360rbinbygnqyk"))))
     (properties `((upstream-name . "azlogr")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger r-jsonlite r-httr r-digest r-catools))
@@ -3687,13 +3687,13 @@ scale development and paleoclimate analysis.")
 (define-public r-asterisk
   (package
     (name "r-asterisk")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asteRisk" version))
               (sha256
                (base32
-                "1yk31gccab4i5v1wy954f3hqkdi58s224njiqkw3k4kib6xdasnj"))))
+                "0rfbm5c2lgs921ncajsjyyxzfiqls40xlxqp2pwp7c0rxhiz2rd6"))))
     (properties `((upstream-name . "asteRisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-onion r-nanotime

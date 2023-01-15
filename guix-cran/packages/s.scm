@@ -721,13 +721,13 @@ project <http://moby-thesaurus.org/>.")
 (define-public r-symts
   (package
     (name "r-symts")
-    (version "1.0-1")
+    (version "1.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SymTS" version))
               (sha256
                (base32
-                "1g1kjcba25g3nphbndkzvkipvihiqb6lvijsicqr7qh57g94gqpl"))))
+                "0v1vgsxq101fdxawdsdk2wa2llp79hzvmdphflnj8iblj8ncm6vc"))))
     (properties `((upstream-name . "SymTS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SymTS")
@@ -2597,13 +2597,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SVDNF" version))
               (sha256
                (base32
-                "0w53w4dg4w9mcw7mwb5ild3fr2b58l7c8fn1241mw22ji18j7dfg"))))
+                "1pdszrsscgz0qf6k773sgm5wqhnfki29ypydk5ih8vbqf12npgz2"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6900,20 +6900,16 @@ primarily to expose the header file to other R projects.")
 (define-public r-strex
   (package
     (name "r-strex")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "strex" version))
               (sha256
                (base32
-                "1c5g3xa2nbbqvlkagvwn13lh6wn4w9db6pfvz2rx7c5p3gv4rza3"))))
+                "14r6crbinq69vdw2k2kdfxmzfc3i7fizx26skjjms8prlvzc8c48"))))
     (properties `((upstream-name . "strex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-stringi
-                             r-rlang
-                             r-purrr
-                             r-magrittr
+    (propagated-inputs (list r-stringr r-stringi r-rlang r-magrittr
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://rorynolan.github.io/strex/")
@@ -10373,20 +10369,22 @@ Analysis.")
 (define-public r-statsexpressions
   (package
     (name "r-statsexpressions")
-    (version "1.3.6")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statsExpressions" version))
               (sha256
                (base32
-                "18ym0vq3nzi2bama2h8pdngywxwx86sv3df9s4iglfx5dz2cy84s"))))
+                "0npp8xq83fsq41i2jvcxagmx0jf7li3ds9siml7hva3gx7kijlrn"))))
     (properties `((upstream-name . "statsExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
                              r-wrs2
+                             r-withr
                              r-tidyr
                              r-tibble
                              r-rlang
+                             r-purrr
                              r-performance
                              r-parameters
                              r-magrittr
@@ -17314,13 +17312,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.4.6")
+    (version "0.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splines2" version))
               (sha256
                (base32
-                "0hmxlwr9i0cs8n9l6k4y173xv8gsvwvawhfsagfwmxj77j7cskhz"))))
+                "09jscvlvh7w6cfgwwsid0bbc8wipx4b1ww25q34s4qmfcnrbnp7r"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -50072,6 +50070,26 @@ functions, and documentations written in other programming languages, such as
 Python'.")
     (license license:asl2.0)))
 
+(define-public r-sca
+  (package
+    (name "r-sca")
+    (version "0.9-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sca" version))
+              (sha256
+               (base32
+                "051k2axp1d5mfldmskpd2vhksa32rdmvvy39rka52c4298csy8nx"))))
+    (properties `((upstream-name . "sca")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=sca")
+    (synopsis "Simple Component Analysis")
+    (description
+     "Simple Component Analysis (SCA) often provides much more interpretable
+components than Principal Components (PCA) while still representing much of the
+variability in the data.")
+    (license license:gpl2+)))
+
 (define-public r-sc2api
   (package
     (name "r-sc2api")
@@ -52133,26 +52151,26 @@ linear predictor.")
 (define-public r-samplingvarest
   (package
     (name "r-samplingvarest")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samplingVarEst" version))
               (sha256
                (base32
-                "0gzz0qz67h3vpdsi5g1w7fkyacj8789qxmj353q7pd0jm20q60l1"))))
+                "0h78dzb18cknmg6bnjfxaqfdayyghq6skxca1dj1idqh9p4igaqq"))))
     (properties `((upstream-name . "samplingVarEst")))
     (build-system r-build-system)
-    (home-page "http://www.quantos.mx")
+    (home-page "https://www.quantos.mx/")
     (synopsis "Sampling Variance Estimation")
     (description
-     "This package provides functions to calculate some point estimators and
-estimating their variance under unequal probability sampling without
-replacement.  Single and two stage sampling designs are considered.  Some
-approximations for the second order inclusion probabilities (joint inclusion
-probabilities) are available (sample and population based).  A variety of
-Jackknife variance estimators are implemented.  Almost every function is written
-in C (compiled) code for faster results.  The functions incorporate some
-performance improvements for faster results with large datasets.")
+     "This package provides functions to calculate some point estimators and estimate
+their variance under unequal probability sampling without replacement.  Single
+and two-stage sampling designs are considered.  Some approximations for the
+second-order inclusion probabilities (joint inclusion probabilities) are
+available (sample and population based).  A variety of Jackknife variance
+estimators are implemented.  Almost every function is written in C (compiled)
+code for faster results.  The functions incorporate some performance
+improvements for faster results with large datasets.")
     (license license:gpl2+)))
 
 (define-public r-samplingstrata

@@ -1499,13 +1499,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "explore" version))
               (sha256
                (base32
-                "13kagxk9av6ns3dw2yxfxrz2ficlknbflf0s0j3rgkmh25icswg9"))))
+                "11h3a6npnimaidfr8dx1yq872131hd9nyc4igcb49ibrxnhcnc8f"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

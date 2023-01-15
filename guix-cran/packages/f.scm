@@ -11411,13 +11411,13 @@ disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
 (define-public r-finalfit
   (package
     (name "r-finalfit")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finalfit" version))
               (sha256
                (base32
-                "0h7wzpmsr0bfk4y3k49c2vyd4ianvvhrnh7j0nxpia1qvrakyvf9"))))
+                "16jbmzs5hx328vvggk5g3q5rmyaf82dmxgifjv28w2lb80ryjay1"))))
     (properties `((upstream-name . "finalfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

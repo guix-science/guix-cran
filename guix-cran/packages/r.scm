@@ -18408,13 +18408,13 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-3.1")
+    (version "0.7-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "049j18xyahw1vm0j3173c1cyf6gb4g973jglrp94ncbi63x1dgaj"))))
+                "0418nmgqjqbqphcjaang2w0mdsbq4a7h89xdkr1nqbmkafyxv90g"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -32965,13 +32965,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-3")
+    (version "0.9-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDS" version))
               (sha256
                (base32
-                "0kcq5ym6l80shzxf9zv2rwb84r0q9qr2cwimcg76r97sfx7c2kp2"))))
+                "0c0f2r5ni0ma3msk42zj8nn8xd61bx9b4v5lx4airssx5mx2nx2v"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -32985,7 +32985,7 @@ interior-point method.")
                              r-ggplot2
                              r-ergm
                              r-anytime))
-    (home-page "http://wiki.stat.ucla.edu/hpmrg/")
+    (home-page "https://hpmrg.org")
     (synopsis "Respondent-Driven Sampling")
     (description
      "This package provides functionality for carrying out estimation with data
@@ -41567,17 +41567,17 @@ that generate RapiDoc documentation from an OpenAPI Specification:
 (define-public r-rapidatetime
   (package
     (name "r-rapidatetime")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RApiDatetime" version))
               (sha256
                (base32
-                "0a6wnx87cizs3cfx94mczf8cm7hwkn9rfckmk738cajgs4ahnwwr"))))
+                "07zp27124pavqxc7arxnhphyi3c5y7ig4ampylw84z4h532gvsv4"))))
     (properties `((upstream-name . "RApiDatetime")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/rapidatetime")
-    (synopsis "R API Datetime")
+    (synopsis "R API for 'Date' and 'Datetime'")
     (description
      "Access to the C-level R date and datetime code is provided for C-level API use
 by other packages via registration of native functions.  Client packages simply

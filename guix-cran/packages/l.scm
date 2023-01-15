@@ -4284,15 +4284,16 @@ Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 (define-public r-logicdt
   (package
     (name "r-logicdt")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logicDT" version))
               (sha256
                (base32
-                "082cqqdlr43z8a9v2g3gb03xz13p2dy99vqrkpnvwa1shy093b96"))))
+                "0bgbllrvjlrhr2cb65z741m07vpk02y7vwmxi2whivwfdnxqw0dc"))))
     (properties `((upstream-name . "logicDT")))
     (build-system r-build-system)
+    (propagated-inputs (list r-glmnet))
     (home-page "https://cran.r-project.org/package=logicDT")
     (synopsis "Identifying Interactions Between Binary Predictors")
     (description

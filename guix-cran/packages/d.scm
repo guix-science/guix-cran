@@ -11811,13 +11811,13 @@ model parameters using the Gibbs sampler described by Culpepper (2015)
 (define-public r-dimora
   (package
     (name "r-dimora")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIMORA" version))
               (sha256
                (base32
-                "07gf1d7w1r6xpwnqnybnp22hrjqk47l1bjcpp4zhkb9ran3mc2gc"))))
+                "17ga6a8bpazd40nd1m738k39isvvvhbbr1zajkbli2yvcbfffjk1"))))
     (properties `((upstream-name . "DIMORA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-numderiv r-minpack-lm r-forecast

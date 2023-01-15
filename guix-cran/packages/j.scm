@@ -1302,25 +1302,29 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpgrid
   (package
     (name "r-jpgrid")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpgrid" version))
               (sha256
                (base32
-                "15a5gv3jw3r320rnvi5dpwp3psfq08v7im95jnwvk1b53pmabc87"))))
+                "0vv2l08crlhf62qlk6gzllszagfacg1lawl4kmr3rlz2n73s7y9v"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-units
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-stickyr
                              r-stars
                              r-sf
                              r-rlang
                              r-purrr
+                             r-pillar
                              r-magrittr
+                             r-lifecycle
                              r-geosphere
                              r-dplyr))
     (home-page "https://github.com/UchidaMizuki/jpgrid")

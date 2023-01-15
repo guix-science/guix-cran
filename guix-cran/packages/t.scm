@@ -13245,13 +13245,13 @@ Workforce Indicator is available at
 (define-public r-tidyquery
   (package
     (name "r-tidyquery")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyquery" version))
               (sha256
                (base32
-                "1xkcwccwc58140zdzwv6ip98c5vxjf67y7cbghvdzv2nx5agrhq9"))))
+                "0ld48yqnfhn8j9ikadic55qwjxacp1f8bzihrfw0sh1r3kvl8yib"))))
     (properties `((upstream-name . "tidyquery")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-queryparser r-lubridate

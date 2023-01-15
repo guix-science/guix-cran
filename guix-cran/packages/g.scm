@@ -16023,13 +16023,13 @@ Also the package allows for external function embedding.")
 (define-public r-ggip
   (package
     (name "r-ggip")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggip" version))
               (sha256
                (base32
-                "1wh7yj445152p9ynq2l1cp1cm2si88s3dbb9qpszimlzgqvzv8la"))))
+                "1x4gxrhg4d7syah5xkgv258mw4f3n1x9xkjqayrrpq3vjqwd0s74"))))
     (properties `((upstream-name . "ggip")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
