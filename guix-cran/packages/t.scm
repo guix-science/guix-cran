@@ -17560,13 +17560,13 @@ DoseFinding package, which is used for the fitting of the models.  See
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.1.1")
+    (version "3.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestGardener" version))
               (sha256
                (base32
-                "1rs2zpnhgyr4cqr1lq4gzq79ng0k28h0ra64v5g46xmi4whklc8a"))))
+                "0lk4yrrzl5vhkhgcn7p1pfl5kg61h1kq36gmwfd6xpibwzfqxcpn"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -19801,13 +19801,13 @@ et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDApplied" version))
               (sha256
                (base32
-                "034ix6mm7s4vmbvz5w0x1shz9iayfp2lm3pnwkbb2my91ym3n8gw"))))
+                "13n2w4w1dq0j5n7zdh7f0pnjjdq80mpz7rx5xh5px2mggkjn3x41"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist

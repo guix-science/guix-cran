@@ -10093,17 +10093,17 @@ turn allows for more stable fitting.  Other fitting methods, such as MCMC
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.4.1-1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitODBOD" version))
               (sha256
                (base32
-                "0sx7la3bcii8fh8ril5ibbr4x97zgqwl7h889gnk6j733pcmgx0p"))))
+                "0nr2ljnk2glrayainm4dnpyw2bp8vfyjws2p7nry6x4f8vvw9y0v"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
     (propagated-inputs (list r-hypergeo r-bbmle))
-    (home-page "https://github.com/Amalan-ConStat/R-fitODBOD")
+    (home-page "https://github.com/Amalan-ConStat/fitODBOD")
     (synopsis
      "Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD")
     (description
@@ -10113,7 +10113,7 @@ Binomial Mixture Distributions (BMD) (Manoj et al (2013)
 <doi:10.5539/ijsp.v2n2p24>) and Alternate Binomial Distributions (ABD) (Paul
 (1985) <doi:10.1080/03610928508828990>), also Journal article to use the
 package(<doi:10.21105/joss.01505>).")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-fitmix
   (package

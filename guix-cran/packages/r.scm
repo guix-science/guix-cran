@@ -3010,13 +3010,13 @@ for more information about TRIM.")
 (define-public r-rtriangle
   (package
     (name "r-rtriangle")
-    (version "1.6-0.11")
+    (version "1.6-0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RTriangle" version))
               (sha256
                (base32
-                "0m6r1k7ryl6nxxfkqhq2wrg6878yirp5mdmyaxpg8wxkribp7yr3"))))
+                "1nvbbmvakxwi6w5f46i75yd9r70z5h24lnvkn20cqsb5jbx13mxy"))))
     (properties `((upstream-name . "RTriangle")))
     (build-system r-build-system)
     (home-page "https://github.com/davidcsterratt/RTriangle")
@@ -4460,13 +4460,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.2")
+    (version "9.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "01q71fkbb40apyl89sldcqg4l8dycgkiw10fjb73cinv4z5iwwzq"))))
+                "17vzxlwzdd62mn8gr4hsmy2cq0bzh9vdfm3k2h7621a7dz3y588y"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -27067,6 +27067,38 @@ reports, including automated curation and time-stamping of outputs,
 parameterisation and provision of helper functions to manage dependencies.")
     (license license:expat)))
 
+(define-public r-reporter-nih
+  (package
+    (name "r-reporter-nih")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "repoRter.nih" version))
+              (sha256
+               (base32
+                "0y3kx8hj8pg1rn1n8bp46r4nzmbgv6s44w5ydgh47vn8yav635qg"))))
+    (properties `((upstream-name . "repoRter.nih")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-crayon
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bikeactuary/repoRter.nih")
+    (synopsis "R Interface to the 'NIH RePORTER Project' API")
+    (description
+     "This package provides methods to easily build requests in the non-standard JSON
+schema required by the National Institute of Health (NIH)'s RePORTER Project API
+<https://api.reporter.nih.gov/#/Search/post_v2_projects_search>.  Also retrieve
+and process result sets as either a ragged or flattened tibble'.")
+    (license license:expat)))
+
 (define-public r-reporter
   (package
     (name "r-reporter")
@@ -39332,13 +39364,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rbeast" version))
               (sha256
                (base32
-                "0b0arw8db731lpym28v98gc28ka4c94b50blh3zps84ydbd3ql4w"))))
+                "0l5k3a59p0cr9cq9wmg4dh0bwhsp93xm7w7vajp6yd0k24mkcqlk"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (home-page "https://github.com/zhaokg/Rbeast")
@@ -45275,20 +45307,20 @@ format.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2resize" version))
               (sha256
                (base32
-                "14zk3vhisb3fy2khx7w98zl4jzq2pnyh9sdpjc5rbr3yqpmj6mi2"))))
+                "1z9q9kq5jkaxlz0wr0jk57ix41pfx8ny1pyha8f7n0xxdph819c6"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-dt))
     (native-inputs (list r-knitr))
-    (home-page "https://r2resize.obi.obianom.com/")
+    (home-page "https://r2resize.obi.obianom.com")
     (synopsis
-     "In-Text Resizing for Containers, Images and Data Tables in 'Shiny', 'Markdown' and 'Quarto' Documents")
+     "In-Text Expandable and Resizable Containers, Images and Data Tables in 'Shiny', 'Markdown' and 'Quarto' Documents")
     (description
      "Automatic resizing toolbar for containers, images and tables.  Most suitable to
 include resize functionality in Markdown', Rmarkdown and Quarto documents.")

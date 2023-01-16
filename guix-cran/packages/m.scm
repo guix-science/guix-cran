@@ -13770,21 +13770,22 @@ Journal of Statistical Software, Vol.  14, No.  3 (May), pp.  1-32.
 (define-public r-mnorm
   (package
     (name "r-mnorm")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mnorm" version))
               (sha256
                (base32
-                "0k0nppj50hfy2z6rs1856jd1xam8q1ag3xilq6bc8cn5gvjnwhgn"))))
+                "0pw9hkqmblwvkhkkkzyzd8filr9dzrsl378c2zdvsdllawwnrx3s"))))
     (properties `((upstream-name . "mnorm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-hpa))
     (home-page "https://cran.r-project.org/package=mnorm")
     (synopsis "Multivariate Normal Distribution")
     (description
      "Calculates and differentiates probabilities and density of (conditional)
-multivariate normal distribution using methods described in A. Genz (2004)
+multivariate normal distribution and Gaussian copula (with various marginal
+distributions) using methods described in A. Genz (2004)
 <doi:10.1023/B:STCO.0000035304.20635.31>, A. Genz, F. Bretz (2009)
 <doi:10.1007/978-3-642-01689-9> and E. Kossova, B. Potanin (2018)
 <https:ideas.repec.org/a/ris/apltrx/0346.html>.")
@@ -18035,13 +18036,13 @@ by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
 (define-public r-mixopt
   (package
     (name "r-mixopt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixopt" version))
               (sha256
                (base32
-                "0szqrlnnbq152343dic54rjj8rafrnwci1xfjy014q1nwjxz0wfd"))))
+                "06al9nsgf1lz397w62dzlkqy1r9agrl8sr3waw0mh02c209mjmiy"))))
     (properties `((upstream-name . "mixopt")))
     (build-system r-build-system)
     (home-page "https://github.com/CollinErickson/mixopt")

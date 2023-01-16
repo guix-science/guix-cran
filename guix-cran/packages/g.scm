@@ -4757,13 +4757,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greeks" version))
               (sha256
                (base32
-                "18zfb3mid8vzqdbvkfkzqnm439mb60yadslbcla254w5qppyj7fp"))))
+                "1lg3apccnhnms3chgic0y587i9d8bi7r9pzffmywld7s9sdng8lz"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4774,6 +4774,7 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
                              r-magrittr
                              r-ggplot2
                              r-dqrng))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=greeks")
     (synopsis
      "Sensitivities of Prices of Financial Options and Implied Volatilites")
@@ -14104,17 +14105,16 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.9")
+    (version "0.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggspectra" version))
               (sha256
                (base32
-                "1x561b8vpiajj5icmcw99vcmkg451y7aimqzdz3vi8qmjmgshvi6"))))
+                "1365q7frvdzq5723h7yi2slb7hpsqmyx738qyv0k3k6656axbjwi"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-scales
                              r-rlang
                              r-photobiologywavebands

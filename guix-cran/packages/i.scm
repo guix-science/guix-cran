@@ -630,13 +630,13 @@ and Forecasting\" by Peter J. Brockwell and Richard A. Davis.
 (define-public r-itsdm
   (package
     (name "r-itsdm")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itsdm" version))
               (sha256
                (base32
-                "0d8d2lnw0k01bd1q09qrbazk8a8zphmcf5madw4zaavi4ljqrg5f"))))
+                "0n5x4zjqs6a3r8mpd2n6g16alfq42m9j70lm67lwwhiycpwvy1w5"))))
     (properties `((upstream-name . "itsdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -649,6 +649,7 @@ and Forecasting\" by Peter J. Brockwell and Richard A. Davis.
                              r-patchwork
                              r-outliertree
                              r-ncdf4
+                             r-mgcv
                              r-isotree
                              r-ggplot2
                              r-fastshap
@@ -11183,6 +11184,38 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (2021) <doi:10.1080/07350015.2019.1635486>.")
     (license license:gpl3)))
 
+(define-public r-ils
+  (package
+    (name "r-ils")
+    (version "0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ILS" version))
+              (sha256
+               (base32
+                "0l4rrl1j72lqg87nzw4xap054gl2h3m90g8sl5bzg3jc7c290rd7"))))
+    (properties `((upstream-name . "ILS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-multcomp r-mass r-lattice r-fda-usc
+                             r-depthtools))
+    (home-page "https://github.com/mflores72000/ILS/")
+    (synopsis "Interlaboratory Study")
+    (description
+     "It performs interlaboratory studies (ILS) to detect those laboratories that
+provide non-consistent results when comparing to others.  It permits to work
+simultaneously with various testing materials, from standard univariate, and
+functional data analysis (FDA) perspectives.  The univariate approach based on
+ASTM E691-08 consist of estimating the Mandel's h and k statistics to identify
+those laboratories that provide more significant different results, testing also
+the presence of outliers by Cochran and Grubbs tests, Analysis of variance
+(ANOVA) techniques are provided (F and Tuckey tests) to test differences in
+means corresponding to different laboratories per each material.  Taking into
+account the functional nature of data retrieved in analytical chemistry, applied
+physics and engineering (spectra, thermograms, etc.).  ILS package provides a
+FDA approach for finding the Mandel's k and h statistics distribution by
+smoothing bootstrap resampling.")
+    (license license:gpl2+)))
+
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
@@ -11578,6 +11611,29 @@ interactions in the immunoglobulin protein, the karate club network,
 Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK
 faculty friendship network, domestic US flights network, etc.")
     (license (license:fsdg-compatible "CC BY-SA 4.0 + file LICENSE"))))
+
+(define-public r-igp
+  (package
+    (name "r-igp")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IGP" version))
+              (sha256
+               (base32
+                "061ykq17nbpkl0428m83m3cw4yjqq0c4986zz9fl0yb1vfb86cyc"))))
+    (properties `((upstream-name . "IGP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-r6))
+    (home-page "https://github.com/CollinErickson/IGP")
+    (synopsis "Interchangeable Gaussian Process Models")
+    (description
+     "This package creates a Gaussian process model using the specified package.
+Makes it easy to try different packages in same code, only the package argument
+needs to be changed.  It is essentially a wrapper for the other Gaussian process
+software packages.  For more info about Gaussian process software and comparison
+of various options, see Erickson et al. (2018) <doi:10.1016/j.ejor.2017.10.002>.")
+    (license license:gpl3)))
 
 (define-public r-igorrr
   (package

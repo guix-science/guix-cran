@@ -5729,13 +5729,13 @@ pre-determined statistical criterion.  Hofmann et al. (2020)
 (define-public r-lmridge
   (package
     (name "r-lmridge")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmridge" version))
               (sha256
                (base32
-                "1wxgsrigyjh22aa4m1z5qs4ac168g1g1g1jnj154490znfqdqip0"))))
+                "1lngzhxgjdg4j2bxi680zdsj0ambrpn23v2ib0mbilscbv3p8701"))))
     (properties `((upstream-name . "lmridge")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=lmridge")
@@ -15574,13 +15574,13 @@ of the new functional geography.")
 (define-public r-labnorm
   (package
     (name "r-labnorm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "labNorm" version))
               (sha256
                (base32
-                "008qmwm03l5yldba5y2y4i8vg30j7wjc7r3kdhchdpb72dj318c3"))))
+                "0sd77b4g9r3y1kch9zxxa2p7hnsjh72fspi3f2hkb8rk3g28npxx"))))
     (properties `((upstream-name . "labNorm")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno

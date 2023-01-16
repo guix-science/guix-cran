@@ -18420,13 +18420,13 @@ change <doi:10.1007/s10109-020-00342-2>.")
 (define-public r-abmr
   (package
     (name "r-abmr")
-    (version "1.0.6")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "abmR" version))
               (sha256
                (base32
-                "12j6l0fsr2qpm6rvmvakvayy5qn0gi01sxpk72jijymn9czsgv8j"))))
+                "077xinshk9am000ic5m70f4m7094ipqyx9cxyhq0smbpg0h6kn7f"))))
     (properties `((upstream-name . "abmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -18434,10 +18434,8 @@ change <doi:10.1007/s10109-020-00342-2>.")
                              r-swfscmisc
                              r-sp
                              r-sf
-                             r-rnaturalearthdata
                              r-rnaturalearth
                              r-rgeos
-                             r-rgdal
                              r-raster
                              r-purrr
                              r-kableextra

@@ -4239,16 +4239,16 @@ correlation structure based on WGEE/GEE.")
 (define-public r-wflo
   (package
     (name "r-wflo")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wflo" version))
               (sha256
                (base32
-                "051hgfj74qc8ilcsrkd2ppvaab685l4c7kk9rwr2zb6aj6asfbkl"))))
+                "01k2y8sz08npm8nv21z8gwi3msb6kybin245irjrjsxass999zbj"))))
     (properties `((upstream-name . "wflo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster r-progress r-plotrix r-emstreer))
+    (propagated-inputs (list r-terra r-sf r-progress r-plotrix r-emstreer))
     (home-page "https://cran.r-project.org/package=wflo")
     (synopsis
      "Data Set and Helper Functions for Wind Farm Layout Optimization Problems")

@@ -17707,13 +17707,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.8.9")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "0v4grygwrm0bwsxll9bik0s41mjhjqglqaqvkcw8d3phynh6fanc"))))
+                "0b7drr0yb3wffkj3m2ll1lk4si4f9b3wjbddr7zrx6vj9xq5gswy"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -17723,29 +17723,21 @@ functions provided only work for binary classification problems.")
     (description
      "This package provides a C/C++ based package for advanced data transformation and
 statistical computing in R that is extremely fast, class-agnostic, and
-programmer friendly through a flexible and parsimonious syntax.  It is well
-integrated with base R, dplyr / (grouped) tibble', data.table', sf', plm
-(panel-series and data frames), and non-destructively handles other matrix or
-data frame based classes (like ts', xts / zoo', tsibble', ...) --- Key Features:
---- (1) Advanced statistical programming: A full set of fast statistical
-functions supporting grouped and weighted computations on vectors, matrices and
-data frames.  Fast and programmable grouping, ordering, unique values/rows,
-factor generation and interactions.  Fast and flexible functions for data
-manipulation, data object conversions, and memory efficient R programming. (2)
-Advanced aggregation: Fast and easy multi-data-type, multi-function, weighted
-and parallelized data aggregation. (3) Advanced transformations: Fast row/column
-arithmetic, (grouped) replacing and sweeping out of statistics (by reference),
-(grouped, weighted) scaling/standardizing, (higher-dimensional) between
-(averaging) and (quasi-)within (demeaning) transformations, linear prediction,
-model fitting and testing exclusion restrictions. (4) Advanced
-time-computations: Fast and flexible indexed time series and panel data classes.
- Fast (sequences of) lags/leads, and (lagged/leaded, iterated, quasi-, log-)
-differences and (compounded) growth rates on (irregular) time series and panels.
- Multivariate auto-, partial- and cross-correlation functions for panel data.
-Panel data to (ts-)array conversions. (5) List processing: Recursive list
-search, splitting, extraction/subsetting, apply, and generalized row-binding /
-unlisting to data frame. (6) Advanced data exploration: Fast (grouped, weighted,
-panel-decomposed) summary statistics and descriptive tools.")
+programmer friendly through a flexible, parsimonious, and robust API. Core
+functionality includes a rich set of S3 generic grouped and weighted statistical
+functions for vectors, matrices and data frames, which provide efficient
+low-level vectorizations and OpenMP multithreading (reducing the need for
+iteration/vectorization in R), and skip missing values by default.  These are
+integrated with fast grouping and ordering algorithms (also callable from C),
+and efficient data manipulation functions.  The package also provides a flexible
+and rigorous approach to time series and panel data in R. It further includes
+fast functions for common statistical procedures, detailed (grouped, weighted)
+summary statistics, powerful tools to work with nested data, fast data object
+conversions, functions for memory efficient R programming, and helpers to
+effectively deal with variable labels, attributes, and missing data.  It is well
+integrated with basic R, dplyr'/'tibble', data.table', sf', plm (panel-series
+and data frames), and accommodates (by virtue of smart internal attribute
+handling) many other classes (like ts', xts'/'zoo or tsibble').")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -37167,13 +37159,13 @@ the work of Quinlan (1993, ISBN:1-55860-238-0).")
 (define-public r-c443
   (package
     (name "r-c443")
-    (version "3.3")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "C443" version))
               (sha256
                (base32
-                "1ngk95m67aplpvcva02y3njwv4gcdh4yf0jgkdjzw6prg4h70jla"))))
+                "1a7dz7h0imdq6s51mksjb9phdagy11wk3rbgbp52q2zzdl91xa36"))))
     (properties `((upstream-name . "C443")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -37187,7 +37179,7 @@ the work of Quinlan (1993, ISBN:1-55860-238-0).")
                              r-gridextra
                              r-ggplot2
                              r-cluster))
-    (home-page "https://cran.r-project.org/package=C443")
+    (home-page "https://github.com/KULeuven-PPW-OKPIV/C443")
     (synopsis "See a Forest for the Trees")
     (description
      "Get insight into a forest of classification trees, by calculating similarities

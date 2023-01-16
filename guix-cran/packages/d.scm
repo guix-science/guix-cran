@@ -21810,13 +21810,13 @@ against multiple versions of your data frame.")
 (define-public r-dataverse
   (package
     (name "r-dataverse")
-    (version "0.3.11")
+    (version "0.3.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataverse" version))
               (sha256
                (base32
-                "1h4bbmnzssk1bycimks6536f3n9g6bb41hdycxyx8ald2gnx1c06"))))
+                "0kqyl5cz83bc50xiwis4friwa7p2bs9gj4i5027sxslqva2d6ysn"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-readr r-jsonlite r-httr r-checkmate))
@@ -22701,26 +22701,26 @@ individual vectors.  For more information see
 (define-public r-datagovsgr
   (package
     (name "r-datagovsgr")
-    (version "0.3.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datagovsgR" version))
               (sha256
                (base32
-                "17gvqbvcbsdnbp8rp0a27rflni328mdn70v5jj4ywhgykmlk9k8r"))))
+                "1vi3pql1k563ggvqr0d673z2aspvqi1w384lslinnsq85cwcfcly"))))
     (properties `((upstream-name . "datagovsgR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-purrr r-httr r-dplyr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=datagovsgR")
-    (synopsis "Calls Real Time APIs from Data Gov Singapore")
+    (synopsis "Call Real Time APIs from Data Gov Singapore")
     (description
-     "This package provides a wrapper for the Data Gov Singapore developer resources
-endpoints developer tools, which provide real time and historical information,
-ranging from carpark availability to weather forecasts.  This tools makes the
-API calls for a given date and time, before returning the relevant information
-in a data frame.  Relevant information can be found here
-<https://data.gov.sg/developer>.")
+     "This package provides a wrapper for the Data.gov.sg developer resources, which
+provide real time and historical information, ranging from carpark availability
+to weather forecasts.  The functions makes the API calls for a given date and
+time, before returning the relevant information in a data frame.  All APIs are
+supported, less the IPOS one which is not returning any data.  Relevant
+information can be found here <https://data.gov.sg/developer>.")
     (license license:expat)))
 
 (define-public r-datafsm

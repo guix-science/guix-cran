@@ -2640,13 +2640,13 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
 (define-public r-svd
   (package
     (name "r-svd")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svd" version))
               (sha256
                (base32
-                "0rz0alvj1aza7dncvc948s5kmjvggy8drr08hi5fz1q4s1znwn0g"))))
+                "1rmkz42kflf253s9jya008n2cmh8p180giggcfrr3qxfg92abkhl"))))
     (properties `((upstream-name . "svd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -29871,13 +29871,13 @@ Testing, and Evaluation\" <doi:10.1101/2021.07.21.453083>.")
 (define-public r-skat
   (package
     (name "r-skat")
-    (version "2.2.4")
+    (version "2.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SKAT" version))
               (sha256
                (base32
-                "1gq8zy3rrpsx09bgli30cx32k73yn4jzqig250s8rl8aasb9hd1b"))))
+                "1x2iyvzc66lmzwjdr8hy5gf3nxc7ik5vhbs40w00d2m7nr3glh8l"))))
     (properties `((upstream-name . "SKAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatest r-rspectra r-matrix))
@@ -29886,15 +29886,7 @@ Testing, and Evaluation\" <doi:10.1101/2021.07.21.453083>.")
     (description
      "This package provides functions for kernel-regression-based association tests
 including Burden test, SKAT and SKAT-O. These methods aggregate individual SNP
-score statistics in a SNP set and efficiently compute SNP-set level p-values.
-Methods available in this package include SKAT described in Micheal Wu,
-Seunggeun Lee et al. (2011) <doi:10.1016/j.ajhg.2011.05.029>, SKAT-O in
-Seunggeun Lee et al. (2012) <doi:10.1093/biostatistics/kxs014>, combined test of
-rare and common variants in Iuliana Ionita-Laza and Seunggeun Lee et al. (2013)
-<doi:10.1016/j.ajhg.2013.04.015>, efficient resampling for binary traits in
-Seunggeun Lee et al. (2016) <doi:10.1093/biostatistics/kxv033>, and robust test
-for binary traits in Zhangchen Zhao et al. (2020)
-<doi:10.1016/j.ajhg.2019.11.012>.")
+score statistics in a SNP set and efficiently compute SNP-set level p-values.")
     (license license:gpl2+)))
 
 (define-public r-sjtable2df
@@ -35345,22 +35337,24 @@ execution, and monitoring of federal discretionary transfers in Brazil.")
 (define-public r-siconfir
   (package
     (name "r-siconfir")
-    (version "1.0.5")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "siconfir" version))
               (sha256
                (base32
-                "0xmn8rjlfqjr73qgdm5zih6hf52f5qy4n9zgqdmfmkv73a2pnam1"))))
+                "0x23hhy61af039q8r6s2fdfqgcl7lxb9cwkii0vklklni0n8pjya"))))
     (properties `((upstream-name . "siconfir")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
+                             r-rlang
                              r-purrr
                              r-magrittr
                              r-httr
                              r-dplyr))
-    (home-page "https://github.com/pedrocastroo/siconfir")
+    (home-page "https://github.com/aspeddro/siconfir")
     (synopsis "Quick and Easy Access Tax and Accounting Data of Brazil")
     (description
      "Access tax and accounting data of Brazilian states and municipalities provided

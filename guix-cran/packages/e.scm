@@ -7923,13 +7923,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.54")
+    (version "2.0.56")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "0x8h4ry4dx01s0rvihv7qjdyhdgncjip10xi13iac6ra910znzdr"))))
+                "1w89cxfm0ldxi95q2ayakz4m02a7p6i6csjmrawpf17xbncvf92q"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15797,13 +15797,13 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
 (define-public r-edear
   (package
     (name "r-edear")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edeaR" version))
               (sha256
                (base32
-                "1zv6fr7n8arx610ccbml04gfrzm9ry3s0lw68hhyijw43xvxrd3z"))))
+                "0l03kabpcxfp04naa62p5pc70fbhv70dj6vkcv0b30sczljbcdhz"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

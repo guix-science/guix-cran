@@ -32870,13 +32870,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pak" version))
               (sha256
                (base32
-                "11vs377jfwxf8qpzf0pv5pkkdjzb6l3l5a35f2w1y1s88xz5rl1d"))))
+                "1jlcfnx0gqvslc8idqh2p7z6h1r5vqz7vyzfpk4gl1rnlg26q894"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (home-page "https://pak.r-lib.org/")
