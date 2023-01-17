@@ -7391,13 +7391,13 @@ packages.")
 (define-public r-lintools
   (package
     (name "r-lintools")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lintools" version))
               (sha256
                (base32
-                "1hh1wywa26a9aa2xrmaz2w95wgk8x7cj0b9731yfq0bzzphh6xdl"))))
+                "03sfx1w3kl7xk79bpw6hddk7xylh2w2fp9zsgbd50150xp49p1ah"))))
     (properties `((upstream-name . "lintools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11772,6 +11772,35 @@ general (not R specific) information on the algorithm Leabra see
 <https://grey.colorado.edu/emergent/index.php/Leabra>.")
     (license license:gpl2)))
 
+(define-public r-ldt
+  (package
+    (name "r-ldt")
+    (version "0.1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ldt" version))
+              (sha256
+               (base32
+                "05zjvsdj8zmyc6ji4h9x16h9d2w6rlw83gz6gwbc2gsnn282dyil"))))
+    (properties `((upstream-name . "ldt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-rcpp r-jsonlite r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rmojab63/LDT")
+    (synopsis "Let Data Talk")
+    (description
+     "This package provides methods and tools for creating a model set and estimating
+and evaluating the explanation or prediction power of its members.  SUR
+modelling (for parameter estimation), logit'/'probit modelling (for binary
+classification), and VARMA modelling (for time-series forecasting) are
+implemented.  Evaluations are both in-sample and out-of-sample.  It can be used
+for stepwise regression analysis
+<https://en.wikipedia.org/wiki/Stepwise_regression>, automatic model selection
+and model averaging (Claeskens and Hjort (2008, ISBN:1139471805,
+9781139471800)), calculating benchmarks, and doing sensitivity analysis (Leamer
+(1983) <https://www.jstor.org/stable/1803924> proposal).")
+    (license license:gpl3+)))
+
 (define-public r-ldsr
   (package
     (name "r-ldsr")
@@ -14471,13 +14500,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.2.2")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landsepi" version))
               (sha256
                (base32
-                "0pv2avabcs3kqygc6r3ggs368la0z0snfilp4q1jd46hww7ag9dj"))))
+                "1cw3aia8jwnwl2zxm65p6jjaffmlpr1aqc5aa96qqcmjy6bg26an"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (inputs (list gsl))

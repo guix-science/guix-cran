@@ -762,6 +762,44 @@ approximation.  Reference: McArdle and McDonald (1984)
 <doi:10.1111/j.2044-8317.1984.tb00802.x>.")
     (license license:gpl2+)))
 
+(define-public r-symphony
+  (package
+    (name "r-symphony")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "symphony" version))
+              (sha256
+               (base32
+                "0bgdhah202sh5mjbzqzk14vkl6xwdxxhri0ik03xh654b4s8hscc"))))
+    (properties `((upstream-name . "symphony")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uwot
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-rann
+                             r-purrr
+                             r-matrix
+                             r-magrittr
+                             r-irlba
+                             r-harmony
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-class))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=symphony")
+    (synopsis "Efficient and Precise Single-Cell Reference Atlas Mapping")
+    (description
+     "This package implements the Symphony single-cell reference building and query
+mapping algorithms and additional functions described in Kang et al
+<https://www.nature.com/articles/s41467-021-25957-x>.")
+    (license license:gpl3+)))
+
 (define-public r-symmoments
   (package
     (name "r-symmoments")
@@ -3261,13 +3299,13 @@ GSE1992, GSE3143 and GSE4335.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.0.4")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survivoR" version))
               (sha256
                (base32
-                "0d5h922ahvi473v2s0hym6k88j95ay13ysk2ca14jz7j85kihin9"))))
+                "15y50lnc1igkf1dky6v9gymqdg8hmvk0ycv463xlvkyzk53ckwd6"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11773,23 +11811,26 @@ this context.")
 (define-public r-starry
   (package
     (name "r-starry")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "starry" version))
               (sha256
                (base32
-                "16qj20glr5xwh718r0mh0qgbqikwg3si78yxq61z16i3qfb0gdp6"))))
+                "18dn18y5vs4fhj3jzm2zmvyx2wqakkrkppmggizz60vrarnaqp8i"))))
     (properties `((upstream-name . "starry")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
                              r-shinyjs
                              r-shiny
                              r-magrittr
                              r-ggplot2
                              r-dplyr
+                             r-corrr
+                             r-car
                              r-bslib))
-    (home-page "https://cran.r-project.org/package=starry")
+    (home-page "https://joe-chelladurai.github.io/starry/")
     (synopsis "Explore Data with Plots and Tables")
     (description
      "This package provides modular functions and applications for quickly generating
@@ -13972,13 +14013,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.3.8")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSBtools" version))
               (sha256
                (base32
-                "1vc15wcg8469vplxykzs3g5nb7a5nr2v8zdypj1gaghalv00iadf"))))
+                "0r49l9ik999gyirs337dmllpq025j56wmis7ij9vkd9gkns5kq9f"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -15144,13 +15185,13 @@ enough.")
 (define-public r-spsurvey
   (package
     (name "r-spsurvey")
-    (version "5.4.0")
+    (version "5.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spsurvey" version))
               (sha256
                (base32
-                "1sd7h342yih8hgiry0zip0nymgnak5d67320kimv6ajrx13v23z3"))))
+                "08wfdbjs6q8anfq0rvynjypivr4fyk4k10ri25caiwcw5s42df0c"))))
     (properties `((upstream-name . "spsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -15180,7 +15221,8 @@ variable analysis, continuous variable analysis, attributable risk analysis,
 risk difference analysis, relative risk analysis, change analysis, and trend
 analysis.  spsurvey can also be used to summarize objects, visualize objects,
 select samples that are not spatially balanced, select panel samples, measure
-the amount of spatial balance in a sample, adjust design weights, and more.")
+the amount of spatial balance in a sample, adjust design weights, and more.  For
+additional details, see Dumelle et al. (2023) <doi:10.18637/jss.v105.i03>.")
     (license license:gpl3+)))
 
 (define-public r-spsurv
@@ -20063,13 +20105,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.30.2.0")
+    (version "0.31.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatPomp" version))
               (sha256
                (base32
-                "10l22mqm425f2p1hlfx2rgxq1szn6i19dsn6jzsgq8azrslvwr88"))))
+                "0zjsqpn536644fmyyarkmw46m053mx38k6dl1ahvpca414s0m5rh"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -30842,6 +30884,44 @@ function.  Please see W., Y., Y. (2010) <doi:10.1016/j.jmva.2010.02.003> for
 details.")
     (license license:gpl3)))
 
+(define-public r-sipmg
+  (package
+    (name "r-sipmg")
+    (version "1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIPmg" version))
+              (sha256
+               (base32
+                "1ixab9v1gdzdrmlz8x836nda1ipmnh3psr3k9psmfidpd117ja60"))))
+    (properties `((upstream-name . "SIPmg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-phyloseq
+                             r-mass
+                             r-magrittr
+                             r-lazyeval
+                             r-htssip
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-deseq2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://zielslab.github.io/SIPmg.github.io/")
+    (synopsis "Statistical Analysis to Identify Isotope Incorporating MAGs")
+    (description
+     "Statistical analysis as part of a stable isotope probing (SIP) metagenomics
+study to identify isotope incorporating taxa recovered as metagenome-assembled
+genomes (MAGs).  Helpful reading and a vignette in bookdown format is provided
+on the package site <https://zielslab.github.io/SIPmg.github.io/>.")
+    (license license:gpl2)))
+
 (define-public r-siplab
   (package
     (name "r-siplab")
@@ -38090,13 +38170,13 @@ interface of the app.")
 (define-public r-shiny-i18n
   (package
     (name "r-shiny-i18n")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shiny.i18n" version))
               (sha256
                (base32
-                "0gwdrbdsibffq314pzws2gr74fp701kb3rwdiwxbzzg0pgqpiwp3"))))
+                "0kcdvan8ds1kdqdxk6yvqpxlxv6xj4nxr8mp1qns3fzklyf4n4gy"))))
     (properties `((upstream-name . "shiny.i18n")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -38106,7 +38186,7 @@ interface of the app.")
                              r-r6
                              r-jsonlite
                              r-glue))
-    (home-page "https://github.com/Appsilon/shiny.i18n")
+    (home-page "https://appsilon.github.io/shiny.i18n/")
     (synopsis "Shiny Applications Internationalization")
     (description
      "It provides easy internationalization of Shiny applications.  It can be used as
@@ -46068,13 +46148,13 @@ Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
 (define-public r-sdlfilter
   (package
     (name "r-sdlfilter")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDLfilter" version))
               (sha256
                (base32
-                "1187mcn41l7qqxq130qk5cyh7dcv69b5n07hjcilkpaz5rl6wl2w"))))
+                "0rbq9x6805l4pm66lqa8lc1p81nps9ndbmalhfzhjibxd3d4mgyn"))))
     (properties `((upstream-name . "SDLfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars
@@ -48646,13 +48726,13 @@ interpolation domain.")
 (define-public r-schtools
   (package
     (name "r-schtools")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "schtools" version))
               (sha256
                (base32
-                "0d41zb546kf0yz958v486vbwymx2vn2jgpbqqghqly8hb9bfkg77"))))
+                "0pl91886pnrj4id2wp7wkp5iydprsalnjg6inwhaj295glybbrqg"))))
     (properties `((upstream-name . "schtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -52608,6 +52688,37 @@ residual, one or multiple variance components, etc,...).")
      "This package provides a novel semi-supervised machine learning algorithm to
 predict phenotype event times using Electronic Health Record (EHR) data.")
     (license license:gpl3)))
+
+(define-public r-same
+  (package
+    (name "r-same")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SAME" version))
+              (sha256
+               (base32
+                "0v7x1zl8y81affdp0cs9xxzm03xy9pg8wh9kljwmdq3anmaqhqfg"))))
+    (properties `((upstream-name . "SAME")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rjags
+                             r-ggplot2
+                             r-extradistr
+                             r-expint
+                             r-coda
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=SAME")
+    (synopsis "Seamless Adaptive Multi-Arm Multi-Stage Enrichment")
+    (description
+     "Design a Bayesian seamless multi-arm biomarker-enriched phase II/III design with
+the survival endpoint with allowing sample size re-estimation.  James M S Wason,
+Jean E Abraham, Richard D Baird, Ioannis Gournaris, Anne-Laure Vallier, James D
+Brenton, Helena M Earl, Adrian P Mander (2015) <doi:10.1038/bjc.2015.278>.
+Guosheng Yin, Nan Chen, J. Jack Lee (2018) <doi:10.1007/s12561-017-9199-7>.
+Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
+<doi:10.1002/sim.6971>.")
+    (license license:gpl2)))
 
 (define-public r-samc
   (package

@@ -9106,6 +9106,27 @@ dataloaders'.  Handles data downloading from multiple sources, caching and
 pre-processing so users can focus only on their model implementations.")
     (license license:expat)))
 
+(define-public r-torchaudio
+  (package
+    (name "r-torchaudio")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "torchaudio" version))
+              (sha256
+               (base32
+                "15fr8vl5kw1w8b41lvl6ds8hzyalrw98c136j7lvif7l6h2cnln5"))))
+    (properties `((upstream-name . "torchaudio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch r-rlang r-rcpp r-glue r-fs))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=torchaudio")
+    (synopsis "R Interface to 'pytorch''s 'torchaudio'")
+    (description
+     "This package provides access to datasets, models and processing facilities for
+deep learning in audio.")
+    (license license:expat)))
+
 (define-public r-tor
   (package
     (name "r-tor")
@@ -15368,23 +15389,23 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "0mzb8scdv1f0ppc2hcpkbwn89iqrvf3asncch974q1zfy8q36xbj"))))
+                "179qssmv3cl49b5s6slmqn58w5bmvihpaf0r2pmamqvc0qhgsci5"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
     (synopsis
-     "Get Executing Script's Path, from 'RStudio', 'Rgui', 'VSCode', 'Rscript' (Shells Including Windows Command-Line / / Unix Terminal), and 'source'")
+     "Get Executing Script's Path, from 'Rgui', 'RStudio', 'VSCode', 'source()', and 'Rscript' (Shells Including Windows Command Line / / Unix Terminal)")
     (description
-     "Determine the full path of the executing script.  Works when running a line or
-selection from a script in RStudio', Rgui', and VSCode', when using source',
-sys.source', debugSource in RStudio', testthat::source_file', and knitr::knit',
-and when running from a shell.")
+     "Determine the path of the executing script.  Works when running a line or
+selection in Rgui', RStudio', and VSCode', when using source()', sys.source()',
+debugSource() in RStudio', testthat::source_file()', and knitr::knit()', and
+when running from a shell.")
     (license license:expat)))
 
 (define-public r-thinkr

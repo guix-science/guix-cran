@@ -16672,13 +16672,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.0.1")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlflow" version))
               (sha256
                (base32
-                "1h70cg8xd434f2lwam2zbsjkzvavzz5yqg3wa9v0289h6vp0v5zb"))))
+                "101jzk3rg4dpx01ivjjqs3r933m6vm7sfilsz66czza45q32709x"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -21280,13 +21280,13 @@ from <https://www.gurobi.com> after obtaining a license.")
 (define-public r-mikropml
   (package
     (name "r-mikropml")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mikropml" version))
               (sha256
                (base32
-                "1x0h7hrn7lvjayj7g4cbz8f0m90alswxdfaw61pps8dsgy4y7d9m"))))
+                "0ic8in0zyqg76vcwrv4lqlkh1yrnfi095dpczw9i4xg1jr41a3rw"))))
     (properties `((upstream-name . "mikropml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -33755,19 +33755,20 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsbyname" version))
               (sha256
                (base32
-                "1k1hzwhbj2ajk3qxddx328hhzm69dxw7b67rhp4ifdnwymbics4b"))))
+                "0if7w6k8qqa2x0vma1hgcnj0dax0s9gls43166iyhma0jhil4c4r"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rclabels
                              r-purrr
+                             r-matrixcalc
                              r-magrittr
                              r-lifecycle
                              r-dplyr

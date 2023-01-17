@@ -18275,16 +18275,24 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAIRmaterials" version))
               (sha256
                (base32
-                "03rxrbry956naslq5v0s8zxz9prh16d85vmr0fb1iqianf5nzdmp"))))
+                "1kfr9z8w6d9rb900whw6cpgg2w8zqs7716vp4n2r75m70cjz2zxf"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-jsonlite))
+    (propagated-inputs (list r-tidyjson
+                             r-svdialogs
+                             r-stringr
+                             r-rcolorbrewer
+                             r-jsonlite
+                             r-jsonld
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FAIRmaterials")
     (synopsis "Make Materials Data FAIR")
     (description

@@ -2707,13 +2707,13 @@ Chinese document.")
 (define-public r-ctl
   (package
     (name "r-ctl")
-    (version "1.0.0-7")
+    (version "1.0.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctl" version))
               (sha256
                (base32
-                "1a01rha6sgv8zmcfjb1c438s9d9bjzdjf2pmyml1m5jmz93q70ds"))))
+                "0af53da5m469mm7pmy1nr3zxcjjg9wrs01scc042nr5rnysjy4l4"))))
     (properties `((upstream-name . "ctl")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-mass))
@@ -27880,6 +27880,27 @@ easily readable argument checking to improve code robustness.")
      "This package provides a simple package to grab cheat sheets and save them to
 your local computer.")
     (license license:expat)))
+
+(define-public r-chatgpt
+  (package
+    (name "r-chatgpt")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "chatgpt" version))
+              (sha256
+               (base32
+                "1zvazn1m65rs640yz1nyfw7gxhby0n97qrm12247xs1dmf97yzkg"))))
+    (properties `((upstream-name . "chatgpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-jsonlite r-httr))
+    (home-page "https://github.com/jcrodriguez1989/chatgpt")
+    (synopsis "Interface to 'ChatGPT' from R")
+    (description
+     "OpenAI's ChatGPT <https://openai.com/blog/chatgpt/> coding assistant for
+RStudio'.  A set of functions and RStudio addins that aim to help the R
+developer in tedious coding tasks.")
+    (license license:gpl3+)))
 
 (define-public r-chartql
   (package

@@ -2443,6 +2443,48 @@ plane.  Works with R base graphics, whose full functionality is available.
 Parallel processing is used for optimum performance.")
     (license license:gpl3)))
 
+(define-public r-viscomp
+  (package
+    (name "r-viscomp")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "viscomp" version))
+              (sha256
+               (base32
+                "18s9qapznc50xwjr3lx48nsn9prji8n13byqzvhy151wm4anak7k"))))
+    (properties `((upstream-name . "viscomp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-reshape2
+                             r-qgraph
+                             r-plyr
+                             r-netmeta
+                             r-mass
+                             r-hmisc
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggextra
+                             r-dplyr
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/georgiosseitidis/viscomp")
+    (synopsis
+     "Visualize Multi-Component Interventions in Network Meta-Analysis")
+    (description
+     "This package provides a set of functions providing several visualization tools
+for exploring the behavior of the components in a network meta-analysis of
+multi-component (complex) interventions: - components descriptive analysis -
+heat plot of the two-by-two component combinations - leaving one component
+combination out scatter plot - violin plot for specific component combinations
+effects - density plot for components effects - waterfall plot for the
+interventions effects that differ by a certain component combination - network
+graph of components - rank heat plot of components for multiple outcomes.  The
+implemented tools are described by Seitidis et al. (2023)
+<doi:10.1002/jrsm.1617>.")
+    (license license:gpl3+)))
+
 (define-public r-visaotr
   (package
     (name "r-visaotr")

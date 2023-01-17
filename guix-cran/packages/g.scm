@@ -19627,13 +19627,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.4")
+    (version "4.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geomorph" version))
               (sha256
                (base32
-                "02kbihr5r0zj24x499zhfvpqx7zadyhxmznnq0fvy1mwf28d5pnz"))))
+                "0fricj9cahf807nk0l5hb5x8442cx462jzvrcdkh42v1bbwl23ch"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpp
@@ -19644,12 +19644,12 @@ in polar co-ordinates.")
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/geomorphR/geomorph")
-    (synopsis "Geometric Morphometric Analyses of 2D/3D Landmark Data")
+    (synopsis "Geometric Morphometric Analyses of 2D and 3D Landmark Data")
     (description
      "Read, manipulate, and digitize landmark data, generate shape variables via
 Procrustes analysis for points, curves and surfaces, perform shape analyses, and
 provide graphical depictions of shapes and patterns of shape variation.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-geomongo
   (package
@@ -21565,13 +21565,13 @@ genotype data.")
 (define-public r-genieclust
   (package
     (name "r-genieclust")
-    (version "1.1.0")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genieclust" version))
               (sha256
                (base32
-                "1hwda0jkw67b6fnqpjl4axbaigbvlz0y2rfb7y06a8bhw2xq3mcy"))))
+                "0vhx1hfa778p3n3d8fgf9jl62raygyv84dnnhmvhkwdbqg1a7dpy"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
     (inputs (list))
@@ -23183,13 +23183,13 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
 (define-public r-geemediate
   (package
     (name "r-geemediate")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GEEmediate" version))
               (sha256
                (base32
-                "1xprkpjp1pkq4ci1n32d3yy80hx3r4xf2j7f6hv7dvsn4cvdp417"))))
+                "1x0r2qcyd9hrhkws5zi0pjdc40w8wal3jpvvajj3cr8c1r8dpfzz"))))
     (properties `((upstream-name . "GEEmediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-gee))
@@ -23199,9 +23199,9 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
     (description
      "Causal mediation analysis for a single exposure/treatment and a single mediator,
 both allowed to be either continuous or binary.  The package implements the
-difference method and provide point and interval estimates as well as testing
+difference method and provides point and interval estimates as well as testing
 for the natural direct and indirect effects and the mediation proportion.  Nevo,
-Xiao and Spiegelman (2019) <doi:10.1515/ijb-2017-0006>.")
+Xiao and Spiegelman (2017) <doi:10.1515/ijb-2017-0006>.")
     (license license:gpl3+)))
 
 (define-public r-geem

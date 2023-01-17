@@ -14906,13 +14906,13 @@ forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PointedSDMs" version))
               (sha256
                (base32
-                "17g74fy9sxfmb4ihvc19mcmv3xi6hi3g7j9p030bc9mqn1hsiwnj"))))
+                "1l0ys40phz7aargxjyl51f618l6nzgrn13z6i21l3m6k27x7is0s"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

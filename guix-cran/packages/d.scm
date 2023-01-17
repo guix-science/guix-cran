@@ -1776,13 +1776,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "085cpb0rhiyipffzdqqscblrwav5hfz57r3475ccjn9xyf7n0pmw"))))
+                "1njgwy7rji482fjj6amz5c9d1fky75fl7yssfxwqh0mfxmjmmdrb"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -13283,21 +13283,16 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "2.0-2")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiceView" version))
               (sha256
                (base32
-                "0biffk29nvhfvsz4m16zrkidz7pdjpyyfwsliasn9kxzmyxqg85c"))))
+                "1b0sx9ww42211kg0ghja8l8iqxlyqv57nzwnvnww1d2hbwr77ybp"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scatterplot3d
-                             r-r-cache
-                             r-geometry
-                             r-dicekriging
-                             r-diceeval
-                             r-dicedesign))
+    (propagated-inputs (list r-scatterplot3d r-r-cache r-geometry r-dicedesign))
     (home-page "https://github.com/IRSN/DiceView")
     (synopsis
      "Methods for Visualization of Computer Experiments Design and Surrogate")

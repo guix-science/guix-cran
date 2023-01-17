@@ -1901,13 +1901,13 @@ resistance surface.")
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
-    (version "0.2-9")
+    (version "0.2-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quadrupen" version))
               (sha256
                (base32
-                "1rvnl2qn9cw1wvxaklxd41p9vnnvkcypkiryfi5fi9mwx6lzz8an"))))
+                "1vlpx0yf7b4vka4lrdqsfyjnajbcv25kdp8y27di3ww6h0759h9l"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

@@ -1997,6 +1997,50 @@ output, runtime statistics and static code analysis.  The latter feature is made
 possible by representing R expressions using a tree structure.")
     (license license:expat)))
 
+(define-public r-autogo
+  (package
+    (name "r-autogo")
+    (version "0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "autoGO" version))
+              (sha256
+               (base32
+                "140k24qss7apf811hz73jjzsgd3xfyg72qh466g94y2rq0q559h4"))))
+    (properties `((upstream-name . "autoGO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-textshape
+                             r-summarizedexperiment
+                             r-stringr
+                             r-reshape2
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-openxlsx
+                             r-imgur
+                             r-ggrepel
+                             r-ggplot2
+                             r-enrichr
+                             r-dplyr
+                             r-dichromat
+                             r-deseq2
+                             r-complexheatmap
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=autoGO")
+    (synopsis
+     "Auto-GO: Reproducible, Robust and High Quality Ontology Enrichment Visualizations")
+    (description
+     "Auto-GO is a framework that enables automated, high quality Gene Ontology
+enrichment analysis visualizations.  It also features a handy wrapper for
+Differential Expression analysis around the DESeq2 package described in Love et
+al. (2014) <doi:10.1186/s13059-014-0550-8>.  The whole framework is structured
+in different, independent functions, in order to let the user decide which steps
+of the analysis to perform and which plot to produce.")
+    (license license:expat)))
+
 (define-public r-autofrk
   (package
     (name "r-autofrk")
@@ -4906,13 +4950,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-27")
+    (version "0.2-28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arulesSequences" version))
               (sha256
                (base32
-                "12x9zfl1qp88d28k7lpai0ksgkwvanqf7cw7ig6sjsg067x7pzz1"))))
+                "170xy0hdd41j0cgd6n6fhcib1igwh10nqs06afxz0z0gs0parjh4"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (propagated-inputs (list r-arules))
@@ -9672,22 +9716,24 @@ effects thanks to jQuery AniView'.")
 (define-public r-anipaths
   (package
     (name "r-anipaths")
-    (version "0.10.1")
+    (version "0.10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anipaths" version))
               (sha256
                (base32
-                "14shy474795mivxvn0vyfgzwabvhxafgjazcwhz2250smjzdhw03"))))
+                "1fip68xj7zlznxsdjvwyh959nhryp0ikym3ng9ji8gz6d7yb0jyq"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
                              r-sp
+                             r-sf
                              r-scales
                              r-rcolorbrewer
                              r-raster
+                             r-mvtnorm
                              r-mgcv
                              r-magrittr
                              r-lubridate

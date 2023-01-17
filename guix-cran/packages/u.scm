@@ -846,6 +846,41 @@ Also included is a function that returns the statistics needed for plotting a
 ROC curve.")
     (license license:expat)))
 
+(define-public r-usedthese
+  (package
+    (name "r-usedthese")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "usedthese" version))
+              (sha256
+               (base32
+                "098myc6qhbc2yrwb0k71d6ifnqvjn9nfmigmmvs5nda7dmlhjv9i"))))
+    (properties `((upstream-name . "usedthese")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-knitr
+                             r-kableextra
+                             r-httr
+                             r-highr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cgoo4.github.io/usedthese/")
+    (synopsis "Summarises Package & Function Usage")
+    (description
+     "Consistent with knitr syntax highlighting, usedthese adds a summary table of R
+package & function usage to a Quarto document and enables aggregation of usage
+across a Quarto website.  Learn more about usedthese at
+<https://cgoo4.github.io/usedthese/>.")
+    (license license:expat)))
+
 (define-public r-usdm
   (package
     (name "r-usdm")

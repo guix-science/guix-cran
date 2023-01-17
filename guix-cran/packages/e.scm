@@ -8918,6 +8918,38 @@ figures to lots of different type of formats.  Now this package provide function
 to extract colors from all types of figures and pdf files.")
     (license license:gpl2)))
 
+(define-public r-eoa3
+  (package
+    (name "r-eoa3")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eoa3" version))
+              (sha256
+               (base32
+                "099irdxripakk6sjy5gdwvd1nv70yad0q4cdm9w3q4q0ks5gss5w"))))
+    (properties `((upstream-name . "eoa3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-survival
+                             r-rjags
+                             r-mass
+                             r-genest
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=eoa3")
+    (synopsis
+     "Wildlife Mortality Estimator for Low Fatality Rates and Imperfect Detection")
+    (description
+     "Evidence of Absence software (EoA) is a user-friendly application for estimating
+bird and bat fatalities at wind farms and designing search protocols.  The
+software is particularly useful in addressing whether the number of fatalities
+has exceeded a given threshold and what search parameters are needed to give
+assurance that thresholds were not exceeded.  The models are applicable even
+when zero carcasses have been found in searches, following Huso et al. (2015)
+<doi:10.1890/14-0764.1>, Dalthorp et al. (2017) <doi:10.3133/ds1055>, and
+Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
+    (license license:gpl2)))
+
 (define-public r-envstats
   (package
     (name "r-envstats")

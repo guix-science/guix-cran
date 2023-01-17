@@ -10554,20 +10554,20 @@ networks, i.e.  data graph structured.")
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.1-2")
+    (version "4.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biomod2" version))
               (sha256
                (base32
-                "1vwcbikpd8x7i9jy6g20wdwxpf0d6n2sbj6npbadj75mxmda0r6c"))))
+                "06i30m3rv0ifbmdjcczma8nxakgyksf8g9jp1z2lmfl92n0n7s4v"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-terra
+                             r-sp
                              r-rpart
                              r-reshape2
                              r-reshape
-                             r-raster
                              r-randomforest
                              r-proc
                              r-presenceabsence
@@ -17657,16 +17657,16 @@ Marthew PB, Gail MH, et al (2016) <doi:10.1093/jnci/djw215>.")
 (define-public r-bcputility
   (package
     (name "r-bcputility")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcputility" version))
               (sha256
                (base32
-                "19yyc15d11k2az7ah4ql0m6w9iwc3h370r0ak2nmzldsjsajm8fd"))))
+                "04c53vm920ipn6vwvvncl9bhk4qypng16v1cf1yr8zgs9cyzrlz6"))))
     (properties `((upstream-name . "bcputility")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-odbc r-dbi r-data-table))
+    (propagated-inputs (list r-sf r-data-table))
     (home-page "https://bcputility.roh.engineering")
     (synopsis "Wrapper for SQL Server bcp Utility")
     (description

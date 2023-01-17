@@ -7729,13 +7729,13 @@ rJava'/'RWeka dependency.")
 (define-public r-ngramr
   (package
     (name "r-ngramr")
-    (version "1.9.1")
+    (version "1.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ngramr" version))
               (sha256
                (base32
-                "0vvlml9s6v5vix1h723bs3mbz6cpa2mv4gbh0mqvfxssba7ki05i"))))
+                "0iiaw8w3z8r45i129r78jwj4yicrp3lfzp7im6qmfn9k6v2bpsfv"))))
     (properties `((upstream-name . "ngramr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7756,7 +7756,7 @@ rJava'/'RWeka dependency.")
     (description
      "Retrieve and plot word frequencies through time from the \"Google Ngram Viewer\"
 <https://books.google.com/ngrams>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-ngram
   (package

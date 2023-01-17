@@ -363,13 +363,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-ryacas
   (package
     (name "r-ryacas")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ryacas" version))
               (sha256
                (base32
-                "0bplhd4lqi3zrx2mvx73wg5zjwmxy953p15yj14dngh1ax93c9c5"))))
+                "1g43rm492is2rkhjn7dv40qdmx70321sp2z7cigqfh6ffwcgbz9y"))))
     (properties `((upstream-name . "Ryacas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr))
@@ -12240,13 +12240,13 @@ information can be found on the ROI homepage
 (define-public r-rogue
   (package
     (name "r-rogue")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rogue" version))
               (sha256
                (base32
-                "00phrxhsszp98wa9wxbx51z2zrrwpdwamym1k19493ppn7vz22ix"))))
+                "07izp0q16ljr4a5h5ipq99k297j6s4rwv0rfpc8ssaw12hbl1yz9"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -15584,13 +15584,13 @@ enabled by UDUNITS version 2, also from Unidata.")
 (define-public r-rnetcarto
   (package
     (name "r-rnetcarto")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rnetcarto" version))
               (sha256
                (base32
-                "169r1b2wvz13n7fcrvl80bidw6cwhng3d9vdji64g5wx1nv27arc"))))
+                "14fwf4pqdjrrbnf2s9i0dbmqk2xv0mxs3zz1j1pwnm46fiiawa2g"))))
     (properties `((upstream-name . "rnetcarto")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19867,20 +19867,19 @@ reliance on external software.")
 (define-public r-riverconn
   (package
     (name "r-riverconn")
-    (version "0.3.22")
+    (version "0.3.25")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riverconn" version))
               (sha256
                (base32
-                "19wlhql7a3285i3w0n8djgc5xldjc9j8938da42qnjqrvhcxqkzj"))))
+                "18d03z17paqa4zn7q8f3zwablyh0r4w8kp3hfk4y18hwafs4qg6j"))))
     (properties `((upstream-name . "riverconn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
                              r-reshape2
-                             r-markdown
                              r-magrittr
                              r-igraph
                              r-foreach
@@ -22344,13 +22343,13 @@ target distribution.")
 (define-public r-rgv
   (package
     (name "r-rgv")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rGV" version))
               (sha256
                (base32
-                "0hqn1lh1bjjsdmj10drdflag5nrakh73b2m53iy4vhsr47gz07n9"))))
+                "1a2nlvwdw9zhqp8hw2di68y5y0zbp50xwb8fdgzyvx6l80y3z8b4"))))
     (properties `((upstream-name . "rGV")))
     (build-system r-build-system)
     (propagated-inputs (list r-chron))
@@ -26802,13 +26801,13 @@ between users.  Several advanced options are available, see
 (define-public r-reproducer
   (package
     (name "r-reproducer")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducer" version))
               (sha256
                (base32
-                "0ip7zh8jnjdwl0lawh60v1rcl0dvrxb6dbrlldb6l1vzbn530him"))))
+                "0d67isl92gzh4vrhih6x868ym14jnj9sri190lk3m9lxyhf23gk9"))))
     (properties `((upstream-name . "reproducer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -26818,6 +26817,7 @@ between users.  Several advanced options are available, see
                              r-reshape
                              r-readr
                              r-openxlsx
+                             r-nortest
                              r-metafor
                              r-mass
                              r-lme4
@@ -36090,13 +36090,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.18")
+    (version "2.4.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcompanion" version))
               (sha256
                (base32
-                "0fnfib2dcyyklk5npxchwawdmskcicy9zyg1dqw33vhxyc88lpwb"))))
+                "13gg751xd3ijmnrvnnmiy7v5py4w4g2rgym6iaaxjpgnqhb27dw3"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr

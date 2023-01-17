@@ -11219,13 +11219,13 @@ smoothing bootstrap resampling.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.2.9")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ijtiff" version))
               (sha256
                (base32
-                "1v8np6m8dqc6a3crz3gi6yl8i5y2a9sc2nxlds7as0m6gdqrwc69"))))
+                "1nf7d5qzsfm4l71simj7jmy742ll8drm2ygmnjwaxifyb9kgbr0c"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (inputs (list zlib zlib libtiff libjpeg))
