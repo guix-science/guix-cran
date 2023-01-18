@@ -9399,15 +9399,21 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetSimR" version))
               (sha256
                (base32
-                "01w2nlk1g0h81pbn3g3ch09k3ljcisysgpwihv6wlgd1wclaafmz"))))
+                "018672x5x5f8pjap5y9qkjskwybrvmvfpn1736c5b7pf1hw5xzx6"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-shinybusy
+                             r-shiny
+                             r-scales
+                             r-rmarkdown
+                             r-future-apply
+                             r-future))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NetSimR")
     (synopsis "Actuarial Functions for Non-Life Insurance Modelling")
@@ -9421,7 +9427,8 @@ LogNormal-Pareto and Sliced Gamma-Pareto distributions.  Includes mean,
 probability density function (pdf), cumulative probability function (cdf) and
 inverse cumulative probability function for Sliced LogNormal-Pareto and Sliced
 Gamma-Pareto distributions.  Includes calculating pure IBNR exposure with
-LogNormal and Gamma distribution for reporting delay.")
+LogNormal and Gamma distribution for reporting delay.  Includes a shiny tool to
+simulate insurance claims.")
     (license license:gpl3)))
 
 (define-public r-netshiny

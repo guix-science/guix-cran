@@ -15537,17 +15537,17 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-ads
   (package
     (name "r-ads")
-    (version "1.5-8")
+    (version "1.5-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ads" version))
               (sha256
                (base32
-                "01iyjkxk2d86nl3kd498xaaw4b8y9l142pkbyr49w1h299d3d7f7"))))
+                "1zipffv20d83aqrxn9fwavn2hf6qix20ffy8l8mgmg2sckfgfb34"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom r-ade4))
-    (home-page "https://cran.r-project.org/package=ads")
+    (home-page "https://forge.ird.fr/amap/ads")
     (synopsis "Spatial Point Patterns Analysis")
     (description
      "Perform first- and second-order multi-scale analyses derived from Ripley

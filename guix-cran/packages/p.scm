@@ -1597,13 +1597,13 @@ version updates.")
 (define-public r-publish
   (package
     (name "r-publish")
-    (version "2020.12.23")
+    (version "2023.01.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Publish" version))
               (sha256
                (base32
-                "1qpv5hj9agmc4hrpskqk0lns8bh8w3j27d4ckh5y7gh1532qzad7"))))
+                "0lsr27014zm389xzyddklkql05zh4x9d7jcjz3yv78fwbjzw4v23"))))
     (properties `((upstream-name . "Publish")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-prodlim r-multcomp r-lava
@@ -5455,13 +5455,13 @@ API. Alteryx Promote is available at the URL:
 (define-public r-promor
   (package
     (name "r-promor")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "promor" version))
               (sha256
                (base32
-                "1wn87cijc04zycfvpvpjd6d816r3bpicw9wfv38nswvrhpdds9k2"))))
+                "05wjjqn04hiw3rj85nmkbh13868lq5g35ffwxjah2qs78sz08nyy"))))
     (properties `((upstream-name . "promor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -5471,6 +5471,7 @@ API. Alteryx Promote is available at the URL:
                              r-reshape2
                              r-proc
                              r-pcamethods
+                             r-naivebayes
                              r-missforest
                              r-limma
                              r-kernlab
@@ -6367,6 +6368,51 @@ determines which library this instruction pointer corresponds to.")
      "Perform moderation, mediation, moderated mediation and moderated moderation.
 Inspired from famous PROCESS macro for SPSS and SAS created by Andrew Hayes.")
     (license license:gpl2)))
+
+(define-public r-processpredictr
+  (package
+    (name "r-processpredictr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "processpredictR" version))
+              (sha256
+               (base32
+                "161gbyq21j5yip5p8p235mvcffchm7c8ksks1z7q5cwbrilcx380"))))
+    (properties `((upstream-name . "processpredictR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tensorflow
+                             r-stringr
+                             r-rlang
+                             r-reticulate
+                             r-purrr
+                             r-progress
+                             r-plotly
+                             r-mltools
+                             r-magrittr
+                             r-keras
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-edear
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-bupar))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=processpredictR")
+    (synopsis "Process Prediction")
+    (description
+     "Means to predict process flow, such as process outcome, next activity, next
+time, remaining time, and remaining trace.  Off-the-shelf predictive models
+based on the concept of Transformers are provided, as well as multiple ways to
+customize the models.  This package is partly based on work described in Zaharah
+A. Bukhsh, Aaqib Saeed, & Remco M. Dijkman. (2021). \"ProcessTransformer:
+Predictive Business Process Monitoring with Transformer Network\"
+<arXiv:2104.00721>.")
+    (license license:expat)))
 
 (define-public r-processmonitr
   (package
@@ -11744,13 +11790,13 @@ in any submodels after performing arbitrary model selection.")
 (define-public r-posetr
   (package
     (name "r-posetr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "POSetR" version))
               (sha256
                (base32
-                "1qni2dgxpvr96zp9wf9cinrg2v637q5ab2792ivhf1ld1y08ff02"))))
+                "1p1j6zjgpl3018ym7h8k4ih5bffz2n809h5wm073l85bcm9isznr"))))
     (properties `((upstream-name . "POSetR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-igraph))
@@ -23134,6 +23180,39 @@ PostgreSQL syntax specifications.  PostgreSQL documentation is available here
 <doi:10.7249/WR1142>.  Provides both point estimates, and hypothesis testing.")
     (license license:gpl2)))
 
+(define-public r-pgrn
+  (package
+    (name "r-pgrn")
+    (version "0.3.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pGRN" version))
+              (sha256
+               (base32
+                "1sy5nhwcn516q4pjlg96qqaqvs1ig7ixz4r54n9njkf5z92wnhfw"))))
+    (properties `((upstream-name . "pGRN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-tidygraph
+                             r-proxy
+                             r-lmtest
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dtw
+                             r-doparallel
+                             r-bigmemory))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pGRN")
+    (synopsis
+     "Single-Cell RNA Sequencing Pseudo-Time Based Gene Regulatory Network Inference")
+    (description
+     "Inference and visualize gene regulatory network based on single-cell RNA
+sequencing pseudo-time information.")
+    (license license:expat)))
+
 (define-public r-pgrdup
   (package
     (name "r-pgrdup")
@@ -30582,6 +30661,28 @@ i.e., simultaneous lower confidence bounds for the number of true discoveries.
     (description
      "This package provides a parallel estimation method for generalized linear models
 without compiling with a multithreaded LAPACK or BLAS.")
+    (license license:gpl2)))
+
+(define-public r-parfm
+  (package
+    (name "r-parfm")
+    (version "2.7.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "parfm" version))
+              (sha256
+               (base32
+                "12kcvdpmp99lqgr1775xqjkcn3s5agng1hwhjq2sa3bgrjgmhsh5"))))
+    (properties `((upstream-name . "parfm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-sn r-optimx r-msm))
+    (home-page "https://cran.r-project.org/package=parfm")
+    (synopsis "Parametric Frailty Models")
+    (description
+     "Fits Parametric Frailty Models by maximum marginal likelihood.  Possible
+baseline hazards: exponential, Weibull, inverse Weibull (FrÃ©chet), Gompertz,
+lognormal, log-skew-normal, and loglogistic.  Possible Frailty distributions:
+gamma, positive stable, inverse Gaussian and lognormal.")
     (license license:gpl2)))
 
 (define-public r-paretoposstable

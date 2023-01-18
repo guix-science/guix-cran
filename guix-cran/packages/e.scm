@@ -1152,13 +1152,13 @@ sources.")
 (define-public r-extdist
   (package
     (name "r-extdist")
-    (version "0.6-4")
+    (version "0.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExtDist" version))
               (sha256
                (base32
-                "006q9xahq5zk7s6yc44ihjkr6cnjzp10pgw47zyk1rk81pjblzp3"))))
+                "0a3ixd9z9ddig9nvd60a6gbmv2bf1irm6rjl39xivq01dmw7j07q"))))
     (properties `((upstream-name . "ExtDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv))
@@ -3151,6 +3151,56 @@ distribution (GPD) and the second classifier is based on the generalized extreme
 value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 <arXiv:1808.09902>.")
     (license license:gpl3)))
+
+(define-public r-evreg
+  (package
+    (name "r-evreg")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evreg" version))
+              (sha256
+               (base32
+                "1w4dhf0sjgr81l9hsbmn7jwbii888qbmh6ciaimss15ajh54lip5"))))
+    (properties `((upstream-name . "evreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-evclust))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evreg")
+    (synopsis "Evidential Regression")
+    (description
+     "An implementation of the Evidential Neural Network for Regression model recently
+introduced in Denoeux (2023) <doi:10.36227/techrxiv.21791831.v1>.  In this
+model, prediction uncertainty is quantified by Gaussian random fuzzy numbers as
+introduced in Denoeux (2023) <doi:10.1016/j.fss.2022.06.004>.  The package
+contains functions for training the network, tuning hyperparameters by
+cross-validation or the hold-out method, and making predictions.  It also
+contains utilities for making calculations with Gaussian random fuzzy numbers
+(such as, e.g., computing the degrees of belief and plausibility of an interval,
+or combining Gaussian random fuzzy numbers).")
+    (license license:gpl3)))
+
+(define-public r-evots
+  (package
+    (name "r-evots")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evoTS" version))
+              (sha256
+               (base32
+                "0dk7wxc0pwyv5s5jhfpxznwlya4rahzx4s15pm9k1nh2jdv0k2an"))))
+    (properties `((upstream-name . "evoTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-plotly r-paleots r-mvtnorm r-mass))
+    (home-page "https://klvoje.github.io/evoTS/index.html")
+    (synopsis "Analyses of Evolutionary Time-Series")
+    (description
+     "Facilitates univariate and multivariate analysis of evolutionary sequences of
+phenotypic change.  The package extends the modeling framework available in the
+paleoTS package.  Please see <https://klvoje.github.io/evoTS/index.html> for
+information about the package and the implemented models.")
+    (license license:gpl2+)))
 
 (define-public r-evophylo
   (package

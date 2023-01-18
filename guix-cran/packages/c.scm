@@ -10982,28 +10982,25 @@ machines, or submitting grid engine jobs.")
 (define-public r-cordillera
   (package
     (name "r-cordillera")
-    (version "0.8-0")
+    (version "1.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cordillera" version))
               (sha256
                (base32
-                "0cpysfivwmim36gcqn1i7450a33hv4pdbvil7syb0hr7vdm083dd"))))
+                "047sl2pvfh800ggc8v62p06nfbdz8rwn4alviplf5kbvi0k3s85n"))))
     (properties `((upstream-name . "cordillera")))
     (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-yesno r-dbscan))
-    (home-page "http://r-forge.r-project.org/projects/stops/")
+    (propagated-inputs (list r-dbscan))
+    (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Calculation of the OPTICS Cordillera")
     (description
      "This package provides functions for calculating the OPTICS Cordillera.  The
 OPTICS Cordillera measures the amount of clusteredness in a numeric data matrix
 within a distance-density based framework for a given minimum number of points
-comprising a cluster, as described in Rusch, Hornik, Mair (2017)
-<doi:10.1080/10618600.2017.1349664>.  There is an R native version and a version
-that uses ELKI', with methods for printing, summarizing, and plotting the
-result.  There also is an interface to the reference implementation of OPTICS in
-ELKI'.")
+comprising a cluster, as described in Rusch, Hornik, Mair (2018)
+<doi:10.1080/10618600.2017.1349664>.  There is an R native version with methods
+for printing, summarizing, and plotting the result.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-cord
@@ -13562,13 +13559,13 @@ Details are available in the function documentation and in the vignette.")
 (define-public r-conjurer
   (package
     (name "r-conjurer")
-    (version "1.6.0")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conjurer" version))
               (sha256
                (base32
-                "09nfimyld91xsb93rf0hnv2152f7xvvahyk9p1l57md9yfwkj7z5"))))
+                "12hd10sb4pk53jikbbcwimfhca25zy0mzx5vnllscpk09f8a68j7"))))
     (properties `((upstream-name . "conjurer")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -15836,33 +15833,6 @@ category, Kappa (unweighted), Kappa (quadratic weighted) and symmetry tests
 DW, Castle PE. Estimating the agreement and diagnostic accuracy of two
 diagnostic tests when one test is conducted on only a subsample of specimens.
 Stat Med.  2012 Feb 28; 31(5) <doi:10.1002/sim.4422>.")
-    (license license:gpl3)))
-
-(define-public r-comparer
-  (package
-    (name "r-comparer")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "comparer" version))
-              (sha256
-               (base32
-                "1rhx9an7qi9r3cv2zpnb9qw0byg06zabg99v51mal218080r6rvm"))))
-    (properties `((upstream-name . "comparer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/comparer")
-    (synopsis "Compare Output and Run Time")
-    (description
-     "Quickly run experiments to compare the run time and output of code blocks.  The
-function mbc() can make fast comparisons of code, and will calculate statistics
-comparing the resulting outputs.  It can be used to compare model fits to the
-same data or see which function runs faster.  The R6 class ffexp$new() runs a
-function using all possible combinations of selected inputs.  This is useful for
-comparing the effect of different parameter values.  It can also run in parallel
-and automatically save intermediate results, which is very useful for long
-computations.")
     (license license:gpl3)))
 
 (define-public r-comparemcmcs
@@ -28769,13 +28739,13 @@ in conditional generalized linear models for clustered data.")
 (define-public r-cglasso
   (package
     (name "r-cglasso")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cglasso" version))
               (sha256
                (base32
-                "0lmdsqk4fl9n02akm8ri4vrqjhxm0cxrbl0l2kywnvb1zckn75g3"))))
+                "1pfrrm7pkg31c0y7rnxy3h1brqksbqif8xkd2qx2kjnz5vh279ai"))))
     (properties `((upstream-name . "cglasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-igraph))
@@ -28792,9 +28762,10 @@ conditional graphical lasso is available as a special case.  Furthermore, the
 package provides an integrated set of core routines for visualization, analysis,
 and simulation of datasets with censored and/or missing values drawn from a
 Gaussian graphical model.  Details about the implemented models can be found in
-Augugliaro et al. (2020b) <doi: 10.1007/s11222-020-09945-7>, Augugliaro et al.
-(2020a) <doi: 10.1093/biostatistics/kxy043>, Yin et al. (2001) <doi:
-10.1214/11-AOAS494> and Stadler et al. (2012) <doi: 10.1007/s11222-010-9219-7>.")
+Augugliaro et al. (2023) <doi: 10.18637/jss.v105.i01>, Augugliaro et al. (2020b)
+<doi: 10.1007/s11222-020-09945-7>, Augugliaro et al. (2020a) <doi:
+10.1093/biostatistics/kxy043>, Yin et al. (2001) <doi: 10.1214/11-AOAS494> and
+Stadler et al. (2012) <doi: 10.1007/s11222-010-9219-7>.")
     (license license:gpl2+)))
 
 (define-public r-cggp
@@ -30061,13 +30032,13 @@ for convenience during analysis.")
 (define-public r-censspatial
   (package
     (name "r-censspatial")
-    (version "3.0")
+    (version "3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CensSpatial" version))
               (sha256
                (base32
-                "0dcs8v0nigvmdnqvzv30fnng04r7c9ldsnagf1s2c52a0fzz3ghm"))))
+                "0d6z2rjzpq0nr5wzzqqrb8l3arkbys7hciclh95bipxg5i3d4lzr"))))
     (properties `((upstream-name . "CensSpatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -34889,13 +34860,13 @@ carbon.js'<https://carbon.now.sh/about>.")
 (define-public r-carbayesst
   (package
     (name "r-carbayesst")
-    (version "3.3")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CARBayesST" version))
               (sha256
                (base32
-                "0j6liipph9j91kv2yljn1lqa4sm0a1kd2gyjbl9v3110jxly2znk"))))
+                "1qv5781f8bbwka86ypdfjc4ywg1x4zx8i58bx6lw2hbw42lq6ajy"))))
     (properties `((upstream-name . "CARBayesST")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

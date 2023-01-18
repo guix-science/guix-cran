@@ -18,7 +18,6 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages fontutils)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages geo)
@@ -14784,6 +14783,33 @@ DFA automatic methods for identification of crossover points and a Deltalog
 automatic method for identification of reference channels.")
     (license license:gpl3)))
 
+(define-public r-df2yaml
+  (package
+    (name "r-df2yaml")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "df2yaml" version))
+              (sha256
+               (base32
+                "01402hfz0irmnh5088y7dvxdfi1n0dr8n5zn1zyn5alxrrzm20hx"))))
+    (properties `((upstream-name . "df2yaml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-rrapply
+                             r-rlang
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=df2yaml")
+    (synopsis "Convert Dataframe to 'YAML'")
+    (description
+     "The df2yaml aims to simplify the process of converting dataframe to YAML
+<https://yaml.org/>.  The dataframe with multiple key columns and one value
+column will be converted to the multi-level hierarchy.")
+    (license license:expat)))
+
 (define-public r-dextermst
   (package
     (name "r-dextermst")
@@ -15015,16 +15041,15 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.1-2")
+    (version "4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devEMF" version))
               (sha256
                (base32
-                "1v12yiq0pjz48mib4mmb3qnp340ghxnx42ffzvya9zp6xc0grnng"))))
+                "1bzznqvdnqzxybd4ck8iqwql69vlbbh7kqrx0hdxdfi2wls9da6d"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
-    (inputs (list freetype))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/plfjohnson/devEMF")
     (synopsis "EMF Graphics Output Device")
@@ -17924,13 +17949,13 @@ deep time visualization.")
 (define-public r-deepregression
   (package
     (name "r-deepregression")
-    (version "0.3.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepregression" version))
               (sha256
                (base32
-                "1fc4av1kbxhqbf6px2370whpqyv34nczb5ryv6znikhb30d37y3f"))))
+                "15d33dsdhmw7n172rlsg70921d3z3bkn088qj565iclzmxknyfzj"))))
     (properties `((upstream-name . "deepregression")))
     (build-system r-build-system)
     (propagated-inputs (list r-tfruns
@@ -17948,7 +17973,7 @@ deep time visualization.")
     (description
      "Allows for the specification of semi-structured deep distributional regression
 models which are fitted in a neural network as proposed by Ruegamer et al.
-(2021) <arXiv:2104.02705>.  Predictors can be modeled using structured
+(2023) <doi:10.18637/jss.v105.i02>.  Predictors can be modeled using structured
 (penalized) linear effects, structured non-linear effects or using an
 unstructured deep network model.")
     (license license:gpl3)))
@@ -21624,13 +21649,13 @@ can be performed with different methods including BLADJ (Webb et al. (2008)
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datefixR" version))
               (sha256
                (base32
-                "1mc0s0qv90j2qaqkkmx3k054vsir8zb2n6lwx6ybkn5k48cw8zwm"))))
+                "10fwiv7lz2a2rb6ry2yp8b3qyy3kb56ha68xsk5l4iq8bfil82q0"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))

@@ -19568,6 +19568,27 @@ various post-imputation diagnostics and visualizations to help you assess
 imputation performance.")
     (license license:expat)))
 
+(define-public r-misscforest
+  (package
+    (name "r-misscforest")
+    (version "0.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "missCforest" version))
+              (sha256
+               (base32
+                "1xdff1iddvagsw5b27wl0hbv21baj8cnkg17imfg9fkh1fik2s00"))))
+    (properties `((upstream-name . "missCforest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-partykit))
+    (home-page "https://github.com/ielbadisy/missCforest")
+    (synopsis "Ensemble Conditional Trees for Missing Data Imputation")
+    (description
+     "Single imputation based on the Ensemble Conditional Trees (i.e.  Cforest
+algorithm Strobl, C., Boulesteix, A. L., Zeileis, A., & Hothorn, T. (2007)
+<doi:10.1186/1471-2105-8-25>).")
+    (license license:gpl3+)))
+
 (define-public r-misreport
   (package
     (name "r-misreport")
@@ -20315,13 +20336,13 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai" version))
               (sha256
                (base32
-                "02qs2dncxmvfx0cm4fkm6qqvi6mw9zbmhxdcqzig8kspvvqhmfnr"))))
+                "0c9cbjd1zbh86i9h7g0c30yajvf1jgvr9ir003qi7rf2b30qprrm"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -20331,8 +20352,8 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
      "Lightweight parallel code execution, local or distributed across the network.
 Designed for simplicity, a mirai evaluates an arbitrary expression
 asynchronously, resolving automatically upon completion.  Built on nanonext and
-NNG (Nanomsg Next Gen) scalability protocols, defaults to the optimal choice of
-abstract sockets, Unix domain sockets or named pipes in addition to TCP/IP.")
+NNG (Nanomsg Next Gen), uses scalability protocols not subject to R connection
+limits and transports faster than TCP/IP where applicable.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -22224,13 +22245,13 @@ Proportional Overlap.")
 (define-public r-micromob
   (package
     (name "r-micromob")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MicroMoB" version))
               (sha256
                (base32
-                "0yx2p4hifm9rx61gq81r9r01nhx4h57d4cksm4g6vfhvhx4vgcmf"))))
+                "0ghab143lr333v7qih30jc9n78pwcgam4nzaz7j1g4cnis5wfkbx"))))
     (properties `((upstream-name . "MicroMoB")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-abind))
@@ -24533,13 +24554,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mets" version))
               (sha256
                (base32
-                "0kzmbwhziknk4djql88kvanb0pncnxq0c6b7rsfd1z7c0c8kpyv0"))))
+                "1n117qpwfrq9cmnda635h0845ps3zdxq16xn6w30qrcjiikx32qs"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -25036,13 +25057,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.0.4")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteospain" version))
               (sha256
                (base32
-                "0a4r86qqq2qxms9dilj7mhz1hgrc6yl7b7mi60wky0n8mjfw0ciz"))))
+                "1w45y07s8sz513fgqza4qc1c0bwzi5gpx6fasx717wxmplgz02qp"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -26913,13 +26934,13 @@ approaches with correlation coefficients as effect sizes.")
 (define-public r-metaconfoundr
   (package
     (name "r-metaconfoundr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metaconfoundr" version))
               (sha256
                (base32
-                "13pm4hy68b3h6x8i3kbvgvprn6k9g5nn3agiplnqlng908mmlrzk"))))
+                "0aiz10wjb24p52hx5srmws7myncjdvhd8kxbnxyaxg31wgxl3183"))))
     (properties `((upstream-name . "metaconfoundr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34266,6 +34287,27 @@ image, and pastes it into a (e.g. an rmarkdown') document.  See
 and use of the API is subject to their terms and conditions.")
     (license license:gpl3+)))
 
+(define-public r-mathml
+  (package
+    (name "r-mathml")
+    (version "0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mathml" version))
+              (sha256
+               (base32
+                "0mh59m15qrksi8v4ls9sbj0sm483clma5vzklbk3xvy3f084zz3p"))))
+    (properties `((upstream-name . "mathml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rolog))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mathml")
+    (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
+    (description
+     "Translate R expressions to MathML or MathJax so that they can be rendered in
+rmarkdown documents and shiny apps.")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-materialmodifier
   (package
     (name "r-materialmodifier")
@@ -37866,13 +37908,13 @@ into/from MALDIquant objects.")
 (define-public r-malaytextr
   (package
     (name "r-malaytextr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "malaytextr" version))
               (sha256
                (base32
-                "0lal9x2syyc2qbzxy35dbmd4jyxxkqpbygg9x7nyh8vw8k7pf0jh"))))
+                "0z5q0hl07yh528xgvzc820rdaaihgilm6ql934jh0ciswil022sm"))))
     (properties `((upstream-name . "malaytextr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-magrittr r-dplyr))
@@ -37887,7 +37929,9 @@ dictionary and then proceed to remove \"extra suffix\" as explained in Khan,
 Rehman Ullah, Fitri Suraya Mohamad, Muh Inam UlHaq, Shahren Ahmad Zadi Adruce,
 Philip Nuli Anding, Sajjad Nawaz Khan, and Abdulrazak Yahya Saleh Al-Hababi
 (2017) <https://ijrest.net/vol-4-issue-12.html> .  This package includes a
-dictionary of Malay words that may be used to perform word stemming.")
+dictionary of Malay words that may be used to perform word stemming, a dataset
+of Malay stop words, a dataset of sentiment words and a dataset of normalized
+words.")
     (license license:expat)))
 
 (define-public r-malariaatlas
@@ -38617,6 +38661,52 @@ of the UCSF Mount Etna Data Library'.  magmaR includes functions for querying
 and downloading data from magma', in order to enable working with such data in
 R, as well as for uploading local data to magma'.")
     (license license:gpl2)))
+
+(define-public r-magmaclustr
+  (package
+    (name "r-magmaclustr")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MagmaClustR" version))
+              (sha256
+               (base32
+                "0q8k1daagkzscnvigj8642nrp9d2f1kp0hav6zn9c625rjvsr2b1"))))
+    (properties `((upstream-name . "MagmaClustR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-plyr
+                             r-mvtnorm
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/ArthurLeroy/MagmaClustR")
+    (synopsis
+     "Clustering and Prediction using Multi-Task Gaussian Processes with Common Mean")
+    (description
+     "An implementation for the multi-task Gaussian processes with common mean
+framework.  Two main algorithms, called Magma and MagmaClust', are available to
+perform predictions for supervised learning problems, in particular for time
+series or any functional/continuous data applications.  The corresponding
+articles has been respectively proposed by Arthur Leroy, Pierre Latouche,
+Benjamin Guedj and Servane Gey (2022) <doi:10.1007/s10994-022-06172-1>, and
+Arthur Leroy, Pierre Latouche, Benjamin Guedj and Servane Gey (2020)
+<arXiv:2011.07866>.  Theses approaches leverage the learning of cluster-specific
+mean processes, which are common across similar tasks, to provide enhanced
+prediction performances (even far from data) at a linear computational cost (in
+the number of tasks).  MagmaClust is a generalisation of Magma where the tasks
+are simultaneously clustered into groups, each being associated to a specific
+mean process.  User-oriented functions in the package are decomposed into
+training, prediction and plotting functions.  Some basic features (classic
+kernels, training, prediction) of standard Gaussian processes are also
+implemented.")
+    (license license:expat)))
 
 (define-public r-magiclamp
   (package

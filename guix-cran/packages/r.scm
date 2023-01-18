@@ -2138,13 +2138,13 @@ combinations.")
 (define-public r-runuran
   (package
     (name "r-runuran")
-    (version "0.37")
+    (version "0.38")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Runuran" version))
               (sha256
                (base32
-                "18gvv8kih58dw1xz57xnz86mhd0mpn311m1mkjqhcj0z4gkjiwwh"))))
+                "1fjr9pbjih6ahbsd557p3d5j8klj11wnnn7jkhjcry1spwlzdkhr"))))
     (properties `((upstream-name . "Runuran")))
     (build-system r-build-system)
     (home-page "https://statmath.wu.ac.at/unuran/")
@@ -2393,17 +2393,16 @@ in RStudio.")
 (define-public r-rules
   (package
     (name "r-rules")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rules" version))
               (sha256
                (base32
-                "0q8gnvl0k57fs2h4vkslmwlri3gziqy30535i7f4q3j4mvjy2j3v"))))
+                "1knbk7jx959w6bkzqkgbr61k07ry5b3jx1xrny134rxgdhjwr2rn"))))
     (properties `((upstream-name . "rules")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -5570,6 +5569,57 @@ The constraints can be defined using the validate package.  The core algorithms
 have recently been moved to the lintools package, refer to lintools for a more
 basic interface and access to a version of the algorithm that works with sparse
 matrices.")
+    (license license:gpl3)))
+
+(define-public r-rsp
+  (package
+    (name "r-rsp")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RSP" version))
+              (sha256
+               (base32
+                "10qldl1sjf812aqakwa5y7i9kd9vahck69fc37m37i408ncyw933"))))
+    (properties `((upstream-name . "RSP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinyitemanalysis
+                             r-shinycustomloader
+                             r-shinybs
+                             r-shiny
+                             r-semplot
+                             r-rstudioapi
+                             r-rjava
+                             r-psych
+                             r-polycor
+                             r-plyr
+                             r-mvn
+                             r-mirt
+                             r-metrics
+                             r-lavaan
+                             r-igraph
+                             r-hornpa
+                             r-gt
+                             r-gparotation
+                             r-foreign
+                             r-dt
+                             r-catr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RSP")
+    (synopsis "'shiny' Applications for Statistical and Psychometric Analysis")
+    (description
+     "Toolbox with shiny applications for widely used psychometric methods.  Those
+methods include following analysis: Item analysis, item response theory
+calibration, principal component analysis, confirmatory factor analysis -
+structural equation modeling, generating simulated data.  References: Chalmers
+(2012, <doi:10.18637/jss.v048.i06>); Revelle (2022,
+<https://CRAN.R-project.org/package=psych Version = 2.2.9.>); Rosseel (2012,
+<doi:10.18637/jss.v048.i02>); Magis & Raiche (2012,
+<doi:10.18637/jss.v048.i08>); Magis & Barrada (2017,
+<doi:10.18637/jss.v076.c01>).")
     (license license:gpl3)))
 
 (define-public r-rsomoclu
@@ -15560,13 +15610,13 @@ the NetLogo Mathematica Link <https://github.com/NetLogo/Mathematica-Link>.")
 (define-public r-rnetcdf
   (package
     (name "r-rnetcdf")
-    (version "2.6-1")
+    (version "2.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RNetCDF" version))
               (sha256
                (base32
-                "02llp0ar5i81lxmsr1iznwhxk37ihkplbyi7f0za2dnqp1b0qrwz"))))
+                "0bh2xikck4jgrakxpz4ibi7nma1ib4nwayqq4cgh5wy5ixwlbpml"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -16903,13 +16953,13 @@ update profiles.")
 (define-public r-rmixmod
   (package
     (name "r-rmixmod")
-    (version "2.1.7")
+    (version "2.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rmixmod" version))
               (sha256
                (base32
-                "098s00h9r71c3r9k5wrgkn6jyg5n132ikczfxyr38npy6fr00kzq"))))
+                "0dbx06idj1hnmkx4shmqllaw2klgbmq4acb1c3zi83fp4fx5vfay"))))
     (properties `((upstream-name . "Rmixmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -17895,13 +17945,13 @@ package includes functions to work with the Mangal RESTful API methods
 (define-public r-rmalschains
   (package
     (name "r-rmalschains")
-    (version "0.2-8")
+    (version "0.2-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rmalschains" version))
               (sha256
                (base32
-                "0z75hzrssbd4ml2x98n4cqzkqma9832fmaz9kyk8xxj6ki5xndz9"))))
+                "0qmndg8d1qy1c1j5fymicgijh96g207fs2ljx72i1ns44xkdibh6"))))
     (properties `((upstream-name . "Rmalschains")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18408,13 +18458,13 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-4")
+    (version "0.7-4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "0418nmgqjqbqphcjaang2w0mdsbq4a7h89xdkr1nqbmkafyxv90g"))))
+                "0rrsc1q9862fpwg9whdy0zbgbd0izrzaknb1a4zjpk4vx7j226l0"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -29722,13 +29772,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-28")
+    (version "0.1-29")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "refund" version))
               (sha256
                (base32
-                "0043n8i3gi8bady2s95jcfs6rgklxmf2mvrvnrn3b2xvclxps077"))))
+                "0f58ip51m26xbznmrcrkhfvahwg687nhjwp0ls8gh1rq7c0a8zla"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -32358,6 +32408,25 @@ from UCI Machine Learning Repository.  The data are not part of the package and
 have to be downloaded separately.")
     (license license:gpl3)))
 
+(define-public r-readmet
+  (package
+    (name "r-readmet")
+    (version "1.6.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "readmet" version))
+              (sha256
+               (base32
+                "1nn85vf2jg9mr85qbylxmsw6pp076fqspy52rhh26lpz9vm0z706"))))
+    (properties `((upstream-name . "readmet")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=readmet")
+    (synopsis "Read some less Popular Formats Used in Meteorology")
+    (description
+     "This package contains tools for reading and writing data from or to files in
+dmna, Scintec Format-1, and Campbell Scientific TOA5 formats.")
+    (license license:gpl3)))
+
 (define-public r-readjdx
   (package
     (name "r-readjdx")
@@ -32971,6 +33040,41 @@ high variability of the RDS process.")
      "This package provides functionality for carrying out sample size estimation and
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
+
+(define-public r-rdss
+  (package
+    (name "r-rdss")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rdss" version))
+              (sha256
+               (base32
+                "1sjzhcrhb1zi9ykl27bx8yylg228f8nvs6klrnz8c9r0x0lr23pg"))))
+    (properties `((upstream-name . "rdss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-randomizr
+                             r-purrr
+                             r-prediction
+                             r-ggplot2
+                             r-generics
+                             r-estimatr
+                             r-dplyr
+                             r-dataverse
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=rdss")
+    (synopsis
+     "Companion Datasets and Functions for Research Design in the Social Sciences")
+    (description
+     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
+Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
+<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
+plotting components to enable use and replication of the book.")
+    (license license:expat)))
 
 (define-public r-rdsdp
   (package
@@ -36225,20 +36329,21 @@ variants(e.g. Environmental association analyses).")
 (define-public r-rcminification
   (package
     (name "r-rcminification")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCMinification" version))
               (sha256
                (base32
-                "1lk5n24shq8avg7a088x0l70g1xa9wf3kpyh7qq65np6rh1gnsga"))))
+                "1bdgc7rwkdkimp4k1p5ah26nbp1ic09kyyx6xily260xq7m31g1w"))))
     (properties `((upstream-name . "RCMinification")))
     (build-system r-build-system)
+    (propagated-inputs (list r-locpol r-kernsmooth))
     (home-page "https://cran.r-project.org/package=RCMinification")
     (synopsis "Random Coefficient Minification Time Series Models")
     (description
-     "This package provides functions and data sets for simulating and fitting
-minification and random coefficient minification modelling.")
+     "Data sets, and functions for simulating and fitting nonlinear time series with
+minification and nonparametric models.")
     (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-rcmdrplugin-worldflora
@@ -39803,21 +39908,21 @@ Database) files for 3D rendering.")
 (define-public r-rayimage
   (package
     (name "r-rayimage")
-    (version "0.7.3")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rayimage" version))
               (sha256
                (base32
-                "19xqh6jf5gjz7yyjkymx3f7sfasw6p75j8fd0kq34g58ldnrphyd"))))
+                "1vs47zbdmh8ky5zdw7qvs6fbycp7kypzg6mfli2i0z39pcffz3xl"))))
     (properties `((upstream-name . "rayimage")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-progress
                              r-png
-                             r-magrittr
-                             r-jpeg))
+                             r-jpeg
+                             r-gridextra))
     (home-page "https://www.rayimage.dev")
     (synopsis "Image Processing for Simulated Cameras")
     (description
@@ -43624,16 +43729,16 @@ agGrid'.")
 (define-public r-rage
   (package
     (name "r-rage")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rage" version))
               (sha256
                (base32
-                "10fywfr5iz1cqig7yq9w43kpicbvyl8s1q7zszb1dzsv1gr2y02n"))))
+                "1bn0l0fvd5kgd4vq3nzfb2v7zaff33iy6xdmx6q421vk9gx3jwdq"))))
     (properties `((upstream-name . "Rage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcompadre r-popdemo r-mass r-diagrammer))
+    (propagated-inputs (list r-popdemo r-mass r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jonesor/Rage")
     (synopsis "Life History Metrics from Matrix Population Models")

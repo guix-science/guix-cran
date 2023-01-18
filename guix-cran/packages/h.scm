@@ -1029,6 +1029,33 @@ hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
 Keller-Ressel and Nargang (2019), see <arXiv:1903.08977>.")
     (license license:gpl2)))
 
+(define-public r-hydflood
+  (package
+    (name "r-hydflood")
+    (version "0.5.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hydflood" version))
+              (sha256
+               (base32
+                "01x3m3dhq29wrbdz7yk1xh1fplhhv58vpiqg211q6mdzq0dy2bsv"))))
+    (properties `((upstream-name . "hydflood")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
+    (native-inputs (list r-knitr))
+    (home-page "https://hydflood.bafg.de")
+    (synopsis "Flood Extents and Durations along the Rivers Elbe and Rhine")
+    (description
+     "Raster based flood modelling internally using hyd1d', an R package to
+interpolate 1d water level and gauging data.  The package computes flood extent
+and durations through strategies originally developed for INFORM', an
+ArcGIS'-based hydro-ecological modelling framework.  It does not provide a full,
+physical hydraulic modelling algorithm, but a simplified, near real time GIS
+approach for flood extent and duration modelling.  Computationally demanding
+annual flood durations have been computed already and data products were
+published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
+    (license license:gpl2)))
+
 (define-public r-hydenet
   (package
     (name "r-hydenet")

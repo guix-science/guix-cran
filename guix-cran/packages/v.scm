@@ -1737,21 +1737,26 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivainsights" version))
               (sha256
                (base32
-                "0isnp58jw0m5lc1yz3fm7dyycc8rp53kvx3rp2kxja599jncpknj"))))
+                "1v0ivkx7ik4ym1dx5frgwjn42nc0h6g4v28qqhjdsjfpm227k9b4"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-wpa
+                             r-tidyselect
                              r-tidyr
                              r-scales
+                             r-rmarkdown
                              r-reshape2
                              r-purrr
+                             r-networkd3
+                             r-markdown
                              r-magrittr
+                             r-htmltools
                              r-ggrepel
                              r-ggplot2
                              r-dt

@@ -4478,13 +4478,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-6")
+    (version "1.6-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LogConcDEAD" version))
               (sha256
                (base32
-                "0ig808d4zqmp4vli25g50s97b1iggrb92ih2s89w6l4vgixmrs92"))))
+                "1hbf3w2km4grs6705qnf0x2x9lhmb08xz18qyv45dajlnwz2dmbz"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mclust r-mass))

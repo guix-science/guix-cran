@@ -2219,13 +2219,13 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 (define-public r-gslnls
   (package
     (name "r-gslnls")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gslnls" version))
               (sha256
                (base32
-                "0mgqqw7sicwqvflyq9pdq6jf367ha9f29ik5kbic8zkg3s4xnd55"))))
+                "0x71rdjr39my7p6a6p9im343sdbpwqns86x4mryygxllp8zvwcgm"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -2236,7 +2236,7 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
     (description
      "An R interface to nonlinear least-squares optimization with the GNU Scientific
 Library (GSL), see M. Galassi et al. (2009, ISBN:0954612078).  The available
-trust region methods include the Levenberg-Marquadt algorithm with and without
+trust region methods include the Levenberg-Marquardt algorithm with and without
 geodesic acceleration, the Steihaug-Toint conjugate gradient algorithm for large
 systems and several variants of Powell's dogleg algorithm.  Bindings are
 provided to tune a number of parameters affecting the low-level aspects of the
@@ -18124,6 +18124,30 @@ might lower or change the direction of effect.  See the getspres website for
 documentation and examples <https://magosil86.github.io/getspres/>.")
     (license license:expat)))
 
+(define-public r-getspanel
+  (package
+    (name "r-getspanel")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "getspanel" version))
+              (sha256
+               (base32
+                "0i5a7jv0cpg9sqp55aa9kh8di4l0gg2bfbyps77qx9lfsxjsws2v"))))
+    (properties `((upstream-name . "getspanel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/moritzpschwarz/getspanel")
+    (synopsis "General-to-Specific Modelling of Panel Data")
+    (description
+     "Uses several types of indicator saturation and automated General-to-Specific
+(GETS) modelling from the gets package and applies it to panel data.  This
+allows the detection of structural breaks in panel data, operationalising a
+reverse causal approach of causal inference, see Pretis and Schwarz (2022)
+<doi:10.2139/ssrn.4022745>.")
+    (license license:expat)))
+
 (define-public r-gets
   (package
     (name "r-gets")
@@ -21457,13 +21481,13 @@ initial values for ease of included optimization and simulating.")
 (define-public r-genlib
   (package
     (name "r-genlib")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GENLIB" version))
               (sha256
                (base32
-                "0zbx4fz0qvm4l81lazkhwyf8lcw174vw44ziwjayrmd6xf52zkck"))))
+                "16xh46150gy6kcyr5v5i3hhghdm0dqjl4hql708yiyra6qj37l7f"))))
     (properties `((upstream-name . "GENLIB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -24895,6 +24919,44 @@ probability density functions, such as the Euclidea mean, the Mahalanobis
 distance, the Kullback-Leibler divergence, the J-Coefficient, the Minkowski
 L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
     (license license:gpl2+)))
+
+(define-public r-gausscov
+  (package
+    (name "r-gausscov")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gausscov" version))
+              (sha256
+               (base32
+                "1pw5hp5cr0mbs2v86f9557p7yhn9kpx9zgr3kg4f1nhknv2q0wz5"))))
+    (properties `((upstream-name . "gausscov")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=gausscov")
+    (synopsis "The Gaussian Covariate Method for Variable Selection")
+    (description
+     "Given the standard linear model the traditional way of deciding whether to
+include the jth covariate is to apply the F-test to decide whether the
+corresponding beta coefficient is zero.  The Gaussian covariate method is
+completely different.  The question as to whether the beta coefficient is or is
+not zero is replaced by the question as to whether the covariate is better or
+worse than i.i.d.  Gaussian noise.  The P-value for the covariate is the
+probability that Gaussian noise is better.  Surprisingly this can be given
+exactly and it is the same a the P-value for the classical model based on the
+F-distribution.  The Gaussian covariate P-value is model free, it is the same
+for any data set.  Using the idea it is possible to do covariate selection for a
+small number of covariates 25 by considering all subsets.  Post selection
+inference causes no problems as the P-values hold whatever the data.  The idea
+extends to stepwise regression again with exact probabilities.  In the simplest
+version the only parameter is a specified cut-off P-value which can be
+interpreted as the probability of a false positive being included in the final
+selection.  For more information see the web site below and the accompanying
+papers: L. Davies and L. Duembgen, \"Covariate Selection Based on a Model-free
+Approach to Linear Regression with Exact Probabilities\", 2022,
+<arxiv:2202.01553>.  L. Davies, \"Linear Regression, Covariate Selection and the
+Failure of Modelling\", 2022, <arXiv:2112.08738>.")
+    (license license:gpl3)))
 
 (define-public r-gauser
   (package

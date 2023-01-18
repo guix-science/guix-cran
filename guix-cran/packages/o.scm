@@ -1277,6 +1277,29 @@ time-to-event outcome; details are described in Wang et al (2021)
 <doi:10.1002/sim.9185>.")
     (license license:gpl3)))
 
+(define-public r-ossanma
+  (package
+    (name "r-ossanma")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OssaNMA" version))
+              (sha256
+               (base32
+                "144ngz5kwq8d4nkv2x5mspsc6b8nqrqrjq0diq8b6aqps1lx8pix"))))
+    (properties `((upstream-name . "OssaNMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlcoptim r-deoptimr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fangshuye/OssaNMA")
+    (synopsis
+     "Optimal Sample Size and Allocation with a Network Meta-Analysis")
+    (description
+     "This package provides a system for calculating the minimum total sample size
+needed to achieve a prespecified power or the optimal allocation for each
+treatment group with a fixed total sample size to maximize the power.")
+    (license license:gpl3)))
+
 (define-public r-osrmr
   (package
     (name "r-osrmr")
@@ -9122,13 +9145,13 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odbc" version))
               (sha256
                (base32
-                "1a5npspq91ksqp99nxicmdrm1703jk0gd9x6gl12i2rqf4qvwgwa"))))
+                "0nmydcfk10f635fd2aawqnkqlwp3xv8zs74iqblsycxr37ni4xcs"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9138,7 +9161,7 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
                              r-blob
                              r-bit64))
     (native-inputs (list pkg-config))
-    (home-page "https://github.com/r-dbi/odbc")
+    (home-page "https://r-dbi.github.io/odbc/")
     (synopsis "Connect to ODBC Compatible Databases (using the DBI Interface)")
     (description
      "This package provides a DBI-compatible interface to ODBC databases.")

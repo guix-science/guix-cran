@@ -4190,6 +4190,28 @@ differences of two Kaplan-Meier curves.")
 true/false positive rates and AUC curves from a set of censored survival data.")
     (license license:gpl2)))
 
+(define-public r-survah
+  (package
+    (name "r-survah")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "survAH" version))
+              (sha256
+               (base32
+                "1cs3h2gc7i5lpy98lq6vi70k207x42nl1swdp5qs602zfbivx56k"))))
+    (properties `((upstream-name . "survAH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=survAH")
+    (synopsis "Survival Data Analysis using Average Hazard")
+    (description
+     "This package performs two-sample comparisons based on average hazard with
+survival weight (AHSW) or general censoring-free incidence rate (CFIR) proposed
+by Uno and Horiguchi (2023) <doi:10.1002/sim.9651>.")
+    (license license:gpl2)))
+
 (define-public r-surv2samplecomp
   (package
     (name "r-surv2samplecomp")
@@ -4484,34 +4506,6 @@ inclusion of a variable in the model.  Under the null case, the number of false
 positives will be geometrically distributed with this as probability of success,
 so if this parameter is set to p, the expected number of false positives should
 be p/(1-p).")
-    (license license:gpl3)))
-
-(define-public r-surf
-  (package
-    (name "r-surf")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "surf" version))
-              (sha256
-               (base32
-                "0hiqs55apwq02lm0hr0r06zg734yr5w2xn9cdqjq3bk4lap4m0q1"))))
-    (properties `((upstream-name . "surf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey r-numderiv r-matrix r-mass r-abind))
-    (home-page "https://cran.r-project.org/package=surf")
-    (synopsis "Survey-Based Gross Flows Estimation")
-    (description
-     "Estimation of gross flows under non-response and complex sampling designs, using
-GutiÃ©rrez, Nascimento Silva and Trujillo (2014)
-<https://www150.statcan.gc.ca/n1/pub/12-001-x/2014002/article/14113-eng.pdf>
-complex sampling extension of the non-response model developed by Stasny (1987)
-<https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/some-markov-chain-models-for-nonresponse-in-estimating-gross-labor-force-flows.pdf>.
- It estimates the gross flows process under non-response by modelling the
-observable cross-tabulation counts as a two-stage Markov Chain process,
-combining (1) the unobservable Markov Chain describing the transition of states;
-and (2) the non-response process, given by the initial response probabilities
-and the response/non-response transition probabilities.")
     (license license:gpl3)))
 
 (define-public r-surelda
@@ -20333,13 +20327,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatialsample" version))
               (sha256
                (base32
-                "15mjd53ny320w3fiiar4vq7m7fypigv2qpgb0sklwbwvly9zvz7n"))))
+                "1xfgd8ry7h231ic1zx85g331wg16c569br7dk55agfhpsg1kc8xj"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -28158,6 +28152,25 @@ methodological details, please refer to Hart, K.R., Fei, T. and Hanfelt, J.J.
 (2020), Scalable and robust latent trajectory class analysis using artificial
 likelihood.  Biometrics <doi:10.1111/biom.13366>.")
     (license license:gpl2+)))
+
+(define-public r-slpreselection
+  (package
+    (name "r-slpreselection")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SLPresElection" version))
+              (sha256
+               (base32
+                "1i813q0m9h964nd61kwnvakci3n1bn06pvq9zvxb2clcch05qyfj"))))
+    (properties `((upstream-name . "SLPresElection")))
+    (build-system r-build-system)
+    (home-page "https://github.com/Amalan-ConStat/SLPresElection")
+    (synopsis "Presidential Election Data of \"Sri Lanka\" from 1982 to 2015")
+    (description
+     "Presidential Election data of \"Sri Lanka\"\" is stored in Pdf files, through Pdf
+scraping they are converted into data-frames and stored in this R package.")
+    (license license:expat)))
 
 (define-public r-slp
   (package
@@ -38775,19 +38788,23 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharp" version))
               (sha256
                (base32
-                "0f7zavv0pk5nm81208cgxhmamp6vbpmwinv26mxwpaf7w9j5a2sk"))))
+                "1fnrdgja2yrhcjlgh1yrp5sqy9806fdpm630b0f2c4qhv6jbk9px"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-rdpack
+                             r-randomcolor
                              r-mclust
+                             r-mass
+                             r-impute
                              r-igraph
+                             r-huge
                              r-glmnet
                              r-glassofast
                              r-fake
@@ -38796,13 +38813,16 @@ illustrate function usage.")
     (synopsis "Stability-enHanced Approaches using Resampling Procedures")
     (description
      "In stability selection (N Meinshausen, P BÃ¼hlmann (2010)
-<doi:10.1111/j.1467-9868.2010.00740.x>), resampling techniques are used to
-enhance the reliability of the results.  In this package, hyper-parameters are
+<doi:10.1111/j.1467-9868.2010.00740.x>) and consensus clustering (S Monti et al
+(2003) <doi:10.1023/A:1023949509487>), resampling techniques are used to enhance
+the reliability of the results.  In this package, hyper-parameters are
 calibrated by maximising model stability, which is measured by the negative
-log-likelihood under the null hypothesis that all selection probabilities are
-identical (B Bodinier et al (2021) <arXiv:2106.02521>).  Functions are readily
-implemented for the use of LASSO regression, sparse PCA, sparse (group) PLS or
-graphical LASSO.")
+log-likelihood under the null hypothesis that all selection (or co-membership)
+probabilities are identical (B Bodinier et al (2021) <arXiv:2106.02521>).
+Functions are readily implemented for the use of LASSO regression, sparse PCA,
+sparse (group) PLS or graphical LASSO in stability selection, and hierarchical
+clustering, partitioning around medoids, K means or Gaussian mixture models in
+consensus clustering.")
     (license license:gpl3+)))
 
 (define-public r-shar
@@ -39313,13 +39333,13 @@ Setiawan(2016)<https://www.researchgate.net/publication/316517889_S-GSTAR-SUR_mo
 (define-public r-sgsr
   (package
     (name "r-sgsr")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sgsR" version))
               (sha256
                (base32
-                "13k2h5mxnci977yx1fav9kknrqfbq4bnw2204bcpdkrp8nf0j0rh"))))
+                "010lqnc31wh68mfzjd5zyjlsnclrnakz89h3brvb42xl92j8w3ik"))))
     (properties `((upstream-name . "sgsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
