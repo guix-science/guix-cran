@@ -4844,13 +4844,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.8-3")
+    (version "1.8-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asbio" version))
               (sha256
                (base32
-                "1p0hfgkfcnxdf2jivn1mm3rjdqs4arik6ajc1gc1mmdwfwh82s5x"))))
+                "056hxcyyf8hq5kh3qhcm0z6dg29wwjisf4jkkzp2c5p4y1ngz8gl"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (inputs (list))
@@ -5757,13 +5757,13 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arkhe" version))
               (sha256
                (base32
-                "0n4l4mahblgzhmlwysvfvlx686zix718sp53irgg39553mfzqj8b"))))
+                "0bhz4b37ii23dbqpgywv8q72lj4m41g3d43xfacn1qxc9khgwisn"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -14174,13 +14174,13 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
 (define-public r-agroreg
   (package
     (name "r-agroreg")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroReg" version))
               (sha256
                (base32
-                "1d13h78ikxsd3almzzb3aialxl03xdiy2ndykpvklqml9ckdgj45"))))
+                "16w1ayzr95w8frca3c3mnqdwgja2r54a1ywkynw9x29cdv47icnx"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcompanion

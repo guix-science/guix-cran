@@ -6050,13 +6050,13 @@ approach.")
 (define-public r-cre
   (package
     (name "r-cre")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CRE" version))
               (sha256
                (base32
-                "0sym32nljviam09w3vsbinm5n50zybckw86l61d6j0h5sl1ab8qc"))))
+                "01pzphv8gk96nwpy89pxp150i6a6b2d1r30m4q6zlis7b07b2kqs"))))
     (properties `((upstream-name . "CRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -8224,13 +8224,13 @@ assays in large-sized samples.  Mercatelli, D. and Giorgi, F. M. (2020)
 (define-public r-covidibge
   (package
     (name "r-covidibge")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COVIDIBGE" version))
               (sha256
                (base32
-                "014g50ixnm9rnw2pgsgw6qvfk7wn75hbss3n2ylr1i5ndnr72m49"))))
+                "0hr879bk5sfyag21b0qy68qazbkswca1a2iwlgd9r6zx853wbad2"))))
     (properties `((upstream-name . "COVIDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -11557,13 +11557,13 @@ adopted in particular.")
 (define-public r-cops
   (package
     (name "r-cops")
-    (version "1.2-0")
+    (version "1.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cops" version))
               (sha256
                (base32
-                "0bw13yhvnq5qw9rgmvf7w3kmygbpx58168rm546x8v155ywccvfx"))))
+                "17lq7ag0bwg3i7jvzca4qyzg8ixhdikrcgpgskkm26i83886zid2"))))
     (properties `((upstream-name . "cops")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -11581,34 +11581,33 @@ adopted in particular.")
                              r-crs
                              r-cordillera
                              r-cmaes))
-    (home-page "http://r-forge.r-project.org/projects/stops/")
+    (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Cluster Optimized Proximity Scaling")
     (description
-     "Cluster optimized proximity scaling (COPS) refers to multidimensional scaling
-(MDS) methods that aim at pronouncing the clustered appearance of the
-configuration (Rusch, Mair & Hornik, 2021, <doi:10.1080/10618600.2020.1869027>
-).  They achieve this by transforming proximities/distances with power functions
-and augment the fitting criterion with a clusteredness index, the OPTICS
-Cordillera (Rusch, Hornik & Mair, 2018, <doi:10.1080/10618600.2017.1349664> ).
-There are two variants: One for finding the configuration directly (COPS-C) for
-ratio, power, interval and non-metric MDS (Borg & Groenen, 2005,
-ISBN:978-0-387-28981-6), and one for using the augmented fitting criterion to
-find optimal parameters (P-COPS).  The package contains various functions,
-wrappers, methods and classes for fitting, plotting and displaying different MDS
-models in a COPS framework like ratio, interval and non-metric MDS for COPS-C
-and P-COPS with Torgerson scaling (Torgerson, 1958, ISBN:978-0471879459),
-scaling by majorizing a complex function (SMACOF; de Leeuw, 1977,
-<https://escholarship.org/uc/item/4ps3b5mj> ), Sammon mapping (Sammon, 1969,
-<doi:10.1109/T-C.1969.222678> ), elastic scaling (McGee, 1966,
-<doi:10.1111/j.2044-8317.1966.tb00367.x> ), s-stress (Takane, Young & de Leeuw,
-1977, <doi:10.1007/BF02293745> ), r-stress (de Leeuw, Groenen & Mair, 2016,
-<https://rpubs.com/deleeuw/142619>), power-stress (Buja & Swayne, 2002
-<doi:10.1007/s00357-001-0031-0>), restricted power stress, approximated power
-stress, power elastic scaling, power Sammon mapping (Rusch, Mair & Hornik, 2021,
-<doi:10.1080/10618600.2020.1869027> ).  All of these models can also solely be
-fit as MDS with power transformations.  The package further contains a function
-for pattern search optimization, the ``Adaptive Luus-Jakola Algorithm (Rusch,
-Mair & Hornik, 2021, <doi:10.1080/10618600.2020.1869027> ).")
+     "Multidimensional scaling (MDS) methods that aim at pronouncing the clustered
+appearance of the configuration (Rusch, Mair & Hornik, 2021,
+<doi:10.1080/10618600.2020.1869027>).  They achieve this by transforming
+proximities/distances with power functions and augment the fitting criterion
+with a clusteredness index, the OPTICS Cordillera (Rusch, Hornik & Mair, 2018,
+<doi:10.1080/10618600.2017.1349664>).  There are two variants: One for finding
+the configuration directly (COPS-C) for ratio, power, interval and non-metric
+MDS (Borg & Groenen, 2005, ISBN:978-0-387-28981-6), and one for using the
+augmented fitting criterion to find optimal parameters (P-COPS).  The package
+contains various functions, wrappers, methods and classes for fitting, plotting
+and displaying different MDS models in a COPS framework like ratio, interval and
+non-metric MDS for COPS-C and P-COPS with Torgerson scaling (Torgerson, 1958,
+ISBN:978-0471879459), scaling by majorizing a complex function (SMACOF; de
+Leeuw, 1977, <https://escholarship.org/uc/item/4ps3b5mj>), Sammon mapping
+(Sammon, 1969, <doi:10.1109/T-C.1969.222678>), elastic scaling (McGee, 1966,
+<doi:10.1111/j.2044-8317.1966.tb00367.x>), s-stress (Takane, Young & de Leeuw,
+1977, <doi:10.1007/BF02293745>), r-stress (de Leeuw, Groenen & Mair, 2016,
+<https://rpubs.com/deleeuw/142619>), power stress (Buja & Swayne, 2002
+<doi:10.1007/s00357-001-0031-0>), restricted power stress, approximate power
+stress, power elastic scaling, power Sammon mapping (for all Rusch, Mair &
+Hornik, 2021, <doi:10.1080/10618600.2020.1869027>).  All of these models can
+also solely be fit as MDS with power transformations.  The package further
+contains a function for pattern search optimization, the ``Adaptive Luus-Jaakola
+Algorithm (Rusch, Mair & Hornik, 2021,<doi:10.1080/10618600.2020.1869027>).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-copre
@@ -11684,6 +11683,39 @@ other aggregation matrices, since it considers the same linguistic variables
 mentioned.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-copernicusmarine
+  (package
+    (name "r-copernicusmarine")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CopernicusMarine" version))
+              (sha256
+               (base32
+                "1vg767ri1bwp26naax0qsi895fkmsxx8h792hmkxnh9ay83h6l40"))))
+    (properties `((upstream-name . "CopernicusMarine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-readr
+                             r-purrr
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-crayon))
+    (home-page "<https://github.com/pepijn-devries/CopernicusMarine>")
+    (synopsis
+     "Search Download and Handle Data from Copernicus Marine Service Information")
+    (description
+     "Subset and download data from EU Copernicus Marine Service Information:
+<https://data.marine.copernicus.eu>.  Import data on the oceans physical and
+biogeochemical state from Copernicus into R without the need of external
+software.")
+    (license license:gpl3+)))
 
 (define-public r-copernicusdem
   (package
@@ -13559,13 +13591,13 @@ Details are available in the function documentation and in the vignette.")
 (define-public r-conjurer
   (package
     (name "r-conjurer")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conjurer" version))
               (sha256
                (base32
-                "12hd10sb4pk53jikbbcwimfhca25zy0mzx5vnllscpk09f8a68j7"))))
+                "09ypjh8dlf8if9a2fb1sgzp5ds68vr5krk7fk7rhwi16lpxykwh9"))))
     (properties `((upstream-name . "conjurer")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -34163,19 +34195,17 @@ includes a variety of data accessible just by function call.")
 (define-public r-cartography
   (package
     (name "r-cartography")
-    (version "3.0.1")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cartography" version))
               (sha256
                (base32
-                "1ginq160ag0sv5xfiqc5a5vizsqvl3maw61yskwhfnjb2lcgk2yg"))))
+                "1b0qj3sj6aycrxjh54and8r3nqdpcc1vi1m4ljhv8dy0f266kjn6"))))
     (properties `((upstream-name . "cartography")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
-                             r-slippymath
                              r-sf
-                             r-rgeos
                              r-rcpp
                              r-raster
                              r-png
@@ -36330,16 +36360,16 @@ especially simple one dimensional examples appears in inst/doc/one.dim/.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "0.1.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CalibrationCurves" version))
               (sha256
                (base32
-                "1krfs66zwkh31nbpm94yr4x1cq1bbajbbcfxrgi4i8i8n7fv2gii"))))
+                "0bhgwbpykj374nbsz62sjhzx2xahm7a5z8cfmg2pkpf713f6qaxb"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rms r-hmisc))
+    (propagated-inputs (list r-survival r-rms r-hmisc r-ggplot2))
     (home-page "https://cran.r-project.org/package=CalibrationCurves")
     (synopsis "Calibration Performance")
     (description

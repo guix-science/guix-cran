@@ -11907,13 +11907,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.5.0")
+    (version "3.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTA" version))
               (sha256
                (base32
-                "1jg8s08iz6l3pggybdsrzi91r5nxm8yvy1cabrxl0s861h98r3m3"))))
+                "19x70j2f6yld814mp8p47pin4y2x2znzrrpgp76zp1pqwq39ac05"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf

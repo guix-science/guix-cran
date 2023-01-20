@@ -11103,6 +11103,29 @@ allows fast processing of queries returning many records.  And it let the user
 handle post-processing according to the data model and his needs.")
     (license license:gpl3)))
 
+(define-public r-nemtr
+  (package
+    (name "r-nemtr")
+    (version "0.0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nemtr" version))
+              (sha256
+               (base32
+                "0vh6zagfldpir8dwxrk0h24dmzbvcik0vkj8cpx7rp324iv66mrn"))))
+    (properties `((upstream-name . "nemtr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/calebgreski/nemtr")
+    (synopsis
+     "Nonparametric Extended Median Test - Cumulative Summation Method")
+    (description
+     "Calculates a cumulative summation nonparametric extended median test based on
+the work of Brown & Schaffer (2020) <DOI:10.1080/03610926.2020.1738492>.  It
+then generates a control chart to assess processes and determine if any streams
+are out of control.")
+    (license license:expat)))
+
 (define-public r-nembm
   (package
     (name "r-nembm")
@@ -11406,13 +11429,13 @@ Methods used in the package refers to E. Di Nardo and G. Guarino (2022)
 (define-public r-nebula
   (package
     (name "r-nebula")
-    (version "1.2.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nebula" version))
               (sha256
                (base32
-                "1a4jsqxprp4pn7f5nxgha3jvjkcp7rdjlpcjwfc3f89530jhmnyv"))))
+                "03vymw0ki9cyf4dg7s8fin8s8yi4b09q9kbcqb9940afi6vdcyxh"))))
     (properties `((upstream-name . "nebula")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -13949,13 +13972,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NADA2" version))
               (sha256
                (base32
-                "0fpxcyxwjz20h5dcyijbd09msw2c0l9fd2z5schdqhhfb6ravzcl"))))
+                "1w3b24cfnmhkk41x20m60d322awac9ysynh3xy0qx1plfkxck1q5"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

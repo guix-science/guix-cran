@@ -1652,26 +1652,29 @@ Moss and De Bin (2019) <arXiv:1911.12445>.")
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PublicationBias" version))
               (sha256
                (base32
-                "1mdvzf2qiq4zvp4iinjnnj0rq3dqcz18r27nr62znh05jp6i96gx"))))
+                "1v4nh916ika9asil1jxsqf9c49y7kwz6sbrhqkbkc1ywa4rq6i2q"))))
     (properties `((upstream-name . "PublicationBias")))
     (build-system r-build-system)
     (propagated-inputs (list r-robumeta
+                             r-rlang
                              r-rdpack
-                             r-metautility
                              r-metafor
+                             r-metabias
+                             r-lifecycle
+                             r-glue
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=PublicationBias")
+    (home-page "https://github.com/mayamathur/PublicationBias")
     (synopsis "Sensitivity Analysis for Publication Bias in Meta-Analyses")
     (description
      "This package performs sensitivity analysis for publication bias in meta-analyses
-(per Mathur & VanderWeele, 2020 [<https://osf.io/s9dp6>]).  These analyses
+(per Mathur & VanderWeele, 2020 [<doi:10.31219/osf.io/s9dp6>]).  These analyses
 enable statements such as: \"For publication bias to shift the observed point
 estimate to the null, significant results would need to be at least 30-fold more
 likely to be published than negative or nonsignificant results.\" Comparable
@@ -3274,13 +3277,13 @@ functions.  The methods are largely described by Nocedal and Wright (2006)
 (define-public r-pspmanalysis
   (package
     (name "r-pspmanalysis")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PSPManalysis" version))
               (sha256
                (base32
-                "0vccvhda86430w3gkjhg565i77dci1aa6pizs61w1xjc75rrbnan"))))
+                "0wc4rkkwqwjhx54n05bjc2q370bb3ca1c7annxg89bmr9msf8zd1"))))
     (properties `((upstream-name . "PSPManalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-pkgbuild))
@@ -11656,13 +11659,13 @@ randomized objective functions\" <arXiv:1806.11544>.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "postdoc" version))
               (sha256
                (base32
-                "02j7jsjmyd643bimhvvaaak7nx6w99shas8l588ny2abygxb915m"))))
+                "1jgqx1k24dg379lzvviyvmzr37kmdqzlv1j85himyi8h7mvli9n1"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite))
@@ -15426,13 +15429,13 @@ Knight and Harper (2013) <doi:10.1016/j.ejor.2013.04.003> for more information."
 (define-public r-pnsibge
   (package
     (name "r-pnsibge")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PNSIBGE" version))
               (sha256
                (base32
-                "0cs0bpb4fdkgznds579q7fblj0jay6wjyfhwpwc4y6z8ai1rhgja"))))
+                "02dw7agywk5ay1fd4gqydh8ibnq35040lbcpfl43wllyh1i4s2hv"))))
     (properties `((upstream-name . "PNSIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -15492,13 +15495,13 @@ for network autoregressive models. <arXiv:2202.03852>.")
 (define-public r-pnadcibge
   (package
     (name "r-pnadcibge")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PNADcIBGE" version))
               (sha256
                (base32
-                "0dxbx8585irfaaf1yll8jmfa719s07b6aflj8g39zw79lry5fl9d"))))
+                "0fqx2gyr34dq2lcnjjfmwhqj4givpxdphwn9h1vfb04k0rcgzvpr"))))
     (properties `((upstream-name . "PNADcIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -17266,13 +17269,13 @@ and Giuliani (2022) <doi:10.18637/jss.v103.c01>.")
 (define-public r-plot3drgl
   (package
     (name "r-plot3drgl")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plot3Drgl" version))
               (sha256
                (base32
-                "1914d5nnn3w56af58pih4gbsqyzk69169qcyja5my6qyw09i4hl5"))))
+                "1p8vypid2v1n255hlpxxlbnf1lyv2jywls0jfm7scfms5aisk1vd"))))
     (properties `((upstream-name . "plot3Drgl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-plot3d))
@@ -28244,18 +28247,18 @@ implemented.  Functions for incorporating background knowledge are provided.")
 (define-public r-pcal1
   (package
     (name "r-pcal1")
-    (version "1.5.6")
+    (version "1.5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcaL1" version))
               (sha256
                (base32
-                "1wpd9xiyrw59l7f5g7br4f8rrlzwsiwvla70dmdvcify9dwlg1rz"))))
+                "0k4kq4j45wsplag3nklyhyycpw65jin4i1l6ayci971y1pr3n113"))))
     (properties `((upstream-name . "pcaL1")))
     (build-system r-build-system)
     (inputs (list zlib))
     (native-inputs (list pkg-config))
-    (home-page "http://www.optimization-online.org/DB_HTML/2012/04/3436.html")
+    (home-page "https://cran.r-project.org/package=pcaL1")
     (synopsis "L1-Norm PCA Methods")
     (description
      "Implementations of several methods for principal component analysis using the L1
@@ -28416,6 +28419,52 @@ interactive representation using rgl'.")
     (description
      "Computes probabilities of the bivariate normal distribution in a vectorized R
 function (Drezner & Wesolowsky, 1990, <doi:10.1080/00949659008811236>).")
+    (license license:gpl2+)))
+
+(define-public r-pbtdesigns
+  (package
+    (name "r-pbtdesigns")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PBtDesigns" version))
+              (sha256
+               (base32
+                "0kcxqca3vgn3xz451prl42d7fwh4i4bd7divmj4p5rvrmyj023ni"))))
+    (properties `((upstream-name . "PBtDesigns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=PBtDesigns")
+    (synopsis "Partially Balanced t-Designs (PBtDesigns)")
+    (description
+     "The t-designs represent a generalized class of balanced incomplete block designs
+in which the number of blocks in which any t-tuple of treatments (t >= 2) occur
+together is a constant.  When the focus of an experiment lies in grading and
+selecting treatment subgroups, t-designs would be preferred over the
+conventional ones, as they have the additional advantage of t-tuple balance.
+t-designs can be advantageously used in identifying the best crop-livestock
+combination for a particular location in Integrated Farming Systems that will
+help in generating maximum profit.  But as the number of components increases,
+the number of possible t-component combinations will also increase.  Most often,
+combinations derived from specific components are only practically feasible, for
+example, in a specific locality, farmers may not be interested in keeping a pig
+or goat and hence combinations involving these may not be of any use in that
+locality.  In such situations partially balanced t-designs with few selected
+combinations appearing in a constant number of blocks (while others not at all
+appearing) may be useful (Sayantani Karmakar, Cini Varghese, Seema Jaggi & Mohd
+Harun (2021)<doi:10.1080/03610918.2021.2008436>).  Further, every location may
+not have the resources to form equally sized homogeneous blocks.  Partially
+balanced t-designs with unequal block sizes (Damaraju Raghavarao & Bei Zhou
+(1998)<doi:10.1080/03610929808832657>.  Sayantani Karmakar, Cini Varghese, Seema
+Jaggi & Mohd Harun (2022).\" Partially Balanced t-designs with unequal block
+sizes\") prove to be more suitable for such situations.This package generates
+three series of partially balanced t-designs namely Series 1, Series 2 and
+Series 3.  Series 1 and Series 2 are designs having equal block sizes and with
+treatment structures 4(t + 1) and a prime number, respectively.  Series 3
+consists of designs with unequal block sizes and with treatment structure
+n(n-1)/2.  This package is based on the function named PBtD() for generating
+partially balanced t-designs along with their parameters, information matrices,
+average variance factors and canonical efficiency factors.")
     (license license:gpl2+)))
 
 (define-public r-pbsmodelling

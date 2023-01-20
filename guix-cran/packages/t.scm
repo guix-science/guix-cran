@@ -6984,37 +6984,6 @@ complex loops.  The coefficient vector and cumulative baseline hazard function
 can be estimated, along with the corresponding standard errors and P values.")
     (license license:gpl2+)))
 
-(define-public r-transfr
-  (package
-    (name "r-transfr")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "transfR" version))
-              (sha256
-               (base32
-                "1ricgs7297wdmrw2vp5r6hxd266cq14c3nz2rrcas0vphmw1f5hl"))))
-    (properties `((upstream-name . "transfR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-stars
-                             r-sf
-                             r-rdpack
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://gitlab.irstea.fr/HYCAR-Hydro/transfr")
-    (synopsis "Transfer of Hydrograph from Gauged to Ungauged Catchments")
-    (description
-     "This package provides a geomorphology-based hydrological modelling for
-transferring streamflow measurements from gauged to ungauged catchments.
-Inverse modelling enables to estimate net rainfall from streamflow measurements
-following BoudhraÃ¢ et al. (2018) <doi:10.1080/02626667.2018.1425801>.
-Resulting net rainfall is then estimated on the ungauged catchments by spatial
-interpolation in order to finally simulate streamflow following de Lavenne et
-al. (2016) <doi:10.1002/2016WR018716>.")
-    (license license:gpl2)))
-
 (define-public r-transformr
   (package
     (name "r-transformr")
@@ -12269,17 +12238,17 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.17.1")
+    (version "0.18.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tiledb" version))
               (sha256
                (base32
-                "1rjdz60jmzrj5y3igpbw4xy4vvk2kbxpnllp50j5jqadkw5spw3l"))))
+                "1d20z3wpq6w6kgzlxihx98fxmypfy30vmk623f62gawhi2xydyph"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-spdl r-rcppspdlog r-rcpp r-nanotime))
+    (propagated-inputs (list r-spdl r-rcpp r-nanotime))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
@@ -13392,13 +13361,13 @@ str_detect2().")
 (define-public r-tidypaleo
   (package
     (name "r-tidypaleo")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidypaleo" version))
               (sha256
                (base32
-                "1pxn5hmlnj6bwc4hx45j3757djl1b4b1azgp1vsfkhsnl846lbjm"))))
+                "18z3w068q011a8xw75qm7wd6hqc358q38a5hd2lmm29p65c8mjxj"))))
     (properties `((upstream-name . "tidypaleo")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

@@ -3700,6 +3700,37 @@ exploring (including the mode tree, mode forest and SiZer) the number of modes
 using nonparametric techniques <DOI:10.18637/jss.v097.i09>.")
     (license license:gpl3)))
 
+(define-public r-multimix
+  (package
+    (name "r-multimix")
+    (version "1.0-10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multimix" version))
+              (sha256
+               (base32
+                "1dpy5pi0z5jfmkazxqn4jf462yi4n25jdqrzk4d3iv0hcrjmikk1"))))
+    (properties `((upstream-name . "multimix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://github.com/jmcurran/multimix")
+    (synopsis
+     "Fit Mixture Models Using the Expectation Maximisation (EM) Algorithm")
+    (description
+     "This package provides a set of functions which use the Expectation Maximisation
+(EM) algorithm (Dempster, A. P., Laird, N. M., and Rubin, D. B. (1977)
+<doi:10.1111/j.2517-6161.1977.tb01600.x> Maximum likelihood from incomplete data
+via the EM algorithm, Journal of the Royal Statistical Society, 39(1), 1--22) to
+take a finite mixture model approach to clustering.  The package is designed to
+cluster multivariate data that have categorical and continuous variables and
+that possibly contain missing values.  The method is described in Hunt, L. and
+Jorgensen, M. (1999) <doi:10.1111/1467-842X.00071> Australian & New Zealand
+Journal of Statistics 41(2), 153--171 and Hunt, L. and Jorgensen, M. (2003)
+<doi:10.1016/S0167-9473(02)00190-1> Mixture model clustering for mixed data with
+missing information, Computational Statistics & Data Analysis, 41(3-4),
+429--440.")
+    (license license:gpl2+)))
+
 (define-public r-multimarker
   (package
     (name "r-multimarker")
@@ -12208,13 +12239,13 @@ additional documentation refer to the following article: Busetto and Ranghetti
 (define-public r-modistools
   (package
     (name "r-modistools")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MODISTools" version))
               (sha256
                (base32
-                "0l204kk006yfkffn9znqbdhhw4nphkzhg9ww9alzy2biw8hz0bk7"))))
+                "174fj3r2hvr4sqiis2baqbia3b270frcrrqar6cahn1jczcqnypx"))))
     (properties `((upstream-name . "MODISTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -24447,6 +24478,28 @@ the package functionalities is provided in Charvat and Belot (2021) <doi:
 10.18637/jss.v098.i14>.")
     (license license:gpl2+)))
 
+(define-public r-mexbrewer
+  (package
+    (name "r-mexbrewer")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MexBrewer" version))
+              (sha256
+               (base32
+                "04r1hylym4pxlxy7ldd185bczd398f8a757a9yy6f86lg4vrqyhq"))))
+    (properties `((upstream-name . "MexBrewer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/paezha/MexBrewer")
+    (synopsis
+     "Color Palettes Inspired by Works of Mexican Painters and Muralists")
+    (description
+     "Color palettes inspired by the works of Mexican painters and muralists.  The
+package includes functions that return vectors of colors and also functions to
+use color and fill scales in ggplot2 visualizations.")
+    (license license:expat)))
+
 (define-public r-mewavg
   (package
     (name "r-mewavg")
@@ -27430,6 +27483,31 @@ the best linear unbiased estimators (BLUEs) of location and scale parameters by
 Yang et al. (2018, submitted) based on sample quantiles derived summaries in a
 meta-analysis.")
     (license license:gpl2)))
+
+(define-public r-metabias
+  (package
+    (name "r-metabias")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metabias" version))
+              (sha256
+               (base32
+                "0hamzkc6abk5i10hnbnnra3wga2sgxdqvgldfh0rpq31am2hcwl1"))))
+    (properties `((upstream-name . "metabias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/mikabr/metabias")
+    (synopsis "Meta-Analysis for Within-Study and/or Across-Study Biases")
+    (description
+     "This package provides common components (classes, methods, documentation) for
+packages that conduct meta-analytic corrections and sensitivity analyses for
+within-study and/or across-study biases in meta-analysis.  See the packages
+PublicationBias', phacking', and multibiasmeta'.  These package implement
+methods described in, respectively: Mathur & VanderWeele (2020)
+<doi:10.31219/osf.io/s9dp6>; Mathur (2022) <doi:10.31219/osf.io/ezjsx>; Mathur
+(2022) <doi:10.31219/osf.io/u7vcb>.")
+    (license license:expat)))
 
 (define-public r-metaanalyser
   (package
@@ -35375,13 +35453,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovchain" version))
               (sha256
                (base32
-                "050zfabmxs8pslsp5k0phflx8dqvfknnnpwc0wn9fm6i8npi42xm"))))
+                "1kb5dvanrwy6rqyz15wqw2rxi2bk5rnbfdhfvwk6fsn0vm4rax5w"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -39238,6 +39316,38 @@ detect high-order interactions -- a traditionally non-trivial challenge.
 Details concerning application, methodology, and relevant survey literature can
 be found in this library's vignette, \"About.\"")
     (license license:gpl3+)))
+
+(define-public r-macrosyntr
+  (package
+    (name "r-macrosyntr")
+    (version "0.2.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "macrosyntR" version))
+              (sha256
+               (base32
+                "1w4h9kkknxzphi3v4grn7c6syx5sf4jl6h8vfyn7xmdzzppq5q20"))))
+    (properties `((upstream-name . "macrosyntR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-igraph
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SamiLhll/macrosyntR")
+    (synopsis "Draw Ordered Oxford Grids")
+    (description
+     "Use standard genomics file format (BED) and a table of orthologs to illustrate
+pair-wise synteny conservation at the genome-wide scale.  Significantly
+conserved linkage groups are identified as described in Simakov et al. (2020)
+<doi:10.1038/s41559-020-1156-z> and displayed on an Oxford Grid (Edwards (1991)
+<doi:10.1111/j.1469-1809.1991.tb00394.x>).  The package provides a function that
+uses a network-based greedy algorithm to find communities (Clauset et al. (2004)
+<doi:10.1103/PhysRevE.70.066111>) and so automatically order the chromosomes on
+the plot to improve interpretability.")
+    (license license:gpl3)))
 
 (define-public r-macrocol
   (package

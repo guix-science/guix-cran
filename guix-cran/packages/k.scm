@@ -2281,13 +2281,13 @@ sources are only available from the project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "0.1.11")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "klassR" version))
               (sha256
                (base32
-                "1ashnwiqjil8rbx2i8aqgrxjdn2iajfc8kwzrgc67yhj0l2rjm79"))))
+                "0wrg8z88qilkhqnhcrijprxsbi3zq224wdrdwpz12igmvibhhjvf"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-jsonlite r-httr))
@@ -4351,13 +4351,13 @@ handsontable is also provided to enter the input predictor values.")
 (define-public r-kcprs
   (package
     (name "r-kcprs")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kcpRS" version))
               (sha256
                (base32
-                "067j91rhw56kf15h7hxpm9qr6i59fvy5fh9ycfdqcps83wjgx62x"))))
+                "0ijhzzzqk3yxpdm4vb1h7igrpb3wli17kxbidx4kzjga54pbik41"))))
     (properties `((upstream-name . "kcpRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-roll r-rcpp r-rcolorbrewer r-foreach

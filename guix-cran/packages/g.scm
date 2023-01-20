@@ -7255,13 +7255,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpboost" version))
               (sha256
                (base32
-                "066qd921pxcb2frlnia7zdldg49rgd5qrpk2gzkbxcklmjf8j923"))))
+                "1vnaqx5v1bcgv3a281zqz8wbb4f2cz74mad8z60wn8c4zcs8zh0m"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -16732,13 +16732,13 @@ time models, using the population-based Markov Chain Monte Carlo.")
 (define-public r-ggdist
   (package
     (name "r-ggdist")
-    (version "3.2.0")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdist" version))
               (sha256
                (base32
-                "0ihy27d45gifxn8yc9w5g3cn3kmbk268mxipmvmdd0mjxgcqkj89"))))
+                "0a72yc58wr51xm6hp4rpqwd93hd36cbl6g7rwmdxp7q4kvcnl0bn"))))
     (properties `((upstream-name . "ggdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16747,6 +16747,7 @@ time models, using the population-based Markov Chain Monte Carlo.")
                              r-tibble
                              r-scales
                              r-rlang
+                             r-quadprog
                              r-numderiv
                              r-hdinterval
                              r-glue
@@ -22161,13 +22162,13 @@ usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
 (define-public r-genepop
   (package
     (name "r-genepop")
-    (version "1.1.7")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genepop" version))
               (sha256
                (base32
-                "0b36nspq3kkad52k0viw1pdsf7h9h5ivi0ix7zg8i0z7vkhnm0cy"))))
+                "13h3azszr42bzm5af8rkxw1lnd1x5c9lpawfcg3m5xgwvwzlzl3l"))))
     (properties `((upstream-name . "genepop")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcppprogress r-rcpp))
@@ -23827,13 +23828,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalcubes" version))
               (sha256
                (base32
-                "1fx1h2jwp2i72jky44arrlf37in3p8gv7ph6xn1f5qszrgmi4q48"))))
+                "0ywc7bxw49cbjhcafby7dlxhzz52abxirar48ar076m6wkk2vbad"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (inputs (list zlib sqlite proj netcdf gdal))

@@ -12426,6 +12426,30 @@ visualization of extracted ion chromatograms (EICs) and total ion chromatograms
 (TICs).")
     (license license:expat)))
 
+(define-public r-idsl-fsa
+  (package
+    (name "r-idsl-fsa")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IDSL.FSA" version))
+              (sha256
+               (base32
+                "1b6am1cpf01r80lzjq0clg4dbs2j62clv6h8fcb90c6vhivlgaw7"))))
+    (properties `((upstream-name . "IDSL.FSA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-foreach r-doparallel))
+    (home-page "https://github.com/idslme/idsl.fsa")
+    (synopsis "Fragmentation Spectra Analysis (FSA)")
+    (description
+     "The IDSL.FSA package was designed to annotate standard .msp (mass spectra
+format) and .mgf (Mascot generic format) files using mass spectral entropy
+similarity, dot product (cosine) similarity, and normalized Euclidean mass error
+(NEME) followed by intelligent pre-filtering steps for rapid spectra searches.
+IDSL.FSA also provides a number of modules to convert and manipulate .msp and
+.mgf files.")
+    (license license:expat)))
+
 (define-public r-idsa
   (package
     (name "r-idsa")

@@ -6727,13 +6727,13 @@ nonassociative.  See the package vignette for more details.")
 (define-public r-onewaytests
   (package
     (name "r-onewaytests")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onewaytests" version))
               (sha256
                (base32
-                "05q2ir65x9pvsiim4l029hjhm12niiqjgk5rsx47i6vx23ffg8ir"))))
+                "1434ra36rmkjiw8q5d7cbzkhy7kvq5bnx6s1pfy319p6zcy083nd"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
     (propagated-inputs (list r-nortest r-moments r-ggplot2 r-car))

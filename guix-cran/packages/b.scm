@@ -8448,6 +8448,34 @@ forests.  The experiments are reproducible and illustrated using a simple
 vignette.  LICENSE: GPL-3 + file license.")
     (license license:gpl3)))
 
+(define-public r-blindreview
+  (package
+    (name "r-blindreview")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blindreview" version))
+              (sha256
+               (base32
+                "08z8dacayn3g83acqqzpdgv1wrn268jizvh1l72p9i0q8c2lcbzd"))))
+    (properties `((upstream-name . "blindreview")))
+    (build-system r-build-system)
+    (inputs (list gmp))
+    (propagated-inputs (list r-hmisc r-forsearch))
+    (home-page "https://cran.r-project.org/package=blindreview")
+    (synopsis "Blind Review Using Forward Search Procedures")
+    (description
+     "Randomly assigns identification to one of the variables of the dataset, say
+Treatment, and assigns random numbers to all the observations of the dataset.
+Reorders the database according to the random numbers, and then runs the
+appropriate forward search function on the blinded dataset.  A file is created
+from which the user can identify any outliers using the graphics function in
+this package.  An unmasking function is provided so that the user can identify
+the potential outliers in terms of their original values when blinding is no
+longer needed.  Details of the forward search functions may be found in
+<https://CRAN.R-project.org/package=forsearch>.")
+    (license license:gpl3+)))
+
 (define-public r-blindrecalc
   (package
     (name "r-blindrecalc")

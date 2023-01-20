@@ -1082,13 +1082,13 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voluModel" version))
               (sha256
                (base32
-                "1vaqwavjjs1ff32l5zxhczb72b5f7ls09v2s9z4vrnjajpf5av5g"))))
+                "1969rkl5msvl6vspjgk0pkg9lp7h7w521866g0ac7jvsy41n3jm6"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -2888,13 +2888,13 @@ nonparametric pair-copulas.  See Kraus and Czado (2017)
 (define-public r-vinecopula
   (package
     (name "r-vinecopula")
-    (version "2.4.4")
+    (version "2.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VineCopula" version))
               (sha256
                (base32
-                "02n9g1h46ac74m92yijg890mr2gzljjdm72ky2i2bwyp3wcb2jc4"))))
+                "1k9k3kwzw7pdmr3hkhafyaqvnn2g5syys74r9kqcn9fm2iyzdf86"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-lattice r-adgoftest))

@@ -9308,13 +9308,13 @@ values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevedata" version))
               (sha256
                (base32
-                "0cf0mik421j607bc9ymyf89qd8fzaqibskhkfzqlv4qqj2xab4l5"))))
+                "1gsi59f372d0n3ddl97svzhdw5hdnknia9yd5c6bqg53malrfvp0"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -26723,16 +26723,17 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "3.1.6")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smooth" version))
               (sha256
                (base32
-                "0gkzplb5my4xiyf7jwq3cd1hzvjrpjy20zkvx003cxi4qn4vv93c"))))
+                "12ziqka3i23108qf7x0mvvpbqr9pl6h3xzm11mj724qpwkyj54mk"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-xtable
                              r-statmod
                              r-rcpparmadillo
                              r-rcpp
@@ -30990,13 +30991,13 @@ a uniform prior on the root age.")
 (define-public r-sipdibge
   (package
     (name "r-sipdibge")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIPDIBGE" version))
               (sha256
                (base32
-                "0n937v4m5a39waqqks640bvmnclzg4r2x4v36nr985xw153m9pj9"))))
+                "0qa286aa20kkphzzl4y64apsm97q709agb1c7yfd5afhk6jznm4i"))))
     (properties `((upstream-name . "SIPDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -35319,6 +35320,29 @@ squares procedure.  Ruiyan Luo and Xin Qi (2017)
 Mexico's Economic Information System (<http://www.banxico.org.mx/SieInternet/>).")
     (license license:expat)))
 
+(define-public r-sie2nts
+  (package
+    (name "r-sie2nts")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Sie2nts" version))
+              (sha256
+               (base32
+                "14s13v5y33kjgd779wrdzy985sp9qg0a0rh5qx66qs9gmff6r663"))))
+    (properties `((upstream-name . "Sie2nts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rcurl r-plotly r-matrix r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Sie2nts")
+    (synopsis "Sieve Methods for Non-Stationary Time Series")
+    (description
+     "We provide functions for estimation and inference of locally-stationary time
+series using the sieve methods and bootstrapping procedure.  In addition, it
+also contains functions to generate Daubechies and Coiflet wavelet by Cascade
+algorithm and to process data visualization.")
+    (license license:expat)))
+
 (define-public r-sidrar
   (package
     (name "r-sidrar")
@@ -37178,6 +37202,50 @@ supporting, and for directing application changes in order to support a higher
 number of users.  Provides facilities for recording shiny application sessions,
 playing recorded sessions against a target server at load, and analyzing the
 resulting metrics.")
+    (license license:gpl3)))
+
+(define-public r-shinylink
+  (package
+    (name "r-shinylink")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ShinyLink" version))
+              (sha256
+               (base32
+                "1idb95hdjllrhzm4fx1lrx3d2palbwjshm6ppjw916p7wg7y7wqn"))))
+    (properties `((upstream-name . "ShinyLink")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-tidyselect
+                             r-tidyr
+                             r-shinywidgets
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shiny
+                             r-readxl
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-haven
+                             r-golem
+                             r-ggvenn
+                             r-ggplot2
+                             r-gender
+                             r-fastlink
+                             r-dt
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ShinyLink")
+    (synopsis "'Shiny' Based Record Linkage Tool")
+    (description
+     "This package provides a bridge is created between existing robust open-source
+record linkage algorithms and an urgently needed user-friendly platform that
+removes financial and technical barriers, setting a new standard for data
+interoperability in public health and bioinformatics.  The fastLink algorithms
+are used for matching.  Ted Enamorado et al. (2019)
+<doi:10.1017/S0003055418000783>.")
     (license license:gpl3)))
 
 (define-public r-shinylight
@@ -45096,13 +45164,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.7.0")
+    (version "2.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secrdesign" version))
               (sha256
                (base32
-                "0a0m78xf2avy4yx7zc8rmzjzai2pi4iy5bzh80yrc95s3m0nn24g"))))
+                "1lz9n7mx0jjwvzzdyp7f03nwxblvvcvlkv5cysih4w3f1ql2sngw"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -47449,13 +47517,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCpubr" version))
               (sha256
                (base32
-                "1h9d22465jhm95r7vj8bk2ymjm206zzrqan0cai040p1zaif01ch"))))
+                "17z62w7v9km7gd9z03lp9ni7076cp12hsi5h8jjf0bkb8h437arq"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -53141,6 +53209,33 @@ chapter is dedicated to an introduction to probit and logit models.  Various
 example datasets are shipped with the package as well as some new functions.")
     (license license:gpl3)))
 
+(define-public r-safevote
+  (package
+    (name "r-safevote")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SafeVote" version))
+              (sha256
+               (base32
+                "1shv5l0grx3bsb0md5ann5dyh18w9i4q2nsar0qmd6cgl87ml4qn"))))
+    (properties `((upstream-name . "SafeVote")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-knitr
+                             r-ggplot2
+                             r-formattable
+                             r-forcats
+                             r-fields
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cthombor.github.io/SafeVote/")
+    (synopsis "Election Vote Counting with Safety Features")
+    (description
+     "Fork of vote_2.3-2', Raftery et al. (2021) <DOI:10.32614/RJ-2021-086>, with
+additional support for stochastic experimentation.")
+    (license license:gpl2+)))
+
 (define-public r-safetygraphics
   (package
     (name "r-safetygraphics")
@@ -53498,13 +53593,13 @@ start the simulation in parallel.")
 (define-public r-saerobust
   (package
     (name "r-saerobust")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "saeRobust" version))
               (sha256
                (base32
-                "09iqslmkj4pdg8dpyy44vs2bf803k4ybn8699cfyf4fij5pbq2n5"))))
+                "1zx5ghsb842fkdhpr9013vgi3nadzs7d4haqqbx7g5nrx1ixfqlm"))))
     (properties `((upstream-name . "saeRobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep

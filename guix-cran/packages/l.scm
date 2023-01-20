@@ -92,13 +92,13 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
-    (version "0.5.0")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LWFBrook90R" version))
               (sha256
                (base32
-                "057pacicjc87g12d44mfqm9vmk10lwsxkil51bp05ixxcqpp4dp1"))))
+                "1n6jmp3dfx97gzr0kl29ljdcv3s4d9j4i2azqqhvfja2azgv2w86"))))
     (properties `((upstream-name . "LWFBrook90R")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegperiod
@@ -110,7 +110,7 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
                              r-dofuture
                              r-data-table))
     (native-inputs (list r-knitr gfortran))
-    (home-page "pschmidtwalter.github.io/lwfbrook90r/")
+    (home-page "https://pschmidtwalter.github.io/LWFBrook90R/")
     (synopsis
      "Simulate Evapotranspiration and Soil Moisture with the SVAT Model LWF-Brook90")
     (description
@@ -3804,13 +3804,13 @@ selection.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logrx" version))
               (sha256
                (base32
-                "02xkx9sfis4rn3f9hdaj5idm104r0mpp7rx3spy294ylwv7bdv2a"))))
+                "1h6l6pdwhdvh1fylki88lqz8r2x1z45afcxxz3qrf2cjh5rrym7r"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -3825,9 +3825,11 @@ selection.")
                              r-purrr
                              r-miniui
                              r-magrittr
-                             r-dplyr))
+                             r-lintr
+                             r-dplyr
+                             r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/atorus-research/logrx")
+    (home-page "https://github.com/pharmaverse/logrx")
     (synopsis "Logging Utility Focus on Clinical Trial Programming Workflows")
     (description
      "This package provides a utility to facilitate the logging and review of R
@@ -9441,13 +9443,13 @@ to other libraries.")
 (define-public r-libgeos
   (package
     (name "r-libgeos")
-    (version "3.11.0-2")
+    (version "3.11.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "libgeos" version))
               (sha256
                (base32
-                "0plm20y4c2x1qwjq3ds8fm3fjgv1rb2apvgyvrmvnwpsqhizbfzy"))))
+                "07zwnwmz5cvg858ykx6pwxd044ivmsvb5g8rrbi1y3qpmkrby0qp"))))
     (properties `((upstream-name . "libgeos")))
     (build-system r-build-system)
     (home-page "https://paleolimbot.github.io/libgeos/")

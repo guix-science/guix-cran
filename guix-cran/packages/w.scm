@@ -2646,13 +2646,13 @@ for non-binary and multivariate covariates.")
 (define-public r-wkutils
   (package
     (name "r-wkutils")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wkutils" version))
               (sha256
                (base32
-                "1b2sbq31z9bfqm6jim56r92ilrxf9hvfd5h9xfw94ypykybvr38n"))))
+                "01gsvyzxd89j979zdm8q159wgkha277xwsn097ja5absxlny6991"))))
     (properties `((upstream-name . "wkutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk r-vctrs r-tibble r-rcpp))
@@ -5781,13 +5781,13 @@ Department of Natural Resources ArcGIS REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "0.0.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdnet" version))
               (sha256
                (base32
-                "1cdsm7zr1nqpajxnqig9jwf9g9cs7y8j9c1jvnw83aslddqcj5b2"))))
+                "1yzk49vryfws9yhhflpka1djlb98fa8lddayq3gia76ki2nj1yvk"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -5808,8 +5808,10 @@ networks, Opsahl, Agneessens and Skvoretz (2010)
 <doi:10.1016/j.socnet.2010.03.006>, Zhang, Wang and Yan (2022)
 <doi:10.1016/j.physa.2021.126438>, (3) clustering coefficient of weighted and
 directed networks, Fagiolo (2007) <doi:10.1103/PhysRevE.76.026107> and Clemente
-and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) network rewiring, (5)
-preferential attachment network generation.")
+and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring networks with
+given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
+<doi:10.1007/s11222-022-10161-8>, (5) preferential attachment network
+generation.")
     (license license:gpl3+)))
 
 (define-public r-wdm

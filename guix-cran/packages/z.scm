@@ -666,13 +666,13 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.7-1")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zen4R" version))
               (sha256
                (base32
-                "06i47n9xgkx0d1362qsrp34h9cjmplnd61my13wi45lazb2ah31p"))))
+                "14psa7y6dh9iw2xcjrz4zjv4aclz9m2azr26v7xv42kd4jhk6fhv"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

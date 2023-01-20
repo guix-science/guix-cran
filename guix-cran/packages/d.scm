@@ -4749,17 +4749,17 @@ in Spielman and Moore (2020) <doi:10.3389/feart.2020.585087>.")
 (define-public r-dracor
   (package
     (name "r-dracor")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dracor" version))
               (sha256
                (base32
-                "0q7kwv60q32gj1b48r3ha0d539ddhw9jz3n62wvc8jr1na1v52lh"))))
+                "0cklq1lqlzsyjrdkij0xzqvv3k1nxv13kyz2zkky3r13rc9wbbfd"))))
     (properties `((upstream-name . "dracor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/jefferis/dracor")
+    (home-page "https://github.com/natverse/dracor")
     (synopsis "Decode Draco Format 3D Mesh Data")
     (description
      "Decodes meshes and point cloud data encoded by the Draco mesh compression
@@ -6963,13 +6963,13 @@ makeDockerCluster() to create the cluster.  The developer should see
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dockerfiler" version))
               (sha256
                (base32
-                "1j773kpbg38bh7y60s4mysz67kxqhm4ziammy07iw680rpqffvms"))))
+                "0nmxm73djmrg22iyzylj9wng1hsg56pnr87vspywf8jv4q2vpjvp"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -14147,6 +14147,31 @@ predictor-corrector or a cyclic coordinate descent algorithm, as described in
 the paper linked to via the URL below.")
     (license license:gpl2+)))
 
+(define-public r-dggridr
+  (package
+    (name "r-dggridr")
+    (version "3.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dggridR" version))
+              (sha256
+               (base32
+                "1915lc81yw6ns02fi37xjqd2zbdzhdsvqqb6c9w4b6i0665yb9ja"))))
+    (properties `((upstream-name . "dggridR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-sf r-rlang r-rcpp r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-barnes/dggridR/")
+    (synopsis "Discrete Global Grids")
+    (description
+     "Spatial analyses involving binning require that every bin have the same area,
+but this is impossible using a rectangular grid laid over the Earth or over any
+projection of the Earth.  Discrete global grids use hexagons, triangles, and
+diamonds to overcome this issue, overlaying the Earth with equally-sized bins.
+This package provides utilities for working with discrete global grids, along
+with utilities to aid in plotting such data.")
+    (license license:agpl3+)))
+
 (define-public r-dgeobj-utils
   (package
     (name "r-dgeobj-utils")
@@ -18915,13 +18940,13 @@ of the posterior distributions of model parameters and trajectories.")
 (define-public r-debif
   (package
     (name "r-debif")
-    (version "0.1.5")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deBif" version))
               (sha256
                (base32
-                "03n20p7vpa28laxhxvm7drq89vr1hadxaxhwjqc1wb44bwhy4cvy"))))
+                "1jz5kxhjbsfd2mvy6dhs7h3zx7gp6j2bg2sf9q08wx61q3b6ksq6"))))
     (properties `((upstream-name . "deBif")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

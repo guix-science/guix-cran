@@ -8196,13 +8196,13 @@ the coursera Epidemics Massive Online Open Course
 (define-public r-epilps
   (package
     (name "r-epilps")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiLPS" version))
               (sha256
                (base32
-                "0453vi4h988syd9jab0xmy19vl2m8z30jcymc1a1hcfpnw88hl8z"))))
+                "08fi65wmj2qcchsgzjis94q05lhp1ygzzw7arc0jd688rlqgizxm"))))
     (properties `((upstream-name . "EpiLPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -8220,8 +8220,8 @@ the coursera Epidemics Massive Online Open Course
      "Bayesian Tool for Fast and Flexible Estimation of the Reproduction Number")
     (description
      "Estimation of the instantaneous reproduction number with Laplacian-P-splines
-following the methodology of Gressani et al.(2021)
-<doi:10.1101/2021.12.02.21267189>.  The negative Binomial distribution is used
+following the methodology of Gressani et al. (2022)
+<doi:10.1371/journal.pcbi.1010618>.  The negative Binomial distribution is used
 to model the time series of case counts.  Two methods are available for
 inference : (1) a sampling-free approach based on a maximum a posteriori
 calibration of the hyperparameter vector and (2) a fully stochastic approach
@@ -12638,13 +12638,13 @@ city, and electoral zones.")
 (define-public r-elections-dtree
   (package
     (name "r-elections-dtree")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elections.dtree" version))
               (sha256
                (base32
-                "1j0knxi2vv65pizpz8v26az9k422msn8i7d55hyzy8h1q1bbcy8y"))))
+                "1jqbbrdnxalaj3rrwg419lnjmhv5nzvb1xjxvwi0d0h6wxjdalp7"))))
     (properties `((upstream-name . "elections.dtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rdpack r-rcppthread r-rcpp r-r6))
@@ -17251,16 +17251,17 @@ Continuous Tree Cover data (Sexton et al., 2013)
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecmwfr" version))
               (sha256
                (base32
-                "1l2w8rgxb8dphnfwvhxf09k8h79zy0qxlwz6rf2gbx0kyh5h7zi8"))))
+                "0bicldir8cmfd25wzmqhcawv94q2xmqwbzsqbk08w9y8x6yhxhic"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6
+    (propagated-inputs (list r-uuid
+                             r-r6
                              r-memoise
                              r-keyring
                              r-httr
@@ -18120,35 +18121,30 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "1.2021.3")
+    (version "2.2021.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "0fyh86gjzqxfzvvdx17x6izkyl2kmip68cwjlh9x6qzdimqz76c1"))))
+                "1n1mn35in6lmvzzbbc4qkrb5mi26gk85i7370511f0qz3ih5nxji"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-tidyr
+                             r-terra
                              r-stringr
                              r-sf
                              r-rsqlite
                              r-rlang
-                             r-rgdal
-                             r-raster
-                             r-presenceabsence
-                             r-precrec
-                             r-mgcv
                              r-magrittr
                              r-jsonlite
                              r-gridextra
                              r-ggplot2
-                             r-gbm
                              r-dplyr
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/CornellLabofOrnithology/ebirdst")
+    (home-page "https://github.com/ebird/ebirdst")
     (synopsis "Access and Analyze eBird Status and Trends Data")
     (description
      "Tools to download, load, plot, and analyze eBird Status and Trends Data Products

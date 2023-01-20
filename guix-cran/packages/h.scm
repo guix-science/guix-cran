@@ -5517,13 +5517,13 @@ of summary statistics without the need for expanding your data.")
 (define-public r-hisse
   (package
     (name "r-hisse")
-    (version "2.1.9")
+    (version "2.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hisse" version))
               (sha256
                (base32
-                "16qcpj5j1li4w1m4aqva01f186sbc2k64hgmdj623h72spwmxa87"))))
+                "0smx9535rhjvi5kzsp5cydfp04dyj05g0hl0rq9dpjq9p76ahqlw"))))
     (properties `((upstream-name . "hisse")))
     (build-system r-build-system)
     (propagated-inputs (list r-treesim
