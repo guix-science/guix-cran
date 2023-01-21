@@ -2362,13 +2362,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ftExtra" version))
               (sha256
                (base32
-                "10z9zqlzjzr7qpjphqgjikc4cnim4grphkwc941ghn3mwisc10l5"))))
+                "1bff931nk1yzda8awsmbmdbi6sabg48y6hywa5r0grc2gf4n6cih"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -9994,16 +9994,16 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "0.2")
+    (version "0.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitPS" version))
               (sha256
                (base32
-                "13xn30nbq928v6dmcjjl2vhrvc8qs6m7ldc2wzl14aanprcjiw18"))))
+                "1dgma68jha3ws6zmd3hsqsfh54i2y2v36qppswrqn14zcw5nh9q9"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-readxl r-dplyr))
+    (propagated-inputs (list r-vgam r-readxl r-hmisc r-dplyr))
     (home-page "https://github.com/jmcurran/fitPS")
     (synopsis "Fit Zeta Distributions to Forensic Data")
     (description

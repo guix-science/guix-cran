@@ -904,13 +904,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-lterpalettefinder
   (package
     (name "r-lterpalettefinder")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lterpalettefinder" version))
               (sha256
                (base32
-                "1rrivlzrk2fzcnhyy3sv0n76v7lv4c1nwiwbr9f6rinqwx02k2dd"))))
+                "0wpqh5im43753mcb792gfvs48rm1sd1qb342kig2svbp0xaa1cnv"))))
     (properties `((upstream-name . "lterpalettefinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff

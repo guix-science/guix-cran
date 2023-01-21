@@ -1901,13 +1901,13 @@ measurement.  If required, install MRCE or remMap from GitHub
 (define-public r-joinerml
   (package
     (name "r-joinerml")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "joineRML" version))
               (sha256
                (base32
-                "0rj6ag1qlz1iyia89pkxw8l2aj8msph17g7qkgc3g99v4i9rj2pp"))))
+                "07drhpyvsmmsbv4knx4ma91f773f48jf14lnpn8cdl5sslc6f4pp"))))
     (properties `((upstream-name . "joineRML")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

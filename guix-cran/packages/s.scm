@@ -8229,6 +8229,58 @@ of utility functions to allow an application developer to focus on
 application-specific functionality rather than Storm/R communications plumbing.")
     (license license:gpl2+)))
 
+(define-public r-stops
+  (package
+    (name "r-stops")
+    (version "1.0-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stops" version))
+              (sha256
+               (base32
+                "12zc338wh78an1nsmqr7sbfcr96yrb6xqzg9miwlb58sv28hm8i3"))))
+    (properties `((upstream-name . "stops")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tgp
+                             r-smacof
+                             r-scatterplot3d
+                             r-scagnostics
+                             r-rgl
+                             r-pso
+                             r-pomp
+                             r-nloptr
+                             r-minerva
+                             r-mass
+                             r-energy
+                             r-diceoptim
+                             r-dicekriging
+                             r-dfoptim
+                             r-cordillera
+                             r-cmaes
+                             r-clue
+                             r-acepack))
+    (home-page "https://r-forge.r-project.org/projects/stops/")
+    (synopsis "Structure Optimized Proximity Scaling")
+    (description
+     "This package provides a collection of methods that fit nonlinear distance
+transformations in multidimensional scaling (MDS) and trade-off the fit with
+structure considerations to find optimal parameters also known as structure
+optimized proximity scaling (STOPS) (Rusch, Mair & Hornik,
+2023,<doi:10.1007/s11222-022-10197-w>).  The package contains various functions,
+wrappers, methods and classes for fitting, plotting and displaying different MDS
+models in a STOPS framework like Torgerson (classical) scaling, scaling by
+majorizing a complex function (SMACOF), Sammon mapping, elastic scaling,
+symmetric SMACOF, spherical SMACOF, s-stress, r-stress, power MDS, power elastic
+scaling, power Sammon mapping, power stress MDS (POST-MDS), approximate power
+stress, Box-Cox MDS, local MDS and Isomap.  All of these models can also be fit
+individually with given hyperparameters or by optimizing over hyperparameters
+based on fit only (i.e., no structure considerations).  The package further
+contains functions for optimization, specifically the adaptive Luus-Jaakola
+algorithm and a wrapper for Bayesian optimization with treed Gaussian process
+with jumps to linear models, and functions for various c-structuredness indices.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
@@ -18454,19 +18506,26 @@ corrections from the original word.")
 (define-public r-spei
   (package
     (name "r-spei")
-    (version "1.7")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPEI" version))
               (sha256
                (base32
-                "0lj7d3bbik7q4di5nqc3a1rn94z2y2v9x45r1jjkvgf03frj96qd"))))
+                "0z0r7mm7hbk2vaaw6fg6hg31lpslhf2b6g9v7yw1s66i6x9y5s7i"))))
     (properties `((upstream-name . "SPEI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lmomco r-ggplot2))
-    (home-page "http://sac.csic.es/spei")
+    (propagated-inputs (list r-zoo
+                             r-tlmoments
+                             r-reshape
+                             r-lubridate
+                             r-lmomco
+                             r-lmom
+                             r-ggplot2
+                             r-checkmate))
+    (home-page "https://spei.csic.es")
     (synopsis
-     "Calculation of the Standardised Precipitation-Evapotranspiration Index")
+     "Calculation of the Standardized Precipitation-Evapotranspiration Index")
     (description
      "This package provides a set of functions for computing potential
 evapotranspiration and several widely used drought indices including the
@@ -19035,25 +19094,30 @@ further simplify the model building process.")
 (define-public r-specr
   (package
     (name "r-specr")
-    (version "0.2.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "specr" version))
               (sha256
                (base32
-                "17bc7f644g40zsfxv3sw542piqgg09w3m3q14jgrifc8sw0ljvdf"))))
+                "1y7d1x9rps0xkm8jghpnva8mmzwqa0c93mk6rf2dyrbyw850ddax"))))
     (properties `((upstream-name . "specr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
                              r-rlang
                              r-purrr
+                             r-parallelly
                              r-magrittr
                              r-lme4
+                             r-lifecycle
                              r-igraph
                              r-glue
                              r-ggraph
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-dplyr
                              r-cowplot
                              r-broom))
@@ -19062,8 +19126,8 @@ further simplify the model building process.")
     (synopsis "Conducting and Visualizing Specification Curve Analyses")
     (description
      "This package provides utilities for conducting specification curve analyses
-(Simonsohn, Simmons & Nelson (2015, <doi: 10.2139/ssrn.2694998>) or multiverse
-analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
+(Simonsohn, Simmons & Nelson (2020, <doi: 10.1038/s41562-020-0912-z>) or
+multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
 10.1177/1745691616658637>) including functions to setup, run, evaluate, and plot
 all specifications.")
     (license license:gpl3)))
@@ -31953,13 +32017,13 @@ Jones, Angela Brooks-Wilson, and Jinko Graham (2018) <doi:10.1101/234153>.")
 (define-public r-simriv
   (package
     (name "r-simriv")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SiMRiv" version))
               (sha256
                (base32
-                "1sdq1mdm5jm66jmq7mas9skq8014xd7iz16av64x645l4qxkawzw"))))
+                "02b8y6fqlz8yrndkhjypmz2bg5abw435hzq668icrvf9s1a0r5fy"))))
     (properties `((upstream-name . "SiMRiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgdal r-raster r-mco))
@@ -38274,6 +38338,35 @@ interface of the app.")
 standalone translation package to translate reports, interactive visualizations
 or graphical elements as well.")
     (license license:expat)))
+
+(define-public r-shiny-benchmark
+  (package
+    (name "r-shiny-benchmark")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shiny.benchmark" version))
+              (sha256
+               (base32
+                "14k51vhd3gngdpg67kn9gsd6i47sn9vkxx1qni139jlza7g9n0jx"))))
+    (properties `((upstream-name . "shiny.benchmark")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-stringr
+                             r-shinytest2
+                             r-renv
+                             r-progress
+                             r-jsonlite
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-dplyr))
+    (home-page "https://github.com/Appsilon/shiny.benchmark")
+    (synopsis "Benchmark the Performance of 'shiny' Applications")
+    (description
+     "Compare performance between different versions of a shiny application based on
+git references.")
+    (license license:lgpl3)))
 
 (define-public r-shinipsum
   (package
@@ -47033,13 +47126,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scrutiny" version))
               (sha256
                (base32
-                "13b257sl375rp2nzp2h2p1zlw7xcvxk59blnyn7pf9snmkncsi7j"))))
+                "0iw6yiyk7x3gzpra2zahwmv4vcjzclvjkjrkric6a7ydq1qxdnl1"))))
     (properties `((upstream-name . "scrutiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -47055,7 +47148,7 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
     (synopsis "Error Detection in Science")
     (description
      "Test published summary statistics for consistency (Brown and Heathers, 2017,
-<https://journals.sagepub.com/doi/10.1177/1948550616673876/>; Allard, 2018,
+<doi:10.1177/1948550616673876>; Allard, 2018,
 <https://aurelienallard.netlify.app/post/anaytic-grimmer-possibility-standard-deviations/>;
 Heathers and Brown, 2019, <https://osf.io/5vb3u/>).  The package also provides
 infrastructure for implementing new error detection techniques.")
@@ -48486,42 +48579,6 @@ ligand-receptor analysis.  Tucker, L.R. (1966) <doi:10.1007/BF02289464>.  Unkel,
 S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 <doi:10.1007/s13253-011-0055-9>.  Zhou, G., & Cichocki, A. (2012)
 <doi:10.2478/v10175-012-0051-4>.")
-    (license license:gpl3)))
-
-(define-public r-scistreer
-  (package
-    (name "r-scistreer")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scistreer" version))
-              (sha256
-               (base32
-                "0cdp26ngfp5rxa21nqnj6j2098f6996368g4msb3shh7n75np4s9"))))
-    (properties `((upstream-name . "scistreer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidygraph
-                             r-stringr
-                             r-rhpcblasctl
-                             r-reshape2
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-phangorn
-                             r-patchwork
-                             r-paralleldist
-                             r-igraph
-                             r-ggtree
-                             r-ggplot2
-                             r-dplyr
-                             r-ape))
-    (home-page "https://github.com/kharchenkolab/scistreer")
-    (synopsis "Maximum-Likelihood Perfect Phylogeny Inference at Scale")
-    (description
-     "Fast maximum-likelihood phylogeny inference from noisy single-cell data using
-the ScisTree algorithm by Yufeng Wu (2019) <doi:10.1093/bioinformatics/btz676>.
-scistreer provides an R interface and improves speed via Rcpp and RcppParallel',
-making the method applicable to massive single-cell datasets (>10,000 cells).")
     (license license:gpl3)))
 
 (define-public r-scisr

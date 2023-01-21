@@ -9736,6 +9736,38 @@ distributions are implemented as described in OâNeill (2019)
 <doi:10.1080/00031305.2019.1699445>.")
     (license license:expat)))
 
+(define-public r-occuncertain
+  (package
+    (name "r-occuncertain")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "occUncertain" version))
+              (sha256
+               (base32
+                "0rlcwiy45kx9168g7bf1hkz9rkbpfgn7b085lzksg97f05hij52z"))))
+    (properties `((upstream-name . "occUncertain")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgdal r-knitr r-conr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=occUncertain")
+    (synopsis
+     "Addressing Occurrence Point Uncertainty When Calculating Spatial Metrics")
+    (description
+     "Repeatable processing of species occurrence datasets that makes it easier to
+propagate georeferencing imprecisions and data input mistakes to downstream
+analyses, allowing analysts to assess the impacts of these imprecisions in
+quantifying range of occurrence (EOO) or area of occupancy (AOO) .  Users can
+use the software to: (a) change each coordinate record's uncertainty from meters
+to decimal degrees, The formula for converting from meters to decimal degrees is
+in part based on information from the ESRI ArcUser magazine \"Measuring in
+Arc-Seconds\" at this site<https://www.esri.com/news/arcuser/0400/wdside.html>
+(b) deal with records that don't have uncertainty values in multiple ways, (c)
+create a new random location for each occurrence using a uniform distribution
+with a defined interval within the occurrence location uncertainty, and (d) use
+repetitions to quantify EOO and AOO with attribute uncertainty.")
+    (license license:gpl3)))
+
 (define-public r-occtest
   (package
     (name "r-occtest")

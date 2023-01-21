@@ -3289,13 +3289,13 @@ User's Guide is available in a vignette.")
 (define-public r-dscore
   (package
     (name "r-dscore")
-    (version "1.7.0")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dscore" version))
               (sha256
                (base32
-                "0nkfx4ghnsn8ks6cxmyfhm61jli73ybv477i7q86xj2yb013vdyp"))))
+                "0dyhhrdkca0091nk0a70ckk9187g5rfzz1bqw666hv40yzq0sk97"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10710,13 +10710,13 @@ non-CRAN package called litsearchr <https://github.com/elizagrames/litsearchr>."
 (define-public r-discover
   (package
     (name "r-discover")
-    (version "2.2.6")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "discoveR" version))
               (sha256
                (base32
-                "0fwdcwiahb3svw2is07vc6g0h0ha7gvlw3j3im7ys4nsl9vng1wv"))))
+                "1smy2bzzqc4nvrd4qj2sq4d1f0pvbm4nixxh8xpy22lwwa8pkd24"))))
     (properties `((upstream-name . "discoveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -10727,11 +10727,13 @@ non-CRAN package called litsearchr <https://github.com/elizagrames/litsearchr>."
                              r-shiny
                              r-rlang
                              r-plotly
+                             r-loader
                              r-htmlwidgets
                              r-htmltools
                              r-golem
                              r-ggplot2
                              r-ggdendro
+                             r-factominer
                              r-echarts4r
                              r-dt
                              r-config
@@ -17940,17 +17942,19 @@ ensembles (Kook et al, 2022, <doi:10.48550/arXiv.2205.12729>) are implemented.")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deeptime" version))
               (sha256
                (base32
-                "1pl3zrdjq66bq8z97a55gksx13qmibdk8shfx8h43j7mlplv9bxn"))))
+                "02fkfkbk1vxa86gph278api2z33i6i10klvfq6yn2863w2i37q3b"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-rlang
+                             r-phytools
+                             r-lifecycle
                              r-lattice
                              r-gtable
                              r-gridextra
@@ -17960,6 +17964,7 @@ ensembles (Kook et al, 2022, <doi:10.48550/arXiv.2205.12729>) are implemented.")
                              r-ggfittext
                              r-curl
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/willgearty/deeptime")
     (synopsis "Plotting Tools for Anyone Working in Deep Time")
     (description

@@ -3118,13 +3118,13 @@ Kappa, ...")
 (define-public r-iron
   (package
     (name "r-iron")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IRon" version))
               (sha256
                (base32
-                "0w2impcvy0chsq7y1dxrxmw70aagddnp3i2vcp4y0hnsqn34xzps"))))
+                "1yl9i6gxzwy5f4qva3a14flzlk1xk7v2m02n0mg8ddchc5n6j3bc"))))
     (properties `((upstream-name . "IRon")))
     (build-system r-build-system)
     (propagated-inputs (list r-scam

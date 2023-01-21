@@ -1392,13 +1392,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BTSR" version))
               (sha256
                (base32
-                "0vd9647nk83z8i5r7zxsc0k3js2s0d6xdkwspaxkq3bq4q3rhw0a"))))
+                "05adkp73d02nv1agafsfag1dsd0c82pwxl0zqc7zyx0dhrxc9dlh"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -9098,13 +9098,13 @@ support by NSF DMS-1925119 and DMS-212324.")
 (define-public r-bizdays
   (package
     (name "r-bizdays")
-    (version "1.0.12")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bizdays" version))
               (sha256
                (base32
-                "0645x590vzaa2a7srhjpg9s9g613z4yxbbrsnncflr2lmkky44xl"))))
+                "0qbkcryvap7ilv7pwv56liz3cgdhhk0cc8mxhw5bs29qnnjrl38f"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))

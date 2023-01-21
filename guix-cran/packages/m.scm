@@ -9447,13 +9447,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move
   (package
     (name "r-move")
-    (version "4.1.10")
+    (version "4.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "move" version))
               (sha256
                (base32
-                "099yc048ffa73wc6nvnls37vrvnpf2qswm905l6kbmnx0n7as3r1"))))
+                "145rlzgqhipxlphq07pa99igzlbpxf9r2f2yhc64p3gw17shv6ky"))))
     (properties `((upstream-name . "move")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27633,13 +27633,13 @@ M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
 (define-public r-messydates
   (package
     (name "r-messydates")
-    (version "0.3.3")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "messydates" version))
               (sha256
                (base32
-                "1rgqrk9b1mcrbw2liz6ypr3bwlsl8a8262994s418wpmbkxr4clm"))))
+                "1iqh72avq8pvirzpg227iyhhd413g2d07pa8blkqx5d4wdqnlwna"))))
     (properties `((upstream-name . "messydates")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-purrr r-lubridate r-dplyr))
@@ -34891,6 +34891,46 @@ phenotypic data.  Emphasis is put on the marginal distribution of parameters
 that relate the phenotypic data to the pedigree.  All simulation is done in
 compiled C++ for efficiency.")
     (license license:gpl2+)))
+
+(define-public r-masswater
+  (package
+    (name "r-masswater")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MassWateR" version))
+              (sha256
+               (base32
+                "1zvhb48phs6mihqxnm6fcarrgla9jfknccqsfy3z8jgckrjbi7vi"))))
+    (properties `((upstream-name . "MassWateR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-units
+                             r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rmarkdown
+                             r-readxl
+                             r-rcolorbrewer
+                             r-lubridate
+                             r-ggspatial
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggmap
+                             r-flextable
+                             r-dplyr))
+    (home-page "<https://github.com/massbays-tech/MassWateR>")
+    (synopsis
+     "Quality Control and Analysis of Massachusetts Water Quality Data")
+    (description
+     "This package provides methods for quality control and exploratory analysis of
+surface water quality data collected in Massachusetts, USA. Functions are
+developed to facilitate data formatting for the Water Quality Exchange Network
+<https://www.epa.gov/waterdata/water-quality-data-upload-wqx> and reporting of
+data quality objectives to state agencies.  Quality control methods are from
+Massachusetts Department of Environmental Protection (2020)
+<https://www.mass.gov/orgs/massachusetts-department-of-environmental-protection>.")
+    (license license:cc0)))
 
 (define-public r-masstimate
   (package

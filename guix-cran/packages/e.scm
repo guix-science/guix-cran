@@ -548,13 +548,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exvatools" version))
               (sha256
                (base32
-                "0axvdc220xkcvl7pf0a9i4y9x8clg0i0cvyldwz1bxs7yfdg7dwa"))))
+                "05jgzdnby9ly341alpxzpysj418fqgq4gn8a1qk6vqg1yfvd8m3k"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -564,13 +564,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
      "Value Added in Exports with International Input-Output Table Tools")
     (description
      "Decomposition of value added in exports in an international input-output table
-framework using the methodologies of Borin and Mancini (2019)
-<https://openknowledge.worldbank.org/handle/10986/31533>, Miroudot and Ye (2021)
+framework, using the methodologies of Borin and Mancini (2023)
+<doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
 <doi:10.1080/09535314.2020.1730308>, Wang et al. (2013)
 <https://econpapers.repec.org/paper/nbrnberwo/19677.htm> and Koopman et al.
 (2014) <doi:10.1257/aer.104.2.459>.  Includes commands for easy data extraction,
-calculation of complex matrices and other useful tools for geographical and
-sector trade analysis.")
+matrix manipulation, calculation of various value added indicators, and other
+useful tools for geographical and sector trade analysis.")
     (license license:gpl3)))
 
 (define-public r-exuber
@@ -12638,13 +12638,13 @@ city, and electoral zones.")
 (define-public r-elections-dtree
   (package
     (name "r-elections-dtree")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elections.dtree" version))
               (sha256
                (base32
-                "1jqbbrdnxalaj3rrwg419lnjmhv5nzvb1xjxvwi0d0h6wxjdalp7"))))
+                "0niqvr4c1kgkwb5s95m6z16vg2yc1h5vcdd578z4rnhkyys9ajhz"))))
     (properties `((upstream-name . "elections.dtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rdpack r-rcppthread r-rcpp r-r6))

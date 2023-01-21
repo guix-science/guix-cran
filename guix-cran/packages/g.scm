@@ -5201,13 +5201,13 @@ exploring periodicity in the data.")
 (define-public r-graven
   (package
     (name "r-graven")
-    (version "1.1.4")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRaven" version))
               (sha256
                (base32
-                "087zsgmr6vhbp7ggqfrgm65jrqy32x9xg971lc6i0qn2lb2kfky1"))))
+                "0jgimw56qzfg326cbgf8sh137y12xcxvfvvvv3gbfyakfys4q116"))))
     (properties `((upstream-name . "gRaven")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-grbase r-grain))
@@ -6260,6 +6260,31 @@ Bayesian networks or probabilistic expert systems.  Documentation of the package
 is provided in vignettes included in the package and in the paper by HÃ¸jsgaard
 (2012, <doi:10.18637/jss.v046.i10>).  See citation(\"gRain\") for details.")
     (license license:gpl2+)))
+
+(define-public r-grafzahl
+  (package
+    (name "r-grafzahl")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "grafzahl" version))
+              (sha256
+               (base32
+                "0m7lyd7k9qqn7sxwk20sk0s306gmvrb8myx76yb61ld3dxv5wdj2"))))
+    (properties `((upstream-name . "grafzahl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-quanteda r-lime r-jsonlite))
+    (home-page "https://github.com/chainsawriot/grafzahl")
+    (synopsis
+     "Supervised Machine Learning for Textual Data Using Transformers and 'Quanteda'")
+    (description
+     "Duct tape the quanteda ecosystem (Benoit et al., 2018) <doi:10.21105/joss.00774>
+to modern Transformer-based text classification models (Wolf et al., 2020)
+<doi:10.18653/v1/2020.emnlp-demos.6>, in order to facilitate supervised machine
+learning for textual data.  This package mimics the behaviors of
+quanteda.textmodels and provides a function to setup the Python environment to
+use the pretrained models from Hugging Face <https://huggingface.co/>.")
+    (license license:gpl3+)))
 
 (define-public r-grafify
   (package
@@ -11078,6 +11103,32 @@ Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
 
+(define-public r-glmmroptim
+  (package
+    (name "r-glmmroptim")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "glmmrOptim" version))
+              (sha256
+               (base32
+                "19vs7zs79kx90hhwa6lsfwm1y38f0vgwh8ifzs7ilm9s87qlc58d"))))
+    (properties `((upstream-name . "glmmrOptim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-glmmrbase r-digest))
+    (home-page "https://github.com/samuel-watson/glmmrOptim")
+    (synopsis
+     "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
+    (description
+     "Optimal design analysis algorithms for any study design that can be represented
+or modelled as a generalised linear mixed model including cluster randomised
+trials, cohort studies, spatial and temporal epidemiological studies, and
+split-plot designs.  See
+<https://github.com/samuel-watson/glmmrBase/blob/master/README.md> for a
+detailed manual on model specification.  A detailed discussion of the methods in
+this package can be found in Watson and Pan (2022) <arXiv:2207.09183>.")
+    (license license:gpl2+)))
+
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
@@ -15054,6 +15105,36 @@ coding.  You can get resultant code for the plot.")
 ggplot2, but has been moved its own package to reduce the download size of
 ggplot2.")
     (license license:gpl3)))
+
+(define-public r-ggplate
+  (package
+    (name "r-ggplate")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggplate" version))
+              (sha256
+               (base32
+                "0jn23hmh68hfz1i2h4vz80avzdrn05w6c9ifxfj8jhgh7dj974hf"))))
+    (properties `((upstream-name . "ggplate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-forcats
+                             r-farver
+                             r-dplyr))
+    (home-page "https://github.com/jpquast/ggplate")
+    (synopsis
+     "Create Layout Plots of Biological Culture Plates and Microplates")
+    (description
+     "Enables users to create simple plots of biological culture plates as well as
+microplates.  Both continuous and discrete values can be plotted onto the plate
+layout.")
+    (license license:expat)))
 
 (define-public r-ggpie
   (package
@@ -22228,13 +22309,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.0.8")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "1ymsyrk8vradb0yp02r9xrm944d6dwv8757sqg1rcr9n44lcr4p2"))))
+                "11f1b75849wvplcp67rhj5rxzhbn72ykxrb43j1s525yzyfkmhvr"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram

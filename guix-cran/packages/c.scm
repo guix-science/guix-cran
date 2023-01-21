@@ -2870,13 +2870,13 @@ functions to read and write CTF data from R.")
 (define-public r-ctbi
   (package
     (name "r-ctbi")
-    (version "2.0.4")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctbi" version))
               (sha256
                (base32
-                "15dvxrir9rahr50kp1q884l06sjlb4fd9b92k3ib4d75c58bp72q"))))
+                "0gsjbj6nn909i3nh9h6i0d7bdd8zmqdcnajdc29811vv00yf2rz3"))))
     (properties `((upstream-name . "ctbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -2886,8 +2886,8 @@ functions to read and write CTF data from R.")
      "Clean, decompose and aggregate univariate time series following the procedure
 \"Cyclic/trend decomposition using bin interpolation\" and the Logbox method for
 flagging outliers, both detailed in Ritter, F.: Technical note: A procedure to
-clean, decompose and aggregate time series, Hydrol.  Earth Syst.  Sci.  Discuss.
-[preprint], <doi:10.5194/hess-2021-609>, in review.")
+clean, decompose, and aggregate time series, Hydrol.  Earth Syst.  Sci., 27,
+349â361, <doi:10.5194/hess-27-349-2023>, 2023.")
     (license license:gpl3)))
 
 (define-public r-ctashiny
@@ -12343,6 +12343,45 @@ for converting SVG file format to PNG which is often needed for exporting
 graphical files produced by R widgets.")
     (license license:expat)))
 
+(define-public r-convergeu
+  (package
+    (name "r-convergeu")
+    (version "0.5.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "convergEU" version))
+              (sha256
+               (base32
+                "0fi5pyh39h5ncj5rxdii8z8zlrw1613fkiina558k0kidnpbfbs2"))))
+    (properties `((upstream-name . "convergEU")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-ggpubr
+                             r-ggplot2
+                             r-eurostat
+                             r-dplyr
+                             r-catools
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page
+     "<https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef18003en.pdf>")
+    (synopsis "Monitoring Convergence of EU Countries")
+    (description
+     "Indicators and measures by country and time describe what happens at economic
+and social levels.  This package provides functions to calculate several
+measures of convergence after imputing missing values.  The automated
+downloading of Eurostat data, followed by the production of country fiches and
+indicator fiches, makes possible to produce automated reports.  The Eurofound
+report: Bisello, M., Eiffe, F., Dubois, H., Mascherini, M. (2019) \"Upward
+convergence in the EU: Concepts, measurements and indicators\"
+(<doi:10.2806/68012>), is a detailed presentation of convergence.")
+    (license license:gpl3)))
+
 (define-public r-convergenceconcepts
   (package
     (name "r-convergenceconcepts")
@@ -20401,13 +20440,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmhc" version))
               (sha256
                (base32
-                "17m4kiyw7x3sz7zb446y8sxq2s6f3yyqsqmll2k9d0sccrnah5f3"))))
+                "1v8zigr7f47n5pxfg8vh34yx11qz45ccr2h2lvlfqxa54bcw03b3"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24597,6 +24636,43 @@ estimator presented in Hainmueller, J., Hopkins, D., and Yamamoto T. (2014)
 Multi-Dimensional Choices via Stated Preference Experiments.  Political Analysis
 22(1):1-30.")
     (license license:gpl2+)))
+
+(define-public r-cjive
+  (package
+    (name "r-cjive")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CJIVE" version))
+              (sha256
+               (base32
+                "1937q125w39rsl2i5imqlk25r7mr1hvpmjy2br0xq98vdkxazqsq"))))
+    (properties `((upstream-name . "CJIVE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rootsolve
+                             r-reshape2
+                             r-psych
+                             r-gplots
+                             r-ggplot2
+                             r-fields))
+    (home-page "https://cran.r-project.org/package=CJIVE")
+    (synopsis "Canonical Joint and Individual Variation Explained (CJIVE)")
+    (description
+     "Joint and Individual Variation Explained (JIVE) is a method for decomposing
+multiple datasets obtained on the same subjects into shared structure, structure
+unique to each dataset, and noise.  The two most common implementations are
+R.JIVE, an iterative approach, and AJIVE, which uses principal angle analysis.
+JIVE estimates subspaces but interpreting these subspaces can be challenging
+with AJIVE or R.JIVE. We expand upon insights into AJIVE as a canonical
+correlation analysis (CCA) of principal component scores.  This reformulation,
+which we call CJIVE, 1) provides an ordering of joint components by the degree
+of correlation between corresponding canonical variables; 2) uses a
+computationally efficient permutation test for the number of joint components,
+which provides a p-value for each component; and 3) can be used to predict
+subject scores for out-of-sample observations.  Please cite the following
+article when utilizing this package: Murden, R., Zhang, Z., Guo, Y., & Risk, B.
+(2022) <doi:10.3389/fnins.2022.969510>.")
+    (license license:expat)))
 
 (define-public r-cjbart
   (package
@@ -35454,13 +35530,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.13")
+    (version "0.3.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cansim" version))
               (sha256
                (base32
-                "0jxgrybrilqbnsrrd9k3hnjcyi1pvrdlb6ni3qgi3sj1x3zbkj3i"))))
+                "070mgphg2hvfccqqnkimfgf2j81b3vd6cn2ymanfm4n8gd6bwjjs"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -36273,6 +36349,41 @@ changes between copy number states in tumor studies including copy neutral loss
 of heterozygosity.  CalMaTe applies to any ASCNs regardless of preprocessing
 method and microarray technology, e.g. Affymetrix and Illumina.")
     (license license:lgpl2.1+)))
+
+(define-public r-callsync
+  (package
+    (name "r-callsync")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "callsync" version))
+              (sha256
+               (base32
+                "1vlazs6xqr188qvpai6hbdkz4knpgficskcxb8s692x18kncp1jq"))))
+    (properties `((upstream-name . "callsync")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tuner
+                             r-stringr
+                             r-signal
+                             r-seewave
+                             r-scales
+                             r-oce
+                             r-dplyr))
+    (home-page "https://github.com/simeonqs/callsync")
+    (synopsis
+     "Recording Synchronisation, Call Detection and Assignment, Audio Analysis")
+    (description
+     "Intended to analyse recordings from multiple microphones (e.g., backpack
+microphones in captive setting).  It allows users to align recordings even if
+there is non-linear drift of several minutes between them.  A call detection and
+assignment pipeline can be used to find vocalisations and assign them to the
+vocalising individuals (even if the vocalisation is picked up on multiple
+microphones).  The tracing and measurement functions allow for detailed analysis
+of the vocalisations and filtering of noise.  Finally, the package includes a
+function to run spectrographic cross correlation, which can be used to compare
+vocalisations.  It also includes multiple other functions related to analysis of
+vocal behaviour.")
+    (license license:gpl3)))
 
 (define-public r-calidad
   (package

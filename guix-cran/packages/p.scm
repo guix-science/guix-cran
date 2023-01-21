@@ -4250,6 +4250,28 @@ the multi-variable and multi-site weather generator can be found in
 run the tests in parallel.")
     (license license:gpl2+)))
 
+(define-public r-prqlr
+  (package
+    (name "r-prqlr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "prqlr" version))
+              (sha256
+               (base32
+                "13ngxswfhbhvjvvir112w0pi0xl3p2n1ml5nh6nc2lqj3880ayww"))))
+    (properties `((upstream-name . "prqlr")))
+    (build-system r-build-system)
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://eitsupi.github.io/prqlr/")
+    (synopsis "R Bindings for the 'prql-compiler' Rust Library")
+    (description
+     "This package provides a function to convert PRQL strings to SQL strings.
+Combined with other R functions that take SQL as an argument, PRQL can be used
+on R.")
+    (license license:expat)))
+
 (define-public r-prp
   (package
     (name "r-prp")
@@ -4604,13 +4626,13 @@ fleurs\",\"Le Cote de Guermantes\", \"Sodome et Gomorrhe I et II\", \"La Prisonn
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "protti" version))
               (sha256
                (base32
-                "0fi4dkm2fm3h5filxkdsd7znhpvbzri4g5hzidm5zhxbwqhasajp"))))
+                "175r4ifhmh7djdr9kwyvmfaf21x89qzr758pjkcyiza42a6fvyzf"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6312,13 +6334,13 @@ overfitting effect.  Coissac Eric and Gonindard-Melodelima Christelle (2019)
 (define-public r-procmaps
   (package
     (name "r-procmaps")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "procmaps" version))
               (sha256
                (base32
-                "0mxg478fw068ngn01hdrjcdc0v3wn4szk7x60a10i2c68fnyqf2k"))))
+                "0c5cby1942s9vdl0a6nyiih6x7kxii02w2l4fp8n9z07h7j5jb69"))))
     (properties `((upstream-name . "procmaps")))
     (build-system r-build-system)
     (home-page "https://r-prof.github.io/procmaps/")
@@ -6862,13 +6884,13 @@ and other activities.  probably contains tools for conducting these operations."
 (define-public r-proae
   (package
     (name "r-proae")
-    (version "0.2.10")
+    (version "0.2.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProAE" version))
               (sha256
                (base32
-                "0b3zllwmalgl7l8pgf1qr0h903n4p2782fvlffhq1980mfg52xni"))))
+                "187p3i6gbcqycdl02n6nw529n8hkwd87qsy4d37bm0jgn21d2adj"))))
     (properties `((upstream-name . "ProAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -19664,6 +19686,52 @@ using the ggplot2 package.")
 by OECD (2020) <https://www.oecd.org/pisa/data/2018database/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-pirouette
+  (package
+    (name "r-pirouette")
+    (version "1.6.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pirouette" version))
+              (sha256
+               (base32
+                "0mi2zg55m9hqlypgc3k3c2b06hisypkakkzghf7bpw1c1ysakym6"))))
+    (properties `((upstream-name . "pirouette")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-xtable
+                             r-tracerer
+                             r-tidyr
+                             r-tibble
+                             r-tess
+                             r-stringr
+                             r-readr
+                             r-pryr
+                             r-plyr
+                             r-phytools
+                             r-phangorn
+                             r-nodesub
+                             r-mcbette
+                             r-mauricer
+                             r-magrittr
+                             r-forcats
+                             r-ddd
+                             r-beautier
+                             r-beastier
+                             r-babette
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richelbilderbeek/pirouette/")
+    (synopsis "Create a Bayesian Posterior from a Phylogeny")
+    (description
+     "Theoretical biologists are interested in measuring the extent at which we can
+measure the truth.  This package allows to create a Bayesian posterior from a
+phylogeny that depicts the true evolutionary relationships.  The given and true
+phylogeny can than be compared to the posterior phylogenies.  RichÃ¨l J. C.
+Bilderbeek, Giovanni Laudanno, Rampal S. Etienne (2020) \"Quantifying the impact
+of an inference model in Bayesian phylogenetics\" <doi:10.1111/2041-210X.13514>.")
+    (license license:gpl3)))
+
 (define-public r-pirf
   (package
     (name "r-pirf")
@@ -20798,6 +20866,37 @@ phylogenetic relationships, and to fit phylogenetic generalized linear mixed
 models.  The Bayesian phylogenetic generalized linear mixed models are fitted
 with the INLA package (<https://www.r-inla.org>).")
     (license license:gpl3)))
+
+(define-public r-phylter
+  (package
+    (name "r-phylter")
+    (version "0.9.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "phylter" version))
+              (sha256
+               (base32
+                "02dhm0s8qqr6jwpygnm2bwn37177y2g59dnj800ig3wz6dlaf9rq"))))
+    (properties `((upstream-name . "phylter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra
+                             r-rfast
+                             r-reshape2
+                             r-mrfdepth
+                             r-ggplot2
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phylter")
+    (synopsis "Detect and Remove Outliers in Phylogenomics Datasets")
+    (description
+     "Analyzis and filtering of phylogenomics datasets.  It takes an input either a
+collection of gene trees (then transformed to matrices) or directly a collection
+of gene matrices and performs an iterative process to identify what species in
+what genes are outliers, and whose elimination significantly improves the
+concordance between the input matrices.  The methods builds upon the Distatis
+approach (Abdi et al. (2005) <doi:10.1101/2021.09.08.459421>), a generalization
+of classical multidimensional scaling to multiple distance matrices.")
+    (license license:gpl2+)))
 
 (define-public r-phylotop
   (package
@@ -22947,13 +23046,13 @@ ISSN: 0169-2607. <doi:10.1016/j.cmpb.2022.106865>.")
 (define-public r-phacking
   (package
     (name "r-phacking")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phacking" version))
               (sha256
                (base32
-                "1fw7zki6i0zdscv0qzxngys2yhmwqgarlf7vyiyhbgbvmv1vprfm"))))
+                "0k6fvs2003qys864g2vkhh899ikl7y89dsllwvjd26yaxapzfjzk"))))
     (properties `((upstream-name . "phacking")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -22966,6 +23065,8 @@ ISSN: 0169-2607. <doi:10.1016/j.cmpb.2022.106865>.")
                              r-rcppeigen
                              r-rcpp
                              r-purrr
+                             r-metafor
+                             r-metabias
                              r-ggplot2
                              r-dplyr
                              r-bh))
@@ -34075,4 +34176,26 @@ Zone III and the last part is Zone IV.")
 The package uses two methods: the Brinson method and a regression-based
 analysis.")
     (license license:gpl2)))
+
+(define-public r-p3state-msm
+  (package
+    (name "r-p3state-msm")
+    (version "1.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "p3state.msm" version))
+              (sha256
+               (base32
+                "1gklkgimpmhyxkga0g4s3m7ap3c5lwg2wyl4gvvfv4n4vbnfazis"))))
+    (properties `((upstream-name . "p3state.msm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=p3state.msm")
+    (synopsis "Analyzing Survival Data from an Illness-Death Model")
+    (description
+     "This package contains functions for data preparation, prediction of transition
+probabilities, estimating semi-parametric regression models and for implementing
+nonparametric estimators for other quantities.  See Meira-Machado and
+Roca-PardiÃ±as (2011) <doi:10.18637/jss.v038.i03>.")
+    (license license:gpl3)))
 

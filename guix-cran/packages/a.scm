@@ -12026,6 +12026,26 @@ models, helping to select the best model.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-alone
+  (package
+    (name "r-alone")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "alone" version))
+              (sha256
+               (base32
+                "0wn8sg6w820svk9wd670kabnqwssh88bzkrrrjmisxqz99a6mqz8"))))
+    (properties `((upstream-name . "alone")))
+    (build-system r-build-system)
+    (home-page "https://github.com/doehm/alone")
+    (synopsis "Datasets from the Survival TV Series Alone")
+    (description
+     "This package provides a collection of datasets on the Alone survival TV series
+in tidy format.  Included in the package are 4 datasets detailing the survivors,
+their loadouts, episode details and season information.")
+    (license license:cc0)))
+
 (define-public r-almanac
   (package
     (name "r-almanac")
@@ -12060,13 +12080,13 @@ recurrence bundle's event set.")
 (define-public r-allspice
   (package
     (name "r-allspice")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Allspice" version))
               (sha256
                (base32
-                "0fsfmyz1jmayvqk6xacx4fnr5jhadsbq140fwlcb7qjlwr26p2kf"))))
+                "1a5wxs2fbpfk3032h70z86zzrzjjkp00c06dh7g2jmqc5irp6n2a"))))
     (properties `((upstream-name . "Allspice")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

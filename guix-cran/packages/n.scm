@@ -519,69 +519,6 @@ mixture for a given set of allele frequencies.  The mixture contributors may be
 related according to a provided pedigree.")
     (license license:gpl2+)))
 
-(define-public r-numbat
-  (package
-    (name "r-numbat")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "numbat" version))
-              (sha256
-               (base32
-                "1jkz24j99cd333mvisp8x5swwr0iyix1kc962d2yx3mv5cn28xdb"))))
-    (properties `((upstream-name . "numbat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-vcfr
-                             r-tidyr
-                             r-tidygraph
-                             r-tibble
-                             r-stringr
-                             r-scistreer
-                             r-scales
-                             r-roptim
-                             r-rhpcblasctl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r-utils
-                             r-purrr
-                             r-pryr
-                             r-patchwork
-                             r-paralleldist
-                             r-optparse
-                             r-matrix
-                             r-magrittr
-                             r-logger
-                             r-iranges
-                             r-igraph
-                             r-glue
-                             r-ggtree
-                             r-ggraph
-                             r-ggplot2
-                             r-genomicranges
-                             r-dplyr
-                             r-dendextend
-                             r-data-table
-                             r-catools
-                             r-ape))
-    (home-page "https://github.com/kharchenkolab/numbat")
-    (synopsis "Haplotype-Aware CNV Analysis from scRNA-Seq")
-    (description
-     "This package provides a computational method that infers copy number variations
-(CNVs) in cancer scRNA-seq data and reconstructs the tumor phylogeny.  numbat
-integrates signals from gene expression, allelic ratio, and population haplotype
-structures to accurately infer allele-specific CNVs in single cells and
-reconstruct their lineage relationship.  numbat can be used to: 1.  detect
-allele-specific copy number variations from single-cells; 2.  differentiate
-tumor versus normal cells in the tumor microenvironment; 3.  infer the clonal
-architecture and evolutionary history of profiled tumors.  numbat does not
-require tumor/normal-paired DNA or genotype data, but operates solely on the
-donor scRNA-data data (for example, 10x Cell Ranger output).  Additional
-examples and documentations are available at
-<https://kharchenkolab.github.io/numbat/>.  For details on the method please see
-Gao et al.  Nature Biotechnology (2022) <doi:10.1038/s41587-022-01468-y>.")
-    (license license:expat)))
-
 (define-public r-nullabor
   (package
     (name "r-nullabor")

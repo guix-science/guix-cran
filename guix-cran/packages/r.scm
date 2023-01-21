@@ -10972,27 +10972,6 @@ adjusted such that the observed acceptance ratio is kept near to the desired
 (fixed or changing) acceptance ratio.")
     (license license:gpl3+)))
 
-(define-public r-roptim
-  (package
-    (name "r-roptim")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "roptim" version))
-              (sha256
-               (base32
-                "11h6qdi0rsv0bpps6nxkzzapan284q0gldzkmgx3ww5kvnic5w3y"))))
-    (properties `((upstream-name . "roptim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/ypan1988/roptim/")
-    (synopsis "General Purpose Optimization in R using C++")
-    (description
-     "Perform general purpose optimization in R using C++.  A unified wrapper
-interface is provided to call C functions of the five optimization algorithms
-('Nelder-Mead', BFGS', CG', L-BFGS-B and SANN') underlying optim().")
-    (license license:gpl2+)))
-
 (define-public r-roptestold
   (package
     (name "r-roptestold")
@@ -29439,13 +29418,13 @@ models are supported for the outcome model.")
 (define-public r-regmed
   (package
     (name "r-regmed")
-    (version "2.0.4")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regmed" version))
               (sha256
                (base32
-                "19cc0nx4463jny9cw5smb95crb3makspysfx06h82amhyqjyzw60"))))
+                "1m74865y2pahk50a149nv8aqkiilg23hbyijwmdcpqgi94ys40h3"))))
     (properties `((upstream-name . "regmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -29453,6 +29432,7 @@ models are supported for the outcome model.")
                              r-lavaan
                              r-knitr
                              r-igraph
+                             r-gtools
                              r-glasso))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=regmed")
@@ -35419,13 +35399,13 @@ of system variables.  This package provides similar functionality.")
 (define-public r-rcppfastfloat
   (package
     (name "r-rcppfastfloat")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppFastFloat" version))
               (sha256
                (base32
-                "1926hz4q6qqvz8zpabgvk04a18cm1xaqcf30yjgcrslgaf8l8h0n"))))
+                "09g4nk9nyg7fqrsgfmh10dmxbrb9fpcl3jayrjhv38h58hbvvxfm"))))
     (properties `((upstream-name . "RcppFastFloat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -40042,13 +40022,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.0.8")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ravetools" version))
               (sha256
                (base32
-                "1bd6yhlss145rhgcjw9yh3f7qiw3zvggl8zw1mbj6czyzrv80xzp"))))
+                "0pwkvscmk4xkcfq0p1d4sl75w88cx8bx9zqhlmbnd4vk24x5r8sb"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list fftw))
