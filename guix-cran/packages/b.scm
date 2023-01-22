@@ -7180,13 +7180,13 @@ Balancing Mechanism Reporting System API (<https://bmreports.com/>).")
 (define-public r-bmrmm
   (package
     (name "r-bmrmm")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BMRMM" version))
               (sha256
                (base32
-                "1ank4fhbfx3g3mzfznvi9r8c2q7a99sjbwv7vmvbs2zlskm804jd"))))
+                "0izfvy8c3js4dkml0byfmgwfbcy3h9jabhj6hjn8an7095pj1vny"))))
     (properties `((upstream-name . "BMRMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -9948,13 +9948,13 @@ mice-related packages.")
 (define-public r-bipartitemodularitymaximization
   (package
     (name "r-bipartitemodularitymaximization")
-    (version "1.22.415.2")
+    (version "1.23.120.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BipartiteModularityMaximization" version))
               (sha256
                (base32
-                "05a00zwhdmh614m937mx6alarac5inrzp78xjhqhwf26gvg7lpb9"))))
+                "0pz9cyg3avngxgd7ys5a1pfw4jw4cxbq36nh9hjarisl5phk761b"))))
     (properties `((upstream-name . "BipartiteModularityMaximization")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

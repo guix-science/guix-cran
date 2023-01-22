@@ -5223,13 +5223,13 @@ scaling method.")
 (define-public r-mudata2
   (package
     (name "r-mudata2")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mudata2" version))
               (sha256
                (base32
-                "0c8x39m7cy9l2r3ywbircgp79g7lmd37m2500z3icmkx6x6k6393"))))
+                "0gqdqdp370gbvmqr5gxgc6xnwb6lsm4wzd2xrq3x9s46nx3zaha3"))))
     (properties `((upstream-name . "mudata2")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5243,11 +5243,10 @@ scaling method.")
                              r-lubridate
                              r-jsonlite
                              r-glue
-                             r-ggplot2
                              r-fs
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://paleolimbot.github.io/mudata2")
+    (home-page "https://paleolimbot.github.io/mudata2/")
     (synopsis "Interchange Tools for Multi-Parameter Spatiotemporal Data")
     (description
      "Formatting and structuring multi-parameter spatiotemporal data is often a
@@ -36685,13 +36684,13 @@ looking maps in R, with support for map projections.")
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapme.biodiversity" version))
               (sha256
                (base32
-                "0fmxyxs8kgbd4hdcmam3fd253qngnhl7by9xmca2zbr79m1zjkha"))))
+                "18psh68lapkh1wq0p5hv85cqixffd8yvzhgzyyv7wxxgqbxkdd59"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))

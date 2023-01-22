@@ -5025,13 +5025,13 @@ stack may contain arbitrary objects.")
 (define-public r-rstac
   (package
     (name "r-rstac")
-    (version "0.9.2")
+    (version "0.9.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rstac" version))
               (sha256
                (base32
-                "1wnd2qhjqacc644089fzansvzva36yi889gs4vaasqwllc9nnv09"))))
+                "1cs2xp30vvs686q38784gz7whsqlbvy0q744aqmykasiq1b0v8b5"))))
     (properties `((upstream-name . "rstac")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-lifecycle r-jsonlite r-httr r-crayon))
@@ -8553,13 +8553,13 @@ government (MSIT) (No.  2022R1A2C1091319).")
 (define-public r-rpymat
   (package
     (name "r-rpymat")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpymat" version))
               (sha256
                (base32
-                "08iafpkyg9p00zz0hs00g7bgi12346ncw1294a8g133xp2wb1crr"))))
+                "17k14786i741vkj5a0xn6hz4fjs7vxgx35xqkb8s4knvqa4mdxj8"))))
     (properties `((upstream-name . "rpymat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -12706,13 +12706,13 @@ from diagnostic test.")
 (define-public r-roclang
   (package
     (name "r-roclang")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "roclang" version))
               (sha256
                (base32
-                "0fmyfjy7m2j9d4yrffg7pqghcywd99x02cb8sh0hkx20d0ai2lsl"))))
+                "0w7f17ppgc2mc3zd34lx445y7g7sxl5lscdbhyw650lvmk7kfsqd"))))
     (properties `((upstream-name . "roclang")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22902,13 +22902,13 @@ needed.")
 (define-public r-rglplus
   (package
     (name "r-rglplus")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rglplus" version))
               (sha256
                (base32
-                "1yr93laa48aj3rhnz8kih500kngynwnq2px1xnbgya9xsxyc2l5v"))))
+                "1i9i62214yljaxplzk8qk9dbslj1shgddmdvpqj35nr45pavnnqm"))))
     (properties `((upstream-name . "rglplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl))
@@ -25921,13 +25921,13 @@ on id.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.13.3")
+    (version "0.14.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restatapi" version))
               (sha256
                (base32
-                "0560y2pr69pm4m5dm2xhm549rspxwhryprxhfvhzv0zpn4df01di"))))
+                "1c9vn204kr1a6k8jvp04dqcps5h5bhljp87bw4z38jfmnrq9a4br"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -25936,11 +25936,11 @@ on id.")
     (description
      "Eurostat is the statistical office of the European Union and provides high
 quality statistics for Europe.  Large set of the data is disseminated through
-the Eurostat database (<https://ec.europa.eu/eurostat/data/database>).  The
-tools are using the REST API with the Statistical Data and Metadata eXchange
+the Eurostat database (<https://ec.europa.eu/eurostat/web/main/data/database>).
+The tools are using the REST API with the Statistical Data and Metadata eXchange
 (SDMX) Web Services
-(<https://ec.europa.eu/eurostat/web/sdmx-web-services/about-this-service>) to
-search and download data from the Eurostat database using the SDMX standard.")
+(<https://wikis.ec.europa.eu/pages/viewpage.action?pageId=44165555>) to search
+and download data from the Eurostat database using the SDMX standard.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-ress
@@ -31227,13 +31227,13 @@ Monopoly Profit Maximization, Cournot's Duopoly, Solow (1956,
 (define-public r-recommenderlab
   (package
     (name "r-recommenderlab")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recommenderlab" version))
               (sha256
                (base32
-                "0xybknqjg35wdsp3qh13yhn12r4qskr0x244y963j8z35pxa2pal"))))
+                "0y847z4nlvmvr9fqg6y9bha6pig60x0fyp613in47xispb01rgi2"))))
     (properties `((upstream-name . "recommenderlab")))
     (build-system r-build-system)
     (propagated-inputs (list r-registry
@@ -34102,13 +34102,13 @@ DDI Codebook 2.5 with flexible API creation.")
 (define-public r-rddensity
   (package
     (name "r-rddensity")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rddensity" version))
               (sha256
                (base32
-                "160sxsxqq20s5k9c8vccws17v73ninlpjr9wws9y47204ihxx27r"))))
+                "0zg2xa3lgp0gbvmpap7f1k16mhw464fncn7nggb2hfvf0kxfb5db"))))
     (properties `((upstream-name . "rddensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpdensity r-ggplot2))
@@ -35162,13 +35162,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSimdJson" version))
               (sha256
                (base32
-                "1fzawv385d2dbplg84s9qxcjjh29q6wfdslfaarlcz1y6m34vnq5"))))
+                "1vmi8jkvak9pbpvy3s36z9sllcrkcrwsaz1h2gb2mkajc7yqpx2y"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

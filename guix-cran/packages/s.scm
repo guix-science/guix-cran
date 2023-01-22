@@ -6932,13 +6932,13 @@ primarily to expose the header file to other R projects.")
 (define-public r-strex
   (package
     (name "r-strex")
-    (version "1.5.1")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "strex" version))
               (sha256
                (base32
-                "14r6crbinq69vdw2k2kdfxmzfc3i7fizx26skjjms8prlvzc8c48"))))
+                "1fxg07n8cjvvgpbzqhyx5ma5bv6vax1yw0rbfdqfzr79v6k5x3n7"))))
     (properties `((upstream-name . "strex")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringi r-rlang r-magrittr
@@ -26388,24 +26388,21 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "0.1.0")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SMOTEWB" version))
               (sha256
                (base32
-                "090l6f3fvc4zx33v6k6gsjly93bcjq6zcnn0c1mjaxyb975ryvfr"))))
+                "008pg9sramii5qrpxcshlnvw8mwwkpcijrfb0k0a9s1ly56c0f0a"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
-    (propagated-inputs (list r-fnn r-ada))
+    (propagated-inputs (list r-rpart r-fnn))
     (home-page "https://cran.r-project.org/package=SMOTEWB")
-    (synopsis "Imbalanced Resampling using SMOTE with Boosting")
+    (synopsis "Imbalanced Resampling using SMOTE with Boosting (SMOTEWB)")
     (description
-     "This package provides Random Oversampling, Random Undersampling, Synthetic
-Oversampling Minority Technique and SMOTE with Boosting by Saglam and Cengiz
-(2022) <doi:10.1016/j.eswa.2022.117023> for imbalanced data resampling.  SMOTE
-with Boosting is a SMOTE-based oversampling method which can determine the
-number of links for each positive sample and robust to noise.")
+     "This package provides the SMOTE with Boosting (SMOTEWB) algorithm.  See F.
+SaÄlam, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.")
     (license license:expat)))
 
 (define-public r-smotefamily
@@ -27145,13 +27142,13 @@ in super-resolution plant micro-tubule image segmentation.")
 (define-public r-smle
   (package
     (name "r-smle")
-    (version "2.0-2")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SMLE" version))
               (sha256
                (base32
-                "14aamzlcgqmh0nzb1yyzz33yzr3jj8g5q6pi4m515ygmjq8vn436"))))
+                "0rvbdknsb2ndzpp55kd8a9ya09zrgxdhxwlfnf3vk62y4x8ipb0q"))))
     (properties `((upstream-name . "SMLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvnfast r-matrixcalc r-glmnet))

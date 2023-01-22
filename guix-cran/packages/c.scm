@@ -15314,13 +15314,13 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.24")
+    (version "3.25")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "0ndmk6n8i9f5dwkcsswxrs0r3npzbisswh1s73y6anc1s2njdfyb"))))
+                "1f9jffg5ylrgqamh5ppxsjj8fyhvsn2x4jd3r9wd6gynyba6h6ha"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
@@ -31012,24 +31012,22 @@ complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDMConnector" version))
               (sha256
                (base32
-                "15nlx4db6pix17l657pacadvbgfll6ky3bczayyjd6jraww32k9q"))))
+                "1qxw6nlm1gmw240h5cwcbkm3yngapfkxzf4155dypfqgnxb8mi37"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-waldo
                              r-tidyselect
-                             r-tibble
                              r-sqlrender
                              r-rlang
                              r-readr
                              r-purrr
-                             r-pkgfilecache
                              r-pillar
                              r-magrittr
                              r-lifecycle

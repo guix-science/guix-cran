@@ -7256,17 +7256,16 @@ Research 15(Oct):3297-3331.")
 (define-public r-hfr
   (package
     (name "r-hfr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hfr" version))
               (sha256
                (base32
-                "1csgz2izb8r51rhp49nlkri3di37inmk42kqpwa4mdasiqwv2sjg"))))
+                "1l0iy0gc4j3gqqz0h7cjzg0nmf45vklsfy4x04a7y8zvidn01glr"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcolorbrewer r-quadprog
-                             r-dendextend r-corpcor))
+    (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))
     (home-page "https://cran.r-project.org/package=hfr")
     (synopsis "Estimate Hierarchical Feature Regression Models")
     (description
@@ -8659,13 +8658,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.data" version))
               (sha256
                (base32
-                "18b7aqdy9a0ldf2ib2d0a07k6bfmgdp61y8hl8yl19v35nqj6dvh"))))
+                "0hm3jp577bjzdv28dxxnz57yybhbfglwh9vgmrc4sz06y77gqbvc"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
     (home-page "https://github.com/spsanderson/healthyR.data")
@@ -11569,13 +11568,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h3jsr
   (package
     (name "r-h3jsr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h3jsr" version))
               (sha256
                (base32
-                "0962sja1prb8cs2ncxsm4rhwvygnn9pajjiixbj065lwyjl55ia3"))))
+                "04h905p3xpaswpx728kp7z6bgqlncgzikfv6njvgvzbhmpfn9fs8"))))
     (properties `((upstream-name . "h3jsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-tidyr r-sf r-geojsonsf))

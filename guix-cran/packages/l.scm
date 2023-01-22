@@ -990,13 +990,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LSX" version))
               (sha256
                (base32
-                "0imghgi95rdsxjfm4w2i6n8hb5p6y2dsdls0cw56hwlxcv5p2b4l"))))
+                "0qa8fyz5a5f77mv5i1y2x9bsjy7xgcimzglmb1fnbkfm4nh8vm1d"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1014,9 +1014,9 @@ tabulated data.")
                              r-ggplot2
                              r-digest))
     (home-page "https://cran.r-project.org/package=LSX")
-    (synopsis "Semisupervised Document Scaling with Word-Embedding Models")
+    (synopsis "Semi-Supervised Algorithm for Document Scaling")
     (description
-     "This package provides a word embeddings-based semisupervised model for document
+     "This package provides a word embeddings-based semi-supervised model for document
 scaling Watanabe (2020) <doi:10.1080/19312458.2020.1832976>.  LSS allows users
 to analyze large and complex corpora on arbitrary dimensions with seed words
 exploiting efficiency of word embeddings (SVD, Glove).  It can generate word
@@ -2546,13 +2546,13 @@ used in the package to calculate the indicator.")
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
-    (version "2.3.2")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpdensity" version))
               (sha256
                (base32
-                "1pyvqhxxvcd3l0wr0a3a39pxfbg7d66qdhynfb4jchd5sqj2p6a5"))))
+                "1vbbvg2wb2jggqls185bwpm8c8ky6693kai3lr5xz4r8f6ivdm29"))))
     (properties `((upstream-name . "lpdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -8696,13 +8696,13 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihoodR" version))
               (sha256
                (base32
-                "105rkxg9n1mrwkjg3234di1n680yavigpkxdxl6sg6bic241h9zd"))))
+                "0f2dfgl46hvr8ar4f3bv6wr0sky7ln9xr4pfckak6jr63zzcqq9i"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=likelihoodR")

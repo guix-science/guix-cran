@@ -752,13 +752,13 @@ Reserve University.")
 (define-public r-pvlrt
   (package
     (name "r-pvlrt")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pvLRT" version))
               (sha256
                (base32
-                "1rvavmnfcbc6qqd5d4611h54hzvd18m2vwxy6xc6grr2w2rrngn1"))))
+                "1ys2n53q77nwbzg07iw78p3pr59h3pkpq0aya1wl96zg742yvqyi"))))
     (properties `((upstream-name . "pvLRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -20108,13 +20108,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pins" version))
               (sha256
                (base32
-                "0bg5az2l4f6iim08w9nsnrjad6va8n2i9b3k4vsynirsgqrjkyn3"))))
+                "02xay3srzml5p9n3ssxfdxp9jnbw6d7zq11x8wqk3ygs9mz812b6"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -20131,6 +20131,7 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
                              r-jsonlite
                              r-httr
                              r-glue
+                             r-generics
                              r-fs
                              r-filelock
                              r-ellipsis

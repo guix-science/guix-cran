@@ -7479,18 +7479,19 @@ filtering, compressing and clustering, and for trajectory pattern discovery.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "traj" version))
               (sha256
                (base32
-                "0mq6xdbxjqjivxyy7cwaghwmnmb5pccrah44nmalssc6qfrgys4n"))))
+                "1rwpmjghw5nryywxa340c15iaqmap8hpvr758yvh0g73z11jq6xp"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-pastecs r-nbclust r-gparotation
                              r-cluster))
-    (home-page "https://cran.r-project.org/package=traj")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tchouangue/traj")
     (synopsis "Trajectory Analysis")
     (description
      "This package implements the three-step procedure proposed by Leffondree et al.
@@ -7499,7 +7500,7 @@ procedure involves (1) calculating 24 measures describing the features of the
 trajectories; (2) using factor analysis to select a subset of the 24 measures
 and (3) using cluster analysis to identify clusters of trajectories, and
 classify each individual trajectory in one of the clusters.")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-traitstats
   (package
@@ -13908,13 +13909,13 @@ operations.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfit" version))
               (sha256
                (base32
-                "0jdjz20rw3r47w1h14zx5pfiynr0fnlqwbv1bkn42aqjzm6jdfgh"))))
+                "1dwmc9m07ap7hawv694v56cknjyz88jms22cpznimcnahb6zi7pc"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick

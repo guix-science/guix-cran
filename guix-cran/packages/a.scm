@@ -1714,13 +1714,13 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autonewsmd" version))
               (sha256
                (base32
-                "0bpwg9gr55c9fyj9xhm8hr2zhw2skghqahdw4k2l402kx8aciq1p"))))
+                "1ygzb2d6p7680yl41d3l4909pd37rbpxi4qvy2ms44ahmy7140md"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-r6 r-magrittr r-git2r r-data-table))

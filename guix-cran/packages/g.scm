@@ -5201,13 +5201,13 @@ exploring periodicity in the data.")
 (define-public r-graven
   (package
     (name "r-graven")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRaven" version))
               (sha256
                (base32
-                "0jgimw56qzfg326cbgf8sh137y12xcxvfvvvv3gbfyakfys4q116"))))
+                "0nmnmn5ni4ml5r7ah7kl8n51r5bcd9r6ncg7yz4qypbdqdamqx87"))))
     (properties `((upstream-name . "gRaven")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-grbase r-grain))

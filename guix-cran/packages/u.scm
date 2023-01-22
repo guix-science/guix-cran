@@ -849,16 +849,17 @@ ROC curve.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usedthese" version))
               (sha256
                (base32
-                "098myc6qhbc2yrwb0k71d6ifnqvjn9nfmigmmvs5nda7dmlhjv9i"))))
+                "1s02iw9nin8k0k0cjmf2zgs85sbs0nxxz7338zn5gksmgk3v0afx"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -870,7 +871,8 @@ ROC curve.")
                              r-kableextra
                              r-httr
                              r-highr
-                             r-dplyr))
+                             r-dplyr
+                             r-conflicted))
     (native-inputs (list r-knitr))
     (home-page "https://cgoo4.github.io/usedthese/")
     (synopsis "Summarises Package & Function Usage")

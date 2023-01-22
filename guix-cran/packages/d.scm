@@ -11488,17 +11488,16 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dipsaus" version))
               (sha256
                (base32
-                "1h0n1cf860shbckl5nzb14pxrh1ri4n9l8zv2wspsxf6sq70gbw9"))))
+                "136r11nliy8lq7527w0h4lfwn3lmh4nzfj12xggcxvnh15k8mz6k"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-startup
                              r-shiny
                              r-rstudioapi
                              r-rlang
@@ -11511,7 +11510,6 @@ the documentation for Rmosek'.")
                              r-fastmap
                              r-digest
                              r-cli
-                             r-base64url
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dipterix/dipsaus")

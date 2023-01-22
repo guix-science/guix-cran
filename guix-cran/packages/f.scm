@@ -1631,13 +1631,13 @@ al., 2018) by modeling each group within a specific functional subspace.")
 (define-public r-fungp
   (package
     (name "r-fungp")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funGp" version))
               (sha256
                (base32
-                "1v7sy8bszm5hm0nfssb6j14f3dqm3n4rzqw0rwn6wjw7yvmj0rb6"))))
+                "1jl1rihd9ffdnjvpml7mglb7vd7asxlamdp1fhwig0mfkdscjy3x"))))
     (properties `((upstream-name . "funGp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -4890,16 +4890,23 @@ Nielsen (2014) <doi:10.1002/jae.2295>.")
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fqar" version))
               (sha256
                (base32
-                "1db96y5gisrkw1wzsbq7lw5ghly6jbga054n7xkn4rk0kvvb3a6b"))))
+                "178blb0qn6cs2ykpr17i0qyqc8jxa1hmy6pqxh6vcrw5y6b9qip5"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/equitable-equations/fqar/")
     (synopsis "Floristic Quality Assessment Tools for R")
