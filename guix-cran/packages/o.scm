@@ -4035,15 +4035,16 @@ portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimizeR" version))
               (sha256
                (base32
-                "10pnf20p544ppa6q5arzay73pakin8yc04ywh5k49v5px2j0l8zc"))))
+                "1mfx6vah7pz4svxwr89pxr0jpr3rmvi2754098imnmkg20ly8f7m"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-glue r-cli))
     (home-page "https://github.com/loelschlaeger/optimizeR")
     (synopsis "Unified Framework for Numerical Optimizer")
     (description

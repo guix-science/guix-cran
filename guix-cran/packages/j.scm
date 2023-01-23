@@ -1945,13 +1945,13 @@ Medical Research Council (Grant number MR/M013227/1).")
 (define-public r-joiner
   (package
     (name "r-joiner")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "joineR" version))
               (sha256
                (base32
-                "04dibjdy9m1jpg3r1j8z4lg2lsr362p21j26fz4jizph6rqgjcxs"))))
+                "0hf83115g5m0m1wv9yji2wvyzb5j4wrzbzkspdcswk9i4hkmp4h7"))))
     (properties `((upstream-name . "joineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-nlme r-mass r-lattice))

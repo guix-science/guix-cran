@@ -39445,13 +39445,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "0.9.6")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rbeast" version))
               (sha256
                (base32
-                "0l5k3a59p0cr9cq9wmg4dh0bwhsp93xm7w7vajp6yd0k24mkcqlk"))))
+                "15vbkj2lxgfvirjv2v71zjkl8z8pn5db1jpk2amb1iih8w7ll7pp"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (home-page "https://github.com/zhaokg/Rbeast")
@@ -41698,26 +41698,6 @@ include a single header RApiDatetime.h provided by this package, and also import
 it.  The R Core group is the original author of the code made available with
 slight modifications by this package.")
     (license license:gpl2+)))
-
-(define-public r-rapiclient
-  (package
-    (name "r-rapiclient")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rapiclient" version))
-              (sha256
-               (base32
-                "1pm4kdga2nz1cpmchdb0ad8gr3bqfm84b1kl32cyc0x3x5rr2syz"))))
-    (properties `((upstream-name . "rapiclient")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-jsonlite r-httr))
-    (home-page "https://github.com/bergant/rapiclient")
-    (synopsis "Dynamic OpenAPI/Swagger Client")
-    (description
-     "Access services specified in OpenAPI (formerly Swagger) format.  It is not a
-code generator.  Client is generated dynamically as a list of R functions.")
-    (license license:expat)))
 
 (define-public r-rapbase
   (package

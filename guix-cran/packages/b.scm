@@ -22870,30 +22870,6 @@ several data structures.")
 sources such as OpenStreetMap', Carto', Mapbox and others in R.")
     (license license:gpl3)))
 
-(define-public r-baseline
-  (package
-    (name "r-baseline")
-    (version "1.3-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "baseline" version))
-              (sha256
-               (base32
-                "1kl68zvyi2zd73jy3axrvrymwn4y6l4pd62nz0fciwbgkjhz3yyx"))))
-    (properties `((upstream-name . "baseline")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsem r-limsolve))
-    (home-page "https://github.com/khliland/baseline/")
-    (synopsis "Baseline Correction of Spectra")
-    (description
-     "Collection of baseline correction algorithms, along with a framework and a
-Tcl/Tk enabled GUI for optimising baseline algorithm parameters.  Typical use of
-the package is for removing background effects from spectra originating from
-various types of spectroscopy and spectrometry, possibly optimizing this with
-regard to regression or classification results.  Correction methods include
-polynomial fitting, weighted local smoothers and many more.")
-    (license license:gpl2)))
-
 (define-public r-basefun
   (package
     (name "r-basefun")
@@ -22956,13 +22932,13 @@ project, query our tables, save data to disk and memory, all from R.")
 (define-public r-basecamb
   (package
     (name "r-basecamb")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basecamb" version))
               (sha256
                (base32
-                "02svxz0mlk2r4s0g8lizcwmp9nhbwgp6q3c9p9pmsf1nry4j3lbf"))))
+                "1d8vjwb2ihcfj4y6n9sq099wrqv4iils6l8s2qw4d0y6l18xdra4"))))
     (properties `((upstream-name . "basecamb")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

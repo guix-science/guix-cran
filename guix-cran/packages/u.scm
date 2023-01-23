@@ -1755,13 +1755,13 @@ integrated in one package.")
 (define-public r-unpivotr
   (package
     (name "r-unpivotr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unpivotr" version))
               (sha256
                (base32
-                "1paqx2jn8gh4nd4zm8iwxpf38znzwwqli62ww7f3k5vwkf34r078"))))
+                "0j3vlh9g0zkm4gql4myisbmkhpvyqa0sb1dkc0xvvqczs93pzzax"))))
     (properties `((upstream-name . "unpivotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3162,13 +3162,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UKFE" version))
               (sha256
                (base32
-                "0xqsjdqxwnzwwv22ymp3ndg6l5indbaz9368c1pfjzv8is3s5xin"))))
+                "1ijkc9anx5rms8dd80hmm9d15rfa7z3vjvn9jr5bbvx814vfwaic"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))

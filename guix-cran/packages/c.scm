@@ -15622,13 +15622,13 @@ promotions.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Compind" version))
               (sha256
                (base32
-                "17gqjqpnq7925gx9p2q068zcrdjkkjjmm9zgn2rmpmgzsp7ww3j6"))))
+                "0rs55714rd886mhp73s23yj7x49vj59n28n98f6jaghjwb7a88cy"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -31009,46 +31009,6 @@ simulation studies, such as random Q-matrix generation and detection of
 complete/identified Q-matrices.")
     (license license:gpl3)))
 
-(define-public r-cdmconnector
-  (package
-    (name "r-cdmconnector")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CDMConnector" version))
-              (sha256
-               (base32
-                "1qxw6nlm1gmw240h5cwcbkm3yngapfkxzf4155dypfqgnxb8mi37"))))
-    (properties `((upstream-name . "CDMConnector")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-waldo
-                             r-tidyselect
-                             r-sqlrender
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-lifecycle
-                             r-jsonlite
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cli
-                             r-checkmate
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CDMConnector")
-    (synopsis "Connect to an OMOP Common Data Model")
-    (description
-     "This package provides tools for working with observational health data in the
-Observational Medical Outcomes Partnership (OMOP) Common Data Model format with
-a pipe friendly syntax.  Common data model database table references are stored
-in a single compound object along with metadata.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-cdltools
   (package
     (name "r-cdltools")
@@ -32728,13 +32688,13 @@ files.")
 (define-public r-causaloptim
   (package
     (name "r-causaloptim")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "causaloptim" version))
               (sha256
                (base32
-                "02d5rrs1h80c49664bicqh7il6x1r4wfid9791si7a35jz8gq0h2"))))
+                "1wcla4khwb6wi5qdiq7ixs3r0ncgz3rfdccgzq7dvpm2hc3z4lyh"))))
     (properties `((upstream-name . "causaloptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
@@ -32757,8 +32717,8 @@ interface.  The program converts this user defined DAG, query, and constraints,
 and returns tight bounds.  The bounds can be converted to R functions to
 evaluate them for specific datasets, and to latex code for publication.  The
 methods and proofs of tightness and validity of the bounds are described in a
-preprint by Sachs, Gabriel, and SjÃ¶lander (2021)
-<https://sachsmc.github.io/causaloptim/articles/CausalBoundsMethods.pdf>.")
+preprint by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
+<doi:10.1080/10618600.2022.2071905>.")
     (license license:expat)))
 
 (define-public r-causalmodels

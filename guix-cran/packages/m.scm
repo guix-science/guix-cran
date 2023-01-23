@@ -16250,6 +16250,67 @@ is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
     (license license:gpl2)))
 
+(define-public r-mlmts
+  (package
+    (name "r-mlmts")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mlmts" version))
+              (sha256
+               (base32
+                "10xy4qzdik1rjs11ql798ig7y5cm3hjc61n5dhxfzpi1w0wk3smi"))))
+    (properties `((upstream-name . "mlmts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveslim
+                             r-tsfeatures
+                             r-tserieschaos
+                             r-tseries
+                             r-tsdist
+                             r-tsclust
+                             r-tsa
+                             r-rfast
+                             r-rdpack
+                             r-ranger
+                             r-randomforest
+                             r-quantspec
+                             r-psych
+                             r-pspline
+                             r-pracma
+                             r-multiwave
+                             r-mts
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-ggplot2
+                             r-geigen
+                             r-freqdom
+                             r-forecast
+                             r-fda-usc
+                             r-e1071
+                             r-dtw
+                             r-desctools
+                             r-complexplus
+                             r-clusterr
+                             r-caret
+                             r-aid))
+    (home-page "https://cran.r-project.org/package=mlmts")
+    (synopsis "Machine Learning Algorithms for Multivariate Time Series")
+    (description
+     "An implementation of several machine learning algorithms for multivariate time
+series.  The package includes functions allowing the execution of clustering,
+classification or outlier detection methods, among others.  It also incorporates
+a collection of multivariate time series datasets which can be used to analyse
+the performance of new proposed algorithms.  Some of these datasets are stored
+in GitHub data packages ueadata1 to ueadata8'.  To access these data packages,
+run install.packages(c('ueadata1', ueadata2', ueadata3', ueadata4', ueadata5',
+ueadata6', ueadata7', ueadata8'), repos='<https://anloor7.github.io/drat/>')'.
+The installation takes a couple of minutes but we strongly encourage the users
+to do it if they want to have available all datasets of mlmts.  Practitioners
+from a broad variety of fields could benefit from the general framework provided
+by mlmts'.")
+    (license license:gpl2)))
+
 (define-public r-mlmtools
   (package
     (name "r-mlmtools")
@@ -19463,32 +19524,6 @@ results using different types of measures and graphs.  The methods implemented
 are described in Mason (2018) <doi:10.1002/hec.3793>, Molenberghs (2000)
 <doi:10.1007/978-1-4419-0300-6_18> and Gabrio (2019) <doi:10.1002/sim.8045>.")
     (license license:gpl2)))
-
-(define-public r-missforest
-  (package
-    (name "r-missforest")
-    (version "1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "missForest" version))
-              (sha256
-               (base32
-                "13c38hpl60ca1kwyv61cxsla6ccmsj4qzp0vrxcq7b827fh5aw21"))))
-    (properties `((upstream-name . "missForest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomforest r-itertools r-iterators r-foreach
-                             r-dorng))
-    (home-page "https://www.r-project.org")
-    (synopsis "Nonparametric Missing Value Imputation using Random Forest")
-    (description
-     "The function missForest in this package is used to impute missing values
-particularly in the case of mixed-type data.  It uses a random forest trained on
-the observed values of a data matrix to predict the missing values.  It can be
-used to impute continuous and/or categorical data including complex interactions
-and non-linear relations.  It yields an out-of-bag (OOB) imputation error
-estimate without the need of a test set or elaborate cross-validation.  It can
-be run in parallel to save computation time.")
-    (license license:gpl2+)))
 
 (define-public r-missdiag
   (package
@@ -34996,13 +35031,13 @@ matrices using code that shows the actual matrices.")
 (define-public r-massextra
   (package
     (name "r-massextra")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MASSExtra" version))
               (sha256
                (base32
-                "0mc5zpj2zp1gd8izyiji1hrklc4x3ixvcjxzfcs3bbhzk7qcm2n9"))))
+                "109jky97n5026vm1wgmn84mqr84ghgfcacr4ljyaanazyjc1r5wz"))))
     (properties `((upstream-name . "MASSExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-demokde))

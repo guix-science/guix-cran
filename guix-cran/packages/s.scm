@@ -4372,13 +4372,13 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "2.5")
+    (version "2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "1zbzsjxsrmz1xh3ldxgas0yv2v9l6jqdr9hr002gq9hk5qhspk9m"))))
+                "11435hwg7jzjg3wpwgdzvh7v7f1r351q12z8achyh5p8vmvn39rl"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5130,13 +5130,13 @@ number of robust (or super) biclusters with none or low overlap.")
 (define-public r-superb
   (package
     (name "r-superb")
-    (version "0.95.0")
+    (version "0.95.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "superb" version))
               (sha256
                (base32
-                "0xr83q8yqbiym98116q9j1mp46adlmjj4s6pcn634w1yqvjfxdsf"))))
+                "02pc8wwkhvkrfmvv2cqmpwkiwyy6xyps7kdhiwkph1jagw5l6qgk"))))
     (properties `((upstream-name . "superb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5154,14 +5154,14 @@ number of robust (or super) biclusters with none or low overlap.")
     (description
      "Computes standard error and confidence interval of various descriptive
 statistics under various designs and sampling schemes.  The main function,
-superbPlot(), can either return a plot or a dataframe with the statistic and its
-precision interval so that other plotting package can be used.  See Cousineau
-and colleagues (2021) <doi:10.1177/25152459211035109> or Cousineau (2017)
-<doi:10.5709/acp-0214-z> for a review as well as Cousineau (2005)
-<doi:10.20982/tqmp.01.1.p042>, Morey (2008) <doi:10.20982/tqmp.04.2.p061>,
-Baguley (2012) <doi:10.3758/s13428-011-0123-7>, Cousineau & Laurencelle (2016)
-<doi:10.1037/met0000055>, Cousineau & O'Brien (2014)
-<doi:10.3758/s13428-013-0441-z>, Calderini & Harding
+superbPlot(), return a plot.  superbData() returns a dataframe with the
+statistic and its precision interval so that other plotting package can be used.
+ See Cousineau and colleagues (2021) <doi:10.1177/25152459211035109> or
+Cousineau (2017) <doi:10.5709/acp-0214-z> for a review as well as Cousineau
+(2005) <doi:10.20982/tqmp.01.1.p042>, Morey (2008)
+<doi:10.20982/tqmp.04.2.p061>, Baguley (2012) <doi:10.3758/s13428-011-0123-7>,
+Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
+(2014) <doi:10.3758/s13428-013-0441-z>, Calderini & Harding
 <doi:10.20982/tqmp.15.1.p001> for specific references.")
     (license license:gpl3)))
 
@@ -19317,47 +19317,6 @@ respecify.character(), and %matches%.data.frame().")
 likelihood inference for Spearman's rho (de Carvalho and Marques (2012)
 <10.1080/10920277.2012.10597644>).")
     (license license:gpl3+)))
-
-(define-public r-speaq
-  (package
-    (name "r-speaq")
-    (version "2.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "speaq" version))
-              (sha256
-               (base32
-                "0z9a3nbfazphp090c6hg892vjq7jp4g4cij3s5wbs1q567inbmlk"))))
-    (properties `((upstream-name . "speaq")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-rfast
-                             r-reshape2
-                             r-missforest
-                             r-massspecwavelet
-                             r-impute
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-dosnow
-                             r-data-table
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=speaq")
-    (synopsis
-     "Tools for Nuclear Magnetic Resonance (NMR) Spectra Alignment, Peak Based Processing, Quantitative Analysis and Visualizations")
-    (description
-     "Makes Nuclear Magnetic Resonance spectroscopy (NMR spectroscopy) data analysis
-as easy as possible by only requiring a small set of functions to perform an
-entire analysis.  speaq offers the possibility of raw spectra alignment and
-quantitation but also an analysis based on features whereby the spectra are
-converted to peaks which are then grouped and turned into features.  These
-features can be processed with any number of statistical tools either included
-in speaq or available elsewhere on CRAN. More details can be found in Vu et al.
-(2011) <doi:10.1186/1471-2105-12-405> and Beirnaert et al. (2018)
-<doi:10.1371/journal.pcbi.1006018>.")
-    (license license:asl2.0)))
 
 (define-public r-speakr
   (package

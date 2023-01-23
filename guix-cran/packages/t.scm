@@ -6984,6 +6984,37 @@ complex loops.  The coefficient vector and cumulative baseline hazard function
 can be estimated, along with the corresponding standard errors and P values.")
     (license license:gpl2+)))
 
+(define-public r-transfr
+  (package
+    (name "r-transfr")
+    (version "1.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "transfR" version))
+              (sha256
+               (base32
+                "146pd1yki3lmd1b7h8xhakd1rjb41jqi0y9p73cqx9w13l87ba5m"))))
+    (properties `((upstream-name . "transfR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-stars
+                             r-sf
+                             r-rdpack
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://gitlab.irstea.fr/HYCAR-Hydro/transfr")
+    (synopsis "Transfer of Hydrograph from Gauged to Ungauged Catchments")
+    (description
+     "This package provides a geomorphology-based hydrological modelling for
+transferring streamflow measurements from gauged to ungauged catchments.
+Inverse modelling enables to estimate net rainfall from streamflow measurements
+following BoudhraÃ¢ et al. (2018) <doi:10.1080/02626667.2018.1425801>.
+Resulting net rainfall is then estimated on the ungauged catchments by spatial
+interpolation in order to finally simulate streamflow following de Lavenne et
+al. (2016) <doi:10.1002/2016WR018716>.")
+    (license license:gpl2)))
+
 (define-public r-transformr
   (package
     (name "r-transformr")
@@ -7995,16 +8026,16 @@ contributions, the final document can be downloaded and rendered locally.")
 (define-public r-trackdf
   (package
     (name "r-trackdf")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trackdf" version))
               (sha256
                (base32
-                "1dx86ckxpadaw092fsdlwwpxacpglgzn8r7irykq4zk9kv8p2ij9"))))
+                "17iwvpfp57x5bz08njbs1p0kdg8lhjk08z2vzmr07sniv1vc6a0l"))))
     (properties `((upstream-name . "trackdf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-sf r-lubridate r-data-table))
+    (propagated-inputs (list r-tibble r-sf r-lubridate r-dplyr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://swarm-lab.github.io/trackdf/")
     (synopsis "Data Frame Class for Tracking Data")

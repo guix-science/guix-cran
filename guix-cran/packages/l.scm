@@ -7834,13 +7834,13 @@ website.")
 (define-public r-lingmatch
   (package
     (name "r-lingmatch")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingmatch" version))
               (sha256
                (base32
-                "1n6d3xx2ilkp37ia6s578k8rlqq4faxd8k41xjgy866590jjjrmw"))))
+                "1jcbqlla0qdlx2gv1cc2ma8lg7rl30djyqp6mfmd93dfhqr9mr0g"))))
     (properties `((upstream-name . "lingmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-matrix))

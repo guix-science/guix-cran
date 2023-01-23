@@ -2742,13 +2742,13 @@ in this package rely heavily on these two popular R packages: Dowle et al.
 (define-public r-kidsides
   (package
     (name "r-kidsides")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kidsides" version))
               (sha256
                (base32
-                "0gpvmkjjdmi5malcdlrvwxnc01vvvx0yididi6waainq5yna0syn"))))
+                "0xplgmmkjw62934hprwqxdlmr8665r8w47wssyk5vn0fzfisj1vq"))))
     (properties `((upstream-name . "kidsides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-r-utils r-dbi))

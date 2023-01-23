@@ -13357,13 +13357,13 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "0xnvnmph3wzdlw4hnwa73qiqdn1xyg12q21bkkk4r17cjilvjbz5"))))
+                "08wbizxiwhkm01cm508v9v0lbhqc2agnq6sj677yjqzq1kp3m3l0"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

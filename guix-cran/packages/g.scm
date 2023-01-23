@@ -503,45 +503,6 @@ constructing area-based index with geographical heterogeneities and variable
 selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
     (license license:expat)))
 
-(define-public r-gwidgets2tcltk
-  (package
-    (name "r-gwidgets2tcltk")
-    (version "1.0-8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gWidgets2tcltk" version))
-              (sha256
-               (base32
-                "02ic4avpa33dnqsnm1mzg7ci1psngk1p169pqf259szf6v39qf8h"))))
-    (properties `((upstream-name . "gWidgets2tcltk")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-memoise r-gwidgets2 r-digest))
-    (home-page "https://github.com/jverzani/gWidgets2tcltk")
-    (synopsis "Toolkit Implementation of gWidgets2 for tcltk")
-    (description "Port of the gWidgets2 API for the tcltk package.")
-    (license license:gpl2+)))
-
-(define-public r-gwidgets2
-  (package
-    (name "r-gwidgets2")
-    (version "1.0-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gWidgets2" version))
-              (sha256
-               (base32
-                "1ifljpdazzmwf3mgkg9g76365n2cmw8dd3da161fpvw84xxyznfl"))))
-    (properties `((upstream-name . "gWidgets2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-digest))
-    (home-page "https://github.com/gWidgets3/gWidgets2")
-    (synopsis "Rewrite of gWidgets API for Simplified GUI Construction")
-    (description
-     "Re-implementation of the gWidgets API. The API is defined in this package.  A
-second, toolkit-specific package is required to use it.  At this point only
-gWidgets2tcltk is viable.")
-    (license license:gpl3+)))
-
 (define-public r-gwi
   (package
     (name "r-gwi")
@@ -7221,25 +7182,25 @@ and that both continuous and categorical variables can be used to detect DIF.")
 (define-public r-gpcerf
   (package
     (name "r-gpcerf")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPCERF" version))
               (sha256
                (base32
-                "054hyprd1g4qlf35imw42n8hizds6qxrp3y64k38j4bh9smkv59f"))))
+                "1ggr3qmav4qzwn384s4mhgdyv8s85926lhny5r23mf26is1q50n2"))))
     (properties `((upstream-name . "GPCERF")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
+                             r-superlearner
                              r-spatstat-geom
                              r-rlang
+                             r-rfast
                              r-rcpparmadillo
                              r-rcpp
-                             r-matrix
                              r-mass
                              r-logger
-                             r-ggplot2
-                             r-data-table))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/NSAPH-Software/GPCERF")
     (synopsis
@@ -16034,13 +15995,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.5")
+    (version "0.8.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggiraph" version))
               (sha256
                (base32
-                "1fnv4bsm2avgaklmsbqs1gbixipifb8sfwiwnrbnsqycqh56n6wc"))))
+                "1ayi90alxyy7sqcafcm5mwmpaa3gv5ix0qxsdjng3252hn226n75"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (inputs (list zlib libpng))
@@ -25695,13 +25656,13 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
 (define-public r-gap
   (package
     (name "r-gap")
-    (version "1.5")
+    (version "1.5-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gap" version))
               (sha256
                (base32
-                "0nzrszpq74s0hjaf233a2vi6zwwhz11gwkwgypnmmplvcdyf4q80"))))
+                "1p0kwdsay8n29sg8jpfjbyqj3848irzn3l6a238fn4jpbw23fk8d"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-ggplot2 r-gap-datasets r-dplyr))
