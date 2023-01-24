@@ -9110,13 +9110,13 @@ pre-processing so users can focus only on their model implementations.")
 (define-public r-torchaudio
   (package
     (name "r-torchaudio")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchaudio" version))
               (sha256
                (base32
-                "15fr8vl5kw1w8b41lvl6ds8hzyalrw98c136j7lvif7l6h2cnln5"))))
+                "10hqx6yg14kz0vzyxg6g67lmkdsdxw7qz64pj5k3vvryiqzas4d4"))))
     (properties `((upstream-name . "torchaudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch r-rlang r-rcpp r-glue r-fs))
@@ -20602,6 +20602,35 @@ creating data visualizations with color palettes inspired by Taylor Swift's
 album covers.")
     (license license:expat)))
 
+(define-public r-taxotools
+  (package
+    (name "r-taxotools")
+    (version "0.0.132")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "taxotools" version))
+              (sha256
+               (base32
+                "0f24356bmvbm6p18zw9vsyz0zqyijq8757c83mv14mkbqs2apqip"))))
+    (properties `((upstream-name . "taxotools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wikitaxa
+                             r-taxize
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-sqldf
+                             r-rmarkdown
+                             r-plyr))
+    (home-page "https://cran.r-project.org/package=taxotools")
+    (synopsis "Taxonomic List Processing")
+    (description
+     "Taxonomic lists matching and merging, casting and melting scientific names,
+managing taxonomic lists from Global Biodiversity Information Facility GBIF or
+Integrated Taxonomic Information System ITIS', harvesting names from Wikipedia
+and fuzzy matching.")
+    (license license:cc0)))
+
 (define-public r-taxonstand
   (package
     (name "r-taxonstand")
@@ -21786,13 +21815,13 @@ Office grant W911NF-17-1-0007.")
 (define-public r-taf
   (package
     (name "r-taf")
-    (version "4.0.0")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TAF" version))
               (sha256
                (base32
-                "0v796lrfb2n2m74vdgm9f1gm9c8xc780d09rgwfdcc4q3nr3gld8"))))
+                "0fy8lb1yws1k9pbpgjqdzcsgnzx5kydld8gj910s34azksvcadvk"))))
     (properties `((upstream-name . "TAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))

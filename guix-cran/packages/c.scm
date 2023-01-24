@@ -25836,13 +25836,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.10.2")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ciftiTools" version))
               (sha256
                (base32
-                "1pirxj9czx1pl9c31vjhnil5avbfjzin11yfhg058ghjby6srfqx"))))
+                "054w4kza7nzv5gb5l75r96g11a3nj2r8vzryjbil4bzn8v9l0dq1"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -35743,13 +35743,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cancensus" version))
               (sha256
                (base32
-                "0pzm58fxhd330m5iq2k6527p5jsbfp2fj05mma39ib3gxliniwni"))))
+                "1cvb7v2v4hsy97m67369xxscb5a9igszsvif9b4d60ngh4j51a0z"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-httr r-dplyr r-digest))

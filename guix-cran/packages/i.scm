@@ -2354,13 +2354,13 @@ islasso: estimation and hypothesis testing in lasso regression.
 (define-public r-island
   (package
     (name "r-island")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "island" version))
               (sha256
                (base32
-                "1xxp49vszxihxv33nidjr1aljaz3c27vym9ms03xf3hgrmrw22cf"))))
+                "0s76f1i22cnc5c1dzswflq43qgcpssdkb32xc2j0ajy4r8xak7kz"))))
     (properties `((upstream-name . "island")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4637,16 +4637,16 @@ proxy IP address from IP2Proxy BIN Data file.  You may visit
 (define-public r-ip2location
   (package
     (name "r-ip2location")
-    (version "8.0.1")
+    (version "8.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ip2location" version))
               (sha256
                (base32
-                "0mf6ncckjjrq4dvd8pifz4izn4vqmsqq0pw36gm1zqzbyyvmqqya"))))
+                "0809gg70cfgrw4vk2aalhb5q9w4v883g1aa722a75bllp4kgjmdj"))))
     (properties `((upstream-name . "ip2location")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-reticulate r-jsonlite))
+    (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
     (home-page "https://github.com/ip2location/ip2location-r")
     (synopsis "Lookup for IP Address Information")
     (description
@@ -6461,6 +6461,42 @@ calibrates estimates from reference-based deconvolution by taking into account
 extra biological information as priors.  Moreover, the proposed algorithm is
 robust to inaccurate external information imposed in the deconvolution system.")
     (license license:artistic2.0)))
+
+(define-public r-interca
+  (package
+    (name "r-interca")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "interca" version))
+              (sha256
+               (base32
+                "1ddv1rphdpvxbqbmrj3bgsdpksq84yjxdgygms5pw8jdz8yjyirs"))))
+    (properties `((upstream-name . "interca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waiter
+                             r-shinywidgets
+                             r-shinyfeedback
+                             r-shiny
+                             r-rmarkdown
+                             r-readxl
+                             r-readr
+                             r-openxlsx
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-factominer
+                             r-factoextra
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=interca")
+    (synopsis
+     "Multiple Correspondence Analysis Based on Interpretive Coordinates")
+    (description
+     "Various functions and a Shiny app to enrich the results of Multiple
+Correspondence Analysis with interpretive axes and planes (see Moschidis,
+Markos, and Thanopoulos, 2022; <doi:10.1108/ACI-07-2022-0191>).")
+    (license license:gpl3)))
 
 (define-public r-interatrix
   (package
@@ -12380,6 +12416,31 @@ on other R packages for online tools.  The IDSL.SUFA package has functions to
 process user-defined adduct formulas.")
     (license license:expat)))
 
+(define-public r-idsl-npa
+  (package
+    (name "r-idsl-npa")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IDSL.NPA" version))
+              (sha256
+               (base32
+                "13nrbr4dgwcv6zs5d6qlcwig8kanb7bqbhjhiy98y3gj88pwr490"))))
+    (properties `((upstream-name . "IDSL.NPA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl
+                             r-idsl-mxp
+                             r-idsl-ipa
+                             r-idsl-fsa
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/idslme/idsl.npa")
+    (synopsis "Nominal Peak Analysis (NPA)")
+    (description
+     "This package provides a pipeline for processing nominal mass spectrometry data
+to create .msp files for untargeted nominal mass data processing.")
+    (license license:expat)))
+
 (define-public r-idsl-mxp
   (package
     (name "r-idsl-mxp")
@@ -12448,6 +12509,36 @@ similarity, dot product (cosine) similarity, and normalized Euclidean mass error
 (NEME) followed by intelligent pre-filtering steps for rapid spectra searches.
 IDSL.FSA also provides a number of modules to convert and manipulate .msp and
 .mgf files.")
+    (license license:expat)))
+
+(define-public r-idsl-csa
+  (package
+    (name "r-idsl-csa")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IDSL.CSA" version))
+              (sha256
+               (base32
+                "0mf8g6rdvdp6gr0xf9d8wld885jpqpazkqh82bafn7bgk1y30qgq"))))
+    (properties `((upstream-name . "IDSL.CSA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl
+                             r-idsl-mxp
+                             r-idsl-ipa
+                             r-idsl-fsa
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/idslme/idsl.csa")
+    (synopsis
+     "Composite Spectra Analysis (CSA) for High-Resolution Mass Spectrometry Analyses")
+    (description
+     "This package provides a fragmentation spectra detection pipeline for
+high-throughput LC/HRMS data processing using peaklists generated by the
+IDSL.IPA package.  The IDSL.CSA package can deconvolute fragmentation spectra
+from Composite Spectra Analysis (CSA), Data Dependent Acquisition (DDA)
+analysis, and various Data-Independent Acquisition (DIA) methods such as MS^E,
+All-Ion Fragmentation (AIF) and SWATH analysis.")
     (license license:expat)))
 
 (define-public r-idsa
@@ -13788,16 +13879,16 @@ Council for the Exploration of the Sea) Vocabularies database
 (define-public r-icestaf
   (package
     (name "r-icestaf")
-    (version "4.0.2")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesTAF" version))
               (sha256
                (base32
-                "17gli8vq6gnscyvm9q1xi72nm2yxl8zzl7b5agjv2hx2xc8gx2zv"))))
+                "0wibg9rhlvhg3x7n39nwx57ghmgdk56zhj9xr6x30imk031m6ymw"))))
     (properties `((upstream-name . "icesTAF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-taf r-roxygen2 r-purrr))
+    (propagated-inputs (list r-taf r-roxygen2 r-purrr r-data-tree))
     (home-page "https://taf.ices.dk")
     (synopsis "Functions to Support the ICES Transparent Assessment Framework")
     (description

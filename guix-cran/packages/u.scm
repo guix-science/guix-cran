@@ -324,22 +324,21 @@ and other variables in a data set.")
 (define-public r-utile-visuals
   (package
     (name "r-utile-visuals")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.visuals" version))
               (sha256
                (base32
-                "12crzqcap4s0ji9839ykmvp31b5p10c59z95wmklhcsnpc7n3k6w"))))
+                "1f5zhbsx3iaayh9a92w3hlz8nxbfahdk1j8x62r84yp3aw1skbvz"))))
     (properties `((upstream-name . "utile.visuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-dplyr))
-    (home-page "https://github.com/efinite/utile.visuals")
+    (home-page "https://efinite.github.io/utile.visuals/")
     (synopsis "Create Visuals for Publication")
     (description
-     "This package provides a small set of functions to aid in the production of
-visuals in ggplot2.  Includes minimalist themes with transparent backgrounds and
-tools for building survival curves with risk tables.")
+     "This package provides a set of functions to aid in the production of visuals in
+ggplot2.")
     (license license:lgpl2.0+)))
 
 (define-public r-utile-tools
@@ -3162,13 +3161,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UKFE" version))
               (sha256
                (base32
-                "1ijkc9anx5rms8dd80hmm9d15rfa7z3vjvn9jr5bbvx814vfwaic"))))
+                "06c5r2g06pa6irm1vk3wn0rbzqllssba4ixvf82s6d0x69ikplq9"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))

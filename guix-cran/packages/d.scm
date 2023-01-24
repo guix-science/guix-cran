@@ -4911,13 +4911,13 @@ small-effect genes in F2.  Li P, Li G, Zhang YW, Zuo JF, Liu JY, Zhang YM (2022,
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DQAstats" version))
               (sha256
                (base32
-                "1yyfab37rqfm77pb89vfkks5rz8il27h1kqlg6lq1q8sf2jqb2hn"))))
+                "1fcfggzk5ln3md540dnc77jwsc9p5bswl6nbci6gihl4jc5d9fn8"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytex
@@ -4943,13 +4943,13 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
 (define-public r-dqagui
   (package
     (name "r-dqagui")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DQAgui" version))
               (sha256
                (base32
-                "0k2nzkah8bjpipwaind5h1l7hpx4115kjwzncblwl5s63l7bg2gd"))))
+                "1zscs93ax7s25f3vpqr75q28v06h449pydkqwgfygn3sn02n82nh"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -4974,7 +4974,8 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
     (synopsis "Graphical User Interface for Data Quality Assessment")
     (description
      "This package provides a graphical user interface (GUI) to the functions
-implemented in the R package DQAstats'.")
+implemented in the R package DQAstats'. .  Publication: Mang et al. (2021)
+<doi:10.1186/s12911-022-01961-z>.")
     (license license:gpl3)))
 
 (define-public r-dptree
@@ -8364,13 +8365,13 @@ intertemporal budgeting, etc.")
 (define-public r-dizutils
   (package
     (name "r-dizutils")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIZutils" version))
               (sha256
                (base32
-                "0023zja8vsqsfndbi37ykr6838zakd5sz1w62kzaj9x05biqsi9v"))))
+                "1kra2b1qbbs6yf5aqlianszqbybni4iqzks0gxg5hdmdzphzb0hb"))))
     (properties `((upstream-name . "DIZutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8394,13 +8395,13 @@ avoid redundancy.")
 (define-public r-diztools
   (package
     (name "r-diztools")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIZtools" version))
               (sha256
                (base32
-                "1rc972cqdfx0pjj9g3k2ggfsf9mhs62d72zpn0r6m3i6b6aa64q9"))))
+                "1akqfnbsalla30w488ai9ryh21a9sl75kfafmph2a6c8fxbav9h0"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-parsedate
@@ -8620,36 +8621,6 @@ qualitative interaction effects.  Computational Statistics & Data Analysis
 forests: Using split sampling to enable innovative complex split procedures in
 random forests.  SN Computer Science 3(2):1, <doi:10.1007/s42979-021-00920-1>.")
     (license license:gpl3)))
-
-(define-public r-diversity
-  (package
-    (name "r-diversity")
-    (version "1.9.90")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "diveRsity" version))
-              (sha256
-               (base32
-                "11pfq3syvjmfwfimjc2jnlprcnynvargr4yjd8h0aa6qzgdrrx5q"))))
-    (properties `((upstream-name . "diveRsity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-qgraph r-ggplot2))
-    (home-page "http://diversityinlife.weebly.com/")
-    (synopsis
-     "Comprehensive, General Purpose Population Genetics Analysis Package")
-    (description
-     "Allows the calculation of both genetic diversity partition statistics, genetic
-differentiation statistics, and locus informativeness for ancestry assignment.
-It also provides users with various option to calculate bootstrapped 95\\%
-confidence intervals both across loci, for pairwise population comparisons, and
-to plot these results interactively.  Parallel computing capabilities and
-pairwise results without bootstrapping are provided.  Also calculates
-F-statistics from Weir and Cockerham (1984).  Various plotting features are
-provided, as well as Chi-square tests of genetic heterogeneity.  Functionality
-for the calculation of various diversity parameters is possible for RAD-seq
-derived SNP data sets containing thousands of marker loci.  A shiny application
-for the development of microsatellite multiplexes is also available.")
-    (license license:gpl2+)))
 
 (define-public r-diversificationr
   (package
@@ -21206,13 +21177,13 @@ step.")
 (define-public r-dbarts
   (package
     (name "r-dbarts")
-    (version "0.9-22")
+    (version "0.9-23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbarts" version))
               (sha256
                (base32
-                "02hmqzfk9sgz4vndnpnpcav7wlpy9xna8zdnlwgcj4a84zz2pyk8"))))
+                "18spfl9wkrhr9vyql0456h8g39fdip6xjxqf9xfqj8f3i7ynbb71"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24234,13 +24205,13 @@ and rates.  Based on Hohmann (2018) <doi:10.13140/RG.2.2.23372.51841> .")
 (define-public r-dail
   (package
     (name "r-dail")
-    (version "1.4.2")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dail" version))
               (sha256
                (base32
-                "0h9ipsqwvinydd03faanhr2778q4md6r5j0jrs8ckjqjw295m2lc"))))
+                "0hcby044h5g2mkq8dbxshai9vsd5cjppfm5b0wcfng7cbc0v4pqv"))))
     (properties `((upstream-name . "dail")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -24249,7 +24220,10 @@ and rates.  Based on Hohmann (2018) <doi:10.13140/RG.2.2.23372.51841> .")
                              r-readr
                              r-rcurl
                              r-magrittr
-                             r-dplyr))
+                             r-lubridate
+                             r-janitor
+                             r-dplyr
+                             r-deflatebr))
     (home-page "https://cran.r-project.org/package=dail")
     (synopsis "Data from Access to Information Law")
     (description

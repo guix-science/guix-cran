@@ -1386,31 +1386,6 @@ predict the trend of mRNA (Mature RNA) transcription and expression changes in
 the future.")
     (license license:gpl2)))
 
-(define-public r-pulsar
-  (package
-    (name "r-pulsar")
-    (version "0.3.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pulsar" version))
-              (sha256
-               (base32
-                "0hkg7gq56wq6xi71xh2kxzap48wjwak2a8n20dgndlppdz09v8z9"))))
-    (properties `((upstream-name . "pulsar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zdk123/pulsar")
-    (synopsis
-     "Parallel Utilities for Lambda Selection along a Regularization Path")
-    (description
-     "Model selection for penalized graphical models using the Stability Approach to
-Regularization Selection ('StARS'), with options for speed-ups including Bounded
-StARS (B-StARS), batch computing, and other stability metrics (e.g., graphlet
-stability G-StARS).  Christian L. MÃ¼ller, Richard Bonneau, Zachary Kurtz (2016)
-<arXiv:1605.07072>.")
-    (license license:gpl2+)))
-
 (define-public r-puls
   (package
     (name "r-puls")
@@ -6358,13 +6333,13 @@ determines which library this instruction pointer corresponds to.")
 (define-public r-processr
   (package
     (name "r-processr")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "processR" version))
               (sha256
                (base32
-                "1k6ili4vx2s36l9xdvm7livnjr4r1pcdg5f92ivdivarcb3h907w"))))
+                "0kwv1cija3dbk06vkmnpz8f0nrhy10pmjw3n37004bblfxzf7gj5"))))
     (properties `((upstream-name . "processR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ztable
@@ -16623,13 +16598,13 @@ nonparametric regression models.")
 (define-public r-plreg
   (package
     (name "r-plreg")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLreg" version))
               (sha256
                (base32
-                "1mp2gvqqbla29mj2m3ax87ald0nfdd43i5dvxcq5xb0a29n3lqc0"))))
+                "0x7q6wris5w6gpa6i5w4ipcd2c461lgvdp97lwb2ywi7ri7xrig0"))))
     (properties `((upstream-name . "PLreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21401,13 +21376,13 @@ distribution in hidden semi-Markov models. <arXiv:2101.09197>.")
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
-    (version "3.7.4")
+    (version "3.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phreeqc" version))
               (sha256
                (base32
-                "1xhpbi76y87phss10zlxpcz3fm3md3y4lh2cvypnx5ccxfdzflyl"))))
+                "13z1pl2hqv26bm6k3zj9hh69xw0jf1swjimmib82r8n0xjs5dy8m"))))
     (properties `((upstream-name . "phreeqc")))
     (build-system r-build-system)
     (home-page "https://www.usgs.gov/software/phreeqc-version-3")
@@ -31018,6 +30993,34 @@ learning algorithms, running sets of simulations (e.g., estimating statistical
 power for complex models), or bootstrapping under various conditions.  See the
 paramtest documentation for more information and examples.")
     (license license:gpl3)))
+
+(define-public r-paramsim
+  (package
+    (name "r-paramsim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "paramsim" version))
+              (sha256
+               (base32
+                "1a227s1xglcc1skpsmwmmwr04mql73plc557sp8bl8444fhjz228"))))
+    (properties `((upstream-name . "paramsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-future r-forecast r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=paramsim")
+    (synopsis "Parameterized Simulation")
+    (description
+     "This function obtains a Random Number Generator (RNG) or collection of RNGs that
+replicate the required parameter(s) of a distribution for a time series of data.
+ Consider the case of reproducing a time series data set of size 20 that uses an
+autoregressive (AR) model with phi = 0.8 and standard deviation equal to 1.
+When one checks the arima.sin() function's estimated parameters, it's possible
+that after a single trial or a few more, one won't find the precise parameters.
+This enables one to look for the ideal RNG setting for a simulation that will
+accurately duplicate the desired parameters.")
+    (license license:gpl2+)))
 
 (define-public r-params
   (package

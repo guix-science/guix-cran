@@ -2571,13 +2571,13 @@ the penalized multi-VAR framework in Fisher, Kim and Pipiras (2020)
 (define-public r-multius
   (package
     (name "r-multius")
-    (version "1.1.0")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiUS" version))
               (sha256
                (base32
-                "077qyqfbp2r5ah08biiswn4jg03h2jcvi0gij6h5wip16vr0d0yx"))))
+                "0wdvrkl6xvk8xpkm9n0hd5pjks3350ms09jrfqnnxyf3dsbs68dc"))))
     (properties `((upstream-name . "multiUS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gplots))
@@ -3795,6 +3795,34 @@ capture-recapture data consisting of a single conventional mark or multiple
 non-invasive marks.  See McClintock (2015) <doi:10.1002/ece3.1676> and Maronde
 et al. (2020) <doi:10.1002/ece3.6990>.")
     (license license:gpl2)))
+
+(define-public r-multilink
+  (package
+    (name "r-multilink")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multilink" version))
+              (sha256
+               (base32
+                "11fbbqvnh47lnqcfwvy2vb2s0h92mj2dqfgc1x2zh232il782p6b"))))
+    (properties `((upstream-name . "multilink")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-recordlinkage
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mcclust
+                             r-igraph
+                             r-geosphere))
+    (home-page "https://github.com/aleshing/multilink")
+    (synopsis "Multifile Record Linkage and Duplicate Detection")
+    (description
+     "Implementation of the methodology of Aleshin-Guendel & Sadinle (2022)
+<doi:10.1080/01621459.2021.2013242>.  It handles the general problem of
+multifile record linkage and duplicate detection, where any number of files are
+to be linked, and any of the files may have duplicates.")
+    (license license:gpl3)))
 
 (define-public r-multilinguer
   (package
@@ -6427,6 +6455,34 @@ learning classifiers in terms of their capabilities in discrimination between
 true and false positive interactions.")
     (license license:gpl3)))
 
+(define-public r-msinference
+  (package
+    (name "r-msinference")
+    (version "0.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MSinference" version))
+              (sha256
+               (base32
+                "0w253s5xj6i7xgi3aj48d4h983gpl4y6ajcgpx524p7nk94ajxzj"))))
+    (properties `((upstream-name . "MSinference")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MSinference")
+    (synopsis "Multiscale Inference for Nonparametric Time Trend(s)")
+    (description
+     "This package performs a multiscale analysis of a nonparametric regression or
+nonparametric regressions with time series errors.  In case of one regression,
+with the help of this package it is possible to detect the regions where the
+trend function is increasing or decreasing.  In case of multiple regressions,
+the test identifies regions where the trend functions are different from each
+other.  See Khismatullina and Vogt (2020) <doi:10.1111/rssb.12347>,
+Khismatullina and Vogt (2022) <doi:10.48550/arXiv.2209.10841> and Khismatullina
+and Vogt (2023) <doi:10.1016/j.jeconom.2021.04.010> for more details on theory
+and applications.")
+    (license license:gpl2+)))
+
 (define-public r-msimcc
   (package
     (name "r-msimcc")
@@ -8353,13 +8409,13 @@ created.  The method has first been proposed by Holmstrom, Pasanen, Furrer, Sain
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.7.1")
+    (version "1.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrbin" version))
               (sha256
                (base32
-                "0k0jhssacy19l45pcypfg3g1cw9dz6fpf3dkgihx7pldyw4zfh5g"))))
+                "0mpkp79hyzlkgmjmf8wvhg7f74j9s79ack7r8zvrab4y0918c6w8"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (home-page "http://www.kleinomicslab.com/software/")
@@ -15509,13 +15565,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3viz" version))
               (sha256
                (base32
-                "03gvxkwsa18pzrckky0c02nx77r4w63d0l5r7lazhzv7cv4yx2s0"))))
+                "0vw220kl330ib989hhaqhdyrba90bxc2g2cgnyjhid1flk3wqw73"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -15528,7 +15584,7 @@ composed to form preprocessing pipelines.")
     (synopsis "Visualizations for 'mlr3'")
     (description
      "Visualization package of the mlr3 ecosystem.  It features plots for mlr3 objects
-such as task, learners, predictions, benchmark results, tuning instances and
+such as tasks, learners, predictions, benchmark results, tuning instances and
 filters via the autoplot() generic of ggplot2'.  The package draws plots with
 the viridis color palette and applies the minimal theme.  Visualizations include
 barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
@@ -18772,64 +18828,6 @@ existing R packages.  See details of the models in Peng and Yu (2020) <ISBN:
 9780367145576>.")
     (license license:gpl3)))
 
-(define-public r-mixcomp
-  (package
-    (name "r-mixcomp")
-    (version "0.1-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mixComp" version))
-              (sha256
-               (base32
-                "01zgf31mmnjnwwji9yadfhwa49xy4i3wf0f5glifmpnvmr6d7y1d"))))
-    (properties `((upstream-name . "mixComp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsolnp
-                             r-matrixcalc
-                             r-kdensity
-                             r-expm
-                             r-cluster
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mixComp")
-    (synopsis "Estimation of Order of Mixture Distributions")
-    (description
-     "This package provides methods for estimating the order of a mixture model.  The
-approaches considered are based on the following papers (extensive list of
-references is available in the vignette): 1.  Dacunha-Castelle, Didier, and
-Elisabeth Gassiat.  The estimation of the order of a mixture model.  Bernoulli
-3, no.  3 (1997): 279-299.
-<https://projecteuclid.org/download/pdf_1/euclid.bj/1177334456>.  2.  Woo,
-Mi-Ja, and T. N. Sriram.  Robust estimation of mixture complexity.  Journal of
-the American Statistical Association 101, no.  476 (2006): 1475-1486.
-<doi:10.1198/016214506000000555>.  3.  Woo, Mi-Ja, and T. N. Sriram.  Robust
-estimation of mixture complexity for count data.  Computational statistics &
-data analysis 51, no.  9 (2007): 4379-4392. <doi:10.1016/j.csda.2006.06.006>.
-4.  Umashanger, T., and T. N. Sriram.  L2E estimation of mixture complexity for
-count data.  Computational statistics & data analysis 53, no.  12 (2009):
-4243-4254. <doi:10.1016/j.csda.2009.05.013>.  5.  Karlis, Dimitris, and Evdokia
-Xekalaki.  On testing for the number of components in a mixed Poisson model.
-Annals of the Institute of Statistical Mathematics 51, no.  1 (1999): 149-162.
-<doi:10.1023/A:1003839420071>.  6.  Cutler, Adele, and Olga I. Cordero-Brana.
-Minimum Hellinger Distance Estimation for Finite Mixture Models.  Journal of the
-American Statistical Association 91, no.  436 (1996): 1716-1723.
-<doi:10.2307/2291601>.  A number of datasets are included.  1.  accidents, from
-Karlis, Dimitris, and Evdokia Xekalaki.  On testing for the number of components
-in a mixed Poisson model.  Annals of the Institute of Statistical Mathematics
-51, no.  1 (1999): 149-162. <doi:10.1023/A:1003839420071>.  2.  acidity, from
-Sybil L. Crawford, Morris H. DeGroot, Joseph B. Kadane & Mitchell J. Small
-(1992) Modeling Lake-Chemistry Distributions: Approximate Bayesian Methods for
-Estimating a Finite-Mixture Model, Technometrics, 34:4, 441-453.
-<doi:10.1080/00401706.1992.10484955>.  3.  children, from Thisted, R. A. (1988).
- Elements of statistical computing: Numerical computation (Vol.  1).  CRC Press.
- 4.  faithful, from R package \"datasets\"; Azzalini, A. and Bowman, A. W. (1990).
- A look at some data on the Old Faithful geyser.  Applied Statistics, 39,
-357--365. <https://www.jstor.org/stable/2347385>.  5.  shakespeare, from Efron,
-Bradley, and Ronald Thisted. \"Estimating the number of unseen species: How many
-words did Shakespeare know?.\" Biometrika 63.3 (1976): 435-447.
-<doi:10.1093/biomet/63.3.435>.")
-    (license license:gpl3)))
-
 (define-public r-mixchar
   (package
     (name "r-mixchar")
@@ -18878,6 +18876,29 @@ Yan, R. and Chen, H. and Zheng, C. and Lee, D. H. and Liang, D. T. (2006)
      "Mixed effects cumulative and baseline logit link models for the analysis of
 ordinal or nominal responses, with non-parametric distribution for the random
 effects.")
+    (license license:gpl2+)))
+
+(define-public r-mixbox
+  (package
+    (name "r-mixbox")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mixbox" version))
+              (sha256
+               (base32
+                "1ggh6xp86arb2ws26kcc581fp3qmnjzgcz7121axhiybrcg3fjph"))))
+    (properties `((upstream-name . "mixbox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stabledist r-gigrvg))
+    (home-page "https://cran.r-project.org/package=mixbox")
+    (synopsis "Observed Fisher Information Matrix for Finite Mixture Model")
+    (description
+     "Developed for approximating the observed Fisher information matrix, asymptotic
+standard error, and the corresponding confidence intervals for parameters of the
+canonical, restricted, and unrestricted finite mixture models using the method
+proposed by Basford et al. (1997)
+<https://espace.library.uq.edu.au/view/UQ:57525>.")
     (license license:gpl2+)))
 
 (define-public r-mixar
@@ -27970,30 +27991,6 @@ format is used to encode both the aggregated trees and the final consensus tree.
 being the number of trees to aggregate.")
     (license license:gpl2+)))
 
-(define-public r-mergedblocks
-  (package
-    (name "r-mergedblocks")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mergedblocks" version))
-              (sha256
-               (base32
-                "0hgfyb99hdph4rx32072v40j3z56bwl8lvpxqmms783b997alaml"))))
-    (properties `((upstream-name . "mergedblocks")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomizer))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mergedblocks")
-    (synopsis "Merged Block Randomization")
-    (description
-     "Package to carry out merged block randomization (Van der Pas (2019),
-<doi:10.1177/1740774519827957>), a restricted randomization method designed for
-small clinical trials (at most 100 subjects) or trials with small strata, for
-example in multicentre trials.  It can be used for more than two groups or
-unequal randomization ratios.")
-    (license license:gpl3)))
-
 (define-public r-merderiv
   (package
     (name "r-merderiv")
@@ -29393,28 +29390,6 @@ Lange, Vansteelandt and Bekaert (2012) <DOI:10.1093/aje/kwr525>, Vansteelandt,
 Bekaert and Lange (2012) <DOI:10.1515/2161-962X.1014> and Loeys, Moerkerke, De
 Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>.")
     (license license:gpl2)))
-
-(define-public r-medfate
-  (package
-    (name "r-medfate")
-    (version "2.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "medfate" version))
-              (sha256
-               (base32
-                "1a6n0n1db425av6hi0smxh87rv4a1bgq2j8ha39b7xrxrp7k3p9p"))))
-    (properties `((upstream-name . "medfate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))
-    (home-page "https://emf-creaf.github.io/medfate/")
-    (synopsis "Mediterranean Forest Simulation")
-    (description
-     "This package provides functions to simulate Mediterranean forest functioning and
-dynamics using cohort-based description of vegetation [De Caceres et al. (2015)
-<doi:10.1016/j.agrformet.2015.06.012>; De Caceres et al. (2021)
-<doi:10.1016/j.agrformet.2020.108233>].")
-    (license license:gpl2+)))
 
 (define-public r-medextractr
   (package
@@ -31029,6 +31004,36 @@ available.  Bretz, F., Pinheiro, J. C., and Branson, M. (2005)
 Augustin, N. H. (1997) <doi:10.2307/2533961>.  Pinheiro, J. C., Bornkamp, B.,
 Glimm, E. and Bretz, F. (2014) <doi:10.1002/sim.6052>.")
     (license license:gpl3)))
+
+(define-public r-mcpmodbc
+  (package
+    (name "r-mcpmodbc")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MCPModBC" version))
+              (sha256
+               (base32
+                "0mg7lzf5xvlaaxj4iwkwibw9sbp44dnizw9rlv1az4wg5yl4bhkn"))))
+    (properties `((upstream-name . "MCPModBC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rlang
+                             r-nleqslv
+                             r-foreach
+                             r-dplyr
+                             r-dosefinding
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=MCPModBC")
+    (synopsis
+     "Improved Inference in Multiple Comparison Procedure â Modelling")
+    (description
+     "Implementation of Multiple Comparison Procedures with Modeling (MCP-Mod)
+procedure with bias-corrected estimators and second-order covariance matrices as
+described in Diniz, Gallardo and MagalhÃ£es (2023)
+<doi:10.48550/arXiv.2301.00325>.")
+    (license license:gpl2+)))
 
 (define-public r-mcpmod
   (package
@@ -32664,6 +32669,31 @@ estimates problem (data separation).")
 using Cliffâs delta, as described in Pham & Sokolova (2022)
 <doi:10.1002/ieam.4676>.")
     (license license:gpl3)))
+
+(define-public r-mbreaks
+  (package
+    (name "r-mbreaks")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mbreaks" version))
+              (sha256
+               (base32
+                "1vnrn7f19j52jn707ps9mjz5p0rgcm7mmwbq585hf4c4mbyglrbz"))))
+    (properties `((upstream-name . "mbreaks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RoDivinity/mbreaks")
+    (synopsis
+     "Estimation and Inference for Structural Breaks in Linear Regression Models")
+    (description
+     "This package provides functions provide comprehensive treatments for estimating,
+inferring, testing and model selecting in linear regression models with
+structural breaks.  The tests, estimation methods, inference and information
+criteria implemented are discussed in Bai and Perron (1998) \"Estimating and
+Testing Linear Models with Multiple Structural Changes\" <doi:10.2307/2998540>.")
+    (license license:expat)))
 
 (define-public r-mbrdr
   (package

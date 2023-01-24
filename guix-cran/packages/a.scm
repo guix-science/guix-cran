@@ -8683,13 +8683,13 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ao" version))
               (sha256
                (base32
-                "1wdnb1hlhi52y0jg9fpxzvhmn1sjgsh4g3vg7vc0jlbsjw9fssp9"))))
+                "1wggpi69sfxg8m9dngrrnn35pin6d5cm6klp7ni53payi96vk1dv"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-optimizer r-ggplot2))

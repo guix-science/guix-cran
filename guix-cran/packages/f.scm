@@ -185,6 +185,52 @@ Neural Network, and Support Vector Regression) to determine the plant's fresh
 weight.")
     (license license:gpl3)))
 
+(define-public r-fwildclusterboot
+  (package
+    (name "r-fwildclusterboot")
+    (version "0.12.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fwildclusterboot" version))
+              (sha256
+               (base32
+                "02c4mkynfdjkk3b66bl6kccjj6s3g9d80ggs9440rj8byi4jiwcj"))))
+    (properties `((upstream-name . "fwildclusterboot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summclust
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-juliaconnector
+                             r-gtools
+                             r-generics
+                             r-formula
+                             r-dreamerr
+                             r-dqrng
+                             r-collapse))
+    (native-inputs (list r-knitr))
+    (home-page "https://s3alfisc.github.io/fwildclusterboot/")
+    (synopsis "Fast Wild Cluster Bootstrap Inference for Linear Models")
+    (description
+     "Implementation of fast algorithms for wild cluster bootstrap inference developed
+in Roodman et al (2019, STATA Journal, <doi:10.1177/1536867X19830877>) and
+MacKinnon et al (2022), which makes it feasible to quickly calculate bootstrap
+test statistics based on a large number of bootstrap draws even for large
+samples.  Multiple bootstrap types as described in MacKinnon, Nielsen & Webb
+(2022) are supported.  Further, multiway clustering, regression weights,
+bootstrap weights, fixed effects and subcluster bootstrapping are supported.
+Further, both restricted ('WCR') and unrestricted ('WCU') bootstrap are
+supported.  Methods are provided for a variety of fitted models, including
+lm()', feols() (from package fixest') and felm() (from package lfe').
+Additionally implements a heteroskedasticity-robust ('HC1') wild bootstrap.
+Further, the package provides an R binding to WildBootTests.jl', which provides
+additional speed gains and functionality, including the WRE bootstrap for
+instrumental variable models (based on models of type ivreg() from package
+ivreg') and hypotheses with q > 1.")
+    (license license:gpl3)))
+
 (define-public r-fwi-fbp
   (package
     (name "r-fwi-fbp")
@@ -2978,6 +3024,32 @@ responses for each subject or item, scoring using weights,the computation and
 the graphical representation of the frequencies of the responses to each item
 and the report of the responses of a few subjects.")
     (license license:gpl3)))
+
+(define-public r-fsemipar
+  (package
+    (name "r-fsemipar")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fsemipar" version))
+              (sha256
+               (base32
+                "0xvhnb5fw0q5h1d9fkhm4i9ig476gc6gvp6qzvxnmrwzdpjmhdk2"))))
+    (properties `((upstream-name . "fsemipar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gtools r-grpreg r-dicekriging))
+    (home-page "https://cran.r-project.org/package=fsemipar")
+    (synopsis
+     "Estimation, Variable Selection and Prediction for Functional Semiparametric Models")
+    (description
+     "Routines for estimation or simultaneous estimation and variable selection of
+several functional semiparametric models with scalar response, such as the
+functional single-index model, the semi-functional partial linear model or the
+semi-functional partial linear single-index model.  In addition, it includes
+algorithms for dealing with scalar covariates with linear effect coming from the
+discretization of a curve in the cases of the linear model, the multi-functional
+partial linear model and the multi-functional partial linear single-index model.")
+    (license license:gpl2+)))
 
 (define-public r-fselectorrcpp
   (package

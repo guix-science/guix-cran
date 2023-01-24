@@ -6465,53 +6465,6 @@ Tibshirani, R., (2013) \"A Lasso for Hierarchical Interactions.\" Annals of
 Statistics.  41(3).  1111-1141.")
     (license license:gpl2)))
 
-(define-public r-hierdpart
-  (package
-    (name "r-hierdpart")
-    (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HierDpart" version))
-              (sha256
-               (base32
-                "10sphan6slzj6bsbzff4z7pglkjhv6xy719dm7594fmgqfjz0ici"))))
-    (properties `((upstream-name . "HierDpart")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-reshape2
-                             r-permute
-                             r-pegas
-                             r-mmod
-                             r-hierfstat
-                             r-ggplot2
-                             r-ggally
-                             r-entropart
-                             r-diversity
-                             r-ape
-                             r-adegenet
-                             r-ade4))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/xinghuq/HierDpart")
-    (synopsis
-     "Partitioning Hierarchical Diversity and Differentiation Across Metrics and Scales, from Genes to Ecosystems")
-    (description
-     "Miscellaneous R functions for calculating and decomposing hierarchical diversity
-metrics, including hierarchical allele richness, hierarchical exponential
-Shannon entropy (true diversity of order q=1), hierarchical heterozygosity and
-genetic differentiation (Jaccard dissimilarity, Delta D, Fst and Jost's D).  In
-addition,a new approach to identify population structure based on the
-homogeneity of multivariate variances of Shannon differentiation is presented.
-This package allows users to analyse spatial structured genetic data or species
-data under a unifying framework (Gaggiotti, O. E. et al, 2018, Evol Appl,
-11:1176-1193; <DOI:10.1111/eva.12593>), which partitions diversity and
-differentiation into any hierarchical levels.  It helps you easily structure and
-format your data.  In summary,it implements the analyses of true diversity
-profiles (q=0, 1, 2), hierarchical diversities and differentiation
-decomposition, visualization of population structure, as well as the estimation
-of correlation between geographic distance and genetic differentiation.")
-    (license license:gpl3+)))
-
 (define-public r-hierbipartite
   (package
     (name "r-hierbipartite")

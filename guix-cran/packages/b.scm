@@ -13686,13 +13686,13 @@ implementation of the estimators proposed in Roll (1984)
 (define-public r-bidag
   (package
     (name "r-bidag")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiDAG" version))
               (sha256
                (base32
-                "1w6q506jj4an251bp13szfp4fh11wq725dd788yilc2qgfpr6d0a"))))
+                "103v2w1pgkgpin899jr3iz8yxj79bxmxv9k72gjb5lbmk27xwwcx"))))
     (properties `((upstream-name . "BiDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
@@ -13722,7 +13722,8 @@ Kuipers, P. Suter, G. Moffa (2022) <doi:10.1080/10618600.2021.2020127>, N.
 Friedman and D. Koller (2003) <doi:10.1023/A:1020249912095>, J. Kuipers and G.
 Moffa (2017) <doi:10.1080/01621459.2015.1133426>, M. Kalisch et al. (2012)
 <doi:10.18637/jss.v047.i11>, D. Geiger and D. Heckerman (2002)
-<doi:10.1214/aos/1035844981>.")
+<doi:10.1214/aos/1035844981>, P. Suter, J. Kuipers, G. Moffa, N.Beerenwinkel
+(2023) <doi:10.18637/jss.v105.i09>.")
     (license license:gpl2+)))
 
 (define-public r-bicorn
@@ -23261,13 +23262,13 @@ treatment effect.  For more information, see Kim et al. (2022)
 (define-public r-bartcause
   (package
     (name "r-bartcause")
-    (version "1.0-4")
+    (version "1.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartCause" version))
               (sha256
                (base32
-                "1a1g4376l31pswxmmipm0xm3zazm1kfm3iwknjx6pchjavjhin9y"))))
+                "00mxj92qpgs26dlj0cabxa6zjvwp4987nxhxgsb0npvb8zjm3sdn"))))
     (properties `((upstream-name . "bartCause")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbarts))

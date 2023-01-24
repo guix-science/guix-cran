@@ -5758,58 +5758,6 @@ collection of networks using an agglomerative algorithm\" by T. Rebafka (2022)
 <arXiv:2211.02314>.")
     (license license:gpl2)))
 
-(define-public r-graph4lg
-  (package
-    (name "r-graph4lg")
-    (version "1.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "graph4lg" version))
-              (sha256
-               (base32
-                "1ddyhm9hjsbvkcvi9yv60dq4rhfdza2p73k0n5ziyly8j6p63nlb"))))
-    (properties `((upstream-name . "graph4lg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-stringr
-                             r-spatstat-linnet
-                             r-spatstat-geom
-                             r-sp
-                             r-sf
-                             r-rdpack
-                             r-raster
-                             r-rappdirs
-                             r-pegas
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-ggplot2
-                             r-gdistance
-                             r-foreign
-                             r-ecodist
-                             r-diversity
-                             r-adegenet))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=graph4lg")
-    (synopsis "Build Graphs for Landscape Genetics Analysis")
-    (description
-     "Build graphs for landscape genetics analysis.  This set of functions can be used
-to import and convert spatial and genetic data initially in different formats,
-import landscape graphs created with GRAPHAB software (Foltete et al., 2012)
-<doi:10.1016/j.envsoft.2012.07.002>, make diagnosis plots of isolation by
-distance relationships in order to choose how to build genetic graphs, create
-graphs with a large range of pruning methods, weight their links with several
-genetic distances, plot and analyse graphs,	compare them with other graphs.  It
-uses functions from other packages such as adegenet (Jombart, 2008)
-<doi:10.1093/bioinformatics/btn129> and igraph (Csardi et Nepusz, 2006)
-<https://igraph.org/>.  It also implements methods commonly used in landscape
-genetics to create graphs, described by Dyer et Nason (2004)
-<doi:10.1111/j.1365-294X.2004.02177.x> and Greenbaum et Fefferman (2017)
-<doi:10.1111/mec.14059>, and to analyse distance data (van Strien et al., 2015)
-<doi:10.1038/hdy.2014.62>.")
-    (license license:gpl2)))
-
 (define-public r-graph3d
   (package
     (name "r-graph3d")

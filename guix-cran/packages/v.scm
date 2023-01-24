@@ -4676,6 +4676,39 @@ from MP Lefranc (2009) <doi:10.1093/nar/gkn838> and Vgenerepertoire from
 publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (license license:gpl2)))
 
+(define-public r-vdiver
+  (package
+    (name "r-vdiver")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vDiveR" version))
+              (sha256
+               (base32
+                "1l2cx3lkr666m2dbxgkjryspyqjqnn6l9q5jhdkcrkd3d87iy9kh"))))
+    (properties `((upstream-name . "vDiveR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-plyr
+                             r-magrittr
+                             r-gridextra
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-gghalves
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=vDiveR")
+    (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
+    (description
+     "To ease the visualization of outputs from Diversity Motif Analyser ('DiMA';
+<https://github.com/PU-SDS/DiMA>).  vDiveR allows visualization of the diversity
+motifs (index and its variants â major, minor and unique) for elucidation of
+the underlying inherent dynamics.  Please refer
+<https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
+    (license license:expat)))
+
 (define-public r-vdg
   (package
     (name "r-vdg")

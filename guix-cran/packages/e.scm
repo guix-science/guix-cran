@@ -4388,13 +4388,13 @@ including both their metadata and their associated media files.")
 (define-public r-eurodata
   (package
     (name "r-eurodata")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurodata" version))
               (sha256
                (base32
-                "1g9ykm0v0rlszv1i6xhppf95j339x3ms6sji5fg46dig9pmn09i7"))))
+                "1b8p7vp6mk3y8v2yhh9pkhm8kqx9nncscy0wzfi6kqbnyn5i77dz"))))
     (properties `((upstream-name . "eurodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -4410,7 +4410,10 @@ including both their metadata and their associated media files.")
     (description
      "Interface to Eurostatâs Bulk Download Facility with fast data.table-based
 import of data, labels, and metadata.  On top of the core functionality, data
-search and data description/comparison functions are also provided.")
+search and data description/comparison functions are also provided.  Use
+<https://github.com/alekrutkowski/eurodata_codegen> â a point-and-click app
+for rapid and easy generation of richly-commented R code â to import a
+Eurostat dataset or its subset (based on the eurodata::importData() function).")
     (license license:gpl2)))
 
 (define-public r-eurocordexr

@@ -6861,13 +6861,13 @@ character vectors.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "string2path" version))
               (sha256
                (base32
-                "0bp9ysih19aiiy690w2zkqhz5p7j4m3cvib4v8cvsgnb0kl909q5"))))
+                "0285359l1sg594155mwil830xrwrlkjzpyl6nyrmscq825g5i5c9"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (inputs (list))
@@ -9092,6 +9092,30 @@ on piecewise rational functions using Stineman's algorithm.")
 <doi:10.1198/jcgs.2010.06089>, integrating a regression tree and a multiple
 regression model.")
     (license license:gpl2)))
+
+(define-public r-stim
+  (package
+    (name "r-stim")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stim" version))
+              (sha256
+               (base32
+                "0a2lcyhh12jzg2znyc648vs8pl19098wz3z60kgd5r9jns707ca4"))))
+    (properties `((upstream-name . "stim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ryacas r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stim")
+    (synopsis
+     "Incorporating Stability Information into Cross-Sectional Estimates")
+    (description
+     "The goal of stim is to provide a function for estimating the Stability Informed
+Model.  The Stability Informed Model integrates stability information (how much
+a variable correlates with itself in the future) into cross-sectional estimates.
+ Wysocki and Rhemtulla (2022) <https://psyarxiv.com/vg5as>.")
+    (license license:expat)))
 
 (define-public r-stilt
   (package
@@ -12183,13 +12207,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-3")
+    (version "0.0-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stan4bart" version))
               (sha256
                (base32
-                "1zg008h391fxwqjbq2g41ma0cq1p867xr7gcli7mhw5i4qlkk20d"))))
+                "1ph8881qlmsl1wa6a2wix4ij96bmw60bdznx70mgzhvdyzny62fj"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -33383,13 +33407,13 @@ and copula models.")
 (define-public r-siminf
   (package
     (name "r-siminf")
-    (version "9.4.0")
+    (version "9.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimInf" version))
               (sha256
                (base32
-                "1g2rv9zp8qzzzg7g6y0qynnaq6y8qx84h6l0g8whkkph2yq1hn37"))))
+                "07yavv1qaahxgkni5rrnhpzspkb6g185njiyh3aay4pfiyn5945l"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-digest))
@@ -35971,6 +35995,44 @@ an applied example of the Tabu search.")
      "Integrates clipboard copied data in R Studio, loads and installs libraries
 within a R script and returns all valid arguments of a selected function.")
     (license license:gpl3)))
+
+(define-public r-shoredate
+  (package
+    (name "r-shoredate")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shoredate" version))
+              (sha256
+               (base32
+                "0kr51ia3zxzfpfwfax7ajyyq29lpvynizy2lmq934jkiv4ddv6xm"))))
+    (properties `((upstream-name . "shoredate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-scales
+                             r-ggsn
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/isakro/shoredate")
+    (synopsis
+     "Shoreline Dating of Stone Age Sites on the Norwegian Skagerrak Coast")
+    (description
+     "This package provides tools for shoreline dating Stone Age sites located on the
+Norwegian Skagerrak coast using methods presented in Roalkvam (2023)
+<doi:10.1016/j.quascirev.2022.107880>.  Shoreline dating is based on the
+present-day elevation of a site, a reconstruction of past relative sea-level
+change, and empirically derived estimates of the likely elevation of the sites
+above sea-level when they were in use.  The geographical and temporal coverage
+of the method thus follows from local geological reconstructions of shoreline
+displacement and the degree to which settlements in the region have been found
+to have been located on or close to the shoreline when they were in use.
+Methods for numerical treatment and visualisation of the dates are provided,
+along with basic tools for evaluating the location of sites within the region
+and corresponding variation in local shoreline displacement.")
+    (license license:gpl3+)))
 
 (define-public r-shopifyr
   (package

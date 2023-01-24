@@ -5751,13 +5751,13 @@ user.")
 (define-public r-rsnns
   (package
     (name "r-rsnns")
-    (version "0.4-14")
+    (version "0.4-15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSNNS" version))
               (sha256
                (base32
-                "081c20dcac8xxb0sp7kwzm4b7h5jrgcxxsfckjbxbda95g5n4qkz"))))
+                "1cy15qhs8ndfld80bvpjvn7kri561wjlk2sb56v8zcjh9x28chja"))))
     (properties `((upstream-name . "RSNNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15882,22 +15882,22 @@ provided in the accompanying package rnaturalearth'.")
 (define-public r-rnaturalearth
   (package
     (name "r-rnaturalearth")
-    (version "0.1.0")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rnaturalearth" version))
               (sha256
                (base32
-                "193b31a7n9jhc607mhwxbpx5gr0fpj3qasm9dbi6kcc7vac3ilgm"))))
+                "031fbbrldpzp4qknpgrldl76dq2q3dcl83y3dmw33m90z2ibqy47"))))
     (properties `((upstream-name . "rnaturalearth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf))
+    (propagated-inputs (list r-sp r-sf r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropenscilabs/rnaturalearth")
+    (home-page "https://cran.r-project.org/package=rnaturalearth")
     (synopsis "World Map Data from Natural Earth")
     (description
      "Facilitates mapping by making natural earth map data from
-<http://www.naturalearthdata.com/> more easily available to R users.")
+<https://www.naturalearthdata.com/> more easily available to R users.")
     (license license:expat)))
 
 (define-public r-rnassqs
@@ -33280,6 +33280,35 @@ bandwidth selection for the different procedures implemented, and rdplot() to
 conduct exploratory data analysis (RD plots).")
     (license license:gpl2)))
 
+(define-public r-rdracor
+  (package
+    (name "r-rdracor")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rdracor" version))
+              (sha256
+               (base32
+                "006m1fppdfsmvyllks4x94z8v0q1d36m3af95yw53b1vrz6v9nvx"))))
+    (properties `((upstream-name . "rdracor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-jsonlite
+                             r-igraph
+                             r-httr
+                             r-data-table))
+    (home-page "https://github.com/dracor-org/rdracor")
+    (synopsis "Access to the 'DraCor' API")
+    (description
+     "Provide an interface for Drama Corpora Project ('DraCor') API:
+<https://dracor.org/documentation/api>.")
+    (license license:gpl3+)))
+
 (define-public r-rdppdiversity
   (package
     (name "r-rdppdiversity")
@@ -42462,30 +42491,6 @@ random effects model in Beath and Heller <doi:10.1177/1471082X0800900302>.
 Examples are given for their use in diagnostic testing.")
     (license license:gpl2+)))
 
-(define-public r-randomizer
-  (package
-    (name "r-randomizer")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "randomizeR" version))
-              (sha256
-               (base32
-                "1bcdh245lh5a2yim00m2cgcmlcjm2vyba813026v0a4c42gr3b8x"))))
-    (properties `((upstream-name . "randomizeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-plotrix r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=randomizeR")
-    (synopsis "Randomization for Clinical Trials")
-    (description
-     "This tool enables the user to choose a randomization procedure based on sound
-scientific criteria.  It comprises the generation of randomization sequences as
-well the assessment of randomization procedures based on carefully selected
-criteria.  Furthermore, randomizeR provides a function for the comparison of
-randomization procedures.")
-    (license license:gpl3+)))
-
 (define-public r-randomizebe
   (package
     (name "r-randomizebe")
@@ -45324,13 +45329,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "R2sample" version))
               (sha256
                (base32
-                "1gvx4npmqnfpl11wvhslm0icwj0alg9bzwvv00acawcv04jv10yz"))))
+                "18v7i0h4jbnyd08c24sr8fydk209fp76hc2k7yivva616m5c4s2d"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-microbenchmark r-ggplot2))
