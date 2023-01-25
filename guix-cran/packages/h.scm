@@ -7,13 +7,9 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages gtk)
-  #:use-module (gnu packages fontutils)
-  #:use-module (gnu packages image)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages bash)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages maths)
@@ -1770,13 +1766,13 @@ Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "huito" version))
               (sha256
                (base32
-                "0pkkbri3z1sgyz0q6k69dxz48yca8cjv510ipzxyfzlakqir79hh"))))
+                "1j6nj22gcz10km7n6nbb0pm58cj8ijz3w2j2bd0zwb07kpzmsbks"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1980,32 +1976,6 @@ a standard way.")
      "This package provides a suite of functions to ping URLs and to time HTTP
 requests'.  Designed to work with httr'.")
     (license license:expat)))
-
-(define-public r-httpgd
-  (package
-    (name "r-httpgd")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "httpgd" version))
-              (sha256
-               (base32
-                "0pzkydsgfnszzcvc9qfaksw4rp97ir63kq9164l0k0ha2nncvmpk"))))
-    (properties `((upstream-name . "httpgd")))
-    (build-system r-build-system)
-    (inputs (list zlib libpng freetype fontconfig cairo))
-    (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
-    (native-inputs (list r-knitr pkg-config))
-    (home-page "https://github.com/nx10/httpgd")
-    (synopsis "'HTTP' Server Graphics Device")
-    (description
-     "This package provides a graphics device for R that is accessible via network
-protocols.  This package was created to make it easier to embed live R graphics
-in integrated development environments and other applications.  The included
-HTML/JavaScript client (plot viewer) aims to provide a better overall user
-experience when dealing with R graphics.  The device asynchronously serves
-graphics via HTTP and WebSockets'.")
-    (license license:gpl2+)))
 
 (define-public r-httpcache
   (package
@@ -10257,6 +10227,37 @@ hierarchical Bayesian framework.  Can perform hierarchical Bayesian analysis of
 various computational models with a single line of coding (Ahn et al., 2017)
 <doi:10.1162/CPSY_a_00002>.")
     (license license:gpl3)))
+
+(define-public r-hbal
+  (package
+    (name "r-hbal")
+    (version "1.2.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hbal" version))
+              (sha256
+               (base32
+                "15id1r3h3h5pv0yahkcgzav8qhacha4wn688p7hmxpsq84d63xky"))))
+    (properties `((upstream-name . "hbal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcppeigen
+                             r-rcpp
+                             r-nloptr
+                             r-gtable
+                             r-gridextra
+                             r-glmnet
+                             r-ggplot2
+                             r-estimatr))
+    (home-page "https://yiqingxu.org/packages/hbal/")
+    (synopsis "Hierarchically Regularized Entropy Balancing")
+    (description
+     "This package implements hierarchically regularized entropy balancing proposed by
+Xu and Yang (2022) <doi:10.1017/pan.2022.12>.  The method adjusts the covariate
+distributions of the control group to match those of the treatment group.  hbal
+automatically expands the covariate space to include higher order terms and uses
+cross-validation to select variable penalties for the balancing conditions.")
+    (license license:expat)))
 
 (define-public r-hazer
   (package

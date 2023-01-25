@@ -3670,31 +3670,6 @@ display bitmap images stored in the QOI (Quite Ok Image) format.  It can read
 and write both files and in-memory raw vectors.")
     (license license:gpl3+)))
 
-(define-public r-qmvs
-  (package
-    (name "r-qmvs")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qmvs" version))
-              (sha256
-               (base32
-                "1nmd8p49vw92q2dd6iblxa6rh8hz54k1pcx6q6p7r0xaafyw9sll"))))
-    (properties `((upstream-name . "qmvs")))
-    (build-system r-build-system)
-    (home-page "https://www.wim.uni-mannheim.de/schlather")
-    (synopsis "Queueing Model of Visual Search")
-    (description
-     "The queueing model of visual search models the accuracy and response time data
-in a visual search experiment using queueing models with finite customer
-population and stopping criteria of completing the service for finite number of
-customers.  It implements the conceptualization of a hybrid model proposed by
-Moore and Wolfe (2001), in which visual stimuli enter the processing one after
-the other and then are identified in parallel.  This package provides functions
-that simulate the specified queueing process and calculate the Wasserstein
-distance between the empirical response times and the model prediction.")
-    (license license:gpl3+)))
-
 (define-public r-qmrparser
   (package
     (name "r-qmrparser")

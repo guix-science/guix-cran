@@ -2709,28 +2709,6 @@ toward the parallel model.  For details, refer to Wurm, Hanlon, and Rathouz
 block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
     (license license:gpl2+)))
 
-(define-public r-ordinalgmifs
-  (package
-    (name "r-ordinalgmifs")
-    (version "1.0.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalgmifs" version))
-              (sha256
-               (base32
-                "0c1a4ziyh6jcqnblvc97gpv7bqyhd56gmxxyn1jascpvs2xxq2qy"))))
-    (properties `((upstream-name . "ordinalgmifs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=ordinalgmifs")
-    (synopsis "Ordinal Regression for High-Dimensional Data")
-    (description
-     "This package provides a function for fitting cumulative link, adjacent category,
-forward and backward continuation ratio, and stereotype ordinal response models
-when the number of parameters exceeds the sample size, using the the generalized
-monotone incremental forward stagewise method.")
-    (license license:gpl2+)))
-
 (define-public r-ordinalforest
   (package
     (name "r-ordinalforest")
@@ -3672,54 +3650,6 @@ package has been developed using concept of Wang et al. (2022)
 <doi:10.1016/j.eswa.2022.118746> and Kriz (2019)
 <doi:10.1007/978-3-030-18195-6_21 >.")
     (license license:gpl3)))
-
-(define-public r-optisel
-  (package
-    (name "r-optisel")
-    (version "2.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "optiSel" version))
-              (sha256
-               (base32
-                "13rxv6wqz5gpmsfb96173p1y8140zqj4llihxsvjczcqwhrayjha"))))
-    (properties `((upstream-name . "optiSel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quadprog
-                             r-purrr
-                             r-pspline
-                             r-plyr
-                             r-pedigree
-                             r-optisolve
-                             r-nadiv
-                             r-matrix
-                             r-mass
-                             r-magic
-                             r-kinship2
-                             r-foreach
-                             r-ecosolver
-                             r-doparallel
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=optiSel")
-    (synopsis "Optimum Contribution Selection and Population Genetics")
-    (description
-     "This package provides a framework for the optimization of breeding programs via
-optimum contribution selection and mate allocation.  An easy to use set of
-function for computation of optimum contributions of selection candidates, and
-of the population genetic parameters to be optimized.  These parameters can be
-estimated using pedigree or genotype information, and include kinships, kinships
-at native haplotype segments, and breed composition of crossbred individuals.
-They are suitable for managing genetic diversity, removing introgressed genetic
-material, and accelerating genetic gain.  Additionally, functions are provided
-for computing genetic contributions from ancestors, inbreeding coefficients, the
-native effective size, the native genome equivalent, pedigree completeness, and
-for preparing and plotting pedigrees.")
-    (license license:gpl2)))
 
 (define-public r-optiscale
   (package
@@ -6401,13 +6331,13 @@ with various graphical options - Greene et al.  2017
 (define-public r-ontologics
   (package
     (name "r-ontologics")
-    (version "0.5.2")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ontologics" version))
               (sha256
                (base32
-                "074pqjfm24gd332xja6mgdy8grbbwa6r3yhclcpm1d7hx8dhy2g9"))))
+                "1rfy7hba9wvx165d0xglf10q1fj25v58m0jr5mnfmghipmm7l0xx"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6420,8 +6350,10 @@ with various graphical options - Greene et al.  2017
                              r-purrr
                              r-magrittr
                              r-httr
+                             r-fuzzyjoin
                              r-dplyr
-                             r-checkmate))
+                             r-checkmate
+                             r-beepr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luckinet/ontologics")
     (synopsis "Code-Logics to Handle Ontologies")
@@ -8004,13 +7936,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.2.2")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "1fbq3pw8x9bfnr42is0l4vfzdzp52lf9p9j6x0qgndhqiw9rzg90"))))
+                "0qmb130nldfb9agh54ikyzj9cp3rg3i39lkxamj0ncz472p8y9d7"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8039,12 +7971,12 @@ different authors in the recent years.  See Alizadeh (2019)
     (description
      "This package provides a collection of functions to facilitate analysis of
 proteomic data from Olink, primarily NPX data that has been exported from Olink
-NPX Manager or MyData.  The functions also work on QUANT data from Olink by log-
-transforming the QUANT data.  The functions are focused on reading data,
-facilitating data wrangling and quality control analysis, performing statistical
-analysis and generating figures to visualize the results of the statistical
-analysis.  The goal of this package is to help users extract biological insights
-from proteomic data run on the Olink platform.")
+Software.  The functions also work on QUANT data from Olink by log- transforming
+the QUANT data.  The functions are focused on reading data, facilitating data
+wrangling and quality control analysis, performing statistical analysis and
+generating figures to visualize the results of the statistical analysis.  The
+goal of this package is to help users extract biological insights from proteomic
+data run on the Olink platform.")
     (license license:agpl3+)))
 
 (define-public r-olctools

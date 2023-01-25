@@ -4315,6 +4315,35 @@ the parameters are related to explanatory variables through a linear predictor
 and versions with contest-specific effects, such as a home advantage.")
     (license license:gpl2+)))
 
+(define-public r-brada
+  (package
+    (name "r-brada")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brada" version))
+              (sha256
+               (base32
+                "07m5xj4wjf3w85fhhh8qw8pl2gb94i50099ql8anmrm1ax5pj8sr"))))
+    (properties `((upstream-name . "brada")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress
+                             r-foreach
+                             r-fbst
+                             r-extradistr
+                             r-dosnow
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=brada")
+    (synopsis "Bayesian Response-Adaptive Design Analysis")
+    (description
+     "This package provides access to a range of functions for analyzing, applying and
+visualizing Bayesian response-adaptive trial designs for a binary endpoint.
+Includes the predictive probability approach and the predictive evidence value
+designs for binary endpoints.")
+    (license license:gpl3)))
+
 (define-public r-bracod-r
   (package
     (name "r-bracod-r")
@@ -24029,13 +24058,13 @@ angular distributions.  Chakraborty and Wong (2021) <doi:10.18637/jss.v099.i11>.
 (define-public r-bama
   (package
     (name "r-bama")
-    (version "1.2.5")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bama" version))
               (sha256
                (base32
-                "1kcpy7j5clj02zkdxrk7fv8xi6rjw6glrxy1vxhp7c6lxvvsviyy"))))
+                "1ydm9p6msmgi74rhrji2j14qy7cg7fqgg4ffm9rz293k27n5ghnn"))))
     (properties `((upstream-name . "bama")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-bh))

@@ -380,13 +380,13 @@ Excel file without advanced programming background knowledge.")
 (define-public r-yorkr
   (package
     (name "r-yorkr")
-    (version "0.0.36")
+    (version "0.0.37")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yorkr" version))
               (sha256
                (base32
-                "1rk0wlsp8854qjy0sy9a0k02bknwyb9rk6n2s53c84gvcx8xgyrk"))))
+                "08cmzxw4h4v0brp2rh5w63iyr6r26394q4hwfwms36wfr4n9z2sj"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

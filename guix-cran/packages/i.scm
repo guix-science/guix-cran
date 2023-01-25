@@ -5824,13 +5824,13 @@ functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.5.8")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inti" version))
               (sha256
                (base32
-                "1czzbf8lmhx7wh1skcv2fc2cizyrdr9hyjavl0cwicanq4jpvhmi"))))
+                "13zqb4az77frxnj7sna95aj86q7ridqaa14shmlbvwm7aqr7iwn1"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

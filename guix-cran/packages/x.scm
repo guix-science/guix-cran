@@ -1166,13 +1166,13 @@ Wei Xu (2019) <doi:10.1177/0962280219859037>.")
 (define-public r-xlconnect
   (package
     (name "r-xlconnect")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "XLConnect" version))
               (sha256
                (base32
-                "1yd4mbsa6y69lfyx78lda5a65jj6zahxi2yjbn6vfr0l9pvvjcxj"))))
+                "0xz65nrp82cxa77bff66hhch1p75a6di29bmbr2lfc9w3hivl7c2"))))
     (properties `((upstream-name . "XLConnect")))
     (build-system r-build-system)
     (inputs (list openjdk))

@@ -344,45 +344,41 @@ ggplot2.")
 (define-public r-utile-tools
   (package
     (name "r-utile-tools")
-    (version "0.2.8")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.tools" version))
               (sha256
                (base32
-                "1zlib1ydy8919xngp7rzz7shixwqpsk3ljgjyqzcxa5y1gyzb461"))))
+                "0qxslz6wi4gss9g16p7q6w99pds81pcp9nkffi8b5wrjxj0z2igq"))))
     (properties `((upstream-name . "utile.tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-purrr r-lubridate))
-    (home-page "https://github.com/efinite/utile.tools")
+    (home-page "https://efinite.github.io/utile.tools/")
     (synopsis "Summarize Data for Publication")
     (description
-     "This package provides a set of tools for preparing and summarizing data for
-publication purposes.  Includes functions for tabulating models, means to
-produce human-readable summary statistics from raw data, macros for calculating
-duration of time, and simplistic hypothesis testing tools.")
+     "Tools for formatting and summarizing data for outcomes research.")
     (license license:lgpl2.0+)))
 
 (define-public r-utile-tables
   (package
     (name "r-utile-tables")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "utile.tables" version))
               (sha256
                (base32
-                "139y2a60kxj9x4nx2rb3cd7q69if370vzyikbrnf36h8v62dcr3q"))))
+                "0lsfv5mhyzf1mw2mlyp7xqdin7nhbw473gbibsk1anwmhlvwkipy"))))
     (properties `((upstream-name . "utile.tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-utile-tools r-tidyselect r-rlang r-purrr
                              r-dplyr))
-    (home-page "https://github.com/efinite/utile.tables")
+    (home-page "https://efinite.github.io/utile.tables/")
     (synopsis "Build Tables for Publication")
     (description
-     "This package provides a collection of functions to make building customized
-ready-to-export tables for publication purposes easier and creating summaries of
-large datasets for review a breeze.")
+     "This package provides functions for building customized ready-to-export tables
+for publication.")
     (license license:lgpl2.0+)))
 
 (define-public r-utc
@@ -669,16 +665,16 @@ R for Introductory Statistics,\" second edition.")
 (define-public r-usincometaxes
   (package
     (name "r-usincometaxes")
-    (version "0.5.4")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usincometaxes" version))
               (sha256
                (base32
-                "1ccga22afagdlyyw33p7rk8lr8l54li64vqav7yyqc7hz7r1mzbd"))))
+                "01b4kz1ggnr7rl714x99z77n0cgch4jsxnysz1314rvj11nk7ciq"))))
     (properties `((upstream-name . "usincometaxes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vroom r-v8 r-tidyselect r-tibble r-httr))
+    (propagated-inputs (list r-vroom r-v8 r-tibble))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shanejorr/usincometaxes")
     (synopsis "Calculate Federal and State Income Taxes in the United States")
@@ -3700,30 +3696,6 @@ TARGET, GTEx, CCLE, and others.")
 Uniform Crime Report codebook for the \"Offenses Known and Clearance by Arrest\"
 datasets from 1998-2014.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-ucomp
-  (package
-    (name "r-ucomp")
-    (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "UComp" version))
-              (sha256
-               (base32
-                "11vhkpz1nvqfldksaa8rdhpn0f05x4h2dfpaabr0w274rwad93ap"))))
-    (properties `((upstream-name . "UComp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=UComp")
-    (synopsis "Automatic Unobserved Components Models")
-    (description
-     "Comprehensive analysis and forecasting of univariate time series using automatic
-unobserved components models and algorithms.  Pedregal, DJ (2022)
-<doi:10.18637/jss.v103.i09>, Harvey, AC (1989) <doi:10.1017/CBO9781107049994>.
-Pedregal, DJ and Young PC (2002) <doi:10.1002/9780470996430>.  Durbin J and
-Koopman SJ (2012) <doi:10.1093/acprof:oso/9780199641178.001.0001>.")
-    (license license:gpl3)))
 
 (define-public r-uclust
   (package

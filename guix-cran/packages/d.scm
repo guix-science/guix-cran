@@ -3760,16 +3760,17 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 (define-public r-dromics
   (package
     (name "r-dromics")
-    (version "2.4-0")
+    (version "2.5-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DRomics" version))
               (sha256
                (base32
-                "1ld83nwslbxcd63s1xhkc4380q87wnmgzx3kx5nv978zh9dqc92x"))))
+                "1vzjynl8wyivvbh87r7jms2v5ah09z9b5h55sqviyrm7cpd201z3"))))
     (properties `((upstream-name . "DRomics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment r-limma r-ggplot2 r-deseq2))
+    (propagated-inputs (list r-summarizedexperiment r-limma r-ggplot2
+                             r-ggfortify r-deseq2))
     (native-inputs (list r-knitr))
     (home-page "https://lbbe.univ-lyon1.fr/fr/dromics")
     (synopsis "Dose Response for Omics")
@@ -22692,29 +22693,6 @@ an extendable suite of test for common potential errors in a dataset.")
     (description
      "This package provides functions to import multiple files of multiple data file
 types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames.")
-    (license license:gpl2+)))
-
-(define-public r-datagraph
-  (package
-    (name "r-datagraph")
-    (version "1.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DataGraph" version))
-              (sha256
-               (base32
-                "1b08zrv098m637288bjsy7vqwlx8ns9lq2cl9qg9f5x0q7rnzinc"))))
-    (properties `((upstream-name . "DataGraph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=DataGraph")
-    (synopsis "Export Data from R so 'DataGraph' can Read it")
-    (description
-     "This package provides functions to save either .dtable or .dtbin files that can
-be read by DataGraph', a graphing and analysis application for mac OS. Can save
-a data frame, collection of data frames and sequences of data frames and
-individual vectors.  For more information see
-<https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
     (license license:gpl2+)))
 
 (define-public r-datagovsgr

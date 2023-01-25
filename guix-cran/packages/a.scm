@@ -4278,13 +4278,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.40")
+    (version "4.3.45")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "03w16mlri6mb4zigb9fj8rfz10kwwwdkqf4l9x8az5z52aq7b7zc"))))
+                "11xp044q833gg85bii82q0yy7dsjfvz247c0xinf50s914priv99"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4463,29 +4463,6 @@ infer groups and generate networks from observation data, perform permutation
 tests on the data, calculate lagged association rates, and performed multiple
 regression analysis on social network data.")
     (license license:gpl2)))
-
-(define-public r-asmap
-  (package
-    (name "r-asmap")
-    (version "1.0-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ASMap" version))
-              (sha256
-               (base32
-                "0xnrl8jhbvbc789w5gc9dz7j7gzc7wsc94a3d2wdplrmxn186nrb"))))
-    (properties `((upstream-name . "ASMap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ASMap")
-    (synopsis "Linkage Map Construction using the MSTmap Algorithm")
-    (description
-     "This package provides functions for Accurate and Speedy linkage map
-construction, manipulation and diagnosis of Doubled Haploid, Backcross and
-Recombinant Inbred R/qtl objects.  This includes extremely fast linkage map
-clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
-    (license license:gpl2+)))
 
 (define-public r-aslib
   (package
@@ -11737,16 +11714,16 @@ sequences according to a population demographic history [Chen et al. (2009)
 (define-public r-alphashape3d
   (package
     (name "r-alphashape3d")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alphashape3d" version))
               (sha256
                (base32
-                "0d3rxvsb0yl900dlpr1v5w56z8ci9rbp5dlwx7l2laifyprsns2i"))))
+                "15903pl63p5l3kmqskq1y4hb75wwq0sz6k88zysx65xyd83wcmh3"))))
     (properties `((upstream-name . "alphashape3d")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-geometry))
+    (propagated-inputs (list r-rgl r-rann r-geometry))
     (home-page "https://cran.r-project.org/package=alphashape3d")
     (synopsis
      "Implementation of the 3D Alpha-Shape for the Reconstruction of 3D Sets from a Point Cloud")
@@ -18249,6 +18226,27 @@ to sample new rate functions, and to visualize the distribution of one
 congruence class.  See also Louca & Pennell (2020)
 <doi:10.1038/s41586-020-2176-1>.")
     (license license:gpl3)))
+
+(define-public r-accumulate
+  (package
+    (name "r-accumulate")
+    (version "0.8.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "accumulate" version))
+              (sha256
+               (base32
+                "04sl9jg2z2grg61p3wfy8463cpzxdf9blpb2vjh9n85yprai98f1"))))
+    (properties `((upstream-name . "accumulate")))
+    (build-system r-build-system)
+    (home-page "https://github.com/markvanderloo/accumulate")
+    (synopsis "Split-Apply-Combine with Dynamic Groups")
+    (description
+     "Estimate group aggregates, where one can set user-defined conditions that each
+group of records must satisfy to be suitable for aggregation.  If a group of
+records is not suitable, it is expanded using a collapsing scheme defined by the
+user.")
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-accucor
   (package

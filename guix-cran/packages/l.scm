@@ -5410,13 +5410,13 @@ which are loaded into the variable environment for later retrieval.")
 (define-public r-loader
   (package
     (name "r-loader")
-    (version "1.1.1")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loadeR" version))
               (sha256
                (base32
-                "1g3ycnppgxhciwigcy7bii0aw8w2j31nzjk2vkz92lmfc169x0c7"))))
+                "000m9wi37mh6qpq2jzbz7zxqjj9p2ix6kb7gj90wfhb2i7fgkm1k"))))
     (properties `((upstream-name . "loadeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlconnect
@@ -12654,41 +12654,6 @@ a maximum likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
     (synopsis "Bayesian Non-Parametric Latent-Class Capture-Recapture")
     (description
      "Bayesian population size estimation using non parametric latent-class models.")
-    (license license:gpl2+)))
-
-(define-public r-lclgwas
-  (package
-    (name "r-lclgwas")
-    (version "1.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lclGWAS" version))
-              (sha256
-               (base32
-                "03b6ijqvyirv96hc3dsqf4f0zzqlmq5451mcb14d2mw3s6xy1vmq"))))
-    (properties `((upstream-name . "lclGWAS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lclGWAS")
-    (synopsis
-     "Efficient Estimation of Discrete-Time Multivariate Frailty Model Using Exact Likelihood Function for Grouped Survival Data")
-    (description
-     "The core of this Rcpp based package is several functions to estimate the
-baseline hazard, frailty variance, and fixed effect parameter for a
-discrete-time shared frailty model with random effects.  The functions are
-designed to analyze grouped time-to-event data accounting for family structure
-of related individuals (i.e., trios).  The core functions include two processes:
-(1) evaluate the multivariable integration to compute the exact proportional
-hazards model based likelihood and (2) estimate the desired parameters using
-maximum likelihood estimation.  The integration is evaluated by the Cuhre
-algorithm from the Cuba library (Hahn, T., Cuba-a library for multidimensional
-numerical integration, Comput.  Phys.  Commun.  168, 2005, 78-95
-<doi:10.1016/j.cpc.2005.01.010>), and the source files of the Cuhre function are
-included in this package.  The maximization process is carried out using Brent's
-algorithm, with the C++ code file from John Burkardt and John Denker (Brent,
-R.,Algorithms for Minimization without Derivatives, Dover, 2002, ISBN
-0-486-41998-3).")
     (license license:gpl2+)))
 
 (define-public r-lchemix

@@ -14524,16 +14524,16 @@ analogous environments using new microbial feature abundances.")
 (define-public r-mmeta
   (package
     (name "r-mmeta")
-    (version "2.4")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmeta" version))
               (sha256
                (base32
-                "0l1jsqdcpnp5800pbf5kimwyh3n4i7z50l08v5pqddw4v3jx0ls9"))))
+                "088mynadrcwrw7g31f6p0g3ykq2q44mwsbpp056v8s19hq5pxjn1"))))
     (properties `((upstream-name . "mmeta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-aod))
+    (propagated-inputs (list r-ggplot2 r-aod))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=mmeta")
     (synopsis "Multivariate Meta-Analysis")
@@ -30863,36 +30863,6 @@ The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
 
-(define-public r-mcr
-  (package
-    (name "r-mcr")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mcr" version))
-              (sha256
-               (base32
-                "0ybhskszzs05m0ql231jj7c7039dwmghnq4gfzp2ww6vj1agshpl"))))
-    (properties `((upstream-name . "mcr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robslopes))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=mcr")
-    (synopsis "Method Comparison Regression")
-    (description
-     "Regression methods to quantify the relation between two measurement methods are
-provided by this package.  In particular it addresses regression problems with
-errors in both variables and without repeated measurements.  It implements the
-CLSI recommendations (see J. A. Budd et al. (2018,
-<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
-analytical method comparison and bias estimation using patient samples.
-Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
-are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
-Raymaekers and F. Dufey (2022, <arXiv:2202:08060>).  A comprehensive overview
-over the implemented methods and references can be found in the manual pages
-\"mcr-package\" and \"mcreg\".")
-    (license license:gpl3+)))
-
 (define-public r-mcptests
   (package
     (name "r-mcptests")
@@ -32037,13 +32007,13 @@ model.  Currently accommodates the Gaussian and binomial likelihood.")
 (define-public r-mcemglm
   (package
     (name "r-mcemglm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcemGLM" version))
               (sha256
                (base32
-                "0p6z32c69ik8wjjn50vzjmr4plsfbxr2p0hr50wknkwwb7i20hp6"))))
+                "0qw9id9gwp226m93nnz9dp79ihazb89486gdfnvc6rf7wc3a0gp6"))))
     (properties `((upstream-name . "mcemGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-rcpparmadillo r-rcpp))
@@ -33891,13 +33861,13 @@ McNicholas (2017) <doi: 10.1002/sta4.143>.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.3.11")
+    (version "0.3.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsindf" version))
               (sha256
                (base32
-                "0p9canhqj0pggnm7vw1aq357c2b9xz0nj426867vgmlxyk0s2aqb"))))
+                "1gmpjxbnckivf1nzkz14mpzskhbffjrxbxp3gkxgmq6p2al6q2xz"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -460,6 +460,36 @@ the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
 (1988) <https://www.jstor.org/stable/2345762?seq=1>.")
     (license license:gpl3)))
 
+(define-public r-jtdm
+  (package
+    (name "r-jtdm")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jtdm" version))
+              (sha256
+               (base32
+                "0bbnrayny9hafck5nksmgabnnrpl9iq17zs0qb1a35kmrmbjcskk"))))
+    (properties `((upstream-name . "jtdm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-mvtnorm
+                             r-mniw
+                             r-gridextra
+                             r-ggplot2
+                             r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/giopogg/jtdm")
+    (synopsis "Joint Modelling of Functional Traits")
+    (description
+     "Fitting and analyzing a Joint Trait Distribution Model.  The Joint Trait
+Distribution Model is implemented in the Bayesian framework using conjugate
+priors and posteriors, thus guaranteeing fast inference.  In particular the
+package computes joint probabilities and multivariate confidence intervals, and
+enables the investigation of how they depend on the environment through partial
+response curves.")
+    (license license:gpl3)))
+
 (define-public r-jsuparameters
   (package
     (name "r-jsuparameters")

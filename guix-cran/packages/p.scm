@@ -13313,16 +13313,16 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomdp" version))
               (sha256
                (base32
-                "1k0ysy0br5rff7jzz05gfwliqn668jd41cjp2mjs27qzgaazip7r"))))
+                "0l9gc5nh99xdmm3k373hi4dh5qky5vb5s7r05kbyly4y4ii8fh5x"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pomdpsolve r-igraph))
+    (propagated-inputs (list r-rcpp r-pomdpsolve r-matrix r-igraph r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/pomdp")
     (synopsis
@@ -14187,51 +14187,6 @@ Harvard's Institute for Quantitative Social Science for support.")
     (description
      "Be responsible when scraping data from websites by following polite principles:
 introduce yourself, ask for permission, take slowly and never ask twice.")
-    (license license:expat)))
-
-(define-public r-polished
-  (package
-    (name "r-polished")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "polished" version))
-              (sha256
-               (base32
-                "0dvm76q101a9knh8kl5xfm7hpnmyggxkjzx3z749wmbc0p0h7jxl"))))
-    (properties `((upstream-name . "polished")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-uuid
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyfeedback
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-purrr
-                             r-otp
-                             r-lubridate
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-htmltools
-                             r-dt
-                             r-dplyr
-                             r-digest
-                             r-automagic))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tychobra/polished")
-    (synopsis
-     "Authentication, User Administration, and Hosting for 'shiny' Apps")
-    (description
-     "Authentication, user administration, hosting, and additional infrastructure for
-shiny apps.")
     (license license:expat)))
 
 (define-public r-poliscidata
@@ -20877,17 +20832,17 @@ of classical multidimensional scaling to multiple distance matrices.")
 (define-public r-phylotop
   (package
     (name "r-phylotop")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phyloTop" version))
               (sha256
                (base32
-                "1n44kr3a9yg8yvy3m493zi04x6aiqm424fp2ls9yzyx1cga2h9nk"))))
+                "1f7sr0qp5i0kj1j2xr7fwpkjnpfnpdjy51dx33yz2q8jmn2axxdf"))))
     (properties `((upstream-name . "phyloTop")))
     (build-system r-build-system)
     (propagated-inputs (list r-phylobase r-nhpoisson r-igraph r-ape))
-    (home-page "https://cran.r-project.org/package=phyloTop")
+    (home-page "https://michellekendall.github.io/phyloTop/")
     (synopsis "Calculating Topological Properties of Phylogenies")
     (description
      "Tools for calculating and viewing topological properties of phylogenetic trees.")
@@ -24546,6 +24501,46 @@ that will be published soon.")
 and censoring times are conditional on an user-specified list of covariates,
 some or all of which are time-dependent.")
     (license license:gpl2)))
+
+(define-public r-perk
+  (package
+    (name "r-perk")
+    (version "0.0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PERK" version))
+              (sha256
+               (base32
+                "0f3sclxxccgv47x0jinsvq3vbhcrkrak5lfdijg12kzgh94lgs6a"))))
+    (properties `((upstream-name . "PERK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-readr
+                             r-plotly
+                             r-magrittr
+                             r-golem
+                             r-ggplot2
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-colourpicker
+                             r-bs4dash))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jkkishore85/PERK/")
+    (synopsis "Predicting Environmental Concentration and Risk")
+    (description
+     "This package provides a Shiny Web Application to predict and visualize
+concentrations of pharmaceuticals in the aqueous environment.  Jagadeesan K.,
+Barden R. and Kasprzyk-Hordern B. (2022)
+<https://www.ssrn.com/abstract=4306129>.")
+    (license license:gpl3+)))
 
 (define-public r-periscope
   (package

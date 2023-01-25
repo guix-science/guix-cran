@@ -7531,16 +7531,15 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.1.3")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fMRItools" version))
               (sha256
                (base32
-                "0c4gkjrki9126blaq1iy32q1rraw8kp3vwqf50ncwhhc7msjsf37"))))
+                "1qqa6gx7yr8cv6d7pxs1d9jm72zl9c2rri9hl088rbx9l6g4jacp"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-pesel))
     (home-page "https://github.com/mandymejia/fMRItools")
     (synopsis "Routines for Common fMRI Processing Tasks")
     (description
@@ -17714,13 +17713,13 @@ further information on the method see Fruth, J., Roustant, O., Kuhnt, S. (2014)
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.8")
+    (version "0.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fangs" version))
               (sha256
                (base32
-                "15v5xbdbd7laf75a010kxw4rzqncjgizjizmyl6kq1gs9pm5g8b0"))))
+                "125s1ywl56pgiffg241j5fm9mjq8yaipshb086klw9q16741dzy0"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fangs")

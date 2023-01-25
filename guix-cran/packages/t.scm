@@ -8864,6 +8864,34 @@ information can be found in Valencia-HernÃ¡ndez (2020)
 <https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
     (license license:expat)))
 
+(define-public r-tosi
+  (package
+    (name "r-tosi")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TOSI" version))
+              (sha256
+               (base32
+                "0m33bid9dln3zafrzka5jbsk6zll02mmc2drhw3k22bmps1d4jfh"))))
+    (properties `((upstream-name . "TOSI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scalreg r-mass r-hdi r-glmnet))
+    (home-page "https://github.com/feiyoung/TOSI")
+    (synopsis
+     "Two-Directional Simultaneous Inference for High-Dimensional Models")
+    (description
+     "This package provides a general framework of two directional simultaneous
+inference is provided for high-dimensional as well as the fixed dimensional
+models with manifest variable or latent variable structure, such as
+high-dimensional mean models, high- dimensional sparse regression models, and
+high-dimensional latent factors models.  It is making the simultaneous inference
+on a set of parameters from two directions, one is testing whether the estimated
+zero parameters indeed are zero and the other is testing whether there exists
+zero in the parameter set of non-zero.  More details can be referred to Wei Liu,
+et al. (2022) <doi:10.48550/arXiv.2012.11100>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-toscutil
   (package
     (name "r-toscutil")
@@ -14862,13 +14890,13 @@ and therefore offers a wide support of vector types.")
 (define-public r-tibbletime
   (package
     (name "r-tibbletime")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tibbletime" version))
               (sha256
                (base32
-                "0l2aaqzf087phyxblkskqfpica12bfama6wyvxkdgbiwmzf6lbzc"))))
+                "18a63vipcw95yk37r490a3a4xag59v7475bch2dizq7nqhfc5wfn"))))
     (properties `((upstream-name . "tibbletime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -17080,18 +17108,19 @@ be found from the CRAN archives.")
 (define-public r-text2sdg
   (package
     (name "r-text2sdg")
-    (version "0.1.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "text2sdg" version))
               (sha256
                (base32
-                "0rnb44d5v7b90p78bwcg5zqz1xrfpr34ad6pgc49ll0pb9q9ijss"))))
+                "1y35kblqp4yxc6x50w3d0r81wspyfdfyay9masb4q96cvnzkwp0f"))))
     (properties `((upstream-name . "text2sdg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-ranger
                              r-magrittr
                              r-lifecycle
                              r-ggplot2

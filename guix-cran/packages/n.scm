@@ -189,32 +189,6 @@ functionality.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
-(define-public r-nvennr
-  (package
-    (name "r-nvennr")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nVennR" version))
-              (sha256
-               (base32
-                "035gblc8427v0vq288rib3jfpz5fmcpvqg6nfaijwmbkz3gd41b6"))))
-    (properties `((upstream-name . "nVennR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nVennR")
-    (synopsis "Create n-Dimensional, Quasi-Proportional Venn Diagrams")
-    (description
-     "This package provides an interface for the \"nVenn\"\" algorithm (Perez-Silva,
-Araujo-Voces and Quesada (2018), <doi:10.1093/bioinformatics/bty109>).  This
-algorithm works for any number of sets, and usually yields pleasing and
-informative Venn diagrams with proportionality information.  However,
-representing more than six sets takes a long time and is hard to interpret,
-unless many of the regions are empty.  If you cannot make sense of the result,
-you may want to consider UpSetR'.")
-    (license license:expat)))
-
 (define-public r-nvctr
   (package
     (name "r-nvctr")
@@ -8056,31 +8030,6 @@ plays in the National Football League and obtain fourth down plays from
 <https://www.nfl.com/> and <https://www.espn.com/>.")
     (license license:expat)))
 
-(define-public r-nfer
-  (package
-    (name "r-nfer")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nfer" version))
-              (sha256
-               (base32
-                "0g54jfy6cdzd9kamyqqcyx1v9pml2vzyi8jfmdpnw8r0jj6n7x2l"))))
-    (properties `((upstream-name . "nfer")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "http://nfer.io/")
-    (synopsis "Event Stream Abstraction using Interval Logic")
-    (description
-     "This is the R API for the nfer formalism (<http://nfer.io/>).  nfer was
-developed to specify event stream abstractions for spacecraft telemetry such as
-the Mars Science Laboratory.  Users write rules using a syntax that borrows
-heavily from Allen's Temporal Logic that, when applied to an event stream,
-construct a hierarchy of temporal intervals with data.  The R API supports
-loading rules from a file or mining them from historical data.  Traces of events
-or pools of intervals are provided as data frames.")
-    (license license:gpl3+)))
-
 (define-public r-nfcp
   (package
     (name "r-nfcp")
@@ -8920,6 +8869,31 @@ functions should be able to handle millions of data points quickly for use in
 combination with data from large public national registers and databases.
 Kenneth Lange (2003, ISBN:978-8181281135).")
     (license license:gpl2+)))
+
+(define-public r-networklite
+  (package
+    (name "r-networklite")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "networkLite" version))
+              (sha256
+               (base32
+                "1w0g90vgwiyc0sm0jq0xj0ndc7j18zvyvczlzf9i6c428na37vgd"))))
+    (properties `((upstream-name . "networkLite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-statnet-common r-network r-dplyr))
+    (home-page "https://github.com/EpiModel/networkLite/")
+    (synopsis
+     "An Simplified Implementation of the 'network' Package Functionality")
+    (description
+     "An implementation of some of the core network package functionality based on a
+simplified data structure that is faster in many research applications.  This
+package is designed for back-end use in the statnet family of packages,
+including EpiModel'.  Support is provided for binary and weighted, directed and
+undirected, bipartite and unipartite networks; no current support for
+multigraphs, hypergraphs, or loops.")
+    (license license:gpl3)))
 
 (define-public r-networkinference
   (package

@@ -4833,28 +4833,6 @@ spectral indices, principal component transformation, unsupervised and
 supervised classification or fractional cover analyses.")
     (license license:gpl3+)))
 
-(define-public r-rstoat
-  (package
-    (name "r-rstoat")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rstoat" version))
-              (sha256
-               (base32
-                "0npwv33a7axwhnfyz39nh0x5kk4q3chscings3msx532lzvif0cl"))))
-    (properties `((upstream-name . "rstoat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-keyring r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.mol.org/stoat")
-    (synopsis "R Interface to the 'STOAT' Platform")
-    (description
-     "This package provides a wrapper for the Spatiotemporal Observation Annotation
-Tool ('STOAT', <https://www.mol.org/stoat>) which allows users to run annotation
-jobs and retrieve results in the R environment.")
-    (license license:bsd-3)))
-
 (define-public r-rstiefel
   (package
     (name "r-rstiefel")
@@ -28518,19 +28496,20 @@ Poisson and Cox regression models.  See Tay, J. K., and Tibshirani, R., (2019)
 (define-public r-relevent
   (package
     (name "r-relevent")
-    (version "1.2")
+    (version "1.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "relevent" version))
               (sha256
                (base32
-                "1hv86wfp5x177z8ik4fi7x3hx49i66m6qv459dvij8jypf45rki0"))))
+                "13nvz6gsjqm10hc9fy9vf4x39grj65ynlmy9v4fww02pzih89zjj"))))
     (properties `((upstream-name . "relevent")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-sna r-coda))
     (home-page "https://cran.r-project.org/package=relevent")
     (synopsis "Relational Event Models")
-    (description "Tools to fit relational event models.")
+    (description
+     "Tools to fit and simulate realizations from relational event models.")
     (license license:gpl2+)))
 
 (define-public r-relevance
@@ -41923,13 +41902,13 @@ Overall Ranking of Populations\" by Klein, Wright, and Wieczorek (2020)
 (define-public r-rankicc
   (package
     (name "r-rankicc")
-    (version "0.1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rankICC" version))
               (sha256
                (base32
-                "1wn0651qhgak01hj8lxpcsvjz8y4v1glmycbvj0lsqj6am8faqlw"))))
+                "0rr9vncd6168nijxg8i8xcwsx94vc687ayksqbq6lp4vnz4kflmw"))))
     (properties `((upstream-name . "rankICC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rankICC")

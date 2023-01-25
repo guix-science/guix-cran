@@ -4938,39 +4938,6 @@ conditions on the start value and partitions by further conditioning on the
 position of the first crossing (or none).")
     (license license:gpl3)))
 
-(define-public r-crossover
-  (package
-    (name "r-crossover")
-    (version "0.1-20")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Crossover" version))
-              (sha256
-               (base32
-                "1mm8zc845v077rnhijammpq72dsm9smwiixr0iygcadb5vbkfpib"))))
-    (properties `((upstream-name . "Crossover")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-xtable
-                             r-rjava
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-multcomp
-                             r-matrix
-                             r-mass
-                             r-javagd
-                             r-ggplot2
-                             r-digest
-                             r-crossdes
-                             r-commonjavajars))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kornl/Crossover/wiki")
-    (synopsis "Analysis and Search of Crossover Designs")
-    (description
-     "Generate and analyse crossover designs from combinatorial or search algorithms
-as well as from literature and a GUI to access them.")
-    (license license:gpl2)))
-
 (define-public r-crossnma
   (package
     (name "r-crossnma")
@@ -30140,13 +30107,13 @@ for convenience during analysis.")
 (define-public r-censspatial
   (package
     (name "r-censspatial")
-    (version "3.5")
+    (version "3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CensSpatial" version))
               (sha256
                (base32
-                "0d6z2rjzpq0nr5wzzqqrb8l3arkbys7hciclh95bipxg5i3d4lzr"))))
+                "10jgr9zvdvm8fgh0llfsxjkd5f565i1qh00zrqxz55is7p4r3h35"))))
     (properties `((upstream-name . "CensSpatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -30824,6 +30791,26 @@ such a conditional sampling.  The package includes a function to compare
 scatterplot matrices and pair-dependencies of two multivariate datasets.")
     (license license:gpl2+)))
 
+(define-public r-cdss
+  (package
+    (name "r-cdss")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CDSS" version))
+              (sha256
+               (base32
+                "1y0pjnxa8m5l9r3apzdagz41a6r8dc5yycv1avy30zfhjjy9m5a7"))))
+    (properties `((upstream-name . "CDSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readods r-openxlsx))
+    (home-page "https://cran.r-project.org/package=CDSS")
+    (synopsis "Course-Dependent Skill Structures")
+    (description
+     "Deriving skill structures from skill assignment data for courses (sets of
+learning objects).")
+    (license license:gpl3)))
+
 (define-public r-cds
   (package
     (name "r-cds")
@@ -31008,6 +30995,46 @@ also available.  Lastly, the package provides some useful functions for CDM
 simulation studies, such as random Q-matrix generation and detection of
 complete/identified Q-matrices.")
     (license license:gpl3)))
+
+(define-public r-cdmconnector
+  (package
+    (name "r-cdmconnector")
+    (version "0.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CDMConnector" version))
+              (sha256
+               (base32
+                "0vczz1vgibhwydnhfk3hncfz381a77gy97v80b0ajdry8h7dn4ir"))))
+    (properties `((upstream-name . "CDMConnector")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-waldo
+                             r-tidyselect
+                             r-sqlrender
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pillar
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CDMConnector")
+    (synopsis "Connect to an OMOP Common Data Model")
+    (description
+     "This package provides tools for working with observational health data in the
+Observational Medical Outcomes Partnership (OMOP) Common Data Model format with
+a pipe friendly syntax.  Common data model database table references are stored
+in a single compound object along with metadata.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cdltools
   (package

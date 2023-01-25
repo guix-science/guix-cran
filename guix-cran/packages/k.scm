@@ -4976,3 +4976,38 @@ estimation like density estimation as introduced in Stute and Srihera (2011)
 as described in Eichner and Stute (2012) <doi:10.1080/10485252.2012.760737>.")
     (license license:gpl3)))
 
+(define-public r-k5
+  (package
+    (name "r-k5")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "k5" version))
+              (sha256
+               (base32
+                "163ls1fmb2kkcly7cv1ia4k5fdjpr0xbr8nz7xw2zhmk2hfx47vq"))))
+    (properties `((upstream-name . "k5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-pacman
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-clipr
+                             r-aws-s3))
+    (home-page "https://github.com/kiernann/k5")
+    (synopsis "Kiernan Nicholls Miscellaneous")
+    (description
+     "Quality of life functions for interactive programming.  Shortcuts for common
+combinations of functions or different default arguments.  Not to be used in
+production level scripts, but useful for exploring and quickly manipulating data
+for easy analysis.  Also imports a variety of packages to facilitate the
+installation of those imported packages on the host machine.")
+    (license license:gpl3)))
+

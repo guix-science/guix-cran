@@ -6694,6 +6694,39 @@ statistical measures.")
 Modern Concepts, Methods and Applications, CRC Press.")
     (license license:gpl2)))
 
+(define-public r-stroke
+  (package
+    (name "r-stroke")
+    (version "23.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stRoke" version))
+              (sha256
+               (base32
+                "03wis8w62436fwj8jxdqf5089b6axnlr066ic9raqrfidfn2jvbd"))))
+    (properties `((upstream-name . "stRoke")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rankinplot
+                             r-mass
+                             r-gtsummary
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://agdamsbo.github.io/stRoke/")
+    (synopsis "Clinical Stroke Research")
+    (description
+     "This is an R-toolbox of custom functions for convenient data management and
+analysis in clinical health research and teaching.  The package is mainly
+collected for personal use, but any use beyond that is encouraged.  This package
+has migrated functions from agdamsbo/daDoctoR', and new functions has been
+added.  Version follows months and year.  See NEWS/Changelog for release notes.
+This package includes sampled data from the TALOS trial (Kraglund et al (2018)
+<doi:10.1161/STROKEAHA.117.020067>).  The win_prob() function is based on work
+by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The age_calc() function
+is based on work by Becker (2020) <doi:10.18637/jss.v093.i02>.")
+    (license license:gpl3)))
+
 (define-public r-strmps
   (package
     (name "r-strmps")
@@ -8674,6 +8707,39 @@ particularly in UK waters.  However, many of the species included in the
 stochastic collision risk models can also be found in the North Atlantic in the
 United States and Canada, and could be applied there.")
     (license license:gpl3+)))
+
+(define-public r-stochblock
+  (package
+    (name "r-stochblock")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "StochBlock" version))
+              (sha256
+               (base32
+                "0g0l36imgw3bvqj5g45abwicswcyqprzbkas9pzgha8dsc5s12w3"))))
+    (properties `((upstream-name . "StochBlock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-blockmodeling))
+    (home-page "https://cran.r-project.org/package=StochBlock")
+    (synopsis "Stochastic Blockmodeling of One-Mode and Linked Networks")
+    (description
+     "Stochastic blockmodeling of one-mode and linked networks as implemented in
+Å kulj and Å½iberna (2022) <doi:10.1016/j.socnet.2022.02.001>.  The optimization
+is done via CEM (Classification Expectation Maximization) algorithm that can be
+initialized by random partitions or the results of k-means algorithm.  The
+development of this package is financially supported by the Slovenian Research
+Agency (<https://www.arrs.si/>) within the research programs P5-0168 and the
+research projects J7-8279 (Blockmodeling multilevel and temporal networks) and
+J5-2557 (Comparison and evaluation of different approaches to blockmodeling
+dynamic networks by simulations with application to Slovenian co-authorship
+networks).")
+    (license license:gpl2+)))
 
 (define-public r-stocc
   (package
@@ -19645,13 +19711,13 @@ created by k-means.  See Walvoort et al. (2010)
 (define-public r-spcompute
   (package
     (name "r-spcompute")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPCompute" version))
               (sha256
                (base32
-                "1lj9asfcqmfgxkw74x723vf1jikcgkj6vwa7ymg8hdsbr9j21c47"))))
+                "15jjx5ryxv6cjiz144gsi69pgba5dvxavdv8glqykwfz6ch42lq0"))))
     (properties `((upstream-name . "SPCompute")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -34084,18 +34150,20 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.9.1")
+    (version "2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimDesign" version))
               (sha256
                (base32
-                "0dcfp89yis7pwryhlbi0194wxiwml340bjz0jm715vv624nhmr1w"))))
+                "1hacai3vrs4a1ykds3vaq85v7w1s4f110sy3mvl6fqccq20kz3si"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo
                              r-rpushbullet
+                             r-progressr
                              r-pbapply
+                             r-future-apply
                              r-foreach
                              r-dplyr
                              r-beepr))
@@ -38356,6 +38424,30 @@ interface of the app.")
 standalone translation package to translate reports, interactive visualizations
 or graphical elements as well.")
     (license license:expat)))
+
+(define-public r-shiny-fluent
+  (package
+    (name "r-shiny-fluent")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shiny.fluent" version))
+              (sha256
+               (base32
+                "14cqa2czg3b60cxb8v4kycgk74cgdg9y8pg76mglnjv6rksmvwkl"))))
+    (properties `((upstream-name . "shiny.fluent")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny-react r-shiny r-rlang r-jsonlite
+                             r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://appsilon.github.io/shiny.fluent/")
+    (synopsis "Microsoft Fluent UI for Shiny Apps")
+    (description
+     "This package provides a rich set of UI components for building Shiny
+applications, including inputs, containers, overlays, menus, and various
+utilities.  All components from Fluent UI (the underlying JavaScript library)
+are available and have usage examples in R.")
+    (license license:lgpl3)))
 
 (define-public r-shiny-benchmark
   (package
@@ -48400,13 +48492,13 @@ labels are great inputs to this package.")
 (define-public r-scmodels
   (package
     (name "r-scmodels")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scModels" version))
               (sha256
                (base32
-                "0wc7mif6q7li7qqsxc7s5s2jgg4ahwf348xzb5zpr2nhbcb5s4x6"))))
+                "01minq4b0pdjlh2r56lvr2ab6r7sp7l9sjz8a9hmx5xmizmygmvr"))))
     (properties `((upstream-name . "scModels")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
