@@ -18230,29 +18230,6 @@ get_dependencies(), get_downloads() and get_description().  The deepdep_shiny()
 function runs shiny application that helps to produce a nice deepdep plot.")
     (license license:gpl3)))
 
-(define-public r-deepboost
-  (package
-    (name "r-deepboost")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "deepboost" version))
-              (sha256
-               (base32
-                "1nf9gjk9gjl2dz7cr3vh5lg8nxkbqwr82a132nw853axbdgbs9ga"))))
-    (properties `((upstream-name . "deepboost")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/dmarcous/CRAN_deepboost")
-    (synopsis "Deep Boosting Ensemble Modeling")
-    (description
-     "This package provides deep boosting models training, evaluation, predicting and
-hyper parameter optimising using grid search and cross validation.  Based on
-Google's Deep Boosting algorithm, and Google's C++ implementation.  Cortes, C.,
-Mohri, M., & Syed, U. (2014)
-<http://machinelearning.wustl.edu/mlpapers/papers/icml2014c2_cortesb14>.")
-    (license license:asl2.0)))
-
 (define-public r-deep
   (package
     (name "r-deep")

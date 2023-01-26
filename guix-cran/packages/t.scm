@@ -6987,13 +6987,13 @@ can be estimated, along with the corresponding standard errors and P values.")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "transfR" version))
               (sha256
                (base32
-                "146pd1yki3lmd1b7h8xhakd1rjb41jqi0y9p73cqx9w13l87ba5m"))))
+                "0digc0i3cr3hfdlcz3myj7kwlkcspsd4wn82laswxb07nvbbi6sv"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -19852,13 +19852,13 @@ et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDApplied" version))
               (sha256
                (base32
-                "13n2w4w1dq0j5n7zdh7f0pnjjdq80mpz7rx5xh5px2mggkjn3x41"))))
+                "0bq06pzw7w4qp8cqvkxqqhx2qyn03vz7zxsk3f1ykjv846qxf6bb"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist

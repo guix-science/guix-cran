@@ -11455,13 +11455,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "copula" version))
               (sha256
                (base32
-                "1qz1hpqn7nsajsfvnyn4l1zqzkvmv1174dbb7cjps0q9dsvalx2l"))))
+                "1lw72ljkfkynbs1iwfz1ymllfrlfykd5clfav19xzp744m6lbyc8"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist
@@ -15589,13 +15589,13 @@ promotions.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "2.7")
+    (version "2.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Compind" version))
               (sha256
                (base32
-                "0rs55714rd886mhp73s23yj7x49vj59n28n98f6jaghjwb7a88cy"))))
+                "1429dw025h5fp1wvmyqc5b25wczwf2c44fgp47blzmd3b4qvj6sz"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -17715,13 +17715,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.0")
+    (version "1.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "0b7drr0yb3wffkj3m2ll1lk4si4f9b3wjbddr7zrx6vj9xq5gswy"))))
+                "0f5q53z6q9k5939ypyr2xrah482cyah3pjvyd8db8jw84gsq8gj4"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -17731,21 +17731,20 @@ functions provided only work for binary classification problems.")
     (description
      "This package provides a C/C++ based package for advanced data transformation and
 statistical computing in R that is extremely fast, class-agnostic, and
-programmer friendly through a flexible, parsimonious, and robust API. Core
-functionality includes a rich set of S3 generic grouped and weighted statistical
-functions for vectors, matrices and data frames, which provide efficient
-low-level vectorizations and OpenMP multithreading (reducing the need for
-iteration/vectorization in R), and skip missing values by default.  These are
-integrated with fast grouping and ordering algorithms (also callable from C),
-and efficient data manipulation functions.  The package also provides a flexible
-and rigorous approach to time series and panel data in R. It further includes
-fast functions for common statistical procedures, detailed (grouped, weighted)
-summary statistics, powerful tools to work with nested data, fast data object
-conversions, functions for memory efficient R programming, and helpers to
+programmer friendly through a flexible and robust API. Core functionality
+includes a rich set of S3 generic grouped and weighted statistical functions for
+vectors, matrices and data frames, which provide efficient low-level
+vectorizations, OpenMP multithreading, and skip missing values by default.
+These are integrated with fast grouping and ordering algorithms (also callable
+from C), and efficient data manipulation functions.  The package also provides a
+flexible and rigorous approach to time series and panel data in R. It further
+includes fast functions for common statistical procedures, detailed (grouped,
+weighted) summary statistics, powerful tools to work with nested data, fast data
+object conversions, functions for memory efficient R programming, and helpers to
 effectively deal with variable labels, attributes, and missing data.  It is well
 integrated with basic R, dplyr'/'tibble', data.table', sf', plm (panel-series
-and data frames), and accommodates (by virtue of smart internal attribute
-handling) many other classes (like ts', xts'/'zoo or tsibble').")
+and data frames), and accommodates, by virtue of smart internal attribute
+handling, many other classes (like ts', xts'/'zoo or tsibble').")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -24191,6 +24190,40 @@ negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
 ('nnet').  For more information on the test, see Clarke (2007)
 <doi:10.1093/pan/mpm004>.")
     (license license:gpl2+)))
+
+(define-public r-clarify
+  (package
+    (name "r-clarify")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clarify" version))
+              (sha256
+               (base32
+                "0fj4bikq4fzif1dghw5dvjsjaab51vmak8bj0g4nn4danj1mpl4r"))))
+    (properties `((upstream-name . "clarify")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-pbapply
+                             r-mvnfast
+                             r-marginaleffects
+                             r-insight
+                             r-ggplot2
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/iqss/clarify")
+    (synopsis "Simulation-Based Inference for Regression Models")
+    (description
+     "This package performs simulation-based inference as an alternative to the delta
+method for obtaining valid confidence intervals and p-values for regression
+post-estimation quantities, such as average marginal effects and predictions at
+representative values.  This framework for simulation-based inference is
+especially useful when the resulting quantity is not normally distributed and
+the delta method approximation fails.  The methodology is described in King,
+Tomz, and Wittenberg (2000) <doi:10.2307/2669316>.  clarify is meant to replace
+some of the functionality of the archived package Zelig'; see the vignette
+\"Translating Zelig to clarify\" for replicating this functionality.")
+    (license license:gpl3+)))
 
 (define-public r-clarifai
   (package

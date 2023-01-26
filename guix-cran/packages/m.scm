@@ -11491,13 +11491,13 @@ method.")
 (define-public r-mombf
   (package
     (name "r-mombf")
-    (version "3.2.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mombf" version))
               (sha256
                (base32
-                "1a20bx37fpvyaal7ld279grym1fjciqsh03qxl6mkdiz6lxq4as3"))))
+                "1zx7rq2nfwbwdkhkjj3c0kr4ckf9ycm2ag3p3ff295jpm3wswfha"))))
     (properties `((upstream-name . "mombf")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11511,11 +11511,10 @@ method.")
                              r-mclust
                              r-glmnet))
     (home-page "https://github.com/davidrusi/mombf")
-    (synopsis
-     "Bayesian Model Selection and Averaging for Non-Local and Local Priors")
+    (synopsis "Model Selection with Bayesian Methods and Information Criteria")
     (description
-     "Bayesian model selection and averaging for regression and mixtures for non-local
-and selected local priors.")
+     "Model selection and averaging for regression and mixtures, inclusing Bayesian
+model selection and information criteria (BIC, EBIC, AIC, GIC).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -14079,6 +14078,46 @@ inference on a random-effects model with multivariate normal observations.")
 parliament.  Documentation for the API itself can be found here:
 <http://data.parliament.uk/membersdataplatform/default.aspx>.")
     (license license:expat)))
+
+(define-public r-mnda
+  (package
+    (name "r-mnda")
+    (version "1.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mnda" version))
+              (sha256
+               (base32
+                "1lmkxdfym1jfq05vpjky1b6nz1xwzsdh9mz3017v23qyg7dmbzyi"))))
+    (properties `((upstream-name . "mnda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tensorflow
+                             r-reticulate
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-keras
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-assertthat
+                             r-aggregation))
+    (home-page "https://cran.r-project.org/package=mnda")
+    (synopsis "Multiplex Network Differential Analysis (MNDA)")
+    (description
+     "Interactions between different biological entities are crucial for the function
+of biological systems.  In such networks, nodes represent biological elements,
+such as genes, proteins and microbes, and their interactions can be defined by
+edges, which can be either binary or weighted.  The dysregulation of these
+networks can be associated with different clinical conditions such as diseases
+and response to treatments.  However, such variations often occur locally and do
+not concern the whole network.  To capture local variations of such networks, we
+propose multiplex network differential analysis (MNDA).  MNDA allows to quantify
+the variations in the local neighborhood of each node (e.g. gene) between the
+two given clinical states, and to test for statistical significance of such
+variation.  Yousefi et al. (2023) <doi:10.1101/2023.01.22.525058>.")
+    (license license:gpl3+)))
 
 (define-public r-mnb
   (package
@@ -33982,29 +34021,6 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
 Wishart, inverse-Wishart, normal, t, inverted-t, Beta type I, Beta type II,
 Gamma, confluent hypergeometric.  Allows to simulate the noncentral Wishart
 distribution without the integer restriction on the degrees of freedom.")
-    (license license:gpl3)))
-
-(define-public r-matrixprofiler
-  (package
-    (name "r-matrixprofiler")
-    (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "matrixprofiler" version))
-              (sha256
-               (base32
-                "0jicclzjil9yqlapzji23wm916aprv1fyad1qrn6ip7kap3m2kln"))))
-    (properties `((upstream-name . "matrixprofiler")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppthread r-rcppprogress r-rcppparallel r-rcpp
-                             r-checkmate))
-    (home-page "https://github.com/matrix-profile-foundation/matrixprofiler")
-    (synopsis "Matrix Profile for R")
-    (description
-     "This is the core functions needed by the tsmp package.  The low level and
-carefully checked mathematical functions are here.  These are implementations of
-the Matrix Profile concept that was created by CS-UCR
-<http://www.cs.ucr.edu/~eamonn/MatrixProfile.html>.")
     (license license:gpl3)))
 
 (define-public r-matrixprofile

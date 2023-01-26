@@ -3502,6 +3502,44 @@ diagonalize a list of matrices.  For more details see the project website
 <https://sweichwald.de/groupICA/>.")
     (license license:agpl3)))
 
+(define-public r-groupedsurv
+  (package
+    (name "r-groupedsurv")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "groupedSurv" version))
+              (sha256
+               (base32
+                "10h6x1rgsrapgsx5j82nfajkq8f9jr1l3nzzv2llnrzbd7gghgcn"))))
+    (properties `((upstream-name . "groupedSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-qvalue
+                             r-foreach
+                             r-doparallel
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=groupedSurv")
+    (synopsis
+     "Efficient Estimation of Grouped Survival Models Using the Exact Likelihood Function")
+    (description
+     "These Rcpp'-based functions compute the efficient score statistics for grouped
+time-to-event data (Prentice and Gloeckler, 1978), with the optional inclusion
+of baseline covariates.  Functions for estimating the parameter of interest and
+nuisance parameters, including baseline hazards, using maximum likelihood are
+also provided.  A parallel set of functions allow for the incorporation of
+family structure of related individuals (e.g., trios).  Note that the current
+implementation of the frailty model (Ripatti and Palmgren, 2000) is sensitive to
+departures from model assumptions, and should be considered experimental.  For
+these data, the exact proportional-hazards-model-based likelihood is computed by
+evaluating multiple variable integration.  The integration is accomplished using
+the Cuba library (Hahn, 2005), and the source files are included in this
+package.  The maximization process is carried out using Brent's algorithm, with
+the C++ code file from John Burkardt and John Denker (Brent, 2002).")
+    (license license:gpl2+)))
+
 (define-public r-groupdata2
   (package
     (name "r-groupdata2")
@@ -3593,13 +3631,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groundhog" version))
               (sha256
                (base32
-                "0xsrns07bdz3sxcwhcwhhfsica47rjglimv11m124nf1rwc79yg1"))))
+                "1f8w4lyip0qw22vnywidvrfb9y3l4x4mb9mvkxvjcnbqjswkxkdr"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -3611,7 +3649,11 @@ the user running the script happens to have installed).  This is achieved by
 using the command groundhog.library() instead of the base command library(), and
 including a date in the call.  The date is used to call on the same version of
 the package every time (the most recent version available at that date).  Load
-packages from CRAN, GitHub, or Gitlab.")
+packages from CRAN, GitHub, or Gitlab. =======================================
+Note: groundhog relied on Microsoft's MRAN archive which is being discontinued.
+This version of groundhog is transitioning away from MRAN, relying on it only
+for dates prior to Jan 31, 2023.  A future release of groundhog, v2.3.0,
+expected by May 2023, will discontinue relying on MRAN entirely.")
     (license license:gpl3)))
 
 (define-public r-gromovlab
@@ -5026,18 +5068,18 @@ refer to the web page given below.")
 (define-public r-gravmagsubs
   (package
     (name "r-gravmagsubs")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gravmagsubs" version))
               (sha256
                (base32
-                "19lv11svvnjjb6dkm1hww3g6ibh0jzkkb5zsxbkwr940hsdlkwmr"))))
+                "1kc3dm2wmbwbad6sdhzs6bnpmri66142rc552cd75pijzbnymqvf"))))
     (properties `((upstream-name . "gravmagsubs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gravmagsubs")
+    (home-page "https://code.usgs.gov/gmegsc/gravmagsubs")
     (synopsis
      "Gravitational and Magnetic Attraction of 3-D Vertical Rectangular Prisms")
     (description
@@ -12632,35 +12674,6 @@ outliers (together with their frequencies) that are c standard deviations away
 from the mean.")
     (license license:gpl3)))
 
-(define-public r-giphyr
-  (package
-    (name "r-giphyr")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "giphyr" version))
-              (sha256
-               (base32
-                "0273f7lama8bhaalafs66m6ksp32vx0j6rmh1qr4484i7wkmdfqn"))))
-    (properties `((upstream-name . "giphyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-shiny
-                             r-rstudioapi
-                             r-purrr
-                             r-miniui
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/haozhu233/giphyr")
-    (synopsis "R Interface to the Giphy API")
-    (description
-     "An interface to the API of Giphy', a popular index-based search engine for GIFs
-and animated stickers (see <http://giphy.com/faq> and
-<https://github.com/Giphy/GiphyAPI> for more information about Giphy and its
-API') .  This package also provides a RStudio Addin', which can help users
-easily search and download GIFs and insert them to a rmarkdown presentation.")
-    (license license:expat)))
-
 (define-public r-gipfrm
   (package
     (name "r-gipfrm")
@@ -18306,13 +18319,13 @@ requests.")
 (define-public r-getip
   (package
     (name "r-getip")
-    (version "0.1-2")
+    (version "0.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "getip" version))
               (sha256
                (base32
-                "0qk994ip5d4m827n0lz6lhpvdbmz2gqpl4513r82s7ckkzg2rvyp"))))
+                "096cycq9w197didbq0zxmsagrlbl1vgb7rv13n32sgyw15rngh8f"))))
     (properties `((upstream-name . "getip")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=getip")
@@ -24941,31 +24954,6 @@ available at <http://hdl.handle.net/11299/204551>, and in Lina K. MÃ¼hlbauer,
 Maximilienne Schulze, W. Stanley Harpole, and Adam T. Clark.  gauseR': Simple
 methods for fitting Lotka-Volterra models describing Gause's Struggle for
 Existence in the journal Ecology and Evolution.")
-    (license license:gpl3)))
-
-(define-public r-gaupro
-  (package
-    (name "r-gaupro")
-    (version "0.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GauPro" version))
-              (sha256
-               (base32
-                "03xlfwr3wwxcbkicfnrncqnzpsmvwb98vbv3cca9rw13pp449h12"))))
-    (properties `((upstream-name . "GauPro")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/GauPro")
-    (synopsis "Gaussian Process Fitting")
-    (description
-     "Fits a Gaussian process model to data.  Gaussian processes are commonly used in
-computer experiments to fit an interpolating model.  The model is stored as an
-R6 object and can be easily updated with new data.  There are options to run in
-parallel, and Rcpp has been used to speed up calculations.  For more info about
-Gaussian process software, see Erickson et al. (2018)
-<doi:10.1016/j.ejor.2017.10.002>.")
     (license license:gpl3)))
 
 (define-public r-gater

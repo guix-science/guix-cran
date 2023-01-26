@@ -2364,13 +2364,13 @@ methods implemented by this package are described in Wu et al. (2022)
 (define-public r-excursions
   (package
     (name "r-excursions")
-    (version "2.5.4")
+    (version "2.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "excursions" version))
               (sha256
                (base32
-                "1f6pv8p0l3jz02bd4gqr28h2iyg34n2ys888qpdwx5dp31mmq7cd"))))
+                "1ylkjj9hg6rgg6q5k46mrp90g3g8snxkrddlz5czj857lqwdir8j"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-sp r-matrix))
@@ -9969,13 +9969,13 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "1j0yz5s7c7sk8sk6scb389py64r6f3fqbxq0a1bi1z4ddzmiaviw"))))
+                "04qbk6ynwc6063yxr8mbshb5ip189w8skqlziywmifsrjbhmsy3d"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

@@ -12990,6 +12990,29 @@ for each individual.  Approaches for handling measurement error follow the
 framework of Schisterman et al. (2010) <doi:10.1002/sim.3823>.")
     (license license:gpl3)))
 
+(define-public r-poolhelper
+  (package
+    (name "r-poolhelper")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "poolHelper" version))
+              (sha256
+               (base32
+                "0fc4w7lh6brwpca8s3r4b84w5lnanxz5v3haxjcpkn7l2rj4yj6x"))))
+    (properties `((upstream-name . "poolHelper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scrm r-metrics r-mcmcpack))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joao-mcarvalho/poolHelper")
+    (synopsis "Simulates Pooled Sequencing Genetic Data")
+    (description
+     "Simulates pooled sequencing data under a variety of conditions.  Also allows for
+the evaluation of the average absolute difference between allele frequencies
+computed from genotypes and those computed from pooled data.  Carvalho et al.,
+(2022) <doi:10.1101/2023.01.20.524733>.")
+    (license license:gpl3+)))
+
 (define-public r-poolfstat
   (package
     (name "r-poolfstat")
@@ -17886,6 +17909,38 @@ approximately two million chess matches.  Also contains an Elo based method for
 multi-player games where the result is a placing or a score.  This includes
 zero-sum games such as poker and mahjong.")
     (license license:gpl3)))
+
+(define-public r-play
+  (package
+    (name "r-play")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "play" version))
+              (sha256
+               (base32
+                "0ys8z84ap4v37ifz84q18dms5b0rqin6dvb6av0vl5rjpbgpvbhd"))))
+    (properties `((upstream-name . "play")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-worldfootballr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://joe-chelladurai.github.io/play/")
+    (synopsis "Visualize Sports Data")
+    (description
+     "This package provides functions to visualise sports data.  Converts data into a
+format suitable for plotting charts.  Helps to ease the process of working with
+messy sports data to a more user friendly format.  Football data is accessed
+through worldfootballR <https://github.com/JaseZiv/worldfootballR> which gets
+data from FBref <https://fbref.com/en>, Transfermarkt
+<https://www.transfermarkt.com/>, Understat <https://understat.com/>, and fotmob
+<https://www.fotmob.com/>.")
+    (license license:expat)))
 
 (define-public r-platypus
   (package
@@ -24505,13 +24560,13 @@ some or all of which are time-dependent.")
 (define-public r-perk
   (package
     (name "r-perk")
-    (version "0.0.9.1")
+    (version "0.0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PERK" version))
               (sha256
                (base32
-                "0f3sclxxccgv47x0jinsvq3vbhcrkrak5lfdijg12kzgh94lgs6a"))))
+                "0x62cmfl71s0mlhd22wifhfvhdvnz4ab6hzwinj549rvvrl8sw3j"))))
     (properties `((upstream-name . "PERK")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

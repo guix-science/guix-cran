@@ -8873,13 +8873,13 @@ Kenneth Lange (2003, ISBN:978-8181281135).")
 (define-public r-networklite
   (package
     (name "r-networklite")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "networkLite" version))
               (sha256
                (base32
-                "1w0g90vgwiyc0sm0jq0xj0ndc7j18zvyvczlzf9i6c428na37vgd"))))
+                "09jz80nh95352jhwx1n6ihhx9is3md6sb887hxz6dj73mr34myx9"))))
     (properties `((upstream-name . "networkLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-statnet-common r-network r-dplyr))

@@ -271,13 +271,13 @@ Azure Machine Learning visit the website:
 (define-public r-azurekusto
   (package
     (name "r-azurekusto")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureKusto" version))
               (sha256
                (base32
-                "1g1gsy4m6l8f20vzwlc0rg7syipc0hx01ygdblavqgwn76mbd2if"))))
+                "0w275408rw2cwminv0hlfchizvliwlvadly4rxw2szzi3aq7png4"))))
     (properties `((upstream-name . "AzureKusto")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10217,6 +10217,38 @@ local and global populations.")
 microarray data and local False Discovery Rate.")
     (license license:gpl2)))
 
+(define-public r-ananseseurat
+  (package
+    (name "r-ananseseurat")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AnanseSeurat" version))
+              (sha256
+               (base32
+                "0f487qbn8a3hghpa0ly2kn5cb7s9wjb5f59f6zkrpgx4rwhjvfgp"))))
+    (properties `((upstream-name . "AnanseSeurat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-seurat
+                             r-rlang
+                             r-purrr
+                             r-png
+                             r-patchwork
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JGASmits/AnanseSeurat/")
+    (synopsis "Construct ANANSE GRN-Analysis Seurat")
+    (description
+     "Enables gene regulatory network (GRN) analysis on single cell clusters, using
+the GRN analysis software ANANSE', Xu et al.(2021) <doi:10.1093/nar/gkab598>.
+Export data from Seurat objects, for GRN analysis by ANANSE implemented in
+snakemake'.  Finally, incorporate results for visualization and interpretation.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-analyzer
   (package
     (name "r-analyzer")
@@ -11150,6 +11182,27 @@ dimensions.")
 is based on the groundwater flow equation solved numerically using the finite
 difference explicit scheme.")
     (license license:gpl3+)))
+
+(define-public r-amazonspr
+  (package
+    (name "r-amazonspr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "amazonspR" version))
+              (sha256
+               (base32
+                "0il66gb43zm6shr870yqlfn6l1srl37pdxpq3pdkil8g20nf92rn"))))
+    (properties `((upstream-name . "amazonspR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://windsor.ai/")
+    (synopsis "Get Amazon Sp Data via the 'Windsor.ai' API")
+    (description
+     "Collect your data on digital marketing campaigns from Amazon Sp using the
+Windsor.ai API <https://windsor.ai/api-fields/>.")
+    (license license:gpl3)))
 
 (define-public r-amazons3r
   (package
@@ -16256,24 +16309,26 @@ errors are also provided.")
 (define-public r-adjroc
   (package
     (name "r-adjroc")
-    (version "0.2.0")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adjROC" version))
               (sha256
                (base32
-                "0ipvp7f7asg8pbzbm3rnn8hp20gs3aqispvagddjw1yd39h0zgrk"))))
+                "0bf7vvhllpl8irqw1ahfhbhqq67v6jxblapv91ddkgpk2dl0sp03"))))
     (properties `((upstream-name . "adjROC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rocit r-ggplot2))
+    (propagated-inputs (list r-yardstick r-rocit r-ggplot2 r-boot))
     (home-page "https://github.com/haghish/adjROC")
     (synopsis
-     "Computing Sensitivity at a Fix Value of Specificity and Vice Versa")
+     "Computing Sensitivity at a Fix Value of Specificity and Vice Versa as Well as Bootstrap Metrics for ROC Curves")
     (description
      "For a binary classification the adjusted sensitivity and specificity are
 measured for a given fixed threshold.  If the threshold for either sensitivity
 or specificity is not given, the crossing point between the sensitivity and
-specificity curves are returned.")
+specificity curves are returned.  For bootstrap procedures, mean and CI
+bootstrap values of sensitivity, specificity, crossing point between specificity
+and specificity as well as AUC and AUCPR can be evaluated.")
     (license license:expat)))
 
 (define-public r-adjclust
@@ -17682,6 +17737,38 @@ at the beginning or end of periods.  The package contains functions to easily
 refer to the first or last (working) day within a specific period relative to a
 base date to facilitate actuarial reporting and to compare results.")
     (license license:expat)))
+
+(define-public r-actuare
+  (package
+    (name "r-actuare")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "actuaRE" version))
+              (sha256
+               (base32
+                "11091skzl9h2824kpkjxrd2z3z0mv87x9gkg84xx9rga031msi9v"))))
+    (properties `((upstream-name . "actuaRE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod
+                             r-speedglm
+                             r-nlme
+                             r-magrittr
+                             r-lme4
+                             r-knitr
+                             r-ggplot2
+                             r-data-table
+                             r-cplm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bavodc.github.io/websiteactuaRE/index.html")
+    (synopsis
+     "Handling Hierarchically Structured Risk Factors using Random Effects Models")
+    (description
+     "Using this package, you can fit a random effects model using either the
+hierarchical credibility model, a combination of the hierarchical credibility
+model with a generalized linear model or a Tweedie generalized linear mixed
+model.  See Campo, B.D.C. and Antonio, K. (2022) <arXiv:2206.15244>.")
+    (license license:gpl3+)))
 
 (define-public r-activitygcmm
   (package

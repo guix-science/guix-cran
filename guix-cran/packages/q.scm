@@ -3471,16 +3471,21 @@ that the data come from the test distribution.")
 (define-public r-qqplotr
   (package
     (name "r-qqplotr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qqplotr" version))
               (sha256
                (base32
-                "1ija4ik3bc404yjm5pw4y32krs1gxn6jd05pqmc0ajawydvr4w1r"))))
+                "0kj1m7m04599d3b6227vja02zwq5d2vc0cyz2c7jvki4g3q2knxf"))))
     (properties `((upstream-name . "qqplotr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-mass r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-robustbase
+                             r-qqconf
+                             r-opdisdownsampling
+                             r-mass
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/aloy/qqplotr")
     (synopsis "Quantile-Quantile Plot Extensions for 'ggplot2'")

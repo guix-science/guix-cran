@@ -21292,6 +21292,44 @@ Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-bayesdlmfmri
+  (package
+    (name "r-bayesdlmfmri")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesDLMfMRI" version))
+              (sha256
+               (base32
+                "1a00sgxzbg3qw6j07dhahcci40crm3k1bfc8bpdwlqi3m9bqr938"))))
+    (properties `((upstream-name . "BayesDLMfMRI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbapply
+                             r-oro-nifti
+                             r-mathjaxr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JohnatanLAB/BayesDLMfMRI/")
+    (synopsis "Statistical Analysis for Task-Based Fmri Data")
+    (description
+     "The BayesDLMfMRI package performs statistical analysis for task-based functional
+magnetic resonance imaging (fMRI) data at both individual and group levels.  The
+analysis to detect brain activation at the individual level is based on modeling
+the fMRI signal using Matrix-Variate Dynamic Linear Models (MDLM).  The analysis
+for the group stage is based on posterior distributions of the state parameter
+obtained from the modeling at the individual level.  In this way, this package
+offers several R functions with different algorithms to perform inference on the
+state parameter to assess brain activation for both individual and group stages.
+ Those functions allow for parallel computation when the analysis is performed
+for the entire brain as well as analysis at specific voxels when it is required.
+ References: Cardona-JimÃ©nez (2017) <doi:10.1016/j.csda.2021.107297>;
+Cardona-JimÃ©nez (2018) <arXiv:2111.01318>.")
+    (license license:gpl2)))
+
 (define-public r-bayesdistreg
   (package
     (name "r-bayesdistreg")

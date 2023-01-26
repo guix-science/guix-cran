@@ -11648,29 +11648,6 @@ Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK
 faculty friendship network, domestic US flights network, etc.")
     (license (license:fsdg-compatible "CC BY-SA 4.0 + file LICENSE"))))
 
-(define-public r-igp
-  (package
-    (name "r-igp")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IGP" version))
-              (sha256
-               (base32
-                "061ykq17nbpkl0428m83m3cw4yjqq0c4986zz9fl0yb1vfb86cyc"))))
-    (properties `((upstream-name . "IGP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-r6))
-    (home-page "https://github.com/CollinErickson/IGP")
-    (synopsis "Interchangeable Gaussian Process Models")
-    (description
-     "This package creates a Gaussian process model using the specified package.
-Makes it easy to try different packages in same code, only the package argument
-needs to be changed.  It is essentially a wrapper for the other Gaussian process
-software packages.  For more info about Gaussian process software and comparison
-of various options, see Erickson et al. (2018) <doi:10.1016/j.ejor.2017.10.002>.")
-    (license license:gpl3)))
-
 (define-public r-igorrr
   (package
     (name "r-igorrr")

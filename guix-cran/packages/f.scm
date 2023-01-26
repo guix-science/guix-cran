@@ -3428,19 +3428,18 @@ neglected heterogeneity and/or endogenous covariates.")
 (define-public r-frlr
   (package
     (name "r-frlr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fRLR" version))
               (sha256
                (base32
-                "1fac5ykl1bv0y8m73vzyhghmj6f0q9iy7zr4142wzh2i2zzr0mpz"))))
+                "01vnxb83d22ma6ij3pghgb9xh8vgm5dimrv9cggxm8ph74k82y1c"))))
     (properties `((upstream-name . "fRLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://stats.hohoweiya.xyz/regression/2017/09/26/An-R-Package-Fit-Repeated-Linear-Regressions/")
+    (home-page "https://github.com/szcf-weiya/fRLR")
     (synopsis "Fit Repeated Linear Regressions")
     (description
      "When fitting a set of linear regressions which have some same variables, we can
@@ -7552,16 +7551,16 @@ regression, and aCompCor (anatomical Components Correction) (Muschelli et al.
 (define-public r-fmriscrub
   (package
     (name "r-fmriscrub")
-    (version "0.11.2")
+    (version "0.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fMRIscrub" version))
               (sha256
                (base32
-                "0n8vc5l7y14ifsw4lkgk9jvmplxfimi4l9a4spzw3daaqjk3cph5"))))
+                "1q31cski4sdaas7r3d3da051c93x3dp301sislx7mb2gdj4v82pz"))))
     (properties `((upstream-name . "fMRIscrub")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-pesel r-mass r-e1071))
+    (propagated-inputs (list r-robustbase r-pesel r-mass r-fmritools r-e1071))
     (home-page "https://github.com/mandymejia/fMRIscrub")
     (synopsis "Scrubbing and Other Data Cleaning Routines for fMRI")
     (description
@@ -7571,8 +7570,8 @@ regression, and aCompCor (anatomical Components Correction) (Muschelli et al.
 scrubbing (Power et al (2012) <doi:10.1016/j.neuroimage.2011.10.018>), aCompCor
 (anatomical Components Correction) (Muschelli et al (2014)
 <doi:10.1016/j.neuroimage.2014.03.028>), detrending, and nuisance regression.
-Projection scrubbing and DVARS are also applicable to other outlier detection
-tasks involving high-dimensional data.")
+Projection scrubbing is also applicable to other outlier detection tasks
+involving high-dimensional data.")
     (license license:gpl3)))
 
 (define-public r-fmriqa
@@ -10573,16 +10572,17 @@ log-normal, 2) Tweedie, or 3) Poisson-gamma (G)LMs.")
 (define-public r-fishmethods
   (package
     (name "r-fishmethods")
-    (version "1.11-3")
+    (version "1.12-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fishmethods" version))
               (sha256
                (base32
-                "17fghylmc4xs8b9p2ybgdpjxkjb4zg7qxhb75sdj0q0bvs1mhyiq"))))
+                "1iy9df9wzr660byksga1j6kg9p8n45xf09iavpvya2cg9kw95gx3"))))
     (properties `((upstream-name . "fishmethods")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv
+    (propagated-inputs (list r-tmb
+                             r-numderiv
                              r-mass
                              r-lme4
                              r-data-table
@@ -11650,13 +11650,13 @@ disease status can be set in desired level according risk ratio.")
 (define-public r-filesstrings
   (package
     (name "r-filesstrings")
-    (version "3.2.3")
+    (version "3.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "filesstrings" version))
               (sha256
                (base32
-                "1mbnrbb3ibgzzq5k91f28mzm85njz49l47mamgkhsb9xjhxw09w2"))))
+                "1jl3jhkdjx5x00kllnkpvrlpsmzsvlgd6vhzdavd39zx4jzwjxw3"))))
     (properties `((upstream-name . "filesstrings")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -17012,31 +17012,6 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013) DOI:
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
-
-(define-public r-fastcmprsk
-  (package
-    (name "r-fastcmprsk")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fastcmprsk" version))
-              (sha256
-               (base32
-                "00jpmmlpldrqamgw7q7gx6s4rl1bxqlzw2jglw36k5zawcdb69y6"))))
-    (properties `((upstream-name . "fastcmprsk")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-foreach r-dynpred))
-    (home-page "https://cran.r-project.org/package=fastcmprsk")
-    (synopsis "Fine-Gray Regression via Forward-Backward Scan")
-    (description
-     "In competing risks regression, the proportional subdistribution hazards (PSH)
-model is popular for its direct assessment of covariate effects on the
-cumulative incidence function.  This package allows for both penalized and
-unpenalized PSH regression in linear time using a novel forward-backward scan.
-Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
-(LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
-and elastic net.")
-    (license license:gpl3)))
 
 (define-public r-fastcmh
   (package

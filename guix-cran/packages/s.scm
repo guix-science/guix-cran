@@ -2888,13 +2888,13 @@ visualize bivariate survival data and bivariate probability mass function.")
 (define-public r-survsnp
   (package
     (name "r-survsnp")
-    (version "0.25")
+    (version "0.26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survSNP" version))
               (sha256
                (base32
-                "0awj4vh7sdal873bkp7f0ff4r87idgdn5cby405flvivlxv83i9z"))))
+                "0fvmqlzg6j43d5bwvn70n4630n396wrykl5blkszadj3l118rmp4"))))
     (properties `((upstream-name . "survSNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-survival r-rcpp r-lattice r-foreach))
@@ -30055,6 +30055,41 @@ including Burden test, SKAT and SKAT-O. These methods aggregate individual SNP
 score statistics in a SNP set and efficiently compute SNP-set level p-values.")
     (license license:gpl2+)))
 
+(define-public r-sk4fga
+  (package
+    (name "r-sk4fga")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SK4FGA" version))
+              (sha256
+               (base32
+                "1fimj47c5k2bqnac8bh12ag67han41lai0m976ma2hvgrl8c66wv"))))
+    (properties `((upstream-name . "SK4FGA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=SK4FGA")
+    (synopsis "Scott-Knott for Forensic Glass Analysis")
+    (description
+     "In forensics, it is common and effective practice to analyse glass fragments
+from the scene and suspects to gain evidence of placing a suspect at the crime
+scene.  This kind of analysis involves comparing the physical and chemical
+attributes of glass fragments that exist on both the person and at the crime
+scene, and assessing the significance in a likeness that they share.  The
+package implements the Scott-Knott Modification 2 algorithm (SKM2) (Christopher
+M. Triggs and James M. Curran and John S. Buckleton and Kevan A.J. Walsh (1997)
+<doi:10.1016/S0379-0738(96)02037-3> \"The grouping problem in forensic glass
+analysis: a divisive approach\", Forensic Science International, 85(1), 1--14)
+for small sample glass fragment analysis using the refractive index (ri) of a
+set of glass samples.  It also includes an experimental multivariate analog to
+the Scott-Knott algorithm for similar analysis on glass samples with multiple
+chemical concentration variables and multiple samples of the same item; testing
+against the Hotellings T^2 distribution (J.M. Curran and C.M. Triggs and J.R.
+Almirall and J.S. Buckleton and K.A.J. Walsh (1997)
+<doi:10.1016/S1355-0306(97)72197-X> \"The interpretation of elemental composition
+measurements from forensic glass evidence\", Science & Justice, 37(4), 241--244).")
+    (license license:gpl2+)))
+
 (define-public r-sjtable2df
   (package
     (name "r-sjtable2df")
@@ -46288,44 +46323,6 @@ hyperparameters have an interactive real-time chart displayed in the RStudio
 viewer pane during their execution.")
     (license license:gpl3)))
 
-(define-public r-sdmtmb
-  (package
-    (name "r-sdmtmb")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sdmTMB" version))
-              (sha256
-               (base32
-                "00gyi6np254ii3dh41mv3vrby2hpa16jxsj2bha0i9pwjy11mbqs"))))
-    (properties `((upstream-name . "sdmTMB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmb
-                             r-rlang
-                             r-rcppeigen
-                             r-nlme
-                             r-mvtnorm
-                             r-mgcv
-                             r-matrix
-                             r-lifecycle
-                             r-glmmtmb
-                             r-generics
-                             r-fishmod
-                             r-clisymbols
-                             r-cli
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://pbs-assess.github.io/sdmTMB/index.html")
-    (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
-    (description
-     "This package implements spatial and spatiotemporal predictive-process GLMMs
-(Generalized Linear Mixed Effect Models) using TMB', INLA', and the SPDE
-(Stochastic Partial Differential Equation) approximation to Gaussian random
-fields.  One common application is for spatially explicit (and optionally
-dynamic) species distribution models (SDMs).  See Anderson et al. (2022)
-<doi:10.1101/2022.03.24.485545>.")
-    (license license:gpl3)))
-
 (define-public r-sdmpredictors
   (package
     (name "r-sdmpredictors")
@@ -50101,37 +50098,6 @@ relationships among different classes and objects.")
 fisheries stock assessment.")
     (license license:gpl3)))
 
-(define-public r-scanstatistics
-  (package
-    (name "r-scanstatistics")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scanstatistics" version))
-              (sha256
-               (base32
-                "1982xwnjs6xiqys385m5gn5a49xy2v3smd6ghw8814gx60bgw6w8"))))
-    (properties `((upstream-name . "scanstatistics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-sets
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plyr
-                             r-magrittr
-                             r-ismev
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/promerpr/scanstatistics")
-    (synopsis "Space-Time Anomaly Detection using Scan Statistics")
-    (description
-     "Detection of anomalous space-time clusters using the scan statistics
-methodology.  Focuses on prospective surveillance of data streams, scanning for
-clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
-Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
-    (license license:gpl3+)))
-
 (define-public r-scannotate
   (package
     (name "r-scannotate")
@@ -51783,13 +51749,13 @@ server space has been provided by Ricardo Energy & Environment.")
 (define-public r-sapfluxnetr
   (package
     (name "r-sapfluxnetr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sapfluxnetr" version))
               (sha256
                (base32
-                "06w3wm8m55ak1zxdyqq01ymgvyw71hk2m1vv378dppjxib7kvh3z"))))
+                "0x437nhv3g327apxnihr1wnp4mmzxn9pfk24shpj6a8amxphlzxd"))))
     (properties `((upstream-name . "sapfluxnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

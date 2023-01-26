@@ -827,13 +827,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.11.0")
+    (version "1.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "15l1y0qapipgpv3ylbbv78fn9d2i4s0nnc34kp8a77g62qzqcz6b"))))
+                "059z97k9p9iv7q1rs9gcy9m3qds4d6v69dlsasznp8lhhcdhklnx"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -979,13 +979,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrGraph" version))
               (sha256
                (base32
-                "128qhrv2zkl8hl906gf7snqkl4gic41brawcy3a6aq8c4j1dxjvm"))))
+                "0l8a65p3hyk7ghdhgz3khiimn38c76j59k77w9k0rhm9mdwlq55c"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))

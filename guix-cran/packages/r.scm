@@ -17630,13 +17630,13 @@ time series.")
 (define-public r-rmatio
   (package
     (name "r-rmatio")
-    (version "0.16.0")
+    (version "0.17.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmatio" version))
               (sha256
                (base32
-                "1ar8736x5ww4cky4qp8fxlwa7p00yycs31ryrqsmbwhwvg2ddlkk"))))
+                "00bw80fkvwca7n4wbp70bn6qmy1wvbvqrl0jf4qgms2kid3dg5x6"))))
     (properties `((upstream-name . "rmatio")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -23808,13 +23808,13 @@ algorithm random forest.")
 (define-public r-rfvimptest
   (package
     (name "r-rfvimptest")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfvimptest" version))
               (sha256
                (base32
-                "0mfpwa0f3pjvjjs5q4g74ljkzs382dzr86aayqf2nnhsaz24aphq"))))
+                "1c14591y4wpi5r7f6azzyac93h6klgk8jqfaszzp01krkb8z2cdy"))))
     (properties `((upstream-name . "rfvimptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-permimp r-party))
@@ -35643,13 +35643,13 @@ needed.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppCWB" version))
               (sha256
                (base32
-                "0myyasiglgm1zmka3gz7vq08hqz5ag2y21ri4a0ck026dxdi6jmc"))))
+                "1n079c23qkv7xssafc2gjgam3hpp7f8avrfzq3zzc2c76nzfvg4k"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (inputs (list pcre))
@@ -43687,40 +43687,6 @@ agGrid'.")
 matrix population models ('MPMs').  Described in Jones et al. (2021)
 <doi:10.1101/2021.04.26.441330>.")
     (license license:gpl3)))
-
-(define-public r-raen
-  (package
-    (name "r-raen")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RAEN" version))
-              (sha256
-               (base32
-                "098d990qa987hx2llqwdw2bmi5nmrlda23j1rgmw5nirllk28d30"))))
-    (properties `((upstream-name . "RAEN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lars
-                             r-glmnet
-                             r-foreach
-                             r-fastcmprsk
-                             r-doparallel
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/saintland/RAEN")
-    (synopsis
-     "Random Approximate Elastic Net (RAEN) Variable Selection Method")
-    (description
-     "The Proportional Subdistribution Hazard (PSH) model has been popular for
-estimating the effects of the covariates on the cause of interest in Competing
-Risks analysis.  The fast accumulation of large scale datasets has posed a
-challenge to classical statistical methods.  Current penalized variable
-selection methods show unsatisfactory performance in ultra-high dimensional
-data.  We propose a novel method, the Random Approximate Elastic Net (RAEN),
-with a robust and generalized solution to the variable selection problem for the
-PSH model.  Our method shows improved sensitivity for variable selection
-compared with current methods.")
-    (license license:gpl2+)))
 
 (define-public r-radwords
   (package

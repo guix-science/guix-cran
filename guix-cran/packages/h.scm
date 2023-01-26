@@ -4735,13 +4735,13 @@ Generalized Linear Models ISBN: 978-1118730034, Pinheiro, J., Bates, D. (2006)
 (define-public r-hmcdm
   (package
     (name "r-hmcdm")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmcdm" version))
               (sha256
                (base32
-                "06nc9w1fghxbxfjckqqq7z6c8kc3ksxasdkya987kx1qfgyph9r8"))))
+                "1i9anbmqs4v4s0qs5xh23jfhf1pk39sgji8ynksr01ls6f485gap"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools r-rcpparmadillo r-rcpp r-progress
@@ -10552,13 +10552,13 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
 (define-public r-harmonizer
   (package
     (name "r-harmonizer")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "harmonizer" version))
               (sha256
                (base32
-                "1zckf30bpjxnpb5ymz1razdbzjpvq8gf3a3si5grm0c5m4gmypj7"))))
+                "05iiph9zx4wllviiwr92bhiq24bmi62iq9wjn8j91dvascd6xh5i"))))
     (properties `((upstream-name . "harmonizer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

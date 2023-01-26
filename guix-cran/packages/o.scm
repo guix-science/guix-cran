@@ -5807,13 +5807,13 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.13")
+    (version "2.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "1cflwn28b7vzmhvq6nnr2157frrka2jy9r68ga9z9c95nfhhlaj5"))))
+                "0mk197kdfq28gpj61zg1767z5p6rs4drg0dpw56la34j7pvirr43"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
