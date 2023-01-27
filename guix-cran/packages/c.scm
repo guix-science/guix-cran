@@ -827,13 +827,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.3.8")
+    (version "1.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvms" version))
               (sha256
                (base32
-                "0h5xxs8fq3riyg2bx35dl49vbsk6k4b1ckpxmb4r3850jfi5nals"))))
+                "014pqgs7d12l26z8hqvzc9mvi02gdiw4w7nvkmrvdgai1al09vwc"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25027,13 +25027,13 @@ CrossRef, Microsoft Academic Graph and CORE; <https://www.lens.org>).")
 (define-public r-citation
   (package
     (name "r-citation")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "citation" version))
               (sha256
                (base32
-                "0yqrqhy7asyj361z17qwq4qq0gc8iilhr156hqmcpkd0ld5wbc99"))))
+                "04468i0fvdz1h31a5ywvnla59q53r146gjvl7v664mgld79a8faj"))))
     (properties `((upstream-name . "citation")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-withr r-jsonlite r-desc))

@@ -321,13 +321,13 @@ by the research group around Cornelia Dowling through querying experts.")
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.3-0")
+    (version "0.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kstIO" version))
               (sha256
                (base32
-                "0pmgb7n4gvslzc6qhqga39593k45vimj1y774bfsxhsacsb1ad9l"))))
+                "1qv4mg9hi62imk6xsldqprm6aca33qkh13jjihmvddaam7xxcm1z"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

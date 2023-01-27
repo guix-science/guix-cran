@@ -881,6 +881,35 @@ for partial matrix correlations and binary data (Aben et al., 2018,
 <doi:10.1101/293993>).")
     (license license:gpl2)))
 
+(define-public r-itol-toolkit
+  (package
+    (name "r-itol-toolkit")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "itol.toolkit" version))
+              (sha256
+               (base32
+                "0ccwl2fsxpz0yw3vhwslp4qrzknmpah22nhddwxha0a9ckll058x"))))
+    (properties `((upstream-name . "itol.toolkit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-seqinr
+                             r-purrr
+                             r-dplyr
+                             r-data-table
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=itol.toolkit")
+    (synopsis "Helper Functions for 'Interactive Tree Of Life'")
+    (description
+     "The Interactive Tree Of Life <https://itol.embl.de/> online server can edit and
+annotate trees interactively.  The itol.toolkit package can support all types of
+annotation templates.")
+    (license license:expat)))
+
 (define-public r-itnr
   (package
     (name "r-itnr")
@@ -4515,13 +4544,13 @@ function rubikclust() from the R package KRIS'.")
 (define-public r-ipc
   (package
     (name "r-ipc")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipc" version))
               (sha256
                (base32
-                "10h54j83l7khk1lkpdwn6hwaz31i3v6svg4q1lxzvr2aqdsj7hy0"))))
+                "07bl1yj1y0dd56zmqip73rvbzzciwi5lafvqfhz0zxlk6pzyqfpj"))))
     (properties `((upstream-name . "ipc")))
     (build-system r-build-system)
     (propagated-inputs (list r-txtq r-shiny r-r6))
@@ -4530,7 +4559,7 @@ function rubikclust() from the R package KRIS'.")
     (synopsis "Tools for Message Passing Between Processes")
     (description
      "This package provides tools for passing messages between R processes.  Shiny
-Examples are provided showing how to perform useful tasks such as: updating
+examples are provided showing how to perform useful tasks such as: updating
 reactive values from within a future, progress bars for long running async
 tasks, and interrupting async tasks based on user input.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
@@ -4988,34 +5017,33 @@ Winters (1960) <doi:10.1287/mnsc.6.3.324>, Cleveland, Cleveland, & Terpenning
 (define-public r-inzighttools
   (package
     (name "r-inzighttools")
-    (version "1.12.3")
+    (version "1.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iNZightTools" version))
               (sha256
                (base32
-                "1ap617a2qhzb4j3320wa51zydz8bz26s9nfn78fj3g40czccmpai"))))
+                "1cla8s690wf219q33qw8s5zzlpjgq7k27i9am4wxl59ycgn4p7n3"))))
     (properties `((upstream-name . "iNZightTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-validate
+                             r-units
                              r-tidyr
                              r-tibble
                              r-survey
-                             r-styler
                              r-stringr
                              r-srvyr
-                             r-readxl
+                             r-rlang
                              r-readr
-                             r-rcpptoml
+                             r-purrr
                              r-magrittr
                              r-lubridate
-                             r-haven
                              r-glue
                              r-forcats
                              r-dplyr
-                             r-chron))
-    (home-page "http://inzight.nz")
+                             r-dbplyr
+                             r-dbi))
+    (home-page "https://inzight.nz")
     (synopsis "Tools for 'iNZight'")
     (description
      "This package provides a collection of wrapper functions for common variable and
@@ -5029,13 +5057,13 @@ effort to bridge the gap between GUI and coding.")
 (define-public r-inzightregression
   (package
     (name "r-inzightregression")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iNZightRegression" version))
               (sha256
                (base32
-                "1cjr6kzxja4vlkz7yk992p07f7g0sqrfmbmvgai03vyh37p67sq9"))))
+                "1qlakpx509cfj9r6g0pw28s5wwjg9i0srvhjhzarq4myxzqd78yq"))))
     (properties `((upstream-name . "iNZightRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-patchwork
@@ -5044,9 +5072,10 @@ effort to bridge the gap between GUI and coding.")
                              r-ggtext
                              r-ggrepel
                              r-ggplot2
+                             r-ggally
                              r-dplyr
                              r-car))
-    (home-page "http://inzight.nz")
+    (home-page "https://inzight.nz")
     (synopsis "Tools for Exploring Regression Models with 'iNZight'")
     (description
      "This package provides a suite of functions to use with regression models,
@@ -6165,6 +6194,34 @@ ionization mode.")
 and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
+
+(define-public r-interpret
+  (package
+    (name "r-interpret")
+    (version "0.1.28")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "interpret" version))
+              (sha256
+               (base32
+                "1h7ray8dw943hzhbc8k0b9v36xn8zpdskfjxpjh4hj71qzm02wq8"))))
+    (properties `((upstream-name . "interpret")))
+    (build-system r-build-system)
+    (home-page "https://github.com/interpretml/interpret")
+    (synopsis "Fit Interpretable Machine Learning Models")
+    (description
+     "Package for training interpretable machine learning models.  Historically, the
+most interpretable machine learning models were not very accurate, and the most
+accurate models were not very interpretable.  Microsoft Research has developed
+an algorithm called the Explainable Boosting Machine (EBM) which has both high
+accuracy and interpretable characteristics.  EBM uses machine learning
+techniques like bagging and boosting to breathe new life into traditional GAMs
+(Generalized Additive Models).  This makes them as accurate as random forests
+and gradient boosted trees, and also enhances their intelligibility and
+editability.  Details on the EBM algorithm can be found in the paper by Rich
+Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
+(2015, <doi:10.1145/2783258.2788613>).")
+    (license license:expat)))
 
 (define-public r-interplot
   (package
@@ -7713,6 +7770,43 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
      "Fit Spatial Econometrics models using Bayesian model averaging on models fitted
 with INLA. The INLA package can be obtained from <http://www.r-inla.org>.")
     (license license:gpl2+)))
+
+(define-public r-injurytools
+  (package
+    (name "r-injurytools")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "injurytools" version))
+              (sha256
+               (base32
+                "10nc31pjk5vjrdhnzj9ahqxhjp9zw3a6gswc4hqkkx4z7yldbjq1"))))
+    (properties `((upstream-name . "injurytools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-metr
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lzumeta/injurytools")
+    (synopsis "Toolkit for Sports Injury Data Analysis")
+    (description
+     "Sports Injury Data analysis aims to identify and describe the magnitude of the
+injury problem, and to gain more insights (e.g. determine potential risk
+factors) by statistical modelling approaches.  The injurytools package provides
+standardized routines and utilities that simplify such analyses.  It offers
+functions for data preparation, informative visualizations and descriptive and
+model-based analyses.")
+    (license license:expat)))
 
 (define-public r-injuryseverityscore
   (package
@@ -11971,13 +12065,13 @@ machine learning models.")
 (define-public r-ifctools
   (package
     (name "r-ifctools")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ifctools" version))
               (sha256
                (base32
-                "1cxxk1ysb5ya81g669xyalzmkpfjsjsrrqmvnsg1z0kwh5yv54ds"))))
+                "0w7yx4yhszamaf7k3ixsarxr7n5shrhim8ih7bkrf1fhfqlsn1g0"))))
     (properties `((upstream-name . "ifctools")))
     (build-system r-build-system)
     (home-page "https://github.com/lbraglia/ifctools")

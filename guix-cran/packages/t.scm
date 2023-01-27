@@ -3492,13 +3492,13 @@ Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tsdyn
   (package
     (name "r-tsdyn")
-    (version "11.0.2")
+    (version "11.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsDyn" version))
               (sha256
                (base32
-                "0dplrl4vknha2aa0h3vg0sivn2dm0h23my6y2gdghhplvzy0qaa4"))))
+                "0clwvgqsklmq9h5mx7g9lsw6f09cqglb77zb9xlbjh4brh2f3ljl"))))
     (properties `((upstream-name . "tsDyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -8867,13 +8867,13 @@ information can be found in Valencia-HernÃ¡ndez (2020)
 (define-public r-tosi
   (package
     (name "r-tosi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOSI" version))
               (sha256
                (base32
-                "0m33bid9dln3zafrzka5jbsk6zll02mmc2drhw3k22bmps1d4jfh"))))
+                "00v0cjyz22akar7jrpg5alnnbh2nhxjh5cmq053i65xl0wlbzdpg"))))
     (properties `((upstream-name . "TOSI")))
     (build-system r-build-system)
     (propagated-inputs (list r-scalreg r-mass r-hdi r-glmnet))
@@ -21515,6 +21515,44 @@ J., Kaendler, G. (2013) <doi:10.1007/s10342-013-0715-0>.")
 for each row, as well as how to handle missing data and the types of comparison
 tests to run on the table columns.")
     (license license:expat)))
+
+(define-public r-tangram
+  (package
+    (name "r-tangram")
+    (version "0.8.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tangram" version))
+              (sha256
+               (base32
+                "1r4wvz3nrms3mh06a7zykhkbsi4hz57xdn7af49yiypynhrxiin5"))))
+    (properties `((upstream-name . "tangram")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-r6
+                             r-magrittr
+                             r-knitr
+                             r-htmltools
+                             r-digest
+                             r-base64enc))
+    (home-page "https://github.com/spgarbet/tangram")
+    (synopsis "The Grammar of Tables")
+    (description
+     "This package provides an extensible formula system to quickly and easily create
+production quality tables.  The processing steps are a formula parser,
+statistical content generation from data as defined by formula, followed by
+rendering into a table.  Each step of the processing is separate and user
+definable thus creating a set of composable building blocks for highly
+customizable table generation.  A user is not limited by any of the choices of
+the package creator other than the formula grammar.  For example, one could
+chose to add a different S3 rendering function and output a format not provided
+in the default package, or possibly one would rather have Gini coefficients for
+their statistical content in a resulting table.  Routines to achieve New England
+Journal of Medicine style, Lancet style and Hmisc::summaryM() statistics are
+provided.  The package contains rendering for HTML5, Rmarkdown and an indexing
+format for use in tracing and tracking are provided.")
+    (license license:gpl3)))
 
 (define-public r-tangpoemr
   (package

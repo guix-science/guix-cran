@@ -1650,13 +1650,13 @@ to choose a base or source file and columns to merge or minus on.")
 (define-public r-jointvip
   (package
     (name "r-jointvip")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jointVIP" version))
               (sha256
                (base32
-                "1f3lpv3mgwqs76g59rhmwrbxhr9zawi483cnv523w8cl8b09jfpw"))))
+                "0cvkhmhydpkvb2g43prcq77g8yg4ydw5v47jj2wp73pa80z54kv3"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2))
@@ -1674,7 +1674,10 @@ comparisons via bias curves, derived using the classical omitted variable bias
 framework.  The joint variable importance plots translate variable importance
 into recommended values for tuning parameters in existing methods.
 Post-matching and/or weighting plots can also be used to visualize and assess
-the quality of the observational study design.")
+the quality of the observational study design.  The package and its usage is
+showcased in \"Using Joint Variable Importance Plots to Prioritize Variables in
+Assessing the Impact of Glyburide on Adverse Birth Outcomes\" by Liao et al.
+(2023) <arXiv:2301.09754>.")
     (license license:expat)))
 
 (define-public r-jointseg

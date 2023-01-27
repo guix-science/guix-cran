@@ -96,6 +96,27 @@ maintenance and the addition of minor functionality.")
 curve allowed to vary along the length of the curve.")
     (license license:gpl2+)))
 
+(define-public r-vvfiller
+  (package
+    (name "r-vvfiller")
+    (version "0.6.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvfiller" version))
+              (sha256
+               (base32
+                "0kknnnkfdw9h4wxs215pgmg1j0mbl5lqfw4xl0il8rw6n0yy7vsn"))))
+    (properties `((upstream-name . "vvfiller")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-dplyr))
+    (home-page "https://github.com/vusaverse/vvfiller")
+    (synopsis "Fill Data Points")
+    (description
+     "This package provides numerous functions to fill data.  These can be applied
+either to missing or skewed data.  The functions are designed within the scope
+of Student Analytics.")
+    (license license:expat)))
+
 (define-public r-vurocs
   (package
     (name "r-vurocs")
@@ -3783,24 +3804,22 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.1.8")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetiver" version))
               (sha256
                (base32
-                "0syp191inrg3kwmjimq8v65rmhn7nyb9jw0nkmy8zcm3dx4jyppr"))))
+                "1lyaq63wz4rdn2hi9rk7hl9wmq7jc0px7k8zj3gwvc1lmpcidkws"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tibble
                              r-rlang
-                             r-renv
                              r-readr
                              r-rapidoc
                              r-purrr
-                             r-plumber
                              r-pins
                              r-magrittr
                              r-lifecycle

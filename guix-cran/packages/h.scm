@@ -4087,18 +4087,18 @@ Vostok Paleo carbon dioxide and temperature data:
 (define-public r-hoardr
   (package
     (name "r-hoardr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hoardr" version))
               (sha256
                (base32
-                "0m6wfs78jpxk2jnlqdbg5x7i993j70bvaxm643qhb8axwbq174c1"))))
+                "0z34hgiwlgaljrfg0clmzx3fws1pdqq2hlg54awpvphz1qsx3r5r"))))
     (properties `((upstream-name . "hoardr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-r6 r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/hoardr")
+    (home-page "https://docs.ropensci.org/hoardr/")
     (synopsis "Manage Cached Files")
     (description
      "Suite of tools for managing cached files, targeting use in other R packages.

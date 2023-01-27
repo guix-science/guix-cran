@@ -1791,13 +1791,13 @@ described in B. Efron. (1979) <doi:10.1214/aos/1176344552> and P. Massart (1990)
 (define-public r-rvcg
   (package
     (name "r-rvcg")
-    (version "0.22")
+    (version "0.22.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rvcg" version))
               (sha256
                (base32
-                "1c9s0wp4n5bz32s5h9h18sxk69fri7ikl8yx490inb6znwh7hkgc"))))
+                "16rr2kqw7lqb7m01pwn496zf2nr25gm6wcncz44kszjzzmv2xanv"))))
     (properties `((upstream-name . "Rvcg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
@@ -7978,26 +7978,6 @@ as MAE, RMSE, Precision, Recall, F1, AUC, NDCG, RankScore and coverage measures.
 intended for rapid prototyping of recommendation algorithms and education
 purposes.")
     (license license:gpl3)))
-
-(define-public r-rrdrand
-  (package
-    (name "r-rrdrand")
-    (version "0.1-16")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rrdrand" version))
-              (sha256
-               (base32
-                "0j9yyvq8r1cgwj3kw1ak6hyazr67f2q0c1m651wdm0wcvm1ajx7f"))))
-    (properties `((upstream-name . "Rrdrand")))
-    (build-system r-build-system)
-    (home-page "http://prs.ism.ac.jp/~nakama/Rrdrand/")
-    (synopsis "'DRNG' on Intel CPUs with the 'RdRand' Instruction for R")
-    (description
-     "Make use of the hardware random number accessed by the RdRand instruction in
-recent Intel CPUs (Ivy Bridge and later).  DRNG is \"Digital Random Number
-Generator\".")
-    (license license:agpl3)))
 
 (define-public r-rrdap
   (package
@@ -22037,6 +22017,31 @@ the data, we would have acceptable agreement (kappa above the threshold).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-rhoneycomb
+  (package
+    (name "r-rhoneycomb")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rhoneycomb" version))
+              (sha256
+               (base32
+                "00xrprhr4805h59xl4s4gq774pghbm50hwdl1073aba6xf0yphv6"))))
+    (properties `((upstream-name . "rhoneycomb")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rhoneycomb")
+    (synopsis "Analysis of Honeycomb Selection Designs")
+    (description
+     "This package provides a useful statistical tool for the construction and
+analysis of Honeycomb Selection Designs.  More information about this type of
+designs: Fasoula V. (2013) <doi:10.1002/9781118497869.ch6> Fasoula V.A., and
+Tokatlidis I.S. (2012) <doi:10.1007/s13593-011-0034-0> Fasoulas A.C., and
+Fasoula V.A. (1995) <doi:10.1002/9780470650059.ch3> Tokatlidis I. (2016)
+<doi:10.1017/S0014479715000150> Tokatlidis I., and Vlachostergios D. (2016)
+<doi:10.3390/d8040029>.")
+    (license license:gpl2+)))
+
 (define-public r-rhnerm
   (package
     (name "r-rhnerm")
@@ -23201,28 +23206,6 @@ text outputs.")
      "This package provides an interface to the Python package Geomstats authored by
 Miolane et al. (2020) <arXiv:2004.04667>.")
     (license license:expat)))
-
-(define-public r-rgeolocate
-  (package
-    (name "r-rgeolocate")
-    (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rgeolocate" version))
-              (sha256
-               (base32
-                "08dps73sdlhsyzkykw3y9ckxazznymfsx63p9rcssghb2silw9xw"))))
-    (properties `((upstream-name . "rgeolocate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rgeolocate")
-    (synopsis "IP Address Geolocation")
-    (description
-     "Connectors to online and offline sources for taking IP addresses and geolocating
-them to country, city, timezone and other geographic ranges.  For individual
-connectors, see the package index.")
-    (license license:asl2.0)))
 
 (define-public r-rgeode
   (package
@@ -30765,25 +30748,23 @@ identified and it also facilitates the process of data management.")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.3")
+    (version "2.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redcapAPI" version))
               (sha256
                (base32
-                "1myycwdrlw1405fxc82zd8ps8bhdvf2ffsb91pia5ijf6952v8pf"))))
+                "14h8jjimhx5lxa6s4a4zlhk5h6n7vspnmvcwnn27q3prhz68k442"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-readr
                              r-lubridate
                              r-labelvector
                              r-httr
-                             r-dbi
                              r-chron
                              r-checkmate))
-    (home-page "https://github.com/nutterb/redcapAPI/wiki")
+    (home-page "https://github.com/vubiostat/redcapAPI")
     (synopsis "Interface to 'REDCap'")
     (description
      "Access data stored in REDCap databases using the Application Programming

@@ -3425,30 +3425,6 @@ method, as described by Bennett et. (2009) <doi:10.1109/CLUSTR.2009.5289161>.")
 neglected heterogeneity and/or endogenous covariates.")
     (license license:gpl2)))
 
-(define-public r-frlr
-  (package
-    (name "r-frlr")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fRLR" version))
-              (sha256
-               (base32
-                "01vnxb83d22ma6ij3pghgb9xh8vgm5dimrv9cggxm8ph74k82y1c"))))
-    (properties `((upstream-name . "fRLR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/szcf-weiya/fRLR")
-    (synopsis "Fit Repeated Linear Regressions")
-    (description
-     "When fitting a set of linear regressions which have some same variables, we can
-separate the matrix and reduce the computation cost.  This package aims to fit a
-set of repeated linear regressions faster.  More details can be found in this
-blog Lijun Wang (2017)
-<https://stats.hohoweiya.xyz/regression/2017/09/26/An-R-Package-Fit-Repeated-Linear-Regressions/>.")
-    (license license:gpl2+)))
-
 (define-public r-frk
   (package
     (name "r-frk")
@@ -7410,6 +7386,38 @@ Further provides functions to investigate the chaotic behavior of time series
 processes and to simulate different types of chaotic time series maps.")
     (license license:gpl2+)))
 
+(define-public r-fnets
+  (package
+    (name "r-fnets")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fnets" version))
+              (sha256
+               (base32
+                "0v3194zmnqqqm9pb13qwapzfzysp85v0brlbw6ffimz6yvjynj0j"))))
+    (properties `((upstream-name . "fnets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer
+                             r-mass
+                             r-lpsolve
+                             r-igraph
+                             r-foreach
+                             r-fields
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=fnets")
+    (synopsis
+     "Factor-Adjusted Network Estimation and Forecasting for High-Dimensional Time Series")
+    (description
+     "This package implements methods for network estimation and forecasting of
+high-dimensional time series exhibiting strong serial and cross-sectional
+correlations under a factor-adjusted vector autoregressive model.  See
+Barigozzi, Cho and Owens (2022) <arXiv:2201.06110> for further descriptions of
+FNETS methodology and Owens, Cho and Barigozzi (2023)
+<https://drive.google.com/file/d/1Rw-xgpijF8ZIBUzjIU9emr-ucAvAhKL4/view?usp=sharing>
+accompanying the R package.")
+    (license license:gpl3+)))
+
 (define-public r-fmultivar
   (package
     (name "r-fmultivar")
@@ -11168,6 +11176,28 @@ and plotting groups of statistically dependent columns.")
      "Scans all directories and subdirectories of a path for code snippets, R scripts,
 R Markdown, PDF or text files containing a specific pattern.  Files found can be
 copied to a new folder.")
+    (license license:gpl3)))
+
+(define-public r-findpackage
+  (package
+    (name "r-findpackage")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "findPackage" version))
+              (sha256
+               (base32
+                "0g6i512ls79hg0ck0frhadpxvvayzbdcj48rbpawhc5bphjsbcfx"))))
+    (properties `((upstream-name . "findPackage")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "<https://CRAN.R-project.org/package=findPackage>")
+    (synopsis "Find 'CRAN' Package by Topic")
+    (description
+     "Finds CRAN packages by the topic requested.  The topic can be given as a
+character string or as a regular expression and will help users to locate CRAN
+packages matching their specified requirement.  findPackage(<string>) returns a
+data frame of packages with description containing the input string.")
     (license license:gpl3)))
 
 (define-public r-findit

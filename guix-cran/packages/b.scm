@@ -13262,13 +13262,13 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.6.6")
+    (version "1.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BIGL" version))
               (sha256
                (base32
-                "1fbbx76gjqfadvg6nwjdla1p6c9mdjvyx412lddyl76rql3ndnwf"))))
+                "0ypaan35av1inbhn7h3r0m3c59xrgzzpc6j9dnbfi05c11xpwplg"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

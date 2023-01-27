@@ -1386,6 +1386,31 @@ predict the trend of mRNA (Mature RNA) transcription and expression changes in
 the future.")
     (license license:gpl2)))
 
+(define-public r-pulsar
+  (package
+    (name "r-pulsar")
+    (version "0.3.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pulsar" version))
+              (sha256
+               (base32
+                "01ylrxm4p0zxi22hj3yk1z30bh2xkbh8aywzcbzidk05ysd9fr6l"))))
+    (properties `((upstream-name . "pulsar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zdk123/pulsar")
+    (synopsis
+     "Parallel Utilities for Lambda Selection along a Regularization Path")
+    (description
+     "Model selection for penalized graphical models using the Stability Approach to
+Regularization Selection ('StARS'), with options for speed-ups including Bounded
+StARS (B-StARS), batch computing, and other stability metrics (e.g., graphlet
+stability G-StARS).  Christian L. MÃ¼ller, Richard Bonneau, Zachary Kurtz (2016)
+<arXiv:1605.07072>.")
+    (license license:gpl2+)))
+
 (define-public r-puls
   (package
     (name "r-puls")
@@ -13871,6 +13896,27 @@ set of polygons.  The mesh can be triangulated and its exterior edges are
 computed.")
     (license license:gpl3)))
 
+(define-public r-polyglotr
+  (package
+    (name "r-polyglotr")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "polyglotr" version))
+              (sha256
+               (base32
+                "10cdc9izmy45yjdr1ia5z9xn1hhj733wwnib8cfz0xsbzs88fwaw"))))
+    (properties `((upstream-name . "polyglotr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rvest r-magrittr r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Tomeriko96/polyglotr/")
+    (synopsis "Translate Text")
+    (description
+     "The goal of the this package is to provide easy methods to translate pieces of
+text.  Functions send requests to translation services online.")
+    (license license:expat)))
+
 (define-public r-polyfreqs
   (package
     (name "r-polyfreqs")
@@ -14210,6 +14256,52 @@ Harvard's Institute for Quantitative Social Science for support.")
     (description
      "Be responsible when scraping data from websites by following polite principles:
 introduce yourself, ask for permission, take slowly and never ask twice.")
+    (license license:expat)))
+
+(define-public r-polished
+  (package
+    (name "r-polished")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "polished" version))
+              (sha256
+               (base32
+                "10lq3l1gfz1mb0jcspnxjqadgavlsk1j3w185s17yf66anmlx1ph"))))
+    (properties `((upstream-name . "polished")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-otp
+                             r-lubridate
+                             r-jsonlite
+                             r-jose
+                             r-httr
+                             r-htmltools
+                             r-dt
+                             r-dplyr
+                             r-digest
+                             r-desc
+                             r-automagic))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tychobra/polished")
+    (synopsis "Authentication and Hosting for 'shiny' Apps")
+    (description
+     "Authentication, user administration, hosting, and additional infrastructure for
+shiny apps.  See <https://polished.tech> for additional documentation and
+examples.")
     (license license:expat)))
 
 (define-public r-poliscidata
@@ -14630,33 +14722,6 @@ method are explained in Yahav et al. (2012) <DOI:10.1002/asmb.901>.")
 Fleishman polynomials) simultaneously.  The details of the method are explained
 in Demirtas et al. (2012) <DOI:10.1002/sim.5362>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-poismf
-  (package
-    (name "r-poismf")
-    (version "0.4.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "poismf" version))
-              (sha256
-               (base32
-                "0axvld2mzhgdl47x951528hdxxr7mxvkxpgny24x0rngw9rn890f"))))
-    (properties `((upstream-name . "poismf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (home-page "https://github.com/david-cortes/poismf")
-    (synopsis
-     "Factorization of Sparse Counts Matrices Through Poisson Likelihood")
-    (description
-     "This package creates a non-negative low-rank approximate factorization of a
-sparse counts matrix by maximizing Poisson likelihood with L1/L2 regularization
-(e.g. for implicit-feedback recommender systems or bag-of-words-based topic
-modeling) (Cortes, (2018) <arXiv:1811.01908>), which usually leads to very
-sparse user and item factors (over 90% zero-valued).  Similar to hierarchical
-Poisson factorization (HPF), but follows an optimization-based approach with
-regularization instead of a hierarchical prior, and is fit through
-gradient-based methods instead of variational inference.")
-    (license license:bsd-2)))
 
 (define-public r-poisferobust
   (package
@@ -32837,6 +32902,48 @@ summarisation and visualisation.  Reference datasets (i.e.  Geological Time
 Scales <https://stratigraphy.org/chart>) and auxiliary functions are also
 provided.  Details can be found in: Jones et al., (2022) <doi:10.31223/X5Z94Q>.")
     (license license:gpl3+)))
+
+(define-public r-palaeosig
+  (package
+    (name "r-palaeosig")
+    (version "2.0-7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "palaeoSig" version))
+              (sha256
+               (base32
+                "0m7nfmiw5zwd8wlr9b4vx3x1bp2b9qdvxc46kxkrhc0jzz4pnvx7"))))
+    (properties `((upstream-name . "palaeoSig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-teachingdemos
+                             r-rlang
+                             r-rioja
+                             r-purrr
+                             r-mgcv
+                             r-mass
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-assertr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richardjtelford/palaeoSig")
+    (synopsis "Significance Tests for Palaeoenvironmental Reconstructions")
+    (description
+     "Several tests of quantitative palaeoenvironmental reconstructions from
+microfossil assemblages, including the null model tests of the statistically
+significant of reconstructions developed by Telford and Birks (2011)
+<doi:10.1016/j.quascirev.2011.03.002>, and tests of the effect of spatial
+autocorrelation on transfer function model performance using methods from
+Telford and Birks (2009) <doi:10.1016/j.quascirev.2008.12.020> and Trachsel and
+Telford (2016) <doi:10.5194/cp-12-1215-2016>.  Age-depth models with generalized
+mixed-effect regression from Heegaard et al (2005)
+<doi:10.1191/0959683605hl836rr> are also included.")
+    (license license:gpl3)))
 
 (define-public r-pakpmics2018mn
   (package

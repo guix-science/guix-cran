@@ -19340,13 +19340,13 @@ tidal catalogs.")
 (define-public r-earth
   (package
     (name "r-earth")
-    (version "5.3.1")
+    (version "5.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "earth" version))
               (sha256
                (base32
-                "00sbki2cpdj87i8f43qkswl1hza8z59wnn8xvv2qxsscjyx0dghb"))))
+                "1shbmh730fkn6zh5glzyygvarndahx1fs1dv26lhc9wsvxgdfi68"))))
     (properties `((upstream-name . "earth")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos r-plotmo r-formula))

@@ -14783,13 +14783,13 @@ automatic method for identification of reference channels.")
 (define-public r-df2yaml
   (package
     (name "r-df2yaml")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "df2yaml" version))
               (sha256
                (base32
-                "01402hfz0irmnh5088y7dvxdfi1n0dr8n5zn1zyn5alxrrzm20hx"))))
+                "1ni61pf7sjwvgbfvwy91n6fbs6aa5vviq0xy6jsgddbwrk9diigj"))))
     (properties `((upstream-name . "df2yaml")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

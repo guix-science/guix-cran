@@ -7217,44 +7217,6 @@ methodology.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-gpbayes
-  (package
-    (name "r-gpbayes")
-    (version "0.1.0-5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GPBayes" version))
-              (sha256
-               (base32
-                "1jp1xdvbzi6zrrg11dbbl6f7pp92xwasfyy6l8myl6kc2b0afs1m"))))
-    (properties `((upstream-name . "GPBayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=GPBayes")
-    (synopsis
-     "Tools for Gaussian Process Modeling in Uncertainty Quantification")
-    (description
-     "Gaussian processes (GPs) have been widely used to model spatial data,
-spatio-temporal data, and computer experiments in diverse areas of statistics
-including spatial statistics, spatio-temporal statistics, uncertainty
-quantification, and machine learning.  This package creates basic tools for
-fitting and prediction based on GPs with spatial data, spatio-temporal data, and
-computer experiments.  Key characteristics for this GP tool include: (1) the
-comprehensive implementation of various covariance functions including the
-MatÃ©rn family and the Confluent Hypergeometric family with isotropic form,
-tensor form, and automatic relevance determination form, where the isotropic
-form is widely used in spatial statistics, the tensor form is widely used in
-design and analysis of computer experiments and uncertainty quantification, and
-the automatic relevance determination form is widely used in machine learning;
-(2) implementations via Markov chain Monte Carlo (MCMC) algorithms and
-optimization algorithms for GP models with all the implemented covariance
-functions.  The methods for fitting and prediction are mainly implemented in a
-Bayesian framework; (3) model evaluation via Fisher information and predictive
-metrics such as predictive scores; (4) built-in functionality for simulating GPs
-with all the implemented covariance functions; (5) unified implementation to
-allow easy specification of various GPs.")
-    (license license:gpl2+)))
-
 (define-public r-gparotation
   (package
     (name "r-gparotation")
@@ -9410,13 +9372,13 @@ polynomials with rational coefficients.")
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.4.7")
+    (version "1.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gMOIP" version))
               (sha256
                (base32
-                "1qg0ba3crky35l9qlcqg37bzrr9ilh8df1y110r2pqnkdns7ikj6"))))
+                "1bldxi4mv4cj25r9bg6dlv1lg1p1vkczwylmgs2xp9igk0pk15hk"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -24253,13 +24215,13 @@ categories.")
 (define-public r-gcalignr
   (package
     (name "r-gcalignr")
-    (version "1.0.3")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GCalignR" version))
               (sha256
                (base32
-                "0fq5jglgbw2cqm4pa7x4lczqjr1w65ddnhzlr2i97skzk0gcdlr5"))))
+                "1p1x61fwn7xpwirhrdj9zpyh2jpcsmwdgk3pp1qdl1j9p77nqd1a"))))
     (properties `((upstream-name . "GCalignR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

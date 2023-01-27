@@ -11710,13 +11710,13 @@ changed.")
 (define-public r-molar
   (package
     (name "r-molar")
-    (version "5.2")
+    (version "5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "molaR" version))
               (sha256
                (base32
-                "1wv296ak6lhndagc9l5ipj5s4w6ralp4fysl6yl39k7x1904h6yd"))))
+                "01l68a4jsp0dlylnp9ij1db0q4510l38jlql787bi6ah07xwf8zq"))))
     (properties `((upstream-name . "molaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-pracma r-alphahull))
@@ -15894,18 +15894,17 @@ Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3fselect" version))
               (sha256
                (base32
-                "06ddy5yym85bbvfsrk8zv8wqizwin9x77mgr98md09sm459lwivb"))))
+                "0zphlpxs03sgqlpvppbxkxzajfpk9g3vnjfcbxmnafmf85qps2h5"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
                              r-paradox
-                             r-mlr3pipelines
                              r-mlr3misc
                              r-mlr3
                              r-lgr
@@ -30902,6 +30901,36 @@ The rethinking package requires installing rstan', which is onerous to install,
 while also not adding capabilities to this function.")
     (license license:agpl3+)))
 
+(define-public r-mcr
+  (package
+    (name "r-mcr")
+    (version "1.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mcr" version))
+              (sha256
+               (base32
+                "0lcl8g6s5sq74hpdj4wj9xh3p7nr03h9wnlnib1pmdcs1avlp3za"))))
+    (properties `((upstream-name . "mcr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robslopes))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=mcr")
+    (synopsis "Method Comparison Regression")
+    (description
+     "Regression methods to quantify the relation between two measurement methods are
+provided by this package.  In particular it addresses regression problems with
+errors in both variables and without repeated measurements.  It implements the
+CLSI recommendations (see J. A. Budd et al. (2018,
+<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
+analytical method comparison and bias estimation using patient samples.
+Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
+are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
+Raymaekers and F. Dufey (2022, <arXiv:2202:08060>).  A comprehensive overview
+over the implemented methods and references can be found in the manual pages
+\"mcr-package\" and \"mcreg\".")
+    (license license:gpl3+)))
+
 (define-public r-mcptests
   (package
     (name "r-mcptests")
@@ -34021,6 +34050,29 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
 Wishart, inverse-Wishart, normal, t, inverted-t, Beta type I, Beta type II,
 Gamma, confluent hypergeometric.  Allows to simulate the noncentral Wishart
 distribution without the integer restriction on the degrees of freedom.")
+    (license license:gpl3)))
+
+(define-public r-matrixprofiler
+  (package
+    (name "r-matrixprofiler")
+    (version "0.1.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matrixprofiler" version))
+              (sha256
+               (base32
+                "1kqpxg0mvyc494nr2whrcwjaa51jm5n2mxjwhdcr87jqp5y3hma6"))))
+    (properties `((upstream-name . "matrixprofiler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppthread r-rcppprogress r-rcppparallel r-rcpp
+                             r-checkmate))
+    (home-page "https://github.com/matrix-profile-foundation/matrixprofiler")
+    (synopsis "Matrix Profile for R")
+    (description
+     "This is the core functions needed by the tsmp package.  The low level and
+carefully checked mathematical functions are here.  These are implementations of
+the Matrix Profile concept that was created by CS-UCR
+<http://www.cs.ucr.edu/~eamonn/MatrixProfile.html>.")
     (license license:gpl3)))
 
 (define-public r-matrixprofile

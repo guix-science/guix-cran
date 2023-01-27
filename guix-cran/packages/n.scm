@@ -8104,18 +8104,18 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nextgenshinyapps
   (package
     (name "r-nextgenshinyapps")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nextGenShinyApps" version))
               (sha256
                (base32
-                "1zj37yqrnxzlrjz8bcrskfl11ql1q27mfffx3342gllkfmpgd8vp"))))
+                "0yvjchdxd8zxilq05x5ihjh10wzn9cz8cp6sr6jrnxgkiyrgh46q"))))
     (properties `((upstream-name . "nextGenShinyApps")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/oobianom/nextGenShinyApps")
+    (home-page "https://nextgenshinyapps.obi.obianom.com")
     (synopsis
      "Advanced Tools for Building the Next Generation of 'Shiny' Applications and Dashboards")
     (description
@@ -11421,6 +11421,28 @@ to reportable printed statistics is covered for basic experimental designs.")
     (synopsis "Tidy Up Date/Time Ranges")
     (description
      "Collapse, partition, combine, fill gaps in and expand date/time ranges.")
+    (license license:expat)))
+
+(define-public r-neatr
+  (package
+    (name "r-neatr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "neatR" version))
+              (sha256
+               (base32
+                "0s53vgrkh8hmavk05779da63lbdydcrmihqsiiyq27j1bi1b7ld5"))))
+    (properties `((upstream-name . "neatR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-data-table))
+    (home-page "https://cran.r-project.org/package=neatR")
+    (synopsis "Neat Data for Presentation")
+    (description
+     "Utilities for unambiguous, neat and legible representation of data (date, time
+stamp, numbers, percentages and strings) for presentation of analysis , aiming
+for elegance and consistency.  The purpose of this package is to format data,
+that is better for presentation and any automation jobs that reports numbers.")
     (license license:expat)))
 
 (define-public r-neatmaps

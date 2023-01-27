@@ -925,13 +925,13 @@ repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ottr" version))
               (sha256
                (base32
-                "1p65asprzrdg9z2qpvgwpgn522b2rc0ndlbdgfrh2phzbfjxzwrl"))))
+                "03iqvslgf2njyyvk1icqr1bn8xhc0fpx92gkc1g8gir2hja7qzps"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
@@ -7606,13 +7606,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "omnibus" version))
               (sha256
                (base32
-                "12fv9hlffxfs1b86gbq994yq4ha10yakrs8b44j11ncqjk1n16dk"))))
+                "09sy56x8730ilv4szg4gzvgrh9vps3brsysvcssg4s6fidssinhn"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")

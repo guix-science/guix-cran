@@ -3779,6 +3779,27 @@ diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
 <arXiv:1804.04583> for a detailed description of the methods.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-lolliplot
+  (package
+    (name "r-lolliplot")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lolliplot" version))
+              (sha256
+               (base32
+                "1rr0j0y298dmmllck11jq36glxczcsz6z7kw9290k77z75fi3vzi"))))
+    (properties `((upstream-name . "lolliplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-iranges r-grimport r-genomicranges))
+    (home-page "https://cran.r-project.org/package=lolliplot")
+    (synopsis "Plot Variants and Somatic Mutations")
+    (description
+     "Draw lolliplot using GRanges objects.  this package was designed only for
+drawing lolliplot.  So, it's faster than trackViewer', but un-related functions
+has been derived.")
+    (license license:gpl2+)))
+
 (define-public r-lokern
   (package
     (name "r-lokern")
@@ -6969,16 +6990,16 @@ potentially a limited number of times.")
 (define-public r-lite
   (package
     (name "r-lite")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lite" version))
               (sha256
                (base32
-                "15zvqz2n2h6fw4ckypm9q9qcricxhrgmd00l70dqv0jvw1bwgyf2"))))
+                "0gfbffh4511c7hwy6js0bip69j340f7qmrjaslnjgyx1nvmi7dxd"))))
     (properties `((upstream-name . "lite")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-revdbayes r-exdex r-chandwich))
+    (propagated-inputs (list r-sandwich r-rust r-revdbayes r-exdex r-chandwich))
     (native-inputs (list r-knitr))
     (home-page "https://paulnorthrop.github.io/lite/")
     (synopsis "Likelihood-Based Inference for Time Series Extremes")
@@ -6990,7 +7011,8 @@ cluster dependence in the data using the methodology in Chandler and Bate (2007)
 <doi:10.1093/biomet/asm015>, producing an adjusted log-likelihood for the model
 parameters.  A log-likelihood for the extremal index is produced using the
 K-gaps model of Suveges and Davison (2010) <doi:10.1214/09-AOAS292>.  These
-log-likelihoods are combined to make inferences about return levels.")
+log-likelihoods are combined to make inferences about extreme values.  Both
+maximum likelihood and Bayesian approaches are available.")
     (license license:gpl2+)))
 
 (define-public r-listwithdefaults
@@ -8351,13 +8373,13 @@ higher order polynomial models.  Jhang et al. (2004)
 (define-public r-limorhyde2
   (package
     (name "r-limorhyde2")
-    (version "0.0.7")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "limorhyde2" version))
               (sha256
                (base32
-                "06w3yf391gzaz0rssbl8jp3n9jmywwkmaxbf8mqxds5zy94f4bry"))))
+                "0icwh7vvid7xxlk5jmqqkl6507b4vc0fmpp0wm10lsh0wxibmvwf"))))
     (properties `((upstream-name . "limorhyde2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -11777,13 +11799,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.1.1.0")
+    (version "0.1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ldt" version))
               (sha256
                (base32
-                "05zjvsdj8zmyc6ji4h9x16h9d2w6rlw83gz6gwbc2gsnn282dyil"))))
+                "0lckxp4v9xhzqdmhi0jvxncnxy4692xa9zimi7yh4n5ldlzvb272"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-rcpp r-jsonlite r-bh))

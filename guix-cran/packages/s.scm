@@ -14917,13 +14917,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.11.1")
+    (version "1.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "044q7hih5r39lyawgv04jvfs4dwy00bvicxxd16c25rijhk7700q"))))
+                "0b962m9nnb2rr8l2bawxn5py1ywzm1jy5amzkk3l6zz4gc2cq8l7"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjava r-checkmate))
@@ -50097,6 +50097,37 @@ relationships among different classes and objects.")
      "Import, plot, and diagnose results from statistical catch-at-age models, used in
 fisheries stock assessment.")
     (license license:gpl3)))
+
+(define-public r-scanstatistics
+  (package
+    (name "r-scanstatistics")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scanstatistics" version))
+              (sha256
+               (base32
+                "04pymq6bikmsjqlwszd9ihv85s5qg8ci5y4dr6jmi95dgdm988pj"))))
+    (properties `((upstream-name . "scanstatistics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sets
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plyr
+                             r-magrittr
+                             r-ismev
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/promerpr/scanstatistics")
+    (synopsis "Space-Time Anomaly Detection using Scan Statistics")
+    (description
+     "Detection of anomalous space-time clusters using the scan statistics
+methodology.  Focuses on prospective surveillance of data streams, scanning for
+clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
+Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
+    (license license:gpl3+)))
 
 (define-public r-scannotate
   (package
