@@ -7136,13 +7136,13 @@ equations.")
 (define-public r-streambugs
   (package
     (name "r-streambugs")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "streambugs" version))
               (sha256
                (base32
-                "1363w0sf7lahcg3dhvl6l7hybgr71r21xbxs718a73zy5pnwm4s2"))))
+                "06h7721yjjz1gz8kp32fq96cy0v5a0dhy9q0s20fp3wyycb2jy37"))))
     (properties `((upstream-name . "streambugs")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))
@@ -11253,13 +11253,13 @@ breeding experiments developed by Biometris.")
 (define-public r-statespacer
   (package
     (name "r-statespacer")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statespacer" version))
               (sha256
                (base32
-                "006x2lxii82zj7baizwiykml74vn0yayxd2lpjwpbl9czjp85b3a"))))
+                "18bir894yrbff5h5pbqr342xckb78zzb24x2yrv9ffhrl5dvyk5d"))))
     (properties `((upstream-name . "statespacer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
@@ -22048,13 +22048,13 @@ on code from www.sparse-grids.de")
 (define-public r-sparsegl
   (package
     (name "r-sparsegl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparsegl" version))
               (sha256
                (base32
-                "1khf6r7fzddq2vxqvj70vsvjmk7ksivjz1vipwxnc6a3fr4lbg73"))))
+                "1v1cch790v4icxay0l63pad613z4p5cax6xni4bdx4ih7mhn4ln8"))))
     (properties `((upstream-name . "sparsegl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33604,6 +33604,31 @@ include detection of code clones for improving software quality and of
 plagiarism amongst students assignments.")
     (license license:gpl3+)))
 
+(define-public r-simidm
+  (package
+    (name "r-simidm")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simIDM" version))
+              (sha256
+               (base32
+                "1fk8slwcm26hnqzrhrv459kq120cwhg38jyxax280g3ynqjss59h"))))
+    (properties `((upstream-name . "simIDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/simIDM/")
+    (synopsis "Simulating Oncology Trials using an Illness-Death Model")
+    (description
+     "Based on the illness-death model a large number of clinical trials with oncology
+endpoints progression-free survival (PFS) and overall survival (OS) can be
+simulated, see Meller, Beyersmann and Rufibach (2019) <doi:10.1002/sim.8295>.
+The simulation set-up allows for random and event-driven censoring, an arbitrary
+number of treatment arms, staggered study entry and drop-out.  Exponentially,
+Weibull and piecewise exponentially distributed survival times can be generated.")
+    (license license:asl2.0)))
+
 (define-public r-simico
   (package
     (name "r-simico")
@@ -34932,13 +34957,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "signnet" version))
               (sha256
                (base32
-                "187lflgdbm59swlclnb4d0mjmpba8hj5phfds6mhpyhwazfca7qv"))))
+                "1fws1yqdrsq1668f6ikb1k43c8la5w6qvc2mayr1ir2ywf9gk8h8"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-igraph))
@@ -39639,13 +39664,13 @@ Setiawan(2016)<https://www.researchgate.net/publication/316517889_S-GSTAR-SUR_mo
 (define-public r-sgsr
   (package
     (name "r-sgsr")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sgsR" version))
               (sha256
                (base32
-                "010lqnc31wh68mfzjd5zyjlsnclrnakz89h3brvb42xl92j8w3ik"))))
+                "1ikf1f22hjlr4cm1rik13xaikacwlib7k2a915nmnxp1hy37d56x"))))
     (properties `((upstream-name . "sgsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

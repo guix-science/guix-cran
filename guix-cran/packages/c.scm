@@ -593,13 +593,13 @@ available in GarcÃ­a-Callejas, D., Godoy, O., and Bartomeus, I. (2020)
 (define-public r-cxhull
   (package
     (name "r-cxhull")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cxhull" version))
               (sha256
                (base32
-                "14aknp7hj8yc5dmgm6h9lp3n8fslii4vlhz08304ri32v75zn0p9"))))
+                "1qapfi226yl6qm7h3zm321bi9j9h0f6qsy414pim8wdm6wv00500"))))
     (properties `((upstream-name . "cxhull")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-morpho r-data-table))
@@ -4816,13 +4816,13 @@ high-dimensional) set of surrogate markers.")
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
-    (version "0.9.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstalkr" version))
               (sha256
                (base32
-                "0zydsyi0banjwkk4q1b231f1smww3xwmxfm5ibj2az41ppj39m2j"))))
+                "0rjkcmqzdw8rfvxydf8zr48kc6s03q7f8i41g0z5bdvnf4ydna4m"))))
     (properties `((upstream-name . "crosstalkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4832,8 +4832,10 @@ high-dimensional) set of surrogate markers.")
                              r-stringdb
                              r-rlang
                              r-readr
+                             r-rcpp
                              r-matrix
                              r-magrittr
+                             r-iterators
                              r-igraph
                              r-ggplot2
                              r-foreach
@@ -4845,12 +4847,12 @@ high-dimensional) set of surrogate markers.")
     (synopsis
      "Analysis of Graph-Structured Data with a Focus on Protein-Protein Interaction Networks")
     (description
-     "This package provides a general framework for the identification of nodes that
-are functionally related to a set of seeds in graph structured data.  In
-addition to being optimized for use with generic graphs, we also provides
+     "This package provides a general toolkit for drug target identification.  We
+include functionality to reduce large graphs to subgraphs and prioritize nodes.
+In addition to being optimized for use with generic graphs, we also provides
 support to analyze protein-protein interactions networks from online
-repositories.  For more details on core method, refer to Nibbe et al. (2010)
-<doi:10.1371/journal.pcbi.1000639>.")
+repositories.  For more details on core method, refer to Weaver et al. (2021)
+<https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008755>.")
     (license license:gpl3+)))
 
 (define-public r-crosstabs-loglinear
@@ -22204,6 +22206,30 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (2018) <arXiv:1807.05926>.")
     (license license:gpl3+)))
 
+(define-public r-clugenr
+  (package
+    (name "r-clugenr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clugenr" version))
+              (sha256
+               (base32
+                "151bgpyqnjznpkcdj2x0hj4f2cwy1jlkpyyxsqzcjcmr72nwr06l"))))
+    (properties `((upstream-name . "clugenr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mathjaxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/clugen/clugenr")
+    (synopsis "Multidimensional Cluster Generation Using Support Lines")
+    (description
+     "An implementation of the clugen algorithm for generating multidimensional
+clusters.  Each cluster is supported by a line segment, the position,
+orientation and length of which guide where the respective points are placed.
+This package is described in Fachada & de Andrade (2023)
+<doi:10.48550/arXiv.2301.10327>.")
+    (license license:expat)))
+
 (define-public r-cluer
   (package
     (name "r-cluer")
@@ -33865,33 +33891,6 @@ to each of them.  This procedure was invented and implemented in the paper by
 Implements methods from Schafer, JL, Analysis of Incomplete Multivariate Data,
 Chapman and Hall.")
     (license (license:fsdg-compatible "file://LICENSE"))))
-
-(define-public r-castor
-  (package
-    (name "r-castor")
-    (version "1.7.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "castor" version))
-              (sha256
-               (base32
-                "1qbndwmzzpkzgiah0hgid9z5f9iv2j53d515bjcci1591gx1fk36"))))
-    (properties `((upstream-name . "castor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-rcpp r-naturalsort r-matrix))
-    (home-page "https://cran.r-project.org/package=castor")
-    (synopsis "Efficient Phylogenetics on Large Trees")
-    (description
-     "Efficient phylogenetic analyses on massive phylogenies comprising up to millions
-of tips.  Functions include pruning, rerooting, calculation of most-recent
-common ancestors, calculating distances from the tree root and calculating
-pairwise distances.  Calculation of phylogenetic signal and mean trait depth
-(trait conservatism), ancestral state reconstruction and hidden character
-prediction of discrete characters, simulating and fitting models of trait
-evolution, fitting and simulating diversification models, dating trees,
-comparing trees, and reading/writing trees in Newick format.  Citation: Louca,
-Stilianos and Doebeli, Michael (2017) <doi:10.1093/bioinformatics/btx701>.")
-    (license license:gpl2+)))
 
 (define-public r-cast
   (package

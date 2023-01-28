@@ -567,6 +567,30 @@ from the studies Rencher (2003), Nel and Merwe (1986) <DOI:
 Estrada (2009) <DOI: 10.1080/03610920802474465>.")
     (license license:gpl2)))
 
+(define-public r-mvt
+  (package
+    (name "r-mvt")
+    (version "0.3-8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MVT" version))
+              (sha256
+               (base32
+                "0j3xjxrjy72dcdphlwdzfpnmxx0vs3f0jnk3w4vkp7rx01c1wbd3"))))
+    (properties `((upstream-name . "MVT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fastmatrix))
+    (home-page "http://mvt.mat.utfsm.cl/")
+    (synopsis "Estimation and Testing for the Multivariate t-Distribution")
+    (description
+     "Routines to perform estimation and inference under the multivariate
+t-distribution <doi:10.1007/s10182-022-00468-2>.  Currently, the following
+methodologies are implemented: multivariate mean and covariance estimation,
+hypothesis testing about equicorrelation and homogeneity of variances, the
+Wilson-Hilferty transformation, QQ-plots with envelopes and random variate
+generation.")
+    (license license:gpl3)))
+
 (define-public r-mvslouch
   (package
     (name "r-mvslouch")
@@ -5870,13 +5894,13 @@ and score-based methods to select the next module and estimate ability levels
 (define-public r-mstknnclust
   (package
     (name "r-mstknnclust")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mstknnclust" version))
               (sha256
                (base32
-                "0bg38gnaf2jjva8l2wk862ch2cpqvw7szvvvpb2bnz02fp795p3g"))))
+                "1b07a2whgr27ph0i1gdszahpbiriklf8jafikg02x6qb63lnry7r"))))
     (properties `((upstream-name . "mstknnclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -10345,13 +10369,13 @@ endosteal contours of each cross section.")
 (define-public r-morpho
   (package
     (name "r-morpho")
-    (version "2.10")
+    (version "2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Morpho" version))
               (sha256
                (base32
-                "039gnlfgwi5qvffpx0b9v7chhj9acrnxybm56ssam5znri3wbqyw"))))
+                "1c69n9284chygd375gkir4nk5bjglamhfyk2lz4z3kzy3z25qw50"))))
     (properties `((upstream-name . "Morpho")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -34947,16 +34971,19 @@ Reckase (2009) <doi:10.1007/978-0-387-89976-3>, and Mulder & van der Linden
 (define-public r-mastif
   (package
     (name "r-mastif")
-    (version "1.0.1")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mastif" version))
               (sha256
                (base32
-                "1jw7dz4qxyj848qm7lwg0klcw028260nizdi5gdwf7wd5a2nis9c"))))
+                "1jfb46f28pkf14xj16n37hbnxg57vjlz7gjhr01bb82dhd293mxw"))))
     (properties `((upstream-name . "mastif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
+                             r-stringr
+                             r-stringi
+                             r-robustbase
                              r-repmis
                              r-rcpparmadillo
                              r-rcpp

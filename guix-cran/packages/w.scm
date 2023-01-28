@@ -779,13 +779,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.7.0.1")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "17lsq5zn74n5a4diaylz7fqc867dl14b2r4rkjxwm36vhx736h19"))))
+                "0yflmf8k4rhn68rk364nnl4x3gav80darf8n21g5ic9yj5yzyqw2"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))

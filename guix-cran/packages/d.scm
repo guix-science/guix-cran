@@ -9727,13 +9727,13 @@ distance surface.  But the workhorse is distance_to.")
 (define-public r-distances
   (package
     (name "r-distances")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distances" version))
               (sha256
                (base32
-                "0mmwks1qzx680izv26x8mcfs4i16mnmf6s9arz1ssx470xwxljxy"))))
+                "1gbwi8x2490wliks7q3gm0bz11mgjpkc7q8al77brllg70r3lmaq"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
     (home-page "https://github.com/fsavje/distances")

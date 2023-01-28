@@ -4459,13 +4459,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.3")
+    (version "9.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "17vzxlwzdd62mn8gr4hsmy2cq0bzh9vdfm3k2h7621a7dz3y588y"))))
+                "1gc4zz2i7zqxpv2rdldml7npbp27fyylqym41rh1pafx9icpdwaf"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -6912,13 +6912,13 @@ dichotomous items based on the three-parameter logistic (3PL) model.")
 (define-public r-rscala
   (package
     (name "r-rscala")
-    (version "3.2.19")
+    (version "3.2.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rscala" version))
               (sha256
                (base32
-                "1wq0wrdbh0gi0bx4m9526qlbjm7nxxqgc17ikdx5mrhcy2f61hjk"))))
+                "1607nsfyvksv5ylxc5ma2cz8z0njysfyvyw085fkjb28ybfg6zjg"))))
     (properties `((upstream-name . "rscala")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -6926,7 +6926,7 @@ dichotomous items based on the three-parameter logistic (3PL) model.")
     (home-page "https://github.com/dbdahl/rscala")
     (synopsis "Bridge Between 'R' and 'Scala' with Callbacks")
     (description
-     "Scala <http://www.scala-lang.org/> is embedded in R and callbacks from Scala to
+     "Scala <https://www.scala-lang.org/> is embedded in R and callbacks from Scala to
 R are available.  Support is provided to write R packages that access Scala'.
 After installation, please run rscala::scalaConfig()'.  The vignette provides an
 update of the original paper <doi:10.18637/jss.v092.i04>.")
@@ -11561,13 +11561,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.10")
+    (version "0.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolog" version))
               (sha256
                (base32
-                "0g9bhb2bjhmxmpsz3ywrdv6vm2zfxqj9fdqzj4zx77z7if3y8wag"))))
+                "14vldpnjfg4cgbzlnyar6vn2kmswryjwm4qqdy3dpn1alj1b0pkh"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -17858,13 +17858,13 @@ objects.")
 (define-public r-rmangal
   (package
     (name "r-rmangal")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmangal" version))
               (sha256
                (base32
-                "0hky6gsqm4z9xkzvjrzfy72mk35k48i1rbb5za9i7895l15ri8nc"))))
+                "1zy4cp177kbd9k7g84qb4ccb5n8x8nb96mb32qgy3z1hlnxilgg3"))))
     (properties `((upstream-name . "rmangal")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-jsonlite r-igraph r-httr))
@@ -26425,13 +26425,13 @@ Ed.  2011, 2nd Ed.  2018) by Laura Chihara and Tim Hesterberg.")
 (define-public r-rereg
   (package
     (name "r-rereg")
-    (version "1.4.4")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reReg" version))
               (sha256
                (base32
-                "10x4gr41brdnpk2swhh3nlhw1qwirxkphmj7dh5sbc63hnw48ih4"))))
+                "00mqj2klbkibrqv1fqyv3m583rg711c7xasdpbn7345846851aq8"))))
     (properties `((upstream-name . "reReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -26453,9 +26453,10 @@ Ed.  2011, 2nd Ed.  2018) by Laura Chihara and Tim Hesterberg.")
     (description
      "This package provides a comprehensive collection of practical and easy-to-use
 tools for regression analysis of recurrent events, with or without the presence
-of a (possibly) informative terminal event.  The modeling framework is based on
-a joint frailty scale-change model, that includes models described in Wang et
-al. (2001) <doi:10.1198/016214501753209031>, Huang and Wang (2004)
+of a (possibly) informative terminal event described in Chiou et al. (2023)
+<doi:10.18637/jss.v105.i05>.  The modeling framework is based on a joint frailty
+scale-change model, that includes models described in Wang et al. (2001)
+<doi:10.1198/016214501753209031>, Huang and Wang (2004)
 <doi:10.1198/016214504000001033>, Xu et al. (2017)
 <doi:10.1080/01621459.2016.1173557>, and Xu et al. (2019)
 <doi:10.5705/SS.202018.0224> as special cases.  The implemented estimating
@@ -39819,13 +39820,13 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.28.8")
+    (version "0.29.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rayrender" version))
               (sha256
                (base32
-                "0d4vf2g98rc721d9kxiwgqjk6n2b3rfaa5vzxnmjgl3cbrv3fbxk"))))
+                "1qw6i1a9szkiaf0v8265x1a4p9ay7zjkzmxjkmr357pizfdvs0k2"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacefillr
@@ -40364,6 +40365,29 @@ Water Act requirements.  ATTAINS information and API information is available at
      "Calculation of ratios between two data sets containing environmental data like
 element concentrations by different methods.  Additionally plant element
 concentrations can be corrected for adhering particles (soil, airborne dust).")
+    (license license:gpl3)))
+
+(define-public r-rationalmatrix
+  (package
+    (name "r-rationalmatrix")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RationalMatrix" version))
+              (sha256
+               (base32
+                "1nzhfmvckb9hp53lyw6gyv5r492n4xii8l1xkr38p5i07r52zq2c"))))
+    (properties `((upstream-name . "RationalMatrix")))
+    (build-system r-build-system)
+    (inputs (list gmp))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-gmp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/RationalMatrix")
+    (synopsis "Exact Matrix Algebra for Rational Matrices")
+    (description
+     "This package provides functions to deal with matrix algebra for matrices with
+rational entries: determinant, rank, image and kernel, inverse, Cholesky
+decomposition.  All computations are exact.")
     (license license:gpl3)))
 
 (define-public r-rationalfun
@@ -44781,19 +44805,20 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "0.7.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r5r" version))
               (sha256
                (base32
-                "11yazhhvbjpfaiimkp7mvisqhyhnql75srkya9in04byq8l5x046"))))
+                "1h9hjabhbb330qnc50lsli8v1a5lcn2nwrp6aib5cx4n0wq495cn"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sfheaders
+    (propagated-inputs (list r-zip
+                             r-sfheaders
                              r-sf
                              r-rjava
-                             r-raster
+                             r-jsonlite
                              r-httr
                              r-data-table
                              r-curl

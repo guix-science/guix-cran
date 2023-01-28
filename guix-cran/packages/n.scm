@@ -13905,13 +13905,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NADA2" version))
               (sha256
                (base32
-                "1w3b24cfnmhkk41x20m60d322awac9ysynh3xy0qx1plfkxck1q5"))))
+                "16fafmprb410ggnqlrpriixfqrbdirv2lp2ddhg2afwc3276a3c6"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

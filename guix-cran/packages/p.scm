@@ -8093,13 +8093,13 @@ html_document and html_vignette engines that convert R Markdown into HTML pages.
 (define-public r-prettycols
   (package
     (name "r-prettycols")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PrettyCols" version))
               (sha256
                (base32
-                "0wnxs12iy2na1a4vs8c5x8wahl5dx04f2vs2wxkbnx5mm5lfn620"))))
+                "1q4l9138kdbk8m35k3am4qksi14rcfd793lplm3s1d17dh7zqb5f"))))
     (properties `((upstream-name . "PrettyCols")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-ggplot2))

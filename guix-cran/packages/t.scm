@@ -18079,13 +18079,13 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tessellation
   (package
     (name "r-tessellation")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tessellation" version))
               (sha256
                (base32
-                "0pbdf18pz1j18x7lsz306x87p0d339a0y1nacynsqly0706g1s3d"))))
+                "1x271f9ypd2ckvq4iqryzx4ir364n6mk7s0100s3kf05l7jbl5y4"))))
     (properties `((upstream-name . "tessellation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
@@ -18939,6 +18939,44 @@ provide a simple substitution mechanism for R-expressions inside these
 templates.  Templates can be written in other languages like SQL', can simply be
 represented by characters in R, or can themselves be R-expressions or functions.")
     (license license:expat)))
+
+(define-public r-templateicar
+  (package
+    (name "r-templateicar")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "templateICAr" version))
+              (sha256
+               (base32
+                "0krkxcykgj239xx2gzww7x3xwdg8a90ysmrkisx8546admwxyj7z"))))
+    (properties `((upstream-name . "templateICAr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-squarem
+                             r-rcppeigen
+                             r-rcpp
+                             r-pesel
+                             r-matrixstats
+                             r-matrix
+                             r-ica
+                             r-fmritools
+                             r-expm
+                             r-excursions
+                             r-abind))
+    (home-page "https://github.com/mandymejia/templateICAr")
+    (synopsis
+     "Estimate Brain Networks and Connectivity with ICA and Empirical Priors")
+    (description
+     "This package implements the template ICA (independent components analysis) model
+proposed in Mejia et al. (2020) <doi:10.1080/01621459.2019.1679638> and the
+spatial template ICA model proposed in proposed in Mejia et al. (2022)
+<doi:10.1080/10618600.2022.2104289>.  Both models estimate subject-level brain
+as deviations from known population-level networks, which are estimated using
+standard ICA algorithms.  Both models employ an expectation-maximization
+algorithm for estimation of the latent brain networks and unknown model
+parameters.  Includes direct support for CIFTI', GIFTI', and NIFTI neuroimaging
+file formats.")
+    (license license:gpl3)))
 
 (define-public r-temperatureresponse
   (package

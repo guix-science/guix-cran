@@ -292,13 +292,13 @@ it on leaflet maps.")
 (define-public r-owenq
   (package
     (name "r-owenq")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OwenQ" version))
               (sha256
                (base32
-                "02x21ab8yifv1lpk45njmvqawnrch0mrnabav414b7qsaihvg364"))))
+                "0ak8haay8fkvi1qmda39bv7mykc97p6aw4igwx3pwgig30d78dkx"))))
     (properties `((upstream-name . "OwenQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
@@ -3650,6 +3650,54 @@ package has been developed using concept of Wang et al. (2022)
 <doi:10.1016/j.eswa.2022.118746> and Kriz (2019)
 <doi:10.1007/978-3-030-18195-6_21 >.")
     (license license:gpl3)))
+
+(define-public r-optisel
+  (package
+    (name "r-optisel")
+    (version "2.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "optiSel" version))
+              (sha256
+               (base32
+                "1qd8r0pa3rxrcs1jsj6wmif9nizgw7vg4sak8r5wfr167di8j4im"))))
+    (properties `((upstream-name . "optiSel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-purrr
+                             r-pspline
+                             r-plyr
+                             r-pedigree
+                             r-optisolve
+                             r-nadiv
+                             r-matrix
+                             r-mass
+                             r-magic
+                             r-kinship2
+                             r-foreach
+                             r-ecosolver
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=optiSel")
+    (synopsis "Optimum Contribution Selection and Population Genetics")
+    (description
+     "This package provides a framework for the optimization of breeding programs via
+optimum contribution selection and mate allocation.  An easy to use set of
+function for computation of optimum contributions of selection candidates, and
+of the population genetic parameters to be optimized.  These parameters can be
+estimated using pedigree or genotype information, and include kinships, kinships
+at native haplotype segments, and breed composition of crossbred individuals.
+They are suitable for managing genetic diversity, removing introgressed genetic
+material, and accelerating genetic gain.  Additionally, functions are provided
+for computing genetic contributions from ancestors, inbreeding coefficients, the
+native effective size, the native genome equivalent, pedigree completeness, and
+for preparing and plotting pedigrees.")
+    (license license:gpl2)))
 
 (define-public r-optiscale
   (package

@@ -6562,13 +6562,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.3.2")
+    (version "4.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm" version))
               (sha256
                (base32
-                "0dghylkwy7acwjpydkbxgfp4sfs9gcgl9l038rm0393cbyfs1phq"))))
+                "0wv12bbcd3hp8bsvhffsj5jj0pmz61gl00sn0vqdcwfxgz655c9d"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (inputs (list openmpi))
@@ -6579,6 +6579,7 @@ networks whose edge weights are counts.  See Krivitsky (2012)
                              r-robustbase
                              r-rle
                              r-rlang
+                             r-rdpack
                              r-purrr
                              r-network
                              r-memoise
@@ -6597,7 +6598,7 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 exponential-family random graph models (ERGMs).  ergm is a part of the Statnet
 suite of packages for network analysis.  See Hunter, Handcock, Butts, Goodreau,
 and Morris (2008) <doi:10.18637/jss.v024.i03> and Krivitsky, Hunter, Morris, and
-Klumb (2021) <arXiv:2106.04997>.")
+Klumb (2023) <doi:10.18637/jss.v105.i06>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-erfe

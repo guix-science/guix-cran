@@ -11004,6 +11004,37 @@ detailed manual on model specification.  A detailed discussion of the methods in
 this package can be found in Watson and Pan (2022) <arXiv:2207.09183>.")
     (license license:gpl2+)))
 
+(define-public r-glmmrmcml
+  (package
+    (name "r-glmmrmcml")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "glmmrMCML" version))
+              (sha256
+               (base32
+                "0cjw5rvqr3p7n534b5f9hsdiyclsjba1k7jhwkqxqsbqh09h4vmn"))))
+    (properties `((upstream-name . "glmmrMCML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsechol
+                             r-rminqa
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-glmmrbase
+                             r-digest
+                             r-bh))
+    (home-page "https://github.com/samuel-watson/glmmrMCML")
+    (synopsis
+     "Markov Chain Monte Carlo Maximum Likelihood for Generalised Linear Mixed Models")
+    (description
+     "Markov Chain Monte Carlo Maximum Likelihood model fitting for generalised linear
+mixed models.  Uses the package glmmrBase for model specification, see
+<https://github.com/samuel-watson/glmmrBase/blob/master/README.md> for a
+detailed manual on model specification.")
+    (license license:gpl3+)))
+
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")

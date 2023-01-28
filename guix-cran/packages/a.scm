@@ -2929,13 +2929,13 @@ Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "attachment" version))
               (sha256
                (base32
-                "0rw1dqglnfwhql8342h15xq9qbvcsxd5cvipjvlz827ri428r8r0"))))
+                "0dzh8y5k19m5mv7g9xif4lmkimsvkd3hzvdbqwb1f711wn8dh46d"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16807,13 +16807,13 @@ range.")
 (define-public r-adegraphics
   (package
     (name "r-adegraphics")
-    (version "1.0-16")
+    (version "1.0-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adegraphics" version))
               (sha256
                (base32
-                "0fpch8mffac68b64gh8jah8k9zcg8pphi38i9ddw5qggmvlrr9bv"))))
+                "13730llschjq1lmsqakrwjkhvm78g6rf1dgy4wbbsm8m3srr9vnb"))))
     (properties `((upstream-name . "adegraphics")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

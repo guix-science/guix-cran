@@ -6198,13 +6198,13 @@ Generate documents explaining the statistical result step by step.")
 (define-public r-interpret
   (package
     (name "r-interpret")
-    (version "0.1.28")
+    (version "0.1.33")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "interpret" version))
               (sha256
                (base32
-                "1h7ray8dw943hzhbc8k0b9v36xn8zpdskfjxpjh4hj71qzm02wq8"))))
+                "17619lyfbvkssls5l3ymlvq72b2162w0n9r7xa5n8wjnnx8mlipz"))))
     (properties `((upstream-name . "interpret")))
     (build-system r-build-system)
     (home-page "https://github.com/interpretml/interpret")
@@ -9804,16 +9804,21 @@ the original paintings where colors were sampled from.")
 (define-public r-importinegi
   (package
     (name "r-importinegi")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "importinegi" version))
               (sha256
                (base32
-                "1r0p01mc9wb24ifldn3dmi0fqxwkp0290h0qrgr72grd34v2xszc"))))
+                "1m9415ymjvymr73z8cjb1kdycf93pykl4yngqp2h06wppwn7506a"))))
     (properties `((upstream-name . "importinegi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-haven r-foreign r-dplyr r-data-table))
+    (propagated-inputs (list r-rio
+                             r-rgdal
+                             r-haven
+                             r-foreign
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=importinegi")
     (synopsis "Download and Manage Open Data from INEGI")
@@ -13266,6 +13271,29 @@ Results are returned as R data frames.  For more information about the IDB API,
 visit
 <https://www.census.gov/data/developers/data-sets/international-database.html>.")
     (license license:expat)))
+
+(define-public r-idarps
+  (package
+    (name "r-idarps")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idarps" version))
+              (sha256
+               (base32
+                "1dl9rg10hfhcnidc3lhmf84a4kajxls4n9r389rb4x8ymlqc6pm1"))))
+    (properties `((upstream-name . "idarps")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=idarps")
+    (synopsis
+     "Datasets and Functions for the Class \"Modelling and Data Analysis for Pharmaceutical Sciences\"")
+    (description
+     "This package provides datasets and functions for the class \"Modelling and Data
+Analysis for Pharmaceutical Sciences\".  The datasets can be used to present
+various methods of data analysis and statistical modeling.  Functions for data
+visualization and allowing to analyze the empirical distribution of the data are
+also implemented.")
+    (license license:agpl3)))
 
 (define-public r-idar
   (package

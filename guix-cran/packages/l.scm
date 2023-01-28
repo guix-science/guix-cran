@@ -7765,19 +7765,20 @@ allows to visualize the clustering results returned by the server.")
 (define-public r-link2gi
   (package
     (name "r-link2gi")
-    (version "0.5-0")
+    (version "0.5-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "link2GI" version))
               (sha256
                (base32
-                "0rpanjp6nwrffw02qsd3dq7x5f9pa4cq7cbny4bwiig4cdf7sgrk"))))
+                "0a05ahkrg7587l9kpfky7hjvwry1xiiw9dmzqmhg31bc6js6hg61"))))
     (properties `((upstream-name . "link2GI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-stringr
                              r-sf
                              r-roxygen2
-                             r-raster
                              r-r-utils
                              r-devtools))
     (native-inputs (list r-knitr))
@@ -15818,16 +15819,16 @@ added in Version 2.0.")
 (define-public r-l2densitygoftest
   (package
     (name "r-l2densitygoftest")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "L2DensityGoFtest" version))
               (sha256
                (base32
-                "1w5cr7lc1bqqi9v23indhxk2i0x1j5fjzpr8w2f5ppxk7wf9288x"))))
+                "1fzfqfq77rf4hfrh1idb2nb67mwk9lwypxhr2qc1hiidvk060lq0"))))
     (properties `((upstream-name . "L2DensityGoFtest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nor1mix r-fgarch r-boot))
+    (propagated-inputs (list r-nor1mix r-mvtnorm r-fgarch r-boot))
     (home-page "https://cran.r-project.org/package=L2DensityGoFtest")
     (synopsis "Density Goodness-of-Fit Test")
     (description

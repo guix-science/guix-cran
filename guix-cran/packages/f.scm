@@ -10079,13 +10079,13 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "0.2-2")
+    (version "0.2-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitPS" version))
               (sha256
                (base32
-                "1dgma68jha3ws6zmd3hsqsfh54i2y2v36qppswrqn14zcw5nh9q9"))))
+                "15igv06zb4q589kdah595aqm6601c90xf7kg7r537kg96awr08h2"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-readxl r-hmisc r-dplyr))
