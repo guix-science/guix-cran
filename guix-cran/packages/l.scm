@@ -12036,13 +12036,13 @@ MacDonald, Langrock (2016).")
 (define-public r-lddmm
   (package
     (name "r-lddmm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lddmm" version))
               (sha256
                (base32
-                "19y2249fj1k1qq4lp6qzbd3jjwlz2li1710k3l7j7a9gg3rq9gfs"))))
+                "1cadgim82zkivyi3ncvpskabwv8w3dirjsfmbiaa3hv05nwl2ll0"))))
     (properties `((upstream-name . "lddmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12053,6 +12053,7 @@ MacDonald, Langrock (2016).")
                              r-rcpp
                              r-rcolorbrewer
                              r-plyr
+                             r-mvtnorm
                              r-latex2exp
                              r-laplacesdemon
                              r-gtools
@@ -12063,7 +12064,7 @@ MacDonald, Langrock (2016).")
     (synopsis "Longitudinal Drift-Diffusion Mixed Models (LDDMM)")
     (description
      "Implementation of the drift-diffusion mixed model for category learning as
-described in Paulon et al. (2021).")
+described in Paulon et al. (2021) <doi:10.1080/01621459.2020.1801448>.")
     (license license:expat)))
 
 (define-public r-ldcorsv

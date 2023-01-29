@@ -1292,13 +1292,13 @@ for a given time series.")
 (define-public r-autothresholdr
   (package
     (name "r-autothresholdr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autothresholdr" version))
               (sha256
                (base32
-                "1n8kfl7zk7smwmkj1rlp4j4i0jnwi2f0aw58jhlf7ivahrq0rmnk"))))
+                "1n2rag3aqd716nxp3vnc91rfimi24bg1imsa1aarynfh7mxi5a7a"))))
     (properties `((upstream-name . "autothresholdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -579,32 +579,6 @@ et al. (2011) <doi:10.1109/TSP.2011.2181836> and Lee et al. (2007)
 <doi:10.1016/j.sigpro.2007.01.010>.")
     (license license:gpl3+)))
 
-(define-public r-iva
-  (package
-    (name "r-iva")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iva" version))
-              (sha256
-               (base32
-                "0dchb263ygilxapwsw2gpl18z12wcjsz8zz5fg7h068hmcysa88g"))))
-    (properties `((upstream-name . "iva")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ucminf r-formula))
-    (home-page "https://cran.r-project.org/package=iva")
-    (synopsis
-     "Instrumental Variable Analysis in Case-Control Association Studies")
-    (description
-     "Mendelian randomization (MR) analysis is a special case of instrumental variable
-analysis with genetic instruments.  It is used to estimate the unconfounded
-causal effect of an exposure.  This package implements estimating and testing
-methods in Zhang et al. (2019) for MR analysis in case-control studies.  It (1)
-estimates the causal effect of a quantitative exposure by the quasi empirical
-likelihood approach; (2) uses Lagrange multiplier test for testing the presence
-of causal; (3) provides a test for the presence of confounder.")
-    (license license:expat)))
-
 (define-public r-itsmr
   (package
     (name "r-itsmr")

@@ -16220,13 +16220,13 @@ auto-correlation in features.  Methods developed in Knox and Lucas (2021)
 (define-public r-commonsmath
   (package
     (name "r-commonsmath")
-    (version "1.2.5")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "commonsMath" version))
               (sha256
                (base32
-                "1c4lgmggpc22mhwcpy521b2pg8wf4bbjp0a6rbcn0aki90xw9ckk"))))
+                "02i6pn568z6h2lnnalv7z3dd6xvh79ki8wy4h42qq05766x3xq2r"))))
     (properties `((upstream-name . "commonsMath")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18804,13 +18804,13 @@ available: English, Finnish, Swedish, and Latin.")
 (define-public r-codebreaker
   (package
     (name "r-codebreaker")
-    (version "0.0.2")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "codebreaker" version))
               (sha256
                (base32
-                "12gjaziwzzisx4j70z8k17k6i5wdsdyk542yfx04rin4ks829f34"))))
+                "1k2l2gpcnlg77sb05zyg64w1nzvwn3j7jv5wwsyyjrlkr60kpval"))))
     (properties `((upstream-name . "codebreaker")))
     (build-system r-build-system)
     (propagated-inputs (list r-cli r-beepr))

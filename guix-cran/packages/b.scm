@@ -19375,13 +19375,13 @@ misclassified interval-censored.")
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.1-2")
+    (version "2.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesSUR" version))
               (sha256
                (base32
-                "18dm2na512h7nvwiz0qxqmnr5dd872s5va13g24ymhlnzyjwkr8q"))))
+                "02w317dy1pcqr6y2sgmir7yk6c2w96hkkagczlwav8jb2x1ngfqi"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -24603,13 +24603,13 @@ nowadays popular in various infographics to visualize any proportional ratios.")
 (define-public r-badger
   (package
     (name "r-badger")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "badger" version))
               (sha256
                (base32
-                "1y2yfd31nb16g0zwhwaqwb2k3v9f5yr5fvgd0y458v4066svhk70"))))
+                "0j7x6r5bv4ccyxwxc4zmq86q7js694smip9vslnwfkfg9mjxiiwa"))))
     (properties `((upstream-name . "badger")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-rvcheck r-dlstats r-desc))

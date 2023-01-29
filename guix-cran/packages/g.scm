@@ -18086,13 +18086,13 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
 (define-public r-getspanel
   (package
     (name "r-getspanel")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "getspanel" version))
               (sha256
                (base32
-                "0i5a7jv0cpg9sqp55aa9kh8di4l0gg2bfbyps77qx9lfsxjsws2v"))))
+                "10b597gfqcm5gv83g3wrmys54dsnm1a1034rsmn76znhj9ndxvm8"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
@@ -20769,13 +20769,13 @@ can modify the main function core to allow a wide range of applications.")
 (define-public r-gensvm
   (package
     (name "r-gensvm")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gensvm" version))
               (sha256
                (base32
-                "1859sapssbjyxiq4y2irhpp09fbrp1jsc8zsn4l5pfnhjspxlxa4"))))
+                "0r1n5icxs313aipl63hdbvki37h2hv1r8ii7m8pyf9h36jxk4lfg"))))
     (properties `((upstream-name . "gensvm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=gensvm")

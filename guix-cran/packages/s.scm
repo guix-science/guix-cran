@@ -22730,13 +22730,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.6.0")
+    (version "2.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "0h0gqd2z93ixpqrwpjzxy6qrbl4858j337v5g9pprcdfkprvy6nw"))))
+                "0x1xcb5n1djdy1bi258076y066cskm82h2929hw0w0lxv6hf6acz"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -34782,13 +34782,13 @@ Landscape ecology, 31: 1383-1394, <doi:10.1007/s10980-016-0380-z>.")
 (define-public r-siie
   (package
     (name "r-siie")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "siie" version))
               (sha256
                (base32
-                "0xqhi8xbfccm09iwsnxva4idwk50hm4z8skyhbbj4727c71117h1"))))
+                "1i095ys39q9p9bz12ia93k45ayl8cip956vh5wylw05m82vms2f0"))))
     (properties `((upstream-name . "siie")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -46348,6 +46348,44 @@ hyperparameters have an interactive real-time chart displayed in the RStudio
 viewer pane during their execution.")
     (license license:gpl3)))
 
+(define-public r-sdmtmb
+  (package
+    (name "r-sdmtmb")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sdmTMB" version))
+              (sha256
+               (base32
+                "1zfsw5g9dssxnrg8lajm2cmxqg8rx2i8r5zyyb0q50mhx7bkhilp"))))
+    (properties `((upstream-name . "sdmTMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-rlang
+                             r-rcppeigen
+                             r-nlme
+                             r-mvtnorm
+                             r-mgcv
+                             r-matrix
+                             r-lifecycle
+                             r-glmmtmb
+                             r-generics
+                             r-fishmod
+                             r-clisymbols
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://pbs-assess.github.io/sdmTMB/index.html")
+    (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
+    (description
+     "This package implements spatial and spatiotemporal predictive-process GLMMs
+(Generalized Linear Mixed Effect Models) using TMB', INLA', and the SPDE
+(Stochastic Partial Differential Equation) approximation to Gaussian random
+fields.  One common application is for spatially explicit (and optionally
+dynamic) species distribution models (SDMs).  See Anderson et al. (2022)
+<doi:10.1101/2022.03.24.485545>.")
+    (license license:gpl3)))
+
 (define-public r-sdmpredictors
   (package
     (name "r-sdmpredictors")
@@ -49967,34 +50005,6 @@ for jamovi (see <https://www.jamovi.org> for more information).  Scatr is based
 on the cowplot package by Claus O. Wilke and the ggplot2 package by Hadley
 Wickham.")
     (license license:gpl2+)))
-
-(define-public r-scat
-  (package
-    (name "r-scat")
-    (version "0.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SCAT" version))
-              (sha256
-               (base32
-                "16dh4l5r8b49n68s571npmk14dnnx6y0np7lzvalg61z31zlya29"))))
-    (properties `((upstream-name . "SCAT")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=SCAT")
-    (synopsis "Summary Based Conditional Association Test")
-    (description
-     "Conditional association test based on summary data from genome-wide association
-study (GWAS).  SCAT adjusts for heterogeneity in SNP coverage that exists in
-summary data if SNPs are not present in all of the participating studies of a
-GWAS meta-analysis.  This commonly happens when different reference panels are
-used in participating studies for genotype imputation.  This could happen when
-ones simply do not have data for some SNPs (e.g. different array, or imputated
-data is not available).  Without properly adjusting for this kind of
-heterogeneity leads to inflated false positive rate.  SCAT can also be used to
-conduct conventional conditional analysis when coverage heterogeneity is absent.
- For more details, refer to Zhang et al. (2018) Brief Bioinform.
-19(6):1337-1343. <doi: 10.1093/bib/bbx072>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-scarabee
   (package

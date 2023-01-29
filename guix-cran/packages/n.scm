@@ -634,27 +634,6 @@ reported by Chase et al (2011) <doi:10.1890/ES10-00117.1> and Stegen et al
 beta diversity, used by Ning et al (2020) <doi:10.1038/s41467-020-18560-z>.")
     (license license:gpl2)))
 
-(define-public r-nsrr
-  (package
-    (name "r-nsrr")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsrr" version))
-              (sha256
-               (base32
-                "1x1c7pvyfvzmaymxcz6ghr5002wz48796c3hsihwbx6951w623sq"))))
-    (properties `((upstream-name . "nsrr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/muschellij2/nsrr")
-    (synopsis "Interface to National Sleep Research Resource")
-    (description
-     "Allows users to access data from the National Sleep Research Resource ('NSRR')
-<https://sleepdata.org/>.")
-    (license license:gpl3)))
-
 (define-public r-nsroc
   (package
     (name "r-nsroc")
@@ -12988,13 +12967,13 @@ NBLAST-related functions for neuronal morphology comparison (Costa et al. (2016)
 (define-public r-nat
   (package
     (name "r-nat")
-    (version "1.8.19")
+    (version "1.8.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nat" version))
               (sha256
                (base32
-                "10w7y7n8kx34z6p0nhar60n9cjp9y69kh77zi9izkmafx0m9qn64"))))
+                "1chc32n3dclpglnj70mnq7m72qrkyryqxjsslmr53kbbszll27af"))))
     (properties `((upstream-name . "nat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

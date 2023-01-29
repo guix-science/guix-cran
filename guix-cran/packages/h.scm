@@ -8540,13 +8540,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ts" version))
               (sha256
                (base32
-                "001nca8a01z53cfjn8rp77khw5qngvh9pnkzlbcpl7yj5ahbnha5"))))
+                "19zz433imkv3c46bjyjhwrx1rkxsf2w6v3v1mgpmy97vwph2bqff"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets

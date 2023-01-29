@@ -19501,13 +19501,13 @@ handwritten digit recognition or to create new image recognition datasets.")
 (define-public r-pixelpuzzle
   (package
     (name "r-pixelpuzzle")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pixelpuzzle" version))
               (sha256
                (base32
-                "1bgy9anhgmjfy97816g2ns5pg5vsm7dwdn5l01m2zma6qnq01knm"))))
+                "0z0afcjv9wpz5fw21vhv11jx2wrl4fy5nf9q5x5adwncsdmrqjhz"))))
     (properties `((upstream-name . "pixelpuzzle")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-cli r-beepr))
@@ -27282,13 +27282,13 @@ more information, please visit our software websites:
 (define-public r-pcv
   (package
     (name "r-pcv")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcv" version))
               (sha256
                (base32
-                "1kszyww5n8j7kfb6s5wvn19ch7h1d64dhqgz6wvgx6vp21ya6qks"))))
+                "0rmb024d378fb13r7rll74p6kj7mkbr2ggic7k446aivccwzr7hr"))))
     (properties `((upstream-name . "pcv")))
     (build-system r-build-system)
     (home-page "https://github.com/svkucheryavski/pcv")

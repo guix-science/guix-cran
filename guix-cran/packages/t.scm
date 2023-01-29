@@ -1167,13 +1167,13 @@ systems with a set number of time steps.")
 (define-public r-tvgarch
   (package
     (name "r-tvgarch")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvgarch" version))
               (sha256
                (base32
-                "14pswli9yfc21vdrgnhyp7caprvjh7vi7lj2wpm5rl43kc0j5c27"))))
+                "1zr3wjb3gnqp5k45cqwza8z5hb0bq7nqy6km8k8k9p3l4mj6ilgn"))))
     (properties `((upstream-name . "tvgarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-numderiv r-hier-part r-garchx))

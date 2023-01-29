@@ -9,6 +9,8 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3810,24 +3812,28 @@ outputs can be written to standard file formats.")
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "4.0.0")
+    (version "5.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jack" version))
               (sha256
                (base32
-                "1vwmly72d1rakz30ik2c87s96k9dfl992ps39n758481cxwy6v04"))))
+                "1wbcglbhwrnlyd6ms05b0h3dcviyghazi2y8wihh5f3awm5393nf"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
+    (inputs (list gmp))
     (propagated-inputs (list r-spray
                              r-ryacas
+                             r-rcpp
                              r-qspray
                              r-partitions
                              r-mvp
                              r-multicool
                              r-juliaconnector
                              r-gmp
-                             r-desctools))
+                             r-desctools
+                             r-bh))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/stla/jackR")
     (synopsis "Jack, Zonal, and Schur Polynomials")
     (description

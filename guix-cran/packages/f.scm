@@ -6001,13 +6001,13 @@ extracting and replacing names and symbols from these objects.")
 (define-public r-formshare
   (package
     (name "r-formshare")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FormShare" version))
               (sha256
                (base32
-                "14j8dmjm8k2hi7m43ipnigp10zqqwajz46c23j7lw3l1w7ibprxl"))))
+                "17wdqjymc33r7r17h3fwi0ixlbpl77k1fm9a6r3gjwxixz8kicx3"))))
     (properties `((upstream-name . "FormShare")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-httr))
@@ -6015,7 +6015,7 @@ extracting and replacing names and symbols from these objects.")
     (synopsis
      "Simple Connection Between the 'FormShare App' and 'R' for Advanced Analytics")
     (description
-     "This package provides analytics directly from R. It requires: FormShare App':
+     "This package provides analytics directly from R'.  It requires: FormShare App':
 <https://github.com/qlands/FormShare >= 2.22.0> .  Analytics plugin:
 <https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL plugin:
 <https://github.com/qlands/formshare_sql_plugin> .")
@@ -17379,18 +17379,19 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "0.2.27")
+    (version "0.2.30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "farr" version))
               (sha256
                (base32
-                "0xffahbj5dxdlg25k3nj554np85h51d6yarxxam9ndxqmrva6k0y"))))
+                "0bzq9kbqp77m1jdb6sqd5axk783la7zs3y0i68fqydh50s0r3z2g"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rpart
                              r-rlang
                              r-readr
                              r-magrittr
@@ -17398,7 +17399,6 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
                              r-dplyr
                              r-dbplyr
                              r-dbi))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=farr")
     (synopsis "Data and Code for Financial Accounting Research")
     (description

@@ -9779,13 +9779,13 @@ the influence functions.")
 (define-public r-rpeglmen
   (package
     (name "r-rpeglmen")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPEGLMEN" version))
               (sha256
                (base32
-                "1hm68f6ipiy2518viz182psqgh5krq9aihid0njg4817cyssg95z"))))
+                "0rbwxdh252vfx6qnplqqgmawpfk3naksi4wx11g1h7aj68cv8xjw"))))
     (properties `((upstream-name . "RPEGLMEN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpeif r-rcppeigen r-rcpp))
@@ -22213,13 +22213,13 @@ or JavaScript dependencies.")
 (define-public r-rhcoclust
   (package
     (name "r-rhcoclust")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhcoclust" version))
               (sha256
                (base32
-                "1d9a29h4h6z04vjjdfi0sx7wpl8iw5zg2ymjpjlppzbbzzq2l8n2"))))
+                "0ck5slv3y08vcxkdxhw5j6n3jjsg4jj6r8hkb0yhkq2k59b18rg0"))))
     (properties `((upstream-name . "rhcoclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-fields))
