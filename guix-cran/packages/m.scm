@@ -2829,13 +2829,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.5.3")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiscaleDTM" version))
               (sha256
                (base32
-                "1323k69ivjdn3x7z41zn3a697cjv22ps87dsq5fvnyi4nkx6gizz"))))
+                "1254hq4kdqfdv6h90s0v92iq0y2d403rby8a9a2l7s3xkch54q56"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -2845,7 +2845,7 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
                              r-rcpp
                              r-raster
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=MultiscaleDTM")
+    (home-page "https://ailich.github.io/MultiscaleDTM/")
     (synopsis "Multi-Scale Geomorphometric Terrain Attributes")
     (description
      "Calculates multi-scale geomorphometric terrain attributes from regularly gridded
@@ -15038,13 +15038,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmap
   (package
     (name "r-mmap")
-    (version "0.6-19")
+    (version "0.6-21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmap" version))
               (sha256
                (base32
-                "0s3vlwdcwifl2a2byr0f2cc4vmbdparc55x889a3h115ga7k91w2"))))
+                "0q1hmr9431fl00xqr8008jpna9rlv303dvibz2pr9ifg9vkcw7ab"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mmap")
@@ -19292,30 +19292,6 @@ compute quantile(s) from a sample or the size of the required i.i.d.  sample.")
      "This package provides a flexible computational framework for mixture
 distributions with the focus on the composite models.")
     (license license:gpl3)))
-
-(define-public r-mistat
-  (package
-    (name "r-mistat")
-    (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mistat" version))
-              (sha256
-               (base32
-                "068ycnnkqcmf3sracsa279lggyc1qxdkpcba7ghax0xl4y505yxj"))))
-    (properties `((upstream-name . "mistat")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=mistat")
-    (synopsis
-     "Data Sets, Functions and Examples from the Book: \"Modern Industrial Statistics\" by Kenett, Zacks and Amberti")
-    (description
-     "Provide all the data sets and statistical analysis applications used in \"Modern
-Industrial Statistics: with applications in R, MINITAB and JMP\" by R.S. Kenett
-and S. Zacks with contributions by D. Amberti, John Wiley and Sons, 2021, which
-is a third revised and expanded revision of \"Modern Industrial Statistics:
-Design and Control of Quality and Reliability\", R. Kenett and S. Zacks,
-Duxbury/Wadsworth Publishing, 1998.")
-    (license license:gpl2+)))
 
 (define-public r-misssom
   (package
@@ -27357,20 +27333,22 @@ to other various methods.")
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MetabolomicsBasics" version))
               (sha256
                (base32
-                "06r67m5g73yp27dqlg55as1pj73pzr35f6sw800aav1dpp5c4xz5"))))
+                "0d4hfmr6m5dnw4f2374ih5q6av0f0z6vq28cd66zpmyrdvhxp9w0"))))
     (properties `((upstream-name . "MetabolomicsBasics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rpart
+    (propagated-inputs (list r-webchem
+                             r-rpart
                              r-rlang
                              r-plyr
                              r-pcamethods
                              r-mixomics
+                             r-interpretmsspectrum
                              r-e1071
                              r-caret
                              r-c50))
@@ -33369,13 +33347,13 @@ Buck, Recursive Division,
 (define-public r-mazamatimeseries
   (package
     (name "r-mazamatimeseries")
-    (version "0.2.8")
+    (version "0.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MazamaTimeSeries" version))
               (sha256
                (base32
-                "0png8yfnn5wch04c9krxnvy4bbpz0syrir8i536giw6fbk7hfy1y"))))
+                "1x3nc57wzw3gsjpjbhdmjyaac8rhv4cbyyvbpbc48m6b42qbl9cz"))))
     (properties `((upstream-name . "MazamaTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

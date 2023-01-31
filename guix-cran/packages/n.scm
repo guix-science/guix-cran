@@ -11405,13 +11405,13 @@ to reportable printed statistics is covered for basic experimental designs.")
 (define-public r-neatr
   (package
     (name "r-neatr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neatR" version))
               (sha256
                (base32
-                "0s53vgrkh8hmavk05779da63lbdydcrmihqsiiyq27j1bi1b7ld5"))))
+                "1m5ahkc9fjw2ba3a34x689pz6lp2dc5jib8dy81qrva9zsnhxsp3"))))
     (properties `((upstream-name . "neatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-data-table))

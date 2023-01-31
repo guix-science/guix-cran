@@ -25558,6 +25558,30 @@ either a fixed grid or a interval search.")
 in Journal of the Royal Statistical Society, Series B\".")
     (license license:gpl2+)))
 
+(define-public r-penalizedcdf
+  (package
+    (name "r-penalizedcdf")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "penalizedcdf" version))
+              (sha256
+               (base32
+                "17r9f7n6icn2yhfy5ibr8zccr10yq5k4vgyh59fgdzzf5qk407n3"))))
+    (properties `((upstream-name . "penalizedcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plot-matrix))
+    (home-page "https://cran.r-project.org/package=penalizedcdf")
+    (synopsis
+     "Estimate a Penalized Linear Model using the CDF Penalty Function")
+    (description
+     "Utilize the CDF penalty function to estimate a penalized linear model.  It
+enables you to display some graphical representations and determine whether the
+Karush-Kuhn-Tucker conditions are met.  For more details about the theory,
+please refer to Cuntrera, D., Augugliaro, L., & Muggeo, V. M. (2022)
+<arXiv:2212.08582>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-penaft
   (package
     (name "r-penaft")
@@ -30580,22 +30604,17 @@ run locally, see examples on <https://github.com/SachaEpskamp/parSim>.")
 (define-public r-parserpdr
   (package
     (name "r-parserpdr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parseRPDR" version))
               (sha256
                (base32
-                "1b5x44aswpgbbqszmzwnyfs9h2ad8j0fncra5iywj56xnxvn7056"))))
+                "18h78kqrzlrx71kmsh5c4bhbj8qshifymh5n5kd39dmaawvgh11x"))))
     (properties `((upstream-name . "parseRPDR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-reticulate
-                             r-readr
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-bigmemory))
+    (propagated-inputs (list r-stringr r-readr r-foreach r-doparallel
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=parseRPDR")
     (synopsis
      "Parse and Manipulate Research Patient Data Registry ('RPDR') Text Queries")
@@ -30700,20 +30719,19 @@ on the analysis of poverty.  References, Fattore M. (2016)
 (define-public r-parquetize
   (package
     (name "r-parquetize")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parquetize" version))
               (sha256
                (base32
-                "0ir3pyapiwkmv601s593ygkxjsxfx5x8kgppwlwy1d8952a9q3bv"))))
+                "0x9wfnwyd23pr1qy3v6xy5qvqhlnv2bxajc8krw8ihdbl5virq1n"))))
     (properties `((upstream-name . "parquetize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
                              r-readr
                              r-jsonlite
                              r-haven
-                             r-duckdb
                              r-dplyr
                              r-dbi
                              r-curl
@@ -30725,8 +30743,8 @@ on the analysis of poverty.  References, Fattore M. (2016)
     (description
      "Collection of functions to get files in parquet format.  Parquet is a columnar
 storage file format <https://parquet.apache.org/>.  The files to convert can be
-of several formats (\"csv\", \"duckdb\", \"RData\", \"rds\", \"RSQLite\", \"json\",
-\"ndjson\", \"SAS\", \"SPSS\"...).")
+of several formats (\"csv\", \"RData\", \"rds\", \"RSQLite\", \"json\", \"ndjson\", \"SAS\",
+\"SPSS\"...).")
     (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-parqr

@@ -8896,13 +8896,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.6.1")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anticlust" version))
               (sha256
                (base32
-                "1f06968i5hpfavcwmcqij0mb13jhp02gbkqiijilyiz2kc8p0nfc"))))
+                "0014bp4j1nl5m3v20yjxpqjbya22rsfj9xagswy2bqpyqjycvds2"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -8924,8 +8924,10 @@ require that the GNU linear programming kit
 (<https://www.gnu.org/software/glpk/glpk.html>) is available and the R package
 Rglpk (<https://cran.R-project.org/package=Rglpk>) is installed.  A bicriterion
 anticlustering method proposed by Brusco et al. (2020; <doi:10.1111/bmsp.12186>)
-is available through the function bicriterion_anticlustering().  Some other
-functions are available to solve classical clustering problems.  The function
+is available through the function bicriterion_anticlustering(),
+kplus_anticlustering() implements the k-plus anticlustering approach proposed by
+Papenberg (2023; <doi:10.31234/osf.io/7jw6v>).  Some other functions are
+available to solve classical clustering problems.  The function
 balanced_clustering() applies a cluster analysis under size constraints, i.e.,
 creates equal-sized clusters.  The function matching() can be used for
 (unrestricted, bipartite, or K-partite) matching.  The function wce() can be
@@ -12059,13 +12061,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alone" version))
               (sha256
                (base32
-                "0wn8sg6w820svk9wd670kabnqwssh88bzkrrrjmisxqz99a6mqz8"))))
+                "0z5rxq7f8ms3gmamd4qf538ymdmf76ipcrh5xm8aw0vhipxp8vg5"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (home-page "https://github.com/doehm/alone")

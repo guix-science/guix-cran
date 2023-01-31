@@ -13451,6 +13451,31 @@ single time series and the analysis of feedback for a set of time series
 collected across a spatial domain.")
     (license license:gpl2+)))
 
+(define-public r-fedz1
+  (package
+    (name "r-fedz1")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fedz1" version))
+              (sha256
+               (base32
+                "1havzbpqwlc32qmr2mpdxczjj918aig7l0iz669pkgxgqxf8dq5x"))))
+    (properties `((upstream-name . "fedz1")))
+    (build-system r-build-system)
+    (home-page "https://github.com/shaf1430/fedz1")
+    (synopsis
+     "An Easier Access to Financial Accounts of the United States(Z.1)")
+    (description
+     "Flow of funds are financial accounts that are provided by Federal Reserve
+quarterly.  The package contains all datasets
+<https://www.federalreserve.gov/datadownload/Choose.aspx?rel=z1>, tables
+<https://www.federalreserve.gov/apps/fof/FOFTables.aspx> and descriptions
+<https://www.federalreserve.gov/apps/fof/Guide/z1_tables_description.pdf> with
+functions to understand series
+<https://www.federalreserve.gov/apps/fof/SeriesStructure.aspx> and explore them.")
+    (license license:expat)))
+
 (define-public r-fedstatapir
   (package
     (name "r-fedstatapir")
@@ -15820,13 +15845,13 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (define-public r-fastverse
   (package
     (name "r-fastverse")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastverse" version))
               (sha256
                (base32
-                "0sr2nwqwxcvn118srrpws2cw0vpimchrv0k03z0f7i07989fqfc7"))))
+                "1i2gvvzcbgvg0xpakbyamkrf0f9kanrgzyna2nwy3wn4js8c5jhh"))))
     (properties `((upstream-name . "fastverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-kit r-data-table r-collapse))

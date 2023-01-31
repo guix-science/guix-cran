@@ -4750,13 +4750,13 @@ in Spielman and Moore (2020) <doi:10.3389/feart.2020.585087>.")
 (define-public r-dracor
   (package
     (name "r-dracor")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dracor" version))
               (sha256
                (base32
-                "0cklq1lqlzsyjrdkij0xzqvv3k1nxv13kyz2zkky3r13rc9wbbfd"))))
+                "1zs7xfjdx3anrvslfkx483k0swac7rq8y7n7gaws6ap94qy4xrk8"))))
     (properties `((upstream-name . "dracor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -23068,13 +23068,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "5.1.0")
+    (version "6.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabaseConnector" version))
               (sha256
                (base32
-                "0vc6rszv148qcjc8j4snskw9xlxb1mk3hbi3lnwllp9vxydqw1yf"))))
+                "0yq5sjcxk90wbfw0h5hl6h0vzavgq4drs3kvprmhz3izd2h6sqfq"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -23083,7 +23083,10 @@ package.")
                              r-rlang
                              r-rjava
                              r-readr
+                             r-digest
+                             r-dbplyr
                              r-dbi
+                             r-checkmate
                              r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/DatabaseConnector/")
@@ -23093,8 +23096,8 @@ package.")
 platforms ('PostgreSQL', Oracle', Microsoft SQL Server', Amazon Redshift',
 Microsoft Parallel Database Warehouse', IBM Netezza', Apache Impala', Google
 BigQuery', Snowflake', Spark', and SQLite').  Also includes support for fetching
-data as Andromeda objects.  Uses Java Database Connectivity ('JDBC') to connect
-to databases (except SQLite).")
+data as Andromeda objects.  Uses either Java Database Connectivity ('JDBC') or
+other DB I drivers to connect to databases.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-data360r

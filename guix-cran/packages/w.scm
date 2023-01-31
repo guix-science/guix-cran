@@ -1430,13 +1430,13 @@ decision.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wpa" version))
               (sha256
                (base32
-                "1nbnv0s75v752bkidjs41mqhbxzqywi9rkqv25s92l924yk73r16"))))
+                "1r9b9w208j2czkjv0z9gi052bcb92psxl42sj0kahhya732mw1yk"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

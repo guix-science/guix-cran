@@ -2708,20 +2708,19 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qspray" version))
               (sha256
                (base32
-                "05nw1swnym4789n6h4xn1m7gw3x4pk0981x48njxq9jl5mz52b0z"))))
+                "03apb2cg61gd5ggzi9byp5b3zvhmjs3pkffidknhs5v073bcpya9"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-ryacas
-                             r-rcppeigen
-                             r-rcppcgal
                              r-rcpp
+                             r-rationalmatrix
                              r-purrr
                              r-gmp
                              r-desctools

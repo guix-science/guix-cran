@@ -927,13 +927,13 @@ Allard, R.W. (2010, ISBN:8126524154).")
 (define-public r-gvarx
   (package
     (name "r-gvarx")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GVARX" version))
               (sha256
                (base32
-                "00iqwkshp1i9338x9khh8hyszad6150qb11jlvky5fm488wcw1y3"))))
+                "0hafmq8m2pszmmj9yldrbab8670pfrm62x79g8lzac9rmhlz76w2"))))
     (properties `((upstream-name . "GVARX")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -947,9 +947,9 @@ Allard, R.W. (2010, ISBN:8126524154).")
     (home-page "https://cran.r-project.org/package=GVARX")
     (synopsis "Perform Global Vector Autoregression Estimation and Inference")
     (description
-     "Perform the estimation and inference of Global Vector Autoregression model
-(GVAR) of Pesaran, Schuermann and Weiner (2004) <DOI:10.1198/073500104000000019>
-and Dees, di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
+     "Light procedures for learning Global Vector Autoregression model (GVAR) of
+Pesaran, Schuermann and Weiner (2004) <DOI:10.1198/073500104000000019> and Dees,
+di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
     (license license:gpl2+)))
 
 (define-public r-guts
@@ -5760,6 +5760,58 @@ classification likelihood criterion and a mixture of stochastic block models.
 The method is described in the article \"Model-based graph clustering of a
 collection of networks using an agglomerative algorithm\" by T. Rebafka (2022)
 <arXiv:2211.02314>.")
+    (license license:gpl2)))
+
+(define-public r-graph4lg
+  (package
+    (name "r-graph4lg")
+    (version "1.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "graph4lg" version))
+              (sha256
+               (base32
+                "07a109jjn1s36x1hpb1zvgb2wq41f11l8cv3car1lr6lw5g3rr3x"))))
+    (properties `((upstream-name . "graph4lg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-sp
+                             r-sf
+                             r-rdpack
+                             r-raster
+                             r-rappdirs
+                             r-pegas
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-hierfstat
+                             r-ggplot2
+                             r-gdistance
+                             r-foreign
+                             r-ecodist
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=graph4lg")
+    (synopsis "Build Graphs for Landscape Genetics Analysis")
+    (description
+     "Build graphs for landscape genetics analysis.  This set of functions can be used
+to import and convert spatial and genetic data initially in different formats,
+import landscape graphs created with GRAPHAB software (Foltete et al., 2012)
+<doi:10.1016/j.envsoft.2012.07.002>, make diagnosis plots of isolation by
+distance relationships in order to choose how to build genetic graphs, create
+graphs with a large range of pruning methods, weight their links with several
+genetic distances, plot and analyse graphs,	compare them with other graphs.  It
+uses functions from other packages such as adegenet (Jombart, 2008)
+<doi:10.1093/bioinformatics/btn129> and igraph (Csardi et Nepusz, 2006)
+<https://igraph.org/>.  It also implements methods commonly used in landscape
+genetics to create graphs, described by Dyer et Nason (2004)
+<doi:10.1111/j.1365-294X.2004.02177.x> and Greenbaum et Fefferman (2017)
+<doi:10.1111/mec.14059>, and to analyse distance data (van Strien et al., 2015)
+<doi:10.1038/hdy.2014.62>.")
     (license license:gpl2)))
 
 (define-public r-graph3d
@@ -11793,17 +11845,17 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GLCMTextures" version))
               (sha256
                (base32
-                "0sw54l8wl1zh49a8yrg4cvppwqhxar59bqpvw50cgk4zxy14a3jn"))))
+                "0harr9lqmx960mgxlcrndsvckgjzamf6nfw6lbki848yrx1aa6mv"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-raster))
-    (home-page "https://cran.r-project.org/package=GLCMTextures")
+    (home-page "https://ailich.github.io/GLCMTextures/")
     (synopsis "GLCM Textures of Raster Layers")
     (description
      "Calculates grey level co-occurrence matrix (GLCM) based texture measures
@@ -15121,13 +15173,13 @@ patterns.")
 (define-public r-ggpath
   (package
     (name "r-ggpath")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpath" version))
               (sha256
                (base32
-                "065h4yzg3x9c14393222vakskg3bzi5j6ys96wszls3sy35v1rvg"))))
+                "0iq9fl8zcyc5ihi3pf6h8pb6j7ys506yziq0qr0xgyw803cvl23m"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

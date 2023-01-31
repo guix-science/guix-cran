@@ -6324,13 +6324,13 @@ in Gaussian linear and nonlinear mixed-effects models.")
 (define-public r-lmeresampler
   (package
     (name "r-lmeresampler")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmeresampler" version))
               (sha256
                (base32
-                "06vwcg8qw937v0r6bgkv6pwx35ppjavlzpl6wj7ccpwi0ay9c218"))))
+                "0dyh5jlhapanxqbj2r2wg19qj1p2dr1krg8555ggi8n2sp4m90di"))))
     (properties `((upstream-name . "lmeresampler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9761,6 +9761,37 @@ Interaction in Longitudinal Studies\" and He et al. (2017) \"Rare-variant
 association tests in longitudinal studies, with an application to the
 Multi-Ethnic Study of Atherosclerosis (MESA)\".")
     (license license:gpl3)))
+
+(define-public r-lgdtoolkit
+  (package
+    (name "r-lgdtoolkit")
+    (version "0.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LGDtoolkit" version))
+              (sha256
+               (base32
+                "1kvsmhr5zsqb8p18ycrrq7vv6xxxr4mw3sa2k8n7ggiz5q7vr7za"))))
+    (properties `((upstream-name . "LGDtoolkit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-monobin r-dplyr))
+    (home-page "https://github.com/andrija-djurovic/LGDtoolkit")
+    (synopsis "Collection of Tools for LGD Rating Model Development")
+    (description
+     "The goal of this package is to cover the most common steps in Loss Given Default
+(LGD) rating model development.  The main procedures available are those that
+refer to bivariate and multivariate analysis.  In particular two statistical
+methods for multivariate analysis are currently implemented â OLS regression
+and fractional logistic regression.  Both methods are also available within
+different blockwise model designs and both have customized stepwise algorithms.
+Descriptions of these customized designs are available in Siddiqi (2016)
+<doi:10.1002/9781119282396.ch10> and Anderson, R.A. (2021)
+<doi:10.1093/oso/9780192844194.001.0001>.  Although they are explained for PD
+model, the same designs are applicable for LGD model with different underlying
+regression methods (OLS and fractional logistic regression).  To cover other
+important steps for LGD model development, it is recommended to use LGDtoolkit
+package along with PDtoolkit', and monobin (or monobinShiny') packages.")
+    (license license:gpl3+)))
 
 (define-public r-lgcp
   (package

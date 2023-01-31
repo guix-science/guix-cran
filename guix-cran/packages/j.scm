@@ -3812,13 +3812,13 @@ outputs can be written to standard file formats.")
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "5.0.0")
+    (version "5.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jack" version))
               (sha256
                (base32
-                "1wbcglbhwrnlyd6ms05b0h3dcviyghazi2y8wihh5f3awm5393nf"))))
+                "1l72aqnikgqrn327dkk1s6lxxrgs5xfvl8p5l986y61jpx0qdif8"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
     (inputs (list gmp))

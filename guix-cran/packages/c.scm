@@ -5049,6 +5049,33 @@ of Brazil.  The climate crop zoning of this package can be run for all the
 Brazilian territory.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-cropscaper
+  (package
+    (name "r-cropscaper")
+    (version "1.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CropScapeR" version))
+              (sha256
+               (base32
+                "0dhziq4fybb987jv10g0wd4n765c4d87h86g96qg8wg6cx11vi6m"))))
+    (properties `((upstream-name . "CropScapeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rjsonio
+                             r-raster
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=CropScapeR")
+    (synopsis
+     "Access Cropland Data Layer Data via the 'CropScape' Web Service")
+    (description
+     "Interface to easily access Cropland Data Layer (CDL) data for any area of
+interest via the CropScape <https://nassgeodata.gmu.edu/CropScape/> web service.")
+    (license license:gpl2+)))
+
 (define-public r-crops
   (package
     (name "r-crops")
@@ -11656,13 +11683,13 @@ mentioned.")
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.0.3")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CopernicusMarine" version))
               (sha256
                (base32
-                "1vg767ri1bwp26naax0qsi895fkmsxx8h792hmkxnh9ay83h6l40"))))
+                "002rkgjphnpjll901dmmhi1ahhfl6c5k7bw740r6h7v18dkcx36j"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15283,13 +15310,13 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.25")
+    (version "3.26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "1f9jffg5ylrgqamh5ppxsjj8fyhvsn2x4jd3r9wd6gynyba6h6ha"))))
+                "1nr71yrc7kzzq29rk86wy92287h4phn8jifihbba33rhms83irw4"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
@@ -23963,18 +23990,18 @@ filters that maximize the between-class and minimize the within-class distances.
 (define-public r-cld3
   (package
     (name "r-cld3")
-    (version "1.4.4")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cld3" version))
               (sha256
                (base32
-                "1i0nz5ijlq8kc7x7jw5f57fp7qblfv0v263z0v3iprpqsx4m3w0x"))))
+                "075v7jw9x4pbg8p2kfjdw3rr7bw21lci97l44xmngka3lr6c25vj"))))
     (properties `((upstream-name . "cld3")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list pkg-config))
-    (home-page "https://docs.ropensci.org/cld3/")
+    (home-page "https://cran.r-project.org/package=cld3")
     (synopsis "Google's Compact Language Detector 3")
     (description
      "Google's Compact Language Detector 3 is a neural network model for language
@@ -27960,18 +27987,16 @@ easily readable argument checking to improve code robustness.")
 (define-public r-cheatsheet
   (package
     (name "r-cheatsheet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cheatsheet" version))
               (sha256
                (base32
-                "1vnkpmf2iahgj1j6f5jvjiamvsgsamy4kdnskc70s4584d5m00p7"))))
+                "0pyvlpgfn2jh7asnc4dqd85b6q95hwv0m04a2x710jwnwp269297"))))
     (properties `((upstream-name . "cheatsheet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rstudioapi
-                             r-rappdirs
+    (propagated-inputs (list r-rstudioapi
                              r-purrr
                              r-magrittr
                              r-git2r
@@ -29278,16 +29303,16 @@ diagram.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cffr" version))
               (sha256
                (base32
-                "0vyg3cl1vkz40ds2birlxn5ip24gfn5i4405vvnnb6gjp9ymmcpv"))))
+                "1zhb6dnmrlnsp3wzm8bs3z6gl09b62x3cs4v6rv2l9fp6j4nyisq"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-crayon))
+    (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/cffr/")
     (synopsis "Generate Citation File Format ('cff') Metadata for R Packages")
@@ -30307,6 +30332,33 @@ imported from the official DVD provided by the Chilean National Bureau of
 Statistics by using the REDATAM converter created by Pablo De Grande and in
 addition it includes the maps accompanying these datasets.)")
     (license license:cc0)))
+
+(define-public r-censmfm
+  (package
+    (name "r-censmfm")
+    (version "3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CensMFM" version))
+              (sha256
+               (base32
+                "060cr5iz2ch27j09mkd758y3chanrx5r9b9fnwpdhxh5kiv07mkz"))))
+    (properties `((upstream-name . "CensMFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tlrmvnmvt r-mvtnorm r-momtrunc r-gridextra
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=CensMFM")
+    (synopsis "Finite Mixture of Multivariate Censored/Missing Data")
+    (description
+     "It fits finite mixture models for censored or/and missing data using several
+multivariate distributions.  Point estimation and asymptotic inference (via
+empirical information matrix) are offered as well as censored data generation.
+Pairwise scatter and contour plots can be generated.  Possible multivariate
+distributions are the well-known normal, Student-t and skew-normal
+distributions.  This package is an complement of Lachos, V. H., Moreno, E. J.
+L., Chen, K. & Cabral, C. R. B. (2017) <doi:10.1016/j.jmva.2017.05.005> for the
+multivariate skew-normal case.")
+    (license license:gpl2+)))
 
 (define-public r-censcov
   (package
@@ -36272,13 +36324,13 @@ plot refinement over time.")
 (define-public r-caman
   (package
     (name "r-caman")
-    (version "0.75")
+    (version "0.76")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAMAN" version))
               (sha256
                (base32
-                "1r6bxqg9wrllznrm5n5a5kcskcj6cd9l5lm5hkyq1v2vb751z6i2"))))
+                "01r0wbsz24sh3rh9m64cgabgy1rf4y4cg36vmc23v01cjmz75wr0"))))
     (properties `((upstream-name . "CAMAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mvtnorm))

@@ -990,13 +990,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "1yzbpzfqf1l0530m1qyw0c781rvyj3czfv5jxg0s4ss4srj2kzzb"))))
+                "0r2z9l2qqi502zhj0cqjkxnj53sw6bcn3lri9nvrjg5q1dlc30ip"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-expint))
@@ -1005,10 +1005,10 @@ those values that are true.")
      "Estimation and Additional Tools for Alternative Shared Frailty Models")
     (description
      "Provide estimation and data generation tools for some new multivariate frailty
-models.  This version includes the gamma, inverse Gaussian and weighted Lindley
-as the distribution for the frailty terms.  For the basal model, it is
-considered a parametric approach based on the Weibull distribution and a
-semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
+models.  This version includes the gamma, inverse Gaussian, weighted Lindley and
+Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
+model, it is considered a parametric approach based on the Weibull distribution
+and a semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
 <arXiv:2206.12973>.")
     (license license:gpl2+)))
 
@@ -9910,13 +9910,13 @@ objects.")
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EnrichIntersect" version))
               (sha256
                (base32
-                "0kh7r7bn0bqcyn5z396mxqgz2qxd4hg44bx7vq4ja233wda2g3wa"))))
+                "1j0b0mjriwjmw9rjzp834rdbyzcykzi85v93z17jz734480ka5l6"))))
     (properties `((upstream-name . "EnrichIntersect")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -9934,8 +9934,8 @@ user-defined sets.  It allows users to perform over-representation analysis of
 the custom sets among any specified ranked feature list, hence making enrichment
 analysis applicable to various types of data from different scientific fields.
 EnrichIntersect also enables an interactive means to visualize identified
-associations based on, for example, the mix-lasso model (Zhao et al. (2022)
-<doi:10.1016/j.isci.2022.104767>) or similar methods.")
+associations based on, for example, the mix-lasso model (Zhao et al., iScience,
+2022 <doi:10.1016/j.isci.2022.104767>) or similar methods.")
     (license license:expat)))
 
 (define-public r-enpls
@@ -18875,13 +18875,13 @@ capabilities into/from multidimensional R arrays.")
 (define-public r-easymx
   (package
     (name "r-easymx")
-    (version "0.2-12")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EasyMx" version))
               (sha256
                (base32
-                "00wj08nwv5zi5d4a1fss40f4cms4svam1hmmxvh60hvc55ygsc3z"))))
+                "155grvar94bfwddp99ipvafnn52ssdh2jd4q6ddqnw3zmv506snf"))))
     (properties `((upstream-name . "EasyMx")))
     (build-system r-build-system)
     (propagated-inputs (list r-openmx))

@@ -7,9 +7,13 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages gtk)
+  #:use-module (gnu packages fontutils)
+  #:use-module (gnu packages image)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages bash)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages maths)
@@ -412,6 +416,29 @@ calculation of exact values of hypergeometric variables.")
 plane exists, the entities do not overlap.  Applications include overlap
 detection in morphological, resource or environmental dimensions.  More details
 can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
+    (license license:gpl3)))
+
+(define-public r-hypergeomat
+  (package
+    (name "r-hypergeomat")
+    (version "4.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HypergeoMat" version))
+              (sha256
+               (base32
+                "06ljg2v0dbqi9mf2l236p616x62cbx4q05qymbsj8inmajwv0piz"))))
+    (properties `((upstream-name . "HypergeoMat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
+                             r-eigenr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stla/HypergeoMat")
+    (synopsis "Hypergeometric Function of a Matrix Argument")
+    (description
+     "Evaluates the hypergeometric functions of a matrix argument, which appear in
+random matrix theory.  This is an implementation of Koev & Edelman's algorithm
+(2006) <doi:10.1090/S0025-5718-06-01824-2>.")
     (license license:gpl3)))
 
 (define-public r-hypergate
@@ -1977,6 +2004,32 @@ a standard way.")
 requests'.  Designed to work with httr'.")
     (license license:expat)))
 
+(define-public r-httpgd
+  (package
+    (name "r-httpgd")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "httpgd" version))
+              (sha256
+               (base32
+                "1vns7bqzlgsgl45l4ijd14xh615ndf0q12i6jaxll00ayymf7gvd"))))
+    (properties `((upstream-name . "httpgd")))
+    (build-system r-build-system)
+    (inputs (list zlib libpng freetype fontconfig cairo))
+    (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://github.com/nx10/httpgd")
+    (synopsis "'HTTP' Server Graphics Device")
+    (description
+     "This package provides a graphics device for R that is accessible via network
+protocols.  This package was created to make it easier to embed live R graphics
+in integrated development environments and other applications.  The included
+HTML/JavaScript client (plot viewer) aims to provide a better overall user
+experience when dealing with R graphics.  The device asynchronously serves
+graphics via HTTP and WebSockets'.")
+    (license license:gpl2+)))
+
 (define-public r-httpcache
   (package
     (name "r-httpcache")
@@ -2938,22 +2991,22 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
 (define-public r-hrqglas
   (package
     (name "r-hrqglas")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hrqglas" version))
               (sha256
                (base32
-                "1fmizzs7d42dziih5yaj449k1gw6fxraw72z9h1l2jz6qqgd8938"))))
+                "0v3hdjz8755ka4ahdx2dsyw3513hxg1r0ncj9id6gbmqq1l0s9a5"))))
     (properties `((upstream-name . "hrqglas")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrix r-mass))
+    (propagated-inputs (list r-rcpp r-quantreg r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=hrqglas")
     (synopsis
      "Group Variable Selection for Quantile and Robust Mean Regression")
     (description
      "This package provides a program that conducts group variable selection for
-quantile and robust mean regression (Sherwood and Li, 2021).  The group lasso
+quantile and robust mean regression (Sherwood and Li, 2022).  The group lasso
 penalty (Yuan and Lin, 2006) is used for group-wise variable selection.  Both of
 the quantile and mean regression models are based on the Huber loss.
 Specifically, with the tuning parameter in the Huber loss approaching to 0, the
@@ -10672,20 +10725,19 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "happign" version))
               (sha256
                (base32
-                "1zxm9hg9jq0xzw6has9blskvy0cz6c8b3qqysaca1569zmyfgw8n"))))
+                "1xinrjsk37licqbvqx0hyyqxb50vj1zi10ikzq6wfx7qnvdrv4nh"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-sf
-                             r-magrittr
                              r-httr2
                              r-geojsonsf
                              r-dplyr

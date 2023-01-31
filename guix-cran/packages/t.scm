@@ -12374,13 +12374,13 @@ arbitrary LaTeX code to be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tigris" version))
               (sha256
                (base32
-                "0fbhq2jznwxnvqk2zndnp923az8kvbq667i15m5xx9lq42zfzwix"))))
+                "132d0w5rdci7r7q0n4z1ac3iln42zby6np1lkmlngfgz2466nz6q"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -13699,13 +13699,13 @@ unpublished research.")
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.5.8")
+    (version "0.5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyhydat" version))
               (sha256
                (base32
-                "1bk3a0cgb0311xbni52zrpb7fa4vgdi022g7rap2af961fcbl6bz"))))
+                "0jd0p7azm5xsqr7bp3xn735rr8j4ikqgjqdlh01bl9wwg7jinxn4"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14471,13 +14471,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "08fc8hhry141kxfazjzmr8c4n0lzgrkdb4mn40wxpy9135d7vj39"))))
+                "05f58fa37mmky5jfl8gbnday9d3c99prhngggdv3qjn934zk4iya"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17795,13 +17795,13 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
 (define-public r-testdesign
   (package
     (name "r-testdesign")
-    (version "1.4.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestDesign" version))
               (sha256
                (base32
-                "0f841js9lngvr57q5dm03pgp8ijprj6z525ccda1wm61r7lhxrpp"))))
+                "1r59zx97g1z49x6lkiqw2kclb88jksgwj589jymwcng3h5ja68ah"))))
     (properties `((upstream-name . "TestDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

@@ -96,6 +96,31 @@ maintenance and the addition of minor functionality.")
 curve allowed to vary along the length of the curve.")
     (license license:gpl2+)))
 
+(define-public r-vvsculptor
+  (package
+    (name "r-vvsculptor")
+    (version "0.4.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvsculptor" version))
+              (sha256
+               (base32
+                "076fdzhr5b39k1vavj3jf7897vpdjgfbf8fxxqi6y4cy0pz4iisi"))))
+    (properties `((upstream-name . "vvsculptor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=vvsculptor")
+    (synopsis "Apply Manipulations to Data Frames")
+    (description
+     "This package provides a set of functions for manipulating data frames in
+accordance with specific business rules.  In addition, it includes wrapper
+functions for commonly used functions from the popular tidyverse package, making
+it easy to integrate these functions into data analysis workflows.  The package
+is designed to streamline data preprocessing and help users quickly and
+efficiently perform data transformations that are specific to their business
+needs.")
+    (license license:expat)))
+
 (define-public r-vvfiller
   (package
     (name "r-vvfiller")
@@ -4933,13 +4958,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8-0")
+    (version "0.8-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcdExtra" version))
               (sha256
                (base32
-                "1wv1ypjdvw639jlphwfpqgpjkk4ki98l2lfbpncsbpy9jpknjsmk"))))
+                "1a0xr9laxr9wacqp5dvm3jifzx1mqk9z9kkj9zvq4pjr0zvn4yn4"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd r-mass r-gnm r-ca))

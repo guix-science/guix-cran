@@ -9647,13 +9647,13 @@ criteria are available for variable selection.")
 (define-public r-stepr
   (package
     (name "r-stepr")
-    (version "2.1-3")
+    (version "2.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stepR" version))
               (sha256
                (base32
-                "1v1q4skd3k74nsdkv4ly5h1w10hlxpzcscswghan8r27k502vq12"))))
+                "18n368q7kc6q46ilvsvzjlrnlc93dgz01dzi4n10cn9sa2cvk496"))))
     (properties `((upstream-name . "stepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r-cache r-lowpassfilter r-digest))
@@ -26437,13 +26437,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SMOTEWB" version))
               (sha256
                (base32
-                "008pg9sramii5qrpxcshlnvw8mwwkpcijrfb0k0a9s1ly56c0f0a"))))
+                "07xxbpi5bmvryggvag9dnvh53x2w8dljif4s4j3w9w8wpna24i1n"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-fnn))
@@ -30058,17 +30058,18 @@ score statistics in a SNP set and efficiently compute SNP-set level p-values.")
 (define-public r-sk4fga
   (package
     (name "r-sk4fga")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SK4FGA" version))
               (sha256
                (base32
-                "1fimj47c5k2bqnac8bh12ag67han41lai0m976ma2hvgrl8c66wv"))))
+                "0jfs1x27ybd95qqxybwcf9bdn3yvhhp435g97yb13g6myc3c8sam"))))
     (properties `((upstream-name . "SK4FGA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=SK4FGA")
+    (home-page
+     "https://github.com/tobyhayward13/SCI118UOA_ForensicGlassAnalysis")
     (synopsis "Scott-Knott for Forensic Glass Analysis")
     (description
      "In forensics, it is common and effective practice to analyse glass fragments
@@ -32549,13 +32550,13 @@ in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
 (define-public r-simplevis
   (package
     (name "r-simplevis")
-    (version "6.4.0")
+    (version "7.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simplevis" version))
               (sha256
                (base32
-                "1rf6bvdxsvp5ydvmrf2przrx851jr0yih45mbj189dykwvp377cm"))))
+                "1c2hkn7f20vvn0nc6w4p5dwcbg4dv883rc1a7hwfahjzgi4w7j78"))))
     (properties `((upstream-name . "simplevis")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -32567,27 +32568,20 @@ in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
                              r-shiny
                              r-sf
                              r-scales
-                             r-santoku
                              r-rlang
-                             r-purrr
-                             r-plotly
                              r-magrittr
-                             r-lubridate
                              r-leafpop
                              r-leaflet
                              r-leafem
                              r-htmlwidgets
                              r-ggplot2
-                             r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://StatisticsNZ.github.io/simplevis/")
-    (synopsis
-     "Wrappers to Simplify Beautiful 'ggplot2' and 'leaflet' Visualisation")
+    (synopsis "Wrappers to Simplify 'leaflet' Visualisation")
     (description
-     "Wrapper functions around the amazing ggplot2 and leaflet packages that aims to
-simplify beautiful ggplot2 and leaflet visualisation.  Precursor package to the
-ggblanket package.")
+     "Wrapper functions around the amazing leaflet package that aims to simplify
+leaflet visualisation.  See the ggblanket package for ggplot2 wrappers.")
     (license license:expat)))
 
 (define-public r-simplesetup
@@ -32909,6 +32903,27 @@ diagnostics, plots of residuals, and detailed information about simple slopes
 for interactions.  There are numerous options for designing interaction plots,
 including plots of interactions for both lm and lme models.")
     (license license:gpl2+)))
+
+(define-public r-simplanonym
+  (package
+    (name "r-simplanonym")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simplanonym" version))
+              (sha256
+               (base32
+                "1zwc73qbf0xx0ca1pgk3hqdmf9b6ihlwflb2fq31lhk3ngka8kc6"))))
+    (properties `((upstream-name . "simplanonym")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-forcats r-dplyr))
+    (home-page "https://github.com/dkgaraujo/simplanonym")
+    (synopsis "Consistent Anonymisation Across Datasets")
+    (description
+     "This package provides a simple function that anonymises a list of variables in a
+consistent way: anonymised factors are not recycled and the same original levels
+receive the same anonymised factor even if located in different datasets.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-simphony
   (package
@@ -48120,16 +48135,20 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scoringutils" version))
               (sha256
                (base32
-                "1fbppgjiv0qcypcnnrmyrilga5hdlq2l2iy3fq7i73h2y6a8p5r9"))))
+                "1a2lvc52x8nvkfa3dgrlh76j27cwz05sbw1cg47kcafv07vjzw2x"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scoringrules r-rlang r-ggplot2 r-ggdist
+    (propagated-inputs (list r-scoringrules
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-ggdist
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://epiforecasts.io/scoringutils/")
@@ -52430,13 +52449,13 @@ cancer data <arXiv:2012.06093>.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAMtool" version))
               (sha256
                (base32
-                "0628iahnik4k67lfk06h6g5bn47584mxi4pia0cyi79nzbw0782k"))))
+                "0wznrav9ackgyf95hrr08vvdzr0i3d9c8y6j675j7mfrngmlakyq"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -52444,6 +52463,7 @@ cancer data <arXiv:2012.06093>.")
                              r-snowfall
                              r-rmarkdown
                              r-rcppeigen
+                             r-pbapply
                              r-msetool
                              r-gplots
                              r-dplyr

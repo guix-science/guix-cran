@@ -1577,6 +1577,37 @@ Analysis of Spatial and Spatio-Temporal Point Patterns, Third Edition, Diggle,
 pp.  83-86, (2003) <doi:10.1080/13658816.2014.937718>.")
     (license license:gpl2+)))
 
+(define-public r-bt
+  (package
+    (name "r-bt")
+    (version "0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BT" version))
+              (sha256
+               (base32
+                "1fzryjxczc7cny0msjmv4hf52wjgncn6278drrdv2z31a9j4asa0"))))
+    (properties `((upstream-name . "BT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-rpart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GiregWillame/BT/")
+    (synopsis "(Adaptive) Boosting Trees Algorithm")
+    (description
+     "This package performs (Adaptive) Boosting Trees for Poisson distributed response
+variables, using log-link function.  The code approach is similar to the one
+used in gbm'/'gbm3'.  Moreover, each tree in the expansion is built thanks to
+the rpart package.  This package is based on following books and articles
+Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-25820-7>
+Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-57556-4>
+Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-25827-6>
+Denuit, M., Hainaut, D., Trufin, J. (2022) <doi:10.1080/03461238.2022.2037016>
+Denuit, M., Huyghe, J., Trufin, J. (2022)
+<https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A244325/datastream/PDF_01/view>
+Denuit, M., Trufin, J., Verdebout, T. (2022)
+<https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A268577>.")
+    (license license:gpl3+)))
+
 (define-public r-bsw
   (package
     (name "r-bsw")
@@ -3404,13 +3435,13 @@ kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
 (define-public r-brif
   (package
     (name "r-brif")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brif" version))
               (sha256
                (base32
-                "1wnsyhvj2g6j5szajm27v2w0mg5d9fc200gfvdzgi75rhvi1nl97"))))
+                "0zavddjs6y37ll68s0c3ap9p79disv7v54505pv6nyxqh40s22m8"))))
     (properties `((upstream-name . "brif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18999,6 +19030,28 @@ are based on the following publications: Combes, B. & Philippe, A. (2017)
 export, application of age models and palaeodose model.")
     (license license:gpl3)))
 
+(define-public r-baygel
+  (package
+    (name "r-baygel")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "baygel" version))
+              (sha256
+               (base32
+                "1kzz2nhxwhqairn78fmk9pfxfrsfr5q6vzw75mxgbr0g83fzqznd"))))
+    (properties `((upstream-name . "baygel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/Jarod-Smithy/baygel")
+    (synopsis "Bayesian Estimators for Gaussian Graphical Models")
+    (description
+     "This package implements a Bayesian graphical ridge data-augmented block Gibbs
+sampler.  The sampler simulates the posterior distribution of precision matrices
+of a Gaussian Graphical Model.  This sampler is proposed in Smith, Arashi, and
+Bekker (2022) <doi:10.48550/arXiv.2210.16290>.")
+    (license license:gpl3+)))
+
 (define-public r-bayfoxr
   (package
     (name "r-bayfoxr")
@@ -20766,6 +20819,45 @@ of specific algorithms.")
 modeling by lineal regression structures, and the degrees of freedom parameters
 are estimated.")
     (license license:gpl2+)))
+
+(define-public r-bayesiantools
+  (package
+    (name "r-bayesiantools")
+    (version "0.1.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesianTools" version))
+              (sha256
+               (base32
+                "1ldx75g4ws2yrnq4xyj3j83xjhakhgbhn174lwqzviqynvbbshzm"))))
+    (properties `((upstream-name . "BayesianTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnorm
+                             r-rcpp
+                             r-numderiv
+                             r-mvtnorm
+                             r-msm
+                             r-matrix
+                             r-mass
+                             r-idpmisc
+                             r-gap
+                             r-emulator
+                             r-ellipse
+                             r-dharma
+                             r-coda
+                             r-bridgesampling))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/florianhartig/BayesianTools")
+    (synopsis
+     "General-Purpose MCMC and SMC Samplers and Tools for Bayesian Statistics")
+    (description
+     "General-purpose MCMC and SMC samplers, as well as plot and diagnostic functions
+for Bayesian statistics, with a particular focus on calibrating complex system
+models.  Implemented samplers include various Metropolis MCMC variants
+(including adaptive and/or delayed rejection MH), the T-walk, two differential
+evolution MCMCs, two DREAM MCMCs, and a sequential Monte Carlo (SMC) particle
+filter.")
+    (license license:gpl3)))
 
 (define-public r-bayesianreasoning
   (package

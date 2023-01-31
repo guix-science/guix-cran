@@ -878,6 +878,34 @@ across a Quarto website.  Learn more about usedthese at
 <https://cgoo4.github.io/usedthese/>.")
     (license license:expat)))
 
+(define-public r-usdoj
+  (package
+    (name "r-usdoj")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "usdoj" version))
+              (sha256
+               (base32
+                "039bhkhlds3ylcpys0w2p068im1cgv8r0shfc997yfpgcj1s7ka9"))))
+    (properties `((upstream-name . "usdoj")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-anytime))
+    (home-page "https://github.com/rOpenGov/usdoj")
+    (synopsis "For Accessing U.S. Department of Justice (DOJ) Open Data")
+    (description
+     "Fetch data from the <https://www.justice.gov/developer/api-documentation/api_v1>
+API such as press releases, blog entries, and speeches.  Optional parameters
+allow users to specify the number of results starting from the earliest or
+latest entries, and whether these results contain keywords.  Data is cleaned for
+analysis and returned in a dataframe.")
+    (license license:expat)))
+
 (define-public r-usdm
   (package
     (name "r-usdm")
@@ -3938,22 +3966,19 @@ options.")
 (define-public r-uavrmp
   (package
     (name "r-uavrmp")
-    (version "0.6.0")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uavRmp" version))
               (sha256
                (base32
-                "0spa0cv33kdrxzmfn07qnj1j98gxnjmi3v4888xj5v3a1yaa08kw"))))
+                "0jv0ls8wbxciv6lhr7qvzarg4s3gckkc1n4w833sfpr0sk4gakaj"))))
     (properties `((upstream-name . "uavRmp")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-sp
                              r-sf
                              r-rlist
-                             r-rgeos
-                             r-rgdal
-                             r-raster
                              r-log4r
                              r-link2gi
                              r-jsonlite
@@ -3968,10 +3993,10 @@ options.")
      "The Unmanned Aerial Vehicle Mission Planner provides an easy to use work flow
 for planning autonomous obstacle avoiding surveys of (almost) ready to fly
 unmanned aerial vehicles to retrieve aerial or spot related data.  It creates
-either intermediate flight control files for the DJI phantom series or ready to
-upload control files for the pixhawk based flight controller as used in the 3DR
-Solo.  Additionally it contains some useful tools for digitizing and data
-manipulation.")
+either intermediate flight control files for the DJI-Litchi supported series or
+ready to upload control files for the pixhawk-based flight controller as used in
+the 3DR-Solo.  Additionally it contains some useful tools for digitizing and
+data manipulation.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 

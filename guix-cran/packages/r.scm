@@ -8958,18 +8958,18 @@ against data sources of all sizes ranging from gigabytes to petabytes:
 (define-public r-rpref
   (package
     (name "r-rpref")
-    (version "1.3")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rPref" version))
               (sha256
                (base32
-                "0vlzhxhf2x6gw015sjfw2638wv6hckg068rpbzncp7wprn9msa6y"))))
+                "1ylb4mc5fjvmi8wly9w4v25l7sc8i9hk28lfidgzaavp5447af2w"))))
     (properties `((upstream-name . "rPref")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-lazyeval r-igraph r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://www.p-roocks.de/rpref")
+    (home-page "https://www.p-roocks.de/rpref/")
     (synopsis "Database Preferences and Skyline Computation")
     (description
      "Routines to select and visualize the maxima for a given strict partial order.
@@ -23233,13 +23233,13 @@ Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 (define-public r-rgeoda
   (package
     (name "r-rgeoda")
-    (version "0.0.9")
+    (version "0.0.10-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeoda" version))
               (sha256
                (base32
-                "1yl2liin9fvcry2wi3223kq6xdxm6mkkkdjayp9gizllnhpf71z8"))))
+                "03qw70zkd1pplmb7c0b0l7j19cd9ivz0lnnhv9n53754nfjw6fh4"))))
     (properties `((upstream-name . "rgeoda")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp r-digest r-bh))
@@ -25766,13 +25766,13 @@ Core et al., (2022) <doi:10.1101/2022.05.31.494100>.")
 (define-public r-restoptr
   (package
     (name "r-restoptr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restoptr" version))
               (sha256
                (base32
-                "0ksvzpikhbxjass2kbl70s5jjras2ylldnw3bgwz9499vbpn9raa"))))
+                "042a79pjb0g5j89vxg58f8l6b3nkdf71snfq7g5c3v95z6xj7s0s"))))
     (properties `((upstream-name . "restoptr")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -28752,24 +28752,24 @@ Reinsurance\" by Munich Re (2010)
 (define-public r-reins
   (package
     (name "r-reins")
-    (version "1.0.10")
+    (version "1.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ReIns" version))
               (sha256
                (base32
-                "04rqb2jhmgq1az1c1rbs6jfg6gpxjs34k0m4w3a8gnq48l6dwqi8"))))
+                "0f9bjxvxrz2fa17i2v3dml60krvgk5j1sw14k2hbyffgs3k258mp"))))
     (properties `((upstream-name . "ReIns")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-foreach r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "http://www.hec.unil.ch/halbrech_files/reinsurance.html")
+    (home-page "https://github.com/TReynkens/ReIns")
     (synopsis
      "Functions from \"Reinsurance: Actuarial and Statistical Aspects\"")
     (description
      "This package provides functions from the book \"Reinsurance: Actuarial and
 Statistical Aspects\" (2017) by Hansjoerg Albrecher, Jan Beirlant and Jef Teugels
-<http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470772689.html>.")
+<https://www.wiley.com/en-us/Reinsurance%3A+Actuarial+and+Statistical+Aspects-p-9780470772683>.")
     (license license:gpl2+)))
 
 (define-public r-reinforcementlearning
@@ -30712,13 +30712,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "0xp1098klr10w54qml728ncf45arl5ggvlhwrzfkcj1gza53vf5p"))))
+                "1s73sb04268m3xgir36j4biwlrx18fmbjhk5xhkdiff5xjkkm93l"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32551,13 +32551,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.12")
+    (version "0.4.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readabs" version))
               (sha256
                (base32
-                "0w32in53jcj99v5dq64zsg0isyjkwbzpjvahxqcs8s9x5ikq55mk"))))
+                "14jb04dsaxjwp3p35xwsfhp7b1arq65y4qvjpf11jixw1ndx3qxb"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -41859,13 +41859,13 @@ confidence intervals based on the nonparametric bootstrap.")
 (define-public r-rankinplot
   (package
     (name "r-rankinplot")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rankinPlot" version))
               (sha256
                (base32
-                "0vn04ash9d7n3y8g1yrgmsj357qfskfh31l4fj5h745s1rqfm5i8"))))
+                "1kf8xwzx2mjgv3ad1yj70gm0mrsyghwkmjk98pwcj3a82qk94skr"))))
     (properties `((upstream-name . "rankinPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))
@@ -45324,20 +45324,20 @@ format.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2resize" version))
               (sha256
                (base32
-                "1z9q9kq5jkaxlz0wr0jk57ix41pfx8ny1pyha8f7n0xxdph819c6"))))
+                "0wk56hgx9b588ay42dpbc1wl5wg4s7ag6vgmy2nbza1sa5mk4k8p"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://r2resize.obi.obianom.com")
     (synopsis
-     "In-Text Expandable and Resizable Containers, Images and Data Tables in 'Shiny', 'Markdown' and 'Quarto' Documents")
+     "In-Text Expandable and Resizable Containers, Images, Tables and Data Tables in 'Shiny', 'Rmarkdown' and 'Quarto' Documents")
     (description
      "Automatic resizing toolbar for containers, images and tables.  Most suitable to
 include resize functionality in Markdown', Rmarkdown and Quarto documents.")
