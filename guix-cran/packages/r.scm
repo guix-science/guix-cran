@@ -1154,13 +1154,13 @@ in all locales and from all devices.")
 (define-public r-rweka
   (package
     (name "r-rweka")
-    (version "0.4-44")
+    (version "0.4-45")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RWeka" version))
               (sha256
                (base32
-                "1j3v9hlwc4w4kinm62yy8rmqi0f21dlgjdg2ghxla0gbmqvr88zk"))))
+                "0a0hsrxi02z1jyrzkydlajwfv5qziwspr4aqbk9akg7bmdzz247r"))))
     (properties `((upstream-name . "RWeka")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -1173,7 +1173,7 @@ learning algorithms for data mining tasks written in Java, containing tools for
 data pre-processing, classification, regression, clustering, association rules,
 and visualization.  Package RWeka contains the interface code, the Weka jar is
 in a separate package RWekajars'.  For more information on Weka see
-<http://www.cs.waikato.ac.nz/ml/weka/>.")
+<https://www.cs.waikato.ac.nz/ml/weka/>.")
     (license license:gpl2)))
 
 (define-public r-rwebstat
@@ -8412,13 +8412,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "1chcynn8766aa2bjxr3i9f9wyg6gfba3g2md403wvz0c1rmim0jm"))))
+                "0q0zwwy04dfjpi5kggphpfpcf0l9d02nk06ignfpp70838m8l954"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -8429,13 +8429,15 @@ investigation.")
                              r-hqreg
                              r-data-table))
     (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=rqPen")
+    (home-page
+     "https://github.com/bssherwood/rqpen/blob/master/ignore/rqPenArticle.pdf")
     (synopsis "Penalized Quantile Regression")
     (description
      "This package performs penalized quantile regression with LASSO, elastic net,
 SCAD and MCP penalty functions including group penalties.  Provides a function
 that automatically generates lambdas and evaluates different models with cross
-validation or BIC, including a large p version of BIC.")
+validation or BIC, including a large p version of BIC. Below URL provides a link
+to a work in progress vignette.")
     (license license:expat)))
 
 (define-public r-rqentangle
@@ -20671,13 +20673,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rintcal" version))
               (sha256
                (base32
-                "0ka401xy6hpmaw2ap2aq29zh3ppqgql5kkhai0vlp74bxfilg8q3"))))
+                "1qknbcyy1nla1d7nmwcbd76vgr97skr8ihrklhr6iskcx8pyysj6"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -22951,46 +22953,6 @@ interaction data set.")
      "The glTF file format is used to describe 3D models.  This package provides read
 and write functions to work with it.")
     (license license:gpl2)))
-
-(define-public r-rgistools
-  (package
-    (name "r-rgistools")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RGISTools" version))
-              (sha256
-               (base32
-                "0pildj5pmc34f58bv39gxl3p2g0cr32przdhjnss37kcdlcv5zlb"))))
-    (properties `((upstream-name . "RGISTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-xml
-                             r-urltools
-                             r-tmap
-                             r-stars
-                             r-sp
-                             r-sf
-                             r-rvest
-                             r-rjson
-                             r-rdpack
-                             r-raster
-                             r-mapview
-                             r-httr
-                             r-fields
-                             r-curl))
-    (home-page "https://github.com/spatialstatisticsupna/RGISTools#RGISTools")
-    (synopsis "Handling Multiplatform Satellite Images")
-    (description
-     "Downloading, customizing, and processing time series of satellite images for a
-region of interest.  RGISTools functions allow a unified access to multispectral
-images from Landsat, MODIS and Sentinel repositories.  RGISTools also offers
-capabilities for customizing satellite images, such as tile mosaicking, image
-cropping and new variables computation.  Finally, RGISTools covers the
-processing, including cloud masking, compositing and gap-filling/smoothing time
-series of images (Militino et al., 2018 <doi:10.3390/rs10030398> and Militino et
-al., 2019 <doi:10.1109/TGRS.2019.2904193>).")
-    (license license:gpl3)))
 
 (define-public r-rgift
   (package

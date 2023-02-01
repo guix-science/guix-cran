@@ -5941,13 +5941,13 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 (define-public r-mstest
   (package
     (name "r-mstest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSTest" version))
               (sha256
                (base32
-                "09njnxfj7i3gf91qayabhadzlwszh81pznyir0fqpsns8hzbmk4p"))))
+                "0icrpzvgbr84scx44lkg0r3f0x6hppqqikcnr0hpsbg6125ihq5f"))))
     (properties `((upstream-name . "MSTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -30163,6 +30163,35 @@ matrix.  vrPEER (variable reducted PEER) method performs variable-reduction
 procedure to handle the non-invertibility of a graph Laplacian matrix.")
     (license license:gpl2)))
 
+(define-public r-mdp2
+  (package
+    (name "r-mdp2")
+    (version "2.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MDP2" version))
+              (sha256
+               (base32
+                "0jh7xp8xl1ykh8m3jg3nz486ri8dgv3m2f951zifzkx7cv1axja8"))))
+    (properties `((upstream-name . "MDP2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-diagram))
+    (native-inputs (list r-knitr))
+    (home-page "https://relund.github.io/mdp/")
+    (synopsis "Markov Decision Processes (MDPs)")
+    (description
+     "Create and optimize (semi) MDPs with discrete time steps and state space.  Both
+hierarchical and ordinary-traditional MDPs can be modeled.")
+    (license (license:fsdg-compatible "GPL (>= 3.3.2)"))))
+
 (define-public r-mdols
   (package
     (name "r-mdols")
@@ -30409,16 +30438,16 @@ page for more information and examples.")
 (define-public r-mdfs
   (package
     (name "r-mdfs")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MDFS" version))
               (sha256
                (base32
-                "0sv6j8arfh4w333y1mp3n65bzi2kz9zrk2wpw80z5vci2489s50d"))))
+                "1cfgsm83i2crc3pmcgw0ylqfzb718s9rmmssjh9kvlij2q2sxlfq"))))
     (properties `((upstream-name . "MDFS")))
     (build-system r-build-system)
-    (home-page "https://featureselector.uco.uwb.edu.pl/software/mdfs/")
+    (home-page "https://www.mdfs.it/")
     (synopsis "MultiDimensional Feature Selection")
     (description
      "This package provides functions for MultiDimensional Feature Selection (MDFS):
@@ -34406,13 +34435,13 @@ to R.matlab', which creates a MATLAB server.")
 (define-public r-matlab2r
   (package
     (name "r-matlab2r")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matlab2r" version))
               (sha256
                (base32
-                "0yi7x34z3ssvbg8mq6swcsg2jvdb02pa05k50if7dzi36r2jzfwf"))))
+                "0fzp9l34mc0bfl3a9phq4rh9idbb22a2d4j00rvxb4b7yzj2p553"))))
     (properties `((upstream-name . "matlab2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-styler))

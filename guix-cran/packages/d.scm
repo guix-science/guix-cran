@@ -7525,13 +7525,13 @@ submitted.")
 (define-public r-dmrnet
   (package
     (name "r-dmrnet")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DMRnet" version))
               (sha256
                (base32
-                "05d3qmz83p5nb5ib7fffn80g0qfvpnrz7s85fqa5ajfy72f4lmgc"))))
+                "030ya23r9cg9adlh03qi8ychcwbvnxr42dvkvrzw6wz85dsc0vrv"))))
     (properties `((upstream-name . "DMRnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-grpreg r-glmnet))
@@ -21654,13 +21654,13 @@ user-controlled behavior.")
 (define-public r-date
   (package
     (name "r-date")
-    (version "1.2-41")
+    (version "1.2-42")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "date" version))
               (sha256
                (base32
-                "06ah5zb413rscgxax8xzmgwvz2x6kxp648gggaibvb6f7n4nvbzm"))))
+                "0x6b9dk7llvmcf2bzgdk8g1a28as0l1xxx2xn2fwyw801ab3z4as"))))
     (properties `((upstream-name . "date")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=date")

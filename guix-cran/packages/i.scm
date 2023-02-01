@@ -5062,16 +5062,18 @@ both desktop and online versions.")
 (define-public r-inzightplots
   (package
     (name "r-inzightplots")
-    (version "2.14.0")
+    (version "2.15.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iNZightPlots" version))
               (sha256
                (base32
-                "01sjbk3gj0hcpagy5xqxyhg9vfpm027hqs8qdxbc1rrx0vf2giph"))))
+                "0h4s7wgia8knkksjvidjkkyzvwmr4w7qhc36f6ppjhlyzik0dmkp"))))
     (properties `((upstream-name . "iNZightPlots")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey
+    (propagated-inputs (list r-units
+                             r-survey
+                             r-stringr
                              r-scales
                              r-s20x
                              r-rlang
@@ -5082,6 +5084,7 @@ both desktop and online versions.")
                              r-inzightmr
                              r-hms
                              r-hexbin
+                             r-expss
                              r-emmeans
                              r-dichromat
                              r-colorspace
@@ -5102,13 +5105,13 @@ for students of statistics, available in both desktop and online versions.")
 (define-public r-inzightmr
   (package
     (name "r-inzightmr")
-    (version "2.2.6")
+    (version "2.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iNZightMR" version))
               (sha256
                (base32
-                "1r2lzi9fw46q2k87zfhrfninmvbz15805za60lbfmlv32b29d82y"))))
+                "0c37bdpypl4kv3s4hxc7xzxiwa6fsbqxwhyi98hh3mfdj329p1m8"))))
     (properties `((upstream-name . "iNZightMR")))
     (build-system r-build-system)
     (home-page "https://inzight.nz")

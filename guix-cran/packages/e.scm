@@ -16579,13 +16579,13 @@ text with solutions to exercises.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "3.4")
+    (version "3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecospat" version))
               (sha256
                (base32
-                "0l93v8rbq41ll36riq6vhb22g5prp2rnlbn8i4lq85vvg1l00zfy"))))
+                "10rgkvaiab7jcqn04j8j5hdnc3kxzghn0rra351z75zm5lf9qb14"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

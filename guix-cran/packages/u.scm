@@ -3259,13 +3259,13 @@ analyses.")
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ukbnmr" version))
               (sha256
                (base32
-                "1nn3a9np4l9m60j7h8wcsn51574gs8056hs15bavrpmr1ad5gpdm"))))
+                "13wrvldv8mhl15k6lzg9kk0mfcbd2mqaylndcm31hllq121vjpq2"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-data-table))
@@ -3281,8 +3281,8 @@ Includes functions for extracting biomarkers from decoded UK Biobank field data,
 removing unwanted technical variation from biomarker concentrations, computing
 an extended set of lipid, fatty acid, and cholesterol fractions, and for
 re-deriving composite biomarkers and ratios after adjusting data for unwanted
-biological variation.  For further details on methods see Ritchie SC et al.
-medRxiv (2021) <doi:10.1101/2021.09.24.21264079>.")
+biological variation.  For further details on methods see Ritchie SC et al.  Sci
+Data (2023) <doi:10.1038/s41597-023-01949-y>.")
     (license license:expat)))
 
 (define-public r-ukbabynames

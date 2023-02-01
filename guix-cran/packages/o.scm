@@ -69,13 +69,13 @@ municipality.")
 (define-public r-oz
   (package
     (name "r-oz")
-    (version "1.0-21")
+    (version "1.0-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oz" version))
               (sha256
                (base32
-                "0p4r8qbpv7q6vad940540pd3lk79pyfj41h2cn22hsy1j0va1qbv"))))
+                "042f2pplhwj6q7n87qk6r2xcriif76ywyf4mcx3xsr2fjislajw9"))))
     (properties `((upstream-name . "oz")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=oz")
@@ -6379,13 +6379,13 @@ with various graphical options - Greene et al.  2017
 (define-public r-ontologics
   (package
     (name "r-ontologics")
-    (version "0.6.4")
+    (version "0.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ontologics" version))
               (sha256
                (base32
-                "1rfy7hba9wvx165d0xglf10q1fj25v58m0jr5mnfmghipmm7l0xx"))))
+                "17nzh45m1mjn70qjcagxqcffg35ll5dh99nrsqn348awzrq5mvzf"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10379,13 +10379,13 @@ orbit-aware counts are computed respective each of the edges and nodes.")
 (define-public r-oaiharvester
   (package
     (name "r-oaiharvester")
-    (version "0.3-3")
+    (version "0.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OAIHarvester" version))
               (sha256
                (base32
-                "00j5f6kw67qr83cmds9y5rzwiv2sb2b2bfbr5cclpr3wcsw278fs"))))
+                "0b5v275w0c7y073fgwiy966djrw6p1zggzqlywa2fsdn2p0aq56w"))))
     (properties `((upstream-name . "OAIHarvester")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-curl))

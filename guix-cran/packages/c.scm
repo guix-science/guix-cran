@@ -4816,13 +4816,13 @@ high-dimensional) set of surrogate markers.")
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstalkr" version))
               (sha256
                (base32
-                "0rjkcmqzdw8rfvxydf8zr48kc6s03q7f8i41g0z5bdvnf4ydna4m"))))
+                "0fwrb8sa1gdjhml079vqsry9q6a609iyb1d8b3p18hhc8k4p6y0m"))))
     (properties `((upstream-name . "crosstalkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -11609,19 +11609,18 @@ Algorithm (Rusch, Mair & Hornik, 2021,<doi:10.1080/10618600.2020.1869027>).")
 (define-public r-copre
   (package
     (name "r-copre")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "copre" version))
               (sha256
                (base32
-                "1mvh2fyxsc8v2cwlppsnx29dn5s1vg5pg22cd5acidsnk5lvbr86"))))
+                "0xb1xa134r145qaycl0ldldx521gvjlwd9c64nnwmllh01iv7ihb"))))
     (properties `((upstream-name . "copre")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-pracma
-                             r-ggplot2
                              r-dirichletprocess
                              r-bh
                              r-abind))
@@ -11629,19 +11628,18 @@ Algorithm (Rusch, Mair & Hornik, 2021,<doi:10.1080/10618600.2020.1869027>).")
     (synopsis "Tools for Nonparametric Martingale Posterior Sampling")
     (description
      "This package performs Bayesian nonparametric density estimation using Martingale
-posterior distributions and including the Copula Resampling (CopRe) algorithm.
-Also included are a Gibbs sampler for the marginal Mixture of Dirichlet Process
-(MDP) model and an extension to include full uncertainty quantification via a
-new Polya completion algorithm for the MDP. The CopRe and Polya samplers
-generate random nonparametric distributions as output, leading to complete
-nonparametric inference on posterior summaries.  Routines for calculating
-arbitrary functionals from the sampled distributions are included as well as an
-important algorithm for finding the number and location of modes, which can then
-be used to estimate the clusters in the data using, for example, k-means.
-Implements work developed in Moya B., Walker S. G. (2022)
-<doi:10.48550/arxiv.2206.08418>, Fong, E., Holmes, C., Walker, S. G. (2021)
-<doi:10.48550/arxiv.2103.15671>, and Escobar M. D., West, M. (1995)
-<doi:10.1080/01621459.1995.10476550>.")
+posterior distributions including the Copula Resampling (CopRe) algorithm.  Also
+included are a Gibbs sampler for the marginal Gibbs-type mixture model and an
+extension to include full uncertainty quantification via a predictive sequence
+resampling (SeqRe) algorithm.  The CopRe and SeqRe samplers generate random
+nonparametric distributions as output, leading to complete nonparametric
+inference on posterior summaries.  Routines for calculating arbitrary
+functionals from the sampled distributions are included as well as an important
+algorithm for finding the number and location of modes, which can then be used
+to estimate the clusters in the data using, for example, k-means.  Implements
+work developed in Moya B., Walker S. G. (2022). <doi:10.48550/arxiv.2206.08418>,
+Fong, E., Holmes, C., Walker, S. G. (2021) <doi:10.48550/arxiv.2103.15671>, and
+Escobar M. D., West, M. (1995) <doi:10.1080/01621459.1995.10476550>.")
     (license license:gpl2+)))
 
 (define-public r-coppecosenzar
@@ -21562,36 +21560,6 @@ present.  The clustermole R package provides methods to query thousands of human
 and mouse cell identity markers sourced from a variety of databases.")
     (license license:expat)))
 
-(define-public r-clustering-sc-dp
-  (package
-    (name "r-clustering-sc-dp")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clustering.sc.dp" version))
-              (sha256
-               (base32
-                "0cppka7613cbjjf1q2yp6fln511wbqdhh8d4gs6p0fbq379kzmvc"))))
-    (properties `((upstream-name . "clustering.sc.dp")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=clustering.sc.dp")
-    (synopsis
-     "Optimal Distance-Based Clustering for Multidimensional Data with Sequential Constraint")
-    (description
-     "This package provides a dynamic programming algorithm for optimal clustering
-multidimensional data with sequential constraint.  The algorithm minimizes the
-sum of squares of within-cluster distances.  The sequential constraint allows
-only subsequent items of the input data to form a cluster.  The sequential
-constraint is typically required in clustering data streams or items with time
-stamps such as video frames, GPS signals of a vehicle, movement data of a
-person, e-pen data, etc.  The algorithm represents an extension of Ckmeans.1d.dp
-to multiple dimensional spaces.  Similarly to the one-dimensional case, the
-algorithm guarantees optimality and repeatability of clustering.  Method
-clustering.sc.dp can find the optimal clustering if the number of clusters is
-known.  Otherwise, methods findwithinss.sc.dp and backtracking.sc.dp can be
-used.")
-    (license license:lgpl3+)))
-
 (define-public r-clustering
   (package
     (name "r-clustering")
@@ -26851,13 +26819,13 @@ proteins.")
 (define-public r-chngpt
   (package
     (name "r-chngpt")
-    (version "2022.4-6")
+    (version "2023.1-30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chngpt" version))
               (sha256
                (base32
-                "1jfmbrzafid6xyf658qwwvfxxdzcwj0dwplgn9qclz1rwm634ky6"))))
+                "15n82vgqqbvxpdiq42zja352nlj39avwfzv4l0v98jnl8pjwbkzw"))))
     (properties `((upstream-name . "chngpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -35210,17 +35178,17 @@ parameter vectors archiving management by epsilon-dominance (Reed and Devireddy
 (define-public r-caracas
   (package
     (name "r-caracas")
-    (version "1.1.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "caracas" version))
               (sha256
                (base32
-                "0my74q2l4vncans5s541mphl5pvkd4knxb0i396yf5w6a1vnqwlw"))))
+                "15ab0j5hvxlc9msb2xf9nxxdc2crrdsbwi5x3hvqfxs5yydj6wcj"))))
     (properties `((upstream-name . "caracas")))
     (build-system r-build-system)
     (inputs (list python))
-    (propagated-inputs (list r-reticulate r-magrittr))
+    (propagated-inputs (list r-reticulate r-matrix r-magrittr r-doby))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/r-cas/caracas")
     (synopsis "Computer Algebra")

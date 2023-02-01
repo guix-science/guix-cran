@@ -10804,13 +10804,13 @@ from ten countries.")
 (define-public r-legion
   (package
     (name "r-legion")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "legion" version))
               (sha256
                (base32
-                "11gh281hf3nqzd3lbiqdp7y2qbpb933p92ix92hyg3rqai1fd0hb"))))
+                "0463a743n6k21v6nyacmp2li9dngaaww9lh83150621s7pdycw3s"))))
     (properties `((upstream-name . "legion")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12067,13 +12067,13 @@ MacDonald, Langrock (2016).")
 (define-public r-lddmm
   (package
     (name "r-lddmm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lddmm" version))
               (sha256
                (base32
-                "1cadgim82zkivyi3ncvpskabwv8w3dirjsfmbiaa3hv05nwl2ll0"))))
+                "19vhfd32qrial3v4cy33lz9cx5p2wnw1qr46hckrlw2fxdmlvzic"))))
     (properties `((upstream-name . "lddmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12084,7 +12084,6 @@ MacDonald, Langrock (2016).")
                              r-rcpp
                              r-rcolorbrewer
                              r-plyr
-                             r-mvtnorm
                              r-latex2exp
                              r-laplacesdemon
                              r-gtools

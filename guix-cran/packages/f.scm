@@ -5016,17 +5016,16 @@ based on the First-Passage-Time Location (FPTL) function.")
 (define-public r-fpp3
   (package
     (name "r-fpp3")
-    (version "0.4.0")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fpp3" version))
               (sha256
                (base32
-                "1920hlckc1bvdhqrp6mdl900c34k62v87k5l22zwwycx5gcicrxh"))))
+                "1yg2wv1mdqrmpxbz9kdsxw84q5hg12rsmz1k3i4dq1nymqbkkfq2"))))
     (properties `((upstream-name . "fpp3")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urca
-                             r-tsibbledata
+    (propagated-inputs (list r-tsibbledata
                              r-tsibble
                              r-tidyr
                              r-tibble
@@ -5041,7 +5040,7 @@ based on the First-Passage-Time Location (FPTL) function.")
                              r-dplyr
                              r-crayon
                              r-cli))
-    (home-page "https://github.com/robjhyndman/fpp3-package")
+    (home-page "https://github.com/robjhyndman/fpp3package")
     (synopsis
               "Data for \"Forecasting: Principles and Practice\" (3rd Edition)")
     (description
@@ -7389,13 +7388,13 @@ processes and to simulate different types of chaotic time series maps.")
 (define-public r-fnets
   (package
     (name "r-fnets")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fnets" version))
               (sha256
                (base32
-                "0v3194zmnqqqm9pb13qwapzfzysp85v0brlbw6ffimz6yvjynj0j"))))
+                "1vw9z0775brqss7hpgcbm7r4i8sbqj0k3w9gna456wpcjcrnbzg8"))))
     (properties `((upstream-name . "fnets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -7413,8 +7412,7 @@ processes and to simulate different types of chaotic time series maps.")
 high-dimensional time series exhibiting strong serial and cross-sectional
 correlations under a factor-adjusted vector autoregressive model.  See
 Barigozzi, Cho and Owens (2022) <arXiv:2201.06110> for further descriptions of
-FNETS methodology and Owens, Cho and Barigozzi (2023)
-<https://drive.google.com/file/d/1Rw-xgpijF8ZIBUzjIU9emr-ucAvAhKL4/view?usp=sharing>
+FNETS methodology and Owens, Cho and Barigozzi (2023) <arXiv:2301.11675>
 accompanying the R package.")
     (license license:gpl3+)))
 

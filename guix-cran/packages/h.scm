@@ -4961,16 +4961,17 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlar
   (package
     (name "r-hlar")
-    (version "0.1.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hlaR" version))
               (sha256
                (base32
-                "0kn4qcn9yvz0z30y59pqmx8l50wmqq89b9x6mnsc3c4apjs0ygip"))))
+                "0l0vch3sliyhm9pcz3x488bsq513c1iv2p55fg71141cr5k71pal"))))
     (properties `((upstream-name . "hlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -7137,13 +7138,13 @@ and non-negative exponential family in each cluster.")
 (define-public r-hgm
   (package
     (name "r-hgm")
-    (version "1.22")
+    (version "1.23")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hgm" version))
               (sha256
                (base32
-                "0a70iqvxgmd4hcvk946ycap1pizdfvg2rbyi4ngxdmmq69rnfj4q"))))
+                "15prmsbs5zq12r6nrg2ibq2y8qfyrp9vq1g4jm258m0alrxnjx8w"))))
     (properties `((upstream-name . "hgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-desolve))

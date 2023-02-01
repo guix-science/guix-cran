@@ -2126,13 +2126,13 @@ samples from its posterior distribution obtained.")
 (define-public r-tswge
   (package
     (name "r-tswge")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tswge" version))
               (sha256
                (base32
-                "1i0d4p9j6nclgv6cvbd7cimrrnbbp6yps632kldr8jd7kmfwgzw0"))))
+                "1pl10n20w2vz95q28zjiafcjmjij586h33s5b0nqvxfwlask6xbw"))))
     (properties `((upstream-name . "tswge")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6983,6 +6983,27 @@ transformation models proposed by Liu XX, Zeng D(2013)
 complex loops.  The coefficient vector and cumulative baseline hazard function
 can be estimated, along with the corresponding standard errors and P values.")
     (license license:gpl2+)))
+
+(define-public r-translated
+  (package
+    (name "r-translated")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "translated" version))
+              (sha256
+               (base32
+                "1k2z7c0qb4psc6v0srhz1pyndclvflr43l5wsiwq0lailvxvhq2m"))))
+    (properties `((upstream-name . "translated")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-glue))
+    (home-page "https://github.com/ttscience/translated")
+    (synopsis "Simple and Robust Translation System")
+    (description
+     "Allows translating with formatted string literals, grouped entries, and
+configurable system of plurals.  Have a separate file for each locale and use
+inheritance to handle dialect differences.")
+    (license license:gpl3+)))
 
 (define-public r-transfr
   (package
@@ -12583,13 +12604,13 @@ formulas.  Supports .xlsx and .xlsm via the embedded RapidXML C++ library
 (define-public r-tidywikidatar
   (package
     (name "r-tidywikidatar")
-    (version "0.5.5")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidywikidatar" version))
               (sha256
                (base32
-                "0fy1s36f6nsxxnyc5jb35r3mxzxhq5qcj71kv0d3avnfahhcjmgc"))))
+                "0dvdggizkrv02z5gc89pzj5800923k43951bm4816g13pqp8vm0a"))))
     (properties `((upstream-name . "tidywikidatar")))
     (build-system r-build-system)
     (propagated-inputs (list r-wikipedir
@@ -12616,7 +12637,7 @@ formulas.  Supports .xlsx and .xlsm via the embedded RapidXML C++ library
     (synopsis "Explore 'Wikidata' Through Tidy Data Frames")
     (description
      "Query Wikidata API <https://www.wikidata.org/wiki/Wikidata:Main_Page> with ease,
-get tidy data frames in response, and cache data in a local SQLite database.")
+get tidy data frames in response, and cache data in a local database.")
     (license license:expat)))
 
 (define-public r-tidyvpc
@@ -17059,13 +17080,13 @@ labeled text data sets for classification and analysis.")
 (define-public r-textcat
   (package
     (name "r-textcat")
-    (version "1.0-7")
+    (version "1.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "textcat" version))
               (sha256
                (base32
-                "1m31alkzy13acgf4ahnzpbyazflhpmry369vqdvn5f86wcsls833"))))
+                "17kl76m6065ci84p4ii7fxhwg1fckwf8690m71w9rbkbax3h2rfb"))))
     (properties `((upstream-name . "textcat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tau r-slam))
@@ -20721,13 +20742,13 @@ in plant species names using The Plant List website (www.theplantlist.org).")
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
-    (version "0.9.3")
+    (version "0.10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "taxonomizr" version))
               (sha256
                (base32
-                "03rc47pf85sfxa3zdjfcixsagcjbknk9jcsi3a56lz1d0178gb9n"))))
+                "1d652945njl8s5q161bbp6yp8a2lylhwsyiqziw1gn58q4152y3n"))))
     (properties `((upstream-name . "taxonomizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-r-utils r-data-table r-curl))
@@ -22190,13 +22211,13 @@ heatmaps, Ford (1962) and Bertin (1977) diagrams.")
 (define-public r-tabshiftr
   (package
     (name "r-tabshiftr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabshiftr" version))
               (sha256
                (base32
-                "04y910lcsim551za639q80laalhncc4lxcz31y3plilnlavxjyb1"))))
+                "1ri28zxsxn9bkbq0f47q6mkr889krvixvk63in0jbn9hya77gdy8"))))
     (properties `((upstream-name . "tabshiftr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

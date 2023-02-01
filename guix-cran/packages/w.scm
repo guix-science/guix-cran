@@ -2059,13 +2059,13 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
 (define-public r-wordnet
   (package
     (name "r-wordnet")
-    (version "0.1-15")
+    (version "0.1-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wordnet" version))
               (sha256
                (base32
-                "158c5fps4kvfd9mj1im8jb9rv7ipfshyagrv0q3b55ywnkrkvjqb"))))
+                "0biivpg3zkjr5ccjricsj9cw14a2a4n4cri6gcl9m1r9amhh54iv"))))
     (properties `((upstream-name . "wordnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))

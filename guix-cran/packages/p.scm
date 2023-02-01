@@ -8931,16 +8931,16 @@ vector machines (SVMs).  For method details see Keller et al. (2017)
 (define-public r-predint
   (package
     (name "r-predint")
-    (version "1.1.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predint" version))
               (sha256
                (base32
-                "0m2vifc51kq7q6g7ywpm2vny2baswyadq5l4574p7jn6h3xm4lqp"))))
+                "18bgh6iri2s9jd981prbskp5fhcspkrmhnr25dl0rd9s0dvpx8m1"))))
     (properties `((upstream-name . "predint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lme4))
+    (propagated-inputs (list r-lme4 r-ggplot2))
     (home-page "https://cran.r-project.org/package=predint")
     (synopsis "Prediction Intervals")
     (description
@@ -32373,13 +32373,13 @@ Weighted Intra Blocks Correspondence Analysis (WIBCA).")
 (define-public r-pambinaries
   (package
     (name "r-pambinaries")
-    (version "1.7.0")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PamBinaries" version))
               (sha256
                (base32
-                "0kih9h11vvnbyai6mqnjk2hwbsa44mzamxb318rc503b2qq8dgzb"))))
+                "1l89vk9jhlfghk89945815ygwwdjmv5mkibb2cz7307vy6jl60ka"))))
     (properties `((upstream-name . "PamBinaries")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))

@@ -17874,13 +17874,13 @@ plot the activity in a variety of ways.")
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "activAnalyzer" version))
               (sha256
                (base32
-                "1fmh7jyvxlik229g136qvd1flzgklv8yn1i60lvngw29zkw95cvn"))))
+                "0xklgmyhvjkl7irkgzb6y5cxhk8r33xkjy092x8gkqg7arnwkq7y"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -17895,6 +17895,7 @@ plot the activity in a variety of ways.")
                              r-rsqlite
                              r-rmarkdown
                              r-reactable
+                             r-plyr
                              r-physicalactivity
                              r-patchwork
                              r-modelr

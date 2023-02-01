@@ -6160,28 +6160,26 @@ support vector machine, the contamination of a sample can be detected.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.2.7.14")
+    (version "1.3.1.30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vannstats" version))
               (sha256
                (base32
-                "06y1h4w6zkvkdh81w5qaf15apk4w3sj86zj54l7fx4g6qddfnqsw"))))
+                "08lcw2ypsahxw2kj0kckf67nrz2dp0jcbny24y2n7qwhz5si2r5w"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-rstatix
                              r-rlang
                              r-purrr
                              r-plm
-                             r-mass
                              r-gplots
+                             r-ggrepel
                              r-ggplot2
                              r-gdata
                              r-formula-tools
-                             r-dplyr
-                             r-car))
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=vannstats")
     (synopsis "Simplified Statistics for PA 606")
     (description

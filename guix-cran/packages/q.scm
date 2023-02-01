@@ -804,19 +804,20 @@ genetic information.")
 (define-public r-questionr
   (package
     (name "r-questionr")
-    (version "0.7.7")
+    (version "0.7.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "questionr" version))
               (sha256
                (base32
-                "0mpxkmrv1v7fjj1hz1633n154s525p6skclybdhwmgldv45w896f"))))
+                "1abbnxnmljnn6ak55l4yrihr6fwrhzsb1rd7h8r0dijjwsgyawmg"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
     (inputs (list xclip))
     (propagated-inputs (list r-styler
                              r-shiny
                              r-rstudioapi
+                             r-rlang
                              r-miniui
                              r-labelled
                              r-htmltools

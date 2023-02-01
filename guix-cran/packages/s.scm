@@ -5667,13 +5667,13 @@ additional balance constraints.")
 (define-public r-suddengains
   (package
     (name "r-suddengains")
-    (version "0.4.4")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "suddengains" version))
               (sha256
                (base32
-                "160jna9imnpy91f6pa881w6wlrwy59db0nijrn1sf5ym1cmh5gz5"))))
+                "05xfc1krxnl5rk4nyw5iinfdfhq8bp03vgd0bcrnz029yijmky1m"))))
     (properties `((upstream-name . "suddengains")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5689,7 +5689,8 @@ additional balance constraints.")
                              r-ggrepel
                              r-ggplot2
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://milanwiedemann.github.io/suddengains/")
     (synopsis "Identify Sudden Gains in Longitudinal Data")
@@ -5701,7 +5702,7 @@ Two different datasets can be created, one including all sudden gains/losses and
 one including one selected sudden gain/loss for each case.  It can extract
 scores around sudden gains/losses.  It can plot the average change around sudden
 gains/losses and trajectories of individual cases.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-sudachir
   (package
@@ -9363,6 +9364,29 @@ applies and extends the Functional Principal Analysis by Conditional Estimation
 pixel by borrowing information from temporally and spatially contiguous pixels
 based on the best linear unbiased prediction.")
     (license license:gpl3)))
+
+(define-public r-stevethemes
+  (package
+    (name "r-stevethemes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stevethemes" version))
+              (sha256
+               (base32
+                "06bv1s3yjw2jiqc3izlr4pj7ws3wfq7s33fr1b614cb6hbj6pvan"))))
+    (properties `((upstream-name . "stevethemes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-systemfonts r-rlang r-ggplot2))
+    (home-page "http://svmiller.com/stevethemes/")
+    (synopsis "Steve's 'ggplot2' Themes and Related Theme Elements")
+    (description
+     "This is a compilation of my preferred themes and related theme elements for
+ggplot2'.  I believe these themes and theme elements are aesthetically pleasing,
+both for pedagogical instruction and for the presentation of applied statistical
+research to a wide audience.  These themes imply routine use of easily
+obtained/free fonts, simple forms of which are included in this package.")
+    (license license:expat)))
 
 (define-public r-stevetemplates
   (package
@@ -29420,13 +29444,13 @@ spatial data and visualization.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-14")
+    (version "0.2-15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skmeans" version))
               (sha256
                (base32
-                "1kkp9zdwk1k3q50xp8g0jqgg3x1qzgigfkg37bpac7542276vsqq"))))
+                "16q801kk1dblk25wbr80lp5gfc0clxmg1wyzb0py1g8vw8v96mc1"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-cluster r-clue))
@@ -30003,13 +30027,13 @@ such as those of White (1980) <doi:10.2307/1912934>, MacKinnon and White (1985)
 (define-public r-skater
   (package
     (name "r-skater")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skater" version))
               (sha256
                (base32
-                "0cylcwxqc75a7fkyn7llwp0c7k35sfsbylxrjn0cpdnxbyf5xcx5"))))
+                "1hw6hk2v6jxhv86dzjpqnakkrbp2k7gayg2zffpyd2z8l4mpgmxd"))))
     (properties `((upstream-name . "skater")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
