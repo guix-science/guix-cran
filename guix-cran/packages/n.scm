@@ -2555,13 +2555,13 @@ R. Designed to be used with long running scripts.")
 (define-public r-not
   (package
     (name "r-not")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "not" version))
               (sha256
                (base32
-                "10ngfqyphx1k7v833l4qp0bzzg96jiyxbybcmk551ws58d297pp0"))))
+                "0g40500h2cwimzf7w3zqas924i4cvxddmqv0ysqrm4r7y2dpv48i"))))
     (properties `((upstream-name . "not")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=not")
@@ -4647,13 +4647,13 @@ methods can be found in
 (define-public r-nmslibr
   (package
     (name "r-nmslibr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nmslibR" version))
               (sha256
                (base32
-                "1biaaifcnzjpj6prq04avgfz29n1v65kgpir8jrg4ndb6krjwh94"))))
+                "0658j1rir16s84aw7xw698pr8j2xp7j70rd306w04f3dxynsrrqm"))))
     (properties `((upstream-name . "nmslibR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -4661,6 +4661,7 @@ methods can be found in
                              r-rcpp
                              r-r6
                              r-matrix
+                             r-lifecycle
                              r-kernelknn))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/nmslibR")
@@ -4677,7 +4678,7 @@ in all cases.  Also note that exact solutions are hardly efficient in high
 dimensions and/or non-metric spaces.  Hence, the main focus is on approximate
 methods\".  The wrapper also includes Approximate Kernel k-Nearest-Neighbor
 functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-nmproject
   (package
@@ -11564,13 +11565,13 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
 (define-public r-ndi
   (package
     (name "r-ndi")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ndi" version))
               (sha256
                (base32
-                "0f24lfw9mzhdf2afjjzsh0bhlj2gwndry7pgd7i4s0497w26ycbl"))))
+                "1ydj6lvycm6awvrddmq9a9s24rd4xw86mzk8hfhrqx8plz8pj4k4"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11580,7 +11581,8 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
                              r-psych
                              r-matrix
                              r-mass
-                             r-dplyr))
+                             r-dplyr
+                             r-car))
     (home-page "https://github.com/idblr/ndi")
     (synopsis "Neighborhood Deprivation Indices")
     (description
@@ -11602,9 +11604,20 @@ Isolation Index (RI) based on Anthopolos et al. (2011)
 Index (EI) based on Bravo et al. (2021) <doi:10.3390/ijerph18179384>, (3)
 compute the aspatial Index of Concentration at the Extremes (ICE) based on
 Feldman et al. (2015) <doi:10.1136/jech-2015-205728> and Krieger et al. (2016)
-<doi:10.2105/AJPH.2015.302955>, (4) compute the aspatial Dissimilarity Index
-based on Duncan & Duncan (1955) <doi:10.2307/2088328>, and (5) retrieve the
-aspatial Gini Index based on Gini (1921) <doi:10.2307/2223319>.")
+<doi:10.2105/AJPH.2015.302955>, (4) compute the aspatial racial/ethnic
+Dissimilarity Index based on Duncan & Duncan (1955) <doi:10.2307/2088328>, (5)
+compute the aspatial income or racial/ethnic Atkinson Index based on Atkinson
+(1970) <doi:10.1016/0022-0531(70)90039-6>, (6) aspatial racial/ethnic Isolation
+Index (II) based on Shevky & Williams (1949; ISBN-13:978-0-837-15637-8) and Bell
+(1954) <doi:10.2307/2574118>, (7) aspatial racial/ethnic Correlation Ratio based
+on Bell (1954) <doi:10.2307/2574118> and White (1986) <doi:10.2307/3644339>, (8)
+aspatial racial/ethnic Location Quotient (LQ) based on Merton (1939)
+<doi:10.2307/2084686> and Sudano et al. (2013)
+<doi:10.1016/j.healthplace.2012.09.015>, and (9) aspatial racial/ethnic Local
+Exposure and Isolation metric based on Bemanian & Beyer (2017)
+<doi:10.1158/1055-9965.EPI-16-0926>.  Also using data from the ACS-5 (2005-2009
+onward), the package can retrieve the aspatial Gini Index based Gini (1921)
+<doi:10.2307/2223319>.")
     (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-nda
@@ -13884,13 +13897,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NADA2" version))
               (sha256
                (base32
-                "16fafmprb410ggnqlrpriixfqrbdirv2lp2ddhg2afwc3276a3c6"))))
+                "1lmyppzcvg80jcp37viy7xi84mg94l33wchpwln9rm487ywnib56"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

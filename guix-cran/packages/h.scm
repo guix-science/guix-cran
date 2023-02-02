@@ -7353,6 +7353,32 @@ lost nor inappropriately cut.")
      "Helper functions for creating reproducible hexagon sticker purely in R.")
     (license license:artistic2.0)))
 
+(define-public r-hexfinder
+  (package
+    (name "r-hexfinder")
+    (version "0.8.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hexFinder" version))
+              (sha256
+               (base32
+                "1lz3a08rrdiprs5ghbalyk5zn6g404yxqvzrqg89n2hsciqnbqlm"))))
+    (properties `((upstream-name . "hexFinder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-pkgsearch
+                             r-magick
+                             r-jsonlite
+                             r-httr2
+                             r-hexsticker
+                             r-glue
+                             r-ggplot2))
+    (home-page "https://pedrocsilva.com")
+    (synopsis "Find Hex Logos for CRAN Packages")
+    (description "Scavenge the web for possible hex logos for CRAN packages.")
+    (license license:expat)))
+
 (define-public r-heuristicsminer
   (package
     (name "r-heuristicsminer")
@@ -8653,13 +8679,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.0.11")
+    (version "0.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.ai" version))
               (sha256
                (base32
-                "0rr1av7pgnp2kswf869vqg37cq9p1di4ly0h73bkl31yb4d5r53d"))))
+                "10hvxbkhblybrcpsz8yqjyq05mwwyzymn2v77maars5dy66h0sc5"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick

@@ -7269,6 +7269,44 @@ methodology.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gpbayes
+  (package
+    (name "r-gpbayes")
+    (version "0.1.0-5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GPBayes" version))
+              (sha256
+               (base32
+                "1yi1xc27kdylw23nc84phnmyzhlxca20pcjvlwxykpmkag81qygw"))))
+    (properties `((upstream-name . "GPBayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=GPBayes")
+    (synopsis
+     "Tools for Gaussian Process Modeling in Uncertainty Quantification")
+    (description
+     "Gaussian processes ('GPs') have been widely used to model spatial data,
+spatio'-temporal data, and computer experiments in diverse areas of statistics
+including spatial statistics, spatio'-temporal statistics, uncertainty
+quantification, and machine learning.  This package creates basic tools for
+fitting and prediction based on GPs with spatial data, spatio'-temporal data,
+and computer experiments.  Key characteristics for this GP tool include: (1) the
+comprehensive implementation of various covariance functions including the
+MatÃ©rn family and the Confluent Hypergeometric family with isotropic form,
+tensor form, and automatic relevance determination form, where the isotropic
+form is widely used in spatial statistics, the tensor form is widely used in
+design and analysis of computer experiments and uncertainty quantification, and
+the automatic relevance determination form is widely used in machine learning;
+(2) implementations via Markov chain Monte Carlo ('MCMC') algorithms and
+optimization algorithms for GP models with all the implemented covariance
+functions.  The methods for fitting and prediction are mainly implemented in a
+Bayesian framework; (3) model evaluation via Fisher information and predictive
+metrics such as predictive scores; (4) built-in functionality for simulating GPs
+with all the implemented covariance functions; (5) unified implementation to
+allow easy specification of various GPs'.")
+    (license license:gpl2+)))
+
 (define-public r-gparotation
   (package
     (name "r-gparotation")
@@ -17291,13 +17329,13 @@ overlapping lines - Draw more realistic worms.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "1pg0f8i54mx3xy2zi431rgjl20s451rxll941i80jn2sn1pv9a96"))))
+                "1vwz6b9l82n6w22kln26pagl2lwz1p5mhgzpnaza3993hkzyid24"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -20337,13 +20375,13 @@ downloads.  Besides, this package does not import any external package.")
 (define-public r-geoelectrics
   (package
     (name "r-geoelectrics")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geoelectrics" version))
               (sha256
                (base32
-                "1dmpaf16750ni4yr36cglfz9pv9jax8jxb3kwn47kxgnx3l8qq98"))))
+                "1zxikh4jj750grpnaazqm51q7yp5df5a77kljvmim4nazzrsyrpg"))))
     (properties `((upstream-name . "geoelectrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-lattice r-fields))
@@ -25004,21 +25042,21 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gater
   (package
     (name "r-gater")
-    (version "0.1.12")
+    (version "0.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gateR" version))
               (sha256
                (base32
-                "1yc400fq58zbl467rdr5rqsgf4gs9yalg7bibsdfdwh7wavd6zj0"))))
+                "0arnjb5jzsc8xfqj08h352h7j0adijaj1fra08nx0jc41hfs3ljg"))))
     (properties `((upstream-name . "gateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-terra
                              r-spatstat-geom
                              r-spatialpack
                              r-sparr
                              r-rlang
-                             r-raster
                              r-lifecycle
                              r-fields))
     (home-page "https://github.com/lance-waller-lab/gateR")

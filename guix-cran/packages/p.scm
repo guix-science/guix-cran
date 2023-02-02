@@ -3099,13 +3099,13 @@ proposed by Wang, Tolos, and Wang (2010) <DOI:10.1002/cjs.10068>.")
 (define-public r-pss-health
   (package
     (name "r-pss-health")
-    (version "0.5.1")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PSS.Health" version))
               (sha256
                (base32
-                "0rdqkwry6zpf0nm3in8agb3kw1g705i3knydzs8bpsnhna4ap802"))))
+                "0qsdvps8gghdnbd00p3sqc140aw9kr1ci30rcdwwsa9hzix8y8kh"))))
     (properties `((upstream-name . "PSS.Health")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -6085,13 +6085,13 @@ the Rprof and pprof file formats.")
 (define-public r-proffer
   (package
     (name "r-proffer")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "proffer" version))
               (sha256
                (base32
-                "0xf0qhxvkvmjhc2809qg5ylvcj8kc5yjzxdspxl9qg039z89346d"))))
+                "0y94rwhg3gr63avmmwvfv84cgg08fya6vc7q535xjv1wspiyvjnl"))))
     (properties `((upstream-name . "proffer")))
     (build-system r-build-system)
     (inputs (list graphviz))
@@ -6100,6 +6100,7 @@ the Rprof and pprof file formats.")
                              r-profile
                              r-processx
                              r-pingr
+                             r-parallelly
                              r-cli))
     (home-page "https://github.com/r-prof/proffer")
     (synopsis "Profile R Code and Visualize with 'Pprof'")
@@ -28741,13 +28742,13 @@ guide is offered and should be consulted to use package functions effectively.")
 (define-public r-pbsddesolve
   (package
     (name "r-pbsddesolve")
-    (version "1.13.1")
+    (version "1.13.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PBSddesolve" version))
               (sha256
                (base32
-                "062biynya1nr75awri60ak60hs07h7cdnaibjn9943s7gzxgsgi4"))))
+                "0cjnbmvyzzz659csjrv7fx3xbxb9070223qm7cg6ns3l6sn2adc4"))))
     (properties `((upstream-name . "PBSddesolve")))
     (build-system r-build-system)
     (home-page "https://github.com/pbs-software/pbs-ddesolve")
@@ -33831,13 +33832,13 @@ imputing records where observations were absent (pad).")
 (define-public r-pade
   (package
     (name "r-pade")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Pade" version))
               (sha256
                (base32
-                "0v1ymsmsj3mabq825ciib9mgaszml5iglixhihibd72qj52vg798"))))
+                "1m22zr64vgb57rfhg2nsrsmi3mv68hlmf7hq6phhnnzpz3my58zm"))))
     (properties `((upstream-name . "Pade")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/Pade")

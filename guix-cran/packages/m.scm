@@ -7090,13 +7090,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.3.4")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSCMT" version))
               (sha256
                (base32
-                "1vh0i9nxqiy3qdnb7z7cn5kpp2jahdmaqpnv7q5650pkswhwmfpc"))))
+                "1dabnirffpn0imbmg9gpp2h3vrdwwqyhl8hqgi97qy5fd9sjsqww"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
@@ -10334,13 +10334,13 @@ defined by shape metrics.")
 (define-public r-morphomap
   (package
     (name "r-morphomap")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "morphomap" version))
               (sha256
                (base32
-                "12jqrabx8vgkrfwcv4845jbf79ibg5iqzzzr4x4vybb4b2p2wd2i"))))
+                "16lc3iydnsmc4jq2x2mqxhmaknjfvxgv94wxd6znf34hn4486iyl"))))
     (properties `((upstream-name . "morphomap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -13486,13 +13486,13 @@ replacement.")
 (define-public r-mockr
   (package
     (name "r-mockr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mockr" version))
               (sha256
                (base32
-                "0qxpyyg25ampjd6fjbhylzjfy15qng6w32yc17q5a2y6fz1scsy0"))))
+                "0n3syab3dq1am562vnjpkgmx3v06liafyy0fcyvj0spdxr0mkvr3"))))
     (properties `((upstream-name . "mockr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang))
@@ -36017,23 +36017,25 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.8.1")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "05ixa9sklk22qmfn7i1163w08zwb1lshf3xlnxrshvkr9bmlsv3x"))))
+                "110fimf0p0lbxxnwra12j2hjjzlrcxq8bdsbfpmz2p7c4wy4n1w6"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-insight r-generics r-data-table r-checkmate))
-    (native-inputs (list r-knitr))
     (home-page "https://vincentarelbundock.github.io/marginaleffects/")
-    (synopsis "Marginal Effects, Marginal Means, Predictions, and Contrasts")
+    (synopsis
+     "Predictions, Comparisons, Slopes, Marginal Means, and Hypothesis Tests")
     (description
-     "Compute and plot adjusted predictions, contrasts, marginal effects, and marginal
-means for over 70 classes of statistical models in R. Conduct linear and
-non-linear hypothesis tests using the delta method.")
+     "Compute and plot predictions, slopes, marginal means, and comparisons
+(contrasts, risk ratios, odds, etc.) for over 70 classes of statistical models
+in R. Conduct linear and non-linear hypothesis tests, or equivalence tests.
+Calculate uncertainty estimates using the delta method, bootstrapping, or
+simulation-based inference.")
     (license license:gpl3+)))
 
 (define-public r-margcond
@@ -39647,13 +39649,13 @@ and spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.6.0")
+    (version "3.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MachineShop" version))
               (sha256
                (base32
-                "1gfwqzfmkv48d5is112qpylmmr3b1jrx8ckf2l6agijmvarf7z21"))))
+                "0hjbn3ph8dahvrkycfakf8hwhw1vry9w996wyn4l9arxb2h59mh2"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

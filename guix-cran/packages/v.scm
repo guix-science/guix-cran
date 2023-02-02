@@ -121,6 +121,30 @@ efficiently perform data transformations that are specific to their business
 needs.")
     (license license:expat)))
 
+(define-public r-vvmover
+  (package
+    (name "r-vvmover")
+    (version "1.5.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvmover" version))
+              (sha256
+               (base32
+                "1aaky8vs9yl9k3qfd3lm4wj234gp5z0pgff1lfqj2p0av18q6nn8"))))
+    (properties `((upstream-name . "vvmover")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-readr r-dplyr))
+    (home-page "https://cran.r-project.org/package=vvmover")
+    (synopsis "Read and Write Data")
+    (description
+     "Offers a wide range of functions for reading and writing data in various file
+formats, including CSV, RDS, Excel and ZIP files.  Additionally, it provides
+functions for retrieving metadata associated with files, such as file size and
+creation date, making it easy to manage and organize large data sets.  This
+package is designed to simplify data import and export tasks, and provide users
+with a comprehensive set of tools to work with different types of data files.")
+    (license license:expat)))
+
 (define-public r-vvfiller
   (package
     (name "r-vvfiller")
@@ -140,6 +164,52 @@ needs.")
      "This package provides numerous functions to fill data.  These can be applied
 either to missing or skewed data.  The functions are designed within the scope
 of Student Analytics.")
+    (license license:expat)))
+
+(define-public r-vvconverter
+  (package
+    (name "r-vvconverter")
+    (version "0.5.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvconverter" version))
+              (sha256
+               (base32
+                "12bnrrvbad7njgqvkb0hp1a041qnyvfiqlg1aaqkym29wlc2zwk3"))))
+    (properties `((upstream-name . "vvconverter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-lubridate r-dplyr))
+    (home-page "https://cran.r-project.org/package=vvconverter")
+    (synopsis "Apply Transformations to Data")
+    (description
+     "This package provides a set of functions for data transformations.
+Transformations are performed on character and numeric data.  As the scope of
+the package is within Student Analytics, there are functions focused around the
+academic year.")
+    (license license:expat)))
+
+(define-public r-vvauditor
+  (package
+    (name "r-vvauditor")
+    (version "0.5.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvauditor" version))
+              (sha256
+               (base32
+                "0b8gflvvhxasaxhkyc45qr6z07xk22kh3g4n9rgbsl4816g8x64m"))))
+    (properties `((upstream-name . "vvauditor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-magrittr r-findr r-dplyr))
+    (home-page "https://cran.r-project.org/package=vvauditor")
+    (synopsis "Creates Assertion Tests")
+    (description
+     "Offers a comprehensive set of assertion tests to help users validate the
+integrity of their data.  These tests can be used to check for specific
+conditions or properties within a dataset and help ensure that data is accurate
+and reliable.  The package is designed to make it easy to add quality control
+checks to data analysis workflows and to aid in identifying and correcting any
+errors or inconsistencies in data.")
     (license license:expat)))
 
 (define-public r-vurocs
@@ -2602,13 +2672,13 @@ analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
 (define-public r-visachartr
   (package
     (name "r-visachartr")
-    (version "2.2.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visachartR" version))
               (sha256
                (base32
-                "00h6yjhgj502ch01bbq7njsif068h6k3bhzb2g8k6gqwm2mqbbj6"))))
+                "1amizhkzqmvlagi4qpwwzjjwswd9f3mjvxiddq92cgj8rj5f4hjc"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))

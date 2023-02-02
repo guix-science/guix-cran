@@ -1316,17 +1316,20 @@ H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D., Lindon, J. C., Holmes, E.
 (define-public r-israd
   (package
     (name "r-israd")
-    (version "1.7.8")
+    (version "2.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ISRaD" version))
               (sha256
                (base32
-                "119vvxviimnvy6x63hijsgmj8w02ni1g30imv8v39rp17hklr6pc"))))
+                "0v5igjb0910r9h1jc7c257qwrcpb1fi51448q818vbp31a64wvrd"))))
     (properties `((upstream-name . "ISRaD")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-tidyr
+                             r-sp
+                             r-rworldmap
+                             r-rio
                              r-readxl
                              r-rcurl
                              r-raster
@@ -4640,13 +4643,13 @@ proxy IP address from IP2Proxy BIN Data file.  You may visit
 (define-public r-ip2location
   (package
     (name "r-ip2location")
-    (version "8.1.1")
+    (version "8.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ip2location" version))
               (sha256
                (base32
-                "0809gg70cfgrw4vk2aalhb5q9w4v883g1aa722a75bllp4kgjmdj"))))
+                "0yssfzzwx01kkhaa9mnlyqvg3w12vc5dc3cyxj22r31c3n0k6lj6"))))
     (properties `((upstream-name . "ip2location")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
@@ -6699,38 +6702,6 @@ Baranger DAA, Finsaas MC, Goldstein BL, Vize CE, Lynam DR, Olino TM (2022).
 regressions.\" <doi:10.31234/osf.io/5ptd7>.")
     (license license:gpl3+)))
 
-(define-public r-intepareto
-  (package
-    (name "r-intepareto")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "intePareto" version))
-              (sha256
-               (base32
-                "0shq97r6x4j7p9vcf855jcvmfhghngbhk5dfqlqqhhcf8ibm2si5"))))
-    (properties `((upstream-name . "intePareto")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsamtools
-                             r-rpref
-                             r-iranges
-                             r-genomicranges
-                             r-genomicalignments
-                             r-genomeinfodb
-                             r-deseq2
-                             r-biomart))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=intePareto")
-    (synopsis "Integrative Analysis of RNA-Seq and ChIP-Seq Data")
-    (description
-     "Integrative analysis of gene expression (RNA-Seq data), and histone modification
-data for user-defined sets of histone marks (ChIP-Seq data) to discover
-consistent changes in genes between biological conditions.  Additionally, Pareto
-optimization is used to prioritize genes based on the level of consistent
-changes in both RNA-Seq and ChIP-Seq data.  Method is described in Cao, Y. et
-al. (2020) <doi:10.1186/s12864-020-07205-6>.")
-    (license license:gpl2+)))
-
 (define-public r-intensitynet
   (package
     (name "r-intensitynet")
@@ -7751,13 +7722,13 @@ with INLA. The INLA package can be obtained from <http://www.r-inla.org>.")
 (define-public r-injurytools
   (package
     (name "r-injurytools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "injurytools" version))
               (sha256
                (base32
-                "10nc31pjk5vjrdhnzj9ahqxhjp9zw3a6gswc4hqkkx4z7yldbjq1"))))
+                "01fachbqa4m56anas1j0my0ifl3n675lzzf8lv6q4im4axn072b4"))))
     (properties `((upstream-name . "injurytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -9778,6 +9749,34 @@ artworks.  This package allows to select colors combinations while looking at
 the original paintings where colors were sampled from.")
     (license license:gpl3)))
 
+(define-public r-imprecise101
+  (package
+    (name "r-imprecise101")
+    (version "0.2.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "imprecise101" version))
+              (sha256
+               (base32
+                "1558fxg8i5ifbvnww3wlfq79d9lgy7kg5z98i73q7q64rc2pxs82"))))
+    (properties `((upstream-name . "imprecise101")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tolerance r-pscl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=imprecise101")
+    (synopsis "Introduction to Imprecise Probabilities")
+    (description
+     "An imprecise inference presented in the study of Walley (1996)
+<doi:10.1111/j.2517-6161.1996.tb02065.x> is one of the statistical reasoning
+methods when prior information is unavailable.  Functions and utils needed for
+illustrating this inferential paradigm are implemented for classroom teaching
+and further comprehensive research.  Two imprecise models are demonstrated using
+multinomial data and 2x2 contingency table data.  The concepts of prior
+ignorance and imprecision are discussed in lower and upper probabilities.
+Representation invariance principle, hypothesis testing, decision-making, and
+further generalization are also illustrated.")
+    (license license:gpl3)))
+
 (define-public r-importinegi
   (package
     (name "r-importinegi")
@@ -11390,13 +11389,13 @@ within individual variability indicators as predictors.For more details, see
 (define-public r-iiproductionunknown
   (package
     (name "r-iiproductionunknown")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IIProductionUnknown" version))
               (sha256
                (base32
-                "020j054llvha1rkgfzqdghhydk0w2j84s7sk5pvjmnnln2k1vq2d"))))
+                "1zbmwa59ynqskxx6cf2hwfrgh3a2p95vcjy5f0kgz8vbh093cr0m"))))
     (properties `((upstream-name . "IIProductionUnknown")))
     (build-system r-build-system)
     (propagated-inputs (list r-crayon))
@@ -12497,23 +12496,23 @@ to create .msp files for untargeted nominal mass data processing.")
 (define-public r-idsl-mxp
   (package
     (name "r-idsl-mxp")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.MXP" version))
               (sha256
                (base32
-                "1zdzrlblrrql58r7h4zcd3fnsbvfnnr3fzjzrj2w7yjccf3ff90c"))))
+                "0rliqvjhlshdmrgbsmkszm8pz65qjwjk9rmrhlqx2yfynfznca7x"))))
     (properties `((upstream-name . "IDSL.MXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-base64enc))
-    (home-page "https://ipa.idsl.me/mxp")
+    (home-page "https://cran.r-project.org/package=IDSL.MXP")
     (synopsis
      "Parser for mzML, mzXML, and netCDF Files (Mass Spectrometry Data)")
     (description
      "This package provides a tiny parser to extract mass spectra data and metadata
-table of MS acquisition properties from mzML, mzXML and netCDF mass spectrometry
-files.")
+table of mass spectrometry acquisition properties from mzML, mzXML and netCDF
+files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
     (license license:expat)))
 
 (define-public r-idsl-ipa

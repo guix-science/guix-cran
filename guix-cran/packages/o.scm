@@ -993,6 +993,31 @@ estimate the optimal treatment strategy and identify important variables.
 Appropriate for either censored or uncensored continuous response.")
     (license license:gpl2)))
 
+(define-public r-otrkm
+  (package
+    (name "r-otrkm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "otrKM" version))
+              (sha256
+               (base32
+                "0jagif98yzpznl9g2fa01yy2bpzrg1ai6bawgww01mj3mppy8sp3"))))
+    (properties `((upstream-name . "otrKM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rgenoud))
+    (home-page "https://cran.r-project.org/package=otrKM")
+    (synopsis
+     "Optimal Treatment Regimes in Survival Contexts with Kaplan-Meier-Like Estimators")
+    (description
+     "Provide methods for estimating optimal treatment regimes in survival contexts
+with Kaplan-Meier-like estimators when no unmeasured confounding assumption is
+satisfied (Jiang, R., Lu, W., Song, R., and Davidian, M. (2017)
+<doi:10.1111/rssb.12201>) and when no unmeasured confounding assumption fails to
+hold and a binary instrument is available (Xia, J., Zhan, Z., Zhang, J. (2022)
+<arXiv:2210.05538>).")
+    (license license:expat)))
+
 (define-public r-otrimle
   (package
     (name "r-otrimle")

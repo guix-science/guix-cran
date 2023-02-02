@@ -5667,13 +5667,13 @@ additional balance constraints.")
 (define-public r-suddengains
   (package
     (name "r-suddengains")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "suddengains" version))
               (sha256
                (base32
-                "05xfc1krxnl5rk4nyw5iinfdfhq8bp03vgd0bcrnz029yijmky1m"))))
+                "096cwwfw69nglh2qz160jymwamlrwvbvxmmdc04cg8aalnpwd7ld"))))
     (properties `((upstream-name . "suddengains")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9412,13 +9412,13 @@ Markdown for things like your CV or your articles and manuscripts.")
 (define-public r-stevemisc
   (package
     (name "r-stevemisc")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevemisc" version))
               (sha256
                (base32
-                "1d0avg7f1r95k6dvm1vhvji2gadqxkm77pbnljad2p4145sxc41x"))))
+                "0nnhwq33yk2mpvmv9iqf7mc5z4qscvvwa128ibmh8s14ik2sqj1w"))))
     (properties `((upstream-name . "stevemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22368,20 +22368,19 @@ Graphical Statistics 23(4):985-1008.")
 (define-public r-sparrpowr
   (package
     (name "r-sparrpowr")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparrpowR" version))
               (sha256
                (base32
-                "0hvayhf66m1ckqnhjr6b8szin76qifpysiiwnfnnff8ig3yphv7q"))))
+                "139akxqjl47k1ngqm4dj4g465nrvws8zv7aw8d53a1hf6kms32fk"))))
     (properties `((upstream-name . "sparrpowR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-terra
+                             r-spatstat-random
                              r-spatstat-geom
                              r-sparr
-                             r-sp
-                             r-raster
                              r-lifecycle
                              r-iterators
                              r-future
@@ -34249,13 +34248,13 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.10")
+    (version "2.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimDesign" version))
               (sha256
                (base32
-                "1hacai3vrs4a1ykds3vaq85v7w1s4f110sy3mvl6fqccq20kz3si"))))
+                "0sab1cbm3sj3mnrrb91vrzv0n2mhzvxfms9krh0nqrd7f47mb83p"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo
@@ -34263,6 +34262,7 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
                              r-progressr
                              r-pbapply
                              r-future-apply
+                             r-future
                              r-foreach
                              r-dplyr
                              r-beepr))
@@ -52728,6 +52728,34 @@ methods described by Mahto (2019)
 provided as part of this package.")
     (license license:gpl3+)))
 
+(define-public r-samplesizeproportions
+  (package
+    (name "r-samplesizeproportions")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SampleSizeProportions" version))
+              (sha256
+               (base32
+                "0v0da7lgl9l73ji164qpm8dmysjhj8fx4ywnrm08nb46xgvd77pp"))))
+    (properties `((upstream-name . "SampleSizeProportions")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SampleSizeProportions")
+    (synopsis
+     "Calculating Sample Size Requirements when Estimating the Difference Between Two Binomial Proportions")
+    (description
+     "Sample size requirements calculation using three different Bayesian criteria in
+the context of designing an experiment to estimate the difference between two
+binomial proportions.  Functions for calculation of required sample sizes for
+the Average Length Criterion, the Average Coverage Criterion and the Worst
+Outcome Criterion in the context of binomial observations are provided.  In all
+cases, estimation of the difference between two binomial proportions is
+considered.  Functions for both the fully Bayesian and the mixed
+Bayesian/likelihood approaches are provided.  For reference see Joseph L., du
+Berger R. and B\\'elisle P. (1997)
+<doi:10.1002/(sici)1097-0258(19970415)16:7%3C769::aid-sim495%3E3.0.co;2-v>.")
+    (license license:gpl2+)))
+
 (define-public r-samplesizelogisticcasecontrol
   (package
     (name "r-samplesizelogisticcasecontrol")
@@ -53054,21 +53082,21 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
 (define-public r-samc
   (package
     (name "r-samc")
-    (version "2.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samc" version))
               (sha256
                (base32
-                "1b9k5r8hbn6h7i72gib5dkb783a9yqxjrf2mflzgjp88jp79f1cc"))))
+                "1wajvwb94132558sl7k8jdmm3xgr8p31l00iid10aizyj3kf5cra"))))
     (properties `((upstream-name . "samc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppthread
+    (propagated-inputs (list r-terra
+                             r-rcppthread
                              r-rcppeigen
                              r-rcpp
                              r-raster
-                             r-matrix
-                             r-gdistance))
+                             r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://andrewmarx.github.io/samc/")
     (synopsis "Spatial Absorbing Markov Chains")

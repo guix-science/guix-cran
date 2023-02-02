@@ -18530,13 +18530,13 @@ Hallett et al. (2016) <doi:10.1111/2041-210X.12569> and Avolio et al. (2019)
 (define-public r-codingmatrices
   (package
     (name "r-codingmatrices")
-    (version "0.3.4")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "codingMatrices" version))
               (sha256
                (base32
-                "05ndy51wpqyk1b3nq95zn6lxgzg5hzqbr2w7b2v8ar291sxvc4g7"))))
+                "0554jbwy2hzdqy4vf4y26jniw8pp8j7a7ybq9s7120zfkxihccag"))))
     (properties `((upstream-name . "codingMatrices")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-fractional))
@@ -29927,13 +29927,13 @@ analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
 (define-public r-ceodata
   (package
     (name "r-ceodata")
-    (version "1.2.0.1")
+    (version "1.3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CEOdata" version))
               (sha256
                (base32
-                "1v91ykf4bgd16l6l9rcyv0bnnakqz6bvkv9dympjs2sciv2d9kg4"))))
+                "1w2lb7lghapaf29sqs8l60xzzd4639y32bd08xv881v1ks5sigzr"))))
     (properties `((upstream-name . "CEOdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools r-stringr r-jsonlite r-haven r-dplyr))
@@ -33866,29 +33866,30 @@ to b-cluster analysis are described in a manuscript by Castura, Meyners, Varela
 (define-public r-cat2cat
   (package
     (name "r-cat2cat")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cat2cat" version))
               (sha256
                (base32
-                "07c6km66rps24z8mwa588gigl67j50icmvbqb7x9acz1938sqlwg"))))
+                "1hc656848fhkgdyi7jrnahyqfzlmkrbpinv89k169i46gvs6011x"))))
     (properties `((upstream-name . "cat2cat")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Polkas/cat2cat")
     (synopsis
-     "Handling an Inconsistently Coded Categorical Variable in a Panel Dataset")
+     "Handling an Inconsistently Coded Categorical Variable in a Longitudinal Dataset")
     (description
-     "Unifying of an inconsistently coded categorical variable between two different
-time points in accordance with a mapping table.  The main rule is to replicate
-the observation if it could be assign to a few categories.  Then using simple
-frequencies or statistical methods to approximate probabilities of being assign
-to each of them.  This procedure was invented and implemented in the paper by
-(Nasinski, Majchrowska and Broniatowska (2020)
-<doi:10.24425/cejeme.2020.134747>).")
-    (license license:gpl2+)))
+     "Unifying an inconsistently coded categorical variable between two different time
+points in accordance with a mapping table.  The main rule is to replicate the
+observation if it could be assigned to a few categories.  Then using frequencies
+or statistical methods to approximate the probabilities of being assigned to
+each of them.  This procedure was invented and implemented in the paper by
+Nasinski, Majchrowska, and Broniatowska (2020)
+<doi:10.24425/cejeme.2020.134747>.")
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-cat
   (package

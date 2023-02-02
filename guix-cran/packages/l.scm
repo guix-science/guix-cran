@@ -12524,17 +12524,16 @@ calculated, mainly based on Monte Carlo simulations.")
 (define-public r-lcsm
   (package
     (name "r-lcsm")
-    (version "0.1.2")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lcsm" version))
               (sha256
                (base32
-                "1933n9wsyids0pfdmv2anglsxi2ibp5k14ifcvp4kmr1rq8wym7s"))))
+                "0027q08cqy317iymxqp6ycd9rq8zjq1xnc6crzbglsqir538d37v"))))
     (properties `((upstream-name . "lcsm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-utf8
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-semplot
@@ -12544,11 +12543,11 @@ calculated, mainly based on Monte Carlo simulations.")
                              r-lavaan
                              r-ggplot2
                              r-dplyr
-                             r-data-table
+                             r-cli
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://milanwiedemann.github.io/lcsm/")
-    (synopsis "Univariate and Bivariate Latent Change Score Modeling")
+    (synopsis "Univariate and Bivariate Latent Change Score Modelling")
     (description
      "Helper functions to implement univariate and bivariate latent change score
 models in R using the lavaan package.  For details about Latent Change Score
@@ -12564,7 +12563,7 @@ different univariate and bivariate LCSM can be simulated by specifying estimates
 for model parameters to explore their effects.  This package combines the
 strengths of other R packages like lavaan', broom', and semPlot by generating
 lavaan syntax that helps these packages work together.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-lcra
   (package

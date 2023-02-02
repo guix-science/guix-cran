@@ -5464,13 +5464,13 @@ with daily frequency by the regional agency.")
 (define-public r-arothron
   (package
     (name "r-arothron")
-    (version "2.0.3")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Arothron" version))
               (sha256
                (base32
-                "0rb1n9pmp7q2wdihn26kbpyvyznlk8mrs8c26l1ar4q29jw44rw4"))))
+                "0clz01096fdkhnh89np3knhdnk78p2faj9zkm5qhg56jzaji8wxi"))))
     (properties `((upstream-name . "Arothron")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

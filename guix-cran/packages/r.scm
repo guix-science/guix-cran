@@ -3126,13 +3126,13 @@ containing larger datasets not stored in rtrek'.")
 (define-public r-rtransferentropy
   (package
     (name "r-rtransferentropy")
-    (version "0.2.14")
+    (version "0.2.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RTransferEntropy" version))
               (sha256
                (base32
-                "0sy2jgdy8lmvazgyv196z327r14202243f5g8wl4nck737x0i7qh"))))
+                "05n97mwaxjika81bwwbx6vrsshdcd8h0n28iji2q7qwkk0746imd"))))
     (properties `((upstream-name . "RTransferEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-future-apply r-future))
@@ -5003,13 +5003,13 @@ stack may contain arbitrary objects.")
 (define-public r-rstac
   (package
     (name "r-rstac")
-    (version "0.9.2-1")
+    (version "0.9.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rstac" version))
               (sha256
                (base32
-                "1cs2xp30vvs686q38784gz7whsqlbvy0q744aqmykasiq1b0v8b5"))))
+                "1zkv8mvsf608bzrici0w38j3s6cvcpl8d5mkl17y6wszvx316n0f"))))
     (properties `((upstream-name . "rstac")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-lifecycle r-jsonlite r-httr r-crayon))
@@ -20723,13 +20723,13 @@ al. (2013) <doi:10.1111/2041-210X.12079> and associated references.")
 (define-public r-rinside
   (package
     (name "r-rinside")
-    (version "0.2.17")
+    (version "0.2.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RInside" version))
               (sha256
                (base32
-                "0j23h8qxqn95d0hqx9wcb52hc8w9qacjnk96lxlsdjrlxr28rqhb"))))
+                "0dmpdi39dv5a0i7v507cbm2vr2d0cl310n9w1qz66r53y3q18l40"))))
     (properties `((upstream-name . "RInside")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -25074,13 +25074,13 @@ To download \"RevBayes\", go to <https://revbayes.github.io/download>.")
 (define-public r-revss
   (package
     (name "r-revss")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "revss" version))
               (sha256
                (base32
-                "0z08kpvc6qi6qklj2dzidm8c9r8v9k28g583smkxiq8ldh405bzm"))))
+                "1dyz4hswkg16k0lr2phcmyq9x3wm09sdg4kvq663qhb42i54yjfs"))))
     (properties `((upstream-name . "revss")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/revss")
@@ -32255,6 +32255,35 @@ either structured to match the tiny_obj_loader internal data representation or
 in a form directly compatible with the rgl package.")
     (license license:bsd-2)))
 
+(define-public r-readnsx
+  (package
+    (name "r-readnsx")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "readNSx" version))
+              (sha256
+               (base32
+                "1mj2ax18nplxypzz2r5jkvvb98zyfyls7dhk12vwkw0rvvkmvxg0"))))
+    (properties `((upstream-name . "readNSx")))
+    (build-system r-build-system)
+    (inputs (list hdf5))
+    (propagated-inputs (list r-r6
+                             r-jsonlite
+                             r-hdf5r
+                             r-fastmap
+                             r-data-table
+                             r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "http://dipterix.org/readNSx/")
+    (synopsis "Read 'Blackrock-Microsystems' Files ('NEV', 'NSx')")
+    (description
+     "Loads Blackrock <https://blackrockneurotech.com> neural signal data files into
+the memory, provides utility tools to extract the data into common formats such
+as plain-text tsv and HDF5'.")
+    (license (list (license:fsdg-compatible "MPL-2.0")
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-readmzxmldata
   (package
     (name "r-readmzxmldata")
@@ -35871,6 +35900,27 @@ Rcpp modules'.  The posix time implementation can support high-resolution of up
 to nano-second precision by using 96 bits (instead of R's 64) to present a ptime
 object (but this needs recompilation with a #define set).")
     (license license:gpl2+)))
+
+(define-public r-rcpparray
+  (package
+    (name "r-rcpparray")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RcppArray" version))
+              (sha256
+               (base32
+                "1a8gjvzad38d234vp5a4ca5hb1cdyijlwb0l6hgwpr04h9bm539v"))))
+    (properties `((upstream-name . "RcppArray")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/jonclayden/RcppArray")
+    (synopsis "'Rcpp' Meets 'C++' Arrays")
+    (description
+     "Interoperability between Rcpp and the C++11 array type.  Linking to this package
+allows fixed-length std::array objects to be converted to and from equivalent R
+vectors via the as() and wrap() functions.")
+    (license license:gpl2)))
 
 (define-public r-rcppapt
   (package
@@ -40200,13 +40250,13 @@ front-end widgets, and event handlers.")
 (define-public r-ravages
   (package
     (name "r-ravages")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ravages" version))
               (sha256
                (base32
-                "1lkdw9ilkrsa6zc7s3ljjnjzjwhxfy0w9p6jlqmrj9j81kydyxbz"))))
+                "1lwr8krhlsb11jq938m71ihwmzbkyrg0jnw1pg8k3xqm5v52gl1v"))))
     (properties `((upstream-name . "Ravages")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -40224,11 +40274,10 @@ front-end widgets, and event handlers.")
     (home-page "https://cran.r-project.org/package=Ravages")
     (synopsis "Rare Variant Analysis and Genetic Simulations")
     (description
-     "Genetic simulations and rare variant association tests: burden tests (Bocher et
-al.  2019 <doi:10.1002/gepi.22210>) and the Sequence Kernel Association Test
-(Bocher et al.  2021 <doi:10.1038/s41431-020-00792-8>).  Ravages also implements
-a dedicated procedure to perform rare variant association tests in the whole
-genome (Bocher et al.  2022, <doi:10.1371/journal.pgen.1009923>).")
+     "Rare variant association tests: burden tests (Bocher et al.  2019
+<doi:10.1002/gepi.22210>) and the Sequence Kernel Association Test (Bocher et
+al.  2021 <doi:10.1038/s41431-020-00792-8>) in the whole genome; and genetic
+simulations.")
     (license license:gpl3)))
 
 (define-public r-rattle
@@ -41579,22 +41628,22 @@ searched.")
 (define-public r-rapidphylo
   (package
     (name "r-rapidphylo")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rapidphylo" version))
               (sha256
                (base32
-                "0mljvfpam40nh4h3513xbw2wnbgfwqx8l7k2g0x6j1yk9qxcffh5"))))
+                "1q0p43ikfpmza8prjcgf12471d0z0bmid33zyhkngykagrg5j2aa"))))
     (properties `((upstream-name . "rapidphylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-phangorn r-ape))
     (home-page "https://github.com/ArindamRoyChoudhury/rapidphylo")
     (synopsis
-     "Rapidly Estimate Phylogeny from Large Allele Frequency Data Using Root Distances Method")
+     "Rapidly Estimates Phylogeny from Large Allele Frequency Data Using Root Distances Method")
     (description
      "Rapidly estimates tree-topology from large allele frequency data using Root
-Distances Method, under a Brownian Motion Model.  See Jing Peng et al. (2021)
+Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
 <doi:10.1016/j.ympev.2021.107142>.")
     (license license:agpl3)))
 
@@ -45265,13 +45314,13 @@ plot_power() draws the corresponding power graphs.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2rtf" version))
               (sha256
                (base32
-                "15sih195h1xbz596bqahlc1ixpab68r5az218s5q82fv9i01q7yr"))))
+                "12h3pm7kif1kj5096hd6c2xpdr3vy0b91cgsp6263fx4553pavbq"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

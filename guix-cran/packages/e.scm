@@ -8841,13 +8841,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "0.5.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epanet2toolkit" version))
               (sha256
                (base32
-                "0ksb1cmjykmp0diic7xz5240d9n0sl6byp8rac3jpk3hb1p46r4d"))))
+                "1qa9g2h30y2kxd3x3xnpw2ibixyjraykphsd5rnl8928n2zkkbcx"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")
@@ -9285,21 +9285,20 @@ environmental analysis.")
 (define-public r-envi
   (package
     (name "r-envi")
-    (version "0.1.15")
+    (version "0.1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "envi" version))
               (sha256
                (base32
-                "0j7mgqza3kf2bk1sia3f7rzqcig28r341nbqdji8nm4h2ijx0d57"))))
+                "1fsw4rq2ri60w4hgzfxqva4b3b8xsvnkzraj288xacphhm3hamjx"))))
     (properties `((upstream-name . "envi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
+    (propagated-inputs (list r-terra
+                             r-spatstat-geom
                              r-sparr
-                             r-sp
+                             r-sf
                              r-rocr
-                             r-rgeos
-                             r-raster
                              r-pls
                              r-iterators
                              r-future
@@ -13696,13 +13695,13 @@ prototyping of packages.")
 (define-public r-ehdprep
   (package
     (name "r-ehdprep")
-    (version "1.2.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eHDPrep" version))
               (sha256
                (base32
-                "0ff0hxwxi3gddgzayxy1l2hplh9l3a9n958wkgg9cnzpkx7mkqa3"))))
+                "15bfw4ysrjzhiw7p05rwd9axnnaa9cgg5xrbzi00yh1j9czjf421"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -13725,7 +13724,7 @@ prototyping of packages.")
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=eHDPrep")
+    (home-page "https://github.com/overton-group/eHDPrep")
     (synopsis "Quality Control and Semantic Enrichment of Datasets")
     (description
      "This package provides a tool for the preparation and enrichment of health

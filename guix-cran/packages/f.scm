@@ -3231,22 +3231,20 @@ only, and visualize data and statistical results directly in R'.")
 (define-public r-fsa
   (package
     (name "r-fsa")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSA" version))
               (sha256
                (base32
-                "10ax191r71gny976hgxgs0gz2548sjjaq3hqy7xkzbj2mcmjq41w"))))
+                "0m63pik6bcqsbzizq8zjzilr2pxjl8b64ivdqzdnz09gmck73r5h"))))
     (properties `((upstream-name . "FSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-plotrix r-lmtest r-dunn-test r-car))
-    (home-page "https://github.com/fishR-Core-Team/FSA")
+    (home-page "https://fishr-core-team.github.io/FSA/")
     (synopsis "Simple Fisheries Stock Assessment Methods")
     (description
-     "This package provides a variety of simple fish stock assessment methods.
-Detailed vignettes are available on the fishR website
-<http://derekogle.com/fishR/>.")
+     "This package provides a variety of simple fish stock assessment methods.")
     (license license:gpl2+)))
 
 (define-public r-fruclimadapt
@@ -3428,13 +3426,13 @@ neglected heterogeneity and/or endogenous covariates.")
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.1.3")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRK" version))
               (sha256
                (base32
-                "0fz3l6hrc8hbkqwj9nv74fjhz5cbaxmc46m7hdzmjqj8jqg6crlm"))))
+                "1ykl3qkl8hf9pn4a3fb2axci62x90civcy1skxf1g4b0nzzcsnkn"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb

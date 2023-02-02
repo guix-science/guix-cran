@@ -12769,18 +12769,17 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.4")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytransit" version))
               (sha256
                (base32
-                "12rhl9mb2hqwwad9sxa7lxyq012qhs9ga7y8ggigdq6nihmlqnrj"))))
+                "1f8pjcfd368b7arxvb6k6p9l7i3ykycrb3iy1lldh1vx4lyrz2x3"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
                              r-rlang
-                             r-httr
                              r-hms
                              r-gtfsio
                              r-geodist
@@ -18185,13 +18184,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terrainr
   (package
     (name "r-terrainr")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "terrainr" version))
               (sha256
                (base32
-                "1w91vdn859m1rxg5av3gix5rff1wndrkkn13nvc1ygqgwd25hc76"))))
+                "0fhwgy15lqai0h64dxr8ii54hrdymk7zlinq0ar56bahshq4zds7"))))
     (properties `((upstream-name . "terrainr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -18199,7 +18198,6 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
                              r-terra
                              r-sf
                              r-rlang
-                             r-raster
                              r-png
                              r-magick
                              r-httr
@@ -21174,13 +21172,13 @@ templates provided.")
 (define-public r-taskscheduler
   (package
     (name "r-taskscheduler")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "taskscheduleR" version))
               (sha256
                (base32
-                "0aqs60iq05qqzv7fi17ydx3lnn8m2yp5bgw35rmjnddr4zhhzasw"))))
+                "0bkzh71vif3wp4csj8b26x25k1yl4sbkmx21nl650k4v4061qj07"))))
     (properties `((upstream-name . "taskscheduleR")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
