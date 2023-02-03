@@ -11411,13 +11411,13 @@ of the official HL7 FHIR .NET API', also made by Firely.")
 (define-public r-romic
   (package
     (name "r-romic")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "romic" version))
               (sha256
                (base32
-                "08iqk71bn4yjxnbwj99jbrz3028jjs8f07ns9r9iaj6byyxv4vd1"))))
+                "0vqkizgk7dii5vdcmwmaj1i911xywqqj37qz34zi8phjg4hgy473"))))
     (properties `((upstream-name . "romic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14982,6 +14982,40 @@ an in-depth presentation of the roahd package.  See Aleman-Gomez et al. (2021)
 <arXiv:2103.08874> for details about the concept of depthgram.")
     (license license:gpl3)))
 
+(define-public r-roads
+  (package
+    (name "r-roads")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "roads" version))
+              (sha256
+               (base32
+                "18m1r091rwj2k1ld4w9n9gla9x5lh2kx65cgvh7x43ky4rnsvzfj"))))
+    (properties `((upstream-name . "roads")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyselect
+                             r-terra
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-raster
+                             r-igraph
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LandSciTech/roads")
+    (synopsis "Road Network Projection")
+    (description
+     "Project road network development based on an existing road network, target
+locations to be connected by roads and a cost surface.  Road projection methods
+include minimum spanning tree with least cost path (Kruskal's algorithm (1956)
+<doi:10.2307/2033241>), least cost path (Dijkstra's algorithm (1959)
+<doi:10.1007/BF01386390>) or snapping.  These road network projection methods
+are ideal for use with land cover change projection models.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-roadoi
   (package
     (name "r-roadoi")
@@ -18395,13 +18429,13 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-4.1")
+    (version "0.7-4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "0rrsc1q9862fpwg9whdy0zbgbd0izrzaknb1a4zjpk4vx7j226l0"))))
+                "0r0cjxi91hggjv79amns9cplcq70k0sx55vqjphrmshqv74z2k2p"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -24062,24 +24096,6 @@ out-of-bag prediction, regression monotonicity, and several methods for missing
 data imputation.  Soren R. Kunzel, Theo F. Saarinen, Edward W. Liu, Jasjeet S.
 Sekhon (2019) <arXiv:1906.06463>.")
     (license license:gpl3+)))
-
-(define-public r-rforest
-  (package
-    (name "r-rforest")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rForest" version))
-              (sha256
-               (base32
-                "0vk9sfnbzpjqh7mr3qwi5awlh8qc0h1i6qwbyv7qj72apy05s2d8"))))
-    (properties `((upstream-name . "rForest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgl r-geometry r-alphashape3d))
-    (home-page "https://github.com/carlos-alberto-silva/rForest")
-    (synopsis "Forest Inventory and Analysis")
-    (description "Set of tools designed for forest inventory analysis.")
-    (license license:gpl2+)))
 
 (define-public r-rforensicbatwing
   (package

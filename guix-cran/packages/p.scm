@@ -6356,45 +6356,6 @@ backtrace during error inspection or profiling), the address space map
 determines which library this instruction pointer corresponds to.")
     (license license:gpl3)))
 
-(define-public r-processr
-  (package
-    (name "r-processr")
-    (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "processR" version))
-              (sha256
-               (base32
-                "0kwv1cija3dbk06vkmnpz8f0nrhy10pmjw3n37004bblfxzf7gj5"))))
-    (properties `((upstream-name . "processR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ztable
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-semtools
-                             r-rrtable
-                             r-rmarkdown
-                             r-rlang
-                             r-purrr
-                             r-psych
-                             r-predict3d
-                             r-officer
-                             r-lavaan
-                             r-interactions
-                             r-ggrepel
-                             r-ggplot2
-                             r-flextable
-                             r-dplyr
-                             r-diagram))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cardiomoon/processR")
-    (synopsis "Implementation of the 'PROCESS' Macro")
-    (description
-     "Perform moderation, mediation, moderated mediation and moderated moderation.
-Inspired from famous PROCESS macro for SPSS and SAS created by Andrew Hayes.")
-    (license license:gpl2)))
-
 (define-public r-processpredictr
   (package
     (name "r-processpredictr")
@@ -8308,13 +8269,13 @@ comes from present in spanish.")
 (define-public r-presenter
   (package
     (name "r-presenter")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "presenter" version))
               (sha256
                (base32
-                "13q9cn2kglrr37cng9rz3bpl2ipmbiaaf233bn1bw83c6fisrq6m"))))
+                "1mfwpp8hd48yvadvrxz7w7spx76hb79yld7mhl6fw0mirbys98cj"))))
     (properties `((upstream-name . "presenter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8335,8 +8296,7 @@ comes from present in spanish.")
                              r-formattable
                              r-flextable
                              r-dplyr
-                             r-berryfunctions
-                             r-badger))
+                             r-berryfunctions))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Harrison4192/presenter")
     (synopsis "Present Data with Style")
@@ -9194,42 +9154,6 @@ factors only.  Finally, the package includes function to construct a simulated
 dataset with genotypes, genetic risks, and disease status for a hypothetical
 population, which is used for the evaluation of genetic risk models.")
     (license license:gpl2+)))
-
-(define-public r-predict3d
-  (package
-    (name "r-predict3d")
-    (version "0.1.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "predict3d" version))
-              (sha256
-               (base32
-                "1kb3jacpgzln1ddnkfzhvfpzzf9wig60lppca6iy0fvq5cm8ddr4"))))
-    (properties `((upstream-name . "predict3d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-th-data
-                             r-stringr
-                             r-rlang
-                             r-rgl
-                             r-reshape2
-                             r-purrr
-                             r-prediction
-                             r-plyr
-                             r-moonbook
-                             r-modelr
-                             r-magrittr
-                             r-ggplot2
-                             r-ggiraphextra
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cardiomoon/predict3d")
-    (synopsis "Draw Three Dimensional Predict Plot Using Package 'rgl'")
-    (description
-     "Draw 2 dimensional and three dimensional plot for multiple regression models
-using package ggplot2 and rgl'.  Supports linear models (lm), generalized linear
-models (glm) and local polynomial regression fittings (loess).")
-    (license license:gpl2)))
 
 (define-public r-predhy
   (package
@@ -28595,27 +28519,6 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
 series such that the transformed series is segmented into several
 lower-dimensional subseries, and those subseries are uncorrelated with each
 other both contemporaneously and serially.")
-    (license license:gpl2)))
-
-(define-public r-pca3d
-  (package
-    (name "r-pca3d")
-    (version "0.10.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pca3d" version))
-              (sha256
-               (base32
-                "0xpln78zdh6q7xff6pj2jaq2kafrijmlikmpnsfar2fzgkaw7jx6"))))
-    (properties `((upstream-name . "pca3d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-ellipse))
-    (native-inputs (list r-knitr))
-    (home-page "https://logfc.wordpress.com")
-    (synopsis "Three Dimensional PCA Plots")
-    (description
-     "This package provides functions simplifying presentation of PCA models in a 3D
-interactive representation using rgl'.")
     (license license:gpl2)))
 
 (define-public r-pbv

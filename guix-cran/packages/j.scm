@@ -1727,48 +1727,6 @@ site-associated species.  Includes functions to estimate latent abundances
 through empirical Bayes methods.")
     (license license:gpl2+)))
 
-(define-public r-jointnets
-  (package
-    (name "r-jointnets")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JointNets" version))
-              (sha256
-               (base32
-                "18n9dsy0w0nh7dznp6gw6g5fhhjhf5y589nb49hri0721kq1h3rb"))))
-    (properties `((upstream-name . "JointNets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-rgl
-                             r-pcapp
-                             r-oro-nifti
-                             r-misc3d
-                             r-mass
-                             r-lpsolve
-                             r-jgl
-                             r-igraph
-                             r-brainr))
-    (home-page "https://github.com/QData/JointNets")
-    (synopsis
-     "End-to-End Sparse Gaussian Graphical Model Simulation, Estimation, Visualization, Evaluation and Application")
-    (description
-     "An end-to-end package for learning multiple sparse Gaussian graphical models and
-nonparanormal models from Heterogeneous Data with Additional Knowledge.  It is
-able to simulate multiple related graphs as well as produce samples drawn from
-them.  Multiple state-of-the-art sparse Gaussian graphical model estimators are
-included to both multiple and difference estimation.  Graph visualization is
-available in 2D as well as 3D, designed specifically for brain.  Moreover, a set
-of evaluation metrics are integrated for easy exploration with model validity.
-Finally, classification using graphical model is achieved with Quadratic
-Discriminant Analysis.  The package comes with multiple demos with datasets from
-various fields.  Methods references: SIMULE (Wang B et al. (2017)
-<doi:10.1007/s10994-017-5635-7>), WSIMULE (Singh C et al. (2017)
-<arXiv:1709.04090v2>), DIFFEE (Wang B et al. (2018) <arXiv:1710.11223>), JEEK
-(Wang B et al. (2018) <arXiv:1806.00548>), JGL(Danaher P et al. (2012)
-<arXiv:1111.0324>) and kdiffnet (Sekhon A et al, preprint for publication).")
-    (license license:gpl2)))
-
 (define-public r-jointmodel
   (package
     (name "r-jointmodel")

@@ -9391,13 +9391,13 @@ obtained/free fonts, simple forms of which are included in this package.")
 (define-public r-stevetemplates
   (package
     (name "r-stevetemplates")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevetemplates" version))
               (sha256
                (base32
-                "0rm39jrzzi10ncl59xhixy0a9fiwqw5s10pxr90gckscxz1bjkwc"))))
+                "0dbph1wpb07m73jx3avayncq8682yjpdjinlzhc4z1czlkj4wdm4"))))
     (properties `((upstream-name . "stevetemplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
@@ -24827,13 +24827,13 @@ process, explore and visualise estimation results.")
 (define-public r-soilhyp
   (package
     (name "r-soilhyp")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SoilHyP" version))
               (sha256
                (base32
-                "0qnc0161mykwgsdq7fgpp1x4kmgcrvcflrvaacmkhlh5jcs9xvi7"))))
+                "0f4djzmbyz6x5av0d4ii972dw6295c4l3c7gbwp0yinpy3rgvh0q"))))
     (properties `((upstream-name . "SoilHyP")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-data-table))
@@ -28802,13 +28802,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "slendr" version))
               (sha256
                (base32
-                "05r01fylzaz23akc874cfpzlfszdicsfssb2nrhn5pci753bschh"))))
+                "127p5crjj3klmfngckmqgi3fpl55s4vnjn96x4d3lrz2l37qk1rp"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -30302,13 +30302,13 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
 (define-public r-sivs
   (package
     (name "r-sivs")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sivs" version))
               (sha256
                (base32
-                "16w1yixb2wfgprnfm408l11nz9j28by7sz82x17rzmjb6p3n1jw5"))))
+                "1dc7q5kzgsi8ygy03ak9gw9m9397bli7hjphiax4gbr4df1sww64"))))
     (properties `((upstream-name . "sivs")))
     (build-system r-build-system)
     (propagated-inputs (list r-varhandle r-proc r-glmnet r-foreach
@@ -49236,20 +49236,19 @@ matrices using a pre-determined sequence of notes.")
 (define-public r-schemr
   (package
     (name "r-schemr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "schemr" version))
               (sha256
                (base32
-                "0w29la0mh5bvij52r8jgfl47cgm0xc53702ms5r4jv0pdd49qlg8"))))
+                "192dk2b69wlwwkqrkk1n05q8hsn6djxhscjizj3amj4b701xw612"))))
     (properties `((upstream-name . "schemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-openimager
                              r-magrittr
-                             r-ggplot2
                              r-dplyr
                              r-apcluster))
     (home-page "https://cran.r-project.org/package=schemr")
@@ -52754,6 +52753,31 @@ considered.  Functions for both the fully Bayesian and the mixed
 Bayesian/likelihood approaches are provided.  For reference see Joseph L., du
 Berger R. and B\\'elisle P. (1997)
 <doi:10.1002/(sici)1097-0258(19970415)16:7%3C769::aid-sim495%3E3.0.co;2-v>.")
+    (license license:gpl2+)))
+
+(define-public r-samplesizemeans
+  (package
+    (name "r-samplesizemeans")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SampleSizeMeans" version))
+              (sha256
+               (base32
+                "1djn143kq0qv3qasmrh6mwvaq0f6pqmz3yl5dbp19xfabl4829lf"))))
+    (properties `((upstream-name . "SampleSizeMeans")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SampleSizeMeans")
+    (synopsis "Sample Size Calculations for Normal Means")
+    (description
+     "Sample size requirements calculation using three different Bayesian criteria in
+the context of designing an experiment to estimate a normal mean or the
+difference between two normal means.  Functions for calculation of required
+sample sizes for the Average Length Criterion, the Average Coverage Criterion
+and the Worst Outcome Criterion in the context of normal means are provided.
+Functions for both the fully Bayesian and the mixed Bayesian/likelihood
+approaches are provided.  For reference see Joseph L. and B\\'elisle P. (1997)
+<https://www.jstor.org/stable/2988525>.")
     (license license:gpl2+)))
 
 (define-public r-samplesizelogisticcasecontrol

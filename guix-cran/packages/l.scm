@@ -6231,13 +6231,13 @@ datasets are also included.")
 (define-public r-lmfilter
   (package
     (name "r-lmfilter")
-    (version "0.1.3")
+    (version "0.1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMfilteR" version))
               (sha256
                (base32
-                "0c27154jghfl83n3sn26pr8mjcybrq02glvnjcx8hllrmz4gmnmi"))))
+                "1ncx8kqnh43zxffy7rba1xjb3ar3qi1rzmnwpl6vldijajmnjrv8"))))
     (properties `((upstream-name . "LMfilteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

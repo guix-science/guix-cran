@@ -11330,13 +11330,13 @@ constrains, and variables restricted to be integers.")
 (define-public r-emhawkes
   (package
     (name "r-emhawkes")
-    (version "0.9.5")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emhawkes" version))
               (sha256
                (base32
-                "0b6kjwx2lsz5rj8819n71nvvchjpys90ns5n6gcgfwn5afzfdvql"))))
+                "0zhy1y80m548y9nbbjb2h795qky2637mxlqb548bakn7ps847qps"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik))
@@ -17418,6 +17418,45 @@ Environmental Compliance History Online ('ECHO') Application Program Interface
 (API).  ECHO provides information about EPA permitted facilities, discharges,
 and other reporting info associated with permitted entities.  Data are obtained
 from <https://echo.epa.gov/>.")
+    (license license:expat)))
+
+(define-public r-echoice2
+  (package
+    (name "r-echoice2")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "echoice2" version))
+              (sha256
+               (base32
+                "127biyv97i99423qr7py7lz8avf9vig0bcd1clwbpcbyigsg26j4"))))
+    (properties `((upstream-name . "echoice2")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "http://ninohardt.de/echoice2/")
+    (synopsis "Choice Models with Economic Foundation")
+    (description
+     "This package implements choice models based on economic theory, including
+estimation using Markov chain Monte Carlo (MCMC), prediction, and more.  Its
+usability is inspired by ideas from tidyverse'.  Models include versions of the
+Hierarchical Multinomial Logit and Multiple Discrete-Continous (Volumetric)
+models with and without screening.  The foundations of these models are
+described in Allenby, Hardt and Rossi (2019) <doi:10.1016/bs.hem.2019.04.002>.
+Models with conjunctive screening are described in Kim, Hardt, Kim and Allenby
+(2022) <doi:10.1016/j.ijresmar.2022.04.001>.  Models with set-size variation are
+described in Hardt and Kurz (2020) <doi:10.2139/ssrn.3418383>.")
     (license license:expat)))
 
 (define-public r-echogram

@@ -65,13 +65,13 @@ Originally published by the New Zealand Police at
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
-    (version "1.1-1")
+    (version "1.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nzilbb.labbcat" version))
               (sha256
                (base32
-                "1kzsmsliwv8776cyb3wmvzyrr6mqgrsxswxyj1fsxr4yxwlkyr98"))))
+                "1mxanqbqqjhfvbw4ckh037arbjnpfv2npazk5s01sxs52g6k7mxk"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rstudioapi r-jsonlite r-httr))
@@ -82,7 +82,7 @@ Originally published by the New Zealand Police at
 Zealand Institute of Language, Brain and Behaviour (NZILBB) - see
 <https://labbcat.canterbury.ac.nz>.  This package defines functions for
 accessing corpus data in a LaBB-CAT instance.  You must have at least version
-20220401.1842 of LaBB-CAT to use this package.  For more information about
+20230202.1600 of LaBB-CAT to use this package.  For more information about
 LaBB-CAT', see Robert Fromont and Jennifer Hay (2008)
 <doi:10.3366/E1749503208000142> or Robert Fromont (2017)
 <doi:10.1016/j.csl.2017.01.004>.")

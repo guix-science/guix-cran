@@ -14463,35 +14463,6 @@ Journal of Computational and Graphical Statistics.
 <doi:10.1080/10618600.2022.2070171>.")
     (license license:gpl3)))
 
-(define-public r-fdapde
-  (package
-    (name "r-fdapde")
-    (version "1.1-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fdaPDE" version))
-              (sha256
-               (base32
-                "09ba71fnblv9r2c22amy92wv3xpa395rf7x681p8zs5rldhk8i5a"))))
-    (properties `((upstream-name . "fdaPDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
-    (home-page "https://cran.r-project.org/package=fdaPDE")
-    (synopsis
-     "Functional Data Analysis and Partial Differential Equations (PDE); Statistical Analysis of Functional and Spatial Data, Based on Regression with PDE Regularization")
-    (description
-     "An implementation of regression models with partial differential
-regularizations, making use of the Finite Element Method.  The models
-efficiently handle data distributed over irregularly shaped domains and can
-comply with various conditions at the boundaries of the domain.  A priori
-information about the spatial structure of the phenomenon under study can be
-incorporated in the model via the differential regularization.  See Sangalli, L.
-M. (2021).  Spatial Regression With Partial Differential Equation
-Regularisation.  International Statistical Review, 89(3), 505-531.  for an
-overview.  The release 1.1-9 requires R (>= 4.2.0) to be installed on windows
-machines.")
-    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
-
 (define-public r-fdapaceshiny
   (package
     (name "r-fdapaceshiny")

@@ -21472,6 +21472,31 @@ Pourmohamad et al. (2022) <doi:10.1111/rssc.12535>, but more models may be added
 over time.")
     (license license:gpl2)))
 
+(define-public r-bayesdip
+  (package
+    (name "r-bayesdip")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesDIP" version))
+              (sha256
+               (base32
+                "05kz0qik76gk1v6ldhlbzmylpsv5zmbqbjgf9sc8c5zkyjdawgj8"))))
+    (properties `((upstream-name . "BayesDIP")))
+    (build-system r-build-system)
+    (home-page "<https://github.com/chenw10/BayesDIP>")
+    (synopsis
+     "Bayesian Decreasingly Informative Priors for Early Termination Phase II Trials")
+    (description
+     "Provide early termination phase II trial designs with a decreasingly informative
+prior (DIP) or a regular Bayesian prior chosen by the user.  The program can
+determine the minimum planned sample size necessary to achieve the
+user-specified admissible designs.  The program can also perform power and
+expected sample size calculations for the tests in early termination Phase II
+trials.  See Wang C and Sabo RT (2022) <doi:10.18203/2349-3259.ijct20221110>;
+Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
+    (license license:gpl2+)))
+
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
@@ -23493,28 +23518,6 @@ modeling of covariates for continuous, binary, categorical and time-to-event
 outcomes.  For more information see Sparapani, Spanbauer and McCulloch
 <doi:10.18637/jss.v097.i01>.")
     (license license:gpl2+)))
-
-(define-public r-barplot3d
-  (package
-    (name "r-barplot3d")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "barplot3d" version))
-              (sha256
-               (base32
-                "182kpiknv3id1bsgcc6b3ahbxmm8x3lxcpf1r6rckpr3s0whfx3g"))))
-    (properties `((upstream-name . "barplot3d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=barplot3d")
-    (synopsis "Create 3D Barplots")
-    (description
-     "This package creates 3D barplots.  Includes a function for sequence context
-plots used in DNA sequencing analysis.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-barnard
   (package

@@ -3331,13 +3331,13 @@ diacritics and different spellings.")
 (define-public r-video
   (package
     (name "r-video")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "video" version))
               (sha256
                (base32
-                "0ha1wy4vxxaj22qfviqv5w27g5yvf9jjmfy5zw40s78myjjgrqqy"))))
+                "0h500mpbjiwggx1m8zfydhr9n4v27is9s46ay9856d2lgv2srlfg"))))
     (properties `((upstream-name . "video")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets))

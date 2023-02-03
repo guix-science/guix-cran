@@ -5047,13 +5047,13 @@ method.")
 (define-public r-opentripplanner
   (package
     (name "r-opentripplanner")
-    (version "0.5")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opentripplanner" version))
               (sha256
                (base32
-                "113qlpz8sypvj7wy8b3cqck12vs39366c2cwj5gp4wywl32l4amh"))))
+                "04qf01jy675glwnxjf430z43c9hi5dxjv6g2h85ny778hzvhq087"))))
     (properties `((upstream-name . "opentripplanner")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
@@ -7520,13 +7520,13 @@ Keith McNulty (2021).")
 (define-public r-omu
   (package
     (name "r-omu")
-    (version "1.0.7")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "omu" version))
               (sha256
                (base32
-                "1vsvs2nizp1vj9qcjhhiqyvymmyka5d6m8fcx44qfrhny3p4w83d"))))
+                "0pi7xdjlw4p426x400xwq1xrjcd0y42cmn832598vzjs5v71fv4y"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7903,6 +7903,35 @@ contributes to the application example.  The package OmegaG was sponsored by
 American Lebanese Syrian Associated Charities (ALSAC).  However, the contents of
 OmegaG do not necessarily represent the policy of the ALSAC.")
     (license license:gpl2)))
+
+(define-public r-olympicrshiny
+  (package
+    (name "r-olympicrshiny")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OlympicRshiny" version))
+              (sha256
+               (base32
+                "17caq517hqd89qvlsmirrcb7l9ny55rqyfrwhx037s30005mxq9f"))))
+    (properties `((upstream-name . "OlympicRshiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarytools
+                             r-shinythemes
+                             r-shinybusy
+                             r-shiny
+                             r-golem
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-config))
+    (home-page "https://github.com/Amalan-ConStat/OlympicRshiny")
+    (synopsis "'Shiny' Application for Olympic Data")
+    (description
+     "Shiny Application to visualize Olympic Data.  From 1896 to 2016.  Even Winter
+Olympics events are included.  Data is from Kaggle at
+<https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results>.")
+    (license license:expat)))
 
 (define-public r-olsrr
   (package
@@ -9360,13 +9389,13 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OCNet" version))
               (sha256
                (base32
-                "0nl97srp0g947zgp05nmbk80jcj7n6d9869c77p3201q1zr9k488"))))
+                "104cq2cdmjwp00ygwyc20kjhibf3graq2xxc3dak5jrf8l1pwxjc"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn
@@ -9377,7 +9406,7 @@ methods.")
                              r-igraph
                              r-fields))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=OCNet")
+    (home-page "https://lucarraro.github.io/OCNet/")
     (synopsis "Optimal Channel Networks")
     (description
      "Generate and analyze Optimal Channel Networks (OCNs): oriented spanning trees

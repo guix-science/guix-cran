@@ -13510,6 +13510,46 @@ Finally, a battery of datasets are available allowing to replicate a variety of
 connectedness papers.")
     (license license:gpl3)))
 
+(define-public r-connectapi
+  (package
+    (name "r-connectapi")
+    (version "0.1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "connectapi" version))
+              (sha256
+               (base32
+                "00fxy94a0nyw608b1cklh603zql027wqaarxmxwy5f1l7arnwd4s"))))
+    (properties `((upstream-name . "connectapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-vctrs
+                             r-uuid
+                             r-tibble
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-config
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rstudio/connectapi")
+    (synopsis "Utilities for Interacting with the 'Posit Connect' Server API")
+    (description
+     "This package provides a helpful R6 class and methods for interacting with the
+Posit Connect Server API along with some meaningful utility functions for
+regular tasks.  API documentation varies by Posit Connect installation and
+version, but the latest documentation is also hosted publicly at
+<https://docs.posit.co/connect/api/>.")
+    (license license:expat)))
+
 (define-public r-connect
   (package
     (name "r-connect")
@@ -16890,6 +16930,32 @@ co-occurrence matrices (incoma; Vadivel et al. (2007)
 crayon package.  Colt styles are defined in themes that can easily be switched,
 to ensure command line output looks nice on dark as well as light consoles.")
     (license license:expat)))
+
+(define-public r-cols4all
+  (package
+    (name "r-cols4all")
+    (version "0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cols4all" version))
+              (sha256
+               (base32
+                "1vgwb9rpnbwadpbjw9cyvf34w69wp8ml55skdnj59bqmn94a6fq4"))))
+    (properties `((upstream-name . "cols4all")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringdist r-png r-colorspace r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mtennekes/cols4all")
+    (synopsis "Colors for all")
+    (description
+     "Color palettes for all people, including those with color vision deficiency.
+Popular color palette series have been organized by type and have been scored on
+several properties such as color-blind-friendliness and fairness (i.e.  do
+colors stand out equally?).  Own palettes can also be loaded and analysed.
+Besides the common palette types (categorical, sequential, and diverging) it
+also includes bivariate color palettes.  Furthermore, a color for missing values
+is assigned to each palette.")
+    (license license:gpl3)))
 
 (define-public r-colp
   (package
@@ -27981,22 +28047,22 @@ your local computer.")
 (define-public r-chatgpt
   (package
     (name "r-chatgpt")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chatgpt" version))
               (sha256
                (base32
-                "1zvazn1m65rs640yz1nyfw7gxhby0n97qrm12247xs1dmf97yzkg"))))
+                "0d8nfpaq5a52yqs7z8rnczblqh1gj6bc0qwhx8bdb856j837xz04"))))
     (properties `((upstream-name . "chatgpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-jsonlite r-httr))
     (home-page "https://github.com/jcrodriguez1989/chatgpt")
     (synopsis "Interface to 'ChatGPT' from R")
     (description
-     "OpenAI's ChatGPT <https://openai.com/blog/chatgpt/> coding assistant for
-RStudio'.  A set of functions and RStudio addins that aim to help the R
-developer in tedious coding tasks.")
+     "OpenAI's ChatGPT <https://chat.openai.com/> coding assistant for RStudio'.  A
+set of functions and RStudio addins that aim to help the R developer in tedious
+coding tasks.")
     (license license:gpl3+)))
 
 (define-public r-chartql
@@ -30945,17 +31011,16 @@ in a sister species.")
 (define-public r-cdrcr
   (package
     (name "r-cdrcr")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdrcR" version))
               (sha256
                (base32
-                "1z6z27rnqg07i5j09q0xwy9bvwci1vc2vijp6r733diivyhcraiv"))))
+                "1q7xb1y3qlgpb7kzmqla586m29b4mwbs3iadr42cms0rrj4gdnm5"))))
     (properties `((upstream-name . "cdrcR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urltools
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-sf
                              r-rlist

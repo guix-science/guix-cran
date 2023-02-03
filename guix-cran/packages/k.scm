@@ -81,13 +81,13 @@ Transforms.")
 (define-public r-kyotil
   (package
     (name "r-kyotil")
-    (version "2022.12-20")
+    (version "2023.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kyotil" version))
               (sha256
                (base32
-                "08j1pdg8mwypcpidpkb1rxkh9rdj58640qh9f5dsmn8y875qxna8"))))
+                "0sx8nw67pwy4flb01d5bhbzvxpc63h2b49ss2qz2abg46f2nnd74"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kyotil")

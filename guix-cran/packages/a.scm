@@ -7589,23 +7589,23 @@ samples can have from the training set.  See Gadaleta et al (2016)
 (define-public r-appler
   (package
     (name "r-appler")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "appler" version))
               (sha256
                (base32
-                "0a3xhr2zbzni81y00sa1d35spcd1f6blhnkmyf76wf00z3vhrk2i"))))
+                "1xd9rk80rj2ksx7h5qdy0qalc61wnzp9vihmlk1v9npx46i4rng0"))))
     (properties `((upstream-name . "appler")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-jsonlite r-httr r-glue))
-    (home-page "https://github.com/ashbaldry/appler")
+    (propagated-inputs (list r-rvest r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ashbaldry.github.io/appler/")
     (synopsis "'Apple App Store' and 'iTunes' Data Extraction")
     (description
      "Using Apple App Store <https://www.apple.com/app-store/> web scraping and iTunes
-API
-<https://performance-partners.apple.com/resources/documentation/itunes-store-web-service-search-api.html>
-to extract content information, app ratings and reviews.")
+API <https://performance-partners.apple.com/search-api> to extract content
+information, app ratings and reviews.")
     (license license:gpl2)))
 
 (define-public r-appleadsr
@@ -9842,28 +9842,6 @@ time series plots and extreme value detection described by J.P. van Brakel
 <https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data/>.")
     (license license:gpl3)))
 
-(define-public r-animaltrack
-  (package
-    (name "r-animaltrack")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "animalTrack" version))
-              (sha256
-               (base32
-                "0jlvfflpaq64s48sblzh1n1vx8g3870iss97whigri29s6hn79ry"))))
-    (properties `((upstream-name . "animalTrack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl))
-    (home-page "https://cran.r-project.org/package=animalTrack")
-    (synopsis
-     "Animal track reconstruction for high frequency 2-dimensional (2D) or 3-dimensional (3D) movement data")
-    (description
-     "2D and 3D animal tracking data can be used to reconstruct tracks through
-time/space with correction based on known positions.  3D visualization of animal
-position and attitude.")
-    (license license:gpl2+)))
-
 (define-public r-animalhabitatnetwork
   (package
     (name "r-animalhabitatnetwork")
@@ -10273,26 +10251,6 @@ It combines the tabular and graphical visualization for easier usability.  This
 package also creates an R Notebook with detailed data exploration with one
 function call.  The notebook can be made interactive.")
     (license license:expat)))
-
-(define-public r-analogueextra
-  (package
-    (name "r-analogueextra")
-    (version "0.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "analogueExtra" version))
-              (sha256
-               (base32
-                "1s3qs10hf6hkna0bicid1mc8x8r449bl93xpgyw6lnsjgh2yx62c"))))
-    (properties `((upstream-name . "analogueExtra")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan3d r-rgl r-analogue))
-    (home-page "https://github.com/gavinsimpson/analogueExtra")
-    (synopsis "Additional Functions for Use with the Analogue Package")
-    (description
-     "This package provides additional functionality for the analogue package that is
-not required by all users of the main package.")
-    (license license:gpl2)))
 
 (define-public r-analogue
   (package
@@ -13515,28 +13473,6 @@ the center of the pie plot.  Imagine it's like a dartboard and the center means
 coverage.  The standard distribution of completeness allocated in the pie plot
 is 50%, 80% and 100% completeness.")
     (license license:gpl2)))
-
-(define-public r-aig
-  (package
-    (name "r-aig")
-    (version "0.1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AIG" version))
-              (sha256
-               (base32
-                "1jnnfmcwxcv4fsdcz7jb2lgczxdwrq3qxg2bhsh1610iwz4gzii7"))))
-    (properties `((upstream-name . "AIG")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mgcv r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=AIG")
-    (synopsis "Automatic Item Generator")
-    (description
-     "This package provides a collection of Automatic Item Generators used mainly for
-psychological research.  This package can generate linear syllogistic reasoning,
-arithmetic and 2D/3D/Double 3D spatial reasoning items.  It is recommended for
-research purpose only.")
-    (license license:gpl3)))
 
 (define-public r-aif360
   (package

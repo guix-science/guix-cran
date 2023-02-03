@@ -12869,13 +12869,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diemr" version))
               (sha256
                (base32
-                "0db42dvacj6xs525cfzyng01qw815hfsw4zqfk1snfszjc54v5s7"))))
+                "0f0zqaqcwgg38p29zl7by91df4pda6wk5qfp024as2l1arxjil1r"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
@@ -18507,13 +18507,13 @@ and sector levels (No.  w19677).  National Bureau of Economic Research.")
 (define-public r-decomposer
   (package
     (name "r-decomposer")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DecomposeR" version))
               (sha256
                (base32
-                "011j577gslh8nfykpxph4bprvv48nw9asy2j40dw016ai07h8n0s"))))
+                "0f5bagmn0s15qhw0c7fiv96r2ih365fak1rz3pxfnaqmm20l2j8i"))))
     (properties `((upstream-name . "DecomposeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -18532,12 +18532,10 @@ common divisor of depth or time, different algorithms to compute instantaneous
 amplitude, frequency and ratios of frequencies, and functions to verify and
 visualise the outputs.  The functions were developed during the CRASH project
 (Checking the Reproducibility of Astrochronology in the Hauterivian).  When
-using for publication please cite Wouters, S., Da Silva, A.C. Crucifix, M.,
-Sinnesael, M., Zivanovic, M., Boulvain, F., Devleeschouwer, X., 2019, \"Litholog
-generation with the StratigrapheR package and signal decomposition for
-cyclostratigraphic purposes\".  Geophysical Research Abstracts Vol.  21,
-EGU2019-5520, 2019, EGU General Assembly 2019.
-<http://hdl.handle.net/2268/234402>.")
+using for publication please cite Wouters, S., Crucifix, M., Sinnesael, M., Da
+Silva, A.C., Zeeden, C., Zivanovic, M., Boulvain, F., Devleeschouwer, X., 2022,
+\"A decomposition approach to cyclostratigraphic signal processing\".
+Earth-Science Reviews 225 (103894). <doi:10.1016/j.earscirev.2021.103894>.")
     (license license:gpl3)))
 
 (define-public r-decomposedpsf

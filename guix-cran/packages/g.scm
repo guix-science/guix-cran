@@ -5285,13 +5285,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.7.3")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gratia" version))
               (sha256
                (base32
-                "1m1jc4qjcxkr6w75hirqwkn2sdrly7ydc3kcd33m4jhjzp7nysb2"))))
+                "0k4mkkkj3kbmfj8z1nsw80xh9jmrc59sxc1n7sp3ca2cfyfszgc1"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -5301,13 +5301,15 @@ lines.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-pillar
                              r-patchwork
                              r-nlme
                              r-mvnfast
                              r-mgcv
                              r-lifecycle
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://gavinsimpson.github.io/gratia/")
     (synopsis
@@ -17857,6 +17859,38 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
 2004.10818v2> Dobler and Pauly (2019) <doi:10.1177/0962280219831316>.")
     (license license:gpl3+)))
 
+(define-public r-gfdmcv
+  (package
+    (name "r-gfdmcv")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GFDmcv" version))
+              (sha256
+               (base32
+                "094b41sx3czz9sjqhvxggkmrdcwfwv8ww9k4286vzd055jbvk5hh"))))
+    (properties `((upstream-name . "GFDmcv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrix
+                             r-mass
+                             r-hsaur
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=GFDmcv")
+    (synopsis
+     "General Hypothesis Testing Problems for Multivariate Coefficients of Variation")
+    (description
+     "This package performs test procedures for general hypothesis testing problems
+for four multivariate coefficients of variation (Ditzhaus and Smaga, 2023
+<arXiv:2301.12009>).  We can verify the global hypothesis about equality as well
+as the particular hypotheses defined by contrasts, e.g., we can conduct post hoc
+tests.  We also provide the simultaneous confidence intervals for contrasts.")
+    (license (list license:lgpl2.0 license:lgpl3 license:gpl2 license:gpl3))))
+
 (define-public r-gfd
   (package
     (name "r-gfd")
@@ -24972,13 +25006,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gausscov" version))
               (sha256
                (base32
-                "1pw5hp5cr0mbs2v86f9557p7yhn9kpx9zgr3kg4f1nhknv2q0wz5"))))
+                "16nyq7379cnpr6hkzkmrgw2r3rl0fy6sfpc5gszf4l115f7ig4cc"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

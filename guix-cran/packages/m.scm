@@ -5085,30 +5085,6 @@ vectors across columns and rows and thus provides scalable solution for dealing
 with missing values.  Tomic et al. (2019) <doi:10.1101/545186>.")
     (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
-(define-public r-mully
-  (package
-    (name "r-mully")
-    (version "2.1.34")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mully" version))
-              (sha256
-               (base32
-                "1f9yc64hq5c2v473cayg9s66g4k5gf6znj5i3qhcp1l9266y88kp"))))
-    (properties `((upstream-name . "mully")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shape r-rgl r-randomcolor r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/frankkramer-lab/mully")
-    (synopsis "Create, Modify and Visualize Multi-Layered Networks")
-    (description
-     "Allows the user to create graph with multiple layers.  The user can also modify
-the layers, the nodes, and the edges.  The graph can also be visualized.  Zaynab
-Hammoud and Frank Kramer (2018) <doi:10.3390/genes9110519>.  More about
-multilayered graphs and their usage can be found in our review paper: Zaynab
-Hammoud and Frank Kramer (2020) <doi:10.1186/s41044-020-00046-0>.")
-    (license license:gpl2+)))
-
 (define-public r-mullerplot
   (package
     (name "r-mullerplot")
@@ -25408,6 +25384,32 @@ package.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-metchem
+  (package
+    (name "r-metchem")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MetChem" version))
+              (sha256
+               (base32
+                "1r4fchs6yxhl3zdbx64d6q8divhispcqn3pz8grf8l2zkrv60hza"))))
+    (properties `((upstream-name . "MetChem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-rcdk r-kodama r-httr r-fingerprint))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MetChem")
+    (synopsis "Chemical Structural Similarity Analysis")
+    (description
+     "This package provides a new pipeline to explore chemical structural similarity
+across metabolite.  It allows to classify metabolites in structurally-related
+modules and identify common shared functional groups.  KODAMA algorithm is used
+to highlight structural similarity between metabolites.  See Cacciatore S,
+Tenori L, Luchinat C, Bennett PR, MacIntyre DA. (2017) Bioinformatics
+<doi:10.1093/bioinformatics/btw705> and Cacciatore S, Luchinat C, Tenori L.
+(2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
+    (license license:gpl2+)))
+
 (define-public r-metbrewer
   (package
     (name "r-metbrewer")
@@ -37226,13 +37228,13 @@ in R; and Mapbox Tiling Service and tippecanoe for generating map tiles.  See
 (define-public r-mapbayr
   (package
     (name "r-mapbayr")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapbayr" version))
               (sha256
                (base32
-                "0bnw4v3qf94biag3fnkf8a1imjwadasl5wqs5pgf26ydl6svj0p1"))))
+                "0n32nxhhpmqgg9xbzlf289r56mwxqj87jvf0lbmc2qx8m5dv9mmq"))))
     (properties `((upstream-name . "mapbayr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
