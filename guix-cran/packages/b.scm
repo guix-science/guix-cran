@@ -6921,6 +6921,32 @@ averaging.  Development snapshots with the latest bugfixes are available from
 using auxiliary data.")
     (license license:gpl3)))
 
+(define-public r-bndesr
+  (package
+    (name "r-bndesr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bndesr" version))
+              (sha256
+               (base32
+                "047w2dl0x24g5g8ay64dzzqg5zpm09mws5nhcjqqryx58dp4pmj2"))))
+    (properties `((upstream-name . "bndesr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-readxl
+                             r-readr
+                             r-lubridate
+                             r-janitor
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=bndesr")
+    (synopsis "Access Data from the Brazilian Development Bank (BNDES)")
+    (description
+     "Allows access to data on BNDES disbursements and contracts since 1995.  The
+package makes it easy to import data from the bank into
+R.<https://www.bndes.gov.br/SiteBNDES/bndes/bndes_en>.")
+    (license license:expat)))
+
 (define-public r-bnclustomics
   (package
     (name "r-bnclustomics")
@@ -19103,17 +19129,17 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-3")
+    (version "3.0-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesXsrc" version))
               (sha256
                (base32
-                "1c598sir81xpb35famip6lcfr4cnvm903f1vhajjz04yd13fbwh9"))))
+                "0km6w8wzyvwisjzyqyigkl7mz1ixmsch4c98bzzc0a2z34bi4jmg"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (home-page "https://www.uni-goettingen.de/de/bayesx/550513.html")
-    (synopsis "R Package Distribution of the BayesX C++ Sources")
+    (synopsis "Distribution of the 'BayesX' C++ Sources")
     (description
      "BayesX performs Bayesian inference in structured additive regression (STAR)
 models.  The R package BayesXsrc provides the BayesX command line tool for easy
@@ -19320,13 +19346,13 @@ such as rng, quantile, and distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.2-2")
+    (version "7.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesTFR" version))
               (sha256
                (base32
-                "1z816jdva0z103bibx1c8f5yn5zbfxr4cfwh1wn29p6f1j6madcc"))))
+                "17q85dwpyf8ipw3pbwnknczf2n4cq2yzynjc34nvka3x6a9f2kfv"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -20535,13 +20561,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMallows" version))
               (sha256
                (base32
-                "100mfsar76yk8cqp55r6lwd973l8s7yg249vfssx327a31rh665m"))))
+                "0yhlsdrzbbm5a6h1brgdwcvjdafgyps4vl2jfmg6rq7fgcb9dl31"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

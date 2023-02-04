@@ -6376,6 +6376,44 @@ used for predicting speakers of new texts.  Methods developed in Huang et al
 (2020) <doi:10.1017/pan.2019.49>.")
     (license license:gpl3)))
 
+(define-public r-stxplore
+  (package
+    (name "r-stxplore")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stxplore" version))
+              (sha256
+               (base32
+                "1bnpp53s7r8ghvbxvnlk103h66a55xf7y9fcdhvmfgf31d2x5dsd"))))
+    (properties `((upstream-name . "stxplore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stars
+                             r-spacetime
+                             r-sp
+                             r-rlang
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-lubridate
+                             r-gstat
+                             r-gridextra
+                             r-ggridges
+                             r-ggplot2
+                             r-ggmap
+                             r-fields))
+    (native-inputs (list r-knitr))
+    (home-page "https://sevvandi.github.io/stxplore/")
+    (synopsis "Exploration of Spatio-Temporal Data")
+    (description
+     "This package provides a set of statistical tools for spatio-temporal data
+exploration.  Includes simple plotting functions, covariance calculations and
+computations similar to principal component analysis for spatio-temporal data.
+Can use both dataframes and stars objects for all plots and computations.  For
+more details refer Spatio-Temporal Statistics with R (Christopher K. Wikle,
+Andrew Zammit-Mangion, Noel Cressie, 2019, ISBN:9781138711136).")
+    (license license:gpl3+)))
+
 (define-public r-stv
   (package
     (name "r-stv")
@@ -12297,13 +12335,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-5")
+    (version "0.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stan4bart" version))
               (sha256
                (base32
-                "1ph8881qlmsl1wa6a2wix4ij96bmw60bdznx70mgzhvdyzny62fj"))))
+                "115mg6mffh0qyxjbd2y2q1j5b002rs23cslvwpgld4mi9ga3ld5s"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -28103,6 +28141,39 @@ al. (2018) <arXiv:1806.00849>.")
 University.")
     (license license:gpl3)))
 
+(define-public r-smallsets
+  (package
+    (name "r-smallsets")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "smallsets" version))
+              (sha256
+               (base32
+                "19v4ikfa1fbj9qvhp63vbw13qsgfx879x8j451sfcgl7km1d7xc9"))))
+    (properties `((upstream-name . "smallsets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate
+                             r-plotrix
+                             r-patchwork
+                             r-ggtext
+                             r-ggplot2
+                             r-flextable
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lydialucchesi/smallsets")
+    (synopsis "The Smallset Timeline Builder")
+    (description
+     "Data practitioners regularly use the R and Python programming languages to
+prepare data for analyses.  Thus, they encode data preprocessing decisions in R
+and Python scripts.  The smallsets package subsequently decodes these decisions
+into a Smallset Timeline, a visualisation proposed in Lucchesi et al. (2022)
+<doi:10.1145/3531146.3533175>.  A Smallset Timeline is a series of small data
+snapshots of different preprocessing steps.  The smallsets package builds this
+figure from a user's dataset and R'/'Python preprocessing script, which contains
+structured comments with snapshot instructions.")
+    (license license:gpl3+)))
+
 (define-public r-smallcountrounding
   (package
     (name "r-smallcountrounding")
@@ -35420,16 +35491,16 @@ materials.")
 (define-public r-sieveph
   (package
     (name "r-sieveph")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sievePH" version))
               (sha256
                (base32
-                "09wrjhbrc9ar4b81ij4lknw1dcvdbqyh3mq9cscbbw58p5j03ish"))))
+                "0lrpk2dx0n8cdgwrshnw41xsg2gd6qbgn1bddvzifnibh082gb27"))))
     (properties `((upstream-name . "sievePH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-scales r-ggpubr r-ggplot2))
     (home-page "https://github.com/mjuraska/sievePH")
     (synopsis "Sieve Analysis Methods for Proportional Hazards Models")
     (description
@@ -39228,13 +39299,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "0az64j8ajiq5lnh7m9wb575aaf5ybzis27ydpz5hvapgxhk4lwab"))))
+                "0r3mii72znzmjvw41p83iq9bmxaw02kwybnc3pbg4bp5i75hz1ql"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -39248,14 +39319,15 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
     (synopsis "SHAP Visualizations")
     (description
      "Visualizations for SHAP (SHapley Additive exPlanations), such as waterfall
-plots, force plots, various types of importance plots, and dependence plots.
-These plots act on a shapviz object created from a matrix of SHAP values and a
-corresponding feature dataset.  Wrappers for the R packages xgboost', lightgbm',
-fastshap', shapr', h2o', treeshap', and kernelshap are added for convenience.
-By separating visualization and computation, it is possible to display factor
-variables in graphs, even if the SHAP values are calculated by a model that
-requires numerical features.  The plots are inspired by those provided by the
-shap package in Python, but there is no dependency on it.")
+plots, force plots, various types of importance plots, dependence plots, and
+interaction plots.  These plots act on a shapviz object created from a matrix of
+SHAP values and a corresponding feature dataset.  Wrappers for the R packages
+xgboost', lightgbm', fastshap', shapr', h2o', treeshap', and kernelshap are
+added for convenience.  By separating visualization and computation, it is
+possible to display factor variables in graphs, even if the SHAP values are
+calculated by a model that requires numerical features.  The plots are inspired
+by those provided by the shap package in Python, but there is no dependency on
+it.")
     (license license:gpl2+)))
 
 (define-public r-shapr
@@ -51347,13 +51419,13 @@ Institute.")
 (define-public r-sasmarkdown
   (package
     (name "r-sasmarkdown")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SASmarkdown" version))
               (sha256
                (base32
-                "16bfad9rp0yi9pph2m3f7bkkaiv2q41gkw5ji15x3ngqibv0khyi"))))
+                "0wmlvhwx8b219j3x9hjv50v85mgkxddhjjfbncqc6qcx74ajr77r"))))
     (properties `((upstream-name . "SASmarkdown")))
     (build-system r-build-system)
     (inputs (list))

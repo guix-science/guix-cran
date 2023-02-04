@@ -21677,13 +21677,13 @@ principal components.  The method is described in Nassiri et al. (2018)
 (define-public r-miesmuschel
   (package
     (name "r-miesmuschel")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "miesmuschel" version))
               (sha256
                (base32
-                "1zk4yj62g47lkc0a6xixjkhspbngln6fnddm891y61pcki5zlqcd"))))
+                "0gqdq1qsai0rql8l1s7qqdijxhjc48bkkx16c1k36c3skf2lam52"))))
     (properties `((upstream-name . "miesmuschel")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

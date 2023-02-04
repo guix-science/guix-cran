@@ -12262,13 +12262,13 @@ RogueNaRok (Aberer et al.  2013) <doi:10.1093/sysbio/sys078>.")
 (define-public r-roger
   (package
     (name "r-roger")
-    (version "1.3-1")
+    (version "1.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "roger" version))
               (sha256
                (base32
-                "0zx2jm6x9ks6ynacwm552aiwz5sqh9nj95k96d11r417w7vd82ya"))))
+                "15gglqh50m69547jah7lrrlrwv6cdclkxsqlw4999mjdapwqq9f0"))))
     (properties `((upstream-name . "roger")))
     (build-system r-build-system)
     (inputs (list))
@@ -19962,13 +19962,13 @@ S-estimator of multivariate location and scatter matrix.")
 (define-public r-ritools
   (package
     (name "r-ritools")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RItools" version))
               (sha256
                (base32
-                "07i08cjscdylxbxl53qvr38pagssiqx3zcd0gyj28w0n6k3rq10x"))))
+                "021wp1p2hpfmvdx2zhynp62a8mcr01vimznb5l9c6fmq3ply0swd"))))
     (properties `((upstream-name . "RItools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -31980,13 +31980,13 @@ projects for changes.")
 (define-public r-readxlsb
   (package
     (name "r-readxlsb")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readxlsb" version))
               (sha256
                (base32
-                "1qnfijspx8zwsmr1i6qb7vgaxazmvshq5mcxn79y0r2spszq419i"))))
+                "1y887lfdcak1xpgzh2l5hrmhnh43wrj18p7jqx96gmgx059c1y33"))))
     (properties `((upstream-name . "readxlsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rcpp r-cellranger))

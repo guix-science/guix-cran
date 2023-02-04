@@ -23550,13 +23550,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GE" version))
               (sha256
                (base32
-                "165khm0x183v6f4bd9swfmldi9kh28fjygipvkh95dcd3x39vi2w"))))
+                "166zl97j4zlrq1s7h69v25gjv7s13mgix7s75hhjwzvi8kaby2gk"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -23569,11 +23569,11 @@ are built by the methods of new structural economics (see
 <https://www.nse.pku.edu.cn/> and LI Wu, 2019, ISBN: 9787521804225, General
 Equilibrium and Structural Dynamics: Perspectives of New Structural Economics.
 Beijing: Economic Science Press).  The model form and mathematical methods can
-be traced back to von Neumann, J. (1945, A Model of General Economic
-Equilibrium.  The Review of Economic Studies, 13.  pp.  1-9) and Kemeny, J. G.,
-O. Morgenstern and G. L. Thompson (1956, A Generalization of the von Neumann
-Model of an Expanding Economy, Econometrica, 24, pp.  115-135) et al.  By the
-way, J. G. Kemeny is a co-inventor of the computer language BASIC.")
+be traced back to J. von Neumann (1945, A Model of General Economic Equilibrium.
+ The Review of Economic Studies, 13.  pp.  1-9), J. G. Kemeny, O. Morgenstern
+and G. L. Thompson (1956, A Generalization of the von Neumann Model of an
+Expanding Economy, Econometrica, 24, pp.  115-135) et al.  By the way, J. G.
+Kemeny is a co-inventor of the computer language BASIC.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gdxdt
@@ -24060,6 +24060,32 @@ with respect to several assumptions.  Therefore the package can be used to
 determine the credit risk of a given portfolio as well as to quantify model
 sensitivities.")
     (license license:gpl2)))
+
+(define-public r-gcplyr
+  (package
+    (name "r-gcplyr")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gcplyr" version))
+              (sha256
+               (base32
+                "0px84fbczxqm3f8ggsijm3l5m2n1ajz4qrmfph87rvwg8r0xvn7k"))))
+    (properties `((upstream-name . "gcplyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://mikeblazanin.github.io/gcplyr/")
+    (synopsis "Manipulate and Analyze Growth Curve Data")
+    (description
+     "Easy import, manipulation, and model-free analysis of bacterial growth curve
+data, as commonly output by plate readers.  Tools for reshaping common plate
+reader outputs into tidy formats and merging them with design information,
+making data easy to work with using gcplyr and other packages.  Also streamlines
+common growth curve processing steps, like smoothing and calculating
+derivatives, and facilitates model-free characterization and analysis of growth
+data.  See methods at <https://mikeblazanin.github.io/gcplyr/>.")
+    (license license:expat)))
 
 (define-public r-gcpbayes
   (package

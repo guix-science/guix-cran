@@ -2453,13 +2453,13 @@ It allows an interactive visualization of networks.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VisitorCounts" version))
               (sha256
                (base32
-                "155ibah6qg5xdyp8vnpwgv0clqhr6ys3310dd9sipawz0730kcgw"))))
+                "0qm5qccikwdkdc9pm0gck5id3rjicb07jbds4fbvn3db071bzrdy"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rssa))
@@ -4469,13 +4469,13 @@ JavaScript or Shiny'.")
 (define-public r-vegan3d
   (package
     (name "r-vegan3d")
-    (version "1.1-2")
+    (version "1.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vegan3d" version))
               (sha256
                (base32
-                "01yyhrapdvs6rr5hw1ij4jnpz7mq005s35pn96snpy8ngn6ir386"))))
+                "15yb521l487krvhh0bnbawxxd03sqwha4njh9i0na4zx3hrlpqgi"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-cluster))

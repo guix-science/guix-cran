@@ -464,13 +464,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.20")
+    (version "0.9.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Luminescence" version))
               (sha256
                (base32
-                "16rk91vip6ww8zwsxk12a41y1f98a39jx991ainwh2bs670bkl6b"))))
+                "02j3hgm4z4spl5d6251sm4vygb9dr54hxdwbfcx5kq7hwgikdnl3"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3825,13 +3825,13 @@ selection.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logrx" version))
               (sha256
                (base32
-                "1h6l6pdwhdvh1fylki88lqz8r2x1z45afcxxz3qrf2cjh5rrym7r"))))
+                "0v49pxgkd56x7c00dxmd6frl5p5anssbclvypgs5j0zayn6z2ia2"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -14294,13 +14294,13 @@ binary and continuous outcomes.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.1.4")
+    (version "5.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lares" version))
               (sha256
                (base32
-                "136zpcg1wj8h46sg7pdqslvwxg1vip0rnw9k6a7s0b6lbq4wwh3v"))))
+                "1yj7clfksfrfnfgav1swxygy6ci6pn8bn85g48i145ink7a2nrgd"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

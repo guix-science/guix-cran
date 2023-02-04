@@ -14140,23 +14140,25 @@ America.")
 (define-public r-tidydice
   (package
     (name "r-tidydice")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidydice" version))
               (sha256
                (base32
-                "1iagm3avd0ncnd2jrx1mgri96gcv3bs7vbn2qdq44idv222k9igd"))))
+                "19qpjd4v4drn8fiqvv4ajs0q9v4lhdnqgpn27arl4dmqi6dnq1h3"))))
     (properties `((upstream-name . "tidydice")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
                              r-purrr
                              r-magrittr
                              r-ggplot2
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rolkra/tidydice/")
+    (home-page "https://github.com/rolkra/tidydice")
     (synopsis "Simulates Dice Rolls and Coin Flips")
     (description
      "Utils for basic statistical experiments, that can be used for teaching
@@ -14530,13 +14532,13 @@ feature geometry for mapping and spatial analysis.")
 (define-public r-tidycdisc
   (package
     (name "r-tidycdisc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyCDISC" version))
               (sha256
                (base32
-                "0x84vljzzahhc4a8r7cnahvh2vgbx1a68sr1vm48gckis271isj7"))))
+                "19986kszskkn338wim5p641rzi58rx2vzyyd96r2yr0h4jksz6v2"))))
     (properties `((upstream-name . "tidyCDISC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tippy

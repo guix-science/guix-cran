@@ -9796,6 +9796,37 @@ Computational and Graphical Statistics paper,
 <doi:10.1080/10618600.2018.1513367> describes the concepts implemented.")
     (license license:gpl3)))
 
+(define-public r-animate
+  (package
+    (name "r-animate")
+    (version "0.3.9.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "animate" version))
+              (sha256
+               (base32
+                "1pzgxz3xdp7c1swd5sxzlpyvvqv3shw8dxnbjwv1cr5g406p8970"))))
+    (properties `((upstream-name . "animate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-r-utils
+                             r-jsonlite
+                             r-httpuv
+                             r-glue
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://kcf-jackson.github.io/animate/")
+    (synopsis "Web-Based Graphics Device for Animated Visualisations")
+    (description
+     "This package implements a web-based graphics device for animated visualisations.
+ Modelled on the base syntax, it extends the base graphics functions to support
+frame-by-frame animation and keyframes animation.  The target use cases are
+real-time animated visualisations, including agent-based models, dynamical
+systems, and animated diagrams.  The generated visualisations can be deployed as
+GIF images / MP4 videos, as Shiny apps (with interactivity) or as HTML documents
+through embedding into R Markdown documents.")
+    (license license:expat)))
+
 (define-public r-animaltracker
   (package
     (name "r-animaltracker")

@@ -3376,13 +3376,13 @@ Hall/CRC, Boca Raton, FL, pp.  25-42.")
 (define-public r-csmes
   (package
     (name "r-csmes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSMES" version))
               (sha256
                (base32
-                "1ddr2b39d7nwan6dqf5xx9h6gzfxxk50r1d9vbpb9hc8a7d15vnp"))))
+                "1p8wsl9h1f44a7kkj660h1k1v26pp6q1h13rw9l6pikniwdks84c"))))
     (properties `((upstream-name . "CSMES")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23254,6 +23254,33 @@ statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
 <doi:10.1016/j.wace.2018.01.002>.")
     (license license:bsd-3)))
 
+(define-public r-climetrics
+  (package
+    (name "r-climetrics")
+    (version "1.0-11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "climetrics" version))
+              (sha256
+               (base32
+                "1a6ypx15h806aq1h3py40lrzrwcsg61jvgbdrfqyl347yw3sl327"))))
+    (properties `((upstream-name . "climetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-yaimpute
+                             r-xts
+                             r-terra
+                             r-sp
+                             r-rts
+                             r-raster))
+    (home-page "https://r-gis.net/")
+    (synopsis "Climate Change Metrics")
+    (description
+     "This package provides a framework that facilitates spatio-temporal analysis of
+climate dynamics through exploring and measuring different dimensions of climate
+change in space and time.")
+    (license license:gpl3+)))
+
 (define-public r-clime
   (package
     (name "r-clime")
@@ -24281,13 +24308,13 @@ negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
 (define-public r-clarify
   (package
     (name "r-clarify")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clarify" version))
               (sha256
                (base32
-                "0fj4bikq4fzif1dghw5dvjsjaab51vmak8bj0g4nn4danj1mpl4r"))))
+                "1hbizx7517x4kpw1h8c1qcdgmcz9h0n6ai42w9akwg7q831b35z6"))))
     (properties `((upstream-name . "clarify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -26332,13 +26359,13 @@ chronological charts.")
 (define-public r-chronicler
   (package
     (name "r-chronicler")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chronicler" version))
               (sha256
                (base32
-                "0nnv8mflvd8hw8dkgqcx9kb3dwzrzfr7hrk2l5kjdzs8xj3v6g63"))))
+                "1ds9gi0wgdsi4rw3zpn14pnisallj6vvzlzhsl4hzlvj3k96v5df"))))
     (properties `((upstream-name . "chronicler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -34655,6 +34682,36 @@ Congdon (2022) <doi:10.48550/arXiv.2208.06738>, Petrof, Neyens, Nuyts,
 Nackaerts, Nemery and Faes (2020) <doi:10.1002/sim.8697> and Gramatica, Congdon
 and Liverani <doi:10.1111/rssc.12480>.")
     (license license:gpl3+)))
+
+(define-public r-carm
+  (package
+    (name "r-carm")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CARM" version))
+              (sha256
+               (base32
+                "19g2czy6jhws7a1z8vpvim0cqkxakpv5k3q4kr0q0hsmsv4am17a"))))
+    (properties `((upstream-name . "CARM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-dplyr r-arrangements))
+    (home-page "https://cran.r-project.org/package=CARM")
+    (synopsis
+     "Covariate-Adjusted Adaptive Randomization via Mahalanobis-Distance")
+    (description
+     "In randomized controlled trial (RCT), balancing covariate is often one of the
+most important concern.  CARM package provides functions to balance the
+covariates and generate allocation sequence by covariate-adjusted Adaptive
+Randomization via Mahalanobis-distance (ARM) for RCT. About what ARM is and how
+it works please see Y. Qin, Y. Li, W. Ma, H. Yang, and F. Hu (2022). \"Adaptive
+randomization via Mahalanobis distance\" Statistica Sinica.
+<doi:10.5705/ss.202020.0440>.  In addition, the package is also suitable for the
+randomization process of multi-arm trials.  For details, please see Yang H, Qin
+Y, Wang F, et al. (2023). \"Balancing covariates in multi-arm trials via adaptive
+randomization\" Computational Statistics & Data
+Analysis.<doi:10.1016/j.csda.2022.107642>.")
+    (license license:gpl2+)))
 
 (define-public r-carlson
   (package

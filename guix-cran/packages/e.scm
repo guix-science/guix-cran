@@ -5792,6 +5792,33 @@ smoothing methods of the package are described in Letmathe, S., Beran, J. and
 Feng, Y., (2021) <https://ideas.repec.org/p/pdn/ciepap/145.html>.")
     (license license:gpl3)))
 
+(define-public r-eselect
+  (package
+    (name "r-eselect")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eselect" version))
+              (sha256
+               (base32
+                "04918ping7rxb0n5fkllkcv332gwhqq2f1fqi5nrbx65k7lrjmfy"))))
+    (properties `((upstream-name . "eselect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-comparedesign))
+    (home-page "https://cran.r-project.org/package=eselect")
+    (synopsis
+     "Adaptive Clinical Trial Designs with Endpoint Selection and Sample Size Reassessment")
+    (description
+     "Endpoint selection and sample size reassessment for multiple binary endpoints
+based on blinded and/or unblinded data.  Trial design that allows an adaptive
+modification of the primary endpoint based on blinded information obtained at an
+interim analysis.  The decision rule chooses the endpoint with the lower
+estimated required sample size.  Additionally, the sample size is reassessed
+using the estimated event probabilities and correlation between endpoints.  The
+implemented design is proposed in Bofill Roig, M., GÃ³mez Melis, G., Posch, M.,
+and Koenig, F. (2022). <doi:10.48550/arXiv.2206.09639>.")
+    (license license:expat)))
+
 (define-public r-eseis
   (package
     (name "r-eseis")
@@ -7123,13 +7150,13 @@ polynomials).")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.13.0")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eq5d" version))
               (sha256
                (base32
-                "1l4867x00iz6wq1w7glcpbmsyxy881wpng3hjf3pmr5yb8lhqmxm"))))
+                "0axyrpf4fakdzg1hkcx6xsq5vm8xgmn52p5l9c17vchj31bqdd2a"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7151,11 +7178,11 @@ economic evaluation of health care as well as in population health surveys.  The
 eq5d package provides methods to calculate index scores from a subject's
 dimension scores.  29 TTO and 11 VAS EQ-5D-3L value sets including those for
 countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and Szende et al
-(2014) <doi:10.1007/978-94-007-7596-1>, 36 EQ-5D-5L EQ-VT value sets, the
+(2014) <doi:10.1007/978-94-007-7596-1>, 38 EQ-5D-5L EQ-VT value sets, the
 EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value set for Russia and reverse
-crosswalk value sets.  Seven EQ-5D-Y value sets are also included as are the
-NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.
+crosswalk value sets.  Nine EQ-5D-Y value sets are also included as are the NICE
+DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.
 Methods are also included for the analysis of EQ-5D profiles along with a shiny
 web tool to enable the calculation, visualisation and automated statistical
 analysis of EQ-5D data via a web browser using EQ-5D dimension scores stored in
@@ -17387,6 +17414,32 @@ to the limit set by errors in floating point arithmetic).  A data-set comprising
 the masses and isotopic abundances of individual elements is also provided and
 calculation of isotopic gross structures is also supported.")
     (license license:gpl2+)))
+
+(define-public r-ecic
+  (package
+    (name "r-ecic")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecic" version))
+              (sha256
+               (base32
+                "1yh6vr8142nd4b5nmqi92mrhjag2xkn588gnn124vhfhvirq9dk6"))))
+    (properties `((upstream-name . "ecic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-patchwork r-ggplot2 r-future r-furrr))
+    (home-page "https://frederickluser.github.io/ecic/")
+    (synopsis "Extended Changes-in-Changes")
+    (description
+     "Extends the Changes-in-Changes model a la Athey and Imbens (2006)
+<doi:10.1111/j.1468-0262.2006.00668.x> to multiple cohorts and time periods,
+which generalizes difference-in-differences estimation techniques to the entire
+distribution.  Computes quantile treatment effects for every possible two-by-two
+combination in ecic().  Then, aggregating all bootstrap runs adds the standard
+errors in summary_ecic().  Results can be plotted with plot_ecic() aggregated
+over all cohort-group combinations or in an event-study style for either
+individual periods or individual quantiles.")
+    (license license:expat)))
 
 (define-public r-echor
   (package

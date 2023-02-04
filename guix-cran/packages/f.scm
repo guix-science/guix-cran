@@ -6064,6 +6064,23 @@ notation in scientific or engineering form and delimited for rendering as inline
 equations.")
     (license license:expat)))
 
+(define-public r-formatbibtex
+  (package
+    (name "r-formatbibtex")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "formatBibtex" version))
+              (sha256
+               (base32
+                "0abqvjmpnlrxzlmqcixbds10q7ssg7x2wdx1qqpy1ix2snd23s7w"))))
+    (properties `((upstream-name . "formatBibtex")))
+    (build-system r-build-system)
+    (home-page "https://github.com/wenjie2wang/formatBibtex")
+    (synopsis "Format BibTeX Entries and Files")
+    (description "Format BibTeX entries and files in an opinionated way.")
+    (license license:gpl3+)))
+
 (define-public r-forit
   (package
     (name "r-forit")
@@ -15489,13 +15506,13 @@ manuscript is currently under review.")
 (define-public r-fbati
   (package
     (name "r-fbati")
-    (version "1.0-5")
+    (version "1.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fbati" version))
               (sha256
                (base32
-                "037rzw2mnhb7m83hrx8pzwy2n4fyhbjzg2nhmlgxyr1qra638p3v"))))
+                "1w1yvv93yzvkqhq9w1c05bwqy3kr08b4bxzzvy0x03zdild10bly"))))
     (properties `((upstream-name . "fbati")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-pbatr r-fgui))

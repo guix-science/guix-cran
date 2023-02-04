@@ -971,27 +971,27 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.0.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "14l0djjbgmagi2ra5h6wr3ymzv5xpnkf2r8ryxl8k544s9p65412"))))
+                "1qw44qkrl2dc55cj91wfx66v5pkh2p11amg6irfz1mvhcak6syy9"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-rstan
                              r-rlang
                              r-posterior
+                             r-patchwork
                              r-mass
                              r-loo
                              r-glue
                              r-ggplot2
                              r-data-table
                              r-cli
-                             r-checkmate
-                             r-bayesplot))
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/dynamite/")
     (synopsis
@@ -3233,16 +3233,21 @@ the API that is to be implemented by DataSHIELD compliant data repositories.")
 (define-public r-dsfa
   (package
     (name "r-dsfa")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsfa" version))
               (sha256
                (base32
-                "0ai7hdr1jbp842ixjcvadksi4pcjplyglp27dlmfkjp0p0jsfbww"))))
+                "0jx71fhn347czhbjg0aajaba8mzqf942j2d0vfyc0czmqnldcrg5"))))
     (properties `((upstream-name . "dsfa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sn r-rdpack r-mgcv r-gratia r-copula))
+    (propagated-inputs (list r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mgcv
+                             r-gratia
+                             r-copula))
     (home-page "https://cran.r-project.org/package=dsfa")
     (synopsis "Distributional Stochastic Frontier Analysis")
     (description

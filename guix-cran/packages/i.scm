@@ -8163,13 +8163,13 @@ detect changing levels of significance.")
 (define-public r-inflectssp
   (package
     (name "r-inflectssp")
-    (version "1.4.5")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InflectSSP" version))
               (sha256
                (base32
-                "02g8w4xfj0xs5fzjmx9vzhd7nn2aici8ircl8y4xr97pq3w7chg6"))))
+                "1wa1lwvp4rh0rhr52wr5a8xdfmcv0lzy1mzavv5nhz8jkwm7i35g"))))
     (properties `((upstream-name . "InflectSSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -8190,7 +8190,7 @@ detect changing levels of significance.")
     (description
      "Analyzes raw abundance data from a cellular thermal shift experiment and
 calculates melt temperatures and melt shifts for each protein in the experiment.
- McCracken (2021) <doi:10.1021/acs.jproteome.0c00872>.")
+ McCracken (2022) <doi:10.1101/2022.12.30.522131>.")
     (license license:gpl2)))
 
 (define-public r-inflection

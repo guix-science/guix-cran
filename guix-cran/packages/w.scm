@@ -3896,6 +3896,41 @@ another paper describing the MCMC approach is in preparation with Gordon Luikart
 and Thierry Gosselin.")
     (license license:cc0)))
 
+(define-public r-whitewater
+  (package
+    (name "r-whitewater")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "whitewater" version))
+              (sha256
+               (base32
+                "00w17953gn6ici406pblw136f8bwzlx469n7nl2xsx36jz7xxw59"))))
+    (properties `((upstream-name . "whitewater")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tidyr
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-plyr
+                             r-lubridate
+                             r-httr
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-dataretrieval
+                             r-crayon
+                             r-cli))
+    (home-page "https://github.com/joshualerickson/whitewater/")
+    (synopsis "Parallel Processing Options for Package 'dataRetrieval'")
+    (description
+     "This package provides methods for retrieving United States Geological Survey
+(USGS) water data using sequential and parallel processing (Bengtsson, 2022
+<doi:10.32614/RJ-2021-048>).  In addition to parallel methods, data wrangling
+and additional statistical attributes are provided.")
+    (license license:expat)))
+
 (define-public r-whitestripe
   (package
     (name "r-whitestripe")

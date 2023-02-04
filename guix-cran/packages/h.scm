@@ -4720,17 +4720,16 @@ curves and related statistics.")
 (define-public r-hmdhfdplus
   (package
     (name "r-hmdhfdplus")
-    (version "1.9.19")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HMDHFDplus" version))
               (sha256
                (base32
-                "0wvlbgi95wibl40xhib0jlnxiddwhjv9v9qljxcg1bh7b76y7al5"))))
+                "01w16hifvxkrd3pc4vc9ia2rz3vsgwq4nw3q46lh6ppfmf594zbq"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rvest
                              r-rlang

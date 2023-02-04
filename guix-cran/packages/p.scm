@@ -4980,16 +4980,19 @@ available for the algorithm.  Technical details can be found at Zuo et al.
 (define-public r-prosetta
   (package
     (name "r-prosetta")
-    (version "0.3.5")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PROsetta" version))
               (sha256
                (base32
-                "1igwhksfqv6pxf5jrhds4xvax0sif62vwj7hk3d3gdq0brgi27b9"))))
+                "1b013cwng8k17yfm4zrwjg7vc4papr2wmqq3a5kawl7bfy4ibaqw"))))
     (properties `((upstream-name . "PROsetta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych
+    (propagated-inputs (list r-testdesign
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-psych
                              r-plink
                              r-mvnfast
                              r-mirt
@@ -29021,13 +29024,13 @@ block design.")
 (define-public r-pbatr
   (package
     (name "r-pbatr")
-    (version "2.2-13")
+    (version "2.2-15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pbatR" version))
               (sha256
                (base32
-                "01ra1ggdpxdl1xqjdh86qynr5gkgzw01ww6j9bwgx4mj20i6j1ha"))))
+                "0v3yq1p1rpz4k7haz58cyrpvh3qvfh4s09kc4sjglxqisvsq1gyq"))))
     (properties `((upstream-name . "pbatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rootsolve))

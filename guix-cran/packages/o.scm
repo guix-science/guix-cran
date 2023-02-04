@@ -6045,13 +6045,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.2.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opalr" version))
               (sha256
                (base32
-                "1k4qm25gs4gkk9ixxz89dqnz6wkidly13iv9r437fdwsm6m9bzyr"))))
+                "10877prjcj15gm31gy9vya6qipyrnakz8j7nq0xja33mwxwsrn6g"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-mime r-labelled r-jsonlite r-httr))
@@ -6073,13 +6073,13 @@ the R server side.  DataSHIELD administration tools are also provided.")
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.6")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opa" version))
               (sha256
                (base32
-                "1l52cmhjp5xm91lgwsvvxych6f0fqcf35dbd70kmy9w2s836bk1p"))))
+                "067b932zwk9q2navsa5iqw3c6fr872vh8s5a2fxcjw54nanbss5g"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-cpp11))
