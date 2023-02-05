@@ -31428,13 +31428,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcmcsae" version))
               (sha256
                (base32
-                "1rcwjhw55z64nwx4kmqdyphnyd3vgc3m09fpv2rm65biikb1bqpc"))))
+                "0vmvj2igjzngg6jxii46hfbkp4mvgrnz38cj13354i6jvp8yybww"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -34551,6 +34551,31 @@ is an implementation of the algorithm proposed by Boyadzhiev et al. (2015)
 and practical tips of the package is available at
 <https://github.com/tsuda16k/materialmodifier>.")
     (license license:expat)))
+
+(define-public r-mateable
+  (package
+    (name "r-mateable")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mateable" version))
+              (sha256
+               (base32
+                "0w5l4dkrz2bgk0pdiqpbbgkf4hyd6gdldrby8bivz03g93rnpq9g"))))
+    (properties `((upstream-name . "mateable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn r-rcpp r-fnn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stuartWagenius/mateable")
+    (synopsis "Assess Mating Potential in Space and Time")
+    (description
+     "Simulate, manage, visualize, and analyze spatially and temporally explicit
+datasets of mating potential.  Implements methods to calculate synchrony,
+proximity, and compatibility.Synchrony calculations are based on methods
+described in Augspurger (1983) <doi:10.2307/2387650>, Kempenaers (1993)
+<doi:10.2307/3676415>, Ison et al. (2014) <doi:10.3732/ajb.1300065>, and
+variations on these, as described.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-matconv
   (package

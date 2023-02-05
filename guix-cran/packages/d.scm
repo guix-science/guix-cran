@@ -3015,13 +3015,13 @@ a file store and an RServe server.")
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
-    (version "0.0.96")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsmmR" version))
               (sha256
                (base32
-                "1857jxx22jvs3022qdf1nr2krds8g7b8lkd5vchvf01h1fqja2nj"))))
+                "1s2fgz110y5w0b7dgrg9s087ld0b919463rlxn8j3rlwnra6p9cd"))))
     (properties `((upstream-name . "dsmmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-discreteweibull))
@@ -3029,11 +3029,11 @@ a file store and an RServe server.")
     (synopsis "Estimation and Simulation of Drifting Semi-Markov Models")
     (description
      "This package performs parametric and non-parametric estimation and simulation of
-Drifting semi-Markov processes.  The definition of parametric and non-parametric
+drifting semi-Markov processes.  The definition of parametric and non-parametric
 model specifications is also possible.  Furthermore, three different types of
-Drifting semi-Markov models are considered.  These models differ in the number
+drifting semi-Markov models are considered.  These models differ in the number
 of transition matrices and sojourn time distributions used for the computation
-of a number of semi-Markov kernels, which in turn characterize the Drifting
+of a number of semi-Markov kernels, which in turn characterize the drifting
 semi-Markov kernel.  For the parametric model estimation and specification,
 several discrete distributions are considered for the sojourn times: Uniform,
 Poisson, Geometric, Discrete Weibull and Negative Binomial.  The non-parametric
@@ -19776,28 +19776,6 @@ overlapping protein regions. (Lebre and Gascuel, The combinatorics of
 overlapping genes, freely available from arXiv at :
 http://arxiv.org/abs/1602.04971).")
     (license license:gpl2+)))
-
-(define-public r-dcmodifydb
-  (package
-    (name "r-dcmodifydb")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dcmodifydb" version))
-              (sha256
-               (base32
-                "1ahrsh9xlp9c7gaz1zcp2bwlb2c4nxcchw89d1r45dvqspj4c8fn"))))
-    (properties `((upstream-name . "dcmodifydb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-validate r-dplyr r-dcmodify r-dbplyr r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/data-cleaning/dcmodifydb")
-    (synopsis "Modifying Rules on a DataBase")
-    (description
-     "Apply modification rules from R package dcmodify to the database, prescribing
-and documenting deterministic data cleaning steps on records in a database.  The
-rules are translated into SQL statements using R package dbplyr'.")
-    (license license:expat)))
 
 (define-public r-dcmodify
   (package

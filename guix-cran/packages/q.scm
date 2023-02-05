@@ -1406,23 +1406,25 @@ and as close as possible to p[2]% of restaurants receive the second top grade.")
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QuantileGH" version))
               (sha256
                (base32
-                "0w7dk0a2zb3va3sz75alg2llk7vv4dfziniwwayijgv3qq017jx9"))))
+                "0nb30qg7znld8sqwywb7phwnb7h2dwamilq0bjn96bw0yviywjqa"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tclust
+    (propagated-inputs (list r-vgam
+                             r-tclust
+                             r-sn
                              r-scales
                              r-rstpm2
                              r-mixtools
                              r-latex2exp
-                             r-laplacesdemon
                              r-goftest
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QuantileGH")
     (synopsis
      "Quantile Least Mahalanobis Distance Estimator for Tukey g-&-h Mixture")

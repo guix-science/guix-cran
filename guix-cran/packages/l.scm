@@ -13623,13 +13623,13 @@ model without having to write the DOT language graph specification.")
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lavaanExtra" version))
               (sha256
                (base32
-                "0ii1q19fq8dg1lqpbc1ph04jphn71bzpfs3ycp3wdnrg6sj1va02"))))
+                "1lk2bgj1gfp9cfj5wpbgif84imnwpdc55cyh9ajq1g2hr5kzb8xf"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))

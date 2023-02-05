@@ -14708,13 +14708,13 @@ sponsored endorsed or administered by Banco de EspaÃ±a'.")
 (define-public r-tidybayes
   (package
     (name "r-tidybayes")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidybayes" version))
               (sha256
                (base32
-                "00672xhg8a8r4sk36sm827bb435r1hchkphl1jpnkld8vbdhvpd2"))))
+                "1nvxps747fb20bia9ayzk2q2gplkwirb7c8fa4cl666m9pyx2jcz"))))
     (properties `((upstream-name . "tidybayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -19980,13 +19980,13 @@ the topic.")
 (define-public r-tda
   (package
     (name "r-tda")
-    (version "1.8.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TDA" version))
               (sha256
                (base32
-                "174fy3m5l1hlkhiyg2zbi4aq4anmyb1gm0nqmydbp80mbf84krj1"))))
+                "0gk058mbbywdpmjif3zl0g4a4sn3jr5bxksmqwhk3h881rsjic6h"))))
     (properties `((upstream-name . "TDA")))
     (build-system r-build-system)
     (inputs (list gmp))

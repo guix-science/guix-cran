@@ -3155,13 +3155,13 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 (define-public r-evreg
   (package
     (name "r-evreg")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evreg" version))
               (sha256
                (base32
-                "1w4dhf0sjgr81l9hsbmn7jwbii888qbmh6ciaimss15ajh54lip5"))))
+                "0gkrqrzx313rbvlzis32ip8a055pcglll9v5vv6pppacpmi65ih2"))))
     (properties `((upstream-name . "evreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-evclust))
@@ -17476,16 +17476,15 @@ from <https://echo.epa.gov/>.")
 (define-public r-echoice2
   (package
     (name "r-echoice2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echoice2" version))
               (sha256
                (base32
-                "127biyv97i99423qr7py7lz8avf9vig0bcd1clwbpcbyigsg26j4"))))
+                "1xm5vhyacld11r9yzk24swvq5fkj5x2j8q2lb0zhid7w36sf101n"))))
     (properties `((upstream-name . "echoice2")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -17498,7 +17497,7 @@ from <https://echo.epa.gov/>.")
                              r-ggplot2
                              r-forcats
                              r-dplyr))
-    (home-page "http://ninohardt.de/echoice2/")
+    (home-page "https://github.com/ninohardt/echoice2")
     (synopsis "Choice Models with Economic Foundation")
     (description
      "This package implements choice models based on economic theory, including

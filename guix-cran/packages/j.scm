@@ -2915,13 +2915,13 @@ Related Sparse Gaussian Graphical Models\" (ICML 2018) <arXiv:1806.00548>.")
 (define-public r-jds-rmd
   (package
     (name "r-jds-rmd")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jds.rmd" version))
               (sha256
                (base32
-                "0mrldh031s5xirmpxr7dpjbz3ylcs7cavs3khhc0q5hhgq2zxydy"))))
+                "0v874sxy4wyfmhby01zv53gdnzdfijmgpi83ppfy7nqkzy0b77zm"))))
     (properties `((upstream-name . "jds.rmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-bookdown))

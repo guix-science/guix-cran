@@ -6669,27 +6669,6 @@ credit risk underestimation'', by F. Coppens, M. Mayer, L. Millischer, F. Resch,
 S. Sauer, K. Schulze (ECB WP series, forthcoming).")
     (license (license:fsdg-compatible "EUPL"))))
 
-(define-public r-validatedb
-  (package
-    (name "r-validatedb")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "validatedb" version))
-              (sha256
-               (base32
-                "0lq0d0hcszd2jgip9m5j07lgbc279nxryz5drzv2qaap357ic9l1"))))
-    (properties `((upstream-name . "validatedb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-validate r-dplyr r-dbplyr))
-    (home-page "https://github.com/data-cleaning/validatedb")
-    (synopsis "Validate Data in a Database using 'validate'")
-    (description
-     "Check whether records in a database table are valid using validation rules in R
-syntax specified with R package validate'.  R validation checks are
-automatically translated to SQL using dbplyr'.")
-    (license license:gpl3)))
-
 (define-public r-validate
   (package
     (name "r-validate")

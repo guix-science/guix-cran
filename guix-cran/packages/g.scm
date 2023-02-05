@@ -25280,13 +25280,13 @@ measurements.")
 (define-public r-gaselect
   (package
     (name "r-gaselect")
-    (version "1.0.11")
+    (version "1.0.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gaselect" version))
               (sha256
                (base32
-                "18nrvad7qdrwgdi5a13kp2m26jsfdfdrwhv2azkrhfv285ziwd5q"))))
+                "0grn08w7cy8vsn8cys7j1sp3qy4h90z20f886nva22zmkn1ha9wd"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

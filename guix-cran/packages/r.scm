@@ -24209,13 +24209,13 @@ and source type maps are included for statistical analysis of moment tensors.")
 (define-public r-rfmtool
   (package
     (name "r-rfmtool")
-    (version "4.1.9")
+    (version "4.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rfmtool" version))
               (sha256
                (base32
-                "1rkzczif7v8dqmivyfc4wblymf482ddjllabzz14bswv7mfnly5k"))))
+                "150y9xbnwhmazfd7az283pkyb02sfzv6y7f6fjwixx4cqv4bjzqf"))))
     (properties `((upstream-name . "Rfmtool")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Rfmtool")
@@ -38473,42 +38473,6 @@ photography, such as those acquired with 15 mm lenses or with auxiliary fish-eye
 lenses attached to mobile devices.  Most of the functions also support
 restricted view photography.")
     (license license:gpl3)))
-
-(define-public r-rcage
-  (package
-    (name "r-rcage")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rcage" version))
-              (sha256
-               (base32
-                "1xa9hdzl3dkrhzjp3bng9pxip9c0crr6zh6iq5916h78nm5k7bir"))))
-    (properties `((upstream-name . "rcage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rlang
-                             r-rgeos
-                             r-raster
-                             r-pracma
-                             r-matrix
-                             r-mass
-                             r-laplacesdemon
-                             r-gridextra
-                             r-ggplot2
-                             r-fields
-                             r-ff
-                             r-clustgeo))
-    (home-page "https://cran.r-project.org/package=rcage")
-    (synopsis "Regionalization of Multiscale Spatial Processes")
-    (description
-     "Regionalization of multiscale spatial processes based on a criterion for spatial
-aggregation error.  The multiscale representation is a truncated Karhunen-Loaeve
-expansion using Obled-Creutin eigenfunctions.  The method is incorporated within
-a Bayesian framework using an MCMC implementation of a latent spatial model.
-Bradley, J. R., Wikle, C. K., and Holan, S. H. (2017) <doi:10.1111/rssb.12179>.")
-    (license license:gpl2)))
 
 (define-public r-rca
   (package

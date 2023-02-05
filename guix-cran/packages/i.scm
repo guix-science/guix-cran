@@ -4235,13 +4235,13 @@ from the input data.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.6.5")
+    (version "2.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPEDSuploadables" version))
               (sha256
                (base32
-                "05klj38wh4bywgahkzwyajsvy2nc1jy86klkbhh7m8hs4qw6kh8r"))))
+                "0rj1d87im7jxw9kyb82irxsanrqmn9fa29347yjn51lj8wqdgkwm"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

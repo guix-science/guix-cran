@@ -18537,13 +18537,13 @@ bootstrap confidence intervals were added.")
 (define-public r-coefa
   (package
     (name "r-coefa")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coefa" version))
               (sha256
                (base32
-                "0qb78kbr7z307165j7q17bm1p9aq6p4iy2j1sbpqks4bvkih9drs"))))
+                "0ra9w4mpxwvi5byys45sw1yydf28hvhgp81928ipdra277flhcp9"))))
     (properties `((upstream-name . "coefa")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-psych r-openxlsx))
@@ -34008,17 +34008,16 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAST" version))
               (sha256
                (base32
-                "0kvipagrf7qsp6wjmh1vjzdjpj9px9xn8a8b32h9cxq6fpxzd14j"))))
+                "05kz6dp37nfs3dq1ql7vy514857yqnqbznlbzp1qsgadqrs657a8"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-reshape
                              r-plyr
                              r-lattice
                              r-ggplot2

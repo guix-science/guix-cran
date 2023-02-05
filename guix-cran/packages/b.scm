@@ -23525,13 +23525,13 @@ high support from the data are saved to memory and used in the final model.")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9")
+    (version "2.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BART" version))
               (sha256
                (base32
-                "1yzwiyjc2gq2vvw5z2psmyqbbb1kq0xvsb0zingcn8qikw45mm5m"))))
+                "1qg9f450vz269x0sn20lzza66vyz546cidc93bxrw1r0ld80nl9c"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet r-nlme))

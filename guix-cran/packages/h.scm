@@ -5537,42 +5537,6 @@ advisable if the counts are extremely large.  HistDat allows for the calculation
 of summary statistics without the need for expanding your data.")
     (license license:gpl3+)))
 
-(define-public r-hisse
-  (package
-    (name "r-hisse")
-    (version "2.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hisse" version))
-              (sha256
-               (base32
-                "0smx9535rhjvi5kzsp5cydfp04dyj05g0hl0rq9dpjq9p76ahqlw"))))
-    (properties `((upstream-name . "hisse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treesim
-                             r-subplex
-                             r-plotrix
-                             r-phytools
-                             r-phangorn
-                             r-paleotree
-                             r-nloptr
-                             r-igraph
-                             r-gensa
-                             r-geiger
-                             r-diversitree
-                             r-desolve
-                             r-data-table
-                             r-corhmm
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hisse")
-    (synopsis "Hidden State Speciation and Extinction")
-    (description
-     "Sets up and executes a HiSSE model (Hidden State Speciation and Extinction) on a
-phylogeny and character sets to test for hidden shifts in trait dependent rates
-of diversification.  Beaulieu and O'Meara (2016) <doi:10.1093/sysbio/syw022>.")
-    (license license:gpl2+)))
-
 (define-public r-hirt
   (package
     (name "r-hirt")

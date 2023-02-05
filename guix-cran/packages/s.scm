@@ -4893,13 +4893,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "2.5.3")
+    (version "2.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "supernova" version))
               (sha256
                (base32
-                "1ci1zdvxpa33xbvkh0ly5x20w0h21j1x1d9iwgrn7kgccz56vrir"))))
+                "054hiaml5n27a1c20jpyl57ya0ic7pz6vyncax0xzmhhqp8vqicq"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -31587,6 +31587,29 @@ graphs among entities.  Please run demo(simuleDemo) to learn the basic functions
 provided by this package.  For further details, please read the original paper:
 Beilun Wang, Ritambhara Singh, Yanjun Qi (2017) <DOI:10.1007/s10994-017-5635-7>.")
     (license license:gpl2)))
+
+(define-public r-simulator
+  (package
+    (name "r-simulator")
+    (version "0.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simulator" version))
+              (sha256
+               (base32
+                "07mzgpfy43vpf58mrc7kcwvj49f27kr7w0fgf8vv80ls3bbb859i"))))
+    (properties `((upstream-name . "simulator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jacobbien/simulator")
+    (synopsis "An Engine for Running Simulations")
+    (description
+     "This package provides a framework for performing simulations such as those
+common in methodological statistics papers.  The design principles of this
+package are described in greater depth in Bien, J. (2016) \"The simulator: An
+Engine to Streamline Simulations,\" which is available at <arXiv:1607.00021>.")
+    (license license:gpl3)))
 
 (define-public r-simulariatools
   (package

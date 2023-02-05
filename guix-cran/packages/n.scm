@@ -4364,13 +4364,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnlib2Rcpp" version))
               (sha256
                (base32
-                "0dwyy3zclsq4051vjq9hlfgadrd2sasm0dydm0b3120ii3f128qg"))))
+                "02xj7ajf2ccsi4q7vxrqqsx615glq5bfh6c3jca71s5jhy8djfdl"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
