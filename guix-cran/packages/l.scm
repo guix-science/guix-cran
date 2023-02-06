@@ -8574,13 +8574,13 @@ dimensions, where N is the number of possible values of the response variable.")
 (define-public r-lillies
   (package
     (name "r-lillies")
-    (version "0.2.9")
+    (version "0.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lillies" version))
               (sha256
                (base32
-                "0ljqfl9w26z61fivzlr4sh371s418alzzkdlhghsq0w03871wd3h"))))
+                "0czcgmx0v5ryw6xd2a3nkxb4qgpza35v9laqv491dxhjh7i8di2k"))))
     (properties `((upstream-name . "lillies")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

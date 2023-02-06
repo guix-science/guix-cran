@@ -3335,13 +3335,13 @@ Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
 (define-public r-howmanyimputations
   (package
     (name "r-howmanyimputations")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "howManyImputations" version))
               (sha256
                (base32
-                "0k3lbjbvhxmfngm9b5085p3nak3zjzxlfsr823ji7707y9arh5gx"))))
+                "1331xiv0gx72glakdqpr0dwi2ql4bnwfqwph4184y5pcr98dwsdr"))))
     (properties `((upstream-name . "howManyImputations")))
     (build-system r-build-system)
     (propagated-inputs (list r-mice))

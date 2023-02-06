@@ -5345,13 +5345,13 @@ sun and the planets : <https://www.aa.quae.nl/en/reken/zonpositie.html>.")
 (define-public r-sunburstr
   (package
     (name "r-sunburstr")
-    (version "2.1.6")
+    (version "2.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sunburstR" version))
               (sha256
                (base32
-                "1a8a6scfmr74qfi86nrpli6abhfri60cd6sdb40ywrh9qpshkl81"))))
+                "1rlfmw79krdahm7c03xw1hbzmxvaqbghl90bqiqa66k7mn9d25z6"))))
     (properties `((upstream-name . "sunburstR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools r-dplyr r-d3r))
@@ -36360,13 +36360,13 @@ models.  The selection procedure is based on the slope heuristics.")
 (define-public r-shipunov
   (package
     (name "r-shipunov")
-    (version "1.17")
+    (version "1.17.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shipunov" version))
               (sha256
                (base32
-                "15gakqapgi9yl9i31nqw1h6p89qphmlyn9dfhmf2ps3ki4ijq44k"))))
+                "1kwywckhml47qi0i1xiqwkg3lv24xhk3d0brz2jpljv6v1namgk3"))))
     (properties `((upstream-name . "shipunov")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbsmapping))
@@ -36376,12 +36376,13 @@ models.  The selection procedure is based on the slope heuristics.")
      "This package provides a collection of functions for data manipulation, plotting
 and statistical computing, to use separately or with the book \"Visual
 Statistics.  Use R!\": Shipunov (2020)
-<http://ashipunov.info/shipunov/software/r/r-en.htm>.  Most useful functions:
-Bclust(), Jclust() and BootA() which bootstrap hierarchical clustering; Recode()
-which does multiple recoding in a fast, simple and flexible way; Misclass()
-which outputs confusion matrix even if classes are not concerted; Overlap()
-which measures group separation on any projection; Biarrows() which converts any
-scatterplot into biplot; and Pleiad() which is fast and flexible correlogram.")
+<http://ashipunov.info/shipunov/software/r/r-en.htm>.  Dr Alexey Shipunov died
+in December 2022.  Most useful functions: Bclust(), Jclust() and BootA() which
+bootstrap hierarchical clustering; Recode() which does multiple recoding in a
+fast, simple and flexible way; Misclass() which outputs confusion matrix even if
+classes are not concerted; Overlap() which measures group separation on any
+projection; Biarrows() which converts any scatterplot into biplot; and Pleiad()
+which is fast and flexible correlogram.")
     (license license:gpl2+)))
 
 (define-public r-shinyxypad
@@ -51482,13 +51483,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sasLM" version))
               (sha256
                (base32
-                "0r6zwjmh6zw3jy78gmnhcinr8n8jkqfkjvav5w6dw1w3w7h40fyv"))))
+                "03s30bqvkyyjv0zyi3ff61v72hcf92w9s54rk3afnn4q2jkkmqgh"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

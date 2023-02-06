@@ -12816,34 +12816,6 @@ random and drop-out.  Chixaing Chen, Ming Wang, Rongling Wu, Runze Li (2020)
 <doi:10.5705/ss.202020.0254>.")
     (license license:artistic2.0)))
 
-(define-public r-elbird
-  (package
-    (name "r-elbird")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "elbird" version))
-              (sha256
-               (base32
-                "1n9z71xii5kymrm5ar4gldz2czk8z94qzd2ms7fwk0cwynbdcc5k"))))
-    (properties `((upstream-name . "elbird")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vroom
-                             r-tibble
-                             r-r6
-                             r-purrr
-                             r-matchr
-                             r-dplyr
-                             r-cpp11))
-    (home-page "https://github.com/mrchypark/elbird/")
-    (synopsis
-     "Blazing Fast Morphological Analyzer Based on Kiwi(Korean Intelligent Word Identifier)")
-    (description
-     "This is the R wrapper package Kiwi(Korean Intelligent Word Identifier), a
-blazing fast speed morphological analyzer for Korean.  It supports configuration
-of user dictionary and detection of unregistered nouns based on frequency.")
-    (license license:lgpl3+)))
-
 (define-public r-elastic
   (package
     (name "r-elastic")

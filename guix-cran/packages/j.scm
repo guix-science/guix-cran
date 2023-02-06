@@ -921,13 +921,13 @@ survival analysis.")
 (define-public r-jsmediation
   (package
     (name "r-jsmediation")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JSmediation" version))
               (sha256
                (base32
-                "1js9qhjfycwwipaxf64zpgwbbqyccj9zv4kipd6r82l3rx9ck8mh"))))
+                "1y6s8fwdyaixvqa1p8nn1jf75k2dgv4p9kv59rwjrckq70s026x2"))))
     (properties `((upstream-name . "JSmediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -1202,18 +1202,18 @@ unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "av" version))
               (sha256
                (base32
-                "08h99iy05s1r9ix1i0mbzpz14hhvk0ima9165hhlxkl7w6qqld9j"))))
+                "1h04vr5r5h1jhqq542kzyf8bjiqp7iam8bvaxmmvbh7kq619issa"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
     (native-inputs (list pkg-config))
-    (home-page "https://docs.ropensci.org/av/")
+    (home-page "https://ropensci.r-universe.dev/av")
     (synopsis "Working with Audio and Video in R")
     (description
      "Bindings to FFmpeg <http://www.ffmpeg.org/> AV library for working with audio
@@ -10129,13 +10129,13 @@ to manipulate the data in an efficient manner.")
 (define-public r-andrews
   (package
     (name "r-andrews")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "andrews" version))
               (sha256
                (base32
-                "1rx1nh9ykbhpvnkdb624kc9gyib1grnk235sdnrzqk6sc501c19x"))))
+                "0ziww4gxnp3sprjsgvv7hi2sfysapbgdsim5jgmrw8g2fn82jwkg"))))
     (properties `((upstream-name . "andrews")))
     (build-system r-build-system)
     (propagated-inputs (list r-primes))
@@ -10143,7 +10143,9 @@ to manipulate the data in an efficient manner.")
     (home-page "https://github.com/sigbertklinke/andrews")
     (synopsis "Various Andrews Curves")
     (description
-     "Visualisation of multidimensional data through different Andrews curves.")
+     "Visualisation of multidimensional data through different Andrews curves:
+Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
+125-136. <doi:10.2307/2528964>.")
     (license license:gpl3)))
 
 (define-public r-and
@@ -13213,13 +13215,13 @@ License.")
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
-    (version "0.2.2")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AirMonitor" version))
               (sha256
                (base32
-                "1pjr0cv8p4wh1r42dclarxbbd4iiwrv8zn6igdkr19829k1airkw"))))
+                "0n5pc0nazkn4g7lwl3nvfhx8nkyj1cfgnz2zfsv127waycd3p6m4"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -13228,6 +13230,7 @@ License.")
                              r-rlang
                              r-readr
                              r-mazamatimeseries
+                             r-mazamarollutils
                              r-mazamacoreutils
                              r-magrittr
                              r-lubridate

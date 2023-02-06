@@ -10150,13 +10150,13 @@ growth to full growth (\"slope\").")
 (define-public r-disk-frame
   (package
     (name "r-disk-frame")
-    (version "0.7.2")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disk.frame" version))
               (sha256
                (base32
-                "016sxjvbw8j6inwr1y66hck1dzpnjr79v2fiiylcpgdnc39hc0hn"))))
+                "0a388jksxff4gqb1h2z5yfgkzdjkz8768sv7g4kvm7zzi49y73fh"))))
     (properties `((upstream-name . "disk.frame")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

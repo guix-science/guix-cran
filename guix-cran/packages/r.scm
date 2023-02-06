@@ -6114,13 +6114,13 @@ input (image and tiles) or output (mosaic transformed image).")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.3.14")
+    (version "1.3.14.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSiena" version))
               (sha256
                (base32
-                "1g36l9j68d4lgwx5m67ccny7kjjv3lk5lxqawv1pz1l0d4vdmhsd"))))
+                "1bnymq8vyp6kgvaf3shdzw7b589kwd8zihzc2p77zqlyb2ih5q74"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-matrix r-mass r-lattice))
@@ -17646,17 +17646,18 @@ time series.")
 (define-public r-rmatio
   (package
     (name "r-rmatio")
-    (version "0.17.0")
+    (version "0.18.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmatio" version))
               (sha256
                (base32
-                "00bw80fkvwca7n4wbp70bn6qmy1wvbvqrl0jf4qgms2kid3dg5x6"))))
+                "11aaa06rq7pz6ma194bp4j9qy1f8rzl31nk731jmacdf2yvbmn6v"))))
     (properties `((upstream-name . "rmatio")))
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-matrix))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/stewid/rmatio")
     (synopsis "Read and Write 'Matlab' Files")
     (description
@@ -26803,13 +26804,13 @@ between users.  Several advanced options are available, see
 (define-public r-reproducer
   (package
     (name "r-reproducer")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducer" version))
               (sha256
                (base32
-                "0d67isl92gzh4vrhih6x868ym14jnj9sri190lk3m9lxyhf23gk9"))))
+                "1xv1rdhpcg0jhqax28y8y8zyr1r4rvgxaqmbj932p1q757r6cawi"))))
     (properties `((upstream-name . "reproducer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -27139,13 +27140,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.5.5")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "report" version))
               (sha256
                (base32
-                "0089c4w549wvl1l7g5k5l86dsbnbjr0lpy30bd4iz4x7xvp2j92f"))))
+                "060rp27h05svp5lpy3gl4kwz0hhsxaqjbh6gy1zypzpvigvl9rsj"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -30557,13 +30558,13 @@ series in a specified pair of coordinates and creates grids.")
 (define-public r-redditextractor
   (package
     (name "r-redditextractor")
-    (version "3.0.6")
+    (version "3.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RedditExtractoR" version))
               (sha256
                (base32
-                "18apw0qjzk4lc02bx8kfi7hqxyb23zz2r7zw93dgf04aa8q49x2i"))))
+                "080060rn8gcradfn7vb4jz62f919c64y4w030hxcd79r1yidbnwk"))))
     (properties `((upstream-name . "RedditExtractoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjsonio))
@@ -34259,17 +34260,17 @@ interoperable) data used in epidemiological modelling.")
 (define-public r-rdatacite
   (package
     (name "r-rdatacite")
-    (version "0.5.2")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdatacite" version))
               (sha256
                (base32
-                "07zbxr89fxx9nlp5w7n60rjm3prck08h0fjrq0pnpkbnnkx9cv9a"))))
+                "130wvrp1lc9xhcj3c842cqd9xbbnr1abm56j933kdjwkps542583"))))
     (properties `((upstream-name . "rdatacite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-crul))
-    (home-page "https://docs.ropensci.org/rdatacite")
+    (home-page "https://docs.ropensci.org/rdatacite/")
     (synopsis "Client for the 'DataCite' API")
     (description
      "Client for the web service methods provided by DataCite
