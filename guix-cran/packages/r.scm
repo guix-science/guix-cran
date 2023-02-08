@@ -5160,6 +5160,50 @@ the book Golyandina (2018, <doi:10.1007/978-3-662-57380-8>).  See
 citation(\"Rssa\") for details.")
     (license license:gpl2+)))
 
+(define-public r-rsrd
+  (package
+    (name "r-rsrd")
+    (version "0.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rSRD" version))
+              (sha256
+               (base32
+                "01mriw34m77ymrkjh04bb8bpaqdbxcv3zds63043v693d80w3yxi"))))
+    (properties `((upstream-name . "rSRD")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-janitor
+                             r-gplots
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=rSRD")
+    (synopsis "Sum of Ranking Differences Statistical Test")
+    (description
+     "We provide an implementation for Sum of Ranking Differences (SRD), a novel
+statistical test introduced by HÃ©berger (2010)
+<doi:10.1016/j.trac.2009.09.009>.  The test allows the comparison of different
+solutions through a reference by first performing a rank transformation on the
+input, then calculating and comparing the distances between the solutions and
+the reference - the latter is measured in the L1 norm.  The reference can be an
+external benchmark (e.g. an established gold standard) or can be aggregated from
+the data.  The calculated distances, called SRD scores, are validated in two
+ways, see HÃ©berger and KollÃ¡r-Hunek (2011) <doi:10.1002/cem.1320>.  A
+randomization test (also called permutation test) compares the SRD scores of the
+solutions to the SRD scores of randomly generated rankings.  The second
+validation option is cross-validation that checks whether the rankings generated
+from the solutions come from the same distribution or not.  For a detailed
+analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
+(2021) <arXiv:2105.11939>.  The package offers a wide array of features related
+to SRD including the computation of the SRD scores, validation options, input
+preprocessing and plotting tools.")
+    (license license:gpl3)))
+
 (define-public r-rsqmed
   (package
     (name "r-rsqmed")
@@ -10022,13 +10066,13 @@ ISBN:9780412048418).")
 (define-public r-rpanel
   (package
     (name "r-rpanel")
-    (version "1.1-5.1")
+    (version "1.1-5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpanel" version))
               (sha256
                (base32
-                "05cvazjwi66bm1fa3pfpl3p931i221y3y0am6iaf23gifsgl1ss2"))))
+                "0b9r458dx65p1s0az14s3bhyh5isqx5ax9dblpsxxm6i9jcnx8f9"))))
     (properties `((upstream-name . "rpanel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rpanel")
@@ -18597,13 +18641,13 @@ GJ18-04150Y'.")
 (define-public r-rlemon
   (package
     (name "r-rlemon")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlemon" version))
               (sha256
                (base32
-                "186kx2mrbq8fpbzpibbbvzh92f0wsmmz2yvvcg6wd805by3r4rz0"))))
+                "0x83l5i30ppmq5mhq0qxwz5ql6qzwk02bbwdykd6hz0r9w1zl62a"))))
     (properties `((upstream-name . "rlemon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -26485,13 +26529,13 @@ the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rerddap" version))
               (sha256
                (base32
-                "1fw678w5jyxlkpxfg88w0lxfyvgqwj4qffqn0hi5wzzysz70y0x7"))))
+                "0i8ff4lgx8aqhkwic8rqdc61s17a655a3p79x69xz15qwp6sadld"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27859,13 +27903,13 @@ block data) can be used in a Maximum-Likelihood framework.")
 (define-public r-rendo
   (package
     (name "r-rendo")
-    (version "2.4.7")
+    (version "2.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REndo" version))
               (sha256
                (base32
-                "0c0jgl71m44igbif529b7n81hip7jyzqwpb64dmazgbi4ha3z0jx"))))
+                "080yh29y6vhv83md46dmxz4y06bndi44xi34zkjmi4yp198knr1f"))))
     (properties `((upstream-name . "REndo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -28000,21 +28044,16 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rempsyc" version))
               (sha256
                (base32
-                "1by47r69frid5skbm46msrpif22h7vsq6fjwqydp7cg7h901q3sz"))))
+                "1lhy11vqj7jj8g071mzx0mwhgm6mhfqfgfpi3x4a7qqk4svl9888"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-performance
-                             r-insight
-                             r-flextable
-                             r-effectsize
-                             r-dplyr))
+    (propagated-inputs (list r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rempsyc.remi-theriault.com")
     (synopsis "Convenience Functions for Psychology")
@@ -44559,13 +44598,13 @@ subjects are not confused and no ambiguity is introduced.")
 (define-public r-rabhit
   (package
     (name "r-rabhit")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rabhit" version))
               (sha256
                (base32
-                "1ji1gs2p41vywri5gdlja6w5kkk2416bpkwm7vb4bb8vndkgv3p6"))))
+                "0c513sbldd85snww412k3c5rhmzd5k89s2wq4d713qsvzsh4v1xl"))))
     (properties `((upstream-name . "rabhit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tigger

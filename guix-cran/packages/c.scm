@@ -17009,13 +17009,13 @@ number of photoreceptor types.")
 (define-public r-colourvalues
   (package
     (name "r-colourvalues")
-    (version "0.3.7")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "colourvalues" version))
               (sha256
                (base32
-                "1xpdxqx328l6rjmys7gqrq9pyla7sfmb3xzjrhyksx7i4ncmndpr"))))
+                "053aspg4bpir0yc22r84am2nwa4qdg4rsi9fz3gfcxvsvn9b1wfl"))))
     (properties `((upstream-name . "colourvalues")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -18786,13 +18786,13 @@ an additional feature.")
 (define-public r-codename
   (package
     (name "r-codename")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "codename" version))
               (sha256
                (base32
-                "196xd326ps6yqb1kr1mckfxpb076p0z4kz15cpa12w2psdwy8ba4"))))
+                "1466zby3yiggvqiwynyvirifi30y9lwms0a4mx73c8x9wfy36px0"))))
     (properties `((upstream-name . "codename")))
     (build-system r-build-system)
     (home-page "https://github.com/svmiller/codename")
@@ -18866,6 +18866,37 @@ generally.")
 as detailed at <https://codemeta.github.io>.  This package provides core
 utilities to generate this metadata with a minimum of dependencies.")
     (license license:gpl3)))
+
+(define-public r-codelistgenerator
+  (package
+    (name "r-codelistgenerator")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CodelistGenerator" version))
+              (sha256
+               (base32
+                "109pvhc1mhxhacni7kf9z7qmf9gpp05f8z3qkfypcg382wyvd6xp"))))
+    (properties `((upstream-name . "CodelistGenerator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-dbi
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu.github.io/CodelistGenerator/")
+    (synopsis "Generate Code Lists for the OMOP Common Data Model")
+    (description
+     "Generate a candidate code list for the Observational Medical Outcomes
+Partnership (OMOP) common data model based on string matching.  For a given
+search strategy, a candidate code list will be returned.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-codecollection
   (package
@@ -32233,13 +32264,13 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.0.2")
+    (version "4.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CCAMLRGIS" version))
               (sha256
                (base32
-                "1spjf6rjqqn90c9acdb0z7ysdkzia9fgnwbp4n0cycd3wc7pngf0"))))
+                "1in7prc7w0bxybkwwccnmjv118xnf7wvfyk8g9hrk3296aglsf46"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

@@ -3183,13 +3183,13 @@ or combining Gaussian random fuzzy numbers).")
 (define-public r-evots
   (package
     (name "r-evots")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evoTS" version))
               (sha256
                (base32
-                "0dk7wxc0pwyv5s5jhfpxznwlya4rahzx4s15pm9k1nh2jdv0k2an"))))
+                "09l3d51fwl6x482affi0c5r4c4m8931p1sg6i4v82j8n8by7290h"))))
     (properties `((upstream-name . "evoTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-plotly r-paleots r-mvtnorm r-mass))
@@ -8004,13 +8004,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.56")
+    (version "2.0.57")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "1w89cxfm0ldxi95q2ayakz4m02a7p6i6csjmrawpf17xbncvf92q"))))
+                "1q1msfsnhrjcj80ychsi3nzdaqa3q8nfcr01plk3y1bpw8mvy2l0"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8023,7 +8023,7 @@ vignette.")
                              r-biasedurn))
     (native-inputs (list r-knitr))
     (home-page
-     "https://fvas.unimelb.edu.au/research/groups/veterinary-epidemiology-melbourne")
+     "https://mvs.unimelb.edu.au/research/groups/veterinary-epidemiology-melbourne")
     (synopsis "Tools for the Analysis of Epidemiological Data")
     (description
      "Tools for the analysis of epidemiological and surveillance data.  Contains
@@ -8842,6 +8842,32 @@ extinction risk of populations. (VÃ­ctor SaldaÃ±a-NÃºÃ±ez, Fernando
 CÃ³rdova-Lepe, & Felipe N. Moreno-GÃ³mez, 2021) <doi:10.5281/zenodo.5034087>.")
     (license license:gpl3)))
 
+(define-public r-epca
+  (package
+    (name "r-epca")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epca" version))
+              (sha256
+               (base32
+                "1z2x1h39dwi2kfb2rbip2knah9mycxvf9cw4d51vimka2ksgqwv4"))))
+    (properties `((upstream-name . "epca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-rspectra
+                             r-matrix
+                             r-irlba
+                             r-gparotation
+                             r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fchen365/epca")
+    (synopsis "Exploratory Principal Component Analysis")
+    (description
+     "Exploratory principal component analysis for large-scale dataset, including
+sparse principal component analysis and sparse matrix approximation.")
+    (license license:gpl3)))
+
 (define-public r-epanetreader
   (package
     (name "r-epanetreader")
@@ -9288,17 +9314,21 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
 (define-public r-envigcms
   (package
     (name "r-envigcms")
-    (version "0.6.6")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enviGCMS" version))
               (sha256
                (base32
-                "01y3qqh99aclarglpdg8mb9iikzkm1w62mv93m22lm8ami25a372"))))
+                "1rk7y24lld16zk7f3aak3zf9i3xd27l8mffcvlxwqi7cpl1pqa9b"))))
     (properties `((upstream-name . "enviGCMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-mixtools r-data-table
-                             r-biocparallel r-animation))
+    (propagated-inputs (list r-rcolorbrewer
+                             r-mixtools
+                             r-igraph
+                             r-data-table
+                             r-biocparallel
+                             r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yufree/enviGCMS")
     (synopsis "GC/LC-MS Data Analysis for Environmental Science")
@@ -10570,13 +10600,13 @@ efficiently.")
 (define-public r-emt
   (package
     (name "r-emt")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMT" version))
               (sha256
                (base32
-                "07c25nw8n6294f7q1axwraqp4x2p5dprgd8f9sldn2w6jslzvvc8"))))
+                "0zmcakph88qg9f1p7icn4llw92nh1jfijxsx3rhl7g9d4rihprq5"))))
     (properties `((upstream-name . "EMT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EMT")
@@ -17210,13 +17240,13 @@ Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
 (define-public r-ecochange
   (package
     (name "r-ecochange")
-    (version "2.9.1")
+    (version "2.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecochange" version))
               (sha256
                (base32
-                "1m27m0m7ccirjdr4c76lnj1ilw979i8wfc2xjja0drcnihlbspqa"))))
+                "0iwagqnvac06a0ydgq16z06iz7yni5ggh558bkjv1h0s4ffm5imm"))))
     (properties `((upstream-name . "ecochange")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17230,7 +17260,8 @@ Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
                              r-landscapemetrics
                              r-httr
                              r-ggplot2
-                             r-getpass))
+                             r-getpass
+                             r-geodata))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecochange")
     (synopsis

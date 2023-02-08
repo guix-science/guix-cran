@@ -3516,22 +3516,22 @@ are also included.")
 (define-public r-optmatch
   (package
     (name "r-optmatch")
-    (version "0.10.5")
+    (version "0.10.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optmatch" version))
               (sha256
                (base32
-                "0ybzfns6lhkif1s0npm71wpr4r4y7mnki53zyvqbymlpx81j41m8"))))
+                "0d8xrq6b2dkr78dk25rikmsypfd2vsvv8y9pmsfv7gfzgxb62xib"))))
     (properties `((upstream-name . "optmatch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlemon r-rcpp))
+    (propagated-inputs (list r-tibble r-rlemon r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://optmat.ch")
     (synopsis "Functions for Optimal Matching")
     (description
      "Distance based bipartite matching using minimum cost flow, oriented to matching
-of treatment and control groups in observational studies (Hansen and Klopfer
+of treatment and control groups in observational studies ('Hansen and Klopfer
 2006 <doi:10.1198/106186006X137047>).  Routines are provided to generate
 distances from generalised linear models (propensity score matching), formulas
 giving variables on which to limit matched distances, stratified or exact
@@ -5880,13 +5880,13 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.14")
+    (version "2.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "0mk197kdfq28gpj61zg1767z5p6rs4drg0dpw56la34j7pvirr43"))))
+                "1cc5nvprwniz07i8c3a2a3cfsgjqvr4qy5db5jkjjqj6rnyk84gi"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9910,6 +9910,28 @@ interest.  Fittings methods include the simple reference region and ordinary
 least squares (sometimes known as occupancy plot) methods, as well as the more
 efficient restricted maximum likelihood estimation'.")
     (license license:gpl3)))
+
+(define-public r-oc
+  (package
+    (name "r-oc")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oc" version))
+              (sha256
+               (base32
+                "0g4ij5g2xkkd73srm21b2xc170rgwbdsdx2qjkp3pr30axb0bf91"))))
+    (properties `((upstream-name . "oc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pscl))
+    (native-inputs (list gfortran))
+    (home-page "https://legacy.voteview.com/oc_in_R.htm")
+    (synopsis "Optimal Classification Roll Call Analysis Software")
+    (description
+     "Estimates optimal classification (Poole 2000)
+<doi:10.1093/oxfordjournals.pan.a029814> scores from roll call votes supplied
+though a rollcall object from package pscl'.")
+    (license license:gpl2)))
 
 (define-public r-obssens
   (package

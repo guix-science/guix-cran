@@ -2017,19 +2017,19 @@ Log\".")
 (define-public r-ptools
   (package
     (name "r-ptools")
-    (version "1.0.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ptools" version))
               (sha256
                (base32
-                "1mrpwg456afyqlzn7g48k7xmi4vjchni9rg7jyd1axkazw0zy7hy"))))
+                "12k47f2nwf5r0d4r1n3qksdsd1gk3ax519hqz6803hynwlcqx2a3"))))
     (properties `((upstream-name . "ptools")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-geom
                              r-sp
-                             r-rgeos
+                             r-sf
                              r-raster
                              r-rann
                              r-partitions
@@ -10577,13 +10577,13 @@ test-taker is needed.")
 (define-public r-powriclpm
   (package
     (name "r-powriclpm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "powRICLPM" version))
               (sha256
                (base32
-                "18r6smi41hcchdw47zxkkk4y85qlas134rwfnxmp8x1q4vw3kf8b"))))
+                "01mccy1s0sl3haz4q26vv1dfrgzdrkds8b1c38iv6zy5am68s9iy"))))
     (properties `((upstream-name . "powRICLPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -14101,31 +14101,32 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.0")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polle" version))
               (sha256
                (base32
-                "11585rm5pw41nbwsgm5zx0vlnrj25fjg44ps68jjyvdzs8191fhl"))))
+                "1qw0p81phpzszjksm20wdszc2vis5grp1ir5lw4m7hzx4v8m3fw7"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (propagated-inputs (list r-targeted
                              r-survival
                              r-superlearner
+                             r-progressr
                              r-policytree
                              r-lava
                              r-future-apply
                              r-dyntxregime
                              r-data-table))
-    (home-page "https://arxiv.org/abs/2212.02335")
+    (home-page "https://cran.r-project.org/package=polle")
     (synopsis "Policy Learning")
     (description
      "Framework for evaluating user-specified finite stage policies and learning
 realistic policies via doubly robust loss functions.  Policy learning methods
 include doubly robust restricted Q-learning, sequential policy tree learning and
-outcome weighted learning.  See Nordland and Holst (2022) for documentation and
-references.")
+outcome weighted learning.  See Nordland and Holst (2022) <arXiv:2212.02335> for
+documentation and references.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-politeness
@@ -14923,13 +14924,13 @@ forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PointedSDMs" version))
               (sha256
                (base32
-                "1l0ys40phz7aargxjyl51f618l6nzgrn13z6i21l3m6k27x7is0s"))))
+                "1j38avadk2xz3spwyb3krqq18a0p033qmv4qh4zvzs4nxhqg61wn"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -25130,13 +25131,13 @@ Elastic Net.")
 (define-public r-pense
   (package
     (name "r-pense")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pense" version))
               (sha256
                (base32
-                "1gz9p3khmv6v4m9aw314zdxdr33qmddb4s2pads0lm5iylngjd4j"))))
+                "1v077lmi7hs793yqv9m4ir0hd8s671714nj2gf3ya48qjmbizyg0"))))
     (properties `((upstream-name . "pense")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-matrix
@@ -27156,13 +27157,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDE" version))
               (sha256
                (base32
-                "032r72dmxv8far305y9738grylp0g96p7jkmk0dg5cwm02570zy5"))))
+                "1xii4kc5lskgg58grp6qls01xgf5gib5yvxacm1pz6w3lp4hadwd"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -31791,50 +31792,6 @@ coef_map, coef_omit, coef_rename, gof_map, and gof_omit from modelsummary to
 clean the table, and additionally, add a row for the mean of the dependent
 variable without external manipulation.")
     (license license:gpl3+)))
-
-(define-public r-panelr
-  (package
-    (name "r-panelr")
-    (version "0.7.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "panelr" version))
-              (sha256
-               (base32
-                "0vc57c261n9himhxs0yy2pd5vd935cg42hf6jnk84y61glw7dgxk"))))
-    (properties `((upstream-name . "panelr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lmertest
-                             r-lme4
-                             r-jtools
-                             r-ggplot2
-                             r-formula
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://panelr.jacob-long.com")
-    (synopsis
-     "Regression Models and Utilities for Repeated Measures and Panel Data")
-    (description
-     "This package provides an object type and associated tools for storing and
-wrangling panel data.  Implements several methods for creating regression models
-that take advantage of the unique aspects of panel data.  Among other
-capabilities, automates the \"within-between\" (also known as \"between-within\" and
-\"hybrid\") panel regression specification that combines the desirable aspects of
-both fixed effects and random effects econometric models and fits them as
-multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
-2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
-generalized estimating equations (GEE; McNeish, 2019
-<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
-supported via Stan'.  Supports estimation of asymmetric effects models via first
-differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
-generalized linear model extension thereof using GEE.")
-    (license license:expat)))
 
 (define-public r-panelmatch
   (package

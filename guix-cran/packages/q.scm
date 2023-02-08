@@ -3659,13 +3659,13 @@ original data set.")
 (define-public r-qoi
   (package
     (name "r-qoi")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qoi" version))
               (sha256
                (base32
-                "16kan1r36850r57irfanl6q0m3krz8vwh1hyazr0jp98ia7hh0dx"))))
+                "0sdarr3f6by3kgaq7302kwkgv0vcy4q0mkprdlawkybaafzlzb9x"))))
     (properties `((upstream-name . "qoi")))
     (build-system r-build-system)
     (home-page "https://github.com/JohannesFriedrich/qoi4R")
@@ -4836,13 +4836,13 @@ Association Studies.")
 (define-public r-qcewas
   (package
     (name "r-qcewas")
-    (version "1.2-2")
+    (version "1.2-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QCEWAS" version))
               (sha256
                (base32
-                "0h7l6yh5246qhi9m8gr3kl0nrxd6ggq61k6i5vaiqir974b7cd18"))))
+                "02xl3ydh1mlf3jaixhm5wm5ndcbfhyqkagb4ywi46vs8dj2jl7q3"))))
     (properties `((upstream-name . "QCEWAS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QCEWAS")

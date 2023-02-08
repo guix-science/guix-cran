@@ -1660,31 +1660,33 @@ RESTful Webservice.  Utility functions aim at taxonomic consistency.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.9.6")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worldmet" version))
               (sha256
                (base32
-                "1yb8x9iv8ndnqlpadg1x9sxd48maw9b4ih03rkr508xn98xksyhb"))))
+                "00kgaq5k85wbdj5kj3m1npfgfndhk1z9i1jjal2bc0612cajb44g"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-readr
                              r-purrr
                              r-openair
+                             r-magrittr
                              r-leaflet
                              r-foreach
                              r-dplyr
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://davidcarslaw.github.io/worldmet/index.html")
     (synopsis
      "Import Surface Meteorological Data from NOAA Integrated Surface Database (ISD)")
     (description
      "This package provides functions to import data from more than 30,000 surface
 meteorological sites around the world managed by the National Oceanic and
-Atmospheric Administration (NOAA) Integrated Surface Database (ISD, see
-<https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database>).")
+Atmospheric Administration (NOAA) Integrated Surface Database.")
     (license license:gpl2+)))
 
 (define-public r-worldfootballr
@@ -7570,20 +7572,20 @@ for more global changes in W4M scripts and tools.")
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")
-    (version "0.1-6")
+    (version "0.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "W3CMarkupValidator" version))
               (sha256
                (base32
-                "0nfay5nqss3zlw4nikj8h3zzlnjfxjch4pm3qky15qrcigrybrbl"))))
+                "1ns504i3567z90bz1p02mnfmnsgkk7wy2a772v2imiwjgzp0qia5"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-curl))
     (home-page "https://cran.r-project.org/package=W3CMarkupValidator")
     (synopsis "R Interface to W3C Markup Validation Services")
     (description
-     "R interface to a W3C Markup Validation service.  See <http://validator.w3.org/>
+     "R interface to a W3C Markup Validation service.  See <https://validator.w3.org/>
 for more information.")
     (license license:gpl2)))
 

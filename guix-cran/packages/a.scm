@@ -6054,13 +6054,13 @@ version of this package lives; it can be installed using devtools.")
 (define-public r-arf
   (package
     (name "r-arf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arf" version))
               (sha256
                (base32
-                "1zq88yl17cvkz1as9c16dvgxz44gkqlmxpn8vc7pivjbfjba60bm"))))
+                "0x5r8b76lzd6a7dzrnr63z7zjfhg75vwjzlzafw652wh2pc37fqk"))))
     (properties `((upstream-name . "arf")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-ranger r-matrixstats r-foreach

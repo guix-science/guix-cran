@@ -1904,31 +1904,6 @@ creating (potentially) tighter clusters than standard k-means and simultaneously
 finding outliers inexpensively in multidimensional space.")
     (license license:gpl3)))
 
-(define-public r-kml3d
-  (package
-    (name "r-kml3d")
-    (version "2.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kml3d" version))
-              (sha256
-               (base32
-                "1a3hqyhrsh12l1j1xlz4zy88impw3biz6w2qc80r11m549h0m6s9"))))
-    (properties `((upstream-name . "kml3d")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
-    (home-page "http:www.r-project.org")
-    (synopsis "K-Means for Joint Longitudinal Data")
-    (description
-     "An implementation of k-means specifically design to cluster joint trajectories
-(longitudinal data on several variable-trajectories).  Like kml', it provides
-facilities to deal with missing value, compute several quality criterion
-(Calinski and Harabatz, Ray and Turie, Davies and Bouldin, BIC,...) and propose
-a graphical interface for choosing the best number of clusters.  In addition,
-the 3D graph representing the mean joint-trajectories of each cluster can be
-exported through LaTeX in a 3D dynamic rotating PDF graph.")
-    (license license:gpl2+)))
-
 (define-public r-kml
   (package
     (name "r-kml")
@@ -3180,13 +3155,13 @@ Zhang, D., and Frangi, A. F. (2004) <DOI:10.1016/j.patcog.2003.10.015>.")
 (define-public r-kfas
   (package
     (name "r-kfas")
-    (version "1.4.6")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KFAS" version))
               (sha256
                (base32
-                "1395xqm8rbg0i2vrd9n83fslf8v40csh0h17wczdnwnff3z3gpfy"))))
+                "18lmfr2prb38l1ifgf9df4xc8glihlg08g3k682pas484kb411lh"))))
     (properties `((upstream-name . "KFAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

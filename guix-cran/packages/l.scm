@@ -4043,13 +4043,13 @@ McLachlan (2018) <doi:10.21105/joss.00870>.")
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "0.8.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logitr" version))
               (sha256
                (base32
-                "1m3spfp67h07d9my8pd55vvgcsxx81r3fcdgzsc9km3s48kzhlp9"))))
+                "0f6zv3k9s71id1l8zva2bl4l978hhmjij8dy00dww4xzypadc22d"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-randtoolbox r-nloptr r-mass r-generics))
@@ -4070,8 +4070,8 @@ comparing WTP from both preference space and WTP space models and for predicting
 expected choices and choice probabilities for sets of alternatives based on an
 estimated model.  Mixed logit models can include uncorrelated or correlated
 heterogeneity covariances and are estimated using maximum simulated likelihood
-based on the algorithms in Train (2009) \"Discrete Choice Methods with
-Simulation, 2nd Edition\" <doi:10.1017/CBO9780511805271>.")
+based on the algorithms in Train (2009) <doi:10.1017/CBO9780511805271>.  More
+details can be found in Helveston (2023) <doi:10.18637/jss.v105.i10>.")
     (license license:expat)))
 
 (define-public r-logitnorm
@@ -9416,16 +9416,16 @@ will generate data dictionaries for individual data frames or an entire library.
 (define-public r-libopf
   (package
     (name "r-libopf")
-    (version "2.6.1")
+    (version "2.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LibOPF" version))
               (sha256
                (base32
-                "01j3jzhi337dmblcm1d79i4cbp159z6k54ybpyzfasjfnp7qizz6"))))
+                "0hkgx2al685353slv5yaqkls56bwci8zc1w6xdfzalfdwna2a7hm"))))
     (properties `((upstream-name . "LibOPF")))
     (build-system r-build-system)
-    (home-page "https://github.com/RafaelJM/LibOPF-in-R/")
+    (home-page "https://github.com/RafaelJM/LibOPF-in-R")
     (synopsis "Design of Optimum-Path Forest Classifiers")
     (description
      "The LibOPF is a framework to develop pattern recognition techniques based on

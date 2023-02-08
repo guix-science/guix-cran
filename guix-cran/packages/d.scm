@@ -6259,13 +6259,13 @@ the work done to create the data for the package.")
 (define-public r-doolkit
   (package
     (name "r-doolkit")
-    (version "1.42.1")
+    (version "1.42.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doolkit" version))
               (sha256
                (base32
-                "0hc60a9g0bvrwx4099c0y8f6fsmmnck2097y7k21gx9kirahgd7g"))))
+                "0hyqbpnhzjsx7ml0z6n9z60yhp5c0dyicm3jfc841aykvb1ifqbp"))))
     (properties `((upstream-name . "doolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -10344,13 +10344,13 @@ different specifications of price dynamics.")
 (define-public r-disdat
   (package
     (name "r-disdat")
-    (version "1.0-0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disdat" version))
               (sha256
                (base32
-                "1q8v40m0vjni3kx0f04qb99adxcx783p9lfixvvq6viz13v1ygcw"))))
+                "1m22pichm603gn9h94vx0kmds28krlp9ax1yrsfwx12rqchcdhk7"))))
     (properties `((upstream-name . "disdat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11284,13 +11284,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "5.7")
+    (version "5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Directional" version))
               (sha256
                (base32
-                "0whrshqlwnnm8vyva04p6asaf1ak6ri9a5fngd59g1fmcmicjcpd"))))
+                "1x7r0p9p80x2wypgfk3kbkb2sh82q5g46wyq5dr6v5vb8cjn3zrd"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -11323,7 +11323,9 @@ with general covariates and anisotropic errors.  Statistics and Computing 30(1):
 153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
 (2022).  An investigation of hypothesis testing procedures for circular and
 spherical mean vectors.  Communications in Statistics-Simulation and Computation
-(Accepted for publication). <doi:10.1080/03610918.2022.2045499>.")
+(Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e) Tsagris M.
+and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions.
+<arXiv:2302.02468>.")
     (license license:gpl2)))
 
 (define-public r-directeffects
@@ -12560,17 +12562,22 @@ Genetic Networks for Cell Differentiation.  PLOS ONE 6(3): e17703.")
 (define-public r-differ
   (package
     (name "r-differ")
-    (version "0.0-6")
+    (version "0.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diffeR" version))
               (sha256
                (base32
-                "0ivdcfirs3jbd6m3rryq590szkhplm2kr9chjgcgd88ar5nrqfg7"))))
+                "0yi0wkjr3cp7ncycn8ynh31r12ahhrdl681g5308axwrn2wiscl0"))))
     (properties `((upstream-name . "diffeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-reshape2 r-raster r-ggplot2))
-    (home-page "http://amsantac.co/software.html")
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-rlang
+                             r-raster
+                             r-ggplot2))
+    (home-page "https://github.com/amsantac/diffeR")
     (synopsis
      "Metrics of Difference for Comparing Pairs of Maps or Pairs of Variables")
     (description
@@ -16903,13 +16910,13 @@ temporal autocorrelation corrected.")
 (define-public r-dendrometry
   (package
     (name "r-dendrometry")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dendrometry" version))
               (sha256
                (base32
-                "1mgisl3wdqdsaxllg83mj6hc2sxcgzb7n5ngrv5kqbgwwbr1jr32"))))
+                "0zxavg34mmxkl5i5mi3x0g1m8pd4f9vc70906iazmmvimvvhp22c"))))
     (properties `((upstream-name . "dendrometry")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -17765,6 +17772,29 @@ handling and building of new classifiers as well as some test data set.")
      "Simple functions to deflate nominal Brazilian Reais using several popular price
 indexes downloaded from the Brazilian Institute for Applied Economic Research.")
     (license license:expat)))
+
+(define-public r-defit
+  (package
+    (name "r-defit")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "deFit" version))
+              (sha256
+               (base32
+                "1i6cfyv7dp0wmih20a1plczlw3w6q892axpbklgh71bj42bn9cgz"))))
+    (properties `((upstream-name . "deFit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-ggplot2 r-desolve))
+    (home-page "https://github.com/yueqinhu/defit")
+    (synopsis "Fitting Differential Equations to Time Series Data")
+    (description
+     "Use numerical optimization to fit ordinary differential equations (ODEs) to time
+series data to examine the dynamic relationships between variables or the
+characteristics of a dynamical system.  It can now be used to estimate the
+parameters of ODEs up to second order.  See <https://github.com/yueqinhu/defit>
+for details.")
+    (license license:gpl3+)))
 
 (define-public r-definer
   (package

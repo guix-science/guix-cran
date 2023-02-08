@@ -3245,13 +3245,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "0.9.9")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nonmemica" version))
               (sha256
                (base32
-                "0y3mmbnnw0b03901hk1x7ww7mav282mvxcjbld3d2iaywv8c5w7i"))))
+                "0ssinsbgbxnplfnpxr94m9rz9q503acf8ddg0ih0dcs75ypqj4fx"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12090,13 +12090,13 @@ using NCA metrics.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "3.2.1")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NCA" version))
               (sha256
                (base32
-                "0d89m8dpq1c94pxv3x72v90rym8frapri19qjbr4c3mxvyjs1cq4"))))
+                "0n7syy7zcd0wk1dkn40dyid1yg0887cckda2ah03w96q21rg77vi"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -12353,6 +12353,27 @@ user choose between a range of integrators, including 4th and 6th order
 integrators for high-accuracy simulations.  Basic top-hat smoothing is available
 as an option.  The code also allows the definition of background particles that
 are fixed or in uniform motion, not subject to acceleration by other particles.")
+    (license license:gpl3)))
+
+(define-public r-nblr
+  (package
+    (name "r-nblr")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nblR" version))
+              (sha256
+               (base32
+                "1p1m1jml7grpjfp5qibffm3dx8zz37h216bpcwybm293naprmbfr"))))
+    (properties `((upstream-name . "nblR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-cli))
+    (home-page "https://github.com/JaseZiv/nblR")
+    (synopsis "Data Extraction of Australian NBL Basketball Statistics")
+    (description
+     "Allow users to obtain basketball statistics for the Australian basketball league
+NBL'<https://nbl.com.au/>.  Stats include play-by-play, shooting locations,
+results and box scores for teams and players.")
     (license license:gpl3)))
 
 (define-public r-nblda

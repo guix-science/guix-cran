@@ -530,6 +530,31 @@ about the methods used in Lemus-Canovas et al.  2019
 <DOI:10.5194/asr-2-99-2008>, Jenkinson and Collison 1977.")
     (license license:gpl3+)))
 
+(define-public r-synmicrodata
+  (package
+    (name "r-synmicrodata")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "synMicrodata" version))
+              (sha256
+               (base32
+                "111ifrnxg253prr3ql9581279r4dy12rbixn29j0zv9j0wjaa190"))))
+    (properties `((upstream-name . "synMicrodata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=synMicrodata")
+    (synopsis "Synthetic Microdata Generator")
+    (description
+     "This tool fits a non-parametric Bayesian model called \"hierarchically coupled
+mixture model (HCMM)\" to the original microdata in order to generate synthetic
+microdata for privacy protection.  The non-parametric feature of the adopted
+model is useful for catching the joint distribution of the original data in a
+highly flexible manner, leading to the generation of synthetic data very similar
+to the original data.  Important reference papers on this method include Murray
+& Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
+    (license license:gpl3+)))
+
 (define-public r-synlik
   (package
     (name "r-synlik")
@@ -2327,13 +2352,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svrep" version))
               (sha256
                (base32
-                "0k494m751lmil58887jc74p34bw08x15zmnf7vr3ijnyfifmz2v4"))))
+                "0f9w7g6kl5mwmz88gnsvabi4l26cgyr1fg65rgdrapwbngyfkqib"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
@@ -2344,10 +2369,12 @@ the method.")
     (description
      "This package provides tools for creating and working with survey replicate
 weights, extending functionality of the survey package from Lumley (2004)
-<doi:10.18637/jss.v009.i08>.  Methods are provided for applying nonresponse
-adjustments to both full-sample and replicate weights as described by Rust and
-Rao (1996) <doi:10.1177/096228029600500305>.  Implements methods for
-sample-based calibration described by Opsomer and Erciulescu (2021)
+<doi:10.18637/jss.v009.i08>.  Implements bootstrap methods for complex surveys,
+including the generalized survey bootstrap as described by Beaumont and Patak
+(2012) <doi:10.1111/j.1751-5823.2011.00166.x>.  Methods are provided for
+applying nonresponse adjustments to both full-sample and replicate weights as
+described by Rust and Rao (1996) <doi:10.1177/096228029600500305>.  Implements
+methods for sample-based calibration described by Opsomer and Erciulescu (2021)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2021002/article/00006-eng.htm>.
 Diagnostic functions are included to compare weights and weighted estimates from
 different sets of replicate weights.")
@@ -2693,6 +2720,49 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
     (description "R bindings to SVD and eigensolvers (PROPACK, nuTRLan).")
     (license license:bsd-3)))
 
+(define-public r-svars
+  (package
+    (name "r-svars")
+    (version "1.3.11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "svars" version))
+              (sha256
+               (base32
+                "1y8klpj4b1dcba0d3b3kr29n8ji8pfis7v311ph0bx4j1mwilc9g"))))
+    (properties `((upstream-name . "svars")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-vars
+                             r-strucchange
+                             r-steadyica
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbapply
+                             r-ggplot2
+                             r-expm
+                             r-deoptim
+                             r-copula
+                             r-clue))
+    (home-page "https://cran.r-project.org/package=svars")
+    (synopsis "Data-Driven Identification of SVAR Models")
+    (description
+     "This package implements data-driven identification methods for structural vector
+autoregressive (SVAR) models as described in Lange et al. (2021)
+<doi:10.18637/jss.v097.i05>.  Based on an existing VAR model object (provided by
+e.g. VAR() from the vars package), the structural impact matrix is obtained via
+data-driven identification techniques (i.e.  changes in volatility (Rigobon, R.
+(2003) <doi:10.1162/003465303772815727>), patterns of GARCH (Normadin, M.,
+Phaneuf, L. (2004) <doi:10.1016/j.jmoneco.2003.11.002>), independent component
+analysis (Matteson, D. S, Tsay, R. S., (2013)
+<doi:10.1080/01621459.2016.1150851>), least dependent innovations (Herwartz, H.,
+Ploedt, M., (2016) <doi:10.1016/j.jimonfin.2015.11.001>), smooth transition in
+variances (Luetkepohl, H., Netsunajev, A. (2017)
+<doi:10.1016/j.jedc.2017.09.001>) or non-Gaussian maximum likelihood (Lanne, M.,
+Meitz, M., Saikkonen, P. (2017) <doi:10.1016/j.jeconom.2016.06.002>)).")
+    (license license:expat)))
+
 (define-public r-svalues
   (package
     (name "r-svalues")
@@ -2830,37 +2900,6 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 <liorr@@clemson.edu> for questions regarding function coxDT and Yidan Shi
 <yidan.shi@@pennmedicine.upenn.edu> for questions regarding function coxDTdep.")
     (license license:gpl2)))
-
-(define-public r-survtmle
-  (package
-    (name "r-survtmle")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "survtmle" version))
-              (sha256
-               (base32
-                "1l13rvwq4915ij2a55fxdj3b3wkgjca1fbqzcgkjlpzkcn97k1nj"))))
-    (properties `((upstream-name . "survtmle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-superlearner
-                             r-stringr
-                             r-speedglm
-                             r-plyr
-                             r-matrix
-                             r-ggsci
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/benkeser/survtmle")
-    (synopsis
-     "Compute Targeted Minimum Loss-Based Estimates in Right-Censored Survival Settings")
-    (description
-     "Targeted estimates of marginal cumulative incidence in survival settings with
-and without competing risks, including estimators that respect bounds (Benkeser,
-Carone, and Gilbert.  Statistics in Medicine, 2017. <doi:10.1002/sim.7337>).")
-    (license license:expat)))
 
 (define-public r-survspearman
   (package
@@ -26353,6 +26392,30 @@ differentially expressed genes from gene expression data.")
      "Testing the mediation effect of multiple SNPs on an outcome through a mediator.")
     (license license:gpl2+)))
 
+(define-public r-smtl
+  (package
+    (name "r-smtl")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sMTL" version))
+              (sha256
+               (base32
+                "03xq19vh4g3j3jbpad92m2rg933h9lcy4wrzkdi9y47v8h3fqyw1"))))
+    (properties `((upstream-name . "sMTL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-juliaconnector r-juliacall r-glmnet r-dplyr
+                             r-caret))
+    (home-page "https://github.com/gloewing/sMTL")
+    (synopsis "Sparse Multi-Task Learning")
+    (description
+     "This package implements L0-constrained Multi-Task Learning and domain
+generalization algorithms.  The algorithms are coded in Julia allowing for fast
+implementations of the coordinate descent and local combinatorial search
+algorithms.  For more details, see a preprint of the paper: Loewinger et al.,
+(2022) <arXiv:2212.08697>.")
+    (license license:expat)))
+
 (define-public r-smss
   (package
     (name "r-smss")
@@ -30373,13 +30436,13 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
 (define-public r-sivs
   (package
     (name "r-sivs")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sivs" version))
               (sha256
                (base32
-                "1dc7q5kzgsi8ygy03ak9gw9m9397bli7hjphiax4gbr4df1sww64"))))
+                "04yyiww3236g0hvgxms460zcyiisr2ycdi6945xkh8hknkydxkxs"))))
     (properties `((upstream-name . "sivs")))
     (build-system r-build-system)
     (propagated-inputs (list r-varhandle r-proc r-glmnet r-foreach

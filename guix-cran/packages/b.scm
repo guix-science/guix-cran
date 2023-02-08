@@ -2990,13 +2990,13 @@ base graphics), permutation tests, running mean/median, and general utilities.")
 (define-public r-brolgar
   (package
     (name "r-brolgar")
-    (version "0.1.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brolgar" version))
               (sha256
                (base32
-                "0xhv76z75zsrvcy606cv8qvz14w5g02gcs2744kv1kflaaics7dx"))))
+                "0jw0cnszwdcj6jdxpr17bq338jaxihaacg62rr3n1ayig54bgbyn"))))
     (properties `((upstream-name . "brolgar")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3545,13 +3545,13 @@ Gaussian.")
 (define-public r-brglm2
   (package
     (name "r-brglm2")
-    (version "0.8.2")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brglm2" version))
               (sha256
                (base32
-                "065ldmbagarhipl6hl25rlpcnp7c3h1adadyq2wgx0g09hq5ibjf"))))
+                "1c8j0lbz8k2j5ksdar6sjlpiw09lhncny911rn8jynz9iisbs3r6"))))
     (properties `((upstream-name . "brglm2")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-nnet r-matrix r-mass r-enrichwith))
@@ -7823,36 +7823,6 @@ code related to the above model was retrieved from
 graphical representations or apply clustering techniques.")
     (license license:gpl2+)))
 
-(define-public r-blscraper
-  (package
-    (name "r-blscraper")
-    (version "3.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "blscrapeR" version))
-              (sha256
-               (base32
-                "14sj61jvnj9j2dkm2g9f7mhhd2b9yfx43sk68s96fahq7bk8i8ql"))))
-    (properties `((upstream-name . "blscrapeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/keberwein/blscrapeR")
-    (synopsis "An API Wrapper for the Bureau of Labor Statistics (BLS)")
-    (description
-     "Scrapes various data from <https://www.bls.gov/>.  The U.S. Bureau of Labor
-Statistics is the statistical branch of the United States Department of Labor.
-The package has additional functions to help parse, analyze and visualize the
-data.")
-    (license license:expat)))
-
 (define-public r-blrshiny2
   (package
     (name "r-blrshiny2")
@@ -8133,6 +8103,32 @@ continuous variable.  The package implements methods described in Grimmer,
 Marble, and Tanigawa-Lau (2022) <doi:10.31235/osf.io/c9fkg>.")
     (license license:gpl3+)))
 
+(define-public r-blocktools
+  (package
+    (name "r-blocktools")
+    (version "0.6.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blockTools" version))
+              (sha256
+               (base32
+                "0372ca7mgzz6j0gp2yn2mjpj0kq01jg3pyhd33s65srap2n0wg0d"))))
+    (properties `((upstream-name . "blockTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-mass r-dplyr))
+    (home-page "https://www.ryantmoore.org/html/software.blockTools.html")
+    (synopsis
+     "Block, Assign, and Diagnose Potential Interference in Randomized Experiments")
+    (description
+     "Blocks units into experimental blocks, with one unit per treatment condition, by
+creating a measure of multivariate distance between all possible pairs of units.
+ Maximum, minimum, or an allowable range of differences between units on one
+variable can be set.  Randomly assign units to treatment conditions.  Diagnose
+potential interference between units assigned to different treatment conditions.
+ Write outputs to .tex and .csv files.")
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-blocksdesign
   (package
     (name "r-blocksdesign")
@@ -8338,27 +8334,28 @@ omics covariate data.  BMC Bioinformatics 20:358.
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "2.1.4")
+    (version "3.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockCV" version))
               (sha256
                (base32
-                "1fikskjjq571rzmzmqf72z92qkvjb9wdx598kvd28y1ic0xzrgm6"))))
+                "0p5i9b0wg08zv94h4anmb30whdi7awxvwlhb78alyv15y03x7mxh"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-raster r-progress))
+    (propagated-inputs (list r-sf r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rvalavi/blockCV")
-    (synopsis "Spatial and Environmental Blocking for K-Fold Cross-Validation")
+    (synopsis
+     "Spatial and Environmental Blocking for K-Fold and LOO Cross-Validation")
     (description
      "Creating spatially or environmentally separated folds for cross-validation to
 provide a robust error estimation in spatially structured environments;
 Investigating and visualising the effective range of spatial autocorrelation in
-continuous raster covariates to find an initial realistic distance band to
-separate training and testing datasets spatially described in Valavi, R. et al.
-(2019) <doi:10.1111/2041-210X.13107>.")
-    (license license:gpl3)))
+continuous raster covariates and point samples to find an initial realistic
+distance band to separate training and testing datasets spatially described in
+Valavi, R. et al. (2019) <doi:10.1111/2041-210X.13107>.")
+    (license license:gpl3+)))
 
 (define-public r-blockcov
   (package
@@ -20227,13 +20224,13 @@ cyjShiny package from GitHub.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.0.0")
+    (version "2.1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "0zg7x2zls6abfrz083lhq9djfgdl9bnc433pjid85cvzw7di3syh"))))
+                "0ayq2bzzpibkgdxibq64g8zk4a3ic0niai90har3ra4dab3id0sg"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -23167,46 +23164,6 @@ project, query our tables, save data to disk and memory, all from R.")
 Outsourcing data import, renaming and type casting to a *.csv.  Manipulating
 imputed datasets and fitting models on them.  Summarizing models.")
     (license license:gpl3+)))
-
-(define-public r-baseballr
-  (package
-    (name "r-baseballr")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "baseballr" version))
-              (sha256
-               (base32
-                "091k270y01qmmfkqhf4nwpp327ywn4a2h9a263h2r4jni9kgawa5"))))
-    (properties `((upstream-name . "baseballr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-rcppparallel
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://billpetti.github.io/baseballr/")
-    (synopsis "Acquiring and Analyzing Baseball Data")
-    (description
-     "This package provides numerous utilities for acquiring and analyzing baseball
-data from online sources such as Baseball Reference
-<https://www.baseball-reference.com/>, FanGraphs <https://www.fangraphs.com/>,
-and the MLB Stats API <https://www.mlb.com/>.")
-    (license license:expat)))
 
 (define-public r-baseballdbr
   (package

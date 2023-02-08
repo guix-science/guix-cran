@@ -9159,16 +9159,16 @@ pre-processing so users can focus only on their model implementations.")
 (define-public r-torchaudio
   (package
     (name "r-torchaudio")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchaudio" version))
               (sha256
                (base32
-                "10hqx6yg14kz0vzyxg6g67lmkdsdxw7qz64pj5k3vvryiqzas4d4"))))
+                "06r4gwl1565spmjr4yqy6dixnp8knawlkdqi7r7pcxv60197a6v8"))))
     (properties `((upstream-name . "torchaudio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-torch r-rlang r-rcpp r-glue r-fs))
+    (propagated-inputs (list r-torch r-rlang r-glue r-fs r-av))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=torchaudio")
     (synopsis "R Interface to 'pytorch''s 'torchaudio'")
@@ -15396,13 +15396,13 @@ in Rmd documents, but this is pretty useless, besides contemplating them.")
 (define-public r-thor
   (package
     (name "r-thor")
-    (version "1.1.2")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "thor" version))
               (sha256
                (base32
-                "0r4kgzbydjb7z0j808g5zdkx5wmbqncqg453bqm4ylafpj5z79kv"))))
+                "0y75lnmjdcjxca3a0h9a30c0cll68arbv7rbdxkla92arm3k39vx"))))
     (properties `((upstream-name . "thor")))
     (build-system r-build-system)
     (propagated-inputs (list r-storr r-r6))
@@ -15411,9 +15411,9 @@ in Rmd documents, but this is pretty useless, besides contemplating them.")
     (synopsis "Interface to 'LMDB'")
     (description
      "Key-value store, implemented as a wrapper around LMDB'; the \"lightning
-memory-mapped database\" <https://symas.com/lmdb/>.  LMDB is a transactional key
-value store that uses a memory map for efficient access.  This package wraps the
-entire LMDB interface (except duplicated keys), and provides objects for
+memory-mapped database\" <https://www.symas.com/lmdb>.  LMDB is a transactional
+key value store that uses a memory map for efficient access.  This package wraps
+the entire LMDB interface (except duplicated keys), and provides objects for
 transactions and cursors.")
     (license license:expat)))
 
@@ -15820,13 +15820,13 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.4.1.1")
+    (version "0.4.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "theft" version))
               (sha256
                (base32
-                "11gpg044ypfnwvrb7y0fgm1ammh8w03yik8xb26kjax5xa74pcvl"))))
+                "17fria37d345qy2wid8f2h2yz12csdz6z8c7658sfq1lsqr6n6a6"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -15841,7 +15841,6 @@ website.")
                              r-rcatch22
                              r-r-matlab
                              r-purrr
-                             r-plotly
                              r-janitor
                              r-ggplot2
                              r-feasts
@@ -22787,13 +22786,13 @@ first table (i.e. \"Table 1\") in a medical/epidemiological journal article.")
 (define-public r-table-glue
   (package
     (name "r-table-glue")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "table.glue" version))
               (sha256
                (base32
-                "01yskmc604jdy6givddm0nhr9ylf7p68v2xz1p2mqylhws1lszph"))))
+                "1viaz9swdhgk4ysjhyvl9fr4m430qvmwwblij2b2dadwbdl0z9k4"))))
     (properties `((upstream-name . "table.glue")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-glue))

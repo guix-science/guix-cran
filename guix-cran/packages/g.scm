@@ -6256,13 +6256,13 @@ use the pretrained models from Hugging Face <https://huggingface.co/>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grafify" version))
               (sha256
                (base32
-                "191qicq7l8gdf61pf4fg2d1bpfiln3dfbmv5kipn1m59qsngmmxh"))))
+                "05cmkscv8va1ihza3ry2hz3r2fvkraqacqrf20qrw5w6gimmvb8i"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6288,7 +6288,7 @@ palettes).  Use the simple code for ANOVA as ordinary (lm()) or mixed-effects
 linear models (lmer()), including randomised-block or repeated-measures designs,
 and fit non-linear outcomes as a generalised additive model (gam) using mgcv().
 Obtain estimated marginal means and perform post-hoc comparisons on fitted
-models (via emmeans()).  Also includes small datasets for practicing code and
+models (via emmeans()).  Also includes small datasets for practising code and
 teaching basics before users move on to more complex designs.  See vignettes for
 details on usage <https://grafify-vignettes.netlify.app/>.  Citation:
 <doi:10.5281/zenodo.5136508>.")
@@ -20690,13 +20690,13 @@ at the University of Chicago.  Datasets are stored as sf objects.")
 (define-public r-geocmeans
   (package
     (name "r-geocmeans")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geocmeans" version))
               (sha256
                (base32
-                "0c87m0ram8lqcygxg60abgf9pm3aiydgagdhgqh6pd49bzizgibx"))))
+                "11ki3maklaj3c4fx9cs6l8virzhzxdrkrlr231rg0bvs3hlpwagj"))))
     (properties `((upstream-name . "geocmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap

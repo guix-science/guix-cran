@@ -6229,34 +6229,6 @@ Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
 multiplicative interaction terms.")
     (license license:expat)))
 
-(define-public r-interplex
-  (package
-    (name "r-interplex")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "interplex" version))
-              (sha256
-               (base32
-                "04ylskk2i9pmidknz5wfwba87d710gycrw3p3d29nd2s433scrbk"))))
-    (properties `((upstream-name . "interplex")))
-    (build-system r-build-system)
-    (home-page "https://github.com/corybrunson/interplex")
-    (synopsis "Coercion Methods for Simplicial Complex Data Structures")
-    (description
-     "Computational topology, which includes topological data analysis (TDA), makes
-pervasive use of abstract mathematical objects called simplicial complexes; see
-Edelsbrunner and Harer (2010) <doi:10.1090/mbk/069>.  Several R packages and
-other software libraries used through an R interface construct and use data
-structures that represent simplicial complexes, including mathematical graphs
-viewed as 1-dimensional complexes.  This package provides coercers (converters)
-between these data structures.  Currently supported structures are complete
-lists of simplices as used by TDA'; the simplex trees of Boissonnat and Maria
-(2014) <doi:10.1007/s00453-014-9887-3> as implemented in simplextree and in
-Python GUDHI (by way of reticulate'); and the graph classes of igraph and
-network', by way of the intergraph package.")
-    (license license:gpl3+)))
-
 (define-public r-interlinear
   (package
     (name "r-interlinear")

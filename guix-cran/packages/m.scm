@@ -3820,34 +3820,6 @@ non-invasive marks.  See McClintock (2015) <doi:10.1002/ece3.1676> and Maronde
 et al. (2020) <doi:10.1002/ece3.6990>.")
     (license license:gpl2)))
 
-(define-public r-multilink
-  (package
-    (name "r-multilink")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "multilink" version))
-              (sha256
-               (base32
-                "11fbbqvnh47lnqcfwvy2vb2s0h92mj2dqfgc1x2zh232il782p6b"))))
-    (properties `((upstream-name . "multilink")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-recordlinkage
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mcclust
-                             r-igraph
-                             r-geosphere))
-    (home-page "https://github.com/aleshing/multilink")
-    (synopsis "Multifile Record Linkage and Duplicate Detection")
-    (description
-     "Implementation of the methodology of Aleshin-Guendel & Sadinle (2022)
-<doi:10.1080/01621459.2021.2013242>.  It handles the general problem of
-multifile record linkage and duplicate detection, where any number of files are
-to be linked, and any of the files may have duplicates.")
-    (license license:gpl3)))
-
 (define-public r-multilinguer
   (package
     (name "r-multilinguer")
@@ -9265,13 +9237,13 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mpathsenser" version))
               (sha256
                (base32
-                "1ykaxkidkihqsv2mrb67gy1xmpsnr0byd9gng0d30m8wc5f827gk"))))
+                "0hjq8ka85yxlzjlln7ravwcrrw85gw0a671v3rjzww9nx1h5gp8h"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11491,13 +11463,13 @@ method.")
 (define-public r-mombf
   (package
     (name "r-mombf")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mombf" version))
               (sha256
                (base32
-                "1zx7rq2nfwbwdkhkjj3c0kr4ckf9ycm2ag3p3ff295jpm3wswfha"))))
+                "0ix1j8zj1qs3w77nfxrr9ch7a1glygb0wfj6wwchj7ba9psp31l2"))))
     (properties `((upstream-name . "mombf")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11509,7 +11481,8 @@ method.")
                              r-mvtnorm
                              r-mgcv
                              r-mclust
-                             r-glmnet))
+                             r-glmnet
+                             r-dplyr))
     (home-page "https://github.com/davidrusi/mombf")
     (synopsis "Model Selection with Bayesian Methods and Information Criteria")
     (description
@@ -12740,13 +12713,13 @@ Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modeltime" version))
               (sha256
                (base32
-                "11l4yysk5g4p0vh4h7dyqkzxa5cm3q3cjlimwhmbslfby36hki6x"))))
+                "0avms0vg79idxsr9ly12jhkx1qv4ykvj7fmx680xajjq4k3wl7z6"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14230,6 +14203,31 @@ Public Release; Distribution Unlimited.")
     (license (list (license:fsdg-compatible "FreeBSD")
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mmstat4
+  (package
+    (name "r-mmstat4")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mmstat4" version))
+              (sha256
+               (base32
+                "0q19064qbdr5cnk45rmm7xyawdmsi2hkywbadlf4v06blyzsk3p0"))))
+    (properties `((upstream-name . "mmstat4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rstudioapi r-rio r-rappdirs))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mmstat4")
+    (synopsis "Access to Teaching Materials from a ZIP File or GitHub")
+    (description
+     "Teaching materials, e.g. R programs, Shiny apps, data and PDF/HTML documents,
+which are stored on the Internet in a ZIP file (e.g. as a GitHub repository) can
+be downloaded.  They can be displayed or run locally.  The content of the ZIP
+file is temporarily (or permanently) stored.  The GitHub repository
+sigbertklinke/mmstat4.data is used as the default repository.  In addition, some
+auxiliary functions are implemented.")
+    (license license:gpl3)))
+
 (define-public r-mmsample
   (package
     (name "r-mmsample")
@@ -15031,13 +15029,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmand
   (package
     (name "r-mmand")
-    (version "1.6.2")
+    (version "1.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmand" version))
               (sha256
                (base32
-                "0hwrxplvr2c9iv2952ia5d4l33ydyz14gryn4s5ifa5h4qq1y9nm"))))
+                "18bl3s0x0rm3yg7zjamhl6rn2bknxg75ilqgi28ikzbrp2k5sdzw"))))
     (properties `((upstream-name . "mmand")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -32593,13 +32591,13 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 (define-public r-mbvs
   (package
     (name "r-mbvs")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mBvs" version))
               (sha256
                (base32
-                "1fmi4ap55jl06swivspk24acwf5n4wd9agiw330z15x427j579s3"))))
+                "14ds64mm0nrrpfr01kmx5fsvl0kqzhiq8qgmzgmyzs7c4hcs3050"))))
     (properties `((upstream-name . "mBvs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mBvs")
@@ -32608,7 +32606,7 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
      "Bayesian variable selection methods for data with multivariate responses and
 multiple covariates.  The package contains implementations of multivariate
 Bayesian variable selection methods for continuous data (Lee et al., Biometrics,
-2017 <doi: 10.1111/biom.12557>) and zero-inflated count data (Lee et al.,
+2017 <doi:10.1111/biom.12557>) and zero-inflated count data (Lee et al.,
 Biostatistics, 2020 <doi:10.1093/biostatistics/kxy067>).")
     (license license:gpl2+)))
 
@@ -35058,13 +35056,13 @@ compiled C++ for efficiency.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MassWateR" version))
               (sha256
                (base32
-                "1zvhb48phs6mihqxnm6fcarrgla9jfknccqsfy3z8jgckrjbi7vi"))))
+                "1camkfqra5qbc891gy6d9nnxfbqx7jvd0zn2bb5644a7n7gpbs76"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

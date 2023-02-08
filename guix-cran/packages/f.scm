@@ -11397,13 +11397,13 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finbif" version))
               (sha256
                (base32
-                "1fsap2saq8xr9s440h195851987sp3aaw8bjg66s3bsk78bvap1s"))))
+                "1kfjg1326mjmb0scm0vd59byipv6qmc3y843ixqchscd6qmksm8n"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))
@@ -15679,13 +15679,13 @@ multiple values to be replaced with NA using a single function.")
 (define-public r-faux
   (package
     (name "r-faux")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "faux" version))
               (sha256
                (base32
-                "0cmgsm8c8w5d5zk00j4872x7fby0rdi7lmw0w0ncahlnh72grpjm"))))
+                "0jmjjgrgh9i5jrzfzqb689qlg69haljw0k8m5bb4axnz1nll39vi"))))
     (properties `((upstream-name . "faux")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
