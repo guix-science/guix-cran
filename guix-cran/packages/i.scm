@@ -1397,6 +1397,29 @@ of applications.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ispdata
+  (package
+    (name "r-ispdata")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ispdata" version))
+              (sha256
+               (base32
+                "1bivyhjcqxma7cszqd71vmj0pcld08p6slmqyjl5zzyw85vglh9f"))))
+    (properties `((upstream-name . "ispdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-openxlsx r-janitor r-dplyr))
+    (home-page "https://cran.r-project.org/package=ispdata")
+    (synopsis
+     "Access Data from the Public Security Institute of the State of Rio De Janeiro")
+    (description
+     "Allows access to data from the Rio de Janeiro Public Security Institute (ISP),
+such as criminal statistics, data on gun seizures and femicide.  The package
+also contains the spatial data of Pacifying Police Units (UPPs) and Integrated
+Public Safety Regions, Areas and Circumscriptions.")
+    (license license:expat)))
+
 (define-public r-ispd
   (package
     (name "r-ispd")
@@ -12013,6 +12036,31 @@ association data, especially with large controls re-sequenced data.")
     (description
      "Compute both static onestep and iterative multistep time series forecasts of
 machine learning models.")
+    (license license:gpl2+)))
+
+(define-public r-ifmcdm
+  (package
+    (name "r-ifmcdm")
+    (version "0.1.15")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IFMCDM" version))
+              (sha256
+               (base32
+                "0c28m1x5zvnprm0pqifxkpw41jv6mv0k3cyy0fxdmizwcmqq69ay"))))
+    (properties `((upstream-name . "IFMCDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=IFMCDM")
+    (synopsis "Intuitionistic Fuzzy Multi-Criteria Decision Making Methods")
+    (description
+     "Implementation of two multi-criteria decision making methods (MCDM):
+Intuitionistic Fuzzy Synthetic Measure (IFSM) and Intuitionistic Fuzzy Technique
+for Order of Preference by Similarity to Ideal Solution (IFTOPSIS) for
+intuitionistic fuzzy data sets for multi-criteria decision making problems.
+References describing the methods: JefmaÅski (2020)
+<doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
+(2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
 
 (define-public r-ifctools

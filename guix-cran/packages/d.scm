@@ -13988,16 +13988,22 @@ and bindings to R.")
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
-    (version "2.1.5")
+    (version "2.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dgpsi" version))
               (sha256
                (base32
-                "192s2scnf28qa410c8s52djiq8rb5pcfwc01lix2iny1ic4xqw45"))))
+                "1p3gpn6yqznxzngp5m0n5ph4cjjhpiiv16df06m9bnqgh4jkqi1p"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-reshape2 r-patchwork r-ggplot2
+    (propagated-inputs (list r-reticulate
+                             r-reshape2
+                             r-patchwork
+                             r-lhs
+                             r-ggplot2
+                             r-ggforce
+                             r-bitops
                              r-benchmarkme))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mingdeyu/dgpsi-R")
@@ -14008,7 +14014,7 @@ and bindings to R.")
 process, and linked Gaussian process emulations of computer models and systems
 of computer models.  The implementations follow Ming & Guillas (2021)
 <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2022)
-<arXiv:2107.01590>.  To get started with the package, see
+<doi:10.1080/00401706.2022.2124311>.  To get started with the package, see
 <https://mingdeyu.github.io/dgpsi-R/>.")
     (license license:expat)))
 
@@ -17094,30 +17100,30 @@ consideration.")
 (define-public r-demography
   (package
     (name "r-demography")
-    (version "1.22")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "demography" version))
               (sha256
                (base32
-                "1m15capbfknr4rqxmfgj1vb7rmgambk6r9ic37149525sg7wn3j6"))))
+                "0smkfivhhpa5cz5kh33dh3vl4zb102mjazxsxd382z7cwfqldffd"))))
     (properties `((upstream-name . "demography")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
-                             r-rcurl
                              r-rainbow
                              r-mgcv
+                             r-hmdhfdplus
                              r-ftsa
                              r-forecast
                              r-cobs))
-    (home-page "https://github.com/robjhyndman/demography")
+    (home-page "https://pkg.robjhyndman.com/demography/")
     (synopsis
      "Forecasting Mortality, Fertility, Migration and Population Data")
     (description
      "This package provides functions for demographic analysis including lifetable
 calculations; Lee-Carter modelling; functional data analysis of mortality rates,
 fertility rates, net migration numbers; and stochastic population forecasting.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-demographictable
   (package

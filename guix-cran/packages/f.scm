@@ -6289,13 +6289,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "0.2.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestploter" version))
               (sha256
                (base32
-                "1x63sz8diw2agyxkmhr2li29vz0x8j9v8v9y14v8qsmh5gfnwska"))))
+                "1y4934azp46xicppsrkhc2nna4wz30vawm0djinzi5fnvdg8bzis"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtable r-gridextra))
@@ -12834,13 +12834,13 @@ transform in the west (FFTW) library <http://www.fftw.org/>.")
 (define-public r-fftrees
   (package
     (name "r-fftrees")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FFTrees" version))
               (sha256
                (base32
-                "0snjqj0fzc93fams26h4vglhl91cqkphc1f2i3jar7f3ilj1qn2a"))))
+                "1f300ciyq773zw50zd2hjighyjjy7b14j4h0ixz01gkxcq4pkd9c"))))
     (properties `((upstream-name . "FFTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12863,11 +12863,11 @@ transform in the west (FFTW) library <http://www.fftw.org/>.")
      "Generate, Visualise, and Evaluate Fast-and-Frugal Decision Trees")
     (description
      "Create, visualize, and test fast-and-frugal decision trees (FFTs) using the
-algorithms and methods described in Phillips, Neth, Woike & Gaissmaier (2017).
-FFTs are simple and transparent decision trees for solving binary classification
-problems.  FFTs can be preferable to more complex algorithms because they
-require very little information, are easy to communicate, and are robust against
-overfitting.")
+algorithms and methods described by Phillips, Neth, Woike & Gaissmaier (2017),
+<doi:10.1017/S1930297500006239>.  FFTs are simple and transparent decision trees
+for solving binary classification problems.  FFTs can be preferable to more
+complex algorithms because they require very little information, are easy to
+understand and communicate, and are robust against overfitting.")
     (license license:cc0)))
 
 (define-public r-ffp

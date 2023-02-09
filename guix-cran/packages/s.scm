@@ -52631,13 +52631,13 @@ cancer data <arXiv:2012.06093>.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAMtool" version))
               (sha256
                (base32
-                "0wznrav9ackgyf95hrr08vvdzr0i3d9c8y6j675j7mfrngmlakyq"))))
+                "09bs0q0h1mh377ws6ljcwh527gvqkppd85vj57xyzah5zdfi567c"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars

@@ -9159,13 +9159,13 @@ pre-processing so users can focus only on their model implementations.")
 (define-public r-torchaudio
   (package
     (name "r-torchaudio")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchaudio" version))
               (sha256
                (base32
-                "06r4gwl1565spmjr4yqy6dixnp8knawlkdqi7r7pcxv60197a6v8"))))
+                "1zn9z2z2yv1xjmpf5xcyxachmmbwk2g0y3nipvjgpwbqkjr7p9y6"))))
     (properties `((upstream-name . "torchaudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch r-rlang r-glue r-fs r-av))

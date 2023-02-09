@@ -2502,6 +2502,30 @@ text.  The techniques are explained in detail in the paper: StarSpace: Embed All
 The Things! by Wu et al. (2017), available at <arXiv:1709.03856>.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
+(define-public r-ruijter
+  (package
+    (name "r-ruijter")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ruijter" version))
+              (sha256
+               (base32
+                "0phsqnwh47hwl26qihgrrlrazhdzhi6jnmhbylzkpqsclcpl52b7"))))
+    (properties `((upstream-name . "ruijter")))
+    (build-system r-build-system)
+    (home-page "https://github.com/ramiromagno/ruijter")
+    (synopsis "Technical Data Sets by 'Ruijter et al.' (2013)")
+    (description
+     "The real-time quantitative polymerase chain reaction ('PCR') technical data sets
+by Ruijter et al. (2013) <doi:10.1016/j.ymeth.2012.08.011>: (i) the four-point
+10-fold dilution series; (ii) 380 replicates; and (iii) the competimer data set.
+ These three data sets can be used to benchmark qPCR methods.  Original data set
+is available at
+<https://medischebiologie.nl/wp-content/uploads/2019/02/qpcrdatamethods.zip>.
+This package fixes incorrect annotations in the original data sets.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-rugarch
   (package
     (name "r-rugarch")
@@ -5163,16 +5187,15 @@ citation(\"Rssa\") for details.")
 (define-public r-rsrd
   (package
     (name "r-rsrd")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rSRD" version))
               (sha256
                (base32
-                "01mriw34m77ymrkjh04bb8bpaqdbxcv3zds63043v693d80w3yxi"))))
+                "1srvv49xxkq2nx7fvbn3d2hr4v6ypkxgz6ms1l89zgd0ypdgmypa"))))
     (properties `((upstream-name . "rSRD")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -13038,13 +13061,13 @@ calculate the aggregated precision-recall (PR) curve.")
 (define-public r-robyn
   (package
     (name "r-robyn")
-    (version "3.7.2")
+    (version "3.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Robyn" version))
               (sha256
                (base32
-                "1aink4v36sd1vfb4ypfsyg2bhi9lbwqvyp4y5qqc1dqxhcdpa11h"))))
+                "10zsv3h3v4p922m4d27ym4prgx542qncm4wy7sxf7n8yb640yyx5"))))
     (properties `((upstream-name . "Robyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

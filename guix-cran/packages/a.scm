@@ -4561,13 +4561,13 @@ the Boost Software License', Version 1.0.")
 (define-public r-asht
   (package
     (name "r-asht")
-    (version "0.9.8")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asht" version))
               (sha256
                (base32
-                "0l0nmjz4vgqv3n36868k3zc47a504953dqma20fb20w482vns4zj"))))
+                "1vv88qrbdjav025ccw0nvxlhmxnyjb5frn4wb7sbxxzaaqflcmhc"))))
     (properties `((upstream-name . "asht")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv
@@ -4589,9 +4589,10 @@ Fay and Malinovsky <doi:10.1002/sim.7890>], two-sample melding tests [see Fay,
 Proschan, and Brittain <doi:10.1111/biom.12231>], one-way ANOVA allowing
 var.equal=FALSE [see Brown and Forsythe, 1974, Biometrics]), prevalence
 confidence intervals that adjust for sensitivity and specificity [see Lang and
-Reiczigel, 2014 <doi:10.1016/j.prevetmed.2013.09.015>]).  The focus is on
-hypothesis tests that have compatible confidence intervals, but some functions
-only have confidence intervals (e.g., prevSeSp).")
+Reiczigel, 2014 <doi:10.1016/j.prevetmed.2013.09.015>] or Bayer, Fay, and
+Graubard, 2023 <doi:10.48550/arXiv.2205.13494>).  The focus is on hypothesis
+tests that have compatible confidence intervals, but some functions only have
+confidence intervals (e.g., prevSeSp).")
     (license license:gpl3)))
 
 (define-public r-asgs-foyer
@@ -18020,13 +18021,13 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
 (define-public r-act
   (package
     (name "r-act")
-    (version "1.1.9")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "act" version))
               (sha256
                (base32
-                "094sm7afkjrgyhc1p7wj7akrlm65fxwkljgnlldq0z2bf2df07ab"))))
+                "01q2xmdqga1gffg18njaa36l5bzpw0lbqiyxxsynydzymanqr88c"))))
     (properties `((upstream-name . "act")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

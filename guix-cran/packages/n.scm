@@ -5276,13 +5276,13 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
 (define-public r-nlsr
   (package
     (name "r-nlsr")
-    (version "2022.8.16")
+    (version "2023.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlsr" version))
               (sha256
                (base32
-                "0sxaz7rn10rwlkjaqzgh1fzrhmbinpvwc4myz5ipdzhaf7vszksn"))))
+                "1da5267ppr4c77kdxyn6hmvzpf9cilpka9m916x3v9438cq596s3"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))

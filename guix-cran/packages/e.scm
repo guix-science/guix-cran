@@ -4609,16 +4609,16 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etwfe" version))
               (sha256
                (base32
-                "0b34kfcl2id2x2636i1y9655842my6vlcwk3igkrm45s18mn5hlg"))))
+                "0vi5d58am60w13ch1cdi6c8xsmy69hql75s1wn7z91angsz9ya57"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
-    (propagated-inputs (list r-marginaleffects r-formula r-fixest))
+    (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://grantmcdermott.com/etwfe/")
     (synopsis "Extended Two-Way Fixed Effects")
@@ -19409,16 +19409,16 @@ the resulting color palette.")
 (define-public r-earthtide
   (package
     (name "r-earthtide")
-    (version "0.0.14")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "earthtide" version))
               (sha256
                (base32
-                "1p8l65w609nfcnq3b3xfzs11mi9s2ysr4k5qwsml6bbdyqbvnlpb"))))
+                "06js9czzp5l83cdxmpjc7kkcvyadm9ic3zwd68kic21gcmcfaw0k"))))
     (properties `((upstream-name . "earthtide")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-r6 r-bh))
+    (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-r6 r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jkennel/earthtide")
     (synopsis

@@ -1901,13 +1901,13 @@ GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cubist
   (package
     (name "r-cubist")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Cubist" version))
               (sha256
                (base32
-                "0ab1zdc1ddc6x7j2y53ccvqwaap6v26i447hn8lwlnz6i7c3idlz"))))
+                "1ksx997mb7ndvhaf83mfk9pyxnl4x1634p2kcpzpa0bjk79d3dim"))))
     (properties `((upstream-name . "Cubist")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-lattice))
@@ -7834,6 +7834,43 @@ analysis of cluster randomized trials with time-to-event outcomes using the
 marginal Cox model, proposed by Wang et al. (under review).")
     (license license:gpl2+)))
 
+(define-public r-coxaipw
+  (package
+    (name "r-coxaipw")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CoxAIPW" version))
+              (sha256
+               (base32
+                "0nfammmlm92hz2d9z0qf2q0lfwxr4bv28c5yprcmxd19gphbl0q8"))))
+    (properties `((upstream-name . "CoxAIPW")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-ranger
+                             r-randomforestsrc
+                             r-pracma
+                             r-polspline
+                             r-gbm))
+    (home-page "https://github.com/charlesluo1002/CoxAIPW")
+    (synopsis
+     "Doubly Robust Inference for Cox Marginal Structural Model with Informative Censoring")
+    (description
+     "Doubly robust estimation and inference of log hazard ratio under the Cox
+marginal structural model with informative censoring.  An augmented inverse
+probability weighted estimator that involves 3 working models, one for
+conditional failure time T, one for conditional censoring time C and one for
+propensity score.  Both models for T and C can depend on both a binary treatment
+A and additional baseline covariates Z, while the propensity score model only
+depends on Z. With the help of cross-fitting techniques, achieves the
+rate-doubly robust property that allows the use of most machine learning or
+non-parametric methods for all 3 working models, which are not permitted in
+classic inverse probability weighting or doubly robust estimators.  Reference:
+Robins & Finkelstein (2000)<doi:10.1111/j.0006-341x.2000.00779.x>; Hernan et al
+(2001)<doi:10.1198/016214501753168154>.")
+    (license license:gpl3)))
+
 (define-public r-cowsay
   (package
     (name "r-cowsay")
@@ -10512,6 +10549,33 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
 state/province.  Data source: Johns Hopkins University Center for Systems
 Science and Engineering (JHU CCSE) Coronavirus
 <https://systems.jhu.edu/research/public-health/ncov/>.")
+    (license license:expat)))
+
+(define-public r-coronanetr
+  (package
+    (name "r-coronanetr")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CoronaNetR" version))
+              (sha256
+               (base32
+                "1qqlkcbwmr9g8rnsgb7dd1npd09sva11y6fy1g7l4wdvmpw07ymh"))))
+    (properties `((upstream-name . "CoronaNetR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-r-utils r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CoronaNetDataScience/CoronaNetR")
+    (synopsis "API Access to 'CoronaNet' Data")
+    (description
+     "Offers access to a database on government responses to the COVID-19 pandemic.
+To date, the CoronaNet dataset provides the most comprehensive and granular
+documentation of such government policies in the world, capturing data for 20
+broad policy categories alongside many other dimensions, including the
+initiator, target, and timing of a policy.  This package is a programmatic
+front-end to up-to-date CoronaNet policy records and the CoronaNet policy
+intensity index scores.  For more information, see Cheng et al. (2020)
+<doi:10.1038/s41562-020-0909-7>.")
     (license license:expat)))
 
 (define-public r-corona
@@ -20503,13 +20567,13 @@ and conditional ISOMAP.")
 (define-public r-cmhnpa
   (package
     (name "r-cmhnpa")
-    (version "0.1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CMHNPA" version))
               (sha256
                (base32
-                "0ijrc50qkxa0wk91bb2mnw93d1400c66a9v7zy51b7a2wwg77wwm"))))
+                "08pjnc2l2ip8x9hbgsp74alrk520an5kq0lxwqh33smfw1frw4ql"))))
     (properties `((upstream-name . "CMHNPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-car))
@@ -37461,13 +37525,13 @@ symmetrical ca and three-way ordered non-symmetrical ca.")
 (define-public r-c50
   (package
     (name "r-c50")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "C50" version))
               (sha256
                (base32
-                "1q76bnnw79i7q7afxdh2pdampbacbkvscc5q8r78jailx5cr18dy"))))
+                "05cwvapd84b40v90kfkhjhawhhaq5bm7nscnjd95flpds1gbvldv"))))
     (properties `((upstream-name . "C50")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-cubist))

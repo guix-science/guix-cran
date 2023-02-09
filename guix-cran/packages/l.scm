@@ -15226,13 +15226,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-lacunaritycovariance
   (package
     (name "r-lacunaritycovariance")
-    (version "1.1-4")
+    (version "1.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lacunaritycovariance" version))
               (sha256
                (base32
-                "0w0xlc4xxy7yzscxvk3ls9pv1vw5ddx1zvx02pzvm4gc9mrfz2qr"))))
+                "15jyn0ambpknzzh2lblsf20va5rw8vxa29gimjql069qlvaavq00"))))
     (properties `((upstream-name . "lacunaritycovariance")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom

@@ -4731,6 +4731,40 @@ data sets and six vignettes covering a range different applications.")
 Multibiplot Analysis.")
     (license license:gpl2+)))
 
+(define-public r-multibiasmeta
+  (package
+    (name "r-multibiasmeta")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multibiasmeta" version))
+              (sha256
+               (base32
+                "1f17qdfqq0l2rivd48hs9gsgca8swvza8q9m1hwxcmpswa4spjy5"))))
+    (properties `((upstream-name . "multibiasmeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robumeta
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-metafor
+                             r-metabias
+                             r-evalue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mathurlabstanford/multibiasmeta")
+    (synopsis "Sensitivity Analysis for Multiple Biases in Meta-Analyses")
+    (description
+     "Meta-analyses can be compromised by studies internal biases (e.g., confounding
+in nonrandomized studies) as well as by publication bias.  This package conducts
+sensitivity analyses for the joint effects of these biases (per Mathur (2022)
+<doi:10.31219/osf.io/u7vcb>).  These sensitivity analyses address two questions:
+(1) For a given severity of internal bias across studies and of publication
+bias, how much could the results change?; and (2) For a given severity of
+publication bias, how severe would internal bias have to be, hypothetically, to
+attenuate the results to the null or by a given amount?")
+    (license license:expat)))
+
 (define-public r-multibd
   (package
     (name "r-multibd")
@@ -10347,6 +10381,30 @@ endosteal contours of each cross section.")
 permutation tests, detection of outliers, processing of sliding semi-landmarks
 and semi-automated surface landmark placement.")
     (license license:gpl2)))
+
+(define-public r-morpheus
+  (package
+    (name "r-morpheus")
+    (version "1.0-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "morpheus" version))
+              (sha256
+               (base32
+                "1nrl68lbrrhjcf39kqywhsb2d963vf2ad39g3v01wnzyzb3515il"))))
+    (properties `((upstream-name . "morpheus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-mass r-jointdiag))
+    (home-page "https://github.com/yagu0/morpheus")
+    (synopsis "Estimate Parameters of Mixtures of Logistic Regressions")
+    (description
+     "Mixture of logistic regressions parameters (H)estimation with (U)spectral
+methods.  The main methods take d-dimensional inputs and a vector of binary
+outputs, and return parameters according to the GLMs mixture model (General
+Linear Model).  For more details see chapter 3 in the PhD thesis of Mor-Absa
+Loum: <https://www.theses.fr/s156435>, available here
+<https://theses.hal.science/tel-01877796/document>.")
+    (license license:expat)))
 
 (define-public r-morphemepiece-data
   (package
@@ -26430,6 +26488,31 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 <doi:10.1186/s40168-018-0402-y>).")
     (license license:expat)))
 
+(define-public r-metalite
+  (package
+    (name "r-metalite")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metalite" version))
+              (sha256
+               (base32
+                "1q4yjfxfc9gmdqqrz43hjvvdszkq3515ajgjmy749xxg58llav2a"))))
+    (properties `((upstream-name . "metalite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://merck.github.io/metalite/")
+    (synopsis "ADaM Metadata Structure")
+    (description
+     "This package provides a metadata structure for clinical data analysis and
+reporting based on Analysis Data Model (ADaM) datasets.  The package simplifies
+clinical analysis and reporting tool development by defining standardized
+inputs, outputs, and workflow.  The package can be used to create analysis and
+reporting planning grid, mock table, and validated analysis and reporting
+results based on consistent inputs.")
+    (license license:gpl3)))
+
 (define-public r-metalik
   (package
     (name "r-metalik")
@@ -28331,13 +28414,13 @@ normalization approach in their test statistics.  Betken (2016)
 (define-public r-memo
   (package
     (name "r-memo")
-    (version "1.0.2")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "memo" version))
               (sha256
                (base32
-                "01mqhv8vyg241nfb3qcq32vgxakmg5slx4xj8k4ymafxbwffijnk"))))
+                "15wqadjwjrkj3vlq19x1j50nddfrm1lvipahxvmiv94lmy71pdlj"))))
     (properties `((upstream-name . "memo")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))

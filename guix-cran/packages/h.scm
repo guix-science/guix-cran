@@ -770,13 +770,13 @@ widely used in hydrology and stream ecology.")
 (define-public r-hydroroute
   (package
     (name "r-hydroroute")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydroroute" version))
               (sha256
                (base32
-                "1a1vlbq5cnvhq5mjk9imvj869xmmhq814zvvfysw7jp63z5gvd47"))))
+                "1pvdvfmjrxplcycszaig2xbwlk1acs6smci1cwmmhdh2xpaffami"))))
     (properties `((upstream-name . "hydroroute")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -799,8 +799,8 @@ the identification of associated events and uses (linear) regression models to
 describe translation and retention processes between neighboring hydrographs.
 Several regression model results are combined to arrive at a power
 plant-specific model.  The approach is proposed and validated in Greimel et al.
-(2022, accepted with minor revisions).  The identification of associated events
-is based on the event detection implemented in hydropeak'.")
+(2022) <doi:10.1002/rra.3978>.  The identification of associated events is based
+on the event detection implemented in hydropeak'.")
     (license license:gpl2)))
 
 (define-public r-hydropso

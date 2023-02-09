@@ -21894,16 +21894,16 @@ clusters.")
 (define-public r-phinfiniteestimates
   (package
     (name "r-phinfiniteestimates")
-    (version "2.5")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PHInfiniteEstimates" version))
               (sha256
                (base32
-                "0q7gxpfyigvzk7xdpy0bdvvmac7ww1m20il5qgb0bv91rninmr91"))))
+                "1igpckqwsasrrwlphggadn7dzxilm3vqdx419wkxfjhpy2q9hbd9"))))
     (properties `((upstream-name . "PHInfiniteEstimates")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rdpack r-lpsolve r-coxphf))
+    (propagated-inputs (list r-survival r-rdpack r-nph r-lpsolve r-coxphf))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=PHInfiniteEstimates")
     (synopsis "Tools for Inference in the Presence of a Monotone Likelihood")

@@ -5476,13 +5476,13 @@ other pipeline or simultaneously analyze multiple gene lists.")
 (define-public r-webfakes
   (package
     (name "r-webfakes")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webfakes" version))
               (sha256
                (base32
-                "0aqa315a8ymfjgg3n7nri7r135r60gwkz118r2jy2bigml31szd4"))))
+                "1f7n8i4z6vcd5p0kr3wg4g2hvnm0vsh3qwlmfbrkspi9k7x4w0kf"))))
     (properties `((upstream-name . "webfakes")))
     (build-system r-build-system)
     (home-page "https://webfakes.r-lib.org/")
@@ -5899,13 +5899,13 @@ indicators.")
 (define-public r-wcorr
   (package
     (name "r-wcorr")
-    (version "1.9.5")
+    (version "1.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wCorr" version))
               (sha256
                (base32
-                "10mnrs5ymc3ms1z5vs0h05rjq1642n3asvm77x7lxq9qwx67s3vn"))))
+                "1f71fxn1cp0rgjf7lmx49dll35ys3lz7s8pw2qrfy59c86wnqvhs"))))
     (properties `((upstream-name . "wCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnormt r-minqa))
