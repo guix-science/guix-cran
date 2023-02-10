@@ -3452,13 +3452,13 @@ the overall sparsity of the final model.")
 (define-public r-groupr
   (package
     (name "r-groupr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groupr" version))
               (sha256
                (base32
-                "1gych92dpyxg2vfm3h6djw61d9z2n6q2kvbz1xpq1p0zcyiw16gy"))))
+                "1b62bbcl4x8chl9q71xqaihxcz2xf4hmwbpb6bp8ya2vnvsyabnb"))))
     (properties `((upstream-name . "groupr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3466,6 +3466,7 @@ the overall sparsity of the final model.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-pillar
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ngriffiths21/groupr")
@@ -5501,13 +5502,13 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
 (define-public r-graphpaf
   (package
     (name "r-graphpaf")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graphPAF" version))
               (sha256
                (base32
-                "0jdr4q0wyj9a2s04hgq6gvxgz0akdm35i6sxg4pa09wzh2fgjw0c"))))
+                "144ymjvyqlwd8na8vn503f3bj9vwa9wcz226k5bnam11xz0cjza6"))))
     (properties `((upstream-name . "graphPAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -6712,70 +6713,6 @@ writes Stan code, checks it for convergence and adds artificial noise to prevent
 overfitting and returns a plot of actual values and estimated counterfactual
 values using r-base plot.")
     (license license:gpl2+)))
-
-(define-public r-gpom-fdlyapu
-  (package
-    (name "r-gpom-fdlyapu")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GPoM.FDLyapu" version))
-              (sha256
-               (base32
-                "1hpgiwh7b50gazp1msjsh2840b91wfrxhl2l45lxg6jr1m34q8pj"))))
-    (properties `((upstream-name . "GPoM.FDLyapu")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-gpom r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GPoM.FDLyapu")
-    (synopsis "Lyapunov Exponents and Kaplan-Yorke Dimension")
-    (description
-     "Estimation of the spectrum of Lyapunov Exponents and the Kaplan-Yorke dimension
-of any low-dimensional model of polynomial form.  It can be applied, for
-example, to systems such as the chaotic Lorenz-1963 system or the hyperchaotic
-Rossler-1979 system.  It can also be applied to dynamical models in Ordinary
-Differential Equations (ODEs) directly obtained from observational time series
-using the GPoM package.  The approach used is semi-formal, the Jacobian matrix
-being estimated automatically from the polynomial equations.  Two methods are
-made available; one introduced by Wolf et al. (1985)
-<doi:10.1016/0167-2789(85)90011-9> and the other one introduced by Grond et al.
-(2003) <doi:10.1016/S0960-0779(02)00479-4>.  The package is provided with an
-interface for a more intuitive usage, it can also be run without the interface.
-This platform is developed at the Centre d'Etudes Spatiales de la Biosphere
-(CESBIO), UMR 5126 UPS/CNRS/CNES/IRD, 18 av.  Edouard Belin, 31401 TOULOUSE,
-FRANCE. The developments were funded by the French program Les Enveloppes
-Fluides et l'Environnement (LEFE, MANU, projects GloMo, SpatioGloMo and MoMu).
-The French programs Defi InFiNiTi (CNRS) and PNTS (CNRS) are also acknowledged
-(projects Crops'I Chaos and Musc & SlowFast).")
-    (license (license:fsdg-compatible "CeCILL-2"))))
-
-(define-public r-gpom
-  (package
-    (name "r-gpom")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GPoM" version))
-              (sha256
-               (base32
-                "1c870dfbpswx78n4s1v6zy0l1qknrs9335af0z01v1miyrmi95gd"))))
-    (properties `((upstream-name . "GPoM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-float r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GPoM")
-    (synopsis "Generalized Polynomial Modelling")
-    (description
-     "Platform dedicated to the Global Modelling technique.  Its aim is to obtain
-ordinary differential equations of polynomial form directly from time series.
-It can be applied to single or multiple time series under various conditions of
-noise, time series lengths, sampling, etc.  This platform is developped at the
-Centre d'Etudes Spatiales de la Biosphere (CESBIO), UMR 5126 UPS/CNRS/CNES/IRD,
-18 av.  Edouard Belin, 31401 TOULOUSE, FRANCE. The developments were funded by
-the French program Les Enveloppes Fluides et l'Environnement (LEFE, MANU,
-projets GloMo, SpatioGloMo and MoMu).  The French program Defi InFiNiTi (CNRS)
-and PNTS are also acknowledged (projects Crops'IChaos and Musc & SlowFast).")
-    (license (license:fsdg-compatible "CeCILL-2"))))
 
 (define-public r-gpmap
   (package
@@ -11130,13 +11067,13 @@ detailed manual on model specification.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "0anf428nv1h3xabn0268kr6miwiwcsrmscdhnjbfkp6ckd5247hc"))))
+                "0rs5gjg06m985l46l22a85q4skjfm1xp7y119yr62vxs2vgh8pcw"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix r-digest))
@@ -12328,13 +12265,13 @@ of an externally developed model.")
 (define-public r-gittargets
   (package
     (name "r-gittargets")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gittargets" version))
               (sha256
                (base32
-                "18hq0hgisw3mn3wxzvwrj4fikyj1chn55rn1yjmc432vlan35c8q"))))
+                "1fk32z83qglkmnsziqn9gzv20br0lyv4gll4y4rr4bwl66x81af5"))))
     (properties `((upstream-name . "gittargets")))
     (build-system r-build-system)
     (inputs (list git))
@@ -12344,7 +12281,8 @@ of an externally developed model.")
                              r-processx
                              r-gert
                              r-data-table
-                             r-cli))
+                             r-cli
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/gittargets/")
     (synopsis "Data Version Control for the Targets Package")
@@ -16827,13 +16765,13 @@ multiple uncertainty ribbons.")
 (define-public r-ggdensity
   (package
     (name "r-ggdensity")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdensity" version))
               (sha256
                (base32
-                "05brrczlvrqkcjizla920490h3fbcfldpysrv7xj4jy7hpzwfn16"))))
+                "01ym1af6w39zg6xh5mls8kwl4mg0lpjd94j0hm2xrgl39llpwx6r"))))
     (properties `((upstream-name . "ggdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16842,6 +16780,7 @@ multiple uncertainty ribbons.")
                              r-mass
                              r-isoband
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://jamesotto852.github.io/ggdensity/")
     (synopsis "Interpretable Bivariate Density Visualization with 'ggplot2'")
     (description

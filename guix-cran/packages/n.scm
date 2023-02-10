@@ -2148,13 +2148,13 @@ and Yang Feng, 2021), which will be posted on arXiv soon.")
 (define-public r-npcp
   (package
     (name "r-npcp")
-    (version "0.2-4")
+    (version "0.2-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "npcp" version))
               (sha256
                (base32
-                "0w3zimljr2cz1bjhpgcv8qvkrhhh3jbd7bqi2yvrh05lpcxxagh0"))))
+                "0mh5z4flksj7v1klylwqn2dxn5sbvs16sdy46l7y7n93i4v3pqvi"))))
     (properties `((upstream-name . "npcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
@@ -6669,13 +6669,13 @@ recent application of nimbleSCR, see Milleret et al. (2021)
 (define-public r-nimblenobounds
   (package
     (name "r-nimblenobounds")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimbleNoBounds" version))
               (sha256
                (base32
-                "0ac35ylwbgsw261l84fv11mnddrqxzdyvv1f9nk73jxv102z0ihj"))))
+                "1sbaj1ayvqn86av045h5n7rrlw5r3zyk1i6v5v9sjm3f9pxyffgw"))))
     (properties `((upstream-name . "nimbleNoBounds")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))

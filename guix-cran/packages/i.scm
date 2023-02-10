@@ -14632,29 +14632,29 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
 (define-public r-iccde
   (package
     (name "r-iccde")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iccde" version))
               (sha256
                (base32
-                "1ykiwz6w06z6nqxx7rhn58pp9c66ji3g4qsy8lczmfcycqrycmm1"))))
+                "1z7ra8s0sddjmbfb8flgp4kmz1ckgwshz8h2nnpbd3liav84b5xv"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iccde")
     (synopsis "Computation of the Double-Entry Intraclass Correlation")
     (description
-     "The function computes the double-entry intraclass correlation, which is an index
+     "The functions compute the double-entry intraclass correlation, which is an index
 of profile similarity (Furr, 2010; McCrae, 2008).  The double-entry intraclass
 correlation is a more precise index of the agreement of two empirically observed
 profiles than the often-used intraclass correlation (McCrae, 2008).  The
 function transforms profiles comprising correlations according to the Fisher
 z-transformation before the double-entry intraclass correlation is calculated.
 If the profiles comprise scores such as sum scores from various personality
-scales, it is recommended to standardize each individual score before entering
-into the function (McCrae, 2008).  See Furr (2010)
-<doi:10.1080/00223890903379134> or McCrae (2008) <doi:10.1080/00223890701845104>
-for details.")
+scales, it is recommended to standardize each individual score prior to
+computation of the double-entry intraclass correlation (McCrae, 2008).  See Furr
+(2010) <doi:10.1080/00223890903379134> or McCrae (2008)
+<doi:10.1080/00223890701845104> for details.")
     (license license:gpl2+)))
 
 (define-public r-icccounts

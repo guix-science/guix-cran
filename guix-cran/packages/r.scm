@@ -32261,13 +32261,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readrba" version))
               (sha256
                (base32
-                "19pmvy4x3nksn2wqxwwyfrc7ky7jqljk7nmpszphqx7g4g3lzsg2"))))
+                "1vwsnh0r4ahx2dr3z9hmmjirhnh2wwqqqj20ii8mjsky8xnw8sqy"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34388,13 +34388,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.0-8")
+    (version "1.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdacca.hp" version))
               (sha256
                (base32
-                "0fmb8gigihf82gdz4yijfchwcw6s1jz91kfpjp0y6cs412lmq4ga"))))
+                "1w8d3mzx2mip29lnb829m54vqvww3405sk241linfrywnxpmmizv"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-ggplot2))
@@ -44502,13 +44502,13 @@ trees by he StemID2 algorithm.  Herman, J.S., Sagar, GrÃ¼n D. (2018)
 (define-public r-racademyocean
   (package
     (name "r-racademyocean")
-    (version "0.1.0")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "racademyocean" version))
               (sha256
                (base32
-                "0xgsjg7ck532fzwyn62pn1hq9khkw0i1pdcam09j5l24ny1akajw"))))
+                "0p16xwlm67rvbla6mnky6yv5aa2r61v645jlwhg0zn2dyc8xpajk"))))
     (properties `((upstream-name . "racademyocean")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

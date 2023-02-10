@@ -4661,13 +4661,13 @@ multinomial outcomes and two through six raters.")
 (define-public r-kappalab
   (package
     (name "r-kappalab")
-    (version "0.4-8")
+    (version "0.4-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kappalab" version))
               (sha256
                (base32
-                "1ybr3nci04f9j91hwb5rv6ahwy89rdicxx2b2bl8rm70pj0vaq4r"))))
+                "14yxfkagjmvg1z0vsdx64lngcr02sqpbbgpqy2ww02wvwnn9hpg9"))))
     (properties `((upstream-name . "kappalab")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-lpsolve r-kernlab))

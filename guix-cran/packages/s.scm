@@ -4651,6 +4651,39 @@ directly available in R'.  The package also contains a tutorial on basic data
 frame management, including how to handle missing data.")
     (license license:gpl2+)))
 
+(define-public r-supportr
+  (package
+    (name "r-supportr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "supportR" version))
+              (sha256
+               (base32
+                "1bjcifhg17f3majrj1s6lp5r4xf6vy0f2qrx285zfr2z67m7cv7r"))))
+    (properties `((upstream-name . "supportR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-googledrive
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=supportR")
+    (synopsis "Support Functions for Wrangling and Visualization")
+    (description
+     "Suite of helper functions for data wrangling and visualization.  The only theme
+for these functions is that they tend towards simple, short, and
+narrowly-scoped.  These functions are built for tasks that often recur but are
+not large enough in scope to warrant an ecosystem of interdependent functions.")
+    (license license:expat)))
+
 (define-public r-support-ces
   (package
     (name "r-support-ces")
@@ -13493,13 +13526,13 @@ autoregression methods.")
 (define-public r-ssn
   (package
     (name "r-ssn")
-    (version "1.1.15")
+    (version "1.1.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSN" version))
               (sha256
                (base32
-                "057lh2ym82ff3c25vyh97csns4jwlbvxwc4jai0i4yplxf0ccmha"))))
+                "13clhmar3qqxsqphqbj3d3z1nrzab2w778wvh88ri1l4x5r3dl88"))))
     (properties `((upstream-name . "SSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -39862,13 +39895,13 @@ Setiawan(2016)<https://www.researchgate.net/publication/316517889_S-GSTAR-SUR_mo
 (define-public r-sgsr
   (package
     (name "r-sgsr")
-    (version "1.3.4")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sgsR" version))
               (sha256
                (base32
-                "1ikf1f22hjlr4cm1rik13xaikacwlib7k2a915nmnxp1hy37d56x"))))
+                "08k8gmflmp5gpgpwc9h89pdm1x9cpph8kawd2zj6iz6m1m2iji3f"))))
     (properties `((upstream-name . "sgsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -49175,13 +49208,13 @@ Observational Studies using R. Chapman & Hall/CRC.")
 (define-public r-sciber
   (package
     (name "r-sciber")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCIBER" version))
               (sha256
                (base32
-                "1q88qrh518fyql7achsh00hyiw0sn9qawl9s7s4d5pwxkc80pvm9"))))
+                "1hd17i2xj249lhvgyqf1my9w1pg6nn7d2kyijkrbkpcml3fqmk7y"))))
     (properties `((upstream-name . "SCIBER")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))

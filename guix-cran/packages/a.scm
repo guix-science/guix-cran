@@ -6253,13 +6253,13 @@ and their corresponding tests.")
 (define-public r-ardl
   (package
     (name "r-ardl")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARDL" version))
               (sha256
                (base32
-                "151mw6z67ssa3pykmbcijgcw4msbrpn1l4b5qj3pz9v9k3j05idl"))))
+                "0g9vxizyiaafqvn2ji4vhl6zylfh1y227prfkc2pgznai0ifhqv3"))))
     (properties `((upstream-name . "ARDL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9401,13 +9401,13 @@ of CAPA and MVCAPA <arXiv:2009.06670>.")
 (define-public r-anomalize
   (package
     (name "r-anomalize")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anomalize" version))
               (sha256
                (base32
-                "13ncx17hdwv7799s7y6p3wvf59dad97y8rs9p56cbd91f6jkjgs5"))))
+                "16mizprni7g1gq9fqdz8ihp55shxxq4l7c73qdy5hvca6gs1w5v0"))))
     (properties `((upstream-name . "anomalize")))
     (build-system r-build-system)
     (propagated-inputs (list r-timetk
@@ -14043,13 +14043,13 @@ on <http://agvgd.hci.utah.edu/>.")
 (define-public r-agua
   (package
     (name "r-agua")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agua" version))
               (sha256
                (base32
-                "0hqzb88dv9iha2c12fbahvd2n2jrsjsjv00y2dnwv27rv354vj9y"))))
+                "07alkyaxrxq6nxd6s57my2ln0n5sdj4rb67r1g6dgsr5rsjwkjzi"))))
     (properties `((upstream-name . "agua")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -14060,6 +14060,7 @@ on <http://agvgd.hci.utah.edu/>.")
                              r-rsample
                              r-rlang
                              r-purrr
+                             r-pkgconfig
                              r-parsnip
                              r-hardhat
                              r-h2o
@@ -14662,6 +14663,36 @@ Bayesian Inference: the aghq Package\" <arXiv:2101.04468>.")
 relationship matrices for diploid and autopolyploid species.  Several methods
 are implemented considering additive and non-additive models.")
     (license license:gpl3)))
+
+(define-public r-aggtrees
+  (package
+    (name "r-aggtrees")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aggTrees" version))
+              (sha256
+               (base32
+                "1f3lgz6k5pqdb4bkm86q7l02yw12fn83xdblbqwhj5x90fj4ysgv"))))
+    (properties `((upstream-name . "aggTrees")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rpart-plot
+                             r-rpart
+                             r-grf
+                             r-estimatr
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=aggTrees")
+    (synopsis "Aggregation Trees")
+    (description
+     "Nonparametric data-driven approach to discovering heterogeneous subgroups in a
+selection-on-observables framework.  Aggregation trees allow researchers to
+assess whether there is relevant heterogeneity in treatment effects.  The
+approach generates a sequence of optimal groupings, one for each level of
+granularity.  For each grouping, we obtain point estimation and inference about
+the Group Average Treatment Effects.  Please reference the use as Di Francesco
+(2022) <doi:10.2139/ssrn.4304256>.")
+    (license license:expat)))
 
 (define-public r-aggregater
   (package

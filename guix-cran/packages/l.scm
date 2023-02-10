@@ -1833,13 +1833,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.10")
+    (version "0.1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lrstat" version))
               (sha256
                (base32
-                "0bzld73ilanan6a3rd39y26xyczrb3xv2yd07wpmvf7dzrn78zn0"))))
+                "0bgxlyfwdyckv9pc3ajcabrxavfmhn4kmpij2xb276hvfrbprac3"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -3488,13 +3488,13 @@ data.")
 (define-public r-longitudinaldata
   (package
     (name "r-longitudinaldata")
-    (version "2.4.1")
+    (version "2.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "longitudinalData" version))
               (sha256
                (base32
-                "0lnvcfgj721bawl1ciz0jw83mfsnzkhg6jn824vr3qdm4rbib2vd"))))
+                "16jfmzdi6zw2s17iiw7yw3y9h9xz3kz4z9v2qfj0drs57m9dxgp4"))))
     (properties `((upstream-name . "longitudinalData")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-misc3d r-clv r-class))

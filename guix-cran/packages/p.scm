@@ -7079,16 +7079,17 @@ eligibility, and inclusion of studies in a systematic review.")
 (define-public r-prisma2020
   (package
     (name "r-prisma2020")
-    (version "0.0.3")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRISMA2020" version))
               (sha256
                (base32
-                "1qbhgdv6l4aafqrxvxrrjinsnnhy8pj1lan54ylzzj1a0hyy4mkl"))))
+                "0jhf1kgcc29b8gsb42b3d5hyfzsa13lz9qgs104ynrzld94kqqwf"))))
     (properties `((upstream-name . "PRISMA2020")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-zip
+                             r-xml2
                              r-webp
                              r-stringr
                              r-shinyjs
@@ -14987,13 +14988,13 @@ in the neighborhood.")
 (define-public r-pointblank
   (package
     (name "r-pointblank")
-    (version "0.11.2")
+    (version "0.11.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pointblank" version))
               (sha256
                (base32
-                "1h5mq68xsayybmp5ylypdd1scx2ahcpny4gbjzr3lw2lhvsky7g9"))))
+                "00h2zc53ddxvkginbfbwsgq7ghy45a0jq7gham5py28lrxdxahy4"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20400,6 +20401,37 @@ releases.  This approach works equally well with public or private repositories.
  Data can be uploaded and downloaded programmatically from scripts.  No
 authentication is required to download data from public repositories.")
     (license license:gpl3)))
+
+(define-public r-pieglyph
+  (package
+    (name "r-pieglyph")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PieGlyph" version))
+              (sha256
+               (base32
+                "1wg8b0zsgcsgrmx5yz0sj6bifk76zr085lac3xlkrxqnxwxvlk0n"))))
+    (properties `((upstream-name . "PieGlyph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-plyr
+                             r-ggplot2
+                             r-ggforce
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rishvish/PieGlyph")
+    (synopsis "Axis Invariant Scatter Pie Plots")
+    (description
+     "Extends ggplot2 to help replace points in a scatter plot with pie-chart glyphs
+showing the relative proportions of different categories.  The pie glyphs are
+independent of the axes and plot dimensions, to prevent distortions when the
+plot dimensions are changed.")
+    (license license:gpl3+)))
 
 (define-public r-piecewisesem
   (package
@@ -31792,6 +31824,51 @@ coef_map, coef_omit, coef_rename, gof_map, and gof_omit from modelsummary to
 clean the table, and additionally, add a row for the mean of the dependent
 variable without external manipulation.")
     (license license:gpl3+)))
+
+(define-public r-panelr
+  (package
+    (name "r-panelr")
+    (version "0.7.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "panelr" version))
+              (sha256
+               (base32
+                "0w3kzh2r6qshh1dmjafd5q92x26rc027mcm0vk570l4l39w05fpq"))))
+    (properties `((upstream-name . "panelr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-jtools
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://panelr.jacob-long.com")
+    (synopsis
+     "Regression Models and Utilities for Repeated Measures and Panel Data")
+    (description
+     "This package provides an object type and associated tools for storing and
+wrangling panel data.  Implements several methods for creating regression models
+that take advantage of the unique aspects of panel data.  Among other
+capabilities, automates the \"within-between\" (also known as \"between-within\" and
+\"hybrid\") panel regression specification that combines the desirable aspects of
+both fixed effects and random effects econometric models and fits them as
+multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
+2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
+generalized estimating equations (GEE; McNeish, 2019
+<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
+supported via Stan'.  Supports estimation of asymmetric effects models via first
+differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
+generalized linear model extension thereof using GEE.")
+    (license license:expat)))
 
 (define-public r-panelmatch
   (package

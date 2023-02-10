@@ -1312,6 +1312,61 @@ univariate meta-analysis and meta-regression.")
 tubes.  Directional and other multivariate histograms are provided.")
     (license license:gpl3+)))
 
+(define-public r-mvmapit
+  (package
+    (name "r-mvmapit")
+    (version "2.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mvMAPIT" version))
+              (sha256
+               (base32
+                "0whjgyf8asvbbd0ic0x4yqisasmxywl91klxpnbg3kd5i8p831rw"))))
+    (properties `((upstream-name . "mvMAPIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-rcppspdlog
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-logging
+                             r-harmonicmeanp
+                             r-foreach
+                             r-dplyr
+                             r-compquadform
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcrawlab/mvMAPIT")
+    (synopsis "Multivariate Genome Wide Marginal Epistasis Test")
+    (description
+     "Epistasis, commonly defined as the interaction between genetic loci, is known to
+play an important role in the phenotypic variation of complex traits.  As a
+result, many statistical methods have been developed to identify genetic
+variants that are involved in epistasis, and nearly all of these approaches
+carry out this task by focusing on analyzing one trait at a time.  Previous
+studies have shown that jointly modeling multiple phenotypes can often
+dramatically increase statistical power for association mapping.  In this
+package, we present the multivariate MArginal ePIstasis Test ('mvMAPIT') â a
+multi-outcome generalization of a recently proposed epistatic detection method
+which seeks to detect marginal epistasis or the combined pairwise interaction
+effects between a given variant and all other variants.  By searching for
+marginal epistatic effects, one can identify genetic variants that are involved
+in epistasis without the need to identify the exact partners with which the
+variants interact â thus, potentially alleviating much of the statistical and
+computational burden associated with conventional explicit search based methods.
+ Our proposed mvMAPIT builds upon this strategy by taking advantage of
+correlation structure between traits to improve the identification of variants
+involved in epistasis.  We formulate mvMAPIT as a multivariate linear mixed
+model and develop a multi-trait variance component estimation algorithm for
+efficient parameter inference and P-value computation.  Together with reasonable
+model approximations, our proposed approach is scalable to moderately sized
+genome-wide association studies.  Crawford et al. (2017)
+<doi:10.1371/journal.pgen.1006869>.  Stamp et al. (2022)
+<doi:10.1101/2022.11.30.518547>.")
+    (license license:gpl3+)))
+
 (define-public r-mvlswimpute
   (package
     (name "r-mvlswimpute")
@@ -10385,13 +10440,13 @@ and semi-automated surface landmark placement.")
 (define-public r-morpheus
   (package
     (name "r-morpheus")
-    (version "1.0-3")
+    (version "1.0-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "morpheus" version))
               (sha256
                (base32
-                "1nrl68lbrrhjcf39kqywhsb2d963vf2ad39g3v01wnzyzb3515il"))))
+                "0y9immrs87yghp0j1h0vp1fhiah5wddfj6pj2hgcqch1imxprhy7"))))
     (properties `((upstream-name . "morpheus")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mass r-jointdiag))

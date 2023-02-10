@@ -2939,13 +2939,13 @@ or two-sample Poisson cases (see Fay (2010) <doi:10.32614/rj-2010-008>).")
 (define-public r-exact2x2
   (package
     (name "r-exact2x2")
-    (version "1.6.6")
+    (version "1.6.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exact2x2" version))
               (sha256
                (base32
-                "1c7lsl2zvnighzylp7z3w74rl7p8zfg0fphw5fxv2i0m8sslzq73"))))
+                "1wcqgfh859acw5gpcgvvkh40qrjgk07qc4d6w51b51mabcx965wp"))))
     (properties `((upstream-name . "exact2x2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv r-exactci))
@@ -8894,13 +8894,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "0.6.2")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epanet2toolkit" version))
               (sha256
                (base32
-                "1qa9g2h30y2kxd3x3xnpw2ibixyjraykphsd5rnl8928n2zkkbcx"))))
+                "0fcr3awbbsp4ihzw0b9z27glsp0h659g4ihmcxp5qgi1xkh4cc8r"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")

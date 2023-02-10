@@ -12848,13 +12848,13 @@ Ron Knott, e.g., <https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html> .")
 (define-public r-context
   (package
     (name "r-context")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conText" version))
               (sha256
                (base32
-                "0ncb7hpzvg1dp52rd8pbgdparjdb94ci10szpc3y90phh57z3lgy"))))
+                "0ahnbmpphzi2xshmsybphkc9vkj2lr2bi1jssdx97288awwcgayb"))))
     (properties `((upstream-name . "conText")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19210,13 +19210,13 @@ log-ratios (ILR or SLR) that are maximally associated to a dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coda4microbiome" version))
               (sha256
                (base32
-                "1c8rrlr9gng8dbdf7m8rc7l6hq8fj55ihgckkc3bv80fyifm60fw"))))
+                "1z8bdhnslw13rmdw1jnj5ldr6jmn8grmzn5mhsy96r8x9xyzk5b5"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc
@@ -23648,6 +23648,27 @@ than processx::run().")
      "Includes climate data from Japan Meteorological Agency ('JMA')
 <https://www.jma.go.jp/jma/indexe.html>.  Can download climate data from JMA'.")
     (license license:expat)))
+
+(define-public r-clidamonger
+  (package
+    (name "r-clidamonger")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clidamonger" version))
+              (sha256
+               (base32
+                "1vxhibvdb92hhj40k8vg5vr0a8wy73jj8kyczs4rrn0zk1sj61dq"))))
+    (properties `((upstream-name . "clidamonger")))
+    (build-system r-build-system)
+    (home-page "https://github.com/IWUGERMANY/clidamonger")
+    (synopsis
+     "Monthly Climate Data for Germany, Usable for Heating and Cooling Calculations")
+    (description
+     "This data package contains monthly climate data for Germany, it can be used for
+heating and cooling calculations (external temperature, heating / cooling days,
+solar radiation).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-clickstream
   (package
@@ -34985,13 +35006,13 @@ cross-validation, and forecasting is done recursively.")
 (define-public r-caretensemble
   (package
     (name "r-caretensemble")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "caretEnsemble" version))
               (sha256
                (base32
-                "127gqd23xjis62irqviihzk80zydrdplwh65zcmd7ng29ih5wnby"))))
+                "0kagw1ilfz1yy1q0ysmkp3f13k08hiq84xk7d0xp5p7d5dsg7z6q"))))
     (properties `((upstream-name . "caretEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr

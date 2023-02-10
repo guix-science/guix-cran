@@ -1444,18 +1444,17 @@ several providers.")
 (define-public r-osmdata
   (package
     (name "r-osmdata")
-    (version "0.1.10")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osmdata" version))
               (sha256
                (base32
-                "0ysmjmab6yfqcwzbjjqlk0hbna0x8fg27p3svjs5y3qasyyx7wwq"))))
+                "11qabkp0zkzdkd4vn6kbnqga02vyqsp6vgp1qkg87bx7b8hh37hj"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
-                             r-sp
                              r-rvest
                              r-reproj
                              r-rcpp
@@ -5846,13 +5845,13 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.6.1")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openairmaps" version))
               (sha256
                (base32
-                "19zwphalihdwar9y3k3gmyh97j608ki2rnsra1l678klz7flq8ik"))))
+                "1k98sdh9kmfc1n486xv00ikc8mx32jlfsjlybx9685z4d9isvcms"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5865,11 +5864,14 @@ OpenAlex database using API <https://docs.openalex.org/api/>.")
                              r-magrittr
                              r-lubridate
                              r-leaflet
+                             r-ggtext
+                             r-ggplot2
+                             r-ggmap
                              r-forcats
                              r-dplyr
                              r-cli))
-    (home-page "https://cran.r-project.org/package=openairmaps")
-    (synopsis "Create Interactive Web Maps of Air Pollution Data")
+    (home-page "https://davidcarslaw.github.io/openairmaps/")
+    (synopsis "Create Maps of Air Pollution Data")
     (description
      "Combine the air quality data analysis methods of openair with the JavaScript
 Leaflet (<https://leafletjs.com/>) library.  Functionality includes plotting

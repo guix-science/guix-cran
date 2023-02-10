@@ -9872,16 +9872,16 @@ comments in your project and shows them as a markers list.")
 (define-public r-toc
   (package
     (name "r-toc")
-    (version "0.0-5")
+    (version "0.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOC" version))
               (sha256
                (base32
-                "0zk6j1yc4gpvkswnfrlyfvqc69wr4q3ys59y7v03fhzwasqj0an2"))))
+                "04ampqa2nv77h6is3ch8ril5b3m33hkd3s5gzzq4jrm1mx529dr8"))))
     (properties `((upstream-name . "TOC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgdal r-raster r-bit))
+    (propagated-inputs (list r-terra r-bit))
     (home-page "https://github.com/amsantac/TOC")
     (synopsis "Total Operating Characteristic Curve and ROC Curve")
     (description
@@ -12347,13 +12347,13 @@ APIs from several languages, and integrations.")
 (define-public r-tikzdevice
   (package
     (name "r-tikzdevice")
-    (version "0.12.3.1")
+    (version "0.12.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tikzDevice" version))
               (sha256
                (base32
-                "040yz6wi05151m9nal97symv66a133kk0a8c1h6nz058zk081vav"))))
+                "1x9nns15g2f6062grdvzy8sfj460xvsqyiyr3ylc0z425s0jj85c"))))
     (properties `((upstream-name . "tikzDevice")))
     (build-system r-build-system)
     (inputs (list))

@@ -1981,13 +1981,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "1256as1lhj9nms6rl7yw8942jcxkxgkzcfbmif1qjjdrw0y9yz6m"))))
+                "1r0mbrcwaqgq3rwj1gy94fg8vxrw7s5aq7p4w38ncjhrwaqriwav"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -2938,13 +2938,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.11.0")
+    (version "1.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "broom.helpers" version))
               (sha256
                (base32
-                "1vwjlgy1a3a1inw79pbl72p8s4y9mss6wpczfhmjfy27j9n2qcpj"))))
+                "0b1aihc75nj5jjpnfqjdbls08djfmxjmnd40878c9wbs6rhdkddz"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2965,7 +2965,7 @@ provides a one-row summary of model-level statistics.")
 broom::tidy() tibbles.  The suite includes functions to group regression model
 terms by variable, insert reference and header rows for categorical variables,
 add variable labels, and more.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-broman
   (package
@@ -12514,13 +12514,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bimets" version))
               (sha256
                (base32
-                "05q0hp7i3gzvyi0gnfimaaxpqcl1m9x7891vq76glb9jbkvsvh8m"))))
+                "1iqmkspclhvvwxkhn88c4vmwf1lc8zn4sv4r349fx7qkq2hpr8z1"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -14032,13 +14032,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bibliometrix" version))
               (sha256
                (base32
-                "1d14p0cw9qh1z43n0hys8il44rx5dgmgb94ppr0j1n33hhz9wwva"))))
+                "1iayx8kvncf4j0w38vw3hlf670w7pq1cb8ld7pqysabar7rciavk"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

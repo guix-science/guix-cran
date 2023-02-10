@@ -3362,6 +3362,31 @@ for more details on the method.")
     (license (list license:cc0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-dsample
+  (package
+    (name "r-dsample")
+    (version "0.91.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dsample" version))
+              (sha256
+               (base32
+                "1f34gp5qic70fnv2ds3v9jk08ginbk9ivxddcvdaadr249lvln12"))))
+    (properties `((upstream-name . "dsample")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mnormt r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dsample")
+    (synopsis "Discretization-Based Direct Random Sample Generation")
+    (description
+     "Discretization-based random sampling algorithm that is useful for a complex
+model in high dimension is implemented.  The normalizing constant of a target
+distribution is not needed.  Posterior summaries are compared with those by
+OpenBUGS'.  The method is described: Wang and Lee (2014)
+<doi:10.1016/j.csda.2013.06.011> and exercised in Lee (2009)
+<http://hdl.handle.net/1993/21352>.")
+    (license license:gpl3)))
+
 (define-public r-dsairm
   (package
     (name "r-dsairm")
@@ -4059,13 +4084,13 @@ MATLAB code is available upon request, see:
 (define-public r-drhotnet
   (package
     (name "r-drhotnet")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DRHotNet" version))
               (sha256
                (base32
-                "0w1bi7amr0701m6gx9b4pm35qs4my9dgs1dwh2qklrk8b29jv2b3"))))
+                "1014c94n8qpy9k8wngayhy0rrny7c3i0i1mj02akwpgqvfj2k5sm"))))
     (properties `((upstream-name . "DRHotNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -4074,8 +4099,7 @@ MATLAB code is available upon request, see:
                              r-spatstat
                              r-sp
                              r-raster
-                             r-pbsmapping
-                             r-maptools))
+                             r-pbsmapping))
     (home-page "https://cran.r-project.org/package=DRHotNet")
     (synopsis "Differential Risk Hotspots in a Linear Network")
     (description
@@ -6898,13 +6922,13 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doconv" version))
               (sha256
                (base32
-                "0zhk9janaywih237dh36q8pi2s87shsi1g9gdaca9dz8gxbql2k0"))))
+                "1ppzryd1kv5v96b2dwfzfy6cj7wx5sx8insj06gf2m2f442c8aph"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (inputs (list libreoffice))
@@ -6912,13 +6936,14 @@ tools for common low-level tasks.")
     (home-page "https://cran.r-project.org/package=doconv")
     (synopsis "Document Conversion to 'PDF' or 'PNG'")
     (description
-     "This package provides functions to convert Microsoft Word or Microsoft
-PowerPoint documents to PDF format and also for converting them into a
-thumbnail.  In order to work, LibreOffice must be installed on the machine and
-or Microsoft Word'.  If the latter is available, it can be used to produce PDF
-documents identical to the originals, otherwise, LibreOffice is used.  A
-function is also provided to update all fields and table of contents of a Word
-document using Microsoft Word'.")
+     "It provides the ability to generate images from documents of different types.
+Three main features are provided: functions for generating document thumbnails,
+functions for performing visual tests of documents and a function for updating
+fields and table of contents of a Microsoft Word or RTF document.  In order to
+work, LibreOffice must be installed on the machine and or Microsoft Word'.  If
+the latter is available, it can be used to produce PDF documents or images
+identical to the originals; otherwise, LibreOffice is used and the rendering can
+be sometimes different from the original documents.")
     (license license:expat)))
 
 (define-public r-docknitr
