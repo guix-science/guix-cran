@@ -12090,13 +12090,13 @@ using NCA metrics.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NCA" version))
               (sha256
                (base32
-                "0n7syy7zcd0wk1dkn40dyid1yg0887cckda2ah03w96q21rg77vi"))))
+                "14cfp9fqs1bfllfp5wf0nb2f707yilz2105baql2f9ia5aw7aq9c"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg

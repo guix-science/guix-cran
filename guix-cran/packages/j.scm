@@ -40,13 +40,13 @@
 (define-public r-jwileymisc
   (package
     (name "r-jwileymisc")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JWileymisc" version))
               (sha256
                (base32
-                "1g1mpdxdl27y5ixyfa0fr0zzs0wmvkc2ddnc1bmjyk8xbf2kpd7y"))))
+                "1bgkhfda7p5alh8h2y804x5wvhksigg06hym9safxx15kmv1yxcn"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -520,13 +520,13 @@ Golden Section Search Method for Numerical Optimization\",
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsTreeR" version))
               (sha256
                (base32
-                "0k6qxncvnq2377g83cclf7al0150m4226ilw2h9wrd7m8ciz7wdi"))))
+                "0gkxvspk5nvzw06jrpyyl2g14qggqdy81b33r8rqzk9c1z71c21k"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace

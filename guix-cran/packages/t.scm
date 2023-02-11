@@ -4406,13 +4406,13 @@ reporting a \"good\" outcome.")
 (define-public r-trtf
   (package
     (name "r-trtf")
-    (version "0.4-0")
+    (version "0.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trtf" version))
               (sha256
                (base32
-                "1475qlhbgi56fr3nwqkmspqxbfrqxcr1wk1mbm9mj2ph9zlrxphw"))))
+                "15aalp82igw23rlk36dqqkcnmcy8q869wjbr7ak19gygy8p525wn"))))
     (properties `((upstream-name . "trtf")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -9242,13 +9242,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-toprdata
   (package
     (name "r-toprdata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "toprdata" version))
               (sha256
                (base32
-                "0mn8j28b93blr2xfkbwha8mpmlhw6yy7yw84p3q80llapxqiy90a"))))
+                "1zn8w1c74nxm67xzk556zirhnfyi82wk34amy5a869a15lwchhaz"))))
     (properties `((upstream-name . "toprdata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=toprdata")
@@ -21525,13 +21525,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-taper
   (package
     (name "r-taper")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TapeR" version))
               (sha256
                (base32
-                "161qwwqcq94j3h49k6fn6g146hczpaq6vygai5kwl6i8wpdfzc5a"))))
+                "07xw8wh35h7jss7vp44yv4dif3hpdr0cyhph7sdyqlhdx6mfhz23"))))
     (properties `((upstream-name . "TapeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-nlme))

@@ -6068,6 +6068,28 @@ analyses.  grandR provides a comprehensive toolbox for quality control, kinetic
 modeling, differential gene expression analysis and visualization of such data.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-grand
+  (package
+    (name "r-grand")
+    (version "0.9.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "grand" version))
+              (sha256
+               (base32
+                "08lgwpkbamb7p5a59q0dp1n7np9kmmvccvg97bl7937ishx50mg5"))))
+    (properties `((upstream-name . "grand")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zpneal/grand")
+    (synopsis "Guidelines for Reporting About Network Data")
+    (description
+     "Interactively applies the Guidelines for Reporting About Network Data (GRAND) to
+an igraph object, and generates a uniform narrative or tabular description of
+the object.")
+    (license license:gpl3)))
+
 (define-public r-grancore
   (package
     (name "r-grancore")

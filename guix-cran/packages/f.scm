@@ -10241,6 +10241,51 @@ log-likelihood (log-likelihood) statistics.  3)The initial values is determined
 by k-means clustering.")
     (license license:gpl3)))
 
+(define-public r-fitlandr
+  (package
+    (name "r-fitlandr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fitlandr" version))
+              (sha256
+               (base32
+                "077b97gwlzxmd4i4rsxrgqzlnwn7zf0y0wgcbihck1wvh7gjiara"))))
+    (properties `((upstream-name . "fitlandr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sparsevfc
+                             r-simlandr
+                             r-rootsolve
+                             r-rlang
+                             r-rfast
+                             r-r-utils
+                             r-plotly
+                             r-numderiv
+                             r-mass
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-future-apply
+                             r-furrr
+                             r-dplyr
+                             r-cli))
+    (home-page "https://sciurus365.github.io/fitlandr/")
+    (synopsis
+     "Fit Vector Fields and Potential Landscapes from Intensive Longitudinal Data")
+    (description
+     "This package provides a toolbox for estimating vector fields from intensive
+longitudinal data, and construct potential landscapes thereafter.  The vector
+fields can be estimated with two nonparametric methods: the Multivariate Vector
+Field Kernel Estimator (MVKE) by Bandi & Moloche (2018)
+<doi:10.1017/S0266466617000305> and the Sparse Vector Field Consensus
+(SparseVFC) algorithm by Ma et al. (2013) <doi:10.1016/j.patcog.2013.05.017>.
+The potential landscapes can be constructed with a simulation-based approach
+with the simlandr package (Cui et al., 2021) <doi:10.31234/osf.io/pzva3>, or the
+Bhattacharya et al. (2011) method for path integration
+<doi:10.1186/1752-0509-5-85>.")
+    (license license:gpl3+)))
+
 (define-public r-fitheavytail
   (package
     (name "r-fitheavytail")
@@ -12398,25 +12443,27 @@ reference.")
 (define-public r-fhircrackr
   (package
     (name "r-fhircrackr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fhircrackr" version))
               (sha256
                (base32
-                "07zngm3dad242aabi4gz9vzvhdcfksbg18vlswvp036fbyw63p4j"))))
+                "08gqr4nqkyd0s4k26q869lrbwxgn8sd2ync0cagx2kw2dlqa5kry"))))
     (properties `((upstream-name . "fhircrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-lifecycle r-httr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fhircrackr")
-    (synopsis "Handling HL7 FHIR Resources in R")
+    (synopsis "Handling HL7 FHIRÂ® Resources in R")
     (description
      "Useful tools for conveniently downloading FHIR resources in xml format and
 converting them to R data.frames.  The package uses FHIR-search to download
 bundles from a FHIR server, provides functions to save and read xml-files
 containing such bundles and allows flattening the bundles to data.frames using
-XPath expressions.")
+XPath expressions.  FHIRÂ® is the registered trademark of HL7 and is used with
+the permission of HL7.  Use of the FHIR trademark does not constitute
+endorsement of this product by HL7.")
     (license license:gpl3)))
 
 (define-public r-fhdi

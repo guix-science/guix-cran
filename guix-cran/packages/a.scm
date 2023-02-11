@@ -9306,33 +9306,6 @@ using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
     (license license:gpl2)))
 
-(define-public r-anovareplication
-  (package
-    (name "r-anovareplication")
-    (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ANOVAreplication" version))
-              (sha256
-               (base32
-                "1d2r2cwpn9rdfbmiccag487pvsq6adn7b321c5z8i7n671h2wi26"))))
-    (properties `((upstream-name . "ANOVAreplication")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-quadprog))
-    (native-inputs (list r-knitr))
-    (home-page "https://dx.doi.org/10.17605/OSF.IO/6H8X3")
-    (synopsis
-     "Test ANOVA Replications by Means of the Prior Predictive p-Value")
-    (description
-     "Allows for the computation of a prior predictive p-value to test replication of
-relevant features of original ANOVA studies.  Relevant features are captured in
-informative hypotheses.  The package also allows for the computation of sample
-sizes for new studies, post-hoc power calculations, and comes with a Shiny
-application in which all calculations can be conducted as well.  The statistical
-underpinnings are described in Zondervan-Zwijnenburg (2019)
-<doi:10.31234/osf.io/6myqh>.")
-    (license license:gpl3+)))
-
 (define-public r-anovaireva
   (package
     (name "r-anovaireva")

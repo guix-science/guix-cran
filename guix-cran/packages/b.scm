@@ -20748,13 +20748,13 @@ equivalence (ROPE) tests as described in Kruschke and Liddell (2018)
 (define-public r-bayeslife
   (package
     (name "r-bayeslife")
-    (version "5.0-3")
+    (version "5.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesLife" version))
               (sha256
                (base32
-                "1dlaqp6qd6qi8p8ni3z7adjrsn44njzvngyga4a97crp3jfqpx7k"))))
+                "12i2a07v0kc5mbvj52vc4l9fi0xi68jdj0z91wdbiav4fqrjm4m5"))))
     (properties `((upstream-name . "bayesLife")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -21410,13 +21410,13 @@ Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
 (define-public r-bayesdlmfmri
   (package
     (name "r-bayesdlmfmri")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesDLMfMRI" version))
               (sha256
                (base32
-                "1a00sgxzbg3qw6j07dhahcci40crm3k1bfc8bpdwlqi3m9bqr938"))))
+                "1aj2sy09ikamma8sgi51kzb4gpyr0a4mhm7rwzbqmhld8qbnh3f7"))))
     (properties `((upstream-name . "BayesDLMfMRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -21425,6 +21425,7 @@ Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
                              r-rcpp
                              r-pbapply
                              r-oro-nifti
+                             r-neurobase
                              r-mathjaxr
                              r-abind))
     (native-inputs (list r-knitr))
@@ -21441,8 +21442,8 @@ offers several R functions with different algorithms to perform inference on the
 state parameter to assess brain activation for both individual and group stages.
  Those functions allow for parallel computation when the analysis is performed
 for the entire brain as well as analysis at specific voxels when it is required.
- References: Cardona-JimÃ©nez (2017) <doi:10.1016/j.csda.2021.107297>;
-Cardona-JimÃ©nez (2018) <arXiv:2111.01318>.")
+ References: Cardona-JimÃ©nez (2021) <doi:10.1016/j.csda.2021.107297>;
+Cardona-JimÃ©nez (2021) <arXiv:2111.01318>.")
     (license license:gpl2)))
 
 (define-public r-bayesdistreg

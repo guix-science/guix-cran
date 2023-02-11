@@ -241,13 +241,13 @@ Projections: Understanding the Fan Chart
 (define-public r-cytobankapi
   (package
     (name "r-cytobankapi")
-    (version "2.1.1")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CytobankAPI" version))
               (sha256
                (base32
-                "1wfzgrd8nh40yjnfi0cqyh5aq1n35fk3ym60qj4yg2lkjb5gpcnz"))))
+                "0wzsrwc7a7zhpjgxc2ymr258zv9h7nwpyj83p6j8mrqzvkfvrqq8"))))
     (properties `((upstream-name . "CytobankAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -18033,13 +18033,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-coinr
   (package
     (name "r-coinr")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COINr" version))
               (sha256
                (base32
-                "0vi89kfma2r8wkfxrfi8hb5m6pvhqbl5ja3kzqriwv4qpzg8syyg"))))
+                "162936aqypgxr59nnyk4nsmd0nbkdxddkwvwdw7ag7wp8zdkphx6"))))
     (properties `((upstream-name . "COINr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-readxl r-openxlsx r-ggplot2))
@@ -21721,6 +21721,38 @@ present.  The clustermole R package provides methods to query thousands of human
 and mouse cell identity markers sourced from a variety of databases.")
     (license license:expat)))
 
+(define-public r-clustering-sc-dp
+  (package
+    (name "r-clustering-sc-dp")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clustering.sc.dp" version))
+              (sha256
+               (base32
+                "0l5grxvjxzc89qn0nvd79ljzjp89vgxinms291hxzvgbid6yn5sc"))))
+    (properties `((upstream-name . "clustering.sc.dp")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=clustering.sc.dp")
+    (synopsis
+     "Optimal Distance-Based Clustering for Multidimensional Data with Sequential Constraint")
+    (description
+     "This package provides a dynamic programming algorithm for optimal clustering
+multidimensional data with sequential constraint.  The algorithm minimizes the
+sum of squares of within-cluster distances.  The sequential constraint allows
+only subsequent items of the input data to form a cluster.  The sequential
+constraint is typically required in clustering data streams or items with time
+stamps such as video frames, GPS signals of a vehicle, movement data of a
+person, e-pen data, etc.  The algorithm represents an extension of Ckmeans.1d.dp
+to multiple dimensional spaces.  Similarly to the one-dimensional case, the
+algorithm guarantees optimality and repeatability of clustering.  Method
+clustering.sc.dp() can find the optimal clustering if the number of clusters is
+known.  Otherwise, methods findwithinss.sc.dp() and backtracking.sc.dp() can be
+used.  See Szkaliczki, T. (2016) \"clustering.sc.dp: Optimal Clustering with
+Sequential Constraint by Using Dynamic Programming\" <doi: 10.32614/RJ-2016-022>
+for more information.")
+    (license license:lgpl3+)))
+
 (define-public r-clustering
   (package
     (name "r-clustering")
@@ -22365,13 +22397,13 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (define-public r-clugenr
   (package
     (name "r-clugenr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clugenr" version))
               (sha256
                (base32
-                "151bgpyqnjznpkcdj2x0hj4f2cwy1jlkpyyxsqzcjcmr72nwr06l"))))
+                "0lfpjr7a2wb37nkr5l5aqbpwj8nm27q41f2lw4d5n29mffh7malm"))))
     (properties `((upstream-name . "clugenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))

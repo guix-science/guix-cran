@@ -1084,25 +1084,25 @@ package; this package provides an interface to access that data.")
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "USA.state.boundaries" version))
               (sha256
                (base32
-                "1zxycl0dkwa0bc1axj9s4yw1ld4zkxgbvdzrwwwr3iwddpk8mrdf"))))
+                "0pdqnfpijs9n1vxkngs3mm5q9dwqfmlkm60jq8isxcd9fiadsig6"))))
     (properties `((upstream-name . "USA.state.boundaries")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp))
     (home-page "https://gitlab.com/iembry/usa.state.boundaries")
-    (synopsis "Replacement of the 'USGSstates2k' Package")
+    (synopsis
+     "WGS84 Datum Map of the USA, Including Puerto Rico and the U.S. Virgin Islands")
     (description
-     "This is a replacement of the archived USGSstates2k package.  It contains a map
-with the state boundaries of the USA obtained from the USGS. Irucka worked with
-this data set while a Cherokee Nation Technology Solutions (CNTS) USGS
-Contractor and/or USGS employee.  This package contains a subset of the data
-included in the USA.state.boundaries.data package, which is available in a drat
-repository.  To install that data package, please follow the instructions at
+     "This package contains a WGS84 datum map of the USA, which includes all
+Commonwealth and State boundaries & also includes Puerto Rico and the U.S.
+Virgin Islands.  This map is a reprojection of the NAD83 datum map from the USGS
+National Map.  This package contains a subset of the data included in the
+USA.state.boundaries.data package, which is available in a drat repository.  To
+install that data package, please follow the instructions at
 <https://gitlab.com/iembry/usa.state.boundaries.data>.")
     (license license:cc0)))
 

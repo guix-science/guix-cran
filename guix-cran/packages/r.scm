@@ -6643,13 +6643,13 @@ incorporating neighbour effects.")
 (define-public r-rsdmx
   (package
     (name "r-rsdmx")
-    (version "0.6-1")
+    (version "0.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsdmx" version))
               (sha256
                (base32
-                "0f1awcrlz1k57al5j54yyaxj2avjp4c01iqzlm7v34i7pvjl82da"))))
+                "0l2n4niip9l79m1zvknlm7k203zgr7cdz7rc8qisc3w0gh2nsjch"))))
     (properties `((upstream-name . "rsdmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-r6 r-plyr r-httr))
@@ -19490,13 +19490,13 @@ direct access to C++ functionality.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "2.3-3.1")
+    (version "3.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RJSDMX" version))
               (sha256
                (base32
-                "1sp20dcg6d0yrmllqsh486v8frgi9bssd8zibc9165y5v8yjg9y6"))))
+                "036ixsa2vymlmq3wb9yaclwkql30jgrycmfq8k0n6gxl309x5z2y"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -26210,17 +26210,16 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
 (define-public r-resi
   (package
     (name "r-resi")
-    (version "1.0.5")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RESI" version))
               (sha256
                (base32
-                "1synv78b06v552glpj15jc5cfa5i5i8bcn1hqyvsv4d5d94qj4i3"))))
+                "0q4xrgrdx6xqb2124ppf7bkx0kckwkv2kc5qc2brkqsdd7ss6wb2"))))
     (properties `((upstream-name . "RESI")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
-                             r-regtools
                              r-nlme
                              r-lmtest
                              r-clubsandwich
@@ -33145,13 +33144,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-5")
+    (version "0.9-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDS" version))
               (sha256
                (base32
-                "0c0f2r5ni0ma3msk42zj8nn8xd61bx9b4v5lx4airssx5mx2nx2v"))))
+                "1pm9xy8jklb5l21g464z6310iin4v6hkkl42msl5xpicfvv0axd2"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -39361,13 +39360,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.6-4")
+    (version "1.6-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RBesT" version))
               (sha256
                (base32
-                "0i9i1hifr7ljccmr3rd1rxfngimwdr88njr7lqba179g87jg1l42"))))
+                "16i9s2856l73ywrfmvjxxxbngxs7nhzl3aq4ml74vm1a0zjk4b5s"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -39387,7 +39386,7 @@ distribution and random vectors from the Dirichlet distribution.")
                              r-bayesplot
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RBesT")
+    (home-page "http://opensource.nibr.com/RBesT/")
     (synopsis "R Bayesian Evidence Synthesis Tools")
     (description
      "Tool-set to support Bayesian evidence synthesis.  This includes meta-analysis,

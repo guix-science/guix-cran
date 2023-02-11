@@ -22616,13 +22616,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.13.0")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "06f53lyvv8r9bsvx5b0gx0jacwfjpiw2ys0g9b3r53xbx4vb1gkd"))))
+                "0mdxzanrs8df4zvxwgnrdjp4jma2zyv0qni8mnn6n659n22kmm03"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

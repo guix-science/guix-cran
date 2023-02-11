@@ -1400,16 +1400,16 @@ of applications.")
 (define-public r-ispdata
   (package
     (name "r-ispdata")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ispdata" version))
               (sha256
                (base32
-                "1bivyhjcqxma7cszqd71vmj0pcld08p6slmqyjl5zzyw85vglh9f"))))
+                "1bs2qff15qh45wp3v6kyx4b1gd5vg36cj4cjzlxdfmgdjqjjwd3m"))))
     (properties `((upstream-name . "ispdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr r-openxlsx r-janitor r-dplyr))
+    (propagated-inputs (list r-sf r-readr r-openxlsx r-janitor r-dplyr))
     (home-page "https://cran.r-project.org/package=ispdata")
     (synopsis
      "Access Data from the Public Security Institute of the State of Rio De Janeiro")
@@ -2446,6 +2446,44 @@ phenomenon in general, for example phase transitions and neural networks.This
 package provides utilities to simulate one dimensional Ising Model with
 Metropolis and Glauber Monte Carlo with single flip dynamics in periodic
 boundary conditions.  Utility functions for exact solutions are provided.")
+    (license license:gpl3+)))
+
+(define-public r-isinglandr
+  (package
+    (name "r-isinglandr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Isinglandr" version))
+              (sha256
+               (base32
+                "1ag8xs2fb3y90gsbgvb3ls6lzbvymdlqfi6kdfh96vxj2hlbf7sb"))))
+    (properties `((upstream-name . "Isinglandr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-simlandr
+                             r-shinythemes
+                             r-shinycssloaders
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (home-page "https://sciurus365.github.io/Isinglandr/")
+    (synopsis "Landscape Construction and Simulation for Ising Networks")
+    (description
+     "This package provides a toolbox for constructing potential landscapes for Ising
+networks.  The parameters of the networks can be directly supplied by users or
+estimated by the IsingFit package by van Borkulo and Epskamp (2016)
+<https://CRAN.R-project.org/package=IsingFit> from empirical data.  The Ising
+model's Boltzmann distribution is preserved for the potential landscape
+function.  The landscape functions can be used for quantifying and visualizing
+the stability of network states, as well as visualizing the simulation process.")
     (license license:gpl3+)))
 
 (define-public r-isingfit
@@ -4644,23 +4682,23 @@ Phonetic Alphabet), and ARPABET (used by the CMU Pronouncing Dictionary).")
 (define-public r-ip2proxy
   (package
     (name "r-ip2proxy")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ip2proxy" version))
               (sha256
                (base32
-                "1hs7n33cn2drqig0p2ns0bnyx2af58x2rslih3yj85xx0dn87qgp"))))
+                "0h0krm4sli400mmk8jw9jnxlp773barnyx3z66y45iqr3m23z6lx"))))
     (properties `((upstream-name . "ip2proxy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-reticulate r-jsonlite))
+    (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
     (home-page "https://cran.r-project.org/package=ip2proxy")
     (synopsis "Lookup for IP Address Proxy Information")
     (description
-     "This package provides a R package to find the IP addresses which are used as VPN
-anonymizer, open proxies, web proxies and Tor exits.  The package lookup the
-proxy IP address from IP2Proxy BIN Data file.  You may visit
-<https://lite.ip2location.com> for free database download.")
+     "Enable user to find the IP addresses which are used as VPN anonymizer, open
+proxies, web proxies and Tor exits.  The package lookup the proxy IP address
+from IP2Proxy BIN Data file.  You may visit <https://lite.ip2location.com> for
+free database download.")
     (license license:expat)))
 
 (define-public r-ip2location
@@ -12990,16 +13028,16 @@ with heavy-tailed noise.")
 (define-public r-ider
   (package
     (name "r-ider")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ider" version))
               (sha256
                (base32
-                "021s4fybki7a6mdsr6gkjrzfhaqdcg0m2a6r24y91jklxlxqxmws"))))
+                "0cy1q9nmgxlrpysw6j04i0dzd14zwla8zv8dvxs0zxyrlqxwv2yh"))))
     (properties `((upstream-name . "ider")))
     (build-system r-build-system)
-    (propagated-inputs (list r-fnn))
+    (propagated-inputs (list r-glm2 r-fnn))
     (home-page "https://cran.r-project.org/package=ider")
     (synopsis "Various Methods for Estimating Intrinsic Dimension")
     (description

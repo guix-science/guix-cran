@@ -19044,13 +19044,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.3.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deaR" version))
               (sha256
                (base32
-                "0fj0dm52gccafpd7dwlv9zpns1pkvha2372sk4g03ng3jf799ccz"))))
+                "15qwmrwpamm6flyhqhvmn3h06y7hpv6kxdf494f2x39sn7sw08pm"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -21534,13 +21534,13 @@ of R's native numeric representations of timestamps where possible.")
 (define-public r-datetimeoffset
   (package
     (name "r-datetimeoffset")
-    (version "0.1.2")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datetimeoffset" version))
               (sha256
                (base32
-                "10m7rqszdkdkgsizxg15y23y0wxj2y0pkk54syl9j21cyg5g7aww"))))
+                "0jjiihx7fwg36v6n2mv0ly54f9jz5j7q7phla3axnqz68slb9dsf"))))
     (properties `((upstream-name . "datetimeoffset")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-purrr r-clock))
@@ -21668,13 +21668,13 @@ can be performed with different methods including BLADJ (Webb et al. (2008)
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datefixR" version))
               (sha256
                (base32
-                "10fwiv7lz2a2rb6ry2yp8b3qyy3kb56ha68xsk5l4iq8bfil82q0"))))
+                "1f6n8fxbcq3n1y4w10p53sarjx2i8x4y1hjkcxc8ynb0zxlp7d2v"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
@@ -21713,13 +21713,13 @@ user-controlled behavior.")
 (define-public r-datazoom-amazonia
   (package
     (name "r-datazoom-amazonia")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datazoom.amazonia" version))
               (sha256
                (base32
-                "13nqvpc2gbz0pz2bnq2n6qa3qcwmfjfr15rznrsasl82s3myvfgk"))))
+                "07b7wg71lvilb0hcimr4shaskl1rixn75nvc3mfxi85hbdkk56xn"))))
     (properties `((upstream-name . "datazoom.amazonia")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -21731,17 +21731,16 @@ user-controlled behavior.")
                              r-sf
                              r-readxl
                              r-readr
-                             r-rcurl
+                             r-rcpp
                              r-purrr
                              r-magrittr
                              r-lubridate
-                             r-labelled
                              r-janitor
                              r-hmisc
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "http://www.econ.puc-rio.br/datazoom/")
+    (home-page "https://www.econ.puc-rio.br/datazoom/")
     (synopsis "Simplify Access to Data from the Amazon Region")
     (description
      "This package provides functions to download and treat data regarding the

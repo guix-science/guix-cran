@@ -21287,13 +21287,13 @@ in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\"")
 (define-public r-spatgraphs
   (package
     (name "r-spatgraphs")
-    (version "3.2-2")
+    (version "3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatgraphs" version))
               (sha256
                (base32
-                "09bbcqgmbg6a65mnxivr4pghsanj22x1j0l4hq8bzpwgbas7byhy"))))
+                "1xiq4a8br46qk19k23kkb6l1b7ciw9lmmrvwfznwkamwps6dwlg8"))))
     (properties `((upstream-name . "spatgraphs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -38906,24 +38906,28 @@ HTML tool widgets.")
 (define-public r-sherlock
   (package
     (name "r-sherlock")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sherlock" version))
               (sha256
                (base32
-                "0r6abbkh84ds189lmhn3n8r7lmfa5jz47zm0niz67liymahg8i3n"))))
+                "1y14im0p4hqlip74ggkwfz3gnswhr3qrwvzcmi2nwk49a8rhcfzh"))))
     (properties `((upstream-name . "sherlock")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-scales
+                             r-rstudioapi
                              r-rlang
                              r-readr
+                             r-purrr
                              r-plotly
                              r-openxlsx
                              r-magrittr
                              r-ggplot2
                              r-ggh4x
+                             r-fs
                              r-forcats
                              r-dplyr
                              r-cowplot))
@@ -40707,13 +40711,13 @@ be used via the website interface at <http://sfinx.ugent.be>.")
 (define-public r-sfhotspot
   (package
     (name "r-sfhotspot")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sfhotspot" version))
               (sha256
                (base32
-                "1j3588zj5z9d82ci3vrwz22gaq47lrkkl5fqqys50i46z4jazcn9"))))
+                "0sccgnq0l6wnnsmpjz8ka62g28ffcsdl3zds6apz79yhacdvmgvj"))))
     (properties `((upstream-name . "sfhotspot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -40722,6 +40726,7 @@ be used via the website interface at <http://sfinx.ugent.be>.")
                              r-sf
                              r-rlang
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "http://pkgs.lesscrime.info/sfhotspot/")
     (synopsis "Hot-Spot Analysis with Simple Features")
     (description

@@ -863,16 +863,16 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryup
   (package
     (name "r-queryup")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryup" version))
               (sha256
                (base32
-                "0yr73g4a5aghdxn3qc9y1al8n9m499x5vppzx9adrnhl0y0nigsf"))))
+                "1q3v48pss9y5bx68k48ajzyjv6w4ylcwzmb0mzp78g0n1cfjc6qj"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcurl r-jsonlite))
+    (propagated-inputs (list r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VoisinneG/queryup")
     (synopsis "Query the 'UniProtKB' REST API")

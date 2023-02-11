@@ -1285,6 +1285,38 @@ volesti are described in A. Chalkis and V. Fisikopoulos (2022)
 <doi:10.32614/RJ-2021-077> and references therein.")
     (license license:lgpl3)))
 
+(define-public r-volcanoplot
+  (package
+    (name "r-volcanoplot")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "volcanoPlot" version))
+              (sha256
+               (base32
+                "06nkv56c36wgnb7s6gkpp14syzhm5zm2wdfjx9wamxp5cf0wk3mk"))))
+    (properties `((upstream-name . "volcanoPlot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-purrr
+                             r-ggplot2
+                             r-fmsb
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=volcanoPlot")
+    (synopsis "Volcano Plot for Clinical Trial Adverse Events")
+    (description
+     "Interactive adverse event (AE) volcano plot for monitoring clinical trial
+safety.  This tool allows users to view the overall distribution of AEs in a
+clinical trial using standard (e.g. MedDRA preferred term) or custom (e.g.
+Gender) categories using a volcano plot similar to proposal by Zink et al.
+(2013) <doi:10.1177/1740774513485311>.  This tool provides a stand-along shiny
+application and flexible shiny modules allowing this tool to be used as a part
+of more robust safety monitoring framework like the Shiny app from the
+safetyGraphics R package.")
+    (license license:expat)))
+
 (define-public r-volcano3d
   (package
     (name "r-volcano3d")
@@ -4119,13 +4151,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "verbalisr" version))
               (sha256
                (base32
-                "17zq2qc361kmd32pfzqgxpgw2z4z1iq831cq85fffdc3nvl3wwx4"))))
+                "12qnjspn1y5sfjmicfc6wm1vcbyzhwqldx9n56xsnqsk9589690a"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))

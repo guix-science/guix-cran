@@ -8394,6 +8394,43 @@ platform with functions that query the corresponding REST endpoints on the API
 frame format.")
     (license license:gpl3)))
 
+(define-public r-epiforsk
+  (package
+    (name "r-epiforsk")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EpiForsk" version))
+              (sha256
+               (base32
+                "1z28d6xgkpzn9i10ha50qpxrcmn8s3lzmfckmsvqa6rhklc5r9xg"))))
+    (properties `((upstream-name . "EpiForsk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EpiForsk")
+    (synopsis
+     "Code Sharing at the Department of Epidemiological Research at Statens Serum Institut")
+    (description
+     "This is a collection of assorted functions and examples collected from various
+projects.  Currently we have functionalities for simplifying overlapping time
+intervals, Charlson comorbidity score constructors for Danish data, sibling
+design linear regression functionalities, and a method for calculating the
+confidence intervals for functions of parameters from a GLM.")
+    (license license:expat)))
+
 (define-public r-epiflows
   (package
     (name "r-epiflows")
@@ -13794,18 +13831,18 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.10.1")
+    (version "2.10.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eha" version))
               (sha256
                (base32
-                "132n988b4wpx5m2bilc9cqgpxf8j8gkhymh3xvbp88am6iy8155f"))))
+                "05bnqxpkn5i0q750l1brm2bi7xv25dijwrxnb6nnm8f8plvbx6gw"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr gfortran))
-    (home-page "http://ehar.se/r/eha/")
+    (home-page "https://ehar.se/r/eha/")
     (synopsis "Event History Analysis")
     (description
      "Parametric proportional hazards fitting with left truncation and right censoring
@@ -13813,7 +13850,7 @@ for common families of distributions, piecewise constant hazards, and discrete
 models.  Parametric accelerated failure time models for left truncated and right
 censored data.  Proportional hazards models for tabular and register data.
 Sampling of risk sets in Cox regression, selections in the Lexis diagram,
-bootstrapping.  BrostrÃ¶m (2012) <doi:10.1201/9781315373942>.")
+bootstrapping.  BrostrÃ¶m (2022) <doi:10.1201/9780429503764>.")
     (license license:gpl2+)))
 
 (define-public r-egst

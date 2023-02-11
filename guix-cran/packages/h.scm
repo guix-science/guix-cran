@@ -247,13 +247,13 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "1jjcjvr2yamvxwgyvypzh54s4q8nkra565gmq00cbrkff41356iv"))))
+                "0p911hdqzyx0ca62pzs53qzqp9w95n1bw2ijna2g8636vmlh7mnq"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -266,6 +266,8 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
                              r-patchwork
                              r-ncdf4
                              r-hydrogof
+                             r-ggspatial
+                             r-ggrepel
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
@@ -274,7 +276,7 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rcapell/HYPEtools")
     (synopsis
-     "Tools for Processing and Analysing Files from the Hydrological Catchment Model HYPE")
+     "Tools for Processing and Analyzing Files from the Hydrological Catchment Model HYPE")
     (description
      "Work with model files (setup, input, output) from the hydrological catchment
 model HYPE: Streamlined file import and export, standard evaluation plot
@@ -4097,13 +4099,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hockeystick" version))
               (sha256
                (base32
-                "13hbqx91qnnw0cf6mw88fgj39v7m7jq6ivmyp5smyxrg0pzck383"))))
+                "09l2w4s7fvbwxw2p1ap618hcmgyvrjci9fky473v6r4wsiin09dm"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -4112,6 +4114,7 @@ the package to build on previous lab members code.")
                              r-scales
                              r-rvest
                              r-readr
+                             r-rcolorbrewer
                              r-patchwork
                              r-lubridate
                              r-ggplot2
@@ -6601,6 +6604,39 @@ based on reliable covariance estimators for problems with (many) more variables
 than observations.  Includes routines for classifier training, prediction,
 cross-validation and variable selection.")
     (license license:gpl3+)))
+
+(define-public r-hidecan
+  (package
+    (name "r-hidecan")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hidecan" version))
+              (sha256
+               (base32
+                "08yhjgmcmrnrm6rm0vlzvizadvywcs1p6mchw1synxvclfaxyi28"))))
+    (properties `((upstream-name . "hidecan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-purrr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://plantandfoodresearch.github.io/hidecan/")
+    (synopsis
+     "Create HIDECAN Plots for Visualising Genome-Wide Association Studies and Differential Expression Results")
+    (description
+     "Generates HIDECAN plots that summarise and combine the results of genome-wide
+association studies (GWAS) and transcriptomics differential expression analyses
+(DE), along with manually curated candidate genes of interest.  The HIDECAN plot
+is presented in Angelin-Bonnet et al. (2023) (currently in review).")
+    (license license:expat)))
 
 (define-public r-hiddenf
   (package
