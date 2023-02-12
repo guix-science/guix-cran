@@ -1485,38 +1485,6 @@ mmm() of package multcomp to implement the trend test of Tukey, Ciminera and
 Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
     (license license:gpl2)))
 
-(define-public r-tukeyregion
-  (package
-    (name "r-tukeyregion")
-    (version "0.1.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TukeyRegion" version))
-              (sha256
-               (base32
-                "06w1wwrpxn2kglbx2s7i6gcdzmy4g17rsqxrf7k0wjvzayfday88"))))
-    (properties `((upstream-name . "TukeyRegion")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rglpk
-                             r-rgl
-                             r-rcpp
-                             r-mass
-                             r-ddalpha
-                             r-bh
-                             r-bfp))
-    (home-page "https://cran.r-project.org/package=TukeyRegion")
-    (synopsis "Tukey Region and Median")
-    (description
-     "Tukey regions are polytopes in the Euclidean space, viz.  upper-level sets of
-the Tukey depth function on given data.  The bordering hyperplanes of a Tukey
-region are computed as well as its vertices, facets, centroid, and volume.  In
-addition, the Tukey median set, which is the non-empty Tukey region having
-highest depth level, and its barycenter (= Tukey median) are calculated.  Tukey
-regions are visualized in dimension two and three.  For details see Liu, Mosler,
-and Mozharovskyi (2019, <doi:10.1080/10618600.2018.1546595>).  See file
-LICENSE.note for additional license information.")
-    (license license:gpl3+)))
-
 (define-public r-tukeygh
   (package
     (name "r-tukeygh")

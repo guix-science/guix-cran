@@ -535,26 +535,6 @@ programming interface <https://gtexportal.org/home/api-docs/index.html> of
 GTEx'.")
     (license license:gpl3+)))
 
-(define-public r-xptr
-  (package
-    (name "r-xptr")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xptr" version))
-              (sha256
-               (base32
-                "0352vs8dz61hgpwnf3r9r9haz3adg2wk9qxzrv313p1fcyfjz91v"))))
-    (properties `((upstream-name . "xptr")))
-    (build-system r-build-system)
-    (home-page "https://randy3k.github.io/xptr/")
-    (synopsis "Manipulating External Pointer")
-    (description
-     "There is limited native support for external pointers in the R interface.  This
-package provides some basic tools to verify, create and modify externalptr
-objects.")
-    (license license:expat)))
-
 (define-public r-xpose4
   (package
     (name "r-xpose4")

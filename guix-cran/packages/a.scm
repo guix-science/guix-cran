@@ -4464,6 +4464,29 @@ tests on the data, calculate lagged association rates, and performed multiple
 regression analysis on social network data.")
     (license license:gpl2)))
 
+(define-public r-asmap
+  (package
+    (name "r-asmap")
+    (version "1.0-5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ASMap" version))
+              (sha256
+               (base32
+                "0zjgv2lbsk76605cblh74pc33i4slj785wwsw6s9gps0silg6hfp"))))
+    (properties `((upstream-name . "ASMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DrJ001/ASMap")
+    (synopsis "Linkage Map Construction using the MSTmap Algorithm")
+    (description
+     "This package provides functions for Accurate and Speedy linkage map
+construction, manipulation and diagnosis of Doubled Haploid, Backcross and
+Recombinant Inbred R/qtl objects.  This includes extremely fast linkage map
+clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
+    (license license:gpl2+)))
+
 (define-public r-aslib
   (package
     (name "r-aslib")
@@ -17644,13 +17667,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "0yyz70xn8pgcxx85q87i0fz582ia68mymhyxy827z47kwn0s5w18"))))
+                "1c8mq9gxj6lr3y7jmm4q69mn9k43fj9ya794mn2w1v4x4c1fw8dk"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17660,7 +17683,6 @@ component, and push it to an Acumos platform.")
                              r-rlang
                              r-recipes
                              r-readr
-                             r-rcolorbrewer
                              r-purrr
                              r-paletteer
                              r-lubridate
@@ -17670,6 +17692,7 @@ component, and push it to an Acumos platform.")
                              r-generics
                              r-dplyr
                              r-bslib))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/actxps/")
     (synopsis
      "Create Actuarial Experience Studies: Prepare Data, Summarize Results, and Create Reports")

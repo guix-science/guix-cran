@@ -1767,6 +1767,50 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (including two sub-genomes) species for the time being.")
     (license license:agpl3+)))
 
+(define-public r-expertsurv
+  (package
+    (name "r-expertsurv")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "expertsurv" version))
+              (sha256
+               (base32
+                "192idvq3xws06fhx4h4lynn228a24ys9ps64imfz5rikkv4cjdcq"))))
+    (properties `((upstream-name . "expertsurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-stanheaders
+                             r-shelf
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rms
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-loo
+                             r-ggplot2
+                             r-flexsurv
+                             r-dplyr
+                             r-bh
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=expertsurv")
+    (synopsis "Incorporate Expert Opinion with Parametric Survival Models")
+    (description
+     "Enables users to incorporate expert opinion with parametric survival analysis
+using a Bayesian or frequentist approach.  Expert Opinion can be provided on the
+survival probabilities at certain time-point(s) or for the difference in mean
+survival between two treatment arms.Please reference its use as Cooney, P.,
+White, A. (2023) <doi:10.1177/0272989X221150212>.")
+    (license license:expat)))
+
 (define-public r-expertchoice
   (package
     (name "r-expertchoice")

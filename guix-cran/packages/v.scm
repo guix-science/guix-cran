@@ -3477,41 +3477,6 @@ determine which groups share a common within-group variance in a one-way random
 effects model <10.31234/osf.io/hpq7w>.")
     (license license:gpl2)))
 
-(define-public r-vic5
-  (package
-    (name "r-vic5")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VIC5" version))
-              (sha256
-               (base32
-                "1gicnwhmgm1jjw21zry4n1a5r88f7liwpv7nbprgiad9nng74zj2"))))
-    (properties `((upstream-name . "VIC5")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lubridate r-foreach))
-    (home-page "https://github.com/rpkgs/VIC5")
-    (synopsis "The Variable Infiltration Capacity (VIC) Hydrological Model")
-    (description
-     "The Variable Infiltration Capacity (VIC) model is a macroscale hydrologic model
-that solves full water and energy balances, originally developed by Xu Liang at
-the University of Washington (UW).  The version of VIC source code used is of
-5.0.1 on <https://github.com/UW-Hydro/VIC/>, see Hamman et al. (2018).
-Development and maintenance of the current official version of the VIC model at
-present is led by the UW Hydro (Computational Hydrology group) in the Department
-of Civil and Environmental Engineering at UW. VIC is a research model and in its
-various forms it has been applied to most of the major river basins around the
-world, as well as globally
-<http://vic.readthedocs.io/en/master/Documentation/References/>.  References:
-\"Liang, X., D. P. Lettenmaier, E. F. Wood, and S. J. Burges (1994), A simple
-hydrologically based model of land surface water and energy fluxes for general
-circulation models, J. Geophys.  Res., 99(D7), 14415-14428,
-<doi:10.1029/94JD00483>\"; \"Hamman, J. J., Nijssen, B., Bohn, T. J., Gergel, D.
-R., and Mao, Y. (2018), The Variable Infiltration Capacity model version 5
-(VIC-5): infrastructure improvements for new applications and reproducibility,
-Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
-    (license license:gpl3)))
-
 (define-public r-viafr
   (package
     (name "r-viafr")

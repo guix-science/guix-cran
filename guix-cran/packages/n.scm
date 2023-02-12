@@ -8010,6 +8010,31 @@ plays in the National Football League and obtain fourth down plays from
 <https://www.nfl.com/> and <https://www.espn.com/>.")
     (license license:expat)))
 
+(define-public r-nfer
+  (package
+    (name "r-nfer")
+    (version "1.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nfer" version))
+              (sha256
+               (base32
+                "0pawx7fqkx8p04l44id69gn6krh1hjdq4pwcbic84h4n4c0srdz3"))))
+    (properties `((upstream-name . "nfer")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "http://nfer.io/")
+    (synopsis "Event Stream Abstraction using Interval Logic")
+    (description
+     "This is the R API for the nfer formalism (<http://nfer.io/>).  nfer was
+developed to specify event stream abstractions for spacecraft telemetry such as
+the Mars Science Laboratory.  Users write rules using a syntax that borrows
+heavily from Allen's Temporal Logic that, when applied to an event stream,
+construct a hierarchy of temporal intervals with data.  The R API supports
+loading rules from a file or mining them from historical data.  Traces of events
+or pools of intervals are provided as data frames.")
+    (license license:gpl3+)))
+
 (define-public r-nfcp
   (package
     (name "r-nfcp")

@@ -1269,13 +1269,13 @@ Bootstrap.")
 (define-public r-jpstat
   (package
     (name "r-jpstat")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpstat" version))
               (sha256
                (base32
-                "1zgfa7w47pnnlw8krz6afdvpjp575h9n7wjjm275v2j1zqd6zz8r"))))
+                "125pyw42xjwjdfr497qnikjmkmbp6x8db4v23b17hr94qlgfb34c"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1285,7 +1285,6 @@ Bootstrap.")
                              r-stickyr
                              r-rlang
                              r-purrr
-                             r-progress
                              r-pillar
                              r-navigatr
                              r-lifecycle
@@ -1334,13 +1333,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpgrid
   (package
     (name "r-jpgrid")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpgrid" version))
               (sha256
                (base32
-                "0vv2l08crlhf62qlk6gzllszagfacg1lawl4kmr3rlz2n73s7y9v"))))
+                "1fwc94bwbl4k25in1zajfj08qavl73d2j86ma926259pb7r1r6dm"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1349,16 +1348,15 @@ mesh code using ggplot2 and leaflet', etc.")
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-stickyr
                              r-stars
                              r-sf
                              r-rlang
                              r-purrr
                              r-pillar
-                             r-magrittr
                              r-lifecycle
                              r-geosphere
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/UchidaMizuki/jpgrid")
     (synopsis "Functions for the Grid Square Codes in Japan")
     (description

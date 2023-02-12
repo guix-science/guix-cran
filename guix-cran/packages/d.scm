@@ -582,13 +582,13 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 (define-public r-dynforest
   (package
     (name "r-dynforest")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DynForest" version))
               (sha256
                (base32
-                "0fnszfbk2gkgff48cv6ij87w44hspkw62flvgvkwf6hlbb5j64k7"))))
+                "08rqwhw08aqm1zqjcvma36z8nbp73jjmas1yn23zqv1hb76airsj"))))
     (properties `((upstream-name . "DynForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -610,8 +610,8 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
      "Based on random forest principle, DynForest is able to include multiple
 longitudinal predictors to provide individual predictions.  Longitudinal
 predictors are modeled through the random forest.  The methodology is fully
-described for a survival outcome in: Devaux, Helmer, Dufouil, Genuer &
-Proust-Lima (2022) <doi: 10.48550/arXiv.2208.05801>.")
+described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2022)
+<doi: 10.48550/arXiv.2208.05801>.")
     (license license:lgpl3+)))
 
 (define-public r-dynfeature
@@ -3291,6 +3291,32 @@ and state-space model reduction techniques are implemented.  An introduction and
 User's Guide is available in a vignette.")
     (license license:gpl2)))
 
+(define-public r-dsdp
+  (package
+    (name "r-dsdp")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dsdp" version))
+              (sha256
+               (base32
+                "0n0cyqzwv97wqq8m8a3qr6bg2p07ky9dm6hmlxwd2ggxrn3kmxv8"))))
+    (properties `((upstream-name . "dsdp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://tsuchiya-lab.github.io/dsdp/")
+    (synopsis "Density Estimation with Semidefinite Programming")
+    (description
+     "The models of probability density functions are Gaussian or exponential
+distributions with polynomial correction terms.  Using a maximum likelihood
+method, dsdp computes parameters of Gaussian or exponential distributions
+together with degrees of polynomials by a grid search, and coefficient of
+polynomials by a variant of semidefinite programming.  It adopts Akaike
+Information Criterion for model selection.  See a vignette for a tutorial and
+more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
+    (license license:expat)))
+
 (define-public r-dscore
   (package
     (name "r-dscore")
@@ -4838,13 +4864,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.0")
+    (version "3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DR.SC" version))
               (sha256
                (base32
-                "0mbq5mjgkn807zd5nkpd2j29v0kz4q6jw09cnzavgr1gqza1pbix"))))
+                "19yl47bi1mpgq7ppviazq0hl0d0yi3mrk1qkdpcbic6dwv2d04k0"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom
@@ -7945,13 +7971,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dm" version))
               (sha256
                (base32
-                "13sh6f5da1dzd8517cgsr3lig8bihlms7bzrwgs0m4fswvj5fgfj"))))
+                "06hwrnaa7d6d2xjkwal2s7ak8qq60p586168k47cvwr1811hmxlh"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -7971,7 +7997,7 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
                              r-cli
                              r-backports))
     (native-inputs (list r-knitr))
-    (home-page "https://cynkra.github.io/dm/")
+    (home-page "https://dm.cynkra.com/")
     (synopsis "Relational Data Models")
     (description
      "This package provides tools for working with multiple related tables, stored as
@@ -13856,6 +13882,27 @@ Sampling and Household Listing Manual\" (ICF International 2012,
      "Building and forecasting time series data with multiple seasonality using
 Dynamic Harmonic Regression.")
     (license license:gpl3)))
+
+(define-public r-dhis2r
+  (package
+    (name "r-dhis2r")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dhis2r" version))
+              (sha256
+               (base32
+                "0i9gxahxnirlrypzlx49q7sx2r5agjq7ipwk7ya5p32960bb89lf"))))
+    (properties `((upstream-name . "dhis2r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/amanyiraho/dhis2r")
+    (synopsis "Client for the 'DHIS2' Web API")
+    (description
+     "Connect and pull data from a DHIS2 (District Health Information Software 2)
+instance into R.")
+    (license license:expat)))
 
 (define-public r-dhh
   (package

@@ -15754,15 +15754,16 @@ not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sps" version))
               (sha256
                (base32
-                "07y3hwkkzj8pd6by9wlipx1s7d2b4pj0kv3xv8g8ih4mriv33d8b"))))
+                "1qc67mfcknmalxzrccyjbg00xqx7axqa9xfivi00agnrvl1z930y"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/marberts/sps")
     (synopsis "Sequential Poisson Sampling")
     (description
@@ -15770,9 +15771,10 @@ not hesitate to try this package.")
 probability-proportional-to-size samples with a given number of units, and is
 commonly used for price-index surveys.  This package gives functions to draw
 stratified sequential Poisson samples according to the method by Ohlsson (1998,
-ISSN:0282-423X), and generate appropriate bootstrap replicate weights according
-to the generalized bootstrap method by Beaumont and Patak (2012,
-<doi:10.1111/j.1751-5823.2011.00166.x>).")
+ISSN:0282-423X), as well as other order sample designs by RosÃ©n (1997,
+<doi:10.1016/S0378-3758(96)00186-3>), and generate appropriate bootstrap
+replicate weights according to the generalized bootstrap method by Beaumont and
+Patak (2012, <doi:10.1111/j.1751-5823.2011.00166.x>).")
     (license license:expat)))
 
 (define-public r-sprtt
@@ -18137,17 +18139,17 @@ mapping.")
 (define-public r-spiderbar
   (package
     (name "r-spiderbar")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spiderbar" version))
               (sha256
                (base32
-                "0lk080s3xksrskc48nckpml74gvs6n7jjr4jgm15jhwp0izjs5y7"))))
+                "0yhxm3ns9xymm6msklpm1x0ahcq7gkfp1w92aafk2r3pip1g3ds5"))))
     (properties `((upstream-name . "spiderbar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "https://gitlab.com/hrbrmstr/spiderbar")
+    (home-page "https://github.com/hrbrmstr/spiderbar")
     (synopsis "Parse and Test Robots Exclusion Protocol Files and Rules")
     (description
      "The Robots Exclusion Protocol <https://www.robotstxt.org/orig.html> documents a
@@ -24085,25 +24087,6 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
 <doi:10.1007/s11222-018-9818-2>, and Eilers and Marx (1996)
 <doi:10.1214/ss/1038425655>.")
     (license license:gpl2)))
-
-(define-public r-soobench
-  (package
-    (name "r-soobench")
-    (version "1.9.18")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "soobench" version))
-              (sha256
-               (base32
-                "06wzlxdw0l6jc1zqsgkn120ibprfalwqd38xh7dpi30vdqiqskcc"))))
-    (properties `((upstream-name . "soobench")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=soobench")
-    (synopsis "Single Objective Optimization Benchmark Functions")
-    (description
-     "Collection of different single objective test functions useful for benchmarks
-and algorithm development.")
-    (license license:bsd-2)))
 
 (define-public r-sonify
   (package
@@ -51178,29 +51161,6 @@ BA (2020). \"Quantifying the Bias due to Observed Individual Confounders in
 Causal Treatment Effect Estimates\".  Statistics in Medicine, 39(18): 2447- 2476
 <doi: 10.1002/sim.8549>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-sbde
-  (package
-    (name "r-sbde")
-    (version "1.0-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sbde" version))
-              (sha256
-               (base32
-                "0m9mcr42bs74bmkyjfzyf01l2784d5bwy5g4ivl8505y8faz946c"))))
-    (properties `((upstream-name . "sbde")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-extremefit r-coda))
-    (home-page "https://cran.r-project.org/package=sbde")
-    (synopsis "Semiparametric Bayesian Density Estimation")
-    (description
-     "Offers Bayesian semiparametric density estimation and tail-index estimation for
-heavy tailed data, by using a parametric, tail-respecting transformation of the
-data to the unit interval and then modeling the transformed data with a purely
-nonparametric logistic Gaussian process density prior.  Based on Tokdar et al.
-(2022) <doi:10.1080/01621459.2022.2104727>.")
-    (license license:gpl2)))
 
 (define-public r-sbagm
   (package

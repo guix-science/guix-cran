@@ -6821,23 +6821,23 @@ accuracy and computed several scores of importance for variable selection.")
 (define-public r-gplsim
   (package
     (name "r-gplsim")
-    (version "0.9.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gplsim" version))
               (sha256
                (base32
-                "16xanzrapz0gnbd4zm6jm305w00c3qspcvjq7vw2r4zry0sr96pa"))))
+                "1lqw5vk23r86cks5g6vx6m8bag7pafg2w755gx16rvm5ja9l7rkj"))))
     (properties `((upstream-name . "gplsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm r-mgcv))
     (home-page "https://cran.r-project.org/package=gplsim")
-    (synopsis "Penalized Spline Estimation for GPLSIM")
+    (synopsis "Spline Estimation for GPLSIM")
     (description
-     "We provides functions that employ penalized spline (P-spline) to estimate
-generalized partially linear single index models (GPLSIM), which extend the
-generalized linear models to include nonlinear effect for some predictors.
-Please see Y. (2017) at <doi:10.1007/s11222-016-9639-0> and Y., and R. (2002) at
+     "We provides functions that employ splines to estimate generalized partially
+linear single index models (GPLSIM), which extend the generalized linear models
+to include nonlinear effect for some predictors.  Please see Y. (2017) at
+<doi:10.1007/s11222-016-9639-0> and Y., and R. (2002) at
 <doi:10.1198/016214502388618861> for more details.")
     (license license:gpl2)))
 
@@ -25154,13 +25154,13 @@ computes derived parameters such as t50 and AUC.")
 (define-public r-gasper
   (package
     (name "r-gasper")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasper" version))
               (sha256
                (base32
-                "0zg65ix07clrbhwwx9wsy4zclw039k1xsmcl5cf67n41v66nr4ng"))))
+                "0ff110nc5p7x8q7cljvzyjqdyf4lwz1dkq2i0pqasiifdij6m71a"))))
     (properties `((upstream-name . "gasper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -25728,13 +25728,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.3.3")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganGenerativeData" version))
               (sha256
                (base32
-                "07hdvch67c4liqb9f01j3aflivgpzgxdsg16zvvhwbyzch94xmv2"))))
+                "1rj9zndfrr5aprpcyy7nx0rvbsd2b983s9xphrd2g1p38y1lm82q"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -25745,7 +25745,7 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
      "Generative Adversarial Networks are applied to generate generative data for a
 data source.  In iterative training steps the distribution of generated data
 converges to that of the data source.  Direct applications of generative data
-are the created functions for outlier detection and missing data completion.
+are the created functions for data classifying and missing data completion.
 Reference: Goodfellow et al. (2014) <arXiv:1406.2661v1>.")
     (license license:gpl2+)))
 

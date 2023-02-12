@@ -3027,26 +3027,6 @@ provides graphical summaries for assessing the algorithm convergence and fitting
 results.")
     (license license:gpl2+)))
 
-(define-public r-qrjoint
-  (package
-    (name "r-qrjoint")
-    (version "2.0-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrjoint" version))
-              (sha256
-               (base32
-                "0vj2f3zjjvp9715jh1fapf2y9vna1vclmd2mg6i8dzf8iw3g2jqf"))))
-    (properties `((upstream-name . "qrjoint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quantreg r-matrix r-kernlab r-coda))
-    (home-page "https://cran.r-project.org/package=qrjoint")
-    (synopsis "Joint Estimation in Linear Quantile Regression")
-    (description
-     "Joint estimation of quantile specific intercept and slope parameters in a linear
-regression setting.")
-    (license license:gpl2)))
-
 (define-public r-qrisk3
   (package
     (name "r-qrisk3")

@@ -18261,28 +18261,6 @@ luminescence (ITL or ISO-TL).")
 (http://www.ltp-cloud.com/).")
     (license license:lgpl2.0+)))
 
-(define-public r-rlt
-  (package
-    (name "r-rlt")
-    (version "3.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RLT" version))
-              (sha256
-               (base32
-                "1vycsi213pcy5x9qpvim0nbsx4sk2125bficssv9v154w2xrgvf8"))))
-    (properties `((upstream-name . "RLT")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=RLT")
-    (synopsis "Reinforcement Learning Trees")
-    (description
-     "Random forest with a variety of additional features for regression,
-classification and survival analysis.  The features include: parallel computing
-with OpenMP, embedded model for selecting the splitting variable (based on Zhu,
-Zeng & Kosorok, 2015), subject weight, variable weight, tracking subjects used
-in each tree, etc.")
-    (license license:gpl2+)))
-
 (define-public r-rlogicalops
   (package
     (name "r-rlogicalops")
@@ -22124,13 +22102,13 @@ the data, we would have acceptable agreement (kappa above the threshold).")
 (define-public r-rhoneycomb
   (package
     (name "r-rhoneycomb")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhoneycomb" version))
               (sha256
                (base32
-                "00xrprhr4805h59xl4s4gq774pghbm50hwdl1073aba6xf0yphv6"))))
+                "0ph2xbfff4rrqr20dircn9gy7nmqzry9pbx22yq9j4gl00mn34q2"))))
     (properties `((upstream-name . "rhoneycomb")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22207,31 +22185,6 @@ sampling from any desired target distribution which is continuous and smooth.
 See Neal (2017) <arXiv:1701.02434> for further details on Hamiltonian Monte
 Carlo.  Automatic parameter selection is not supported.")
     (license license:gpl3)))
-
-(define-public r-rhli
-  (package
-    (name "r-rhli")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rhli" version))
-              (sha256
-               (base32
-                "1mb6bizqkg7zd8nc5a81fw7d0y0vcv6zh6y28k9vikqmc5l1n21q"))))
-    (properties `((upstream-name . "rhli")))
-    (build-system r-build-system)
-    (home-page "https://github.com/qomaio/rhli")
-    (synopsis "An R Implementation of the FIS MarketMap C-Toolkit")
-    (description
-     "Complete access from R to the FIS MarketMap C-Toolkit ('FAME C-HLI').  FAME is a
-fully integrated software and database management system from FIS that provides
-the following capabilities: Time series and cross-sectional data management;
-Financial calculation, data analysis, econometrics, and forecasting; Table
-generation and detailed multicolor, presentation-quality report writing;
-Multicolor, presentation-quality graphics; \"What-if\" analysis; Application
-development and structured programming; Data transfer to and from other
-applications; Tools for building customized graphical user interfaces.")
-    (license (license:fsdg-compatible "AGPL"))))
 
 (define-public r-rhino
   (package
@@ -24164,28 +24117,6 @@ out-of-bag prediction, regression monotonicity, and several methods for missing
 data imputation.  Soren R. Kunzel, Theo F. Saarinen, Edward W. Liu, Jasjeet S.
 Sekhon (2019) <arXiv:1906.06463>.")
     (license license:gpl3+)))
-
-(define-public r-rforensicbatwing
-  (package
-    (name "r-rforensicbatwing")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rforensicbatwing" version))
-              (sha256
-               (base32
-                "1i521h2nmlkhcxfxqir8jfjv0llwr6cz0ck5w6hzplk48044bn16"))))
-    (properties `((upstream-name . "rforensicbatwing")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=rforensicbatwing")
-    (synopsis
-     "BATWING for Calculating Forensic Trace-Suspect Match Probabilities")
-    (description
-     "This package provides a modified version (with great help from Ian J. Wilson) of
-Ian J. Wilson's program BATWING for calculating forensic trace-suspect match
-probabilities.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rfordummies
   (package
@@ -32454,13 +32385,13 @@ have to be downloaded separately.")
 (define-public r-readmet
   (package
     (name "r-readmet")
-    (version "1.6.6")
+    (version "1.6.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readmet" version))
               (sha256
                (base32
-                "1nn85vf2jg9mr85qbylxmsw6pp076fqspy52rhh26lpz9vm0z706"))))
+                "17l1ran8ckaqqf9dm7bgny5qjaq5yllmy7pjakxvjzgdxhqkpadm"))))
     (properties `((upstream-name . "readmet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=readmet")
@@ -35727,13 +35658,13 @@ RcppCWB'.")
 (define-public r-rcppcolors
   (package
     (name "r-rcppcolors")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppColors" version))
               (sha256
                (base32
-                "10lylgdbiqnvz4r60xb71sk3lxmrvk5nclm4wnwqyz7gbja3xs9g"))))
+                "093imi4i46qiv0vap7mkknd72ix4kpanj7r4b6ygy3nd1l6zh91a"))))
     (properties `((upstream-name . "RcppColors")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36167,6 +36098,51 @@ president quotes.")
 and journals worldwide and make them available to the public.")
     (license license:expat)))
 
+(define-public r-rcontroll
+  (package
+    (name "r-rcontroll")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rcontroll" version))
+              (sha256
+               (base32
+                "0zjkjvyqq76lyg61y0cd71v6yzyavqwv8zqw3fpky7jwv7szmnii"))))
+    (properties `((upstream-name . "rcontroll")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-sys
+                             r-reshape2
+                             r-readr
+                             r-rcppgsl
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-lidr
+                             r-iterators
+                             r-ggplot2
+                             r-gganimate
+                             r-foreach
+                             r-dplyr
+                             r-dosnow
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sylvainschmitt/rcontroll")
+    (synopsis "Individual-Based Forest Growth Simulator 'TROLL'")
+    (description
+     "TROLL is coded in C++ and it typically simulates hundreds of thousands of
+individuals over hundreds of years.  The rcontroll R package is a wrapper of
+TROLL'.  rcontroll includes functions that generate inputs for simulations and
+run simulations.  Finally, it is possible to analyse the TROLL outputs through
+tables, figures, and maps taking advantage of other R visualisation packages.
+rcontroll also offers the possibility to generate a virtual LiDAR point cloud
+that corresponds to a snapshot of the simulated forest.")
+    (license license:gpl3)))
+
 (define-public r-rconics
   (package
     (name "r-rconics")
@@ -36189,13 +36165,13 @@ arc length of an ellipse, polar lines, etc.).")
 (define-public r-rconfig
   (package
     (name "r-rconfig")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rconfig" version))
               (sha256
                (base32
-                "1h7g2b87ff3ga97pc3mrhh3dzxx5pq97wyadqfz46j3h79lhzvkc"))))
+                "0gl6xls5l19zsdja6q7y34lfad9npf2kq85h4mzdh6bm2xzg4fn6"))))
     (properties `((upstream-name . "rconfig")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite))
@@ -36205,7 +36181,8 @@ arc length of an ellipse, polar lines, etc.).")
      "Configuration management using files (JSON, YAML, separated text), JSON strings,
 and command line arguments.  Command line arguments can be used to override
 configuration.  Period-separated command line flags are parsed as hierarchical
-lists.")
+lists.  Environment variables, R global variables, and configuration values can
+be substituted.")
     (license license:expat)))
 
 (define-public r-rcompendium

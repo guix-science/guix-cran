@@ -9444,13 +9444,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRECAST" version))
               (sha256
                (base32
-                "11h6r28fp2zyxckysgm6xwmdihrcgqjmnl27pxx3zmp3rah68wkn"))))
+                "1vz9q5i3400lh9czrvrv33ra2q3q7gavnn6fj2ivhxffn7brrylf"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -9480,7 +9480,7 @@ transcriptomics data with non-cluster-relevant effects such as the complex batch
 effects.  It unifies spatial factor analysis simultaneously with spatial
 clustering and embedding alignment, requiring only partially shared cell/domain
 clusters across datasets.  More details can be referred to Wei Liu, et al.
-(2022) <doi:10.1101/2022.06.26.497672>.")
+(2023) <doi:10.1038/s41467-023-35947-w>.")
     (license license:gpl3)))
 
 (define-public r-pre
@@ -13060,23 +13060,24 @@ Yadlowsky S, Hayward RA, Sussman JB, McClelland RL, Min YI, and Basu S (2018)
 (define-public r-pool
   (package
     (name "r-pool")
-    (version "0.1.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pool" version))
               (sha256
                (base32
-                "1qfraam1rc2r4mn7yhhfv8lhhc4dzgq0v1y97n4h2z3mgxn5zgnd"))))
+                "0sv0rfsijsafbk34dfr9xvm02bl58rgc727awcasbvgigcpgxpdn"))))
     (properties `((upstream-name . "pool")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-later r-dbi))
+    (propagated-inputs (list r-withr r-rlang r-r6 r-later r-dbi))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rstudio/pool")
     (synopsis "Object Pooling")
     (description
      "Enables the creation of object pools, which make it less computationally
 expensive to fetch a new object.  Currently the only supported pooled objects
 are DBI connections.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-pooh
   (package
@@ -14191,13 +14192,13 @@ introduce yourself, ask for permission, take slowly and never ask twice.")
 (define-public r-polished
   (package
     (name "r-polished")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polished" version))
               (sha256
                (base32
-                "10lq3l1gfz1mb0jcspnxjqadgavlsk1j3w185s17yf66anmlx1ph"))))
+                "0qn7zlxw7jr0apvn23a6x00xn5fbg2c2hg6713biwsi7iqhb0amc"))))
     (properties `((upstream-name . "polished")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -16571,13 +16572,13 @@ nonparametric regression models.")
 (define-public r-plreg
   (package
     (name "r-plreg")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLreg" version))
               (sha256
                (base32
-                "0x7q6wris5w6gpa6i5w4ipcd2c461lgvdp97lwb2ywi7ri7xrig0"))))
+                "0ghasl9l6di0jxbrd7zsmv3f3fzzk943ixqhfw2r9kds5r16krh4"))))
     (properties `((upstream-name . "PLreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -26021,13 +26022,13 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedmut" version))
               (sha256
                (base32
-                "19m09mwxs58qsbc7h9vjax6dhjlcz65razhmdb6l5y8w1dq2v9gw"))))
+                "1kas20blvm3c1mqf25md4svdfqb68z7kr7zinbgmhmhmiigxiqgj"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (home-page "https://github.com/magnusdv/pedmut")
@@ -31119,13 +31120,13 @@ options().")
 (define-public r-paramlink2
   (package
     (name "r-paramlink2")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "paramlink2" version))
               (sha256
                (base32
-                "0ypn0fdrphblw64sdnfmyf9q4zbakqvl4xzr451phvhx52n1gb73"))))
+                "1dw6z49yd7g89hmnzpb5m0w8fz56iwwf7zr01kji0ss9p9vnr9pg"))))
     (properties `((upstream-name . "paramlink2")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedprobr))

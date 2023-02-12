@@ -6276,13 +6276,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.0.4")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMest" version))
               (sha256
                (base32
-                "07afw093mjgccpkmjdy3sv73farq7q0bx4s7sz11h3wd4i6rw0vn"))))
+                "116aasg8psn003p7igibn7zilxc2j59ijn2x5wc07rp56ldx0zqz"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -6324,13 +6324,13 @@ in Gaussian linear and nonlinear mixed-effects models.")
 (define-public r-lmeresampler
   (package
     (name "r-lmeresampler")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmeresampler" version))
               (sha256
                (base32
-                "0dyh5jlhapanxqbj2r2wg19qj1p2dr1krg8555ggi8n2sp4m90di"))))
+                "0y9bawakxyqxdmx74jsyrg3mgiwb22h8pskp4wzv99fl2dp3bfhs"))))
     (properties `((upstream-name . "lmeresampler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

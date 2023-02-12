@@ -6075,13 +6075,13 @@ the R server side.  DataSHIELD administration tools are also provided.")
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.7.1")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opa" version))
               (sha256
                (base32
-                "067b932zwk9q2navsa5iqw3c6fr872vh8s5a2fxcjw54nanbss5g"))))
+                "01n6f3aixbkcv3g3hc8yc5ng4vbcbj7l94va0p0q4nzn6ahznyi1"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-cpp11))
@@ -8515,6 +8515,37 @@ covers employment and wages across occupations, industries, states, and at the
 national level.  Metropolitan data is not included.")
     (license license:expat)))
 
+(define-public r-oesr
+  (package
+    (name "r-oesr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oesr" version))
+              (sha256
+               (base32
+                "078jjvm9d0g8jaab0x2z4h7h8m2pznamiglhkwv07xc65cskjmpb"))))
+    (properties `((upstream-name . "oesr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sandwich
+                             r-rlang
+                             r-ggplot2
+                             r-extrafont
+                             r-estimatr
+                             r-dplyr
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=oesr")
+    (synopsis "Methods for the Office of Evaluation Sciences")
+    (description
+     "This package provides methods for statistical analysis and reporting preferred
+by the US Office of Evaluation Sciences (OES).  This package prepares data from
+standard model output objects (such as from \\code{lm()} and
+\\code{estimatr::lm_robust()}) and creates visualizations of treatment effects
+from the prepared quantities, according to the standards of the US Office of
+Evaluation Sciences.")
+    (license license:gpl3)))
+
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
@@ -9912,6 +9943,30 @@ interest.  Fittings methods include the simple reference region and ordinary
 least squares (sometimes known as occupancy plot) methods, as well as the more
 efficient restricted maximum likelihood estimation'.")
     (license license:gpl3)))
+
+(define-public r-oca
+  (package
+    (name "r-oca")
+    (version "0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OCA" version))
+              (sha256
+               (base32
+                "19bayggqkzzpvn7ax8m8xgvz27a03iyybsxjz2vphf03dwsr8c5h"))))
+    (properties `((upstream-name . "OCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mathjaxr))
+    (home-page "https://cran.r-project.org/package=OCA")
+    (synopsis "Optimal Capital Allocations")
+    (description
+     "Computes optimal capital allocations based on some standard principles such as
+Haircut, Overbeck type II and the Covariance Allocation Principle.  It also
+provides some shortcuts for obtaining the Value at Risk and the Expectation
+Shortfall, using both the normal and the t-student distribution, see Urbina and
+GuillÃ©n (2014)<doi:10.1016/j.eswa.2014.05.017> and Urbina
+(2013)<http://hdl.handle.net/2099.1/19443>.")
+    (license license:gpl2)))
 
 (define-public r-oc
   (package

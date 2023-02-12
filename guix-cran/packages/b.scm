@@ -6400,6 +6400,34 @@ or predictor variables) is used to estimate total percent body fat in humans.
 <doi:10.4324/9780203868744>.")
     (license license:gpl2+)))
 
+(define-public r-bodsr
+  (package
+    (name "r-bodsr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bodsr" version))
+              (sha256
+               (base32
+                "13d3fhdq1cyq7zhr6sj9nmw1zdfibq7mv6cjx8zlb1dmqi1m5d07"))))
+    (properties `((upstream-name . "bodsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=bodsr")
+    (synopsis "Call the Bus Open Data Service ('BODS') API Through R")
+    (description
+     "This package provides a wrapper to allow users to download Bus Open Data Service
+BODS transport information from the API (<https://www.bus-data.dft.gov.uk/>).
+This includes timetable and fare metadata (including links for full datasets),
+timetable data at line level, and real-time location data.")
+    (license license:expat)))
+
 (define-public r-bodi
   (package
     (name "r-bodi")
@@ -8688,13 +8716,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.4-3")
+    (version "0.4-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blavaan" version))
               (sha256
                (base32
-                "0x0vx0gj0z1i1mczvi2j2g2zmdals7wz1ja0jcbpyzmb5arzgyd9"))))
+                "0vny9w7ad70kvs4m1hdy87qq9053a20z5xbma68mcgfl5v78fbc9"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim

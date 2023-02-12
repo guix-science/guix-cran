@@ -10946,13 +10946,13 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finnts" version))
               (sha256
                (base32
-                "0ih4z51n3g1villz59l0fbb9lwrs4cv46chmh9nv6ry3rmskrj41"))))
+                "1h00gz2dp1ch6yd01y3390mv5fc6ba1lxsfs6jkcpfjzaglcb3x1"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -18414,13 +18414,13 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAIRmaterials" version))
               (sha256
                (base32
-                "1kfr9z8w6d9rb900whw6cpgg2w8zqs7716vp4n2r75m70cjz2zxf"))))
+                "001bk2zwri5hpxldv71bp6a3ni7x5adw48nkpn9dbmfglrgm3gnf"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyjson
