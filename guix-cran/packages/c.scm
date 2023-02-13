@@ -31471,18 +31471,16 @@ one parent distribution to the quantile function of another.")
 (define-public r-cder
   (package
     (name "r-cder")
-    (version "0.2-2")
+    (version "0.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cder" version))
               (sha256
                (base32
-                "0aw2c170sqx2y4iz16avqijahwxlsaz590mxvsx4bicfd8nrcynk"))))
+                "07r9p0r4y809wgc7946l9hgh51m3rhjk2g7n3ygy9c02iwpy3v3m"))))
     (properties `((upstream-name . "cder")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
+    (propagated-inputs (list r-stringr
                              r-readr
                              r-lubridate
                              r-glue
@@ -31490,7 +31488,7 @@ one parent distribution to the quantile function of another.")
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mkoohafkan/cder")
-    (synopsis "Interface to the California Data Exchange Center")
+    (synopsis "Interface to the California Data Exchange Center (CDEC)")
     (description
      "Connect to the California Data Exchange Center (CDEC) Web Service
 <http://cdec.water.ca.gov/>.  CDEC provides a centralized database to store,

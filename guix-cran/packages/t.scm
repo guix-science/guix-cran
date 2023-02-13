@@ -8961,16 +8961,20 @@ available on gitHub: <https://github.com/Docma-TU/toscaData>.")
 (define-public r-tornado
   (package
     (name "r-tornado")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tornado" version))
               (sha256
                (base32
-                "12wvcc5p5fk6b1w3qhahjad5k0m34f744jszaid8hnrbbfysp8na"))))
+                "1fzcqpd5imhphx4cmmcjfiz38fbmhbb15bf51z6g7v51m2c3c18y"))))
     (properties `((upstream-name . "tornado")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-scales r-gridextra r-ggplot2
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-rlang
+                             r-gridextra
+                             r-ggplot2
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bertcarnell/tornado")
@@ -9229,13 +9233,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "0918bjdf0jswj5j5cv99m0xggd5zrr2f8xk292xgzg06kb507dk6"))))
+                "1y4d4rpsp2mbj2ka2y8mjc1hfgyf4p341y6l6gwwd0755gc6038y"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -9248,7 +9252,7 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
                              r-ggplot2
                              r-egg
                              r-dplyr))
-    (home-page "https://github.com/GenuityScience/topr")
+    (home-page "https://github.com/totajuliusd/topr")
     (synopsis "Create Custom Plots for Viewing Genetic Association Results")
     (description
      "This package provides a collection of functions for visualizing,exploring and

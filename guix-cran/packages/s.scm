@@ -15754,13 +15754,13 @@ not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sps" version))
               (sha256
                (base32
-                "1qc67mfcknmalxzrccyjbg00xqx7axqa9xfivi00agnrvl1z930y"))))
+                "0c576gwl8qn29cm18fgypsfprb2y3pc5a6ggs7i609phxlslb2x7"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18012,6 +18012,37 @@ in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
 <doi:10.3389/fendo.2016.00057>.")
     (license license:bsd-3)))
 
+(define-public r-spillover
+  (package
+    (name "r-spillover")
+    (version "0.1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Spillover" version))
+              (sha256
+               (base32
+                "10d29d9jg4jl7m99z6rw6w8m5li38ga976d83mm8waaz0agdwb81"))))
+    (properties `((upstream-name . "Spillover")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-vars
+                             r-tidyr
+                             r-ggplot2
+                             r-fastsom
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Spillover")
+    (synopsis "Spillover/Connectedness Index Based on VAR Modelling")
+    (description
+     "This package provides a user-friendly tool for estimating both total and
+directional connectedness spillovers based on Diebold and Yilmaz (2009, 2012).
+It also provides the user with rolling estimation for total and net indices.
+User can find both orthogonalized and generalized versions for each kind of
+measures.  See Diebold and Yilmaz (2009, 2012) find them at
+<doi:10.1111/j.1468-0297.2008.02208.x> and
+<doi:10.1016/j.ijforecast.2011.02.006>.")
+    (license license:gpl2)))
+
 (define-public r-spikeslabgam
   (package
     (name "r-spikeslabgam")
@@ -18930,13 +18961,13 @@ same variable in the cells of the extent.")
 (define-public r-spectrolab
   (package
     (name "r-spectrolab")
-    (version "0.0.17")
+    (version "0.0.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spectrolab" version))
               (sha256
                (base32
-                "1ac510g2zrwpyiwgp0izcif4z4fc04a0kpi5w5g1269l1vyxgd0a"))))
+                "1iwhsz19yfvf71zg1ifg9d3xb9rjbng1h5g7vfakm1jckin9mrv2"))))
     (properties `((upstream-name . "spectrolab")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shiny r-rcolorbrewer))

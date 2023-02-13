@@ -9467,13 +9467,13 @@ Hidasi-Neto, J (2014)
 (define-public r-bittermelon
   (package
     (name "r-bittermelon")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bittermelon" version))
               (sha256
                (base32
-                "0wmr8f4p10ly1mrxdpnh7z9z91a6n4qgww70x7khpn6q3hl2r3nl"))))
+                "15m56fxw0sj5jfl3fn0yvqw518j8iyc9ry63x9ycfs253mc5gam8"))))
     (properties `((upstream-name . "bittermelon")))
     (build-system r-build-system)
     (propagated-inputs (list r-unicode r-rappdirs r-png r-findpython))
@@ -23782,13 +23782,13 @@ downloading and ordering the data conveniently.")
 (define-public r-banter
   (package
     (name "r-banter")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "banter" version))
               (sha256
                (base32
-                "07m2k5q2v4c7rdbdrahxab5f8597xk4iadf49asp3jjzdj9haj4x"))))
+                "07gzl06l7iw4czdx3il3p8kl83yw32fxa8cjx1j018z3468m1qyj"))))
     (properties `((upstream-name . "banter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24310,13 +24310,13 @@ provides comparisons for effect of one or more variables.  See Kyungtaek Park
 (define-public r-ball
   (package
     (name "r-ball")
-    (version "1.3.12")
+    (version "1.3.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ball" version))
               (sha256
                (base32
-                "103lm9mlrqlqqn40bj4bsw0g9in5vka6q4kpqqzw6y3pbgd6596p"))))
+                "1bmwdjj7zsxnchq1xv64b45izn94bzayqzzib47jq03b59blg4ay"))))
     (properties `((upstream-name . "Ball")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mvtnorm r-gam))

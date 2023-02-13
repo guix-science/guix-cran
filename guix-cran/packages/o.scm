@@ -3073,16 +3073,16 @@ dose finding designs under various scenarios.")
 (define-public r-ordcd
   (package
     (name "r-ordcd")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OrdCD" version))
               (sha256
                (base32
-                "1rn9zl2l30dcyngd8r7cwvaljfaj03py0sj04vy0hbdpbnm709z4"))))
+                "08cxp6rqwrr9k067ykh8ahzbkl6hxazc79ih7w41xddi23zs1qi1"))))
     (properties `((upstream-name . "OrdCD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-igraph r-grbase r-bnlearn))
+    (propagated-inputs (list r-matrix r-mass r-igraph r-grbase r-bnlearn))
     (home-page "https://github.com/nySTAT/OrdCD")
     (synopsis "Ordinal Causal Discovery")
     (description
@@ -3097,16 +3097,22 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (define-public r-ordbetareg
   (package
     (name "r-ordbetareg")
-    (version "0.5.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ordbetareg" version))
               (sha256
                (base32
-                "0fla9i98qlxk0harzhr79m1fq4lmcfvslrkmkh5nhm72fis6w0x0"))))
+                "00031nn6lj9kf4g92yvdwqj45y5nazdjgnk4nl0mscd1bkcfp47y"))))
     (properties `((upstream-name . "ordbetareg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-ggplot2 r-faux r-dplyr r-brms))
+    (propagated-inputs (list r-transformr
+                             r-tidyr
+                             r-ggplot2
+                             r-gganimate
+                             r-faux
+                             r-dplyr
+                             r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ordbetareg")
     (synopsis "Ordered Beta Regression Models with Brms")
@@ -4876,13 +4882,13 @@ manipulating visual field data.")
 (define-public r-opgmmassessment
   (package
     (name "r-opgmmassessment")
-    (version "0.3.3")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opGMMassessment" version))
               (sha256
                (base32
-                "1d9ll5shhbk93hjvxc3nhaffjg31l14w9nqcbwqjv43gjaz0yq3a"))))
+                "09ii297524q2bgw2iqvd4s5bhnmm6gm5dh4lxskq1yxynfqdl77r"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

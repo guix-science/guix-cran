@@ -5595,41 +5595,6 @@ analysis on radially averaged two dimensional Fourier spectra to characterize
 image texture.")
     (license license:agpl3)))
 
-(define-public r-foster
-  (package
-    (name "r-foster")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "foster" version))
-              (sha256
-               (base32
-                "1gkn3mgxsq3p7nazw80z61yhc1dqxhjvd667xklpjka4rrk2am8p"))))
-    (properties `((upstream-name . "foster")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaimpute
-                             r-trend
-                             r-spatstat-geom
-                             r-spatstat
-                             r-sp
-                             r-rstoolbox
-                             r-rgdal
-                             r-reshape2
-                             r-raster
-                             r-randomforest
-                             r-dplyr
-                             r-data-table
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=foster")
-    (synopsis "Forest Structure Extrapolation with R")
-    (description
-     "Set of tools to streamline the modeling of the relationship between satellite
-imagery time series or any other environmental information, such as terrain
-elevation, with forest structural attributes derived from 3D point cloud data
-and their subsequent imputation over the broader landscape.")
-    (license license:gpl3)))
-
 (define-public r-fossilsimshiny
   (package
     (name "r-fossilsimshiny")
@@ -9018,13 +8983,13 @@ representations are provided.")
 (define-public r-flexpolyline
   (package
     (name "r-flexpolyline")
-    (version "0.2.7")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexpolyline" version))
               (sha256
                (base32
-                "1cxw92ling249kasx1d7sw8vm1h895h9fwd4giybxyvrn19svabg"))))
+                "1p23s30gyh6wyg6vk4cj897dy1ijl0nix8gzypglg7z5v5xnhkyr"))))
     (properties `((upstream-name . "flexpolyline")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp))
@@ -10092,16 +10057,16 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "0.2-3")
+    (version "0.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitPS" version))
               (sha256
                (base32
-                "15igv06zb4q589kdah595aqm6601c90xf7kg7r537kg96awr08h2"))))
+                "034am6ca8z72ql1c9vn95m5qnjg69k8qafhp7alvqdbp30dlhvq3"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-readxl r-hmisc r-dplyr))
+    (propagated-inputs (list r-vgam r-readxl r-rdpack r-hmisc r-dplyr))
     (home-page "https://github.com/jmcurran/fitPS")
     (synopsis "Fit Zeta Distributions to Forensic Data")
     (description
@@ -12916,6 +12881,76 @@ for solving binary classification problems.  FFTs can be preferable to more
 complex algorithms because they require very little information, are easy to
 understand and communicate, and are robust against overfitting.")
     (license license:cc0)))
+
+(define-public r-ffsimulator
+  (package
+    (name "r-ffsimulator")
+    (version "1.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ffsimulator" version))
+              (sha256
+               (base32
+                "0vl8sr32l5l4v6jb59ch98fg850d6w8zqqy2v8zay7v04qwbwqiz"))))
+    (properties `((upstream-name . "ffsimulator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytable
+                             r-rlang
+                             r-rglpk
+                             r-nflreadr
+                             r-magrittr
+                             r-glue
+                             r-ffscrapr
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ffsimulator.ffverse.com")
+    (synopsis "Simulate Fantasy Football Seasons")
+    (description
+     "Uses bootstrap resampling to run fantasy football season simulations supported
+by historical rankings and nflfastR data, calculating optimal lineups, and
+returning aggregated results.")
+    (license license:expat)))
+
+(define-public r-ffscrapr
+  (package
+    (name "r-ffscrapr")
+    (version "1.4.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ffscrapr" version))
+              (sha256
+               (base32
+                "0dxr7w64wjw1i1bspdj641m1dmgz85bgdapf2k2wba077zkmhhv4"))))
+    (properties `((upstream-name . "ffscrapr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-ratelimitr
+                             r-rappdirs
+                             r-purrr
+                             r-nflreadr
+                             r-memoise
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-checkmate
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://ffscrapr.ffverse.com")
+    (synopsis "API Client for Fantasy Football League Platforms")
+    (description
+     "Helps access various Fantasy Football APIs by handling authentication and
+rate-limiting, forming appropriate calls, and returning tidy dataframes which
+can be easily connected to other data sources.")
+    (license license:expat)))
 
 (define-public r-ffp
   (package

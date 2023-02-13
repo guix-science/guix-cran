@@ -4587,6 +4587,40 @@ restricted log-likelihood, but with other algorithms available.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gremes
+  (package
+    (name "r-gremes")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gremes" version))
+              (sha256
+               (base32
+                "1i3j23ssx0grkzq1qf4naiqrfd753m992pqhxy5y7c805acm77mj"))))
+    (properties `((upstream-name . "gremes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog
+                             r-mvtnorm
+                             r-mev
+                             r-igraph
+                             r-copula
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gremes")
+    (synopsis "Estimation of Tail Dependence in Graphical Models")
+    (description
+     "This package provides tools for estimation of edge weights on graphical models
+with respect to trees and block graphs and parameterized by a particular family
+of max-stable copulas.  The edge weights are parameters of tail dependence
+between adjacent variables and these edge weights determine the joint tail
+dependence between all variables in the context of a particular parametric
+model.  For methods of moment estimator, composite likelihood estimator please
+see Asenova et al. (2021) <doi:10.1007/s10687-021-00407-5>.  For estimation
+based on extremal coefficients see Asenova et al. (2021) as well as Einmahl et
+al. (2016) <doi:10.2139/ssrn.2717531>.  For cliquewise estimation please see
+Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
+    (license license:gpl2)))
+
 (define-public r-gregry
   (package
     (name "r-gregry")
@@ -15436,13 +15470,13 @@ for scatter plot) to visualize high dimensional data.")
 (define-public r-ggmuller
   (package
     (name "r-ggmuller")
-    (version "0.5.4")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggmuller" version))
               (sha256
                (base32
-                "0y7bm9fm5i8acpy6fa903ca2r9yasky7kg2hicm4xz5ni09jm20x"))))
+                "069y6wf9lbkz32kmkrc61vjc0p9fpr5191103dvaz0nj6gpd686a"))))
     (properties `((upstream-name . "ggmuller")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr r-ape))
@@ -25058,6 +25092,31 @@ available at <http://hdl.handle.net/11299/204551>, and in Lina K. MÃ¼hlbauer,
 Maximilienne Schulze, W. Stanley Harpole, and Adam T. Clark.  gauseR': Simple
 methods for fitting Lotka-Volterra models describing Gause's Struggle for
 Existence in the journal Ecology and Evolution.")
+    (license license:gpl3)))
+
+(define-public r-gaupro
+  (package
+    (name "r-gaupro")
+    (version "0.2.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GauPro" version))
+              (sha256
+               (base32
+                "0cjd4b09ni8g3l9g4hjmff4ws8fw2iyf23mj6z6z9391cz36s6zq"))))
+    (properties `((upstream-name . "GauPro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CollinErickson/GauPro")
+    (synopsis "Gaussian Process Fitting")
+    (description
+     "Fits a Gaussian process model to data.  Gaussian processes are commonly used in
+computer experiments to fit an interpolating model.  The model is stored as an
+R6 object and can be easily updated with new data.  There are options to run in
+parallel, and Rcpp has been used to speed up calculations.  For more info about
+Gaussian process software, see Erickson et al. (2018)
+<doi:10.1016/j.ejor.2017.10.002>.")
     (license license:gpl3)))
 
 (define-public r-gater

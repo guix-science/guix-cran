@@ -1032,13 +1032,13 @@ desired number/specific colors.")
 (define-public r-wrassp
   (package
     (name "r-wrassp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrassp" version))
               (sha256
                (base32
-                "1zk2rwlm8baf5pyzlcdxbkp40bji3vb64ybiy9pk947gzhpzyz4i"))))
+                "035lqibl85mhrv0zad1qhjhhlmrigd7ypzwkkavbk0lzw6ypcc27"))))
     (properties `((upstream-name . "wrassp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))

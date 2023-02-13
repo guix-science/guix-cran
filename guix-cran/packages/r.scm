@@ -2729,37 +2729,6 @@ distributions that requires no tuning.")
 through Web API <https://ttlivewebapi.fxopen.net:8443/api/doc/index>.")
     (license license:gpl2)))
 
-(define-public r-rtsvis
-  (package
-    (name "r-rtsvis")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rtsVis" version))
-              (sha256
-               (base32
-                "0j48p4cdkd3dwc5bxv8kmmqj38yaq4rz0wp47kx21msbajcw5m3m"))))
-    (properties `((upstream-name . "rtsVis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sp
-                             r-sf
-                             r-rstoolbox
-                             r-raster
-                             r-pbapply
-                             r-movevis
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://cran.r-project.org/package=rtsVis")
-    (synopsis "Raster Time Series Visualization")
-    (description
-     "This package provides a lightweight R package to visualize large raster time
-series, building on a fast temporal interpolation core.")
-    (license license:gpl3)))
-
 (define-public r-rtsplot
   (package
     (name "r-rtsplot")
@@ -4819,43 +4788,6 @@ Package RStorm implements a streaming architecture modeled on Storm for easy
 development and testing of streaming algorithms in [R].  RStorm is not intended
 as a production package, but rather a development tool for streaming algorithms.")
     (license license:gpl2)))
-
-(define-public r-rstoolbox
-  (package
-    (name "r-rstoolbox")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RStoolbox" version))
-              (sha256
-               (base32
-                "1xjj3bm2brywl02n3d2n8n5zlbv2p98bzbmcx9yj6c2j5rcxhsz7"))))
-    (properties `((upstream-name . "RStoolbox")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-terra
-                             r-sp
-                             r-sf
-                             r-rgdal
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-lifecycle
-                             r-ggplot2
-                             r-foreach
-                             r-exactextractr
-                             r-dplyr
-                             r-doparallel
-                             r-codetools
-                             r-caret))
-    (home-page "https://bleutner.github.io/RStoolbox/")
-    (synopsis "Tools for Remote Sensing Data Analysis")
-    (description
-     "Toolbox for remote sensing image processing and analysis such as calculating
-spectral indices, principal component transformation, unsupervised and
-supervised classification or fractional cover analyses.")
-    (license license:gpl3+)))
 
 (define-public r-rstiefel
   (package
@@ -24513,13 +24445,13 @@ now out-dated fishBC software
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
-    (version "4.0.0")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfishbase" version))
               (sha256
                (base32
-                "0nq5ywsac1r65xjinvhb0v873q5wr3905s8j8fbrgkbn113i6f52"))))
+                "03m64sff6zi7jvba3f3k6w4a624mak53y4nf5fzvs0v6ilzciib3"))))
     (properties `((upstream-name . "rfishbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24532,6 +24464,8 @@ now out-dated fishBC software
                              r-memoise
                              r-magrittr
                              r-jsonlite
+                             r-glue
+                             r-fs
                              r-duckdb
                              r-dplyr
                              r-dbplyr
@@ -30372,13 +30306,13 @@ methods described in Fifield, Higgins, Imai and Tarr (2020)
 (define-public r-rediscover
   (package
     (name "r-rediscover")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rediscover" version))
               (sha256
                (base32
-                "0396shg9gf0r7q5jlrab5mr003fz7kj8xdq5chnzmild6kwyq3sk"))))
+                "1baz7k05glnwxswbhr6lwm5vnj8srf5cbmyciig6dp8v9jnh168q"))))
     (properties `((upstream-name . "Rediscover")))
     (build-system r-build-system)
     (propagated-inputs (list r-speedglm
@@ -37516,13 +37450,13 @@ citations for various scholarly work identifiers found on Wikipedia'.")
 (define-public r-rcites
   (package
     (name "r-rcites")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcites" version))
               (sha256
                (base32
-                "1lyahgpjskzqlmjnz14kkkrl30by1nzzi02wsf0rfskbdhmwc5in"))))
+                "192cdkd4pybpsdab8dzchx96385bdjsm30p8qrlw9wzmij03rx2x"))))
     (properties `((upstream-name . "rcites")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-curl r-cli))

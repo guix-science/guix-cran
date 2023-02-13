@@ -7708,13 +7708,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/curConverter.do>.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriceIndices" version))
               (sha256
                (base32
-                "0iyy1mbgwq7m1p2fkc2k16bdlhkrhkzlrii7dj21ym06811s8v1j"))))
+                "183q3s7mpfhxxv2iizfg79kf9ah7qd1cxsbnmyh8v912f5fkkh48"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -9486,13 +9486,13 @@ clusters across datasets.  More details can be referred to Wei Liu, et al.
 (define-public r-pre
   (package
     (name "r-pre")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pre" version))
               (sha256
                (base32
-                "0d39z0g4jsgc7nvb62yvbyl1gpxiqzng5y2qfhxyk7a5as4irmlb"))))
+                "1b02d9178yphhxwla6a8a6brbw9ggvb9bpqa0yddj2klav5xcaa4"))))
     (properties `((upstream-name . "pre")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -15686,13 +15686,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.15")
+    (version "1.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmparser" version))
               (sha256
                (base32
-                "0hsswq844sqmdx45c5m7bv5h7jpw0g7fdzn3rgdlxnv4gvd2szjx"))))
+                "0waqlrr69yysbh8hbkgmkpkrws102i7ichvi5kgc99wvy2hdpfqy"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -17364,13 +17364,13 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLNmodels" version))
               (sha256
                (base32
-                "1wz40n9n3d502kal0qj80iwgj8ax4hl5qf87slbdda9bc19137vn"))))
+                "19460y1zpyznr9j4dmwqc6a616jv7lgnig68rggsn204ndcprsr2"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch

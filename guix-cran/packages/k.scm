@@ -1904,6 +1904,31 @@ creating (potentially) tighter clusters than standard k-means and simultaneously
 finding outliers inexpensively in multidimensional space.")
     (license license:gpl3)))
 
+(define-public r-kml3d
+  (package
+    (name "r-kml3d")
+    (version "2.4.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kml3d" version))
+              (sha256
+               (base32
+                "01ib3b56vnqyq4jabzdw5sbldp8bcn77pyc611wnwcqpgm9ym0a7"))))
+    (properties `((upstream-name . "kml3d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
+    (home-page "http:www.r-project.org")
+    (synopsis "K-Means for Joint Longitudinal Data")
+    (description
+     "An implementation of k-means specifically design to cluster joint trajectories
+(longitudinal data on several variable-trajectories).  Like kml', it provides
+facilities to deal with missing value, compute several quality criterion
+(Calinski and Harabatz, Ray and Turie, Davies and Bouldin, BIC,...) and propose
+a graphical interface for choosing the best number of clusters.  In addition,
+the 3D graph representing the mean joint-trajectories of each cluster can be
+exported through LaTeX in a 3D dynamic rotating PDF graph.")
+    (license license:gpl2+)))
+
 (define-public r-kml
   (package
     (name "r-kml")

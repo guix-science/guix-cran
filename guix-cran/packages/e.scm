@@ -576,13 +576,13 @@ useful tools for geographical and sector trade analysis.")
 (define-public r-exuber
   (package
     (name "r-exuber")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exuber" version))
               (sha256
                (base32
-                "05p6izwcw3qr6rl9f0qj96g4inn1hlacy7mmnr1mh0vz9x4b2mig"))))
+                "081z930fnzqifajnr0nyc62pw1rv8c1784s5xdhmzlgcj2bcdlgi"))))
     (properties `((upstream-name . "exuber")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3810,31 +3810,6 @@ features computed.  The event features extracted from incomplete-events can be
 classified using a partial-observations-classifier (Kandanaarachchi et al.
 2018) <doi:10.1371/journal.pone.0236331>.")
     (license license:expat)))
-
-(define-public r-eventr
-  (package
-    (name "r-eventr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eventr" version))
-              (sha256
-               (base32
-                "08ljjvfrnfmi49b9bgizvvswxydln8ny901grn5j288pq0djjqyk"))))
-    (properties `((upstream-name . "eventr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=eventr")
-    (synopsis "Create Event Based Data Architectures")
-    (description
-     "Event-driven programming is a programming paradigm where the flow of execution
-is defined by event.  In this paradigm an event can be defined as \"a change in
-the state\" of an object.  This package offers a set of functions for creating
-event-based architectures using three basic functions: events, dispatchers, and
-handlers.  The handlers manage the events, the dispatchers are in charge of
-redirecting the events to each of the handlers, finally the events are the
-objects that carry the information about the change of state.")
-    (license license:gpl3)))
 
 (define-public r-eventinterval
   (package
@@ -8114,6 +8089,53 @@ omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
 analysis across all omics features using quantile-based g-Computation (as
 described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
     (license license:gpl3+)))
+
+(define-public r-epinow2
+  (package
+    (name "r-epinow2")
+    (version "1.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EpiNow2" version))
+              (sha256
+               (base32
+                "0dnrkbvgw92dfh6crx9bssklmm361nr5fz4mjzy9298na6fphllm"))))
+    (properties `((upstream-name . "EpiNow2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-stanheaders
+                             r-scales
+                             r-runner
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r-utils
+                             r-purrr
+                             r-progressr
+                             r-patchwork
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-futile-logger
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforecasts.io/EpiNow2/")
+    (synopsis
+     "Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters")
+    (description
+     "Estimates the time-varying reproduction number, rate of spread, and doubling
+time using a range of open-source tools (Abbott et al. (2020)
+<doi:10.12688/wellcomeopenres.16006.1>), and current best practices (Gostic et
+al. (2020) <doi:10.1101/2020.06.18.20134858>).  It aims to help users avoid some
+of the limitations of naive implementations in a framework that is informed by
+community feedback and is actively supported.")
+    (license license:expat)))
 
 (define-public r-epinetr
   (package

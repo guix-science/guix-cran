@@ -10392,17 +10392,16 @@ originals.")
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.5")
+    (version "4.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lessR" version))
               (sha256
                (base32
-                "18brxqcgfc32155xwhwy1maq90f4csmrvg347nvlg4livr6drax1"))))
+                "1i0h8vlz424z46p6n33dkhfiq0kwbpg9xsjkjr6sj339921m2km6"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-shiny
+    (propagated-inputs (list r-shiny
                              r-robustbase
                              r-openxlsx
                              r-leaps

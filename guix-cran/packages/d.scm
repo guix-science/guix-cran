@@ -22862,6 +22862,34 @@ Functions in this package help us get an understanding of dataframes to
 dramatically reduces data coding time.")
     (license license:expat)))
 
+(define-public r-datafaker
+  (package
+    (name "r-datafaker")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DataFakeR" version))
+              (sha256
+               (base32
+                "1a25qp627n76qi4xzj62ipiy3qs2qvajcy9inzibwymryizlr0ia"))))
+    (properties `((upstream-name . "DataFakeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidygraph
+                             r-tibble
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openpharma/DataFakeR")
+    (synopsis "Generate Fake Data for Relational Databases")
+    (description
+     "Based on provided database description and/or database connection generate data
+sample preserving source structure.")
+    (license license:expat)))
+
 (define-public r-dataexplorer
   (package
     (name "r-dataexplorer")

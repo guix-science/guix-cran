@@ -858,21 +858,28 @@ for partial matrix correlations and binary data (Aben et al., 2018,
 (define-public r-itol-toolkit
   (package
     (name "r-itol-toolkit")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itol.toolkit" version))
               (sha256
                (base32
-                "0ccwl2fsxpz0yw3vhwslp4qrzknmpah22nhddwxha0a9ckll058x"))))
+                "0lc7c7pfh09s460bc7gwbi12zj1sf5h1hrg65bk1cqd81hn44ndz"))))
     (properties `((upstream-name . "itol.toolkit")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-wesanderson
+                             r-tidyr
                              r-stringr
+                             r-shiny
                              r-seqinr
+                             r-rstudioapi
+                             r-rcolorbrewer
                              r-purrr
+                             r-miniui
+                             r-ggsci
                              r-dplyr
                              r-data-table
+                             r-colourpicker
                              r-biostrings
                              r-ape))
     (native-inputs (list r-knitr))

@@ -8649,6 +8649,42 @@ Hall in their \"Using R series\".  There are numerous functions and data-sets th
 are used in the book's many practical examples.")
     (license license:gpl3)))
 
+(define-public r-mpwr
+  (package
+    (name "r-mpwr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mpwR" version))
+              (sha256
+               (base32
+                "0g7n2dani1wh3qbmfxmg6m6v0cnz0bcb1impa6da33p27msi6q5d"))))
+    (properties `((upstream-name . "mpwR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-upsetr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-flowtracer
+                             r-dplyr
+                             r-data-table
+                             r-comprehenr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mpwR")
+    (synopsis
+     "Standardized Comparison of Workflows in Mass Spectrometry-Based Bottom-Up Proteomics")
+    (description
+     "Useful functions to analyze proteomic workflows including number of
+identifications, data completeness, missed cleavages, quantitative and retention
+time precision etc.  Various software outputs are supported such as
+ProteomeDiscoverer', Spectronaut', DIA-NN and MaxQuant'.")
+    (license license:expat)))
+
 (define-public r-mpv
   (package
     (name "r-mpv")
@@ -22816,13 +22852,13 @@ the covariates, using a backfitting approach to maximize the likelihood.")
 (define-public r-micompr
   (package
     (name "r-micompr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micompr" version))
               (sha256
                (base32
-                "0l2ymcg2wvrwkv7ybyzrqhi3m6zdadjmnbx219mm3xd4c8sj1gvy"))))
+                "0k9yngi75p0pcszlg8vmzxrsppm53z2z1c6rzk15gpl53f6cq88p"))))
     (properties `((upstream-name . "micompr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22837,7 +22873,8 @@ procedure is independent of the distributional properties of samples and
 automatically selects features that best explain their differences, avoiding
 manual selection of specific points or summary statistics.  It is appropriate
 for comparing samples of time series, images, spectrometric measures or similar
-multivariate observations.")
+multivariate observations.  This package is described in Fachada et al. (2016)
+<doi:10.32614/RJ-2016-055>.")
     (license license:expat)))
 
 (define-public r-miclust
@@ -39698,13 +39735,13 @@ information in R's environment.  No need to import or download additional files.
 (define-public r-macrobiome
   (package
     (name "r-macrobiome")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "macroBiome" version))
               (sha256
                (base32
-                "04fv6vrc4lmz23y0g1yzrgf0r4rm8k1v6vnizb1h0g4xyjw4ij80"))))
+                "0mxz60q201irs7nfv5k7hiyk535ijhc6a372xb0aqxnml06cw7d7"))))
     (properties `((upstream-name . "macroBiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-strex
@@ -39717,15 +39754,17 @@ information in R's environment.  No need to import or download additional files.
     (synopsis "Tool for Mapping the Distribution of the Biomes and Bioclimate")
     (description
      "Procedures for simulating biomes by equilibrium vegetation models, with a
-special focus on paleoenvironmental applications.  Two widely used equilibrium
+special focus on paleoenvironmental applications.  Three widely used equilibrium
 biome models are currently implemented in the package: the Holdridge Life Zone
-(HLZ) system (Holdridge 1947, <doi:10.1126/science.105.2727.367>) and the BIOME
-model (Prentice et al.  1992, <doi:10.2307/2845499>).  Three climatic
-forest-steppe models are also implemented.  An approach for estimating monthly
-time series of relative sunshine duration from temperature and precipitation
-data (Yin 1999, <doi:10.1007/s007040050111>) is also adapted, allowing
-process-based biome models to be combined with high-resolution paleoclimate
-simulation datasets (e.g., CHELSA-TraCE21k v1.0 dataset:
+(HLZ) system (Holdridge 1947, <doi:10.1126/science.105.2727.367>), the
+KÃ¶ppen-Geiger classification (KGC) system (KÃ¶ppen 1936,
+<http://koeppen-geiger.vu-wien.ac.at/pdf/Koppen_1936.pdf>) and the BIOME model
+(Prentice et al.  1992, <doi:10.2307/2845499>).  Three climatic forest-steppe
+models are also implemented.  An approach for estimating monthly time series of
+relative sunshine duration from temperature and precipitation data (Yin 1999,
+<doi:10.1007/s007040050111>) is also adapted, allowing process-based biome
+models to be combined with high-resolution paleoclimate simulation datasets
+(e.g., CHELSA-TraCE21k v1.0 dataset:
 <https://chelsa-climate.org/chelsa-trace21k/>).")
     (license license:gpl3+)))
 
