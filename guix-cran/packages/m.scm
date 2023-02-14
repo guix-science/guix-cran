@@ -21585,25 +21585,27 @@ instrumental variables.")
 (define-public r-miipw
   (package
     (name "r-miipw")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MIIPW" version))
               (sha256
                (base32
-                "05l75pr81fv7b7w24mhvww5c49211bnxvksvy7kiwypc592zwjqk"))))
+                "043zdadny5rb1vlg1lnjaxjdjqmb755lgxha4zcdzyv9sl83ca8y"))))
     (properties `((upstream-name . "MIIPW")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r2jags r-matlib))
+    (propagated-inputs (list r-mice r-matrix r-mass))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MIIPW")
     (synopsis "IPW and Mean Score Methods for Time-Course Missing Data")
     (description
-     "This package contains functions for data analysis of Repeated measurement
-continuous,categorical data using MCMC. Data may contain missing value in
-response and covariates.  Mean Score Method and Inverse Probability Weighted
-method for parameter estimation when there is missing value in covariates are
-also included.  Reference for mean score method, inverse probability weighted
-method is Wang et al(2007)<doi:10.1093/biostatistics/kxl024>.")
+     "This package contains functions for data analysis of Repeated measurement using
+GEE. Data may contain missing value in response and covariates.  For parameter
+estimation through Fisher Scoring algorithm, Mean Score and Inverse Probability
+Weighted method combining with Multiple Imputation are used when there is
+missing value in covariates/response.  Reference for mean score method, inverse
+probability weighted method is Wang et
+al(2007)<doi:10.1093/biostatistics/kxl024>.")
     (license license:gpl3)))
 
 (define-public r-miic
@@ -25712,13 +25714,13 @@ from a web browser (<https://www.metaumbrella.org/>).")
 (define-public r-metatools
   (package
     (name "r-metatools")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metatools" version))
               (sha256
                (base32
-                "1z756qmnk10nkycysj0n06nlqbrd88sxbza1d0pb4z14jicyl6la"))))
+                "15w63l41ag8xnyf06w336zpw4fgk18z3i9r3sfqv6fqi5xs27p8z"))))
     (properties `((upstream-name . "metatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33527,6 +33529,35 @@ are generated, then dividing lines with holes are drawn between them, see J.
 Buck, Recursive Division,
 <http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorithm>.")
     (license license:lgpl3)))
+
+(define-public r-maze
+  (package
+    (name "r-maze")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MAZE" version))
+              (sha256
+               (base32
+                "0ybfq2s9skjfzazzlpwlnl66g2lq240mlm7mbk514yygycq1m7rv"))))
+    (properties `((upstream-name . "MAZE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp
+                             r-pracma
+                             r-numderiv
+                             r-mass
+                             r-foreach
+                             r-flexmix
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/meilinjiang/MAZE")
+    (synopsis "Mediation Analysis for Zero-Inflated Mediators")
+    (description
+     "This package provides a novel mediation analysis approach to address
+zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
+(2023) \"A Novel Causal Mediation Analysis Approach for Zero-Inflated Mediators\"
+<arXiv:2301.10064> for more details.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-mazamatimeseries
   (package

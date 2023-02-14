@@ -8069,13 +8069,13 @@ individual behavior, for use in evolutionary and ecological studies.")
 (define-public r-track2kba
   (package
     (name "r-track2kba")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "track2KBA" version))
               (sha256
                (base32
-                "0g4i896yyv2kyjs5icavrx3h91wr9jnmgw8wykhvhakwpjr64cgf"))))
+                "1cib01c5gqpg3brvjz9yybmdqxbn37mmscxmk7gmd1x2fscxf809"))))
     (properties `((upstream-name . "track2KBA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16160,13 +16160,13 @@ and showing in-use connections.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tfrmt" version))
               (sha256
                (base32
-                "1b23ylm7ad4yhcxsm1qgv9lk8nf9bivws0h2z9cxpnrcjc309sw6"))))
+                "1b8fzvi5nz8y3dl7vkcixg307nxhb9mcvpzx2sbfbafd0kknvnxk"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16177,6 +16177,7 @@ and showing in-use connections.")
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-jsonlite
                              r-gt
                              r-ggplot2
                              r-forcats

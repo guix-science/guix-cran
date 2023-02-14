@@ -24151,13 +24151,13 @@ formulations in knowledge space theory.  See package?DAKS for an overview.")
 (define-public r-daisie
   (package
     (name "r-daisie")
-    (version "4.2.0")
+    (version "4.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DAISIE" version))
               (sha256
                (base32
-                "0ia18h1sshvz7yidnjzdi760sndbz71gxrd74zd3v3q62vwqv6d6"))))
+                "1zpc6qfs509zak93cf816xd0m815qrb9183qgbdg3gqbmjg0m7ab"))))
     (properties `((upstream-name . "DAISIE")))
     (build-system r-build-system)
     (propagated-inputs (list r-testit

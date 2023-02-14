@@ -3856,16 +3856,16 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Qindex" version))
               (sha256
                (base32
-                "04h2b95bbrnvmanga1jvba10d470v5qdpk77i50s6d2y2xl137wh"))))
+                "0qijppqqwkhx7gvk6mfxl5zd969npdb248x6c30rhak3qx40d4gq"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rpart r-matrixstats r-boot))
+    (propagated-inputs (list r-survival r-rpart r-mgcv r-matrixstats r-boot))
     (home-page "https://cran.r-project.org/package=Qindex")
     (synopsis "Quantile-Based Predictors for Survival Outcome")
     (description

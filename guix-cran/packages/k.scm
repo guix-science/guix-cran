@@ -1932,13 +1932,13 @@ exported through LaTeX in a 3D dynamic rotating PDF graph.")
 (define-public r-kml
   (package
     (name "r-kml")
-    (version "2.4.1")
+    (version "2.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kml" version))
               (sha256
                (base32
-                "1my9gcripiqc6iphycjr3srj8qxy05yvd0648vblygrx2qym5hy2"))))
+                "1dmai5cvr9sfzqqrwm8bkmalaqbmjxaycxh4iar52bipih8h438j"))))
     (properties `((upstream-name . "kml")))
     (build-system r-build-system)
     (propagated-inputs (list r-longitudinaldata r-clv))

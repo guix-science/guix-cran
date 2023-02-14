@@ -10163,16 +10163,16 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.3.2")
+    (version "3.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpact" version))
               (sha256
                (base32
-                "1fpy36rr1zcbqxbnmzi154h9iws3xss14b3xrjzz6l1k7gralr65"))))
+                "11d47scnpfhfcm837126fn42kfwxmscsw4rr6j8a9lafi3sxzybq"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rlang r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://www.rpact.org")
     (synopsis "Confirmatory Adaptive Clinical Trial Design and Analysis")
@@ -14156,13 +14156,13 @@ points.")
 (define-public r-robnptests
   (package
     (name "r-robnptests")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robnptests" version))
               (sha256
                (base32
-                "0bk3ngwav3r00lf2lb8hq2h578mkfc48gcm845lyxyn7i87vglgg"))))
+                "0pc6g2apdcdrhpja6g922z03q92lcdydq9x85ii1slqpvla493k3"))))
     (properties `((upstream-name . "robnptests")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-robustbase r-rdpack r-gtools
@@ -16852,13 +16852,13 @@ to facilitate the analysis of MixtComp output.")
 (define-public r-rmixtcompio
   (package
     (name "r-rmixtcompio")
-    (version "4.0.8")
+    (version "4.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RMixtCompIO" version))
               (sha256
                (base32
-                "0q8k8arnrgwvrsl6f2p0a53vk5krynwgjfsdp71z9c1wjq22zsa3"))))
+                "0295p68k87wdgxsiz71y3n1980dmd79j739vs5nai1i34sgk6p2z"))))
     (properties `((upstream-name . "RMixtCompIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-foreach r-doparallel r-bh))
@@ -18407,13 +18407,13 @@ were published in Silva et al. (2016) <doi:10.1080/07038992.2016.1196582>.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.7-4.2")
+    (version "0.7-4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rlibkriging" version))
               (sha256
                (base32
-                "0r0cjxi91hggjv79amns9cplcq70k0sx55vqjphrmshqv74z2k2p"))))
+                "09q8s13sdz3n4cm5rkdq4axgfnlwd64xj6yfggg38rjwnjf5497c"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -22802,13 +22802,13 @@ function for authorization and loading reports.")
 (define-public r-rgnparser
   (package
     (name "r-rgnparser")
-    (version "0.2.0")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgnparser" version))
               (sha256
                (base32
-                "01dmnyyprnayzn21vgdj9058l17kx8z4fisw4bp4lc6yif39q1r9"))))
+                "17s08arj7hdzmm2cbmwk4cvdlgrviyjsfm8qpvc5j7sjd6b48sdq"))))
     (properties `((upstream-name . "rgnparser")))
     (build-system r-build-system)
     (inputs (list))

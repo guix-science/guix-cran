@@ -1822,17 +1822,16 @@ Partial Dependence Profiles.")
 (define-public r-vivid
   (package
     (name "r-vivid")
-    (version "0.2.3")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivid" version))
               (sha256
                (base32
-                "1kqh9skcafng0wcbb2vqdlba7ix3mjhqd2r51npv1ys3p20jrrmw"))))
+                "0g96xvv9pjir574n2jy7zdvca0ij89kqax399xsab6hljjf85h3m"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcolorbrewer
+    (propagated-inputs (list r-rcolorbrewer
                              r-igraph
                              r-ggplot2
                              r-ggnewscale
@@ -2459,27 +2458,6 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 <doi:10.1002/pst.1912>, \"Vandemeulebroecke et al. (2019)\"
 <doi:10.1002/psp4.12455>, and \"Morris et al. (2019)\"
 <doi:10.1136/bmjopen-2019-030215>.")
-    (license license:expat)))
-
-(define-public r-visnetwork
-  (package
-    (name "r-visnetwork")
-    (version "2.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visNetwork" version))
-              (sha256
-               (base32
-                "116w3l65lgv18xzav5zz1pbgwpwck66n9cjpja9axrl9zi19vja7"))))
-    (properties `((upstream-name . "visNetwork")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-jsonlite r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://datastorm-open.github.io/visNetwork/")
-    (synopsis "Network Visualization using 'vis.js' Library")
-    (description
-     "This package provides an R interface to the vis.js JavaScript charting library.
-It allows an interactive visualization of networks.")
     (license license:expat)))
 
 (define-public r-visitorcounts

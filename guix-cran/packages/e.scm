@@ -2488,13 +2488,13 @@ statements.")
 (define-public r-excluder
   (package
     (name "r-excluder")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "excluder" version))
               (sha256
                (base32
-                "1wc9bybbv6vdxi88ziblhsc5wif631bf8sp0wmp72qn9zjzsgvmz"))))
+                "1in27qb5zv5cqscdca8nsdnz7jxglvnfi7is8ilc1791w5ld80m7"))))
     (properties `((upstream-name . "excluder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -2505,7 +2505,7 @@ statements.")
                              r-magrittr
                              r-lubridate
                              r-janitor
-                             r-iptools
+                             r-ipaddress
                              r-dplyr
                              r-curl
                              r-cli))
@@ -12919,13 +12919,13 @@ which allow for simulations for checking the characteristics of these methods.")
 (define-public r-elcic
   (package
     (name "r-elcic")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ELCIC" version))
               (sha256
                (base32
-                "1iildkyiia2zinnfjyxvcmc1xd7chrcsdqzc0v7cl9b1jsqa8361"))))
+                "1yflpbnqjcz47jyf3w32x5gra576q2f401p19zy0fz2cyradiggm"))))
     (properties `((upstream-name . "ELCIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgeesel
@@ -17550,13 +17550,13 @@ individual periods or individual quantiles.")
 (define-public r-echor
   (package
     (name "r-echor")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echor" version))
               (sha256
                (base32
-                "1jkpwcx60l7nq5k6kr7qlp6qwbi2jn80asvfyhy459ikdk2s2lcy"))))
+                "0x2vy9r51cgk35wgzrfl74w82vlcsj5vpfz5n9zcbxxk62lqd4kn"))))
     (properties `((upstream-name . "echor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17564,12 +17564,13 @@ individual periods or individual quantiles.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-progress
                              r-plyr
                              r-httr
                              r-geojsonsf
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=echor")
+                             r-dplyr
+                             r-curl))
+    (home-page "https://github.com/mps9506/echor")
     (synopsis "Access EPA 'ECHO' Data")
     (description
      "An R interface to United States Environmental Protection Agency (EPA)

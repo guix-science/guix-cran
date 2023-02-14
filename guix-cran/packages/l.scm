@@ -9979,13 +9979,13 @@ transform.")
 (define-public r-lfe
   (package
     (name "r-lfe")
-    (version "2.8-8")
+    (version "2.9-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lfe" version))
               (sha256
                (base32
-                "0wdbhnyzzvpkjyjsxidkcwpssij3k476lhlfdkk2xwhnz8l2khhg"))))
+                "0g12097a6vyv5vx51vfp04nkfzlx80j6ksvpfjv6b36r9bbrr6kw"))))
     (properties `((upstream-name . "lfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-sandwich r-matrix r-formula))

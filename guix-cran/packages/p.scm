@@ -12587,6 +12587,44 @@ to the comprehensive tutorials or visit <http://www.popgenreport.org/>.")
 ISBN:9780198829546).")
     (license license:cc0)))
 
+(define-public r-popgenhelpr
+  (package
+    (name "r-popgenhelpr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PopGenHelpR" version))
+              (sha256
+               (base32
+                "0lg92iv1q5w29f70dfnhf6bvc646iiw7bb1c8f5shxxq2mljprc8"))))
+    (properties `((upstream-name . "PopGenHelpR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcfr
+                             r-stampp
+                             r-spdep
+                             r-sp
+                             r-scatterpie
+                             r-rnaturalearth
+                             r-reshape2
+                             r-raster
+                             r-poppr
+                             r-magrittr
+                             r-hierfstat
+                             r-gstat
+                             r-ggplot2
+                             r-dplyr
+                             r-dartr
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://kfarleigh.github.io/PopGenHelpR/")
+    (synopsis "Streamline Population Genomic and Genetic Analyses")
+    (description
+     "Estimate commonly used population genomic statistics and generate publication
+quality figures.  The current version of PopGenHelpR uses vcf and csv files to
+generate output, however, future implementations will expand the input file type
+options.")
+    (license license:gpl3+)))
+
 (define-public r-popepi
   (package
     (name "r-popepi")
@@ -25966,13 +26004,13 @@ PerformanceAnalytics and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedprobr" version))
               (sha256
                (base32
-                "089wrsx8qx2isz20xqjmnficzb62n8afyskkbz726dymf942pk3a"))))
+                "1pw4rv877k1can6k9x2gcvvc1irvajnpfjjjnjf6di29isqd45hc"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))

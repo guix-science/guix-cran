@@ -943,19 +943,18 @@ writes out that formula, the symbolic representation.")
 (define-public r-symbolicda
   (package
     (name "r-symbolicda")
-    (version "0.6-3")
+    (version "0.7-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "symbolicDA" version))
               (sha256
                (base32
-                "0irmak9ppz9zcj71845d530pwha8s2rq9mz5iswn58czmp259kcf"))))
+                "1x1qwrf587lgp9ciakrhiy3wj4g90x4g7r784rr2b97g1xwysjff"))))
     (properties `((upstream-name . "symbolicDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-shapes
                              r-rsda
-                             r-rgl
                              r-e1071
                              r-clustersim
                              r-cluster
@@ -4411,13 +4410,13 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "11435hwg7jzjg3wpwgdzvh7v7f1r351q12z8achyh5p8vmvn39rl"))))
+                "1y2y9xq0n2121xc74z8786h8ajm7n2mvwvgskwzp99nknd576wp5"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -6663,6 +6662,32 @@ approximately low-rank matrix are observed.  The main function in our package,
 smc.FUN(), is for recovery of the missing block A22 of an approximately low-rank
 matrix A given the other blocks A11, A12, A21.")
     (license license:gpl2+)))
+
+(define-public r-structuraldecompose
+  (package
+    (name "r-structuraldecompose")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "StructuralDecompose" version))
+              (sha256
+               (base32
+                "1iw4knii94wajignrq0c91d66b6bc2qm019ny86jyyj5nd9nxkwz"))))
+    (properties `((upstream-name . "StructuralDecompose")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-strucchange r-segmented r-changepoint))
+    (native-inputs (list r-knitr))
+    (home-page "https://allen-1242.github.io/StructuralDecompose/")
+    (synopsis "Decomposes a Level Shifted Time Series")
+    (description
+     "Explains the behavior of a time series by decomposing it into its trend,
+seasonality and residuals.  It is built to perform very well in the presence of
+significant level shifts.  It is designed to play well with any breakpoint
+algorithm and any smoothing algorithm.  Currently defaults to lowess for
+smoothing and strucchange for breakpoint identification.  The package is useful
+in areas such as trend analysis, time series decomposition, breakpoint
+identification and anomaly detection.")
+    (license license:expat)))
 
 (define-public r-structree
   (package

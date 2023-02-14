@@ -7045,6 +7045,34 @@ offers an exact correction of the p-value developed by B.Liquet & D.Commenges in
 2005.  The naive method with no correction is also available.")
     (license license:gpl3+)))
 
+(define-public r-cpmbigdata
+  (package
+    (name "r-cpmbigdata")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cpmBigData" version))
+              (sha256
+               (base32
+                "0fdch6hj6l620gj0pk8ffrl9j2rmd9jlin7yx7myfy46qij1cxpi"))))
+    (properties `((upstream-name . "cpmBigData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsem
+                             r-rms
+                             r-iterators
+                             r-hmisc
+                             r-foreach
+                             r-doparallel
+                             r-benchmarkme))
+    (home-page "https://cran.r-project.org/package=cpmBigData")
+    (synopsis
+     "Fitting Semiparametric Cumulative Probability Models for Big Data")
+    (description
+     "This package provides a big data version for fitting cumulative probability
+models using the orm() function from the rms package.  See Liu et al. (2017)
+<DOI:10.1002/sim.7433> for details.")
+    (license license:gpl2+)))
+
 (define-public r-cpm
   (package
     (name "r-cpm")
@@ -9130,6 +9158,38 @@ distributions.  Rosenthal and Rubin (1994)
 <doi:10.1111/j.1467-9280.1994.tb00281.x>.")
     (license license:expat)))
 
+(define-public r-counterfactuals
+  (package
+    (name "r-counterfactuals")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "counterfactuals" version))
+              (sha256
+               (base32
+                "1h6wy8ab58akpg4vh9ryps00iwq87jd9r7qpm4yd9jmnq707g1xn"))))
+    (properties `((upstream-name . "counterfactuals")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmatch
+                             r-r6
+                             r-paradox
+                             r-miesmuschel
+                             r-iml
+                             r-data-table
+                             r-checkmate
+                             r-bbotk))
+    (home-page "https://github.com/dandls/counterfactuals")
+    (synopsis "Counterfactual Explanations")
+    (description
+     "Modular and unified R6-based interface for counterfactual explanation methods.
+The following methods are currently implemented: Burghmans et al. (2022)
+<arXiv:2104.07411>, Dandl et al. (2020) <doi:10.1007/978-3-030-58112-1_31> and
+Wexler et al. (2019) <doi:10.1109/TVCG.2019.2934619>.  Optional extensions allow
+these methods to be applied to a variety of models and use cases.  Once
+generated, the counterfactuals can be analyzed and visualized by provided
+functionalities.")
+    (license license:lgpl3)))
+
 (define-public r-counterfactual
   (package
     (name "r-counterfactual")
@@ -10531,13 +10591,13 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
 (define-public r-coronavirus
   (package
     (name "r-coronavirus")
-    (version "0.3.32")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coronavirus" version))
               (sha256
                (base32
-                "1ryr4r53wl9q2bgjbs28p5g7z585ziab77b0ajqy1zydgygh3yww"))))
+                "17s32iqjri5fjxc5ydv4zsl5akw3xwxa0341b7chp80j68xzvyw2"))))
     (properties `((upstream-name . "coronavirus")))
     (build-system r-build-system)
     (propagated-inputs (list r-devtools))
@@ -15412,13 +15472,13 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.26")
+    (version "3.27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "1nr71yrc7kzzq29rk86wy92287h4phn8jifihbba33rhms83irw4"))))
+                "1pmwi43qsnjmqpvarcmsp8qcb9yd4xgk8ddkiz647vjiaf571ixd"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
@@ -23818,6 +23878,31 @@ sequence type data.  Gallaugher, M.P.B and McNicholas, P.D. (2018)
 components is the main utility of ClickClust.  The package also allows detecting
 blocks of equivalent states by forward and backward state selection procedures.")
     (license license:gpl2+)))
+
+(define-public r-clickb
+  (package
+    (name "r-clickb")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clickb" version))
+              (sha256
+               (base32
+                "0cbhwvxb7xa34wf10saq65wiwlmw1cgnbiqgv6mfyd8dcdv25rwg"))))
+    (properties `((upstream-name . "clickb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mcmcpack r-mclust r-discreteweibull))
+    (home-page "https://cran.r-project.org/package=clickb")
+    (synopsis "Web Data Analysis by Bayesian Mixture of Markov Models")
+    (description
+     "Designed for web usage data analysis, it implements tools to process web
+sequences and identify web browsing profiles through sequential classification.
+Sequences clusters are identified by using a model-based approach, specifically
+mixture of discrete time first-order Markov models for categorical web
+sequences.  A Bayesian approach is used to estimate model parameters and
+identify sequences classification as proposed by Fruehwirth-Schnatter and
+Pamminger (2010) <doi:10.1214/10-BA606>.")
+    (license license:expat)))
 
 (define-public r-cliapp
   (package

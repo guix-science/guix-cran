@@ -2058,17 +2058,19 @@ library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funcharts" version))
               (sha256
                (base32
-                "1w50jsag6wcnl57k7wwj6z5457hqi6081p7v4v1c7whf7kflw3cd"))))
+                "0rzsbl5frv59zixs9f9k70s5hvp570yc6s620rw3ydz2d9svxpmb"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-rspectra
+                             r-roahd
                              r-rlang
                              r-patchwork
                              r-matrixstats

@@ -17573,26 +17573,28 @@ applications.  Some popular fonts are included and ready to use.")
 (define-public r-gfm
   (package
     (name "r-gfm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GFM" version))
               (sha256
                (base32
-                "02k1g2rq32ghd3yivjrfz0wjid1kbkraqrb5cmc8640lv7k8l0xr"))))
+                "1h0fvpmrvarw7k252n8i2cnd5fl0d8gwm4x25pa6103q766yzyyy"))))
     (properties `((upstream-name . "GFM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-dosnow))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba r-dosnow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feiyoung/GFM")
     (synopsis "Generalized Factor Model")
     (description
-     "Generalized factor model for ultra-high dimensional variables with mixed types.
-We develop a two-step iterative procedure so that each update can be carried out
-in parallel across all variables and samples.  The fast computation version is
-provided for ultra-high dimensional data, see examples for more details.  More
-details can be referred to Wei Liu, Huazhen Lin, Shurong Zheng and Jin Liu.
-(2021) <doi:10.1080/01621459.2021.1999818>.")
+     "Generalized factor model is implemented for ultra-high dimensional data with
+mixed-type variables.  Two algorithms, variational EM and alternate
+maximization, are designed to implement the generalized factor model,
+respectively.  The factor matrix and loading matrix together with the number of
+factors can be well estimated.  This model can be employed in social and
+behavioral sciences, economy and finance, and genomics, to extract interpretable
+nonlinear factors.  More details can be referred to Wei Liu, Huazhen Lin,
+Shurong Zheng and Jin Liu. (2021) <doi:10.1080/01621459.2021.1999818>.")
     (license license:gpl3)))
 
 (define-public r-gfiultra
@@ -22370,13 +22372,13 @@ conserved domains that specifically define that family.  See Die et al. (2018)
 (define-public r-genehapr
   (package
     (name "r-genehapr")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geneHapR" version))
               (sha256
                (base32
-                "0wh2778vwslfvcv85f86nsr086msm21p578grqpnrk2iivp3wp48"))))
+                "1rcb6kfw3dj4sxy3vvmrqkndl128q6qdfs0ywfycp1p6x8wj3rzl"))))
     (properties `((upstream-name . "geneHapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -22391,6 +22393,7 @@ conserved domains that specifically define that family.  See Die et al. (2018)
                              r-reshape2
                              r-pegas
                              r-maps
+                             r-lolliplot
                              r-iranges
                              r-ggpubr
                              r-ggplot2

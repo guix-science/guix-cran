@@ -3878,6 +3878,37 @@ as well as several helper functions.")
 only the Paillier Scheme is implemented.")
     (license license:expat)))
 
+(define-public r-homnormal
+  (package
+    (name "r-homnormal")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "homnormal" version))
+              (sha256
+               (base32
+                "1xw8j5b0w3ngqwzd458zcsmj6874dgxhrik1z3w7l188j5gr5vxa"))))
+    (properties `((upstream-name . "homnormal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-huxtable))
+    (home-page "https://cran.r-project.org/package=homnormal")
+    (synopsis "Tests of Homogeneity of Variances")
+    (description
+     "Most common exact, asymptotic and resample based tests are provided for testing
+the homogeneity of variances of k normal distributions under normality.  These
+tests are Barlett, Bhandary & Dai, Brown & Forsythe, Chang et al., Gokpinar &
+Gokpinar, Levene, Liu and Xu, Gokpinar.  Also, a data generation function from
+multiple normal distribution is provided using any multiple normal parameters.
+Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
+(2008) <doi:10.1080/03610910802431011> Brown, M. B., & Forsythe, A. B.
+(1974).<doi:10.1080/01621459.1974.10482955> Chang, C. H., Pal, N., & Lin, J. J.
+(2017) <doi:10.1080/03610918.2016.1202277> Gokpinar E. & Gokpinar F. (2017)
+<doi:10.1080/03610918.2014.955110> Liu, X., & Xu, X. (2010)
+<doi:10.1016/j.spl.2010.05.017> Levene, H. (1960)
+<https://cir.nii.ac.jp/crid/1573950400526848896> GÃ¶kpÄ±nar, E. (2020)
+<doi:10.1080/03610918.2020.1800037>.")
+    (license license:gpl2)))
+
 (define-public r-hommel
   (package
     (name "r-hommel")
@@ -11004,6 +11035,34 @@ The package also includes a module allowing downstream analyses and
 visualization of identified crossovers in the gametes.")
     (license license:gpl3)))
 
+(define-public r-hanstat
+  (package
+    (name "r-hanstat")
+    (version "0.90.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HanStat" version))
+              (sha256
+               (base32
+                "0ycppc7cq8jpg2xldl692mxg73agra3sq6zjzlpz7vvr9kqf64g6"))))
+    (properties `((upstream-name . "HanStat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-olsrr
+                             r-lmtest
+                             r-ggpubr
+                             r-ggplot2
+                             r-devtools
+                             r-crayon
+                             r-car
+                             r-boot))
+    (home-page "https://github.com/KonradKrahl/HanStat")
+    (synopsis "Package for Easy Interpretation of Statistical Methods")
+    (description
+     "This package provides a simple and time saving multiple linear regression
+function (OLS) with interpretation, optional bootstrapping, effect size
+calculation and all tested requirements.")
+    (license license:gpl3+)))
+
 (define-public r-hansard
   (package
     (name "r-hansard")
@@ -11202,6 +11261,35 @@ plotting functions are provided for unsupervised and supervised machine learning
 as well as longitudinal mixed-effects modeling of tumor growth response
 patterns.")
     (license license:gpl2+)))
+
+(define-public r-halk
+  (package
+    (name "r-halk")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "halk" version))
+              (sha256
+               (base32
+                "17v3dsky1q1cs7bmlgan7vf4r32rp553zwmq3vslqh33mxqdcazk"))))
+    (properties `((upstream-name . "halk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=halk")
+    (synopsis
+     "Methods to Create Hierarchical Age Length Keys for Age Assignment")
+    (description
+     "This package provides methods for implementing hierarchical age length keys to
+estimate fish ages from lengths using data borrowing.  Users can create
+hierarchical age length keys and use them to assign ages given length.")
+    (license license:expat)))
 
 (define-public r-halfcircle
   (package

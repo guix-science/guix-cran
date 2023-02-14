@@ -2000,13 +2000,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autogo
   (package
     (name "r-autogo")
-    (version "0.9")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoGO" version))
               (sha256
                (base32
-                "140k24qss7apf811hz73jjzsgd3xfyg72qh466g94y2rq0q559h4"))))
+                "19gy5gk214vqnil2wky2fpia1dlhcc4vwnws4fl2f0xq9as2nrq9"))))
     (properties `((upstream-name . "autoGO")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17872,13 +17872,13 @@ plot the activity in a variety of ways.")
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "activAnalyzer" version))
               (sha256
                (base32
-                "0xklgmyhvjkl7irkgzb6y5cxhk8r33xkjy092x8gkqg7arnwkq7y"))))
+                "0dz6r3z8zcsiiqirr1gd97m53afswf1qg6gya6km605my33xn56b"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

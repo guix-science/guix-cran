@@ -12152,13 +12152,13 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
 (define-public r-ifc
   (package
     (name "r-ifc")
-    (version "0.1.8")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IFC" version))
               (sha256
                (base32
-                "16ipdrn423x09wngv86a86gqh19fcpdy9gv2f08asfmyhz8jxkv6"))))
+                "0j4lfppcf8ybs5y2a6bxdxfl1wx9nph7zdxpkr65kma0kdzrc7ih"))))
     (properties `((upstream-name . "IFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12333,35 +12333,56 @@ Engineering, US Presidential Elections].")
 (define-public r-iemisc
   (package
     (name "r-iemisc")
-    (version "0.9.9")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iemisc" version))
               (sha256
                (base32
-                "1hay4d85xw81cgzkm21db8mssqqb8cw4bsg3qypm59bqwmqpl8md"))))
+                "1xsfn2jd0q8c3fqzszh6rm8k9j0ki5nnlhm95zmkfx8ilw33k2kg"))))
     (properties `((upstream-name . "iemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-usa-state-boundaries
                              r-units
-                             r-testit
                              r-stringi
-                             r-sp
-                             r-rgdal
+                             r-sjmisc
+                             r-signal
+                             r-sf
+                             r-round
+                             r-roperators
+                             r-rivr
+                             r-ramify
+                             r-qdaptools
+                             r-qdapregex
                              r-pracma
-                             r-import
+                             r-mgsub
+                             r-measurements
+                             r-matlab2r
+                             r-matlab
+                             r-lubridate
                              r-iemiscdata
                              r-gsubfn
+                             r-ggpubr
+                             r-ggplot2
+                             r-geosphere
                              r-fpcompare
+                             r-foreach
                              r-data-table
-                             r-chnosz))
+                             r-chnosz
+                             r-checkmate
+                             r-berryfunctions
+                             r-assertthat
+                             r-anytime))
+    (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/iembry/iemisc")
     (synopsis "Irucka Embry's Miscellaneous Functions")
     (description
      "This package provides a collection of Irucka Embry's miscellaneous functions
 (Engineering Economics, Civil & Environmental/Water Resources Engineering,
-Geometry, Statistics, GNU Octave length functions, Trigonometric functions in
-degrees, etc.).")
+Construction Measurements, GNU Octave compatible functions, Python compatible
+function, Trigonometric functions in degrees and function in radians, Geometry,
+Statistics, Mortality Calculators, Quick Search, etc.).")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 

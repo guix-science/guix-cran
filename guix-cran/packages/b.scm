@@ -3670,13 +3670,13 @@ same author.  Stan functions are refactored here for easier testing.")
 (define-public r-breathtestcore
   (package
     (name "r-breathtestcore")
-    (version "0.8.4")
+    (version "0.8.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "breathtestcore" version))
               (sha256
                (base32
-                "01hqcbqifvq38a1ab0q2c02zavnlajaa41ia0r63d2m6plmdpbsf"))))
+                "1nkimschjyf8cl8cwg0kv06wagimarag92gvnq03wppbcqm560ak"))))
     (properties `((upstream-name . "breathtestcore")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -24868,13 +24868,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "backbone" version))
               (sha256
                (base32
-                "1b000lpd3wyfzaj6xf36k8281vx091l4fffbklx7k6vk650fsj07"))))
+                "0zd8v9922l1jjya04833frhd6fk66rdlfwxwl9rqhwgm9h6lq3mh"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-igraph))
