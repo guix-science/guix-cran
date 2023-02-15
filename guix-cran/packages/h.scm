@@ -994,6 +994,27 @@ R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
 10.1016/S0022-1694(99)00011-6> are decoded for upstream or downstream queries.")
     (license license:gpl3)))
 
+(define-public r-hydrocal
+  (package
+    (name "r-hydrocal")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HYDROCAL" version))
+              (sha256
+               (base32
+                "0xq53nysn9kv6p1clgdjxsvj7qjlcmg02frfpw9fnzim53pzzrp4"))))
+    (properties `((upstream-name . "HYDROCAL")))
+    (build-system r-build-system)
+    (home-page "GitHub")
+    (synopsis "Hydraulic Roughness Calculator")
+    (description
+     "Estimates frictional constants for hydraulic analysis of rivers.  This HYDRaulic
+ROughness CALculator (HYDROCAL) was previously developed as a spreadsheet tool
+and accompanying documentation by McKay and Fischenich (2011,
+<https://erdc-library.erdc.dren.mil/jspui/bitstream/11681/2034/1/CHETN-VII-11.pdf>).")
+    (license license:gpl3)))
+
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
@@ -2240,23 +2261,25 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
 (define-public r-htrx
   (package
     (name "r-htrx")
-    (version "1.1.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTRX" version))
               (sha256
                (base32
-                "0hi52vamlhr81v6q9dk8gs199j6bzx0j9336nx97wzbxz2swkrbh"))))
+                "1a8crrydhbrwvfasxzdm2n2w77yk384fflj34db7gf6ms235cjxv"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
-    (propagated-inputs (list r-glmnet r-fastglm r-caret))
+    (propagated-inputs (list r-tune r-recipes r-glmnet r-fastglm r-caret))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HTRX")
     (synopsis "Haplotype Trend Regression with eXtra Flexibility (HTRX)")
     (description
      "Detection of haplotype patterns that include single nucleotide polymorphisms
 (SNPs) and non-contiguous haplotypes that are associated with a phenotype.
-Methods for implementing HTRX are described in Barrie W, Yang Y, Attfield K E,
-et al (2022) <doi:10.1101/2022.09.23.509097>.")
+Methods for implementing HTRX are described in Yang Y, Lawson DJ (2022)
+<doi:10.1101/2022.11.29.518395> and Barrie W, Yang Y, Attfield K E, et al (2022)
+<doi:10.1101/2022.09.23.509097>.")
     (license license:gpl3)))
 
 (define-public r-htree
@@ -7419,6 +7442,32 @@ lost nor inappropriately cut.")
      "Helper functions for creating reproducible hexagon sticker purely in R.")
     (license license:artistic2.0)))
 
+(define-public r-hexfont
+  (package
+    (name "r-hexfont")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hexfont" version))
+              (sha256
+               (base32
+                "05p279ygpwdlmx4c9vdjs25k7yrgb4xp9cc05drjwncwh97qgj6v"))))
+    (properties `((upstream-name . "hexfont")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bittermelon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/trevorld/hexfont")
+    (synopsis "'GNU Unifont' Hex Fonts")
+    (description
+     "This package contains all the hex font files from the GNU Unifont Project
+<https://unifoundry.com/unifont/> compressed by xz'.  GNU Unifont is a duospaced
+bitmap font that attempts to cover all the official Unicode glyphs plus several
+of the artificial scripts in the (Under-)ConScript Unicode Registry
+<http://www.kreativekorp.com/ucsur/>.  Provides a convenience function for
+loading in several of them at the same time as a bittermelon bitmap font object
+for easy rendering of the glyphs in an R terminal or graphics device.")
+    (license license:gpl2+)))
+
 (define-public r-hexfinder
   (package
     (name "r-hexfinder")
@@ -8395,13 +8444,13 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heemod
   (package
     (name "r-heemod")
-    (version "0.14.4")
+    (version "0.15.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heemod" version))
               (sha256
                (base32
-                "0pd56frksjz8b7fm2mdk87ln7949sasg1slyh9p22w58zb9819jx"))))
+                "04rwmn0f44g3dm7xhji7g5vnzal1xnkg1p92k4f8r09ncrmk9706"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

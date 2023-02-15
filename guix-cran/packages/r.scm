@@ -10163,13 +10163,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.3.3")
+    (version "3.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpact" version))
               (sha256
                (base32
-                "11d47scnpfhfcm837126fn42kfwxmscsw4rr6j8a9lafi3sxzybq"))))
+                "080mr9ispvqs0886946wqxil7wylzvvaf72fcdpj1bn352jprrrx"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp))
@@ -23368,13 +23368,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeedim" version))
               (sha256
                (base32
-                "1n8wyfifba3bh6a4546issclcrsk9y3f1zd89hpan13hrizrv2dg"))))
+                "1qg4sc12drd033p0248acriim909vi48xyswdqixfzdxh31cfz7g"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -24683,13 +24683,13 @@ proposed splitting rule.")
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rfast2" version))
               (sha256
                (base32
-                "1bqaazgna9vradgs8naqnyv5y1q4fq67hm18k22bcb5vycci3m5k"))))
+                "0qqdkmlr63811wn6fr4rjbr6x13v6f4v23jzd85awailhrx7fjs9"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-rcpparmadillo r-rcpp r-rann))

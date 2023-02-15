@@ -5378,13 +5378,13 @@ which are loaded into the variable environment for later retrieval.")
 (define-public r-loadings
   (package
     (name "r-loadings")
-    (version "0.2.1")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loadings" version))
               (sha256
                (base32
-                "0b3larmr41w1cw30fnmcxc68rnp8x5v168c80il0kgirj6j81zw4"))))
+                "1b6i7dvzwpkqw1ak5slbgb6n27algl4x66y6ifr611bid090vd91"))))
     (properties `((upstream-name . "loadings")))
     (build-system r-build-system)
     (propagated-inputs (list r-geigen))
@@ -5392,11 +5392,13 @@ which are loaded into the variable environment for later retrieval.")
     (synopsis
      "Loadings for Principal Component Analysis and Partial Least Squares")
     (description
-     "Computing principal component loading (Yamamoto, H. et al. (2014)
-<doi:10.1186/1471-2105-15-51> and Yamamoto, H. et al. (2021)
-<doi:10.3390/metabo11030149>), partial least squares loading (Yamamoto, H.
-(2017) <doi:10.1002/cem.2883> and Yamamoto, H. (2022)
-<doi:10.1101/2022.08.30.505949>) and their statistical hypothesis testing.")
+     "Computing statistical hypothesis testing for principal component (PC) loading
+(Yamamoto, H. et al. (2014)), orthogonal smoothed PC (OS-PC) loading (Yamamoto,
+H. et al. (2021) <doi:10.3390/metabo11030149>), one-sided kernel PC loading
+(Yamamoto, H. (2023) <doi:10.51094/jxiv.262>) , partial least squares (PLS)
+loading (Yamamoto, H. (2017) <doi:10.1002/cem.2883>), PLS with rank order of
+groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
+(Yamamoto, H. (2022) <doi:10.1101/2022.08.30.505949>).")
     (license license:lgpl3)))
 
 (define-public r-loadflux

@@ -11039,6 +11039,31 @@ process.  This last method is not very accurate and only given here for
 completeness.")
     (license license:agpl3)))
 
+(define-public r-fingraph
+  (package
+    (name "r-fingraph")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fingraph" version))
+              (sha256
+               (base32
+                "130kfhxxxf6cg7ww71nfrwhwrkp52v7zc0qarpjv84826k00cpcq"))))
+    (properties `((upstream-name . "fingraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spectralgraphtopology r-progress r-mvtnorm
+                             r-mass))
+    (home-page "https://github.com/convexfi/fingraph/")
+    (synopsis "Learning Graphs for Financial Markets")
+    (description
+     "Learning graphs for financial markets with optimization algorithms.  This
+package contains implementations of the algorithms described in the paper:
+Cardoso JVM, Ying J, and Palomar DP (2021)
+<https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html>
+\"Learning graphs in heavy-tailed markets\", Advances in Neural Informations
+Processing Systems (NeurIPS).")
+    (license license:gpl3)))
+
 (define-public r-fingerpro
   (package
     (name "r-fingerpro")
@@ -12385,17 +12410,21 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fHMM" version))
               (sha256
                (base32
-                "1jv1pfaxmma3lq7igxdckl650hxa682v1brsq6h03h97jnhlyaw5"))))
+                "0facq4hp670ydkgfli8r0k9k987gc41rvzxyyjpjy9xphcy4yilk"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-progress r-mass
-                             r-foreach))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-mass
+                             r-foreach
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/fHMM/")
     (synopsis "Fitting Hidden Markov Models to Financial Data")
@@ -17708,13 +17737,13 @@ LaBrish, C. & Chalmers, R. P., 2012, <doi:10.3389/fpsyg.2012.00055>).")
 (define-public r-faostat
   (package
     (name "r-faostat")
-    (version "2.2.3")
+    (version "2.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAOSTAT" version))
               (sha256
                (base32
-                "12wjcjyjdw8jgla9yqddr3ibi6v47lfdlnyf5s5d8ms3ck6ic8sl"))))
+                "0q0yff5p429q6n560fmqswfw102kfgww8v7jr5gr22rcf2198822"))))
     (properties `((upstream-name . "FAOSTAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

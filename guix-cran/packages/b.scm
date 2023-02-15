@@ -22322,6 +22322,31 @@ orthogonal rotations to find out a subset of variables best representing the
 original set of variables.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-batsch
+  (package
+    (name "r-batsch")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "batsch" version))
+              (sha256
+               (base32
+                "1mjlggjwfi7wrksilkh6nchzg9d6zcnazn2y0a4w6ffl78zdaxv1"))))
+    (properties `((upstream-name . "batsch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr))
+    (home-page "https://github.com/ramiromagno/batsch")
+    (synopsis "Real-Time PCR Data Sets by Batsch et al. (2008)")
+    (description
+     "Real-time quantitative polymerase chain reaction (qPCR) data sets by Batsch et
+al. (2008) <doi:10.1186/1471-2105-9-95>.  This package provides five data sets,
+one for each PCR target: (i) rat SLC6A14, (ii) human SLC22A13, (iii) pig EMT,
+(iv) chicken ETT, and (v) human GAPDH. Each data set comprises a five-point,
+four-fold dilution series.  For each concentration there are three replicates.
+Each amplification curve is 45 cycles long.  Original raw data file:
+<https://static-content.springer.com/esm/art%3A10.1186%2F1471-2105-9-95/MediaObjects/12859_2007_2080_MOESM5_ESM.xls>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-batman
   (package
     (name "r-batman")

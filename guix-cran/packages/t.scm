@@ -9104,13 +9104,13 @@ Yarats(2019), <arXiv:1810.06801>; (h) radam by Liu et al. (2019),
 (define-public r-torchdatasets
   (package
     (name "r-torchdatasets")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchdatasets" version))
               (sha256
                (base32
-                "0h558d5vzxibigb5hvvfllbaxfqkdjjrl51zzj89jwmmpkcjc8zd"))))
+                "1mq87sgy9v1526iy03zpslkjxx7379q6x9dqs0nslvvfwk9sry4q"))))
     (properties `((upstream-name . "torchdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -16326,6 +16326,40 @@ learning train a model with a smaller dataset, improve generalization, and speed
 up training.")
     (license license:asl2.0)))
 
+(define-public r-tfevents
+  (package
+    (name "r-tfevents")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tfevents" version))
+              (sha256
+               (base32
+                "13aic0qx5b5xnp1xvnm9xbmqbc083g9y7977a95hkf6s7nxhgs6c"))))
+    (properties `((upstream-name . "tfevents")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-zeallot
+                             r-withr
+                             r-vctrs
+                             r-rlang
+                             r-rcpp
+                             r-png
+                             r-fs
+                             r-ellipsis
+                             r-digest
+                             r-cli
+                             r-blob))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/mlverse/tfevents")
+    (synopsis "Write Events for 'TensorBoard'")
+    (description
+     "This package provides a convenient way to log scalars, images, audio, and
+histograms in the tfevent record file format.  Logged data can be visualized on
+the fly using TensorBoard', a web based tool that focuses on visualizing the
+training progress of machine learning models.")
+    (license license:expat)))
+
 (define-public r-tfestimators
   (package
     (name "r-tfestimators")
@@ -20922,31 +20956,25 @@ data derived from naming providers is also included.")
 (define-public r-taxadb
   (package
     (name "r-taxadb")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "taxadb" version))
               (sha256
                (base32
-                "1sadgrqsi99lld0dil2m080mfziv0hxsgfh774m4dryp9p6g5n3h"))))
+                "16cwyy3zlcvcplkqnnc70miv7c8hdqr3z3lchxd35i3101b4wdcb"))))
     (properties `((upstream-name . "taxadb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringi
                              r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-r-utils
-                             r-progress
+                             r-memoise
                              r-magrittr
-                             r-jsonlite
                              r-duckdb
                              r-dplyr
                              r-dbplyr
                              r-dbi
-                             r-curl
-                             r-contentid
-                             r-arkdb))
+                             r-contentid))
     (native-inputs (list r-knitr))
     (home-page "<https://docs.ropensci.org/taxadb/>")
     (synopsis "High-Performance Local Taxonomic Database Interface")
@@ -21602,6 +21630,38 @@ format for use in tracing and tracking are provided.")
     (synopsis "Write Chinese Tang Poems")
     (description "Write Chinese Tang Poems automatically.")
     (license license:gpl2+)))
+
+(define-public r-tangledfeatures
+  (package
+    (name "r-tangledfeatures")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TangledFeatures" version))
+              (sha256
+               (base32
+                "1jkhnl6y9jwxcj8njx2m8lax2z15ma6rk0bci871n4y6bp4bk4zn"))))
+    (properties `((upstream-name . "TangledFeatures")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger
+                             r-purrr
+                             r-matrix
+                             r-janitor
+                             r-igraph
+                             r-ggplot2
+                             r-fastdummies
+                             r-dplyr
+                             r-data-table
+                             r-correlation))
+    (native-inputs (list r-knitr))
+    (home-page "https://allen-1242.github.io/TangledFeatures/")
+    (synopsis "Feature Selection in Highly Correlated Spaces")
+    (description
+     "Feature selection algorithm that extracts features in highly correlated spaces.
+The extracted features are meant to be fed into simple explainable models such
+as linear or logistic regressions.  The package is useful in the field of
+explainable modelling as a way to understand variable behavior.")
+    (license license:expat)))
 
 (define-public r-tandem
   (package
@@ -22316,6 +22376,26 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
      "This package implements the TabNet model by Sercan O. Arik et al (2019)
 <arXiv:1908.07442> and provides a consistent interface for fitting and creating
 predictions.  It's also fully compatible with the tidymodels ecosystem.")
+    (license license:expat)))
+
+(define-public r-tablexlsx
+  (package
+    (name "r-tablexlsx")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tablexlsx" version))
+              (sha256
+               (base32
+                "0rispm626s59g3irdkx8clmjlqsg1vdlyjkzx0z74m13nkgmfw82"))))
+    (properties `((upstream-name . "tablexlsx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openxlsx r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ddotta.github.io/tablexlsx/")
+    (synopsis "Export Data Frames to Excel Workbook")
+    (description
+     "Collection of functions that allow to export data frames to excel workbook.")
     (license license:expat)))
 
 (define-public r-tabletolongform

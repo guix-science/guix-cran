@@ -1614,6 +1614,42 @@ and curves, among others.  Most functionalities require users to be in a
 terminal (not the R GUI).")
     (license license:expat)))
 
+(define-public r-currr
+  (package
+    (name "r-currr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "currr" version))
+              (sha256
+               (base32
+                "1da95mw2mfrmi1zz7vd4w9dzskp6bh0ji04j7xawgkxrdcqppy6p"))))
+    (properties `((upstream-name . "currr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rstudioapi
+                             r-readr
+                             r-purrr
+                             r-pacman
+                             r-job
+                             r-dplyr
+                             r-crayon
+                             r-clisymbols
+                             r-broom))
+    (home-page "https://github.com/MarcellGranat/currr")
+    (synopsis "Apply Mapping Functions in Frequent Saving")
+    (description
+     "Implementations of the family of map() functions with frequent saving of the
+intermediate results.  The contained functions let you start the evaluation of
+the iterations where you stopped (reading the already evaluated ones from
+cache), and work with the currently evaluated iterations while remaining ones
+are running in a background job.  Parallel computing is also easier with the
+workers parameter.")
+    (license license:expat)))
+
 (define-public r-currentsurvival
   (package
     (name "r-currentsurvival")
@@ -25292,13 +25328,13 @@ well as on a graphics card.")
 (define-public r-cities
   (package
     (name "r-cities")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cities" version))
               (sha256
                (base32
-                "0cka12km9fyqjsj7yl3wpzsq9pln7yzjxdq430441hsww8rr80l7"))))
+                "14wrv5pgzb0mf23ipp2j8d1ca73pgl5010h7qfkmgaxfvmn9j4yq"))))
     (properties `((upstream-name . "cities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-plotly r-ggthemes r-ggplot2 r-dplyr))
@@ -25499,13 +25535,13 @@ used within the analysis of the paper.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "circumplex" version))
               (sha256
                (base32
-                "1c6h06ccsql3yy3304b537wl40wd8f0sgj3gwi376irfz5zq227j"))))
+                "0rj6mzk77422ql020yra9gik7110r0qjnvmv2h5nc2prn5xd20kw"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

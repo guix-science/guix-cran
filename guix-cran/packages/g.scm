@@ -8288,6 +8288,29 @@ asymmetric relations between categorical variables (e.g., one variable obtained
 by re-grouping another).")
     (license license:expat)))
 
+(define-public r-goodfibes
+  (package
+    (name "r-goodfibes")
+    (version "0.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GoodFibes" version))
+              (sha256
+               (base32
+                "0k40lsbs33964f7vqb5q5pkkpyhv85insmg70yzl54l5yw2y4f13"))))
+    (properties `((upstream-name . "GoodFibes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-prodlim r-imager r-concaveman))
+    (home-page "https://cran.r-project.org/package=GoodFibes")
+    (synopsis
+     "Detection and Reconstruction of Muscle Fibers from diceCT Image Data")
+    (description
+     "Reconstruction of muscle fibers from image stacks using textural analysis.
+Includes functions for tracking, smoothing, cleaning, plotting and exporting
+muscle fibers.  Also calculates basic fiber properties (e.g., length and
+curvature).")
+    (license license:gpl2+)))
+
 (define-public r-good
   (package
     (name "r-good")
@@ -14676,6 +14699,32 @@ visualizations through a web browser GUI without writing any code.")
 randomForestSRC package for survival, regression and classification forests and
 ggplot2 package plotting.")
     (license license:gpl3+)))
+
+(define-public r-ggrain
+  (package
+    (name "r-ggrain")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggrain" version))
+              (sha256
+               (base32
+                "020fkq4z6mn9gvjmkh8pmaf2hgpp7ysxmzd6jd9fi8zyv9a07nkz"))))
+    (properties `((upstream-name . "ggrain")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-ggpp
+                             r-ggplot2
+                             r-gghalves
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/njudd/ggrain")
+    (synopsis "Rainclouds Geom for 'ggplot2'")
+    (description
+     "The gg_rain() function adds different geoms together using ggplot2 to create
+raincloud plots.")
+    (license license:expat)))
 
 (define-public r-ggquiver
   (package

@@ -12333,13 +12333,13 @@ Engineering, US Presidential Elections].")
 (define-public r-iemisc
   (package
     (name "r-iemisc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iemisc" version))
               (sha256
                (base32
-                "1xsfn2jd0q8c3fqzszh6rm8k9j0ki5nnlhm95zmkfx8ilw33k2kg"))))
+                "1frnpml90ff631y503bvafblasamqrr51p1h9qdrjbdif3ann356"))))
     (properties `((upstream-name . "iemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12408,16 +12408,15 @@ rounding mode for floating point computations.")
 (define-public r-ie2miscdata
   (package
     (name "r-ie2miscdata")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ie2miscdata" version))
               (sha256
                (base32
-                "0n5aya9g5xzbnx611ji7bxy2zb04ijmjb8kc6ac7kb2nm9n6dxbn"))))
+                "19jjpgnrbrnwzh5g3whpimbv7m2fgkvx7p3z6vqa1kfxqy0bn8yh"))))
     (properties `((upstream-name . "ie2miscdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/iembry/ie2miscdata")
     (synopsis "Irucka Embry's Miscellaneous USGS Data Collection")

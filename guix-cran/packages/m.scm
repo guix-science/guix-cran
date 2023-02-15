@@ -3665,6 +3665,26 @@ ISBN:978-3-319-24520-1).  The package was developed essentially as an extension
 to igraph'.")
     (license license:gpl3)))
 
+(define-public r-multinet
+  (package
+    (name "r-multinet")
+    (version "4.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multinet" version))
+              (sha256
+               (base32
+                "0i87r6k6pzr7gbspcq9d101gwnnlwqpr0y4s1dgqsa2abivk0p55"))))
+    (properties `((upstream-name . "multinet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
+    (home-page "https://cran.r-project.org/package=multinet")
+    (synopsis "Analysis and mining of multilayer social networks")
+    (description
+     "This package provides functions for the creation/generation and analysis of
+multilayer social networks <doi:10.18637/jss.v098.i08>.")
+    (license license:asl2.0)))
+
 (define-public r-multiness
   (package
     (name "r-multiness")
@@ -10530,13 +10550,13 @@ wordpiece tokenization algorithm for words not found in the lookup table.")
 (define-public r-morph
   (package
     (name "r-morph")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "morph" version))
               (sha256
                (base32
-                "1xaca0da8fcymbjiqxxdp7z13283xd93crxv74401dqpbqv0vai3"))))
+                "0qx3wdcrilcp1hlsgaxbb4afcnkyx0nxwampm59ssc3zps2wh2cq"))))
     (properties `((upstream-name . "morph")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rgl r-reshape2 r-igraph))
@@ -25309,13 +25329,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteospain" version))
               (sha256
                (base32
-                "1w45y07s8sz513fgqza4qc1c0bwzi5gpx6fasx717wxmplgz02qp"))))
+                "16f0jkcns72zb4xi3llspgwh6kjadlrh6k5p3dr37wr60gn8b0v4"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27833,13 +27853,13 @@ al.(2021) <doi:10.3390/axioms10040267>.")
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "6.1-0")
+    (version "6.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meta" version))
               (sha256
                (base32
-                "1nfljrb6vd3la8jhd4dbhla46dmd8pa074jfgjsczd9nc7kgvw9y"))))
+                "10apmmh77l62p3bkk3xhhvablxqs35fg2wx07iyy3fwn550zpj4f"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-metafor r-lme4 r-compquadform))

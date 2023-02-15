@@ -5735,46 +5735,6 @@ additional balance constraints.")
 \"tkrplot\" if you are not on Windows.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-suddengains
-  (package
-    (name "r-suddengains")
-    (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "suddengains" version))
-              (sha256
-               (base32
-                "096cwwfw69nglh2qz160jymwamlrwvbvxmmdc04cg8aalnpwd7ld"))))
-    (properties `((upstream-name . "suddengains")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-psych
-                             r-patchwork
-                             r-naniar
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://milanwiedemann.github.io/suddengains/")
-    (synopsis "Identify Sudden Gains in Longitudinal Data")
-    (description
-     "Identify sudden gains based on the three criteria outlined by Tang and DeRubeis
-(1999) <doi:10.1037/0022-006X.67.6.894> to a selection of repeated measures.
-Sudden losses, defined as the opposite of sudden gains can also be identified.
-Two different datasets can be created, one including all sudden gains/losses and
-one including one selected sudden gain/loss for each case.  It can extract
-scores around sudden gains/losses.  It can plot the average change around sudden
-gains/losses and trajectories of individual cases.")
-    (license license:expat)))
-
 (define-public r-sudachir
   (package
     (name "r-sudachir")
@@ -16261,13 +16221,13 @@ selected units using the systematic sampling.")
 (define-public r-spotoroo
   (package
     (name "r-spotoroo")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spotoroo" version))
               (sha256
                (base32
-                "04zmb0smljr0yszhd789mqm5ds3l71k5cfd9v173d04r5vv8z77a"))))
+                "1j95jqc5bkl2m9ljjgkv33aw5i279xkcf16f1mp9mphjcpl9xl24"))))
     (properties `((upstream-name . "spotoroo")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -21365,13 +21325,13 @@ in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\"")
 (define-public r-spatgeom
   (package
     (name "r-spatgeom")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatgeom" version))
               (sha256
                (base32
-                "1rvvnniryq9bb04v3i010p92v59zv3n47q1pn3bl9h92lgxlh18y"))))
+                "1a6f4a9p81j96hhx3lqisii0d2sxfy5c35ds7qkyghpp9mgvg7xg"))))
     (properties `((upstream-name . "spatgeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -54992,6 +54952,34 @@ sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
 decomposition with a nested stability selection.  The results is an biclust
 object and thus all methods of the biclust package can be applied.")
     (license license:gpl2)))
+
+(define-public r-s3fs
+  (package
+    (name "r-s3fs")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "s3fs" version))
+              (sha256
+               (base32
+                "0rczpmszqfvf049cnfyak5mcfbbvwmnijl7vrcn4s15h48vq1c86"))))
+    (properties `((upstream-name . "s3fs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-paws-storage
+                             r-lgr
+                             r-future-apply
+                             r-future
+                             r-fs
+                             r-data-table
+                             r-curl))
+    (home-page "https://github.com/DyfanJones/s3fs")
+    (synopsis "'Amazon Web Service S3' File System")
+    (description
+     "Access Amazon Web Service Simple Storage Service ('S3')
+<https://aws.amazon.com/s3/> as if it were a file system.  Interface based on
+the R package fs'.")
+    (license license:expat)))
 
 (define-public r-s3-resourcer
   (package

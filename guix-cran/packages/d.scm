@@ -1628,6 +1628,32 @@ control probability (TCP).  Show DVH diagrams, check and visualize quality
 assurance constraints for the DVH. Includes web-based graphical user interface.")
     (license license:gpl2+)))
 
+(define-public r-durga
+  (package
+    (name "r-durga")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Durga" version))
+              (sha256
+               (base32
+                "19gc9xn2j6bqs60vivh2x1s4r3mdbj5zkzly293lij9vmfrh8gbx"))))
+    (properties `((upstream-name . "Durga")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vipor r-rcolorbrewer r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KhanKawsar/EstimationPlot")
+    (synopsis "Effect Size Estimation and Visualisation")
+    (description
+     "An easy-to-use yet powerful system for plotting grouped data effect sizes.
+Various types of effect size can be estimated, then plotted together with a
+representation of the original data.  Select from many possible data
+representations (box plots, violin plots, raw data points etc.), and combine as
+desired.  Durga plots are implemented in base R, so are compatible with base R
+methods for combining plots, such as layout()'.  See Khan & McLean (2023)
+<doi:10.1101/2023.02.06.526960>.")
+    (license license:expat)))
+
 (define-public r-dupree
   (package
     (name "r-dupree")
@@ -1775,13 +1801,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.6.2")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "1njgwy7rji482fjj6amz5c9d1fky75fl7yssfxwqh0mfxmjmmdrb"))))
+                "1hviwda98ixf3w23bd71fxvafqg35lp7akdb9510h7594qakk0q2"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))

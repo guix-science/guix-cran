@@ -708,13 +708,13 @@ curve, along with some plot utilities.")
 (define-public r-pvplr
   (package
     (name "r-pvplr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PVplr" version))
               (sha256
                (base32
-                "1ngynlm2vxnmnbs0091r7q4m33dgkyawvcyskmxw1inxi6dkypk8"))))
+                "1hrd2r3m2qy8r4wjacbhpqsmlchdjqk6iyydiy5k1ccrmv8da74a"))))
     (properties `((upstream-name . "PVplr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -26675,13 +26675,13 @@ neighborhoods.")
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDtoolkit" version))
               (sha256
                (base32
-                "170f5cwq3v8qhj39jms291khz72x9ajswx2sx9m6d2gpf89nwwh5"))))
+                "1y11w6c5y632acad86mrhy05n212bphx2fxhriq1acmbwkmm166y"))))
     (properties `((upstream-name . "PDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-monobin r-dplyr))
@@ -27940,13 +27940,13 @@ conditional maximum likelihood estimation.")
 (define-public r-pcict
   (package
     (name "r-pcict")
-    (version "0.5-4.3")
+    (version "0.5-4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCICt" version))
               (sha256
                (base32
-                "1xihjyhp1mfbm07sy250ijrk4ljz80l5z5w6x2m1j0yss0r6mrqf"))))
+                "1akfvlxmklwzlzdg1q1828dkf8rqy3pyypywhd06g1f0g87xk5x7"))))
     (properties `((upstream-name . "PCICt")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -31776,13 +31776,13 @@ end.")
 (define-public r-panelview
   (package
     (name "r-panelview")
-    (version "1.1.11")
+    (version "1.1.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelView" version))
               (sha256
                (base32
-                "0q3h0xs12fb6ac88mlzsb6nfnylfk4cglx50b2mg7r40w08ipqmq"))))
+                "07wmjh0ha7ry8nf5vas50kixljshg7c1wkr8nq992a56dz9l5igq"))))
     (properties `((upstream-name . "panelView")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2 r-dplyr))
@@ -31790,9 +31790,9 @@ end.")
     (synopsis "Visualizing Panel Data")
     (description
      "Visualizes panel data.  It has three main functionalities: (1) it visualizes
-treatment status and missing values in a panel dataset; (2) it plots an outcome
-variable (or any variable) in a time-series fashion; (3) it visualizes bivariate
-relationships of two variables by unit or in aggregate.")
+treatment status and missing values in a panel dataset; (2) it visualizes the
+temporal dynamics of an outcome variable (or any variable); (3) it visualizes
+bivariate relationships of two variables by unit or in aggregate.")
     (license license:expat)))
 
 (define-public r-panelvar
@@ -34152,13 +34152,13 @@ for analyzing package usage.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.7.2")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "packageRank" version))
               (sha256
                (base32
-                "0z1ssfjkd831l6mf08qvch73h6sa3kpag46ybwyzbcx0hq6s0dqq"))))
+                "0dm8sgrbimdw65lwdjcxf3z6qzdjzfn0492y90xqynxzz8h3n185"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants
@@ -34170,6 +34170,7 @@ for analyzing package usage.")
                              r-isocodes
                              r-ggplot2
                              r-data-table
+                             r-curl
                              r-cranlogs))
     (home-page "https://github.com/lindbrook/packageRank")
     (synopsis

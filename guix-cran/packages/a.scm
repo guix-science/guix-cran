@@ -7272,13 +7272,13 @@ Tate, 2021, <doi:10.1016/j.scitotenv.2020.142374>).")
 (define-public r-apyramid
   (package
     (name "r-apyramid")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apyramid" version))
               (sha256
                (base32
-                "0ws6dfd6v3p9rhpmf06786yl2gaw1h2n1d76a054iap8bvgyahzw"))))
+                "0i1wkqnf1n5x7y7i116gr7y215aibklcnhb7rm76g8wm7241y3vk"))))
     (properties `((upstream-name . "apyramid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7296,7 +7296,7 @@ Tate, 2021, <doi:10.1016/j.scitotenv.2020.142374>).")
 aggregated census data stratified by age and one or two categorical variables
 (e.g. gender and health status) with any number of values.  It returns a ggplot
 object, allowing the user to further customize the output.  This package is part
-of the R4Epis project <https://r4epis.netlify.com>.")
+of the R4Epis project <https://r4epis.netlify.app/>.")
     (license license:gpl3)))
 
 (define-public r-aptreeshape
@@ -9106,19 +9106,21 @@ explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.3.1")
+    (version "2.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresRead" version))
               (sha256
                (base32
-                "1hiyjg4qa6qpyfbwlwa787sacf23z1mjaws24nj3h18zvwq2wk87"))))
+                "01mgkg7ffipz21x8piav4v4c98ay7c14svvq06ra334rxhqaycs3"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
+                             r-stringi
                              r-shiny
                              r-plyr
                              r-pbapply
+                             r-memuse
                              r-lubridate
                              r-jsonlite
                              r-httr

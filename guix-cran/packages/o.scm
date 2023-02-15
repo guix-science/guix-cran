@@ -3245,6 +3245,47 @@ Counts orbits of nodes and edges from edge matrix or data frame, or a graph
 object from the graph package.")
     (license license:lgpl3)))
 
+(define-public r-oralopioids
+  (package
+    (name "r-oralopioids")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OralOpioids" version))
+              (sha256
+               (base32
+                "088sp8z9w9kbiyri51459fpk65syabz7v8fac6izh5mrk5mckjpa"))))
+    (properties `((upstream-name . "OralOpioids")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-reshape2
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-plyr
+                             r-openxlsx
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "\"https://github.com/ankonahouston/OralOpioids\"")
+    (synopsis "Retrieving Oral Opioid Information")
+    (description
+     "This package provides details such as Morphine Equivalent Dose (MED), brand name
+and opioid content which are calculated of all oral opioids authorized for sale
+by Health Canada based on their Drug Identification Number (DIN).  MEDs are
+calculated based on recommendations by Canadian Institute for Health Information
+(CIHI) and information obtained from Health Canada's Drug Product Database's
+monthly data dump.  Please note in no way should output from this package be a
+substitute for medical advise.  All medications should only be consumed on
+prescription from a licensed healthcare provider.")
+    (license license:gpl3)))
+
 (define-public r-ora
   (package
     (name "r-ora")

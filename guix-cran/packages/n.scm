@@ -1721,16 +1721,16 @@ conditional-distribution based models with longitudinal Data.")
 (define-public r-nplyr
   (package
     (name "r-nplyr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nplyr" version))
               (sha256
                (base32
-                "1cq4qq7d4xkvwdw1byxigxii2kmv899c4svjg0vg3sxxf8wvz6ix"))))
+                "0n9pl6igjpdvsp39d7h5xr64c1ixlhc8bcxpbl70mz95p7jrld8h"))))
     (properties `((upstream-name . "nplyr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-purrr r-dplyr r-assertthat))
+    (propagated-inputs (list r-tidyr r-rlang r-purrr r-dplyr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/markjrieke/nplyr")
     (synopsis "Grammar of Nested Data Manipulation")
@@ -5276,13 +5276,13 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
 (define-public r-nlsr
   (package
     (name "r-nlsr")
-    (version "2023.2.8")
+    (version "2023.2.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlsr" version))
               (sha256
                (base32
-                "1da5267ppr4c77kdxyn6hmvzpf9cilpka9m916x3v9438cq596s3"))))
+                "1a2ijg79w6j8sa2cz5dnrmgbx3l8hnmns47g08p23nh05r1pdrlg"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
