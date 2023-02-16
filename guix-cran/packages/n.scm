@@ -4183,13 +4183,13 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
 (define-public r-nntensor
   (package
     (name "r-nntensor")
-    (version "1.1.10")
+    (version "1.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnTensor" version))
               (sha256
                (base32
-                "16lv17dgzyb5jgsl1j50q84jv78ppnfwk5hm7y4m9962c2dyqw33"))))
+                "1fkqyj18c8lbc1ij5vyvnigja6c5mqm9ma1dbgd111hj52q5a9j1"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tagcloud
@@ -4198,6 +4198,7 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
                              r-mass
                              r-ggplot2
                              r-fields))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/nnTensor")
     (synopsis "Non-Negative Tensor Decomposition")
     (description

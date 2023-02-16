@@ -7728,6 +7728,47 @@ Dhanda SK, Martini S, Cantrell JR, Wheeler DK, Sette A, Peters B.
 <doi:10.1093/nar/gky1006>.")
     (license license:expat)))
 
+(define-public r-epitoper
+  (package
+    (name "r-epitoper")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epitopeR" version))
+              (sha256
+               (base32
+                "0zp23cm43j9mm1fvz65y3xgjy0bm2s5h02y046zx2akx24sh3fjh"))))
+    (properties `((upstream-name . "epitopeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tibble
+                             r-stringr
+                             r-seqinr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-janitor
+                             r-httr
+                             r-fs
+                             r-dplyr
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=epitopeR")
+    (synopsis "Predict Peptide-MHC Binding")
+    (description
+     "This package provides a suite of tools to predict peptide MHC (major
+histocompatibility complex) presentation in the context of both human and mouse.
+ Polymorphic peptides between self and foreign proteins are identified.  The
+ability of peptides to bind self MHC is assessed and scored.  Based on half
+maximal inhibitory concentration as queried through the immune epitope database
+API <http://tools.iedb.org> using user defined methods, the foreign peptides
+most likely to be presented are output along with their predicted binding
+strength, amino acid position, the protein from which each peptide was derived,
+and the presenting allele. \"References:\" Vita R, Mahajan S, Overton JA, Dhanda
+SK, Martini S, Cantrell JR, Wheeler DK, Sette A, Peters B.
+<doi:10.1093/nar/gky1006>.")
+    (license license:expat)))
+
 (define-public r-epitools
   (package
     (name "r-epitools")
@@ -8329,31 +8370,35 @@ sampling of the posterior distribution.")
 (define-public r-epikit
   (package
     (name "r-epikit")
-    (version "0.1.2")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epikit" version))
               (sha256
                (base32
-                "0b9kc7qr7nkafmak60pyj7hln19w4zp33pk5y48qmfsxgarl6pv3"))))
+                "06hzs5bzv53qyiqa197qk5gykg1llxb1dh9f8xiald8wk5xxq0z6"))))
     (properties `((upstream-name . "epikit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-sf
                              r-scales
                              r-rlang
                              r-glue
+                             r-ggplot2
                              r-forcats
                              r-dplyr
                              r-binom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/R4EPI/epikit")
-    (synopsis "Miscellaneous Tools for the 'R4Epis' Project")
+    (synopsis "Miscellaneous Helper Tools for Epidemiologists")
     (description
      "This package contains tools for formatting inline code, renaming redundant
-columns, aggregating age categories, and calculating proportions with confidence
-intervals.  This is part of the R4Epis project <https://r4epis.netlify.com>.")
+columns, aggregating age categories, adding survey weights, finding the earliest
+date of an event, plotting z-curves, generating population counts and
+calculating proportions with confidence intervals.  This is part of the R4Epis
+project <https://r4epis.netlify.app/>.")
     (license license:gpl3)))
 
 (define-public r-epiinvert

@@ -34605,13 +34605,13 @@ This separates the aesthetics from the data crunching in plots and charts.")
 (define-public r-rcssci
   (package
     (name "r-rcssci")
-    (version "0.2.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcssci" version))
               (sha256
                (base32
-                "1kq94mxxadr08ybsql1mdw70g4sl9vb6jmv3rkypscpr6gb8gfxd"))))
+                "0q6mvss8hz3ga587vbbrg5an5519s0s4cppadixir26b988fwr2n"))))
     (properties `((upstream-name . "rcssci")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -34628,11 +34628,12 @@ This separates the aesthetics from the data crunching in plots and charts.")
     (description
      "Restricted Cubic Splines were performed to explore the shape of association form
 of \"U, inverted U, L\" shape and test linearity or non-linearity base on
-\"Cox,Logistic,linear\" regression, and auto output Restricted Cubic Splines
-figures.  The Restricted Cubic Splines method were based on Suli Huang (2022)
-<doi:10.1016/j.ecoenv.2022.113183>,Amit Kaura (2019) <doi:10.1136/bmj.l6055>,
-and Harrell Jr (2015, ISBN:978-3-319-19424-0 (Print) 978-3-319-19425-7
-(Online)).")
+\"Cox,Logistic,linear,quasipoisson\" regression, and auto output Restricted Cubic
+Splines figures.  rcssci package could automatically draw RCS graphics with
+Y-axis \"OR,HR,RR,beta\".  The Restricted Cubic Splines method were based on Suli
+Huang (2022) <doi:10.1016/j.ecoenv.2022.113183>,Amit Kaura (2019)
+<doi:10.1136/bmj.l6055>, and Harrell Jr (2015, ISBN:978-3-319-19424-0 (Print)
+978-3-319-19425-7 (Online)).")
     (license license:artistic2.0)))
 
 (define-public r-rcsf
@@ -45310,16 +45311,16 @@ include resize functionality in Markdown', Rmarkdown and Quarto documents.")
 (define-public r-r2redux
   (package
     (name "r-r2redux")
-    (version "1.0.12")
+    (version "1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2redux" version))
               (sha256
                (base32
-                "1ysvynsm95pgsrs72l1svbfnz8hxmrb656cf8rc4j682np4qaw8k"))))
+                "0pbly0r5jjil1rkr3fy8484ybls1hkwq7i38nvf3q5dshwims8jd"))))
     (properties `((upstream-name . "r2redux")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=r2redux")
+    (home-page "https://github.com/mommy003/r2redux")
     (synopsis "R2 Statistic")
     (description
      "R2 statistic for significance test.  Variance and covariance of R2 values used

@@ -3710,25 +3710,23 @@ cross-validation.  For more details see MacDonald et al. (2020).")
 (define-public r-multimorbidity
   (package
     (name "r-multimorbidity")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multimorbidity" version))
               (sha256
                (base32
-                "1x4869pqckldx6g4zhawjbin03glkxzfszb4qiq7yy2xi444jkl0"))))
+                "07jy3pzws91qwg7i4fig1rkh3bkjqv6icm03lvw00g3f65mdr6y2"))))
     (properties `((upstream-name . "multimorbidity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
                              r-sqldf
                              r-rlang
                              r-magrittr
                              r-lubridate
-                             r-dplyr
-                             r-devtools))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WYATTBENSKEN/multimorbidity")
     (synopsis
@@ -12679,6 +12677,42 @@ regression, used in \"Statistical Inference via Data Science: A ModernDive into 
 and the Tidyverse\" available at <https://moderndive.com/>.")
     (license license:gpl3)))
 
+(define-public r-moderate-mediation
+  (package
+    (name "r-moderate-mediation")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "moderate.mediation" version))
+              (sha256
+               (base32
+                "0fm6pl990fzcxg9zk9g94ycjgqdxzdswqf477ndg9gp4m0ndsriq"))))
+    (properties `((upstream-name . "moderate.mediation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-mvtnorm
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-distr
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=moderate.mediation")
+    (synopsis "Causal Moderated Mediation Analysis")
+    (description
+     "Causal moderated mediation analysis using the methods proposed by Qin and Wang
+(2022).  Causal moderated mediation analysis is crucial for investigating how,
+for whom, and where a treatment is effective by assessing the heterogeneity of
+mediation mechanism across individuals and contexts.  This package enables
+researchers to estimate and test the conditional and moderated mediation
+effects, assess their sensitivity to unmeasured pre-treatment confounding, and
+visualize the results.  The package is built based on the quasi-Bayesian Monte
+Carlo method, because it has relatively better performance at small sample
+sizes, and its running speed is the fastest.  The package is applicable to a
+treatment of any scale, a binary or continuous mediator, a binary or continuous
+outcome, and one or more moderators of any scale.")
+    (license license:gpl2)))
+
 (define-public r-modelwordcloud
   (package
     (name "r-modelwordcloud")
@@ -16071,13 +16105,13 @@ performance of optimized feature sets with nested resampling.")
 (define-public r-mlr3filters
   (package
     (name "r-mlr3filters")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3filters" version))
               (sha256
                (base32
-                "014wyzbfjghf58w82djdlwx6vnafnj1gw76sjb1v0cib6g4pxj7i"))))
+                "07qgk26ls8wgf9k82xlnsjwi7mpnpgi7i2yplfb5hsqn8nfj6hcc"))))
     (properties `((upstream-name . "mlr3filters")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -35799,16 +35833,16 @@ Markowitz portfolios.")
 (define-public r-markovmsm
   (package
     (name "r-markovmsm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovMSM" version))
               (sha256
                (base32
-                "148cbxjs5i7mbb39889fsvh25jh2gp5iiixy3939ic7nfgma7ayp"))))
+                "1ip96xl8xzh2mhrmd1kmjih7rm2lxf9k4ndf6wcq86r3jzqp4zf0"))))
     (properties `((upstream-name . "markovMSM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-survidm r-mstate))
+    (propagated-inputs (list r-survival r-mstate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=markovMSM")
     (synopsis

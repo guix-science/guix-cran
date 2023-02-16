@@ -13095,6 +13095,38 @@ Yadlowsky S, Hayward RA, Sussman JB, McClelland RL, Min YI, and Basu S (2018)
 <doi:10.7326/m17-3011>.")
     (license license:expat)))
 
+(define-public r-pooldilutionr
+  (package
+    (name "r-pooldilutionr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PoolDilutionR" version))
+              (sha256
+               (base32
+                "0jmizwhc2f6igp6y06g08q4jbknbmcg51fq13y663jpf6fkdc8kz"))))
+    (properties `((upstream-name . "PoolDilutionR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PoolDilutionR")
+    (synopsis
+     "Calculate Gross Biogeochemical Flux Rates from Isotope Pool Dilution Data")
+    (description
+     "Pool dilution is a isotope tracer technique wherein a biogeochemical pool is
+artifically enriched with its heavy isotopologue and the gross productive and
+consumptive fluxes of that pool are quantified by the change in pool size and
+isotopic composition over time.  This package calculates gross production and
+consumption rates from closed-system isotopic pool dilution time series data.
+Pool size concentrations and heavy isotope (e.g., 15N) content are measured over
+time and the model optimizes production rate (P) and the first order rate
+constant (k) by minimizing error in the model-predicted total pool size, as well
+as the isotopic signature.  The model optimizes rates by weighting information
+against the signal:noise ratio of concentration and heavy- isotope signatures
+using measurement precision as well as the magnitude of change over time.  The
+calculations used here are based on von Fischer and Hedin (2002)
+<doi:10.1029/2001GB001448> with some modifications.")
+    (license license:expat)))
+
 (define-public r-pool
   (package
     (name "r-pool")
@@ -22331,13 +22363,13 @@ history, Laloe J-O, ..., Girondot M, Hays GC (2020)
 (define-public r-phenofit
   (package
     (name "r-phenofit")
-    (version "0.3.7")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phenofit" version))
               (sha256
                (base32
-                "1wmih8s56w54yi6wq5wrswi89i9wdyfsgz1xa1ca8vicmrn313br"))))
+                "0rnjlhqwjcdmskx58wzh0drhnili4jhkr88lrafa6hi8mc1ppcjz"))))
     (properties `((upstream-name . "phenofit")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27364,13 +27396,13 @@ models.  Some original methods including Boshnakov & Iqelan (2009)
 (define-public r-pct
   (package
     (name "r-pct")
-    (version "0.9.7")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pct" version))
               (sha256
                (base32
-                "08cw92b5kr3fwz9dj1hnfxiygcg6aqka4v90i7km86bsbicvia7j"))))
+                "0bnqkrlgr78bccvwwwcscy659ivrpgj8vb8bmh4416ni3hvsk2s9"))))
     (properties `((upstream-name . "pct")))
     (build-system r-build-system)
     (propagated-inputs (list r-stplanr r-sf r-readr r-crul r-boot))

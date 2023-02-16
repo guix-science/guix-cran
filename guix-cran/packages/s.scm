@@ -4342,6 +4342,37 @@ Tian L (2019) ``Using a Surrogate Marker for Early Testing of a Treatment
 Effect\" Biometrics, 75(4):1253-1263. <doi:10.1111/biom.13067>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-surrogatersq
+  (package
+    (name "r-surrogatersq")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SurrogateRsq" version))
+              (sha256
+               (base32
+                "0ih5jwl2csdic4dhrb1hhnrrcpqa4b3d2ic4bjpfxll7max3q722"))))
+    (properties `((upstream-name . "SurrogateRsq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-progress r-passo r-mass r-desctools))
+    (home-page "https://xiaoruizhu.github.io/SurrogateRsq/")
+    (synopsis "Evaluating the Goodness of Fit using the Surrogate R-Squared")
+    (description
+     "To assess and compare the models goodness of fit, R-squared is one of the most
+popular measures.  For categorical data analysis, however, no universally
+adopted R-squared measure can resemble the ordinary least square (OLS) R-squared
+for linear models with continuous data.  This package implement the surrogate
+R-squared measure for categorical data analysis, which is proposed in the study
+of Dungang Liu, Xiaorui Zhu, Brandon Greenwell, and Zewei Lin (2022)
+<doi:10.1111/bmsp.12289>.  It can generate a point or interval measure of the
+surrogate R-squared.  It can also provide a ranking measure of the percentage
+contribution of each variable to the overall surrogate R-squared.  This ranking
+assessment allows one to check the importance of each variable in terms of their
+explained variance.  This package can be jointly used with other existing R
+packages for variable selection and model diagnostics in the model-building
+process.")
+    (license license:gpl2+)))
+
 (define-public r-surrogateregression
   (package
     (name "r-surrogateregression")
@@ -11584,6 +11615,25 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 ('summarize', tabulate', xtile', pctile', binscatter', elapsed quarters/month,
 lead/lag).")
     (license license:gpl2)))
+
+(define-public r-statamarkdown
+  (package
+    (name "r-statamarkdown")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Statamarkdown" version))
+              (sha256
+               (base32
+                "0mkwdc0xsfnaq518g99jfm4hn88n8g2bf860gv185gim3m084nm1"))))
+    (properties `((upstream-name . "Statamarkdown")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-xfun r-knitr))
+    (home-page "https://cran.r-project.org/package=Statamarkdown")
+    (synopsis "'Stata' Markdown")
+    (description "Settings and functions to extend the knitr Stata engine.")
+    (license license:expat)))
 
 (define-public r-stat2data
   (package
@@ -21606,13 +21656,13 @@ additional information about SVMlight format see
 (define-public r-sparsevfc
   (package
     (name "r-sparsevfc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SparseVFC" version))
               (sha256
                (base32
-                "1qv7vnalwp2jn302r53c3yfiyz51qzr0fi1ishmbal2bh3j910b7"))))
+                "1g5i3r447f1zcrlcamfci1f96silqmm43dabm5yhhwzsj8ak6jpv"))))
     (properties `((upstream-name . "SparseVFC")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-pdist))
@@ -25274,23 +25324,21 @@ sf-compatible data frames.")
 (define-public r-socialrisk
   (package
     (name "r-socialrisk")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "socialrisk" version))
               (sha256
                (base32
-                "049ambqpq50c20x1z0rjzi77i9n3mq5rbhsvfkwflq61i9j8mai9"))))
+                "1v9hvrqwihfprs32pplxsv00myf0p5pa32601s8s826jss3fkx4w"))))
     (properties `((upstream-name . "socialrisk")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
                              r-rlang
                              r-magrittr
-                             r-dplyr
-                             r-devtools))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WYATTBENSKEN/multimorbidity")
     (synopsis
@@ -25302,8 +25350,8 @@ ICD-10-CM \"Z-codes.\" This package identifies social risks using varying
 taxonomies of ICD-10-CM Z-codes from administrative health care data.  The
 conceptual taxonomies come from: Centers for Medicare and Medicaid Services
 (2021) <https://www.cms.gov/files/document/zcodes-infographic.pdf>, Reidhead
-(2018) <https://www.mhanet.com/mhaimages/Policy_Briefs/PolicyBrief_SDOH.pdf>, A
-Arons, S DeSilvey, C Fichtenberg, L Gottlieb (2018)
+(2018) <https://web.mhanet.com/>, A Arons, S DeSilvey, C Fichtenberg, L Gottlieb
+(2018)
 <https://sirenetwork.ucsf.edu/tools-resources/resources/compendium-medical-terminology-codes-social-risk-factors>.")
     (license license:expat)))
 
@@ -35932,13 +35980,13 @@ See Tong et al. (2013) <doi:10.1093/bioinformatics/bts713>.")
 (define-public r-siber
   (package
     (name "r-siber")
-    (version "2.1.6")
+    (version "2.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIBER" version))
               (sha256
                (base32
-                "1ymr1y2c984nnjkj5nwc1mi4ixdwg8d191nn58i0dvckzm922z80"))))
+                "1csk9xrs945ylzjy6c32sg1aswjbld30yn8flislvh7hbxj498wp"))))
     (properties `((upstream-name . "SIBER")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -36797,18 +36845,18 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "0.8")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyStorePlus" version))
               (sha256
                (base32
-                "0brvqv63wyalkzyacn51s2n4ny5m04y4vykl03v1hrxngg7rdrgs"))))
+                "0lrga5iiad2w4mylvi47ldhhir6dbs3j2hxcgkljapvpssq3bjcg"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/oobianom/shinyStorePlus")
+    (home-page "https://shinystoreplus.obi.obianom.com")
     (synopsis "Secure in-Browser Storage for 'Shiny' Inputs and Variables")
     (description
      "Store persistent and synchronized data from Shiny inputs within the browser in a
@@ -37941,13 +37989,13 @@ System.  See <https://design-system.service.gov.uk/components/> for details.")
 (define-public r-shinyglide
   (package
     (name "r-shinyglide")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyglide" version))
               (sha256
                (base32
-                "095p5rkx1ms3qdcrrnqkdfz5nylj19r4b5rv9jpkf2a1clhwfc0q"))))
+                "1w4bxpnpnxk1v2904i94hkrk6hv5i7kp2paajm5xnfps7gqc0f1r"))))
     (properties `((upstream-name . "shinyglide")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))

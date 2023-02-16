@@ -3210,13 +3210,13 @@ tactics, so draw poker variants are not included.")
 (define-public r-wildmeta
   (package
     (name "r-wildmeta")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wildmeta" version))
               (sha256
                (base32
-                "1ibcq9lpfdzgnph9n4r00k14bqzzkcv9r04wfgmal8ixlzki7fni"))))
+                "0xiy5gvdy03j9mnhh8vc8cnk6i20mi89983jzp02chz3va5455a4"))))
     (properties `((upstream-name . "wildmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-robumeta r-metafor r-clubsandwich))

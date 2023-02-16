@@ -6387,13 +6387,13 @@ model criticism plots, data trimming on model residuals, and data visualization.
 (define-public r-lmeinfo
   (package
     (name "r-lmeinfo")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmeInfo" version))
               (sha256
                (base32
-                "1y1793h5wd6xqj46bkr0xw47287bczhs4kiv1v2cbi70nr628w0d"))))
+                "0hb6isz91v4jck0aaikzs8fiisy6fg98mrnhhdy8f9m2g3vcp54x"))))
     (properties `((upstream-name . "lmeInfo")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -10972,13 +10972,13 @@ movement potential within a landscape (Lewis, 2021)
 (define-public r-learnrbook
   (package
     (name "r-learnrbook")
-    (version "1.0.2")
+    (version "1.0.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "learnrbook" version))
               (sha256
                (base32
-                "13jd5j597pv3ainy6xx7ra402ymrh25hgfjzq0csq6d86n5fz3aj"))))
+                "1m642zwbn10p355s8rhdrh61q9n85mh8xj4jhvramii2f09bzyhn"))))
     (properties `((upstream-name . "learnrbook")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

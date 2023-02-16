@@ -426,13 +426,13 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
 (define-public r-overviewr
   (package
     (name "r-overviewr")
-    (version "0.0.11")
+    (version "0.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "overviewR" version))
               (sha256
                (base32
-                "0ppk7m1h05prwf0m9cahxwwbn2jx1cbhzlqf7zyzmndszqcqqhjz"))))
+                "13g2qjd9421nfmabhs2xx8h393id9c9x1h547r953q7aabjmkr89"))))
     (properties `((upstream-name . "overviewR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

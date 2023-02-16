@@ -160,13 +160,13 @@ modifying it.")
 (define-public r-xtensor
   (package
     (name "r-xtensor")
-    (version "0.13.2-0")
+    (version "0.14.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xtensor" version))
               (sha256
                (base32
-                "0jwmcrhdnj02f4qbwyf4z4rpgyrw7wc3m9fwqp8l5f57g5ywkjgf"))))
+                "1qni98kxyaggb1ixmmj1hh1jmbz8rhji91nifgrjxc1wsvmvswh0"))))
     (properties `((upstream-name . "xtensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

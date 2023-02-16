@@ -7586,22 +7586,23 @@ organizations); extract information, check ID validity and diagnostics.")
 (define-public r-hettx
   (package
     (name "r-hettx")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hettx" version))
               (sha256
                (base32
-                "0zfxg88l83pzj37c5khpv4vi0v28fdnp0p8yz39scm8d8lya1dkm"))))
+                "17hfbzxfh4cinqizm33bi4wnax11w9ab7akcrl99bb59nw9xhpxr"))))
     (properties `((upstream-name . "hettx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
+    (propagated-inputs (list r-tidyr
                              r-quantreg
                              r-purrr
                              r-plyr
                              r-mvtnorm
                              r-moments
                              r-mass
+                             r-ggplot2
                              r-formula-tools
                              r-foreach
                              r-dplyr

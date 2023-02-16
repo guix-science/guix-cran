@@ -33298,13 +33298,13 @@ get started.")
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.2.9")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalGPS" version))
               (sha256
                (base32
-                "1m1cr4xqna4sv0jz9hjr54w0r805r9kh0002x8hiqxc3750qc1mr"))))
+                "0pkprqjg7gqq2sz7ci9lflpyamp20qzms1ckw28lh8kr821i7jjx"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -33329,8 +33329,9 @@ get started.")
      "This package provides a framework for estimating causal effects of a continuous
 exposure using observational data, and implementing matching and weighting on
 the generalized propensity score.  Wu, X., Mealli, F., Kioumourtzoglou, M.A.,
-Dominici, F. and Braun, D., 2018.  Matching on generalized propensity scores
-with continuous exposures.  arXiv preprint <arXiv:1812.06575>.")
+Dominici, F. and Braun, D., 2022.  Matching on generalized propensity scores
+with continuous exposures.  Journal of the American Statistical Association,
+pp.1-29.")
     (license license:gpl3)))
 
 (define-public r-causalgam
@@ -36779,13 +36780,13 @@ method and microarray technology, e.g. Affymetrix and Illumina.")
 (define-public r-callsync
   (package
     (name "r-callsync")
-    (version "0.0.3")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "callsync" version))
               (sha256
                (base32
-                "1vlazs6xqr188qvpai6hbdkz4knpgficskcxb8s692x18kncp1jq"))))
+                "1igmmjhgg59lyvb19w3lmdj7l1ji215bi1bn1w4m8rhyb6dw4h1z"))))
     (properties `((upstream-name . "callsync")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner

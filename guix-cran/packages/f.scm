@@ -5869,13 +5869,13 @@ supported.")
 (define-public r-forplo
   (package
     (name "r-forplo")
-    (version "0.2.0")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forplo" version))
               (sha256
                (base32
-                "1x01ybncb0lkx3l8zk3dnh1v8mymb9r4dms7aylnsyahlhzr6yv5"))))
+                "066hpd5jfs8nfd5fbxh049apd93pz8ibzr2kqlssx4c9fziwbg40"))))
     (properties `((upstream-name . "forplo")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6298,13 +6298,13 @@ functions such as stats::lm(), stats::glm() and survival::coxph().")
 (define-public r-forestmangr
   (package
     (name "r-forestmangr")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestmangr" version))
               (sha256
                (base32
-                "1zlp7lnawbfqw60552cwnh280spqj7p2qvn2xwz5y7wly2d7d4fm"))))
+                "1diywnrvzyvpi7ygqmb26gii6ac741c2v3zc7pk6i0y09j89pgrq"))))
     (properties `((upstream-name . "forestmangr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7926,13 +7926,13 @@ Averaging,\" Proceedings of the 2018 Winter Simulation Conference, IEEE Press,
 (define-public r-fma
   (package
     (name "r-fma")
-    (version "2.4")
+    (version "2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fma" version))
               (sha256
                (base32
-                "1x175mhljvplm7b2iwcvkzalv3a79p8gqj9d4f06l5v4shxlrab9"))))
+                "0y6garv70jn3mfrhpgbzsv6xyc7rnjqvl7whdmlfswvf5d6yl3a0"))))
     (properties `((upstream-name . "fma")))
     (build-system r-build-system)
     (propagated-inputs (list r-forecast))

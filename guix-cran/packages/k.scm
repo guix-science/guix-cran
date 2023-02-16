@@ -1860,26 +1860,6 @@ resulting plots are built using ggplot2 and can be further customised to a
 certain extent, including themes, fonts, and colour scales.")
     (license license:expat)))
 
-(define-public r-kmscv
-  (package
-    (name "r-kmscv")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kmscv" version))
-              (sha256
-               (base32
-                "053608dks4q8171wrm6izh4pf0glbq6zpw30i9yq36f5azgy59sk"))))
-    (properties `((upstream-name . "kmscv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rsample r-purrr r-parsnip r-dplyr))
-    (home-page "https://cran.r-project.org/package=kmscv")
-    (synopsis "K-Means Based Stratified Resampling")
-    (description
-     "An rsample extension to create cluster based stratified resamples for
-cross-validation.")
-    (license license:gpl3+)))
-
 (define-public r-kmodr
   (package
     (name "r-kmodr")

@@ -9051,13 +9051,13 @@ paired test allowing for missing values\".")
 (define-public r-incidentally
   (package
     (name "r-incidentally")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incidentally" version))
               (sha256
                (base32
-                "1hqabzn6c7di1grsxpgc8r26w3s2gcr8dcbviqnqx07y7ai8gjh7"))))
+                "063m672ym9w5zmzvdhr17smqy1mffkl3vls7nhpsxc4bjswqls2g"))))
     (properties `((upstream-name . "incidentally")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-matrix r-igraph))
@@ -13941,13 +13941,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.4")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "15kdpxqfhfsar8nhwkqxj7ll9w5gcnvvwm8kkxs1l5lbpvq25hh2"))))
+                "1ky2rhy29xk7c5xgd7c201lklqrljfjgldmfsv4kv0ky6j25bwc7"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

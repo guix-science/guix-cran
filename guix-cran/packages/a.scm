@@ -1913,13 +1913,13 @@ package relies on the base graphics system, so graphics are rendered rapidly.")
 (define-public r-autohrf
   (package
     (name "r-autohrf")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autohrf" version))
               (sha256
                (base32
-                "1zmnrfak91q10aa9a3i816hln2skvbnamigcbsc1dbkj0j6mdqwd"))))
+                "0gbnhgz311hsyjs4dgi03w4370vkdpshb78ay0gl75wj39mnpz7r"))))
     (properties `((upstream-name . "autohrf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer

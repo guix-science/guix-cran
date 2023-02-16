@@ -13912,13 +13912,13 @@ Dynamic Harmonic Regression.")
 (define-public r-dhis2r
   (package
     (name "r-dhis2r")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dhis2r" version))
               (sha256
                (base32
-                "0i9gxahxnirlrypzlx49q7sx2r5agjq7ipwk7ya5p32960bb89lf"))))
+                "019qrkcssxmvmhla3vfjq9m0vwv9j9h7njr2sjpmk4cqcdxvcbjn"))))
     (properties `((upstream-name . "dhis2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
@@ -17880,13 +17880,13 @@ indexes downloaded from the Brazilian Institute for Applied Economic Research.")
 (define-public r-defit
   (package
     (name "r-defit")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deFit" version))
               (sha256
                (base32
-                "1i6cfyv7dp0wmih20a1plczlw3w6q892axpbklgh71bj42bn9cgz"))))
+                "1r7s8hh0wia713a02dgzbgpsxmgyq8vqwwy610yipd8qn8nflklw"))))
     (properties `((upstream-name . "deFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-ggplot2 r-desolve))

@@ -9111,46 +9111,6 @@ methods for diagnostics etc.")
 regression with a large selection of distributions.")
     (license license:gpl2+)))
 
-(define-public r-gngtools
-  (package
-    (name "r-gngtools")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GNGTools" version))
-              (sha256
-               (base32
-                "0rhl2mx2m4l0xzkv91k11l5x5vvqg6bzg3cldjs8ssi9ks0i4192"))))
-    (properties `((upstream-name . "GNGTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-reshape2
-                             r-purrr
-                             r-plyr
-                             r-mvtnorm
-                             r-latex2exp
-                             r-knitr
-                             r-janitor
-                             r-gtable
-                             r-gridextra
-                             r-ggplot2
-                             r-extradistr
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gcicc/GNGTools")
-    (synopsis "Tools for Go/No-Go Decision-Making Framework")
-    (description
-     "Go/No-Go Decision-making Framework based on Bayesian posterior probabilities
-linked to the target product profile.")
-    (license license:gpl2)))
-
 (define-public r-gnfit
   (package
     (name "r-gnfit")
@@ -9291,13 +9251,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.0.5")
+    (version "2.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmvarkit" version))
               (sha256
                (base32
-                "10wb9gk5l8jhq55rxcyqbq6jmcd6xzfabg9x5hfmss34d0gdv7vb"))))
+                "1m9azg17vchfr6y5yvmndzsxs44mcni7kslwgs455jadw7s8midw"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-mvnfast r-gsl r-brobdingnag))
@@ -9480,13 +9440,13 @@ polynomials with rational coefficients.")
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.4.8")
+    (version "1.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gMOIP" version))
               (sha256
                (base32
-                "1bldxi4mv4cj25r9bg6dlv1lg1p1vkczwylmgs2xp9igk0pk15hk"))))
+                "15lnn80shpdkc0qzchrpn939z3j581jjfl6m4032vmdpgyynmhak"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11112,37 +11072,6 @@ detailed manual on model specification.  A detailed discussion of the methods in
 this package can be found in Watson and Pan (2022) <arXiv:2207.09183>.")
     (license license:gpl2+)))
 
-(define-public r-glmmrmcml
-  (package
-    (name "r-glmmrmcml")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "glmmrMCML" version))
-              (sha256
-               (base32
-                "0cjw5rvqr3p7n534b5f9hsdiyclsjba1k7jhwkqxqsbqh09h4vmn"))))
-    (properties `((upstream-name . "glmmrMCML")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsechol
-                             r-rminqa
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-glmmrbase
-                             r-digest
-                             r-bh))
-    (home-page "https://github.com/samuel-watson/glmmrMCML")
-    (synopsis
-     "Markov Chain Monte Carlo Maximum Likelihood for Generalised Linear Mixed Models")
-    (description
-     "Markov Chain Monte Carlo Maximum Likelihood model fitting for generalised linear
-mixed models.  Uses the package glmmrBase for model specification, see
-<https://github.com/samuel-watson/glmmrBase/blob/master/README.md> for a
-detailed manual on model specification.")
-    (license license:gpl3+)))
-
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
@@ -12376,6 +12305,29 @@ of the data store, and each snapshot links to the underlying commit of the
 source code.  That way, when the user rolls back the code to a previous branch
 or commit, gittargets can recover the data contemporaneous with that commit so
 that all targets remain up to date.")
+    (license license:expat)))
+
+(define-public r-gitr
+  (package
+    (name "r-gitr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gitr" version))
+              (sha256
+               (base32
+                "09l22wv2r7l1ax17y1q1xmasibyqm71jk0nyvmvlawavkw6by658"))))
+    (properties `((upstream-name . "gitr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://stufield.github.io/gitr/")
+    (synopsis "Lightweight API for 'Git'")
+    (description
+     "This package provides a light-weight, dependency-free, application programming
+interface (API) to access system-level Git commands from within R'.  Contains
+wrappers and defaults for common data science workflows as well as Zsh plugin
+aliases.  A generalized API syntax is also available.  A system installation of
+Git <https://git-scm.com/downloads> is required.")
     (license license:expat)))
 
 (define-public r-gitlink
@@ -14044,13 +13996,13 @@ magnitude trends over time.")
 (define-public r-ggstatsplot
   (package
     (name "r-ggstatsplot")
-    (version "0.10.0")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstatsplot" version))
               (sha256
                (base32
-                "1baph4gkih2f7wbgrr4xpcghmz9srzk1a5a8bi8r88217mx6ssjr"))))
+                "1gzm8bki6nzwjcqk5zzc2jcrx41wby919w5377r6hhga1dcx3r4v"))))
     (properties `((upstream-name . "ggstatsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14703,13 +14655,13 @@ ggplot2 package plotting.")
 (define-public r-ggrain
   (package
     (name "r-ggrain")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrain" version))
               (sha256
                (base32
-                "020fkq4z6mn9gvjmkh8pmaf2hgpp7ysxmzd6jd9fi8zyv9a07nkz"))))
+                "1davdg6dz4y3yz9iggjq7firljrcp1wqq4p40laqxdrk7hg9ir0p"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -14722,7 +14674,7 @@ ggplot2 package plotting.")
     (home-page "https://github.com/njudd/ggrain")
     (synopsis "Rainclouds Geom for 'ggplot2'")
     (description
-     "The gg_rain() function adds different geoms together using ggplot2 to create
+     "The geom_rain() function adds different geoms together using ggplot2 to create
 raincloud plots.")
     (license license:expat)))
 
@@ -15889,13 +15841,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglm
   (package
     (name "r-gglm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gglm" version))
               (sha256
                (base32
-                "1aq49lvscgxbf8nzxb67bzrn86lb02qg189qpgmvhdlynhzry05h"))))
+                "1sdydax5hp7nan8w1vfz1kzz0zw039026qqr3wcsf4v5knwbmy1d"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15904,6 +15856,7 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
                              r-rlang
                              r-purrr
                              r-patchwork
+                             r-nlme
                              r-metafor
                              r-ggplot2
                              r-dplyr
@@ -18303,29 +18256,28 @@ structural breaks in the mean, see Pretis, Reade and Sucarrat (2018)
 (define-public r-getquandldata
   (package
     (name "r-getquandldata")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GetQuandlData" version))
               (sha256
                (base32
-                "1g1as4m853ab1wp57rzqm0552g0vm7kxzypibv0xywc85084pnmc"))))
+                "0j5n2xbjk64nyfdpzphsiwa9k08rvgdfkzbfqahjdy11rk4x1fgi"))))
     (properties `((upstream-name . "GetQuandlData")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-scales
-                             r-readr
+    (propagated-inputs (list r-readr
                              r-purrr
                              r-memoise
                              r-jsonlite
+                             r-fs
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetQuandlData/")
     (synopsis
      "Fast and Cached Import of Data from 'Quandl' Using the 'json API'")
     (description
-     "Imports time series data from the Quandl database <https://www.quandl.com>.  The
-package uses the json api at <https://www.quandl.com/tools/api>, local caching
+     "Imports time series data from the Quandl database <https://data.nasdaq.com/>.
+The package uses the json api at <https://data.nasdaq.com/search>, local caching
 ('memoise package) and the tidy format by default.  Also allows queries of
 databases, allowing the user to see which time series are available for each
 database id.  In short, it is an alternative to package Quandl', with faster
@@ -21918,13 +21870,13 @@ specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
 (define-public r-genesysr
   (package
     (name "r-genesysr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genesysr" version))
               (sha256
                (base32
-                "0p1mzhwcffifph640qvb2g7qkj0gpjivsmwvih52fd9nwvqpmk9q"))))
+                "1ili7a5brs95ng5dffk91rc1dimw6hlzslqkxjp9937zhmxz8qpg"))))
     (properties `((upstream-name . "genesysr")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-jsonlite r-httr r-dplyr))

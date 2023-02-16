@@ -844,13 +844,13 @@ ROC curve.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usedthese" version))
               (sha256
                (base32
-                "1s02iw9nin8k0k0cjmf2zgs85sbs0nxxz7338zn5gksmgk3v0afx"))))
+                "1vgxi3gcg6rgfx06nwdpq8lc7q2nyipzb61nz3vl95qx5dhbjj28"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3453,13 +3453,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.4.3")
+    (version "3.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uGMAR" version))
               (sha256
                (base32
-                "025pk7fjd0ln0c8pg8rhyprc94pwscnvywf04hfvbschrw8zm2cz"))))
+                "10ziypw60v71878gvjkzd23r2cczm403cnjdj5lmh8r4zwlsck9y"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-gsl r-brobdingnag))
@@ -3473,8 +3473,8 @@ Shape.")
 Mixture Autoregressive (G-StMAR) models, quantile residual tests, graphical
 diagnostics, forecast and simulate from GMAR, StMAR and G-StMAR processes.
 Leena Kalliovirta, Mika Meitz, Pentti Saikkonen (2015) <doi:10.1111/jtsa.12108>,
-Mika Meitz, Daniel Preve, Pentti Saikkonen (2021)
-<doi:10.1080/03610926.2021.1916531>, Savi Virolainen (2021)
+Mika Meitz, Daniel Preve, Pentti Saikkonen (2023)
+<doi:10.1080/03610926.2021.1916531>, Savi Virolainen (2022)
 <doi:10.1515/snde-2020-0060>.")
     (license license:gpl3)))
 
