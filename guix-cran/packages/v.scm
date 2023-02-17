@@ -5659,6 +5659,30 @@ produces a user-friendly PDF summary and a spreadsheet containing consensus
 variant information.")
     (license license:gpl2)))
 
+(define-public r-variskscore
+  (package
+    (name "r-variskscore")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vaRiskScore" version))
+              (sha256
+               (base32
+                "1nqm7c0wamr0alp610jdllnzr83bi5cjx1vllza5y458zlcpwnnk"))))
+    (properties `((upstream-name . "vaRiskScore")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=vaRiskScore")
+    (synopsis "VA CVD Risk Score")
+    (description
+     "Estimates the predicted 10-year cardiovascular (CVD) risk score (in probability)
+for women military service members and veterans by inputting patient profiles.
+The proposed women CVD risk score improves the accuracy of the existing American
+College of Cardiology/American Heart Association CVD risk assessment tool in
+predicting longâterm CVD risk for VA women, particularly in young and
+racial/ethnic minority women.  See the reference: JeonâSlaughter, H., Chen,
+X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021) <doi:10.1161/JAHA.120.019217>.")
+    (license license:gpl3)))
+
 (define-public r-variosig
   (package
     (name "r-variosig")

@@ -3189,13 +3189,13 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
-    (version "2.0.3")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "growthcleanr" version))
               (sha256
                (base32
-                "1qdm91mpa36vpxz43fx2dv7qwg9wd6zasc7plalqyf60p3iw8r7d"))))
+                "0x4znxf0rrprg89w66k35m76nvnxln9m11py7mvmd4b1a6d8s6a4"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4757,13 +4757,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "0.8.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greeks" version))
               (sha256
                (base32
-                "1lg3apccnhnms3chgic0y587i9d8bi7r9pzffmywld7s9sdng8lz"))))
+                "08674kxjbfpmicnc8cpvfq7fcinzy063h9av1ng9i3v22szwry8s"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9508,6 +9508,33 @@ heterogeneity such as the latent class and the mixed-mixed multinomial logit
 model.")
     (license license:gpl2+)))
 
+(define-public r-gmmsslm
+  (package
+    (name "r-gmmsslm")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gmmsslm" version))
+              (sha256
+               (base32
+                "02rd8myym39dic6n7c40dvi38924r55h1bp0p34a6zwngsyinz8k"))))
+    (properties `((upstream-name . "gmmsslm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=gmmsslm")
+    (synopsis
+     "Semi-Supervised Gaussian Mixture Model with a Missing-Data Mechanism")
+    (description
+     "The algorithm of semi-supervised learning is based on finite Gaussian mixture
+models and includes a mechanism for handling missing data.  It aims to fit a
+g-class Gaussian mixture model using maximum likelihood.  The algorithm treats
+the labels of unclassified features as missing data, building on the framework
+introduced by Rubin (1976) <doi:10.2307/2335739> for missing data analysis.  By
+taking into account the dependencies in the missing pattern, the algorithm
+provides more information for determining the optimal classifier, as specified
+by Bayes rule.")
+    (license license:gpl3)))
+
 (define-public r-gmmboost
   (package
     (name "r-gmmboost")
@@ -12636,13 +12663,13 @@ primarily related to network analysis on the Norwegian road network.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "giscoR" version))
               (sha256
                (base32
-                "14ic0xf1z70xdk7345wpllaqdp296ajz96wpm746qi26ipzikqgj"))))
+                "00c84j6smdj1c4d8asfa7ammfjyq7xsbd5v1xla77lqpizsi5lfp"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
@@ -20310,13 +20337,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geofi" version))
               (sha256
                (base32
-                "0x52g2d2h7rcz15bw5hdz2zzy1fbrajpdglmpbiij7mwwmpgc05d"))))
+                "01hrknkbmm7lwbpdpgpqylya6fc5kwd19bas6wyp1dyrdpn8xj5x"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20329,7 +20356,7 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://ropengov.github.io/geofi/")
+    (home-page "https://github.com/rOpenGov/geofi")
     (synopsis "Access Finnish Geospatial Data")
     (description "Tools for reading Finnish open geospatial data in R.")
     (license license:bsd-2)))
@@ -26406,13 +26433,13 @@ fitness of strategies in each generation.")
 (define-public r-gamer
   (package
     (name "r-gamer")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gameR" version))
               (sha256
                (base32
-                "09z10gavska02d6nfi36qlbl6ln25h83knrhib3n9c5bmycc8z8d"))))
+                "06l232dnbggbijjf4aj5vya76b381vgag37kl1fynx4s6nd37flk"))))
     (properties `((upstream-name . "gameR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

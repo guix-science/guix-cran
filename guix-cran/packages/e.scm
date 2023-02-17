@@ -2340,6 +2340,38 @@ memory issues are solved by by only storing the best results during execution
 and thus keeping memory usage constant.")
     (license license:gpl3+)))
 
+(define-public r-exdqlm
+  (package
+    (name "r-exdqlm")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "exdqlm" version))
+              (sha256
+               (base32
+                "1mflapsbi67jabimqbysr0rcgi8bvn05sgmf5ykr9hmvhs16pf0x"))))
+    (properties `((upstream-name . "exdqlm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-tictoc
+                             r-magic
+                             r-laplacesdemon
+                             r-hyperbolicdist
+                             r-generalizedhyperbolic
+                             r-fnn
+                             r-dlm
+                             r-crch
+                             r-coda
+                             r-brms))
+    (home-page "https://cran.r-project.org/package=exdqlm")
+    (synopsis "Extended Dynamic Quantile Linear Models")
+    (description
+     "Routines for Bayesian estimation and analysis of dynamic quantile linear models
+utilizing the extended asymmetric Laplace error distribution, also known as
+extended dynamic quantile linear models (exDQLM) described in Barata et al
+(2020) <doi:10.1214/21-AOAS1497>.")
+    (license license:expat)))
+
 (define-public r-exdex
   (package
     (name "r-exdex")
@@ -8229,13 +8261,13 @@ on network and epidemic parameters, given epidemic data.")
 (define-public r-epimodel
   (package
     (name "r-epimodel")
-    (version "2.3.1")
+    (version "2.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiModel" version))
               (sha256
                (base32
-                "1fwk6wkqy2z3cv0jhi6mz077qjwlcqhd57lpiv6i6iajizcf4bas"))))
+                "0s5qmnqiln60j53qx2vb0855ddl2dg9x5iz6w7ihmdlnj5j000rp"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8244,12 +8276,15 @@ on network and epidemic parameters, given epidemic data.")
                              r-rlang
                              r-rcpp
                              r-rcolorbrewer
+                             r-networklite
                              r-networkdynamic
                              r-network
                              r-lazyeval
                              r-ggplot2
                              r-foreach
+                             r-ergm-ego
                              r-ergm
+                             r-egor
                              r-dplyr
                              r-doparallel
                              r-desolve
@@ -16059,13 +16094,13 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
 (define-public r-edear
   (package
     (name "r-edear")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edeaR" version))
               (sha256
                (base32
-                "0l03kabpcxfp04naa62p5pc70fbhv70dj6vkcv0b30sczljbcdhz"))))
+                "0piy046q4vzyi3dbkga9cfh8jxl0anrvj4klc1a4y4n8hxsddyya"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

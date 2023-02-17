@@ -1259,6 +1259,47 @@ provides an interface to read, aggregate, and summarize data from one or more
 simulations in a dplyr pipeline.")
     (license license:cc0)))
 
+(define-public r-rwcvp
+  (package
+    (name "r-rwcvp")
+    (version "1.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rWCVP" version))
+              (sha256
+               (base32
+                "1qs3h66m2nw44iry5jlczwd00s79669vrk8k1crdh7vgvhnf5r4y"))))
+    (properties `((upstream-name . "rWCVP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rmarkdown
+                             r-rlang
+                             r-recordlinkage
+                             r-purrr
+                             r-phonics
+                             r-magrittr
+                             r-htmltools
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matildabrown/rWCVP")
+    (synopsis
+     "Generating Summaries, Reports and Plots from the World Checklist of Vascular Plants")
+    (description
+     "This package provides a companion to the World Checklist of Vascular Plants
+(WCVP).  It includes functions to generate maps and species lists, as well as
+match names to the WCVP. For more details and to cite the package, see: Brown
+M.J.M., Walker B.E., Black N., Govaerts R., Ondo I., Turner R., Nic Lughadha E.
+(in press). \"rWCVP: A companion R package to the World Checklist of Vascular
+Plants\".  New Phytologist.")
+    (license license:gpl3+)))
+
 (define-public r-rwclust
   (package
     (name "r-rwclust")
@@ -31907,13 +31948,13 @@ projects for changes.")
 (define-public r-readxlsb
   (package
     (name "r-readxlsb")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readxlsb" version))
               (sha256
                (base32
-                "1y887lfdcak1xpgzh2l5hrmhnh43wrj18p7jqx96gmgx059c1y33"))))
+                "0iksr8dkxlip625nyqsfmj7pbg0b08vdi4s7w61shwwmnpsj742r"))))
     (properties `((upstream-name . "readxlsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rcpp r-cellranger))
@@ -42246,6 +42287,36 @@ Hijmans (2006) <doi:10.1111/j.1466-8238.2006.00257.x>.")
     (description
      "This package provides tools for filtering occurrence records, generating
 alpha-hull-derived range polygons and mapping species distributions.")
+    (license license:gpl3+)))
+
+(define-public r-rang
+  (package
+    (name "r-rang")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rang" version))
+              (sha256
+               (base32
+                "0maya96pj9934b37ipq7yck1x4yx83azd9nh4axx3c07i9w9f0br"))))
+    (properties `((upstream-name . "rang")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-remotes
+                             r-pkgsearch
+                             r-memoise
+                             r-jsonlite
+                             r-gh
+                             r-fastmap
+                             r-anytime))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rang")
+    (synopsis
+     "Reconstructing Reproducible R Computational Environments with Ease")
+    (description
+     "Resolve the dependency graph of R packages at a specific time point based on the
+information from various R-hub web services <https://blog.r-hub.io/>.  The
+dependency graph can then be used to reconstruct the R computational environment
+with Rocker <https://rocker-project.org>.")
     (license license:gpl3+)))
 
 (define-public r-randvar

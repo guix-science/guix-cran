@@ -10864,13 +10864,13 @@ using the tkImg package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TKCat" version))
               (sha256
                (base32
-                "1z4ili1hn4nfkg4v84s8xamwxpyfjdyi0b7xpw795d6x80ar3ssk"))))
+                "0j3m10adfc3k7znaissl1w6pqg5mf2qhl4r2i89qjdmw0i1h27pa"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14716,6 +14716,36 @@ plots (intervals plus densities), and fit curves with multiple, arbitrary
 uncertainty bands.")
     (license license:gpl3+)))
 
+(define-public r-tidyaml
+  (package
+    (name "r-tidyaml")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyAML" version))
+              (sha256
+               (base32
+                "0zr2nmsyy9cx2kkg5z9nrf9mls8zg3d9lqv0vzvwzvrqc377yd88"))))
+    (properties `((upstream-name . "tidyAML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-workflowsets
+                             r-workflows
+                             r-rsample
+                             r-rlang
+                             r-purrr
+                             r-parsnip
+                             r-magrittr
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spsanderson/tidyAML")
+    (synopsis "Automatic Machine Learning with 'tidymodels'")
+    (description
+     "The goal of this package will be to provide a simple interface for automatic
+machine learning that fits the tidymodels framework.  The intention is to work
+for regression and classification problems with a simple verb framework.")
+    (license license:expat)))
+
 (define-public r-tidetables
   (package
     (name "r-tidetables")
@@ -18192,13 +18222,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terrainr
   (package
     (name "r-terrainr")
-    (version "0.7.3")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "terrainr" version))
               (sha256
                (base32
-                "0fhwgy15lqai0h64dxr8ii54hrdymk7zlinq0ar56bahshq4zds7"))))
+                "0qgr38shvdl9c6mcrvj9h6kydfnp7wp93n2qac9za96pbij4js7d"))))
     (properties `((upstream-name . "terrainr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

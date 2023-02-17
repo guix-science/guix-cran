@@ -7407,6 +7407,35 @@ network affinity based on random walk; both can be done via high-performance
 parallel computing.")
     (license license:gpl2)))
 
+(define-public r-dndr
+  (package
+    (name "r-dndr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dndR" version))
+              (sha256
+               (base32
+                "0gkw4wm370i9m2asrsvl00268jj83q8yayxry3i05aynpmv0p2rs"))))
+    (properties `((upstream-name . "dndR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dndR")
+    (synopsis "Dungeons & Dragons Functions for Players and Dungeon Masters")
+    (description
+     "The goal of dndR is to provide a suite of Dungeons & Dragons related functions.
+This package is meant to be useful both to players and Dungeon Masters (DMs).
+All functions currently focus on Fifth Edition (a.k.a. \"5e\") but once the next
+edition is published functions will likely be expanded to include any rule
+changes.")
+    (license license:expat)))
+
 (define-public r-dnatools
   (package
     (name "r-dnatools")
@@ -14853,13 +14882,13 @@ these adjustments.")
 (define-public r-dfa-cancor
   (package
     (name "r-dfa-cancor")
-    (version "0.2.5")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DFA.CANCOR" version))
               (sha256
                (base32
-                "0c0590dzfvpmpjbgbnzpdgzmr3v97l136wzpjpbdw4c6pn3pyklw"))))
+                "0d1dsl79wxsma3zvb2wxii6hr27v9sah4bjfcxsbyhlfyb6q3wy6"))))
     (properties `((upstream-name . "DFA.CANCOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvn r-bayesfactor))
@@ -18051,13 +18080,13 @@ ensembles (Kook et al, 2022, <doi:10.48550/arXiv.2205.12729>) are implemented.")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deeptime" version))
               (sha256
                (base32
-                "02fkfkbk1vxa86gph278api2z33i6i10klvfq6yn2863w2i37q3b"))))
+                "049vgkjcxqh009czrzj59j8rjmlr86q22v3x8fq9242jixbs3hzg"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -18083,7 +18112,7 @@ not limited to, geological, evolutionary, and ecological data.  The primary goal
 of deeptime is to enable users to add highly customizable timescales to their
 visualizations.  Other functions are also included to assist with other areas of
 deep time visualization.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-deepregression
   (package
@@ -20050,17 +20079,16 @@ parallel MCMC support for JAGS', WinBUGS', OpenBUGS', and Stan'.")
 (define-public r-dclear
   (package
     (name "r-dclear")
-    (version "1.0.11")
+    (version "1.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DCLEAR" version))
               (sha256
                (base32
-                "0s56qyp9jrfkqf946w9hin2qfkmxcgg3ymcwj3v24gabvyqivjdm"))))
+                "03a2i5hjp49sp0s0vp4fs8ax9569yzk2zsp3h6lp0frjvp75m7c9"))))
     (properties `((upstream-name . "DCLEAR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tensorflow
                              r-stringr
                              r-rlang

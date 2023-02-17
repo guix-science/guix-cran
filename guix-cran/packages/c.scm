@@ -10728,13 +10728,13 @@ more details see the project website <https://sweichwald.de/coroICA/>.")
 (define-public r-cornet
   (package
     (name "r-cornet")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cornet" version))
               (sha256
                (base32
-                "1psvsc0w5nr7fd83w6wk0q6y8cz2kjjv6slkihghavp6azrhx45k"))))
+                "0llbil85jx4439hcinfw30691bg34bk863g89wy1ypizf7sfaxys"))))
     (properties `((upstream-name . "cornet")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-glmnet))
@@ -23854,13 +23854,13 @@ dataset cleaning.")
 (define-public r-clickhousehttp
   (package
     (name "r-clickhousehttp")
-    (version "0.1.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClickHouseHTTP" version))
               (sha256
                (base32
-                "1z0rd3jww20k9zv4m70b881d7j5fkmjqvmm5paqnnrslv3kwiw0z"))))
+                "0b2i7g6cyz78bhnn1xhihmliydjkd1a6wp5g38zwhsl1j78sn6vx"))))
     (properties `((upstream-name . "ClickHouseHTTP")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dbi r-data-table r-arrow))
@@ -28833,28 +28833,6 @@ changepoint problem from a geometrical viewpoint and aim to extract relevant
 geometrical features in order to detect changepoints.  The geomcp() function
 should be your first point of call.  References: Grundy et al. (2020)
 <doi:10.1007/s11222-020-09940-y>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-changepoint
-  (package
-    (name "r-changepoint")
-    (version "2.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "changepoint" version))
-              (sha256
-               (base32
-                "16v4p2c9zi2w3anwf5y9snl5dy1g5aidiqz1vn2p64qhfvg6yqxc"))))
-    (properties `((upstream-name . "changepoint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo))
-    (home-page "https://github.com/rkillick/changepoint/")
-    (synopsis "Methods for Changepoint Detection")
-    (description
-     "This package implements various mainstream and specialised changepoint methods
-for finding single and multiple changepoints within data.  Many popular
-non-parametric and frequentist methods are included.  The cpt.mean(), cpt.var(),
-cpt.meanvar() functions should be your first point of call.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-chandwich

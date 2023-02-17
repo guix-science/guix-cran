@@ -9006,17 +9006,17 @@ sources and multiple authors represented as networkDynamic'-formatted objects.")
 (define-public r-networkdynamic
   (package
     (name "r-networkdynamic")
-    (version "0.11.2")
+    (version "0.11.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "networkDynamic" version))
               (sha256
                (base32
-                "1srbq0mxl6crwsdvjnc0vg9c9kgim0a5hpxpb21m42c6xd8azvxy"))))
+                "0nwfcis6hxca99kbcqv90g0hrfxgwqc7mml0jh4xq32wv384yric"))))
     (properties `((upstream-name . "networkDynamic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statnet-common r-network))
-    (home-page "http://statnet.org")
+    (propagated-inputs (list r-statnet-common r-networklite r-network))
+    (home-page "https://statnet.org/")
     (synopsis "Dynamic Extensions for Network Objects")
     (description
      "Simple interface routines to facilitate the handling of network objects with
@@ -10999,21 +10999,21 @@ management of data on the Neo4J server and basic local server admin.")
 (define-public r-neo2r
   (package
     (name "r-neo2r")
-    (version "2.1.1")
+    (version "2.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neo2R" version))
               (sha256
                (base32
-                "1i6g4xbbg2fsy584mqsrfnjbgls87b09f4yxdq8ff8r1a5wsq388"))))
+                "185x98616kpc7zk9ifka22g8v4zyck0v5svl3swajf605rpgqzmp"))))
     (properties `((upstream-name . "neo2R")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-rcurl r-jsonlite r-base64enc))
+    (propagated-inputs (list r-jsonlite r-httr r-base64enc))
     (home-page "https://github.com/patzaw/neo2r")
     (synopsis "Neo4j to R")
     (description
-     "The aim of the neo2R is to provide simple and low level connectors for querying
+     "The aim of neo2R is to provide simple and low level connectors for querying
 neo4j graph databases (<https://neo4j.com/>).  The objects returned by the query
 functions are either lists or data.frames with very few post-processing.  It
 allows fast processing of queries returning many records.  And it let the user

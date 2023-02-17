@@ -14318,13 +14318,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.4.0")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSBtools" version))
               (sha256
                (base32
-                "0r49l9ik999gyirs337dmllpq025j56wmis7ij9vkd9gkns5kq9f"))))
+                "09fsbwl96ymx4zdkd37010j9wgarsz768iz9bag56igdc4cc3alj"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -15128,6 +15128,31 @@ Dedicated', Apache Spark', and SQLite'.")
 <https://github.com/andialbrecht/sqlparse>.  It allows parsing, splitting, and
 formatting SQL statements.")
     (license license:gpl3)))
+
+(define-public r-sqlove
+  (package
+    (name "r-sqlove")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SQLove" version))
+              (sha256
+               (base32
+                "14hd623m0fmbh1kll8yhnwc9vak8sdbi6p0cdrnklvbb2bb68nqg"))))
+    (properties `((upstream-name . "SQLove")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjdbc r-readr r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SQLove")
+    (synopsis "Execute 'SQL' Scripts in 'R' Containing Multiple Queries")
+    (description
+     "The nature of working with structured query language ('SQL') scripts efficiently
+often requires the creation of temporary tables and there are few clean and
+simple R SQL execution approaches that allow you to complete this kind of work
+with the R environment.  This package seeks to give SQL implementations in R a
+little love by deploying functions that allow you to deploy complex SQL scripts
+within a typical R workflow.")
+    (license license:expat)))
 
 (define-public r-sqliteutils
   (package
@@ -44215,6 +44240,33 @@ multi-stage selection programs for a given total budget and different costs of
 evaluating the candidates in each stage.")
     (license license:gpl2)))
 
+(define-public r-selectionbias
+  (package
+    (name "r-selectionbias")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SelectionBias" version))
+              (sha256
+               (base32
+                "1lqpa5yyxipnx31r0gmja59dk85gmpg9j1rzpc9vh0lq3l87878b"))))
+    (properties `((upstream-name . "SelectionBias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SelectionBias")
+    (synopsis
+     "Calculates Bounds for the Selection Bias for Binary Treatment and Outcome Variables")
+    (description
+     "Computes bounds and sensitivity parameters as part of sensitivity analysis for
+selection bias.  Two bounds are provided: the SV (Smith and VanderWeele) bound
+and the AF (assumption-free) bound.  The SV bound assumes an additional
+dependence structure in form of a generalized M-structure whereas the AF bound
+holds for general assumptions in the potential outcomes framework.  See Smith
+and VanderWeele (2019) <doi:10.1097/EDE.0000000000001032> and Zetterstrom and
+Waernbaum (2022) <doi:10.1515/em-2022-0108>.")
+    (license license:expat)))
+
 (define-public r-selection-index
   (package
     (name "r-selection-index")
@@ -50479,19 +50531,18 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.55")
+    (version "0.56")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scan" version))
               (sha256
                (base32
-                "0vzd50dghmdvzp9bklb6sz6cf13am98v25d5jbn32nsm2wm65myj"))))
+                "17al2dvphhiaimkqrj1jl1p84axg3q30qwv9i403x2zc2dwjqibz"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-readxl
                              r-nlme
-                             r-meta
                              r-mblm
                              r-magrittr
                              r-knitr

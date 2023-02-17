@@ -5033,6 +5033,34 @@ system().  This allows the use of a single function to retrieve the path to a
 program regardless of the operating system and its configuration.")
     (license license:expat)))
 
+(define-public r-locar
+  (package
+    (name "r-locar")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "locaR" version))
+              (sha256
+               (base32
+                "1qjbf6g2sb5bpgg3fvqbp3xbyrk31lnxwp3c3pfbrnm5llh4w5qd"))))
+    (properties `((upstream-name . "locaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tuner
+                             r-synchwave
+                             r-signal
+                             r-seewave
+                             r-oce
+                             r-matrixstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rhedley/locaR")
+    (synopsis "Set of Tools for Sound Localization")
+    (description
+     "This package provides a set of functions and tools to conduct acoustic source
+localization, as well as organize and check localization data and results.  The
+localization functions implement the modified steered response power algorithm
+described by Cobos et al. (2010) <doi:10.1109/LSP.2010.2091502>.")
+    (license license:expat)))
+
 (define-public r-localsolver
   (package
     (name "r-localsolver")
@@ -15943,33 +15971,6 @@ density, distribution function, quantile function and random number generation
 for univariate and multivariate Laplace distribution.")
     (license license:gpl3)))
 
-(define-public r-l1mstate
-  (package
-    (name "r-l1mstate")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "L1mstate" version))
-              (sha256
-               (base32
-                "1nkx2h1fl32h0sx03f23x3sfxj5mnarbnpy0wmjji90chff7m2vz"))))
-    (properties `((upstream-name . "L1mstate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpp
-                             r-mstate
-                             r-matrix
-                             r-mass
-                             r-colorspace))
-    (home-page "https://cran.r-project.org/package=L1mstate")
-    (synopsis "L1-Regularized Multi-State Models")
-    (description
-     "Fitting the regularization path of the L1-regularized multi-state models since
-they can exploit sparsity structure of input.  Different tuning regularization
-parameter methods are provided.  The cumulative hazard rate estimation and the
-transition probability predictions can be made from the fitted models.")
-    (license license:gpl2+)))
-
 (define-public r-l1kdeconv
   (package
     (name "r-l1kdeconv")
@@ -16018,35 +16019,6 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 regression.  The main function, l1ball(), yields posterior samples for linear
 regression, as introduced by Xu and Duan (2020) <arXiv:2006.01340>.")
     (license license:gpl2+)))
-
-(define-public r-l0learn
-  (package
-    (name "r-l0learn")
-    (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "L0Learn" version))
-              (sha256
-               (base32
-                "1lfbggh2bal8a6krg262v2pd90cd49aaxmz7crcdws4mx82srzmk"))))
-    (properties `((upstream-name . "L0Learn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=L0Learn")
-    (synopsis "Fast Algorithms for Best Subset Selection")
-    (description
-     "Highly optimized toolkit for approximately solving L0-regularized learning
-problems (a.k.a.  best subset selection).  The algorithms are based on
-coordinate descent and local combinatorial search.  For more details, check the
-paper by Hazimeh and Mazumder (2020); the link is provided in the URL field
-below.")
-    (license license:expat)))
 
 (define-public r-l0ara
   (package

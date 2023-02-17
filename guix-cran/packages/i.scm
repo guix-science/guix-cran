@@ -4079,13 +4079,13 @@ Based on Hohmann (2019) <arXiv:1901.10754>.")
 (define-public r-ipmr
   (package
     (name "r-ipmr")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipmr" version))
               (sha256
                (base32
-                "1h4y0ayq9bnspr17y65fwpa157iylrf0y0iza1zwy4scrvs39aw5"))))
+                "0zpw73bqv9gblyxaprkhb8f9dva0ivv47bjriyb3265vlzyd088c"))))
     (properties `((upstream-name . "ipmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-purrr r-magrittr))

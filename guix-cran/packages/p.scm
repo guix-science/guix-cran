@@ -8983,13 +8983,13 @@ the most common first named based on U.S. Social Security Administration data.")
 (define-public r-predictor
   (package
     (name "r-predictor")
-    (version "2.0.7")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predictoR" version))
               (sha256
                (base32
-                "01ixa8ahfdx2dnxsjzkrv09wzpis641d846b4pbhlykgdwz8mhqc"))))
+                "1y8bmxqqzfdqajcmcb2akbbckjcm683ipjvmnv1jcv54z7zqvpfh"))))
     (properties `((upstream-name . "predictoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -9002,13 +9002,14 @@ the most common first named based on U.S. Social Security Administration data.")
                              r-shinyace
                              r-shiny
                              r-rpart-plot
-                             r-rpart
                              r-rlang
+                             r-loader
                              r-htmltools
                              r-golem
                              r-glmnet
                              r-echarts4r
                              r-dt
+                             r-dplyr
                              r-config
                              r-colourpicker))
     (home-page "https://www.promidat.com")
@@ -16642,13 +16643,13 @@ nonparametric regression models.")
 (define-public r-plreg
   (package
     (name "r-plreg")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PLreg" version))
               (sha256
                (base32
-                "0ghasl9l6di0jxbrd7zsmv3f3fzzk943ixqhfw2r9kds5r16krh4"))))
+                "1fa8h0igxqgdfapiz0z80ll2m3nqvxw4qjcrw4knrg7ladjdicwl"))))
     (properties `((upstream-name . "PLreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -25642,6 +25643,30 @@ failure time models in high dimensions, to appear in Statistics in Medicine
 <doi:10.1002/sim.9264>.")
     (license license:gpl2+)))
 
+(define-public r-pemultinom
+  (package
+    (name "r-pemultinom")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pemultinom" version))
+              (sha256
+               (base32
+                "0xxcar0vmp6cc58471n5lnp5z5avrn3cv60mjdc96ifms0ghi3vl"))))
+    (properties `((upstream-name . "pemultinom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-nnet r-magrittr r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=pemultinom")
+    (synopsis "L1-Penalized Multinomial Regression with Statistical Inference")
+    (description
+     "We aim for fitting a multinomial regression model with Lasso penalty and doing
+statistical inference (calculating confidence intervals of coefficients and
+p-values for individual variables).  It implements 1) the coordinate descent
+algorithm to fit an l1-penalized multinomial regression model (parameterized
+with a reference level); 2) the debiasing approach to obtain the inference
+results, which is described in Tian et al. (2023) <arXiv:2302.02310>.")
+    (license license:gpl2)))
+
 (define-public r-pems-utils
   (package
     (name "r-pems-utils")
@@ -32901,13 +32926,13 @@ install ashr (<https://github.com/stephens999/ashr>) and CorShrink
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palaeoverse" version))
               (sha256
                (base32
-                "0175xyrw48pvbfrs5qs7gfa206f7zk3av17g8nk0fpvza7jz23cs"))))
+                "010h6j6riq4hfzxj7jc54hkgj08mq316f2phq4pzpp7lq820mn9r"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist

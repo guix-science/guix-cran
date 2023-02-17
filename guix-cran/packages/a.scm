@@ -7531,6 +7531,27 @@ approximations are available.  It uses a hierarchical version of the Gaussian
 process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1.")
     (license license:gpl2)))
 
+(define-public r-apportion
+  (package
+    (name "r-apportion")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "apportion" version))
+              (sha256
+               (base32
+                "0z8b9qsxsnwy6kmkns6cgri55mvnhsfkwwmljhlp26l93m3llabc"))))
+    (properties `((upstream-name . "apportion")))
+    (build-system r-build-system)
+    (home-page "https://github.com/christopherkenny/apportion")
+    (synopsis "Apportion Seats")
+    (description
+     "Convert populations into integer number of seats for legislative bodies.
+Implements apportionment methods used historically and currently in the United
+States for reapportionment after the Census, as described in
+<https://www.census.gov/history/www/reference/apportionment/methods_of_apportionment.html>.")
+    (license license:expat)))
+
 (define-public r-appnn
   (package
     (name "r-appnn")
@@ -14362,6 +14383,52 @@ method).  Silva, Teixeira, and Manzione (2019)
 <doi:10.1016/j.envsoft.2019.104497>.")
     (license license:expat)))
 
+(define-public r-agriutilities
+  (package
+    (name "r-agriutilities")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "agriutilities" version))
+              (sha256
+               (base32
+                "09civz3iiq6drihakyjq5cb7jlg0pmwjv7jdcs6v9cnd5lp6mijy"))))
+    (properties `((upstream-name . "agriutilities")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-statgensta
+                             r-spats
+                             r-rlang
+                             r-reshape2
+                             r-reshape
+                             r-psych
+                             r-matrix
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AparicioJohan/agriutilities")
+    (synopsis "Utilities for Data Analysis in Agriculture")
+    (description
+     "Utilities designed to make the analysis of field trials easier and more
+accessible for everyone working in plant breeding.  It provides a simple and
+intuitive interface for conducting single and multi-environmental trial
+analysis, with minimal coding required.  Whether you're a beginner or an
+experienced user, agriutilities will help you quickly and easily carry out
+complex analyses with confidence.  With built-in functions for fitting Linear
+Mixed Models, agriutilities is the ideal choice for anyone who wants to save
+time and focus on interpreting their results.  Some of the functions require the
+R package asreml for the ASReml software, this can be obtained upon purchase
+from VSN international (<https://vsni.co.uk/software/asreml-r>).")
+    (license license:expat)))
+
 (define-public r-agritutorial
   (package
     (name "r-agritutorial")
@@ -16226,13 +16293,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.9.1")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adjustedCurves" version))
               (sha256
                (base32
-                "1mhl4mzw4286kp9khlv2kpfvzhnvwkmdicwc0z7mlqyi46znylib"))))
+                "1vcyslv4kwhf2h5l6s60kws7ng9hyxvrvqlbflynkdnhdp4limxj"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -16249,13 +16316,13 @@ space for ease of reuse.")
      "Estimate and plot confounder-adjusted survival curves using either Direct
 Adjustment', Direct Adjustment with Pseudo-Values', various forms of Inverse
 Probability of Treatment Weighting', two forms of Augmented Inverse Probability
-of Treatment Weighting', Empirical Likelihood Estimation and Targeted Maximum
-Likelihood Estimation'.  Also includes a significance test for the difference
-between two adjusted survival curves and the calculation of adjusted restricted
-mean survival times.  Additionally enables the user to estimate and plot
-cause-specific confounder-adjusted cumulative incidence functions in the
-competing risks setting using the same methods (with some exceptions).  For
-details, see Denz et.  al (2022) <arXiv:2203.10002v1>.")
+of Treatment Weighting and Empirical Likelihood Estimation'.  Also includes a
+significance test for the difference between two adjusted survival curves and
+the calculation of adjusted restricted mean survival times.  Additionally
+enables the user to estimate and plot cause-specific confounder-adjusted
+cumulative incidence functions in the competing risks setting using the same
+methods (with some exceptions).  For details, see Denz et.  al (2023)
+<doi:10.1002/sim.9681>.")
     (license license:gpl3+)))
 
 (define-public r-adjustedcranlogs

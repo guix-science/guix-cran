@@ -16640,13 +16640,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.4.11")
+    (version "1.4.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BED" version))
               (sha256
                (base32
-                "0rhpy80fc5vm6zphcs34fxmy0jlpx3dsapcsksxagprm7ijjdmh0"))))
+                "11almlvkvh536dxfl1d58xwwpvgcm6zh3v92ybr9h44r3c63lwhs"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

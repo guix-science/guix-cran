@@ -5438,13 +5438,13 @@ or webmorph templates.")
 (define-public r-webgestaltr
   (package
     (name "r-webgestaltr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebGestaltR" version))
               (sha256
                (base32
-                "1rgf9s80hk35baiknrwgnqnhxssrcxdansgpvpyhqv07bqd472nn"))))
+                "02skrnma0q08p32a03yzflf6fpwdc9ldais7pdkjvdnnqf8jvd5h"))))
     (properties `((upstream-name . "WebGestaltR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -5463,7 +5463,7 @@ or webmorph templates.")
     (home-page "https://github.com/bzhanglab/WebGestaltR")
     (synopsis "Gene Set Analysis Toolkit WebGestaltR")
     (description
-     "The web version WebGestalt <http://www.webgestalt.org> supports 12 organisms,
+     "The web version WebGestalt <https://www.webgestalt.org> supports 12 organisms,
 354 gene identifiers and 321,251 function categories.  Users can upload the data
 and functional categories with their own gene identifiers.  In addition to the
 Over-Representation Analysis, WebGestalt also supports Gene Set Enrichment

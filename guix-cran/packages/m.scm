@@ -18644,13 +18644,13 @@ be found at <doi:10.18637/jss.v098.i03>.")
 (define-public r-mixgb
   (package
     (name "r-mixgb")
-    (version "0.1.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixgb" version))
               (sha256
                (base32
-                "1zpq64zx7rdhgw1b2ds35mrz7d6a4bpy52cvl1ijhhwm1md0x39c"))))
+                "1i6sckdbgckp84wvmsbay20vfqqzzphif2r7v3fc158gfw1vvkr4"))))
     (properties `((upstream-name . "mixgb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -18666,13 +18666,15 @@ be found at <doi:10.18637/jss.v098.i03>.")
     (home-page "https://github.com/agnesdeng/mixgb")
     (synopsis "Multiple Imputation Through 'XGBoost'")
     (description
-     "Multiple imputation using XGBoost', bootstrapping and predictive mean matching
-as described in Deng and Lumley (2021) <arXiv:2106.01574>.  It is built under
-Fully Conditional Specification, where XGBoost imputation models are built for
-each incomplete variable.  It supports various types of variables and offers
-different settings regarding bootstrapping and predictive mean matching.  Visual
-diagnostic functions are also provided for inspecting multiply imputed values
-for incomplete variables.")
+     "Multiple imputation using XGBoost', subsampling, and predictive mean matching as
+described in Deng and Lumley (2023) <arXiv:2106.01574>.  Our method utilizes the
+capabilities of XGBoost, a highly efficient implementation of gradient boosted
+trees, to capture interactions and non-linear relations automatically.
+Moreover, we have integrated subsampling and predictive mean matching to
+minimize bias and reflect appropriate imputation variability.  This package
+supports various types of variables and offers flexible settings for subsampling
+and predictive mean matching.  Additionally, it includes diagnostic tools for
+evaluating the quality of the imputed values.")
     (license license:gpl3+)))
 
 (define-public r-mixfmri
@@ -30374,35 +30376,6 @@ matrix.  vrPEER (variable reducted PEER) method performs variable-reduction
 procedure to handle the non-invertibility of a graph Laplacian matrix.")
     (license license:gpl2)))
 
-(define-public r-mdp2
-  (package
-    (name "r-mdp2")
-    (version "2.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MDP2" version))
-              (sha256
-               (base32
-                "0jh7xp8xl1ykh8m3jg3nz486ri8dgv3m2f951zifzkx7cv1axja8"))))
-    (properties `((upstream-name . "MDP2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-dplyr
-                             r-diagram))
-    (native-inputs (list r-knitr))
-    (home-page "https://relund.github.io/mdp/")
-    (synopsis "Markov Decision Processes (MDPs)")
-    (description
-     "Create and optimize (semi) MDPs with discrete time steps and state space.  Both
-hierarchical and ordinary-traditional MDPs can be modeled.")
-    (license (license:fsdg-compatible "GPL (>= 3.3.2)"))))
-
 (define-public r-mdols
   (package
     (name "r-mdols")
@@ -33587,13 +33560,13 @@ Buck, Recursive Division,
 (define-public r-maze
   (package
     (name "r-maze")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MAZE" version))
               (sha256
                (base32
-                "0ybfq2s9skjfzazzlpwlnl66g2lq240mlm7mbk514yygycq1m7rv"))))
+                "01vxglgfn82m8avsq6s144gmwclw08arzfrb8lwlcynr62ifzaim"))))
     (properties `((upstream-name . "MAZE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -35398,13 +35371,13 @@ matrices using code that shows the actual matrices.")
 (define-public r-massextra
   (package
     (name "r-massextra")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MASSExtra" version))
               (sha256
                (base32
-                "109jky97n5026vm1wgmn84mqr84ghgfcacr4ljyaanazyjc1r5wz"))))
+                "0agr8kf7hh7mjpa98y486bql9wxjwif9f03wz468srzz8jjin39h"))))
     (properties `((upstream-name . "MASSExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-demokde))

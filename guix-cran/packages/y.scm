@@ -571,13 +571,13 @@ adjusted effect sizes.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.0.6")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yfR" version))
               (sha256
                (base32
-                "1yslfx95k7lq296njm2c3m34sncnzgais82f7si58f7jiq2hbg3a"))))
+                "1jdqz0cb13fgvrak1sgs4h2cwgr8rcbg68c35mlaqnmkfn2w3xvc"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -592,7 +592,10 @@ adjusted effect sizes.")
                              r-pingr
                              r-magrittr
                              r-lubridate
+                             r-jsonlite
                              r-humanize
+                             r-httr
+                             r-glue
                              r-future
                              r-furrr
                              r-dplyr
