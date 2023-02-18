@@ -492,21 +492,29 @@ appropriate graphics function in R.")
 (define-public r-cyclestreets
   (package
     (name "r-cyclestreets")
-    (version "0.5.3")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cyclestreets" version))
               (sha256
                (base32
-                "0qppdnp9fdll20jljc518k37z7pgvckmrnhk113hniy8x28zwzfi"))))
+                "1w8am89xcjd6wklzcarh1kvayyma764jy7jkalf26r71qf3wpz2a"))))
     (properties `((upstream-name . "cyclestreets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sf
+                             r-rcppsimdjson
+                             r-r-utils
+                             r-purrr
+                             r-progressr
                              r-magrittr
                              r-jsonlite
                              r-httr
-                             r-geodist))
+                             r-geojsonsf
+                             r-geodist
+                             r-dplyr
+                             r-curl
+                             r-checkmate))
     (home-page "https://rpackage.cyclestreets.net/")
     (synopsis "Cycle Routing and Data for Cycling Advocacy")
     (description
@@ -1617,13 +1625,13 @@ terminal (not the R GUI).")
 (define-public r-currr
   (package
     (name "r-currr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "currr" version))
               (sha256
                (base32
-                "1da95mw2mfrmi1zz7vd4w9dzskp6bh0ji04j7xawgkxrdcqppy6p"))))
+                "0dfcgnv71cwzsglg725qsf3vg54yar3ps4f9njwa9183k1gypvqp"))))
     (properties `((upstream-name . "currr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5261,13 +5269,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropcircles" version))
               (sha256
                (base32
-                "1as2znv307mzsnq4rh9zfi3g7jff77dgsbn3hp47qm97jznvhgkg"))))
+                "1lfkpg9l31l96cn3i2ssw6qrz5nw6pcip50x1gv69x4bzsgjzsy0"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -5277,7 +5285,7 @@ to 2014.")
      "Images are cropped to a circle with a transparent background.  The function
 takes a vector of images, either local or from a link, and circle crops the
 image.  Paths to the cropped image are returned for plotting with ggplot2'.")
-    (license license:cc0)))
+    (license license:expat)))
 
 (define-public r-crop
   (package
@@ -8250,13 +8258,13 @@ everyone was tested on a given day, and all tested negative.")
 (define-public r-covidmx
   (package
     (name "r-covidmx")
-    (version "0.7.2")
+    (version "0.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "covidmx" version))
               (sha256
                (base32
-                "0nlhix98bsbsqainsjchp0w2npqgadpbbdyw5ajxa0y7l2arc402"))))
+                "1m73pxpn080w7sby88spz2pfjw1v479m9fa74ag25mkdymfbh02d"))))
     (properties `((upstream-name . "covidmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8281,10 +8289,10 @@ MÃ©xico (DGE) <https://www.gob.mx/salud/documentos/datos-abiertos-152127>, la
 Red de Infecciones Respiratorias Agudas Graves (Red IRAG)
 <https://www.gits.igg.unam.mx/red-irag-dashboard/reviewHome> y la Iniciativa
 Global para compartir todos los datos de influenza (GISAID)
-<https://www.gisaid.org/>.  English: Downloads and analyzes data of COVID-19
-from the Mexican General Directorate of Epidemiology (DGE), the Network of
-Severe Acute Respiratory Infections (IRAG network),and the Global Initiative on
-Sharing All Influenza Data GISAID.")
+<https://gisaid.org/>.  English: Downloads and analyzes data of COVID-19 from
+the Mexican General Directorate of Epidemiology (DGE), the Network of Severe
+Acute Respiratory Infections (IRAG network),and the Global Initiative on Sharing
+All Influenza Data GISAID.")
     (license license:expat)))
 
 (define-public r-covidmutations
@@ -20075,13 +20083,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.4.0")
+    (version "3.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cna" version))
               (sha256
                (base32
-                "0a4k8yr0cj10bxfy9gbfnks1hva31msxbkw4i0m72gvp84lnm2lb"))))
+                "0741knm5fkjcd9wg235fc175yrg3pngjk2rsj0i3rp2gaa67gffz"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixstats r-matrix r-car))

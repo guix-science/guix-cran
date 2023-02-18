@@ -1327,6 +1327,34 @@ addition of robust and clustered robust standard errors.")
 bubbly-bg JavaScript library.")
     (license license:expat)))
 
+(define-public r-bubbleheatmap
+  (package
+    (name "r-bubbleheatmap")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bubbleHeatmap" version))
+              (sha256
+               (base32
+                "1xrcdz6061gwi3bvkxz3bl9b0bp6q9rxn1v54gzjr2fyrlcx3bwc"))))
+    (properties `((upstream-name . "bubbleHeatmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bubbleHeatmap")
+    (synopsis
+     "Produces 'bubbleHeatmap' Plots for Visualising Metabolomics Data")
+    (description
+     "Plotting package based on the grid system, combining elements of a bubble plot
+and heatmap to conveniently display two numerical variables, (represented by
+color and size) grouped by categorical variables on the x and y axes.  This is a
+useful alternative to a forest plot when the data can be grouped in two
+dimensions, such as predictors x outcomes.  It has particular advantages for
+visualising the metabolic measures produced by the Nightingale Health
+metabolomics platform, and templates are included for automatically generating
+figures from these datasets.")
+    (license license:gpl3)))
+
 (define-public r-btydplus
   (package
     (name "r-btydplus")
@@ -8417,13 +8445,13 @@ Perrot-DockÃ¨s et al. (2019) <arXiv:1806.10093>.")
 (define-public r-blockcluster
   (package
     (name "r-blockcluster")
-    (version "4.5.2")
+    (version "4.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockcluster" version))
               (sha256
                (base32
-                "09ayx3g3vgdz85b6nlyy7vzajm0mwv2j2j17zvrk9z6dgd9jlpzc"))))
+                "09f3b8q0vz2184njsisr0h5j6l96cm0kcrvn9xw077xg5y4vif0i"))))
     (properties `((upstream-name . "blockcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtkore r-rcpp))
@@ -9859,6 +9887,49 @@ two-parameter logistic model.")
     (description
      "Collection of tools to make R more convenient.  Includes tools to summarize data
 using statistics not available with base R and manipulate objects for analyses.")
+    (license license:gpl3)))
+
+(define-public r-birdscanr
+  (package
+    (name "r-birdscanr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "birdscanR" version))
+              (sha256
+               (base32
+                "0118i48mp5wvz8w74awwqr2460r8jmhiqpfpi1m190gy0nhj1573"))))
+    (properties `((upstream-name . "birdscanR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sp
+                             r-rstudioapi
+                             r-rpostgresql
+                             r-rodbc
+                             r-reshape2
+                             r-modi
+                             r-maptools
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BirdScanCommunity/birdscanR")
+    (synopsis
+     "Migration Traffic Rate Calculation Package for 'Birdscan MR1' Radars")
+    (description
+     "Extract data from Birdscan MR1 SQL vertical-looking radar databases, filter, and
+process them to Migration Traffic Rates (#objects per hour and km) of, for
+example birds, and insects.  Object classifications in the Birdscan MR1
+databases are based on the dataset of Haest et al. (2021)
+<doi:10.5281/zenodo.5734960>).  Migration Traffic Rates can be calculated
+separately for different height bins (with a height resolution of choice) as
+well as over time periods of choice (e.g., 1/2 hour, 1 hour, 1 day, day/night,
+the full time period of observation, and anything in between).  Two plotting
+functions are also included to explore the data in the SQL databases and the
+resulting Migration Traffic Rate results.  For details on the Migration Traffic
+Rate calculation procedures, see Schmid et al. (2019) <doi:10.1111/ecog.04025>.")
     (license license:gpl3)))
 
 (define-public r-birdring

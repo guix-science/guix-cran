@@ -2950,13 +2950,13 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
 (define-public r-wineq
   (package
     (name "r-wineq")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wINEQ" version))
               (sha256
                (base32
-                "07a5qamkmhdrwv2jk5raiw8vg4bj2xb4jyjzdqymixsghi0fgs2r"))))
+                "0diwm01d50pq7zkglsz7gkn48q6iav2z90v0ldr7pwzgjrr60d4v"))))
     (properties `((upstream-name . "wINEQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-dplyr))
@@ -3585,13 +3585,13 @@ collection of functions and datas used in the german WikiBook \"GNU R\".")
 (define-public r-wiesbaden
   (package
     (name "r-wiesbaden")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wiesbaden" version))
               (sha256
                (base32
-                "1wvndgixy484mjqjxs4rqzz70msqrfh4ap83jyqq4bbqs8jhag0a"))))
+                "0sf61xrkzlk1pbjv1ha019nav20a5w1svx5jnsyck5050xxs2y06"))))
     (properties `((upstream-name . "wiesbaden")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

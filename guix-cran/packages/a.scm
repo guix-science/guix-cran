@@ -9712,6 +9712,37 @@ conservative estimates of excursion sets under Gaussian random field priors.")
 effects thanks to jQuery AniView'.")
     (license license:expat)))
 
+(define-public r-anisna
+  (package
+    (name "r-anisna")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aniSNA" version))
+              (sha256
+               (base32
+                "1i5my4afh407a990crin11m9nbwjpry0ldpcb0r2bpk8sr13gcnb"))))
+    (properties `((upstream-name . "aniSNA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-reshape
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=aniSNA")
+    (synopsis "Statistical Network Analysis of Animal Social Networks")
+    (description
+     "Obtain network structures from animal GPS telemetry observations and
+statistically analyse them to assess their adequacy for social network analysis.
+ Methods include pre-network data permutations, bootstrapping techniques to
+obtain confidence intervals for global network metrics, and correlation and
+regression analysis of the local network metrics.")
+    (license license:expat)))
+
 (define-public r-anipaths
   (package
     (name "r-anipaths")
@@ -17239,6 +17270,29 @@ power, stopping boundaries (sample size) calculation functions for two-group
 group sequential designs, adaptive design with coprimary endpoints,
 biomarker-informed adaptive design, etc.")
     (license license:gpl2+)))
+
+(define-public r-adc
+  (package
+    (name "r-adc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adc" version))
+              (sha256
+               (base32
+                "152j863rfrmjpaambxy6hc57zcpp0wlyd6kl7miryk3z0yvngcw9"))))
+    (properties `((upstream-name . "adc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-runner))
+    (home-page "https://github.com/TxWRI/adc")
+    (synopsis "Calculate Antecedent Discharge Conditions")
+    (description
+     "Calculates some antecedent discharge conditions useful in water quality
+modeling.  Includes methods for calculating flow anomalies, base flow, and
+smooth discounted flows from daily flow measurements.  Antecedent discharge
+algorithms are described and reviewed in Zhang and Ball (2017)
+<doi:10.1016/j.jhydrol.2016.12.052>.")
+    (license license:gpl3+)))
 
 (define-public r-adasampling
   (package

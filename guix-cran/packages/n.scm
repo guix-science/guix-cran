@@ -7528,13 +7528,13 @@ NHDPlus documentation available from the US Environmental Protection Agency
 (define-public r-nhanesa
   (package
     (name "r-nhanesa")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhanesA" version))
               (sha256
                (base32
-                "0mjcb26irvhqsicnnhx8w32gx9w50jw0rwm2x33wvdf0qy42gzdw"))))
+                "1bnm9wwbiy92m3acsibwr79yx1d7qzvrvc0mqkkkv8nvxlnhxwpm"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -9781,13 +9781,13 @@ SUCRA; - contribution matrix as described in Papakonstantinou et al. (2018)
 (define-public r-netmediate
   (package
     (name "r-netmediate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmediate" version))
               (sha256
                (base32
-                "1jk8knnqi59sfkpfaqi42y416j0qvmjy7ghjm2kkf2wvxwmym3q0"))))
+                "00aplpq42b4kr9nlhjnd4zqpcd127nyfd77xnrxdny1mnjgw36x8"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -9807,12 +9807,7 @@ SUCRA; - contribution matrix as described in Papakonstantinou et al. (2018)
     (synopsis "Micro-Macro Analysis for Social Networks")
     (description
      "Estimates micro effects on macro structures (MEMS) and average micro mediated
-effects (AMME) when using statistical models for network structure.  URL:
-<https://github.com/sduxbury/netmediate>.  BugReports:
-<https://github.com/sduxbury/netmediate/issues>.  Long, J. Scott, and Sarah
-Mustillo (2018) <doi:10.1177/0049124118799374>.  Mize, Trenton D. (2019)
-<doi:10.15195/v6.a4>.  Imai, Kosuke (2010) <doi:10.1037/a0020761>.  Imai, Kosuke
-(2010) <doi:10.1214/10-STS321>.")
+effects (AMME).")
     (license license:gpl2+)))
 
 (define-public r-netmap

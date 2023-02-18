@@ -5560,23 +5560,24 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsdm
   (package
     (name "r-intsdm")
-    (version "1.0.0")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intSDM" version))
               (sha256
                (base32
-                "1jynlsn1kv6bv4f2yl7a5s6py1gy5bv6fqz8m2a0jr1dmczq64sv"))))
+                "098cq4sav84kckgdl8i9szkygnmiqbch4qfs90686wjkva5nk6my"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spocc
+    (propagated-inputs (list r-terra
+                             r-spocc
                              r-sp
                              r-raster
                              r-pointedsdms
-                             r-maptools
                              r-maps
                              r-inlabru
                              r-ggplot2
+                             r-geodata
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=intSDM")

@@ -4200,13 +4200,13 @@ criteria, etc...")
 (define-public r-optimaregion
   (package
     (name "r-optimaregion")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OptimaRegion" version))
               (sha256
                (base32
-                "1bikc12a5v3q7f26r14pdfmnxpyqzxa94a10mx5g954km3a329ly"))))
+                "01nbisv45amv5pfnl0hmbc751qjkjvw8xsva50q8ypm02p2jw07f"))))
     (properties `((upstream-name . "OptimaRegion")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4215,16 +4215,16 @@ criteria, etc...")
                              r-rdsdp
                              r-rdpack
                              r-nloptr
-                             r-mclust
                              r-magrittr
-                             r-geometry
                              r-fields
                              r-depthproc
                              r-boot))
     (home-page "https://cran.r-project.org/package=OptimaRegion")
-    (synopsis "Confidence Regions for Optima")
+    (synopsis "Confidence Regions for Optima of Response Surfaces")
     (description
-     "Computes confidence regions on the location of response surface optima.")
+     "Computes confidence regions on the location of response surface optima.
+Response surface models can be up to cubic polynomial models in up to 5
+controllable factors, or Thin Plate Spline models in 2 controllable factors.")
     (license license:gpl3)))
 
 (define-public r-optimaltiming
@@ -6122,16 +6122,16 @@ the R server side.  DataSHIELD administration tools are also provided.")
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.7.3")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opa" version))
               (sha256
                (base32
-                "01n6f3aixbkcv3g3hc8yc5ng4vbcbj7l94va0p0q4nzn6ahznyi1"))))
+                "0jm4c3g0wv3vgq2cjv3s6n3l3a775ws6wc2ppjpr718lv88jw7vf"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-cpp11))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/timbeechey/opa")
     (synopsis "An Implementation of Ordinal Pattern Analysis")
     (description

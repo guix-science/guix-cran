@@ -9711,6 +9711,35 @@ variance components for multistage designs and sample sizes in two-phase
 designs.  A number of example data sets are included.")
     (license license:gpl2+)))
 
+(define-public r-practicalsigni
+  (package
+    (name "r-practicalsigni")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "practicalSigni" version))
+              (sha256
+               (base32
+                "0s2fi55haabbql7812d6icldagc1w2wbbkcp99wp7vrzhbn3ivg8"))))
+    (properties `((upstream-name . "practicalSigni")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable r-randomforest r-np r-nns r-generalcorr))
+    (home-page "https://cran.r-project.org/package=practicalSigni")
+    (synopsis "Practical Significance Ranking of Regressors")
+    (description
+     "Consider a possibly nonlinear nonparametric regression with p regressors.  We
+provide evaluations by 13 methods to rank regressors by their practical
+significance or importance using various methods, including machine learning
+tools.  Comprehensive methods are as follows.  m6=Generalized partial
+correlation coefficient or GPCC by Vinod (2021)<doi:10.1007/s10614-021-10190-x>
+and Vinod (2022)<https://www.mdpi.com/1911-8074/15/1/32>.  m7= a generalization
+of psychologists effect size incorporating nonlinearity and many variables.  m8=
+local linear partial (dy/dxi) using the np package for kernel regressions.  m9=
+partial (dy/dxi) using the NNS package.  m10= importance measure using the NNS
+boost function.  m11= Shapley Value measure of importance (cooperative game
+theory).  m12 and m13= two versions of the random forest algorithm.")
+    (license license:gpl2+)))
+
 (define-public r-practicalequidesign
   (package
     (name "r-practicalequidesign")

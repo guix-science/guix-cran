@@ -18234,6 +18234,28 @@ luminescence (ITL or ISO-TL).")
 (http://www.ltp-cloud.com/).")
     (license license:lgpl2.0+)))
 
+(define-public r-rlt
+  (package
+    (name "r-rlt")
+    (version "3.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RLT" version))
+              (sha256
+               (base32
+                "1zqlk6pbbp4as3bkgjvhk9kq9jw0295apdbv5cgsjgmgirgiz5vk"))))
+    (properties `((upstream-name . "RLT")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=RLT")
+    (synopsis "Reinforcement Learning Trees")
+    (description
+     "Random forest with a variety of additional features for regression,
+classification and survival analysis.  The features include: parallel computing
+with OpenMP, embedded model for selecting the splitting variable, based on Zhu,
+Zeng & Kosorok (2015) <doi:10.1080/01621459.2015.1036994>, subject weight,
+variable weight, tracking subjects used in each tree, etc.")
+    (license license:gpl2+)))
+
 (define-public r-rlogicalops
   (package
     (name "r-rlogicalops")
@@ -30658,13 +30680,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "1s73sb04268m3xgir36j4biwlrx18fmbjhk5xhkdiff5xjkkm93l"))))
+                "0bal0dy2fpyffy8bcffzqzq5x1k02a85r53r4g9gmgb07q5ll9qz"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

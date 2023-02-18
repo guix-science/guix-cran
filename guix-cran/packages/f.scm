@@ -5805,13 +5805,13 @@ FORTLS is described in Molina-Valero et al. (2022,
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "3.0.1")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "1li8y1lkqlbvpc85xnjqg8cxxr58xk5c9a3j1grd50qp8w8s2p07"))))
+                "1ig5m82qybg7nbib6fkrd4v0b5h4miiwkdrqm611jprhlvhqkh72"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -5828,7 +5828,7 @@ FORTLS is described in Molina-Valero et al. (2022,
     (description
      "Identifies potential data outliers and their impact on estimates and analyses.
 Uses the forward search approach of Atkinson and Riani, \"Robust Diagnostic
-Regression Analysis\", 2000,<ISBN: o-387-95017-6>) to prepare descriptive
+Regression Analysis\", 2000,<ISBN: o-387-95017-6> to prepare descriptive
 statistics of a dataset that is to be analyzed by stats::lm(), stats::glm(), or
 nlme::lme().  Includes graphics functions to display the descriptive statistics.")
     (license license:gpl3+)))

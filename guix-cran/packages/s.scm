@@ -2830,13 +2830,13 @@ Meier (2020) <doi:10.1080/10503307.2019.1612114>.")
 (define-public r-susier
   (package
     (name "r-susier")
-    (version "0.12.27")
+    (version "0.12.35")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "susieR" version))
               (sha256
                (base32
-                "1wqjq8h89l57qqi7fiqfxp2ak3cp7y2cqchvdr42kmasc6k7f9dg"))))
+                "0fhdc3lkhl4s9h2ng72gypy2z3hgk6566jfhwhsfbddyzd22drpd"))))
     (properties `((upstream-name . "susieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -5697,6 +5697,36 @@ Australia, which can be challenging due to the concentration of the population
 on the coast and wide open interior.")
     (license license:expat)))
 
+(define-public r-sufficientforecasting
+  (package
+    (name "r-sufficientforecasting")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sufficientForecasting" version))
+              (sha256
+               (base32
+                "1fsai7dfcvyhvjy0y3nmsdwcn1pbzki3qqswdfsbg4vcn2dxw5kv"))))
+    (properties `((upstream-name . "sufficientForecasting")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gam))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JingFu1224/sufficientForecasting")
+    (synopsis "Sufficient Forecasting using Factor Models")
+    (description
+     "The sufficient forecasting (SF) method is implemented by this package for a
+single time series forecasting using many predictors and a possibly nonlinear
+forecasting function.  Assuming that the predictors are driven by some latent
+factors, the SF first conducts factor analysis and then performs sufficient
+dimension reduction on the estimated factors to derive predictive indices for
+forecasting.  The package implements several dimension reduction approaches,
+including principal components (PC), sliced inverse regression (SIR), and
+directional regression (DR).  Methods for dimension reduction are as described
+in: Fan, J., Xue, L. and Yao, J. (2017) <doi:10.1016/j.jeconom.2017.08.009>,
+Luo, W., Xue, L., Yao, J. and Yu, X. (2022) <doi:10.1093/biomet/asab037> and Yu,
+X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
+    (license license:gpl3+)))
+
 (define-public r-suessr
   (package
     (name "r-suessr")
@@ -5798,13 +5828,13 @@ morphological analyzer.  This is a port of what is available in Python.")
 (define-public r-success
   (package
     (name "r-success")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "success" version))
               (sha256
                (base32
-                "0m1rqivcfg3ccfz3lzazy94dyls8sk2vr72rvrwq3arpfmmyzd54"))))
+                "12i2124wm38bl5vz0fsk6k77v0zym4d17il8ci9wxrbcmkhmnspk"))))
     (properties `((upstream-name . "success")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5813,12 +5843,13 @@ morphological analyzer.  This is a port of what is available in Python.")
                              r-plotly
                              r-pbapply
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/d-gomon/success")
     (synopsis "Survival Control Charts Estimation Software")
     (description
      "Quality control charts for survival outcomes.  Allows users to construct the
 Continuous Time Generalized Rapid Response CUSUM (CGR-CUSUM)
-<doi:10.48550/ARXIV.2205.07618>, the Biswas & Kalbfleisch (2008)
+<doi:10.1093/biostatistics/kxac041>, the Biswas & Kalbfleisch (2008)
 <doi:10.1002/sim.3216> CUSUM, the Bernoulli CUSUM and the risk-adjusted funnel
 plot for survival data.  These procedures can be used to monitor survival
 processes for a change in the failure rate.")
@@ -5884,6 +5915,31 @@ visualization of results (Castelo (2013) <doi:10.1186/1471-2105-14-7>; Han et al
 <doi:10.1126/science.1132939>).  Please cite using
 <doi:10.1093/bioinformatics/btab011>.")
     (license license:gpl2+)))
+
+(define-public r-subts
+  (package
+    (name "r-subts")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SubTS" version))
+              (sha256
+               (base32
+                "0vd3pb7y341rki0yjnvmzdlq49sk481g79k82pvryavfk7485hid"))))
+    (properties `((upstream-name . "SubTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tweedie r-gsl r-copula))
+    (home-page "https://cran.r-project.org/package=SubTS")
+    (synopsis
+     "Positive Tempered Stable Distributions and Related Subordinators")
+    (description
+     "This package contains methods for the simulation of positive tempered stable
+distributions and related subordinators.  Including classical tempered stable,
+rapidly deceasing tempered stable, truncated stable, truncated tempered stable,
+generalized Dickman, truncated gamma, generalized gamma, and p-gamma.  For
+details, see Dassios et al (2019) <doi:10.1017/jpr.2019.6>, Dassios et al (2020)
+<doi:10.1145/3368088>, Grabchak (2021) <doi:10.1016/j.spl.2020.109015>.")
+    (license license:gpl3+)))
 
 (define-public r-subtite
   (package
@@ -14218,13 +14274,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.28")
+    (version "1.5.29")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSDforR" version))
               (sha256
                (base32
-                "197rg6mar869wc83khzgdv28kpsc5b8gd0pqczvfcxzvqmwaiwgw"))))
+                "02ia7p28pi9x3qmmyhidjh04rmnk99w2xvxzm23l19cwgk35s4ip"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr
@@ -24013,13 +24069,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "0.9.2.2")
+    (version "0.9.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sorcering" version))
               (sha256
                (base32
-                "0n7malp67j2s3pp9gxslg9afiad1xckm817dz4prclmw9hgi2042"))))
+                "018zrk82qsickxkimm7hbzayixqfzw32fsi080las52rg0i0agin"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mathjaxr))
@@ -35542,13 +35598,13 @@ Gibilisco (2019) <doi:10.1017/psrm.2019.58>.")
 (define-public r-sightabilitymodel
   (package
     (name "r-sightabilitymodel")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SightabilityModel" version))
               (sha256
                (base32
-                "1wb7w0pfahl3c8w8a8finlmrnvsickip17immriibanl3ppyrxzz"))))
+                "0i98gdk93ms2wlvah76ffhbc1143gfld6704ipi19wn5s16vli6a"))))
     (properties `((upstream-name . "SightabilityModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -43904,6 +43960,29 @@ generated by spacyr'.  For further reference, see: Stuhler (2022) <doi:
 10.1177/00491241221099551>.")
     (license license:gpl3)))
 
+(define-public r-semfindr
+  (package
+    (name "r-semfindr")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "semfindr" version))
+              (sha256
+               (base32
+                "146wa0bqkxkmkdss2rlyyazkak034f3rm1dh50qfzizrvns6b7gz"))))
+    (properties `((upstream-name . "semfindr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-lavaan r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/semfindr/")
+    (synopsis "Influential Cases in Structural Equation Modeling")
+    (description
+     "Sensitivity analysis in structural equation modeling using influence measures
+and diagnostic plots.  Support leave-one-out casewise sensitivity analysis
+presented by Pek and MacCallum (2011) <doi:10.1080/00273171.2011.561068> and
+approximate casewise influence using scores and casewise likelihood.")
+    (license license:gpl3)))
+
 (define-public r-semeff
   (package
     (name "r-semeff")
@@ -48921,6 +49000,58 @@ separately (see description at <https://github.com/fuchslab/scModels>).  This
 package is supplement to the paper \"A mechanistic model for the negative
 binomial distribution of single-cell mRNA counts\" by Lisa Amrhein, Kumar Harsha
 and Christiane Fuchs (2019) <doi:10.1101/657619> available on bioRxiv.")
+    (license license:gpl3)))
+
+(define-public r-scmappr
+  (package
+    (name "r-scmappr")
+    (version "1.0.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scMappR" version))
+              (sha256
+               (base32
+                "176k9mn0fri9f4h8ibarxi0rv7ng1w4zmajyk5fyzflfa3p7r5y6"))))
+    (properties `((upstream-name . "scMappR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-reshape
+                             r-pheatmap
+                             r-pcamethods
+                             r-pbapply
+                             r-limsolve
+                             r-gprofiler2
+                             r-gprofiler
+                             r-ggplot2
+                             r-downloader
+                             r-adapts))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scMappR")
+    (synopsis "Single Cell Mapper")
+    (description
+     "The single cell mapper (scMappR) R package contains a suite of bioinformatic
+tools that provide experimentally relevant cell-type specific information to a
+list of differentially expressed genes (DEG).  The function
+\"scMappR_and_pathway_analysis\" reranks DEGs to generate cell-type specificity
+scores called cell-weighted fold-changes.  Users input a list of DEGs,
+normalized counts, and a signature matrix into this function.  scMappR then
+re-weights bulk DEGs by cell-type specific expression from the signature matrix,
+cell-type proportions from RNA-seq deconvolution and the ratio of cell-type
+proportions between the two conditions to account for changes in cell-type
+proportion.  With cwFold-changes calculated, scMappR uses two approaches to
+utilize cwFold-changes to complete cell-type specific pathway analysis.  The
+\"process_dgTMatrix_lists\" function in the scMappR package contains an automated
+scRNA-seq processing pipeline where users input scRNA-seq count data, which is
+made compatible for scMappR and other R packages that analyze scRNA-seq data.
+We further used this to store hundreds up regularly updating signature matrices.
+ The functions \"tissue_by_celltype_enrichment\", \"tissue_scMappR_internal\", and
+\"tissue_scMappR_custom\" combine these consistently processed scRNAseq count data
+with gene-set enrichment tools to allow for cell-type marker enrichment of a
+generic gene list (e.g. GWAS hits).  Reference: Sokolowski,D.J.,
+Faykoo-Martinez,M., Erdman,L., Hou,H., Chan,C., Zhu,H., Holmes,M.M.,
+Goldenberg,A. and Wilson,M.D. (2021) Single-cell mapper (scMappR): using
+scRNA-seq to infer cell-type specificities of differentially expressed genes.
+NAR Genomics and Bioinformatics.  3(1).  Iqab011. <doi:10.1093/nargab/lqab011>.")
     (license license:gpl3)))
 
 (define-public r-scma

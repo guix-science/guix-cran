@@ -8706,16 +8706,16 @@ ProteomeDiscoverer', Spectronaut', DIA-NN and MaxQuant'.")
 (define-public r-mpv
   (package
     (name "r-mpv")
-    (version "1.59")
+    (version "1.61")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MPV" version))
               (sha256
                (base32
-                "112zcqxjn79d9qyr5wnwycvw0nklmxiiakh7089a66nrj77lpn8n"))))
+                "08281dca0w6im5a2iqc1l9lgpg23b8zkwbpvbgrw4pp9qswfnp7l"))))
     (properties `((upstream-name . "MPV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-kernsmooth))
+    (propagated-inputs (list r-randomforest r-lattice r-kernsmooth))
     (home-page "https://cran.r-project.org/package=MPV")
     (synopsis "Data Sets from Montgomery, Peck and Vining")
     (description
@@ -10221,32 +10221,6 @@ particular, birth-year dependent mortality tables using a yearly trend to
 extrapolate from a base year are implemented, as well as period life table,
 cohort life tables using an age shift, and merged life tables.")
     (license license:gpl2+)))
-
-(define-public r-mortalitylaws
-  (package
-    (name "r-mortalitylaws")
-    (version "1.9.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MortalityLaws" version))
-              (sha256
-               (base32
-                "1xm32nrfr6sx38w3201s70iqf6i34cvpq5dm6xrrq7584klny6cb"))))
-    (properties `((upstream-name . "MortalityLaws")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rcurl r-pbapply r-minpack-lm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mpascariu/MortalityLaws")
-    (synopsis "Parametric Mortality Models, Life Tables and HMD")
-    (description
-     "Fit the most popular human mortality laws', and construct full and abridge life
-tables given various input indices.  A mortality law is a parametric function
-that describes the dying-out process of individuals in a population during a
-significant portion of their life spans.  For a comprehensive review of the most
-important mortality laws see Tabeau (2001) <doi:10.1007/0-306-47562-6_1>.
-Practical functions for downloading data from various human mortality databases
-are provided as well.")
-    (license license:expat)))
 
 (define-public r-mortalitygaps
   (package
@@ -19452,6 +19426,30 @@ compute quantile(s) from a sample or the size of the required i.i.d.  sample.")
 distributions with the focus on the composite models.")
     (license license:gpl3)))
 
+(define-public r-mistat
+  (package
+    (name "r-mistat")
+    (version "2.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mistat" version))
+              (sha256
+               (base32
+                "1hr1gps0w3mfphnc221c6k7h7rwk1f7g6nxkxkb9g8sdacr7ijhh"))))
+    (properties `((upstream-name . "mistat")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mistat")
+    (synopsis
+     "Data Sets, Functions and Examples from the Book: \"Modern Industrial Statistics\" by Kenett, Zacks and Amberti")
+    (description
+     "Provide all the data sets and statistical analysis applications used in \"Modern
+Industrial Statistics: with applications in R, MINITAB and JMP\" by R.S. Kenett
+and S. Zacks with contributions by D. Amberti, John Wiley and Sons, 2021, which
+is a third revised and expanded revision of \"Modern Industrial Statistics:
+Design and Control of Quality and Reliability\", R. Kenett and S. Zacks,
+Duxbury/Wadsworth Publishing, 1998.")
+    (license license:gpl2+)))
+
 (define-public r-misssom
   (package
     (name "r-misssom")
@@ -20471,13 +20469,13 @@ further information.")
 (define-public r-mirkat
   (package
     (name "r-mirkat")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MiRKAT" version))
               (sha256
                (base32
-                "1ia5by9gnm9lbflp2lcqm04z3z1jh7h33p238k8ycypbbx2yy12i"))))
+                "0y9j2dmw69a1n63mnbz8qg4pk69dzzhg42l3cq9i0s0yg8pp4pj6"))))
     (properties `((upstream-name . "MiRKAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20492,7 +20490,7 @@ further information.")
                              r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MiRKAT")
-    (synopsis "Microbiome Regression-Based Analysis Tests")
+    (synopsis "Microbiome Regression-Based Kernel Association Tests")
     (description
      "Test for overall association between microbiome composition data and phenotypes
 via phylogenetic kernels.  The phenotype can be univariate continuous or binary
@@ -23281,13 +23279,13 @@ and features for the generation of synthetic datasets (Reiter, 2005,
 (define-public r-micd
   (package
     (name "r-micd")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micd" version))
               (sha256
                (base32
-                "07zq8g9nfhw4mdjp9cj8pg3nh68vd7wj6zxb3x9wn2wwmrssj6f9"))))
+                "0scihw884m8cj3c8kg2g83w36wks44s3s7nfbhifqc89nv5q0p8a"))))
     (properties `((upstream-name . "micd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-rbgl r-pcalg r-mice))
@@ -25460,23 +25458,33 @@ modelling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "1.0.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteoland" version))
               (sha256
                (base32
-                "1k1cjmvxrm64yi7fjw4apwi5h4pwcryz2lx92apd73xf4q1r07rv"))))
+                "1q7w5b0mafavjmpc5d96w0p6dqcrfn5m7x0kskss2240pbk3hlsp"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
-                             r-spdep
+                             r-tidyr
+                             r-stars
                              r-sp
                              r-sf
-                             r-rgdal
+                             r-rlang
                              r-rcpp
+                             r-purrr
+                             r-ncmeta
+                             r-ncdfgeom
                              r-ncdf4
-                             r-meteospain))
+                             r-meteospain
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-cubelyr
+                             r-cli
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://emf-creaf.github.io/meteoland/index.html")
     (synopsis "Landscape Meteorology Tools")
@@ -30420,13 +30428,13 @@ McArtor, Lubke, & Bergeman (2017) <doi:10.1007/s11336-016-9527-8>.")
 (define-public r-mdmb
   (package
     (name "r-mdmb")
-    (version "1.6-5")
+    (version "1.7-22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mdmb" version))
               (sha256
                (base32
-                "0a4a0q6azbjjwsaqvzpynb9wyrss51a0b4bwfm0r3qgw1cwd5d79"))))
+                "19drb0vp86n363ibgf3cl45k8c3rs4ma60xqkm8acy4a31qarqk8"))))
     (properties `((upstream-name . "mdmb")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt

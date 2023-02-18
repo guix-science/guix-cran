@@ -1005,6 +1005,47 @@ and a wide range of discrete and continuous distributions.  Estimation of these
 dynamic multivariate panel models is carried out via Stan'.")
     (license license:gpl3+)))
 
+(define-public r-dynamicsdm
+  (package
+    (name "r-dynamicsdm")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dynamicSDM" version))
+              (sha256
+               (base32
+                "0vfwjb4xikms9hd25xfrh8nymyrn94srldqmhl6xdvvd0i4h3jpp"))))
+    (properties `((upstream-name . "dynamicSDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-spthin
+                             r-sp
+                             r-sf
+                             r-rgee
+                             r-reticulate
+                             r-raster
+                             r-magrittr
+                             r-lubridate
+                             r-googledrive
+                             r-geosphere
+                             r-geodist
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-a-dobson/dynamicSDM")
+    (synopsis
+     "Species Distribution and Abundance Modelling at High Spatio-Temporal Resolution")
+    (description
+     "This package provides a collection of novel tools for generating species
+distribution and abundance models (SDM) that are dynamic through both space and
+time.  These highly flexible functions incorporate spatial and temporal aspects
+across key SDM stages; including when cleaning and filtering species occurrence
+data, generating pseudo-absence records, assessing and correcting sampling
+biases and autocorrelation, extracting explanatory variables and projecting
+distribution patterns.  Throughout, functions utilise Google Earth Engine and
+Google Drive to minimise the computing power and storage demands associated with
+species distribution modelling at high spatio-temporal resolution.")
+    (license license:gpl3+)))
+
 (define-public r-dynamichazard
   (package
     (name "r-dynamichazard")

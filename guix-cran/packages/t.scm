@@ -13957,6 +13957,29 @@ combinations of efficient functions to facilitate frequently-used data
 operations.")
     (license license:expat)))
 
+(define-public r-tidyformula
+  (package
+    (name "r-tidyformula")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyformula" version))
+              (sha256
+               (base32
+                "1sz5v8l1gpci1jzs87qgxr95nr881rz5lidlfwgfi8963kgvigvg"))))
+    (properties `((upstream-name . "tidyformula")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyformula")
+    (synopsis "Build Formulas Using Tidy Selection Helpers")
+    (description
+     "This package provides the function tidyformula()', which translates formulas
+containing tidyselect'-style selection helpers.  It expands these helpers by
+evaluating dplyr::select() with the relevant selection helper and a supplied
+data frame.  The package contains methods for traversing abstract syntax trees
+from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
+    (license license:expat)))
+
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")

@@ -7240,13 +7240,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpboost" version))
               (sha256
                (base32
-                "1vnaqx5v1bcgv3a281zqz8wbb4f2cz74mad8z60wn8c4zcs8zh0m"))))
+                "0y6jpdl86fm20b1wwn7vyxrq853ib75jj3y2jrxgcm9cdcxaf2ii"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -7259,7 +7259,7 @@ mixed effects models.  It also allows for independently doing tree-boosting as
 well as inference and prediction for Gaussian process and mixed effects models.
 See <https://github.com/fabsig/GPBoost> for more information on the software and
 Sigrist (2022, JMLR) <https://www.jmlr.org/papers/v23/20-322.html> and Sigrist
-(2022, TPAMI) <doi:10.1109/TPAMI.2022.3168152> for more information on the
+(2023, TPAMI) <doi:10.1109/TPAMI.2022.3168152> for more information on the
 methodology.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
