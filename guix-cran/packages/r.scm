@@ -14,6 +14,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
@@ -1740,7 +1741,7 @@ Linux for haplotyping.")
                 "0va4d2rhrrwlqjbz85pshar7m3gvvls5i3j0cpxvrm6590mpck3r"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
-    (inputs (list zlib libpng))
+    (inputs (list libpng))
     (propagated-inputs (list r-xml2 r-rlang r-rcpp r-officer r-gdtools))
     (home-page "https://ardata-fr.github.io/officeverse/")
     (synopsis "R Graphics Devices for 'Office' Vector Graphics Output")
@@ -2407,13 +2408,13 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rum
   (package
     (name "r-rum")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rUM" version))
               (sha256
                (base32
-                "0dymi4fqpmxfad5fhicm6v1mbaqmv3zw78svfmsjzs6sah987845"))))
+                "02bwkgr8c7dbijnz0bsz9snw74d5xjykj6irvv983cd5rmb1kpsy"))))
     (properties `((upstream-name . "rUM")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -2427,8 +2428,8 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
     (home-page "https://raymondbalise.github.io/rUM/")
     (synopsis "R Templates from the University of Miami")
     (description
-     "This holds some r markdown templates and a template to create a research project
-in RStudio.")
+     "This holds some r markdown and quarto templates and a template to create a
+research project in \"R Studio\".")
     (license license:expat)))
 
 (define-public r-rules
@@ -2903,6 +2904,7 @@ et al (2016) <doi:10.1080/01621459.2015.1044091>.")
                              r-sp
                              r-rcurl
                              r-raster))
+    (native-inputs (list r-r-rsp))
     (home-page "http://r-gis.net")
     (synopsis "Raster Time Series Analysis")
     (description
@@ -2980,7 +2982,7 @@ are available in : Page, R., Yoshida, R. & Zhang L. (2020)
     (properties `((upstream-name . "rTRNG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/miraisolutions/rTRNG#readme")
     (synopsis "Advanced and Parallel Random Number Generation via 'TRNG'")
     (description
@@ -3028,7 +3030,7 @@ ecosystems.<https://github.com/ShulanSun/rTRIPLEX_CW_Flux>.")
                 "1l2ijkm4p3nd7n4q1b4y9pdyafgyf76zizpi7hhzw1rr9zkxhff2"))))
     (properties `((upstream-name . "rtrim")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/markvanderloo/rtrim")
     (synopsis "Trends and Indices for Monitoring Data")
     (description
@@ -4081,6 +4083,7 @@ cooperation (PICS-6416).")
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-jsonlite r-htmlwidgets r-geojsonsf
                              r-data-table))
+    (native-inputs (list esbuild))
     (home-page "https:/epiforecasts.io/RtD3")
     (synopsis "Rt Visualization in D3")
     (description
@@ -4286,7 +4289,7 @@ computational time.  See Llaberia-Robledillo et al. (2022,
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-htmltools r-formatters))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/roche/rtables")
     (synopsis "Reporting Tables")
     (description
@@ -4482,7 +4485,6 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
                 "1y2jcpzi8zn6rxwmp3gxyyk8nq204ri8vv6p4552hb55nnvqvc8s"))))
     (properties `((upstream-name . "Rsymphony")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (native-inputs (list pkg-config))
     (home-page "https://R-Forge.R-project.org/projects/rsymphony")
     (synopsis "SYMPHONY in R")
@@ -4504,7 +4506,6 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
     (build-system r-build-system)
     (inputs (list zstd
                   zlib
-                  zlib
                   xz
                   pandoc
                   lz4
@@ -4512,7 +4513,7 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
                   expat
                   cmake))
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config esbuild))
     (home-page "https://github.com/mgondan/rswipl")
     (synopsis "Embed 'SWI'-'Prolog'")
     (description
@@ -5503,6 +5504,7 @@ Modularity.")
     (properties `((upstream-name . "rSPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
+    (native-inputs (list r-r-rsp))
     (home-page "https://davidbolin.github.io/rSPDE/")
     (synopsis
      "Rational Approximations of Fractional Stochastic Partial Differential Equations")
@@ -6194,6 +6196,7 @@ extensive manual, scripts, and much further information is at the Siena website
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=rshift")
     (synopsis "Paleoecology Functions for Regime Shift Analysis")
     (description
@@ -6837,7 +6840,6 @@ for deployment.")
                 "04xppfz2gxf21jmcz9phxpaxys06kqnw77v1sy9qqd3n0yywzihv"))))
     (properties `((upstream-name . "RSclient")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (home-page "http://www.rforge.net/RSclient/")
     (synopsis "Client for Rserve")
     (description
@@ -6881,7 +6883,7 @@ of the benchmark.")
     (properties `((upstream-name . "RScelestial")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=RScelestial")
     (synopsis
      "Scelestial: Steiner Tree Based Single-Cell Lineage Tree Inference")
@@ -7293,7 +7295,7 @@ et al. (2020) <doi:10.1016/j.dss.2021.113556>.")
                 "0gi7igaymsikxx73dw3ak9pg2vhlvcz5xlbxz8clfxy1d66g58hd"))))
     (properties `((upstream-name . "rsae")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://github.com/tobiasschoch/rsae")
     (synopsis "Robust Small Area Estimation")
     (description
@@ -7511,7 +7513,7 @@ can be found in Razaviyayn, M., Sanjabi, M., & Luo, Z. Q. (2016)
     (properties `((upstream-name . "RRreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/danheck/RRreg")
     (synopsis
      "Correlation and Regression Analyses for Randomized Response Data")
@@ -9133,7 +9135,7 @@ for model selection can be constructed relatively quickly.")
                              r-doparallel
                              r-cobs
                              r-bmp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/MD-Anderson-Bioinformatics/rppaspace")
     (synopsis
      "Reverse-Phase Protein Array Super Position and Concentration Evaluation")
@@ -9593,7 +9595,7 @@ and viewing results of highlighted searches in a browser.")
     (properties `((upstream-name . "rpivotTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/smartinsightsfromdata")
     (synopsis
      "Build Powerful Pivot Tables and Dynamically Slice & Dice your Data")
@@ -9636,7 +9638,7 @@ JavaScript by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-jsonlite r-gridbase r-ggplot2 r-crul))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/sckott/rphylopic")
     (synopsis "Get 'Silhouettes' of 'Organisms' from 'Phylopic'")
     (description
@@ -9756,6 +9758,7 @@ Han et al.  2014.  This program can run in R version 3.2.2 and above.")
                              r-rpeglmen
                              r-robstattm
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=RPESE")
     (synopsis "Estimates of Standard Errors for Risk and Performance Measures")
     (description
@@ -9806,6 +9809,7 @@ voting threshold to determine the final assignment.")
     (properties `((upstream-name . "RPEIF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-robstattm))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=RPEIF")
     (synopsis
      "Computation and Plots of Influence Functions for Risk and Performance Measures")
@@ -9831,6 +9835,7 @@ the influence functions.")
     (properties `((upstream-name . "RPEGLMEN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpeif r-rcppeigen r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=RPEGLMEN")
     (synopsis
      "Gamma and Exponential Generalized Linear Models with Elastic Net Penalty")
@@ -10214,7 +10219,7 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://www.rpact.org")
     (synopsis "Confirmatory Adaptive Clinical Trial Design and Analysis")
     (description
@@ -10238,6 +10243,7 @@ tests that are based on the combination testing principle.")
     (properties `((upstream-name . "rPackedBar")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-scales r-plotly r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AdamSpannbauer/rPackedBar")
     (synopsis "Packed Bar Charts with 'plotly'")
     (description
@@ -11614,7 +11620,7 @@ outcomes with ties are supported.")
     (build-system r-build-system)
     (inputs (list swi-prolog))
     (propagated-inputs (list r-rswipl r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mgondan/rolog")
     (synopsis "Query 'SWI'-'Prolog' from R")
     (description
@@ -11750,7 +11756,7 @@ detection of events or structural breaks.")
     (properties `((upstream-name . "rolldown")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmltools r-bookdown))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=rolldown")
     (synopsis "R Markdown Output Formats for Storytelling")
     (description
@@ -13084,7 +13090,7 @@ ground-truth calibration to account for causation.")
     (properties `((upstream-name . "robvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-scales r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mcguinlu/robvis")
     (synopsis "Visualize the Results of Risk-of-Bias (ROB) Assessments")
     (description
@@ -13820,6 +13826,7 @@ described in more detail in Jiao (2019)
                 "1ynlfxlzh442jd1cf02j0f948m16d536a30gb4bf7208baqri1vg"))))
     (properties `((upstream-name . "robumeta")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/zackfisher/robumeta")
     (synopsis "Robust Variance Meta-Regression")
     (description
@@ -13883,7 +13890,7 @@ convenient functions for summary, visualizations, and fit diagnostics.")
     (properties `((upstream-name . "robsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-kernsmooth))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/tobiasschoch/robsurvey")
     (synopsis "Robust Survey Statistics Estimation")
     (description
@@ -13906,7 +13913,7 @@ package extends the survey <https://CRAN.R-project.org/package=survey> package."
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-r-rsp gfortran))
     (home-page "https://cran.r-project.org/package=RobStatTM")
     (synopsis "Robust Statistics: Theory and Methods")
     (description
@@ -14297,6 +14304,7 @@ Chi Zhang, Sha Cao (2020) <arXiv:2005.11599>.")
                              r-boot
                              r-bbmle
                              r-actuar))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=robmixglm")
     (synopsis "Robust Generalized Linear Models (GLM) using Mixtures")
     (description
@@ -15109,6 +15117,7 @@ is required.")
                              r-htmlwidgets
                              r-htmltools
                              r-data-table))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/Rnvd3")
     (synopsis "An Incomplete Wrapper of the 'nvd3' JavaScript Library")
     (description
@@ -15242,6 +15251,7 @@ history events that occur at specific times.")
     (properties `((upstream-name . "RNOmni")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=RNOmni")
     (synopsis "Rank Normal Transformation Omnibus Test")
     (description
@@ -15630,7 +15640,6 @@ the NetLogo Mathematica Link <https://github.com/NetLogo/Mathematica-Link>.")
                 "0bh2xikck4jgrakxpz4ibi7nma1ib4nwayqq4cgh5wy5ixwlbpml"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=RNetCDF")
     (synopsis "Interface to 'NetCDF' Datasets")
@@ -15654,6 +15663,7 @@ enabled by UDUNITS version 2, also from Unidata.")
                 "14fwf4pqdjrrbnf2s9i0dbmqk2xv0mxs3zz1j1pwnm46fiiawa2g"))))
     (properties `((upstream-name . "rnetcarto")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rnetcarto")
     (synopsis
@@ -17315,7 +17325,7 @@ code chunks and returns the result as data frame.")
     (properties `((upstream-name . "rmdshower")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/mangothecat/rmdshower")
     (synopsis "'R' 'Markdown' Format for 'shower' Presentations")
     (description "R Markdown format for shower presentations, see
@@ -17407,6 +17417,7 @@ new functions as I add utility functions for myself.")
     (properties `((upstream-name . "rmdformats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-htmltools r-bookdown))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/juba/rmdformats")
     (synopsis "HTML Output Formats and Templates for 'rmarkdown' Documents")
     (description
@@ -17566,6 +17577,7 @@ and Marusich (2017) <doi:10.3389/fpsyg.2017.00456>.")
                              r-ggplot2
                              r-dplyr
                              r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://home.ipipan.waw.pl/m.draminski/mcfs.html")
     (synopsis
      "The MCFS-ID Algorithm for Feature Selection and Interdependency Discovery")
@@ -17695,7 +17707,6 @@ time series.")
                 "11aaa06rq7pz6ma194bp4j9qy1f8rzl31nk731jmacdf2yvbmn6v"))))
     (properties `((upstream-name . "rmatio")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-matrix))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/stewid/rmatio")
@@ -17793,7 +17804,6 @@ properties of all detected events and exceedances.")
                 "13j6bx3h2fjng4lym65w2anyq3kfamkg7qyk56csvyc4wnn62z69"))))
     (properties `((upstream-name . "RMariaDB")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rlang
                              r-rcpp
                              r-plogr
@@ -17918,7 +17928,7 @@ provider who implements the Mapzen API.")
                              r-jsonlite
                              r-geojsonlint
                              r-geojsonio))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ateucher/rmapshaper")
     (synopsis "Client for 'mapshaper' for 'Geospatial' Operations")
     (description
@@ -18170,6 +18180,7 @@ contains the jscolor.js library with a custom shiny output binding.")
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-luminescence r-khroma
                              r-desolve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://CRAN.R-project.org/package=RLumModel")
     (synopsis
      "Solving Ordinary Differential Equations to Understand Luminescence")
@@ -18198,6 +18209,7 @@ in quartz and Al2O3 based on published models.")
                              r-foreach
                              r-doparallel
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://CRAN.R-project.org/package=RLumCarlo")
     (synopsis "Monte-Carlo Methods for Simulating Luminescence Phenomena")
     (description
@@ -18393,51 +18405,6 @@ share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
-(define-public r-rliger
-  (package
-    (name "r-rliger")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rliger" version))
-              (sha256
-               (base32
-                "1gqdwmy073sg48id015q02bx20xsqyc6jpbw4nym3c09cqz681dr"))))
-    (properties `((upstream-name . "rliger")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uwot
-                             r-rtsne
-                             r-rlang
-                             r-riverplot
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rann
-                             r-psych
-                             r-plyr
-                             r-patchwork
-                             r-mclust
-                             r-matrix
-                             r-irlba
-                             r-ica
-                             r-hdf5r
-                             r-ggrepel
-                             r-ggplot2
-                             r-foreach
-                             r-fnn
-                             r-dplyr
-                             r-doparallel
-                             r-cowplot))
-    (home-page "https://github.com/welch-lab/liger")
-    (synopsis "Linked Inference of Genomic Experimental Relationships")
-    (description
-     "Uses an extension of nonnegative matrix factorization to identify shared and
-dataset-specific factors.  See Welch J, Kozareva V, et al (2019)
-<doi:10.1016/j.cell.2019.05.006>, and Liu J, Gao C, Sodicoff J, et al (2020)
-<doi:10.1038/s41596-020-0391-8> for more details.")
-    (license license:gpl3)))
-
 (define-public r-rlidar
   (package
     (name "r-rlidar")
@@ -18506,6 +18473,7 @@ optimization.")
                 "0hzsnrz30429pavf7qghknykah9ks4msb96zwa1xgvqb4zd512dg"))))
     (properties `((upstream-name . "Rlibeemd")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=Rlibeemd")
     (synopsis
@@ -18770,6 +18738,7 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
                              r-jsonlite
                              r-jrc
                              r-hwriter))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=rlc")
     (synopsis "Create Interactive Linked Charts with Minimal Code")
     (description
@@ -18961,6 +18930,7 @@ Theil-Sen's slope estimator.")
                              r-dplyr
                              r-curl
                              r-broom))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/KorAP/RKorAPClient/")
     (synopsis "'KorAP' Web Service Client Package")
     (description
@@ -19428,6 +19398,7 @@ supported, especially the extensive metadata features of JSON-stat'.")
                 "02q5isc137nx7qil2p3903xfsjwk54507rs72dfaiy6a8scys5j9"))))
     (properties `((upstream-name . "RJSplot")))
     (build-system r-build-system)
+    (native-inputs (list esbuild))
     (home-page "https://rjsplot.usal.es")
     (synopsis "Interactive Graphs with R")
     (description
@@ -19520,7 +19491,7 @@ CDF and random number generator functions.")
                 "0a00s10yp22fkvk67dkq43sbphcqla65x9j4qpv076bmdchn7arw"))))
     (properties `((upstream-name . "rJPSGCS")))
     (build-system r-build-system)
-    (inputs (list zlib openjdk))
+    (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=rJPSGCS")
     (synopsis "R-Interface to Gene Drop Simulation from JPSGCS")
@@ -19673,7 +19644,6 @@ back-end.  This allows R to connect to any DBMS that has a JDBC driver.")
                 "157dmi5gksq7s16ip4n9j5bj9s9bawl078rh13s1xxyr6f51yp09"))))
     (properties `((upstream-name . "RJcluster")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -19821,7 +19791,7 @@ others discovered during ongoing testing and code simplification.")
     (properties `((upstream-name . "rjade")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=rjade")
     (synopsis "Clean, Whitespace-Sensitive Template Language for Writing HTML")
     (description
@@ -20202,6 +20172,7 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
                              r-doparallel
                              r-data-table
                              r-cmprsk))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/tagteam/riskRegression")
     (synopsis
      "Risk Regression Models and Prediction Scores for Survival Analysis with Competing Risks")
@@ -20300,7 +20271,7 @@ in Ardia et al. (2017) <doi:10.1007/s10479-017-2474-7> and Ardia et al. (2017)
                              r-nloptr
                              r-matrix
                              r-alabama))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://CRAN.R-project.org/package=riskParityPortfolio")
     (synopsis "Design of Risk Parity Portfolios")
     (description
@@ -20711,6 +20682,7 @@ Quaternary science data.")
     (properties `((upstream-name . "rintimg")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-glue))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/rintimg")
     (synopsis
      "View Images on Full Screen in 'RMarkdown' Documents and 'shiny' Applications")
@@ -21304,7 +21276,7 @@ optimization on matrix manifolds.")
                              r-lpsolve
                              r-deoptim
                              r-cvxr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://kisungyou.com/Riemann/")
     (synopsis "Learning with Data on Riemannian Manifolds")
     (description
@@ -21430,6 +21402,7 @@ The package provides replicability to GarcÃ­a-PortuguÃ©s and Prieto-Tirado
                 "1xb03ir706k2c3y2kpa4dvnz5i0qhm2ghm7syng0kalpdz7swbaw"))))
     (properties `((upstream-name . "ridge")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (home-page "https://github.com/SteffenMoritz/ridge")
     (synopsis
      "Ridge Regression with Automatic Selection of the Penalty Parameter")
@@ -21618,7 +21591,7 @@ position type and the chromosome number.")
     (properties `((upstream-name . "RIbench")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-optparse r-digest r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=RIbench")
     (synopsis "Benchmark Suite for Indirect Methods for RI Estimation")
     (description
@@ -21913,7 +21886,7 @@ Faridi et al.  in 2018 <doi:10.1126/sciimmunol.aar3947>.")
                              r-cli
                              r-callr
                              r-assertthat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/r-hub/rhub")
     (synopsis "Connect to 'R-hub'")
     (description
@@ -22355,7 +22328,7 @@ process likelihood approximation algorithm proposed in Stindl and Chen (2021)
     (properties `((upstream-name . "rhandsontable")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "http://jrowen.github.io/rhandsontable/")
     (synopsis "Interface to the 'Handsontable.js' Library")
     (description
@@ -22996,7 +22969,7 @@ interaction data set.")
     (properties `((upstream-name . "rgl2gltf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-r6 r-jsonlite r-base64enc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/dmurdoch/rgl2gltf")
     (synopsis "Read and Write '.gltf' and '.glb' Files")
     (description
@@ -25255,6 +25228,7 @@ i.e.  changes in p-value.")
     (properties `((upstream-name . "revengc")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist r-stringr r-mipfp r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/GIST-ORNL/revengc")
     (synopsis "Reverse Engineering Summarized Data")
     (description
@@ -25344,6 +25318,7 @@ has substantial potentials for microbial community ecological analysis.")
     (properties `((upstream-name . "revealjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/rstudio/revealjs")
     (synopsis "R Markdown Format for 'reveal.js' Presentations")
     (description
@@ -25719,6 +25694,7 @@ function body from the R script.  Particularly convenient in combination with
                              r-rcolorbrewer
                              r-matrix
                              r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=RestoreNet")
     (synopsis "Random-Effects Stochastic Reaction Networks")
     (description
@@ -26776,7 +26752,7 @@ PROJ library is available at <https://proj.org/>.")
                              r-digest
                              r-dbi
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://reproducible.predictiveecology.org")
     (synopsis "Set of Tools that Enhance Reproducibility of R Code")
     (description
@@ -26999,7 +26975,7 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
                              r-geepack
                              r-cmprsk
                              r-aod))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=reportRmd")
     (synopsis "Tidy Presentation of Clinical Reporting")
     (description
@@ -27521,6 +27497,7 @@ format lookup file.  Based on data.table package.")
     (properties `((upstream-name . "repfdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/barakbri/repfdr")
     (synopsis "Replicability Analysis for Multiple Studies of High Dimension")
     (description
@@ -27873,6 +27850,7 @@ block data) can be used in a Maximum-Likelihood framework.")
                              r-data-table
                              r-corpcor
                              r-aer))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/mmeierer/REndo")
     (synopsis
      "Fitting Linear Models with Endogenous Regressors using Latent Instrumental Variables")
@@ -28105,7 +28083,7 @@ Institute.  Hahsler and Dunham (2010) <doi:10.18637/jss.v035.i05>.")
                              r-dofuture
                              r-data-table
                              r-coda))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/xsswang/remiod")
     (synopsis
      "Reference-Based Multiple Imputation for Ordinal/Binary Response")
@@ -29095,6 +29073,7 @@ becomes stronger/weaker as Z increases).")
                              r-echarts4r
                              r-e1071
                              r-dt))
+    (native-inputs (list esbuild))
     (home-page "https://www.promidat.com")
     (synopsis "Regression Data Analysis System")
     (description
@@ -29953,7 +29932,7 @@ More info on key collision and ngram fingerprint can be found here
     (properties `((upstream-name . "refineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-future r-ash))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=refineR")
     (synopsis "Reference Interval Estimation using Real-World Data")
     (description
@@ -30271,7 +30250,7 @@ criteria, publications and other information.")
                 "1nzxyczsz274751z48glh8qzv1v9rdv3raq6whyp63nsi2xdri90"))))
     (properties `((upstream-name . "redland")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (propagated-inputs (list r-roxygen2))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://cran.r-project.org/package=redland")
@@ -31300,6 +31279,7 @@ analysis packages (pavo, patternize, colordistance).")
     (properties `((upstream-name . "recogito")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/DIGI-VUB/recogito")
     (synopsis "Interactive Annotation of Text and Images")
     (description
@@ -31454,6 +31434,7 @@ recluster (e.g. the biodecrypt family) are currently available in GitHub at
     (properties `((upstream-name . "reclin2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-rcpp r-lpsolve r-data-table))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/djvanderlaan/reclin2")
     (synopsis "Record Linkage Toolkit")
     (description
@@ -32699,7 +32680,7 @@ porous media, in estuaries, and in bodies with variable shape.")
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/react-R/reactR")
     (synopsis "React Helpers")
     (description
@@ -33720,6 +33701,7 @@ more details on the package, see the paper by You and Shung (2022)
                 "1djgy6al9f92i295bzc65lny7lz8gpk5js6hmfbflwfwcl9wg05b"))))
     (properties `((upstream-name . "RDieHarder")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (home-page "https://github.com/eddelbuettel/rdieharder")
     (synopsis "R Interface to the 'DieHarder' RNG Test Suite")
     (description
@@ -34351,6 +34333,7 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=rD3plot")
     (synopsis
      "Interactive Networks, Timelines, Barplots, Galleries with 'D3.js'")
@@ -35114,6 +35097,7 @@ R by providing both the header files and all examples.")
     (properties `((upstream-name . "RcppSpdlog")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/rcppspdlog")
     (synopsis
      "R and C++ Interfaces to 'spdlog' C++ Header Library for Logging")
@@ -35687,7 +35671,6 @@ space for usage in R. HSLuv is a human-friendly alternative to HSL.")
                 "0m9g37hrx33mmxhhzi6qakgiqh6w0c2s624fkgbny9vcabr3dfsx"))))
     (properties `((upstream-name . "RcppCNPy")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/eddelbuettel/rcppcnpy")
     (synopsis "Read-Write Support for 'NumPy' Files via 'Rcpp'")
@@ -35942,7 +35925,7 @@ vectors via the as() and wrap() functions.")
     (properties `((upstream-name . "RcppAPT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-simplermarkdown pkg-config))
     (home-page "https://github.com/eddelbuettel/rcppapt")
     (synopsis "'Rcpp' Interface to the APT Package Manager")
     (description
@@ -36108,6 +36091,7 @@ and journals worldwide and make them available to the public.")
                 "0zjkjvyqq76lyg61y0cd71v6yzyavqwv8zqw3fpky7jwv7szmnii"))))
     (properties `((upstream-name . "rcontroll")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-vroom
                              r-viridis
                              r-tidyr
@@ -37400,6 +37384,7 @@ al. (2013) <doi:10.1007/978-3-642-35638-4_21>.")
     (properties `((upstream-name . "rclipboard")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/sbihorel/rclipboard/")
     (synopsis "Shiny/R Wrapper for 'clipboard.js'")
     (description
@@ -37738,6 +37723,7 @@ change-points is not required.  The code is written in Go and interfaced with R.
                              r-ggplot2
                              r-dplyr
                              r-assertthat))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/jbkunst/rchess")
     (synopsis
      "Chess Move, Generation/Validation, Piece Placement/ Movement, and Check/Checkmate/Stalemate Detection")
@@ -38356,6 +38342,7 @@ and Shennan 2017 <doi:10.1016/j.jas.2017.09.007>).")
     (properties `((upstream-name . "RCarb")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-interp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-lum.github.io/RCarb/")
     (synopsis "Dose Rate Modelling of Carbonate-Rich Samples")
     (description
@@ -38836,6 +38823,7 @@ text files and more...")
                              r-matrix
                              r-bh
                              r-assertthat))
+    (native-inputs (list r-r-rsp))
     (home-page "https://insightsengineering.github.io/rbmi/")
     (synopsis "Reference Based Multiple Imputation")
     (description
@@ -38909,6 +38897,7 @@ manufactured by <http://www.technosmart.eu> and LUL and WACU are manufactured by
     (properties `((upstream-name . "Rblpapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://dirk.eddelbuettel.com/code/rblpapi.html")
     (synopsis "R Interface to 'Bloomberg'")
     (description "An R Interface to Bloomberg is provided via the Blp API'.")
@@ -39176,6 +39165,7 @@ quantitative DNA methylation analyses as described by Moskalev et al. (2011)
     (inputs (list))
     (propagated-inputs (list r-reshape2 r-rbi r-matrix r-lubridate
                              r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://libbi.org")
     (synopsis "'RBi' Helper Functions")
     (description
@@ -39201,6 +39191,7 @@ between times in LibBi results and R time/dates.")
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-reshape2 r-processx r-ncdf4 r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/sbfnk/RBi")
     (synopsis "Interface to 'LibBi'")
     (description
@@ -39438,7 +39429,7 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\"")
                 "1hzd0p5nzfshackwlmlzffrpzxrp2mnhk6izb8r605lrxp7laf4v"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
-    (inputs (list zlib zlib cmake))
+    (inputs (list zlib cmake))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -40041,18 +40032,20 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.0.9")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ravetools" version))
               (sha256
                (base32
-                "0pwkvscmk4xkcfq0p1d4sl75w88cx8bx9zqhlmbnd4vk24x5r8sb"))))
+                "0gr9nxzicb6yc9pqs7gn140acspw8ajbfrmgz8p00z6ld0qr142f"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list fftw))
     (propagated-inputs (list r-waveslim
                              r-signal
+                             r-rvcg
+                             r-rniftyreg
                              r-rcpp
                              r-pracma
                              r-filearray
@@ -40060,14 +40053,15 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
     (native-inputs (list pkg-config))
     (home-page "https://dipterix.org/ravetools/")
     (synopsis
-     "Signal Processing Toolbox for Analyzing 'Electrophysiology' Data")
+     "Signal and Image Processing Toolbox for Analyzing Intracranial 'Electroencephalography' Data")
     (description
-     "Implemented fast and memory-efficient Notch'-filter, Welch-periodogram', and
-discrete wavelet transform algorithm for hours of high-resolution signals;
-providing fundamental toolbox for iEEG preprocess pipelines.  Documentation and
-examples about RAVE project are provided at <https://openwetware.org/wiki/RAVE>,
-and the paper by John F. Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
-<doi:10.1016/j.neuroimage.2020.117341>; see citation(\"ravetools\") for details.")
+     "Implemented fast and memory-efficient Notch'-filter, Welch-periodogram',
+discrete wavelet transform algorithm for hours of high-resolution signals, fast
+3D convolution, and image alignment; providing fundamental toolbox for iEEG
+pipelines.  Documentation and examples about RAVE project are provided at
+<https://openwetware.org/wiki/RAVE>, and the paper by John F. Magnotti, Zhengjia
+Wang, Michael S. Beauchamp (2020) <doi:10.1016/j.neuroimage.2020.117341>; see
+citation(\"ravetools\") for details.")
     (license license:gpl3)))
 
 (define-public r-raverage
@@ -41537,6 +41531,7 @@ regression on large data sets as described in Geppert et.  al (2017)
     (properties `((upstream-name . "rapport")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-stringr r-rapportools r-pander))
+    (native-inputs (list esbuild))
     (home-page "https://rapporter.github.io/rapport/")
     (synopsis "Report Templating System")
     (description
@@ -41559,7 +41554,7 @@ LaTeX, PDF, ODT etc.) with pandoc as the converter backend.")
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-unix))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-r-rsp pkg-config))
     (home-page "https://www.jstatsoft.org/v55/i07/")
     (synopsis "Bindings to AppArmor and Security Related Linux Tools")
     (description
@@ -41709,6 +41704,7 @@ for summary GWAS data without a test dataset\".")
     (properties `((upstream-name . "rapidoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/meztez/rapidoc")
     (synopsis
      "Generates 'RapiDoc' Documentation from an 'OpenAPI' Specification")
@@ -41919,7 +41915,7 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
                 "11i47arl3r32iky29wjawb26g0hiji0ddl70gcrcy8v9j0h01vap"))))
     (properties `((upstream-name . "RankingProject")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/civilstat/RankingProject")
     (synopsis "The Ranking Project: Visualizations for Comparing Populations")
     (description
@@ -42466,6 +42462,7 @@ randomly sample user-agent strings from the user-agent string pool.")
                              r-foreach
                              r-doparallel
                              r-cluster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=randomUniformForest")
     (synopsis
      "Random Uniform Forests for Classification, Regression and Unsupervised Learning")
@@ -42524,6 +42521,7 @@ appearing in a large scale data base of real names.")
                              r-dorng
                              r-doparallel
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=randomLCA")
     (synopsis "Random Effects Latent Class Analysis")
     (description
@@ -43209,6 +43207,7 @@ pie chart, and 100% stacked bar chart.")
                              r-htmlwidgets
                              r-htmltools
                              r-data-table))
+    (native-inputs (list esbuild))
     (home-page "https://datastorm-open.github.io/introduction_ramcharts/")
     (synopsis "JavaScript Charts Tool")
     (description
@@ -43720,6 +43719,7 @@ supporting functions to employ these estimators in a graphical modeling setting.
     (properties `((upstream-name . "RagGrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmlwidgets r-htmltools r-crosstalk))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/no-types/RagGrid/")
     (synopsis "Wrapper of the 'JavaScript' Library 'agGrid'")
     (description
@@ -44258,7 +44258,7 @@ radionuclides of 97 elements.")
     (properties `((upstream-name . "radarchart")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/mangothecat/radarchart")
     (synopsis "Radar Chart from 'Chart.js'")
     (description
@@ -45054,7 +45054,7 @@ tables and listings for reporting and also include R plots.")
                 "0j8mghlhsl0jvw4rkgk1jcpc61shk639xb3rfbh0xhlxkn3baz55"))))
     (properties `((upstream-name . "r3PG")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
+    (native-inputs (list r-r-rsp gfortran))
     (home-page "https://github.com/trotsiuk/r3PG")
     (synopsis "Simulating Forest Growth using the 3-PG Model")
     (description
@@ -45081,7 +45081,7 @@ mixed-species forests) described in Forrester & Tang (2016)
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-jsonlite r-htmlwidgets r-htmltools
                              r-ellipsis))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=r3js")
     (synopsis "'WebGL'-Based 3D Plotting using the 'three.js' Library")
     (description
@@ -45103,7 +45103,7 @@ highlighting and toggle buttons is also supported.")
     (properties `((upstream-name . "r3dmol")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-htmlwidgets r-bio3d))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/swsoyee/r3dmol")
     (synopsis "Create Interactive 3D Visualizations of Molecular Data")
     (description
@@ -45815,7 +45815,7 @@ English Dictionary (OPTED)'.")
     (properties `((upstream-name . "r2d3")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-jsonlite r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://rstudio.github.io/r2d3/")
     (synopsis "Interface to 'D3' Visualizations")
     (description

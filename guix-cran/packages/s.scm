@@ -8,17 +8,22 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages version-control)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages python)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
   #:use-module (gnu packages geo)
@@ -26,9 +31,6 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages web)
-  #:use-module (gnu packages maths)
-  #:use-module (gnu packages tls)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -411,7 +413,7 @@ Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
     (properties `((upstream-name . "synthACS")))
     (build-system r-build-system)
     (propagated-inputs (list r-retry r-rcpp r-data-table r-acs))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=synthACS")
     (synopsis
      "Synthetic Microdata and Spatial MicroSimulation Modeling for ACS Data")
@@ -755,6 +757,7 @@ project <http://moby-thesaurus.org/>.")
                 "0v1vgsxq101fdxawdsdk2wa2llp79hzvmdphflnj8iblj8ncm6vc"))))
     (properties `((upstream-name . "SymTS")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (home-page "https://cran.r-project.org/package=SymTS")
     (synopsis "Symmetric Tempered Stable Distributions")
     (description
@@ -1355,6 +1358,7 @@ been executed.")
     (properties `((upstream-name . "switchboard")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=switchboard")
     (synopsis "An Agile Widget Engine for Real-Time, Dynamic Visualizations")
     (description
@@ -1507,6 +1511,7 @@ and R programming.")
     (properties `((upstream-name . "swipeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/swipeR")
     (synopsis "Carousels using the 'JavaScript' Library 'Swiper'")
     (description
@@ -1774,7 +1779,7 @@ user can also use the original JPL DE431 data.")
     (properties `((upstream-name . "sweidnumbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/rOpenGov/sweidnumbr/")
     (synopsis "Handling of Swedish Identity Numbers")
     (description
@@ -2361,7 +2366,7 @@ the method.")
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://bschneidr.github.io/svrep/")
     (synopsis
      "Tools for Creating, Updating, and Analyzing Survey Replicate Weights")
@@ -2465,6 +2470,7 @@ essentially the same cost as a single SVM fit.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=SVMMaj")
     (synopsis "Implementation of the SVM-Maj Algorithm")
     (description
@@ -2576,6 +2582,7 @@ copula models for time series, see Nagler et al. (2022)
     (properties `((upstream-name . "svgViewR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-rcpp))
+    (native-inputs (list esbuild))
     (home-page "https://aaronolsen.github.io/tutorials/visualization3d.html")
     (synopsis "3D Animated Interactive Visualizations Using SVG and WebGL")
     (description
@@ -2596,7 +2603,7 @@ in a web browser.")
     (properties `((upstream-name . "svgtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-rsvg r-magick))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=svgtools")
     (synopsis "Manipulate SVG (Template) Files of Charts")
     (description
@@ -2625,6 +2632,7 @@ scatterplots.")
     (properties `((upstream-name . "svgPanZoom")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/timelyportfolio/svgPanZoom")
     (synopsis "R 'Htmlwidget' to Add Pan and Zoom to Almost any R Graphic")
     (description
@@ -2935,6 +2943,7 @@ visualize bivariate survival data and bivariate probability mass function.")
                 "0fvmqlzg6j43d5bwvn70n4630n396wrykl5blkszadj3l118rmp4"))))
     (properties `((upstream-name . "survSNP")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-xtable r-survival r-rcpp r-lattice r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=survSNP")
@@ -4355,6 +4364,7 @@ Effect\" Biometrics, 75(4):1253-1263. <doi:10.1111/biom.13067>.")
     (properties `((upstream-name . "SurrogateRsq")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-progress r-passo r-mass r-desctools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://xiaoruizhu.github.io/SurrogateRsq/")
     (synopsis "Evaluating the Goodness of Fit using the Surrogate R-Squared")
     (description
@@ -5326,7 +5336,7 @@ WILMA'.")
     (properties `((upstream-name . "supc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/wush978/supc")
     (synopsis "The Self-Updating Process Clustering Algorithms")
     (description
@@ -5457,7 +5467,7 @@ sun and the planets : <https://www.aa.quae.nl/en/reken/zonpositie.html>.")
     (properties `((upstream-name . "sunburstR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools r-dplyr r-d3r))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/timelyportfolio/sunburstR")
     (synopsis "Sunburst 'Htmlwidget'")
     (description
@@ -5537,7 +5547,7 @@ to sum their own low level functions as well.  Based on the paper by Braden
                              r-ggridges
                              r-ggplot2
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/richardli/SUMMER")
     (synopsis
      "Small-Area-Estimation Unit/Area Models and Methods for Estimation in R")
@@ -6326,7 +6336,7 @@ procedure.")
                              r-colorspace
                              r-circlize
                              r-alluvial))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=SubgrPlots")
     (synopsis "Graphical Displays for Subgroup Analysis in Clinical Trials")
     (description
@@ -6485,7 +6495,7 @@ information about the package and related projects are provided.")
     (properties `((upstream-name . "stylest")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-corpus))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/leslie-huang/stylest")
     (synopsis "Estimating Speaker Style Distinctiveness")
     (description
@@ -7145,33 +7155,6 @@ impede algorithm performance and introduce indexing errors.  This library exists
 primarily to expose the header file to other R projects.")
     (license license:expat)))
 
-(define-public r-strex
-  (package
-    (name "r-strex")
-    (version "1.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "strex" version))
-              (sha256
-               (base32
-                "1fxg07n8cjvvgpbzqhyx5ma5bv6vax1yw0rbfdqfzr79v6k5x3n7"))))
-    (properties `((upstream-name . "strex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-stringi r-rlang r-magrittr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://rorynolan.github.io/strex/")
-    (synopsis "Extra String Manipulation Functions")
-    (description
-     "There are some things that I wish were easier with the stringr or stringi
-packages.  The foremost of these is the extraction of numbers from strings.
-stringr and stringi make you figure out the regular expression for yourself;
-strex takes care of this for you.  There are many other handy functionalities in
-strex'.  Contributions to this package are encouraged: it is intended as a
-miscellany of string manipulation functions that cannot be found in stringi or
-stringr'.")
-    (license license:gpl3)))
-
 (define-public r-stressstrength
   (package
     (name "r-stressstrength")
@@ -7448,7 +7431,6 @@ for the anomalous threshold calculation.")
                 "1g85hxq3f28di0787ww4d0ai3znsp9d96sp8bwiygs6ff9jx4wkz"))))
     (properties `((upstream-name . "strawr")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/aidenlab/straw/tree/master/R")
     (synopsis "Fast Implementation of Reading/Dump for .hic Files")
@@ -8476,6 +8458,7 @@ application-specific functionality rather than Storm/R communications plumbing."
                              r-cmaes
                              r-clue
                              r-acepack))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Structure Optimized Proximity Scaling")
     (description
@@ -9792,7 +9775,7 @@ of the method, please see Du, Kao and Kou (2016)
                              r-memuse
                              r-future-apply
                              r-future))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/steps-dev/steps")
     (synopsis "Spatially- and Temporally-Explicit Population Simulator")
     (description
@@ -11927,6 +11910,7 @@ constructed from stock market prices or returns, as explained in Andersen et al.
                 "00rqvk6acg28ls4p8gfdxvzmpmkgx6gk52vdjxh63l1a50xgymg6"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
+    (native-inputs (list r-startup))
     (home-page "https://henrikbengtsson.github.io/startup/")
     (synopsis "Friendly R Startup Configuration")
     (description
@@ -12507,6 +12491,7 @@ exact methods are also provided for the lognormal model.  Revised from
                 "115mg6mffh0qyxjbd2y2q1j5b002rs23cslvwpgld4mi9ga3ld5s"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
+    (inputs (list tbb))
     (propagated-inputs (list r-rcppparallel
                              r-rcppeigen
                              r-rcpp
@@ -12647,6 +12632,7 @@ rollouts, using tools proposed by Roth and Sant'Anna (2021) <arXiv:2102.01291>."
     (properties `((upstream-name . "stagePop")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbsddesolve r-desolve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/HelenKettle/StagePop")
     (synopsis
      "Modelling the Population Dynamics of a Stage-Structured Species in Continuous Time")
@@ -14037,7 +14023,7 @@ analyzes the allele frequency data described by Solberg et al. (2008)
                 "14sasc28ipjdhb0k8ziby2v4n8gfmsp917y9725h6fsq0n01p002"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list zlib openssl openssh))
     (propagated-inputs (list r-credentials r-askpass))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://docs.ropensci.org/ssh/")
@@ -14102,6 +14088,7 @@ directly to the client.")
     (properties `((upstream-name . "ssfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-spatialreg r-sp r-maxlik r-matrix))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ssfa")
     (synopsis "Spatial Stochastic Frontier Analysis")
     (description
@@ -14191,7 +14178,7 @@ information to a Sweave report.")
                              r-dofuture
                              r-chk
                              r-abind))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/bcgov/ssdtools")
     (synopsis "Species Sensitivity Distributions")
     (description
@@ -14255,7 +14242,7 @@ concentrations and proportions are produced by parametric bootstrapping.")
                              r-earth
                              r-e1071
                              r-dismo))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/sylvainschmitt/SSDM")
     (synopsis "Stacked Species Distribution Modelling")
     (description
@@ -14355,6 +14342,7 @@ sign correlation as well as a one-sample test for the correlation coefficient.")
     (properties `((upstream-name . "ssc")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/mabelc/SSC")
     (synopsis "Semi-Supervised Classification Methods")
     (description
@@ -14794,6 +14782,7 @@ a partial least squares framework, for more details see Csala et al. (2017)
                 "13zf3cqs53w68f9zc1fkb9ql84rvzn7g1hbykqrbvss8hjaq8x1r"))))
     (properties `((upstream-name . "SRCS")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
     (synopsis
      "Statistical Ranking Color Scheme for Multiple Pairwise Comparisons")
@@ -15381,7 +15370,7 @@ externally.")
     (properties `((upstream-name . "sptotal")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://highamm.github.io/sptotal/index.html")
     (synopsis "Predicting Totals and Weighted Sums from Spatial Data")
     (description
@@ -16261,7 +16250,7 @@ effects (ALE) to quantile regression setting.")
                              r-ggplot2
                              r-dplyr
                              r-broom))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://f8l5h9.github.io/spqdep/")
     (synopsis
      "Testing for Spatial Independence of Qualitative Data in Cross Section")
@@ -16774,6 +16763,7 @@ WayS.")
     (properties `((upstream-name . "spoiler")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/etiennebacher/spoiler")
     (synopsis
      "Blur 'HTML' Elements in 'Shiny' Applications Using 'Spoiler-Alert.js'")
@@ -17055,6 +17045,7 @@ are defined by spdep package.")
                              r-fnn
                              r-fields
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=spmoran")
     (synopsis "Fast Spatial Regression using Moran Eigenvectors")
     (description
@@ -17729,6 +17720,7 @@ obtained.  PodgÃ³rski, K. (2021) <arXiv:2102.00733>.")
                              r-mosaic
                              r-mclust
                              r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/anna-neufeld/splinetree")
     (synopsis "Longitudinal Regression Trees and Forests")
     (description
@@ -18769,7 +18761,7 @@ included.")
     (properties `((upstream-name . "SpeTestNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/HippolyteBoucher/SpeTestNP")
     (synopsis "Non-Parametric Tests of Parametric Specifications")
     (description
@@ -19194,7 +19186,7 @@ spectra and visualization of maps.")
                              r-progress
                              r-matrix
                              r-mass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr r-cvxr))
     (home-page "https://github.com/dppalomar/spectralGraphTopology")
     (synopsis "Learning Graphs from Data via Spectral Constraints")
     (description
@@ -20882,6 +20874,7 @@ Ziegler 2017 <DOI:10.18637/jss.v077.i01>).")
     (properties `((upstream-name . "SpatialRegimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-spatialreg r-quantreg r-plm r-gwmodel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SpatialRegimes")
     (synopsis "Spatial Constrained Clusterwise Regression")
     (description
@@ -21117,13 +21110,13 @@ the weights with zeros.")
 (define-public r-spatialkde
   (package
     (name "r-spatialkde")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialKDE" version))
               (sha256
                (base32
-                "1k5rjn3523ivqzhcsw84s1ksj3grwdkl7a7dxcfaqsw67qlfh6sv"))))
+                "15s72mjz3pqny5i2c6xg5k4dzwb6d00zg8gihik91f8j06fy9w6r"))))
     (properties `((upstream-name . "SpatialKDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21219,6 +21212,7 @@ Lysy (2021) <arXiv:2110.07051>.")
                              r-rcpp
                              r-fields
                              r-deldir))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=spatialfusion")
     (synopsis
      "Multivariate Analysis of Spatial Data Using a Unifying Spatial Fusion Framework")
@@ -21421,7 +21415,7 @@ Greece.")
                              r-irlba
                              r-igraph
                              r-class))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=spathial")
     (synopsis "Evolutionary Analysis")
     (description
@@ -22267,7 +22261,7 @@ statistics.")
                 "0bgh29j22jm1yg2jp75xvv9jmqacb66vgv7ygf0xgnrwyrkxkm66"))))
     (properties `((upstream-name . "sparseIndexTracking")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://CRAN.R-project.org/package=sparseIndexTracking")
     (synopsis "Design of Portfolio of Stocks to Track an Index")
     (description
@@ -22647,6 +22641,7 @@ Graphical Statistics 23(4):985-1008.")
                              r-fields
                              r-dorng
                              r-dofuture))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/machiela-lab/sparrpowR")
     (synopsis "Power Analysis to Detect Spatial Relative Risk Clusters")
     (description
@@ -22721,7 +22716,6 @@ Spark'.  XGBoost is an optimized distributed gradient boosting library.")
                 "0nzw6lgjrgqd1hj46jd52s8s3vdb7q2nc500jlgd0ydrr12zd123"))))
     (properties `((upstream-name . "sparkwarc")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-sparklyr r-rcpp r-dbi))
     (home-page "https://cran.r-project.org/package=sparkwarc")
     (synopsis "Load WARC Files into Apache Spark")
@@ -22881,7 +22875,7 @@ an interface to Spark's built-in machine learning algorithms.")
     (properties `((upstream-name . "sparkline")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=sparkline")
     (synopsis "'jQuery' Sparkline 'htmlwidget'")
     (description
@@ -23630,7 +23624,7 @@ decompositions.")
                              r-gtools
                              r-grbase
                              r-graph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=SourceSet")
     (synopsis
      "Graphical Model Approach to Identify Primary Genes in Perturbed Biological Pathways")
@@ -27411,6 +27405,7 @@ implemented.")
     (properties `((upstream-name . "SMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr r-discreteweibull))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=SMM")
     (synopsis
      "Simulation and Estimation of Multi-State Discrete-Time Semi-Markov and Markov Models")
@@ -27513,6 +27508,7 @@ hard-thresholding procedure and a user-specified selection criterion.")
     (properties `((upstream-name . "SMITIDvisu")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rcpp r-magrittr r-jsonlite r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://informatique-mia.inrae.fr/biosp/anr-smitid-project/")
     (synopsis
      "Visualize Data for Host and Viral Population from 'SMITIDstruct' using 'HTMLwidgets'")
@@ -27652,6 +27648,7 @@ Risk for Supporting COVID-19 Quarantine Decisions\" (2021)
                              r-ineq
                              r-hmisc
                              r-formula-tools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=smicd")
     (synopsis "Statistical Methods for Interval-Censored Data")
     (description
@@ -28318,6 +28315,7 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
                 "1vgsx1n9gkkjnv5lrrznpfqvh019qcjki6gy625k3ykqg5zg229v"))))
     (properties `((upstream-name . "smam")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcppparallel
                              r-rcppgsl
                              r-rcpp
@@ -28328,6 +28326,7 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
                              r-envstats
                              r-dosnow
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ChaoranHu/smam")
     (synopsis "Statistical Modeling of Animal Movements")
     (description
@@ -28943,7 +28942,7 @@ cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
                              r-htmltools
                              r-checkmate
                              r-base64enc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/yonicd/slickR")
     (synopsis
      "Create Interactive Carousels with the 'JavaScript' 'Slick' Library")
@@ -29194,6 +29193,7 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
@@ -29219,6 +29219,7 @@ includes error-prone data and Phase II contains validated data on a subset.")
                              r-httpuv
                              r-ggplot2
                              r-cowplot))
+    (native-inputs (list esbuild))
     (home-page "https://anders-biostat.github.io/sleepwalk/")
     (synopsis "Interactively Explore Dimension-Reduced Embeddings")
     (description
@@ -31613,7 +31614,7 @@ to our original paper Vandenbon and Diez (Nature Communications, 2020)
                              r-purrr
                              r-magrittr
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-cleanrmd))
     (home-page "https://jepusto.github.io/SingleCaseES/")
     (synopsis "Calculator for Single-Case Effect Sizes")
     (description
@@ -32098,6 +32099,7 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
     (properties `((upstream-name . "SimSurvNMarker")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/boennecd/SimSurvNMarker")
     (synopsis "Simulate Survival Time and Markers")
     (description
@@ -32176,17 +32178,17 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simstudy" version))
               (sha256
                (base32
-                "076b8r4sr7kiw1k75flz7hyhq148x9mxg0v0bj9ikhlv387zswdx"))))
+                "011lim4qpid5sy8mv8lf40fy8n8wqc5mwpsxig96wk0jn6wbmrv2"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
-                             r-mvtnorm
+                             r-pbv
                              r-mvnfast
                              r-glue
                              r-data-table
@@ -32959,6 +32961,7 @@ provides simple functions for making these tasks more straightforward.")
     (properties `((upstream-name . "simplermarkdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/djvanderlaan/simplermarkdown")
     (synopsis "Simple Engine for Generating Reports using R")
     (description
@@ -33367,7 +33370,7 @@ described in Gandrud (2015) <doi:10.18637/jss.v065.i03>.")
                              r-grbase
                              r-graph
                              r-ggm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=simPATHy")
     (synopsis "Method for Simulating Data from Perturbed Biological Pathways")
     (description
@@ -33416,6 +33419,7 @@ production-constrained, and attraction-constrained models (Wilson 1979)
     (properties `((upstream-name . "simode")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pracma r-desolve))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=simode")
     (synopsis
      "Statistical Inference for Systems of Ordinary Differential Equations using Separable Integral-Matching")
@@ -33778,6 +33782,7 @@ models.")
     (properties `((upstream-name . "SimJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SimJoint")
     (synopsis "Simulate Joint Distribution")
     (description
@@ -33873,6 +33878,7 @@ and copula models.")
                 "07yavv1qaahxgkni5rrnhpzspkb6g185njiyh3aay4pfiyn5945l"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-matrix r-mass r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stewid/SimInf")
@@ -34947,7 +34953,7 @@ the user.")
     (properties `((upstream-name . "sim1000G")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readr r-mass r-hapsim))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-prettydoc r-knitr))
     (home-page "https://cran.r-project.org/package=sim1000G")
     (synopsis
      "Genotype Simulations for Rare or Common Variants Using Haplotypes from 1000 Genomes")
@@ -35561,6 +35567,7 @@ providing new insight into cancer study.")
                              r-htmltools
                              r-dplyr
                              r-crosstalk))
+    (native-inputs (list esbuild))
     (home-page "http://sigmajs.john-coene.com/")
     (synopsis "Interface to 'Sigma.js' Graph Visualization Library")
     (description
@@ -35613,7 +35620,7 @@ Gibilisco (2019) <doi:10.1017/psrm.2019.58>.")
                              r-msm
                              r-matrix
                              r-formula-tools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://github.com/jfieberg/SightabilityModel")
     (synopsis "Wildlife Sightability Modeling")
     (description
@@ -36235,6 +36242,7 @@ but with core functions as needed for troubleshooting.")
                              r-rcpp
                              r-gigrvg
                              r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=shrinkTVP")
     (synopsis
      "Efficient Bayesian Inference for Time-Varying Parameter Models with Shrinkage")
@@ -36648,6 +36656,7 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
                              r-htmltools
                              r-bslib
                              r-anytime))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/dreamRs/shinyWidgets")
     (synopsis "Custom Inputs Widgets for Shiny")
     (description
@@ -36688,6 +36697,7 @@ required inputs are missing, or input values are not valid.")
     (properties `((upstream-name . "shinytoastr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/mangothecat/shinytoastr")
     (synopsis "Notifications from 'Shiny'")
     (description "Browser notifications in Shiny apps, using toastr':
@@ -36856,6 +36866,7 @@ browser.")
                              r-crayon
                              r-callr
                              r-assertthat))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/rstudio/shinytest")
     (synopsis "Test Shiny Apps")
     (description
@@ -37033,6 +37044,7 @@ Stripe framework.")
     (properties `((upstream-name . "shinySelect")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactr r-htmltools r-fontawesome))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/shinySelect")
     (synopsis "Wrapper of the 'react-select' Library")
     (description
@@ -37054,6 +37066,7 @@ mathematics.")
     (properties `((upstream-name . "shinySearchbar")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/jes-n/shiny-searchbar")
     (synopsis
      "Shiny Searchbar - An Input Widget for Highlighting Text and More")
@@ -37080,6 +37093,7 @@ structured as a Bootstrap 3 input group.")
     (properties `((upstream-name . "shinyscreenshot")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-shiny r-jsonlite r-base64enc))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shinyscreenshot")
     (synopsis
      "Capture Screenshots of Entire Pages or Parts of Pages in 'Shiny'")
@@ -37251,6 +37265,7 @@ also provides filters based on columns of interest.")
                              r-dplyr
                              r-data-table
                              r-colourpicker))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=ShinyQuickStarter")
     (synopsis "'RStudio' Addin for Building Shiny Apps per Drag & Drop")
     (description
@@ -37315,6 +37330,7 @@ lm(), glm(), or coxph() models.")
     (properties `((upstream-name . "shinypanels")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shiny r-htmltools r-glue))
+    (native-inputs (list esbuild))
     (home-page "http://github.com/datasketch/shinypanels")
     (synopsis "Shiny Layout with Collapsible Panels")
     (description
@@ -37450,6 +37466,7 @@ classification system written in R but run as shiny app.")
     (properties `((upstream-name . "shinyMonacoEditor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/shinyMonacoEditor")
     (synopsis "The 'Monaco' Editor in 'Shiny'")
     (description
@@ -37545,7 +37562,7 @@ poorly predicted points.")
                              r-httr
                              r-htmltools
                              r-gplots))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/shinyMobile")
     (synopsis "Mobile Ready 'shiny' Apps with Standalone Capabilities")
     (description
@@ -37639,6 +37656,7 @@ provides tools for bundling both the code and results to the end user.")
     (properties `((upstream-name . "shinyMergely")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/shinyMergely")
     (synopsis "Compare and Merge Two Files with a 'Shiny' App")
     (description
@@ -37659,6 +37677,7 @@ syntax highlighting for several coding languages.")
     (properties `((upstream-name . "shinyMatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shinyMatrix")
     (synopsis "Shiny Matrix Input Field")
     (description "This package implements a custom matrix input field.")
@@ -37677,6 +37696,7 @@ syntax highlighting for several coding languages.")
     (properties `((upstream-name . "shinymaterial")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-sass r-jsonlite))
+    (native-inputs (list esbuild))
     (home-page "https://ericrayanderson.github.io/shinymaterial/")
     (synopsis "Implement Material Design in Shiny Applications")
     (description
@@ -37762,6 +37782,7 @@ generated, as well as the errors displayed in the interface.")
                              r-ggplot2
                              r-dplyr
                              r-curl))
+    (native-inputs (list esbuild))
     (home-page "https://rstudio.github.io/shinyloadtest/")
     (synopsis "Load Test Shiny Applications")
     (description
@@ -37829,6 +37850,7 @@ are used for matching.  Ted Enamorado et al. (2019)
     (properties `((upstream-name . "shinylight")))
     (build-system r-build-system)
     (propagated-inputs (list r-later r-jsonlite r-httpuv))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shinylight")
     (synopsis "Web Interface to 'R' Functions")
     (description
@@ -38108,6 +38130,7 @@ assistant-like user interfaces.")
                              r-htmlwidgets
                              r-htmltools
                              r-glue))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shinyGizmo")
     (synopsis "Custom Components for Shiny Applications")
     (description
@@ -38130,6 +38153,7 @@ issues.")
     (properties `((upstream-name . "shinyfullscreen")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/etiennebacher/shinyfullscreen")
     (synopsis "Display 'HTML' Elements on Full Screen in 'Shiny' Apps")
     (description
@@ -38174,7 +38198,7 @@ the current selection in other filters.  Filter values currently not available
     (properties `((upstream-name . "shinyFeedback")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools r-fontawesome))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/merlinoa/shinyFeedback")
     (synopsis "Display User Feedback in Shiny Apps")
     (description "Easily display user feedback in Shiny apps.")
@@ -38338,7 +38362,7 @@ datetime picker is an input field for selecting both a date and a time.")
                              r-lifecycle
                              r-htmltools
                              r-fresh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/shinydashboardPlus")
     (synopsis "Add More 'AdminLTE2' Components to 'shinydashboard'")
     (description
@@ -38361,6 +38385,7 @@ timelines and a lot more.")
     (properties `((upstream-name . "shinyCyJS")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/jhk0530/shinyCyJS")
     (synopsis "Create Interactive Network Visualizations in R and 'shiny'")
     (description
@@ -38399,7 +38424,7 @@ with cytoscape.js and htmlwidgets R package.")
                              r-dplyr
                              r-cohortbuilder
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=shinyCohortBuilder")
     (synopsis "Modular Cohort-Building Framework for Analytical Dashboards")
     (description
@@ -38478,7 +38503,7 @@ colors and size).")
     (properties `((upstream-name . "shinybusy")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/dreamRs/shinybusy")
     (synopsis "Busy Indicators and Notifications for 'Shiny' Applications")
     (description
@@ -38589,6 +38614,7 @@ element in shiny app using the elements id.")
     (properties `((upstream-name . "shinyalert")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-shiny r-knitr r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shinyalert")
     (synopsis "Easily Create Pretty Popup Messages (Modals) in 'Shiny'")
     (description
@@ -38610,7 +38636,7 @@ many more customizable options.")
     (properties `((upstream-name . "shinyaframe")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=shinyaframe")
     (synopsis
      "'WebVR' Data Visualizations with 'RStudio Shiny' and 'Mozilla A-Frame'")
@@ -38681,7 +38707,7 @@ css with @@apply directive, and custom tailwind configurations.")
                              r-htmlwidgets
                              r-htmltools
                              r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=shiny.semantic")
     (synopsis "Semantic UI Support for Shiny")
     (description
@@ -38768,7 +38794,7 @@ from and write to relational databases.")
                              r-jsonlite
                              r-htmltools
                              r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://appsilon.github.io/shiny.react/")
     (synopsis "Tools for Using React in Shiny")
     (description
@@ -39018,6 +39044,7 @@ implementations for exactly computing the entire Poisson-Binomial distribution."
                              r-formatr
                              r-fastmap
                              r-digest))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=shidashi")
     (synopsis "Shiny Dashboard Template System")
     (description
@@ -39239,7 +39266,7 @@ and <https://github.com/lemire/fast_double_parser>.")
                              r-diptest
                              r-ape
                              r-alakazam))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "http://shazam.readthedocs.io")
     (synopsis "Immunoglobulin Somatic Hypermutation Analysis")
     (description
@@ -39966,6 +39993,7 @@ with shadow elements.  Using this plugin you can handle any custom HTML tags.")
     (properties `((upstream-name . "shadow")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgeos r-raster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://michaeldorman.github.io/shadow/")
     (synopsis "Geometric Shadow Calculations")
     (description
@@ -40532,6 +40560,7 @@ Equations; see Vaughan, G., Aseltine, R., Chen, K., Yan, J., (2017)
                              r-ggplot2
                              r-bigmemory
                              r-bh))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/airoldilab/sgd")
     (synopsis "Stochastic Gradient Descent for Scalable Estimation")
     (description
@@ -41243,6 +41272,7 @@ the vignette and reference manual for examples.")
     (properties `((upstream-name . "SetRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-igraph r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SetRank")
     (synopsis "Advanced Gene Set Enrichment Analysis")
     (description
@@ -41565,7 +41595,7 @@ images/containers.")
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-r-rsp r-knitr gfortran))
     (home-page "https://jiscah.github.io/")
     (synopsis "Pedigree Inference from SNPs")
     (description
@@ -41593,7 +41623,7 @@ including parentage assignment and sibship clustering.  See Huisman (2017)
                              r-pbapply
                              r-iotools
                              r-copynumber))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://sequenzatools.bitbucket.io")
     (synopsis "Copy Number Estimation from Tumor Genome Sequencing Data")
     (description
@@ -41842,7 +41872,7 @@ RNA-Seq.")
     (properties `((upstream-name . "SeqKat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=SeqKat")
     (synopsis "Detection of Kataegis")
     (description
@@ -42136,6 +42166,7 @@ problem by Chen (2019) <doi:10.1111/biom.13160>.")
     (properties `((upstream-name . "SeqDetect")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-igraph r-eventdatar r-dplyr))
+    (native-inputs (list r-xtable r-dplyr))
     (home-page "https://cran.r-project.org/package=SeqDetect")
     (synopsis "Sequence and Latent Process Detector")
     (description
@@ -42163,7 +42194,7 @@ Fund under the grant KK.01.1.1.01.0009.")
     (properties `((upstream-name . "seqDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/mjuraska/seqDesign")
     (synopsis
      "Simulation and Group Sequential Monitoring of Randomized Two-Stage Treatment Efficacy Trials with Time-to-Event Endpoints")
@@ -43337,6 +43368,7 @@ and Arnold, Voelkle, & Brandmaier (2020) <doi:10.3389/fpsyg.2020.564403>.")
     (properties `((upstream-name . "semTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-stationery r-plyr r-lavaan r-kutils))
+    (native-inputs (list r-stationery))
     (home-page "https://cran.r-project.org/package=semTable")
     (synopsis "Structural Equation Modeling Tables")
     (description
@@ -43388,7 +43420,7 @@ by pseudolikelihood estimators or by method of moments.")
     (properties `((upstream-name . "SEMsens")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=SEMsens")
     (synopsis "Tool for Sensitivity Analysis in Structural Equation Modeling")
     (description
@@ -43785,6 +43817,7 @@ graphical representation of structural equation models.")
     (properties `((upstream-name . "SemiCompRisks")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass r-formula))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SemiCompRisks")
     (synopsis
      "Hierarchical Models for Parametric and Semi-Parametric Analyses of Semi-Competing Risks Data")
@@ -44104,7 +44137,7 @@ proximity values between pairs of observations.")
     (build-system r-build-system)
     (propagated-inputs (list r-shiny-semantic r-shiny r-htmltools r-glue
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=semantic.dashboard")
     (synopsis "Dashboard with Fomantic UI Support for Shiny")
     (description
@@ -46750,7 +46783,7 @@ occur.")
                              r-gbm
                              r-dismo
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://consbiol-unibern.github.io/SDMtune/")
     (synopsis "Species Distribution Model Selection")
     (description
@@ -46875,7 +46908,7 @@ available at
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-sp r-shiny r-raster))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/Abson-dev/sdmApp")
     (synopsis "User-Friendly Application for Species Distribution Modeling")
     (description
@@ -46900,6 +46933,7 @@ provides an interactive graphical user interface (GUI).")
     (properties `((upstream-name . "sdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://www.biogeoinformatics.org")
     (synopsis "Species Distribution Modelling")
     (description
@@ -47150,6 +47184,7 @@ and FarrÃ© (2017) <doi:10.2901/EUROSTAT.C2017.001>.")
     (properties `((upstream-name . "SDCNway")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-plyr r-mass r-ggplot2 r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SDCNway")
     (synopsis "Tools to Evaluate Disclosure Risk")
     (description
@@ -47831,7 +47866,7 @@ Profiler Consortium, Stekhoven, and Singer (2022)
     (properties `((upstream-name . "scrollrevealR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/feddelegrand7/scrollrevealR")
     (synopsis
      "Animate 'shiny' Elements when They Scroll into View using the 'scrollrevealjs' Library")
@@ -48463,7 +48498,7 @@ et al., (2018) <doi:10.1109/TSE.2018.2794977>].")
                              r-dynwrap
                              r-dynutils
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/rcannood/SCORPIUS")
     (synopsis
      "Inferring Developmental Chronologies from Single-Cell RNA Sequencing Data")
@@ -50393,7 +50428,7 @@ means, feature variances, or more general differences.")
     (properties `((upstream-name . "scatterPlotMatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://ifpen.gitlabfr.com/detocs/scatterplotmatrix")
     (synopsis "'Htmlwidget' for a Scatter Plot Matrix")
     (description
@@ -52455,7 +52490,7 @@ times, units and other vectors.")
                              r-dt
                              r-doparallel
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/adwolfer/santaR")
     (synopsis "Short Asynchronous Time-Series Analysis")
     (description
@@ -53883,7 +53918,7 @@ plotting functionality to assist with this process.")
     (properties `((upstream-name . "sageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://fbertran.github.io/homepage/")
     (synopsis "Applied Statistics for Economics and Management with R")
     (description
@@ -54017,6 +54052,7 @@ Users can interactively explore their data using the included Shiny application.
                              r-forcats
                              r-dt
                              r-dplyr))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/SafetyGraphics/safetyCharts")
     (synopsis "Charts for Monitoring Clinical Trial Safety")
     (description
@@ -54233,6 +54269,7 @@ evaluation of Small Area estimators.")
                              r-gridextra
                              r-ggplot2
                              r-emdi))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/NoraWuerz/saeTrafo")
     (synopsis "Transformations for Unit-Level Small Area Models")
     (description
@@ -54707,6 +54744,7 @@ mean and the variation of mean.  For the reference, see Rao and Molina (2015)
                              r-ggplot2
                              r-dplyr
                              r-caret))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/krennpa/SAEforest")
     (synopsis "Mixed Effect Random Forests for Small Area Estimation")
     (description

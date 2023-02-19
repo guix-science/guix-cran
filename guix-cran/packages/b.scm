@@ -9,10 +9,10 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
@@ -519,6 +519,7 @@ details.")
                              r-foreach
                              r-doparallel
                              r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/BuyseTest")
     (synopsis "Generalized Pairwise Comparisons")
     (description
@@ -563,32 +564,6 @@ Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
 2018, ISBN: 9783030027919).  John C. Hull (âOptions, Futures, and Other
 Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
-
-(define-public r-butcher
-  (package
-    (name "r-butcher")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "butcher" version))
-              (sha256
-               (base32
-                "1ymz4p887f8z54bxwih0zycbs2wmy5rlmw9z0gl0y89q4l8vyygw"))))
-    (properties `((upstream-name . "butcher")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-lobstr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://butcher.tidymodels.org/")
-    (synopsis "Model Butcher")
-    (description
-     "This package provides a set of S3 generics to axe components of fitted model
-objects and help reduce the size of model objects saved to disk.")
-    (license license:expat)))
 
 (define-public r-businessduration
   (package
@@ -877,7 +852,7 @@ earnings w.r.t.  the net-of-tax rate.")
     (properties `((upstream-name . "bunching")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-bb))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mavpanos/bunching")
     (synopsis "Estimate Bunching")
     (description
@@ -1130,6 +1105,7 @@ customised to contain more panels by the user.")
                              r-elasticnet
                              r-earth
                              r-bst))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=bujar")
     (synopsis
      "Buckley-James Regression for Survival Data with High-Dimensional Covariates")
@@ -1406,7 +1382,7 @@ implementation are complex and non-trivial.  These models are: NBD [Ehrenberg
     (properties `((upstream-name . "BTYD")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-matrix r-hypergeo r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=BTYD")
     (synopsis "Implementing BTYD Models with the Log Sum Exp Patch")
     (description
@@ -1465,6 +1441,7 @@ and Pumi et al. (2022) <arXiv:2211.02097>.")
                              r-data-table
                              r-coda
                              r-actuar))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/cschwarz-stat-sfu-ca/BTSPAS")
     (synopsis "Bayesian Time-Stratified Population Analysis")
     (description
@@ -1795,7 +1772,7 @@ more at <https://getbootstrap.com/>.")
     (properties `((upstream-name . "bst")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-gbm r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=bst")
     (synopsis "Gradient Boosting")
     (description
@@ -2306,7 +2283,7 @@ For a journal article describing how to use this package, see An et al. (2022)
     (properties `((upstream-name . "bSims")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-mefa4 r-mass r-intrval r-deldir))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/psolymos/bSims")
     (synopsis "Bird Point Count Simulator")
     (description
@@ -2569,7 +2546,7 @@ trials with the objective of equivalence assessment.")
                              r-htmltools
                              r-fresh
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://rinterface.github.io/bs4Dash/index.html")
     (synopsis "'Bootstrap 4' Version of 'shinydashboard'")
     (description
@@ -2836,6 +2813,7 @@ Phylocom (<https://github.com/phylocom/phylocom/>).")
                              r-pander
                              r-hypergeo
                              r-gsl))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=brr")
     (synopsis "Bayesian Inference on the Ratio of Two Poisson Rates")
     (description
@@ -2919,7 +2897,7 @@ convert file to appropriate format, or to extract data from a file.  See
                 "0zivyhyf6g7lb8r919a1cc2xvi36g6cszpl9rr200nfvvw6r6zf1"))))
     (properties `((upstream-name . "brotli")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page
      "https://www.rfc-editor.org/rfc/rfc7932https://github.com/google/brotli#readmehttps://github.com/jeroen/brotli#read")
     (synopsis "Compression Format Optimized for the Web")
@@ -6760,6 +6738,7 @@ by a tree.  Method described in Ochoa and Storey (2021)
                              r-ggpubr
                              r-ggplot2
                              r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BNPmix")
     (synopsis "Bayesian Nonparametric Mixture Models")
     (description
@@ -7611,6 +7590,7 @@ contain rstan objects and can be examined with rstan functions.")
                              r-mass
                              r-lavaan
                              r-amelia))
+    (native-inputs (list r-r-rsp))
     (home-page "https://bigdatalab.nd.edu")
     (synopsis "Mediation Analysis with Missing Data and Non-Normal Data")
     (description
@@ -8198,6 +8178,7 @@ potential interference between units assigned to different treatment conditions.
     (properties `((upstream-name . "blocksdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynomf r-plyr))
+    (native-inputs (list r-r-rsp))
     (home-page "<doi:10.1007/s13253-020-00416-0>")
     (synopsis
      "Nested and Crossed Block Designs for Factorial and Unstructured Treatment Sets")
@@ -8590,13 +8571,13 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindreview
   (package
     (name "r-blindreview")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blindreview" version))
               (sha256
                (base32
-                "08z8dacayn3g83acqqzpdgv1wrn268jizvh1l72p9i0q8c2lcbzd"))))
+                "05bqvp4yby5cij2j6ddpv98abn4gqijqza8r6yl56xl99n9aqvb1"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -11036,7 +11017,7 @@ Carlo method for a Bayesian approach to parameter estimation.")
     (properties `((upstream-name . "bioimagetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff r-httr r-ebimage))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://bioimaginggroup.github.io/bioimagetools/")
     (synopsis "Tools for Microscopy Imaging")
     (description
@@ -13014,7 +12995,6 @@ also now available.")
                 "0d7ysy4zwv4fkivn05lfi1bwdix6ms1b0h9n4nl3qbyangfcz52a"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-vctrs
                              r-runonce
                              r-roptim
@@ -13433,7 +13413,7 @@ an ordinary laptop.")
                              r-minpack-lm
                              r-mass
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/openanalytics/BIGL")
     (synopsis "Biochemically Intuitive Generalized Loewe Model")
     (description
@@ -15001,6 +14981,7 @@ modeling).")
                              r-rgdal
                              r-maptools
                              r-desctools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AndriSignorell/bfsMaps/")
     (synopsis "Plot Maps from Switzerland by Swiss Federal Statistical Office")
     (description
@@ -15866,48 +15847,6 @@ an ordering on the partitioning process.  Resulting in Branch-Exclusive Splits
 Trees (BEST).  Cedric Beaulac and Jeffrey S. Rosentahl (2019)
 <arXiv:1804.10168>.")
     (license license:expat)))
-
-(define-public r-bestnormalize
-  (package
-    (name "r-bestnormalize")
-    (version "1.8.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bestNormalize" version))
-              (sha256
-               (base32
-                "107z16vx6k31ln5ppxixjgagrzrjwlrk13689lq2s90x4k2pgmkh"))))
-    (properties `((upstream-name . "bestNormalize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-recipes
-                             r-purrr
-                             r-nortest
-                             r-lambertw
-                             r-foreach
-                             r-dplyr
-                             r-dorng
-                             r-doparallel
-                             r-butcher))
-    (native-inputs (list r-knitr))
-    (home-page "https://petersonr.github.io/bestNormalize/")
-    (synopsis "Normalizing Transformation Functions")
-    (description
-     "Estimate a suite of normalizing transformations, including a new adaptation of a
-technique based on ranks which can guarantee normally distributed transformed
-data if there are no ties: ordered quantile normalization (ORQ).  ORQ
-normalization combines a rank-mapping approach with a shifted logit
-approximation that allows the transformation to work on data outside the
-original domain.  It is also able to handle new data within the original domain
-via linear interpolation.  The package is built to estimate the best normalizing
-transformation for a vector consistently and accurately.  It implements the
-Box-Cox transformation, the Yeo-Johnson transformation, three types of Lambert
-WxF transformations, and the ordered quantile normalization transformation.  It
-estimates the normalization efficacy of other commonly used transformations, and
-it allows users to specify custom transformations or normalization statistics.
-Finally, functionality can be integrated into a machine learning workflow via
-recipes.")
-    (license license:gpl3)))
 
 (define-public r-bestie
   (package
@@ -17402,7 +17341,7 @@ to determine and visualize operating characteristics.  See Kopp-Schneider et al.
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mvtnorm r-gridextra r-ggplot2
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/collinn/bdots")
     (synopsis "Bootstrapped Differences of Time Series")
     (description
@@ -19141,6 +19080,7 @@ implementations of the methods of Oh and Raftery (2001)
                              r-hexbin
                              r-coda
                              r-archaeophases))
+    (native-inputs (list r-r-rsp))
     (home-page "https://CRAN.r-project.org/package=BayLum")
     (synopsis
      "Chronological Bayesian Models Integrating Optically Stimulated Luminescence and Radiocarbon Age Dating")
@@ -19565,6 +19505,7 @@ misclassified interval-censored.")
                              r-rcpp
                              r-matrix
                              r-igraph))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BayesSUR")
     (synopsis "Bayesian Seemingly Unrelated Regression")
     (description
@@ -19827,6 +19768,7 @@ Bayesian models.")
     (properties `((upstream-name . "BayesRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-reshape r-metrology r-ggplot2 r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BayesRS")
     (synopsis
      "Bayes Factors for Hierarchical Linear Models with Continuous Predictors")
@@ -20608,7 +20550,7 @@ split population survival estimator is described in Bagozzi et al. (2019)
     (properties `((upstream-name . "bayesmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-metafor r-forestplot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://gitlab.gwdg.de/croever/bayesmeta")
     (synopsis "Bayesian Random-Effects Meta-Analysis and Meta-Regression")
     (description
@@ -20677,7 +20619,7 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
                              r-hdinterval
                              r-ggplot2
                              r-cowplot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/ocbe-uio/BayesMallows")
     (synopsis "Bayesian Preference Learning with the Mallows Rank Model")
     (description
@@ -21933,6 +21875,7 @@ meta-analysis.")
                              r-lme4
                              r-forestplot
                              r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BayesCACE")
     (synopsis "Bayesian Model for CACE Analysis")
     (description
@@ -22544,7 +22487,7 @@ downloading and uploading and record operation log.")
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-testthat r-rcpparmadillo r-rcpp
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/stcolema/batchmix")
     (synopsis
      "Semi-Supervised Bayesian Mixture Models Incorporating Batch Correction")
@@ -24051,7 +23994,7 @@ data and web metrics in general.")
     (properties `((upstream-name . "bamp")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda r-abind))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://volkerschmid.github.io/bamp/")
     (synopsis "Bayesian Age-Period-Cohort Modeling and Prediction")
     (description
@@ -25239,6 +25182,7 @@ command line usage.")
     (properties `((upstream-name . "babel")))
     (build-system r-build-system)
     (propagated-inputs (list r-edger))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=babel")
     (synopsis "Ribosome Profiling Data Analysis")
     (description

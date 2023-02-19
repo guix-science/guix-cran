@@ -6,8 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
@@ -505,6 +505,7 @@ packages.")
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-lubridate r-jsonlite
                              r-assertthat))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=AzureAppInsights")
     (synopsis "Include Azure Application Insights in Shiny Apps")
     (description
@@ -947,7 +948,7 @@ API <https://windsor.ai/api-fields/>.")
                              r-data-table
                              r-cluster
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=aweSOM")
     (synopsis "Interactive Self-Organizing Maps")
     (description
@@ -1211,7 +1212,6 @@ unintended meanings by querying Wiktionary and Wikipedia.")
                 "1h04vr5r5h1jhqq542kzyf8bjiqp7iam8bvaxmmvbh7kq619issa"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (native-inputs (list pkg-config))
     (home-page "https://ropensci.r-universe.dev/av")
     (synopsis "Working with Audio and Video in R")
@@ -1762,6 +1762,7 @@ history using conventional commit messages
                              r-dplyr
                              r-dorng
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/retowuest/autoMrP")
     (synopsis "Improving MrP with Ensemble Learning")
     (description
@@ -3091,7 +3092,7 @@ and a client to API(s) implementing the AtomPub SWORD API specification.")
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-desolve))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=ATNr")
     (synopsis "Run Allometric Trophic Networks Models")
     (description
@@ -4296,6 +4297,7 @@ Galli, and Murray (2022)
                              r-dplyr
                              r-doparallel
                              r-dae))
+    (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name")
     (synopsis
      "Augments 'ASReml-R' in Fitting Mixed Models and Packages Generally in Exploring Prediction Differences")
@@ -4791,6 +4793,7 @@ Kroitor.")
                              r-jsonlite
                              r-curl
                              r-cli))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/r-lib/asciicast")
     (synopsis "Create 'Ascii' Screen Casts from R Scripts")
     (description
@@ -5965,7 +5968,7 @@ predominantly of low-quality.")
     (properties `((upstream-name . "argonR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/argonR")
     (synopsis "R Interface to Argon HTML Design")
     (description "R wrapper around the argon HTML library.  More at
@@ -5985,6 +5988,7 @@ predominantly of low-quality.")
     (properties `((upstream-name . "argonDash")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmltools r-argonr))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/RinteRface/argonDash")
     (synopsis "Argon Shiny Dashboard Template")
     (description
@@ -6502,7 +6506,7 @@ which can be then easily used for further analysis.")
                 "0zq61bvma82fxvczy3bhfy3x8k5s36avmblvfl1vsa2f0rp63nmk"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
-    (inputs (list zlib libarchive libarchive libarchive))
+    (inputs (list libarchive libarchive libarchive))
     (propagated-inputs (list r-tibble r-rlang r-glue r-cpp11 r-cli))
     (native-inputs (list pkg-config))
     (home-page "https://archive.r-lib.org/")
@@ -7211,6 +7215,7 @@ pedometric theory and practice.")
                 "10j8qh7m975666ipgdvzrjiraqqb5rn8qj4w76s3ijl83y0v5j3v"))))
     (properties `((upstream-name . "AQLSchemes")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AQLSchemes")
     (synopsis "Retrieving Acceptance Sampling Schemes")
     (description
@@ -8842,7 +8847,7 @@ by the anybadge library in python.")
                              r-lme4
                              r-kendall
                              r-gtools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=ANTs")
     (synopsis "Animal Network Toolkit Software")
     (description
@@ -8951,7 +8956,7 @@ simulate the effects of mergers under different competitive regimes.")
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/m-Py/anticlust")
     (synopsis "Subset Partitioning via Anticlustering")
     (description
@@ -9111,7 +9116,7 @@ online: <https://www.who.int/tools/child-growth-standards>.")
                              r-assertthat
                              r-antaresread
                              r-antaresprocessing))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/rte-antares-rpackage/antaresViz")
     (synopsis "Antares Visualizations")
     (description
@@ -9546,6 +9551,7 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-shiny r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/cran/annotator")
     (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
     (description
@@ -9838,6 +9844,7 @@ second model trained on the classes of interest.")
                              r-gtable
                              r-digest
                              r-data-table))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/tdhock/animint2")
     (synopsis "Animated Interactive Grammar of Graphics")
     (description
@@ -9865,7 +9872,7 @@ Computational and Graphical Statistics paper,
                              r-httpuv
                              r-glue
                              r-base64enc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://kcf-jackson.github.io/animate/")
     (synopsis "Web-Based Graphics Device for Animated Visualisations")
     (description
@@ -10567,7 +10574,7 @@ simulation of space-use from fitted step-selection functions.")
                 "1d47akk1amf9x28a3ss0j2453hk9rdqkzdklxnv40b13hvjd8l0n"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://msberends.github.io/AMR/")
     (synopsis "Antimicrobial Resistance Data Analysis")
     (description
@@ -10866,6 +10873,7 @@ values.")
     (properties `((upstream-name . "AMModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AMModels")
     (synopsis "Adaptive Management Model Manager")
     (description
@@ -10898,6 +10906,7 @@ GUI.")
                              r-distfree-cr
                              r-coda
                              r-bayesplot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ammiBayes")
     (synopsis "Bayesian Ammi Model for Continuous Data")
     (description
@@ -12163,7 +12172,7 @@ recurrence bundle's event set.")
                 "1a5wxs2fbpfk3032h70z86zzrzjjkp00c06dh7g2jmqc5irp6n2a"))))
     (properties `((upstream-name . "Allspice")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=Allspice")
     (synopsis "RNA-Seq Profile Classifier")
     (description
@@ -12185,13 +12194,13 @@ from multiple classes or atypical values are also identified.")
 (define-public r-allomr
   (package
     (name "r-allomr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "allomr" version))
               (sha256
                (base32
-                "0iprldmqww928m3mic3lcb8vhsr4ihrn83lvlx3wr3n7zch72771"))))
+                "1w0b32ks8mi2n1md91bikz1qca1cck5rjc5j2yf22s69dd9rnhqv"))))
     (properties `((upstream-name . "allomr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=allomr")
@@ -12332,6 +12341,7 @@ generations.")
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (propagated-inputs (list r-dynamictreecut))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=allelematch")
     (synopsis
      "Identifying Unique Multilocus Genotypes where Genotyping Error and Missing Data may be Present")
@@ -12700,6 +12710,7 @@ validated and demonstrated on a synthetic sample.")
     (properties `((upstream-name . "ALEPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ALEPlot")
     (synopsis
      "Accumulated Local Effects (ALE) Plots and Partial Dependence (PD) Plots")
@@ -12884,7 +12895,7 @@ also available.")
                              r-biostrings
                              r-ape
                              r-airr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://alakazam.readthedocs.io/")
     (synopsis "Immunoglobulin Clonal Lineage and Diversity Analysis")
     (description
@@ -14478,6 +14489,7 @@ from VSN international (<https://vsni.co.uk/software/asreml-r>).")
                              r-lattice
                              r-ggplot2
                              r-emmeans))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=agriTutorial")
     (synopsis "Tutorial Analysis of Some Agricultural Experiments")
     (description
@@ -15446,6 +15458,7 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
     (properties `((upstream-name . "AEDForecasting")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-forecast r-changepoint))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AEDForecasting")
     (synopsis "Change Point Analysis in ARIMA Forecasting")
     (description
@@ -16520,7 +16533,7 @@ phylogenetic differences between communities.")
                              r-colourpicker
                              r-clipr
                              r-adherer))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/ddediu/AdhereR")
     (synopsis "Adherence to Medications")
     (description
@@ -16548,7 +16561,7 @@ implemented using Shiny and HTML/CSS/JavaScript.")
                              r-lubridate
                              r-jpeg
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/ddediu/AdhereR")
     (synopsis "Adherence to Medications")
     (description
@@ -17173,6 +17186,7 @@ you to customize additional searches.")
                              r-miniui
                              r-dt
                              r-curl))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/daattali/addinslist")
     (synopsis "Discover and Install Useful RStudio Addins")
     (description
@@ -17394,6 +17408,7 @@ Brezger, L. Fahrmeir, A. Hennerfeind (2007)
                              r-e1071
                              r-doparallel
                              r-comics))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ADAPTS")
     (synopsis
      "Automated Deconvolution Augmentation of Profiles for Tissue Specific Cells")
@@ -18374,6 +18389,7 @@ brings together dictionaries from different sources.")
     (properties `((upstream-name . "aceEditor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-reactr r-htmlwidgets r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/aceEditor")
     (synopsis "The 'Ace' Editor as a HTML Widget")
     (description
@@ -18450,6 +18466,7 @@ congruence class.  See also Louca & Pennell (2020)
                 "04sl9jg2z2grg61p3wfy8463cpzxdf9blpb2vjh9n85yprai98f1"))))
     (properties `((upstream-name . "accumulate")))
     (build-system r-build-system)
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/markvanderloo/accumulate")
     (synopsis "Split-Apply-Combine with Dynamic Groups")
     (description
@@ -18774,38 +18791,6 @@ Gibbs sampler.  The sampler simulates the posterior distribution of precision
 matrices of a Gaussian Graphical Model.  This sampler was adapted from the
 original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
     (license license:gpl3)))
-
-(define-public r-abess
-  (package
-    (name "r-abess")
-    (version "0.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "abess" version))
-              (sha256
-               (base32
-                "08dyhn8a5lnizlyj33i1fr4mh52yzcnla4q9sanfg17705vvjk6m"))))
-    (properties `((upstream-name . "abess")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/abess-team/abess")
-    (synopsis "Fast Best Subset Selection")
-    (description
-     "Extremely efficient toolkit for solving the best subset selection problem
-<https://www.jmlr.org/papers/v23/21-1060.html>.  This package is its R
-interface.  The package implements and generalizes algorithms designed in
-<doi:10.1073/pnas.2014241117> that exploits a novel sequencing-and-splicing
-technique to guarantee exact support recovery and globally optimal solution in
-polynomial times for linear model.  It also supports best subset selection for
-logistic regression, Poisson regression, Cox proportional hazard model, Gamma
-regression, multiple-response regression, multinomial logistic regression,
-ordinal regression, (sequential) principal component analysis, and robust
-principal component analysis.  The other valuable features such as the best
-subset of group selection <arXiv:2104.12576> and sure independence screening
-<doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-abdiv
   (package

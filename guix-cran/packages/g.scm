@@ -12,15 +12,17 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages curl)
   #:use-module (gnu packages sqlite)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2189,7 +2191,7 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
                 "0x71rdjr39my7p6a6p9im343sdbpwqns86x4mryygxllp8zvwcgm"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list gsl gsl))
     (propagated-inputs (list r-matrix))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/JorisChau/gslnls")
@@ -3120,6 +3122,7 @@ growth curves) at isolated time points.")
                              r-ggplot2
                              r-ggally
                              r-dae))
+    (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name/")
     (synopsis
      "Functional Analysis of Phenotypic Growth Data to Smooth and Extract Traits")
@@ -3976,7 +3979,7 @@ functionalities <https://github.com/gridstack/gridstack.js>.")
                              r-plyr
                              r-ggplot2
                              r-biasedurn))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/markheckmann/gridsampler")
     (synopsis
      "Simulation Tool to Determine the Required Sample Size for Repertory Grid Studies")
@@ -3999,7 +4002,7 @@ with content analysis.")
     (properties `((upstream-name . "gridpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-png r-memoise r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/gridpattern/")
     (synopsis "'grid' Pattern Grobs")
     (description
@@ -5468,6 +5471,7 @@ to build nodes and another create a temporal graph.")
     (properties `((upstream-name . "graphsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-matrix r-igraph r-gplots))
+    (native-inputs (list r-r-rsp esbuild))
     (home-page "https://github.com/TomKellyGenetics/graphsim/")
     (synopsis "Simulate Expression Data from 'igraph' Networks")
     (description
@@ -5554,6 +5558,7 @@ graphical tools of an extension of PCA. Sun Makosso Kallyth (2016)
                              r-ggplot2
                              r-dplyr
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/johnfergusonNUIG/graphPAF")
     (synopsis "Estimating and Displaying Population Attributable Fractions")
     (description
@@ -5831,7 +5836,7 @@ collection of networks using an agglomerative algorithm\" by T. Rebafka (2022)
                              r-foreign
                              r-ecodist
                              r-adegenet))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=graph4lg")
     (synopsis "Build Graphs for Landscape Genetics Analysis")
     (description
@@ -5864,6 +5869,7 @@ genetics to create graphs, described by Dyer et Nason (2004)
     (properties `((upstream-name . "graph3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-lazyeval r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/graph3d")
     (synopsis "Wrapper of the JavaScript Library 'vis-graph3d'")
     (description
@@ -6169,7 +6175,7 @@ by the GRANBase package and repositories that are created by it.")
                              r-dplyr
                              r-desc
                              r-covr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/gmbecker/gRAN")
     (synopsis
      "Creating Continuously Integrated Package Repositories from Manifests")
@@ -6242,7 +6248,7 @@ function.")
                              r-raster
                              r-igraph
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://alexchubaty.com/grainscape")
     (synopsis "Landscape Connectivity, Habitat, and Protected Area Networks")
     (description
@@ -7276,6 +7282,7 @@ methodology.")
                 "1yi1xc27kdylw23nc84phnmyzhlxca20pcjvlwxykpmkag81qygw"))))
     (properties `((upstream-name . "GPBayes")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=GPBayes")
     (synopsis
@@ -7520,6 +7527,7 @@ their Application Programming Interface (http://statdb.nstac.go.jp/)")
     (properties `((upstream-name . "govdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
+    (native-inputs (list esbuild))
     (home-page "https://ukgovdatascience.github.io/govdown/")
     (synopsis "GOV.UK Style Templates for R Markdown")
     (description
@@ -9336,6 +9344,7 @@ as well as a tool to estimate and visualize the proportion of missing at random.
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shinydashboard r-shinycssloaders
                              r-shiny))
+    (native-inputs (list r-r-rsp))
     (home-page "https://confoobio.github.io/gmse/")
     (synopsis "Generalised Management Strategy Evaluation Simulator")
     (description
@@ -9566,7 +9575,6 @@ by Bayes rule.")
                 "04bqvcyg4zl2knnpp150a2jzx1s88ymnb1kcfa6l0jlmn98sm6z5"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-foreach
                              r-compquadform))
     (home-page "https://cran.r-project.org/package=GMMAT")
@@ -10444,7 +10452,7 @@ exploration, mapping, visualization and export.")
                              r-flextable
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://montesmariana.github.io/glossr/")
     (synopsis "Use Interlinear Glosses in R Markdown")
     (description
@@ -10941,16 +10949,17 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.1-1")
+    (version "0.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmnetr" version))
               (sha256
                (base32
-                "18w2b8jlc1xd6igzq7m7l34qwn6dbbbdnw7g60pqd4cpvmdagzvh"))))
+                "1m3xlzcv60l6wb7d6xbk60sdg3npq1ly7i7i9j45ndj28yb6yr6k"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-matrix r-glmnet))
+    (propagated-inputs (list r-survival r-rpart r-matrix r-glmnet))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=glmnetr")
     (synopsis
      "Relaxed Lasso Model for Data Which Might Have Long Run Times Using 'glmnet'")
@@ -11637,7 +11646,7 @@ stability for models that may fail to converge using glm.")
                              r-lme4
                              r-dfidx
                              r-aer))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://benjaminschlegel.ch/r/glm-predict/")
     (synopsis "Predicted Values and Discrete Changes for GLM")
     (description
@@ -13623,6 +13632,7 @@ the gh package to let you authenticate and interact with GitHub
                              r-e1071
                              r-data-table
                              r-class))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GHap")
     (synopsis "Genome-Wide Haplotyping")
     (description
@@ -13703,7 +13713,7 @@ around the one of wordcloud2.js'.")
     (properties `((upstream-name . "ggvoronoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rgeos r-raster r-ggplot2 r-deldir))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-mapproj r-knitr r-ggmap))
     (home-page "https://github.com/garretrc/ggvoronoi/")
     (synopsis "Voronoi Diagrams and Heatmaps with 'ggplot2'")
     (description
@@ -13843,7 +13853,7 @@ with dense datasets that are prone to overplotting.")
     (properties `((upstream-name . "ggTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/thecomeonman/ggTimeSeries")
     (synopsis "Time Series Visualisations Using the Grammar of Graphics")
     (description
@@ -15220,7 +15230,7 @@ parameters manageably low.")
     (properties `((upstream-name . "ggpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-gridpattern r-glue r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-ragg r-knitr))
     (home-page "https://github.com/coolbutuseless/ggpattern")
     (synopsis "'ggplot2' Pattern Geoms")
     (description
@@ -16035,7 +16045,7 @@ ggiraph'.")
                 "1ayi90alxyy7sqcafcm5mwmpaa3gv5ix0qxsdjng3252hn226n75"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
-    (inputs (list zlib libpng))
+    (inputs (list libpng))
     (propagated-inputs (list r-vctrs
                              r-uuid
                              r-systemfonts
@@ -16045,7 +16055,7 @@ ggiraph'.")
                              r-htmlwidgets
                              r-htmltools
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://davidgohel.github.io/ggiraph/")
     (synopsis "Make 'ggplot2' Graphics Interactive")
     (description "Create interactive ggplot2 graphics using htmlwidgets'.")
@@ -17573,32 +17583,6 @@ process; 6) joint interventions on multiple treatments; and 7) general
 incorporation of a priori knowledge of the data structure.")
     (license license:gpl3)))
 
-(define-public r-gfonts
-  (package
-    (name "r-gfonts")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gfonts" version))
-              (sha256
-               (base32
-                "19ja087k767bq71v2w4jcpynd62ysrqmjf6rpfnmmd40aanyxqkj"))))
-    (properties `((upstream-name . "gfonts")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-jsonlite
-                             r-htmltools
-                             r-glue
-                             r-crul
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://dreamrs.github.io/gfonts/")
-    (synopsis "Offline 'Google' Fonts for 'Markdown' and 'Shiny'")
-    (description
-     "Download Google fonts and generate CSS to use in rmarkdown documents and shiny
-applications.  Some popular fonts are included and ready to use.")
-    (license license:gpl3)))
-
 (define-public r-gfm
   (package
     (name "r-gfm")
@@ -17939,7 +17923,7 @@ tests.  We also provide the simultaneous confidence intervals for contrasts.")
                              r-matrix
                              r-mass
                              r-magic))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=GFD")
     (synopsis "Tests for General Factorial Designs")
     (description
@@ -18046,7 +18030,7 @@ originally by Virtanen et al. (2012), and extended in Klami et al. (2015)
     (properties `((upstream-name . "geysertimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-lubridate r-jsonlite))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/geysertimes/geysertimes-r-package")
     (synopsis "Geyser Data from GeyserTimes.org")
     (description
@@ -18246,7 +18230,7 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/moritzpschwarz/getspanel")
     (synopsis "General-to-Specific Modelling of Panel Data")
     (description
@@ -18730,6 +18714,7 @@ Markdown HTML documents.")
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GET")
     (synopsis "Global Envelopes")
     (description
@@ -22104,7 +22089,7 @@ given, even the generalized linear model output in each group.")
                              r-matrix
                              r-fields
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=GeneralizedWendland")
     (synopsis "Fully Parameterized Generalized Wendland Covariance Function")
     (description
@@ -22239,6 +22224,7 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=generalCorr")
     (synopsis "Generalized Correlations, Causal Paths and Portfolio Selection")
     (description
@@ -22279,6 +22265,7 @@ usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
     (properties `((upstream-name . "genepop")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcppprogress r-rcpp))
+    (native-inputs (list esbuild))
     (home-page "https://www.r-project.org")
     (synopsis "Population Genetic Data Analysis Using Genepop")
     (description
@@ -23723,6 +23710,7 @@ Conversion at a regional/aggregated level is also possible.")
                              r-rcpp
                              r-foreach
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=gdpc")
     (synopsis "Generalized Dynamic Principal Components")
     (description
@@ -23889,6 +23877,7 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
                              r-ggplot2
                              r-ggally
                              r-factominer))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/nicolas-robette/GDAtools")
     (synopsis "Toolbox for Geometric Data Analysis and More")
     (description
@@ -23945,7 +23934,12 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                 "0ywc7bxw49cbjhcafby7dlxhzz52abxirar48ar076m6wkk2vbad"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
-    (inputs (list zlib sqlite proj netcdf gdal))
+    (inputs (list zlib
+                  sqlite
+                  proj
+                  netcdf
+                  gdal
+                  curl))
     (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/appelmar/gdalcubes_R")
@@ -25170,6 +25164,7 @@ Gaussian process software, see Erickson et al. (2018)
                              r-rlang
                              r-lifecycle
                              r-fields))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/lance-waller-lab/gateR")
     (synopsis
      "Flow/Mass Cytometry Gating via Spatial Kernel Density Estimation")
@@ -25320,7 +25315,7 @@ likelihood method and the Hessian matrix.")
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table r-aiccmodavg))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=gasfluxes")
     (synopsis "Greenhouse Gas Flux Calculation from Chamber Measurements")
     (description
@@ -26399,6 +26394,7 @@ the characteristic function.")
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolveapi r-kappalab r-ineq r-gtools
                              r-combinat))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=GameTheory")
     (synopsis "Cooperative Game Theory")
     (description
@@ -26518,7 +26514,7 @@ copulas.")
     (properties `((upstream-name . "gamclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-randomforest r-latticeextra r-lattice))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-bookdown))
     (home-page "https://cran.r-project.org/package=gamclass")
     (synopsis
      "Functions and Data for a Course on Modern Regression and Classification")
@@ -27130,7 +27126,7 @@ in the original data.")
     (properties `((upstream-name . "g3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-jsonlite r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/G3viz/g3viz")
     (synopsis
      "Interactively Visualize Genetic Mutation Data using a Lollipop-Diagram")

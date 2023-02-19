@@ -12,6 +12,7 @@
   #:use-module (gnu packages fontutils)
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bash)
@@ -352,6 +353,7 @@ species distribution modeling.")
                              r-lattice
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-hyperspec.github.io/hyperSpec/")
     (synopsis
      "Work with Hyperspectral Data, i.e. Spectra + Meta Information (Spatial, Time, Concentration, ...)")
@@ -1033,7 +1035,7 @@ and accompanying documentation by McKay and Fischenich (2011,
                              r-purrr
                              r-gtools
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/EdM44/hydraulics")
     (synopsis "Basic Pipe and Open Channel Hydraulics")
     (description
@@ -2101,7 +2103,7 @@ performance.")
                              r-magrittr
                              r-desolve
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page
      "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
     (synopsis "High-Throughput Toxicokinetics")
@@ -2399,6 +2401,7 @@ obsolete are not included.")
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shinyjqui r-shinyace r-shiny
                              r-glue))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/html2R")
     (synopsis "Convert 'HTML' to 'R' with a 'Shiny' App")
     (description
@@ -3394,7 +3397,7 @@ imputations are needed, following the work of von Hippel (2020)
     (properties `((upstream-name . "howler")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ashbaldry/howler")
     (synopsis "'Shiny' Extension of 'howler.js'")
     (description
@@ -3752,7 +3755,7 @@ and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
                              r-rcpp
                              r-questionr
                              r-mass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=hopit")
     (synopsis
      "Hierarchical Ordered Probit Models with Application to Reporting Heterogeneity")
@@ -4392,6 +4395,7 @@ current system time and the system time when the timer was started.")
                              r-bayeslogit
                              r-ape
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page
      "https://www.helsinki.fi/en/researchgroups/statistical-ecology/software/hmsc")
     (synopsis "Hierarchical Model of Species Communities")
@@ -5695,7 +5699,6 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
                 "02zqzy7nv5il1da9h2kf9c87yzbnww0kmywbjsbhfp4zp98xki84"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-tibble r-rlang r-rcpp r-r6 r-bh))
     (home-page "https://cran.r-project.org/package=hipread")
     (synopsis "Read Hierarchical Fixed Width Files")
@@ -6251,7 +6254,7 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
                              r-lpsolveapi
                              r-fitheavytail
                              r-ecosolver))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://github.com/dppalomar/highOrderPortfolios")
     (synopsis
      "Design of High-Order Portfolios Including Skewness and Kurtosis")
@@ -6462,6 +6465,7 @@ as zwl_test() in this package, provide a reliable and powerful test.")
                              r-dplyr
                              r-broom
                              r-assertthat))
+    (native-inputs (list esbuild))
     (home-page "https://jkunst.com/highcharter/")
     (synopsis "Wrapper for the 'Highcharts' Library")
     (description
@@ -6924,7 +6928,7 @@ other useful tools (read for more description: Amini et al., 2022
     (properties `((upstream-name . "HhP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HhP")
     (synopsis "Hierarchical Heterogeneity Analysis via Penalization")
     (description
@@ -7073,6 +7077,7 @@ included in the scripts directory of the package.")
                 "1lxmbl8jn54j1m91yr5dyr1wx4bsvq9pr3896hav78v465bhr4k5"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=hgwrr")
     (synopsis "Hierarchical and Geographically Weighted Regression")
@@ -7455,7 +7460,7 @@ lost nor inappropriately cut.")
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
     (propagated-inputs (list r-bittermelon))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/trevorld/hexfont")
     (synopsis "'GNU Unifont' Hex Fonts")
     (description
@@ -7803,7 +7808,7 @@ fast update functions when adding new observations.")
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HeteroGGM")
     (synopsis "Gaussian Graphical Model-Based Heterogeneity Analysis")
     (description
@@ -9082,7 +9087,7 @@ Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
                              r-dplyr
                              r-broom
                              r-boruta))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/niaid/HDStIM")
     (synopsis "High Dimensional Stimulation Immune Mapping ('HDStIM')")
     (description
@@ -10178,7 +10183,7 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
     (properties `((upstream-name . "hchinamap")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/czxa/hchinamap")
     (synopsis "Mapping China and Its Provinces")
     (description
@@ -11256,6 +11261,7 @@ measurements at all levels.  Webpage provided at:
                 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
+    (native-inputs (list))
     (home-page "https://gitlab.com/fvafrCU/HandTill2001")
     (synopsis "Multiple Class Area under ROC Curve")
     (description

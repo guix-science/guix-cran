@@ -6,9 +6,9 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -294,7 +294,7 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-rjson r-rcpp r-knitr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/Non-Contradiction/JuliaCall")
     (synopsis "Seamless Integration Between R and 'Julia'")
     (description
@@ -366,6 +366,7 @@ JavaScript juice library.")
     (properties `((upstream-name . "juicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=juicr")
     (synopsis
      "Automated and Manual Extraction of Numerical Data from Scientific Images")
@@ -395,6 +396,7 @@ R-independent extraction reports as fully-embedded .html records.")
                              r-readxl
                              r-dplyr
                              r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=jubilee")
     (synopsis
      "Forecasting Long-Term Growth of the U.S. Stock Market and Business Cycles")
@@ -539,6 +541,7 @@ Golden Section Search Method for Numerical Optimization\",
                              r-htmltools
                              r-fontawesome
                              r-base64enc))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/jsTreeR")
     (synopsis "Wrapper of the JavaScript Library 'jsTree'")
     (description
@@ -565,7 +568,7 @@ folders, and a Shiny module allowing to navigate in the server side file system.
     (properties `((upstream-name . "jsTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/yonicd/jsTree")
     (synopsis "Create Interactive Trees with the 'jQuery' 'jsTree' Plugin")
     (description
@@ -773,6 +776,7 @@ format for data dissemination.")
     (properties `((upstream-name . "jsonld")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-jsonlite r-curl))
+    (native-inputs (list esbuild))
     (home-page "https://docs.ropensci.org/jsonld")
     (synopsis "JSON for Linking Data")
     (description
@@ -1100,7 +1104,7 @@ lines.  This is useful to test the code.")
     (properties `((upstream-name . "js")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/jeroen/js")
     (synopsis "Tools for Working with JavaScript in R")
     (description
@@ -2324,6 +2328,7 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
     (properties `((upstream-name . "jmcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-roptim r-rcpparmadillo r-rcpp r-formula))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ypan1988/jmcm/")
     (synopsis "Joint Mean-Covariance Models using 'Armadillo' and S4")
     (description
@@ -2736,7 +2741,7 @@ longitudinal data.")
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcolorbrewer r-markdown r-knitr
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rcolorbrewer r-knitr r-ggplot2))
     (home-page "https://github.com/JGCRI/jgcricolors")
     (synopsis "Manage 'JGCRI' Color Palettes")
     (description
@@ -2943,6 +2948,7 @@ Science.")
     (properties `((upstream-name . "Jdmbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-igraph r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Jdmbs")
     (synopsis
      "Monte Carlo Option Pricing Algorithms for Jump Diffusion Models with Correlational Companies")
@@ -3736,7 +3742,6 @@ estimators.")
                 "1cslrl2cvcpi2kisb2plkz8c3wfxkbkf816nnyb06k4mv3gy4r5d"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-zlibbioc
                              r-rhtslib
                              r-rcppprogress

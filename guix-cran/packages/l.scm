@@ -10,13 +10,13 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -488,6 +488,7 @@ environmental covariates.")
                              r-deoptim
                              r-data-table
                              r-bbmle))
+    (native-inputs (list r-r-rsp))
     (home-page "https://CRAN.R-project.org/package=Luminescence")
     (synopsis "Comprehensive Luminescence Dating Data Analysis")
     (description
@@ -801,7 +802,7 @@ Methods are given for loglikelihood computation, forecasting and simulation.")
                              r-interval
                              r-icens
                              r-icenreg))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=LTRCtrees")
     (synopsis
      "Survival Trees to Fit Left-Truncated and Right-Censored and Interval-Censored Survival Data")
@@ -3530,48 +3531,6 @@ The functions methodology is based on the book \"Bayesian Approaches in Oncology
 Using R and OpenBUGS\" by Bhattacharjee A (2020) <doi:10.1201/9780429329449-14>.")
     (license license:gpl3)))
 
-(define-public r-longdat
-  (package
-    (name "r-longdat")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LongDat" version))
-              (sha256
-               (base32
-                "1sqfmdv5agyvlw1y3yiv8kxi1040gq75qj4ln1jgb9lsmhdlfpyd"))))
-    (properties `((upstream-name . "LongDat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rstatix
-                             r-rlang
-                             r-reshape2
-                             r-patchwork
-                             r-mass
-                             r-magrittr
-                             r-lme4
-                             r-glmmtmb
-                             r-ggplot2
-                             r-emmeans
-                             r-effsize
-                             r-dplyr
-                             r-car
-                             r-bestnormalize))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CCY-dev/LongDat")
-    (synopsis
-     "Tool for 'Covariate'-Sensitive Longitudinal Analysis on 'omics' Data")
-    (description
-     "This tool takes longitudinal dataset as input and analyzes if there is
-significant change of the features over time (a proxy for treatments), while
-detects and controls for covariates simultaneously.  LongDat is able to take in
-several data types as input, including count, proportion, binary, ordinal and
-continuous data.  The output table contains p values, effect sizes and
-covariates of each feature, making the downstream analysis easy.")
-    (license license:gpl2)))
-
 (define-public r-longcateda
   (package
     (name "r-longcateda")
@@ -4031,6 +3990,7 @@ distribution and calculate the density, distribution and quantile functions.")
     (properties `((upstream-name . "logKDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=logKDE")
     (synopsis
      "Computing Log-Transformed Kernel Density Estimates for Positive Data")
@@ -5709,7 +5669,7 @@ model inference feature through simulation and games.")
     (properties `((upstream-name . "lmvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik r-matrixcalc r-matrix))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=lmvar")
     (synopsis "Linear Regression with Non-Constant Variances")
     (description
@@ -6031,6 +5991,7 @@ dependence structures.")
                              r-ggplot2
                              r-emmeans
                              r-copula))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/LMMstar")
     (synopsis "Repeated Measurement Models for Discrete Times")
     (description
@@ -6893,6 +6854,7 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
     (properties `((upstream-name . "littler")))
     (build-system r-build-system)
     (inputs (list))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/eddelbuettel/littler")
     (synopsis "R at the Command-Line via 'r'")
     (description
@@ -7078,6 +7040,7 @@ default values to be inherited from another list.")
     (properties `((upstream-name . "listviewer")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-htmlwidgets r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/timelyportfolio/listviewer")
     (synopsis "'htmlwidget' for Interactive Views of R Lists")
     (description
@@ -7734,6 +7697,7 @@ SIAM/ASA Journal on Uncertainty Quantification, 6(3): 1151-1171,
     (properties `((upstream-name . "linkcomm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-igraph r-dynamictreecut))
+    (native-inputs (list r-r-rsp))
     (home-page "https://alextkalinka.github.io/linkcomm/")
     (synopsis
      "Tools for Generating, Visualizing, and Analysing Link Communities in Networks")
@@ -8735,6 +8699,7 @@ correlated to fit a predefined correlation matrix.")
                              r-plyr
                              r-gridextra
                              r-ggplot2))
+    (native-inputs (list))
     (home-page "http://jason.bryer.org/likert")
     (synopsis "Analysis and Visualization Likert Items")
     (description
@@ -9994,6 +9959,7 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
                              r-forecast
                              r-foreach
                              r-e1071))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=lfl")
     (synopsis "Linguistic Fuzzy Logic")
     (description
@@ -10211,6 +10177,7 @@ label.")
     (properties `((upstream-name . "lexRankr")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowballc r-rcpp r-igraph))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AdamSpannbauer/lexRankr/")
     (synopsis "Extractive Summarization of Text with the LexRank Algorithm")
     (description
@@ -11087,13 +11054,13 @@ on \\url{http://qua.st/}.")
 (define-public r-learningtower
   (package
     (name "r-learningtower")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "learningtower" version))
               (sha256
                (base32
-                "1q1k7wlklnxbb2yw3l96l7ha73vj3l3bnd4wlh2avmknqk2d8xcq"))))
+                "041hx9a1jq5aw6gbgb1xj8pl9dhc3kb85cx670nkc3ngaj4j2g17"))))
     (properties `((upstream-name . "learningtower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-dplyr))
@@ -11255,6 +11222,7 @@ explains non expert users how hierarchical clustering algorithms work.")
     (build-system r-build-system)
     (propagated-inputs (list r-opencpu r-jpeg r-foreach r-doparallel
                              r-conicfit))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=LeArEst")
     (synopsis
      "Border and Area Estimation of Data Measured with Additive Error")
@@ -11516,6 +11484,7 @@ htmlwidgets'.")
                              r-htmlwidgets
                              r-htmltools
                              r-dplyr))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/r-spatial/leafpm")
     (synopsis "Leaflet Map Plugin for Drawing and Editing")
     (description
@@ -11566,7 +11535,7 @@ the geojson data for provinces, cities in China.")
     (properties `((upstream-name . "leaflet.opacity")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=leaflet.opacity")
     (synopsis "Opacity Controls for Leaflet Maps")
     (description
@@ -11607,7 +11576,7 @@ plugin.  Adds controls to the leaflet map for adjusting the opacity of a layer."
     (properties `((upstream-name . "leaflet.minicharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=leaflet.minicharts")
     (synopsis "Mini Charts for Interactive Maps")
     (description
@@ -11630,6 +11599,7 @@ single map.")
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-leaflet r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://trafficonese.github.io/leaflet.extras2/")
     (synopsis "Extra Functionality for 'leaflet' Package")
     (description
@@ -11746,6 +11716,7 @@ WebGl'.")
                              r-htmltools
                              r-geojsonsf
                              r-base64enc))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/r-spatial/leafem")
     (synopsis "'leaflet' Extensions for 'mapview'")
     (description
@@ -11775,7 +11746,7 @@ agnostic function to add points, lines, polygons to a map.")
                              r-magrittr
                              r-leaflet
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-shinycssloaders r-knitr))
     (home-page "https://cran.r-project.org/package=leafdown")
     (synopsis "Provides Drill Down Functionality for 'leaflet' Choropleths")
     (description
@@ -12161,6 +12132,7 @@ sample).")
                 "0sm2hy1bqp4z78vgd7m4a307mzqz8jwfwdyga683yr2jk5grs9yl"))))
     (properties `((upstream-name . "ldbounds")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ldbounds")
     (synopsis "Lan-DeMets Method for Group Sequential Boundaries")
     (description
@@ -13565,6 +13537,7 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
                              r-lava
                              r-ggplot2
                              r-doparallel))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/lavaSearch2")
     (synopsis "Tools for Model Specification in the Latent Variable Framework")
     (description
@@ -14257,7 +14230,6 @@ Council (2006, ISBN:978-0-309-09156-5).")
                 "0csijzlxajj0rh24w5n7fs6ss301zr6zfv5khyq4a9g437bwhc2i"))))
     (properties `((upstream-name . "largeList")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Yuchun-Zhang/R_largeList")
     (synopsis "Serialization Interface for Large List Objects")
@@ -14426,7 +14398,7 @@ in ArXiv (http://arxiv.org/abs/1405.7107).")
                              r-r-matlab
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/KopfLab/lans2r")
     (synopsis "Work with Look at NanoSIMS Data in R")
     (description
@@ -14491,7 +14463,7 @@ statistics using R'', Cambridge University Press, 2008.")
     (properties `((upstream-name . "languagelayeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-curl r-attempt))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ColinFay/languagelayer")
     (synopsis "Access the 'languagelayer' API")
     (description
@@ -14512,7 +14484,7 @@ powerful language detection API.")
     (properties `((upstream-name . "langevitour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-htmlwidgets r-assertthat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://logarithmic.net/langevitour/")
     (synopsis "Langevin Tour")
     (description
@@ -14545,49 +14517,6 @@ R, or included in a self-contained Rmarkdown document, or used in a Shiny app.")
      "Estimate drift and diffusion functions from time series and generate synthetic
 time series from given drift and diffusion coefficients.")
     (license license:gpl2+)))
-
-(define-public r-landsepi
-  (package
-    (name "r-landsepi")
-    (version "1.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "landsepi" version))
-              (sha256
-               (base32
-                "1cw3aia8jwnwl2zxm65p6jjaffmlpr1aqc5aa96qqcmjy6bg26an"))))
-    (properties `((upstream-name . "landsepi")))
-    (build-system r-build-system)
-    (inputs (list gsl))
-    (propagated-inputs (list r-testthat
-                             r-splancs
-                             r-sp
-                             r-sf
-                             r-rsqlite
-                             r-rcpp
-                             r-mvtnorm
-                             r-matrix
-                             r-foreach
-                             r-fields
-                             r-doparallel
-                             r-desolve
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://csiro-inra.pages.biosp.inrae.fr/landsepi/")
-    (synopsis "Landscape Epidemiology and Evolution")
-    (description
-     "This package provides a stochastic, spatially-explicit, demo-genetic model
-simulating the spread and evolution of a plant pathogen in a heterogeneous
-landscape to assess resistance deployment strategies.  It is based on a spatial
-geometry for describing the landscape and allocation of different cultivars, a
-dispersal kernel for the dissemination of the pathogen, and a SEIR
-('Susceptible-Exposed-Infectious-Removedâ) structure with a discrete time
-step.  It provides a useful tool to assess the performance of a wide range of
-deployment options with respect to their epidemiological, evolutionary and
-economic outcomes.  Loup Rimbaud, Julien PapaÃ¯x, Jean-FranÃ§ois Rey, Luke G
-Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-landscapetools
   (package
@@ -14818,27 +14747,6 @@ regression.  To find out more about the methods in this package, please see
 using a landmark estimation approach.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-lamw
-  (package
-    (name "r-lamw")
-    (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lamW" version))
-              (sha256
-               (base32
-                "05b37kx4jpszx2hkm47d7cjkf8544f7r8x26q68yp9c6zqm9gbc3"))))
-    (properties `((upstream-name . "lamW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpp))
-    (home-page "https://github.com/aadler/lamW")
-    (synopsis "Lambert-W Function")
-    (description
-     "This package implements both real-valued branches of the Lambert-W function
-(Corless et al, 1996) <doi:10.1007/BF02124750> without the need for installing
-the entire GSL.")
-    (license license:bsd-2)))
-
 (define-public r-lamme
   (package
     (name "r-lamme")
@@ -14857,42 +14765,6 @@ the entire GSL.")
     (description
      "Log-analytic methods intended for testing multiplicative effects.")
     (license license:gpl3)))
-
-(define-public r-lambertw
-  (package
-    (name "r-lambertw")
-    (version "0.6.7-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LambertW" version))
-              (sha256
-               (base32
-                "0cdrq2nrvji8l5blswkffymm7cbjk5jzzx16js2a516cm3gjwxk4"))))
-    (properties `((upstream-name . "LambertW")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-mass
-                             r-lamw
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LambertW")
-    (synopsis
-     "Probabilistic Models to Analyze and Gaussianize Heavy-Tailed, Skewed Data")
-    (description
-     "Lambert W x F distributions are a generalized framework to analyze skewed,
-heavy-tailed data.  It is based on an input/output system, where the output
-random variable (RV) Y is a non-linearly transformed version of an input RV X ~
-F with similar properties as X, but slightly skewed (heavy-tailed).  The
-transformed RV Y has a Lambert W x F distribution.  This package contains
-functions to model and analyze skewed, heavy-tailed data the Lambert Way:
-simulate random samples, estimate parameters, compute quantiles, and plot/ print
-results nicely.  The most useful function is Gaussianize', which works similarly
-to scale', but actually makes the data Gaussian.  A do-it-yourself toolkit
-allows users to define their own Lambert W x MyFavoriteDistribution and use it
-in their analysis right away.")
-    (license license:gpl2+)))
 
 (define-public r-lambdr
   (package
@@ -15195,7 +15067,7 @@ provided.  For details and tutorial, see Gramacy (2016
                              r-lazyeval
                              r-dplyr
                              r-curl))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/cont-limno/LAGOSNE")
     (synopsis
      "Interface to the Lake Multi-Scaled Geospatial and Temporal Database")

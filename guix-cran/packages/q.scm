@@ -9,6 +9,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
@@ -535,7 +536,7 @@ or any function defined by the user) for multiple groups.")
                              r-fpcompare
                              r-data-table
                              r-backports))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://quickplot.predictiveecology.org")
     (synopsis "System of Plotting Optimized for Speed and Modularity")
     (description
@@ -964,7 +965,7 @@ changes.")
                              r-processx
                              r-later
                              r-jsonlite))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/quarto-dev/quarto-r")
     (synopsis "R Interface to 'Quarto' Markdown Publishing System")
     (description
@@ -1728,7 +1729,7 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
                 "1c7b7lcyq2l46sslk185r6xfh5fb35z9qihrhnh294sw1k52bffa"))))
     (properties `((upstream-name . "qualvar")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "http://joelgombin.github.io/qualvar/")
     (synopsis
      "Implements Indices of Qualitative Variation Proposed by Wilcox (1973)")
@@ -2344,6 +2345,7 @@ Kao (2021) <doi: 10.1093/g3journal/jkab056>.")
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://kbroman.org/qtlcharts/")
     (synopsis "Interactive Graphics for QTL Experiments")
     (description
@@ -2749,6 +2751,7 @@ coefficients.  This package is strongly inspired by the spray package.")
     (properties `((upstream-name . "qsplines")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-onion r-bh))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/qsplines")
     (synopsis "Quaternions Splines")
     (description
@@ -3298,6 +3301,7 @@ normal or uniform distribution.")
     (properties `((upstream-name . "qrage")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=qrage")
     (synopsis "Tools that Create D3 JavaScript Force Directed Graph from R")
     (description
@@ -3353,7 +3357,7 @@ configurations.")
                              r-lattice
                              r-knitr
                              r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-prettydoc r-knitr r-bookdown))
     (home-page "https://github.com/jhmaindonald/qra")
     (synopsis "Quantal Response Analysis for Dose-Mortality Data")
     (description
@@ -4370,7 +4374,7 @@ Please refer to the vignette for additional details and references.")
                              r-compositional
                              r-bootstrap
                              r-boot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://CRAN.R-project.org/package=QFASA")
     (synopsis "Quantitative Fatty Acid Signature Analysis")
     (description
@@ -5021,6 +5025,7 @@ diversity of the cases under analysis within and across partitions (see
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-venn r-shiny r-admisc))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=QCA")
     (synopsis "Qualitative Comparative Analysis")
     (description

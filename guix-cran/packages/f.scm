@@ -12,6 +12,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages image-processing)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
@@ -430,6 +431,7 @@ value phi-wabl given a sample of trapezoidal fuzzy numbers.")
     (properties `((upstream-name . "FuzzyStatProb")))
     (build-system r-build-system)
     (propagated-inputs (list r-multinomialci r-fuzzynumbers r-deoptim))
+    (native-inputs (list r-r-rsp))
     (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
     (synopsis
      "Fuzzy Stationary Probabilities from a Sequence of Observations of an Unknown Markov Chain")
@@ -715,6 +717,7 @@ provided in the \"inst/examples\" folder.")
     (properties `((upstream-name . "FuzzyLP")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi-plugin-glpk r-roi r-fuzzynumbers))
+    (native-inputs (list r-r-rsp))
     (home-page "https://decsai.ugr.es/~pjvi")
     (synopsis "Fuzzy Linear Programming")
     (description
@@ -964,6 +967,7 @@ Colorado State University Vice President for Research.")
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
                              r-cli))
+    (native-inputs (list r-future-tests))
     (home-page "https://future.tests.futureverse.org")
     (synopsis "Test Suite for 'Future API' Backends")
     (description
@@ -987,6 +991,7 @@ package tests and in Continuous Integration (CI) pipelines.")
     (properties `((upstream-name . "future.callr")))
     (build-system r-build-system)
     (propagated-inputs (list r-future r-callr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://future.callr.futureverse.org")
     (synopsis "Future API for Parallel Processing using 'callr'")
     (description
@@ -1011,6 +1016,7 @@ processes.")
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallelly r-future r-batchtools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://future.batchtools.futureverse.org")
     (synopsis
      "Future API for Parallel and Distributed Processing using 'batchtools'")
@@ -1258,7 +1264,7 @@ so on.")
                              r-kendall
                              r-jmisc
                              r-dbscan))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=funtimes")
     (synopsis "Functions for Time Series Analysis")
     (description
@@ -1878,7 +1884,7 @@ that have executable code and function definitions only functions are sourced.")
     (properties `((upstream-name . "functClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-multcompview r-clustercrit))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://gitlab.com/ecosols/functclust/")
     (synopsis "Functional Clustering of Redundant Components of a System")
     (description
@@ -3151,6 +3157,7 @@ exploratory data analysis.")
     (properties `((upstream-name . "FSDAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-kyotil))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=FSDAM")
     (synopsis "Forward Stepwise Deep Autoencoder-Based Monotone NLDR")
     (description
@@ -4339,6 +4346,7 @@ Computational Statistics & Data Analysis, Volume 70, 2014, Pages 88-100, ISSN
                 "0biv6j31qi0f4i063ygmbp6v6ws1nxijn5kyhg5sz1rnbr0msl28"))))
     (properties `((upstream-name . "frbs")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "http://sci2s.ugr.es/dicits/software/FRBS")
     (synopsis
      "Fuzzy Rule-Based Systems for Classification and Regression Tasks")
@@ -5878,7 +5886,7 @@ supported.")
                 "066hpd5jfs8nfd5fbxh049apd93pz8ibzr2kqlssx4c9fziwbg40"))))
     (properties `((upstream-name . "forplo")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-lattice r-knitr))
     (home-page "https://cran.r-project.org/package=forplo")
     (synopsis "Flexible Forest Plots")
     (description
@@ -6207,6 +6215,7 @@ hierarchy of data tree, and reform the structure of data tree.")
                              r-knitr
                              r-igraph
                              r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=forestRK")
     (synopsis
      "Implements the Forest-R.K. Algorithm for Classification Problems")
@@ -6351,6 +6360,7 @@ Husch (2016). <doi:10.1002/9781118902028>.")
     (properties `((upstream-name . "forestinventory")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-plyr r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=forestinventory")
     (synopsis
      "Design-Based Global and Small-Area Estimations for Multiphase Forest Inventories")
@@ -6822,6 +6832,7 @@ supported to evaluate model accuracy.")
                              r-dt
                              r-config
                              r-colourpicker))
+    (native-inputs (list esbuild))
     (home-page "https://www.promidat.com")
     (synopsis "Time Series Forecast System")
     (description
@@ -7213,7 +7224,7 @@ Population Health center.  References : Reshef et al. (2011)
     (properties `((upstream-name . "fomantic.plus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny-semantic r-shiny r-jsonlite r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ashbaldry/fomantic.plus")
     (synopsis "Add Extra 'Fomantic UI' Components to 'shiny.semantic'")
     (description
@@ -8036,6 +8047,7 @@ ISBN:9780080557816).")
                 "1ssq90fqm4p0j4g171mx208lmgz3hkxs8hgsffkawpmxgacs0gh1"))))
     (properties `((upstream-name . "fluxweb")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://www.biorxiv.org/content/early/2017/12/06/229450")
     (synopsis "Estimate Energy Fluxes in Food Webs")
     (description
@@ -8571,6 +8583,7 @@ with the convenience of htmlwidgets'.")
     (properties `((upstream-name . "flipdownr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmltools r-glue r-checkmate))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/flipdownr")
     (synopsis
      "Implement a Countdown in 'RMarkdown' Documents and 'shiny' Applications")
@@ -9591,6 +9604,7 @@ topic: <https://sdmx.org/wp-content/uploads/CL_OBS_STATUS_v2_1.docx>,
     (properties `((upstream-name . "flacco")))
     (build-system r-build-system)
     (propagated-inputs (list r-mlr r-checkmate r-bbmisc))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/kerschke/flacco")
     (synopsis
      "Feature-Based Landscape Analysis of Continuous and Constrained Optimization Problems")
@@ -10266,7 +10280,7 @@ Bhattacharya et al. (2011) method for path integration
     (properties `((upstream-name . "fitHeavyTail")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-icsnp r-ghyp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://CRAN.R-project.org/package=fitHeavyTail")
     (synopsis "Mean and Covariance Matrix Estimation under Heavy Tails")
     (description
@@ -10572,7 +10586,7 @@ by Morozov et al. (2019) <doi:10.1093/conphys/coz003>.")
                              r-geiger
                              r-fishtree
                              r-ape))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=FishPhyloMaker")
     (synopsis "Phylogenies for a List of Finned-Ray Fishes")
     (description
@@ -11727,39 +11741,6 @@ and missing SNPs can be specified.  For Genome-wide association study (GWAS),
 disease status can be set in desired level according risk ratio.")
     (license license:expat)))
 
-(define-public r-filesstrings
-  (package
-    (name "r-filesstrings")
-    (version "3.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "filesstrings" version))
-              (sha256
-               (base32
-                "1jl3jhkdjx5x00kllnkpvrlpsmzsvlgd6vhzdavd39zx4jzwjxw3"))))
-    (properties `((upstream-name . "filesstrings")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-stringr
-                             r-stringi
-                             r-strex
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rorynolan/filesstrings")
-    (synopsis "Handy File and String Manipulation")
-    (description
-     "This started out as a package for file and string manipulation.  Since then, the
-fs and strex packages emerged, offering functionality previously given by this
-package (but it's done better in these new ones).  Those packages have hence
-almost pushed filesstrings into extinction.  However, it still has a small
-number of unique, handy file manipulation functions which can be seen in the
-vignette.  One example is a function to remove spaces from all file names in a
-directory.")
-    (license license:gpl3)))
-
 (define-public r-files
   (package
     (name "r-files")
@@ -12286,6 +12267,7 @@ in C++ for scalability.  fido replaces the previous package stray'.")
                              r-htmltools
                              r-fs
                              r-askpass))
+    (native-inputs (list esbuild))
     (home-page "https://mattwarkentin.github.io/fidelius/")
     (synopsis "Browser-Side Password-Protected HTML Documents")
     (description
@@ -16351,13 +16333,13 @@ you can expect a factor 80X speedup.")
 (define-public r-fastqcr
   (package
     (name "r-fastqcr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastqcr" version))
               (sha256
                (base32
-                "12x3lkg5zc4ckyg4x3xxqb779yhrr0fys7asf5b8shz49f86fmm9"))))
+                "15pzjvg1dqkclg28hxyw6xacwk36xkrimbbhcxh5s2hws0jrwqk5"))))
     (properties `((upstream-name . "fastqcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16366,12 +16348,13 @@ you can expect a factor 80X speedup.")
                              r-scales
                              r-rvest
                              r-rmarkdown
+                             r-rlang
                              r-readr
                              r-magrittr
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
-    (home-page "http://www.sthda.com/english/rpkgs/fastqcr/")
+    (home-page "https://rpkgs.datanovia.com/fastqcr/index.html")
     (synopsis "Quality Control of Sequencing Data")
     (description
      "FASTQC is the most widely used tool for evaluating the quality of high
@@ -19244,6 +19227,7 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
     (properties `((upstream-name . "fabricerin")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-glue))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/fabricerin")
     (synopsis "Create Easily Canvas in 'shiny' and 'RMarkdown' Documents")
     (description

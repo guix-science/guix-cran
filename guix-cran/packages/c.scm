@@ -7,6 +7,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
@@ -17,11 +18,11 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages networking)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages photo)
@@ -299,7 +300,7 @@ CYSTINET, the European Network on taeniosis/cysticercosis, COST ACTION TD1302.")
     (properties `((upstream-name . "cyphr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium r-openssl r-getpass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/ropensci/cyphr")
     (synopsis "High Level Encryption Wrappers")
     (description
@@ -390,7 +391,7 @@ also contains methods for visualizing movement data and copulas.")
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-graph
                              r-base64enc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=cyjShiny")
     (synopsis "Cytoscape.js Shiny Widget (cyjShiny)")
     (description
@@ -2055,6 +2056,7 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
                              r-htmlwidgets
                              r-htmltools
                              r-base64enc))
+    (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=cubeview")
     (synopsis "View 3D Raster Cubes Interactively")
     (description
@@ -2456,6 +2458,7 @@ data.")
                              r-dplyr
                              r-curl
                              r-clipr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ctrdata")
     (synopsis "Retrieve and Analyze Clinical Trials in Public Registers")
     (description
@@ -2716,7 +2719,7 @@ model fitting possible within a Poisson GLM framework.")
     (properties `((upstream-name . "ctmcd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-expm r-coda))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=ctmcd")
     (synopsis
      "Estimating the Parameters of a Continuous-Time Markov Chain from Discrete-Time Data")
@@ -3027,7 +3030,7 @@ placing a YAML header on top of a regular CSV.")
                              r-magrittr
                              r-jsonlite
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://robsteranium.github.io/csvwr/")
     (synopsis "Read and Write CSV on the Web (CSVW) Tables and Metadata")
     (description
@@ -3981,6 +3984,7 @@ Conicyt-Regional R08C1002 is gratefully acknowledged.")
                              r-lambertw
                              r-ksamples
                              r-gmp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CryptRndTest")
     (synopsis "Statistical Tests for Cryptographic Randomness")
     (description
@@ -5815,13 +5819,13 @@ team performances.")
 (define-public r-cricketdata
   (package
     (name "r-cricketdata")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cricketdata" version))
               (sha256
                (base32
-                "1w9bikx06brq5d02nmqljdx8yhxf8gqlkwr1xkg10zjiclv6kn0r"))))
+                "1q7c8ljc6qhggk854mwg8hxdy1b5rih9qxn5j5fk8cj4qs89rgw8"))))
     (properties `((upstream-name . "cricketdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5835,7 +5839,7 @@ team performances.")
                              r-lubridate
                              r-janitor
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "http://pkg.robjhyndman.com/cricketdata/")
     (synopsis "International Cricket Data")
     (description
@@ -5957,6 +5961,7 @@ Default Swap - CDS - spreads) and price Credit Default Swaps - CDS.")
                 "19l3vsjxd9lvaf67l61x9l0j4y124p93dfqzw7rl1ya5sxbdzs7a"))))
     (properties `((upstream-name . "credsubs")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=credsubs")
     (synopsis "Credible Subsets")
     (description
@@ -6954,6 +6959,7 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
                              r-rstudioapi
                              r-rmarkdown
                              r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/stla/cppcheckR")
     (synopsis "Check 'C' and 'C++' Files using 'Cppcheck'")
     (description
@@ -7004,6 +7010,7 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
                              r-mathjaxr
                              r-ggplot2
                              r-crops))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=cpop")
     (synopsis
      "Detection of Multiple Changes in Slope in Univariate Time-Series")
@@ -8998,6 +9005,7 @@ highly variable features in RNA-Seq dataset.")
     (properties `((upstream-name . "CountsEPPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CountsEPPM")
     (synopsis "Mean and Variance Modeling of Count Data")
     (description
@@ -9222,6 +9230,7 @@ distributions.  Rosenthal and Rubin (1994)
                              r-data-table
                              r-checkmate
                              r-bbotk))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/dandls/counterfactuals")
     (synopsis "Counterfactual Explanations")
     (description
@@ -9460,6 +9469,7 @@ to multi-species distribution models <arXiv:2201.13095>.")
                              r-ctsem
                              r-crayon
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/CoTiMA/CoTiMA")
     (synopsis "Continuous Time Meta-Analysis ('CoTiMA')")
     (description
@@ -10437,6 +10447,7 @@ correlations from two samples in a single correlation matrix or corrgram.")
     (build-system r-build-system)
     (propagated-inputs (list r-mmand r-foreach r-fields r-doparallel
                              r-colorspace))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=corr2D")
     (synopsis "Implementation of 2D Correlation Analysis in R")
     (description
@@ -10822,7 +10833,7 @@ German).")
                              r-ggplot2
                              r-dplyr
                              r-detectseparation))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/bryandmartin/corncob")
     (synopsis
      "Count Regression for Correlated Observations with the Beta-Binomial")
@@ -11156,6 +11167,7 @@ machines, or submitting grid engine jobs.")
     (properties `((upstream-name . "cordillera")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbscan))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Calculation of the OPTICS Cordillera")
     (description
@@ -11745,6 +11757,7 @@ adopted in particular.")
                              r-crs
                              r-cordillera
                              r-cmaes))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Cluster Optimized Proximity Scaling")
     (description
@@ -12115,7 +12128,7 @@ production programming problems.")
     (properties `((upstream-name . "CoopGame")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcdd r-gtools r-geometry))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=CoopGame")
     (synopsis "Important Concepts of Cooperative Game Theory")
     (description
@@ -12256,6 +12269,7 @@ Bioconductor.")
                              r-glue
                              r-clock
                              r-cli))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/r4ds/cookies")
     (synopsis "Use Browser Cookies with 'shiny'")
     (description
@@ -12508,16 +12522,17 @@ graphical files produced by R widgets.")
 (define-public r-convergeu
   (package
     (name "r-convergeu")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "convergEU" version))
               (sha256
                (base32
-                "0fi5pyh39h5ncj5rxdii8z8zlrw1613fkiina558k0kidnpbfbs2"))))
+                "0sml8ill3jbf5rf8vi8m74w8q67wsdj1askfn0vmfwr4mvadxsim"))))
     (properties `((upstream-name . "convergEU")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rmarkdown
@@ -12531,7 +12546,7 @@ graphical files produced by R widgets.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page
-     "<https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef18003en.pdf>")
+     "https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef18003en.pdf")
     (synopsis "Monitoring Convergence of EU Countries")
     (description
      "Indicators and measures by country and time describe what happens at economic
@@ -12539,9 +12554,8 @@ and social levels.  This package provides functions to calculate several
 measures of convergence after imputing missing values.  The automated
 downloading of Eurostat data, followed by the production of country fiches and
 indicator fiches, makes possible to produce automated reports.  The Eurofound
-report: Bisello, M., Eiffe, F., Dubois, H., Mascherini, M. (2019) \"Upward
-convergence in the EU: Concepts, measurements and indicators\"
-(<doi:10.2806/68012>), is a detailed presentation of convergence.")
+report (<doi:10.2806/68012>) \"Upward convergence in the EU: Concepts,
+measurements and indicators\", 2018, is a detailed presentation of convergence.")
     (license license:gpl3)))
 
 (define-public r-convergenceconcepts
@@ -13627,7 +13641,7 @@ the methods are general and useful for terrestrial systems as well.")
                              r-digest
                              r-crosstalk
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://rstudio.github.io/connectwidgets/")
     (synopsis "Organize and Curate Your Content Within 'Posit Connect'")
     (description
@@ -15037,7 +15051,7 @@ CNVs.  Brucker, A., et al. (2020) <doi:10.1101/666875>.")
     (properties `((upstream-name . "concstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/schneiderpy/concstats")
     (synopsis "Market Structure, Concentration and Inequality Measures")
     (description
@@ -15283,7 +15297,7 @@ concave polygon(s) for one or several set of points.")
                              r-igraph
                              r-dplyr
                              r-ape))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/tardipede/concatipede")
     (synopsis "Easy Concatenation of Fasta Sequences")
     (description
@@ -15684,6 +15698,7 @@ Zero-inflated CMP regression (Sellers & Raim, 2016)
                 "1373m324zq7f3wffb25ypjidvsxki0p64iv4qy8i887g4f8inq6q"))))
     (properties `((upstream-name . "CompModels")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=CompModels")
     (synopsis "Pseudo Computer Models for Optimization")
     (description
@@ -15844,6 +15859,7 @@ promotions.")
                              r-gparotation
                              r-boot
                              r-benchmarking))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Compind")
     (synopsis "Composite Indicators Functions")
     (description
@@ -16659,6 +16675,7 @@ and be free of commas (for that call).")
                              r-ggplot2
                              r-dplyr
                              r-coda))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=COMIX")
     (synopsis "Coarsened Mixtures of Hierarchical Skew Kernels")
     (description
@@ -16725,6 +16742,7 @@ etc.  More functions will be added later.")
     (properties `((upstream-name . "comf")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-plyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=comf")
     (synopsis "Models and Equations for Human Comfort Research")
     (description
@@ -18487,7 +18505,9 @@ Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
                 "0128x4qmln1ks7cqd5n22aw41f097lw785lw4ca80nyn2bz5jmqk"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcppgsl r-rcpp r-cubature))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ChaoranHu/coga")
     (synopsis "Convolution of Gamma Distributions")
     (description
@@ -20423,7 +20443,7 @@ students of the Center for Mathematical Research, Stankin, Moscow.")
     (properties `((upstream-name . "cmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-fields))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://bioimaginggroup.github.io/cmr/")
     (synopsis "Analysis of Cardiac Magnetic Resonance Images")
     (description
@@ -22888,7 +22908,7 @@ update time keeping data.")
                              r-ggplot2
                              r-forecast
                              r-chainladder))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/gpitt71/clmplus")
     (synopsis "Tool-Box of Chain Ladder Plus Models")
     (description
@@ -23328,7 +23348,7 @@ posterior predictive distributions derived from these references.")
                              r-crosstalk
                              r-clinutils
                              r-bookdown))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/openanalytics/clinDataReview")
     (synopsis "Clinical Data Review Tool")
     (description
@@ -23504,6 +23524,7 @@ statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
                              r-sp
                              r-rts
                              r-raster))
+    (native-inputs (list r-r-rsp))
     (home-page "https://r-gis.net/")
     (synopsis "Climate Change Metrics")
     (description
@@ -24230,6 +24251,7 @@ anything if needed.")
                 "1lm7k25j16p888xvd7rzzd3sb3namzjlpjn22xmmpzlzyl0h7dhk"))))
     (properties `((upstream-name . "cleandata")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/sherrisherry/cleandata")
     (synopsis
      "To Inspect and Manipulate Data; and to Keep Track of This Process")
@@ -24671,6 +24693,7 @@ analysis, applied to isotope data extracted from clams.")
     (properties `((upstream-name . "clampSeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stepr r-lowpassfilter))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=clampSeg")
     (synopsis "Idealisation of Patch Clamp Recordings")
     (description
@@ -25297,7 +25320,7 @@ as default models.")
                              r-dplyr
                              r-boot
                              r-arm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/jthaman/ciTools")
     (synopsis
      "Confidence or Prediction Intervals, Quantiles, and Probabilities for Statistical Models")
@@ -25781,6 +25804,7 @@ to calculate circular-circular and circular-linear distance correlations.")
     (properties `((upstream-name . "circletyper")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/etiennebacher/circletyper")
     (synopsis "Curve Text Elements in 'Shiny' Using 'CircleType.js'")
     (description "Enables curving text elements in Shiny apps.")
@@ -26390,6 +26414,7 @@ C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
     (properties `((upstream-name . "cicerone")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-r6 r-assertthat))
+    (native-inputs (list esbuild))
     (home-page "https://cicerone.john-coene.com/")
     (synopsis "Provide Tours of 'Shiny' Applications")
     (description "Provide step by step guided tours of Shiny applications.")
@@ -27204,6 +27229,7 @@ proteins.")
                              r-lme4
                              r-kyotil
                              r-boot))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=chngpt")
     (synopsis "Estimation and Hypothesis Testing for Threshold Regression")
     (description
@@ -27428,7 +27454,7 @@ nonparametric test.")
                              r-outliers
                              r-mass
                              r-lmtest))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/PCRuniversum/chipPCR")
     (synopsis "Toolkit of Helper Functions to Pre-Process Amplification Data")
     (description
@@ -30240,6 +30266,7 @@ The reference article for these datasets is Mayer and Zignago (2011)
     (properties `((upstream-name . "CePa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-igraph r-graph))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/jokergoo/CePa")
     (synopsis "Centrality-Based Pathway Enrichment")
     (description
@@ -30285,7 +30312,7 @@ analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
     (properties `((upstream-name . "CEOdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools r-stringr r-jsonlite r-haven r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://ceo.gencat.cat/ca/inici/")
     (synopsis
      "Datasets of the CEO (Centre d'Estudis d'Opinio) for Opinion Polls in Catalonia")
@@ -30794,7 +30821,7 @@ described in Rinnan and Lawler (2019) <doi:10.1111/ecog.03937>.")
     (properties `((upstream-name . "cencrne")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=cencrne")
     (synopsis
      "Consistent Estimation of the Number of Communities via Regularized Network Embedding")
@@ -31158,7 +31185,7 @@ EHR corpora and obtain clinical event dates: <https://cedars.io>.")
                              r-ggprism
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=CEDA")
     (synopsis "CRISPR Screen and Gene Expression Differential Analysis")
     (description
@@ -33149,7 +33176,7 @@ files.")
     (properties `((upstream-name . "causaloptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/sachsmc/causaloptim")
     (synopsis
      "An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects")
@@ -33358,6 +33385,7 @@ Augmented Inverse Propensity Weighted Estimator.\" Political Analysis.  18:
     (properties `((upstream-name . "causaleffect")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/santikka/causaleffect/")
     (synopsis
      "Deriving Expressions of Joint Interventional Distributions and Transport Formulas in Causal Models")
@@ -34619,6 +34647,7 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
                              r-cluster
                              r-animation
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://fbertran.github.io/Cascade/")
     (synopsis
      "Selection, Reverse-Engineering and Prediction in Cascade Networks")
@@ -35908,7 +35937,7 @@ et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS (2007)
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/neuhausi/canvasXpress")
     (synopsis "Visualization Package for CanvasXpress in R")
     (description
@@ -36352,6 +36381,7 @@ API <https://api.covid19tracker.ca>.")
                              r-ggplot2
                              r-generics
                              r-data-table))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jniedballa/camtrapR")
     (synopsis
      "Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses")
@@ -37773,7 +37803,7 @@ microarray expression data using C3NET.")
                              r-htmlwidgets
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/mrjoh3/c3")
     (synopsis "'C3.js' Chart Library")
     (description

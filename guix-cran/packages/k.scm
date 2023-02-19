@@ -8,8 +8,8 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -90,6 +90,7 @@ Transforms.")
                 "0sx8nw67pwy4flb01d5bhbzvxpc63h2b49ss2qz2abg46f2nnd74"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=kyotil")
     (synopsis
      "Utility Functions for Statistical Analysis Report Generation and Monte Carlo Studies")
@@ -515,44 +516,6 @@ to create contrast between groups.  This package provides a general interface
 for cluster sharpening along with several implementations based on different
 excision criteria.")
     (license license:expat)))
-
-(define-public r-ksgeneral
-  (package
-    (name "r-ksgeneral")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "KSgeneral" version))
-              (sha256
-               (base32
-                "0fxkykvkfdh492pzs7fs8x8qnkrr0v5hmvykr8x94lqhnmsr4axn"))))
-    (properties `((upstream-name . "KSgeneral")))
-    (build-system r-build-system)
-    (inputs (list fftw))
-    (propagated-inputs (list r-rcpp r-mass r-dgof))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/raymondtsr/KSgeneral")
-    (synopsis
-     "Computing P-Values of the K-S Test for (Dis)Continuous Null Distribution")
-    (description
-     "Computes a p-value of the one-sample two-sided (or one-sided, as a special case)
-Kolmogorov-Smirnov (KS) statistic, for any fixed critical level, and an
-arbitrary, possibly large sample size for a pre-specified purely discrete, mixed
-or continuous cumulative distribution function (cdf) under the null hypothesis.
-If a data sample is supplied, KSgeneral computes the p-value corresponding to
-the value of the KS test statistic computed based on the user provided data
-sample.  The package KSgeneral implements a novel, accurate and efficient method
-named Exact-KS-FFT, expressing the p-value as a double-boundary non-crossing
-probability for a homogeneous Poisson process, which is then efficiently
-computed using Fast Fourier Transform (FFT).  The package can also be used to
-compute and plot the complementary cdf of the KS statistic which is known to
-depend on the hypothesized distribution when the latter is discontinuous (i.e.
-purely discrete or mixed).  To cite this package in publication use: Dimitrina
-S. Dimitrova, Vladimir K. Kaishev, and Senren Tan.  Computing the
-Kolmogorov-Smirnov Distribution When the Underlying CDF is Purely Discrete,
-Mixed, or Continuous.  Journal of Statistical Software.  2020; 95(10): 1--42.
-<doi:10.18637/jss.v095.i10>.")
-    (license license:gpl2+)))
 
 (define-public r-kselection
   (package
@@ -2103,6 +2066,7 @@ Yifan Yang (2015)<doi: 10.1007/s00180-015-0567-9> and Mai Zhou and Yifan Yang
     (properties `((upstream-name . "klustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmlwidgets))
+    (native-inputs (list esbuild))
     (home-page "https://mckaymdavis.github.io/klustR/")
     (synopsis "D3 Dynamic Cluster Visualizations")
     (description
@@ -3254,7 +3218,7 @@ build lists of words.")
     (properties `((upstream-name . "keys")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/r4fun/keys")
     (synopsis "Keyboard Shortcuts for 'shiny'")
     (description
@@ -4250,6 +4214,7 @@ and bandwidths are supported.")
                              r-qrng
                              r-locfit
                              r-lattice))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/tnagler/kdecopula")
     (synopsis "Kernel Smoothing for Bivariate Copula Densities")
     (description
@@ -4504,7 +4469,7 @@ energy supply.")
     (properties `((upstream-name . "katex")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://docs.ropensci.org/katex/")
     (synopsis "Rendering Math to HTML, 'MathML', or R-Documentation Format")
     (description
@@ -4576,6 +4541,7 @@ time series and gap sets.")
                              r-gaussquad
                              r-expm
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Karen")
     (synopsis "Kalman Reaction Networks")
     (description

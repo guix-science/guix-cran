@@ -284,7 +284,7 @@ based on the determined rank.")
                              r-dplyr
                              r-dbi
                              r-curl))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/gavinrozzi/zipcodeR/")
     (synopsis "Data & Functions for Working with US ZIP Codes")
     (description
@@ -634,7 +634,7 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-pairviz r-mass r-loon r-graph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/great-northern-diver/zenplots")
     (synopsis "Zigzag Expanded Navigation Plots")
     (description

@@ -9,7 +9,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
-  #:use-module (gnu packages compression)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
@@ -1141,6 +1141,7 @@ agency.")
     (properties `((upstream-name . "us.census.geoheader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
+    (native-inputs (list r-r-rsp))
     (home-page "https://gitlab.com/minshall/us-census-geoheader")
     (synopsis "US 2010 Census SF2 Geographic Header Summary Levels 010-050")
     (description
@@ -3070,7 +3071,6 @@ simplex.")
                 "0xxkqrnlz3pkb3s1gacfzqav54w97gc0w8rh0fn1qy5rkmg2bplv"))))
     (properties `((upstream-name . "ulid")))
     (build-system r-build-system)
-    (inputs (list zlib))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/hrbrmstr/ulid")
@@ -3694,7 +3694,7 @@ explored and downloaded.")
                              r-forcats
                              r-ezcox
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/openbiox/UCSCXenaShiny")
     (synopsis "Interactive Analysis of UCSC Xena Data")
     (description
@@ -3986,7 +3986,7 @@ options.")
                              r-exifr
                              r-data-table
                              r-brew))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/gisma/uavRmp")
     (synopsis "UAV Mission Planner")
     (description
