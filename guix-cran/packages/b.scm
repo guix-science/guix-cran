@@ -1986,13 +1986,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "1r0mbrcwaqgq3rwj1gy94fg8vxrw7s5aq7p4w38ncjhrwaqriwav"))))
+                "0spbvl7yk5gc0jb1w359q4130glij8sgd6h9nmc520avyyj3dglx"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -20265,13 +20265,13 @@ cyjShiny package from GitHub.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.0.1")
+    (version "2.1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "0ayq2bzzpibkgdxibq64g8zk4a3ic0niai90har3ra4dab3id0sg"))))
+                "1ikd7hs6nc896wi3027vz6cacvx8rsnhhda8phq3s0w0ng663vih"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

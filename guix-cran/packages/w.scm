@@ -1086,17 +1086,16 @@ gtools::strmacro() and base::bquote()'), and more.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrappedtools" version))
               (sha256
                (base32
-                "1d51ciw28a7g87b548m9kv6csbv46b3hr4b5g51gvxsmm053wh97"))))
+                "066pzqqa95v6bhd1fgj7j9w7bhyrm99qhqqal0nqy4rhpay01g8a"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang

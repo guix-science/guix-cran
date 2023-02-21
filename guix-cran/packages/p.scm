@@ -20814,13 +20814,13 @@ for bilateral price indexes.")
 (define-public r-phytools
   (package
     (name "r-phytools")
-    (version "1.2-0")
+    (version "1.5-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phytools" version))
               (sha256
                (base32
-                "11ivhighfla4innd450pvwcy0znfag2qh6dj053apsn0310nhg5s"))))
+                "00g1lzff5fkwdnxfpvbzcxqmn39vllfkcg2jwhmh7xgipymmkgpq"))))
     (properties `((upstream-name . "phytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -20832,7 +20832,9 @@ for bilateral price indexes.")
                              r-mnormt
                              r-mass
                              r-maps
+                             r-foreach
                              r-expm
+                             r-doparallel
                              r-combinat
                              r-coda
                              r-clustergeneration
@@ -20840,23 +20842,22 @@ for bilateral price indexes.")
     (home-page "https://github.com/liamrevell/phytools")
     (synopsis "Phylogenetic Tools for Comparative Biology (and Other Things)")
     (description
-     "This package provides a wide range of functions for phylogenetic analysis -
+     "This package provides a wide range of methods for phylogenetic analysis -
 concentrated in phylogenetic comparative biology, but also including numerous
-methods for visualizing, manipulating, reading or writing, and even inferring
-phylogenetic trees.  Included among the functions in phylogenetic comparative
-biology are various for ancestral state reconstruction, model-fitting, and
-simulation of phylogenies and data, for continuous, discrete, and multivariate
-characters.  A broad range of plotting methods for phylogenies and comparative
-data include, but are not restricted to, methods for mapping trait evolution on
-trees, for projecting trees into phenotypic space or a geographic map, and for
-visualizing correlated speciation between trees.  Finally, numerous functions
-are designed for reading, writing, analyzing, inferring, simulating, and
-manipulating phylogenetic trees and comparative data.  For instance, there are
-functions for randomly or non-randomly attaching species or clades to a
-phylogeny, for computing consensus phylogenies from a set, for simulating trees
-and phylogenetic data under a range of models, and for a wide variety of other
-manipulations and analyses that phylogenetic biologists might find useful in
-their research.")
+techniques for visualizing, analyzing, manipulating, reading or writing, and
+even inferring phylogenetic trees.  Included among the functions in phylogenetic
+comparative biology are various for ancestral state reconstruction,
+model-fitting, and simulation of phylogenies and trait data.  A broad range of
+plotting methods for phylogenies and comparative data include (but are not
+restricted to) methods for mapping trait evolution on trees, for projecting
+trees into phenotype space or a onto a geographic map, and for visualizing
+correlated speciation between trees.  Lastly, numerous functions are designed
+for reading, writing, analyzing, inferring, simulating, and manipulating
+phylogenetic trees and comparative data.  For instance, there are functions for
+computing consensus phylogenies from a set, for simulating phylogenetic trees
+and data under a range of models, for randomly or non-randomly attaching species
+or clades to a tree, as well as for a wide range of other manipulations and
+analyses that phylogenetic biologists might find useful in their research.")
     (license license:gpl2+)))
 
 (define-public r-physortr
@@ -30805,13 +30806,13 @@ on the analysis of poverty.  References, Fattore M. (2016)
 (define-public r-parquetize
   (package
     (name "r-parquetize")
-    (version "0.5.1")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parquetize" version))
               (sha256
                (base32
-                "0x9wfnwyd23pr1qy3v6xy5qvqhlnv2bxajc8krw8ihdbl5virq1n"))))
+                "0khmr4n6wzhhix99jl4wlyw4q1wh5glkmqy3sjwnbk48dwqqzccy"))))
     (properties `((upstream-name . "parquetize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite

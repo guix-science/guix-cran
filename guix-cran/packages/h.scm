@@ -2085,13 +2085,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "httk" version))
               (sha256
                (base32
-                "1pxv6ph6qnc6i3sgx2l2ixnsmbqsi1qs5392qxjia3vvx7gd9cmk"))))
+                "1ziwlb4nigf0hk3ngmk309m0gmaylvmd00m553sh0qrm9k2dls9q"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -2113,23 +2113,26 @@ using chemical-specific in vitro data and physiological information.  These
 tools allow incorporation of chemical toxicokinetics (\"TK\") and in vitro-in vivo
 extrapolation (\"IVIVE\") into bioinformatics, as described by Pearce et al.
 (2017) (<doi:10.18637/jss.v079.i04>).  Chemical-specific in vitro data
-characterizing toxicokinetics can be been obtained from relatively
-high-throughput experiments.  The chemical-independent (\"generic\")
-physiologically-based (\"PBTK\") and empirical (for example, one compartment) \"TK\"
-models included here can be parameterized with in vitro data or in silico
-predictions which are provided for thousands of chemicals, multiple exposure
-routes, and various species.  The models are systems of ordinary differential
-equations that are solved using compiled (C-based) code for speed.  A Monte
-Carlo sampler is included for simulating human biological variability (Ring et
-al., 2017 <doi:10.1016/j.envint.2017.06.004>) and propagating parameter
-uncertainty (Wambaugh et al., 2019 <doi:10.1093/toxsci/kfz205>).  Empirically
-calibrated methods are included for predicting tissue:plasma partition
-coefficients and volume of distribution (Pearce et al., 2017
-<doi:10.1007/s10928-017-9548-7>).  These functions and data provide a set of
-tools for using IVIVE to convert concentrations from high-throughput screening
-experiments (for example, Tox21, ToxCast) to real-world exposures via reverse
-dosimetry (also known as \"RTK\") (Wetmore et al., 2015
-<doi:10.1093/toxsci/kfv171>).")
+characterizing toxicokinetics have been obtained from relatively high-throughput
+experiments.  The chemical-independent (\"generic\") physiologically-based
+(\"PBTK\") and empirical (for example, one compartment) \"TK\" models included here
+can be parameterized with in vitro data or in silico predictions which are
+provided for thousands of chemicals, multiple exposure routes, and various
+species.  High throughput toxicokinetics (\"HTTK\") is the combination of in vitro
+data and generic models.  We establish the expected accuracy of HTTK for
+chemicals without in vivo data through statistical evaluation of HTTK
+predictions for chemicals where in vivo data do exist.  The models are systems
+of ordinary differential equations that are developed in MCSim and solved using
+compiled (C-based) code for speed.  A Monte Carlo sampler is included for
+simulating human biological variability (Ring et al., 2017
+<doi:10.1016/j.envint.2017.06.004>) and propagating parameter uncertainty
+(Wambaugh et al., 2019 <doi:10.1093/toxsci/kfz205>).  Empirically calibrated
+methods are included for predicting tissue:plasma partition coefficients and
+volume of distribution (Pearce et al., 2017 <doi:10.1007/s10928-017-9548-7>).
+These functions and data provide a set of tools for using IVIVE to convert
+concentrations from high-throughput screening experiments (for example, Tox21,
+ToxCast) to real-world exposures via reverse dosimetry (also known as \"RTK\")
+(Wetmore et al., 2015 <doi:10.1093/toxsci/kfv171>).")
     (license license:gpl3)))
 
 (define-public r-htt

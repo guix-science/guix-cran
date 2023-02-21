@@ -3924,29 +3924,6 @@ data describing 1.4 billion individuals drawn from over 750 censuses and surveys
 is available free of charge from our website <https://www.ipums.org>.")
     (license (license:fsdg-compatible "Mozilla Public License 2.0"))))
 
-(define-public r-iptools
-  (package
-    (name "r-iptools")
-    (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iptools" version))
-              (sha256
-               (base32
-                "1jjzigv4rh5ds99z6lqqymfiwi4wzfiv3xpqaib10vrchbvlsrhr"))))
-    (properties `((upstream-name . "iptools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-triebeard r-stringi r-rcpp r-bh r-asioheaders))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hrbrmstr/iptools")
-    (synopsis "Manipulate, Validate and Resolve 'IP' Addresses")
-    (description
-     "This package provides a toolkit for manipulating, validating and testing IP
-addresses and ranges, along with datasets relating to IP addresses.  Tools are
-also provided to map IPv4 blocks to country codes.  While it primarily has
-support for the IPv4 address space, more extensive IPv6 support is intended.")
-    (license license:expat)))
-
 (define-public r-ipsfs
   (package
     (name "r-ipsfs")

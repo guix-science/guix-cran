@@ -2064,13 +2064,13 @@ library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funcharts" version))
               (sha256
                (base32
-                "0rzsbl5frv59zixs9f9k70s5hvp570yc6s620rw3ydz2d9svxpmb"))))
+                "0bmlcqpx6yzgs0r0jsfyf8k0iw2xs59njjqby8zwkvd6adxc2rzs"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5061,13 +5061,13 @@ loaded.")
 (define-public r-fpp2
   (package
     (name "r-fpp2")
-    (version "2.4")
+    (version "2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fpp2" version))
               (sha256
                (base32
-                "15s4isc1l8759868n228r3wb1aw0psicas1ggsf1md2rjq0hq7n5"))))
+                "1ml4jf7r1q555k7qnr3fky5axl0x66h3g1m61nmdrckgf6idkn0f"))))
     (properties `((upstream-name . "fpp2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -5813,13 +5813,13 @@ FORTLS is described in Molina-Valero et al. (2022,
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "3.1.0")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "1ig5m82qybg7nbib6fkrd4v0b5h4miiwkdrqm611jprhlvhqkh72"))))
+                "0q2mpysi6118qk0ygqqn8dv1h3w8z1pmpd9zs4wc0i0813kcpr27"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))

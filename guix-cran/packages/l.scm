@@ -2116,6 +2116,26 @@ also provides functions to fit quantile models for independent	data and for
 count responses.")
     (license license:gpl2+)))
 
+(define-public r-lqmix
+  (package
+    (name "r-lqmix")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lqmix" version))
+              (sha256
+               (base32
+                "1d3ng7xyb2pf5hbilz44k5gmc91zcwzcr3bqp10c6k7s4mhc2kk5"))))
+    (properties `((upstream-name . "lqmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-quantreg))
+    (home-page "https://cran.r-project.org/package=lqmix")
+    (synopsis "Linear Quantile Mixture Models")
+    (description
+     "Estimate linear quantile mixtures based on discrete, Time-Constant (TC) and/or
+Time-Varying (TV), random coefficients.")
+    (license license:gpl2+)))
+
 (define-public r-lqg
   (package
     (name "r-lqg")
@@ -4003,13 +4023,13 @@ McLachlan (2018) <doi:10.21105/joss.00870>.")
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logitr" version))
               (sha256
                (base32
-                "0f6zv3k9s71id1l8zva2bl4l978hhmjij8dy00dww4xzypadc22d"))))
+                "0brb0h39mwjmi249vqngggwlgr0fkz9zy6m68v97fvy2vxiwv5x7"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-randtoolbox r-nloptr r-mass r-generics))
@@ -5826,13 +5846,13 @@ Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmomrfa
   (package
     (name "r-lmomrfa")
-    (version "3.4")
+    (version "3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmomRFA" version))
               (sha256
                (base32
-                "10mc411b19r7jxixkdy85s8b6r7q1gf3073442cszhymyrfdmvb7"))))
+                "1cgwal38r139h18sqrrmvylvasn4v8q82fgp7kg8vk6m1dp5q0vf"))))
     (properties `((upstream-name . "lmomRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmom))
@@ -12669,19 +12689,19 @@ Monkkonen, M. (2011) <doi:10.1007/s10980-011-9620-4>.")
 (define-public r-lcmm
   (package
     (name "r-lcmm")
-    (version "2.0.0")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lcmm" version))
               (sha256
                (base32
-                "1hklrx6x9i68rm6aqhng5xhgnfcgr2g2is3ykap8aba8hdh14d51"))))
+                "0jyg8i3df6nj9nkim3va8marg4224zjx55lj3iw7ypbs4hgp8v09"))))
     (properties `((upstream-name . "lcmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-randtoolbox r-nlme r-mvtnorm
                              r-marqlevalg))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=lcmm")
+    (home-page "https://cecileproust-lima.github.io/lcmm/")
     (synopsis
      "Extended Mixed Models Using Latent Classes and Latent Processes")
     (description
@@ -14383,13 +14403,13 @@ in ArXiv (http://arxiv.org/abs/1405.7107).")
 (define-public r-lans2r
   (package
     (name "r-lans2r")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lans2r" version))
               (sha256
                (base32
-                "0svqaz1j8vhfnm31bfp4gqshdj73wmljva4kxcv2qajmcdiqbd2s"))))
+                "0hk7rklkic4frp5w6k9kn5xi8hf3s87bgbjm58ca79sh3iyl0cnv"))))
     (properties `((upstream-name . "lans2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

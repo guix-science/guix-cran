@@ -2295,6 +2295,31 @@ rmarkdown and shiny packages.  Runtime examples are provided in the package
 function as well as at <https://kartikeyab.shinyapps.io/CTShiny/>.")
     (license license:gpl2)))
 
+(define-public r-ctsfeatures
+  (package
+    (name "r-ctsfeatures")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ctsfeatures" version))
+              (sha256
+               (base32
+                "0jplrnbgvrc1650qasp8r5r319fdwrl24p2607yl0k45xjn82rq6"))))
+    (properties `((upstream-name . "ctsfeatures")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
+    (home-page "https://cran.r-project.org/package=ctsfeatures")
+    (synopsis "Analyzing Categorical Time Series")
+    (description
+     "An implementation of several functions for feature extraction in categorical
+time series datasets.  Specifically, some features related to marginal
+distributions and serial dependence patterns can be computed.  These features
+can be used to feed clustering and classification algorithms for categorical
+time series, among others.  The package also includes some interesting datasets
+containing biological sequences.  Practitioners from a broad variety of fields
+could benefit from the general framework provided by ctsfeatures'.")
+    (license license:gpl2)))
+
 (define-public r-ctsemomx
   (package
     (name "r-ctsemomx")
@@ -4037,6 +4062,46 @@ for a detailed documentation.")
     (description
      "Providing data to quickly visualize and analyze data from several
 cryptocurrencies.")
+    (license license:expat)))
+
+(define-public r-cryptotax
+  (package
+    (name "r-cryptotax")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cryptoTax" version))
+              (sha256
+               (base32
+                "0cjhs4lriph4iarwf9s4y2v8c8xl9v4xqj47w6bdlh49x3m8831g"))))
+    (properties `((upstream-name . "cryptoTax")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rstudioapi
+                             r-rlang
+                             r-rcolorbrewer
+                             r-progress
+                             r-pricer
+                             r-lubridate
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-crypto2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cryptoltruist.github.io/cryptoTax/")
+    (synopsis "Report Crypto Taxes (Canada Only)")
+    (description
+     "Helps calculate crypto taxes in R. First, by allowing you to format .CSV files
+from various exchanges to one large data frame of organized transactions.
+Second, by allowing you to calculate your Adjusted Cost Base (ACB), ACB per
+share, and realized and unrealized capital gains/losses.  Third, by calculating
+revenues gained from staking, interest, airdrops, etc.  Fourth, by calculating
+superficial losses as well. *Disclaimer: This is not financial advice.  Use at
+your own risks.  There are no guarantees whatsoever in relation to the use of
+this package.  Please consult a tax professional as necessary*.")
     (license license:expat)))
 
 (define-public r-crypto2
@@ -16124,6 +16189,33 @@ diagnostic tests when one test is conducted on only a subsample of specimens.
 Stat Med.  2012 Feb 28; 31(5) <doi:10.1002/sim.4422>.")
     (license license:gpl3)))
 
+(define-public r-comparer
+  (package
+    (name "r-comparer")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "comparer" version))
+              (sha256
+               (base32
+                "1025r91cag4d1bpnpx5h7ja0a57k4rs9z1s3a90pq3h91rdcsr1c"))))
+    (properties `((upstream-name . "comparer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CollinErickson/comparer")
+    (synopsis "Compare Output and Run Time")
+    (description
+     "Quickly run experiments to compare the run time and output of code blocks.  The
+function mbc() can make fast comparisons of code, and will calculate statistics
+comparing the resulting outputs.  It can be used to compare model fits to the
+same data or see which function runs faster.  The R6 class ffexp$new() runs a
+function using all possible combinations of selected inputs.  This is useful for
+comparing the effect of different parameter values.  It can also run in parallel
+and automatically save intermediate results, which is very useful for long
+computations.")
+    (license license:gpl3)))
+
 (define-public r-comparemcmcs
   (package
     (name "r-comparemcmcs")
@@ -21792,13 +21884,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.8.95.4")
+    (version "0.8.95.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clustermq" version))
               (sha256
                (base32
-                "0azlzl7n8k6m3lkp1pwyrd70b24qvfm3g38sdzwmj75yh4ixzxsv"))))
+                "1hxfis2r1za7npb89lp3l1i01spmp78lqwry27wp572y98skm7pv"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (inputs (list zlib zeromq))

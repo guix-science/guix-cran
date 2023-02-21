@@ -3708,13 +3708,13 @@ methodology is developed and described, among others, in Burman (1980)
 (define-public r-tsdb
   (package
     (name "r-tsdb")
-    (version "1.0-0")
+    (version "1.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsdb" version))
               (sha256
                (base32
-                "1vlvigcvg4zpw7kl42kzbcllamlqvblw7ipfhvq04an4rq924pvf"))))
+                "19gvswvx6f60zbpcdkgra6mvkzrl940vf6nn0nyap144qg3fkq27"))))
     (properties `((upstream-name . "tsdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-fastmatch r-datetimeutils))
@@ -5894,13 +5894,13 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeSearch" version))
               (sha256
                (base32
-                "1fl399p3bv5f8vlbzhq3sxc40vi4hfa6jn3cgpy2qv79jggfpzh1"))))
+                "01cl64p3mgx353xm43k59idqd0kxvxig1mvi3vx32qw0xhdhplfp"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -6137,13 +6137,13 @@ model see: Mallo et al. (2015) <doi:10.1093/sysbio/syv082>, Rasmussen and Kellis
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.5.0")
+    (version "2.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeDist" version))
               (sha256
                (base32
-                "0akvfi1b715pfw0cssyw6riaq16aplbq7c1glb9qrng9w0n37knz"))))
+                "0wm2lgz54ryclf72gfrsh58a2621f0hvsnwcvdwf2q53xw74b9gz"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -8503,6 +8503,29 @@ important variables in linear models of L. and others (2017) at
 PC-simple algorithm of B. and others (2010) at <doi:10.1093/biomet/asq008> to
 partial linear models.")
     (license license:gpl3)))
+
+(define-public r-tpc
+  (package
+    (name "r-tpc")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tpc" version))
+              (sha256
+               (base32
+                "0zkls2vf8j1rq5ryn4w295a6gcy57vr3zghyck8jwgl9pd5zcc4x"))))
+    (properties `((upstream-name . "tpc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pcalg r-graph))
+    (home-page "https://github.com/bips-hb/tpc")
+    (synopsis "Tiered PC Algorithm")
+    (description
+     "Constraint-based causal discovery using the PC algorithm while accounting for a
+partial node ordering, for example a partial temporal ordering when the data
+were collected in different waves of a cohort study.  Andrews RM, Foraita R,
+Didelez V, Witte J (2021) <arXiv:2108.13395> provide a guide how to use tpc to
+analyse cohort data.")
+    (license license:gpl3+)))
 
 (define-public r-tpauc
   (package
@@ -13991,13 +14014,13 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfit" version))
               (sha256
                (base32
-                "1dwmc9m07ap7hawv694v56cknjyz88jms22cpznimcnahb6zi7pc"))))
+                "171w8r2h6751j686pfzbcqbr9zaxll94vvqbq4vcz3fh4nycyzsd"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14015,7 +14038,7 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
                              r-crayon
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://tidyfit.unchartedml.com")
+    (home-page "https://tidyfit.residualmetrics.com")
     (synopsis "Regularized Linear Modeling with Tidy Data")
     (description
      "An extension to the R tidy data environment for automated machine learning.  The
@@ -18333,13 +18356,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ternary" version))
               (sha256
                (base32
-                "11g5ya43xgw45y8lngqj3xgbxxglnankj8fj40qij3f1qjggzwnw"))))
+                "175nw6j6z2ij0mdaydm7jjch2g2lkjy6c2dfjiwm7f7s57ryxw0q"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-sp r-shiny))

@@ -2667,6 +2667,44 @@ connectivity.  See R documentation and paper on metric implementation included
 in this package for more information concerning the metrics.")
     (license license:expat)))
 
+(define-public r-uncover
+  (package
+    (name "r-uncover")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "UNCOVER" version))
+              (sha256
+               (base32
+                "010y2vj55bfyhsn0lkmafi3cbq183m85vqk1pya82hp10qxpp6q2"))))
+    (properties `((upstream-name . "UNCOVER")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-mvnfast
+                             r-memoise
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggally
+                             r-crayon
+                             r-cachem))
+    (home-page "https://cran.r-project.org/package=UNCOVER")
+    (synopsis
+     "Utilising Normalisation Constant Optimisation via Edge Removal (UNCOVER)")
+    (description
+     "Model data with a suspected clustering structure (either in co-variate space,
+regression space or both) using a Bayesian product model with a logistic
+regression likelihood.  Observations are represented graphically and clusters
+are formed through various edge removals or additions.  Cluster quality is
+assessed through the log Bayesian evidence of the overall model, which is
+estimated using either a Sequential Monte Carlo sampler or a suitable
+transformation of the Bayesian Information Criterion as a fast approximation of
+the former.  The internal Iterated Batch Importance Sampling scheme (Chopin
+(2002 <doi:10.1093/biomet/89.3.539>)) is made available as a free standing
+function.")
+    (license license:gpl2)))
+
 (define-public r-uncorbets
   (package
     (name "r-uncorbets")

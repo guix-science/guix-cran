@@ -3383,27 +3383,28 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
 (define-public r-async
   (package
     (name "r-async")
-    (version "0.2.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "async" version))
               (sha256
                (base32
-                "1m12hhqxmvj0nyfwbjq66kb435c38flqgbn0gqlfzi6lpmiapnpj"))))
+                "170fcvpm58fnd9c727bx3x084ajbfa0q6acr9mxhj1g7p69iacq4"))))
     (properties `((upstream-name . "async")))
     (build-system r-build-system)
-    (propagated-inputs (list r-promises r-nseval r-later r-itertools
-                             r-iterators))
+    (propagated-inputs (list r-testthat r-stringr r-promises r-nseval r-later))
     (native-inputs (list r-knitr))
     (home-page "https://crowding.github.io/async/")
-    (synopsis "Asynchronous Code Constructs: Generators, Yield, Async, Await")
+    (synopsis "Coroutines: Generators / Yield, Async / Await, and Streams")
     (description
      "Write sequential-looking code that pauses and resumes.  gen() creates a
 generator, an iterator that returns a value and pauses each time it reaches a
 yield() call.  async() creates a promise, which runs until it reaches a call to
 await(), then resumes when information is available.  These work similarly to
 generator and async constructs from Python or JavaScript'.  Objects produced are
-compatible with the iterators and promises packages.")
+compatible with the iterators and promises packages.  Version 0.3 supports
+on.exit, single-step debugging, stream() for making asynchronous iterators, and
+delimited goto() in switch() calls.")
     (license license:gpl2)))
 
 (define-public r-asymptor
@@ -18791,6 +18792,38 @@ Gibbs sampler.  The sampler simulates the posterior distribution of precision
 matrices of a Gaussian Graphical Model.  This sampler was adapted from the
 original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
     (license license:gpl3)))
+
+(define-public r-abess
+  (package
+    (name "r-abess")
+    (version "0.4.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "abess" version))
+              (sha256
+               (base32
+                "0qx68hb83kl72w9j9rq3q0ig0x38sjd5hw0kw02sfqk2rx91ygyx"))))
+    (properties `((upstream-name . "abess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abess-team/abess")
+    (synopsis "Fast Best Subset Selection")
+    (description
+     "Extremely efficient toolkit for solving the best subset selection problem
+<https://www.jmlr.org/papers/v23/21-1060.html>.  This package is its R
+interface.  The package implements and generalizes algorithms designed in
+<doi:10.1073/pnas.2014241117> that exploits a novel sequencing-and-splicing
+technique to guarantee exact support recovery and globally optimal solution in
+polynomial times for linear model.  It also supports best subset selection for
+logistic regression, Poisson regression, Cox proportional hazard model, Gamma
+regression, multiple-response regression, multinomial logistic regression,
+ordinal regression, (sequential) principal component analysis, and robust
+principal component analysis.  The other valuable features such as the best
+subset of group selection <doi:10.1287/ijoc.2022.1241> and sure independence
+screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-abdiv
   (package

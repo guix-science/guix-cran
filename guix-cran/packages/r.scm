@@ -1597,13 +1597,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.6.2.1.3")
+    (version "0.6.3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rvinecopulib" version))
               (sha256
                (base32
-                "0sn928ng4krllaskv900pxl9s13va79fyxr6n5l6i40qrlglmggr"))))
+                "02ph4djj55kfrw9dsm02c4lj25scpxgvjh7i1hpvbhpqa91irhkv"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -4495,13 +4495,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.4")
+    (version "9.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "1gc4zz2i7zqxpv2rdldml7npbp27fyylqym41rh1pafx9icpdwaf"))))
+                "01aqidk6svcqjmsib33i01nfgcqm4fjpp8bkd0b3akgcrp23d33s"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -8454,13 +8454,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.0.1")
+    (version "3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "0q0zwwy04dfjpi5kggphpfpcf0l9d02nk06ignfpp70838m8l954"))))
+                "0p6p4lhfiy19y6dfk7w4pkm9sln191xy6gwraxr6r9pa2ydd1v1p"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -20592,33 +20592,6 @@ calculation tool in topological data analysis pipelines.")
 conversion to and from binary representation.")
     (license license:gpl3)))
 
-(define-public r-rip
-  (package
-    (name "r-rip")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rIP" version))
-              (sha256
-               (base32
-                "1f3gbd3ij047n0rh4a7yy6wdjz3b89rki7zaz4y9zgw6bad6ylkl"))))
-    (properties `((upstream-name . "rIP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-iptools r-httr r-dplyr r-amerika))
-    (home-page "http://joss.theoj.org/papers/10.21105/joss.01285")
-    (synopsis
-     "Detects Fraud in Online Surveys by Tracing, Scoring, and Visualizing IP Addresses")
-    (description
-     "Takes an array of IPs and the keys for the services the user wishes to use (IP
-Hub, IP Intel, and Proxycheck), and passes these to all respective APIs.
-Returns a dataframe with the IP addresses (used for merging), country, ISP,
-labels for non-US IP Addresses, VPS use, and recommendations for blocking.  The
-package also provides optional visualization tools for checking the
-distributions.  Additional functions are provided to call each discrete API
-endpoint.  The package and methods are detailed in the recent paper Waggoner,
-Kennedy, and Clifford (2019) <doi:10.21105/joss.01285>.")
-    (license license:expat)))
-
 (define-public r-riot
   (package
     (name "r-riot")
@@ -24481,13 +24454,13 @@ now out-dated fishBC software
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfishbase" version))
               (sha256
                (base32
-                "03m64sff6zi7jvba3f3k6w4a624mak53y4nf5fzvs0v6ilzciib3"))))
+                "1ii8l0gm1hsf5yqmk1b06vl99llv7gds8i5mi49ns4qczgwhri6r"))))
     (properties `((upstream-name . "rfishbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -31164,13 +31137,13 @@ recommendations, and cross-validation.  Hahsler (2022)
 (define-public r-recometrics
   (package
     (name "r-recometrics")
-    (version "0.1.6-1")
+    (version "0.1.6-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recometrics" version))
               (sha256
                (base32
-                "0x8sdiyap27y6m2vcnzg69wwi3jrqs7h4psjdb6m9br9py6xwz4c"))))
+                "1i7842k6qw9zbcslfwgdfd7358jh63aybi4mifq6knc8qm577nqk"))))
     (properties `((upstream-name . "recometrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl r-rcpp r-matrixextra r-matrix

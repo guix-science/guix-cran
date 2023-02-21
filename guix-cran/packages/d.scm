@@ -3003,13 +3003,13 @@ to find similar songs.  More information:
 (define-public r-dsos
   (package
     (name "r-dsos")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsos" version))
               (sha256
                (base32
-                "0fb2wwv7g829yvvgkkhsmcgspkx316zr828vqs0hbrr6ll7f8sfa"))))
+                "1qv44wj1dvng1m4lkscn9yylhxsr8ck46wv54vjy9px4g7rmjaq5"))))
     (properties `((upstream-name . "dsos")))
     (build-system r-build-system)
     (propagated-inputs (list r-simctest r-scales r-ggplot2 r-future-apply
@@ -3019,11 +3019,11 @@ to find similar songs.  More information:
     (synopsis "Dataset Shift with Outlier Scores")
     (description
      "Test for no adverse shift in two-sample comparison when we have a training set,
-the reference distribution, and a test set.  The approach is flexible
-(extensible) and relies on a robust and powerful test statistic, the weighted
-AUC. See Kamulete, V. M. (2021) <arXiv:2107.02990> for details.  Outlier scores
-such as trust scores and prediction uncertainty can be used as the basis for
-comparison for example.")
+the reference distribution, and a test set.  The approach is flexible and relies
+on a robust and powerful test statistic, the weighted AUC. Technical details are
+in Kamulete, V. M. (2021) <arXiv:1908.04000>.  Modern notions of outlyingness
+such as trust scores and prediction uncertainty can be used as the underlying
+scores for example.")
     (license license:gpl3+)))
 
 (define-public r-dsopal
@@ -6203,19 +6203,26 @@ optimal designs and an implementation of the MCPMod methodology (Pinheiro et al.
 (define-public r-dosedesignr
   (package
     (name "r-dosedesignr")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dosedesignR" version))
               (sha256
                (base32
-                "0c8rilx4afih457f9gafgijm569g366lp4wms0vhc0f9kgr1z8h3"))))
+                "0s25nv3vdbnl1sn8gdhr45l7paiby452b2986xfkc3cvrdlsrhjw"))))
     (properties `((upstream-name . "dosedesignR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinybs
                              r-shiny
+                             r-rsolnp
+                             r-readxl
+                             r-purrr
                              r-latticeextra
-                             r-lattice
+                             r-knitr
+                             r-kableextra
                              r-ggplot2
                              r-dt
                              r-dosefinding))
@@ -6225,8 +6232,8 @@ optimal designs and an implementation of the MCPMod methodology (Pinheiro et al.
     (description
      "This package provides the user with an interactive application which can be used
 to facilitate the planning of dose finding studies by applying the theory of
-optimal experimental design (e.g., Ling (2006) <doi:10.1007/0-387-33706-7>).")
-    (license (list license:gpl2+ license:gpl3+))))
+optimal experimental design.")
+    (license license:gpl3)))
 
 (define-public r-dosearch
   (package
@@ -11196,13 +11203,13 @@ low-frequency series in the presence of high-dimensional indicator matrices.")
 (define-public r-disaggr
   (package
     (name "r-disaggr")
-    (version "1.0.4.1")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disaggR" version))
               (sha256
                (base32
-                "0ly2w9lmd6fkf5ywnn4dcs71j8if1c00i0yn2r4l47avj0hfzbp0"))))
+                "0j8p53hy23fpk4wdm5lbg0963dmpc6g1hsymfawxmssfdzdvv24y"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -18390,13 +18397,13 @@ trees and neural network.")
 (define-public r-deepdep
   (package
     (name "r-deepdep")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deepdep" version))
               (sha256
                (base32
-                "0w8wls8ivy4c0vdaxvmp8030wzww73i60nan9vriwbgk7vsjk16q"))))
+                "0qcvspclzfw5w18k67j19410000ndma47x3b86s5jxa7cgzjarvk"))))
     (properties `((upstream-name . "deepdep")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-cranlogs))
@@ -18847,13 +18854,13 @@ alternative in the objects of class \"declared\".")
 (define-public r-deckgl
   (package
     (name "r-deckgl")
-    (version "0.2.7")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deckgl" version))
               (sha256
                (base32
-                "0ifv6j0kbwayl60bf1rwd1h7424npqsqsvb44ngg7v0ik4bgbyfx"))))
+                "0cjvmdiqknrq8mlqxmhkhcib40asdyl2bpllx8v1jz3h1d62zs04"))))
     (properties `((upstream-name . "deckgl")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20642,6 +20649,29 @@ distances between individuals.  Distances can either be directly input as a
 distances matrix, a squared distances matrix, an inner-products matrix or
 computed from observed predictors.")
     (license license:gpl2)))
+
+(define-public r-dbr
+  (package
+    (name "r-dbr")
+    (version "1.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DBR" version))
+              (sha256
+               (base32
+                "1gs9d1qmv4mcmryzzvmwbz6ycinhnxnkiv56l31mbqy50qjn9bi4"))))
+    (properties `((upstream-name . "DBR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mfusampler r-coda))
+    (home-page "https://cran.r-project.org/package=DBR")
+    (synopsis "Discrete Beta Regression")
+    (description
+     "Bayesian Beta Regression, adapted for bounded discrete responses, commonly seen
+in survey responses.  Estimation is done via Markov Chain Monte Carlo sampling,
+using a Gibbs wrapper around univariate slice sampler (Neal (2003)
+<DOI:10.1214/aos/1056562461>), as implemented in the R package MfUSampler
+(Mahani and Sharabiani (2017) <DOI: 10.18637/jss.v078.c01>).")
+    (license license:gpl2+)))
 
 (define-public r-dbpower
   (package

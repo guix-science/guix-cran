@@ -132,30 +132,28 @@ by Zellner (1962) <doi:10.2307/2281644>, Zellner and Theil (1962)
 (define-public r-sysrecon
   (package
     (name "r-sysrecon")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Sysrecon" version))
               (sha256
                (base32
-                "0qj0yvbfig6aphc7s10v5hhd30mn7rvdbzxkjfqnbzbfbvr5r2mz"))))
+                "01vbkv707m31bf69j3vxfiwgvaz56v2yr6da0j0796rcmca1d4b8"))))
     (properties `((upstream-name . "Sysrecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
-                             r-tidyverse
                              r-stringr
                              r-snowballc
                              r-rlang
-                             r-readxl
-                             r-readr
                              r-rcolorbrewer
                              r-plyr
                              r-patchwork
+                             r-magrittr
                              r-ggtree
                              r-ggplot2
                              r-dplyr
                              r-ape))
-    (home-page "https://cran.r-project.org/package=Sysrecon")
+    (home-page "https://oyshilin.github.io/sysrecon/")
     (synopsis "Systematical Metabolic Reconstruction")
     (description
      "In the past decade, genome-scale metabolic reconstructions have widely been used
@@ -10732,13 +10730,13 @@ Analysis.")
 (define-public r-statsexpressions
   (package
     (name "r-statsexpressions")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statsExpressions" version))
               (sha256
                (base32
-                "0npp8xq83fsq41i2jvcxagmx0jf7li3ds9siml7hva3gx7kijlrn"))))
+                "0ryb6zc77v3b81dxyvdlwkhph0ynpabbi5mxmpq25alyb17c1y8c"))))
     (properties `((upstream-name . "statsExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -17995,6 +17993,36 @@ distribution obtained by multiplying a deterministic binary vector.  Such a
 model allows an EM algorithm, optimizing a type-II log-likelihood.")
     (license license:gpl2+)))
 
+(define-public r-spinner
+  (package
+    (name "r-spinner")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spinner" version))
+              (sha256
+               (base32
+                "1d53nh6ikvfy38f0ymz48sa72krghnmss016h2p6473ym29jn43w"))))
+    (properties `((upstream-name . "spinner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch
+                             r-tictoc
+                             r-rlist
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-igraph
+                             r-ggthemes
+                             r-ggplot2
+                             r-fastdummies
+                             r-entropy))
+    (home-page "https://rpubs.com/giancarlo_vercellino/spinner")
+    (synopsis "An Implementation of Graph Net Architecture Based on 'torch'")
+    (description
+     "Proposes a torch implementation of Graph Net architecture allowing different
+options for message passing and feature embedding.")
+    (license license:gpl3)))
+
 (define-public r-spinifex
   (package
     (name "r-spinifex")
@@ -22767,16 +22795,17 @@ TensorFlow TFRecord files via Apache Spark'.")
 (define-public r-sparklyr-nested
   (package
     (name "r-sparklyr-nested")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparklyr.nested" version))
               (sha256
                (base32
-                "0lva7fbjp253kxq3970h52cr8s52xycbi03d5shsyna8grhkbczj"))))
+                "185cq40958fgwrng14ifil1vwrni5nn6haxfknzarhn805hfkv7c"))))
     (properties `((upstream-name . "sparklyr.nested")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparklyr
+    (propagated-inputs (list r-tidyselect
+                             r-sparklyr
                              r-rlang
                              r-purrr
                              r-listviewer
@@ -29491,13 +29520,13 @@ data.")
 (define-public r-slackr
   (package
     (name "r-slackr")
-    (version "3.2.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "slackr" version))
               (sha256
                (base32
-                "10klljhkycnyqkzq73gj71c2phdqx9l3lb2jzancc59x21wjqn3b"))))
+                "0idgggjyp07z87rkcazbis3mpv57643w2bncixyiznsabhmzygh8"))))
     (properties `((upstream-name . "slackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -29507,7 +29536,6 @@ data.")
                              r-magrittr
                              r-jsonlite
                              r-httr
-                             r-ggplot2
                              r-dplyr
                              r-cachem))
     (native-inputs (list r-knitr))
@@ -32631,13 +32659,13 @@ not-a-pipe operator of the magrittr package.")
 (define-public r-simpr
   (package
     (name "r-simpr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simpr" version))
               (sha256
                (base32
-                "0jkfi871mgbsxw7ffqc4py0ilw2m4rgv7m8w7pwwbl5x0s4lxij5"))))
+                "16f9a4nps6mis90laj33dipjk5rkfgbsss9ck6jq8kmjgk85kpvf"))))
     (properties `((upstream-name . "simpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32646,6 +32674,7 @@ not-a-pipe operator of the magrittr package.")
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-generics
                              r-furrr
                              r-dplyr
@@ -37402,13 +37431,13 @@ interactively.")
 (define-public r-shinynotes
   (package
     (name "r-shinynotes")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyNotes" version))
               (sha256
                (base32
-                "1l0nw6xac410109jrr88a62a5fhv6h6xaql19bp0h8qxyc2fppjh"))))
+                "19k4n3ikffxs24c66i9wi7ldw50wjs0gym73n9clnq3hh6l2fzz8"))))
     (properties `((upstream-name . "shinyNotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -37416,6 +37445,8 @@ interactively.")
                              r-shinyjs
                              r-shiny
                              r-rsqlite
+                             r-rlang
+                             r-markdown
                              r-magrittr
                              r-dplyr
                              r-dbplyr
@@ -39694,13 +39725,13 @@ variables in linear regression with avoiding the collinearity.")
 (define-public r-shapleyoutlier
   (package
     (name "r-shapleyoutlier")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ShapleyOutlier" version))
               (sha256
                (base32
-                "0nbk8xdn0p365lpl881i2ah4csd8i1z8dmmf0c1x5fm1i0xdl9sj"))))
+                "1qdb872cppq1dh33l75pxw4l7isp8nlsinbipygm989f1sf24xkh"))))
     (properties `((upstream-name . "ShapleyOutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

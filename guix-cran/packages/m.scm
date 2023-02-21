@@ -4720,13 +4720,13 @@ Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiblock" version))
               (sha256
                (base32
-                "0n1pyi3swq0hbabd2x5jp3jlnfjlbvpk09p0as61d34fwq97bs0b"))))
+                "1zn8xbhsrg33b7sx4nb8bhl4ikkzpa43xx5gcjhrpmsrg37sry2w"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -10323,13 +10323,13 @@ survival (GUTS).  See our companion paper Baudrot and Charles (2021)
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")
-    (version "1.0.1.0")
+    (version "1.0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MorphoTools2" version))
               (sha256
                (base32
-                "096siq21z4gsyn7hhkddmxvc6n9vl2diiybfjimycrb0dh17xgy4"))))
+                "08n9l905pfls50p278sypf8xxq6bs56f5a5b5wlxwy11flccpyia"))))
     (properties `((upstream-name . "MorphoTools2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -10355,8 +10355,8 @@ analyses.  Integrated statistical methods include hierarchical classification,
 principal component analysis, principal coordinates analysis, non-metric
 multidimensional scaling, and multiple discriminant analyses: canonical,
 stepwise, and classificatory (linear, quadratic, and the non-parametric k
-nearest neighbours).  The philosophy of the package will be described in
-Å lenker et al. (in prep).")
+nearest neighbours).  The philosophy of the package is described in Å lenker et
+al.  2022.")
     (license license:gpl3)))
 
 (define-public r-morphoscape
@@ -11726,13 +11726,13 @@ Joseph, V. R., Gul, E., and Ba, S. (2015) <doi:10.1093/biomet/asv002>.")
 (define-public r-molgenisauth
   (package
     (name "r-molgenisauth")
-    (version "0.0.21")
+    (version "0.0.25")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MolgenisAuth" version))
               (sha256
                (base32
-                "0w3634z406gx334yk23spck2ryd2sz9cvd7rgl5lmr4rl06dd5rk"))))
+                "1ggij166zy0z05hmpwzdx2s1j38s9zr2ldayxljmcl348ds7rk7n"))))
     (properties `((upstream-name . "MolgenisAuth")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools r-httr))
@@ -12990,13 +12990,13 @@ found in Arel-Bundock (2022) <doi:10.18637/jss.v103.i01>.")
 (define-public r-modelstudio
   (package
     (name "r-modelstudio")
-    (version "3.1.0")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelStudio" version))
               (sha256
                (base32
-                "0hd3x5jnj3s4b0hahxzjxfclhr92adf1xhs7hgc1k8bm9ngnqqxm"))))
+                "10d1z0l5wfbyl2dm4n705bmj8wa5a99jnp4w6z66bx7cqamxapa3"))))
     (properties `((upstream-name . "modelStudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2d3
@@ -13017,8 +13017,9 @@ compatible with most of the black-box predictive models and frameworks.  The
 main function computes various (instance and model-level) explanations and
 produces a customisable dashboard, which consists of multiple panels for plots
 with their short descriptions.  It is possible to easily save the dashboard and
-share it with others.  Tools for Explanatory Model Analysis unite with tools for
-Exploratory Data Analysis to give a broad overview of the model behavior.")
+share it with others.  modelStudio facilitates the process of Interactive
+Explanatory Model Analysis introduced in Baniecki et al. (2023)
+<doi:10.1007/s10618-023-00924-w>.")
     (license license:gpl3)))
 
 (define-public r-modelplotr
@@ -22702,13 +22703,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.14.0")
+    (version "0.14.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "0mdxzanrs8df4zvxwgnrdjp4jma2zyv0qni8mnn6n659n22kmm03"))))
+                "0ly2kgb6dlqgkx801d7rgzgww9mvyn15fxr6k707b6nj4g0ah86j"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -31010,18 +31011,19 @@ methodology is described in Gandy and Scott (2020) <arXiv:2001.06465>.")
 (define-public r-mctq
   (package
     (name "r-mctq")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mctq" version))
               (sha256
                (base32
-                "0ylk0bsgfs34b6213qsb1hrjfaqxnh6rz6in37l0xg00sqkl3ab2"))))
+                "1qp9jmpi6pbzn8jqg0i35zznc1sawi1jnky5cdf26hlyi2bjxy48"))))
     (properties `((upstream-name . "mctq")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate
                              r-lifecycle
                              r-hms
+                             r-ggplot2
                              r-dplyr
                              r-cli
                              r-checkmate))

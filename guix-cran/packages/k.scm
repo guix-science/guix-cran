@@ -2883,28 +2883,6 @@ platform of the game of go, <http://www.gokgs.com/>).  A shiny application is
 also provided.")
     (license license:expat)))
 
-(define-public r-kgrams
-  (package
-    (name "r-kgrams")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kgrams" version))
-              (sha256
-               (base32
-                "0m1cw55lr0bl83p379wh3103d1rw9933lvf457kvxy56r1164l2h"))))
-    (properties `((upstream-name . "kgrams")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rdpack r-rcppprogress r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://vgherard.github.io/kgrams/")
-    (synopsis "Classical k-gram Language Models")
-    (description
-     "Tools for training and evaluating k-gram language models in R, supporting
-several probability smoothing techniques, perplexity computations, random text
-generation and more.")
-    (license license:gpl3+)))
-
 (define-public r-kgp
   (package
     (name "r-kgp")

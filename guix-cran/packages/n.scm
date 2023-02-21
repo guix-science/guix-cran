@@ -2556,6 +2556,31 @@ alpha powerfamily, gull alpha power family.")
 R. Designed to be used with long running scripts.")
     (license license:gpl2+)))
 
+(define-public r-notebookutils
+  (package
+    (name "r-notebookutils")
+    (version "1.5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "notebookutils" version))
+              (sha256
+               (base32
+                "0f1vwc4y91k3yxsbbr7c47z3gwr3zk9dlyp3xx2ggrk4nnqhlafb"))))
+    (properties `((upstream-name . "notebookutils")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=notebookutils")
+    (synopsis
+     "Dummy R APIs Used in 'Azure Synapse Analytics' for Local Developments")
+    (description
+     "This is a pure dummy interfaces package which mirrors MsSparkUtils APIs
+<https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-r>
+of Azure Synapse Analytics
+<https://learn.microsoft.com/en-us/azure/synapse-analytics/> for R users,
+customer of Azure Synapse can download this package from CRAN for local
+development.")
+    (license license:expat)))
+
 (define-public r-not
   (package
     (name "r-not")
@@ -10173,6 +10198,30 @@ al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
      "Implementation of discriminant analysis with network structures in predictors
 accommodated to do classification and prediction.")
     (license license:gpl2)))
+
+(define-public r-netcox
+  (package
+    (name "r-netcox")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "netcox" version))
+              (sha256
+               (base32
+                "1j3z45lb9hs26f607872h0w0cdxlf429rxv4hc9wrpfnnlg5f67m"))))
+    (properties `((upstream-name . "netcox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpp r-glmnet))
+    (home-page "https://cran.r-project.org/package=netcox")
+    (synopsis
+     "Structural Learning in Cox Models with Time-Dependent Covariates")
+    (description
+     "Efficient procedures for fitting and cross-validating the overlapping group
+Lasso (implemented in C++) for Cox models with time-dependent covariates.  The
+penalty term is a weighted sum of infinity norms of (overlapping) groups of
+coefficients, which can select variables structurally with a specific grouping
+structure.")
+    (license license:gpl3+)))
 
 (define-public r-netcoupler
   (package
