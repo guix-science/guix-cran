@@ -9170,6 +9170,44 @@ dataset with genotypes, genetic risks, and disease status for a hypothetical
 population, which is used for the evaluation of genetic risk models.")
     (license license:gpl2+)))
 
+(define-public r-predhy-gui
+  (package
+    (name "r-predhy-gui")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "predhy.GUI" version))
+              (sha256
+               (base32
+                "0jxx6mqw0rll4idn92hgwqpj48kd155xl49iw3xwy33gqabg9gn7"))))
+    (properties `((upstream-name . "predhy.GUI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-shiny
+                             r-randomforest
+                             r-predhy
+                             r-pls
+                             r-htmltools
+                             r-glmnet
+                             r-foreach
+                             r-dt
+                             r-doparallel
+                             r-data-table
+                             r-bglr))
+    (home-page "https://cran.r-project.org/package=predhy.GUI")
+    (synopsis
+     "Genomic Prediction of Hybrid Performance with Graphical User Interface")
+    (description
+     "This package performs genomic prediction of hybrid performance using eight GS
+methods including GBLUP, BayesB, RKHS, PLS, LASSO, Elastic net, Random forest
+and XGBoost.  GBLUP: genomic best liner unbiased prediction, RKHS: reproducing
+kernel Hilbert space, PLS: partial least squares regression, LASSO: least
+absolute shrinkage and selection operator, XGBoost: extreme gradient boosting.
+It also provides fast cross-validation and mating design scheme for training
+population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
+<doi:10.1534/g3.116.038059>).")
+    (license license:gpl3)))
+
 (define-public r-predhy
   (package
     (name "r-predhy")
@@ -13172,13 +13210,13 @@ calculations used here are based on von Fischer and Hedin (2002)
 (define-public r-pool
   (package
     (name "r-pool")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pool" version))
               (sha256
                (base32
-                "0sv0rfsijsafbk34dfr9xvm02bl58rgc727awcasbvgigcpgxpdn"))))
+                "1gxdvlgq9ya12a9n2ry8qhrfj26g1xbi47s0i3dxl3z8apyxzmbk"))))
     (properties `((upstream-name . "pool")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang r-r6 r-later r-dbi))
@@ -15611,27 +15649,27 @@ survey'.")
 (define-public r-pmxtools
   (package
     (name "r-pmxtools")
-    (version "1.2.3")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmxTools" version))
               (sha256
                (base32
-                "09hnkzxwbj025an5kn91sw1sanxlcnmsi9wz8545fkcna78384zk"))))
+                "1is56is0xg9syfwma90wqp7rxbgcv36qcpmcxnz0dlf7ypnvqsak"))))
     (properties `((upstream-name . "pmxTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-stringr
+                             r-scales
+                             r-pknca
+                             r-patchwork
                              r-mass
                              r-magrittr
-                             r-gridextra
-                             r-ggrepel
                              r-ggplot2
                              r-gghalves
                              r-ggdist
                              r-dplyr
-                             r-diagrammer
                              r-data-tree
                              r-chron))
     (native-inputs (list r-knitr))
@@ -24482,22 +24520,25 @@ Lee & Braun (2012) <doi:10.1111/j.1541-0420.2011.01675.x>.")
 (define-public r-permutations
   (package
     (name "r-permutations")
-    (version "1.0-9")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "permutations" version))
               (sha256
                (base32
-                "1701jah8i9frw3cbqlri2l56lansw54l3pp9h1fy36a8ahhcllkg"))))
+                "0ilwf5d3cl6vv7dgdcdw4crlrxa6h5q4d3z17la71k3cz6ib3hvk"))))
     (properties `((upstream-name . "permutations")))
     (build-system r-build-system)
-    (propagated-inputs (list r-partitions r-numbers r-magic))
+    (propagated-inputs (list r-partitions r-numbers r-mathjaxr r-magic
+                             r-freealg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/permutations")
     (synopsis "The Symmetric Group: Permutations of a Finite Set")
     (description
      "Manipulates invertible functions from a finite set to itself.  Can transform
-from word form to cycle form and back.")
+from word form to cycle form and back.  To cite the package in publications
+please use Hankin (2020) \"Introducing the permutations R package\", SoftwareX,
+volume 11 <doi:10.1016/j.softx.2020.100453>.")
     (license license:gpl2)))
 
 (define-public r-permutationr

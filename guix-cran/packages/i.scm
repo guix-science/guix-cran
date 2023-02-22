@@ -2777,13 +2777,13 @@ spatial distance for each cell-type.")
 (define-public r-isa2
   (package
     (name "r-isa2")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isa2" version))
               (sha256
                (base32
-                "17vm0906szhrh2k5x694vwcfijbzmd1v3axpszfybc0lgds437cv"))))
+                "0rjwnvmqmzwnch8j2zdh2b0drr76bq3c4f18h2glj44svn2dlmk2"))))
     (properties `((upstream-name . "isa2")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))

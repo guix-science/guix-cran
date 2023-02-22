@@ -8710,16 +8710,17 @@ up to, and adjusting for files that have already been downloaded.")
 (define-public r-healthyverse
   (package
     (name "r-healthyverse")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyverse" version))
               (sha256
                (base32
-                "1ngxadwpd62lx6y41szqckv1f2j8ja1hy4qx08vccpjbmlcg8v1b"))))
+                "0mih7y191bw027zd0z3m1c6wdh7sifkd2lpycv7cyppgbzfcwwpg"))))
     (properties `((upstream-name . "healthyverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidydensity
+                             r-tidyaml
                              r-tibble
                              r-rstudioapi
                              r-rlang

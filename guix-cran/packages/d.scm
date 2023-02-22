@@ -6550,22 +6550,29 @@ workflows (see <http://www.dominodatalab.com> for more information).")
 (define-public r-dogesr
   (package
     (name "r-dogesr")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dogesr" version))
               (sha256
                (base32
-                "086x3hvsmx5phxrp5mpy9l6z28xxgc4n3mgrg2byix2l8klhp0cg"))))
+                "1w2qmvpasi971dl0ll15f8nraad97qbhc5p9q2byw9q85j651ybr"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-qpdf r-knitr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-rmarkdown
+                             r-rdpack
+                             r-qpdf
+                             r-knitr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dogesr")
     (synopsis "Work with the Doges/Dogaresse Dataset")
     (description
-     "Work with data on Venetian doges and dogaresse, and use it for social network
-analysis, as used in Merelo (2022) <arXiv:2209.07334>.")
+     "Work with data on Venetian doges and dogaresse and the noble families of the
+Republic of Venice, and use it for social network analysis, as used in Merelo
+(2022) <arXiv:2209.07334>.")
     (license license:gpl3)))
 
 (define-public r-doex
@@ -16602,35 +16609,28 @@ installing them in a single call.")
 (define-public r-dependencyreviewer
   (package
     (name "r-dependencyreviewer")
-    (version "1.0.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DependencyReviewer" version))
               (sha256
                (base32
-                "1pa5cvh29kvv80nfganfd16xmrwpp51qwy6q0qwk0y8wy66isd26"))))
+                "0z24p0y2rxz5gycf29ycchb6pbhnpimfbrhzdn5d3grnd4jdnkkk"))))
     (properties `((upstream-name . "DependencyReviewer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidygraph
+    (propagated-inputs (list r-tidygraph
                              r-stringr
-                             r-shinyace
-                             r-shiny
                              r-rlang
                              r-readr
+                             r-pkgdepends
                              r-pak
                              r-magrittr
                              r-lintr
                              r-knitr
-                             r-here
-                             r-glue
-                             r-ggraph
-                             r-ggplot2
-                             r-ggally
-                             r-dt
                              r-dplyr
                              r-desc
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DependencyReviewer")
     (synopsis "Tool Suite to Investigate Other Packages")
     (description
@@ -19783,6 +19783,29 @@ reconstruction error of the matrix approximation ||A-CUR||.  It also includes a
 method that recalibrates the relative importance of the leverage scores
 according to an external variable of the user's interest.")
     (license license:gpl3)))
+
+(define-public r-dctensor
+  (package
+    (name "r-dctensor")
+    (version "0.99.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dcTensor" version))
+              (sha256
+               (base32
+                "0ssnl4q2r5hka61954zvbzim8aad6l2bi2ih2d42zk2520iyr3jw"))))
+    (properties `((upstream-name . "dcTensor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtensor r-nntensor r-mass r-fields))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rikenbit/dcTensor")
+    (synopsis "Discrete Matrix/Tensor Decomposition")
+    (description
+     "Semi-Binary and Semi-Ternary Matrix Decomposition are performed based on
+Non-negative Matrix Factorization (NMF) and Gradient Descent-based Singular
+Value Decomposition (GD-SVD).  For the details of the methods, see the reference
+section of GitHub README.md <https://github.com/rikenbit/dcTensor>.")
+    (license license:expat)))
 
 (define-public r-dcsmooth
   (package

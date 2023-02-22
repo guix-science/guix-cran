@@ -15854,6 +15854,28 @@ for having to wrangle wide format data into long format for plotting with
 ggplot2'.")
     (license license:gpl3)))
 
+(define-public r-ggmapinset
+  (package
+    (name "r-ggmapinset")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggmapinset" version))
+              (sha256
+               (base32
+                "12g41vgvwgw30cfmaawk0p6wi6v06j8nc7dc4zpns8r473zsr0wf"))))
+    (properties `((upstream-name . "ggmapinset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cidm-ph.github.io/ggmapinset/")
+    (synopsis "Add Inset Panels to Maps")
+    (description
+     "Helper to add insets based on geom_sf() from ggplot2'.  This package gives you a
+drop-in replacement for geom_sf() that supports adding a zoomed inset map
+without having to create and embed a separate plot.")
+    (license license:expat)))
+
 (define-public r-gglorenz
   (package
     (name "r-gglorenz")

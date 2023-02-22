@@ -17598,16 +17598,21 @@ calculation of isotopic gross structures is also supported.")
 (define-public r-ecic
   (package
     (name "r-ecic")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecic" version))
               (sha256
                (base32
-                "1yh6vr8142nd4b5nmqi92mrhjag2xkn588gnn124vhfhvirq9dk6"))))
+                "1b8jwxmbqs3hzjf1iy1f74way8ymi1lac38jd8zvc2np39szq2i8"))))
     (properties `((upstream-name . "ecic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-patchwork r-ggplot2 r-future r-furrr))
+    (propagated-inputs (list r-progressr
+                             r-progress
+                             r-patchwork
+                             r-ggplot2
+                             r-future
+                             r-furrr))
     (home-page "https://frederickluser.github.io/ecic/")
     (synopsis "Extended Changes-in-Changes")
     (description

@@ -3782,13 +3782,13 @@ has been derived.")
 (define-public r-lokern
   (package
     (name "r-lokern")
-    (version "1.1-9")
+    (version "1.1-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lokern" version))
               (sha256
                (base32
-                "1fms79bb4y6ryzmxhpc544zh52xgd879gpcigc24bjhd7whl9nry"))))
+                "14prvpzq4qzbbac1vqklkrm60bswwjvm90i14dylsz1pdhy85g00"))))
     (properties `((upstream-name . "lokern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))

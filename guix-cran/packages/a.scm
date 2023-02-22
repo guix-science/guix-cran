@@ -14188,6 +14188,28 @@ Currently the procedures do not support the use of futility boundaries or more
 than one adaptive interim analysis.")
     (license license:gpl2+)))
 
+(define-public r-ags
+  (package
+    (name "r-ags")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ags" version))
+              (sha256
+               (base32
+                "1g2q5cbpa0iwkwhcng15vqn8jgx5lingjfwakj320jr76x9bx6my"))))
+    (properties `((upstream-name . "ags")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://sumtxt.github.io/ags/")
+    (synopsis "Crosswalk Municipality and District Statistics in Germany")
+    (description
+     "Construct time series for Germany's municipalities (Gemeinden) and districts
+(Kreise) using a annual crosswalk constructed by the Federal Office for Building
+and Regional Planning (BBSR).")
+    (license license:gpl3)))
+
 (define-public r-agrotech
   (package
     (name "r-agrotech")
@@ -14776,13 +14798,13 @@ are implemented considering additive and non-additive models.")
 (define-public r-aggtrees
   (package
     (name "r-aggtrees")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aggTrees" version))
               (sha256
                (base32
-                "1f3lgz6k5pqdb4bkm86q7l02yw12fn83xdblbqwhj5x90fj4ysgv"))))
+                "1cc7k23cb1cav2q4hs9i3ra4gs96vm08192p4nq1lsji28v6h7f6"))))
     (properties `((upstream-name . "aggTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -14790,7 +14812,8 @@ are implemented considering additive and non-additive models.")
                              r-rpart
                              r-grf
                              r-estimatr
-                             r-caret))
+                             r-caret
+                             r-car))
     (home-page "https://cran.r-project.org/package=aggTrees")
     (synopsis "Aggregation Trees")
     (description

@@ -4589,6 +4589,28 @@ provided.  See Cremers, Mulder & Klugkist (2018) <doi:10.1111/bmsp.12108> and
 NuÃ±ez-Antonio & GuttiÃ©rez-PeÃ±a (2014) <doi:10.1016/j.csda.2012.07.025>.")
     (license license:gpl3)))
 
+(define-public r-bpmnvisualizationr
+  (package
+    (name "r-bpmnvisualizationr")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bpmnVisualizationR" version))
+              (sha256
+               (base32
+                "14gal7wbkmj4m1l4qlx228b6j9kfma706z8dvf9a637ny9609bap"))))
+    (properties `((upstream-name . "bpmnVisualizationR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rlang r-htmlwidgets))
+    (native-inputs (list esbuild))
+    (home-page "https://process-analytics.github.io/bpmn-visualization-R/")
+    (synopsis "Visualize Process Execution Data on 'BPMN' Diagrams")
+    (description
+     "To visualize the execution data of the processes on BPMN (Business Process Model
+and Notation) diagrams, using overlays, style customization and interactions,
+with the bpmn-visualization TypeScript library.")
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
+
 (define-public r-bpm
   (package
     (name "r-bpm")
@@ -15732,13 +15754,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 (define-public r-bet
   (package
     (name "r-bet")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BET" version))
               (sha256
                (base32
-                "1n09lx7w1ih5a7xcd6fp2jag7zc4d2pg4n42lcwnb7inwmcj9m4p"))))
+                "1yrfgb2q059h2cyn2l72s5491lagiilky7dp5j4bh32h0116d5fc"))))
     (properties `((upstream-name . "BET")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

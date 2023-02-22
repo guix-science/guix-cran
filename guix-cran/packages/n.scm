@@ -4394,13 +4394,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.1.10")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnlib2Rcpp" version))
               (sha256
                (base32
-                "02xj7ajf2ccsi4q7vxrqqsx615glq5bfh6c3jca71s5jhy8djfdl"))))
+                "1a1fax29ki0gmcxgcrbsrklf929zcki714yns2nh8m18q4krbgnw"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6061,13 +6061,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.0.8")
+    (version "2.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2" version))
               (sha256
                (base32
-                "14akzman4r99ynkdpif0y6fjgxahbha5bk49g59924azwnhin7hd"))))
+                "1mfbm053jkmqkg7hdvzczpfx35r9xc6113vxl20561pk2zxh9fq7"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -6076,7 +6076,9 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
                              r-nlmixr2est
                              r-nlmixr2data
                              r-magrittr
-                             r-lotri))
+                             r-lotri
+                             r-crayon
+                             r-cli))
     (home-page "https://nlmixr2.org/")
     (synopsis "Nonlinear Mixed Effects Models in Population PK/PD")
     (description

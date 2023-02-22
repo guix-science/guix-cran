@@ -3387,13 +3387,13 @@ Rao, and Junho Yang.")
 (define-public r-csodata
   (package
     (name "r-csodata")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csodata" version))
               (sha256
                (base32
-                "0ld1yj98vkbw5bw70c13d1w2lg16idq4p6qip8adln0zyyvpp747"))))
+                "1x5fvh79s1bivkw5gszx951mc7vw09xplz5yr7r7453gb32pfr7c"))))
     (properties `((upstream-name . "csodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9949,13 +9949,13 @@ Please see the reference: Yu et al. (2019) <doi:10.1038/s41598-019-40167-8>.")
 (define-public r-corset
   (package
     (name "r-corset")
-    (version "0.1-4")
+    (version "0.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corset" version))
               (sha256
                (base32
-                "0ladyqvkys4cldvbhkii9jwn1k5p1ym2g5bgdlz1hq1sv30ixn2f"))))
+                "0b4pa450mzig7xmzgz5q8b1492yqcvz5n4i1x74f3vf337d9c4i7"))))
     (properties `((upstream-name . "corset")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=corset")

@@ -242,20 +242,19 @@ significance of the periodicity are calculated using the chi-square periodogram.
 (define-public r-xslt
   (package
     (name "r-xslt")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xslt" version))
               (sha256
                (base32
-                "1yxiadygkm5l92ywy482h1k1igl3fw6lwizhfv27swhxjcmjl47s"))))
+                "0caci3mhqkl1bg1pzjhi22c431vgcy4ibsg2mg1p9d5c5pzwmak4"))))
     (properties `((upstream-name . "xslt")))
     (build-system r-build-system)
     (inputs (list libxml2))
     (propagated-inputs (list r-xml2 r-rcpp))
     (native-inputs (list pkg-config))
-    (home-page
-     "https://docs.ropensci.org/xslt/https://github.com/ropensci/xslt")
+    (home-page "https://cran.r-project.org/package=xslt")
     (synopsis "Extensible Style-Sheet Language Transformations")
     (description
      "An extension for the xml2 package to transform XML documents by applying an xslt

@@ -16060,13 +16060,13 @@ Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.9.1")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3fselect" version))
               (sha256
                (base32
-                "0zphlpxs03sgqlpvppbxkxzajfpk9g3vnjfcbxmnafmf85qps2h5"))))
+                "03sv2ni6qwyppzfkj2dilvgh53jvc400ws5379bipqq2mghiah9k"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

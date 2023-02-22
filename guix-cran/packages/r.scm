@@ -14686,33 +14686,6 @@ methods (based on packages distr', distrEx', distrMod', RobAStBase', and
 ROptEst').")
     (license license:lgpl3)))
 
-(define-public r-robets
-  (package
-    (name "r-robets")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "robets" version))
-              (sha256
-               (base32
-                "0lvzfpv6569pjysblhadd05sglx0qvyr9wipb9cpiya4a1992n61"))))
-    (properties `((upstream-name . "robets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-forecast))
-    (home-page "http://github.com/RubenCrevits/robets")
-    (synopsis "Forecasting Time Series with Robust Exponential Smoothing")
-    (description
-     "We provide an outlier robust alternative of the function ets() in the forecast
-package of Hyndman and Khandakar (2008) <DOI:10.18637/jss.v027.i03>.  For each
-method of a class of exponential smoothing variants we made a robust
-alternative.  The class includes methods with a damped trend and/or seasonal
-components.  The robust method is developed by robustifying every aspect of the
-original exponential smoothing variant.  We provide robust forecasting
-equations, robust initial values, robust smoothing parameter estimation and a
-robust information criterion.  The method is described in more detail in Crevits
-and Croux (2016) <DOI:10.13140/RG.2.2.11791.18080>.")
-    (license license:gpl3)))
-
 (define-public r-robeth
   (package
     (name "r-robeth")
@@ -32023,13 +31996,13 @@ to factors in the same order as exported from SurveyXact'.")
 (define-public r-readstata13
   (package
     (name "r-readstata13")
-    (version "0.10.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readstata13" version))
               (sha256
                (base32
-                "0b57mfzxsv1hn838kmxpigak060mcjqqx5jxr26ygk27yi96v679"))))
+                "18yr7nsz80dsxxsdgyi68k7506digjawk6khnzpvk5y80yz7hyqi"))))
     (properties `((upstream-name . "readstata13")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36465,27 +36438,6 @@ methods.")
     (description
      "This package provides an Rcmdr \"plug-in\" based on the TeachingDemos package, and
 is primarily for illustrative purposes.")
-    (license license:gpl2+)))
-
-(define-public r-rcmdrplugin-sutteforecastr
-  (package
-    (name "r-rcmdrplugin-sutteforecastr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RcmdrPlugin.sutteForecastR" version))
-              (sha256
-               (base32
-                "1np42kizkk572vharki84ka34lr7bdlckn4227bnq2l37c0zsq5y"))))
-    (properties `((upstream-name . "RcmdrPlugin.sutteForecastR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sutteforecastr r-rcmdr))
-    (home-page "https://www.r-project.org")
-    (synopsis "'Rcmdr' Plugin for Alpha-Sutte Indicator 'sutteForecastR'")
-    (description
-     "The sutteForecastR is a package of Alpha-Sutte indicator.  To make the
-sutteForecastR user friendly, so we develop an Rcmdr plug-in based on the
-Alpha-Sutte indicator function.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-survival

@@ -2790,29 +2790,6 @@ context-minimal approach for sensitivity analysis using extreme bounds to assess
 the sturdiness of regression coefficients.")
     (license license:gpl3)))
 
-(define-public r-sutteforecastr
-  (package
-    (name "r-sutteforecastr")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sutteForecastR" version))
-              (sha256
-               (base32
-                "13dd0v3l3s7xb1wnpf6qvnvclzab87831z8bsxsq53vpb26xcw1b"))))
-    (properties `((upstream-name . "sutteForecastR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robets r-fracdiff r-forecasthybrid r-forecast))
-    (home-page "https://www.r-project.org")
-    (synopsis "Forecasting Data using Alpha-Sutte Indicator")
-    (description
-     "The alpha-Sutte indicator (alpha-Sutte) was originally from developed of Sutte
-indicator.  Sutte indicator can using to predict the movement of stocks.  As the
-development of science, then Sutte indicator developed to predict not only the
-movement of stocks but also can forecast data on financial, insurance, and
-others time series data.  Ahmar, A.S. (2017) <doi:10.17605/osf.io/rknsv>.")
-    (license license:gpl2+)))
-
 (define-public r-susy
   (package
     (name "r-susy")
@@ -14458,13 +14435,13 @@ Stock Synthesis (SS) as described in Anderson et al. (2014)
 (define-public r-srvyr
   (package
     (name "r-srvyr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "srvyr" version))
               (sha256
                (base32
-                "1qysngpvpyncv5hhnvkicsj0laxc44ljbndp0ycgk53rj60mczfg"))))
+                "0c3y5ijcybf45f4f1bn95m364grsa0c8rf9l0p1jkcr74nmryx9d"))))
     (properties `((upstream-name . "srvyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15129,13 +15106,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.12.0")
+    (version "1.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "0b962m9nnb2rr8l2bawxn5py1ywzm1jy5amzkk3l6zz4gc2cq8l7"))))
+                "1zyskjjivdrf92lpsnk21b647c31bvv9w4a6xnhjl75656bcps1h"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjava r-checkmate))
@@ -21285,21 +21262,16 @@ Analysis, 167, 15-30.")
 (define-public r-spatialepi
   (package
     (name "r-spatialepi")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpatialEpi" version))
               (sha256
                (base32
-                "0hfspksv9dgi98kcjwa291x8dglskfl4d1cjkd2hqxlf73havpzx"))))
+                "0q14scafm31xansk5zkhk6hb5jqcmi519jsd4drwkfvvdk8hf93d"))))
     (properties `((upstream-name . "SpatialEpi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sp
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-maptools))
+    (propagated-inputs (list r-spdep r-sp r-rcpparmadillo r-rcpp r-mass))
     (home-page "https://github.com/rudeboybert/SpatialEpi")
     (synopsis "Methods and Data for Spatial Epidemiology")
     (description
@@ -25135,6 +25107,34 @@ Iden and Durner (2013) <doi:10.1002/2014WR015937>, [5] Peters (2014)
     (description
      "This package provides a collection of functions for reading data from USDA-NCSS
 soil databases.")
+    (license license:gpl3+)))
+
+(define-public r-soilchemistry
+  (package
+    (name "r-soilchemistry")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "soilchemistry" version))
+              (sha256
+               (base32
+                "1fkq5zpkcwh7ps2r79kc2pw7q2i4hjjnckx2f29l8064hswd9jc4"))))
+    (properties `((upstream-name . "soilchemistry")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=soilchemistry")
+    (synopsis
+     "Computation of Properties Related to Soil Chemical Environment and Nutrient Availability")
+    (description
+     "Facilitates basic and equation-based analyses of some important soil properties
+related to soil chemical environment and nutrient availability to plants.
+Freundlich H (1907). <doi:10.1515/zpch-1907-5723>.  Datta SP, Bhadoria PBS
+(1999).
+<doi:10.1002%2F%28SICI%291522-2624%28199903%29162%3A2%3C183%3A%3AAID-JPLN183%3E3.0.CO%3B2-A>.\"Boron
+adsorption and desorption in some acid soils of West Bengal, India\".  Langmuir I
+(1918). <doi:10.1021/ja02242a004> \"The adsorption of gases on plane surfaces of
+glass, mica, and platinum\".  Khasawneh FE (1971).
+<doi:10.2136/sssaj1971.03615995003500030029x> \"Solution ion activity and plant
+growth\".")
     (license license:gpl3+)))
 
 (define-public r-soilassessment
@@ -31394,13 +31394,13 @@ details.")
 (define-public r-sipmg
   (package
     (name "r-sipmg")
-    (version "1.4")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIPmg" version))
               (sha256
                (base32
-                "1ixab9v1gdzdrmlz8x836nda1ipmnh3psr3k9psmfidpd117ja60"))))
+                "1f3jirfnxxbrkala5kk0hkkm8gn2zciva6xy459vc80y058hr7z1"))))
     (properties `((upstream-name . "SIPmg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36829,13 +36829,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinytest2" version))
               (sha256
                (base32
-                "0kc3rl2jqbrg3piw7c0gzzhw0ziwdfsd5pk1bvkcwx6m1ikwr9vd"))))
+                "1mg0drgwrn9r8mhziwy9fvpmc2szy407418qk4p95wlk3myh878r"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -55409,13 +55409,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-34")
+    (version "3.1-35")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "0fa58qrjh5m8l04xb9qc1lrb49xfiwihjkxvs2h55l5hbbdw3fbp"))))
+                "00cnm2j8zrfvs91p3qv86vifrxdndmi1q9syb31bz0dmwwkrl1vv"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")
