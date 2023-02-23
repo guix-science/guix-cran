@@ -4316,13 +4316,13 @@ and analyzing fossil data from the Paleobiology Database
 (define-public r-vein
   (package
     (name "r-vein")
-    (version "0.9.9")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vein" version))
               (sha256
                (base32
-                "06r9235p15qcy4h3i96p4p2qq0sznphs912wirqdiv52i5h1h384"))))
+                "0x4b47k641cs041qjm36hxglb1vwvi7in3lcmp9nmf058zcrc5cf"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

@@ -935,13 +935,13 @@ palettes from users photos directly.")
 (define-public r-ltasr
   (package
     (name "r-ltasr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LTASR" version))
               (sha256
                (base32
-                "00l04zljpy9xjg3zpfchlwchmls1vgjfnjzyj016xvv3iivl9w3b"))))
+                "0mxm6raf1xfpzd0fdbd30cfxfc47zhwv5cxlp46pngby034wr175"))))
     (properties `((upstream-name . "LTASR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15294,13 +15294,13 @@ F-value (F) based on F-ratio test.")
 (define-public r-lactater
   (package
     (name "r-lactater")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lactater" version))
               (sha256
                (base32
-                "1bxdbksm1706fk2d7qhfcx4ns4775rayxvh2lxw3rpq3xlyb0prj"))))
+                "0y90hzixdqims8dk9a7qkwh6waxgvcmnpnalkfda4iqdvhymlxc6"))))
     (properties `((upstream-name . "lactater")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

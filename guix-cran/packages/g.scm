@@ -1484,6 +1484,27 @@ be constructed by regressing both on bottom-level forecasts and on other
 covariates that may only be available at the aggregate level.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-gto
+  (package
+    (name "r-gto")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gto" version))
+              (sha256
+               (base32
+                "06a2byiimi7s2bsqgrdd7q8xp9fhp4vjfz89qki7zk9mg8sz76sb"))))
+    (properties `((upstream-name . "gto")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rlang r-officer r-magrittr r-gt))
+    (home-page "https://cran.r-project.org/package=gto")
+    (synopsis "Insert 'gt' Tables into Word Documents")
+    (description
+     "Insert tables created by the gt R package into Microsoft Word documents.  This
+gives users the ability to add to their existing word documents the tables made
+in gt using the familiar officer package and syntax from the officeverse'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-gtheory
   (package
     (name "r-gtheory")
@@ -4623,6 +4644,30 @@ based on extremal coefficients see Asenova et al. (2021) as well as Einmahl et
 al. (2016) <doi:10.2139/ssrn.2717531>.  For cliquewise estimation please see
 Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
     (license license:gpl2)))
+
+(define-public r-grelevance
+  (package
+    (name "r-grelevance")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GRelevance" version))
+              (sha256
+               (base32
+                "1v1zcsk563cs6c1xn1qzm4v3yydmpr59hkz40xafkq4jbq9k2s9g"))))
+    (properties `((upstream-name . "GRelevance")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-philentropy r-mvtnorm r-mass))
+    (home-page "https://cran.r-project.org/package=GRelevance")
+    (synopsis
+     "Graph-Based k-Sample Comparisons and Relevance Analysis in High Dimensions")
+    (description
+     "We propose two distribution-free test statistics based on between-sample edge
+counts and measure the degree of relevance by standardized counts.  Users can
+set edge costs in the graph to compare the parameters of the distributions.
+Methods for comparing distributions are as described in: Xiaoping Shi (2021)
+<arXiv:2107.00728>.")
+    (license license:expat)))
 
 (define-public r-gregry
   (package

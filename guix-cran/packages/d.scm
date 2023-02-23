@@ -2342,6 +2342,33 @@ allowed to improve efficiency.  The estimated DTR can be easily applied to a new
 sample for individualized treatment recommendations or DTR evaluation.")
     (license license:gpl2)))
 
+(define-public r-dtrkernsmooth
+  (package
+    (name "r-dtrkernsmooth")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DTRKernSmooth" version))
+              (sha256
+               (base32
+                "1f94j2j0fi1l73ndwl4cc44hw9hqn7dbzd3c5bns9v6hjrrza76y"))))
+    (properties `((upstream-name . "DTRKernSmooth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=DTRKernSmooth")
+    (synopsis
+     "Estimate and Make Inference About Optimal Treatment Regimes via Smoothed Methods")
+    (description
+     "This package provides methods to estimate the optimal treatment regime among all
+linear regimes via smoothed estimation methods, and construct element-wise
+confidence intervals for the optimal linear treatment regime vector, as well as
+the confidence interval for the optimal value via wild bootstrap procedures, if
+the population follows treatments recommended by the optimal linear regime.  See
+more details in: Wu, Y. and Wang, L. (2021), \"Resampling-based Confidence
+Intervals for Model-free Robust Inference on Optimal Treatment Regimes\",
+Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
+    (license license:gpl2+)))
+
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
@@ -19624,22 +19651,24 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
 (define-public r-ddd
   (package
     (name "r-ddd")
-    (version "5.0")
+    (version "5.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DDD" version))
               (sha256
                (base32
-                "13kqgj45afd0c5jkwi36j94v7l2bz60i3583z1jcvdxq913wwv5b"))))
+                "0ri1q79ngfqravgr89c5lfkd769q11m8p96shfrl175vg6r4f060"))))
     (properties `((upstream-name . "DDD")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
                              r-sparsem
+                             r-rcppeigen
                              r-rcpp
                              r-phytools
                              r-matrix
                              r-expm
                              r-desolve
+                             r-deoptim
                              r-bh
                              r-ape))
     (home-page "https://cran.r-project.org/package=DDD")
@@ -19650,8 +19679,9 @@ diversity-dependent birth-death process to test whether speciation or extinction
 are diversity-dependent, under various models including various types of key
 innovations.  See Etienne et al.  2012, Proc.  Roy.  Soc.  B 279: 1300-1309,
 <DOI:10.1098/rspb.2011.1439>, Etienne & Haegeman 2012, Am.  Nat.  180: E75-E89,
-<DOI:10.1086/667574> and Etienne et al.  2016.  Meth.  Ecol.  Evol.  7:
-1092-1099, <DOI:10.1111/2041-210X.12565>.  Also contains functions to simulate
+<DOI:10.1086/667574>, Etienne et al.  2016.  Meth.  Ecol.  Evol.  7: 1092-1099,
+<DOI:10.1111/2041-210X.12565> and Laudanno et al.  2021.  Syst.  Biol.  70:
+389â407, <DOI:10.1093/sysbio/syaa048>.  Also contains functions to simulate
 the diversity-dependent process.")
     (license license:gpl3)))
 
@@ -21138,13 +21168,13 @@ for the full data in the database.  Thomas Lumley
 (define-public r-dbgapcheckup
   (package
     (name "r-dbgapcheckup")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbGaPCheckup" version))
               (sha256
                (base32
-                "0mixrdvqhy5a43dxkx46wgs7yn44zjpigkpw04xkh4m4vvq5l5qf"))))
+                "1zij7p7am7xk9as0nln803j69xnfsqjghqkns6i85mq1dxdvqgnl"))))
     (properties `((upstream-name . "dbGaPCheckup")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22773,6 +22803,28 @@ centers and weights of data nuggets to optimize the clustering assignments.")
 The package helps carry out data management, exploratory analyses, and model
 fitting.")
     (license license:gpl3)))
+
+(define-public r-datamojo
+  (package
+    (name "r-datamojo")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dataMojo" version))
+              (sha256
+               (base32
+                "0cp4zj85jczm42vm046n0rqmlrllj2r0jv1003h10isamffp59ig"))))
+    (properties `((upstream-name . "dataMojo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dataMojo")
+    (synopsis "Reshape Data Table")
+    (description
+     "This package provides a grammar of data manipulation with data.table', providing
+a consistent a series of utility functions that help you solve the most common
+data manipulation challenges.")
+    (license license:expat)))
 
 (define-public r-datamods
   (package

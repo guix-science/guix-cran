@@ -11445,6 +11445,35 @@ files; and validation of Darwin Core Archives.")
 computational finance.")
     (license license:gpl2+)))
 
+(define-public r-finbipartite
+  (package
+    (name "r-finbipartite")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "finbipartite" version))
+              (sha256
+               (base32
+                "0sws39nya8y7v78v4nlaz5g2nj4sgq5n5iwhfkyyq6h87slw2h8c"))))
+    (properties `((upstream-name . "finbipartite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spectralgraphtopology
+                             r-quadprog
+                             r-progress
+                             r-mvtnorm
+                             r-mass
+                             r-cvxr))
+    (home-page "https://github.com/convexfi/bipartite/")
+    (synopsis "Learning Bipartite Graphs: Heavy Tails and Multiple Components")
+    (description
+     "Learning bipartite and k-component bipartite graphs from financial datasets.
+This package contains implementations of the algorithms described in the paper:
+Cardoso JVM, Ying J, and Palomar DP (2022).
+<https://openreview.net/pdf?id=WNSyF9qZaMd> \"Learning bipartite graphs: heavy
+tails and multiple components, Advances in Neural Informations Processing
+Systems\" (NeurIPS).")
+    (license license:gpl3)))
+
 (define-public r-finbif
   (package
     (name "r-finbif")

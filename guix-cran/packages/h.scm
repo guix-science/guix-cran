@@ -1149,20 +1149,19 @@ decision and utility nodes are also supported.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyd1d" version))
               (sha256
                (base32
-                "0kjypkpkykk6rfagh7ic2ygq2vdz32laalm26c9rm8gcaxa9vsbd"))))
+                "0d0hm0r8ajzi2g8bd0lgizxidpmdznynk6lmxrcan9i3lx1hmmzw"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-rdpack r-rcurl r-plotrix))
     (native-inputs (list r-knitr))
     (home-page "https://hyd1d.bafg.de")
-    (synopsis
-     "Algorithms to Compute 1d Water Levels along the German Federal Waterways Elbe and Rhine")
+    (synopsis "1d Water Level Interpolation along the Rivers Elbe and Rhine")
     (description
      "An S4 class and several functions which utilize internally stored datasets and
 gauging data enable 1d water level interpolation.  The S4 class
@@ -5665,18 +5664,18 @@ matrix.")
 (define-public r-hirestec
   (package
     (name "r-hirestec")
-    (version "0.59")
+    (version "0.62")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HiResTEC" version))
               (sha256
                (base32
-                "08c5zvj1as28skhlyybrjinc9wawdsqfxiwybd0ni0ljh2i2sc5c"))))
+                "10wiviaib93md82xvizqv7973j97d5sq607q8mfb9iqc5g3a8vaq"))))
     (properties `((upstream-name . "HiResTEC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-biobase
+    (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-cormid
                              r-beeswarm))
-    (home-page "https://pubs.acs.org/doi/10.1021/acs.analchem.8b00356")
+    (home-page "https://CRAN.R-project.org/package=HiResTEC")
     (synopsis
      "Non-Targeted Fluxomics on High-Resolution Mass-Spectrometry Data")
     (description

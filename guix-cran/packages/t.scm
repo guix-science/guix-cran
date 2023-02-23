@@ -1866,13 +1866,13 @@ confidence intervals.")
 (define-public r-ttdo
   (package
     (name "r-ttdo")
-    (version "0.0.8")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ttdo" version))
               (sha256
                (base32
-                "184rfmrd4y63j8i62w8cy7d6cqgvlhj8h6zgjzsvad9l6pq2hmb3"))))
+                "0i0qw4zxi1cbqzdfxfdrm2vfppiddgsyf795wny6hz03fl416xkp"))))
     (properties `((upstream-name . "ttdo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytest r-diffobj))
@@ -3216,6 +3216,34 @@ ISBN:9781119041672); etc.")
 portfolio and capital of assets.  It also downloads and organizes data from the
 Tehran Stock Exchange (TSE).")
     (license license:bsd-2)))
+
+(define-public r-tseriestarma
+  (package
+    (name "r-tseriestarma")
+    (version "0.3-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tseriesTARMA" version))
+              (sha256
+               (base32
+                "0gpgav2dx8pzv12mcfrlypsfdgfwqaln4hhn7kf74l9wxjmbjxyh"))))
+    (properties `((upstream-name . "tseriesTARMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rugarch
+                             r-rsolnp
+                             r-rdpack
+                             r-matrix
+                             r-mathjaxr
+                             r-lbfgsb3c))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=tseriesTARMA")
+    (synopsis "Analysis of Nonlinear Time Series Through TARMA Models")
+    (description
+     "Routines for nonlinear time series analysis based on Threshold Autoregressive
+Moving Average models.  It provides functions and methods for: TARMA model
+fitting and forecasting, tests for threshold effects, unit-root tests based on
+TARMA models.")
+    (license license:gpl2+)))
 
 (define-public r-tseriesmma
   (package

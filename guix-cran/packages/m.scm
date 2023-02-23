@@ -2888,13 +2888,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.5.5")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiscaleDTM" version))
               (sha256
                (base32
-                "1254hq4kdqfdv6h90s0v92iq0y2d403rby8a9a2l7s3xkch54q56"))))
+                "1dcbdn2v7dd0mpvid0xrh0csmaljn2n4v4pv5r9fvwy8786bz6gg"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -5147,6 +5147,30 @@ mulset can quickly identify intersections from very large matrices of input
 vectors across columns and rows and thus provides scalable solution for dealing
 with missing values.  Tomic et al. (2019) <doi:10.1101/545186>.")
     (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
+
+(define-public r-mully
+  (package
+    (name "r-mully")
+    (version "2.1.38")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mully" version))
+              (sha256
+               (base32
+                "1lvyj1kyi9ad2byhc1amrjasc2brv7g4d2i08rf7149vp35cwrsg"))))
+    (properties `((upstream-name . "mully")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-randomcolor r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/frankkramer-lab/mully")
+    (synopsis "Create, Modify and Visualize Multi-Layered Networks")
+    (description
+     "Allows the user to create graphs with multiple layers.  The user can also modify
+the layers, the nodes, and the edges.  The graph can also be visualized.  Zaynab
+Hammoud and Frank Kramer (2018) <doi:10.3390/genes9110519>.  More about
+multilayered graphs and their usage can be found in our review paper: Zaynab
+Hammoud and Frank Kramer (2020) <doi:10.1186/s41044-020-00046-0>.")
+    (license license:gpl2+)))
 
 (define-public r-mullerplot
   (package
@@ -7635,30 +7659,6 @@ size is input by the user.")
 methodology developed in Sample Size Calculations for Micro-randomized Trials in
 mHealth by Liao et al. (2016) <DOI:10.1002/sim.6847>.")
     (license license:gpl2+)))
-
-(define-public r-mrsguide
-  (package
-    (name "r-mrsguide")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MrSGUIDE" version))
-              (sha256
-               (base32
-                "1hd0lvvy12r6kxa64vwnjavyv2f7a9jqgjxgmlw86wwh5g09hvfd"))))
-    (properties `((upstream-name . "MrSGUIDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-rcpparmadillo r-rcpp r-magrittr r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.stat.wisc.edu/~loh/guide.html")
-    (synopsis
-     "Multiple Responses Subgroup Identification using 'GUIDE' Algorithm")
-    (description
-     "An R implementation of GUIDE style algorithm focusing on subgroup identification
-problem under multiple responses of Loh et al. (2019) <doi:10.1002/widm.1326>.
-This package is intended for use for randomized trials and observational
-studies.")
-    (license license:gpl3)))
 
 (define-public r-mrs
   (package
@@ -10227,6 +10227,32 @@ particular, birth-year dependent mortality tables using a yearly trend to
 extrapolate from a base year are implemented, as well as period life table,
 cohort life tables using an age shift, and merged life tables.")
     (license license:gpl2+)))
+
+(define-public r-mortalitylaws
+  (package
+    (name "r-mortalitylaws")
+    (version "1.9.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MortalityLaws" version))
+              (sha256
+               (base32
+                "0hhyfgfps7wbypaf7rf96cbw6wsd9cafprmavmgyy9kpsh03096d"))))
+    (properties `((upstream-name . "MortalityLaws")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rcurl r-pbapply r-minpack-lm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mpascariu/MortalityLaws")
+    (synopsis "Parametric Mortality Models, Life Tables and HMD")
+    (description
+     "Fit the most popular human mortality laws', and construct full and abridge life
+tables given various input indices.  A mortality law is a parametric function
+that describes the dying-out process of individuals in a population during a
+significant portion of their life spans.  For a comprehensive review of the most
+important mortality laws see Tabeau (2001) <doi:10.1007/0-306-47562-6_1>.
+Practical functions for downloading data from various human mortality databases
+are provided as well.")
+    (license license:expat)))
 
 (define-public r-mortalitygaps
   (package
@@ -19089,23 +19115,25 @@ effects.")
 (define-public r-mixbox
   (package
     (name "r-mixbox")
-    (version "1.1.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixbox" version))
               (sha256
                (base32
-                "1ggh6xp86arb2ws26kcc581fp3qmnjzgcz7121axhiybrcg3fjph"))))
+                "1g7pph2p4vxvsysc6lfi5sh7khcbsjhaljfrd1qp6msrbkn34bmp"))))
     (properties `((upstream-name . "mixbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist r-gigrvg))
     (home-page "https://cran.r-project.org/package=mixbox")
     (synopsis "Observed Fisher Information Matrix for Finite Mixture Model")
     (description
-     "Developed for approximating the observed Fisher information matrix, asymptotic
-standard error, and the corresponding confidence intervals for parameters of the
-canonical, restricted, and unrestricted finite mixture models using the method
-proposed by Basford et al. (1997)
+     "Developed for the following tasks.  1- simulating realizations from the
+canonical, restricted, and unrestricted finite mixture models.  2- Monte Carlo
+approximation for density function of the finite mixture models.  3- Monte Carlo
+approximation for the observed Fisher information matrix, asymptotic standard
+error, and the corresponding confidence intervals for parameters of the mixture
+models sing the method proposed by Basford et al. (1997)
 <https://espace.library.uq.edu.au/view/UQ:57525>.")
     (license license:gpl2+)))
 
@@ -19421,13 +19449,13 @@ compute quantile(s) from a sample or the size of the required i.i.d.  sample.")
 (define-public r-mistr
   (package
     (name "r-mistr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mistr" version))
               (sha256
                (base32
-                "02jm6z4a6zkqh7bfdmc1pqvdvz03crihwi9s60gv15c8xwr1dq7p"))))
+                "103gvzcyrxscpsd8kv6zj8zx3r9mlbdjwd56msy0ngzcgrb4sb9d"))))
     (properties `((upstream-name . "mistr")))
     (build-system r-build-system)
     (propagated-inputs (list r-bbmle))
@@ -36295,13 +36323,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.9.0")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "110fimf0p0lbxxnwra12j2hjjzlrcxq8bdsbfpmz2p7c4wy4n1w6"))))
+                "0nivrl72k1wnj60acqsclgba0ckb539qyy5aibzjd9zckyjrjcn1"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-insight r-generics r-data-table r-checkmate))

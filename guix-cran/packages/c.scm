@@ -1173,13 +1173,13 @@ level citizen voting age population from block group data.")
 (define-public r-cvam
   (package
     (name "r-cvam")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cvam" version))
               (sha256
                (base32
-                "0ylfs2ry1ppigvs7py71vbslxga1d3kaijzwr8v923f3j14zkm54"))))
+                "1fq1xwxhpny8fy2l1a45vj9gj3czkifb1bnbi33dlf99vv1pml7r"))))
     (properties `((upstream-name . "cvam")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula r-coda))
@@ -4310,13 +4310,13 @@ team members, managers, and clients who prefer a point-and-click interface.")
 (define-public r-crtsize
   (package
     (name "r-crtsize")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CRTSize" version))
               (sha256
                (base32
-                "1hwvfzbicz8p452k3qyschpn7q8drnhbln6ny6nx4ncgrdr8lsd0"))))
+                "00shm1d32gwssf230rxjnn41rvxpli6jnx0axp69bjvfm8zqynqj"))))
     (properties `((upstream-name . "CRTSize")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CRTSize")
@@ -8692,36 +8692,6 @@ municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
 - SUS.")
     (license license:expat)))
 
-(define-public r-covid19br
-  (package
-    (name "r-covid19br")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "covid19br" version))
-              (sha256
-               (base32
-                "01hyci2mr1716r9wddd7zjzlm2jb03w9qcisrzmpn4g4mglziy83"))))
-    (properties `((upstream-name . "covid19br")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sf
-                             r-rlang
-                             r-httr
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://fndemarqui.github.io/covid19br/")
-    (synopsis "Brazilian COVID-19 Pandemic Data")
-    (description
-     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
-data, obtained from the official Brazilian repository at
-<https://covid.saude.gov.br/>, is available at country, region, state, and
-city-levels.  The package also downloads the world-level COVID-19 data from the
-John Hopkins University's repository.")
-    (license license:agpl3+)))
-
 (define-public r-covid19-analytics
   (package
     (name "r-covid19-analytics")
@@ -9861,13 +9831,13 @@ with corx'.")
 (define-public r-corto
   (package
     (name "r-corto")
-    (version "1.1.11")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corto" version))
               (sha256
                (base32
-                "14ajnzc8bxpc6l0minh3c8bj7fv0hrv974ip7pldn1b7zzkj6d9v"))))
+                "1ai8bvy5kra9xk76ga09ibjk1ky1aifd48jvblyh63xf59y3bx88"))))
     (properties `((upstream-name . "corto")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -24699,13 +24669,13 @@ negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
 (define-public r-clarify
   (package
     (name "r-clarify")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clarify" version))
               (sha256
                (base32
-                "1hbizx7517x4kpw1h8c1qcdgmcz9h0n6ai42w9akwg7q831b35z6"))))
+                "05p7ch6k85i9j7hx7iz177zmrh6xm9n4qfl21872n070bj8f05hh"))))
     (properties `((upstream-name . "clarify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -25289,13 +25259,13 @@ estimate the phenotypic variance explained by genetic markers.")
 (define-public r-civis
   (package
     (name "r-civis")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "civis" version))
               (sha256
                (base32
-                "12q96bj21832zqqbisfxmnpqw7w72v350lyf7cpjgr7cq7b51brd"))))
+                "1m3clmx9qxnvk7isxwcv08d7f3nwwm8vnfpq1sbs3fn5if11x8fh"))))
     (properties `((upstream-name . "civis")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-jsonlite r-httr r-future))
@@ -31697,13 +31667,13 @@ one parent distribution to the quantile function of another.")
 (define-public r-cder
   (package
     (name "r-cder")
-    (version "0.3-0")
+    (version "0.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cder" version))
               (sha256
                (base32
-                "07r9p0r4y809wgc7946l9hgh51m3rhjk2g7n3ygy9c02iwpy3v3m"))))
+                "0h44yifiy0fqrmfpri0had1ps5d1jj1dgwllha5ng04rjwlvxpzz"))))
     (properties `((upstream-name . "cder")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -29394,6 +29394,34 @@ It provides Quantile-Quantile plots and method of L-Moments estimation
 (including asymptotic standard errors) for the distribution.")
     (license license:gpl2+)))
 
+(define-public r-slcare
+  (package
+    (name "r-slcare")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SLCARE" version))
+              (sha256
+               (base32
+                "1bbniprjvylc6s7zfc8h8z8bz123k1rs8889q4n31mmy400g8rq3"))))
+    (properties `((upstream-name . "SLCARE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rereg r-nnet r-ggplot2 r-dplyr))
+    (home-page "https://github.com/qyxxx/SLCARE")
+    (synopsis "Semiparametric Latent Class Analysis for Recurrent Event")
+    (description
+     "An easy-to-use tool for latent class analysis for recurrent events.  The
+modeling framework is based on the semiparametric multiplicative modeling in
+Zhao et al. (2022) <doi:10.1111/rssb.12499>.  Our package provides an
+alternative method to define initial values in the estimation algorithm based on
+a joint frailty scale-change model described in Wang et al. (2001)
+<doi:10.1198/016214501753209031> and K-means.  Users are also allowed to specify
+different initial values by themselves.  Our package also provides an
+alternative algorithm to solving the estimating equation for unobservable latent
+class membership by fitting a \"pseudo\" weighted multinomial regression which
+speeds up the rate of convergence.")
+    (license license:gpl3+)))
+
 (define-public r-slbdd
   (package
     (name "r-slbdd")
@@ -31479,6 +31507,32 @@ different stopping conditions: simulated to a fixed time or number of taxa.
 When simulating to a fixed number of taxa, the user can simulate under the
 Generalized Sampling Approach that properly simulates phylogenies when assuming
 a uniform prior on the root age.")
+    (license license:gpl3)))
+
+(define-public r-sipetool
+  (package
+    (name "r-sipetool")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIPETool" version))
+              (sha256
+               (base32
+                "1w5sidiajrckps358xr526jfb4d0845p595qhr5i9b9q506n0klk"))))
+    (properties `((upstream-name . "SIPETool")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-convolutioner))
+    (home-page "https://cran.r-project.org/package=SIPETool")
+    (synopsis "SIFT-MS and CPET Data Processor")
+    (description
+     "Processor for selected ion flow tube mass spectrometer (SIFT-MS) output file
+from breath analysis.  It allows the filtering of the SIFT output file (i.e.,
+variation over time of the target analyte concentration) and the following
+analysis for the determination of: maximum, average, and standard deviation
+value of target concentration measured at each exhalation, and the respiratory
+rate over the measurement.  Additionally, it is possible to align the SIFT-MS
+data with other on-line techniques such as cardio pulmonary exercise test (CPET)
+for a comprehensive characterization of breath samples.")
     (license license:gpl3)))
 
 (define-public r-sipdibge
@@ -34635,6 +34689,34 @@ For a pedagogical introduction to the package see Sigal and Chalmers (2016)
 package and its design philosophy see Chalmers and Adkins (2020)
 <doi:10.20982/tqmp.16.4.p248>.")
     (license license:gpl2+)))
+
+(define-public r-simdd
+  (package
+    (name "r-simdd")
+    (version "1.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simdd" version))
+              (sha256
+               (base32
+                "141jap036w1nfmxgi87wlw455yr8jdrwr8h8ww3351l17h37zsb6"))))
+    (properties `((upstream-name . "simdd")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=simdd")
+    (synopsis
+     "Simulation of Fisher Bingham and Related Directional Distributions")
+    (description
+     "Simulation methods for the Fisher Bingham distribution on the unit sphere, the
+matrix Bingham distribution on a Grassmann manifold, the matrix Fisher
+distribution on SO(3), and the bivariate von Mises sine model on the torus.  The
+methods use the first ever general purpose acceptance/rejection simulation
+algorithm for the Bingham distribution and are described fully by Kent, Ganeiber
+and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.  These methods superseded
+earlier MCMC simulation methods and are more general than earlier simulation
+methods.  The methods can be slower in specific situations where there are
+existing non-MCMC simulation methods (see Section 8 of Kent, Ganeiber and Mardia
+(2018) <doi:10.1080/10618600.2017.1390468> for further details).")
+    (license license:gpl2)))
 
 (define-public r-simctest
   (package
@@ -41344,6 +41426,38 @@ Cambridge University Press and C. Q. Schneider and C. Wagemann \"Set Theoretic
 Methods for the Social Sciences\", Cambridge University Press.")
     (license license:gpl2)))
 
+(define-public r-setartree
+  (package
+    (name "r-setartree")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "setartree" version))
+              (sha256
+               (base32
+                "16n5si4rb1qabyw20wjxhcspnhzkic4b10akxc1agh3a8c7mi819"))))
+    (properties `((upstream-name . "setartree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-generics))
+    (home-page "https://github.com/rakshitha123/SETAR_Trees")
+    (synopsis
+     "SETAR-Tree: A Novel and Accurate Tree Algorithm for Global Time Series Forecasting")
+    (description
+     "The implementation of a forecasting-specific tree-based model that is in
+particular suitable for global time series forecasting, as proposed in Godahewa
+et al. (2022) <arXiv:2211.08661v1>.  The model uses the concept of Self Exciting
+Threshold Autoregressive (SETAR) models to define the node splits and thus, the
+model is named SETAR-Tree.  The SETAR-Tree uses some time-series-specific
+splitting and stopping procedures.  It trains global pooled regression models in
+the leaves allowing the models to learn cross-series information.  The depth of
+the tree is controlled by conducting a statistical linearity test as well as
+measuring the error reduction percentage at each node split.  Thus, the
+SETAR-Tree requires minimal external hyperparameter tuning and provides
+competitive results under its default configuration.  A forest is developed by
+extending the SETAR-Tree.  The SETAR-Forest combines the forecasts provided by a
+collection of diverse SETAR-Trees during the forecasting process.")
+    (license license:expat)))
+
 (define-public r-set
   (package
     (name "r-set")
@@ -47019,32 +47133,28 @@ alternative probability-based approach as described in Shimada et al. (2021)
 (define-public r-sdgdetector
   (package
     (name "r-sdgdetector")
-    (version "2.7")
+    (version "2.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDGdetector" version))
               (sha256
                (base32
-                "1xkbpx2s1q0fikai44dsr9c1h7yrsfhfzb7khz55nax3gsl6fd76"))))
+                "1mywjirh10fwl13dh6ba6xs64nx158c6b9c60xzd3a1fgslpv06k"))))
     (properties `((upstream-name . "SDGdetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-scales
                              r-rnaturalearth
                              r-magrittr
+                             r-magick
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=SDGdetector")
-    (synopsis "Detecting Sustainable Development Goals (SDGs) in Text")
+    (synopsis "Detect SDGs and Targets in Text")
     (description
-     "This package provides a tool for identifying 17 Sustainable Development Goals
-(SDGs) and associated 169 targets in text, as described in Yingjie Li (2022)
-<https://github.com/Yingjie4Science/SDGdetector/blob/main/paper/paper.pdf> .  It
-uses natural language processing to transform unstructured text into normalized
-and structured data suitable for analysis and visualization.  It thus enables a
-unique way to monitor individuals and organizations commitments and efforts
-towards advancing SDGs and targets.")
-    (license license:gpl3)))
+     "Identify 17 Sustainable Development Goals and associated 169 targets in text.")
+    (license license:gpl3+)))
 
 (define-public r-sdetorus
   (package

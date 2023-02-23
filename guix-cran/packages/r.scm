@@ -6590,13 +6590,13 @@ rare species.  Conservation Biology, In press.")
 (define-public r-rsdne
   (package
     (name "r-rsdne")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsdNE" version))
               (sha256
                (base32
-                "1faa6m2y4i6dqzgzj8glfcf5j438m3qqxcz1rgk7w20x3g24ddyx"))))
+                "0xjnkg009m51zfwih1rpgwch8bs7vvri0x4skrikzx3nvlszcjh3"))))
     (properties `((upstream-name . "rsdNE")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rsdNE")
@@ -20270,13 +20270,13 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
 (define-public r-riskmetric
   (package
     (name "r-riskmetric")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riskmetric" version))
               (sha256
                (base32
-                "004a888y0srvaazq90l3v1q11qfl927h87420fs03zklkq27bvr1"))))
+                "16nqmsaifkgzq371fszj7lx0hkdc04dd3ysqgnwskjf4bq8qiyzp"))))
     (properties `((upstream-name . "riskmetric")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -21420,6 +21420,36 @@ running arbitrary queries against available data sets, a system for defining
 clinical concepts and encoding their representations in tabular ICU data is
 presented.")
     (license license:gpl3)))
+
+(define-public r-ricrt
+  (package
+    (name "r-ricrt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Ricrt" version))
+              (sha256
+               (base32
+                "12fj6q5disl5vmpcwfvf64zqxjw2srrvbvpy10gy81k5lidzznqc"))))
+    (properties `((upstream-name . "Ricrt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-superlearner
+                             r-rlang
+                             r-rdpack
+                             r-randomforest
+                             r-glmnet
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=Ricrt")
+    (synopsis "Randomization Inference of Clustered Randomized Trials")
+    (description
+     "This package provides methods for randomization inference in group-randomized
+trials.  Specifically, it can be used to analyze the treatment effect of
+stratified data with multiple clusters in each stratum with treatment given on
+cluster level.  User may also input as many covariates as they want to fit the
+data.  Methods are described by Dylan S Small et al., (2012)
+<doi:10.1198/016214507000000897>.")
+    (license license:expat)))
 
 (define-public r-rich
   (package

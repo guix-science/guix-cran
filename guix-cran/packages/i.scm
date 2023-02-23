@@ -1625,17 +1625,17 @@ regression estimator is calculated with the usual orderings.")
 (define-public r-isotone
   (package
     (name "r-isotone")
-    (version "1.1-0")
+    (version "1.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotone" version))
               (sha256
                (base32
-                "0alk0cma5h3yn4w2nqcahprijsm89b0gby9najbngzi5vnxr6nvn"))))
+                "0kpzcfxac3yrvw4rszzc99r1mw78pq6bsgg0h332jamwvffhasgn"))))
     (properties `((upstream-name . "isotone")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls))
-    (home-page "http://r-forge.r-project.org/projects/psychor/")
+    (home-page "https://r-forge.r-project.org/projects/psychor/")
     (synopsis "Active Set and Generalized PAVA for Isotone Optimization")
     (description
      "This package contains two main functions: one for solving general isotone
@@ -6814,6 +6814,32 @@ data provided by the Carbon Intensity API (<https://carbonintensity.org.uk/>).
 National Gridâs Carbon Intensity API provides an indicative trend of regional
 carbon intensity of the electricity system in Great Britain.")
     (license license:cc0)))
+
+(define-public r-intendo
+  (package
+    (name "r-intendo")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intendo" version))
+              (sha256
+               (base32
+                "1qkgb0yrlq2k9cg934v5pj8bb6kla911v3z7sadd1p7m8a10kdyw"))))
+    (properties `((upstream-name . "intendo")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=intendo")
+    (synopsis
+     "Group of Fun Datasets of Various Sizes and Differing Levels of Quality")
+    (description
+     "Four datasets are provided here from the Intendo game Super Jetroid'.  It is
+data from the 2015 year of operation and it comprises a revenue table
+('all_revenue'), a daily users table ('users_daily'), a user summary table
+('user_summary'), and a table with data on all user sessions ('all_sessions').
+These core datasets come in different sizes, and, each of them has a variant
+that was intentionally made faulty (totally riddled with errors and
+inconsistencies).  This suite of tables is useful for testing with packages that
+focus on data validation and data documentation.")
+    (license license:expat)))
 
 (define-public r-integratedmrf
   (package
@@ -12067,31 +12093,6 @@ association data, especially with large controls re-sequenced data.")
     (description
      "Compute both static onestep and iterative multistep time series forecasts of
 machine learning models.")
-    (license license:gpl2+)))
-
-(define-public r-ifmcdm
-  (package
-    (name "r-ifmcdm")
-    (version "0.1.15")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IFMCDM" version))
-              (sha256
-               (base32
-                "0c28m1x5zvnprm0pqifxkpw41jv6mv0k3cyy0fxdmizwcmqq69ay"))))
-    (properties `((upstream-name . "IFMCDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-dplyr))
-    (home-page "https://cran.r-project.org/package=IFMCDM")
-    (synopsis "Intuitionistic Fuzzy Multi-Criteria Decision Making Methods")
-    (description
-     "Implementation of two multi-criteria decision making methods (MCDM):
-Intuitionistic Fuzzy Synthetic Measure (IFSM) and Intuitionistic Fuzzy Technique
-for Order of Preference by Similarity to Ideal Solution (IFTOPSIS) for
-intuitionistic fuzzy data sets for multi-criteria decision making problems.
-References describing the methods: JefmaÅski (2020)
-<doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
-(2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
 
 (define-public r-ifctools

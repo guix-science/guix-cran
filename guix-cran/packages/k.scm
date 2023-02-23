@@ -2632,13 +2632,13 @@ checking containment in an interval, and an alternative interface to assign().")
 (define-public r-kimfilter
   (package
     (name "r-kimfilter")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kimfilter" version))
               (sha256
                (base32
-                "1hlwid9irk6d1f4rywk5vknb02dp1qwm7cc54aicfyhf69fag1jh"))))
+                "142nlf91gh6l81c0qgwjfya2mj5ral478hp2zy3i0j01flyj2l08"))))
     (properties `((upstream-name . "kimfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -4807,13 +4807,13 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
 (define-public r-kalmanfilter
   (package
     (name "r-kalmanfilter")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kalmanfilter" version))
               (sha256
                (base32
-                "1i55cdlm3f4qmykv4p5q62yiw4bhkq5nnzd7wfpzf1hbnjp94d87"))))
+                "1041hhxdk0z9anca7ipbs5j0j1wyd4pq2j7qrg3jkxp3qp856dxg"))))
     (properties `((upstream-name . "kalmanfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

@@ -19733,17 +19733,18 @@ interface to that API, allowing you to query it and work with its responses.")
 (define-public r-pivmet
   (package
     (name "r-pivmet")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pivmet" version))
               (sha256
                (base32
-                "1svy6va5za7svinh77vhhhd05n8rr1s1ayjqcgxhssd8j98ckmxd"))))
+                "15fq48grdsmgr3ximar8g45jhlbix6745965rfwl9sjwvwk1bb9q"))))
     (properties `((upstream-name . "pivmet")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
-    (propagated-inputs (list r-runjags
+    (propagated-inputs (list r-scales
+                             r-runjags
                              r-rstan
                              r-rjags
                              r-mvtnorm
@@ -19759,11 +19760,10 @@ interface to that API, allowing you to query it and work with its responses.")
      "Pivotal Methods for Bayesian Relabelling and k-Means Clustering")
     (description
      "Collection of pivotal algorithms for: relabelling the MCMC chains in order to
-undo the label switching problem in Bayesian mixture models, as proposed in
-Egidi, PappadÃ , Pauli and Torelli (2018a)<doi:10.1007/s11222-017-9774-2>;
-initializing the centers of the classical k-means algorithm in order to obtain a
-better clustering solution.  For further details see Egidi, PappadÃ , Pauli and
-Torelli (2018b)<ISBN:9788891910233>.")
+undo the label switching problem in Bayesian mixture models; fitting sparse
+finite mixtures; initializing the centers of the classical k-means algorithm in
+order to obtain a better clustering solution.  For further details see Egidi,
+PappadÃ , Pauli and Torelli (2018b)<ISBN:9788891910233>.")
     (license license:gpl2)))
 
 (define-public r-pitchrx
@@ -27422,21 +27422,26 @@ of the complexity of a time series.")
 (define-public r-pda
   (package
     (name "r-pda")
-    (version "1.0-2")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pda" version))
               (sha256
                (base32
-                "1y067d3v9qlirawy01nmsh4fdynfh80mvg9r55kkban2z7xhql9j"))))
+                "1jmbxda3qxgai7flm8k0zjj78l6kijlzssyqambkmvj70v0gfy1n"))))
     (properties `((upstream-name . "pda")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rvest
                              r-rcpparmadillo
                              r-rcpp
+                             r-numderiv
+                             r-minqa
+                             r-metafor
+                             r-mass
                              r-jsonlite
                              r-httr
+                             r-glmnet
                              r-data-table))
     (home-page "https://cran.r-project.org/package=pda")
     (synopsis "Privacy-Preserving Distributed Algorithms")
@@ -27444,11 +27449,13 @@ of the complexity of a time series.")
      "This package provides a collection of privacy-preserving distributed algorithms
 for conducting multi-site data analyses.  The regression analyses can be linear
 regression for continuous outcome, logistic regression for binary outcome, Cox
-proportional hazard regression for time-to event outcome, or Poisson regression
-for count outcome.  The PDA algorithm runs on a lead site and only requires
-summary statistics from collaborating sites, with one or few iterations.  For
-more information, please visit our software websites:
-<https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
+proportional hazard regression for time-to event outcome, Poisson regression for
+count outcome, or multi-categorical regression for nominal or ordinal outcome.
+The PDA algorithm runs on a lead site and only requires summary statistics from
+collaborating sites, with one or few iterations.  The package can be used
+together with the online system (<https://pda-ota.pdamethods.org/>) for safe and
+convenient collaboration.  For more information, please visit our software
+websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
     (license license:asl2.0)))
 
 (define-public r-pcv
@@ -30799,13 +30806,13 @@ functions for working with the resulting abstract syntax tree.")
 (define-public r-parsel
   (package
     (name "r-parsel")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parsel" version))
               (sha256
                (base32
-                "0p5w7gdnakkgh36p3mknlz0s8a0sawiwyas442zcxy35x3kymnyf"))))
+                "0d2sviaq94v5szd2qq1kdpirp3zyrx6r3kyins9xyfma9026770x"))))
     (properties `((upstream-name . "parsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rselenium r-rlang r-purrr r-lubridate))
@@ -30817,7 +30824,9 @@ web-scraping with RSelenium by leveraging parallel processing.  You provide a
 function wrapper for your RSelenium scraping routine with a set of inputs, and
 parsel runs it in several browser instances.  Chunked input processing as well
 as error catching and logging ensures seamless execution and minimal data loss,
-even when unforeseen RSelenium errors occur.")
+even when unforeseen RSelenium errors occur.  You can additionally build safe
+scraping functions with minimal coding by utilizing constructor functions that
+act as wrappers around RSelenium methods.")
     (license license:expat)))
 
 (define-public r-parsec

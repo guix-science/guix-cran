@@ -1407,6 +1407,36 @@ soon as they are finalized.")
 paternity gains and losses.  Journal of Animal Ecology, 84(2), 518-531.")
     (license license:gpl3)))
 
+(define-public r-expowo
+  (package
+    (name "r-expowo")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "expowo" version))
+              (sha256
+               (base32
+                "0qxwm8fxiwg8fad870fjrf5cax9bvzi2b36c6g7ffqq2cnjdk4xh"))))
+    (properties `((upstream-name . "expowo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-rnaturalearth
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://dboslab.github.io/expowo/")
+    (synopsis "Data Mining of Plant Diversity and Distribution for R")
+    (description
+     "This package produces diversity estimates and species lists with associated
+global distribution for any angiosperm family and genus from Plants of the World
+Online database <https://powo.science.kew.org/>, by interacting with the source
+code of each plant taxon page, and creates global maps of species richness.")
+    (license license:expat)))
+
 (define-public r-exposr
   (package
     (name "r-exposr")
@@ -2246,13 +2276,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exiftoolr" version))
               (sha256
                (base32
-                "17s4rk3fn4lh1hqnayya32rcb28j59hpq4rqfb8w6m96zxx8l44n"))))
+                "108zma98zz47gjdm88l0nisgqsizrksd8s0grpxk5m8754rnpmsn"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (inputs (list perl))

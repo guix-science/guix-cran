@@ -8295,6 +8295,30 @@ D-statistics, for pairs of loci.  Petrowski et al. (2019)
 <doi:10.5334/jors.250>.")
     (license license:expat)))
 
+(define-public r-ohsome
+  (package
+    (name "r-ohsome")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ohsome" version))
+              (sha256
+               (base32
+                "1lakhx2f84ffgirzxwjbi9nfp6q28idp1i73f1x7cm83l32l2fss"))))
+    (properties `((upstream-name . "ohsome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-readr r-jsonlite r-httr r-geojsonsf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GIScience/ohsome-r")
+    (synopsis "An 'ohsome API' Client")
+    (description
+     "This package provides a client that grants access to the power of the ohsome API
+from R. It lets you analyze the rich data source of the OpenStreetMap (OSM)
+history.  You can retrieve the geometry of OSM data at specific points in time,
+and you can get aggregated statistics on the evolution of OSM elements and
+specify your own temporal, spatial and/or thematic filters.")
+    (license license:lgpl3+)))
+
 (define-public r-ohpl
   (package
     (name "r-ohpl")

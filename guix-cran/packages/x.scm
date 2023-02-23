@@ -850,6 +850,31 @@ functions also will recalculate the reference lines when significant change has
 occurred.")
     (license license:gpl3)))
 
+(define-public r-xmpdf
+  (package
+    (name "r-xmpdf")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xmpdf" version))
+              (sha256
+               (base32
+                "1aa118chjand1wwwknbk702mq2w1ksn8vgknqy3b5y1qxyzp0739"))))
+    (properties `((upstream-name . "xmpdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite r-datetimeoffset))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://trevorldavis.com/R/xmpdf/dev/")
+    (synopsis "Edit 'XMP' Metadata and 'PDF' Bookmarks and Documentation Info")
+    (description
+     "Edit XMP metadata <https://en.wikipedia.org/wiki/Extensible_Metadata_Platform>
+in a variety of media file formats as well as edit bookmarks (aka outline aka
+table of contents) and documentation info entries in pdf files.  Can detect and
+use a variety of command-line tools to perform these operations such as exiftool
+<https://exiftool.org/>, ghostscript <https://www.ghostscript.com/>, and/or
+pdftk <https://gitlab.com/pdftk-java/pdftk>.")
+    (license license:gpl3+)))
+
 (define-public r-xmlrpc2
   (package
     (name "r-xmlrpc2")
