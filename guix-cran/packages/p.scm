@@ -21357,30 +21357,6 @@ Bastide et al. (2017) <doi:10.1111/rssb.12206> and Bastide et al. (2018)
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-phylocomr
-  (package
-    (name "r-phylocomr")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "phylocomr" version))
-              (sha256
-               (base32
-                "0l9ap65m927pqwxs051y4q7fmipn3kkpk1nkgis6q5fqgfxy0igi"))))
-    (properties `((upstream-name . "phylocomr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-sys))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/phylocomr/")
-    (synopsis "Interface to 'Phylocom'")
-    (description
-     "Interface to Phylocom (<https://phylodiversity.net/phylocom/>), a library for
-analysis of phylogenetic community structure and character evolution.  Includes
-low level methods for interacting with the three executables, as well as higher
-level interfaces for methods like aot', ecovolve', bladj', phylomatic', and
-more.")
-    (license license:bsd-2)))
-
 (define-public r-phyloclim
   (package
     (name "r-phyloclim")

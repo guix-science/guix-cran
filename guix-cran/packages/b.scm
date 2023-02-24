@@ -2767,34 +2767,6 @@ mediation and moderation analyses (PROCESS); and (8) additional toolbox for
 statistics and graphics.")
     (license license:gpl3)))
 
-(define-public r-brranching
-  (package
-    (name "r-brranching")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "brranching" version))
-              (sha256
-               (base32
-                "06jy3qhbr0v4m1j4j8a7fb7ic59sx4zhlsm1yb3g6rdwc00d67wj"))))
-    (properties `((upstream-name . "brranching")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-taxize
-                             r-phytools
-                             r-phylocomr
-                             r-curl
-                             r-crul
-                             r-conditionz
-                             r-ape))
-    (home-page
-     "https://docs.ropensci.org/brranching/https://github.com/ropensci/brranching")
-    (synopsis "Fetch 'Phylogenies' from Many Sources")
-    (description
-     "Includes methods for fetching phylogenies from a variety of sources, including
-the Phylomatic web service (<http://phylodiversity.net/phylomatic/>), and
-Phylocom (<https://github.com/phylocom/phylocom/>).")
-    (license license:expat)))
-
 (define-public r-brr
   (package
     (name "r-brr")

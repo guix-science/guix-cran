@@ -11255,6 +11255,35 @@ for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml-r>).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-statgenqtlxt
+  (package
+    (name "r-statgenqtlxt")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "statgenQTLxT" version))
+              (sha256
+               (base32
+                "0pgxxdmmwc0v964alnyqxfkzp8gsqiixzpf5r2v5kj779gvq4qz8"))))
+    (properties `((upstream-name . "statgenQTLxT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statgengwas
+                             r-sommer
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=statgenQTLxT")
+    (synopsis "Multi-Trait and Multi-Trial Genome Wide Association Studies")
+    (description
+     "Fast multi-trait and multi-trail Genome Wide Association Studies (GWAS)
+following the method described in Zhou and Stephens. (2014),
+<doi:10.1038/nmeth.2848>.  One of a series of statistical genetic packages for
+streamlining the analysis of typical plant breeding experiments developed by
+Biometris.")
+    (license license:gpl3)))
+
 (define-public r-statgenmpp
   (package
     (name "r-statgenmpp")

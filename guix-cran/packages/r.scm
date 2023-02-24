@@ -1597,13 +1597,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.6.3.1.0")
+    (version "0.6.3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rvinecopulib" version))
               (sha256
                (base32
-                "02ph4djj55kfrw9dsm02c4lj25scpxgvjh7i1hpvbhpqa91irhkv"))))
+                "0cmzijh03mbl3b3x8gin3vzgc52yrxmai45dxw5a6zrfal3x15fz"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm

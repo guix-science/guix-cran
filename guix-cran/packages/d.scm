@@ -2642,6 +2642,26 @@ model introduced in Merton (1974) <doi:10.1111/j.1540-6261.1974.tb03058.x>.  The
 methods includes simulation and estimation of the parameters.")
     (license license:gpl2)))
 
+(define-public r-dtcompair
+  (package
+    (name "r-dtcompair")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DTComPair" version))
+              (sha256
+               (base32
+                "1q8fqjynyf5y753rbhy1dpjxxr1z5ffhn5pna03agshisnicdgpa"))))
+    (properties `((upstream-name . "DTComPair")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-propcis r-gee))
+    (home-page "https://github.com/chstock/DTComPair")
+    (synopsis "Comparison of Binary Diagnostic Tests in a Paired Study Design")
+    (description
+     "Comparison of the accuracy of two binary diagnostic tests in a \"paired\" study
+design, i.e.  when each test is applied to each subject in the study.")
+    (license license:gpl3+)))
+
 (define-public r-dtbm
   (package
     (name "r-dtbm")
@@ -14830,13 +14850,13 @@ which contains two indexes, with potentially a nesting structure.")
 (define-public r-dfdr
   (package
     (name "r-dfdr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfdr" version))
               (sha256
                (base32
-                "0mbwibhdnbf9v55fd8bhqkpb6i6djv8i7bl008mzj5snq3rqkqxi"))))
+                "1s7i11sl6m80hryggxby4c0knzk6nxqnlwfpzgg4a2bnqnwygfya"))))
     (properties `((upstream-name . "dfdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-purrr r-pryr))
@@ -16219,6 +16239,29 @@ parameters, convert them to JSON format and use them as input in a different
 graphical interface.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-descriptio
+  (package
+    (name "r-descriptio")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "descriptio" version))
+              (sha256
+               (base32
+                "146jrllcs7abpcsk8cgc0ibkm19phnv9gsc4drgckbskshf3qs73"))))
+    (properties `((upstream-name . "descriptio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-mass r-ggplot2 r-ggpattern))
+    (home-page "https://github.com/nicolas-robette/descriptio")
+    (synopsis "Descriptive Statistical Analysis")
+    (description
+     "Description of statistical associations between two variables : measures of
+local and global association between variables (phi, CramÃ©r V, correlations,
+eta-squared, Goodman and Kruskal tau, permutation tests, etc.), multiple
+graphical representations of the associations between two variables (using
+ggplot2') and weighted statistics.")
+    (license license:gpl2+)))
 
 (define-public r-describer
   (package
@@ -21806,66 +21849,6 @@ for selecting dates, times, or predefined ranges like \"Last 30 Days\".  It wrap
 the JavaScript library daterangepicker which is available at
 <https://www.daterangepicker.com>.")
     (license license:expat)))
-
-(define-public r-datelife
-  (package
-    (name "r-datelife")
-    (version "0.6.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "datelife" version))
-              (sha256
-               (base32
-                "1cmi274xsv7zandfkps780972ghw7cplpg099pkcp7bjyvk2xrx1"))))
-    (properties `((upstream-name . "datelife")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-treebase
-                             r-taxize
-                             r-stringr
-                             r-rotl
-                             r-plyr
-                             r-phytools
-                             r-phylocomr
-                             r-phylobase
-                             r-phangorn
-                             r-paleotree
-                             r-knitcitations
-                             r-ips
-                             r-httr
-                             r-geiger
-                             r-data-table
-                             r-curl
-                             r-compare
-                             r-cluster
-                             r-bold
-                             r-biocmanager
-                             r-ape
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/phylotastic/datelife")
-    (synopsis "Scientific Data on Time of Lineage Divergence for Your Taxa")
-    (description
-     "This package provides methods and workflows to get chronograms (i.e.,
-phylogenetic trees with branch lengths proportional to time), using open,
-peer-reviewed, state-of-the-art scientific data on time of lineage divergence.
-This package constitutes the main underlying code of the DateLife web service at
-<https:www.datelife.org>.  To obtain a single summary chronogram from a group of
-relevant chronograms, we implement the Super Distance Matrix (SDM) method
-described in Criscuolo et al. (2006) <doi:10.1080/10635150600969872>.  To find
-the grove of chronograms with a sufficiently overlapping set of taxa for
-summarizing, we implement theorem 1.1.  from AnÃ© et al. (2009)
-<doi:10.1007/s00026-009-0017-x>.  A given phylogenetic tree can be dated using
-time of lineage divergence data as secondary calibrations (with caution, see
-Schenk (2016) <doi:10.1371/journal.pone.0148228>).  To obtain and apply
-secondary calibrations, the package implements the congruification method
-described in Eastman et al. (2013) <doi:10.1111/2041-210X.12051>.  Tree dating
-can be performed with different methods including BLADJ (Webb et al. (2008)
-<doi:10.1093/bioinformatics/btn358>), PATHd8 (Britton et al. (2007)
-<doi:10.1080/10635150701613783>), mrBayes (Huelsenbeck and Ronquist (2001)
-<doi:10.1093/bioinformatics/17.8.754>), and treePL (Smith and O'Meara (2012)
-<doi:10.1093/bioinformatics/bts492>).")
-    (license license:gpl2+)))
 
 (define-public r-datefixr
   (package

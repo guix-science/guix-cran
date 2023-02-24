@@ -9495,13 +9495,13 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OCNet" version))
               (sha256
                (base32
-                "104cq2cdmjwp00ygwyc20kjhibf3graq2xxc3dak5jrf8l1pwxjc"))))
+                "09d3p93rqnawrs8v45692kbslav4addziiamdxhbw29mci6x5rvf"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn

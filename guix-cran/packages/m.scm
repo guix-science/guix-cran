@@ -1077,13 +1077,13 @@ data.")
 (define-public r-mvnfast
   (package
     (name "r-mvnfast")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvnfast" version))
               (sha256
                (base32
-                "0whbivpl23n251ir3b10m287r3nz4dxvpxlycrvnjilsdj9m0zdn"))))
+                "1869xqq2wd7yw23q4ma5qawcnbdp7myafk6rdxazqymqak7f0wc8"))))
     (properties `((upstream-name . "mvnfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -11772,28 +11772,23 @@ MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "1.1.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MolgenisArmadillo" version))
               (sha256
                (base32
-                "0vs0ay6jfpsaq8v3s2r580v0vsr0g44shszqkiqb6gsgvhkmv6fg"))))
+                "12pzdppkxv3x8xjizhkm8iii64jxyi3zblyghvxv7gkmgxlzsf7h"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-urltools
-                             r-molgenisauth
-                             r-httr
-                             r-aws-s3
-                             r-aws-iam
+    (propagated-inputs (list r-urltools r-molgenisauth r-httr r-base64enc
                              r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/molgenis/molgenis-r-armadillo/")
     (synopsis "Armadillo Client for the Armadillo Service")
     (description
-     "This package provides a set of functions to be able to manage data shared on a
-MOLGENIS Armadillo storage server ('MinIO').")
+     "This package provides a set of functions to manage data shared on a MOLGENIS
+Armadillo server.")
     (license license:lgpl2.1+)))
 
 (define-public r-mole
@@ -29800,6 +29795,31 @@ epidemiological studies.")
 by Chan, Imai, Yam and Zhang (2016) <arXiv:1601.03501>.")
     (license license:gpl2+)))
 
+(define-public r-mecoturn
+  (package
+    (name "r-mecoturn")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mecoturn" version))
+              (sha256
+               (base32
+                "1wlq0np18halr89x4x15kfy8s6klrikwra9gpy1qm5d50yhdgyg9"))))
+    (properties `((upstream-name . "mecoturn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-microeco r-magrittr r-ggpubr r-ggplot2))
+    (home-page "https://github.com/ChiLiubio/mecoturn")
+    (synopsis "Decipher Microbial Turnover along a Gradient")
+    (description
+     "Two pipelines are provided to study microbial turnover along a gradient,
+including the beta diversity and microbial abundance change.  The betaturn class
+consists of the steps of community dissimilarity matrix generation, matrix
+conversion, differential test and visualization.  The workflow of taxaturn class
+includes the taxonomic abundance calculation, abundance transformation,
+abundance change summary, statistical analysis and visualization.  Multiple
+statistical approaches can contribute to the analysis of microbial turnover.")
+    (license license:gpl3)))
+
 (define-public r-mecor
   (package
     (name "r-mecor")
@@ -35019,13 +35039,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.5.0")
+    (version "4.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MatchIt" version))
               (sha256
                (base32
-                "0wk1gjhdmf8wl92k3b9xgjfxxn5sqgddn9gcywch96237q8vlpr3"))))
+                "1q67n21fp2gz3ig3yphilkx1alp07iwf10b537xpjca4xbmns7ln"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-backports))

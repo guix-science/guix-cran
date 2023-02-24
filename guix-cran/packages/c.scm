@@ -5647,13 +5647,13 @@ reassessment method.")
 (define-public r-critpath
   (package
     (name "r-critpath")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "critpath" version))
               (sha256
                (base32
-                "1jr5ra8gwzcfnap87z4snb5mmfqq2iaas2x54kqqcsb2gsk3gchs"))))
+                "0fqzqxskvxlxggq0mfk3bqgyj2lj49ninklqwgcgrhklnry8j93q"))))
     (properties `((upstream-name . "critpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ggplot2 r-diagrammer))
@@ -25875,13 +25875,13 @@ to calculate circular-circular and circular-linear distance correlations.")
 (define-public r-circlesintersections
   (package
     (name "r-circlesintersections")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CirclesIntersections" version))
               (sha256
                (base32
-                "1r20gs88w858smswq8nnr9qpgfvdmkvd8vwy4dnnga269p05yl62"))))
+                "0q7w3fl8qz5gknri217qq68wij355dljnpv538yqhf03h405xc3f"))))
     (properties `((upstream-name . "CirclesIntersections")))
     (build-system r-build-system)
     (home-page "https://github.com/hugosal/CirclesIntersections")

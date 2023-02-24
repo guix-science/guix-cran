@@ -259,26 +259,28 @@ relationships between exposures and outcomes.")
 (define-public r-twowaytests
   (package
     (name "r-twowaytests")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "twowaytests" version))
               (sha256
                (base32
-                "00wz8l4ginv1pp1dbjwqbmn4q8i8fnmhz8x3v6riffndw5ag22f2"))))
+                "05y455p40p72m22k0pjmdqnnp2fklqcq70yc9ga9fgcimqjvbi18"))))
     (properties `((upstream-name . "twowaytests")))
     (build-system r-build-system)
-    (propagated-inputs (list r-onewaytests r-nortest r-ggplot2 r-car))
+    (propagated-inputs (list r-wesanderson r-onewaytests r-nortest r-ggplot2
+                             r-car))
     (home-page "https://cran.r-project.org/package=twowaytests")
     (synopsis "Two-Way Tests in Independent Groups Designs")
     (description
-     "This package performs two-way tests in independent groups designs; Parametric
-Bootstrap based Generalized Test and Generalized Pivotal Quantity based
-Generalized Test (Weerahandi and Krishnamoorthy, 2019)
-<doi:10.1080/03610926.2017.1419264>.  The package performs descriptive
-statistics and graphical approaches.  Moreover, it assesses variance homogeneity
-and normality of data in each group via tests and plots.  All twowaytests
-functions are designed for two-way layout.")
+     "This package performs two-way tests in independent groups designs.  These are
+two-way ANOVA, two-way ANOVA under heteroscedasticity: parametric bootstrap
+based generalized test and generalized pivotal quantity based generalized test
+(Ananda et al., 2022) <doi:10.1080/03610926.2022.2059682>, two-way ANOVA for
+medians, trimmed means, M-estimators (Wilcox, 2011; ISBN:978-0-12-386983-8).
+The package performs descriptive statistics and graphical approaches.  Moreover,
+it assesses variance homogeneity and normality of data in each group via tests
+and plots.  All twowaytests functions are designed for two-way layout.")
     (license license:gpl2+)))
 
 (define-public r-twowayfeweights
@@ -7004,6 +7006,26 @@ can be estimated, along with the corresponding standard errors and P values.")
 configurable system of plurals.  Have a separate file for each locale and use
 inheritance to handle dialect differences.")
     (license license:gpl3+)))
+
+(define-public r-translate-logit
+  (package
+    (name "r-translate-logit")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "translate.logit" version))
+              (sha256
+               (base32
+                "1klh4aisip0q0899lbybniy38f346m66k5g929l444f26dq9snw0"))))
+    (properties `((upstream-name . "translate.logit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnet r-nleqslv))
+    (home-page "https://cran.r-project.org/package=translate.logit")
+    (synopsis "Translation of Logit Regression Coefficients into Percentages")
+    (description
+     "Translation of logit models coefficients into percentages, following Deauvieau
+(2010) <doi:10.1177/0759106309352586>.")
+    (license license:gpl2+)))
 
 (define-public r-transfr
   (package
@@ -14470,13 +14492,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyclust" version))
               (sha256
                (base32
-                "1qv4d0s5n8wkf6wb07xyxfc2n3amk995mx1mzhr1kzhpfrzympzd"))))
+                "1gfqk2aap3j96fn1wpp6xz7z415x5l9a8jd9hrcm4978dg4r00r7"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21855,6 +21877,40 @@ shaded contour lines.  In this simplified implementation of the method,
 north-west white contours represent illuminated topography and south-east black
 contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
     (license license:gpl3)))
+
+(define-public r-tame
+  (package
+    (name "r-tame")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tame" version))
+              (sha256
+               (base32
+                "183s8mxy1wvqkwick5gzrf5ijx8frwk2b8bpb4hh5rwvlqwm6p4h"))))
+    (properties `((upstream-name . "tame")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rfast
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-fuzzyjoin
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tame")
+    (synopsis
+     "Timing, Anatomical, Therapeutic and Chemical Based Medication Clustering")
+    (description
+     "Agglomerative hierarchical clustering with a bespoke distance measure based on
+medication similarities in the Anatomical Therapeutic Chemical Classification
+System, medication timing and medication amount or dosage.  Tools for
+summarizing, illustrating and manipulating the cluster objects are also
+available.")
+    (license license:expat)))
 
 (define-public r-takos
   (package

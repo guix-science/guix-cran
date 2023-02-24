@@ -1658,6 +1658,42 @@ calculated distance matrices from figshare <https://figshare.com>.")
 RESTful Webservice.  Utility functions aim at taxonomic consistency.")
     (license (license:fsdg-compatible "GNU Affero General Public License"))))
 
+(define-public r-worldriskpollr
+  (package
+    (name "r-worldriskpollr")
+    (version "0.7.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "worldriskpollr" version))
+              (sha256
+               (base32
+                "0w3ddiygjbylf1545ivavr3vz3y1098yv3f0c5hm70kg26lw93nn"))))
+    (properties `((upstream-name . "worldriskpollr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sjlabelled
+                             r-rlang
+                             r-magrittr
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "<https://wrp.lrfoundation.org.uk/data-resources/>")
+    (synopsis "Aggregated Survey Data from the World Risk Poll")
+    (description
+     "This package provides users with programmatic access to aggregated survey data
+from the World Risk Poll, conveniently packaged for consumption by R users.  It
+first downloads and formats the Lloyd's Register Foundation World Risk Poll
+individual survey responses.  It then processes this data and provides weighting
+functions for users to select questions of interest and aggregate to national
+levels, by gender, age, income, education urban/rural and household composition.
+ The method of aggregation can be found at
+<https://www.gallup.com/178667/gallup-world-poll-work.aspx/>.  More information
+about the World Risk Poll Survey can be found here
+<https://wrp.lrfoundation.org.uk/>.")
+    (license license:expat)))
+
 (define-public r-worldmet
   (package
     (name "r-worldmet")

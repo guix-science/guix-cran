@@ -1323,13 +1323,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.0.3")
+    (version "3.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autostsm" version))
               (sha256
                (base32
-                "1d80l7lxzrpwdd92cc41ykj2ylkdhndamqphprw9a3wf0zn7l39d"))))
+                "0zb7l3syfcc5jpwcvr733x5lv87a1wicp2gpsvi6hgwlb6wlkq1w"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
@@ -7244,13 +7244,13 @@ that available in other commercial software and subscription online calculators.
 (define-public r-aqeval
   (package
     (name "r-aqeval")
-    (version "0.4.5")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AQEval" version))
               (sha256
                (base32
-                "14i731bdr6yrdgl9zqlyw46yd5mnj0q3sqmqfqxcvs39lxkvm473"))))
+                "0iac6bcrbhiaxz05vmfmb99g1060r36z1qh3imbwri7m16v0gx59"))))
     (properties `((upstream-name . "AQEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7271,8 +7271,8 @@ that available in other commercial software and subscription online calculators.
 and quantification of discrete changes in air quality time-series, such as
 identifying the impacts of air quality policy interventions.  The main functions
 use signal isolation then break-point/segment (BP/S) methods based on
-strucchange and segmented methods detect and quantify change events (Ropkins &
-Tate, 2021, <doi:10.1016/j.scitotenv.2020.142374>).")
+strucchange and segmented methods to detect and quantify change events (Ropkins
+& Tate, 2021, <doi:10.1016/j.scitotenv.2020.142374>).")
     (license license:gpl3+)))
 
 (define-public r-apyramid
@@ -14105,13 +14105,13 @@ on <http://agvgd.hci.utah.edu/>.")
 (define-public r-agua
   (package
     (name "r-agua")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agua" version))
               (sha256
                (base32
-                "07alkyaxrxq6nxd6s57my2ln0n5sdj4rb67r1g6dgsr5rsjwkjzi"))))
+                "0ab6k2bki5rslsy191k8knxrmpi2zhy017wz41z21j24hqx3rvaz"))))
     (properties `((upstream-name . "agua")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows

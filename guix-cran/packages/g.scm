@@ -10548,17 +10548,16 @@ with its major coastline, and additional lines and points.")
 (define-public r-globaltrends
   (package
     (name "r-globaltrends")
-    (version "0.0.12")
+    (version "0.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "globaltrends" version))
               (sha256
                (base32
-                "1a9zl12zcy4qzs89vda8zhgqx97fkj0xi9xacbavr0is7k8s7hjp"))))
+                "0dp7pzj2qnmpdsvz7vwxg81l2pvx51xljlg88swj7hh45x73bgq1"))))
     (properties `((upstream-name . "globaltrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-wdi
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -10590,7 +10589,8 @@ based on patterns within these scores.  This offers insights such as degree of
 internationalization of firms and organizations or dissemination of political,
 social, or technological trends across the globe or within single countries.  An
 outline of the package's methodological foundations and potential applications
-is available as a working paper: <https://www.ssrn.com/abstract=3969013>.")
+is available as a working paper:
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3969013>.")
     (license license:expat)))
 
 (define-public r-globalopttests
@@ -19926,13 +19926,13 @@ Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
 (define-public r-geometries
   (package
     (name "r-geometries")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geometries" version))
               (sha256
                (base32
-                "05036q4dccmmd955g4n2s5ncc9zxd9v9qyamszszwn147i7hkxcc"))))
+                "1w1pq2bnxndyd8927ll47nmag99cbbzg4pg8gmpm4ga8ih3gyq2y"))))
     (properties `((upstream-name . "geometries")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

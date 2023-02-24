@@ -12095,6 +12095,31 @@ association data, especially with large controls re-sequenced data.")
 machine learning models.")
     (license license:gpl2+)))
 
+(define-public r-ifmcdm
+  (package
+    (name "r-ifmcdm")
+    (version "0.1.17")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IFMCDM" version))
+              (sha256
+               (base32
+                "04qiq5i2nw3l64yz0xwh7c8dcfh69xinb8l0zq0a8gi67vd1yka7"))))
+    (properties `((upstream-name . "IFMCDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=IFMCDM")
+    (synopsis "Intuitionistic Fuzzy Multi-Criteria Decision Making Methods")
+    (description
+     "Implementation of two multi-criteria decision making methods (MCDM):
+Intuitionistic Fuzzy Synthetic Measure (IFSM) and Intuitionistic Fuzzy Technique
+for Order of Preference by Similarity to Ideal Solution (IFTOPSIS) for
+intuitionistic fuzzy data sets for multi-criteria decision making problems.
+References describing the methods: JefmaÅski (2020)
+<doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
+(2021) <doi:10.3390/e23121636>.")
+    (license license:gpl2+)))
+
 (define-public r-ifctools
   (package
     (name "r-ifctools")

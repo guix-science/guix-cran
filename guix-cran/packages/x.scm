@@ -632,13 +632,13 @@ exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xportr" version))
               (sha256
                (base32
-                "0dcjlc27v6a45gj8qfh6i31d7386kbs9w05mj74zx1apwn1x6j5m"))))
+                "0dfa666mimva5gzzi9rwsah7i4p4l0ycbkzqcb4mrad5j4sbdm1j"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm

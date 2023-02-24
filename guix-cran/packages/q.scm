@@ -3615,6 +3615,31 @@ addition to that, this package can calculate the expression level of genes based
 on three methods.")
     (license license:expat)))
 
+(define-public r-qpcrhelper
+  (package
+    (name "r-qpcrhelper")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qPCRhelper" version))
+              (sha256
+               (base32
+                "0v1d4k2v2sgcy0xh2vq21yv9sw71bj44rc273g9ggg214zqdprxd"))))
+    (properties `((upstream-name . "qPCRhelper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstatix r-magrittr r-ggpubr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qPCRhelper")
+    (synopsis "qPCR Ct Values to Expression Values")
+    (description
+     "Computes normalized cycle threshold (Ct) values (delta Ct) from raw quantitative
+polymerase chain reaction (qPCR) Ct values and conducts test of significance
+using t.test().  Plots expression values based from log2(2^(-1*delta delta Ct))
+across groups per gene of interest.  Methods for calculation of delta delta Ct
+and relative expression (2^(-1*delta delta Ct)) values are described in: Livak &
+Schmittgen, (2001) <doi:10.1006/meth.2001.1262>.")
+    (license license:gpl3)))
+
 (define-public r-qolmiss
   (package
     (name "r-qolmiss")
