@@ -2367,13 +2367,13 @@ fluctuations, and solid earth tides.")
 (define-public r-kit
   (package
     (name "r-kit")
-    (version "0.0.12")
+    (version "0.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kit" version))
               (sha256
                (base32
-                "0kj7x8wlwpdpdwxv5ngflzw4xqfyc2n7vx6d2ssz7k47qcm57rdb"))))
+                "0xrd2l3fxr2ipbi7l6vwxcxjbp898xqd9s4i2ndg0jawkw1ypnb5"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kit")

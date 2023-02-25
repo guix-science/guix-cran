@@ -1800,13 +1800,13 @@ effects.")
 (define-public r-tts
   (package
     (name "r-tts")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TTS" version))
               (sha256
                (base32
-                "0dhxj474dqjxqg0fc2dcx8p5hrjn9xfkn0rjn2vz3js92fa9ik9h"))))
+                "0b9zlvsjdblc7yavpm9ni0av5z40xlwvn5v37dg3kd6ymjykir1k"))))
     (properties `((upstream-name . "TTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mgcv))
@@ -3222,13 +3222,13 @@ Tehran Stock Exchange (TSE).")
 (define-public r-tseriestarma
   (package
     (name "r-tseriestarma")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tseriesTARMA" version))
               (sha256
                (base32
-                "0gpgav2dx8pzv12mcfrlypsfdgfwqaln4hhn7kf74l9wxjmbjxyh"))))
+                "0clxwlamqhlsbi7ldwwwk24rr5miyzg71gsw31x10g6zj7hwvrvd"))))
     (properties `((upstream-name . "tseriesTARMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rugarch
@@ -12888,13 +12888,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyterra" version))
               (sha256
                (base32
-                "16zw7zw17a2qh777nhv8iyzq5g7hxp4hqh3cb9lhmrscdfg9r5qw"))))
+                "1kjcqqbrjwhw67zf1vbkkgs17k013yb36aysynh079hln4kl4q31"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12907,7 +12907,6 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
                              r-ggplot2
                              r-dplyr
                              r-data-table
-                             r-crayon
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://dieghernan.github.io/tidyterra/")

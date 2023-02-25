@@ -1444,13 +1444,13 @@ several providers.")
 (define-public r-osmdata
   (package
     (name "r-osmdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osmdata" version))
               (sha256
                (base32
-                "11qabkp0zkzdkd4vn6kbnqga02vyqsp6vgp1qkg87bx7b8hh37hj"))))
+                "1vi44cb05wl4wnbfwvr7wrj261211jk0pf6z9ila1s23ja8lkf0a"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

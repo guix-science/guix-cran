@@ -11130,13 +11130,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrOptim" version))
               (sha256
                (base32
-                "19vs7zs79kx90hhwa6lsfwm1y38f0vgwh8ifzs7ilm9s87qlc58d"))))
+                "1w14s27zh51q73d2zzhpqjkx47i5rjdn1x9c26i4gj6d1ma288fl"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-glmmrbase r-digest))
@@ -11156,13 +11156,13 @@ this package can be found in Watson and Pan (2022) <arXiv:2207.09183>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "0rs5gjg06m985l46l22a85q4skjfm1xp7y119yr62vxs2vgh8pcw"))))
+                "0l755m30zf264hkfyqhd4h8f9zsw2h1bmbvkmbwljfzwlrha2dc0"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix r-digest))
@@ -27159,6 +27159,42 @@ the optimal solutions.  The positive point is the independence of the genetic
 algorithm on the number of data that for big data is an effective help in
 solving the problem.")
     (license license:gpl2+)))
+
+(define-public r-gabb
+  (package
+    (name "r-gabb")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GABB" version))
+              (sha256
+               (base32
+                "19wfk5awsa5hspcfsc0hl9d98vxx5khggd809cx8mg1v02fc96qr"))))
+    (properties `((upstream-name . "GABB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-rvaidememoire
+                             r-pheatmap
+                             r-hotelling
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-ggforce
+                             r-egg
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=GABB")
+    (synopsis
+     "Facilitation of Data Preparation and Plotting Procedures for RDA and PCA Analyses")
+    (description
+     "Help to the occasional R user for synthesis and enhanced graphical visualization
+of redundancy analysis (RDA) and principal component analysis (PCA) methods and
+objects.  Inputs are : data frame, RDA (package vegan') and PCA (package
+FactoMineR') objects.  Outputs are : synthesized results of RDA, displayed in
+console and saved in tables ; displayed and saved objects of PCA graphic
+visualization of individuals and variables projections with multiple graphic
+parameters.  Method note : for the RDA output synthesis, several functions of
+the package RVAideMemoire', developed by Maxime HervÃ©, are exploited.")
+    (license license:expat)))
 
 (define-public r-gaabbreviate
   (package

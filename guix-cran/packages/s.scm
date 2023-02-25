@@ -8478,6 +8478,53 @@ Geller et al. (2003, ISBN:9781135524388), Ivanova, Qaqish, and Schell (2005)
 <doi:10.1080/07474946.2011.539924>.")
     (license license:gpl3)))
 
+(define-public r-stopp
+  (package
+    (name "r-stopp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stopp" version))
+              (sha256
+               (base32
+                "06f0pahgnmy0vc1xggakzcwnc7858lhjfwxbcvfzsrr0xkd5c8mb"))))
+    (properties `((upstream-name . "stopp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stpp
+                             r-stlnpp
+                             r-splancs
+                             r-spatstat-random
+                             r-spatstat-model
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-sparr
+                             r-plot3d
+                             r-optimx
+                             r-mass
+                             r-latex2exp
+                             r-kernsmooth
+                             r-gmp
+                             r-fields
+                             r-etasflp))
+    (home-page "https://cran.r-project.org/package=stopp")
+    (synopsis
+     "Spatio-Temporal Point Pattern Methods, Model Fitting, Diagnostics, Simulation, Local Tests")
+    (description
+     "Toolbox for different kinds of spatio-temporal analyses to be performed on
+observed point patterns, following the growing stream of literature on point
+process theory.  This R package implements functions to perform different kinds
+of analyses on point processes, proposed in the papers (Siino, Adelfio, and
+Mateu 2018<doi:10.1007/s00477-018-1579-0>; Siino et al.
+2018<doi:10.1002/env.2463>; Adelfio et al.
+2020<doi:10.1007/s00477-019-01748-1>; DâAngelo, Adelfio, and Mateu
+2021<doi:10.1016/j.spasta.2021.100534>; DâAngelo, Adelfio, and Mateu
+2022<doi:10.1007/s00362-022-01338-4>; DâAngelo, Adelfio, and Mateu
+2023<doi:10.1016/j.csda.2022.107679>).  The main topics include modeling,
+statistical inference, and simulation issues on spatio-temporal point processes
+on Euclidean space and linear networks.")
+    (license license:gpl2+)))
+
 (define-public r-stopes
   (package
     (name "r-stopes")
@@ -33338,13 +33385,13 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIMPLE.REGRESSION" version))
               (sha256
                (base32
-                "01bqakis3piwdpm04h9k7p9qyzfaxw9lf6r70rja1kv8w4aprlxm"))))
+                "06kqmvj8pbfgnlib0d6dzg1bh41l6jgwx6b02lgvc6z3nqnpm08w"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -38255,13 +38302,13 @@ assistant-like user interfaces.")
 (define-public r-shinygizmo
   (package
     (name "r-shinygizmo")
-    (version "0.4")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyGizmo" version))
               (sha256
                (base32
-                "1d3rd67nq3a4nwij1qphcy7gv1pz0522jhzwy3rkmsvhbmyr2ffq"))))
+                "1cvqp7hzaisqsqx8apxsird61gwyhgr5cfid05215a1l4j3ffrpk"))))
     (properties `((upstream-name . "shinyGizmo")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -45777,13 +45824,13 @@ indexes are Growth, in Sako (2001), Uniformity, in Sako (2001) and Castan et al.
 (define-public r-seecolor
   (package
     (name "r-seecolor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seecolor" version))
               (sha256
                (base32
-                "1ijxyys8pwlm99ynmv86cgn8pzz1ivaxzh3rq1akzv17nz93jv61"))))
+                "1qfiq8dmakban9mh7rizm54risq48vw1ck7i5yl48ggqmr47mvzf"))))
     (properties `((upstream-name . "seecolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -50867,13 +50914,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.56")
+    (version "0.57")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scan" version))
               (sha256
                (base32
-                "17al2dvphhiaimkqrj1jl1p84axg3q30qwv9i403x2zc2dwjqibz"))))
+                "0vx2w68jsfihgy9qby0vx3qa0hk42ns4p7vb999i4fwkm5w526km"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -53220,6 +53267,26 @@ version of the functions in the genalg package.  M.Ballin, G.Barcaroli (2020)
 <arXiv:2004.09366> \"R package SamplingStrata: new developments and extension to
 Spatial Sampling\".")
     (license license:gpl2+)))
+
+(define-public r-samplingr
+  (package
+    (name "r-samplingr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "samplingR" version))
+              (sha256
+               (base32
+                "1ykx3b1avbpqzv6f4cc9iw05hz6c1w2c7jxax0wpdq0gb5p5mwyi"))))
+    (properties `((upstream-name . "samplingR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=samplingR")
+    (synopsis "Sampling and Estimation Methods")
+    (description
+     "This package provides functions to take samples of data and get useful
+estimators such as total, mean, proportion about its population using simple
+random sampling.")
+    (license license:gpl2)))
 
 (define-public r-samplingestimates
   (package

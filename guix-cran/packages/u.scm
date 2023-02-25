@@ -844,13 +844,13 @@ ROC curve.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usedthese" version))
               (sha256
                (base32
-                "1vgxi3gcg6rgfx06nwdpq8lc7q2nyipzb61nz3vl95qx5dhbjj28"))))
+                "01fapykwh3bq4w6c120kzn45bnbxdibbl1j0b9njbfp1pxrpr40j"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

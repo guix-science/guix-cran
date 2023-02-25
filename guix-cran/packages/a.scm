@@ -3879,13 +3879,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assortnet
   (package
     (name "r-assortnet")
-    (version "0.12")
+    (version "0.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "assortnet" version))
               (sha256
                (base32
-                "1vyzrb8vsi9pcdn6jd83k77bg0q2a3dwdvlnmxnshqiif2pakb8m"))))
+                "15qah885jjiwxrf1bhmbjpsamgylmy8cwjbd3w0di7n8j4zv6gwr"))))
     (properties `((upstream-name . "assortnet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=assortnet")
@@ -7536,6 +7536,40 @@ Rosenbaum (2019) <doi:10.1080/10618600.2019.1584900>.")
 approximations are available.  It uses a hierarchical version of the Gaussian
 process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1.")
     (license license:gpl2)))
+
+(define-public r-appriori
+  (package
+    (name "r-appriori")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "appRiori" version))
+              (sha256
+               (base32
+                "1b90768p9v8mha9jq0zw3d7knwav9kv4l3wz3shx2s1y2lcap1np"))))
+    (properties `((upstream-name . "appRiori")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sortable
+                             r-shinythemes
+                             r-shiny
+                             r-rhandsontable
+                             r-pracma
+                             r-mass
+                             r-markdown
+                             r-hypr
+                             r-dt
+                             r-dplyr))
+    (home-page "https://github.com/Ugranziol/appRiori")
+    (synopsis "Code and Obtain Customized Planned Comparisons with 'appRiori'")
+    (description
+     "With appRiori', users upload the research variables and the app guides them to
+the best set of comparisons fitting the hypotheses, for both main and
+interaction effects.  Through a graphical explanation and empirical examples on
+reproducible data, it is shown that it is possible to understand both the logic
+behind the planned comparisons and the way to interpret them when a model is
+tested.")
+    (license license:gpl3+)))
 
 (define-public r-apportion
   (package
@@ -17903,13 +17937,13 @@ base date to facilitate actuarial reporting and to compare results.")
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actuaRE" version))
               (sha256
                (base32
-                "11091skzl9h2824kpkjxrd2z3z0mv87x9gkg84xx9rga031msi9v"))))
+                "1jwdjfzh5cj22cc1w6xdy51ya1mgncrcsmlc0smgxhkm2pp6flj2"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -17922,14 +17956,15 @@ base date to facilitate actuarial reporting and to compare results.")
                              r-data-table
                              r-cplm))
     (native-inputs (list r-knitr))
-    (home-page "https://bavodc.github.io/websiteactuaRE/index.html")
+    (home-page "https://bavodc.github.io/websiteactuaRE/")
     (synopsis
      "Handling Hierarchically Structured Risk Factors using Random Effects Models")
     (description
      "Using this package, you can fit a random effects model using either the
 hierarchical credibility model, a combination of the hierarchical credibility
 model with a generalized linear model or a Tweedie generalized linear mixed
-model.  See Campo, B.D.C. and Antonio, K. (2022) <arXiv:2206.15244>.")
+model.  See Campo, B.D.C. and Antonio, K. (2023)
+<doi:10.1080/03461238.2022.2161413>.")
     (license license:gpl3+)))
 
 (define-public r-activitygcmm

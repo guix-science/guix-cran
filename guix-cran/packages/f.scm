@@ -1006,13 +1006,13 @@ processes.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.11.0")
+    (version "0.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.batchtools" version))
               (sha256
                (base32
-                "0d1bykchldn0gmn67nzmrfzmsm2965kjdymssw38qc6p6x4lr26v"))))
+                "1fr4w4czslx1cxlpj9xq5v7093xsrsgqlcgryy3vzgjgy0hyp40a"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallelly r-future r-batchtools))
@@ -3729,13 +3729,13 @@ Liberty (2013) <doi:10.1145/2487575.2487623>).")
 (define-public r-frequencyconnectedness
   (package
     (name "r-frequencyconnectedness")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "frequencyConnectedness" version))
               (sha256
                (base32
-                "1yzpgflldcdsd5kj0jpyj0vwx25f3l0x344glbrwvlwgdax9dkg8"))))
+                "1qk0z64vfm4swbixyxhdsqcml2syslc0n61cg9hfbnwxnic8bmcm"))))
     (properties `((upstream-name . "frequencyConnectedness")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars r-urca r-pbapply r-knitr))
@@ -14541,18 +14541,17 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "1.9.8")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdasrvf" version))
               (sha256
                (base32
-                "1x8djgy3p8phqq0d3hbfhjk5h30sx05y7k5nqfrw8k8ix0x040p4"))))
+                "0yakhmvb1d34c8g8y6p1kf1x37nhwgawzq1xhvxxhir27sppsmwi"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-tolerance
-                             r-testthat
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -14562,7 +14561,8 @@ the plot of the functional data.")
                              r-foreach
                              r-fields
                              r-doparallel
-                             r-coda))
+                             r-coda
+                             r-cli))
     (home-page "https://cran.r-project.org/package=fdasrvf")
     (synopsis "Elastic Functional Data Analysis")
     (description

@@ -3271,6 +3271,32 @@ package author's working paper on the random forest approach to house price
 indexes can be found at: <http://www.github.com/andykrause/hpi_research>.")
     (license license:gpl3)))
 
+(define-public r-hpfilter
+  (package
+    (name "r-hpfilter")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hpfilter" version))
+              (sha256
+               (base32
+                "0hyfrhbgf9al3f8n1hjy5k9c1px2zqyxzl0bibsqr2qsckgya1k1"))))
+    (properties `((upstream-name . "hpfilter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.alexandrumonahov.eu.org/projects")
+    (synopsis "The One- And Two-Sided Hodrick-Prescott Filter")
+    (description
+     "This package provides two functions that implement the one-sided and two-sided
+versions of the Hodrick-Prescott filter.  The one-sided version is a Kalman
+filter-based implementation, whereas the two- sided version uses sparse matrices
+for improved efficiency.  References: Hodrick, R. J., and Prescott, E. C. (1997)
+<doi:10.2307/2953682> Mcelroy, T. (2008) <doi:10.1111/j.1368-423X.2008.00230.x>
+Meyer-Gohde, A. (2010) <https://ideas.repec.org/c/dge/qmrbcd/181.html> For more
+references, see the vignette.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-hpcwld
   (package
     (name "r-hpcwld")
@@ -11871,13 +11897,13 @@ solvers for machine learning algorithms.")
 (define-public r-h2o
   (package
     (name "r-h2o")
-    (version "3.38.0.1")
+    (version "3.40.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h2o" version))
               (sha256
                (base32
-                "1kk2z2h015qm9gss2zzrqxgsgs1r4wga6anxx2y7ngwiafvp68k7"))))
+                "1q61hcyrjxj9xnkri9k4vc1g238wr916g23420y2qj0fr529bdhm"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
     (inputs (list openjdk))

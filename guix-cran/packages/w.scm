@@ -5789,21 +5789,21 @@ calculate extreme climate index.")
 (define-public r-wdpar
   (package
     (name "r-wdpar")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdpar" version))
               (sha256
                (base32
-                "09b3j7yrclnabv5lk4g4r2p4r74hph4bilvz371kkcs5k2pb2xs0"))))
+                "1nb8gazwmv55gcwjn8djwhv5b9dm1yligyqcj1czs5frxfhqja92"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-wdman
+                             r-withr
+                             r-webdriver
                              r-tibble
                              r-sp
                              r-sf
-                             r-rselenium
                              r-rappdirs
                              r-progress
                              r-pingr
@@ -5821,7 +5821,8 @@ calculate extreme climate index.")
 World Database on Other Effective Area-Based Conservation Measures (WDOECM).
 Data is obtained from Protected Planet <https://www.protectedplanet.net/en>.  To
 augment data cleaning procedures, users can install the prepr R package
-(available at <https://github.com/dickoa/prepr>).")
+(available at <https://github.com/dickoa/prepr>).  For more information on this
+package, see Hanson (2022) <doi:10.21105/joss.04594>.")
     (license license:gpl3)))
 
 (define-public r-wdnr-gis

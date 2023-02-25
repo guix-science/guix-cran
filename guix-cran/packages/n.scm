@@ -4987,13 +4987,13 @@ would result in a change of decision.")
 (define-public r-nmarank
   (package
     (name "r-nmarank")
-    (version "0.2-3")
+    (version "0.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nmarank" version))
               (sha256
                (base32
-                "01qp4ypxx5i112mnc6w76zysdla6sjcv77gazx655vq2pmb61wm2"))))
+                "1i2vagjq96q2vhr2lxbm3hqspddfq9qkqjcr8smni6ikmw32akil"))))
     (properties `((upstream-name . "nmarank")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5002,9 +5002,10 @@ would result in a change of decision.")
                              r-netmeta
                              r-mvtnorm
                              r-meta
+                             r-mass
                              r-dplyr
                              r-data-tree))
-    (home-page "https://github.com/esm-ispm-unibe-ch/nmarank")
+    (home-page "https://github.com/tpapak/nmarank")
     (synopsis "Complex Hierarchy Questions in Network Meta-Analysis")
     (description
      "Derives the most frequent hierarchies along with their probability of

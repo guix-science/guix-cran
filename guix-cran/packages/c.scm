@@ -23382,13 +23382,13 @@ posterior predictive distributions derived from these references.")
 (define-public r-clindatareview
   (package
     (name "r-clindatareview")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clinDataReview" version))
               (sha256
                (base32
-                "0cx5xpf8jm634v5gkjh9pf14qd5fmd5lbhfkwarkdg955kl1sfnp"))))
+                "0b74ygvwv3ss76y15l9lqg8lwq8vxkdari34i0b6fl12a26ndlh6"))))
     (properties `((upstream-name . "clinDataReview")))
     (build-system r-build-system)
     (inputs (list pandoc))

@@ -5022,6 +5022,31 @@ the version 1.0.0 (and older) of the STAC specification
 et al. (2021) <doi:10.1109/IGARSS47720.2021.9553518>.")
     (license license:expat)))
 
+(define-public r-rsstest
+  (package
+    (name "r-rsstest")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RSStest" version))
+              (sha256
+               (base32
+                "1pywk326hycq9qm6hslircn8xb8irj3ava2aga20fp0n1jxnr8vi"))))
+    (properties `((upstream-name . "RSStest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-huxtable))
+    (home-page "https://cran.r-project.org/package=RSStest")
+    (synopsis "Testing the Equality of Two Means Using RSS and MRSS")
+    (description
+     "Testing the equality of two means using Ranked Set Sampling and Median Ranked
+Set Sampling are provided under normal distribution.  Data generation functions
+are also given RSS and MRSS. Also, data generation functions are given under
+imperfect ranking data for Ranked Set Sampling and Median Ranked Set Sampling.
+Ozdemir Y.A., Ebegil M., & Gokpinar F. (2019), <doi:10.1007/s40995-018-0558-0>
+Ozdemir Y.A., Ebegil M., & Gokpinar F. (2017),
+<doi:10.1080/03610918.2016.1263736>.")
+    (license license:gpl2)))
+
 (define-public r-rssop
   (package
     (name "r-rssop")
@@ -7475,13 +7500,13 @@ Graphical Statistics, <doi:10.1080/10618600.2020.1741379>.")
 (define-public r-rrrr
   (package
     (name "r-rrrr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RRRR" version))
               (sha256
                (base32
-                "0h5r668qn8hp4j4zhxhn4b3lqm138n6kc1c7vf95hmbh4ah6wzf7"))))
+                "14xj0x68nisnxwg27srga8va7dpm1k1mh8xd4bljdb7jykczpn0h"))))
     (properties `((upstream-name . "RRRR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-magrittr r-ggplot2
@@ -25808,13 +25833,13 @@ on id.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.14.1")
+    (version "0.20.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restatapi" version))
               (sha256
                (base32
-                "1c9vn204kr1a6k8jvp04dqcps5h5bhljp87bw4z38jfmnrq9a4br"))))
+                "032lz45r77hlw2ygrkinw5ynd6jnsd92ab8nkkihf2d1jldbjxv9"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -26505,13 +26530,13 @@ interdependencies.  Inspired by RequireJS'<http://requirejs.org/>.")
 (define-public r-requirements
   (package
     (name "r-requirements")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "requiRements" version))
               (sha256
                (base32
-                "1y98fdqrql1jg18jqwcxwn511jl5ccv3w12q36gc488m3ym1qcyc"))))
+                "1x8sl77qwzrnfbh668s51sd71r19n5gjl95xh5hnc41avkdkn5by"))))
     (properties `((upstream-name . "requiRements")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes))
@@ -30635,13 +30660,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "0bal0dy2fpyffy8bcffzqzq5x1k02a85r53r4g9gmgb07q5ll9qz"))))
+                "13rinhqznq38z0h01s1c28af21m9nyshp760vgl7dsg9h42p79q4"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31923,6 +31948,28 @@ where we distinguish between expected, acceptable, current, fallback, ideal, or
 regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
+
+(define-public r-readysignal
+  (package
+    (name "r-readysignal")
+    (version "0.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "readysignal" version))
+              (sha256
+               (base32
+                "19ml1fb1r23zhg9z1kbwi0sjn9qib136g36y1rrdb1j0mw12wgv8"))))
+    (properties `((upstream-name . "readysignal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvest r-progress r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=readysignal")
+    (synopsis "'Ready Signal' API Wrapper")
+    (description
+     "This package provides a simple way to interact with the Ready Signal API without
+leaving your R environment.  Discover features, manage signals, and retrieve
+data easily.  View the full API documentation at
+<https://readysignal.com/ready-signal-api-documentation>.")
+    (license license:expat)))
 
 (define-public r-readxlsb
   (package
@@ -33557,6 +33604,29 @@ Language (RDML) and transforms to the appropriate formats of the qpcR and
 chipPCR packages.  Contains a dendrogram visualization for the structure of RDML
 object and GUI for RDML editing.")
     (license license:expat)))
+
+(define-public r-rdm
+  (package
+    (name "r-rdm")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RDM" version))
+              (sha256
+               (base32
+                "0aqjs7dh40d24l8fhhkyf1vnpwbxm47blfi4lwwld2hyi854m80q"))))
+    (properties `((upstream-name . "RDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-rcpp))
+    (home-page "https://github.com/ChristopherStrothmann/RDM")
+    (synopsis "Quantify Dependence using Rearranged Dependence Measures")
+    (description
+     "Estimates the rearranged dependence measure ('RDM') of two continuous random
+variables for different underlying measures.  Furthermore, it provides a method
+to estimate the (SI)-rearrangement copula using empirical checkerboard copulas.
+It is based on the theoretical results presented in Strothmann et al. (2022)
+<arXiv:2201.03329> and Strothmann (2021) <doi:10.17877/DE290R-22733>.")
+    (license license:gpl2)))
 
 (define-public r-rdlocrand
   (package

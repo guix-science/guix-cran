@@ -17378,13 +17378,13 @@ artificial data in a transparent and reproducible manner.")
 (define-public r-bdl
   (package
     (name "r-bdl")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bdl" version))
               (sha256
                (base32
-                "01z6kv2wv67byyw49smri8zvi6mhwr5i8li4yhk96rrdjf4xwpxp"))))
+                "1d55i1pn8pfnv2wcmxxifqbxlni9npv9n3xnjcgfcfhs0ixnz314"))))
     (properties `((upstream-name . "bdl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmaptools

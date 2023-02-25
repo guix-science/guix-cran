@@ -3102,13 +3102,13 @@ implementation of the DataSHIELD infrastructure.")
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
-    (version "1.4.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DSMolgenisArmadillo" version))
               (sha256
                (base32
-                "1yf67iw5bqv5a5nhg1546ydmb3mr47nmxynkmn38mdz6p72sc2ic"))))
+                "1py0xyrggm4clgczj270182dsq7cidvhfd3c3q1j4a7n4gy8fh3x"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -10566,6 +10566,27 @@ modelling methods.")
 evaluation measures and simulation functions for discrete time survival
 analysis.")
     (license license:gpl3)))
+
+(define-public r-discrtr
+  (package
+    (name "r-discrtr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "discrtr" version))
+              (sha256
+               (base32
+                "03xafiy7fjxsincbwbz1y0xv372yd7cs8sbmqvv2s3glx6jdxk07"))))
+    (properties `((upstream-name . "discrtr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmdformats r-magrittr))
+    (home-page "https://github.com/paezha/discrtr")
+    (synopsis
+     "Companion Package for the Book \"Discrete Choice Analysis with 'R'\"")
+    (description
+     "Templates and data files to support \"Discrete Choice Analysis with R\", PÃ¡ez, A.
+and Boisjoly, G. (2023) <doi:10.1007/978-3-031-20719-8>.")
+    (license license:expat)))
 
 (define-public r-discrim
   (package

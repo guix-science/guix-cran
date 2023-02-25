@@ -26667,6 +26667,29 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 <doi:10.1186/s40168-018-0402-y>).")
     (license license:expat)))
 
+(define-public r-metalite-ae
+  (package
+    (name "r-metalite-ae")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metalite.ae" version))
+              (sha256
+               (base32
+                "0z33yj8v67mkjg47zd627mnp0p1b2gnlvj7gf0d7np1j38572j1s"))))
+    (properties `((upstream-name . "metalite.ae")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-r2rtf r-metalite r-glue r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://merck.github.io/metalite.ae/")
+    (synopsis "Adverse Events Analysis Using 'metalite'")
+    (description
+     "Analyzes adverse events in clinical trials using the metalite data structure.
+The package simplifies the workflow to create production-ready tables, listings,
+and figures discussed in the adverse events analysis chapters of \"R for Clinical
+Study Reports and Submission\" by Zhang et al. (2022) <https://r4csr.org/>.")
+    (license license:gpl3)))
+
 (define-public r-metalite
   (package
     (name "r-metalite")
@@ -28218,13 +28241,13 @@ Pairwise calibration curves and plots can be easily generated.")
 (define-public r-mero
   (package
     (name "r-mero")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MERO" version))
               (sha256
                (base32
-                "0kzqx6m0vyq5g3ngah58mryvqdcxvlk3iqp4v4m2dq172dm47ig0"))))
+                "10wz6qrmi612y6whrn3dka606llijp5d1fffh00b1pprx2rcfl8w"))))
     (properties `((upstream-name . "MERO")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-missforest r-ggpubr r-foreach
