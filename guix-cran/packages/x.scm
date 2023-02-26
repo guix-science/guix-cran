@@ -600,13 +600,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.14")
+    (version "0.4.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xpose" version))
               (sha256
                (base32
-                "0ppnhnyi3xh7bcss6i1fpwz1rli3m5v20w3ia7azga09xfqycnyk"))))
+                "12zjrsy7gjwrw8zgsaqwfjvi7mdrcpf2m4v4sryc62ch1pa02gn8"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -853,13 +853,13 @@ occurred.")
 (define-public r-xmpdf
   (package
     (name "r-xmpdf")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xmpdf" version))
               (sha256
                (base32
-                "1aa118chjand1wwwknbk702mq2w1ksn8vgknqy3b5y1qxyzp0739"))))
+                "140h6dymap3dh5a68z2mdij6163fzqix4md9mfynghz4ckj1cfbq"))))
     (properties `((upstream-name . "xmpdf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite r-datetimeoffset))

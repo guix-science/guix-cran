@@ -2084,13 +2084,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "3.1.7")
+    (version "3.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GSODR" version))
               (sha256
                (base32
-                "1brlg3hz8ma5gq5lbhxq30xxvixwbv7j83msd2r319shcqn61lk4"))))
+                "13bw3v0s14p90c10vkpv4ghjaz7sfhyfhaw3dc4341p39fqnhdpl"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-httr r-data-table r-curl
@@ -9565,13 +9565,13 @@ model.")
 (define-public r-gmmsslm
   (package
     (name "r-gmmsslm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmmsslm" version))
               (sha256
                (base32
-                "02rd8myym39dic6n7c40dvi38924r55h1bp0p34a6zwngsyinz8k"))))
+                "116az9mm5ssz4zlgzf6a48jlwv9jbq4jfxpc2i2wbhnrr0iim0wd"))))
     (properties `((upstream-name . "gmmsslm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -20897,6 +20897,41 @@ Conjugate priors are assumed on some parameters while inference on the other
 parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
+
+(define-public r-geoar
+  (package
+    (name "r-geoar")
+    (version "0.0.1.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geoAr" version))
+              (sha256
+               (base32
+                "1wzhlccscpdzlyx6w9hh7srgrqc3dw56wd99pcrhlqsx0w6b48n0"))))
+    (properties `((upstream-name . "geoAr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-sf
+                             r-magrittr
+                             r-leaflet
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-attempt
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PoliticaArgentina/geoAr")
+    (synopsis "Argentina's Spatial Data Toolbox")
+    (description
+     "Collection of tools that facilitates data access and workflow for spatial
+analysis of Argentina.  Includes historical information from censuses,
+administrative limits at different levels of aggregation, location of human
+settlements, among others.  Since it is expected that the majority of users will
+be Spanish-speaking, the documentation of the package prioritizes this language,
+although an effort is made to also offer annotations in English.")
+    (license license:expat)))
 
 (define-public r-genwin
   (package

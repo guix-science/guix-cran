@@ -24202,42 +24202,6 @@ Bustince, T. Calvo, A Practical Guide to Averaging', Springer, (2016, ISBN:
 Measures', Springer, (2020, ISBN: 978-3-030-15305-2).")
     (license license:lgpl3)))
 
-(define-public r-rfmerge
-  (package
-    (name "r-rfmerge")
-    (version "0.1-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RFmerge" version))
-              (sha256
-               (base32
-                "1gcdd0a0czimzmzq2izskdaj26cc7qchrwlhssvnh5k59yx54r4l"))))
-    (properties `((upstream-name . "RFmerge")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-sp
-                             r-sf
-                             r-raster
-                             r-randomforest
-                             r-pbapply))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hzambran/RFmerge")
-    (synopsis
-     "Merging of Satellite Datasets with Ground Observations using Random Forests")
-    (description
-     "S3 implementation of the Random Forest MErging Procedure (RF-MEP), which
-combines two or more satellite-based datasets (e.g., precipitation products,
-topography) with ground observations to produce a new dataset with improved
-spatio-temporal distribution of the target field.  In particular, this package
-was developed to merge different Satellite-based Rainfall Estimates (SREs) with
-measurements from rain gauges, in order to obtain a new precipitation dataset
-where the time series in the rain gauges are used to correct different types of
-errors present in the SREs.  However, this package might be used to merge other
-hydrological/environmental satellite fields with point observations.  For
-details, see Baez-Villanueva et al. (2020) <doi:10.1016/j.rse.2019.111606>.
-Bugs / comments / questions / collaboration of any kind are very welcomed.")
-    (license license:gpl3+)))
-
 (define-public r-rfm
   (package
     (name "r-rfm")

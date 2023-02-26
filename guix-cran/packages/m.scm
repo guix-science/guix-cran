@@ -35351,29 +35351,6 @@ seed traps.  Motivated by long-term inventory plots where seed collections are
 used to infer seed production by each individual plant.")
     (license license:gpl2+)))
 
-(define-public r-masterbayes
-  (package
-    (name "r-masterbayes")
-    (version "2.58")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MasterBayes" version))
-              (sha256
-               (base32
-                "0s6zry5nhwg3zbfgqd6zdrys0irf6336gfcba77z7xwssd4gh9j5"))))
-    (properties `((upstream-name . "MasterBayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-kinship2 r-gtools r-genetics r-coda))
-    (home-page "https://cran.r-project.org/package=MasterBayes")
-    (synopsis "ML and MCMC Methods for Pedigree Reconstruction and Analysis")
-    (description
-     "The primary aim of MasterBayes is to use MCMC techniques to integrate over
-uncertainty in pedigree configurations estimated from molecular markers and
-phenotypic data.  Emphasis is put on the marginal distribution of parameters
-that relate the phenotypic data to the pedigree.  All simulation is done in
-compiled C++ for efficiency.")
-    (license license:gpl2+)))
-
 (define-public r-masswater
   (package
     (name "r-masswater")

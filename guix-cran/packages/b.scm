@@ -19237,45 +19237,6 @@ Viet-Phuong (2019) <doi:10.31219/osf.io/w5dx6> The bayesvl R package.  Open
 Science Framework (May 18).")
     (license license:gpl3+)))
 
-(define-public r-bayesvarsel
-  (package
-    (name "r-bayesvarsel")
-    (version "2.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BayesVarSel" version))
-              (sha256
-               (base32
-                "0kdi1v7wi22p83fl7ldyzhc6gh4pn8ig339yz7a36wl5xr80cij0"))))
-    (properties `((upstream-name . "BayesVarSel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mass))
-    (home-page "https://github.com/comodin19/BayesVarSel")
-    (synopsis
-     "Bayes Factors, Model Choice and Variable Selection in Linear Models")
-    (description
-     "Conceived to calculate Bayes factors in Linear models and then to provide a
-formal Bayesian answer to testing and variable selection problems.  From a
-theoretical side, the emphasis in this package is placed on the prior
-distributions and it allows a wide range of them: Jeffreys (1961); Zellner and
-Siow(1980)<DOI:10.1007/bf02888369>; Zellner and Siow(1984); Zellner
-(1986)<DOI:10.2307/2233941>; Fernandez et al.
-(2001)<DOI:10.1016/s0304-4076(00)00076-2>; Liang et al.
-(2008)<DOI:10.1198/016214507000001337> and Bayarri et al.
-(2012)<DOI:10.1214/12-aos1013>.  The interaction with the package is through a
-friendly interface that syntactically mimics the well-known lm() command of R.
-The resulting objects can be easily explored providing the user very valuable
-information (like marginal, joint and conditional inclusion probabilities of
-potential variables; the highest posterior probability model, HPM; the median
-probability model, MPM) about the structure of the true -data generating- model.
- Additionally, this package incorporates abilities to handle problems with a
-large number of potential explanatory variables through parallel and heuristic
-versions of the main commands, Garcia-Donato and Martinez-Beneito
-(2013)<DOI:10.1080/01621459.2012.742443>.  It also allows problems with p>n and
-p>>n and also incorporates routines to handle problems with variable selection
-with factors.")
-    (license license:gpl2)))
-
 (define-public r-bayestwin
   (package
     (name "r-bayestwin")
@@ -19457,29 +19418,6 @@ paper it is also shown that the credible bands for the survival function and the
 cumulative hazard can be considered confidence bands (under mild conditions) and
 thus offer reliable uncertainty quantification.")
     (license license:gpl3)))
-
-(define-public r-bayessurv
-  (package
-    (name "r-bayessurv")
-    (version "3.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bayesSurv" version))
-              (sha256
-               (base32
-                "1y1jqd1c2rg4s73ffyq8wjkpq35321nzywigcgh6vkjpd8r8xhpx"))))
-    (properties `((upstream-name . "bayesSurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-smoothsurv r-coda))
-    (home-page "https://www2.karlin.mff.cuni.cz/~komarek/")
-    (synopsis
-     "Bayesian Survival Regression with Flexible Error and Random Effects Distributions")
-    (description
-     "This package contains Bayesian implementations of Mixed-Effects Accelerated
-Failure Time (MEAFT) models for censored data.  Those can be not only
-right-censored but also interval-censored, doubly-interval-censored or
-misclassified interval-censored.")
-    (license license:gpl2+)))
 
 (define-public r-bayessur
   (package

@@ -14338,38 +14338,6 @@ Andrea S Foulkes, Yunsheng Ma, and Raji Balasubramanian (2020) <doi:
 10.1186/s12911-020-01223-w>.")
     (license license:gpl2+)))
 
-(define-public r-icensbkl
-  (package
-    (name "r-icensbkl")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "icensBKL" version))
-              (sha256
-               (base32
-                "1233cpwc24p01zjzqivl1ddvndhiqwiyjgr8v1aqd3wwz9qqfg6s"))))
-    (properties `((upstream-name . "icensBKL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos
-                             r-survival
-                             r-smoothsurv
-                             r-mvtnorm
-                             r-mass
-                             r-icens
-                             r-gtools))
-    (home-page "https://ibiostat.be/online-resources/icbook/supplemental/")
-    (synopsis
-     "Accompanion to the Book on Interval Censoring by Bogaerts, Komarek, and Lesaffre")
-    (description
-     "This package contains datasets and several smaller functions suitable for
-analysis of interval-censored data.  The package complements the book Bogaerts,
-KomÃ¡rek and Lesaffre (2017). \"Survival Analysis with Interval-Censored Data: A
-Practical Approach.\" ISBN 978-1-4200-7747-6, published by Chapman and Hall/CRC.
-Full R code related to the examples presented in the book can be found at
-<https://ibiostat.be/online-resources/icbook/supplemental>.  Packages mentioned
-in the \"Suggests\" section are used in those examples.")
-    (license license:gpl2+)))
-
 (define-public r-icenreg
   (package
     (name "r-icenreg")
@@ -14639,13 +14607,13 @@ the method of weights by Ibrahim (1990) <DOI:10.2307/2290013>.")
 (define-public r-icd10gm
   (package
     (name "r-icd10gm")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICD10gm" version))
               (sha256
                (base32
-                "0p73hn4k6iphfycjmcbfsqjmmhn2x16fcdd5gwb5imc0jxc3f2l4"))))
+                "1zraky9jcgl3qvn8nagi3arp3y1m5ihxc1hga2q8f3m96hhhqq3k"))))
     (properties `((upstream-name . "ICD10gm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

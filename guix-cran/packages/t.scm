@@ -13137,13 +13137,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.5.3")
+    (version "0.5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyseurat" version))
               (sha256
                (base32
-                "045k6pd9bv26liaf94jzfv84gw5vrbxi82wmxfv5sjw84k9prp1k"))))
+                "0n9xll4lgapywkrfwlvj64wzqashafqvhygi5jzbkcif0f2l9b2b"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13157,6 +13157,7 @@ the results in a tidy format.")
                              r-rlang
                              r-purrr
                              r-plotly
+                             r-pkgconfig
                              r-pillar
                              r-magrittr
                              r-lifecycle
@@ -21660,13 +21661,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-taper
   (package
     (name "r-taper")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TapeR" version))
               (sha256
                (base32
-                "07xw8wh35h7jss7vp44yv4dif3hpdr0cyhph7sdyqlhdx6mfhz23"))))
+                "00j3d77qziazkk6xwx4zygxa7ak33wpgr3x52ki6d64s8w8713ag"))))
     (properties `((upstream-name . "TapeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-nlme))

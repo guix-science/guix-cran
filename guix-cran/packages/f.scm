@@ -189,16 +189,17 @@ weight.")
 (define-public r-fwildclusterboot
   (package
     (name "r-fwildclusterboot")
-    (version "0.12.1")
+    (version "0.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fwildclusterboot" version))
               (sha256
                (base32
-                "02c4mkynfdjkk3b66bl6kccjj6s3g9d80ggs9440rj8byi4jiwcj"))))
+                "0slm28pgvfsrsdvz2i1h231gkf4iq6gdlspyzppn8nwhngvic5hd"))))
     (properties `((upstream-name . "fwildclusterboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-summclust
+                             r-rlang
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -226,7 +227,7 @@ Further, both restricted ('WCR') and unrestricted ('WCU') bootstrap are
 supported.  Methods are provided for a variety of fitted models, including
 lm()', feols() (from package fixest') and felm() (from package lfe').
 Additionally implements a heteroskedasticity-robust ('HC1') wild bootstrap.
-Further, the package provides an R binding to WildBootTests.jl', which provides
+Last, the package provides an R binding to WildBootTests.jl', which provides
 additional speed gains and functionality, including the WRE bootstrap for
 instrumental variable models (based on models of type ivreg() from package
 ivreg') and hypotheses with q > 1.")
@@ -13734,13 +13735,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FedData" version))
               (sha256
                (base32
-                "1k02icjqghv2hklhqjn63l8phmaxj6vclqcrsm35aa4clax8hhr2"))))
+                "0cflxxpka0kknnyv7ryz5f4scmrbcsf01x5pwzs9lgvj8mz3kdf4"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))

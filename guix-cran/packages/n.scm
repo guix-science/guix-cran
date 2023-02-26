@@ -13191,13 +13191,13 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.0.9")
+    (version "4.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nasapower" version))
               (sha256
                (base32
-                "0yzd0y58m9gd8hfg4lzb8apr1naf67i45jn8vzlli2nd9j5qmn8b"))))
+                "0nwpfm32w674vjz3dqxa6fqf3syjww6siarlr8sjirlgqm06xm76"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-lubridate r-jsonlite r-crul))

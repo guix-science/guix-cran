@@ -991,13 +991,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LSX" version))
               (sha256
                (base32
-                "0qa8fyz5a5f77mv5i1y2x9bsjy7xgcimzglmb1fnbkfm4nh8vm1d"))))
+                "043w10fm0dbafckjbb08h9zp30fm2q45ifz0b4w7jzzv6a6ngxmp"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -7839,13 +7839,13 @@ Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.11")
+    (version "1.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingtypology" version))
               (sha256
                (base32
-                "1f1p2c3z6l6h3idywijdc3z1pgax39l28y3p4338affa7azn30m2"))))
+                "0as9v3iwnmmdv9gjykkmxs0i2d4n13blf3lwx5kgmbbm272sikqs"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -12545,13 +12545,13 @@ calculated, mainly based on Monte Carlo simulations.")
 (define-public r-lcsm
   (package
     (name "r-lcsm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lcsm" version))
               (sha256
                (base32
-                "0027q08cqy317iymxqp6ycd9rq8zjq1xnc6crzbglsqir538d37v"))))
+                "13iy0d37rqlw7k6xgb2rsd2pz1rrjbc5c14gqaxgwmz9pk93dlxp"))))
     (properties `((upstream-name . "lcsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

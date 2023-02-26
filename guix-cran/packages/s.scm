@@ -26967,29 +26967,6 @@ function based on a log--concave density function.  This procedure is justified
 by the fact that the GPD density is log--concave for gamma in [-1,0].")
     (license license:gpl2+)))
 
-(define-public r-smoothsurv
-  (package
-    (name "r-smoothsurv")
-    (version "2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "smoothSurv" version))
-              (sha256
-               (base32
-                "1bhzbbgz3y7a1hifspg2ny4qalz5017wxlry03i5ss47lbpsylij"))))
-    (properties `((upstream-name . "smoothSurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival))
-    (home-page "https://www2.karlin.mff.cuni.cz/~komarek/")
-    (synopsis "Survival Regression with Smoothed Error Distribution")
-    (description
-     "Contains, as a main contribution, a function to fit a regression model with
-possibly right, left or interval censored observations and with the error
-distribution expressed as a mixture of G-splines.  Core part of the computation
-is done in compiled C++ written using the Scythe Statistical Library Version
-0.3.")
-    (license license:gpl2+)))
-
 (define-public r-smoothroctime
   (package
     (name "r-smoothroctime")
@@ -29624,13 +29601,13 @@ data.")
 (define-public r-slackr
   (package
     (name "r-slackr")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "slackr" version))
               (sha256
                (base32
-                "0idgggjyp07z87rkcazbis3mpv57643w2bncixyiznsabhmzygh8"))))
+                "08yyl0s2rb7yzq9zd173avdxrl8z59dknsxbmgg4m94wf09xwy55"))))
     (properties `((upstream-name . "slackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -35089,6 +35066,42 @@ bootstrap particle filter based particle Markov chain Monte Carlo (PMCMC)
 algorithm (Andrieu et al., 2010 <doi:10.1111/j.1467-9868.2009.00736.x>).  Also
 provides functions to plot and summarise the outputs.")
     (license license:gpl3+)))
+
+(define-public r-simaerep
+  (package
+    (name "r-simaerep")
+    (version "0.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simaerep" version))
+              (sha256
+               (base32
+                "0bsw7n3lbqb8dr5gwyf15r1p0vx07vyl8dcwj7yqsx0bxgw919xw"))))
+    (properties `((upstream-name . "simaerep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-progressr
+                             r-magrittr
+                             r-knitr
+                             r-ggplot2
+                             r-furrr
+                             r-forcats
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://openpharma.github.io/simaerep/")
+    (synopsis "Find Clinical Trial Sites Under-Reporting Adverse Events")
+    (description
+     "Monitoring of Adverse Event (AE) reporting in clinical trials is important for
+patient safety.  Sites that are under-reporting AEs can be detected using
+Bootstrap-based simulations that simulate overall AE reporting.  Based on the
+simulation an AE under-reporting probability is assigned to each site in a given
+trial (Koneswarakantha 2021 <doi:10.1007/s40264-020-01011-5>).")
+    (license license:expat)))
 
 (define-public r-sim2dpredictr
   (package

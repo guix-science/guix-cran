@@ -4537,33 +4537,6 @@ properly configured web pages.  The default behavior is to generate an
 htmlwidget'.")
     (license (license:fsdg-compatible "AGPL + file LICENSE"))))
 
-(define-public r-vedicdatetime
-  (package
-    (name "r-vedicdatetime")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VedicDateTime" version))
-              (sha256
-               (base32
-                "15asj8rdchfizkk0xj82ayl3dkbyds3aagfzkd739ap7lng3f096"))))
-    (properties `((upstream-name . "VedicDateTime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-swephr))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.neerajbokde.in/viggnette/2022-09-05-VedicDateTime")
-    (synopsis "Vedic Calendar System")
-    (description
-     "This package provides platform for Vedic calendar system having several
-functionalities to facilitate conversion between Gregorian and Vedic calendar
-systems, and helpful in examining its impact in the time series analysis domain.
- The background is described in Neeraj Dhanraj Bokde et al. (2021)
-<doi:10.48550/arXiv.2111.03441>, Karanam L. Ramakumar et al. (2011)
-<https:archive.org/details/PanchangamCalculations>, K. S. Charak et al. (2012,
-ISBN:8190100807), Satish BD et al. (2013)
-<https:github.com/webresh/drik-panchanga>.")
-    (license license:gpl2+)))
-
 (define-public r-vectorwavelet
   (package
     (name "r-vectorwavelet")
@@ -5607,40 +5580,6 @@ addressed by this package is the selection of the most representative variable
 within a group of variables of interest (i.e.  dimension reduction) and variable
 ranking with respect to a set of features of interest.")
     (license license:gpl3)))
-
-(define-public r-varmer
-  (package
-    (name "r-varmer")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "VARMER" version))
-              (sha256
-               (base32
-                "0qym31jpmb2dyrqsk1s6wp1c3b15mf79lrrk46p6hkmdddkxqgnj"))))
-    (properties `((upstream-name . "VARMER")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tictoc
-                             r-sf
-                             r-rgl
-                             r-raster
-                             r-pracma
-                             r-metrics
-                             r-hydrogof
-                             r-gstat
-                             r-deldir
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=VARMER")
-    (synopsis "Variational Merging")
-    (description
-     "This package provides a new mathematical formulation to merge observed data with
-gridded images of environmental variables using partial differential equations
-in a variational setting.  The original method was created, developed and
-published by Ulloa, Samaniego, Campozano and Ballari (2018)
-<doi:10.1002/2017JD027982>.")
-    (license license:cc0)))
 
 (define-public r-varjmcm
   (package

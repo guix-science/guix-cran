@@ -3274,13 +3274,13 @@ indexes can be found at: <http://www.github.com/andykrause/hpi_research>.")
 (define-public r-hpfilter
   (package
     (name "r-hpfilter")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hpfilter" version))
               (sha256
                (base32
-                "0hyfrhbgf9al3f8n1hjy5k9c1px2zqyxzl0bibsqr2qsckgya1k1"))))
+                "1nld9j0p6lnmzpn4njrwr94b9k8va0bgqg3wpb81y7x324q6ll5r"))))
     (properties `((upstream-name . "hpfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
