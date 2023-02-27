@@ -27253,24 +27253,27 @@ README'-file.")
 (define-public r-pdfetch
   (package
     (name "r-pdfetch")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pdfetch" version))
               (sha256
                (base32
-                "1pyx6h9s0y2qx3wrdjk5rfg2wh023zjhrkryvdaynz667rjxgr0w"))))
+                "1014cpm1kiq0k04ymnwdmhmw0836z2gizk13p4lxxl02hw91fv10"))))
     (properties `((upstream-name . "pdfetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-xml2
                              r-xml
+                             r-tidyr
                              r-stringr
-                             r-reshape2
+                             r-readr
+                             r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-httr
+                             r-dplyr
                              r-curl))
     (home-page "https://github.com/abielr/pdfetch")
     (synopsis

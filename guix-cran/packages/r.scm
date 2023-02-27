@@ -19477,27 +19477,6 @@ distribution.  The J-QPD system was developed by Hadlock and Bickel (2017)
 CDF and random number generator functions.")
     (license license:expat)))
 
-(define-public r-rjpsgcs
-  (package
-    (name "r-rjpsgcs")
-    (version "0.2-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rJPSGCS" version))
-              (sha256
-               (base32
-                "0a00s10yp22fkvk67dkq43sbphcqla65x9j4qpv076bmdchn7arw"))))
-    (properties `((upstream-name . "rJPSGCS")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava))
-    (home-page "https://cran.r-project.org/package=rJPSGCS")
-    (synopsis "R-Interface to Gene Drop Simulation from JPSGCS")
-    (description
-     "R-interface to gene drop programs from Alun Thomas Java Programs for Statistical
-Genetics and Computational Statistics (JPSGCS).")
-    (license license:gpl3)))
-
 (define-public r-rjmcmc
   (package
     (name "r-rjmcmc")

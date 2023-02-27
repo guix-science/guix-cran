@@ -818,49 +818,41 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.3-5")
+    (version "0.0.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExtremalDep" version))
               (sha256
                (base32
-                "1zfgd2n4by85r39gwdnnng2ns5wv8h64vd1j9g4x4ffqhcdbxj3d"))))
+                "12mhzbd3rp8ny00azqhk1cdhsz25ybn0wcffzp7qfm5wfnknapfi"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sn
+    (propagated-inputs (list r-sp
+                             r-sn
                              r-quadprog
                              r-numderiv
                              r-nloptr
                              r-mvtnorm
                              r-gtools
+                             r-foreach
                              r-fda
                              r-evd
+                             r-doparallel
                              r-copula))
-    (home-page "https://mypage.unibocconi.it/simonepadoan/")
+    (home-page "https://faculty.unibocconi.it/simonepadoan/")
     (synopsis "Extremal Dependence Models")
     (description
-     "This package provides a set of procedures for modelling parametrically and
-non-parametrically the dependence structure of multivariate extreme-values is
+     "This package provides a set of procedures for parametric and non-parametric
+modelling of the dependence structure of multivariate extreme-values is
 provided.  The statistical inference is performed with non-parametric
-estimators, likelihood-based estimators and Bayesian techniques.  Adapts the
-methodologies derived in Beranger et al. (2019) <arxiv:1904.08251>, Beranger et
-al. (2017) <doi:10.1111/sjos.12240>, Beranger and Padoan (2015)
-<arxiv:1508.05561>, Marcon et al. (2017) <doi:10.1002/sta4.145>, Marcon et al.
-(2017) <doi:10.1016/j.jspi.2016.10.004> and Marcon et al. (2016)
-<doi:10.1214/16-EJS1162>.  It also refers to the works of Bortot (2010)
-<https://www.semanticscholar.org/paper/Tail-dependence-in-bivariate-skew-Normal-and-skew-t-Bortot/b0dc1cb608d35bf515c76e39aacc14b4de82e281?p2df>,
-Padoan (2011) <doi:10.1016/j.jmva.2011.01.014>, Cooley et al. (2010)
-<doi:10.1016/j.jmva.2010.04.007>, Husler and Reiss (1989)
-<doi:10.1016/0167-7152(89)90106-5>, Engelke et al. (2015)
-<doi:10.1111/rssb.12074>, Coles and Tawn (1991)
-<doi:10.1111/j.2517-6161.1991.tb01830.x>, Nikoloulopoulos et al. (2011)
-<doi:10.1007/s10687-008-0072-4>, Opitz (2013) <doi:10.1016/j.jmva.2013.08.008>,
-Tawn (1990) <doi:10.2307/2336802>, Azzalini and Capitanio (2014)
-<doi:10.1017/CBO9781139248891>, Azzalini (2003) <doi:10.1111/1467-9469.00322>,
-Azzalini and Capitanio (1999) <doi:10.1111/1467-9868.00194>, Azzalini and Dalla
-Valle (1996) <doi:10.1093/biomet/83.4.715>, Einmahl et al. (2013)
-<doi:10.1007/s10687-012-0156-z>, Naveau et al (2009) <doi:10.1093/biomet/asp001>
-and Heffernan and Tawn (2004) <doi:10.1111/j.1467-9868.2004.02050.x>.")
+estimators, likelihood-based estimators and Bayesian techniques.  It adapts the
+methodologies of Beranger and Padoan (2015) <arxiv:1508.05561>, Marcon et al.
+(2016) <doi:10.1214/16-EJS1162>, Marcon et al. (2017) <doi:10.1002/sta4.145>,
+Marcon et al. (2017) <doi:10.1016/j.jspi.2016.10.004> and Beranger et al. (2021)
+<doi:10.1007/s10687-019-00364-0>.  This package also allows for the modelling of
+spatial extremes using flexible max-stable processes.  It provides simulation
+algorithms and fitting procedures relying on the Stephenson-Tawn likelihood as
+per Beranger at al. (2021) <doi:10.1007/s10687-020-00376-1>.")
     (license license:gpl2+)))
 
 (define-public r-extrc
@@ -10189,13 +10181,13 @@ objects.")
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EnrichIntersect" version))
               (sha256
                (base32
-                "1j0b0mjriwjmw9rjzp834rdbyzcykzi85v93z17jz734480ka5l6"))))
+                "02sm4p9fcmrissic6pap4jpdy8s0z5k8kg1bf0l5amn0v054nwh9"))))
     (properties `((upstream-name . "EnrichIntersect")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -10213,8 +10205,8 @@ user-defined sets.  It allows users to perform over-representation analysis of
 the custom sets among any specified ranked feature list, hence making enrichment
 analysis applicable to various types of data from different scientific fields.
 EnrichIntersect also enables an interactive means to visualize identified
-associations based on, for example, the mix-lasso model (Zhao et al., iScience,
-2022 <doi:10.1016/j.isci.2022.104767>) or similar methods.")
+associations based on, for example, the mix-lasso model (Zhao et al., 2022
+<doi:10.1016/j.isci.2022.104767>) or similar methods.")
     (license license:expat)))
 
 (define-public r-enpls

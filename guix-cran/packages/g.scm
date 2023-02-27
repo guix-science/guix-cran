@@ -7604,13 +7604,13 @@ rmarkdown documents and shiny apps thanks to jQuery GoTop
 (define-public r-gosset
   (package
     (name "r-gosset")
-    (version "0.5")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gosset" version))
               (sha256
                (base32
-                "019r79pd0m1ll2hp5rgb9v1hm2s2wsn5cf308capf5d9arpxj6dc"))))
+                "1yxrywsxixg98h8lhbsm0c7afbqmzay11ib1bg89ng1ix1b5qghv"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7628,10 +7628,10 @@ rmarkdown documents and shiny apps thanks to jQuery GoTop
     (home-page "https://agrdatasci.github.io/gosset/")
     (synopsis "Tools for Data Analysis in Experimental Agriculture")
     (description
-     "Toolkit for a workflow to analyse experimental agriculture data, from data
-synthesis to model selection and visualisation.  The package is named after W.S.
-Gosset aka âStudentâ, a pioneer of modern statistics in small sample
-experimental design and analysis.")
+     "Toolkit to analyse experimental agriculture data, from data synthesis to model
+selection and visualisation.  The package is named after W.S. Gosset aka
+âStudentâ, a pioneer of modern statistics in small sample experimental
+design and analysis.")
     (license license:expat)))
 
 (define-public r-gorpiper
@@ -11506,42 +11506,6 @@ Weerahandi and Yu (2020) <doi:10.1186/s40488-020-00105-w> under the widely used
 Compound Symmetric Covariance structure.  The package returns the estimation of
 the coefficients in random and fixed part of the mixed models by generalized
 inference.")
-    (license license:gpl2+)))
-
-(define-public r-glmdisc
-  (package
-    (name "r-glmdisc")
-    (version "0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "glmdisc" version))
-              (sha256
-               (base32
-                "031rz3s5d7hz9fzmsj7aqhzwrn05rnfvk9292k2r0qpr6k02mk3b"))))
-    (properties `((upstream-name . "glmdisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-nnet
-                             r-mass
-                             r-magrittr
-                             r-gam
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://adimajo.github.io")
-    (synopsis "Discretization and Grouping for Logistic Regression")
-    (description
-     "This package provides a Stochastic-Expectation-Maximization (SEM) algorithm
-(Celeux et al. (1995) <https://hal.inria.fr/inria-00074164>) associated with a
-Gibbs sampler which purpose is to learn a constrained representation for
-logistic regression that is called quantization (Ehrhardt et al. (2019)
-<arXiv:1903.08920>).  Continuous features are discretized and categorical
-features values are grouped to produce a better logistic regression model.
-Pairwise interactions between quantized features are dynamically added to the
-model through a Metropolis-Hastings algorithm (Hastings, W. K. (1970)
-<doi:10.1093/biomet/57.1.97>).")
     (license license:gpl2+)))
 
 (define-public r-glmcat
@@ -25915,13 +25879,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganGenerativeData" version))
               (sha256
                (base32
-                "1rj9zndfrr5aprpcyy7nx0rvbsd2b983s9xphrd2g1p38y1lm82q"))))
+                "0v7k405aavl0cb7s17d9z5m94hhbinrgv3kfghbw8pn7zppyhjmj"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

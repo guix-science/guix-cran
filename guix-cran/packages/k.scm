@@ -1233,18 +1233,18 @@ own model, a single published study and multiple studies respectively.")
 (define-public r-komaletter
   (package
     (name "r-komaletter")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "komaletter" version))
               (sha256
                (base32
-                "1cll8cb69gyxl5mg04jibxf7szh38xrqksjkcswbgjcqidp6yxi2"))))
+                "1wk1bhn699295pjj0ap6qkh11khdbx0nfxih74w1in53k4d3dajg"))))
     (properties `((upstream-name . "komaletter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rnuske/komaletter")
+    (home-page "https://rnuske.github.io/komaletter/")
     (synopsis "Simply Beautiful PDF Letters from Markdown")
     (description
      "Write beautiful yet customizable letters in R Markdown and directly obtain the

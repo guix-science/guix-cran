@@ -4135,26 +4135,6 @@ open, high, low and close values for all crypto currencies.  All data is scraped
 from <https://coinmarketcap.com> via their web-api'.")
     (license license:expat)))
 
-(define-public r-crypticibdcheck
-  (package
-    (name "r-crypticibdcheck")
-    (version "0.3-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CrypticIBDcheck" version))
-              (sha256
-               (base32
-                "1c7n020i9lxp0fam05k9v4az4rvx8fakhzi9fkma82smpl709x8q"))))
-    (properties `((upstream-name . "CrypticIBDcheck")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjpsgcs r-ellipse r-car))
-    (home-page "https://cran.r-project.org/package=CrypticIBDcheck")
-    (synopsis "Identifying Cryptic Relatedness in Genetic Association Studies")
-    (description
-     "Exploratory tools to identify closely related subjects using autosomal genetic
-marker data.")
-    (license license:gpl3)))
-
 (define-public r-cry
   (package
     (name "r-cry")
@@ -32423,40 +32403,6 @@ III of Borgan et al (2000), <DOI:10.1023/A:1009661900674>.  This estimator is
 for fitting a Cox proportional hazards model to data from a case-cohort study
 where the subcohort was selected by stratified simple random sampling.")
     (license license:gpl3)))
-
-(define-public r-ccdf
-  (package
-    (name "r-ccdf")
-    (version "1.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ccdf" version))
-              (sha256
-               (base32
-                "1kab0qa731w5hhnpdqhf5jbyyq66xjx1xyxnkzwc0qy75cgyc03i"))))
-    (properties `((upstream-name . "ccdf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-survey
-                             r-statmod
-                             r-rpart
-                             r-rcppnumerical
-                             r-randomforest
-                             r-pbapply
-                             r-matrixstats
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-cowplot
-                             r-compquadform))
-    (home-page "https://cran.r-project.org/package=ccdf")
-    (synopsis "Distribution-Free Single-Cell Differential Expression Analysis")
-    (description
-     "Complex hypothesis testing through conditional cumulative distribution function
-estimation.  Method is detailed in: Gauthier M, Agniel D, Thiebaut R & Hejblum
-BP (2020). \"Distribution-free complex hypothesis testing for single-cell RNA-seq
-differential expression analysis\", BioRxiv <doi:10.1101/2021.05.21.445165>.")
-    (license license:gpl3+)))
 
 (define-public r-ccda
   (package

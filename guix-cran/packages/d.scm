@@ -13056,13 +13056,13 @@ required for usage.")
 (define-public r-dietr
   (package
     (name "r-dietr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dietr" version))
               (sha256
                (base32
-                "03kb36377vx90f7zsl167pyjcyaw3chs710z0nx1kajjhcsdzgjp"))))
+                "0l0pf55xhfzk7il7cvcasf6gi8nvcckygvryhfqldyq7zmr1pgyh"))))
     (properties `((upstream-name . "dietr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfishbase))

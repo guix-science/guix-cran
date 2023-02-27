@@ -8712,13 +8712,13 @@ ProteomeDiscoverer', Spectronaut', DIA-NN and MaxQuant'.")
 (define-public r-mpv
   (package
     (name "r-mpv")
-    (version "1.61")
+    (version "1.62")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MPV" version))
               (sha256
                (base32
-                "08281dca0w6im5a2iqc1l9lgpg23b8zkwbpvbgrw4pp9qswfnp7l"))))
+                "0qn2wdxj4fbk6c5bvx9yxq5yp8nkzk6chxkp1pnxxbr0ghkyy6jz"))))
     (properties `((upstream-name . "MPV")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-lattice r-kernsmooth))
@@ -31299,36 +31299,6 @@ user in making the decision for the chosen test.")
 parameters in a generalized linear model.  Multiple tests and simultaneous
 confidence intervals are provided.")
     (license license:gpl2+)))
-
-(define-public r-mcpmodpack
-  (package
-    (name "r-mcpmodpack")
-    (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MCPModPack" version))
-              (sha256
-               (base32
-                "1xal4dj6i4qvifv4k8x7i1xzh1qq6fcddxk5d8wgriz1viqy2v03"))))
-    (properties `((upstream-name . "MCPModPack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinydashboard
-                             r-shiny
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-officer
-                             r-mvtnorm
-                             r-flextable
-                             r-devemf))
-    (home-page "https://github.com/medianainc/MCPModPack")
-    (synopsis "Simulation-Based Design and Analysis of Dose-Finding Trials")
-    (description
-     "An efficient implementation of the MCPMod (Multiple Comparisons and Modeling)
-method to support a simulation-based design and analysis of dose-finding trials
-with normally distributed, binary and count endpoints (Bretz et al. (2005)
-<doi:10.1111/j.1541-0420.2005.00344.x>).")
-    (license license:gpl3)))
 
 (define-public r-mcpmodgeneral
   (package

@@ -5537,16 +5537,16 @@ estimating and projecting under-five mortality rates, described in Mercer et al.
 (define-public r-summclust
   (package
     (name "r-summclust")
-    (version "0.5")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "summclust" version))
               (sha256
                (base32
-                "1cpc3w610hp3ziz1003k4vhxsfzh0pmbdaws53rxabkjygiwm5bm"))))
+                "0qvr0y2lmpqvk0q14kg6z6qy79bnmv6yinqklznrlw2y1yncx5nj"))))
     (properties `((upstream-name . "summclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-generics r-dreamerr r-collapse))
+    (propagated-inputs (list r-mass r-generics r-dreamerr r-collapse r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://s3alfisc.github.io/summclust/")
     (synopsis
@@ -16525,40 +16525,6 @@ information and examples and the official Spotify for Developers website
 <https://developer.spotify.com/documentation/web-api/> for information about the
 Web API'.")
     (license license:expat)))
-
-(define-public r-spotgui
-  (package
-    (name "r-spotgui")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spotGUI" version))
-              (sha256
-               (base32
-                "0hybpw0lgqrzrryfp08qvl42hrgdmx2hq7bavxjihm8mp0375dmz"))))
-    (properties `((upstream-name . "spotGUI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-spot
-                             r-smoof
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-rhandsontable
-                             r-rclipboard
-                             r-plotly
-                             r-httpuv
-                             r-gridextra
-                             r-batchtools))
-    (home-page "https://cran.r-project.org/package=spotGUI")
-    (synopsis "Graphical User Interface for the Package 'SPOT'")
-    (description
-     "This package provides a graphical user interface for the Sequential Parameter
-Optimization Toolbox (package SPOT').  It includes a quick, graphical setup for
-spot, interactive 3D plots, export possibilities and more.")
-    (license license:gpl2+)))
 
 (define-public r-spot
   (package
@@ -41014,13 +40980,13 @@ Francisco data portal (DataSF)
 (define-public r-sfnetworks
   (package
     (name "r-sfnetworks")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sfnetworks" version))
               (sha256
                (base32
-                "1klfsp49q6ysbam8f8w3x60y2zml0hmlz1rbskw8s8gc1jaicjgq"))))
+                "1gc3qza405npvmhh112a4r6bs60jgff536y27h9vxhwjskx3sx99"))))
     (properties `((upstream-name . "sfnetworks")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -45919,22 +45885,16 @@ geoms, and scales for ggplot2'.  Color scales are based on
 (define-public r-sedproxy
   (package
     (name "r-sedproxy")
-    (version "0.7.3")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sedproxy" version))
               (sha256
                (base32
-                "176wyi8jvk15r4k7hdax2ad37rsbhr54jlsj0y7p8ayhk1vd89am"))))
+                "1n5970pbdc0zl9vh0fslirlww56as5c090mnhzbic1fdzkhli245"))))
     (properties `((upstream-name . "sedproxy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-shiny
-                             r-rlang
-                             r-readr
-                             r-mvtnorm
-                             r-ggplot2
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-rlang r-mvtnorm r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://earthsystemdiagnostics.github.io/sedproxy/")
     (synopsis "Simulation of Sediment Archived Climate Proxy Records")
