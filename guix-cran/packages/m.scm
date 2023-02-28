@@ -1023,6 +1023,25 @@ provided.  In addition, this package includes some functions to generate several
 types of multivariate distributions mentioned in Zhou and Shao (2014).")
     (license license:gpl2+)))
 
+(define-public r-mvnmle
+  (package
+    (name "r-mvnmle")
+    (version "0.1-11.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mvnmle" version))
+              (sha256
+               (base32
+                "06ysl7ff0gy5iiggaicrk1x3sav86iz45zks6ybd3k9516qjjn39"))))
+    (properties `((upstream-name . "mvnmle")))
+    (build-system r-build-system)
+    (home-page "https://github.com/indenkun/mvnmle")
+    (synopsis "ML Estimation for Multivariate Normal Data with Missing Values")
+    (description
+     "Finds the Maximum Likelihood (ML) Estimate of the mean vector and
+variance-covariance matrix for multivariate normal data with missing values.")
+    (license license:gpl2+)))
+
 (define-public r-mvnimpute
   (package
     (name "r-mvnimpute")
@@ -15912,13 +15931,13 @@ cross-validation if ignored.")
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3spatial" version))
               (sha256
                (base32
-                "02az0phdfv43353k36w7zhjwajh44dbigjxw0x31rrhx1ag3dv7z"))))
+                "0fvfrnj6indmhbhs5z125kgiach56f1lr9hwzk5hhwj8d49mj4fl"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -20029,13 +20048,13 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
 (define-public r-mispitools
   (package
     (name "r-mispitools")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mispitools" version))
               (sha256
                (base32
-                "139wd1nqw4baivnmz3xh50h3k52bqs8nn8gpgda0cw8r82d5w7ws"))))
+                "05wlhjgsn14yvqkzqj5a060j8vryz8wwhh0xcqnarf55nirv4a8a"))))
     (properties `((upstream-name . "mispitools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -26569,25 +26588,31 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
 (define-public r-metamedian
   (package
     (name "r-metamedian")
-    (version "0.1.6")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metamedian" version))
               (sha256
                (base32
-                "05qpsziay5ply3rczi8wv2zn7wd1hs6ax8ps2gmssdw2wyf349nd"))))
+                "15qq3yig2j3nh06jz75fdfn5akq038wdhrkkczl06x16qlp37wfb"))))
     (properties `((upstream-name . "metamedian")))
     (build-system r-build-system)
-    (propagated-inputs (list r-metafor r-hmisc r-estmeansd))
+    (propagated-inputs (list r-metafor r-metablue r-hmisc r-estmeansd))
     (home-page "https://github.com/stmcg/metamedian")
     (synopsis "Meta-Analysis of Medians")
     (description
      "This package implements several methods to meta-analyze studies that report the
 sample median of the outcome.  When the primary studies are one-group studies,
-the methods of McGrath et al. (2019) <doi:10.1002/sim.8013> can be applied to
-estimate the pooled median.  In the two-group context, the methods of McGrath et
-al. (2020) <doi:10.1002/bimj.201900036> can be applied to estimate the pooled
-raw difference of medians across groups.")
+the methods of McGrath et al. (2019) <doi:10.1002/sim.8013> and Ozturk and
+Balakrishnan (2020) <doi:10.1002/sim.8738> can be applied to estimate the pooled
+median.  In the two-group context, the methods of McGrath et al. (2020a)
+<doi:10.1002/bimj.201900036> can be applied to estimate the pooled difference of
+medians across groups.  Additionally, a number of methods (e.g., McGrath et al.
+(2020b) <doi:10.1177/0962280219889080>, Cai et al. (2021)
+<doi:10.1177/09622802211047348>, and McGrath et al. (2023)
+<doi:10.1177/09622802221139233>) are implemented to estimate study-specific
+(difference of) means and their standard errors in order to estimate the pooled
+(difference of) means.")
     (license license:gpl3+)))
 
 (define-public r-metama

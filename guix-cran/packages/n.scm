@@ -9665,38 +9665,6 @@ out-of-the-box-nice visualizations.  The package is built on top of The Grid
 Graphics Package and seamlessly work with igraph and network objects.")
     (license license:expat)))
 
-(define-public r-netorigin
-  (package
-    (name "r-netorigin")
-    (version "1.1-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NetOrigin" version))
-              (sha256
-               (base32
-                "061hfllic8z3ps4znk3c7qjhzqdifk99ikvczxacih5hw86a9j4m"))))
-    (properties `((upstream-name . "NetOrigin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr
-                             r-mvtnorm
-                             r-igraph
-                             r-hmisc
-                             r-corpcor
-                             r-colorspace))
-    (home-page "https://netorigin.manitz.org/")
-    (synopsis
-     "Origin Estimation for Propagation Processes on Complex Networks")
-    (description
-     "This package performs network-based source estimation.  Different approaches are
-available: effective distance median (Manitz et al., 2014;
-<doi:10.1371/currents.outbreaks.f3fdeb08c5b9de7c09ed9cbcef5f01f2>), recursive
-backtracking (Manitz et al., 2016; <doi:10.1111/rssc.12176>), and
-centrality-based source estimation (Li et al., 2021;
-<doi:10.1371/journal.pcbi.1008545>).  Additionally, we provide public
-transportation network data as well as methods for data preparation, source
-estimation performance analysis and visualization.")
-    (license license:gpl3)))
-
 (define-public r-netmix
   (package
     (name "r-netmix")
@@ -9772,13 +9740,13 @@ NetMHCIIpan from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.7-0")
+    (version "2.8-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmeta" version))
               (sha256
                (base32
-                "08gmg94jlq35w7wygqvgqxjgbfd51af6f5xhj0y07g9ip8xwk182"))))
+                "0wyir3hjmj11yl47bhfrshbki3i47fq6ygq076979940vfd2xdsk"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
@@ -10205,13 +10173,13 @@ accommodated to do classification and prediction.")
 (define-public r-netcox
   (package
     (name "r-netcox")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netcox" version))
               (sha256
                (base32
-                "1j3z45lb9hs26f607872h0w0cdxlf429rxv4hc9wrpfnnlg5f67m"))))
+                "04biaynmvqrilp0kdxw55b990j7iqnvn8gr07dhzm9f7r9sr7xk6"))))
     (properties `((upstream-name . "netcox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-glmnet))

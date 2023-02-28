@@ -1149,16 +1149,16 @@ decision and utility nodes are also supported.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyd1d" version))
               (sha256
                (base32
-                "0d0hm0r8ajzi2g8bd0lgizxidpmdznynk6lmxrcan9i3lx1hmmzw"))))
+                "1y0ybhcvrgdhpqi2v0fxpxmfxrg0bnsapy818fs9xln8j5iqms4s"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjsonio r-rdpack r-rcurl r-plotrix))
+    (propagated-inputs (list r-rjsonio r-rdpack r-plotrix))
     (native-inputs (list r-knitr))
     (home-page "https://hyd1d.bafg.de")
     (synopsis "1d Water Level Interpolation along the Rivers Elbe and Rhine")
@@ -3633,6 +3633,36 @@ consumer-resource scenarios.")
     (description
      "This package provides a data set of the Portuguese NHS hospitals.")
     (license license:cc0)))
+
+(define-public r-hospitalnetwork
+  (package
+    (name "r-hospitalnetwork")
+    (version "0.9.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HospitalNetwork" version))
+              (sha256
+               (base32
+                "183nb9h9b1z1ifpnzcxa8wh3xm2id6fnq9vqd4vkbxzw7wlyd86b"))))
+    (properties `((upstream-name . "HospitalNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-lubridate
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://pascalcrepey.github.io/HospitalNetwork/")
+    (synopsis "Building Networks of Hospitals Through Patients Transfers")
+    (description
+     "Set of tools to help interested researchers to build hospital networks from data
+on hospitalized patients transferred between hospitals.  Methods provided have
+been used in Donker T, Wallinga J, Grundmann H. (2010)
+<doi:10.1371/journal.pcbi.1000715>, and Nekkab N, CrÃ©pey P, Astagneau P,
+Opatowski L, Temime L. (2020) <doi:10.1038/s41598-020-71212-6>.")
+    (license license:gpl3)))
 
 (define-public r-horseshoenlm
   (package
@@ -7823,6 +7853,39 @@ mean square prediction error and lookahead heuristics are provided, and notably
 fast update functions when adding new observations.")
     (license license:lgpl2.0+)))
 
+(define-public r-heteromixgm
+  (package
+    (name "r-heteromixgm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "heteromixgm" version))
+              (sha256
+               (base32
+                "0yzw0hi5xs3q7zm67ryar3c9v8n1xyrnfza2n9244ad8jyw8vdsb"))))
+    (properties `((upstream-name . "heteromixgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnorm
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-glasso
+                             r-bdgraph))
+    (home-page "https://cran.r-project.org/package=heteromixgm")
+    (synopsis "Copula Graphical Models for Heterogeneous Mixed Data")
+    (description
+     "This package provides a multi-core R package that allows for the statistical
+modeling of multi-group multivariate mixed data using Gaussian graphical models.
+ Combining the Gaussian copula framework with the fused graphical lasso penalty,
+the heteromixgm package can handle a wide variety of datasets found in various
+sciences.  The package also includes an option to perform model selection using
+the AIC, BIC and EBIC information criteria, as well as simulate mixed
+heterogeneous data for exploratory or simulation purposes and one multi-group
+multivariate mixed agricultural dataset pertaining to maize yields.  The package
+implements the methodological developments found in Hermes et al. (2022)
+<doi:10.48550/arXiv.2210.13140>.")
+    (license license:gpl3)))
+
 (define-public r-heteroggm
   (package
     (name "r-heteroggm")
@@ -9408,6 +9471,53 @@ such as gene expression, the proposed method addresses an unmet methodological
 challenge.  Methods used in the package refer to James Y. Dai, Janet L. Stanford
 & Michael LeBlanc (2020) <doi:10.1080/01621459.2020.1765785>.")
     (license license:expat)))
+
+(define-public r-hdmed
+  (package
+    (name "r-hdmed")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hdmed" version))
+              (sha256
+               (base32
+                "19n1m8wrzwf4lvmfw1bgyhymxv79irs341yfnhlc8znq4nm35yfh"))))
+    (properties `((upstream-name . "hdmed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ncvreg
+                             r-mediation
+                             r-mass
+                             r-iterators
+                             r-hdi
+                             r-genlasso
+                             r-gcdnet
+                             r-freebird
+                             r-foreach
+                             r-bama))
+    (home-page "https://cran.r-project.org/package=hdmed")
+    (synopsis "Methods for Mediation Analysis with High-Dimensional Mediators")
+    (description
+     "This package provides a suite of functions for performing mediation analysis
+with high-dimensional mediators.  In addition to centralizing code from several
+existing packages for high-dimensional mediation analysis, we provide organized,
+well-documented functions for a handle of methods which, though programmed their
+original authors, have not previously been formalized into R packages or been
+made presentable for public use.  The methods we include cover a broad array of
+approaches and objectives, and are described in detail by both our companion
+manuscript---\"Methods for Mediation Analysis with High-Dimensional DNA
+Methylation Data: Possible Choices and Comparison\"---and the original
+publications that proposed them.  The specific methods offered by our package
+include the Bayesian sparse linear mixed model (BSLMM) by Song et al. (2019);
+high-dimensional mediation analysis (HDMA) by Gao et al. (2019);
+high-dimensional multivariate mediation (HDMM) by ChÃ©n et al. (2018);
+high-dimensional linear mediation analysis (HILMA) by Zhou et al. (2020);
+high-dimensional mediation analysis (HIMA) by Zhang et al. (2016); latent
+variable mediation analysis (LVMA) by Derkach et al. (2019); mediation by
+fixed-effect model (MedFix) by Zhang (2021); pathway LASSO by Zhao & Luo (2022);
+principal component mediation analysis (PCMA) by Huang & Pan (2016); and sparse
+principal component mediation analysis (SPCMA) by Zhao et al. (2020).  Citations
+for the corresponding papers can be found in their respective functions.")
+    (license license:gpl3+)))
 
 (define-public r-hdme
   (package

@@ -3141,13 +3141,13 @@ and Swing implementations are included.")
 (define-public r-jatsdecoder
   (package
     (name "r-jatsdecoder")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JATSdecoder" version))
               (sha256
                (base32
-                "1zvsx3970kr7ihmal5wsscwl9lqplknvx3pzgw1n89bc354xg140"))))
+                "0422liy1qyih0nrwmd1vmzlsk94axmvnraxgwyp4j87ip7qvxaak"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-opennlp r-nlp))
@@ -3168,8 +3168,9 @@ of the involved sample size is performed based on reports within the abstract
 and the reported degrees of freedom within statistical results.  In addition,
 the package contains some useful functions to process text (text2sentences(),
 text2num(), ngram(), strsplit2(), grep2()).  See BÃ¶schen, I. (2021)
-<doi:10.1007/s11192-021-04162-z> and BÃ¶schen, I. (2021)
-<doi:10.1038/s41598-021-98782-3>.")
+<doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
+<doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
+<doi:10.1038/s41598-022-27085-y>.")
     (license license:gpl3)))
 
 (define-public r-jarbes

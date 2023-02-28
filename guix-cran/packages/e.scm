@@ -14244,6 +14244,36 @@ assess anthelmintic efficacy.  Bayesian inference is done via MCMC sampling
 using Stan <https://mc-stan.org/>.")
     (license license:gpl3+)))
 
+(define-public r-egcm
+  (package
+    (name "r-egcm")
+    (version "1.0.13")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "egcm" version))
+              (sha256
+               (base32
+                "16mzhf7x19v9z600n29q4481dmsjfcn55365zbb9d0wrclc3053l"))))
+    (properties `((upstream-name . "egcm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-urca
+                             r-tseries
+                             r-quantmod
+                             r-pracma
+                             r-mass
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=egcm")
+    (synopsis "Engle-Granger Cointegration Models")
+    (description
+     "An easy-to-use implementation of the Engle-Granger two-step procedure for
+identifying pairs of cointegrated series.  It is geared towards the analysis of
+pairs of securities.  Summary and plot functions are provided, and the package
+is able to fetch closing prices of securities from Yahoo.  A variety of unit
+root tests are supported, and an improved unit root test is included.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-eganet
   (package
     (name "r-eganet")
@@ -16479,13 +16509,13 @@ flexible white-box approach where the evolutionary cycle is written by hand.")
 (define-public r-ecpc
   (package
     (name "r-ecpc")
-    (version "3.1")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecpc" version))
               (sha256
                (base32
-                "0dhr71q4hwwfpzjm7vgl4ppa6441iqz1lbk9j3dvag255nv1bnpr"))))
+                "0vi9k3p1xicx53rmccmx1ykdidqb22hkwgr7l5hc0bjzsv7h2w38"))))
     (properties `((upstream-name . "ecpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

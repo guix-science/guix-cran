@@ -3738,13 +3738,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.9.7")
+    (version "1.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iq" version))
               (sha256
                (base32
-                "1fy893a54ramnfqmzpxjdlz9aasj7q58mgpip2rjk1sh7ny766x3"))))
+                "1frwqc84k1gif0m8806gvrsfa1vynnrnn3dbgmbamkhjkfmpd5sq"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -4720,13 +4720,13 @@ IP2Location to install the module.")
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iotarelr" version))
               (sha256
                (base32
-                "1qygvv36rh2v70fr0cq7khr5846453fn9636dm8zdjx0ljb36fdz"))))
+                "0bs2m5528cq4lsq33cs77n16hpd72bcbv64axyw95jbk71s48zrx"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2 r-ggalluvial))
@@ -12341,62 +12341,6 @@ actual Ultimate Reality}\" by Irucka Ajani Embry.")
      "Miscellaneous data sets [Engineering Economics, Environmental/ Water Resources
 Engineering, US Presidential Elections].")
     (license license:gpl3+)))
-
-(define-public r-iemisc
-  (package
-    (name "r-iemisc")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iemisc" version))
-              (sha256
-               (base32
-                "1frnpml90ff631y503bvafblasamqrr51p1h9qdrjbdif3ann356"))))
-    (properties `((upstream-name . "iemisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-usa-state-boundaries
-                             r-units
-                             r-stringi
-                             r-sjmisc
-                             r-signal
-                             r-sf
-                             r-round
-                             r-roperators
-                             r-rivr
-                             r-ramify
-                             r-qdaptools
-                             r-qdapregex
-                             r-pracma
-                             r-mgsub
-                             r-measurements
-                             r-matlab2r
-                             r-matlab
-                             r-lubridate
-                             r-iemiscdata
-                             r-gsubfn
-                             r-ggpubr
-                             r-ggplot2
-                             r-geosphere
-                             r-fpcompare
-                             r-foreach
-                             r-data-table
-                             r-chnosz
-                             r-checkmate
-                             r-berryfunctions
-                             r-assertthat
-                             r-anytime))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemisc")
-    (synopsis "Irucka Embry's Miscellaneous Functions")
-    (description
-     "This package provides a collection of Irucka Embry's miscellaneous functions
-(Engineering Economics, Civil & Environmental/Water Resources Engineering,
-Construction Measurements, GNU Octave compatible functions, Python compatible
-function, Trigonometric functions in degrees and function in radians, Geometry,
-Statistics, Mortality Calculators, Quick Search, etc.).")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ieeeround
   (package

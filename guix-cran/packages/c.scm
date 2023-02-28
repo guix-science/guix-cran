@@ -11518,6 +11518,32 @@ package by extending an S4 class with generic functions for their main
 components.")
     (license license:gpl2+)))
 
+(define-public r-copuladta
+  (package
+    (name "r-copuladta")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CopulaDTA" version))
+              (sha256
+               (base32
+                "1a9v398yn7gflpnsrgzap8gy1b676ri1m3fwiv1jpc5l1cw154pm"))))
+    (properties `((upstream-name . "CopulaDTA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstan r-reshape2 r-plyr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CopulaDTA")
+    (synopsis
+     "Copula Based Bivariate Beta-Binomial Model for Diagnostic Test Accuracy Studies")
+    (description
+     "Modelling of sensitivity and specificity on their natural scale using copula
+based bivariate beta-binomial distribution to yield marginal mean sensitivity
+and specificity.  The intrinsic negative correlation between sensitivity and
+specificity is modelled using a copula function.  A forest plot can be obtained
+for categorical covariates or for the model with intercept only.  Nyaga VN,
+Arbyn M, Aerts M (2017) <doi:10.18637/jss.v082.c01>.")
+    (license license:gpl2)))
+
 (define-public r-copuladata
   (package
     (name "r-copuladata")
@@ -18036,13 +18062,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.2")
+    (version "1.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "0f5q53z6q9k5939ypyr2xrah482cyah3pjvyd8db8jw84gsq8gj4"))))
+                "0mi09nv8xspqgsxphv30j1rrvhn5zpi9y2d7pigzvnkziq85shjr"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

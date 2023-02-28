@@ -6121,16 +6121,19 @@ Montanari, 2018 <arXiv:1803.00374>.")
 (define-public r-grandr
   (package
     (name "r-grandr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grandR" version))
               (sha256
                (base32
-                "1bqwcmncl7n1686hsl080wdgadwr7l3x31jkgzcli4p68bjzhpig"))))
+                "186jvqldhpyqj005g34lhvnig1ign5kkzmvsmpyfsz18zc8clmhz"))))
     (properties `((upstream-name . "grandR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-reshape2
+                             r-rcurl
                              r-plyr
                              r-patchwork
                              r-numderiv
@@ -6138,6 +6141,7 @@ Montanari, 2018 <arXiv:1803.00374>.")
                              r-matrix
                              r-mass
                              r-lfc
+                             r-labeling
                              r-ggplot2
                              r-cowplot))
     (native-inputs (list r-knitr))
@@ -17580,13 +17584,13 @@ log-log representation.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gfoRmula" version))
               (sha256
                (base32
-                "074whz4ajah0l38a5hslfp5vjwakgzj5vr2dajsfypyw34jifyfs"))))
+                "12xl64qh25rbpzcd2zlpadldalfsn0hkrx12mgznxk5r841iiy9d"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -25188,13 +25192,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GauPro" version))
               (sha256
                (base32
-                "0cjd4b09ni8g3l9g4hjmff4ws8fw2iyf23mj6z6z9391cz36s6zq"))))
+                "1z9ndkafn84nr7d8idpsaib8zpcf7588fh9pqmz2mr4ifd6igw71"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))

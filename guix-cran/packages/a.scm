@@ -5441,17 +5441,16 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.2.3")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARPALData" version))
               (sha256
                (base32
-                "1zpl3dpqkf9m9d4hqqmcbqb3dz8gcqyp0rhs8gvs5vgidsy5sjv8"))))
+                "1c7885f7043inihk6mf98qdzkgr3nzrn3x9r6r62w4ri8j6mpr8y"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
-                             r-tidyverse
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -6666,13 +6665,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "0.2.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archeoViz" version))
               (sha256
                (base32
-                "0g00nspry4m4dwbsjnksidc0igaj4wsq1f90gqp4ja40ic61dyfs"))))
+                "0zz9km1mdxw6n0g7njfv7abayvd4jfc0vzbl9z0wql5a0l6h3qmd"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -6681,6 +6680,7 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
                              r-reshape2
                              r-plotly
                              r-mgcv
+                             r-htmlwidgets
                              r-ggplot2
                              r-cxhull))
     (native-inputs (list r-knitr))
@@ -6690,7 +6690,7 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
     (description
      "An R Shiny application for the visualisation, interactive exploration, and web
 communication of archaeological excavation data.  It includes interactive 3D and
-2D visualisations, generation of cross sections and map of the remains, basic
+2D visualisations, generation of cross sections and maps of the remains, basic
 spatial analysis methods (convex hull, regression surfaces, 2D kernel density
 estimation), and excavation timeline visualisation.  archeoViz can be used
 locally or deployed on a server, either with interactive input of data or with a

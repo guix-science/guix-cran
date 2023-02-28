@@ -292,21 +292,21 @@ output, inputs, and productivity for 167 countries between 1950 and 2011.")
 (define-public r-pwt10
   (package
     (name "r-pwt10")
-    (version "10.0-0")
+    (version "10.01-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pwt10" version))
               (sha256
                (base32
-                "0zzdd7z9i2dc2br4njfwz7147c907pf25aihh2i3lldkqzcbxkr7"))))
+                "156w50zhkbbdlxmwsdkiw89240xbhq6wmagashz94z798s5ssisv"))))
     (properties `((upstream-name . "pwt10")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pwt10")
     (synopsis "Penn World Table (Version 10.x)")
     (description
-     "The Penn World Table 10.x (<http://www.ggdc.net/pwt/>) provides information on
-relative levels of income, output, input, and productivity for 183 countries
-between 1950 and 2019.")
+     "The Penn World Table 10.x (<https://www.rug.nl/ggdc/productivity/pwt/>) provides
+information on relative levels of income, output, input, and productivity for
+183 countries between 1950 and 2019.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-pwt
@@ -3375,13 +3375,13 @@ models with penalized basis splines (P-Splines).  See
 (define-public r-pspatreg
   (package
     (name "r-pspatreg")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pspatreg" version))
               (sha256
                (base32
-                "1ml3vyz76lb2qgsqm5223pmx686l79hwplwj63fr7pm3vikdcsnm"))))
+                "1913zd67cmcrr8vm13zh7cq9nr9hhlybm5bicsv6z09nmsq47m7w"))))
     (properties `((upstream-name . "pspatreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5668,13 +5668,13 @@ emphasis on streamlining the workflow of data analysis projects.")
 (define-public r-projecttemplate
   (package
     (name "r-projecttemplate")
-    (version "0.10.2")
+    (version "0.10.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProjectTemplate" version))
               (sha256
                (base32
-                "0r1af5h24nbgr39njchnqd54cw7cyzsw8k1qind8h5af491wmq0h"))))
+                "0h2szi0sp71s2gh104z2yknfs88b2c7z85q0zliy2qv6b5vj26mn"))))
     (properties `((upstream-name . "ProjectTemplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-digest))
@@ -8216,13 +8216,13 @@ landmark estimation of the transition probabilities.")
 (define-public r-presize
   (package
     (name "r-presize")
-    (version "0.3.3")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "presize" version))
               (sha256
                (base32
-                "001xjwqah4ivhjq0m6fkihr48x7crqhf8scplfqlw5zgp7qh56ma"))))
+                "1qabv7lsrd0rrjkg7icr7qxj4jrx78s6rh1n961s6qrw6gldq4ga"))))
     (properties `((upstream-name . "presize")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-kappasize))
@@ -10316,6 +10316,29 @@ categories, consistent with OMB (Office of Management and Budget)
 classifications.  Functions exist for downloading and linking to existing
 sources of privacy protected microdata.")
     (license license:expat)))
+
+(define-public r-pplasso
+  (package
+    (name "r-pplasso")
+    (version "2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PPLasso" version))
+              (sha256
+               (base32
+                "11xqpq7s8j1vrsf0x31pvk861wz4d3yg7a4gcwv43s3w5dxbljls"))))
+    (properties `((upstream-name . "PPLasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-glmnet r-ggplot2 r-genlasso r-cvcovest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PPLasso")
+    (synopsis "Prognostic Predictive Lasso for Biomarker Selection")
+    (description
+     "We provide new tools for the identification of prognostic and predictive
+biomarkers.  For further details we refer the reader to the paper: Zhu et al.
+Identification of prognostic and predictive biomarkers in high-dimensional data
+with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
+    (license license:gpl2)))
 
 (define-public r-ppitables
   (package
@@ -21039,13 +21062,13 @@ with the INLA package (<https://www.r-inla.org>).")
 (define-public r-phylter
   (package
     (name "r-phylter")
-    (version "0.9.6")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylter" version))
               (sha256
                (base32
-                "02dhm0s8qqr6jwpygnm2bwn37177y2g59dnj800ig3wz6dlaf9rq"))))
+                "1gdpm6pq4gncgqb5cznr6z2m6gnma8mlwpvm31s50a8rj9qz3hp1"))))
     (properties `((upstream-name . "phylter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -34033,13 +34056,13 @@ defined radial scheme.  See the pacviz documentation page for more information:
 (define-public r-pacs
   (package
     (name "r-pacs")
-    (version "0.4.8")
+    (version "0.4.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pacs" version))
               (sha256
                (base32
-                "0p27bhpq4dvgzqay33vaj3h77hcxr7d7r3f6hpb424c0sqil65v2"))))
+                "1kchwlpyk2dsvlfx32z8v6h1ky7ac546cwrx0gaxxa9n79xj2ba1"))))
     (properties `((upstream-name . "pacs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringi r-memoise r-jsonlite r-curl))

@@ -5976,22 +5976,23 @@ your system so that other packages can link against it.")
 (define-public r-boolnet
   (package
     (name "r-boolnet")
-    (version "2.1.7")
+    (version "2.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BoolNet" version))
               (sha256
                (base32
-                "1b87ncwz1bsjym328qyjwhxqi7c6x05y6g1nc43y2fz5l5312nmv"))))
+                "1njp9x7x6agdr8i2ilj8f98mw2b7hjqln00w95xinsv5zb6x0182"))))
     (properties `((upstream-name . "BoolNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-igraph))
     (home-page "https://cran.r-project.org/package=BoolNet")
     (synopsis "Construction, Simulation and Analysis of Boolean Networks")
     (description
-     "This package provides methods to reconstruct and generate synchronous,
-asynchronous, probabilistic and temporal Boolean networks, and to analyze and
-visualize attractors in Boolean networks.")
+     "This package provides functions to reconstruct, generate, and simulate
+synchronous, asynchronous, probabilistic, and temporal Boolean networks.
+Provides also functions to analyze and visualize attractors in Boolean networks
+<doi:10.1093/bioinformatics/btq124>.")
     (license license:artistic2.0)))
 
 (define-public r-boolfilter
@@ -15019,13 +15020,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "0jv01ka72s649li1islb0q06d7spslkql73bvp2hrqhxrw5b3mc7"))))
+                "1mr14vxan0xj6b50mdqk2x53s2cxbhchqr3nb7bsi1qw415nfns8"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18594,13 +18595,13 @@ Rockova <arXiv:2011.14279>.")
 (define-public r-bbsbayes
   (package
     (name "r-bbsbayes")
-    (version "2.5.2")
+    (version "2.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bbsBayes" version))
               (sha256
                (base32
-                "0wczfhck5gvmpv7z4d5db3qmdincw8q5hhchn2y47mzvpwfvwzwg"))))
+                "0vh7idcj89l5nlgg0kf41pvs1d1lpn5r1p254afcycn0sr06ky6f"))))
     (properties `((upstream-name . "bbsBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18614,7 +18615,7 @@ Rockova <arXiv:2011.14279>.")
                              r-ggplot2
                              r-geofacet
                              r-dplyr))
-    (home-page "https://github.com/BrandonEdwards/bbsBayes")
+    (home-page "https://github.com/bbsBayes/bbsBayes")
     (synopsis "Hierarchical Bayesian Analysis of North American BBS Data")
     (description
      "The North American Breeding Bird Survey (BBS) is a long-running program that
@@ -23378,13 +23379,13 @@ without bartMachine.")
 (define-public r-bartmachine
   (package
     (name "r-bartmachine")
-    (version "1.3.3")
+    (version "1.3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartMachine" version))
               (sha256
                (base32
-                "1hq68cy2vdahpdsw0ja96bgp8mhrbaf09grq8mfyk5yi9npg5y6k"))))
+                "0py6fbp5la70g3hwhk554gs13ns51g9yza1kv78bf6dh0bv7mcn4"))))
     (properties `((upstream-name . "bartMachine")))
     (build-system r-build-system)
     (inputs (list openjdk))

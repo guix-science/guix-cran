@@ -7116,25 +7116,6 @@ JLMn, a Jackknife version of the longest monotonic subsequence.  This family of
 tests can be applied under the assumption of continuity of X and Y.")
     (license license:gpl2)))
 
-(define-public r-listdown
-  (package
-    (name "r-listdown")
-    (version "0.5.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "listdown" version))
-              (sha256
-               (base32
-                "1pb738s1pm86k51yaffdzlkyhgsxs383mrlvpsqp8a7ii4nmbg3j"))))
-    (properties `((upstream-name . "listdown")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-tibble r-rmarkdown r-fs r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaneplusplus/listdown")
-    (synopsis "Create R Markdown from Lists")
-    (description "Programmatically create R Markdown documents from lists.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
-
 (define-public r-listcompr
   (package
     (name "r-listcompr")
@@ -14537,6 +14518,49 @@ R, or included in a self-contained Rmarkdown document, or used in a Shiny app.")
      "Estimate drift and diffusion functions from time series and generate synthetic
 time series from given drift and diffusion coefficients.")
     (license license:gpl2+)))
+
+(define-public r-landsepi
+  (package
+    (name "r-landsepi")
+    (version "1.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "landsepi" version))
+              (sha256
+               (base32
+                "03zg5rlsynxqssay7fvlp80xq2fx0hsgndlynrhkrg9cc5dkkxmi"))))
+    (properties `((upstream-name . "landsepi")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-testthat
+                             r-splancs
+                             r-sp
+                             r-sf
+                             r-rsqlite
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrix
+                             r-foreach
+                             r-fields
+                             r-doparallel
+                             r-desolve
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://csiro-inra.pages.biosp.inrae.fr/landsepi/")
+    (synopsis "Landscape Epidemiology and Evolution")
+    (description
+     "This package provides a stochastic, spatially-explicit, demo-genetic model
+simulating the spread and evolution of a plant pathogen in a heterogeneous
+landscape to assess resistance deployment strategies.  It is based on a spatial
+geometry for describing the landscape and allocation of different cultivars, a
+dispersal kernel for the dissemination of the pathogen, and a SEIR
+('Susceptible-Exposed-Infectious-Removedâ) structure with a discrete time
+step.  It provides a useful tool to assess the performance of a wide range of
+deployment options with respect to their epidemiological, evolutionary and
+economic outcomes.  Loup Rimbaud, Julien PapaÃ¯x, Jean-FranÃ§ois Rey, Luke G
+Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-landscapetools
   (package

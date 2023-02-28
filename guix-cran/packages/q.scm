@@ -2741,13 +2741,13 @@ coefficients.  This package is strongly inspired by the spray package.")
 (define-public r-qsplines
   (package
     (name "r-qsplines")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qsplines" version))
               (sha256
                (base32
-                "1kvhvbgmajak1pvbpdvw7nj5w9srqzmxd9jh59kxaljczwbwc2j1"))))
+                "0zln3w2qx8ck9631hkq8ig5bc2l55wg5mdp3i0fm9amg8mhzq37i"))))
     (properties `((upstream-name . "qsplines")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-onion r-bh))

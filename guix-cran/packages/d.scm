@@ -1010,13 +1010,13 @@ dynamic multivariate panel models is carried out via Stan'.")
 (define-public r-dynamicsdm
   (package
     (name "r-dynamicsdm")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamicSDM" version))
               (sha256
                (base32
-                "0vfwjb4xikms9hd25xfrh8nymyrn94srldqmhl6xdvvd0i4h3jpp"))))
+                "1pp831xkrdp0v46n8pxi67sb48n9nsr4zls3ki44bjyslri0id49"))))
     (properties `((upstream-name . "dynamicSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1025,6 +1025,7 @@ dynamic multivariate panel models is carried out via Stan'.")
                              r-sf
                              r-rgee
                              r-reticulate
+                             r-readr
                              r-raster
                              r-magrittr
                              r-lubridate
@@ -1128,37 +1129,6 @@ experiments.  The current version only supports 64-bit version of R.")
 tailored to the user's model statement, model type, and sample size.  This is
 the counterpart of the Shiny Application, <https://dynamicfit.app>.")
     (license license:agpl3)))
-
-(define-public r-dynamaedes
-  (package
-    (name "r-dynamaedes")
-    (version "2.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dynamAedes" version))
-              (sha256
-               (base32
-                "0a4wc8sx4mh2dpsp998raapi2bd5gb9bfd0b0a54z6j0lfsjkv5v"))))
-    (properties `((upstream-name . "dynamAedes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-slam
-                             r-raster
-                             r-insol
-                             r-foreach
-                             r-fields
-                             r-drc
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://mattmar.github.io/dynamAedes/")
-    (synopsis
-     "Unified Mechanistic Model for the Population Dynamics of Invasive Aedes Mosquitoes")
-    (description
-     "Generalised model for population dynamics of invasive Aedes mosquitoes.
-Rationale and model structure are described here: Da Re et al. (2021)
-<doi:10.1016/j.ecoinf.2020.101180> and Da Re et al. (2022)
-<doi:10.1101/2021.12.21.473628>.")
-    (license license:gpl2+)))
 
 (define-public r-dynamac
   (package
@@ -10304,13 +10274,13 @@ implementation of the algorithm supports both directed and undirected networks."
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.0-9-4")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disordR" version))
               (sha256
                (base32
-                "1p8lfwyc3214nc0lm2limnnx0d7vrwq7gxp18fgdxbxknd1rfk0s"))))
+                "1vkfiwr94yqbjm2rcch6z4affdnihmzx1k1cf3vp30w04qxnxz0r"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-digest))
@@ -10318,21 +10288,12 @@ implementation of the algorithm supports both directed and undirected networks."
     (home-page "https://github.com/RobinHankin/disordR")
     (synopsis "Non-Ordered Vectors")
     (description
-     "Functionality for manipulating values of associative maps.  Ordinary R vectors
-are unsuitable for working with values of associative maps because elements of
-an R vector may be accessed by reference to their location in the vector, but
-associative maps are stored in arbitrary order.  However, when associating keys
-with values one needs both parts to be in 1-1 correspondence, so one cannot
-dispense with the order entirely.  The disordR package includes a single S4
-class, disord.  This class allows one to perform only those operations
-appropriate for manipulating values of associative maps and prevents any other
-operation (such as accessing an element at a particular location).  A useful
-heuristic is that one is only allowed to access or modify a disord object using
-a python list comprehension.  The idea is to prevent ill-defined operations on
-values (or keys) of associative maps, whose order is undefined or at best
-implementation-specific, while allowing and facilitating sensible operations.
-To cite the package in publications please use Hankin (2022)
-<doi:10.48550/ARXIV.2210.03856>.")
+     "Functionality for manipulating values of associative maps.  The package is
+designed to be used with the mvp class of packages that use the STL map class:
+its purpose is to trap plausible idiom that is ill-defined
+(implementation-specific) and return an informative error, rather than returning
+a possibly incorrect result.  To cite the package in publications please use
+Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
 
 (define-public r-diskimager
@@ -12574,13 +12535,13 @@ contains Bass, Gompertz and Gamma/Shifted Gompertz curves.  See Meade and Islam
 (define-public r-diffudist
   (package
     (name "r-diffudist")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diffudist" version))
               (sha256
                (base32
-                "0qrkh8fbkbgm5y5q2r82g9zc95paypz4dirkrgffl60ym5zbrymm"))))
+                "0s8k949l7fvdy0c1zlrk4zr5dnxksq67spwg8mpdsyc2xchh7b5c"))))
     (properties `((upstream-name . "diffudist")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -12588,6 +12549,7 @@ contains Bass, Gompertz and Gamma/Shifted Gompertz curves.  See Meade and Islam
                              r-reshape2
                              r-rcppeigen
                              r-rcpp
+                             r-rcolorbrewer
                              r-matrix
                              r-igraph
                              r-ggplot2

@@ -5584,6 +5584,26 @@ recombination (Hudson and Kaplan 1985, Genetics 111:147-164).  Thus, the
 presence of all four gametes is also called phylogenetic incompatibility.")
     (license license:gpl2)))
 
+(define-public r-foundry
+  (package
+    (name "r-foundry")
+    (version "0.12.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "foundry" version))
+              (sha256
+               (base32
+                "0y28vrab5nd4q1094xil6nzbcfwgkgms8dbg0gwi4qmq572489xm"))))
+    (properties `((upstream-name . "foundry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-r6 r-jsonlite r-httr r-arrow))
+    (home-page "https://github.com/palantir/palantir-r-sdk")
+    (synopsis "'Palantir Foundry' Software Development Kit")
+    (description
+     "Interface to Palantir Foundry', including reading and writing structured or
+unstructured datasets, and more <https://www.palantir.com/platforms/foundry/>.")
+    (license license:asl2.0)))
+
 (define-public r-foto
   (package
     (name "r-foto")
@@ -5810,6 +5830,30 @@ design for combining TLS data and field measured data.  Documentation about
 FORTLS is described in Molina-Valero et al. (2022,
 <doi:10.1016/j.envsoft.2022.105337>).")
     (license license:gpl3)))
+
+(define-public r-forstringr
+  (package
+    (name "r-forstringr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "forstringr" version))
+              (sha256
+               (base32
+                "04ib6nfqs7dfy3il7vylql056ysnlpb164w7l4iyp8hw9xy31ycx"))))
+    (properties `((upstream-name . "forstringr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-stringr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gbganalyst/forstringr")
+    (synopsis
+     "String Manipulation Package for Those Familiar with 'Microsoft Excel'")
+    (description
+     "The goal of forstringr is to enable complex string manipulation in R especially
+to those more familiar with LEFT(), RIGHT(), and MID() functions in Microsoft
+Excel.  The package combines the power of stringr with other manipulation
+packages such as dplyr and tidyr'.")
+    (license license:expat)))
 
 (define-public r-forsearch
   (package
@@ -6929,13 +6973,13 @@ transformed signal.")
 (define-public r-forcer
   (package
     (name "r-forcer")
-    (version "1.0.15")
+    (version "1.0.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forceR" version))
               (sha256
                (base32
-                "025kpa5mnv336b1ghxdilw4kc0razgvjvlc5k5r435zi6gf4ny7w"))))
+                "1cy1dy58saavxmwxv9d046xbbdr6g2w7iki7dv879xiwcrwzjvrl"))))
     (properties `((upstream-name . "forceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6949,12 +6993,12 @@ transformed signal.")
     (home-page "https://github.com/Peter-T-Ruehr/forceR")
     (synopsis "Force Measurement Analyses")
     (description
-     "For cleaning and analyses of animal closing force measurements.  forceR was
-initially written and optimized to deal with insect bite force measurements, but
-can be used for any time series.  Includes a full workflow to load, plot and
-crop data, correct amplifier and baseline drifts, identify individual peak
-shapes (bites), rescale (normalize) peak curves, and find best polynomial fits
-to describe and analyze force curve shapes.")
+     "For cleaning and analysis of graphs, such as animal closing force measurements.
+forceR was initially written and optimized to deal with insect bite force
+measurements, but can be used for any time series.  Includes a full workflow to
+load, plot and crop data, correct amplifier and baseline drifts, identify
+individual peak shapes (bites), rescale (normalize) peak curves, and find best
+polynomial fits to describe and analyze force curve shapes.")
     (license license:expat)))
 
 (define-public r-forams
@@ -12163,44 +12207,6 @@ FieldSimR provides wrapper functions to simulate the genetic values for multiple
 traits in multiple environments using the R package AlphaSimR'.")
     (license license:gpl3+)))
 
-(define-public r-fieldrs
-  (package
-    (name "r-fieldrs")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fieldRS" version))
-              (sha256
-               (base32
-                "0jr2l5cnrawd6wibmb6r0sngd851z9mbz4mwprnbbqbv3hzzrpm9"))))
-    (properties `((upstream-name . "fieldRS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-stringdist
-                             r-sp
-                             r-rgeos
-                             r-raster
-                             r-ggplot2
-                             r-geosphere
-                             r-concaveman
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RRemelgado/fieldRS/")
-    (synopsis "Remote Sensing Field Work Tools")
-    (description
-     "In remote sensing, designing a field campaign to collect ground-truth data can
-be a challenging task.  We need to collect representative samples while
-accounting for issues such as budget constraints and limited accessibility
-created by e.g. poor infrastructure.  As suggested by Olofsson et al. (2014)
-<doi:10.1016/j.rse.2014.02.015>, this demands the establishment of
-best-practices to collect ground-truth data that avoid the waste of time and
-funds.  fieldRS addresses this issue by helping scientists and practitioners
-design field campaigns through the identification of priority sampling sites,
-the extraction of potential sampling plots and the conversion of plots into
-consistent training and validation samples that can be used in e.g. land cover
-classification.")
-    (license license:gpl3+)))
-
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
@@ -15552,17 +15558,17 @@ delete custom audiences, images, campaigns, ad sets, ads and related content.")
 (define-public r-fbnet
   (package
     (name "r-fbnet")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fbnet" version))
               (sha256
                (base32
-                "17kafsnzijjkjlp15yv3qy1vga7vsgna74ax5yk0mvdninl3dxha"))))
+                "1b5yzap86d7swlam578h5rwm5php800zhnb85gy9889ddj218nx6"))))
     (properties `((upstream-name . "fbnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-igraph r-assertthat))
-    (home-page "https://cran.r-project.org/package=fbnet")
+    (home-page "https://github.com/MarsicoFL/fbnet")
     (synopsis "Forensic Bayesian Networks")
     (description
      "Open-source package for computing likelihood ratios in kinship testing and human

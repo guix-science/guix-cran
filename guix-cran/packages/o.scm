@@ -8089,13 +8089,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "0qmb130nldfb9agh54ikyzj9cp3rg3i39lkxamj0ncz472p8y9d7"))))
+                "1mzcb0s5r4hf17dband0vrsvfkwvvnq7n0zmcsyfy07nfwv8bh1a"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8153,6 +8153,37 @@ data run on the Olink platform.")
 for identifying geographic locations.  olctools provides utilities for
 validating, encoding and decoding entries that follow this standard.")
     (license license:expat)))
+
+(define-public r-olcpm
+  (package
+    (name "r-olcpm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OLCPM" version))
+              (sha256
+               (base32
+                "0bylr62ma4wbbkjnp67whlndch1vwilm083wlkrfdnmhwqigzjz0"))))
+    (properties `((upstream-name . "OLCPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-laplacesdemon))
+    (home-page "https://cran.r-project.org/package=OLCPM")
+    (synopsis "Online Change Point Detection for Matrix-Valued Time Series")
+    (description
+     "We provide two algorithms for monitoring change points with online matrix-valued
+time series, under the assumption of a two-way factor structure.  The algorithms
+are based on different calculations of the second moment matrices.  One is based
+on stacking the columns of matrix observations, while another is by a more
+delicate projected approach.  A well-known fact is that, in the presence of a
+change point, a factor model can be rewritten as a model with a larger number of
+common factors.  In turn, this entails that, in the presence of a change point,
+the number of spiked eigenvalues in the second moment matrix of the data
+increases.  Based on this, we propose two families of procedures - one based on
+the fluctuations of partial sums, and one based on extreme value theory - to
+monitor whether the first non-spiked eigenvalue diverges after a point in time
+in the monitoring horizon, thereby indicating the presence of a change point.
+See more details in He et al. (2021)<arXiv:2112.13479>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-oknne
   (package

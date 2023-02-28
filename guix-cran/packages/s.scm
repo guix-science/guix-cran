@@ -13654,13 +13654,13 @@ autoregression methods.")
 (define-public r-ssn
   (package
     (name "r-ssn")
-    (version "1.1.16")
+    (version "1.1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSN" version))
               (sha256
                (base32
-                "13clhmar3qqxsqphqbj3d3z1nrzab2w778wvh88ri1l4x5r3dl88"))))
+                "10jkpsccp8bm9ksyi6zbzp4p93g88kx68qjky9bkk3bvszfs55ni"))))
     (properties `((upstream-name . "SSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -34525,13 +34525,13 @@ Ripley (1987) <ISBN:9780470009604>.")
 (define-public r-simengine
   (package
     (name "r-simengine")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimEngine" version))
               (sha256
                (base32
-                "0a919wbqgbvqm5drmzqp7ajywqfyb5ghizm8cbxwbcjjygvjaxla"))))
+                "1jga2iqdn0n9pym93addwhn3swn61dm1gh282isw2ssbqchh7arl"))))
     (properties `((upstream-name . "SimEngine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-pbapply r-magrittr r-dplyr r-data-table))
@@ -34540,9 +34540,8 @@ Ripley (1987) <ISBN:9780470009604>.")
     (synopsis "Modular Framework for Statistical Simulations in R")
     (description
      "An open-source R package for structuring, maintaining, running, and debugging
-statistical simulations on both local and cluster-based computing environments.
-Emphasis is placed on thorough documentation and scalability.  See full
-documentation at <https://avi-kenny.github.io/SimEngine/>.")
+statistical simulations on both local and cluster-based computing
+environments.See full documentation at <https://avi-kenny.github.io/SimEngine/>.")
     (license license:gpl3)))
 
 (define-public r-simed
@@ -39780,13 +39779,13 @@ it.")
 (define-public r-shapr
   (package
     (name "r-shapr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapr" version))
               (sha256
                (base32
-                "1zzg58m38rkqsynczy5jwz97ph3s85aa975ffi4i5vml82zlhc4y"))))
+                "1kl9iyrplhribksbfg5kr21kpkhsyhcximdvqck8xady3f3lpdgk"))))
     (properties `((upstream-name . "shapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -48307,6 +48306,36 @@ Zappia et al. (2017)
 <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1305-0>.")
     (license license:gpl3)))
 
+(define-public r-screenot
+  (package
+    (name "r-screenot")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ScreeNOT" version))
+              (sha256
+               (base32
+                "1vgrfwsl096w2az3dwq7pvfsjdvsmzrrkkkzsnfxld018raf4fvg"))))
+    (properties `((upstream-name . "ScreeNOT")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ScreeNOT")
+    (synopsis
+     "'ScreeNOT': MSE-Optimal Singular Value Thresholding in Correlated Noise")
+    (description
+     "Optimal hard thresholding of singular values.  The procedure adaptively
+estimates the best singular value threshold under unknown noise characteristics.
+ The threshold chosen by ScreeNOT is optimal (asymptotically, in the sense of
+minimum Frobenius error) under the the so-called \"Spiked model\" of a low-rank
+matrix observed in additive noise.  In contrast to previous works, the noise is
+not assumed to be i.i.d.  or white; it can have an essentially arbitrary and
+unknown correlation structure, across either rows, columns or both.  ScreeNOT is
+proposed to practitioners as a mathematically solid alternative to Cattell's
+ever-popular but vague Scree Plot heuristic from 1966.  If you use this package,
+please cite our paper: David L. Donoho, Matan Gavish and Elad Romanov (2023).
+\"ScreeNOT: Exact MSE-optimal singular value thresholding in correlated noise.\"
+Annals of Statistics, 2023 (To appear). <arXiv:2009.12297>.")
+    (license license:expat)))
+
 (define-public r-screenclean
   (package
     (name "r-screenclean")
@@ -54785,6 +54814,34 @@ Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
     (description
      "This package provides several functions and datasets for area level of Small
 Area Estimation under Spatial SAR Model using Hierarchical Bayesian (HB) Method.")
+    (license license:gpl3)))
+
+(define-public r-saehb-panel-beta
+  (package
+    (name "r-saehb-panel-beta")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "saeHB.panel.beta" version))
+              (sha256
+               (base32
+                "0ib070kgaysgc9ls5vqiggc10r1x1i6zw3axvld1ycmzkp2jrf3i"))))
+    (properties `((upstream-name . "saeHB.panel.beta")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-stringr r-rjags r-dplyr r-coda))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/DianRahmawatiSalis/saeHB.panel.beta")
+    (synopsis
+     "Small Area Estimation using HB for Rao Yu Model under Beta Distribution")
+    (description
+     "Several functions are provided for small area estimation at the area level using
+the hierarchical bayesian (HB) method with panel data under beta distribution
+for variable interest.  This package also provides a dataset produced by data
+generation.  The \"rjags\" package is employed to obtain parameter estimates.
+Model-based estimators involve the HB estimators, which include the mean and the
+variation of the mean.  For the reference, see Rao and Molina (2015, ISBN:
+978-1-118-73578-7).")
     (license license:gpl3)))
 
 (define-public r-saehb-panel

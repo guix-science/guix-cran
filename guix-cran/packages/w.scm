@@ -3223,6 +3223,30 @@ Environmental Protection Agency
 <https://aqs.epa.gov/aqsweb/documents/data_api.html>.")
     (license license:gpl2)))
 
+(define-public r-wildrwolf
+  (package
+    (name "r-wildrwolf")
+    (version "0.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wildrwolf" version))
+              (sha256
+               (base32
+                "19cn7n97f2jsf83i1kpwsi886vpz231n0b4827ys6nm6clbav7fw"))))
+    (properties `((upstream-name . "wildrwolf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-fwildclusterboot r-fixest r-fabricatr
+                             r-dreamerr))
+    (home-page "https://s3alfisc.github.io/wildrwolf/")
+    (synopsis
+     "Fast Computation of Romano-Wolf Corrected p-Values for Linear Regression Models")
+    (description
+     "Fast Routines to Compute Romano-Wolf corrected p-Values (Romano and Wolf (2005a)
+<DOI:10.1198/016214504000000539>, Romano and Wolf (2005b)
+<DOI:10.1111/j.1468-0262.2005.00615.x>) for objects of type fixest and
+fixest_multi from the fixest package via a wild (cluster) bootstrap.")
+    (license license:gpl3+)))
+
 (define-public r-wildpoker
   (package
     (name "r-wildpoker")

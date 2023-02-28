@@ -396,13 +396,13 @@ et al. (2020) <doi:10.1002/gepi.22361> and Van Buren et al. (2021)
 (define-public r-twosampletest-hd
   (package
     (name "r-twosampletest-hd")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TwoSampleTest.HD" version))
               (sha256
                (base32
-                "0f6jrjw7794zc5d15lab7ps7dpifmh3yvhd8ypqb6shjlkwri64x"))))
+                "1mvrlvcdllk7mxfsmahgb3iq7ndlnc4xg1536c1mxphxlh5qxwp0"))))
     (properties `((upstream-name . "TwoSampleTest.HD")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TwoSampleTest.HD")
@@ -4042,31 +4042,6 @@ methods implemented in this package can be found in Mitchell (2006)
 <doi:10.1016/j.artint.2006.10.002>, Silva and Zhao (2016)
 <doi:10.1007/978-3-319-17290-3>, and Silva et al. (2021)
 <doi:10.1002/widm.1404>.")
-    (license license:expat)))
-
-(define-public r-ts-extend
-  (package
-    (name "r-ts-extend")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ts.extend" version))
-              (sha256
-               (base32
-                "03b358nywx0zynb6006886mzvz1mbbaim6b5m641drklh6k0l6r1"))))
-    (properties `((upstream-name . "ts.extend")))
-    (build-system r-build-system)
-    (home-page "https://github.com/ben-oneill/ts.extend")
-    (synopsis
-     "Stationary Gaussian ARMA Processes and Other Time-Series Utilities")
-    (description
-     "Stationary Gaussian ARMA processes and the stationary GARMA distribution are
-fundamental in time series analysis.  Here we give utilities to compute the
-auto-covariance/auto-correlation for a stationary Gaussian ARMA process, as well
-as the probability functions (density, cumulative distribution, random
-generation) for random vectors from this distribution.  We also give functions
-for the spectral intensity, and the permutation-spectrum test for testing a
-time-series vector for the presence of a signal.")
     (license license:expat)))
 
 (define-public r-trycatchlog
@@ -11161,13 +11136,13 @@ launched to further simplify the process.")
 (define-public r-tips
   (package
     (name "r-tips")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TiPS" version))
               (sha256
                (base32
-                "0crni6cam3dwpjrgmr0bmp2czmbycg05sl585ldn4cg38c4dppwh"))))
+                "1dh7rjxw35n96jcbf404qk14sh1w2zbrb9wf159n4pqdxa21kyn1"))))
     (properties `((upstream-name . "TiPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-inline r-gtools))
@@ -11180,7 +11155,7 @@ dynamics model.  Times series are simulated using the Gillespie exact and
 approximate algorithms and a new algorithm we introduce that uses both
 approaches to optimize the time execution of the simulations.  Genealogies are
 simulated from a trajectory using a backwards-in-time based approach.  Methods
-are described in Danesh G et al (2020) <doi:10.1101/2020.11.09.373795>.")
+are described in Danesh G et al (2022) <doi:10.1111/2041-210X.14038>.")
     (license license:gpl2+)))
 
 (define-public r-tipr
@@ -17585,6 +17560,31 @@ errors, incorrect quotation marks.  Also provides useful functions for parsing
 and linting bibliography files.")
     (license license:gpl2)))
 
+(define-public r-tetrascatt
+  (package
+    (name "r-tetrascatt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tetrascatt" version))
+              (sha256
+               (base32
+                "1bm6as0indwpfw8j2x4wavjjkkz0430hh226flg5jdzhfmg5m2aq"))))
+    (properties `((upstream-name . "tetrascatt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=tetrascatt")
+    (synopsis "Acoustic Scattering for Complex Shapes by Using the DWBA")
+    (description
+     "Uses the Distorted Wave Born Approximation (DWBA) to compute the acoustic
+backward scattering, the geometry of the object is formed by a volumetric mesh,
+composed of tetrahedrons.  This computation is done efficiently through an
+analytical 3D integration that allows for a solution which is expressed in terms
+of elementary functions for each tetrahedron.  It is important to note that this
+method is only valid for objects whose acoustic properties, such as density and
+sound speed, do not vary significantly compared to the surrounding medium.")
+    (license license:gpl2+)))
+
 (define-public r-tetragon
   (package
     (name "r-tetragon")
@@ -20325,6 +20325,63 @@ computationally very efficient.  The variance of the random error in computing
 power and sample size arising from the simulation approach is analytically
 derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
+    (license license:gpl3)))
+
+(define-public r-tciu
+  (package
+    (name "r-tciu")
+    (version "1.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TCIU" version))
+              (sha256
+               (base32
+                "1n08jvc60gng3ziisrvgl9kfi55l6mh7bbnwp5mbnnqh0mkdhfv0"))))
+    (properties `((upstream-name . "TCIU")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-scales
+                             r-rrcov
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pracma
+                             r-plotly
+                             r-multiwayregression
+                             r-icsnp
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-geometry
+                             r-forecast
+                             r-foreach
+                             r-fmri
+                             r-fancycut
+                             r-extradistr
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-cubature))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/SOCR/TCIU")
+    (synopsis
+     "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
+    (description
+     "Provide the core functionality to transform longitudinal data to complex-time
+(kime) data using analytic and numerical techniques, visualize the original
+time-series and reconstructed kime-surfaces, perform model based (e.g.,
+tensor-linear regression) and model-free classification and clustering methods
+in the book Dinov, ID and Velev, MV. (2021) \"Data Science: Time Complexity,
+Inferential Uncertainty, and Spacekime Analytics\", De Gruyter STEM Series, ISBN
+978-3-11-069780-3. <https://www.degruyter.com/view/title/576646>.  The package
+includes 18 core functions which can be separated into three groups.  1) draw
+longitudinal data, such as fMRI time-series, and forecast or transform the
+time-series data.  2) simulate real-valued time-series data, e.g., fMRI
+time-courses, detect the activated areas, report the corresponding p-values, and
+visualize the p-values in the 3D brain space.  3) Laplace transform and
+kimesurface reconstructions of the fMRI data.")
     (license license:gpl3)))
 
 (define-public r-tciapathfinder

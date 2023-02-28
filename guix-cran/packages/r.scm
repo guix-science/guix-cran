@@ -2036,6 +2036,30 @@ RUV-inv', RUV-rinv', RUV-I', and RUV-III', along with various supporting
 algorithms.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-rutledge
+  (package
+    (name "r-rutledge")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rutledge" version))
+              (sha256
+               (base32
+                "04ili75fj8dxhhwmbzgb2mnak89zscdyfaxss7rsl0byjgr0h8zs"))))
+    (properties `((upstream-name . "rutledge")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-magrittr))
+    (home-page "https://github.com/ramiromagno/rutledge")
+    (synopsis "Real-Time PCR Data Sets by Rutledge et al. (2004)")
+    (description
+     "Real-time quantitative polymerase chain reaction (qPCR) data by Rutledge et al.
+(2004) <doi:10.1093/nar/gnh177> in tidy format.  The data comprises a six-point,
+ten-fold dilution series, repeated in five independent runs, for two different
+amplicons.  In each run, each standard concentration is replicated four times.
+Original raw data file:
+<https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/nar/32/22/10.1093_nar_gnh177/1/gnh177_Supplementary_Data.zip?Expires=1680370010&Signature=xxk4VxX0C4yr3UWzxgh7ieCt7QQmpFMRauvsVEwtGXYGCcyQY7uhNCE-M8zx9kpyDPoS8NR7fjBuMx2Xz2ANFwF1VqnjQ4AfO37klnJ3CHRIJ7bj01n2mycHDnvJ3XawHdWT8TqJxTxVC9CpYEkH2xGeJBnnpcnXLbc94A8KB8FCtg2WR3O~ULkaOQQ8uJAiVdJhnBHH~XfBRkfoKHSuyJgX7n7M2~gwXnZH9n3vUyo~CHrpIax7Hi0xUSCBbQM571hxA7JIHkhZ0HBm2aXFuAru2yJ~o8jMEnnguOJg8T7mGqTDzUBtW0hJhmQDksdJoyeAFzU84QRUIZj9q3-tXg__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-rutifier
   (package
     (name "r-rutifier")
@@ -5819,6 +5843,27 @@ so that the most common neural network topologies and learning algorithms
 integrate seamlessly into R.")
     (license (list license:lgpl2.0+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-rsnell
+  (package
+    (name "r-rsnell")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rsnell" version))
+              (sha256
+               (base32
+                "0syz4d761sfka7ykg574sdzp3gi781m6xzz2m1d0yfmb1hl2d2xz"))))
+    (properties `((upstream-name . "rsnell")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-tidyr r-tibble r-dplyr))
+    (home-page "https://github.com/pfpetrowski/rsnell")
+    (synopsis "Snell Scoring")
+    (description
+     "The Snell scoring procedure, implemented in R. This procedure was first
+described by E.J Snell (1964) <doi:10.2307/2528498> and was later used by Tong
+et al (1977) <doi:10.4141/cjas77-001> in dairy.")
+    (license license:expat)))
 
 (define-public r-rsmlx
   (package
@@ -22378,16 +22423,16 @@ host of glycemic variability metrics, and plots glucose over time.")
 (define-public r-rgugik
   (package
     (name "r-rgugik")
-    (version "0.3.3")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgugik" version))
               (sha256
                (base32
-                "1jgndmdzs6yj476549z0r2yk020wnczi4xkl342cgrgq0b3w3cqn"))))
+                "0lkjnwg679fn6ii86h3w6n9b9aylp7m5bipji46bi92v2s2sssm2"))))
     (properties `((upstream-name . "rgugik")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-openssl r-jsonlite))
+    (propagated-inputs (list r-sf r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://kadyb.github.io/rgugik/")
     (synopsis "Search and Retrieve Spatial Data from 'GUGiK'")
@@ -35382,6 +35427,27 @@ license and provided here for use by other R packages via a simple LinkingTo:
 statement.")
     (license license:gpl2+)))
 
+(define-public r-rcppfastad
+  (package
+    (name "r-rcppfastad")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RcppFastAD" version))
+              (sha256
+               (base32
+                "1slis8rybdbqm32yh81mb3p9c7qc9jcdmfd2p4vbs2wqmpl4h5a8"))))
+    (properties `((upstream-name . "RcppFastAD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=RcppFastAD")
+    (synopsis "'Rcpp' Bindings to 'FastAD' Auto-Differentiation")
+    (description
+     "The header-only C++ template library FastAD for automatic differentiation
+<https://github.com/JamesYang007/FastAD> is provided by this package, along with
+a few illustrative examples that can all be called from R.")
+    (license license:gpl2+)))
+
 (define-public r-rcppfarmhash
   (package
     (name "r-rcppfarmhash")
@@ -41707,13 +41773,13 @@ slight modifications by this package.")
 (define-public r-rapbase
   (package
     (name "r-rapbase")
-    (version "1.23.0")
+    (version "1.24.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rapbase" version))
               (sha256
                (base32
-                "0n378cdvhfsl638k03rw844pr9298sbk84yn8hixk6f5igihbg40"))))
+                "08ycbla8j2156hlwbl2k8d3m3qjbanch2j1avmhj3n37pjpyn8pf"))))
     (properties `((upstream-name . "rapbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -41735,7 +41801,8 @@ slight modifications by this package.")
                              r-digest
                              r-dbi
                              r-bookdown
-                             r-base64enc))
+                             r-blob))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Rapporteket/rapbase")
     (synopsis "Base Functions and Resources for Rapporteket")
     (description
