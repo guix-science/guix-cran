@@ -2063,13 +2063,13 @@ can review working examples of coding syntax and calculations.")
 (define-public r-dtwclust
   (package
     (name "r-dtwclust")
-    (version "5.5.11")
+    (version "5.5.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dtwclust" version))
               (sha256
                (base32
-                "1n4xgjd712agkhbqyyc4jy661rg1lmjfqwg778bfma17y6ad7gzp"))))
+                "19dmy9jalwp2vcfkzm58g5wf4nmp3290rrsa51prw8xrjj0hk1g3"))))
     (properties `((upstream-name . "dtwclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -21732,6 +21732,28 @@ analyzing marketing data from <https://datorama.com>.")
      "Utilities for mixed frequency data.  In particular, use to aggregate and
 normalize tabular mixed frequency data, index dates to end of period, and
 seasonally adjust tabular data.")
+    (license license:expat)))
+
+(define-public r-datetoiso
+  (package
+    (name "r-datetoiso")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datetoiso" version))
+              (sha256
+               (base32
+                "1pxk229gfl2zj1arlgyyll6h4bq8d90d2a2a09r216f5vdxafj0j"))))
+    (properties `((upstream-name . "datetoiso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-lubridate))
+    (home-page "https://github.com/andzoluk")
+    (synopsis
+     "Modify Dates to ISO Standard (\"International Organization for Standardization\")")
+    (description
+     "Transfer any date type to ISO standard.  Package recognizes dates in given data
+frame and transform to ISO format.  Only one date format can be applied within
+one data frame column.")
     (license license:expat)))
 
 (define-public r-datetimeutils

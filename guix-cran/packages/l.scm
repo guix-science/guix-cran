@@ -2887,6 +2887,37 @@ table.  The package also contains a multiple imputation procedure.  The methods
 are described in Robin, Josse, Moulines and Sardy (2019) <arXiv:1703.02296v4>.")
     (license license:gpl3)))
 
+(define-public r-lorenzregression
+  (package
+    (name "r-lorenzregression")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LorenzRegression" version))
+              (sha256
+               (base32
+                "1jxz753bcq8b16ncjk6v8c8ylv8brlqd90fdzn9lappm1k4y0r46"))))
+    (properties `((upstream-name . "LorenzRegression")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rearrangement
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-locpol
+                             r-knitr
+                             r-ggplot2
+                             r-ga
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=LorenzRegression")
+    (synopsis "Lorenz and Penalized Lorenz Regressions")
+    (description
+     "Inference for the Lorenz and penalized Lorenz regressions.  More broadly, the
+package proposes functions to assess inequality and graphically represent it.
+The Lorenz Regression procedure is introduced in Heuchenne and Jacquemain (2022)
+<doi:10.1016/j.csda.2021.107347>.")
+    (license license:gpl3)))
+
 (define-public r-lorenz
   (package
     (name "r-lorenz")

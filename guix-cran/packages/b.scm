@@ -6585,13 +6585,13 @@ any common GIS format.")
 (define-public r-bnsp
   (package
     (name "r-bnsp")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BNSP" version))
               (sha256
                (base32
-                "105564bhknhrcv92fbzk4vka8jsvq75rdzvlzgxy8cgiraxqldv0"))))
+                "0k1v2z2rw9inhrsp28hc6m855sqfi6bqfgf2hiw60pdmd5vp94xm"))))
     (properties `((upstream-name . "BNSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-threejs
@@ -6614,8 +6614,9 @@ multivariate response multiple regression, with nonparametric models for the
 means, the variances and the correlation matrix, with variable selection, see
 Papageorgiou, G. and Marshall, B. C. (2020) <doi:
 10.1080/10618600.2020.1739534>, 3.  joint mean-covariance models for
-multivariate responses, see Papageorgiou, G. (2020), and 4.Dirichlet process
-mixtures, see Papageorgiou, G. (2019) <doi: 10.1111/anzs.12273>.")
+multivariate responses, see Papageorgiou, G. (2022) <doi: 10.1002/sim.9376>, and
+4.Dirichlet process mixtures, see Papageorgiou, G. (2019) <doi:
+10.1111/anzs.12273>.")
     (license license:gpl2+)))
 
 (define-public r-bnsl

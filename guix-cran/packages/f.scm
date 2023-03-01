@@ -5889,13 +5889,13 @@ nlme::lme().  Includes graphics functions to display the descriptive statistics.
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forrel" version))
               (sha256
                (base32
-                "1328cbcnnpy3n8na2brxf2q5i3czkkiajri6zi5yfajwrb2vyg33"))))
+                "0xfkhy4k19yndb360kzf2xiqfhpskdl0a6a50c214wli152x6s8l"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedmut r-glue))
@@ -6451,13 +6451,13 @@ forest resources.")
 (define-public r-forestfit
   (package
     (name "r-forestfit")
-    (version "1.2.3")
+    (version "2.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ForestFit" version))
               (sha256
                (base32
-                "02qhfp08jcylzjwvdr47gv37rbj8bw6nwlx45ax67429f2g971d2"))))
+                "0r8hr1hl5js7bc0wggxr7j0psydizlysfgqd5l55i8s79jx9bqhp"))))
     (properties `((upstream-name . "ForestFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-ars))

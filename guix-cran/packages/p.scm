@@ -4024,6 +4024,27 @@ parametric accelerated failure time models with group/ordinary lasso prior (Lee
 et al.  Comput Stat Data Anal, 2017 <doi:10.1016/j.csda.2017.02.014>).")
     (license license:gpl2+)))
 
+(define-public r-psawr
+  (package
+    (name "r-psawr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PSAWR" version))
+              (sha256
+               (base32
+                "0qaaw6bxb4p9h1y6fykgn5g7bllr1x1zdp3p1idm3sk30zfpvp94"))))
+    (properties `((upstream-name . "PSAWR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-httr r-dplyr))
+    (home-page "https://github.com/schochastics/PSAWR/")
+    (synopsis
+     "'Pushshift' API Wrapper for 'Reddit' Submission and Comment Search")
+    (description
+     "Connects to the API of <https://pushshift.io/> to search for Reddit comments and
+submissions.")
+    (license license:expat)))
+
 (define-public r-psagraphics
   (package
     (name "r-psagraphics")
@@ -4257,13 +4278,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prqlr" version))
               (sha256
                (base32
-                "05xjfvh26x4k4l1h8g3p0b2s1vqy2va60hqvxd1xalgh8gdd4q8a"))))
+                "11ipq271rv45j3415fpwgpnd0009mr8y9piivbrivjxzdcg7cn7s"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -14307,13 +14328,13 @@ documentation and references.")
 (define-public r-politeness
   (package
     (name "r-politeness")
-    (version "0.8.8")
+    (version "0.8.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "politeness" version))
               (sha256
                (base32
-                "16snnzf2fwm2mz7kav2420hcms61jyd1kq5fajwc2c9bgihxlzgn"))))
+                "1k0hydwz7l1k9vh8k061gsn2fi9h47796q351fq8w0q7nkl546ay"))))
     (properties `((upstream-name . "politeness")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -30314,13 +30335,13 @@ completely re-written.")
 (define-public r-party
   (package
     (name "r-party")
-    (version "1.3-11")
+    (version "1.3-12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "party" version))
               (sha256
                (base32
-                "174cc5b5qwv9r4qmm65c4n4zk6cxjf6vjmznpp8cc2ylflbim91y"))))
+                "0gybjx68dgcbhi0qhwcfyr1pmzdyy1pc4ga79s03wrb6x0j6ss0g"))))
     (properties `((upstream-name . "party")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31682,6 +31703,27 @@ vertical axis, while the population is arranged in ascending order of income
 along the horizontal axis.  Pen's income parades provide an easy-to-interpret
 visualization of economic inequalities.")
     (license license:gpl2+)))
+
+(define-public r-parabar
+  (package
+    (name "r-parabar")
+    (version "0.10.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "parabar" version))
+              (sha256
+               (base32
+                "0af0y21clvhx9lv121nncq3ckpvmfiamm3fy5k9h4dygpc0w9m29"))))
+    (properties `((upstream-name . "parabar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-progress r-filelock r-callr))
+    (home-page "https://parabar.mihaiconstantin.com")
+    (synopsis "Progress Bar for Parallel Tasks")
+    (description
+     "This package provides a simple interface in the form of R6 classes for executing
+tasks in parallel, tracking their progress, and displaying accurate progress
+bars.")
+    (license license:expat)))
 
 (define-public r-paperplanes
   (package

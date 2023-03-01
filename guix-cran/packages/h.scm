@@ -9522,13 +9522,13 @@ for the corresponding papers can be found in their respective functions.")
 (define-public r-hdme
   (package
     (name "r-hdme")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdme" version))
               (sha256
                (base32
-                "0zmhrrjjsks64yvacdz9vw61fa2cgxfdb4n7b8f3s8fxc5fdjrhk"))))
+                "1lvy3h1dxs756755nzygg75pbg4lvsdvpchpp6kw11w3zsz9r7b1"))))
     (properties `((upstream-name . "hdme")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk

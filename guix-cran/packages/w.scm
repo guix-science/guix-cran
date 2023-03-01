@@ -3030,22 +3030,23 @@ Facebook Ads, and many others using the Windsor.ai API
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "windex" version))
               (sha256
                (base32
-                "063lhxpa8gwkaxa5p61dac239s6b11mv53d8dcah5h1q04inshm0"))))
+                "160x70pnjvpi50jsglvsbxzdz102c4hwllmr8bpb5041b8gy4vws"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scatterplot3d r-phangorn r-geiger r-ape))
+    (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger
+                             r-ape))
     (home-page "https://cran.r-project.org/package=windex")
     (synopsis "Analysing Convergent Evolution using the Wheatsheaf Index")
     (description
      "Analysing convergent evolution using the Wheatsheaf index, described in Arbuckle
-et al. (2014) <doi: 10.1111/2041-210X.12195>, and some other random but perhaps
-useful functions.")
+et al. (2014) <doi: 10.1111/2041-210X.12195>, and some other unrelated but
+perhaps useful functions.")
     (license license:gpl2)))
 
 (define-public r-windcurves

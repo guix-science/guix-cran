@@ -2050,13 +2050,13 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.5")
+    (version "1.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visvow" version))
               (sha256
                (base32
-                "1ki4vci7ixb53j1d90j6wv2akb2zlf9lj1413bmw2hwq6p8ym10i"))))
+                "05av0b17573yrgnq9z7vv5jvzfwjshahjiav95wk0ixrqbga5vnn"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -2081,6 +2081,7 @@ computation of evaluation criteria.")
                              r-ggdendro
                              r-formattable
                              r-dt
+                             r-dplyr
                              r-cairo))
     (native-inputs (list r-r-rsp))
     (home-page "https://www.visiblevowels.org/")

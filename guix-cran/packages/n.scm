@@ -573,6 +573,34 @@ landscape recorded with super-resolved fluorescence microscopy.  See Volker J.
 Schmid, Marion Cremer, Thomas Cremer (2017) <doi:10.1016/j.ymeth.2017.03.013>.")
     (license license:gpl3)))
 
+(define-public r-ntss
+  (package
+    (name "r-ntss")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NTSS" version))
+              (sha256
+               (base32
+                "0sc4pcrspvv685d2gvf2adzvyxnaraiaa45brknc3b3h4v0a4mx2"))))
+    (properties `((upstream-name . "NTSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-model
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-spatstat
+                             r-ks))
+    (home-page "https://cran.r-project.org/package=NTSS")
+    (synopsis "Nonparametric Tests in Spatial Statistics")
+    (description
+     "Nonparametric test of independence between a pair of spatial objects (random
+fields, point processes) based on random shifts with torus or variance
+correction.  See MrkviÄka et al. (2021) <doi:10.1016/j.spasta.2020.100430>,
+DvoÅÃ¡k et al. (2022) <doi:10.1111/insr.12503>, DvoÅÃ¡k and MrkviÄka (2022)
+<arxiv:2210.05424>.")
+    (license license:gpl3)))
+
 (define-public r-nsyllable
   (package
     (name "r-nsyllable")

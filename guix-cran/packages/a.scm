@@ -3833,16 +3833,21 @@ There are also random effects versions of these models.")
 (define-public r-ast2ast
   (package
     (name "r-ast2ast")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ast2ast" version))
               (sha256
                (base32
-                "1dw204l1lq6jlv6rzd6amjbf1vz6vhk6cb0qdjls4254cg01gs3p"))))
+                "125qnpcwlqbgzp98n7cx35c2ylxmhn3a0c99mn5py6m74sj969a5"))))
     (properties `((upstream-name . "ast2ast")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-purrr))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-dfdr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Konrad1991/ast2ast")
     (synopsis "Translates an R Function to a C++ Function")
@@ -6547,49 +6552,6 @@ a unified root architecture description language\", Plant Physiology,
 (2016) \"archiDART: an R package for the automated computation of plant root
 architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
     (license license:gpl2)))
-
-(define-public r-archi
-  (package
-    (name "r-archi")
-    (version "2.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "aRchi" version))
-              (sha256
-               (base32
-                "0irfp76f1vkbhz60s4b3nhqk06f1z08v68qba9hfkmcra2xnqkjy"))))
-    (properties `((upstream-name . "aRchi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-voxr
-                             r-svmisc
-                             r-stringr
-                             r-rgl
-                             r-rfast
-                             r-r-matlab
-                             r-progress
-                             r-pracma
-                             r-plyr
-                             r-pkgcond
-                             r-lidr
-                             r-gtools
-                             r-fnn
-                             r-fastcluster
-                             r-dplyr
-                             r-dicekriging
-                             r-data-table
-                             r-circular))
-    (home-page "https://github.com/umr-amap/aRchi")
-    (synopsis
-     "Quantitative Structural Model ('QSM') Treatment for Tree Architecture")
-    (description
-     "This package provides a set of tools to make quantitative structural model of
-trees (i.e the so-called QSM') from LiDAR point cloud, to manipulate and
-visualize the QSMs as well as to compute metrics from them.  It can be used in
-various context of forest ecology (i.e biomass estimation) and tree architecture
-(i.e architectural metrics), see Martin-Ducup et al. (2020)
-<doi:10.1111/1365-2435.13678>.  The package is based on a new S4 class called
-aRchi'.")
-    (license license:cecill)))
 
 (define-public r-archetyper
   (package

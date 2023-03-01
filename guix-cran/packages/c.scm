@@ -6581,16 +6581,16 @@ and Li (forthcoming: Journal of Research on Educational Effectiveness).")
 (define-public r-cquad
   (package
     (name "r-cquad")
-    (version "2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cquad" version))
               (sha256
                (base32
-                "18r779w1c5ggm6qigkmwzk7rwm32fvd82zxw82xvzqj1c2akmfpj"))))
+                "0m8hakw0k58v3gb24vvcs7q7l98m2nmyqv712wdn9g16krq49hnr"))))
     (properties `((upstream-name . "cquad")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plm r-mass))
+    (propagated-inputs (list r-plm r-mass r-formula))
     (home-page "https://cran.r-project.org/package=cquad")
     (synopsis
      "Conditional Maximum Likelihood for Quadratic Exponential Models for Binary Panel Data")
@@ -6614,8 +6614,9 @@ the dynamic logit model by a pseudo conditional estimator based on the quadratic
 exponential model, as proposed by Bartolucci, F. & Nigro, V. (2012, Journal of
 Econometrics) <DOI:10.1016/j.jeconom.2012.03.004>.  For large time dimensions of
 the panel, the computation of the proposed models involves a recursive function
-adapted from Krailo M. D., & Pike M. C. (1984, Journal of the Royal Statistical
-Society.  Series C (Applied Statistics)).")
+from Krailo M. D., & Pike M. C. (1984, Journal of the Royal Statistical Society.
+ Series C (Applied Statistics)) and Bartolucci F., Valentini, F. & Pigini C.
+(2021, Computational Economics <DOI:10.1007/s10614-021-10218-2>.")
     (license license:gpl2+)))
 
 (define-public r-cqrreg
@@ -8720,13 +8721,13 @@ model for the disease spread.")
 (define-public r-covid19
   (package
     (name "r-covid19")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "COVID19" version))
               (sha256
                (base32
-                "0ljhvip944gv44b5nswcp59n0qjsyniynq2wiwcb03lv6pvvmz1x"))))
+                "0idvqsqdsjm2dn7iipr0mh0xlgxfwavajxbz08wigngcaic192iy"))))
     (properties `((upstream-name . "COVID19")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-data-table))
@@ -15983,13 +15984,13 @@ The interface is powered by the Shiny web application framework from RStudio'.")
 (define-public r-comperes
   (package
     (name "r-comperes")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "comperes" version))
               (sha256
                (base32
-                "0hn3c0ji2pmrc13rc2fa1f4ks3qirv97r4x8sbc42ipqphw9sjkw"))))
+                "1qcrm0mw90gkx0dcka2bsszrmcbl46lrbgp5i58xbws9s5i54lff"))))
     (properties `((upstream-name . "comperes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-magrittr r-dplyr))
@@ -18447,17 +18448,17 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al. <arXiv:2202.02182>.")
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
-    (version "0.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cohortBuilder" version))
               (sha256
                (base32
-                "1j6ksdynss3wmizcqb2in7fpcllfpsd4xw0xklcn9r94cdnhgrz4"))))
+                "117gdqga61h24xa1h534837pz34ym5hnfz6731rrm3lnlzd171w6"))))
     (properties `((upstream-name . "cohortBuilder")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-r6
                              r-purrr
@@ -23466,13 +23467,13 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (define-public r-climprojdiags
   (package
     (name "r-climprojdiags")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClimProjDiags" version))
               (sha256
                (base32
-                "1xb2vhv6haql1xqx9ic9hikshfi47lxv874mfwv1jll4fq95saia"))))
+                "1sggqm838r86qlhk6vxsvvagbxrv48hfv2m7cv6bgvjkwrjj8584"))))
     (properties `((upstream-name . "ClimProjDiags")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-pcict r-multiapply r-climdex-pcic))
@@ -23487,7 +23488,7 @@ climate indices can be computed either after averaging the 2-D fields from
 different models provided they share a common grid or by combining time series
 computed on the model native grid.  Indices can be assigned weights and/or
 combined to construct new indices.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-climmobtools
   (package
@@ -25265,13 +25266,13 @@ estimate the phenotypic variance explained by genetic markers.")
 (define-public r-civis
   (package
     (name "r-civis")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "civis" version))
               (sha256
                (base32
-                "1m3clmx9qxnvk7isxwcv08d7f3nwwm8vnfpq1sbs3fn5if11x8fh"))))
+                "1lmyxif8bdfm7wxzwh0hzd2dla8pa14ym74f5pvp2m693vkjddl9"))))
     (properties `((upstream-name . "civis")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-jsonlite r-httr r-future))
@@ -32834,6 +32835,42 @@ resource.")
 standard discrete binomial with continuous size parameter and continuous support
 with x in [0, size + 1], following Ilienko (2013) <arXiv:1303.5990>.")
     (license license:gpl2+)))
+
+(define-public r-cbctools
+  (package
+    (name "r-cbctools")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cbcTools" version))
+              (sha256
+               (base32
+                "178yr5il556vsz52s22wp3jf11hx16kn4l62bdfl91n5d32crvcs"))))
+    (properties `((upstream-name . "cbcTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-randtoolbox
+                             r-mass
+                             r-logitr
+                             r-idefix
+                             r-ggplot2
+                             r-fastdummies))
+    (home-page "https://github.com/jhelvy/cbcTools")
+    (synopsis "Design and Evaluate Choice-Based Conjoint Survey Experiments")
+    (description
+     "Design and evaluate choice-based conjoint survey experiments in R. Generate
+survey designs, including randomized designs and Bayesian D-efficient designs as
+well as designs with \"no choice\" options and labeled designs.  Conveniently
+inspect the design balance and overlap, and simulate choice data for a survey
+design either randomly or according to a multinomial or mixed logit utility
+model defined by user-provided prior parameters.  Conduct power analyses on a
+survey design by estimating the same model multiple times using different
+subsets of the data to simulate different sample sizes.  Choice simulation and
+model estimation are handled using the logitr package, and Bayesian D-efficient
+designs are obtained using the idefix package.  For more details see Helveston
+(2023) <doi:10.18637/jss.v105.i10> and Traets et al (2020)
+<doi:10.18637/jss.v096.i03>.")
+    (license license:expat)))
 
 (define-public r-cbcgrps
   (package

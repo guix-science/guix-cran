@@ -10639,18 +10639,20 @@ conditional inference trees.")
 (define-public r-moranajp
   (package
     (name "r-moranajp")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moranajp" version))
               (sha256
                (base32
-                "1g0m7z9l592xgq95zwpj36q6xdgzq0hr3ixzybc6j0mrcr9d2xw8"))))
+                "1w28fzwxgrmf12l40f4wl2h8qflbsii7g3wiqxxxg0v6njp49ws1"))))
     (properties `((upstream-name . "moranajp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-stringi
+                             r-rvest
                              r-rlang
                              r-purrr
                              r-magrittr
@@ -20389,13 +20391,13 @@ banks.")
 (define-public r-mirt
   (package
     (name "r-mirt")
-    (version "1.37.1")
+    (version "1.38.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirt" version))
               (sha256
                (base32
-                "0h6i6mlns696ak59p9blk498bpmyx8090hl5c59n46vznpz38cq6"))))
+                "124gnfkj1c901slq1fr5a59yzg2gq0wxgg4vnwxpdr62rcry6mmj"))))
     (properties `((upstream-name . "mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -25639,13 +25641,13 @@ package.")
 (define-public r-metchem
   (package
     (name "r-metchem")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MetChem" version))
               (sha256
                (base32
-                "1r4fchs6yxhl3zdbx64d6q8divhispcqn3pz8grf8l2zkrv60hza"))))
+                "1mpppavbqm8bnbd49ml8g756hwb95whcvrxzf2p0zazbcjch42yx"))))
     (properties `((upstream-name . "MetChem")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcdk r-kodama r-httr r-fingerprint))
@@ -26012,13 +26014,13 @@ statistics to carry out gene-based meta-analysis for rare variants.")
 (define-public r-metasens
   (package
     (name "r-metasens")
-    (version "1.5-1")
+    (version "1.5-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metasens" version))
               (sha256
                (base32
-                "194ixaxm2lwl6i22hg1piajc4mzd0gcmp16vj6w5chgh0nv1v360"))))
+                "0jd5adkyi14blbppmv6lny4pnj0ld2wkq6xpv7dhvh0xhgw5n49y"))))
     (properties `((upstream-name . "metasens")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta))
@@ -27989,13 +27991,13 @@ al.(2021) <doi:10.3390/axioms10040267>.")
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "6.2-0")
+    (version "6.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meta" version))
               (sha256
                (base32
-                "10apmmh77l62p3bkk3xhhvablxqs35fg2wx07iyy3fwn550zpj4f"))))
+                "1k6nl5fxmj4kaq6px08qrrj22cg1wdas2cmj408j21rvix6hsaic"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-metafor r-lme4 r-compquadform))
@@ -30549,13 +30551,13 @@ McArtor, Lubke, & Bergeman (2017) <doi:10.1007/s11336-016-9527-8>.")
 (define-public r-mdmb
   (package
     (name "r-mdmb")
-    (version "1.7-22")
+    (version "1.8-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mdmb" version))
               (sha256
                (base32
-                "19drb0vp86n363ibgf3cl45k8c3rs4ma60xqkm8acy4a31qarqk8"))))
+                "0qx1ipq8ra2c3f4hnnlj0h1viky5ld694ga6rkp53196s2yn0vhy"))))
     (properties `((upstream-name . "mdmb")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
@@ -39907,6 +39909,42 @@ models to be combined with high-resolution paleoclimate simulation datasets
 (e.g., CHELSA-TraCE21k v1.0 dataset:
 <https://chelsa-climate.org/chelsa-trace21k/>).")
     (license license:gpl3+)))
+
+(define-public r-macp
+  (package
+    (name "r-macp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MACP" version))
+              (sha256
+               (base32
+                "097qqqv0xmkm8cc5a2zr96lnnrkw92nzr3cj4sfnfa6whlpi72fn"))))
+    (properties `((upstream-name . "MACP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-wgcna
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-prroc
+                             r-proc
+                             r-lsa
+                             r-igraph
+                             r-hmisc
+                             r-ggplot2
+                             r-fmsb
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mrbakhsh/MACP")
+    (synopsis "Macromolecular Assemblies from Co-Elution Profile (MACP)")
+    (description
+     "The MACP employs machine learning algorithm for automated scoring of
+co-fractionation mass spectrometry (CF-MS) and then systematically map
+multi-protein complexes from these high-confidence protein-protein interactions
+(PPIs) using unsupervised learning (i.e., clustering).")
+    (license license:bsd-3)))
 
 (define-public r-maclogp
   (package

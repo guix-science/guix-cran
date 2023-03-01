@@ -8679,6 +8679,29 @@ interface between R and the ArcPy Python side-package via the reticulate
 package.")
     (license license:gpl3)))
 
+(define-public r-rpyants
+  (package
+    (name "r-rpyants")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rpyANTs" version))
+              (sha256
+               (base32
+                "1mvpkd44qgf8a1iw91g78xcac6x0j64165jqb7phqr8vbhyyw20i"))))
+    (properties `((upstream-name . "rpyANTs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpymat r-reticulate))
+    (home-page "http://dipterix.org/rpyANTs/")
+    (synopsis "An Alternative Advanced Normalization Tools ('ANTs')")
+    (description
+     "This package provides portable access from R to biomedical image processing
+toolbox ANTs by Avants et al. (2009) <doi:10.54294/uvnhin> via seamless
+integration with the Python implementation ANTsPy'.  Allows biomedical images to
+be processed in Python and analyzed in R', and vice versa via shared memory.
+See citation(\"rpyANTs\") for more reference information.")
+    (license license:asl2.0)))
+
 (define-public r-rpushbullet
   (package
     (name "r-rpushbullet")
@@ -14948,13 +14971,13 @@ responses.")
 (define-public r-robber
   (package
     (name "r-robber")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robber" version))
               (sha256
                (base32
-                "053yiwjlsg7z9p5l60wddm1wf5wni54a28yp6x4hbfkgaazvby02"))))
+                "1yvhd9zxs3jfz72gqz6db3xj3xpvgch6n5gy6jvwppx3xjfwxg7j"))))
     (properties `((upstream-name . "robber")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -14972,7 +14995,7 @@ responses.")
     (description
      "Implementation of a variety of methods to compute the robustness of ecological
 interaction networks with binary interactions as described in
-<arXiv:1910.10512>.  In particular, using the Stochastic Block Model and its
+<doi:10.1002/env.2709>.  In particular, using the Stochastic Block Model and its
 bipartite counterpart, the Latent Block Model to put a parametric model on the
 network, allows the comparison of the robustness of networks differing in
 species richness and number of interactions.  It also deals with networks that

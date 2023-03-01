@@ -43,6 +43,33 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-izmir
+  (package
+    (name "r-izmir")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "izmir" version))
+              (sha256
+               (base32
+                "1kkzia7470gsi3yhb1rak493vz965v5v5aj3cq4ginhjd7y0glfz"))))
+    (properties `((upstream-name . "izmir")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rvest
+                             r-readr
+                             r-openxlsx
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr))
+    (home-page "https://github.com/ozancanozdemir/izmir")
+    (synopsis "R Wrapper for Izmir Municipality Open Data Portal")
+    (description
+     "Call the data wrappers for Izmir Metropolitan Municipality's Open Data Portal.
+This will return all datasets formatted as Excel files (.csv or .xlsx), as well
+as datasets that require an API key.")
+    (license license:expat)))
+
 (define-public r-izid
   (package
     (name "r-izid")

@@ -12971,18 +12971,17 @@ tools for navigating output.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-10")
+    (version "0.7-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gimme" version))
               (sha256
                (base32
-                "1aimhdma0lyv90wqwy4zinfzdg07bxl60nz313rn2kyxqd4h1j3p"))))
+                "06cgaq31il9a63biav3h7wmfvkvdrv0dyqsmd9qkkb5png4pgrj1"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
                              r-nloptr
-                             r-mvtnorm
                              r-miivsem
                              r-mass
                              r-lavaan
@@ -19894,13 +19893,13 @@ Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
 (define-public r-geometries
   (package
     (name "r-geometries")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geometries" version))
               (sha256
                (base32
-                "1w1pq2bnxndyd8927ll47nmag99cbbzg4pg8gmpm4ga8ih3gyq2y"))))
+                "0hcisrr3vfsksmcw2lv2927dcfazxsx5xy484ww539zqw0yhdlrj"))))
     (properties `((upstream-name . "geometries")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -22453,47 +22452,6 @@ automatic approach for the identification of gene families based on the
 conserved domains that specifically define that family.  See Die et al. (2018)
 <doi:10.1101/436659> for more information and examples.")
     (license license:expat)))
-
-(define-public r-genehapr
-  (package
-    (name "r-genehapr")
-    (version "1.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geneHapR" version))
-              (sha256
-               (base32
-                "1rcb6kfw3dj4sxy3vvmrqkndl128q6qdfs0ywfycp1p6x8wj3rzl"))))
-    (properties `((upstream-name . "geneHapR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vcfr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-shinyjs
-                             r-shiny
-                             r-rtracklayer
-                             r-rlang
-                             r-reshape2
-                             r-pegas
-                             r-maps
-                             r-lolliplot
-                             r-iranges
-                             r-ggpubr
-                             r-ggplot2
-                             r-genomicranges
-                             r-genetics
-                             r-biostrings
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geneHapR")
-    (synopsis
-     "Gene Haplotype Statistics, Phenotype Association and Visualization")
-    (description
-     "Import genome variants data and perform gene haplotype Statistics, visualization
-and phenotype association with R'.")
-    (license license:gpl3)))
 
 (define-public r-genef
   (package

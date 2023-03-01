@@ -5781,6 +5781,46 @@ additional balance constraints.")
 \"tkrplot\" if you are not on Windows.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-suddengains
+  (package
+    (name "r-suddengains")
+    (version "0.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "suddengains" version))
+              (sha256
+               (base32
+                "0mrnj9sjgk66riqz8a8kcbkvzlv3jdvlkqsmv8z7pj74yqrr99sf"))))
+    (properties `((upstream-name . "suddengains")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-psych
+                             r-patchwork
+                             r-naniar
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://milanwiedemann.github.io/suddengains/")
+    (synopsis "Identify Sudden Gains in Longitudinal Data")
+    (description
+     "Identify sudden gains based on the three criteria outlined by Tang and DeRubeis
+(1999) <doi:10.1037/0022-006X.67.6.894> to a selection of repeated measures.
+Sudden losses, defined as the opposite of sudden gains can also be identified.
+Two different datasets can be created, one including all sudden gains/losses and
+one including one selected sudden gain/loss for each case.  It can extract
+scores around sudden gains/losses.  It can plot the average change around sudden
+gains/losses and trajectories of individual cases.")
+    (license license:expat)))
+
 (define-public r-sudachir
   (package
     (name "r-sudachir")
@@ -7305,16 +7345,17 @@ M. et al. (2016) <DOI:10.1021/acs.est.5b04068>, Mondy, C. P., and Schuwirth, N.
 (define-public r-stream
   (package
     (name "r-stream")
-    (version "2.0-0")
+    (version "2.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stream" version))
               (sha256
                (base32
-                "02cr500750fb8kprg2i3j49fz29y2l9mj6rzvgc8kb8lyf08hbcw"))))
+                "1mz1gdqfb92qy09w0jkm5j58bz0sqvnagd4lfb4s40412n77khgh"))))
     (properties `((upstream-name . "stream")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-rpart
+                             r-rcpp
                              r-proxy
                              r-mlbench
                              r-mass
@@ -7325,7 +7366,6 @@ M. et al. (2016) <DOI:10.1021/acs.est.5b04068>, Mondy, C. P., and Schuwirth, N.
                              r-cluster
                              r-clue
                              r-bh))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/stream")
     (synopsis "Infrastructure for Data Stream Mining")
     (description
@@ -38606,6 +38646,28 @@ instant filtering feedback with filter feedback plots.  The GUI panel is not
 only compatible with native shiny bookmarking, but also provides reproducible R
 code.")
     (license license:expat)))
+
+(define-public r-shinychatr
+  (package
+    (name "r-shinychatr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "shinyChatR" version))
+              (sha256
+               (base32
+                "1vd8rznqspk3gr8al2qqbkahyk7gf04qgnpd6a3g2gzijrzfdrkx"))))
+    (properties `((upstream-name . "shinyChatR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-r6 r-purrr r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/julianschmocker/shinyChatR")
+    (synopsis "R Shiny Chat Module")
+    (description
+     "This package provides an easy-to-use module for adding a chat to a Shiny app.
+Allows users to send messages and view messages from other users.  Messages can
+be stored in a database or a .rds file.")
+    (license license:gpl3+)))
 
 (define-public r-shinychakraui
   (package
