@@ -18932,3 +18932,23 @@ bootstrapped and exact split-half reliability estimates, and compute confidence
 intervals for individual participant scores.")
     (license license:gpl3)))
 
+(define-public r-aalenjohansen
+  (package
+    (name "r-aalenjohansen")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AalenJohansen" version))
+              (sha256
+               (base32
+                "0w7fj7l2pyz2y1dywpkdxb9qc4v89d57l4ddnjraxsfppk5ga3i4"))))
+    (properties `((upstream-name . "AalenJohansen")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AalenJohansen")
+    (synopsis "Conditional Aalen-Johansen Estimation")
+    (description
+     "This package provides the conditional Nelson-Aalen and Aalen-Johansen
+estimators.  The methods are based on Bladt & Furrer (2023), in preparation.")
+    (license license:gpl2+)))
+

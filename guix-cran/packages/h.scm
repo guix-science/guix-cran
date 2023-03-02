@@ -8484,30 +8484,6 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
 <doi:10.21105/joss.01008> for more information.")
     (license license:gpl3)))
 
-(define-public r-helda
-  (package
-    (name "r-helda")
-    (version "1.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "helda" version))
-              (sha256
-               (base32
-                "0wza0l52l4ijpasrm3czfncajvcc3p2y2ljmp61xxmn38hhvqyk9"))))
-    (properties `((upstream-name . "helda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-sqldf r-rlang r-ggplot2 r-dplyr))
-    (home-page "https://github.com/Redcart/helda")
-    (synopsis
-     "Preprocess Data and Get Better Insights from Machine Learning Models")
-    (description
-     "The main focus is on preprocessing and data visualization of machine learning
-models performances.  Some functions allow to fill in gaps in time series using
-linear interpolation on panel data, some functions permit to draw lift effect
-and lift curve in order to benchmark machine learning models or you can even
-find the optimal number of clusters in agglomerative clustering algorithm.")
-    (license license:gpl3)))
-
 (define-public r-heims
   (package
     (name "r-heims")

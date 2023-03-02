@@ -943,6 +943,31 @@ repository to create courses.")
 Markdown documents, and R Jupyter Notebooks.")
     (license license:bsd-3)))
 
+(define-public r-otsfeatures
+  (package
+    (name "r-otsfeatures")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "otsfeatures" version))
+              (sha256
+               (base32
+                "1akny7bdls9ddvkpm906ih9h7bc5sgnj03z7kkzbpy703d1y6krr"))))
+    (properties `((upstream-name . "otsfeatures")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
+    (home-page "https://cran.r-project.org/package=otsfeatures")
+    (synopsis "Ordinal Time Series Analysis")
+    (description
+     "An implementation of several functions for feature extraction in ordinal time
+series datasets.  Specifically, some of the features proposed by Weiss (2019)
+<doi:10.1080/01621459.2019.1604370> can be computed.  These features can be used
+to perform inferential tasks or to feed machine learning algorithms for ordinal
+time series, among others.  The package also includes some interesting datasets
+containing financial time series.  Practitioners from a broad variety of fields
+could benefit from the general framework provided by otsfeatures'.")
+    (license license:gpl2)))
+
 (define-public r-otsad
   (package
     (name "r-otsad")

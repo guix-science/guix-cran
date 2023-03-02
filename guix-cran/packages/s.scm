@@ -11,7 +11,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
@@ -1272,53 +1271,6 @@ and .rpt files is supported to glance model structures and to get direct access
 to simulation summaries.")
     (license license:gpl3)))
 
-(define-public r-switchrgist
-  (package
-    (name "r-switchrgist")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "switchrGist" version))
-              (sha256
-               (base32
-                "0ywx7sihh9q74mn0kvdcdflnks0cfybrgy1b5bvmn6ygxb3s605v"))))
-    (properties `((upstream-name . "switchrGist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-switchr r-rjsonio r-httpuv r-gistr))
-    (home-page "https://github.com/gmbecker/switchrGist")
-    (synopsis "Publish Package Manifests to GitHub Gists")
-    (description
-     "This package provides a simple plugin to the switchr framework which allows
-users to publish package and session manifests as gists.")
-    (license license:artistic2.0)))
-
-(define-public r-switchr
-  (package
-    (name "r-switchr")
-    (version "0.14.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "switchr" version))
-              (sha256
-               (base32
-                "1fxn75kgnmq9q4jic4jrqvljylwv9fa25nbhyqm4vmlx5wvissgp"))))
-    (properties `((upstream-name . "switchr")))
-    (build-system r-build-system)
-    (inputs (list subversion git))
-    (propagated-inputs (list r-rjsonio r-rcurl))
-    (home-page "https://github.com/gmbecker/switchr")
-    (synopsis
-     "Installing, Managing, and Switching Between Distinct Sets of Installed Packages")
-    (description
-     "This package provides an abstraction for managing, installing, and switching
-between sets of installed R packages.  This allows users to maintain multiple
-package libraries simultaneously, e.g. to maintain strict,
-package-version-specific reproducibility of many analyses, or work within a
-development/production release paradigm.  Introduces a generalized package
-installation process which supports multiple repository and non-repository
-sources and tracks package provenance.")
-    (license license:artistic2.0)))
-
 (define-public r-switchcase
   (package
     (name "r-switchcase")
@@ -1538,43 +1490,6 @@ Shiny applications and in R markdown documents.")
      "Used for creating swimmers plots with functions to customize the bars, add
 points, add lines, add text, and add arrows.")
     (license license:gpl3)))
-
-(define-public r-swimmer
-  (package
-    (name "r-swimmer")
-    (version "0.13.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SwimmeR" version))
-              (sha256
-               (base32
-                "16vimqdbsj7nb1cv0in6qza00qicajpdcpmzf3lv47wm5kp2iv6n"))))
-    (properties `((upstream-name . "SwimmeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-readr
-                             r-purrr
-                             r-pdftools
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SwimmeR")
-    (synopsis "Data Import, Cleaning, and Conversions for Swimming Results")
-    (description
-     "The goal of the SwimmeR package is to provide means of acquiring, and then
-analyzing, data from swimming (and diving) competitions.  To that end SwimmeR
-allows results to be read in from .html sources, like Hy-Tek real time results
-pages, .pdf files, ISL results, Omega results, and (on a development basis) .hy3
-files.  Once read in, SwimmeR can convert swimming times (performances) between
-the computationally useful format of seconds reported to the 100ths place (e.g.
-95.37), and the conventional reporting format (1:35.37) used in the swimming
-community.  SwimmeR can also score meets in a variety of formats with user
-defined point values, convert times between courses ('LCM', SCM', SCY') and draw
-single elimination brackets, as well as providing a suite of tools for working
-cleaning swimming data.  This is a developmental package, not yet mature.")
-    (license license:expat)))
 
 (define-public r-swim
   (package
@@ -2667,13 +2582,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SVDNF" version))
               (sha256
                (base32
-                "1pdszrsscgz0qf6k773sgm5wqhnfki29ypydk5ih8vbqf12npgz2"))))
+                "02nj3mdz2q4jabfl3w8yr1aw40jawbvzh9gl3n0ra2yv5nf3wp0z"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -12206,44 +12121,6 @@ of Digital Elevation Models, (3) calculating flow length, (4) calculating the
 Convergence Index, (5) calculating topographic aspect and topographic slope.")
     (license license:expat)))
 
-(define-public r-starschemar
-  (package
-    (name "r-starschemar")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "starschemar" version))
-              (sha256
-               (base32
-                "0jjaic1zwdc3lvdlgs0vzkjjivjs2dskmhx4qg469ban34az0591"))))
-    (properties `((upstream-name . "starschemar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-snakecase
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-pander
-                             r-generics
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=starschemar")
-    (synopsis "Obtaining Star Schemas from Flat Tables")
-    (description
-     "Data in multidimensional systems is obtained from operational systems and is
-transformed to adapt it to the new structure.  Frequently, the operations to be
-performed aim to transform a flat table into a star schema.  Transformations can
-be carried out using professional ETL (extract, transform and load) tools or
-tools intended for data transformation for end users.  With the tools mentioned,
-this transformation can be carried out, but it requires a lot of work.  The main
-objective this package is to define transformations that allow obtaining star
-schemas from flat tables easily.  In addition, it includes basic data cleaning,
-dimension enrichment, incremental data refresh and query operations, adapted to
-this context.")
-    (license license:expat)))
-
 (define-public r-starry
   (package
     (name "r-starry")
@@ -20976,13 +20853,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.2-6")
+    (version "1.2-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatialreg" version))
               (sha256
                (base32
-                "07flzdw6pjhmx9skrjp9y05x9fayxk5ymcr50f1zxd8slcbl2f4v"))))
+                "1pprsznmj3hwzi1anifb3bjcg6nmf8048dyyywxdj04ql1ybf30m"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -21001,23 +20878,25 @@ is linked to a regressive relationship underlying the spatial process.")
     (description
      "This package provides a collection of all the estimation functions for spatial
 cross-sectional models (on lattice/areal data using spatial weights matrices)
-contained up to now in spdep', sphet and spse'.  These model fitting functions
-include maximum likelihood methods for cross-sectional models proposed by Cliff
-and Ord (1973, ISBN:0850860369) and (1981, ISBN:0850860814), fitting methods
-initially described by Ord (1975) <doi:10.1080/01621459.1975.10480272>.  The
-models are further described by Anselin (1988) <doi:10.1007/978-94-015-7799-1>.
-Spatial two stage least squares and spatial general method of moment models
-initially proposed by Kelejian and Prucha (1998) <doi:10.1023/A:1007707430416>
-and (1999) <doi:10.1111/1468-2354.00027> are provided.  Impact methods and MCMC
-fitting methods proposed by LeSage and Pace (2009) <doi:10.1201/9781420064254>
-are implemented for the family of cross-sectional spatial regression models.
+contained up to now in spdep'.  These model fitting functions include maximum
+likelihood methods for cross-sectional models proposed by Cliff and Ord (1973,
+ISBN:0850860369) and (1981, ISBN:0850860814), fitting methods initially
+described by Ord (1975) <doi:10.1080/01621459.1975.10480272>.  The models are
+further described by Anselin (1988) <doi:10.1007/978-94-015-7799-1>.  Spatial
+two stage least squares and spatial general method of moment models initially
+proposed by Kelejian and Prucha (1998) <doi:10.1023/A:1007707430416> and (1999)
+<doi:10.1111/1468-2354.00027> are provided.  Impact methods and MCMC fitting
+methods proposed by LeSage and Pace (2009) <doi:10.1201/9781420064254> are
+implemented for the family of cross-sectional spatial regression models.
 Methods for fitting the log determinant term in maximum likelihood and MCMC
 fitting are compared by Bivand et al. (2013) <doi:10.1111/gean.12008>, and model
 fitting methods by Bivand and Piras (2015) <doi:10.18637/jss.v063.i18>; both of
-these articles include extensive lists of references.  spatialreg >= 1.1-*
-corresponded to spdep >= 1.1-1, in which the model fitting functions were
-deprecated and passed through to spatialreg', but masked those in spatialreg'.
-From versions 1.2-*, the functions have been made defunct in spdep'.")
+these articles include extensive lists of references.  A recent review is
+provided by Bivand', Millo and Piras (2021) <doi:10.3390/math9111276>.
+spatialreg >= 1.1-* corresponded to spdep >= 1.1-1, in which the model fitting
+functions were deprecated and passed through to spatialreg', but masked those in
+spatialreg'.  From versions 1.2-*, the functions have been made defunct in
+spdep'.")
     (license license:gpl2)))
 
 (define-public r-spatialprobit
@@ -24619,23 +24498,6 @@ mapping them on the SOM and analysing class membership of neurons in the
 neighbourhood.")
     (license license:gpl3)))
 
-(define-public r-som
-  (package
-    (name "r-som")
-    (version "0.3-5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "som" version))
-              (sha256
-               (base32
-                "1fbza1jxvwrkf5x3inkj36vshhkn7mz0ajqlxalbfmk6ngjw1x56"))))
-    (properties `((upstream-name . "som")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=som")
-    (synopsis "Self-Organizing Map")
-    (description "Self-Organizing Map (with application in gene clustering).")
-    (license license:gpl3+)))
-
 (define-public r-solvesaphe
   (package
     (name "r-solvesaphe")
@@ -27849,6 +27711,35 @@ introduced by Kulldorff and Nagarwalla (1995) <doi:10.1002/sim.4780140809> and
 Kulldorff (1997) <doi:10.1080/03610929708831995>.")
     (license license:gpl2+)))
 
+(define-public r-smdocker
+  (package
+    (name "r-smdocker")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "smdocker" version))
+              (sha256
+               (base32
+                "1aiac9iakyzri6xcf4jfifl3v3vf68kza6a5qsa80yhq027illsd"))))
+    (properties `((upstream-name . "smdocker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-paws-storage
+                             r-paws-security-identity
+                             r-paws-management
+                             r-paws-machine-learning
+                             r-paws-developer-tools
+                             r-paws-compute
+                             r-jsonlite))
+    (home-page "https://cran.r-project.org/package=smdocker")
+    (synopsis
+     "Build 'Docker Images' in 'Amazon SageMaker Studio' using 'Amazon Web Service CodeBuild'")
+    (description
+     "Allows users to easily build custom docker images <https://docs.docker.com/>
+from Amazon Web Service Sagemaker <https://aws.amazon.com/sagemaker/> using
+Amazon Web Service CodeBuild <https://aws.amazon.com/codebuild/>.")
+    (license license:expat)))
+
 (define-public r-smdic
   (package
     (name "r-smdic")
@@ -31001,42 +30892,6 @@ use of a regression preprocessing followed by an empirical quantile mapping
 (eQM) correction.  Fernandez-Peruchena et al (2020) <doi:10.3390/rs12132127>.")
     (license license:gpl3)))
 
-(define-public r-sitar
-  (package
-    (name "r-sitar")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sitar" version))
-              (sha256
-               (base32
-                "0lhwbbpq6anqrk3818xw3nrl63bj3vwgsmxad0dpl8y50rkcc4cs"))))
-    (properties `((upstream-name . "sitar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-nlme
-                             r-magrittr
-                             r-glue
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/statist7/sitar")
-    (synopsis
-     "Super Imposition by Translation and Rotation Growth Curve Analysis")
-    (description
-     "This package provides functions for fitting and plotting SITAR (Super Imposition
-by Translation And Rotation) growth curve models.  SITAR is a shape-invariant
-model with a regression B-spline mean curve and subject-specific random effects
-on both the measurement and age scales.  The model was first described by
-Lindstrom (1995) <doi:10.1002/sim.4780141807> and developed as the SITAR method
-by Cole et al (2010) <doi:10.1093/ije/dyq115>.")
-    (license license:gpl2+)))
-
 (define-public r-sit
   (package
     (name "r-sit")
@@ -33088,29 +32943,6 @@ leaflet visualisation.  See the ggblanket package for ggplot2 wrappers.")
 it can be time consuming to ensure that you have all of the needed packages
 installed and loaded and that the correct working directory is set.  simpleSetup
 provides simple functions for making these tasks more straightforward.")
-    (license license:gpl3+)))
-
-(define-public r-simplermarkdown
-  (package
-    (name "r-simplermarkdown")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "simplermarkdown" version))
-              (sha256
-               (base32
-                "069pgx5m22rdqa21lyn5zqm9ym3g7w6z1d2wjwms8b1f2cp6266g"))))
-    (properties `((upstream-name . "simplermarkdown")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjson))
-    (native-inputs (list r-simplermarkdown))
-    (home-page "https://github.com/djvanderlaan/simplermarkdown")
-    (synopsis "Simple Engine for Generating Reports using R")
-    (description
-     "Runs R-code present in a pandoc markdown file and includes the resulting output
-in the resulting markdown file.  This file can then be converted into any of the
-output formats supported by pandoc.  The package can also be used as an engine
-for writing package vignettes.")
     (license license:gpl3+)))
 
 (define-public r-simplercache
@@ -38320,13 +38152,13 @@ assistant-like user interfaces.")
 (define-public r-shinygizmo
   (package
     (name "r-shinygizmo")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyGizmo" version))
               (sha256
                (base32
-                "1cvqp7hzaisqsqx8apxsird61gwyhgr5cfid05215a1l4j3ffrpk"))))
+                "0pjmin2qmfqg5ppqx8ld6pv8y91ci6bagmp4bi476i9bk9q50hz8"))))
     (properties `((upstream-name . "shinyGizmo")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -48636,6 +48468,28 @@ Feng, and Titiunik (2021)
 <https://cattaneo.princeton.edu/papers/Cattaneo-Feng-Titiunik_2021_JASA.pdf>.")
     (license license:gpl2)))
 
+(define-public r-scperturbr
+  (package
+    (name "r-scperturbr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scperturbR" version))
+              (sha256
+               (base32
+                "0bddsfms1zaq8hfviw68n5n5mjiwg47hiyzbnnwbimxaamz4rkkb"))))
+    (properties `((upstream-name . "scperturbR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat r-rdist r-energy r-dplyr))
+    (home-page "https://github.com/sanderlab/scPerturb/tree/master/package_r")
+    (synopsis "E-Statistics for Seurat Objects")
+    (description
+     "R version of scperturb tool for single-cell perturbation analysis.  Contains
+wrappers for performing E-statistics for Seurat objects.  More details on the
+method can be found in Peidli et al. (2023) <doi:10.1101/2022.08.20.504663> and
+in SzÃ©kely and Rizzo (2004).")
+    (license license:expat)))
+
 (define-public r-scperf
   (package
     (name "r-scperf")
@@ -50458,48 +50312,6 @@ presence of interval-censoring and possible making of the failure cause in a
 competing risks environment.  In the version 2.0 the function creating the
 probability matrix from double-censored data is added.")
     (license license:gpl2)))
-
-(define-public r-sccore
-  (package
-    (name "r-sccore")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sccore" version))
-              (sha256
-               (base32
-                "12gm7pb6xbvf9kdsgl7ldw1c54ga9fgk99ps2kx2cq91q9m0ld4r"))))
-    (properties `((upstream-name . "sccore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-uwot
-                             r-tibble
-                             r-scales
-                             r-rlang
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proc
-                             r-pbmcapply
-                             r-matrix
-                             r-magrittr
-                             r-irlba
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/kharchenkolab/sccore")
-    (synopsis "Core Utilities for Single-Cell RNA-Seq")
-    (description
-     "Core utilities for single-cell RNA-seq data analysis.  Contained within are
-utility functions for working with differential expression (DE) matrices and
-count matrices, a collection of functions for manipulating and plotting data via
-ggplot2', and functions to work with cell graphs and cell embeddings.
-Graph-based methods include embedding kNN cell graphs into a UMAP
-<doi:10.21105/joss.00861>, collapsing vertices of each cluster in the graph, and
-propagating graph labels.")
-    (license license:gpl3)))
 
 (define-public r-scclust
   (package
@@ -55707,13 +55519,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-35")
+    (version "3.1-36")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "00cnm2j8zrfvs91p3qv86vifrxdndmi1q9syb31bz0dmwwkrl1vv"))))
+                "04yd42cypv3d6wknxmjpq4p3xba23f7l5gc9fmz6hn2r1rg3sf51"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

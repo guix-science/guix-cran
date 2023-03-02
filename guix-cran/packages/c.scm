@@ -7220,35 +7220,6 @@ density plots, stacked dot plots, histograms, multi-class stacked smooth density
 plots, and multi-class stacked histograms.")
     (license license:gpl2+)))
 
-(define-public r-cplm
-  (package
-    (name "r-cplm")
-    (version "0.7-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cplm" version))
-              (sha256
-               (base32
-                "0mqjk10265hq9bc5ihmgbx1l8fzay1gpdlvx3pirqmvr3w1kwlxk"))))
-    (properties `((upstream-name . "cplm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tweedie
-                             r-statmod
-                             r-reshape2
-                             r-nlme
-                             r-minqa
-                             r-matrix
-                             r-ggplot2
-                             r-coda
-                             r-biglm))
-    (home-page "https://github.com/actuaryzhang/cplm")
-    (synopsis "Compound Poisson Linear Models")
-    (description
-     "Likelihood-based and Bayesian methods for various compound Poisson linear models
-based on Zhang, Yanwei (2013)
-<https://link.springer.com/article/10.1007/s11222-012-9343-7>.")
-    (license license:gpl2+)))
-
 (define-public r-cpk
   (package
     (name "r-cpk")
@@ -13560,57 +13531,6 @@ conover.test accounts for tied ranks.  The Conover-Iman test is strictly valid
 if and only if the corresponding Kruskal-Wallis null hypothesis is rejected.")
     (license license:gpl2)))
 
-(define-public r-conos
-  (package
-    (name "r-conos")
-    (version "1.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "conos" version))
-              (sha256
-               (base32
-                "1wdhb3jxh4id6xaghawzip8s264g9jxp4i5xy7jfhi67yfxszx6w"))))
-    (properties `((upstream-name . "conos")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sccore
-                             r-rtsne
-                             r-rlang
-                             r-reshape2
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-n2r
-                             r-matrix
-                             r-magrittr
-                             r-leidenalg
-                             r-irlba
-                             r-igraph
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-cowplot
-                             r-complexheatmap
-                             r-abind))
-    (home-page "https://github.com/kharchenkolab/conos")
-    (synopsis "Clustering on Network of Samples")
-    (description
-     "Wires together large collections of single-cell RNA-seq datasets, which allows
-for both the identification of recurrent cell clusters and the propagation of
-information between datasets in multi-sample or atlas-scale collections.  Conos
-focuses on the uniform mapping of homologous cell types across heterogeneous
-sample collections.  For instance, users could investigate a collection of
-dozens of peripheral blood samples from cancer patients combined with dozens of
-controls, which perhaps includes samples of a related tissue such as lymph
-nodes.  This package interacts with data available through the conosPanel
-package, which is available in a drat repository.  To access this data package,
-see the instructions at <https://github.com/kharchenkolab/conos>.  The size of
-the conosPanel package is approximately 12 MB.")
-    (license license:gpl3)))
-
 (define-public r-conogive
   (package
     (name "r-conogive")
@@ -14160,48 +14080,6 @@ Typen und Syndromen.  Zeitschrift fÃ¼r Klinische Psychologie und Psychotherapi
 19(2), 99â115.")
     (license license:gpl3)))
 
-(define-public r-confoundr
-  (package
-    (name "r-confoundr")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "confoundr" version))
-              (sha256
-               (base32
-                "000vf828qv04pplx8yc8q3mafxf4g0axip6z5zbsj2581yxv9jjh"))))
-    (properties `((upstream-name . "confoundr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rmpfr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=confoundr")
-    (synopsis
-     "Diagnostics for Confounding of Time-Varying and Other Joint Exposures")
-    (description
-     "This package implements three covariate-balance diagnostics for time-varying
-confounding and selection-bias in complex longitudinal data, as described in
-Jackson (2016) <doi:10.1097/EDE.0000000000000547> and Jackson (2019)
-<doi:10.1093/aje/kwz136>.  Diagnostic 1 assesses measured
-confounding/selection-bias, diagnostic 2 assesses exposure-covariate feedback,
-and diagnostic 3 assesses residual confounding/selection-bias after inverse
-probability weighting or propensity score stratification.  All diagnostics
-appropriately account for exposure history, can be adapted to assess a
-particular depth of covariate history, and can be implemented in right-censored
-data.  Balance assessments can be obtained for all times, selected-times, or
-averaged across person-time.  The balance measures are reported as tables or
-plots.  These diagnostics can be applied to the study of multivariate exposures
-including time-varying exposures, direct effects, interaction, and censoring.")
-    (license license:gpl3)))
-
 (define-public r-conformalsmallest
   (package
     (name "r-conformalsmallest")
@@ -14728,6 +14606,33 @@ pipeline.")
 normal (Horrace (2005) p.  4, <doi:10.1016/j.jmva.2004.10.007>).  Also draws
 random samples from this distribution.")
     (license license:gpl3)))
+
+(define-public r-condsurv
+  (package
+    (name "r-condsurv")
+    (version "2.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "condSURV" version))
+              (sha256
+               (base32
+                "11ji8q8qhmpyc1zcdckjsq40bg2gbhbp0222fsrdkfglq3h4dg5x"))))
+    (properties `((upstream-name . "condSURV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-np
+                             r-kernsmooth
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=condSURV")
+    (synopsis
+     "Estimation of the Conditional Survival Function for Ordered Multivariate Failure Time Data")
+    (description
+     "Method to implement some newly developed methods for the estimation of the
+conditional survival function.  See Meira-Machado, Sestelo and Goncalves (2016)
+<doi:10.1002/bimj.201500038>.")
+    (license license:gpl2+)))
 
 (define-public r-condoroptions
   (package
@@ -19431,13 +19336,13 @@ and continuous outcomes.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "0.5.2")
+    (version "0.5.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coda.base" version))
               (sha256
                (base32
-                "0pcgjsfcgz5fj949szahkppb9rb9cba47b1galm4i6c3qp0yn18a"))))
+                "0makfk7lzx7sbqs553zh2gv5zkhdqjcx96hryj6pmld0y2fkyzdn"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-jsonlite))
@@ -19446,9 +19351,8 @@ and continuous outcomes.")
     (synopsis "Basic Set of Functions for Compositional Data Analysis")
     (description
      "This package provides a minimum set of functions to perform compositional data
-analysis using the log-ratio approach introduced by John Aitchison (1982)
-<http://www.jstor.org/stable/2345821>.  Main functions have been implemented in
-c++ for better performance.")
+analysis using the log-ratio approach introduced by John Aitchison (1982).  Main
+functions have been implemented in c++ for better performance.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cocron
@@ -27152,26 +27056,29 @@ so the C functions can be called directly from other programs.")
 (define-public r-cholera
   (package
     (name "r-cholera")
-    (version "0.7.9")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cholera" version))
               (sha256
                (base32
-                "1d2z41f9vh79dk2ic2rzj4g6sdccm4vfimwq0wc8j2s7bad1gv1g"))))
+                "0qfy7xqkihn8jfxnhg0l5y0mii52lbfwmg663bqsjapylqc9bjcd"))))
     (properties `((upstream-name . "cholera")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-tsp
                              r-threejs
+                             r-terra
+                             r-tanaka
                              r-sp
                              r-rcolorbrewer
-                             r-raster
                              r-pracma
                              r-kernsmooth
                              r-igraph
                              r-histdata
                              r-ggplot2
+                             r-geosphere
+                             r-elevatr
                              r-deldir))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lindbrook/cholera")
@@ -28081,36 +27988,6 @@ publication quality plots.  ChemoSpec is intended to be very user friendly and
 to help you get usable results quickly.  A vignette covering typical operations
 is available.")
     (license license:gpl3)))
-
-(define-public r-chemometrics
-  (package
-    (name "r-chemometrics")
-    (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "chemometrics" version))
-              (sha256
-               (base32
-                "0shqns0n964pfwnd0q5sadglrlpgs4g5fbv45fsj9p37l4pq61dp"))))
-    (properties `((upstream-name . "chemometrics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-som
-                             r-rpart
-                             r-robustbase
-                             r-pls
-                             r-pcapp
-                             r-nnet
-                             r-mclust
-                             r-mass
-                             r-lars
-                             r-e1071
-                             r-class))
-    (home-page "http://www.statistik.tuwien.ac.at/public/filz/")
-    (synopsis "Multivariate Statistical Analysis in Chemometrics")
-    (description
-     "R companion to the book \"Introduction to Multivariate Statistical Analysis in
-Chemometrics\" written by K. Varmuza and P. Filzmoser (2009).")
-    (license license:gpl3+)))
 
 (define-public r-chemodiv
   (package

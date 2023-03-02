@@ -2277,6 +2277,40 @@ includes also some other multiway methods: PCAn (Tucker-n) and PARAFAC/CANDECOMP
 with these extensions.")
     (license license:gpl2+)))
 
+(define-public r-ptable
+  (package
+    (name "r-ptable")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ptable" version))
+              (sha256
+               (base32
+                "142nw1rq9nm9fc6amcsdfy4qnv89p5yz90cxxbw1r4bylm86grs2"))))
+    (properties `((upstream-name . "ptable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-rlang
+                             r-rcolorbrewer
+                             r-nloptr
+                             r-ggplot2
+                             r-flexdashboard
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sdcTools/ptable")
+    (synopsis "Generation of Perturbation Tables for the Cell-Key Method")
+    (description
+     "Tabular data from statistical institutes and agencies are mostly confidential
+and must be protected prior to publications.  The cell-key method is a
+post-tabular Statistical Disclosure Control perturbation technique that adds
+random noise to tabular data.  The statistical properties of the perturbations
+are defined by some noise probability distributions - also referred to as
+perturbation tables.  This tool can be used to create the perturbation tables
+based on a maximum entropy approach as described for example in Giessing (2016)
+<doi:10.1007/978-3-319-45381-1_18>.  The perturbation tables created can finally
+be used to apply a cell-key method to frequency count or magnitude tables.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-psyverse
   (package
     (name "r-psyverse")
@@ -16224,29 +16258,6 @@ Networks and Alzheimerâs Disease Risk Via Novel Extension of Sparse Canonic
 Correlation\" at bioRxiv.")
     (license license:gpl2+)))
 
-(define-public r-pma
-  (package
-    (name "r-pma")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PMA" version))
-              (sha256
-               (base32
-                "1rhiylm3jfarnqdkv7nwg536sgsa30ic80dk9byks9w0wf4mn59s"))))
-    (properties `((upstream-name . "PMA")))
-    (build-system r-build-system)
-    (home-page "https://github.com/bnaras/PMA")
-    (synopsis "Penalized Multivariate Analysis")
-    (description
-     "This package performs Penalized Multivariate Analysis: a penalized matrix
-decomposition, sparse principal components analysis, and sparse canonical
-correlation analysis, described in Witten, Tibshirani and Hastie (2009)
-<doi:10.1093/biostatistics/kxp008> and Witten and Tibshirani (2009) Extensions
-of sparse canonical correlation analysis, with applications to genomic data
-<doi:10.2202/1544-6115.1470>.")
-    (license license:gpl2+)))
-
 (define-public r-plusser
   (package
     (name "r-plusser")
@@ -22722,47 +22733,6 @@ computationally expensive.  Additionally, this package offers an easy way to
 perform non-parametric bootstrapping to generate confidence intervals for
 quantile estimates, mean estimates, or any statistical function of interest.")
     (license license:cc0)))
-
-(define-public r-pheindicatormethods
-  (package
-    (name "r-pheindicatormethods")
-    (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PHEindicatormethods" version))
-              (sha256
-               (base32
-                "1qlb0qd4iljgjkpj0yj63p588k4qw8af8civ3hvf32iq8pmnfrkr"))))
-    (properties `((upstream-name . "PHEindicatormethods")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-lifecycle
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PHEindicatormethods")
-    (synopsis "Common Public Health Statistics and their Confidence Intervals")
-    (description
-     "This package provides functions to calculate commonly used public health
-statistics and their confidence intervals using methods approved for use in the
-production of Public Health England indicators such as those presented via
-Fingertips (<http://fingertips.phe.org.uk/>).  It provides functions for the
-generation of proportions, crude rates, means, directly standardised rates,
-indirectly standardised rates, standardised mortality ratios, slope and relative
-index of inequality and life expectancy.  Statistical methods are referenced in
-the following publications.  Breslow NE, Day NE (1987)
-<doi:10.1002/sim.4780080614>.  Dobson et al (1991) <doi:10.1002/sim.4780100317>.
- Armitage P, Berry G (2002) <doi:10.1002/9780470773666>.  Wilson EB. (1927)
-<doi:10.1080/01621459.1927.10502953>.  Altman DG et al (2000, ISBN:
-978-0-727-91375-3).  Chiang CL. (1968, ISBN: 978-0-882-75200-6).  Newell C.
-(1994, ISBN: 978-0-898-62451-9).  Eayres DP, Williams ES (2004)
-<doi:10.1136/jech.2003.009654>.  Silcocks PBS et al (2001)
-<doi:10.1136/jech.55.1.38>.  Low and Low (2004) <doi:10.1093/pubmed/fdh175>.")
-    (license license:gpl3)))
 
 (define-public r-phecodemap
   (package
@@ -33766,62 +33736,6 @@ bacterial pangenomes: subset, summarize, extract, visualize and store data.  So,
 pagoo is intended to facilitate these tasks as much as possible.  For a
 description of the implemented data structure and methods, see Ferres & Iraola
 (2020), <doi:10.1101/2020.07.29.226951>.")
-    (license license:gpl3)))
-
-(define-public r-pagoda2
-  (package
-    (name "r-pagoda2")
-    (version "1.0.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pagoda2" version))
-              (sha256
-               (base32
-                "18ip8j5l5c3hqw1xsf5wnyas55i2mhk09phy68kjkjdgcymmpg7c"))))
-    (properties `((upstream-name . "pagoda2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-urltools
-                             r-sccore
-                             r-rtsne
-                             r-rook
-                             r-rmtstat
-                             r-rlang
-                             r-rjson
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-r-utils
-                             r-plyr
-                             r-n2r
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-irlba
-                             r-igraph
-                             r-fastcluster
-                             r-drat
-                             r-dendsort))
-    (home-page "https://github.com/kharchenkolab/pagoda2")
-    (synopsis "Single Cell Analysis and Differential Expression")
-    (description
-     "Analyzing and interactively exploring large-scale single-cell RNA-seq datasets.
-pagoda2 primarily performs normalization and differential gene expression
-analysis, with an interactive application for exploring single-cell RNA-seq
-datasets.  It performs basic tasks such as cell size normalization, gene
-variance normalization, and can be used to identify subpopulations and run
-differential expression within individual samples.  pagoda2 was written to
-rapidly process modern large-scale scRNAseq datasets of approximately 1e6 cells.
- The companion web application allows users to explore which gene expression
-patterns form the different subpopulations within your data.  The package also
-serves as the primary method for preprocessing data for conos,
-<https://github.com/kharchenkolab/conos>.  This package interacts with data
-available through the p2data package, which is available in a drat repository.
-To access this data package, see the instructions at
-<https://github.com/kharchenkolab/pagoda2>.  The size of the p2data package is
-approximately 6 MB.")
     (license license:gpl3)))
 
 (define-public r-pageviews

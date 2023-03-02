@@ -229,36 +229,6 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2020,
 <doi:10.1101/2020.09.10.292441>).")
     (license license:gpl2+)))
 
-(define-public r-jumper
-  (package
-    (name "r-jumper")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JumpeR" version))
-              (sha256
-               (base32
-                "1bh2448462xgiv4k19qgm3dc4wa00ad8v3l6v22pg0l5kpmlx5i2"))))
-    (properties `((upstream-name . "JumpeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-swimmer
-                             r-stringr
-                             r-rvest
-                             r-purrr
-                             r-pdftools
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=JumpeR")
-    (synopsis "Importing and Working with Track and Field Data")
-    (description
-     "Primarily used to convert human readable track and field results into dataframes
-for further analysis.  Results can come from central repositories like
-<https://www.flashresults.com/> or <http://www.deltatiming.com/>, or from
-individual team sites, like those for colleges.  Also contains functions useful
-for working with track and field data.")
-    (license license:expat)))
-
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")

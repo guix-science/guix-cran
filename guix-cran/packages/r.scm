@@ -1518,6 +1518,30 @@ external Vowpal Wabbit library installation.")
      "Variable metric nonlinear function minimization with bounds constraints.")
     (license license:gpl2+)))
 
+(define-public r-rvmf
+  (package
+    (name "r-rvmf")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rvMF" version))
+              (sha256
+               (base32
+                "0zcxfx6kp81fjvsyn8gvkgjllri503ys9c390vp05ihxl6vnxkc5"))))
+    (properties `((upstream-name . "rvMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scmodels r-rfast r-rcpp r-bessel))
+    (home-page "https://github.com/seungwoo-stat/rvMF")
+    (synopsis
+     "Fast Generation of von Mises-Fisher Distributed Pseudo-Random Vectors")
+    (description
+     "Generates pseudo-random vectors that follow an arbitrary von Mises-Fisher
+distribution on a sphere.  This method is fast and efficient when generating a
+large number of pseudo-random vectors.  Functions to generate random variates
+and compute density for the distribution of an inner product between von
+Mises-Fisher random vector and its mean direction are also provided.")
+    (license license:gpl3+)))
+
 (define-public r-rvmethod
   (package
     (name "r-rvmethod")
@@ -16297,33 +16321,6 @@ standalone C library.  libMVL has simple C API making it easy to interchange
 datasets with outside programs.")
     (license license:lgpl2.1)))
 
-(define-public r-rmumps
-  (package
-    (name "r-rmumps")
-    (version "5.2.1-22")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rmumps" version))
-              (sha256
-               (base32
-                "18wqy82hwnbiwqcyldg8ci0jmxfiaj65ila0fjzzv40d3kl8hx76"))))
-    (properties `((upstream-name . "rmumps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list gfortran))
-    (home-page "http://www.mumps-solver.org/")
-    (synopsis "Wrapper for MUMPS Library")
-    (description
-     "Some basic features of MUMPS (Multifrontal Massively Parallel sparse direct
-Solver) are wrapped in a class whose methods can be used for sequentially
-solving a sparse linear system (symmetric or not) with one or many right hand
-sides (dense or sparse).  There is a possibility to do separately symbolic
-analysis, LU (or LDL^t) factorization and system solving.  Third part ordering
-libraries are included and can be used: PORD', METIS', SCOTCH'.  MUMPS method
-was first described in Amestoy et al. (2001) <doi:10.1137/S0895479899358194> and
-Amestoy et al. (2006) <doi:10.1016/j.parco.2005.07.004>.")
-    (license license:gpl2+)))
-
 (define-public r-rmtl
   (package
     (name "r-rmtl")
@@ -19868,6 +19865,38 @@ flow computations (e.g. flood wave routing) as described in Koohafkan MC, Younis
 BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â262.
 <doi: 10.32614/RJ-2015-034>.")
     (license license:gpl3+)))
+
+(define-public r-rivnet
+  (package
+    (name "r-rivnet")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rivnet" version))
+              (sha256
+               (base32
+                "06b27qi8ij1x8bm2jajw39xn33l0x5kqqhwli2cxjygfk9sxz27c"))))
+    (properties `((upstream-name . "rivnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-traudem
+                             r-terra
+                             r-spam
+                             r-sf
+                             r-raster
+                             r-ocnet
+                             r-elevatr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucarraro.github.io/rivnet/")
+    (synopsis "Extract and Analyze Rivers from Elevation Data")
+    (description
+     "Seamless extraction of river networks from digital elevation models data.  The
+package allows analysis of digital elevation models that can be either
+externally provided or downloaded from open source repositories (thus
+interfacing with the elevatr package).  Extraction is performed via the D8 flow
+direction algorithm of TauDEM (Terrain Analysis Using Digital Elevation Models),
+thus interfacing with the traudem package.  Resulting river networks are
+compatible with functions from the OCNet package.")
+    (license license:expat)))
 
 (define-public r-rivivc
   (package
@@ -24332,16 +24361,16 @@ analysis).")
 (define-public r-rflexscan
   (package
     (name "r-rflexscan")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rflexscan" version))
               (sha256
                (base32
-                "1azjdri1dnxqd128p3iya1x36bbhhrckmj08rp23jzfi5zd71c8s"))))
+                "0jlswyfdmi4c8jd2m56inid08injjjmmjy3m3hmqspm6arv9flq1"))))
     (properties `((upstream-name . "rflexscan")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-rcpp r-igraph))
+    (propagated-inputs (list r-sf r-rcpp r-igraph))
     (home-page "https://tkhrotn.github.io/rflexscan/")
     (synopsis "The Flexible Spatial Scan Statistic")
     (description
@@ -29646,6 +29675,39 @@ parameters in item response theory (IRT) models (Belzak & Bauer, 2020)
 expectation-maximization algorithm.")
     (license license:expat)))
 
+(define-public r-regcombin
+  (package
+    (name "r-regcombin")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RegCombin" version))
+              (sha256
+               (base32
+                "1p6zn0mf3x7f8544xpdgxlf59mzc3b39w2dxwr63hh49nk4pa4q5"))))
+    (properties `((upstream-name . "RegCombin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snowfall
+                             r-rationalexp
+                             r-pracma
+                             r-kableextra
+                             r-hmisc
+                             r-geometry
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=RegCombin")
+    (synopsis "Partially Linear Regression under Data Combination")
+    (description
+     "We implement linear regression when the outcome of interest and some of the
+covariates are observed in two different datasets that cannot be linked, based
+on D'Haultfoeuille, Gaillac, Maurel (2022) <doi:10.3386/w29953>.  The package
+allows for common regressors observed in both datasets, and for various shape
+constraints on the effect of covariates on the outcome of interest.  It also
+provides the tools to perform a test of point identification.  See the
+associated vignette
+<https://github.com/cgaillac/RegCombin/blob/master/RegCombin_vignette.pdf> for
+theory and code examples.")
+    (license license:gpl3)))
+
 (define-public r-regclass
   (package
     (name "r-regclass")
@@ -30708,13 +30770,13 @@ identified and it also facilitates the process of data management.")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.3.3")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redcapAPI" version))
               (sha256
                (base32
-                "14h8jjimhx5lxa6s4a4zlhk5h6n7vspnmvcwnn27q3prhz68k442"))))
+                "0nql3mqv9zzz7ccwnz9b46zf7xq3gk8lrxam5pxgc77dr4hj4bkq"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32747,6 +32809,27 @@ shiny reactivity by constructing a directed dependency graph of the
 application's reactive state at any time point in a reactive recording.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-reactcheckbox
+  (package
+    (name "r-reactcheckbox")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reactCheckbox" version))
+              (sha256
+               (base32
+                "1ph4kzq6i91d0aaf6jfd0klnlwipadnii648sky85dybpa78wy6a"))))
+    (properties `((upstream-name . "reactCheckbox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reactr r-htmltools))
+    (home-page "https://github.com/stla/reactCheckbox")
+    (synopsis "Checkbox Group Input for 'Shiny'")
+    (description
+     "This package provides a checkbox group input for usage in a Shiny application.
+The checkbox group has a head checkbox allowing to check or uncheck all the
+checkboxes in the group.  The checkboxes are customizable.")
+    (license license:gpl3+)))
 
 (define-public r-reactablefmtr
   (package
@@ -35140,31 +35223,6 @@ calculating moments, densities, and entropies are provided at both levels.")
 convenient framework for stream processing.  This package connects Streamulus to
 R by providing both the header files and all examples.")
     (license license:gpl3+)))
-
-(define-public r-rcppspdlog
-  (package
-    (name "r-rcppspdlog")
-    (version "0.0.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RcppSpdlog" version))
-              (sha256
-               (base32
-                "1nan0hm49xdl2l1lskm1jf01clfh7aw2v6h57j35qysvg8219fcx"))))
-    (properties `((upstream-name . "RcppSpdlog")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-simplermarkdown))
-    (home-page "https://github.com/eddelbuettel/rcppspdlog")
-    (synopsis
-     "R and C++ Interfaces to 'spdlog' C++ Header Library for Logging")
-    (description
-     "The mature and widely-used C++ logging library spdlog by Gabi Melman provides
-many desirable features.  This package bundles these header files for easy use
-by R packages from both their R and C or C++ code.  Explicit use via LinkingTo:
-is also supported.  Also see the spdl package which enhanced this package with a
-consistent R and C++ interface.")
-    (license license:gpl2+)))
 
 (define-public r-rcppsmc
   (package
@@ -44517,13 +44575,13 @@ of landscapeâ used in the domain of landscape ecology.")
 (define-public r-raceid
   (package
     (name "r-raceid")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RaceID" version))
               (sha256
                (base32
-                "0pfs4hf52xnb55pmcl3ypzqv77vn61v6q7485yr36agz42y6jmmg"))))
+                "0kv0rkd5qgxx3yi2sw0c64f0529im6zcf8wdwk65rphfjbsf0j7d"))))
     (properties `((upstream-name . "RaceID")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

@@ -6031,26 +6031,6 @@ authors are grateful to SAC, ISRO, Ahmedabad for providing financial support to
 Dr. Prashant K Srivastava to conduct this research work.")
     (license license:gpl3+)))
 
-(define-public r-wcep
-  (package
-    (name "r-wcep")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wcep" version))
-              (sha256
-               (base32
-                "1hpakygvh3b64i5hwkriwq5g8vnvghvgdj0jn9m59j43050k32cy"))))
-    (properties `((upstream-name . "wcep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-progress r-dplyr r-coin))
-    (home-page "https://cran.r-project.org/package=wcep")
-    (synopsis "Survival Analysis for Weighted Composite Endpoints")
-    (description
-     "Analyze given data frame with multiple endpoints and return Kaplan-Meier
-survival probabilities together with the specified confidence interval.")
-    (license license:expat)))
-
 (define-public r-wce
   (package
     (name "r-wce")

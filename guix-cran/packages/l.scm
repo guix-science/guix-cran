@@ -12,12 +12,11 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages maths)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages linux)
+  #:use-module (gnu packages maths)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -10669,41 +10668,6 @@ calculating a posterior density that is invariant to interchange and scaling of
 the coordinates.")
     (license license:gpl2+)))
 
-(define-public r-leidenalg
-  (package
-    (name "r-leidenalg")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "leidenAlg" version))
-              (sha256
-               (base32
-                "1z96zrsms93gspylmficaggb0xj94kq9rg3p2svdbb451jbga9an"))))
-    (properties `((upstream-name . "leidenAlg")))
-    (build-system r-build-system)
-    (inputs (list libxml2 glpk))
-    (propagated-inputs (list r-sccore
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-igraph))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/kharchenkolab/leidenAlg")
-    (synopsis "Implements the Leiden Algorithm via an R Interface")
-    (description
-     "An R interface to the Leiden algorithm, an iterative community detection
-algorithm on networks.  The algorithm is designed to converge to a partition in
-which all subsets of all communities are locally optimally assigned, yielding
-communities guaranteed to be connected.  The implementation proves to be fast,
-scales well, and can be run on graphs of millions of nodes (as long as they can
-fit in memory).  The original implementation was constructed as a python
-interface \"leidenalg\" found here: <https://github.com/vtraag/leidenalg>.  The
-algorithm was originally described in Traag, V.A., Waltman, L. & van Eck, N.J.
-\"From Louvain to Leiden: guaranteeing well-connected communities\".  Sci Rep 9,
-5233 (2019) <doi:10.1038/s41598-019-41695-z>.")
-    (license license:gpl3)))
-
 (define-public r-lehdr
   (package
     (name "r-lehdr")
@@ -11863,13 +11827,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.1.4.0")
+    (version "0.2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ldt" version))
               (sha256
                (base32
-                "0lckxp4v9xhzqdmhi0jvxncnxy4692xa9zimi7yh4n5ldlzvb272"))))
+                "13d0y5a8lfzldxvhi4gpb8p9arxn6jwd8k1dj53c0m97781rkqaj"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-rcpp r-jsonlite r-bh))
@@ -14269,38 +14233,6 @@ Council (2006, ISBN:978-0-309-09156-5).")
      "This package provides functions to write or append a R list to a file, as well
 as read, remove, modify elements from it without restoring the whole list.")
     (license license:gpl2+)))
-
-(define-public r-largb
-  (package
-    (name "r-largb")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LARGB" version))
-              (sha256
-               (base32
-                "0ksyagp4wy1rm7kll6rgdx2735k6ywlaf08d6yys9cv090rpc8l3"))))
-    (properties `((upstream-name . "LARGB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-imager r-dplyr))
-    (home-page "https://cran.r-project.org/package=LARGB")
-    (synopsis "Leaf Area Determination from Visual Image")
-    (description
-     "Measurements of leaf area are important in the studies of plant biological
-characteristics.  High-throughput plant phenotyping using image analysis is the
-key area in the domain of plant phenotyping.  For determining the leaf area, the
-RGB image is converted into the grayscale image by simply averaging the Red(R),
-Green (G) and Blue (B) pixel values.  Grayscale image is then converted into a
-binary image using Otsuâs thresholding method Otsu, N. (1979)
-<doi:10.1109/TSMC.1979.4310076> to separate plant area from the background
-(image segmentation).  The segmentation process was accomplished by selecting
-the pixels with values over the threshold value belonging to the plant region
-and other pixels to the background region.  The resulting binary image consists
-of white and black pixels representing the plant and background regions,
-respectively.  Finally, the number of pixels inside the plant region was counted
-and converted to square centimetres (cm2) using the reference object (any object
-whose actual area is known previously) to get the projected leaf area.")
-    (license license:gpl3)))
 
 (define-public r-larf
   (package

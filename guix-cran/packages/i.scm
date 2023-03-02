@@ -1782,13 +1782,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.1")
+    (version "5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotRgui" version))
               (sha256
                (base32
-                "1ldxi12z43jgbr4q1b8g0cr89bzrsf11v94w2ny7p6ln0cclv7m8"))))
+                "00v2vlfzqbwdgpp2mrqcizzs6zkrjcrv6kj7l24ghplvljmz33lk"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1805,13 +1805,13 @@ toolbox.")
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.1")
+    (version "5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotR" version))
               (sha256
                (base32
-                "01mr75zigavsg2385crzf1h6dkdn3zd76l75w53v8ywvp6ha7qz3"))))
+                "1c2raxaayks7vzp71xb8xzd95gjm101xi85r23q52lkzjjrj164h"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2240,6 +2240,38 @@ classes may be assumed.  In this package isoboost we propose new boosting
 algorithms, based on LogitBoost, that incorporate this isotonicity information,
 yielding more accurate and easily interpretable rules.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-iso11784tools
+  (package
+    (name "r-iso11784tools")
+    (version "1.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ISO11784Tools" version))
+              (sha256
+               (base32
+                "0nl7la7g6028bal6swnfplny81ngpfcrac46nlnpk2d99bpfvfs6"))))
+    (properties `((upstream-name . "ISO11784Tools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-stringr r-stringi r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ISO11784Tools")
+    (synopsis "ISO11784 PIT Tag ID Format Converters")
+    (description
+     "Some tools to assist with converting International Organization for
+Standardization (ISO) standard 11784 (ISO11784) animal ID codes between 4
+recognised formats commonly displayed on Passive Integrated Transponder (PIT)
+tag readers.  The most common formats are 15 digit decimal, e.g.,
+999123456789012, and 13 character hexadecimal dot format, e.g., 3E7.1CBE991A14.
+These are referred to in this package as isodecimal and isodothex.  The other
+two formats are the raw hexadecimal representation of the ISO11784 binary
+structure (see <https://en.wikipedia.org/wiki/ISO_11784_and_ISO_11785>).  There
+are two flavours of this format, a left and a right variation.  Which flavour a
+reader happens to output depends on if the developers decided to reverse the
+binary number or not before converting to hexadecimal, a decision based on the
+fact that the PIT tags will transmit their binary code Least Significant Bit
+(LSB) first, or backwards basically.")
+    (license license:gpl3)))
 
 (define-public r-isnullptr
   (package

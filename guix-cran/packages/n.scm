@@ -4088,30 +4088,6 @@ connecting to Amazon Web Service ('AWS') Athena
 ('SDK') paws <https://github.com/paws-r/paws> is used as a driver.")
     (license license:expat)))
 
-(define-public r-nobbs
-  (package
-    (name "r-nobbs")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "NobBS" version))
-              (sha256
-               (base32
-                "0i0jyny1c29knpcl4szqwyxvdc3dqjfk5lf2xvwjdx3qas92w03l"))))
-    (properties `((upstream-name . "NobBS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjags r-magrittr r-dplyr r-coda))
-    (home-page "https://cran.r-project.org/package=NobBS")
-    (synopsis "Nowcasting by Bayesian Smoothing")
-    (description
-     "This package provides a Bayesian approach to estimate the number of
-occurred-but-not-yet-reported cases from incomplete, time-stamped reporting data
-for disease outbreaks.  NobBS learns the reporting delay distribution and the
-time evolution of the epidemic curve to produce smoothed nowcasts in both stable
-and time-varying case reporting settings, as described in McGough et al. (2019)
-<doi:10.1101/663823>.")
-    (license license:expat)))
-
 (define-public r-noah
   (package
     (name "r-noah")
@@ -11866,13 +11842,13 @@ School and the National Research Foundation of Korea.)")
 (define-public r-ncov2019
   (package
     (name "r-ncov2019")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nCov2019" version))
               (sha256
                (base32
-                "0hk3lc5yxycl2qi895w43c3dcpxcqn2k6d5jc25j7ip6b0dq7w70"))))
+                "00jwywvb4prypn7cvwd1fb29jffvzdmg18axnl9ncncr0xjmvgx3"))))
     (properties `((upstream-name . "nCov2019")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-jsonlite r-ggplot2 r-downloader))
@@ -14109,32 +14085,6 @@ Functions exist for detection, removal, replacement, imputation, recollection,
 etc.  of NAs'.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-n2r
-  (package
-    (name "r-n2r")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "N2R" version))
-              (sha256
-               (base32
-                "12bv7xx6j6222qgpv6g61i68017fz0x6fjg9a9k5yhgw3zk05hpk"))))
-    (properties `((upstream-name . "N2R")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppspdlog r-rcppeigen r-rcpp r-matrix))
-    (home-page "https://github.com/kharchenkolab/N2R")
-    (synopsis
-     "Fast and Scalable Approximate k-Nearest Neighbor Search Methods using 'N2' Library")
-    (description
-     "This package implements methods to perform fast approximate K-nearest neighbor
-search on input matrix.  Algorithm based on the N2 implementation of an
-approximate nearest neighbor search using hierarchical Navigable Small World
-(NSW) graphs.  The original algorithm is described in \"Efficient and Robust
-Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World
-Graphs\", Y. Malkov and D. Yashunin, <doi:10.1109/TPAMI.2018.2889473>,
-<arXiv:1603.09320>.")
-    (license license:asl2.0)))
 
 (define-public r-n2h4
   (package

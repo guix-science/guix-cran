@@ -4516,34 +4516,6 @@ estimates.  Package development was supported by the Academy of Finland research
 grant 338891.")
     (license license:gpl3)))
 
-(define-public r-multicolor
-  (package
-    (name "r-multicolor")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "multicolor" version))
-              (sha256
-               (base32
-                "1b1i49l1qc0n7y2a6pf5hr7cjh2pny92zvxhmvb1hxw5r94aym2f"))))
-    (properties `((upstream-name . "multicolor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-dplyr
-                             r-crayon
-                             r-cowsay))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aedobbyn/multicolor/")
-    (synopsis "Add Multiple Colors to your Console & RMarkdown Output")
-    (description "Add multiple colors to text that is printed to the console.")
-    (license license:expat)))
-
 (define-public r-multicoll
   (package
     (name "r-multicoll")
@@ -10246,32 +10218,6 @@ particular, birth-year dependent mortality tables using a yearly trend to
 extrapolate from a base year are implemented, as well as period life table,
 cohort life tables using an age shift, and merged life tables.")
     (license license:gpl2+)))
-
-(define-public r-mortalitylaws
-  (package
-    (name "r-mortalitylaws")
-    (version "1.9.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MortalityLaws" version))
-              (sha256
-               (base32
-                "0hhyfgfps7wbypaf7rf96cbw6wsd9cafprmavmgyy9kpsh03096d"))))
-    (properties `((upstream-name . "MortalityLaws")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rcurl r-pbapply r-minpack-lm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mpascariu/MortalityLaws")
-    (synopsis "Parametric Mortality Models, Life Tables and HMD")
-    (description
-     "Fit the most popular human mortality laws', and construct full and abridge life
-tables given various input indices.  A mortality law is a parametric function
-that describes the dying-out process of individuals in a population during a
-significant portion of their life spans.  For a comprehensive review of the most
-important mortality laws see Tabeau (2001) <doi:10.1007/0-306-47562-6_1>.
-Practical functions for downloading data from various human mortality databases
-are provided as well.")
-    (license license:expat)))
 
 (define-public r-mortalitygaps
   (package
@@ -25835,33 +25781,6 @@ if you are not familiar with R, the core features of this package are available
 from a web browser (<https://www.metaumbrella.org/>).")
     (license license:gpl3)))
 
-(define-public r-metatools
-  (package
-    (name "r-metatools")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "metatools" version))
-              (sha256
-               (base32
-                "15w63l41ag8xnyf06w336zpw4fgk18z3i9r3sfqv6fqi5xs27p8z"))))
-    (properties `((upstream-name . "metatools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-metacore
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://pharmaverse.github.io/metatools/")
-    (synopsis "Enable the Use of 'metacore' to Help Create and Check Dataset")
-    (description
-     "Uses the metadata information stored in metacore objects to check and build
-metadata associated columns.")
-    (license license:expat)))
-
 (define-public r-metathis
   (package
     (name "r-metathis")
@@ -26680,6 +26599,7 @@ format corresponds to input data of the Shiny app MetaboExtract
     (propagated-inputs (list r-zoo
                              r-pracma
                              r-plyr
+                             r-metagenomeseq
                              r-gss
                              r-ggplot2
                              r-edger
@@ -27337,39 +27257,6 @@ result of each individual.")
 community by interacting with the Metaculus API, currently located at
 <https://www.metaculus.com/api2/>.")
     (license license:gpl3)))
-
-(define-public r-metacore
-  (package
-    (name "r-metacore")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "metacore" version))
-              (sha256
-               (base32
-                "0hcaf4fq5z1nv910yvs5gav9scfwrm0b60n80ycsspkimmg86cmj"))))
-    (properties `((upstream-name . "metacore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readxl
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://atorus-research.github.io/metacore/")
-    (synopsis
-     "Centralized Metadata Object Focus on Clinical Trial Data Programming Workflows")
-    (description
-     "Create an immutable container holding metadata for the purpose of better
-enabling programming activities and functionality of other packages within the
-clinical programming workflow.")
-    (license license:expat)))
 
 (define-public r-metacor
   (package
@@ -33103,45 +32990,6 @@ penalty term to minimize the differences between the total sub-annual flows and
 the annual flow.  The method is described in Nguyen et al (2020)
 <DOI:10.1002/essoar.10504791.1>.")
     (license license:gpl2+)))
-
-(define-public r-mbnmatime
-  (package
-    (name "r-mbnmatime")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MBNMAtime" version))
-              (sha256
-               (base32
-                "1qm8g9hljl3qsnh434dzg2y0iyq635ym1ygfzr0q8l6h76qr7p1j"))))
-    (properties `((upstream-name . "MBNMAtime")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-rjags
-                             r-reshape2
-                             r-rdpack
-                             r-r2jags
-                             r-magrittr
-                             r-knitr
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=MBNMAtime")
-    (synopsis
-     "Run Time-Course Model-Based Network Meta-Analysis (MBNMA) Models")
-    (description
-     "Fits Bayesian time-course models for model-based network meta-analysis (MBNMA)
-that allows inclusion of multiple time-points from studies.  Repeated measures
-over time are accounted for within studies by applying different time-course
-functions, following the method of Pedder et al. (2019) <doi:10.1002/jrsm.1351>.
- The method allows synthesis of studies with multiple follow-up measurements
-that can account for time-course for a single or multiple treatment comparisons.
- Several general time-course functions are provided; others may be added by the
-user.  Various characteristics can be flexibly added to the models, such as
-correlation between time points and shared class effects.  The consistency of
-direct and indirect evidence in the network can be assessed using unrelated mean
-effects models and/or by node-splitting.")
-    (license license:gpl3)))
 
 (define-public r-mbnmadose
   (package

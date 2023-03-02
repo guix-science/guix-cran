@@ -131,13 +131,13 @@ in package DysPIAData is needed.")
 (define-public r-dynwrap
   (package
     (name "r-dynwrap")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynwrap" version))
               (sha256
                (base32
-                "0jsikx274nyjq4w286j4wqxrwyv6hvgx923clvdm6ygng1pn1cfr"))))
+                "0670ibia0475mx4pxhjac5nw3h93cmk1kkarhmp6550qi6jqq3s2"))))
     (properties `((upstream-name . "dynwrap")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -619,32 +619,30 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2022)
 (define-public r-dynfeature
   (package
     (name "r-dynfeature")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynfeature" version))
               (sha256
                (base32
-                "0sxn4znmfa6z3j1jg457byq2c1mgnh8h5hskxiri3g0vg8nf7671"))))
+                "0qwz7a9gdclz1yp596pj14wkydvb6gzcm565m6vc7sargwbk85d6"))))
     (properties `((upstream-name . "dynfeature")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-testthat
                              r-reshape2
                              r-ranger
                              r-purrr
-                             r-magrittr
                              r-dynwrap
                              r-dynutils
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=dynfeature")
+    (home-page "https://github.com/dynverse/dynfeature")
     (synopsis "Feature Importance for Dynamic Processes")
     (description
      "Calculating feature importance scores from trajectories using the random forests
 algorithm and more.  Saelens and Cannoodt et al. (2019)
 <doi:10.1038/s41587-019-0071-9>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-dynetnlaresistance
   (package
@@ -1814,13 +1812,13 @@ training set) and deploying them on another (e.g., a test set).")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.7.0")
+    (version "0.7.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "1hviwda98ixf3w23bd71fxvafqg35lp7akdb9510h7594qakk0q2"))))
+                "19hwnwyp63fzg8i3spxxpr8nnxni3hvcbhnrkk0hp2jr79xpzky2"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -4680,29 +4678,6 @@ screenshots, upload their own images and maybe make a scientific figure.")
 consistent graphics and diagrams with lines, common shapes, text, and page
 settings.  Compatible with and based on the R grid package.")
     (license license:expat)))
-
-(define-public r-drat
-  (package
-    (name "r-drat")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "drat" version))
-              (sha256
-               (base32
-                "191yxlj9jccakmz27g7n9izfcy19kj3fgnw4w6zl9iq66787qpm6"))))
-    (properties `((upstream-name . "drat")))
-    (build-system r-build-system)
-    (native-inputs (list r-simplermarkdown))
-    (home-page "https://github.com/eddelbuettel/drat")
-    (synopsis "'Drat' R Archive Template")
-    (description
-     "Creation and use of R Repositories via helper functions to insert packages into
-a repository, and to add repository information to the current R session.  Two
-primary types of repositories are support: gh-pages at GitHub, as well as local
-repositories on either the same machine or a local network.  Drat is a recursive
-acronym: Drat R Archive Template.")
-    (license license:gpl2+)))
 
 (define-public r-dramaanalysis
   (package
@@ -16662,13 +16637,13 @@ installing them in a single call.")
 (define-public r-dependencyreviewer
   (package
     (name "r-dependencyreviewer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DependencyReviewer" version))
               (sha256
                (base32
-                "0z24p0y2rxz5gycf29ycchb6pbhnpimfbrhzdn5d3grnd4jdnkkk"))))
+                "0idlm1xb1pc7d28w7jjcc8qkyf8wykv8ms0zvvbv41gxqxgpjhsf"))))
     (properties `((upstream-name . "DependencyReviewer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -16997,34 +16972,6 @@ Yissachar, Nir Waysbort, Shlomit Reich Zeliger, Ruth Arnon, and Nir Friedman
 distribution for the counts that is a superposition of the binomial and negative
 binomial distribution.")
     (license license:gpl2)))
-
-(define-public r-dendsort
-  (package
-    (name "r-dendsort")
-    (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dendsort" version))
-              (sha256
-               (base32
-                "0rs7y471wrhkgibxdmfh5xhp3pa004rrlm2w08b6qli5gq4im5d2"))))
-    (properties `((upstream-name . "dendsort")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/evanbiederstedt/dendsort")
-    (synopsis "Modular Leaf Ordering Methods for Dendrogram Nodes")
-    (description
-     "An implementation of functions to optimize ordering of nodes in a dendrogram,
-without affecting the meaning of the dendrogram.  A dendrogram can be sorted
-based on the average distance of subtrees, or based on the smallest distance
-value.  These sorting methods improve readability and interpretability of tree
-structure, especially for tasks such as comparison of different distance
-measures or linkage types and identification of tight clusters and outliers.  As
-a result, it also introduces more meaningful reordering for a coupled heatmap
-visualization.  This method is described in \"dendsort: modular leaf ordering
-methods for dendrogram representations in R\", F1000Research 2014, 3: 177
-<doi:10.12688/f1000research.4784.1>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-dendser
   (package
@@ -22518,30 +22465,32 @@ Software_, *90*(6), 1-38 <doi:10.18637/jss.v090.i06> for more information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "1.0.13")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataquieR" version))
               (sha256
                (base32
-                "03fsdqihznbwr386p5grf31qjgir3hbq16zq4nhgsw6qfpyja3j1"))))
+                "14fzz16jf1b8g40806ma8i9dml5wc0fjvbh3604lxf1883jvvr4y"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase
+    (propagated-inputs (list r-scales
+                             r-robustbase
                              r-rlang
+                             r-rio
                              r-reshape
                              r-r-devices
+                             r-qmrparser
                              r-patchwork
                              r-parallelmap
                              r-multinomialci
                              r-mass
                              r-lubridate
                              r-lme4
-                             r-ggpubr
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://dataquality.ship-med.uni-greifswald.de/")
     (synopsis "Data Quality in Epidemiological Research")
     (description
@@ -24315,41 +24264,6 @@ procedures for simulating data and quasi orders and transforming different
 formulations in knowledge space theory.  See package?DAKS for an overview.")
     (license license:gpl2+)))
 
-(define-public r-daisie
-  (package
-    (name "r-daisie")
-    (version "4.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DAISIE" version))
-              (sha256
-               (base32
-                "1zpc6qfs509zak93cf816xd0m815qrb9183qgbdg3gqbmjg0m7ab"))))
-    (properties `((upstream-name . "DAISIE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testit
-                             r-tensor
-                             r-subplex
-                             r-rcppeigen
-                             r-rcpp
-                             r-pracma
-                             r-matrix
-                             r-magrittr
-                             r-foreach
-                             r-doparallel
-                             r-desolve
-                             r-ddd
-                             r-bh))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/rsetienne/DAISIE")
-    (synopsis
-     "Dynamical Assembly of Islands by Speciation, Immigration and Extinction")
-    (description
-     "Simulates and computes the (maximum) likelihood of a dynamical model of island
-biota assembly through speciation, immigration and extinction.  See e.g. Valente
-et al.  2015.  Ecology Letters 18: 844-852, <DOI:10.1111/ele.12461>.")
-    (license license:gpl3)))
-
 (define-public r-dair
   (package
     (name "r-dair")
@@ -24998,13 +24912,13 @@ U.S. FDA.")
 (define-public r-d4storagehub4r
   (package
     (name "r-d4storagehub4r")
-    (version "0.4-2")
+    (version "0.4-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "d4storagehub4R" version))
               (sha256
                (base32
-                "0fkg14zjnlgz988pb76ihi5ajilnqji7mwnc4a3qsfjkx1acib96"))))
+                "1a6clkld20vmvacdwr4rir34mj4fm5fdh687b2whds6y0rj7wgb3"))))
     (properties `((upstream-name . "d4storagehub4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

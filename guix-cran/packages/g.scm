@@ -15,8 +15,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages version-control)
   #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
@@ -6178,62 +6178,6 @@ modeling, differential gene expression analysis and visualization of such data."
 an igraph object, and generates a uniform narrative or tabular description of
 the object.")
     (license license:gpl3)))
-
-(define-public r-grancore
-  (package
-    (name "r-grancore")
-    (version "0.2.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GRANCore" version))
-              (sha256
-               (base32
-                "0xnm7jb2s4ag4qvsfs1fq0f2ikvfqm3bvxhj8kmmxwynwl5pw287"))))
-    (properties `((upstream-name . "GRANCore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-switchr))
-    (home-page "https://github.com/gmbecker/GRANCore")
-    (synopsis "Classes and Methods for 'GRANBase'")
-    (description
-     "This package provides the classes and methods for GRANRepository objects that
-are used within the GRAN build framework for R packages.  This is primarily used
-by the GRANBase package and repositories that are created by it.")
-    (license license:artistic2.0)))
-
-(define-public r-granbase
-  (package
-    (name "r-granbase")
-    (version "2.6.20")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GRANBase" version))
-              (sha256
-               (base32
-                "0z9378qimdpxrslib2avimik3xqd41angfg12j8vmcbg7zh3binh"))))
-    (properties `((upstream-name . "GRANBase")))
-    (build-system r-build-system)
-    (inputs (list subversion git))
-    (propagated-inputs (list r-switchr
-                             r-stringi
-                             r-sendmailr
-                             r-rcurl
-                             r-markdown
-                             r-jsonlite
-                             r-htmltable
-                             r-grancore
-                             r-dplyr
-                             r-desc
-                             r-covr))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/gmbecker/gRAN")
-    (synopsis
-     "Creating Continuously Integrated Package Repositories from Manifests")
-    (description
-     "Repository based tools for department and analysis level reproducibility.
-GRANBase allows creation of custom branched, continuous integration-ready R
-repositories, including incremental testing of only packages which have changed
-versions since the last repository build.")
-    (license license:artistic2.0)))
 
 (define-public r-gramquad
   (package
@@ -14609,13 +14553,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrcs" version))
               (sha256
                (base32
-                "0k5qma9jplm7jd8zgc7q8vfxaadi9ssmwmwhhrqn73cpk059hafp"))))
+                "0bckgg9m6gfh4y45mqw3i83i9ba53mvvkbjf2qqnd474axd5f7qx"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2))
@@ -22391,13 +22335,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.1.0")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "11f1b75849wvplcp67rhj5rxzhbn72ykxrb43j1s525yzyfkmhvr"))))
+                "0xdv7h88zcg22969jbq1gaidn64jqaygwacwqxw4g9f1rmi16xv6"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram

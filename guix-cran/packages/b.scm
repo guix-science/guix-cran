@@ -8721,13 +8721,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.4-6")
+    (version "0.4-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blavaan" version))
               (sha256
                (base32
-                "0vny9w7ad70kvs4m1hdy87qq9053a20z5xbma68mcgfl5v78fbc9"))))
+                "1hq863d64sq2p1c6911n5nl40sw156vh6b6fizwkrzzsl5j74ms3"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -13313,25 +13313,6 @@ algorithm (Garriga J. and Bartumeus F. (2018), <arXiv:1812.09869>).")
     (description
      "Regression for data too large to fit in memory.  This package functions exactly
 like the biglm package, but works with later versions of R.")
-    (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-biglm
-  (package
-    (name "r-biglm")
-    (version "0.9-2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "biglm" version))
-              (sha256
-               (base32
-                "0iy9xr2bq42wlizgwlz7w5kh9206yqkw9h2cr6mcsmizgjg3rkvd"))))
-    (properties `((upstream-name . "biglm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-dbi))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=biglm")
-    (synopsis "Bounded Memory Linear and Generalized Linear Models")
-    (description "Regression for data too large to fit in memory.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bigleaf

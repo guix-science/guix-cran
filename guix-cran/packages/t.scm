@@ -5938,31 +5938,6 @@ Approximations (Farris, 1969) <doi:10.2307/2412182> and custom optimality
 criteria are implemented.")
     (license license:gpl3+)))
 
-(define-public r-treeplyr
-  (package
-    (name "r-treeplyr")
-    (version "0.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "treeplyr" version))
-              (sha256
-               (base32
-                "0k5hblnpbs8h2812blc6crx1j9w9r7lzkz3fraxkn4gdfpfi5100"))))
-    (properties `((upstream-name . "treeplyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
-                             r-phytools
-                             r-lazyeval
-                             r-geiger
-                             r-dplyr
-                             r-ape))
-    (home-page "https://github.com/uyedaj/treeplyr")
-    (synopsis "'dplyr' Functionality for Matched Tree and Data Objects")
-    (description
-     "Matches phylogenetic trees and trait data, and allows simultaneous manipulation
-of the tree and data using dplyr'.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
@@ -6212,6 +6187,26 @@ parameters for either method.  Examples are included to illustrate how to use
 the methods on single-cell data for studying gene and pathway expression
 dynamics and pathway expression specificity.")
     (license license:lgpl3+)))
+
+(define-public r-treediff
+  (package
+    (name "r-treediff")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "treediff" version))
+              (sha256
+               (base32
+                "14rf47g01xp7lgppjw5dzhh1lmnigg795zc4i1fyydggkf8zjvpd"))))
+    (properties `((upstream-name . "treediff")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat r-rlang r-reshape2 r-limma r-dplyr))
+    (home-page "https://forgemia.inra.fr/scales/treediff")
+    (synopsis "Testing Differences Between Families of Trees")
+    (description
+     "Perform test to detect differences in structure between families of trees.  The
+method is based on cophenetic distances and aggregated Student's tests.")
+    (license license:gpl3+)))
 
 (define-public r-treediagram
   (package
@@ -16436,40 +16431,6 @@ across different tasks in a process known as transfer learning.  Transfer
 learning train a model with a smaller dataset, improve generalization, and speed
 up training.")
     (license license:asl2.0)))
-
-(define-public r-tfevents
-  (package
-    (name "r-tfevents")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tfevents" version))
-              (sha256
-               (base32
-                "13aic0qx5b5xnp1xvnm9xbmqbc083g9y7977a95hkf6s7nxhgs6c"))))
-    (properties `((upstream-name . "tfevents")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-zeallot
-                             r-withr
-                             r-vctrs
-                             r-rlang
-                             r-rcpp
-                             r-png
-                             r-fs
-                             r-ellipsis
-                             r-digest
-                             r-cli
-                             r-blob))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/mlverse/tfevents")
-    (synopsis "Write Events for 'TensorBoard'")
-    (description
-     "This package provides a convenient way to log scalars, images, audio, and
-histograms in the tfevent record file format.  Logged data can be visualized on
-the fly using TensorBoard', a web based tool that focuses on visualizing the
-training progress of machine learning models.")
-    (license license:expat)))
 
 (define-public r-tfestimators
   (package

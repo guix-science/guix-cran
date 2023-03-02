@@ -1121,29 +1121,6 @@ control groups.  The exterior match is used to compare the two control groups.")
      "This package creates family objects identical to stats family but for new links.")
     (license license:gpl3)))
 
-(define-public r-extdplyr
-  (package
-    (name "r-extdplyr")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "extdplyr" version))
-              (sha256
-               (base32
-                "1zbnp0h0lv1dr40dhdw6ii8rmc5lxcq4wjsm83xpd3y8x9xpglnl"))))
-    (properties `((upstream-name . "extdplyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-lazyeval r-dplyr))
-    (home-page "https://cran.r-project.org/package=extdplyr")
-    (synopsis "Data Manipulation Extensions of 'Dplyr' and 'Tidyr'")
-    (description
-     "If dplyr is a grammar for data manipulation, extdplyr is like a short paragraph
-written in dplyr'.  extdplyr extends dplyr and tidyr verbs to some common
-\"routines\" that manipulate data sets.  It uses the same interface and preserves
-all the features from dplyr', has good performance, and supports various data
-sources.")
-    (license license:expat)))
-
 (define-public r-extdist
   (package
     (name "r-extdist")
@@ -4007,6 +3984,28 @@ packages.  Janssenswillen et al. (2020)
     (description
      "This package provides functions for setting up and analyzing event history data.")
     (license license:gpl2)))
+
+(define-public r-evdbayes
+  (package
+    (name "r-evdbayes")
+    (version "1.1-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evdbayes" version))
+              (sha256
+               (base32
+                "1adlwyr1csjmwcpc7jsywzggpvr3fk500hyahzy774jmgj3j09vh"))))
+    (properties `((upstream-name . "evdbayes")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=evdbayes")
+    (synopsis "Bayesian Analysis in Extreme Value Theory")
+    (description
+     "This package provides functions for the Bayesian analysis of extreme value
+models, using Markov chain Monte Carlo methods.  Allows the construction of both
+uninformative and informed prior distributions for common statistical models
+applied to extreme event data, including the generalized extreme value
+distribution.")
+    (license license:gpl2+)))
 
 (define-public r-evd
   (package
