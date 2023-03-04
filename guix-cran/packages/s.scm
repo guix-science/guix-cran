@@ -11,6 +11,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
@@ -557,13 +558,13 @@ to the original data.  Important reference papers on this method include Murray
 (define-public r-synlik
   (package
     (name "r-synlik")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "synlik" version))
               (sha256
                (base32
-                "0qx4j3nqppq5kswdvj1wfcilmmi5vhwrkcf16y5nfxbyzzij94sh"))))
+                "0pslag0nb9v872yr383chjdavz8hv9m0ba3pvxhfpshxsfzczcca"))))
     (properties `((upstream-name . "synlik")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
@@ -11590,16 +11591,26 @@ version of the code lists made available in this package is
 (define-public r-statcanr
   (package
     (name "r-statcanr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statcanR" version))
               (sha256
                (base32
-                "0yggj9ygnskbwn9flrhcgqahgbqg314dam41mi1s3hq1mjf77dyg"))))
+                "0f0ampyjqp0kgbar8jsbxpx9039jmxgz236v63nqmy1cgkdfn0d4"))))
     (properties `((upstream-name . "statcanR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-readr r-httr r-data-table r-curl))
+    (propagated-inputs (list r-tibble
+                             r-reshape2
+                             r-readr
+                             r-qs
+                             r-qpdf
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/warint/statcanR/")
     (synopsis "Client for Statistics Canada's Open Economic Data")
@@ -16711,16 +16722,17 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.5.2")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spOccupancy" version))
               (sha256
                (base32
-                "00cv7h10awx87ghhrvpn095f9v8zldydalinjjhvfjdw6pzms6l3"))))
+                "185v1gf8pkxv5nly0ps387nla94cm5yrwhd3kb5s3y4p8py1glky"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
+                             r-mass
                              r-lme4
                              r-foreach
                              r-doparallel
@@ -18835,13 +18847,13 @@ corrections from the original word.")
 (define-public r-spei
   (package
     (name "r-spei")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPEI" version))
               (sha256
                (base32
-                "0z0r7mm7hbk2vaaw6fg6hg31lpslhf2b6g9v7yw1s66i6x9y5s7i"))))
+                "1xn7hdj5h68mvkb81pmwha665c6k57pa7k59bb84zhvxgdnczksn"))))
     (properties `((upstream-name . "SPEI")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22968,13 +22980,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.7.0")
+    (version "2.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "0x1xcb5n1djdy1bi258076y066cskm82h2929hw0w0lxv6hf6acz"))))
+                "135bfni7qc7hm7r5phdx90aaa5pvkygb1q8bpns77xbd9m82q70c"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -23058,13 +23070,13 @@ detailed in Peruzzi and Dunson (2020) <arXiv:2012.00943>.  Funded by ERC grant
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "4.1.20")
+    (version "4.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spaMM" version))
               (sha256
                (base32
-                "112jw1y95s704k230vnpa8lmzcallzvgrx4xkypdg0w8pp8ap7l3"))))
+                "0yb80sph04k5r7pfsrxcr9qlkl9jnfsy5ifhqxpkpkafx45hc4jb"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -34907,13 +34919,13 @@ provides functions to plot and summarise the outputs.")
 (define-public r-simaerep
   (package
     (name "r-simaerep")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simaerep" version))
               (sha256
                (base32
-                "0bsw7n3lbqb8dr5gwyf15r1p0vx07vyl8dcwj7yqsx0bxgw919xw"))))
+                "1s13d8f4izwzrav7rhmx3s8nv36m5kwz806r85k7gqn24lnaa5ra"))))
     (properties `((upstream-name . "simaerep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38782,17 +38794,17 @@ input binding that works with various DOM elements.")
 (define-public r-shiny-router
   (package
     (name "r-shiny-router")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shiny.router" version))
               (sha256
                (base32
-                "1ayiky1x8l0ff59n1637f8jgf13572f4bsrfx7iclqbdd232046f"))))
+                "1rlmpxly9wy88z6d15hdxwd5q9pv7x9kknc4g62rcq2iy7pycsq2"))))
     (properties `((upstream-name . "shiny.router")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmltools))
-    (home-page "https://cran.r-project.org/package=shiny.router")
+    (propagated-inputs (list r-shiny r-htmltools r-glue))
+    (home-page "https://appsilon.github.io/shiny.router/")
     (synopsis "Basic Routing for Shiny Web Applications")
     (description
      "It is a simple router for your Shiny apps.  The router allows you to create
@@ -40962,13 +40974,13 @@ hot-spot classification (Chainey (2020) ISBN:158948584X).")
 (define-public r-sfheaders
   (package
     (name "r-sfheaders")
-    (version "0.4.0")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sfheaders" version))
               (sha256
                (base32
-                "0ig02nszrs6fkjkrkqibp23n4a8qr4i09yz7l741yjd0308ddg46"))))
+                "0b3vm8zsi8v13f8khggw69p8bpi7fycyby46d096zyrpqlsbk7zd"))))
     (properties `((upstream-name . "sfheaders")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-geometries))
@@ -44775,13 +44787,13 @@ negative rate and symptom based administration of diagnostic tests.
 (define-public r-sehrnett
   (package
     (name "r-sehrnett")
-    (version "0.0.3")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sehrnett" version))
               (sha256
                (base32
-                "09h30j390wnkglzq5c7ihladzmv2i439r27p3np2c850a69m0izp"))))
+                "0nsgaf79cs2fnjb42vzlmbi92290vrlp5bpgg6mnik3yh5fq2ndr"))))
     (properties `((upstream-name . "sehrnett")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -51830,6 +51842,38 @@ been studied by Davis (1973) <doi:10.1037/h0033951>; MacCoun & Kerr (1988)
 <doi:10.1037/1076-8971.7.3.622>, among others.")
     (license license:cc0)))
 
+(define-public r-satdad
+  (package
+    (name "r-satdad")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "satdad" version))
+              (sha256
+               (base32
+                "00ggzmq4lbl17qwhm0mj588566n5gladafvi4j4fyrw3lln9zfwc"))))
+    (properties `((upstream-name . "satdad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-partitions
+                             r-maps
+                             r-igraph
+                             r-graphicalextremes
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=satdad")
+    (synopsis
+     "Sensitivity Analysis Tools for Dependence and Asymptotic Dependence")
+    (description
+     "Tools for analyzing tail dependence in any sample or in particular theoretical
+models.  The package uses only theoretical and non parametric methods, without
+inference.  The primary goals of the package are to provide: (a)symmetric
+multivariate extreme value models in any dimension; theoretical and empirical
+indices to order tail dependence; theoretical and empirical graphical methods to
+visualize tail dependence.")
+    (license license:gpl3+)))
+
 (define-public r-sassy
   (package
     (name "r-sassy")
@@ -55365,13 +55409,13 @@ object and thus all methods of the biclust package can be applied.")
 (define-public r-s3fs
   (package
     (name "r-s3fs")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s3fs" version))
               (sha256
                (base32
-                "0rczpmszqfvf049cnfyak5mcfbbvwmnijl7vrcn4s15h48vq1c86"))))
+                "0ahadn252mnh3wvi510lrzglh20mln4dz50yszm4p221mb4b3kff"))))
     (properties `((upstream-name . "s3fs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

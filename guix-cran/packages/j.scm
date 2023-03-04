@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -989,13 +990,13 @@ The report appears in the RStudio viewer pane.")
 (define-public r-jsdm
   (package
     (name "r-jsdm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jSDM" version))
               (sha256
                (base32
-                "0i54gsvs63705cmn7bzna1f5nrnyr40ffbkjk202dl689lp05fb3"))))
+                "12601lm4dxc19k086wacqly1008c3mhyl0h3vznsfxsfzi1jczv7"))))
     (properties `((upstream-name . "jSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1012,7 +1013,7 @@ The report appears in the RStudio viewer pane.")
     (synopsis "Joint Species Distribution Models")
     (description
      "Fits joint species distribution models ('jSDM') in a hierarchical Bayesian
-framework (Warton et al.  2015 <doi:10.1016/j.tree.2015.09.007>).  The Gibbs
+framework (Warton and al.  2015 <doi:10.1016/j.tree.2015.09.007>).  The Gibbs
 sampler is written in C++.  It uses Rcpp', Armadillo and GSL to maximize
 computation efficiency.")
     (license (list license:gpl3

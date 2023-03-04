@@ -18,6 +18,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gl)
   #:use-module (gnu packages mpi)
@@ -4516,6 +4517,34 @@ estimates.  Package development was supported by the Academy of Finland research
 grant 338891.")
     (license license:gpl3)))
 
+(define-public r-multicolor
+  (package
+    (name "r-multicolor")
+    (version "0.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multicolor" version))
+              (sha256
+               (base32
+                "1m7fgsh7izic7q9k784agry47hhcsm3asgzf06ki67k1yls49w4q"))))
+    (properties `((upstream-name . "multicolor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-crayon
+                             r-cowsay))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aedobbyn/multicolor/")
+    (synopsis "Add Multiple Colors to your Console & RMarkdown Output")
+    (description "Add multiple colors to text that is printed to the console.")
+    (license license:expat)))
+
 (define-public r-multicoll
   (package
     (name "r-multicoll")
@@ -5226,17 +5255,16 @@ explore or document a data set using a tree structure.")
 (define-public r-muhvt
   (package
     (name "r-muhvt")
-    (version "2.0.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "muHVT" version))
               (sha256
                (base32
-                "0zcmm2vjw1wak4xzfw3ikd94gd6knzm795183pl4vma0q0ll5bd2"))))
+                "0a963dhzzirv03pq9hlzyq5alcj224ci55jyn7bsmn06lpl13gk3"))))
     (properties `((upstream-name . "muHVT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-splancs
                              r-sp
                              r-scales
@@ -5245,11 +5273,9 @@ explore or document a data set using a tree structure.")
                              r-purrr
                              r-polyclip
                              r-plyr
-                             r-patchwork
                              r-mass
                              r-magrittr
                              r-hmisc
-                             r-gtools
                              r-ggplot2
                              r-dplyr
                              r-deldir
@@ -5260,11 +5286,11 @@ explore or document a data set using a tree structure.")
     (synopsis
      "Constructing Hierarchical Voronoi Tessellations and Overlay Heatmap for Data Analysis")
     (description
-     "Constructing hierarchical voronoi tessellations for a given data set and overlay
-heatmap for variables at various levels of the tessellations for in-depth data
-analysis.  See <https://en.wikipedia.org/wiki/Voronoi_diagram> for more
-information.  Credits to Mu Sigma for their continuous support throughout the
-development of the package.")
+     "The muHVT package is a collection of R functions to facilitate building topology
+preserving maps for rich multivariate data.See
+<https://en.wikipedia.org/wiki/Voronoi_diagram> for more information.  Credits
+to Mu Sigma for their continuous support throughout the development of the
+package.")
     (license license:asl2.0)))
 
 (define-public r-muerelativerisk
@@ -12446,13 +12472,13 @@ M. (1975).  Multivariate analysis.  Charles Griffin&Company Ltd,.  sen, P. K.
 (define-public r-modi
   (package
     (name "r-modi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modi" version))
               (sha256
                (base32
-                "0v78vzb22v2h2qlfhsyi0d2j3c2gj3wgv67p6gv74269kiaglf92"))))
+                "0vyphvjbrif286ygxrqqjlx3ypn45zs5wm34scz97d0x5vf5zhcd"))))
     (properties `((upstream-name . "modi")))
     (build-system r-build-system)
     (propagated-inputs (list r-norm r-mass))
@@ -15822,13 +15848,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3tuningspaces" version))
               (sha256
                (base32
-                "16yaah9zncl0daq453cl00mbpk9pvap8wv3myb5azj27v7pp1fb6"))))
+                "1m2bcfv8a5z97zi6n0rz4nf9rings5bpxn821q4kj41lk0chn2zb"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -15978,13 +16004,13 @@ uploading to OpenML', see the OpenML package.")
 (define-public r-mlr3mbo
   (package
     (name "r-mlr3mbo")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3mbo" version))
               (sha256
                (base32
-                "0gm2waqp6mb2nf12rnwfyig9n9c2bxdyq4mhhray8cc6fcb100f0"))))
+                "1hnmlaymsnpk4bxlyg3za64svhscns0zpgvb4l2adl4x4ifipxnw"))))
     (properties `((upstream-name . "mlr3mbo")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -16017,13 +16043,13 @@ optimization algorithms include Efficient Global Optimization by Jones et al.
 (define-public r-mlr3hyperband
   (package
     (name "r-mlr3hyperband")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3hyperband" version))
               (sha256
                (base32
-                "02zyw4wir8gnqfv7g4b19ldfmnbxqgvbcnp744fcv67gigh8glsh"))))
+                "0ynfzb7y0vmrx7pr6681112nhzdfvdj5flpr6jab2ancgkg22syl"))))
     (properties `((upstream-name . "mlr3hyperband")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -16038,23 +16064,24 @@ optimization algorithms include Efficient Global Optimization by Jones et al.
     (home-page "https://mlr3hyperband.mlr-org.com")
     (synopsis "Hyperband for 'mlr3'")
     (description
-     "This package implements hyperband method for hyperparameter tuning.  Various
-termination criteria can be set and combined.  The class AutoTuner provides a
-convenient way to perform nested resampling in combination with mlr3'.  The
-hyperband algorithm was proposed by Lisha Li, Kevin Jamieson, Giulia DeSalvo,
-Afshin Rostamizadeh and Ameet Talwalkar (2018) <arXiv:1603.06560>.")
+     "Successive Halving (Jamieson and Talwalkar (2016) <arXiv:1502.07943>) and
+Hyperband (Li et al.  2018 <arXiv:1603.06560>) optimization algorithm for the
+mlr3 ecosystem.  The implementation in mlr3hyperband features improved
+scheduling and parallelizes the evaluation of configurations.  The package
+includes tuners for hyperparameter optimization in mlr3tuning and optimizers for
+black-box optimization in bbotk.")
     (license license:lgpl3)))
 
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.10.0")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3fselect" version))
               (sha256
                (base32
-                "03sv2ni6qwyppzfkj2dilvgh53jvc400ws5379bipqq2mghiah9k"))))
+                "0z47gygf1s4967gj9n5dsjymy9bcr7j8c7s3z7k4qmbnh71nn9w6"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -27258,6 +27285,39 @@ community by interacting with the Metaculus API, currently located at
 <https://www.metaculus.com/api2/>.")
     (license license:gpl3)))
 
+(define-public r-metacore
+  (package
+    (name "r-metacore")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "metacore" version))
+              (sha256
+               (base32
+                "0pc0z0i4psm00pack5rx4pmg0cq9x0yiv8xwmnkn80rl3yhagq98"))))
+    (properties `((upstream-name . "metacore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://atorus-research.github.io/metacore/")
+    (synopsis
+     "Centralized Metadata Object Focus on Clinical Trial Data Programming Workflows")
+    (description
+     "Create an immutable container holding metadata for the purpose of better
+enabling programming activities and functionality of other packages within the
+clinical programming workflow.")
+    (license license:expat)))
+
 (define-public r-metacor
   (package
     (name "r-metacor")
@@ -32686,6 +32746,27 @@ mcb'.")
     (description
      "This package provides two variants of multiple correspondence analysis (ca):
 multiple ca and ordered multiple ca via orthogonal polynomials of Emerson.")
+    (license license:gpl3+)))
+
+(define-public r-mcauchyd
+  (package
+    (name "r-mcauchyd")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mcauchyd" version))
+              (sha256
+               (base32
+                "0qlfmxcpaq8l5ix4b0mnbzgjrq47wchxvzjq6iqkbsjzz2h48bjm"))))
+    (properties `((upstream-name . "mcauchyd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-mass))
+    (home-page "https://forgemia.inra.fr/imhorphen/mcauchyd")
+    (synopsis "Multivariate Cauchy Distribution; Kullback-Leibler Divergence")
+    (description
+     "Distance between multivariate Cauchy distributions, as presented by N. Bouhlel
+and D. Rousseau (2022) <doi:10.3390/e24060838>.  Manipulation of multivariate
+Cauchy distributions.")
     (license license:gpl3+)))
 
 (define-public r-mcartest

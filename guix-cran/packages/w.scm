@@ -3227,13 +3227,13 @@ Environmental Protection Agency
 (define-public r-wildrwolf
   (package
     (name "r-wildrwolf")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wildrwolf" version))
               (sha256
                (base32
-                "19cn7n97f2jsf83i1kpwsi886vpz231n0b4827ys6nm6clbav7fw"))))
+                "1cl3rv8v3y8y86cl6y5da63qkzha37f20naaqrypk65rn47savig"))))
     (properties `((upstream-name . "wildrwolf")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-fwildclusterboot r-fixest r-fabricatr

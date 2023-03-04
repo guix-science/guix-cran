@@ -10,6 +10,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages python)
@@ -23,7 +24,6 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages code)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pdf)
@@ -2483,13 +2483,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PsychWordVec" version))
               (sha256
                (base32
-                "19i4zx9qs8fcf2n9m38g96wd9i7rr0s8rva1bd09q75h62gw4v7k"))))
+                "0f2pba976skln2pgq0rs77br4qzx86pf3npsavap3y3nss5yazmk"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
@@ -4004,13 +4004,13 @@ Hearts formula.")
 (define-public r-psborrow
   (package
     (name "r-psborrow")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psborrow" version))
               (sha256
                (base32
-                "01wcv066r048xhxndrpcabc5arx5sjkhka9ly394pdms4xg1ygr7"))))
+                "0m2jcf5awlwkzscsps0fczpaflxzi0w6m9qxlzm7abip277lhgpd"))))
     (properties `((upstream-name . "psborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4598,13 +4598,13 @@ the day of the month.")
 (define-public r-provenance
   (package
     (name "r-provenance")
-    (version "4.0")
+    (version "4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "provenance" version))
               (sha256
                (base32
-                "0ds798jjb7hcc473ca51rylnl5zpcbv02z88rvj9zs8vj22kdy6j"))))
+                "137mayfp2jm859zymp1c62vs8fw06l58w07c44h2a0szjrwkgc0j"))))
     (properties `((upstream-name . "provenance")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-isoplotr))
@@ -4617,15 +4617,17 @@ for adaptive kernel density estimation, principal component analysis,
 correspondence analysis, multidimensional scaling, generalised procrustes
 analysis and individual differences scaling using a variety of dissimilarity
 measures.  Univariate provenance proxies, such as single-grain ages or
-(isotopic) compositions are compared with the Kolmogorov-Smirnov, Kuiper or
-Sircombe-Hazelton L2 distances.  Categorical provenance proxies such as chemical
-compositions are compared with the Aitchison and Bray-Curtis distances, and
-point-counting data with the chi-square distance.  Also included are tools to
-plot compositional and point-counting data on ternary diagrams and
-point-counting data on radial plots, to calculate the sample size required for
-specified levels of statistical precision, and to assess the effects of
-hydraulic sorting on detrital compositions.  Includes an intuitive query-based
-user interface for users who are not proficient in R.")
+(isotopic) compositions are compared with the Kolmogorov-Smirnov, Kuiper,
+Wasserstein-2 or Sircombe-Hazelton L2 distances.  Categorical provenance proxies
+such as chemical compositions are compared with the Aitchison and Bray-Curtis
+distances,and count data with the chi-square distance.  Varietal data can either
+be converted to one or more distributional datasets, or directly compared using
+the multivariate Wasserstein distance.  Also included are tools to plot
+compositional and count data on ternary diagrams and point-counting data on
+radial plots, to calculate the sample size required for specified levels of
+statistical precision, and to assess the effects of hydraulic sorting on
+detrital compositions.  Includes an intuitive query-based user interface for
+users who are not proficient in R.")
     (license license:gpl2)))
 
 (define-public r-provdebugr
@@ -6026,13 +6028,13 @@ and photometry in its own right.")
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "profoc" version))
               (sha256
                (base32
-                "1s2m7a8iyfcacvcgp543wgxv121difhjas5h2cdba8p8s5zn6px3"))))
+                "1lybn7h6q2br4vkaz85f99rhacryx0r2v9sfy87r8c25lh5d4kr5"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -7771,13 +7773,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/curConverter.do>.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriceIndices" version))
               (sha256
                (base32
-                "183q3s7mpfhxxv2iizfg79kf9ah7qd1cxsbnmyh8v912f5fkkh48"))))
+                "0xqg3ycggy4wsgb87mn02q23dn8l2wvrbffq4kxhxdlbs65z9ikq"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -13417,13 +13419,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "4.6")
+    (version "4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomp" version))
               (sha256
                (base32
-                "0xrd9ymhgk2xkchyhr1gky88fsvbbx4gpy6spd6pc2qg788wnci4"))))
+                "1kgqp4lsk3s3n68h22f1lb0vcyhv7p2v88jvnbza487q9h9ba1rg"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -16258,6 +16260,29 @@ Networks and Alzheimerâs Disease Risk Via Novel Extension of Sparse Canonic
 Correlation\" at bioRxiv.")
     (license license:gpl2+)))
 
+(define-public r-pm3
+  (package
+    (name "r-pm3")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pm3" version))
+              (sha256
+               (base32
+                "0zb9lzdsd25ismsrjkqv54aqy0jynk72p0sqb4jqigyn7x073ss1"))))
+    (properties `((upstream-name . "pm3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tableone))
+    (home-page "https://cran.r-project.org/package=pm3")
+    (synopsis "Propensity Score Matching for Unordered 3-Group Data")
+    (description
+     "You can use this program for 3 sets of categorical data for propensity score
+matching.  Assume that the data has 3 different categorical variables.  You can
+use it to perform propensity matching of baseline indicator groupings.  The
+matching will make the differences in the baseline data smaller.  This method
+was described by Alvaro Fuentes (2022) <doi:10.1080/00273171.2021.1925521>.")
+    (license license:gpl3)))
+
 (define-public r-plusser
   (package
     (name "r-plusser")
@@ -18998,13 +19023,13 @@ Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and Applications.
 (define-public r-pkpdsim
   (package
     (name "r-pkpdsim")
-    (version "1.1.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PKPDsim" version))
               (sha256
                (base32
-                "0h9rxwjh2cxn3mlpgwy86lrq6y820rhxjyxhjyi4l0k7j6cshlbd"))))
+                "1n86zl8gka78anny7fj7l95bamckwkv5ijjiihpcfyj7fmac3y72"))))
     (properties `((upstream-name . "PKPDsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -19015,7 +19040,8 @@ Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and Applications.
                              r-jsonlite
                              r-data-table
                              r-bh))
-    (home-page "https://cran.r-project.org/package=PKPDsim")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InsightRX/PKPDsim")
     (synopsis
      "Tools for Performing Pharmacokinetic-Pharmacodynamic Simulations")
     (description
@@ -29244,13 +29270,13 @@ block design.")
 (define-public r-pbatr
   (package
     (name "r-pbatr")
-    (version "2.2-15")
+    (version "2.2-16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pbatR" version))
               (sha256
                (base32
-                "0v3yq1p1rpz4k7haz58cyrpvh3qvfh4s09kc4sjglxqisvsq1gyq"))))
+                "1sgglw357igphrfrsqbwfk44b31p2vz0d3nr1qivrjp8rqia8b7n"))))
     (properties `((upstream-name . "pbatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rootsolve))

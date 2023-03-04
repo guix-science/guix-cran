@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages video)
   #:use-module (gnu packages photo)
@@ -14909,31 +14910,6 @@ accordance with the Rayleigh-Criterion.  The main objective of this package is
 to synthesize or predict a tidal time series.")
     (license license:gpl3)))
 
-(define-public r-tictoc
-  (package
-    (name "r-tictoc")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tictoc" version))
-              (sha256
-               (base32
-                "0ka7zd857xfqb5afn0psn0yzfv2qjb0ddxfyiq6aggbnla5qc3qj"))))
-    (properties `((upstream-name . "tictoc")))
-    (build-system r-build-system)
-    (home-page "https://github.com/jabiru/tictoc")
-    (synopsis
-     "Functions for Timing R Scripts, as Well as Implementations of \"Stack\" and \"List\" Structures")
-    (description
-     "Code execution timing functions tic and toc that can be nested.  One can record
-all timings while a complex script is running, and examine the values later.  It
-is also possible to instrument the timing calls with custom callbacks.  In
-addition, this package provides class Stack', implemented as a vector, and class
-List', implemented as a list, both of which support operations push', pop',
-first_element', last_element and clear'.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-tictactoe
   (package
     (name "r-tictactoe")
@@ -19857,16 +19833,17 @@ this study is included in the package to illustrate how to use it.")
 (define-public r-tdcmstan
   (package
     (name "r-tdcmstan")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tdcmStan" version))
               (sha256
                (base32
-                "08gdqm2hb33kw3jhag0n7a4linydxichzr0ss96yg9h65993pag0"))))
+                "0xa80r37abc9fzf9zcf0zpimadwa3glhw3qbn7wbg0cq93cm04df"))))
     (properties `((upstream-name . "tdcmStan")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang

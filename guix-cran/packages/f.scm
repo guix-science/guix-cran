@@ -3651,13 +3651,13 @@ efficient implementation of the generic magging estimator.")
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
-    (version "3.4.3")
+    (version "3.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FRESA.CAD" version))
               (sha256
                (base32
-                "1ki5i7mjg99p2zdzpaph1qvcygn4qjbpq4nn29bd60rx1vgbm9a0"))))
+                "0fr98nfzsdb38saancmibkqayfv4gzks2by78dvqxsadw481zf33"))))
     (properties `((upstream-name . "FRESA.CAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6040,16 +6040,16 @@ extracting and replacing names and symbols from these objects.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.3.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "formatters" version))
               (sha256
                (base32
-                "0fq7ygy1dbz2ncb2f979dfajlcbzrwljn6qkfx0rjvl1vwcvi9hk"))))
+                "1cbaq3ym22hfpzgxf1cin8zmgmq63k7wpryfgrfah4pwa7f8svwb"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
-    (propagated-inputs (list r-htmltools))
+    (propagated-inputs (list r-htmltools r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/formatters")
     (synopsis "ASCII Formatting for Values and Tables")
@@ -14548,21 +14548,21 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdasrvf" version))
               (sha256
                (base32
-                "0yakhmvb1d34c8g8y6p1kf1x37nhwgawzq1xhvxxhir27sppsmwi"))))
+                "1ym5my1kfynb3hh9dd6mxhwsb17ph51fd74mf54v4jpaan6g5x4a"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-tolerance
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
-                             r-matrixcalc
                              r-matrix
                              r-lpsolve
                              r-foreach
@@ -14570,7 +14570,7 @@ the plot of the functional data.")
                              r-doparallel
                              r-coda
                              r-cli))
-    (home-page "https://cran.r-project.org/package=fdasrvf")
+    (home-page "https://github.com/jdtuck/fdasrvf_R")
     (synopsis "Elastic Functional Data Analysis")
     (description
      "This package performs alignment, PCA, and modeling of multidimensional and

@@ -4327,18 +4327,18 @@ computational time.  See Llaberia-Robledillo et al. (2022,
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtables" version))
               (sha256
                (base32
-                "0jl166gcwnnqhw4lzk6nwmbsc92mmlvib80kxb4q08l3d4psk9bh"))))
+                "1gsb7aff2ikqszjbbfxb58kh0n4agmdnaxx9is9k7755gdz1146n"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-htmltools r-formatters))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/roche/rtables")
+    (home-page "https://github.com/insightsengineering/rtables")
     (synopsis "Reporting Tables")
     (description
      "Reporting tables often have structure that goes beyond simple rectangular data.
@@ -8548,13 +8548,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.1")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "0p6p4lhfiy19y6dfk7w4pkm9sln191xy6gwraxr6r9pa2ydd1v1p"))))
+                "1wl18ck9gii7gfzvrdbqf81qxsg82p9vyxnsp7f65lmyz99df6ji"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -9083,13 +9083,13 @@ extended with Monte Carlo simulations following the method of Crouch et al
 (define-public r-rpresto
   (package
     (name "r-rpresto")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPresto" version))
               (sha256
                (base32
-                "1n9pgjzdrwk6k328943p9gr6ggikyjfnrvxlny2a10jdf3jz9wzq"))))
+                "1j78948nayf8n14nyacqxjs9i8jppsr334vci58bxfcj927jcck1"))))
     (properties `((upstream-name . "RPresto")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10010,26 +10010,6 @@ approach and two alternatives approaches to characterize chromatographic column.
 September 2018.  Superseded by rsoi package which includes the historical and
 most recent monthly PDO index values together with related climate indices.")
     (license license:cc0)))
-
-(define-public r-rpdb
-  (package
-    (name "r-rpdb")
-    (version "2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rpdb" version))
-              (sha256
-               (base32
-                "0zy5f7bli6ppc9giwf8845mzjcv54r2sqb8hxwgbn9k6rjlszgi8"))))
-    (properties `((upstream-name . "Rpdb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl))
-    (home-page "https://cran.r-project.org/package=Rpdb")
-    (synopsis "Read, Write, Visualize and Manipulate PDB Files")
-    (description
-     "This package provides tools to read, write, visualize PDB files and perform some
-structural manipulations.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rpca
   (package
@@ -30733,13 +30713,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "13rinhqznq38z0h01s1c28af21m9nyshp760vgl7dsg9h42p79q4"))))
+                "152ycfnlw6csr70hv1amhihxm8gms3rlbyx5y7044arsimzqjicm"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34537,13 +34517,13 @@ manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.10.1")
+    (version "1.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCzechia" version))
               (sha256
                (base32
-                "140z3mb5zn082iil0g19jyfws8m72ziyrxj61sn2iwn55g56qrlq"))))
+                "0v3z39h397bklq8f2sdv6h8g7xii1vrwi18ssq07yjfhsh12iwra"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
@@ -36090,30 +36070,6 @@ not found.")
      "Rcpp11 includes a header only C++11 library that facilitates integration between
 R and modern C++.")
     (license license:expat)))
-
-(define-public r-rcpmod
-  (package
-    (name "r-rcpmod")
-    (version "2.192")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RCPmod" version))
-              (sha256
-               (base32
-                "15frf0g3vd0cpfgsfhg5q9s4s21yr0wkq3fjppciw6bz4p3xqbiv"))))
-    (properties `((upstream-name . "RCPmod")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-gtools r-glmnet r-fishmod))
-    (home-page "https://cran.r-project.org/package=RCPmod")
-    (synopsis "Regions of Common Profiles Modelling with Mixtures-of-Experts")
-    (description
-     "Identifies regions of common (species) profiles (RCPs), possibly when sampling
-artefacts are present.  Within a region the probability of sampling all species
-remains approximately constant.  This is performed using mixtures-of-experts
-models.  The package also contains associated methods, such as diagnostics.
-Details of the method can be found in Foster et al (2013) <doi:10.1002/env.2245>
-and Foster et al. (2017) <doi:10.1111/rssc.12211>.")
-    (license license:gpl2+)))
 
 (define-public r-rcplex
   (package
@@ -39441,13 +39397,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.6-5")
+    (version "1.6-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RBesT" version))
               (sha256
                (base32
-                "16i9s2856l73ywrfmvjxxxbngxs7nhzl3aq4ml74vm1a0zjk4b5s"))))
+                "11fld283v3fd1iyhmjm8vax19vhfay5ndkdsw6wj4rxlz6ayw083"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -39467,7 +39423,7 @@ distribution and random vectors from the Dirichlet distribution.")
                              r-bayesplot
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "http://opensource.nibr.com/RBesT/")
+    (home-page "https://opensource.nibr.com/RBesT/")
     (synopsis "R Bayesian Evidence Synthesis Tools")
     (description
      "Tool-set to support Bayesian evidence synthesis.  This includes meta-analysis,
@@ -41304,6 +41260,44 @@ Insect.  Conserv.  Divers.  5:159-168 <doi:10.1111/j.1752-4598.2011.00148.x>;
 Leroy et al.  2013, Divers.  Distrib.  19:794-803 <doi:10.1111/ddi.12040>).")
     (license license:gpl2+)))
 
+(define-public r-rarfreq
+  (package
+    (name "r-rarfreq")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RARfreq" version))
+              (sha256
+               (base32
+                "1yy6kkymkajafrmqqsbxfalz9bii55px2rmnn7z5f97d5m5nvqk2"))))
+    (properties `((upstream-name . "RARfreq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-patchwork
+                             r-magrittr
+                             r-latex2exp
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=RARfreq")
+    (synopsis "Response Adaptive Randomization with 'Frequentist' Approach")
+    (description
+     "This package provides functions and command-line user interface to generate
+allocation sequence by response-adaptive randomization for clinical trials.  The
+package currently supports two response-adaptive randomization procedures,
+Doubly Adaptive Biased Coin Design ('DBCD') and Sequential Estimation-adjusted
+Urn Model ('SEU'), for two endpoints, binary and normal.  One-sided proportion
+(or mean) difference and Chi-square (or ANOVA') hypothesis testing methods are
+also available in the package to facilitate the inference for treatment effect
+under different sample sizes and the inference for sample size under different
+treatment effects.  Additionally, the package provides comprehensive and
+efficient tools to allow one to evaluate and compare the performance of
+randomization procedures and tests based on various criteria.  Five allocation
+functions for DBCD and six addition rule functions for SEU are implemented to
+target allocations such as Neyman', Rosenberger and Urn allocations.")
+    (license license:expat)))
+
 (define-public r-rarenmtests
   (package
     (name "r-rarenmtests")
@@ -42398,13 +42392,13 @@ Hijmans (2006) <doi:10.1111/j.1466-8238.2006.00257.x>.")
 (define-public r-rangebuilder
   (package
     (name "r-rangebuilder")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rangeBuilder" version))
               (sha256
                (base32
-                "10sp40jkqv04980dqqshk1ixsl789sk3sdf8ygwfp95a44rx20v4"))))
+                "1r82rmmfwbfl2lxcsnl9xwyr2932jv43cjlvlihi5172irpfgvpw"))))
     (properties `((upstream-name . "rangeBuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

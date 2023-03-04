@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages x)
@@ -832,30 +833,6 @@ will eventually make their way onto the project website at
 (1990) <DOI:10.1016/0893-6080(90)90049-Q>.  It is applicable to the pattern
 recognition with a N-level response, where N > 2.")
     (license license:gpl2+)))
-
-(define-public r-yamm
-  (package
-    (name "r-yamm")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Yamm" version))
-              (sha256
-               (base32
-                "1x0214nw4hk1xs2qgz532ff1fydkwkq449l1zdbv088rhxs8c2ch"))))
-    (properties `((upstream-name . "Yamm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robustx r-interp r-depth))
-    (home-page "https://cran.r-project.org/package=Yamm")
-    (synopsis "Multivariate Methods Based on Projections and Related Concepts")
-    (description
-     "Functionality to compute the projection median via several algorithms.  Also
-provides functions to plot different multivariate medians and multivariate
-quantiles in two-dimensional and three-dimensional data respectively.  See Chen,
-F and Nason, G P (2020) \"A new method for computing the projection median, its
-influence curve and techniques for the production of projected quantile plots.\"
-PLOS One <doi:10.1371/journal.pone.0229845>.")
-    (license license:gpl2)))
 
 (define-public r-yamlme
   (package

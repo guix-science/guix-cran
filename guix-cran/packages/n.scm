@@ -17,6 +17,7 @@
   #:use-module (gnu packages c)
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -12059,6 +12060,43 @@ Conventions
 <http://cfconventions.org/Data/cf-conventions/cf-conventions-1.7/cf-conventions.html>.")
     (license license:lgpl2.1)))
 
+(define-public r-ncc
+  (package
+    (name "r-ncc")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NCC" version))
+              (sha256
+               (base32
+                "0zp854m5ig8w5xag4a1s56b33kfjds3wqydjxacvj5fkpr1y586d"))))
+    (properties `((upstream-name . "NCC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spamm
+                             r-rlang
+                             r-rjags
+                             r-rbest
+                             r-parallelly
+                             r-mgcv
+                             r-magick
+                             r-lmertest
+                             r-iterators
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://pavlakrotka.github.io/NCC/")
+    (synopsis
+     "Simulation and Analysis of Platform Trials with Non-Concurrent Controls")
+    (description
+     "Design and analysis of flexible platform trials with non-concurrent controls.
+Functions for data generation, analysis, visualization and running simulation
+studies are provided.  The implemented analysis methods are described in: Bofill
+Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
+<doi:10.1177/17407745221112013> and Schmidli et al. (2014)
+<doi:10.1111/biom.12242>.")
+    (license license:expat)))
+
 (define-public r-ncbit
   (package
     (name "r-ncbit")
@@ -13421,13 +13459,13 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.7.3")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "08wbizxiwhkm01cm508v9v0lbhqc2agnq6sj677yjqzq1kp3m3l0"))))
+                "0r66arzr5i4j5v7zir9flvf0ak7rwjv4g83skhfybxcywp12p8g8"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

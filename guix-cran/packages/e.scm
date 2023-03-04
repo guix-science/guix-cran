@@ -10,6 +10,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
@@ -1769,50 +1770,6 @@ hybrid offspring with the expression level in parents.  For non-additive
 expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (including two sub-genomes) species for the time being.")
     (license license:agpl3+)))
-
-(define-public r-expertsurv
-  (package
-    (name "r-expertsurv")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "expertsurv" version))
-              (sha256
-               (base32
-                "192idvq3xws06fhx4h4lynn228a24ys9ps64imfz5rikkv4cjdcq"))))
-    (properties `((upstream-name . "expertsurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-stanheaders
-                             r-shelf
-                             r-scales
-                             r-rstantools
-                             r-rstan
-                             r-rms
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-magrittr
-                             r-loo
-                             r-ggplot2
-                             r-flexsurv
-                             r-dplyr
-                             r-bh
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=expertsurv")
-    (synopsis "Incorporate Expert Opinion with Parametric Survival Models")
-    (description
-     "Enables users to incorporate expert opinion with parametric survival analysis
-using a Bayesian or frequentist approach.  Expert Opinion can be provided on the
-survival probabilities at certain time-point(s) or for the difference in mean
-survival between two treatment arms.Please reference its use as Cooney, P.,
-White, A. (2023) <doi:10.1177/0272989X221150212>.")
-    (license license:expat)))
 
 (define-public r-expertchoice
   (package
@@ -5689,13 +5646,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.2.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "espadon" version))
               (sha256
                (base32
-                "06lri62bpv4hspvwwxq5r1qypj63jw9kshz4wplmywazf8bpif61"))))
+                "04l37v5pj59s8j7x0ww0c1v0fd4iazgpp3ny0f3wvn2kcdbmx5q1"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -7577,13 +7534,13 @@ Gennemark, Keiko Funa, BjÃ¶rn Nilsson, Linda Lindahl, Sven Nelander (2011)
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epm" version))
               (sha256
                (base32
-                "0vr1qydafkj0xlm395alpjkck6ahspi89pjk3zp31f2i6cx71hcx"))))
+                "1n4q0gnwq4jrsy8gir1x5m0ijlk2nwinlavf05g947l1yx1kq06b"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -8189,53 +8146,6 @@ omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
 analysis across all omics features using quantile-based g-Computation (as
 described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
     (license license:gpl3+)))
-
-(define-public r-epinow2
-  (package
-    (name "r-epinow2")
-    (version "1.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EpiNow2" version))
-              (sha256
-               (base32
-                "0dnrkbvgw92dfh6crx9bssklmm361nr5fz4mjzy9298na6fphllm"))))
-    (properties `((upstream-name . "EpiNow2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-stanheaders
-                             r-scales
-                             r-runner
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-r-utils
-                             r-purrr
-                             r-progressr
-                             r-patchwork
-                             r-lubridate
-                             r-lifecycle
-                             r-ggplot2
-                             r-future-apply
-                             r-future
-                             r-futile-logger
-                             r-data-table
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://epiforecasts.io/EpiNow2/")
-    (synopsis
-     "Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters")
-    (description
-     "Estimates the time-varying reproduction number, rate of spread, and doubling
-time using a range of open-source tools (Abbott et al. (2020)
-<doi:10.12688/wellcomeopenres.16006.1>), and current best practices (Gostic et
-al. (2020) <doi:10.1101/2020.06.18.20134858>).  It aims to help users avoid some
-of the limitations of naive implementations in a framework that is informed by
-community feedback and is actively supported.")
-    (license license:expat)))
 
 (define-public r-epinetr
   (package
@@ -14123,13 +14033,13 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
 (define-public r-egret
   (package
     (name "r-egret")
-    (version "3.0.7")
+    (version "3.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EGRET" version))
               (sha256
                (base32
-                "1fxpcdsq7njf1hjy3a4i0fx0ah9v7jzmdwg4c7009nikyhx5ri6x"))))
+                "1dzqqbijmry48dnpixnhgcsvsz48rbyhxm2pi965js1bghfzpq17"))))
     (properties `((upstream-name . "EGRET")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -14144,9 +14054,7 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
     (description
      "Statistics and graphics for streamflow history, water quality trends, and the
 statistical modeling algorithm: Weighted Regressions on Time, Discharge, and
-Season (WRTDS).  The modeling method is introduced and discussed in Hirsch et
-al. (2010) <doi:10.1111/j.1752-1688.2010.00482.x>, and expanded in Hirsch and De
-Cicco (2015) <doi:10.3133/tm4A10>.")
+Season (WRTDS).")
     (license license:cc0)))
 
 (define-public r-egor
@@ -17468,13 +17376,13 @@ Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
 (define-public r-ecochange
   (package
     (name "r-ecochange")
-    (version "2.9.3")
+    (version "2.9.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecochange" version))
               (sha256
                (base32
-                "0iwagqnvac06a0ydgq16z06iz7yni5ggh558bkjv1h0s4ffm5imm"))))
+                "1dr7a0qi6rf6vrqr4pbrkif5hvdjp5gyz5mk996mbqb939hpxbsg"))))
     (properties `((upstream-name . "ecochange")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

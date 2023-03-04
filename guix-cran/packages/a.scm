@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
@@ -2961,30 +2962,6 @@ scripts and \".Rmd\" or \".qmd\" files can be used independently of a package
 development.")
     (license license:gpl3)))
 
-(define-public r-atsd
-  (package
-    (name "r-atsd")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "atsd" version))
-              (sha256
-               (base32
-                "0jan8r5f2r3l2xpdf9rrv4smkr2l645rfdgdfjb1xa54jd3pqvqs"))))
-    (properties `((upstream-name . "atsd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcurl r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/axibase/atsd-api-r/")
-    (synopsis "Support Querying Axibase Time-Series Database")
-    (description
-     "This package provides functions for retrieving time-series and related meta-data
-such as entities, metrics, and tags from the Axibase Time-Series Database
-(ATSD).  ATSD is a non-relational clustered database used for storing
-performance measurements from IT infrastructure resources: servers, network
-devices, storage systems, and applications.")
-    (license license:asl2.0)))
-
 (define-public r-atsa
   (package
     (name "r-atsa")
@@ -4285,17 +4262,18 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.45")
+    (version "4.3.49")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "11xp044q833gg85bii82q0yy7dsjfvz247c0xinf50s914priv99"))))
+                "1crp44i13n46vwzrw4kqqffgacw4kqliqbrhky7dgg5wj8y4hr8g"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sticky
+                             r-rlang
                              r-reshape2
                              r-rcolorbrewer
                              r-ggplot2
@@ -10522,30 +10500,31 @@ and shiny-based GUI.")
 (define-public r-amt
   (package
     (name "r-amt")
-    (version "0.1.7")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "amt" version))
               (sha256
                (base32
-                "04sjvb4zvalv22q90n50rdkkj002vr5shhpgxacaac7hy0pgpcyc"))))
+                "0h8b4n5kva0a1fd3dywsy0w806m2jv9lvf370nxm4yn7jyzc3cxq"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-terra
                              r-survival
-                             r-sp
+                             r-sfheaders
                              r-sf
                              r-rlang
-                             r-rgeos
                              r-rdpack
-                             r-rcpp
-                             r-raster
                              r-purrr
-                             r-magrittr
+                             r-mass
                              r-lubridate
+                             r-kernsmooth
+                             r-fnn
                              r-fitdistrplus
                              r-dplyr
+                             r-data-table
                              r-ctmm
                              r-circular
                              r-checkmate))
@@ -13566,6 +13545,47 @@ the center of the pie plot.  Imagine it's like a dartboard and the center means
 coverage.  The standard distribution of completeness allocated in the pie plot
 is 50%, 80% and 100% completeness.")
     (license license:gpl2)))
+
+(define-public r-aihuman
+  (package
+    (name "r-aihuman")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aihuman" version))
+              (sha256
+               (base32
+                "0isd6j3qfhl9dfcknzsfyipvvni7bw6cpdkk4v5azpi3mcixbq4n"))))
+    (properties `((upstream-name . "aihuman")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-metr
+                             r-mass
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-coda
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sooahnshin/aihuman")
+    (synopsis
+     "Experimental Evaluation of Algorithm-Assisted Human Decision-Making")
+    (description
+     "This package provides statistical methods for analyzing experimental evaluation
+of the causal impacts of algorithmic recommendations on human decisions
+developed by Imai, Jiang, Greiner, Halen, and Shin (2023)
+<doi:10.1093/jrsssa/qnad010>.  The data used for this paper, and made available
+here, are interim, based on only half of the observations in the study and (for
+those observations) only half of the study follow-up period.  We use them only
+to illustrate methods, not to draw substantive conclusions.")
+    (license license:gpl2+)))
 
 (define-public r-aif360
   (package
@@ -16940,13 +16960,13 @@ range.")
 (define-public r-adegraphics
   (package
     (name "r-adegraphics")
-    (version "1.0-17")
+    (version "1.0-18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adegraphics" version))
               (sha256
                (base32
-                "13730llschjq1lmsqakrwjkhvm78g6rf1dgy4wbbsm8m3srr9vnb"))))
+                "0g2n9n72k8wj4qibd0v68ispgq5kzpkfhbnyk3h1g69yyz07zq4g"))))
     (properties `((upstream-name . "adegraphics")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -17899,13 +17919,13 @@ base date to facilitate actuarial reporting and to compare results.")
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actuaRE" version))
               (sha256
                (base32
-                "1jwdjfzh5cj22cc1w6xdy51ya1mgncrcsmlc0smgxhkm2pp6flj2"))))
+                "0nxy03nsg1adssdfd7qxc507srw9fb3azzl0yzrx006nmkawilyp"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -18207,13 +18227,13 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
 (define-public r-act
   (package
     (name "r-act")
-    (version "1.2.4")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "act" version))
               (sha256
                (base32
-                "01q2xmdqga1gffg18njaa36l5bzpw0lbqiyxxsynydzymanqr88c"))))
+                "0zbbv9kz05r26f4sxqilynh6kj0kc123bixcjr9yqm6s8kj4yrkl"))))
     (properties `((upstream-name . "act")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18478,13 +18498,13 @@ congruence class.  See also Louca & Pennell (2020)
 (define-public r-accumulate
   (package
     (name "r-accumulate")
-    (version "0.8.1")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "accumulate" version))
               (sha256
                (base32
-                "04sl9jg2z2grg61p3wfy8463cpzxdf9blpb2vjh9n85yprai98f1"))))
+                "14gy2l9ayhwym3dz1n70y76skpyzhl7dv4m2rf1kmj6qf1dznqb0"))))
     (properties `((upstream-name . "accumulate")))
     (build-system r-build-system)
     (native-inputs (list r-simplermarkdown))

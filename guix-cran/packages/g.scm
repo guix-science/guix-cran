@@ -3213,13 +3213,13 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "growthcleanr" version))
               (sha256
                (base32
-                "0x4znxf0rrprg89w66k35m76nvnxln9m11py7mvmd4b1a6d8s6a4"))))
+                "18aj6wvr26srs3cfrj7rkf2d3vxqy4kn82dmfc8mazlf4f2plrra"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7800,13 +7800,13 @@ following URL: <https://github.com/jarun/googler>.")
 (define-public r-googlepubsubr
   (package
     (name "r-googlepubsubr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googlePubsubR" version))
               (sha256
                (base32
-                "114yhhqjpg7khgq82y1qdpnm6pbqinlgwh5n1lx6fzsm1ajhl0kv"))))
+                "1f9nd93x2z82jwjw2nha2czcnix7r97h1g3llgfx1b970gsm3pk1"))))
     (properties `((upstream-name . "googlePubsubR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-googleauthr r-cli))
@@ -8978,13 +8978,13 @@ matched, the GNRS does not attempt to match state or county.")
 (define-public r-gnrprod
   (package
     (name "r-gnrprod")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gnrprod" version))
               (sha256
                (base32
-                "0ndrw2ym0f9m593q51lf069nf6fasrwb3psv1qr914jpm6vcp9di"))))
+                "1xvl2h8dm9pf4m6d7g1v47nz4bbrrcidkicm8r2m3aa7gvh4vids"))))
     (properties `((upstream-name . "gnrprod")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -14648,13 +14648,13 @@ ggplot2 package plotting.")
 (define-public r-ggrain
   (package
     (name "r-ggrain")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrain" version))
               (sha256
                (base32
-                "1davdg6dz4y3yz9iggjq7firljrcp1wqq4p40laqxdrk7hg9ir0p"))))
+                "129b9ypny134w0qqi9d86bx3x588136lxscasqdbcpda1l2nj6ni"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21732,13 +21732,13 @@ metrics, and even larger datasets.")
 (define-public r-geniebpc
   (package
     (name "r-geniebpc")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genieBPC" version))
               (sha256
                (base32
-                "0zc0qbzj5a6rxzddw6jmk3rbbig09gcnb58003f4qkrm9mzc42gm"))))
+                "0wc9avjwy4i6zikhqi3mcyws8a6kbgk6qzrrmrm2hlxf5gzlfr47"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27068,13 +27068,13 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GABB" version))
               (sha256
                (base32
-                "19wfk5awsa5hspcfsc0hl9d98vxx5khggd809cx8mg1v02fc96qr"))))
+                "0xv7b9j2qgicbd24557lylcisn65l6m60x8nnf7799map34djvgw"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

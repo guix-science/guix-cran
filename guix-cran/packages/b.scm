@@ -16,6 +16,7 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
@@ -2715,19 +2716,18 @@ less efficient.")
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "0.8.9")
+    (version "0.8.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bruceR" version))
               (sha256
                (base32
-                "1z30n0n1zy1445mjzp6sjg6f4g8n6qfq6s8vd8kx8ib7xhi9lp32"))))
+                "0qi8d542l8vj6mbk4kkv3r8wlrhlx2pqyaq7k7pi35cvivwqgaq0"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-texreg
                              r-stringr
-                             r-see
                              r-rstudioapi
                              r-rio
                              r-psych
@@ -2739,17 +2739,11 @@ less efficient.")
                              r-lavaan
                              r-jtools
                              r-interactions
-                             r-glue
-                             r-ggtext
                              r-ggplot2
-                             r-forcats
                              r-emmeans
                              r-effectsize
                              r-dplyr
                              r-data-table
-                             r-crayon
-                             r-cowplot
-                             r-car
                              r-afex))
     (home-page "https://psychbruce.github.io/bruceR/")
     (synopsis "Broadly Useful Convenient and Efficient R Functions")
@@ -16627,13 +16621,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.4.12")
+    (version "1.4.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BED" version))
               (sha256
                (base32
-                "11almlvkvh536dxfl1d58xwwpvgcm6zh3v92ybr9h44r3c63lwhs"))))
+                "0icfp0mgmqv4g66q2sr8y04j6xh2ja88ajjq0ng7zfjpm92rrdks"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -24294,32 +24288,6 @@ multiple K-sample testing with ball divergence <doi: 10.1002/gepi.22423> is
 supported, which is particularly helpful for genome-wide association study.")
     (license license:gpl3)))
 
-(define-public r-balcony
-  (package
-    (name "r-balcony")
-    (version "0.2.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BALCONY" version))
-              (sha256
-               (base32
-                "1wfy0dmwfzd9jp6g92ld8jqzx97grgq4h6dy4y5063vfd9i4slwx"))))
-    (properties `((upstream-name . "BALCONY")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr
-                             r-scales
-                             r-rpdb
-                             r-readr
-                             r-progress
-                             r-dplyr
-                             r-biostrings))
-    (home-page "https://cran.r-project.org/package=BALCONY")
-    (synopsis "Better ALignment CONsensus analYsis")
-    (description
-     "Facilitates the evolutionary analysis and structure conservation study of
-specified amino acids in proteins.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-balancedsampling
   (package
     (name "r-balancedsampling")
@@ -24439,19 +24407,22 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "0vv4cv98y9z4cpgmp6gxkbwq0nh46lc3l6rv6dps1hnlk187i7vd"))))
+                "1avyzxhcn31gbjfyxlwqai1zc7k95cv48w8h3a41mvqpq2if38ws"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-stringr
+                             r-rstatix
                              r-rlang
                              r-purrr
+                             r-openxlsx
                              r-magrittr
                              r-dplyr))
     (home-page "https://github.com/william-swl/baizer")

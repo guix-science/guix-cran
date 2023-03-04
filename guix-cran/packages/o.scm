@@ -12,6 +12,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
@@ -3273,13 +3274,13 @@ object from the graph package.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OralOpioids" version))
               (sha256
                (base32
-                "088sp8z9w9kbiyri51459fpk65syabz7v8fac6izh5mrk5mckjpa"))))
+                "0bsbjfpv4wwb1nj6cpb1sqhd56lqziv0w7pgxjx8i02bhj676j7q"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7370,13 +7371,13 @@ inference is implemented using stan'.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.8-7")
+    (version "0.8-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OncoBayes2" version))
               (sha256
                (base32
-                "0psw7hily07xz61x25mg7iirr8aic32ny0770ks8ldy5rq2qjg86"))))
+                "10kzkymivyfzv80i1g28avkfiwh8zqhb2ygvgg048iq5jl2v9s8g"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
@@ -9474,6 +9475,34 @@ enables the creation and analysis of geographic entities representing large
 scale mobility patterns, from daily travel between zones in cities to migration
 between countries.")
     (license license:gpl3)))
+
+(define-public r-octopusr
+  (package
+    (name "r-octopusr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "octopusR" version))
+              (sha256
+               (base32
+                "1zkb52ihl8c4kyljfmj36zavjpns4mbfxbwkpvlqk96lm44wp70s"))))
+    (properties `((upstream-name . "octopusR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-httr2
+                             r-glue
+                             r-cli
+                             r-askpass))
+    (home-page "https://github.com/Moohan/octopusR")
+    (synopsis "Interact with the 'Octopus Energy' API")
+    (description
+     "This package is a simple wrapper for the Octopus Energy API
+<https://developer.octopus.energy/docs/api/>.  It handles authentication, by
+storing a provided API key and meter details.  Implemented endpoints include
+products for viewing tariff details and consumption for viewing meter
+consumption data.")
+    (license license:expat)))
 
 (define-public r-ocsdata
   (package

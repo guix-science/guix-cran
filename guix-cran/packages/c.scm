@@ -19,11 +19,11 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages networking)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
@@ -17297,6 +17297,28 @@ certain color space.  The functions were part of the circlize package
     (description "Color palettes for EPL, MLB, NBA, NHL, and NFL teams.")
     (license license:expat)))
 
+(define-public r-colorplane
+  (package
+    (name "r-colorplane")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "colorplane" version))
+              (sha256
+               (base32
+                "00jicdyrw6pl2x83qf9x22is21rmi011zziy3hvjw2vqvclxb38i"))))
+    (properties `((upstream-name . "colorplane")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-assertthat))
+    (home-page "https://cran.r-project.org/package=colorplane")
+    (synopsis
+     "Basic S4 Classes and Methods for Mapping Between Numeric Values and Colors")
+    (description
+     "This package provides a simple set of classes and methods for mapping between
+scalar intensity values and colors.  There is also support for layering maps on
+top of one another using alpha composition.")
+    (license license:expat)))
+
 (define-public r-colorpatch
   (package
     (name "r-colorpatch")
@@ -26753,45 +26775,6 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 Chrome web browser.")
     (license license:gpl2)))
 
-(define-public r-chromomap
-  (package
-    (name "r-chromomap")
-    (version "4.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "chromoMap" version))
-              (sha256
-               (base32
-                "1067h5d6jdbm811n7ayikhqfbcqmxbz5jgp05vf1sbln7qgn9l43"))))
-    (properties `((upstream-name . "chromoMap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=chromoMap")
-    (synopsis "Interactive Genomic Visualization of Biological Data")
-    (description
-     "This package provides interactive, configurable and elegant graphics
-visualization of the chromosomes or chromosome regions of any living organism
-allowing users to map chromosome elements (like genes, SNPs etc.) on the
-chromosome plot.  It introduces a special plot viz.  the \"chromosome heatmap\"
-that, in addition to mapping elements, can visualize the data associated with
-chromosome elements (like gene expression) in the form of heat colors which can
-be highly advantageous in the scientific interpretations and research work.
-Because of the large size of the chromosomes, it is impractical to visualize
-each element on the same plot.  However, the plot provides a magnified view for
-each of chromosome locus to render additional information and visualization
-specific for that location.  You can map thousands of genes and can view all
-mappings easily.  Users can investigate the detailed information about the
-mappings (like gene names or total genes mapped on a location) or can view the
-magnified single or double stranded view of the chromosome at a location showing
-each mapped element in sequential order.  The package provide multiple features
-like visualizing multiple sets, chromosome heat-maps, group annotations, adding
-hyperlinks, and labelling.  The plots can be saved as HTML documents that can be
-customized and shared easily.  In addition, you can include them in R Markdown
-or in R Shiny applications.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-chromer
   (package
     (name "r-chromer")
@@ -28323,13 +28306,13 @@ your local computer.")
 (define-public r-chatgpt
   (package
     (name "r-chatgpt")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chatgpt" version))
               (sha256
                (base32
-                "0d8nfpaq5a52yqs7z8rnczblqh1gj6bc0qwhx8bdb856j837xz04"))))
+                "1ahy18mr8wjarp7598lg7yqz63i3zfvz2bfn3gbxysl2awjx1ml7"))))
     (properties `((upstream-name . "chatgpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-jsonlite r-httr))
@@ -33428,13 +33411,13 @@ James Robins (2020) \"Causal Inference: What If\"
 (define-public r-causal-decomp
   (package
     (name "r-causal-decomp")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "causal.decomp" version))
               (sha256
                (base32
-                "08ccdzb5ssqhzkr3z3b8vz762mwflh33s6rrmsb9srvkk661lly2"))))
+                "12iy64dnb91l47vai9qawlwvg17x5amqg0kdj8npk1mgzm2zfz4j"))))
     (properties `((upstream-name . "causal.decomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -33443,15 +33426,18 @@ James Robins (2020) \"Causal Inference: What If\"
                              r-nnet
                              r-mass
                              r-cbps))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=causal.decomp")
     (synopsis "Causal Decomposition Analysis")
     (description
      "We implement causal decomposition analysis using the methods proposed by Park,
-Lee, and Qin (2020) <arXiv:2008.12812> and Park, Kang, and Lee (2021+).  This
+Lee, and Qin (2020) and Park, Kang, and Lee (2021+) <arXiv:2109.06940>.  This
 package allows researchers to use the multiple-mediator-imputation,
 single-mediator-imputation, and product-of-coefficients regression methods to
 estimate the initial disparity, disparity reduction, and disparity remaining.
-It also allows to make the inference conditional on baseline covariates.")
+It also allows to make the inference conditional on baseline covariates.  We
+also implement sensitivity analysis for the causal decomposition analysis using
+R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
     (license license:gpl2)))
 
 (define-public r-causact

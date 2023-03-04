@@ -11,6 +11,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
@@ -7428,6 +7429,33 @@ their mean, variance, skewness and kurtosis for the two distributions (Li, F,
 Villani, M. and Kohn, R. (2010) <doi:10.1016/j.jspi.2010.04.031>).")
     (license license:gpl2+)))
 
+(define-public r-dnetfinder
+  (package
+    (name "r-dnetfinder")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DNetFinder" version))
+              (sha256
+               (base32
+                "1hd3yx3f71rwxn2iqjk7v3vwb6p3z20fi09csnhjkq5l3wk4bkp9"))))
+    (properties `((upstream-name . "DNetFinder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-flare))
+    (home-page "https://cran.r-project.org/package=DNetFinder")
+    (synopsis
+     "Estimating Differential Networks under Semiparametric Gaussian Graphical Models")
+    (description
+     "This package provides a modified hierarchical test (Liu (2017)
+<doi:10.1214/17-AOS1539>) for detecting the structural difference between two
+Semiparametric Gaussian graphical models.  The multiple testing procedure
+asymptotically controls the false discovery rate (FDR) at a user-specified
+level.  To construct the test statistic, a truncated estimator is used to
+approximate the transformation functions and two R functions including
+lassoGGM() and lassoNPN() are provided to compute the lasso estimates of the
+regression coefficients.")
+    (license license:gpl3)))
+
 (define-public r-dnet
   (package
     (name "r-dnet")
@@ -11846,16 +11874,17 @@ handle weights and/or missings.")
 (define-public r-dinamic-duo
   (package
     (name "r-dinamic-duo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiNAMIC.Duo" version))
               (sha256
                (base32
-                "18f85pqcpmbml2li2xz410sshwsv4ks3z2g3sb4g05112dgvp55l"))))
+                "06cgc0cfdkg5g9ybxb7nnz50vngyh2sssj3bmzsw7rmrbjvfsg8p"))))
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-plyr r-dinamic r-biomart))
+    (inputs (list python))
+    (propagated-inputs (list r-plyr r-dinamic r-biomart))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DiNAMIC.Duo")
     (synopsis "Finding Recurrent DNA Copy Number Alterations and Differences")
@@ -11871,8 +11900,8 @@ of genomic markers.  Additional functionality is provided to perform downstream
 analyses, including the creation of summary files and graphics.  DiNAMIC.Duo
 builds upon the original DiNAMIC package of Walter et al. (2011)
 <doi:10.1093/bioinformatics/btq717> and leverages the theory developed in Walter
-et al. (2015) <doi:10.1093/biomet/asv046>.  A manuscript based on DiNAMIC.Duo is
-currently under development.")
+et al. (2015) <doi:10.1093/biomet/asv046>.  An article describing DiNAMIC.Duo by
+Walter et al. (2022) can be found at <doi: 10.1093/bioinformatics/btac542>.")
     (license license:gpl3)))
 
 (define-public r-dinamic
@@ -18827,13 +18856,13 @@ also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.19")
+    (version "0.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "declared" version))
               (sha256
                (base32
-                "02mkcabqybkkrblzch3snmdx5cidi8qnbvicwjpcz1vd4pb5g2wh"))))
+                "05c46vl46b3ajx5dm141z240faky8xy6ql107v5fiq4xixl9crac"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -22875,6 +22904,30 @@ an extendable suite of test for common potential errors in a dataset.")
 types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames.")
     (license license:gpl2+)))
 
+(define-public r-datagraph
+  (package
+    (name "r-datagraph")
+    (version "1.2.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DataGraph" version))
+              (sha256
+               (base32
+                "1vj008c6l1k738kp8f9vmwm6b9jnyjgix389nqgbfq8ia98qgz0k"))))
+    (properties `((upstream-name . "DataGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=DataGraph")
+    (synopsis "Export Data from 'R' to 'DataGraph'")
+    (description
+     "This package provides functions to pipe data from R to DataGraph', a graphing
+and analysis application for mac OS. Create a live connection using either
+.dtable or .dtbin files that can be read by DataGraph'.  Can save a data frame,
+collection of data frames and sequences of data frames and individual vectors.
+For more information see
+<https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
+    (license license:gpl2+)))
+
 (define-public r-datagovsgr
   (package
     (name "r-datagovsgr")
@@ -24964,13 +25017,13 @@ of structured data.")
 (define-public r-d3po
   (package
     (name "r-d3po")
-    (version "0.3.2")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "d3po" version))
               (sha256
                (base32
-                "0qhdk2ap9bkf4xfbpyh1k6s2kb6lgr2vgn5ns228vrckghwxhkri"))))
+                "0i1dxq12013ak9j6ka12a36h52lcl2k6xbismm39d3k2slm7x1rr"))))
     (properties `((upstream-name . "d3po")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -24980,7 +25033,7 @@ of structured data.")
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=d3po")
+    (home-page "https://pacha.dev/d3po/")
     (synopsis
      "Fast and Beautiful Interactive Visualization for 'Markdown' and 'Shiny'")
     (description
