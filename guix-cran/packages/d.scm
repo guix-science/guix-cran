@@ -15305,13 +15305,13 @@ Bioinformatics, In submission.")
 (define-public r-detrendr
   (package
     (name "r-detrendr")
-    (version "0.6.14")
+    (version "0.6.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "detrendr" version))
               (sha256
                (base32
-                "18yb14blw3md83lnlzalq3aqih56nndwwljds1pjqpm0ssf1d3p0"))))
+                "00j35i45a55srvdlhv0b9vcrsp44fmdv49giqm03ha015pgmsbdd"))))
     (properties `((upstream-name . "detrendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

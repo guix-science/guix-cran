@@ -8086,13 +8086,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.0.6")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrgsolve" version))
               (sha256
                (base32
-                "0hxwqi4gahsissjsyyxddxk02a81hf2wb81jwfd53pc7x9pp41nh"))))
+                "0s26d9mf5has0rrfv15vcgy3wcgv5nvlf2n5ww6bx8xb4ybzsf9l"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14387,16 +14387,16 @@ Public Release; Distribution Unlimited.")
 (define-public r-mmstat4
   (package
     (name "r-mmstat4")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmstat4" version))
               (sha256
                (base32
-                "0q19064qbdr5cnk45rmm7xyawdmsi2hkywbadlf4v06blyzsk3p0"))))
+                "00d52l2r6waij7km4pfhv1k68xysyxxrgb7sarqixkvz24d5rcgj"))))
     (properties `((upstream-name . "mmstat4")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rstudioapi r-rio r-rappdirs))
+    (propagated-inputs (list r-shiny r-rstudioapi r-rio r-rappdirs r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mmstat4")
     (synopsis "Access to Teaching Materials from a ZIP File or GitHub")
@@ -24013,13 +24013,13 @@ Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
 (define-public r-mgdrive2
   (package
     (name "r-mgdrive2")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MGDrivE2" version))
               (sha256
                (base32
-                "0nra89pq5l6mbdvvwrqk04pq2dhx0ybh5g6y9iw3jb2irr153kny"))))
+                "1n7kmn65v6fb372jyqcsqnn01xvwyascqn881avd2iclrajr6h7p"))))
     (properties `((upstream-name . "MGDrivE2")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-matrix r-desolve))
@@ -24030,14 +24030,13 @@ Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
      "This package provides a simulation modeling framework which significantly
 extends capabilities from the MGDrivE simulation package via a new mathematical
 and computational framework based on stochastic Petri nets.  For more
-information about MGDrivE', see our publication:
-<https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13318>.
-Some of the notable capabilities of MGDrivE2 include: incorporation of human
-populations, epidemiological dynamics, time-varying parameters, and a
-continuous-time simulation framework with various sampling algorithms for both
-deterministic and stochastic interpretations.  MGDrivE2 relies on the genetic
-inheritance structures provided in package MGDrivE', so we suggest installing
-that package initially.")
+information about MGDrivE', see our publication: SÃ¡nchez et al. (2019)
+<doi:10.1111/2041-210X.13318> Some of the notable capabilities of MGDrivE2
+include: incorporation of human populations, epidemiological dynamics,
+time-varying parameters, and a continuous-time simulation framework with various
+sampling algorithms for both deterministic and stochastic interpretations.
+MGDrivE2 relies on the genetic inheritance structures provided in package
+MGDrivE', so we suggest installing that package initially.")
     (license license:gpl3)))
 
 (define-public r-mgdrive
@@ -29987,13 +29986,13 @@ were programed by several mlr developers.")
 (define-public r-measurementprotocol
   (package
     (name "r-measurementprotocol")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "measurementProtocol" version))
               (sha256
                (base32
-                "0vyfkrlinwq2930xqwp1hb8g7g3q7h7yg6y0c8gkwgscrxswifhg"))))
+                "02k60psb6299p82bk7yv7isy41jq26yk4r8kmsjpfnx9dwm1kgk8"))))
     (properties `((upstream-name . "measurementProtocol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-jsonlite r-httr r-cli r-assertthat))
@@ -34232,13 +34231,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsbyname" version))
               (sha256
                (base32
-                "0if7w6k8qqa2x0vma1hgcnj0dax0s9gls43166iyhma0jhil4c4r"))))
+                "0msynlf2gwlzwyifqlcgaraw8hccjb7vx2gfq546y2qk3jzy8bci"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -34246,6 +34245,7 @@ data frame and expand a data frame of matrices into a tidy data frame.")
                              r-rclabels
                              r-purrr
                              r-matrixcalc
+                             r-matrix
                              r-magrittr
                              r-lifecycle
                              r-dplyr

@@ -11522,13 +11522,13 @@ manually specified colors depending on what is needed for the underlying data.")
 (define-public r-statdataml
   (package
     (name "r-statdataml")
-    (version "1.0-26")
+    (version "1.0-27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "StatDataML" version))
               (sha256
                (base32
-                "1lcckapbhqdbg6alnhm2yls66lnkxnxamdlzx6pbfqv1dhsy36gf"))))
+                "168bydradzprvvyfchzq4g3nc6f8kpgd5165i02nhj1irwxa6jh8"))))
     (properties `((upstream-name . "StatDataML")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml))
@@ -34148,13 +34148,13 @@ original data to determine model fit.")
 (define-public r-simfinapi
   (package
     (name "r-simfinapi")
-    (version "0.2.0")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simfinapi" version))
               (sha256
                (base32
-                "10s6m6ahkp6gw1b3axr7m2wrbh34m48aml20yl9kypkwd6af865j"))))
+                "1xzbcbl93g1hfvgbnglmn6klsrm9bblcji0qj78p5ia51vkamxmc"))))
     (properties `((upstream-name . "simfinapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppsimdjson
@@ -34170,9 +34170,9 @@ original data to determine model fit.")
     (synopsis "Accessing 'SimFin' Data")
     (description
      "Through simfinapi, you can intuitively access the SimFin Web-API
-(<https://simfin.com/>) to make SimFin data easily available in R. To obtain an
-SimFin API key (and thus to use this package), you need to register at
-<https://simfin.com/login>.")
+(<https://www.simfin.com/>) to make SimFin data easily available in R. To obtain
+an SimFin API key (and thus to use this package), you need to register at
+<https://app.simfin.com/login>.")
     (license license:gpl3)))
 
 (define-public r-simfam

@@ -5019,16 +5019,26 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8-2")
+    (version "0.8-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcdExtra" version))
               (sha256
                (base32
-                "1a0xr9laxr9wacqp5dvm3jifzx1mqk9z9kkj9zvq4pjr0zvn4yn4"))))
+                "0yyscm92wx0qnkpc1hdwd8xgfcxjgqhhm5r96gybf9iww5x91svr"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vcd r-mass r-gnm r-ca))
+    (propagated-inputs (list r-vcd
+                             r-tidyr
+                             r-stringr
+                             r-readxl
+                             r-purrr
+                             r-mass
+                             r-here
+                             r-gnm
+                             r-glue
+                             r-dplyr
+                             r-ca))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://friendly.github.io/vcdExtra/")
     (synopsis "'vcd' Extensions and Additions")

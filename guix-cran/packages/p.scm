@@ -2483,13 +2483,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PsychWordVec" version))
               (sha256
                (base32
-                "0f2pba976skln2pgq0rs77br4qzx86pf3npsavap3y3nss5yazmk"))))
+                "1ifhs7mjrnwpr3wnj2lgiafxzqc16dbq5si3ms2hnri33y47wm2q"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (propagated-inputs (list r-word2vec
@@ -13498,13 +13498,13 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
 (define-public r-pomdpsolve
   (package
     (name "r-pomdpsolve")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomdpSolve" version))
               (sha256
                (base32
-                "1hva274g5ky0v9m0k3gfrfa9z5xvxnlfbi0fcbnv9n95m2hf4yfs"))))
+                "046anv1c36d7n7676ny3s7i2aasd6ka26i9z7kmq28blx0zkaf61"))))
     (properties `((upstream-name . "pomdpSolve")))
     (build-system r-build-system)
     (home-page "https://github.com/mhahsler/pomdpSolve")
@@ -20672,16 +20672,18 @@ plot dimensions are changed.")
 (define-public r-piecewisesem
   (package
     (name "r-piecewisesem")
-    (version "2.1.2")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "piecewiseSEM" version))
               (sha256
                (base32
-                "1qxwc1drx26p4cgymrfjmg5i7ypl7gddv40virkpmc0qaag9pq36"))))
+                "0f1ya6p85iai52cdm510zm6qvkpsfkn48948q8lz9v6ykz59v5h2"))))
     (properties `((upstream-name . "piecewiseSEM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme
+    (propagated-inputs (list r-performance
+                             r-nlme
+                             r-mumin
                              r-multcomp
                              r-mass
                              r-lme4
@@ -24447,16 +24449,16 @@ parsing as described in Rudolph and Cox 2018 <doi:10.1101/447268>.")
 (define-public r-persdx
   (package
     (name "r-persdx")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "persDx" version))
               (sha256
                (base32
-                "0d6wn42hj17cw6ffkcbvbn7llklw41j2h0y8sg1xlx06l2lr93q9"))))
+                "1s0a0yi32h3armcfa3fmf7kfa40w4rl5crfc4ac63157696xnpr4"))))
     (properties `((upstream-name . "persDx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-proc))
+    (propagated-inputs (list r-survivalroc r-proc))
     (home-page "https://cran.r-project.org/package=persDx")
     (synopsis "Estimating Personalized Diagnostics Rules")
     (description

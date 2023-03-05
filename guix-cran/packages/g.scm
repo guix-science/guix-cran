@@ -3656,13 +3656,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groundhog" version))
               (sha256
                (base32
-                "1f8w4lyip0qw22vnywidvrfb9y3l4x4mb9mvkxvjcnbqjswkxkdr"))))
+                "156x2l4i9lpl5qxisiajvqlq4vcwnmirx0j80vnyz0cd1p7mq5gf"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -7720,16 +7720,16 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googletraffic" version))
               (sha256
                (base32
-                "1ibzp7fcw2d6ma2r6gv6idf220wczx4fyl6bsxrg4lsxdrclx9bz"))))
+                "0zj9lmwxl7d85izswd73p94dmy7ykjkan7j9a82ap7ij593n4fb0"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-webshot
+    (propagated-inputs (list r-webshot2
                              r-stringr
                              r-sp
                              r-sf

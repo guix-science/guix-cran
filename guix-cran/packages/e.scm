@@ -10150,16 +10150,17 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "04qbk6ynwc6063yxr8mbshb5ip189w8skqlziywmifsrjbhmsy3d"))))
+                "0q2z2gj49qb7jvrmgja389ikzbad6w2m35d5mi1n1axfgj1c6p1f"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
+                             r-shiny
                              r-sf
                              r-scales
                              r-randomforest
@@ -10170,6 +10171,7 @@ model applicability domain evaluation, and ensemble predictive modeling with
                              r-ks
                              r-gbm
                              r-foreach
+                             r-dt
                              r-doparallel
                              r-dismo
                              r-boot))

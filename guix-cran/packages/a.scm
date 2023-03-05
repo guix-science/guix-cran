@@ -2644,13 +2644,13 @@ data visualization and report generation functions.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "audubon" version))
               (sha256
                (base32
-                "1pm88grq0sjixjsm4pwlpsp4yxdy44232x4z662dzzx5bymz1j9w"))))
+                "09hq7ky2xfp81kajanjbx3j26xj2dkng4xi52ywagk40858nzfmx"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -13066,16 +13066,16 @@ JavaScript.  See <http://epoberezkin.github.io/ajv/> for details.")
 (define-public r-aisoph
   (package
     (name "r-aisoph")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aisoph" version))
               (sha256
                (base32
-                "01df9c6q9lxp4xijs1q3xkvy11nqhw2xs6hlilg56942x24q96l7"))))
+                "033dawiysl5vn1k3fjabmzc8liywk8sbahm41ga3wzhyyz6mqldm"))))
     (properties `((upstream-name . "aisoph")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-isosurv r-iso))
+    (propagated-inputs (list r-survival r-iso))
     (home-page "https://cran.r-project.org/package=aisoph")
     (synopsis "Additive Isotonic Proportional Hazards Model")
     (description
@@ -17845,18 +17845,18 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "0.2.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "1c8mq9gxj6lr3y7jmm4q69mn9k43fj9ya794mn2w1v4x4c1fw8dk"))))
+                "0rpqw3vzs0kn1kgzh1fp8vig2a92pqcy6yanrlr711kaxdjmz5q4"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-thematic
-                             r-shiny
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
                              r-scales
                              r-rlang
                              r-recipes
@@ -17868,8 +17868,7 @@ component, and push it to an Acumos platform.")
                              r-glue
                              r-ggplot2
                              r-generics
-                             r-dplyr
-                             r-bslib))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/actxps/")
     (synopsis

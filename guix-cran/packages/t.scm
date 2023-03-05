@@ -11459,13 +11459,13 @@ dependency-free.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.2.7")
+    (version "2.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinyarray" version))
               (sha256
                (base32
-                "0nhsmgg126x2rfk82d91c8rk74sg7qbshy10vcbqdgcmlz6466mh"))))
+                "1zqv2r8jffzlxmhp7x0i5my3kbz6lyqni06nhh2z85yqzn68lhb7"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11475,6 +11475,7 @@ dependency-free.")
                              r-pheatmap
                              r-patchwork
                              r-org-hs-eg-db
+                             r-magrittr
                              r-limma
                              r-ggplot2
                              r-dplyr
@@ -12181,13 +12182,13 @@ elements such as title, key-value pairs, or colour to reveal trends.")
 (define-public r-timbr
   (package
     (name "r-timbr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timbr" version))
               (sha256
                (base32
-                "154ybky7bq3y5d9945yk36lqkl2kf6yc2x8m6izc0jdnqhydlxlp"))))
+                "0h7fs9w9npvm68yriblbaczqm409macmr0xsw6lw5vp7rd8kcpqx"))))
     (properties `((upstream-name . "timbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12197,7 +12198,8 @@ elements such as title, key-value pairs, or colour to reveal trends.")
                              r-purrr
                              r-pillar
                              r-memoise
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/UchidaMizuki/timbr")
     (synopsis "Forest Data Frames")
     (description

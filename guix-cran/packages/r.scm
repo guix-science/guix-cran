@@ -32027,13 +32027,13 @@ data easily.  View the full API documentation at
 (define-public r-readxlsb
   (package
     (name "r-readxlsb")
-    (version "0.1.6")
+    (version "0.1.61")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readxlsb" version))
               (sha256
                (base32
-                "0iksr8dkxlip625nyqsfmj7pbg0b08vdi4s7w61shwwmnpsj742r"))))
+                "1l7lklfk6ifjq6v4m0ha5k1fxak62zac2yn698r03x41k29382f7"))))
     (properties `((upstream-name . "readxlsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rcpp r-cellranger))

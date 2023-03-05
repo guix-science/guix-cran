@@ -16395,13 +16395,13 @@ efficiently ethomics (high-throughput behavioural) data.")
 (define-public r-behaviorchange
   (package
     (name "r-behaviorchange")
-    (version "0.5.1")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "behaviorchange" version))
               (sha256
                (base32
-                "09q60hvnsjaq76x2agqgbmmk0wwzmwnmhbr34bdxm90cymbxrw5v"))))
+                "1nvmrl5nif10kw1risfsmvdlc4q6bkcfxpw26vwanm6ks3lamdc3"))))
     (properties `((upstream-name . "behaviorchange")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum
@@ -16424,15 +16424,15 @@ efficiently ethomics (high-throughput behavioural) data.")
      "This package contains specialised analyses and visualisation tools for behavior
 change science.  These facilitate conducting determinant studies (for example,
 using confidence interval-based estimation of relevance, CIBER, or CIBERlite
-plots, see Crutzen, Noijen & Peters (2017) <doi:10.3389/fpubh.2017.00165>),
-systematically developing, reporting, and analysing interventions (for example,
-using Acyclic Behavior Change Diagrams), and reporting about intervention
-effectiveness (for example, using the Numbers Needed for Change, see Gruijters &
-Peters (2017) <doi:10.31234/osf.io/2bau7>), and computing the required sample
-size (using the Meaningful Change Definition, see Gruijters & Peters (2020)
-<doi:10.1080/08870446.2020.1841762>).  This package is especially useful for
-researchers in the field of behavior change or health psychology and to behavior
-change professionals such as intervention developers and prevention workers.")
+plots, see Crutzen, Noijen & Peters (2017) <doi:10/ghtfz9>), systematically
+developing, reporting, and analysing interventions (for example, using Acyclic
+Behavior Change Diagrams), and reporting about intervention effectiveness (for
+example, using the Numbers Needed for Change, see Gruijters & Peters (2017)
+<doi:10/jzkt>), and computing the required sample size (using the Meaningful
+Change Definition, see Gruijters & Peters (2020) <doi:10/ghpnx8>).  This package
+is especially useful for researchers in the field of behavior change or health
+psychology and to behavior change professionals such as intervention developers
+and prevention workers.")
     (license license:gpl3+)))
 
 (define-public r-beginr
