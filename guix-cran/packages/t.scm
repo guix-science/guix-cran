@@ -7167,29 +7167,6 @@ model name from
 files, retrieve transcriptions, and monitor jobs.")
     (license license:gpl3)))
 
-(define-public r-tramvs
-  (package
-    (name "r-tramvs")
-    (version "0.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tramvs" version))
-              (sha256
-               (base32
-                "1fn119wliap4947gma0d7lvqbbwqavyd449m38pzvf9425i7a5ns"))))
-    (properties `((upstream-name . "tramvs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-variables r-tram r-cotram))
-    (native-inputs (list r-knitr))
-    (home-page "http://ctm.R-forge.R-project.org")
-    (synopsis "Optimal Subset Selection for Transformation Models")
-    (description
-     "Greedy optimal subset selection for transformation models (Hothorn et al., 2018,
-<doi:10.1111/sjos.12291> ) based on the abess algorithm (Zhu et al., 2020,
-<doi:10.1073/pnas.2014241117> ).  Applicable to models from packages tram and
-cotram'.")
-    (license license:gpl3)))
-
 (define-public r-trampr
   (package
     (name "r-trampr")
@@ -13208,13 +13185,13 @@ C5.0', rpart and Cubist'.")
 (define-public r-tidyrss
   (package
     (name "r-tidyrss")
-    (version "2.0.6")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyRSS" version))
               (sha256
                (base32
-                "1ll87jjwcg2dv28pavf28mzcx3c7y2s8lh99zmpkji85zszsf5bk"))))
+                "1v9c4cjh2apxsk5s1qyqg5pb02l83qhlg6bj684zvdmc4fqac6zw"))))
     (properties `((upstream-name . "tidyRSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

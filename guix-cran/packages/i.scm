@@ -3400,37 +3400,6 @@ illustrated in Friel, N., Rastelli, R., Wyse, J. and Raftery, A.E. (2016)
 <DOI:10.1073/pnas.1606295113>.")
     (license license:gpl3)))
 
-(define-public r-irir
-  (package
-    (name "r-irir")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "iriR" version))
-              (sha256
-               (base32
-                "0dzjafj2bnp9ss173pmzx61l50rr9a5lpiljjlf7y1pai9k0aay8"))))
-    (properties `((upstream-name . "iriR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wdi
-                             r-scales
-                             r-reshape2
-                             r-gsheet
-                             r-ggsci
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/warint/iriR/")
-    (synopsis "Global Innovation Through Company Level Data")
-    (description
-     "Researchers and analysts have access to more than 7,500 innovative companies
-worldwide, which are or have been part of the top 1,000 innovative companies.
-They can access the six parameters that compose the global IRI Scoreboard's data
-on R&D: Country, Year, Company's name, Industry, Indicator and Company's rank.
-Please cite: Warin, Th. (2020) \"iiriR: An R Package for the EU Industrial R&D
-Investment Scoreboard\", <doi:10.6084/m9.figshare.11774640.v5>.")
-    (license license:expat)))
-
 (define-public r-irg
   (package
     (name "r-irg")

@@ -1324,13 +1324,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.0.4")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autostsm" version))
               (sha256
                (base32
-                "0zb7l3syfcc5jpwcvr733x5lv87a1wicp2gpsvi6hgwlb6wlkq1w"))))
+                "1qds3mw94jmkfqp7qxff8mixbk1dwslmwk5hz42wcid3vwpgq6g3"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange

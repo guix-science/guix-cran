@@ -2314,13 +2314,13 @@ be used to apply a cell-key method to frequency count or magnitude tables.")
 (define-public r-psyverse
   (package
     (name "r-psyverse")
-    (version "0.2.4")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "psyverse" version))
               (sha256
                (base32
-                "10v1fwi5rcmsr5d4lylp7j23vc06mvkr3g4shvhw84yhba78g201"))))
+                "1ry7n2nsj3vq8j5f10iqcldg3bas9mr1995d7hm1ih6dc4gbg934"))))
     (properties `((upstream-name . "psyverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum r-yaml))
@@ -4754,13 +4754,13 @@ the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.6-2")
+    (version "1.6-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "protr" version))
               (sha256
                (base32
-                "13vgiqkqqq1w2yj5f6i6scag0mr189zmisyvi6fgaw8g9dgxpxan"))))
+                "0jdx868dprp3yv66zprni6k2zj3zx7qy2qjmrbzgj1z9647x7vnk"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (inputs (list))
@@ -8429,18 +8429,18 @@ curves along with the associated AUC (area under the curve).")
 (define-public r-preregr
   (package
     (name "r-preregr")
-    (version "0.2.5")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "preregr" version))
               (sha256
                (base32
-                "1g6z58p61yszfckp3a00ann6gpf0rlhfmksxpdiw6bc38mjbxma2"))))
+                "1z5w2bi6fvd6dxwyp5607acl0v5idj8n1r4v28iyipk6jzxv4awi"))))
     (properties `((upstream-name . "preregr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rmdpartials r-jsonlite r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://r-packages.gitlab.io/preregr")
+    (home-page "https://preregr.opens.science")
     (synopsis
      "Specify (Pre)Registrations and Export Them Human- And Machine-Readably")
     (description

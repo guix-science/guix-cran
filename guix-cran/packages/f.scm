@@ -18962,13 +18962,13 @@ Follmann DA. (2020)
 (define-public r-factorcopula
   (package
     (name "r-factorcopula")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FactorCopula" version))
               (sha256
                (base32
-                "129ik9fxjhkb4z94nv8xp8qizbypx2v0kbmfvqy0ljifrskbga75"))))
+                "1lvqa62v9rvz7pmrx06riqndh4jyw60an04hpg6if523jsxpa5nz"))))
     (properties `((upstream-name . "FactorCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -18984,7 +18984,7 @@ Follmann DA. (2020)
      "Estimation, model selection and goodness-of-fit of (1) factor copula models for
 mixed continuous and discrete data in Kadhem and Nikoloulopoulos (2021)
 <doi:10.1111/bmsp.12231>; (2) bi-factor and second-order copula models for item
-response data in Kadhem and Nikoloulopoulos (2022)
+response data in Kadhem and Nikoloulopoulos (2023)
 <doi:10.1007/s11336-022-09894-2>; (3) factor tree copula models for item
 response data in Kadhem and Nikoloulopoulos (2022) <arXiv:2201.00339>.")
     (license license:gpl2+)))

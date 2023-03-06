@@ -10854,23 +10854,24 @@ More information can be found at <https://developer.rosette.com>.")
 (define-public r-rosetta
   (package
     (name "r-rosetta")
-    (version "0.3.10")
+    (version "0.3.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rosetta" version))
               (sha256
                (base32
-                "0f7b60xj5kcb5dwjk194kr1hz3hbzzd61bqkg4wpjgwyiai75v8y"))))
+                "0x0hdfhrldc2k72498wzvkxwyj3rk5sxi1xabn66kwswhqgbc564"))))
     (properties `((upstream-name . "rosetta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-ufs
+    (propagated-inputs (list r-ufs
+                             r-sjstats
                              r-rmdpartials
                              r-pwr
                              r-psych
                              r-plyr
                              r-pander
                              r-multcompview
+                             r-lmertest
                              r-lme4
                              r-lavaan
                              r-knitr
@@ -24712,13 +24713,13 @@ be jointly performed.  For references, please see Tao Shi & Steve Horvath (2006)
 (define-public r-rfcca
   (package
     (name "r-rfcca")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RFCCA" version))
               (sha256
                (base32
-                "15zabdqkgji58yxh3nndaj8ipap8av353d0cvx54y2gx7cxlmdf3"))))
+                "135kdvyljaw7lh9ki3mla3bc6h1gk4kh9kq6h6jcv87x93gfan37"))))
     (properties `((upstream-name . "RFCCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-pma r-cca))
@@ -34517,13 +34518,13 @@ manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.11")
+    (version "1.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCzechia" version))
               (sha256
                (base32
-                "0v3z39h397bklq8f2sdv6h8g7xii1vrwi18ssq07yjfhsh12iwra"))))
+                "0s5flqqvkp00hkhyvhw2gy44xjvimhm0bjzcq0yh40rdcpswd00z"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
@@ -39783,13 +39784,13 @@ but does not enforce it themselves; we enforce that rate limit.")
 (define-public r-rb3
   (package
     (name "r-rb3")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rb3" version))
               (sha256
                (base32
-                "1drgh4cq26jadm18ilqyk676fzlkrvz6xzhbg1c1j2p8rmxkjbil"))))
+                "1ayvskv78sw5vcg3736klw8yn4c4r13mmpjys4ws2zq1kix9m6q1"))))
     (properties `((upstream-name . "rb3")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -39811,7 +39812,7 @@ but does not enforce it themselves; we enforce that rate limit.")
                              r-base64enc
                              r-ascii))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/wilsonfreitas/rb3")
+    (home-page "https://github.com/ropensci/rb3")
     (synopsis "Download and Parse Public Data Released by B3 Exchange")
     (description
      "Download and parse public files released by B3 and convert them into useful

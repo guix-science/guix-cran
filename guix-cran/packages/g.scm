@@ -11314,13 +11314,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.0-6")
+    (version "0.0-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmm.hp" version))
               (sha256
                (base32
-                "1s4kf8r4il3608qa9hccjsbzw9hs9lx08d7wprb7gngwjvphrkgf"))))
+                "0sjk3rilsyah99p4d6lp7lr43flwan2z2ykng9ab0wf7m61wqxlm"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mumin r-lme4 r-ggplot2))
@@ -25809,13 +25809,13 @@ Reference: Goodfellow et al. (2014) <arXiv:1406.2661v1>.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganDataModel" version))
               (sha256
                (base32
-                "0d8m0frd9pbny95bmhgz96fq98366g70fy312bvi8mcijklxnblz"))))
+                "1dykp6zz9d89wlh69xmzziaq9s2glarjihq91pij559jg24l9wir"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))

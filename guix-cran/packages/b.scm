@@ -4040,13 +4040,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.0.1")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BranchGLM" version))
               (sha256
                (base32
-                "0sf2qqr7jb74xsg84db9jgs9jgyzwa6kgw86f9zg5277h00s4x99"))))
+                "0356p4w7m7cw1vwvg2h1n7k74lgq7y7hy4h7146yk7j11hf1zhj2"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))

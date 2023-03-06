@@ -17888,39 +17888,6 @@ to visualize data with very long axis with high resolution.  2.  It is efficient
 for time series data to reveal periodic patterns.")
     (license license:expat)))
 
-(define-public r-spir
-  (package
-    (name "r-spir")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spiR" version))
-              (sha256
-               (base32
-                "0v3304d0ar6344377m6zd4p6f9m8ibq37i5ys4lnxnw41lhjx1x2"))))
-    (properties `((upstream-name . "spiR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-readr
-                             r-lubridate
-                             r-gsheet
-                             r-ggsci
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/warint/spiR/")
-    (synopsis "Wrapper for the Social Progress Index Data")
-    (description
-     "In 2015, The 17 United Nations Sustainable Development Goals were adopted.  spiR
-is a wrapper of several open datasets published by the Social Progress
-Imperative (<https://www.socialprogress.org/>), including the Social Progress
-Index (a synthetic measure of human development across the world).  spiR''s goal
-is to provide data to help policymakers and researchers prioritize actions that
-accelerate social progress across the world in the context of the Sustainable
-Development Goals.  Please cite: Warin, Th. (2019) \"spiR: An R Package for the
-Social Progress Index\", <doi:10.6084/m9.figshare.11421573.v2>.")
-    (license license:expat)))
-
 (define-public r-spinyreg
   (package
     (name "r-spinyreg")
@@ -31607,13 +31574,13 @@ to our original paper Vandenbon and Diez (Nature Communications, 2020)
 (define-public r-singlecasees
   (package
     (name "r-singlecasees")
-    (version "0.6.1")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SingleCaseES" version))
               (sha256
                (base32
-                "0cbwhph2qd44ph9b1n479bbvrm9pqbdas95r2k6zcasadfrwsbb6"))))
+                "0nafdl75svl0m07608jrsizn9gnnpvpvz74qs7qfsqlrpdnjmw9c"))))
     (properties `((upstream-name . "SingleCaseES")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -39651,13 +39618,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "0r3mii72znzmjvw41p83iq9bmxaw02kwybnc3pbg4bp5i75hz1ql"))))
+                "0shl1vk1zqrgj127zw48330b8ldghaknjr32j34a2lkyhvr8y1f0"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

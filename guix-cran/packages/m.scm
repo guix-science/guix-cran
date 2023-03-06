@@ -26385,13 +26385,13 @@ provides a layout method applicable for large trophic networks.")
 (define-public r-metan
   (package
     (name "r-metan")
-    (version "1.17.0")
+    (version "1.18.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metan" version))
               (sha256
                (base32
-                "1d988svhwcg02qwag19265jvhrpnicgzzfxywh0w6rxy2w11394s"))))
+                "0m7czvd7djv80c6kly8ckgs9m5ld0rqnd92y76n181d2xk9l6ypc"))))
     (properties `((upstream-name . "metan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

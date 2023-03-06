@@ -156,13 +156,13 @@ Maier & Lakens (2021) <doi:10.31234/osf.io/ts4r6>).")
 (define-public r-justifier
   (package
     (name "r-justifier")
-    (version "0.2.4")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "justifier" version))
               (sha256
                (base32
-                "0a9liqxsaf4y02x40bancz5vvqhjzy99gaknmfvw5ngzg0svy55r"))))
+                "0zpmxcgaa0y5qpk82m4jmkljvfrsv8fm8dmzxhvblicyl28d33bs"))))
     (properties `((upstream-name . "justifier")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum

@@ -22192,13 +22192,13 @@ pattern, followed by model averaging to estimate the effective dose.")
 (define-public r-clustblock
   (package
     (name "r-clustblock")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClustBlock" version))
               (sha256
                (base32
-                "0gk103s8dj7lhgadvca9pym75ixqzxvh6mjnznkwycdv10g2yj9z"))))
+                "03hx5xzak6a0fkdsy3bk4d6y7m18ndwnq7f9ha8zicy76c71w9gk"))))
     (properties `((upstream-name . "ClustBlock")))
     (build-system r-build-system)
     (propagated-inputs (list r-factominer))
@@ -22216,7 +22216,7 @@ Check-All-That-Apply data) (Llobell, Cariou, Vigneau, Labenne & Qannari (2019)
 (2019) <doi:10.1016/j.foodqual.2019.05.017>) are the core of this package.  The
 CATATIS methods allows to compute some indices and tests to control the quality
 of CATA data.  Multivariate analysis and clustering of subjects for quantitative
-multiblock data, CATA, Free Sorting and JAR experiments are available.")
+multiblock data, CATA, RATA, Free Sorting and JAR experiments are available.")
     (license license:gpl3)))
 
 (define-public r-clustassess
@@ -23774,13 +23774,13 @@ than processx::run().")
 (define-public r-clidatajp
   (package
     (name "r-clidatajp")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clidatajp" version))
               (sha256
                (base32
-                "1s64vsnam64n1jvwc7sw5nd256gs2w69f7ywgcpq1ypa8vaw0qs4"))))
+                "1wpj9wydjaq0jnnacwbrggqpncy9z8q792l0qv297a9vxqhd9pqz"))))
     (properties `((upstream-name . "clidatajp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -3592,16 +3592,16 @@ variables in a data frame.")
 (define-public r-hostswitch
   (package
     (name "r-hostswitch")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HostSwitch" version))
               (sha256
                (base32
-                "0gxln6375li33sl4ampw9d926d4bfd58ls7bgba6baqp87p9wq16"))))
+                "1937rjjz3lzriym1brjfpp1b02zd40ry4205yrkrs3vxp1lp4234"))))
     (properties `((upstream-name . "HostSwitch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tippy r-shiny r-purrr r-ggplot2 r-checkmate))
+    (propagated-inputs (list r-tippy r-shiny r-ggplot2 r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/berndpanassiti/HostSwitch")
     (synopsis "Simulate the Extent of Host Switching by Consumers")

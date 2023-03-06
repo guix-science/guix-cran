@@ -6304,13 +6304,13 @@ validate'.  See also Van der Loo and De Jonge (2018)
 (define-public r-errorist
   (package
     (name "r-errorist")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "errorist" version))
               (sha256
                (base32
-                "0zq5h2wffn9d3f3blzh736478k91smlvz5hxy55hcjqffpxcp4ah"))))
+                "0rsiyqpr7nw4mz2bccymp83lbqwyigyy7pqgxc1wkmshzdqhvjgh"))))
     (properties `((upstream-name . "errorist")))
     (build-system r-build-system)
     (propagated-inputs (list r-searcher))
