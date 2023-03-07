@@ -753,13 +753,13 @@ Reserve University.")
 (define-public r-pvlrt
   (package
     (name "r-pvlrt")
-    (version "0.5")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pvLRT" version))
               (sha256
                (base32
-                "1ys2n53q77nwbzg07iw78p3pr59h3pkpq0aya1wl96zg742yvqyi"))))
+                "02w88z752svyk63n288dwnbwlw5v5cla294pzrms361ggs1bdkph"))))
     (properties `((upstream-name . "pvLRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -16263,13 +16263,13 @@ Correlation\" at bioRxiv.")
 (define-public r-pm3
   (package
     (name "r-pm3")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pm3" version))
               (sha256
                (base32
-                "0zb9lzdsd25ismsrjkqv54aqy0jynk72p0sqb4jqigyn7x073ss1"))))
+                "1smwaadqwlkdimcgh35sc5435585qz95l3gwf9bzjp22db2pryak"))))
     (properties `((upstream-name . "pm3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tableone))
@@ -22761,6 +22761,46 @@ computationally expensive.  Additionally, this package offers an easy way to
 perform non-parametric bootstrapping to generate confidence intervals for
 quantile estimates, mean estimates, or any statistical function of interest.")
     (license license:cc0)))
+
+(define-public r-pheindicatormethods
+  (package
+    (name "r-pheindicatormethods")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PHEindicatormethods" version))
+              (sha256
+               (base32
+                "0amjkkilhgpk6mmwqslj3756pd4mfr2lyq78732pgns31bc9kv3d"))))
+    (properties `((upstream-name . "PHEindicatormethods")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PHEindicatormethods")
+    (synopsis "Common Public Health Statistics and their Confidence Intervals")
+    (description
+     "This package provides functions to calculate commonly used public health
+statistics and their confidence intervals using methods approved for use in the
+production of Public Health England indicators such as those presented via
+Fingertips (<http://fingertips.phe.org.uk/>).  It provides functions for the
+generation of proportions, crude rates, means, directly standardised rates,
+indirectly standardised rates, standardised mortality ratios, slope and relative
+index of inequality and life expectancy.  Statistical methods are referenced in
+the following publications.  Breslow NE, Day NE (1987)
+<doi:10.1002/sim.4780080614>.  Dobson et al (1991) <doi:10.1002/sim.4780100317>.
+ Armitage P, Berry G (2002) <doi:10.1002/9780470773666>.  Wilson EB. (1927)
+<doi:10.1080/01621459.1927.10502953>.  Altman DG et al (2000, ISBN:
+978-0-727-91375-3).  Chiang CL. (1968, ISBN: 978-0-882-75200-6).  Newell C.
+(1994, ISBN: 978-0-898-62451-9).  Eayres DP, Williams ES (2004)
+<doi:10.1136/jech.2003.009654>.  Silcocks PBS et al (2001)
+<doi:10.1136/jech.55.1.38>.  Low and Low (2004) <doi:10.1093/pubmed/fdh175>.")
+    (license license:gpl3)))
 
 (define-public r-phecodemap
   (package

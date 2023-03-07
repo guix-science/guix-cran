@@ -4398,6 +4398,28 @@ in that string.  The double-period-separated numeric integer expansion also
 supports padding the resulting numbers with zeros.")
     (license license:expat)))
 
+(define-public r-brace
+  (package
+    (name "r-brace")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BRACE" version))
+              (sha256
+               (base32
+                "19paaxk0szd5azcw95sd22fryb38lamd8r4y1f6zmcngbza470dk"))))
+    (properties `((upstream-name . "BRACE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BRACE")
+    (synopsis "Bias Reduction Through Analysis of Competing Events (BRACE)")
+    (description
+     "Adjusting the bias due to residual confounding (often called treatment selection
+bias) in estimating the treatment effect in a proportional hazard model, as
+described in Williamson et al. (2022) <doi:10.1158/1078-0432.ccr-21-2468>.")
+    (license license:gpl3+)))
+
 (define-public r-bracatus
   (package
     (name "r-bracatus")

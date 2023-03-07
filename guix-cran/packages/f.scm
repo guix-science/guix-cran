@@ -448,13 +448,13 @@ output probabilities.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.9.2")
+    (version "4.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuzzySim" version))
               (sha256
                (base32
-                "1l6mmpla0azayqsyqdlrgb40fr5vnmy82wl6a54qwinnz7vghmdn"))))
+                "1i0qqmd745qyqdzbd2byw2hfa41cd13a6c1vd04xrabkv1ig8978"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeva))
@@ -468,12 +468,13 @@ obtained from probability of presence), as well as pair-wise fuzzy similarity
 (based on fuzzy logic versions of commonly used similarity indices) among those
 occurrence patterns.  Includes also functions for model consensus and comparison
 (overlap and fuzzy similarity, loss or gain), and for data preparation, such as
-obtaining unique abbreviations of species names, gridding (thinning) point
-occurrence data onto raster maps, converting species lists (long format) to
-presence-absence tables (wide format), transposing part of a data frame,
-selecting relevant variables for models, assessing the false discovery rate, or
-analysing and dealing with multicollinearity.  Initially described in Barbosa
-(2015) <doi:10.1111/2041-210X.12372>.")
+obtaining unique abbreviations of species names, cleaning and gridding
+(thinning) point occurrence data onto raster maps, selecting absences under
+specified criteria, converting species lists (long format) to presence-absence
+tables (wide format), transposing part of a data frame, selecting relevant
+variables for models, assessing the false discovery rate, or analysing and
+dealing with multicollinearity.  Initially described in Barbosa (2015)
+<doi:10.1111/2041-210X.12372>.")
     (license license:gpl3)))
 
 (define-public r-fuzzyresampling
@@ -2210,13 +2211,13 @@ models.  There are now six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuj" version))
               (sha256
                (base32
-                "14q2qzvpapm1qi5r0dqcw47ngakl2ppd5zmx2lalqwvi012xh25b"))))
+                "0arcfpxjrqp5dxh234i5s9lkzy4cbvxbapmz6lq6069vrhr54wmv"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (home-page "https://jmbarbone.github.io/fuj/")
@@ -5857,13 +5858,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "3.2.0")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forsearch" version))
               (sha256
                (base32
-                "0q2mpysi6118qk0ygqqn8dv1h3w8z1pmpd9zs4wc0i0813kcpr27"))))
+                "1k509s3mbq7fv9in2fj5amab6qb16r79ssq20h6vy489clkn1898"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -15832,34 +15833,6 @@ website is behind a firewall.")
     (description
      "This package provides a replacement for dplyr::na_if().  Allows you to specify
 multiple values to be replaced with NA using a single function.")
-    (license license:expat)))
-
-(define-public r-faux
-  (package
-    (name "r-faux")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "faux" version))
-              (sha256
-               (base32
-                "0jmjjgrgh9i5jrzfzqb689qlg69haljw0k8m5bb4axnz1nll39vi"))))
-    (properties `((upstream-name . "faux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-rlang
-                             r-lme4
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/debruine/faux")
-    (synopsis "Simulation for Factorial Designs")
-    (description
-     "Create datasets with factorial structure through simulation by specifying
-variable parameters.  Extended documentation at
-<https://debruine.github.io/faux/>.  Described in DeBruine (2020)
-<doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 
 (define-public r-faulttree

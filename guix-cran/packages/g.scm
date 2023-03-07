@@ -9,6 +9,7 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
@@ -1216,6 +1217,42 @@ the guild sampling formula, where guilds are assumed to differ in dispersal
 ability (Janzen et al.  2015), and the guilds sampling formula conditioned on
 guild size (Janzen et al.  2015).")
     (license license:gpl2)))
+
+(define-public r-guildai
+  (package
+    (name "r-guildai")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "guildai" version))
+              (sha256
+               (base32
+                "1y3m1756450dzcz1m8fdj53p2bw9zhisnp67fr2fhmv6kga37995"))))
+    (properties `((upstream-name . "guildai")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-rstudioapi
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-processx
+                             r-jsonlite
+                             r-dplyr
+                             r-config))
+    (home-page "https://guildai.github.io/guildai-r/")
+    (synopsis "Track Machine Learning Experiments")
+    (description
+     "Guild AI is an open-source tool for managing machine learning experiments.  It's
+for scientists, engineers, and researchers who want to run scripts, compare
+results, measure progress, and automate machine learning workflow.  Guild AI is
+a light weight, external tool that runs locally.  It works with any framework,
+doesn't require any changes to your code, or access to any web services.  Users
+can easily record experiment metadata, track model changes, manage experiment
+artifacts, tune hyperparameters, and share results.  Guild AI combines features
+from Git', SQLite', and Make to provide a lab notebook for machine learning.")
+    (license license:asl2.0)))
 
 (define-public r-guide
   (package
@@ -10496,13 +10533,13 @@ with its major coastline, and additional lines and points.")
 (define-public r-globaltrends
   (package
     (name "r-globaltrends")
-    (version "0.0.13")
+    (version "0.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "globaltrends" version))
               (sha256
                (base32
-                "0dp7pzj2qnmpdsvz7vwxg81l2pvx51xljlg88swj7hh45x73bgq1"))))
+                "13alq7vwfa2awg7xk9plna0sygsm65yni0ffkncznfpkhk5ff63q"))))
     (properties `((upstream-name . "globaltrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10512,11 +10549,8 @@ with its major coastline, and additional lines and points.")
                              r-rsqlite
                              r-rlang
                              r-purrr
-                             r-maps
                              r-lubridate
-                             r-ineq
                              r-gtrendsr
-                             r-glue
                              r-ggplot2
                              r-forecast
                              r-forcats
@@ -17343,13 +17377,13 @@ overlapping lines - Draw more realistic worms.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "1.6.3")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "1vwz6b9l82n6w22kln26pagl2lwz1p5mhgzpnaza3993hkzyid24"))))
+                "0dah9nky18b1lg8k8n03gn1qhgldfpclyjrm44rkdjlscqcjncj8"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -22396,6 +22430,47 @@ automatic approach for the identification of gene families based on the
 conserved domains that specifically define that family.  See Die et al. (2018)
 <doi:10.1101/436659> for more information and examples.")
     (license license:expat)))
+
+(define-public r-genehapr
+  (package
+    (name "r-genehapr")
+    (version "1.1.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geneHapR" version))
+              (sha256
+               (base32
+                "1m0dm4i6l61rjzpdl5y7f24dik4hmhhg3ga7hmxf8jsgyqazi69r"))))
+    (properties `((upstream-name . "geneHapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcfr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-shinyjs
+                             r-shiny
+                             r-rtracklayer
+                             r-rlang
+                             r-reshape2
+                             r-pegas
+                             r-maps
+                             r-lolliplot
+                             r-iranges
+                             r-ggpubr
+                             r-ggplot2
+                             r-genomicranges
+                             r-genetics
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geneHapR")
+    (synopsis
+     "Gene Haplotype Statistics, Phenotype Association and Visualization")
+    (description
+     "Import genome variants data and perform gene haplotype Statistics, visualization
+and phenotype association with R'.")
+    (license license:gpl3)))
 
 (define-public r-genef
   (package

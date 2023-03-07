@@ -15156,13 +15156,13 @@ formatting SQL statements.")
 (define-public r-sqlove
   (package
     (name "r-sqlove")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SQLove" version))
               (sha256
                (base32
-                "14hd623m0fmbh1kll8yhnwc9vak8sdbi6p0cdrnklvbb2bb68nqg"))))
+                "0r0jl56a75n6mqfaplihjrr5v4rfnc2z548phli3y2vhvzd74yb7"))))
     (properties `((upstream-name . "SQLove")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjdbc r-readr r-dbi))
@@ -17265,13 +17265,13 @@ and dates.  The code was originally available in S-PLUS.")
 (define-public r-splot
   (package
     (name "r-splot")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splot" version))
               (sha256
                (base32
-                "14i2z4br4sc08nwmcj49wnc5fgzf1v7w2a4kz5q453yn9h8ypp1n"))))
+                "15z12qjfrxh1r1xcrn7r53cpahzbk5gh3gnvndsmwks5lk97gfxg"))))
     (properties `((upstream-name . "splot")))
     (build-system r-build-system)
     (home-page "https://miserman.github.io/splot/")
@@ -17624,13 +17624,13 @@ DMREF-1921873.")
 (define-public r-splinets
   (package
     (name "r-splinets")
-    (version "1.0.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Splinets" version))
               (sha256
                (base32
-                "1fws9svxvn03xgfqmqwr169wgl544zv87yrdi4nl5z32cq5c9yk5"))))
+                "11wg4ddr2nscjnqlfvpphskbhmyglnq110v5lngvp8sszw84dwkc"))))
     (properties `((upstream-name . "Splinets")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Splinets")
@@ -17639,13 +17639,17 @@ DMREF-1921873.")
     (description
      "Splines are efficiently represented through their Taylor expansion at the knots.
  The representation accounts for the support sets and is thus suitable for
-sparse functional data.  The B-splines and orthogonal bases of splines that
-reside on small total support are implemented.  The orthogonal bases and are
-utilized for functional data analysis.  Random spline generator is implemented
-as well as all fundamental algebraic and calculus operations on splines.  The
-optimal, in the least square sense, functional fit to data consisting of sampled
+sparse functional data.  Two cases of boundary conditions are considered:
+zero-boundary or periodic-boundary for all derivatives except the last.  The
+periodical splines are represented graphically using polar coordinates.  The
+B-splines and orthogonal bases of splines that reside on small total support are
+implemented.  The orthogonal bases are referred to as splinets and are utilized
+for functional data analysis.  Random spline generator is implemented as well as
+all fundamental algebraic and calculus operations on splines.  The optimal, in
+the least square sense, functional fit by splinets to data consisting of sampled
 values of functions as well as splines build over another set of knots is
-obtained.  PodgÃ³rski, K. (2021) <arXiv:2102.00733>.")
+obtained and used for functional data analysis. <arXiv:2102.00733>,
+<doi:10.1016/j.cam.2022.114444>, <arXiv:2302.07552>.")
     (license license:gpl2+)))
 
 (define-public r-splinetree
@@ -22755,13 +22759,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.7.9")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparklyr" version))
               (sha256
                (base32
-                "0l495jxhdbj4wjc0chp3j32gd3sab9sd9pcm3977zsjyfhcp5i3g"))))
+                "1hcx46qkjjwkhj1amfrnz1lyg7q5ih5k1l4r7niyy01fall956nv"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (inputs (list))
@@ -36508,13 +36512,13 @@ within a R script and returns all valid arguments of a selected function.")
 (define-public r-shoredate
   (package
     (name "r-shoredate")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shoredate" version))
               (sha256
                (base32
-                "0kr51ia3zxzfpfwfax7ajyyq29lpvynizy2lmq934jkiv4ddv6xm"))))
+                "0h34g4wpyrilli9c9qlyg0f2bc505nsr9v8mngsviviak5vymwx4"))))
     (properties `((upstream-name . "shoredate")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -36527,20 +36531,20 @@ within a R script and returns all valid arguments of a selected function.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/isakro/shoredate")
     (synopsis
-     "Shoreline Dating of Stone Age Sites on the Norwegian Skagerrak Coast")
+     "Shoreline Dating Stone Age Sites on the Norwegian Skagerrak Coast")
     (description
      "This package provides tools for shoreline dating Stone Age sites located on the
 Norwegian Skagerrak coast using methods presented in Roalkvam (2023)
 <doi:10.1016/j.quascirev.2022.107880>.  Shoreline dating is based on the
 present-day elevation of a site, a reconstruction of past relative sea-level
 change, and empirically derived estimates of the likely elevation of the sites
-above sea-level when they were in use.  The geographical and temporal coverage
-of the method thus follows from local geological reconstructions of shoreline
-displacement and the degree to which settlements in the region have been found
-to have been located on or close to the shoreline when they were in use.
-Methods for numerical treatment and visualisation of the dates are provided,
-along with basic tools for evaluating the location of sites within the region
-and corresponding variation in local shoreline displacement.")
+above the contemporaneous sea-level when they were in use.  The geographical and
+temporal coverage of the method thus follows from local geological
+reconstructions of shoreline displacement and the degree to which settlements in
+the region have been found to have been located on or close to the shoreline
+when they were in use.  Methods for numerical treatment and visualisation of the
+dates are provided, along with basic tools for evaluating the location of sites
+within the region and corresponding variation in local shoreline displacement.")
     (license license:gpl3+)))
 
 (define-public r-shopifyr
@@ -45782,13 +45786,13 @@ Implements the methods described in Dolman and Laepple (2018)
 (define-public r-secutrialr
   (package
     (name "r-secutrialr")
-    (version "1.0.9")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secuTrialR" version))
               (sha256
                (base32
-                "0g84jrh42kx3w1m6spw80rwx7vzjf7x1qabqap4h6ayrczacxq4r"))))
+                "0i45zhbbvq052yn04j0xg69minclr7ns7f1pqdahx1cmf274pl42"))))
     (properties `((upstream-name . "secuTrialR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -51929,13 +51933,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.5")
+    (version "0.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sasLM" version))
               (sha256
                (base32
-                "03s30bqvkyyjv0zyi3ff61v72hcf92w9s54rk3afnn4q2jkkmqgh"))))
+                "0garjlkvs5dlrapra6sqrv2nx3lg4s0rjn5ac8fx09bwci2f6aar"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

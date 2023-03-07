@@ -3120,37 +3120,6 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (UAI 2022), PMLR 180:1530â1540\".")
     (license license:expat)))
 
-(define-public r-ordbetareg
-  (package
-    (name "r-ordbetareg")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordbetareg" version))
-              (sha256
-               (base32
-                "00031nn6lj9kf4g92yvdwqj45y5nazdjgnk4nl0mscd1bkcfp47y"))))
-    (properties `((upstream-name . "ordbetareg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-transformr
-                             r-tidyr
-                             r-ggplot2
-                             r-gganimate
-                             r-faux
-                             r-dplyr
-                             r-brms))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ordbetareg")
-    (synopsis "Ordered Beta Regression Models with Brms")
-    (description
-     "This package implements ordered beta regression models, which are for modeling
-continuous variables with upper and lower bounds, such as survey sliders,
-dose-response relationships and indexes.  For more information, see Kubinec
-(2022) <doi:10.31235/osf.io/2sx6y>.  The package is a front-end to the R package
-brms', which facilitates a range of regression specifications, including
-hierarchical, dynamic and multivariate modeling.")
-    (license license:expat)))
-
 (define-public r-orcutt
   (package
     (name "r-orcutt")
@@ -7118,13 +7087,13 @@ them.  It converts factor columns into onehot vectors.")
 (define-public r-oneclust
   (package
     (name "r-oneclust")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oneclust" version))
               (sha256
                (base32
-                "0qbwnfv5lk93nfwwzfjwla6lv6imfcvcvmlb9h7ij32zpqg1fzwk"))))
+                "033vpzccj5z56spn2mqpjq9f17vk6ib9y15p2hfqk8rwqkfbvcqs"))))
     (properties `((upstream-name . "oneclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr))

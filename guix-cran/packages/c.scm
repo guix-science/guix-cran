@@ -2822,13 +2822,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cthist" version))
               (sha256
                (base32
-                "0r8glciyscwcjp5avknsrdybzaxci1piqj19rplgm7gx7q454krn"))))
+                "1rkbvqdqnjj9d0xg7axwkp706mnx48afinwxgl61q8argznyzh23"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2836,8 +2836,6 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
                              r-rvest
                              r-rlang
                              r-readr
-                             r-rcurl
-                             r-polite
                              r-magrittr
                              r-jsonlite
                              r-httr
@@ -3532,13 +3530,13 @@ developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSHShydRology" version))
               (sha256
                (base32
-                "0jmc0d3lpnjf0srh3s3zy2d941xah4y7sq1zkw21a6gmxd82a3ww"))))
+                "06hdqdzvfpfn4r6x1d2m24lz2w5sj20fr7d791zqzd16mp767qcc"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitebox
@@ -3546,8 +3544,10 @@ developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
                              r-tidyhydat
                              r-stringr
                              r-sf
+                             r-rnaturalearth
                              r-raster
                              r-plotrix
+                             r-openstreetmap
                              r-magrittr
                              r-lubridate
                              r-kendall
@@ -10097,21 +10097,24 @@ new version.")
 (define-public r-correlplot
   (package
     (name "r-correlplot")
-    (version "1.0.4")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Correlplot" version))
               (sha256
                (base32
-                "0gmjjy0c2m7s1qnlwq0icgndvldypngfg54173wfqymlk568dwic"))))
+                "1hvnhb1qk4zqic8ngdk34hwp573s3al418gsq5ia3aklfd834f7d"))))
     (properties `((upstream-name . "Correlplot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-mass r-corrplot r-calibrate))
+    (propagated-inputs (list r-xtable r-mass r-lsei r-corrplot r-calibrate))
+    (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis "Collection of Functions for Graphing Correlation Matrices")
     (description
      "Routines for the graphical representation of correlation matrices by means of
-correlograms, biplots and MDS maps.")
+correlograms, MDS maps and biplots obtained by PCA, PFA or WALS (weighted
+alternating least squares); See Graffelman & De Leeuw (2023) <doi:
+10.1080/00031305.2023.2186952>.")
     (license license:gpl2+)))
 
 (define-public r-correlbinom
@@ -23254,13 +23257,13 @@ of it to make your results publication ready as proposed by Jacobson et al.,
 (define-public r-clinfun
   (package
     (name "r-clinfun")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clinfun" version))
               (sha256
                (base32
-                "1fca5nd36xzb50ccbwrb4xxvzhqg7s60smwr42k5z9sfywfh79y8"))))
+                "0jlpn9cx8rwb3b7sj9miihvyqkdicdnm9866vbd3v86pc2mjwr6x"))))
     (properties `((upstream-name . "clinfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

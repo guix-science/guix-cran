@@ -3109,6 +3109,37 @@ The QRI_plot() is used to plot QRI and generate the normative curves for
 individual measurements.")
     (license license:gpl2+)))
 
+(define-public r-qreport
+  (package
+    (name "r-qreport")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qreport" version))
+              (sha256
+               (base32
+                "1kkmv1029rgaxc65myr0yakdn56dwyrgs4qxsnml06ki3wbcvrxd"))))
+    (properties `((upstream-name . "qreport")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-rms
+                             r-knitr
+                             r-htmltools
+                             r-hmisc
+                             r-ggplot2
+                             r-formula
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=qreport")
+    (synopsis "Statistical Reporting with 'Quarto'")
+    (description
+     "This package provides statistical components, tables, and graphs that are useful
+in Quarto and RMarkdown reports and that produce Quarto elements for special
+formatting such as tabs and marginal notes and graphs.  Some of the functions
+produce entire report sections with tabs, e.g., the missing data report created
+by missChk().  Special clinical trial graphics for adverse event reporting is
+also included.")
+    (license license:gpl2+)))
+
 (define-public r-qrencoder
   (package
     (name "r-qrencoder")

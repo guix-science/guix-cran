@@ -1176,6 +1176,43 @@ nonfatal event, and sample size calculation for standard win ratio test (Mao et
 al., 2021 <doi:10.1111/biom.13501>).")
     (license license:gpl2+)))
 
+(define-public r-wqspt
+  (package
+    (name "r-wqspt")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wqspt" version))
+              (sha256
+               (base32
+                "1xd588kw171djx7q21b2jjarhbzd4i0gx7ccv1j1wyl95yzq07ba"))))
+    (properties `((upstream-name . "wqspt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-rlang
+                             r-pbapply
+                             r-mvtnorm
+                             r-gwqs
+                             r-ggplot2
+                             r-extradistr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wqspt")
+    (synopsis "Permutation Test for Weighted Quantile Sum Regression")
+    (description
+     "This package implements a permutation test method for the weighted quantile sum
+(WQS) regression, building off the gWQS package (Renzetti et al. (2021)
+<https://CRAN.R-project.org/package=gWQS>).  Weighted quantile sum regression is
+a statistical technique to evaluate the effect of complex exposure mixtures on
+an outcome (Carrico et al. (2015) <doi:10.1007/s13253-014-0180-3>).  The model
+features a statistical power and Type I error (i.e., false positive) rate
+trade-off, as there is a machine learning step to determine the weights that
+optimize the linear model fit.  This package provides an alternative method
+based on a permutation test that should reliably allow for both high power and
+low false positive rate when utilizing WQS regression (Day et al. (2022)
+<doi:10.1289/EHP10570>).")
+    (license license:gpl3)))
+
 (define-public r-wqs
   (package
     (name "r-wqs")

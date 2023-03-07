@@ -384,13 +384,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-rxylib
   (package
     (name "r-rxylib")
-    (version "0.2.9")
+    (version "0.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxylib" version))
               (sha256
                (base32
-                "0d59nbiqahijzf1w8z4y3b65lvvgph0pf807m5lybf6cqgyiaa5m"))))
+                "1g5vrw6hb7i19vdg6gl62hn6mn37b5vl6jjr0nsry2880sxybjvq"))))
     (properties `((upstream-name . "rxylib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -9800,13 +9800,13 @@ Pagel's lambda, kappa, or delta, or a star phylogeny.")
 (define-public r-rphosfate
   (package
     (name "r-rphosfate")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RPhosFate" version))
               (sha256
                (base32
-                "17905kbi8mh6356kkn5slyqk6r134j28ipk0sdv0y1jxrgjdyvzq"))))
+                "1lm6ksla6szm4p6vrsjlr6m4ldq44m5s5sbbl2wsj3jsvrrg7cyq"))))
     (properties `((upstream-name . "RPhosFate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -19374,13 +19374,13 @@ export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
 (define-public r-rjtools
   (package
     (name "r-rjtools")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rjtools" version))
               (sha256
                (base32
-                "0l6l77i584g11p9xgp6mhvlgas3wmxc34xd0vw9ws42v7k1fpv8x"))))
+                "0r7q4f6xxg8dz772y4fkb2y3vkczv70m3c1kmykl2pmpdm9g09j2"))))
     (properties `((upstream-name . "rjtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -19398,7 +19398,8 @@ export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
                              r-cranlogs
                              r-cli
                              r-callr
-                             r-bookdown))
+                             r-bookdown
+                             r-biocmanager))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rjournal/rjtools")
     (synopsis
@@ -24016,13 +24017,13 @@ see <https://en.wikipedia.org/wiki/FRACTRAN> .")
 (define-public r-rfpredinterval
   (package
     (name "r-rfpredinterval")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RFpredInterval" version))
               (sha256
                (base32
-                "1089flgdmx2q16zjns9slcpyrjbzrqpadbr0r363zyq6s7j666qy"))))
+                "1r26pd6dxvkbx2aqcgb4rn9bdwnac3smw4wb1qr4pzzp9nw1ji4h"))))
     (properties `((upstream-name . "RFpredInterval")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-hdrcde r-diagrammer r-data-tree
@@ -24033,9 +24034,9 @@ see <https://en.wikipedia.org/wiki/FRACTRAN> .")
      "This package implements various prediction interval methods with random forests
 and boosted forests.  The package has two main functions: pibf() produces
 prediction intervals with boosted forests (PIBF) as described in Alakus et al.
-(2021) <arXiv:2106.08217> and rfpi() builds 15 distinct variations of prediction
-intervals with random forests (RFPI) proposed by Roy and Larocque (2020)
-<doi:10.1177/0962280219829885>.")
+(2022) <doi:10.32614/RJ-2022-012> and rfpi() builds 15 distinct variations of
+prediction intervals with random forests (RFPI) proposed by Roy and Larocque
+(2020) <doi:10.1177/0962280219829885>.")
     (license license:gpl3+)))
 
 (define-public r-rfpm
@@ -35492,17 +35493,17 @@ statement.")
 (define-public r-rcppfastad
   (package
     (name "r-rcppfastad")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppFastAD" version))
               (sha256
                (base32
-                "1slis8rybdbqm32yh81mb3p9c7qc9jcdmfd2p4vbs2wqmpl4h5a8"))))
+                "020hw5p3vjsi00fmrbwnkdjc4lajpfjp1j0f5wiyk2d61yypfz2i"))))
     (properties `((upstream-name . "RcppFastAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=RcppFastAD")
+    (home-page "https://github.com/eddelbuettel/rcppfastad")
     (synopsis "'Rcpp' Bindings to 'FastAD' Auto-Differentiation")
     (description
      "The header-only C++ template library FastAD for automatic differentiation
@@ -44974,13 +44975,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r5r" version))
               (sha256
                (base32
-                "1h9hjabhbb330qnc50lsli8v1a5lcn2nwrp6aib5cx4n0wq495cn"))))
+                "03hw4wlbc1zhnk8xllq9rjl0psjz1as960vf0iy57fc7mbb5ipqz"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

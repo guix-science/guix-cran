@@ -15043,13 +15043,13 @@ Details on the least-squares estimation can be found in Chiou et al. (2014)
 (define-public r-africamonitor
   (package
     (name "r-africamonitor")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "africamonitor" version))
               (sha256
                (base32
-                "06k600wbvzxy3lk7niil84xndcnbar88z07qxyqwklvl07jcpc9h"))))
+                "13pwrbz0ap13a4di3zc1z5j4jk4q9vcpn4g8n41nyminbsg1vl5j"))))
     (properties `((upstream-name . "africamonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql r-dbi r-data-table r-collapse))
@@ -16244,13 +16244,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiraldev" version))
               (sha256
                (base32
-                "0rclhf3d2mhsbxc4imp14kpjxw6g0hdy6v4y86qnvvyrb3cik46v"))))
+                "0kqwh22yrrj6d4cf9my9wl2nanbkq6cccj3izzlq5459l0qp7242"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16265,7 +16265,8 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pharmaverse.github.io/admiraldev/main/")
-    (synopsis "Development Tools for the Admiral Package Family")
+    (synopsis
+     "Utility Functions and Development Tools for the Admiral Package Family")
     (description
      "Utility functions to check data, variables and conditions for functions used in
 admiral and admiral extension packages.  Additional utility helper functions to
@@ -16276,13 +16277,13 @@ admiral and admiral extension packages.")
 (define-public r-admiral-test
   (package
     (name "r-admiral-test")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral.test" version))
               (sha256
                (base32
-                "1abf7zrqj2bia784rvl3y4awyi3vpaj57lqyak2zpxiykhs8fg4s"))))
+                "1nj0hl7jpyrblypk5gsqz578xqyp4bvxkiw5jyw6jzkvvx15mqk4"))))
     (properties `((upstream-name . "admiral.test")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=admiral.test")

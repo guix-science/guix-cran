@@ -4740,13 +4740,13 @@ Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.4")
+    (version "0.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiblock" version))
               (sha256
                (base32
-                "1zn8xbhsrg33b7sx4nb8bhl4ikkzpa43xx5gcjhrpmsrg37sry2w"))))
+                "0kzcya3iqjp55rcml1iipsrb5pf11m3xv3zwx6rlvlq2vpv6f8q7"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -7676,6 +7676,33 @@ size is input by the user.")
 methodology developed in Sample Size Calculations for Micro-randomized Trials in
 mHealth by Liao et al. (2016) <DOI:10.1002/sim.6847>.")
     (license license:gpl2+)))
+
+(define-public r-mrtanalysis
+  (package
+    (name "r-mrtanalysis")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MRTAnalysis" version))
+              (sha256
+               (base32
+                "1vnq65mj1yhv4383f8hqqhl6afa74sddv9qc5nzihpflkrh1sfbb"))))
+    (properties `((upstream-name . "MRTAnalysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-rootsolve r-geepack))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MRTAnalysis")
+    (synopsis "Primary and Secondary Analyses for Micro-Randomized Trials")
+    (description
+     "Calculate estimates, confidence intervals, standard errors, and p-values for
+marginal causal excursion effects and moderated causal excursion effects for
+micro-randomized trial (MRT).  Applicable to MRT with binary treatment options
+and continuous or binary outcomes.  The method for MRT with continuous outcomes
+is the weighted centered least squares (WCLS) by Boruvka et al. (2018)
+<doi:10.1080/01621459.2017.1305274>.  The method for MRT with binary outcomes is
+the estimator for marginal excursion effect (EMEE) by Qian et al. (2021)
+<doi:10.1093/biomet/asaa070>.")
+    (license license:gpl3)))
 
 (define-public r-mrs
   (package

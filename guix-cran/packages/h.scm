@@ -1149,13 +1149,13 @@ decision and utility nodes are also supported.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hyd1d" version))
               (sha256
                (base32
-                "1y0ybhcvrgdhpqi2v0fxpxmfxrg0bnsapy818fs9xln8j5iqms4s"))))
+                "0m8v24kclma4k23jl0wxzzrvrigddv94pi6y0yf7lj69bn0sry81"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-rdpack r-plotrix))
@@ -6938,25 +6938,23 @@ Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
 (define-public r-hhsmm
   (package
     (name "r-hhsmm")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hhsmm" version))
               (sha256
                (base32
-                "072r944s60sz9rrwk4m55hykqq0zwxl7di5l4xj0i3dkix56c5nj"))))
+                "0kn6zn46fs5rl3n3hqi623hn996fbg2ikrzks4jkkh0a6jj8h6md"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
                              r-rdpack
                              r-rcpp
-                             r-psych
                              r-progress
                              r-mvtnorm
                              r-mice
                              r-mass
                              r-magic
-                             r-cpr
                              r-cmapss))
     (home-page "https://cran.r-project.org/package=hhsmm")
     (synopsis "Hidden Hybrid Markov/Semi-Markov Model Fitting")

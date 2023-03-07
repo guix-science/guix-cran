@@ -9819,13 +9819,13 @@ effects (AMME).")
 (define-public r-netmap
   (package
     (name "r-netmap")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmap" version))
               (sha256
                (base32
-                "0cqfxpn3pcbh56a26azxzm896g1m0z289870gb79n5nz69wm7dci"))))
+                "02b3qb0yk6hawd23x44p5d14dvxryf0c7ydlj6d75dgpsddnfj1n"))))
     (properties `((upstream-name . "netmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna

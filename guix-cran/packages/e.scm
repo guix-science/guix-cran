@@ -3220,13 +3220,13 @@ or combining Gaussian random fuzzy numbers).")
 (define-public r-evots
   (package
     (name "r-evots")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evoTS" version))
               (sha256
                (base32
-                "09l3d51fwl6x482affi0c5r4c4m8931p1sg6i4v82j8n8by7290h"))))
+                "104lb598rkm17n1as1g32va5aa285b86j4ac3wg4dxp8ckzl738d"))))
     (properties `((upstream-name . "evoTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-plotly r-paleots r-mvtnorm r-mass))
@@ -4314,13 +4314,13 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
 (define-public r-eurostat
   (package
     (name "r-eurostat")
-    (version "3.7.10")
+    (version "3.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurostat" version))
               (sha256
                (base32
-                "05132pid3gjp9qgksvz087vy323dp1s31w46q7a9553kxsqkgkw5"))))
+                "1djrika4mlwqqlcj9cwkpyc24k1i8vmnm1qh5ipqwp54nbwin964"))))
     (properties `((upstream-name . "eurostat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4333,6 +4333,7 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
                              r-rappdirs
                              r-lubridate
                              r-jsonlite
+                             r-isoweek
                              r-httr
                              r-dplyr
                              r-curl
@@ -19245,13 +19246,13 @@ deviation can be forced to display.")
 (define-public r-easydb
   (package
     (name "r-easydb")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easydb" version))
               (sha256
                (base32
-                "0i5r0fbs1fzd7vi7xy8ss6ymkyq3gcz0kydrj100firhk0qnpnni"))))
+                "1xmhg5320ilc1138x23sb8s2wr7d753h0dv9i1az3zicx0858zbd"))))
     (properties `((upstream-name . "easydb")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
