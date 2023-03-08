@@ -1155,13 +1155,13 @@ in all locales and from all devices.")
 (define-public r-rweka
   (package
     (name "r-rweka")
-    (version "0.4-45")
+    (version "0.4-46")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RWeka" version))
               (sha256
                (base32
-                "0a0hsrxi02z1jyrzkydlajwfv5qziwspr4aqbk9akg7bmdzz247r"))))
+                "0rsbz7ck7z4bjk9qrwrr4nq30b1iv3kwkkwx9jcrph832xw5a1b6"))))
     (properties `((upstream-name . "RWeka")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -17918,19 +17918,20 @@ the contour(s) at a given level.")
 (define-public r-rmapzen
   (package
     (name "r-rmapzen")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmapzen" version))
               (sha256
                (base32
-                "1n44l4sj6s78nr3hqidabkyg9pradk9c1mqfvzhanj2nrfdrwnqj"))))
+                "0bxwhpikkny1r3qr03k10isdf5wclalpfaljd5qngazr1rxflmsl"))))
     (properties `((upstream-name . "rmapzen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sp
                              r-sf
+                             r-rgeos
                              r-rgdal
                              r-purrr
                              r-maptools
@@ -22759,17 +22760,17 @@ formats and methods are described in McKay, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgplates" version))
               (sha256
                (base32
-                "121fsxn42bkiz8s9c0px2jc4lzyqnhqv622gci7ana0rzzxf03bw"))))
+                "0gl39l8lnxs0my1y71i2dxcwg786c8i2c6rbjq1177cwfpjrlaw8"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
-    (home-page "https://cran.r-project.org/package=rgplates")
+    (home-page "https://adamkocsis.github.io/rgplates/")
     (synopsis
      "R Interface for the GPlates Web Service and Desktop Application")
     (description
@@ -28580,13 +28581,13 @@ Rigby & Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
 (define-public r-relations
   (package
     (name "r-relations")
-    (version "0.6-12")
+    (version "0.6-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "relations" version))
               (sha256
                (base32
-                "18qqlw04crg3f17hzcwyl2sy4y1ffd4r4vf758nzv0bhhivb99aq"))))
+                "1nnr0kcr3whbwzi36sg7wn46jp7r0hfkvcwlybvjsjhczcvc6ngq"))))
     (properties `((upstream-name . "relations")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-sets r-cluster))

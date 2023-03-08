@@ -12370,6 +12370,62 @@ actual Ultimate Reality}\" by Irucka Ajani Embry.")
 Engineering, US Presidential Elections].")
     (license license:gpl3+)))
 
+(define-public r-iemisc
+  (package
+    (name "r-iemisc")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "iemisc" version))
+              (sha256
+               (base32
+                "01iab55vd1c59zdpql54y1nrfccvsf330gpvshjrm4jdw2hp7glr"))))
+    (properties `((upstream-name . "iemisc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-usa-state-boundaries
+                             r-units
+                             r-stringi
+                             r-sjmisc
+                             r-signal
+                             r-sf
+                             r-round
+                             r-roperators
+                             r-rivr
+                             r-ramify
+                             r-qdaptools
+                             r-qdapregex
+                             r-pracma
+                             r-mgsub
+                             r-measurements
+                             r-matlab2r
+                             r-matlab
+                             r-lubridate
+                             r-iemiscdata
+                             r-gsubfn
+                             r-ggpubr
+                             r-ggplot2
+                             r-geosphere
+                             r-fpcompare
+                             r-foreach
+                             r-data-table
+                             r-chnosz
+                             r-checkmate
+                             r-berryfunctions
+                             r-assertthat
+                             r-anytime))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/iembry/iemisc")
+    (synopsis "Irucka Embry's Miscellaneous Functions")
+    (description
+     "This package provides a collection of Irucka Embry's miscellaneous functions
+(Engineering Economics, Civil & Environmental/Water Resources Engineering,
+Construction Measurements, GNU Octave compatible functions, Python compatible
+function, Trigonometric functions in degrees and function in radians, Geometry,
+Statistics, Mortality Calculators, Quick Search, etc.).")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")

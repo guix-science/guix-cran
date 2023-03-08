@@ -1,2 +1,3 @@
-(channel (version 0)
-         (url "https://github.com/guix-science/guix-cran.git"))
+(channel
+  (version 0)
+  (url "https://github.com/guix-science/guix-cran.git"))

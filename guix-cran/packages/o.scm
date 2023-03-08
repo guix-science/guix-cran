@@ -5926,13 +5926,13 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.15")
+    (version "2.16-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "1cc5nvprwniz07i8c3a2a3cfsgjqvr4qy5db5jkjjqj6rnyk84gi"))))
+                "0bb88wy3iln4dn5ybi70g8mdjwpbffwmm1xijr4sd5hamczj0mkk"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5963,13 +5963,13 @@ papers.")
 (define-public r-openai
   (package
     (name "r-openai")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openai" version))
               (sha256
                (base32
-                "18kr3g6896phmyjywx70nj8yy391w6bl83in9wz4fjrnn7b8j88l"))))
+                "0yhnnrmakf7zhiwyj7v2d2nawppy9h4787z44596dhlc558lxj67"))))
     (properties `((upstream-name . "openai")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -5982,9 +5982,9 @@ papers.")
     (synopsis "R Wrapper for OpenAI API")
     (description
      "An R wrapper of OpenAI API endpoints (see
-<https://beta.openai.com/docs/introduction> for details).  This package covers
-Models, Completions, Edits, Images, Embeddings, Files, Fine-tunes, Moderations,
-and legacy Engines endpoints.")
+<https://platform.openai.com/docs/introduction> for details).  This package
+covers Models, Completions, Chat, Edits, Images, Embeddings, Audio, Files,
+Fine-tunes, Moderations, and legacy Engines endpoints.")
     (license license:expat)))
 
 (define-public r-openadds
@@ -6537,13 +6537,13 @@ and creating simple queries using ontological relationships.")
 (define-public r-onpoint
   (package
     (name "r-onpoint")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onpoint" version))
               (sha256
                (base32
-                "0g0i88s4hwgjnwqljjgbibc6bks0hy0f27v94w0br45yklrdh73f"))))
+                "06zdgxcizw66l9ll8g1wsbrj0c4zl8zp2z7l2cn4sz45kr3qkvfg"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -9586,13 +9586,13 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "0.7.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OCNet" version))
               (sha256
                (base32
-                "09d3p93rqnawrs8v45692kbslav4addziiamdxhbw29mci6x5rvf"))))
+                "0afbya1bsrp7hccy1m65hhmdh0nnllm6mh4mz45mv0kqwms1j7v5"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssn

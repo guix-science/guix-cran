@@ -4904,13 +4904,13 @@ finance, and statistics.")
 (define-public r-arulesviz
   (package
     (name "r-arulesviz")
-    (version "1.5-1")
+    (version "1.5-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arulesViz" version))
               (sha256
                (base32
-                "06mqdqg5amcrb75lf77wilb9v8c7f50b54p0pk76q0jvirycqrzc"))))
+                "0nvaqqc1k1zxzdqmrln1lhiqmrm98kg9rfsga9qf80cpcvxm79x5"))))
     (properties `((upstream-name . "arulesViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -16704,13 +16704,13 @@ import and export files from and to such virtual DOS-formatted disks.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-20")
+    (version "0.3-21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adespatial" version))
               (sha256
                (base32
-                "1sv4kc30l226x24s3gvv8dq0p2y33h8vv474bfpm4z08cfah13pq"))))
+                "17x73rvyqsp5z2a5y7w9vh59hkyjvdvjparlgp9s54jqq2dmzxjg"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

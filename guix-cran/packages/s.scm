@@ -4342,13 +4342,13 @@ incremental value of the surrogate outcome information.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "2.7")
+    (version "2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Surrogate" version))
               (sha256
                (base32
-                "1y2y9xq0n2121xc74z8786h8ajm7n2mvwvgskwzp99nknd576wp5"))))
+                "0svzywvnqzmla9y6xwrx91grx16sfx4cyb8ykx18jrl1vdd6mqjy"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

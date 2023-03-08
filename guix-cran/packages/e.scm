@@ -8081,13 +8081,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.57")
+    (version "2.0.58")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "1q1msfsnhrjcj80ychsi3nzdaqa3q8nfcr01plk3y1bpw8mvy2l0"))))
+                "0b832rr5wjq118jz625md8qdvpa6as8q6blsdkrm4hjqa6gih7dz"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10991,13 +10991,13 @@ possible to export the code to be used in other packages at C++ level.")
 (define-public r-empeaksr
   (package
     (name "r-empeaksr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMpeaksR" version))
               (sha256
                (base32
-                "1f8s6p3h5594aajrvrx8iv5x8m97xbc1pynsrk6i13aw5r73ysb1"))))
+                "13cdxcj8nxr8kky3w10jb1l2yslqkvp56kq5ivqgshajix28gciv"))))
     (properties `((upstream-name . "EMpeaksR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EMpeaksR")

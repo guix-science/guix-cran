@@ -8650,13 +8650,13 @@ reading/writing and also other manipulation functions.")
 (define-public r-neuralsens
   (package
     (name "r-neuralsens")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NeuralSens" version))
               (sha256
                (base32
-                "1wkasnfznw68v47lsymsx25b9v49fmfsgajrg0ydzkak6jba4d2a"))))
+                "0rv93cw0a9xgv0wy15lzlnywrwm52h9s8gpm0an5z2rlp2mwwkhp"))))
     (properties `((upstream-name . "NeuralSens")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8666,6 +8666,7 @@ reading/writing and also other manipulation functions.")
                              r-magrittr
                              r-hmisc
                              r-gridextra
+                             r-ggrepel
                              r-ggplot2
                              r-ggnewscale
                              r-ggforce
@@ -11201,13 +11202,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "negligible" version))
               (sha256
                (base32
-                "11x199xpsrydsy0iwyivhp43x79a4v6wfz60yd9l6a5vwpn26j2v"))))
+                "131bgvac2dk8alnmjymdx6l7cgmz2cncsyg62zgc6asfrh90nrqc"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2

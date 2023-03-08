@@ -19819,13 +19819,13 @@ according to an external variable of the user's interest.")
 (define-public r-dctensor
   (package
     (name "r-dctensor")
-    (version "0.99.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcTensor" version))
               (sha256
                (base32
-                "0ssnl4q2r5hka61954zvbzim8aad6l2bi2ih2d42zk2520iyr3jw"))))
+                "0ilmjhqh5lqpagf2zrfzxf2lhgqz3asxavf172i3rf61kw6f8ssj"))))
     (properties `((upstream-name . "dcTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor r-nntensor r-mass r-fields))
@@ -19834,9 +19834,9 @@ according to an external variable of the user's interest.")
     (synopsis "Discrete Matrix/Tensor Decomposition")
     (description
      "Semi-Binary and Semi-Ternary Matrix Decomposition are performed based on
-Non-negative Matrix Factorization (NMF) and Gradient Descent-based Singular
-Value Decomposition (GD-SVD).  For the details of the methods, see the reference
-section of GitHub README.md <https://github.com/rikenbit/dcTensor>.")
+Non-negative Matrix Factorization (NMF) and Singular Value Decomposition (SVD).
+For the details of the methods, see the reference section of GitHub README.md
+<https://github.com/rikenbit/dcTensor>.")
     (license license:expat)))
 
 (define-public r-dcsmooth

@@ -2590,6 +2590,31 @@ density (and derivatives) estimator, and lpbwdensity() to perform data-driven
 bandwidth selection.")
     (license license:gpl2)))
 
+(define-public r-lpda
+  (package
+    (name "r-lpda")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lpda" version))
+              (sha256
+               (base32
+                "0q54jid3vj5js0bhf4v4w5v3pmh4rr8dv0igcb2525fl731jsqfk"))))
+    (properties `((upstream-name . "lpda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rglpk))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lpda")
+    (synopsis "Linear Programming Discriminant Analysis")
+    (description
+     "Classification method obtained through linear programming.  It is advantageous
+with respect to the classical developments when the distribution of the
+variables involved is unknown or when the number of variables is much greater
+than the number of individuals.  LPDA method is published in Nueda, et al.
+(2022) \"LPDA: A new classification method based on linear programming\".
+<doi:10.1371/journal.pone.0270403>.")
+    (license license:gpl2+)))
+
 (define-public r-lpcm
   (package
     (name "r-lpcm")
@@ -15899,6 +15924,34 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 regression.  The main function, l1ball(), yields posterior samples for linear
 regression, as introduced by Xu and Duan (2020) <arXiv:2006.01340>.")
     (license license:gpl2+)))
+
+(define-public r-l0learn
+  (package
+    (name "r-l0learn")
+    (version "2.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "L0Learn" version))
+              (sha256
+               (base32
+                "050r2rqmqgwmal53d82vi0nhnzzrm4q8mqz0pbpj77blflbqy740"))))
+    (properties `((upstream-name . "L0Learn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=L0Learn")
+    (synopsis "Fast Algorithms for Best Subset Selection")
+    (description
+     "Highly optimized toolkit for approximately solving L0-regularized learning
+problems (a.k.a.  best subset selection).  The algorithms are based on
+coordinate descent and local combinatorial search.  For more details, check the
+paper by Hazimeh and Mazumder (2020) <doi:10.1287/opre.2019.1919>.")
+    (license license:expat)))
 
 (define-public r-l0ara
   (package

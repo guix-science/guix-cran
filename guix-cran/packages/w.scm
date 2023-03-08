@@ -3067,13 +3067,13 @@ Facebook Ads, and many others using the Windsor.ai API
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.4")
+    (version "2.0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "windex" version))
               (sha256
                (base32
-                "160x70pnjvpi50jsglvsbxzdz102c4hwllmr8bpb5041b8gy4vws"))))
+                "0iwmb72fwvif6l6carn23f5zrkb5baxszi1imy1ls5c847kvqc0w"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger

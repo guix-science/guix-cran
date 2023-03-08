@@ -7299,13 +7299,13 @@ mgcv'.")
 (define-public r-traminerextras
   (package
     (name "r-traminerextras")
-    (version "0.6.5")
+    (version "0.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TraMineRextras" version))
               (sha256
                (base32
-                "0y1f296l5fjdiidiyk50vgnn2srzvb6x2ddizay9yv4lichxy4w1"))))
+                "172kp9pww79fjg1z5k3cfwknk0a0729nr43lb18l6cqzwmhy9bs4"))))
     (properties `((upstream-name . "TraMineRextras")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -10446,13 +10446,13 @@ executed, and cube and dimension metadata information can be taken.")
 (define-public r-tm-plugin-mail
   (package
     (name "r-tm-plugin-mail")
-    (version "0.2-1")
+    (version "0.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tm.plugin.mail" version))
               (sha256
                (base32
-                "0rn8jqv622qmc0zkz534ka5qnbca2rlabxm3vjbqplr6fh1ahwb1"))))
+                "03d0y19yn4akkcjlyc17rb2r9nv8rfnqx1l8i5gp07w5s8czvfxf"))))
     (properties `((upstream-name . "tm.plugin.mail")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-nlp))
@@ -16387,6 +16387,40 @@ learning train a model with a smaller dataset, improve generalization, and speed
 up training.")
     (license license:asl2.0)))
 
+(define-public r-tfevents
+  (package
+    (name "r-tfevents")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tfevents" version))
+              (sha256
+               (base32
+                "177dplz6chrpxaqgh84134p5xvxxzly3wprwvcbhsjgxkzyqya8x"))))
+    (properties `((upstream-name . "tfevents")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-zeallot
+                             r-withr
+                             r-vctrs
+                             r-rlang
+                             r-rcpp
+                             r-png
+                             r-fs
+                             r-ellipsis
+                             r-digest
+                             r-cli
+                             r-blob))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/mlverse/tfevents")
+    (synopsis "Write Events for 'TensorBoard'")
+    (description
+     "This package provides a convenient way to log scalars, images, audio, and
+histograms in the tfevent record file format.  Logged data can be visualized on
+the fly using TensorBoard', a web based tool that focuses on visualizing the
+training progress of machine learning models.")
+    (license license:expat)))
+
 (define-public r-tfestimators
   (package
     (name "r-tfestimators")
@@ -21500,13 +21534,13 @@ constructs beyond sentiment.")
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.7.4")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tarchetypes" version))
               (sha256
                (base32
-                "1yg34m39qkyxd3q03z2dk7dvc31iv50795r5nxx180f97iiakf7s"))))
+                "05yhq8xnrpk37x7fq0yjw4m527ji28s16dskfmljrbrzb064nw2g"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

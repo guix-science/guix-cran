@@ -814,13 +814,13 @@ new prediction object individually.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FuzzyClass" version))
               (sha256
                (base32
-                "0vlx0l6zlfghabikssi29n275frb3if6w0qyjldm6ypkgangnzmn"))))
+                "02lk84z8x1qkbpbggb13sxmy0dvv9qx5sxqr44bcgd78yf0yg0h8"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -830,9 +830,10 @@ new prediction object individually.")
                              r-foreach
                              r-envstats
                              r-e1071
+                             r-dplyr
                              r-doparallel
                              r-catools))
-    (home-page "https://github.com/Jodavid/FuzzyClass")
+    (home-page "https://github.com/leapigufpb/FuzzyClass")
     (synopsis "Fuzzy and Non-Fuzzy Classifiers")
     (description
      "It provides classifiers which can be used for discrete variables and for

@@ -9241,6 +9241,37 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 <doi:10.1111/biom.12628>.")
     (license license:gpl2)))
 
+(define-public r-hdrfa
+  (package
+    (name "r-hdrfa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HDRFA" version))
+              (sha256
+               (base32
+                "0hl92a0cviyp21bpfbwshlnh5mdp52q7xzicy5zcsafan11m8k8h"))))
+    (properties `((upstream-name . "HDRFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-pracma r-mass))
+    (home-page "https://cran.r-project.org/package=HDRFA")
+    (synopsis "High-Dimensional Robust Factor Analysis")
+    (description
+     "Factor models have been widely applied in areas such as economics and finance,
+and the well-known heavy-tailedness of macroeconomic/financial data should be
+taken into account when conducting factor analysis.  We propose two algorithms
+to do robust factor analysis by considering the Huber loss.  One is based on
+minimizing the Huber loss of the idiosyncratic error's L2 norm, which turns out
+to do Principal Component Analysis (PCA) on the weighted sample covariance
+matrix and thereby named as Huber PCA. The other one is based on minimizing the
+element-wise Huber loss, which can be solved by an iterative Huber regression
+algorithm.  In this package we also provide the code for traditional PCA by Bai,
+J., (2023)<doi:10.1111/1468-0262.00392>, the Robust Two Step (RTS) method by He
+et al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
+(QFA) method by Chen et al. (2021)<doi:10.3982/ECTA15746> and Huber PCA by He et
+al. (2023)<arXiv:2303.02817>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-hdpglm
   (package
     (name "r-hdpglm")

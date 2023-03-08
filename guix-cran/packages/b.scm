@@ -3887,6 +3887,41 @@ Design under Acceptance Decision Uncertainty\" by Suiyao Chen et al. (2020)
 <doi:10.1080/08982112.2020.1757703>.")
     (license license:gpl3)))
 
+(define-public r-brclimr
+  (package
+    (name "r-brclimr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brclimr" version))
+              (sha256
+               (base32
+                "1gq22b1bli00kzckhc46v0bwn8fb8jby4kry6rim5276y1bnpbl9"))))
+    (properties `((upstream-name . "brclimr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-lobstr
+                             r-knitr
+                             r-glue
+                             r-ggplot2
+                             r-duckdb
+                             r-dbi
+                             r-checkmate))
+    (home-page "https://rfsaldanha.github.io/brclimr/")
+    (synopsis
+     "Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities")
+    (description
+     "Fetches zonal statistics from weather indicators that were calculated for each
+municipality in Brazil using data from the BR-DWGD and TerraClimate projects.
+Zonal statistics such as mean, maximum, minimum, standard deviation, and sum
+were computed by taking into account the data cells that intersect the
+boundaries of each municipality and stored in Parquet files.  This procedure was
+carried out for all Brazilian municipalities, and for all available dates, for
+every indicator available in the weather products (BR-DWGD and TerraClimate
+projects).  This package queries on-line the already calculated statistics on
+the Parquet files and returns easy-to-use data.frames.")
+    (license license:expat)))
+
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
@@ -14104,13 +14139,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.1.1")
+    (version "4.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bibliometrix" version))
               (sha256
                (base32
-                "1iayx8kvncf4j0w38vw3hlf670w7pq1cb8ld7pqysabar7rciavk"))))
+                "1rdbik1r4bzpjhl2552w390b5v6vql2sbvspshwh2vaar35civfw"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -14122,7 +14157,6 @@ They can be used to test the different features of the package bibliometrix
                              r-rscopus
                              r-readxl
                              r-readr
-                             r-rcolorbrewer
                              r-pubmedr
                              r-plotly
                              r-openxlsx
@@ -14132,7 +14166,6 @@ They can be used to test the different features of the package bibliometrix
                              r-ggplot2
                              r-forcats
                              r-factominer
-                             r-factoextra
                              r-dt
                              r-dplyr
                              r-dimensionsr
@@ -23098,28 +23131,25 @@ sources such as OpenStreetMap', Carto', Mapbox and others in R.")
 (define-public r-basedosdados
   (package
     (name "r-basedosdados")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basedosdados" version))
               (sha256
                (base32
-                "0mbnpz0w7sx4awfkhf6jdnnp1a2zj6q0wamiwqqs86wbdp9mjam2"))))
+                "18gfk7hivp68mgbgx60qbpcy28ysj4llzwdji5a57rrczwffr6p0"))))
     (properties `((upstream-name . "basedosdados")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-writexl
+    (propagated-inputs (list r-writexl
                              r-typed
                              r-tibble
                              r-stringr
                              r-scales
                              r-rlang
                              r-readr
-                             r-rcpp
                              r-purrr
                              r-magrittr
                              r-httr
-                             r-googleauthr
                              r-glue
                              r-fs
                              r-dplyr

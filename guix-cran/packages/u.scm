@@ -4001,6 +4001,41 @@ the operating characteristics of the methods with several user-dependent
 options.")
     (license license:gpl2+)))
 
+(define-public r-ubayfs
+  (package
+    (name "r-ubayfs")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "UBayFS" version))
+              (sha256
+               (base32
+                "1aj627f8w30wfnf313adza85jffnp1yq34ri8cfaz5v0jzs1bfib"))))
+    (properties `((upstream-name . "UBayFS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-rdimtools
+                             r-mrmre
+                             r-matrixstats
+                             r-hyper2
+                             r-gridextra
+                             r-ggplot2
+                             r-ga
+                             r-dirichletreg))
+    (native-inputs (list r-knitr))
+    (home-page "https://annajenul.github.io/UBayFS/")
+    (synopsis "User-Guided Bayesian Framework for Ensemble Feature Selection")
+    (description
+     "The framework proposed in Jenul et al., (2022) <doi:10.1007/s10994-022-06221-9>,
+together with an interactive Shiny dashboard.  UBayFS is an ensemble feature
+selection technique embedded in a Bayesian statistical framework.  The method
+combines data and user knowledge, where the first is extracted via data-driven
+ensemble feature selection.  The user can control the feature selection by
+assigning prior weights to features and penalizing specific feature
+combinations.  UBayFS can be used for common feature selection as well as block
+feature selection.")
+    (license license:gpl3)))
+
 (define-public r-uavrmp
   (package
     (name "r-uavrmp")

@@ -4067,13 +4067,13 @@ cryptocurrencies.")
 (define-public r-cryptotax
   (package
     (name "r-cryptotax")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cryptoTax" version))
               (sha256
                (base32
-                "0cjhs4lriph4iarwf9s4y2v8c8xl9v4xqj47w6bdlh49x3m8831g"))))
+                "08y2n69axi0bxwldzfnqnwx3yy6zjll91xk503dccvhwvbz71cdb"))))
     (properties `((upstream-name . "cryptoTax")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8184,13 +8184,13 @@ neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 (define-public r-covregrf
   (package
     (name "r-covregrf")
-    (version "1.0.1")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CovRegRF" version))
               (sha256
                (base32
-                "0fldvdjxysg6r7p6vxnnfjih68j8igxva57fs5rygxmi51l2vl6n"))))
+                "15v5myjjmkclsldnhnbwgc18y0758npw9qdij5zx9g1bj83l3fy7"))))
     (properties `((upstream-name . "CovRegRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
@@ -21605,17 +21605,16 @@ Hopkins and Skellam (1954) <doi:10.1093/oxfordjournals.aob.a083391>.")
 (define-public r-clusterstability
   (package
     (name "r-clusterstability")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClusterStability" version))
               (sha256
                (base32
-                "1laa5m3y1rc7jr8q3i9qb3izs7qmadz169w9xm8q3mm3834ngn9b"))))
+                "1y88dv7n2cxm5w9pbg36dvx55nzvsnq4vbmx401147xr5p03yk9w"))))
     (properties `((upstream-name . "ClusterStability")))
     (build-system r-build-system)
-    (propagated-inputs (list r-weightedcluster r-rcpp r-copula r-clustercrit
-                             r-cluster))
+    (propagated-inputs (list r-weightedcluster r-rcpp r-copula r-cluster))
     (home-page "https://cran.r-project.org/package=ClusterStability")
     (synopsis
      "Assessment of Stability of Individual Objects or Clusters in Partitioning Solutions")

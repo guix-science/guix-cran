@@ -1462,13 +1462,13 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
 (define-public r-vmr
   (package
     (name "r-vmr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vmr" version))
               (sha256
                (base32
-                "1nxc8s4z57bk6gdgs37nspmajq3h2s0xjnfcg4iyjans7laiv6gq"))))
+                "0vm4wxf9zb2xgjd9xam3gy6mqr621x922ldshrxs4cibaag3lq5x"))))
     (properties `((upstream-name . "vmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))
