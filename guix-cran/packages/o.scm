@@ -190,13 +190,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-3")
+    (version "0.3-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ows4R" version))
               (sha256
                (base32
-                "1yxinwjs7zm9xiz45gvl1s3zn38bk80hc120742b7nqj7gn0d1ih"))))
+                "1mfs9ag47wyspwq5rl5mqx7ilrxglrsc26l7zz8xbb5bdl5dkd7c"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -1725,16 +1725,16 @@ BioQuant Center at Heidelberg University, Germany.")
 (define-public r-oscar
   (package
     (name "r-oscar")
-    (version "1.0.4")
+    (version "1.1.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oscar" version))
               (sha256
                (base32
-                "1xgjgmxv50c1378p3sa6fp2zp96sji21apqsrhmfz70gksv6r5l8"))))
+                "15q9hl9miz7mncv38327sd03nl4xjipbgxd4hl2adva1zj4iq1wr"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-matrix r-hamlet))
+    (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/Syksy/oscar")
     (synopsis
@@ -3118,6 +3118,36 @@ exhaustive search.  See Ni, Y., & Mallick, B. (2022)
 <https://proceedings.mlr.press/v180/ni22a/ni22a.pdf> \"Ordinal Causal Discovery.
 Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (UAI 2022), PMLR 180:1530â1540\".")
+    (license license:expat)))
+
+(define-public r-ordbetareg
+  (package
+    (name "r-ordbetareg")
+    (version "0.7.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ordbetareg" version))
+              (sha256
+               (base32
+                "1fvcfkawzadx7ngp467ji6p536nrdz5ig0k87v1ggbxg5lihikvd"))))
+    (properties `((upstream-name . "ordbetareg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-transformr
+                             r-tidyr
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ordbetareg")
+    (synopsis "Ordered Beta Regression Models with 'brms'")
+    (description
+     "This package implements ordered beta regression models, which are for modeling
+continuous variables with upper and lower bounds, such as survey sliders,
+dose-response relationships and indexes.  For more information, see Kubinec
+(2022) <doi:10.31235/osf.io/2sx6y>.  The package is a front-end to the R package
+brms', which facilitates a range of regression specifications, including
+hierarchical, dynamic and multivariate modeling.")
     (license license:expat)))
 
 (define-public r-orcutt
@@ -5050,13 +5080,13 @@ writing, styling and editing worksheets.")
 (define-public r-openva
   (package
     (name "r-openva")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openVA" version))
               (sha256
                (base32
-                "0j4lz66wcx20n0sdjrp06a6zwcz8jvcihmdaj1jr1rnrb5sags0z"))))
+                "1qnp9p25xlphf4ns6p27l0ylk169zi831l5ww2pw4ilw1dvmhk21"))))
     (properties `((upstream-name . "openVA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tariff
@@ -5294,6 +5324,37 @@ and visualize aviation data.  It includes a client interface to the OpenSky API
 well as aircraft state vectors.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
+(define-public r-opensensmapr
+  (package
+    (name "r-opensensmapr")
+    (version "0.6.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "opensensmapr" version))
+              (sha256
+               (base32
+                "0inq86zrkax281wh5rj3pxjp3lgrhsqvma0p6kvizb5c7cwws5in"))))
+    (properties `((upstream-name . "opensensmapr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lazyeval
+                             r-httr
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sensebox/opensensmapR")
+    (synopsis "Client for the Data API of 'openSenseMap.org'")
+    (description
+     "Download environmental measurements and sensor station metadata from the API of
+open data sensor web platform <https://opensensemap.org> for analysis in R. This
+platform provides real time data of more than 1500 low-cost sensor stations for
+PM10, PM2.5, temperature, humidity, UV-A intensity and more phenomena.  The
+package aims to be compatible with sf and the Tidyverse', and provides several
+helper functions for data exploration and transformation.")
+    (license license:gpl2+)))
+
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")
@@ -5497,6 +5558,34 @@ users to automatically instrument Plumber and Shiny applications, collect
 standard process metrics, as well as define custom counter, gauge, and histogram
 metrics of their own.")
     (license license:expat)))
+
+(define-public r-openmeteo
+  (package
+    (name "r-openmeteo")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "openmeteo" version))
+              (sha256
+               (base32
+                "0lb5mfsm4fhi6hz4yyfxwh73naqzrr5x14wk17ar8v69gp9lsivn"))))
+    (properties `((upstream-name . "openmeteo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibblify
+                             r-tibble
+                             r-testthat
+                             r-lutz
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=openmeteo")
+    (synopsis "Retrieve Weather Data from the Open-Meteo API")
+    (description
+     "This package provides a client for the Open-Meteo API that retrieves Open-Meteo
+weather data in a tidy format.  No API key is required.  The API specification
+is located at <https://open-meteo.com/en/docs>.")
+    (license license:gpl3+)))
 
 (define-public r-openland
   (package
@@ -5963,13 +6052,13 @@ papers.")
 (define-public r-openai
   (package
     (name "r-openai")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openai" version))
               (sha256
                (base32
-                "0yhnnrmakf7zhiwyj7v2d2nawppy9h4787z44596dhlc558lxj67"))))
+                "1fi1nc9c7kfnig6b5ifpb1v9r3gxszk984rwyq7i1lb6s5jv0b9z"))))
     (properties `((upstream-name . "openai")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -6947,27 +7036,6 @@ extensive diagnostic functions.  It is useful as a baseline for machine learning
 models and the rules are often helpful heuristics.")
     (license license:expat)))
 
-(define-public r-onepass
-  (package
-    (name "r-onepass")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "onepass" version))
-              (sha256
-               (base32
-                "1r8wk00aqc0sc7l6mmy1k4hkijfikynysrx5vvahbd6mlcdb3bmp"))))
-    (properties `((upstream-name . "onepass")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite))
-    (home-page "https://jonlinca.github.io/onepass/")
-    (synopsis "1password Credential Retrieval")
-    (description
-     "Interaction with 1Password via the command-line tool
-<https://1password.com/downloads/command-line/> to read vault contents and
-download credentials.")
-    (license license:gpl3)))
-
 (define-public r-onemapsgapi
   (package
     (name "r-onemapsgapi")
@@ -7301,21 +7369,23 @@ the population.")
 (define-public r-oncomsm
   (package
     (name "r-oncomsm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oncomsm" version))
               (sha256
                (base32
-                "13h5ydw11kdjcdr48hqa4dv81qixj4l5qxrzwv4x3lqdnsvvnll1"))))
+                "0p78sz9r9yl0kndf2p3z40zskam3pr8f22z45ph6dz7hpkh5k0nf"))))
     (properties `((upstream-name . "oncomsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-stanheaders
+                             r-rstantools
                              r-rstan
                              r-rlang
+                             r-rcppparallel
                              r-rcppnumerical
                              r-rcppeigen
                              r-rcpp
@@ -8437,6 +8507,47 @@ via Softmax regression, under the Harville <doi:10.1080/01621459.1973.10482425>
 and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
     (license license:lgpl3)))
 
+(define-public r-ogrdbstats
+  (package
+    (name "r-ogrdbstats")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ogrdbstats" version))
+              (sha256
+               (base32
+                "140i4wippqr1260a1c4syg6lfspkf9q8rifnalf6iaaqx2bz4yfq"))))
+    (properties `((upstream-name . "ogrdbstats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tigger
+                             r-tidyr
+                             r-stringr
+                             r-stringdist
+                             r-scales
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-complexheatmap
+                             r-bookdown
+                             r-biostrings
+                             r-argparser
+                             r-alakazam))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/airr-community/ogrdbstats")
+    (synopsis
+     "Analysis of Adaptive Immune Receptor Repertoire Germ Line Statistics")
+    (description
+     "Multiple tools are now available for inferring the personalised germ line set
+from an adaptive immune receptor repertoire.  Output from these tools is
+converted to a single format and supplemented with rich data such as usage and
+characterisation of novel germ line alleles.  This data can be particularly
+useful when considering the validity of novel inferences.  Use of the analysis
+provided is described in <doi:10.3389/fimmu.2019.00435>.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-oglmx
   (package
     (name "r-oglmx")
@@ -8798,13 +8909,13 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
 (define-public r-odrf
   (package
     (name "r-odrf")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ODRF" version))
               (sha256
                (base32
-                "1mp8sv846hss8gmh91d5qny6k013pr1f4lmbqx9q2dm89k6m8pzy"))))
+                "1b3shh7q301rjw5axvszvnmlwccxw1y9mcvl2pai51y5y9y3f9z9"))))
     (properties `((upstream-name . "ODRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

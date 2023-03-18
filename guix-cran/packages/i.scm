@@ -299,16 +299,16 @@ provide a consistent variance estimate.")
 (define-public r-ivs
   (package
     (name "r-ivs")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivs" version))
               (sha256
                (base32
-                "1qmgscpp5xni6v9np7r3np79vk2i9w4vn5p5q2hlq3bv8c4lrpp5"))))
+                "06gjlmqqwlp86l708lk36vnxj83r082mbcccvp3x6g0apiy8ak98"))))
     (properties `((upstream-name . "ivs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-rlang r-glue))
+    (propagated-inputs (list r-vctrs r-rlang r-lifecycle r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DavisVaughan/ivs")
     (synopsis "Interval Vectors")
@@ -348,18 +348,18 @@ features.")
 (define-public r-ivreg
   (package
     (name "r-ivreg")
-    (version "0.6-1")
+    (version "0.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivreg" version))
               (sha256
                (base32
-                "1dv1vmhnf31a2rn02yy9r34jzfwb8k34y15zpsqp8557ylr1s7nm"))))
+                "15iqj8rzmb1hybvnw8h6v321sj4pv7bg67nfk8g9bpzyds3zm9xl"))))
     (properties `((upstream-name . "ivreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmtest r-formula r-car))
     (native-inputs (list r-knitr))
-    (home-page "https://john-d-fox.github.io/ivreg/")
+    (home-page "https://zeileis.github.io/ivreg/")
     (synopsis
      "Instrumental-Variables Regression by '2SLS', '2SM', or '2SMM', with Diagnostics")
     (description
@@ -1538,13 +1538,13 @@ al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.17")
+    (version "0.5.19-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotree" version))
               (sha256
                (base32
-                "1mw9qizam1zjm4m1nv09zi9y1wh3svkvfwcnphafvi7n2zsmx07y"))))
+                "1l42dgfr51k6dnm07yxpawwqwy9a4rsc6k90fviw4sf71byazqa0"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -1949,13 +1949,13 @@ partnership databases.  Web services for API:
 (define-public r-isogeochem
   (package
     (name "r-isogeochem")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isogeochem" version))
               (sha256
                (base32
-                "0sypzabg1dqs3c0ph6h5qdjdn25hfvcsh3hhks60ylpnjn9ck3x0"))))
+                "112pcgbafjkgbfdkqvgz5i5iscfkjasq88k58az50cf47bqsqg0g"))))
     (properties `((upstream-name . "isogeochem")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3642,13 +3642,13 @@ jointly considered for gene regulatory network inference.")
 (define-public r-iraceplot
   (package
     (name "r-iraceplot")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iraceplot" version))
               (sha256
                (base32
-                "1i3nnsi1mklfiqwcn5nw9v15vcg6xb0ssb6g2n5kd3kr0r0y50v9"))))
+                "1cnhpbgv04d8nm4qj1ayc927hd9yjiasg7xcx8aigl6fli01qddq"))))
     (properties `((upstream-name . "iraceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3657,6 +3657,7 @@ jointly considered for gene regulatory network inference.")
                              r-tidyr
                              r-tibble
                              r-rmarkdown
+                             r-rlang
                              r-plotly
                              r-matrixstats
                              r-knitr
@@ -7076,17 +7077,17 @@ calibrate radiocarbon dates.")
 (define-public r-intamap
   (package
     (name "r-intamap")
-    (version "1.4-16")
+    (version "1.5-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intamap" version))
               (sha256
                (base32
-                "1spgxz3cvfcfk7n1agmns2q3bd9gl19q7szq8kzjp7zi9bzd6xb6"))))
+                "1d269rg1wf431v6p9blxspnnps8lyzcc8wid5qgy6hj3wrya0a37"))))
     (properties `((upstream-name . "intamap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
-                             r-rgdal
+                             r-sf
                              r-mvtnorm
                              r-mba
                              r-mass
@@ -7098,7 +7099,10 @@ calibrate radiocarbon dates.")
     (home-page "https://cran.r-project.org/package=intamap")
     (synopsis "Procedures for Automated Interpolation")
     (description
-     "This package provides classes and methods for automated spatial interpolation.")
+     "Geostatistical interpolation has traditionally been done by manually fitting a
+variogram and then interpolating.  Here, we introduce classes and methods that
+can do this interpolation automatically.  Pebesma et al (2010) gives an overview
+of the methods behind and possible usage <doi:10.1016/j.cageo.2010.03.019>.")
     (license license:gpl2+)))
 
 (define-public r-insurancerating
@@ -9137,25 +9141,16 @@ delay distribution.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "1.2.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incidence2" version))
               (sha256
                (base32
-                "1cs4yh2jaf9d0pivz25v2bv2ci0ks4vw6x3r2zxrq4981hiqgzl1"))))
+                "0ycc1kv1jnzywwzm5smrvvw7rvgbpk989yp77v3vgsqf6wgfyi8r"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-pillar
-                             r-grates
-                             r-ellipsis
-                             r-dplyr
-                             r-data-table
-                             r-clock))
+    (propagated-inputs (list r-pillar r-grates r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/reconverse/incidence2")
     (synopsis "Compute, Handle and Plot Incidence of Dated Events")
@@ -11806,13 +11801,13 @@ faculty friendship network, domestic US flights network, etc.")
 (define-public r-igorrr
   (package
     (name "r-igorrr")
-    (version "0.3.2")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IGoRRR" version))
               (sha256
                (base32
-                "1px023pjyjd7z1742xx1w37dhkyprhbkha93snm6s25cmg0jhfrn"))))
+                "1p3dakv9xv835pkixa4smp3bhnrydrfskh8b92kkp8vb8sahjyzd"))))
     (properties `((upstream-name . "IGoRRR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11844,7 +11839,8 @@ faculty friendship network, domestic US flights network, etc.")
                              r-fst
                              r-feather
                              r-dplyr
-                             r-clipr))
+                             r-clipr
+                             r-arrow))
     (home-page "https://cran.r-project.org/package=IGoRRR")
     (synopsis "Shiny Interface for Simple Data Management")
     (description
@@ -13313,13 +13309,13 @@ an evolution algorithm.")
 (define-public r-idconverter
   (package
     (name "r-idconverter")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDConverter" version))
               (sha256
                (base32
-                "0mx79ig29c74gnphbyx4nc57j6qz8psgbw3ffw5fq123jkjdp3p6"))))
+                "047l03b53cq0ijsmcl3lw4g45ligc1ajrrv7nh02mmaj3wng7dji"))))
     (properties `((upstream-name . "IDConverter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-httr r-data-table))
@@ -13385,13 +13381,13 @@ visit
 (define-public r-idarps
   (package
     (name "r-idarps")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idarps" version))
               (sha256
                (base32
-                "1dl9rg10hfhcnidc3lhmf84a4kajxls4n9r389rb4x8ymlqc6pm1"))))
+                "0vy9gr8wyixi4aaz1wkzigdg3h6m4sr314bj42chrgq9bz2n4whc"))))
     (properties `((upstream-name . "idarps")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=idarps")
@@ -13401,8 +13397,7 @@ visit
      "This package provides datasets and functions for the class \"Modelling and Data
 Analysis for Pharmaceutical Sciences\".  The datasets can be used to present
 various methods of data analysis and statistical modeling.  Functions for data
-visualization and allowing to analyze the empirical distribution of the data are
-also implemented.")
+visualization are also implemented.")
     (license license:agpl3)))
 
 (define-public r-idar
@@ -16162,26 +16157,26 @@ CRC Press.")
 (define-public r-i2extras
   (package
     (name "r-i2extras")
-    (version "0.1.2")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "i2extras" version))
               (sha256
                (base32
-                "0h9hy9qbw2lk0pxhrn2gygmcx731r38pj08iyfci5axp8fs0cizs"))))
+                "14k9s5ppq3c7ldh6gqi82awmkk34ac0br0qr42gqba9lrssf4bsr"))))
     (properties `((upstream-name . "i2extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
-                             r-trending
                              r-tidyselect
                              r-tidyr
                              r-tibble
                              r-rlang
+                             r-mass
                              r-incidence2
                              r-ggplot2
-                             r-ellipsis
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-citools))
     (native-inputs (list r-knitr))
     (home-page "https://www.reconverse.org/i2extras/")
     (synopsis "Functions to Work with 'incidence2' Objects")

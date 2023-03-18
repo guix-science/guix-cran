@@ -923,17 +923,16 @@ values (promises), \"...\" lists, and active calls.")
 (define-public r-nser
   (package
     (name "r-nser")
-    (version "1.4.4")
+    (version "1.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nser" version))
               (sha256
                (base32
-                "0dbilzbc6ajfrsx5zlfcnhh73zqf7z0d672kj4c2k8iaslkv4n8s"))))
+                "0li2kwznh13v84pr16bhn44wrlsgl9vy9l8hnf5xpxgqsxbqrjrh"))))
     (properties `((upstream-name . "nser")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-rvest
                              r-rselenium
                              r-readr
@@ -1079,33 +1078,6 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 <doi:10.1111/j.1368-423X.2007.00202.x>.  Beran, J. (1995)
 <doi:10.1111/j.2517-6161.1995.tb02054.x>.")
     (license license:gpl3+)))
-
-(define-public r-nsapi
-  (package
-    (name "r-nsapi")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nsapi" version))
-              (sha256
-               (base32
-                "06xf2p6f911vwpzky47r35fjgjvlhp13p9pf1zlvjrv66kdw8vbp"))))
-    (properties `((upstream-name . "nsapi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RMHogervorst/nsapi")
-    (synopsis "Connect to the NS (Dutch Railways) API")
-    (description
-     "Access the NS api and download current departure times, disruptions and
-engineering work, the station list, and travel recommendations from station to
-station.  All results will be returned as a data.frame'.  NS (Nederlandse
-Spoorwegen; Dutch Railways) is the largest train travel provider in the
-Netherlands.  for more information about the API itself see
-<https://www.ns.nl/en/travel-information/ns-api>.  To use the API, and this
-package, you will need to obtain a username and password.  More information
-about authentication and the use of the functions are described in the vignette.")
-    (license license:expat)))
 
 (define-public r-nsae
   (package
@@ -3635,13 +3607,13 @@ corresponding to the total points.")
 (define-public r-nomnoml
   (package
     (name "r-nomnoml")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nomnoml" version))
               (sha256
                (base32
-                "1c1pv3c1s6cdc75malnhy69cc9za3hmikd46d35x1n2ww54lmldc"))))
+                "07zh4csw41pkngjqgqwwh40k6ink0fsw758iknrk54dxfv59x6ba"))))
     (properties `((upstream-name . "nomnoml")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot r-rlang r-png r-lifecycle r-htmlwidgets))
@@ -3895,18 +3867,18 @@ Genetics and Molecular Biology, 15(6), 447-471.")
 (define-public r-noia
   (package
     (name "r-noia")
-    (version "0.97.1")
+    (version "0.97.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "noia" version))
               (sha256
                (base32
-                "0yldfmnb4ads4s9v9cj1js8zf1w1hxasqq6qjyzwknmvmp7kh62h"))))
+                "18n2pmjmx1xqmshfvan1s7hlaciz05xhplg8zphcjhm2hfq7svv2"))))
     (properties `((upstream-name . "noia")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=noia")
+    (home-page "https://github.com/lerouzic/noia")
     (synopsis
-     "Implementation of the Natural and Orthogonal InterAction (NOIA) model")
+     "Implementation of the Natural and Orthogonal InterAction (NOIA) Model")
     (description
      "The NOIA model, as described extensively in Alvarez-Castro & Carlborg (2007), is
 a framework facilitating the estimation of genetic effects and
@@ -4217,13 +4189,13 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
 (define-public r-nntensor
   (package
     (name "r-nntensor")
-    (version "1.1.12")
+    (version "1.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnTensor" version))
               (sha256
                (base32
-                "1fkqyj18c8lbc1ij5vyvnigja6c5mqm9ma1dbgd111hj52q5a9j1"))))
+                "1xx2a61s0pzc54rwfgbh8jwnmh39kc95mviqqnircxlxdlc8z75n"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tagcloud
@@ -4336,13 +4308,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.5")
+    (version "0.9.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "0r94f7ih0rjfbpnfl0chsqvhprda1npp2f3yvnl18l11mhk1gms9"))))
+                "144d08b3vz74b91v3xlj2g92wqdxdgd5w9cwsb6fh14jf0l5kywa"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4399,13 +4371,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nnlib2Rcpp" version))
               (sha256
                (base32
-                "1a1fax29ki0gmcxgcrbsrklf929zcki714yns2nh8m18q4krbgnw"))))
+                "0qydbbq7p9y2n91v2lfjxdm1fhpjvh7c3v2w912mk0c1bnzrhr8x"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6333,13 +6305,13 @@ parameters as a constrained matrix.")
 (define-public r-nlar
   (package
     (name "r-nlar")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlaR" version))
               (sha256
                (base32
-                "05ipw2j4w5r3bpmhqh742yqz5qihx36jnsq08bli8jwsqha9vm8h"))))
+                "11f2ka3fi74bkf0izzc17w2h8v3ngdxhy6m0fjv1wjrbby2cqh8g"))))
     (properties `((upstream-name . "nlaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs))
@@ -7039,13 +7011,13 @@ simple, value-based choice.\" Neuroimage, 214, 116764.")
 (define-public r-nieve
   (package
     (name "r-nieve")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nieve" version))
               (sha256
                (base32
-                "10g3krcjzyjqhw6wdyk8ck009jalav1ybla93klzr894ildl1agh"))))
+                "019ql8qzmp4qi7ayx26jgcnbsjmq6sigmv07x30macnsq7s7n2gi"))))
     (properties `((upstream-name . "nieve")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7059,6 +7031,44 @@ observations.  The transformations exchanging the two parameterizations of Peaks
 Over Threshold (POT) models: Poisson-GP and Point-Process are also provided with
 their derivatives.")
     (license license:gpl2+)))
+
+(define-public r-nichevol
+  (package
+    (name "r-nichevol")
+    (version "0.1.20")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nichevol" version))
+              (sha256
+               (base32
+                "18c3l9mm4dh0pxpliv2sx7nyijdhmzgcd36xkzclhhh067lxifrs"))))
+    (properties `((upstream-name . "nichevol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringr r-geiger r-castor r-ape))
+    (home-page "https://github.com/marlonecobos/nichevol")
+    (synopsis
+     "Tools for Ecological Niche Evolution Assessment Considering Uncertainty")
+    (description
+     "This package provides a collection of tools that allow users to perform critical
+steps in the process of assessing ecological niche evolution over phylogenies,
+with uncertainty incorporated explicitly in reconstructions.  The method
+proposed here for ancestral reconstruction of ecological niches characterizes
+species niches using a bin-based approach that incorporates uncertainty in
+estimations.  Compared to other existing methods, the approaches presented here
+reduce risk of overestimation of amounts and rates of ecological niche
+evolution.  The main analyses include: initial exploration of environmental data
+in occurrence records and accessible areas, preparation of data for phylogenetic
+analyses, executing comparative phylogenetic analyses of ecological niches, and
+plotting for interpretations.  Details on the theoretical background and methods
+used can be found in: Owens et al. (2020) <doi:10.1002/ece3.6359>, Peterson et
+al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
+<doi:10.17161/bi.v2i0.4>, Peterson (2011)
+<doi:10.1111/j.1365-2699.2010.02456.x>, Barve et al. (2011)
+<doi:10.1111/ecog.02671>, Machado-Stredel et al. (2021)
+<doi:10.21425/F5FBG48814>, Owens et al. (2013)
+<doi:10.1016/j.ecolmodel.2013.04.011>, Saupe et al. (2018)
+<doi:10.1093/sysbio/syx084>, and Cobos et al. (2021) <doi:10.1111/jav.02868>.")
+    (license license:gpl3)))
 
 (define-public r-nicherover
   (package
@@ -7141,13 +7151,13 @@ Models.")
 (define-public r-nic
   (package
     (name "r-nic")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nic" version))
               (sha256
                (base32
-                "0nr84a0vvl682ahp9xq50y6mk5dsircgz4l2rqp0jgv2h7fkd0n2"))))
+                "1bsmwdnkxmpp1wr7w4qmpm1x8vgllif0yqbn4n0k477bzlm9p7m4"))))
     (properties `((upstream-name . "nic")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7527,13 +7537,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhdplusTools" version))
               (sha256
                (base32
-                "063vskxilrhx801cgp7hl8w81k4qig6hsyj9xlfdzjjrhyan31pi"))))
+                "0w41jbh9g1178mnjnyiwxafm6z5ssnadh23ap6lsldysma633nwc"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8214,13 +8224,13 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
 (define-public r-newsmap
   (package
     (name "r-newsmap")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "newsmap" version))
               (sha256
                (base32
-                "0r7ldw78wi66li6xgski5g0fa0sfwya6jw79ag06i9zgnzmswd85"))))
+                "1kvf2q0wdn5ilw10cyd9pbigh26fm9qr4sghbaln28x5f96f1fva"))))
     (properties `((upstream-name . "newsmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-quanteda-textstats r-quanteda
@@ -8918,13 +8928,13 @@ Kenneth Lange (2003, ISBN:978-8181281135).")
 (define-public r-networklite
   (package
     (name "r-networklite")
-    (version "1.0.1")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "networkLite" version))
               (sha256
                (base32
-                "09jz80nh95352jhwx1n6ihhx9is3md6sb887hxz6dj73mr34myx9"))))
+                "12vifn3vnhk0nk357759zp154v3l8hyapjqygkz31czhz3a5baxa"))))
     (properties `((upstream-name . "networkLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-statnet-common r-network r-dplyr))
@@ -9746,13 +9756,13 @@ NetMHCIIpan from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.8-0")
+    (version "2.8-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmeta" version))
               (sha256
                (base32
-                "0wyir3hjmj11yl47bhfrshbki3i47fq6ygq076979940vfd2xdsk"))))
+                "0xxray1ljf8smvipbcb04v5xpd2s8dsgwxqcj2ih5dsyrfj1cwgn"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
@@ -9760,29 +9770,32 @@ NetMHCIIpan from R.")
     (synopsis "Network Meta-Analysis using Frequentist Methods")
     (description
      "This package provides a comprehensive set of functions providing frequentist
-methods for network meta-analysis and supporting Schwarzer et al. (2015)
-<DOI:10.1007/978-3-319-21416-0>, Chapter 8 \"Network Meta-Analysis\": -
+methods for network meta-analysis (Balduzzi et al., 2023)
+<doi:10.18637/jss.v106.i02> and supporting Schwarzer et al. (2015)
+<doi:10.1007/978-3-319-21416-0>, Chapter 8 \"Network Meta-Analysis\": -
 frequentist network meta-analysis following RÃ¼cker (2012)
-<DOI:10.1002/jrsm.1058>; - net heat plot and design-based decomposition of
-Cochran's Q according to Krahn et al. (2013) <DOI:10.1186/1471-2288-13-35>; -
-measures characterizing the flow of evidence between two treatments by KÃ¶nig et
-al. (2013) <DOI:10.1002/sim.6001>; - ranking of treatments (frequentist analogue
-of SUCRA) according to RÃ¼cker & Schwarzer (2015)
-<DOI:10.1186/s12874-015-0060-8>; - partial order of treatment rankings ('poset')
-and Hasse diagram for poset (Carlsen & Bruggemann, 2014) <DOI:10.1002/cem.2569>;
-(RÃ¼cker & Schwarzer, 2017) <DOI:10.1002/jrsm.1270>; - split direct and indirect
-evidence to check consistency (Dias et al., 2010) <DOI:10.1002/sim.3767>,
-(Efthimiou et al., 2019) <DOI:10.1002/sim.8158>; - league table with network
-meta-analysis results; - additive network meta-analysis for combinations of
-treatments (RÃ¼cker et al., 2020) <DOI:10.1002/bimj.201800167>; - network
+<doi:10.1002/jrsm.1058>; - additive network meta-analysis for combinations of
+treatments (RÃ¼cker et al., 2020) <doi:10.1002/bimj.201800167>; - network
 meta-analysis of binary data using the Mantel-Haenszel or non-central
 hypergeometric distribution method (Efthimiou et al., 2019)
-<DOI:10.1002/sim.8158>; - comparison-adjusted funnel plot (Chaimani & Salanti,
-2012) <DOI:10.1002/jrsm.57>; - automated drawing of network graphs described in
-RÃ¼cker & Schwarzer (2016) <DOI:10.1002/jrsm.1143>; - rankograms and ranking by
-SUCRA; - contribution matrix as described in Papakonstantinou et al. (2018)
-<DOI:10.12688/f1000research.14770.3> and Davies et al. (2021)
-<arXiv:2107.02886>.")
+<doi:10.1002/sim.8158>; - rankograms and ranking of treatments by the Surface
+under the cumulative ranking curve (SUCRA) (Salanti et al., 2013)
+<doi:10.1016/j.jclinepi.2010.03.016>; - ranking of treatments using P-scores
+(frequentist analogue of SUCRAs without resampling) according to RÃ¼cker &
+Schwarzer (2015) <doi:10.1186/s12874-015-0060-8>; - split direct and indirect
+evidence to check consistency (Dias et al., 2010) <doi:10.1002/sim.3767>,
+(Efthimiou et al., 2019) <doi:10.1002/sim.8158>; - league table with network
+meta-analysis results; - comparison-adjusted funnel plot (Chaimani & Salanti,
+2012) <doi:10.1002/jrsm.57>; - net heat plot and design-based decomposition of
+Cochran's Q according to Krahn et al. (2013) <doi:10.1186/1471-2288-13-35>; -
+measures characterizing the flow of evidence between two treatments by KÃ¶nig et
+al. (2013) <doi:10.1002/sim.6001>; - automated drawing of network graphs
+described in RÃ¼cker & Schwarzer (2016) <doi:10.1002/jrsm.1143>; - partial order
+of treatment rankings ('poset') and Hasse diagram for poset (Carlsen &
+Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
+<doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
+et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
+<doi:10.1002/sim.9346>.")
     (license license:gpl2+)))
 
 (define-public r-netmediate
@@ -10598,13 +10611,13 @@ frame.")
 (define-public r-nestedmodels
   (package
     (name "r-nestedmodels")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedmodels" version))
               (sha256
                (base32
-                "11qfmkhc7c4w7bppcw8kwf5d2c941ikw9zy6a52hmmkg4n1imisp"))))
+                "02181m0q9z5xqcinmi1vzids1mm6g0zc58vv2ngz09f3md62im3l"))))
     (properties `((upstream-name . "nestedmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10829,13 +10842,13 @@ respective references are given.  In addition, the software includes Stevens
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neonUtilities" version))
               (sha256
                (base32
-                "0azzi8qybxfkrz4wmn7z2420jkq9z5klyqqdbs18w5zpr3x30hyy"))))
+                "0ry7cnzgah2848bzgdp72b169sxmk2jbvhrygmnknkfy8agfspqv"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13478,6 +13491,28 @@ cross-platform standard for messaging and communications.  Serves as a
 concurrency framework for building distributed applications, utilising aio
 objects which resolve automatically upon completion of asynchronous operations.")
     (license license:gpl3+)))
+
+(define-public r-nanoarrow
+  (package
+    (name "r-nanoarrow")
+    (version "0.1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nanoarrow" version))
+              (sha256
+               (base32
+                "1nay1fd3rzcfml0yy0wkhzdwg5y71z9gs4qj10h2zgrw7v26i14h"))))
+    (properties `((upstream-name . "nanoarrow")))
+    (build-system r-build-system)
+    (home-page "https://github.com/apache/arrow-nanoarrow")
+    (synopsis "Interface to the 'nanoarrow' 'C' Library")
+    (description
+     "This package provides an R interface to the nanoarrow C library and the Apache
+Arrow application binary interface.  Functions to import and export ArrowArray',
+ArrowSchema', and ArrowArrayStream C structures to and from R objects are
+provided alongside helpers to facilitate zero-copy data transfer among R
+bindings to libraries implementing the Arrow C data interface.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-nandb
   (package

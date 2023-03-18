@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages x)
@@ -381,13 +380,13 @@ Excel file without advanced programming background knowledge.")
 (define-public r-yorkr
   (package
     (name "r-yorkr")
-    (version "0.0.37")
+    (version "0.0.39")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yorkr" version))
               (sha256
                (base32
-                "08cmzxw4h4v0brp2rh5w63iyr6r26394q4hwfwms36wfr4n9z2sj"))))
+                "1i50krpv88jl5bjy6ij456nsh79s80gljd18jmpy27a3h28ncfcb"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -406,24 +405,24 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ympes" version))
               (sha256
                (base32
-                "1m8za5igr20dbpmwwhyvqv1mammxfhkf96kwwgjzbx6ryaamg3bg"))))
+                "1vxyq148m7kaj9f4lgr5jlnd31rn1wh8cbjn0j2s22kip1p57aaf"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://timtaylor.github.io/ympes/")
+    (home-page "https://github.com/TimTaylor/ympes")
     (synopsis "Collection of Helper Functions")
     (description
      "This package provides a collection of lightweight helper functions (imps) both
 for interactive use and for inclusion within other packages.  These include
 minimal assertion functions with a focus on informative error messaging for both
 missing and incorrect function arguments as well as other functions for
-visualising colour palettes, quoting user input and working with age intervals.")
+visualising colour palettes, quoting user input and searching rows of a data
+frame.")
     (license license:gpl2)))
 
 (define-public r-ymlthis
@@ -768,51 +767,6 @@ installation nor is dependent on external software.  This implementation is
 generalized from those in packages mldr and mldr.datasets'.")
     (license license:gpl3+)))
 
-(define-public r-yaps
-  (package
-    (name "r-yaps")
-    (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yaps" version))
-              (sha256
-               (base32
-                "0309vc67v5kfbdcah5gnvdqwdxir4k1ik47dw6msw2hvg6lpqvqf"))))
-    (properties `((upstream-name . "yaps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-viridis
-                             r-tmb
-                             r-tictoc
-                             r-splustimeseries
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpp
-                             r-plyr
-                             r-nloptr
-                             r-ggrepel
-                             r-ggplot2
-                             r-data-table
-                             r-cowplot
-                             r-circular))
-    (home-page "https://github.com/baktoft/yaps")
-    (synopsis "Track Estimation using YAPS (Yet Another Positioning Solver)")
-    (description
-     "Estimate tracks of animals tagged with acoustic transmitters.  yaps was
-introduced in 2017 as a transparent open-source tool to estimate positions of
-fish (and other aquatic animals) tagged with acoustic transmitters.  Based on
-registrations of acoustic transmitters on hydrophones positioned in a fixed
-array, yaps enables users to synchronize the collected data (i.e.  correcting
-for drift in the internal clocks of the hydrophones/receivers) and subsequently
-to estimate tracks of the tagged animals.  The paper introducing yaps is
-available in open access at Baktoft, Gjelland, Ãkland & Thygesen (2017)
-<doi:10.1038/s41598-017-14278-z>.  Also check out our cookbook with a completely
-worked through example at Baktoft, Gjelland, Ãkland, Rehage, Rodemann, Corujo,
-Viadero & Thygesen (2019) <DOI:10.1101/2019.12.16.877688>.  Additional tutorials
-will eventually make their way onto the project website at
-<https://baktoft.github.io/yaps/>.")
-    (license license:gpl3)))
-
 (define-public r-yap
   (package
     (name "r-yap")
@@ -860,13 +814,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "0.10.10")
+    (version "0.10.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yamlet" version))
               (sha256
                (base32
-                "1wfjypnnyqlz87ggvfmis51arnk2zp0qzd0n36qimk55g9g0rx76"))))
+                "10w36nrnsnrvl9a5irw8xlnplwfcm2n6ghsnc35mg8fm2x9mk35p"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

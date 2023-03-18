@@ -1080,13 +1080,13 @@ Keller-Ressel and Nargang (2019), see <arXiv:1903.08977>.")
 (define-public r-hydflood
   (package
     (name "r-hydflood")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydflood" version))
               (sha256
                (base32
-                "01x3m3dhq29wrbdz7yk1xh1fplhhv58vpiqg211q6mdzq0dy2bsv"))))
+                "1sqlrcx75q6wjv1i5xr35lar7f2q2idc0v485hn14lchj6c43xzg"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
@@ -1236,13 +1236,13 @@ information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
 (define-public r-hybridensemble
   (package
     (name "r-hybridensemble")
-    (version "1.7.8")
+    (version "1.7.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hybridEnsemble" version))
               (sha256
                (base32
-                "0n8w0g6d8hs3lay29ix9qfzkl6nzbwwnqxqd7kkzdkp8a0wq3qiv"))))
+                "0nkd9lr9x9nx3gwkad8r3dw6yq2py926kg9zvip5npx2jf1nxizn"))))
     (properties `((upstream-name . "hybridEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tabusearch
@@ -1394,13 +1394,13 @@ group by individual data according to methods described in Godde et al. (2013)
 (define-public r-hwep
   (package
     (name "r-hwep")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hwep" version))
               (sha256
                (base32
-                "07ncpkv79nwk6c5a69iky3q01v24imcpszlhbhpsn739kdqdwa1p"))))
+                "1hnbf3m23ap1523aa6i1k9an0pwx9k1v06zvfgbq9wimvfr418wq"))))
     (properties `((upstream-name . "hwep")))
     (build-system r-build-system)
     (propagated-inputs (list r-updog
@@ -1896,16 +1896,22 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubeau
   (package
     (name "r-hubeau")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hubeau" version))
               (sha256
                (base32
-                "129q59n35fnsam4mcy7lgg0wqn11rlcqb1ywhc5dkslc2lbvs639"))))
+                "1d98wpm1xxqbnzalhsipkfs23nvqv942wxlcj7gr6ma8dry46i82"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
-    (propagated-inputs (list r-urltools r-tibble r-purrr r-httr))
+    (propagated-inputs (list r-urltools
+                             r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://inrae.github.io/hubeau/")
     (synopsis "Get Data from the French National Database on Water 'Hub'Eau'")
     (description
@@ -2137,13 +2143,13 @@ ToxCast) to real-world exposures via reverse dosimetry (also known as \"RTK\")
 (define-public r-htt
   (package
     (name "r-htt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTT" version))
               (sha256
                (base32
-                "14a96p8vhb6acsjic66nsc9llvxyqd0ry1yccsjlxw12mami0vs0"))))
+                "0345ydb3rjdkj4zm6xr5y4kf6plvxfgbpwkjs81pls99mr208qwz"))))
     (properties `((upstream-name . "HTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-igraph r-ggraph r-ggplot2))
@@ -2649,13 +2655,13 @@ as soon as available.")
 (define-public r-hspm
   (package
     (name "r-hspm")
-    (version "1.0-0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hspm" version))
               (sha256
                (base32
-                "1fp2mf9rs7l3dhhc7njf2fbkq9pyszm3r3409jzrhmfjzfk61qwl"))))
+                "0ycdaji080xav2k87pcln7c26iy31bfjxzzccpyl57w3agcfwrcc"))))
     (properties `((upstream-name . "hspm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sphet r-spdep r-matrix r-formula))
@@ -6710,31 +6716,6 @@ this is only recommended for cases where sample sizes and spatial coverage of
 the survey are high.")
     (license (license:fsdg-compatible "Unlimited"))))
 
-(define-public r-hier-part
-  (package
-    (name "r-hier-part")
-    (version "1.0-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hier.part" version))
-              (sha256
-               (base32
-                "15wlpb2rsn6am8galsbjiy4psp78nlv1x2hz3cnqbwj508w6gsj0"))))
-    (properties `((upstream-name . "hier.part")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-gtools r-betareg))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=hier.part")
-    (synopsis "Hierarchical Partitioning")
-    (description
-     "Partitioning of the independent and joint contributions of each variable in a
-multivariate data set, to a linear regression by hierarchical decomposition of
-goodness-of-fit measures of regressions using all subsets of predictors in the
-data set. (i.e., model (1), (2), ..., (N), (1,2), ..., (1,N), ...,
-(1,2,3,...,N)).  A Z-score based estimate of the importance of each predictor is
-provided by using a randomisation test.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-hidimda
   (package
     (name "r-hidimda")
@@ -6934,6 +6915,31 @@ keep on going in enriching it with more features.  References: Meuwissen et al.
 <doi:10.1038/s41467-019-12653-0>; Henderson (1976) <doi:10.2307/2529339>;
 Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
     (license license:gpl3)))
+
+(define-public r-hht
+  (package
+    (name "r-hht")
+    (version "2.1.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hht" version))
+              (sha256
+               (base32
+                "13q30difb84byy62rrkxq2hjjl1526pn8j4qvhm5g3cgivvby5ci"))))
+    (properties `((upstream-name . "hht")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fields r-emd))
+    (home-page "https://cran.r-project.org/package=hht")
+    (synopsis "The Hilbert-Huang Transform: Tools and Methods")
+    (description
+     "Builds on the EMD package to provide additional tools for empirical mode
+decomposition (EMD) and Hilbert spectral analysis.  It also implements the
+ensemble empirical decomposition (EEMD) and the complete ensemble empirical mode
+decomposition (CEEMD) methods to avoid mode mixing and intermittency problems
+found in EMD analysis.  The package comes with several plotting methods that can
+be used to view intrinsic mode functions, the HHT spectrum, and the Fourier
+spectrum.")
+    (license license:gpl3+)))
 
 (define-public r-hhsmm
   (package
@@ -7803,13 +7809,13 @@ generate and take coefficient modulo are provided.")
 (define-public r-hetgp
   (package
     (name "r-hetgp")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hetGP" version))
               (sha256
                (base32
-                "1nm4kkg0jwlp21flviiw187jih4y1s6lqn3j0f2s1h81rh1vvvzf"))))
+                "0cdhqv9jy28hdbx3rd10zl1a0awv8y8wkhfbh4nfrz26y1329qc4"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-dicedesign))
@@ -10262,6 +10268,32 @@ Zhenjie Zhang and Zhifeng Hao (2018)
 some of our methods.")
     (license license:gpl2+)))
 
+(define-public r-hcmodelsets
+  (package
+    (name "r-hcmodelsets")
+    (version "1.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HCmodelSets" version))
+              (sha256
+               (base32
+                "0jchr8ncjpl2ljwf09cmpv679vdla11r1vkylhqaacdp1zdb93w6"))))
+    (properties `((upstream-name . "HCmodelSets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mvtnorm r-ggplot2))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=HCmodelSets")
+    (synopsis
+     "Regression with a Large Number of Potential Explanatory Variables")
+    (description
+     "Software for performing the reduction, exploratory and model selection phases of
+the procedure proposed by Cox, D.R. and Battey, H.S. (2017)
+<doi:10.1073/pnas.1703764114> for sparse regression when the number of potential
+explanatory variables far exceeds the sample size.  The software supports linear
+regression, likelihood-based fitting of generalized linear regression models and
+the proportional hazards model fitted by partial likelihood.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-hcidata
   (package
     (name "r-hcidata")
@@ -10549,6 +10581,52 @@ hierarchical Bayesian framework.  Can perform hierarchical Bayesian analysis of
 various computational models with a single line of coding (Ahn et al., 2017)
 <doi:10.1162/CPSY_a_00002>.")
     (license license:gpl3)))
+
+(define-public r-hbamr
+  (package
+    (name "r-hbamr")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hbamr" version))
+              (sha256
+               (base32
+                "1fn7d8mhwbsdqflnd9kqfqm0zp23v6b17gicl1x8kxrsadmj0qfr"))))
+    (properties `((upstream-name . "hbamr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-plyr
+                             r-pbmcapply
+                             r-matrixstats
+                             r-loo
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbolstad/hbamr/")
+    (synopsis "Hierarchical Bayesian Aldrich-McKelvey Scaling via 'Stan'")
+    (description
+     "Perform hierarchical Bayesian Aldrich-McKelvey scaling using Hamiltonian Monte
+Carlo via Stan'.  Aldrich-McKelvey ('AM') scaling is a method for estimating the
+ideological positions of survey respondents and political actors on a common
+scale using positional survey data.  The hierarchical versions of the Bayesian
+AM model included in this package outperform other versions by a considerable
+margin both in terms of yielding meaningful posterior distributions for
+respondent positions and in terms of recovering true respondent positions in
+simulations.  The package contains functions for preparing data, fitting models,
+extracting estimates, plotting key results, and comparing models using
+cross-validation.  The models in this package are described in: BÃ¸lstad
+(forthcoming) Hierarchical Bayesian Aldrich-McKelvey Scaling'', Political
+Analysis.")
+    (license license:gpl3+)))
 
 (define-public r-hbal
   (package
@@ -11093,38 +11171,6 @@ relative frequencies.")
      "Simulate haplotypes through meioses.  Allows specification of population
 parameters.")
     (license license:gpl2+)))
-
-(define-public r-haplor
-  (package
-    (name "r-haplor")
-    (version "4.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "haploR" version))
-              (sha256
-               (base32
-                "1cg92v64xdzmr5hbjhd11rz6rkdddsxcxkqdgbj5hd1ldqsrjj45"))))
-    (properties `((upstream-name . "haploR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-tibble
-                             r-runit
-                             r-rjsonio
-                             r-rcurl
-                             r-plyr
-                             r-httr
-                             r-dt))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=haploR")
-    (synopsis "Query 'HaploReg', 'RegulomeDB'")
-    (description
-     "This package provides a set of utilities for querying HaploReg
-<https://pubs.broadinstitute.org/mammals/haploreg/haploreg.php>, RegulomeDB
-<https://www.regulomedb.org/regulome-search/> web-based tools.  The package
-connects to HaploReg', RegulomeDB searches and downloads results, without
-opening web pages, directly from R environment.  Results are stored in a data
-frame that can be directly used in various kinds of downstream analyses.")
-    (license license:gpl3)))
 
 (define-public r-haplo-ccs
   (package
@@ -11829,13 +11875,13 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
 (define-public r-hablar
   (package
     (name "r-hablar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hablar" version))
               (sha256
                (base32
-                "02d5rssggf8n67psjn8sw106y4vzndyp7sq43hfm4zqnpsxp0hgq"))))
+                "0mzk4nwsamf07cbscn8zjiqdf6ik0dc9c4v8cafrlsv1wxpbs09i"))))
     (properties `((upstream-name . "hablar")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-lubridate r-dplyr))

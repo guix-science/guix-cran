@@ -272,16 +272,17 @@ Azure Machine Learning visit the website:
 (define-public r-azurekusto
   (package
     (name "r-azurekusto")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureKusto" version))
               (sha256
                (base32
-                "0w275408rw2cwminv0hlfchizvliwlvadly4rxw2szzi3aq7png4"))))
+                "16jfw2zv2a807d91b9vv895p2j4ydqmjvgxih8r9xprnj3w4absh"))))
     (properties `((upstream-name . "AzureKusto")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-r6
@@ -1449,13 +1450,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoshiny
   (package
     (name "r-autoshiny")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoshiny" version))
               (sha256
                (base32
-                "0s06ynnirgsh19x8qq4020piirkhvjqpvz372syygvlal062y6cn"))))
+                "0hwrsc08lq6zyx869qmiyd0fc83wqfyzx65a3s2j2xnzf4wwzgbq"))))
     (properties `((upstream-name . "autoshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
@@ -3553,20 +3554,20 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
 (define-public r-asylum
   (package
     (name "r-asylum")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asylum" version))
               (sha256
                (base32
-                "1vasdbg4blsgd9976ivzj0r97zwsna4rxj7c9d4xlnmvs4rmb57j"))))
+                "01wkag64c8l5byjiqi0nq13fh0rz0n7ypk4jfqi5dabx3n91q7cp"))))
     (properties `((upstream-name . "asylum")))
     (build-system r-build-system)
-    (home-page "https://github.com/britishredcrosssociety/asylum")
+    (home-page "https://github.com/humaniverse/asylum")
     (synopsis "Data on Asylum and Resettlement for the UK")
     (description
      "Data on Asylum and Resettlement for the UK, provided by the Home Office
-<https://www.gov.uk/government/statistics/immigration-statistics-year-ending-june-2022>.")
+<https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables-year-ending-december-2022>.")
     (license license:expat)))
 
 (define-public r-asyk
@@ -4262,13 +4263,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.49")
+    (version "4.3.50")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "1crp44i13n46vwzrw4kqqffgacw4kqliqbrhky7dgg5wj8y4hr8g"))))
+                "12yj7pvplvsyzn4jyklidvv3m57pr9q6xzd03vdlz2p9ixaxw678"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9107,18 +9108,19 @@ explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.4.2")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresRead" version))
               (sha256
                (base32
-                "01mgkg7ffipz21x8piav4v4c98ay7c14svvq06ra334rxhqaycs3"))))
+                "1y5zzyxmyxrjchdm9wgxnqzfjrfjdim66qjd5465dq60h43svvd7"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-shiny
+                             r-purrr
                              r-plyr
                              r-pbapply
                              r-memuse
@@ -9170,20 +9172,26 @@ consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresEditObject" version))
               (sha256
                (base32
-                "03zpg86hx3a99vvhbyj06b34lqd791l0qbs4a3g8xnd2gkmmjr75"))))
+                "01xm7khz46xhq4klf2xismxldlinkarzj3kfkxj3dwjnfkf0jx9s"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
-    (propagated-inputs (list r-whisker
+    (propagated-inputs (list r-yaml
+                             r-whisker
+                             r-progressr
+                             r-plyr
                              r-pbapply
+                             r-memuse
                              r-jsonlite
                              r-httr
+                             r-future
                              r-doparallel
+                             r-dofuture
                              r-data-table
                              r-cli
                              r-assertthat
@@ -9801,13 +9809,13 @@ second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2022.9.14")
+    (version "2023.3.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "animint2" version))
               (sha256
                (base32
-                "0irnpqhy1lys0w3r0yni7hnf7bbgrcy5062nfm4rngzrfaq1g5z9"))))
+                "1x1aj1j1nqiwa8rq28qi8yppd8d6jmbzxyz9fzxlxbfkh1ds5kz8"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -10541,13 +10549,13 @@ simulation of space-use from fitted step-selection functions.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "1.8.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AMR" version))
               (sha256
                (base32
-                "1d47akk1amf9x28a3ss0j2453hk9rdqkzdklxnv40b13hvjd8l0n"))))
+                "18rs1m7l5snyyhs0x3m43xr1cdmn0h88xfckjil16lpapd33k8ca"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -11278,18 +11286,18 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-amapvox
   (package
     (name "r-amapvox")
-    (version "0.12.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AMAPVox" version))
               (sha256
                (base32
-                "0hn9c0kasyvmfavk8ppfasl3p171xi5p3qzydsk41szvkm9wx6qy"))))
+                "0pdcsdfflgss9zrc1biiwg7lrvr10irmi2q8zng6yaccnlw4v074"))))
     (properties `((upstream-name . "AMAPVox")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-rvest
                              r-rappdirs
+                             r-jsonlite
                              r-dplyr
                              r-data-table
                              r-curl))
@@ -11569,13 +11577,13 @@ websites made with these tools.")
 (define-public r-altair
   (package
     (name "r-altair")
-    (version "4.2.1")
+    (version "4.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "altair" version))
               (sha256
                (base32
-                "1132q369yxrfix76xizw22rpbixqbfsf23c3p1m751h536hmx2f6"))))
+                "0ckdfgrng3868qm9cspggd5xjbpmkq01q7ylnsiah6v72kzcn1fc"))))
     (properties `((upstream-name . "altair")))
     (build-system r-build-system)
     (inputs (list python))
@@ -12882,40 +12890,6 @@ diversity profiling, amino acid property analysis and gene usage.  Citations:
 Gupta and Vander Heiden, et al (2017) <doi:10.1093/bioinformatics/btv359>,
 Stern, Yaari and Vander Heiden, et al (2014) <doi:10.1126/scitranslmed.3008879>.")
     (license license:agpl3)))
-
-(define-public r-akmedoids
-  (package
-    (name "r-akmedoids")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "akmedoids" version))
-              (sha256
-               (base32
-                "19d9fh1cygn04riwc7y7lzdncyxki9rzikf9f5m96vp0y687z2ka"))))
-    (properties `((upstream-name . "akmedoids")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-signal
-                             r-kml
-                             r-hmisc
-                             r-ggplot2
-                             r-dplyr
-                             r-clustercrit))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=akmedoids")
-    (synopsis "Anchored Kmedoids for Longitudinal Data Clustering")
-    (description
-     "Advances a novel adaptation of longitudinal k-means clustering technique
-(Genolini et al. (2015) <doi:10.18637/jss.v065.i04>) for grouping trajectories
-based on the similarities of their long-term trends and determines the optimal
-solution based on either the average silhouette width (Rousseeuw P. J. 1987) or
-the Calinski-Harabatz criterion (Calinski and Harabatz (1974)
-<doi:10.1080/03610927408827101>).  Includes functions to extract descriptive
-statistics and generate a visualisation of the resulting groups, drawing methods
-from the ggplot2 library (Wickham H. (2016) <doi:10.1007/978-3-319-24277-4>).
-The package also includes a number of other useful functions for exploring and
-manipulating longitudinal data prior to the clustering process.")
-    (license license:gpl3)))
 
 (define-public r-akmbiclust
   (package
@@ -16207,16 +16181,54 @@ or as the candidate density in the Metropolis-Hastings algorithm to obtain
 quantities of interest for the target density itself.")
     (license license:gpl2+)))
 
+(define-public r-admiralophtha
+  (package
+    (name "r-admiralophtha")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "admiralophtha" version))
+              (sha256
+               (base32
+                "1bhcgq2fzprg0k7g77kiar1my99spnlar0lzs4r91icbd0ffimm0"))))
+    (properties `((upstream-name . "admiralophtha")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-hms
+                             r-dplyr
+                             r-assertthat
+                             r-admiraldev
+                             r-admiral))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/admiralophtha/")
+    (synopsis "ADaM in R Asset Library - Ophthalmology")
+    (description
+     "Aids the programming of Clinical Data Standards Interchange Consortium (CDISC)
+compliant Ophthalmology Analysis Data Model (ADaM) datasets in R. ADaM datasets
+are a mandatory part of any New Drug or Biologics License Application submitted
+to the United States Food and Drug Administration (FDA).  Analysis derivations
+are implemented in accordance with the \"Analysis Data Model Implementation
+Guide\" (CDISC Analysis Data Model Team, 2021,
+<https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralonco" version))
               (sha256
                (base32
-                "1dimbbj2yb24zyfgxqkhgkq0rk69hs8yy8xq4k05v99rwj3lyng8"))))
+                "0g8gr7mjqwnypa7zqshlgsqx3l3l3vmbhqjaav5x09xs8al4phfi"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16298,13 +16310,13 @@ admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.9.1")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "0nlmb481cppw9k2p2yzahp53fvbv92bn28w4a5fmlz1findx2ba1"))))
+                "0x51m5xqzhpnxy1y69ik5793k82cdwvkcvjv5mc5z1l7al9fxcmp"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18136,17 +18148,17 @@ Segmentation Algorithm to Estimate Sleep Duration from Actigraphy Data\"
 (define-public r-actilifecounts
   (package
     (name "r-actilifecounts")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actilifecounts" version))
               (sha256
                (base32
-                "1v423byxanbvqk3s76s67r6ivqcg3ld4yddcvf7cmwwlrkd72ck4"))))
+                "0p65j7l8d8503nil34faz7jashv5rw327xlpphwhwa4x5wga5z01"))))
     (properties `((upstream-name . "actilifecounts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-gsignal))
-    (home-page "https://cran.r-project.org/package=actilifecounts")
+    (propagated-inputs (list r-pracma r-gsignal r-ggirread))
+    (home-page "https://github.com/jhmigueles/actilifecounts")
     (synopsis "Generate Activity Counts from Raw Accelerometer Data")
     (description
      "This package provides a tool to obtain activity counts, originally a translation
@@ -18787,6 +18799,45 @@ movement functions, each of which is based on the Ornstein-Uhlenbeck (OU) model
 several visualization and data summarization functions to facilitate the
 presentation of simulation results.")
     (license license:gpl3+)))
+
+(define-public r-abm
+  (package
+    (name "r-abm")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ABM" version))
+              (sha256
+               (base32
+                "15rymsq4n4qlz40d3z95f94r2rl37064x9h4awhvimdvcx3413h1"))))
+    (properties `((upstream-name . "ABM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6))
+    (home-page "https://github.com/junlingm/ABM")
+    (synopsis "Agent Based Model Simulation Framework")
+    (description
+     "This package provides a high-performance, flexible and extensible framework to
+develop continuous-time agent based models.  Its high performance allows it to
+simulate millions of agents efficiently.  Agents are defined by their states
+(arbitrary R lists).  The events are handled in chronological order.  This
+avoids the multi-event interaction problem in a time step of discrete-time
+simulations, and gives precise outcomes.  The states are modified by provided or
+user-defined events.  The framework provides a flexible and customizable
+implementation of state transitions (either spontaneous or caused by agent
+interactions), making the framework suitable to apply to epidemiology and
+ecology, e.g., to model life history stages, competition and cooperation, and
+disease and information spread.  The agent interactions are flexible and
+extensible.  The framework provides random mixing and network interactions, and
+supports multi-level mixing patterns.  It can be easily extended to other
+interactions such as inter- and intra-households (or workplaces and schools) by
+subclassing an R6 class.  It can be used to study the effect of age-specific,
+group-specific, and contact- specific intervention strategies, and complex
+interactions between individual behavior and population dynamics.  This modeling
+concept can also be used in business, economical and political models.  As a
+generic event based framework, it can be applied to many other fields.  More
+information about the implementation and examples can be found at
+<https://github.com/junlingm/ABM>.")
+    (license license:gpl2+)))
 
 (define-public r-abjdata
   (package

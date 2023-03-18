@@ -551,29 +551,29 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exvatools" version))
               (sha256
                (base32
-                "05jgzdnby9ly341alpxzpysj418fqgq4gn8a1qk6vqg1yfvd8m3k"))))
+                "0g4aj161c2bxgbby8yprl6iqsqmqlnkdgsh32zbhfhzvc9cgn6cn"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exvatools")
     (synopsis
-     "Value Added in Exports with International Input-Output Table Tools")
+     "Value Added in Exports and Other Input-Output Table Analysis Tools")
     (description
-     "Decomposition of value added in exports in an international input-output table
-framework, using the methodologies of Borin and Mancini (2023)
-<doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
+     "Analysis of trade in value added with international input-output tables.
+Includes commands for easy data extraction, matrix manipulation, decomposition
+of value added in gross exports and calculation of value added indicators, with
+full geographical and sector customization.  Decomposition methods include Borin
+and Mancini (2023) <doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
 <doi:10.1080/09535314.2020.1730308>, Wang et al. (2013)
 <https://econpapers.repec.org/paper/nbrnberwo/19677.htm> and Koopman et al.
-(2014) <doi:10.1257/aer.104.2.459>.  Includes commands for easy data extraction,
-matrix manipulation, calculation of various value added indicators, and other
-useful tools for geographical and sector trade analysis.")
+(2014) <doi:10.1257/aer.104.2.459>.")
     (license license:gpl3)))
 
 (define-public r-exuber
@@ -1770,6 +1770,50 @@ hybrid offspring with the expression level in parents.  For non-additive
 expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (including two sub-genomes) species for the time being.")
     (license license:agpl3+)))
+
+(define-public r-expertsurv
+  (package
+    (name "r-expertsurv")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "expertsurv" version))
+              (sha256
+               (base32
+                "0y0j55vrkhp6d46cr4fsh5gqzxhqr6sq8dgn6nagvd8l8c30246c"))))
+    (properties `((upstream-name . "expertsurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-stanheaders
+                             r-shelf
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rms
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-loo
+                             r-ggplot2
+                             r-flexsurv
+                             r-dplyr
+                             r-bh
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=expertsurv")
+    (synopsis "Incorporate Expert Opinion with Parametric Survival Models")
+    (description
+     "Enables users to incorporate expert opinion with parametric survival analysis
+using a Bayesian or frequentist approach.  Expert Opinion can be provided on the
+survival probabilities at certain time-point(s) or for the difference in mean
+survival between two treatment arms.Please reference its use as Cooney, P.,
+White, A. (2023) <doi:10.1177/0272989X221150212>.")
+    (license license:expat)))
 
 (define-public r-expertchoice
   (package
@@ -3388,6 +3432,31 @@ stability or various evolutionary dynamics, for teaching and academic research
 is provided.")
     (license license:gpl2)))
 
+(define-public r-evolmap
+  (package
+    (name "r-evolmap")
+    (version "1.2.33")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evolMap" version))
+              (sha256
+               (base32
+                "1wcm6d96mvp8yr6qjm3610rzdxjq6vjwz3zmbrimc1q4pwxg0rvd"))))
+    (properties `((upstream-name . "evolMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-jsonlite r-curl))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=evolMap")
+    (synopsis "Dynamic and Interactive Maps")
+    (description
+     "Dynamic and Interactive Maps with R, powered by leaflet <https://leafletjs.com>.
+ evolMap generates a web page with interactive and dynamic maps to which you can
+add geometric entities (points, lines or colored geographic areas), and/or
+markers with optional links between them.  The dynamic ability of these maps
+allows their components to evolve over a continuous period of time or by
+periods.")
+    (license license:bsd-2)))
+
 (define-public r-evobir
   (package
     (name "r-evobir")
@@ -3456,6 +3525,26 @@ most code.")
 into the following groups; exploratory data analysis, block maxima, peaks over
 thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
     (license license:gpl2+)))
+
+(define-public r-evildice
+  (package
+    (name "r-evildice")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evilDice" version))
+              (sha256
+               (base32
+                "0lx0h4iav8yazxp50a4cn3g0si3w76r9zdb6n3xbwrjrdnaf3lc6"))))
+    (properties `((upstream-name . "evilDice")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=evilDice")
+    (synopsis "Test Dice Sets for Intransitive Properties")
+    (description
+     "Checks to see whether a supplied set of dice (their face values) are transitive,
+returning pair-win and group-roll win probabilities.  Expected returns (mean
+magnitude of win/loss) are presented as well.")
+    (license license:lgpl3)))
 
 (define-public r-eviewsr
   (package
@@ -3803,6 +3892,38 @@ features computed.  The event features extracted from incomplete-events can be
 classified using a partial-observations-classifier (Kandanaarachchi et al.
 2018) <doi:10.1371/journal.pone.0236331>.")
     (license license:expat)))
+
+(define-public r-eventpred
+  (package
+    (name "r-eventpred")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eventPred" version))
+              (sha256
+               (base32
+                "1rbfcjj067ahi5liwpw06xvjfp0lxcqp2q2gqw9qib9rain6zpc4"))))
+    (properties `((upstream-name . "eventPred")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnsim
+                             r-survival
+                             r-scales
+                             r-rstpm2
+                             r-rlang
+                             r-patchwork
+                             r-mvtnorm
+                             r-matrix
+                             r-lubridate
+                             r-ggplot2
+                             r-erify
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=eventPred")
+    (synopsis "Event Prediction")
+    (description
+     "Predicts enrollment and events at the design stage using assumed enrollment and
+treatment-specific time-to-event models, or at the analysis stage using blinded
+data and specified enrollment and time-to-event models through simulations.")
+    (license license:gpl2+)))
 
 (define-public r-eventinterval
   (package
@@ -7614,6 +7735,35 @@ navigation, modification of EnergyPlus models and makes it less painful to do
 parametric simulations and analysis.")
     (license license:expat)))
 
+(define-public r-eplsim
+  (package
+    (name "r-eplsim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EPLSIM" version))
+              (sha256
+               (base32
+                "0x495638nh0n0k3i80vs7bcbdrgvw5fkib8dvwwgzgdgb419hakm"))))
+    (properties `((upstream-name . "EPLSIM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-ggplot2 r-citools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YuyanWangSixTwo/EPLSIM")
+    (synopsis
+     "Partial Linear Single Index Models for Environmental Mixture Analysis")
+    (description
+     "Collection of ancillary functions and utilities for Partial Linear Single Index
+Models for Environmental mixture analyses, which currently provides functions
+for scalar outcomes.  The outputs of these functions include the single index
+function, single index coefficients, partial linear coefficients, mixture
+overall effect, exposure main and interaction effects, and differences of
+quartile effects.  In the future, we will add functions for binary, ordinal,
+Poisson, survival, and longitudinal outcomes, as well as models for
+time-dependent exposures.  See Wang et al (2020)
+<doi:10.1186/s12940-020-00644-4> for an overview.")
+    (license license:expat)))
+
 (define-public r-epitweetr
   (package
     (name "r-epitweetr")
@@ -8117,13 +8267,13 @@ sensitivity and functions to support scenario tree modelling analyses.")
 (define-public r-epiomics
   (package
     (name "r-epiomics")
-    (version "0.0.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiomics" version))
               (sha256
                (base32
-                "1ma0irgjicmnim47h4l085pg909jysri5njkr7brcf7sc3ikv19a"))))
+                "06rk2ccnzanxjy0y1lrjya8w2mrnkki12s2mcp4pqn42a664clkx"))))
     (properties `((upstream-name . "epiomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8138,11 +8288,11 @@ sensitivity and functions to support scenario tree modelling analyses.")
     (description
      "This package provides a collection of fast and flexible functions for analyzing
 omics data in observational studies.  Multiple different approaches for
-integrating environmental/genetic factors, omics data, and/or phenotype data are
-implemented.  This includes functions for performing omics wide association
-studies with one or more variables of interest as the exposure or outcome; a
-function for performing a meet in the middle analysis for linking exposures,
-omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
+integrating multiple environmental/genetic factors, omics data, and/or phenotype
+data are implemented.  This includes functions for performing omics wide
+association studies with one or more variables of interest as the exposure or
+outcome; a function for performing a meet in the middle analysis for linking
+exposures, omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
 <doi:10.3109/1354750X.2010.533285>); and a function for performing a mixtures
 analysis across all omics features using quantile-based g-Computation (as
 described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
@@ -10148,22 +10298,64 @@ model applicability domain evaluation, and ensemble predictive modeling with
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-enmtools
+  (package
+    (name "r-enmtools")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ENMTools" version))
+              (sha256
+               (base32
+                "1bvfwhmzc8nx0igz67nsrkgibzxg2xfyjlvdq4p5pslr4759ddks"))))
+    (properties `((upstream-name . "ENMTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-sp
+                             r-raster
+                             r-magrittr
+                             r-lhs
+                             r-knitr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-enmeval
+                             r-dismo))
+    (home-page "https://cran.r-project.org/package=ENMTools")
+    (synopsis
+     "Analysis of Niche Evolution using Niche and Distribution Models")
+    (description
+     "Constructing niche models and analyzing patterns of niche evolution.  Acts as an
+interface for many popular modeling algorithms, and allows users to conduct
+Monte Carlo tests to address basic questions in evolutionary ecology and
+biogeography.  Warren, D.L., R.E. Glor, and M. Turelli (2008)
+<doi:10.1111/j.1558-5646.2008.00482.x> Glor, R.E., and D.L. Warren (2011)
+<doi:10.1111/j.1558-5646.2010.01177.x> Warren, D.L., R.E. Glor, and M. Turelli
+(2010) <doi:10.1111/j.1600-0587.2009.06142.x> Cardillo, M., and D.L. Warren
+(2016) <doi:10.1111/geb.12455> D.L. Warren, L.J. Beaumont, R. Dinnage, and J.B.
+Baumgartner (2019) <doi:10.1111/ecog.03900>.")
+    (license license:gpl2)))
+
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "0q2z2gj49qb7jvrmgja389ikzbad6w2m35d5mi1n1axfgj1c6p1f"))))
+                "0rwcv38md8w109sihc07441bvm99y6m60rff6jracsraymakb3yc"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-shiny
                              r-sf
                              r-scales
+                             r-rjava
                              r-randomforest
                              r-omnibus
                              r-mumin
@@ -11859,13 +12051,13 @@ can also be found.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.7.13")
+    (version "0.7.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emayili" version))
               (sha256
                (base32
-                "13ndi1khnsf75xrh04jy9jpqi94rwnwlyp3jp8b8jyyd1pplhxlw"))))
+                "0c8vs2rh1c4rdvs8w42mk7yhngyc6dfrl12zi56wn5sq9320258l"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -13156,13 +13348,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eks" version))
               (sha256
                (base32
-                "101dq01ngixaab7zj09bcy7jyaa27qf9rb3jsz03j1mrapzipnlv"))))
+                "04yq4l2zkgczzjz63lkix75sfh5z5w4h405sj0j4wwnk9apc41wz"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -13577,6 +13769,39 @@ missing at random.  The marginal distribution of the relational data can be
 arbitrary, and is fit with an ordered probit specification.  See Hoff (2007)
 <arXiv:0711.1146> for details on the model.")
     (license license:gpl2)))
+
+(define-public r-eiexpand
+  (package
+    (name "r-eiexpand")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eiExpand" version))
+              (sha256
+               (base32
+                "1x30np4liy33mkb31040b2mk3yqajp4v0b2n32akm07f8sn3zrxh"))))
+    (properties `((upstream-name . "eiExpand")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-ggmap
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=eiExpand")
+    (synopsis "Utilities for Expanding Functionality of 'eiCompare'")
+    (description
+     "Augments the eiCompare package's Racially Polarized Voting (RPV) functionality
+to streamline analyses and visualizations used to support voting rights and
+redistricting litigation.  The package implements methods described in Barreto,
+M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2022). \"Estimating
+Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-RÃC
+Methods\" <doi:10.1177/0049124119852394>.")
+    (license license:gpl3)))
 
 (define-public r-eicm
   (package
@@ -14063,13 +14288,13 @@ Season (WRTDS).")
 (define-public r-egor
   (package
     (name "r-egor")
-    (version "1.22.12")
+    (version "1.23.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "egor" version))
               (sha256
                (base32
-                "0ynih22imb8nb7m7zwnccma8icw60jgg4q6ijvb8cnsvwn2zy94i"))))
+                "05y412qlrsrbr0r6bkac72pvvxkhsgapj9l46sr2485azvbyzl7n"))))
     (properties `((upstream-name . "egor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14754,16 +14979,16 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.7.6")
+    (version "0.1.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFA.dimensions" version))
               (sha256
                (base32
-                "18zwpcpr16cchy8v2gr189gdisjpxh887a1v8a4prwkpk3pv8j51"))))
+                "08mfillvxf2gvaisxrx9r842ky4kippqbpiklgjyxanssabk3jdg"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-polycor r-efatools))
+    (propagated-inputs (list r-psych r-polycor r-mirt r-efatools))
     (home-page "https://cran.r-project.org/package=EFA.dimensions")
     (synopsis
      "Exploratory Factor Analysis Functions for Assessing Dimensionality")
@@ -14780,10 +15005,9 @@ promax rotation, and Procrustes rotations can be performed.  Additional
 functions focus on the factorability of a correlation matrix, the congruences
 between factors from different datasets, the assessment of local independence,
 the assessment of factor solution complexity, and internal consistency.
-Auerswald & Moshagen (2019, <doi:10.1037/met0000200>); Fabrigar & Wegener (2012,
+Auerswald & Moshagen (2019, ISSN:1939-1463); Fabrigar & Wegener (2012,
 ISBN:978-0-19-973417-7); Field, Miles, & Field (2012, ISBN:978-1-4462-0045-2);
-O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001,
-<doi:10.1177/01466216010251011>).")
+O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
     (license license:gpl2+)))
 
 (define-public r-ef
@@ -16387,20 +16611,30 @@ divergence between organisms, species or populations.")
 (define-public r-ecr
   (package
     (name "r-ecr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecr" version))
               (sha256
                (base32
-                "0vvkdxlcqaim9mkgwgdxrx1xhw3lshi1nxfw3kqllq14p3l6xss4"))))
+                "0abj88libbjimb512mvz7fa4ib7q84hn72digs5p3cd3pbx6zv0v"))))
     (properties `((upstream-name . "ecr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-smoof
+    (propagated-inputs (list r-viridis
+                             r-smoof
+                             r-scatterplot3d
                              r-reshape2
+                             r-rcpp
+                             r-plotly
+                             r-plot3drgl
+                             r-plot3d
                              r-paramhelpers
                              r-parallelmap
+                             r-lazyeval
+                             r-knitr
+                             r-kableextra
                              r-ggplot2
+                             r-dplyr
                              r-checkmate
                              r-bbmisc))
     (native-inputs (list r-knitr))
@@ -17221,13 +17455,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoEnsemble" version))
               (sha256
                (base32
-                "1b0zm8d4dc2drdy08s5gskjdjl0i91ng78xk6aga17bjgm5hjqsi"))))
+                "0d9g8kdm3hmd87pq7j9wqak4rxqglb7pq6fy9zlmsg3p28767xxh"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17624,13 +17858,13 @@ from <https://echo.epa.gov/>.")
 (define-public r-echoice2
   (package
     (name "r-echoice2")
-    (version "0.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echoice2" version))
               (sha256
                (base32
-                "1xm5vhyacld11r9yzk24swvq5fkj5x2j8q2lb0zhid7w36sf101n"))))
+                "1rsa50xfg01a07qnjsba5awr8vi16acqgzxlaw4k03h48ya7q05x"))))
     (properties `((upstream-name . "echoice2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17645,6 +17879,7 @@ from <https://echo.epa.gov/>.")
                              r-ggplot2
                              r-forcats
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ninohardt/echoice2")
     (synopsis "Choice Models with Economic Foundation")
     (description
@@ -18902,22 +19137,20 @@ treatments, including mixed models and non linear models.")
 (define-public r-easyr
   (package
     (name "r-easyr")
-    (version "0.5-10")
+    (version "0.5-11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easyr" version))
               (sha256
                (base32
-                "1qiw3bvhn2zdl6gzj90zl09mqk8ba6cd5pbl917hpfa818z98z82"))))
+                "1wzc21n2f7i7idd2hs5s0sh46gpgl6sf4wmrmhi0wc6jcc4sb5rk"))))
     (properties `((upstream-name . "easyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-stringr
                              r-rprojroot
                              r-rlang
-                             r-readxlsb
                              r-readxl
-                             r-openssl
                              r-lubridate
                              r-hmisc
                              r-glue
@@ -19752,13 +19985,13 @@ data, and for performing genome-wide analysis.")
 (define-public r-eaf
   (package
     (name "r-eaf")
-    (version "2.4")
+    (version "2.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eaf" version))
               (sha256
                (base32
-                "0ajiz5ap5i2n35yq85mrwrkix9n7z2qqqp6jmyj9qblp8300kq97"))))
+                "0qp6qq2fqlrpgyrwn1riwcwbjqc0bgbn6i909sclbj5blkc6kl5x"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
     (inputs (list gsl))

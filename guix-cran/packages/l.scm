@@ -813,30 +813,6 @@ data.  The LTRC trees can also be used to fit survival tree with time-varying
 covariates.")
     (license license:gpl3)))
 
-(define-public r-ltrcforests
-  (package
-    (name "r-ltrcforests")
-    (version "0.5.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LTRCforests" version))
-              (sha256
-               (base32
-                "0f0am4wydk4wqiwjzxj2ibdkp5sd47qam4218nn0489knkvas3s7"))))
-    (properties `((upstream-name . "LTRCforests")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-prodlim r-partykit r-ipred))
-    (home-page "https://cran.r-project.org/package=LTRCforests")
-    (synopsis
-     "Ensemble Methods for Survival Data with Time-Varying Covariates")
-    (description
-     "This package implements the conditional inference forest and relative risk
-forest algorithm to modeling left-truncated right-censored data with
-time-invariant covariates, and (left-truncated) right-censored survival data
-with time-varying covariates.  It also provides functions to tune the parameters
-and evaluate the model fit.  See Yao et al. (2020) <arXiv:2006.00567>.")
-    (license license:gpl2+)))
-
 (define-public r-ltpdvar
   (package
     (name "r-ltpdvar")
@@ -2994,6 +2970,27 @@ three-velocities.  Includes active and passive transforms and the ability to use
 units in which the speed of light is not one.  For general relativity, see the
 schwarzschild package.")
     (license license:gpl3)))
+
+(define-public r-lorem
+  (package
+    (name "r-lorem")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lorem" version))
+              (sha256
+               (base32
+                "06pi088m1j60p3ckvz0mdfjlzqfdcjmzlalhy8pipnysv90ln5rm"))))
+    (properties `((upstream-name . "lorem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr r-htmltools))
+    (home-page "https://github.com/gadenbuie/lorem")
+    (synopsis "Generate Lorem Ipsum Text")
+    (description
+     "Quickly generate lorem ipsum placeholder text.  Easy to integrate in RMarkdown
+documents.  Includes an RStudio addin to insert lorem ipsum into the current
+document.")
+    (license license:expat)))
 
 (define-public r-lorec
   (package
@@ -5535,13 +5532,13 @@ mode, normality test, histogram and correlation.")
 (define-public r-loa
   (package
     (name "r-loa")
-    (version "0.2.47.1")
+    (version "0.2.48.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loa" version))
               (sha256
                (base32
-                "1xzcf3cvk3zrlqknrw5j19g7z4lw74ahw7cwavx7c9b007kk7f5c"))))
+                "0685xhswhmn05jxn5q11g1h767vv7l0f9wmlqqrk6wvnagf3nbdn"))))
     (properties `((upstream-name . "loa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -5703,6 +5700,33 @@ Y., et al. (2018) <doi:10.1093/bib/bby065>.")
 non-coding RNA low counts, using generalized linear model with zero-inflated
 exponential quasi likelihood ratio test.  Methods implemented in this package
 are described in Li (2019) <doi:10.1186/s12864-019-5926-4>.")
+    (license license:gpl2+)))
+
+(define-public r-lmw
+  (package
+    (name "r-lmw")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lmw" version))
+              (sha256
+               (base32
+                "0v5p7886q6gy0m3cqq01r3cwbjpwypg3m0hqxjbrpsbfgzvi7phv"))))
+    (properties `((upstream-name . "lmw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-backports))
+    (home-page "https://github.com/ngreifer/lmw")
+    (synopsis "Linear Model Weights")
+    (description
+     "Computes the implied weights of linear regression models for estimating average
+causal effects and provides diagnostics based on these weights.  These
+diagnostics rely on the analyses in Chattopadhyay and Zubizarreta (2022)
+<doi:10.1093/biomet/asac058> where several regression estimators are represented
+as weighting estimators, in connection to inverse probability weighting.  lmw
+provides tools to diagnose representativeness, balance, extrapolation, and
+influence for these models, clarifying the target population of inference.
+Tools are also available to simplify estimating treatment effects for specific
+target populations of interest.")
     (license license:gpl2+)))
 
 (define-public r-lmviz
@@ -6048,16 +6072,17 @@ dependence structures.")
 (define-public r-lmmstar
   (package
     (name "r-lmmstar")
-    (version "0.8.10")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMMstar" version))
               (sha256
                (base32
-                "12ncz9qqmxdyaa3c0jaz8kxwjfc0ybfigcwvssslgaajgigwbi2k"))))
+                "137lvwy2sm7ldi62jmhnlxa788636q35g7i68qnn9v6gnjd7q9v3"))))
     (properties `((upstream-name . "LMMstar")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
+                             r-rlang
                              r-pbapply
                              r-numderiv
                              r-nlme
@@ -6602,13 +6627,13 @@ changepoint.  Based on Knowles, Siegmund and Zhang (1991)
 (define-public r-lm-beta
   (package
     (name "r-lm-beta")
-    (version "1.7-1")
+    (version "1.7-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lm.beta" version))
               (sha256
                (base32
-                "0y84f2zv76h26dw4hjsk37s6qdjsf66f6jzwmj2vg0r9q7b748wc"))))
+                "0r3j0y1fg6sffkab4r6pxjs6r7bysqddmk2mqbh5ym36f1g4q54i"))))
     (properties `((upstream-name . "lm.beta")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable))
@@ -6619,8 +6644,8 @@ changepoint.  Based on Knowles, Siegmund and Zhang (1991)
     (description
      "Adds standardized regression coefficients to objects created by lm'.  Also
 extends the S3 methods print', summary and coef with additional boolean argument
-standardized an provides xtable'-support.")
-    (license license:gpl2+)))
+standardized and provides xtable'-support.")
+    (license license:gpl3+)))
 
 (define-public r-llsr
   (package
@@ -8771,13 +8796,13 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihoodR" version))
               (sha256
                (base32
-                "0f2dfgl46hvr8ar4f3bv6wr0sky7ln9xr4pfckak6jr63zzcqq9i"))))
+                "1mbadd9lg7h4g39vg0g86qjd5nx5j87jgkzdflcvnja0f3dxph5b"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=likelihoodR")
@@ -9252,13 +9277,13 @@ insurances calculations are contained therein.  See Spedicato
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.0.2")
+    (version "4.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lidR" version))
               (sha256
                (base32
-                "0b4x95m1qmnb45yw8220brw9xryfdgdhprhwb4digfg12g324akp"))))
+                "13b7bf4dnhmq9p2ba6c5wfz27ac37sa4nzzmqc30v8z95a1kwfvr"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -9817,13 +9842,13 @@ Multi-Ethnic Study of Atherosclerosis (MESA)\".")
 (define-public r-lgdtoolkit
   (package
     (name "r-lgdtoolkit")
-    (version "0.0.9")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LGDtoolkit" version))
               (sha256
                (base32
-                "1kvsmhr5zsqb8p18ycrrq7vv6xxxr4mw3sa2k8n7ggiz5q7vr7za"))))
+                "0sl0fmp96mk9sgzw2mbn487iyzzxrcy06mxw8kv4vp4pi4jrrzcp"))))
     (properties `((upstream-name . "LGDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-monobin r-dplyr))
@@ -12688,6 +12713,43 @@ D., and Keitt, T. (2001) <doi:10.2307/2679983> Laita, A., Kotiaho, J.,
 Monkkonen, M. (2011) <doi:10.1007/s10980-011-9620-4>.")
     (license license:gpl3)))
 
+(define-public r-lcmsqa
+  (package
+    (name "r-lcmsqa")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LCMSQA" version))
+              (sha256
+               (base32
+                "14i2wvwghkwsbil70y2nil859ch41yri6hvdb3j1vcs5larmpfwx"))))
+    (properties `((upstream-name . "LCMSQA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xcms
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-plotly
+                             r-msnbase
+                             r-ggplot2
+                             r-dt
+                             r-data-table
+                             r-bsplus
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LCMSQA")
+    (synopsis
+     "Liquid Chromatography/Mass Spectrometry (LC/MS) Quality Assessment")
+    (description
+     "The goal of LCMSQA is to make it easy to check the quality of liquid
+chromatograph/mass spectrometry (LC/MS) experiments using a shiny application.
+This package provides interactive data visualizations for quality control (QC)
+samples, including total ion current chromatogram (TIC), base peak chromatogram
+(BPC), mass spectrum, extracted ion chromatogram (XIC), and feature detection
+results from internal standards or known metabolites.")
+    (license license:gpl3+)))
+
 (define-public r-lcmm
   (package
     (name "r-lcmm")
@@ -13847,13 +13909,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "latrend" version))
               (sha256
                (base32
-                "0dh1l1fax7s46z6nh4srqnyhj881rb6mh1cjmcd5cy6xmv95wps9"))))
+                "1a6dkxkrslbl99nyhwivh0wmr8axr8iqgy7cax952bzv38s30038"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -13875,7 +13937,9 @@ clustering longitudinal univariate trajectories, facilitating reproducible and
 transparent analyses.  Additionally, standard tools are provided to support
 cluster analyses, including repeated estimation, model validation, and model
 assessment.  The interface enables users to compare results between methods, and
-to implement and evaluate new methods with ease.")
+to implement and evaluate new methods with ease.  The akmedoids package is
+available from <https://github.com/MAnalytics/akmedoids>.  The clusterCrit
+package is available from the CRAN archive.")
     (license license:gpl2+)))
 
 (define-public r-latexpdf
@@ -15048,13 +15112,13 @@ simultaneous autoregressive spatial lag, Wagner and Zeileis (2019)
 (define-public r-lagp
   (package
     (name "r-lagp")
-    (version "1.5-8")
+    (version "1.5-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "laGP" version))
               (sha256
                (base32
-                "1s6lahzhyyigk5727qa1mdqpgv3dw8yal3la0wcszbl6dghgmnbz"))))
+                "1wwmy662mpifphf3bbaqamg9mnvb3rbxhpf1p00r6xqg2xfzgx1b"))))
     (properties `((upstream-name . "laGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tgp))

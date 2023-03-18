@@ -1698,13 +1698,13 @@ RESTful Webservice.  Utility functions aim at taxonomic consistency.")
 (define-public r-worldriskpollr
   (package
     (name "r-worldriskpollr")
-    (version "0.7.0")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worldriskpollr" version))
               (sha256
                (base32
-                "0w3ddiygjbylf1545ivavr3vz3y1098yv3f0c5hm70kg26lw93nn"))))
+                "025z7q8wfs5ngypx3c7zvqrr12sfbgbyxwy6180f6888mxpn6rww"))))
     (properties `((upstream-name . "worldriskpollr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3309,13 +3309,13 @@ tactics, so draw poker variants are not included.")
 (define-public r-wildmeta
   (package
     (name "r-wildmeta")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wildmeta" version))
               (sha256
                (base32
-                "0xiy5gvdy03j9mnhh8vc8cnk6i20mi89983jzp02chz3va5455a4"))))
+                "1ixrajbxmlsr8xniagywlfd8knik7c93phvsdbpas0k8ai7wfv9r"))))
     (properties `((upstream-name . "wildmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-robumeta r-metafor r-clubsandwich))
@@ -5272,6 +5272,29 @@ of observation per group is different.")
 datasets from Stata's online collection.")
     (license license:expat)))
 
+(define-public r-webtrackr
+  (package
+    (name "r-webtrackr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "webtrackR" version))
+              (sha256
+               (base32
+                "1rg9f6l0rcc07k1b0y50qhf0fjf77l1xhg5ssbdc6r89b000fxb3"))))
+    (properties `((upstream-name . "webtrackR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools r-tibble r-igraph r-data-table))
+    (home-page "https://github.com/schochastics/webtrackR")
+    (synopsis "Analysing Web Tracking Data and Online News Behaviour")
+    (description
+     "This package implements data structures and methods to work with web tracking
+data.  This includes data preprocessing steps, methods to construct audience
+networks as described in Mangold & Scharkow (2020)
+<doi:10.1080/19312458.2020.1724274>, and metrics of news audience polarization
+described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
+    (license license:expat)))
+
 (define-public r-websocket
   (package
     (name "r-websocket")
@@ -5337,13 +5360,13 @@ search engines.")
 (define-public r-websdm
   (package
     (name "r-websdm")
-    (version "1.1-1")
+    (version "1.1-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webSDM" version))
               (sha256
                (base32
-                "0qxiqba10dbnc6ndv6w50ax6726shn8pc3yqjvbqi1bk7yg03plr"))))
+                "0vhwxldxfbyy8ipadmcn2iicca3fndnvqvyji6c6k5hqpqxzj3l5"))))
     (properties `((upstream-name . "webSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools
@@ -6766,13 +6789,13 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
 (define-public r-watson
   (package
     (name "r-watson")
-    (version "0.1")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "watson" version))
               (sha256
                (base32
-                "06wszdk9d8b07kp5s30q474nd3rz0za6k158g4dl9cpd3bbwzj72"))))
+                "1mxasg8mgmyngb9ln1kz4b3h7zakp4zr0grw0g7bpnfig6np3bby"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinflex r-rcpparmadillo r-rcpp))
@@ -6793,6 +6816,40 @@ representation and state of the art methods for numerical evaluation of needed
 special functions using the results of Sablica and Hornik (2022)
 <https://www.ams.org/journals/mcom/2022-91-334/S0025-5718-2021-03690-X/>.")
     (license license:gpl3)))
+
+(define-public r-wats
+  (package
+    (name "r-wats")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Wats" version))
+              (sha256
+               (base32
+                "0xld5163srlyqd9rbmi618drkrimys7ifgzrq05ky22ns2qa4qfv"))))
+    (properties `((upstream-name . "Wats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-testit
+                             r-rlang
+                             r-rcolorbrewer
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://ouhscbbmc.github.io/Wats/")
+    (synopsis "Wrap Around Time Series Graphics")
+    (description
+     "Wrap-around Time Series (WATS) plots for interrupted time series designs with
+seasonal patterns.  Longitudinal trajectories are shown in both Cartesian and
+polar coordinates.  In many scenarios, a WATS plot more clearly shows the
+existence and effect size of of an intervention.  This package accompanies
+\"Graphical Data Analysis on the Circle: Wrap-Around Time Series Plots for
+(Interrupted) Time Series Designs\" by Rodgers, Beasley, & Schuelke (2014)
+<doi:10.1080/00273171.2014.946589>; see citation(\"Wats\") for details.")
+    (license license:expat)))
 
 (define-public r-wateryeartype
   (package
@@ -6957,6 +7014,43 @@ is a geometric approach for combining subset posteriors.  It allows for parallel
 and distributed computation of the posterior in case of complex models and/or
 big datasets, thereby increasing computational speed tremendously.")
     (license license:gpl3)))
+
+(define-public r-waspasr
+  (package
+    (name "r-waspasr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "waspasR" version))
+              (sha256
+               (base32
+                "04jwbf79p1cdc677pq21vxkwk6fy8b2bp8cps399d59i0fvrqx5v"))))
+    (properties `((upstream-name . "waspasR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=waspasR")
+    (synopsis
+     "Tool Kit to Implement a W.A.S.P.A.S. Based Multi-Criteria Decision Analysis Solution")
+    (description
+     "This package provides a set of functions to implement decision-making systems
+based on the W.A.S.P.A.S. method (Weighted Aggregated Sum Product Assessment),
+Chakraborty and Zavadskas (2014) <doi:10.15388/Informatica.2014.01>.  So this
+package offers functions that analyze and validate the raw data, which must be
+entered in a determined format; extract specific vectors and matrices from this
+raw database; normalize the input data; calculate rankings by intermediate
+methods; apply the lambda parameter for the main method; and a function that
+does everything at once.  The package has an example database called choppers,
+with which the user can see how the input data should be organized so that
+everything works as recommended by the decision methods based on multiple
+criteria that this package solves.  Basically, the data are composed of a set of
+alternatives, which will be ranked, a set of choice criteria, a matrix of values
+for each Alternative-Criterion relationship, a vector of weights associated with
+the criteria, since certain criteria are considered more important than others,
+as well as a vector that defines each criterion as cost or benefit, this
+determines the calculation formula, as there are those criteria that we want the
+highest possible value (e.g. durability) and others that we want the lowest
+possible value (e.g. price).")
+    (license license:gpl2+)))
 
 (define-public r-wasp
   (package
@@ -7352,13 +7446,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wallace" version))
               (sha256
                (base32
-                "095b3rs1agz7bjc8zn9h1bzqy52fvvfpfs6qwzqmqqqpca0b02dl"))))
+                "17ymqms80w7l4g78wqvamhg2p70mvz7knd5cda8ijlhyr9zanq73"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -7422,6 +7516,27 @@ location, as well as calls which return some data used to calculate the scores.
 These functions are especially useful for mass data collection and gathering
 Walk Score and Transit Score values for large lists of locations.")
     (license license:gpl2)))
+
+(define-public r-walkscore
+  (package
+    (name "r-walkscore")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "walkscore" version))
+              (sha256
+               (base32
+                "0ayqkmj7iramg234n3ygvssqjy70jw7x327xjzn2izdyfww59z8k"))))
+    (properties `((upstream-name . "walkscore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-httr r-dplyr))
+    (home-page "https://github.com/chris31415926535/walkscore")
+    (synopsis "Tidy Interface to the 'Walk Score' API")
+    (description
+     "Easily collect walk scores, bike scores, and transit scores (where available)
+from the Walk Score API <https://www.walkscore.com/professional/api.php>, a
+proprietary API that assigns locations a walkability score between 0 and 100.")
+    (license license:expat)))
 
 (define-public r-walker
   (package

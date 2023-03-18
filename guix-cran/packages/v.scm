@@ -401,13 +401,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtable" version))
               (sha256
                (base32
-                "1mvcmhy58kibwrjbqm07pynk1rin179nb94j1c6ym8sgq2by1h3g"))))
+                "18m4k3cp983i5rgnc88xmd3ykkck6z3wdwzwl49cxkaqhz5c23d3"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
@@ -967,16 +967,16 @@ check validity of ballots are also provided to ensure flexibility.")
 (define-public r-voteogram
   (package
     (name "r-voteogram")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voteogram" version))
               (sha256
                (base32
-                "12xv0c3g4vr23c8adkk8z7m7sx31w5mjvdg9h4qbvaimb99p2r7z"))))
+                "16bhnf9p2sanbcsdmdjb4iqca7hx4ghd40psxavndv1vkhw3cv0r"))))
     (properties `((upstream-name . "voteogram")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-jsonlite r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hrbrmstr/voteogram")
     (synopsis "United States House and Senate Voting Cartogram Generators")
@@ -1384,13 +1384,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-voice
   (package
     (name "r-voice")
-    (version "0.4.14")
+    (version "0.4.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voice" version))
               (sha256
                (base32
-                "0sclf544hy1rswxdr1160fxh7i6sm1300d7fw925sc0hvzk09k2k"))))
+                "17k9wnh475ygvk1xdmzbasvdhl8j91l4j1rrf9yn7af01bs7mw6z"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1407,9 +1407,8 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (synopsis
      "Tools for Voice Analysis, Speaker Recognition and Mood Inference")
     (description
-     "General purpose tools for voice analysis, speaker recognition and mood
-inference.  Gathers R and Python tools to solve problems concerning voice and
-audio in general.")
+     "Tools for voice analysis, speaker recognition and mood inference.  Gathers R and
+Python tools to solve problems concerning voice and audio in general.")
     (license license:gpl3)))
 
 (define-public r-vocaldia
@@ -2008,13 +2007,13 @@ experimental.")
 (define-public r-visxhclust
   (package
     (name "r-visxhclust")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visxhclust" version))
               (sha256
                (base32
-                "09849fmsm62adf39qk3np787g7v3vbg5yncs20qrclgv6iam3w51"))))
+                "1wx16mg5g58p4mgf5y776i5ahgpqqjy4wbfqhfjph36mrhs6qr22"))))
     (properties `((upstream-name . "visxhclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2033,7 +2032,7 @@ experimental.")
                              r-dplyr
                              r-dendextend
                              r-complexheatmap
-                             r-clustercrit
+                             r-clvalid
                              r-cluster
                              r-circlize
                              r-bsplus))
@@ -3530,16 +3529,38 @@ variations in language, character set, and spelling.  For more information go to
 <https://viaf.org/>.")
     (license license:gpl3)))
 
+(define-public r-via
+  (package
+    (name "r-via")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "via" version))
+              (sha256
+               (base32
+                "0vb4hxfi4im3f4zvkl0zcak8mk49g9ypmga704klfwyx44aywml6"))))
+    (properties `((upstream-name . "via")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=via")
+    (synopsis "Virtual Arrays")
+    (description
+     "The base class VirtualArray is defined, which acts as a wrapper around lists
+allowing users to fold arbitrary sequential data into n-dimensional, R-style
+virtual arrays.  The derived XArray class is defined to be used for homogeneous
+lists that contain a single class of objects.  The RasterArray and SfArray
+classes enable the use of stacked spatial data instead of lists.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-vhica
   (package
     (name "r-vhica")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vhica" version))
               (sha256
                (base32
-                "0zz4sffhrvh9raxygxma5a2jijq8nw8wqg8bc486sd2ahlv8g3s8"))))
+                "10785bx2wcnrfg77914r93fzlixhjpqz22sj3gfrh5n4qswzs91g"))))
     (properties `((upstream-name . "vhica")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vhica")
@@ -4349,13 +4370,13 @@ create a structure of directories and scripts.")
 (define-public r-vegtable
   (package
     (name "r-vegtable")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vegtable" version))
               (sha256
                (base32
-                "1rxc2f4w51p4gr30p56n3shwvknlbqb8wczbs2xxvcf1f823yn38"))))
+                "0q854isd0bm53xxj45h64cxnvkck0hm43vrxizyxxgqwqf0syg3z"))))
     (properties `((upstream-name . "vegtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegdata
@@ -4363,7 +4384,6 @@ create a structure of directories and scripts.")
                              r-stringi
                              r-sp
                              r-qdapregex
-                             r-knitr
                              r-foreign))
     (home-page "https://github.com/kamapu/vegtable")
     (synopsis "Handling Vegetation Data Sets")
@@ -4537,6 +4557,33 @@ spec files and to generate code which will enable plots to be embedded in
 properly configured web pages.  The default behavior is to generate an
 htmlwidget'.")
     (license (license:fsdg-compatible "AGPL + file LICENSE"))))
+
+(define-public r-vedicdatetime
+  (package
+    (name "r-vedicdatetime")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VedicDateTime" version))
+              (sha256
+               (base32
+                "0xhjw29zn2nmm6xq6s5j6ff9hfqh66q3zclga1w29vpcj7l7jb80"))))
+    (properties `((upstream-name . "VedicDateTime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-swephr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.neerajbokde.in/viggnette/2022-09-05-VedicDateTime")
+    (synopsis "Vedic Calendar System")
+    (description
+     "This package provides platform for Vedic calendar system having several
+functionalities to facilitate conversion between Gregorian and Vedic calendar
+systems, and helpful in examining its impact in the time series analysis domain.
+ The background is described in Neeraj Dhanraj Bokde et al. (2021)
+<doi:10.48550/arXiv.2111.03441>, Karanam L. Ramakumar et al. (2011)
+<https:archive.org/details/PanchangamCalculations>, K. S. Charak et al. (2012,
+ISBN:8190100807), Satish BD et al. (2013)
+<https:github.com/webresh/drik-panchanga>.")
+    (license license:gpl2+)))
 
 (define-public r-vectorwavelet
   (package

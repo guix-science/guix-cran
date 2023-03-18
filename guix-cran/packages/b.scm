@@ -451,13 +451,13 @@ distributions and impulse responses.")
 (define-public r-bvar
   (package
     (name "r-bvar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BVAR" version))
               (sha256
                (base32
-                "0x0cb0hj7a7lww0mvgj2i907ww390wyznwqqn5b5dk0pgi28wy5z"))))
+                "12bbqnycdw53rha6kb5s3wmzbyp5z3mzdq77akfq6w8q4iwy6324"))))
     (properties `((upstream-name . "BVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -897,19 +897,20 @@ documentation and examples <https://magosil86.github.io/bumblebee/>.")
 (define-public r-bumbl
   (package
     (name "r-bumbl")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bumbl" version))
               (sha256
                (base32
-                "19ac6dny8fbsrghwyryph3czlq6h50970lhcr6cxfx0brmirvcw6"))))
+                "16fpd62wkvjd25wv80rlp01q57sacx1jjww5j1v6hifc8097wj0i"))))
     (properties `((upstream-name . "bumbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
                              r-mass
+                             r-lifecycle
                              r-glue
                              r-ggplot2
                              r-dplyr
@@ -1987,13 +1988,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "0spbvl7yk5gc0jb1w359q4130glij8sgd6h9nmc520avyyj3dglx"))))
+                "1wd6khqwi7g9c3chf9idiv3paa9xc2l1p6vvg0x0061bk3syjm66"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -3890,23 +3891,21 @@ Design under Acceptance Decision Uncertainty\" by Suiyao Chen et al. (2020)
 (define-public r-brclimr
   (package
     (name "r-brclimr")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brclimr" version))
               (sha256
                (base32
-                "1gq22b1bli00kzckhc46v0bwn8fb8jby4kry6rim5276y1bnpbl9"))))
+                "0l2gk9zqa3lh9a4343h2n8ffm2x1arp84k44ah37krpsbxsvam6j"))))
     (properties `((upstream-name . "brclimr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown
+    (propagated-inputs (list r-rlang
+                             r-magrittr
                              r-lobstr
-                             r-knitr
-                             r-glue
-                             r-ggplot2
-                             r-duckdb
-                             r-dbi
-                             r-checkmate))
+                             r-dplyr
+                             r-checkmate
+                             r-arrow))
     (home-page "https://rfsaldanha.github.io/brclimr/")
     (synopsis
      "Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities")
@@ -4412,16 +4411,17 @@ This package runs the python implementation using reticulate.")
 (define-public r-bracer
   (package
     (name "r-bracer")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bracer" version))
               (sha256
                (base32
-                "0q47p43957nlaqsz0hhbica2hlar95c2i8avgq024yhccik5nx6f"))))
+                "0kbx30icv966sjv93as4yq88vkavbw68a7v2fnrvblzx2dgcis1n"))))
     (properties `((upstream-name . "bracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/bracer/")
     (synopsis "Brace Expansions")
     (description
@@ -4497,13 +4497,13 @@ review).")
 (define-public r-bqror
   (package
     (name "r-bqror")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bqror" version))
               (sha256
                (base32
-                "17g2a6nw64mxa9ibgl17c2bqnjq7h7mj3j542whh4nw547zyvh3g"))))
+                "1wba295p4bnmc3z11xvvjwprbdy8bwn837zd7j5dfnrvkvqgcg50"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -4516,28 +4516,28 @@ review).")
     (home-page "https://github.com/prajual/bqror")
     (synopsis "Bayesian Quantile Regression for Ordinal Models")
     (description
-     "Package provides functions for estimating Bayesian quantile regression with
-ordinal outcomes, computing the covariate effects, model comparison measures,
-and inefficiency factor.  The generic ordinal model with 3 or more outcomes
+     "Package provides functions for estimation and inference in Bayesian quantile
+regression with ordinal outcomes.  An ordinal model with 3 or more outcomes
 (labeled OR1 model) is estimated by a combination of Gibbs sampling and
-Metropolis-Hastings algorithm.  Whereas an ordinal model with exactly 3 outcomes
-(labeled OR2 model) is estimated using Gibbs sampling only.  For each model
-framework, there is a specific function for estimation.  The summary output
-produces estimates for regression quantiles and two measures of model comparison
-â log of marginal likelihood and Deviance Information Criterion (DIC).  The
-package also has specific functions for computing the covariate effects and
-other functions that aids either the estimation or inference in quantile ordinal
-models.  Rahman, M. A. (2016).âBayesian Quantile Regression for Ordinal
-Models.â Bayesian Analysis, II(I): 1-24 <doi: 10.1214/15-BA939>.  Yu, K., and
-Moyeed, R. A. (2001).  âBayesian Quantile Regression.â Statistics and
-Probability Letters, 54(4): 437â447 <doi: 10.1016/S0167-7152(01)00124-9>.
-Koenker, R., and Bassett, G. (1978).âRegression Quantiles.â Econometrica,
-46(1): 33-50 <doi: 10.2307/1913643>.  Chib, S. (1995).  âMarginal likelihood
-from the Gibbs output.â Journal of the American Statistical Association,
-90(432):1313â1321, 1995. <doi: 10.1080/01621459.1995.10476635>.  Chib, S., and
-Jeliazkov, I. (2001).  âMarginal likelihood from the Metropolis-Hastings
-output.â Journal of the American Statistical Association, 96(453):270â281,
-2001. <doi: 10.1198/016214501750332848>.")
+Metropolis-Hastings (MH) algorithm.  Whereas an ordinal model with exactly 3
+outcomes (labeled OR2 model) is estimated using a Gibbs sampling algorithm.  The
+summary output presents the posterior mean, posterior standard deviation, 95%
+credible intervals, and the inefficiency factors along with the two model
+comparison measures â logarithm of marginal likelihood and the deviance
+information criterion (DIC).  The package also provides functions for computing
+the covariate effects and other functions that aids either the estimation or
+inference in quantile ordinal models.  Rahman, M. A. (2016).âBayesian Quantile
+Regression for Ordinal Models.â Bayesian Analysis, 11(1): 1-24 <doi:
+10.1214/15-BA939>.  Yu, K., and Moyeed, R. A. (2001).  âBayesian Quantile
+Regression.â Statistics and Probability Letters, 54(4): 437â447 <doi:
+10.1016/S0167-7152(01)00124-9>.  Koenker, R., and Bassett, G.
+(1978).âRegression Quantiles.â Econometrica, 46(1): 33-50 <doi:
+10.2307/1913643>.  Chib, S. (1995).  âMarginal likelihood from the Gibbs
+output.â Journal of the American Statistical Association, 90(432):1313â1321,
+1995. <doi: 10.1080/01621459.1995.10476635>.  Chib, S., and Jeliazkov, I.
+(2001).  âMarginal likelihood from the Metropolis-Hastings output.â Journal
+of the American Statistical Association, 96(453):270â281, 2001. <doi:
+10.1198/016214501750332848>.")
     (license license:gpl2+)))
 
 (define-public r-bpr
@@ -5110,17 +5110,17 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 (define-public r-botor
   (package
     (name "r-botor")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "botor" version))
               (sha256
                (base32
-                "1izhpc491f54p3hz32kcp2b2yxkg59ni1caglyllg22bckw228sg"))))
+                "0avw7h0m2dm9nn5ya1y6kcgdh438v63y42w3y2dag24iyligx0wq"))))
     (properties `((upstream-name . "botor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-logger r-checkmate))
-    (home-page "https://daroczig.github.io/botor")
+    (propagated-inputs (list r-reticulate r-logger r-jsonlite r-checkmate))
+    (home-page "https://daroczig.github.io/botor/")
     (synopsis "'AWS Python SDK' ('boto3') for R")
     (description
      "Fork-safe, raw access to the Amazon Web Services ('AWS') SDK via the boto3
@@ -9229,13 +9229,13 @@ when dealing with crime statistics.")
 (define-public r-bizicount
   (package
     (name "r-bizicount")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bizicount" version))
               (sha256
                (base32
-                "10alimshxvbd755w655b0h1zwi2nakjinf4nlhiyz9mw2sclaars"))))
+                "10vxwysgi74dy2ypwhilrk7dd9p2iy0i0v6wabginb5w9009kz4b"))))
     (properties `((upstream-name . "bizicount")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg
@@ -13423,24 +13423,25 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.6.7")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BIGL" version))
               (sha256
                (base32
-                "0ypaan35av1inbhn7h3r0m3c59xrgzzpc6j9dnbfi05c11xpwplg"))))
+                "1f5z2s1i4nh27cmrpxw6adikalxssk10pjic0m4d7cg61fhqdq1n"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-robustbase
-                             r-rgl
                              r-progress
+                             r-plotly
                              r-numderiv
                              r-nleqslv
                              r-minpack-lm
                              r-mass
-                             r-ggplot2))
+                             r-ggplot2
+                             r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/openanalytics/BIGL")
     (synopsis "Biochemically Intuitive Generalized Loewe Model")
@@ -14186,17 +14187,17 @@ co-word analysis.")
 (define-public r-biblio
   (package
     (name "r-biblio")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biblio" version))
               (sha256
                (base32
-                "1mknfrkpapa88hlnzssv4k79xx9lg0ab34v88yhbnkm1xmmwrwq8"))))
+                "1mp4k4gw8l2fywffkkja7bl2bbgl6bjznac4nva7643hp4pj3ags"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlme r-stringr))
-    (home-page "https://github.com/kamapu/biblio")
+    (home-page "https://kamapu.github.io/biblio/")
     (synopsis "Interacting with BibTeX Databases")
     (description
      "Reading and writing BibTeX files using data frames in R sessions.")
@@ -15543,18 +15544,19 @@ graphing functionality for visual comparisons.")
 (define-public r-betapart
   (package
     (name "r-betapart")
-    (version "1.5.6")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "betapart" version))
               (sha256
                (base32
-                "08rphgdqxgkih70kqnn7x1hkahl309pa363zbqsdwk0lmfq2azkh"))))
+                "1ap1z9pvih66la7qh1bfihq0s5csnacgnx3i31gnj5ylaf72z9ds"))))
     (properties `((upstream-name . "betapart")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow
                              r-rcdd
                              r-picante
+                             r-minpack-lm
                              r-itertools
                              r-geometry
                              r-foreach
@@ -15754,31 +15756,6 @@ likelihood (LPML), the deviance information criterion (DIC), and the
 Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 <doi:10.1016/j.csda.2021.107345>.")
     (license license:gpl2+)))
-
-(define-public r-bet
-  (package
-    (name "r-bet")
-    (version "0.5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BET" version))
-              (sha256
-               (base32
-                "1yrfgb2q059h2cyn2l72s5491lagiilky7dp5j4bh32h0116d5fc"))))
-    (properties `((upstream-name . "BET")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=BET")
-    (synopsis "Binary Expansion Testing")
-    (description
-     "Nonparametric detection of nonuniformity and dependence with Binary Expansion
-Testing (BET).  See Kai Zhang (2019) BET on Independence, Journal of the
-American Statistical Association, 114:528, 1620-1637,
-<DOI:10.1080/01621459.2018.1537921>, Kai Zhang, Zhigen Zhai, and Wen Zhou.
-(2021).  BEAUTY Powered BEAST, <arXiv:2103.00674> and Zhigen Zhao, Michael
-Baiocchi, Kai Zhang.  SorBET: A Fast and Powerful Algorithm to Test Dependence
-of Variables.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bestsdp
   (package
@@ -17586,13 +17563,13 @@ for biodiversity data.")
 (define-public r-bdc
   (package
     (name "r-bdc")
-    (version "1.1.2")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bdc" version))
               (sha256
                (base32
-                "0qb6y7na3a7ydcij3xldp9x53lh6wcn9hnyviqgh5na0b8xghjm6"))))
+                "1z79bsg0jz5ffl47sjgxj2bigyhbn76m0kz9sqbzkph7srcc6vpr"))))
     (properties `((upstream-name . "bdc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19269,6 +19246,27 @@ Viet-Phuong (2019) <doi:10.31219/osf.io/w5dx6> The bayesvl R package.  Open
 Science Framework (May 18).")
     (license license:gpl3+)))
 
+(define-public r-bayesvarsel
+  (package
+    (name "r-bayesvarsel")
+    (version "2.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesVarSel" version))
+              (sha256
+               (base32
+                "1hp8cy9dbna32r57pjpsi9kx9vm18s0xr3gk1ndj0rbzn4193jdn"))))
+    (properties `((upstream-name . "BayesVarSel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-mass))
+    (home-page "https://github.com/comodin19/BayesVarSel")
+    (synopsis
+     "Bayes Factors, Model Choice and Variable Selection in Linear Models")
+    (description
+     "Bayes factors and posterior probabilities in Linear models, aimed at provide a
+formal Bayesian answer to testing and variable selection problems.")
+    (license license:gpl2)))
+
 (define-public r-bayestwin
   (package
     (name "r-bayestwin")
@@ -19743,6 +19741,36 @@ distributions of model parameters in JAGS (Just Another Gibbs Sampler; Plummer,
 parameters of interest with the Savage-Dickey density ratio (Wetzels,
 Raaijmakers, Jakab, Wagenmakers, 2009, <doi:10.3758/PBR.16.4.752>).")
     (license license:gpl2+)))
+
+(define-public r-bayesroe
+  (package
+    (name "r-bayesroe")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bayesROE" version))
+              (sha256
+               (base32
+                "05darwx45bv6p9qscnw169jza4yd3m2d5bgpr35yil7p68dl0w2b"))))
+    (properties `((upstream-name . "bayesROE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinybs
+                             r-shiny
+                             r-scales
+                             r-golem
+                             r-ggplot2
+                             r-config
+                             r-colourpicker))
+    (home-page "https://github.com/waidschrat/bayesROE")
+    (synopsis "Bayesian Regions of Evidence")
+    (description
+     "Computation and visualization of Bayesian Regions of Evidence to systematically
+evaluate the sensitivity of a superiority or non-inferiority claim against any
+prior assumption of its assessors.  Methodological details are elaborated by
+Hoefler and Miller (2023) <https://osf.io/jxnsv>.  Besides generic functions,
+the package also provides an intuitive Shiny application, that can be run in
+local R environments.")
+    (license license:gpl3+)))
 
 (define-public r-bayesrgmm
   (package
@@ -20563,13 +20591,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "1.2.2")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMallows" version))
               (sha256
                (base32
-                "0yhlsdrzbbm5a6h1brgdwcvjdafgyps4vl2jfmg6rq7fgcb9dl31"))))
+                "1mv1n2v9yvb8vzgld2dahv5v91843n81af5gbalhpg86yblizzfq"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -20942,6 +20970,53 @@ probabilities or the expected conditional error probabilities can be determined.
  Additional material on the methods in this package is available in Klaassen,
 F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
     (license license:lgpl3)))
+
+(define-public r-bayesianplatformdesigntimetrend
+  (package
+    (name "r-bayesianplatformdesigntimetrend")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
+              (sha256
+               (base32
+                "0ygqzjyrd6jaqyb7agyhy1xy4d4ngv6dri4cis6v4bfml2ix2jv8"))))
+    (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-reshape
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrixstats
+                             r-iterators
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-boot
+                             r-biocmanager
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ZXW834/PlatFormDesignTime")
+    (synopsis "Simulate and Analyse Bayesian Platform Trial with Time Trend")
+    (description
+     "Simulating the multi-arm multi-stage or platform trial with Bayesian approach
+using the rstan package, which provides the R interface for the Stan.  This
+package supports fixed ratio and Bayesian adaptive randomization approaches for
+randomization.  Additionally, it allows for the study of time trend problems in
+platform trials.  There are demos available for a multi-arm multi-stage trial
+with two different null scenarios, as well as for Bayesian trial cutoff
+screening.  The Bayesian adaptive randomisation approaches are described in:
+Trippa et al. (2012) <doi:10.1200/JCO.2011.39.8420> and Wathen et al. (2017)
+<doi:10.1177/1740774517692302>.  The randomisation algorithm is described in:
+Zhao W <doi:10.1016/j.cct.2015.06.008>.  The analysis methods of time trend
+effect in platform trial are described in: Saville et al. (2022)
+<doi:10.1177/17407745221112013> and Bofill Roig et al. (2022)
+<doi:10.1186/s12874-022-01683-w>.")
+    (license license:expat)))
 
 (define-public r-bayesiannetwork
   (package
@@ -21356,6 +21431,28 @@ with stochastic search on the structure of the factor loading matrix.  The
 number of latent factors, as well as the allocation of the manifest variables to
 the factors, are not fixed a priori but determined during MCMC sampling.")
     (license license:gpl3)))
+
+(define-public r-bayesfluxr
+  (package
+    (name "r-bayesfluxr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesFluxR" version))
+              (sha256
+               (base32
+                "1yak79py211070kmlxsq0c48accpg64nqzkhnpx2yz1c8dsj4kcg"))))
+    (properties `((upstream-name . "BayesFluxR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-juliacall))
+    (home-page "https://cran.r-project.org/package=BayesFluxR")
+    (synopsis "Implementation of Bayesian Neural Networks")
+    (description
+     "Implementation of BayesFlux.jl for R; It extends the famous Flux.jl machine
+learning library to Bayesian Neural Networks.  The goal is not to have the
+fastest production ready library, but rather to allow more people to be able to
+use and research on Bayesian Neural Networks.")
+    (license license:expat)))
 
 (define-public r-bayesess
   (package
@@ -23169,13 +23266,13 @@ project, query our tables, save data to disk and memory, all from R.")
 (define-public r-basecamb
   (package
     (name "r-basecamb")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basecamb" version))
               (sha256
                (base32
-                "1d8vjwb2ihcfj4y6n9sq099wrqv4iils6l8s2qw4d0y6l18xdra4"))))
+                "01zigv4wp19vmp645dzvbr26nrvhv4jxpqssvfc480v0dj3mavva"))))
     (properties `((upstream-name . "basecamb")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -23429,13 +23526,13 @@ features for data analysis and visualization.")
 (define-public r-bartcs
   (package
     (name "r-bartcs")
-    (version "0.1.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartcs" version))
               (sha256
                (base32
-                "0vkdk568l1n2lf5pxil1gh2z70wdlx4avb74zr8lbh5xxscyswdl"))))
+                "0xfyvm4pd0wcdhj3id1rrd5915ddv02rzy077ld111qnyvibmxld"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -23449,10 +23546,9 @@ features for data analysis and visualization.")
     (home-page "https://github.com/yooyh/bartcs")
     (synopsis "Bayesian Additive Regression Trees for Confounder Selection")
     (description
-     "Fit Bayesian Regression Additive Trees (BART) models to select relevant
-confounders among a large set of potential confounders and to estimate average
-treatment effect.  For more information, see Kim et al. (2022)
-<doi:10.48550/arXiv.2203.11798>.")
+     "Fit Bayesian Regression Additive Trees (BART) models to select true confounders
+from a large set of potential confounders and to estimate average treatment
+effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
     (license license:gpl3+)))
 
 (define-public r-bartcause
@@ -23547,6 +23643,33 @@ outcomes.  For more information see Sparapani, Spanbauer and McCulloch
     (synopsis "Barnard's Unconditional Test")
     (description "Barnard's unconditional test for 2x2 contingency tables.")
     (license license:gpl2)))
+
+(define-public r-bark
+  (package
+    (name "r-bark")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bark" version))
+              (sha256
+               (base32
+                "15q9xvb7fbh1kpr9qarb6ma9c3z25rskhx1hk86wqkcs0rzvpnr2"))))
+    (properties `((upstream-name . "bark")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://www.R-project.org")
+    (synopsis "Bayesian Additive Regression Kernels")
+    (description
+     "Bayesian Additive Regression Kernels (BARK) provides an implementation for
+non-parametric function estimation using Levy Random Field priors for functions
+that may be represented as a sum of additive multivariate kernels.  Kernels are
+located at every data point as in Support Vector Machines, however, coefficients
+may be heavily shrunk to zero under the Cauchy process prior, or even, set to
+zero.  The number of active features is controlled by priors on precision
+parameters within the kernels, permitting feature selection.  For more details
+see Ouyang, Z (2008) \"Bayesian Additive Regression Kernels\", Duke University.
+PhD dissertation, Chapter 3.")
+    (license license:gpl3+)))
 
 (define-public r-baris
   (package
@@ -23921,6 +24044,59 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
 1-way analysis of variance (ANOVA).")
     (license license:gpl2+)))
 
+(define-public r-bandsfdp
+  (package
+    (name "r-bandsfdp")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bandsfdp" version))
+              (sha256
+               (base32
+                "1rs86hfghr3wixqfm9x8s1zaid6nxmh8xkda1257k7q0gbdy8pf1"))))
+    (properties `((upstream-name . "bandsfdp")))
+    (build-system r-build-system)
+    (home-page "https://github.com/uni-Arya/bandsfdp")
+    (synopsis
+     "Compute Upper Prediction Bounds on the FDP in Competition-Based Setups")
+    (description
+     "This package implements functions that calculate upper prediction bounds on the
+false discovery proportion (FDP) in the list of discoveries returned by
+competition-based setups, implementing Ebadi et al. (2022) <arXiv:2302.11837>.
+Such setups include target-decoy competition (TDC) in computational mass
+spectrometry and the knockoff construction in linear regression (note this
+package typically uses the terminology of TDC).  Included is the standardized
+(TDC-SB) and uniform (TDC-UB) bound on TDC's FDP, and the simultaneous
+standardized and uniform bands.  Requires pre-computed Monte Carlo statistics
+available at <https://github.com/uni-Arya/fdpbandsdata>.  This data can be
+downloaded by running the command
+devtools::install_github(\"uni-Arya/fdpbandsdata\") in R and restarting R after
+installation.  The size of this data is roughly 81Mb.")
+    (license license:expat)))
+
+(define-public r-banditpam
+  (package
+    (name "r-banditpam")
+    (version "1.0-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "banditpam" version))
+              (sha256
+               (base32
+                "05ym5x178rgfvpvqgiv46ly6xnk44d0j74ykdxkzshil7aig1xfk"))))
+    (properties `((upstream-name . "banditpam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=banditpam")
+    (synopsis "Almost Linear-Time k-Medoids Clustering")
+    (description
+     "Interface to a high-performance implementation of k-medoids clustering described
+in Tiwari, Zhang, Mayclin, Thrun, Piech and Shomorony (2020) \"BanditPAM: Almost
+Linear Time k-medoids Clustering via Multi-Armed Bandits\"
+<https://proceedings.neurips.cc/paper/2020/file/73b817090081cef1bca77232f4532c5d-Paper.pdf>.")
+    (license license:expat)))
+
 (define-public r-bandit
   (package
     (name "r-bandit")
@@ -24170,13 +24346,13 @@ Tsai (2014) <DOI:10.1371/journal.pone.0109832>.")
 (define-public r-bambi
   (package
     (name "r-bambi")
-    (version "2.3.4")
+    (version "2.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BAMBI" version))
               (sha256
                (base32
-                "0ksc4nccd89fsdmm70q9al0ww3y645navkvqmh7lb1imgnl5bwph"))))
+                "16pb04n30y8sl6m6qgrdxk7sck98233cravpbzw4fzl2j8h0mm3r"))))
     (properties `((upstream-name . "BAMBI")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -24392,13 +24568,13 @@ studies.")
 (define-public r-bakr
   (package
     (name "r-bakr")
-    (version "0.2.4")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bakR" version))
               (sha256
                (base32
-                "0cwg68r713h8qhv9rl8906xwpcvwbgcwppl5z2d57y0swd10vqai"))))
+                "1q3ly0a9krj7ykrq9fni2f5lyfyg697dpcqdnmw2dsc8b4a4psbp"))))
     (properties `((upstream-name . "bakR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -24459,13 +24635,13 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "1avyzxhcn31gbjfyxlwqai1zc7k95cv48w8h3a41mvqpq2if38ws"))))
+                "0bmk4azxzkhia35c8hfvh9n2dllzya9s9c7mcjil0n7ai8bj0ql0"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

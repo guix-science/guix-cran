@@ -517,16 +517,17 @@ statistical distributions.")
 (define-public r-fuzzyreg
   (package
     (name "r-fuzzyreg")
-    (version "0.6")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuzzyreg" version))
               (sha256
                (base32
-                "1v100flbnw3mjmakgswj0zfla2rm0s0vpg8w8v7j1lr9sfjz4s7c"))))
+                "056ryj4w26fb4fpy43fgvqs8ijcpm6v503pnzw73d8gxahwkvwl2"))))
     (properties `((upstream-name . "fuzzyreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-limsolve))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=fuzzyreg")
     (synopsis "Fuzzy Linear Regression")
     (description
@@ -535,12 +536,13 @@ fuzzy linear regression models with crisp or fuzzy independent variables
 (triangular fuzzy numbers are supported).  Implements multiple methods for
 parameter estimation and algebraic operations with triangular fuzzy numbers.
 Includes functions for summarising, printing and plotting the model fit.
-Calculates predictions from the model and total error of fit.  Diamond (1988)
-<doi:10.1016/0020-0255(88)90047-3>, Hung & Yang (2006)
-<doi:10.1016/j.fss.2006.08.004>, Lee & Tanaka (1999) <doi:10.15807/jorsj.42.98>,
-Nasrabadi, Nasrabadi & Nasrabady (2005) <doi:10.1016/j.amc.2004.02.008>,
-Skrabanek, Marek & Pozdilkova (2021) <doi:10.3390/math9060685>, Tanaka, Hayashi
-& Watada (1989) <doi:10.1016/0377-2217(89)90431-1>, Zeng, Feng & Li (2017)
+Calculates predictions from the model and total error of fit.  Individual
+methods are described in Diamond (1988) <doi:10.1016/0020-0255(88)90047-3>, Hung
+& Yang (2006) <doi:10.1016/j.fss.2006.08.004>, Lee & Tanaka (1999)
+<doi:10.15807/jorsj.42.98>, Nasrabadi, Nasrabadi & Nasrabady (2005)
+<doi:10.1016/j.amc.2004.02.008>, Skrabanek, Marek & Pozdilkova (2021)
+<doi:10.3390/math9060685>, Tanaka, Hayashi & Watada (1989)
+<doi:10.1016/0377-2217(89)90431-1>, Zeng, Feng & Li (2017)
 <doi:10.1016/j.asoc.2016.09.029>.")
     (license license:gpl3)))
 
@@ -959,13 +961,13 @@ Colorado State University Vice President for Research.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.tests" version))
               (sha256
                (base32
-                "0ddjm9nrmjylyi8k2fywpnr0g13lrm047xm6v0ky6b6dr3gnmpr1"))))
+                "0nngq10fgqq1ha6rb62zc8nnz9wxvmznskzjfnibfsgjirvld11r"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
@@ -1296,6 +1298,41 @@ trends in multiple time series.")
 version from the paper by Kuhnt and Rehage (2016).  See Kuhnt, S.; Rehage, A.
 (2016): An angle-based multivariate functional pseudo-depth for shape outlier
 detection, JMVA 146, 325-340, <doi:10.1016/j.jmva.2015.10.016> for details.")
+    (license license:gpl3)))
+
+(define-public r-funspace
+  (package
+    (name "r-funspace")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "funspace" version))
+              (sha256
+               (base32
+                "10yvjx5iydpkn3pjh7f874sjcxg5fzadan7j0rdczm2l64iy6a5m"))))
+    (properties `((upstream-name . "funspace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-phytools
+                             r-paran
+                             r-missforest
+                             r-mgcv
+                             r-mass
+                             r-ks
+                             r-ape
+                             r-ade4))
+    (home-page "https://cran.r-project.org/package=funspace")
+    (synopsis "Creating and Representing Functional Trait Spaces")
+    (description
+     "Estimation of functional spaces based on traits of organisms.  The package
+includes functions to impute missing trait values (with or without considering
+phylogenetic information), and to create, represent and analyse two dimensional
+functional spaces based on principal components analysis, other ordination
+methods, or raw traits.  It also allows for mapping a third variable onto the
+functional space.  See Carmona et al. (2021) <doi:10.1038/s41586-021-03871-y>,
+Puglielli et al. (2021) <doi:10.1111/nph.16952>, Carmona et al. (2021)
+<doi:10.1126/sciadv.abf2675>, Carmona et al. (2019) <doi:10.1002/ecy.2876> for
+more information.")
     (license license:gpl3)))
 
 (define-public r-funreg
@@ -1873,39 +1910,6 @@ that have executable code and function definitions only functions are sourced.")
     (description "Curry, Compose, and other higher-order functions")
     (license license:gpl2+)))
 
-(define-public r-functclust
-  (package
-    (name "r-functclust")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "functClust" version))
-              (sha256
-               (base32
-                "0mdfxvrx3wk497a9bbkwnzbm6hm2s4wqs3h09m3hj48ybpqmhz9i"))))
-    (properties `((upstream-name . "functClust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-multcompview r-clustercrit))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://gitlab.com/ecosols/functclust/")
-    (synopsis "Functional Clustering of Redundant Components of a System")
-    (description
-     "Cluster together the components that make up an interactive system on the basis
-of their functional redundancy for one or more collective, systemic
-performances.  Plot the hierarchical tree of component clusters, the modelled
-and predicted performances of component assemblages, and other results
-associated with a functional clustering.  Test and prioritize the significance
-of the different components that make up the interactive system, of the
-different assemblages of components that make up the dataset, and of the
-different performances observed on the component assemblages.  The method finds
-application in ecology, for instance, where the system is an ecosystem, the
-components are organisms or species, and the systemic performance is the
-production of biomass or the respiration of the ecosystem.  The method is
-extensively described in Jaillard B, Deleporte P, Loreau M, Violle C (2018) \"A
-combinatorial analysis using observational data identifies species that govern
-ecosystem functioning\" <doi:10.1371/journal.pone.0201135>.")
-    (license license:gpl3)))
-
 (define-public r-functansnp
   (package
     (name "r-functansnp")
@@ -2095,6 +2099,36 @@ monitoring of functional data, using the methods of Capezza et al. (2020)
 <doi:10.1080/00401706.2020.1753581>.")
     (license license:gpl3)))
 
+(define-public r-funcdiv
+  (package
+    (name "r-funcdiv")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FuncDiv" version))
+              (sha256
+               (base32
+                "19jfxy9mhhsfr2mf3l9d125swy20qcyxfqd2fk9m6cly9ajzggza"))))
+    (properties `((upstream-name . "FuncDiv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppxptrutils
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-paralleldist
+                             r-data-table
+                             r-collapse
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=FuncDiv")
+    (synopsis "Compute Contributional Diversity Metrics")
+    (description
+     "Compute alpha and beta contributional diversity metrics, which is intended for
+linking taxonomic and functional microbiome data.  See GitHub repository for the
+tutorial: <https://github.com/gavinmdouglas/FuncDiv/wiki>.  Citation: Gavin M.
+Douglas, Sunu Kim, Morgan G. I. Langille, B. Jesse Shapiro (2023)
+<doi:10.1093/bioinformatics/btac809>.")
+    (license license:agpl3)))
+
 (define-public r-funcc
   (package
     (name "r-funcc")
@@ -2119,16 +2153,17 @@ cluster the rows and the columns of a data matrix whose inputs are functions.")
 (define-public r-func2vis
   (package
     (name "r-func2vis")
-    (version "1.0-2")
+    (version "1.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "func2vis" version))
               (sha256
                (base32
-                "1nasabnmn2la3ikhmhs5qx9h8p63r954s290989b9fyfp898rh3j"))))
+                "16lp9sz63s3g3f1j1dmx881k6wy177cmi4vl6xwg4bzg88bkf8rq"))))
     (properties `((upstream-name . "func2vis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-ggrepel r-ggplot2 r-devtools))
+    (propagated-inputs (list r-randomcolor r-igraph r-ggrepel r-ggplot2
+                             r-devtools))
     (home-page "https://cran.r-project.org/package=func2vis")
     (synopsis
      "Clean and Visualize Over Expression Results from 'ConsensusPathDB'")
@@ -3117,18 +3152,18 @@ the irrelevant and redundant information as possible.")
 (define-public r-fsdar
   (package
     (name "r-fsdar")
-    (version "0.8-0")
+    (version "0.8-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fsdaR" version))
               (sha256
                (base32
-                "14l9f1przai8z738677r7hisphdl2afv90hay8h4aj0dhi6g1raj"))))
+                "1j4q92lkmijap1hwv8grdhzaqr9c739894vh9l9a7vvllqa5n6nq"))))
     (properties `((upstream-name . "fsdaR")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-ggplot2))
-    (home-page "https://cran.r-project.org/package=fsdaR")
+    (home-page "https://github.com/UniprJRC/fsdaR")
     (synopsis
      "Robust Data Analysis Through Monitoring and Dynamic Visualization")
     (description
@@ -7300,6 +7335,24 @@ can be used to illustrate statistical methods in the classroom (multivariate
 data analysis, compositional data analysis, diversity measurement, etc.).")
     (license license:gpl3+)))
 
+(define-public r-folders
+  (package
+    (name "r-folders")
+    (version "0.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "folders" version))
+              (sha256
+               (base32
+                "16m0lqfacpqhz5h44v2k8q7gc3p8xa15r153g25fsfkcnw72gwvf"))))
+    (properties `((upstream-name . "folders")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-here r-config))
+    (home-page "https://github.com/deohs/folders")
+    (synopsis "Standardized Folder Names")
+    (description "Supports the use of standardized folder names.")
+    (license license:expat)))
+
 (define-public r-folderfun
   (package
     (name "r-folderfun")
@@ -8002,30 +8055,6 @@ Averaging,\" Proceedings of the 2018 Winter Simulation Conference, IEEE Press,
 Wheelwright & Hyndman (Wiley, 3rd ed., 1998)
 <https://robjhyndman.com/forecasting/>.")
     (license license:gpl3)))
-
-(define-public r-fm-index
-  (package
-    (name "r-fm-index")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fm.index" version))
-              (sha256
-               (base32
-                "06zqdzbriygcf8fml5mdyc2ipfpy5p6vsvrdk3kp8bk3fkyc8yd2"))))
-    (properties `((upstream-name . "fm.index")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-rcpp))
-    (home-page "https://github.com/clemenshug/fm.index")
-    (synopsis "Fast String Searching")
-    (description
-     "Wrapper for the Succinct Data Structure C++ library (SDSL v3)
-<https://github.com/xxsds/sdsl-lite> enabling fast string searching using FM
-indices.  Partial string matching can be ~50-fold faster than simple string
-scans for many real-world string collections (corpora).  A given corpus is
-converted into a compact in-memory FM index representation that can be
-efficiently queried for partial string matches.")
-    (license license:expat)))
 
 (define-public r-flyingr
   (package
@@ -10510,13 +10539,13 @@ Iwayama, K., Aisaka, Y., Kutsuna, N., and Nagano, A. J. (2017).
 (define-public r-fispro
   (package
     (name "r-fispro")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FisPro" version))
               (sha256
                (base32
-                "0xfmqqzil16ikjv0bwp5i1k9nngx8kjjlljrjimd6j900bs5m8am"))))
+                "16nqzyykjxp5ajv2vy0lwv8hk3a3w6di3xkzg3yp1c6p1mday7j3"))))
     (properties `((upstream-name . "FisPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-bh))
@@ -12151,25 +12180,27 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.1.4")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fiery" version))
               (sha256
                (base32
-                "0wfn7l766074pm8a821sx9z1xprq2ps90ayhs5l4pfppqz91kdf3"))))
+                "12mw8rha0mmv6r2s42k4gddafsnff29ijwsxyhcn0nc48qqniszd"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
                              r-stringi
+                             r-rlang
                              r-reqres
                              r-r6
+                             r-parallelly
                              r-later
                              r-httpuv
                              r-glue
                              r-future
                              r-crayon
-                             r-assertthat))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://fiery.data-imaginist.com")
     (synopsis "Lightweight and Flexible Web Framework")
@@ -13246,6 +13277,28 @@ sum of efforts expended by different fishing gears.  This necessitates
 standardisation of fishing effort in unit base.")
     (license license:gpl2+)))
 
+(define-public r-fertnet
+  (package
+    (name "r-fertnet")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FertNet" version))
+              (sha256
+               (base32
+                "1hhhsiva6nqqyjimmla2s4iv2lm3j20m55d7bwm8zr79lnj72nj9"))))
+    (properties `((upstream-name . "FertNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-haven))
+    (home-page "https://cran.r-project.org/package=FertNet")
+    (synopsis "Process Data from the Social Networks and Fertility Survey")
+    (description
+     "Processes data from The Social Networks and Fertility Survey, downloaded from
+<https://dataarchive.lissdata.nl>, including correcting respondent errors and
+transforming network data into network objects to facilitate analyses and
+visualisation.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-fertilmodel
   (package
     (name "r-fertilmodel")
@@ -13625,24 +13678,21 @@ functions to understand series
 (define-public r-fedstatapir
   (package
     (name "r-fedstatapir")
-    (version "0.2.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fedstatAPIr" version))
               (sha256
                (base32
-                "07pr6c4275jb9dkx2pdrkykqawlxdmp3g6v4v2kzsnrcdlxs0h57"))))
+                "11v7p4b1w9wpqvchcdrb8wcjp8j43iwa6c8cbhb33flyb9fbahkg"))))
     (properties `((upstream-name . "fedstatAPIr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-rlang
                              r-readsdmx
                              r-magrittr
                              r-jsonlite
                              r-httr
-                             r-dplyr))
+                             r-data-table))
     (home-page "https://github.com/DenchPokepon/fedstatAPIr")
     (synopsis
      "Unofficial API for Fedstat (Rosstat EMISS System) for Automatic and Efficient Data Queries")
@@ -13743,13 +13793,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FedData" version))
               (sha256
                (base32
-                "0cflxxpka0kknnyv7ryz5f4scmrbcsf01x5pwzs9lgvj8mz3kdf4"))))
+                "0wd1ri4rg3r2mfpspjrd8h9yd2lgq9ccppgs4vj26bg4aq8365d5"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))
@@ -13892,38 +13942,6 @@ work.  Many functions create features using parallel computation.  Since the
 nitty gritty of parallel computation is hidden under the hood, the user need not
 worry about creating clusters and shutting them down.")
     (license license:gpl2+)))
-
-(define-public r-featuretoolsr
-  (package
-    (name "r-featuretoolsr")
-    (version "0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "featuretoolsR" version))
-              (sha256
-               (base32
-                "0zrb3hb9axcfqc1b5cyhasm3p6jvgh7hd3085w7zag66pizqjwws"))))
-    (properties `((upstream-name . "featuretoolsR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-testthat
-                             r-stringr
-                             r-rstudioapi
-                             r-reticulate
-                             r-purrr
-                             r-magrittr
-                             r-dplyr
-                             r-cli
-                             r-caret))
-    (home-page "https://github.com/magnusfurugard/featuretoolsR")
-    (synopsis "Interact with the 'Python' Module 'Featuretools'")
-    (description
-     "This package provides a reticulate'-based interface to the Python module
-Featuretools'.  The package grants functionality to interact with Pythons
-Featuretools module, which allows for automated feature engineering on any data
-frame.  Valid features and new data sets can, after feature synthesis, easily be
-extracted.")
-    (license license:expat)))
 
 (define-public r-featureterminator
   (package
@@ -14135,55 +14153,6 @@ statistical summaries and graphics functions for the analysing tidy time series
 data.  The package name feasts is an acronym comprising of its key features:
 Feature Extraction And Statistics for Time Series.")
     (license license:gpl3)))
-
-(define-public r-feamir
-  (package
-    (name "r-feamir")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "feamiR" version))
-              (sha256
-               (base32
-                "0yp3bxh47aspfnnxi4wm4drkndv265rv58n9x9cp5jazwdy4qgg9"))))
-    (properties `((upstream-name . "feamiR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rpart-plot
-                             r-rpart
-                             r-reticulate
-                             r-randomforest
-                             r-magrittr
-                             r-ggplot2
-                             r-ga
-                             r-e1071
-                             r-dplyr))
-    (home-page "https://github.com/Core-Bioinformatics/feamiR")
-    (synopsis
-     "Classification and Feature Selection for microRNA/mRNA Interactions")
-    (description
-     "Comprises a pipeline for predicting microRNA/mRNA interactions, as detailed in
-Williams, Calinescu, Mohorianu (2020) <doi:10.1101/2020.12.23.424130>.  Its
-input consists of [a] a messenger RNA (mRNA) dataset (either in fasta format,
-focused on 3 UTRs or in gtf format; for the latter, the sequences of the 3â
-UTRs are generated using the genomic coordinates), [b] a microRNA dataset (in
-fasta format, retrieved from miRBase, <http://www.mirbase.org/>) and [c] an
-interaction dataset (in csv format, from miRTarBase
-<http://mirtarbase.cuhk.edu.cn/php/index.php>).  To characterise and predict
-microRNA/mRNA interactions, we use [a] statistical analyses based on Chi-squared
-and Fisher exact tests and [b] Machine Learning classifiers (decision trees,
-random forests and support vector machines).  To enhance the accuracy of the
-classifiers we also employ feature selection approaches used in on conjunction
-with the classifiers.  The feature selection approaches include a voting scheme
-for decision trees, a measure based on Gini index for random forests, forward
-feature selection and Genetic Algorithms on SVMs. The pipeline also includes a
-novel approach based on embryonic Genetic Algorithms which combines and
-optimises the forward feature selection and Genetic Algorithms.  All analyses,
-including the classification and feature selection, are applicable on the
-microRNA seed features (default), on the full microRNA features and/or flanking
-features on the mRNA. The sets of features can be combined.")
-    (license license:gpl2)))
 
 (define-public r-fealect
   (package
@@ -14829,26 +14798,6 @@ equivalents with linear computational complexity.  Markussen (2013)
 <doi:10.3150/11-BEJ389>.")
     (license license:gpl2)))
 
-(define-public r-fdakma
-  (package
-    (name "r-fdakma")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fdakma" version))
-              (sha256
-               (base32
-                "170vjw0f45f5x4r5fq37k8mmfn8z878qfyfyw4ix1gfxsfl27j1h"))))
-    (properties `((upstream-name . "fdakma")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fdacluster r-cli))
-    (home-page "https://github.com/astamm/fdakma")
-    (synopsis "Functional Data Analysis: K-Mean Alignment")
-    (description
-     "It performs simultaneously clustering and alignment of a multidimensional or
-unidimensional functional dataset by means of k-mean alignment.")
-    (license license:gpl3+)))
-
 (define-public r-fdadensity
   (package
     (name "r-fdadensity")
@@ -15218,13 +15167,13 @@ Archemedean, Elliptical, Extreme Value, and Empirical Copulae.")
 (define-public r-fco
   (package
     (name "r-fco")
-    (version "0.7.2")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FCO" version))
               (sha256
                (base32
-                "1bavlkrd0957lxv3n8wqv83sxddpihrwr91f2sgshwlczksl05kn"))))
+                "1zysqchq59v9ykp012sp870wgmckbq8gq3pqhl0jyh903hxw59qv"))))
     (properties `((upstream-name . "FCO")))
     (build-system r-build-system)
     (propagated-inputs (list r-semtools r-lavaan r-data-table r-checkmate))
@@ -17085,31 +17034,6 @@ eventually speed up the computation.  The fitting algorithm for Elastic Net is
 written in C++ using Armadillo linear algebra library.")
     (license license:gpl2+)))
 
-(define-public r-fastdummies
-  (package
-    (name "r-fastdummies")
-    (version "1.6.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fastDummies" version))
-              (sha256
-               (base32
-                "1pw1bpp69sbs8yc1s5ffz11q249ljfwbgfrq6irg5pyp37z38fdx"))))
-    (properties `((upstream-name . "fastDummies")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-stringr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jacobkap/fastDummies")
-    (synopsis
-     "Fast Creation of Dummy (Binary) Columns and Rows from Categorical Variables")
-    (description
-     "This package creates dummy columns from columns that have categorical variables
-(character or factor types).  You can also specify which columns to make dummies
-out of, or which columns to ignore.  Also creates dummy rows from character,
-factor, and Date columns.  This package provides a significant speed increase
-from creating dummy variables through model.matrix().")
-    (license license:expat)))
-
 (define-public r-fastdigest
   (package
     (name "r-fastdigest")
@@ -17255,13 +17179,13 @@ RcppArmadilo.  See <http://stat.umn.edu/~molst029> for details on the algorithm.
 (define-public r-fastai
   (package
     (name "r-fastai")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastai" version))
               (sha256
                (base32
-                "19hybrmcrlgawayvl0wxr646dmxmwjap64wdhd023rclby1nsg4c"))))
+                "1glq64hhwrwp29scf851nb6nl83hpvvy8cj37z2r36r89i5inp4b"))))
     (properties `((upstream-name . "fastai")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate
@@ -19138,6 +19062,39 @@ matrix.")
 experiments with noncompliance.")
     (license license:gpl2+)))
 
+(define-public r-fact
+  (package
+    (name "r-fact")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FACT" version))
+              (sha256
+               (base32
+                "0frj0qgdq8j8khy4dlv63zismjczijm0q7j5ha59m0dgxr93khfg"))))
+    (properties `((upstream-name . "FACT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-prediction
+                             r-iml
+                             r-gridextra
+                             r-ggplot2
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=FACT")
+    (synopsis "Feature Attributions for ClusTering")
+    (description
+     "We present FACT (Feature Attributions for ClusTering), a framework for
+unsupervised interpretation methods that can be used with an arbitrary
+clustering algorithm.  The package is capable of re-assigning instances to
+clusters (algorithm agnostic), preserves the integrity of the data and does not
+introduce additional models.  FACT is inspired by the principles of
+model-agnostic interpretation in supervised learning.  Therefore, some of the
+methods presented are based on iml', a R Package for Interpretable Machine
+Learning by Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl (2018)
+<doi:10.21105/joss.00786>.")
+    (license license:lgpl3)))
+
 (define-public r-facerec
   (package
     (name "r-facerec")
@@ -19295,6 +19252,44 @@ and correlated data can be easily simulated, either from random number
 generators or by resampling from existing data sources.  This package is faster
 with data.table and mvnfast installed.")
     (license license:expat)))
+
+(define-public r-fabr
+  (package
+    (name "r-fabr")
+    (version "1.1.0.1003")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fabR" version))
+              (sha256
+               (base32
+                "14yfvxcip89q4dnxx5svm9vq81lw5r9crkyc217jga30lv6wax80"))))
+    (properties `((upstream-name . "fabR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-tidytext
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-ggplot2
+                             r-fs
+                             r-dt
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GuiFabre/fabR/")
+    (synopsis "Wrapper Functions Collection Used in Data Pipelines")
+    (description
+     "The goal of this package is to provide wrapper functions in the data cleaning
+and cleansing processes.  These function helps in messages and interaction with
+the user, keep track of information in pipelines, help in the wrangling,
+munging, assessment and visualization of data frame-like material.")
+    (license license:gpl3)))
 
 (define-public r-fabmix
   (package

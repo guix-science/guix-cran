@@ -493,13 +493,13 @@ Golden Section Search Method for Numerical Optimization\",
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsTreeR" version))
               (sha256
                (base32
-                "0gkxvspk5nvzw06jrpyyl2g14qggqdy81b33r8rqzk9c1z71c21k"))))
+                "0502lphkq8axl9k89hnqjcsnppfxscdz8mm725kssk4d3bg8dgmy"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -846,13 +846,13 @@ available at the following URL: <https://github.com/VForWaTer/tool_template_r>."
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.3.6")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsmodule" version))
               (sha256
                (base32
-                "1gyzw4f171dbvqic1730rxh8i5hmdplj4ll5lhfh065f042zs6jq"))))
+                "0zzdliz850ljhdj76wz7zxbwlcdg5mhbcblxsxndil8xsp81l6ad"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -986,38 +986,6 @@ tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
      "Allow to run jshint on JavaScript files with a R command or a RStudio addin.
 The report appears in the RStudio viewer pane.")
     (license license:gpl3)))
-
-(define-public r-jsdm
-  (package
-    (name "r-jsdm")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jSDM" version))
-              (sha256
-               (base32
-                "12601lm4dxc19k086wacqly1008c3mhyl0h3vznsfxsfzi1jczv7"))))
-    (properties `((upstream-name . "jSDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-rcppgsl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-foreach
-                             r-doparallel
-                             r-corrplot
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://ecology.ghislainv.fr/jSDM/")
-    (synopsis "Joint Species Distribution Models")
-    (description
-     "Fits joint species distribution models ('jSDM') in a hierarchical Bayesian
-framework (Warton and al.  2015 <doi:10.1016/j.tree.2015.09.007>).  The Gibbs
-sampler is written in C++.  It uses Rcpp', Armadillo and GSL to maximize
-computation efficiency.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-jscore
   (package
@@ -1625,13 +1593,13 @@ to choose a base or source file and columns to merge or minus on.")
 (define-public r-jointvip
   (package
     (name "r-jointvip")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jointVIP" version))
               (sha256
                (base32
-                "0cvkhmhydpkvb2g43prcq77g8yg4ydw5v47jj2wp73pa80z54kv3"))))
+                "1m1fqngc2000i7mfp6rcs5js0bg0kzspmavi55ksrb1kybf8rh7k"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2))
@@ -1645,14 +1613,15 @@ conducted.  However, when many background variables are present, the decision as
 to which variables to prioritize for matching/weighting is not trivial.  Thus,
 the joint treatment-outcome variable importance plots are created to guide
 variable selection.  The joint variable importance plots enhance variable
-comparisons via bias curves, derived using the classical omitted variable bias
-framework.  The joint variable importance plots translate variable importance
-into recommended values for tuning parameters in existing methods.
-Post-matching and/or weighting plots can also be used to visualize and assess
-the quality of the observational study design.  The package and its usage is
-showcased in \"Using Joint Variable Importance Plots to Prioritize Variables in
-Assessing the Impact of Glyburide on Adverse Birth Outcomes\" by Liao et al.
-(2023) <arXiv:2301.09754>.")
+comparisons via unadjusted bias curves derived under the omitted variable bias
+framework.  The plots translate variable importance into recommended values for
+tuning parameters in existing methods.  Post-matching and/or weighting plots can
+also be used to visualize and assess the quality of the observational study
+design.  The method motivation and derivation is presented in \"Using Joint
+Variable Importance Plots to Prioritize Variables in Assessing the Impact of
+Glyburide on Adverse Birth Outcomes\" by Liao et al. (2023) <arXiv:2301.09754>.
+See the package paper by Liao and Pimentel (2023) <arxiv:2302.10367> for a
+beginner friendly user introduction.")
     (license license:expat)))
 
 (define-public r-jointseg
@@ -2312,13 +2281,13 @@ algebra and RcppArmadillo glue.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.3-0")
+    (version "0.4-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JMbayes2" version))
               (sha256
                (base32
-                "0m8q13k9k7ksrddpmbphmn62d658pz3r5a673sv0yg3ilsmi7259"))))
+                "0az2isk2kjjg283icb47v29hg7rrl3ab90qcl9r2pkjhy6q7yis4"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3243,29 +3212,6 @@ JIS X 0410
 codes of different scales.")
     (license license:expat)))
 
-(define-public r-jaod
-  (package
-    (name "r-jaod")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jaod" version))
-              (sha256
-               (base32
-                "071j3xqk7gzsic1sk8v0pwmqv6pav0nj9vvbskss3l1gczy80dfr"))))
-    (properties `((upstream-name . "jaod")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-crul))
-    (home-page "https://docs.ropensci.org/jaod/")
-    (synopsis "Directory of Open Access Journals Client")
-    (description
-     "Client for the Directory of Open Access Journals ('DOAJ') (<https://doaj.org/>).
- API documentation at <https://doaj.org/api/v1/docs>.  Methods included for
-working with all DOAJ API routes: fetch article information by identifier,
-search for articles, fetch journal information by identifier, and search for
-journals.")
-    (license license:expat)))
-
 (define-public r-janus
   (package
     (name "r-janus")
@@ -3829,13 +3775,13 @@ information about vaccination$/immunization$ hazards, visit
 (define-public r-jaatha
   (package
     (name "r-jaatha")
-    (version "3.2.3")
+    (version "3.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jaatha" version))
               (sha256
                (base32
-                "0dj9i5z69bh6hq0bbxq1yn71s4wna62rly0j9gadz5rhnfq9ci5a"))))
+                "13vmmrbvr073mmhgh84dp2wwx3r71bnli90nycfliqfnmzwr8ynl"))))
     (properties `((upstream-name . "jaatha")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-assertthat))

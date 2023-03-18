@@ -1475,13 +1475,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.96")
+    (version "0.96.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quanteda.textstats" version))
               (sha256
                (base32
-                "1sp0xd31z63ahqhv1vp0vj6sy4cal0rh7pga1rmc6nnc6dszgfis"))))
+                "0n4avavcl0rdjd7mg70h8jf6l24klqmqs5w4ij22l9qk20xg6fhp"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1535,42 +1535,6 @@ packages with plot methods designed specifically for text data, textual
 statistics, and models fit to textual data.  Plot types include word clouds,
 lexical dispersion plots, scaling plots, network visualisations, and word
 keyness plots.")
-    (license license:gpl3)))
-
-(define-public r-quanteda-textmodels
-  (package
-    (name "r-quanteda-textmodels")
-    (version "0.9.5-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quanteda.textmodels" version))
-              (sha256
-               (base32
-                "0i61bnk6hvrxqsrvmcpnak2c2drxiymxa28751s3yicm10m32i61"))))
-    (properties `((upstream-name . "quanteda.textmodels")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-sparsem
-                             r-rspectra
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quanteda
-                             r-matrix
-                             r-liblinear
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/quanteda/quanteda.textmodels")
-    (synopsis "Scaling Models and Classifiers for Textual Data")
-    (description
-     "Scaling models and classifiers for sparse matrix objects representing textual
-data in the form of a document-feature matrix.  Includes original
-implementations of Laver', Benoit', and Garry's (2003)
-<doi:10.1017/S0003055403000698>, Wordscores model, Perry and Benoit's (2017)
-<arXiv:1710.08963> class affinity scaling model, and Slapin and Proksch's (2008)
-<doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as methods for
-correspondence analysis, latent semantic analysis, and fast Naive Bayes and
-linear SVMs specially designed for sparse textual data.")
     (license license:gpl3)))
 
 (define-public r-quantdr
@@ -2432,22 +2396,20 @@ multiparental populations.")
 (define-public r-qtl2pattern
   (package
     (name "r-qtl2pattern")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qtl2pattern" version))
               (sha256
                (base32
-                "0d6s4lx9vxgrj753kn14b2kgmmrmg2x5y1zhhgyfyy0alwxvjcc8"))))
+                "12ysbqcf7bq1ibdyznlzc3kg71k7vd6cgy9xgmmhmdv8hkhdlf26"))))
     (properties `((upstream-name . "qtl2pattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
-                             r-rcolorbrewer
                              r-qtl2fst
                              r-qtl2
-                             r-purrr
                              r-ggplot2
                              r-fst
                              r-dplyr
@@ -2466,13 +2428,13 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
 (define-public r-qtl2ggplot
   (package
     (name "r-qtl2ggplot")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qtl2ggplot" version))
               (sha256
                (base32
-                "0xr1hhhwifpjbnrp6cwjijic0qwp2yiar7qvb9dl9rb2ww4r369b"))))
+                "0w3xlyxcg0v111fp7z998m5qk0rfyk4k1dl7bpbww9v2ppizzr36"))))
     (properties `((upstream-name . "qtl2ggplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3916,13 +3878,13 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Qindex" version))
               (sha256
                (base32
-                "0qijppqqwkhx7gvk6mfxl5zd969npdb248x6c30rhak3qx40d4gq"))))
+                "1j0ncn18sxgnkd1dpmf8wndz8061zlmv2bvc7aq5v1vhihb9k41r"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rpart r-mgcv r-matrixstats r-boot))
@@ -4372,6 +4334,34 @@ Houston, TX, USA, taught by Oleg Melnikov, statistics PhD student, as of Spring
 2015.")
     (license license:gpl2+)))
 
+(define-public r-qfratio
+  (package
+    (name "r-qfratio")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qfratio" version))
+              (sha256
+               (base32
+                "1q45bqxcqs7ljnd2bhl7hvmfk88vvyb5szahgngmvsxz9bjgdz42"))))
+    (properties `((upstream-name . "qfratio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-mass))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/watanabe-j/qfratio")
+    (synopsis "Moments of Ratios of Quadratic Forms Using Recursion")
+    (description
+     "Evaluates moments of ratios (and products) of quadratic forms in normal
+variables, specifically using recursive algorithms developed by Bao et al.
+(2013) <doi:10.1016/j.jmva.2013.03.002> and Hillier et al. (2014)
+<doi:10.1017/S0266466613000364>.  Originally developed as a supplement to
+Watanabe (2022) <doi:10.1101/2022.11.02.514929> for evaluating average
+evolvability measures in evolutionary quantitative genetics, but can be used for
+a broader class of moments.  Generating functions for these moments are also
+closely related to the top-order zonal and invariant polynomials of matrix
+arguments.")
+    (license license:gpl3+)))
+
 (define-public r-qfasar
   (package
     (name "r-qfasar")
@@ -4452,7 +4442,7 @@ fatty acid signature analysis (QFASA) to study predator diets.")
               (uri (cran-uri "qfa" version))
               (sha256
                (base32
-                "045s80vwrj9id5gr5avz0f0q2vf7jhvb03y9ahxcj7x55lixfnhv"))))
+                "1pn63b8qr36il1lhq4cr6qjv8xz8z7m1i5sg76hg2dblz4zsaa2s"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl

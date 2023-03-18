@@ -1055,32 +1055,6 @@ UScensus2010blk, UScensus2010blkgrp, UScensus2010tract, UScensus2010cdp
 packages.")
     (license license:gpl2+)))
 
-(define-public r-usaboundaries
-  (package
-    (name "r-usaboundaries")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "USAboundaries" version))
-              (sha256
-               (base32
-                "0wwaywg01vz8hmwm58bnf86m8yqivi53bww5y3ycg891msnjwrgr"))))
-    (properties `((upstream-name . "USAboundaries")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "http://lincolnmullen.com/software/usaboundaries/")
-    (synopsis
-     "Historical and Contemporary Boundaries of the United States of America")
-    (description
-     "The boundaries for geographical units in the United States of America contained
-in this package include state, county, congressional district, and zip code
-tabulation area.  Contemporary boundaries are provided by the U.S. Census Bureau
-(public domain).  Historical boundaries for the years from 1629 to 2000 are
-provided form the Newberry Library's Atlas of Historical County Boundaries
-(licensed CC BY-NC-SA).  Additional data is provided in the USAboundariesData
-package; this package provides an interface to access that data.")
-    (license license:expat)))
-
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")
@@ -3223,13 +3197,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UKFE" version))
               (sha256
                (base32
-                "1f6czdap1ck6jc32grbwfvk72q6qkja8s0bml24gb3wkdwpm1yxf"))))
+                "0a1y4qcawbnzjj0f2na9gnha9559lrqasb6jffqhwhv206wkm2z1"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3238,7 +3212,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(ReFH).  Currently the package uses NRFA peak flow dataset version 11.  Aside
+(ReFH).  Currently the package uses NRFA peak flow dataset version 11.1.  Aside
 from FEH functionality, further hydrological functions are available.  Most of
 the methods implemented in this package are described in one or more of the
 following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology (1999,
