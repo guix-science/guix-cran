@@ -9349,20 +9349,19 @@ of CARET's GLM model class, by returning the final trained model.")
 (define-public r-oddsapir
   (package
     (name "r-oddsapir")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oddsapiR" version))
               (sha256
                (base32
-                "0p0zl8ibsqlfhwllcmkfi9nxcplr7xwlrq3qdmkmr58fq796apr5"))))
+                "0vjmmbyxsnc40sv053s3jgwssxnn897kf5hkx1vbxrym7zx775k9"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
                              r-rvest
                              r-rlang
-                             r-purrr
                              r-magrittr
                              r-jsonlite
                              r-janitor

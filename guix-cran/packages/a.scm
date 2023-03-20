@@ -14441,13 +14441,13 @@ method).  Silva, Teixeira, and Manzione (2019)
 (define-public r-agriutilities
   (package
     (name "r-agriutilities")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agriutilities" version))
               (sha256
                (base32
-                "09civz3iiq6drihakyjq5cb7jlg0pmwjv7jdcs6v9cnd5lp6mijy"))))
+                "1ynd3cy9ak6ns8vzknz790q4pz63gbj4v9992p3igihw56vx9znn"))))
     (properties `((upstream-name . "agriutilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14455,8 +14455,6 @@ method).  Silva, Teixeira, and Manzione (2019)
                              r-statgensta
                              r-spats
                              r-rlang
-                             r-reshape2
-                             r-reshape
                              r-psych
                              r-matrix
                              r-magrittr

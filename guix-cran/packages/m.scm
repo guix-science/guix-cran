@@ -825,17 +825,18 @@ provided, using the method from Nolan (2013) <DOI:10.1007/s00180-013-0396-7>.")
 (define-public r-mvp
   (package
     (name "r-mvp")
-    (version "1.0-12")
+    (version "1.0-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mvp" version))
               (sha256
                (base32
-                "135v24hjg9zgnl6k27jvcgxflqhjrmdkp3p2nda3izfvlvxijr0h"))))
+                "0dzf5h5ng0vx6nw8j8q9ydksicyxy940p363n367gbs56c8x47dk"))))
     (properties `((upstream-name . "mvp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
                              r-partitions
+                             r-numbers
                              r-mpoly
                              r-magrittr
                              r-magic
@@ -847,9 +848,11 @@ provided, using the method from Nolan (2013) <DOI:10.1007/s00180-013-0396-7>.")
     (description
      "Fast manipulation of symbolic multivariate polynomials using the Map class of
 the Standard Template Library.  The package uses print and coercion methods from
-the mpoly package (Kahle 2013, \"Multivariate polynomials in R\".  The R Journal,
+the mpoly package (Kahle 2013, \"Multivariate polynomials in R\", The R Journal,
 5(1):162), but offers speed improvements.  It is comparable in speed to the
-spray package for sparse arrays, but retains the symbolic benefits of mpoly'.")
+spray package for sparse arrays, but retains the symbolic benefits of mpoly'.
+To cite the package in publications, use Hankin 2022
+<doi:10.48550/ARXIV.2210.15991>.  Uses disordR discipline.")
     (license license:gpl2+)))
 
 (define-public r-mvoutlier
@@ -9642,22 +9645,19 @@ process...")
 (define-public r-movecost
   (package
     (name "r-movecost")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "movecost" version))
               (sha256
                (base32
-                "0cd13w8lpzprwry12q2zq6s79v339dnh21lx1ivmkyd6va864mid"))))
+                "0pg92jczsqjbw8w9rlg19lffbvwl2yfpqp52srjgpcsjwbcva6lw"))))
     (properties `((upstream-name . "movecost")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
-                             r-spatstat-geom
                              r-sp
-                             r-rgeos
-                             r-rgdal
+                             r-sf
                              r-raster
-                             r-maptools
                              r-leastcostpath
                              r-gdistance
                              r-elevatr
@@ -10432,29 +10432,6 @@ stepwise, and classificatory (linear, quadratic, and the non-parametric k
 nearest neighbours).  The philosophy of the package is described in Å lenker et
 al.  2022.")
     (license license:gpl3)))
-
-(define-public r-morphoscape
-  (package
-    (name "r-morphoscape")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Morphoscape" version))
-              (sha256
-               (base32
-                "1kmr9pf5a6lyhmzbzs8h8fvr4lhm5f9k5a1bbglw369m053rgd4c"))))
-    (properties `((upstream-name . "Morphoscape")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-ggplot2 r-concaveman r-automap))
-    (native-inputs (list r-knitr))
-    (home-page "https://blakedickson.github.io/Morphoscape/")
-    (synopsis "Computation and Visualization of Adaptive Landscapes")
-    (description
-     "This package implements adaptive landscape methods first described by Polly et
-al. (2016) <doi:10.1080/02724634.2016.1111225> for the integration, analysis and
-visualization of biological trait data on a phenotypic morphospace - typically
-defined by shape metrics.")
-    (license license:gpl2+)))
 
 (define-public r-morphomap
   (package
@@ -12734,13 +12711,13 @@ and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moderate.mediation" version))
               (sha256
                (base32
-                "0fm6pl990fzcxg9zk9g94ycjgqdxzdswqf477ndg9gp4m0ndsriq"))))
+                "178xkw125qjvzp5zb37hd75js4spf129jfms6cdqcm7r25p77zdy"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -28766,31 +28743,6 @@ any function to memoize it.  The cache is keyed on a hash of the input data
 (using digest') or on pointer equivalence.")
     (license license:expat)))
 
-(define-public r-memisc
-  (package
-    (name "r-memisc")
-    (version "0.99.31.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "memisc" version))
-              (sha256
-               (base32
-                "0vnrq6lkqzba76222fsw9hp0sasq65r43iyc23nw6q3fzi7nncsj"))))
-    (properties `((upstream-name . "memisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-mass r-lattice r-jsonlite r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://memisc.elff.eu")
-    (synopsis "Management of Survey Data and Presentation of Analysis Results")
-    (description
-     "An infrastructure for the management of survey data including value labels,
-definable missing values, recoding of variables, production of code books, and
-import of (subsets of) SPSS and Stata files is provided.  Further, the package
-allows to produce tables and data frames of arbitrary descriptive statistics and
-(almost) publication-ready tables of regression model estimates, which can be
-exported to LaTeX and HTML.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-memify
   (package
     (name "r-memify")
@@ -32240,31 +32192,6 @@ EM) algorithm for Gaussian mixtures (Scrucca, 2021 <doi:10.1002/sam.11527>);
 entropy estimation via Gaussian mixture modeling (Robin & Scrucca, 2023
 <doi:10.1016/j.csda.2022.107582>).")
     (license license:gpl2+)))
-
-(define-public r-mclogit
-  (package
-    (name "r-mclogit")
-    (version "0.9.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mclogit" version))
-              (sha256
-               (base32
-                "0sbglgak6jhhpx65jnj59hbpvzs8qjsdjc4w02z0m5j9hrnmzp4s"))))
-    (properties `((upstream-name . "mclogit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-memisc r-matrix))
-    (home-page "http://mclogit.elff.eu")
-    (synopsis
-     "Multinomial Logit Models, with or without Random Effects or Overdispersion")
-    (description
-     "This package provides estimators for multinomial logit models in their
-conditional logit and baseline logit variants, with or without random effects,
-with or without overdispersion.  Random effects models are estimated using the
-PQL technique (based on a Laplace approximation) or the MQL technique (based on
-a Solomon-Cox approximation).  Estimates should be treated with caution if the
-group sizes are small.")
-    (license license:gpl2)))
 
 (define-public r-mclm
   (package

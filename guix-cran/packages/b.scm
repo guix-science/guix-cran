@@ -17216,13 +17216,13 @@ Statistics (to appear).")
 (define-public r-bdrc
   (package
     (name "r-bdrc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bdrc" version))
               (sha256
                (base32
-                "16pg0pqc16kd0ziygn8qw915fgrhi3yhdl5cyhrcpdjspyd7g6zd"))))
+                "0xkqm04q8cvrfkddw8bfsn8mh2l0h4762g6p3jg9n2psiac05yrc"))))
     (properties `((upstream-name . "bdrc")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-gridextra r-ggplot2))
@@ -18285,13 +18285,13 @@ method and various plotting features.")
 (define-public r-bcdata
   (package
     (name "r-bcdata")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcdata" version))
               (sha256
                (base32
-                "19xsl07xpa73y0fkvghhxbl74h93pkn15bb7dwf55wkrwxp16ak6"))))
+                "05izx4bpk60icwnsy4698cm4dyxmmffss59dca8zrrh4i4pql72f"))))
     (properties `((upstream-name . "bcdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -1757,13 +1757,13 @@ structural parameter optimization is described in
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.2.2")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fungible" version))
               (sha256
                (base32
-                "1y90vlszrir2lmvp9nnnj7nqj6a03x03fmdypagzvsszqkdsr7db"))))
+                "05yc3g53mpi3ifxqy0r0zaphsb7k16yxhjbrzg6n6wc5mkh2aywp"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -10149,20 +10149,31 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "0.2-4")
+    (version "0.2-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitPS" version))
               (sha256
                (base32
-                "034am6ca8z72ql1c9vn95m5qnjg69k8qafhp7alvqdbp30dlhvq3"))))
+                "1gakwbc1mxagmqgpm55dmdfwklcl8yrirpq0zbrfll8m1ssdi64l"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-readxl r-rdpack r-hmisc r-dplyr))
+    (propagated-inputs (list r-vgam
+                             r-readxl
+                             r-rdpack
+                             r-pbapply
+                             r-ks
+                             r-knitr
+                             r-iterators
+                             r-hmisc
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jmcurran/fitPS")
     (synopsis "Fit Zeta Distributions to Forensic Data")
     (description
-     "Fits zeta distributions (discrete power laws) to data that arises from forensic
+     "Fits Zeta distributions (discrete power laws) to data that arises from forensic
 surveys of clothing on the presence of glass and paint in various populations.
 The general method is described to some extent in Coulson, S.A., Buckleton,
 J.S., Gummer, A.B., and Triggs, C.M. (2001) <doi:10.1016/S1355-0306(01)71847-3>,

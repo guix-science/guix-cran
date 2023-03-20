@@ -10649,17 +10649,17 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
 (define-public r-coronavirus
   (package
     (name "r-coronavirus")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coronavirus" version))
               (sha256
                (base32
-                "17s32iqjri5fjxc5ydv4zsl5akw3xwxa0341b7chp80j68xzvyw2"))))
+                "038133msw161684bzxkwc9z4jkjnsmh13wf4nydphn0hsm961bi5"))))
     (properties `((upstream-name . "coronavirus")))
     (build-system r-build-system)
     (propagated-inputs (list r-devtools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RamiKrispin/coronavirus")
     (synopsis "The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset")
     (description

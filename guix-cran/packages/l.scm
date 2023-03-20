@@ -4512,13 +4512,13 @@ illustrate log-concave density estimation are made available.")
 (define-public r-logconcens
   (package
     (name "r-logconcens")
-    (version "0.17-1")
+    (version "0.17-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logconcens" version))
               (sha256
                (base32
-                "1pbrrjxijpvfxlm81sspjifzfb4siy9fj0xh7f67b2l4w8p0brgy"))))
+                "142zqpql4h874vmm5nim8rn4z96wjn9fazqgrl5j40xzfxv4h9s0"))))
     (properties `((upstream-name . "logconcens")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=logconcens")

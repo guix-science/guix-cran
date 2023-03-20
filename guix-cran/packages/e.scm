@@ -2919,24 +2919,25 @@ approximation or Monte-Carlo simulation can also be computed.")
 (define-public r-exactmed
   (package
     (name "r-exactmed")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExactMed" version))
               (sha256
                (base32
-                "0mnmlfnpqkz82iphga3b3xd85xh7jb211m6ahx4jf6y6y4rv5isj"))))
+                "1hq01z1xa7vdsypmc1cfrx9agn65c6d78c25v0fchbp2ik05998d"))))
     (properties `((upstream-name . "ExactMed")))
     (build-system r-build-system)
-    (propagated-inputs (list r-logistf))
+    (propagated-inputs (list r-sandwich r-pkgcond r-lmtest r-brglm2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ExactMed")
     (synopsis "Exact Mediation Analysis for Binary Outcomes")
     (description
      "This package provides a tool for conducting exact parametric regression-based
 causal mediation analysis of binary outcomes as described in Samoilenko, Blais
-and Lefebvre (2018) <doi:10.1353/obs.2018.0013> and Samoilenko, Lefebvre (2021)
-<doi:10.1093/aje/kwab055>.")
+and Lefebvre (2018) <doi:10.1353/obs.2018.0013>; Samoilenko, Lefebvre (2021)
+<doi:10.1093/aje/kwab055>; and Samoilenko, Lefebvre (2022)
+<doi:10.1002/sim.9621>.")
     (license license:gpl3)))
 
 (define-public r-exactltre
@@ -4968,13 +4969,13 @@ relational database management system.")
 (define-public r-ethseq
   (package
     (name "r-ethseq")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EthSEQ" version))
               (sha256
                (base32
-                "0xljl3phv0zgdz7zyq16qvwhd3r9bza1rr8waip36qgvaasjlvg3"))))
+                "0wrqdvcfag83qidrfg2b6q86xmb3f03mda4kwx0f4a53wl5fjdrx"))))
     (properties `((upstream-name . "EthSEQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -13838,26 +13839,6 @@ package includes a penalized maximum likelihood fitting function, and a genetic
 algorithm for selecting the most parsimonious species interaction network
 topology.")
     (license license:gpl2+)))
-
-(define-public r-eiadata
-  (package
-    (name "r-eiadata")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EIAdata" version))
-              (sha256
-               (base32
-                "0cx8x16jn8pfik7yd6vfqh23fqlfxnfj3ya42h5zbvsbka8rislh"))))
-    (properties `((upstream-name . "EIAdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-xml r-httr))
-    (home-page "https://github.com/Matt-Brigida/EIAdata")
-    (synopsis "R Wrapper for the Energy Information Administration (EIA) API")
-    (description
-     "An R wrapper to allow the user to query categories and Series IDs, and import
-data, from the EIA's API <https://www.eia.gov/opendata/>.")
-    (license license:gpl2)))
 
 (define-public r-eia
   (package

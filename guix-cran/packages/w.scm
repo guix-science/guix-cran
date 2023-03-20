@@ -6274,41 +6274,50 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waywiser" version))
               (sha256
                (base32
-                "1bx1hmln9z2yaa6r8q30wv3mm0908y0yqqcbyzzgpqpcijvgxxng"))))
+                "0l668f56k860b5vxb50z3nrxd3688xsrlwsrkyb3fi8xblmscqh5"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
+                             r-tidyselect
                              r-tibble
                              r-spdep
                              r-sf
-                             r-rsample
                              r-rlang
                              r-purrr
                              r-matrix
                              r-hardhat
                              r-glue
-                             r-fields))
-    (home-page "https://github.com/mikemahoney218/waywiser")
-    (synopsis "Methods for Assessing Spatial Models")
+                             r-fnn
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/waywiser")
+    (synopsis "Ergonomic Methods for Assessing Spatial Models")
     (description
      "Assessing predictive models of spatial data can be challenging, both because
 these models are typically built for extrapolating outside the original region
 represented by training data and due to potential spatially structured errors,
 with \"hot spots\" of higher than expected error clustered geographically due to
-spatial structure in the underlying data.  These functions provide methods for
-measuring the spatial structure of model errors and evaluating where predictions
-can be made safely, and are particularly useful for models fit using the
-tidymodels framework.  Methods include Moran's I ('Moran (1950)
-<doi:10.2307/2332142>), Geary's C ('Geary (1954) <doi:10.2307/2986645>),
-Getis-Ord's G ('Ord and Getis (1995) <doi:10.1111/j.1538-4632.1995.tb00912.x>),
-as well as an implementation of the area of applicability methodology from Meyer
-and Pebesma (2021) (<doi:10.1111/2041-210X.13650>).")
+spatial structure in the underlying data.  Methods are provided for assessing
+models fit to spatial data, including approaches for measuring the spatial
+structure of model errors, assessing model predictions at multiple spatial
+scales, and evaluating where predictions can be made safely.  Methods are
+particularly useful for models fit using the tidymodels framework.  Methods
+include Moran's I ('Moran (1950) <doi:10.2307/2332142>), Geary's C ('Geary
+(1954) <doi:10.2307/2986645>), Getis-Ord's G ('Ord and Getis (1995)
+<doi:10.1111/j.1538-4632.1995.tb00912.x>), agreement coefficients from Ji and
+Gallo (2006) (<doi: 10.14358/PERS.72.7.823>), agreement metrics from Willmott
+(1981) (<doi: 10.1080/02723646.1981.10642213>) and Willmott et al'. (2012)
+(<doi: 10.1002/joc.2419>), an implementation of the area of applicability
+methodology from Meyer and Pebesma (2021) (<doi:10.1111/2041-210X.13650>), and
+an implementation of multi-scale assessment as described in Riemann et al'.
+(2010) (<doi:10.1016/j.rse.2010.05.010>).")
     (license license:expat)))
 
 (define-public r-waydown

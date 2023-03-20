@@ -4912,13 +4912,13 @@ Generalized Linear Models ISBN: 978-1118730034, Pinheiro, J., Bates, D. (2006)
 (define-public r-hmcdm
   (package
     (name "r-hmcdm")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmcdm" version))
               (sha256
                (base32
-                "1i9anbmqs4v4s0qs5xh23jfhf1pk39sgji8ynksr01ls6f485gap"))))
+                "0w3ldx8bwcqbc0mv1f8yiby08w4s37jc7gp3p53pmldqk65s7qfb"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools r-rcpparmadillo r-rcpp r-progress
@@ -4930,13 +4930,7 @@ Generalized Linear Models ISBN: 978-1118730034, Pinheiro, J., Bates, D. (2006)
      "Fitting hidden Markov models of learning under the cognitive diagnosis
 framework.  The estimation of the hidden Markov diagnostic classification model,
 the first order hidden Markov model, the reduced-reparameterized unified
-learning model, and the joint learning model for responses and response times.
-Chen, Y., Culpepper, S. A., Wang, S., & Douglas, J. (2018)
-<doi:10.1177/0146621617721250>.  Wang, S., Yang, Y., Culpepper, S. A., &
-Douglas, J. A. (2018) <doi:10.3102/1076998617719727>.  Wang, S., Zhang, S.,
-Douglas, J., & Culpepper, S. (2018) <doi:10.1080/15366367.2018.1435105>.  Zhang,
-S., Douglas, J. A., Wang, S. & Culpepper, S. A. (2019)
-<doi:10.1007/978-3-030-05584-4_24>.")
+learning model, and the joint learning model for responses and response times.")
     (license license:gpl2+)))
 
 (define-public r-hmb

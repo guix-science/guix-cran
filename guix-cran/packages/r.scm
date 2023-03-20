@@ -26,11 +26,10 @@
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages databases)
-  #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages mpi)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages gnupg)
   #:use-module (gnu packages pcre)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages fontutils)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -487,13 +486,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.14")
+    (version "2.0.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2parse" version))
               (sha256
                (base32
-                "1ycp4c8cgiwc4lpmfkcfq8z662pjlrd1kra5j8l5kd3ni4306w7c"))))
+                "1w5vcik5a7s1fdh075bfilyif1a60hi2yr9k61rl8glk8728x742"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -4506,13 +4505,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.6")
+    (version "9.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "01aqidk6svcqjmsib33i01nfgcqm4fjpp8bkd0b3akgcrp23d33s"))))
+                "1naxyy48jk1qhfzjsx615wgzvn546rzamzhqnmi5zv17pk6n197y"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -30254,16 +30253,16 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.0.1")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redist" version))
               (sha256
                (base32
-                "1xmkvj48aqm6shix00c21bvfni6fjs099g40siwyln4cgmqc57c9"))))
+                "03yknjjd346xz4iwiyq4bgjrmanw81rri8vfrjalr8w69n7jh12f"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
-    (inputs (list python openmpi libxml2 gmp))
+    (inputs (list python))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-sys
@@ -30283,7 +30282,7 @@ package seamlessly.")
                              r-doparallel
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://alarm-redist.github.io/redist/")
+    (home-page "https://alarm-redist.org/redist/")
     (synopsis "Simulation Methods for Legislative Redistricting")
     (description
      "Enables researchers to sample redistricting plans from a pre-specified target
@@ -30292,10 +30291,13 @@ algorithms.  The package allows for the implementation of various constraints in
 the redistricting process such as geographic compactness and population parity
 requirements.  Tools for analysis such as computation of various summary
 statistics and plotting functionality are also included.  The package implements
-methods described in Fifield, Higgins, Imai and Tarr (2020)
-<doi:10.1080/10618600.2020.1739532>, Fifield, Imai, Kawahara, and Kenny (2020)
-<doi:10.1080/2330443X.2020.1791773>, and McCartan and Imai (2020)
-<arXiv:2008.06131>.")
+the SMC algorithm of McCartan and Imai (2020) <arXiv:2008.06131>, the
+enumeration algorithm of Fifield, Imai, Kawahara, and Kenny (2020)
+<doi:10.1080/2330443X.2020.1791773>, the Flip MCMC algorithm of Fifield,
+Higgins, Imai and Tarr (2020) <doi:10.1080/10618600.2020.1739532>, the
+Merge-split/Recombination algorithms of Carter et al. (2019) <arXiv:1911.01503>
+and DeFord et al. (2021) <doi:10.1162/99608f92.eb30390f>, and the Short-burst
+optimization algorithm of Cannon et al. (2020) <arXiv:2011.02288>.")
     (license license:gpl2+)))
 
 (define-public r-rediscover
@@ -42407,13 +42409,13 @@ Examples are given for their use in diagnostic testing.")
 (define-public r-randomizer
   (package
     (name "r-randomizer")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "randomizeR" version))
               (sha256
                (base32
-                "172ip56nkapsk8chq50qvvxy2ag8j552ikk7h9y7y4xcdw78dn36"))))
+                "06irrp0g5g3xxc6jzrzlr2sjizf8rp0wgv4x32ldlnh0kyrg0na6"))))
     (properties `((upstream-name . "randomizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

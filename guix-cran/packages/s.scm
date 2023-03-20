@@ -3513,34 +3513,35 @@ reclassification index (NRI).")
 (define-public r-survhe
   (package
     (name "r-survhe")
-    (version "1.1.2")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survHE" version))
               (sha256
                (base32
-                "17hdhwkzyrkk4ijyscnv9644iinxvc566n84zq2490hfvlsk6nql"))))
+                "00h7jjwynhg75d6f4j0c9d1mivw7ycln5ymcsvx2lfy7i22widk9"))))
     (properties `((upstream-name . "survHE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
                              r-tibble
-                             r-stanheaders
-                             r-rstan
                              r-rms
-                             r-rcppeigen
-                             r-rcpp
                              r-ggplot2
                              r-flexsurv
-                             r-dplyr
-                             r-bh))
+                             r-dplyr))
     (home-page "https://github.com/giabaio/survHE")
     (synopsis "Survival Analysis in Health Economic Evaluation")
     (description
      "This package contains a suite of functions for survival analysis in health
 economics.  These can be used to run survival models under a frequentist (based
 on maximum likelihood) or a Bayesian approach (both based on Integrated Nested
-Laplace Approximation or Hamiltonian Monte Carlo).  The user can specify a set
-of parametric models using a common notation and select the preferred mode of
+Laplace Approximation or Hamiltonian Monte Carlo).  To run the Bayesian models,
+the user needs to install additional modules (packages), i.e.  survHEinla and
+survHEhmc'.  These can be installed using remotes::install_github from their
+GitHub repositories: (<https://github.com/giabaio/survHEhmc> and
+<https://github.com/giabaio/survHEinla/> respectively).  survHEinla is based on
+the package INLA, which is available for download at
+<https://inla.r-inla-download.org/R/stable/>.  The user can specify a set of
+parametric models using a common notation and select the preferred mode of
 inference.  The results can also be post-processed to produce probabilistic
 sensitivity analysis and can be used to export the output to an Excel file (e.g.
 for a Markov model, as often done by modellers and practitioners).
@@ -12012,13 +12013,13 @@ See package README.md for basic package usage.")
 (define-public r-starter
   (package
     (name "r-starter")
-    (version "0.1.12")
+    (version "0.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "starter" version))
               (sha256
                (base32
-                "1ydqz8m9zfis0gv9sx12gs4m9kz7xk9f2l55pzifwl0m61a04c65"))))
+                "0i3gmslabm8zjp282g2qv5yy3iicpmjakvzdnb2qh3hd75l42sn7"))))
     (properties `((upstream-name . "starter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -36035,33 +36036,6 @@ Differential Effect Search\" (SIDES) method proposed by Lipkovich et al. (2011)
 execution, and monitoring of federal discretionary transfers in Brazil.")
     (license license:gpl3+)))
 
-(define-public r-siconfir
-  (package
-    (name "r-siconfir")
-    (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "siconfir" version))
-              (sha256
-               (base32
-                "0x23hhy61af039q8r6s2fdfqgcl7lxb9cwkii0vklklni0n8pjya"))))
-    (properties `((upstream-name . "siconfir")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/aspeddro/siconfir")
-    (synopsis "Quick and Easy Access Tax and Accounting Data of Brazil")
-    (description
-     "Access tax and accounting data of Brazilian states and municipalities provided
-by the Brazilian Public Sector Accounting and Tax Information System.")
-    (license license:expat)))
-
 (define-public r-sicegar
   (package
     (name "r-sicegar")
@@ -43137,13 +43111,13 @@ Cochran-Mantel-Haenszel-Birch tests and sensitivity analyses for one or two
 (define-public r-sensitivity
   (package
     (name "r-sensitivity")
-    (version "1.28.0")
+    (version "1.28.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sensitivity" version))
               (sha256
                (base32
-                "1aafmmsqh30frimph4ll8gl8qf4vhfq6cp8al95zhwg219czxad2"))))
+                "1r57vp9s0hs5z6p9ln0vy5d3b72mp98x48kx85z3sqvqbqvycvdb"))))
     (properties `((upstream-name . "sensitivity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -53111,13 +53085,13 @@ Spatial Sampling\".")
 (define-public r-samplingr
   (package
     (name "r-samplingr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samplingR" version))
               (sha256
                (base32
-                "01nkgcngkci2jbjdcabmr34nd4ncdm6566ia8i106ylpyfg0527k"))))
+                "0myxp8rh8rgmashrkqiazjfis9y8y7zadghvfviwfflcyd3vl43l"))))
     (properties `((upstream-name . "samplingR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=samplingR")
@@ -53125,7 +53099,7 @@ Spatial Sampling\".")
     (description
      "This package provides functions to take samples of data, sample size estimation
 and getting useful estimators such as total, mean, proportion about its
-population using simple random sampling.")
+population using simple random sampling and stratified sampling.")
     (license license:gpl2)))
 
 (define-public r-samplingestimates

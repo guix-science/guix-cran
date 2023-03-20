@@ -16590,13 +16590,13 @@ multivariate generalization of QQ-plots).")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEPONS2R" version))
               (sha256
                (base32
-                "1q5vbm0l388crazkmy3nx9kq1nc5c4p80m48mg5izpi33bssmxy8"))))
+                "10aldyl0qzmw8zxfv5p8h7jryhncqyy64y1n8h1pxry405mxadc0"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22308,13 +22308,13 @@ in some case studies throughout the text.")
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataset" version))
               (sha256
                (base32
-                "1mh58b0l56dj8qlyy4dbhyqys99gbwr1z4rqnzzv8g33ap89s6iq"))))
+                "1p7f27q3z810kfgcpcz934s3x8g2dl9dhg0y3sbr4z31kdmcaf8q"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (propagated-inputs (list r-isocodes r-assertthat))

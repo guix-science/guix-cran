@@ -9762,15 +9762,16 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.2.8")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PracTools" version))
               (sha256
                (base32
-                "0cjm9hd4066yd88jbf0cpra616ajdbdnyhf7935dayb0233k5cpw"))))
+                "0xnf61cm8gl9wxrhgw7f7c9lv20f43ixxbrspi5s8fgi024s85bs"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
+    (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PracTools")
     (synopsis "Tools for Designing and Weighting Survey Samples")
@@ -9779,10 +9780,11 @@ attained.")
 Kreuter, Practical Tools for Designing and Weighting Survey Samples (2nd
 edition, 2018).  Contains functions for sample size calculation for survey
 samples using stratified or clustered one-, two-, and three-stage sample
-designs, and single-stage audit sample designs.  Other functions compute
-variance components for multistage designs and sample sizes in two-phase
-designs.  A number of example data sets are included.")
-    (license license:gpl2+)))
+designs, and single-stage audit sample designs.  Functions are included that
+will group geographic units accounting for distances apart and measures of size.
+ Other functions compute variance components for multistage designs and sample
+sizes in two-phase designs.  A number of example data sets are included.")
+    (license license:gpl3)))
 
 (define-public r-practicalsigni
   (package
@@ -10279,6 +10281,32 @@ process models or area-interaction models can be fitted with LASSO, adaptive
 LASSO or elastic net penalties.  A number of criteria are available to judge the
 bias-variance tradeoff.")
     (license license:gpl3)))
+
+(define-public r-ppmiss
+  (package
+    (name "r-ppmiss")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PPMiss" version))
+              (sha256
+               (base32
+                "0gbihilyhf1zd7s2k1n2axmywjbs0r23hn4gsbn6wvb9zqr4djf2"))))
+    (properties `((upstream-name . "PPMiss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-pracma r-copula))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=PPMiss")
+    (synopsis
+     "Copula-Based Estimator for Long-Range Dependent Processes under Missing Data")
+    (description
+     "This package implements the copula-based estimator for univariate long-range
+dependent processes, introduced in Pumi et al. (2023)
+<doi:10.1007/s00362-023-01418-z>.  Notably, this estimator is capable of
+handling missing data and has been shown to perform exceptionally well, even
+when up to 70% of data is missing (as reported in <arXiv:2303.04754>) and has
+been found to outperform several other commonly applied estimators.")
+    (license license:gpl3+)))
 
 (define-public r-ppmhr
   (package

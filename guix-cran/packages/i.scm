@@ -4907,13 +4907,13 @@ Mar 15) <doi:10.18632/oncotarget.7451>.")
 (define-public r-iols
   (package
     (name "r-iols")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IOLS" version))
               (sha256
                (base32
-                "0k0fz29vmc52fdr7dn01pprfssgchrmn8md8pg7zcsdibg16pidm"))))
+                "0b2vhlw5z7lqphlhk5by4rfxxyxh1h3b2z2mancxmil99bvipm6k"))))
     (properties `((upstream-name . "IOLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sandwich r-randomcolor r-matlib

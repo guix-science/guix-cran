@@ -10485,13 +10485,13 @@ exploration, mapping, visualization and export.")
 (define-public r-glossr
   (package
     (name "r-glossr")
-    (version "0.6.1")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glossr" version))
               (sha256
                (base32
-                "0lwwsnpcgnbagzqxnlp69z8cg0p40lvrjy31kyg80lrh14p94sxa"))))
+                "1wh6gryarmlv1b8ca12h81m94wjlr0kkjr2ydlrwdyzr2cxhxav5"))))
     (properties `((upstream-name . "glossr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
