@@ -2791,13 +2791,13 @@ use.  It also provides a number of utility functions such as BIC calculations.")
 (define-public r-lotri
   (package
     (name "r-lotri")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lotri" version))
               (sha256
                (base32
-                "1l965nyzqqlrqzp9wzmzcbjyinlyav3qhrr4vjgzzlz997aig3ls"))))
+                "1r24ldi8asa2n1w4czrwl5kp6b7xq27prrsxf23f436zfc4hhjvl"))))
     (properties `((upstream-name . "lotri")))
     (build-system r-build-system)
     (propagated-inputs (list r-crayon))

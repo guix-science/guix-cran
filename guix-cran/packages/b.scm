@@ -502,16 +502,17 @@ details.")
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "2.3.11")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BuyseTest" version))
               (sha256
                (base32
-                "1qn3nb8099rr511wrq7mb35hdm25hkyhfk22rmpw9z1md72xg9qr"))))
+                "0rw5xhbgc703d4llqlipkjg4j1axg8qvzbpxhjk2pmk0k7hqwmin"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-riskregression
+    (propagated-inputs (list r-rlang
+                             r-riskregression
                              r-rcpparmadillo
                              r-rcpp
                              r-prodlim
@@ -6122,6 +6123,27 @@ al, 2017.) and conditional inference trees and conditional random forests with
 partykit (Hothorn and Zeileis, 2015.  and Hothorn et al, 2006.
 <doi:10.1198/106186006X133933>).")
     (license license:expat)))
+
+(define-public r-bonn
+  (package
+    (name "r-bonn")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bonn" version))
+              (sha256
+               (base32
+                "1z22cdizz8sgw4fry98adcjvn23ag3qvvcinbg3kmafksdk1ivmb"))))
+    (properties `((upstream-name . "bonn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/sumtxt/bonn/")
+    (synopsis "Access INKAR Database")
+    (description
+     "Retrieve and import data from the INKAR database (Indikatoren und Karten zur
+Raum- und Stadtentwicklung Datenbank, <https://www.inkar.de>) of the Federal
+Office for Building and Regional Planning (BBSR) in Bonn using their JSON API.")
+    (license license:gpl3)))
 
 (define-public r-bonev
   (package
@@ -16369,13 +16391,13 @@ allowing calculations on data with missing values.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BEKKs" version))
               (sha256
                (base32
-                "14ws2zdz8fx0sarfw1pz52n855sh1s54052m2isrclsh4l8sigxj"))))
+                "089f50lcpgnp2k7xkg45kqm8gbxd1ahsz5d45r8sjn8fmb1a99vw"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -23856,6 +23878,7 @@ which is increasingly used in clinical trials.")
                              r-fuzzyranktests
                              r-fnn
                              r-biobase
+                             r-affyplm
                              r-affy))
     (home-page "https://cran.r-project.org/package=bapred")
     (synopsis

@@ -4254,13 +4254,13 @@ package relies on the optimization software MOSEK', <https://www.mosek.com>.")
 (define-public r-freealg
   (package
     (name "r-freealg")
-    (version "1.1-0")
+    (version "1.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "freealg" version))
               (sha256
                (base32
-                "10xc8d4ymx53hifmji3ag0svxpp833vndiylsrk5brhv9rg8wfb5"))))
+                "0jx9r40hql8fkpjr005snavj8fw5ykqa4ya7cy59jhxr31byma3j"))))
     (properties `((upstream-name . "freealg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-partitions r-mathjaxr r-disordr))

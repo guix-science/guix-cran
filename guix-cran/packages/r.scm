@@ -9676,24 +9676,29 @@ JavaScript by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "0.3.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rphylopic" version))
               (sha256
                (base32
-                "088aafylypsaxfl903qhi8kigkchmdzndibxic4sgiycry6xvxrz"))))
+                "1ac31gjp6p27jwbkigrvy08cc44z4cv8dkdhsrn2xb1x39hch44v"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-png r-jsonlite r-gridbase r-ggplot2 r-crul))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/sckott/rphylopic")
-    (synopsis "Get 'Silhouettes' of 'Organisms' from 'Phylopic'")
+    (propagated-inputs (list r-rsvg
+                             r-png
+                             r-jsonlite
+                             r-httr
+                             r-grimport2
+                             r-ggplot2
+                             r-curl))
+    (home-page "https://rphylopic.palaeoverse.org")
+    (synopsis "Get Silhouettes of Organisms from PhyloPic")
     (description
-     "Work with Phylopic web service (<http://phylopic.org/api/>) to get silhouette
-images of organisms', search names, and more.  Includes functions for adding
-silhouettes to both base plots and ggplot2 plots.")
-    (license license:expat)))
+     "Work with the PhyloPic Web Service (<http://api-docs.phylopic.org/v2/>) to fetch
+silhouette images of organisms.  Includes functions for adding silhouettes to
+both base R plots and ggplot2 plots.")
+    (license license:gpl3+)))
 
 (define-public r-rphylopars
   (package
@@ -12334,13 +12339,13 @@ information can be found on the ROI homepage
 (define-public r-rogue
   (package
     (name "r-rogue")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rogue" version))
               (sha256
                (base32
-                "07izp0q16ljr4a5h5ipq99k297j6s4rwv0rfpc8ssaw12hbl1yz9"))))
+                "0qvzpdxszbgkjvbrslizjnysbps9skn22ihvk79mvhi8kshw3pz8"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -20188,13 +20193,13 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2022.11.28")
+    (version "2023.03.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "riskRegression" version))
               (sha256
                (base32
-                "1qj8rpqz8i6c4bc3wcvlp28icrr2yaw38azp7d0h495k9klx87b0"))))
+                "1k75681jylvshh61vzhvszn9r5ngxwdyw47xn813jc6pm7xzrcbc"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -31855,6 +31860,57 @@ for univariate functions and applies the rearrangement operator to these
 confidence intervals.")
     (license license:gpl2+)))
 
+(define-public r-reappraised
+  (package
+    (name "r-reappraised")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reappraised" version))
+              (sha256
+               (base32
+                "0lfxirshmf2y8plb3cqqaynz7gai9vwd7qp96kcs219p027yw82n"))))
+    (properties `((upstream-name . "reappraised")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcdextra
+                             r-vcd
+                             r-tidyr
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-officer
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-flextable
+                             r-epitools
+                             r-dplyr
+                             r-data-table
+                             r-broom
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=reappraised")
+    (synopsis
+     "Statistical Tools for Assessing Publication Integrity of Groups of Trials")
+    (description
+     "Takes user-provided baseline data from groups of randomised controlled data and
+assesses whether the observed distribution of baseline p-values, numbers of
+participants in each group, or categorical variables are consistent with the
+expected distribution, as an aid to the assessment of integrity concerns in
+published randomised controlled trials.  References (citations in PubMed format
+in details of each function): Bolland MJ, Avenell A, Gamble GD, Grey A. (2016)
+<doi:10.1212/WNL.0000000000003387>.  Bolland MJ, Gamble GD, Avenell A, Grey A,
+Lumley T. (2019) <doi:10.1016/j.jclinepi.2019.05.006>.  Bolland MJ, Gamble GD,
+Avenell A, Grey A. (2019) <doi:10.1016/j.jclinepi.2019.03.001>.  Bolland MJ,
+Gamble GD, Grey A, Avenell A. (2020) <doi:10.1111/anae.15165>.  Bolland MJ,
+Gamble GD, Avenell A, Cooper DJ, Grey A. (2021)
+<doi:10.1016/j.jclinepi.2020.11.012>.  Bolland MJ, Gamble GD, Avenell A, Grey A.
+(2021) <doi:10.1016/j.jclinepi.2021.05.002>.  Bolland MJ, Gamble GD, Avenell A,
+Cooper DJ, Grey A. (2023) <doi:10.1016/j.jclinepi.2022.12.018>.  Carlisle JB,
+Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
+<doi:10.1111/anae.13938>.")
+    (license license:expat)))
+
 (define-public r-realvams
   (package
     (name "r-realvams")
@@ -37667,13 +37723,13 @@ Game notations.")
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.2.2.0")
+    (version "4.2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcheology" version))
               (sha256
                (base32
-                "09s6b702kla15bkvbjr9b0a0l9cs9z83f73alspid9k1i42fc765"))))
+                "1gdsqwl8b4n3xya3fzdh28nfrp2a4mcgj7zlx2awkz54gi71v5dg"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -39327,13 +39383,13 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\"")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbedrock" version))
               (sha256
                (base32
-                "1hzd0p5nzfshackwlmlzffrpzxrp2mnhk6izb8r605lrxp7laf4v"))))
+                "14hlb48bfh96fsgmsimwh09n7qighzs90wvzypwckp6vycbgl5ag"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (inputs (list zlib cmake))
@@ -41485,6 +41541,27 @@ a temporary fork which acts as a sandbox by enforcing fine grained restrictions
 without affecting the main R process.  A portable version of this function is
 now available in the unix package.")
     (license license:asl2.0)))
+
+(define-public r-rapp
+  (package
+    (name "r-rapp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rapp" version))
+              (sha256
+               (base32
+                "06rixyz2r4w82dbpr0d3z74hv0kxgd677d9c690jjnm9hrskwfbn"))))
+    (properties `((upstream-name . "Rapp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml))
+    (home-page "https://cran.r-project.org/package=Rapp")
+    (synopsis "Easily Build Command Line Applications")
+    (description
+     "Run simple R scripts as command line applications, with automatic robust and
+convenient support for command line arguments.  This package provides Rapp', an
+alternative R front-end similar to Rscript', that enables this.")
+    (license license:expat)))
 
 (define-public r-rapidxmlr
   (package

@@ -829,13 +829,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.11.1")
+    (version "1.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrMisc" version))
               (sha256
                (base32
-                "059z97k9p9iv7q1rs9gcy9m3qds4d6v69dlsasznp8lhhcdhklnx"))))
+                "15xarfqjlvlqkxsm9cgs2q50lkxmmxpmiyjs3hl7yqwzr13f1vk0"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

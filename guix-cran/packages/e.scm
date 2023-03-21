@@ -19535,13 +19535,13 @@ logratios are included in the package.")
 (define-public r-easycensus
   (package
     (name "r-easycensus")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "easycensus" version))
               (sha256
                (base32
-                "018c8km0pr43cpqy9lpczfa5nbc7s3lx0yv4fqz2ig5nv2b2k6q7"))))
+                "0k8cc02f7qf9g5fi9i8lsz02mkb0kcvqkh5zh7bajsfkmmksrr17"))))
     (properties `((upstream-name . "easycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

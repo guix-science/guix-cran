@@ -11298,13 +11298,13 @@ are extracted from the colorffy website.  See
 (define-public r-coranking
   (package
     (name "r-coranking")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coRanking" version))
               (sha256
                (base32
-                "09dq4xxpi632jb9vh96rsy2g51sn6apbccx9c8073hfsm078b4w6"))))
+                "1c1b005q7dr4868wm6vcs3x0849vf8xj7aacxnyc9wzb4lgkd2lb"))))
     (properties `((upstream-name . "coRanking")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33170,42 +33170,6 @@ effects, and calculate confidence intervals via the methods described in the
 paper.  The package also supports several other methods as described in the help
 files.")
     (license license:gpl3+)))
-
-(define-public r-causaloptim
-  (package
-    (name "r-causaloptim")
-    (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "causaloptim" version))
-              (sha256
-               (base32
-                "1wcla4khwb6wi5qdiq7ixs3r0ncgz3rfdccgzq7dvpm2hc3z4lyh"))))
-    (properties `((upstream-name . "causaloptim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/sachsmc/causaloptim")
-    (synopsis
-     "An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects")
-    (description
-     "When causal quantities are not identifiable from the observed data, it still may
-be possible to bound these quantities using the observed data.  We outline a
-class of problems for which the derivation of tight bounds is always a linear
-programming problem and can therefore, at least theoretically, be solved using a
-symbolic linear optimizer.  We extend and generalize the approach of Balke and
-Pearl (1994) <doi:10.1016/B978-1-55860-332-5.50011-0> and we provide a user
-friendly graphical interface for setting up such problems via directed acyclic
-graphs (DAG), which only allow for problems within this class to be depicted.
-The user can then define linear constraints to further refine their assumptions
-to meet their specific problem, and then specify a causal query using a text
-interface.  The program converts this user defined DAG, query, and constraints,
-and returns tight bounds.  The bounds can be converted to R functions to
-evaluate them for specific datasets, and to latex code for publication.  The
-methods and proofs of tightness and validity of the bounds are described in a
-preprint by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
-<doi:10.1080/10618600.2022.2071905>.")
-    (license license:expat)))
 
 (define-public r-causalmodels
   (package

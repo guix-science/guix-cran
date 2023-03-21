@@ -5350,26 +5350,6 @@ van Valkenhoef, G., Basturk, N., and Postmus, D. (2012)
 Postmus, D. (2014) <doi:10.1016/j.ejor.2014.06.036>.")
     (license license:gpl3)))
 
-(define-public r-hit
-  (package
-    (name "r-hit")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hit" version))
-              (sha256
-               (base32
-                "1vyla7jlg61rlrmqjb1wya404xj90xys175h12qy30paxsl5icqz"))))
-    (properties `((upstream-name . "hit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm r-rcpp r-glmnet))
-    (home-page "https://github.com/QTCAT/hit")
-    (synopsis "Hierarchical Inference Testing")
-    (description
-     "Hierarchical inference testing (HIT) for (generalized) linear models with
-correlated covariates applicable to high-dimensional settings.")
-    (license license:gpl2+)))
-
 (define-public r-histry
   (package
     (name "r-histry")

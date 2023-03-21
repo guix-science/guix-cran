@@ -2049,13 +2049,13 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.6")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visvow" version))
               (sha256
                (base32
-                "05av0b17573yrgnq9z7vv5jvzfwjshahjiav95wk0ixrqbga5vnn"))))
+                "0bl03aackg417931m60m1bxlqny35lcqhrvlsjj944j8kxmw81zp"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls

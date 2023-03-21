@@ -20329,13 +20329,13 @@ within the Description.")
 (define-public r-pinstimation
   (package
     (name "r-pinstimation")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PINstimation" version))
               (sha256
                (base32
-                "0n1jn33ckd00j6k4ij941gg8b7qq4vr7sk0zls0irxz6gbasz1zn"))))
+                "0vys27ws0nk0bqf6pxgr689q3rnyx14ar560004g6pi0ii59mbyk"))))
     (properties `((upstream-name . "PINstimation")))
     (build-system r-build-system)
     (propagated-inputs (list r-skellam

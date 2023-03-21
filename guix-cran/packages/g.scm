@@ -2515,6 +2515,43 @@ own gene set enrichment analysis plot.")
 Cellwise and Casewise Contamination and Missing Data.")
     (license license:gpl2+)))
 
+(define-public r-gsdesign2
+  (package
+    (name "r-gsdesign2")
+    (version "1.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gsDesign2" version))
+              (sha256
+               (base32
+                "02n2kb7cbkjk1and7xk7lnn9hxhxafcwnpmfpjdys281yc3a0497"))))
+    (properties `((upstream-name . "gsDesign2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-npsurvss
+                             r-mvtnorm
+                             r-gt
+                             r-gsdesign
+                             r-dplyr
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://merck.github.io/gsDesign2/")
+    (synopsis "Group Sequential Design with Non-Constant Effect")
+    (description
+     "The goal of gsDesign2 is to enable fixed or group sequential design under
+non-proportional hazards.  To enable highly flexible enrollment, time-to-event
+and time-to-dropout assumptions, gsDesign2 offers piecewise constant enrollment,
+failure rates, and dropout rates for a stratified population.  This package
+includes three methods for designs: average hazard ratio, weighted logrank tests
+in Yung and Liu (2019) <doi:10.1111/biom.13196>, and MaxCombo tests.
+Substantial flexibility on top of what is in the gsDesign package is intended
+for selecting boundaries.")
+    (license license:gpl3)))
+
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
@@ -6675,6 +6712,38 @@ mixed models with teachers modeled as \"G-side\" effects and students modeled wi
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
 
+(define-public r-gptstudio
+  (package
+    (name "r-gptstudio")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gptstudio" version))
+              (sha256
+               (base32
+                "072h8fik8f9g2434dah3k3qs122zzbasadw62854a0a2dvbpnpff"))))
+    (properties `((upstream-name . "gptstudio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-shiny
+                             r-rstudioapi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-cli
+                             r-assertthat))
+    (home-page "https://github.com/MichelNivard/gptstudio")
+    (synopsis
+     "Use Large Language Models Directly in your Development Environment")
+    (description
+     "Large language models are readily accessible via API. This package lowers the
+barrier to use the API inside of your development environment.  For more on the
+API, see <https://platform.openai.com/docs/introduction>.")
+    (license license:expat)))
+
 (define-public r-gpseqclus
   (package
     (name "r-gpseqclus")
@@ -9245,13 +9314,13 @@ described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
 (define-public r-gmwmx
   (package
     (name "r-gmwmx")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmwmx" version))
               (sha256
                (base32
-                "1h6p581cgz739hvdlr0kn3h981mhlklngfvzbkm7f9g5abaqa2nb"))))
+                "1jp3jjg0znvqmir83ygvi1nnws6xs29cfccd79vbk8702k4i9y61"))))
     (properties `((upstream-name . "gmwmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-wv
@@ -9270,10 +9339,10 @@ described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
     (description
      "This package implements the Generalized Method of Wavelet Moments with Exogenous
 Inputs estimator (GMWMX) presented in Cucci, D. A., Voirol, L., Kermarrec, G.,
-Montillet, J. P., and Guerrier, S. (2022) <arXiv:2206.09668>.  The GMWMX
-estimator allows to estimate functional and stochastic parameters of linear
-models with correlated residuals.  The gmwmx package provides functions to
-estimate, compare and analyze models, utilities to load and work with Global
+Montillet, J. P., and Guerrier, S. (2023) <doi:10.1007/s00190-023-01702-8>.  The
+GMWMX estimator allows to estimate functional and stochastic parameters of
+linear models with correlated residuals.  The gmwmx package provides functions
+to estimate, compare and analyze models, utilities to load and work with Global
 Navigation Satellite System (GNSS) data as well as methods to compare results
 with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
     (license license:agpl3)))
@@ -20934,13 +21003,13 @@ although an effort is made to also offer annotations in English.")
 (define-public r-geoadjust
   (package
     (name "r-geoadjust")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoAdjust" version))
               (sha256
                (base32
-                "0sgn7znh1abwycqxk77p4iq03fyffh02nif42acvkjykzr6bfq6w"))))
+                "074zp2rbahy72gh7hymdqrll2fb5rzm1xsbzhxjhd7032nlvs8g3"))))
     (properties `((upstream-name . "GeoAdjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -23959,13 +24028,13 @@ roads, power-lines) to increase the available amount of a given resource.")
 (define-public r-gde
   (package
     (name "r-gde")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gde" version))
               (sha256
                (base32
-                "1xrncdmidzz9dv51bnbcrdh92im0lr97xi4rgb30p5sfxc4axml9"))))
+                "05paf15dn2l7mfzhy3p3k7a2831fj9fwvwgljhcv7wpdj7djdccs"))))
     (properties `((upstream-name . "gde")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -24033,13 +24102,13 @@ CramÃ©r V, correlation coefficient, eta-squared...).")
 (define-public r-gdalutilities
   (package
     (name "r-gdalutilities")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalUtilities" version))
               (sha256
                (base32
-                "0aisbppbrrnl4cyrz4y37nv31fln0ng2bq1n90npij8h0ld9f2md"))))
+                "1ixqkm03w207bf5sdrlfxdqjrclkrm0gfhmwm3h2lzwp4himiljn"))))
     (properties `((upstream-name . "gdalUtilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))

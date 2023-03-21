@@ -7741,6 +7741,28 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-inlcolor
+  (package
+    (name "r-inlcolor")
+    (version "1.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "inlcolor" version))
+              (sha256
+               (base32
+                "0998smgzkspij2fa5si1sk5dfpas3645crk5hqkdg9ip228cqn16"))))
+    (properties `((upstream-name . "inlcolor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-checkmate))
+    (home-page "https://rconnect.usgs.gov/INLPO/inlcolor-main/")
+    (synopsis
+     "Color Schemes for the USGS Idaho National Laboratory Project Office")
+    (description
+     "This package provides a collection of functions for creating color schemes.
+Used to support packages and scripts written by researchers at the United States
+Geological Survey (USGS) Idaho National Laboratory Project Office.")
+    (license license:cc0)))
+
 (define-public r-inlabru
   (package
     (name "r-inlabru")

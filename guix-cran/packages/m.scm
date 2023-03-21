@@ -4842,13 +4842,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiATSM" version))
               (sha256
                (base32
-                "16xi02vqlp48ali36j8h3njx1h4l64hshcvdglylqsi2j140i3kd"))))
+                "1ysi5h325rbxxpw4s4r8gc03zznjfk1ccg2xcjmg7mswn2b9r9gi"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
@@ -28292,17 +28292,18 @@ by ERC grant 856506 and NIH grant R01ES028804.")
 (define-public r-mertools
   (package
     (name "r-mertools")
-    (version "0.5.2")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "merTools" version))
               (sha256
                (base32
-                "1ka9aa3fgs1kqfqhi1sz6v6g5mbbbzxyb7c0n8s981g8d04vsi00"))))
+                "09mr4gzrfxxq3ll76d90nywzp4f47rd8awaq826mc3hnjphh33md"))))
     (properties `((upstream-name . "merTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-mvtnorm
+                             r-matrix
                              r-lme4
                              r-ggplot2
                              r-foreach
@@ -28317,7 +28318,10 @@ by ERC grant 856506 and NIH grant R01ES028804.")
     (description
      "This package provides methods for extracting results from mixed-effect model
 objects fit with the lme4 package.  Allows construction of prediction intervals
-efficiently from large scale linear and generalized linear mixed-effects models.")
+efficiently from large scale linear and generalized linear mixed-effects models.
+ This method draws from the simulation framework used in the Gelman and Hill
+(2007) textbook: Data Analysis Using Regression and Multilevel/Hierarchical
+Models.")
     (license license:gpl2+)))
 
 (define-public r-merror

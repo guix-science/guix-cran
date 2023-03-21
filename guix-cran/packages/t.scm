@@ -5732,13 +5732,13 @@ Ranging) data.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.9.0")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeTools" version))
               (sha256
                (base32
-                "05h9l71mg1b9wx4w9ls25qm3agx9rp6hs0rkn6aqyll9js8mcfh7"))))
+                "157xx91g2248ng868dxi692rh0w4b529yxay1cl1d8w65kym92b0"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -10976,23 +10976,6 @@ statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
     (synopsis "Display Resizable Plots")
     (description "Display a plot in a Tk canvas.")
     (license license:gpl2+)))
-
-(define-public r-tkrplot
-  (package
-    (name "r-tkrplot")
-    (version "0.0-27")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tkrplot" version))
-              (sha256
-               (base32
-                "19bj4wn1fs4wrx5k4gakhpz4q59fgx0584wyaw7hnh0ljj8i34n9"))))
-    (properties `((upstream-name . "tkrplot")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=tkrplot")
-    (synopsis "TK Rplot")
-    (description "Simple mechanism for placing R graphics in a Tk widget.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-tkimgr
   (package

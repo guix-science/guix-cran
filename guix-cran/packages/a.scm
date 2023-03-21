@@ -8367,17 +8367,17 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apache.sedona" version))
               (sha256
                (base32
-                "0g3rbz8mrnnr66vi6a97ynan3ck9q9mr6lk3d77qmdwa0na0sskm"))))
+                "0lz4rgqfhpq1n70yh0ag1xw0n8bq0lw2wakb4aszv2z3dkqlzr5h"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparklyr r-rlang r-dplyr r-dbplyr))
-    (home-page "https://cran.r-project.org/package=apache.sedona")
+    (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
+    (home-page "https://github.com/apache/sedona/")
     (synopsis "R Interface for Apache Sedona")
     (description
      "R interface for Apache Sedona based on sparklyr (<https://sedona.apache.org>).")
@@ -13634,13 +13634,13 @@ plots, computes mean and confidence interval for back transformed data.")
 (define-public r-aiccmodavg
   (package
     (name "r-aiccmodavg")
-    (version "2.3-1")
+    (version "2.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AICcmodavg" version))
               (sha256
                (base32
-                "1c2qqizssy7jvzkndlljazk28rjq5csgawzs43gv3s9qbahpslfh"))))
+                "0lzk6xq6pfb7jxk61vlkcl60k4g9vqrdxdq19lc1ihjq13dmx7l9"))))
     (properties `((upstream-name . "AICcmodavg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -17664,33 +17664,6 @@ characteristics under an adaptive design with futility assessment determined via
 the posterior predictive probabilities.")
     (license license:gpl3)))
 
-(define-public r-adapt4pv
-  (package
-    (name "r-adapt4pv")
-    (version "0.2-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adapt4pv" version))
-              (sha256
-               (base32
-                "08zgzidw0wmpvhzsn4h8yhzgc45zh16grjp4y8mcc9lhk7pikhy5"))))
-    (properties `((upstream-name . "adapt4pv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-speedglm
-                             r-matrix
-                             r-glmnet
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=adapt4pv")
-    (synopsis "Adaptive Approaches for Signal Detection in Pharmacovigilance")
-    (description
-     "This package provides a collection of several pharmacovigilance signal detection
-methods based on adaptive lasso.  Additional lasso-based and propensity
-score-based signal detection approaches are also supplied.  See Courtois et al
-<doi:10.1186/s12874-021-01450-3>.")
-    (license license:gpl2)))
-
 (define-public r-adana
   (package
     (name "r-adana")
@@ -17929,17 +17902,16 @@ base date to facilitate actuarial reporting and to compare results.")
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actuaRE" version))
               (sha256
                (base32
-                "0nxy03nsg1adssdfd7qxc507srw9fb3azzl0yzrx006nmkawilyp"))))
+                "02f90vdbfz6shsw4ndhqbqjsrwiwmi1jp66bsl897cb8fnywnzs4"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
-                             r-speedglm
                              r-nlme
                              r-magrittr
                              r-lme4
