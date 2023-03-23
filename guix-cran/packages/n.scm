@@ -2286,6 +2286,33 @@ package support the DINA model, the DINO model, the NIDA model, the G-NIDA
 model, and the R-RUM model.")
     (license license:lgpl2.1+)))
 
+(define-public r-npbr
+  (package
+    (name "r-npbr")
+    (version "1.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "npbr" version))
+              (sha256
+               (base32
+                "1mvl16z4s517a87ljl1ksr1ixrz3c6v22hv36s6x60f9rcs96jj8"))))
+    (properties `((upstream-name . "npbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rglpk r-quadprog r-np r-benchmarking))
+    (home-page "https://cran.r-project.org/package=npbr")
+    (synopsis "Nonparametric Boundary Regression")
+    (description
+     "This package provides a variety of functions for the best known and most
+innovative approaches to nonparametric boundary estimation.  The selected
+methods are concerned with empirical, smoothed, unrestricted as well as
+constrained fits under both separate and multiple shape constraints.  They cover
+robust approaches to outliers as well as data envelopment techniques based on
+piecewise polynomials, splines, local linear fitting, extreme values and kernel
+smoothing.  The package also seamlessly allows for Monte Carlo comparisons among
+these different estimation methods.  Its use is illustrated via a number of
+empirical applications and simulated examples.")
+    (license license:gpl2+)))
+
 (define-public r-npbayesimputecat
   (package
     (name "r-npbayesimputecat")

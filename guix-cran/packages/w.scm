@@ -373,13 +373,13 @@ Hwang CL. (1981, ISBN:978-3-540-10558-9).")
 (define-public r-wto
   (package
     (name "r-wto")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wTO" version))
               (sha256
                (base32
-                "1g2imlkjdq2sa0kzrmriwmvpgrlh0x9a56ks9d11p4pjpylmcj1m"))))
+                "0c5cr48h2zvp629iyg1n05fgh1v2wvc5bmzc75c1flrj2rrfs83v"))))
     (properties `((upstream-name . "wTO")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -3114,13 +3114,13 @@ provided.")
 (define-public r-windac
   (package
     (name "r-windac")
-    (version "1.2.9")
+    (version "1.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "windAC" version))
               (sha256
                (base32
-                "00jmgyzi3ars0pwxg5b1dy99pwwwiavzg672x4c46pr65k3iy957"))))
+                "077kl7j1db0g2pnr7gc91x2anbw80y5sbl4gy49rzclbhhnwjlrs"))))
     (properties `((upstream-name . "windAC")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-mvtnorm))
@@ -4522,13 +4522,13 @@ and controls can be calculated and plotted.")
 (define-public r-wemix
   (package
     (name "r-wemix")
-    (version "3.3.0")
+    (version "4.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeMix" version))
               (sha256
                (base32
-                "0476zxzzkcyq5lv3mmkw4r43gvz8zgyjfwnlrbhj6v58xgl688xb"))))
+                "19f655crg6zqbrlrcj7skp1qrxkn6fjahirvniy1b3xxikg84wvg"))))
     (properties `((upstream-name . "WeMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -4536,6 +4536,7 @@ and controls can be calculated and plotted.")
                              r-numderiv
                              r-npflow
                              r-minqa
+                             r-matrixstats
                              r-matrix
                              r-lme4))
     (native-inputs (list r-knitr))
@@ -4551,7 +4552,8 @@ probabilistically, and then students inside of those schools are sampled
 probabilistically.  Although mixed-effects models are already available in R,
 WeMix is unique in implementing methods for mixed models using weights at
 multiple levels.  Both linear and logit models are supported.  Models may have
-up to three levels.")
+up to three levels.  Random effects are estimated using the PIRLS algorithm from
+lme4pureR (Walker and Bates (2013) <https://github.com/lme4/lme4pureR>).")
     (license license:gpl2)))
 
 (define-public r-welo

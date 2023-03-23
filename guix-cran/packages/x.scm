@@ -783,13 +783,13 @@ package by providing tools for generating expectations.")
 (define-public r-xoi
   (package
     (name "r-xoi")
-    (version "0.70")
+    (version "0.72")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xoi" version))
               (sha256
                (base32
-                "1raa5kr3h62j1lvjb0mn973pknyw8caixfh78rhgrhzxiilllil8"))))
+                "0q1q43540qz97qad36dcwmcmgdci3sbhxk9li897gnjv9gjazdlr"))))
     (properties `((upstream-name . "xoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl))
@@ -1326,13 +1326,13 @@ presented in Goungounga et al. (2019) <doi:10.1186/s12874-019-0747-3>.")
 (define-public r-xgxr
   (package
     (name "r-xgxr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xgxr" version))
               (sha256
                (base32
-                "00fd9n2qivfxg2b7vynssc82afa7nskg4akk6cgxnyhcai5jbmra"))))
+                "0mmnh6zab7qllbfpl3vn5sd7hcznm83v5rxi1pw5zv96ax0ikagv"))))
     (properties `((upstream-name . "xgxr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

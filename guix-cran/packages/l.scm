@@ -10471,13 +10471,13 @@ originals.")
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.6")
+    (version "4.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lessR" version))
               (sha256
                (base32
-                "1i0h8vlz424z46p6n33dkhfiq0kwbpg9xsjkjr6sj339921m2km6"))))
+                "0vh7qqzk8fzf1hhc4kcx76iybppwqw1icim3c5gagbwzkdk4r61y"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -10493,19 +10493,19 @@ originals.")
     (home-page "https://cran.r-project.org/package=lessR")
     (synopsis "Less Code, More Results")
     (description
-     "Each function accomplishes the work of several or more standard R functions.
-For example, two function calls, Read() and CountAll(), read the data and
-generate summary statistics for all variables in the data frame, plus histograms
-and bar charts as appropriate.  Other functions provide for comprehensive
-summary statistics via pivot tables, a comprehensive regression analysis,
-analysis of variance and t-test, visualizations including the Violin/Box/Scatter
-plot for a numerical variable, bar chart, histogram, box plot, density curves,
-calibrated power curve, reading multiple data formats with the same function
-call, variable labels, color themes, and Trellis graphics.  Also includes a
-confirmatory factor analysis of multiple indicator measurement models,
-pedagogical routines for data simulation such as for the Central Limit Theorem,
-generation and rendering of R markdown instructions for interpretative output,
-and interactive visualizations.")
+     "Each function accomplishes the work of multiple standard R functions.  For
+example, two function calls, Read() and CountAll(), read the data and generate
+summary statistics for all variables in the data frame, plus histograms and bar
+charts as appropriate.  Other functions provide for comprehensive summary
+statistics via pivot tables, a comprehensive regression analysis, ANOVA and
+t-test, visualizations including the Violin/Box/Scatter plot for a numerical
+variable, bar chart, histogram, box plot, density curves, calibrated power
+curve, reading multiple data formats with the same function call, variable
+labels, color themes, and Trellis graphics.  Also includes a confirmatory factor
+analysis of multiple indicator measurement models, pedagogical routines for data
+simulation such as for the Central Limit Theorem, generation and rendering o
+regression instructions for interpretative output, and interactive
+visualizations.")
     (license license:gpl2+)))
 
 (define-public r-less

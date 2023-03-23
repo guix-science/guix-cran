@@ -1537,6 +1537,42 @@ lexical dispersion plots, scaling plots, network visualisations, and word
 keyness plots.")
     (license license:gpl3)))
 
+(define-public r-quanteda-textmodels
+  (package
+    (name "r-quanteda-textmodels")
+    (version "0.9.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quanteda.textmodels" version))
+              (sha256
+               (base32
+                "1shsyz8nz8cabmsgrimxym4b0fd3zbjp3vx5si41rp9gr9c94sx1"))))
+    (properties `((upstream-name . "quanteda.textmodels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-sparsem
+                             r-rspectra
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quanteda
+                             r-matrix
+                             r-liblinear
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/quanteda/quanteda.textmodels")
+    (synopsis "Scaling Models and Classifiers for Textual Data")
+    (description
+     "Scaling models and classifiers for sparse matrix objects representing textual
+data in the form of a document-feature matrix.  Includes original
+implementations of Laver', Benoit', and Garry's (2003)
+<doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
+<arXiv:1710.08963> class affinity scaling model, and the Slapin and Proksch
+(2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as methods
+for correspondence analysis, latent semantic analysis, and fast Naive Bayes and
+linear SVMs specially designed for sparse textual data.")
+    (license license:gpl3)))
+
 (define-public r-quantdr
   (package
     (name "r-quantdr")

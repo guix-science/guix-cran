@@ -3361,13 +3361,13 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
 (define-public r-async
   (package
     (name "r-async")
-    (version "0.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "async" version))
               (sha256
                (base32
-                "170fcvpm58fnd9c727bx3x084ajbfa0q6acr9mxhj1g7p69iacq4"))))
+                "19ws3kglk0qi4l2zhsl57vx7k1cf0lvcc6mm8svf0inf07dvivqn"))))
     (properties `((upstream-name . "async")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-stringr r-promises r-nseval r-later))
@@ -6224,6 +6224,29 @@ points, the triangles are drawn regarding the following points: 1.the origin of
 the axes; 2.the sample points; 3.  the vector endpoint representing some
 variable.")
     (license license:expat)))
+
+(define-public r-ards
+  (package
+    (name "r-ards")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ards" version))
+              (sha256
+               (base32
+                "1dnq63klzbwvkcaxn9bng4wvh8mhggkwa69ypwf5kdn1rjways88"))))
+    (properties `((upstream-name . "ards")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://ards.r-sassy.org")
+    (synopsis "Creates Analysis Results Datasets")
+    (description
+     "This package contains functions to help create an Analysis Results Dataset.  The
+dataset follows industry recommended structure.  The dataset can be created in
+multiple passes, using different data frames as input.  Analysis Results
+Datasets are used in the pharmaceutical and biotech industries to capture
+analysis in a common tabular data structure.")
+    (license license:cc0)))
 
 (define-public r-ardl-nardl
   (package
@@ -12581,24 +12604,24 @@ the software.")
 (define-public r-alfred
   (package
     (name "r-alfred")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alfred" version))
               (sha256
                (base32
-                "1y0s6vn0piq4wnlc6v143va0qkklm67aa653lwgq926nfnjxz6as"))))
+                "0xgqzn750c4f13w2h8j2xj53sx0dij56164svw01nbvns4n0yvv8"))))
     (properties `((upstream-name . "alfred")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-httr
-                             r-dplyr
-                             r-curl))
+                             r-dplyr))
     (home-page "https://github.com/onnokleen/alfred/")
     (synopsis
      "Downloading Time Series from ALFRED Database for Various Vintages")
@@ -14304,13 +14327,13 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
 (define-public r-agror
   (package
     (name "r-agror")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AgroR" version))
               (sha256
                (base32
-                "098ichvfsx7v1mawwy4mcxw7llfxkp7iqhnkawqq5f4lsjhr376h"))))
+                "06vnqf98yhgq43xycp62bpz2rpz77wp02hf37pd25483969bk9q9"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -16344,13 +16367,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-adlift
   (package
     (name "r-adlift")
-    (version "1.4-4")
+    (version "1.4-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adlift" version))
               (sha256
                (base32
-                "1rxwsmic17kgbhh50m87mh8ag8l6b1n4p96k0qn6mkgqfiqngam5"))))
+                "0kf1akx5c4c7mdy9ysfdik2xi810jcysw9ynmvxlgw2zykqxvqdk"))))
     (properties `((upstream-name . "adlift")))
     (build-system r-build-system)
     (propagated-inputs (list r-ebayesthresh))

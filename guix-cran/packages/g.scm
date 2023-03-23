@@ -1254,6 +1254,30 @@ artifacts, tune hyperparameters, and share results.  Guild AI combines features
 from Git', SQLite', and Make to provide a lab notebook for machine learning.")
     (license license:asl2.0)))
 
+(define-public r-guidedpls
+  (package
+    (name "r-guidedpls")
+    (version "0.99.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "guidedPLS" version))
+              (sha256
+               (base32
+                "0afl7hrqy3y7rdzng6n4nmw8pacp2pymkzpmrm1f4kw8fsq0g2jv"))))
+    (properties `((upstream-name . "guidedPLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-irlba))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rikenbit/guidedPLS")
+    (synopsis
+     "Supervised Dimensional Reduction by Guided Partial Least Squares")
+    (description
+     "Guided partial least squares (guided-PLS) is the combination of partial least
+squares by singular value decomposition (PLS-SVD) and guided principal component
+analysis (guided-PCA).  For the details of the methods, see the reference
+section of GitHub README.md <https://github.com/rikenbit/guidedPLS>.")
+    (license license:expat)))
+
 (define-public r-guide
   (package
     (name "r-guide")
@@ -6190,6 +6214,36 @@ data, according to their corresponding display requirements.  See the help files
 for individual functions.")
     (license license:gpl2+)))
 
+(define-public r-granova
+  (package
+    (name "r-granova")
+    (version "2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "granova" version))
+              (sha256
+               (base32
+                "0fs8r0q5gvdyppsiil5p3dmfqyn2xygkqarnbmyhr0znbcxzkwxp"))))
+    (properties `((upstream-name . "granova")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-car))
+    (home-page "https://cran.r-project.org/package=granova")
+    (synopsis "Graphical Analysis of Variance")
+    (description
+     "This small collection of functions provides what we call elemental graphics for
+display of analysis of variance results, David C. Hoaglin, Frederick Mosteller
+and John W. Tukey (1991, ISBN:978-0-471-52735-0), Paul R. Rosenbaum (1989)
+<doi:10.2307/2684513>, Robert M. Pruzek and James E. Helmreich
+<https://jse.amstat.org/v17n1/helmreich.html>.  The term elemental derives from
+the fact that each function is aimed at construction of graphical displays that
+afford direct visualizations of data with respect to the fundamental questions
+that drive the particular analysis of variance methods.  These functions can be
+particularly helpful for students and non-statistician analysts.  But these
+methods should be quite generally helpful for work-a-day applications of all
+kinds, as they can help to identify outliers, clusters or patterns, as well as
+highlight the role of non-linear transformations of data.")
+    (license license:gpl2+)))
+
 (define-public r-grangers
   (package
     (name "r-grangers")
@@ -7433,22 +7487,23 @@ allow easy specification of various GPs'.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2022.10-2")
+    (version "2023.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GPArotation" version))
               (sha256
                (base32
-                "05qrwbfr19mj4f4fxnh7lwvq8ai7xiiyajwhvzsls84w7a7jvxq4"))))
+                "09iar73z0jnrikmscj2xanx0jnppipjziw41k9y6na257mn0hj47"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
-    (synopsis "GPA Factor Rotation")
+    (synopsis "Gradient Projection Factor Rotation")
     (description
-     "Gradient Projection Algorithm Rotation for Factor Analysis.  See
-?GPArotation.Intro for more details.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
+     "Gradient Projection Algorithms for Factor Rotation.  For details see
+?GPArotation.  When using this package, please cite: Bernaards and Jennrich
+(2005) <doi:10.1177/0013164404272507>. \"Gradient Projection Algorithms and
+Software for Arbitrary Rotation Criteria in Factor Analysis\".")
+    (license license:gpl2+)))
 
 (define-public r-gparotatedf
   (package
@@ -11539,13 +11594,13 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
 (define-public r-glmertree
   (package
     (name "r-glmertree")
-    (version "0.2-0")
+    (version "0.2-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmertree" version))
               (sha256
                (base32
-                "0lfn6dap38i6cnfy4gdap13aq81h9cm3bip7ci57q9br9b00x7ib"))))
+                "1pirwsssn05gfgl1frixc05nk37vingsjfddljmv3p5h6jr9c3ay"))))
     (properties `((upstream-name . "glmertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-lme4 r-formula))
@@ -13041,13 +13096,13 @@ tools for navigating output.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-12")
+    (version "0.7-13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gimme" version))
               (sha256
                (base32
-                "0zmrkwclylhq0mqif31jyd20fglfarw9qw598gpylh7zgz4zgmjg"))))
+                "024dwx3q6smkiclip8p78hwms0kpv33jp18p0rdzw9i8wmmpx55p"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
@@ -13128,13 +13183,13 @@ model.  Pineda-Krch et al. (2008) <doi:10.18637/jss.v025.i12>.")
 (define-public r-gigrvg
   (package
     (name "r-gigrvg")
-    (version "0.7")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GIGrvg" version))
               (sha256
                (base32
-                "1mjm84sdkpavqcc30yv8zvdb4650q1jhd5sgyykw30flj6y72sxr"))))
+                "09n0nhsv3v61asfzghzxa9sr3ryl25mlvj73gk9ql9wlrynd3wrl"))))
     (properties `((upstream-name . "GIGrvg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GIGrvg")
@@ -15283,13 +15338,13 @@ layout.")
 (define-public r-ggperiodic
   (package
     (name "r-ggperiodic")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggperiodic" version))
               (sha256
                (base32
-                "14x8gg54l18z12cgvka2qf1clhi8zlma5xb71yl4j32gbffhpybp"))))
+                "03gsbdqqxi0j4slp61bzrn4m2sjhh9fvcy1a1h5vcg4ax233j270"))))
     (properties `((upstream-name . "ggperiodic")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-sticky r-ggplot2 r-dplyr
@@ -16015,13 +16070,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglm
   (package
     (name "r-gglm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gglm" version))
               (sha256
                (base32
-                "1sdydax5hp7nan8w1vfz1kzz0zw039026qqr3wcsf4v5knwbmy1d"))))
+                "1wx1rmdms6rxhlb20623v3wr5l3w9xfk003sb1gi0418p3rhfx0v"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16658,6 +16713,39 @@ information.")
      "This package provides ggplot2 geoms to fit text into a box by growing, shrinking
 or wrapping the text.")
     (license license:gpl2)))
+
+(define-public r-ggfishplots
+  (package
+    (name "r-ggfishplots")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggFishPlots" version))
+              (sha256
+               (base32
+                "1zp4g29p15ac0g8cywhsagsxkagvah4xwfhv8j9djkbi7ijdx8fq"))))
+    (properties `((upstream-name . "ggFishPlots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-fishmethods
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/DeepWaterIMR/ggFishPlots")
+    (synopsis
+     "Visualise and Calculate Life History Parameters for Fisheries Science using 'ggplot2'")
+    (description
+     "This package contains functions to create life history parameter plots from raw
+data.  The plots are created using ggplot2', and calculations done using the
+tidyverse collection of packages.  The package contains references to FishBase
+(Froese R., Pauly.  D., 2023) <https://www.fishbase.se/>.")
+    (license license:gpl3)))
 
 (define-public r-ggfan
   (package
@@ -17439,13 +17527,13 @@ ggplot2'.")
 (define-public r-ggbrain
   (package
     (name "r-ggbrain")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggbrain" version))
               (sha256
                (base32
-                "1c5lcmvsgjvwabwvkq7g19p35fzb25q5919ia1adzqfwr8a2zhpy"))))
+                "1nicqirp69k0ish7j3mr7zz82w2lj5jcvmn7cbx764r62s5pscvd"))))
     (properties `((upstream-name . "ggbrain")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22759,13 +22847,13 @@ GENEActiv device.")
 (define-public r-geneaclassify
   (package
     (name "r-geneaclassify")
-    (version "1.5.3")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GENEAclassify" version))
               (sha256
                (base32
-                "0yqinjamb5qfnkyk9snyqw2kcl8120k6fcpg9y1qz14i6qzin2wq"))))
+                "147pks1cz0fvxxhsnvpwqqbzsxr7lrbdh9qjvs6a86fn8167vv41"))))
     (properties `((upstream-name . "GENEAclassify")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-rpart r-mass r-genearead r-changepoint))

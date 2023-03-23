@@ -1252,13 +1252,13 @@ so on.")
 (define-public r-funtimes
   (package
     (name "r-funtimes")
-    (version "9.0")
+    (version "9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funtimes" version))
               (sha256
                (base32
-                "1h9p66qr46vpkd63mdlpiryj46wwkzxb7wknsia4lmgf0wa8xyxl"))))
+                "0gz26djl534d42wxspg9hl0ndhzzhkr9d4vp87afqqg9401qcgcz"))))
     (properties `((upstream-name . "funtimes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -1267,7 +1267,6 @@ so on.")
                              r-mlvar
                              r-lmtest
                              r-kendall
-                             r-jmisc
                              r-dbscan))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=funtimes")
@@ -1499,21 +1498,21 @@ overdispersion adjustment.")
 (define-public r-funneljoin
   (package
     (name "r-funneljoin")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "funneljoin" version))
               (sha256
                (base32
-                "17g1mvq9z5m29r0v2r2nn8980j515jamnpwvvnzj83vk84bz94rq"))))
+                "03r03ja0081cn9yd1ib5crj7rsyrccnlqqazgy6jmi6qvwlikrhw"))))
     (properties `((upstream-name . "funneljoin")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-rlang
                              r-purrr
                              r-magrittr
                              r-glue
+                             r-forcats
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -12122,13 +12121,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTAutils" version))
               (sha256
                (base32
-                "0zciqzp7cwgz5awxnfhdi9d8akaylvicwnnwkpn3lv4135rvkwhi"))))
+                "1dqvb59jfbmv6p0qr6ica2mg9pg9dq4dgwx9dq2xc74j88vji2rz"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14133,13 +14132,13 @@ coefficient, Intraclass correlation and Cramer's V.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "feasts" version))
               (sha256
                (base32
-                "09mflv92cp5j8bxg5yzpb7pvwq6f2nnaq1bsy5rp527gfp6pw28f"))))
+                "1yvpfpwxk5hrcs4lq8dwjwhf1zfrbyv75sxi1wcnziykhyjz7rnw"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17276,13 +17275,13 @@ issues like stepsize selection, acceleration, and stopping conditions for you.")
 (define-public r-fasstr
   (package
     (name "r-fasstr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fasstr" version))
               (sha256
                (base32
-                "1cpzihrniyg7scxbj349ahvp9p1ji4r1498fh5hv38qas6pk3vil"))))
+                "1kzk759xvba66fq4zw0p0kwfgbk42bw5z2fi7f8ziy4vzkpwcy93"))))
     (properties `((upstream-name . "fasstr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zyp
@@ -19459,13 +19458,13 @@ components (remainder, level, trend and seasonal).")
 (define-public r-fable
   (package
     (name "r-fable")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fable" version))
               (sha256
                (base32
-                "0wwxh76s2f3lgqj2k7l5dd8i215qq55y81pjwrf2fsq0ij99p9br"))))
+                "0rld2lnhi2wn5skcmx9mwrb2rj1yhphy6xq0m3im252y1zc4bm7v"))))
     (properties `((upstream-name . "fable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble

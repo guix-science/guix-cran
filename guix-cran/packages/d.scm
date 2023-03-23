@@ -2314,13 +2314,13 @@ sample for individualized treatment recommendations or DTR evaluation.")
 (define-public r-dtrkernsmooth
   (package
     (name "r-dtrkernsmooth")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTRKernSmooth" version))
               (sha256
                (base32
-                "1f94j2j0fi1l73ndwl4cc44hw9hqn7dbzd3c5bns9v6hjrrza76y"))))
+                "0faya9crhzw3z8r5va08g7nir9ga2g308lrxf4zbj6c84fkyfiwx"))))
     (properties `((upstream-name . "DTRKernSmooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
@@ -5022,13 +5022,13 @@ the package.  With version 3.0.4, the arguments for dr.step have been modified."
 (define-public r-dqtg-seq
   (package
     (name "r-dqtg-seq")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dQTG.seq" version))
               (sha256
                (base32
-                "04m61jdqfyb90lb6lsxx9mzvj3dpr1qrd4835h6dyn5p6ahz2z26"))))
+                "0by13x0583mxsb1sxl0p4qhzrwzcri7jrc80pgyr7nmpk0cvmsnj"))))
     (properties `((upstream-name . "dQTG.seq")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -13087,16 +13087,16 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diemr" version))
               (sha256
                (base32
-                "0f0zqaqcwgg38p29zl7by91df4pda6wk5qfp024as2l1arxjil1r"))))
+                "0r11ifgnx9ygsl3c7xmcnwzv4gdnxrk81zwvjzj8g04fmjk6rg4b"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo))
+    (propagated-inputs (list r-zoo r-vcfr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
     (synopsis "Diagnostic Index Expectation Maximisation in R")
@@ -14020,26 +14020,6 @@ Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
 
-(define-public r-dhreg
-  (package
-    (name "r-dhreg")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dhReg" version))
-              (sha256
-               (base32
-                "0cfiy0wwd9b6h1qs6nw2m29zc3j2qqcybf879s5zbgnyxzp2ga2w"))))
-    (properties `((upstream-name . "dhReg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-future-apply r-future r-forecast))
-    (home-page "https://otexts.com/fpp2/dhr.html")
-    (synopsis "Dynamic Harmonic Regression")
-    (description
-     "Building and forecasting time series data with multiple seasonality using
-Dynamic Harmonic Regression.")
-    (license license:gpl3)))
-
 (define-public r-dhis2r
   (package
     (name "r-dhis2r")
@@ -14299,13 +14279,13 @@ al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
 (define-public r-dglmextpois
   (package
     (name "r-dglmextpois")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DGLMExtPois" version))
               (sha256
                (base32
-                "0imfsdmy0kkvvv1ip5j1b2hz1wx46qncc9m1j0v17kbxzf82kdgm"))))
+                "1mzkzpbnzzxrzxcdc5bi0vcjnrkgnbknngs6syk3qsch08l6pif2"))))
     (properties `((upstream-name . "DGLMExtPois")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-compoissonreg))
@@ -16368,13 +16348,13 @@ MEANS from SAS and ladder', gladder', and pwcorr from Stata'.")
 (define-public r-descr
   (package
     (name "r-descr")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "descr" version))
               (sha256
                (base32
-                "1y44v0kyk2q2rrrnyn9d1mn9shf1q43rs3zlhmjzfhpxh435pibv"))))
+                "1wg508l2r14kp4vajidp2i1xg23fmlmicdgf6q4p6wagzgwpapqs"))))
     (properties `((upstream-name . "descr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable))
@@ -16710,13 +16690,13 @@ installing them in a single call.")
 (define-public r-dependencyreviewer
   (package
     (name "r-dependencyreviewer")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DependencyReviewer" version))
               (sha256
                (base32
-                "1yn56hf40j11kqlajp11ld93x5q6zn6iwv3j91yri7klrkbhlcdi"))))
+                "0zyya2r3k2pxcjyzxx615pdg00vywzybk848fcchmhdivy0p0am0"))))
     (properties `((upstream-name . "DependencyReviewer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -19115,6 +19095,37 @@ debugr code can even remain in the debugged code for later use without any
 negative effects during normal runtime.")
     (license license:gpl3)))
 
+(define-public r-debkeepr
+  (package
+    (name "r-debkeepr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "debkeepr" version))
+              (sha256
+               (base32
+                "1w38qz0qs26ba1c89z1c40n4rwif989gh7was7wwazr2s61wjaha"))))
+    (properties `((upstream-name . "debkeepr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zeallot
+                             r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jessesadler/debkeepr")
+    (synopsis
+     "Analysis of Non-Decimal Currencies and Double-Entry Bookkeeping")
+    (description
+     "Analysis of historical non-decimal currencies and value systems that use
+tripartite or tetrapartite systems such as pounds, shillings, and pence.  It
+introduces new vector classes to represent non-decimal currencies, making them
+compatible with numeric classes, and provides functions to work with these
+classes in data frames in the context of double-entry bookkeeping.")
+    (license license:expat)))
+
 (define-public r-debinfer
   (package
     (name "r-debinfer")
@@ -20108,6 +20119,41 @@ reason about data modification rules as separate entities.")
 make package development easy as a breeze with data cloning for hierarchical
 models.")
     (license license:gpl2)))
+
+(define-public r-dcm2
+  (package
+    (name "r-dcm2")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dcm2" version))
+              (sha256
+               (base32
+                "1dxymql66sy0nfxqfh106cvz5r93ajpjr1w8amn03w0ciz4v5nqs"))))
+    (properties `((upstream-name . "dcm2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-modelr
+                             r-magrittr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/atlas-aai/dcm2")
+    (synopsis
+     "Calculating the M2 Model Fit Statistic for Diagnostic Classification Models")
+    (description
+     "This package provides a collection of functions for calculating the M2 model fit
+statistic for diagnostic classification models as described by Liu et al. (2016)
+<DOI:10.3102/1076998615621293>.  These functions provide multiple sources of
+information for model fit according to the M2 statistic, including the M2
+statistic, the *p* value for that M2 statistic, and the Root Mean Square Error
+of Approximation based on the M2 statistic.")
+    (license license:gpl3)))
 
 (define-public r-dclusterm
   (package
@@ -23326,13 +23372,13 @@ resulting paper of that study will be published soon.")
 (define-public r-dataclass
   (package
     (name "r-dataclass")
-    (version "0.1.8")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataclass" version))
               (sha256
                (base32
-                "0dhfgdacrapsjq4vs63xy3incw0jbaqpf8cwl2al74r7gwcnvxhn"))))
+                "1l5ricsfsqji3nn7vq12k62bxadgc7bfmf9v0xqqray89aqi2ikz"))))
     (properties `((upstream-name . "dataclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23340,15 +23386,19 @@ resulting paper of that study will be published soon.")
                              r-purrr
                              r-magrittr
                              r-glue
+                             r-dplyr
                              r-cli))
     (home-page "https://cran.r-project.org/package=dataclass")
     (synopsis
      "Easily Create Structured Lists or Data Frames with Input Validation")
     (description
-     "Easily define templated lists and data frames with an associated validator
-function for each element.  This could be considered a very-minimal S7-like
-standard aimed at validating data frames and lists; two data structures the
-majority of R programmers know well.")
+     "Easily define templates for lists and data frames that validate each element.
+Specify the expected type (i.e., character, numeric, etc), expected length,
+minimum and maximum values, allowable values, and more for each element in your
+data.  Decide whether violations of these expectations should throw an error or
+a warning.  This package is useful for validating data within R processes which
+pull from dynamic data sources such as databases and web APIs to provide an
+extra layer of validation around input and output data.")
     (license license:expat)))
 
 (define-public r-databionicswarm
@@ -24390,13 +24440,13 @@ and rates.  Based on Hohmann (2018) <doi:10.13140/RG.2.2.23372.51841> .")
 (define-public r-dail
   (package
     (name "r-dail")
-    (version "1.5")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dail" version))
               (sha256
                (base32
-                "0hcby044h5g2mkq8dbxshai9vsd5cjppfm5b0wcfng7cbc0v4pqv"))))
+                "0a82ch0l7ci9vjrwyy38qhw8zrp9d4h2bmk963llm9aqf4j7lkhf"))))
     (properties `((upstream-name . "dail")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

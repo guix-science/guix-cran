@@ -192,13 +192,13 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (define-public r-ktweedie
   (package
     (name "r-ktweedie")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ktweedie" version))
               (sha256
                (base32
-                "1q946qdsbs7cjzfl97npi1lyqwrwxc72w4wv602faj74x33n0hjp"))))
+                "1jvcm34bszdqzpbskazabd560ah218yr2yzbzcpbvdbdsvyy4gw5"))))
     (properties `((upstream-name . "ktweedie")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -209,7 +209,9 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
      "Kernel-based Tweedie compound Poisson gamma model using high-dimensional
 predictors for the analyses of zero-inflated response variables.  The package
 features built-in estimation, prediction and cross-validation tools and supports
-choice of different kernel functions.")
+choice of different kernel functions.  For more details, please see Yi Lian,
+Archer Yi Yang, Boxiang Wang, Peng Shi & Robert William Platt (2023)
+<doi:10.1080/00401706.2022.2156615>.")
     (license license:gpl3)))
 
 (define-public r-ktsolve
@@ -2496,6 +2498,39 @@ effects models, such as in the coxme function.  Also includes a tool for
 pedigree drawing which is focused on producing compact layouts without
 intervention.  Recent additions include utilities to trim the pedigree object
 with various criteria, and kinship for the X chromosome.")
+    (license license:gpl2+)))
+
+(define-public r-kinmixlite
+  (package
+    (name "r-kinmixlite")
+    (version "2.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "KinMixLite" version))
+              (sha256
+               (base32
+                "1bs1ywcj55fa18xkflimznsd7nw6mv08wygqhjfw7i2i7q2cghqj"))))
+    (properties `((upstream-name . "KinMixLite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statnet-common
+                             r-rsolnp
+                             r-ribd
+                             r-pedtools
+                             r-grbase
+                             r-graven
+                             r-dnamixtureslite))
+    (home-page "https://petergreenweb.wordpress.com/kinmix/")
+    (synopsis "Inference About Relationships from DNA Mixtures")
+    (description
+     "This package provides methods for inference about relationships between
+contributors to a DNA mixture and other individuals of known genotype: a basic
+example would be testing whether a contributor to a mixture is the father of a
+child of known genotype.  This provides most of the functionality of the KinMix
+package, but with some loss of efficiency and restriction on problem size, as
+the latter uses RHugin as the Bayes net engine, while this package uses gRain'.
+The package implements the methods introduced in Green, P. J. and Mortera, J.
+(2017) <doi:10.1016/j.fsigen.2017.02.001> and Green, P. J. and Mortera, J.
+(2021) <doi:10.1111/rssc.12498>.")
     (license license:gpl2+)))
 
 (define-public r-kingcountyhouses

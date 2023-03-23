@@ -2739,29 +2739,43 @@ download.")
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.6.4")
+    (version "0.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jfa" version))
               (sha256
                (base32
-                "1ksp4jrch9rhjh1bdscim92sj29j2xn3q4nrddlp2jmhvzaa0dw2"))))
+                "0b8gyd57xxzw232j11vm9gjs3pa58ndg3ny9al7hjqlh2krbl8dz"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-extradistr))
+    (propagated-inputs (list r-truncdist
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-philentropy
+                             r-moments
+                             r-ggplot2
+                             r-extradistr
+                             r-bh
+                             r-bde))
     (native-inputs (list r-knitr))
     (home-page "https://koenderks.github.io/jfa/")
-    (synopsis "Bayesian and Classical Audit Sampling")
+    (synopsis "Statistical Methods for Auditing")
     (description
-     "This package provides statistical audit sampling methods as implemented in JASP
-for Audit (Derks et al., 2021 <doi:10.21105/joss.02733>).  The package makes it
-easy for an auditor to plan a statistical sample, select the sample from the
-population, and evaluate the misstatement in the sample compliant with the
-International Standards on Auditing.  Next to classical audit sampling
-methodology, the package implements Bayesian equivalents of these methods whose
-statistical underpinnings are described in Derks et al. (2021)
-<doi:10.1111/ijau.12240>, Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and
-Derks et al. (2022) <doi:10.31234/osf.io/8nf3e>.")
+     "This package provides statistical methods for auditing as implemented in JASP
+for Audit (Derks et al., 2021 <doi:10.21105/joss.02733>).  First, the package
+makes it easy for an auditor to plan a statistical sample, select the sample
+from the population, and evaluate the misstatement in the sample compliant with
+international auditing standards.  Next to classical audit sampling methodology,
+the package implements Bayesian equivalents of these methods whose statistical
+underpinnings are described in Derks et al. (2021) <doi:10.1111/ijau.12240>,
+Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and Derks et al. (2022)
+<doi:10.31234/osf.io/8nf3e>.  Second, the package provides statistical methods
+for auditing data, including (Bayesian) tests of digit distributions and tests
+for repeated values.")
     (license license:gpl3+)))
 
 (define-public r-jetpack

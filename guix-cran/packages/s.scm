@@ -12,6 +12,7 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages version-control)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
@@ -107,18 +108,18 @@ Pelizzon (2012) <doi:10.1016/j.jfineco.2011.12.010>.")
 (define-public r-systemfit
   (package
     (name "r-systemfit")
-    (version "1.1-28")
+    (version "1.1-30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "systemfit" version))
               (sha256
                (base32
-                "1lrp51x685m6xggdzzc5a914kw6wp813qvm1xfcbzm2hqf58jcas"))))
+                "1qhw8gda85lliqhj67zsgva4cb6wihr5hks1c9c34y0n3ywgp52r"))))
     (properties `((upstream-name . "systemfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-matrix r-mass r-lmtest r-car))
     (native-inputs (list r-knitr))
-    (home-page "http://www.systemfit.org")
+    (home-page "https://r-forge.r-project.org/projects/systemfit/")
     (synopsis "Estimating Systems of Simultaneous Equations")
     (description
      "Econometric estimation of simultaneous systems of linear and nonlinear equations
@@ -983,6 +984,35 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
 <doi:10.1007/978-3-540-70981-7_4>).")
     (license license:gpl2+)))
 
+(define-public r-symbol-equation-gpt
+  (package
+    (name "r-symbol-equation-gpt")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "symbol.equation.gpt" version))
+              (sha256
+               (base32
+                "0dq7hlzwr97kl2vppvign8c0r44sr87pyrhfbq6fxddi2fs0z2rj"))))
+    (properties `((upstream-name . "symbol.equation.gpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinystoreplus
+                             r-shiny
+                             r-rstudioapi
+                             r-r2symbols
+                             r-nextgenshinyapps
+                             r-markdown
+                             r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://symbols-ui.obi.obianom.com/")
+    (synopsis
+     "Powerful User Interface to Build and Insert Symbols and Equations")
+    (description
+     "User Interface for adding symbols, smileys, arrows, building mathematical
+equations using LaTeX or r2symbols'.  Built for use in development of Markdown
+and Shiny Outputs.")
+    (license license:expat)))
+
 (define-public r-sym-arma
   (package
     (name "r-sym-arma")
@@ -1236,6 +1266,33 @@ System Wide Monitoring Program of the National Estuarine Research Reserve System
 <http://cdmo.baruch.sc.edu/>.  These tools address common challenges associated
 with continuous time series data for environmental decision making.")
     (license license:cc0)))
+
+(define-public r-switchr
+  (package
+    (name "r-switchr")
+    (version "0.14.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "switchr" version))
+              (sha256
+               (base32
+                "1q1rnwm0g5kk5z1szb0f9bvaqgpdnj22lvfnychb7jdhriwmn1zw"))))
+    (properties `((upstream-name . "switchr")))
+    (build-system r-build-system)
+    (inputs (list subversion git))
+    (propagated-inputs (list r-rjsonio r-rcurl))
+    (home-page "https://github.com/gmbecker/switchr")
+    (synopsis
+     "Installing, Managing, and Switching Between Distinct Sets of Installed Packages")
+    (description
+     "This package provides an abstraction for managing, installing, and switching
+between sets of installed R packages.  This allows users to maintain multiple
+package libraries simultaneously, e.g. to maintain strict,
+package-version-specific reproducibility of many analyses, or work within a
+development/production release paradigm.  Introduces a generalized package
+installation process which supports multiple repository and non-repository
+sources and tracks package provenance.")
+    (license license:artistic2.0)))
 
 (define-public r-switchcase
   (package
@@ -4082,13 +4139,13 @@ differences of two Kaplan-Meier curves.")
 (define-public r-survauc
   (package
     (name "r-survauc")
-    (version "1.1-1")
+    (version "1.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survAUC" version))
               (sha256
                (base32
-                "093rnk7x93jq3rasvhxxfdk3qwr7lg4lwbixkkmj8z799z11sd85"))))
+                "138z4my55lbaxvvk6fih2vn16vvmdy0a07l0yjdhfy87yq7vhvki"))))
     (properties `((upstream-name . "survAUC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rms))
@@ -8536,13 +8593,13 @@ error.")
 (define-public r-stokes
   (package
     (name "r-stokes")
-    (version "1.1-6")
+    (version "1.1-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stokes" version))
               (sha256
                (base32
-                "074kzvzgk83n2bzcvygxiy8cm5sxswkp593rjixa4kvaqc7g7w0y"))))
+                "0xmmvmjggpqb3qs4rjz6fsmcxl8b6as82abln5n8k62qjj77lhr7"))))
     (properties `((upstream-name . "stokes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spray r-permutations r-partitions r-mathjaxr
@@ -9547,13 +9604,13 @@ Markdown for things like your CV or your articles and manuscripts.")
 (define-public r-stevemisc
   (package
     (name "r-stevemisc")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevemisc" version))
               (sha256
                (base32
-                "0nnhwq33yk2mpvmv9iqf7mc5z4qscvvwa128ibmh8s14ik2sqj1w"))))
+                "0d1c9sad267pblyk108z7ip8l2z87fbmzrnglzhzrv6cmmfv6jrd"))))
     (properties `((upstream-name . "stevemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9922,24 +9979,28 @@ covariate values within each treatment group.")
 (define-public r-stepmixr
   (package
     (name "r-stepmixr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stepmixr" version))
               (sha256
                (base32
-                "1psq9znrk3za9cgvhbnfh7jy77mwr2h03y5iqdk8za3n6dy0fdg0"))))
+                "015pn37bw4bdlgk9x6r20i84kfvk7vkp3gzsi1dzpa01z01wnblp"))))
     (properties `((upstream-name . "stepmixr")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate))
-    (home-page "https://github.com/Labo-Lacourse/stepmixr")
-    (synopsis "Interface to 'Python' Package 'stepmix'")
+    (home-page "https://github.com/Labo-Lacourse/StepMixr")
+    (synopsis "Interface to 'Python' Package 'StepMix'")
     (description
-     "This is an interface for the python package stepmix'.  This is a package
-multi-step estimation of latent class models with measurement and structural
-components.  The package can also be used to fit mixture models with various
-observed random variables.  Largely based on Bakk & Kuha (2018)
-<doi:10.1007/s11336-017-9592-7>.")
+     "This is an interface for the Python package StepMix'.  It is a Python package
+following the scikit-learn API for model-based clustering and generalized
+mixture modeling (latent class/profile analysis) of continuous and categorical
+data.  StepMix handles missing values through Full Information Maximum
+Likelihood (FIML) and provides multiple stepwise Expectation-Maximization (EM)
+estimation methods based on pseudolikelihood theory.  Additional features
+include support for covariates and distal outcomes, various simulation
+utilities, and non-parametric bootstrapping, which allows inference in
+semi-supervised and unsupervised settings.")
     (license license:gpl2)))
 
 (define-public r-stepjglm
@@ -15158,13 +15219,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.13.0")
+    (version "1.13.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "0k02qm8yfkfisly01psn6scm06fqnmz72x7n1mbbjn1nb8pgzgqi"))))
+                "01fnm4r8006nf3q4ffxj8z9jkg8lpgg7racrwaqzbb13gx6l9d3q"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjava r-checkmate))
@@ -17924,13 +17985,13 @@ model allows an EM algorithm, optimizing a type-II log-likelihood.")
 (define-public r-spinner
   (package
     (name "r-spinner")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spinner" version))
               (sha256
                (base32
-                "1d53nh6ikvfy38f0ymz48sa72krghnmss016h2p6473ym29jn43w"))))
+                "18fmcqqarfkixx4060paq236dc4fg8mbj9ngfz3khljb59lyh379"))))
     (properties `((upstream-name . "spinner")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -17943,7 +18004,8 @@ model allows an EM algorithm, optimizing a type-II log-likelihood.")
                              r-ggthemes
                              r-ggplot2
                              r-fastdummies
-                             r-entropy))
+                             r-entropy
+                             r-abind))
     (home-page "https://rpubs.com/giancarlo_vercellino/spinner")
     (synopsis "An Implementation of Graph Net Architecture Based on 'torch'")
     (description
@@ -20136,13 +20198,13 @@ through the use of Rcpp and RcppArmadillo'.")
 (define-public r-spbfa
   (package
     (name "r-spbfa")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spBFA" version))
               (sha256
                (base32
-                "00m1pww9a377fpharpqw3m30qx13l5xays6638h2jblrz8w71i8q"))))
+                "1bi3lhbx37zlj2x0nql51x5422zxc1gcbn8vqjf81badwf80fwsp"))))
     (properties `((upstream-name . "spBFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pgdraw r-mvtnorm r-msm))
@@ -20631,13 +20693,13 @@ flexible.")
 (define-public r-spatialtime
   (package
     (name "r-spatialtime")
-    (version "1.2.2")
+    (version "1.3.3-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatialTIME" version))
               (sha256
                (base32
-                "16mbmqycp70lgixp2ai9al2821v0vxvnc713nch5g4azrwzsaizi"))))
+                "06fwjifvgjb9xcxlgd32s8ik9dcjakc5z25lmhvp63lkyyazvqxs"))))
     (properties `((upstream-name . "spatialTIME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -20649,9 +20711,7 @@ flexible.")
                              r-rcolorbrewer
                              r-purrr
                              r-plyr
-                             r-pheatmap
                              r-magrittr
-                             r-gridextra
                              r-ggplot2
                              r-future
                              r-furrr
@@ -22502,13 +22562,13 @@ further select their marker genes using the magnitude of the cluster centers.")
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SparseChol" version))
               (sha256
                (base32
-                "1agfl3a7vxjxx64qf76v6a796vmviv3dcp4h7127nr2lg5nx4446"))))
+                "08ngq51rrrcdd8bd6xyf9vqhqrnqv90iasnlzcmynp7amc5s0avr"))))
     (properties `((upstream-name . "SparseChol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -22517,10 +22577,10 @@ further select their marker genes using the magnitude of the cluster centers.")
     (description
      "C++ implementation of sparse LDL decomposition of symmetric matrices and solvers
 described by Timothy A. Davis (2016)
-<https://fossies.org/linux/SuiteSparse/LDL/Doc/ldl_userguide.pdf>.  Provides the
-header file SparseChol.h that specifies the SparseChol class to implement sparse
-LDL decomposition in Rcpp functions.  A limited set of R functions that
-implement the method are also included.")
+<https://fossies.org/linux/SuiteSparse/LDL/Doc/ldl_userguide.pdf>.  Provides a
+set of C++ classes for basic sparse matrix specification and linear algebra, and
+a class to implement sparse LDL decomposition and solvers.  See
+<https://github.com/samuel-watson/SparseChol> for details.")
     (license license:gpl2+)))
 
 (define-public r-sparsebnutils
@@ -22793,13 +22853,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparklyr" version))
               (sha256
                (base32
-                "1hcx46qkjjwkhj1amfrnz1lyg7q5ih5k1l4r7niyy01fall956nv"))))
+                "1cvkjzfpl4hj2qrkisandkgvba2yhhj2jn6bq6b73i04hdqr4xik"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (inputs (list))
@@ -23542,6 +23602,28 @@ soil and weather variables are provided for the 591 observed environments
 Mapping (SoyNAM) project dataset funded by the United Soybean Board (USB).  BLUP
 function formats data for genome-wide prediction and association analysis.")
     (license license:gpl3)))
+
+(define-public r-sox
+  (package
+    (name "r-sox")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sox" version))
+              (sha256
+               (base32
+                "1rg1658jz6sc8dfp5gd8dmnxl747mw02zz24r7231vjmdwc60bl5"))))
+    (properties `((upstream-name . "sox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpp r-glmnet))
+    (home-page "https://cran.r-project.org/package=sox")
+    (synopsis "Structured Learning in Time-Dependent Cox Models")
+    (description
+     "Efficient procedures for fitting and cross-validating the
+structurally-regularized time-dependent Cox models.  The penalty term is a
+weighted sum of infinity norms of (overlapping) groups of coefficients, which
+can select variables following a user-specified grouping structure.")
+    (license license:gpl3+)))
 
 (define-public r-sovereign
   (package
@@ -36899,13 +36981,13 @@ browser.")
 (define-public r-shinytest
   (package
     (name "r-shinytest")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinytest" version))
               (sha256
                (base32
-                "0pjcdkyv1f94fxzpbc9m02kdv8v6jh6dmxsc1kmr22qcj1cbql8s"))))
+                "0dc6zg0xr47gpk611vhccf1q3b2kk7q2fi2fpv2g71ihwkrw7sj5"))))
     (properties `((upstream-name . "shinytest")))
     (build-system r-build-system)
     (inputs (list))
@@ -39466,13 +39548,13 @@ and Biogeography 21, 109-120).")
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharpshootR" version))
               (sha256
                (base32
-                "19668wcbpb01ykhgdw4zlcb72bmkc6dp44x3ngxynrb87y3s03di"))))
+                "0vv1645060696c3jjy41m8wqly8a4hds5w123vvz7j09cdxfs632"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -40890,13 +40972,13 @@ Francisco data portal (DataSF)
 (define-public r-sfnetworks
   (package
     (name "r-sfnetworks")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sfnetworks" version))
               (sha256
                (base32
-                "1gc3qza405npvmhh112a4r6bs60jgff536y27h9vxhwjskx3sx99"))))
+                "0caqqcdkm5g8f08k7dws6gcm560m88w6g98sbx0bsamf54cxda33"))))
     (properties `((upstream-name . "sfnetworks")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -41695,13 +41777,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.4.1")
+    (version "2.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sequoia" version))
               (sha256
                (base32
-                "1anksy0z54y3kam55y86dphxy8gjv8byc6f7pi2ppvmn8m79qmzx"))))
+                "1srbd7q33a81bpc2hma4a7kix1y5xvhp2dcy5yb01867cbrhiqa9"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
@@ -45460,13 +45542,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.0.13")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seeker" version))
               (sha256
                (base32
-                "0jrg483c21c6wg0nabsf8655wd8vn3ifs7z388w80vxx4lig81qn"))))
+                "15nlh9dkdywmf73sal24jdlsrndz087anxisddbwgjclynxiiiqq"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -45486,7 +45568,6 @@ implementation of the FFORMS algorithm.  For more details see our paper at
                              r-checkmate
                              r-biomart
                              r-biocmanager
-                             r-arrayexpress
                              r-annotationdbi
                              r-affy))
     (native-inputs (list r-knitr))
@@ -48400,6 +48481,30 @@ single cell RNA sequencing (scRNA-seq) data, and explore cell clustering based
 on model departure as a novel data representation.")
     (license license:expat)))
 
+(define-public r-scplot
+  (package
+    (name "r-scplot")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scplot" version))
+              (sha256
+               (base32
+                "0kr5h9v46h0fgwxf1gnqxavmlak7rxdqjvcgdmrkc6fhg675d91m"))))
+    (properties `((upstream-name . "scplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scan r-mblm r-ggplot2))
+    (home-page "https://cran.r-project.org/package=scplot")
+    (synopsis "Plot Function for Single-Case Data Frames")
+    (description
+     "Add-on for the scan package that creates plots from single-case data frames
+('scdf').  It includes functions for styling single-case plots, adding
+phase-based lines to indicate various statistical parameters, and predefined
+themes for presentations and publications.  More information and in depth
+examples can be found in the online book \"Analyzing Single-Case Data with R and
+scan\" JÃ¼rgen Wilbert (2023) <https://jazznbass.github.io/scan-Book/>.")
+    (license license:gpl3+)))
+
 (define-public r-scploidy
   (package
     (name "r-scploidy")
@@ -50985,6 +51090,32 @@ Python'.")
      "Simple Component Analysis (SCA) often provides much more interpretable
 components than Principal Components (PCA) while still representing much of the
 variability in the data.")
+    (license license:gpl2+)))
+
+(define-public r-sc2sc
+  (package
+    (name "r-sc2sc")
+    (version "0.0.1-7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sc2sc" version))
+              (sha256
+               (base32
+                "10rdx92g8clwd9c4zylkzfjrivcc837xz4xxpl771lin70kxnfai"))))
+    (properties `((upstream-name . "sc2sc")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=sc2sc")
+    (synopsis "Spatial Transfer of Statistics among Spanish Census Sections")
+    (description
+     "Transfers/imputes statistics among Spanish spatial polygons (census sections or
+postal code areas) from different moments in time (2001-2022) without need of
+spatial files, just linking statistics to the ID codes of the spatial units.
+The data available in the census sections of a partition/division (cartography)
+into force in a moment of time is transferred to the census sections of another
+partition/division employing the geometric approach (also known as areal
+weighting or polygon overlay).  References: Goerlich (2022)
+<doi:10.12842/WPIVIE_0322>.  PavÃ­a and Cantarino (2017a, b)
+<doi:10.1111/gean.12112>, <doi:10.1016/j.apgeog.2017.06.021>.")
     (license license:gpl2+)))
 
 (define-public r-sc2api
@@ -54312,13 +54443,13 @@ machine learning.")
 (define-public r-saeval
   (package
     (name "r-saeval")
-    (version "0.1.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAEval" version))
               (sha256
                (base32
-                "0snnpmb8yx8hfmqh6db27x2clxfzjcv9hmb978fy2iia52lzka3q"))))
+                "11427b9n3dc1jkzjqbri2h7cvfms1z130p10bbj39jjx8zjm1fyq"))))
     (properties `((upstream-name . "SAEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest r-ggspatial r-ggplot2 r-car))
@@ -55476,13 +55607,13 @@ forecasting.  To find more details, see the review paper Manubens, N.et al.
 (define-public r-s2dv
   (package
     (name "r-s2dv")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s2dv" version))
               (sha256
                (base32
-                "0g60hby3rq4kpapiimjpyysfid9mr0fkvi4abmr5a5ch35fvazz7"))))
+                "1xx7rjrc3fjjzc4mmpfbmddlmrjdlizsb4dvqxl314mjp84bls79"))))
     (properties `((upstream-name . "s2dv")))
     (build-system r-build-system)
     (inputs (list cdo))
@@ -55510,7 +55641,7 @@ post-processing, skill scores against observation, to visualization.  Compared
 to s2dverification', s2dv is more compatible with the package startR', able to
 use multiple cores for computation and handle multi-dimensional arrays with a
 higher flexibility.  The CDO version used in development is 1.9.8.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-s20x
   (package

@@ -1573,21 +1573,23 @@ splitting criteria.")
 (define-public r-isotracer
   (package
     (name "r-isotracer")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotracer" version))
               (sha256
                (base32
-                "1lvgpl7i4ggx4b8gvw6cwggjxxn7cdi4xkdnabvi3srbwxw6ri42"))))
+                "0wyvzfz0layh525fdn769x6nnm5d2447vjldnli49gasqb7g49nr"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stanheaders
+                             r-rstantools
                              r-rstan
                              r-rlang
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-purrr
@@ -14102,16 +14104,38 @@ Council for the Exploration of the Sea) Vocabularies database
 <https://vocab.ices.dk/services/POX.aspx>.")
     (license license:gpl3)))
 
+(define-public r-icesvms
+  (package
+    (name "r-icesvms")
+    (version "1.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "icesVMS" version))
+              (sha256
+               (base32
+                "0ppml34s4zz3vav08fjaj71bml8amaslw22zmib0scvw8k70jlir"))))
+    (properties `((upstream-name . "icesVMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-icesvocab r-icesconnect r-httr r-glue))
+    (home-page "https://data.ices.dk/vms")
+    (synopsis
+     "Link to the ICES Vessel Monitoring System and Logbook Database Web Services")
+    (description
+     "Links to the ICES Vessel Monitoring System (VMS) and logbook database web
+services <https://data.ices.dk/vms/webservices> to allow users to download
+summaries and data products.")
+    (license license:gpl2+)))
+
 (define-public r-icestaf
   (package
     (name "r-icestaf")
-    (version "4.1.0")
+    (version "4.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesTAF" version))
               (sha256
                (base32
-                "0wibg9rhlvhg3x7n39nwx57ghmgdk56zhj9xr6x30imk031m6ymw"))))
+                "0xifza8s24gy09fibqdpkh0zc723jkx09ycx44gqffrx0ch8syds"))))
     (properties `((upstream-name . "icesTAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-taf r-roxygen2 r-purrr r-data-tree))
@@ -14167,13 +14191,13 @@ database <https://sg.ices.dk>.")
 (define-public r-icesdatsuqc
   (package
     (name "r-icesdatsuqc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesDatsuQC" version))
               (sha256
                (base32
-                "18c48qvls9ngf6mszx5wdkm1xxijc9i005kfa5zkww6bj0ran80g"))))
+                "0pspd702vg2k7fza9jvj7hdnpjlg4k41mwiq45k7bsr0cbksggsg"))))
     (properties `((upstream-name . "icesDatsuQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-icesdatsu))

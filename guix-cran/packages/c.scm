@@ -2096,13 +2096,13 @@ compatibility.")
 (define-public r-cubble
   (package
     (name "r-cubble")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cubble" version))
               (sha256
                (base32
-                "1ldlbqbgd4sd8k1srpmjxvn3jad03bknzgfv5m09ki980m9vjq2d"))))
+                "1z1h8zkmqpn2llgl2rpla57g7fpndbdfqqxcjdg47hqm947505r2"))))
     (properties `((upstream-name . "cubble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3300,6 +3300,30 @@ functions for evaluating a CSS in terms of various error types observed in each
 slice.")
     (license license:gpl2+)))
 
+(define-public r-csranks
+  (package
+    (name "r-csranks")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "csranks" version))
+              (sha256
+               (base32
+                "00idr16p9pxih88z7c22n9zwax996qm1fwslkp7x5b2p8fcxihp4"))))
+    (properties `((upstream-name . "csranks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-mass r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/danielwilhelm/R-CS-ranks")
+    (synopsis "Confidence Sets for Ranks")
+    (description
+     "Construct confidence sets for positions of populations in a ranking based on
+values of a certain feature and their estimation errors.  Both simultaneous and
+marginal confidence sets are available, as well as confidence sets with
+populations occupying top-n positions in the ranking.  Theory based on Mogstad,
+Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006>.")
+    (license license:expat)))
+
 (define-public r-csppdata
   (package
     (name "r-csppdata")
@@ -4220,13 +4244,13 @@ for use in RStudio'.")
 (define-public r-crunch
   (package
     (name "r-crunch")
-    (version "1.30.1")
+    (version "1.30.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crunch" version))
               (sha256
                (base32
-                "1qq9qddabq3x5kznxi6c9bm6jnr43559rmfdsp4xwqhgqpffrcfy"))))
+                "177gbgvwlgqv2l43hgg2w9zxf92wwksv0j0fk1yvfiw1qxnsf170"))))
     (properties `((upstream-name . "crunch")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite
@@ -4631,13 +4655,13 @@ method.")
 (define-public r-crplyr
   (package
     (name "r-crplyr")
-    (version "0.3.9")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crplyr" version))
               (sha256
                (base32
-                "0bykmh1jl84ay5hm01vpragy9cvl1i1y79hn962qd6a2w27fryj4"))))
+                "0l0vp2h4j2i5jb9wgdaqaixi9xvhb5n35zn8mdc7hyw13hjr8wa5"))))
     (properties `((upstream-name . "crplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -5935,6 +5959,47 @@ data.")
 fields (CRF) model as well as other probabilistic undirected graphical models of
 discrete data with pairwise and unary potentials.")
     (license license:gpl2+)))
+
+(define-public r-crew
+  (package
+    (name "r-crew")
+    (version "0.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crew" version))
+              (sha256
+               (base32
+                "1lqcnr9mwqgn5kgssxn17lb6g3avn0s6l476gpg5ic01f9x3nrvb"))))
+    (properties `((upstream-name . "crew")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-r6
+                             r-ps
+                             r-parallelly
+                             r-nanonext
+                             r-mirai
+                             r-getip
+                             r-callr
+                             r-bench))
+    (native-inputs (list r-knitr))
+    (home-page "https://wlandau.github.io/crew/")
+    (synopsis "Distributed Worker Launcher")
+    (description
+     "In computationally demanding analysis projects, statisticians and data
+scientists asynchronously deploy long-running tasks to distributed systems,
+ranging from traditional clusters to cloud services The NNG'-powered mirai R
+package by Gao (2023) <https://CRAN.R-project.org/package=mirai> is a sleek and
+sophisticated scheduler that efficiently processes these intense workloads.  The
+crew package extends mirai with a unifying interface for third-party worker
+launchers.  Inspiration also comes from packages future by Bengtsson (2021)
+<doi:10.32614/RJ-2021-048>, rrq by FitzJohn and Ashton (2023)
+<https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
+<doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischel, and
+Surmann (2017) <doi:10.21105/joss.00135>.")
+    (license license:expat)))
 
 (define-public r-cregg
   (package
@@ -9714,13 +9779,13 @@ population rhythm differences and more.  See CornÃ©lissen, G. (2014).
 (define-public r-cosinor
   (package
     (name "r-cosinor")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cosinor" version))
               (sha256
                (base32
-                "0rayjf2pjb916gjr51yyjlyb8srxylyn7sh2rjazlag2prlf3ix0"))))
+                "0nyvzmqk0rhx10fki29hcrz014bv3r40adqd5d6rbcz66kc4sjy3"))))
     (properties `((upstream-name . "cosinor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2))
@@ -13101,22 +13166,23 @@ data.table package.")
 (define-public r-contactdata
   (package
     (name "r-contactdata")
-    (version "0.2.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contactdata" version))
               (sha256
                (base32
-                "1hcibqkfisv28d38ymgvmkkbs4jl3lbp2safyd5abf185043263d"))))
+                "0lh3m5aln47clyc5pmz75sggqnzgkg68wyrla11zbg9isyh581nw"))))
     (properties `((upstream-name . "contactdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://bisaloo.github.io/contactdata/")
-    (synopsis "Social Contact Matrices for 152 Countries")
+    (home-page "https://hugogruson.fr/contactdata/")
+    (synopsis "Social Contact Matrices for 177 Countries")
     (description
      "Data package for the supplementary data in Prem et al. (2017)
-<doi:10.1371/journal.pcbi.1005697>.  Provides easy access to contact data for
-152 countries, for use in epidemiological, demographic or social sciences
+<doi:10.1371/journal.pcbi.1005697> and Prem et al.
+<doi:10.1371/journal.pcbi.1009098>.  Provides easy access to contact data for
+177 countries, for use in epidemiological, demographic or social sciences
 research.")
     (license license:expat)))
 
@@ -19662,13 +19728,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.4.1")
+    (version "4.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cobalt" version))
               (sha256
                (base32
-                "1h4z6v5k9v4fsgygbc6v20p1ld1d7f9jgygasyk40abx1rd0r8sf"))))
+                "04z0w5wia9xrq766qwqwsphhn2mz0hzfg060ddfx2ikv9qdcp690"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -19676,6 +19742,7 @@ implements two selection criteria in order to select the number of biclusters.")
                              r-gridextra
                              r-ggplot2
                              r-crayon
+                             r-chk
                              r-backports))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/cobalt/")
@@ -19688,7 +19755,7 @@ WeightIt', cem', sbw', and designmatch for assessing balance on the output of
 their preprocessing functions.  Users can also specify data for balance
 assessment not generated through the above packages.  Also included are methods
 for assessing balance in clustered or multiply imputed data sets or data sets
-with longitudinal treatments.")
+with multi-category, continuous, or longitudinal treatments.")
     (license license:gpl2+)))
 
 (define-public r-coarsedatatools
@@ -28410,16 +28477,21 @@ your local computer.")
 (define-public r-chatgpt
   (package
     (name "r-chatgpt")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chatgpt" version))
               (sha256
                (base32
-                "1ahy18mr8wjarp7598lg7yqz63i3zfvz2bfn3gbxysl2awjx1ml7"))))
+                "03iiamxh4njqhch56s70hp5r6c08xgs99hqnngiigbpck38i9sbq"))))
     (properties `((upstream-name . "chatgpt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-jsonlite r-httr))
+    (propagated-inputs (list r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-jsonlite
+                             r-httr
+                             r-clipr))
     (home-page "https://github.com/jcrodriguez1989/chatgpt")
     (synopsis "Interface to 'ChatGPT' from R")
     (description
@@ -31357,13 +31429,13 @@ in a sister species.")
 (define-public r-cdrcr
   (package
     (name "r-cdrcr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdrcR" version))
               (sha256
                (base32
-                "1q7xb1y3qlgpb7kzmqla586m29b4mwbs3iadr42cms0rrj4gdnm5"))))
+                "13fd936by6b47hlbwidv0jdqav6c4r2llgf3cajvivlpi98vk7c7"))))
     (properties `((upstream-name . "cdrcR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31489,13 +31561,13 @@ complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDMConnector" version))
               (sha256
                (base32
-                "0c6blm8mphwl8gal27013qpp331cnb4w7r08vangb9mc4y3r612j"))))
+                "0r2c7fhcyzrxa839wdq6mm2ms2ymqv8iskl40h7ngkk92h5waf2x"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

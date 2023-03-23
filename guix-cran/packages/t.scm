@@ -11676,13 +11676,13 @@ can tinker to your hearts content.")
 (define-public r-tinflex
   (package
     (name "r-tinflex")
-    (version "2.3")
+    (version "2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Tinflex" version))
               (sha256
                (base32
-                "0ri4sqd46zxmd5nx05klz7054ip7pwd7pqg0fif1d1v8bh01rdl6"))))
+                "1rrxlbv6xsnqr2zcadcr9g2p64zgkih89997inx0azl7v788sm9i"))))
     (properties `((upstream-name . "Tinflex")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Tinflex")
@@ -15178,13 +15178,13 @@ observations is considered.")
 (define-public r-thresholdrocsurvival
   (package
     (name "r-thresholdrocsurvival")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ThresholdROCsurvival" version))
               (sha256
                (base32
-                "19xgyrdnwfv4rqvrj7d2603jy0wvi5r17l85lvvv0z56pdcqagl3"))))
+                "1m84fxdhdwqb2qrmk6g46fzcbw10yji0kzviq5y765m7rxdh8xi5"))))
     (properties `((upstream-name . "ThresholdROCsurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresholdroc
@@ -15195,16 +15195,17 @@ observations is considered.")
                              r-boot))
     (home-page "https://cran.r-project.org/package=ThresholdROCsurvival")
     (synopsis
-     "Threshold and AUC Estimation with Right-Censored Data at a Fixed Time t")
+     "Diagnostic Ability Assessment with Right-Censored Data at a Fixed Time t")
     (description
-     "We focus on the estimation of optimal thresholds and AUCs when the outcome of
-interest is the status (alive or dead) of the subjects at a certain time-point
-t.  This binary status is determined by right-censored times to event and it is
-missing for those subjects censored before t.  Here we provide three methods
-(missing exclusion, imputation of censored times and using time-dependent ROC
-curves) to estimate optimal thresholds and AUCs in this context.  Two references
-for the methods used here are Skaltsa et al. (2010) <doi:10.1002/bimj.200900294>
-and Heagerty et al. (2000) <doi:10.1111/j.0006-341x.2000.00337.x>.")
+     "We focus on the diagnostic ability assessment of medical tests when the outcome
+of interest is the status (alive or dead) of the subjects at a certain
+time-point t.  This binary status is determined by right-censored times to event
+and it is missing for those subjects censored before t.  Here we provide three
+methods (missing exclusion, imputation of censored times and using
+time-dependent ROC curves) to evaluate the diagnostic ability of binary and
+continuous tests in this context.  Two references for the methods used here are
+Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
+<doi:10.1111/j.0006-341x.2000.00337.x>.")
     (license license:gpl2+)))
 
 (define-public r-thresholdroc
@@ -16203,13 +16204,13 @@ noisy black-box functions.  For details and tutorials, see Gramacy (2007)
 (define-public r-tglkmeans
   (package
     (name "r-tglkmeans")
-    (version "0.3.5")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tglkmeans" version))
               (sha256
                (base32
-                "0ldbq2pjmvw8m698s9zvvk38qiysz44r6s8v9bs8i7i7vjpwj62y"))))
+                "0a6y6cd7qghji8q9y4m11pbngd045p82knklrc2xdc5hw6dph0s4"))))
     (properties `((upstream-name . "tglkmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22370,23 +22371,28 @@ Office grant W911NF-17-1-0007.")
 (define-public r-taf
   (package
     (name "r-taf")
-    (version "4.1.0")
+    (version "4.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TAF" version))
               (sha256
                (base32
-                "0fy8lb1yws1k9pbpgjqdzcsgnzx5kydld8gj910s34azksvcadvk"))))
+                "0k64mq4y03nlfcfcyh37srlnc3wssdlsfqgln1slmqlbcpfwz68b"))))
     (properties `((upstream-name . "TAF")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice))
-    (home-page "https://taf.ices.dk")
-    (synopsis "Functions to Support the ICES Transparent Assessment Framework")
+    (home-page "https://github.com/ices-tools-prod/TAF")
+    (synopsis "Transparent Assessment Framework for Reproducible Research")
     (description
-     "This package provides functions to support the ICES Transparent Assessment
-Framework <https://taf.ices.dk> to organize data, methods, and results used in
-ICES assessments.  ICES is an organization facilitating international
-collaboration in marine science.")
+     "This package provides functions to organize data, methods, and results used in
+scientific analyses.  A TAF analysis consists of four scripts (data.R, model.R,
+output.R, report.R) that are run sequentially.  Each script starts by reading
+files from a previous step and ends with writing out files for the next step.
+Convenience functions are provided to version control the required data and
+software, run analyses, clean residues from previous runs, manage files,
+manipulate tables, and produce figures.  With a focus on stability and
+reproducible analyses, TAF is designed to have no package dependencies.  TAF
+forms a base layer for the icesTAF package and other scientific applications.")
     (license license:gpl3)))
 
 (define-public r-tactile

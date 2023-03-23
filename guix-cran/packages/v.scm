@@ -1857,17 +1857,16 @@ laid out in a pairs plot or zenplots style.")
 (define-public r-vivaldi
   (package
     (name "r-vivaldi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivaldi" version))
               (sha256
                (base32
-                "1v1lqx2ky99skf0iib4s26hw6b4caj0aiz2b785jgxgk9wc4905h"))))
+                "1dvihjc6vjzg2w1j0q6vjhlhpwkknwsd97lpbqbfpacpp337mvx8"))))
     (properties `((upstream-name . "vivaldi")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
-                             r-tidyverse
                              r-tidyselect
                              r-tidyr
                              r-seqinr
@@ -1943,13 +1942,13 @@ of mortality models.")
 (define-public r-vitae
   (package
     (name "r-vitae")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vitae" version))
               (sha256
                (base32
-                "0xy3bbh01rimgdkjrv6k4gjqm1bhv2kdn8lfn3vlzkby4jnxzv12"))))
+                "19qcympcs9w9klrvhz5ls4p6186dcddv5dv7kn7jkc0js84i9sbv"))))
     (properties `((upstream-name . "vitae")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -2153,13 +2152,13 @@ design.")
 (define-public r-visualize-cran-downloads
   (package
     (name "r-visualize-cran-downloads")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Visualize.CRAN.Downloads" version))
               (sha256
                (base32
-                "0nz4cpwymawn6xx4gpz0zp2a77797yzi5axlhc734hzlkklr5zvr"))))
+                "1jfj0qp4a6jxw423d6ik18r7gy6zzcxlp71mfhpam256xay0sq8f"))))
     (properties `((upstream-name . "Visualize.CRAN.Downloads")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-htmlwidgets r-cranlogs))
@@ -5236,13 +5235,13 @@ variance of the random noise.")
 (define-public r-vblpcm
   (package
     (name "r-vblpcm")
-    (version "2.4.8")
+    (version "2.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VBLPCM" version))
               (sha256
                (base32
-                "1yqwhmk0ziy0l3hvvpi2s62p43gm4lavl3dagn3647lrx99nmngn"))))
+                "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
     (properties `((upstream-name . "VBLPCM")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -5544,13 +5543,13 @@ Sensing, 51, 2632-2645, <DOI:10.1109/TGRS.2012.2216272>.")
 (define-public r-vars
   (package
     (name "r-vars")
-    (version "1.5-6")
+    (version "1.5-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vars" version))
               (sha256
                (base32
-                "1ggkmds5ibww61mkc50bzh75py4n2g9bd6wqb3nvfw9zn58k7znx"))))
+                "1b3w2vi0szpps7kzy30s1n8h2iaj4jxg82ym6zrza0z7msgmypi8"))))
     (properties `((upstream-name . "vars")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-strucchange r-sandwich r-mass r-lmtest))
@@ -6116,19 +6115,19 @@ initializations of cluster centers.")
 (define-public r-varbvs
   (package
     (name "r-varbvs")
-    (version "2.5-16")
+    (version "2.6-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "varbvs" version))
               (sha256
                (base32
-                "0pji7vqpbih01y7n0q6zpxhfszznzig4z3hmmpr4jqpdplv13x8d"))))
+                "1bn7i1dz6gbmvv6k178l233gnixay32r5n6k2z20lqi2i096a5qa"))))
     (properties `((upstream-name . "varbvs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-nor1mix r-matrix r-latticeextra
                              r-lattice))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/pcarbo/varbvs")
+    (home-page "https://github.com/pcarbo/varbvs")
     (synopsis
      "Large-Scale Bayesian Variable Selection Using Variational Methods")
     (description

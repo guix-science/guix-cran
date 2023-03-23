@@ -9583,6 +9583,37 @@ products for viewing tariff details and consumption for viewing meter
 consumption data.")
     (license license:expat)))
 
+(define-public r-octopus
+  (package
+    (name "r-octopus")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "octopus" version))
+              (sha256
+               (base32
+                "1zlhczp09yxk7kzn728zz82j105qb5krp33mz73v4h3avlskgq5y"))))
+    (properties `((upstream-name . "octopus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shinyace
+                             r-shiny
+                             r-rio
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-dbi
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=octopus")
+    (synopsis "Database Management Tool")
+    (description
+     "This package provides a database management tool built as a shiny application.
+Connect to various databases to send queries, upload files, preview tables, and
+more.")
+    (license license:expat)))
+
 (define-public r-ocsdata
   (package
     (name "r-ocsdata")
@@ -10054,6 +10085,38 @@ high-dimensional observations.  It also implements methods by Mei (2010)
 <doi:10.1093/biomet/asq010>, Xie and Siegmund (2013) <doi:10.1214/13-AOS1094>
 and Chan (2017) <doi:10.1214/17-AOS1546>.")
     (license license:gpl3)))
+
+(define-public r-occupationmeasurement
+  (package
+    (name "r-occupationmeasurement")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "occupationMeasurement" version))
+              (sha256
+               (base32
+                "0igqh8gwpdmrb47k6s7bhyjjjs3qy1g1nx27i6rsbyw52n97sdvm"))))
+    (properties `((upstream-name . "occupationMeasurement")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-text2vec
+                             r-stringr
+                             r-stringdist
+                             r-shiny
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://occupationMeasurement.github.io/occupationMeasurement/")
+    (synopsis "Interactively Measure Occupations in Interviews and Beyond")
+    (description
+     "Perform interactive occupation coding during interviews as described in
+Peycheva, D., Sakshaug, J., Calderwood, L. (2021) <doi:10.2478/jos-2021-0042>
+and Schierholz, M., Gensicke, M., Tschersich, N., Kreuter, F. (2018)
+<doi:10.1111/rssa.12297>.  Generate suggestions for occupational categories
+based on free text input, with pre-trained machine learning models in German and
+a ready-to-use shiny application provided for quick and easy data collection.")
+    (license license:expat)))
 
 (define-public r-occupancy
   (package

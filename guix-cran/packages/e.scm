@@ -579,13 +579,13 @@ and Mancini (2023) <doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
 (define-public r-exuber
   (package
     (name "r-exuber")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "exuber" version))
               (sha256
                (base32
-                "081z930fnzqifajnr0nyc62pw1rv8c1784s5xdhmzlgcj2bcdlgi"))))
+                "1r3hb4nlaph1a2s0dmd1n22ax9xgmdrg75w2xlbf8v1j3ifamvl9"))))
     (properties `((upstream-name . "exuber")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3433,6 +3433,42 @@ stability or various evolutionary dynamics, for teaching and academic research
 is provided.")
     (license license:gpl2)))
 
+(define-public r-evolqg
+  (package
+    (name "r-evolqg")
+    (version "0.3-2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evolqg" version))
+              (sha256
+               (base32
+                "107qazw0nhnnkkyjz9fsknjf72fr7ya2jq2aswf1nvzasa8kjkck"))))
+    (properties `((upstream-name . "evolqg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plyr
+                             r-numderiv
+                             r-mvtnorm
+                             r-morpho
+                             r-mcmcpack
+                             r-matrix
+                             r-igraph
+                             r-ggplot2
+                             r-expm
+                             r-coda
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=evolqg")
+    (synopsis "Evolutionary Quantitative Genetics")
+    (description
+     "This package provides functions for covariance matrix comparisons, estimation of
+repeatabilities in measurements and matrices, and general evolutionary
+quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
+(2016) <doi:10.12688/f1000research.7082.3>.")
+    (license license:expat)))
+
 (define-public r-evolmap
   (package
     (name "r-evolmap")
@@ -5715,13 +5751,13 @@ used for model selection in decomposable graphical models.")
 (define-public r-esreg
   (package
     (name "r-esreg")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "esreg" version))
               (sha256
                (base32
-                "0q8na05dq1gacpijv005bzan8skyzzhj8z00fzx46d27xdz7qisw"))))
+                "19ng9hk1xxn8qi2i0qnn58rqrrkvsiri7i2wipjnld1s69z8i4hd"))))
     (properties `((upstream-name . "esreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-quantreg r-formula))
@@ -8935,6 +8971,31 @@ contacts.")
      "This package provides a collection of tools for representing epidemiological
 contact data, composed of case line lists and contacts between cases.  Also
 contains procedures for data handling, interactive graphics, and statistics.")
+    (license license:gpl2+)))
+
+(define-public r-epicasting
+  (package
+    (name "r-epicasting")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epicasting" version))
+              (sha256
+               (base32
+                "191kxjrr8h44i7a7dpxziqhbcnbmhgcc5b7ddn9cnvvjqmbwmvl2"))))
+    (properties `((upstream-name . "epicasting")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets r-metrics r-forecast))
+    (home-page "https://cran.r-project.org/package=epicasting")
+    (synopsis
+     "Ewnet: An Ensemble Wavelet Neural Network for Forecasting and Epicasting")
+    (description
+     "Method and tool for generating time series forecasts using an ensemble
+wavelet-based auto-regressive neural network architecture.  This method provides
+additional support of exogenous variables and also generates confidence
+interval.  This package provides EWNet model for time series forecasting based
+on the algorithm by Panja, et al. (2022) and Panja, et al. (2023)
+<arXiv:2206.10696> <doi:10.1016/j.chaos.2023.113124>.")
     (license license:gpl2+)))
 
 (define-public r-epibasix
@@ -13493,19 +13554,19 @@ implements methods by Rabe-Hesketh et al. (2003)
 (define-public r-eive
   (package
     (name "r-eive")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eive" version))
               (sha256
                (base32
-                "1livknaplgbw0338kz10hgxrwbm05hhggi5h9klfc2gpw62z6hhs"))))
+                "0bwq95xfpy6m0zav9315vb3npay8irjlni0jc9aciz4jyz08if5f"))))
     (properties `((upstream-name . "eive")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=eive")
     (synopsis
-     "An Algorithm for Reducing Errors-in-Variable Bias in Simple Linear Regression")
+     "An Algorithm for Reducing Errors-in-Variable Bias in Simple and Multiple Linear Regression")
     (description
      "This package performs a compact genetic algorithm search to reduce
 errors-in-variables bias in linear regression.  The algorithm estimates the
@@ -15471,16 +15532,17 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-edsurvey
   (package
     (name "r-edsurvey")
-    (version "3.0.2")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EdSurvey" version))
               (sha256
                (base32
-                "1cwpr52fa88la9mia9fyw4ipw7458p5c43nyz43rh631vnv0pxwy"))))
+                "0ipafgbbi84x251bqkww859p4dpg9nrpdlmj4myrs56x362jzm6g"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
+                             r-xml2
                              r-wemix
                              r-wcorr
                              r-tibble
@@ -15956,13 +16018,13 @@ gate (EDINA) cognitive diagnostic model described by Chen et al. (2018)
 (define-public r-edibble
   (package
     (name "r-edibble")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edibble" version))
               (sha256
                (base32
-                "1a06p6jy7j4ml8q71s6mcpp1qm39vv7nz21ac0y0wssqmicsr5x3"))))
+                "173ch27169183ds9bm3f4dzniiiyhv69j33chqmxizrmrpq1mz0f"))))
     (properties `((upstream-name . "edibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

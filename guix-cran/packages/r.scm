@@ -2261,13 +2261,13 @@ the result from the stored file instead of running the code again.")
 (define-public r-runner
   (package
     (name "r-runner")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "runner" version))
               (sha256
                (base32
-                "02bpsgmiwl7ifpbqnzb2557rgpdcml82bbvafvghx8ig36j5sq6i"))))
+                "0pad6czgjcpipb4n8qn4psa1nd1li0f9dkgh8ab7g7c8qwjb6yfz"))))
     (properties `((upstream-name . "runner")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -20520,16 +20520,16 @@ content and performance on assessments.")
 (define-public r-risca
   (package
     (name "r-risca")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RISCA" version))
               (sha256
                (base32
-                "0r4wcyfa4nx9473hacm4dpz374zbp23idgbyanl6wcaw4mx085v0"))))
+                "1mhydhr6a0wywr0pml7jw0sra2iavzbkxm3gs0w9p53ssdipnw49"))))
     (properties `((upstream-name . "RISCA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
+    (propagated-inputs (list r-tune
                              r-timeroc
                              r-survivalmodels
                              r-survival
@@ -20552,7 +20552,6 @@ content and performance on assessments.")
                              r-glmnet
                              r-foreach
                              r-flexsurv
-                             r-dplyr
                              r-doparallel
                              r-date
                              r-cubature
@@ -26067,13 +26066,13 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
 (define-public r-resi
   (package
     (name "r-resi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RESI" version))
               (sha256
                (base32
-                "0q4xrgrdx6xqb2124ppf7bkx0kckwkv2kc5qc2brkqsdd7ss6wb2"))))
+                "15li6pwrivmc4347md47f16vw5nx8zwgi3p9haj6ddhm36hpcjx6"))))
     (properties `((upstream-name . "RESI")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -27063,13 +27062,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.5.6")
+    (version "0.5.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "report" version))
               (sha256
                (base32
-                "060rp27h05svp5lpy3gl4kwz0hhsxaqjbh6gy1zypzpvigvl9rsj"))))
+                "1g7px87d3gf0ddigmrcq442g9rx6zyzyihvqvd7pmpbrzz10zpka"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -34401,13 +34400,13 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
 (define-public r-rd3plot
   (package
     (name "r-rd3plot")
-    (version "1.0.25")
+    (version "1.0.68")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rD3plot" version))
               (sha256
                (base32
-                "1ilkd3ixkqpdi7hy6sdss53s40w640n7c7v7nb8khqlpfghkrpch"))))
+                "03zcmxjpa6zz1aw6yaijdhzxv3sar04w3kaz59asmcg8f8r0ghys"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -35165,16 +35164,16 @@ R by providing both the header files and all examples.")
 (define-public r-rcppsmc
   (package
     (name "r-rcppsmc")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSMC" version))
               (sha256
                (base32
-                "1svpzx4h9baipqnx2793vkjh1lnr92y82whpryqzzm4i7b6zx27i"))))
+                "0rp5s8j72al39rihn0q0j0ws6l1bxl1hlbx31mjllzhiq03pn2mq"))))
     (properties `((upstream-name . "RcppSMC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-fkf))
     (home-page "https://github.com/rcppsmc/rcppsmc")
     (synopsis "Rcpp Bindings for Sequential Monte Carlo")
     (description
@@ -35681,18 +35680,18 @@ needed.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.5.5")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppCWB" version))
               (sha256
                (base32
-                "1n079c23qkv7xssafc2gjgam3hpp7f8avrfzq3zzc2c76nzfvg4k"))))
+                "05szmi8j3c5lgvcgvd4i0kb6bjvplpbz0kp2kjrb0h3q7bnbkxh0"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
-    (inputs (list pcre))
+    (inputs (list pcre2))
     (propagated-inputs (list r-rcpp r-fs))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/PolMine/RcppCWB")
     (synopsis "'Rcpp' Bindings for the 'Corpus Workbench' ('CWB')")
     (description
@@ -35700,7 +35699,7 @@ needed.")
 query engine to efficiently analyze large corpora
 (<https://cwb.sourceforge.io>).  RcppCWB is licensed under the GNU GPL-3, in
 line with the GPL-3 license of the CWB
-(<https://www.r-project.org/Licenses/GPL-3>).  The CWB relies on pcre (BSD
+(<https://www.r-project.org/Licenses/GPL-3>).  The CWB relies on pcre2 (BSD
 license, see <http://www.pcre.org/licence.txt>) and GLib (LGPL license, see
 <https://www.gnu.org/licenses/lgpl-3.0.en.html>).  See the file LICENSE.note for
 further information.  The package includes modified code of the rcqp package
@@ -40768,16 +40767,17 @@ them in one PDF file.")
 (define-public r-rasterlist
   (package
     (name "r-rasterlist")
-    (version "0.5.14")
+    (version "0.5.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rasterList" version))
               (sha256
                (base32
-                "1c2l3p1353nfpib5xcsyyipgcvidj1kl8q9p076hs7j7341xgrfg"))))
+                "14ylmwylr55wjc7sg3wdni0wzvi0makgjj8v0ir06aw5p62ivp42"))))
     (properties `((upstream-name . "rasterList")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rasterList")
     (synopsis "Raster Where Cells are Generic Objects")
     (description
@@ -45057,13 +45057,13 @@ mixed-species forests) described in Forrester & Tang (2016)
 (define-public r-r3js
   (package
     (name "r-r3js")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r3js" version))
               (sha256
                (base32
-                "0h5bg5lfphassnn7izzylmz7flgd7phxqwsr4g63951l2ngf1xmk"))))
+                "1qkk6h2i15mg4ylq30znxyc0la3940263k1w6a17fy2vs26j6n3h"))))
     (properties `((upstream-name . "r3js")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-jsonlite r-htmlwidgets r-htmltools

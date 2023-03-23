@@ -3005,13 +3005,13 @@ Tierney, Dianne Cook, Tania Prvan (2020) <arXiv:2012.01619>.")
 (define-public r-brokenstick
   (package
     (name "r-brokenstick")
-    (version "2.4.0")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "brokenstick" version))
               (sha256
                (base32
-                "012r5y2w8y721a3n027j6mc6iz78q1rylr89bshnq0r6g522vw2c"))))
+                "0bq470kvv9084qaaaz5yicmxpljp23gb3dqijrmdwk1agqxn09mc"))))
     (properties `((upstream-name . "brokenstick")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3021,7 +3021,7 @@ Tierney, Dianne Cook, Tania Prvan (2020) <arXiv:2012.01619>.")
                              r-dplyr
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/growthcharts/brokenstick")
+    (home-page "doi:10.18637/jss.v106.i07")
     (synopsis "Broken Stick Model for Irregular Longitudinal Data")
     (description
      "Data on multiple individuals through time are often sampled at times that differ
@@ -3031,22 +3031,22 @@ subjectâs trajectory by one or more connected line segments.  The times at
 which segments connect (breakpoints) are identical for all subjects and under
 control of the user.  A well-fitting broken stick model effectively transforms
 individual measurements made at irregular times into regular trajectories with
-common observation times.  Specification of the model requires just three
-variables: time, measurement and subject.  The model is a special case of the
-linear mixed model, with time as a linear B-spline and subject as the grouping
-factor.  The main assumptions are: subjects are exchangeable, trajectories
-between consecutive breakpoints are straight, random effects follow a
-multivariate normal distribution, and unobserved data are missing at random.
-The package contains functions for fitting the broken stick model to data, for
-predicting curves in new data and for plotting broken stick estimates.  The
-package supports two optimization methods, and includes options to structure the
+common observation times.  Specification of the model requires three variables:
+time, measurement and subject.  The model is a special case of the linear mixed
+model, with time as a linear B-spline and subject as the grouping factor.  The
+main assumptions are: subjects are exchangeable, trajectories between
+consecutive breakpoints are straight, random effects follow a multivariate
+normal distribution, and unobserved data are missing at random.  The package
+contains functions for fitting the broken stick model to data, for predicting
+curves in new data and for plotting broken stick estimates.  The package
+supports two optimization methods, and includes options to structure the
 variance-covariance matrix of the random effects.  The analyst may use the
 software to smooth growth curves by a series of connected straight lines, to
 align irregularly observed curves to a common time grid, to create synthetic
 curves at a user-specified set of breakpoints, to estimate the time-to-time
-correlation matrix and to predict future observations.  For additional
-documentation on background, methodology and applications see
-<https://growthcharts.org/brokenstick/articles/manual/manual.html>.")
+correlation matrix and to predict future observations.  See
+<doi:10.18637/jss.v106.i07> for additional documentation on background,
+methodology and applications.")
     (license license:expat)))
 
 (define-public r-brnn
@@ -7028,18 +7028,19 @@ using auxiliary data.")
 (define-public r-bndesr
   (package
     (name "r-bndesr")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bndesr" version))
               (sha256
                (base32
-                "047w2dl0x24g5g8ay64dzzqg5zpm09mws5nhcjqqryx58dp4pmj2"))))
+                "11450kk3sy64v50jnzlg90krzldm2cdnhiwzv4v9k37iiic8im9k"))))
     (properties `((upstream-name . "bndesr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-readxl
                              r-readr
+                             r-rcurl
                              r-lubridate
                              r-janitor
                              r-dplyr))
@@ -10381,13 +10382,13 @@ methodological bases considered are described in: Arita et al. (2011)
 (define-public r-biostatr
   (package
     (name "r-biostatr")
-    (version "4.0.0")
+    (version "4.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BioStatR" version))
               (sha256
                (base32
-                "0gfwjvxbgfaw7mrbac011x09lxcmsdbp3ljc36hpfa54gqj2ckkc"))))
+                "0w8ly4pk0zv6rnmbzfq3i8sd4h4gjsxlnhj5nlyfr72687jjx5cm"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -10395,7 +10396,8 @@ methodological bases considered are described in: Arita et al. (2011)
     (synopsis "Initiation Ã  La Statistique Avec R")
     (description
      "Datasets and functions for the book \"Initiation Ã  la Statistique avec R\", F.
-Bertrand and M. Maumy-Bertrand (2022, ISBN:978-2100782826 Dunod, 4Ã¨me edition).")
+Bertrand and M. Maumy-Bertrand (2022, ISBN:978-2100782826 Dunod, fourth
+edition).")
     (license license:gpl3)))
 
 (define-public r-biostatistics
@@ -14947,13 +14949,13 @@ Extreme Value random variable.")
 (define-public r-bgdata
   (package
     (name "r-bgdata")
-    (version "2.4.0")
+    (version "2.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BGData" version))
               (sha256
                (base32
-                "0kbalppj7i9rswk8la3jdhzw7zvm9qjbps13i2h9q1s0lyjlcvd4"))))
+                "1bx63spfmsn9hz3qxhkvipfvyqcdy4afqzcada3bgly265kdg10h"))))
     (properties `((upstream-name . "BGData")))
     (build-system r-build-system)
     (propagated-inputs (list r-synchronicity
@@ -22266,20 +22268,20 @@ common frequentist hypothesis test such as the t-test and chi-sq test.")
 (define-public r-bayes4psy
   (package
     (name "r-bayes4psy")
-    (version "1.2.8")
+    (version "1.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayes4psy" version))
               (sha256
                (base32
-                "0fmp88mrnmx4langd014l6jf06zmvwhclw4k0aw88v996hzv76bx"))))
+                "1qbsqbskl5qkw97mrbygrdz0r9nkk0zfg0f2gjw2lja6zyy0fz11"))))
     (properties `((upstream-name . "bayes4psy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
-                             r-scales
                              r-rstantools
                              r-rstan
                              r-reshape
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-metrology
@@ -23203,6 +23205,26 @@ classical sets and fuzzy sets.  Import sets from several formats or from other
 several data structures.")
     (license license:expat)))
 
+(define-public r-baseq
+  (package
+    (name "r-baseq")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "baseq" version))
+              (sha256
+               (base32
+                "13h6yv88k3gyapz4r04vi5r95rfdnm1hww061mns6d68yr3lg06k"))))
+    (properties `((upstream-name . "baseq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr))
+    (home-page "https://github.com/ambuvjyn/baseq")
+    (synopsis "Basic Sequence Processing Tool for Biological Data")
+    (description
+     "Primarily created as an easy and understanding way to do basic sequences
+surrounding the central dogma of molecular biology.")
+    (license license:gpl3)))
+
 (define-public r-basemaps
   (package
     (name "r-basemaps")
@@ -23312,6 +23334,46 @@ project, query our tables, save data to disk and memory, all from R.")
 Outsourcing data import, renaming and type casting to a *.csv.  Manipulating
 imputed datasets and fitting models on them.  Summarizing models.")
     (license license:gpl3+)))
+
+(define-public r-baseballr
+  (package
+    (name "r-baseballr")
+    (version "1.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "baseballr" version))
+              (sha256
+               (base32
+                "0n6ajc846cddi7617pgkm2ywkl7147m2gnhwx8wm4jyj7g3snsw3"))))
+    (properties `((upstream-name . "baseballr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://billpetti.github.io/baseballr/")
+    (synopsis "Acquiring and Analyzing Baseball Data")
+    (description
+     "This package provides numerous utilities for acquiring and analyzing baseball
+data from online sources such as Baseball Reference
+<https://www.baseball-reference.com/>, FanGraphs <https://www.fangraphs.com/>,
+and the MLB Stats API <https://www.mlb.com/>.")
+    (license license:expat)))
 
 (define-public r-baseballdbr
   (package
@@ -24797,13 +24859,13 @@ found in Zhang, Ding and Yang (2021) <arXiv:1911.03063v2>.")
 (define-public r-baggr
   (package
     (name "r-baggr")
-    (version "0.7.4")
+    (version "0.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baggr" version))
               (sha256
                (base32
-                "0nfi3syvdm29822zclxfngq2qp8idqrhfk0hqp1b90p5ywa2qphf"))))
+                "1mc6awkfjbkv8wqx0y6h1wn7l8wj6gxrkpzgwyslyy8rfi9n1hxy"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

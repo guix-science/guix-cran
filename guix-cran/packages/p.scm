@@ -4027,16 +4027,17 @@ submissions.")
 (define-public r-psagraphics
   (package
     (name "r-psagraphics")
-    (version "2.1.1.2")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PSAgraphics" version))
               (sha256
                (base32
-                "1gs2wdi5mcwvn8jqc7ximll05m824jib6hmxm8b850yy2cb3n1l4"))))
+                "0y67yf77ywm57zrvclgz3ndqrwxbiy0pdqfjq0qgvw5qziqkya4i"))))
     (properties `((upstream-name . "PSAgraphics")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=PSAgraphics")
+    (propagated-inputs (list r-rpart))
+    (home-page "https://jbryer.github.io/PSAgraphics/")
     (synopsis "Propensity Score Analysis Graphics")
     (description
      "This package provides a collection of functions that primarily produce graphics
@@ -4047,6 +4048,44 @@ stratum, loess.psa that provides a graphic and loess based effect size estimate,
 and various balance functions that provide measures of the balance achieved via
 a PSA in a categorical covariate.")
     (license license:gpl2+)))
+
+(define-public r-psaboot
+  (package
+    (name "r-psaboot")
+    (version "1.3.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PSAboot" version))
+              (sha256
+               (base32
+                "06ga93vv4w84cd0s5565z4crrqd1ghqk31cmlpiaq5dwx5g0p45g"))))
+    (properties `((upstream-name . "PSAboot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trimatch
+                             r-rpart
+                             r-reshape2
+                             r-psych
+                             r-psagraphics
+                             r-party
+                             r-modeltools
+                             r-matchit
+                             r-matching
+                             r-ggthemes
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbryer/PSAboot")
+    (synopsis "Bootstrapping for Propensity Score Analysis")
+    (description
+     "It is often advantageous to test a hypothesis more than once in the context of
+propensity score analysis (Rosenbaum, 2012) <doi:10.1093/biomet/ass032>.  The
+functions in this package facilitate bootstrapping for propensity score analysis
+(PSA).  By default, bootstrapping using two classification tree methods (using
+rpart and ctree functions), two matching methods (using Matching and MatchIt
+packages), and stratification with logistic regression.  A framework is
+described for users to implement additional propensity score methods.
+Visualizations are emphasized for diagnosing balance; exploring the correlation
+relationships between bootstrap samples and methods; and to summarize results.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-przewodnik
   (package
@@ -7308,13 +7347,13 @@ using the CBC optimization software (<https://github.com/coin-or/Cbc>).")
 (define-public r-prioriactions
   (package
     (name "r-prioriactions")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioriactions" version))
               (sha256
                (base32
-                "14w0x6vlnffriqax6a29vbz75mmh2lq6jzbynpyf4dz2xiwill8v"))))
+                "0zrhpcdaakvc8706psqmp2y26nxyqr17l16wknb10clvh37d4r1b"))))
     (properties `((upstream-name . "prioriactions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7772,37 +7811,6 @@ or BiaÅek (2020) <doi:10.2478/jos-2020-0037>.")
      "Estimate False Discovery Rates (FDRs) for importance metrics from random forest
 runs.")
     (license license:gpl3)))
-
-(define-public r-prewas
-  (package
-    (name "r-prewas")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "prewas" version))
-              (sha256
-               (base32
-                "16dpwpks0sqfq7pdhbpipb8hnm2viic2dnz1g7v86ar51z8db4xk"))))
-    (properties `((upstream-name . "prewas")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vcfr r-phangorn r-future-apply r-future r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Snitkin-Lab-Umich/prewas")
-    (synopsis
-     "Data Pre-Processing for Bacterial Genome-Wide Association Studies")
-    (description
-     "Standardize the pre-processing of genomic variants before performing a bacterial
-genome-wide association study (bGWAS).  prewas creates a variant matrix (where
-each row is a variant, each column is a sample, and the entries are presence - 1
-- or absence - 0 - of the variant) that can be used as input for bGWAS tools.
-When creating the binary variant matrix, prewas can perform 3 pre-processing
-steps including: dealing with multiallelic SNPs, (optional) dealing with SNPs in
-overlapping genes, and choosing a reference allele.  prewas can output matrices
-for use with both SNP-based bGWAS and gene-based bGWAS. This method is described
-in Saund et al. (2020) <doi:10.1099/mgen.0.000368>.  prewas can also provide
-gene matrices for variants with specific annotations from the SnpEff software
-(Cingolani et al.  2012).")
-    (license license:expat)))
 
 (define-public r-prevtoinc
   (package
@@ -9836,6 +9844,34 @@ theory).  m12 and m13= two versions of the random forest algorithm.")
      "Sample size calculations for practical equivalence trial design with a time to
 event endpoint.")
     (license license:gpl3)))
+
+(define-public r-pracpac
+  (package
+    (name "r-pracpac")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pracpac" version))
+              (sha256
+               (base32
+                "16vw76gn3mwd0wfgw8jawgidz3qfzmmqplvn72hdmr3kza6w5fr2"))))
+    (properties `((upstream-name . "pracpac")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rprojroot
+                             r-renv
+                             r-pkgbuild
+                             r-magrittr
+                             r-glue
+                             r-fs))
+    (native-inputs (list r-knitr))
+    (home-page "https://signaturescience.github.io/pracpac/")
+    (synopsis "Practical 'R' Packaging in 'Docker'")
+    (description
+     "Streamline the creation of Docker images with R packages and dependencies
+embedded.  The pracpac package provides a usethis'-like interface to creating
+Dockerfiles with dependencies managed by renv'.  The pracpac functionality is
+described in Nagraj and Turner (2023) <doi:10.48550/arXiv.2303.07876>.")
+    (license license:expat)))
 
 (define-public r-pqrfe
   (package
@@ -12584,13 +12620,13 @@ pyramids.")
 (define-public r-poppr
   (package
     (name "r-poppr")
-    (version "2.9.3")
+    (version "2.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poppr" version))
               (sha256
                (base32
-                "0f8gw14vz4p6jvxa8w3fp84pm1k980mk5sfbj82qmmj236rfvyx9"))))
+                "14a756dx82l19bswrjq8v64v9py4mqf039y9gw5xrkr13p9jiy56"))))
     (properties `((upstream-name . "poppr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -13155,13 +13191,13 @@ computed from genotypes and those computed from pooled data.  Carvalho et al.,
 (define-public r-poolfstat
   (package
     (name "r-poolfstat")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "poolfstat" version))
               (sha256
                (base32
-                "0m5bb5ak18rfqz6z2qz5ylhmfmc7ahkmy20qgiaw7nh0yzjbs0i3"))))
+                "01qyg7wg9jdzagw03ns7ff6l6lczgbnivmhlxbqdydybp2y8adkp"))))
     (properties `((upstream-name . "poolfstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13174,6 +13210,7 @@ computed from genotypes and those computed from pooled data.  Carvalho et al.,
                              r-foreach
                              r-doparallel
                              r-diagrammer
+                             r-data-table
                              r-ape))
     (home-page "https://cran.r-project.org/package=poolfstat")
     (synopsis
@@ -14668,6 +14705,27 @@ Rotate the dealer button, deal cards, rank each hand, compare ranks, break ties
 (if necessary), determine the winner, output a textual summary, and output a
 graphical user interface.")
     (license license:gpl2)))
+
+(define-public r-pokemon
+  (package
+    (name "r-pokemon")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pokemon" version))
+              (sha256
+               (base32
+                "13j0a893w803brmwsa98x04mmz35l2vmlj1i86m0qxbjb4ysnkbb"))))
+    (properties `((upstream-name . "pokemon")))
+    (build-system r-build-system)
+    (home-page "https://github.com/williamorim/pokemon")
+    (synopsis "Pokemon Data in English and Brazilian Portuguese")
+    (description
+     "This package provides a dataset of Pokemon information in both English and
+Brazilian Portuguese.  The dataset contains 949 rows and 22 columns, including
+information such as the Pokemon's name, ID, height, weight, stats, type, and
+more.")
+    (license license:expat)))
 
 (define-public r-poistweedie
   (package
@@ -25385,13 +25443,13 @@ implemented model can be found in Demarqui et al. (2008)
 (define-public r-peperr
   (package
     (name "r-peperr")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "peperr" version))
               (sha256
                (base32
-                "0fcznmpm4f1jvl4yl7aqb637l387g74xk86vj3lwp65jzq6g8i0a"))))
+                "0045bc206y13467kw5xh3awkwcz24sb5xmdcgh5x1w6q1cab7ygp"))))
     (properties `((upstream-name . "peperr")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-snowfall))
@@ -28327,13 +28385,13 @@ and 365-day calendars in addition to the gregorian calendar.")
 (define-public r-pchc
   (package
     (name "r-pchc")
-    (version "0.8")
+    (version "0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pchc" version))
               (sha256
                (base32
-                "0vp79gbc7m8f9x0l9hfa83p8qyynzhjxbdjj1i141d2z4nkqn404"))))
+                "1h32m9zwy69zy8bysay9shspvc8638gmkrsczl9kw8l7rjq5nifc"))))
     (properties `((upstream-name . "pchc")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -28349,11 +28407,11 @@ and 365-day calendars in addition to the gregorian calendar.")
 Hill-Climbing, a new hybrid algorithm that uses PC to construct the skeleton of
 the BN and then applies the Hill-Climbing greedy search.  More algorithms and
 variants have been added, such as MMHC, FEDHC, and the Tabu search variants,
-PCTABU, MMTABU and FEDTABU. The relevant papers are a) Tsagris M. (2022).  A new
+PCTABU, MMTABU and FEDTABU. The relevant papers are a) Tsagris M. (2021).  A new
 scalable Bayesian network learning algorithm with applications to economics.
 Computational Economics, 57(1): 341-367. <doi:10.1007/s10614-020-10065-7>.  b)
-Tsagris M. (2021).  The FEDHC Bayesian network learning algorithm.
-<arXiv:2012.00113>.")
+Tsagris M. (2022).  The FEDHC Bayesian Network Learning Algorithm.  Mathematics
+2022, 10(15), 2604. <doi:10.3390/math10152604>.")
     (license license:gpl2+)))
 
 (define-public r-pch

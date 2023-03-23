@@ -52,6 +52,34 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-mzipmed
+  (package
+    (name "r-mzipmed")
+    (version "1.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mzipmed" version))
+              (sha256
+               (base32
+                "1mwnkwpn8awwnjm6yyad7xasc0va7hc6ya37hzyx91j8802gqhvk"))))
+    (properties `((upstream-name . "mzipmed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robust r-matrixstats r-mass))
+    (home-page "https://cran.r-project.org/package=mzipmed")
+    (synopsis "Mediation using MZIP Model")
+    (description
+     "We implement functions allowing for mediation analysis to be performed in cases
+where the mediator is a count variable with excess zeroes.  First a function is
+provided allowing users to perform analysis for zero-inflated count variables
+using the marginalized zero-inflated Poisson (MZIP) model (Long et al.  2014
+<DOI:10.1002/sim.6293>).  Using the counterfactual approach to mediation and
+MZIP we can obtain natural direct and indirect effects for the overall
+population.  Using delta method processes variance estimation can be performed
+instantaneously.  Alternatively, bootstrap standard errors can be used.  We also
+provide functions for cases with exposure-mediator interactions with four-way
+decomposition of total effect.")
+    (license license:expat)))
+
 (define-public r-mytai
   (package
     (name "r-mytai")
@@ -10599,6 +10627,30 @@ publication in the journal Landscape Ecology.  Detailed references will be
 updated here once those are known.")
     (license license:gpl3)))
 
+(define-public r-morf
+  (package
+    (name "r-morf")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "morf" version))
+              (sha256
+               (base32
+                "13v2w93x4xzk6zqd1ydzlp07nasfj4khj36787ncargyidjj34x0"))))
+    (properties `((upstream-name . "morf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-orf r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://riccardo-df.github.io/morf/")
+    (synopsis "Modified Ordered Random Forest")
+    (description
+     "Nonparametric estimator of the ordered choice model using random forests.  The
+estimator modifies a standard random forest splitting criterion to build a
+collection of forests, each estimating the conditional probability of a single
+class.  The package also implements a nonparametric estimator of the
+covariatesâ marginal effects.")
+    (license license:gpl3)))
+
 (define-public r-moreparty
   (package
     (name "r-moreparty")
@@ -19800,13 +19852,13 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-missinghe
   (package
     (name "r-missinghe")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "missingHE" version))
               (sha256
                (base32
-                "1bxpp88rwnv4fc9lm606cczj1dx63p507sqsr71dblgsfw3aw7xy"))))
+                "0my6a768w7lixh6cw453bl2nrb5aqdiri309p5kp4psp17pzllak"))))
     (properties `((upstream-name . "missingHE")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2jags
@@ -23666,13 +23718,13 @@ allowed) considered from multiple layers of categories.")
 (define-public r-mhctools
   (package
     (name "r-mhctools")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MHCtools" version))
               (sha256
                (base32
-                "07qrkwwhvf9qm1002dm03gjm62zahf38pvpafg3ln82m4157qhwy"))))
+                "0lybzp6i62cd6j67k1j1s4gdhkl4whrqbxjk4dhk5jv09iba504v"))))
     (properties `((upstream-name . "MHCtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-mgcv))
@@ -24056,16 +24108,16 @@ on Machine Learning, 2014, p.  1953--1961.")
 (define-public r-mggd
   (package
     (name "r-mggd")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mggd" version))
               (sha256
                (base32
-                "1za864qwchji90q6p56qrxbwgn73shl8yf4b6giq5wc63m41hn1w"))))
+                "1pr53bnijs5f8d8nj3lvr271qcp1cnw2q9682m3xr5sm0j5g3nlq"))))
     (properties `((upstream-name . "mggd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass))
+    (propagated-inputs (list r-rgl r-mass r-lifecycle))
     (home-page "https://forgemia.inra.fr/imhorphen/mggd")
     (synopsis
      "Multivariate Generalised Gaussian Distribution; Kullback-Leibler Divergence")
@@ -25426,13 +25478,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteospain" version))
               (sha256
                (base32
-                "16f0jkcns72zb4xi3llspgwh6kjadlrh6k5p3dr37wr60gn8b0v4"))))
+                "1yz5v6zrkz09ia0cwq23fshhxl5j1fmn63cj8m8n5ishb2pcg23l"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25444,14 +25496,13 @@ Ecology (METE).")
                              r-rlang
                              r-purrr
                              r-memoise
-                             r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-httr
                              r-glue
                              r-dplyr
                              r-curl
-                             r-crayon
+                             r-cli
                              r-cachem
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -31546,13 +31597,13 @@ Gaussian data.")
 (define-public r-mcp
   (package
     (name "r-mcp")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcp" version))
               (sha256
                (base32
-                "0vqn0lb7nc5hp2ls2h17ybldxrqj6l1hd4pk5pr4d22yyidlvx96"))))
+                "1c19y2611crvxcpz1wl2l5lf7ln9dkc56d14ri30hj44wz2liwdf"))))
     (properties `((upstream-name . "mcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32424,13 +32475,13 @@ the non-dominated sorting algorithm.")
 (define-public r-mcen
   (package
     (name "r-mcen")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcen" version))
               (sha256
                (base32
-                "1j0fy0ccbx85znvsxpd72pcgk3qg6r1ngpjjgr04mg9bwlfzpxm2"))))
+                "16f7860h6hbpnv1drk793mz3vwm9q4ar6xkag05z0p22p69mm4qy"))))
     (properties `((upstream-name . "mcen")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet r-flexclust r-faraway))
@@ -34719,6 +34770,43 @@ list of formulae.  Provides additional matrix operators and dedicated plotting
 function.")
     (license license:expat)))
 
+(define-public r-matric
+  (package
+    (name "r-matric")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matric" version))
+              (sha256
+               (base32
+                "16mwn81g6s10fjyc0f2npsck3aggh643xmcwqy49kyf5jvs188c5"))))
+    (properties `((upstream-name . "matric")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-logger
+                             r-jsonlite
+                             r-glue
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-foreach
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cytomining/matric")
+    (synopsis "Metrics for Similarity Matrices")
+    (description
+     "Calculate quality metrics for readouts from high-throughput profiling
+experiments.")
+    (license license:bsd-3)))
+
 (define-public r-matpow
   (package
     (name "r-matpow")
@@ -35135,13 +35223,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.5.1")
+    (version "4.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MatchIt" version))
               (sha256
                (base32
-                "1q67n21fp2gz3ig3yphilkx1alp07iwf10b537xpjca4xbmns7ln"))))
+                "02pk5p5ic9bkz968qb8ayavlj4vs0hrlpqz68w0mfvn6rf230vpg"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-backports))
@@ -35427,13 +35515,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MassWateR" version))
               (sha256
                (base32
-                "1camkfqra5qbc891gy6d9nnxfbqx7jvd0zn2bb5644a7n7gpbs76"))))
+                "15zn8rrivl8nbr4s8zfzw8is9x8pvwrvx64x8nxmh2m9499a5wrm"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -35445,12 +35533,14 @@ used to infer seed production by each individual plant.")
                              r-readxl
                              r-rcolorbrewer
                              r-lubridate
+                             r-httr
                              r-ggspatial
                              r-ggrepel
                              r-ggplot2
                              r-ggmap
                              r-flextable
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (home-page "<https://github.com/massbays-tech/MassWateR>")
     (synopsis
      "Quality Control and Analysis of Massachusetts Water Quality Data")
@@ -35855,13 +35945,13 @@ variables.")
 (define-public r-marqlevalg
   (package
     (name "r-marqlevalg")
-    (version "2.0.7")
+    (version "2.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marqLevAlg" version))
               (sha256
                (base32
-                "0khmma0kd18js142cklw22kvqf64rsz8a7x0d43ykly584d4gdkw"))))
+                "172zr3jg48wr631l61811vd04llm3chirdhbp2mc8zryn3bbcd6n"))))
     (properties `((upstream-name . "marqLevAlg")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -40086,13 +40176,13 @@ and spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.6.1")
+    (version "3.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MachineShop" version))
               (sha256
                (base32
-                "0hjbn3ph8dahvrkycfakf8hwhw1vry9w996wyn4l9arxb2h59mh2"))))
+                "08gl9pgp9a7ljf70babdkw2l5byd6j9284qzd2098yr6zbyns1bz"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

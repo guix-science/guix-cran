@@ -2495,6 +2495,40 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <arXiv:1405.3319>.")
     (license license:gpl3)))
 
+(define-public r-htetree
+  (package
+    (name "r-htetree")
+    (version "0.1.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "htetree" version))
+              (sha256
+               (base32
+                "069l9cwc7m1fv0hqyrilyqxd42qfs6h7xaq283yn6kj9xlb265kq"))))
+    (properties `((upstream-name . "htetree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-shiny
+                             r-rpart-plot
+                             r-rpart
+                             r-rcpp
+                             r-partykit
+                             r-matching
+                             r-jsonlite
+                             r-grf
+                             r-dplyr
+                             r-data-tree))
+    (home-page "https://cran.r-project.org/package=htetree")
+    (synopsis "Causal Inference with Tree-Based Machine Learning Algorithms")
+    (description
+     "Estimating heterogeneous treatment effects with tree-based machine learning
+algorithms and visualizing estimated results in flexible and presentation-ready
+ways.  For more information, see Brand, Xu, Koch, and Geraldo (2021)
+<doi:10.1177/0081175021993503>.  Our current package first started as a fork of
+the causalTree package on GitHub and we greatly appreciate the authors for their
+extremely useful and free package.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-htestclust
   (package
     (name "r-htestclust")
@@ -4220,13 +4254,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hockeystick" version))
               (sha256
                (base32
-                "09l2w4s7fvbwxw2p1ap618hcmgyvrjci9fky473v6r4wsiin09dm"))))
+                "1zgqfl7n4whndbl6r00dy8xna1f2habfq0cly6mpka3w7qlcph1g"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -7177,6 +7211,35 @@ noises under Heterogeneous group square-root Lasso penalty.  For details see:
 Ren, Z., Kang, Y., Fan, Y. and Lv, J. (2018)<arXiv:1606.03803>.")
     (license license:gpl2+)))
 
+(define-public r-hgraph
+  (package
+    (name "r-hgraph")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HGraph" version))
+              (sha256
+               (base32
+                "1y35lzym3mbr1v7j7v55i9mxb1vn65xzgp5542va1bngvrm25hjf"))))
+    (properties `((upstream-name . "HGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HGraph")
+    (synopsis "Use Graph Structure to Travel")
+    (description
+     "It is used to travel graphs, by using DFS and BFS to get the path from node to
+each leaf node.  Depth first traversal(DFS) is a recursive algorithm for
+searching all the vertices of a graph or tree data structure.  Traversal means
+visiting all the nodes of a graph.  Breadth first traversal(BFS) algorithm is
+used to search a tree or graph data structure for a node that meets a set of
+criteria.  It starts at the treeâs root or graph and searches/visits all nodes
+at the current depth level before moving on to the nodes at the next depth
+level.  Also, it provides the matrix which is reachable between each node.
+Implement reference about Baruch Awerbuch (1985)
+<doi:10.1016/0020-0190(85)90083-3>.")
+    (license license:gpl2)))
+
 (define-public r-hgnc
   (package
     (name "r-hgnc")
@@ -8472,13 +8535,13 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heemod
   (package
     (name "r-heemod")
-    (version "0.15.0")
+    (version "0.15.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heemod" version))
               (sha256
                (base32
-                "04rwmn0f44g3dm7xhji7g5vnzal1xnkg1p92k4f8r09ncrmk9706"))))
+                "11k4dbsah8kv1v9sm074lvbnavnzvns6hrykb6qgqh4fjj5whn9f"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9297,6 +9360,27 @@ Generalized Linear Model (hdpGLM) presented in the paper Ferrari (2020) Modeling
 Context-Dependent Latent Heterogeneity, Political Analysis
 <DOI:10.1017/pan.2019.13>.")
     (license license:expat)))
+
+(define-public r-hdpenreg
+  (package
+    (name "r-hdpenreg")
+    (version "0.94.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HDPenReg" version))
+              (sha256
+               (base32
+                "17lra03iyvs51bgbnbhs4f5rvjvdz9zk7mg2f0xmsr4nvllp44ys"))))
+    (properties `((upstream-name . "HDPenReg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtkore r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=HDPenReg")
+    (synopsis "High-Dimensional Penalized Regression")
+    (description
+     "Algorithms for lasso and fused-lasso problems: C++ implementation of the lars
+algorithm for lasso and fusion penalization <doi:10.1214/009053604000000067>,
+and EM-based algorithms for (logistic) lasso and fused-lasso penalization.")
+    (license license:gpl2+)))
 
 (define-public r-hdpca
   (package
