@@ -25,7 +25,6 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages code)
-  #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pdf)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -183,13 +182,13 @@ regression.  The procedure is described in detail in Pena, D., & Yohai, V.
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PxWebApiData" version))
               (sha256
                (base32
-                "05bcang9738x1d9w17s5sy93bi9749ka45vfzwa9db51a0hys3wb"))))
+                "1zp66rl61wcylbs2piqc3gj8n1d0z1z5hpc4gfm6rxqgav9ii9kb"))))
     (properties `((upstream-name . "PxWebApiData")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjstat r-pxweb r-jsonlite r-httr))
@@ -2240,13 +2239,13 @@ difference statistically significant?")
 (define-public r-ptak
   (package
     (name "r-ptak")
-    (version "1.4-0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PTAk" version))
               (sha256
                (base32
-                "0hm1xij32wgirj7k7qv162zl5r7aj1iyyhpnlbm9wx1mbw72ccbc"))))
+                "1xnjils6i36mpzzg7lpi1bpq90mm4gwp4szk6fcg9i4dvkrznfki"))))
     (properties `((upstream-name . "PTAk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor))
@@ -5801,13 +5800,13 @@ observing the project already carried out.")
 (define-public r-projections
   (package
     (name "r-projections")
-    (version "0.5.4")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "projections" version))
               (sha256
                (base32
-                "1c7fm2f3fx0905afw3nrbv6vv0a0awpml1rl2kaxnijjgqcxa6dg"))))
+                "0wpqklw5aif9vgcp6hyc7j5k8ifxwx5bhhd50llwgrh5xiy9yxyq"))))
     (properties `((upstream-name . "projections")))
     (build-system r-build-system)
     (propagated-inputs (list r-incidence r-ggplot2))
@@ -9526,13 +9525,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRECAST" version))
               (sha256
                (base32
-                "1vz9q5i3400lh9czrvrv33ra2q3q7gavnn6fj2ivhxffn7brrylf"))))
+                "1148c9376nhpzyj6xra010g8j8gi6ghx7jkcbi734n4dajx1pana"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -9549,10 +9548,12 @@ anomaly.")
                              r-gtools
                              r-giraf
                              r-ggthemes
+                             r-ggpubr
                              r-ggplot2
                              r-dr-sc
                              r-dplyr
-                             r-cowplot))
+                             r-cowplot
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feiyoung/PRECAST")
     (synopsis "Embedding and Clustering with Alignment for Spatial Datasets")
@@ -12292,13 +12293,13 @@ forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
 (define-public r-port4me
   (package
     (name "r-port4me")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "port4me" version))
               (sha256
                (base32
-                "0fs279qmxn0hz6w3app8dfcdhshymqrkgj53il4dzlw27ascw105"))))
+                "1r9mr2iir9j4g7r8d2d6mfjb6dsn8m6zvh3dbpwgf63pwcxrn069"))))
     (properties `((upstream-name . "port4me")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14957,6 +14958,33 @@ method are explained in Yahav et al. (2012) <DOI:10.1002/asmb.901>.")
 Fleishman polynomials) simultaneously.  The details of the method are explained
 in Demirtas et al. (2012) <DOI:10.1002/sim.5362>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-poismf
+  (package
+    (name "r-poismf")
+    (version "0.4.0-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "poismf" version))
+              (sha256
+               (base32
+                "1pl0vxrczknfrxx70wc6wy0hjxzdk7jip9was5saxby3b5as2bhp"))))
+    (properties `((upstream-name . "poismf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (home-page "https://github.com/david-cortes/poismf")
+    (synopsis
+     "Factorization of Sparse Counts Matrices Through Poisson Likelihood")
+    (description
+     "This package creates a non-negative low-rank approximate factorization of a
+sparse counts matrix by maximizing Poisson likelihood with L1/L2 regularization
+(e.g. for implicit-feedback recommender systems or bag-of-words-based topic
+modeling) (Cortes, (2018) <arXiv:1811.01908>), which usually leads to very
+sparse user and item factors (over 90% zero-valued).  Similar to hierarchical
+Poisson factorization (HPF), but follows an optimization-based approach with
+regularization instead of a hierarchical prior, and is fit through
+gradient-based methods instead of variational inference.")
+    (license license:bsd-2)))
 
 (define-public r-poisferobust
   (package
@@ -20605,6 +20633,28 @@ Pinnacle apply <https://www.pinnacle.com/en/termsandconditions>.  An account
 with Pinnacle is necessary to use the Pinnacle API.")
     (license license:gpl3)))
 
+(define-public r-pinma
+  (package
+    (name "r-pinma")
+    (version "1.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PINMA" version))
+              (sha256
+               (base32
+                "1vva1vjlxww2d59iyl131j2fylpdghabmrmgmx3rpc22vxj0iawk"))))
+    (properties `((upstream-name . "PINMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-metafor r-mass))
+    (home-page "https://cran.r-project.org/package=PINMA")
+    (synopsis
+     "Improved Methods for Constructing Prediction Intervals for Network Meta-Analysis")
+    (description
+     "Improved methods to construct prediction intervals for network meta-analysis.
+The parametric bootstrap and Kenward-Roger-type adjustment by Noma et al. (2022)
+<forthcoming> are implementable.")
+    (license license:gpl3)))
+
 (define-public r-pingr
   (package
     (name "r-pingr")
@@ -20845,16 +20895,15 @@ indirect effects.  See <http://jslefche.github.io/piecewiseSEM/> for more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.12.2")
+    (version "1.13.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "piecepackr" version))
               (sha256
                (base32
-                "0ky3nib84za7v27acpq5f5x8vpc6hsp5an7fid1vdzc6i1467mvr"))))
+                "0fg8z36rki1j1bb7d9pr3b84jwlpm9i2cvs2s5la39xywx564cx9"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
-    (inputs (list ghostscript))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -22436,17 +22485,16 @@ predictive capacity of the proportional hazards model.")
 (define-public r-phers
   (package
     (name "r-phers")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phers" version))
               (sha256
                (base32
-                "0g98w7a1p5r9wi5v36p248ihvydjy21kcjh2fq18ns445rydlgkc"))))
+                "00w84l5p9rwq3hgjx792fk2yhrnal143ph29ybcqrha40hglbbas"))))
     (properties `((upstream-name . "phers")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
-                             r-speedglm
                              r-iterators
                              r-foreach
                              r-data-table
@@ -23641,17 +23689,17 @@ R-notebooks.")
 (define-public r-pgtools
   (package
     (name "r-pgtools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pgTools" version))
               (sha256
                (base32
-                "08ybnxq5h651f6is3qxy6g57l0akgs9nsplhmqh5cd8lp4azxlc5"))))
+                "1262q30ci6h10sk54s9wbadz6v22y4k6m32sclxw93kkvgvlkj6b"))))
     (properties `((upstream-name . "pgTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-toolbox r-stringi r-odbc r-dbi r-data-table))
-    (home-page "https://cran.r-project.org/package=pgTools")
+    (home-page "https://github.com/tconwell/pgTools")
     (synopsis "Functions for Generating PostgreSQL Statements/Scripts")
     (description
      "Create PostgreSQL statements/scripts from R, optionally executing the SQL
@@ -23659,7 +23707,7 @@ statements.  Common SQL operations are included, although not every configurable
 option is available at this time.  SQL output is intended to be compliant with
 PostgreSQL syntax specifications.  PostgreSQL documentation is available here
 <https://www.postgresql.org/docs/current/index.html>.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-pgsc
   (package
@@ -25863,13 +25911,13 @@ ICML2013.")
 (define-public r-penalizedsvm
   (package
     (name "r-penalizedsvm")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penalizedSVM" version))
               (sha256
                (base32
-                "1mvp9qzk9gw8z13rsjkxgb98s6jqd8anzggfw71pziif0fd6zv10"))))
+                "1vafdczbqrwj9cagjd7la81jsrqkn917sxppxvz3i608yfl32igl"))))
     (properties `((upstream-name . "penalizedSVM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tgp
@@ -26951,13 +26999,13 @@ properly model heterogeneity and correlation in Omics datasets.")
 (define-public r-peacesciencer
   (package
     (name "r-peacesciencer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "peacesciencer" version))
               (sha256
                (base32
-                "00b1a1qg17klg5pcf86yb8j5g2chcrhbs0lvkqnjv7h0ycx9kwbl"))))
+                "06mlz2yjihm4xbdipv167ldf8z7r0ldwfn9day5c3lphg73fym5b"))))
     (properties `((upstream-name . "peacesciencer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -28100,6 +28148,30 @@ offers variance estimates for parameters of interest based on either bootstrap
 or Delta method.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-pcobw
+  (package
+    (name "r-pcobw")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PCObw" version))
+              (sha256
+               (base32
+                "07nfy733vfg19xdkqz1fjxhr6xn4cawbch7bqn93habb477mha1k"))))
+    (properties `((upstream-name . "PCObw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PCObw")
+    (synopsis
+     "Bandwidth Selector with Penalized Comparison to Overfitting Criterion")
+    (description
+     "Bandwidth selector according to the Penalised Comparison to Overfitting (P.C.O.)
+criterion as described in Varet, S., Lacour, C., Massart, P., Rivoirard, V.,
+(2019) <https://hal.archives-ouvertes.fr/hal-02002275>.  It can be used with
+univariate and multivariate data.")
+    (license license:gpl2+)))
+
 (define-public r-pco
   (package
     (name "r-pco")
@@ -28385,13 +28457,13 @@ and 365-day calendars in addition to the gregorian calendar.")
 (define-public r-pchc
   (package
     (name "r-pchc")
-    (version "0.9")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pchc" version))
               (sha256
                (base32
-                "1h32m9zwy69zy8bysay9shspvc8638gmkrsczl9kw8l7rjq5nifc"))))
+                "09i46wgklf095r5msyhyjq65dq0p8aj0ff6zsd4vvmz0savxicn8"))))
     (properties `((upstream-name . "pchc")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -28411,7 +28483,7 @@ PCTABU, MMTABU and FEDTABU. The relevant papers are a) Tsagris M. (2021).  A new
 scalable Bayesian network learning algorithm with applications to economics.
 Computational Economics, 57(1): 341-367. <doi:10.1007/s10614-020-10065-7>.  b)
 Tsagris M. (2022).  The FEDHC Bayesian Network Learning Algorithm.  Mathematics
-2022, 10(15), 2604. <doi:10.3390/math10152604>.")
+2022, 10(15): 2604. <doi:10.3390/math10152604>.")
     (license license:gpl2+)))
 
 (define-public r-pch
@@ -32612,13 +32684,13 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
 (define-public r-pammtools
   (package
     (name "r-pammtools")
-    (version "0.5.8")
+    (version "0.5.91")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pammtools" version))
               (sha256
                (base32
-                "14yang78y4a9qd9haqbzpc6hb5z8zhfar91r187bzy4417fpw69p"))))
+                "1r6d8c1cz68kmkgdc85185rp795c5w6s6kh770bzk7shmv6z7c8y"))))
     (properties `((upstream-name . "pammtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

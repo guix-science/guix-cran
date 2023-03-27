@@ -844,13 +844,13 @@ ROC curve.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usedthese" version))
               (sha256
                (base32
-                "01fapykwh3bq4w6c120kzn45bnbxdibbl1j0b9njbfp1pxrpr40j"))))
+                "00xbyw9cym1rg4f2h9lzj9g35l83lrjif0vhncn70lqsfpf43p6d"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -858,13 +858,11 @@ ROC curve.")
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-rvest
                              r-rlang
                              r-readr
                              r-purrr
                              r-knitr
                              r-kableextra
-                             r-httr
                              r-highr
                              r-dplyr
                              r-conflicted))
@@ -881,13 +879,13 @@ across a Quarto website.  Learn more about usedthese at
 (define-public r-usdoj
   (package
     (name "r-usdoj")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usdoj" version))
               (sha256
                (base32
-                "039bhkhlds3ylcpys0w2p068im1cgv8r0shfc997yfpgcj1s7ka9"))))
+                "0ddvp3qh1ynzzpzq8rgblkb1z5j5jwyzkfgd9xyzdkcby90k7zya"))))
     (properties `((upstream-name . "usdoj")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -896,7 +894,7 @@ across a Quarto website.  Learn more about usedthese at
                              r-httr
                              r-dplyr
                              r-anytime))
-    (home-page "https://github.com/rOpenGov/usdoj")
+    (home-page "https://github.com/ropengov/usdoj")
     (synopsis "For Accessing U.S. Department of Justice (DOJ) Open Data")
     (description
      "Fetch data from the <https://www.justice.gov/developer/api-documentation/api_v1>
@@ -1136,13 +1134,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.9.9")
+    (version "3.9.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ursa" version))
               (sha256
                (base32
-                "08p331z13nczg2nqj428jv31z3hl2kn0azwim8ga9hb3bcz1hcs8"))))
+                "13a7r0l99h9afcbzvx0ndfiq9hmh9ggvh7gndfi64l8v37h1dpvk"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgdal r-png r-jpeg))

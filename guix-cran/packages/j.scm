@@ -758,28 +758,6 @@ to the JavaScript library for converting, expanding and compacting JSON-LD
 documents.")
     (license license:bsd-3)))
 
-(define-public r-jsonify
-  (package
-    (name "r-jsonify")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsonify" version))
-              (sha256
-               (base32
-                "0bxgyj5b1hnijq5315g050giixy4k5mjz2zdx8yil0igb5ifji9p"))))
-    (properties `((upstream-name . "jsonify")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-rapidjsonr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jsonify")
-    (synopsis
-     "Convert Between 'R' Objects and Javascript Object Notation (JSON)")
-    (description
-     "Conversions between R objects and Javascript Object Notation (JSON) using the
-rapidjsonr library <https://CRAN.R-project.org/package=rapidjsonr>.")
-    (license license:expat)))
-
 (define-public r-json64
   (package
     (name "r-json64")
@@ -1276,13 +1254,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpgrid
   (package
     (name "r-jpgrid")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpgrid" version))
               (sha256
                (base32
-                "1fwc94bwbl4k25in1zajfj08qavl73d2j86ma926259pb7r1r6dm"))))
+                "0pp5nwvv0sglr089m78q4kaq7pkj7w2qdylpaahyjqb4iqk06grh"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -3521,13 +3499,13 @@ Mainly as a programming example for teaching purposes.")
 (define-public r-jacobi
   (package
     (name "r-jacobi")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jacobi" version))
               (sha256
                (base32
-                "1h0nm5ddi8f1g3kbx9mwiin6ndqhkscr4k30hz6hkl0cq6f1ny8w"))))
+                "0yzm6d743jbs1dvhyqx4pdcbjmspzzhnll97xqrr8z3j9rmbhprl"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))

@@ -5761,30 +5761,6 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 78(4):713-720. <DOI:10.1086/502682>.")
     (license license:gpl3)))
 
-(define-public r-mte
-  (package
-    (name "r-mte")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MTE" version))
-              (sha256
-               (base32
-                "11kbh6sphzyn2k279sfpgyvr32hpggh98cz1saszlpsfg9l8xdn0"))))
-    (properties `((upstream-name . "MTE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rqpen r-quantreg r-glmnet))
-    (home-page "https://cran.r-project.org/package=MTE")
-    (synopsis "Maximum Tangent Likelihood Estimation for Linear Regression")
-    (description
-     "Several robust estimators for linear regression and variable selection are
-provided.  Included are Maximum tangent likelihood estimator (Qin, et al.,
-2017), least absolute deviance estimator and Huber regression.  The penalized
-version of each of these estimator incorporates L1 penalty function, i.e., LASSO
-and Adaptive Lasso.  They are able to produce consistent estimates for both
-fixed and high-dimensional settings.")
-    (license license:gpl3)))
-
 (define-public r-mtdrh
   (package
     (name "r-mtdrh")
@@ -12288,13 +12264,13 @@ functions, such as variable importance and a tuning function for the parameters.
 (define-public r-modstatr
   (package
     (name "r-modstatr")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ModStatR" version))
               (sha256
                (base32
-                "18xsdflns5w5p5aqxmjh8xcnh13r5wy1m4skm257r3mg1d5b2agw"))))
+                "0rind0v0s9n1z9852hr2cc36c2jpkasrhkprqqvz1qvfjkhg4c6v"))))
     (properties `((upstream-name . "ModStatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jmuoutlier r-hypergeo r-gsl r-ellipse r-boot))
@@ -12894,41 +12870,6 @@ series, panel data, and cross-sectional time series analysis.")
      "Use the H2O machine learning library inside of modeltime'.  Available models
 include AutoML for Automatic Machine Learning.  Please see H2O.ai for more
 information <https://github.com/h2oai/h2o-3>.")
-    (license license:expat)))
-
-(define-public r-modeltime-gluonts
-  (package
-    (name "r-modeltime-gluonts")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeltime.gluonts" version))
-              (sha256
-               (base32
-                "1nivqpdyr2s6q70bixna0a18gbhrf1r20vm0gj8b51idjignwpp7"))))
-    (properties `((upstream-name . "modeltime.gluonts")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-reticulate
-                             r-purrr
-                             r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-glue
-                             r-fs
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime.gluonts")
-    (synopsis "'GluonTS' Deep Learning")
-    (description
-     "Use the GluonTS deep learning library inside of modeltime'.  Available models
-include DeepAR', N-BEATS', and N-BEATS Ensemble.  Refer to \"GluonTS -
-Probabilistic Time Series Modeling\" (<https://ts.gluon.ai/index.html>).")
     (license license:expat)))
 
 (define-public r-modeltime-ensemble
@@ -19664,13 +19605,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.1.3")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "missRanger" version))
               (sha256
                (base32
-                "1kk64q9ip6hhjcyrvnm5yd8ikilrvvw1vjz8166c6jb8xrqwbb2v"))))
+                "0s0zqfi2hhzxyrnfg83159g7q365glfnw7b81w2s51b10zjhxysh"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -23507,13 +23448,13 @@ fitting.")
 (define-public r-mi4p
   (package
     (name "r-mi4p")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mi4p" version))
               (sha256
                (base32
-                "02dpscdjayrf2mzrjq3fc0qr38rm687q5hzd259m728b9c7w10cr"))))
+                "1fl5vbykgw3wihv1gqbnqrfjiyng8mzfdg469x6y12mxdrgl4myj"))))
     (properties `((upstream-name . "mi4p")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -25098,13 +25039,13 @@ analysis.")
 (define-public r-metricsweighted
   (package
     (name "r-metricsweighted")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MetricsWeighted" version))
               (sha256
                (base32
-                "1hv2bgd64km303l09kva0pa9wx95f82qa9c4zl8nrmfhi2dvckqh"))))
+                "09f6gq9fw5yw7pcm4ywchsimwpgf2h8n52r75vjqhin57xm8ppfq"))))
     (properties `((upstream-name . "MetricsWeighted")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -25191,17 +25132,17 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.13.0")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metR" version))
               (sha256
                (base32
-                "0cffi32glgnmjan2xy4cb836qf3nj6k2mjkni6mqlblz4gh128w1"))))
+                "09xyg4xx6fkq39dlkkm6g91nc8lc5p463rxpa30lrlhzybgr01vy"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-sp
+                             r-sf
                              r-scales
                              r-purrr
                              r-plyr
@@ -34719,6 +34660,33 @@ Bladt, M. (2022). <arXiv:2110.05179>, Albrecher, H., Bladt, M., & Mueller, A.
 (2022) <arXiv:2207.01279>.")
     (license license:gpl3)))
 
+(define-public r-matrixcut
+  (package
+    (name "r-matrixcut")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matrixcut" version))
+              (sha256
+               (base32
+                "1q1m6yd42cwxdnysjgcnp7mg8f9cryphd59k0wzsrirqnj8c1jz4"))))
+    (properties `((upstream-name . "matrixcut")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-inflection r-igraph))
+    (home-page "https://cran.r-project.org/package=matrixcut")
+    (synopsis "Determines Clustering Threshold Based on Similarity Values")
+    (description
+     "The user must supply a matrix filled with similarity values.  The software will
+search for significant differences between similarity values at different
+hierarchical levels.  The algorithm will return a Loess-smoothed plot of the
+similarity values along with the inflection point, if there are any.  There is
+the option to search for an inflection point within a specified range.  The
+package also has a function that will return the matrix components at a
+specified cutoff.  References: Mullner. <ArXiv:1109.2378>; Cserhati, Carter.
+(2020, Journal of Creation 34(3):41-50),
+<https://dl0.creation.com/articles/p137/c13759/j34-3_64-73.pdf>.")
+    (license license:gpl3+)))
+
 (define-public r-matrixcorrelation
   (package
     (name "r-matrixcorrelation")
@@ -35998,13 +35966,13 @@ can be retrieved.")
 (define-public r-marmap
   (package
     (name "r-marmap")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marmap" version))
               (sha256
                (base32
-                "137zn8w8hvcbjgbrs4v14h3pqj7mynp7lx5qzkgqxjl21wabsvkh"))))
+                "0zmik6hpc44syknn7k9pbmy01jpnlp4sc9n3rhslrpnks39l0hvq"))))
     (properties `((upstream-name . "marmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

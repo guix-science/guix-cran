@@ -3607,13 +3607,13 @@ the overall sparsity of the final model.")
 (define-public r-groupr
   (package
     (name "r-groupr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groupr" version))
               (sha256
                (base32
-                "1b62bbcl4x8chl9q71xqaihxcz2xf4hmwbpb6bp8ya2vnvsyabnb"))))
+                "1v4k8is6dkf7cl97z14i3j791a9xfcb1icm2ll5ss6h0d5ad3hym"))))
     (properties `((upstream-name . "groupr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -9405,13 +9405,13 @@ with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
 (define-public r-gmvjoint
   (package
     (name "r-gmvjoint")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmvjoint" version))
               (sha256
                (base32
-                "1i1vas2gh14hddyy90gcfz7vz32wz0rhc20rciak71cggi18r2vh"))))
+                "15l852abzk3w6fcr7zyy09li4mky1w4d269ys9v3skrcs8qbra3d"))))
     (properties `((upstream-name . "gmvjoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9420,7 +9420,6 @@ with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
                              r-rcpp
                              r-pracma
                              r-mvtnorm
-                             r-matrix
                              r-mass
                              r-glmmtmb))
     (home-page "https://github.com/jamesmurray7/gmvjoint")
@@ -10744,13 +10743,13 @@ performance of global optimization algorithms")
 (define-public r-globalkinhom
   (package
     (name "r-globalkinhom")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "globalKinhom" version))
               (sha256
                (base32
-                "1a1y6nhwgwf14ajagz7qllncw3hvhs2fs0nmf46wypvxplnicjaf"))))
+                "1c80ydhiz47nwkibk6j0vhpydbbqb341s9ys1mrx8w11s59xd4s0"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -14910,13 +14909,13 @@ visualisation of mapped data.")
 (define-public r-ggquickeda
   (package
     (name "r-ggquickeda")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggquickeda" version))
               (sha256
                (base32
-                "15rla5gi6m10dsmx501wfhs4lfa1wf007nimyr22qbcabd7277zc"))))
+                "0kqsyfmfsgqlca3p4f64sd5d7v7yzz02qvba31z5lj0sr267npmx"))))
     (properties `((upstream-name . "ggquickeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15333,6 +15332,46 @@ layout.")
     (home-page "https://github.com/showteeth/ggpie")
     (synopsis "Pie, Donut and Rose Pie Plots")
     (description "Create pie, donut and rose pie plot with ggplot2'.")
+    (license license:expat)))
+
+(define-public r-ggpicrust2
+  (package
+    (name "r-ggpicrust2")
+    (version "1.4.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggpicrust2" version))
+              (sha256
+               (base32
+                "1lbsk6rh9sjlrh1wvq5y6ry31chwwm2mcnlks864zilb63i0fy3m"))))
+    (properties `((upstream-name . "ggpicrust2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-readr
+                             r-microbiomestat
+                             r-metagenomeseq
+                             r-maaslin2
+                             r-limma
+                             r-ggplot2
+                             r-ggally
+                             r-funrar
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-aplot
+                             r-aldex2))
+    (home-page "https://github.com/cafferychen777/ggpicrust2")
+    (synopsis "Make 'PICRUSt2' Output Analysis and Visualization Easier")
+    (description
+     "This package provides a convenient way to analyze and visualize PICRUSt2 output
+with pre-defined plots and functions.  Allows for generating statistical plots
+about microbiome functional predictions and offers customization options.
+Features a one-click option for creating publication-level plots, saving time
+and effort in producing professional-grade figures.  Streamlines the PICRUSt2
+analysis and visualization process.  For more details, see Yang et al. (2023)
+<arXiv:2303.10388>.")
     (license license:expat)))
 
 (define-public r-ggperiodic
@@ -16256,27 +16295,23 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "2.8-2")
+    (version "2.9-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGIR" version))
               (sha256
                (base32
-                "1njf49ywp8j8vrk66f7q4ndd20102i3xfz843f3nakdnmvl63xkm"))))
+                "0bsxwcj7y4nlpw24qh85i8y4m4d7xdyl7qpks4lwz0zbdhv6pwfg"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-unisensr
                              r-tuner
                              r-signal
-                             r-read-gt3x
                              r-ineq
-                             r-ggirread
-                             r-genearead
                              r-foreach
                              r-doparallel
-                             r-data-table
-                             r-actcr))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wadpac/GGIR/")
     (synopsis "Raw Accelerometer Data Analysis")
@@ -22615,13 +22650,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.1.3")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "0xdv7h88zcg22969jbq1gaidn64jqaygwacwqxw4g9f1rmi16xv6"))))
+                "0mwsbgqjvqnr007l7wzx8pp0db1dfjibfn6294pylpkrjbh82nl9"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram
@@ -26107,13 +26142,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganGenerativeData" version))
               (sha256
                (base32
-                "0v7k405aavl0cb7s17d9z5m94hhbinrgv3kfghbw8pn7zppyhjmj"))))
+                "0fsdzjhawkdc997f3w73da81h00a4ar8aljmfypy311nsg8nda7c"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -27353,19 +27388,21 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.2.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GABB" version))
               (sha256
                (base32
-                "0xv7b9j2qgicbd24557lylcisn65l6m60x8nnf7799map34djvgw"))))
+                "0xyd4w3ngp0ykgblpqgy7176w1sjg4g0frpvz4h4ij9ynx1g7q4m"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-tidyr
                              r-rvaidememoire
                              r-pheatmap
                              r-hotelling
+                             r-ggrepel
                              r-ggpubr
                              r-ggplotify
                              r-ggplot2

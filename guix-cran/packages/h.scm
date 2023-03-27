@@ -979,13 +979,13 @@ R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
 (define-public r-hydrocode
   (package
     (name "r-hydrocode")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HydroCode" version))
               (sha256
                (base32
-                "1igshik28xcxrdg116vs9s2yfbz5fik9xvlgfkgai3w9qj0x1h5q"))))
+                "1kykxra9cg1n17l2zmnjk1qv8450v4qix5sylm1k9xxzirbb7wca"))))
     (properties `((upstream-name . "HydroCode")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -2271,13 +2271,13 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
 (define-public r-htrx
   (package
     (name "r-htrx")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HTRX" version))
               (sha256
                (base32
-                "1a8crrydhbrwvfasxzdm2n2w77yk384fflj34db7gf6ms235cjxv"))))
+                "1zr0j1j8qqr5jm6r6s8z86wfzf1gwhy10zjlhvcd00lhlz5l5lm4"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
     (propagated-inputs (list r-tune r-recipes r-glmnet r-fastglm r-caret))
@@ -2287,8 +2287,8 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
     (description
      "Detection of haplotype patterns that include single nucleotide polymorphisms
 (SNPs) and non-contiguous haplotypes that are associated with a phenotype.
-Methods for implementing HTRX are described in Yang Y, Lawson DJ (2022)
-<doi:10.1101/2022.11.29.518395> and Barrie W, Yang Y, Attfield K E, et al (2022)
+Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
+<doi:10.1093/bioadv/vbad038> and Barrie W, Yang Y, Attfield K E, et al (2022)
 <doi:10.1101/2022.09.23.509097>.")
     (license license:gpl3)))
 

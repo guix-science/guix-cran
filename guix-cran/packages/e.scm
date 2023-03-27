@@ -3863,13 +3863,13 @@ exponential.")
 (define-public r-eventstudy
   (package
     (name "r-eventstudy")
-    (version "0.39")
+    (version "0.39.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EventStudy" version))
               (sha256
                (base32
-                "0xy4xiwmm6an93n8k1413n52qpjfl4z9hhw5wgj2qidg0k50ylal"))))
+                "081aqp3ddmnxjnw6519ddfkv2pbbrjvnkp7bjciz4gc6h9ihb1c3"))))
     (properties `((upstream-name . "EventStudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18338,6 +18338,41 @@ available.  The semi-parametric model relies on INLA'.  The INLA package can be
 obtained from <https://www.r-inla.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-ecan
+  (package
+    (name "r-ecan")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecan" version))
+              (sha256
+               (base32
+                "0b0p8g20zh775539654agdpak6adgk9fzik6nazyv18irgnakbi8"))))
+    (properties `((upstream-name . "ecan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-labdsv
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend
+                             r-dave
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=ecan")
+    (synopsis "Ecological Analysis and Visualization")
+    (description
+     "Support ecological analyses such as ordination and clustering.  Contains
+consistent and easy wrapper functions of stat', vegan', labdsv and dave
+packages, and visualisation functions of ordination and clustering.")
+    (license license:expat)))
+
 (define-public r-ec50estimator
   (package
     (name "r-ec50estimator")
@@ -18865,13 +18900,13 @@ Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.14.6")
+    (version "0.14.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatRep" version))
               (sha256
                (base32
-                "1pmjfz2m7z0n32cdzhxjxx3cllvhrd8nap9lqbfj8avd5sbsvfbp"))))
+                "11yz0g83ngzab8gqi2mq4s28j7yvl06jf4clwb8vfjqa7lwpfcgq"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

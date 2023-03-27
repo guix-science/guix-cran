@@ -2346,23 +2346,23 @@ For more information, see the
 (define-public r-auth0
   (package
     (name "r-auth0")
-    (version "0.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "auth0" version))
               (sha256
                (base32
-                "077nqh28q3b9jb25fy0157l06zpx3x0rg4z5dz2dqsh88xy4nhqj"))))
+                "0pbnxq2f0bpj1gz8yn3wj3qn03dl08l7754k0ys7s49w2isx9y3h"))))
     (properties `((upstream-name . "auth0")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-shinyjs r-shiny r-httr r-htmltools))
+    (propagated-inputs (list r-yaml r-shinyjs r-shiny r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=auth0")
-    (synopsis "Secure Authentication in Shiny with Auth0")
+    (home-page "https://curso-r.github.io/auth0/")
+    (synopsis "Authentication in Shiny with Auth0")
     (description
      "Uses Auth0 API (see <https://auth0.com> for more information) to use a simple
-and secure authentication system.  It provides tools to log in and out a shiny
-application using social networks or a list of e-mails.")
+authentication system.  It provides tools to log in and out a shiny application
+using social networks or a list of e-mails.")
     (license license:expat)))
 
 (define-public r-autests
@@ -2413,13 +2413,13 @@ reproducible research is that uses this data.")
 (define-public r-ausplotsr
   (package
     (name "r-ausplotsr")
-    (version "1.2.7")
+    (version "1.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ausplotsR" version))
               (sha256
                (base32
-                "0vlldbdbgplk6a9n2xkac8i5nxf0y2p4zbrw5q9a3qc71zfl33yj"))))
+                "1acbdg85p00xjz6rknagrwhwlibqn5l0qbk4b8ma6v1iwfgs25pp"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -2450,7 +2450,7 @@ method and dataset for Australia.  The data have been collected across a
 national network of plots and transects by the Terrestrial Ecosystem Research
 Network (TERN - <https://www.tern.org.au>), an Australian Government
 NCRIS-enabled project, and its Ecosystem Surveillance platform
-(<https://www.tern.org.au/tern-observatory/tern-ecosystem-surveillance/>).")
+(<https://www.tern.org.au/tern-land-observatory/ecosystem-surveillance-and-environmental-monitoring/>).")
     (license license:gpl3)))
 
 (define-public r-auroc
@@ -4025,13 +4025,13 @@ semiparametric nonlinear mixed-effects models.  See Wang (2011)
 (define-public r-assignr
   (package
     (name "r-assignr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "assignR" version))
               (sha256
                (base32
-                "1v9vc5klyk713xp1xhcndfq0qprh0553a6wr9yb6c5p5r7mwgrlh"))))
+                "04sygm8hx01lk8sj306w0nbha1wr86mfhi0q4sh31s145rq5rhs3"))))
     (properties `((upstream-name . "assignR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -9428,50 +9428,6 @@ detection of anomalies in time series data.  Also includes sequential versions
 of CAPA and MVCAPA <arXiv:2009.06670>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-anomalize
-  (package
-    (name "r-anomalize")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "anomalize" version))
-              (sha256
-               (base32
-                "16mizprni7g1gq9fqdz8ihp55shxxq4l7c73qdy5hvca6gs1w5v0"))))
-    (properties `((upstream-name . "anomalize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timetk
-                             r-tidyr
-                             r-tibbletime
-                             r-tibble
-                             r-sweep
-                             r-rstudioapi
-                             r-rlang
-                             r-purrr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/anomalize")
-    (synopsis "Tidy Anomaly Detection")
-    (description
-     "The anomalize package enables a \"tidy\" workflow for detecting anomalies in data.
- The main functions are time_decompose(), anomalize(), and time_recompose().
-When combined, it's quite simple to decompose time series, detect anomalies, and
-create bands separating the \"normal\" data from the anomalous data at scale (i.e.
- for multiple time series).  Time series decomposition is used to remove trend
-and seasonal components via the time_decompose() function and methods include
-seasonal decomposition of time series by Loess (\"stl\") and seasonal
-decomposition by piecewise medians (\"twitter\").  The anomalize() function
-implements two methods for anomaly detection of residuals including using an
-inner quartile range (\"iqr\") and generalized extreme studentized deviation
-(\"gesd\").  These methods are based on those used in the forecast package and the
-Twitter AnomalyDetection package.  Refer to the associated functions for
-specific references for these methods.")
-    (license license:gpl3+)))
-
 (define-public r-anom
   (package
     (name "r-anom")
@@ -10163,13 +10119,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.1")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Andromeda" version))
               (sha256
                (base32
-                "08n6ccx009mfnzmhgwzracwyf8ad40crmvb0wyg304dn2abgybn8"))))
+                "0ckmrys46haa4j8hjkizw94i8zhljd1zzm3crfq01s8l1jpnxzir"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -12224,20 +12180,18 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
 (define-public r-allestimates
   (package
     (name "r-allestimates")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "allestimates" version))
               (sha256
                (base32
-                "0g0j6q810665lfa3a9xwmv0hkgcp2a8g0xq0vfpvyykyqykgid3z"))))
+                "1gjkry5v1mrb11zd3r9z9cj6aasrhj29yihpizqphbb463qima3a"))))
     (properties `((upstream-name . "allestimates")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-survival
                              r-stringr
-                             r-speedglm
                              r-ggplot2
                              r-dplyr
                              r-broom))
@@ -12248,12 +12202,11 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
      "Estimates and plots effect estimates from models with all possible combinations
 of a list of variables.  It can be used for assessing treatment effects in
 clinical trials or risk factors in bio-medical and epidemiological research.
-Like Stata command confall (Wang Z. Stata Journal 2007; 7, Number 2, pp.
-183â196), allestimates calculates and stores all effect estimates, and plots
-them against p values or Akaike information criterion (AIC) values.  It
-currently has functions for linear regression: all_lm(), logistic and Poisson
-regression: all_glm() and all_speedglm(), and Cox proportional hazards
-regression: all_cox().")
+Like Stata command confall (Wang Z (2007) <doi:10.1177/1536867X0700700203> ),
+allestimates calculates and stores all effect estimates, and plots them against
+p values or Akaike information criterion (AIC) values.  It currently has
+functions for linear regression: all_lm(), logistic and Poisson regression:
+all_glm(), and Cox proportional hazards regression: all_cox().")
     (license license:gpl2)))
 
 (define-public r-allelicseries
@@ -16144,38 +16097,38 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "0.4.0")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admix" version))
               (sha256
                (base32
-                "1vfga2l6yay4l8q53siibf1ljr77fmcgbddlag414jmv2awckr0c"))))
+                "0s1zdc3s7mxxpkpy7w28w5ijbh4371lvy87n80dzhd6zww8jgndq"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
                              r-pracma
                              r-orthopolynom
                              r-mass
-                             r-latex2exp
                              r-iso
                              r-fdrtool))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/XavierMilhaud/admix")
     (synopsis "Package Admix for Admixture (aka Contamination) Models")
     (description
-     "This package implements several methods to estimate the unknown quantities
-related to two-component admixture models, where the two components can belong
-to any distribution (note that in the case of multinomial mixtures, the two
-components must belong to the same family).  Estimation methods depend on the
-assumptions made on the unknown component density (see Bordes and Vandekerkhove
-(2010) <doi:10.3103/S1066530710010023>; Patra and Sen (2016)
-<doi:10.1111/rssb.12148>); Milhaud, Pommeret, Salhi and Vandekerkhove (2021)
+     "This package implements techniques to estimate the unknown quantities related to
+two-component admixture models, where the two components can belong to any
+distribution (note that in the case of multinomial mixtures, the two components
+must belong to the same family).  Estimation methods depend on the assumptions
+made on the unknown component density (see Bordes and Vandekerkhove (2010)
+<doi:10.3103/S1066530710010023>; Patra and Sen (2016) <doi:10.1111/rssb.12148>);
+Milhaud, Pommeret, Salhi and Vandekerkhove (2022)
 <doi:10.1016/j.jspi.2021.05.010>).  In practice, one can estimate both the
 mixture weight and the unknown component density in a wide variety of
 frameworks.  On top of that, hypothesis tests can be performed in one and
-two-samples contexts to test the unknown component density.  Finally, clustering
-of unknown mixture components is also feasible in a K-samples setting.")
+two-sample contexts to test the unknown component density (see Milhaud,
+Pommeret, Salhi, Vandekerkhove (2023)).  Finally, clustering of unknown mixture
+components is also feasible in a K-samples setting.")
     (license license:gpl3+)))
 
 (define-public r-admit
@@ -17744,30 +17697,6 @@ all the methods, the robustification parameter tau is chosen by a tuning-free
 principle.")
     (license license:gpl3)))
 
-(define-public r-adace
-  (package
-    (name "r-adace")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "adace" version))
-              (sha256
-               (base32
-                "1zkvfbvqwxh4k5a0l06khdblm16q7knfcrxfzpmck8053z7kilgr"))))
-    (properties `((upstream-name . "adace")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-pracma))
-    (home-page "https://cran.r-project.org/package=adace")
-    (synopsis "Estimator of the Adherer Average Causal Effect")
-    (description
-     "Estimate the causal treatment effect for subjects that can adhere to one or both
-of the treatments.  Given longitudinal data with missing observations,
-consistent causal effects are calculated.  Unobserved potential outcomes are
-estimated through direct integration as described in: Qu et al., (2019)
-<doi:10.1080/19466315.2019.1700157> and Zhang et.  al., (2021)
-<doi:10.1080/19466315.2021.1891965>.")
-    (license license:gpl3+)))
-
 (define-public r-acwr
   (package
     (name "r-acwr")
@@ -18796,13 +18725,13 @@ presentation of simulation results.")
 (define-public r-abm
   (package
     (name "r-abm")
-    (version "0.2")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ABM" version))
               (sha256
                (base32
-                "15rymsq4n4qlz40d3z95f94r2rl37064x9h4awhvimdvcx3413h1"))))
+                "01pfmwjvkz9jml8ga22dz6lc7nahl2zbgyizgcbilx0ppbkm62bn"))))
     (properties `((upstream-name . "ABM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))

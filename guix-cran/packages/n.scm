@@ -1005,13 +1005,13 @@ univariate time series as described in Ardia et al. (2018)
 (define-public r-nscluster
   (package
     (name "r-nscluster")
-    (version "1.3.5")
+    (version "1.3.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NScluster" version))
               (sha256
                (base32
-                "1z078aixk2f6xxnwz7gbdwfgviha3bv8sfvpz7g56v9v3c1g6bgy"))))
+                "0qaf36pf5gd91ivy4ns5gppmrzxcha7ghyih4hcbnxs2291jck0x"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -1164,6 +1164,39 @@ generated with no associations (the global null), the excess hits (the
 difference between the observed number of rejections and the upper limit of the
 null interval), and a test of the global null based on the number of rejections.")
     (license license:gpl2)))
+
+(define-public r-nrba
+  (package
+    (name "r-nrba")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nrba" version))
+              (sha256
+               (base32
+                "04vjviwk4f4k7yw7njyvbaj0gb0fpwrlwr00af4jb241jgdhr7qf"))))
+    (properties `((upstream-name . "nrba")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-svrep r-survey r-magrittr r-dplyr r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nrba")
+    (synopsis "Methods for Conducting Nonresponse Bias Analysis (NRBA)")
+    (description
+     "Facilitates nonresponse bias analysis (NRBA) for survey data.  Such data may
+arise from a complex sampling design with features such as stratification,
+clustering, or unequal probabilities of selection.  Multiple types of analyses
+may be conducted: comparisons of response rates across subgroups; comparisons of
+estimates before and after weighting adjustments; comparisons of sample-based
+estimates to external population totals; tests of systematic differences in
+covariate means between respondents and full samples; tests of independence
+between response status and covariates; and modeling of outcomes and response
+status as a function of covariates.  Extensive documentation and references are
+provided for each type of analysis.  Krenzke, Van de Kerckhove, and Mohadjer
+(2005) <http://www.asasrms.org/Proceedings/y2005/files/JSM2005-000572.pdf> and
+Lohr and Riddles (2016)
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2016002/article/14677-eng.pdf?st=q7PyNsGR>
+provide an overview of the methods implemented in this package.")
+    (license license:gpl3+)))
 
 (define-public r-npwbs
   (package
@@ -4038,32 +4071,6 @@ Scalable Feature Learning for Networks\" by Aditya Grover, Jure
 Leskovec(2016),available at <arXiv:1607.00653>.")
     (license license:gpl3+)))
 
-(define-public r-nodbi
-  (package
-    (name "r-nodbi")
-    (version "0.9.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nodbi" version))
-              (sha256
-               (base32
-                "1hn0wy2ry9l3wwqrshmf82cxigkm16wycwprv458bcvb5k6ayy5m"))))
-    (properties `((upstream-name . "nodbi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid
-                             r-stringi
-                             r-jsonlite
-                             r-jsonify
-                             r-jqr
-                             r-dbi))
-    (home-page "https://docs.ropensci.org/nodbi/")
-    (synopsis "'NoSQL' Database Connector")
-    (description
-     "Simplified document database access and manipulation, providing a common API
-across supported NoSQL databases Elasticsearch', CouchDB', MongoDB as well as
-SQLite/JSON1', PostgreSQL', and DuckDB'.")
-    (license license:expat)))
-
 (define-public r-noctua
   (package
     (name "r-noctua")
@@ -4923,13 +4930,13 @@ in network analysis.")
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.0.15")
+    (version "0.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMdata" version))
               (sha256
                (base32
-                "11nj9s7bzzhgxgniyxlwakk06xkjhw1j8lv0skgwxb1lw6nb3maa"))))
+                "00wswy7agaxc71ms76z3f8nnhr03dsqbh142vjna77b9jhk1p74p"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -4939,9 +4946,9 @@ in network analysis.")
     (description
      "Efficient tools for preparation, checking and post-processing of data in PK/PD
 (pharmacokinetics/pharmacodynamics) modeling, with focus on use of Nonmem.
-Helps with trivial but tedious tasks and tries to identify errors to save time
-on debugging.  Implemented in data.table', but easily integrated with base and
-tidyverse'.")
+Attention is paid to ensure consistency, traceability, and Nonmem compatibility
+of Data.  Rigorously checks final Nonmem datasets.  Implemented in data.table',
+but easily integrated with base and tidyverse'.")
     (license license:expat)))
 
 (define-public r-nmcalc
@@ -10352,16 +10359,21 @@ interventions.  They have been developed and applied in Langendorf and Burgess
 (define-public r-netcoin
   (package
     (name "r-netcoin")
-    (version "2.0.20")
+    (version "2.0.48")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netCoin" version))
               (sha256
                (base32
-                "1kmv8sfzyh7cgp4s86rw4znjqpckgw8xiqs6a144g7k2vlfm28fk"))))
+                "03rmi75rjjy03jy0cv6qzz46q06027zvbwy4vp13748vq49aql1s"))))
     (properties `((upstream-name . "netCoin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rd3plot r-matrix r-igraph r-haven))
+    (propagated-inputs (list r-rd3plot
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-haven
+                             r-gparotation))
     (native-inputs (list r-knitr))
     (home-page "https://modesto-escobar.github.io/netCoin-2.x/")
     (synopsis "Interactive Analytic Networks")
@@ -11501,16 +11513,17 @@ to reportable printed statistics is covered for basic experimental designs.")
 (define-public r-neatr
   (package
     (name "r-neatr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neatR" version))
               (sha256
                (base32
-                "1m5ahkc9fjw2ba3a34x689pz6lp2dc5jib8dy81qrva9zsnhxsp3"))))
+                "064mil95f4jd43gkpx0rdvxgf4ffxjpn8z31vc5yg98516hgcqb1"))))
     (properties `((upstream-name . "neatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=neatR")
     (synopsis "Neat Data for Presentation")
     (description
@@ -12062,13 +12075,13 @@ navigate nested lists of raw metadata.")
 (define-public r-ncdfgeom
   (package
     (name "r-ncdfgeom")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ncdfgeom" version))
               (sha256
                (base32
-                "15sl701snp3pm5wjhiabvwfa0x0vdfzp8ks3b9j8vgc3vsj7dlid"))))
+                "0v53nns8xq2w6rbn11man8kgr4dqpy2glj2rhn9817lvk9pz8x18"))))
     (properties `((upstream-name . "ncdfgeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars r-sf r-rnetcdf r-ncmeta r-dplyr))
@@ -12825,13 +12838,13 @@ average outcomes in missing outcome cases.")
 (define-public r-navigatr
   (package
     (name "r-navigatr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "navigatr" version))
               (sha256
                (base32
-                "0gx8rv56j1jc0jgsbbvfham2cb80419sghda1i9mz1b5i99igdk1"))))
+                "0qlrzv17nlichfncynl710bs9yjqbx860dgqc4lnsh9l3mv5qjjl"))))
     (properties `((upstream-name . "navigatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

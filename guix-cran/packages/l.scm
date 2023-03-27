@@ -2405,6 +2405,40 @@ data-driven LP-transformed matrix for classification.  The primary reference is
 Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <arXiv:1810.01724>.")
     (license license:gpl2)))
 
+(define-public r-lpjmlkit
+  (package
+    (name "r-lpjmlkit")
+    (version "1.0.11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lpjmlkit" version))
+              (sha256
+               (base32
+                "0znkzpa4ydakn3sxs6pvg6kx6fsvpa2g0prbklk9w26c9m3kaac7"))))
+    (properties `((upstream-name . "lpjmlkit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-rlang
+                             r-processx
+                             r-magrittr
+                             r-jsonlite
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PIK-LPJmL/lpjmlkit")
+    (synopsis "Toolkit for Basic LPJmL Handling")
+    (description
+     "This package provides a collection of basic functions to facilitate the work
+with the Dynamic Global Vegetation Model (DGVM) Lund-Potsdam-Jena managed Land
+(LPJmL) hosted at the Potsdam Institute for Climate Impact Research (PIK).  It
+provides functions for performing LPJmL simulations, as well as reading,
+processing and writing model-related data such as inputs and outputs or
+configuration files.")
+    (license license:agpl3)))
+
 (define-public r-lpirfs
   (package
     (name "r-lpirfs")
@@ -6945,13 +6979,13 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
 (define-public r-littler
   (package
     (name "r-littler")
-    (version "0.3.17")
+    (version "0.3.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "littler" version))
               (sha256
                (base32
-                "0m555k5h405najcg4xsz9csyf0qn088xc60i7nhvwa7b47zf3ssc"))))
+                "1lp6a62g3yhzr4pv9kynibv7k9pd546w6hifs1aficyxbyg4dgqq"))))
     (properties `((upstream-name . "littler")))
     (build-system r-build-system)
     (inputs (list))
@@ -11825,13 +11859,13 @@ write an ImageJ macro which is optimized for a leaf area analysis by default.")
 (define-public r-leadercluster
   (package
     (name "r-leadercluster")
-    (version "1.3")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leaderCluster" version))
               (sha256
                (base32
-                "1gdvh0iaql28mnhnbq79gm0zblrx9vwhdmq1h7zl4s11i3n6yi9f"))))
+                "1alm7ar71l0ylasy0f14mdnla5vfcm604nhmk227pwcgivl588mf"))))
     (properties `((upstream-name . "leaderCluster")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=leaderCluster")
@@ -12114,13 +12148,13 @@ MacDonald, Langrock (2016).")
 (define-public r-lddmm
   (package
     (name "r-lddmm")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lddmm" version))
               (sha256
                (base32
-                "19vhfd32qrial3v4cy33lz9cx5p2wnw1qr46hckrlw2fxdmlvzic"))))
+                "1hhz9cbq9mcf450h9lkk35v20gjl0jsscp41b610yjn3gy1vz2kx"))))
     (properties `((upstream-name . "lddmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14349,13 +14383,13 @@ binary and continuous outcomes.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.0")
+    (version "5.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lares" version))
               (sha256
                (base32
-                "1yj7clfksfrfnfgav1swxygy6ci6pn8bn85g48i145ink7a2nrgd"))))
+                "17dsvjsqzp2v2j1b07vln1xbccbfvn1zr7b2rq4039hx0zmr3wd6"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -14672,13 +14706,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "1.5.5")
+    (version "1.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "landscapemetrics" version))
               (sha256
                (base32
-                "1bk7zjmby5blpi9i51dz2ry6zjz4zm8frl61l27qw12dkhhyiyaj"))))
+                "14zsi3lkwnia08vndwmlyj4fygnplx3l7sng26w4gpmws9ll73l4"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

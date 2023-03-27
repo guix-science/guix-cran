@@ -2159,13 +2159,13 @@ package <doi:10.1515/ami-2020-0004>.")
 (define-public r-isocalcr
   (package
     (name "r-isocalcr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isocalcR" version))
               (sha256
                (base32
-                "12zki3xpx3d916f70zv9b7q4d3ddc967kkjf4mc8ihygzp6b4lh1"))))
+                "1nn7pd0xj2j3xi5bvd6fvm062h1j0g1nxmp374r313fi2b0qcp0c"))))
     (properties `((upstream-name . "isocalcR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2174,8 +2174,8 @@ package <doi:10.1515/ami-2020-0004>.")
     (description
      "Perform common calculations based on published stable isotope theory, such as
 calculating carbon isotope discrimination and intrinsic water use efficiency
-from wood or leaf carbon isotope composition.  See Farquhar, O'Leary, and Berry
-(1982) <doi:10.1071/PP9820121>.")
+from wood or leaf carbon isotope composition.  See Mathias and Hudiburg (2022)
+in Global Change Biology <doi:10.1111/gcb.16407>.")
     (license license:gpl3)))
 
 (define-public r-isobxr
@@ -3108,6 +3108,38 @@ likelihood estimation versions proposed by Zheng, Meng, Guo, & Liu (2018)
 <doi:10.3389/fpsyg.2017.02302>.  Thus, both Bayesian modal estimates and maximum
 likelihood estimates are available.")
     (license license:gpl2+)))
+
+(define-public r-irtawsi
+  (package
+    (name "r-irtawsi")
+    (version "0.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "irtawsi" version))
+              (sha256
+               (base32
+                "1fxz0k9pyf1h0mv64lj8p1n5yhgmrzs5q0vq8l77sg3zd8gv66pf"))))
+    (properties `((upstream-name . "irtawsi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinywidgets
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-readxl
+                             r-psych
+                             r-mirt
+                             r-gt
+                             r-dt
+                             r-diagram
+                             r-bs4dash))
+    (home-page "https://cran.r-project.org/package=irtawsi")
+    (synopsis "Items Response Theory Analysis with Steps and Interpretation")
+    (description
+     "Analysis of Dichotomous and polytomous data using unidimensional Item Response
+Theory model (Chalmers (2012) <doi:10.18637/jss.v048.i06>) with user friendly
+Graphical User Interface.  Suitable for beginners who are learning Item Response
+Theory.")
+    (license license:gpl3+)))
 
 (define-public r-irt
   (package
@@ -12595,22 +12627,23 @@ spectrometry level 1 (MS1) data for formula annotation.")
 (define-public r-idsl-sufa
   (package
     (name "r-idsl-sufa")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.SUFA" version))
               (sha256
                (base32
-                "1dksi8fcif6vg811ska7fqfq79m31x3v4lsqra17danv02w3wn5b"))))
+                "0db79jcvks54x2fb58g9ynw05zz95bjiwcd77g37jzjwq70ds5ah"))))
     (properties `((upstream-name . "IDSL.SUFA")))
     (build-system r-build-system)
-    (home-page "https://ufa.idsl.me")
+    (home-page "https://github.com/idslme/idsl.sufa")
     (synopsis "Simplified UFA")
     (description
      "This package provides a simplified version of the IDSL.UFA package to calculate
 isotopic profiles and adduct formulas from molecular formulas with no dependency
-on other R packages for online tools.  The IDSL.SUFA package has functions to
-process user-defined adduct formulas.")
+on other R packages for online tools and educational mass spectrometry courses.
+The IDSL.SUFA package also provides an ancillary module to process user-defined
+adduct formulas.")
     (license license:expat)))
 
 (define-public r-idsl-npa
@@ -12641,13 +12674,13 @@ to create .msp files for untargeted nominal mass data processing.")
 (define-public r-idsl-mxp
   (package
     (name "r-idsl-mxp")
-    (version "1.9")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.MXP" version))
               (sha256
                (base32
-                "0rliqvjhlshdmrgbsmkszm8pz65qjwjk9rmrhlqx2yfynfznca7x"))))
+                "0m6n94xzpwba5ag030zl5piharssmkj1fz4mz2lybs2935f1zfbp"))))
     (properties `((upstream-name . "IDSL.MXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-base64enc))
@@ -13352,6 +13385,52 @@ identifiers within or between different biological databases (Wang, Shixiang, et
 al. (2021) <DOI:10.1371/journal.pgen.1009557>).")
     (license license:expat)))
 
+(define-public r-idcnrba
+  (package
+    (name "r-idcnrba")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idcnrba" version))
+              (sha256
+               (base32
+                "11lpa26ynfs046gsd656ckyq9wls7whbd0r8dzp3hnsi1cfh5k32"))))
+    (properties `((upstream-name . "idcnrba")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-survey
+                             r-srvyr
+                             r-shinyjs
+                             r-shiny
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-readr
+                             r-openxlsx
+                             r-nrba
+                             r-miniui
+                             r-markdown
+                             r-htmlwidgets
+                             r-haven
+                             r-flexdashboard
+                             r-dt
+                             r-dplyr
+                             r-base64enc))
+    (home-page "https://cran.r-project.org/package=idcnrba")
+    (synopsis
+     "Interactive Application for Analyzing Representativeness and Nonresponse Bias")
+    (description
+     "This package provides access to the Idea Data Center (IDC) application for
+conducting nonresponse bias analysis (NRBA).  The IDC NRBA app is an
+interactive, browser-based Shiny application that can be used to analyze survey
+data with respect to response rates, representativeness, and nonresponse bias.
+This app provides a user-friendly interface to statistical methods implemented
+by the nrba package.  Krenzke, Van de Kerckhove, and Mohadjer (2005)
+<http://www.asasrms.org/Proceedings/y2005/files/JSM2005-000572.pdf> and Lohr and
+Riddles (2016)
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2016002/article/14677-eng.pdf?st=q7PyNsGR>
+provide an overview of the statistical methods implemented in the application.")
+    (license license:gpl3+)))
+
 (define-public r-idcard
   (package
     (name "r-idcard")
@@ -13878,27 +13957,27 @@ Consortium for Political and Social Research archive.")
 (define-public r-icosa
   (package
     (name "r-icosa")
-    (version "0.10.1")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icosa" version))
               (sha256
                (base32
-                "025bqlgx4p1kxpmizfzgiamcq2f5nj5m2ky25fpgdm714sybvwvi"))))
+                "1z1xajdg7q5n3ijjy45klrh4q3i855afl9088f42dwidyban3w3h"))))
     (properties `((upstream-name . "icosa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rcpp r-igraph))
+    (propagated-inputs (list r-sp r-sf r-rcpp r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=icosa")
+    (home-page "https://adamkocsis.github.io/icosa/")
     (synopsis
      "Global Triangular and Penta-Hexagonal Grids Based on Tessellated Icosahedra")
     (description
-     "Employs triangular tessellation to refine icosahedra defined in 3d space.  The
-procedures can be set to provide a grid with a custom resolution.  Both the
-primary triangular and their inverted penta- hexagonal grids are available for
-implementation.  Additional functions are provided to position points
-(latitude-longitude data) on the grids, to allow 2D and 3D plotting, use raster
-data and shapefiles.")
+     "Implementation of icosahedral grids in three dimensions.  The
+spherical-triangular tessellation can be set to create grids with custom
+resolutions.  Both the primary triangular and their inverted penta-hexagonal
+grids can be calculated.  Additional functions are provided that allow plotting
+of the grids and associated data, the interaction of the grids with other raster
+and vector objects, and treating the grids as a graphs.")
     (license license:gpl3)))
 
 (define-public r-iconr

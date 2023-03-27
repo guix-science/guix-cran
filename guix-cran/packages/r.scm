@@ -4505,13 +4505,13 @@ rsyncrosim requires SyncroSim 2.3.5 or higher (API documentation:
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.7")
+    (version "9.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rswipl" version))
               (sha256
                (base32
-                "1naxyy48jk1qhfzjsx615wgzvn546rzamzhqnmi5zv17pk6n197y"))))
+                "0nkvirz05xkfwqd9l0b2cpaif88cpr051lqgam7w3b23j7ghndz3"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (inputs (list zstd
@@ -5418,13 +5418,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rspm" version))
               (sha256
                (base32
-                "1715vsdij3c8c0n4ngkvvplvx0nbh11jrfqm0l9rz745g3k4i90f"))))
+                "13x6wirk33qm3cld16sw4p6s5yn49jyy1yx71qpr4w61yxb8yy28"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://enchufa2.github.io/rspm/")
@@ -13396,13 +13396,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.1-2")
+    (version "3.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robustlmm" version))
               (sha256
                (base32
-                "0kvgqf89nf83yr3rcy5lrq7xyjpl157zf3hz7879qpg5swxr1cyz"))))
+                "0ya6lgfk58500mxs7668m93a0cypaf3bv4pmm633j2gf13fgznr1"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -14364,13 +14364,13 @@ random effect in the linear predictor of the generalized linear model.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robmed" version))
               (sha256
                (base32
-                "0awh7dpnm6hyad08zb1hzd52ljymrph2hwi35m37ns2n9nywax1p"))))
+                "0n7y0zwkn6brljqdqd15nni6s5ypv9pgvhd3519nm2invkk7xqwn"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-robustbase r-quantreg r-ggplot2 r-boot))
@@ -22481,13 +22481,13 @@ objects using the geocodePL_get() function.")
 (define-public r-rgudhi
   (package
     (name "r-rgudhi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgudhi" version))
               (sha256
                (base32
-                "1vzp6fs3f6i7ij461s4c3qa4da8igz2d5r6xmg8wfnfdbry4jn8y"))))
+                "0biljmhg95wlfhhr9n8idggwzwmhal5idsm2ppgxxx8y1b8cmxbd"))))
     (properties `((upstream-name . "rgudhi")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -22866,6 +22866,28 @@ function.")
 <https://developers.google.com/google-ads/api/docs/start>.  Package provide
 function for authorization and loading reports.")
     (license license:expat)))
+
+(define-public r-rgof
+  (package
+    (name "r-rgof")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rgof" version))
+              (sha256
+               (base32
+                "08sksi2vd5zzkvg51182qzp3p9b726xvd67k14d8210lhb1dcvbz"))))
+    (properties `((upstream-name . "Rgof")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Rgof")
+    (synopsis "1d Goodness of Fit Tests")
+    (description
+     "Routines that allow the user to run a large number of goodness-of-fit tests.  It
+allows for data to be continuous or discrete.  It includes routines to estimate
+the power of the tests and display them as a power graph.")
+    (license license:gpl2+)))
 
 (define-public r-rgnparser
   (package
@@ -23671,13 +23693,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.5")
+    (version "3.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgbif" version))
               (sha256
                (base32
-                "1pni4aa0sgfs3sz08dmczzsn9vwfh7zdfdb85da99l675zaahym9"))))
+                "0l5krzf0hii6b8afnqm0nxr0bv65wp5ahq85rakvz95jsamhavyb"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -23691,8 +23713,7 @@ expression data (Microarray/RNA-seq etc).")
                              r-jsonlite
                              r-ggplot2
                              r-data-table
-                             r-crul
-                             r-conditionz))
+                             r-crul))
     (home-page "https://github.com/ropensci/rgbif")
     (synopsis "Interface to the Global Biodiversity Information Facility API")
     (description
@@ -24090,22 +24111,22 @@ division operator \"/\".")
 (define-public r-rforestry
   (package
     (name "r-rforestry")
-    (version "0.9.0.152")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rforestry" version))
               (sha256
                (base32
-                "0pjbzgba9ngiyb9fgra29xavs2ly8wwqy3px5y0p0fv6bdx92fbq"))))
+                "1h5bnaakpig7b2041s43kfljywdbdq6kkvv3agld2953nn8kcbw3"))))
     (properties `((upstream-name . "Rforestry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
                              r-rcppthread
                              r-rcpparmadillo
                              r-rcpp
+                             r-proc
                              r-onehot
-                             r-glmnet
-                             r-dplyr))
+                             r-glmnet))
     (home-page "https://github.com/forestry-labs/Rforestry")
     (synopsis
      "Random Forests, Linear Trees, and Gradient Boosting for Inference and Interpretability")
@@ -25579,20 +25600,22 @@ from Names\" by Fangzhou Xie (2021) <arXiv:2109.09228>.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.3-500")
+    (version "0.4-500")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restriktor" version))
               (sha256
                (base32
-                "17a56mdxx1ss9pb628dz44y5q5vr2q3yg2lr6yj9nxz0k3pwqvv3"))))
+                "02arm2rqy5cpxng5jn64mx3wz7m30bpcw0wyck1h095hhj0dxad6"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
+                             r-norm2
                              r-mvtnorm
                              r-mass
                              r-lavaan
                              r-ic-infer
+                             r-ggplot2
                              r-boot))
     (home-page "https://restriktor.org")
     (synopsis
@@ -26651,6 +26674,33 @@ is more of a set of building blocks than a direct solution.  REPTILE regulatory
 prediction pipeline is built on this R package.  See
 <https://github.com/yupenghe/REPTILE> for more information.")
     (license license:bsd-2)))
+
+(define-public r-repsd
+  (package
+    (name "r-repsd")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "repsd" version))
+              (sha256
+               (base32
+                "1q04n97jl5xvagzcl3cfsvshws95qdvwcl8lhfyhazd1k602lyck"))))
+    (properties `((upstream-name . "repsd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress))
+    (home-page "https://cran.r-project.org/package=repsd")
+    (synopsis "Root Expected Proportion Squared Difference for Detecting DIF")
+    (description
+     "Root Expected Proportion Squared Difference (REPSD) is a nonparametric
+differential item functioning (DIF) method that (a) allows practitioners to
+explore for DIF related to small, fine-grained focal groups of examinees, and
+(b) compares the focal group directly to the composite group that will be used
+to develop the reported test score scale.  Using your provided response matrix
+with a column that identifies focal group membership, this package provides the
+REPSD values, a simulated null distribution of possible REPSD values, and the
+simulated p-values identifying items possibly displaying DIF without requiring
+enormous sample sizes.")
+    (license license:expat)))
 
 (define-public r-reproj
   (package
@@ -29651,13 +29701,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-29")
+    (version "0.1-30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "refund" version))
               (sha256
                (base32
-                "0f58ip51m26xbznmrcrkhfvahwg687nhjwp0ls8gh1rq7c0a8zla"))))
+                "19mzsdfwbrqimvrc4jrbaw8aqr8zhiq1wckbqvs43pbn4zvg1jh1"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -30618,13 +30668,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "152ycfnlw6csr70hv1amhihxm8gms3rlbyx5y7044arsimzqjicm"))))
+                "05gpskr13ib7bdijqns0053azknz3lnay0r2jxy007vk9i4i8xmj"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -30634,6 +30684,7 @@ default reports are generated as vignettes in the resulting package.")
                              r-rlang
                              r-redcapr
                              r-purrr
+                             r-openxlsx
                              r-magrittr
                              r-janitor
                              r-hmisc
@@ -30655,21 +30706,16 @@ identified and it also facilitates the process of data management.")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.4.0")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redcapAPI" version))
               (sha256
                (base32
-                "0nql3mqv9zzz7ccwnz9b46zf7xq3gk8lrxam5pxgc77dr4hj4bkq"))))
+                "0s55aha0jww4i7nanf5984jzlz0ri1x43ppmx5p8s3i4m8sz0my0"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-lubridate
-                             r-labelvector
-                             r-httr
-                             r-chron
+    (propagated-inputs (list r-lubridate r-labelvector r-httr r-chron
                              r-checkmate))
     (home-page "https://github.com/vubiostat/redcapAPI")
     (synopsis "Interface to 'REDCap'")
@@ -32062,13 +32108,13 @@ This package provides a way to read these files into R.")
 (define-public r-readsx
   (package
     (name "r-readsx")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readSX" version))
               (sha256
                (base32
-                "1j04hdn7aqzf0s5zdwzsqckqlnjzag0d83d5b3lq6dq9z3xgjc7d"))))
+                "0g8nwm1vk8spiffnb93a63vq14q6xm2b9wy708qfkriijrn8n52i"))))
     (properties `((upstream-name . "readSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-readxl r-cli))
@@ -36263,13 +36309,13 @@ Biological Statistics\".  Vignettes are available at <http://rcompanion.org>.")
 (define-public r-rcompadre
   (package
     (name "r-rcompadre")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rcompadre" version))
               (sha256
                (base32
-                "0kxysl174psjkvga627glakry43b30xl8ga4h050y4myz6fgz5aq"))))
+                "11nm8dmclvr4p5w7r53pmi12b9b5w2jvfah70vln5pgmfpzhbmz4"))))
     (properties `((upstream-name . "Rcompadre")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-popdemo))
@@ -39648,13 +39694,13 @@ dates with prior information.  See Blaauw & Christen (2011).")
 (define-public r-rb3
   (package
     (name "r-rb3")
-    (version "0.0.8")
+    (version "0.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rb3" version))
               (sha256
                (base32
-                "1ayvskv78sw5vcg3736klw8yn4c4r13mmpjys4ws2zq1kix9m6q1"))))
+                "06ayyjp4xr8jwyqhpnpkdpbnbhzm733rj8vrv153qlxlal406vzd"))))
     (properties `((upstream-name . "rb3")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -39910,18 +39956,16 @@ details from Thrasher (1992) <doi:10.1002/dir.4000060408> and pyks
 (define-public r-rawhummus
   (package
     (name "r-rawhummus")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RawHummus" version))
               (sha256
                (base32
-                "0g20qlv9vij6cw8b3smg26i0qxh83w9z4gvnpp9h0sc2qg4incr1"))))
+                "1d7j7687jgmkspd6avpvz83pzq230xsmcdhiwsm7j45bl9rzicn0"))))
     (properties `((upstream-name . "RawHummus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyvalidate
-                             r-shinymatrix
-                             r-shinyfiles
+    (propagated-inputs (list r-shinymatrix
                              r-shinydashboardplus
                              r-shinydashboard
                              r-shinycustomloader
@@ -39933,14 +39977,18 @@ details from Thrasher (1992) <doi:10.1002/dir.4000060408> and pyks
                              r-plotly
                              r-markdown
                              r-kableextra
+                             r-golem
+                             r-ggplot2
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-config))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RawHummus")
     (synopsis "Raw Data Quality Control Tool for LC-MS System")
     (description
      "Assess LCâMS system performance by visualizing instrument log files and
 monitoring raw quality control samples within a project.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-raw
   (package
@@ -45213,13 +45261,13 @@ of other formats ('SVG', PNG', JPEG') into SWF'.")
 (define-public r-r2sundials
   (package
     (name "r-r2sundials")
-    (version "5.0.0-10")
+    (version "6.5.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2sundials" version))
               (sha256
                (base32
-                "1hv5wq6lxrv57pszxky4xiwhjhjlzxa4fh0flrrmrrk89dygkx9v"))))
+                "15l9a8lhyjrv3ch9c46zlhj6hkx0bnxvq3l1cjny98plwmz2ark6"))))
     (properties `((upstream-name . "r2sundials")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmumps r-rcpparmadillo r-rcpp))

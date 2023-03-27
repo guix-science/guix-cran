@@ -11,9 +11,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages base)
-  #:use-module (gnu packages perl)
-  #:use-module (gnu packages php)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
@@ -1896,22 +1893,23 @@ the Page test for monotonicity of ranks (Page 1963)
 (define-public r-cuff
   (package
     (name "r-cuff")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CUFF" version))
               (sha256
                (base32
-                "09rf08nm1zmwgw342kixph9hdxd5397rlx1bb29fj0zgfp071czc"))))
+                "1fhxqnymcam845h8jlwp4al68rm9ajllmpnmarbh48c0vhcziaj8"))))
     (properties `((upstream-name . "CUFF")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
-                             r-xlsx
+                             r-openxlsx
                              r-nlme
                              r-lmertest
                              r-haven
                              r-dt
-                             r-dplyr))
+                             r-dplyr
+                             r-clipr))
     (home-page "https://github.com/giguerch/CUFF")
     (synopsis "Charles's Utility Function using Formula")
     (description
@@ -2352,17 +2350,18 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.7.2")
+    (version "3.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctsem" version))
               (sha256
                (base32
-                "0pr98lqga6lw7lp2l084jcda5b9j0wn3bwxg243p9qbqlf5q495l"))))
+                "1nhrxyq9kv3kzyskjmskh79z9mhzz6ap9bq0df1f7h4v73425mjc"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stanheaders
+                             r-rstantools
                              r-rstan
                              r-rcppparallel
                              r-rcppeigen
@@ -2422,82 +2421,6 @@ see
      "This package provides a simple way to assess the stability of candidate
 housekeeping genes is implemented in this package.")
     (license license:gpl2+)))
-
-(define-public r-ctrialsgov
-  (package
-    (name "r-ctrialsgov")
-    (version "0.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ctrialsgov" version))
-              (sha256
-               (base32
-                "0hdh1fdfaja8amf7fkvk1c6yif703132bvacq0j9pk5jr97czgpw"))))
-    (properties `((upstream-name . "ctrialsgov")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringi
-                             r-rlang
-                             r-purrr
-                             r-plotly
-                             r-matrix
-                             r-lubridate
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ctrialsgov")
-    (synopsis
-     "Query Data from U.S. National Library of Medicine's Clinical Trials Database")
-    (description
-     "Tools to create and query database from the U.S. National Library of Medicine's
-Clinical Trials database <https://clinicaltrials.gov/>.  Functions provide
-access a variety of techniques for searching the data using range queries,
-categorical filtering, and by searching for full-text keywords.  Minimal
-graphical tools are also provided for interactively exploring the constructed
-data.")
-    (license license:expat)))
-
-(define-public r-ctrdata
-  (package
-    (name "r-ctrdata")
-    (version "1.11.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ctrdata" version))
-              (sha256
-               (base32
-                "076v3bll8s6m61wcbwgrgrm34g0wa7gsc90mbwxwap1xfxyzjjsg"))))
-    (properties `((upstream-name . "ctrdata")))
-    (build-system r-build-system)
-    (inputs (list sed php perl coreutils))
-    (propagated-inputs (list r-xml2
-                             r-stringi
-                             r-rvest
-                             r-nodbi
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-clipr))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=ctrdata")
-    (synopsis "Retrieve and Analyze Clinical Trials in Public Registers")
-    (description
-     "This package provides a system for querying, retrieving and analyzing protocol-
-and results-related information on clinical trials from three public registers,
-the European Union Clinical Trials Register ('EUCTR',
-<https://www.clinicaltrialsregister.eu/>), ClinicalTrials.gov ('CTGOV',
-<https://clinicaltrials.gov/>) and the ISRCTN (<http://www.isrctn.com/>).  Trial
-information is downloaded, converted and stored in a database ('PostgreSQL',
-SQLite', DuckDB or MongoDB'; via package nodbi').  Functions are included to
-identify deduplicated records, to easily find and extract variables (fields) of
-interest even from complex nesting as used by the registers, and to update
-previous queries.  The package can be used for meta-analysis and trend-analysis
-of the design and conduct as well as for results of clinical trials.")
-    (license license:expat)))
 
 (define-public r-ctqr
   (package
@@ -4959,17 +4882,16 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstable" version))
               (sha256
                (base32
-                "0gaxg4y9fpx9h1yhay449mnwpl2lpfa1cvkg9d83ddgdg7n8hkss"))))
+                "192agl25w46m38i0p1j6kz0d3sylxqrzhdfy1l605d5zcgpm8vzj"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -5963,13 +5885,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew" version))
               (sha256
                (base32
-                "1lqcnr9mwqgn5kgssxn17lb6g3avn0s6l476gpg5ic01f9x3nrvb"))))
+                "1v0vbg8k0lmy8wqldf7vp7i4j6dcl8pbrrqyr20fadg2qidm76gm"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -6297,6 +6219,30 @@ models, the intercepts depend on the thresholds that define the intervals.
 Infrastructure for working with censored or truncated normal, logistic, and
 Student-t distributions, i.e., d/p/q/r functions and distributions3 objects.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-crayons
+  (package
+    (name "r-crayons")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crayons" version))
+              (sha256
+               (base32
+                "0mww2s57pkc6i0hg9xmm4j35gn1r6wyr7k4dksg4mhifbi1vwc43"))))
+    (properties `((upstream-name . "crayons")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/christopherkenny/crayons")
+    (synopsis "Color Palettes from Crayon Boxes")
+    (description
+     "This package provides color palettes based on crayon colors since the early
+1900s.  Colors are based on various crayon colors, sets, and promotional
+palettes, most of which can be found at
+<https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>.  All palettes are
+discrete palettes and are not necessarily color-blind friendly.  Provides scales
+for ggplot2 for discrete coloring.")
+    (license license:expat)))
 
 (define-public r-crawl
   (package
@@ -9255,13 +9201,13 @@ distributions.  Rosenthal and Rubin (1994)
 (define-public r-counterfactuals
   (package
     (name "r-counterfactuals")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "counterfactuals" version))
               (sha256
                (base32
-                "1h6wy8ab58akpg4vh9ryps00iwq87jd9r7qpm4yd9jmnq707g1xn"))))
+                "1gv6kgd932k74lwrv38zdpyf56j6mlr0kh5jky66zklb00zklkl3"))))
     (properties `((upstream-name . "counterfactuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmatch
@@ -13355,16 +13301,16 @@ Senge, R. (2012) <doi:10.1109/TFUZZ.2011.2179303>.")
 (define-public r-consrank
   (package
     (name "r-consrank")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ConsRank" version))
               (sha256
                (base32
-                "0vdjp2kawnmwz5rxp1p489l6pq61byyzpbs0w9m4rbal3whn65hf"))))
+                "0v1dr7zj2fpgncymakv5qszdrlqzvc5zxfyc3yrsj09gbm0gvyby"))))
     (properties `((upstream-name . "ConsRank")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlist r-rgl r-proxy r-gtools))
+    (propagated-inputs (list r-tidyr r-rlist r-rgl r-proxy r-gtools))
     (home-page "https://www.r-project.org/")
     (synopsis
      "Compute the Median Ranking(s) According to the Kemeny's Axiomatic Approach")
@@ -13375,13 +13321,15 @@ incomplete.  The package contains both branch-and-bound algorithms and heuristic
 solutions recently proposed.  The searching space of the solution can either be
 restricted to the universe of the permutations or unrestricted to all possible
 ties.  The package also provide some useful utilities for deal with preference
-rankings.  This release declare as deprecated some functions that are still in
-the package for compatibility.  Next release will not contains these functions.
-Please type ?ConsRank-deprecated Essential references: Emond, E.J., and Mason,
-D.W. (2002) <doi:10.1002/mcda.313>; D'Ambrosio, A., Amodio, S., and Iorio, C.
-(2015) <doi:10.1285/i20705948v8n2p198>; Amodio, S., D'Ambrosio, A., and
-Siciliano R. (2016) <doi:10.1016/j.ejor.2015.08.048>; D'Ambrosio, A., Mazzeo,
-G., Iorio, C., and Siciliano, R. (2017) <doi:10.1016/j.cor.2017.01.017>.")
+rankings, including both element-weight Kemeny distance and correlation
+coefficient.  This release declare as deprecated some functions that are still
+in the package for compatibility.  Next release will not contains these
+functions.  Please type ?ConsRank-deprecated Essential references: Emond, E.J.,
+and Mason, D.W. (2002) <doi:10.1002/mcda.313>; D'Ambrosio, A., Amodio, S., and
+Iorio, C. (2015) <doi:10.1285/i20705948v8n2p198>; Amodio, S., D'Ambrosio, A.,
+and Siciliano R. (2016) <doi:10.1016/j.ejor.2015.08.048>; D'Ambrosio, A.,
+Mazzeo, G., Iorio, C., and Siciliano, R. (2017) <doi:10.1016/j.cor.2017.01.017>;
+Albano, A., and Plaia, A. (2021) <doi:10.1285/i20705948v14n1p117>.")
     (license license:gpl3)))
 
 (define-public r-conspline
@@ -15583,44 +15531,6 @@ Methods Med Res) <DOI:10.1177/0962280214533378>, and Emura et al.
 (2019)<DOI:10.1016/j.cmpb.2018.10.020>.  Algorithms for generating correlated
 gene expressions are also available.")
     (license license:gpl2)))
-
-(define-public r-composits
-  (package
-    (name "r-composits")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "composits" version))
-              (sha256
-               (base32
-                "0njz6yn3dxi5czzmp93lcz2xr5gphiii857s5jggygq0xdszlx86"))))
-    (properties `((upstream-name . "composits")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tsoutliers
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-pracma
-                             r-otsad
-                             r-kableextra
-                             r-ics
-                             r-gridextra
-                             r-ggplot2
-                             r-forecast
-                             r-fastica
-                             r-dplyr
-                             r-dobin
-                             r-anomalize))
-    (native-inputs (list r-knitr))
-    (home-page "https://sevvandi.github.io/composits/")
-    (synopsis
-     "Compositional, Multivariate and Univariate Time Series Outlier Ensemble")
-    (description
-     "This package provides a compositional, multivariate and univariate time series
-outlier ensemble.  It uses the four R packages forecast', tsoutliers', otsad and
-anomalize to detect time series outliers (Kandanaarachchi, Menendez 2020)
-<doi:10.13140/RG.2.2.32217.95845>.")
-    (license license:gpl3)))
 
 (define-public r-compositional
   (package
@@ -23543,13 +23453,13 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (define-public r-climprojdiags
   (package
     (name "r-climprojdiags")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClimProjDiags" version))
               (sha256
                (base32
-                "1sggqm838r86qlhk6vxsvvagbxrv48hfv2m7cv6bgvjkwrjj8584"))))
+                "1dblw2m3lrzwv5avqsyvrainhssl3pgxff6dfab5jc72mg3c31ql"))))
     (properties `((upstream-name . "ClimProjDiags")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-pcict r-multiapply r-climdex-pcic))
@@ -24247,43 +24157,6 @@ estimating the Godambe information matrix.")
      "Small package to clean the R console and the R environment with the call of just
 one function.")
     (license license:gpl3)))
-
-(define-public r-cleants
-  (package
-    (name "r-cleants")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cleanTS" version))
-              (sha256
-               (base32
-                "09lix3699rfjcazb0ikizpj97scspvpkgnm2bchaxh1asg61p5cq"))))
-    (properties `((upstream-name . "cleanTS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-transformr
-                             r-tibbletime
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-lubridate
-                             r-imputets
-                             r-imputetestbench
-                             r-glue
-                             r-ggtext
-                             r-ggplot2
-                             r-gganimate
-                             r-data-table
-                             r-anomalize))
-    (home-page "https://github.com/Mayur1009/cleanTS")
-    (synopsis "Testbench for Univariate Time Series Cleaning")
-    (description
-     "This package provides a reliable and efficient tool for cleaning univariate time
-series data.  It implements reliable and efficient procedures for automating the
-process of cleaning univariate time series data.  The package provides
-integration with already developed and deployed tools for missing value
-imputation and outlier detection.  It also provides a way of visualizing large
-time-series data in different resolutions.")
-    (license license:gpl3+)))
 
 (define-public r-cleanrmd
   (package
@@ -26928,13 +26801,13 @@ Chrome web browser.")
 (define-public r-chromer
   (package
     (name "r-chromer")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chromer" version))
               (sha256
                (base32
-                "08sj7x391y8jv3wc3v3blvsl501jkx3li928hb16niszx6a4w58x"))))
+                "075nbj254v2nl585r3hd1yh4dxy1mwfbrpvzfrg69rs9pdq6z6yq"))))
     (properties `((upstream-name . "chromer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-httr r-dplyr))
@@ -27936,18 +27809,17 @@ to build a forecast.")
 (define-public r-chest
   (package
     (name "r-chest")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chest" version))
               (sha256
                (base32
-                "12n65l4r85cr16c3p2w1krnqnxkvalrpi8xnbzw4y2m0sp42ydgl"))))
+                "0905xl1vqn8icvf44vydhd00wvz5cdnl2igr7m0jmrsv564zdj5a"))))
     (properties `((upstream-name . "chest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-survival
-                             r-speedglm
                              r-mass
                              r-ggplot2
                              r-forestplot
@@ -33243,6 +33115,42 @@ paper.  The package also supports several other methods as described in the help
 files.")
     (license license:gpl3+)))
 
+(define-public r-causaloptim
+  (package
+    (name "r-causaloptim")
+    (version "0.9.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "causaloptim" version))
+              (sha256
+               (base32
+                "1p6qmxlyr907w7iwqarghwzir0am7w4wk1c9i8sgzy02yqssmagj"))))
+    (properties `((upstream-name . "causaloptim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/sachsmc/causaloptim")
+    (synopsis
+     "An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects")
+    (description
+     "When causal quantities are not identifiable from the observed data, it still may
+be possible to bound these quantities using the observed data.  We outline a
+class of problems for which the derivation of tight bounds is always a linear
+programming problem and can therefore, at least theoretically, be solved using a
+symbolic linear optimizer.  We extend and generalize the approach of Balke and
+Pearl (1994) <doi:10.1016/B978-1-55860-332-5.50011-0> and we provide a user
+friendly graphical interface for setting up such problems via directed acyclic
+graphs (DAG), which only allow for problems within this class to be depicted.
+The user can then define linear constraints to further refine their assumptions
+to meet their specific problem, and then specify a causal query using a text
+interface.  The program converts this user defined DAG, query, and constraints,
+and returns tight bounds.  The bounds can be converted to R functions to
+evaluate them for specific datasets, and to latex code for publication.  The
+methods and proofs of tightness and validity of the bounds are described in a
+paper by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
+<doi:10.1080/10618600.2022.2071905>.")
+    (license license:expat)))
+
 (define-public r-causalmodels
   (package
     (name "r-causalmodels")
@@ -34984,17 +34892,19 @@ Methods are described in Ziyi Li, Yijian Huang, Datta Patil, Martin G. Sanda
 (define-public r-carme
   (package
     (name "r-carme")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CARME" version))
               (sha256
                (base32
-                "1zz8z5gxi9hzk7bgjisn9j8siy1m86vk3ar8fm1x44p10hylbd27"))))
+                "0nam14g052swb44sw07as4agk0z47f7mc1kqlj0z9m1ywsbisnpl"))))
     (properties `((upstream-name . "CARME")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
+                             r-rstantools
                              r-rstan
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-mass
@@ -35007,9 +34917,9 @@ Methods are described in Ziyi Li, Yijian Huang, Datta Patil, Martin G. Sanda
 Generalised Linear Models with CAR (conditional autoregressive) spatial random
 effects for spatially and temporally misaligned data, provided a suitable
 Multiple Membership matrix.  The main references are Gramatica, Liverani and
-Congdon (2022) <doi:10.48550/arXiv.2208.06738>, Petrof, Neyens, Nuyts,
-Nackaerts, Nemery and Faes (2020) <doi:10.1002/sim.8697> and Gramatica, Congdon
-and Liverani <doi:10.1111/rssc.12480>.")
+Congdon (2023) <doi:10.1214/23-BA1370>, Petrof, Neyens, Nuyts, Nackaerts, Nemery
+and Faes (2020) <doi:10.1002/sim.8697> and Gramatica, Congdon and Liverani
+<doi:10.1111/rssc.12480>.")
     (license license:gpl3+)))
 
 (define-public r-carm
@@ -37834,6 +37744,40 @@ Interactive web based charts can be embedded in R Markdown documents or Shiny
 web applications.")
     (license license:gpl3+)))
 
+(define-public r-c2z
+  (package
+    (name "r-c2z")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "c2z" version))
+              (sha256
+               (base32
+                "0i0n2cdbil8gd9gjygh03ihnfrwdyw0szhir6kmjrs01x0p5w9z1"))))
+    (properties `((upstream-name . "c2z")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/oeysan/c2z/")
+    (synopsis "Reference Manager")
+    (description
+     "Cristin to Zotero ('c2z') aims at obtaining total dominion over Cristin
+('Current Research Information SysTem in Norway') and Zotero'.  The package
+enables manipulating Zotero libraries using R'.  Import references from
+Cristin', Regjeringen', CRAN', ISBN ('Alma', LoC'), and DOI ('CrossRef',
+DataCite') to a Zotero library.  Add, edit, copy, or delete items, including
+attachments and collections, and export references to BibLaTeX (and other
+formats).")
+    (license license:expat)))
+
 (define-public r-c2d4u-tools
   (package
     (name "r-c2d4u-tools")
@@ -37929,19 +37873,20 @@ the regional level (mostly NUTS 3) for 31 EU/EFTA countries.")
 (define-public r-c060
   (package
     (name "r-c060")
-    (version "0.2-9")
+    (version "0.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "c060" version))
               (sha256
                (base32
-                "0bcip5lydd3alll6c8r7i0avs92rxc14i40lhmbbg5nygif4h8dn"))))
+                "0dmr9xyml69a3xggjahpc5r6kg2qf9h7hkl7kdz7qkl8aslca0zn"))))
     (properties `((upstream-name . "c060")))
     (build-system r-build-system)
     (propagated-inputs (list r-tgp
                              r-survival
                              r-peperr
                              r-penalizedsvm
+                             r-penalized
                              r-mlegp
                              r-lattice
                              r-glmnet))

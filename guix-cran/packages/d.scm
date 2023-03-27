@@ -2341,13 +2341,13 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
-    (version "0.2.4")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dtrackr" version))
               (sha256
                (base32
-                "0cls3hkc49gmyzdbbpajx0rindk4s7jpfg5f01js605zhas6xgsa"))))
+                "1pwkdv0hc4y0184882s1xd5fxvh5mw9737mn1z89nxgk78ld25gc"))))
     (properties `((upstream-name . "dtrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -2357,6 +2357,8 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
                              r-rsvg
                              r-rlang
                              r-purrr
+                             r-png
+                             r-pdftools
                              r-magrittr
                              r-htmltools
                              r-glue
@@ -2364,7 +2366,7 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
                              r-dplyr
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dtrackr")
+    (home-page "https://terminological.github.io/dtrackr/index.html")
     (synopsis "Track your Data Pipelines")
     (description
      "Track and document dplyr data pipelines.  As you filter, mutate, and join your
@@ -4742,13 +4744,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.4")
+    (version "7.13.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "drake" version))
               (sha256
                (base32
-                "00di7b2zgk9ilpnbjmakp88f0295p697pmczl3b8gpm08bczr6s9"))))
+                "0sb46bnf4svs8gp0m846nij6ki8cfaiypjxy3y32lq3xnzgw622k"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -9439,27 +9441,6 @@ Scrucca, L. (2013) <doi:10.18637/jss.v053.i04> while the Gaussian Mixture Logic
 stems from AdaptGauss': Ultsch, A, et al. (2015) <doi:10.3390/ijms161025897>.")
     (license license:expat)))
 
-(define-public r-distributionfitr
-  (package
-    (name "r-distributionfitr")
-    (version "0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DistributionFitR" version))
-              (sha256
-               (base32
-                "0wg43gqsdy1ja0l489k27k9q1w2zq45wzmqnv9wfc734rf8kvlba"))))
-    (properties `((upstream-name . "DistributionFitR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=DistributionFitR")
-    (synopsis "Fitting Multiple Parametric Distributions")
-    (description
-     "Given an univariate dataset, returns the best fitting parameter families, as
-defined in Shao (2003) <doi:10.1007/B97553>, including their parameter estimates
-via maximum likelihood.")
-    (license license:gpl3+)))
-
 (define-public r-distrib
   (package
     (name "r-distrib")
@@ -9701,13 +9682,13 @@ supported.")
 (define-public r-distillml
   (package
     (name "r-distillml")
-    (version "0.1.0.9")
+    (version "0.1.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distillML" version))
               (sha256
                (base32
-                "0p7zx6cpf5bxlcaq1w95mbm46fyl27a6v76wd45sqhldnv78wb8h"))))
+                "05pk6g3bjaw0ghb673yxfvnijqkvjy4bfxk2vpiwccm7hjszl62s"))))
     (properties `((upstream-name . "distillML")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9715,7 +9696,6 @@ supported.")
                              r-r6
                              r-purrr
                              r-mltools
-                             r-mass
                              r-gridextra
                              r-glmnet
                              r-ggplot2
@@ -11485,13 +11465,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "5.8")
+    (version "5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Directional" version))
               (sha256
                (base32
-                "1x7r0p9p80x2wypgfk3kbkb2sh82q5g46wyq5dr6v5vb8cjn3zrd"))))
+                "04rfj6zk5h9fp0m8fca12wrs85fz8p7xivbh11hm4lzzf4f008rn"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -11527,7 +11507,7 @@ spherical mean vectors.  Communications in Statistics-Simulation and Computation
 (Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e) Tsagris M.
 and Alzeley O. (2023).  Circular and spherical projected Cauchy distributions.
 <arXiv:2302.02468>.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-directeffects
   (package
@@ -16296,13 +16276,13 @@ statistics.")
 (define-public r-describedisplay
   (package
     (name "r-describedisplay")
-    (version "0.2.7")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DescribeDisplay" version))
               (sha256
                (base32
-                "0241mbz0y3ala7fsb4fwjd0xigsk0wq77hfrjyvnnp97rfjfzmcv"))))
+                "14iz7n00ll4gqm9xfwn79s7nhqhcs116hgpdfj2m9m9brpabpa6i"))))
     (properties `((upstream-name . "DescribeDisplay")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reshape2 r-plyr r-ggplot2 r-ggally))
@@ -16567,6 +16547,26 @@ multivariate random variables.  Could also be used to visualize DD-plots (a
 multivariate generalization of QQ-plots).")
     (license license:gpl2)))
 
+(define-public r-deps
+  (package
+    (name "r-deps")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "deps" version))
+              (sha256
+               (base32
+                "151dnwl98ciz0r36h0yaqa4gs1kkizbb72y92dian1sz9ilp7s0i"))))
+    (properties `((upstream-name . "deps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-renv r-remotes r-jsonlite))
+    (home-page "https://github.com/analythium/deps")
+    (synopsis "Dependency Management with 'roxygen'-Style Comments")
+    (description
+     "Manage your source code dependencies by decorating your existing R code with
+special, roxygen'-style comments.")
+    (license license:expat)))
+
 (define-public r-depons2r
   (package
     (name "r-depons2r")
@@ -16775,6 +16775,31 @@ explanations on the subject can be found in papers Liebscher (2014)
 <doi:10.2478/demo-2014-0004>; Liebscher (2017) <doi:10.1515/demo-2017-0012>;
 Liebscher (2019, submitted).")
     (license license:gpl2)))
+
+(define-public r-depcens
+  (package
+    (name "r-depcens")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DepCens" version))
+              (sha256
+               (base32
+                "0sz7bj6pqwj6appyymajav0q5g1hrpaa8m75rx4drfjdp0lv7ihq"))))
+    (properties `((upstream-name . "DepCens")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rootsolve r-matrixstats r-formula
+                             r-dlm))
+    (home-page "https://github.com/GabrielGrandemagne/DepCens")
+    (synopsis "Dependent Censoring Regression Models")
+    (description
+     "Dependent censoring regression models for survival multivariate data.  These
+models are based on extensions of the frailty models, capable to accommodating
+the dependence between failure and censoring times, with Weibull and piecewise
+exponential marginal distributions.  Theoretical details regarding the models
+implemented in the package can be found in Schneider et al. (2019)
+<doi:10.1002/bimj.201800391>.")
+    (license license:gpl2+)))
 
 (define-public r-depcache
   (package
@@ -22096,13 +22121,13 @@ against multiple versions of your data frame.")
 (define-public r-dataverse
   (package
     (name "r-dataverse")
-    (version "0.3.12")
+    (version "0.3.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataverse" version))
               (sha256
                (base32
-                "0kqyl5cz83bc50xiwis4friwa7p2bs9gj4i5027sxslqva2d6ysn"))))
+                "1fzbllznvq5mls3hm1pirlkgjlsiwvdkkcqci2jymh376l2gx35g"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-readr r-jsonlite r-httr r-checkmate))

@@ -781,13 +781,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.7.1")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "0yflmf8k4rhn68rk364nnl4x3gav80darf8n21g5ic9yj5yzyqw2"))))
+                "0646pz7kb63hfjyz9jl254i94v0g7fz7fcqxdcv4p02zsw5zq84y"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -801,27 +801,28 @@ quantitative (XIC) data.  Fasta-formatted proteomes (eg from UniProt Consortium
 <doi:10.1093/nar/gky1049>) can be read with automatic parsing and multiple
 annotation types (like species origin, abbreviated gene names, etc) extracted.
 Initial results from multiple software for protein (and peptide) quantitation
-can be imported (to a common format): Fragpipe(da Veiga et al 2020,
-<doi:10.1038/s41592-020-0912-y>), MaxQuant (Tyanova et al 2016
-<doi:10.1038/nprot.2016.136>), MassChroq (Valot et al 2011]
-<doi:10.1002/pmic.201100120>), ProteomeDiscoverer, OpenMS
-(<doi:10.1038/nmeth.3959>) and Proline (Bouyssie et al 2020
-<doi:10.1093/bioinformatics/btaa118>).  Meta-data provided in sdrf format can be
-integrated to the analysis.  Quantitative proteomics measurements frequently
-contain multiple NA values, due to physical absence of given peptides in some
-samples, limitations in sensitivity or other reasons.  The functions provided
-here help to inspect graphically the data to investigate the nature of NA-values
-via their respective replicate measurements and to help/confirm the choice of
-NA-replacement by low random values.  Dedicated filtering and statistical
-testing using the framework of package limma <doi:10.18129/B9.bioc.limma> can be
-run, enhanced by multiple rounds of NA-replacements to provide robustness
-towards rare stochastic events.  Multi-species samples, as frequently used in
-benchmark-tests (eg Navarro et al 2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
-<doi:10.1016/j.jprot.2015.11.011>), can be run with special options separating
-the data into sub-groups during normalization and testing.  Subsequently, ROC
-curves (Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to
-compare multiple analysis approaches.  As detailed example the data-set from
-Ramus et al 2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by MaxQuant,
+can be imported (to a common format): MaxQuant (Tyanova et al 2016
+<doi:10.1038/nprot.2016.136>), Fragpipe(da Veiga et al 2020,
+<doi:10.1038/s41592-020-0912-y>), MassChroq (Valot et al 2011]
+<doi:10.1002/pmic.201100120>), OpenMS (<doi:10.1038/nmeth.3959>),
+ProteomeDiscoverer and Proline (Bouyssie et al 2020
+<doi:10.1093/bioinformatics/btaa118>).  Meta-data provided by initial analysis
+software and/or in sdrf format can be integrated to the analysis.  Quantitative
+proteomics measurements frequently contain multiple NA values, due to physical
+absence of given peptides in some samples, limitations in sensitivity or other
+reasons.  Help is provided to inspect the data graphically to investigate the
+nature of NA-values via their respective replicate measurements and to
+help/confirm the choice of NA-replacement algorithms.  Dedicated filtering and
+statistical testing using the framework of package limma
+<doi:10.18129/B9.bioc.limma> can be run, enhanced by multiple rounds of
+NA-replacements to provide robustness towards rare stochastic events.
+Multi-species samples, as frequently used in benchmark-tests (eg Navarro et al
+2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
+<doi:10.1016/j.jprot.2015.11.011>), can be run with special options considering
+such sub-groups during normalization and testing.  Subsequently, ROC curves
+(Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to compare
+multiple analysis approaches.  As detailed example the data-set from Ramus et al
+2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by MaxQuant,
 ProteomeDiscoverer, and Proline is provided with a detailed analysis of
 heterologous spike-in proteins.")
     (license license:gpl3)))
@@ -2591,13 +2592,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wnl" version))
               (sha256
                (base32
-                "0191z30rq92xy2lzg6mpk4yvj67frfmqzavy7xvmsv96n4pcwbay"))))
+                "1jfw3rz495ljaxs4kwp8xpr71i55kzq8qcjlmw6q04vk5lxhr7rj"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -5208,28 +5209,6 @@ manually filled and have several formatting and compatibility issues.  Weed aims
 to resolve these with its functions.")
     (license license:expat)))
 
-(define-public r-wee
-  (package
-    (name "r-wee")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "WEE" version))
-              (sha256
-               (base32
-                "0i3h67p72lr708mwdw3rbzr1lqqr8n2dxv7f0bwyqzxv41sx1iz3"))))
-    (properties `((upstream-name . "WEE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quantreg r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=WEE")
-    (synopsis
-     "Weighted Estimated Equation (WEE) Approaches in Genetic Case-Control Studies")
-    (description
-     "Secondary analysis of case-control studies using a weighted estimating equation
-(WEE) approach: logistic regression for binary secondary outcomes, linear
-regression and quantile regression for continuous secondary outcomes.")
-    (license license:gpl2)))
-
 (define-public r-wec
   (package
     (name "r-wec")
@@ -7025,43 +7004,6 @@ is a geometric approach for combining subset posteriors.  It allows for parallel
 and distributed computation of the posterior in case of complex models and/or
 big datasets, thereby increasing computational speed tremendously.")
     (license license:gpl3)))
-
-(define-public r-waspasr
-  (package
-    (name "r-waspasr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "waspasR" version))
-              (sha256
-               (base32
-                "04jwbf79p1cdc677pq21vxkwk6fy8b2bp8cps399d59i0fvrqx5v"))))
-    (properties `((upstream-name . "waspasR")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=waspasR")
-    (synopsis
-     "Tool Kit to Implement a W.A.S.P.A.S. Based Multi-Criteria Decision Analysis Solution")
-    (description
-     "This package provides a set of functions to implement decision-making systems
-based on the W.A.S.P.A.S. method (Weighted Aggregated Sum Product Assessment),
-Chakraborty and Zavadskas (2014) <doi:10.15388/Informatica.2014.01>.  So this
-package offers functions that analyze and validate the raw data, which must be
-entered in a determined format; extract specific vectors and matrices from this
-raw database; normalize the input data; calculate rankings by intermediate
-methods; apply the lambda parameter for the main method; and a function that
-does everything at once.  The package has an example database called choppers,
-with which the user can see how the input data should be organized so that
-everything works as recommended by the decision methods based on multiple
-criteria that this package solves.  Basically, the data are composed of a set of
-alternatives, which will be ranked, a set of choice criteria, a matrix of values
-for each Alternative-Criterion relationship, a vector of weights associated with
-the criteria, since certain criteria are considered more important than others,
-as well as a vector that defines each criterion as cost or benefit, this
-determines the calculation formula, as there are those criteria that we want the
-highest possible value (e.g. durability) and others that we want the lowest
-possible value (e.g. price).")
-    (license license:gpl2+)))
 
 (define-public r-wasp
   (package

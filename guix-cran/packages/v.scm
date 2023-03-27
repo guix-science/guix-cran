@@ -508,13 +508,13 @@ overlapping stochastic blockmodels.")
 (define-public r-vsolassobag
   (package
     (name "r-vsolassobag")
-    (version "0.99.0")
+    (version "0.99.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VSOLassoBag" version))
               (sha256
                (base32
-                "1pp1rycxfzg3cif73q5z6c06ln6h31b24mxgbh48nhirjgp8b6g1"))))
+                "1jmnm435x36jlhbzl7kgjiby7kb7yjhh013zdnnvf9pcjaallqn9"))))
     (properties `((upstream-name . "VSOLassoBag")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3364,6 +3364,30 @@ diacritics and different spellings.")
 status of the video to be sent from the UI to the server, and allows events such
 as playing and pausing the video to be triggered from the server.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-vicus
+  (package
+    (name "r-vicus")
+    (version "0.99.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Vicus" version))
+              (sha256
+               (base32
+                "1f4vmz34gms0vbvpn94rgdhbbvxbqmjxzhd9n4fxfm0dizmba004"))))
+    (properties `((upstream-name . "Vicus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-rann r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rikenbit/Vicus")
+    (synopsis
+     "Exploiting Local Structures to Improve Network-Based Analysis of Biological Data")
+    (description
+     "Compared with the similar graph embedding method such as Laplacian Eigenmaps,
+Vicus can exploit more local structures of graph data.  For the details of the
+methods, see the reference section of GitHub README.md
+<https://github.com/rikenbit/Vicus>.")
+    (license license:expat)))
 
 (define-public r-vicmapr
   (package

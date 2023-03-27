@@ -3516,6 +3516,30 @@ each other.  Such is not the case if the random intercept distribution was
 Gaussian.")
     (license license:gpl2+)))
 
+(define-public r-brickset
+  (package
+    (name "r-brickset")
+    (version "2022.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brickset" version))
+              (sha256
+               (base32
+                "1ga79h40b8ckhm16894vyc7jixdm1g1hfhf7pribz59041ylj6rz"))))
+    (properties `((upstream-name . "brickset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/jbryer/brickset")
+    (synopsis
+     "Interface with the Brickset API for Getting Data About LEGO Sets")
+    (description
+     "Interface with the Brickset API
+<https://brickset.com/article/52664/api-version-3-documentation> for getting
+data about LEGO sets.  Data sets that can be used for teaching and learning
+without the need of a Brickset account and API key are also included.  Includes
+all LEGO since through the end of 2022.")
+    (license license:gpl3+)))
+
 (define-public r-brglm2
   (package
     (name "r-brglm2")
@@ -4498,13 +4522,13 @@ review).")
 (define-public r-bqror
   (package
     (name "r-bqror")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bqror" version))
               (sha256
                (base32
-                "1wba295p4bnmc3z11xvvjwprbdy8bwn837zd7j5dfnrvkvqgcg50"))))
+                "0h0nhbid32m5fs97f5ypc2jz04yzik5bxpgf7rp5albr9rcbwnr4"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -6658,13 +6682,13 @@ any common GIS format.")
 (define-public r-bnsp
   (package
     (name "r-bnsp")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BNSP" version))
               (sha256
                (base32
-                "0k1v2z2rw9inhrsp28hc6m855sqfi6bqfgf2hiw60pdmd5vp94xm"))))
+                "0l2d1r601j2y3ksmlwiilk59l6zcip1bf8r4b56qxvfqmx4imkcn"))))
     (properties `((upstream-name . "BNSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-threejs
@@ -6821,13 +6845,13 @@ Corradin et al. (2021) <doi:10.18637/jss.v100.i15> for more details.")
 (define-public r-bnpdensity
   (package
     (name "r-bnpdensity")
-    (version "2021.5.4")
+    (version "2023.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BNPdensity" version))
               (sha256
                (base32
-                "16hm81wn08fjdamikzrmhpbsz31phkqxdqhp23w0pbxczk9gll47"))))
+                "0b0hv634k5vnc74iw2c0arx9rl3bh5hahhrhp14gx324jv279fs5"))))
     (properties `((upstream-name . "BNPdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16393,13 +16417,13 @@ allowing calculations on data with missing values.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.2")
+    (version "1.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BEKKs" version))
               (sha256
                (base32
-                "089f50lcpgnp2k7xkg45kqm8gbxd1ahsz5d45r8sjn8fmb1a99vw"))))
+                "039may5c788sdhjgbbcljwn71wpya8d9mcj8zqg3yqm8mxjcgzk0"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -19391,13 +19415,13 @@ such as rng, quantile, and distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.3-0")
+    (version "7.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesTFR" version))
               (sha256
                (base32
-                "17q85dwpyf8ipw3pbwnknczf2n4cq2yzynjc34nvka3x6a9f2kfv"))))
+                "1pxjbis26ck0fd2f19f0i0mn54wzis89niqhm3b6vz9zvv3angzh"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019
@@ -19410,8 +19434,9 @@ such as rng, quantile, and distribution functions.")
     (synopsis "Bayesian Fertility Projection")
     (description
      "Making probabilistic projections of total fertility rate for all countries of
-the world, using a Bayesian hierarchical model <doi:10.1007/s13524-011-0040-5>.
-Subnational probabilistic projections are also supported.")
+the world, using a Bayesian hierarchical model <doi:10.1007/s13524-011-0040-5>
+<doi:10.18637/jss.v106.i08>.  Subnational probabilistic projections are also
+supported <doi:10.4054/DemRes.2018.38.60>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -23691,13 +23716,13 @@ high support from the data are saved to memory and used in the final model.")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9.3")
+    (version "2.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BART" version))
               (sha256
                (base32
-                "1qg9f450vz269x0sn20lzza66vyz546cidc93bxrw1r0ld80nl9c"))))
+                "0m8vznp31sddg2cvm329f8dhd325q67q7f2wfg30l183w2n7b2gi"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet r-nlme))

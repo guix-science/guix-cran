@@ -2012,13 +2012,13 @@ metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu (2020)
 (define-public r-ttainterfacetrendanalysis
   (package
     (name "r-ttainterfacetrendanalysis")
-    (version "1.5.8")
+    (version "1.5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TTAinterfaceTrendAnalysis" version))
               (sha256
                (base32
-                "14bws9z57prnbb30ivl8zzyqi9hrj0nhm3m5i249rn2kyzw70gw1"))))
+                "1gc162j8pm0qfhlwfyg8hdp8wqni9qn0jq6vh6ip7wh6h490hg4x"))))
     (properties `((upstream-name . "TTAinterfaceTrendAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2031,7 +2031,8 @@ metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu (2020)
                              r-nlme
                              r-mvtnorm
                              r-multcomp
-                             r-e1071))
+                             r-e1071
+                             r-data-table))
     (home-page "https://CRAN.R-project.org/package=TTAinterfaceTrendAnalysis")
     (synopsis "Temporal Trend Analysis Graphical Interface")
     (description
@@ -2336,13 +2337,13 @@ forecasting.")
 (define-public r-tsss
   (package
     (name "r-tsss")
-    (version "1.3.1")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSSS" version))
               (sha256
                (base32
-                "06wnbj741yyi5b483zhbaccvqpbg8lh3z9vnrxy64x28hnn79cly"))))
+                "0iywf57pw7bnx6sf2w2wkwcnwhplpgnbmifq5rna2vd2v2rp5hkd"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -3092,13 +3093,13 @@ plotted.")
 (define-public r-tsfgrnn
   (package
     (name "r-tsfgrnn")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsfgrnn" version))
               (sha256
                (base32
-                "17m9k8nvfhpk11g7f64c32sb4r6vdcgci93apcr89y8dkbw4n5ga"))))
+                "02sxbf1j2p0j2pqwsdzfpm63dgm2wn0bxlifms3kb18qjsssnjiz"))))
     (properties `((upstream-name . "tsfgrnn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -8098,13 +8099,13 @@ contributions, the final document can be downloaded and rendered locally.")
 (define-public r-trackdf
   (package
     (name "r-trackdf")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trackdf" version))
               (sha256
                (base32
-                "17iwvpfp57x5bz08njbs1p0kdg8lhjk08z2vzmr07sniv1vc6a0l"))))
+                "1rb3q5nwj88rxrh8g8vabawws5d75qvjxkrmya0ppfdxfpysn6d0"))))
     (properties `((upstream-name . "trackdf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-lubridate r-dplyr r-data-table))
@@ -8261,24 +8262,25 @@ instead.")
 (define-public r-tracee
   (package
     (name "r-tracee")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tracee" version))
               (sha256
                (base32
-                "01qn5l2blb9fybf5f8xzr2qph7q9znazgzq558bcw9ax1sbb3hvd"))))
+                "1hv4ymi1p76k2b3x4s6qs53xwda3ybkwbdpnlhfgz7fryvy483r5"))))
     (properties `((upstream-name . "tracee")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gridextra r-ggplot2 r-flextable))
+    (propagated-inputs (list r-nmdata r-gridextra r-ggplot2 r-flextable
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=tracee")
     (synopsis "Easily Save Output and Trace it Back to Code")
     (description
-     "Simple but crucial functionality related to creation of reproducible and
-traceable output (plots) back to code.  It has a graphics saver with simple
-automation of plot stamping with source, destination and creation time, a
-selection of dimensions for use in presentations.  A list of plots can be saved
-at once.")
+     "Write output (plots and tables) ensuring traceability back to code.  Includes a
+graphics saver with simple automation of stamping with source, destination and
+creation time.  A list of plots can be saved at once.  A user-friendly selection
+of output dimensions for presentations, on-screen inspections, and more
+available.")
     (license license:expat)))
 
 (define-public r-traceassist
@@ -8806,28 +8808,6 @@ that allow you to create new tour methods from R.")
      "This package contains two functions related to sports competitions.  One to
 create league tables and one to create a match schedule.")
     (license license:gpl3)))
-
-(define-public r-touchard
-  (package
-    (name "r-touchard")
-    (version "2.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "touchard" version))
-              (sha256
-               (base32
-                "06491r4x3ycmv3ddbqwig334wj9qvm395xlaifx4hjjyyi65xb3q"))))
-    (properties `((upstream-name . "touchard")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plotrix r-numderiv r-nleqslv r-mass))
-    (home-page "https://cran.r-project.org/package=touchard")
-    (synopsis "Touchard Model and Regression")
-    (description
-     "Tools for analyzing count data with the Touchard model (Matsushita et al., 2018,
-Comm Stat Th Meth <doi:10.1080/03610926.2018.1444177>).  It includes univariate
-estimation (ML and MM) and regression tools developed by Andrade et al.
-(submitted).")
-    (license license:gpl2)))
 
 (define-public r-touch
   (package
@@ -10488,13 +10468,13 @@ Owczarzy R (2004) <doi:10.1021/bi034621r>, Owczarzy R (2008)
 (define-public r-tmbstan
   (package
     (name "r-tmbstan")
-    (version "1.0.4")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmbstan" version))
               (sha256
                (base32
-                "1amjsvj7m7vyyhbppklw15n6xd02d2qjhswwzh543kc2f2hy79l4"))))
+                "0sg3d6mjnmq690fjikxs4mxi42ax80akvn8bk1i603a2pm42hhjh"))))
     (properties `((upstream-name . "tmbstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -11717,13 +11697,13 @@ data.tables'.")
 (define-public r-timsac
   (package
     (name "r-timsac")
-    (version "1.3.6")
+    (version "1.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timsac" version))
               (sha256
                (base32
-                "186919qka9j3kfpdw2gbh16n48d6xgz9lfqgk4b17f1d7l72iplg"))))
+                "102x4cnwg11995b48snigncrs5fnrjsqrwym068md5ki316mmslw"))))
     (properties `((upstream-name . "timsac")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -21419,13 +21399,13 @@ asymptotic distribution of t* as described by Nandy, Weihs, and Drton (2016)
 (define-public r-tatoo
   (package
     (name "r-tatoo")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tatoo" version))
               (sha256
                (base32
-                "0w9rm6cnc1mpfyklb8njzjwph2c38niinzxiflrqjqfdp7nd8281"))))
+                "0lvnl2lqp16af4rkmijl47bx5xf17gpji21s0h8xxzpbxbmy3xwx"))))
     (properties `((upstream-name . "tatoo")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21859,13 +21839,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.12.0")
+    (version "0.12.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TapeS" version))
               (sha256
                (base32
-                "0h5a4l4n3aszgchaja2b0c7670lh0gggkj1l4w5hc6sycrpz1x12"))))
+                "1f6g8hz4bj7192kh5s7a1vc6kh4niw4pw3d259mwfklmkbc26m4f"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (propagated-inputs (list r-taper r-rcpparmadillo r-rcpp))

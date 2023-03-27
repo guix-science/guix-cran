@@ -1514,6 +1514,43 @@ Shiny applications and in R markdown documents.")
 points, add lines, add text, and add arrows.")
     (license license:gpl3)))
 
+(define-public r-swimmer
+  (package
+    (name "r-swimmer")
+    (version "0.14.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SwimmeR" version))
+              (sha256
+               (base32
+                "17ri50k88absi7ijj1w478aahl9hx1ajq16gk9807m9q83pq25yg"))))
+    (properties `((upstream-name . "SwimmeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-readr
+                             r-purrr
+                             r-pdftools
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SwimmeR")
+    (synopsis "Data Import, Cleaning, and Conversions for Swimming Results")
+    (description
+     "The goal of the SwimmeR package is to provide means of acquiring, and then
+analyzing, data from swimming (and diving) competitions.  To that end SwimmeR
+allows results to be read in from .html sources, like Hy-Tek real time results
+pages, .pdf files, ISL results, Omega results, and (on a development basis) .hy3
+files.  Once read in, SwimmeR can convert swimming times (performances) between
+the computationally useful format of seconds reported to the 100ths place (e.g.
+95.37), and the conventional reporting format (1:35.37) used in the swimming
+community.  SwimmeR can also score meets in a variety of formats with user
+defined point values, convert times between courses ('LCM', SCM', SCY') and draw
+single elimination brackets, as well as providing a suite of tools for working
+cleaning swimming data.  This is a developmental package, not yet mature.")
+    (license license:expat)))
+
 (define-public r-swim
   (package
     (name "r-swim")
@@ -1723,36 +1760,6 @@ user can also use the original JPL DE431 data.")
 as personal identity numbers ('personnummer') and organizational identity
 numbers ('organisationsnummer').")
     (license license:bsd-2)))
-
-(define-public r-sweep
-  (package
-    (name "r-sweep")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sweep" version))
-              (sha256
-               (base32
-                "1705mcp9p5h50ifqjjwx61z5wl5izv889nxcgdkx1i0dlcr61l2a"))))
-    (properties `((upstream-name . "sweep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-lubridate
-                             r-forecast
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/sweep")
-    (synopsis "Tidy Tools for Forecasting")
-    (description
-     "Tidies up the forecasting modeling and prediction work flow, extends the broom
-package with sw_tidy', sw_glance', sw_augment', and sw_tidy_decomp functions for
-various forecasting models, and enables converting forecast objects to \"tidy\"
-data frames with sw_sweep'.")
-    (license license:gpl3+)))
 
 (define-public r-sweater
   (package
@@ -2648,13 +2655,13 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
 (define-public r-svd
   (package
     (name "r-svd")
-    (version "0.5.3")
+    (version "0.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svd" version))
               (sha256
                (base32
-                "1rmkz42kflf253s9jya008n2cmh8p180giggcfrr3qxfg92abkhl"))))
+                "19201sy9m6gksgrisnnf9scjd86knfwajrcvrpyw44fysxya1cnn"))))
     (properties `((upstream-name . "svd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -8341,13 +8348,13 @@ annotated story data.  To learn more about the project visit
 (define-public r-stortingscrape
   (package
     (name "r-stortingscrape")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stortingscrape" version))
               (sha256
                (base32
-                "0dy9cw20wxnghli8p1zf8dn2ms38p33521inr7x2vxnj80qpvkjk"))))
+                "1adrgicrniz02sdp0vqg44b25jq4w4hdbgaszfnra4alw12klvda"))))
     (properties `((upstream-name . "stortingscrape")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rvest r-httr r-dplyr))
@@ -9404,13 +9411,13 @@ parameter space.")
 (define-public r-stickyr
   (package
     (name "r-stickyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stickyr" version))
               (sha256
                (base32
-                "0xyima0bypb0j7rix3sky2r0zrjm7h5yv1fwzxml2qfmbpk7h91k"))))
+                "0a1jpkphh538wf1bgcm1qyppi2mp99v9d4qa3nlgxf18hnga3jvg"))))
     (properties `((upstream-name . "stickyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -10466,13 +10473,13 @@ shared frailty gamma-Weibull models.  Sjolander, A. (2016)
 (define-public r-stdmod
   (package
     (name "r-stdmod")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stdmod" version))
               (sha256
                (base32
-                "0wqjjh24scmx7x4y7irsgcnycxcf2iqlsmjixjmndjkfxa20gg03"))))
+                "0a74k9b3pbwbvbx753p3l3kzpalhnpvijpxcbv8hszg1gpgbcq0g"))))
     (properties `((upstream-name . "stdmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2 r-boot))
@@ -12017,13 +12024,13 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 (define-public r-startr
   (package
     (name "r-startr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "startR" version))
               (sha256
                (base32
-                "1sjhyv4rnb42pa5p4lz9dn87jl5npdclllpypkxs1wbi5241ajcd"))))
+                "09zdka2mgkqkanamza8izhn9xwdpmj91l88538zxm9ckbk2213kw"))))
     (properties `((upstream-name . "startR")))
     (build-system r-build-system)
     (propagated-inputs (list r-s2dv
@@ -12046,7 +12053,7 @@ retrieval, processing and arrangement of subsets of the large array.  Wrapper
 functions to add support for custom file formats can be plugged in/out, making
 the tool suitable for any research field where large multidimensional data sets
 are involved.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-starticles
   (package
@@ -16871,18 +16878,19 @@ Lachman, Droege, Royle, and Langtimm (2002)
 (define-public r-spocc
   (package
     (name "r-spocc")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spocc" version))
               (sha256
                (base32
-                "0xq2g4vfgdzmg7nw4dcm1rcbph1hgzn04fh81mw1500issbji3r0"))))
+                "1z44hxyd3iyinm6gka0r0hrm8xhbck7pqsgfkydn48i5q26kjjxg"))))
     (properties `((upstream-name . "spocc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-whisker
-                             r-wellknown
+    (propagated-inputs (list r-wk
+                             r-whisker
                              r-tibble
+                             r-s2
                              r-rvertnet
                              r-ridigbio
                              r-rgbif
@@ -17417,13 +17425,13 @@ panel data.")
 (define-public r-splittools
   (package
     (name "r-splittools")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splitTools" version))
               (sha256
                (base32
-                "1m1q3klzahlf85s24pklk21pp2hhwlf96fkfyxc3z4ij4lcqhqsx"))))
+                "0w3pbkbyc46b32kw4jcw1lvrq311mqnfgihymkyf3cgmn51d30jb"))))
     (properties `((upstream-name . "splitTools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -17754,13 +17762,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.4.7")
+    (version "0.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splines2" version))
               (sha256
                (base32
-                "09jscvlvh7w6cfgwwsid0bbc8wipx4b1ww25q34s4qmfcnrbnp7r"))))
+                "18mc4lx9ggdsb51ibvjy8dv4swx4wjn5ad81kpvz6wwgwlm1vj7n"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -18116,6 +18124,30 @@ main and interaction effects to zero exactly.  The Markov chain Monte Carlo
 algorithms of the proposed and alternative methods are efficiently implemented
 in C++.")
     (license license:gpl2)))
+
+(define-public r-spinar
+  (package
+    (name "r-spinar")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spINAR" version))
+              (sha256
+               (base32
+                "1g4yms3h7m42zfjix1n2yrxi5zj0v97klry6d4r7n0iwx4rllpp4"))))
+    (properties `((upstream-name . "spINAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress r-checkmate))
+    (home-page "https://github.com/MFaymon/spINAR")
+    (synopsis "(Semi)Parametric Estimation and Bootstrapping of INAR Models")
+    (description
+     "Semiparametric and parametric estimation of INAR models including a finite
+sample refinement (Faymonville et al. (2022) <doi:10.1007/s10260-022-00655-0>)
+for the semiparametric setting introduced in Drost et al. (2009)
+<doi:10.1111/j.1467-9868.2008.00687.x>, different procedures to bootstrap INAR
+data (Jentsch, C. and WeiÃ, C.H. (2017) <doi:10.3150/18-BEJ1057>) and flexible
+simulation of INAR data.")
+    (license license:gpl3+)))
 
 (define-public r-spina
   (package
@@ -22531,6 +22563,37 @@ et al. (2009) <doi:10.1111/j.1541-0420.2009.01200.x>, and Tong et al. (2012)
 <doi:10.1093/bioinformatics/btr690>.")
     (license license:expat)))
 
+(define-public r-sparsedfm
+  (package
+    (name "r-sparsedfm")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sparseDFM" version))
+              (sha256
+               (base32
+                "0w4xn0hyk3l94b9nplbhlbzkjkh2fx4cyqyjjn5x6dpkf1wj9aaz"))))
+    (properties `((upstream-name . "sparseDFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sparseDFM")
+    (synopsis "Estimate Dynamic Factor Models with Sparse Loadings")
+    (description
+     "Implementation of various estimation methods for dynamic factor models (DFMs)
+including principal components analysis (PCA) Stock and Watson (2002)
+<doi:10.1198/016214502388618960>, 2Stage Giannone et al. (2008)
+<doi:10.1016/j.jmoneco.2008.05.010>, expectation-maximisation (EM) Banbura and
+Modugno (2014) <doi:10.1002/jae.2306>, and the novel EM-sparse approach for
+sparse DFMs Mosley et al. (2023) <arXiv:2303.11892>.  Options to use classic
+multivariate Kalman filter and smoother (KFS) equations from Shumway and Stoffer
+(1982) <doi:10.1111/j.1467-9892.1982.tb00349.x> or fast univariate KFS equations
+from Koopman and Durbin (2000) <doi:10.1111/1467-9892.00186>, and options for
+independent and identically distributed (IID) white noise or auto-regressive
+(AR(1)) idiosyncratic errors.  Algorithms coded in C++ and linked to R via
+RcppArmadillo'.")
+    (license license:gpl3+)))
+
 (define-public r-sparsedc
   (package
     (name "r-sparsedc")
@@ -24044,13 +24107,13 @@ effects and classification analysis as in Chernozhukov, Fernandez-Val and Luo
 (define-public r-sortable
   (package
     (name "r-sortable")
-    (version "0.4.6")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sortable" version))
               (sha256
                (base32
-                "04hy4y8dzkckxxx267si8lx3hsrmxnxljk1fci6yiphy69y5q9vn"))))
+                "1y6cljcjai2k2j7abzn07ab170gpp25zvl9gk755l4gwi7clgl2c"))))
     (properties `((upstream-name . "sortable")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -30725,18 +30788,18 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
 (define-public r-sivs
   (package
     (name "r-sivs")
-    (version "0.2.7")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sivs" version))
               (sha256
                (base32
-                "04yyiww3236g0hvgxms460zcyiisr2ycdi6945xkh8hknkydxkxs"))))
+                "0g5gw2szsnm3k71zjw0174qnznr6abnyk2nh5afhyappki4yqaia"))))
     (properties `((upstream-name . "sivs")))
     (build-system r-build-system)
     (propagated-inputs (list r-varhandle r-proc r-glmnet r-foreach
                              r-doparallel))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-markdown r-knitr))
     (home-page "https://github.com/mmahmoudian/sivs")
     (synopsis "Stable Iterative Variable Selection")
     (description
@@ -31141,13 +31204,13 @@ requirements.  Theory and functions are specified in Metzner (2020, ISBN:
 (define-public r-sisir
   (package
     (name "r-sisir")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SISIR" version))
               (sha256
                (base32
-                "1ank9bpkvvv3271v7kcf9a76djsfi3zjw36275lhp0jxrlvrjmgf"))))
+                "0lmhwi8cm1gq761wzjmsgmqb6p62asr881yjwvyc4hxm2sybfqyz"))))
     (properties `((upstream-name . "SISIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31907,6 +31970,32 @@ profiles are simulated, modelling population heterogeneity in trial arms.
 Exposures to infectious agents are generated, with infection depending on
 vitamin D status.")
     (license license:gpl2+)))
+
+(define-public r-simulmgf
+  (package
+    (name "r-simulmgf")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "simulMGF" version))
+              (sha256
+               (base32
+                "1hgg68afcs7y5qmfpzdrm3hkvzqjpy955k69y0h5jwfi5xkq37wj"))))
+    (properties `((upstream-name . "simulMGF")))
+    (build-system r-build-system)
+    (home-page "https://github.com/mngar/simulMGF")
+    (synopsis "Simulate SNP Matrix, Phenotype and Genotypic Effects")
+    (description
+     "Simulate genotypes in SNP (single nucleotide polymorphisms) Matrix as random
+numbers from an uniform distribution, for diploid organisms (coded by 0, 1, 2),
+Sikorska et al., (2013) <doi:10.1186/1471-2105-14-166>, or half-sib/full-sib SNP
+matrix from real or simulated parents SNP data, assuming mendelian segregation.
+Simulate phenotypic traits for real or simulated SNP data, controlled by a
+specific number of quantitative trait loci and their effects, sampled from a
+Normal or an Uniform distributions, assuming a pure additive model.  This is
+useful for testing association and genomic prediction models or for educational
+purposes.")
+    (license license:expat)))
 
 (define-public r-simule
   (package
@@ -33638,20 +33727,23 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.4.5")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simmr" version))
               (sha256
                (base32
-                "0kv3ip0yq3r2a9dglx0pkjvg5bkf9fg2x051dp6z0ld1c0f4p6ms"))))
+                "1wz1r3klz10y9n6h45c3w4ycipskjh2kajmbknav0plnmakj98fr"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-reshape2
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
                              r-r2jags
-                             r-mass
                              r-ggplot2
+                             r-ggally
                              r-compositions
                              r-checkmate
                              r-boot
@@ -36981,13 +37073,13 @@ browser.")
 (define-public r-shinytest
   (package
     (name "r-shinytest")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinytest" version))
               (sha256
                (base32
-                "0dc6zg0xr47gpk611vhccf1q3b2kk7q2fi2fpv2g71ihwkrw7sj5"))))
+                "1dmmz8r24jh8mnv9q3k62nd6hfmx1f9dyyr6j0ps6cnyjv97xnn7"))))
     (properties `((upstream-name . "shinytest")))
     (build-system r-build-system)
     (inputs (list))
@@ -45705,13 +45797,13 @@ experiments.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seededlda" version))
               (sha256
                (base32
-                "0afdxnds907vlphyndfiyf24l2r7izmcnblvg26i29fhwqq6021i"))))
+                "144417zvax6kw4snciv6mkf13ni1zgjvj483p5xvrzgvkf5487q4"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -45845,13 +45937,13 @@ dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.7.4")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "see" version))
               (sha256
                (base32
-                "0772ahq11zzrwx8wwd7krg0a3phx28fli6gcs78rrwl8l2cl8y42"))))
+                "1gzi4m707qmvnhh2d4nzgnfiyj0jqkyjf5r9s4lgbmkfy9xlk2wz"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -54124,13 +54216,13 @@ plotting functionality to assist with this process.")
 (define-public r-sager
   (package
     (name "r-sager")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sageR" version))
               (sha256
                (base32
-                "0l8r1y62bjkkjw359dx6h9zd4a9pg90mimihp39vv552jchh7x6y"))))
+                "0j7k0sr040s6d4zmfg5hnfswcxjrv4lnq8j6j0knf44xahxm7vry"))))
     (properties `((upstream-name . "sageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

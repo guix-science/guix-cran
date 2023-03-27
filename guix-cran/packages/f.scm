@@ -4653,6 +4653,32 @@ models.  Moreover, the package can be used with its shiny application, in a
 local mode or by following the link below.")
     (license license:gpl2+)))
 
+(define-public r-frailtymmpen
+  (package
+    (name "r-frailtymmpen")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "frailtyMMpen" version))
+              (sha256
+               (base32
+                "1fxig5bz27srvzbbrpxrvlajl228bimzrv8bkq7vaxfx4sp875x8"))))
+    (properties `((upstream-name . "frailtyMMpen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcppgsl r-rcpp r-numderiv r-mgcv))
+    (home-page "https://cran.r-project.org/package=frailtyMMpen")
+    (synopsis "Efficient Algorithm for High-Dimensional Frailty Model")
+    (description
+     "The penalized and non-penalized Minorize-Maximization (MM) method for frailty
+models to fit the clustered data, multi-event data and recurrent data.  Least
+absolute shrinkage and selection operator (LASSO), minimax concave penalty (MCP)
+and smoothly clipped absolute deviation (SCAD) penalized functions are
+implemented.  All the methods are computationally efficient.  These general
+methods are proposed based on the following papers, Huang, Xu and Zhou (2022)
+<doi:10.3390/math10040538>, Huang, Xu and Zhou (2023)
+<doi:10.1177/09622802221133554>.")
+    (license license:gpl2+)))
+
 (define-public r-frailtyhl
   (package
     (name "r-frailtyhl")
@@ -8727,13 +8753,13 @@ effects in mixed effects models.")
 (define-public r-flintyr
   (package
     (name "r-flintyr")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flintyR" version))
               (sha256
                (base32
-                "13bzglcwd4r6q8ix8diy2dljns722k29zbd782fvkxc59ikx7dja"))))
+                "1md0p3i9lny5sn1jjh8ss6bw4w7q8ydi6kh5smjbbgbn86qlcvwy"))))
     (properties `((upstream-name . "flintyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -8743,19 +8769,18 @@ effects in mixed effects models.")
                              r-doparallel
                              r-assertthat))
     (home-page "https://alanaw1.github.io/flintyR/")
-    (synopsis
-     "Flexible and Interpretable Non-Parametric Tests of Exchangeability")
+    (synopsis "Simple and Flexible Tests of Sample Exchangeability")
     (description
      "Given a multivariate dataset and some knowledge about the dependencies between
-its features, it is important to ensure the observations or individuals are
-exchangeable before fitting a model to the data in order to make inferences from
-it, or assigning randomized treatments in order to estimate treatment effects.
-This package provides a flexible non-parametric test of exchangeability,
-allowing the user to specify the feature dependencies by hand.  It can be used
-directly to evaluate whether a sample is exchangeable, and can also be piped
-into larger procedures that require exchangeable samples as outputs (e.g.,
-clustering or community detection).  See Aw, Spence and Song (2021+) for the
-accompanying paper.")
+its features, it is customary to fit a statistical model to the features to
+infer parameters of interest.  Such a procedure implicitly assumes that the
+sample is exchangeable.  This package provides a flexible non-parametric test of
+this exchangeability assumption, allowing the user to specify the feature
+dependencies by hand as long as features can be grouped into disjoint
+independent sets.  This package also allows users to test a dual hypothesis,
+which is, given that the sample is exchangeable, does a proposed grouping of the
+features into disjoint sets also produce statistically independent sets of
+features? See Aw, Spence and Song (2023) for the accompanying paper.")
     (license license:gpl3+)))
 
 (define-public r-flimo
@@ -10484,13 +10509,13 @@ the graphs displayed on the dashboard after login at <http://www.fitbit.com>.")
 (define-public r-fitbitr
   (package
     (name "r-fitbitr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitbitr" version))
               (sha256
                (base32
-                "1v5mhqdiynla7rmspxp5bg6xjjxac0y3qh2nv82pr3fvzvxrrqz8"))))
+                "17qgjd7w0f1iyfwm7mn7m4w8lzfgrbqhh8ngwkg91n9mpz5hyh3s"))))
     (properties `((upstream-name . "fitbitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11013,13 +11038,13 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finnts" version))
               (sha256
                (base32
-                "1h00gz2dp1ch6yd01y3390mv5fc6ba1lxsfs6jkcpfjzaglcb3x1"))))
+                "0ii4nrqjh0v432nzs004db8bm6d12kn8zf7z5q4203j7zwmy6wgj"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -11036,7 +11061,6 @@ EDGAR in an automated and scalable manner.  See
                              r-plyr
                              r-parsnip
                              r-modeltime-resample
-                             r-modeltime-gluonts
                              r-modeltime
                              r-magrittr
                              r-lubridate
@@ -12294,13 +12318,13 @@ sciences.")
 (define-public r-fido
   (package
     (name "r-fido")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fido" version))
               (sha256
                (base32
-                "0rpgggkbvdqp6qbb20r7nqfawpj5fm9z4nbaiwhrm960fd2vzljz"))))
+                "0drzxg6aj9rpszlg8cg1rjwk7nnz9np56zkddbd2pxkznsq8j8ni"))))
     (properties `((upstream-name . "fido")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16818,13 +16842,13 @@ reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.2.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FastJM" version))
               (sha256
                (base32
-                "1ikjm48sqadfjc2ajgbn5svswzfhsb678m3fvkpc6w3cz05dci94"))))
+                "1cg79j3lg34gwl6j3bjdnf9x5a17dg95zh80ff8zjc0s4pq3r3vz"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -16832,10 +16856,9 @@ reduce overall processing time.")
                              r-rcppeigen
                              r-rcpp
                              r-nlme
-                             r-mvtnorm
                              r-mass
-                             r-hmisc
-                             r-dplyr))
+                             r-dplyr
+                             r-caret))
     (home-page "https://cran.r-project.org/package=FastJM")
     (synopsis
      "Semi-Parametric Joint Modeling of Longitudinal and Survival Data")
@@ -16875,28 +16898,6 @@ data.  This approximates the process used by Amelia
 <https://gking.harvard.edu/amelia> but is much faster when filling in values for
 a single line of data.")
     (license license:gpl2+)))
-
-(define-public r-fasthplus
-  (package
-    (name "r-fasthplus")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fasthplus" version))
-              (sha256
-               (base32
-                "05j4lg1gkkz1vi99dx73igvk9xyrli8j6m4hzhpcnyhy0h9bxiqj"))))
-    (properties `((upstream-name . "fasthplus")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ntdyjack/fasthplus/")
-    (synopsis "Fast Label-Dissimilarity Discordance Estimation with H+")
-    (description
-     "Estimation procedures for assessing fitness of observation labels (i.e.,
-clusters or partitions) given observation dissimilarities, or vice versa.  The
-estimated parameter of interest is modified from G+ (Williams 1971), so we call
-it H+.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-fastgraph
   (package
@@ -18464,13 +18465,13 @@ more Findable, Accessible, Interoperable, and Reproducible.")
 (define-public r-fairadapt
   (package
     (name "r-fairadapt")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fairadapt" version))
               (sha256
                (base32
-                "1kglhl8myrjfp0ida70fsmypg1phlf8agc7rm2d8pj7ijnj3iabf"))))
+                "0pxv7xz8r8kls5mm6dcxzqg5z2y3jhs8pnzbw34h1lyj16zb20b2"))))
     (properties `((upstream-name . "fairadapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

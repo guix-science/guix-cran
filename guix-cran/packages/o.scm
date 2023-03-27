@@ -255,13 +255,13 @@ it on leaflet maps.")
 (define-public r-owidr
   (package
     (name "r-owidr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "owidR" version))
               (sha256
                (base32
-                "1rp8rvqg292b88dxmm21cxnni4n7ciqckxxjan3h3skyss7mc95d"))))
+                "0m0nzm3582p996hjs951vmssvhc35dwiw8520b61qs05bxfiiwkj"))))
     (properties `((upstream-name . "owidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4110,13 +4110,13 @@ portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optimizeR" version))
               (sha256
                (base32
-                "0rgw9cc4wxhs3jd44vlzd75jzk03xf1ra0hqr48vvgilprgrr5mz"))))
+                "0wm3sikncr3aqdcpnfs1i564izsag116gkh14facdz5j10ichg8s"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue r-cli))
@@ -8196,6 +8196,36 @@ generating figures to visualize the results of the statistical analysis.  The
 goal of this package is to help users extract biological insights from proteomic
 data run on the Olink platform.")
     (license license:agpl3+)))
+
+(define-public r-oldbailey
+  (package
+    (name "r-oldbailey")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oldbailey" version))
+              (sha256
+               (base32
+                "0w58q38rfb1siadib6hbsya82f9zpjvmvx46ys37fw59p1glilqw"))))
+    (properties `((upstream-name . "oldbailey")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/rOpenGov/oldbailey")
+    (synopsis "For Accessing the Old Bailey Open Data")
+    (description
+     "Fetch trial data from the Old Bailey Online API
+<https://www.oldbaileyonline.org/static/DocAPI.jsp>.  Data is returned in an
+analysis-ready data frame with fields for metadata including (but not limited
+to) the names of the first person speakers, defendants, victims, their recorded
+genders, verdicts, punishments, crime locations, and dates.  Optional parameters
+allow users to specify the number of results, whether these results contain key
+terms, and trial dates.")
+    (license license:expat)))
 
 (define-public r-olctools
   (package
