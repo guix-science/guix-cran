@@ -3442,50 +3442,6 @@ data.table and C++ language and in most of the functions it is possible to use
 parallel processing to speed-up the routines.")
     (license license:gpl3+)))
 
-(define-public r-rtl
-  (package
-    (name "r-rtl")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RTL" version))
-              (sha256
-               (base32
-                "17nh9sh67hhibqbq1dq6wc37k8vk8qwqx9bb51z6r1h8lvx8jndd"))))
-    (properties `((upstream-name . "RTL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-ttr
-                             r-tsibble
-                             r-timetk
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-rcurl
-                             r-rcpp
-                             r-purrr
-                             r-plotly
-                             r-performanceanalytics
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/risktoollib/RTL")
-    (synopsis "Risk Tool Library - Trading, Risk, 'Analytics' for Commodities")
-    (description
-     "This package provides a toolkit for Commodities analytics', risk management and
-trading professionals.  Includes functions for API calls to Morningstar
-Commodities and Genscape'.")
-    (license license:expat)))
-
 (define-public r-rtkore
   (package
     (name "r-rtkore")
@@ -24558,33 +24514,6 @@ prediction interval, the split conformal method, and the quantile regression
 forest.")
     (license license:gpl3)))
 
-(define-public r-rfieldclimate
-  (package
-    (name "r-rfieldclimate")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rfieldclimate" version))
-              (sha256
-               (base32
-                "1s7awczna9dxdq97sr5fsbs4qv7rx4wi2z3inwdp33md1bvyq4i7"))))
-    (properties `((upstream-name . "rfieldclimate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-digest))
-    (home-page "https://cran.r-project.org/package=rfieldclimate")
-    (synopsis "Client for the 'FieldClimate' API")
-    (description
-     "This package provides functionality and parsers to interact with the
-FieldClimate API <https://api.fieldclimate.com/v2/docs/>.")
-    (license license:gpl3)))
-
 (define-public r-rferns
   (package
     (name "r-rferns")
@@ -24710,38 +24639,6 @@ data analysis.  Functions for regression, maximum likelihood, column-wise
 statistics and many more have been included.  C++ has been utilized to speed up
 the functions.")
     (license license:gpl2+)))
-
-(define-public r-rfars
-  (package
-    (name "r-rfars")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rfars" version))
-              (sha256
-               (base32
-                "1shw96m11l9119ngrsc6p4l5i2f5vfd0snj75jjwpjl8gx4m58fv"))))
-    (properties `((upstream-name . "rfars")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timetk
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-lubridate
-                             r-janitor
-                             r-dplyr
-                             r-downloader
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/s87jackson/rfars")
-    (synopsis "Download and Analyze Fatal Crash Data")
-    (description
-     "Download raw data from the Fatality Analysis Reporting System
-(<https://cdan.dot.gov/query>) and prepare it for research.")
-    (license license:cc0)))
 
 (define-public r-rfacts
   (package
@@ -33096,13 +32993,13 @@ power calculation in Respondent-Driven Sampling.")
 (define-public r-rdss
   (package
     (name "r-rdss")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdss" version))
               (sha256
                (base32
-                "1sjzhcrhb1zi9ykl27bx8yylg228f8nvs6klrnz8c9r0x0lr23pg"))))
+                "0k3pdsygc7ckk78pkjd46babhqc9zxn6sw83g0p69p5jjiy1l4yf"))))
     (properties `((upstream-name . "rdss")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

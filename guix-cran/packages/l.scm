@@ -5528,16 +5528,16 @@ groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
 (define-public r-loader
   (package
     (name "r-loader")
-    (version "1.1.3")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "loadeR" version))
               (sha256
                (base32
-                "000m9wi37mh6qpq2jzbz7zxqjj9p2ix6kb7gj90wfhb2i7fgkm1k"))))
+                "0zkwq704q8n8rrrgf961axgv1jjnwl34aiz7axw0rdm98c9hrpvh"))))
     (properties `((upstream-name . "loadeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xlconnect
+    (propagated-inputs (list r-writexl
                              r-shinyjs
                              r-shinydashboardplus
                              r-shinydashboard
@@ -5545,6 +5545,7 @@ groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
                              r-shinyace
                              r-shiny
                              r-rlang
+                             r-readxl
                              r-htmlwidgets
                              r-htmltools
                              r-golem
@@ -5554,7 +5555,7 @@ groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
                              r-config
                              r-colourpicker
                              r-caret))
-    (home-page "https://www.promidat.com")
+    (home-page "https://promidat.website")
     (synopsis "Load Data for Analysis System")
     (description
      "This package provides a framework to load text and excel files through a shiny
@@ -10912,27 +10913,27 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "5.5.0")
+    (version "6.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lefko3" version))
               (sha256
                (base32
-                "0zgd4d9zhjwhwm1z18xjk6qmfbknnxqkbxz48ml6xgabgk3h263l"))))
+                "0iqbdlcm57bdyrmhgy9ysmn2wyc9f86zwdj8159l18zv3ls7x51h"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
-                             r-sparsem
                              r-rcpparmadillo
                              r-rcpp
                              r-pscl
                              r-mumin
+                             r-matrix
                              r-mass
                              r-lme4
                              r-glmmtmb
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "http://www.sheffersonlab.com/projects")
+    (home-page "http://www.sheffersonlab.com/projects.html")
     (synopsis
      "Historical and Ahistorical Population Projection Matrix Analysis")
     (description

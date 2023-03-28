@@ -1090,35 +1090,6 @@ computer programs (known as digital organisms) that mutate and evolve within a
 user-defined computational environment.")
     (license license:expat)))
 
-(define-public r-avfintools
-  (package
-    (name "r-avfintools")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "avfintools" version))
-              (sha256
-               (base32
-                "1v04z9qr80zikjb5q0h9796sgnmw43l5ygxs99gsgsghlyj9nrla"))))
-    (properties `((upstream-name . "avfintools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-plotly
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr
-                             r-alphavantager))
-    (home-page "https://cran.r-project.org/package=avfintools")
-    (synopsis "Financial Analysis Tools Using Data from 'Alpha Vantager'")
-    (description
-     "To pull data from ALPHA VANTAGE <https://www.alphavantage.co/>, use the
-av_api_key() function from alphavantager for inserting your API key.  This is a
-complement to the alphavantager package from CRAN. Contains commonly used
-quantitative finance tools.  avfintools stands for ALPHA VANTAGE Finance Tools,
-as it depends on sourcing financial data from the ALPHA VANTAGE
-<https://www.alphavantage.co/documentation/> API.")
-    (license license:cc0)))
-
 (define-public r-averisk
   (package
     (name "r-averisk")
@@ -11692,37 +11663,6 @@ and correct model selection.  Bayesian information criteria (BIC) estimates the
 optimal tuning parameter lambda.  Plot tools are also available.")
     (license license:gpl2+)))
 
-(define-public r-alphavantager
-  (package
-    (name "r-alphavantager")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "alphavantager" version))
-              (sha256
-               (base32
-                "0c97p8njga4xffvsa0kj0s4y0agjr44y9bnjxs5phm1ldcqjs0yj"))))
-    (properties `((upstream-name . "alphavantager")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (home-page "https://github.com/business-science/alphavantager")
-    (synopsis "Lightweight R Interface to the Alpha Vantage API")
-    (description
-     "Alpha Vantage has free historical financial information.  All you need to do is
-get a free API key at <https://www.alphavantage.co>.  Then you can use the R
-interface to retrieve free equity information.  Refer to the Alpha Vantage
-website for more information.")
-    (license license:gpl3+)))
-
 (define-public r-alphastable
   (package
     (name "r-alphastable")
@@ -11752,13 +11692,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.3.4")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AlphaSimR" version))
               (sha256
                (base32
-                "0b8qp3azia9sfl458y8zgxxxpzs7l2bwpkdnh1vza2ak61f4q85w"))))
+                "0qbb5wdwprjr21nh1khnzaspvg96hqynh277gjkryrwpc8nak16s"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
@@ -17948,40 +17888,6 @@ tools to minimize the amount of data required to do so.  Implements Wycoff et
 al. (2019) <arXiv:1907.11572>.")
     (license license:bsd-3)))
 
-(define-public r-activatr
-  (package
-    (name "r-activatr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "activatr" version))
-              (sha256
-               (base32
-                "0c0sn0b5w1k7kgrx8b6vanamlxsr9nqvkwhm0d8imghq8wl90h43"))))
-    (properties `((upstream-name . "activatr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-timetk
-                             r-tibble
-                             r-rlang
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-glue
-                             r-ggmap
-                             r-geosphere
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dschafer/activatr")
-    (synopsis "Utilities for Parsing and Plotting Activities")
-    (description
-     "This contains helpful functions for parsing, managing, plotting, and visualizing
-activities, most often from GPX (GPS Exchange Format) files recorded by GPS
-devices.  It allows easy parsing of the source files into standard R data
-formats, along with functions to compute derived data for the activity, and to
-plot the activity in a variety of ways.")
-    (license license:expat)))
-
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
@@ -18622,6 +18528,27 @@ academic research in mind.  They provide flexibility in how the user wishes to
 store collected data, and encourage regular storage of data to mitigate loss
 when collecting large volumes of tweets.  They also provide workarounds to
 manage and reshape the format in which data is provided on the client side.")
+    (license license:expat)))
+
+(define-public r-academicthemes
+  (package
+    (name "r-academicthemes")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AcademicThemes" version))
+              (sha256
+               (base32
+                "04c9hshsq1wq5v6005zhmnp2sgy06fxxxb7gnxpvvmslnq644sb2"))))
+    (properties `((upstream-name . "AcademicThemes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hwarden162/AcademicThemes")
+    (synopsis "Colour Plots with Palettes from Academic Institutions")
+    (description
+     "Functionality to allow users to easily colour plots with the colour palettes of
+various academic institutions.")
     (license license:expat)))
 
 (define-public r-absurvtdc

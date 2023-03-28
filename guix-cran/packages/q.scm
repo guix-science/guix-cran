@@ -864,13 +864,13 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryup
   (package
     (name "r-queryup")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryup" version))
               (sha256
                (base32
-                "1q3v48pss9y5bx68k48ajzyjv6w4ylcwzmb0mzp78g0n1cfjc6qj"))))
+                "1jgw3ay0zgqhsg7c2200v7vsgd2ixxrg9yxnyaz248l979avc0za"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -5168,24 +5168,26 @@ follow tidyverse philosophy.")
 (define-public r-qbms
   (package
     (name "r-qbms")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QBMS" version))
               (sha256
                (base32
-                "1f6xf8nc77yy69f0z1jlaksvl2s1npp2anrcvam0wlhnrmlg9nnz"))))
+                "1p0ysddf8i3mxbbp91fiqk1hw8c8m29y453m93gyyb7asqckxi39"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-rnetcdf r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/icarda-git/QBMS")
+    (home-page "https://icarda-git.github.io/QBMS/")
     (synopsis "Query the Breeding Management System(s)")
     (description
-     "Query the Breeding Management System(s) like BMS <https://bmspro.io>, BreeBase
-<https://breedbase.org>, and GIGWA <https://southgreen.fr/content/gigwa> (using
-BrAPI <https://brapi.org> calls) to help breeders as targeted end-users retrieve
-phenotypic and genotypic data directly into their analyzing pipelines.")
+     "Linking data management systems to analytics is an important step in breeding
+digitization.  Breeders can use this R package to Query the Breeding Management
+System(s) like BMS <https://bmspro.io>, BreedBase <https://breedbase.org>, and
+GIGWA <https://southgreen.fr/content/gigwa> (using BrAPI <https://brapi.org>
+calls) and help them to retrieve phenotypic and genotypic data directly into
+their analyzing pipelines.")
     (license license:gpl3+)))
 
 (define-public r-qbld

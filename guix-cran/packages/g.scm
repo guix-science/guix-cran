@@ -1163,13 +1163,13 @@ execution time.")
 (define-public r-guiplot
   (package
     (name "r-guiplot")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "guiplot" version))
               (sha256
                (base32
-                "0h8jjilkxcqgmyr7pcri8kilww44yrdvk9qfbvyr6gk7smvb9y0c"))))
+                "0l6m754b93xlx8mwmskll5l9pwsmn7h5xgysccw8lvvs5lzd1alc"))))
     (properties `((upstream-name . "guiplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -4866,44 +4866,6 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
-(define-public r-greener
-  (package
-    (name "r-greener")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GREENeR" version))
-              (sha256
-               (base32
-                "0lh9k0w2l1b5w78i40mfxmx0i0mnvyaiix2clncdnrpj7fn795sk"))))
-    (properties `((upstream-name . "GREENeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmap
-                             r-tidyselect
-                             r-sf
-                             r-reshape2
-                             r-parallelly
-                             r-networkd3
-                             r-magrittr
-                             r-hydrogof
-                             r-gridextra
-                             r-ggplot2
-                             r-fme
-                             r-dplyr
-                             r-data-table
-                             r-classint))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/calfarog/GREENeR")
-    (synopsis
-     "Geospatial Regression Equation for European Nutrient Losses (GREEN)")
-    (description
-     "Tools and methods to apply the model Geospatial Regression Equation for European
-Nutrient losses (GREEN); Grizzetti et al. (2005)
-<doi:10.1016/j.jhydrol.2004.07.036>; Grizzetti et al. (2008); Grizzetti et al.
-(2012) <doi:10.1111/j.1365-2486.2011.02576.x>; Grizzetti et al. (2021)
-<doi:10.1016/j.gloenvcha.2021.102281>.")
-    (license license:gpl3)))
-
 (define-public r-greencrab-toolkit
   (package
     (name "r-greencrab-toolkit")
@@ -5460,6 +5422,42 @@ Statistics.  Written to support Grattan Institute's Australian Perspectives
 program, and related projects.  Access to the Australian Taxation Office's
 sample files of personal income tax returns is assumed.")
     (license license:gpl2)))
+
+(define-public r-gratis
+  (package
+    (name "r-gratis")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gratis" version))
+              (sha256
+               (base32
+                "1hbmqb093lxnv8gkn9vd0fsgs5a85yfdqxj5p8jmkq9078yr1vga"))))
+    (properties `((upstream-name . "gratis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tsfeatures
+                             r-tibble
+                             r-shiny
+                             r-purrr
+                             r-polynom
+                             r-mvtnorm
+                             r-magrittr
+                             r-generics
+                             r-ga
+                             r-forecast
+                             r-foreach
+                             r-dplyr
+                             r-dorng))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ykang/gratis")
+    (synopsis
+     "Generating Time Series with Diverse and Controllable Characteristics")
+    (description
+     "Generates synthetic time series based on various univariate time series models
+including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
+<doi:10.1002/sam.11461>.")
+    (license license:gpl3)))
 
 (define-public r-graticule
   (package
@@ -10795,13 +10793,13 @@ and Smyth (1996) <doi:10.2307/1390802>, O'Hara Hines and Carter (1993)
 (define-public r-glmx
   (package
     (name "r-glmx")
-    (version "0.1-3")
+    (version "0.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmx" version))
               (sha256
                (base32
-                "0wfwzc6r5xcaaz6knj2chzwjvryfigpazrbd0kn82k0mprsm1vqz"))))
+                "07fgxyfz0jcp4ks2lpnbifjrnik2vwg1c5wl7m3a290rqsnzv5gx"))))
     (properties `((upstream-name . "glmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mass r-lmtest r-formula))
@@ -17779,13 +17777,13 @@ from user-provided image paths and alignment values.")
 (define-public r-gfpop
   (package
     (name "r-gfpop")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gfpop" version))
               (sha256
                (base32
-                "0kqvna57q8a1ybzj5svw1k5qvnpd9n7c0jg6gyx1y00si3vazd84"))))
+                "0jm7ri25qhkc80s4vfz2p9516m7wl0x8fcci6mggm4mc4ksx78f4"))))
     (properties `((upstream-name . "gfpop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -17803,7 +17801,10 @@ additional properties: a minimal gap size, a penalty, some robust parameters
 the inferred means to lie between some minimal and maximal values.  Data is
 modeled by a cost with possible use of a robust loss, biweight and Huber (see
 edge parameters K and a).  These costs should have a quadratic, log-linear or a
-log-log representation.")
+log-log representation.  This includes quadratic Gaussian cost (type = mean'),
+log-linear cost (type = variance', poisson or exp') and log-log cost (type =
+negbin').  More details in the paper published in the Journal of Statistical
+Software: <doi:10.18637/jss.v106.i06>.")
     (license license:expat)))
 
 (define-public r-gformula

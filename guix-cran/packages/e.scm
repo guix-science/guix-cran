@@ -3860,46 +3860,6 @@ using Kaplan-Meier, and the tail after the change point is fit using piecewise
 exponential.")
     (license license:gpl2+)))
 
-(define-public r-eventstudy
-  (package
-    (name "r-eventstudy")
-    (version "0.39.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EventStudy" version))
-              (sha256
-               (base32
-                "081aqp3ddmnxjnw6519ddfkv2pbbrjvnkp7bjciz4gc6h9ihb1c3"))))
-    (properties `((upstream-name . "EventStudy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tidyquant
-                             r-testthat
-                             r-stringr
-                             r-shiny
-                             r-scales
-                             r-rstudioapi
-                             r-rlang
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-miniui
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https:://data-zoo.de")
-    (synopsis "Event Study Analysis")
-    (description
-     "Perform Event Studies from through our <https://EventStudyTools.com> Application
-Programming Interface, parse the results, visualize it, and / or use the results
-in further analysis.")
-    (license license:expat)))
-
 (define-public r-eventstream
   (package
     (name "r-eventstream")

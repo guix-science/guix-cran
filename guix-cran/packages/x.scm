@@ -135,6 +135,30 @@ Currently it only contains a very efficient function of decoding HTML entities
 in character vectors by Rcpp routine.")
     (license license:expat)))
 
+(define-public r-xtranat
+  (package
+    (name "r-xtranat")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xtranat" version))
+              (sha256
+               (base32
+                "1gv0kc1gj305iwwhv7wrfrh45rqwaks696q6q39a55m2vxw11xl1"))))
+    (properties `((upstream-name . "xtranat")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fdepaolis/xtranat")
+    (synopsis "Network Metrics Based on Random Walks")
+    (description
+     "There are two new network metrics, RWC (random walk centrality) and CBET
+(counting betweenness).  Also available are the normalized versions of those
+metrics.  These measures of centrality and betweenness are particularly useful
+for the analysis of very dense weighted networks which include loops.
+Traditional measures do not work as well for those network characteristics.  The
+main reference is DePaolis at al (2022) <doi:10.1007/s41109-022-00519-2>.")
+    (license license:gpl3)))
+
 (define-public r-xtermstyle
   (package
     (name "r-xtermstyle")

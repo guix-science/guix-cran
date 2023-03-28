@@ -6196,13 +6196,13 @@ al. (2021) <arXiv:2107.10017>.")
 (define-public r-crch
   (package
     (name "r-crch")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crch" version))
               (sha256
                (base32
-                "02m9prck9b7jpv21ychnxl6chirp7nqrj9f72v0sqj2q8v5yb0zx"))))
+                "1iwamq8iq51sbwbis2fc783y7a0k4a7v103f4mx7mp6wrcpsg9rq"))))
     (properties `((upstream-name . "crch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scoringrules r-sandwich r-ordinal r-formula))
@@ -30147,6 +30147,32 @@ objects.  Facilities for AWS terrain
 <https://www.mapbox.com/> servers are provided.")
     (license license:gpl3)))
 
+(define-public r-cequre
+  (package
+    (name "r-cequre")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cequre" version))
+              (sha256
+               (base32
+                "1ichs89dlyy4npn04mm8z4713vfb94jhalcalfgsliwk51i0cnx2"))))
+    (properties `((upstream-name . "cequre")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=cequre")
+    (synopsis
+     "Censored Quantile Regression & Monotonicity-Respecting Restoring")
+    (description
+     "Perform censored quantile regression of Huang (2010) <doi:10.1214/09-AOS771>,
+and restore monotonicity respecting via adaptive interpolation for dynamic
+regression of Huang (2017) <doi:10.1080/01621459.2016.1149070>.  The
+monotonicity-respecting restoration applies to general dynamic regression models
+including (uncensored or censored) quantile regression model, additive hazards
+model, and dynamic survival models of Peng and Huang (2007)
+<doi:10.1093/biomet/asm058>, among others.")
+    (license license:gpl2+)))
+
 (define-public r-cepreader
   (package
     (name "r-cepreader")
@@ -30697,6 +30723,31 @@ population, age, race, and ethnicity data from the Census Bureau.  Accesses the
 API <https://www.census.gov/data/developers/data-sets.html>.  Provides tools for
 adding information to existing data to line up with Census data.")
     (license license:expat)))
+
+(define-public r-cenroc
+  (package
+    (name "r-cenroc")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cenROC" version))
+              (sha256
+               (base32
+                "1rgs1h32jm7ls830f62gi5wdaqx3q2h4m4qirxqmv0pi8y5y2a9v"))))
+    (properties `((upstream-name . "cenROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-icenreg
+                             r-condsurv))
+    (home-page "https://cran.r-project.org/package=cenROC")
+    (synopsis "Estimating Time-Dependent ROC Curve and AUC for Censored Data")
+    (description
+     "This package contains functions to estimate a smoothed and a non-smoothed
+(empirical) time-dependent receiver operating characteristic curve and the
+corresponding area under the receiver operating characteristic curve and the
+optimal cutoff point for the right and interval censored survival data.  See
+Beyene and El Ghouch (2020)<doi:10.1002/sim.8671> and Beyene and El Ghouch
+(2022) <doi:10.1002/bimj.202000382>.")
+    (license license:gpl2+)))
 
 (define-public r-cengam
   (package

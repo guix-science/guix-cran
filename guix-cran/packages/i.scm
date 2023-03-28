@@ -9194,6 +9194,44 @@ a social process mirroring team, group, or organization formation
 delay distribution.")
     (license license:expat)))
 
+(define-public r-incidenceprevalence
+  (package
+    (name "r-incidenceprevalence")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IncidencePrevalence" version))
+              (sha256
+               (base32
+                "17dnnlyp1ggcvc686i3pacbmkayk19vr25nh56rbzi7m1mrgfv30"))))
+    (properties `((upstream-name . "IncidencePrevalence")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu.github.io/IncidencePrevalence/")
+    (synopsis
+     "Estimate Incidence and Prevalence using the OMOP Common Data Model")
+    (description
+     "Calculate incidence and prevalence using data mapped to the Observational
+Medical Outcomes Partnership (OMOP) common data model.  Incidence and prevalence
+can be estimated for the total population in a database or for a stratification
+cohort.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-incidence2
   (package
     (name "r-incidence2")
@@ -13264,6 +13302,44 @@ multinomial logit model, and individually adapted designs for the mixed
 multinomial logit model.  The generated designs can be presented on screen and
 choice data can be gathered using a shiny application.  Traets F, Sanchez G, and
 Vandebroek M (2020) <doi:10.18637/jss.v096.i03>.")
+    (license license:gpl3)))
+
+(define-public r-ideatools
+  (package
+    (name "r-ideatools")
+    (version "3.4.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "IDEATools" version))
+              (sha256
+               (base32
+                "0df4s9riwc616nh1xyh5579dg3y6nfdnghykp2nc44d3p9nl4baq"))))
+    (properties `((upstream-name . "IDEATools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-readxl
+                             r-pdftools
+                             r-openxlsx
+                             r-jsonlite
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggimage
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidcarayon.github.io/IDEATools/index.html")
+    (synopsis
+     "Individual and Group Farm Sustainability Assessments using the IDEA4 Method")
+    (description
+     "Collection of tools to automate the processing of data collected though the
+IDEA4 method (see Zahm et al. (2018) <doi:10.1051/cagri/2019004> ).  Starting
+from the original data collecting files this packages provides functions to
+compute IDEA indicators, draw modern and aesthetic plots, and produce a wide
+range of reporting materials.")
     (license license:gpl3)))
 
 (define-public r-ideamdb

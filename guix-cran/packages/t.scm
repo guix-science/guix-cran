@@ -11859,54 +11859,6 @@ are also defined.  Tools provided can be used for instance to handle
 environmental monitoring data (not always produced on a regular time base).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-timetk
-  (package
-    (name "r-timetk")
-    (version "2.8.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "timetk" version))
-              (sha256
-               (base32
-                "1zfqrk2qw4f13zxdl5qd8b6f3c59xvq5dprqd4r6nb7w6cqim4cc"))))
-    (properties `((upstream-name . "timetk")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tsfeatures
-                             r-timedate
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-slider
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-readr
-                             r-purrr
-                             r-plotly
-                             r-padr
-                             r-lubridate
-                             r-hms
-                             r-ggplot2
-                             r-generics
-                             r-forecast
-                             r-forcats
-                             r-dplyr
-                             r-assertthat
-                             r-anytime))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/timetk")
-    (synopsis "Tool Kit for Working with Time Series in R")
-    (description
-     "Easy visualization, wrangling, and feature engineering of time series data for
-forecasting and machine learning prediction.  Consolidates and extends time
-series functionality from packages including dplyr', stats', xts', forecast',
-slider', padr', recipes', and rsample'.")
-    (license license:gpl3+)))
-
 (define-public r-timeseriesdb
   (package
     (name "r-timeseriesdb")
@@ -13424,56 +13376,6 @@ Workforce Indicator is available at
     (synopsis "Query 'R' Data Frames with 'SQL'")
     (description "Use SQL SELECT statements to query R data frames.")
     (license license:asl2.0)))
-
-(define-public r-tidyquant
-  (package
-    (name "r-tidyquant")
-    (version "1.0.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidyquant" version))
-              (sha256
-               (base32
-                "0p1c9wzg4i84ajxd3lq4j1pvp24ni1kg6jhvlrjnhczwzjs8xjvc"))))
-    (properties `((upstream-name . "tidyquant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-ttr
-                             r-timetk
-                             r-timedate
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-riingo
-                             r-readxl
-                             r-readr
-                             r-quantmod
-                             r-quandl
-                             r-purrr
-                             r-performanceanalytics
-                             r-magrittr
-                             r-lubridate
-                             r-lazyeval
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-curl
-                             r-alphavantager))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/tidyquant")
-    (synopsis "Tidy Quantitative Financial Analysis")
-    (description
-     "Bringing business and financial analysis to the tidyverse'.  The tidyquant
-package provides a convenient wrapper to various xts', zoo', quantmod', TTR and
-PerformanceAnalytics package functions and returns the objects in the tidy
-tibble format.  The main advantage is being able to use quantitative functions
-with the tidyverse functions including purrr', dplyr', tidyr', ggplot2',
-lubridate', etc.  See the tidyquant website for more information, documentation
-and examples.")
-    (license license:expat)))
 
 (define-public r-tidypmc
   (package
@@ -15947,13 +15849,13 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.4.2.3")
+    (version "0.4.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "theft" version))
               (sha256
                (base32
-                "17fria37d345qy2wid8f2h2yz12csdz6z8c7658sfq1lsqr6n6a6"))))
+                "0rd6dvq4zhy36w65181m1g6csd4bl8pn83c0rf6rb15nvyy5vgw1"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -17280,6 +17182,28 @@ text box that does not overlap with the other curves.  If this process fails,
 then offsets are computed to add to the y values for each curve, that results in
 sufficient space to add all of the text labels.")
     (license license:gpl2+)))
+
+(define-public r-textab
+  (package
+    (name "r-textab")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "textab" version))
+              (sha256
+               (base32
+                "0al3qlaa2k00y3r6qkadzz9fw2picfpjr7hi2inxrhkqr4dzkd17"))))
+    (properties `((upstream-name . "textab")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://setzler.github.io/textab/")
+    (synopsis "Create Highly-Customized 'LaTeX' Tables")
+    (description
+     "Generate LaTeX tables directly from R. It builds LaTeX tables in blocks in the
+spirit of ggplot2 using the + and - operators for concatenation in the vertical
+and horizontal dimensions, respectively.  It exports tables in the LaTeX tabular
+environment using .tex code.  It can compile .tex code to PDF automatically.")
+    (license license:expat)))
 
 (define-public r-text2speech
   (package
@@ -19021,13 +18945,13 @@ significance and temporal aspects of adverse events in clinical trials\" - JAMIA
 (define-public r-tempstable
   (package
     (name "r-tempstable")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TempStable" version))
               (sha256
                (base32
-                "05rv3pdihpvmlfv0cr892f1bcll1h73i6gw42m4rdvmgdpwb3b4m"))))
+                "03gafa8bap33lggc4d8psaa05iqwc7rb4f1qbz0dd35lc3ypndwl"))))
     (properties `((upstream-name . "TempStable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

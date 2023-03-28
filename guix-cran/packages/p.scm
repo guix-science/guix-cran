@@ -12256,40 +12256,6 @@ monitoring site in the Chihuahua desert.  The raw data files can be found at
 <https://github.com/weecology/portaldata>.")
     (license license:expat)))
 
-(define-public r-portalhacienda
-  (package
-    (name "r-portalhacienda")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PortalHacienda" version))
-              (sha256
-               (base32
-                "11fcd1m751xahv13s61n2lzxqxhzfkcxk3zv9kyjvrzb0fiy4jss"))))
-    (properties `((upstream-name . "PortalHacienda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-timetk
-                             r-tibble
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-forecast
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fmgarciadiaz/PortalHacienda-CRAN")
-    (synopsis "Acceder Con R a Los Datos Del Portal De Hacienda")
-    (description
-     "Obtener listado de datos, acceder y extender series del Portal de Datos de
-Hacienda.Las proyecciones se realizan con forecast', Hyndman RJ, Khandakar Y
-(2008) <doi:10.18637/jss.v027.i03>.  Search, download and forecast time-series
-from the Ministry of Economy of Argentina.  Forecasts are built with the
-forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
-    (license license:gpl3)))
-
 (define-public r-port4me
   (package
     (name "r-port4me")

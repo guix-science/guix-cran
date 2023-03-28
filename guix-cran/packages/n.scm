@@ -920,39 +920,6 @@ al. (2002) <doi:10.1109/4235.996017>.")
 values (promises), \"...\" lists, and active calls.")
     (license license:gpl2+)))
 
-(define-public r-nser
-  (package
-    (name "r-nser")
-    (version "1.4.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nser" version))
-              (sha256
-               (base32
-                "0li2kwznh13v84pr16bhn44wrlsgl9vy9l8hnf5xpxgqsxbqrjrh"))))
-    (properties `((upstream-name . "nser")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rvest
-                             r-rselenium
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-googlevis
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nandp1/nser/")
-    (synopsis
-     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
-    (description
-     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
-Equities and Derivatives (F&O) segment.  Data source
-<https://www.nseindia.com/>.")
-    (license license:gpl3)))
-
 (define-public r-nse2r
   (package
     (name "r-nse2r")
@@ -13513,35 +13480,37 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "0r66arzr5i4j5v7zir9flvf0ak7rwjv4g83skhfybxcywp12p8g8"))))
+                "050ql48h7p9s38grb76124ps0pzm5zg5pzq0aww4ijzyjy6q091x"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")
     (synopsis "NNG (Nanomsg Next Gen) Lightweight Messaging Library")
     (description
      "R binding for NNG (Nanomsg Next Gen), a successor to ZeroMQ. NNG is a socket
-library providing high-performance scalability protocols, implementing a
-cross-platform standard for messaging and communications.  Serves as a
-concurrency framework for building distributed applications, utilising aio
-objects which resolve automatically upon completion of asynchronous operations.")
+library providing high-performance scalability protocols, a cross-platform
+standard for messaging and communications.  Serves as a concurrency framework
+for building distributed applications, utilising aio objects which resolve
+automatically upon completion of asynchronous operations.  Implements
+synchronisation primitives, allowing R to wait upon events being signalled by
+concurrent messaging threads.")
     (license license:gpl3+)))
 
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.1.0.1")
+    (version "0.1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanoarrow" version))
               (sha256
                (base32
-                "1nay1fd3rzcfml0yy0wkhzdwg5y71z9gs4qj10h2zgrw7v26i14h"))))
+                "11cpgim2kpdai31byz9q5acai7y4x56fg62jbych3bvxlx1rwbcg"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://github.com/apache/arrow-nanoarrow")

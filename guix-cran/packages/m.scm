@@ -18,7 +18,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gl)
   #:use-module (gnu packages mpi)
@@ -1871,6 +1870,36 @@ classifier that natively works as an ensemble.  It projects data on a large
 number of matrices, and uses very simple classifiers on each of these
 projections.  The results are then combined, ideally via Dempster-Shafer
 Calculus.")
+    (license license:gpl3)))
+
+(define-public r-mutualinf
+  (package
+    (name "r-mutualinf")
+    (version "1.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mutualinf" version))
+              (sha256
+               (base32
+                "0w6hzmvda2gipgrbglcbb11kn94i92v3p07hihlx0bsdgsh3scph"))))
+    (properties `((upstream-name . "mutualinf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-runner r-data-table))
+    (home-page "https://github.com/RafaelFuentealbaC/mutualinf")
+    (synopsis "Computation and Decomposition of the Mutual Information Index")
+    (description
+     "The Mutual Information Index (M) introduced to social science literature by
+Theil and Finizza (1971) <doi:10.1080/0022250X.1971.9989795> is a multigroup
+segregation measure that is highly decomposable and that according to Frankel
+and Volij (2011) <doi:10.1016/j.jet.2010.10.008> and Mora and Ruiz-Castillo
+(2011) <doi:10.1111/j.1467-9531.2011.01237.x> satisfies the Strong Unit
+Decomposability and Strong Group Decomposability properties.  This package
+allows computing and decomposing the total index value into its \"between\" and
+\"within\" terms.  These last terms can also be decomposed into their
+contributions, either by group or unit characteristics.  The factors that
+produce each \"within\" term can also be displayed at the user's request.  The
+results can be computed considering a variable or sets of variables that define
+separate clusters.")
     (license license:gpl3)))
 
 (define-public r-mutsignatures
@@ -12792,184 +12821,6 @@ either by user-specified colors or colored by the strength of the coefficient of
 that text derived from a regression model.")
     (license license:lgpl2.1)))
 
-(define-public r-modeltime-resample
-  (package
-    (name "r-modeltime-resample")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeltime.resample" version))
-              (sha256
-               (base32
-                "0gqzxay45k5h4m1vq582w5d8c3xif16yk36w35qjjnqknwhyj065"))))
-    (properties `((upstream-name . "modeltime.resample")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-workflows
-                             r-tune
-                             r-timetk
-                             r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-progressr
-                             r-plotly
-                             r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-hardhat
-                             r-glue
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-dials
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime.resample")
-    (synopsis "Resampling Tools for Time Series Forecasting")
-    (description
-     "This package provides a modeltime extension that implements forecast resampling
-tools that assess time-based model performance and stability for a single time
-series, panel data, and cross-sectional time series analysis.")
-    (license license:expat)))
-
-(define-public r-modeltime-h2o
-  (package
-    (name "r-modeltime-h2o")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeltime.h2o" version))
-              (sha256
-               (base32
-                "0rg7ha1zy0a1fbwrljsglfnfgkl747hjga8xajlzyrczhrmh4vnk"))))
-    (properties `((upstream-name . "modeltime.h2o")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-h2o
-                             r-glue
-                             r-fs
-                             r-dplyr))
-    (home-page "https://github.com/business-science/modeltime.h2o")
-    (synopsis "Modeltime 'H2O' Machine Learning")
-    (description
-     "Use the H2O machine learning library inside of modeltime'.  Available models
-include AutoML for Automatic Machine Learning.  Please see H2O.ai for more
-information <https://github.com/h2oai/h2o-3>.")
-    (license license:expat)))
-
-(define-public r-modeltime-ensemble
-  (package
-    (name "r-modeltime-ensemble")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeltime.ensemble" version))
-              (sha256
-               (base32
-                "1yywl3vnc03wbz9fl3gq9cclvx8rsvnndyqb6d4ws9y5g60hnxhd"))))
-    (properties `((upstream-name . "modeltime.ensemble")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-workflows
-                             r-tune
-                             r-timetk
-                             r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-parsnip
-                             r-modeltime-resample
-                             r-modeltime
-                             r-magrittr
-                             r-glue
-                             r-generics
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime.ensemble")
-    (synopsis "Ensemble Algorithms for Time Series Forecasting with Modeltime")
-    (description
-     "This package provides a modeltime extension that implements time series ensemble
-forecasting methods including model averaging, weighted averaging, and stacking.
- These techniques are popular methods to improve forecast accuracy and
-stability.  Refer to papers such as \"Machine-Learning Models for Sales Time
-Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
-    (license license:expat)))
-
-(define-public r-modeltime
-  (package
-    (name "r-modeltime")
-    (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modeltime" version))
-              (sha256
-               (base32
-                "0avms0vg79idxsr9ly12jhkx1qv4ykvj7fmx680xajjq4k3wl7z6"))))
-    (properties `((upstream-name . "modeltime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-xgboost
-                             r-workflows
-                             r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stanheaders
-                             r-scales
-                             r-rlang
-                             r-reactable
-                             r-purrr
-                             r-prophet
-                             r-plotly
-                             r-parsnip
-                             r-parallelly
-                             r-magrittr
-                             r-janitor
-                             r-hardhat
-                             r-gt
-                             r-glue
-                             r-ggplot2
-                             r-forecast
-                             r-foreach
-                             r-forcats
-                             r-dplyr
-                             r-doparallel
-                             r-dials
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime")
-    (synopsis "The Tidymodels Extension for Time Series Modeling")
-    (description
-     "The time series forecasting framework for use with the tidymodels ecosystem.
-Models include ARIMA, Exponential Smoothing, and additional time series models
-from the forecast and prophet packages.  Refer to \"Forecasting Principles &
-Practice, Second edition\" (<https://otexts.com/fpp2/>).  Refer to \"Prophet:
-forecasting at scale\"
-(<https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/>.).")
-    (license license:expat)))
-
 (define-public r-modeltests
   (package
     (name "r-modeltests")
@@ -22780,13 +22631,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.14.1")
+    (version "0.15.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "0ly2kgb6dlqgkx801d7rgzgww9mvyn15fxr6k707b6nj4g0ah86j"))))
+                "1jcknppkwbjdpc1427y0g7zvpna386x3zqsi3aiky1bpv3cfn027"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -32460,13 +32311,13 @@ and Galin L. Jones (2005) <DOI:10.1111/j.1467-9868.2005.00499.x>.")
 (define-public r-mcda
   (package
     (name "r-mcda")
-    (version "0.0.22")
+    (version "0.0.24")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MCDA" version))
               (sha256
                (base32
-                "1axbhc28j5h8a3lmff5a5v1ig7028mx13sb39zk1g8s31wpn2z00"))))
+                "08xghwzb19ynzvl8l8z14lm97ggw5x05czjljhvm2ws4sknjpqy7"))))
     (properties `((upstream-name . "MCDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-triangle
@@ -39035,13 +38886,13 @@ likelihood methods.")
 (define-public r-mainexistingdatasets
   (package
     (name "r-mainexistingdatasets")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MainExistingDatasets" version))
               (sha256
                (base32
-                "1828pj76122z1aahrv82il05wy7lz87s8vwn024150cvsqh3lgrj"))))
+                "16g741hzckla6amhwa54bhg3l3700sp43p6mijbb5065qnviw5y9"))))
     (properties `((upstream-name . "MainExistingDatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmaptools

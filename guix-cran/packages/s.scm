@@ -29893,39 +29893,6 @@ to describe weight of the distance between a training observation and the
 testing sample.")
     (license license:gpl2)))
 
-(define-public r-sknifedatar
-  (package
-    (name "r-sknifedatar")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sknifedatar" version))
-              (sha256
-               (base32
-                "0zi9anrxg9zkgxlzlfyry5i5zlj3fs8580mp6xckkl096dry9ih0"))))
-    (properties `((upstream-name . "sknifedatar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tune
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-knitr
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/rafzamb/sknifedatar")
-    (synopsis "Swiss Knife of Data")
-    (description
-     "Extension of the modeltime ecosystem.  In addition.  Allows fitting of multiple
-models over multiple time series.  It also provides a bridge for using the
-workflowsets package with modeltime'.  It includes some functionalities for
-spatial data and visualization.")
-    (license license:expat)))
-
 (define-public r-skmeans
   (package
     (name "r-skmeans")
@@ -39345,6 +39312,46 @@ progress bars, and card-like flip panels with back sides, as well as various of
 HTML tool widgets.")
     (license license:expat)))
 
+(define-public r-sherlockholmes
+  (package
+    (name "r-sherlockholmes")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SherlockHolmes" version))
+              (sha256
+               (base32
+                "15skc94z6h3qy1dwhqf93sqjr8x1p72rs510rg25w2j6j2zm4w1a"))))
+    (properties `((upstream-name . "SherlockHolmes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-textboxplacement
+                             r-tablehtml
+                             r-stringr
+                             r-stargazer
+                             r-qpdf
+                             r-plotrix
+                             r-plot-matrix
+                             r-dpseg
+                             r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SherlockHolmes")
+    (synopsis "Building a Concordance of Terms in a Series of Texts")
+    (description
+     "Compute the frequency distribution of a search term in a series of texts.  For
+example, Arthur Conan Doyle wrote a total of 60 Sherlock Holmes stories,
+comprised of 54 short stories and 4 longer novels.  I wanted to test my own
+subjective impression that, in many of the stories, Sherlock Holmes popularity
+was used as bait to induce the reader to read a story that is essentially not
+primarily a Sherlock Holmes story.  I used the term \"Holmes\" as a search
+pattern, since Watson would frequently address him by name, or use his name to
+describe something that he was doing.  My hypothesis is that the frequency
+distribution of the search pattern \"Holmes\" is a good proxy for the degree to
+which a story is or is not truly a Sherlock Holmes story.  The results are
+presented in a manuscript that is available as a vignette and online at
+<https://github.com/barryzee/Concordance>.")
+    (license license:gpl2+)))
+
 (define-public r-sherlock
   (package
     (name "r-sherlock")
@@ -43847,44 +43854,6 @@ spell-checking of text data.  Also converges, finalizes, removes plurals and
 continuous strings, and puts text data in binary format for semantic network
 analysis.  Uses the SemNetDictionaries package to make the cleaning process more
 accurate, efficient, and reproducible.")
-    (license license:gpl3+)))
-
-(define-public r-semnet
-  (package
-    (name "r-semnet")
-    (version "1.4.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SemNeT" version))
-              (sha256
-               (base32
-                "1qjjbx86sh2gk91bnx0rn3wszlf1w8wxyda5k2mqn4gzgpfplcsp"))))
-    (properties `((upstream-name . "SemNeT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rcolorbrewer
-                             r-qgraph
-                             r-purrr
-                             r-plyr
-                             r-philentropy
-                             r-pbapply
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-effects
-                             r-dplyr
-                             r-car
-                             r-broom))
-    (home-page "https://github.com/AlexChristensen/SemNeT")
-    (synopsis "Methods and Measures for Semantic Network Analysis")
-    (description
-     "This package implements several functions for the analysis of semantic networks
-including different network estimation algorithms, partial node bootstrapping
-(Kenett, Anaki, & Faust, 2014 <doi:10.3389/fnhum.2014.00407>), random walk
-simulation (Kenett & Austerweil, 2016
-<http://alab.psych.wisc.edu/papers/files/Kenett16CreativityRW.pdf>), and a
-function to compute global network measures.  Significance tests and plotting
-features are also implemented.")
     (license license:gpl3+)))
 
 (define-public r-semnar

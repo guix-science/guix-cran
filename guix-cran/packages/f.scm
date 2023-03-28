@@ -11035,61 +11035,6 @@ EDGAR in an automated and scalable manner.  See
 <https://www.sec.gov/edgar/searchedgar/companysearch.html> for more information.")
     (license license:expat)))
 
-(define-public r-finnts
-  (package
-    (name "r-finnts")
-    (version "0.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "finnts" version))
-              (sha256
-               (base32
-                "0ii4nrqjh0v432nzs004db8bm6d12kn8zf7z5q4203j7zwmy6wgj"))))
-    (properties `((upstream-name . "finnts")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-workflows
-                             r-tune
-                             r-timetk
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rules
-                             r-rsample
-                             r-recipes
-                             r-purrr
-                             r-plyr
-                             r-parsnip
-                             r-modeltime-resample
-                             r-modeltime
-                             r-magrittr
-                             r-lubridate
-                             r-kernlab
-                             r-hts
-                             r-gtools
-                             r-glmnet
-                             r-generics
-                             r-foreach
-                             r-earth
-                             r-dplyr
-                             r-doparallel
-                             r-dials
-                             r-cubist
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://microsoft.github.io/finnts/")
-    (synopsis "Microsoft Finance Time Series Forecasting Framework")
-    (description
-     "Automated time series forecasting developed by Microsoft Finance.  The Microsoft
-Finance Time Series Forecasting Framework, aka Finn, can be used to forecast any
-component of the income statement, balance sheet, or any other area of interest
-by finance.  Any numerical quantity over time, Finn can be used to forecast it.
-While it can be applied outside of the finance domain, Finn want built to meet
-the needs of financial analysts to better forecast their businesses within a
-company, and has a lot of built in features that are specific to the needs of
-financial forecasters.  Happy forecasting!")
-    (license license:expat)))
-
 (define-public r-finnishgrid
   (package
     (name "r-finnishgrid")
@@ -13157,34 +13102,6 @@ scale changes and that common pitfalls are avoided.")
      "Format the raw data from the ESPN fantasy football API
 <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.  Retrieve data on
 public leagues, rosters, athletes, and matches.")
-    (license license:expat)))
-
-(define-public r-ffdownload
-  (package
-    (name "r-ffdownload")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FFdownload" version))
-              (sha256
-               (base32
-                "050mn48q36585s2xf0dbsb385rla1jnnlkppnagrijdpmkvjzfy9"))))
-    (properties `((upstream-name . "FFdownload")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-xml2
-                             r-timetk
-                             r-rvest
-                             r-plyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sstoeckl/ffdownload")
-    (synopsis "Download Data from Kenneth French's Website")
-    (description
-     "Downloads all the datasets (you can exclude the daily ones or specify a list of
-those you are targeting specifically) from Kenneth French's Website at
-<https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html>,
-process them and convert them to list of xts (time series).")
     (license license:expat)))
 
 (define-public r-ffd

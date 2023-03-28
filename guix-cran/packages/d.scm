@@ -2946,20 +2946,24 @@ Gaussian likelihood and derives a spatial prior based on thin-plate splines.")
 (define-public r-dssat
   (package
     (name "r-dssat")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DSSAT" version))
               (sha256
                (base32
-                "13h2vslghy0127ycd9s1fynfqxh52vr3zbrryh20r7q0fzlka3fi"))))
+                "182x5v9zfyq43kgysmb5qkr6zrmnrvvd1mfi25shcm488p982qfh"))))
     (properties `((upstream-name . "DSSAT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-testthat
                              r-stringr
                              r-rlang
                              r-readr
                              r-purrr
+                             r-magrittr
                              r-lubridate
                              r-glue
                              r-dplyr))
@@ -13267,13 +13271,13 @@ implementation with tuning parameters, consider the xgboost package.")
 (define-public r-did2s
   (package
     (name "r-did2s")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "did2s" version))
               (sha256
                (base32
-                "0093al9pvqg7qmcmq8xil4207lwbmnycrd6m8qmypddafl22idcl"))))
+                "07c3arwbgd72i74fwpw1wf7g8ql8pdwghbs8gcyk1bckcwwk4ldj"))))
     (properties `((upstream-name . "did2s")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -20897,13 +20901,13 @@ calculate bins.")
 (define-public r-dbparser
   (package
     (name "r-dbparser")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbparser" version))
               (sha256
                (base32
-                "0p71qimcp02laziiw7n6zhxyhv38i8m1d9v5lr7vndzn2bid5hr4"))))
+                "0n8hbra1mjrlbzpxlpalx5w84w6xq38v3v3x5rsgkkyzmnk4r5jf"))))
     (properties `((upstream-name . "dbparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-tibble r-purrr r-progress r-dplyr))
