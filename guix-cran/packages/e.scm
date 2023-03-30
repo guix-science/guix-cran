@@ -986,16 +986,16 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "0r2z9l2qqi502zhj0cqjkxnj53sw6bcn3lri9nvrjg5q1dlc30ip"))))
+                "1p8lmkv37n49y2midssjmgbybr2w1laj48bcd17405bb5w249ghk"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-pracma r-expint))
+    (propagated-inputs (list r-survival r-pracma r-msm r-expint))
     (home-page "https://cran.r-project.org/package=extrafrail")
     (synopsis
      "Estimation and Additional Tools for Alternative Shared Frailty Models")
@@ -1003,9 +1003,9 @@ those values that are true.")
      "Provide estimation and data generation tools for some new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley and
 Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
-model, it is considered a parametric approach based on the Weibull distribution
-and a semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
-<arXiv:2206.12973>.")
+model, it is considered a parametric approach based on the Weibull and the
+piecewise exponential distributions and a semiparametric approach.  For details,
+see Gallardo and Bourguignon (2022) <arXiv:2206.12973>.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -1353,28 +1353,6 @@ matrices given a matrix of likelihoods for each individual assignment.  It has
 been written to accompany the forthcoming paper Computing expectations and
 marginal likelihoods for permutations'.  Publication details will be updated as
 soon as they are finalized.")
-    (license license:gpl3)))
-
-(define-public r-expp
-  (package
-    (name "r-expp")
-    (version "1.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "expp" version))
-              (sha256
-               (base32
-                "0hb4392biyy85gs7af4p9m7r51ijmqr7wp7c7b0i7lzdf1bnd7fz"))))
-    (properties `((upstream-name . "expp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep r-spatstat-geom r-sp r-rgeos r-deldir))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=expp")
-    (synopsis "Spatial Analysis of Extra-Pair Paternity")
-    (description
-     "Tools and data to accompany Schlicht, L., Valcu, M., & Kempenaers, B. (2015)
-<doi:10.1111/1365-2656.12293>.  Spatial patterns of extra-pair paternity: beyond
-paternity gains and losses.  Journal of Animal Ecology, 84(2), 518-531.")
     (license license:gpl3)))
 
 (define-public r-expowo
@@ -3859,6 +3837,45 @@ Prior to the last identified change point, the survival function is estimated
 using Kaplan-Meier, and the tail after the change point is fit using piecewise
 exponential.")
     (license license:gpl2+)))
+
+(define-public r-eventstudy
+  (package
+    (name "r-eventstudy")
+    (version "0.39.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EventStudy" version))
+              (sha256
+               (base32
+                "1z12nrkmpsv5cgm97g36vbwfdf0m1abfmwfln4xhy38d0qs61zi9"))))
+    (properties `((upstream-name . "EventStudy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-stringr
+                             r-shiny
+                             r-scales
+                             r-rstudioapi
+                             r-rlang
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-miniui
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https:://data-zoo.de")
+    (synopsis "Event Study Analysis")
+    (description
+     "Perform Event Studies from through our <https://EventStudyTools.com> Application
+Programming Interface, parse the results, visualize it, and / or use the results
+in further analysis.")
+    (license license:expat)))
 
 (define-public r-eventstream
   (package
@@ -8228,13 +8245,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.58")
+    (version "2.0.59")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "0b832rr5wjq118jz625md8qdvpa6as8q6blsdkrm4hjqa6gih7dz"))))
+                "0anpcnrvdjhlmn2a663rk2hkshpgckljmicpkzz385ms9dj9zbpr"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8912,13 +8929,13 @@ contacts.")
 (define-public r-epicontacts
   (package
     (name "r-epicontacts")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epicontacts" version))
               (sha256
                (base32
-                "07vnvfqm9vghmrjy3g1x3mz6qsf09qi04xq2nm9n4cgxjmbr0gia"))))
+                "0y97l288ncj0svk1gnxjr4q58rvhbn6wblm7jbhff4n4544yd4f7"))))
     (properties `((upstream-name . "epicontacts")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-threejs r-igraph r-dplyr
@@ -11205,13 +11222,13 @@ possible to export the code to be used in other packages at C++ level.")
 (define-public r-empeaksr
   (package
     (name "r-empeaksr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EMpeaksR" version))
               (sha256
                (base32
-                "13cdxcj8nxr8kky3w10jb1l2yslqkvp56kq5ivqgshajix28gciv"))))
+                "0hzw4hnisqa13h75faq4hdsmg3y6dlmfknbkql4mbdx4s3qb19fv"))))
     (properties `((upstream-name . "EMpeaksR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EMpeaksR")
@@ -11221,13 +11238,14 @@ possible to export the code to be used in other packages at C++ level.")
 algorithm.  We adapted the EM algorithm for the peak fitting of spectral data
 set by considering the weight of the intensity corresponding to the measurement
 energy steps (Matsumura, T., Nagamura, N., Akaho, S., Nagata, K., & Ando, Y.
-(2019 and 2021) <doi:10.1080/14686996.2019.1620123> and
-<doi:10.1080/27660400.2021.1899449>.  The package efficiently estimates the
-parameters of Gaussian mixture model during iterative calculation between E-step
-and M-step, and the parameters are converged to a local optimal solution.  This
-package can support the investigation of peak shift with two advantages: (1) a
-large amount of data can be processed at high speed; and (2) stable and
-automatic calculation can be easily performed.")
+(2019, 2021 and 2023) <doi:10.1080/14686996.2019.1620123>,
+<doi:10.1080/27660400.2021.1899449> <doi:10.1080/27660400.2022.2159753>.  The
+package efficiently estimates the parameters of Gaussian mixture model during
+iterative calculation between E-step and M-step, and the parameters are
+converged to a local optimal solution.  This package can support the
+investigation of peak shift with two advantages: (1) a large amount of data can
+be processed at high speed; and (2) stable and automatic calculation can be
+easily performed.")
     (license license:expat)))
 
 (define-public r-emp
@@ -13825,6 +13843,54 @@ Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-RÃƒÂ
 Methods\" <doi:10.1177/0049124119852394>.")
     (license license:gpl3)))
 
+(define-public r-eicompare
+  (package
+    (name "r-eicompare")
+    (version "3.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eiCompare" version))
+              (sha256
+               (base32
+                "0302czk1g1cdnp8jwwrim1y2iw0c0vv3cg7qg5n8dyrqzh4jqvyl"))))
+    (properties `((upstream-name . "eiCompare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wru
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-overlapping
+                             r-mcmcse
+                             r-magrittr
+                             r-leaflet
+                             r-ggplot2
+                             r-foreach
+                             r-eipack
+                             r-ei
+                             r-dplyr
+                             r-dosnow
+                             r-doparallel
+                             r-data-table
+                             r-coda
+                             r-censusxy
+                             r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RPVote/eiCompare")
+    (synopsis "Compares Different Ecological Inference Methods")
+    (description
+     "This package provides a comprehensive suite of tools for estimating the
+candidate preferences of racial/ethnic voting blocs in elections.  Includes
+functions for geocoding, predicting voter race/ethnicity, and conducting
+ecological inference.  Race/ethnicity prediction builds on race prediction
+developed by Imai et al. (2016) <doi:10.1093/pan/mpw001>.  Ecological inference
+methods are based on King (1997) <ISBN: 0691012407>,
+<https://gking.harvard.edu/eicamera/kinroot.html>; King et.  al. (2004) <ISBN:
+0521542804>, <https://gking.harvard.edu/files/abs/ecinf04-abs.shtml>.")
+    (license license:gpl3)))
+
 (define-public r-eicm
   (package
     (name "r-eicm")
@@ -14565,32 +14631,6 @@ continents that decided to share their measurements in the database
 row-wise bind CSV files distributed by the database.  Currently only L2, L3, and
 L4 (L=Level), half-hourly and daily (aggregation) files are supported.")
     (license license:gpl3)))
-
-(define-public r-eflm
-  (package
-    (name "r-eflm")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eflm" version))
-              (sha256
-               (base32
-                "0pl1z0yy257x4yhy2m7w6xkicr2a5b37rdsrf7a5ramk7z2nvs4m"))))
-    (properties `((upstream-name . "eflm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble))
-    (home-page "https://github.com/pachadotdev/eflm/")
-    (synopsis "Efficient Fitting of Linear and Generalized Linear Models")
-    (description
-     "Efficient Fitting of Linear and Generalized Linear Models by using just base R.
-As an alternative to lm() and glm(), this package provides elm() and eglm(),
-with a significant speedup when the number of observations is larger than the
-number of parameters to estimate.  The speed gains are obtained by reducing the
-NxP model matrix to a PxP matrix, and the best computational performance is
-obtained when R is linked against OpenBLAS', Intel MKL or other optimized BLAS
-library.  This implementation aims at being compatible with broom and sandwich
-packages for summary statistics and clustering by providing S3 methods.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-efflog
   (package
@@ -17458,13 +17498,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoEnsemble" version))
               (sha256
                (base32
-                "0d9g8kdm3hmd87pq7j9wqak4rxqglb7pq6fy9zlmsg3p28767xxh"))))
+                "0k1gz1kak037rydhx8db0bnbg6fbhyrck8vl6mfqdhjhm8iwy6xb"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18689,13 +18729,13 @@ Bayes method.")
 (define-public r-ebdbnet
   (package
     (name "r-ebdbnet")
-    (version "1.2.6")
+    (version "1.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebdbNet" version))
               (sha256
                (base32
-                "1qzwpr76nwvgylqdg7vhrbvh2lb1zrxx3g120yz156hhs4awv4kz"))))
+                "1n3ak1bzd3p6izpw2r4ckd32wpdw5m2s4qsf6fg9gpwk9l4vn603"))))
     (properties `((upstream-name . "ebdbNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))

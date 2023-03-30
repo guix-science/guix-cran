@@ -5937,13 +5937,13 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeSearch" version))
               (sha256
                (base32
-                "01cl64p3mgx353xm43k59idqd0kxvxig1mvi3vx32qw0xhdhplfp"))))
+                "0m6v8gpr5wi51h6gky65sik6xvvha2xf98bi1zfjnvsm99mm5s6h"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -7444,13 +7444,13 @@ page.")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "0.8-1")
+    (version "0.8-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tram" version))
               (sha256
                (base32
-                "0bdanzh5hx6h6sa7pxi68dvqhbhyqxbdz7qdmhcqb8ykjb5cwghm"))))
+                "04jv6dhlrh2psrlmnfdlgmjncd6fg86r5cq82dy3z06qzh9rjvq0"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -10468,13 +10468,13 @@ Owczarzy R (2004) <doi:10.1021/bi034621r>, Owczarzy R (2008)
 (define-public r-tmbstan
   (package
     (name "r-tmbstan")
-    (version "1.0.7")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmbstan" version))
               (sha256
                (base32
-                "0sg3d6mjnmq690fjikxs4mxi42ax80akvn8bk1i603a2pm42hhjh"))))
+                "19k73j6i4ki4xdxh7whp09p94rqrpsn5dpr7ms9fqn7sv0xap7y1"))))
     (properties `((upstream-name . "tmbstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -11452,6 +11452,27 @@ available back to 2000 for most geographies.")
      "An R wrapper for the Spotify Web API <https://developer.spotify.com/web-api/>.")
     (license license:expat)))
 
+(define-public r-tinysnapshot
+  (package
+    (name "r-tinysnapshot")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tinysnapshot" version))
+              (sha256
+               (base32
+                "1b7b48ccs25xk7d1y0pvxpqjjvdglvj6pvbzrzy6p5yfp8yjam1w"))))
+    (properties `((upstream-name . "tinysnapshot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinytest r-magick r-diffobj))
+    (home-page "https://cran.r-project.org/package=tinysnapshot")
+    (synopsis "Snapshots for Unit Tests using the 'tinytest' Framework")
+    (description
+     "Snapshots for unit tests using the tinytest framework for R. Includes
+expectations to test base R and ggplot2 plots as well as console output from
+print().")
+    (license license:gpl3+)))
+
 (define-public r-tinyscholar
   (package
     (name "r-tinyscholar")
@@ -11622,19 +11643,18 @@ comments.")
 (define-public r-tinkr
   (package
     (name "r-tinkr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinkr" version))
               (sha256
                (base32
-                "161jm3hswzfwq31mzr11zzkfw6s488ax7n82g32zy8c6j6k71mr7"))))
+                "068ym4a0gwayd6a86zq6428j8gkmvxgm7hk0crbjp0lp9cz85dzq"))))
     (properties `((upstream-name . "tinkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-xslt
                              r-xml2
-                             r-stringr
                              r-r6
                              r-purrr
                              r-magrittr
@@ -15060,13 +15080,13 @@ observations is considered.")
 (define-public r-thresholdrocsurvival
   (package
     (name "r-thresholdrocsurvival")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ThresholdROCsurvival" version))
               (sha256
                (base32
-                "1m84fxdhdwqb2qrmk6g46fzcbw10yji0kzviq5y765m7rxdh8xi5"))))
+                "10bgjs0ybd4h4hhgh7mj0sk4xwwf49dp48gvqwhvdrm11k3b52vs"))))
     (properties `((upstream-name . "ThresholdROCsurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresholdroc

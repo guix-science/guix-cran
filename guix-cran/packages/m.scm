@@ -4945,13 +4945,13 @@ options.")
 (define-public r-multiapply
   (package
     (name "r-multiapply")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiApply" version))
               (sha256
                (base32
-                "0ymxf5y48ki9v75bn8v3gs3fndmb41sl2f2xif9ah9962g64x0p7"))))
+                "0yc63phci4xxb3ja3mi03ckdw9za3dwq2llc681wism1yfm26wlh"))))
     (properties `((upstream-name . "multiApply")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-foreach r-doparallel))
@@ -4973,7 +4973,7 @@ transparent use of multi-core through its parameter ncores'.  In contrast to the
 base apply function, this package suggests the use of target dimensions as
 opposite to the margins for specifying the dimensions relevant to the function
 to be applied.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-multiaovbay
   (package
@@ -6966,13 +6966,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.6.1")
+    (version "3.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSEtool" version))
               (sha256
                (base32
-                "026pi8ygbh1mbmnwmw6p5zj27aadzhgmfswxwfpnp87l97pxjavd"))))
+                "0nzsvn3xg7mvbkm8gi2mnjib6dyzff3iwbqk0c30jq4rnbqwpqa1"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -7298,20 +7298,22 @@ Punzo, A. & Tortora, C. (2021) <doi:10.1177/1471082X19890935>.")
 (define-public r-msclassifr
   (package
     (name "r-msclassifr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSclassifR" version))
               (sha256
                (base32
-                "14fnq5xyflx9m35lppjdlz89cmwd8dmijn449r222hvpmv68vdhw"))))
+                "0abrz71v5bg7cch9hll6j67kzygrs2bili9fqmmnmm0rdnvsmzf8"))))
     (properties `((upstream-name . "MSclassifR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-vsurf
+                             r-vita
                              r-ubl
                              r-statmod
                              r-reshape2
+                             r-randomforest
                              r-performanceestimation
                              r-nnet
                              r-mltools
@@ -10153,39 +10155,6 @@ detect clusters in very convoluted data (Gonzalez-Reymundez et.  al, 2022)
 optimization.  The model uses data provided by users to estimate the mosquito
 populations in the sampling area for the sampling time period, and the optimal
 time to apply a treatment or multiple treatments.")
-    (license license:expat)))
-
-(define-public r-mosmafs
-  (package
-    (name "r-mosmafs")
-    (version "0.1.2-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mosmafs" version))
-              (sha256
-               (base32
-                "0xv9gf85d2fy9xdiik2dqd44xygsr6yr8fvmqkak1bpxnrkkb4hl"))))
-    (properties `((upstream-name . "mosmafs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-smoof
-                             r-paramhelpers
-                             r-parallelmap
-                             r-mlrcpo
-                             r-mlr
-                             r-mass
-                             r-ecr
-                             r-checkmate
-                             r-bbmisc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/slds-lmu/mosmafs")
-    (synopsis "Multi-Objective Simultaneous Model and Feature Selection")
-    (description
-     "This package performs simultaneous hyperparameter tuning and feature selection
-through both single-objective and multi-objective optimization as described in
-Binder, Moosbauer et al. (2019) <arXiv:1912.12912>.  Uses the ecr'-package as
-basis but adds mixed integer evolutionary strategies and multi-fidelity
-functionality as well as operators specific for the problem of feature
-selection.")
     (license license:expat)))
 
 (define-public r-mosaicmodel
@@ -14810,6 +14779,26 @@ Lopes, B. S., Forbes, K. J. and Strachan, N. J. C. Mining whole genome sequence
 data to efficiently attribute individuals to source populations.  Scientific
 Reports 10, 12124 (2020) <doi:10.1038/s41598-020-68740-6>.  See more details and
 examples in the README file.")
+    (license license:gpl3)))
+
+(define-public r-mmconvert
+  (package
+    (name "r-mmconvert")
+    (version "0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mmconvert" version))
+              (sha256
+               (base32
+                "0la84a09yhyz0adljnrlhzqipmn6c68lnglfj6prz26n43r0jmq0"))))
+    (properties `((upstream-name . "mmconvert")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/rqtl/mmconvert")
+    (synopsis "Mouse Map Converter")
+    (description
+     "Convert mouse genome positions between the build 39 physical map and the genetic
+map of Cox et al. (2009) <doi:10.1534/genetics.109.105486>.")
     (license license:gpl3)))
 
 (define-public r-mmcm
@@ -25199,13 +25188,13 @@ conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.
 (define-public r-metevalue
   (package
     (name "r-metevalue")
-    (version "0.1.13")
+    (version "0.1.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metevalue" version))
               (sha256
                (base32
-                "1xhzxw0wji7iiql7cs72lzvl5d52hjidxa0j72lkyzwdyq951q8d"))))
+                "1wfydiam9wcf5ilr8wpji1by5r9bs5vlhcv0vpjlavzfdjynim49"))))
     (properties `((upstream-name . "metevalue")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-psych r-dplyr))
@@ -30816,22 +30805,22 @@ values of the joint and conditional PDFs and CDFs.  Nagao M, Kadoya M (1971)
 (define-public r-mdatools
   (package
     (name "r-mdatools")
-    (version "0.13.1")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mdatools" version))
               (sha256
                (base32
-                "19l51va1fl0cx18ml6n1kfgbc8in9isb1mzhl84gshs9f6hnrmzh"))))
+                "1n2sa12r13bw8006cb1srgxmh3hq1xxn7jnksnfapn3qdr2ahqr2"))))
     (properties `((upstream-name . "mdatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
-    (home-page "https://cran.r-project.org/package=mdatools")
+    (home-page "https://github.com/svkucheryavski/mdatools")
     (synopsis "Multivariate Data Analysis for Chemometrics")
     (description
      "Projection based methods for preprocessing, exploring and analysis of
-multivariate data used in chemometrics.  S. Kucheryavskiy (2020) <doi:
-10.1016/j.chemolab.2020.103937>.")
+multivariate data used in chemometrics.  S. Kucheryavskiy (2020)
+<doi:10.1016/j.chemolab.2020.103937>.")
     (license license:expat)))
 
 (define-public r-mdapack
@@ -32916,13 +32905,13 @@ estimates problem (data separation).")
 (define-public r-mbres
   (package
     (name "r-mbres")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mbRes" version))
               (sha256
                (base32
-                "1n7gp3c08zb268f04ybddmwfhz7rffwnh74x9v4zfvpnkcs97sqg"))))
+                "19my8lwyn7i0fcsffz0w334apxrffs6sph1svh5mwa9syyvspxaz"))))
     (properties `((upstream-name . "mbRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32939,7 +32928,7 @@ estimates problem (data separation).")
     (synopsis "Exploration of Multiple Biomarker Responses using Effect Size")
     (description
      "Summarize multiple biomarker responses of aquatic organisms to contaminants
-using Cliffâs delta, as described in Pham & Sokolova (2022)
+using Cliffâs delta, as described in Pham & Sokolova (2023)
 <doi:10.1002/ieam.4676>.")
     (license license:gpl3)))
 
@@ -35395,13 +35384,13 @@ estimation.")
 (define-public r-massivegst
   (package
     (name "r-massivegst")
-    (version "1.0.1")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "massiveGST" version))
               (sha256
                (base32
-                "0y363y5s01avffmqd7dw7rcx98k24hmp2zvpf9pg4ywrl0b40cdx"))))
+                "13qhn15gr4fvri1p843zz7y1q6701qmkxq5lysydfmdaxp5hsaxd"))))
     (properties `((upstream-name . "massiveGST")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls r-visnetwork r-msigdbr r-igraph
@@ -37643,13 +37632,13 @@ et al. (2019) <doi:10.1101/587436>.).")
 (define-public r-maotai
   (package
     (name "r-maotai")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "maotai" version))
               (sha256
                (base32
-                "178gsci0sdlqzdi18cnc7qvs008w5db50hd9ayzlvabsc0dk19z2"))))
+                "1axr16xs366011vkx3j8mljq98923kscz8wrl9m1zprw3pqif6jr"))))
     (properties `((upstream-name . "maotai")))
     (build-system r-build-system)
     (propagated-inputs (list r-shapes
@@ -37660,6 +37649,7 @@ et al. (2019) <doi:10.1101/587436>.).")
                              r-rcpparmadillo
                              r-rcpp
                              r-rann
+                             r-pracma
                              r-matrix
                              r-labdsv
                              r-fastcluster
@@ -38628,13 +38618,13 @@ starting at 1 and allowing users to customise suffix format.")
 (define-public r-maketools
   (package
     (name "r-maketools")
-    (version "1.2.2")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "maketools" version))
               (sha256
                (base32
-                "1p98vg5404np5fbiqajznmiqah8lyfv2xf741wjfm2jqkki9nk40"))))
+                "0qxhs21375kmhb04ihb499q21bqxj4aydc82ymivymfxa9nsawx9"))))
     (properties `((upstream-name . "maketools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys))
@@ -38755,6 +38745,27 @@ way, existing knowledge can intuitively be incorporated at the level it applies
 to.  Alternatively, one can use independent variance priors for each model
 components in the latent Gaussian model.")
     (license license:gpl2+)))
+
+(define-public r-makeit
+  (package
+    (name "r-makeit")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "makeit" version))
+              (sha256
+               (base32
+                "11v8dd1c3gw2vrnqwxr2q90vdws46bsja9fh89pn5a3qh6p09vz7"))))
+    (properties `((upstream-name . "makeit")))
+    (build-system r-build-system)
+    (home-page "https://github.com/arni-magnusson/makeit")
+    (synopsis "Run R Scripts if Needed")
+    (description
+     "This package provides a simple make-like utility to run R scripts if needed,
+based on last modified time.  Implemented in base R with no additional software
+requirements, organizational overhead, or structural requirements.  In short:
+run an R script if underlying files have changed, otherwise do nothing.")
+    (license license:gpl3)))
 
 (define-public r-makeflow
   (package
@@ -39806,16 +39817,17 @@ and Stribling, J.B. (1999).")
 (define-public r-macrosyntr
   (package
     (name "r-macrosyntr")
-    (version "0.2.14")
+    (version "0.2.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "macrosyntR" version))
               (sha256
                (base32
-                "1w4h9kkknxzphi3v4grn7c6syx5sf4jl6h8vfyn7xmdzzppq5q20"))))
+                "1lydhr7rnh8kyj0pz9bfpjczsnxpy0z8gzphi7qc0s639nw1z8ay"))))
     (properties `((upstream-name . "macrosyntR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-reshape2
                              r-igraph
                              r-ggthemes

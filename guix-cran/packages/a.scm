@@ -4804,13 +4804,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.8-4")
+    (version "1.9-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asbio" version))
               (sha256
                (base32
-                "056hxcyyf8hq5kh3qhcm0z6dg29wwjisf4jkkzp2c5p4y1ngz8gl"))))
+                "0xj71hx6y64qycgq0xg6z6avqxm34n523arsqkfjy3l1a4pqq1b4"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (inputs (list))
@@ -10458,13 +10458,13 @@ and shiny-based GUI.")
 (define-public r-amt
   (package
     (name "r-amt")
-    (version "0.2")
+    (version "0.2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "amt" version))
               (sha256
                (base32
-                "0h8b4n5kva0a1fd3dywsy0w806m2jv9lvf370nxm4yn7jyzc3cxq"))))
+                "0dw29gpgcqm5v8scwhnvdk1vkq9wqjd9klrxlgigqisnlqg0pgia"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

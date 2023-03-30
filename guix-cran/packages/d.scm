@@ -2677,13 +2677,13 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
 (define-public r-dtat
   (package
     (name "r-dtat")
-    (version "0.3-5")
+    (version "0.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTAT" version))
               (sha256
                (base32
-                "0g5iqrhvlr00f976621hd4i5ylpv3gl6q26gfwx1xcrd4nxjxkxj"))))
+                "0ll11763c03xll02727jwm637vbq438vivr88f45nbwrpsk9nb34"))))
     (properties `((upstream-name . "DTAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20380,21 +20380,17 @@ the dChip software.")
 (define-public r-dchaos
   (package
     (name "r-dchaos")
-    (version "0.1-6")
+    (version "0.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DChaos" version))
               (sha256
                (base32
-                "0g1ld6big26gpj4p6dz0ncchqyspb73a8wd6h900b98hg32zidg6"))))
+                "1xnsc8p8nn72m081hsfnjzsd060y79ah6b7axxsslb2a4zdyhh2g"))))
     (properties `((upstream-name . "DChaos")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-sandwich
-                             r-pracma
-                             r-outliers
-                             r-nnet))
+    (propagated-inputs (list r-zoo r-xts r-sandwich r-pracma r-nnet))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DChaos")
     (synopsis "Chaotic Time Series Analysis")
     (description

@@ -4814,13 +4814,13 @@ accommodated in the univariate setting.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.2.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmer" version))
               (sha256
                (base32
-                "0piz1imjfhn3lqnl4j8rph79vrix3z1cjqcmxrq1fky1gcjsgwl1"))))
+                "0whic6j78c58117iyxs3bc9f7ai3f6gnxcq84vjvb5g67g0kmz14"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -4831,12 +4831,14 @@ accommodated in the univariate setting.")
                              r-purrr
                              r-pdist
                              r-mvtnorm
-                             r-mclust
                              r-mass
                              r-lhs
                              r-isoband
                              r-ggplot2
-                             r-ggally))
+                             r-ggbeeswarm
+                             r-ggally
+                             r-dplyr
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/andy-iskauskas/hmer")
     (synopsis "History Matching and Emulation Package")

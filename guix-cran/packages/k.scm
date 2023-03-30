@@ -3678,38 +3678,6 @@ tidymodels', caret or mlr3'.  Visualizations can be done using the R package
 shapviz'.")
     (license license:gpl2+)))
 
-(define-public r-kernelpsi
-  (package
-    (name "r-kernelpsi")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kernelPSI" version))
-              (sha256
-               (base32
-                "1gnp3ixqmijy6xanlc4l8255biwxmlfyhd3y68arry9rzfjkmxpz"))))
-    (properties `((upstream-name . "kernelPSI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-lmtest
-                             r-kernlab
-                             r-compquadform))
-    (native-inputs (list r-knitr))
-    (home-page "http://proceedings.mlr.press/v97/slim19a.html")
-    (synopsis "Post-Selection Inference for Nonlinear Variable Selection")
-    (description
-     "Different post-selection inference strategies for kernel selection, as described
-in \"kernelPSI: a Post-Selection Inference Framework for Nonlinear Variable
-Selection\", Slim et al., Proceedings of Machine Learning Research, 2019,
-<http://proceedings.mlr.press/v97/slim19a/slim19a.pdf>.  The strategies rest
-upon quadratic kernel association scores to measure the association between a
-given kernel and an outcome of interest.  The inference step tests for the joint
-effect of the selected kernels on the outcome.  A fast constrained sampling
-algorithm is proposed to derive empirical p-values for the test statistics.")
-    (license license:gpl2+)))
-
 (define-public r-kernelphil
   (package
     (name "r-kernelphil")

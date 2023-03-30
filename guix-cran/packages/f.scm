@@ -2765,16 +2765,16 @@ Objects (FIFUS) for Spatial Decision Support Systems\"
 (define-public r-fspe
   (package
     (name "r-fspe")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fspe" version))
               (sha256
                (base32
-                "1pswbjqk9q6fnpkhpsp117ivd1sffwrd2bjpgzgfz9cm6fyix7jr"))))
+                "02pmrc6k9wi8ic26nxj66pzjp64ds36awaj3hx2zw3nnccgs7164"))))
     (properties `((upstream-name . "fspe")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-gparotation r-corpcor))
+    (propagated-inputs (list r-psych r-corpcor))
     (home-page "https://cran.r-project.org/package=fspe")
     (synopsis
      "Estimating the Number of Factors in EFA with Out-of-Sample Prediction Errors")
@@ -9448,13 +9448,13 @@ hypothesis testing is provided (Benjamini and Hochberg, 1995,
 (define-public r-flashr
   (package
     (name "r-flashr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flashr" version))
               (sha256
                (base32
-                "0w3fs6psarqp19zc8qpmg2744cd64lxgi4hbkp5nl6v00p53nkvc"))))
+                "0cvpjyjylcz61jmmar2aynvcqh7m41ljkdqmgwmiwiy26qi6clqn"))))
     (properties `((upstream-name . "flashr")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -11532,13 +11532,13 @@ Systems\" (NeurIPS).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.7.2")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finbif" version))
               (sha256
                (base32
-                "1kfjg1326mjmb0scm0vd59byipv6qmc3y843ixqchscd6qmksm8n"))))
+                "1iw5lcp8phm71fmr8lgj16wh1g3vijyzds4kwfvpdjrgkn2658ya"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))
@@ -17132,6 +17132,26 @@ research in to deep learning best practices undertaken at fast.ai', including
 out of the box support for vision, text, tabular, audio, time series, and
 collaborative filtering models.")
     (license license:asl2.0)))
+
+(define-public r-fastaft
+  (package
+    (name "r-fastaft")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fastAFT" version))
+              (sha256
+               (base32
+                "1vcl28fddaw082a1xqpz5alznjyvh7mf9lvn4y41dx3bbfjlv8m4"))))
+    (properties `((upstream-name . "fastAFT")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=fastAFT")
+    (synopsis "Fast Regression for the Accelerated Failure Time (AFT) Model")
+    (description
+     "Fast censored linear regression for the accelerated failure time (AFT) model of
+Huang (2013) <doi:10.1111/sjos.12031>.")
+    (license license:gpl2+)))
 
 (define-public r-fastadi
   (package

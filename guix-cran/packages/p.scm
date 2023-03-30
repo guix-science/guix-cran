@@ -7249,22 +7249,23 @@ visualizations are also provided.")
 (define-public r-prioritylasso
   (package
     (name "r-prioritylasso")
-    (version "0.2.5")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioritylasso" version))
               (sha256
                (base32
-                "1myci7akab1fg7p72q1hrchkixs7q5lagdsfpmdbvd13yy4q3h5z"))))
+                "05wfyzjx76b6a68fdbl16h88qnxi0gspdwjszpcy9d4a9jcy7i94"))))
     (properties `((upstream-name . "prioritylasso")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-glmnet))
+    (propagated-inputs (list r-survival r-glmnet r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=prioritylasso")
     (synopsis "Analyzing Multiple Omics Data with an Offset Approach")
     (description
      "Fits successive Lasso models for several blocks of (omics) data with different
-priorities and takes the predicted values as an offset for the next block.")
+priorities and takes the predicted values as an offset for the next block.  Also
+offers options to deal with blockwise missingness in multi-omics data.")
     (license license:gpl2)))
 
 (define-public r-prioritizrdata
@@ -7290,33 +7291,30 @@ priorities and takes the predicted values as an offset for the next block.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "7.2.2")
+    (version "8.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioritizr" version))
               (sha256
                (base32
-                "0qc1w79lk4qpvdaldy0h70jicvp934y3mssxvhsd6prcxhxgyidh"))))
+                "02mrrmhs72lp44dbzsj0snnqlkclync430bvznsw4401fgg8r7g5"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-uuid
                              r-tibble
-                             r-sp
+                             r-terra
                              r-slam
                              r-sf
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-raster
-                             r-proto
-                             r-plyr
+                             r-r6
                              r-matrix
                              r-magrittr
                              r-igraph
-                             r-geos
-                             r-fasterize
                              r-exactextractr
-                             r-doparallel
+                             r-cli
                              r-bh
                              r-assertthat
                              r-ape))
@@ -7336,7 +7334,8 @@ identify solutions that benefit multiple stakeholders.  To solve large-scale or
 complex conservation planning problems, users should install the Gurobi
 optimization software (available from <https://www.gurobi.com/>) and the gurobi
 R package (see Gurobi Installation Guide vignette for details).  Users can also
-install the IBM CPLEX software (<https://www.ibm.com/analytics/cplex-optimizer>)
+install the IBM CPLEX software
+(<https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer>)
 and the cplexAPI R package (available at <https://github.com/cran/cplexAPI>).
 Additionally, the rcbc R package (available at
 <https://github.com/dirkschumacher/rcbc>) can be used to generate solutions
@@ -9025,13 +9024,13 @@ the most common first named based on U.S. Social Security Administration data.")
 (define-public r-predictor
   (package
     (name "r-predictor")
-    (version "3.0.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predictoR" version))
               (sha256
                (base32
-                "1y8bmxqqzfdqajcmcb2akbbckjcm683ipjvmnv1jcv54z7zqvpfh"))))
+                "11arzdrca4jg9p25h9qfg7kkv4d3bc3qr5v41lsipgbrc9h51vdi"))))
     (properties `((upstream-name . "predictoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -9054,7 +9053,7 @@ the most common first named based on U.S. Social Security Administration data.")
                              r-dplyr
                              r-config
                              r-colourpicker))
-    (home-page "https://www.promidat.com")
+    (home-page "https://promidat.website/")
     (synopsis "Predictive Data Analysis System")
     (description
      "Perform a supervised data analysis on a database through a shiny graphical
@@ -9316,6 +9315,26 @@ predict for the test dataset using the proposed computational model.  Besides,
 the user can also build their own training model using their training dataset,
 followed by prediction for the test set.")
     (license license:gpl2+)))
+
+(define-public r-precondition
+  (package
+    (name "r-precondition")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "precondition" version))
+              (sha256
+               (base32
+                "0srmr33q56dimkn0m7aad19ddrp28a0dzrpnyh4hglwy9zxfqz9j"))))
+    (properties `((upstream-name . "precondition")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
+    (home-page "https://cran.r-project.org/package=precondition")
+    (synopsis "Lightweight Precondition, Postcondition, and Sanity Checks")
+    (description
+     "This package implements fast, safe, and customizable assertions routines, which
+can be used in place of base::stopifnot().")
+    (license license:expat)))
 
 (define-public r-precommit
   (package
@@ -9745,6 +9764,30 @@ double input symmetrical relevance ('DISR') method by Meyer and Bontempi (2006)
 <doi:10.1016/j.eswa.2015.07.007>.")
     (license license:gpl3)))
 
+(define-public r-prana
+  (package
+    (name "r-prana")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PRANA" version))
+              (sha256
+               (base32
+                "0v1s57gxkn7by2p07bpw8bm6yzi74qn17vf71b6px3ynvqdn87g3"))))
+    (properties `((upstream-name . "PRANA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase r-minet r-dplyr r-dnapath))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PRANA")
+    (synopsis "Pseudo-Value Regression Approach for Network Analysis (PRANA)")
+    (description
+     "This package provides a novel pseudo-value regression approach for the
+differential co-expression network analysis in expression data, which can
+incorporate additional clinical variables in the model.  This is a direct
+regression modeling for the differential network analysis, and it is therefore
+computationally amenable for the most users.")
+    (license license:gpl3)))
+
 (define-public r-prais
   (package
     (name "r-prais")
@@ -9798,13 +9841,13 @@ sizes in two-phase designs.  A number of example data sets are included.")
 (define-public r-practicalsigni
   (package
     (name "r-practicalsigni")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "practicalSigni" version))
               (sha256
                (base32
-                "0s2fi55haabbql7812d6icldagc1w2wbbkcp99wp7vrzhbn3ivg8"))))
+                "0hqr0b7yn7l0isr7nmx65fq46pzzix0zfwcap9w4bar9984k7f4b"))))
     (properties `((upstream-name . "practicalSigni")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-randomforest r-np r-nns r-generalcorr))
@@ -14197,13 +14240,13 @@ Burden (2014) <arXiv:1406.2780>.")
 (define-public r-polminer
   (package
     (name "r-polminer")
-    (version "0.8.7")
+    (version "0.8.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "polmineR" version))
               (sha256
                (base32
-                "0b4m7xywvk3g8x9m3xb3nivbh0x6hvan51j444i2q2la6myrnm62"))))
+                "1ih1llbj7grr8rxzrjbkyx1sxncy94gvsjnblzs7waaqdn44nsm2"))))
     (properties `((upstream-name . "polmineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14220,7 +14263,8 @@ Burden (2014) <arXiv:1406.2780>.")
                              r-jsonlite
                              r-fs
                              r-dt
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PolMine/polmineR")
     (synopsis "Verbs and Nouns for Corpus Analysis")
@@ -25296,22 +25340,23 @@ considered.")
 (define-public r-peramo
   (package
     (name "r-peramo")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "peramo" version))
               (sha256
                (base32
-                "1v57anfh0dayhf3vqiqmp9zh311vd1dwdr19j1i05hg7ap1qssrx"))))
+                "19mbaglafi77zfhnlsjlxs67jikw8jmairjjw0qaziyw5i2p3ygg"))))
     (properties `((upstream-name . "peramo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-dplyr))
+    (propagated-inputs (list r-magrittr r-lme4 r-dplyr))
     (home-page "https://cran.r-project.org/package=peramo")
     (synopsis "Permutation Tests for Randomization Model")
     (description
      "Perform permutation-based hypothesis testing for randomized experiments as
-described in Ernst (2004) <doi:10.1214/088342304000000396> and Manly (2007)
-<isbn:978-1-58488-541-2>.")
+suggested in Ludbrook & Dudley (1998) <doi:10.2307/2685470> and Ernst (2004)
+<doi:10.1214/088342304000000396>, introduced in Pham et al. (2022)
+<doi:10.1016/j.chemosphere.2022.136736>.")
     (license license:gpl3)))
 
 (define-public r-pequod
@@ -31161,17 +31206,19 @@ on the analysis of poverty.  References, Fattore M. (2016)
 (define-public r-parquetize
   (package
     (name "r-parquetize")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parquetize" version))
               (sha256
                (base32
-                "1ljr9glcqs6q8vs02jm3p0d5ysidxcbmdnij8q2wzhdzq70r80fg"))))
+                "0rxd3hqwpisy0fxzd1v9n6v62a4akgz8pklhk8k8xq1jxwvdmy8n"))))
     (properties `((upstream-name . "parquetize")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rsqlite
+    (propagated-inputs (list r-tidyselect
+                             r-rsqlite
                              r-readr
+                             r-lifecycle
                              r-jsonlite
                              r-haven
                              r-dplyr
@@ -32395,6 +32442,31 @@ supported via Stan'.  Supports estimation of asymmetric effects models via first
 differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
 generalized linear model extension thereof using GEE.")
     (license license:expat)))
+
+(define-public r-panelpomp
+  (package
+    (name "r-panelpomp")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "panelPomp" version))
+              (sha256
+               (base32
+                "054nma2h355xd8bazbjrwgxa825qrwfjjwny5m9hry5pyb2vszwm"))))
+    (properties `((upstream-name . "panelPomp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pomp))
+    (home-page "https://cran.r-project.org/package=panelPomp")
+    (synopsis "Inference for Panel Partially Observed Markov Processes")
+    (description
+     "Data analysis based on panel partially-observed Markov process (PanelPOMP)
+models.  To implement such models, simulate them and fit them to panel data,
+panelPomp extends some of the facilities provided for time series data by the
+pomp package.  Implemented methods include filtering (panel particle filtering)
+and maximum likelihood estimation (Panel Iterated Filtering) as proposed in
+Breto, Ionides and King (2020) \"Panel Data Analysis via Mechanistic Models\"
+<doi:10.1080/01621459.2019.1604367>.")
+    (license license:gpl3)))
 
 (define-public r-panelmatch
   (package
@@ -34592,13 +34664,13 @@ for analyzing package usage.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "packageRank" version))
               (sha256
                (base32
-                "0dm8sgrbimdw65lwdjcxf3z6qzdjzfn0492y90xqynxzz8h3n185"))))
+                "11kchs0vcvynx9rxn2cx0vky7616a19rdpdlx2v0b8myp3gs7riv"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants

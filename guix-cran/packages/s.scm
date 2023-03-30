@@ -2953,26 +2953,26 @@ reference.")
 (define-public r-survrm2adapt
   (package
     (name "r-survrm2adapt")
-    (version "1.0-1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survRM2adapt" version))
               (sha256
                (base32
-                "1r3jvjbc2sb7b00s95b3sdx4d99rmrnd573fx1n4914ydiggi9nn"))))
+                "1abi73a0z5g2khkmrgywrba6j9k6k7vpnskjcbqqq21qr5j32crv"))))
     (properties `((upstream-name . "survRM2adapt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-mvtnorm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=survRM2adapt")
     (synopsis
      "Flexible and Coherent Test/Estimation Procedure Based on Restricted Mean Survival Times")
     (description
-     "This package performs the procedure proposed by Horiguchi et al. (2018)
-<doi:10.1002/sim.7661>.  The method specifies a set of truncation time points
-tau's for calculating restricted mean survival times (RMST), performs testing
-for equality, and estimates the difference in RMST between two groups at the
-specified tau's.  Multiplicity by specifying several tau's is taken into account
-in this procedure.")
+     "Estimates the restricted mean survival time (RMST) with the time window [0,
+tau], where tau is adaptively selected from the procedure, proposed by Horiguchi
+et al. (2018) <doi:10.1002/sim.7661>.  It also estimates the RMST with the time
+window [tau1, tau2], where tau1 is adaptively selected from the procedure,
+proposed by Horiguchi et al. (2023) <doi:10.1002/sim.9662>.")
     (license license:gpl2)))
 
 (define-public r-survrm2
@@ -4724,13 +4724,13 @@ see Aizaki and Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-support-bws
   (package
     (name "r-support-bws")
-    (version "0.4-5")
+    (version "0.4-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "support.BWS" version))
               (sha256
                (base32
-                "1hks0igd5708b1c0ckfj4jp13fb5cgsji52gjcr29qynrky3y51s"))))
+                "0l47a4llraybpfghw8zhb51rs7c0wnlprpmjhc6jb2nclygzc704"))))
     (properties `((upstream-name . "support.BWS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=support.BWS")
@@ -7409,13 +7409,13 @@ for the anomalous threshold calculation.")
 (define-public r-strawr
   (package
     (name "r-strawr")
-    (version "0.0.9")
+    (version "0.0.91")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "strawr" version))
               (sha256
                (base32
-                "1g85hxq3f28di0787ww4d0ai3znsp9d96sp8bwiygs6ff9jx4wkz"))))
+                "1nbcn20g3f3f5x9sscj3020n5h4iaphr70s90n2fz31vc4snzq2m"))))
     (properties `((upstream-name . "strawr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -14401,13 +14401,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.4.2")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSBtools" version))
               (sha256
                (base32
-                "09fsbwl96ymx4zdkd37010j9wgarsz768iz9bag56igdc4cc3alj"))))
+                "1aap2arvicr0y97jmjngfvxpamb1xwvpnyn1c2liiikkn4552ypg"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -21996,13 +21996,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sparseR" version))
               (sha256
                (base32
-                "0b9k96p66j2vn9yvcjw652lh9l6j5dbswhqhq0i4ps06jm5ks5av"))))
+                "0sly1bga1n5nvhbbfwbzy4giyvlhg4mivqibj4nzc46pk8xlyhc3"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-recipes r-ncvreg r-magrittr r-dplyr))
@@ -22451,6 +22451,29 @@ group-regularized negative binomial regression, group-regularized gamma
 regression, and group-regularized regression in the exponential dispersion
 family with the SSGL penalty are also provided.")
     (license license:gpl3)))
+
+(define-public r-sparsefunclust
+  (package
+    (name "r-sparsefunclust")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SparseFunClust" version))
+              (sha256
+               (base32
+                "1p3spmgg7plkh7ppc80gqpnl8c29wfnaa89d5z71qij02lwrcxyg"))))
+    (properties `((upstream-name . "SparseFunClust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SparseFunClust")
+    (synopsis "Sparse Functional Clustering")
+    (description
+     "This package provides a general framework for performing sparse functional
+clustering as originally described in Floriello and Vitelli (2017)
+<doi:10.1016/j.jmva.2016.10.008>, with the possibility of jointly handling data
+misalignment (see Vitelli, 2019, <doi:10.48550/arXiv.1912.00687>).")
+    (license license:gpl3+)))
 
 (define-public r-sparseflmm
   (package
@@ -36294,6 +36317,49 @@ See Tong et al. (2013) <doi:10.1093/bioinformatics/bts713>.")
 the aim being to describe and compare their isotopic niche.")
     (license license:gpl2+)))
 
+(define-public r-siamodules
+  (package
+    (name "r-siamodules")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SIAmodules" version))
+              (sha256
+               (base32
+                "1jd72pvkqsciql76crikn3r6nrxgwz8yxlsnla51i1hx5qb8ix73"))))
+    (properties `((upstream-name . "SIAmodules")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shinyitemanalysis
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-mirtcat
+                             r-mirt
+                             r-magrittr
+                             r-lme4
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-difnlr
+                             r-cli))
+    (home-page "http://www.ShinyItemAnalysis.org")
+    (synopsis "Modules for 'ShinyItemAnalysis'")
+    (description
+     "Package including additional modules for interactive ShinyItemAnalysis
+application for the psychometric analysis of educational tests, psychological
+assessments, health-related and other types of multi-item measurements, or
+ratings from multiple raters.")
+    (license license:gpl3)))
+
 (define-public r-si
   (package
     (name "r-si")
@@ -39315,13 +39381,13 @@ HTML tool widgets.")
 (define-public r-sherlockholmes
   (package
     (name "r-sherlockholmes")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SherlockHolmes" version))
               (sha256
                (base32
-                "15skc94z6h3qy1dwhqf93sqjr8x1p72rs510rg25w2j6j2zm4w1a"))))
+                "162iw7qzi5cb73lawfvsnbq3cxgx0si9bz0avv60rrkzdb0xlr05"))))
     (properties `((upstream-name . "SherlockHolmes")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -39349,7 +39415,7 @@ describe something that he was doing.  My hypothesis is that the frequency
 distribution of the search pattern \"Holmes\" is a good proxy for the degree to
 which a story is or is not truly a Sherlock Holmes story.  The results are
 presented in a manuscript that is available as a vignette and online at
-<https://github.com/barryzee/Concordance>.")
+<https://barryzee.github.io/Concordance/index.html>.")
     (license license:gpl2+)))
 
 (define-public r-sherlock
@@ -51965,13 +52031,13 @@ been studied by Davis (1973) <doi:10.1037/h0033951>; MacCoun & Kerr (1988)
 (define-public r-satdad
   (package
     (name "r-satdad")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "satdad" version))
               (sha256
                (base32
-                "00ggzmq4lbl17qwhm0mj588566n5gladafvi4j4fyrw3lln9zfwc"))))
+                "1ig7z0z4filq57sk9rc38pnx79j1lxm1sacl9hbi407y0pqx01k7"))))
     (properties `((upstream-name . "satdad")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

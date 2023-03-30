@@ -6734,13 +6734,13 @@ S. Sauer, K. Schulze (ECB WP series, forthcoming).")
 (define-public r-validate
   (package
     (name "r-validate")
-    (version "1.1.1")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "validate" version))
               (sha256
                (base32
-                "0bbrlc5lfis3ksg4fsd8ldwzr9lqh45w51g83vys9l3zhmmxcagb"))))
+                "020l46qd4fyqr7hksgvsvzlh2ibppwgpfasv8a0schl4vjf29a7j"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-settings))

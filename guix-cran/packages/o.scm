@@ -1725,13 +1725,13 @@ BioQuant Center at Heidelberg University, Germany.")
 (define-public r-oscar
   (package
     (name "r-oscar")
-    (version "1.1.2-2")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oscar" version))
               (sha256
                (base32
-                "15q9hl9miz7mncv38327sd03nl4xjipbgxd4hl2adva1zj4iq1wr"))))
+                "00dfx56slizzqw37hh8ib2f4s7nxwqkz86qg57iaz2zbzxhgmqxi"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
@@ -1751,8 +1751,9 @@ optimization task.  These optimization modules include DBDC ('Double Bundle
 method for nonsmooth DC optimization as described in Joki et al. (2018)
 <doi:10.1137/16M1115733>) and LMBM ('Limited Memory Bundle Method for
 large-scale nonsmooth optimization as in Haarala et al. (2004)
-<doi:10.1080/10556780410001689225>).  Multiple regression model families are
-supported: Cox, logistic, and Gaussian.")
+<doi:10.1080/10556780410001689225>).  The OSCAR models are comprehensively
+exemplified in Halkola et al. (2023) <doi:10.1371/journal.pcbi.1010333>).
+Multiple regression model families are supported: Cox, logistic, and Gaussian.")
     (license license:gpl3)))
 
 (define-public r-osc
@@ -6892,6 +6893,33 @@ approaches.  Also, the package includes Student's t test, Welch's t test and
 Mann-Whitney U test for two samples.  Moreover, it assesses variance homogeneity
 and normality of data in each group via tests and plots (Dag et al., 2018,
 <https://journal.r-project.org/archive/2018/RJ-2018-022/RJ-2018-022.pdf>).")
+    (license license:gpl2+)))
+
+(define-public r-onetwosamples
+  (package
+    (name "r-onetwosamples")
+    (version "1.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OneTwoSamples" version))
+              (sha256
+               (base32
+                "0qa5v3c1f5mckvgmw8zbxqkk1q8k8dig1xg9k8pfyvfxqjard1ny"))))
+    (properties `((upstream-name . "OneTwoSamples")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=OneTwoSamples")
+    (synopsis "Deal with One and Two (Normal) Samples")
+    (description
+     "We introduce an R function one_two_sample() which can deal with one and two
+(normal) samples, Ying-Ying Zhang, Yi Wei (2012) <doi:10.2991/asshm-13.2013.29>.
+ For one normal sample x, the function reports descriptive statistics, plot,
+interval estimation and test of hypothesis of x.  For two normal samples x and
+y, the function reports descriptive statistics, plot, interval estimation and
+test of hypothesis of x and y, respectively.  It also reports interval
+estimation and test of hypothesis of mu1-mu2 (the difference of the means of x
+and y) and sigma1^2 / sigma2^2 (the ratio of the variances of x and y), tests
+whether x and y are from the same population, finds the correlation coefficient
+of x and y if x and y have the same length.")
     (license license:gpl2+)))
 
 (define-public r-onetr

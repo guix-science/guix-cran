@@ -2912,13 +2912,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.12.0")
+    (version "1.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "broom.helpers" version))
               (sha256
                (base32
-                "0b1aihc75nj5jjpnfqjdbls08djfmxjmnd40878c9wbs6rhdkddz"))))
+                "0k3bd9f42dzp7xjqn43yfwajxzzm2h6f66npp9wjyx750jkaf1q1"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12972,23 +12972,19 @@ Noah Simon (2020) <arXiv:2003.00116v2>.")
 (define-public r-bigstep
   (package
     (name "r-bigstep")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigstep" version))
               (sha256
                (base32
-                "0ygp1vljqqn5vzpjxlv9d6fxxv3bi2kfyqfs1gf0jgxwb9417b82"))))
+                "07l4pdmbcqh024bx32nbmrwl3rpk04r8sb6qdj63j354hvm4fd0a"))))
     (properties `((upstream-name . "bigstep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-speedglm
-                             r-rcppeigen
-                             r-r-utils
-                             r-matrixstats
-                             r-magrittr
+    (propagated-inputs (list r-rcppeigen r-r-utils r-matrixstats r-magrittr
                              r-bigmemory))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/pmszulc/bigstep")
+    (home-page "https://github.com/pmszulc/bigstep")
     (synopsis "Stepwise Selection for Large Data Sets")
     (description
      "Selecting linear and generalized linear models for large data sets using
@@ -13081,13 +13077,13 @@ also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.11.6")
+    (version "1.12.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bigsnpr" version))
               (sha256
                (base32
-                "0d7ysy4zwv4fkivn05lfi1bwdix6ms1b0h9n4nl3qbyangfcz52a"))))
+                "1xl7456xnid6pvvcppm4297vmgln7f4n15ziz0yfp5i5mqlmafj4"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -20306,13 +20302,13 @@ cyjShiny package from GitHub.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.0.2")
+    (version "2.1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesnec" version))
               (sha256
                (base32
-                "1ikd7hs6nc896wi3027vz6cacvx8rsnhhda8phq3s0w0ng663vih"))))
+                "1fvsr8qs9f3nnpb6jm33cqsc6i851r1fclv0qzlvxgx6z428fha5"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22380,6 +22376,30 @@ edges in the network.  References: Martin and Fu (2019) <arXiv:1909.10678>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-bayclumpr
+  (package
+    (name "r-bayclumpr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bayclumpr" version))
+              (sha256
+               (base32
+                "17yppw6m27d1smdbwrl9mja84y3p56s4sjw4c6hklxadcf4na8im"))))
+    (properties `((upstream-name . "bayclumpr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstan r-loo r-isoplotr r-deming))
+    (native-inputs (list r-knitr))
+    (home-page "https://bayclump.tripatilab.epss.ucla.edu/")
+    (synopsis "Bayesian Analysis of Clumped Isotope Datasets")
+    (description
+     "Simulating synthetic clumped isotope dataset, fitting linear regression models
+under Bayesian and non-Bayesian frameworks, and generating temperature
+reconstructions for the same two approaches.  Please note that models
+implemented in this package are described in Roman-Palacios et al. (2021)
+<doi:10.1002/essoar.10507995.1>.")
+    (license license:expat)))
+
 (define-public r-bawir
   (package
     (name "r-bawir")
@@ -23779,46 +23799,6 @@ parameters within the kernels, permitting feature selection.  For more details
 see Ouyang, Z (2008) \"Bayesian Additive Regression Kernels\", Duke University.
 PhD dissertation, Chapter 3.")
     (license license:gpl3+)))
-
-(define-public r-baris
-  (package
-    (name "r-baris")
-    (version "1.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BARIS" version))
-              (sha256
-               (base32
-                "1ccwxc7s1qk9zcs546kkpwzv26rxswrydnblvg4b8vbm5790n0gv"))))
-    (properties `((upstream-name . "BARIS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-stringi
-                             r-shiny
-                             r-sf
-                             r-rstudioapi
-                             r-rio
-                             r-rgdal
-                             r-miniui
-                             r-memoise
-                             r-magrittr
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-downloader
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/feddelegrand7/BARIS")
-    (synopsis "Access and Import Data from the French Open Data Portal")
-    (description
-     "Allows the user to access and import data from the rich French open data portal
-through the provided free API <https://doc.data.gouv.fr/api/reference/>.  The
-portal is free, and no credential is required for extracting datasets.")
-    (license license:expat)))
 
 (define-public r-bardr
   (package

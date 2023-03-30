@@ -3801,13 +3801,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.9.9")
+    (version "1.9.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iq" version))
               (sha256
                (base32
-                "1frwqc84k1gif0m8806gvrsfa1vynnrnn3dbgmbamkhjkfmpd5sq"))))
+                "0nklhggsh8z8r7s39ssw22fkiy52wwgggpx2majsi6bmyj2w3arh"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -16185,13 +16185,13 @@ irregular autoregressive model (Elorrieta et al.(2021)
 (define-public r-iapws95
   (package
     (name "r-iapws95")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IAPWS95" version))
               (sha256
                (base32
-                "192yka8x72wwnvlcl505r5s54pk44in6gpdfl0mas08m9agliyjs"))))
+                "0507v9n3cj9fxq29jz7ijcsnaaf1cgdhbza6q4cmvdjl25mrbca0"))))
     (properties `((upstream-name . "IAPWS95")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pander r-ggplot2))

@@ -1087,18 +1087,19 @@ gtools::strmacro() and base::bquote()'), and more.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.8.2")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrappedtools" version))
               (sha256
                (base32
-                "066pzqqa95v6bhd1fgj7j9w7bhyrm99qhqqal0nqy4rhpay01g8a"))))
+                "11jbqs49qd4lra96bzs7vz0lqi96dm8aq90mqphy59q72aqr0y11"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlist
                              r-rlang
                              r-purrr
                              r-lifecycle
@@ -1109,6 +1110,7 @@ gtools::strmacro() and base::bquote()'), and more.")
                              r-forcats
                              r-dplyr
                              r-coin
+                             r-broom
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wrappedtools")
@@ -4133,13 +4135,13 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
 (define-public r-whitebox
   (package
     (name "r-whitebox")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "whitebox" version))
               (sha256
                (base32
-                "0l17wik30fbrr2b1hraqs55y76vcc2v826giq92rzgdzh0v7di3n"))))
+                "0basrq7g9zvwgxwiin9jbzyipp7jpmrkxhabhw8nyj4hwkyym0a8"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
     (inputs (list))

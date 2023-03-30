@@ -458,13 +458,13 @@ study with RNA-seq data.")
 (define-public r-rxode2random
   (package
     (name "r-rxode2random")
-    (version "2.0.10")
+    (version "2.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2random" version))
               (sha256
                (base32
-                "1925j8xqxr1nmnw1w80iwvf6kajdds50wkrr0w9fy9d8v5h9nnii"))))
+                "0rv974j9nxvbl3xdr8x8phlhj54gpkl9km73c25srxi9r0p9mkip"))))
     (properties `((upstream-name . "rxode2random")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo
@@ -486,13 +486,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.15")
+    (version "2.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2parse" version))
               (sha256
                (base32
-                "1w5vcik5a7s1fdh075bfilyif1a60hi2yr9k61rl8glk8728x742"))))
+                "0y0hghvvik7cnh828mrp4mbnffylby3d1g1hrbhszac061n8lbvj"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -578,13 +578,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.0.11")
+    (version "2.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2" version))
               (sha256
                (base32
-                "1z038b2p0laxlapwv8mrm9p960yggw9dyqny7da39qzmgj6lqa3z"))))
+                "1ngxnsj1aszm03zncbf8qnifvmria96cx29781hvqd15l0d0hvqy"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -2474,18 +2474,19 @@ C5.0 rules (Quinlan, 1992 ISBN: 1558602380), and Cubist (Kuhn and Johnson, 2013)
 (define-public r-ruler
   (package
     (name "r-ruler")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ruler" version))
               (sha256
                (base32
-                "159k7453jb37zgjg9rcgz566mz2827dpfq5gm40r6zgkia4z3apx"))))
+                "0k6xvb06cqiinvkpbmylzm0r11h52yay6k70jfmz2c0g5rb6bj4r"))))
     (properties `((upstream-name . "ruler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
+                             r-purrr
                              r-magrittr
                              r-keyholder
                              r-dplyr))
@@ -3550,13 +3551,13 @@ statistics on income and living conditions surveys.")
 (define-public r-rtiger
   (package
     (name "r-rtiger")
-    (version "1.99.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RTIGER" version))
               (sha256
                (base32
-                "018y0hs06cpmb2k74xdj0cnlzr9aljbizj5jf9h8frpn9p57d6rv"))))
+                "08gs26wv6jnd4rzdhb87as26aslgqs128x1ip8h9nmr3l9mwg5fq"))))
     (properties `((upstream-name . "RTIGER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tailrank
@@ -3567,6 +3568,7 @@ statistics on income and living conditions surveys.")
                              r-ggplot2
                              r-genomicranges
                              r-genomeinfodb
+                             r-extradistr
                              r-e1071))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RTIGER")
@@ -3574,7 +3576,7 @@ statistics on income and living conditions surveys.")
     (description
      "Our method integrates information from all sequenced samples, thus avoiding loss
 of alleles due to low coverage.  Moreover, it increases the statistical power to
-uncover sequencing or alignment errors.")
+uncover sequencing or alignment errors <doi:10.1093/plphys/kiad191>.")
     (license license:gpl2+)))
 
 (define-public r-rties
@@ -8467,13 +8469,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.1.1")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "1wl18ck9gii7gfzvrdbqf81qxsg82p9vyxnsp7f65lmyz99df6ji"))))
+                "05adnx7smsybn4i788yipyh1cyg0ysxph2cf6jxmi4p8di8liyii"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -13818,13 +13820,13 @@ described in more detail in Jiao (2019)
 (define-public r-robumeta
   (package
     (name "r-robumeta")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robumeta" version))
               (sha256
                (base32
-                "1ynlfxlzh442jd1cf02j0f948m16d536a30gb4bf7208baqri1vg"))))
+                "1lybq36p1n1z9p0iqiyzwmv5f07q1wlkqfgrnx9kjf6pwlp9mkyk"))))
     (properties `((upstream-name . "robumeta")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -23414,13 +23416,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgeedim" version))
               (sha256
                (base32
-                "1qg4sc12drd033p0248acriim909vi48xyswdqixfzdxh31cfz7g"))))
+                "1k4lkm2h0kxs6jbshxhrzcdmf1lganwq0i4c63lw2kszjf5shkgk"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -24512,6 +24514,33 @@ three methods described in Haozhe Zhang, Joshua Zimmerman, Dan Nettleton, and
 Daniel J. Nordman (2019) <doi:10.1080/00031305.2019.1585288>: the out-of-bag
 prediction interval, the split conformal method, and the quantile regression
 forest.")
+    (license license:gpl3)))
+
+(define-public r-rfieldclimate
+  (package
+    (name "r-rfieldclimate")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rfieldclimate" version))
+              (sha256
+               (base32
+                "0g22lkz8pygmgrj138y15ldcacr6im7gxq579wfrgjaxs3q8ymcp"))))
+    (properties `((upstream-name . "rfieldclimate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest))
+    (home-page "https://cran.r-project.org/package=rfieldclimate")
+    (synopsis "Client for the 'FieldClimate' API")
+    (description
+     "This package provides functionality to interact with the FieldClimate API
+<https://api.fieldclimate.com/v2/docs/>.")
     (license license:gpl3)))
 
 (define-public r-rferns
@@ -34559,6 +34588,54 @@ their loadings.  The number of groups and factors can be estimated if they are
 unknown.")
     (license license:gpl2+)))
 
+(define-public r-rctrep
+  (package
+    (name "r-rctrep")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RCTrep" version))
+              (sha256
+               (base32
+                "0xjklda4z5gk44blxcyc97rlkq842b5lywz1k6ly24vw3fmv4hhs"))))
+    (properties `((upstream-name . "RCTrep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-shinydashboard
+                             r-shiny
+                             r-r6
+                             r-psweight
+                             r-optmatch
+                             r-numderiv
+                             r-mvtnorm
+                             r-matchit
+                             r-mass
+                             r-glue
+                             r-ggpubr
+                             r-ggplot2
+                             r-geex
+                             r-fastdummies
+                             r-dplyr
+                             r-copula
+                             r-caret
+                             r-bart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/duolajiang/RCTrep")
+    (synopsis
+     "Validation of Estimates of Treatment Effects in Observational Data")
+    (description
+     "Validates estimates of (conditional) average treatment effects obtained using
+observational data by a) making it easy to obtain and visualize estimates
+derived using a large variety of methods (G-computation, inverse propensity
+score weighting, etc.), and b) ensuring that estimates are easily compared to a
+gold standard (i.e., estimates derived from randomized controlled trials).
+RCTrep offers a generic protocol for treatment effect validation based on four
+simple steps, namely, set-selection, estimation, diagnosis, and validation.
+RCTrep provides a simple dashboard to review the obtained results.  The
+validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
+(2023) <doi:10.21203/rs.3.rs-2559287/v1>.")
+    (license license:expat)))
+
 (define-public r-rct3
   (package
     (name "r-rct3")
@@ -38154,6 +38231,30 @@ Proceedings KDD-98, New York, 27-31 August.  AAAI. pp80-86 (1998,
 ISBN:1-57735-070-7).")
     (license license:asl2.0)))
 
+(define-public r-rcausalegm
+  (package
+    (name "r-rcausalegm")
+    (version "0.3.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RcausalEGM" version))
+              (sha256
+               (base32
+                "089mgi96p4dv7ja629mz5d0ij488y6fi84x73fdq67xars6abqla"))))
+    (properties `((upstream-name . "RcausalEGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SUwonglab/CausalEGM")
+    (synopsis
+     "General Causal Inference Framework by Encoding Generative Modeling")
+    (description
+     "CausalEGM is a general causal inference framework for estimating causal effects
+by encoding generative modeling, which can be applied in both discrete and
+continuous treatment settings.  A description of the methods is given in Liu
+(2022) <arXiv:2212.05925>.")
+    (license license:expat)))
+
 (define-public r-rcatch22
   (package
     (name "r-rcatch22")
@@ -40143,13 +40244,13 @@ front-end widgets, and event handlers.")
 (define-public r-ravages
   (package
     (name "r-ravages")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ravages" version))
               (sha256
                (base32
-                "1lwr8krhlsb11jq938m71ihwmzbkyrg0jnw1pg8k3xqm5v52gl1v"))))
+                "0scfxzfisqcj9zn50pvhy9xrl3k5bgglp11gqxf885yskdiwrkik"))))
     (properties `((upstream-name . "Ravages")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -43401,13 +43502,13 @@ precipitation field.")
 (define-public r-rainette
   (package
     (name "r-rainette")
-    (version "0.3.1")
+    (version "0.3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rainette" version))
               (sha256
                (base32
-                "1jwy72v6qdrnngvr0virryf3c4w7jzxlgk6yfdld1dqsqh9qr9z2"))))
+                "1x6929rsav80x7ihy7572pqbvdf2hhnb0wp28mvyfvzj9ivqcx8w"))))
     (properties `((upstream-name . "rainette")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -45491,13 +45592,13 @@ easy access in R.")
 (define-public r-r2mlm
   (package
     (name "r-r2mlm")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2mlm" version))
               (sha256
                (base32
-                "04j8q1j5r2z6vjji3lgw6c6mn3xip339zwqbli0limx9lklcdjr6"))))
+                "11y5h2qy3ja8p6c0gx6cks7wd0am9zi3f1bxdj0fa9aq5gbfnqbw"))))
     (properties `((upstream-name . "r2mlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

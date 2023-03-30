@@ -12613,13 +12613,13 @@ available.")
 (define-public r-gitgadget
   (package
     (name "r-gitgadget")
-    (version "0.7.5")
+    (version "0.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gitgadget" version))
               (sha256
                (base32
-                "1nmxp4qm55fhpq492ls6ja4zhxmb7384xpa827syngkiq1qzdxh6"))))
+                "0x30asifnyrvsp0wqrc5xwszsbzrwys9m98b01sfkv8kbg2z45am"))))
     (properties `((upstream-name . "gitgadget")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -15335,13 +15335,13 @@ layout.")
 (define-public r-ggpicrust2
   (package
     (name "r-ggpicrust2")
-    (version "1.4.8")
+    (version "1.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpicrust2" version))
               (sha256
                (base32
-                "1lbsk6rh9sjlrh1wvq5y6ry31chwwm2mcnlks864zilb63i0fy3m"))))
+                "0p91xwm213n7ablsq3rv9lxig17f4xmz18cv1n2r1nwixrjalfn7"))))
     (properties `((upstream-name . "ggpicrust2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15352,6 +15352,7 @@ layout.")
                              r-metagenomeseq
                              r-maaslin2
                              r-limma
+                             r-ggprism
                              r-ggplot2
                              r-ggally
                              r-funrar
@@ -16641,13 +16642,13 @@ not require a square coordinate system.")
 (define-public r-gggenes
   (package
     (name "r-gggenes")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gggenes" version))
               (sha256
                (base32
-                "1s4knz2g06w46jbi037l9ii0kkxvl7gnljp54s4z36hnswsrv8jk"))))
+                "06yyagxhh3l8ww5qvmscax11jc48f5r3cw5nhknd8yqsl65azlq9"))))
     (properties `((upstream-name . "gggenes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2 r-ggfittext))
@@ -16655,8 +16656,7 @@ not require a square coordinate system.")
     (home-page "https://wilkox.org/gggenes/")
     (synopsis "Draw Gene Arrow Maps in 'ggplot2'")
     (description
-     "This package provides a ggplot2 geom and helper functions for drawing gene arrow
-maps.")
+     "This package provides a ggplot2 extension for drawing gene arrow maps.")
     (license license:gpl2)))
 
 (define-public r-gggap
@@ -18694,33 +18694,6 @@ exported to XML format.")
 local/internal or the public/external one.  Currently only IPv4 addresses are
 supported.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
-
-(define-public r-gethr
-  (package
-    (name "r-gethr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gethr" version))
-              (sha256
-               (base32
-                "0kpi9b9yg2nh332zkml24pmj6vgjfh8mrfjjg5a636s2rg98g5g7"))))
-    (properties `((upstream-name . "gethr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/vicegd/gethr")
-    (synopsis "Access to Ethereum-Based Blockchains Through Geth Nodes")
-    (description
-     "Full access to the Geth command line interface for running full Ethereum nodes.
-With gethr it is possible to carry out different tasks such as mine ether,
-transfer funds, create contacts, explore block history, etc.  The package also
-provides access to all the available APIs.  The officially exposed by Ethereum
-blockchains (eth, shh, web3, net) and some provided directly by Geth (admin,
-debug, miner, personal, txpool).  For more details on Ethereum, access the
-project website <https://www.ethereum.org/>.  For more details on the Geth
-client, access the project website
-<https://github.com/ethereum/go-ethereum/wiki/geth/>.")
-    (license license:expat)))
 
 (define-public r-getfredata
   (package
@@ -26759,13 +26732,13 @@ fitness of strategies in each generation.")
 (define-public r-gamer
   (package
     (name "r-gamer")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gameR" version))
               (sha256
                (base32
-                "06l232dnbggbijjf4aj5vya76b381vgag37kl1fynx4s6nd37flk"))))
+                "0k4gsnlb4jc9nbvxjjqyllvn70a707pl1icc3dhc62gqychkaxyn"))))
     (properties `((upstream-name . "gameR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

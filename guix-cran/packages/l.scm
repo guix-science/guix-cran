@@ -501,13 +501,13 @@ plotting of equivalent dose distributions.")
 (define-public r-lumberjack
   (package
     (name "r-lumberjack")
-    (version "1.2.1")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lumberjack" version))
               (sha256
                (base32
-                "0ds62s7ax1s9b5vss3a1c415zrlj2l8h7bfys2cvx59h4phiaiaj"))))
+                "15yp64vrl4wzxb3zmakiaqnz1mp0xqjfj7wbn56rm33slxwqrrkw"))))
     (properties `((upstream-name . "lumberjack")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -1654,13 +1654,13 @@ biplots for the low-rank approximations of the interactions.")
 (define-public r-lsasim
   (package
     (name "r-lsasim")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lsasim" version))
               (sha256
                (base32
-                "1x6vgdslw6v91l1p1igrvnj3s4ap2igqcx3m95y1ada7kpl3b2jk"))))
+                "1iphx4p38z3kfmmm8slqdzi85sy0lhx4p6sp5y1446f8hpcsbxcz"))))
     (properties `((upstream-name . "lsasim")))
     (build-system r-build-system)
     (propagated-inputs (list r-polycor r-mvtnorm r-cli))
@@ -12205,13 +12205,13 @@ sample).")
 (define-public r-ldbounds
   (package
     (name "r-ldbounds")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ldbounds" version))
               (sha256
                (base32
-                "0sm2hy1bqp4z78vgd7m4a307mzqz8jwfwdyga683yr2jk5grs9yl"))))
+                "07da04z2xsbx8m3j14n8vpfvxps7val8slx3z3m1izwyc5mda8qs"))))
     (properties `((upstream-name . "ldbounds")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -12535,13 +12535,13 @@ Galindo-Villardon P(1986)
 (define-public r-ldaandldas
   (package
     (name "r-ldaandldas")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDAandLDAS" version))
               (sha256
                (base32
-                "1v651fmbkv9nbw9m5z99nm4qq0lsiwmjka1aahhzkly4f27qak6r"))))
+                "0zbl6x3dn7wv7gzx1k6hnfblxa2zk7yxzz81bkx5s9yp3mfir74x"))))
     (properties `((upstream-name . "LDAandLDAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

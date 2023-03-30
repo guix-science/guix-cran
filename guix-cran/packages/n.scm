@@ -5904,13 +5904,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2lib
   (package
     (name "r-nlmixr2lib")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlmixr2lib" version))
               (sha256
                (base32
-                "12nzkhz68kw4k21bgmp7w9dhcwq7q7lz09riambgyr8gqbmvzn3s"))))
+                "1clar5nw77dc07q1l014ajc5avfdd2n82chdpbv1gcs2mfyrwr9r"))))
     (properties `((upstream-name . "nlmixr2lib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-nlmixr2est r-cli r-checkmate))
@@ -11303,13 +11303,13 @@ modeling.")
 (define-public r-negativecontroloutcomeadjustment
   (package
     (name "r-negativecontroloutcomeadjustment")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NegativeControlOutcomeAdjustment" version))
               (sha256
                (base32
-                "1lx60nl73y6c5785h0a1b59wz04lldrpsydbrwnb9ixbp8ibzp5h"))))
+                "0nwz0xk59imsfjn9p3b0qkxi2h62b5ck16w1cvfy8a4r1dk22lil"))))
     (properties `((upstream-name . "NegativeControlOutcomeAdjustment")))
     (build-system r-build-system)
     (home-page

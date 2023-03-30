@@ -377,13 +377,13 @@ also contains methods for visualizing movement data and copulas.")
 (define-public r-cyjshiny
   (package
     (name "r-cyjshiny")
-    (version "1.0.34")
+    (version "1.0.42")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cyjShiny" version))
               (sha256
                (base32
-                "0n5vlg9y8zpa2mnxz47h47y4l6vi1x1xi47rihiai6ijz61aqvnx"))))
+                "1p3ifmaxbw5g57pp4v8hnvq3fsy7frpny9jgp0q1b3klg3dhsjwj"))))
     (properties `((upstream-name . "cyjShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-graph
@@ -9807,21 +9807,16 @@ with corx'.")
 (define-public r-corto
   (package
     (name "r-corto")
-    (version "1.2.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "corto" version))
               (sha256
                (base32
-                "1ai8bvy5kra9xk76ga09ibjk1ky1aifd48jvblyh63xf59y3bx88"))))
+                "0y76nk13si6khc5inlcyshsapw8ljv6x7s5vifh2cq0bla87471x"))))
     (properties `((upstream-name . "corto")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown
-                             r-plotrix
-                             r-pbapply
-                             r-knitr
-                             r-gplots
-                             r-dplyr))
+    (propagated-inputs (list r-plotrix r-pbapply r-knitr r-gplots r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=corto")
     (synopsis "Inference of Gene Regulatory Networks")
@@ -19496,13 +19491,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "1.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coconots" version))
               (sha256
                (base32
-                "1ld868kvkcjb9m3plgpzr1sgcm1m3116ivayr6bsp2rdxh1qiw5f"))))
+                "0qwhkbw442qk3vxpvjssp15qkwlarfvajppwyaj2ckngja3yaaqh"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

@@ -3737,22 +3737,16 @@ files.")
 (define-public r-qmethod
   (package
     (name "r-qmethod")
-    (version "1.8")
+    (version "1.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qmethod" version))
               (sha256
                (base32
-                "0wv6i48w15pmsd8y0c46r3152w4y7is2xmsy6d9sqys8rbmqk019"))))
+                "0smkqqq8pcxix4lf35skkf9p5jw9mc3llkmyr334qkk85kvgnwn6"))))
     (properties `((upstream-name . "qmethod")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-shiny
-                             r-rjson
-                             r-psych
-                             r-knitr
-                             r-gparotation
-                             r-digest))
+    (propagated-inputs (list r-xtable r-psych r-knitr r-digest))
     (home-page "https://github.com/aiorazabala/qmethod")
     (synopsis "Analysis of Subjective Perspectives Using Q Methodology")
     (description
@@ -3774,7 +3768,7 @@ printable cards.  The package also offers functions to print Q cards and to
 generate Q distributions for study administration.  See further details in the
 package documentation, and in the web pages below, which include a cookbook,
 guidelines for more advanced analysis (how to perform manual flagging or change
-the sign of factors), data management, and a beta graphical user interface for
+the sign of factors), data management, and a graphical user interface (GUI) for
 online and offline use.")
     (license license:gpl2+)))
 
@@ -5168,13 +5162,13 @@ follow tidyverse philosophy.")
 (define-public r-qbms
   (package
     (name "r-qbms")
-    (version "0.9.0")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QBMS" version))
               (sha256
                (base32
-                "1p0ysddf8i3mxbbp91fiqk1hw8c8m29y453m93gyyb7asqckxi39"))))
+                "0b8q8z1jgzy2jd1rm7hfqf2j2rdq9las4sjqfy9cn8d5aahzvqm7"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnetcdf r-jsonlite r-httr))
