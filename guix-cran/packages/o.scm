@@ -716,13 +716,13 @@ from Schubert et al (2012) <doi:10.1137/1.9781611972825.90>, Chiang et al (2017)
 (define-public r-outforest
   (package
     (name "r-outforest")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "outForest" version))
               (sha256
                (base32
-                "0329yrqknr894l5dp7zdbr0mifrafx9km074yqjfbnxbi245fd65"))))
+                "08lr2bb55hafm14jwv4m90qc0mn3a2887whfzw955crixwp2as5k"))))
     (properties `((upstream-name . "outForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-missranger r-fnn))
@@ -1376,13 +1376,13 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm
   (package
     (name "r-osrm")
-    (version "4.0.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "osrm" version))
               (sha256
                (base32
-                "0lp5idik0lp2jn7mkgz512kpgp1zxxn4c7b1xb7aaia112p9fapp"))))
+                "05zvsmgrfg8143cma3xr2c758a7lbabsb53sxzw5xkc7z19amfyb"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcppsimdjson r-mapiso r-googlepolylines
@@ -5179,28 +5179,6 @@ package has been peer-reviewed by rOpenSci (v.  0.2.0.0).")
     (description
      "Chronogram database constructed from Open Tree of Life's phylogenetic store.")
     (license license:gpl2+)))
-
-(define-public r-opentimsr
-  (package
-    (name "r-opentimsr")
-    (version "1.0.13")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "opentimsr" version))
-              (sha256
-               (base32
-                "0m4xp70cq4h76r4qk7krn5p9w3xv44z5lrkpys7kbvxr38g5y0il"))))
-    (properties `((upstream-name . "opentimsr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsqlite r-rcpp r-dbi))
-    (home-page "https://github.com/michalsta/opentims")
-    (synopsis "An Open-Source Loader for Bruker's timsTOF Data Files")
-    (description
-     "This package provides a free, open-source package designed for handling .tdf
-data files produced by Bruker's timsTOF mass spectrometers.  Fast, free,
-crossplatform, with no reading through EULAs or messing with binary .dll files
-involved.")
-    (license license:gpl3)))
 
 (define-public r-openstreetmap
   (package

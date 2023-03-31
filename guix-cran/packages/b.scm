@@ -15096,13 +15096,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "1mr14vxan0xj6b50mdqk2x53s2cxbhchqr3nb7bsi1qw415nfns8"))))
+                "1722wfa03pcbssyq38w0phjyzvrg0vk2x0qmplb71pg4qqa9hkvs"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

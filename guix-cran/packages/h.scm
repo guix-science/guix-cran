@@ -9753,13 +9753,13 @@ the syntax for manipulation is similar to data.table'.  Operations are performed
 (define-public r-hdcurves
   (package
     (name "r-hdcurves")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDCurves" version))
               (sha256
                (base32
-                "1i4axgrm718wm9azrmdwwfysp9lfhn07kr1vgs0dnac1zaf5qzcs"))))
+                "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
     (properties `((upstream-name . "HDCurves")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDCurves")

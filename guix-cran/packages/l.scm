@@ -1788,13 +1788,13 @@ heterogeneity.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LRTesteR" version))
               (sha256
                (base32
-                "1paglzznfcmkz9lk8smnbf84q3gdq1qdkn6p9bgydfj735hghkii"))))
+                "0lqn59ms8pyz6pg9y9mzqvfmizv7fnyxs5xszharwkv4jnjgb1cp"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rlang))
@@ -8908,20 +8908,21 @@ for the (modified) profile likelihood.")
 (define-public r-likelihood
   (package
     (name "r-likelihood")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihood" version))
               (sha256
                (base32
-                "18vz0bhz01avzmxgf10pr26aaim1jr68a6y080l9yfizk8bmm6ml"))))
+                "0w9p2vzrcln6a35b8pmlli01vq67vdbp4cnc9hb256syldsj7pp4"))))
     (properties `((upstream-name . "likelihood")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
     (home-page "https://cran.r-project.org/package=likelihood")
     (synopsis "Methods for Maximum Likelihood Estimation")
     (description
-     "Tools for maximum likelihood estimation of parameters of scientific models.")
+     "Tools for maximum likelihood estimation of parameters of scientific models.
+Based on Goffe et al (1994) <doi:10.1016/0304-4076(94)90038-8>.")
     (license license:gpl2)))
 
 (define-public r-ligp
@@ -10685,6 +10686,25 @@ in a purely functional way.  Inspired by the Haskell library lens (Kmett, 2012)
 <https://hackage.haskell.org/package/lens>.  For a fairly comprehensive (and
 highly technical) history of lenses please see the lens wiki
 <https://github.com/ekmett/lens/wiki/History-of-Lenses>.")
+    (license license:expat)))
+
+(define-public r-lenght
+  (package
+    (name "r-lenght")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lenght" version))
+              (sha256
+               (base32
+                "0w7r5rizif2g6dg5ldcdnd0lj1s6v2z46w9j9g0zdlidx83a8vdn"))))
+    (properties `((upstream-name . "lenght")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=lenght")
+    (synopsis "Allow Misspellings of Length Function")
+    (description
+     "Convenient aliases for common ways of misspelling the base R function length().
+These include every permutation of the final three letters.")
     (license license:expat)))
 
 (define-public r-lemna
@@ -12535,13 +12555,13 @@ Galindo-Villardon P(1986)
 (define-public r-ldaandldas
   (package
     (name "r-ldaandldas")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDAandLDAS" version))
               (sha256
                (base32
-                "0zbl6x3dn7wv7gzx1k6hnfblxa2zk7yxzz81bkx5s9yp3mfir74x"))))
+                "0p4q4n6hhsy9jmxg91cpxw8qhf4644rbflghfgwhdhhxnxzdhg9l"))))
     (properties `((upstream-name . "LDAandLDAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

@@ -3252,13 +3252,13 @@ Sabri Taylanâs PhD dissertation.")
 (define-public r-atable
   (package
     (name "r-atable")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atable" version))
               (sha256
                (base32
-                "0xna86l26f00n22hm3fn7kiqij87k6k7b5pa8jmld1bhw6j3cl4w"))))
+                "1xzr51p0034znhylj51vq9jslkwkn1gjabaal5w9qrvy6cv1h828"))))
     (properties `((upstream-name . "atable")))
     (build-system r-build-system)
     (propagated-inputs (list r-settings
@@ -14961,13 +14961,13 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 (define-public r-afr
   (package
     (name "r-afr")
-    (version "0.2.1")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AFR" version))
               (sha256
                (base32
-                "1in4wd491y37iwac8k0b4wj0gpvz01r65qg2hc8m6v4mb0572clf"))))
+                "07s32s5vdpg3gxp7ixr4gx0hx66jadiqm2x4mp1f2b2njan2z31h"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

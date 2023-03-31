@@ -2080,13 +2080,13 @@ base weighting functionality in survey.")
 (define-public r-svyvgam
   (package
     (name "r-svyvgam")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svyVGAM" version))
               (sha256
                (base32
-                "0y5bwp961g9z4p18igbvbh2wrzpl3ivipi305qny7a4rlpbxcfph"))))
+                "01y372p52xjd7j20xk5gwxkl8sfnwdvixx3pb3f6r407ca7l330h"))))
     (properties `((upstream-name . "svyVGAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-survey))
@@ -29665,6 +29665,7 @@ linear regression model described in Centofanti et al. (2020)
                              r-magic
                              r-lme4
                              r-lcmm
+                             r-globaltest
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=SlaPMEG")
     (synopsis "Pathway Testing for Longitudinal Omics")
@@ -30619,13 +30620,13 @@ HTML-tables to R data.frame objects / knitr::kable-tables.")
 (define-public r-sjsdm
   (package
     (name "r-sjsdm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sjSDM" version))
               (sha256
                (base32
-                "0jj0rah158sjqrcnji5qc5kghf8m74frky7mqpagcxd15fh5bvz3"))))
+                "00f3wkz2cnafdxnj4xfmy8q95yf8k585sa8mbxnmx2jhmbrz079c"))))
     (properties `((upstream-name . "sjSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ternary
@@ -35361,13 +35362,13 @@ control (FDR) using scaled Lasso or Lasso (Liu (2013) <doi:10.1214/13-AOS1169>).
 (define-public r-siland
   (package
     (name "r-siland")
-    (version "2.0.5")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "siland" version))
               (sha256
                (base32
-                "1896zlfzps35mvhzbd4invpdp39cxhs13lklx56k35l4v2zvh24g"))))
+                "1dhjwl8akkziiax7a369rbxy8bmmnggnnd44v3zj1d2fqskskvdg"))))
     (properties `((upstream-name . "siland")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -35377,6 +35378,7 @@ control (FDR) using scaled Lasso or Lasso (Liu (2013) <doi:10.1214/13-AOS1169>).
                              r-lme4
                              r-ggplot2
                              r-ggforce
+                             r-fields
                              r-fasterize))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=siland")
@@ -43052,6 +43054,30 @@ and Gastwirth, Krieger and Rosenbaum (2000), JRSS-B, 62, 545â555
      "Collection of datasets from Sen & Srivastava: \"Regression Analysis, Theory,
 Methods and Applications\", Springer.  Sources for individual data files are more
 fully documented in the book.")
+    (license license:gpl2+)))
+
+(define-public r-senspe
+  (package
+    (name "r-senspe")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SenSpe" version))
+              (sha256
+               (base32
+                "1fiqyd9jbcgr12w68bkw2ksafx7lmrpy5wqfknchrm3xq1siykqi"))))
+    (properties `((upstream-name . "SenSpe")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=SenSpe")
+    (synopsis
+     "Estimating Specificity at Controlled Sensitivity, or Vice Versa")
+    (description
+     "Perform biomarker evaluation and comparison in terms of specificity at a
+controlled sensitivity level, or sensitivity at a controlled specificity level.
+Point estimation and exact bootstrap of Huang, Parakati, Patil, and Sanda (2023)
+<doi:10.5705/ss.202021.0020> for the one- and two-sample problems are
+implemented.")
     (license license:gpl2+)))
 
 (define-public r-sensory

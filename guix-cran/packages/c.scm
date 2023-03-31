@@ -15014,40 +15014,39 @@ CNVs.  Brucker, A., et al. (2020) <doi:10.1101/666875>.")
 (define-public r-concstats
   (package
     (name "r-concstats")
-    (version "0.1.2")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "concstats" version))
               (sha256
                (base32
-                "1da7gcxhsl09x5n1q4rbz4i0ldq71vxw6m432kjl2p05mps3ybla"))))
+                "1gcv6lsrfdb12alaksmw40fv8p909hifjwrrgy9r12nb4ci3fg0x"))))
     (properties `((upstream-name . "concstats")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/schneiderpy/concstats")
+    (home-page "https://github.com/ropensci/concstats/")
     (synopsis "Market Structure, Concentration and Inequality Measures")
     (description
-     "Based on individual market shares of all participants in a market or space or
-their respective sales figures, the package offers a set of different structural
-and concentration measures frequently - and not so frequently - used in research
-and in practice.  Measures can be calculated in groups or individually.  The
-calculated measure or the resulting vector in table format should help
-practitioners make more informed decisions.  Methods used in this package are
-from: 1.  Chang, E. J., Guerra, S. M., de Souza Penaloza, R. A. & Tabak, B. M.
-(2005) \"Banking concentration: the Brazilian case\".  2.  Cobham, A. and A.
-Summer (2013). \"Is It All About the Tails? The Palma Measure of Income
-Inequality\".  3.  Garcia Alba Idunate, P. (1994). \"Un Indice de dominancia para
-el analisis de la estructura de los mercados\".  4.  Ginevicius, R. and S. Cirba
-(2009). \"Additive measurement of market concentration\"
-<doi:10.3846/1611-1699.2009.10.191-198>.  5.  Herfindahl, O. C. (1950),
-\"Concentration in the steel industry (PhD thesis)\".  6.  Hirschmann, A. O.
-(1945), \"National power and structure of foreign trade\".  7.  Melnik, A., O.
-Shy, and R. Stenbacka (2008), \"Assessing market dominance\"
+     "Based on individual market shares of all participants in a market or space, the
+package offers a set of different structural and concentration measures
+frequently - and not so frequently - used in research and in practice.  Measures
+can be calculated in groups or individually.  The calculated measure or the
+resulting vector in table format should help practitioners make more informed
+decisions.  Methods used in this package are from: 1.  Chang, E. J., Guerra, S.
+M., de Souza Penaloza, R. A. & Tabak, B. M. (2005) \"Banking concentration: the
+Brazilian case\".  2.  Cobham, A. and A. Summer (2013). \"Is It All About the
+Tails? The Palma Measure of Income Inequality\".  3.  Garcia Alba Idunate, P.
+(1994). \"Un Indice de dominancia para el analisis de la estructura de los
+mercados\".  4.  Ginevicius, R. and S. Cirba (2009). \"Additive measurement of
+market concentration\" <doi:10.3846/1611-1699.2009.10.191-198>.  5.  Herfindahl,
+O. C. (1950), \"Concentration in the steel industry\" (PhD thesis).  6.
+Hirschmann, A. O. (1945), \"National power and structure of foreign trade\".  7.
+Melnik, A., O. Shy, and R. Stenbacka (2008), \"Assessing market dominance\"
 <doi:10.1016/j.jebo.2008.03.010>.  8.  Palma, J. G. (2006). \"Globalizing
 Inequality: Centrifugal and Centripetal Forces at Work\".  9.  Shannon, C. E.
-(1948). \"A Mathematical Theory of Communication\".")
-    (license license:expat)))
+(1948). \"A Mathematical Theory of Communication\".  10.  Simpson, E. H. (1949).
+\"Measurement of Diversity\" <doi:10.1038/163688a0>.")
+    (license license:gpl3+)))
 
 (define-public r-concreg
   (package
@@ -25454,13 +25453,13 @@ CrossRef, Microsoft Academic Graph and CORE; <https://www.lens.org>).")
 (define-public r-citation
   (package
     (name "r-citation")
-    (version "0.6.4")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "citation" version))
               (sha256
                (base32
-                "04468i0fvdz1h31a5ywvnla59q53r146gjvl7v664mgld79a8faj"))))
+                "0s6hsxfa72apslp4prfl2b9n1ybvsynlh69772rh9x0niysgm43g"))))
     (properties `((upstream-name . "citation")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-withr r-jsonlite r-desc))
@@ -31439,18 +31438,17 @@ adjustments.")
 (define-public r-cdmtools
   (package
     (name "r-cdmtools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdmTools" version))
               (sha256
                (base32
-                "0c1pbw8l6zid7h1lg6lj5fs7kg6lmibbl2mw24dcnmlbdbg82xpz"))))
+                "05h0kz939ig0dxizij07r0xbjm668sk0744ji9k16090xcgz25hh"))))
     (properties `((upstream-name . "cdmTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
                              r-psych
-                             r-npcd
                              r-gparotation
                              r-ggplot2
                              r-gdina
@@ -31468,12 +31466,13 @@ Ding, 2018, <doi:10.1007/978-3-319-77249-3_29>).  It also contains
 dimensionality assessment procedures for CDM, including parallel analysis and
 automated fit comparison as explored in NÃ¡jera, Abad, and Sorrel (2021,
 <doi:10.3389/fpsyg.2021.614470>).  Other relevant methods and features for CDM
-applications, such as the general nonparametric classification method (Chiu et
-al., 2018; <doi:10.1007/s11336-017-9595-4>) and corrected estimation of the
-classification accuracy via multiple imputation (Kreitchmann et al., 2022) are
-also available.  Lastly, the package provides some useful functions for CDM
-simulation studies, such as random Q-matrix generation and detection of
-complete/identified Q-matrices.")
+applications, such as the restricted DINA model (NÃ¡jera et al., 2023), the
+general nonparametric classification method (Chiu et al., 2018;
+<doi:10.1007/s11336-017-9595-4>), and corrected estimation of the classification
+accuracy via multiple imputation (Kreitchmann et al., 2022;
+<doi:10.3758/s13428-022-01967-5>) are also available.  Lastly, the package
+provides some useful functions for CDM simulation studies, such as random
+Q-matrix generation and detection of complete/identified Q-matrices.")
     (license license:gpl3)))
 
 (define-public r-cdmconnector

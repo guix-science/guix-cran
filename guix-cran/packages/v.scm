@@ -1886,16 +1886,17 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivainsights" version))
               (sha256
                (base32
-                "1v0ivkx7ik4ym1dx5frgwjn42nc0h6g4v28qqhjdsjfpm227k9b4"))))
+                "18xzk7ka4jfqxi5xzhivwjgqkhp1lrqa6cz6cggiz34x8p1aqlq8"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
+                             r-tidytext
                              r-tidyselect
                              r-tidyr
                              r-scales
@@ -1905,8 +1906,11 @@ Functions in vivaldi primarily operate on vcf files.")
                              r-networkd3
                              r-markdown
                              r-magrittr
+                             r-igraph
                              r-htmltools
+                             r-ggwordcloud
                              r-ggrepel
+                             r-ggraph
                              r-ggplot2
                              r-dt
                              r-dplyr
@@ -4985,6 +4989,29 @@ covariance matrices, distance matrices, and perform proportionality tests.  A
 worked sample on the body shape of cichlid fishes is included, based on the
 dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
     (license license:gpl3)))
+
+(define-public r-vctsfr
+  (package
+    (name "r-vctsfr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vctsfr" version))
+              (sha256
+               (base32
+                "0g436m3dkyli06asjr4kdbhdx7mq0pcclmfpvblb5bsqrh5944i1"))))
+    (properties `((upstream-name . "vctsfr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/franciscomartinezdelrio/vctsfr")
+    (synopsis "Visualizing Collections of Time Series Forecasts")
+    (description
+     "This package provides a way of visualizing collections of time series and,
+optionally their future values, forecasts for their future values and prediction
+intervals for the forecasts.  A web-based GUI can be used to display the
+information in a collection of time series.")
+    (license license:expat)))
 
 (define-public r-vcr
   (package

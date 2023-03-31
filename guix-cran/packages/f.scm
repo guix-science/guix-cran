@@ -13629,13 +13629,13 @@ functions to understand series
 (define-public r-fedstatapir
   (package
     (name "r-fedstatapir")
-    (version "1.0.0")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fedstatAPIr" version))
               (sha256
                (base32
-                "11v7p4b1w9wpqvchcdrb8wcjp8j43iwa6c8cbhb33flyb9fbahkg"))))
+                "0pbbm2rfqij1yk4ywdd3pmdkb2arkwnmpyn70d52qrsjaxlhrnqi"))))
     (properties `((upstream-name . "fedstatAPIr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17629,21 +17629,20 @@ LaBrish, C. & Chalmers, R. P., 2012, <doi:10.3389/fpsyg.2012.00055>).")
 (define-public r-faostat
   (package
     (name "r-faostat")
-    (version "2.2.4")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FAOSTAT" version))
               (sha256
                (base32
-                "0q0yff5p429q6n560fmqswfw102kfgww8v7jr5gr22rcf2198822"))))
+                "05nwskl8l68rrf0krfmw2sc3snpygqsgdi40kbfim9wfqyy175di"))))
     (properties `((upstream-name . "FAOSTAT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-rjsonio
+    (propagated-inputs (list r-rjsonio
                              r-plyr
                              r-mass
                              r-labeling
-                             r-ggplot2
+                             r-httr
                              r-data-table
                              r-classint))
     (native-inputs (list r-knitr))

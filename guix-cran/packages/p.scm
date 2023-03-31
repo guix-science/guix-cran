@@ -15,7 +15,6 @@
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gettext)
@@ -24,6 +23,7 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages code)
   #:use-module (gnu packages pdf)
   #:use-module (guix-cran packages z)
@@ -8048,30 +8048,6 @@ categorical base levels, variable importance and type III p.values.  prettyglm
 also creates beautiful relativity plots for categorical, continuous and splined
 coefficients.")
     (license license:gpl3)))
-
-(define-public r-prettydoc
-  (package
-    (name "r-prettydoc")
-    (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "prettydoc" version))
-              (sha256
-               (base32
-                "0aa89jnqhz0l69inrgm1f1riq5bm3ksb8wjl8d4x2f320adsd50h"))))
-    (properties `((upstream-name . "prettydoc")))
-    (build-system r-build-system)
-    (inputs (list pandoc))
-    (propagated-inputs (list r-rmarkdown))
-    (native-inputs (list r-rmarkdown r-knitr esbuild))
-    (home-page "https://github.com/yixuan/prettydoc")
-    (synopsis "Creating Pretty Documents from R Markdown")
-    (description
-     "Creating tiny yet beautiful documents and vignettes from R Markdown.  The
-package provides the html_pretty output format as an alternative to the
-html_document and html_vignette engines that convert R Markdown into HTML pages.
- Various themes and syntax highlight styles are supported.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-prettycols
   (package
@@ -16375,13 +16351,13 @@ Correlation\" at bioRxiv.")
 (define-public r-pm3
   (package
     (name "r-pm3")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pm3" version))
               (sha256
                (base32
-                "1hhi53ngks8f7s3ainkwpkksc92jl12j4jckrlc7bnll30yc4r7x"))))
+                "1107qwfz49wqbs4cvr6vb1qxyx8694khk5h122nnshs0w7p51i1w"))))
     (properties `((upstream-name . "pm3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tableone))

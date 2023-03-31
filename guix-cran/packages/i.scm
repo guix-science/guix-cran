@@ -1252,27 +1252,6 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 `Introductory Statistics with R', 2nd ed., Springer Verlag, ISBN 978-0387790534.")
     (license license:gpl2+)))
 
-(define-public r-isva
-  (package
-    (name "r-isva")
-    (version "1.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isva" version))
-              (sha256
-               (base32
-                "05qx9q0kg4ma23v4abhihw0vz017nq6hv2jzsiqx4d20ngh1dl4z"))))
-    (properties `((upstream-name . "isva")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-qvalue r-jade r-fastica))
-    (home-page "https://cran.r-project.org/package=isva")
-    (synopsis "Independent Surrogate Variable Analysis")
-    (description
-     "Independent Surrogate Variable Analysis is an algorithm for feature selection in
-the presence of potential confounding factors (see Teschendorff AE et al 2011,
-<doi: 10.1093/bioinformatics/btr171>).")
-    (license license:gpl2)))
-
 (define-public r-isubgen
   (package
     (name "r-isubgen")

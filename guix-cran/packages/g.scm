@@ -9324,21 +9324,22 @@ ISBN: 9812707409) is a good reference to study the properties of risk measures."
 (define-public r-gne
   (package
     (name "r-gne")
-    (version "0.99-4")
+    (version "0.99-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GNE" version))
               (sha256
                (base32
-                "1ncg9yys5hr2v74h8f5mr2w0iay8zybaxj76qv2cilx8d8qzi6b4"))))
+                "0a796zppqvjgymh03xh7wdb26m0ir2gsavm37278liaj3nzk2jkz"))))
     (properties `((upstream-name . "GNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem r-nleqslv r-bb r-alabama))
+    (native-inputs (list r-knitr))
     (home-page "https://r-forge.r-project.org/projects/optimizer/")
     (synopsis "Computation of Generalized Nash Equilibria")
     (description
-     "Provide functions to compute standard and generalized Nash Equilibria.
-Optimization methods are available nonsmooth reformulation, fixed-point
+     "Compute standard and generalized Nash Equilibria of non-cooperative games.
+Optimization methods available are nonsmooth reformulation, fixed-point
 formulation, minimization problem and constrained-equation reformulation.  See
 e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
     (license license:gpl2+)))
@@ -27178,13 +27179,13 @@ data to calculate posterior probabilities of breeding origin of migrating birds.
 (define-public r-gagas
   (package
     (name "r-gagas")
-    (version "0.5.1")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GAGAs" version))
               (sha256
                (base32
-                "1qh5cnxjb2fjl442iva4pbln019ycv13vngvlds30ql17cnf679b"))))
+                "15sc075p0087k6jpai7ll6h7vh9z3ak35a55aq109vliwlwhzynj"))))
     (properties `((upstream-name . "GAGAs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp))

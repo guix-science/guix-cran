@@ -11948,35 +11948,6 @@ in both of unsupervised and semi-supervised learning.")
 <doi:10.1016/j.jtherbio.2014.08.005> for thermal reaction norm of embryo growth.")
     (license license:gpl2)))
 
-(define-public r-embedsom
-  (package
-    (name "r-embedsom")
-    (version "2.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EmbedSOM" version))
-              (sha256
-               (base32
-                "0k4hja5y7qd0n3gfaxzxrz4wpxc1w9d4d4xbb63rq2nfk3lj7a42"))))
-    (properties `((upstream-name . "EmbedSOM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uwot
-                             r-umap
-                             r-rtsne
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-fnn))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/exaexa/EmbedSOM")
-    (synopsis "Fast Embedding Guided by Self-Organizing Map")
-    (description
-     "This package provides a smooth mapping of multidimensional points into
-low-dimensional space defined by a self-organizing map.  Designed to work with
-FlowSOM and flow-cytometry use-cases.  See Kratochvil et al. (2019)
-<doi:10.12688/f1000research.21642.1>.")
-    (license license:gpl3+)))
-
 (define-public r-embed
   (package
     (name "r-embed")
@@ -12174,6 +12145,7 @@ VERY early release software, and more features will be added over time.")
                              r-minfi
                              r-mediation
                              r-lavaan
+                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
                              r-illuminahumanmethylation450kanno-ilmn12-hg19
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=EMAS")

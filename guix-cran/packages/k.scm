@@ -881,25 +881,6 @@ this information to place products and services within the Kraljic Matrix.")
 Baraniuk (2016) <doi:10.1080/00031305.2015.1086685>.")
     (license license:expat)))
 
-(define-public r-kpmt
-  (package
-    (name "r-kpmt")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "kpmt" version))
-              (sha256
-               (base32
-                "15d26khc0v3kc1c7l1avqp48pfqmc6xj32029mv7myivr41ashk3"))))
-    (properties `((upstream-name . "kpmt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrixstats))
-    (home-page "https://cran.r-project.org/package=kpmt")
-    (synopsis "Known Population Median Test")
-    (description
-     "This package provides functions that implement the known population median test.")
-    (license license:expat)))
-
 (define-public r-kpeaks
   (package
     (name "r-kpeaks")

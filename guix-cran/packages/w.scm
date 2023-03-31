@@ -4590,28 +4590,6 @@ standard errors for the rates.  Finally, the package includes betting functions
 that automatically select the matches on which place a bet.")
     (license license:gpl3)))
 
-(define-public r-wellknown
-  (package
-    (name "r-wellknown")
-    (version "0.7.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wellknown" version))
-              (sha256
-               (base32
-                "0d0sxmp58dscfxny1492lgw8x0ypwakmrkkl7rcfs2fz7v26ygj8"))))
-    (properties `((upstream-name . "wellknown")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wk r-rcpp r-jsonlite r-bh))
-    (home-page "https://docs.ropensci.org/wellknown/")
-    (synopsis "Convert Between 'WKT' and 'GeoJSON'")
-    (description
-     "Convert WKT to GeoJSON and GeoJSON to WKT'.  Functions included for converting
-between GeoJSON to WKT', creating both GeoJSON features, and non-features,
-creating WKT from R objects (e.g., lists, data.frames, vectors), and linting
-WKT'.")
-    (license license:expat)))
-
 (define-public r-welchadf
   (package
     (name "r-welchadf")

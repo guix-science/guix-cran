@@ -1129,6 +1129,38 @@ tailored to the user's model statement, model type, and sample size.  This is
 the counterpart of the Shiny Application, <https://dynamicfit.app>.")
     (license license:agpl3)))
 
+(define-public r-dynamaedes
+  (package
+    (name "r-dynamaedes")
+    (version "2.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dynamAedes" version))
+              (sha256
+               (base32
+                "04d161lvd1hbr9y9cawwj50psaql8gmnskggaxbq9c0wwdgxr311"))))
+    (properties `((upstream-name . "dynamAedes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-slam
+                             r-raster
+                             r-geosphere
+                             r-foreach
+                             r-fields
+                             r-drc
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://mattmar.github.io/dynamAedes/")
+    (synopsis
+     "Unified Mechanistic Model for the Population Dynamics of Invasive Aedes Mosquitoes")
+    (description
+     "Generalised model for population dynamics of invasive Aedes mosquitoes.
+Rationale and model structure are described here: Da Re et al. (2021)
+<doi:10.1016/j.ecoinf.2020.101180> and Da Re et al. (2022)
+<doi:10.1101/2021.12.21.473628>.")
+    (license license:gpl2+)))
+
 (define-public r-dynamac
   (package
     (name "r-dynamac")
@@ -7553,13 +7585,13 @@ parallel computing.")
 (define-public r-dndr
   (package
     (name "r-dndr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dndR" version))
               (sha256
                (base32
-                "0gkw4wm370i9m2asrsvl00268jj83q8yayxry3i05aynpmv0p2rs"))))
+                "0cmh2cw9fdhzsl058mwkx096wkxz5sl2dc635prhxk3pdb3cfb1m"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16238,16 +16270,16 @@ graphical interface.")
 (define-public r-descriptio
   (package
     (name "r-descriptio")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "descriptio" version))
               (sha256
                (base32
-                "146jrllcs7abpcsk8cgc0ibkm19phnv9gsc4drgckbskshf3qs73"))))
+                "14dwvahafcx1j2zx3ikva94qj5h92lbd678qmmysfmjkkwq0ia6j"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-mass r-ggplot2 r-ggpattern))
+    (propagated-inputs (list r-rlang r-mass r-ggplot2))
     (home-page "https://github.com/nicolas-robette/descriptio")
     (synopsis "Descriptive Statistical Analysis")
     (description

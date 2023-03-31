@@ -1993,35 +1993,6 @@ data.  Originally designed for SWATH-MS proteomics datasets.  Poulos et al.
 (2020) <doi:10.1038/s41467-020-17641-3>.")
     (license license:expat)))
 
-(define-public r-ruv
-  (package
-    (name "r-ruv")
-    (version "0.9.7.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ruv" version))
-              (sha256
-               (base32
-                "1n4q9mrp9f644spbns6bbnzmlabrg90hwkdfg3hnm3rxp9b4xid0"))))
-    (properties `((upstream-name . "ruv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-gridextra r-ggplot2))
-    (home-page "http://www-personal.umich.edu/~johanngb/ruv/")
-    (synopsis "Detect and Remove Unwanted Variation using Negative Controls")
-    (description
-     "This package implements the RUV (Remove Unwanted Variation) algorithms.  These
-algorithms attempt to adjust for systematic errors of unknown origin in
-high-dimensional data.  The algorithms were originally developed for use with
-genomic data, especially microarray data, but may be useful with other types of
-high-dimensional data as well.  These algorithms were proposed in Gagnon-Bartsch
-and Speed (2012) <doi:10.1093/nar/gkz433>, Gagnon-Bartsch, Jacob and Speed
-(2013), and Molania, et.  al. (2019) <doi:10.1093/nar/gkz433>.  The algorithms
-require the user to specify a set of negative control variables, as described in
-the references.  The algorithms included in this package are RUV-2', RUV-4',
-RUV-inv', RUV-rinv', RUV-I', and RUV-III', along with various supporting
-algorithms.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-rutledge
   (package
     (name "r-rutledge")
@@ -3255,13 +3226,13 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
 (define-public r-rtop
   (package
     (name "r-rtop")
-    (version "0.6-2")
+    (version "0.6-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtop" version))
               (sha256
                (base32
-                "1ws1nh7wsskqcm730n7v69l9s82jl11qkr8s843pamphlv5ras24"))))
+                "0cma0ihz2sn3v6mfdq26dr66rgng44m129jr63id4vcn4dhna624"))))
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sp r-sf r-gstat))
@@ -3269,8 +3240,10 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
     (home-page "https://cran.r-project.org/package=rtop")
     (synopsis "Interpolation of Data with Variable Spatial Support")
     (description
-     "Geostatistical interpolation of data with irregular spatial support such as
-runoff related data or data from administrative units.")
+     "Data with irregular spatial support, such as runoff related data or data from
+administrative units, can with rtop be interpolated to locations without
+observations with the top-kriging method.  A description of the package is given
+by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
     (license license:gpl2+)))
 
 (define-public r-rtoot
@@ -8293,6 +8266,30 @@ implementation and requires no other package dependencies.")
 which to iteratively update a regularization parameter in a streaming context.")
     (license license:gpl2)))
 
+(define-public r-rrandvec
+  (package
+    (name "r-rrandvec")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rrandvec" version))
+              (sha256
+               (base32
+                "0n92wm95xjng2j93a055mliph2cmialmcpm9b45jf75zqdhzizp5"))))
+    (properties `((upstream-name . "rrandvec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-checkmate))
+    (home-page "https://jakobbossek.github.io/rrandvec/")
+    (synopsis "Generate Random Vectors Whose Components Sum Up to One")
+    (description
+     "This package provides a single method implementing multiple approaches to
+generate pseudo-random vectors whose components sum up to one (see, e.g.,
+Maziero (2015) <doi:10.1007/s13538-015-0337-8>).  The components of such vectors
+can for example be used for weighting objectives when reducing multi-objective
+optimisation problems to a single-objective problem in the socalled weighted sum
+scalarisation approach.")
+    (license license:bsd-2)))
+
 (define-public r-rramas
   (package
     (name "r-rramas")
@@ -9471,27 +9468,6 @@ kinetics of C3 photosynthesis, assimilation, and dark respiration rates as a
 function of the environment (temperature, CO2, vapour pressure deficit, light,
 atmospheric pressure).")
     (license license:gpl3)))
-
-(define-public r-rpmm
-  (package
-    (name "r-rpmm")
-    (version "1.25")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RPMM" version))
-              (sha256
-               (base32
-                "1j48dh434wfhfzka0l21w6f73qlwfm70r9gdddhn504i2d5m4jph"))))
-    (properties `((upstream-name . "RPMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cluster))
-    (home-page "https://cran.r-project.org/package=RPMM")
-    (synopsis "Recursively Partitioned Mixture Model")
-    (description
-     "Recursively Partitioned Mixture Model for Beta and Gaussian Mixtures.  This is a
-model-based clustering algorithm that returns a hierarchy of classes, similar to
-hierarchical clustering, but also similar to finite mixture models.")
-    (license license:gpl2+)))
 
 (define-public r-rpmg
   (package
@@ -13845,13 +13821,13 @@ and producing RVE-based forest plots.")
 (define-public r-robtt
   (package
     (name "r-robtt")
-    (version "1.0.1")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RoBTT" version))
               (sha256
                (base32
-                "1x8dd7hglnrdc3g57f0ssl83ppi825nkqzmcfygswhp3g5wi0fx2"))))
+                "0d6qzc7g8p6n7apw12a2x35yijyfcr4bpd5z6j236lxn86hknv63"))))
     (properties `((upstream-name . "RoBTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -17422,13 +17398,13 @@ in the most recent development version of the patchDVI package.")
 (define-public r-rmdcev
   (package
     (name "r-rmdcev")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmdcev" version))
               (sha256
                (base32
-                "0pdw390fknivnfkrzlk1rcv34prgnang50rfgmfpm2g9l6kjckxp"))))
+                "1080351hs89zsm7y9yvy660r87qa643zsxyzhhfw0q0nzgyidfya"))))
     (properties `((upstream-name . "rmdcev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17917,13 +17893,13 @@ objects.")
 (define-public r-rmangal
   (package
     (name "r-rmangal")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmangal" version))
               (sha256
                (base32
-                "1zy4cp177kbd9k7g84qb4ccb5n8x8nb96mb32qgy3z1hlnxilgg3"))))
+                "1sh3ggbp5f4p8jqjr7l5an32ikr4gcdll2d7gl7mqjayq497c865"))))
     (properties `((upstream-name . "rmangal")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-jsonlite r-igraph r-httr))
@@ -22790,13 +22766,13 @@ function.")
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.8.1")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgoogleads" version))
               (sha256
                (base32
-                "190rsvvi3p1ygsaj8pi7daxc8v6v2c6kinvi88v7lx2s2w6bj8b7"))))
+                "0vsns2kizhn353q9sv5lgpcsc1h0sxvxyliqi6z6gaanky27vwm4"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

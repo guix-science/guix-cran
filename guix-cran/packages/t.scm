@@ -2229,13 +2229,13 @@ life\" functions, such as treating time series for trailing and leading values."
 (define-public r-tstutorial
   (package
     (name "r-tstutorial")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSTutorial" version))
               (sha256
                (base32
-                "0kbs703nmi1z19r6bcz243sm50ijxwmsx6kcw0g18wmz7v8bj9c5"))))
+                "0zq383j2sciywnzri1dc3c1i1hc7d30v1qscaija2pbhqyjym4qw"))))
     (properties `((upstream-name . "TSTutorial")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -10239,13 +10239,13 @@ functions for the simulation of several kinds of multistage designs.")
 (define-public r-tmsens
   (package
     (name "r-tmsens")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmsens" version))
               (sha256
                (base32
-                "0rvcqf82jlq61rpmbyc5xy3fh0hzj1iy2kf6mmar18k3rhlhgayg"))))
+                "0ifgzkmwdkiq6x0y0n1qsf10ncir5cdfcb186pg3w6lpkh34v3mm"))))
     (properties `((upstream-name . "tmsens")))
     (build-system r-build-system)
     (home-page "https://github.com/dea-hazewinkel/tmsens")
@@ -11692,28 +11692,6 @@ can tinker to your hearts content.")
 arbitrary distributions with piecewise twice differentiable densities.")
     (license license:gpl2+)))
 
-(define-public r-timsr
-  (package
-    (name "r-timsr")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "timsr" version))
-              (sha256
-               (base32
-                "1n9xq01rfk5v0x0r8cr481s93nh99nf3kshb41d43r7zdw2dcwfi"))))
-    (properties `((upstream-name . "timsr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-opentimsr r-data-table))
-    (home-page "https://cran.r-project.org/package=timsr")
-    (synopsis "Easily Access timsTOF Data")
-    (description
-     "Access timsTOF mass spectrometry data, as described
-<https://sso.bruker.com/auth/realms/bruker/protocol/openid-connect/auth?client_id=aem-bruker.com&redirect_uri=https%3A%2F%2Fwww.bruker.com%2Fen.login.html%3FtargetUrl%3Dhttps%3A%2F%2Fwww.bruker.com%2Fen%2Fservices%2Fsoftware-downloads%2Fmass-spectrometry.html&response_type=id_token%20token&scope=openid%20profile&state=4f9d225e92f341cca3b03a55533dbd65&nonce=f550633b1e984ecfb07979ae6d9277b4&ui_locales=en>
-(after registering), using the OpenTIMS C++ reader and save all into
-data.tables'.")
-    (license license:gpl3)))
-
 (define-public r-timsac
   (package
     (name "r-timsac")
@@ -11878,6 +11856,54 @@ time support of series (hourly time series to daily time series for instance)
 are also defined.  Tools provided can be used for instance to handle
 environmental monitoring data (not always produced on a regular time base).")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-timetk
+  (package
+    (name "r-timetk")
+    (version "2.8.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "timetk" version))
+              (sha256
+               (base32
+                "1ad5qba68am81pmlbkbp6baq0aicikabnyqv4sijcql567vya8iy"))))
+    (properties `((upstream-name . "timetk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tsfeatures
+                             r-timedate
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-slider
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-readr
+                             r-purrr
+                             r-plotly
+                             r-padr
+                             r-lubridate
+                             r-hms
+                             r-ggplot2
+                             r-generics
+                             r-forecast
+                             r-forcats
+                             r-dplyr
+                             r-assertthat
+                             r-anytime))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/timetk")
+    (synopsis "Tool Kit for Working with Time Series")
+    (description
+     "Easy visualization, wrangling, and feature engineering of time series data for
+forecasting and machine learning prediction.  Consolidates and extends time
+series functionality from packages including dplyr', stats', xts', forecast',
+slider', padr', recipes', and rsample'.")
+    (license license:gpl3+)))
 
 (define-public r-timeseriesdb
   (package
