@@ -834,28 +834,6 @@ variables which minimize mean inspection cost per lot of process average
 quality.")
     (license license:gpl2)))
 
-(define-public r-ltmle
-  (package
-    (name "r-ltmle")
-    (version "1.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ltmle" version))
-              (sha256
-               (base32
-                "1mqrf77319cjs3q48iigrkjc3rjibz7qyij49a7l0nim3c1hd0b0"))))
-    (properties `((upstream-name . "ltmle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm r-matrixstats r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/joshuaschwab/ltmle")
-    (synopsis "Longitudinal Targeted Maximum Likelihood Estimation")
-    (description
-     "Targeted Maximum Likelihood Estimation (TMLE) of treatment/censoring specific
-mean outcome or marginal structural model for point-treatment and longitudinal
-data.")
-    (license license:gpl2)))
-
 (define-public r-ltmix
   (package
     (name "r-ltmix")
@@ -1454,19 +1432,23 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lsirm12pl" version))
               (sha256
                (base32
-                "193l17z9saqxxyswgy9schrilgr9x2idc900vkblsfhy0nl71chr"))))
+                "07g8x0zhxbyvzax5hyy2i4drxvhd4cci7nm33bjl9vqz323dl1ff"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-proc
+                             r-plotly
                              r-mcmcpack
                              r-gparotation
                              r-ggplot2
@@ -6403,13 +6385,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMest" version))
               (sha256
                (base32
-                "116aasg8psn003p7igibn7zilxc2j59ijn2x5wc07rp56ldx0zqz"))))
+                "08s99l1460gmw6477p44ad9q7gsll9x3srnlhrf0j0pplf0x2s0k"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -10879,13 +10861,13 @@ now produce mixed-effects LEGIT models through the lme4 package.")
 (define-public r-legislator
   (package
     (name "r-legislator")
-    (version "1.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "legislatoR" version))
               (sha256
                (base32
-                "1553hpb2cmv3hw6v4c7qwgg8n18jwx101yaqnmaaiv8gfyh6j43m"))))
+                "12ij2xqasc4j7gx79wzbdg3wvg8dn9azj0qj61s4c6ficyr0x0bv"))))
     (properties `((upstream-name . "legislatoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr r-curl))
@@ -10895,8 +10877,8 @@ now produce mixed-effects LEGIT models through the lme4 package.")
     (description
      "Facilitates access to the Comparative Legislators Database (CLD).  The CLD
 includes political, sociodemographic, career, online presence, public attention,
-and visual information for over 45,000 contemporary and historical politicians
-from ten countries.")
+and visual information for over 67,000 contemporary and historical politicians
+from 16 countries.")
     (license license:gpl3)))
 
 (define-public r-legion

@@ -6509,6 +6509,34 @@ total assessment process, and help foresters to further assess and management
 forest resources.")
     (license license:gpl2+)))
 
+(define-public r-forestgapr
+  (package
+    (name "r-forestgapr")
+    (version "0.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ForestGapR" version))
+              (sha256
+               (base32
+                "0pj1rq2gqhigrv5v734hj0gmjb6qnipy9crd14qdvzbjhprg4i4z"))))
+    (properties `((upstream-name . "ForestGapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-vgam
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-sp
+                             r-raster
+                             r-powerlaw
+                             r-igraph))
+    (home-page "https://cran.r-project.org/package=ForestGapR")
+    (synopsis "Tropical Forest Canopy Gaps Analysis")
+    (description
+     "Set of tools for detecting and analyzing Airborne Laser Scanning-derived
+Tropical Forest Canopy Gaps.  Details were published in Silva and others (2019)
+<doi:10.1111/2041-210X.13211>.")
+    (license license:gpl3)))
+
 (define-public r-forestfit
   (package
     (name "r-forestfit")

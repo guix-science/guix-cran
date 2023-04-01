@@ -13128,47 +13128,6 @@ Ecovalence, Shukla's stability variance parameter (1972)
 yielding and stable parameter.")
     (license license:gpl2)))
 
-(define-public r-stabiliser
-  (package
-    (name "r-stabiliser")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stabiliser" version))
-              (sha256
-               (base32
-                "1r74p82p9g796nzwgvldrnk0nl1bpnwgcasmrz7lqkg3zpkj3wzn"))))
-    (properties `((upstream-name . "stabiliser")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-recipes
-                             r-purrr
-                             r-ncvreg
-                             r-matrixstats
-                             r-lmertest
-                             r-lme4
-                             r-knitr
-                             r-hmisc
-                             r-glmnet
-                             r-ggplot2
-                             r-expss
-                             r-dplyr
-                             r-caret
-                             r-broom
-                             r-bigstep))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stabiliser")
-    (synopsis "Stabilising Variable Selection")
-    (description
-     "This package provides a stable approach to variable selection through stability
-selection and the use of a permutation-based objective stability threshold.
-Lima et al (2021) <doi:10.1038/s41598-020-79317-8>, Meinshausen and Buhlmann
-(2010) <doi:10.1111/j.1467-9868.2010.00740.x>.")
-    (license license:expat)))
-
 (define-public r-sta
   (package
     (name "r-sta")
@@ -32832,39 +32791,6 @@ of sequencing required.")
 not-a-pipe operator of the magrittr package.")
     (license license:gpl3)))
 
-(define-public r-simpr
-  (package
-    (name "r-simpr")
-    (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "simpr" version))
-              (sha256
-               (base32
-                "16f9a4nps6mis90laj33dipjk5rkfgbsss9ck6jq8kmjgk85kpvf"))))
-    (properties `((upstream-name . "simpr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://statisfactions.github.io/simpr/")
-    (synopsis "Flexible 'Tidyverse'-Friendly Simulations")
-    (description
-     "This package provides a general, tidyverse'-friendly framework for simulation
-studies, design analysis, and power analysis.  Specify data generation, define
-varying parameters, generate data, fit models, and tidy model results in a
-single pipeline, without needing loops or custom functions.")
-    (license license:gpl2)))
-
 (define-public r-simpop
   (package
     (name "r-simpop")
@@ -41610,13 +41536,13 @@ analysis on the results of genomics experiments.")
 (define-public r-setmethods
   (package
     (name "r-setmethods")
-    (version "3.0")
+    (version "4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SetMethods" version))
               (sha256
                (base32
-                "14hh1rb8bma0cx3v9dmn58mkv6sky7xcnhwxwij5x8hp93a1i9is"))))
+                "0pzxcqbc7jnsxhv902qw2q9rcqskib11z36d5nav9wny6bj2z658"))))
     (properties `((upstream-name . "SetMethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-stargazer

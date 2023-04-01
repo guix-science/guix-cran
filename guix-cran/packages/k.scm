@@ -3636,17 +3636,17 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernelshap" version))
               (sha256
                (base32
-                "0z1f6ld9bh1pdv65c6igzc11jny9lcsp6476sxjgnazvi3n8gpj4"))))
+                "0h351apmig6hf9dx52ci6y1x9xv8gv44p1xcn98dq9mbpc1jbwd3"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach))
-    (home-page "https://github.com/mayer79/kernelshap")
+    (home-page "https://github.com/ModelOriented/kernelshap")
     (synopsis "Kernel SHAP")
     (description
      "Efficient implementation of Kernel SHAP, see Lundberg and Lee (2017)

@@ -260,13 +260,13 @@ relationships between exposures and outcomes.")
 (define-public r-twowaytests
   (package
     (name "r-twowaytests")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "twowaytests" version))
               (sha256
                (base32
-                "05y455p40p72m22k0pjmdqnnp2fklqcq70yc9ga9fgcimqjvbi18"))))
+                "0z04iizdqas9lhmw8i4k5i575j38b9xd4qkk5mrsnk8jm40fljcc"))))
     (properties `((upstream-name . "twowaytests")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson r-onewaytests r-nortest r-ggplot2
@@ -7411,13 +7411,13 @@ as the relative frequency plot and methods for polyadic data.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-6")
+    (version "2.2-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TraMineR" version))
               (sha256
                (base32
-                "1rqkhfns0i1nfjs6kdvpvjzy6zwiclxhhiscr4zmp4mzj9b5pxp7"))))
+                "0kc3mfvrd7zkxm5a89kgjfaqm99kikfdkvccy4fh5xzz8jg7wv41"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
@@ -10297,13 +10297,13 @@ arguments and objects to modify the final output of the document.")
 (define-public r-tmod
   (package
     (name "r-tmod")
-    (version "0.50.11")
+    (version "0.50.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmod" version))
               (sha256
                (base32
-                "07p8n0103b9522p5yfqx4vb7yq24c03np95xzb6ddj7nvms88m5z"))))
+                "160aibvkz4ilyaig3bvkam6g96cngaynwsfrzh6vpq9xyraqxpix"))))
     (properties `((upstream-name . "tmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -10321,7 +10321,7 @@ arguments and objects to modify the final output of the document.")
                              r-ggplot2
                              r-beeswarm))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tmod")
+    (home-page "https://tmod.online")
     (synopsis
      "Feature Set Enrichment Analysis for Metabolomics and Transcriptomics")
     (description
@@ -11455,13 +11455,13 @@ available back to 2000 for most geographies.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinysnapshot" version))
               (sha256
                (base32
-                "1b7b48ccs25xk7d1y0pvxpqjjvdglvj6pvbzrzy6p5yfp8yjam1w"))))
+                "05b6zs93wg1c6c1nv61x30hhwjmr2m8qvsxsfdajnq3dlm6rpqqr"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytest r-magick r-diffobj))
@@ -13422,6 +13422,57 @@ Workforce Indicator is available at
     (synopsis "Query 'R' Data Frames with 'SQL'")
     (description "Use SQL SELECT statements to query R data frames.")
     (license license:asl2.0)))
+
+(define-public r-tidyquant
+  (package
+    (name "r-tidyquant")
+    (version "1.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidyquant" version))
+              (sha256
+               (base32
+                "1pb7d6x2b8kf16aah1n9kq4il4kp54lcvzd27r5viwdbgvk1sr4h"))))
+    (properties `((upstream-name . "tidyquant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-ttr
+                             r-timetk
+                             r-timedate
+                             r-tidyverse
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-riingo
+                             r-readxl
+                             r-readr
+                             r-quantmod
+                             r-quandl
+                             r-purrr
+                             r-performanceanalytics
+                             r-magrittr
+                             r-lubridate
+                             r-lazyeval
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-alphavantager))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/tidyquant")
+    (synopsis "Tidy Quantitative Financial Analysis")
+    (description
+     "Bringing business and financial analysis to the tidyverse'.  The tidyquant
+package provides a convenient wrapper to various xts', zoo', quantmod', TTR and
+PerformanceAnalytics package functions and returns the objects in the tidy
+tibble format.  The main advantage is being able to use quantitative functions
+with the tidyverse functions including purrr', dplyr', tidyr', ggplot2',
+lubridate', etc.  See the tidyquant website for more information, documentation
+and examples.")
+    (license license:expat)))
 
 (define-public r-tidypmc
   (package
@@ -18721,26 +18772,6 @@ Y. Zeng, \"Multiway clustering via tensor block models\".  Advances in Neural
 Information Processing System 32 (NeurIPS), 715-725, 2019.")
     (license license:gpl2+)))
 
-(define-public r-tensorregress
-  (package
-    (name "r-tensorregress")
-    (version "4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tensorregress" version))
-              (sha256
-               (base32
-                "0pb512v3gahgv3qc31i5v2jg8wixi6ps3p920sq5dgpfrig9hg2q"))))
-    (properties `((upstream-name . "tensorregress")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm r-pracma r-mass))
-    (home-page "https://cran.r-project.org/package=tensorregress")
-    (synopsis "Supervised Tensor Decomposition with Side Information")
-    (description
-     "Implement the alternating algorithm for supervised tensor decomposition with
-interactive side information.")
-    (license license:gpl2+)))
-
 (define-public r-tensorr
   (package
     (name "r-tensorr")
@@ -18820,30 +18851,6 @@ as an alternative resort to handle tensor only as array class.  Some
 functionalities related to missingness and rearrangement, discussed in Bai and
 Ng (2021) <arXiv:1910.06677>, are also supported.")
     (license license:gpl3)))
-
-(define-public r-tensorcomplete
-  (package
-    (name "r-tensorcomplete")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TensorComplete" version))
-              (sha256
-               (base32
-                "06lr0blkf5pv1zwlffn7m0xxscjii4jg930nkzrh2k7dnbka6vsx"))))
-    (properties `((upstream-name . "TensorComplete")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensorregress r-pracma r-mass))
-    (home-page "https://cran.r-project.org/package=TensorComplete")
-    (synopsis "Tensor Noise Reduction and Completion Methods")
-    (description
-     "Efficient algorithms for tensor noise reduction and completion.  This package
-includes a suite of parametric and nonparametric tools for estimating tensor
-signals from noisy, possibly incomplete observations.  The methods allow a broad
-range of data types, including continuous, binary, and ordinal-valued tensor
-entries.  The algorithms employ the alternating optimization.  The detailed
-algorithm description can be found in the following three references.")
-    (license license:gpl2+)))
 
 (define-public r-tensorclustering
   (package

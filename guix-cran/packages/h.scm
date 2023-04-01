@@ -2292,30 +2292,6 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 <doi:10.1101/2022.09.23.509097>.")
     (license license:gpl3)))
 
-(define-public r-htree
-  (package
-    (name "r-htree")
-    (version "2.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htree" version))
-              (sha256
-               (base32
-                "15bi5c2p4aghihp3k12s78447j2x9hbsaq56b5lc8jmd1vf0jdwb"))))
-    (properties `((upstream-name . "htree")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=htree")
-    (synopsis "Historical Tree Ensembles for Longitudinal Data")
-    (description
-     "Historical regression trees are an extension of standard trees, producing a
-non-parametric estimate of how the response depends on all of its prior
-realizations as well as that of any time-varying predictor variables.  The
-method applies equally to regularly as well as irregularly sampled data.  The
-package implements random forest and boosting ensembles based on historical
-regression trees, suitable for longitudinal data.  Standard error estimation and
-Z-score variable importance is also implemented.")
-    (license license:gpl2+)))
-
 (define-public r-htmlutils
   (package
     (name "r-htmlutils")
@@ -8330,13 +8306,13 @@ Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "5.8")
+    (version "5.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HelpersMG" version))
               (sha256
                (base32
-                "1ijibkb48qggvj51kyn5fnmq903pyf0w1ambvc5ksx199774ccf4"))))
+                "0bsp7dbya1n3ssw8yzjyyqfzvy7afvxgs94islzwpkm5zl1i4wqd"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))

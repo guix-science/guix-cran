@@ -4792,6 +4792,28 @@ graphical user interface (GUI) R package tcltk to ensure that it is user
 friendly.")
     (license license:gpl2)))
 
+(define-public r-optband
+  (package
+    (name "r-optband")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "optband" version))
+              (sha256
+               (base32
+                "0mg6awg1vgnbqrbkf9vnyj5jfbakna0jsclhi0w3v1rh0rsd5jlp"))))
+    (properties `((upstream-name . "optband")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lambertw))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/seasamgo/optband")
+    (synopsis "'surv' Object Confidence Bands Optimized by Area")
+    (description
+     "Given a certain coverage level, obtains simultaneous confidence bands for the
+survival and cumulative hazard functions such that the area between is
+minimized.  Produces an approximate solution based on local time arguments.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-opt5pl
   (package
     (name "r-opt5pl")
@@ -5932,49 +5954,30 @@ location (reverse geocoding), see <https://opencagedata.com/>.")
 API.")
     (license license:gpl3)))
 
-(define-public r-openalexr
-  (package
-    (name "r-openalexr")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openalexR" version))
-              (sha256
-               (base32
-                "0xyzlg3cyhbndnhc864g8447nffc2gg5si7s4h5l1jygyz3c8bki"))))
-    (properties `((upstream-name . "openalexR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/massimoaria/openalexR")
-    (synopsis
-     "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")
-    (description
-     "This package provides a set of tools to extract bibliographic content from
-OpenAlex database using API <https://docs.openalex.org/api/>.")
-    (license license:expat)))
-
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.7.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openairmaps" version))
               (sha256
                (base32
-                "1k98sdh9kmfc1n486xv00ikc8mx32jlfsjlybx9685z4d9isvcms"))))
+                "18acrnb57cmq7z4sxnyjaa1nc8l52wa9fijgcb30garz8lhlldab"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-sf
                              r-rlang
                              r-purrr
                              r-openair
+                             r-mgcv
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-leaflet
                              r-ggtext
                              r-ggplot2

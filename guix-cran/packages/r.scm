@@ -3226,13 +3226,13 @@ calculations in CPUs as well as GPUs to accelerate tensor operations.")
 (define-public r-rtop
   (package
     (name "r-rtop")
-    (version "0.6-5")
+    (version "0.6-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rtop" version))
               (sha256
                (base32
-                "0cma0ihz2sn3v6mfdq26dr66rgng44m129jr63id4vcn4dhna624"))))
+                "0s5kqz7ah5182k5j1r72hqrv05mlns8b67m57a0mn9gfzjhval6p"))))
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sp r-sf r-gstat))
@@ -3376,6 +3376,36 @@ and Kellen (2018), but with some modifications.  Other than in the original C++
 program we use the free and open source GNU Scientific Library (GSL).  There is
 also the possibility to suppress single process completion times.")
     (license license:gpl2+)))
+
+(define-public r-rtlsdeep
+  (package
+    (name "r-rtlsdeep")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rTLsDeep" version))
+              (sha256
+               (base32
+                "1hkhshpcfdrv7df8lawsgmbrfkmbasd1jc4dddz6yzc21fkg136p"))))
+    (properties `((upstream-name . "rTLsDeep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensorflow
+                             r-sf
+                             r-rgl
+                             r-reticulate
+                             r-matrixstats
+                             r-lidr
+                             r-keras
+                             r-ggplot2
+                             r-caret))
+    (home-page "https://github.com/carlos-alberto-silva/rTLsDeep")
+    (synopsis "Post-Hurricane Damage Severity Classification from TLS and AI")
+    (description
+     "Terrestrial laser scanning (TLS) data processing and post-hurricane damage
+severity classification at the individual tree level usingÂ deepÂ Learning.
+Further details were published in Klauberg et al. (2023)
+<doi:10.3390/rs15041165>.")
+    (license license:gpl3)))
 
 (define-public r-rtls
   (package
@@ -25502,13 +25532,13 @@ from Names\" by Fangzhou Xie (2021) <arXiv:2109.09228>.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.4-500")
+    (version "0.4-501")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "restriktor" version))
               (sha256
                (base32
-                "02arm2rqy5cpxng5jn64mx3wz7m30bpcw0wyck1h095hhj0dxad6"))))
+                "1xdhy0g1iif1xig477q6xxqdk6prhr0ffaxr9qmzdbc4v2500a2b"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
@@ -30256,41 +30286,6 @@ and DeFord et al. (2021) <doi:10.1162/99608f92.eb30390f>, and the Short-burst
 optimization algorithm of Cannon et al. (2020) <arXiv:2011.02288>.")
     (license license:gpl2+)))
 
-(define-public r-rediscover
-  (package
-    (name "r-rediscover")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rediscover" version))
-              (sha256
-               (base32
-                "1baz7k05glnwxswbhr6lwm5vnj8srf5cbmyciig6dp8v9jnh168q"))))
-    (properties `((upstream-name . "Rediscover")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm
-                             r-shiftconvolvepoibin
-                             r-rcolorbrewer
-                             r-poissonbinomial
-                             r-matrixstats
-                             r-matrix
-                             r-maftools
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rediscover")
-    (synopsis "Identify Mutually Exclusive Mutations")
-    (description
-     "An optimized method for identifying mutually exclusive genomic events.  Its main
-contribution is a statistical analysis based on the Poisson-Binomial
-distribution that takes into account that some samples are more mutated than
-others.  See [Canisius, Sander, John WM Martens, and Lodewyk FA Wessels. (2016)
-\"A novel independence test for somatic alterations in cancer shows that biology
-drives mutual exclusivity but chance explains most co-occurrence.\" Genome
-biology 17.1 : 1-17. <doi:10.1186/s13059-016-1114-x>].  The mutations matrices
-are sparse matrices.  The method developed takes advantage of the advantages of
-this type of matrix to save time and computing resources.")
-    (license license:artistic2.0)))
-
 (define-public r-redisbasecontainer
   (package
     (name "r-redisbasecontainer")
@@ -30570,13 +30565,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "REDCapDM" version))
               (sha256
                (base32
-                "05gpskr13ib7bdijqns0053azknz3lnay0r2jxy007vk9i4i8xmj"))))
+                "0ywncv2w3rrng4cv14krjmf0546sai1bw9ygl6a2j40l5r6piq3b"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -30589,7 +30584,6 @@ default reports are generated as vignettes in the resulting package.")
                              r-openxlsx
                              r-magrittr
                              r-janitor
-                             r-hmisc
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=REDCapDM")

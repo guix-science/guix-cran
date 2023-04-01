@@ -997,16 +997,16 @@ available.  For more details see Tanaka, Saga and Nakano
 (define-public r-nscancor
   (package
     (name "r-nscancor")
-    (version "0.6.1-25")
+    (version "0.7.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nscancor" version))
               (sha256
                (base32
-                "183kvzlln5lhmi51dm0skq1165c3hhy1yz5h2g7nxwqk2b4p23xj"))))
+                "1fcw3qpsc7kpg2ha1qkp2277ir2kyhy71vjwypfp49y7nqiwm7kh"))))
     (properties `((upstream-name . "nscancor")))
     (build-system r-build-system)
-    (home-page "http://sigg-iten.ch/research/")
+    (home-page "https://sigg-iten.ch/research/")
     (synopsis "Non-Negative and Sparse CCA")
     (description
      "Two implementations of canonical correlation analysis (CCA) that are based on
@@ -1014,11 +1014,11 @@ iterated regression.  By choosing the appropriate regression algorithm for each
 data domain, it is possible to enforce sparsity, non-negativity or other kinds
 of constraints on the projection vectors.  Multiple canonical variables are
 computed sequentially using a generalized deflation scheme, where the additional
-correlation not explained by previous variables is maximized.  nscancor is used
-to analyze paired data from two domains, and has the same interface as the
-cancor function from the stats package (plus some extra parameters).  mcancor is
+correlation not explained by previous variables is maximized.  nscancor() is
+used to analyze paired data from two domains, and has the same interface as
+cancor() from the stats package (plus some extra parameters).  mcancor() is
 appropriate for analyzing data from three or more domains.  See
-<http://sigg-iten.ch/learningbits/2014/01/20/canonical-correlation-analysis-under-constraints/>
+<https://sigg-iten.ch/learningbits/2014/01/20/canonical-correlation-analysis-under-constraints/>
 and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
     (license license:gpl2+)))
 
@@ -9002,19 +9002,21 @@ network mazes.")
 (define-public r-networkextinction
   (package
     (name "r-networkextinction")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NetworkExtinction" version))
               (sha256
                (base32
-                "19rgz2v4p0q6j7q3gs695j2jpxzlwvx06bhcji68hkrn78745ag0"))))
+                "1y2f715y077bwj8ymamrskwhbc7adg7q9ijkks2yr2gwj8i47xy4"))))
     (properties `((upstream-name . "NetworkExtinction")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-sna
                              r-scales
+                             r-rlang
                              r-purrr
+                             r-patchwork
                              r-network
                              r-mass
                              r-magrittr
@@ -9022,6 +9024,7 @@ network mazes.")
                              r-ggplot2
                              r-foreach
                              r-dplyr
+                             r-dosnow
                              r-doparallel
                              r-broom))
     (native-inputs (list r-knitr))
@@ -9682,6 +9685,37 @@ out-of-the-box-nice visualizations.  The package is built on top of The Grid
 Graphics Package and seamlessly work with igraph and network objects.")
     (license license:expat)))
 
+(define-public r-netorigin
+  (package
+    (name "r-netorigin")
+    (version "1.1-5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "NetOrigin" version))
+              (sha256
+               (base32
+                "0rskc33pvsajpy0f1baagwmaks49xmydxinjspbkny7p3kaihrkf"))))
+    (properties `((upstream-name . "NetOrigin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-plyr
+                             r-mvtnorm
+                             r-igraph
+                             r-hmisc
+                             r-dplyr
+                             r-corpcor
+                             r-colorspace))
+    (home-page "https://netorigin.manitz.org/")
+    (synopsis
+     "Origin Estimation for Propagation Processes on Complex Networks")
+    (description
+     "This package performs network-based source estimation.  Different approaches are
+available: effective distance median, recursive backtracking, and
+centrality-based source estimation.  Additionally, we provide public
+transportation network data as well as methods for data preparation, source
+estimation performance analysis and visualization.")
+    (license license:gpl3)))
+
 (define-public r-netmix
   (package
     (name "r-netmix")
@@ -9797,38 +9831,6 @@ Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
 <doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
 et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 <doi:10.1002/sim.9346>.")
-    (license license:gpl2+)))
-
-(define-public r-netmediate
-  (package
-    (name "r-netmediate")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "netmediate" version))
-              (sha256
-               (base32
-                "00aplpq42b4kr9nlhjnd4zqpcd127nyfd77xnrxdny1mnjgw36x8"))))
-    (properties `((upstream-name . "netmediate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-sna
-                             r-rsiena
-                             r-plyr
-                             r-plm
-                             r-network
-                             r-mass
-                             r-lme4
-                             r-intergraph
-                             r-gam
-                             r-ergmargins
-                             r-ergm
-                             r-btergm))
-    (home-page "https://cran.r-project.org/package=netmediate")
-    (synopsis "Micro-Macro Analysis for Social Networks")
-    (description
-     "Estimates micro effects on macro structures (MEMS) and average micro mediated
-effects (AMME).")
     (license license:gpl2+)))
 
 (define-public r-netmap

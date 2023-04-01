@@ -972,13 +972,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.1.1")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "1qw44qkrl2dc55cj91wfx66v5pkh2p11amg6irfz1mvhcak6syy9"))))
+                "0xidyjfi1mqvazwncxjzgxbkb4dcanq1i18h93wdyr4qsxs860dg"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -986,7 +986,6 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
                              r-rlang
                              r-posterior
                              r-patchwork
-                             r-mass
                              r-loo
                              r-glue
                              r-ggplot2
@@ -2664,27 +2663,6 @@ methods includes simulation and estimation of the parameters.")
      "Comparison of the accuracy of two binary diagnostic tests in a \"paired\" study
 design, i.e.  when each test is applied to each subject in the study.")
     (license license:gpl3+)))
-
-(define-public r-dtbm
-  (package
-    (name "r-dtbm")
-    (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dTBM" version))
-              (sha256
-               (base32
-                "14y0x97gb1345ybvpd4rk0bidlzl613lgrl9pa4y197nhdkqdrx0"))))
-    (properties `((upstream-name . "dTBM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-weightedcluster r-tensorregress r-envstats))
-    (home-page "https://cran.r-project.org/package=dTBM")
-    (synopsis
-     "Multi-Way Spherical Clustering via Degree-Corrected Tensor Block Models")
-    (description
-     "Implement weighted higher-order initialization and angle-based iteration for
-multi-way spherical clustering under degree-corrected tensor block model.")
-    (license license:gpl2+)))
 
 (define-public r-dtaxg
   (package
@@ -5896,13 +5874,13 @@ piping operators of different precedence, and flexible syntaxes.")
 (define-public r-doubleml
   (package
     (name "r-doubleml")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoubleML" version))
               (sha256
                (base32
-                "1984slxllcl9kk7zch8xz8w1asnnqscf4mn0cy3wqbl7vd8dc01z"))))
+                "1s1zpq5yz6l4b65p9mdpb91fsvhw6wifh3dvhwzyj7xn4nraaayv"))))
     (properties `((upstream-name . "DoubleML")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13
@@ -13786,13 +13764,13 @@ libphonenumber java library, <https://github.com/google/libphonenumber>.")
 (define-public r-diallelanalysisr
   (package
     (name "r-diallelanalysisr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiallelAnalysisR" version))
               (sha256
                (base32
-                "087kzxdvhabl1f9q5mbr4dllrpsx86a08bs34xsam2g2x63vmdxq"))))
+                "0w053vqp23hqixgn32g5d8a0l9hcxp6w2fm1sx3ysxr4p0yz7g14"))))
     (properties `((upstream-name . "DiallelAnalysisR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -14770,13 +14748,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfms" version))
               (sha256
                (base32
-                "0mhqcv301lrwdw44vrdp59wwfamh6i523jwp2k7cjr1kiy5q6ici"))))
+                "0jc6malvzqdhrfd62nbvw5zw6f2p9ajnaszsx2nyyhj8dwcdi3ki"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))
@@ -23313,6 +23291,37 @@ entering, filtering and editing of data in R
 environment.  You can opt to add variable labels.  You can write the object
 directly to Excel.")
     (license license:expat)))
+
+(define-public r-datacutr
+  (package
+    (name "r-datacutr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datacutr" version))
+              (sha256
+               (base32
+                "1qgmc2r1g5zlvfq84qrmmfp6dv3458zhv741aa5wf1nkw2sv656y"))))
+    (properties `((upstream-name . "datacutr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-assertthat
+                             r-admiraldev))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=datacutr")
+    (synopsis "SDTM Datacut")
+    (description
+     "Supports the process of applying a cut to Standard Data Tabulation Model (SDTM),
+as part of the analysis of specific points in time of the data, normally as part
+of investigation into clinical trials.  The functions support different
+approaches of cutting to the different domains of SDTM normally observed.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-datacomparer
   (package

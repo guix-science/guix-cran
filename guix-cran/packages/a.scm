@@ -3131,13 +3131,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2022.9.16")
+    (version "2023.3.30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atime" version))
               (sha256
                (base32
-                "07zmnbsglaaczn0sdzqz8749hsv578lr5w8qvjwl83sqpqmfs81y"))))
+                "1kmi80pv3wajhzcqc0n6yqss0nmchg3w1f0lyj40bqi7pshd3909"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -4480,6 +4480,34 @@ at <http://www.aslib.net> and the LLAMA package
 (<https://cran.r-project.org/package=llama>) for building algorithm selection
 models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
     (license license:gpl3)))
+
+(define-public r-askgpt
+  (package
+    (name "r-askgpt")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "askgpt" version))
+              (sha256
+               (base32
+                "1wsrag2354czrifyvyf46yc7jlanp2h68zqi8anxb9nrwsjm8cm5"))))
+    (properties `((upstream-name . "askgpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rappdirs
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JBGruber/askgpt")
+    (synopsis "Asking GPT About R Stuff")
+    (description
+     "This package provides a chat package connecting to API endpoints by OpenAI
+(<https://platform.openai.com/>) to answer questions (about R).")
+    (license license:gpl3+)))
 
 (define-public r-asip
   (package
@@ -7099,6 +7127,34 @@ can be calculated with the selection index method (Mrode, 2014.
 ISBN:978-1-84593-981-6).")
     (license license:expat)))
 
+(define-public r-aquabeher
+  (package
+    (name "r-aquabeher")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AquaBEHER" version))
+              (sha256
+               (base32
+                "0rgkwy1sfdkcjk69cncxd2zxlkn9kyvq8iwmz83d2gwzdzfbjqdd"))))
+    (properties `((upstream-name . "AquaBEHER")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-raster r-lubridate r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RobelTakele/AquaBEHER")
+    (synopsis
+     "Estimation of Rainy Season Calendar and Soil Water Balance for Agriculture")
+    (description
+     "Computes and integrates daily reference evapotranspiration ('Eto') into a water
+balance model, to estimate the calendar of wet-season (Onset, Cessation and
+Duration) based on agroclimatic approach, for further information please refer
+to Allen et al. (1998, ISBN:92-5-104219-5), Allen (2005, ISBN:9780784408056),
+Doorenbos and Pruitt (1975, ISBN:9251002797) Guo et al. (2016)
+<doi:10.1016/j.envsoft.2015.12.019>, Hargreaves and Samani (1985)
+<doi:10.13031/2013.26773>, Priestley and Taylor (1972)
+<https://journals.ametsoc.org/downloadpdf/journals/mwre/100/2/1520-0493_1972_100_0081_otaosh_2_3_co_2.pdf>.")
+    (license license:gpl3+)))
+
 (define-public r-aqp
   (package
     (name "r-aqp")
@@ -8680,24 +8736,23 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ao" version))
               (sha256
                (base32
-                "1wggpi69sfxg8m9dngrrnn35pin6d5cm6klp7ni53payi96vk1dv"))))
+                "02il04c8c5pykwzm1dfrn1vj2w38sg5lqg7v92vg209mxd11azry"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-optimizer r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/loelschlaeger/ao/")
+    (home-page "https://loelschlaeger.de/ao/")
     (synopsis "Alternating Optimization")
     (description
      "Alternating optimization of (high-dimensional) functions is an iterative
 procedure for optimizing jointly over all parameters by alternately optimizing
-parameter subsets.  For a reference on the method, see Bezdek and Hathaway
-(2002) \"Some Notes on Alternating Optimization\" <doi:10.1007/3-540-45631-7_39>.")
+parameter subsets.")
     (license license:gpl3)))
 
 (define-public r-anylib
@@ -11663,6 +11718,37 @@ and correct model selection.  Bayesian information criteria (BIC) estimates the
 optimal tuning parameter lambda.  Plot tools are also available.")
     (license license:gpl2+)))
 
+(define-public r-alphavantager
+  (package
+    (name "r-alphavantager")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "alphavantager" version))
+              (sha256
+               (base32
+                "047a48jwn1vzmgdnp5jz1vl5mwvvvknzi75abn75rwlsjz6flc9m"))))
+    (properties `((upstream-name . "alphavantager")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timetk
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/business-science/alphavantager")
+    (synopsis "Lightweight Interface to the Alpha Vantage API")
+    (description
+     "Alpha Vantage has free historical financial information.  All you need to do is
+get a free API key at <https://www.alphavantage.co>.  Then you can use the R
+interface to retrieve free equity information.  Refer to the Alpha Vantage
+website for more information.")
+    (license license:gpl3+)))
+
 (define-public r-alphastable
   (package
     (name "r-alphastable")
@@ -13523,13 +13609,13 @@ available as dataframes in R.")
 (define-public r-aid
   (package
     (name "r-aid")
-    (version "2.7")
+    (version "2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AID" version))
               (sha256
                (base32
-                "0zcch4vnl1v4xlgh8rf31b3d8dxxdk2cbv5pv9al79w1g46q16yn"))))
+                "10s2q6lcsh6k0b9n89cjwja3cng4wqzcl9grcbpba8xdz2jncn6s"))))
     (properties `((upstream-name . "AID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -13542,9 +13628,15 @@ available as dataframes in R.")
     (home-page "https://cran.r-project.org/package=AID")
     (synopsis "Box-Cox Power Transformation")
     (description
-     "This package performs Box-Cox power transformation for different purposes,
-graphical approaches, assesses the success of the transformation via tests and
-plots, computes mean and confidence interval for back transformed data.")
+     "This package performs Box-Cox power transformation for a single non-normal
+variable, ANOVA (Dag and Ilk, 2017) <doi:10.1080/03610918.2016.1204458> and
+Linear Models via different estimation techniques: maximum likelihood
+estimation, least square estimation, goodness-of-fit tests (Asar et al., 2017)
+<doi:10.1080/03610918.2014.957839>, artificial covariate (Dag et al., 2014)
+<doi:10.1080/03610918.2012.744042>, meta analysis (Yilmaz and Dag, 2022)
+<doi:10.28979/jarnas.1037343>.  It also performs graphical approaches, assesses
+the success of the transformation via tests and plots, computes mean and
+confidence interval for back transformed data.")
     (license license:gpl2+)))
 
 (define-public r-aiccmodavg
@@ -17391,24 +17483,24 @@ Profiles for Tissue Specific cells <doi:10.1371/journal.pone.0224693>.")
 (define-public r-adaptr
   (package
     (name "r-adaptr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adaptr" version))
               (sha256
                (base32
-                "17yfwzvcfmr2k7d4zjhwa55kifjbj5rwxd2gdyr56lb5pk6zrn15"))))
+                "0565j3h64mwak6ihyxprc2jc3a586x3h217fzk28jpix8kwmb19l"))))
     (properties `((upstream-name . "adaptr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://incept.dk/")
+    (home-page "https://inceptdk.github.io/adaptr/")
     (synopsis "Adaptive Trial Simulator")
     (description
-     "Package that simulates adaptive clinical trials using adaptive stopping,
-adaptive arm dropping, and/or adaptive randomisation.  Developed as part of the
-INCEPT (Intensive Care Platform Trial) project (<https://incept.dk/>), which is
-primarily supported by a grant from Sygeforsikringen \"danmark\"
-(<https://www.sygeforsikring.dk/>).")
+     "Package that simulates adaptive (multi-arm, multi-stage) clinical trials using
+adaptive stopping, adaptive arm dropping, and/or adaptive randomisation.
+Developed as part of the INCEPT (Intensive Care Platform Trial) project
+(<https://incept.dk/>), which is primarily supported by a grant from
+Sygeforsikringen \"danmark\" (<https://www.sygeforsikring.dk/>).")
     (license license:gpl3+)))
 
 (define-public r-adaptmt

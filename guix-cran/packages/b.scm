@@ -1486,39 +1486,6 @@ attractiveness/strength of the objects.  Suitable L1 penalty terms are used to
 cluster certain effects and to reduce the complexity of the models.")
     (license license:gpl2+)))
 
-(define-public r-btergm
-  (package
-    (name "r-btergm")
-    (version "1.10.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "btergm" version))
-              (sha256
-               (base32
-                "19iil8dfrxjwm3gmrhlbiacv9fhicng9x37bxf04i53lx6fw7yar"))))
-    (properties `((upstream-name . "btergm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-statnet-common
-                             r-speedglm
-                             r-sna
-                             r-rocr
-                             r-network
-                             r-matrix
-                             r-igraph
-                             r-ergm
-                             r-coda
-                             r-boot))
-    (home-page "https://github.com/leifeld/btergm")
-    (synopsis
-     "Temporal Exponential Random Graph Models by Bootstrapped Pseudolikelihood")
-    (description
-     "Temporal Exponential Random Graph Models (TERGM) estimated by maximum
-pseudolikelihood with bootstrapped confidence intervals or Markov Chain Monte
-Carlo maximum likelihood.  Goodness of fit assessment for ERGMs, TERGMs, and
-SAOMs. Micro-level interpretation of ERGMs and TERGMs. As described in Leifeld,
-Cranmer and Desmarais (2018), JStatSoft <doi:10.18637/jss.v083.i06>.")
-    (license license:gpl2+)))
-
 (define-public r-btdecaylasso
   (package
     (name "r-btdecaylasso")
@@ -7245,21 +7212,23 @@ estimation is also included.")
 (define-public r-bmstdr
   (package
     (name "r-bmstdr")
-    (version "0.3.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bmstdr" version))
               (sha256
                (base32
-                "00msf9x6b1zg4y8xbyjz6yynvhl17krxlxgyy7ip9nnwsnkwlq6g"))))
+                "16d60sk56cfychhxfkpl0m38kl1s7lhljmvfd5j1k88k8z85pabk"))))
     (properties `((upstream-name . "bmstdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-sptimer
                              r-sptdyn
                              r-spbayes
+                             r-rstantools
                              r-rstan
                              r-rdpack
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-mnormt
@@ -8428,13 +8397,13 @@ correction with a corresponding set of S3 plot methods.")
 (define-public r-blockforest
   (package
     (name "r-blockforest")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockForest" version))
               (sha256
                (base32
-                "11lfwh5skzbvyyh25hk0sxk21833ah9f8zybvqsn3m9109c9whsw"))))
+                "1i5vqs0hh3yc82hl8bsa647plcv0c4c95b1wzdzyslxz2m5khw0l"))))
     (properties `((upstream-name . "blockForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix))
@@ -12619,26 +12588,6 @@ and Specificity meets and its a best way to minimize both Type-1 and Type-2
 error for a binary Classifier in determining the Probability threshold.")
     (license license:gpl2)))
 
-(define-public r-binarize
-  (package
-    (name "r-binarize")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Binarize" version))
-              (sha256
-               (base32
-                "0xmgxlfyvgkv7xpngy9am6ihzwbjbfgp7psfnyhb1v0kj9iy7ids"))))
-    (properties `((upstream-name . "Binarize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-diptest))
-    (home-page "https://cran.r-project.org/package=Binarize")
-    (synopsis "Binarization of One-Dimensional Data")
-    (description
-     "This package provides methods for the binarization of one-dimensional data and
-some visualization functions.")
-    (license license:artistic2.0)))
-
 (define-public r-binancer
   (package
     (name "r-binancer")
@@ -12968,30 +12917,6 @@ also handles large sparse datasets using proximal stochastic gradient descent
 algorithm.  For more details about the method, please see Aliasghar Tarkhan and
 Noah Simon (2020) <arXiv:2003.00116v2>.")
     (license license:gpl2+)))
-
-(define-public r-bigstep
-  (package
-    (name "r-bigstep")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bigstep" version))
-              (sha256
-               (base32
-                "07l4pdmbcqh024bx32nbmrwl3rpk04r8sb6qdj63j354hvm4fd0a"))))
-    (properties `((upstream-name . "bigstep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-r-utils r-matrixstats r-magrittr
-                             r-bigmemory))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pmszulc/bigstep")
-    (synopsis "Stepwise Selection for Large Data Sets")
-    (description
-     "Selecting linear and generalized linear models for large data sets using
-modified stepwise procedure and modern selection criteria (like modifications of
-Bayesian Information Criterion).  Selection can be performed on data which
-exceed RAM capacity.")
-    (license license:gpl3)))
 
 (define-public r-bigstatsr
   (package
@@ -23772,33 +23697,6 @@ outcomes.  For more information see Sparapani, Spanbauer and McCulloch
     (synopsis "Barnard's Unconditional Test")
     (description "Barnard's unconditional test for 2x2 contingency tables.")
     (license license:gpl2)))
-
-(define-public r-bark
-  (package
-    (name "r-bark")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bark" version))
-              (sha256
-               (base32
-                "15q9xvb7fbh1kpr9qarb6ma9c3z25rskhx1hk86wqkcs0rzvpnr2"))))
-    (properties `((upstream-name . "bark")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://www.R-project.org")
-    (synopsis "Bayesian Additive Regression Kernels")
-    (description
-     "Bayesian Additive Regression Kernels (BARK) provides an implementation for
-non-parametric function estimation using Levy Random Field priors for functions
-that may be represented as a sum of additive multivariate kernels.  Kernels are
-located at every data point as in Support Vector Machines, however, coefficients
-may be heavily shrunk to zero under the Cauchy process prior, or even, set to
-zero.  The number of active features is controlled by priors on precision
-parameters within the kernels, permitting feature selection.  For more details
-see Ouyang, Z (2008) \"Bayesian Additive Regression Kernels\", Duke University.
-PhD dissertation, Chapter 3.")
-    (license license:gpl3+)))
 
 (define-public r-bardr
   (package

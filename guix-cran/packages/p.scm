@@ -21825,21 +21825,21 @@ reactive-transport, and inverse geochemical calculations.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photosynthesis" version))
               (sha256
                (base32
-                "17ipcgk11fnfrka5x95s4x5hncbfa38laav91475ghsni3hll4ay"))))
+                "13wg8j0yp3jp76qbqh5cl1q0k8aj7bfxqhv6d07i28lnb2183yf9"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
-                             r-tibble
                              r-tealeaves
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-progress
                              r-nlme
                              r-minpack-lm
                              r-magrittr
@@ -31068,13 +31068,13 @@ run locally, see examples on <https://github.com/SachaEpskamp/parSim>.")
 (define-public r-parserpdr
   (package
     (name "r-parserpdr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parseRPDR" version))
               (sha256
                (base32
-                "074hgd7q3nw3xjqh84zgg01g4rb9rs4snk16c4s28s18ai2kbr8d"))))
+                "14h56y7x38ll63rq4x6grws5ddcbf3rgksfpv95dxgbh25bx5rqr"))))
     (properties `((upstream-name . "parseRPDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-readr r-foreach r-doparallel

@@ -3396,13 +3396,13 @@ methods, see the reference section of GitHub README.md
 (define-public r-vicmapr
   (package
     (name "r-vicmapr")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VicmapR" version))
               (sha256
                (base32
-                "0c1mmnng0i7lzgp745h59w34fl94pl5cwsz65wy7pm2sy5p80mjb"))))
+                "0g67xq367k29x8jhms5zx3jicjxyg9chxnj7pv5kj8yxhxy19cyr"))))
     (properties `((upstream-name . "VicmapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

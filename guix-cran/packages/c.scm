@@ -18009,13 +18009,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.3")
+    (version "1.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "0mi09nv8xspqgsxphv30j1rrvhn5zpi9y2d7pigzvnkziq85shjr"))))
+                "0ms22fa45hpfb4034ybyj795ny3zzh9x0vi2012sbrl3l0wld9xk"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -20692,13 +20692,13 @@ Hagenaars, 2009, <DOI:10.1007/b12532>.")
 (define-public r-cmls
   (package
     (name "r-cmls")
-    (version "1.0-0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CMLS" version))
               (sha256
                (base32
-                "1542qqsl6sksrcpwhnn55d260hkbmy4ikd0v2an96yxk5w95spvn"))))
+                "0vgqdqckkyf0rnxi6hp6xfc1wv2ldz5p8bmc6jq1rgwgz4b66a0p"))))
     (properties `((upstream-name . "CMLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))
@@ -25209,13 +25209,13 @@ estimate the phenotypic variance explained by genetic markers.")
 (define-public r-civis
   (package
     (name "r-civis")
-    (version "3.1.1")
+    (version "3.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "civis" version))
               (sha256
                (base32
-                "1lmyxif8bdfm7wxzwh0hzd2dla8pa14ym74f5pvp2m693vkjddl9"))))
+                "0ahrav9gd0dy05vxapg5x0csadwcnm4nfcwwk752j9nksd1hl3wg"))))
     (properties `((upstream-name . "civis")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-jsonlite r-httr r-future))
@@ -33473,6 +33473,36 @@ Currently, contains data sets for Huntington-Klein, Nick (2021) \"The Effect\"
 James Robins (2020) \"Causal Inference: What If\"
 <https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/>.")
     (license license:expat)))
+
+(define-public r-causalcmprsk
+  (package
+    (name "r-causalcmprsk")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "causalCmprsk" version))
+              (sha256
+               (base32
+                "1jllifd7481vah2q2c72v6n3q3y0sb7fd7vr780y1806vskax8d8"))))
+    (properties `((upstream-name . "causalCmprsk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-purrr
+                             r-inline
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bella2001/causalCmprsk")
+    (synopsis
+     "Nonparametric and Cox-Based Estimation of Average Treatment Effects in Competing Risks")
+    (description
+     "Estimation of average treatment effects (ATE) of point interventions on
+time-to-event outcomes with K competing risks (K can be 1).  The method uses
+propensity scores and inverse probability weighting for emulation of baseline
+randomization, which is described in Charpignon et al. (2022)
+<doi:10.1038/s41467-022-35157-w>.")
+    (license license:gpl2+)))
 
 (define-public r-causal-decomp
   (package

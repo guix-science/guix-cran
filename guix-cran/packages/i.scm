@@ -923,16 +923,17 @@ annotation templates.")
 (define-public r-itnr
   (package
     (name "r-itnr")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ITNr" version))
               (sha256
                (base32
-                "0yxn3768819ph49bizprj3arrvz9rzhb45rkcpfivwfwlyf010yy"))))
+                "0zpyrg4vcn17k75x1i1dp2hw8n2fp34qf4skywx3wrchjpxmsra8"))))
     (properties `((upstream-name . "ITNr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wdi
+    (propagated-inputs (list r-xergm-common
+                             r-wdi
                              r-tnet
                              r-sna
                              r-reshape2
@@ -12713,16 +12714,16 @@ files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
 (define-public r-idsl-ipa
   (package
     (name "r-idsl-ipa")
-    (version "2.6")
+    (version "2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.IPA" version))
               (sha256
                (base32
-                "046jszpg6ac9w910cjy55wn19jnikcnlxkd0lqsaxz5la65k9bzg"))))
+                "1h7q9nf1gx63dsvpnw6qdkmhh1whg6jb26sp2sib6jbyhic83aha"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-idsl-mxp r-foreach r-doparallel))
+    (propagated-inputs (list r-readxl r-idsl-mxp))
     (home-page "https://github.com/idslme/idsl.ipa")
     (synopsis "Intrinsic Peak Analysis (IPA) for HRMS Data")
     (description
@@ -12731,7 +12732,8 @@ LC/HRMS data processing to extract signals of organic small molecules.  The
 package performs ion pairing, peak detection, peak table alignment, retention
 time correction, aligned peak table gap filling, peak annotation and
 visualization of extracted ion chromatograms (EICs) and total ion chromatograms
-(TICs).")
+(TICs).  The IDSL.IPA package was introduced in
+<doi:10.1021/acs.jproteome.2c00120> .")
     (license license:expat)))
 
 (define-public r-idsl-fsa

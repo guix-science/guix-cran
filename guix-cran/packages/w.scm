@@ -6985,6 +6985,43 @@ and distributed computation of the posterior in case of complex models and/or
 big datasets, thereby increasing computational speed tremendously.")
     (license license:gpl3)))
 
+(define-public r-waspasr
+  (package
+    (name "r-waspasr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "waspasR" version))
+              (sha256
+               (base32
+                "1mxlplz3n119lxf73i44zcw1pn3prmgqyblysphd3xnrdmbhyq1a"))))
+    (properties `((upstream-name . "waspasR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=waspasR")
+    (synopsis
+     "Tool Kit to Implement a W.A.S.P.A.S. Based Multi-Criteria Decision Analysis Solution")
+    (description
+     "This package provides a set of functions to implement decision-making systems
+based on the W.A.S.P.A.S. method (Weighted Aggregated Sum Product Assessment),
+Chakraborty and Zavadskas (2012) <doi:10.5755/j01.eee.122.6.1810>.  So this
+package offers functions that analyze and validate the raw data, which must be
+entered in a determined format; extract specific vectors and matrices from this
+raw database; normalize the input data; calculate rankings by intermediate
+methods; apply the lambda parameter for the main method; and a function that
+does everything at once.  The package has an example database called choppers,
+with which the user can see how the input data should be organized so that
+everything works as recommended by the decision methods based on multiple
+criteria that this package solves.  Basically, the data are composed of a set of
+alternatives, which will be ranked, a set of choice criteria, a matrix of values
+for each Alternative-Criterion relationship, a vector of weights associated with
+the criteria, since certain criteria are considered more important than others,
+as well as a vector that defines each criterion as cost or benefit, this
+determines the calculation formula, as there are those criteria that we want the
+highest possible value (e.g. durability) and others that we want the lowest
+possible value (e.g. price).")
+    (license license:gpl2+)))
+
 (define-public r-wasp
   (package
     (name "r-wasp")

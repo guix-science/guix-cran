@@ -4364,34 +4364,6 @@ Houston, TX, USA, taught by Oleg Melnikov, statistics PhD student, as of Spring
 2015.")
     (license license:gpl2+)))
 
-(define-public r-qfratio
-  (package
-    (name "r-qfratio")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qfratio" version))
-              (sha256
-               (base32
-                "1q45bqxcqs7ljnd2bhl7hvmfk88vvyb5szahgngmvsxz9bjgdz42"))))
-    (properties `((upstream-name . "qfratio")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-mass))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/watanabe-j/qfratio")
-    (synopsis "Moments of Ratios of Quadratic Forms Using Recursion")
-    (description
-     "Evaluates moments of ratios (and products) of quadratic forms in normal
-variables, specifically using recursive algorithms developed by Bao et al.
-(2013) <doi:10.1016/j.jmva.2013.03.002> and Hillier et al. (2014)
-<doi:10.1017/S0266466613000364>.  Originally developed as a supplement to
-Watanabe (2022) <doi:10.1101/2022.11.02.514929> for evaluating average
-evolvability measures in evolutionary quantitative genetics, but can be used for
-a broader class of moments.  Generating functions for these moments are also
-closely related to the top-order zonal and invariant polynomials of matrix
-arguments.")
-    (license license:gpl3+)))
-
 (define-public r-qfasar
   (package
     (name "r-qfasar")

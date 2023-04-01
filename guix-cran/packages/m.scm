@@ -2448,13 +2448,13 @@ Gannaz (2016) <doi:10.1111/jtsa.12170>).")
 (define-public r-multiview
   (package
     (name "r-multiview")
-    (version "0.7")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiview" version))
               (sha256
                (base32
-                "135krs4cz8d45jy6rqddq12jp8z1c2q3caw04h25839xxzamxcdl"))))
+                "1kf16w4wbj84383hvqxhrqlvghyra22p7k9vs03axqxqkhl8krhz"))))
     (properties `((upstream-name . "multiview")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11303,13 +11303,13 @@ database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.7.1")
+    (version "2.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mongolite" version))
               (sha256
                (base32
-                "1yk9j474q63551ixlhpb859x3al3dmlrbazph417kyizf9z86x00"))))
+                "1x05w1ln1syi0b61q9gjpjdavn3g7bidhcrb82z9icwwxmxwrhaz"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssl))
@@ -12789,6 +12789,61 @@ outcome, and one or more moderators of any scale.")
 either by user-specified colors or colored by the strength of the coefficient of
 that text derived from a regression model.")
     (license license:lgpl2.1)))
+
+(define-public r-modeltime
+  (package
+    (name "r-modeltime")
+    (version "1.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modeltime" version))
+              (sha256
+               (base32
+                "0y7xwscqg5820g4gr09603ng4125mgk70giqs7nzi6fj99d7srb7"))))
+    (properties `((upstream-name . "modeltime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-xgboost
+                             r-workflows
+                             r-timetk
+                             r-tidyverse
+                             r-tidyr
+                             r-tidymodels
+                             r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-scales
+                             r-rlang
+                             r-reactable
+                             r-purrr
+                             r-prophet
+                             r-plotly
+                             r-parsnip
+                             r-parallelly
+                             r-magrittr
+                             r-janitor
+                             r-hardhat
+                             r-gt
+                             r-glue
+                             r-ggplot2
+                             r-forecast
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-doparallel
+                             r-dials
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/modeltime")
+    (synopsis "The Tidymodels Extension for Time Series Modeling")
+    (description
+     "The time series forecasting framework for use with the tidymodels ecosystem.
+Models include ARIMA, Exponential Smoothing, and additional time series models
+from the forecast and prophet packages.  Refer to \"Forecasting Principles &
+Practice, Second edition\" (<https://otexts.com/fpp2/>).  Refer to \"Prophet:
+forecasting at scale\"
+(<https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/>.).")
+    (license license:expat)))
 
 (define-public r-modeltests
   (package
@@ -14780,6 +14835,37 @@ data to efficiently attribute individuals to source populations.  Scientific
 Reports 10, 12124 (2020) <doi:10.1038/s41598-020-68740-6>.  See more details and
 examples in the README file.")
     (license license:gpl3)))
+
+(define-public r-mmcsd
+  (package
+    (name "r-mmcsd")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Mmcsd" version))
+              (sha256
+               (base32
+                "1vj9qissby967a4z21772vj49hxhjppsn4w6l6s998pll8500np5"))))
+    (properties `((upstream-name . "Mmcsd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlist
+                             r-purrr
+                             r-magrittr
+                             r-knitr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Mmcsd")
+    (synopsis "Modeling Complex Longitudinal Data in a Quick and Easy Way")
+    (description
+     "Matching longitudinal methodology models with complex sampling design.  It fits
+fixed and random effects models and covariance structured models so far.  It
+also provides tools to perform statistical tests considering these
+specifications as described in : Pacheco, P. H. (2021). \"Modeling complex
+longitudinal data in R: development of a statistical package.\"
+<https://repositorio.ufjf.br/jspui/bitstream/ufjf/13437/1/pedrohenriquedemesquitapacheco.pdf>.")
+    (license license:gpl3+)))
 
 (define-public r-mmconvert
   (package
@@ -34472,17 +34558,17 @@ local (cis) and distant (trans) eQTLs.  For more details see Shabalin (2012)
 (define-public r-matrixdist
   (package
     (name "r-matrixdist")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matrixdist" version))
               (sha256
                (base32
-                "1s8bi43hgbgns57j04rpdnbm46d9ms133asqb88l4bqgg0g44mf9"))))
+                "1vz8mq86yycgw9fghhq2p3q6p5r9sa7hqm6bf1zdqqg32cd50kip"))))
     (properties `((upstream-name . "matrixdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpparmadillo r-rcpp r-nnet))
-    (home-page "https://cran.r-project.org/package=matrixdist")
+    (home-page "https://github.com/martinbladt/matrixdist_1.0")
     (synopsis "Statistics for Matrix Distributions")
     (description
      "Tools for phase-type distributions including the following variants: continuous,
@@ -34490,14 +34576,16 @@ discrete, multivariate, in-homogeneous, right-censored, and regression.  Methods
 for functional evaluation, simulation and estimation using the
 expectation-maximization (EM) algorithm are provided for all models.  The
 methods of this package are based on the following references.  Asmussen, S.,
-Nerman, O., & Olsson, M. (1996) <https://www.jstor.org/stable/4616418>, Olsson,
-M. (1996) <https://www.jstor.org/stable/4616419>, Albrecher, H., & Bladt, M.
-(2019) <doi:10.1017/jpr.2019.60>, Albrecher, H., Bladt, M., & Yslas, J. (2020)
-<doi:10.1111/sjos.12505>, Albrecher, H., Bladt, M., Bladt, M., & Yslas, J.
-(2022) <doi:10.1016/j.insmatheco.2022.08.001>, Bladt, M., & Yslas, J. (2022)
+Nerman, O., & Olsson, M. (1996).  Fitting phase-type distributions via the EM
+algorithm, Olsson, M. (1996).  Estimation of phase-type distributions from
+censored data, Albrecher, H., & Bladt, M. (2019) <doi:10.1017/jpr.2019.60>,
+Albrecher, H., Bladt, M., & Yslas, J. (2022) <doi:10.1111/sjos.12505>,
+Albrecher, H., Bladt, M., Bladt, M., & Yslas, J. (2022)
+<doi:10.1016/j.insmatheco.2022.08.001>, Bladt, M., & Yslas, J. (2022)
 <doi:10.1080/03461238.2022.2097019>, Bladt, M. (2022) <doi:10.1017/asb.2021.40>,
-Bladt, M. (2022). <arXiv:2110.05179>, Albrecher, H., Bladt, M., & Mueller, A.
-(2022) <arXiv:2207.01279>.")
+Bladt, M. (2023) <doi:10.1080/10920277.2023.2167833>, Albrecher, H., Bladt, M.,
+& Mueller, A. (2023) <doi:10.1515/demo-2022-0153>, Bladt, M. & Yslas, J. (2023)
+<doi:10.1016/j.insmatheco.2023.02.008>.")
     (license license:gpl3)))
 
 (define-public r-matrixcut
@@ -36314,13 +36402,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.11.0")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "19yf7xzz8bz4i01kv6sv00n648yhkgjq6sxa8rn1vhr80szbm0cs"))))
+                "0ccy435r10ad5pd07n7fwf9xvr3ifspaih03fvwbibi0896723fa"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -36334,7 +36422,7 @@ a conditional risk model.")
      "Predictions, Comparisons, Slopes, Marginal Means, and Hypothesis Tests")
     (description
      "Compute and plot predictions, slopes, marginal means, and comparisons
-(contrasts, risk ratios, odds, etc.) for over 75 classes of statistical models
+(contrasts, risk ratios, odds, etc.) for over 80 classes of statistical models
 in R. Conduct linear and non-linear hypothesis tests, or equivalence tests.
 Calculate uncertainty estimates using the delta method, bootstrapping, or
 simulation-based inference.")

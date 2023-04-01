@@ -1106,16 +1106,16 @@ control groups.  The exterior match is used to compare the two control groups.")
 (define-public r-extendedfamily
   (package
     (name "r-extendedfamily")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extendedFamily" version))
               (sha256
                (base32
-                "0h1wply55cjclhblxmb4pd9qmiwk8vha7vk0i00ab46n7dc1yqa0"))))
+                "194kn26y40al3w3s2m9iv3r5dp7ylvzsds3ngb9kq02y8hxv8rrn"))))
     (properties `((upstream-name . "extendedFamily")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-assertthat))
+    (propagated-inputs (list r-assertthat))
     (home-page "https://cran.r-project.org/package=extendedFamily")
     (synopsis "Additional Families for Generalized Linear Models")
     (description
@@ -6611,40 +6611,6 @@ departments and the communication links among them along with several
 attributes.")
     (license license:gpl3)))
 
-(define-public r-ergmargins
-  (package
-    (name "r-ergmargins")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ergMargins" version))
-              (sha256
-               (base32
-                "0liq64qjd3b0v5pcsvfmvmv7dr0ak4ld2mbin8w2wcdnvpfajjy5"))))
-    (properties `((upstream-name . "ergMargins")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-statnet-common
-                             r-sna
-                             r-numderiv
-                             r-network
-                             r-matrix
-                             r-ergm
-                             r-btergm))
-    (home-page "https://cran.r-project.org/package=ergMargins")
-    (synopsis "Process Analysis for Exponential Random Graph Models")
-    (description
-     "Calculates marginal effects and conducts process analysis in exponential family
-random graph models (ERGM).  Includes functions to conduct mediation and
-moderation analyses and to diagnose multicollinearity.  URL:
-<https://github.com/sduxbury/ergMargins>.  BugReports:
-<https://github.com/sduxbury/ergMargins/issues>.  Duxbury, Scott W (2021)
-<doi:10.1177/0049124120986178>.  Long, J. Scott, and Sarah Mustillo (2018)
-<doi:10.1177/0049124118799374>.  Mize, Trenton D. (2019) <doi:10.15195/v6.a4>.
-Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
-<doi:10.1177/0081175012444861>.  Duxbury, Scott W (2018)
-<doi:10.1177/0049124118782543>.")
-    (license license:gpl2+)))
-
 (define-public r-ergm-rank
   (package
     (name "r-ergm-rank")
@@ -11648,21 +11614,16 @@ through the R framework.")
 (define-public r-emissv
   (package
     (name "r-emissv")
-    (version "0.665.6.3")
+    (version "0.665.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EmissV" version))
               (sha256
                (base32
-                "1cazd2njbiacwwkxrs0qvy6p533wal18s9cjvavxcx0c2607r725"))))
+                "184992191pk82q9yd0wb00r94rw7f23di7ckb86gbsr1pr1dkabl"))))
     (properties `((upstream-name . "EmissV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-sp
-                             r-sf
-                             r-raster
-                             r-ncdf4
-                             r-data-table))
+    (propagated-inputs (list r-units r-sf r-raster r-ncdf4 r-data-table))
     (home-page "https://atmoschem.github.io/EmissV/")
     (synopsis "Tools for Create Emissions for Air Quality Models")
     (description
@@ -11672,9 +11633,9 @@ Emissions can be calculated both using emission factors and activity data
 (Schuch et al., 2018) <doi:10.30564/jasr.v1i1.347>.  Functions to process
 individual point emissions, line emissions and area emissions of pollutants are
 available as well as methods to incorporate alternative data for Spatial
-distribution of emissions such as satellite images (Martins et al, 2012)
-<doi:10.3389/fenvs.2015.00009> or openstreetmap data (Andrade et al, 2015)
-<doi:10.3389/fenvs.2015.00009>.")
+distribution of emissions such as satellite images (Gavidia Calderon et.  al,
+2018) <doi:10.1016/j.atmosenv.2018.09.026> or openstreetmap data (Andrade et al,
+2015) <doi:10.3389/fenvs.2015.00009>.")
     (license license:expat)))
 
 (define-public r-emirt
@@ -17351,6 +17312,31 @@ Linear, Translog, CES, LES and CREMR.")
 community ecology statistical tests, including Hutcheson's t-test (Hutcheson
 (1970) <doi:10.1016/0022-5193(70)90124-4>, Zar (2010) ISBN:9780321656865).")
     (license license:expat)))
+
+(define-public r-ecolrxc
+  (package
+    (name "r-ecolrxc")
+    (version "0.1.1-10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ecolRxC" version))
+              (sha256
+               (base32
+                "0m7c8ifmzq5s6sh8xp09ald7rd47ga66gzmsqn8028xylf8rpsbf"))))
+    (properties `((upstream-name . "ecolRxC")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ecolRxC")
+    (synopsis
+     "Ecological Inference of RxC Tables by Latent Structure Approaches")
+    (description
+     "Estimates RxC (R by C) vote transfer matrices (ecological contingency tables)
+from aggregate data building on Thomsen (1987) and Park (2008) approaches.
+References: Park, W.-H. (2008).  Ecological Inference and Aggregate Analysis of
+Election''.  PhD Dissertation.  University of Michigan.
+<https://deepblue.lib.umich.edu/bitstream/handle/2027.42/58525/wpark_1.pdf>
+Thomsen, S.R. (1987, ISBN:87-7335-037-2).  Danish Elections 1920 79: a Logit
+Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
+    (license license:gpl2+)))
 
 (define-public r-ecolottery
   (package

@@ -1878,25 +1878,28 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gt" version))
               (sha256
                (base32
-                "1yg91nnx1d6d6mmjhbqbcy7ya69sd7sbhlj2fsw79k01849lxdsy"))))
+                "0l60f38r7wnd2dh4c5il9axabxzqd0zdzlhkp1cibdp14zi7xr9y"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
                              r-tibble
                              r-scales
                              r-sass
                              r-rlang
+                             r-reactable
+                             r-markdown
                              r-magrittr
                              r-juicyjuice
+                             r-htmlwidgets
                              r-htmltools
                              r-glue
-                             r-ggplot2
                              r-fs
                              r-dplyr
                              r-commonmark
@@ -23414,47 +23417,6 @@ high-dimensional data. (Mengyun Wu et al (2017),
 <doi:10.1093/bioinformatics/btab318>).")
     (license license:gpl2)))
 
-(define-public r-geint
-  (package
-    (name "r-geint")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GEint" version))
-              (sha256
-               (base32
-                "0srja3kwm4yjmh1vpzfwrx7ii4s9xj9j88pgcm299dnqxkv59y3r"))))
-    (properties `((upstream-name . "GEint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-speedglm
-                             r-rje
-                             r-pracma
-                             r-nleqslv
-                             r-mvtnorm
-                             r-geepack
-                             r-bindata))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GEint")
-    (synopsis "Misspecified Models for Gene-Environment Interaction")
-    (description
-     "The first major functionality is to compute the bias in misspecified linear
-gene-environment interaction models.  The most generalized function for this
-objective is GE_bias().  However GE_bias() requires specification of many higher
-order moments of covariates in the model.  If users are unsure about how to
-calculate/estimate these higher order moments, it may be easier to use
-GE_bias_normal_squaredmis().  This function places many more assumptions on the
-covariates (most notably that they are all jointly generated from a multivariate
-normal distribution) and is thus able to automatically calculate many of the
-higher order moments automatically, necessitating only that the user specify
-some covariances.  There are also functions to solve for the bias through
-simulation and non-linear equation solvers, these can be used to check your
-work.  Second major functionality is to implement the Bootstrap Inference with
-Correct Sandwich (BICS) testing procedure, which we have found to provide better
-finite-sample performance than other inference procedures for testing GxE
-interaction.  More details on these functions are available in Sun, Carroll,
-Christiani, and Lin (2018) <doi:10.1111/biom.12813>.")
-    (license license:gpl3)))
-
 (define-public r-geinfo
   (package
     (name "r-geinfo")
@@ -25221,25 +25183,29 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GaussSuppression" version))
               (sha256
                (base32
-                "1lfywz2iar2nclxkwii7d58b665szlx1xafabqcafb8accxbdmb4"))))
+                "1zgg5x4whdzcrp1c6j18cmisw09r36qb3xknkxrnw9p0vrv3dx2m"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/GaussSuppression")
     (synopsis "Tabular Data Suppression using Gaussian Elimination")
     (description
      "This package provides a statistical disclosure control tool to protect tables by
-suppression using the Gaussian elimination secondary suppression algorithm.
-Primary suppression functions for the minimum frequency rule, the dominance rule
-and a directly-disclosive rule are included.  General primary suppression
-functions can be supplied as input.  Suppressed frequencies can be replaced by
-synthetic decimal numbers as described in Langsrud (2019)
+suppression using the Gaussian elimination secondary suppression algorithm.  A
+suggestion is to start by working with functions SuppressSmallCounts() and
+SuppressDominantCells().  These functions use primary suppression functions for
+the minimum frequency rule and the dominance rule, respectively.  Novel
+functionality for suppression of disclosive cells is also included.  General
+primary suppression functions can be supplied as input to the general working
+horse function, GaussSuppressionFromData().  Suppressed frequencies can be
+replaced by synthetic decimal numbers as described in Langsrud (2019)
 <doi:10.1007/s11222-018-9848-9>.")
     (license license:asl2.0)))
 
