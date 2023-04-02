@@ -32364,13 +32364,13 @@ model.  Currently accommodates the Gaussian and binomial likelihood.")
 (define-public r-mcemglm
   (package
     (name "r-mcemglm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcemGLM" version))
               (sha256
                (base32
-                "0qw9id9gwp226m93nnz9dp79ihazb89486gdfnvc6rf7wc3a0gp6"))))
+                "0159zak179ziax5n1mmncidg50cjiqzfyc8j96585csah1dzx01d"))))
     (properties `((upstream-name . "mcemGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-rcpparmadillo r-rcpp))

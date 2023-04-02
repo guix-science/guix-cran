@@ -5954,6 +5954,27 @@ location (reverse geocoding), see <https://opencagedata.com/>.")
 API.")
     (license license:gpl3)))
 
+(define-public r-openalexr
+  (package
+    (name "r-openalexr")
+    (version "1.0.2.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "openalexR" version))
+              (sha256
+               (base32
+                "01a4by6nalzk14hjpqn9d3fa03xnpfpqg9qyda3ar55sbylczm60"))))
+    (properties `((upstream-name . "openalexR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr r-curl))
+    (home-page "https://github.com/ropensci/openalexR")
+    (synopsis
+     "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")
+    (description
+     "This package provides a set of tools to extract bibliographic content from
+OpenAlex database using API <https://docs.openalex.org>.")
+    (license license:expat)))
+
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")

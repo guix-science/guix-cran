@@ -24123,40 +24123,29 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
 (define-public r-gdatools
   (package
     (name "r-gdatools")
-    (version "1.7.2")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GDAtools" version))
               (sha256
                (base32
-                "0rqrc9andckh4nf8s87gwkpw2kgc2jsynsvsy1xlnvfp753d4dxp"))))
+                "0d7gvfgcips4m37j29djjv05zcw75smgiy4dpy8nlvajq6lk24s0"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wdm
-                             r-rlang
-                             r-rcolorbrewer
-                             r-nnet
-                             r-nleqslv
-                             r-mass
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggally
-                             r-factominer))
+    (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-factominer
+                             r-descriptio))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/nicolas-robette/GDAtools")
-    (synopsis "Toolbox for Geometric Data Analysis and More")
+    (synopsis "Geometric Data Analysis")
     (description
-     "This package contains functions for specific Multiple Correspondence Analysis,
-Class Specific Analysis, Multiple Factor Analysis, standardized MCA, computing
-and plotting structuring factors and concentration ellipses, inductive tests and
-others tools for Geometric Data Analysis (Le Roux & Rouanet (2005)
-<doi:10.1007/1-4020-2236-0>).  It also provides functions for the translation of
-logit models coefficients into percentages (Deauvieau (2010)
-<doi:10.1177/0759106309352586>), weighted contingency tables, an association
-measure for contingency tables (\"Percentages of Maximum Deviation from
-Independence\", aka PEM, see Cibois (1993) <doi:10.1177/075910639304000103>) and
-some tools to measure and plot bivariate associations between variables (phi,
-CramÃ©r V, correlation coefficient, eta-squared...).")
+     "Many tools for Geometric Data Analysis (Le Roux & Rouanet (2005)
+<doi:10.1007/1-4020-2236-0>), such as MCA variants (Specific Multiple
+Correspondence Analysis, Class Specific Analysis), many graphical and
+statistical aids to interpretation (structuring factors, concentration ellipses,
+inductive tests, bootstrap validation, etc.) and multiple-table analysis
+(Multiple Factor Analysis, between- and inter-class analysis, Principal
+Component Analysis and Correspondence Analysis with Instrumental Variables,
+etc.).")
     (license license:gpl2+)))
 
 (define-public r-gdalutilities

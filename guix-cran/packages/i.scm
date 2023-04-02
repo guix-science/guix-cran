@@ -7535,13 +7535,13 @@ sequence classification trees.  See Wilkinson et al (2018)
 (define-public r-insane
   (package
     (name "r-insane")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "insane" version))
               (sha256
                (base32
-                "0hzznlmvyw0v0a78q7mfnjps8453mmb3pig7srn98bkxv6f6vcp8"))))
+                "1i8lijxa78i76dicdvcpp5c12il0341dsfjccn8m8axnsq7qg81h"))))
     (properties `((upstream-name . "insane")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

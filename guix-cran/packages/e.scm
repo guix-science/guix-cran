@@ -173,18 +173,18 @@ studies more comparable and reproducible.")
 (define-public r-ezknitr
   (package
     (name "r-ezknitr")
-    (version "0.6")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ezknitr" version))
               (sha256
                (base32
-                "060a2175zh1nhzmqgz1mpj2c6721n5w5bv695jj4rbl2s2b2h4qj"))))
+                "15ibkndqx8fbsrckkcj75mflqsryjpmn7qqygp5z1abzgpj05j6n"))))
     (properties `((upstream-name . "ezknitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-markdown r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropenscilabs/ezknitr")
+    (home-page "https://docs.ropensci.org/ezknitr/")
     (synopsis "Avoid the Typical Working Directory Pain When Using 'knitr'")
     (description
      "An extension of knitr that adds flexibility in several ways.  One common source

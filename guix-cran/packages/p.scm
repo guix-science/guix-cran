@@ -22655,13 +22655,13 @@ following methodologies described in John (2016)
 (define-public r-phenology
   (package
     (name "r-phenology")
-    (version "7.9")
+    (version "9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phenology" version))
               (sha256
                (base32
-                "0zacgrw5j6m5dhfkbbzawb832sp87nyp28g36nw150ha7q5qwjf2"))))
+                "05i826njk7xd5015sw2nhky1zxilw1v4zdgx0q7lq25ymx23i2p0"))))
     (properties `((upstream-name . "phenology")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv r-helpersmg))
@@ -23951,13 +23951,13 @@ Econometrics with R, ISBN:978-1-118-94918-4.")
 (define-public r-pgirmess
   (package
     (name "r-pgirmess")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pgirmess" version))
               (sha256
                (base32
-                "1j15spsmx1k2kw6vc4brcinpva3wzw4i78626fb5cdrwb8q34i4y"))))
+                "18a7ydmim3jz91nq7pny72k2dprv19c04h8xl033dzh1jnss84zs"))))
     (properties `((upstream-name . "pgirmess")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sp r-sf r-boot))

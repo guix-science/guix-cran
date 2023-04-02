@@ -10145,13 +10145,13 @@ Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478> and Perez-Lamarque et al.
 (define-public r-rpaex
   (package
     (name "r-rpaex")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rPAex" version))
               (sha256
                (base32
-                "10rlmhgb4i0x53000i2limgph2dd56ch4ajv9zzbq1mhi0fg8z6l"))))
+                "04fxiryv463dilaz4hcvv9a3jxib4zmai80pi27xv2ndch64qk54"))))
     (properties `((upstream-name . "rPAex")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-agricolae))
@@ -32485,13 +32485,13 @@ using the open-source experiment builder OpenSesame <https://osdoc.cogsci.nl/>."
 (define-public r-readbrukerflexdata
   (package
     (name "r-readbrukerflexdata")
-    (version "1.9.0")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readBrukerFlexData" version))
               (sha256
                (base32
-                "0pjskbwy9vxd5rl5zg5h6i7ffndk699cmir07qm2cfy07qx071p0"))))
+                "0bhqrsxaq9s39m763a79pvi1qq2c0qa1yp03p9caqlmcm58dnlk7"))))
     (properties `((upstream-name . "readBrukerFlexData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=readBrukerFlexData")

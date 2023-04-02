@@ -19073,13 +19073,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CodelistGenerator" version))
               (sha256
                (base32
-                "109pvhc1mhxhacni7kf9z7qmf9gpp05f8z3qkfypcg382wyvd6xp"))))
+                "0jsawnghvrddfq0drn3hrbnkm29ylvgp6g397lqs2i4439ad8jqi"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -36489,47 +36489,6 @@ package also provides a useful export of the model for use with simulation
 packages RxODE and mrgsolve'.  This package is designed and intended to be used
 with package campsis', a PK/PD simulation platform built on top of RxODE and
 mrgsolve'.")
-    (license license:gpl3+)))
-
-(define-public r-campsis
-  (package
-    (name "r-campsis")
-    (version "1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "campsis" version))
-              (sha256
-               (base32
-                "0wl8p64k8ihqrshshljbvxxhlhi75p8n2rw0xg864ix8hh2b7v19"))))
-    (properties `((upstream-name . "campsis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-plyr
-                             r-mass
-                             r-ggplot2
-                             r-dplyr
-                             r-digest
-                             r-campsismod
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Calvagone/campsis")
-    (synopsis "Generic PK/PD Simulation Platform CAMPSIS")
-    (description
-     "This package provides a generic, easy-to-use and intuitive
-pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on R packages
-rxode2', RxODE and mrgsolve'.  CAMPSIS provides an abstraction layer over the
-underlying processes of writing a PK/PD model, assembling a custom dataset and
-running a simulation.  CAMPSIS has a strong dependency to the R package
-campsismod', which allows to read/write a model from/to files and adapt it
-further on the fly in the R environment.  Package campsis allows the user to
-assemble a dataset in an intuitive manner.  Once the userâs dataset is ready,
-the package is in charge of preparing the simulation, calling rxode2', RxODE or
-mrgsolve (at the user's choice) and returning the results, for the given model,
-dataset and desired simulation settings.")
     (license license:gpl3+)))
 
 (define-public r-campfin

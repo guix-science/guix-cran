@@ -4003,13 +4003,13 @@ and Thierry Gosselin.")
 (define-public r-whitewater
   (package
     (name "r-whitewater")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "whitewater" version))
               (sha256
                (base32
-                "00w17953gn6ici406pblw136f8bwzlx469n7nl2xsx36jz7xxw59"))))
+                "0313rsph166qwmxb96lkzc8rzc1afm6is57v9fxlm6wzwr0cv4d0"))))
     (properties `((upstream-name . "whitewater")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

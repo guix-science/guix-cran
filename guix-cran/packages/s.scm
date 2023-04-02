@@ -41889,35 +41889,6 @@ including parentage assignment and sibship clustering.  See Huisman (2017)
 (<DOI:10.1111/1755-0998.12665>) for more information.")
     (license license:gpl2)))
 
-(define-public r-sequenza
-  (package
-    (name "r-sequenza")
-    (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sequenza" version))
-              (sha256
-               (base32
-                "13l16lacdcf7fn96yj3xqxap0l19ma9ppkxxx5qk9f5abbvdk303"))))
-    (properties `((upstream-name . "sequenza")))
-    (build-system r-build-system)
-    (inputs (list pandoc))
-    (propagated-inputs (list r-squash
-                             r-seqminer
-                             r-readr
-                             r-pbapply
-                             r-iotools
-                             r-copynumber))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://sequenzatools.bitbucket.io")
-    (synopsis "Copy Number Estimation from Tumor Genome Sequencing Data")
-    (description
-     "Tools to analyze genomic sequencing data from paired normal-tumor samples,
-including cellularity and ploidy estimation; mutation and copy number
-(allele-specific and total copy number) detection, quantification and
-visualization.")
-    (license license:gpl3)))
-
 (define-public r-sequentialdesign
   (package
     (name "r-sequentialdesign")

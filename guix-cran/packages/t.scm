@@ -14796,13 +14796,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyBdE" version))
               (sha256
                (base32
-                "1c3c4yj95avjmnc11gn1dcbgmzz3kgmj5ahl4ip8vp3ap4ik3c89"))))
+                "0qy3lrimm1ns25adb9mapc7w23v2n30a74pj4gpzkbbb53vpy90v"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16706,13 +16706,13 @@ used by a smaller subset of the community).")
 (define-public r-textutils
   (package
     (name "r-textutils")
-    (version "0.2-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "textutils" version))
               (sha256
                (base32
-                "07grvvhs62caa37rav1v37816x6pdk0m5nd4isiw00966ydwy9ch"))))
+                "1911450yhq1f97arv96lxljjpa41kikx8gv71x39zbpwkgz2xsxh"))))
     (properties `((upstream-name . "textutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/textutils/")
@@ -19542,13 +19542,13 @@ clustering or classification paradigm.")
 (define-public r-tehtuner
   (package
     (name "r-tehtuner")
-    (version "0.1.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tehtuner" version))
               (sha256
                (base32
-                "1dr3xrhwszv75w8iz7yy44a7kxac5n1dirjhjfqgvjz529m8ycqb"))))
+                "1m1gkkl0kgjrlkbh3vz8lh64gq6l8v3vay0977lwx8g3yzs40z0g"))))
     (properties `((upstream-name . "tehtuner")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -19558,6 +19558,7 @@ clustering or classification paradigm.")
                              r-randomforestsrc
                              r-party
                              r-glmnet
+                             r-foreach
                              r-earth))
     (home-page "https://github.com/jackmwolf/tehtuner")
     (synopsis "Fit and Tune Models to Detect Treatment Effect Heterogeneity")

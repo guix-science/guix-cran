@@ -5435,13 +5435,13 @@ dating.  Read and write standard file formats used in dendrochronology.")
 (define-public r-dplbnde
   (package
     (name "r-dplbnde")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dplbnDE" version))
               (sha256
                (base32
-                "0hwb4lvydqlkbcxp3jwgzkqk6sqdjkcmkya1cah60sc15n816ksd"))))
+                "0vklb07h4izgpdi7w92gv87d1gl2fbdgpcq3b1ig9d55m37ssbsx"))))
     (properties `((upstream-name . "dplbnDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-bnclassify))
@@ -21851,13 +21851,13 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.5-0")
+    (version "0.6-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datetimeutils" version))
               (sha256
                (base32
-                "030md2pydhgx8x8chga7byl8x41m2dbw94b4ds7md2nqkdrq7hqz"))))
+                "0z51m4cjrfim14lqxayl6pa8b9qdv5vs0awl2hfpczfscj6cabzy"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")
