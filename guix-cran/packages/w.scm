@@ -1701,19 +1701,20 @@ RESTful Webservice.  Utility functions aim at taxonomic consistency.")
 (define-public r-worldriskpollr
   (package
     (name "r-worldriskpollr")
-    (version "0.7.2")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worldriskpollr" version))
               (sha256
                (base32
-                "025z7q8wfs5ngypx3c7zvqrr12sfbgbyxwy6180f6888mxpn6rww"))))
+                "1m3apmdf0ksih7yq9bp5nkyyyxkp6hdw3jjx071df83c4iv8abm9"))))
     (properties `((upstream-name . "worldriskpollr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-sjlabelled
                              r-rlang
                              r-magrittr
+                             r-labelled
                              r-janitor
                              r-httr
                              r-dplyr
@@ -1724,7 +1725,7 @@ RESTful Webservice.  Utility functions aim at taxonomic consistency.")
     (description
      "This package provides users with programmatic access to aggregated survey data
 from the World Risk Poll, conveniently packaged for consumption by R users.  It
-first downloads and formats the Lloyd's Register Foundation World Risk Poll
+downloads formatted data from the Lloyd's Register Foundation World Risk Poll
 individual survey responses.  It then processes this data and provides weighting
 functions for users to select questions of interest and aggregate to national
 levels, by gender, age, income, education urban/rural and household composition.

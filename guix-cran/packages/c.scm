@@ -5169,31 +5169,6 @@ DES longpaddock website <https://www.longpaddock.qld.gov.au/>.  This data is
 freely available under the Creative Commons 4.0 licence.")
     (license license:expat)))
 
-(define-public r-cropdetectr
-  (package
-    (name "r-cropdetectr")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CropDetectR" version))
-              (sha256
-               (base32
-                "14sabqld94if7f2m39bh6652cb62hcwx53k8q5k23anzzsn93qlj"))))
-    (properties `((upstream-name . "CropDetectR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-imager r-ebimage r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CropDetectR")
-    (synopsis "Crop Row Detector")
-    (description
-     "This package provides a helpful tool for the identification of crop rows.
-Methods of this package include: Excess Green color scale
-<https://www.researchgate.net/publication/270613992_Color_Indices_for_Weed_Identification_Under_Various_Soil_Residue_and_Lighting_Conditions>,
-Otsu Thresholding
-<https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4310076>, and Morphology
-<https://en.wikipedia.org/wiki/Mathematical_morphology>.")
-    (license license:gpl3)))
-
 (define-public r-cropdemand
   (package
     (name "r-cropdemand")
@@ -15776,13 +15751,13 @@ promotions.")
 (define-public r-compindexr
   (package
     (name "r-compindexr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compindexR" version))
               (sha256
                (base32
-                "04csarzvcvi65npqhqgrlkvn3mazx1lxl26iwnynjsjsvf82swkp"))))
+                "065a5f406zbxqjy7v6r3bqnybxsnvdlds8rdm3kq62smkch7cf4x"))))
     (properties `((upstream-name . "compindexR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-nlcoptim r-dplyr r-car))
@@ -20768,13 +20743,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmhc" version))
               (sha256
                (base32
-                "1v8zigr7f47n5pxfg8vh34yx11qz45ccr2h2lvlfqxa54bcw03b3"))))
+                "0igspwg6lkgqg69mvzwlxbq30gd1h3gkz8bq7awqfn0v735hay7z"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -32617,13 +32592,13 @@ Netherlands.")
 (define-public r-cbq
   (package
     (name "r-cbq")
-    (version "0.2.0.2")
+    (version "0.2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cbq" version))
               (sha256
                (base32
-                "0vg1mhk147pib61v4im3ikc551c2nmmcfah9fjw9c978gf81g32n"))))
+                "12ix60mvs4rlh3376m6qcq5zslng1925hrsz5byddfdjx5wilyv7"))))
     (properties `((upstream-name . "cbq")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

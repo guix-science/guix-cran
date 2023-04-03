@@ -6588,13 +6588,13 @@ details.")
 (define-public r-treasurytr
   (package
     (name "r-treasurytr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "treasuryTR" version))
               (sha256
                (base32
-                "0qlxkvsbi1xfsahpdzbcnzylisyy1lb94dkk5jjzis419lrgcssr"))))
+                "1m7pw2y9q03vn32y63la56l816b3yqkix1yd3j3nk6mwmdyqcyjq"))))
     (properties `((upstream-name . "treasuryTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-quantmod r-lubridate r-dplyr))
@@ -23221,13 +23221,13 @@ tabulation in manuscripts or other types of academic reports.")
 (define-public r-table-express
   (package
     (name "r-table-express")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "table.express" version))
               (sha256
                (base32
-                "08kh7skviwkzqa616vh6mrnlwxxd3c4whpqap4m1myagh6clw40p"))))
+                "0iyx45q64ya82054alj1jm53zh2l8m05z743k0ifscyr0lkmp3zm"))))
     (properties `((upstream-name . "table.express")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

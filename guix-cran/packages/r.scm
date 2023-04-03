@@ -37426,13 +37426,13 @@ package requires a valid API key.  See vignettes for instructions on use.")
 (define-public r-rclickhouse
   (package
     (name "r-rclickhouse")
-    (version "0.6.4")
+    (version "0.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RClickhouse" version))
               (sha256
                (base32
-                "1xbbbwzwz9ix9nwnpdfhfdggpqdaxw9jvv9hlfs5539glv93am0d"))))
+                "0pnavhsxza379c6j6bzpqg0m9dhfaivf3zcvxw6hsc64mgb7wjpd"))))
     (properties `((upstream-name . "RClickhouse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -43396,30 +43396,29 @@ illustrated in Ponzi et al (2021) <arXiv:2101.09110>.")
 (define-public r-rairtable
   (package
     (name "r-rairtable")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rairtable" version))
               (sha256
                (base32
-                "096va06k1znljcnixs6igm91g63m409vbbbnz8lkxy41kacqry42"))))
+                "1lb312c5zhq9ls9x89j2rdg1hrpqrbyds53ajl8dxgww5fbgx5m4"))))
     (properties `((upstream-name . "rairtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
-                             r-snow
                              r-rlang
                              r-progress
                              r-jsonlite
                              r-httr
                              r-dplyr
-                             r-data-table
                              r-crayon
                              r-cli))
     (home-page "https://matthewjrogers.github.io/rairtable/")
     (synopsis "Efficient Wrapper for the 'Airtable' API")
     (description
-     "Efficient CRUD interface for the Airtable API <https://airtable.com/api>,
-supporting batch requests and parallel encoding of large data sets.")
+     "Efficient CRUD interface for the Airtable API
+<https://airtable.com/developers/web/api>, supporting batch requests and
+parallel encoding of large data sets.")
     (license license:expat)))
 
 (define-public r-rainfarmr

@@ -732,13 +732,13 @@ bupaverse at the <https://bupar.net> homepage.")
 (define-public r-bupar
   (package
     (name "r-bupar")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bupaR" version))
               (sha256
                (base32
-                "0pm58n280745qzc7n2js3sd6qnmllf7vbyj9klgzdh6fbpivz08f"))))
+                "05iaqaa836apv8qb9pfzgih3cf8z78f40wdl759v1gg6pd32h082"))))
     (properties `((upstream-name . "bupaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7016,33 +7016,6 @@ averaging.  Development snapshots with the latest bugfixes are available from
 using auxiliary data.")
     (license license:gpl3)))
 
-(define-public r-bndesr
-  (package
-    (name "r-bndesr")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bndesr" version))
-              (sha256
-               (base32
-                "11450kk3sy64v50jnzlg90krzldm2cdnhiwzv4v9k37iiic8im9k"))))
-    (properties `((upstream-name . "bndesr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-readxl
-                             r-readr
-                             r-rcurl
-                             r-lubridate
-                             r-janitor
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=bndesr")
-    (synopsis "Access Data from the Brazilian Development Bank (BNDES)")
-    (description
-     "Allows access to data on BNDES disbursements and contracts since 1995.  The
-package makes it easy to import data from the bank into
-R.<https://www.bndes.gov.br/SiteBNDES/bndes/bndes_en>.")
-    (license license:expat)))
-
 (define-public r-bnclustomics
   (package
     (name "r-bnclustomics")
@@ -8175,13 +8148,13 @@ site generator Hugo (<https://gohugo.io>) best, and it also supports Jekyll
 (define-public r-blocs
   (package
     (name "r-blocs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blocs" version))
               (sha256
                (base32
-                "18bajdr56d60fp1irgc3iyq758c1gwprvm3v9cvx9zvx9kdgnpa3"))))
+                "084449bigcqc6jfarpb5cvvrhh7a4qghgz3ym9db64zhjrha384x"))))
     (properties `((upstream-name . "blocs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8199,7 +8172,7 @@ and vote choice to estimate each bloc's vote contributions to the Democratic and
 Republican parties.  The package also includes functions for uncertainty
 estimation and plotting.  Users may define voting blocs along a discrete or
 continuous variable.  The package implements methods described in Grimmer,
-Marble, and Tanigawa-Lau (2022) <doi:10.31235/osf.io/c9fkg>.")
+Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
     (license license:gpl3+)))
 
 (define-public r-blocktools
@@ -13209,13 +13182,13 @@ choosing and setting the number of cores used.")
 (define-public r-bignum
   (package
     (name "r-bignum")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bignum" version))
               (sha256
                (base32
-                "0r7vmix40646vdiw9mzzbz5ihrr08rldnpvy8l9ilp73cn9189mj"))))
+                "0a0hqsdh6mpkkqkdv7dhijbwnk6q200z0s6xnaa9mp23ih30pksq"))))
     (properties `((upstream-name . "bignum")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-cpp11 r-bh))

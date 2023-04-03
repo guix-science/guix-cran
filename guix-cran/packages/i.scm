@@ -1329,43 +1329,6 @@ H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D., Lindon, J. C., Holmes, E.
 (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.")
     (license license:gpl3+)))
 
-(define-public r-israd
-  (package
-    (name "r-israd")
-    (version "2.4.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ISRaD" version))
-              (sha256
-               (base32
-                "0v5igjb0910r9h1jc7c257qwrcpb1fi51448q818vbp31a64wvrd"))))
-    (properties `((upstream-name . "ISRaD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-writexl
-                             r-tidyr
-                             r-sp
-                             r-rworldmap
-                             r-rio
-                             r-readxl
-                             r-rcurl
-                             r-raster
-                             r-maps
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ISRaD")
-    (synopsis "Tools and Data for the International Soil Radiocarbon Database")
-    (description
-     "This is the central location for data and tools for the development,
-maintenance, analysis, and deployment of the International Soil Radiocarbon
-Database (ISRaD).  ISRaD was developed as a collaboration between the U.S.
-Geological Survey Powell Center and the Max Planck Institute for
-Biogeochemistry.  This R package provides tools for accessing and manipulating
-ISRaD data, compiling local data using the ISRaD data structure, and simple
-query and reporting functions for ISRaD. For more detailed information visit the
-ISRaD website at: <https://soilradiocarbon.org/>.")
-    (license license:gpl2)))
-
 (define-public r-isr
   (package
     (name "r-isr")
@@ -3010,13 +2973,13 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IRTest" version))
               (sha256
                (base32
-                "0fgr7s97mbqy561hwcll11cyx9b5csp0db3iashgs8jbv6q59vgk"))))
+                "0p7xzl02xq0h8ryib18c57i28dcg8z7xqj28xr6ylhs8c7cknvs8"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dcurver r-betafunctions))
@@ -3029,10 +2992,9 @@ Interface.")
 likelihood and expectation-maximization algorithm (Bock & Aitkin, 1981
 <doi:10.1007/BF02293801>).  Within parameter estimation algorithm, several
 methods for latent distribution estimation are available (Li, 2022
-<https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=9a95f68e2c1126c5ffe0bdc3ef48d419>).
- Reflecting some features of the true latent distribution, these latent
-distribution estimation methods can possibly free the normality assumption on
-the latent distribution.")
+<http://www.riss.kr/link?id=T16374105>).  Reflecting some features of the true
+latent distribution, these latent distribution estimation methods can possibly
+free the normality assumption on the latent distribution.")
     (license license:gpl3+)))
 
 (define-public r-irtdemo
@@ -12596,21 +12558,16 @@ LeCun <http://yann.lecun.com/exdb/mnist/>.")
 (define-public r-idsl-ufax
   (package
     (name "r-idsl-ufax")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFAx" version))
               (sha256
                (base32
-                "1ip56fjmk1j5nv87zrxc46949v3whj5927w3px4jbw5pl1agbm51"))))
+                "1c4m6ga887fk9sn8b1r39r1k9n9zcx47a6x605dk568vp22dn1y2"))))
     (properties `((upstream-name . "IDSL.UFAx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl
-                             r-rcppalgos
-                             r-idsl-ufa
-                             r-idsl-ipa
-                             r-foreach
-                             r-doparallel))
+    (propagated-inputs (list r-readxl r-rcppalgos r-idsl-ufa r-idsl-ipa))
     (home-page "https://github.com/idslme/idsl.ufax")
     (synopsis "Exhaustive Chemical Enumeration for United Formula Annotation")
     (description
@@ -12623,23 +12580,25 @@ C, B, Br, Cl, K, S, Si, N, H, As, F, I, Na, O, and P.")
 (define-public r-idsl-ufa
   (package
     (name "r-idsl-ufa")
-    (version "1.8")
+    (version "1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFA" version))
               (sha256
                (base32
-                "0lgl8ilr5xsi3ivc59qzvdjbcmp0wd8s359cs739iaidk7rbnccz"))))
+                "1s7y033nnk8qbpv7i6ksx7cxsra14aincrck87im0cj1mhwqbjp2"))))
     (properties `((upstream-name . "IDSL.UFA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-idsl-ipa r-foreach r-doparallel))
+    (propagated-inputs (list r-readxl r-idsl-ipa))
     (home-page "https://github.com/idslme/idsl.ufa")
     (synopsis "United Formula Annotation (UFA) for HRMS Data Processing")
     (description
      "This package provides a pipeline to annotate chromatography peaks from the
-IDSL.IPA pipeline with molecular formulas of a prioritized chemical space using
-an isotopic profile matching approach.  The IDSL.UFA pipeline only requires mass
-spectrometry level 1 (MS1) data for formula annotation.")
+IDSL.IPA workflow <doi:10.1021/acs.jproteome.2c00120> with molecular formulas of
+a prioritized chemical space using an isotopic profile matching approach.  The
+IDSL.UFA workflow only requires mass spectrometry level 1 (MS1) data for formula
+annotation.  The IDSL.UFA methods was described in
+<doi:10.1021/acs.analchem.2c00563> .")
     (license license:expat)))
 
 (define-public r-idsl-sufa

@@ -7096,37 +7096,6 @@ are created following the guidelines for grid datasets from the European Forum
 for Geography and Statistics.")
     (license license:expat)))
 
-(define-public r-aquabpsim
-  (package
-    (name "r-aquabpsim")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AquaBPsim" version))
-              (sha256
-               (base32
-                "0bf83kp8j7il5q9kr8r0pxlnsf6l9nvhgkny4y5wgc8pbki0dsmz"))))
-    (properties `((upstream-name . "AquaBPsim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-pedigree r-matlib r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AquaBPsim")
-    (synopsis "Aquaculture Breeding Program Simulation")
-    (description
-     "Breeding programs can be simulated with this package.  The functions are written
-to simulate production and reproduction systems encountered in aquaculture and
-are easy to combine with custom functions.  Simulating breeding programs is
-useful to predict the expected genetic gain, rate of inbreeding and the effect
-of changes in the breeding program.  AquaBPsim does not simulate genome
-wide-markers and QTLs, but it simulates estimated breeding values as values
-correlated to the true breeding values.  The correlation equals the accuracy,
-which can be provided or calculated using deterministic formulas.  For genomic
-selection, the accuracy can be calculate using the formula of Deatwyler et al.
-(2010) <doi:10.1534/genetics.110.116855>.  Without genomic selection, accuracy
-can be calculated with the selection index method (Mrode, 2014.
-ISBN:978-1-84593-981-6).")
-    (license license:expat)))
-
 (define-public r-aquabeher
   (package
     (name "r-aquabeher")

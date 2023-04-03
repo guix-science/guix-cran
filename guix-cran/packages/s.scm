@@ -3266,13 +3266,13 @@ GSE1992, GSE3143 and GSE4335.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.0.7")
+    (version "2.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survivoR" version))
               (sha256
                (base32
-                "15y50lnc1igkf1dky6v9gymqdg8hmvk0ycv463xlvkyzk53ckwd6"))))
+                "080pm2479vfhv1hizalcnn2xcqv5n5v4ry42z1a5n5zs13qma947"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31924,13 +31924,13 @@ vitamin D status.")
 (define-public r-simulmgf
   (package
     (name "r-simulmgf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simulMGF" version))
               (sha256
                (base32
-                "1hgg68afcs7y5qmfpzdrm3hkvzqjpy955k69y0h5jwfi5xkq37wj"))))
+                "0kycpaayf9rxc53jp3157zjvynpzhn278x1rnmwhvkhp9fmhnxka"))))
     (properties `((upstream-name . "simulMGF")))
     (build-system r-build-system)
     (home-page "https://github.com/mngar/simulMGF")
@@ -42249,18 +42249,18 @@ Helske and Helske (2019, <doi:10.18637/jss.v088.i03>).")
 (define-public r-seqhandbook
   (package
     (name "r-seqhandbook")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seqhandbook" version))
               (sha256
                (base32
-                "0zncpjabazci92wzw126i491669gidkyiw7zjp7iw23m6jaf71l4"))))
+                "0pr4h19g4sa9g7x3di3k18abmabn6ywigdhx2h4b5y88zcnizfam"))))
     (properties `((upstream-name . "seqhandbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=seqhandbook")
+    (native-inputs (list r-r-rsp))
+    (home-page "https://nicolas-robette.github.io/seqhandbook/")
     (synopsis "Miscellaneous Tools for Sequence Analysis")
     (description
      "It provides miscellaneous sequence analysis functions for describing episodes in

@@ -5082,13 +5082,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.5.1")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "1wzyi2grya0dpiysb1m72rfw32krahly8mp0n15y4a15s7jni0km"))))
+                "1hr2vmaly7dcjb957mzsyggfn5p8g4d4pdryl8di2zgnnd552nqf"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -9006,19 +9006,19 @@ Random Forest of Breiman (2001) <DOI:10.1023/A:1010933404324> respectively.")
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.3.1")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odr" version))
               (sha256
                (base32
-                "185i81ixrm1mby5ryaymi4ixwxnx84g8f1zv6qbb1aj0wf1rxsng"))))
+                "0ivfaksghapjc4ygq2va1qll9dcdhc5xmjbsyipa4smc7jlh7fpw"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
     (home-page "https://cran.r-project.org/package=odr")
     (synopsis
-     "Optimal Design and Statistical Power for Multilevel Experiments")
+     "Optimal Design and Statistical Power for Multilevel Experiments Investigating Main, Mediation, and Moderation Effects")
     (description
      "Calculate the optimal sample allocation that produces the highest statistical
 power for experimental studies under a budget constraint, perform power analyses
@@ -9028,12 +9028,12 @@ proposed methods include: (1) Shen, Z., & Kelcey, B. (2020).  Optimal sample
 allocation under unequal costs in cluster-randomized trials.  Journal of
 Educational and Behavioral Statistics, 45(4): 446-474.
 <doi:10.3102/1076998620912418>. (2) Shen, Z., & Kelcey, B. (2022).  Optimal
-sampling ratios in three-level multisite experiments.  Journal of Research on
-Educational Effectiveness, 15 (1), 130-150. <doi:10.1080/19345747.2021.1953200>.
-(3) Shen, Z., & Kelcey, B. (in press).  Optimal sample allocation in multisite
-randomized trials.  The Journal of Experimental Education.
-<doi:10.1080/00220973.2020.1830361>. (4) Champely, S. (2020).  pwr: Basic
-functions for power analysis (Version 1.3-0) [Software].  Available from
+sample allocation for three-level multisite cluster-randomized trials.  Journal
+of Research on Educational Effectiveness, 15 (1), 130-150.
+<doi:10.1080/19345747.2021.1953200>. (3) Shen, Z., & Kelcey, B. (2022).  Optimal
+sample allocation in multisite randomized trials.  The Journal of Experimental
+Education. <doi:10.1080/00220973.2020.1830361>. (4) Champely, S. (2020).  pwr:
+Basic functions for power analysis (Version 1.3-0) [Software].  Available from
 <https://CRAN.R-project.org/package=pwr>.")
     (license license:gpl3)))
 

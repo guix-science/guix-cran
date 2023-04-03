@@ -3376,6 +3376,29 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
 <https://creativecommons.org/licenses/by/4.0/>.")
     (license license:expat)))
 
+(define-public r-frontiles
+  (package
+    (name "r-frontiles")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "frontiles" version))
+              (sha256
+               (base32
+                "0m4hw4bybahwmpj14ypc5f078j6zpxi5c04ys9qnhks6x4g2a646"))))
+    (properties `((upstream-name . "frontiles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-colorspace))
+    (home-page "https://cran.r-project.org/package=frontiles")
+    (synopsis "Partial Frontier Efficiency Analysis")
+    (description
+     "It calculates the alpha-quantile proposed by Daouia and Simar (2007)
+<doi:10.1016/j.jeconom.2006.07.002> and order-m efficiency score in
+multi-dimension proposed by Daouia and Gijbels (2011)
+<doi:10.1016/j.jeconom.2010.12.002> and computes several summaries and
+representation of the associated frontiers in 2d and 3d.")
+    (license license:gpl2+)))
+
 (define-public r-frontier
   (package
     (name "r-frontier")

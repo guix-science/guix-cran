@@ -19443,17 +19443,18 @@ JavaScript library.  See <https://rstudio.github.io/r2d3/> and
 (define-public r-ddpcr
   (package
     (name "r-ddpcr")
-    (version "1.15")
+    (version "1.15.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ddpcr" version))
               (sha256
                (base32
-                "04q2k6kag3qx9g6iarb84ski7s895xdd20zlaw7wmidfv038kmws"))))
+                "1i6nl2c5k7bg9izz4a4cdgm46a88h08y0dpzbxr82bwqfc7l3kcx"))))
     (properties `((upstream-name . "ddpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-shinyjs
+                             r-shinydisconnect
                              r-shiny
                              r-readr
                              r-plyr
@@ -22532,13 +22533,13 @@ quality data are obtained from the Water Quality Portal
 (define-public r-dataresqc
   (package
     (name "r-dataresqc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataresqc" version))
               (sha256
                (base32
-                "1m7c93yk3dp1l5ysgscjvmv7z0xnmgaz4bkci4ljmmmn5a9v6r3c"))))
+                "1a4izp25bxvgq3l4m7njy13d3fl6xn8y7v2v18raqk5g8kl8ca2y"))))
     (properties `((upstream-name . "dataresqc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dataresqc")
@@ -24446,6 +24447,42 @@ theory of knowledge spaces.  This package implements data analysis methods and
 procedures for simulating data and quasi orders and transforming different
 formulations in knowledge space theory.  See package?DAKS for an overview.")
     (license license:gpl2+)))
+
+(define-public r-daisie
+  (package
+    (name "r-daisie")
+    (version "4.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DAISIE" version))
+              (sha256
+               (base32
+                "0f9b361l591b5454lmzbhihv1wmk9rwbb90csax4xwrg9yq26i3v"))))
+    (properties `((upstream-name . "DAISIE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testit
+                             r-tensor
+                             r-subplex
+                             r-rcppeigen
+                             r-rcpp
+                             r-pracma
+                             r-matrix
+                             r-magrittr
+                             r-foreach
+                             r-doparallel
+                             r-desolve
+                             r-ddd
+                             r-bh))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/rsetienne/DAISIE")
+    (synopsis
+     "Dynamical Assembly of Islands by Speciation, Immigration and Extinction")
+    (description
+     "Simulates and computes the (maximum) likelihood of a dynamical model of island
+biota assembly through speciation, immigration and extinction.  See Valente et
+al. (2015) <doi:10.1111/ele.12461>.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-daiquiri
   (package

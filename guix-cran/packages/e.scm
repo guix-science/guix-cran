@@ -8876,13 +8876,13 @@ or monthly outcome data.")
 (define-public r-epicontacttrace
   (package
     (name "r-epicontacttrace")
-    (version "0.16.0")
+    (version "0.17.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiContactTrace" version))
               (sha256
                (base32
-                "025zv1mskd3s71bn0fbaf88b36a5rmbpplv6lmiyp8rxrfk05vs9"))))
+                "0s3mfv1djrq1kp75f94z4fhrx3jha4vvil30daxkw5b0iy3mvf5q"))))
     (properties `((upstream-name . "EpiContactTrace")))
     (build-system r-build-system)
     (home-page "https://github.com/stewid/EpiContactTrace")

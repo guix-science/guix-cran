@@ -10601,40 +10601,16 @@ publication in the journal Landscape Ecology.  Detailed references will be
 updated here once those are known.")
     (license license:gpl3)))
 
-(define-public r-morf
-  (package
-    (name "r-morf")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "morf" version))
-              (sha256
-               (base32
-                "13v2w93x4xzk6zqd1ydzlp07nasfj4khj36787ncargyidjj34x0"))))
-    (properties `((upstream-name . "morf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-orf r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://riccardo-df.github.io/morf/")
-    (synopsis "Modified Ordered Random Forest")
-    (description
-     "Nonparametric estimator of the ordered choice model using random forests.  The
-estimator modifies a standard random forest splitting criterion to build a
-collection of forests, each estimating the conditional probability of a single
-class.  The package also implements a nonparametric estimator of the
-covariatesâ marginal effects.")
-    (license license:gpl3)))
-
 (define-public r-moreparty
   (package
     (name "r-moreparty")
-    (version "0.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moreparty" version))
               (sha256
                (base32
-                "1f044nbk0cgmc408azb43qzir84i7qprwzapqbxkk2359bx5yx0d"))))
+                "0wsddnjxqg2ck1mr3hhinzlgakpy02zrbn0pj560y4sxrfg1psig"))))
     (properties `((upstream-name . "moreparty")))
     (build-system r-build-system)
     (propagated-inputs (list r-vip
@@ -10870,28 +10846,6 @@ Journal of Assessment Tools in Education, 8 (3), 704-713.\"")
 run over parameter grids and parallelising the Monte Carlo repetitions.  It also
 generates LaTeX tables.")
     (license license:gpl2)))
-
-(define-public r-monte-carlo-se
-  (package
-    (name "r-monte-carlo-se")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Monte.Carlo.se" version))
-              (sha256
-               (base32
-                "1d5gp4wvpvrlp82g8k8v668mzhmdlk2pvky34v7hxysap9xgmsqr"))))
-    (properties `((upstream-name . "Monte.Carlo.se")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Monte.Carlo.se")
-    (synopsis "Monte Carlo Standard Errors")
-    (description
-     "Computes Monte Carlo standard errors for summaries of Monte Carlo output.
-Summaries and their standard errors are based on columns of Monte Carlo
-simulation output.  Dennis D. Boos and Jason A. Osborne (2015)
-<doi:10.1111/insr.12087>.")
-    (license license:gpl3)))
 
 (define-public r-monreg
   (package
@@ -25016,13 +24970,13 @@ and region annotations.")
 (define-public r-metrica
   (package
     (name "r-metrica")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metrica" version))
               (sha256
                (base32
-                "1crxa05gyxl6g5h4vi930alg4n688nlw1nmyg3jv8if7yszldva2"))))
+                "09l0i4v7v619pjpv8gmn2h7x3rsa36viks4rsgkw5rlwm5899mcd"))))
     (properties `((upstream-name . "metrica")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29963,13 +29917,13 @@ Thomas Brendan Murphy (2010) <doi:10.1016/j.stamet.2010.01.002>.")
 (define-public r-meboot
   (package
     (name "r-meboot")
-    (version "1.4-9.2")
+    (version "1.4-9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meboot" version))
               (sha256
                (base32
-                "0si2gmldkc5wjxaqqn9wmbvb7h6rkynbj11fjmgj4sdyv398x3jw"))))
+                "1d8h1l9kpmsndgpmwkxpn05bx22m51lkb2w40p03lwajc9847j3d"))))
     (properties `((upstream-name . "meboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdigest r-nlme r-hdrcde r-dynlm))

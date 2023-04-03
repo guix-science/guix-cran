@@ -16322,32 +16322,6 @@ efficacy by constructing a multiple-pathway-based risk model (Tarca, Adi
 Laurentiu et al (2008) <doi:10.1093/bioinformatics/btn577>).")
     (license license:gpl2+)))
 
-(define-public r-pma2
-  (package
-    (name "r-pma2")
-    (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PMA2" version))
-              (sha256
-               (base32
-                "03v56kcdp4c70r1j6vfx515h27fggzk2f7jr9bq4y3wk0f4272pr"))))
-    (properties `((upstream-name . "PMA2")))
-    (build-system r-build-system)
-    (home-page "https://github.com/Ali-Mahzarnia/PMA2")
-    (synopsis "Penalized Multivariate Analysis")
-    (description
-     "This package provides a modified version of PMA. The CCA() and CCA.permute()
-functions can also compute the component-wise standard deviations of estimated U
-and V through permutations in addition to standardize them.  Furthermore, it
-computes the non-parametric p-values for each components.  Performs Penalized
-Multivariate Analysis: a penalized matrix decomposition, sparse principal
-components analysis, and sparse canonical correlation analysis, described in Ali
-Mahzarnia, Alexander Badea (2022), \"Joint Estimation of Vulnerable Brain
-Networks and Alzheimerâs Disease Risk Via Novel Extension of Sparse Canonical
-Correlation\" at bioRxiv.")
-    (license license:gpl2+)))
-
 (define-public r-pm3
   (package
     (name "r-pm3")
@@ -22112,13 +22086,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.10.15")
+    (version "0.10.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photobiology" version))
               (sha256
                (base32
-                "0wf8fbvgqrf8qdrlg35a8c563dp0wl3g1v68wl69qdawq30ycr96"))))
+                "1inrkk36zsnzj47qidv3w9yibywsdgcmxvk1gai50dqzsagc1n1s"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

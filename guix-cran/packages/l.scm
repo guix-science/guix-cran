@@ -8937,13 +8937,13 @@ including scaling of space-filling designs, are also provided.")
 (define-public r-lightsout
   (package
     (name "r-lightsout")
-    (version "0.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lightsout" version))
               (sha256
                (base32
-                "0ypniqf9wk35dd9j57wd7gxchr5hy25fwhmkndz2z8b9ajhm3c9b"))))
+                "1rb5qrd8piq079yfmn07np36zgawhw7s4wyy7q00yz4m4wp74lip"))))
     (properties `((upstream-name . "lightsout")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs r-shiny r-magrittr))
@@ -8956,7 +8956,7 @@ off.  Pressing any light will toggle it and its adjacent lights.  The goal of
 the game is to switch all the lights off.  This package provides an interface to
 play the game on different board sizes, both through the command line or with a
 visual application.  Puzzles can also be solved using the automatic solver
-included.  View a demo online at http://daattali.com/shiny/lightsout/.")
+included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
     (license license:expat)))
 
 (define-public r-lightr

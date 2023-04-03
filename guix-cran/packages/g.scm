@@ -4446,13 +4446,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "greybox" version))
               (sha256
                (base32
-                "0j58592b3c6brwk9cdj1qsjswvlfwzvl0a2n6x4lia50dhmvp1yk"))))
+                "1lb0k9lq39k5cykq46agiq2ykwfcrdc1pncxnry750r6wqyi5sp8"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5291,41 +5291,6 @@ rectangular prisms at specific observation points using the method of Plouff
 (1976) <doi:10.1190/1.1440645>.")
     (license license:cc0)))
 
-(define-public r-gravity
-  (package
-    (name "r-gravity")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gravity" version))
-              (sha256
-               (base32
-                "1xbdw1gl3vsjfg90bb1pqy4jhp2wd4ss96z2xd3pbgyanf6fkdkf"))))
-    (properties `((upstream-name . "gravity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-sandwich
-                             r-rlang
-                             r-rdpack
-                             r-purrr
-                             r-multiwayvcov
-                             r-mass
-                             r-magrittr
-                             r-lmtest
-                             r-glm2
-                             r-dplyr
-                             r-censreg))
-    (native-inputs (list r-knitr))
-    (home-page "https://pacha.dev/gravity/")
-    (synopsis "Estimation Methods for Gravity Models")
-    (description
-     "This package provides a wrapper of different standard estimation methods for
-gravity models.  This package provides estimation methods for log-log models and
-multiplicative models.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-gravitas
   (package
     (name "r-gravitas")
@@ -5527,13 +5492,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grates" version))
               (sha256
                (base32
-                "0xawsw21ab45ny8rsm2wzch2hwszacdghy15c0329k10apm63dny"))))
+                "17xq4bjkp3rx163gjyi2j3l5jljrxf1mnmvfda7lfsinh00hxm4q"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8050,13 +8015,13 @@ about Google Cloud Print'.")
 (define-public r-googlepolylines
   (package
     (name "r-googlepolylines")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googlePolylines" version))
               (sha256
                (base32
-                "1z8ml0xiyqy1ygairgs9w10q4a7msd6gkzjv7kf6r8xv4bpc02pd"))))
+                "1r6mwh1wz0966bdbhvy6j0ibz1sa6xgq9k1cn8xpsmrlnr4y4ydv"))))
     (properties `((upstream-name . "googlePolylines")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -16437,16 +16402,17 @@ PNG files, external resources, or as a list column containing raster image data.
 (define-public r-ggimage
   (package
     (name "r-ggimage")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggimage" version))
               (sha256
                (base32
-                "056pci0wfi0bzvarcnxvi4x4cq013rwjxcr610s6i8pv8p89iihz"))))
+                "083h57916gisd0y4vwlxyypidy3armnkxkyi02rxrx5q2bqn9gix"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-scales
                              r-magick
                              r-jsonlite
@@ -26096,13 +26062,13 @@ Reference: Goodfellow et al. (2014) <arXiv:1406.2661v1>.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganDataModel" version))
               (sha256
                (base32
-                "1dykp6zz9d89wlh69xmzziaq9s2glarjihq91pij559jg24l9wir"))))
+                "0x2halgs33x4ip2lrq55cswd9b8jwd8k8vcxx7v51wkwzp9zpyzb"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))
