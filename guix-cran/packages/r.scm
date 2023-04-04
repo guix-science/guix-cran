@@ -17942,30 +17942,6 @@ package includes functions to work with the Mangal RESTful API methods
 (<https://mangal-interactions.github.io/mangal-api/>).")
     (license license:expat)))
 
-(define-public r-rmalschains
-  (package
-    (name "r-rmalschains")
-    (version "0.2-9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rmalschains" version))
-              (sha256
-               (base32
-                "0qmndg8d1qy1c1j5fymicgijh96g207fs2ljx72i1ns44xkdibh6"))))
-    (properties `((upstream-name . "Rmalschains")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=Rmalschains")
-    (synopsis
-     "Continuous Optimization using Memetic Algorithms with Local Search Chains (MA-LS-Chains) in R")
-    (description
-     "An implementation of an algorithm family for continuous optimization called
-memetic algorithms with local search chains (MA-LS-Chains).  Memetic algorithms
-are hybridizations of genetic algorithms with local search methods.  They are
-especially suited for continuous optimization.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rmallow
   (package
     (name "r-rmallow")
@@ -20977,13 +20953,13 @@ Region of Interest (ROI) files, to plot the ROIs and to convert them to spatstat
 (define-public r-rim
   (package
     (name "r-rim")
-    (version "0.5.2")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rim" version))
               (sha256
                (base32
-                "03wx013gd4hraklc56fr50j5ivi2c695xlfs5403rw4ml2ndds4h"))))
+                "1h0ngckmwp2inxi87vgig8l3v2fz16dff6radvnnkzlcnv4g6g7l"))))
     (properties `((upstream-name . "rim")))
     (build-system r-build-system)
     (inputs (list maxima))
@@ -20991,12 +20967,12 @@ Region of Interest (ROI) files, to plot the ROIs and to convert them to spatstat
     (home-page "https://rcst.github.io/rim/")
     (synopsis "R's Interface to Maxima, Bringing Symbolic Computation into R")
     (description
-     "This package provides an interface to the powerful and fairly complete computer
-algebra system maxima.  It can be used to start and control Maxima from within R
-by entering Maxima commands.  It facilitates outputting results from Maxima in
-LaTeX and MathML'.  2D and 3D plots can be displayed directly.  This package
-also registers a knitr'-engine enabling Maxima code chunks to be written in
-RMarkdown documents.")
+     "An interface to the powerful and fairly complete computer algebra system
+Maxima'.  It can be used to start and control Maxima from within R by entering
+Maxima commands.  Results from Maxima can be parsed and evaluated in R. It
+facilitates outputting results from Maxima in LaTeX and MathML'.  2D and 3D
+plots can be displayed directly.  This package also registers a knitr'-engine
+enabling Maxima code chunks to be written in RMarkdown documents.")
     (license license:gpl3+)))
 
 (define-public r-rilostat
@@ -23657,13 +23633,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.6")
+    (version "3.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgbif" version))
               (sha256
                (base32
-                "0l5krzf0hii6b8afnqm0nxr0bv65wp5ahq85rakvz95jsamhavyb"))))
+                "1f2qi0vs8s1gxhqvvh6jyswv0p4c29ycm912hswxgc93v6rzghsg"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -27208,26 +27184,28 @@ in Muller et al., (2014) <doi: 10.1093/nar/gkt878>.")
 (define-public r-replicationsuccess
   (package
     (name "r-replicationsuccess")
-    (version "1.2")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ReplicationSuccess" version))
               (sha256
                (base32
-                "0x470102sr819jgm1h5b228qcckghnfv8badgb53jy05ral7lrc2"))))
+                "1dcn6m9lx7ri1isv2ym7i26sbwkdrgpv0qi4sr0b64wc8mqrxdwh"))))
     (properties `((upstream-name . "ReplicationSuccess")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://SamCH93.github.io/ReplicationSuccess/")
+    (home-page "https://crsuzh.github.io/ReplicationSuccess/")
     (synopsis "Design and Analysis of Replication Studies")
     (description
      "This package provides utilities for the design and analysis of replication
 studies.  Features both traditional methods based on statistical significance
 and more recent methods such as the sceptical p-value; Held L. (2020)
-<doi:10.1111/rssa.12493>.  Also provides related methods including the harmonic
-mean chi-squared test; Held, L. (2020), <doi:10.1111/rssc.12410>, and intrinsic
-credibility; Held, L. (2019) <doi:10.1098/rsos.181534>.  Contains datasets from
-four large-scale replication projects.")
+<doi:10.1111/rssa.12493>, Held et al. (2022) <doi:10.1214/21-AOAS1502>,
+Micheloud et al. (2023) <arXiv:2207.00464>.  Also provides related methods
+including the harmonic mean chi-squared test; Held, L. (2020)
+<doi:10.1111/rssc.12410>, and intrinsic credibility; Held, L. (2019)
+<doi:10.1098/rsos.181534>.  Contains datasets from five large-scale replication
+projects.")
     (license license:gpl2+)))
 
 (define-public r-replicationinterval
@@ -28949,37 +28927,34 @@ becomes stronger/weaker as Z increases).")
 (define-public r-regressor
   (package
     (name "r-regressor")
-    (version "2.0.1")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regressoR" version))
               (sha256
                (base32
-                "0h5f085vpmvjzrr3wiq7gvj0cma41szikmp8iaczhc04cdj6k18b"))))
+                "08n5f0j5r6d7zhb2vizwlxr2cnfvwy2qpmka27a61yd0l07prr6h"))))
     (properties `((upstream-name . "regressoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs
+    (propagated-inputs (list r-trainer
+                             r-shinyjs
                              r-shinydashboardplus
                              r-shinydashboard
                              r-shinycustomloader
                              r-shinyace
                              r-shiny
                              r-rpart-plot
-                             r-rpart
                              r-rlang
-                             r-randomforest
                              r-pls
-                             r-neuralnet
-                             r-kknn
+                             r-loader
                              r-htmltools
                              r-golem
                              r-glmnet
-                             r-gbm
                              r-echarts4r
-                             r-e1071
-                             r-dt))
+                             r-dt
+                             r-dplyr))
     (native-inputs (list esbuild))
-    (home-page "https://www.promidat.com")
+    (home-page "https://promidat.website/")
     (synopsis "Regression Data Analysis System")
     (description
      "Perform a supervised data analysis on a database through a shiny graphical
@@ -30239,13 +30214,13 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.1.0")
+    (version "4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redist" version))
               (sha256
                (base32
-                "03yknjjd346xz4iwiyq4bgjrmanw81rri8vfrjalr8w69n7jh12f"))))
+                "0gvcsbb169apkyg0h35y67js48q995n5dzr4krhv0ihp2qba91ky"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
     (inputs (list python))
@@ -36226,13 +36201,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.21")
+    (version "2.4.26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcompanion" version))
               (sha256
                (base32
-                "13gg751xd3ijmnrvnnmiy7v5py4w4g2rgym6iaaxjpgnqhb27dw3"))))
+                "1ccmdrfjzchpk1d2spgk6pgpd95w84f5hwzmskalccawz4p0shls"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr

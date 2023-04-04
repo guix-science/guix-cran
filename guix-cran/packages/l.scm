@@ -4547,28 +4547,6 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (2014) <doi:10.1214/14-EJS930>.")
     (license license:gpl2+)))
 
-(define-public r-logconcdead
-  (package
-    (name "r-logconcdead")
-    (version "1.6-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LogConcDEAD" version))
-              (sha256
-               (base32
-                "1hbf3w2km4grs6705qnf0x2x9lhmb08xz18qyv45dajlnwz2dmbz"))))
-    (properties `((upstream-name . "LogConcDEAD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mclust r-mass))
-    (home-page "https://cran.r-project.org/package=LogConcDEAD")
-    (synopsis "Log-Concave Density Estimation in Arbitrary Dimensions")
-    (description
-     "Software for computing a log-concave (maximum likelihood) estimator for i.i.d.
-data in any number of dimensions.  For a detailed description of the method see
-Cule, Samworth and Stewart (2010, Journal of Royal Statistical Society Series B,
-<doi:10.1111/j.1467-9868.2010.00753.x>).")
-    (license license:gpl2+)))
-
 (define-public r-logbin
   (package
     (name "r-logbin")
@@ -7213,6 +7191,25 @@ Longest Increasing Subsequence (Ln), (b) JLn, a Jackknife version of Ln or (c)
 JLMn, a Jackknife version of the longest monotonic subsequence.  This family of
 tests can be applied under the assumption of continuity of X and Y.")
     (license license:gpl2)))
+
+(define-public r-listdown
+  (package
+    (name "r-listdown")
+    (version "0.5.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "listdown" version))
+              (sha256
+               (base32
+                "0dw41ylja9ibznsqfr0621sqsmwb4kzlrwaycjl2hc4wmbabbliv"))))
+    (properties `((upstream-name . "listdown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-tibble r-rmarkdown r-fs r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kaneplusplus/listdown")
+    (synopsis "Create R Markdown from Lists")
+    (description "Programmatically create R Markdown documents from lists.")
+    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-listcompr
   (package

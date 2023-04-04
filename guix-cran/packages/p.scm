@@ -7391,23 +7391,25 @@ information, documentations and examples.")
 (define-public r-priorgen
   (package
     (name "r-priorgen")
-    (version "1.1.2")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriorGen" version))
               (sha256
                (base32
-                "0qvdqqdy7wdwwcq95mkgfyf7xf6xlpwdfs3gq299yyv2ba57flnm"))))
+                "0fa5f8m6sqcljfm5qla7spwvkpa2brp5l4kmrw2qa3xb4hn34l4j"))))
     (properties `((upstream-name . "PriorGen")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve))
+    (propagated-inputs (list r-rootsolve r-nleqslv))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PriorGen")
     (synopsis "Generates Prior Distributions for Proportions")
     (description
      "Translates beliefs into prior information in the form of Beta and Gamma
-distributions.  It can be mainly used for the generation of priors on the
-prevalence of disease and the sensitivity/specificity of diagnostic tests.")
-    (license license:gpl3)))
+distributions.  It can be used for the generation of priors on the prevalence of
+disease and the sensitivity/specificity of diagnostic tests and any other
+binomial experiment.")
+    (license license:gpl3+)))
 
 (define-public r-priogene
   (package
@@ -10256,19 +10258,20 @@ Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry (pp.
 (define-public r-ppmsuite
   (package
     (name "r-ppmsuite")
-    (version "0.2.4")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ppmSuite" version))
               (sha256
                (base32
-                "0qpd5a35x7fbdjwfr0cnx00wf0hwzlah6z3giajgcv0d7wzrvczn"))))
+                "14s6nmvzcl1qnq7fihrvly6zkjnvbj4vwbcc15jj4l0nyfbrcc45"))))
     (properties `((upstream-name . "ppmSuite")))
     (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ppmSuite")
     (synopsis
-     "Collection of Models that Employ a Product Partition Distribution as a Prior on Partitions")
+     "Collection of Models that Employ Product Partition Distributions as a Prior on Partitions")
     (description
      "This package provides a suite of functions that fit models that use PPM type
 priors for partitions.  Models include hierarchical Gaussian and probit ordinal
@@ -10280,8 +10283,8 @@ Quintana, F.A.; Mueller, P (2020) <doi:10.1080/10618600.2021.1999824> is
 employed.  Also included in the package is a function that fits a Gaussian
 likelihood spatial product partition model that is detailed in Page, G.L.;
 Quintana, F.A. (2016) <doi:10.1214/15-BA971>, and multivariate PPM change point
-models that are detailed in Quinlan, J.J.; Page, G.L.; Castro, L.M. (2021)
-<arXiv:2201.07830>.")
+models that are detailed in Quinlan, J.J.; Page, G.L.; Castro, L.M. (2023)
+<doi:10.1214/22-BA1344>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ppmr
@@ -11065,6 +11068,26 @@ assumption to narrow the bounds, and to incorporate covariate adjustment.")
      "We extend dplyr and fuzzyjoin join functions with features to preprocess the
 data, apply various data checks, and deal with conflicting columns.")
     (license license:expat)))
+
+(define-public r-powerindexr
+  (package
+    (name "r-powerindexr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "powerindexR" version))
+              (sha256
+               (base32
+                "09gnxjb2lifpa25p20k3md0lzd9zgai6cx4k5fz872mbazvwkvnd"))))
+    (properties `((upstream-name . "powerindexR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-coopgame))
+    (home-page "https://cran.r-project.org/package=powerindexR")
+    (synopsis "Measuring the Power in Voting Systems")
+    (description
+     "This R package allows the determination of some distributions of the voters
+power when passing laws in weighted voting situations.")
+    (license license:gpl2)))
 
 (define-public r-powergwasinteraction
   (package
@@ -24216,17 +24239,22 @@ Center.")
 (define-public r-petrinetr
   (package
     (name "r-petrinetr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "petrinetR" version))
               (sha256
                (base32
-                "0h9nsjsj87b6qvvkg81kn0j2c4xkzq89sddp9l6pjh636bdqwf8i"))))
+                "0s67clfpphwxx8lyb2559sk6i6a5zmxdds0pzfj23blbacnlk16c"))))
     (properties `((upstream-name . "petrinetR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-visnetwork r-purrr r-dplyr r-diagrammer))
-    (home-page "https://www.bupar.net")
+    (propagated-inputs (list r-xml2
+                             r-visnetwork
+                             r-purrr
+                             r-lifecycle
+                             r-dplyr
+                             r-diagrammer))
+    (home-page "https://bupar.net")
     (synopsis "Building, Visualizing, Exporting and Replaying Petri Nets")
     (description
      "This package provides functions for the construction of Petri Nets.  Petri Nets

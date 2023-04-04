@@ -3286,37 +3286,6 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
 expression quantitative trait loci.")
     (license license:gpl2+)))
 
-(define-public r-qrandom
-  (package
-    (name "r-qrandom")
-    (version "1.2.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qrandom" version))
-              (sha256
-               (base32
-                "00s2c3f9ji27drfyz674bszq1a7xxx8mx0m9g5vrzk9hbm1kcsfj"))))
-    (properties `((upstream-name . "qrandom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr r-jsonlite r-curl))
-    (home-page "https://qrng.anu.edu.au/")
-    (synopsis
-     "True Random Numbers using the ANU Quantum Random Numbers Server")
-    (description
-     "The ANU Quantum Random Number Generator provided by the Australian National
-University generates true random numbers in real-time by measuring the quantum
-fluctuations of the vacuum.  This package offers an interface using their API.
-The electromagnetic field of the vacuum exhibits random fluctuations in phase
-and amplitude at all frequencies.  By carefully measuring these fluctuations,
-one is able to generate ultra-high bandwidth random numbers.  The quantum Random
-Number Generator is based on the papers by Symul et al., (2011)
-<doi:10.1063/1.3597793> and Haw, et al. (2015)
-<doi:10.1103/PhysRevApplied.3.054004>.  The package offers functions to retrieve
-a sequence of random integers or hexadecimals and true random samples from a
-normal or uniform distribution.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-qrage
   (package
     (name "r-qrage")

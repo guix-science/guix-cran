@@ -2189,39 +2189,6 @@ programmatically.  Based on Josh Wardle's game
 <https://www.powerlanguage.co.uk/wordle/>.")
     (license license:expat)))
 
-(define-public r-wordgraph
-  (package
-    (name "r-wordgraph")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wordgraph" version))
-              (sha256
-               (base32
-                "06q42sjdj7i680zqx66hsvrpmkrlcyxnvsk1lygnqhlv97ycl3vv"))))
-    (properties `((upstream-name . "wordgraph")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidygraph
-                             r-tibble
-                             r-purrr
-                             r-plyr
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=wordgraph")
-    (synopsis "Graph Functionality of Free Associated Words")
-    (description
-     "This package provides functions that help less experienced R users to make graph
-analysis for free associated words, or more generally for repeated nominal data
-for which a undirected graph analysis is meaningful.  By corresponding to each
-word its centrality, it is possible to apply standard quantitative analysis
-methods in order to associate word selection with other variables.  The
-functions are implemented with the aid of the tibble', tidygraph', ggraph and
-ggplot2 packages.  Supported centrality functions are centrality_alpha(),
-centrality_authority(), centrality_betweenness(), centrality_closeness(),
-centrality_pagerank(), centrality_eigen().  A data set is included.")
-    (license license:gpl2+)))
-
 (define-public r-wordcloud2
   (package
     (name "r-wordcloud2")

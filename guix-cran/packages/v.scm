@@ -1266,13 +1266,13 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-3")
+    (version "1.1.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "volesti" version))
               (sha256
                (base32
-                "1qisar6q0fk4p327mai0zfj57dn0k4vkkamd2pkx1cx3wi0izq0h"))))
+                "1vhypy4whdw4k3lqv5p9bz3jh3gzpfj366xzfwsmy7w8zjk5iq05"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
@@ -6366,39 +6366,6 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
     (home-page "https://github.com/cherylisabella/vangogh")
     (synopsis "Vincent Van Gogh Color Palette Generator")
     (description "Palettes generated from Vincent van Gogh's paintings.")
-    (license license:expat)))
-
-(define-public r-vanddraabe
-  (package
-    (name "r-vanddraabe")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vanddraabe" version))
-              (sha256
-               (base32
-                "094kd72slq0n3pk0p6zps241aszb9yql49h4mr007zf0kn8wlf8v"))))
-    (properties `((upstream-name . "vanddraabe")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-openxlsx
-                             r-ggplot2
-                             r-fastcluster
-                             r-cowplot
-                             r-bio3d))
-    (native-inputs (list r-knitr))
-    (home-page "http://vanddraabe.com")
-    (synopsis
-     "Identification and Statistical Analysis of Conserved Waters Near Proteins")
-    (description
-     "Identify and analyze conserved waters within crystallographic protein structures
-and molecular dynamics simulation trajectories.  Statistical parameters for each
-water cluster, informative graphs, and a PyMOL session file to visually explore
-the conserved waters and protein are returned.  Hydrophilicity is the propensity
-of waters to congregate near specific protein atoms and is related to conserved
-waters.  An informatics derived set of hydrophilicity values are provided based
-on a large, high-quality X-ray protein structure dataset.")
     (license license:expat)))
 
 (define-public r-vandalico

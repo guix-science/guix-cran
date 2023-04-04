@@ -1233,24 +1233,24 @@ United States Environmental Protection Agency (2015)
 (define-public r-swmpr
   (package
     (name "r-swmpr")
-    (version "2.4.2")
+    (version "2.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SWMPr" version))
               (sha256
                (base32
-                "0lllfc5ixhhpx17fmm6rziphikc3r4k3i8cr8gjwghg9j94rc5mp"))))
+                "1yajch65iha19sxpqqij4ifxg12b5v59flibm8y4ial2fsid3c69"))))
     (properties `((upstream-name . "SWMPr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xml
                              r-tidyr
                              r-tictoc
+                             r-suncalc
                              r-reshape2
                              r-rcolorbrewer
                              r-openair
                              r-oce
-                             r-maptools
                              r-lattice
                              r-httr
                              r-gridextra
@@ -1258,12 +1258,12 @@ United States Environmental Protection Agency (2015)
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SWMPr")
+    (home-page "http://fawda123.github.io/SWMPr/")
     (synopsis "Retrieving, Organizing, and Analyzing Estuary Monitoring Data")
     (description
      "Tools for retrieving, organizing, and analyzing environmental data from the
 System Wide Monitoring Program of the National Estuarine Research Reserve System
-<http://cdmo.baruch.sc.edu/>.  These tools address common challenges associated
+<https://cdmo.baruch.sc.edu/>.  These tools address common challenges associated
 with continuous time series data for environmental decision making.")
     (license license:cc0)))
 
@@ -1371,30 +1371,6 @@ parameters.")
 Federal Assembly via an open, machine-readable interface (see
 <https://ws.parlament.ch/odata.svc/>).")
     (license license:gpl2+)))
-
-(define-public r-swissmrp
-  (package
-    (name "r-swissmrp")
-    (version "0.62")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "swissMrP" version))
-              (sha256
-               (base32
-                "1vy6h6c4v49zlsli77ilj4df8cfh67rqmki71v6j1aqw6kf3b649"))))
-    (properties `((upstream-name . "swissMrP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-maptools r-lme4 r-blme r-arm))
-    (home-page "https://cran.r-project.org/package=swissMrP")
-    (synopsis
-     "Multilevel Regression with Post-Stratification (MrP) for Switzerland")
-    (description
-     "This package provides a number of useful functions to employ MrP for small area
-prediction in Switzerland.  Based on a hierarchical model and survey data one
-can derive cantonal preference measures.  The package allows to automatize the
-prediction and post-stratification steps.  It further provides adequate print,
-summary, map, and plot functions for objects of its class.")
-    (license license:gpl2)))
 
 (define-public r-swissair
   (package
@@ -11978,13 +11954,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startup
   (package
     (name "r-startup")
-    (version "0.19.0")
+    (version "0.20.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "startup" version))
               (sha256
                (base32
-                "00rqvk6acg28ls4p8gfdxvzmpmkgx6gk52vdjxh63l1a50xgymg6"))))
+                "1l03jmlhc32jbf6clxzdfxb0rinwl8sb67hikx6hzbk8k9x2xvc2"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
     (native-inputs (list r-startup))
@@ -25368,6 +25344,26 @@ corresponding illustrative demo.")
 to continuous predicted and reference memberships in [0, 1].")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-softbib
+  (package
+    (name "r-softbib")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "softbib" version))
+              (sha256
+               (base32
+                "1nc8h9dlwwwv6bv499wxmrm3z7dkcwgwyif47s82s308j1h640ha"))))
+    (properties `((upstream-name . "softbib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-renv r-checkmate r-bibtex))
+    (home-page "https://cran.r-project.org/package=softbib")
+    (synopsis "Software Bibliographies for R Projects")
+    (description
+     "Detect libraries used in a project and automatically create software
+bibliographies in PDF', Word', Rmarkdown', and BibTeX formats.")
+    (license license:gpl3+)))
+
 (define-public r-softbart
   (package
     (name "r-softbart")
@@ -35080,26 +35076,22 @@ trial (Koneswarakantha 2021 <doi:10.1007/s40264-020-01011-5>).")
 (define-public r-sim2dpredictr
   (package
     (name "r-sim2dpredictr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sim2Dpredictr" version))
               (sha256
                (base32
-                "0q1l75h1dcxnd60lcmf4sny1ywidfmm0yv9ylkb3yc13v469167i"))))
+                "14v35ngwj27j2r4mszwjz1dnk4iydakk5qf4z0swwi931q1jiphc"))))
     (properties `((upstream-name . "sim2Dpredictr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-spam
                              r-rdpack
                              r-matrixcalc
                              r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-car))
-    (home-page "http://github.com/jmleach-bst/sim2Dpredictr")
+                             r-dplyr))
+    (home-page "https://github.com/jmleach-bst/sim2Dpredictr")
     (synopsis "Simulate Outcomes Using Spatially Dependent Design Matrices")
     (description
      "This package provides tools for simulating spatially dependent predictors
@@ -55470,31 +55462,6 @@ implementation of the MapCurve method (Hargrove et al. (2006)
 <doi:10.1007/s10109-006-0025-x>).")
     (license license:expat)))
 
-(define-public r-sabarsi
-  (package
-    (name "r-sabarsi")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sabarsi" version))
-              (sha256
-               (base32
-                "14c94zby3jjm6jr28nrg3qp6r6iw68wsb5l5bpd6jjz9pkljrk9i"))))
-    (properties `((upstream-name . "sabarsi")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sabarsi")
-    (synopsis "Background Removal and Spectrum Identification for SERS Data")
-    (description
-     "This package implements a new approach SABARSI described in Wang et al., \"A
-Statistical Approach of Background Removal and Spectrum Identification for SERS
-Data\" (Unpublished).  Sabarsi forms a pipeline for SERS (surface-enhanced Raman
-scattering) data analysis including background removal, signal detection, signal
-integration, and cross-experiment comparison.  The background removal algorithm,
-the very first step of SERS data analysis, takes into account the change of
-background shape.")
-    (license license:gpl3)))
-
 (define-public r-saascnv
   (package
     (name "r-saascnv")
@@ -55696,13 +55663,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-36")
+    (version "3.1-37")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "04yd42cypv3d6wknxmjpq4p3xba23f7l5gc9fmz6hn2r1rg3sf51"))))
+                "05rnlvv988k3h06szwxhyjn2v0ic10v4v8pjaifqn4sf1f5dmpni"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

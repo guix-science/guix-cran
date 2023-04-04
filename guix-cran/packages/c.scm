@@ -14661,6 +14661,29 @@ Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
 Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
 
+(define-public r-condor
+  (package
+    (name "r-condor")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "condor" version))
+              (sha256
+               (base32
+                "0s7hkvkcr54rl5ybqiy5rmzcjb4vxryv23q4yf9wb603lbifsiby"))))
+    (properties `((upstream-name . "condor")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-ssh))
+    (home-page "https://github.com/PacificCommunity/ofp-sam-condor")
+    (synopsis "Interact with 'Condor' from R via SSH")
+    (description
+     "Interact with Condor from R via SSH connection.  Files are first uploaded from
+user machine to submitter machine, and the job is then submitted from the
+submitter machine to Condor'.  Functions are provided to submit, list, and
+download Condor jobs from R.")
+    (license license:gpl3)))
+
 (define-public r-condmvt
   (package
     (name "r-condmvt")
@@ -21654,13 +21677,13 @@ partitioning algorithms.")
 (define-public r-clustersim
   (package
     (name "r-clustersim")
-    (version "0.50-1")
+    (version "0.51-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clusterSim" version))
               (sha256
                (base32
-                "0f4pp1q9l9dzslpgv8nsdvi0pda3pmp197ak1r352b9nflbng4ca"))))
+                "1ndch19pgavd51x550kzd4r8c1hnw37942g9mj5ha9wsllnlrgiy"))))
     (properties `((upstream-name . "clusterSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2html r-mass r-e1071 r-cluster r-ade4))

@@ -7519,58 +7519,6 @@ experiment-support variable) on the relation between a dependent and an
 independent variable.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-msaerb
-  (package
-    (name "r-msaerb")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "msaeRB" version))
-              (sha256
-               (base32
-                "0mpyirvaflmp6gc35kbz1rw5ydxxdgfji3j9c8hjrjqz6759birb"))))
-    (properties `((upstream-name . "msaeRB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass r-magic r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zendaokab/msaeRB")
-    (synopsis "Ratio Benchmarking for Multivariate Small Area Estimation")
-    (description
-     "This package implements multivariate ratio benchmarking small area estimation.
-This package provides ratio benchmarking estimation for univariate and
-multivariate small area estimation and its MSE. In fact, MSE estimators for
-ratio benchmark are not readily available, so resampling method that called
-parametric bootstrap is applied.  The ratio benchmark model and parametric
-bootstrap in this package are based on the model proposed in small area
-estimation.  J.N.K Rao and Isabel Molina (2015, ISBN: 978-1-118-73578-7).")
-    (license license:gpl3)))
-
-(define-public r-msaeob
-  (package
-    (name "r-msaeob")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "msaeOB" version))
-              (sha256
-               (base32
-                "05m6r5jk21l9d2j546h7vf8caic83nm0y55zfamr94z4q221486x"))))
-    (properties `((upstream-name . "msaeOB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass r-magic r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yas-q/msaeOB")
-    (synopsis "Optimum Benchmarking for Multivariate Small Area Estimation")
-    (description
-     "This package implements multivariate optimum benchmarking small area estimation.
- This package provides optimum benchmarking estimation for univariate and
-multivariate small area estimation and its MSE. In fact, MSE estimators for
-optimum benchmark are not readily available, so resampling method that called
-parametric bootstrap is applied.  The optimum benchmark model and parametric
-bootstrap in this package are based on the model proposed in small area
-estimation.  J.N.K Rao and Isabel Molina (2015, ISBN: 978-1-118-73578-7).")
-    (license license:gpl3)))
-
 (define-public r-msaenet
   (package
     (name "r-msaenet")
@@ -12625,13 +12573,13 @@ drug, using a Bayesian decision procedure based on logistic regression.")
 (define-public r-modernva
   (package
     (name "r-modernva")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modernVA" version))
               (sha256
                (base32
-                "1kjfgr7fcf0w27gx1wwapxcw5wisfv75mq9qc5hjnaivmsnkwsv3"))))
+                "0kbk1jm39s6q2dyk5s3kn9mcjssqpkm5czr7vc2va92sg19174r9"))))
     (properties `((upstream-name . "modernVA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=modernVA")
@@ -17955,29 +17903,6 @@ Browne and McNicholas (2014) <doi:10.1007/s11634-013-0139-1>, Browne and
 McNicholas (2015) <doi:10.1002/cjs.11246>.")
     (license license:gpl2+)))
 
-(define-public r-mixtur
-  (package
-    (name "r-mixtur")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mixtur" version))
-              (sha256
-               (base32
-                "1kdzhjad6bwg6ga4bm545iw147h6zhj1a038ajlnbgynd9j8h8nh"))))
-    (properties `((upstream-name . "mixtur")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-rcolorbrewer r-ggplot2 r-dplyr))
-    (home-page "https://github.com/JimGrange/mixtur")
-    (synopsis "Modelling Continuous Report Visual Short-Term Memory Studies")
-    (description
-     "This package provides a set of utility functions for analysing and modelling
-data from continuous report short-term memory experiments using either the
-2-component mixture model of Zhang and Luck (2008) <doi:10.1038/nature06860> or
-the 3-component mixture model of Bays et al. (2009) <doi:10.1167/9.10.7>.  Users
-are also able to simulate from these models.")
-    (license license:gpl3)))
-
 (define-public r-mixtox
   (package
     (name "r-mixtox")
@@ -20587,13 +20512,13 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai" version))
               (sha256
                (base32
-                "171bqx5dgf52pbh53xwcpfd1sdjvaisvs3f057g45qnvk7hjf7hy"))))
+                "01dnf4a1a9g38cnlk628bp628wlfwa56nwd6zv8p2rya0bri95n4"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -20602,9 +20527,10 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
     (description
      "Lightweight parallel code execution, local or distributed across the network.
 Designed for simplicity, a mirai evaluates an arbitrary expression
-asynchronously, resolving automatically upon completion.  Built on nanonext and
-NNG (Nanomsg Next Gen), uses scalability protocols not subject to R connection
-limits and transports faster than TCP/IP where applicable.")
+asynchronously, resolving automatically upon completion.  Leverages nanonext and
+NNG (Nanomsg Next Gen) to provide efficient task scheduling, scalability beyond
+R connection limits, and transports faster than TCP/IP for inter-process
+communications.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -30007,6 +29933,51 @@ were programed by several mlr developers.")
 <https://developers.google.com/analytics/devguides/collection/protocol/ga4>
 allows sending HTTP tracking events from R code.")
     (license license:expat)))
+
+(define-public r-measr
+  (package
+    (name "r-measr")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "measr" version))
+              (sha256
+               (base32
+                "036ddxfy6f8id2naq5bpi2qmxm0afjykjagywfpiv7rgh8qhxwga"))))
+    (properties `((upstream-name . "measr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-psych
+                             r-posterior
+                             r-magrittr
+                             r-loo
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-dcm2
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://measr.info")
+    (synopsis "Bayesian Psychometric Measurement Using 'Stan'")
+    (description
+     "Estimate diagnostic classification models (also called cognitive diagnostic
+models) with Stan'.  Diagnostic classification models are confirmatory latent
+class models, as described by Rupp et al. (2010, ISBN: 978-1-60623-527-0).
+Automatically generate Stan code for the general loglinear cognitive diagnostic
+diagnostic model proposed by Henson et al. (2009)
+<doi:10.1007/s11336-008-9089-5> and other subtypes that introduce additional
+model constraints.  Using the generated Stan code, estimate the model evaluate
+the model's performance using model fit indices, information criteria, and
+reliability metrics.")
+    (license license:gpl3+)))
 
 (define-public r-meantables
   (package
@@ -39450,21 +39421,21 @@ proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
 (define-public r-magclass
   (package
     (name "r-magclass")
-    (version "6.0.9")
+    (version "6.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "magclass" version))
               (sha256
                (base32
-                "1a7qs93hww88skzcbrqlajhlxqp7x39bwclw4kd2af263iwjch4h"))))
+                "1jpqvi4rmhgpc4c67fxajlkid5grbp946nvg266w3hvmc2mz6ap3"))))
     (properties `((upstream-name . "magclass")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-maptools r-forcats r-data-table r-abind))
+    (propagated-inputs (list r-data-table r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pik-piam/magclass")
     (synopsis "Data Class and Tools for Handling Spatial-Temporal Data")
     (description
-     "Data class for increased interoperability working with spatial- temporal data
+     "Data class for increased interoperability working with spatial-temporal data
 together with corresponding functions and methods (conversions, basic
 calculations and basic data manipulation).  The class distinguishes between
 spatial, temporal and other dimensions to facilitate the development and

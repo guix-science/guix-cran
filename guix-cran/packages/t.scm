@@ -4428,6 +4428,31 @@ Transformation Choice (Hothorn, 2018, <DOI:10.1177/1471082X17748081>).")
 experiment in their respective standard order.")
     (license license:expat)))
 
+(define-public r-troublemaker
+  (package
+    (name "r-troublemaker")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TroublemakeR" version))
+              (sha256
+               (base32
+                "01w6ffbj4m7yy9g0p9xbijyhms54sf2l855jm5rl0irvxlanp2s4"))))
+    (properties `((upstream-name . "TroublemakeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-purrr))
+    (home-page "https://github.com/Sustainscapes/TroublemakeR")
+    (synopsis "Generates Spatial Problems in R for 'AMPL'")
+    (description
+     "This package provides methods for generating .dat files for use with the AMPL
+software using spatial data, particularly rasters.  It includes support for
+various spatial data formats and different problem types.  By automating the
+process of generating AMPL datasets, this package can help streamline
+optimization workflows and make it easier to solve complex optimization
+problems.  The methods implemented in this package are described in detail in a
+publication by Fourer et al. (<doi:10.1287/mnsc.36.5.519>).")
+    (license license:gpl3+)))
+
 (define-public r-troubblme4solver
   (package
     (name "r-troubblme4solver")
@@ -5464,18 +5489,18 @@ prevalence and outcome frequencies of stratified data.")
 (define-public r-trending
   (package
     (name "r-trending")
-    (version "0.0.3")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trending" version))
               (sha256
                (base32
-                "1crp8hizvasm47fjlf8pjy5jn7y9s16vm7dmpiyr4qb8sizia6xw"))))
+                "15nx0s5q2nk2z9lvpkpjzpg6qz0j182zzrl9v7wp70lfbpaahh24"))))
     (properties `((upstream-name . "trending")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-tibble r-mass r-citools))
+    (propagated-inputs (list r-vctrs r-tibble r-pillar r-mass r-citools))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/reconhub/trending")
+    (home-page "https://github.com/reconverse/trending")
     (synopsis "Model Temporal Trends")
     (description
      "This package provides a coherent interface to multiple modelling tools for
@@ -21123,13 +21148,13 @@ summary-methods.")
 (define-public r-taxizedb
   (package
     (name "r-taxizedb")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "taxizedb" version))
               (sha256
                (base32
-                "1d7wz6df624263myq4rlvr3mhzhhhdglrrs7f44j201z4f536a2z"))))
+                "157xpbmqp3l0blf6n7cb0qswj12v39rhvx0zkbrc2w73g601naj5"))))
     (properties `((upstream-name . "taxizedb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -21142,7 +21167,7 @@ summary-methods.")
                              r-dbplyr
                              r-dbi
                              r-curl))
-    (home-page "https://ropensci.github.io/taxizedb/")
+    (home-page "https://docs.ropensci.org/taxizedb/")
     (synopsis "Tools for Working with 'Taxonomic' Databases")
     (description
      "Tools for working with taxonomic databases, including utilities for downloading

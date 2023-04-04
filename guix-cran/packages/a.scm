@@ -3131,13 +3131,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2023.3.30")
+    (version "2023.3.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "atime" version))
               (sha256
                (base32
-                "1kmi80pv3wajhzcqc0n6yqss0nmchg3w1f0lyj40bqi7pshd3909"))))
+                "15kx7pxa4yb5ivlfxkwqlr1d6fw0yd506grmz27bj27wkjaw75j3"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -14741,13 +14741,13 @@ Bayesian Inference: the aghq Package\" <arXiv:2101.04468>.")
 (define-public r-aghmatrix
   (package
     (name "r-aghmatrix")
-    (version "2.0.4")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AGHmatrix" version))
               (sha256
                (base32
-                "1pvnv3fzxfdzjz9il0022k46kkcb57ypz31qn0br7mck64bkzsia"))))
+                "1cmx1k6lp05prjb50aqhr3gaxg375llcspn97mfskpa8jmbcz321"))))
     (properties `((upstream-name . "AGHmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-matrix))

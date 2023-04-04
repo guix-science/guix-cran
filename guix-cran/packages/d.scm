@@ -11479,13 +11479,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "5.9")
+    (version "6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Directional" version))
               (sha256
                (base32
-                "04rfj6zk5h9fp0m8fca12wrs85fz8p7xivbh11hm4lzzf4f008rn"))))
+                "0gvifknpznpmr46qlrbk18lbir5xhy5g5zqzqps97afbd0xms6i2"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -13226,6 +13226,29 @@ using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
 (2021).")
     (license license:expat)))
 
+(define-public r-didforbigdata
+  (package
+    (name "r-didforbigdata")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DiDforBigData" version))
+              (sha256
+               (base32
+                "0f90wr7jrgsplja3n4f246avpxp3ysm03qi3nc6bfn0s1d969q91"))))
+    (properties `((upstream-name . "DiDforBigData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://setzler.github.io/DiDforBigData/")
+    (synopsis
+     "Big Data Implementation of Difference-in-Differences Estimation with Staggered Treatment")
+    (description
+     "This package provides a big-data-friendly and memory-efficient
+difference-in-differences estimator for staggered (and non-staggered) treatment
+contexts.")
+    (license license:expat)))
+
 (define-public r-diderot
   (package
     (name "r-diderot")
@@ -14748,13 +14771,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dfms" version))
               (sha256
                (base32
-                "0jc6malvzqdhrfd62nbvw5zw6f2p9ajnaszsx2nyyhj8dwcdi3ki"))))
+                "10vxjcwznxlrl73jdpmnw9ihjxlg7az96s11qadxyxh3v7gs85q2"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))
@@ -15601,35 +15624,6 @@ data separation.")
 two methods: sliding windows (Purcell et al (2007) <doi:10.1086/519795>) and
 consecutive runs (Marras et al (2015) <doi:10.1111/age.12259>).")
     (license license:gpl3)))
-
-(define-public r-detectr
-  (package
-    (name "r-detectr")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "detectR" version))
-              (sha256
-               (base32
-                "1l93b8xx6xridwcvs15xgfm7w05p3r233rxpakpii3d71rnbs8cy"))))
-    (properties `((upstream-name . "detectR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-signal
-                             r-logconcdead
-                             r-lavaan
-                             r-glasso
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://github.com/mgampe/detectR")
-    (synopsis "Change Point Detection")
-    (description
-     "Time series analysis of network connectivity.  Detects and visualizes change
-points between networks.  Methods included in the package are discussed in depth
-in Baek, C., Gates, K. M., Leinwand, B., Pipiras, V. (2021) \"Two sample tests
-for high-dimensional auto- covariances\" <doi:10.1016/j.csda.2020.107067> and
-Baek, C., Gampe, M., Leinwand B., Lindquist K., Hopfinger J. and Gates K. (2021)
-âDetecting functional connectivity changes in fMRI dataâ.  Preprint.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-detector
   (package

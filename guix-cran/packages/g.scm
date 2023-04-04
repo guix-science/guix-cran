@@ -1548,13 +1548,13 @@ covariates that may only be available at the aggregate level.")
 (define-public r-gto
   (package
     (name "r-gto")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gto" version))
               (sha256
                (base32
-                "06a2byiimi7s2bsqgrdd7q8xp9fhp4vjfz89qki7zk9mg8sz76sb"))))
+                "111jla0acxpb749ncr77lnbxk7hmsv8syin1p2cs1d1fr2jxkzs1"))))
     (properties `((upstream-name . "gto")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-officer r-magrittr r-gt))
@@ -4868,6 +4868,44 @@ non-linearities to a model, and a wrapper around the Epi package's Lexis()
 functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
+
+(define-public r-greener
+  (package
+    (name "r-greener")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GREENeR" version))
+              (sha256
+               (base32
+                "1clrpzic95hyyf1xknyhpf9ls92zd9sf5ykylhbq7lmjc709kk61"))))
+    (properties `((upstream-name . "GREENeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmap
+                             r-tidyselect
+                             r-sf
+                             r-reshape2
+                             r-parallelly
+                             r-networkd3
+                             r-magrittr
+                             r-hydrogof
+                             r-gridextra
+                             r-ggplot2
+                             r-fme
+                             r-dplyr
+                             r-data-table
+                             r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/calfarog/GREENeR")
+    (synopsis
+     "Geospatial Regression Equation for European Nutrient Losses (GREEN)")
+    (description
+     "Tools and methods to apply the model Geospatial Regression Equation for European
+Nutrient losses (GREEN); Grizzetti et al. (2005)
+<doi:10.1016/j.jhydrol.2004.07.036>; Grizzetti et al. (2008); Grizzetti et al.
+(2012) <doi:10.1111/j.1365-2486.2011.02576.x>; Grizzetti et al. (2021)
+<doi:10.1016/j.gloenvcha.2021.102281>.")
+    (license license:gpl3)))
 
 (define-public r-greencrab-toolkit
   (package
@@ -11275,19 +11313,22 @@ detailed manual.")
 (define-public r-glmmpen
   (package
     (name "r-glmmpen")
-    (version "1.5.3.0")
+    (version "1.5.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmPen" version))
               (sha256
                (base32
-                "1ay103x3yw1r2p0ywjd7jg05a93d0155hvj9vdx27ny4nnwrj71w"))))
+                "1frb5127wsvqx4z8dlh6bvykyknjwakiqjgm8xyhli3zjbgc07gy"))))
     (properties `((upstream-name . "glmmPen")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-survival
+                             r-stringr
                              r-stanheaders
+                             r-rstantools
                              r-rstan
                              r-reshape2
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -14266,13 +14307,13 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggspectra" version))
               (sha256
                (base32
-                "1365q7frvdzq5723h7yi2slb7hpsqmyx738qyv0k3k6656axbjwi"))))
+                "19mmjcifafb6xfn33q2i1aghqy6axc35g6942759j49izd7wm8lz"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23411,13 +23452,13 @@ information for G variables and G-E interactions.")
 (define-public r-geiger
   (package
     (name "r-geiger")
-    (version "2.0.10")
+    (version "2.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geiger" version))
               (sha256
                (base32
-                "1q1vd70fg46w815syc8l1bh5mrxjygj33yf35sz685xr7yvwz598"))))
+                "0s9zvqgn30spwggwpr02gzdjg3h4kgqamq37i03i14a3i2ls1ifw"))))
     (properties `((upstream-name . "geiger")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -23715,37 +23756,6 @@ the exponential family.  A description of the method can be found in Kaishev et
 al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al. (2017)
 <https://openaccess.city.ac.uk/18460>.")
     (license license:gpl3)))
-
-(define-public r-geckor
-  (package
-    (name "r-geckor")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "geckor" version))
-              (sha256
-               (base32
-                "06infn0icgsa10szsc8bqams57swx6a4ch3a1n2a68rp8q2f6lw2"))))
-    (properties `((upstream-name . "geckor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-magrittr
-                             r-lifecycle
-                             r-knitr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/next-game-solutions/geckor")
-    (synopsis "R Client for the 'CoinGecko' API")
-    (description
-     "Collect the current and historical cryptocurrency market data using the public
-CoinGecko API (<https://www.coingecko.com/en/api>).")
-    (license license:expat)))
 
 (define-public r-gecko
   (package

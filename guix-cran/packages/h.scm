@@ -1233,53 +1233,6 @@ information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
 (2020) <doi:10.18637/jss.v094.i06>.")
     (license license:gpl2+)))
 
-(define-public r-hybridensemble
-  (package
-    (name "r-hybridensemble")
-    (version "1.7.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hybridEnsemble" version))
-              (sha256
-               (base32
-                "0nkd9lr9x9nx3gwkad8r3dw6yq2py926kg9zvip5npx2jf1nxizn"))))
-    (properties `((upstream-name . "hybridEnsemble")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tabusearch
-                             r-soma
-                             r-rpart
-                             r-rotationforest
-                             r-rocr
-                             r-rmalschains
-                             r-reportr
-                             r-randomforest
-                             r-quadprog
-                             r-pso
-                             r-nnls
-                             r-nnet
-                             r-nmof
-                             r-kernelfactory
-                             r-glmnet
-                             r-gensa
-                             r-genalg
-                             r-foreach
-                             r-fnn
-                             r-e1071
-                             r-doparallel
-                             r-auc
-                             r-ada))
-    (home-page "https://cran.r-project.org/package=hybridEnsemble")
-    (synopsis "Build, Deploy and Evaluate Hybrid Ensembles")
-    (description
-     "This package provides functions to build and deploy a hybrid ensemble consisting
-of different sub-ensembles such as bagged logistic regressions, random forest,
-stochastic boosting, kernel factory, bagged neural networks, bagged support
-vector machines, rotation forest, bagged k-nearest neighbors, and bagged naive
-Bayes.  Functions to cross-validate the hybrid ensemble and plot and summarize
-the results are also provided.  There is also a function to assess the
-importance of the predictors.")
-    (license license:gpl2+)))
-
 (define-public r-hybriddesign
   (package
     (name "r-hybriddesign")
@@ -8783,6 +8736,47 @@ up to, and adjusting for files that have already been downloaded.")
     (synopsis "Data Only Package to 'healthyR'")
     (description
      "This package provides data for functions typically used in the healthyR package.")
+    (license license:expat)))
+
+(define-public r-healthyr-ai
+  (package
+    (name "r-healthyr-ai")
+    (version "0.0.13")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "healthyR.ai" version))
+              (sha256
+               (base32
+                "0qck4118f0kg9rfnmjc14qh7kdzvxh28rdlydhz8i5j91a6731a4"))))
+    (properties `((upstream-name . "healthyR.ai")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-parsnip
+                             r-modeltime
+                             r-magrittr
+                             r-h2o
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-dials
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spsanderson/healthyR.ai")
+    (synopsis "The Machine Learning and AI Modeling Companion to 'healthyR'")
+    (description
+     "Hospital machine learning and ai data analysis workflow tools, modeling, and
+automations.  This library provides many useful tools to review common
+administrative hospital data.  Some of these include predicting length of stay,
+and readmits.  The aim is to provide a simple and consistent verb framework that
+takes the guesswork out of everything.")
     (license license:expat)))
 
 (define-public r-healthfinance

@@ -10233,52 +10233,6 @@ with a defined interval within the occurrence location uncertainty, and (d) use
 repetitions to quantify EOO and AOO with attribute uncertainty.")
     (license license:gpl3)))
 
-(define-public r-occtest
-  (package
-    (name "r-occtest")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "occTest" version))
-              (sha256
-               (base32
-                "11dqkah6z50zbxiyniv4f2f0n742gmgzqdaarvc17vn750b6b595"))))
-    (properties `((upstream-name . "occTest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tictoc
-                             r-svmisc
-                             r-stringr
-                             r-spocc
-                             r-sp
-                             r-sf
-                             r-rnaturalearthdata
-                             r-rnaturalearth
-                             r-rgeos
-                             r-rgdal
-                             r-rgbif
-                             r-raster
-                             r-plyr
-                             r-pingr
-                             r-outliers
-                             r-matrix
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-datapreparation
-                             r-data-table
-                             r-countrycode
-                             r-coordinatecleaner
-                             r-biogeo
-                             r-alphahull))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=occTest")
-    (synopsis "Characterizing and Filtering Species Occurrence Data")
-    (description
-     "Perform multiple tests for potential errors in species occurrence data and
-filter, and filter data according to users specifications.")
-    (license license:expat)))
-
 (define-public r-occcite
   (package
     (name "r-occcite")

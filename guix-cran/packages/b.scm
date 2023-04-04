@@ -7016,6 +7016,34 @@ averaging.  Development snapshots with the latest bugfixes are available from
 using auxiliary data.")
     (license license:gpl3)))
 
+(define-public r-bndesr
+  (package
+    (name "r-bndesr")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bndesr" version))
+              (sha256
+               (base32
+                "10xpf4x5xk70bxbqwlc2niw3chd7czgnmz6073mmxpg6qd7qzyhv"))))
+    (properties `((upstream-name . "bndesr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-readxl
+                             r-readr
+                             r-rcurl
+                             r-lubridate
+                             r-janitor
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=bndesr")
+    (synopsis "Access Data from the Brazilian Development Bank (BNDES)")
+    (description
+     "Allows access to data on BNDES disbursements and contracts since 1995.  The
+package makes it easy to import data from the bank into
+R.<https://www.bndes.gov.br/SiteBNDES/bndes/bndes_en>.")
+    (license license:expat)))
+
 (define-public r-bnclustomics
   (package
     (name "r-bnclustomics")
