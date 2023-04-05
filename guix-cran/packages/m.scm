@@ -9894,13 +9894,13 @@ provided.  Based on methodology detailed in Underwood, Elliott and Cucuringu
 (define-public r-motif
   (package
     (name "r-motif")
-    (version "0.5.2")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "motif" version))
               (sha256
                (base32
-                "15jdx822iskn73b6pzcxvawkyn45dp5vqwk78g80fackn6vf3ry5"))))
+                "1f7nsr2cazw8kj41i0jr4ql68m7agizy12z14nw1zvalyywr9406"))))
     (properties `((upstream-name . "motif")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -27356,13 +27356,13 @@ as a replacement to boundary clumping.")
 (define-public r-metacoder
   (package
     (name "r-metacoder")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metacoder" version))
               (sha256
                (base32
-                "0d0ihglsal9cx03jjq472x2xlqdflgxhzkr0vwvjpq0rqvq5syva"))))
+                "15pqqnyxv82dg00skq100j2p2zkpl7kw8x3s0bvlp3xhw5srdax2"))))
     (properties `((upstream-name . "metacoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -36695,13 +36695,13 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "maptiles" version))
               (sha256
                (base32
-                "0454jnc1l9mr7yh8q4gi07nsqbixsbyadfxyz3bmfmf1zzrqrqmr"))))
+                "14kscdgj6yvajqq52axq465d844azg9w5xplfr51b00jbfxmwn23"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-slippymath r-sf r-png r-curl))
@@ -38874,13 +38874,13 @@ calculate the sum of squares (SS) of clustering.")
 (define-public r-maint-data
   (package
     (name "r-maint-data")
-    (version "2.6.2")
+    (version "2.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MAINT.Data" version))
               (sha256
                (base32
-                "0c2llzjhrv1jn5zna654bjgyq5q0hqwzfv9kda9mfjf20pfc34my"))))
+                "0hjrz25jg4a6kcap01rjjgfvvmg1padd57wgjxihaxpsm7pb0fq9"))))
     (properties `((upstream-name . "MAINT.Data")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -39578,16 +39578,22 @@ outcome model be within a specified, possibly large, class of models.")
 (define-public r-madpop
   (package
     (name "r-madpop")
-    (version "1.1.4")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MADPop" version))
               (sha256
                (base32
-                "0r8c31sjn3ma6fghc0kbq27djha4321jsdrpwvl65qd74ivp305v"))))
+                "0r2yicpzcahx1bw93j0z601hzkcyknvf3657qm76lxsw0lb4lj1r"))))
     (properties `((upstream-name . "MADPop")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders r-rstan r-rcppeigen r-rcpp r-bh))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlysy/MADPop")
     (synopsis "MHC Allele-Based Differencing Between Populations")

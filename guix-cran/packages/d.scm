@@ -12091,13 +12091,13 @@ the form of an exponential equation (Buckingham, (1914),
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dimensio" version))
               (sha256
                (base32
-                "1sk4icncj30zq9qyfbhr0iq2wzpm6qsmq376dk4smqgpfm7fpj7q"))))
+                "1nxb73xmvmkw0x0vg3sw8dgq1g58bwqpscknc21i3b4w61h5n02y"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))

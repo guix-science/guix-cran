@@ -4626,6 +4626,45 @@ and Notation) diagrams, using overlays, style customization and interactions,
 with the bpmn-visualization TypeScript library.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
 
+(define-public r-bpmnr
+  (package
+    (name "r-bpmnr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bpmnR" version))
+              (sha256
+               (base32
+                "1nrdy8szpinzv1whp627sf8khmnr911d878rn0kmp515iixnl6zr"))))
+    (properties `((upstream-name . "bpmnR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-uuid
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-knitr
+                             r-huxtable
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer
+                             r-assertive))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://cran.r-project.org/package=bpmnR")
+    (synopsis "Support for BPMN (Business Process Management Notation) Models")
+    (description
+     "Creating, rendering and writing BPMN diagrams <https://www.bpmn.org/>.
+Functionalities can be used to visualize and export BPMN diagrams created using
+the pm4py and bupaRminer packages.  Part of the bupaR ecosystem.")
+    (license license:expat)))
+
 (define-public r-bpm
   (package
     (name "r-bpm")
@@ -12588,6 +12627,26 @@ files, and read binary dosage files.")
 and Specificity meets and its a best way to minimize both Type-1 and Type-2
 error for a binary Classifier in determining the Probability threshold.")
     (license license:gpl2)))
+
+(define-public r-binarize
+  (package
+    (name "r-binarize")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Binarize" version))
+              (sha256
+               (base32
+                "08xg3s30mk5q0hfvigysnfp8lsnq42j267ylpnhphw5vzlg5xivx"))))
+    (properties `((upstream-name . "Binarize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-diptest))
+    (home-page "https://cran.r-project.org/package=Binarize")
+    (synopsis "Binarization of One-Dimensional Data")
+    (description
+     "This package provides methods for the binarization of one-dimensional data and
+some visualization functions.")
+    (license license:artistic2.0)))
 
 (define-public r-binancer
   (package
@@ -24706,13 +24765,13 @@ Reactive Global Minimum Variance Portfolios with k-BAHC covariance cleaning
 (define-public r-baguette
   (package
     (name "r-baguette")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baguette" version))
               (sha256
                (base32
-                "1vrmbq5fmc8j6rjdbq90m6cgdgxckvqql0w5ljwj96j67ypywg86"))))
+                "0y298la45hgw7f58ydq198ycga8bzxh0czv9l3xdrprd1bhmdn1x"))))
     (properties `((upstream-name . "baguette")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

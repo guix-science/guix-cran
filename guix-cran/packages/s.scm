@@ -10013,16 +10013,16 @@ Pinto & Pereira (2021) <arXiv:2109.07978>.")
 (define-public r-stepgbm
   (package
     (name "r-stepgbm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stepgbm" version))
               (sha256
                (base32
-                "1psjnxc7dadbm1405wm3vgsf9m2pn8bm82rn9md3cxhp33jqh1bx"))))
+                "1wcc4m9alphacdf9df5z29hz881625czxpyq93kzwc0nhnvz2gp0"))))
     (properties `((upstream-name . "stepgbm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-steprf r-spm r-gbm))
+    (propagated-inputs (list r-steprf r-spm))
     (home-page "https://cran.r-project.org/package=stepgbm")
     (synopsis
      "Stepwise Variable Selection for Generalized Boosted Regression Modeling")
@@ -11297,13 +11297,13 @@ international (<https://vsni.co.uk/software/asreml-r>).")
 (define-public r-statgenqtlxt
   (package
     (name "r-statgenqtlxt")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statgenQTLxT" version))
               (sha256
                (base32
-                "0pgxxdmmwc0v964alnyqxfkzp8gsqiixzpf5r2v5kj779gvq4qz8"))))
+                "0i17xl4q0alyd2w4giynarv7wqhimvbd58chqrjxy4yyq419jzry"))))
     (properties `((upstream-name . "statgenQTLxT")))
     (build-system r-build-system)
     (propagated-inputs (list r-statgengwas
@@ -12867,13 +12867,13 @@ Parts of the code have been ported to C from Ament's Matlab code available at
 (define-public r-stabm
   (package
     (name "r-stabm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stabm" version))
               (sha256
                (base32
-                "0x8dbafwfpi3r5rzqn34257g9vz4b01gijxvvfch1dn13pm4vcmr"))))
+                "1vslidq2pzpwhsrsklghaqsdjjf4w4wqs2dng0p68zhrv5vlivhq"))))
     (properties `((upstream-name . "stabm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-checkmate))
@@ -29806,13 +29806,13 @@ sky pixel.  The algorithm uses the Ridler and Calvard method (Ridler and Calvard
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.1.6")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "skpr" version))
               (sha256
                (base32
-                "1fbdg44jrrjfm49c0k8s6xi556q2fzy2pmbfma1vmggnx6d917wi"))))
+                "1hlynykjlv1fgh9d6f04w7clclv16179n6smvhb1ahcqvmrn2ad3"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -29931,13 +29931,13 @@ the selected 2 service provider.")
 (define-public r-sklarsomega
   (package
     (name "r-sklarsomega")
-    (version "3.0-1")
+    (version "3.0-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sklarsomega" version))
               (sha256
                (base32
-                "110j27wjj1z30b7y60lm6jdimb0x5yrj18qyb0m6m2fpsczg93w4"))))
+                "027rx1x5hsn0qx7s6s2sqf13p49jbhi6g7w0fzfqf619p3fzkghg"))))
     (properties `((upstream-name . "sklarsomega")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -39268,13 +39268,13 @@ implementations for exactly computing the entire Poisson-Binomial distribution."
 (define-public r-shidashi
   (package
     (name "r-shidashi")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shidashi" version))
               (sha256
                (base32
-                "1pp0vbwb3j5dvwf6n6ny7hgwb1c90vz2inrg8s92332bn5d0jlmi"))))
+                "133pm4chyp9gm050bgccpfi9g4b83m76g23jc59761z229v868p7"))))
     (properties `((upstream-name . "shidashi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -39285,7 +39285,7 @@ implementations for exactly computing the entire Poisson-Binomial distribution."
                              r-fastmap
                              r-digest))
     (native-inputs (list esbuild))
-    (home-page "https://cran.r-project.org/package=shidashi")
+    (home-page "https://dipterix.org/shidashi/")
     (synopsis "Shiny Dashboard Template System")
     (description
      "This package provides a template system based on AdminLTE3
@@ -50346,6 +50346,42 @@ randomized experiments, as described in Hedges, Pustejovsky, and Shadish (2012)
 (2023) <DOI:10.1016/j.jsp.2023.02.002>.  Includes an interactive web interface.")
     (license license:gpl3)))
 
+(define-public r-scdha
+  (package
+    (name "r-scdha")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scDHA" version))
+              (sha256
+               (base32
+                "075prhak80d6v9hcxsmn3f1mlc4liahh0fdpn8n6hs3ghczrk5cl"))))
+    (properties `((upstream-name . "scDHA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uwot
+                             r-torch
+                             r-rhpcblasctl
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcppannoy
+                             r-rcpp
+                             r-matrixstats
+                             r-matrix
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-coro
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/duct317/scDHA")
+    (synopsis "Single-Cell Decomposition using Hierarchical Autoencoder")
+    (description
+     "This package provides a fast and accurate pipeline for single-cell analyses.
+The scDHA software package can perform clustering, dimension reduction and
+visualization, classification, and time-trajectory inference on single-cell data
+(Tran et.al. (2021) <DOI:10.1038/s41467-021-21312-2>).")
+    (license license:gpl3)))
+
 (define-public r-scdensity
   (package
     (name "r-scdensity")
@@ -53148,13 +53184,13 @@ cancer data <arXiv:2012.06093>.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAMtool" version))
               (sha256
                (base32
-                "09bs0q0h1mh377ws6ljcwh527gvqkppd85vj57xyzah5zdfi567c"))))
+                "1rcx61d0rma6dr0s59xx51n109s19fbrryr6b5qixbjh09qs7jh2"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars

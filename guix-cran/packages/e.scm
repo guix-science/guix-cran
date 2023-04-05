@@ -3215,13 +3215,13 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 (define-public r-evreg
   (package
     (name "r-evreg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "evreg" version))
               (sha256
                (base32
-                "0gkrqrzx313rbvlzis32ip8a055pcglll9v5vv6pppacpmi65ih2"))))
+                "0fbrbd60f8fvby369a2ffmg29xq2rrjfgrb3xp8b9wn13mvk0vzr"))))
     (properties `((upstream-name . "evreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-evclust))
@@ -5782,13 +5782,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "espadon" version))
               (sha256
                (base32
-                "04l37v5pj59s8j7x0ww0c1v0fd4iazgpp3ny0f3wvn2kcdbmx5q1"))))
+                "1zvl6lwwgndqavsf0sdkaavsyhl490iybbi1w3cwcpkc3g461v3c"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

@@ -864,16 +864,16 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryup
   (package
     (name "r-queryup")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryup" version))
               (sha256
                (base32
-                "1jgw3ay0zgqhsg7c2200v7vsgd2ixxrg9yxnyaz248l979avc0za"))))
+                "11abm3rvgvyzx247rrs32g46idx4k32knlnmhvvahgm5y3hh8l6s"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr))
+    (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VoisinneG/queryup")
     (synopsis "Query the 'UniProtKB' REST API")
@@ -1141,28 +1141,30 @@ forest package ranger'.")
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
-    (version "1.5-0")
+    (version "1.6-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quantregGrowth" version))
               (sha256
                (base32
-                "1nxdliawvls1v4lwq4fqg9j2f3v3f1h7zpmqw60n5k9s47siscig"))))
+                "1jvn34sppsxm82z9aamfnnm8flvzwflgwm5y5vcsr145rac7pwpf"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quantregGrowth")
     (synopsis
-     "Growth Charts via Smooth Regression Quantiles with Automatic Smoothness Estimation and Additive Terms")
+     "Non-Crossing Additive Regression Quantiles and Non-Parametric Growth Charts")
     (description
      "Fits non-crossing regression quantiles as a function of linear covariates and
 multiple smooth terms, including varying coefficients, via B-splines with
-L1-norm difference penalties.  The smoothing parameters are estimated as part of
-the model fitting, see Muggeo and others (2021) <doi:10.1177/1471082X20929802>.
-Monotonicity and concavity constraints on the fitted curves are allowed, see
-Muggeo and others (2013) <doi:10.1007/s10651-012-0232-1> and also
-<doi:10.13140/RG.2.2.12924.85122> for some code examples.")
+L1-norm difference penalties.  Random intercepts and variable selection are
+allowed via the lasso penalties.  The smoothing parameters are estimated as part
+of the model fitting, see Muggeo and others (2021)
+<doi:10.1177/1471082X20929802>, and monotonicity and concavity constraints on
+the fitted curves are allowed, see Muggeo and others (2013)
+<doi:10.1007/s10651-012-0232-1>, and also <doi:10.13140/RG.2.2.12924.85122> or
+<doi:10.13140/RG.2.2.29306.21445> some code examples.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-quantregforest
@@ -3682,6 +3684,31 @@ original data set.")
 algorithm.  This package provides an easy and simple way to read, write and
 display bitmap images stored in the QOI (Quite Ok Image) format.  It can read
 and write both files and in-memory raw vectors.")
+    (license license:gpl3+)))
+
+(define-public r-qmvs
+  (package
+    (name "r-qmvs")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qmvs" version))
+              (sha256
+               (base32
+                "0mmz0f62n5yip3h7knagc3rp7kb5jyfr9a24ih6knya5lri5d70h"))))
+    (properties `((upstream-name . "qmvs")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=qmvs")
+    (synopsis "Queueing Model of Visual Search")
+    (description
+     "The queueing model of visual search models the accuracy and response time data
+in a visual search experiment using queueing models with finite customer
+population and stopping criteria of completing the service for finite number of
+customers.  It implements the conceptualization of a hybrid model proposed by
+Moore and Wolfe (2001), in which visual stimuli enter the processing one after
+the other and then are identified in parallel.  This package provides functions
+that simulate the specified queueing process and calculate the Wasserstein
+distance between the empirical response times and the model prediction.")
     (license license:gpl3+)))
 
 (define-public r-qmrparser

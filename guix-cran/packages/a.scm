@@ -2475,13 +2475,13 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
 (define-public r-aum
   (package
     (name "r-aum")
-    (version "2022.2.7")
+    (version "2023.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aum" version))
               (sha256
                (base32
-                "0a2nh1fnn7z4c592gj280w8yb54wi8msfdmg8gzbz52m1x3pxbi0"))))
+                "10cx9r14s3izcdzfq717nhnh0ys8bsyibnrfsl71c785w5jgbad2"))))
     (properties `((upstream-name . "aum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -6223,6 +6223,28 @@ points, the triangles are drawn regarding the following points: 1.the origin of
 the axes; 2.the sample points; 3.  the vector endpoint representing some
 variable.")
     (license license:expat)))
+
+(define-public r-area
+  (package
+    (name "r-area")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "area" version))
+              (sha256
+               (base32
+                "1dyxrfs69x3dssb7ifs024m4l3b1fdap1x5lkbkpas5ngyg7ivcz"))))
+    (properties `((upstream-name . "area")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://github.com/hypertidy/area")
+    (synopsis "Calculate Area of Triangles and Polygons")
+    (description
+     "Calculate the area of triangles and polygons using the shoelace formula.  Area
+may be signed, taking into account path orientation, or unsigned, ignoring path
+orientation.  The shoelace formula is described at
+<https://en.wikipedia.org/wiki/Shoelace_formula>.")
+    (license license:gpl3)))
 
 (define-public r-ards
   (package
@@ -12406,6 +12428,35 @@ after Kneen and Annegarn (1996) <doi:10.1016/0168-583X(95)00908-6>, SNIP
 algorithm after Ryan et al. (1988) <doi:10.1016/0168-583X(88)90063-8>, 4S Peak
 Filling after Liland (2015) <doi:10.1016/j.mex.2015.02.009> and more.")
     (license license:gpl3+)))
+
+(define-public r-align
+  (package
+    (name "r-align")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "align" version))
+              (sha256
+               (base32
+                "1r411yvsgzfywamsjz3j5pim0qjfa7rmhdkhd3sj8lp1xh98jhy9"))))
+    (properties `((upstream-name . "align")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matlab))
+    (home-page "https://cran.r-project.org/package=align")
+    (synopsis "Modified DTW Algorithm for Stratigraphic Time Series Alignment")
+    (description
+     "This package provides a dynamic time warping (DTW) algorithm for stratigraphic
+alignment, translated into R from the original published MATLAB code by Hay et
+al. (2019) <doi:10.1130/G46019.1>.  The DTW algorithm incorporates two
+geologically relevant parameters (g and edge) for augmenting the typical DTW
+cost matrix, allowing for a range of sedimentologic and chronologic conditions
+to be explored, as well as the generation of an alignment library (as opposed to
+a single alignment solution).  The g parameter relates to the relative sediment
+accumulation rate between the two time series records, while the edge parameter
+relates to the amount of total shared time between the records.  Note that this
+algorithm is used for all DTW alignments in the Align Shiny application,
+detailed in Hagen et al. (in review).")
+    (license license:gpl3)))
 
 (define-public r-aliases2entrez
   (package

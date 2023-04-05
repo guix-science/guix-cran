@@ -983,31 +983,6 @@ or from outside of R from the command line making it easy to include them
 package tests and in Continuous Integration (CI) pipelines.")
     (license license:lgpl2.1+)))
 
-(define-public r-future-callr
-  (package
-    (name "r-future-callr")
-    (version "0.8.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "future.callr" version))
-              (sha256
-               (base32
-                "1w7wq2nrvj65a25nsb5h99258p9565qwnlvcc07nyc21gm5zrg9k"))))
-    (properties `((upstream-name . "future.callr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-future r-callr))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://future.callr.futureverse.org")
-    (synopsis "Future API for Parallel Processing using 'callr'")
-    (description
-     "Implementation of the Future API on top of the callr package.  This allows you
-to process futures, as defined by the future package, in parallel out of the
-box, on your local (Linux, macOS, Windows, ...) machine.  Contrary to backends
-relying on the parallel package (e.g. future::multisession') and socket
-connections, the callr backend provided here can run more than 125 parallel R
-processes.")
-    (license license:lgpl2.1+)))
-
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
@@ -9072,13 +9047,13 @@ method can be referenced at: Toshiro Tango and Kunihiko Takahashi (2005)
 (define-public r-flexrsurv
   (package
     (name "r-flexrsurv")
-    (version "2.0.13")
+    (version "2.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flexrsurv" version))
               (sha256
                (base32
-                "06xzfbn8i6jkgq0q71a5wxq6f1g6nkw47akp1bhj93qfyvfryp9l"))))
+                "1bp699jnxkiyr50z7fihildksvjk4h59cysj32rqw4wdqbr1bhxw"))))
     (properties `((upstream-name . "flexrsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -19342,13 +19317,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fabletools" version))
               (sha256
                (base32
-                "1appg3pzw6b08nxh0p1ldbvv1j091v0kcygm808nf04v9axp5f95"))))
+                "1ami14vhm6g1dgcdka6y8qfx5hi0bb6h46sm50lyr6ypzz1yg8zk"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

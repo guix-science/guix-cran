@@ -1626,19 +1626,20 @@ and Cox regression results as well as forest plots.")
 (define-public r-publipha
   (package
     (name "r-publipha")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "publipha" version))
               (sha256
                (base32
-                "0ssmkz4bbrp5yvqb2da0i6shzm59ydw2sqkmqkid039782sibjch"))))
+                "03fpwxh5fyiq84wvmp5yyvsvqnznxyc4ncffn0nfhdnj5giymqvh"))))
     (properties `((upstream-name . "publipha")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
                              r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-loo
@@ -3891,31 +3892,26 @@ be used to calculate the cross spectrum (multivariate analyses).")
 (define-public r-pscr
   (package
     (name "r-pscr")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PScr" version))
               (sha256
                (base32
-                "0376dddwydgnwdpxdvv9cp8nk2j57dsqmfa94njxw9a19r7g3xw5"))))
+                "0cbmb1z4iwxw82m3f3y5iyr2hd1mgqsrvn7ip4rmsqy3zakyh06s"))))
     (properties `((upstream-name . "PScr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-survival
-                             r-pracma
-                             r-nlme
-                             r-mstate
-                             r-lambertw
-                             r-gtools))
+    (propagated-inputs (list r-vgam r-survival r-pracma))
     (home-page "https://cran.r-project.org/package=PScr")
     (synopsis "Estimation for the Power Series Cure Rate Model")
     (description
      "Provide estimation for particular cases of the power series cure rate model
 <doi:10.1080/03610918.2011.639971>.  For the distribution of the concurrent
 causes the alternative models are the Poisson, logarithmic, negative binomial
-and Bernoulli (which are includes in the original work) and the polylogarithm
-model <doi:10.1080/00949655.2018.1451850>.  The estimation procedure is based on
-the EM algorithm discussed in <doi:10.1080/03610918.2016.1202276>.  For the
+and Bernoulli (which are includes in the original work), the polylogarithm model
+<doi:10.1080/00949655.2018.1451850> and the Flory-Schulz
+<doi:10.3390/math10244643>.  The estimation procedure is based on the EM
+algorithm discussed in <doi:10.1080/03610918.2016.1202276>.  For the
 distribution of the time-to-event the alternative models are slash half-normal,
 Weibull, gamma and Birnbaum-Saunders distributions.")
     (license license:gpl2+)))

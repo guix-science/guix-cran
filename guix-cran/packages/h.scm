@@ -7509,13 +7509,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-heuristicsminer
   (package
     (name "r-heuristicsminer")
-    (version "0.2.7")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "heuristicsmineR" version))
               (sha256
                (base32
-                "0y5lm7yid2ra1znmxca2d3wcw4yp9dxdxgza3bvgzwxbg2mjnjn1"))))
+                "0w4f7xpz2342k38b5a7fs6fq50045hh2836390zg36nqdapg8vlv"))))
     (properties `((upstream-name . "heuristicsmineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11045,6 +11045,46 @@ relative frequencies.")
      "Simulate haplotypes through meioses.  Allows specification of population
 parameters.")
     (license license:gpl2+)))
+
+(define-public r-haplocatcher
+  (package
+    (name "r-haplocatcher")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HaploCatcher" version))
+              (sha256
+               (base32
+                "00q9z9lihw1acrl9p7bl87sz8hqvszchf85dqs72bcx7zz0k6dw3"))))
+    (properties `((upstream-name . "HaploCatcher")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest
+                             r-patchwork
+                             r-lattice
+                             r-knitr
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HaploCatcher")
+    (synopsis "Predictive Haplotyping Package")
+    (description
+     "Used for predicting a genotypeâs allelic state at a specific locus/QTL/gene.
+This is accomplished by using both a genotype matrix and a separate file which
+has categorizations about loci/QTL/genes of interest for the individuals in the
+genotypic matrix.  A training population can be created from a panel of
+individuals who have been previously screened for specific loci/QTL/genes, and
+this previous screening could be summarized into a category.  Using the
+categorization of individuals which have been genotyped using a genome wide
+marker platform, a model can be trained to predict what category (haplotype) an
+individual belongs in based on their genetic sequence in the region associated
+with the locus/QTL/gene.  These trained models can then be used to predict the
+haplotype of a locus/QTL/gene for individuals which have been genotyped with a
+genome wide platform yet not genotyped for the specific locus/QTL/gene.  This
+package is based off work done by Winn et al 2021.  For more specific
+information on this method, refer to <doi:10.1007/s00122-022-04178-w>.")
+    (license license:expat)))
 
 (define-public r-haplo-ccs
   (package

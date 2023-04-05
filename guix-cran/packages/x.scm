@@ -1016,6 +1016,37 @@ different SQL flavors.")
 into number of tables while preserving parent to child relationships.")
     (license license:gpl2+)))
 
+(define-public r-xmeta
+  (package
+    (name "r-xmeta")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xmeta" version))
+              (sha256
+               (base32
+                "1jl83qpf01h7smgpdkbv434gyimxknk423ri0yy09bxr5smbq7ch"))))
+    (properties `((upstream-name . "xmeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plotrix
+                             r-numderiv
+                             r-mvmeta
+                             r-metafor
+                             r-mass
+                             r-glmmml
+                             r-aod))
+    (home-page "https://github.com/Penncil/xmeta")
+    (synopsis "Toolbox for Multivariate Meta-Analysis")
+    (description
+     "This package provides a toolbox for meta-analysis.  This package includes: 1,a
+robust multivariate meta-analysis of continuous or binary outcomes; 2, a
+bivariate Egger's test for detecting small study effects; 3, Galaxy Plot: A New
+Visualization Tool of Bivariate Meta-Analysis Studies; 4, a bivariate T&F method
+accounting for publication bias in bivariate meta-analysis, based on symmetry of
+the galaxy plot.  Hong C. et al(2020) <doi:10.1093/aje/kwz286>, Chongliang L. et
+al(2020) <doi:10.1101/2020.07.27.20161562>.")
+    (license license:gpl2+)))
+
 (define-public r-xlutils3
   (package
     (name "r-xlutils3")

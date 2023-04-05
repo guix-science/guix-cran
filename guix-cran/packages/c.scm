@@ -4882,13 +4882,13 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstable" version))
               (sha256
                (base32
-                "192agl25w46m38i0p1j6kz0d3sylxqrzhdfy1l605d5zcgpm8vzj"))))
+                "1syavk3yad7r3fybg37ppc3m6c5gz018bikxac6gdl887p858wi9"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17067,18 +17067,18 @@ concept maps and concept landscapes (sets of concept maps).")
 (define-public r-comat
   (package
     (name "r-comat")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "comat" version))
               (sha256
                (base32
-                "0igcqvz1sjprxw6qf3wy9awywx9g5xcdkr9sl3vb61jyxxppnagh"))))
+                "0wj1j61phc6nxg25pqqf2xapvnxpk5qyigmwk6xi92wnvv5nrd00"))))
     (properties `((upstream-name . "comat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://nowosad.github.io/comat/")
+    (home-page "https://jakubnowosad.com/comat/")
     (synopsis "Creates Co-Occurrence Matrices of Spatial Data")
     (description
      "Builds co-occurrence matrices based on spatial raster data.  It includes
@@ -22657,6 +22657,29 @@ dimension reduction based on a singular value decomposition in a Hilbert space,
 which reduces the curve regression problem to several scalar linear regression
 problems.")
     (license license:lgpl2.0+)))
+
+(define-public r-clptheory
+  (package
+    (name "r-clptheory")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "clptheory" version))
+              (sha256
+               (base32
+                "1ix3yh4w97llx8dw2pp1gpwgrfag2zr4wb2hp3z3j3ggs587yic4"))))
+    (properties `((upstream-name . "clptheory")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-popdemo r-magrittr r-dplyr r-car))
+    (home-page "https://github.com/dbasu-umass/clptheory/")
+    (synopsis "Compute Price of Production and Labor Values")
+    (description
+     "Computes the uniform rate of profit, the vector of price of production and the
+vector of labor values; and also compute measures of deviation between relative
+prices of production and relative values.
+<https://scholarworks.umass.edu/econ_workingpaper/347/>.  You provide the
+input-output data and clptheory does the calculations for you.")
+    (license license:expat)))
 
 (define-public r-cloudutil
   (package
@@ -33930,13 +33953,13 @@ Specifically, this package implements a fixed-effects model [Kazeem and Farrall
 (define-public r-catlearn
   (package
     (name "r-catlearn")
-    (version "0.9.1")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "catlearn" version))
               (sha256
                (base32
-                "0l7ns9dmgl5k9nmywknna9hi8bmvlijds89pppywd7karksr5i66"))))
+                "1bzzzqprgyskkf1dnb5k4pqkdn5m67a3pxbnk1cnhscagcjndvy6"))))
     (properties `((upstream-name . "catlearn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

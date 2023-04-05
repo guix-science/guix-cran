@@ -3870,17 +3870,17 @@ cluster evaluation metrics.")
 (define-public r-tsci
   (package
     (name "r-tsci")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSCI" version))
               (sha256
                (base32
-                "02ia0r26f7b443rn5560n423xy2yx08qqb5zc1zbpqha4lv8s4nc"))))
+                "1h05k4lxvaqijf4xdvm7h7wvm49d0m57hixc5kkp0z0sq31y7vnp"))))
     (properties `((upstream-name . "TSCI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xgboost r-rfast r-ranger))
-    (home-page "https://github.com/dlcarl/TSML")
+    (propagated-inputs (list r-xgboost r-rfast r-ranger r-fastdummies))
+    (home-page "https://github.com/dlcarl/TSCI")
     (synopsis
      "Tools for Causal Inference with Possibly Invalid Instrumental Variables")
     (description
@@ -3888,7 +3888,9 @@ cluster evaluation metrics.")
 settings when instrumental variable regression is not suitable because of
 potentially invalid instrumental variables.  Based on Guo and Buehlmann (2022)
 \"Two Stage Curvature Identification with Machine Learning: Causal Inference with
-Possibly Invalid Instrumental Variables\" <arXiv:2203.12808> .")
+Possibly Invalid Instrumental Variables\" <arXiv:2203.12808> and Carl,
+Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two stage curvature identification
+for causal inference with invalid instruments\" <arXiv:2304.00513>.")
     (license license:gpl3+)))
 
 (define-public r-tsbss
@@ -7363,13 +7365,13 @@ described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et al.
 (define-public r-tramme
   (package
     (name "r-tramme")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tramME" version))
               (sha256
                (base32
-                "1xsxn3y809wyyxvzdi9db9pkw1bnvypykmjjy3qwzxd9q3f9i48c"))))
+                "07g8h0z43wvf7hwvqnggs0z24kq8ds3k9m4b1a5cmiziag3cm1nl"))))
     (properties `((upstream-name . "tramME")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -7378,6 +7380,7 @@ described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et al.
                              r-rcppeigen
                              r-numderiv
                              r-nlme
+                             r-mvtnorm
                              r-mlt
                              r-mgcv
                              r-matrix
@@ -13837,13 +13840,13 @@ unpublished research.")
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.5.9")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyhydat" version))
               (sha256
                (base32
-                "0jd0p7azm5xsqr7bp3xn735rr8j4ikqgjqdlh01bl9wwg7jinxn4"))))
+                "15c54pbkm40n3i3kbmx38fkmjp9hjixdpw5ikvwjid9fzky36f1q"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20640,6 +20643,47 @@ Hejblum, Skinner & Thiebaut (2015) <doi: 10.1371/journal.pcbi.1004310>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tcgaviz
+  (package
+    (name "r-tcgaviz")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tcgaViz" version))
+              (sha256
+               (base32
+                "0k1jrgbxzlc9q3cx5y03mxfrrvhdfwjjqjfqlmrq72skbl027y08"))))
+    (properties `((upstream-name . "tcgaViz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-scales
+                             r-rstatix
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-plotly
+                             r-magrittr
+                             r-golem
+                             r-ggpubr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tcgaViz")
+    (synopsis "Visualization Tool for the Cancer Genome Atlas Program (TCGA)")
+    (description
+     "Differential analysis of tumor tissue immune cell type abundance based on
+RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
+<https://pancanatlas.xenahubs.net>) database.")
+    (license license:gpl3)))
+
 (define-public r-tcgaretriever
   (package
     (name "r-tcgaretriever")
@@ -21597,47 +21641,6 @@ Evaluation and thus unintentional discrepancies may exist between the this
 implementation and the implementation available from IHME.")
     (license license:gpl2)))
 
-(define-public r-targets
-  (package
-    (name "r-targets")
-    (version "0.14.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "targets" version))
-              (sha256
-               (base32
-                "0mhwvlbxnb4w054pjiw2smss28i90sg52w8v040y7sqy6gq2c8n6"))))
-    (properties `((upstream-name . "targets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-r6
-                             r-knitr
-                             r-igraph
-                             r-digest
-                             r-data-table
-                             r-codetools
-                             r-cli
-                             r-callr
-                             r-base64url))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/targets/")
-    (synopsis "Dynamic Function-Oriented 'Make'-Like Declarative Pipelines")
-    (description
-     "This package provides a pipeline toolkit for Statistics and data science in R,
-the targets package brings function-oriented programming to Make'-like
-declarative pipelines.  targets orchestrates a pipeline as a graph of
-dependencies, skips steps that are already up to date, runs the necessary
-computation with optional parallel workers, abstracts files as R objects, and
-provides tangible evidence that the results are reproducible given the
-underlying code and data.  The methodology in this package borrows from GNU Make
-(2015, ISBN:978-9881443519) and drake (2018, <doi:10.21105/joss.00550>).")
-    (license license:expat)))
-
 (define-public r-targeted
   (package
     (name "r-targeted")
@@ -21702,42 +21705,6 @@ for risk differences and relative risks (Richardson et al. (2017)
 and modifiers.  User-supplied dictionaries are supported, including Unicode
 emojis and multi-word tokens, so this package can also be used to study
 constructs beyond sentiment.")
-    (license license:expat)))
-
-(define-public r-tarchetypes
-  (package
-    (name "r-tarchetypes")
-    (version "0.7.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tarchetypes" version))
-              (sha256
-               (base32
-                "05yhq8xnrpk37x7fq0yjw4m527ji28s16dskfmljrbrzb064nw2g"))))
-    (properties `((upstream-name . "tarchetypes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-targets
-                             r-rlang
-                             r-future-callr
-                             r-future
-                             r-furrr
-                             r-fs
-                             r-dplyr
-                             r-digest))
-    (home-page "https://docs.ropensci.org/tarchetypes/")
-    (synopsis "Archetypes for Targets")
-    (description
-     "Function-oriented Make-like declarative pipelines for Statistics and data
-science are supported in the targets R package.  As an extension to targets',
-the tarchetypes package provides convenient user-side functions to make targets
-easier to use.  By establishing reusable archetypes for common kinds of targets
-and pipelines, these functions help express complicated reproducible pipelines
-concisely and compactly.  The methods in this package were influenced by the
-drake R package by Will Landau (2018) <doi:10.21105/joss.00550>.")
     (license license:expat)))
 
 (define-public r-tar

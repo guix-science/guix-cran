@@ -3446,6 +3446,28 @@ data.table and C++ language and in most of the functions it is possible to use
 parallel processing to speed-up the routines.")
     (license license:gpl3+)))
 
+(define-public r-rtlr
+  (package
+    (name "r-rtlr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rtlr" version))
+              (sha256
+               (base32
+                "1jvm45kkz6gfwnhaxy06snh1r3qc4ayrb84mi2zy2n2axhb2lvng"))))
+    (properties `((upstream-name . "rtlr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-lifecycle))
+    (home-page "https://github.com/matanhakim/rtlr")
+    (synopsis "Print Right-to-Left Languages Correctly")
+    (description
+     "Convenience functions to make some common tasks with right-to-left string
+printing easier, more convenient and with no need to remember long Unicode
+characters.  Specifically helpful for right-to-left languages such as Arabic,
+Persian and Hebrew.")
+    (license license:expat)))
+
 (define-public r-rtkore
   (package
     (name "r-rtkore")
@@ -8597,13 +8619,13 @@ government (MSIT) (No.  2022R1A2C1091319).")
 (define-public r-rpymat
   (package
     (name "r-rpymat")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rpymat" version))
               (sha256
                (base32
-                "17k14786i741vkj5a0xn6hz4fjs7vxgx35xqkb8s4knvqa4mdxj8"))))
+                "1jm45gr9fiv29lkiflmx9pbmb6h6fm8b97nyjyxpax7hj9f1ywlh"))))
     (properties `((upstream-name . "rpymat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -13019,13 +13041,13 @@ problems.")
 (define-public r-rocbc
   (package
     (name "r-rocbc")
-    (version "0.3.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rocbc" version))
               (sha256
                (base32
-                "0k5k28hp3wqyqzha7svk65k6a2vrbsndj4qlksy72ayrvqjinig7"))))
+                "08vj9nq4yysz32hwyqhs6miqznf4w5zi2isd2p4a12bccjzn6df4"))))
     (properties `((upstream-name . "rocbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-pracma r-mvtnorm r-formattable
@@ -18775,13 +18797,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "2.9.1")
+    (version "2.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rlabkey" version))
               (sha256
                (base32
-                "1x17dxdkndhg5nqbbccqs4j8dgy5qrgibfi0qdkv7p4hm7vnkkq6"))))
+                "0dvqf14z3k2x1zifp8ix8895vs8y25jia804fhnsb54z2r9pqcrm"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -21729,13 +21751,13 @@ of departure from the no unmeasured confounding assumption.")
 (define-public r-ria
   (package
     (name "r-ria")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RIA" version))
               (sha256
                (base32
-                "0vj92plwmklb0i9h6zr18dnfwi3p7wkajjjxg0vfvm4pps9pkfwp"))))
+                "1pjndiww9k8bfz05qfvmk4frg9qf2cz8cn1jk8bdv27bv9acxw1k"))))
     (properties `((upstream-name . "RIA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-oro-nifti r-oro-dicom r-nat))
@@ -21748,7 +21770,9 @@ supports DICOM, NIfTI, nrrd and npy (numpy array) file formats.  RIA calculates
 first-order, gray level co-occurrence matrix, gray level run length matrix and
 geometry-based statistics.  Almost all calculations are done using vectorized
 formulas to optimize run speeds.  Calculation of several thousands of parameters
-only takes minutes on a single core of a conventional PC.")
+only takes minutes on a single core of a conventional PC. Detailed methodology
+has been published: Kolossvary et al.  Circ: Cardiovascular Imaging.
+2017;10(12):e006843 <doi: 10.1161/CIRCIMAGING.117.006843>.")
     (license license:agpl3)))
 
 (define-public r-ri2by2
@@ -26090,6 +26114,47 @@ flexible parameterization.  Applications include Claims Development in Non-Life
 Insurance, e.g. modelling reporting delay distributions from incomplete data,
 see BÃ¼cher, Rosenstock (2022) <doi:10.1007/s13385-022-00314-4>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-reservoirnet
+  (package
+    (name "r-reservoirnet")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "reservoirnet" version))
+              (sha256
+               (base32
+                "0x87jglv7zyldagrz1kz68xi9l4j920zgpsbpzbj1ksxi2ypp98s"))))
+    (properties `((upstream-name . "reservoirnet")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-testthat
+                             r-rlang
+                             r-reticulate
+                             r-magrittr
+                             r-janitor
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/reservoirpy")
+    (synopsis "Reservoir Computing and Echo State Networks")
+    (description
+     "This package provides a simple user-friendly library based on the python module
+reservoirpy'.  It provides a flexible interface to implement efficient Reservoir
+Computing (RC) architectures with a particular focus on Echo State Networks
+(ESN).  Some of its features are: offline and online training, parallel
+implementation, sparse matrix computation, fast spectral initialization,
+advanced learning rules (e.g. Intrinsic Plasticity) etc.  It also makes possible
+to easily create complex architectures with multiple reservoirs (e.g. deep
+reservoirs), readouts, and complex feedback loops.  Moreover, graphical tools
+are included to easily explore hyperparameters.  Finally, it includes several
+tutorials exploring time series forecasting, classification and hyperparameter
+tuning.  For more information about reservoirpy', please see Trouvain et al.
+(2020) <doi:10.1007/978-3-030-61616-8_40>.  This package was developed in the
+framework of the University of Bordeauxâs IdEx \"Investments for the Future\"
+program / RRI PHDS.")
+    (license license:gpl3+)))
 
 (define-public r-reservoir
   (package
@@ -41121,17 +41186,18 @@ Leroy et al.  2013, Divers.  Distrib.  19:794-803 <doi:10.1111/ddi.12040>).")
 (define-public r-rarfreq
   (package
     (name "r-rarfreq")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RARfreq" version))
               (sha256
                (base32
-                "1yy6kkymkajafrmqqsbxfalz9bii55px2rmnn7z5f97d5m5nvqk2"))))
+                "13cczkjjmmwn7mpbryldbhwa1jifmbwmd7czviq6qkqm8zl5ggr7"))))
     (properties `((upstream-name . "RARfreq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-reshape2
+                             r-rdpack
                              r-patchwork
                              r-magrittr
                              r-latex2exp
@@ -41139,21 +41205,23 @@ Leroy et al.  2013, Divers.  Distrib.  19:794-803 <doi:10.1111/ddi.12040>).")
                              r-dplyr
                              r-data-table))
     (home-page "https://cran.r-project.org/package=RARfreq")
-    (synopsis "Response Adaptive Randomization with 'Frequentist' Approach")
+    (synopsis "Response Adaptive Randomization with 'Frequentist' Approaches")
     (description
      "This package provides functions and command-line user interface to generate
 allocation sequence by response-adaptive randomization for clinical trials.  The
-package currently supports two response-adaptive randomization procedures,
-Doubly Adaptive Biased Coin Design ('DBCD') and Sequential Estimation-adjusted
-Urn Model ('SEU'), for two endpoints, binary and normal.  One-sided proportion
-(or mean) difference and Chi-square (or ANOVA') hypothesis testing methods are
-also available in the package to facilitate the inference for treatment effect
-under different sample sizes and the inference for sample size under different
-treatment effects.  Additionally, the package provides comprehensive and
-efficient tools to allow one to evaluate and compare the performance of
-randomization procedures and tests based on various criteria.  Five allocation
-functions for DBCD and six addition rule functions for SEU are implemented to
-target allocations such as Neyman', Rosenberger and Urn allocations.")
+package currently supports two families of frequentist response-adaptive
+randomization procedures, Doubly Adaptive Biased Coin Design ('DBCD') and
+Sequential Estimation-adjusted Urn Model ('SEU'), for binary and normal
+endpoints.  One-sided proportion (or mean) difference and Chi-square (or ANOVA')
+hypothesis testing methods are also available in the package to facilitate the
+inference for treatment effect.  Additionally, the package provides
+comprehensive and efficient tools to allow one to evaluate and compare the
+performance of randomization procedures and tests based on various criteria.
+For example, plots for relationship among assumed treatment effects, sample
+size, and power are provided.  Five allocation functions for DBCD and six
+addition rule functions for SEU are implemented to target allocations such as
+Neyman', Rosenberger Rosenberger et al. (2001)
+<doi:10.1111/j.0006-341X.2001.00909.x> and Urn allocations.")
     (license license:expat)))
 
 (define-public r-rarenmtests
@@ -41888,6 +41956,27 @@ following the \"Grotta Bar\" approach pioneered by The National Institute of
 Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 <doi:10.1056/NEJM199512143332401>.")
     (license license:gpl2+)))
+
+(define-public r-rankinma
+  (package
+    (name "r-rankinma")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rankinma" version))
+              (sha256
+               (base32
+                "1skwz137cv43nj4gvi21ii4iy5j1zfrn9cg8kblk15r2cdlxn5pz"))))
+    (properties `((upstream-name . "rankinma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-netmeta r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rankinma")
+    (synopsis "Treatment Ranking in Network Meta-Analysis")
+    (description
+     "This package provides a supportive collection of functions for gathering and
+plotting treatment ranking metrics after network meta-analysis.")
+    (license license:gpl3+)))
 
 (define-public r-rankingproject
   (package

@@ -4633,13 +4633,13 @@ at Chainarong Amornbunchornvej, Pongsakorn Wangkumhang, and Sissades Tongsima
 (define-public r-ipaddress
   (package
     (name "r-ipaddress")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ipaddress" version))
               (sha256
                (base32
-                "1jq6c9krk3j9l43v1s9c81jcsmqmcb3k1pdpkdknfwb2x3j5l3vp"))))
+                "1b3w2iq3zbfmnch9wi26l0jra4784ykazimxdd4gkkqf972yk4vf"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-rcpp r-cli r-asioheaders))
@@ -16194,13 +16194,13 @@ documentation and examples.  Data source: Iowa Data portal
 (define-public r-iai
   (package
     (name "r-iai")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iai" version))
               (sha256
                (base32
-                "0gmfvzzc9yaisjkwdjddwg3cpxcm0gij7q74xxvmp076zplg09jv"))))
+                "0v19bsj3axx5imirfa4v1z3a3yk3wlvxnq7gx2nyiwv2a274jmir"))))
     (properties `((upstream-name . "iai")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
