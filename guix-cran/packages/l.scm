@@ -4547,6 +4547,28 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (2014) <doi:10.1214/14-EJS930>.")
     (license license:gpl2+)))
 
+(define-public r-logconcdead
+  (package
+    (name "r-logconcdead")
+    (version "1.6-8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LogConcDEAD" version))
+              (sha256
+               (base32
+                "1d20shva9sqdcmij0da61f9vzaz6nnw4dylribc9lsnjm3qf2079"))))
+    (properties `((upstream-name . "LogConcDEAD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-mclust r-mass))
+    (home-page "https://cran.r-project.org/package=LogConcDEAD")
+    (synopsis "Log-Concave Density Estimation in Arbitrary Dimensions")
+    (description
+     "Software for computing a log-concave (maximum likelihood) estimator for
+independent and identically distributed data in any number of dimensions.  For a
+detailed description of the method see Cule, Samworth and Stewart (2010, Journal
+of Royal Statistical Society Series B, <doi:10.1111/j.1467-9868.2010.00753.x>).")
+    (license license:gpl2+)))
+
 (define-public r-logbin
   (package
     (name "r-logbin")
@@ -5749,30 +5771,6 @@ target populations of interest.")
     (description
      "This package contains a suite of shiny applications meant to explore linear
 model inference feature through simulation and games.")
-    (license license:gpl3)))
-
-(define-public r-lmvar
-  (package
-    (name "r-lmvar")
-    (version "1.5.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lmvar" version))
-              (sha256
-               (base32
-                "0wrny8yzk5y4mzpri6xv5wibbnbaxm0195lcbk5jrl5l5gs99bn6"))))
-    (properties `((upstream-name . "lmvar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-maxlik r-matrixcalc r-matrix))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://cran.r-project.org/package=lmvar")
-    (synopsis "Linear Regression with Non-Constant Variances")
-    (description
-     "Runs a linear-like regression with in which both the expected value and the
-variance can vary per observation.  The expected values mu follows the standard
-linear model mu = X_mu * beta_mu.  The standard deviation sigma follows the
-model log(sigma) = X_sigma * beta_sigma.  The package comes with two vignettes:
-Intro gives an introduction, Math gives mathematical details.")
     (license license:gpl3)))
 
 (define-public r-lmtp
@@ -13409,27 +13407,6 @@ lazy numbers are implemented in C++ with the CGAL library
 (<https://www.cgal.org/>).")
     (license license:gpl3)))
 
-(define-public r-lazygreedy
-  (package
-    (name "r-lazygreedy")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lazygreedy" version))
-              (sha256
-               (base32
-                "18q4hsls0yrmdcyd6ws4gcvvjdmipcaxprfk65j17jfxqgyzp2yf"))))
-    (properties `((upstream-name . "lazygreedy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=lazygreedy")
-    (synopsis "Applying the Lazy-Greedy Spanning Algorithm")
-    (description
-     "This package provides an R wrapper for an efficient C++ implementation of the
-Lazy-Greedy spanning algorithm of Bouts, ten Brink, and Buchin (2014)
-<DOI:10.1145/2582112.2582154>.")
-    (license license:gpl2+)))
-
 (define-public r-lazydata
   (package
     (name "r-lazydata")
@@ -13563,13 +13540,13 @@ Univariate extreme value models, including regression models, are supported.")
 (define-public r-lawstat
   (package
     (name "r-lawstat")
-    (version "3.5")
+    (version "3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lawstat" version))
               (sha256
                (base32
-                "09qj6xlprlxrccqmjc7wmygm44ldnsljljhw5pbsdva6idlhp9jz"))))
+                "1bmv3aw4z07ypsb1z65kwdybg6c268vdy46q9nri8xsmrby3fw8b"))))
     (properties `((upstream-name . "lawstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mvtnorm r-kendall))

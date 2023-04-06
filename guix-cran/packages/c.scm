@@ -402,13 +402,13 @@ provided in the package code.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.2.1")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Cyclops" version))
               (sha256
                (base32
-                "0qlpgd6w19n4x6v9cx6nh1gpi53qp2ps6sqcglcvzabgqpkjqnfc"))))
+                "0q0n1ggv6skbb4ld55idayb6xnnwcni44br69svsd62a3yqqsj2m"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3444,13 +3444,13 @@ without any geolibraries.")
 (define-public r-csindicators
   (package
     (name "r-csindicators")
-    (version "0.0.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSIndicators" version))
               (sha256
                (base32
-                "12kbc289a3q1zjg19wcwng29hrjy76jmj3fd8c9064lj0xns5jjh"))))
+                "17ziy101xvnw6a2x2xnl7846990jjpfq314x2j79cj9630i9n7l4"))))
     (properties `((upstream-name . "CSIndicators")))
     (build-system r-build-system)
     (propagated-inputs (list r-s2dv r-multiapply r-climprojdiags))
@@ -3471,7 +3471,7 @@ dimensional structure of the input is maintained.  Additionally, the outputs of
 the functions in this package are compatible with CSTools'.  This package was
 developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
  LledÃ³ et al. (2019) <doi:10.1016/j.renene.2019.04.135>.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-cshshydrology
   (package
@@ -15500,13 +15500,13 @@ and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.27")
+    (version "3.28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compound.Cox" version))
               (sha256
                (base32
-                "1pmwi43qsnjmqpvarcmsp8qcb9yd4xgk8ddkiz647vjiaf571ixd"))))
+                "1a9rngw2y7c7byirv2xd65bhryfn4f3xdfw992aa4n9bj1w3q2fq"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
@@ -15519,9 +15519,12 @@ with high-dimensional features (e.g., gene expressions).  Available are survival
 data for non-small-cell lung cancer patients with gene expressions (Chen et al
 2007 New Engl J Med) <DOI:10.1056/NEJMoa060096>, statistical methods in Emura et
 al (2012 PLoS ONE) <DOI:10.1371/journal.pone.0047627>, Emura & Chen (2016 Stat
-Methods Med Res) <DOI:10.1177/0962280214533378>, and Emura et al.
+Methods Med Res) <DOI:10.1177/0962280214533378>, and Emura et al
 (2019)<DOI:10.1016/j.cmpb.2018.10.020>.  Algorithms for generating correlated
-gene expressions are also available.")
+gene expressions are also available.  Estimation of survival functions via
+copula-graphic (CG) estimators is also implemented, which is useful for
+sensitivity analyses under dependent censoring (Yeh et al 2023)
+<DOI:10.3390/biomedicines11030797>.")
     (license license:gpl2)))
 
 (define-public r-compositional
@@ -28722,34 +28725,6 @@ with piecewise constant variance function.  Adelfio, G. (2012), Change-point
 detection for variance piecewise constant models, Communications in Statistics,
 Simulation and Computation, 41:4, 437-448, <doi:10.1080/03610918.2011.592248>.")
     (license license:gpl2)))
-
-(define-public r-changepointshd
-  (package
-    (name "r-changepointshd")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "changepointsHD" version))
-              (sha256
-               (base32
-                "1wdhmkg21kb5jd95a0aqqp2qgdkndc69rbdxjf792gq8f1rigarh"))))
-    (properties `((upstream-name . "changepointsHD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=changepointsHD")
-    (synopsis
-     "Change-Point Estimation for Expensive and High-Dimensional Models")
-    (description
-     "This implements the methods developed in, L. Bybee and Y. Atchade. (2018).
-Contains a series of methods for estimating change-points given user specified
-black-box models.  The methods include binary segmentation for multiple
-change-point estimation.  For estimating each individual change-point the
-package includes simulated annealing, brute force, and, for Gaussian graphical
-models, an applications specific rank-one update implementation.  Additionally,
-code for estimating Gaussian graphical models is included.  The goal of this
-package is to allow for the efficient estimation of change-points in complicated
-models with high dimensional data.")
-    (license license:gpl2+)))
 
 (define-public r-changepoints
   (package

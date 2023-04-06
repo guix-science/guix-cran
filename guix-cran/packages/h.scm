@@ -248,19 +248,18 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "0p911hdqzyx0ca62pzs53qzqp9w95n1bw2ijna2g8636vmlh7mnq"))))
+                "074js9315igkjkh6dc1s1vfya1z85x06gfv14w173h5md99glds2"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
-                             r-sf
                              r-rlang
                              r-purrr
                              r-pbapply
@@ -2423,40 +2422,6 @@ high-correlation among coefficients.  A detailed description of the method: Li
 and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <arXiv:1405.3319>.")
     (license license:gpl3)))
-
-(define-public r-htetree
-  (package
-    (name "r-htetree")
-    (version "0.1.14")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "htetree" version))
-              (sha256
-               (base32
-                "069l9cwc7m1fv0hqyrilyqxd42qfs6h7xaq283yn6kj9xlb265kq"))))
-    (properties `((upstream-name . "htetree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-shiny
-                             r-rpart-plot
-                             r-rpart
-                             r-rcpp
-                             r-partykit
-                             r-matching
-                             r-jsonlite
-                             r-grf
-                             r-dplyr
-                             r-data-tree))
-    (home-page "https://cran.r-project.org/package=htetree")
-    (synopsis "Causal Inference with Tree-Based Machine Learning Algorithms")
-    (description
-     "Estimating heterogeneous treatment effects with tree-based machine learning
-algorithms and visualizing estimated results in flexible and presentation-ready
-ways.  For more information, see Brand, Xu, Koch, and Geraldo (2021)
-<doi:10.1177/0081175021993503>.  Our current package first started as a fork of
-the causalTree package on GitHub and we greatly appreciate the authors for their
-extremely useful and free package.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-htestclust
   (package

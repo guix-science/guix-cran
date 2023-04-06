@@ -15282,13 +15282,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.2")
+    (version "4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devEMF" version))
               (sha256
                (base32
-                "1bzznqvdnqzxybd4ck8iqwql69vlbbh7kqrx0hdxdfi2wls9da6d"))))
+                "1rn88dkp9h0zk1rnk0crkk43lhl1xvb6jn3i53j98mqa6zrxjrl1"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))
@@ -16300,6 +16300,27 @@ statistics.")
      "Produce publication quality graphics from output of GGobi describe display
 plugin.")
     (license license:expat)))
+
+(define-public r-describedf
+  (package
+    (name "r-describedf")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DescribeDF" version))
+              (sha256
+               (base32
+                "189wlxws23r7n2cg3sb3y72839s1jqpw9vfb4db9y7gxkgw7m9lw"))))
+    (properties `((upstream-name . "DescribeDF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries r-psych r-fnonlinear r-e1071 r-dplyr))
+    (home-page "https://cran.r-project.org/package=DescribeDF")
+    (synopsis "Description of a Data Frame")
+    (description
+     "Helps to describe a data frame in hand.  More information may be obtained from
+Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>.  Has been developed
+during PhD work of the maintainer.")
+    (license license:gpl3)))
 
 (define-public r-describedata
   (package
@@ -21846,13 +21867,13 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-0")
+    (version "0.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datetimeutils" version))
               (sha256
                (base32
-                "0z51m4cjrfim14lqxayl6pa8b9qdv5vs0awl2hfpczfscj6cabzy"))))
+                "0phk1d9vs5whkf0azwz5mn1q4j1crz0yq1fpln9si66bxzn0dzi6"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")

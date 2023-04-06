@@ -2727,6 +2727,27 @@ declaration and assignment with type checking and condition checking.")
 distributions that requires no tuning.")
     (license license:gpl3)))
 
+(define-public r-rtumblr
+  (package
+    (name "r-rtumblr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rtumblr" version))
+              (sha256
+               (base32
+                "19vl079icyh615ac8wxw810dfqlj3c1lpr0gjkkc030jpl2g0yzr"))))
+    (properties `((upstream-name . "Rtumblr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-httr r-dplyr))
+    (home-page "https://github.com/schochastics/Rtumblr/")
+    (synopsis "Collecting and Analyzing 'Tumblr' Data")
+    (description
+     "An implementation of calls designed to collect Tumblr data via its Application
+Program Interfaces (API), which can be found at the following URL:
+<https://www.tumblr.com/docs/en/api/v2>.")
+    (license license:expat)))
+
 (define-public r-rttwebclient
   (package
     (name "r-rttwebclient")
@@ -5218,33 +5239,6 @@ analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
 (2021) <arXiv:2105.11939>.  The package offers a wide array of features related
 to SRD including the computation of the SRD scores, validation options, input
 preprocessing and plotting tools.")
-    (license license:gpl3)))
-
-(define-public r-rsqmed
-  (package
-    (name "r-rsqmed")
-    (version "0.2.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RsqMed" version))
-              (sha256
-               (base32
-                "0answ66a9gi38lw48xjvb0f2cpifxi9c5iwlghwh26baffqp9m64"))))
-    (properties `((upstream-name . "RsqMed")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sis r-gmmat))
-    (home-page "https://cran.r-project.org/package=RsqMed")
-    (synopsis
-     "Total Mediation Effect Size Measure (R-Squared Measure) under Moderate or High-Dimensional Mediator Settings")
-    (description
-     "An implementation of calculating the R-squared measure as a total mediation
-effect size measure and its confidence interval for moderate- or
-high-dimensional mediator model.  It gives an option to filter out non-mediators
-using variable selection method.  The original R package is directly related to
-the paper \"Estimation of mediation effect for high-dimensional omics mediators
-with application to the Framingham Heart Study\" with <doi:10.1101/774877>.  The
-new version contains a choice of using cross-fitting, which is computationally
-faster.")
     (license license:gpl3)))
 
 (define-public r-rsqlparser
@@ -13934,13 +13928,13 @@ package extends the survey <https://CRAN.R-project.org/package=survey> package."
 (define-public r-robstattm
   (package
     (name "r-robstattm")
-    (version "1.0.5")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RobStatTM" version))
               (sha256
                (base32
-                "192acs7fwkw760d58s0byd5zk3j0gysa158wa2ygfkifzwbagc89"))))
+                "07kman12jc5qvxsamrfy46b5qq80r7jf6c5anw8nvji41viqwlm1"))))
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
@@ -23631,28 +23625,6 @@ the acceptance-rejection method.  The package provides a quick way to evaluate
 coverage rates of the resultant Bayesian interval estimates for random effects
 via a parametric bootstrapping, which we call frequency method checking.")
     (license license:gpl2)))
-
-(define-public r-rgbm
-  (package
-    (name "r-rgbm")
-    (version "1.0-10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RGBM" version))
-              (sha256
-               (base32
-                "0p3pw7ddmzhl527xphvsiy8v0liymkjk27yj5rhixb58kdw71g0y"))))
-    (properties `((upstream-name . "RGBM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=RGBM")
-    (synopsis
-     "LS-TreeBoost and LAD-TreeBoost for Gene Regulatory Network Reconstruction")
-    (description
-     "This package provides an implementation of Regularized LS-TreeBoost &
-LAD-TreeBoost algorithm for Regulatory Network inference from any type of
-expression data (Microarray/RNA-seq etc).")
-    (license license:gpl3+)))
 
 (define-public r-rgbif
   (package
@@ -34156,13 +34128,13 @@ construct density plots.")
 (define-public r-rddapp
   (package
     (name "r-rddapp")
-    (version "1.3.0")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rddapp" version))
               (sha256
                (base32
-                "1yh5yx0jfvxs566kh4dmx4k9h6gh7n4rvvv8aw4mr52ihisradqm"))))
+                "1bb76v35cpcvmjnkzficl1rvwkz37z0i56bq81m7nb87cb9p1hkv"))))
     (properties `((upstream-name . "rddapp")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -45552,13 +45524,13 @@ be archived from CRAN.")
 (define-public r-r2pmml
   (package
     (name "r-r2pmml")
-    (version "0.26.0")
+    (version "0.27.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2pmml" version))
               (sha256
                (base32
-                "15npzyjd5n1zysffhcfp4c0wykk2nhwgs8j2x8fqyn9cv2l8abjk"))))
+                "1liixrwrr23k96rkl3ijfcvxmfh43ffj8y7qr2zr50c1ampipnkr"))))
     (properties `((upstream-name . "r2pmml")))
     (build-system r-build-system)
     (inputs (list openjdk))

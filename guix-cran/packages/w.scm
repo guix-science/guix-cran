@@ -4903,19 +4903,16 @@ using this package to describe properties of real-valued fuzzy data set.")
 (define-public r-weibulltools
   (package
     (name "r-weibulltools")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "weibulltools" version))
               (sha256
                (base32
-                "1flgnsivam9vyrs6hwn3119s5bzczjm5qb1xjwydl1cd6r2984k5"))))
+                "1scdpxvc9sj4jfxnf8xcsnpnp2vn0kl25gn1m2yqa3dw97h64mcl"))))
     (properties `((upstream-name . "weibulltools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-spreda
+    (propagated-inputs (list r-tibble
                              r-segmented
                              r-sandwich
                              r-rcpparmadillo
@@ -4927,7 +4924,7 @@ using this package to describe properties of real-valued fuzzy data set.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://tim-tu.github.io/weibulltools")
+    (home-page "https://tim-tu.github.io/weibulltools/")
     (synopsis "Statistical Methods for Life Data Analysis")
     (description
      "This package provides statistical methods and visualizations that are often used
@@ -6539,6 +6536,70 @@ Prediction Error (MAPE).  This package is based on the algorithm of Ding et al.
 (2021) <DOI: 10.1007/s11356-020-12298-3>.")
     (license license:gpl3)))
 
+(define-public r-waveletml
+  (package
+    (name "r-waveletml")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletML" version))
+              (sha256
+               (base32
+                "0y3aclnrjk3zhw3ls00iwjif1ghdnfjhhglf37kr7f7alqbqg0ax"))))
+    (properties `((upstream-name . "WaveletML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets
+                             r-tseries
+                             r-pso
+                             r-neuralnet
+                             r-lsts
+                             r-forecast
+                             r-fints
+                             r-fgarch
+                             r-earth
+                             r-e1071
+                             r-caret
+                             r-atsa))
+    (home-page "https://cran.r-project.org/package=WaveletML")
+    (synopsis "Wavelet Decomposition Based Hybrid Machine Learning Models")
+    (description
+     "Wavelet decomposes a series into multiple sub series called detailed and smooth
+components which helps to capture volatility at multi resolution level by
+various models.  Two hybrid Machine Learning (ML) models (Artificial Neural
+Network and Support Vector Regression have been used) have been developed in
+combination with stochastic models, feature selection, and optimization
+algorithms for prediction of the data.  The algorithms have been developed
+following Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
+    (license license:gpl3)))
+
+(define-public r-waveletknn
+  (package
+    (name "r-waveletknn")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletKNN" version))
+              (sha256
+               (base32
+                "1pr2w74r9qrbwdhacqa4xbyk5xd33sk208slgaq4dydbx3ndh5wp"))))
+    (properties `((upstream-name . "WaveletKNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets
+                             r-tseries
+                             r-metrics
+                             r-dplyr
+                             r-caretforecast
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=WaveletKNN")
+    (synopsis "Wavelet Based K-Nearest Neighbor Model")
+    (description
+     "The employment of the Wavelet decomposition technique proves to be highly
+advantageous in the modelling of noisy time series data.  Wavelet decomposition
+technique using the \"haar\" algorithm has been incorporated to formulate a hybrid
+Wavelet KNN (K-Nearest Neighbour) model for time series forecasting, as proposed
+by Anjoy and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
+    (license license:gpl3)))
+
 (define-public r-waveletgarch
   (package
     (name "r-waveletgarch")
@@ -6559,6 +6620,36 @@ Prediction Error (MAPE).  This package is based on the algorithm of Ding et al.
      "Fits the combination of Wavelet-GARCH model for time series forecasting using
 algorithm by Paul (2015) <doi:10.3233/MAS-150328>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-waveletets
+  (package
+    (name "r-waveletets")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletETS" version))
+              (sha256
+               (base32
+                "1cxzhmyhvq7ip32csqlxzfxx6gxnwn49vvm8xx3idal4nkdlids1"))))
+    (properties `((upstream-name . "WaveletETS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets
+                             r-tseries
+                             r-metrics
+                             r-forecast
+                             r-dplyr
+                             r-caretforecast))
+    (home-page "https://cran.r-project.org/package=WaveletETS")
+    (synopsis "Wavelet Based Error Trend Seasonality Model")
+    (description
+     "ETS stands for Error, Trend, and Seasonality, and it is a popular time series
+forecasting method.  Wavelet decomposition can be used for denoising,
+compression, and feature extraction of signals.  By removing the high-frequency
+components, wavelet decomposition can remove noise from the data while
+preserving important features.  A hybrid Wavelet ETS (Error Trend-Seasonality)
+model has been developed for time series forecasting using algorithm of Anjoy
+and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
+    (license license:gpl3)))
 
 (define-public r-waveletcomp
   (package

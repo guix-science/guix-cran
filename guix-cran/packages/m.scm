@@ -6837,28 +6837,6 @@ bias-corrected AIC (AICc), generalized cross validation (GCV) and BIC.")
      "This is the library that can serialize or unserialize MessagePack format data.")
     (license license:bsd-2)))
 
-(define-public r-msglasso
-  (package
-    (name "r-msglasso")
-    (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MSGLasso" version))
-              (sha256
-               (base32
-                "1k17vnvzr647pwfbdxrpqcsp34iygq86wf0ns4rq8cj6q5mik1bv"))))
-    (properties `((upstream-name . "MSGLasso")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=MSGLasso")
-    (synopsis
-     "Multivariate Sparse Group Lasso for the Multivariate Multiple Linear Regression with an Arbitrary Group Structure")
-    (description
-     "For fitting multivariate response and multiple predictor linear regressions with
-an arbitrary group structure assigned on the regression coefficient matrix,
-using the multivariate sparse group lasso and the mixed coordinate descent
-algorithm.")
-    (license license:gpl2+)))
-
 (define-public r-msgl
   (package
     (name "r-msgl")
@@ -35091,38 +35069,6 @@ Algorithm for the stable roommate problem.  Implements the top trading cycle
 algorithm for the indivisible goods trading problem.")
     (license license:gpl2+)))
 
-(define-public r-matchingmarkets
-  (package
-    (name "r-matchingmarkets")
-    (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "matchingMarkets" version))
-              (sha256
-               (base32
-                "1jj5hzxiivqinkpddmkqdxgi83jm6blann9wgv4g8prn3lvp0i85"))))
-    (properties `((upstream-name . "matchingMarkets")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-partitions
-                             r-lpsolve
-                             r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "http://matchingMarkets.org")
-    (synopsis "Analysis of Stable Matchings")
-    (description
-     "This package implements structural estimators to correct for the sample
-selection bias from observed outcomes in matching markets.  This includes
-one-sided matching of agents into groups as well as two-sided matching of
-students to schools.  The package also contains algorithms to find stable
-matchings in the three most common matching problems: the stable roommates
-problem, the college admissions problem, and the house allocation problem.")
-    (license license:gpl2+)))
-
 (define-public r-matching
   (package
     (name "r-matching")
@@ -39390,44 +39336,16 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
 <doi:10.1073/pnas.2020397118>.")
     (license license:expat)))
 
-(define-public r-magee
-  (package
-    (name "r-magee")
-    (version "1.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MAGEE" version))
-              (sha256
-               (base32
-                "0xyz4m3b09yxjlzy3j2akwpngbqjqjcbsfkn6hig4wi4lw7szc8a"))))
-    (properties `((upstream-name . "MAGEE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-gmmat
-                             r-foreach
-                             r-compquadform))
-    (home-page "https://cran.r-project.org/package=MAGEE")
-    (synopsis "Mixed Model Association Test for GEne-Environment Interaction")
-    (description
-     "Use a glmmkin class object (GMMAT package) from the null model to perform
-generalized linear mixed model-based single-variant and variant set main effect
-tests, gene-environment interaction tests, and joint tests for association, as
-proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
-    (license license:gpl3)))
-
 (define-public r-magclass
   (package
     (name "r-magclass")
-    (version "6.8.2")
+    (version "6.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "magclass" version))
               (sha256
                (base32
-                "1jpqvi4rmhgpc4c67fxajlkid5grbp946nvg266w3hvmc2mz6ap3"))))
+                "1qss53gzhhgs4a076x7pk20n83yahjagpnvyidjvhgnwdp4nam6b"))))
     (properties `((upstream-name . "magclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-abind))

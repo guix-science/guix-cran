@@ -1351,31 +1351,6 @@ data.  The philosophy of the package is described in Guo G. (2020)
 <doi:10.1080/02331888.2020.1823979>.")
     (license license:expat)))
 
-(define-public r-isqg
-  (package
-    (name "r-isqg")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "isqg" version))
-              (sha256
-               (base32
-                "1p7n9y2j45drmmc3qdjvxjgwzdbz17z1i77vp166h5kk36n6fban"))))
-    (properties `((upstream-name . "isqg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpp r-r6 r-bh))
-    (home-page "https://cran.r-project.org/package=isqg")
-    (synopsis "In Silico Quantitative Genetics")
-    (description
-     "Accomplish high performance simulations in quantitative genetics.  The molecular
-genetic components are represented by R6/C++ classes and methods.  The core
-computational algorithm is implemented using bitsets according to
-<doi:10.1534/g3.119.400373>.  A mix between low and high level interfaces
-provides great flexibility and allows user defined extensions and a wide range
-of applications.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-ispdata
   (package
     (name "r-ispdata")
@@ -7739,6 +7714,31 @@ Used to support packages and scripts written by researchers at the United States
 Geological Survey (USGS) Idaho National Laboratory Project Office.")
     (license license:cc0)))
 
+(define-public r-inlaspacetime
+  (package
+    (name "r-inlaspacetime")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "INLAspacetime" version))
+              (sha256
+               (base32
+                "1ymyp3ciwidgjys5110k1yh1wbksrvg06r4ppds583956sn7l174"))))
+    (properties `((upstream-name . "INLAspacetime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-matrix))
+    (home-page "https://github.com/eliaskrainski/INLAspacetime")
+    (synopsis "Spatial and Spatio-Temporal Models using 'INLA'")
+    (description
+     "Prepare objects to implement models over spatial and spacetime domains with the
+INLA package (<https://www.r-inla.org>).  These objects contain data to be used
+in the cgeneric interface provided by INLA', enabling fast parallel
+computations.  It includes the spatial barrier model, see Bakka et.  al. (2019)
+<doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models in
+Lindgren et.  al. (2023) <arXiv:2006.04917>.  Details are provided in the
+vignettes available in the provided link.")
+    (license license:gpl2+)))
+
 (define-public r-inlabru
   (package
     (name "r-inlabru")
@@ -12558,13 +12558,13 @@ LeCun <http://yann.lecun.com/exdb/mnist/>.")
 (define-public r-idsl-ufax
   (package
     (name "r-idsl-ufax")
-    (version "1.9")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFAx" version))
               (sha256
                (base32
-                "1c4m6ga887fk9sn8b1r39r1k9n9zcx47a6x605dk568vp22dn1y2"))))
+                "0zdz5s2fa7bgqmscxlf9ppvkpnxidy9fhkxn3qf94bc7y4h5xzh7"))))
     (properties `((upstream-name . "IDSL.UFAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-rcppalgos r-idsl-ufa r-idsl-ipa))
@@ -13015,17 +13015,22 @@ identity metrics\".")
 (define-public r-idiogramfish
   (package
     (name "r-idiogramfish")
-    (version "2.0.9")
+    (version "2.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idiogramFISH" version))
               (sha256
                (base32
-                "1xdnw0zrs21vx1chib19pl46la0q2vjnd8psrilzc57g41wsnsf3"))))
+                "0zgqp0339g5m5d9fgim4s3bk7xdbhgnfhzna2nqri5q75ppspc00"))))
     (properties `((upstream-name . "idiogramFISH")))
     (build-system r-build-system)
     (inputs (list pandoc))
-    (propagated-inputs (list r-tidyr r-rlang r-plyr r-dplyr r-crayon))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-plyr
+                             r-dplyr
+                             r-crayon))
     (native-inputs (list r-rvcheck
                          r-rmdformats
                          r-rmarkdown

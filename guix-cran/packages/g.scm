@@ -7343,24 +7343,6 @@ method called GPCMlasso is that several variables can be treated simultaneously
 and that both continuous and categorical variables can be used to detect DIF.")
     (license license:gpl2+)))
 
-(define-public r-gpclib
-  (package
-    (name "r-gpclib")
-    (version "1.5-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gpclib" version))
-              (sha256
-               (base32
-                "11jjgg74l8hy9jz4jylhriqnzv8jcf12y1bkx22v29z3fhgkwkps"))))
-    (properties `((upstream-name . "gpclib")))
-    (build-system r-build-system)
-    (home-page "http://www.cs.man.ac.uk/~toby/gpc/")
-    (synopsis "General Polygon Clipping Library for R")
-    (description
-     "General polygon clipping routines for R based on Alan Murta's C library.")
-    (license (license:fsdg-compatible "file://LICENSE"))))
-
 (define-public r-gpcerf
   (package
     (name "r-gpcerf")
@@ -9743,37 +9725,6 @@ by Bayes rule.")
      "Likelihood-based boosting approaches for generalized mixed models are provided.")
     (license license:gpl2)))
 
-(define-public r-gmmat
-  (package
-    (name "r-gmmat")
-    (version "1.3.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GMMAT" version))
-              (sha256
-               (base32
-                "04bqvcyg4zl2knnpp150a2jzx1s88ymnb1kcfa6l0jlmn98sm6z5"))))
-    (properties `((upstream-name . "GMMAT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-foreach
-                             r-compquadform))
-    (home-page "https://cran.r-project.org/package=GMMAT")
-    (synopsis "Generalized Linear Mixed Model Association Tests")
-    (description
-     "Perform association tests using generalized linear mixed models (GLMMs) in
-genome-wide association studies (GWAS) and sequencing association studies.
-First, GMMAT fits a GLMM with covariate adjustment and random effects to account
-for population structure and familial or cryptic relatedness.  For GWAS, GMMAT
-performs score tests for each genetic variant as proposed in Chen et al. (2016)
-<DOI:10.1016/j.ajhg.2016.02.012>.  For candidate gene studies, GMMAT can also
-perform Wald tests to get the effect size estimate for each genetic variant.
-For rare variant analysis from sequencing association studies, GMMAT performs
-the variant Set Mixed Model Association Tests (SMMAT) as proposed in Chen et al.
-(2019) <DOI:10.1016/j.ajhg.2018.12.012>, including the burden test, the sequence
-kernel association test (SKAT), SKAT-O and an efficient hybrid test of the
-burden test and SKAT, based on user-defined variant sets.")
-    (license license:gpl3)))
-
 (define-public r-gmm
   (package
     (name "r-gmm")
@@ -9904,36 +9855,6 @@ learn the structure and the parameters, and perform inference in these models.
 Most of the algorithms are described in the PhD thesis of Roos (2018)
 <https://tel.archives-ouvertes.fr/tel-01943718>.")
     (license license:gpl3)))
-
-(define-public r-gmgeostats
-  (package
-    (name "r-gmgeostats")
-    (version "0.11.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gmGeostats" version))
-              (sha256
-               (base32
-                "182sqhlnvax09jbz53bfgp9wr9f309y84zk6dfgkj8la5yz273ni"))))
-    (properties `((upstream-name . "gmGeostats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rcolorbrewer
-                             r-gstat
-                             r-foreach
-                             r-compositions
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://codebase.helmholtz.cloud/geomet/gmGeostats")
-    (synopsis "Geostatistics for Compositional Analysis")
-    (description
-     "Support for geostatistical analysis of multivariate data, in particular data
-with restrictions, e.g. positive amounts data, compositional data,
-distributional data, microstructural data, etc.  It includes descriptive
-analysis and modelling for such data, both from a two-point Gaussian perspective
-and multipoint perspective.  The methods mainly follow Tolosana-Delgado, Mueller
-and van den Boogaart (2018) <doi:10.1007/s11004-018-9769-3>.")
-    (license (list license:cc-by-sa4.0 license:gpl2+))))
 
 (define-public r-gmfd
   (package
@@ -10553,21 +10474,16 @@ analysis under heterogeneity.")
 (define-public r-glow
   (package
     (name "r-glow")
-    (version "0.10.1")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glow" version))
               (sha256
                (base32
-                "1br29hy5j30k5q4xk1dglxlhqalhm76hnx8xg73v6whcg5j11392"))))
+                "1q8zci8jv71xzcxsg9b0h04mx11ykpsh4lnvkgg74zfsrf3sib0f"))))
     (properties `((upstream-name . "glow")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-ggplot2))
+    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp r-r6 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/traversc/glow")
     (synopsis "Make Plots that Glow")

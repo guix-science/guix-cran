@@ -4558,33 +4558,6 @@ selection of columns via tidyselect'.")
      "Tools to support sensible statistics for functional response analysis.")
     (license license:gpl2)))
 
-(define-public r-frailtysurv
-  (package
-    (name "r-frailtysurv")
-    (version "1.3.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "frailtySurv" version))
-              (sha256
-               (base32
-                "0jyqnj4mscfcjg38a04246xfggnjgwdgwd7w4krz6wa1c3igzx0f"))))
-    (properties `((upstream-name . "frailtySurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-reshape2
-                             r-rcpp
-                             r-numderiv
-                             r-nleqslv
-                             r-ggplot2))
-    (home-page "https://github.com/vmonaco/frailtySurv/")
-    (synopsis "General Semiparametric Shared Frailty Model")
-    (description
-     "Simulates and fits semiparametric shared frailty models under a wide range of
-frailty distributions using a consistent and asymptotically-normal estimator.
-Currently supports: gamma, power variance function, log-normal, and inverse
-Gaussian frailty models.")
-    (license license:lgpl2.0)))
-
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")

@@ -1896,13 +1896,13 @@ statistical approaches in applied experience research to human readable output."
 (define-public r-experdesign
   (package
     (name "r-experdesign")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "experDesign" version))
               (sha256
                (base32
-                "1v2j3jyxyzwkzc3y5n6pzd31yigkfwcmf12df3104m3kn86iq81r"))))
+                "1p1d1bhb04qhzbgnhmrqdiviwy0al9ivfq3wsrymhqakym3gfbdw"))))
     (properties `((upstream-name . "experDesign")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3615,13 +3615,13 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
 (define-public r-evidencesynthesis
   (package
     (name "r-evidencesynthesis")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EvidenceSynthesis" version))
               (sha256
                (base32
-                "0ipqqk7n6m9l32q0mj835fgv8vjf4ksdh4gcjmjr20n6jbn2k63c"))))
+                "13db4129bfi3ys2f4bq28c9rhik8cw7vmh8dfkr0x1pqhz40mg5s"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8211,13 +8211,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.59")
+    (version "2.0.60")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "0anpcnrvdjhlmn2a663rk2hkshpgckljmicpkzz385ms9dj9zbpr"))))
+                "0bbg8iidb7qxbas90q8g4wfsrysrkxymafz6xl9q03dmp9y1cfi7"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8437,23 +8437,20 @@ the coursera Epidemics Massive Online Open Course
 (define-public r-epilps
   (package
     (name "r-epilps")
-    (version "1.0.7")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EpiLPS" version))
               (sha256
                (base32
-                "08fi65wmj2qcchsgzjis94q05lhp1ygzzw7arc0jd688rlqgizxm"))))
+                "1axamip6f0dvl6zawqg6a35r4cbg0q4p70fpjl04p35c0gs3jgg2"))))
     (properties `((upstream-name . "EpiLPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
-                             r-progress
-                             r-mass
                              r-gridextra
                              r-ggplot2
                              r-epiestim
-                             r-crayon
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/oswaldogressani/EpiLPS>")
@@ -8462,12 +8459,12 @@ the coursera Epidemics Massive Online Open Course
     (description
      "Estimation of the instantaneous reproduction number with Laplacian-P-splines
 following the methodology of Gressani et al. (2022)
-<doi:10.1371/journal.pcbi.1010618>.  The negative Binomial distribution is used
-to model the time series of case counts.  Two methods are available for
+<doi:10.1371/journal.pcbi.1010618>.  The negative binomial distribution is used
+to model the time series of incidence data.  Two methods are available for
 inference : (1) a sampling-free approach based on a maximum a posteriori
 calibration of the hyperparameter vector and (2) a fully stochastic approach
-with a Metropolis-within-Gibbs algorithm and Langevin diffusions for efficient
-sampling of the posterior distribution.")
+with a Metropolis-adjusted Langevin algorithm for efficient sampling of the
+posterior distribution.")
     (license license:gpl3)))
 
 (define-public r-epikit
@@ -18276,13 +18273,13 @@ retrieval of a vast quantity of statistical data.")
 (define-public r-ecar
   (package
     (name "r-ecar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eCAR" version))
               (sha256
                (base32
-                "01yfvvp4615vj6sdz751xkmvf5j22jk5fgrj6bhblr6xv0j25xc0"))))
+                "1ps98abmdv8xf8xsnif95yg8z8564nlysv8vncp3cl5wc03pknhl"))))
     (properties `((upstream-name . "eCAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

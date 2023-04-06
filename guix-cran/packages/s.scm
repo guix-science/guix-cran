@@ -1142,13 +1142,13 @@ OpenMP'.")
 (define-public r-swtools
   (package
     (name "r-swtools")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SWTools" version))
               (sha256
                (base32
-                "1azhmsb00mndqza0cb0nslyyc1c2d9lc1y6p19ibisizqdr04sqx"))))
+                "0hsyds0cd8pr41gjjbs5b5qmxldqfp899gjws0qa3851mrl1jadj"))))
     (properties `((upstream-name . "SWTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6139,13 +6139,13 @@ determines the finalists', i.e., the important features, from the semifinalist'.
 (define-public r-subrank
   (package
     (name "r-subrank")
-    (version "0.9.9.2")
+    (version "0.9.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "subrank" version))
               (sha256
                (base32
-                "19mxmapxjqv1k26bnis4zkrqpgvl8m0gdxqqzkdvgq89c6y9v3mj"))))
+                "1sg1krlzck5m7g9klppxcwpbj6dnwlnc1pjvyyyw0hb5raz102w1"))))
     (properties `((upstream-name . "subrank")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=subrank")
@@ -13652,18 +13652,19 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
 (define-public r-ssmousetrack
   (package
     (name "r-ssmousetrack")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssMousetrack" version))
               (sha256
                (base32
-                "069jsp2l63jp4fv2hwadqxpkp89aqmbh439zy66rx55kws75b556"))))
+                "014b1ylynn3l3k24p4zr001ys32ajrxxdpk3jwl0lmfm7r63as58"))))
     (properties `((upstream-name . "ssMousetrack")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-ggplot2
@@ -37126,19 +37127,20 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "0.9")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shinyStorePlus" version))
               (sha256
                (base32
-                "0lrga5iiad2w4mylvi47ldhhir6dbs3j2hxcgkljapvpssq3bjcg"))))
+                "1y4yqladglkyz3br7g0prd9dniqd0pdj775dic0nlgg27gdl8ca8"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
+    (propagated-inputs (list r-shinywidgets r-shiny r-jsonlite r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://shinystoreplus.obi.obianom.com")
-    (synopsis "Secure in-Browser Storage for 'Shiny' Inputs and Variables")
+    (synopsis
+     "Secure in-Browser Storage for 'Shiny' Inputs, Outputs and Variables")
     (description
      "Store persistent and synchronized data from Shiny inputs within the browser in a
 secure format.  Refresh Shiny applications and preserve user-inputs over
@@ -40507,13 +40509,13 @@ data as developed in Betebenner (2009) <doi:10.1111/j.1745-3992.2009.00161.x>.")
 (define-public r-sgolay
   (package
     (name "r-sgolay")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sgolay" version))
               (sha256
                (base32
-                "04hbgwx92k4gncdgyglv7kdxc28qhs7ap868z2rvw89hd96ai6fx"))))
+                "0qry7286kw6ks5kc3wp89ax43smmb6b77gral72izpbw5wkblphm"))))
     (properties `((upstream-name . "sgolay")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal))
@@ -52099,13 +52101,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.9.6")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sasLM" version))
               (sha256
                (base32
-                "0garjlkvs5dlrapra6sqrv2nx3lg4s0rjn5ac8fx09bwci2f6aar"))))
+                "1m3124sf5kjwz6m70gby3hk0y4m83y48zz9pwcprbw6jaxi6klrl"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

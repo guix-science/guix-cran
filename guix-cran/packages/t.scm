@@ -7561,13 +7561,13 @@ University Press.  and Noel (2022), <https://orbilu.uni.lu/>, thesis.")
 (define-public r-trajectories
   (package
     (name "r-trajectories")
-    (version "0.2-6")
+    (version "0.2-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trajectories" version))
               (sha256
                (base32
-                "1z1vy3f5llx3xhviakkhxwg03sb71wnkgifnwg7sx0ilgmh7sbz7"))))
+                "09qz6yc21q54ivjnkh4rpm5m3j81h1vabjvrp9fwrcswj8y8k0y8"))))
     (properties `((upstream-name . "trajectories")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-spacetime r-sp r-lattice))
@@ -8930,13 +8930,13 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.6.0")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TOSTER" version))
               (sha256
                (base32
-                "1vbmzbv1cngzmpd2683q2lsq8hgfxm9gk7h093g7i96hqp7fqjmd"))))
+                "0081vdl6wpm62x992z6bx3c46qxkiy3f6k8kvwpwvkslh76pbf0z"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15134,6 +15134,45 @@ predictions, and simulating data is provided as well.  References: Brown &
 Maydeu-Olivares (2011) <doi:10.1177/0013164410375112>; BÃ¼rkner et al. (2019)
 <doi:10.1177/0013164419832063>.")
     (license license:gpl3+)))
+
+(define-public r-thunder
+  (package
+    (name "r-thunder")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "thunder" version))
+              (sha256
+               (base32
+                "1mx68i2qjhfp94xx4mawr4vz0d4vspryiq48bryhsd36l71qzlv9"))))
+    (properties `((upstream-name . "thunder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-httr r-dplyr r-curl r-airthermo))
+    (native-inputs (list r-knitr))
+    (home-page "https://bczernecki.github.io/thundeR/")
+    (synopsis
+     "Computation and Visualisation of Atmospheric Convective Parameters")
+    (description
+     "Allow to compute and visualise convective parameters commonly used in the
+operational prediction of severe convective storms.  Core algorithm is based on
+a highly optimized C++ code linked into R via Rcpp'.  Highly efficient engine
+allows to derive thermodynamic and kinematic parameters from large numerical
+datasets such as reanalyses or operational Numerical Weather Prediction models
+in a reasonable amount of time.  Package has been developed since 2017 by
+research meteorologists specializing in severe thunderstorms.  The most relevant
+methods used in the package based on the following publications Stipanuk (1973)
+<https://apps.dtic.mil/sti/pdfs/AD0769739.pdf>, McCann et al. (1994)
+<doi:10.1175/1520-0434(1994)009%3C0532:WNIFFM%3E2.0.CO;2>, Bunkers et al. (2000)
+<doi:10.1175/1520-0434(2000)015%3C0061:PSMUAN%3E2.0.CO;2>, Corfidi et al. (2003)
+<doi:10.1175/1520-0434(2003)018%3C0997:CPAMPF%3E2.0.CO;2>, Showalter (1953)
+<doi:10.1175/1520-0477-34.6.250>, Coffer et al. (2019)
+<doi:10.1175/WAF-D-19-0115.1>, Gropp and Davenport (2019)
+<doi:10.1175/WAF-D-17-0150.1>, Czernecki et al. (2019)
+<doi:10.1016/j.atmosres.2019.05.010>, Taszarek et al. (2020)
+<doi:10.1175/JCLI-D-20-0346.1>, Sherburn and Parker (2014)
+<doi:10.1175/WAF-D-13-00041.1>, Romanic et al. (2022)
+<doi:10.1016/j.wace.2022.100474>.")
+    (license license:gpl2+)))
 
 (define-public r-thriftr
   (package

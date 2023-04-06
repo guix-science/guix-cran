@@ -1509,13 +1509,13 @@ quanteda package and are specially designed for sparse textual data.")
 (define-public r-quanteda-textplots
   (package
     (name "r-quanteda-textplots")
-    (version "0.94.2")
+    (version "0.94.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quanteda.textplots" version))
               (sha256
                (base32
-                "1favm1cpka1gkpnq2qwqynay15q6f29b66wmm60wsd7dhsxcyjb6"))))
+                "05dz3llp79i1giz0b7lm6kb14qf2rp26xz33skb71iiks290zp19"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -3029,6 +3029,26 @@ inference results for the fixed-effects and variance components.  It also
 provides graphical summaries for assessing the algorithm convergence and fitting
 results.")
     (license license:gpl2+)))
+
+(define-public r-qrjoint
+  (package
+    (name "r-qrjoint")
+    (version "2.0-9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "qrjoint" version))
+              (sha256
+               (base32
+                "0dvz5adawy143r0ddgrblzac76igwmngnblr6vq57sxlvj1nsm7h"))))
+    (properties `((upstream-name . "qrjoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-matrix r-kernlab r-coda))
+    (home-page "https://cran.r-project.org/package=qrjoint")
+    (synopsis "Joint Estimation in Linear Quantile Regression")
+    (description
+     "Joint estimation of quantile specific intercept and slope parameters in a linear
+regression setting.")
+    (license license:gpl2)))
 
 (define-public r-qrisk3
   (package

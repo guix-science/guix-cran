@@ -9599,27 +9599,6 @@ read/write several more bitmap font formats using an embedded version of
 monobit'.")
     (license license:expat)))
 
-(define-public r-bitsqueezr
-  (package
-    (name "r-bitsqueezr")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bitsqueezr" version))
-              (sha256
-               (base32
-                "0dy180r9cclq46mh0fzc68p5zm9x2z5pa8ajgsk7qycdkyw5v829"))))
-    (properties `((upstream-name . "bitsqueezr")))
-    (build-system r-build-system)
-    (home-page "https://github.com/dbaston/bitsqueezr")
-    (synopsis "Quantize Floating-Point Numbers for Improved Compressibility")
-    (description
-     "This package provides a implementation of floating-point quantization algorithms
-for use in precision-preserving compression, similar to the approach taken in
-the netCDF operators (NCO) software package and described in Zender (2016)
-<doi:10.5194/gmd-2016-63>.")
-    (license license:gpl3)))
-
 (define-public r-bitrina
   (package
     (name "r-bitrina")
@@ -15336,31 +15315,6 @@ Likelihood Ratio Chi Square, and Pseudo R Square.  Aberson, C. L. (2022)
 <doi:10.31234/osf.io/s2yqn>.")
     (license license:gpl3)))
 
-(define-public r-bettermc
-  (package
-    (name "r-bettermc")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bettermc" version))
-              (sha256
-               (base32
-                "1g264b21kh5kf0v5qk09gf3ya0amblwnqlpw93h6g0k0dd3vks0h"))))
-    (properties `((upstream-name . "bettermc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
-    (home-page "https://github.com/gfkse/bettermc")
-    (synopsis "Enhanced Fork-Based Parallelization")
-    (description
-     "Drop-in replacement for parallel::mclapply() adding e.g. tracebacks, crash
-dumps, retries, condition handling, improved seeding, progress bars and faster
-inter process communication.  Some of the internal functions are also exported
-for other use: etry() (extended try), copy2shm()/allocate_from_shm() (copy to
-and allocate from POSIX shared memory), char_map/map2char() (split a character
-vector into its unique elements and a mapping on these) and various semaphore
-related functions.")
-    (license license:expat)))
-
 (define-public r-bets-covid19
   (package
     (name "r-bets-covid19")
@@ -17661,28 +17615,6 @@ for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
      "Algorithms developed for binned data analysis, gene expression data analysis and
 measurement error models for ordinal data analysis.")
     (license (license:fsdg-compatible "Unlimited"))))
-
-(define-public r-bctsne
-  (package
-    (name "r-bctsne")
-    (version "0.11.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bcTSNE" version))
-              (sha256
-               (base32
-                "1j7aab9j30iypbjvid3dfg8rnz69i83k59ympkycv9k6xwpi330p"))))
-    (properties `((upstream-name . "bcTSNE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtsne r-rspectra))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/emanuelealiverti/BC_tSNE")
-    (synopsis "Projected t-SNE for Batch Correction")
-    (description
-     "This package implements the projected t-SNE method for batch correction of
-high-dimensional data.  Please see Aliverti et al. (2020)
-<doi:10.1093/bioinformatics/btaa189> for more information.")
-    (license license:gpl3)))
 
 (define-public r-bct
   (package

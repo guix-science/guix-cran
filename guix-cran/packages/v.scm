@@ -1825,16 +1825,17 @@ Partial Dependence Profiles.")
 (define-public r-vivid
   (package
     (name "r-vivid")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivid" version))
               (sha256
                (base32
-                "0g96xvv9pjir574n2jy7zdvca0ij89kqax399xsab6hljjf85h3m"))))
+                "0sg8chg2zjirh823qlr7ysk1n6fm989bxcw9rfgp503xxp0izmd2"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer
+    (propagated-inputs (list r-sp
+                             r-rcolorbrewer
                              r-igraph
                              r-ggplot2
                              r-ggnewscale
@@ -1846,7 +1847,7 @@ Partial Dependence Profiles.")
                              r-condvis2
                              r-colorspace))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=vivid")
+    (home-page "https://alaninglis.github.io/vivid/")
     (synopsis "Variable Importance and Variable Interaction Displays")
     (description
      "This package provides a suite of plots for displaying variable importance and

@@ -6727,17 +6727,18 @@ domains, using the main design drawings.")
 (define-public r-probreco
   (package
     (name "r-probreco")
-    (version "0.1.0.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ProbReco" version))
               (sha256
                (base32
-                "0ck5jvbgmf2j4qr4rsamjdrds5jzcggwcvs2hqzhh23ildk7hj7h"))))
+                "1f56r0w3rxwdyiq7r18mm8a5j80p3dwcnphgxyy6h5binzdwyfgx"))))
     (properties `((upstream-name . "ProbReco")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-rdpack
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-purrr

@@ -12194,6 +12194,29 @@ technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
 Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
     (license license:gpl3+)))
 
+(define-public r-allmetrics
+  (package
+    (name "r-allmetrics")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AllMetrics" version))
+              (sha256
+               (base32
+                "14fgs0khi7q8l07bpldqankx5inbggcnz88969vy90jy5f92zjx2"))))
+    (properties `((upstream-name . "AllMetrics")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=AllMetrics")
+    (synopsis "Calculating Multiple Performance Metrics of a Prediction Model")
+    (description
+     "This package provides a function to calculate multiple performance metrics for
+actual and predicted values.  In total eight metrics will be calculated for
+particular actual and predicted series.  Helps to describe a Statistical model's
+performance in predicting a data.  Also helps to compare various models
+performance.  More details can be found from Garai and Paul (2023)
+<doi:10.1016/j.iswa.2023.200202>.")
+    (license license:gpl3)))
+
 (define-public r-allestimates
   (package
     (name "r-allestimates")
@@ -13659,6 +13682,42 @@ the success of the transformation via tests and plots, computes mean and
 confidence interval for back transformed data.")
     (license license:gpl2+)))
 
+(define-public r-aiccpermanova
+  (package
+    (name "r-aiccpermanova")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AICcPermanova" version))
+              (sha256
+               (base32
+                "1wi020y20chf27pqdm34l5w6fy4y0qb597hfn0fr84pdsqvc90yv"))))
+    (properties `((upstream-name . "AICcPermanova")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-future
+                             r-furrr
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-car
+                             r-broom))
+    (home-page "https://github.com/Sustainscapes/AICcPerm")
+    (synopsis "Model Selection of PERMANOVA Models Using AICc")
+    (description
+     "This package provides tools for model selection and model averaging of PerMANOVA
+models using Akaike Information Criterion corrected for small sample sizes
+(AICc) and Information Theoretic criteria principles.  The package is built
+around the PERMANOVA analysis from the vegan package and provides a streamlined
+workflow for generating and comparing models, obtaining model weights, and
+summarizing results using model averaging approaches.  The methods implemented
+in this package are based on the practical information- theoretic approach
+described by Burnham, K. P. and Anderson, D. R. (2002) (<doi:10.1007/b97636>).")
+    (license license:expat)))
+
 (define-public r-aiccmodavg
   (package
     (name "r-aiccmodavg")
@@ -14181,30 +14240,6 @@ minimal worries of overfitting.  Consequently, the speed-ups relative to
 state-of-the-art implementations can be in the thousands while mathematical and
 technical knowledge required on the user are minimized.")
     (license license:gpl3)))
-
-(define-public r-agsdest
-  (package
-    (name "r-agsdest")
-    (version "2.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AGSDest" version))
-              (sha256
-               (base32
-                "140bqzgaagdyzgxsn998jw2sxak448i47xyacn2psfnps440gfjr"))))
-    (properties `((upstream-name . "AGSDest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ldbounds))
-    (home-page "https://cran.r-project.org/package=AGSDest")
-    (synopsis "Estimation in Adaptive Group Sequential Trials")
-    (description
-     "Calculation of repeated confidence intervals as well as confidence intervals
-based on the stage-wise ordering in group sequential designs and adaptive group
-sequential designs.  For adaptive group sequential designs the confidence
-intervals are based on the conditional rejection probability principle.
-Currently the procedures do not support the use of futility boundaries or more
-than one adaptive interim analysis.")
-    (license license:gpl2+)))
 
 (define-public r-ags
   (package
@@ -18179,13 +18214,13 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
 (define-public r-act
   (package
     (name "r-act")
-    (version "1.2.7")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "act" version))
               (sha256
                (base32
-                "0zbbv9kz05r26f4sxqilynh6kj0kc123bixcjr9yqm6s8kj4yrkl"))))
+                "0zvlh48jidn6iicgpxanp4yb3bfv69wik2md91yd8x2kdr61whj8"))))
     (properties `((upstream-name . "act")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

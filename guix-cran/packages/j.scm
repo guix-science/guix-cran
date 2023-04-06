@@ -1111,24 +1111,6 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
 (2016) <DOI:10.1007/978-3-319-22461-9_11>.")
     (license license:gpl3)))
 
-(define-public r-jrf
-  (package
-    (name "r-jrf")
-    (version "0.1-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "JRF" version))
-              (sha256
-               (base32
-                "1xpvscn9iawwa0vfh3kfwzdni436bf42nvm18b8abh033ljvqpij"))))
-    (properties `((upstream-name . "JRF")))
-    (build-system r-build-system)
-    (home-page "https://www.r-project.org")
-    (synopsis
-     "Joint Random Forest (JRF) for the Simultaneous Estimation of Multiple Related Networks")
-    (description "Simultaneous estimation of multiple related networks.")
-    (license license:gpl2+)))
-
 (define-public r-jrc
   (package
     (name "r-jrc")

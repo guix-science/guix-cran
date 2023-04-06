@@ -2682,31 +2682,6 @@ this work.  The demo of this package reproduces results from the Technometrics
 paper.")
     (license license:gpl2)))
 
-(define-public r-ordinalpattern
-  (package
-    (name "r-ordinalpattern")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ordinalpattern" version))
-              (sha256
-               (base32
-                "1hlzi8rd24d9ab28dn70hf96d82r275l784ryk0c3hx574a1brlq"))))
-    (properties `((upstream-name . "ordinalpattern")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-gtools))
-    (home-page "https://cran.r-project.org/package=ordinalpattern")
-    (synopsis "Tests Based on Ordinal Patterns")
-    (description
-     "Ordinal patterns describe the dynamics of a time series by looking at the ranks
-of subsequent observations.  By comparing ordinal patterns of two times series,
-Schnurr (2014) <doi:10.1007/s00362-013-0536-8> defines a robust and
-non-parametric dependence measure: the ordinal pattern coefficient.  Functions
-to calculate this and a method to detect a change in the pattern coefficient
-proposed in Schnurr and Dehling (2017) <doi:10.1080/01621459.2016.1164706> are
-provided.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-ordinalnet
   (package
     (name "r-ordinalnet")
