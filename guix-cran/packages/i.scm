@@ -11,9 +11,10 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
@@ -4113,13 +4114,13 @@ Schaub and Marc KÃ©ry (ISBN: 9780128205648).")
 (define-public r-iplgp
   (package
     (name "r-iplgp")
-    (version "2.0.3")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IPLGP" version))
               (sha256
                (base32
-                "02gjsbd5bfqi575xs3fq01r1cr01gmsxxb58bfj3npgwba8vah21"))))
+                "0sv4zl6kn72ajnp32k9xg011y0bjxsq3a0vcj3s0w4wwkcr1h2w5"))))
     (properties `((upstream-name . "IPLGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-sommer r-ggplot2))
@@ -4858,13 +4859,13 @@ Mar 15) <doi:10.18632/oncotarget.7451>.")
 (define-public r-iols
   (package
     (name "r-iols")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IOLS" version))
               (sha256
                (base32
-                "0b2vhlw5z7lqphlhk5by4rfxxyxh1h3b2z2mancxmil99bvipm6k"))))
+                "0s7yrkps61czsf1avvmb1xcq53v92pfikq949a4i46lsyidl69ib"))))
     (properties `((upstream-name . "IOLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sandwich r-randomcolor r-matlib
@@ -5630,13 +5631,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "0.2.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intRinsic" version))
               (sha256
                (base32
-                "0slwys4vn8s6w46vc6phj74b97m4r9vkmidsp7292ns9h4ilf1qr"))))
+                "0y6xljp25bkbcqsib4x1wxcyh9vgw71smz60ij9sg5l1zwxcyvln"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-salso
@@ -5657,8 +5658,9 @@ dimensions are provided.")
 via likelihood-based approaches.  Specifically, the package implements the
 TWO-NN and Gride estimators and the Hidalgo Bayesian mixture model.  In
 addition, the first reference contains an extended vignette on the usage of the
-TWO-NN and Hidalgo models.  References: Denti (2022+, <arXiv:2102.11425>);
-Allegra et al. (2020, <doi:10.1038/s41598-020-72222-0>); Denti et al. (2022,
+TWO-NN and Hidalgo models.  References: Denti (2023,
+<doi:10.18637/jss.v106.i09>); Allegra et al. (2020,
+<doi:10.1038/s41598-020-72222-0>); Denti et al. (2022,
 <doi:10.1038/s41598-022-20991-1>); Facco et al. (2017,
 <doi:10.1038/s41598-017-11873-y>); Santos-Fernandez et al. (2021,
 <doi:10.1038/s41598-022-20991-1>).")
@@ -6234,6 +6236,30 @@ editability.  Details on the EBM algorithm can be found in the paper by Rich
 Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
 (2015, <doi:10.1145/2783258.2788613>).")
     (license license:expat)))
+
+(define-public r-interpolation
+  (package
+    (name "r-interpolation")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "interpolation" version))
+              (sha256
+               (base32
+                "12rxbpyi6hn2lijlxl3yaqp0fvxw3ipyk6x1hyl7dp3r8i5q4qy5"))))
+    (properties `((upstream-name . "interpolation")))
+    (build-system r-build-system)
+    (inputs (list gmp))
+    (propagated-inputs (list r-rcppcgal r-rcpp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/interpolation")
+    (synopsis "Interpolation of Bivariate Functions")
+    (description
+     "This package provides two different methods, linear and nonlinear, to
+interpolate a bivariate function, scalar-valued or vector-valued.  The
+interpolated data are not necessarily gridded.  The algorithms are performed by
+the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
 
 (define-public r-interplot
   (package

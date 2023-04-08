@@ -8250,13 +8250,13 @@ regression and functional data.")
 (define-public r-mrfcov
   (package
     (name "r-mrfcov")
-    (version "1.0.38")
+    (version "1.0.39")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MRFcov" version))
               (sha256
                (base32
-                "1ajpnxx49zpmph21x0q4x9w4fjpi43s8sqm294i0l883khyx6ljg"))))
+                "0vgmm9lwkpfahzlhcyaixh2x9d85rrpxipzsc0wy66j43vgn4jhp"))))
     (properties `((upstream-name . "MRFcov")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc
@@ -10773,6 +10773,28 @@ run over parameter grids and parallelising the Monte Carlo repetitions.  It also
 generates LaTeX tables.")
     (license license:gpl2)))
 
+(define-public r-monte-carlo-se
+  (package
+    (name "r-monte-carlo-se")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Monte.Carlo.se" version))
+              (sha256
+               (base32
+                "1bkmah8s8hm3yxs8gz1ssr15s4l9s37675g7agx3g7f9a72v9zbs"))))
+    (properties `((upstream-name . "Monte.Carlo.se")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Monte.Carlo.se")
+    (synopsis "Monte Carlo Standard Errors")
+    (description
+     "Computes Monte Carlo standard errors for summaries of Monte Carlo output.
+Summaries and their standard errors are based on columns of Monte Carlo
+simulation output.  Dennis D. Boos and Jason A. Osborne (2015)
+<doi:10.1111/insr.12087>.")
+    (license license:gpl3)))
+
 (define-public r-monreg
   (package
     (name "r-monreg")
@@ -11628,32 +11650,6 @@ interactions.  The case study presented in the vignette uses data published by
 Krug (2020) <doi:10.1016/j.cell.2020.10.036>.  The package license applies only
 to the software and explicitly not to the included data.")
     (license license:expat)))
-
-(define-public r-molic
-  (package
-    (name "r-molic")
-    (version "2.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "molic" version))
-              (sha256
-               (base32
-                "1qgb63wl5726mypv0f07wcf3aznl93vh045ghx66hiqj3kzfir2b"))))
-    (properties `((upstream-name . "molic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
-                             r-ggridges
-                             r-ggplot2
-                             r-foreach
-                             r-ess
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mlindsk/molic")
-    (synopsis "Multivariate Outlier Detection in Contingency Tables")
-    (description
-     "Outlier detection in, possibly high-dimensional, categorical data following Mads
-Lindskou et al. (2019) <doi:10.1111/sjos.12407>.")
-    (license license:gpl3)))
 
 (define-public r-molhd
   (package
@@ -17881,6 +17877,29 @@ Browne and McNicholas (2014) <doi:10.1007/s11634-013-0139-1>, Browne and
 McNicholas (2015) <doi:10.1002/cjs.11246>.")
     (license license:gpl2+)))
 
+(define-public r-mixtur
+  (package
+    (name "r-mixtur")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mixtur" version))
+              (sha256
+               (base32
+                "02hybyc647jhl3jcyv26kcg1ijq4qlami18m6xyckygw8m2fb85l"))))
+    (properties `((upstream-name . "mixtur")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://github.com/JimGrange/mixtur")
+    (synopsis "Modelling Continuous Report Visual Short-Term Memory Studies")
+    (description
+     "This package provides a set of utility functions for analysing and modelling
+data from continuous report short-term memory experiments using either the
+2-component mixture model of Zhang and Luck (2008) <doi:10.1038/nature06860> or
+the 3-component mixture model of Bays et al. (2009) <doi:10.1167/9.10.7>.  Users
+are also able to simulate from these models.")
+    (license license:gpl3)))
+
 (define-public r-mixtox
   (package
     (name "r-mixtox")
@@ -18428,13 +18447,13 @@ developed in this package.")
 (define-public r-mixhvg
   (package
     (name "r-mixhvg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mixhvg" version))
               (sha256
                (base32
-                "0zz2pwa7642kwg5bz3p760zmpvdfyndiy9d4hcqw6xzklzwg7k24"))))
+                "1vwn4wdxs81r08x4f8zlpdqr1hvf6dk59qqrbxyj9xdk35hw9il4"))))
     (properties `((upstream-name . "mixhvg")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-seurat r-scuttle r-scran
@@ -19866,21 +19885,25 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
 (define-public r-mispitools
   (package
     (name "r-mispitools")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mispitools" version))
               (sha256
                (base32
-                "05wlhjgsn14yvqkzqj5a060j8vryz8wwhh0xcqnarf55nirv4a8a"))))
+                "0kd6sj0qgi6gf9cykxh8myc09hm5zkzjys1nsdkbdm3ymgar5xy2"))))
     (properties `((upstream-name . "mispitools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
                              r-tidyr
+                             r-shiny
+                             r-reshape2
                              r-purrr
                              r-plotly
                              r-pedtools
+                             r-patchwork
                              r-highcharter
+                             r-ggplot2
                              r-forrel
                              r-dplyr
                              r-dirichletreg))
@@ -29054,33 +29077,6 @@ Wang X, Wang Q (2015) <doi:10.1016/j.jmva.2015.05.017> and Tong J, Huang J,
 Chubak J, et al. (2020) <doi:10.1093/jamia/ocz180>.")
     (license license:gpl3)))
 
-(define-public r-medsurvey
-  (package
-    (name "r-medsurvey")
-    (version "1.1.1.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MedSurvey" version))
-              (sha256
-               (base32
-                "11lkli2arl5w2aizzd93fb6xsy30000nf3qc08qirrm07rwypaly"))))
-    (properties `((upstream-name . "MedSurvey")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey r-matrix r-lavaan))
-    (home-page "https://CRAN.R-project.org/package=MedSurvey")
-    (synopsis
-     "Linear Mediation Analysis for Complex Surveys Using Balanced Repeated Replication")
-    (description
-     "It is a computer tool to conduct linear mediation analysis for complex surveys
-using multi-stage sampling and Balanced Repeated Replication (BRR).
-Specifically, the mediation analysis method using balanced repeated replications
-was proposed by Mai, Ha, and Soulakova (2019)
-<DOI:10.1080/10705511.2018.1559065>.  The current version can only handle
-continuous mediators and outcomes.  The development of MedSurvey was sponsored
-by American Lebanese Syrian Associated Charities (ALSAC).  However, the contents
-of MedSurvey do not necessarily represent the policy of the ALSAC.")
-    (license license:expat)))
-
 (define-public r-medseq
   (package
     (name "r-medseq")
@@ -34461,13 +34457,13 @@ local (cis) and distant (trans) eQTLs.  For more details see Shabalin (2012)
 (define-public r-matrixdist
   (package
     (name "r-matrixdist")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matrixdist" version))
               (sha256
                (base32
-                "1vz8mq86yycgw9fghhq2p3q6p5r9sa7hqm6bf1zdqqg32cd50kip"))))
+                "1apyzjikf8xz9lrink3ikvi11bvvgzdbvj26c482qikhnqvvqvpq"))))
     (properties `((upstream-name . "matrixdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-rcpparmadillo r-rcpp r-nnet))

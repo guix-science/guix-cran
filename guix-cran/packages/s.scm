@@ -8655,33 +8655,6 @@ annualized growth, maximum drawdown, Sharpe/Sortino ratio), and creating graphs.
  C++ code is used to improve processing speed where possible.")
     (license license:gpl3)))
 
-(define-public r-stockr
-  (package
-    (name "r-stockr")
-    (version "1.0.74")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stockR" version))
-              (sha256
-               (base32
-                "002i0bhyskwyjjczfa752ghn19hvqhdyzdfkpvci3hb66rh94x65"))))
-    (properties `((upstream-name . "stockR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-gtools))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=stockR")
-    (synopsis "Identifying Stocks in Genetic Data")
-    (description
-     "This package provides a mixture model for clustering individuals (or sampling
-groups) into stocks based on their genetic profile.  Here, sampling groups are
-individuals that are sure to come from the same stock (e.g. breeding adults or
-larvae).  The mixture (log-)likelihood is maximised using the EM-algorithm after
-find good starting values via a K-means clustering of the genetic data.  Details
-can be found in Foster, Feutry, Grewe, Berry, Hui, Davies (2019) Reliably
-Discriminating Stock Structure with Genetic Markers: Mixture Models with Robust
-and Fast Computation.  Molecular Ecology Resources.")
-    (license license:gpl2+)))
-
 (define-public r-stockfish
   (package
     (name "r-stockfish")
@@ -10274,13 +10247,13 @@ Includes tools for isochrones construction and tracks interpolation.")
 (define-public r-stelfi
   (package
     (name "r-stelfi")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stelfi" version))
               (sha256
                (base32
-                "0rjkvrn3vwd4mzb2042syfhds4za4cqqlhjs6l95d09rn1q7nahx"))))
+                "0zx1x5kk8ans068j4zddsip6v04bsw6npagayjfa3sdl79ailqha"))))
     (properties `((upstream-name . "stelfi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -10290,6 +10263,7 @@ Includes tools for isochrones construction and tracks interpolation.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/cmjt/stelfi/")
     (synopsis
      "Hawkes and Log-Gaussian Cox Point Processes Using Template Model Builder")
@@ -17153,22 +17127,19 @@ simulate and study electric power systems (more information about Antares here:
 (define-public r-spm2
   (package
     (name "r-spm2")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spm2" version))
               (sha256
                (base32
-                "1cf5j5gi4h8v5sjlbj279h5la8nscn3n3p3prmci9258593xgkjq"))))
+                "1fac131zg5z7jxbkjy6745b4pggpmkjyl9iyq15yr7yzfs77yz62"))))
     (properties `((upstream-name . "spm2")))
     (build-system r-build-system)
     (propagated-inputs (list r-spm
                              r-sp
-                             r-ranger
                              r-randomforest
-                             r-psy
                              r-nlme
-                             r-mass
                              r-gstat
                              r-glmnet
                              r-gbm
@@ -24448,13 +24419,13 @@ absorption and sonar equations.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.2.0.1")
+    (version "4.2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sommer" version))
               (sha256
                (base32
-                "1n3kaympigld34ymvqy05n265gs70yqhzp7pvyx3hjbkrg5i7j9j"))))
+                "1w8a008was4myz6994sanw270pzg9fzfs9d4jbd9p53gmk0mikhr"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -24995,19 +24966,21 @@ data, and give out unknown concentrations from absorption/emission readings.")
 (define-public r-soiltestcorr
   (package
     (name "r-soiltestcorr")
-    (version "2.1.2")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "soiltestcorr" version))
               (sha256
                (base32
-                "1yw3y655i9d7y18vcqyhh3yg3mc41bqb2ix9lbylzd83zp7g71c4"))))
+                "1c5w3w4nrxdy2cdch048kmb35jqm8rws0am31vgn263y1045shwd"))))
     (properties `((upstream-name . "soiltestcorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-smatr
                              r-rlang
                              r-purrr
                              r-nlstools
+                             r-nlraa
                              r-modelr
                              r-minpack-lm
                              r-ggpp
@@ -35337,24 +35310,26 @@ other entities such as institutes, countries, etc.")
 (define-public r-sihr
   (package
     (name "r-sihr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIHR" version))
               (sha256
                (base32
-                "1pdj66czhijwzbxb1vyn8x8avrlhci30wz5xj94576893wl1m1ii"))))
+                "02a3k8bfy2srz25dqlml78a2f4mi6mmdc8kb7r66ffk07vsp0whz"))))
     (properties `((upstream-name . "SIHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-cvxr))
     (home-page "https://github.com/prabrishar1/SIHR")
     (synopsis "Statistical Inference in High Dimensional Regression")
     (description
-     "Inference procedures in the high-dimensional setting for (1) linear functionals
-in generalized linear regression ('Cai et al. (2019) <arXiv:1904.12891>, Guo et
-al. (2020) <arXiv:2012.07133>, Cai et al. (2021)), (2) individual treatment
-effects in generalized linear regression, (3) quadratic functionals in
-generalized linear regression ('Guo et al. (2019) <arXiv:1909.01503>).")
+     "The goal of SIHR is to provide inference procedures in the high-dimensional
+setting for (1) linear functionals in generalized linear regression ('Cai et al.
+(2019) <arXiv:1904.12891>, Guo et al. (2020) <arXiv:2012.07133>, Cai et al.
+(2021)), (2) conditional average treatment effects in generalized linear
+regression, (3) quadratic functionals in generalized linear regression ('Guo et
+al. (2019) <arXiv:1909.01503>). (4) inner product in generalized linear
+regression (5) distance in generalized linear regression.")
     (license license:gpl3)))
 
 (define-public r-sigtree
@@ -35673,13 +35648,13 @@ function, SoftMax preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.1.9")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sigminer" version))
               (sha256
                (base32
-                "1pyvyn41xfvdsaij5qz70jr1b04s9kqzg8nx0ifqakdlpg82hbx9"))))
+                "0bgpdijxv2922kgfk885rganl5yn13g0f9h0mmlzvsvhbhav9mdm"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -43023,13 +42998,13 @@ data analysis.  S. Le and F. Husson (2008)
 (define-public r-sensobol
   (package
     (name "r-sensobol")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sensobol" version))
               (sha256
                (base32
-                "0i82zs7cxymic7b7g5q7glrbva25gd61fbhkw8qdp1incsmxxvhi"))))
+                "1rk66gag54znjm9yxwk25l3yn3dxpi6qqyh2l3qgxhihpkw3f7a0"))))
     (properties `((upstream-name . "sensobol")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -49141,27 +49116,6 @@ scoring procedures for the International Physical Activity Questionnaire (IPAQ)
 and gender-specific normal ranges.")
     (license license:gpl3+)))
 
-(define-public r-scor
-  (package
-    (name "r-scor")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SCOR" version))
-              (sha256
-               (base32
-                "0srkn72g1v7hwms68pjmq5sj562blqn27gi628q6q6zlirbmfb9g"))))
-    (properties `((upstream-name . "SCOR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-iterators r-foreach r-doparallel))
-    (home-page "https://github.com/synx21/SCOR")
-    (synopsis "Spherically Constrained Optimization Routine")
-    (description
-     "This package provides a non convex optimization package that optimizes any
-function under the criterion, combination of variables are on the surface of a
-unit sphere, as described in the paper : Das et al. (2019) <arXiv:1909.04024> .")
-    (license license:gpl3)))
-
 (define-public r-scopro
   (package
     (name "r-scopro")
@@ -53840,13 +53794,13 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
 (define-public r-samc
   (package
     (name "r-samc")
-    (version "3.0.2")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samc" version))
               (sha256
                (base32
-                "1wajvwb94132558sl7k8jdmm3xgr8p31l00iid10aizyj3kf5cra"))))
+                "1kn6hgqcsy174gmygix0ah9h8vx5wzhnrd1a3359wxk7rlhgwkbz"))))
     (properties `((upstream-name . "samc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -53854,7 +53808,8 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
                              r-rcppeigen
                              r-rcpp
                              r-raster
-                             r-matrix))
+                             r-matrix
+                             r-circular))
     (native-inputs (list r-knitr))
     (home-page "https://andrewmarx.github.io/samc/")
     (synopsis "Spatial Absorbing Markov Chains")

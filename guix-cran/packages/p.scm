@@ -1128,19 +1128,29 @@ footprints do not scale with the training sample size.")
 (define-public r-pureseqtmr
   (package
     (name "r-pureseqtmr")
-    (version "1.2")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pureseqtmr" version))
               (sha256
                (base32
-                "1c2pcci3s949hi8hh0h03mr3m6qw3kvihfglwavx578kjm2qw0xz"))))
+                "105v0ydl458xzgkdas7m8llf0672s9klv816sjl27dy0a3k8163f"))))
     (properties `((upstream-name . "pureseqtmr")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-tibble r-stringr r-rappdirs r-plyr r-ggplot2))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-rcpp
+                             r-rappdirs
+                             r-plyr
+                             r-peptides
+                             r-ggplot2
+                             r-dplyr
+                             r-devtools
+                             r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/richelbilderbeek/pureseqtmr")
+    (home-page "https://github.com/richelbilderbeek/pureseqtmr/")
     (synopsis "Predict Transmembrane Protein Topology")
     (description
      "Proteins reside in either the cell plasma or in the cell membrane.  A membrane
@@ -6480,13 +6490,13 @@ Allows the use to assemble custom shiny dashboards based on process data.")
 (define-public r-processmapr
   (package
     (name "r-processmapr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "processmapR" version))
               (sha256
                (base32
-                "0ryvcby7khc4yzv64qv2b5s5ykllniar8b0gyzph7fs6dg8i5wgw"))))
+                "1q3zppi2hmvqaydwyjyann1zajvk19rww0mj4ra7kj20icg8520h"))))
     (properties `((upstream-name . "processmapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7268,16 +7278,16 @@ offers options to deal with blockwise missingness in multi-omics data.")
 (define-public r-prioritizrdata
   (package
     (name "r-prioritizrdata")
-    (version "0.2.4")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioritizrdata" version))
               (sha256
                (base32
-                "0027nbkvp8b2w4cciabiqjdyxhjwh47k7dc36p79mkqfarh04rgv"))))
+                "0dvxh43dk9mhsqdj89zilh3r91cqngl07ggw5r5rj761xl3km10w"))))
     (properties `((upstream-name . "prioritizrdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster))
+    (propagated-inputs (list r-tibble r-terra r-sf))
     (home-page "https://prioritizr.github.io/prioritizrdata/")
     (synopsis "Conservation Planning Datasets")
     (description
@@ -17079,13 +17089,13 @@ nested data easier.")
 (define-public r-plotrcs
   (package
     (name "r-plotrcs")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plotRCS" version))
               (sha256
                (base32
-                "0qllalg3hklr4h85g81n78nyrwjl48k68bap24nfrpbb4j089hj3"))))
+                "1n5xsbm97i8hfyslv1cfvp3hvkr23yvxfq8rxkryzxyfyklv86is"))))
     (properties `((upstream-name . "plotRCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-ggplot2))
@@ -17093,8 +17103,9 @@ nested data easier.")
     (synopsis "Plot Restricted Cubic Splines Curves")
     (description
      "Simple drawing of restricted cubic spline (RCS) curves through ggplot2 package
-from a logistic regression model or a Cox proportional hazards regression model.
- This method was described by Harrell FE (2015) <doi:10.1007/978-3-319-19425-7>.")
+from a linear regression model, a logistic regression model or a Cox
+proportional hazards regression model.  This method was described by Harrell FE
+(2015) <doi:10.1007/978-3-319-19425-7>.")
     (license license:gpl3+)))
 
 (define-public r-plotprotein
@@ -20207,34 +20218,6 @@ expression.  The syntax is designed to make the pipeline more readable and
 friendly to a wide range of operations.")
     (license license:expat)))
 
-(define-public r-pipenostics
-  (package
-    (name "r-pipenostics")
-    (version "0.1.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pipenostics" version))
-              (sha256
-               (base32
-                "0c0qnh8kjgnmsg8arj7jhpdyjcdm58j9lzwi0yvl7ygk4k2klgv3"))))
-    (properties `((upstream-name . "pipenostics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
-    (home-page "https://omega1x.github.io/pipenostics/")
-    (synopsis
-     "Diagnostics, Reliability and Predictive Maintenance of Pipeline Systems")
-    (description
-     "This package provides functions representing some useful empirical and
-data-driven models of heat losses, corrosion diagnostics, reliability and
-predictive maintenance of pipeline systems.  The package is an option for
-digital transformation of technical engineering departments of heat generating
-and heat transferring companies.  Methods are described in Timashev et al.
-(2016) <doi:10.1007/978-3-319-25307-7>, A.C.Reddy (2017)
-<doi:10.1016/j.matpr.2017.07.081>, Minenergo (2008)
-<https://docs.cntd.ru/document/902148459>, Minenergo (2005)
-<http://www.complexdoc.ru/ntdtext/547103>.")
-    (license license:gpl3)))
-
 (define-public r-pipeliner
   (package
     (name "r-pipeliner")
@@ -20580,37 +20563,6 @@ the information from prediction markets.The Major League Baseball (MLB) 2016
 dataset can be used for sabermetrics analysis and also can be used in
 conjunction with other popular Major League Baseball (MLB) datasets such as
 Retrosheets or the Lahman package by merging by GameID.")
-    (license license:gpl3)))
-
-(define-public r-pinnacle-api
-  (package
-    (name "r-pinnacle-api")
-    (version "2.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pinnacle.API" version))
-              (sha256
-               (base32
-                "1b6adns1xr3cgcj2mdjvl16cm2vjjgsj2l8m2c47plyc5jh05qmb"))))
-    (properties `((upstream-name . "pinnacle.API")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid
-                             r-rjson
-                             r-purrr
-                             r-openssl
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-data-table))
-    (home-page "https://github.com/marcoblume/pinnacle.API#README")
-    (synopsis "Wrapper for the Pinnacle API")
-    (description
-     "An interface to the API by Pinnacle that allows Pinnacle customers to interact
-with the sports market data in R.See <https://www.pinnacle.com/en/api> for more
-information.  The Pinnacle API can be used to place wagers, retrieve line
-information, retrieve account information.Please be aware that the TOC of
-Pinnacle apply <https://www.pinnacle.com/en/termsandconditions>.  An account
-with Pinnacle is necessary to use the Pinnacle API.")
     (license license:gpl3)))
 
 (define-public r-pinma
@@ -23131,13 +23083,13 @@ reward-transformation; and functions for plotting the distributions as networks.
 (define-public r-phasetype
   (package
     (name "r-phasetype")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PhaseType" version))
               (sha256
                (base32
-                "0vcmvixb2flrn7qz3568whg5njkxny4hxlmf3ybyi9shfb7jss0a"))))
+                "0bqnz6rn0x8xg9qlcn2yqdkmvddc96xasnq9pb36gb8gx19p68fy"))))
     (properties `((upstream-name . "PhaseType")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-ggplot2 r-coda))
@@ -23945,13 +23897,13 @@ Econometrics with R, ISBN:978-1-118-94918-4.")
 (define-public r-pgirmess
   (package
     (name "r-pgirmess")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pgirmess" version))
               (sha256
                (base32
-                "18a7ydmim3jz91nq7pny72k2dprv19c04h8xl033dzh1jnss84zs"))))
+                "1wdfybi6s976sqa8n1q7jni99xbwdmbi0zycl4nqk4kl1nqixlbm"))))
     (properties `((upstream-name . "pgirmess")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sp r-sf r-boot))
@@ -27085,13 +27037,13 @@ neighborhoods.")
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PDtoolkit" version))
               (sha256
                (base32
-                "1y11w6c5y632acad86mrhy05n212bphx2fxhriq1acmbwkmm166y"))))
+                "1k0xj8sq3jh96cp3rlgvhfba0nyl6ssiin04jdk7fhbsnq7437qx"))))
     (properties `((upstream-name . "PDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-monobin r-dplyr))

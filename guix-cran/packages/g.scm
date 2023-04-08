@@ -8461,13 +8461,13 @@ by re-grouping another).")
 (define-public r-goodfibes
   (package
     (name "r-goodfibes")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GoodFibes" version))
               (sha256
                (base32
-                "0k40lsbs33964f7vqb5q5pkkpyhv85insmg70yzl54l5yw2y4f13"))))
+                "0p9kjy66gz7vyz82xllj9v44pyik11k1rwl9y2iqvndwyaq3jsba"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-prodlim r-imager r-concaveman))
@@ -23741,13 +23741,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.3.5")
+    (version "0.3.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GE" version))
               (sha256
                (base32
-                "166zl97j4zlrq1s7h69v25gjv7s13mgix7s75hhjwzvi8kaby2gk"))))
+                "0n6mzgamw0alkjlyzh5ff1vhbgammf2782h9p4vaclqzbglzipj7"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -25835,13 +25835,13 @@ package are described in Lundberg (2021) <doi:10.31235/osf.io/gx4y3>.")
 (define-public r-gaparsimony
   (package
     (name "r-gaparsimony")
-    (version "0.9.4")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GAparsimony" version))
               (sha256
                (base32
-                "1p1s5q1basy9v3jy1qxpx5g8mzpkwdfarxmmf7s06c6wq0dl9vp8"))))
+                "1l3x6m7phbin6ba6rclljzym9zgx9nskz65ggkg0ij24pz5h7y51"))))
     (properties `((upstream-name . "GAparsimony")))
     (build-system r-build-system)
     (propagated-inputs (list r-iterators r-foreach))

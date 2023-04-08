@@ -8011,28 +8011,6 @@ heritability scores for high-throughput sequencing data.\" BMC bioinformatics
 18.1 (2017): 143.")
     (license license:gpl2)))
 
-(define-public r-heritewas
-  (package
-    (name "r-heritewas")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "heritEWAS" version))
-              (sha256
-               (base32
-                "0yss9vf2m9szq8xi5i2nhf85mfvzvhv6c1f4kvvb2z9lmaicjni5"))))
-    (properties `((upstream-name . "heritEWAS")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=heritEWAS")
-    (synopsis "Identify Heritable Methylation Marks")
-    (description
-     "This package provides a novel statistical method based on expectation
-maximisation (EM) algorithm and genetic segregation analysis to identify
-heritable DNA methylation marks.  Details about the method can be found in Joo
-et al. (2018) <doi:10.1038/s41467-018-03058-6>.")
-    (license license:gpl3)))
-
 (define-public r-heritability
   (package
     (name "r-heritability")
@@ -8744,6 +8722,43 @@ and readmits.  The aim is to provide a simple and consistent verb framework that
 takes the guesswork out of everything.")
     (license license:expat)))
 
+(define-public r-healthyr
+  (package
+    (name "r-healthyr")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "healthyR" version))
+              (sha256
+               (base32
+                "0wlw6sd187sw5ar58c4a5yz9fw0bc044cik1xsq54ipp4xprlnxp"))))
+    (properties `((upstream-name . "healthyR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-timetk
+                             r-tibble
+                             r-stringr
+                             r-sqldf
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spsanderson/healthyR")
+    (synopsis "Hospital Data Analysis Workflow Tools")
+    (description
+     "Hospital data analysis workflow tools, modeling, and automations.  This library
+provides many useful tools to review common administrative hospital data.  Some
+of these include average length of stay, readmission rates, average net pay
+amounts by service lines just to name a few.  The aim is to provide a simple and
+consistent verb framework that takes the guesswork out of everything.")
+    (license license:expat)))
+
 (define-public r-healthfinance
   (package
     (name "r-healthfinance")
@@ -9068,13 +9083,13 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 (define-public r-hdrfa
   (package
     (name "r-hdrfa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDRFA" version))
               (sha256
                (base32
-                "0hl92a0cviyp21bpfbwshlnh5mdp52q7xzicy5zcsafan11m8k8h"))))
+                "07snry1s0c5r4dns50yh6i8gybnvfgc5p8awlggvk316868f2dd3"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pracma r-mass))
@@ -9089,11 +9104,11 @@ minimizing the Huber loss of the idiosyncratic error's L2 norm, which turns out
 to do Principal Component Analysis (PCA) on the weighted sample covariance
 matrix and thereby named as Huber PCA. The other one is based on minimizing the
 element-wise Huber loss, which can be solved by an iterative Huber regression
-algorithm.  In this package we also provide the code for traditional PCA by Bai,
-J., (2023)<doi:10.1111/1468-0262.00392>, the Robust Two Step (RTS) method by He
-et al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
-(QFA) method by Chen et al. (2021)<doi:10.3982/ECTA15746> and Huber PCA by He et
-al. (2023)<arXiv:2303.02817>.")
+algorithm, see the details in He et al. (2023)<arXiv:2303.02817>.  In this
+package we also provide the code for traditional PCA by Bai, J.,
+(2003)<doi:10.1111/1468-0262.00392>, the Robust Two Step (RTS) method by He et
+al. (2022)<doi:10.1080/07350015.2020.1811101>, the Quantile Factor Analysis
+(QFA) method by Chen et al. (2021)<doi:10.3982/ECTA15746>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-hdpglm
@@ -9141,27 +9156,6 @@ Generalized Linear Model (hdpGLM) presented in the paper Ferrari (2020) Modeling
 Context-Dependent Latent Heterogeneity, Political Analysis
 <DOI:10.1017/pan.2019.13>.")
     (license license:expat)))
-
-(define-public r-hdpenreg
-  (package
-    (name "r-hdpenreg")
-    (version "0.94.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDPenReg" version))
-              (sha256
-               (base32
-                "17lra03iyvs51bgbnbhs4f5rvjvdz9zk7mg2f0xmsr4nvllp44ys"))))
-    (properties `((upstream-name . "HDPenReg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtkore r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=HDPenReg")
-    (synopsis "High-Dimensional Penalized Regression")
-    (description
-     "Algorithms for lasso and fused-lasso problems: C++ implementation of the lars
-algorithm for lasso and fusion penalization <doi:10.1214/009053604000000067>,
-and EM-based algorithms for (logistic) lasso and fused-lasso penalization.")
-    (license license:gpl2+)))
 
 (define-public r-hdpca
   (package

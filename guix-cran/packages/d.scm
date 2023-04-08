@@ -10373,13 +10373,13 @@ growth to full growth (\"slope\").")
 (define-public r-disk-frame
   (package
     (name "r-disk-frame")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disk.frame" version))
               (sha256
                (base32
-                "1yb8klkrlfrpvhmzrnz3xmlm1s3k696ikj5186gsh12cg0wm4yzl"))))
+                "1mx3lqgasxmqxwrwslmrfcjh7gmd2f6ypz23k1x05bgrhckwhlws"))))
     (properties `((upstream-name . "disk.frame")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13304,22 +13304,20 @@ implementation with tuning parameters, consider the xgboost package.")
 (define-public r-did2s
   (package
     (name "r-did2s")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "did2s" version))
               (sha256
                (base32
-                "07c3arwbgd72i74fwpw1wf7g8ql8pdwghbs8gcyk1bckcwwk4ldj"))))
+                "0iyz6z4w2im22rvbpabql2w1cncv0pnrh0hp7agf0pazcpzk2jh6"))))
     (properties `((upstream-name . "did2s")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-staggered
+    (propagated-inputs (list r-staggered
+                             r-sparsem
                              r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
+                             r-matrixextra
                              r-matrix
-                             r-glue
                              r-ggplot2
                              r-fixest
                              r-didimputation
@@ -13332,10 +13330,11 @@ implementation with tuning parameters, consider the xgboost package.")
     (synopsis "Two-Stage Difference-in-Differences Following Gardner (2021)")
     (description
      "Estimates Two-way Fixed Effects difference-in-differences/event-study models
-using the approach proposed by Gardner (2021).  To avoid the problems caused by
-OLS estimation of the Two-way Fixed Effects model, this function first estimates
-the fixed effects and covariates using untreated observations and then in a
-second stage, estimates the treatment effects.")
+using the approach proposed by Gardner (2021) <doi:10.48550/arXiv.2207.05943>.
+To avoid the problems caused by OLS estimation of the Two-way Fixed Effects
+model, this function first estimates the fixed effects and covariates using
+untreated observations and then in a second stage, estimates the treatment
+effects.")
     (license license:expat)))
 
 (define-public r-did
@@ -20132,17 +20131,17 @@ http://arxiv.org/abs/1602.04971).")
 (define-public r-dcmodify
   (package
     (name "r-dcmodify")
-    (version "0.1.9")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dcmodify" version))
               (sha256
                (base32
-                "0p4xw74rls7i3fymsjcrazkrp22cfrfffz63l7wyb842z902smls"))))
+                "1r4mfkf766hsr3qd60mmxy3841r8jc4d6wlb12cak4aanqisq7aj"))))
     (properties `((upstream-name . "dcmodify")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-validate r-settings))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-yaml r-validate r-settings r-lumberjack))
+    (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/data-cleaning/dcmodify")
     (synopsis "Modify Data Using Externally Defined Modification Rules")
     (description
@@ -22845,39 +22844,6 @@ over-the-counter (OTC) derivative markets.  Swap Execution Facilities (SEFs) and
 Swap Data Repositories (SDRs) now publish data on swaps that are traded on or
 reported to those facilities (respectively).  This package provides you the
 ability to get this data from supported sources.")
-    (license license:gpl2)))
-
-(define-public r-datanugget
-  (package
-    (name "r-datanugget")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "datanugget" version))
-              (sha256
-               (base32
-                "1ki4kgz6y9a313f07jml39pdxhadgs287rkpnlwvcw6kgj5qxala"))))
-    (properties `((upstream-name . "datanugget")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreach r-dosnow))
-    (home-page "https://cran.r-project.org/package=datanugget")
-    (synopsis "Create, Refine, and Cluster Data Nuggets")
-    (description
-     "Creating, refining, and clustering data nuggets.  Data nuggets reduce a large
-dataset into a small collection of nuggets of data, each containing a center
-(location), weight (importance), and scale (variability) parameter.  Data nugget
-centers are created by choosing observations in the dataset which are as equally
-spaced apart as possible.  Data nugget weights are created by counting the
-number observations closest to a given data nuggetâs center.  We then say the
-data nugget contains these observations and the data nugget center is
-recalculated as the mean of these observations.  Data nugget scales are created
-by calculating the trace of the covariance matrix of the observations contained
-within a data nugget divided by the dimension of the dataset.  Data nuggets are
-refined by splitting data nuggets which have scales or shapes (defined as the
-ratio of the two largest eigenvalues of the covariance matrix of the
-observations contained within the data nugget) deemed too large.  Data nuggets
-are clustered by using a weighted form of k-means clustering which uses both the
-centers and weights of data nuggets to optimize the clustering assignments.")
     (license license:gpl2)))
 
 (define-public r-datana

@@ -6572,6 +6572,37 @@ algorithms for prediction of the data.  The algorithms have been developed
 following Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
     (license license:gpl3)))
 
+(define-public r-waveletlstm
+  (package
+    (name "r-waveletlstm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletLSTM" version))
+              (sha256
+               (base32
+                "1imf51ihwhzga6xscqh5lawyrx3smk6czxpmyahxgd696xg70c1q"))))
+    (properties `((upstream-name . "WaveletLSTM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets
+                             r-tslstm
+                             r-tseries
+                             r-dplyr
+                             r-caretforecast
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=WaveletLSTM")
+    (synopsis "Wavelet Based LSTM Model")
+    (description
+     "This package provides a wavelet-based LSTM model is a type of neural network
+architecture that uses wavelet technique to pre-process the input data before
+passing it through a Long Short-Term Memory (LSTM) network.  The wavelet-based
+LSTM model is a powerful approach that combines the benefits of wavelet analysis
+and LSTM networks to improve the accuracy of predictions in various
+applications.  This package has been developed using the algorithm of Anjoy and
+Paul (2017) and Paul and Garai (2021) <DOI:10.1007/s00521-017-3289-9>
+<doi:10.1007/s00500-021-06087-4>.")
+    (license license:gpl3)))
+
 (define-public r-waveletknn
   (package
     (name "r-waveletknn")
@@ -6598,6 +6629,35 @@ advantageous in the modelling of noisy time series data.  Wavelet decomposition
 technique using the \"haar\" algorithm has been incorporated to formulate a hybrid
 Wavelet KNN (K-Nearest Neighbour) model for time series forecasting, as proposed
 by Anjoy and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
+    (license license:gpl3)))
+
+(define-public r-waveletgbm
+  (package
+    (name "r-waveletgbm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletGBM" version))
+              (sha256
+               (base32
+                "0jilj6mgq6wb6a5zb4j9backfgyf38w687ppbyfsz40263srj081"))))
+    (properties `((upstream-name . "WaveletGBM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavelets
+                             r-tseries
+                             r-metrics
+                             r-gbm
+                             r-dplyr
+                             r-caretforecast
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=WaveletGBM")
+    (synopsis "Wavelet Based Gradient Boosting Method")
+    (description
+     "Wavelet decomposition method is very useful for modelling noisy time series
+data.  Wavelet decomposition using haar algorithm has been implemented to
+developed hybrid Wavelet GBM (Gradient Boosting Method) model for time series
+forecasting using algorithm by Anjoy and Paul (2017)
+<DOI:10.1007/s00521-017-3289-9>.")
     (license license:gpl3)))
 
 (define-public r-waveletgarch

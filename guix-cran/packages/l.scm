@@ -8392,6 +8392,34 @@ Kanjilal, O., & Hennig, P. (2019).  Integrals over Gaussians under Linear Domain
 Constraints.  108. <arxiv:1910.09328>.")
     (license license:gpl3)))
 
+(define-public r-lincom
+  (package
+    (name "r-lincom")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lincom" version))
+              (sha256
+               (base32
+                "1jq2rpbp9bih4brqyx7fhqr42l9icwg3y8dzd64a2vj973pxabb2"))))
+    (properties `((upstream-name . "lincom")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-sparsem r-rmosek r-matrix))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=lincom")
+    (synopsis
+     "Linear Biomarker Combination: Empirical Performance Optimization")
+    (description
+     "Perform two linear combination methods for biomarkers: (1) Empirical performance
+optimization for specificity (or sensitivity) at a controlled sensitivity (or
+specificity) level of Huang and Sanda (2022) <doi:10.1214/22-aos2210>, and (2)
+weighted maximum score estimator with empirical minimization of averaged false
+positive rate and false negative rate.  Both adopt the algorithms of Huang and
+Sanda (2022) <doi:10.1214/22-aos2210>.  MOSEK solver is used and needs to be
+installed; an academic license for MOSEK is free.")
+    (license license:gpl2+)))
+
 (define-public r-lincal
   (package
     (name "r-lincal")
@@ -9328,13 +9356,13 @@ manipulations.")
 (define-public r-lidartree
   (package
     (name "r-lidartree")
-    (version "4.0.3")
+    (version "4.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lidaRtRee" version))
               (sha256
                (base32
-                "076gf94kf1m7nxmwacd3fqqq09qn6lrpzm0535mmx0cb0cwy8vga"))))
+                "1a3c0lmmg3my5rwaq30gcg3jhrd1dndlsa49dgav3gv9l214ri3w"))))
     (properties `((upstream-name . "lidaRtRee")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -9767,13 +9795,13 @@ classification, and visualization.")
 (define-public r-lgpr
   (package
     (name "r-lgpr")
-    (version "1.1.5")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lgpr" version))
               (sha256
                (base32
-                "03wf6n3agls48r1a82aw6sywj3hzs0pza29l3p68nlqlkf9amnnw"))))
+                "1wzjkc4k3ly6j9jfsr71qm2j0frf0n67ndlaibf3f6yfwv535qmq"))))
     (properties `((upstream-name . "lgpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10480,6 +10508,38 @@ of ifelse() in base that preserves attributes.  These functions are forked from
 dplyr with all package dependencies removed and behave identically to the
 originals.")
     (license license:expat)))
+
+(define-public r-lesssem
+  (package
+    (name "r-lesssem")
+    (version "1.4.16")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lessSEM" version))
+              (sha256
+               (base32
+                "1zv438w3mbp6yxqcy2xcs5sfm64ilnqsk0vvslda54an95lj96kj"))))
+    (properties `((upstream-name . "lessSEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-lavaan
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jhorzek/lessSEM")
+    (synopsis "Non-Smooth Regularization for Structural Equation Models")
+    (description
+     "This package provides regularized structural equation modeling (regularized SEM)
+with non-smooth penalty functions (e.g., lasso) building on lavaan'.  The
+package is heavily inspired by the
+['regsem'](<https://github.com/Rjacobucci/regsem>) and
+['lslx'](<https://github.com/psyphh/lslx>) packages.")
+    (license license:gpl2+)))
 
 (define-public r-lessr
   (package

@@ -632,29 +632,6 @@ identifying,labeling, selecting, and measuring spatial objects.  Importantly, it
 does not require that the data be in geographic coordinates.")
     (license license:cc0)))
 
-(define-public r-quickerstats
-  (package
-    (name "r-quickerstats")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quickerstats" version))
-              (sha256
-               (base32
-                "0jlczz042701p6j4m60k425m9x3q88m27mmf62ngz80dylcl2fdx"))))
-    (properties `((upstream-name . "quickerstats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-readr r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=quickerstats")
-    (synopsis "An 'R' Client for the 'USDA NASS Quick Stats API'")
-    (description
-     "This package provides several convenience functions for searching and pulling
-data from the USDA NASS Quick Stats API <https://quickstats.nass.usda.gov/api>.
-Users can easily search for specific data items, and then download county-level
-or state-level Census of Agricultural data from a specified year.")
-    (license license:expat)))
-
 (define-public r-quickcheck
   (package
     (name "r-quickcheck")

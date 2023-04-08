@@ -986,13 +986,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.4")
+    (version "1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "1p8lmkv37n49y2midssjmgbybr2w1laj48bcd17405bb5w249ghk"))))
+                "0dn1zj7xfp1rygj88d9f5z1s0k8qhm33y43aip58b3m5vscawixk"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1003,9 +1003,9 @@ those values that are true.")
      "Provide estimation and data generation tools for some new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley and
 Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
-model, it is considered a parametric approach based on the Weibull and the
-piecewise exponential distributions and a semiparametric approach.  For details,
-see Gallardo and Bourguignon (2022) <arXiv:2206.12973>.")
+model, it is considered a parametric approach based on the exponential, Weibull
+and the piecewise exponential distributions as well as a semiparametric
+approach.  For details, see Gallardo and Bourguignon (2022) <arXiv:2206.12973>.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -8099,49 +8099,6 @@ M.P, and Fink A.K. \"Applying Quantitative Bias Analysis to Epidemiologic Data\"
 ('Springer', 2009).")
     (license license:gpl2)))
 
-(define-public r-episemble
-  (package
-    (name "r-episemble")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "EpiSemble" version))
-              (sha256
-               (base32
-                "1m0a6lxd47vv8m9q5j2fxabakhmxw2srknxkccxig2r9glizlsfi"))))
-    (properties `((upstream-name . "EpiSemble")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tibble
-                             r-stringr
-                             r-splitstackshape
-                             r-seqinr
-                             r-randomforest
-                             r-party
-                             r-iterators
-                             r-gbm
-                             r-ftrcool
-                             r-foreach
-                             r-entropy
-                             r-e1071
-                             r-doparallel
-                             r-devtools
-                             r-caret
-                             r-biostrings))
-    (home-page "https://cran.r-project.org/package=EpiSemble")
-    (synopsis
-     "Ensemble Based Machine Learning Approach for Predicting Methylation States")
-    (description
-     "DNA methylation (6mA) is a major epigenetic process by which alteration in gene
-expression took place without changing the DNA sequence.  Predicting these sites
-in-vitro is laborious, time consuming as well as costly.  This EpiSemble package
-is an in-silico pipeline for predicting DNA sequences containing the 6mA sites.
-It uses an ensemble-based machine learning approach by combining Support Vector
-Machine (SVM), Random Forest (RF) and Gradient Boosting approach to predict the
-sequences with 6mA sites in it.  This package has been developed by using the
-concept of Chen et al. (2019) <doi:10.1093/bioinformatics/btz015>.")
-    (license license:gpl3)))
-
 (define-public r-episcan
   (package
     (name "r-episcan")
@@ -8640,39 +8597,6 @@ projects.  Currently we have functionalities for simplifying overlapping time
 intervals, Charlson comorbidity score constructors for Danish data, sibling
 design linear regression functionalities, and a method for calculating the
 confidence intervals for functions of parameters from a GLM.")
-    (license license:expat)))
-
-(define-public r-epiflows
-  (package
-    (name "r-epiflows")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "epiflows" version))
-              (sha256
-               (base32
-                "09ri1p73ih0i08irc06ff169hi5vcl8bdi63b056kzxgmv17yqkp"))))
-    (properties `((upstream-name . "epiflows")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-visnetwork
-                             r-tibble
-                             r-sp
-                             r-leaflet
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggplot2
-                             r-ggmap
-                             r-geosphere
-                             r-epicontacts))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.repidemicsconsortium.org/epiflows")
-    (synopsis "Predicting Disease Spread from Flow Data")
-    (description
-     "This package provides functions and classes designed to handle and visualise
-epidemiological flows between locations.  Also contains a statistical method for
-predicting disease spread from flow data initially described in Dorigatti et al.
-(2017) <doi:10.2807/1560-7917.ES.2017.22.28.30572>.  This package is part of the
-RECON (<http://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
     (license license:expat)))
 
 (define-public r-epifitter
@@ -18593,13 +18517,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "2.2021.0")
+    (version "2.2021.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "1n1mn35in6lmvzzbbc4qkrb5mi26gk85i7370511f0qz3ih5nxji"))))
+                "1vkq1q8758y6i31xjnbk2vxsilwvkyvcbl96dchkiqzqj28z275d"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18931,13 +18855,13 @@ and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
 (define-public r-eatgads
   (package
     (name "r-eatgads")
-    (version "0.20.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eatGADS" version))
               (sha256
                (base32
-                "1wr186fzrpi3dix27m55xvkx55rgbdzx5zgs6gngwjzljqzhwa92"))))
+                "0dgnh7lbb5wi8zg0g8lbg9k4w89sl7z9xjgr4x1pyx6wmjfmfran"))))
     (properties `((upstream-name . "eatGADS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

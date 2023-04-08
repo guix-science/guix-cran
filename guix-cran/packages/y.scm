@@ -380,13 +380,13 @@ Excel file without advanced programming background knowledge.")
 (define-public r-yorkr
   (package
     (name "r-yorkr")
-    (version "0.0.39")
+    (version "0.0.40")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yorkr" version))
               (sha256
                (base32
-                "1i50krpv88jl5bjy6ij456nsh79s80gljd18jmpy27a3h28ncfcb"))))
+                "1bix7jw8hz9rnhdlkccnrqnmf2gar25fbai531xpjjp4z0czqisy"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -766,27 +766,6 @@ contain nonzero components.  Unlike RWeka', yarr does not require any Java
 installation nor is dependent on external software.  This implementation is
 generalized from those in packages mldr and mldr.datasets'.")
     (license license:gpl3+)))
-
-(define-public r-yap
-  (package
-    (name "r-yap")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "yap" version))
-              (sha256
-               (base32
-                "0m126vpfvlmwkpy14i9wbzr51hb8r6s3wcdm3vp9izfccpnxfxl2"))))
-    (properties `((upstream-name . "yap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randtoolbox r-lhs))
-    (home-page "https://github.com/statcompute/yap")
-    (synopsis "Yet Another Probabilistic Neural Network")
-    (description
-     "Another implementation of probabilistic neural network in R based on Specht
-(1990) <DOI:10.1016/0893-6080(90)90049-Q>.  It is applicable to the pattern
-recognition with a N-level response, where N > 2.")
-    (license license:gpl2+)))
 
 (define-public r-yamlme
   (package

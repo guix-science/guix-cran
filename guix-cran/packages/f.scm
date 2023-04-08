@@ -9967,31 +9967,6 @@ outputs to the function are the same vector).  These algorithms include Anderson
 Jackson 1976 <doi:10.1137/0713060>).")
     (license license:expat)))
 
-(define-public r-fixedincome
-  (package
-    (name "r-fixedincome")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fixedincome" version))
-              (sha256
-               (base32
-                "1h3gh6bbb2sdbqwx5p53j3c6k28az1a7mvxfh8754lx24h2igfgk"))))
-    (properties `((upstream-name . "fixedincome")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggplot2 r-bizdays))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wilsonfreitas/R-fixedincome")
-    (synopsis
-     "Fixed Income Models, Calculations, Data Structures and Instruments")
-    (description
-     "Fixed income mathematics made easy.  A rich set of functions that helps with
-calculations of interest rates and fixed income.  It has objects that abstract
-interest rates, compounding factors, day count rules, forward rates and term
-structure of interest rates.  Many interpolation methods and parametric curve
-models commonly used by practitioners are implemented.")
-    (license license:expat)))
-
 (define-public r-fitzroy
   (package
     (name "r-fitzroy")

@@ -4363,6 +4363,36 @@ sampling waves iteratively, and organize a complex survey design.  Also includes
 a Shiny application for observing the effects of different strata splits.")
     (license license:gpl3)))
 
+(define-public r-optimalgoldstandarddesigns
+  (package
+    (name "r-optimalgoldstandarddesigns")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OptimalGoldstandardDesigns" version))
+              (sha256
+               (base32
+                "19nc1ljj63bivbmfvkm7z89v8b1fp59ya0j8kip3b6sa1yrj6j6p"))))
+    (properties `((upstream-name . "OptimalGoldstandardDesigns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-rdpack
+                             r-nloptr
+                             r-mvtnorm
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jan-imbi/OptimalGoldstandardDesigns")
+    (synopsis
+     "Design Parameter Optimization for Gold-Standard Non-Inferiority Trials")
+    (description
+     "This package provides methods to calculate optimal design parameters for one-
+and two-stage three-arm group-sequential gold-standard non-inferiority trial
+designs with or without binding or nonbinding futility boundaries, as described
+in Meis et al. (2023) <doi:10.1002/sim.9630>.")
+    (license license:gpl3+)))
+
 (define-public r-optimaldesign
   (package
     (name "r-optimaldesign")
@@ -7641,13 +7671,13 @@ Keith McNulty (2021).")
 (define-public r-omu
   (package
     (name "r-omu")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "omu" version))
               (sha256
                (base32
-                "0pi7xdjlw4p426x400xwq1xrjcd0y42cmn832598vzjs5v71fv4y"))))
+                "1ha1x0df5wb4lajid3w6ab52w1jhhflfp1kp88gjhg9h2kch7prl"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

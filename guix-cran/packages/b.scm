@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bWGR" version))
               (sha256
                (base32
-                "0sqr0ylap610bw5v52hr8z3kl7c09rfs3l12zgc56cl04i0dab85"))))
+                "1932mnpcg3b3zhm7f95gnfjv5j7gr4r3j0rk682csq0jwby43dlg"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -3016,6 +3016,29 @@ correlation matrix and to predict future observations.  See
 methodology and applications.")
     (license license:expat)))
 
+(define-public r-brokenadaptiveridge
+  (package
+    (name "r-brokenadaptiveridge")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BrokenAdaptiveRidge" version))
+              (sha256
+               (base32
+                "0f46wwyfcqslk25cbm63pbnp8bwamqhr4g4wdlrqn666yiwn1sc2"))))
+    (properties `((upstream-name . "BrokenAdaptiveRidge")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-futile-logger r-cyclops r-bit64))
+    (home-page "https://cran.r-project.org/package=BrokenAdaptiveRidge")
+    (synopsis "Broken Adaptive Ridge Regression with Cyclops")
+    (description
+     "Approximates best-subset selection (L0) regression with an iteratively adaptive
+Ridge (L2) penalty for large-scale models.  This package uses Cyclops for an
+efficient implementation and the iterative method is described in Kawaguchi et
+al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
+<doi:10.1016/j.jspi.2020.12.001>.")
+    (license license:asl2.0)))
+
 (define-public r-brnn
   (package
     (name "r-brnn")
@@ -3804,6 +3827,40 @@ Willis and Bunge (2015) <doi:10.1111/biom.12332>, Willis et al. (2017)
 most commonly used estimates, including the objective Bayes approach described
 in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
     (license license:gpl2)))
+
+(define-public r-breadr
+  (package
+    (name "r-breadr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BREADR" version))
+              (sha256
+               (base32
+                "0s6g8qljp8xw5xsizw0pzrgb4qw7a8s9m9f5p2ckprq064y2z332"))))
+    (properties `((upstream-name . "BREADR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-matrixstats
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/jonotuke/BREADR")
+    (synopsis
+     "Estimates Degrees of Relatedness (Up to the Second Degree) for Extreme Low-Coverage Data")
+    (description
+     "The goal of the package is to provide an easy-to-use method for estimating
+degrees of relatedness (up to the second degree) for extreme low-coverage data.
+The package also allows users to quantify and visualise the level of confidence
+in the estimated degrees of relatedness.  A paper describing the method is
+available at Rohrlach, A. B. et al (2023) <https://tinyurl.com/29t6gbbx>.")
+    (license license:expat)))
 
 (define-public r-bread
   (package
@@ -9259,29 +9316,6 @@ of multiple concurrent exposures, as described in Bobb et al (2015)
 <doi:10.1093/biostatistics/kxu058>.")
     (license license:gpl2)))
 
-(define-public r-bjscraper
-  (package
-    (name "r-bjscraper")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bjscrapeR" version))
-              (sha256
-               (base32
-                "18chbgiwify272iqf0w4vsqh73wbk12d8m2awc5hbnfqblz3phwd"))))
-    (properties `((upstream-name . "bjscrapeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-readr r-glue r-dplyr))
-    (home-page "https://github.com/dylanjm/bjscrapeR")
-    (synopsis "An API Wrapper for the Bureau of Justice Statistics (BJS)")
-    (description
-     "Drawing heavy influence from blscrapeR', this package scrapes crime data from
-<https://www.bjs.gov/>.  Specifically, it scrapes data from the National Crime
-Victimization Survey which tracks personal and household crime in the USA. The
-idea is to utilize the tidyverse methodology to create an efficient work flow
-when dealing with crime statistics.")
-    (license license:expat)))
-
 (define-public r-bizicount
   (package
     (name "r-bizicount")
@@ -14553,13 +14587,13 @@ various plotting functions and exported into tables.")
 (define-public r-bgw
   (package
     (name "r-bgw")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bgw" version))
               (sha256
                (base32
-                "044rn881948y5b3dy6dxqx3i9vny81qpv594ndaapy1himb0lipa"))))
+                "1wwiwgvkhpwd4psb0mbyj18vgz85wljaphqvi2zf7dgz82drqksq"))))
     (properties `((upstream-name . "bgw")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -14908,6 +14942,42 @@ for BoardGameGeek's XML API2 through R6 class system objects.  More details
 about the BoardGameGeek's API can be obtained here
 <https://boardgamegeek.com/wiki/page/BGG_XML_API2>.")
     (license license:gpl3)))
+
+(define-public r-bgfd
+  (package
+    (name "r-bgfd")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BGFD" version))
+              (sha256
+               (base32
+                "0983v66bjp9v3jp7zbjyffda1gaf20nakqr94c32lvh9wmk0y1s9"))))
+    (properties `((upstream-name . "BGFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-adequacymodel))
+    (home-page "https://cran.r-project.org/package=BGFD")
+    (synopsis "Bell-G and Complementary Bell-G Family of Distributions")
+    (description
+     "Evaluates the probability density function, cumulative distribution function,
+quantile function, random numbers, survival function, hazard rate function, and
+maximum likelihood estimates for the following distributions: Bell exponential,
+Bell extended exponential, Bell Weibull, Bell extended Weibull, Bell-Fisk,
+Bell-Lomax, Bell Burr-XII, Bell Burr-X, complementary Bell exponential,
+complementary Bell extended exponential, complementary Bell Weibull,
+complementary Bell extended Weibull, complementary Bell-Fisk, complementary
+Bell-Lomax, complementary Bell Burr-XII and complementary Bell Burr-X
+distribution.  Related work includes: a) Fayomi A., Tahir M. H., Algarni A.,
+Imran M. and Jamal F. (2022). \"A new useful exponential model with applications
+to quality control and actuarial data\".  Computational Intelligence and
+Neuroscience, 2022. <doi:10.1155/2022/2489998>.  b) Alanzi, A. R., Imran M.,
+Tahir M. H., Chesneau C., Jamal F. Shakoor S. and Sami, W. (2023). \"Simulation
+analysis, properties and applications on a new Burr XII model based on the
+Bell-X functionalities\".  AIMS Mathematics, 8(3): 6970-7004.
+<doi:10.3934/math.2023352>.  c) Algarni A. (2022). \"Group Acceptance Sampling
+Plan Based on New Compounded Three-Parameter Weibull Model\".  Axioms, 11(9):
+438. <doi:10.3390/axioms11090438>.")
+    (license license:gpl2+)))
 
 (define-public r-bgeva
   (package
@@ -20287,39 +20357,44 @@ normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.1.1")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesMultiMode" version))
               (sha256
                (base32
-                "0kjv9snqnpamb0ph6qdimn1zdyp961yfi98xmbdy5dcqd5jcy3jg"))))
+                "1krjgij4drm9sc8rhcpb8vc94bmls40xyrjk329n2w4k5qq68za4"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-sn
+                             r-scales
                              r-rdpack
+                             r-posterior
+                             r-mvtnorm
+                             r-mcmcglmm
                              r-magrittr
                              r-gtools
                              r-ggpubr
                              r-ggplot2
-                             r-ggh4x
-                             r-dplyr))
+                             r-dplyr
+                             r-bayesplot
+                             r-assertthat))
     (home-page "https://github.com/paullabonne/BayesMultiMode")
-    (synopsis "Testing and Detecting Multimodality using Bayesian Methods")
+    (synopsis "Bayesian Mode Inference")
     (description
-     "The testing approach works in two stages.  First, a mixture distribution is
-fitted on the data using a Sparse Finite Mixture (SFM) Markov chain Monte Carlo
-(MCMC) algorithm following Malsiner-Walli, FrÃ¼hwirth-Schnatter and GrÃ¼n (2016)
+     "This package provides a Bayesian approach for mode inference which works in two
+steps.  First, a mixture distribution is fitted on the data using a sparse
+finite mixture (SFM) Markov chain Monte Carlo (MCMC) algorithm following
+Malsiner-Walli, FrÃ¼hwirth-Schnatter and GrÃ¼n (2016)
 <doi:10.1007/s11222-014-9500-2>).  The number of mixture components does not
-have to be specified; it is estimated simultaneously with the mixture weights
-and components through the SFM approach.  Second, the resulting MCMC output is
-used to calculate the number of modes and their locations following Basturk,
-Hoogerheide and van Dijk (2021) <doi:10.2139/ssrn.3783351>.  Posterior
-probabilities are retrieved for both of these quantities providing a powerful
-tool for mode inference.  Currently the package supports a flexible mixture of
-shifted Poisson distributions (see Basturk, Hoogerheide and van Dijk (2021)
-<doi:10.2139/ssrn.3783351>).")
+have to be known; the size of the mixture is estimated endogenously through the
+SFM approach.  Second, the modes of the estimated mixture at each MCMC draw are
+retrieved using algorithms specifically tailored for mode detection.  These
+estimates are then used to construct posterior probabilities for the number of
+modes, their locations and uncertainties, providing a powerful tool for mode
+inference.")
     (license license:gpl3+)))
 
 (define-public r-bayesmrm
@@ -23125,16 +23200,16 @@ it belongs.  This package depends on sf and only replaces the plot method.")
 (define-public r-basetheme
   (package
     (name "r-basetheme")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basetheme" version))
               (sha256
                (base32
-                "0yck4qc7qd406s7kw95xgnfc0pfvzk3ylhkv6mk6l2wbkfm8ldrb"))))
+                "0g1dsim688zl309svbv29g5ya23x71al4kribmy279vwqiddzl8z"))))
     (properties `((upstream-name . "basetheme")))
     (build-system r-build-system)
-    (home-page "https://github.com/KKPMW/basetheme")
+    (home-page "https://github.com/karoliskoncevicius/basetheme")
     (synopsis "Themes for Base Graphics Plots")
     (description
      "This package provides functions to create and select graphical themes for the

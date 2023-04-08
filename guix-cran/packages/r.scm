@@ -1163,35 +1163,6 @@ in a separate package RWekajars'.  For more information on Weka see
 <https://www.cs.waikato.ac.nz/ml/weka/>.")
     (license license:gpl2)))
 
-(define-public r-rwebstat
-  (package
-    (name "r-rwebstat")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rwebstat" version))
-              (sha256
-               (base32
-                "106dkhlr33ii17q45c1hrmbslwsj1qlmx325skch2q71mv7ii0lj"))))
-    (properties `((upstream-name . "rwebstat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-readr
-                             r-jsonlite
-                             r-httr
-                             r-htmltools
-                             r-getpass
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://developer.webstat.banque-france.fr")
-    (synopsis "Download Data from the Webstat API")
-    (description
-     "Access the Webstat API, download data and metadata from more than 35000 time
-series from the Banque de France statistics web portal.  Access requires a free
-client ID easily available from the API portal
-<https://developer.webstat.banque-france.fr/>.")
-    (license license:gpl3)))
-
 (define-public r-rweaveextra
   (package
     (name "r-rweaveextra")
@@ -1503,6 +1474,30 @@ external Vowpal Wabbit library installation.")
     (description
      "Variable metric nonlinear function minimization with bounds constraints.")
     (license license:gpl2+)))
+
+(define-public r-rvmf
+  (package
+    (name "r-rvmf")
+    (version "0.0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rvMF" version))
+              (sha256
+               (base32
+                "0h0d710sfxmf0gk4k5nmx5m4b04zkazrzf7c8kh3pcmc2xp3ml82"))))
+    (properties `((upstream-name . "rvMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scmodels r-rfast r-rcpp r-bessel))
+    (home-page "https://github.com/seungwoo-stat/rvMF")
+    (synopsis
+     "Fast Generation of von Mises-Fisher Distributed Pseudo-Random Vectors")
+    (description
+     "Generates pseudo-random vectors that follow an arbitrary von Mises-Fisher
+distribution on a sphere.  This method is fast and efficient when generating a
+large number of pseudo-random vectors.  Functions to generate random variates
+and compute density for the distribution of an inner product between von
+Mises-Fisher random vector and its mean direction are also provided.")
+    (license license:gpl3+)))
 
 (define-public r-rvmethod
   (package
@@ -10423,6 +10418,27 @@ plugin, but can also be used with other httpuv based servers.")
 Determinant (MMCD) for multivariate outliers; Leys, C., Klein, O., Dominicy, Y.
 & Ley, C. (2018) <doi:10.1016/j.jesp.2017.09.011>.  There is also the more known
 but less robust Mahalanobis distance method, only for comparison purposes.")
+    (license license:expat)))
+
+(define-public r-roundyh
+  (package
+    (name "r-roundyh")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "roundyh" version))
+              (sha256
+               (base32
+                "06x97gnc06ib0qkygs8fznxx7pm52bpr778x1pypl8frmkj4sa0g"))))
+    (properties `((upstream-name . "roundyh")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=roundyh")
+    (synopsis "Round Dataframe")
+    (description
+     "This package provides a simple rounding function.  The default round() function
+in R uses the IEC 60559 standard and therefore it rounds 0.5 to 0 and rounds
+-1.5 to -2.  The roundx() function accounts for this and helps to round 0.5 up
+to 1.")
     (license license:expat)))
 
 (define-public r-roundhouse
@@ -21745,17 +21761,16 @@ of departure from the no unmeasured confounding assumption.")
 (define-public r-ria
   (package
     (name "r-ria")
-    (version "1.6.1")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RIA" version))
               (sha256
                (base32
-                "1pjndiww9k8bfz05qfvmk4frg9qf2cz8cn1jk8bdv27bv9acxw1k"))))
+                "11pk8l6l4l7ylsavs86ava1hclgrhvdybd8w2bq1ihvfmb07617r"))))
     (properties `((upstream-name . "RIA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-oro-nifti r-oro-dicom r-nat))
-    (native-inputs (list r-knitr))
     (home-page "https://pubmed.ncbi.nlm.nih.gov/29233836/")
     (synopsis "Radiomics Image Analysis Toolbox for Medial Images")
     (description
@@ -26044,6 +26059,29 @@ models of the evolution of pesticide resistance under different types of crop
 rotation and pesticide application regimes.")
     (license license:gpl2+)))
 
+(define-public r-reset
+  (package
+    (name "r-reset")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RESET" version))
+              (sha256
+               (base32
+                "1sgmdimxx7d5y43yc296rik5l6274z2wxhx4pca1dhmpk9s2i27m"))))
+    (properties `((upstream-name . "RESET")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (home-page "https://cran.r-project.org/package=RESET")
+    (synopsis "Reconstruction Set Test")
+    (description
+     "This package contains logic for sample-level variable set scoring using
+randomized reduced rank reconstruction error.  Frost, H. Robert (2023)
+\"Reconstruction Set Test (RESET): a computationally efficient method for single
+sample gene set testing based on randomized reduced rank reconstruction error\"
+<doi:10.1101/2023.04.03.535366>.")
+    (license license:gpl2+)))
+
 (define-public r-reservr
   (package
     (name "r-reservr")
@@ -26619,33 +26657,6 @@ is more of a set of building blocks than a direct solution.  REPTILE regulatory
 prediction pipeline is built on this R package.  See
 <https://github.com/yupenghe/REPTILE> for more information.")
     (license license:bsd-2)))
-
-(define-public r-repsd
-  (package
-    (name "r-repsd")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "repsd" version))
-              (sha256
-               (base32
-                "1q04n97jl5xvagzcl3cfsvshws95qdvwcl8lhfyhazd1k602lyck"))))
-    (properties `((upstream-name . "repsd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-progress))
-    (home-page "https://cran.r-project.org/package=repsd")
-    (synopsis "Root Expected Proportion Squared Difference for Detecting DIF")
-    (description
-     "Root Expected Proportion Squared Difference (REPSD) is a nonparametric
-differential item functioning (DIF) method that (a) allows practitioners to
-explore for DIF related to small, fine-grained focal groups of examinees, and
-(b) compares the focal group directly to the composite group that will be used
-to develop the reported test score scale.  Using your provided response matrix
-with a column that identifies focal group membership, this package provides the
-REPSD values, a simulated null distribution of possible REPSD values, and the
-simulated p-values identifying items possibly displaying DIF without requiring
-enormous sample sizes.")
-    (license license:expat)))
 
 (define-public r-reproj
   (package
@@ -32610,28 +32621,6 @@ source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
 
-(define-public r-read-dbc
-  (package
-    (name "r-read-dbc")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "read.dbc" version))
-              (sha256
-               (base32
-                "1vrvxkcrk3iw5am9rsadxzf0wsr7z2mdpa5wb0v9jbhda710b4yf"))))
-    (properties `((upstream-name . "read.dbc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreign))
-    (home-page "https://github.com/danicat/read.dbc")
-    (synopsis "Read Data Stored in DBC (Compressed DBF) Files")
-    (description
-     "This package provides functions for reading and decompressing the DBC
-(compressed DBF) files.  Please note that this is the file format used by the
-Brazilian Ministry of Health (DATASUS) to publish healthcare datasets.  It is
-not related to the FoxPro or CANdb DBC file formats.")
-    (license license:agpl3)))
-
 (define-public r-reactran
   (package
     (name "r-reactran")
@@ -32983,13 +32972,13 @@ high variability of the RDS process.")
 (define-public r-rdssamplesize
   (package
     (name "r-rdssamplesize")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RDSsamplesize" version))
               (sha256
                (base32
-                "1k45j5zxcjkpqx5vchrv3v987zr80bkiwym6n79hq0isbrswnhcy"))))
+                "0rhgr3v6q4dws49qgkdwf69aa9glxkmjfxkimwjk1zz0pyx9m8hl"))))
     (properties `((upstream-name . "RDSsamplesize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36033,13 +36022,13 @@ R and modern C++.")
 (define-public r-rcplex
   (package
     (name "r-rcplex")
-    (version "0.3-5")
+    (version "0.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rcplex" version))
               (sha256
                (base32
-                "10z5akab66d8a3rcs5dbqq1w59hhyn52mq8vpjhcxpzqqc3c7442"))))
+                "01254ygn661zp0h6xf04vw77vppm54y3g8fcmcxfj4m36nk7jc01"))))
     (properties `((upstream-name . "Rcplex")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam))
@@ -39670,44 +39659,6 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 accumulation histories for deposits, through combining radiocarbon and other
 dates with prior information.  See Blaauw & Christen (2011).")
     (license license:gpl2+)))
-
-(define-public r-rb3
-  (package
-    (name "r-rb3")
-    (version "0.0.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rb3" version))
-              (sha256
-               (base32
-                "06ayyjp4xr8jwyqhpnpkdpbnbhzm733rj8vrv153qlxlal406vzd"))))
-    (properties `((upstream-name . "rb3")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-proto
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-digest
-                             r-cli
-                             r-bizdays
-                             r-base64enc
-                             r-ascii))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/rb3")
-    (synopsis "Download and Parse Public Data Released by B3 Exchange")
-    (description
-     "Download and parse public files released by B3 and convert them into useful
-formats and data structures common to data analysis practitioners.")
-    (license license:expat)))
 
 (define-public r-rayvertex
   (package
@@ -45420,16 +45371,16 @@ format.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2resize" version))
               (sha256
                (base32
-                "0wk56hgx9b588ay42dpbc1wl5wg4s7ag6vgmy2nbza1sa5mk4k8p"))))
+                "1klgq8gjyg8afb9gbsd7fq1df3isw5jbfy4lg3qvajzbz5pjcj78"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-dt))
+    (propagated-inputs (list r-shiny r-nextgenshinyapps r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://r2resize.obi.obianom.com")
     (synopsis

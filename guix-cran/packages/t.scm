@@ -5844,13 +5844,13 @@ total evidence dating analyses.")
 (define-public r-treespace
   (package
     (name "r-treespace")
-    (version "1.1.4.1")
+    (version "1.1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "treespace" version))
               (sha256
                (base32
-                "177n1h4yjvfmdsyy4anwi1gfxcxxvhdlyqagn74ni3pi6mxvjp4s"))))
+                "0pys9pz0b8w20rgp8l33k69yrl8bn98gsqy4rld6ky3nqdd8kzks"))))
     (properties `((upstream-name . "treespace")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinybs
@@ -12277,13 +12277,13 @@ elements such as title, key-value pairs, or colour to reveal trends.")
 (define-public r-timbr
   (package
     (name "r-timbr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timbr" version))
               (sha256
                (base32
-                "0h7fs9w9npvm68yriblbaczqm409macmr0xsw6lw5vp7rd8kcpqx"))))
+                "17ri6mr9na9vfjr1jvxmj283j96hxz064kdlbbap1izkskpkhl86"))))
     (properties `((upstream-name . "timbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19203,34 +19203,6 @@ survival experiences of two treatment groups.  Candidate distributions include
 the exponential, gamma, generalized gamma, log-normal, and Weibull.")
     (license license:gpl3)))
 
-(define-public r-tempor
-  (package
-    (name "r-tempor")
-    (version "1.0.4.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tempoR" version))
-              (sha256
-               (base32
-                "0gn16j496833pvbjaf6wx26z9ilwssjp947mcyk6n2jb33x93rr2"))))
-    (properties `((upstream-name . "tempoR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pls r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tempoR")
-    (synopsis "Characterizing Temporal Dysregulation")
-    (description
-     "TEMPO (TEmporal Modeling of Pathway Outliers) is a pathway-based outlier
-detection approach for finding pathways showing significant changes in temporal
-expression patterns across conditions.  Given a gene expression data set where
-each sample is characterized by an age or time point as well as a phenotype
-(e.g. control or disease), and a collection of gene sets or pathways, TEMPO
-ranks each pathway by a score that characterizes how well a partial least
-squares regression (PLSR) model can predict age as a function of gene expression
-in the controls and how poorly that same model performs in the disease.  TEMPO
-v1.0.3 is described in Pietras (2018) <doi:10.1145/3233547.3233559>.")
-    (license license:gpl3)))
-
 (define-public r-templr
   (package
     (name "r-templr")
@@ -20407,17 +20379,16 @@ Clients for both REST and Streaming protocols implemented.")
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tcplfit2" version))
               (sha256
                (base32
-                "1y69z27mgphcj5qkhlpgv0as59aralimf7mbfrdz5n6nkqfj5krr"))))
+                "1illbx2ifq63ki8yn97gs0lpl4hzdcl2sbwq7id3pgd8pmfka68w"))))
     (properties `((upstream-name . "tcplfit2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcolorbrewer r-numderiv
-                             r-future-apply r-future))
+    (propagated-inputs (list r-stringr r-rcolorbrewer r-numderiv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tcplfit2")
     (synopsis "Concentration-Response Modeling of HTS or Transcriptomics Data")

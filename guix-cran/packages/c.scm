@@ -3086,16 +3086,17 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "4.1.1")
+    (version "5.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CSTools" version))
               (sha256
                (base32
-                "1a05wv9isrlf7pzhychczvnpvsppnnriaz4jsm78ccg0m9y3wabj"))))
+                "1jy6q0a98k2xwzbxmv8djfw2kaz266d66dil4wkr4kl5aan926ln"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
+                             r-scales
                              r-s2dv
                              r-reshape2
                              r-rcolorbrewer
@@ -3105,6 +3106,7 @@ details.")
                              r-ncdf4
                              r-multiapply
                              r-maps
+                             r-lubridate
                              r-ggplot2
                              r-easyverification
                              r-data-table
@@ -3121,7 +3123,8 @@ methods for forecast calibration, bias correction, statistical and stochastic
 downscaling, optimal forecast combination and multivariate verification, as well
 as basic and advanced tools to obtain tailored products.  This package was
 developed in the context of the ERA4CS project MEDSCOPE and the H2020 S2S4E
-project.  PÃ©rez-ZanÃ³n et al. (2022) <doi:10.5194/gmd-15-6115-2022>.
+project and includes contributions from ArticXchange project founded by
+EU-PolarNet 2.  PÃ©rez-ZanÃ³n et al. (2022) <doi:10.5194/gmd-15-6115-2022>.
 Doblas-Reyes et al. (2005) <doi:10.1111/j.1600-0870.2005.00104.x>.  Mishra et
 al. (2018) <doi:10.1007/s00382-018-4404-z>.  Sanchez-Garcia et al. (2019)
 <doi:10.5194/asr-16-165-2019>.  Straus et al. (2007) <doi:10.1175/JCLI4070.1>.
@@ -3131,7 +3134,7 @@ Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>.  Torralba et al. (2017)
 <doi:10.5194/gmd-10-4257-2017>.  Van Schaeybroeck et al. (2019)
 <doi:10.1016/B978-0-12-812372-0.00010-8>.  Yiou et al. (2013)
 <doi:10.1007/s00382-012-1626-3>.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-cstime
   (package
@@ -3870,44 +3873,6 @@ analysis.  For more detail, see Karimnezhad, A. (2022)
 regression model.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
-
-(define-public r-csa
-  (package
-    (name "r-csa")
-    (version "0.7.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "csa" version))
-              (sha256
-               (base32
-                "0cmabcvfxfplnzx7mdsfas3jhgz44y86411amaphm75zmv8khcif"))))
-    (properties `((upstream-name . "csa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-raster
-                             r-moments
-                             r-lmoments
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (home-page "http://github.com/imarkonis/csa")
-    (synopsis
-     "Cross-Scale Analysis Tool for Model-Observation Visualization and Integration")
-    (description
-     "Integration of Earth system data from various sources is a challenging task.
-Except for their qualitative heterogeneity, different data records exist for
-describing similar Earth system process at different spatio-temporal scales.
-Data inter-comparison and validation are usually performed at a single spatial
-or temporal scale, which could hamper the identification of potential
-discrepancies in other scales.  csa package offers a simple, yet efficient,
-graphical method for synthesizing and comparing observed and modelled data
-across a range of spatio-temporal scales.  Instead of focusing at specific
-scales, such as annual means or original grid resolution, we examine how their
-statistical properties change across spatio-temporal continuum.")
-    (license license:gpl2)))
 
 (define-public r-cryst
   (package
@@ -10181,13 +10146,13 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 (define-public r-correlation
   (package
     (name "r-correlation")
-    (version "0.8.3")
+    (version "0.8.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "correlation" version))
               (sha256
                (base32
-                "09hk9152q7j8rlr8mj8m712vvvb0p46m13vmd848wr6g5pg3rc9z"))))
+                "07fz7wmvrcd6b023jhj3bsrvg4w6i7f1v99jslm0gj84vzmnqzbs"))))
     (properties `((upstream-name . "correlation")))
     (build-system r-build-system)
     (propagated-inputs (list r-parameters r-insight r-datawizard r-bayestestr))
@@ -10198,7 +10163,8 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
      "Lightweight package for computing different kinds of correlations, such as
 partial correlations, Bayesian correlations, multilevel correlations, polychoric
 correlations, biweight correlations, distance correlations and more.  Part of
-the easystats ecosystem.")
+the easystats ecosystem.  References: Makowski et al. (2020)
+<doi:10.21105/joss.02306>.")
     (license license:gpl3)))
 
 (define-public r-corregp
@@ -18010,13 +17976,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.4")
+    (version "1.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "0ms22fa45hpfb4034ybyj795ny3zzh9x0vi2012sbrl3l0wld9xk"))))
+                "1jiw3ihv4sl7asmii5l3y1y0lfwli0n5lfpl1zia14hq7dm4kca6"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -29340,6 +29306,30 @@ assumptions.  See Liao X, Meyer MC (2019)<doi:10.18637/jss.v089.i05> for more
 details.")
     (license license:gpl2+)))
 
+(define-public r-cgalpolygons
+  (package
+    (name "r-cgalpolygons")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cgalPolygons" version))
+              (sha256
+               (base32
+                "12kgd2b2hbaicddgcym7vkn1y1vsjqdvmj3iwnq1x3fjnbmynqnd"))))
+    (properties `((upstream-name . "cgalPolygons")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-r6 r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/cgalPolygons")
+    (synopsis "R6 Based Utilities for Polygons using 'CGAL'")
+    (description
+     "This package provides some utilities for polygons: area calculation,
+decomposition into convex parts, Minkowski addition, Boolean operations, and
+more.  Polygons with holes are supported.  The algorithms are performed by the
+C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
+
 (define-public r-cgalmeshes
   (package
     (name "r-cgalmeshes")
@@ -31156,6 +31146,43 @@ Smith JQ, Thwaites PA, Nicholson AE. The Dynamic Chain Event Graph.  Electronic
 Journal of Statistics, 9 (2) 2130-2169 <doi:10.1214/15-EJS1068>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-ceemdanml
+  (package
+    (name "r-ceemdanml")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CEEMDANML" version))
+              (sha256
+               (base32
+                "0hc5sx1zvxj3j5psgcgzhw6l9zrvbbsnpw6qr7ww82bjjr3wbi3c"))))
+    (properties `((upstream-name . "CEEMDANML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries
+                             r-rlibeemd
+                             r-pso
+                             r-neuralnet
+                             r-lsts
+                             r-forecast
+                             r-fints
+                             r-fgarch
+                             r-earth
+                             r-e1071
+                             r-caret
+                             r-atsa))
+    (home-page "https://cran.r-project.org/package=CEEMDANML")
+    (synopsis "CEEMDAN Decomposition Based Hybrid Machine Learning Models")
+    (description
+     "Noise in the time-series data significantly affects the accuracy of the Machine
+Learning (ML) models (Artificial Neural Network and Support Vector Regression
+are considered here).  Complete Ensemble Empirical Mode Decomposition with
+Adaptive Noise (CEEMDAN) decomposes the time series data into sub-series and
+help to improve the model performance.  The models can achieve higher prediction
+accuracy than the traditional ML models.  Two models have been provided here for
+time series forecasting.  More information may be obtained from Garai and Paul
+(2023) <doi:10.1016/j.iswa.2023.200202>.")
+    (license license:gpl3)))
 
 (define-public r-cedars
   (package

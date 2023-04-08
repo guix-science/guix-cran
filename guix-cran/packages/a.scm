@@ -1706,48 +1706,6 @@ history using conventional commit messages
 (<https://www.conventionalcommits.org/en/v1.0.0/>).")
     (license license:gpl3)))
 
-(define-public r-automrp
-  (package
-    (name "r-automrp")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "autoMrP" version))
-              (sha256
-               (base32
-                "11r849hglwgbqiq34q7xd3cdli5qrbqh90faj7pdm09sjkk4mn37"))))
-    (properties `((upstream-name . "autoMrP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-r-rsp
-                             r-purrr
-                             r-lme4
-                             r-knitr
-                             r-glmmlasso
-                             r-ggplot2
-                             r-gbm
-                             r-foreach
-                             r-forcats
-                             r-ebmaforecast
-                             r-e1071
-                             r-dplyr
-                             r-dorng
-                             r-doparallel))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/retowuest/autoMrP")
-    (synopsis "Improving MrP with Ensemble Learning")
-    (description
-     "This package provides a tool that improves the prediction performance of
-multilevel regression with post-stratification (MrP) by combining a number of
-machine learning methods.  For information on the method, please refer to
-Broniecki, WÃ¼est, Leemann (2020) Improving Multilevel Regression with
-Post-Stratification Through Machine Learning (autoMrP) forthcoming in Journal of
-Politics'.  Final pre-print version:
-<https://lucasleemann.files.wordpress.com/2020/07/automrp-r2pa.pdf>.")
-    (license license:gpl3)))
-
 (define-public r-automl
   (package
     (name "r-automl")
@@ -3779,36 +3737,6 @@ family canonical parameterization (aster transform of usual parameterization).
 There are also random effects versions of these models.")
     (license license:expat)))
 
-(define-public r-ast2ast
-  (package
-    (name "r-ast2ast")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ast2ast" version))
-              (sha256
-               (base32
-                "125qnpcwlqbgzp98n7cx35c2ylxmhn3a0c99mn5py6m74sj969a5"))))
-    (properties `((upstream-name . "ast2ast")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-purrr
-                             r-dfdr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Konrad1991/ast2ast")
-    (synopsis "Translates an R Function to a C++ Function")
-    (description
-     "Enable translation of a tiny subset of R to C++.  The user has to define a R
-function which gets translated.  For a full list of possible functions check the
-documentation.  After translation an R function is returned which is a shallow
-wrapper around the C++ code.  Alternatively an external pointer to the C++
-function is returned to the user.  The intention of the package is to generate
-fast functions which can be used as ode-system or during optimization.")
-    (license license:gpl2)))
-
 (define-public r-ast
   (package
     (name "r-ast")
@@ -3992,36 +3920,6 @@ semiparametric linear mixed-effects models, and an snm() function for
 semiparametric nonlinear mixed-effects models.  See Wang (2011)
 <doi:10.1201/b10954> for an overview.")
     (license license:gpl2)))
-
-(define-public r-assignr
-  (package
-    (name "r-assignr")
-    (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "assignR" version))
-              (sha256
-               (base32
-                "04sygm8hx01lk8sj306w0nbha1wr86mfhi0q4sh31s145rq5rhs3"))))
-    (properties `((upstream-name . "assignR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rlang
-                             r-rgdal
-                             r-raster
-                             r-mvnfast
-                             r-maptools
-                             r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=assignR")
-    (synopsis "Infer Geographic Origin from Isotopic Data")
-    (description
-     "Routines for re-scaling isotope maps using known-origin tissue isotope data,
-assigning origin of unknown samples, and summarizing and assessing assignment
-results.  Methods are adapted from Wunder (2010, in ISBN:9789048133536) and
-Vander Zanden, H. B. et al. (2014) <doi:10.1111/2041-210X.12229> as described in
-Ma, C. et al. (2020) <doi:10.1111/2041-210X.13426>.")
-    (license license:gpl3)))
 
 (define-public r-assignpop
   (package
@@ -6006,37 +5904,6 @@ to oceanographic analysis.  See Kelley, Harbin, and Richards (2021)
 <doi:10.3389/fmars.2021.635922> for more on the scientific context and
 applications.")
     (license license:gpl2+)))
-
-(define-public r-argo
-  (package
-    (name "r-argo")
-    (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "argo" version))
-              (sha256
-               (base32
-                "1q7gbyk2f8vimwzdmd1mfqyaql2gyawywilwzs6g1716gbk3gd80"))))
-    (properties `((upstream-name . "argo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-xtable
-                             r-xml
-                             r-matrix
-                             r-glmnet
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=argo")
-    (synopsis
-     "Accurate Estimation of Influenza Epidemics using Google Search Data")
-    (description
-     "Augmented Regression with General Online data (ARGO) for accurate estimation of
-influenza epidemics in United States on national level, regional level and state
-level.  It replicates the method introduced in paper Yang, S., Santillana, M.
-and Kou, S.C. (2015) <doi:10.1073/pnas.1515373112>; Ning, S., Yang, S. and Kou,
-S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
-(2021) <doi:10.1038/s41598-021-83084-5>.")
-    (license license:gpl2)))
 
 (define-public r-arfima
   (package
@@ -9148,13 +9015,13 @@ explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.5.0")
+    (version "2.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresRead" version))
               (sha256
                (base32
-                "1y5zzyxmyxrjchdm9wgxnqzfjrfjdim66qjd5465dq60h43svvd7"))))
+                "16chh3n62m0dw0w25wrn68l1gn03vhhsz7k2vgwgjcyzbbllg2x2"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9212,13 +9079,13 @@ consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "antaresEditObject" version))
               (sha256
                (base32
-                "01xm7khz46xhq4klf2xismxldlinkarzj3kfkxj3dwjnfkf0jx9s"))))
+                "05zawrma7li2pqlsvs1y866a3l7qrpkb2mb0n9l883lfb4gw9q8q"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -16954,16 +16821,17 @@ traits measured for each taxa.")
 (define-public r-adehabitatma
   (package
     (name "r-adehabitatma")
-    (version "0.3.15")
+    (version "0.3.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatMA" version))
               (sha256
                (base32
-                "1j1idpr0704x3s9dhzxysr3zkm9lp6wnac1jdp98vvbd0l5h7icc"))))
+                "1jmmi6rh3rnv5b3qy1xhy0rs4dnkysf4rxjfs0im1i5n4rd437h8"))))
     (properties `((upstream-name . "adehabitatMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatMA")
     (synopsis "Tools to Deal with Raster Maps")
     (description
@@ -16973,16 +16841,17 @@ traits measured for each taxa.")
 (define-public r-adehabitatlt
   (package
     (name "r-adehabitatlt")
-    (version "0.3.26")
+    (version "0.3.27")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatLT" version))
               (sha256
                (base32
-                "0208qi802rn8ys00js843ckhg5pw20c55bz8b95kcl538grn9fs0"))))
+                "0siaj9h9gyar6pmnv9bp4k7lcpfcvhykl3jj80pzdb6yyybgj2zx"))))
     (properties `((upstream-name . "adehabitatLT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-circstats r-adehabitatma r-ade4))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatLT")
     (synopsis "Analysis of Animal Movements")
     (description
@@ -16993,16 +16862,17 @@ movements.")
 (define-public r-adehabitaths
   (package
     (name "r-adehabitaths")
-    (version "0.3.16")
+    (version "0.3.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatHS" version))
               (sha256
                (base32
-                "1983k2819khkbr50v19n2k0jff9q8bcn1gqv4nmy2z8f24s43mnk"))))
+                "040qbhfrsxjnl75lmc3fmyrvqblfcp0mmagk8sj225069c64k62n"))))
     (properties `((upstream-name . "adehabitatHS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitathr r-ade4))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatHS")
     (synopsis "Analysis of Habitat Selection by Animals")
     (description
@@ -17013,17 +16883,17 @@ selection.")
 (define-public r-adehabitathr
   (package
     (name "r-adehabitathr")
-    (version "0.4.20")
+    (version "0.4.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adehabitatHR" version))
               (sha256
                (base32
-                "06r07cldrdm3d3kig55vvg505j82c0h38cip8rkgaxc29bf32bfx"))))
+                "0ji4a27z5qsi8xpzlx9z8m9hg9k81bb6mkbwzpsinsn1x1dipg0n"))))
     (properties `((upstream-name . "adehabitatHR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-deldir r-adehabitatma r-adehabitatlt
-                             r-ade4))
+    (propagated-inputs (list r-sp r-adehabitatma r-adehabitatlt r-ade4))
+    (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatHR")
     (synopsis "Home Range Estimation")
     (description
