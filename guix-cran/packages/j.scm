@@ -585,13 +585,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.0.7")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jstable" version))
               (sha256
                (base32
-                "1hs202z49aazsadr0jb67wk43i18y3h1aw0xflfmvirxjxr63xm8"))))
+                "11d25n4zy7720ad4zzdi6yhfs67nq7x33prc88j2k5fdby78800i"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2699,13 +2699,13 @@ download.")
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.6.5")
+    (version "0.6.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jfa" version))
               (sha256
                (base32
-                "0b8gyd57xxzw232j11vm9gjs3pa58ndg3ny9al7hjqlh2krbl8dz"))))
+                "0zrr5bcjh56z11pwqjz99mf8l0fc6nav3g56y6an4r3bhjw90rf2"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -2715,8 +2715,6 @@ download.")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
-                             r-philentropy
-                             r-moments
                              r-ggplot2
                              r-extradistr
                              r-bh

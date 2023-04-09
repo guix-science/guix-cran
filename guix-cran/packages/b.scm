@@ -8531,13 +8531,13 @@ omics covariate data.  BMC Bioinformatics 20:358.
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "3.0-0")
+    (version "3.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockCV" version))
               (sha256
                (base32
-                "0p5i9b0wg08zv94h4anmb30whdi7awxvwlhb78alyv15y03x7mxh"))))
+                "1p8qyd1qvy4p6d5p0xbx9kfcrf8zrnd50056dmami7dj8zapl995"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp))

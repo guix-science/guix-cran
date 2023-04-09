@@ -9477,13 +9477,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "1.0.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRecipe" version))
               (sha256
                (base32
-                "0vwyb6mlb2qv1dqkmywl0r8zwckqxs2q6mdmk6kj5giwxysb1hbk"))))
+                "0wpmmq6vxmd883k6cp6mbnzpqkiy8qb5a12bghj1z5vy9023abik"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -31386,13 +31386,13 @@ are included.")
 (define-public r-pareto
   (package
     (name "r-pareto")
-    (version "2.4.2")
+    (version "2.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Pareto" version))
               (sha256
                (base32
-                "0396jixa4scqcgq8qyhin91mppg4knz2bfik67jh119clwdrd8vj"))))
+                "0sracxn657xpc20kzmvgba438l0x616pyara5ays9n9fpkbx27bw"))))
     (properties `((upstream-name . "Pareto")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

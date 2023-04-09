@@ -30677,13 +30677,13 @@ estimates or guesstimates from organizations, and expert opinion.")
 (define-public r-sixsigma
   (package
     (name "r-sixsigma")
-    (version "0.10.3")
+    (version "0.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SixSigma" version))
               (sha256
                (base32
-                "0n3cpl4104p8p9fwmkybfrgr02gvd66cszp7rjpp0ixspxjc6fls"))))
+                "17y039k8q1nh1j2v8z8wy5z2l984d27vwh1szydc6w5wzv1b7cg4"))))
     (properties `((upstream-name . "SixSigma")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

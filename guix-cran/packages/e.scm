@@ -684,13 +684,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.3")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extremeStat" version))
               (sha256
                (base32
-                "17l7ccnyg09dg9a3204b51axmj46gghmlqkd4kq6fsldmwic1zv6"))))
+                "0jjarsb45xzdkdca76k7g06c25xq2r3q1ldcxyb0jf26j4lkhi37"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-renext

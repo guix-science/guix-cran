@@ -7889,13 +7889,13 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googletraffic" version))
               (sha256
                (base32
-                "0zj9lmwxl7d85izswd73p94dmy7ykjkan7j9a82ap7ij593n4fb0"))))
+                "08rf7gc3yfs36llc9xdn12p1xngy9h7jd8g4v2ajmrjaddp0h706"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -15282,13 +15282,13 @@ layout.")
 (define-public r-ggpicrust2
   (package
     (name "r-ggpicrust2")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggpicrust2" version))
               (sha256
                (base32
-                "0z8mmvpgrhhpkya0xzf3n5i3w9138i18hlxng5xsgxr0yfwb6sy3"))))
+                "1ghzwhd2jmdz18klyzyia84w1s9j3ccszldvfy3vpndppyg7cyh1"))))
     (properties `((upstream-name . "ggpicrust2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15296,6 +15296,7 @@ layout.")
                              r-summarizedexperiment
                              r-readr
                              r-phyloseq
+                             r-patchwork
                              r-microbiomestat
                              r-metagenomeseq
                              r-maaslin2

@@ -15633,23 +15633,24 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "179qssmv3cl49b5s6slmqn58w5bmvihpaf0r2pmamqvc0qhgsci5"))))
+                "1bvs4hb4hi8746lxf3il7lfsqqpzw06z4axhr76d3708nyw7m9k6"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
     (synopsis
-     "Get Executing Script's Path, from 'Rgui', 'RStudio', 'VSCode', 'source()', and 'Rscript' (Shells Including Windows Command Line / / Unix Terminal)")
+     "Get Executing Script's Path, from 'Rgui', 'RStudio', 'VSCode', 'Jupyter', 'source()', and 'Rscript' (Shells Including Windows Command Line / / Unix Terminal)")
     (description
      "Determine the path of the executing script.  Works when running a line or
-selection in Rgui', RStudio', and VSCode', when using source()', sys.source()',
-debugSource() in RStudio', testthat::source_file()', and knitr::knit()', and
-when running from a shell.")
+selection in Rgui', RStudio', VSCode', and Jupyter', when using source()',
+sys.source()', debugSource() in RStudio', testthat::source_file()',
+knitr::knit()', box::use()', and compiler::load.cmp()', and when running from a
+shell.")
     (license license:expat)))
 
 (define-public r-thinkr

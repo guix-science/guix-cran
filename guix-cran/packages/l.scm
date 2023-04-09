@@ -2387,40 +2387,6 @@ data-driven LP-transformed matrix for classification.  The primary reference is
 Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <arXiv:1810.01724>.")
     (license license:gpl2)))
 
-(define-public r-lpjmlkit
-  (package
-    (name "r-lpjmlkit")
-    (version "1.0.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lpjmlkit" version))
-              (sha256
-               (base32
-                "0znkzpa4ydakn3sxs6pvg6kx6fsvpa2g0prbklk9w26c9m3kaac7"))))
-    (properties `((upstream-name . "lpjmlkit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tibble
-                             r-rlang
-                             r-processx
-                             r-magrittr
-                             r-jsonlite
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PIK-LPJmL/lpjmlkit")
-    (synopsis "Toolkit for Basic LPJmL Handling")
-    (description
-     "This package provides a collection of basic functions to facilitate the work
-with the Dynamic Global Vegetation Model (DGVM) Lund-Potsdam-Jena managed Land
-(LPJmL) hosted at the Potsdam Institute for Climate Impact Research (PIK).  It
-provides functions for performing LPJmL simulations, as well as reading,
-processing and writing model-related data such as inputs and outputs or
-configuration files.")
-    (license license:agpl3)))
-
 (define-public r-lpirfs
   (package
     (name "r-lpirfs")

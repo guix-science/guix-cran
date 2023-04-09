@@ -34225,13 +34225,13 @@ name.\"")
 (define-public r-matrixtests
   (package
     (name "r-matrixtests")
-    (version "0.1.9.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matrixTests" version))
               (sha256
                (base32
-                "1fixzjbrwm0shyvkishff6l5yanqnvhcgbidkw8fsalf3jwwc0ix"))))
+                "096kh1fqa7c6y1pcnblxs6z231f8yic0r8bkgfm3c50yy1w4v4w1"))))
     (properties `((upstream-name . "matrixTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))

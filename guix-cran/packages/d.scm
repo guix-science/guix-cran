@@ -5285,13 +5285,13 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
 (define-public r-dppack
   (package
     (name "r-dppack")
-    (version "0.0.11")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DPpack" version))
               (sha256
                (base32
-                "1i2ic9w42pc1a5aqsy972rdk297q98vkqypj2vaxx0pav4m3l6lh"))))
+                "1kip6n4pxpk5byjdn5m6l8s5l49dvkh78wn6n85dri0c2snkvs17"))))
     (properties `((upstream-name . "DPpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil
