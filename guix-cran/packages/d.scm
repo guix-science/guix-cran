@@ -19605,13 +19605,13 @@ graphical interface to guess parameters in the traditional way if desired.")
 (define-public r-ddl
   (package
     (name "r-ddl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DDL" version))
               (sha256
                (base32
-                "176hvm3gl6dv9na3jjkqb27b8n4fwxsg8cazwkabv9jn12w4a93p"))))
+                "1scgg90njn8ahxdzbz1dyhr508hlipgaawk2pll0hk093abnqrlc"))))
     (properties `((upstream-name . "DDL")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))

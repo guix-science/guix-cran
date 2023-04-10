@@ -21459,13 +21459,13 @@ restriction of species.")
 (define-public r-ricu
   (package
     (name "r-ricu")
-    (version "0.5.4")
+    (version "0.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ricu" version))
               (sha256
                (base32
-                "062dzfygi3zc1bn40073hmd0bq4xisz3l8winrqk540sw08mv7mm"))))
+                "04qzfngqgcil2psnjbiwqx2wn2633mp40m1ry2ckp05sldzv7ad6"))))
     (properties `((upstream-name . "ricu")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

@@ -22638,13 +22638,13 @@ conserved domains that specifically define that family.  See Die et al. (2018)
 (define-public r-genehapr
   (package
     (name "r-genehapr")
-    (version "1.1.8")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geneHapR" version))
               (sha256
                (base32
-                "1m0dm4i6l61rjzpdl5y7f24dik4hmhhg3ga7hmxf8jsgyqazi69r"))))
+                "1fkf41llhmf2rlb1aj5y8qcrq6wn4860bsfp9y6xz1xinjpgi8w7"))))
     (properties `((upstream-name . "geneHapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr

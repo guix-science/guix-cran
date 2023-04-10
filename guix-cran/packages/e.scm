@@ -8599,6 +8599,38 @@ design linear regression functionalities, and a method for calculating the
 confidence intervals for functions of parameters from a GLM.")
     (license license:expat)))
 
+(define-public r-epiflows
+  (package
+    (name "r-epiflows")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epiflows" version))
+              (sha256
+               (base32
+                "1d7j2w9jjscny0ax33k1wy0hcr2pn6ck491vfm327lx4jpld8pfd"))))
+    (properties `((upstream-name . "epiflows")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-tibble
+                             r-sp
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-ggmap
+                             r-geosphere
+                             r-epicontacts))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.repidemicsconsortium.org/epiflows/")
+    (synopsis "Predicting Disease Spread from Flow Data")
+    (description
+     "This package provides functions and classes designed to handle and visualise
+epidemiological flows between locations.  Also contains a statistical method for
+predicting disease spread from flow data initially described in Dorigatti et al.
+(2017) <doi:10.2807/1560-7917.ES.2017.22.28.30572>.  This package is part of the
+RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
+    (license license:expat)))
+
 (define-public r-epifitter
   (package
     (name "r-epifitter")

@@ -2484,19 +2484,21 @@ with various criteria, and kinship for the X chromosome.")
 (define-public r-kinmixlite
   (package
     (name "r-kinmixlite")
-    (version "2.0.8")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "KinMixLite" version))
               (sha256
                (base32
-                "1bs1ywcj55fa18xkflimznsd7nw6mv08wygqhjfw7i2i7q2cghqj"))))
+                "17kjb12r35b42ghkv6mp0jk115gn2dlwc8cdf92cm9jjn4k9am9a"))))
     (properties `((upstream-name . "KinMixLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
                              r-rsolnp
                              r-ribd
                              r-pedtools
+                             r-numderiv
+                             r-matrix
                              r-grbase
                              r-graven
                              r-dnamixtureslite))

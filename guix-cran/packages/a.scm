@@ -15463,16 +15463,17 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 (define-public r-adw
   (package
     (name "r-adw")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adw" version))
               (sha256
                (base32
-                "0yynzw4sxz42vqq4dxb0cs123mbir5nnsq45v9agjw889m7k7prj"))))
+                "0zg553gk3r4nvc04g16kxrdw9xzmz558r1r0j9b5s0jyxiybbnym"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-geosphere))
+    (propagated-inputs (list r-terra r-sf))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/PanfengZhang/adw")
     (synopsis "Angular Distance Weighting Interpolation")
     (description

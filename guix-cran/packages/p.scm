@@ -4147,13 +4147,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prt
   (package
     (name "r-prt")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prt" version))
               (sha256
                (base32
-                "0xby77mcmz3if93wnmzx8il0h3bphdfqzjxhnhyihzgf0j3fjlci"))))
+                "02f75a9ici0a7fm08r0dhykf73jpixg5cm8ym2z18dhghas4zly4"))))
     (properties `((upstream-name . "prt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -4161,7 +4161,6 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
                              r-rlang
                              r-pillar
                              r-fst
-                             r-fansi
                              r-data-table
                              r-crayon
                              r-cli
@@ -8966,17 +8965,17 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predicts
   (package
     (name "r-predicts")
-    (version "0.1-6")
+    (version "0.1-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predicts" version))
               (sha256
                (base32
-                "061pp5kjxlbjs9adq8sxhcgsiqj78g89paa024gqrl7bv3pssk94"))))
+                "1nlgb1hrsvxcbv52vf4ba61rf0ijdrr2mn1g1f2z889jslx914yy"))))
     (properties `((upstream-name . "predicts")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
-    (home-page "https://rspatial.org/terra/sdm/")
+    (home-page "https://rspatial.org/sdm/")
     (synopsis "Spatial Prediction Tools")
     (description
      "This package provides methods for spatial predictive modeling, especially for
@@ -10265,13 +10264,13 @@ Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry (pp.
 (define-public r-ppmsuite
   (package
     (name "r-ppmsuite")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ppmSuite" version))
               (sha256
                (base32
-                "14s6nmvzcl1qnq7fihrvly6zkjnvbj4vwbcc15jj4l0nyfbrcc45"))))
+                "1lks3vfn9kalyyah7ijk2mwqvlzq5ka0dsz81zbp75m739haqxrs"))))
     (properties `((upstream-name . "ppmSuite")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -17891,13 +17890,13 @@ Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
 (define-public r-plm
   (package
     (name "r-plm")
-    (version "2.6-2")
+    (version "2.6-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plm" version))
               (sha256
                (base32
-                "0r0yhr00hfjh5nksp4pbkifjyf6jbxcq8hwjqlbdmvkz51fi4ayz"))))
+                "00scwxk8aw9s85ls3igspd7rk2jz3lk4irrgmy2crhpcbf3hpays"))))
     (properties `((upstream-name . "plm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

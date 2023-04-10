@@ -8288,13 +8288,13 @@ Application Programming Interface (API), which can be found here:
 (define-public r-story
   (package
     (name "r-story")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stoRy" version))
               (sha256
                (base32
-                "1mxnnmg6wqp40hyh2mjd39vpzks78rr59pdlyxljlpnlslgkf1md"))))
+                "1lxz3354kl3i71v5wnbgxxd4sv9vj8rj9vvbp67j4vq3pxy4z4q6"))))
     (properties `((upstream-name . "stoRy")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8318,7 +8318,7 @@ Application Programming Interface (API), which can be found here:
     (description
      "Download, explore, and analyze Literary Theme Ontology themes and thematically
 annotated story data.  To learn more about the project visit
-<https://github.com/theme-ontology/theming> and <https://themeontology.org>.")
+<https://github.com/theme-ontology/theming> and <https://www.themeontology.org>.")
     (license license:gpl3)))
 
 (define-public r-stortingscrape
@@ -35310,13 +35310,13 @@ other entities such as institutes, countries, etc.")
 (define-public r-sihr
   (package
     (name "r-sihr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SIHR" version))
               (sha256
                (base32
-                "02a3k8bfy2srz25dqlml78a2f4mi6mmdc8kb7r66ffk07vsp0whz"))))
+                "1pn59ydm4rr8jkqkrfrrip92pic8710qaazc3ccw6pvhvw20n46a"))))
     (properties `((upstream-name . "SIHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-cvxr))
@@ -42552,13 +42552,13 @@ fossil marine animal genera.  Bulletins of American Paleontology, 363, pp.
 (define-public r-separationplot
   (package
     (name "r-separationplot")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "separationplot" version))
               (sha256
                (base32
-                "0ggyr4asp86hvdp4bwdkljz9b2gzdxm2y9nbz2srlgh3m4hlz2cs"))))
+                "1dvm073mckn6mkyf6fvclc8glsr8d3p2413x5i91w00hphm2lg8z"))))
     (properties `((upstream-name . "separationplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-mass r-hmisc r-foreign))

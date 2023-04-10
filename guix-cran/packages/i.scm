@@ -436,13 +436,13 @@ lpSolveAPI', which is available from CRAN.")
 (define-public r-ivmodel
   (package
     (name "r-ivmodel")
-    (version "1.9.0")
+    (version "1.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ivmodel" version))
               (sha256
                (base32
-                "1yb2k6ciwcfiylnlb9ncz30mz10f73rxqrxk8s099ypr5k6myajk"))))
+                "1glm4nwlzyzwbv3nbi23qslnnqf47ps7iyd3wbr1bfdln0sr2s0l"))))
     (properties `((upstream-name . "ivmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-ggplot2 r-formula))
