@@ -11483,17 +11483,17 @@ available back to 2000 for most geographies.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tinysnapshot" version))
               (sha256
                (base32
-                "05b6zs93wg1c6c1nv61x30hhwjmr2m8qvsxsfdajnq3dlm6rpqqr"))))
+                "1f8j5v9j3n6nv9lsp05jfjq8hph91lx61vbqmw7iizqcwgqfhxbx"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytest r-magick r-diffobj))
-    (home-page "https://cran.r-project.org/package=tinysnapshot")
+    (home-page "https://github.com/vincentarelbundock/tinysnapshot")
     (synopsis "Snapshots for Unit Tests using the 'tinytest' Framework")
     (description
      "Snapshots for unit tests using the tinytest framework for R. Includes

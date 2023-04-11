@@ -6258,6 +6258,28 @@ percentage of orderings in the data that are matched by the hypothesis.")
 pairwise likelihood comparison of theories, calibrated with pre-existing data.")
     (license license:expat)))
 
+(define-public r-oosse
+  (package
+    (name "r-oosse")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "oosse" version))
+              (sha256
+               (base32
+                "0sdhzs99ff9fkyn96zqbk3b5kwir49427b9z31j7x2z5dg90838p"))))
+    (properties `((upstream-name . "oosse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-matrix r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=oosse")
+    (synopsis "Out-of-Sample RÂ² with Standard Error Estimation")
+    (description
+     "Estimates the out-of-sample RÂ² through bootstrap or cross-validation as a
+measure of predictive performance.  In addition, a standard error for this point
+estimate is provided, and confidence intervals are constructed.")
+    (license license:gpl2)))
+
 (define-public r-oos
   (package
     (name "r-oos")

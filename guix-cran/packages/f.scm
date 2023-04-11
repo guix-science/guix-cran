@@ -6342,13 +6342,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestploter" version))
               (sha256
                (base32
-                "1y4934azp46xicppsrkhc2nna4wz30vawm0djinzi5fnvdg8bzis"))))
+                "0mp0w2dmza5vj2wr36z59cvdhcb688din3aq1id4ha61ci0sbidv"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtable r-gridextra))
@@ -9415,35 +9415,6 @@ of this is done so in a tidy manner, so it should tie in nicely with tidyverse
 series of packages.")
     (license license:expat)))
 
-(define-public r-flatness
-  (package
-    (name "r-flatness")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "flatness" version))
-              (sha256
-               (base32
-                "0zl1x4wn5wgm9aksb96ghh395z7fz1awglfjdiid4ak5ssbqgsbq"))))
-    (properties `((upstream-name . "flatness")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-lattice r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=flatness")
-    (synopsis
-     "Indices and Tests for Assessing the Flatness of (Rank) Histograms")
-    (description
-     "S3 classes, plotting functions, indices and tests to analyse the flatness of
-histograms.  It is specifically (but not only) aimed for assessing whether
-\"rank\" histograms (much used in weather forecasting) are flat.  Specifically
-functions are provided to use the Jolliffe-Primo flatness tests introduced in
-Jolliffe and Primo (2008, <doi:10.1175/2007MWR2219.1>).  Flatness indices
-described in Wilks (2019, <doi:10.1175/MWR-D-18-0369.1>) can be computed.
-Finally a function to use the Benjamini-Hochberg procedure for multiple
-hypothesis testing is provided (Benjamini and Hochberg, 1995,
-<doi:10.1111/j.2517-6161.1995.tb02031.x>).")
-    (license license:gpl3)))
-
 (define-public r-flashr
   (package
     (name "r-flashr")
@@ -11723,6 +11694,38 @@ data sets from the Internet or from other sources.")
      "Generate search filters to query scientific bibliographic sources, such as
 PubMed and Web of Science, for non-human primate related publications.")
     (license license:agpl3+)))
+
+(define-public r-filterjsats
+  (package
+    (name "r-filterjsats")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "filteRjsats" version))
+              (sha256
+               (base32
+                "19zi44av3f5zahinqvgz5bvgh82qrpg4r4fffwjh8a09s975q5mg"))))
+    (properties `((upstream-name . "filteRjsats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rerddap
+                             r-lubridate
+                             r-dplyr
+                             r-broman))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=filteRjsats")
+    (synopsis
+     "Filter Raw JSATS Acoustic Telemetry Files from Lotek, ATS, Teknologic")
+    (description
+     "Filtering of raw acoustic telemetry transmissions from three acoustic telemetry
+companies (ATS, Lotek, Teknologic).  The filtering steps check for false
+positives caused by reflected transmissions from surfaces and false pings from
+other noise generating equipment.  The filter is unique for each technology
+type.  The package was written in concert with the Interagency Telemetry
+Advisory Group (iTAG) and makes use of the JSATS California Fish Tracking
+Database: <https://oceanview.pfeg.noaa.gov/CalFishTrack/>.")
+    (license license:gpl3+)))
 
 (define-public r-fillr
   (package

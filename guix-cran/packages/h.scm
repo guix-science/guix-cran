@@ -6118,6 +6118,35 @@ values for rejection regions controlling the k-familywise error rate, false
 discovery rate, and the tail probability of false discovery proportion.")
     (license license:gpl2)))
 
+(define-public r-hightr
+  (package
+    (name "r-hightr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hightR" version))
+              (sha256
+               (base32
+                "1fj3rb5b9pffwivcw0y0vj7ws28wcphj509yqwn3g70rvl0an1z5"))))
+    (properties `((upstream-name . "hightR")))
+    (build-system r-build-system)
+    (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
+    (synopsis "HIGHT Algorithm")
+    (description
+     "HIGHT(HIGh security and light weigHT) algorithm is a block cipher encryption
+algorithm developed to provide confidentiality in computing environments that
+demand low power consumption and lightweight, such as RFID(Radio-Frequency
+Identification) and USN(Ubiquitous Sensor Network), or in mobile environments
+that require low power consumption and lightweight, such as smartphones and
+smart cards.  Additionally, it is designed with a simple structure that enables
+it to be used with basic arithmetic operations, XOR, and circular shifts in
+8-bit units.  This algorithm was designed to consider both safety and efficiency
+in a very simple structure suitable for limited environments, compared to the
+former 128-bit encryption algorithm SEED. In December 2010, it became an
+ISO(International Organization for Standardization) standard.  The detailed
+procedure is described in Hong et al. (2006) <doi:10.1007/11894063_4>.")
+    (license license:gpl3)))
+
 (define-public r-highscreen
   (package
     (name "r-highscreen")

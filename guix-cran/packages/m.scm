@@ -2938,13 +2938,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.6.0")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiscaleDTM" version))
               (sha256
                (base32
-                "1dcbdn2v7dd0mpvid0xrh0csmaljn2n4v4pv5r9fvwy8786bz6gg"))))
+                "06zikvs11k03x9k04hbd1ab2y162ghl7i5f6gwpbfskpzba7bkc5"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -2954,6 +2954,7 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
                              r-rcpp
                              r-raster
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://ailich.github.io/MultiscaleDTM/")
     (synopsis "Multi-Scale Geomorphometric Terrain Attributes")
     (description
@@ -12986,39 +12987,6 @@ real-world analysis.")
 profit and return on investment.")
     (license license:expat)))
 
-(define-public r-modelgrid
-  (package
-    (name "r-modelgrid")
-    (version "1.1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "modelgrid" version))
-              (sha256
-               (base32
-                "1z6g0akczry7vldkk6anfq572zbsfzbd6qnyllgjpbxhy3rrrq0r"))))
-    (properties `((upstream-name . "modelgrid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr
-                             r-magrittr
-                             r-lattice
-                             r-ggplot2
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/smaakage85/modelgrid")
-    (synopsis
-     "Framework for Creating, Managing and Training Multiple Caret Models")
-    (description
-     "This package provides a minimalistic but flexible framework that facilitates the
-creation, management and training of multiple caret models.  A model grid
-consists of two components: (1) a set of settings that is shared by all models
-by default, and (2) specifications that apply only to the individual models.
-When the model grid is trained, model and training specifications are first
-consolidated from the shared and the model specific settings into complete caret
-model configurations.  These models are then trained with the train function
-from the caret package.")
-    (license license:expat)))
-
 (define-public r-modeler
   (package
     (name "r-modeler")
@@ -17383,13 +17351,13 @@ designs.")
 (define-public r-mkpower
   (package
     (name "r-mkpower")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKpower" version))
               (sha256
                (base32
-                "1yr9yk7x8da2b8hj71v4f5c2nikljbr6ayqp004whdi2bh67v95n"))))
+                "1z5qkwppxlrkfvdllyay0rrvsd2jx26ls40n54fmgq1cig8wj8fk"))))
     (properties `((upstream-name . "MKpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-qqplotr
@@ -17399,7 +17367,7 @@ designs.")
                              r-ggplot2
                              r-coin))
     (native-inputs (list r-knitr))
-    (home-page "http://www.stamats.de/")
+    (home-page "https://github.com/stamats/MKpower")
     (synopsis "Power Analysis and Sample Size Calculation")
     (description
      "Power analysis and sample size calculation for Welch and Hsu (Hedderich and

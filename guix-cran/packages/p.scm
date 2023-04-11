@@ -7255,13 +7255,13 @@ visualizations are also provided.")
 (define-public r-prioritylasso
   (package
     (name "r-prioritylasso")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioritylasso" version))
               (sha256
                (base32
-                "05wfyzjx76b6a68fdbl16h88qnxi0gspdwjszpcy9d4a9jcy7i94"))))
+                "1vn4i7rg1nsir98lgaxnw4851rwyv8kx25z8nc942qsr3r7cvdf6"))))
     (properties `((upstream-name . "prioritylasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-glmnet r-checkmate))
@@ -7271,7 +7271,7 @@ visualizations are also provided.")
     (description
      "Fits successive Lasso models for several blocks of (omics) data with different
 priorities and takes the predicted values as an offset for the next block.  Also
-offers options to deal with blockwise missingness in multi-omics data.")
+offers options to deal with block-wise missingness in multi-omics data.")
     (license license:gpl2)))
 
 (define-public r-prioritizrdata

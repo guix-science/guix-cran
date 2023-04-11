@@ -8920,6 +8920,55 @@ the user with a quick and reliable function to generate FPKM heatmap plot of the
 highly variable features in RNA-Seq dataset.")
     (license license:gpl3)))
 
+(define-public r-countstar
+  (package
+    (name "r-countstar")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "countSTAR" version))
+              (sha256
+               (base32
+                "1331fpy0nyd0hf939lpg2km97ml5p1nfvzxx2aqj4s00c8fv32qi"))))
+    (properties `((upstream-name . "countSTAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist
+                             r-truncatednormal
+                             r-splines2
+                             r-spikeslabgam
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randomforest
+                             r-matrix
+                             r-kfas
+                             r-gbm
+                             r-fastgp
+                             r-dbarts
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=countSTAR")
+    (synopsis "Flexible Modeling of Count Data")
+    (description
+     "For Bayesian and classical inference and prediction with count-valued data,
+Simultaneous Transformation and Rounding (STAR) Models provide a flexible,
+interpretable, and easy-to-use approach.  STAR models the observed count data
+using a rounded continuous data model and incorporates a transformation for
+greater flexibility.  Implicitly, STAR formalizes the commonly-applied yet
+incoherent procedure of (i) transforming count-valued data and subsequently (ii)
+modeling the transformed data using Gaussian models.  STAR is well-defined for
+count-valued data, which is reflected in predictive accuracy, and is designed to
+account for zero-inflation, bounded or censored data, and over- or
+underdispersion.  Importantly, STAR is easy to combine with existing MCMC or
+point estimation methods for continuous data, which allows seamless adaptation
+of continuous data models (such as linear regressions, additive models, BART,
+random forests, and gradient boosting machines) for count-valued data.  The
+package also includes several methods for modeling count time series data,
+namely via warped Dynamic Linear Models.  For more details and background on
+these methodologies, see the works of Kowal and Canale (2020)
+<doi:10.1214/20-EJS1707>, Kowal and Wu (2022) <doi:10.1111/biom.13617>, King and
+Kowal (2022) <arXiv:2110.14790>, and Kowal and Wu (2023) <arXiv:2110.12316>.")
+    (license license:gpl2+)))
+
 (define-public r-countseppm
   (package
     (name "r-countseppm")
@@ -17155,13 +17204,13 @@ number of photoreceptor types.")
 (define-public r-colourvalues
   (package
     (name "r-colourvalues")
-    (version "0.3.8")
+    (version "0.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "colourvalues" version))
               (sha256
                (base32
-                "053aspg4bpir0yc22r84am2nwa4qdg4rsi9fz3gfcxvsvn9b1wfl"))))
+                "0prrvkj3xi09fbjz9sd12nvqmsm47fkpw9v9kxsrx3wgm1vi49in"))))
     (properties `((upstream-name . "colourvalues")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -36685,13 +36734,13 @@ plot refinement over time.")
 (define-public r-caman
   (package
     (name "r-caman")
-    (version "0.76")
+    (version "0.77")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAMAN" version))
               (sha256
                (base32
-                "01r0wbsz24sh3rh9m64cgabgy1rf4y4cg36vmc23v01cjmz75wr0"))))
+                "1213lh2zbcv50djcv23k1g66kdxzj527w86s0dl6j0skmy98dy8i"))))
     (properties `((upstream-name . "CAMAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mvtnorm))

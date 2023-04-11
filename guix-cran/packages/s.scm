@@ -14927,43 +14927,6 @@ DeepSqueak'.  These functions are compatible with the SqueakR Shiny Dashboard,
 which can be used to visualize experimental results and analyses.")
     (license license:expat)))
 
-(define-public r-squat
-  (package
-    (name "r-squat")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "squat" version))
-              (sha256
-               (base32
-                "1sxdfqn18xfky3z1wxl82fb0c7glvhfm670xymgp4q3dri60a5r1"))))
-    (properties `((upstream-name . "squat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-roahd
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-progressr
-                             r-mfpca
-                             r-ggrepel
-                             r-ggplot2
-                             r-furrr
-                             r-fundata
-                             r-fdacluster
-                             r-dtw
-                             r-cli))
-    (home-page "https://lmjl-alea.github.io/squat/")
-    (synopsis "Statistics for Quaternion Temporal Data")
-    (description
-     "An implementation of statistical tools for the analysis of unit quaternion time
-series.  It relies on pre-existing quaternion data structure provided by the
-Eigen C++ library.")
-    (license license:gpl3+)))
-
 (define-public r-squash
   (package
     (name "r-squash")
@@ -15246,6 +15209,34 @@ date type and sqliteutils has some functions to deal with that.")
 calls in a clean structure.  It simplifies the process of extracting and
 transforming data into useful formats.")
     (license license:expat)))
+
+(define-public r-sqi
+  (package
+    (name "r-sqi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SQI" version))
+              (sha256
+               (base32
+                "1mb1vzc8r52zr1rp4dakmsdayv47pqsbissljskl9c0nkhlah1kq"))))
+    (properties `((upstream-name . "SQI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-olsrr r-matrixstats r-factominer
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SQI")
+    (synopsis "Soil Quality Index")
+    (description
+     "The overall performance of soil ecosystem services and productivity greatly
+relies on soil health, making it a crucial indicator.  The evaluation of soil
+physical, chemical, and biological parameters is necessary to determine the
+overall soil quality index.  In our package, three commonly used methods,
+including linear scoring, regression-based, and principal component-based soil
+quality indexing, are employed to calculate the soil quality index.  This
+package has been developed using concept of Bastida et al. (2008) and Doran and
+Parkin (1994) <doi:10.1016/j.geoderma.2008.08.007>
+<doi:10.2136/sssaspecpub35.c1>.")
+    (license license:gpl3)))
 
 (define-public r-spyvsspy
   (package
@@ -15864,16 +15855,15 @@ not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sps" version))
               (sha256
                (base32
-                "0c576gwl8qn29cm18fgypsfprb2y3pc5a6ggs7i609phxlslb2x7"))))
+                "13ibs39msnjwcmik56632g53wyx872rrinzxyrydzmc54ks7my9p"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/marberts/sps")
     (synopsis "Sequential Poisson Sampling")
     (description
@@ -39835,31 +39825,32 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shapviz" version))
               (sha256
                (base32
-                "0shl1vk1zqrgj127zw48330b8ldghaknjr32j34a2lkyhvr8y1f0"))))
+                "06mx54n7p90i5k6brn9nj6vk1nifh81cl0ff6zys5jqs38991kb5"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-rlang
+                             r-patchwork
                              r-ggrepel
                              r-ggplot2
                              r-gggenes
                              r-ggfittext))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mayer79/shapviz")
+    (home-page "https://github.com/ModelOriented/shapviz")
     (synopsis "SHAP Visualizations")
     (description
      "Visualizations for SHAP (SHapley Additive exPlanations), such as waterfall
 plots, force plots, various types of importance plots, dependence plots, and
 interaction plots.  These plots act on a shapviz object created from a matrix of
 SHAP values and a corresponding feature dataset.  Wrappers for the R packages
-xgboost', lightgbm', fastshap', shapr', h2o', treeshap', and kernelshap are
-added for convenience.  By separating visualization and computation, it is
+xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX', and kernelshap
+are added for convenience.  By separating visualization and computation, it is
 possible to display factor variables in graphs, even if the SHAP values are
 calculated by a model that requires numerical features.  The plots are inspired
 by those provided by the shap package in Python, but there is no dependency on

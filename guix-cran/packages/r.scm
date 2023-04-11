@@ -234,26 +234,6 @@ YouTheria is an online database of mammalian trait data
 <http://www.utheria.org/>.")
     (license license:expat)))
 
-(define-public r-ryouready
-  (package
-    (name "r-ryouready")
-    (version "0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ryouready" version))
-              (sha256
-               (base32
-                "1d9z3paxcrkwsgn5g83x57jwz2iqarks30x0bwg48i5ispw6xbr3"))))
-    (properties `((upstream-name . "ryouready")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-ggplot2 r-car))
-    (home-page "https://cran.r-project.org/package=ryouready")
-    (synopsis "Companion to the Forthcoming Book - R you Ready?")
-    (description
-     "Package contains some data and functions that are used in my forthcoming \"R you
-ready?\" book.")
-    (license license:gpl2+)))
-
 (define-public r-rym
   (package
     (name "r-rym")
@@ -3827,6 +3807,31 @@ Regularised Neural Networks (brnn).  The core function of the package is
 XPSgrowth(), while the results can be interpreted using implemented generic S3
 methods, such as plot() and summary().")
     (license license:gpl3)))
+
+(define-public r-rtfa
+  (package
+    (name "r-rtfa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RTFA" version))
+              (sha256
+               (base32
+                "09vpyxqmzvkmznwgrm5d1y1rk7j5a2hnjmkczzg0bzij1c8bqkhn"))))
+    (properties `((upstream-name . "RTFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensor r-rtensor))
+    (home-page "https://cran.r-project.org/package=RTFA")
+    (synopsis "Robust Factor Analysis for Tensor Time Series")
+    (description
+     "Tensor Factor Models (TFM) are appealing dimension reduction tools for
+high-order tensor time series, and have wide applications in economics, finance
+and medical imaging.  We propose an one-step projection estimator by minimizing
+the least-square loss function, and further propose a robust estimator with an
+iterative weighted projection technique by utilizing the Huber loss function.
+The methods are discussed in Barigozzi et al. (2022) <arXiv:2206.09800>, and
+Barigozzi et al. (2023) <arXiv:2303.18163>.")
+    (license license:gpl2+)))
 
 (define-public r-rtf
   (package
@@ -33780,33 +33785,6 @@ dice is non-transitive with given probability.")
 for Guardian articles and retrieve both the content and metadata.")
     (license license:expat)))
 
-(define-public r-rdiagnosislist
-  (package
-    (name "r-rdiagnosislist")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rdiagnosislist" version))
-              (sha256
-               (base32
-                "0f7dikc23z7gyhi29dg2l4l1q178d16nad98xvmdbygah8k1b377"))))
-    (properties `((upstream-name . "Rdiagnosislist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rdiagnosislist")
-    (synopsis "Manipulate SNOMED CT Diagnosis Lists")
-    (description
-     "This package provides functions and methods for manipulating SNOMED CT concepts.
- The package contains functions for loading the SNOMED CT release into a
-convenient R environment, selecting SNOMED CT concepts using regular
-expressions, and navigating the SNOMED CT ontology.  It provides the
-SNOMEDconcept S3 class for a vector of SNOMED CT concepts (stored as 64-bit
-integers) and the SNOMEDcodelist S3 class for a table of concepts IDs with
-descriptions.  For more information about SNOMED CT visit
-<https://www.snomed.org/>.")
-    (license license:gpl3)))
-
 (define-public r-rdi
   (package
     (name "r-rdi")
@@ -34777,13 +34755,13 @@ approximation of the ground surface
 (define-public r-rcsdp
   (package
     (name "r-rcsdp")
-    (version "0.1.57.4")
+    (version "0.1.57.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rcsdp" version))
               (sha256
                (base32
-                "0gjbmfbmb0fwdklzc7prywd7na50yph0vfwx4cws9psfzxy7lcaa"))))
+                "1lhw7czra10bw8r7cv472wyx58gd4qhs6hsyijsgkfcb9b5qn12h"))))
     (properties `((upstream-name . "Rcsdp")))
     (build-system r-build-system)
     (home-page "https://github.com/coin-or/Csdp/")
@@ -43721,13 +43699,13 @@ agGrid'.")
 (define-public r-rage
   (package
     (name "r-rage")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rage" version))
               (sha256
                (base32
-                "1bn0l0fvd5kgd4vq3nzfb2v7zaff33iy6xdmx6q421vk9gx3jwdq"))))
+                "0p9k0iddblqn6fz73lkvic93yavsbbsb1jldwfam0dbac8sgq6w5"))))
     (properties `((upstream-name . "Rage")))
     (build-system r-build-system)
     (propagated-inputs (list r-popdemo r-mass r-diagrammer))

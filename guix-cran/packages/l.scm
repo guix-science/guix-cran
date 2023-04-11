@@ -8923,31 +8923,6 @@ provided based on variance-based criteria.  Inducing point template schemes,
 including scaling of space-filling designs, are also provided.")
     (license license:lgpl2.0+)))
 
-(define-public r-lightsout
-  (package
-    (name "r-lightsout")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "lightsout" version))
-              (sha256
-               (base32
-                "1rb5qrd8piq079yfmn07np36zgawhw7s4wyy7q00yz4m4wp74lip"))))
-    (properties `((upstream-name . "lightsout")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs r-shiny r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/daattali/lightsout")
-    (synopsis "Implementation of the 'Lights Out' Puzzle Game")
-    (description
-     "Lights Out is a puzzle game consisting of a grid of lights that are either on or
-off.  Pressing any light will toggle it and its adjacent lights.  The goal of
-the game is to switch all the lights off.  This package provides an interface to
-play the game on different board sizes, both through the command line or with a
-visual application.  Puzzles can also be solved using the automatic solver
-included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
-    (license license:expat)))
-
 (define-public r-lightr
   (package
     (name "r-lightr")
@@ -15788,18 +15763,18 @@ using various relabelling algorithms.")
 (define-public r-labdsv
   (package
     (name "r-labdsv")
-    (version "2.0-1")
+    (version "2.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "labdsv" version))
               (sha256
                (base32
-                "099rzl9hy70rmb5fg0vx26mlhr4ra2s0hl3jgv22s8hqpvlmakas"))))
+                "1lawc8fm766p7z6kk0c3lda71i8lywg30znzyfkrx94sbr8r5nlr"))))
     (properties `((upstream-name . "labdsv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtsne r-mgcv r-mass r-cluster))
     (native-inputs (list gfortran))
-    (home-page "http://ecology.msu.montana.edu/labdsv/R")
+    (home-page "https://cran.r-project.org/package=labdsv")
     (synopsis "Ordination and Multivariate Analysis for Ecology")
     (description
      "This package provides a variety of ordination and community analyses useful in

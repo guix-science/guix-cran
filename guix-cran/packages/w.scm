@@ -4826,6 +4826,28 @@ Conditional Independence Testing and the Generalised Covariance Measure\"
 <arXiv:1804.07203>.")
     (license license:gpl2)))
 
+(define-public r-weightedensemble
+  (package
+    (name "r-weightedensemble")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WeightedEnsemble" version))
+              (sha256
+               (base32
+                "0lvi8362fpmybm1icdp63ys5pdsa2qc54bsdwp7345xk7jmqzh1v"))))
+    (properties `((upstream-name . "WeightedEnsemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-metaheuristicopt))
+    (home-page "https://cran.r-project.org/package=WeightedEnsemble")
+    (synopsis "Weighted Ensemble for Hybrid Model")
+    (description
+     "The weighted ensemble method is a valuable approach for combining forecasts.
+This algorithm employs several optimization techniques to generate optimized
+weights.  This package has been developed using algorithm of Armstrong (1989)
+<doi:10.1016/0024-6301(90)90317-W>.")
+    (license license:gpl3)))
+
 (define-public r-weightedcluster
   (package
     (name "r-weightedcluster")

@@ -14858,13 +14858,13 @@ varieties of reference tables, especially for The Netherlands.")
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.2.1.1")
+    (version "4.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "afttest" version))
               (sha256
                (base32
-                "06l11gjfv2a4jsdi7f88w7pk04a2mfl2jx969z7w4n4nlmz0bz8z"))))
+                "0hmjn1cnyhpzpmy1kn920illzk7iz0h4kqa61xxdqbj51hznrhnf"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

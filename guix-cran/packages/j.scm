@@ -659,40 +659,6 @@ implemented to solve different low-order regularization models for JSparO.")
 schema.  Drafts 04, 06 and 07 of JSON schema are supported.")
     (license license:expat)))
 
-(define-public r-jsontools
-  (package
-    (name "r-jsontools")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jsontools" version))
-              (sha256
-               (base32
-                "13i1g8lmzgs7hd0xay4gm8z2myzbjzi73fwp9x4f4f9mywj7zl5s"))))
-    (properties `((upstream-name . "jsontools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rsqlite
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-jsonlite
-                             r-glue
-                             r-dbi
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jsontools")
-    (synopsis "Working with JSON Vectors")
-    (description
-     "This package provides a toolbox for working with JSON vectors similar to the
-functions Postgres provides to work with JSON columns.  It supports in parsing
-and formatting JSON, extracting data from JSON, and modifying JSON data.")
-    (license license:gpl3)))
-
 (define-public r-jsonstrings
   (package
     (name "r-jsonstrings")
@@ -2920,28 +2886,6 @@ of changes in expectation and variance, Scandinavian Journal of Statistics, DOI
 10.1111/sjos.12547.")
     (license license:gpl3)))
 
-(define-public r-jcolors
-  (package
-    (name "r-jcolors")
-    (version "0.0.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jcolors" version))
-              (sha256
-               (base32
-                "18dmjcrci0z1xy2kglrarzm0idr9g3nhbbw7f1ijls3i0piqdri6"))))
-    (properties `((upstream-name . "jcolors")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://jaredhuling.github.io/jcolors/")
-    (synopsis
-     "Colors Palettes for R and 'ggplot2', Additional Themes for 'ggplot2'")
-    (description
-     "This package contains a selection of color palettes and ggplot2 themes designed
-by the package author.")
-    (license license:gpl2)))
-
 (define-public r-jcext
   (package
     (name "r-jcext")
@@ -3148,40 +3092,6 @@ results of observational studies (OS).")
 (<https://www.e-stat.go.jp/>), a portal site for Japanese government statistics.
  Includes functions for automatic query generation, data collection and
 formatting.")
-    (license license:expat)))
-
-(define-public r-japanmesh
-  (package
-    (name "r-japanmesh")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "japanmesh" version))
-              (sha256
-               (base32
-                "1p6kssz0q2zjx7yd4x7jf56n62nx4g8gmbc8v2din1mgks4rm614"))))
-    (properties `((upstream-name . "japanmesh")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-units
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-geosphere
-                             r-dplyr))
-    (home-page "https://github.com/UchidaMizuki/japanmesh")
-    (synopsis "Functions for the Japanese Regional Mesh Codes ('JIS X 0410')")
-    (description
-     "This package provides functions for the Japanese regional mesh codes defined in
-JIS X 0410
-(<https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?show&jisStdNo=X0410>).
- Conversion between regional mesh codes and longitude/latitude, and between mesh
-codes of different scales.")
     (license license:expat)))
 
 (define-public r-janus

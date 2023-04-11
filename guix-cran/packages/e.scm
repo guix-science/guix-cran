@@ -170,31 +170,6 @@ best optimize fluorometric enzyme assays.  A standardized approach would make
 studies more comparable and reproducible.")
     (license license:agpl3)))
 
-(define-public r-ezknitr
-  (package
-    (name "r-ezknitr")
-    (version "0.6.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ezknitr" version))
-              (sha256
-               (base32
-                "15ibkndqx8fbsrckkcj75mflqsryjpmn7qqygp5z1abzgpj05j6n"))))
-    (properties `((upstream-name . "ezknitr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-markdown r-knitr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/ezknitr/")
-    (synopsis "Avoid the Typical Working Directory Pain When Using 'knitr'")
-    (description
-     "An extension of knitr that adds flexibility in several ways.  One common source
-of frustration with knitr is that it assumes the directory where the source file
-lives should be the working directory, which is often not true.  ezknitr
-addresses this problem by giving you complete control over where all the inputs
-and outputs are, and adds several other convenient features to make rendering
-markdown/HTML documents easier.")
-    (license license:expat)))
-
 (define-public r-ezglm
   (package
     (name "r-ezglm")
@@ -7073,29 +7048,6 @@ saturation\" <doi:10.1016/s0022-5347(17)47703-2> to R. The Visual Basic code was
 kindly provided by Dr. John Lieske of the Mayo Clinic.")
     (license license:expat)))
 
-(define-public r-equatiomatic
-  (package
-    (name "r-equatiomatic")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "equatiomatic" version))
-              (sha256
-               (base32
-                "0gy1wy10zc7h7h1s0hwd545iv4af5x2g8pqsgzyryydd6426g2gj"))))
-    (properties `((upstream-name . "equatiomatic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/datalorax/equatiomatic")
-    (synopsis "Transform Models into 'LaTeX' Equations")
-    (description
-     "The goal of equatiomatic is to reduce the pain associated with writing LaTeX
-formulas from fitted models.  The primary function of the package, extract_eq(),
-takes a fitted model object as its input and returns the corresponding LaTeX
-code for the model.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
@@ -10801,47 +10753,6 @@ character vectors.  Also contains routines to portably read and write UTF-8
 encoded text files, to convert all strings in an object to UTF-8', and to create
 character vectors with various encodings.")
     (license license:gpl3)))
-
-(define-public r-emur
-  (package
-    (name "r-emur")
-    (version "2.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "emuR" version))
-              (sha256
-               (base32
-                "1i133lnjn5yjy26r25xfhny6410lp8jj23jpn54znbyc560w2c9r"))))
-    (properties `((upstream-name . "emuR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wrassp
-                             r-v8
-                             r-uuid
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-rstudioapi
-                             r-rsqlite
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-mime
-                             r-jsonlite
-                             r-httr
-                             r-httpuv
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-base64enc))
-    (home-page "https://github.com/IPS-LMU/emuR")
-    (synopsis "Main Package of the EMU Speech Database Management System")
-    (description
-     "An R package that provides the EMU Speech Database Management System (EMU-SDMS)
-with database management, data extraction, data preparation and data
-visualization facilities.  See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/>
-for more details.")
-    (license license:gpl2+)))
 
 (define-public r-emulator
   (package

@@ -325,40 +325,6 @@ likelihood and Bayesian approaches.  The package also provides point and
 interval estimation for the crossing survival times.")
     (license license:gpl2+)))
 
-(define-public r-youtubecaption
-  (package
-    (name "r-youtubecaption")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "youtubecaption" version))
-              (sha256
-               (base32
-                "15cafl7b03xrql2y2ayy6ajf6v764wym3xqs4pbzlf6ncy8qwl5r"))))
-    (properties `((upstream-name . "youtubecaption")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-writexl
-                             r-tibble
-                             r-stringr
-                             r-reticulate
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jooyoungseo/youtubecaption")
-    (synopsis
-     "Downloading YouTube Subtitle Transcription in a Tidy Tibble Data Frame")
-    (description
-     "Although there exist some R packages tailored for YouTube API (e.g., tuber'),
-downloading YouTube video subtitle (i.e., caption) in a tidy form has never been
-a low-hanging fruit.  Using youtube-transcript-api Python package under the
-hood, this R package provides users with a convenient way of parsing and
-converting a desired YouTube caption into a handy tibble data_frame object.
-Furthermore, users can easily save a desired YouTube caption data as a tidy
-Excel file without advanced programming background knowledge.")
-    (license license:gpl3)))
-
 (define-public r-youngswimmers
   (package
     (name "r-youngswimmers")

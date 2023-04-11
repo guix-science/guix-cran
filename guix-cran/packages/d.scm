@@ -24737,22 +24737,21 @@ can follow the tutorial in the vignette available at
 (define-public r-daewr
   (package
     (name "r-daewr")
-    (version "1.2-7")
+    (version "1.2-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daewr" version))
               (sha256
                (base32
-                "138hmmrm3zcdb2rcilvrasndvsq38agp9bpikd3xbb7j4z1nrsl7"))))
+                "0ylil185g4l9m7camgjxv45pn4bjv6wqyjdwl3zq33sdmrraz1pv"))))
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-lattice r-frf2))
-    (native-inputs (list r-r-rsp))
+    (propagated-inputs (list r-stringi r-lattice))
     (home-page "https://cran.r-project.org/package=daewr")
     (synopsis "Design and Analysis of Experiments with R")
     (description
      "This package contains Data frames and functions used in the book \"Design and
-Analysis of Experiments with R\".")
+Analysis of Experiments with R\", Lawson(2015) ISBN-13:978-1-4398-6813-3.")
     (license license:gpl2)))
 
 (define-public r-dados

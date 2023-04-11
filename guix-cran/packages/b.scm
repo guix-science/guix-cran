@@ -5843,13 +5843,13 @@ modelling and multivariate normal distribution.")
 (define-public r-bootes
   (package
     (name "r-bootes")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootES" version))
               (sha256
                (base32
-                "16b14bycy3ds09hsxnk738k2xq9qmwcy3kzdqd6rw9w4j7167kf0"))))
+                "05brahlh7jk9n1wv4l429vf048x51v1ivvchlxfcqvky06zjwk1z"))))
     (properties `((upstream-name . "bootES")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -18672,36 +18672,6 @@ State Geological Survey (USGS, see Link and Sauer (2011)
 Edwards (2020) <doi:10.1101/2020.03.26.010215>).")
     (license license:expat)))
 
-(define-public r-bbricks
-  (package
-    (name "r-bbricks")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bbricks" version))
-              (sha256
-               (base32
-                "1hv4hvnns9vgl6c3n7kg3g9mfcp26ksps29hdl5nwi28cgkx80w2"))))
-    (properties `((upstream-name . "bbricks")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chenhaotian/Bayesian-Bricks")
-    (synopsis
-     "Bayesian Methods and Graphical Model Structures for Statistical Modeling")
-    (description
-     "This package provides a set of frequently used Bayesian parametric and
-nonparametric model structures, as well as a set of tools for common analytical
-tasks.  Structures include linear Gaussian systems, Gaussian and
-Normal-Inverse-Wishart conjugate structure, Gaussian and Normal-Inverse-Gamma
-conjugate structure, Categorical and Dirichlet conjugate structure, Dirichlet
-Process on positive integers, Dirichlet Process in general, Hierarchical
-Dirichlet Process ...  Tasks include updating posteriors, sampling from
-posteriors, calculating marginal likelihood, calculating posterior predictive
-densities, sampling from posterior predictive distributions, calculating
-\"Maximum A Posteriori\" (MAP) estimates ...  See
-<https://chenhaotian.github.io/Bayesian-Bricks/> to get started.")
-    (license license:expat)))
-
 (define-public r-bbreg
   (package
     (name "r-bbreg")
@@ -20110,30 +20080,6 @@ probabilistic components, such as total fertility rate and life expectancy
 Moreira (2020) provides a way to use exact Bayesian inference to model this type
 of data, which is implemented in this package.")
     (license license:gpl3)))
-
-(define-public r-bayesplay
-  (package
-    (name "r-bayesplay")
-    (version "0.9.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bayesplay" version))
-              (sha256
-               (base32
-                "06i16a36b26p0r635bl37kvk7k083p970154yhkv80p7qc84n4sv"))))
-    (properties `((upstream-name . "bayesplay")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-gginnards))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bayesplay")
-    (synopsis "The Bayes Factor Playground")
-    (description
-     "This package provides a lightweight modelling syntax for defining likelihoods
-and priors and for computing Bayes factors for simple one parameter models.  It
-includes functionality for computing and plotting priors, likelihoods, and model
-predictions.  Additional functionality is included for computing and plotting
-posteriors.")
-    (license license:expat)))
 
 (define-public r-bayespiecewiseicar
   (package
@@ -22813,29 +22759,6 @@ depicting species relationships.  Cardoso et al. (2015)
 modifying lasso.proj() in hdi package by replacing its nodewise-regression with
 sparse precision matrix computation using BigQUIC'.")
     (license (license:fsdg-compatible "GPL (== 2)"))))
-
-(define-public r-basta
-  (package
-    (name "r-basta")
-    (version "1.9.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BaSTA" version))
-              (sha256
-               (base32
-                "09wvfg44g9j3gq9arkm2ajm8l4y7gna4fh49ihvmjzqdvsl6gkq6"))))
-    (properties `((upstream-name . "BaSTA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-snowfall))
-    (home-page "https://cran.r-project.org/package=BaSTA")
-    (synopsis
-     "Age-Specific Survival Analysis from Incomplete Capture-Recapture/Recovery Data")
-    (description
-     "Estimates survival and mortality with covariates from capture-recapture/recovery
-data in a Bayesian framework when many individuals are of unknown age.  It
-includes tools for data checking, model diagnostics and outputs such as
-life-tables and plots.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bass
   (package

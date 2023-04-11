@@ -3811,13 +3811,13 @@ Statistics, 16, 2206-2251.")
 (define-public r-qlifetable
   (package
     (name "r-qlifetable")
-    (version "0.0.1-13")
+    (version "0.0.1-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qlifetable" version))
               (sha256
                (base32
-                "11mk73bawdklc72yf3ihf94k89fya5m8dhvqrxadyapxmyzn7qgx"))))
+                "1yy5m60ri7llj1anzzc6dlsvp8acf9hhdixxgb10r24a20rq84s8"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qlifetable")
