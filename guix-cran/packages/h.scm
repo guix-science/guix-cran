@@ -1173,6 +1173,41 @@ externally from the PEGELONLINE REST API
 <https://pegelonline.wsv.de/webservice/dokuRestapi>.")
     (license license:gpl2+)))
 
+(define-public r-hybridts
+  (package
+    (name "r-hybridts")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hybridts" version))
+              (sha256
+               (base32
+                "1x96g0cjgn3vklczksxdgpd5ayl3rl63k0ig0h8vacm2nxn4c6js"))))
+    (properties `((upstream-name . "hybridts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveletarima r-nnfor r-metrics r-forecast))
+    (home-page "https://cran.r-project.org/package=hybridts")
+    (synopsis "Hybrid Time Series Forecasting Using Error Remodeling Approach")
+    (description
+     "Method and tool for generating hybrid time series forecasts using an error
+remodeling approach.  These forecasting approaches utilize a recursive technique
+for modeling the linearity of the series using a linear method (e.g., ARIMA,
+Theta, etc.) and then models (forecasts) the residuals of the linear forecaster
+using non-linear neural networks (e.g., ANN, ARNN, etc.).  The hybrid
+architectures comprise three steps: firstly, the linear patterns of the series
+are forecasted which are followed by an error re-modeling step, and finally, the
+forecasts from both the steps are combined to produce the final output.  This
+method additionally provides the confidence intervals as needed.  Ten different
+models can be implemented using this package.  This package generates different
+types of hybrid error correction models for time series forecasting based on the
+algorithms by Zhang. (2003), Chakraborty et al. (2019), Chakraborty et al.
+(2020), Bhattacharyya et al. (2021), Chakraborty et al. (2022), and
+Bhattacharyya et al. (2022) <doi:10.1016/S0925-2312(01)00702-0>
+<doi:10.1016/j.physa.2019.121266> <doi:10.1016/j.chaos.2020.109850>
+<doi:10.1109/IJCNN52387.2021.9533747> <doi:10.1007/978-3-030-72834-2_29>
+<doi:10.1007/s11071-021-07099-3>.")
+    (license license:gpl2+)))
+
 (define-public r-hybridogram
   (package
     (name "r-hybridogram")
@@ -10155,6 +10190,28 @@ explanatory variables far exceeds the sample size.  The software supports linear
 regression, likelihood-based fitting of generalized linear regression models and
 the proportional hazards model fitted by partial likelihood.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-hclust1d
+  (package
+    (name "r-hclust1d")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hclust1d" version))
+              (sha256
+               (base32
+                "023bks0phy8sl2s8jmrj64dpxs8s63298lhnq37clcbf6kcjk180"))))
+    (properties `((upstream-name . "hclust1d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/SzymonNowakowski/hclust1d")
+    (synopsis "Hierarchical Clustering of Univariate (1d) Data")
+    (description
+     "This package provides a suit of algorithms for univariate agglomerative
+hierarchical clustering (with a few possible choices of a linkage function) in
+O(n*log n) time.  The better algorithmic time complexity is paired with an
+efficient C++ implementation.")
+    (license license:gpl3+)))
 
 (define-public r-hcidata
   (package

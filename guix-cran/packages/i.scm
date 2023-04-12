@@ -6735,13 +6735,13 @@ regressions.\" <doi:10.31234/osf.io/5ptd7>.")
 (define-public r-intensitynet
   (package
     (name "r-intensitynet")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "intensitynet" version))
               (sha256
                (base32
-                "0g0lkbfyg0f104avr0y46caaa300yibzqlbhn32hl03sa0dqd6c3"))))
+                "0rgm8rj95r269ww7snwv6czqdxabhzwxyaf3587scprhhn7pncy3"))))
     (properties `((upstream-name . "intensitynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -13041,13 +13041,13 @@ identity metrics\".")
 (define-public r-idiogramfish
   (package
     (name "r-idiogramfish")
-    (version "2.0.10")
+    (version "2.0.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idiogramFISH" version))
               (sha256
                (base32
-                "0zgqp0339g5m5d9fgim4s3bk7xdbhgnfhzna2nqri5q75ppspc00"))))
+                "09ay0dggxcrl2wi2cm4ym1ixr9scxajpfk0ndiz889rz3wdkwfdx"))))
     (properties `((upstream-name . "idiogramFISH")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -13435,13 +13435,13 @@ al. (2021) <DOI:10.1371/journal.pgen.1009557>).")
 (define-public r-idcnrba
   (package
     (name "r-idcnrba")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idcnrba" version))
               (sha256
                (base32
-                "11lpa26ynfs046gsd656ckyq9wls7whbd0r8dzp3hnsi1cfh5k32"))))
+                "0ys753091akr435zfg9xlzqvd04rig03gbni8h0kasi23r10ajqa"))))
     (properties `((upstream-name . "idcnrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

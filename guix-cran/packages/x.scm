@@ -1505,13 +1505,13 @@ package.")
 (define-public r-xefun
   (package
     (name "r-xefun")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xefun" version))
               (sha256
                (base32
-                "19qz68699xcj817f2l46a1pvyq981187d2zqqlmin93dns5mcqvi"))))
+                "18bps0a1qrcz8a6zvy4vpxklyh507pmsfky2jphfb9f58ccdkmih"))))
     (properties `((upstream-name . "xefun")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

@@ -14545,6 +14545,30 @@ about the methodology and data can be found in Diewert and Fox (2018)
 <https://www.business.unsw.edu.au/research-site/centreforappliedeconomicresearch-site/Documents/emg2018-6_SZeng_EMG-Slides.pdf>.")
     (license license:gpl2)))
 
+(define-public r-dfsaneacc
+  (package
+    (name "r-dfsaneacc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dfsaneacc" version))
+              (sha256
+               (base32
+                "0asynp7xv1b7yywdiycacskqdidcdq6z4n1b4xxx5yggx5qpqavv"))))
+    (properties `((upstream-name . "dfsaneacc")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=dfsaneacc")
+    (synopsis
+     "Accelerated Derivative-Free Method for Large-Scale Nonlinear Systems of Equations")
+    (description
+     "Secant acceleration applied to derivative-free Spectral Residual Methods for
+solving large-scale nonlinear systems of equations.  The main references
+follows: W. La Cruz, J. M. Martinez, and M. Raydan (2006)
+<doi:10.1090/S0025-5718-06-01840-0>; E. G. Birgin and J. M. Martinez (2022)
+<doi:10.1137/20M1388024>.")
+    (license license:gpl3)))
+
 (define-public r-dfpk
   (package
     (name "r-dfpk")

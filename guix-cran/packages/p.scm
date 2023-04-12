@@ -331,13 +331,13 @@ the years 1950-2010.")
 (define-public r-pwrss
   (package
     (name "r-pwrss")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pwrss" version))
               (sha256
                (base32
-                "12nwi2k5bkra5rzjlzfrhiz15dilb770fqfg0fp0gkg9ib5drrrc"))))
+                "1qi2k0bk47yaqyzc6zv714ggs7s17zifazpsidfbfhikb5cs4gba"))))
     (properties `((upstream-name . "pwrss")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -347,11 +347,11 @@ the years 1950-2010.")
      "Statistical power and minimum required sample size calculations for (1) testing
 a proportion (one-sample) against a constant, (2) testing a mean (one-sample)
 against a constant, (3) testing difference between two proportions (independent
-samples), (4) testing difference between two means (parametric and
+samples), (4) testing difference between two means or groups (parametric and
 non-parametric tests for independent and paired samples), (5) testing a
 correlation (one-sample) against a constant, (6) testing difference between two
 correlations (independent samples), (7) testing a single coefficient in multiple
-linear regression, logistic regression, and poisson regression (with
+linear regression, logistic regression, and Poisson regression (with
 standardized or unstandardized coefficients, with no covariates or covariate
 adjusted), (8) testing an indirect effect (with standardized or unstandardized
 coefficients, with no covariates or covariate adjusted) in the mediation
@@ -368,8 +368,8 @@ correlation), and (14) testing goodness-of-fit or independence for contingency
 tables.  Alternative hypothesis can be formulated as \"not equal\", \"less\",
 \"greater\", \"non-inferior\", \"superior\", or \"equivalent\" in (1), (2), (3), and
 (4); as \"not equal\", \"less\", or \"greater\" in (5), (6), (7) and (8); but always
-as \"greater\" in (9), (10), (11), (12), (13), and (14).  Reference: Bulus & Polat
-(2023) <https://osf.io/ua5fc>.")
+as \"greater\" in (9), (10), (11), (12), (13), and (14).  Reference: Bulus and
+Polat (2023) <https://osf.io/ua5fc>.")
     (license license:gpl3+)))
 
 (define-public r-pwrrasch
@@ -7764,13 +7764,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/curConverter.do>.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PriceIndices" version))
               (sha256
                (base32
-                "0ngdj2m25baszlsr9k4d8iyvlkxp8wfc5np68n9nbpnlh7hk6bvf"))))
+                "10xkp8dpqyl83xxx5d37bc1m9qlg15nc7p9fdybisymgjh5irm4z"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -26625,13 +26625,13 @@ two-samples t-tests in a multivariate framework.")
 (define-public r-pec
   (package
     (name "r-pec")
-    (version "2022.05.04")
+    (version "2023.04.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pec" version))
               (sha256
                (base32
-                "0s0lfr8747gfnn9hrwacbh160mn593p28qvima5dz9aabndhg8a7"))))
+                "15ggf3fa1p5r0dl7k2j99cc920jvmk0p1ny0jzyrpddh8fcgwlk5"))))
     (properties `((upstream-name . "pec")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -32127,26 +32127,21 @@ using data in tables (or spread sheets) and a simple syntax.")
 (define-public r-panstarrs
   (package
     (name "r-panstarrs")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panstarrs" version))
               (sha256
                (base32
-                "0a5b9mzqnvcf0xrd814gnf2nd8incclx214x1k0c3x2zpqbf9p02"))))
+                "0pnzbw1m1vgy40f7m2wbym9rgdvaa2i9fqkadfnpj4z428b50627"))))
     (properties `((upstream-name . "panstarrs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-readr
-                             r-rcurl
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
+    (propagated-inputs (list r-jsonlite
                              r-httr
-                             r-glue
-                             r-dplyr
-                             r-attempt))
+                             r-data-table
+                             r-curl
+                             r-checkmate
+                             r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://uskovgs.github.io/PanSTARRS/")
     (synopsis "Interface to the Pan-STARRS API")

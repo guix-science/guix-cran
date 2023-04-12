@@ -14649,13 +14649,13 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
 (define-public r-sregsurvey
   (package
     (name "r-sregsurvey")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sregsurvey" version))
               (sha256
                (base32
-                "1wsfjnkszxvx4pjgpi2v14s94d7rpl13pallja6rfcmsgxp3kc2l"))))
+                "1wpqsjhj4vl8gzma4i9y75srzwl8zmkj55lmrhni7xar4d81mnb4"))))
     (properties `((upstream-name . "sregsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingsampling
@@ -14669,9 +14669,11 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
     (description
      "It is a framework to fit semiparametric regression estimators for the total
 parameter of a finite population when the interest variable is asymmetric
-distributed.  The main references for this package are: Sarndal C.E., Swensson
+distributed.  The main references for this package are Sarndal C.E., Swensson
 B., and Wretman J. (2003,ISBN: 978-0-387-40620-6, \"Model Assisted Survey
-Sampling.\" Springer-Verlag) and Cardozo C.A and Alonso-Malaver C.E. (2021).
+Sampling.\" Springer-Verlag) Cardozo C.A, Paula G.A. and Vanegas L.H. (2022)
+\"Generalized log-gamma additive partial linear mdoels with P-spline smoothing\",
+Statistical Papers.  Cardozo C.A and Alonso-Malaver C.E. (2022).
 \"Semi-parametric model assisted estimation in finite populations.\" In
 preparation.")
     (license license:gpl3)))
@@ -16889,13 +16891,13 @@ on a simple biological intuition.")
 (define-public r-spnetwork
   (package
     (name "r-spnetwork")
-    (version "0.4.3.6")
+    (version "0.4.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spNetwork" version))
               (sha256
                (base32
-                "055h6xxs9kpl1yzcl5ha4pbgbzvp15vqr43xhbdic58flfgc13mr"))))
+                "0qhy0dh4cgnxlbkcadnjzwpnbjq0navikr3gsczg562h4jq0ds8w"))))
     (properties `((upstream-name . "spNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -19909,13 +19911,13 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
 (define-public r-spcosa
   (package
     (name "r-spcosa")
-    (version "0.4-1")
+    (version "0.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spcosa" version))
               (sha256
                (base32
-                "04g7d68ff8vkj2ygycnllm73kixkckdc087wdg3c5ahydyjrc2yi"))))
+                "1y3qbz9kslb5k7h62pk7g2lk69y9i625r2q0dychhj91fdqx30n4"))))
     (properties `((upstream-name . "spcosa")))
     (build-system r-build-system)
     (inputs (list openjdk))

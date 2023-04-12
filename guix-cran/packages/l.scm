@@ -6794,13 +6794,13 @@ LiblineaR', which enables extremely fast solutions compared to base glm() in R."
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.13")
+    (version "1.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "liver" version))
               (sha256
                (base32
-                "18hwbsgjm0fb98m9gmdq92v83gjj7nl3qlv6zcrwjncsf689pxyk"))))
+                "1rbj8cjd1ir7qzs4981g3z648a9kaaq8bz0wggrmd38gpbvc2f8p"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-class))
@@ -13612,13 +13612,13 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavasearch2
   (package
     (name "r-lavasearch2")
-    (version "1.5.6")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lavaSearch2" version))
               (sha256
                (base32
-                "0m5dwfmpcmicrpasx2raac2zylss416bxxgb3mg3abpll89iw9fx"))))
+                "04rd1r4qy1jiqmmda3h1gbihsyva88djq1apfil89v4lqr0za0b8"))))
     (properties `((upstream-name . "lavaSearch2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -13632,7 +13632,8 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
                              r-mass
                              r-lava
                              r-ggplot2
-                             r-doparallel))
+                             r-doparallel
+                             r-abind))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/lavaSearch2")
     (synopsis "Tools for Model Specification in the Latent Variable Framework")

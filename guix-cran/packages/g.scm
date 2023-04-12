@@ -7977,27 +7977,6 @@ file, or DSPL (XML), metadata file jointly with the CSV files.  All zip-up and
 ready to be published in Public Data Explorer'.")
     (license license:expat)))
 
-(define-public r-googleprintr
-  (package
-    (name "r-googleprintr")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "googlePrintr" version))
-              (sha256
-               (base32
-                "19rm78x8qd61ilc6h1kn3dw63m6dfsckqkd3n76krvi0akgl72w5"))))
-    (properties `((upstream-name . "googlePrintr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-googleauthr))
-    (home-page "https://cran.r-project.org/package=googlePrintr")
-    (synopsis "Connect to 'Google Cloud Print' API")
-    (description
-     "Allows printing documents from R through Google Cloud Print API. See
-<https://developers.google.com/cloud-print/docs/overview> for more information
-about Google Cloud Print'.")
-    (license license:expat)))
-
 (define-public r-googlepolylines
   (package
     (name "r-googlepolylines")
@@ -8283,13 +8262,13 @@ for scheduled scripts.")
 (define-public r-googleauthr
   (package
     (name "r-googleauthr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googleAuthR" version))
               (sha256
                (base32
-                "1svgjrh4wb3qdavhmks2lmncqrapvw17dvlbk0z1nbny7fplnl5s"))))
+                "0jx1p2yq9mm82bzw1hy75p30rhcmmadkh9qby9s1c5ahq8xsc6cv"))))
     (properties `((upstream-name . "googleAuthR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -11384,13 +11363,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.0-7")
+    (version "0.0-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmm.hp" version))
               (sha256
                (base32
-                "0sjk3rilsyah99p4d6lp7lr43flwan2z2ykng9ab0wf7m61wqxlm"))))
+                "01sg728ry3r90ymgg3ibfck5ixzy40i7a5rwavd668mcqk7msry3"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mumin r-lme4 r-ggplot2))
@@ -25227,13 +25206,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.8")
+    (version "0.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GauPro" version))
               (sha256
                (base32
-                "1z9ndkafn84nr7d8idpsaib8zpcf7588fh9pqmz2mr4ifd6igw71"))))
+                "011dw5fcpws0w05iyz5m1zfj1mj3ha1jnnky3pbi0d0n5jmx1h1h"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))
@@ -27058,13 +27037,13 @@ globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
 (define-public r-gadget2
   (package
     (name "r-gadget2")
-    (version "2.3.9")
+    (version "2.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gadget2" version))
               (sha256
                (base32
-                "1cha4n0bd1imlvpzsgd337p0my75kakjsxdmmgx8p519r2dl07vz"))))
+                "0z73jic0wq7cashqa88kvji4a0lk0h0a13l9iagwxnlfsk9z0d3l"))))
     (properties `((upstream-name . "gadget2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=gadget2")

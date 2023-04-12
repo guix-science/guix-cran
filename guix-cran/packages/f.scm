@@ -5866,16 +5866,16 @@ FORTLS is described in Molina-Valero et al. (2022,
 (define-public r-forstringr
   (package
     (name "r-forstringr")
-    (version "0.0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forstringr" version))
               (sha256
                (base32
-                "04ib6nfqs7dfy3il7vylql056ysnlpb164w7l4iyp8hw9xy31ycx"))))
+                "1qbmkszznn537cqvq30r4lxyl2f9kannfd00zlb1kq3lyb8bc823"))))
     (properties `((upstream-name . "forstringr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect r-stringr r-dplyr))
+    (propagated-inputs (list r-tidyselect r-stringr r-rlang r-glue r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gbganalyst/forstringr")
     (synopsis

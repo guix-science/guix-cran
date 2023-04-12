@@ -402,13 +402,13 @@ provided in the package code.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.3.0")
+    (version "3.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Cyclops" version))
               (sha256
                (base32
-                "0q0n1ggv6skbb4ld55idayb6xnnwcni44br69svsd62a3yqqsj2m"))))
+                "17njl7vz9gkwfnxhs95vqn1mfcklmdqg5wwsgjbm3px120b7c8mf"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3802,13 +3802,13 @@ time.")
 (define-public r-cschange
   (package
     (name "r-cschange")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CsChange" version))
               (sha256
                (base32
-                "0ahgzir1rz5hh2jkgabp9vccg527vbvmkdyxf9lyz5yxkig3jv2s"))))
+                "1qggfi7g34iw0737azn4l9cn0chsiq4wa18v8i5znlaimzmifylr"))))
     (properties `((upstream-name . "CsChange")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rms r-hmisc r-boot))
@@ -5020,6 +5020,36 @@ applying multiple models to multiple subsets of a dataset.")
 crossover designs.  In addition contains functions to check given designs for
 balance.")
     (license license:gpl2)))
+
+(define-public r-crosscarry
+  (package
+    (name "r-crosscarry")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CrossCarry" version))
+              (sha256
+               (base32
+                "1iglwsx5b29zjl7ikngyb3kf0kfacqxlg01p6vn84dblwgh2gmak"))))
+    (properties `((upstream-name . "CrossCarry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-geepack r-gee r-dplyr))
+    (home-page "https://cran.r-project.org/package=CrossCarry")
+    (synopsis "Analysis of Data from a Crossover Design with GEE")
+    (description
+     "Analyze data from a crossover design using generalized estimation equations
+(GEE), including carryover effects and various correlation structures based on
+the Kronecker product.  It contains functions for semiparametric estimates of
+carry-over effects in repeated measures and allows estimation of complex
+carry-over effects.  Related work includes: a) Cruz N.A., Melo O.O., Martinez
+C.A. (2023). \"CrossCarry: An R package for the analysis of data from a crossover
+design with GEE\". <arXiv:2304.02440v1>.  b) Cruz N.A., Melo O.O., Martinez C.A.
+(2023). \"A correlation structure for the analysis of Gaussian and non-Gaussian
+responses in crossover experimental designs with repeated measures\".
+<doi:10.1007/s00362-022-01391-z> and c) Cruz N.A., Melo O.O., Martinez C.A.
+(2023). \"Semiparametric generalized estimating equations for repeated
+measurements in cross-over designs\". <doi:10.1177/09622802231158736>.")
+    (license license:gpl3+)))
 
 (define-public r-cropzoning
   (package
@@ -13371,13 +13401,13 @@ diagrams, see Moher, Schulz and Altman (2001)
 (define-public r-consort
   (package
     (name "r-consort")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "consort" version))
               (sha256
                (base32
-                "0m3y53134w0j0n6vr8mw0pjpvlfjdk0sq10lpacifp7kfsi0d3xh"))))
+                "1jshk53121w58i4if593qzxm6lcrrggz8parwhqvv6hnbx51rhck"))))
     (properties `((upstream-name . "consort")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20840,13 +20870,13 @@ multiple surrogate markers.  Details are described in Wang et al (2022)
 (define-public r-cmfrec
   (package
     (name "r-cmfrec")
-    (version "3.5.1")
+    (version "3.5.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cmfrec" version))
               (sha256
                (base32
-                "1cdsvzvg9dgvn8s6f32rhb3aiqgy1nspz26yp9mnnjlc5swnhrpc"))))
+                "0k3axbc0p5c0rxggp00vv1h5ylnfp57xbb5j3ndgqz0wig2l424z"))))
     (properties `((upstream-name . "cmfrec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -25142,13 +25172,13 @@ article when utilizing this package: Murden, R., Zhang, Z., Guo, Y., & Risk, B.
 (define-public r-cjbart
   (package
     (name "r-cjbart")
-    (version "0.2.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cjbart" version))
               (sha256
                (base32
-                "11ml35q1vjc696n6pwpbhzhf6g9r62l1yahbwkqbyd1jnkhpxmw4"))))
+                "0xqyzzvlfda5ykrkxvj6srp6p86jh97f0kfqkln3l4fb2hz6nnnp"))))
     (properties `((upstream-name . "cjbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29382,21 +29412,23 @@ C++ library CGAL (<https://www.cgal.org/>).")
 (define-public r-cgalmeshes
   (package
     (name "r-cgalmeshes")
-    (version "1.0.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cgalMeshes" version))
               (sha256
                (base32
-                "0580yf3sy7xxs629zhdl16agawfm7db7zvdi99a0sr0ab9h7nhj3"))))
+                "17pcklp76rn4clzlp2qxqq4syp4zjbfyh7li9w0i0fzggv2yk287"))))
     (properties `((upstream-name . "cgalMeshes")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-rgl
                              r-rcppeigen
+                             r-rcppcolors
                              r-rcppcgal
                              r-rcpp
                              r-r6
+                             r-onion
                              r-data-table
                              r-bh))
     (native-inputs (list pkg-config))
@@ -36530,13 +36562,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "0.9.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "campsismod" version))
               (sha256
                (base32
-                "0263glkd1yixg7d6jpv7rirnpp4a7hrmw8iv3069ih04kbcqrzxd"))))
+                "0xjy9hri319flbz5c8rsy34c12g5nn3v8casqjl22z1bi3f4r0fz"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -36558,8 +36590,8 @@ package provides an intuitive API to add, modify or delete equations, ordinary
 differential equations (ODE's), model parameters or compartment properties (like
 infusion duration or rate, bioavailability and initial values).  Finally, this
 package also provides a useful export of the model for use with simulation
-packages RxODE and mrgsolve'.  This package is designed and intended to be used
-with package campsis', a PK/PD simulation platform built on top of RxODE and
+packages rxode2 and mrgsolve'.  This package is designed and intended to be used
+with package campsis', a PK/PD simulation platform built on top of rxode2 and
 mrgsolve'.")
     (license license:gpl3+)))
 

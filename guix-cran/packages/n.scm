@@ -2982,13 +2982,13 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.4")
+    (version "2.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "1i9hxpcdg89wc2m86kf26gn49lvivjc389nkf6r748gpqyrwd64m"))))
+                "06arxjqw2lqkz49smzgf81vb588b9d9jajqmmd4dgfxyahkq3ang"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -4309,13 +4309,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.6.1")
+    (version "0.9.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "144d08b3vz74b91v3xlj2g92wqdxdgd5w9cwsb6fh14jf0l5kywa"))))
+                "1h1npfmgw699x4yd57kljjvhv4cq3h9b6wsxz36k7f4kf30d0h7d"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5264,16 +5264,16 @@ provided.")
 (define-public r-nlstac
   (package
     (name "r-nlstac")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlstac" version))
               (sha256
                (base32
-                "0ag9zzzcadgwa43j16ff30r7g8jfihkwi76shv43igp52a11jr72"))))
+                "0q62bnwdnw4jjzj1gk74il4k5bc2lvaixckaqdqk9q4rkyx6p0z5"))))
     (properties `((upstream-name . "nlstac")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-foreach r-doparallel r-deriv))
+    (propagated-inputs (list r-stringr r-foreach r-deriv))
     (home-page "https://cran.r-project.org/package=nlstac")
     (synopsis "An R Package for Fitting Separable Nonlinear Models")
     (description
@@ -7188,13 +7188,13 @@ COVID-19 scale, NIAID OS.")
 (define-public r-nhstplot
   (package
     (name "r-nhstplot")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhstplot" version))
               (sha256
                (base32
-                "1yk7q731a4y9mhngdsb8xdw2id6m1q78329ja19hdpi6nnd7nhgn"))))
+                "1m06w5mys5qwhah7hg3fwrzlbpckgvhn17jqzg36cyprpd02zx52"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

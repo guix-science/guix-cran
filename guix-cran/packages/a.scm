@@ -1535,13 +1535,13 @@ minimum distance estimator of the parameters in the model.")
 (define-public r-autoreg
   (package
     (name "r-autoreg")
-    (version "0.2.6")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoReg" version))
               (sha256
                (base32
-                "1jgk6gkqz4fm2xznbvxj334b5bc7i2hkpz6jn8k31l3y8c5fzqcz"))))
+                "1isj04xphzf3r35bgzr9x1f2ra17jjw08dyjxgy8dfdmqhz2l2kh"))))
     (properties `((upstream-name . "autoReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3736,6 +3736,36 @@ conditional on survival (e.  g., number of offspring).  Uses the exponential
 family canonical parameterization (aster transform of usual parameterization).
 There are also random effects versions of these models.")
     (license license:expat)))
+
+(define-public r-ast2ast
+  (package
+    (name "r-ast2ast")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ast2ast" version))
+              (sha256
+               (base32
+                "1418kvg4jvfn7c4vny87431a8lqkky9a51grkw8qc8sszcp7mlyf"))))
+    (properties `((upstream-name . "ast2ast")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-dfdr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Konrad1991/ast2ast")
+    (synopsis "Translates an R Function to a C++ Function")
+    (description
+     "Enable translation of a tiny subset of R to C++.  The user has to define a R
+function which gets translated.  For a full list of possible functions check the
+documentation.  After translation an R function is returned which is a shallow
+wrapper around the C++ code.  Alternatively an external pointer to the C++
+function is returned to the user.  The intention of the package is to generate
+fast functions which can be used as ode-system or during optimization.")
+    (license license:gpl2)))
 
 (define-public r-ast
   (package
@@ -13299,13 +13329,13 @@ catchments for use by the airGR packages.")
 (define-public r-airgr
   (package
     (name "r-airgr")
-    (version "1.7.0")
+    (version "1.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "airGR" version))
               (sha256
                (base32
-                "0miqkhapw3ch4wss8dkygf5j5rj9jwdm7xdb4c5jfdnxdbbsxwjs"))))
+                "1klf064lm6iyvlmy89amf097yvcyqsz9m2h6mjxqv6n737bvlzfa"))))
     (properties `((upstream-name . "airGR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -13552,13 +13582,13 @@ confidence interval for back transformed data.")
 (define-public r-aiccpermanova
   (package
     (name "r-aiccpermanova")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AICcPermanova" version))
               (sha256
                (base32
-                "1wi020y20chf27pqdm34l5w6fy4y0qb597hfn0fr84pdsqvc90yv"))))
+                "0sq3lnyrja2vpl5wqq517zw32fi96x99gqxj9lh8q3b0napkb0fd"))))
     (properties `((upstream-name . "AICcPermanova")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17739,13 +17769,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "0rpqw3vzs0kn1kgzh1fp8vig2a92pqcy6yanrlr711kaxdjmz5q4"))))
+                "0cmccf5k8znhhajap0rjyjpsgp5zwc2y31yqf96h2ilmdqk2kxpg"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

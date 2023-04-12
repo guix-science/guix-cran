@@ -5791,6 +5791,31 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 78(4):713-720. <DOI:10.1086/502682>.")
     (license license:gpl3)))
 
+(define-public r-mte
+  (package
+    (name "r-mte")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MTE" version))
+              (sha256
+               (base32
+                "0xh9q302gklx0djkjvmp79n7y8d0sc06mm7lvmva5i6s69jq243f"))))
+    (properties `((upstream-name . "MTE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rqpen r-quantreg r-glmnet))
+    (home-page "https://cran.r-project.org/package=MTE")
+    (synopsis
+     "Maximum Tangent Likelihood Estimation for Robust Linear Regression and Variable Selection")
+    (description
+     "Several robust estimators for linear regression and variable selection are
+provided.  Included are Maximum tangent likelihood estimator by Qin, et al.,
+(2017) <arxiv:1708.05439>, least absolute deviance estimator and Huber
+regression.  The penalized version of each of these estimator incorporates L1
+penalty function, i.e., LASSO and Adaptive Lasso.  They are able to produce
+consistent estimates for both fixed and high-dimensional settings.")
+    (license license:gpl3)))
+
 (define-public r-mtdrh
   (package
     (name "r-mtdrh")
@@ -8512,13 +8537,13 @@ created.  The method has first been proposed by Holmstrom, Pasanen, Furrer, Sain
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.7.3")
+    (version "1.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mrbin" version))
               (sha256
                (base32
-                "0ic60sg2kngnm1k5nfcdaf89ki68xbiggp6n8pas3gx8057wbzhl"))))
+                "11k7k88ax9jpad32nbv52hkdrsh1px1aid3j54gbmvhf3kbqasmd"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (native-inputs (list))
@@ -30616,13 +30641,13 @@ page for more information and examples.")
 (define-public r-mdfs
   (package
     (name "r-mdfs")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MDFS" version))
               (sha256
                (base32
-                "08iz27s5gc86izpzfxx2x9qld8d1ann3i6bnfwjz9ay4bzbpgij7"))))
+                "0z7a0j923i4z7w05j6lp55fsznwl10p4scpnc805nggzk6x11yhd"))))
     (properties `((upstream-name . "MDFS")))
     (build-system r-build-system)
     (home-page "https://www.mdfs.it/")
@@ -36690,13 +36715,13 @@ and the ability of downloading and processing static tiles.")
 (define-public r-mapsfinland
   (package
     (name "r-mapsfinland")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapsFinland" version))
               (sha256
                (base32
-                "0s52hv36dib2833sxb8i1fvwb7l6hyx8n7y4qr3maia1g01xbj34"))))
+                "13kq22z0dpsq9dk6ni2rkgbkcxccr6dby3mnc3m5sj58am48zyky"))))
     (properties `((upstream-name . "mapsFinland")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mapsFinland")

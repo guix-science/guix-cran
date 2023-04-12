@@ -293,13 +293,13 @@ it on leaflet maps.")
 (define-public r-owenq
   (package
     (name "r-owenq")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OwenQ" version))
               (sha256
                (base32
-                "0ak8haay8fkvi1qmda39bv7mykc97p6aw4igwx3pwgig30d78dkx"))))
+                "0az36s6vrnfa93w12549v9zf6q9xg0a4kvrq5hnkaqxl314zaz1y"))))
     (properties `((upstream-name . "OwenQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
@@ -1536,13 +1536,13 @@ Further information and tutorials can be found at <https://luminescence.de>.")
 (define-public r-oskeyring
   (package
     (name "r-oskeyring")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oskeyring" version))
               (sha256
                (base32
-                "10ajmkw8sfcafs77flg0050s8vf88lq56rv2dxk9gv4pkvg8z498"))))
+                "1fsgz4jln3nk53bxpmjpc7dcapc9j1wdqlrab169ymvrlzypgvqc"))))
     (properties `((upstream-name . "oskeyring")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/oskeyring#readme")

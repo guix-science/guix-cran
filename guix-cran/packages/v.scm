@@ -9,12 +9,12 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1202,26 +1202,24 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.1.9")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voluModel" version))
               (sha256
                (base32
-                "1969rkl5msvl6vspjgk0pkg9lp7h7w521866g0ac7jvsy41n3jm6"))))
+                "1ym9cpx4ygzh9956y7sg1zl5kagamkg1wmr3ydzff1gz6ldg7gam"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-terra
                              r-sf
-                             r-raster
                              r-rangebuilder
-                             r-latticeextra
+                             r-modeva
                              r-ggtext
                              r-ggplot2
                              r-fields
-                             r-dplyr
-                             r-dismo))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://hannahlowens.github.io/voluModel/")
     (synopsis "Modeling Species Distributions in Three Dimensions")
@@ -1266,13 +1264,13 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-4")
+    (version "1.1.2-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "volesti" version))
               (sha256
                (base32
-                "1vhypy4whdw4k3lqv5p9bz3jh3gzpfj366xzfwsmy7w8zjk5iq05"))))
+                "1ykmxl12ap21ds23nqlc861zn24hs9y7h0kkihyhpxnwfvyx1fbp"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
@@ -1791,13 +1789,13 @@ Partial Dependence Profiles.")
 (define-public r-vivid
   (package
     (name "r-vivid")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivid" version))
               (sha256
                (base32
-                "0sg8chg2zjirh823qlr7ysk1n6fm989bxcw9rfgp503xxp0izmd2"))))
+                "08ngzzni1dyfnfqn7y6f6xxb6lvf2p06nnzydwn6n0psfg5976lp"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -3363,16 +3361,18 @@ methods, see the reference section of GitHub README.md
 (define-public r-vicmapr
   (package
     (name "r-vicmapr")
-    (version "0.1.10")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VicmapR" version))
               (sha256
                (base32
-                "0g67xq367k29x8jhms5zx3jicjxyg9chxnj7pv5kj8yxhxy19cyr"))))
+                "0p10vj9d4x1ffv138zpr0c9lmlm23mxc6jm1yhyyf3xlivjmj45b"))))
     (properties `((upstream-name . "VicmapR")))
     (build-system r-build-system)
+    (inputs (list proj geos gdal))
     (propagated-inputs (list r-xml2
+                             r-stringr
                              r-sf
                              r-rvest
                              r-rlang
@@ -3396,7 +3396,7 @@ methods, see the reference section of GitHub README.md
     (description
      "Easily interfaces R to spatial datasets available through the Victorian
 Government's WFS (Web Feature Service):
-<https://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wfs?request=getCapabilities>,
+<https://opendata.maps.vic.gov.au/geoserver/ows?request=GetCapabilities&service=wfs>,
 which allows users to read in sf data from these sources.  VicmapR uses the lazy
 querying approach and code developed by Teucher et al. (2021) for the bcdata R
 package <doi:10.21105/joss.02927>.")
@@ -6235,17 +6235,17 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.9.3")
+    (version "0.9.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vapour" version))
               (sha256
                (base32
-                "0yj2p7mc9n6ii9cn2a79gdnx68l60m3a79gkflj04ibsn9xsz6sb"))))
+                "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (inputs (list zlib proj gdal curl))
-    (propagated-inputs (list r-rcpp r-jsonlite))
+    (propagated-inputs (list r-rcpp r-nanoarrow r-jsonlite))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/hypertidy/vapour")
     (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")

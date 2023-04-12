@@ -1256,6 +1256,36 @@ different scales, and vice versa.")
 Covariance Matrices.")
     (license license:gpl2)))
 
+(define-public r-jpcity
+  (package
+    (name "r-jpcity")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jpcity" version))
+              (sha256
+               (base32
+                "0ibvblg06161wmc30mbg9f2rm3zpd8vcw7a91id3lppxmkzi9yi0"))))
+    (properties `((upstream-name . "jpcity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-lubridate
+                             r-dplyr
+                             r-cli))
+    (home-page "https://uchidamizuki.github.io/jpcity/")
+    (synopsis "Read and Convert Japanese Municipality Codes")
+    (description
+     "Read Japanese city codes (<https://www.e-stat.go.jp/municipalities/cities>) to
+get city and prefecture names, or convert to city codes at different points in
+time.  In addition, it merges or splits wards of designated cities and gets all
+city codes at a specific point in time.")
+    (license license:expat)))
+
 (define-public r-joyn
   (package
     (name "r-joyn")

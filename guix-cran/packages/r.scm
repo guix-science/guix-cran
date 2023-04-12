@@ -8512,13 +8512,13 @@ investigation.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.1.2")
+    (version "3.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rqPen" version))
               (sha256
                (base32
-                "05adnx7smsybn4i788yipyh1cyg0ysxph2cf6jxmi4p8di8liyii"))))
+                "09k6w0n8a804zanv6plfss7v39xc3ysxb1zag36vdhisr9j7izw8"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -16087,13 +16087,13 @@ parameter.  The method is fully described in
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.1.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmzqc" version))
               (sha256
                (base32
-                "03a02d7a7jkvr72lgrbgmphsnlx65ym5gganm7y3lk43ap2zy55m"))))
+                "07vj0n3498h595py8gfvv3yvscj9bhwj1swzqm1y14r5sg49laa9"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -16102,6 +16102,7 @@ parameter.  The method is fully described in
                              r-r6
                              r-ontologyindex
                              r-knitr
+                             r-jsonvalidate
                              r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MS-Quality-hub/rmzqc")
@@ -17927,22 +17928,21 @@ provider who implements the Mapzen API.")
 (define-public r-rmapshaper
   (package
     (name "r-rmapshaper")
-    (version "0.4.6")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmapshaper" version))
               (sha256
                (base32
-                "03gfnxwky292ma0s2wcvmpym11qlrkn82nqxpfk5cbrc27fn8m0j"))))
+                "01c1sd02ws3k2dmlj964c4j5jg93x192s3brhmaw4pi4qfjzc21x"))))
     (properties `((upstream-name . "rmapshaper")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
                              r-sp
                              r-sf
                              r-readr
-                             r-jsonlite
-                             r-geojsonlint
-                             r-geojsonio))
+                             r-jsonify
+                             r-geojsonsf))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ateucher/rmapshaper")
     (synopsis "Client for 'mapshaper' for 'Geospatial' Operations")
@@ -17951,10 +17951,7 @@ provider who implements the Mapzen API.")
 the mapshaper JavaScript library by Matthew Bloch
 <https://github.com/mbloch/mapshaper/> to perform topologically-aware polygon
 simplification, as well as other operations such as clipping, erasing,
-dissolving, and converting multi-part to single-part geometries.  It relies on
-the geojsonio package for working with geojson objects, the sf package for
-working with sf objects, and the sp and rgdal packages for working with Spatial
-objects.")
+dissolving, and converting multi-part to single-part geometries.")
     (license license:expat)))
 
 (define-public r-rmangal

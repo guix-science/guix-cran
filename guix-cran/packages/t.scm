@@ -5513,22 +5513,17 @@ prediction intervals.")
 (define-public r-trendeval
   (package
     (name "r-trendeval")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "trendeval" version))
               (sha256
                (base32
-                "1cpv7l26ia40s46wfi4jwhwzl0xxs0dgzv4ngg8frbv5l80fmvmr"))))
+                "0a9ipy88ay7170mmjissky57xgh0y9vk0kirygbsg9ihk0pk9dc5"))))
     (properties `((upstream-name . "trendeval")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-trending
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-ellipsis))
-    (home-page "https://github.com/reconhub/trendeval")
+    (propagated-inputs (list r-yardstick r-trending r-tibble r-rsample))
+    (home-page "https://github.com/reconverse/trendeval")
     (synopsis "Evaluate Trending Models")
     (description
      "This package provides a coherent interface for evaluating models fit with the
@@ -15257,13 +15252,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.0")
+    (version "2.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ThresholdROC" version))
               (sha256
                (base32
-                "1mzz05aqq6crcfm5bbv0gbpvndk0yy1lf4fxz8zva790g16cilq0"))))
+                "1hainm0n5v9dc4q130r7jiica61p0pmnjnwh3v6i03djkvc2257l"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-numderiv r-mass r-ks))
@@ -15276,7 +15271,8 @@ based on minimizing an overall cost function in the two- and three-state
 settings.  We also provide functions for sample size determination and
 estimation of diagnostic accuracy measures.  We also include graphical tools.
 The statistical methodology used here can be found in Perez-Jaume et al (2017)
-<doi:10.18637/jss.v082.i04>.")
+<doi:10.18637/jss.v082.i04> and in Skaltsa et al (2010, 2012)
+<doi:10.1002/bimj.200900294>, <doi:10.1002/sim.4369>.")
     (license license:gpl2+)))
 
 (define-public r-thresher
@@ -23372,13 +23368,13 @@ logistic, or Poisson regression to modify the specified variable.")
 (define-public r-t4transport
   (package
     (name "r-t4transport")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "T4transport" version))
               (sha256
                (base32
-                "14i4ap7izlr33fsyfrvv8gkljx3w20n2l1caibs2qsdz23nk9s07"))))
+                "091mq0f2cawkfmaql9gqgv2sbs5fwyv4i2sdw14p1r01wznfrqzf"))))
     (properties `((upstream-name . "T4transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-lpsolve r-cvxr))

@@ -17937,19 +17937,21 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bcmaps" version))
               (sha256
                (base32
-                "1317xqhd222aj6qcdhb1xpbfqsf9n3ww8rap90sm98rljvp5zdca"))))
+                "1n23imq7ksini97fy47070bds87yb0gsplzca0qyknr97igfflx7"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-sf
+                             r-rlang
                              r-rappdirs
                              r-progress
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-bcdata))
@@ -17957,10 +17959,14 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
     (home-page "https://github.com/bcgov/bcmaps")
     (synopsis "Map Layers and Spatial Utilities for British Columbia")
     (description
-     "This package provides access to various spatial layers for B.C., such as
-administrative boundaries, natural resource management boundaries, etc.  Most
-layers are imported from the bcdata package as sf or Spatial objects through
-function calls in this package.")
+     "Various layers of B.C., including administrative boundaries, natural resource
+management boundaries, census boundaries etc.  All layers are available in BC
+Albers (<https://spatialreference.org/ref/epsg/nad83-bc-albers/>) equal-area
+projection, which is the B.C. government standard.  The layers are sourced from
+the British Columbia and Canadian government under open licenses, including B.C.
+Data Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data
+Portal (<https://open.canada.ca/en/open-data>), and Statistics Canada
+(<https://www.statcan.gc.ca/en/reference/licence>).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -24613,13 +24619,13 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "0bmk4azxzkhia35c8hfvh9n2dllzya9s9c7mcjil0n7ai8bj0ql0"))))
+                "0adwxcbyy2qx30lgidca044mbnmipk5f8wdlvndn1c5074pxgzd6"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -24630,7 +24636,8 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
                              r-purrr
                              r-openxlsx
                              r-magrittr
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (home-page "https://github.com/william-swl/baizer")
     (synopsis "Useful Functions for Data Processing")
     (description
