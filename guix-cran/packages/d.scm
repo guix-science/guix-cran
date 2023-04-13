@@ -1822,6 +1822,27 @@ training set) and deploying them on another (e.g., a test set).")
     (description "This package creates a Dumbbell Plot.")
     (license license:expat)))
 
+(define-public r-duke
+  (package
+    (name "r-duke")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "duke" version))
+              (sha256
+               (base32
+                "1frnf4kxjjrxbwhc06pcjzmr5zdcdx2ssw5avc2jq54r8d7h3j23"))))
+    (properties `((upstream-name . "duke")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aidangildea/duke")
+    (synopsis "Creating a Color-Blind Friendly Duke Color Package")
+    (description
+     "Generates visualizations with Dukeâs official suite of colors in a color blind
+friendly way.")
+    (license license:expat)))
+
 (define-public r-duckduckr
   (package
     (name "r-duckduckr")
@@ -11004,6 +11025,28 @@ knowledge into account, as described by GrÃ¸nneberg and Foldnes (2022)
 <doi:10.1037/met0000495>.")
     (license license:gpl2+)))
 
+(define-public r-disclapmix2
+  (package
+    (name "r-disclapmix2")
+    (version "0.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "disclapmix2" version))
+              (sha256
+               (base32
+                "0lqg4wvx7jf4an2x3lq9486m5741djkw8q506vbn8xlh4gxwmp3s"))))
+    (properties `((upstream-name . "disclapmix2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-cluster))
+    (home-page "https://cran.r-project.org/package=disclapmix2")
+    (synopsis
+     "Mixtures of Discrete Laplace Distributions using Numerical Optimisation")
+    (description
+     "Fit a mixture of Discrete Laplace distributions using plain numerical
+optimisation.  This package has similar applications as the disclapmix package
+that uses an EM algorithm.")
+    (license license:gpl2+)))
+
 (define-public r-disclapmix
   (package
     (name "r-disclapmix")
@@ -16327,22 +16370,22 @@ plugin.")
 (define-public r-describedf
   (package
     (name "r-describedf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DescribeDF" version))
               (sha256
                (base32
-                "189wlxws23r7n2cg3sb3y72839s1jqpw9vfb4db9y7gxkgw7m9lw"))))
+                "0476z42dk4s30pc22s256sjq0xjjp2xfwsp05mx8987928fxvnv4"))))
     (properties `((upstream-name . "DescribeDF")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-psych r-fnonlinear r-e1071 r-dplyr))
     (home-page "https://cran.r-project.org/package=DescribeDF")
     (synopsis "Description of a Data Frame")
     (description
-     "Helps to describe a data frame in hand.  More information may be obtained from
-Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>.  Has been developed
-during PhD work of the maintainer.")
+     "Helps to describe a data frame in hand.  Has been developed during PhD work of
+the maintainer.  More information may be obtained from Garai and Paul (2023)
+<doi:10.1016/j.iswa.2023.200202>.")
     (license license:gpl3)))
 
 (define-public r-describedata

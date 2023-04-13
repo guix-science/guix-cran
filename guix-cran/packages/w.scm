@@ -4682,16 +4682,21 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "0.13.1")
+    (version "0.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeightIt" version))
               (sha256
                (base32
-                "0z32v7p59c1xb3rfcgb76gl3kyxz0ayqg3q0cjs9pb1x4wjdhl8f"))))
+                "1dh8l1s52z7ca4dkhm1hnp1w5hmagsgsipxmk9xqi6ynfaxrvw85"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-crayon r-cobalt r-backports))
+    (propagated-inputs (list r-rlang
+                             r-ggplot2
+                             r-crayon
+                             r-cobalt
+                             r-chk
+                             r-backports))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/WeightIt/")
     (synopsis "Weighting for Covariate Balance in Observational Studies")
@@ -4703,11 +4708,11 @@ providing in-house estimation methods.  Available methods include propensity
 score weighting using generalized linear models, gradient boosting machines, the
 covariate balancing propensity score algorithm, Bayesian additive regression
 trees, and SuperLearner, and directly estimating balancing weights using entropy
-balancing, empirical balancing calibration weights, energy balancing, and
-optimization-based weights.  Also allows for assessment of weights and checking
-of covariate balance by interfacing directly with the cobalt package.  See the
-vignette \"Installing Supporting Packages\" for instructions on how to install any
-package WeightIt uses, including those that may not be on CRAN.")
+balancing, energy balancing, and optimization-based weights.  Also allows for
+assessment of weights and checking of covariate balance by interfacing directly
+with the cobalt package.  See the vignette \"Installing Supporting Packages\" for
+instructions on how to install any package WeightIt uses, including those that
+may not be on CRAN.")
     (license license:gpl2+)))
 
 (define-public r-weightedzdiff

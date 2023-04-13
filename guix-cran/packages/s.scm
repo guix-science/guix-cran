@@ -14099,13 +14099,13 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssdtools" version))
               (sha256
                (base32
-                "0qnlawdb7y4wryp4ksp641bkv94hz1ymv6l79l3hmyqn0wy73g6m"))))
+                "08nzmwaqyd5vy9qxcqbp3pkv010p0b9rcvlsnvbrhnz208dmicib"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -14115,6 +14115,7 @@ information to a Sweave report.")
                              r-stringr
                              r-ssddata
                              r-scales
+                             r-rcppeigen
                              r-rcpp
                              r-purrr
                              r-plyr
@@ -16989,18 +16990,18 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.2.2.6")
+    (version "0.2.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmoran" version))
               (sha256
                (base32
-                "0d97saji49k69fgkg0zk5pdrmy81kvij96nv1v5y8axf8in2znhb"))))
+                "1zj6m1ip2l1h1yddclx6wsakhmi28i1sjf4pcazwxl9qsm2y888v"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-spdep
-                             r-sp
+                             r-sf
                              r-rcolorbrewer
                              r-rarpack
                              r-matrix
@@ -34235,13 +34236,13 @@ original data to determine model fit.")
 (define-public r-simfinapi
   (package
     (name "r-simfinapi")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simfinapi" version))
               (sha256
                (base32
-                "1xzbcbl93g1hfvgbnglmn6klsrm9bblcji0qj78p5ia51vkamxmc"))))
+                "1lkqk3pc00hplgr568d34p5cy3zwcbl4za5pfqbfl2ai5ldnchc9"))))
     (properties `((upstream-name . "simfinapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppsimdjson
@@ -55649,13 +55650,13 @@ higher flexibility.  The CDO version used in development is 1.9.8.")
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-37")
+    (version "3.1-38")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "s20x" version))
               (sha256
                (base32
-                "05rnlvv988k3h06szwxhyjn2v0ic10v4v8pjaifqn4sf1f5dmpni"))))
+                "1vbc0d4g7wkw551fr8jkgq76ilk83d6nj0sxlkj903h6lg8kbjwg"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=s20x")

@@ -3951,6 +3951,36 @@ semiparametric nonlinear mixed-effects models.  See Wang (2011)
 <doi:10.1201/b10954> for an overview.")
     (license license:gpl2)))
 
+(define-public r-assignr
+  (package
+    (name "r-assignr")
+    (version "2.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "assignR" version))
+              (sha256
+               (base32
+                "01p2sm5c105has0l8l0lcbf9nqzzyxif515qn825iz5r69wh16y7"))))
+    (properties `((upstream-name . "assignR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rlang
+                             r-rgdal
+                             r-raster
+                             r-mvnfast
+                             r-maptools
+                             r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=assignR")
+    (synopsis "Infer Geographic Origin from Isotopic Data")
+    (description
+     "Routines for re-scaling isotope maps using known-origin tissue isotope data,
+assigning origin of unknown samples, and summarizing and assessing assignment
+results.  Methods are adapted from Wunder (2010, in ISBN:9789048133536) and
+Vander Zanden, H. B. et al. (2014) <doi:10.1111/2041-210X.12229> as described in
+Ma, C. et al. (2020) <doi:10.1111/2041-210X.13426>.")
+    (license license:gpl3)))
+
 (define-public r-assignpop
   (package
     (name "r-assignpop")
@@ -5352,13 +5382,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARPALData" version))
               (sha256
                (base32
-                "1c7885f7043inihk6mf98qdzkgr3nzrn3x9r6r62w4ri8j6mpr8y"))))
+                "12bb5ghgwxvimh1frcq9cz6id15pj7zxz8mllwbda734c9y95x6g"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm

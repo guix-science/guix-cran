@@ -2229,6 +2229,33 @@ justification and examples are published in Rohmer (2016)
 <doi:10.1016/j.spl.2016.06.026>.")
     (license license:gpl3+)))
 
+(define-public r-npclust
+  (package
+    (name "r-npclust")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "npclust" version))
+              (sha256
+               (base32
+                "0a1las0vxm4mhwvds66lvq87kb140sjrnjq5sihbrrh7wpbq31zg"))))
+    (properties `((upstream-name . "npclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=npclust")
+    (synopsis "Nonparametric Tests for Incomplete Clustered Data")
+    (description
+     "Nonparametric tests for clustered data in pre-post intervention design
+documented in Cui and Harrar (2021) <doi:10.1002/bimj.201900310> and Harrar and
+Cui (2022) <doi:10.1016/j.jspi.2022.05.009>.  Other than the main test results
+mentioned in the reference paper, this package also provides a function to
+calculate the sample size allocations for the input long format data set, and
+also a function for adjusted/unadjusted confidence intervals calculations.
+There are also functions to visualize the distribution of data across different
+intervention groups over time, and also the adjusted/unadjusted confidence
+intervals.")
+    (license license:gpl2+)))
+
 (define-public r-npcirc
   (package
     (name "r-npcirc")
@@ -8060,13 +8087,13 @@ plays in the National Football League and obtain fourth down plays from
 (define-public r-nfer
   (package
     (name "r-nfer")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nfer" version))
               (sha256
                (base32
-                "0pawx7fqkx8p04l44id69gn6krh1hjdq4pwcbic84h4n4c0srdz3"))))
+                "0s19ks4ildxqdbm4nv40f6c0rs1a6h9vx46654k8n0q18bgia448"))))
     (properties `((upstream-name . "nfer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

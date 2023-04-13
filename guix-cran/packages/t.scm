@@ -2229,13 +2229,13 @@ life\" functions, such as treating time series for trailing and leading values."
 (define-public r-tstutorial
   (package
     (name "r-tstutorial")
-    (version "1.2.5")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSTutorial" version))
               (sha256
                (base32
-                "0zq383j2sciywnzri1dc3c1i1hc7d30v1qscaija2pbhqyjym4qw"))))
+                "1yvymr2z1853zmgj1nf8p86pbyzx666rcfyyzqvrscb7ab0bdfld"))))
     (properties `((upstream-name . "TSTutorial")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -7606,17 +7606,16 @@ filtering, compressing and clustering, and for trajectory pattern discovery.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "1.3")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "traj" version))
               (sha256
                (base32
-                "1rwpmjghw5nryywxa340c15iaqmap8hpvr758yvh0g73z11jq6xp"))))
+                "1v6p31q4c9k5ipa0rysqd3xrw5f7ydvp91r1d0jp17zdgz58vfpd"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-pastecs r-nbclust r-gparotation
-                             r-cluster))
+    (propagated-inputs (list r-psych r-pastecs r-nbclust r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tchouangue/traj")
     (synopsis "Trajectory Analysis")
@@ -18834,6 +18833,26 @@ estimation, including parameter coefficients and standard deviation.")
      "This package implements the multiway sparse clustering approach of M. Wang and
 Y. Zeng, \"Multiway clustering via tensor block models\".  Advances in Neural
 Information Processing System 32 (NeurIPS), 715-725, 2019.")
+    (license license:gpl2+)))
+
+(define-public r-tensorregress
+  (package
+    (name "r-tensorregress")
+    (version "5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tensorregress" version))
+              (sha256
+               (base32
+                "110jpsb098jy55j7gp8vx3qk7mgcqhv6c11c5ll2nl1w03kqalm3"))))
+    (properties `((upstream-name . "tensorregress")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-mass))
+    (home-page "https://cran.r-project.org/package=tensorregress")
+    (synopsis "Supervised Tensor Decomposition with Side Information")
+    (description
+     "Implement the alternating algorithm for supervised tensor decomposition with
+interactive side information.")
     (license license:gpl2+)))
 
 (define-public r-tensorr

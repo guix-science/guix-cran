@@ -18,6 +18,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gl)
   #:use-module (gnu packages mpi)
@@ -9632,20 +9633,20 @@ process...")
 (define-public r-movecost
   (package
     (name "r-movecost")
-    (version "1.9")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "movecost" version))
               (sha256
                (base32
-                "0pg92jczsqjbw8w9rlg19lffbvwl2yfpqp52srjgpcsjwbcva6lw"))))
+                "0ii2n6xy646h45wf8cv83qbryjipz4mx2gkx57zx8b944as9hkd8"))))
     (properties `((upstream-name . "movecost")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
                              r-raster
-                             r-leastcostpath
+                             r-matrix
                              r-gdistance
                              r-elevatr
                              r-chron))
@@ -12691,6 +12692,52 @@ outcome, and one or more moderators of any scale.")
 either by user-specified colors or colored by the strength of the coefficient of
 that text derived from a regression model.")
     (license license:lgpl2.1)))
+
+(define-public r-modeltime-resample
+  (package
+    (name "r-modeltime-resample")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modeltime.resample" version))
+              (sha256
+               (base32
+                "0prc4q5s6iwhknxlbaq43cyhmzwnmi52akpaf1zizw4c6flgny3v"))))
+    (properties `((upstream-name . "modeltime.resample")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-timetk
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-progressr
+                             r-plotly
+                             r-parsnip
+                             r-modeltime
+                             r-magrittr
+                             r-hardhat
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-dials
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/modeltime.resample")
+    (synopsis "Resampling Tools for Time Series Forecasting")
+    (description
+     "This package provides a modeltime extension that implements forecast resampling
+tools that assess time-based model performance and stability for a single time
+series, panel data, and cross-sectional time series analysis.")
+    (license license:expat)))
 
 (define-public r-modeltime
   (package
@@ -33938,6 +33985,28 @@ distributions using presence-only data.  In contrast to the popular software
 program MAXENT, this approach yields estimates of the probability of occurrence,
 which is a natural descriptor of a species distribution.")
     (license license:gpl3+)))
+
+(define-public r-maximininfer
+  (package
+    (name "r-maximininfer")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MaximinInfer" version))
+              (sha256
+               (base32
+                "0l4sglb3f7f1na6dbb4rd73sb4kqzlz78sj09f84rbqghjrzbxl0"))))
+    (properties `((upstream-name . "MaximinInfer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sihr r-mass r-intervals r-glmnet r-cvxr))
+    (home-page "https://cran.r-project.org/package=MaximinInfer")
+    (synopsis "Inference for Maximin Effects in High-Dimensional Settings")
+    (description
+     "Implementation of the sampling and aggregation method for the covariate shift
+maximin effect, which was proposed in <arXiv:2011.07568>.  It constructs the
+confidence interval for any linear combination of the high-dimensional maximin
+effect.")
+    (license license:gpl3)))
 
 (define-public r-maximin
   (package

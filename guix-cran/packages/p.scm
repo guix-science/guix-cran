@@ -7489,6 +7489,47 @@ data frames are automatically printed as tables, and the help() pages can also
 be rendered in knitr documents.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-prindt
+  (package
+    (name "r-prindt")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PrInDT" version))
+              (sha256
+               (base32
+                "1npbj95qyx2jp9g21ss6fhkzl5y9vkr8h6bkzs9hi9sj7fab9yay"))))
+    (properties `((upstream-name . "PrInDT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-splitstackshape r-party r-mass))
+    (home-page "https://cran.r-project.org/package=PrInDT")
+    (synopsis
+     "Prediction and Interpretation in Decision Trees for Classification and Regression")
+    (description
+     "Optimization of conditional inference trees from the package party for
+classification and regression.  For optimization, the model space is searched
+for the best tree on the full sample by means of repeated subsampling.
+Restrictions are allowed so that only trees are accepted which do not include
+pre-specified uninterpretable split results (cf.  Weihs & Buschfeld, 2021a).
+The function PrInDT() represents the basic resampling loop for 2-class
+classification (cf.  Weihs & Buschfeld, 2021a).  The function RePrInDT()
+(repeated PrInDT()) allows for repeated applications of PrInDT() for different
+percentages of the observations of the large and the small classes (cf.  Weihs &
+Buschfeld, 2021c).  The function NesPrInDT() (nested PrInDT()) allows for an
+extra layer of subsampling for a specific factor variable (cf.  Weihs &
+Buschfeld, 2021b).  The functions PrInDTMulev() and PrInDTMulab() deal with
+multilevel and multilabel classification.  In addition to these PrInDT()
+variants for classification, the function PrInDTreg() has been developed for
+regression problems.  Finally, the function PostPrInDT() allows for a posterior
+analysis of the distribution of a specified variable in the terminal nodes of a
+given tree.  References are: -- Weihs, C., Buschfeld, S. (2021a) \"Combining
+Prediction and Interpretation in Decision Trees (PrInDT) - a Linguistic Example\"
+<arXiv:2103.02336>; -- Weihs, C., Buschfeld, S. (2021b) \"NesPrInDT: Nested
+undersampling in PrInDT\" <arXiv:2103.14931>; -- Weihs, C., Buschfeld, S. (2021c)
+\"Repeated undersampling in PrInDT (RePrInDT): Variation in undersampling and
+prediction, and ranking of predictors in ensembles\" <arXiv:2108.05129>.")
+    (license license:gpl2)))
+
 (define-public r-primme
   (package
     (name "r-primme")
@@ -9046,6 +9087,37 @@ Boosting, Extreme Gradient Boosting, Random Forest, Neural Networks, Deep
 Learning, Support Vector Machines and Bayesian Methods.")
     (license license:gpl2+)))
 
+(define-public r-predictnmb
+  (package
+    (name "r-predictnmb")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "predictNMB" version))
+              (sha256
+               (base32
+                "09ha78hqpqf8pbygb0pyg3c7cvn20q0gw91xvvwfjiknwp1q6k8m"))))
+    (properties `((upstream-name . "predictNMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pmsampsize
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cutpointr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/predictNMB/")
+    (synopsis "Evaluate Clinical Prediction Models by Net Monetary Benefit")
+    (description
+     "Estimates when and where a model-guided treatment strategy may outperform a
+treat-all or treat-none approach by Monte Carlo simulation and evaluation of the
+Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
+<doi:10.21105/joss.05328>.")
+    (license license:gpl3+)))
+
 (define-public r-predictmeans
   (package
     (name "r-predictmeans")
@@ -9184,6 +9256,40 @@ factors only.  Finally, the package includes function to construct a simulated
 dataset with genotypes, genetic risks, and disease status for a hypothetical
 population, which is used for the evaluation of genetic risk models.")
     (license license:gpl2+)))
+
+(define-public r-predict3d
+  (package
+    (name "r-predict3d")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "predict3d" version))
+              (sha256
+               (base32
+                "0pnp2p4h28mpygzg13v8g9lza0cpfhdg3m8h1ziwrkvi3bg1y97m"))))
+    (properties `((upstream-name . "predict3d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rgl
+                             r-reshape2
+                             r-purrr
+                             r-prediction
+                             r-plyr
+                             r-modelr
+                             r-magrittr
+                             r-ggplot2
+                             r-ggiraphextra
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cardiomoon/predict3d")
+    (synopsis "Draw Three Dimensional Predict Plot Using Package 'rgl'")
+    (description
+     "Draw 2 dimensional and three dimensional plot for multiple regression models
+using package ggplot2 and rgl'.  Supports linear models (lm), generalized linear
+models (glm) and local polynomial regression fittings (loess).")
+    (license license:gpl2)))
 
 (define-public r-predhy-gui
   (package
@@ -26420,13 +26526,13 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedmut" version))
               (sha256
                (base32
-                "1kas20blvm3c1mqf25md4svdfqb68z7kr7zinbgmhmhmiigxiqgj"))))
+                "0zgkgmzzw8kmiacvfjdfqc04gwiv04g5p71b4rkndgb8d68v0f6m"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (home-page "https://github.com/magnusdv/pedmut")
@@ -26434,10 +26540,11 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
     (description
      "This package provides a collection of functions for modelling mutations in
 pedigrees with marker data, as used e.g. in likelihood computations with
-microsatellite data.  Implemented models include proportional and stepwise
-models, as well as random models for experimental work, and custom models
-allowing the user to apply any valid mutation matrix.  Allele lumping is done
-following the lumpability criteria of Kemeny and Snell (1976), ISBN:0387901922.")
+microsatellite data.  Implemented models include equal, proportional and
+stepwise models, as well as random models for experimental work, and custom
+models allowing the user to apply any valid mutation matrix.  Allele lumping is
+done following the lumpability criteria of Kemeny and Snell (1976),
+ISBN:0387901922.")
     (license license:gpl3)))
 
 (define-public r-pedmod

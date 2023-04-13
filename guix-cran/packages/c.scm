@@ -5000,6 +5000,45 @@ finding every combination of elements of lists or rows of data frames, and
 applying multiple models to multiple subsets of a dataset.")
     (license license:expat)))
 
+(define-public r-crosshap
+  (package
+    (name "r-crosshap")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crosshap" version))
+              (sha256
+               (base32
+                "1v4fazvcygbk6w8vmvima53j0b5xryr0cra2pnfzya3ybx68xb8k"))))
+    (properties `((upstream-name . "crosshap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-gtable
+                             r-gridextra
+                             r-ggpp
+                             r-ggplot2
+                             r-ggdist
+                             r-dplyr
+                             r-dbscan
+                             r-data-table
+                             r-clustree
+                             r-cli))
+    (home-page "https://jacobimarsh.github.io/crosshap/")
+    (synopsis "Local Haplotype Clustering and Visualization")
+    (description
+     "This package provides a local haplotyping visualization toolbox to capture major
+patterns of co-inheritance between clusters of linked variants, whilst
+connecting findings to phenotypic and demographic traits across individuals.
+crosshap enables users to explore and understand genomic variation across a
+trait-associated region.  For an example of successful local haplotype analysis,
+see Marsh et al. (2022) <doi:10.1007/s00122-022-04045-8>.")
+    (license license:expat)))
+
 (define-public r-crossdes
   (package
     (name "r-crossdes")
@@ -5629,6 +5668,45 @@ use Vanhoucke, M. (2009) <doi:10.1007/978-1-4419-1014-1>.")
 operations in nuclear facilities, based on Zywiec et al (2021)
 <doi:10.1016/j.ress.2020.107322>.")
     (license license:expat)))
+
+(define-public r-crisprdesignr
+  (package
+    (name "r-crisprdesignr")
+    (version "1.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crispRdesignR" version))
+              (sha256
+               (base32
+                "0z0sc0plq6x68b70pprzr7p7wpv8zsvg9ygi0gv1djh5j4wiaiz1"))))
+    (properties `((upstream-name . "crispRdesignR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vtreat
+                             r-stringr
+                             r-shiny
+                             r-s4vectors
+                             r-rtracklayer
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-gbm
+                             r-dt
+                             r-biostrings
+                             r-biocgenerics))
+    (home-page "<https://github.com/dylanbeeber/crispRdesignR>")
+    (synopsis "Guide Sequence Design for CRISPR/Cas9")
+    (description
+     "Designs guide sequences for CRISPR/Cas9 genome editing and provides information
+on sequence features pertinent to guide efficiency.  Sequence features include
+annotated off-target predictions in a user-selected genome and a predicted
+efficiency score based on the model described in Doench et al. (2016)
+<doi:10.1038/nbt.3437>.  Users are able to import additional genomes and genome
+annotation files to use when searching and annotating off-target hits.  All
+guide sequences and off-target data can be generated through the R console with
+sgRNA_Design() or through crispRdesignR's user interface with crispRdesignRUI().
+ CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) and the
+associated protein Cas9 refer to a technique used in genome editing.")
+    (license license:gpl3)))
 
 (define-public r-crisp
   (package
@@ -15405,29 +15483,6 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 <https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf>.")
     (license license:gpl3)))
 
-(define-public r-comtradr
-  (package
-    (name "r-comtradr")
-    (version "0.3.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "comtradr" version))
-              (sha256
-               (base32
-                "17fdcgx27352jqdvz05q3crg29h78d0alp0abxmkzymwk3yq842j"))))
-    (properties `((upstream-name . "comtradr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-magrittr r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/comtradr/")
-    (synopsis "Interface with the United Nations Comtrade API")
-    (description
-     "Interface with and extract data from the United Nations Comtrade API
-<https://comtrade.un.org/data/>.  Comtrade provides country level shipping data
-for a variety of commodities, these functions allow for easy API query and data
-returned as a tidy data frame.")
-    (license license:gpl3)))
-
 (define-public r-comsimitv
   (package
     (name "r-comsimitv")
@@ -16161,6 +16216,47 @@ function using all possible combinations of selected inputs.  This is useful for
 comparing the effect of different parameter values.  It can also run in parallel
 and automatically save intermediate results, which is very useful for long
 computations.")
+    (license license:gpl3)))
+
+(define-public r-comparemultiplemodels
+  (package
+    (name "r-comparemultiplemodels")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CompareMultipleModels" version))
+              (sha256
+               (base32
+                "0qzybbxx5kqlrb260c0wh2vhp3ci5wk6853mm01wfyivhvf7sz0h"))))
+    (properties `((upstream-name . "CompareMultipleModels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ceemdanml))
+    (home-page "https://cran.r-project.org/package=CompareMultipleModels")
+    (synopsis "Finding the Best Model Using Eight Metrics Values")
+    (description
+     "In statistical modeling, multiple models need to be compared based on certain
+criteria.  The method described here uses eight metrics from AllMetrics package.
+ âinput_dfâ is the data frame (at least two columns for comparison)
+containing metrics values in different rows of a column (which denotes a
+particular modelâs performance).  First five metrics are expected to be
+minimum and last three metrics are expected to be maximum for a model to be
+considered good.  Firstly, every metric value (among first five) is searched in
+every columns and minimum values are denoted as âMINâ and other values are
+denoted as âNAâ.  Secondly, every metric (among last three) is searched in
+every columns and maximum values are denoted as âMAXâ and other values are
+denoted as âNAâ.  âoutput_dfâ contains the similar number of rows (which
+is 8) and columns (which is number of models to be compared) as of
+âinput_dfâ.  Values in âoutput_dfâ are corresponding âNAâ, âMINâ
+or âMAXâ.  Finally, the column containing minimum number of âNAâ values
+is denoted as the best column.  âmin_NA_colâ gives the name of the best
+column (model).  âmin_NA_valuesâ are the corresponding metrics values.
+âBestColumn_metricsâ is the data frame (dimension: 1*8) containing different
+metrics of the best column (model).  âbest_column_resultsâ is the final
+result (a list) containing all of these output elements.  In special case, if
+two columns having equal NA', it will be checked among these two column which
+one is having least NA in first five rows and will be inferred as the best.
+More details about AllMetrics can be found in Garai (2023)
+<doi:10.13140/RG.2.2.18688.30723>.")
     (license license:gpl3)))
 
 (define-public r-comparemcmcs

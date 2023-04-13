@@ -13724,6 +13724,28 @@ algorithm for selecting the most parsimonious species interaction network
 topology.")
     (license license:gpl2+)))
 
+(define-public r-eiaapi
+  (package
+    (name "r-eiaapi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EIAapi" version))
+              (sha256
+               (base32
+                "0mcm6j8w1ngix0wha6h8jcsrdiv2ydzm6jdf7v1b7h7slf2a4pg5"))))
+    (properties `((upstream-name . "EIAapi")))
+    (build-system r-build-system)
+    (home-page "https://github.com/RamiKrispin/EIAapi")
+    (synopsis "Query Data from the 'EIA' API")
+    (description
+     "This package provides a function to query and extract data from the US Energy
+Information Administration ('EIA') API V2 <https://www.eia.gov/opendata/>.  The
+EIA API provides a variety of information, in a time series format, about the
+energy sector in the US. The API is open, free, and requires an access key and
+registration at <https://www.eia.gov/opendata/>.")
+    (license license:expat)))
+
 (define-public r-eia
   (package
     (name "r-eia")
@@ -18218,6 +18240,44 @@ the drc package in a way that is displayed a tidy data.frame as output.  Info
 about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
+
+(define-public r-ebvcube
+  (package
+    (name "r-ebvcube")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ebvcube" version))
+              (sha256
+               (base32
+                "138cnzfjz6pgv8s194d379ynw87n82znvb0skn78kb93g916885s"))))
+    (properties `((upstream-name . "ebvcube")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyterra
+                             r-terra
+                             r-stringr
+                             r-rhdf5
+                             r-reshape2
+                             r-ncmeta
+                             r-ncdf4
+                             r-memuse
+                             r-jsonlite
+                             r-hdf5array
+                             r-ggplot2
+                             r-delayedarray
+                             r-curl
+                             r-checkmate))
+    (home-page "https://github.com/LuiseQuoss/ebvcube")
+    (synopsis "Working with netCDF for Essential Biodiversity Variables")
+    (description
+     "The concept of Essential Biodiversity Variables (EBV,
+<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
+the Network Common Data Form (netCDF).  The ebvcube R package provides
+functionality to easily create, access and visualise this data.  The EBV netCDFs
+can be downloaded from the EBV Data Portal: Christian Langer/ iDiv (2020)
+<https://portal.geobon.org/>.")
+    (license license:gpl3+)))
 
 (define-public r-ebsc
   (package

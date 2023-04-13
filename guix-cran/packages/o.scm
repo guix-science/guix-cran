@@ -2054,13 +2054,13 @@ bundle.")
 (define-public r-ormplot
   (package
     (name "r-ormplot")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ormPlot" version))
               (sha256
                (base32
-                "1s38alb602javkizxp3gqkmsq6zvl983gv4bcgd8752fvvddbf4s"))))
+                "1q9jhg1r815llrz12gdxmdqb4x11kk3ph3pp41da72969hsiw73l"))))
     (properties `((upstream-name . "ormPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-gtable r-ggplot2))
@@ -9673,13 +9673,13 @@ consumption data.")
 (define-public r-octopus
   (package
     (name "r-octopus")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "octopus" version))
               (sha256
                (base32
-                "1zlhczp09yxk7kzn728zz82j105qb5krp33mz73v4h3avlskgq5y"))))
+                "186nld708ksgv9if2wbj9xmc5z3g68nsjlyfy3mvg3wgbfhnj03a"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -9693,7 +9693,8 @@ consumption data.")
                              r-dplyr
                              r-dbi
                              r-bslib))
-    (home-page "https://cran.r-project.org/package=octopus")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MCodrescu/octopus")
     (synopsis "Database Management Tool")
     (description
      "This package provides a database management tool built as a shiny application.

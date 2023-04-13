@@ -18,6 +18,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
+  #:use-module (gnu packages language)
   #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
@@ -6405,13 +6406,13 @@ is provided in vignettes included in the package and in the paper by HÃ¸jsgaar
 (define-public r-grafzahl
   (package
     (name "r-grafzahl")
-    (version "0.0.5")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grafzahl" version))
               (sha256
                (base32
-                "0m7lyd7k9qqn7sxwk20sk0s306gmvrb8myx76yb61ld3dxv5wdj2"))))
+                "1pccxzraz9sri69774svj3sb1fxq00lq8261z0fcm0j17mqmysyq"))))
     (properties `((upstream-name . "grafzahl")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-quanteda r-lime r-jsonlite))
@@ -6424,7 +6425,8 @@ to modern Transformer-based text classification models (Wolf et al., 2020)
 <doi:10.18653/v1/2020.emnlp-demos.6>, in order to facilitate supervised machine
 learning for textual data.  This package mimics the behaviors of
 quanteda.textmodels and provides a function to setup the Python environment to
-use the pretrained models from Hugging Face <https://huggingface.co/>.")
+use the pretrained models from Hugging Face <https://huggingface.co/>.  More
+information: <doi:10.5117/CCR2023.1.003.CHAN>.")
     (license license:gpl3+)))
 
 (define-public r-grafify
@@ -11363,13 +11365,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.0-8")
+    (version "0.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmm.hp" version))
               (sha256
                (base32
-                "01sg728ry3r90ymgg3ibfck5ixzy40i7a5rwavd668mcqk7msry3"))))
+                "1p7sw2q31l4zim55lmrs7400b8kdi26v6bnsbhy5wcvy3a639n25"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mumin r-lme4 r-ggplot2))
@@ -11378,10 +11380,11 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
      "Hierarchical Partitioning of Marginal R2 for Generalized Mixed-Effect Models")
     (description
      "Conducts hierarchical partitioning to calculate individual contributions of each
-fixed effects towards marginal R2 for generalized mixed-effect model based on
-output of r.squaredGLMM() in MuMIn', applying the algorithm of Lai J.,Zou Y.,
-Zhang S.,Zhang X.,Mao L.(2022)glmm.hp: an R package for computing individual
-effect of predictors in generalized linear mixed models.Journal of Plant
+predictor (fixed effects) towards marginal R2 for generalized linear
+mixed-effect model (including lm, glm and glmm) based on output of
+r.squaredGLMM() in MuMIn', applying the algorithm of Lai J.,Zou Y., Zhang
+S.,Zhang X.,Mao L.(2022)glmm.hp: an R package for computing individual effect of
+predictors in generalized linear mixed models.Journal of Plant
 Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -13328,6 +13331,35 @@ path-based hierarchical types.  There are methods for the planar shape types in
 the sf and sp packages and for types in the trip and silicate packages.")
     (license license:gpl3)))
 
+(define-public r-gibasa
+  (package
+    (name "r-gibasa")
+    (version "0.9.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gibasa" version))
+              (sha256
+               (base32
+                "1jcdx49dmivqv3jlag87mliggmcar9cyxf6456bxg8wss0qpw8is"))))
+    (properties `((upstream-name . "gibasa")))
+    (build-system r-build-system)
+    (inputs (list mecab))
+    (propagated-inputs (list r-stringi
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-matrix
+                             r-dplyr
+                             r-audubon))
+    (home-page "https://paithiov909.github.io/gibasa/")
+    (synopsis "An Alternative 'Rcpp' Wrapper of 'MeCab'")
+    (description
+     "This package provides a plain Rcpp wrapper of MeCab that can segment Chinese,
+Japanese, and Korean text into tokens.  The main goal of this package is to
+provide an alternative to tidytext using morphological analysis.")
+    (license license:gpl3+)))
+
 (define-public r-ghypernet
   (package
     (name "r-ghypernet")
@@ -14102,13 +14134,13 @@ analysis, meta-analysis, and regression analyses.  References: Patil (2021)
 (define-public r-ggstats
   (package
     (name "r-ggstats")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstats" version))
               (sha256
                (base32
-                "04g1f3kpm9agqq3303i3lhx7nndmvgmgab6qdbax4rmrwjxqr9kh"))))
+                "0kcsiq1l570j7wwkdrd7zxswlkcxdjwnscj8b6crjzdy40f3v4xk"))))
     (properties `((upstream-name . "ggstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25990,13 +26022,13 @@ escaping, and API limitations.")
 (define-public r-gamselbayes
   (package
     (name "r-gamselbayes")
-    (version "1.0-2")
+    (version "1.0-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamselBayes" version))
               (sha256
                (base32
-                "1dqxc7g529lkdk2lvn3ls4gxij7djs5xycrzlw49wf79pns2s5cc"))))
+                "0w5jpnmihz8ggqz060849m1xy2r1bv46s89ar4mff95pf5bykfah"))))
     (properties `((upstream-name . "gamselBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -26010,7 +26042,7 @@ The approximate Bayesian inference engine options are: (1) Markov chain Monte
 Carlo and (2) mean field variational Bayes.  Markov chain Monte Carlo has better
 Bayesian inferential accuracy, but requires a longer run-time.  Mean field
 variational Bayes is faster, but less accurate.  The methodology is described in
-He and Wand (2021) <arXiv:2201.00412>.")
+He and Wand (2023) <arXiv:2201.00412>.")
     (license license:gpl2+)))
 
 (define-public r-gamsel

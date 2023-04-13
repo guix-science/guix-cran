@@ -724,13 +724,13 @@ Chile.")
 (define-public r-hydrotoolbox
   (package
     (name "r-hydrotoolbox")
-    (version "1.1.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hydrotoolbox" version))
               (sha256
                (base32
-                "0fikhp7d0annjd3i4885m1in8fh9vnk4v7asip4804a0x9jj9zsz"))))
+                "0m5crm8n8i3fv43am649cdyrbfcfbais8fwrg6c7zy81dbhmy9m9"))))
     (properties `((upstream-name . "hydrotoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10991,13 +10991,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.1.8")
+    (version "0.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "happign" version))
               (sha256
                (base32
-                "1xinrjsk37licqbvqx0hyyqxb50vj1zi10ikzq6wfx7qnvdrv4nh"))))
+                "14y4z797kzcm98i4ck8ps21kchlkm9lqs98w72188rw80yxr6dfw"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
@@ -11007,16 +11007,17 @@ including most of the delicious Cantonese cuisine.")
                              r-httr2
                              r-geojsonsf
                              r-dplyr
-                             r-checkmate
                              r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paul-carteron")
     (synopsis "R Interface to 'IGN' Web Services")
     (description
-     "Interface to easily access the National Institute of Geographic and Forestry
-Information open-source data from Geoservice website for any area of interest in
-France via WFS (shapefile) and WMS (raster) web services
-<https://geoservices.ign.fr/services-web-experts>.")
+     "Automatic open data acquisition from resources of IGN ('Institut National de
+Information Geographique et forestiere') (<https://www.ign.fr/>).  Available
+datasets include various types of raster and vector data, such as digital
+elevation models, state borders, spatial databases, cadastral parcels, and more.
+ There also access to point clouds data ('LIDAR') and specifics API
+(<https://apicarto.ign.fr/api/doc/>).")
     (license license:gpl3+)))
 
 (define-public r-haplotypes

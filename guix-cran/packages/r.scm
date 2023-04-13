@@ -3464,6 +3464,51 @@ characters.  Specifically helpful for right-to-left languages such as Arabic,
 Persian and Hebrew.")
     (license license:expat)))
 
+(define-public r-rtl
+  (package
+    (name "r-rtl")
+    (version "1.3.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RTL" version))
+              (sha256
+               (base32
+                "123xl52n8vm22qnf4h0dsyjhq1pwvjvf17vx2qk1x1mi1csbihcz"))))
+    (properties `((upstream-name . "RTL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-ttr
+                             r-tsibble
+                             r-timetk
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-rcurl
+                             r-rcpp
+                             r-purrr
+                             r-plotly
+                             r-performanceanalytics
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/risktoollib/RTL")
+    (synopsis "Risk Tool Library - Trading, Risk, 'Analytics' for Commodities")
+    (description
+     "This package provides a toolkit for Commodities analytics', risk management and
+trading professionals.  Includes functions for API calls to
+<https://commodities.morningstar.com/#/>, <https://developer.genscape.com/>, and
+<https://www.bankofcanada.ca/valet/docs>.")
+    (license license:expat)))
+
 (define-public r-rtkore
   (package
     (name "r-rtkore")
@@ -5507,13 +5552,13 @@ Modularity.")
 (define-public r-rspde
   (package
     (name "r-rspde")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rSPDE" version))
               (sha256
                (base32
-                "1jfvk6i1w512nj1cp9xgn5wa2f45ggm3ldqw0i5c7f0wh50w7l9w"))))
+                "04rvlpgv210f4dzgj6pvr8228x54y2rnggnlmpxz8yx6kb2bwf67"))))
     (properties `((upstream-name . "rSPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

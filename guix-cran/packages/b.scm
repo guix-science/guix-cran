@@ -3831,13 +3831,13 @@ in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
 (define-public r-breadr
   (package
     (name "r-breadr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BREADR" version))
               (sha256
                (base32
-                "0s6g8qljp8xw5xsizw0pzrgb4qw7a8s9m9f5p2ckprq064y2z332"))))
+                "1bvi3zvsqrin3jl2dwvrw18k9bbrhzcjhnr18sz9pmbgkfkjs4wk"))))
     (properties `((upstream-name . "BREADR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15385,6 +15385,31 @@ Likelihood Ratio Chi Square, and Pseudo R Square.  Aberson, C. L. (2022)
 <doi:10.31234/osf.io/s2yqn>.")
     (license license:gpl3)))
 
+(define-public r-bettermc
+  (package
+    (name "r-bettermc")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bettermc" version))
+              (sha256
+               (base32
+                "1sii92s3n1brrh72nvg5qr68x56676q1ffgvf6axmrlh0h094yia"))))
+    (properties `((upstream-name . "bettermc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://github.com/gfkse/bettermc")
+    (synopsis "Enhanced Fork-Based Parallelization")
+    (description
+     "Drop-in replacement for parallel::mclapply() adding e.g. tracebacks, crash
+dumps, retries, condition handling, improved seeding, progress bars and faster
+inter process communication.  Some of the internal functions are also exported
+for other use: etry() (extended try), copy2shm()/allocate_from_shm() (copy to
+and allocate from POSIX shared memory), char_map/map2char() (split a character
+vector into its unique elements and a mapping on these) and various semaphore
+related functions.")
+    (license license:expat)))
+
 (define-public r-bets-covid19
   (package
     (name "r-bets-covid19")
@@ -15625,6 +15650,28 @@ matrices) and multiple-site dissimilarities, separating the turnover and
 nestedness-resultant components of taxonomic (incidence and abundance based),
 functional and phylogenetic beta diversity.")
     (license license:gpl2+)))
+
+(define-public r-betanb
+  (package
+    (name "r-betanb")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "betaNB" version))
+              (sha256
+               (base32
+                "0p26k1cp78xb7w267x4aawa6y626cz39n2sgwf8jk18xlgar88pn"))))
+    (properties `((upstream-name . "betaNB")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jeksterslab/betaNB")
+    (synopsis "Bootstrap for Regression Effect Sizes")
+    (description
+     "Generates nonparametric bootstrap confidence intervals (Efron & Tibshirani,
+1993: <doi:10.1201/9780429246593>) for standardized regression coefficients
+(beta) and other effect sizes, including multiple correlation, semipartial
+correlations, improvement in R-squared, squared partial correlations, and
+differences in standardized regression coefficients, for models fitted by lm().")
+    (license license:expat)))
 
 (define-public r-betamc
   (package
@@ -16050,13 +16097,13 @@ complementarity of the primal and dual variables.")
 (define-public r-berryfunctions
   (package
     (name "r-berryfunctions")
-    (version "1.21.14")
+    (version "1.22.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "berryFunctions" version))
               (sha256
                (base32
-                "1dzhkg5gl5sjwd6hv6gn5arr88r8jz5qz6d5cmbk4cxi0ld8v84i"))))
+                "166lx47z4m5spi4yapsda18mwg30z2gx9cdhvshzgr788vbpi1cd"))))
     (properties `((upstream-name . "berryFunctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
@@ -20474,13 +20521,13 @@ due to presence of two Weibull components in the hazard function.")
 (define-public r-bayesmix
   (package
     (name "r-bayesmix")
-    (version "0.7-5")
+    (version "0.7-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesmix" version))
               (sha256
                (base32
-                "0s1a221vwia92pinja2r5b5abm4dhcrs81m4frqnf0522qh0y75f"))))
+                "0gzzzgjbz4aw2zrd5grvd1r0zlycxkgyq4hj1mcbwkfs2dd00msk"))))
     (properties `((upstream-name . "bayesmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-coda))

@@ -950,6 +950,34 @@ changes.")
 formats using Quarto'.")
     (license license:gpl2+)))
 
+(define-public r-quartets
+  (package
+    (name "r-quartets")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quartets" version))
+              (sha256
+               (base32
+                "06xl8wx6487iyp50qp6387s5vk8kf0k16cldyq9crhlc6sd9gyf4"))))
+    (properties `((upstream-name . "quartets")))
+    (build-system r-build-system)
+    (home-page "https://github.com/r-causal/quartets")
+    (synopsis "Datasets to Help Teach Statistics")
+    (description
+     "In the spirit of Anscombe's quartet, this package includes datasets that
+demonstrate the importance of visualizing your data, the importance of not
+relying on statistical summary measures alone, and why additional assumptions
+about the data generating mechanism are needed when estimating causal effects.
+The package includes \"Anscombe's Quartet\" (Anscombe 1973)
+<doi:10.1080/00031305.1973.10478966>, D'Agostino McGowan & Barrett (2023)
+\"Causal Quartet\" <doi:10.48550/arXiv.2304.02683>, \"Datasaurus Dozen\" (Matejka &
+Fitzmaurice 2017), \"Interaction Triptych\" (Rohrer & Arslan 2021)
+<doi:10.1177/25152459211007368>, \"Rashomon Quartet\" (Biecek et al.  2023)
+<doi:10.48550/arXiv.2302.13356>, and Gelman \"Variation and Heterogeneity Causal
+Quartets\" (Gelman et al.  2023) <doi:10.48550/arXiv.2302.12878>.")
+    (license license:expat)))
+
 (define-public r-quartet
   (package
     (name "r-quartet")
