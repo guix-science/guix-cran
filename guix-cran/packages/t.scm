@@ -8702,13 +8702,13 @@ includes notes about all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "toxEval" version))
               (sha256
                (base32
-                "11rw8vjnz3kzikd59vbyiv8vc7dijpi6znyxlc7c4rpi41gs6c0m"))))
+                "06lzxni750d5lxlnc1wc7rrfcgc4m61blfvdb1lv60npx1iji8fl"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8737,9 +8737,7 @@ understanding of the potential biological relevance of environmental chemistry
 data.  Results can be used to prioritize which chemicals at which sites may be
 of greatest concern.  These methods are meant to be used as a screening
 technique to predict potential for biological influence from chemicals that
-ultimately need to be validated with direct biological assays.  A description of
-the analysis can be found in Blackwell et al. (2017)
-<doi:10.1021/acs.est.7b01613>.")
+ultimately need to be validated with direct biological assays.")
     (license license:cc0)))
 
 (define-public r-toxcrit
@@ -9174,13 +9172,13 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchvision" version))
               (sha256
                (base32
-                "10saj4crzdwqwqwa5bwh0zbs7d3jmg3xrpw2klh71197g62crsc0"))))
+                "0649rgrh4fbswc3ab92af2z1hf61nbb7wf8yf5n9b9ajnvfkvxbp"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -13033,42 +13031,6 @@ Twitter'.")
 data.table while using tidyverse-like syntax.")
     (license license:expat)))
 
-(define-public r-tidysynth
-  (package
-    (name "r-tidysynth")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidysynth" version))
-              (sha256
-               (base32
-                "0rckvp51gp22bjcwcszdhhn51bzjivwndnvjcf67h1vmyqa3zjkj"))))
-    (properties `((upstream-name . "tidysynth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-rgenoud
-                             r-optimx
-                             r-magrittr
-                             r-lowrankqp
-                             r-kernlab
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=tidysynth")
-    (synopsis "Tidy Implementation of the Synthetic Control Method")
-    (description
-     "This package provides a synthetic control offers a way of evaluating the effect
-of an intervention in comparative case studies.  The package makes a number of
-improvements when implementing the method in R. These improvements allow users
-to inspect, visualize, and tune the synthetic control more easily.  A key
-benefit of a tidy implementation is that the entire preparation process for
-building the synthetic control can be accomplished in a single pipe.  For more
-information on the synthetic control method, see Abadie et al. (2003)
-<doi:10.1257/000282803321455188>.")
-    (license license:expat)))
-
 (define-public r-tidystringdist
   (package
     (name "r-tidystringdist")
@@ -13115,13 +13077,13 @@ based on the morphological tagset from the Universal Dependencies.")
 (define-public r-tidystats
   (package
     (name "r-tidystats")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidystats" version))
               (sha256
                (base32
-                "00fzma64fjih70yp04hpragh9afhn11hdqydagr0yalwg3ixx5iq"))))
+                "1y4jf1rvj8k256shiy2zb68vmvla8sxjr2ynnys5mw2i4ap326kj"))))
     (properties `((upstream-name . "tidystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15918,13 +15880,13 @@ us permission to use the source code for the Test of Total Equivalency function.
 (define-public r-themis
   (package
     (name "r-themis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "themis" version))
               (sha256
                (base32
-                "0ink3ixal4942w1sbqjdhxpl7j0aqvksyiiz9ddd72wk30cvpwaw"))))
+                "0mnhqcaxlidakfm9y8vyqscx0w9fk6j9mwcdb9l3bi5c1pqy5g81"))))
     (properties `((upstream-name . "themis")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16935,16 +16897,15 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "textrecipes" version))
               (sha256
                (base32
-                "1m6g60g3rbn5rw7pcdp2aq71w1wfkc9r1aiqx47qsfaalrpdg6i2"))))
+                "0b771d8qbd70mz854n0d6s7wn8jplczk0dziyz1q3fzjcnkz1cv3"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-vctrs
                              r-tokenizers
                              r-tibble
@@ -18881,13 +18842,13 @@ are multidimensional generalizations of matrices (two dimensional) and vectors
 (define-public r-tensorpreave
   (package
     (name "r-tensorpreave")
-    (version "0.1.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TensorPreAve" version))
               (sha256
                (base32
-                "01dd9ny8ikrhdsi3rv9nhs10rn0ps8dly8qpqk576qqc8yb0d506"))))
+                "0mgyw2mpbsxvxymzy97kpscsjagw8yxk5r3pich0dn0his9ig31r"))))
     (properties `((upstream-name . "TensorPreAve")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor r-pracma r-mass))
@@ -18906,7 +18867,7 @@ estimate the factor loading spaces.  The estimated directions corresponding to
 the strongest factors are then used for projecting the data for a potentially
 improved re-estimation of the factor loading spaces themselves.  A new rank
 estimation method is also implemented to utilizes correlation information from
-the projected data.  See Chen and Lam (2022) <arXiv:2208.04012> for more
+the projected data.  See Chen and Lam (2023) <arXiv:2208.04012> for more
 details.")
     (license license:gpl3)))
 
@@ -18934,6 +18895,30 @@ as an alternative resort to handle tensor only as array class.  Some
 functionalities related to missingness and rearrangement, discussed in Bai and
 Ng (2021) <arXiv:1910.06677>, are also supported.")
     (license license:gpl3)))
+
+(define-public r-tensorcomplete
+  (package
+    (name "r-tensorcomplete")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TensorComplete" version))
+              (sha256
+               (base32
+                "1phjdcmp74i2d79p2lhm40qb5ind6iyqbkhkb1khw7i46r5f8zd6"))))
+    (properties `((upstream-name . "TensorComplete")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensorregress r-pracma r-mass))
+    (home-page "https://cran.r-project.org/package=TensorComplete")
+    (synopsis "Tensor Noise Reduction and Completion Methods")
+    (description
+     "Efficient algorithms for tensor noise reduction and completion.  This package
+includes a suite of parametric and nonparametric tools for estimating tensor
+signals from noisy, possibly incomplete observations.  The methods allow a broad
+range of data types, including continuous, binary, and ordinal-valued tensor
+entries.  The algorithms employ the alternating optimization.  The detailed
+algorithm description can be found in the following three references.")
+    (license license:gpl2+)))
 
 (define-public r-tensorclustering
   (package
@@ -19414,6 +19399,36 @@ to understand the relationships created between words evoked by the individual
 and the inducer term.  This technique is included in the theory of social
 representations, therefore, on the information transmitted by an individual,
 seeks to create a profile that define a social group.")
+    (license license:gpl3+)))
+
+(define-public r-telemetr
+  (package
+    (name "r-telemetr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "telemetR" version))
+              (sha256
+               (base32
+                "04samfr6m3lnyvq03an5an6z4iyqizn3qyjjblphrix2p5wrl37r"))))
+    (properties `((upstream-name . "telemetR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-tidyr r-lubridate r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=telemetR")
+    (synopsis "Filter and Analyze Generalised Telemetry Data from Organisms")
+    (description
+     "Analyze telemetry datasets generalized to allow any technology.  The filtering
+steps check for false positives caused by reflected transmissions from surfaces
+and false pings from other noise generating equipment.  The filters are based on
+JSATS filtering algorithms found in package filteRjsats
+<https://CRAN.R-project.org/package=filteRjsats> but have been generalized to
+allow the user to define many of the filtering variables.  Additionally, this
+package contains scripts used to help identify an optimal maximum blanking
+period as defined in Capello et al (2015) <doi:10.1371/journal.pone.0134002>.
+The functions were written according to their manuscript description, but have
+not been reviewed by the authors for accuracy.  It is included here as is,
+without warranty.")
     (license license:gpl3+)))
 
 (define-public r-telemac

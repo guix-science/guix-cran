@@ -17,6 +17,7 @@
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
@@ -24,7 +25,6 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages sqlite)
-  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -7825,13 +7825,13 @@ Cure (PHMC) model and the Proportional Odds Mixture Cure Model as special cases.
 (define-public r-googleway
   (package
     (name "r-googleway")
-    (version "2.7.6")
+    (version "2.7.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "googleway" version))
               (sha256
                (base32
-                "07jyawybdrfb7rzxba6mqlz98slv6j1bdqv5lqc06zf5x84r0wwd"))))
+                "0pcc5ypd5nn5m6xf3p9vdfj2a8f2dxrrqzfq5qm18mlfl9pnvn7x"))))
     (properties `((upstream-name . "googleway")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -9671,6 +9671,42 @@ by Bayes rule.")
     (description
      "Likelihood-based boosting approaches for generalized mixed models are provided.")
     (license license:gpl2)))
+
+(define-public r-gmmat
+  (package
+    (name "r-gmmat")
+    (version "1.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GMMAT" version))
+              (sha256
+               (base32
+                "0gb6h5qkx708l3dnmvnsl6nbdqi6szimr5227yhi7ysahy71fv1r"))))
+    (properties `((upstream-name . "GMMAT")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-foreach
+                             r-data-table
+                             r-compquadform))
+    (home-page "https://cran.r-project.org/package=GMMAT")
+    (synopsis "Generalized Linear Mixed Model Association Tests")
+    (description
+     "Perform association tests using generalized linear mixed models (GLMMs) in
+genome-wide association studies (GWAS) and sequencing association studies.
+First, GMMAT fits a GLMM with covariate adjustment and random effects to account
+for population structure and familial or cryptic relatedness.  For GWAS, GMMAT
+performs score tests for each genetic variant as proposed in Chen et al. (2016)
+<DOI:10.1016/j.ajhg.2016.02.012>.  For candidate gene studies, GMMAT can also
+perform Wald tests to get the effect size estimate for each genetic variant.
+For rare variant analysis from sequencing association studies, GMMAT performs
+the variant Set Mixed Model Association Tests (SMMAT) as proposed in Chen et al.
+(2019) <DOI:10.1016/j.ajhg.2018.12.012>, including the burden test, the sequence
+kernel association test (SKAT), SKAT-O and an efficient hybrid test of the
+burden test and SKAT, based on user-defined variant sets.")
+    (license license:gpl3+)))
 
 (define-public r-gmm
   (package
@@ -14090,13 +14126,13 @@ magnitude trends over time.")
 (define-public r-ggstatsplot
   (package
     (name "r-ggstatsplot")
-    (version "0.11.0")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggstatsplot" version))
               (sha256
                (base32
-                "1gzm8bki6nzwjcqk5zzc2jcrx41wby919w5377r6hhga1dcx3r4v"))))
+                "0pfgjlszr9d3sqkgfkw4569zk72km4fw9rrz8bylf685735imfkw"))))
     (properties `((upstream-name . "ggstatsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14219,13 +14255,13 @@ in package photobiology'.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-ggspatial
   (package
     (name "r-ggspatial")
-    (version "1.1.7")
+    (version "1.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggspatial" version))
               (sha256
                (base32
-                "15v7g2ywxvy64ixl55j58qfzi41c7ykkh2ind4npf7n76q4ixpc3"))))
+                "0nx5g4n9iqi8pqxq30ydmcyvmgwynn6zciffydg1p879035832vz"))))
     (properties `((upstream-name . "ggspatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14655,13 +14691,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggrcs" version))
               (sha256
                (base32
-                "0bckgg9m6gfh4y45mqw3i83i9ba53mvvkbjf2qqnd474axd5f7qx"))))
+                "12056c9748gbi50bzxa6kqpd1s4nc0h6j9jqc0qhpqmrxala1w0j"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2))
@@ -19773,17 +19809,17 @@ gravity models.")
 (define-public r-geonetwork
   (package
     (name "r-geonetwork")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geonetwork" version))
               (sha256
                (base32
-                "04vf39hxl1a2kbgqc054xg9w6hbd3fwag6sy0j8a9agrd5wgks7h"))))
+                "0yg6pp2ya62qws6jdjxmhqjh5gdn4cfm6zbljazc35xf7d97jjnx"))))
     (properties `((upstream-name . "geonetwork")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-rgdal r-igraph r-geosphere))
-    (home-page "https://umr-astre.pages.mia.inra.fr/geonetwork/")
+    (propagated-inputs (list r-sf r-igraph r-geosphere))
+    (home-page "https://umr-astre.pages.mia.inra.fr/geonetwork")
     (synopsis "Geographic Networks")
     (description
      "This package provides classes and methods for handling networks or graphs whose
@@ -20781,13 +20817,13 @@ everything related to geosciences.")
 (define-public r-geodata
   (package
     (name "r-geodata")
-    (version "0.5-3")
+    (version "0.5-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geodata" version))
               (sha256
                (base32
-                "1341wia70hmiaw4cwlld5x83mc10b85ji0mxfc75ar4w4yzplh6z"))))
+                "1d6kaqfnk9dh4r69002bnq3hdg7mnjsi12b35lk38fq2hpd868dx"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -20795,7 +20831,7 @@ everything related to geosciences.")
     (synopsis "Download Geographic Data")
     (description
      "This package provides functions for downloading of geographic data for use in
-spatial analysis and mapping.  The package facilitates access to climate,
+spatial analysis and mapping.  The package facilitates access to climate, crops,
 elevation, land use, soil, species occurrence, accessibility, administrative
 boundaries and other data.")
     (license license:gpl3+)))
@@ -24037,13 +24073,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalcubes" version))
               (sha256
                (base32
-                "0ywc7bxw49cbjhcafby7dlxhzz52abxirar48ar076m6wkk2vbad"))))
+                "1zvx6adc7i1811ri2i5c5w4rkh5wi1rmxi2xm8amf6cwqym8rnzd"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -24052,9 +24088,9 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                   netcdf
                   gdal
                   curl))
-    (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite))
+    (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
     (native-inputs (list r-knitr pkg-config))
-    (home-page "https://github.com/appelmar/gdalcubes_R")
+    (home-page "https://github.com/appelmar/gdalcubes")
     (synopsis "Earth Observation Data Cubes from Satellite Image Collections")
     (description
      "Processing collections of Earth observation images as on-demand multispectral,
@@ -24196,13 +24232,13 @@ sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.1.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gcplyr" version))
               (sha256
                (base32
-                "0px84fbczxqm3f8ggsijm3l5m2n1ajz4qrmfph87rvwg8r0xvn7k"))))
+                "02xhah02rghw7nayxc7qg34cvkgmkfgf241n606bp0p8hhg92k35"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -24210,7 +24246,7 @@ sensitivities.")
     (home-page "https://mikeblazanin.github.io/gcplyr/")
     (synopsis "Manipulate and Analyze Growth Curve Data")
     (description
-     "Easy import, manipulation, and model-free analysis of bacterial growth curve
+     "Easy import, manipulation, and model-free analysis of microbial growth curve
 data, as commonly output by plate readers.  Tools for reshaping common plate
 reader outputs into tidy formats and merging them with design information,
 making data easy to work with using gcplyr and other packages.  Also streamlines
@@ -25005,18 +25041,18 @@ accounting for individual differences in data quality.")
 (define-public r-gawdis
   (package
     (name "r-gawdis")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gawdis" version))
               (sha256
                (base32
-                "1zrz9pms7yb80g276vwl57id61bhvcm9ni6da0ii1cxrhr5nvlkk"))))
+                "1n6h8gi271792ykpmbja56v66rvdpaplq645jji0l4a6y537jrb6"))))
     (properties `((upstream-name . "gawdis")))
     (build-system r-build-system)
     (propagated-inputs (list r-ga r-fd))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pavel-fibich/gawdis")
+    (home-page "https://github.com/pavel-fibich/gawdis/")
     (synopsis "Multi-Trait Dissimilarity with more Uniform Contributions")
     (description
      "R function gawdis() produces multi-trait dissimilarity with more uniform

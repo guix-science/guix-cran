@@ -2666,6 +2666,28 @@ deviates significantly from the postulated model.  Finally, the results are
 summarized in a CD-plot as described in Algeri S. (2019) <arXiv:1906.06615>.")
     (license license:gpl3)))
 
+(define-public r-lpacf
+  (package
+    (name "r-lpacf")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lpacf" version))
+              (sha256
+               (base32
+                "0i9zd5ns6fxbyci34kwwilixqvbp1za403dv8jpwr6jq8nr5f7r4"))))
+    (properties `((upstream-name . "lpacf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavethresh r-locits))
+    (home-page "https://cran.r-project.org/package=lpacf")
+    (synopsis
+     "Local Partial Autocorrelation Function Estimation for Locally Stationary Wavelet Processes")
+    (description
+     "This package provides the method for computing the local partial autocorrelation
+function for locally stationary wavelet time series from Killick, Knight, Nason,
+Eckley (2020) <doi:10.1214/20-EJS1748>.")
+    (license license:gpl2)))
+
 (define-public r-lowwafomsobol
   (package
     (name "r-lowwafomsobol")
@@ -2707,25 +2729,6 @@ sequence.")
      "Implementation of Low Walsh Figure of Merit (WAFOM) sequence based on
 Niederreiter-Xing sequence <DOI:10.1007/978-3-642-56046-0_30>.")
     (license license:bsd-3)))
-
-(define-public r-lowrankqp
-  (package
-    (name "r-lowrankqp")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LowRankQP" version))
-              (sha256
-               (base32
-                "0xqygbcdk7sizlch4rvq6klm9k0h6vp77v09zfgcz0rhrxqv0nby"))))
-    (properties `((upstream-name . "LowRankQP")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=LowRankQP")
-    (synopsis "Low Rank Quadratic Programming")
-    (description
-     "Solves quadratic programming problems where the Hessian is represented as the
-product of two matrices.")
-    (license license:gpl2+)))
 
 (define-public r-lowpassfilter
   (package
@@ -6071,13 +6074,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LMMsolver" version))
               (sha256
                (base32
-                "0yqgirl01kjgday8g4jj5ixa07qs740q9g97w41mnysmnxnlmmpd"))))
+                "14ppnj23l7rh71pkw97qcb31las10ra8ydlbpm6s8q18c21lpvm5"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam

@@ -632,6 +632,27 @@ identifying,labeling, selecting, and measuring spatial objects.  Importantly, it
 does not require that the data be in geographic coordinates.")
     (license license:cc0)))
 
+(define-public r-quickjsr
+  (package
+    (name "r-quickjsr")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "QuickJSR" version))
+              (sha256
+               (base32
+                "1aylg2334yyklpziw8i6qp109xavvpjfdm2jar467x78d1ikb5i6"))))
+    (properties `((upstream-name . "QuickJSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6 r-jsonlite))
+    (home-page "https://cran.r-project.org/package=QuickJSR")
+    (synopsis "Interface for the 'QuickJS' Lightweight 'JavaScript' Engine")
+    (description
+     "An R interface to the QuickJS portable JavaScript engine.  The engine is bundled
+entirely within the package, requiring no external system dependencies beyond a
+C compiler.")
+    (license license:expat)))
+
 (define-public r-quickcheck
   (package
     (name "r-quickcheck")
@@ -953,13 +974,13 @@ formats using Quarto'.")
 (define-public r-quartets
   (package
     (name "r-quartets")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quartets" version))
               (sha256
                (base32
-                "06xl8wx6487iyp50qp6387s5vk8kf0k16cldyq9crhlc6sd9gyf4"))))
+                "0j5qgk3ha621l3njah54rnxf12ndafcai5bdvv96n888c3yki3nd"))))
     (properties `((upstream-name . "quartets")))
     (build-system r-build-system)
     (home-page "https://github.com/r-causal/quartets")
@@ -1146,13 +1167,13 @@ forest package ranger'.")
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
-    (version "1.6-0")
+    (version "1.6-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quantregGrowth" version))
               (sha256
                (base32
-                "1jvn34sppsxm82z9aamfnnm8flvzwflgwm5y5vcsr145rac7pwpf"))))
+                "0hxi7fd9h4m50hpgmjxl7gppmh8n70d8444qkza890gdfvhwmcap"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg))
@@ -1166,8 +1187,8 @@ multiple smooth terms, including varying coefficients, via B-splines with
 L1-norm difference penalties.  Random intercepts and variable selection are
 allowed via the lasso penalties.  The smoothing parameters are estimated as part
 of the model fitting, see Muggeo and others (2021)
-<doi:10.1177/1471082X20929802>, and monotonicity and concavity constraints on
-the fitted curves are allowed, see Muggeo and others (2013)
+<doi:10.1177/1471082X20929802>.  Monotonicity and concavity constraints on the
+fitted curves are allowed, see Muggeo and others (2013)
 <doi:10.1007/s10651-012-0232-1>, and also <doi:10.13140/RG.2.2.12924.85122> or
 <doi:10.13140/RG.2.2.29306.21445> some code examples.")
     (license (list license:gpl2+ license:gpl3+))))

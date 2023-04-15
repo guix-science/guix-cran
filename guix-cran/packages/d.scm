@@ -5259,13 +5259,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-3")
+    (version "0.5-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DPQ" version))
               (sha256
                (base32
-                "1jhvbyciqpbxsyi4zgn827nr3fywjc5q3ynji4i8x39i3lbwarw5"))))
+                "06pkhzypm5y4k989y4k9fn4kyspjyxmakn22kklnbjqjcmz2fkxa"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -9128,16 +9128,16 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dittodb" version))
               (sha256
                (base32
-                "19qw7xjrix8vlaivha2iaff7rx8i2gp1fk135y59p4rdmm05xfd1"))))
+                "1sfrs2hy565n6p3zbgk79zxcq527qw3h2my3dgb4g5lq3zfxhsi6"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lifecycle r-glue r-digest r-dbi))
+    (propagated-inputs (list r-rlang r-lifecycle r-glue r-digest r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://dittodb.jonkeane.com/")
     (synopsis "Test Environment for Database Requests")
@@ -15348,13 +15348,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.3")
+    (version "4.3-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "devEMF" version))
               (sha256
                (base32
-                "1rn88dkp9h0zk1rnk0crkk43lhl1xvb6jn3i53j98mqa6zrxjrl1"))))
+                "0kn3jsl0zrl4ix016nbms7jsg8gx17q1asp640hzcva15y2q1f2x"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))
@@ -16782,38 +16782,6 @@ thematic sets of packages you may use to set up new environments quickly,
 installing them in a single call.")
     (license license:gpl3)))
 
-(define-public r-dependencyreviewer
-  (package
-    (name "r-dependencyreviewer")
-    (version "1.2.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DependencyReviewer" version))
-              (sha256
-               (base32
-                "0zyya2r3k2pxcjyzxx615pdg00vywzybk848fcchmhdivy0p0am0"))))
-    (properties `((upstream-name . "DependencyReviewer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidygraph
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-pkgdepends
-                             r-pak
-                             r-magrittr
-                             r-lintr
-                             r-knitr
-                             r-dplyr
-                             r-desc
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DependencyReviewer")
-    (synopsis "Tool Suite to Investigate Other Packages")
-    (description
-     "Helps investigating other packages during code review by looking at their
-dependencies.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-depend-truncation
   (package
     (name "r-depend-truncation")
@@ -18105,13 +18073,13 @@ indexes downloaded from the Brazilian Institute for Applied Economic Research.")
 (define-public r-defit
   (package
     (name "r-defit")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deFit" version))
               (sha256
                (base32
-                "1r7s8hh0wia713a02dgzbgpsxmgyq8vqwwy610yipd8qn8nflklw"))))
+                "0z0pf0rhmnpn49rbidlbpy3krd797rsvsh8v4psqf44sjsywgd6r"))))
     (properties `((upstream-name . "deFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-ggplot2 r-desolve))
@@ -18121,8 +18089,8 @@ indexes downloaded from the Brazilian Institute for Applied Economic Research.")
      "Use numerical optimization to fit ordinary differential equations (ODEs) to time
 series data to examine the dynamic relationships between variables or the
 characteristics of a dynamical system.  It can now be used to estimate the
-parameters of ODEs up to second order.  See <https://github.com/yueqinhu/defit>
-for details.")
+parameters of ODEs up to second order, and can also apply to multilevel systems.
+ See <https://github.com/yueqinhu/defit> for details.")
     (license license:gpl3+)))
 
 (define-public r-definer
@@ -21264,27 +21232,6 @@ be slow.")
 interface.")
     (license license:lgpl2.1+)))
 
-(define-public r-dbisqldf
-  (package
-    (name "r-dbisqldf")
-    (version "0.9.9-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DBIsqldf" version))
-              (sha256
-               (base32
-                "1yp9xqrf6dbq9478w0bd55rzhqf78anwrqzlkphbl7fk2d2ipy6i"))))
-    (properties `((upstream-name . "DBIsqldf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-dbi))
-    (home-page "https://github.com/nfultz/DBIsqldf")
-    (synopsis "Manipulate R Data Frames Using SQL")
-    (description
-     "Helper function sqldf() transparently initializes a database, imports data
-frames into it, and executes a query or other statement.  This supports all DBI
-drivers to some degree, and parameterized queries.")
-    (license license:gpl2)))
-
 (define-public r-dbhydror
   (package
     (name "r-dbhydror")
@@ -23581,13 +23528,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.1.0")
+    (version "6.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabaseConnector" version))
               (sha256
                (base32
-                "08cvihgghxp6ivnsiii416r60c9ria6a3si7ny0zk71f6qj2i0az"))))
+                "17piyw9ng8wpyj256ca8k6cj9fns1k7n9dvhcga92vmy4n26rvbj"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools

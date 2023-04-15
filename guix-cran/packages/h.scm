@@ -8727,6 +8727,47 @@ files, while automatically slowing down requests, letting you know where it is
 up to, and adjusting for files that have already been downloaded.")
     (license license:expat)))
 
+(define-public r-healthyr-ts
+  (package
+    (name "r-healthyr-ts")
+    (version "0.2.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "healthyR.ts" version))
+              (sha256
+               (base32
+                "0xjhc2g4n4cjwkm6lxk01xk7y75q0whrbc5zkxmn4jgf6mynsp6d"))))
+    (properties `((upstream-name . "healthyR.ts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-workflowsets
+                             r-timetk
+                             r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-plotly
+                             r-parsnip
+                             r-modeltime
+                             r-magrittr
+                             r-lubridate
+                             r-hardhat
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spsanderson/healthyR.ts")
+    (synopsis "The Time Series Modeling Companion to 'healthyR'")
+    (description
+     "Hospital time series data analysis workflow tools, modeling, and automations.
+This library provides many useful tools to review common administrative time
+series hospital data.  Some of these include average length of stay, and
+readmission rates.  The aim is to provide a simple and consistent verb framework
+that takes the guesswork out of everything.")
+    (license license:expat)))
+
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")

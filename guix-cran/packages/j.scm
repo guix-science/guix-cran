@@ -790,13 +790,13 @@ available at the following URL: <https://github.com/VForWaTer/tool_template_r>."
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsmodule" version))
               (sha256
                (base32
-                "0zzdliz850ljhdj76wz7zxbwlcdg5mhbcblxsxndil8xsp81l6ad"))))
+                "14ldip7v0jdxbcaakg9gl10r6pc7jzr2570ic46h8l32g0c10mir"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -1022,13 +1022,13 @@ pricing and Greeks are also provided.")
 (define-public r-jrt
   (package
     (name "r-jrt")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jrt" version))
               (sha256
                (base32
-                "0hgcl8ddrhha6jpi3rlp68i7z0avz3q7iaslvcnblmcg9qrrqpfx"))))
+                "03k5dgqqzhhd6n4pdpcyq0zy4dj35yj41c6wnz4pa2i0i16jgfdq"))))
     (properties `((upstream-name . "jrt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

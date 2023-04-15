@@ -239,19 +239,20 @@ published in 2006 by Chapman Hall / CRC Press.")
 (define-public r-wvplots
   (package
     (name "r-wvplots")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WVPlots" version))
               (sha256
                (base32
-                "07gwb984mmfwi9b7m44d60f787szw089xlvqwclpkpjgz677k1cg"))))
+                "1bkyy0b8p6l84zr6y292mwjccqmxy6qzchvkx1610r3vj4mn5np1"))))
     (properties `((upstream-name . "WVPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr
                              r-sigr
                              r-rquery
                              r-rqdatatable
+                             r-rlang
                              r-mgcv
                              r-gridextra
                              r-ggplot2
@@ -982,13 +983,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrGraph" version))
               (sha256
                (base32
-                "0l8a65p3hyk7ghdhgz3khiimn38c76j59k77w9k0rhm9mdwlq55c"))))
+                "1kj30qm1qqdss6rhnc4fkxr0759jqvgswvy3dydhfxksb2zl75rw"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
@@ -6561,6 +6562,45 @@ random forest was employed to train the model.  This package also provides
 accuracy metrics in the form of Root Mean Square Error (RMSE) and Mean Absolute
 Prediction Error (MAPE).  This package is based on the algorithm of Ding et al.
 (2021) <DOI: 10.1007/s11356-020-12298-3>.")
+    (license license:gpl3)))
+
+(define-public r-waveletmlbestfl
+  (package
+    (name "r-waveletmlbestfl")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaveletMLbestFL" version))
+              (sha256
+               (base32
+                "0qz5c3w7d0vyxfdvs28cr02ilsiac3nlmc206j7qm9pr735lcrj0"))))
+    (properties `((upstream-name . "WaveletMLbestFL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveletml r-describedf r-ceemdanml))
+    (home-page "https://cran.r-project.org/package=WaveletMLbestFL")
+    (synopsis
+     "The Best Wavelet Filter-Level for Prepared Wavelet-Based Models")
+    (description
+     "Four filters have been chosen namely haar', c6', la8', and bl14 (Kindly refer to
+wavelets in CRAN repository for more supported filters).  Levels of
+decomposition are 2, 3, 4, etc.  up to maximum decomposition level which is
+ceiling value of logarithm of length of the series base 2.  For each combination
+two models are run separately.  Results are stored in input'.  First five
+metrics are expected to be minimum and last three metrics are expected to be
+maximum for a model to be considered good.  Firstly, every metric value (among
+first five) is searched in every columns and minimum values are denoted as MIN
+and other values are denoted as NA'.  Secondly, every metric (among last three)
+is searched in every columns and maximum values are denoted as MAX and other
+values are denoted as NA'.  output contains the similar number of rows (which is
+8) and columns (which is number filter-level combinations) as of input'.  Values
+in output are corresponding NA', MIN or MAX'.  Finally, the column containing
+minimum number of NA values is denoted as the best ('FL').  In special case, if
+two columns having equal NA', it has been checked among these two columns which
+one is having least NA in first five rows and has been inferred as the best.
+FL_metrics_values are the corresponding metrics values.  WARIGAANbest is the
+data frame (dimension: 1*8) containing different metrics of the best
+filter-level combination.  More details can be found in Garai and others (2023)
+<doi:10.13140/RG.2.2.11977.42087>.")
     (license license:gpl3)))
 
 (define-public r-waveletml

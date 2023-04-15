@@ -5442,13 +5442,13 @@ the model with a more experimental version.")
 (define-public r-invacost
   (package
     (name "r-invacost")
-    (version "1.1-4")
+    (version "1.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "invacost" version))
               (sha256
                (base32
-                "0nj1zzlj7n05ajp7c228cgs0vzlniam4d3x804ncy1wl3d920hc9"))))
+                "0qh1illwkcr2hi9hcns08xw8xpqd9d9134mdznw91a5qisnl9wkk"))))
     (properties `((upstream-name . "invacost")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -5465,7 +5465,7 @@ the model with a more experimental version.")
     (description
      "This package provides an up-to-date version of the InvaCost database
 (<doi:10.6084/m9.figshare.12668570>) in R, and several functions to analyse the
-costs of invasive alien species.")
+costs of invasive alien species (<doi:10.1111/2041-210X.13929>).")
     (license license:gpl2+)))
 
 (define-public r-intsvy
@@ -11919,13 +11919,13 @@ can be manually modified by the user or copied elsewhere.")
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "igoR" version))
               (sha256
                (base32
-                "00ngw366ir3dxz73v6sc8q6y9hd5wzf09jy4fmwb8hsv4nplnbdk"))))
+                "1sqkxf6mp77hf15jg992krgpkw36mx9c2fqg4xzz88s47wwwg5wy"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

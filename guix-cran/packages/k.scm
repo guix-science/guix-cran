@@ -3763,13 +3763,13 @@ as well as data aggregated on areas is supported.")
 (define-public r-kernelboot
   (package
     (name "r-kernelboot")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernelboot" version))
               (sha256
                (base32
-                "1xqkkgy2b5x9ykwnk0pfhy7cmghzg5aivw6514cx9g0yvdprjmyy"))))
+                "1fv00hbm4l5dxcw8hq2wlfxng49bc8k608ny70g3fy0grkh7r8vy"))))
     (properties `((upstream-name . "kernelboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-parallelly r-future-apply r-future))

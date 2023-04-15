@@ -5440,13 +5440,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rspm" version))
               (sha256
                (base32
-                "13x6wirk33qm3cld16sw4p6s5yn49jyy1yx71qpr4w61yxb8yy28"))))
+                "0qjjl5k0lfzdwvqa4mjpqp2dkrg5r2gpmninyazaspsdqcydl394"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://enchufa2.github.io/rspm/")
@@ -15433,18 +15433,18 @@ including Long Short-Term Memory (Hochreiter and Schmidhuber,
 (define-public r-rnmr1d
   (package
     (name "r-rnmr1d")
-    (version "1.3.0")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rnmr1D" version))
               (sha256
                (base32
-                "1x06a2bsfpx27pgpxj0dih72pav26g3j0lmh0fa8gjw45jc64f4a"))))
+                "0apkwrsxcp2frq9lmfn70dn2ajaiswnbvfjmqc7lbrimya3pwznb"))))
     (properties `((upstream-name . "Rnmr1D")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
-                             r-speaq
                              r-signal
+                             r-scales
                              r-rcpp
                              r-ptw
                              r-plyr
@@ -20638,26 +20638,6 @@ persistent homology calculation engines from C++.  Can be used as a rapid
 calculation tool in topological data analysis pipelines.")
     (license license:gpl3)))
 
-(define-public r-rip46
-  (package
-    (name "r-rip46")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rip46" version))
-              (sha256
-               (base32
-                "0wfp6fm5mgmjqjkn0c5hvjd95yn4zcv0s8xc5294qf5jqxp8b1w7"))))
-    (properties `((upstream-name . "Rip46")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/nfultz/Rip46")
-    (synopsis "Utils for IP4 and IP6 Addresses")
-    (description
-     "Utility functions and S3 classes for IPv4 and IPv6 addresses, including
-conversion to and from binary representation.")
-    (license license:gpl3)))
-
 (define-public r-riot
   (package
     (name "r-riot")
@@ -23687,6 +23667,28 @@ the acceptance-rejection method.  The package provides a quick way to evaluate
 coverage rates of the resultant Bayesian interval estimates for random effects
 via a parametric bootstrapping, which we call frequency method checking.")
     (license license:gpl2)))
+
+(define-public r-rgbm
+  (package
+    (name "r-rgbm")
+    (version "1.0-11")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RGBM" version))
+              (sha256
+               (base32
+                "12pi503n767c707f4nqfn7zzvxb25kb6pks0257bcixwm37a6r54"))))
+    (properties `((upstream-name . "RGBM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=RGBM")
+    (synopsis
+     "LS-TreeBoost and LAD-TreeBoost for Gene Regulatory Network Reconstruction")
+    (description
+     "This package provides an implementation of Regularized LS-TreeBoost &
+LAD-TreeBoost algorithm for Regulatory Network inference from any type of
+expression data (Microarray/RNA-seq etc).")
+    (license license:gpl3+)))
 
 (define-public r-rgbif
   (package
@@ -30355,6 +30357,40 @@ Merge-split/Recombination algorithms of Carter et al. (2019) <arXiv:1911.01503>
 and DeFord et al. (2021) <doi:10.1162/99608f92.eb30390f>, and the Short-burst
 optimization algorithm of Cannon et al. (2020) <arXiv:2011.02288>.")
     (license license:gpl2+)))
+
+(define-public r-rediscover
+  (package
+    (name "r-rediscover")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rediscover" version))
+              (sha256
+               (base32
+                "0g36j5xdc86422jc1njlab4kvlsq3z6bxigxgzsl31bf1k7kc1ra"))))
+    (properties `((upstream-name . "Rediscover")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiftconvolvepoibin
+                             r-rcolorbrewer
+                             r-poissonbinomial
+                             r-matrixstats
+                             r-matrix
+                             r-maftools
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Rediscover")
+    (synopsis "Identify Mutually Exclusive Mutations")
+    (description
+     "An optimized method for identifying mutually exclusive genomic events.  Its main
+contribution is a statistical analysis based on the Poisson-Binomial
+distribution that takes into account that some samples are more mutated than
+others.  See [Canisius, Sander, John WM Martens, and Lodewyk FA Wessels. (2016)
+\"A novel independence test for somatic alterations in cancer shows that biology
+drives mutual exclusivity but chance explains most co-occurrence.\" Genome
+biology 17.1 : 1-17. <doi:10.1186/s13059-016-1114-x>].  The mutations matrices
+are sparse matrices.  The method developed takes advantage of the advantages of
+this type of matrix to save time and computing resources.")
+    (license license:artistic2.0)))
 
 (define-public r-redisbasecontainer
   (package
@@ -39680,6 +39716,44 @@ accumulation histories for deposits, through combining radiocarbon and other
 dates with prior information.  See Blaauw & Christen (2011).")
     (license license:gpl2+)))
 
+(define-public r-rb3
+  (package
+    (name "r-rb3")
+    (version "0.0.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rb3" version))
+              (sha256
+               (base32
+                "1gf4i5fbpx238af5f5bzcfmb763mlyk97aq8335slyc8828b9a9c"))))
+    (properties `((upstream-name . "rb3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-proto
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest
+                             r-cli
+                             r-bizdays
+                             r-base64enc
+                             r-ascii))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rb3")
+    (synopsis "Download and Parse Public Data Released by B3 Exchange")
+    (description
+     "Download and parse public files released by B3 and convert them into useful
+formats and data structures common to data analysis practitioners.")
+    (license license:expat)))
+
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
@@ -44436,22 +44510,20 @@ trademark of LI-COR Biosciences, and used with permission.")
 (define-public r-raceland
   (package
     (name "r-raceland")
-    (version "1.1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "raceland" version))
               (sha256
                (base32
-                "0mkxxqbpq90iw540kzj12352l5r9scgfdj60swqv436jqj21gjah"))))
+                "0kkl12amzaff6y4bj1c62p1clkvxlfm8d20i6d09x35hkkxblnjk"))))
     (properties `((upstream-name . "raceland")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rgdal
+    (propagated-inputs (list r-terra
+                             r-sf
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-plotwidgets
-                             r-fasterize
                              r-comat))
     (native-inputs (list r-knitr))
     (home-page "https://jakubnowosad.com/raceland/")

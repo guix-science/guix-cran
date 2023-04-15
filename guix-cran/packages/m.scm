@@ -12481,13 +12481,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.9")
+    (version "3.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modEvA" version))
               (sha256
                (base32
-                "14f58h9zkj211i9kfdgp5zr8g6bflc3d138chyab2n8v2z4wal00"))))
+                "0ycq9gqj9v6j4v1b0ivhdmzpkyhjxy2bszdgk2ad9rp2030m5rnd"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -12495,11 +12495,12 @@ resulting sheet(s) as a vector and data in dataframe(s).")
     (synopsis "Model Evaluation and Analysis")
     (description
      "Analyses species distribution models and evaluates their performance.  It
-includes functions for performing variation partitioning, calculating several
-measures of model discrimination and calibration, optimizing prediction
-thresholds based on a number of criteria, performing multivariate environmental
-similarity surface (MESS) analysis, and displaying various analytical plots.
-Initially described in Barbosa et al. (2013) <doi:10.1111/ddi.12100>.")
+includes functions for variation partitioning, extracting variable importance,
+computing several metrics of model discrimination and calibration performance,
+optimizing prediction thresholds based on a number of criteria, performing
+multivariate environmental similarity surface (MESS) analysis, and displaying
+various analytical plots.  Initially described in Barbosa et al. (2013)
+<doi:10.1111/ddi.12100>.")
     (license license:gpl3)))
 
 (define-public r-modesto
@@ -15453,13 +15454,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.4-5")
+    (version "1.4-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlt" version))
               (sha256
                (base32
-                "1m0r6qzkh9pcracs7bdia6p3iqwkdq4azdyz3hfhdsyqjri6i9jz"))))
+                "0hk9aba677p6i9v05xjsql50whl2bdgfdshv522457m2yx421ya6"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17843,31 +17844,33 @@ This package also provides the nonparametric maximum likelihood estimator
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "1.0.2")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MixtureMissing" version))
               (sha256
                (base32
-                "03ql591891jvhycagkjl5gj83mjlrv5m95kpgkgph8gim71q2di1"))))
+                "0c01i64n53q15n97j7rfayj9h0wj4r64fvs50fid38kkk16wii2i"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve
+    (propagated-inputs (list r-numderiv
                              r-mvtnorm
                              r-mnormt
                              r-mass
-                             r-contaminatedmixt
-                             r-cluster))
+                             r-cluster
+                             r-bessel))
     (home-page "https://cran.r-project.org/package=MixtureMissing")
     (synopsis
      "Robust Model-Based Clustering for Data Sets with Missing Values at Random")
     (description
-     "Implementation of robust model based cluster analysis with missing data.  The
-models used are: Multivariate Contaminated Normal Mixtures (MCNM), Multivariate
-Student's t Mixtures (MtM), and Multivariate Normal Mixtures (MNM) for data sets
-with missing values at random.  See \"Model-Based Clustering and Outlier
-Detection with Missing Data\" by Hung Tong and Cristina Tortora (2022)
-<doi:10.1007/s11634-021-00476-1>.")
+     "Implementation of robust model-based cluster analysis for data sets with missing
+values at random.  The models used are: Multivariate Contaminated Normal Mixture
+(MCNM, Tong and Tortora, 2022, <doi:10.1007/s11634-021-00476-1>), Multivariate
+Generalized Hyperbolic Mixture (MGHM, Wei et al., 2019,
+<doi:10.1016/j.csda.2018.08.016>), Multivariate Skew's t Mixture (MStM, Wei et
+al., 2019, <doi:10.1016/j.csda.2018.08.016>), Multivariate t Mixture (MtM, Wang
+et al., 2004, <doi:10.1016/j.patrec.2004.01.010>), and Multivariate Normal
+Mixture (MNM, Ghahramani and Jordan, 1994, <doi:10.21236/ADA295618>).")
     (license license:gpl2+)))
 
 (define-public r-mixtureinf
@@ -21520,13 +21523,13 @@ from <https://www.gurobi.com> after obtaining a license.")
 (define-public r-mikropml
   (package
     (name "r-mikropml")
-    (version "1.5.0")
+    (version "1.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mikropml" version))
               (sha256
                (base32
-                "0ic8in0zyqg76vcwrv4lqlkh1yrnfi095dpczw9i4xg1jr41a3rw"))))
+                "1m91blwkkcgby2pgpn5w1sbgk4vwxvhhbpsjrkcwpcifkkgys17n"))))
     (properties `((upstream-name . "mikropml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -22111,36 +22114,6 @@ Individual life-courses are specified by a continuous-time multi-state model as
 described in Zinn (2014) <doi:10.34196/IJM.00105>.")
     (license license:gpl2)))
 
-(define-public r-microsynth
-  (package
-    (name "r-microsynth")
-    (version "2.0.31")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "microsynth" version))
-              (sha256
-               (base32
-                "0wmrp9igylzp4qbvdr13r2rxfkcq9xwg8gw29j1g6kcqyq4aflds"))))
-    (properties `((upstream-name . "microsynth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey
-                             r-pracma
-                             r-nleqslv
-                             r-lowrankqp
-                             r-kernlab
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=microsynth")
-    (synopsis "Synthetic Control Methods with Micro- And Meso-Level Data")
-    (description
-     "This package provides a generalization of the Synth package that is designed for
-data at a more granular level (e.g., micro-level).  Provides functions to
-construct weights (including propensity score-type weights) and run analyses for
-synthetic control methods with micro- and meso-level data; see Robbins,
-Saunders, and Kilmer (2017) <doi:10.1080/01621459.2016.1213634> and Robbins and
-Davenport (2021) <doi:10.18637/jss.v097.i02>.")
-    (license license:gpl3)))
-
 (define-public r-microstasis
   (package
     (name "r-microstasis")
@@ -22627,13 +22600,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.15.0")
+    (version "0.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "1jcknppkwbjdpc1427y0g7zvpna386x3zqsi3aiky1bpv3cfn027"))))
+                "0flmcw1vncx3rxrkgbn1vkpza6lkq1yl7c686kikldhcda5l2v62"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -24937,13 +24910,13 @@ and region annotations.")
 (define-public r-metrica
   (package
     (name "r-metrica")
-    (version "2.0.2")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metrica" version))
               (sha256
                (base32
-                "09l0i4v7v619pjpv8gmn2h7x3rsa36viks4rsgkw5rlwm5899mcd"))))
+                "10pkd29vcrm74fxf4i5bmkrj6528vfzipf53nfdpic9bavk2s2i7"))))
     (properties `((upstream-name . "metrica")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29591,28 +29564,6 @@ order to detect nonlinear associations.")
 mediacloud.org API, based on a multilevel query <https://mediacloud.org/>.  A
 personal API key is required.")
     (license license:expat)))
-
-(define-public r-medflex
-  (package
-    (name "r-medflex")
-    (version "0.6-7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "medflex" version))
-              (sha256
-               (base32
-                "171vp0wmmmbz42xcwjy065vhvig49s4ac2hzawfww2mvpfj0g0fj"))))
-    (properties `((upstream-name . "medflex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-multcomp r-matrix r-car r-boot))
-    (home-page "https://github.com/jmpsteen/medflex")
-    (synopsis "Flexible Mediation Analysis Using Natural Effect Models")
-    (description
-     "Run flexible mediation analyses using natural effect models as described in
-Lange, Vansteelandt and Bekaert (2012) <DOI:10.1093/aje/kwr525>, Vansteelandt,
-Bekaert and Lange (2012) <DOI:10.1515/2161-962X.1014> and Loeys, Moerkerke, De
-Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>.")
-    (license license:gpl2)))
 
 (define-public r-medfate
   (package
@@ -35080,16 +35031,16 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.5.2")
+    (version "4.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MatchIt" version))
               (sha256
                (base32
-                "02pk5p5ic9bkz968qb8ayavlj4vs0hrlpqz68w0mfvn6rf230vpg"))))
+                "06naf514c6vifqqdj3hsk822vib4qzv4cw7pnsrbcq43pja5hqim"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpp r-backports))
+    (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-chk r-backports))
     (native-inputs (list r-knitr))
     (home-page "https://kosukeimai.github.io/MatchIt/")
     (synopsis "Nonparametric Preprocessing for Parametric Causal Inference")

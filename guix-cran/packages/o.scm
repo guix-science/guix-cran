@@ -190,13 +190,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-4")
+    (version "0.3-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ows4R" version))
               (sha256
                (base32
-                "1mfs9ag47wyspwq5rl5mqx7ilrxglrsc26l7zz8xbb5bdl5dkd7c"))))
+                "171amkkjjwf89n80dh2ixnvn0xxf1b64b7qhw1i4ch292jqnwmj0"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -1214,28 +1214,6 @@ membership probabilities.  Unexplained variations, error rates, confusion
 matrix, Brier scores, etc.  are also returned for the test data.")
     (license license:gpl3+)))
 
-(define-public r-ot
-  (package
-    (name "r-ot")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ot" version))
-              (sha256
-               (base32
-                "0lym92hsxhfjdkh738rxlpkq084454055vgxm2b4wdhqw00jwf5y"))))
-    (properties `((upstream-name . "ot")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=ot")
-    (synopsis "'Open Tracing'")
-    (description
-     "Open Tracing <https://opentracing.io> allows developers to add instrumentation
-to their application code using interfaces that are vendor-agnostic.  This is
-used to monitor services, triage failures and find performance bottlenecks,
-among other things.  The ot package has generic methods to be extended when
-implementing the specification for a specific vendor.")
-    (license license:gpl3)))
-
 (define-public r-oste
   (package
     (name "r-oste")
@@ -1331,13 +1309,13 @@ time-to-event outcome; details are described in Wang et al (2021)
 (define-public r-ossanma
   (package
     (name "r-ossanma")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OssaNMA" version))
               (sha256
                (base32
-                "144ngz5kwq8d4nkv2x5mspsc6b8nqrqrjq0diq8b6aqps1lx8pix"))))
+                "0za4irdi2nmm25prkmc2nmh7j9x1n5i3ia4bxc622ga1hfq6l1z7"))))
     (properties `((upstream-name . "OssaNMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlcoptim r-deoptimr))

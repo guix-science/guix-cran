@@ -855,26 +855,6 @@ interacting with Amazon Web Services ('AWS') for easy stream processing from R.
 For more information on Kinesis', see <https://aws.amazon.com/kinesis>.")
     (license license:agpl3)))
 
-(define-public r-awr-athena
-  (package
-    (name "r-awr-athena")
-    (version "2.0.7-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AWR.Athena" version))
-              (sha256
-               (base32
-                "1j9bqhyk0jzry4g379ml65gwxlszn7pjif1dywgns98jbry8mavh"))))
-    (properties `((upstream-name . "AWR.Athena")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjdbc r-rjava))
-    (home-page "https://cran.r-project.org/package=AWR.Athena")
-    (synopsis "'AWS' Athena 'DBI' Wrapper")
-    (description
-     "RJDBC based DBI driver to Amazon Athena, which is an interactive query service
-to analyze data in Amazon S3 using standard SQL'.")
-    (license license:agpl3)))
-
 (define-public r-awr
   (package
     (name "r-awr")
@@ -1687,13 +1667,13 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autonewsmd" version))
               (sha256
                (base32
-                "1ygzb2d6p7680yl41d3l4909pd37rbpxi4qvy2ms44ahmy7140md"))))
+                "08y9cslk506bc2nmrzmzln7927yhdzghsfkkldgx94cm4ly6jagy"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-r6 r-magrittr r-git2r r-data-table))
@@ -5765,6 +5745,38 @@ ARIMA-ANN hybrid model combines the distinct strengths of the Auto-Regressive
 Integrated Moving Average (ARIMA) model and the Artificial Neural Network (ANN)
 model for time series forecasting.For method details see Zhang, GP (2003)
 <doi:10.1016/S0925-2312(01)00702-0>.")
+    (license license:gpl3)))
+
+(define-public r-arigamyannsvr
+  (package
+    (name "r-arigamyannsvr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AriGaMyANNSVR" version))
+              (sha256
+               (base32
+                "1faqripvb6alfajz37zqm70p0c2f6yf9f2ca2bzrsizp0yh81719"))))
+    (properties `((upstream-name . "AriGaMyANNSVR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries
+                             r-psych
+                             r-neuralnet
+                             r-forecast
+                             r-fints
+                             r-fgarch
+                             r-e1071
+                             r-dplyr
+                             r-describedf
+                             r-atsa
+                             r-allmetrics))
+    (home-page "https://cran.r-project.org/package=AriGaMyANNSVR")
+    (synopsis "Hybrid ARIMA-GARCH and Two Specially Designed ML-Based Models")
+    (description
+     "Describes a series first.  After that does time series analysis using one hybrid
+model and two specially structured Machine Learning (ML) (Artificial Neural
+Network or ANN and Support Vector Regression or SVR) models.  More information
+can be obtained from Paul and Garai (2022) <doi:10.1007/s41096-022-00128-3>.")
     (license license:gpl3)))
 
 (define-public r-aribrain
@@ -12039,13 +12051,13 @@ their loadouts, episode details and season information.")
 (define-public r-almanac
   (package
     (name "r-almanac")
-    (version "0.1.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "almanac" version))
               (sha256
                (base32
-                "0qsczk74ihy7ac5c4dzd6ax5gfmr56wfnjxg396qc2c3xykb7dd5"))))
+                "03954ylzqj34kkkz74ffa3i1kbby2vy0gxmbqd4gcw6qa646fq79"))))
     (properties `((upstream-name . "almanac")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12054,17 +12066,19 @@ their loadouts, episode details and season information.")
                              r-r6
                              r-magrittr
                              r-lubridate
-                             r-glue))
+                             r-lifecycle
+                             r-glue
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DavisVaughan/almanac")
     (synopsis "Tools for Working with Recurrence Rules")
     (description
-     "This package provides tools for defining recurrence rules and recurrence
-bundles.  Recurrence rules are a programmatic way to define a recurring event,
-like the first Monday of December.  Multiple recurrence rules can be combined
-into larger recurrence bundles.  Together, these provide a system for adjusting
-and generating sequences of dates while simultaneously skipping over dates in a
-recurrence bundle's event set.")
+     "This package provides tools for defining recurrence rules and recurrence sets.
+Recurrence rules are a programmatic way to define a recurring event, like the
+first Monday of December.  Multiple recurrence rules can be combined into larger
+recurrence sets.  A full holiday and calendar interface is also provided that
+can generate holidays within a particular year, can detect if a date is a
+holiday, can respect holiday observance rules, and allows for custom holidays.")
     (license license:expat)))
 
 (define-public r-allspice

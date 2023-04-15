@@ -1191,13 +1191,13 @@ incorrectly detecting a change point in a sequence which does not contain any.")
 (define-public r-nptest
   (package
     (name "r-nptest")
-    (version "1.0-3")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nptest" version))
               (sha256
                (base32
-                "1s6j4hs3m5pyh5ajy85gcclgb3l3ily92r4ak7wl5mn6vsnn6rvc"))))
+                "1yfxpw3xlscv0maqgvadxj93qgs25w027lk2br1zlckll8dvdakz"))))
     (properties `((upstream-name . "nptest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=nptest")
@@ -13506,13 +13506,13 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.8.1")
+    (version "0.8.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "050ql48h7p9s38grb76124ps0pzm5zg5pzq0aww4ijzyjy6q091x"))))
+                "0y1nbima9ind9z2g06n36z6i8kz9g4s96sbg1d6zqx1cvw3l9sp5"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

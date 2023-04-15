@@ -3885,25 +3885,23 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.0.1")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "1rbfcjj067ahi5liwpw06xvjfp0lxcqp2q2gqw9qib9rain6zpc4"))))
+                "0hsn67h4plc47xg2sg6gbcw61mwyxqkqazlw9m73242cr4zy974r"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
                              r-survival
-                             r-scales
                              r-rstpm2
                              r-rlang
-                             r-patchwork
+                             r-plotly
+                             r-numderiv
                              r-mvtnorm
                              r-matrix
-                             r-lubridate
-                             r-ggplot2
                              r-erify
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=eventPred")
@@ -7786,47 +7784,6 @@ reproduction numbers from growth rates, generation of hashed labels to anonymize
 data, and fitting discretized Gamma distributions.")
     (license license:expat)))
 
-(define-public r-epitopr
-  (package
-    (name "r-epitopr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "epitopR" version))
-              (sha256
-               (base32
-                "0bqj62jl48pql7dbmq96fgs0pza3krycd9i6fj0sjz7yxg4i46q6"))))
-    (properties `((upstream-name . "epitopR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tibble
-                             r-stringr
-                             r-seqinr
-                             r-readr
-                             r-purrr
-                             r-janitor
-                             r-httr
-                             r-here
-                             r-fs
-                             r-dplyr
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=epitopR")
-    (synopsis "Predict Peptide-MHC Binding")
-    (description
-     "This package provides a suite of tools to predict peptide MHC (major
-histocompatibility complex) presentation in the context of both human and mouse.
- Polymorphic peptides between self and foreign proteins are identified.  The
-ability of peptides to bind self MHC is assessed and scored.  Based on half
-maximal inhibitory concentration as queried through the immune epitope database
-API <http://tools.iedb.org/mhcii/> using user defined methods, the foreign
-peptides most likely to be presented are output along with their predicted
-binding strength, amino acid position, the protein from which each peptide was
-derived, and the presenting allele. \"References:\" Vita R, Mahajan S, Overton JA,
-Dhanda SK, Martini S, Cantrell JR, Wheeler DK, Sette A, Peters B.
-<doi:10.1093/nar/gky1006>.")
-    (license license:expat)))
-
 (define-public r-epitoper
   (package
     (name "r-epitoper")
@@ -8875,25 +8832,23 @@ researchers.")
 (define-public r-eph
   (package
     (name "r-eph")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eph" version))
               (sha256
                (base32
-                "12j8qmscsz381i9fs3slva2wl7pk7zxa38shaj4m595lswsixvi8"))))
+                "1n4inycd14iy2g4ljs575kc73wpwpsnlqihk73m6m0lk84n0by2c"))))
     (properties `((upstream-name . "eph")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xml2
-                             r-tidyverse
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rvest
                              r-rlang
                              r-readxl
-                             r-readr
                              r-purrr
                              r-magrittr
                              r-leaflet
@@ -8903,6 +8858,7 @@ researchers.")
                              r-expss
                              r-dplyr
                              r-curl
+                             r-cli
                              r-attempt
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -11776,13 +11732,13 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "embed" version))
               (sha256
                (base32
-                "1yvw24yi4j1xlbm6w1g49mcp6wqnn69191sys1fr8wsvrag79gfn"))))
+                "1s526p48l3vvjnlb648icz05vhi7y6lngcbqlnmazxym1w2dc5zm"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

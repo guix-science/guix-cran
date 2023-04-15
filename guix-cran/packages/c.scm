@@ -6113,6 +6113,27 @@ Using SAS; 2 Bezdek, James C.FCM: The fuzzy c-means clustering algorithm.
 Computers & Geosciences (0098-3004),<DOI:10.1016/0098-3004(84)90020-7>.")
     (license license:agpl3)))
 
+(define-public r-creditas
+  (package
+    (name "r-creditas")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CRediTas" version))
+              (sha256
+               (base32
+                "163m37bz99g6qvfbnbvvdv02x6984x5prsbj1d7mq08bnlmj9zr0"))))
+    (properties `((upstream-name . "CRediTas")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/CRediTas/")
+    (synopsis "Generate CRediT Author Statements")
+    (description
+     "This package provides a tiny package to generate CRediT author statements
+(<https://credit.niso.org/>).  It provides three functions: create a template,
+read it back and generate the CRediT author statement in a text file.")
+    (license license:expat)))
+
 (define-public r-createlogicalpcm
   (package
     (name "r-createlogicalpcm")
@@ -20031,26 +20052,6 @@ Multiples and Submultiples\" Ministry of Economic Affairs (2019)
 <https://gazette.nat.gov.tw/egFront/detail.do?metaid=108965>.")
     (license license:expat)))
 
-(define-public r-cns
-  (package
-    (name "r-cns")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cns" version))
-              (sha256
-               (base32
-                "1kn1cq32pp05ag22n7iwjxn6lxpqn443npzk6vdskjm5pbnsc33k"))))
-    (properties `((upstream-name . "cns")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=cns")
-    (synopsis "Color Naming System")
-    (description
-     "The Color Naming System was an early grammar of color that is more user friendly
-than `RGB`, by Berk, Brownstone and Kaufman (1982)
-<doi:10.1109/MCG.1982.1674223>.")
-    (license license:gpl3+)))
-
 (define-public r-cnps
   (package
     (name "r-cnps")
@@ -21821,13 +21822,13 @@ partitioning algorithms.")
 (define-public r-clustersim
   (package
     (name "r-clustersim")
-    (version "0.51-1")
+    (version "0.51-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clusterSim" version))
               (sha256
                (base32
-                "1ndch19pgavd51x550kzd4r8c1hnw37942g9mj5ha9wsllnlrgiy"))))
+                "0bkgz1sm1767f7pfnlfbxa19rkhzf1l45vsazbzaavxb89i466n3"))))
     (properties `((upstream-name . "clusterSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2html r-mass r-e1071 r-cluster r-ade4))
@@ -30750,13 +30751,13 @@ cross-sectional and panel data.")
 (define-public r-censored
   (package
     (name "r-censored")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "censored" version))
               (sha256
                (base32
-                "1878791vrm564mvlw0cw4spls03y7vgyc9r1qcfq98diffm9cqln"))))
+                "1ps5f32047b1yyagk6v8b8p7wq7pi3nsygz2mmirbi0ps31d43l6"))))
     (properties `((upstream-name . "censored")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -30767,6 +30768,7 @@ cross-sectional and panel data.")
                              r-prettyunits
                              r-parsnip
                              r-mboost
+                             r-lifecycle
                              r-hardhat
                              r-glue
                              r-generics
@@ -32385,6 +32387,28 @@ for an overview.")
      "This package provides a set of functions to perform queries against the CCM API
 <https://mohcontacttracing.my.salesforce.com>.")
     (license license:expat)))
+
+(define-public r-ccmmr
+  (package
+    (name "r-ccmmr")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CCMMR" version))
+              (sha256
+               (base32
+                "0d8fbgnjvy4bh1msbvm125q2v9j3h7zdnijdhi222hcpkvax5z8b"))))
+    (properties `((upstream-name . "CCMMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-rann r-r2r))
+    (home-page "https://github.com/djwtouw/CCMMR/")
+    (synopsis "Minimization of the Convex Clustering Loss Function")
+    (description
+     "This package implements the convex clustering through majorization-minimization
+(CCMM) algorithm described in Touw, Groenen, and Terada (2022)
+<arXiv:2211.01877> to perform minimization of the convex clustering loss
+function.")
+    (license license:gpl3+)))
 
 (define-public r-ccmm
   (package
@@ -36691,6 +36715,49 @@ with package campsis', a PK/PD simulation platform built on top of rxode2 and
 mrgsolve'.")
     (license license:gpl3+)))
 
+(define-public r-campsis
+  (package
+    (name "r-campsis")
+    (version "1.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "campsis" version))
+              (sha256
+               (base32
+                "1lnfpbwahcin3kcd52laxd9niraixn05hx7pf4dq25jlp5nrd5w4"))))
+    (properties `((upstream-name . "campsis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-plyr
+                             r-mass
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-digest
+                             r-campsismod
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Calvagone/campsis")
+    (synopsis "Generic PK/PD Simulation Platform CAMPSIS")
+    (description
+     "This package provides a generic, easy-to-use and intuitive
+pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on R packages
+rxode2', RxODE and mrgsolve'.  CAMPSIS provides an abstraction layer over the
+underlying processes of writing a PK/PD model, assembling a custom dataset and
+running a simulation.  CAMPSIS has a strong dependency to the R package
+campsismod', which allows to read/write a model from/to files and adapt it
+further on the fly in the R environment.  Package campsis allows the user to
+assemble a dataset in an intuitive manner.  Once the userâs dataset is ready,
+the package is in charge of preparing the simulation, calling rxode2', RxODE or
+mrgsolve (at the user's choice) and returning the results, for the given model,
+dataset and desired simulation settings.")
+    (license license:gpl3+)))
+
 (define-public r-campfin
   (package
     (name "r-campfin")
@@ -38011,25 +38078,6 @@ DataCite') to a Zotero library.  Add, edit, copy, or delete items, including
 attachments and collections, and export references to BibLaTeX (and other
 formats).")
     (license license:expat)))
-
-(define-public r-c2d4u-tools
-  (package
-    (name "r-c2d4u-tools")
-    (version "1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "c2d4u.tools" version))
-              (sha256
-               (base32
-                "1ssp3sk5kml8in1ggnir77cq2kpmdmrhjblvw67ydxp22sqw7vwr"))))
-    (properties `((upstream-name . "c2d4u.tools")))
-    (build-system r-build-system)
-    (home-page "https://github.com/nfultz/c2d4u.tools")
-    (synopsis "'c2d4u' - CRAN Packages for 'Ubuntu'")
-    (description
-     "The c2d4u project provides precompiled CRAN packages for Ubuntu users.  They can
-be installed into user libraries without requiring root permissions.")
-    (license license:gpl3)))
 
 (define-public r-c2c
   (package

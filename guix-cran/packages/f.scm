@@ -448,13 +448,13 @@ output probabilities.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.9.8")
+    (version "4.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuzzySim" version))
               (sha256
                (base32
-                "1i0qqmd745qyqdzbd2byw2hfa41cd13a6c1vd04xrabkv1ig8978"))))
+                "1lh60myr49lp25kkd6snpm8sy5vjcfh537mjh4wmyhx1hq0py7qs"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeva))
@@ -1174,6 +1174,29 @@ documentation, functions, examples and tests in the same unique file.
 Everything can be set from the Rmarkdown template file provided in your project,
 then inflated as a package.  Inflating the template copies the relevant chunks
 and sections in the appropriate files required for package development.")
+    (license license:expat)))
+
+(define-public r-fusedmgm
+  (package
+    (name "r-fusedmgm")
+    (version "0.1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fusedMGM" version))
+              (sha256
+               (base32
+                "0rr690bk2pcmpmrm4z7sjj5ffhdq1r9545qxp2n7yf932a3jf8qr"))))
+    (properties `((upstream-name . "fusedMGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gplots r-fastdummies r-bigmemory))
+    (home-page "https://cran.r-project.org/package=fusedMGM")
+    (synopsis "Implementation of Fused MGM to Infer 2-Class Networks")
+    (description
+     "Implementation of fused Markov graphical model (FMGM; Park and Won, 2022).  The
+functions include building mixed graphical model (MGM) objects from data,
+inference of networks using FMGM, stable edge-specific penalty selection (StEPS)
+for the determination of penalization parameters, and the visualization.  For
+details, please refer to Park and Won (2022) <arXiv:2208.14959>.")
     (license license:expat)))
 
 (define-public r-furniture
@@ -5921,13 +5944,13 @@ nlme::lme().  Includes graphics functions to display the descriptive statistics.
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forrel" version))
               (sha256
                (base32
-                "0xfkhy4k19yndb360kzf2xiqfhpskdl0a6a50c214wli152x6s8l"))))
+                "0v37msgxhm33gxjbkfphlylp3ppmcffffvg1l7x5pbimyd6yfg9g"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedmut r-glue))
@@ -5949,7 +5972,7 @@ for likelihood computations, and pedmut for mutation modelling.  Pedigree data
 may be created from scratch, or loaded from text files.  Data import from the
 Familias software (Egeland et al. (2000) <doi:10.1016/S0379-0738(00)00147-X>) is
 supported.")
-    (license license:gpl3)))
+    (license license:gpl2+)))
 
 (define-public r-forplo
   (package
@@ -6073,13 +6096,13 @@ extracting and replacing names and symbols from these objects.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "formatters" version))
               (sha256
                (base32
-                "1cbaq3ym22hfpzgxf1cin8zmgmq63k7wpryfgrfah4pwa7f8svwb"))))
+                "17pfh70w8qpp4s885x0wbbgabwl55910flads5hws809j86q6az3"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-checkmate))
@@ -8785,13 +8808,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flimo
   (package
     (name "r-flimo")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flimo" version))
               (sha256
                (base32
-                "0xgxbcik40fjqzz55wraljcp8j1pvhm5zzgin7l50xk24yyiyvrh"))))
+                "0b4f9cahmwhklb6h7qkgrfkm1nxpilj7zqjpj97bfqxx9zxysfig"))))
     (properties `((upstream-name . "flimo")))
     (build-system r-build-system)
     (propagated-inputs (list r-juliaconnector r-ggplot2))
@@ -10980,6 +11003,61 @@ EDGAR in an automated and scalable manner.  See
 <https://www.sec.gov/edgar/searchedgar/companysearch.html> for more information.")
     (license license:expat)))
 
+(define-public r-finnts
+  (package
+    (name "r-finnts")
+    (version "0.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "finnts" version))
+              (sha256
+               (base32
+                "0h1adlwbx3a4ldhw2s13v3ai3kij0da7bh502g045khc39dgg2iw"))))
+    (properties `((upstream-name . "finnts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-workflows
+                             r-tune
+                             r-timetk
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rules
+                             r-rsample
+                             r-recipes
+                             r-purrr
+                             r-plyr
+                             r-parsnip
+                             r-modeltime-resample
+                             r-modeltime
+                             r-magrittr
+                             r-lubridate
+                             r-kernlab
+                             r-hts
+                             r-gtools
+                             r-glmnet
+                             r-generics
+                             r-foreach
+                             r-earth
+                             r-dplyr
+                             r-doparallel
+                             r-dials
+                             r-cubist
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://microsoft.github.io/finnts/")
+    (synopsis "Microsoft Finance Time Series Forecasting Framework")
+    (description
+     "Automated time series forecasting developed by Microsoft Finance.  The Microsoft
+Finance Time Series Forecasting Framework, aka Finn, can be used to forecast any
+component of the income statement, balance sheet, or any other area of interest
+by finance.  Any numerical quantity over time, Finn can be used to forecast it.
+While it can be applied outside of the finance domain, Finn was built to meet
+the needs of financial analysts to better forecast their businesses within a
+company, and has a lot of built in features that are specific to the needs of
+financial forecasters.  Happy forecasting!")
+    (license license:expat)))
+
 (define-public r-finnishgrid
   (package
     (name "r-finnishgrid")
@@ -12107,13 +12185,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.5.1")
+    (version "3.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTA" version))
               (sha256
                (base32
-                "19x70j2f6yld814mp8p47pin4y2x2znzrrpgp76zp1pqwq39ac05"))))
+                "1m0q9nql2qxd88hi36wbcn3znkxqj0zra74v286albjl8ypb2v6h"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -18202,16 +18280,49 @@ hybrid method Fuzzy ART and K-Means by Sengupta, Ghosh & Dan (2011)
 <doi:10.1080/0951192X.2011.602362>.")
     (license license:gpl3)))
 
+(define-public r-fakir
+  (package
+    (name "r-fakir")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fakir" version))
+              (sha256
+               (base32
+                "1xya74qf68k3jcb7fk868j6c92axmm5vd5mgf9vzk4w4lm065q7l"))))
+    (properties `((upstream-name . "fakir")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-charlatan
+                             r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Thinkr-open/fakir")
+    (synopsis "Generate Fake Datasets for Prototyping and Teaching")
+    (description
+     "Create fake datasets that can be used for prototyping and teaching.  This
+package provides a set of functions to generate fake data for a variety of data
+types, such as dates, addresses, and names.  It can be used for prototyping
+(notably in shiny') or as a tool to teach data manipulation and data
+visualization.")
+    (license license:expat)))
+
 (define-public r-fake
   (package
     (name "r-fake")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fake" version))
               (sha256
                (base32
-                "09pl3q8q9pxmqbz19p4gi4xxqzyg99gs6wgd6wa80vjfc7xjqh87"))))
+                "1w852a5ywybsdyvlll2dvrj17isjmiwjwhi43vml7j1k0lv9m86v"))))
     (properties `((upstream-name . "fake")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rdpack r-mass r-igraph r-huge))

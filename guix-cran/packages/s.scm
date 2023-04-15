@@ -425,34 +425,6 @@ conducted in parallel by default.  Lastly, we provide functionality for
 data-extensibility of micro-datasets <doi:10.18637/jss.v104.i07>.")
     (license license:expat)))
 
-(define-public r-synth
-  (package
-    (name "r-synth")
-    (version "1.1-6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Synth" version))
-              (sha256
-               (base32
-                "0qi8534rw0z20l1m4hhcn2xm16g8rrqfvpy0fs4hik4xc5cjgmbg"))))
-    (properties `((upstream-name . "Synth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgenoud r-optimx r-lowrankqp r-kernlab))
-    (home-page "https://web.stanford.edu/~jhain/")
-    (synopsis "Synthetic Control Group Method for Comparative Case Studies")
-    (description
-     "This package implements the synthetic control group method for comparative case
-studies as described in Abadie and Gardeazabal (2003) and Abadie, Diamond, and
-Hainmueller (2010, 2011, 2014).  The synthetic control method allows for effect
-estimation in settings where a single unit (a state, country, firm, etc.) is
-exposed to an event or intervention.  It provides a data-driven procedure to
-construct synthetic control units based on a weighted combination of comparison
-units that approximates the characteristics of the unit that is exposed to the
-intervention.  A combination of comparison units often provides a better
-comparison for the unit exposed to the intervention than any comparison unit
-alone.")
-    (license license:gpl2+)))
-
 (define-public r-syntaxr
   (package
     (name "r-syntaxr")
@@ -4226,6 +4198,43 @@ median, standard deviation, and sample size are optional.")
 an incomplete failure time data with surrogate failure time endpoints.")
     (license license:gpl2+)))
 
+(define-public r-surrosurv
+  (package
+    (name "r-surrosurv")
+    (version "1.1.26")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "surrosurv" version))
+              (sha256
+               (base32
+                "1zkrbc71n06i0fccrv5f15rnkbp3cb8lnizh4z16mmqgvn35hg1j"))))
+    (properties `((upstream-name . "surrosurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-parfm
+                             r-optimx
+                             r-mvmeta
+                             r-msm
+                             r-matrix
+                             r-mass
+                             r-lme4
+                             r-eha
+                             r-copula))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/Oncostat/surrosurv")
+    (synopsis
+     "Evaluation of Failure Time Surrogate Endpoints in Individual Patient Data Meta-Analyses")
+    (description
+     "This package provides functions for the evaluation of surrogate endpoints when
+both the surrogate and the true endpoint are failure time variables.  The
+approaches implemented are: (1) the two-step approach (Burzykowski et al, 2001)
+<DOI:10.1111/1467-9876.00244> with a copula model (Clayton, Plackett, Hougaard)
+at the first step and either a linear regression of log-hazard ratios at the
+second step (either adjusted or not for measurement error); (2) mixed
+proportional hazard models estimated via mixed Poisson GLM (Rotolo et al, 2017
+<DOI:10.1177/0962280217718582>).")
+    (license license:gpl2)))
+
 (define-public r-surrogatetest
   (package
     (name "r-surrogatetest")
@@ -6832,21 +6841,23 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-stroke
   (package
     (name "r-stroke")
-    (version "23.1.7")
+    (version "23.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stRoke" version))
               (sha256
                (base32
-                "03wis8w62436fwj8jxdqf5089b6axnlr066ic9raqrfidfn2jvbd"))))
+                "05whcniqb9f8705bi9c7y39r6ymclh9s9zr7yhl66nkfclad0sn3"))))
     (properties `((upstream-name . "stRoke")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rankinplot
                              r-mass
+                             r-lubridate
                              r-gtsummary
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-calendar))
     (native-inputs (list r-knitr))
     (home-page "https://agdamsbo.github.io/stRoke/")
     (synopsis "Clinical Stroke Research")
@@ -11175,25 +11186,6 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 <doi:10.1175%2F1520-0450%281996%29035%3C0601%3AIMFAOS%3E2.0.CO%3B2>.")
     (license license:expat)))
 
-(define-public r-static
-  (package
-    (name "r-static")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "static" version))
-              (sha256
-               (base32
-                "1n9ijilh81w2fz4cyd4abjj7qam8q7rirmp8lni5cxsb4il0qbfa"))))
-    (properties `((upstream-name . "static")))
-    (build-system r-build-system)
-    (home-page "https://github.com/nfultz/static")
-    (synopsis "Static Local Variables")
-    (description
-     "Initializes local variables statically within a function.  Their value will then
-persist across subsequent function invocations.")
-    (license license:gpl3+)))
-
 (define-public r-statgraph
   (package
     (name "r-statgraph")
@@ -11363,18 +11355,19 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.6")
+    (version "1.0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statgenHTP" version))
               (sha256
                (base32
-                "01xp6ipaf8w52kkq0p43qj12i0jd4i2a7lzkiyfv0y91c0j0hha4"))))
+                "1lhs72y9p98vas7iv1zgqb9zac6plzgv5lffccyg75r88784xn1s"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (propagated-inputs (list r-spats
                              r-spam
                              r-scales
+                             r-rlang
                              r-reshape2
                              r-matrix
                              r-lubridate
@@ -12898,13 +12891,13 @@ infer a causal model.")
 (define-public r-stablelearner
   (package
     (name "r-stablelearner")
-    (version "0.1-4")
+    (version "0.1-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stablelearner" version))
               (sha256
                (base32
-                "0w0b0h25lzdmzly5q8z6fhk8cz24k9radjika857qczmy7vdafd0"))))
+                "0a1fsy9hf63c1yfp4dallfsiknzsnhjl91yzqsgvni3gyx0vjykm"))))
     (properties `((upstream-name . "stablelearner")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger
@@ -15102,13 +15095,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.13.1")
+    (version "1.14.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SqlRender" version))
               (sha256
                (base32
-                "01fnm4r8006nf3q4ffxj8z9jkg8lpgg7racrwaqzbb13gx6l9d3q"))))
+                "17ys84j5wgnx9bdh8d3r2gr6w3nl4i3a1j15768gb3056m4i3jry"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjava r-checkmate))
@@ -28644,13 +28637,13 @@ Figueira, J. R. (2008) <doi:10.1002/mcda.407>.")
 (define-public r-slurmr
   (package
     (name "r-slurmr")
-    (version "0.5-2")
+    (version "0.5-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "slurmR" version))
               (sha256
                (base32
-                "1lnj5h7d5hnhmas6dnizzawjqlxgi9qxfjbb2b5janm9r488yvkg"))))
+                "1vvzqgyhqp29k1vqd99r9fdn6caidzkph2f3fw38334623103v6n"))))
     (properties `((upstream-name . "slurmR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -30516,13 +30509,13 @@ measurements from forensic glass evidence\", Science & Justice, 37(4), 241--244)
 (define-public r-sjtable2df
   (package
     (name "r-sjtable2df")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sjtable2df" version))
               (sha256
                (base32
-                "10h24yaikm8l3kkkj6yv430ybmgz0ydvxlv3smyyv5ww0c9qzmp1"))))
+                "1vb2wr122pfn6qald36mn1dkz6gygp81skl11halrwa7cvxwkl7z"))))
     (properties `((upstream-name . "sjtable2df")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -31499,16 +31492,16 @@ experimenting with spatially explicit individual-based vegetation models.")
 (define-public r-siphynetwork
   (package
     (name "r-siphynetwork")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SiPhyNetwork" version))
               (sha256
                (base32
-                "06v3klkrnhyx6v1jdhgqzxkm5kbm2qn281rziv252p049jnasggc"))))
+                "11p50ysznrrjjsiba1ivsbfpqg3zd5dqmkvj9p574acwhqj3dflp"))))
     (properties `((upstream-name . "SiPhyNetwork")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstackdeque r-rcpp r-ape))
+    (propagated-inputs (list r-rstackdeque r-rcpp r-lifecycle r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SiPhyNetwork")
     (synopsis "Phylogenetic Simulator for Reticulate Evolution")
@@ -46902,13 +46895,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDPDmod" version))
               (sha256
                (base32
-                "17wyymjip84dxpncz6kqg32wlwn5qgw7x54djg301wqmvpjyl2y8"))))
+                "1gzkaa1rr6dfzpf6fv16hxwfz34cd9jdvizacfssmx7dg5ad6prr"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -47766,41 +47759,6 @@ and decompression models, for calculating the predictions of decompression
 models, for calculating maximum no-decompression time and decompression tables,
 and for performing mixed gas calculations.")
     (license license:gpl2+)))
-
-(define-public r-sctools
-  (package
-    (name "r-sctools")
-    (version "0.3.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SCtools" version))
-              (sha256
-               (base32
-                "0pw0kpqv4hzskfigl7ch509jj2cmp674l9ms2ivbx3sxq9l0hhj1"))))
-    (properties `((upstream-name . "SCtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-synth
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr
-                             r-cvtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SCtools")
-    (synopsis "Extensions for Synthetic Controls Analysis")
-    (description
-     "Extensions to the synthetic controls analyses performed by the package Synth as
-detailed in Abadie, Diamond, and Hainmueller (2011) <doi:
-10.18637/jss.v042.i13>.  Includes generating and plotting placebos,
-post/pre-MSPE (Mean Squared Prediction Error) significance tests and plots, and
-calculating average treatment effects for multiple treated units.  This package
-represents an implementation of those methods suggested in Abadie, Diamond,and
-Hainmueller (2010) <doi:10.1198/jasa.2009.ap08746> for use in Synthetic Control
-Analysis.")
-    (license license:gpl3)))
 
 (define-public r-sctenifoldnet
   (package
@@ -50897,13 +50855,13 @@ latex tables in a publication friendly style.  More details can be found at
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-13")
+    (version "1.2-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scam" version))
               (sha256
                (base32
-                "0qp5g24zwb51x85z8g5x4n9wmqsf33hzwnahkj89rvl38lwq1z9k"))))
+                "0w9pm52hrky879ibxa96bav9fvz7swg1kbv0jybf3l1mmfm8cl6c"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-matrix))

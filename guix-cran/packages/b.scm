@@ -7499,34 +7499,6 @@ in: Abhra Sarkar et al., (2018) <doi:10.1080/01621459.2018.1423986> and Yutong
 Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
     (license license:expat)))
 
-(define-public r-bmrm
-  (package
-    (name "r-bmrm")
-    (version "4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bmrm" version))
-              (sha256
-               (base32
-                "1brdd5mhr5282wkdc62lgsqcxw077p69rknjk7fjcs282ahcik2s"))))
-    (properties `((upstream-name . "bmrm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrixstats r-lpsolve r-lowrankqp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bmrm")
-    (synopsis "Bundle Methods for Regularized Risk Minimization Package")
-    (description
-     "Bundle methods for minimization of convex and non-convex risk under L1 or L2
-regularization.  Implements the algorithm proposed by Teo et al. (JMLR 2010) as
-well as the extension proposed by Do and Artieres (JMLR 2012).  The package
-comes with lot of loss functions for machine learning which make it powerful for
-big data analysis.  The applications includes: structured prediction, linear
-SVM, multi-class SVM, f-beta optimization, ROC optimization, ordinal regression,
-quantile regression, epsilon insensitive regression, least mean square, logistic
-regression, least absolute deviation regression (see package examples), etc...
-all with L1 and L2 regularization.")
-    (license license:gpl3)))
-
 (define-public r-bmrbr
   (package
     (name "r-bmrbr")
@@ -10671,6 +10643,47 @@ matrices, performing metric multidimensional scaling and visualizing results.")
 bioassays for one or several strains/lines/populations.")
     (license license:agpl3+)))
 
+(define-public r-bioregion
+  (package
+    (name "r-bioregion")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bioregion" version))
+              (sha256
+               (base32
+                "0miajh5m6hmk5jwpaad8z2psib0x0bk94dyyhxyipzn9hf1hijqb"))))
+    (properties `((upstream-name . "bioregion")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-segmented
+                             r-rmarkdown
+                             r-rlang
+                             r-rdpack
+                             r-rcpp
+                             r-matrix
+                             r-mathjaxr
+                             r-igraph
+                             r-ggplot2
+                             r-fastcluster
+                             r-dynamictreecut
+                             r-dbscan
+                             r-data-table
+                             r-cluster
+                             r-bipartite
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bioRgeo/bioregion")
+    (synopsis "Comparison of Bioregionalisation Methods")
+    (description
+     "The main purpose of this package is to propose a transparent methodological
+framework to compare bioregionalisation methods based on hierarchical and
+non-hierarchical clustering algorithms (Kreft & Jetz (2010)
+<doi:10.1111/j.1365-2699.2010.02375.x>) and network algorithms (Lenormand et al.
+(2019) <doi:10.1002/ece3.4718> and Leroy et al. (2019) <doi:10.1111/jbi.13674>).")
+    (license license:gpl3)))
+
 (define-public r-biorad
   (package
     (name "r-biorad")
@@ -11025,45 +11038,6 @@ to, for example, convert gene identifiers to hyperlinks pointing to their entry
 in the NCBI Gene database.  Currently supports NCBI Gene, PubMed', Gene
 Ontology, KEGG', CRAN and Bioconductor.")
     (license license:expat)))
-
-(define-public r-bioknn
-  (package
-    (name "r-bioknn")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "biokNN" version))
-              (sha256
-               (base32
-                "113lynbxmv88ycvbsq9drn2f75md7yajhicfw8qd8l6lawiq1fqc"))))
-    (properties `((upstream-name . "biokNN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-mitml
-                             r-mice
-                             r-magrittr
-                             r-lme4
-                             r-ggplot2
-                             r-dplyr
-                             r-desc
-                             r-cluster))
-    (home-page "https://github.com/mcubillos3/biokNN")
-    (synopsis
-     "Bi-Objective k-Nearest Neighbors Imputation for Multilevel Data")
-    (description
-     "The bi-objective k-nearest neighbors method (biokNN) is an imputation method
-designed to estimate missing values on data with a multilevel structure.  The
-original algorithm is an extension of the k-nearest neighbors method proposed by
-Bertsimas et al. (2017) (<https://jmlr.org/papers/v18/17-073.html>) using a
-bi-objective approach.  A brief description of the method can be found in
-Cubillos (2021) (<https://pure.au.dk/portal/files/214627979/biokNN.pdf>).  The
-biokNN package provides an R implementation of the method for datasets with
-continuous variables (e.g. employee productivity, student grades) and a
-categorical class variable (e.g. department, school).  Given an incomplete
-dataset with such structure, this package produces complete datasets using both
-single and multiple imputation, including visualization tools to better
-understand the pattern of the missing values.")
-    (license license:gpl2+)))
 
 (define-public r-bioinsight
   (package
@@ -15676,25 +15650,27 @@ differences in standardized regression coefficients, for models fitted by lm()."
 (define-public r-betamc
   (package
     (name "r-betamc")
-    (version "1.0.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "betaMC" version))
               (sha256
                (base32
-                "01vig8mnizgxb0xh0a9aywmjfpii6xqfyy19hj0ngsksafbvydf0"))))
+                "0b3pbblv9gz7577kd4027bgnw74scmn7i42p9fivv0kzw475s82a"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaMC")
-    (synopsis
-     "Monte Carlo Confidence Intervals for Standardized Regression Coefficients")
+    (synopsis "Monte Carlo for Regression Effect Sizes")
     (description
      "Generates Monte Carlo confidence intervals for standardized regression
-coefficients for models fitted by lm().  betaMC combines ideas from Monte Carlo
-confidence intervals for the indirect effect (Preacher and Selig, 2012
+coefficients (beta) and other effect sizes, including multiple correlation,
+semipartial correlations, improvement in R-squared, squared partial
+correlations, and differences in standardized regression coefficients, for
+models fitted by lm().  betaMC combines ideas from Monte Carlo confidence
+intervals for the indirect effect (Preacher and Selig, 2012
 <doi:10.1080/19312458.2012.679848>) and the sampling covariance matrix of
 regression coefficients (Dudgeon, 2017 <doi:10.1007/s11336-017-9563-z>) to
-generate confidence intervals for standardized regression coefficients.")
+generate confidence intervals effect sizes in regression.")
     (license license:expat)))
 
 (define-public r-betafunctions
@@ -15978,13 +15954,13 @@ schemes (for larger binary networks) are implemented.")
 (define-public r-besthr
   (package
     (name "r-besthr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "besthr" version))
               (sha256
                (base32
-                "0vqli7dbgv176d1kz9cn33z8hhzggakqrzf1i0mpsxqmdyc2v03f"))))
+                "0mg1nm014p82n9v5f929rcrpqclqs5kh8hga8gd7h29jqykgirc0"))))
     (properties `((upstream-name . "besthr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -19121,13 +19097,13 @@ implementations of the methods of Oh and Raftery (2001)
 (define-public r-baylum
   (package
     (name "r-baylum")
-    (version "0.2.1")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayLum" version))
               (sha256
                (base32
-                "0h0x18al2rqs6wjf4jayc1qv8lkn7rvkbjmr5h1gcggn2c4byyjn"))))
+                "1n40zz0156kw6fwqvlhx3svmvwa2049z4ly9lxcid84dwyxxyn0r"))))
     (properties `((upstream-name . "BayLum")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags
@@ -20133,6 +20109,30 @@ probabilistic components, such as total fertility rate and life expectancy
 Moreira (2020) provides a way to use exact Bayesian inference to model this type
 of data, which is implemented in this package.")
     (license license:gpl3)))
+
+(define-public r-bayesplay
+  (package
+    (name "r-bayesplay")
+    (version "0.9.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bayesplay" version))
+              (sha256
+               (base32
+                "1gc5gfyd03rir3yrjsqj6448wvbw49n6c789hzfqwignk3vjc555"))))
+    (properties `((upstream-name . "bayesplay")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gginnards))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bayesplay/bayesplay")
+    (synopsis "The Bayes Factor Playground")
+    (description
+     "This package provides a lightweight modelling syntax for defining likelihoods
+and priors and for computing Bayes factors for simple one parameter models.  It
+includes functionality for computing and plotting priors, likelihoods, and model
+predictions.  Additional functionality is included for computing and plotting
+posteriors.")
+    (license license:expat)))
 
 (define-public r-bayespiecewiseicar
   (package
