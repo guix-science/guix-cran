@@ -32906,13 +32906,13 @@ and Pearse (2017) <doi:10.1111/1752-1688.12558> in ArcGIS-Python as IDW-PLUS.")
 (define-public r-rdwd
   (package
     (name "r-rdwd")
-    (version "1.6.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdwd" version))
               (sha256
                (base32
-                "0kd5nnxvmm383z6cadnw7dy6izni51w2zm4h65jfn5x8bk6xcnwr"))))
+                "03gj4awyaixwh0qhghglpfp6dqv9accgahx7b50hhjbdmvgvgy47"))))
     (properties `((upstream-name . "rdwd")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-berryfunctions))

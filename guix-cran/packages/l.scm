@@ -834,6 +834,27 @@ variables which minimize mean inspection cost per lot of process average
 quality.")
     (license license:gpl2)))
 
+(define-public r-ltmle
+  (package
+    (name "r-ltmle")
+    (version "1.3-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ltmle" version))
+              (sha256
+               (base32
+                "1bcahkykwwn67zvi5b0aw5awd48yq8ab8y9j3yw8f5mqdbfx0cgv"))))
+    (properties `((upstream-name . "ltmle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixstats r-matrix))
+    (home-page "https://github.com/joshuaschwab/ltmle")
+    (synopsis "Longitudinal Targeted Maximum Likelihood Estimation")
+    (description
+     "Targeted Maximum Likelihood Estimation ('TMLE') of treatment/censoring specific
+mean outcome or marginal structural model for point-treatment and longitudinal
+data.")
+    (license license:gpl2)))
+
 (define-public r-ltmix
   (package
     (name "r-ltmix")

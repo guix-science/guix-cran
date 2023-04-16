@@ -2837,13 +2837,13 @@ polymorphisms for association analyses using linkage disequilibrium\"
 (define-public r-hsaur3
   (package
     (name "r-hsaur3")
-    (version "1.0-13")
+    (version "1.0-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HSAUR3" version))
               (sha256
                (base32
-                "17l7gx6c1jl1jz33q08lgd2fwckvxlm5gpwvbfzza48j97r5p7by"))))
+                "1fsil4n4s71ff8np9w65h8n8b1b2rh017ja8vjd4wq07xi3prbwp"))))
     (properties `((upstream-name . "HSAUR3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR3")

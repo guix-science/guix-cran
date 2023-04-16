@@ -7602,13 +7602,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.0.4")
+    (version "2.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wallace" version))
               (sha256
                (base32
-                "17ymqms80w7l4g78wqvamhg2p70mvz7knd5cda8ijlhyr9zanq73"))))
+                "1gwlnph0dwivn7zpv6pd2gyhaampfb9ffzicjvsj2v2n4ncvb92f"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

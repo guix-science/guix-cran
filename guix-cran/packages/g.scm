@@ -22553,13 +22553,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.1.5")
+    (version "1.1.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "0mwsbgqjvqnr007l7wzx8pp0db1dfjibfn6294pylpkrjbh82nl9"))))
+                "1xmzpklas899gajrzwwyq9ssndypv11g4ahlydjx70bm2scsb9iy"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram

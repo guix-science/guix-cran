@@ -4825,19 +4825,23 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vDiveR" version))
               (sha256
                (base32
-                "1l2cx3lkr666m2dbxgkjryspyqjqnn6l9q5jhdkcrkd3d87iy9kh"))))
+                "19rdvpyvmvlmqkxalfgbxrkz6y48w779r42icraa348ph1dc1n7f"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-scales
                              r-rlang
+                             r-rentrez
+                             r-readr
                              r-plyr
+                             r-maps
                              r-magrittr
                              r-gridextra
                              r-ggtext
@@ -6286,13 +6290,13 @@ support vector machine, the contamination of a sample can be detected.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.3.1.30")
+    (version "1.3.4.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vannstats" version))
               (sha256
                (base32
-                "08lcw2ypsahxw2kj0kckf67nrz2dp0jcbny24y2n7qwhz5si2r5w"))))
+                "0fzs2w2rqmdl4a595xi34l7b0sw68yik3yv4mxzqfznwsxiaj8m4"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6302,6 +6306,7 @@ support vector machine, the contamination of a sample can be detected.")
                              r-plm
                              r-gplots
                              r-ggrepel
+                             r-ggpubr
                              r-ggplot2
                              r-gdata
                              r-formula-tools

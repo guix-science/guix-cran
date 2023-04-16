@@ -9710,13 +9710,13 @@ etc., of the optimization problems.")
 (define-public r-fksum
   (package
     (name "r-fksum")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FKSUM" version))
               (sha256
                (base32
-                "1a0fk3k5mmkv26lmf14wiaj0hq19m92681a1p5ldnzpqr54w9igz"))))
+                "0ag8mzbjf2paslqspb18dk0ndqbp5rhmlmz9p2q2gxljfrdkzqkd"))))
     (properties `((upstream-name . "FKSUM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-rarpack r-matrix r-mass))
@@ -19315,13 +19315,13 @@ with data.table and mvnfast installed.")
 (define-public r-fabr
   (package
     (name "r-fabr")
-    (version "1.1.0.1003")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fabR" version))
               (sha256
                (base32
-                "14yfvxcip89q4dnxx5svm9vq81lw5r9crkyc217jga30lv6wax80"))))
+                "0nhxb9qbfy5almbyc6x1cfw3mfncqbx9wsc66780awnppph3bmcv"))))
     (properties `((upstream-name . "fabR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -19332,7 +19332,6 @@ with data.table and mvnfast installed.")
                              r-readxl
                              r-readr
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-janitor
                              r-ggplot2

@@ -5962,13 +5962,13 @@ and Seier (2003) <doi:10.1198/0003130032323>, and Lemm (2006)
 (define-public r-intervalsurgeon
   (package
     (name "r-intervalsurgeon")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IntervalSurgeon" version))
               (sha256
                (base32
-                "0dhsy40wx47g7h8ivriscyvxwl991lfal4nq0j476kamxax0yzbw"))))
+                "02l2r83mz4x9x40p8gxwyrqa25qk0cy22k39lv93plvcpadcs8a5"))))
     (properties `((upstream-name . "IntervalSurgeon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

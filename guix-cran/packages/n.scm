@@ -11887,29 +11887,6 @@ Professorship from Center for Applied Research at Pepperdine Graziadio Business
 School and the National Research Foundation of Korea.)")
     (license license:gpl3+)))
 
-(define-public r-ncov2019
-  (package
-    (name "r-ncov2019")
-    (version "0.4.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "nCov2019" version))
-              (sha256
-               (base32
-                "00jwywvb4prypn7cvwd1fb29jffvzdmg18axnl9ncncr0xjmvgx3"))))
-    (properties `((upstream-name . "nCov2019")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-jsonlite r-ggplot2 r-downloader))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/YuLab-SMU/nCov2019")
-    (synopsis "Exploring 'COVID'-19 Statistics")
-    (description
-     "This package provides easy-to-use programming API to access real time and
-historical data of COVID'-19 cases, vaccine and therapeutics data, and a Shiny
-app to help users exploring the data.  Fetching data using API provided by
-<https://disease.sh> .")
-    (license license:expat)))
-
 (define-public r-ncopula
   (package
     (name "r-ncopula")
