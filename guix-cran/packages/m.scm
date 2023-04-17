@@ -55,16 +55,17 @@
 (define-public r-mzipmed
   (package
     (name "r-mzipmed")
-    (version "1.2.5")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mzipmed" version))
               (sha256
                (base32
-                "1mwnkwpn8awwnjm6yyad7xasc0va7hc6ya37hzyx91j8802gqhvk"))))
+                "0aqjhjqhbb19l0wgz3brnp2d699ibwpmx5ksnz6frk937k4ix1s0"))))
     (properties `((upstream-name . "mzipmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-robust r-matrixstats r-mass))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mzipmed")
     (synopsis "Mediation using MZIP Model")
     (description
@@ -24859,26 +24860,25 @@ analysis.")
 (define-public r-metricsweighted
   (package
     (name "r-metricsweighted")
-    (version "0.5.5")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MetricsWeighted" version))
               (sha256
                (base32
-                "09f6gq9fw5yw7pcm4ywchsimwpgf2h8n52r75vjqhin57xm8ppfq"))))
+                "1592y3bri1jkj50qjd1dvlf5hn5x5bv9m548w8m4fq2ahkhm0mnf"))))
     (properties `((upstream-name . "MetricsWeighted")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mayer79/MetricsWeighted")
-    (synopsis
-     "Weighted Metrics, Scoring Functions and Performance Measures for Machine Learning")
+    (synopsis "Weighted Metrics and Performance Measures for Machine Learning")
     (description
-     "This package provides weighted versions of several metrics, scoring functions
-and performance measures used in machine learning, including average unit
-deviances of the Bernoulli, Tweedie, Poisson, and Gamma distributions, see
-Jorgensen B. (1997, ISBN: 978-0412997112).  The package also contains a weighted
-version of generalized R-squared, see e.g. Cohen, J. et al. (2002, ISBN:
-978-0805822236).  Furthermore, dplyr chains are supported.")
+     "This package provides weighted versions of several metrics and performance
+measures used in machine learning, including average unit deviances of the
+Bernoulli, Tweedie, Poisson, and Gamma distributions, see Jorgensen B. (1997,
+ISBN: 978-0412997112).  The package also contains a weighted version of
+generalized R-squared, see e.g. Cohen, J. et al. (2002, ISBN: 978-0805822236).
+Furthermore, dplyr chains are supported.")
     (license license:gpl2+)))
 
 (define-public r-metricsgraphics

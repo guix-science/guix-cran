@@ -5966,33 +5966,29 @@ and Koenig, F. (2022). <doi:10.48550/arXiv.2206.09639>.")
 (define-public r-eseis
   (package
     (name "r-eseis")
-    (version "0.6.0")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eseis" version))
               (sha256
                (base32
-                "13sr7drqw8gzrhgz1anvnxpypr8m85sb2s8zhi074z4yhqxh9jw6"))))
+                "1x14nca5pwiv0rfm4x7471hp70xvbhsr2rnmdpfr4cndlhp83r83"))))
     (properties `((upstream-name . "eseis")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
-                             r-sp
+                             r-terra
                              r-signal
-                             r-shinyfiles
                              r-shiny
                              r-rmarkdown
-                             r-rgdal
                              r-reticulate
                              r-rcpp
-                             r-raster
                              r-multitaper
                              r-minpack-lm
                              r-matrixstats
-                             r-limsolve
                              r-irisseismic
                              r-fftw
                              r-extradistr
-                             r-emmageo
+                             r-colorspace
                              r-catools))
     (home-page "https://cran.r-project.org/package=eseis")
     (synopsis "Environmental Seismology Toolbox")
@@ -19280,13 +19276,13 @@ ID: identifier code.  The GEO datasets are downloaded from the URL
 (define-public r-easydescribe
   (package
     (name "r-easydescribe")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EasyDescribe" version))
               (sha256
                (base32
-                "15g37m28l40w71bvj02cbhfc6x77bjvr8mjr89iipdqzndp23g1i"))))
+                "1kjh45ndscwz1wdkf0rvnjw4qs73v9h1g45wagdqhsckywnhfksh"))))
     (properties `((upstream-name . "EasyDescribe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcompanion
@@ -19296,7 +19292,9 @@ ID: identifier code.  The GEO datasets are downloaded from the URL
                              r-gmodels
                              r-fsa
                              r-fitdistrplus
-                             r-catt))
+                             r-clinfun
+                             r-catt
+                             r-car))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EasyDescribe")
     (synopsis "Convenient Way of Descriptive Statistics")
@@ -19306,11 +19304,14 @@ perform descriptive statistics according to different data types.  If the data
 is a continuous variable, the mean and standard deviation or median and
 quartiles are automatically output; if the data is a categorical variable, the
 number and percentage are automatically output.  In addition, if you enter two
-variables, the first variable will be described hierarchically based on the
-second variable and the statistical differences between different groups will be
-compared using appropriate statistical methods.  And for groups more than two,
-the post hoc test will be applied.  For more information on the methods we used,
-please see the following references: Libiseller, C. and Grimvall, A. (2002)
+variables in this package, the two variables will be described and their
+relationships will be tested automatically according to their data types.  For
+example, if one of the two input variables is a categorical variable, another
+variable will be described hierarchically based on the categorical variable and
+the statistical differences between different groups will be compared using
+appropriate statistical methods.  And for groups of more than two, the post hoc
+test will be applied.  For more information on the methods we used, please see
+the following references: Libiseller, C. and Grimvall, A. (2002)
 <doi:10.1002/env.507>, Patefield, W. M. (1981) <doi:10.2307/2346669>, Hope, A.
 C. A. (1968) <doi:10.1111/J.2517-6161.1968.TB00759.X>, Mehta, C. R. and Patel,
 N. R. (1983) <doi:10.1080/01621459.1983.10477989>, Mehta, C. R. and Patel, N. R.
@@ -19325,8 +19326,9 @@ Armitage, P. (1955) <doi:10.2307/3001775>, Szabo, A. (2016)
 Heiberger, R. M. (1992) <doi:10.1201/9780203738535-5>, Shaffer, J. P. (1995)
 <doi:10.1146/annurev.ps.46.020195.003021>, Myles, H. and Douglas, A. W. (1973)
 <doi:10.2307/2063815>, Rahman, M. and Tiwari, R. (2012)
-<doi:10.4236/health.2012.410139>.  Thode, H. J. (2002)
-<doi:10.1201/9780203910894>.")
+<doi:10.4236/health.2012.410139>, Thode, H. J. (2002)
+<doi:10.1201/9780203910894>, Jonckheere, A. R. (1954) <doi:10.2307/2333011>,
+Terpstra, T. J. (1952) <doi:10.1016/S1385-7258(52)50043-X>.")
     (license license:gpl3)))
 
 (define-public r-easydes

@@ -738,13 +738,13 @@ Information Administration (Dec 2019) <https://www.eia.gov/>.")
 (define-public r-usgas
   (package
     (name "r-usgas")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "USgas" version))
               (sha256
                (base32
-                "1yx5qc7ilb1g2cv9w35ryw778qbi9fs0licxc2xcp5fbp709pd65"))))
+                "13aqwwigscvnvp55pmbx2z2ypqgw2ph35c4r6chwcqzsgz32zihq"))))
     (properties `((upstream-name . "USgas")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -20190,16 +20190,16 @@ databases, interactive plotting and selection of focus regions.")
 (define-public r-geomander
   (package
     (name "r-geomander")
-    (version "2.1.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geomander" version))
               (sha256
                (base32
-                "1ban8kss608fx4w64xl3m9zc1bf05alqfqrgv35rdrxw756iqv6a"))))
+                "1nbh40ijm27ycm147ldjrv3yccbl9wb41r3k3czy014v32vgdh07"))))
     (properties `((upstream-name . "geomander")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tigris
+    (propagated-inputs (list r-tinytiger
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -20215,7 +20215,7 @@ databases, interactive plotting and selection of focus regions.")
                              r-cli
                              r-censable))
     (native-inputs (list r-knitr))
-    (home-page "https://www.christophertkenny.com/geomander/")
+    (home-page "https://christophertkenny.com/geomander/")
     (synopsis "Geographic Tools for Studying Gerrymandering")
     (description
      "This package provides a compilation of tools to complete common tasks for
@@ -20482,13 +20482,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.8")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geofi" version))
               (sha256
                (base32
-                "01hrknkbmm7lwbpdpgpqylya6fc5kwd19bas6wyp1dyrdpn8xj5x"))))
+                "0z5cisrfq18arsq8n4p8xiqc8z2wn8riz8l9s5lzihc50s87kh9p"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -26489,13 +26489,13 @@ and decision trees.")
 (define-public r-gamlr
   (package
     (name "r-gamlr")
-    (version "1.13-7")
+    (version "1.13-8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gamlr" version))
               (sha256
                (base32
-                "0p0q77lkb5j9p1gd2z1n74pphx7h0lynzdamxrhz2w6bif1431wz"))))
+                "1psvxx7ymkgr4acis85842xgafc5azdl7v1cmgvgbhsdwksm95q7"))))
     (properties `((upstream-name . "gamlr")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

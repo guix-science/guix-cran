@@ -36587,36 +36587,6 @@ area data easy using ggplot2'.")
 Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-canadacovid
-  (package
-    (name "r-canadacovid")
-    (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "canadacovid" version))
-              (sha256
-               (base32
-                "1hxcz3bk0p063cidj19zzacvxarpracnzglmb1212b2jx9w4i3gw"))))
-    (properties `((upstream-name . "canadacovid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/taylordunn/canadacovid")
-    (synopsis "API Wrapper for the Canadian COVID-19 Tracker")
-    (description
-     "This package provides R functions to GET data from the Canadian COVID-19 tracker
-API <https://api.covid19tracker.ca>.")
-    (license license:expat)))
-
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")

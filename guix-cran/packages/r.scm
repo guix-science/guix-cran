@@ -13592,6 +13592,42 @@ the reference: Mengyang Gu and Jim Berger, 2016, Annals of Applied Statistics;
 Mengyang Gu, Xiaojing Wang and Jim Berger, 2018, Annals of Statistics.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-robustfa
+  (package
+    (name "r-robustfa")
+    (version "1.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "robustfa" version))
+              (sha256
+               (base32
+                "0r7ydyjg0ch1wqngzdar2bd6jh0fvfzylmxmxq97kq1k6p3gb972"))))
+    (properties `((upstream-name . "robustfa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rrcov))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=robustfa")
+    (synopsis "Object Oriented Solution for Robust Factor Analysis")
+    (description
+     "Outliers virtually exist in any datasets of any application field.  To avoid the
+impact of outliers, we need to use robust estimators.  Classical estimators of
+multivariate mean and covariance matrix are the sample mean and the sample
+covariance matrix.  Outliers will affect the sample mean and the sample
+covariance matrix, and thus they will affect the classical factor analysis which
+depends on the classical estimators (Pison, G., Rousseeuw, P.J., Filzmoser, P.
+and Croux, C. (2003) <doi:10.1016/S0047-259X(02)00007-6>).  So it is necessary
+to use the robust estimators of the sample mean and the sample covariance
+matrix.  There are several robust estimators in the literature: Minimum
+Covariance Determinant estimator, Orthogonalized Gnanadesikan-Kettenring,
+Minimum Volume Ellipsoid, M, S, and Stahel-Donoho.  The most direct way to make
+multivariate analysis more robust is to replace the sample mean and the sample
+covariance matrix of the classical estimators to robust estimators (Maronna,
+R.A., Martin, D. and Yohai, V. (2006) <doi:10.1002/0470010940>) (Todorov, V. and
+Filzmoser, P. (2009) <doi:10.18637/jss.v032.i03>), which is our choice of robust
+factor analysis.  We created an object oriented solution for robust factor
+analysis based on new S4 classes.")
+    (license license:gpl2+)))
+
 (define-public r-robustetm
   (package
     (name "r-robustetm")

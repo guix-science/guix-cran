@@ -320,13 +320,13 @@ implemented method see Nowok, Raab and Dibben (2016)
 (define-public r-synthetic
   (package
     (name "r-synthetic")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SynthETIC" version))
               (sha256
                (base32
-                "1z7jyal707a93hv0fsgnkxpnywqw6ksifk0546alzm32g5lp4655"))))
+                "00aw9s8fxqld0iv3wwlbf3y9gydbawbg611ijq8chldpxkcra5vv"))))
     (properties `((upstream-name . "SynthETIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-ggplot2))
@@ -17680,13 +17680,13 @@ for details.")
 (define-public r-splice
   (package
     (name "r-splice")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPLICE" version))
               (sha256
                (base32
-                "1jcw7nikla75aqfbplv2cklq19rfd8naamldvllzy2pjb879vqkk"))))
+                "0nsh89qjp9gl0pgsvvink9bf3lgrkdvwyyyplb45lh47gh8f53rj"))))
     (properties `((upstream-name . "SPLICE")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-synthetic r-lifecycle))

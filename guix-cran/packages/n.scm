@@ -10702,32 +10702,27 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.4.4")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "1zfdr42idrr7v76mkpvv58di8rqlw79c2k2pynfyaqxj3ac53dq0"))))
+                "1l0kvhhwsda7zmnirn3l7zyiyr7d634jic9i01q21f17gkpjhcnk"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-superlearner
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-rfast
-                             r-rcppeigen
-                             r-randomforest
+                             r-reshape2
                              r-proc
                              r-matrixtests
                              r-matrixstats
-                             r-hsstan
                              r-glmnet
                              r-ggplot2
                              r-foreach
                              r-doparallel
                              r-data-table
-                             r-corelearn
-                             r-caret
-                             r-boruta))
+                             r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/myles-lewis/nestedcv")
     (synopsis "Nested Cross-Validation with 'glmnet' and 'caret'")

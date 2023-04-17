@@ -7651,16 +7651,16 @@ vectors, matrices, and lists.")
 (define-public r-innsight
   (package
     (name "r-innsight")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "innsight" version))
               (sha256
                (base32
-                "0snnr0mqs0qhng4d73dqn2l6zzw11pdyipszxf1mhxh7mmssnn22"))))
+                "0ckhxicgvvrwzsm1x396xp2fj6g7v2m2ga4gzvqrw4my10w4y3di"))))
     (properties `((upstream-name . "innsight")))
     (build-system r-build-system)
-    (propagated-inputs (list r-torch r-r6 r-ggplot2 r-checkmate))
+    (propagated-inputs (list r-torch r-r6 r-ggplot2 r-cli r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://bips-hb.github.io/innsight/")
     (synopsis "Get the Insights of your Neural Network")

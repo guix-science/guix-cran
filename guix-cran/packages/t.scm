@@ -2337,13 +2337,13 @@ forecasting.")
 (define-public r-tsss
   (package
     (name "r-tsss")
-    (version "1.3.4")
+    (version "1.3.4-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSSS" version))
               (sha256
                (base32
-                "0iywf57pw7bnx6sf2w2wkwcnwhplpgnbmifq5rna2vd2v2rp5hkd"))))
+                "1nfrlh05j4vkizynq4k51a4yz307z81a5n2l88kfsmssydrc4pv2"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

@@ -15408,13 +15408,13 @@ F-value (F) based on F-ratio test.")
 (define-public r-lactater
   (package
     (name "r-lactater")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lactater" version))
               (sha256
                (base32
-                "0y90hzixdqims8dk9a7qkwh6waxgvcmnpnalkfda4iqdvhymlxc6"))))
+                "1siyf2hqrxhri1gadvkg9dji7pg28l11h109frksc0lwgy6z7rhk"))))
     (properties `((upstream-name . "lactater")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

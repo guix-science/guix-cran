@@ -5087,13 +5087,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8-3")
+    (version "0.8-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcdExtra" version))
               (sha256
                (base32
-                "0yyscm92wx0qnkpc1hdwd8xgfcxjgqhhm5r96gybf9iww5x91svr"))))
+                "0xvhnjd131jmhviknchhj5fz5np1g44csyzf0hf5617chf1v2kzb"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
