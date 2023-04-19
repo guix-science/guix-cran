@@ -3445,13 +3445,13 @@ variable selection for generalized linear models.")
 (define-public r-optrefine
   (package
     (name "r-optrefine")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optrefine" version))
               (sha256
                (base32
-                "0s5gwshphjwl02vw22h9dckqix7yw0zzyvasfy594c7d1qw46y4p"))))
+                "1ijahjraiaax0xyr1y4s3aq1b4xk8h7ablrvy2m2fr879q3xfi9i"))))
     (properties `((upstream-name . "optrefine")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-rglpk r-mass r-ggplot2))
@@ -7404,13 +7404,13 @@ the population.")
 (define-public r-oncomsm
   (package
     (name "r-oncomsm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oncomsm" version))
               (sha256
                (base32
-                "0p78sz9r9yl0kndf2p3z40zskam3pr8f22z45ph6dz7hpkh5k0nf"))))
+                "1crjpfa7yxcafnhsxs2sbf153lsr9ffaqdxjxp0zkd7hiash0mfm"))))
     (properties `((upstream-name . "oncomsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

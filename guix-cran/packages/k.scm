@@ -1638,6 +1638,39 @@ k-nearest neighbors algorithm and the other is optimizing the parameters k and d
 of the algorithm.  These are carried out in parallel using multiple threads.")
     (license license:agpl3)))
 
+(define-public r-knitxl
+  (package
+    (name "r-knitxl")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "knitxl" version))
+              (sha256
+               (base32
+                "1l0qq9mqfwkxkkms8xrmf7wzrgg27syrndng7vrrymda67pcxnl4"))))
+    (properties `((upstream-name . "knitxl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-stringr
+                             r-readr
+                             r-readbitmap
+                             r-r6
+                             r-purrr
+                             r-openxlsx
+                             r-magrittr
+                             r-knitr
+                             r-glue
+                             r-commonmark))
+    (home-page "https://github.com/dreanod/knitxl")
+    (synopsis "Generates a Spreadsheet Report from an 'rmarkdown' File")
+    (description
+     "Convert an R Markdown documents into an .xlsx spreadsheet reports with the
+knitxl() function, which works similarly to knit() from the knitr package.  The
+generated report can be opened in Excel or similar software for further analysis
+and presentation.")
+    (license license:gpl3+)))
+
 (define-public r-knitrprogressbar
   (package
     (name "r-knitrprogressbar")
@@ -2808,13 +2841,13 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.9.0")
+    (version "1.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "khroma" version))
               (sha256
                (base32
-                "1bdwh6b1jbfygghf9vwar8x104np2z02yn6gg8zsddzc3jgc70dr"))))
+                "0kf9r21q7f21nwiw9mc6k2x5hnwayg0fiwydi4w8zjvzkwlskrj7"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2900,6 +2933,28 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
 platform of the game of go, <http://www.gokgs.com/>).  A shiny application is
 also provided.")
     (license license:expat)))
+
+(define-public r-kgrams
+  (package
+    (name "r-kgrams")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kgrams" version))
+              (sha256
+               (base32
+                "01ig95sr6nnv52cbj0z8qjq49z0ywyhs9b5214hwgnqs81w1pcb9"))))
+    (properties `((upstream-name . "kgrams")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rdpack r-rcppprogress r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://vgherard.github.io/kgrams/")
+    (synopsis "Classical k-gram Language Models")
+    (description
+     "Training and evaluating k-gram language models in R, supporting several
+probability smoothing techniques, perplexity computations, random text
+generation and more.")
+    (license license:gpl3+)))
 
 (define-public r-kgp
   (package
@@ -3574,13 +3629,13 @@ Estimation for Statistics and Data Analysis.  Chapman & Hall, London.")
 (define-public r-kernscr
   (package
     (name "r-kernscr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernscr" version))
               (sha256
                (base32
-                "1kcj710q8jbc34g6fcv2nk07hpsb81mfx8hvivgxq8x58028gjzs"))))
+                "0vk0ppb24la6876sw96kk5s3lw4qqs56m507xncbdvjjgw6pq180"))))
     (properties `((upstream-name . "kernscr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass))
@@ -4059,6 +4114,29 @@ analysis of air pollution, weather and health data.")
      "This package provides arrays with flexible control over dimension dropping when
 subscripting.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-kdry
+  (package
+    (name "r-kdry")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kdry" version))
+              (sha256
+               (base32
+                "01xf4cd87yz2ah87jz40b5hnkww7fpryb5vcrp324n444cm7lsc1"))))
+    (properties `((upstream-name . "kdry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-hmisc r-foreach r-doparallel
+                             r-data-table))
+    (home-page "https://github.com/kapsner/kdry")
+    (synopsis "K's \"Don't Repeat Yourself\"-Collection")
+    (description
+     "This package provides a personal collection of helper functions and code
+snippets to avoid redundancy in the spirit of the \"Don't repeat yourself\"
+principle of software development
+(<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
+    (license license:gpl3+)))
 
 (define-public r-kdpee
   (package

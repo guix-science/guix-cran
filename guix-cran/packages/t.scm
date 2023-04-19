@@ -1489,6 +1489,38 @@ mmm() of package multcomp to implement the trend test of Tukey, Ciminera and
 Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
     (license license:gpl2)))
 
+(define-public r-tukeyregion
+  (package
+    (name "r-tukeyregion")
+    (version "0.1.6.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TukeyRegion" version))
+              (sha256
+               (base32
+                "02w84bha6niyval71a06ibk42crvv2259302ckdzmb61ik9sg44d"))))
+    (properties `((upstream-name . "TukeyRegion")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rglpk
+                             r-rgl
+                             r-rcpp
+                             r-mass
+                             r-ddalpha
+                             r-bh
+                             r-bfp))
+    (home-page "https://cran.r-project.org/package=TukeyRegion")
+    (synopsis "Tukey Region and Median")
+    (description
+     "Tukey regions are polytopes in the Euclidean space, viz.  upper-level sets of
+the Tukey depth function on given data.  The bordering hyperplanes of a Tukey
+region are computed as well as its vertices, facets, centroid, and volume.  In
+addition, the Tukey median set, which is the non-empty Tukey region having
+highest depth level, and its barycenter (= Tukey median) are calculated.  Tukey
+regions are visualized in dimension two and three.  For details see Liu, Mosler,
+and Mozharovskyi (2019, <doi:10.1080/10618600.2018.1546595>).  See file
+LICENSE.note for additional license information.")
+    (license license:gpl3+)))
+
 (define-public r-tukeygh
   (package
     (name "r-tukeygh")
@@ -4759,17 +4791,17 @@ enhanced standard errors based on Lashley and Bond (1997)
 (define-public r-tripestimation
   (package
     (name "r-tripestimation")
-    (version "0.0-44")
+    (version "0.0-45")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tripEstimation" version))
               (sha256
                (base32
-                "1ylpyzlqr6l5haxq4icnlxw6vgvc2lsfz5sm2wqqm4m6h3p0i6s6"))))
+                "0671crpgxkd0zn22rn6a4d16syzrwa59sbpl9y4lkxizds39fls1"))))
     (properties `((upstream-name . "tripEstimation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-sp r-rgdal r-mgcv r-lattice))
-    (home-page "https://github.com/mdsumner/tripEstimation")
+    (propagated-inputs (list r-zoo r-sp r-reproj r-mgcv r-lattice))
+    (home-page "https://github.com/Trackage/tripEstimation")
     (synopsis
      "Metropolis Sampler and Supporting Functions for Estimating Animal Movement from Archival Tags and Satellite Fixes")
     (description
@@ -11566,39 +11598,6 @@ project template for Rstudio'.")
 dependency-free.")
     (license license:expat)))
 
-(define-public r-tinyarray
-  (package
-    (name "r-tinyarray")
-    (version "2.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tinyarray" version))
-              (sha256
-               (base32
-                "1zqv2r8jffzlxmhp7x0i5my3kbz6lyqni06nhh2z85yqzn68lhb7"))))
-    (properties `((upstream-name . "tinyarray")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-survminer
-                             r-survival
-                             r-stringr
-                             r-pheatmap
-                             r-patchwork
-                             r-org-hs-eg-db
-                             r-magrittr
-                             r-limma
-                             r-ggplot2
-                             r-dplyr
-                             r-clusterprofiler
-                             r-biocmanager))
-    (home-page "https://github.com/xjsun1221/tinyarray")
-    (synopsis "Expression Data Analysis and Visualization")
-    (description
-     "Gene Expression Omnibus(GEO) and The Cancer Genome Atlas(TCGA) are common
-bioinformatics public databases.  We integrate the regular analysis and charts
-for expression data, to analyze and display the data concisely and intuitively.")
-    (license license:expat)))
-
 (define-public r-tinter
   (package
     (name "r-tinter")
@@ -15590,24 +15589,23 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "this.path" version))
               (sha256
                (base32
-                "1bvs4hb4hi8746lxf3il7lfsqqpzw06z4axhr76d3708nyw7m9k6"))))
+                "11aamg38q7xc3q3gfziscq7qabvz5b9wl6slv1nbh1xqa5arx2bk"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
-    (synopsis
-     "Get Executing Script's Path, from 'Rgui', 'RStudio', 'VSCode', 'Jupyter', 'source()', and 'Rscript' (Shells Including Windows Command Line / / Unix Terminal)")
+    (synopsis "Get Executing Script's Path")
     (description
-     "Determine the path of the executing script.  Works when running a line or
-selection in Rgui', RStudio', VSCode', and Jupyter', when using source()',
-sys.source()', debugSource() in RStudio', testthat::source_file()',
-knitr::knit()', box::use()', and compiler::load.cmp()', and when running from a
-shell.")
+     "Determine the path of the executing script.  Compatible with a few popular GUIs:
+Rgui', RStudio', VSCode', Jupyter', and Rscript (shell).  Compatible with
+several functions and packages: source()', sys.source()', debugSource() in
+RStudio', testthat::source_file()', knitr::knit()', compiler::loadcmp()', and
+box::use()'.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -23016,13 +23014,13 @@ examples.")
 (define-public r-tablehtml
   (package
     (name "r-tablehtml")
-    (version "2.1.1")
+    (version "2.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tableHTML" version))
               (sha256
                (base32
-                "0xqvk4smc8z6l4vpg39y1rxkx22spx7nvdsvp6xq6x7pmbsl0m8m"))))
+                "0x86q0nddkyan9yh2jaldrnc30q1n3q0fnza2fnavzbz5c2hxapw"))))
     (properties `((upstream-name . "tableHTML")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot

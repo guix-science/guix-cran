@@ -4100,26 +4100,26 @@ to denote the quantity factor.")
 (define-public r-qhscrnomo
   (package
     (name "r-qhscrnomo")
-    (version "2.2.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QHScrnomo" version))
               (sha256
                (base32
-                "1g7gx1mhvqnldqwi9dx5f7nxqrra9mgfn5rq467f1nhlv6m2kzn6"))))
+                "1lr5x0cz1lkvcglhyvxy2pbg4bvvn46ii6vr5zwlm3zg05jhzx1v"))))
     (properties `((upstream-name . "QHScrnomo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-hmisc r-cmprsk))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=QHScrnomo")
-    (synopsis "Construct Nomogram for Competing Risk Models")
+    (home-page "https://github.com/ClevelandClinicQHS/QHScrnomo")
+    (synopsis "Construct Nomograms for Competing Risks Regression Models")
     (description
-     "Nomogram is constructed to predict cumulative incidence rate, which is
-calculated by adjusting for competing causes other than that of interest.
-K-fold cross-validation function is implemented to validate the performance.
-Competing risk version of concordance index is calculated.  Methods are as
-described in: Kattan MW, Heller G, Brennan MF (2003) <doi:10.1002/sim.1574>.")
-    (license license:gpl2)))
+     "Nomograms are constructed to predict the cumulative incidence rate which is
+calculated after adjusting for competing causes to the event of interest.
+K-fold cross-validation is implemented to validate predictive accuracy using a
+competing-risk version of the concordance index.  Methods are as described in:
+Kattan MW, Heller G, Brennan MF (2003) <doi:10.1002/sim.1574>.")
+    (license license:gpl3+)))
 
 (define-public r-qhot
   (package

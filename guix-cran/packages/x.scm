@@ -624,13 +624,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.15")
+    (version "0.4.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xpose" version))
               (sha256
                (base32
-                "12zjrsy7gjwrw8zgsaqwfjvi7mdrcpf2m4v4sryc62ch1pa02gn8"))))
+                "1lxfrmr051b5kzr7763lny3hwf4g6hhlqfib48yf8xhr587jwvv0"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -648,9 +648,9 @@ diagnostics.")
     (synopsis "Diagnostics for Pharmacometric Models")
     (description
      "Diagnostics for non-linear mixed-effects (population) models from NONMEM
-<https://www.iconplc.com/innovation/nonmem/>.  xpose facilitates data import,
-creation of numerical run summary and provide ggplot2'-based graphics for data
-exploration and model diagnostics.")
+<https://www.iconplc.com/solutions/technologies/nonmem/>.  xpose facilitates
+data import, creation of numerical run summary and provide ggplot2'-based
+graphics for data exploration and model diagnostics.")
     (license license:lgpl3)))
 
 (define-public r-xportr

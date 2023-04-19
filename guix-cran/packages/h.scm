@@ -1694,13 +1694,13 @@ provided.")
 (define-public r-humanleague
   (package
     (name "r-humanleague")
-    (version "2.1.11")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "humanleague" version))
               (sha256
                (base32
-                "0i8lp04qrv3d7qdlmmglbcym2jgxylkg13qfycwfdkxkmbfqz42z"))))
+                "07zss9mkrpvbbh08a7wjd7k06w6mp34kwfcgsdfhzvzacpnmxyn3"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5152,6 +5152,29 @@ Kong Stock Exchange), see <https://www.hkex.com.hk/> for more information.  In
 addition, a function generates insert SQL statements from a dataframe.")
     (license license:gpl3)))
 
+(define-public r-hkevp
+  (package
+    (name "r-hkevp")
+    (version "1.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hkevp" version))
+              (sha256
+               (base32
+                "1a3wqafgv9rn10zkg27bgill33zhv76infpp4j84hsqmgiix0gfl"))))
+    (properties `((upstream-name . "hkevp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=hkevp")
+    (synopsis
+     "Spatial Extreme Value Analysis with the Hierarchical Model of Reich and Shaby (2012)")
+    (description
+     "Several procedures for the hierarchical kernel extreme value process of Reich
+and Shaby (2012) <DOI:10.1214/12-AOAS591>, including simulation, estimation and
+spatial extrapolation.  The spatial latent variable model
+<DOI:10.1214/11-STS376> is also included.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-hkdatasets
   (package
     (name "r-hkdatasets")
@@ -6156,13 +6179,13 @@ discovery rate, and the tail probability of false discovery proportion.")
 (define-public r-hightr
   (package
     (name "r-hightr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hightR" version))
               (sha256
                (base32
-                "1fj3rb5b9pffwivcw0y0vj7ws28wcphj509yqwn3g70rvl0an1z5"))))
+                "1jks32b49rj94kxvjihfldsv00f7v3vhspj9hb3kvxmz4b2ik5xf"))))
     (properties `((upstream-name . "hightR")))
     (build-system r-build-system)
     (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
@@ -6610,38 +6633,6 @@ for each group of samples.  Then, a nuclear norm-based dissimilarity measure is
 used to construct a dissimilarity matrix between groups based on the extracted
 associations.  Finally, hierarchical clustering is applied.")
     (license license:expat)))
-
-(define-public r-hierarchicalsets
-  (package
-    (name "r-hierarchicalsets")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hierarchicalSets" version))
-              (sha256
-               (base32
-                "0m5mnx1zmiscj0k1gnljr7fla4y1qhysi32a8q9jlah2q7grk7x9"))))
-    (properties `((upstream-name . "hierarchicalSets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-matrix
-                             r-mass
-                             r-gtable
-                             r-ggplot2
-                             r-ggdendro))
-    (home-page "https://cran.r-project.org/package=hierarchicalSets")
-    (synopsis "Set Data Visualization Using Hierarchies")
-    (description
-     "Pure set data visualization approaches are often limited in scalability due to
-the combinatorial explosion of distinct set families as the number of sets under
-investigation increases.  hierarchicalSets applies a set centric hierarchical
-clustering of the sets under investigation and uses this hierarchy as a basis
-for a range of scalable visual representations.  hierarchicalSets is especially
-well suited for collections of sets that describe comparable comparable entities
-as it relies on the sets to have a meaningful relational structure.")
-    (license license:gpl2+)))
 
 (define-public r-hierarchicalds
   (package
@@ -8725,6 +8716,41 @@ range of environmental conditions when wearing various clothing ensembles.")
      "Makes it easy to download a large number of files such as PDF files and CSV
 files, while automatically slowing down requests, letting you know where it is
 up to, and adjusting for files that have already been downloaded.")
+    (license license:expat)))
+
+(define-public r-healthyverse
+  (package
+    (name "r-healthyverse")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "healthyverse" version))
+              (sha256
+               (base32
+                "1h3d8wq6if1nkqc1d3n6y0g7i7xsvx9ci09z3jvhqx62f464ybgm"))))
+    (properties `((upstream-name . "healthyverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidydensity
+                             r-tidyaml
+                             r-tibble
+                             r-rstudioapi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-healthyr-ts
+                             r-healthyr-data
+                             r-healthyr-ai
+                             r-healthyr
+                             r-dplyr
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spsanderson/healthyverse")
+    (synopsis "Easily Install and Load the 'healthyverse'")
+    (description
+     "The healthyverse is a set of packages that work in harmony because they share
+common data representations and API design.  This package is designed to make it
+easy to install and load multiple healthyverse packages in a single step.")
     (license license:expat)))
 
 (define-public r-healthyr-ts

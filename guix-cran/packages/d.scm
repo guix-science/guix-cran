@@ -972,13 +972,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.3.1")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "0xidyjfi1mqvazwncxjzgxbkb4dcanq1i18h93wdyr4qsxs860dg"))))
+                "1ahv9prbajb5hnalzaw8g6vaakfwpb3wq5d9wkkkf10bi5r5qxk1"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1973,6 +1973,27 @@ Selesnick et al. (2005) <doi:10.1109/MSP.2005.1550194>.  Also includes the
 undecimated version and spectral bias correction described in Nelson et al.
 (2018) <doi:10.1007/s11222-017-9784-0>.  The code is partly based on the dtcwt
 Python library.")
+    (license license:expat)))
+
+(define-public r-dual-spls
+  (package
+    (name "r-dual-spls")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dual.spls" version))
+              (sha256
+               (base32
+                "1ap4wngcakfr7q5jji63zlmbz3xw02chbqj4kwg9v9g0bq90y7k4"))))
+    (properties `((upstream-name . "dual.spls")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pdist))
+    (home-page "https://cran.r-project.org/package=dual.spls")
+    (synopsis "Dual Sparse Partial Least Squares Regression")
+    (description
+     "This package provides a series of functions for fitting a dual sparse partial
+least squares (Dual-SPLS) regression.  These functions differ by the choice of
+the underlying norm.")
     (license license:expat)))
 
 (define-public r-dual
@@ -4062,50 +4083,6 @@ described in detail in Ulgen E, Sezerman OU. 2021.  driveR: driveR: a novel
 method for prioritizing cancer driver genes using somatic genomics data.  BMC
 Bioinformatics <doi:10.1186/s12859-021-04203-7>.")
     (license license:expat)))
-
-(define-public r-driveml
-  (package
-    (name "r-driveml")
-    (version "0.1.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DriveML" version))
-              (sha256
-               (base32
-                "0gbrrlz40cs95ml92k7q1lrxkm9iv5bjsr2sy9c7jzygnrlmnmms"))))
-    (properties `((upstream-name . "DriveML")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-smarteda
-                             r-sampling
-                             r-rmarkdown
-                             r-paramhelpers
-                             r-mlr
-                             r-iml
-                             r-ggplot2
-                             r-data-table
-                             r-catools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DriveML")
-    (synopsis "Self-Drive Machine Learning Projects")
-    (description
-     "Implementing some of the pillars of an automated machine learning pipeline such
-as (i) Automated data preparation, (ii) Feature engineering, (iii) Model
-building in classification context that includes techniques such as (a)
-Regularised regression [1], (b) Logistic regression [2], (c) Random Forest [3],
-(d) Decision tree [4] and (e) Extreme Gradient Boosting (xgboost) [5], and
-finally, (iv) Model explanation (using lift chart and partial dependency plots).
- Accomplishes the above tasks by running the function instead of writing lengthy
-R codes.  Also provides some additional features such as generating missing at
-random (MAR) variables and automated exploratory data analysis.  Moreover,
-function exports the model results with the required plots in an HTML vignette
-report format that follows the best practices of the industry and the academia.
-[1] Gonzales G B and De Saeger (2018) <doi:10.1038/s41598-018-21851-7>, [2]
-Sperandei S (2014) <doi:10.11613/BM.2014.003>, [3] Breiman L (2001)
-<doi:10.1023/A:1010933404324>, [4] Kingsford C and Salzberg S (2008)
-<doi:10.1038/nbt0908-1011>, [5] Chen Tianqi and Guestrin Carlos (2016)
-<doi:10.1145/2939672.2939785>.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-drip
   (package
@@ -9128,13 +9105,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dittodb" version))
               (sha256
                (base32
-                "1sfrs2hy565n6p3zbgk79zxcq527qw3h2my3dgb4g5lq3zfxhsi6"))))
+                "0v2pn7cv1myqc2kx300fmknpkljfvkv6306x1nq5cyg4xwjpgm38"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-glue r-digest r-dbi))
@@ -21899,6 +21876,27 @@ The package is lightweight (no dependencies, pure R implementations) and relies
 only on R's standard classes to represent dates and times ('Date and POSIXt');
 it aims to provide efficient implementations, through vectorisation and the use
 of R's native numeric representations of timestamps where possible.")
+    (license license:gpl3)))
+
+(define-public r-datetimerangepicker
+  (package
+    (name "r-datetimerangepicker")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DateTimeRangePicker" version))
+              (sha256
+               (base32
+                "0bbx3801i7iisyvsfssnvph01s20ynfm65kyi2kp7ga7xafwbafc"))))
+    (properties `((upstream-name . "DateTimeRangePicker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-reactr r-lubridate r-htmltools))
+    (home-page "https://github.com/stla/DateTimeRangePicker")
+    (synopsis "Datetime Range Picker Widget for Usage in 'Shiny' Applications")
+    (description
+     "This package provides a datetime range picker widget for usage in Shiny'.  It
+creates a calendar allowing to select a start date and an end date as well as
+two fields allowing to select a start time and an end time.")
     (license license:gpl3)))
 
 (define-public r-datetimeoffset

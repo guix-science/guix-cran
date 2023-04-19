@@ -14100,13 +14100,13 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
 (define-public r-egret
   (package
     (name "r-egret")
-    (version "3.0.8")
+    (version "3.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EGRET" version))
               (sha256
                (base32
-                "1dzqqbijmry48dnpixnhgcsvsz48rbyhxm2pi965js1bghfzpq17"))))
+                "1if22yq5wyfd0sx5b38xw3fbj8qlmbnkikjq77ihxd3pzfjpdl14"))))
     (properties `((upstream-name . "EGRET")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

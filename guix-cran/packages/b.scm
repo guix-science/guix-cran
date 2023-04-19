@@ -19925,6 +19925,41 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 <arXiv:1611.06649>.")
     (license license:gpl3+)))
 
+(define-public r-bayesqvgel
+  (package
+    (name "r-bayesqvgel")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesQVGEL" version))
+              (sha256
+               (base32
+                "0zjp9cr525c605y9kna97w6n6f357mk97qn1s18nygz5czs8w734"))))
+    (properties `((upstream-name . "BayesQVGEL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/kunfa/BayesQVGEL")
+    (synopsis
+     "Bayesian Quantile Variable Selection for G - E in Longitudinal Studies")
+    (description
+     "In longitudinal studies, the same subjects are measured repeatedly over time,
+leading to correlations among the repeated measurements.  Properly accounting
+for the intra-cluster correlations in the presence of data heterogeneity and
+long tailed distributions of the disease phenotype is challenging, especially in
+the context of high dimensional regressions.  Here, we aim at developing novel
+Bayesian regularized quantile mixed effect models to tackle these challenges.
+We have proposed a Bayesian variable selection in the mixed effect models for
+longitudinal genomics studies.  To dissect important gene - environment
+interactions, our model can simultaneously identify important main and
+interaction effects on the individual and group level, which have been
+facilitated by imposing the spike- and -slab priors through Laplacian shrinkage
+in the Bayesian quantile hierarchical models.  The within - subject dependence
+among data can be accommodated by incorporating the random effects.  An
+efficient Gibbs sampler has been developed to facilitate fast computation.  The
+Markov chain Monte Carlo algorithms of the proposed and alternative methods are
+efficiently implemented in C++'.")
+    (license license:gpl2)))
+
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
@@ -23741,6 +23776,35 @@ outcomes.  For more information see Sparapani, Spanbauer and McCulloch
     (description "Barnard's unconditional test for 2x2 contingency tables.")
     (license license:gpl2)))
 
+(define-public r-bark
+  (package
+    (name "r-bark")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bark" version))
+              (sha256
+               (base32
+                "16bfws2ffcqn848vfa586z3gwjh5jfb2x887pwk05hpyd1ny9cm9"))))
+    (properties `((upstream-name . "bark")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://www.R-project.org")
+    (synopsis "Bayesian Additive Regression Kernels")
+    (description
+     "Bayesian Additive Regression Kernels (BARK) provides an implementation for
+non-parametric function estimation using Levy Random Field priors for functions
+that may be represented as a sum of additive multivariate kernels.  Kernels are
+located at every data point as in Support Vector Machines, however, coefficients
+may be heavily shrunk to zero under the Cauchy process prior, or even, set to
+zero.  The number of active features is controlled by priors on precision
+parameters within the kernels, permitting feature selection.  For more details
+see Ouyang, Z (2008) \"Bayesian Additive Regression Kernels\", Duke University.
+PhD dissertation, Chapter 3 and Wolpert, R. L, Clyde, M.A, and Tu, C. (2011)
+\"Stochastic Expansions with Continuous Dictionaries Levy Adaptive Regression
+Kernels, Annals of Statistics Vol (39) pages 1916-1962 <doi:10.1214/11-AOS889>.")
+    (license license:gpl3+)))
+
 (define-public r-bardr
   (package
     (name "r-bardr")
@@ -24666,13 +24730,13 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.4.0")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "0adwxcbyy2qx30lgidca044mbnmipk5f8wdlvndn1c5074pxgzd6"))))
+                "1jf1dkknsq2x44y7v3r1ikrdkz0absiw1spzs4ypd4jbak9kzab3"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -5027,6 +5027,30 @@ Freyman et al. (2015) <doi:10.1111/2041-210X.12491> for more information about
 floristic quality assessment and the associated database.")
     (license license:expat)))
 
+(define-public r-fqadata
+  (package
+    (name "r-fqadata")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fqadata" version))
+              (sha256
+               (base32
+                "03ar7azb342qwf6rqz99wvip496clm8w6d95rf0m6c53yqjgniz2"))))
+    (properties `((upstream-name . "fqadata")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=fqadata")
+    (synopsis "Contains Regional Floristic Quality Assessment Databases")
+    (description
+     "This package contains regional Floristic Quality Assessment databases that have
+been approved or approved with reservations by the U.S. Army Corps of Engineers
+(USACE).  Paired with the fqacalc R package, these data sets allow for Floristic
+Quality Assessment metrics to be calculated.  For information on FQA see Spyreas
+(2019) <doi:10.1002/ecs2.2825>.  Both packages were developed for the USACE by
+the U.S. Army Engineer Research and Development Center's Environmental
+Laboratory.")
+    (license license:cc0)))
+
 (define-public r-fpv
   (package
     (name "r-fpv")
@@ -16555,13 +16579,13 @@ metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.4-1245")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastmatrix" version))
               (sha256
                (base32
-                "0wyqs5kcvii2ss8nwn14c396yvvh8k0hlb0zlb68aifsvjsi4bpf"))))
+                "04izdin7qv04mc1ssjj7n5am4wi6abwyvdxvvgln2la2k0d2apzv"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

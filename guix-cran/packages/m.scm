@@ -2861,13 +2861,13 @@ bias.")
 (define-public r-multisite-accuracy
   (package
     (name "r-multisite-accuracy")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multisite.accuracy" version))
               (sha256
                (base32
-                "0fx28nhmbs7nna328sf3l4sx6nrv243b60sr406ga0137c9d5nag"))))
+                "1hj1gjc8833np9cahpw1f1p2yg95xx32rbzj6l9sc65dv5ncq5jf"))))
     (properties `((upstream-name . "multisite.accuracy")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2883,13 +2883,14 @@ bias.")
     (description
      "The effects of the site may severely bias the accuracy of a multisite
 machine-learning model, even if the analysts removed them when fitting the model
-in the training set and applying the model in the test set'.  This simple R
-package estimates the accuracy of a multisite machine-learning model unbiasedly,
-as described in (Solanes et al., Psychiatry Research: Neuroimaging 2021,
-314:111313).  It currently supports the estimation of sensitivity, specificity,
-balanced accuracy (for binary or multinomial variables), the area under the
-curve, correlation, mean squarer error, and hazard ratio for binomial,
-multinomial, gaussian, and survival (time-to-event) outcomes.")
+in the training set and applying the model in the test set (Solanes et al.,
+Neuroimage 2023, 265:119800).  This simple R package estimates the accuracy of a
+multisite machine-learning model unbiasedly, as described in (Solanes et al.,
+Psychiatry Research: Neuroimaging 2021, 314:111313).  It currently supports the
+estimation of sensitivity, specificity, balanced accuracy (for binary or
+multinomial variables), the area under the curve, correlation, mean squarer
+error, and hazard ratio for binomial, multinomial, gaussian, and survival
+(time-to-event) outcomes.")
     (license license:gpl3)))
 
 (define-public r-multisensi
@@ -2940,13 +2941,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.7")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiscaleDTM" version))
               (sha256
                (base32
-                "06zikvs11k03x9k04hbd1ab2y162ghl7i5f6gwpbfskpzba7bkc5"))))
+                "0cqyqbxvq76smp8303q09xcasqwm48xjhrfxsc8iyrqg8fp08xk1"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -7243,13 +7244,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.3.6")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MSCMT" version))
               (sha256
                (base32
-                "0n88k3ad75v2lwvr5lmpmvdzx5mr9slkmn4vxpmaj045mrs8cvd0"))))
+                "1h9g6n7wjh8zx7y1lj7inkn9hz5jbf8q5lhf13m2r9qlw122rlri"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
@@ -9140,6 +9141,35 @@ mixtures studies.  For more details and tutorials, see Nguyen et al. (2022)
 Jarvis, 2010 <doi:10.1111/j.1365-2672.2010.04792.x>).  Also calculates the
 Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-mpmsim
+  (package
+    (name "r-mpmsim")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mpmsim" version))
+              (sha256
+               (base32
+                "0mwrq794qcsrm0r2p8c2vahm1jlh9q35jjzf7r963xrd70kplmvp"))))
+    (properties `((upstream-name . "mpmsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape
+                             r-popdemo
+                             r-popbio
+                             r-mcmcpack
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jonesor/mpmsim")
+    (synopsis
+     "Simulation of Matrix Population Models with Defined Life History Characteristics")
+    (description
+     "Allows users to simulate matrix population models with particular
+characteristics based on aspects of life history such as mortality trajectories
+and fertility trajectories.  Also allows the exploration of sampling error due
+to small sample size.")
+    (license license:cc-by-sa4.0)))
 
 (define-public r-mpmi
   (package
@@ -12739,6 +12769,51 @@ that text derived from a regression model.")
      "This package provides a modeltime extension that implements forecast resampling
 tools that assess time-based model performance and stability for a single time
 series, panel data, and cross-sectional time series analysis.")
+    (license license:expat)))
+
+(define-public r-modeltime-ensemble
+  (package
+    (name "r-modeltime-ensemble")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modeltime.ensemble" version))
+              (sha256
+               (base32
+                "17mnz2x7i540gzwpqca106saafvsns9ar1q09pnnzkx2m4xv322i"))))
+    (properties `((upstream-name . "modeltime.ensemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-timetk
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-parsnip
+                             r-modeltime-resample
+                             r-modeltime
+                             r-magrittr
+                             r-glue
+                             r-generics
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/business-science/modeltime.ensemble")
+    (synopsis "Ensemble Algorithms for Time Series Forecasting with Modeltime")
+    (description
+     "This package provides a modeltime extension that implements time series ensemble
+forecasting methods including model averaging, weighted averaging, and stacking.
+ These techniques are popular methods to improve forecast accuracy and
+stability.  Refer to papers such as \"Machine-Learning Models for Sales Time
+Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
     (license license:expat)))
 
 (define-public r-modeltime
@@ -17569,17 +17644,18 @@ dimensions, any initial center, and any number of clusters to expect.")
 (define-public r-mkinfer
   (package
     (name "r-mkinfer")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MKinfer" version))
               (sha256
                (base32
-                "1ravxvjr6c70c79780f53744808d53h3c924h9w2d1wmrn2nqcwz"))))
+                "0wlvlh31qwxsk00zszbzrdhk7gx226i7cyhv35h9wnawmyrxkb5g"))))
     (properties `((upstream-name . "MKinfer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
                              r-mkdescr
+                             r-miceadds
                              r-ggplot2
                              r-exactranktests
                              r-boot
@@ -17595,8 +17671,8 @@ ISBN:978-0-511-80284-3) as well as Hsu (Hedderich and Sachs (2018),
 ISBN:978-3-662-56657-2), permutation (Janssen (1997),
 <doi:10.1016/S0167-7152(97)00043-6>), bootstrap (Davison and Hinkley (1997),
 ISBN:978-0-511-80284-3) and multiple imputation (Barnard and Rubin (1999),
-<doi:10.1093/biomet/86.4.948>) t-test.  Graphical visualization by volcano and
-Bland-Altman plots (Bland and Altman (1986),
+<doi:10.1093/biomet/86.4.948>) t-test and Wilcoxon tests.  Graphical
+visualization by volcano and Bland-Altman plots (Bland and Altman (1986),
 <doi:10.1016/S0140-6736(86)90837-8>; Shieh (2018),
 <doi:10.1186/s12874-018-0505-y>).")
     (license license:lgpl3)))
@@ -17604,13 +17680,13 @@ Bland-Altman plots (Bland and Altman (1986),
 (define-public r-mkin
   (package
     (name "r-mkin")
-    (version "1.2.1")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mkin" version))
               (sha256
                (base32
-                "0k1c7rr8y12glg6n2lvhka2h7dipxjm3sjrav941l4lahpc60848"))))
+                "1kqc9y3qd706bw2wsjzrpzbpyppgpnvf5fdi5cba3w94s5ksxh96"))))
     (properties `((upstream-name . "mkin")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17634,10 +17710,10 @@ compiler (on windows: Rtools') is installed, differential equation models are
 solved using automatically generated C functions.  Heteroscedasticity can be
 taken into account using variance by variable or two-component error models as
 described by Ranke and Meinecke (2018) <doi:10.3390/environments6120124>.
-Interfaces to several nonlinear mixed-effects model packages are available, some
-of which are described by Ranke et al. (2021) <doi:10.3390/environments8080071>.
- Please note that no warranty is implied for correctness of results or fitness
-for a particular purpose.")
+Hierarchical degradation models can be fitted using nonlinear mixed-effects
+model packages as a back end as described by Ranke et al. (2021)
+<doi:10.3390/environments8080071>.  Please note that no warranty is implied for
+correctness of results or fitness for a particular purpose.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mkdescr
@@ -20557,25 +20633,25 @@ MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirai" version))
               (sha256
                (base32
-                "01dnf4a1a9g38cnlk628bp628wlfwa56nwd6zv8p2rya0bri95n4"))))
+                "1kfgwmgszg15bn5qn3ihdvrkvdmc8j3ckc2vcql4ix1si5r6p1nn"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
-     "Lightweight parallel code execution, local or distributed across the network.
-Designed for simplicity, a mirai evaluates an arbitrary expression
-asynchronously, resolving automatically upon completion.  Leverages nanonext and
-NNG (Nanomsg Next Gen) to provide efficient task scheduling, scalability beyond
-R connection limits, and transports faster than TCP/IP for inter-process
-communications.")
+     "Lightweight parallel code execution and distributed computing.  Designed for
+simplicity, a mirai evaluates an R expression asynchronously, on local or
+network resources, resolving automatically upon completion.  Features efficient
+task scheduling, scalability beyond R connection limits, and transports faster
+than TCP/IP for inter-process communications, courtesy of nanonext and NNG
+(Nanomsg Next Gen).")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -23593,13 +23669,13 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 (define-public r-mgwrsar
   (package
     (name "r-mgwrsar")
-    (version "1.0")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mgwrsar" version))
               (sha256
                (base32
-                "1bmwp5fp5gcgalyyh0cjv4gvngl2lsv38vniicgqgw78gqi1xlhv"))))
+                "19rsw5qjcq3bjqajz83dbkjdgh1dazpw7wvkbn4gdcksgmaxm5l2"))))
     (properties `((upstream-name . "mgwrsar")))
     (build-system r-build-system)
     (propagated-inputs (list r-spgwr
@@ -23611,14 +23687,19 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
                              r-qlcmatrix
                              r-nabor
                              r-microbenchmark
+                             r-mgcv
+                             r-mboost
                              r-matrix
                              r-mapview
                              r-leaflet
                              r-knitr
                              r-htmltools
+                             r-gridextra
                              r-ggplot2
                              r-foreach
-                             r-doparallel))
+                             r-dplyr
+                             r-doparallel
+                             r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mgwrsar")
     (synopsis "GWR and MGWR with Spatial Autocorrelation")
@@ -33608,13 +33689,13 @@ Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
 (define-public r-mazamaspatialutils
   (package
     (name "r-mazamaspatialutils")
-    (version "0.8.1")
+    (version "0.8.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MazamaSpatialUtils" version))
               (sha256
                (base32
-                "1pw4hgd4bjzm0vbkry6ajndlb337x257amr5zwxr8zaal4j0zrgq"))))
+                "1pg9caf13jscqc56lz5bsayy68mzi603nv8b927kijsls4sp54i9"))))
     (properties `((upstream-name . "MazamaSpatialUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -38282,13 +38363,13 @@ this package and <https://CRAN.R-project.org/package=DockerParallel>.")
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MAMS" version))
               (sha256
                (base32
-                "05pnrxziwsgnhy05fac8smxcm65zxi2dl7lar2jakiamd2hxv3c2"))))
+                "1mrdn9klqjpf74wvb5brm79jy260qb1n12rpqmqd38i5hrkpcqsx"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-future-apply r-future))
@@ -39344,6 +39425,36 @@ unobserved system components.  Implements the MAGI method (MAnifold-constrained
 Gaussian process Inference) of Yang, Wong, and Kou (2021)
 <doi:10.1073/pnas.2020397118>.")
     (license license:expat)))
+
+(define-public r-magee
+  (package
+    (name "r-magee")
+    (version "1.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MAGEE" version))
+              (sha256
+               (base32
+                "0zgzns4vjr70p1wczar28dmkx8yms74z7vq1c4k30prjfsi1335r"))))
+    (properties `((upstream-name . "MAGEE")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-gmmat
+                             r-foreach
+                             r-data-table
+                             r-compquadform))
+    (home-page "https://cran.r-project.org/package=MAGEE")
+    (synopsis "Mixed Model Association Test for GEne-Environment Interaction")
+    (description
+     "Use a glmmkin class object (GMMAT package) from the null model to perform
+generalized linear mixed model-based single-variant and variant set main effect
+tests, gene-environment interaction tests, and joint tests for association, as
+proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
+    (license license:gpl3+)))
 
 (define-public r-magclass
   (package

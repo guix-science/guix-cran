@@ -9839,6 +9839,36 @@ Most of the algorithms are described in the PhD thesis of Roos (2018)
 <https://tel.archives-ouvertes.fr/tel-01943718>.")
     (license license:gpl3)))
 
+(define-public r-gmgeostats
+  (package
+    (name "r-gmgeostats")
+    (version "0.11.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gmGeostats" version))
+              (sha256
+               (base32
+                "19kf409yhq13689akqz88dj0fq02falbh0j0kkvh0l0vymx4hj7y"))))
+    (properties `((upstream-name . "gmGeostats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rcolorbrewer
+                             r-gstat
+                             r-foreach
+                             r-compositions
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://codebase.helmholtz.cloud/geomet/gmGeostats")
+    (synopsis "Geostatistics for Compositional Analysis")
+    (description
+     "Support for geostatistical analysis of multivariate data, in particular data
+with restrictions, e.g. positive amounts, compositions, distributional data,
+microstructural data, etc.  It includes descriptive analysis and modelling for
+such data, both from a two-point Gaussian perspective and multipoint
+perspective.  The methods mainly follow Tolosana-Delgado, Mueller and van den
+Boogaart (2018) <doi:10.1007/s11004-018-9769-3>.")
+    (license (list license:cc-by-sa4.0 license:gpl2+))))
+
 (define-public r-gmfd
   (package
     (name "r-gmfd")
@@ -12160,6 +12190,38 @@ also possible to include a component in the model with non-tensor design e.g an
 intercept.  Also provided are functions, glamlassoRR() and glamlassoS(), fitting
 special cases of GLAMs.")
     (license license:gpl3)))
+
+(define-public r-gkrls
+  (package
+    (name "r-gkrls")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gKRLS" version))
+              (sha256
+               (base32
+                "00mq7701h7mr9ki14vyggizcy0szwja56xlvssjdykg2jx94557x"))))
+    (properties `((upstream-name . "gKRLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-mlr3
+                             r-mgcv
+                             r-matrix))
+    (home-page "https://github.com/mgoplerud/gKRLS")
+    (synopsis "Generalized Kernel Regularized Least Squares")
+    (description
+     "Kernel regularized least squares, also known as kernel ridge regression, is a
+flexible machine learning method.  This package implements this method by
+providing a smooth term for use with mgcv and uses random sketching to
+facilitate scalable estimation on large datasets.  It provides additional
+functions for calculating marginal effects after estimation and for use with
+ensembles ('SuperLearning'), double/debiased machine learning ('DoubleML'), and
+robust/clustered standard errors ('sandwich').  Chang and Goplerud (2023)
+<arXiv:2209.14355> provide further details.")
+    (license license:gpl2+)))
 
 (define-public r-gkgraphr
   (package
@@ -16410,6 +16472,27 @@ system.")
      "This package provides a user-friendly, highly customizable R package for
 building horizon plots in the ggplot2 environment.")
     (license license:gpl3)))
+
+(define-public r-gghist
+  (package
+    (name "r-gghist")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gghist" version))
+              (sha256
+               (base32
+                "0ncxx2ckc78gaa9dyddyli1wca7kkz33v13mplhnxd33gkk9pxmz"))))
+    (properties `((upstream-name . "gghist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/frederikziebell/gghist")
+    (synopsis "Plot the Histogram of a Numeric Vector")
+    (description
+     "Wrapper around geom_histogram() of ggplot2 to plot the histogram of a numeric
+vector.  This is especially useful, since qplot() was deprecated in ggplot2
+3.4.0.")
+    (license license:gpl3+)))
 
 (define-public r-gghilbertstrings
   (package

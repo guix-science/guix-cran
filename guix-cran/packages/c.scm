@@ -399,6 +399,37 @@ visual styles and several available layouts.  Demo Shiny applications are
 provided in the package code.")
     (license license:expat)))
 
+(define-public r-cyclotomic
+  (package
+    (name "r-cyclotomic")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cyclotomic" version))
+              (sha256
+               (base32
+                "0v01r73lkx0k8bdypm3smva8ghqlzpdbpyi6zw8klk4wa1dm4wjk"))))
+    (properties `((upstream-name . "cyclotomic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-verylargeintegers r-primes r-maybe r-intmap
+                             r-gmp))
+    (home-page "https://github.com/stla/cyclotomic")
+    (synopsis "The Field of Cyclotomic Numbers")
+    (description
+     "The cyclotomic numbers are complex numbers that can be thought of as the
+rational numbers extended with the roots of unity.  They are represented
+exactly, enabling exact computations.  They contain the Gaussian rationals
+(complex numbers with rational real and imaginary parts) as well as the square
+roots of all rational numbers.  They also contain the sine and cosine of all
+rational multiples of pi.  The algorithms implemented in this package are taken
+from the Haskell package cyclotomic', whose algorithms are adapted from code by
+Martin Schoenert and Thomas Breuer in the GAP project
+(<https://www.gap-system.org/>).  Cyclotomic numbers have applications in number
+theory, algebraic geometry, algebraic number theory, coding theory, and in the
+theory of graphs and combinatorics.  They have connections to the theory of
+modular functions and modular curves.")
+    (license license:gpl3)))
+
 (define-public r-cyclops
   (package
     (name "r-cyclops")
@@ -6188,13 +6219,13 @@ approach.")
 (define-public r-cre
   (package
     (name "r-cre")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CRE" version))
               (sha256
                (base32
-                "0krjsgh4jfj7sp03n22xrhxjf5zllip195d73lfbcsmf76lrzp1n"))))
+                "1igvm186dqgg65s7gk410cxw5aff8qj68m71cwgn4s3p22arw2k3"))))
     (properties `((upstream-name . "CRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -35045,13 +35076,13 @@ High-Dimensional Variable Selection, <arXiv:1802.08178>.")
 (define-public r-carrot
   (package
     (name "r-carrot")
-    (version "2.5.2")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CARRoT" version))
               (sha256
                (base32
-                "1dyxmllp01wb2yrmcwb47n5zwyzfrdaqhif4bcpmcgfybqfxical"))))
+                "0ijp8dc2c3jp8sk443jfgyy4q7yxlcd0jk6hrzm57jbnpwbmjxpv"))))
     (properties `((upstream-name . "CARRoT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-nnet r-foreach r-doparallel))
@@ -35059,20 +35090,22 @@ High-Dimensional Variable Selection, <arXiv:1802.08178>.")
     (synopsis
      "Predicting Categorical and Continuous Outcomes Using One in Ten Rule")
     (description
-     "Predicts categorical or continuous outcomes while concentrating on four key
-points.  These are Cross-validation, Accuracy, Regression and Rule of Ten or
-\"one in ten rule\" (CARRoT).  It performs the cross-validation specified number
+     "Predicts categorical or continuous outcomes while concentrating on a number of
+key points.  These are Cross-validation, Accuracy, Regression and Rule of Ten or
+\"one in ten rule\" (CARRoT), and, in addition to it R-squared statistics, prior
+knowledge on the dataset etc.  It performs the cross-validation specified number
 of times by partitioning the input into training and test set and fitting
 linear/multinomial/binary regression models to the training set.  All regression
-models satisfying a rule of ten events per variable are fitted and the ones with
-the best predictive power are given as an output.  Best predictive power is
-understood as highest accuracy in case of binary/multinomial outcomes, smallest
-absolute and relative errors in case of continuous outcomes.  For binary case
-there is also an option of finding a regression model which gives the highest
-AUROC (Area Under Receiver Operating Curve) value.  The option of parallel
-toolbox is also available.  Methods are described in Peduzzi et al. (1996)
-<doi:10.1016/S0895-4356(96)00236-3> and Rhemtulla et al. (2012)
-<doi:10.1037/a0029315>.")
+models satisfying chosen constraints are fitted and the ones with the best
+predictive power are given as an output.  Best predictive power is understood as
+highest accuracy in case of binary/multinomial outcomes, smallest absolute and
+relative errors in case of continuous outcomes.  For binary case there is also
+an option of finding a regression model which gives the highest AUROC (Area
+Under Receiver Operating Curve) value.  The option of parallel toolbox is also
+available.  Methods are described in Peduzzi et al. (1996)
+<doi:10.1016/S0895-4356(96)00236-3> , Rhemtulla et al. (2012)
+<doi:10.1037/a0029315>, Riley et al. (2018) <doi:10.1002/sim.7993>, Riley et al.
+(2019) <doi:10.1002/sim.7992>.")
     (license license:gpl2)))
 
 (define-public r-carpools

@@ -1896,6 +1896,49 @@ ungulate herds, baboon troops) collected from GPS trackers or computer vision
 tracking software.")
     (license license:gpl3)))
 
+(define-public r-swaprinc
+  (package
+    (name "r-swaprinc")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "swaprinc" version))
+              (sha256
+               (base32
+                "0r90w387chh4xgqn7jfi2wawsgr8faansp94hrp4vkhdmbbsb86z"))))
+    (properties `((upstream-name . "swaprinc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-magrittr
+                             r-lme4
+                             r-gifi
+                             r-dplyr
+                             r-broom-mixed
+                             r-broom))
+    (home-page "https://github.com/mncube/swaprinc")
+    (synopsis "Swap Principal Components into Regression Models")
+    (description
+     "Obtaining accurate and stable estimates of regression coefficients can be
+challenging when the suggested statistical model has issues related to
+multicollinearity, convergence, or overfitting.  One solution is to use
+principal component analysis (PCA) results in the regression, as discussed in
+Chan and Park (2005) <doi:10.1080/01446190500039812>.  The swaprinc() package
+streamlines comparisons between a raw regression model with the full set of raw
+independent variables and a principal component regression model where principal
+components are estimated on a subset of the independent variables, then swapped
+into the regression model in place of those variables.  The swaprinc() function
+compares one raw regression model to one principal component regression model,
+while the compswap() function compares one raw regression model to many
+principal component regression models.  Package functions include parameters to
+center, scale, and undo centering and scaling, as described by Harvey and Hansen
+(2022)
+<https://cran.r-project.org/package=LearnPCA/vignettes/Vig_03_Step_By_Step_PCA.pdf>.
+ Additionally, the package supports using Gifi methods to extract principal
+components from categorical variables, as outlined by Rossiter (2021)
+<https://www.css.cornell.edu/faculty/dgr2/_static/files/R_html/NonlinearPCA.html#2_Package>.")
+    (license license:expat)))
+
 (define-public r-swamp
   (package
     (name "r-swamp")
@@ -8553,18 +8596,18 @@ models).")
 (define-public r-stopdetection
   (package
     (name "r-stopdetection")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stopdetection" version))
               (sha256
                (base32
-                "07l2rr047p0hpvgmr7c5x0by456n107r9d0qj4xrrigq5i6srrqk"))))
+                "0hgz18fiqp6ykv9h711fbjx234cjiwa6gifdgg460b0pib8hc66i"))))
     (properties `((upstream-name . "stopdetection")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-geodist r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stopdetection")
+    (home-page "https://github.com/daniellemccool/stopdetection")
     (synopsis
      "Stop Detection in Timestamped Trajectory Data using Spatiotemporal Clustering")
     (description
@@ -9028,13 +9071,13 @@ mortality projections and simulations.")
 (define-public r-stminsights
   (package
     (name "r-stminsights")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stminsights" version))
               (sha256
                (base32
-                "1ll2chjz9r08lya2z7dnxjqdnwrvw7jn05mpvvxi1w8s2npsggib"))))
+                "1a0wglrsl5sr7fc6vhiwva0lmr0ac3ns4rfis2y8ib2vxxwhwb8j"))))
     (properties `((upstream-name . "stminsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -38899,16 +38942,16 @@ input binding that works with various DOM elements.")
 (define-public r-shiny-router
   (package
     (name "r-shiny-router")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shiny.router" version))
               (sha256
                (base32
-                "1rlmpxly9wy88z6d15hdxwd5q9pv7x9kknc4g62rcq2iy7pycsq2"))))
+                "1zg8cdxmw620i1iv7jrghd768gw7iv52hi6lx79xvnfjz8w4si3x"))))
     (properties `((upstream-name . "shiny.router")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmltools r-glue))
+    (propagated-inputs (list r-shiny r-rlang r-htmltools r-glue))
     (home-page "https://appsilon.github.io/shiny.router/")
     (synopsis "Basic Routing for Shiny Web Applications")
     (description
@@ -39751,27 +39794,26 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharp" version))
               (sha256
                (base32
-                "1fnrdgja2yrhcjlgh1yrp5sqy9806fdpm630b0f2c4qhv6jbk9px"))))
+                "16jclpxw8li21qi7j6bilc278fcrnipvd7lprqzjjzyw743x0rn0"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-regsem
                              r-rdpack
-                             r-randomcolor
                              r-mclust
-                             r-mass
-                             r-impute
+                             r-lavaan
                              r-igraph
-                             r-huge
                              r-glmnet
                              r-glassofast
                              r-fake
-                             r-beepr))
+                             r-beepr
+                             r-abind))
     (home-page "https://github.com/barbarabodinier/sharp")
     (synopsis "Stability-enHanced Approaches using Resampling Procedures")
     (description
@@ -39779,13 +39821,12 @@ illustrate function usage.")
 <doi:10.1111/j.1467-9868.2010.00740.x>) and consensus clustering (S Monti et al
 (2003) <doi:10.1023/A:1023949509487>), resampling techniques are used to enhance
 the reliability of the results.  In this package, hyper-parameters are
-calibrated by maximising model stability, which is measured by the negative
-log-likelihood under the null hypothesis that all selection (or co-membership)
-probabilities are identical (B Bodinier et al (2021) <arXiv:2106.02521>).
-Functions are readily implemented for the use of LASSO regression, sparse PCA,
-sparse (group) PLS or graphical LASSO in stability selection, and hierarchical
-clustering, partitioning around medoids, K means or Gaussian mixture models in
-consensus clustering.")
+calibrated by maximising model stability, which is measured under the null
+hypothesis that all selection (or co-membership) probabilities are identical (B
+Bodinier et al (2021) <arXiv:2106.02521>).  Functions are readily implemented
+for the use of LASSO regression, sparse PCA, sparse (group) PLS or graphical
+LASSO in stability selection, and hierarchical clustering, partitioning around
+medoids, K means or Gaussian mixture models in consensus clustering.")
     (license license:gpl3+)))
 
 (define-public r-shar
@@ -47139,13 +47180,13 @@ Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
 (define-public r-sdlfilter
   (package
     (name "r-sdlfilter")
-    (version "2.3.1")
+    (version "2.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDLfilter" version))
               (sha256
                (base32
-                "0rbq9x6805l4pm66lqa8lc1p81nps9ndbmalhfzhjibxd3d4mgyn"))))
+                "197y4kvjn07c3jnx3ayr496h70r87r7f4c7r0swcdkj9ir93dz4g"))))
     (properties `((upstream-name . "SDLfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars
@@ -53236,15 +53277,16 @@ Spatial Sampling\".")
 (define-public r-samplingr
   (package
     (name "r-samplingr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samplingR" version))
               (sha256
                (base32
-                "0myxp8rh8rgmashrkqiazjfis9y8y7zadghvfviwfflcyd3vl43l"))))
+                "0wrnyqnjvd2bhifhar14nh71m6qfwys7jnyms04zsl8fjpmsh9c2"))))
     (properties `((upstream-name . "samplingR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=samplingR")
     (synopsis "Sampling and Estimation Methods")
     (description

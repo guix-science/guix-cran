@@ -8638,48 +8638,6 @@ a txt file to be used for statistical analysis in other statistical programs.")
 Quebec between 1980 and 2020.")
     (license license:expat)))
 
-(define-public r-premium
-  (package
-    (name "r-premium")
-    (version "3.2.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PReMiuM" version))
-              (sha256
-               (base32
-                "1hxv4h359fl3lx3d17cq1jjnl423skbp7wccrnrhf68d8h7gx2ff"))))
-    (properties `((upstream-name . "PReMiuM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sf
-                             r-rcppeigen
-                             r-rcpp
-                             r-plotrix
-                             r-ggplot2
-                             r-gamlss-dist
-                             r-data-table
-                             r-cluster
-                             r-bh))
-    (home-page "https://www.silvialiverani.com/software/")
-    (synopsis "Dirichlet Process Bayesian Clustering, Profile Regression")
-    (description
-     "Bayesian clustering using a Dirichlet process mixture model.  This model is an
-alternative to regression models, non-parametrically linking a response vector
-to covariate data through cluster membership.  The package allows Bernoulli,
-Binomial, Poisson, Normal, survival and categorical response, as well as Normal
-and discrete covariates.  It also allows for fixed effects in the response
-model, where a spatial CAR (conditional autoregressive) term can be also
-included.  Additionally, predictions may be made for the response, and missing
-values for the covariates are handled.  Several samplers and label switching
-moves are implemented along with diagnostic tools to assess convergence.  A
-number of R functions for post-processing of the output are also provided.  In
-addition to fitting mixtures, it may additionally be of interest to determine
-which covariates actively drive the mixture components.  This is implemented in
-the package as variable selection.  The main reference for the package is
-Liverani, Hastie, Azizi, Papathomas and Richardson (2015)
-<doi:10.18637/jss.v064.i07>.")
-    (license license:gpl2)))
-
 (define-public r-preknitposthtmlrender
   (package
     (name "r-preknitposthtmlrender")
@@ -9634,13 +9592,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRECAST" version))
               (sha256
                (base32
-                "1148c9376nhpzyj6xra010g8j8gi6ghx7jkcbi734n4dajx1pana"))))
+                "1zvg9fbydlxw0j0rs6j0i1kyqny0ai1rgz8sdrm2kq5da9riqwbs"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -10224,13 +10182,13 @@ Luo and Chen (2021, <doi:10.4310/21-SII706>).")
 (define-public r-ppseq
   (package
     (name "r-ppseq")
-    (version "0.2.0")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ppseq" version))
               (sha256
                (base32
-                "0ir5jm3cgpgcngrq334f2s66lsvhd0vxsiz5glj371slc8jxkwj6"))))
+                "1n3ij7dl4g5ky3s52hlfcmbza0vcb6bymka6hyqhycndzws005v7"))))
     (properties `((upstream-name . "ppseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13564,17 +13522,17 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "4.7")
+    (version "5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pomp" version))
               (sha256
                (base32
-                "1kgqp4lsk3s3n68h22f1lb0vcyhv7p2v88jvnbza487q9h9ba1rg"))))
+                "0pj1fk3id2ilycwky0204i09x0kjwwl3jgibd98d6441hn2fvj6i"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-plyr r-mvtnorm r-digest r-desolve r-coda))
+    (propagated-inputs (list r-mvtnorm r-dplyr r-digest r-desolve r-coda))
     (home-page "https://kingaa.github.io/pomp/")
     (synopsis "Statistical Inference for Partially Observed Markov Processes")
     (description
@@ -17166,6 +17124,25 @@ other functions.  Also contains a number of alternative color palettes and HSL
 color space based tools to modify colors or palettes.")
     (license license:gpl2+)))
 
+(define-public r-plottools
+  (package
+    (name "r-plottools")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PlotTools" version))
+              (sha256
+               (base32
+                "1dwyphms7zrn3hkayy24jvabd79sjsk0kkbisk1dj6242d5ncywv"))))
+    (properties `((upstream-name . "PlotTools")))
+    (build-system r-build-system)
+    (home-page "https://ms609.github.io/PlotTools/")
+    (synopsis "Add Continuous Legends to Plots")
+    (description
+     "Annotate plots with legends for continuous variables and colour spectra using
+the base graphics plotting tools.")
+    (license license:gpl2+)))
+
 (define-public r-plotsemm
   (package
     (name "r-plotsemm")
@@ -19824,13 +19801,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.0.4")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgcache" version))
               (sha256
                (base32
-                "0nqgdpb3wh9zl9j566l6ih8snk7mi78fkhhrwl9x5g3hiwg13n88"))))
+                "01p2yaidz8w51ljybrb3v7gri9fp4bcz5hrj5jbrg002c0h3rh6g"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs
@@ -26073,13 +26050,13 @@ please refer to Cuntrera, D., Augugliaro, L., & Muggeo, V. M. (2022)
 (define-public r-penaft
   (package
     (name "r-penaft")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penAFT" version))
               (sha256
                (base32
-                "1sqxw3kny7ys9b0zldnfdblg50zccp6kscqy0sx0h7g577zdyk09"))))
+                "1yhg9fr3fwpxxcp0ri4iqfwa9f2y134y5b13qfils4y15cp0rnzj"))))
     (properties `((upstream-name . "penAFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-irlba r-ggplot2))
@@ -31538,13 +31515,13 @@ are included.")
 (define-public r-pareto
   (package
     (name "r-pareto")
-    (version "2.4.4")
+    (version "2.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Pareto" version))
               (sha256
                (base32
-                "0sracxn657xpc20kzmvgba438l0x616pyara5ays9n9fpkbx27bw"))))
+                "19mawxs743i7lb9inh51xdfpx0s72cvcw4iylr250r17r6qp4y8g"))))
     (properties `((upstream-name . "Pareto")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -31875,13 +31852,13 @@ by time-resolved spectroscopy via a Shiny GUI.")
 (define-public r-parallelplot
   (package
     (name "r-parallelplot")
-    (version "0.2.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parallelPlot" version))
               (sha256
                (base32
-                "04yr9fbvf3w0pw899zvk9ljjhsz775aiyhspm0bvaqaxzv8fkgx3"))))
+                "12rpzcz1nc8c9rnsdg7kx6gh98plhp2jv22h58gg5gyl0pcsh2hx"))))
     (properties `((upstream-name . "parallelPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -33502,13 +33479,13 @@ install ashr (<https://github.com/stephens999/ashr>) and CorShrink
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palaeoverse" version))
               (sha256
                (base32
-                "010h6j6riq4hfzxj7jc54hkgj08mq316f2phq4pzpp7lq820mn9r"))))
+                "02cfj7v88gk984an23dh63apc2a57362fm7j1y8vvy87kjz58m15"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist
@@ -33517,7 +33494,6 @@ install ashr (<https://github.com/stephens999/ashr>) and CorShrink
                              r-httr
                              r-h3jsr
                              r-geosphere
-                             r-deeptime
                              r-curl
                              r-ape))
     (native-inputs (list r-knitr))
@@ -33968,13 +33944,13 @@ further factors.  CI are not adjusted for multiplicity.")
 (define-public r-pairwise
   (package
     (name "r-pairwise")
-    (version "0.6.0-0")
+    (version "0.6.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pairwise" version))
               (sha256
                (base32
-                "0mcd5lm6yk1hd1r1ffs0l3gj85bamnjw77i6lh4973lggs0zxzdc"))))
+                "03dvpyr0hdz5a4wdim791m69825q762pwahlv3vwlnqas7niw3mf"))))
     (properties `((upstream-name . "pairwise")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pairwise")

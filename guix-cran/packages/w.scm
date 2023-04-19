@@ -8,7 +8,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages perl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
@@ -865,29 +864,6 @@ Convenient data normalization is supported in various different modes, parameter
 estimation via permutations or boot-strap as well as flexible testing of
 multiple pair-wise combinations using the framework of limma is provided, too.")
     (license license:gpl3)))
-
-(define-public r-writexls
-  (package
-    (name "r-writexls")
-    (version "6.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "WriteXLS" version))
-              (sha256
-               (base32
-                "1dqr98kx930y6mcvb9b39xiwshhs250gkd2vw2v6iil34sl90jv4"))))
-    (properties `((upstream-name . "WriteXLS")))
-    (build-system r-build-system)
-    (inputs (list perl))
-    (home-page "https://github.com/marcschwartz/WriteXLS")
-    (synopsis
-     "Cross-Platform Perl Based R Function to Create Excel 2003 (XLS) and Excel 2007 (XLSX) Files")
-    (description
-     "Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007
-(XLSX) files from one or more data frames.  Each data frame will be written to a
-separate named worksheet in the Excel spreadsheet.  The worksheet name will be
-the name of the data frame it contains or can be specified by the user.")
-    (license license:gpl2+)))
 
 (define-public r-write-snns
   (package
@@ -2385,6 +2361,26 @@ for Norway spruce sawn timber from Austria and reference values of means and
 standard deviations of grade determining properties from literature for a number
 of European countries are provided, as well.")
     (license license:expat)))
+
+(define-public r-woodendesc
+  (package
+    (name "r-woodendesc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "woodendesc" version))
+              (sha256
+               (base32
+                "0x5gzzalldayb499sxg8rb2254ysqlc7cjq68qqn3yk0118ppdnq"))))
+    (properties `((upstream-name . "woodendesc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-versionsort r-httr r-digest))
+    (home-page "https://github.com/turtletopia/woodendesc")
+    (synopsis "Find Packages and Their Dependencies in Any 'R' Repository")
+    (description
+     "Simplifies getting the available packages, their version codes and dependencies
+from any R repository.  Uses extensive caching for repeated queries.")
+    (license license:gpl3+)))
 
 (define-public r-woodburymatrix
   (package

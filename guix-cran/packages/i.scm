@@ -5789,6 +5789,29 @@ regression, logistic regression and Poisson regression are used for continuous,
 binary and count mediator/outcome variables respectively.")
     (license license:expat)))
 
+(define-public r-intmap
+  (package
+    (name "r-intmap")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intmap" version))
+              (sha256
+               (base32
+                "1fxq0jkahangv4pwsvnrr4iq2y6qp61l81b28yzwl74b0lmx6hbf"))))
+    (properties `((upstream-name . "intmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6 r-maybe r-bh))
+    (home-page "https://github.com/stla/intmap")
+    (synopsis "Ordered Containers with Integer Keys")
+    (description
+     "This package provides a key-value store data structure.  The keys are integers
+and the values can be any R object.  This is like a list but indexed by a set of
+integers, not necessarily contiguous and possibly negative.  The implementation
+uses a R6 class.  These containers are not faster than lists but their usage can
+be more convenient for certain situations.")
+    (license license:gpl3)))
+
 (define-public r-intlim
   (package
     (name "r-intlim")
@@ -6697,18 +6720,19 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
 (define-public r-interactionpower
   (package
     (name "r-interactionpower")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InteractionPoweR" version))
               (sha256
                (base32
-                "09d3v425nj8ph8qsm85z68rixq7k1yppf5v0jmh8klbhn5rikajn"))))
+                "1mff2kasdrkk56xqvw66m8sn6186dk0nbv8bx0izpr5qf9dz308q"))))
     (properties `((upstream-name . "InteractionPoweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-polynom
+                             r-matrix
                              r-mass
                              r-ggplot2
                              r-ggbeeswarm
@@ -9059,16 +9083,16 @@ method of Kassanjee et al. (2012) <doi:10.1097/EDE.0b013e3182576c07>.")
 (define-public r-incr
   (package
     (name "r-incr")
-    (version "1.1.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incR" version))
               (sha256
                (base32
-                "0q41bs7pf6hqyfwvcwc2sxq44jq95qq3qsddz53f8gphwjsyf1v7"))))
+                "0mis4hwd9mw7ji322yqidiz8d9qsb4jkpndfdskxrrmpfpha9r91"))))
     (properties `((upstream-name . "incR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgeos r-maptools r-lubridate r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-suncalc r-lubridate r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=incR")
     (synopsis "Analysis of Incubation Data")
@@ -12868,13 +12892,13 @@ D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
 (define-public r-idopnetwork
   (package
     (name "r-idopnetwork")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idopNetwork" version))
               (sha256
                (base32
-                "0cqnand3yfw2pwanmradwqdd9dyrxw99iric023w12bva826aalz"))))
+                "0gp9d5p7nqnsfy2n3lxhinmldriwyzq55ilmi5gq3vavf1h0iw24"))))
     (properties `((upstream-name . "idopNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -12887,9 +12911,8 @@ D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
                              r-ggplot2
                              r-desolve))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=idopNetwork")
-    (synopsis
-     "Cartographic Tool to Chart Spatial Microbial Interaction Networks")
+    (home-page "https://github.com/cxzdsa2332/idopNetwork")
+    (synopsis "Network Tool to Dissect Spatial Community Ecology")
     (description
      "Most existing approaches for network reconstruction can only infer an overall
 network and, also, fail to capture a complete set of network properties.  To
@@ -14855,6 +14878,37 @@ codes, and lists of the chapter and sub-chapter headings and the ranges of ICD
 codes they encompass.  There are also two sample datasets.  These data are used
 by the icd package for finding comorbidities.")
     (license license:gpl3)))
+
+(define-public r-icctraj
+  (package
+    (name "r-icctraj")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "iccTraj" version))
+              (sha256
+               (base32
+                "02fzqgg459y6d4f96fgvj0c5qvfpnp60d3gz7ddhf6zkk2rzhd0q"))))
+    (properties `((upstream-name . "iccTraj")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trajectories
+                             r-spacetime
+                             r-sp
+                             r-purrr
+                             r-magic
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=iccTraj")
+    (synopsis
+     "Estimates the Intraclass Correlation Coefficient for Trajectory Data")
+    (description
+     "Estimates the intraclass correlation coefficient for trajectory data using a
+matrix of distances between trajectories.  The distances implemented are the
+extended Hausdorff distances (Min et al.  2007) <doi:10.1080/13658810601073315>
+and the discrete FrÃ©chet distance (Magdy et al.  2015)
+<doi:10.1109/IntelCIS.2015.7397286>.")
+    (license license:gpl2+)))
 
 (define-public r-iccforest
   (package

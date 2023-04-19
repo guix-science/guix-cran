@@ -2828,13 +2828,13 @@ Tiingo (<https://www.tiingo.com>).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rts2" version))
               (sha256
                (base32
-                "1f5w7lpaqi02qw8k56lfmb2b9vhznfwdjwf5kpm40wgkpl81wkf8"))))
+                "0iv2mn4w3agqd921sf44rq6plwcrb4sxazyf455nysdmjbcbsc86"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -7080,13 +7080,13 @@ can be downloaded at <https://rscatree.weebly.com/>.")
 (define-public r-rsc
   (package
     (name "r-rsc")
-    (version "2.0.2")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSC" version))
               (sha256
                (base32
-                "0d7b8q5r3sb29h3kj0dpd1ldm6lymqkpdjsg216m4lgqcikkng6l"))))
+                "106pvrg10f8w0aqbnahqjdii49ijp2659l7kkj5y46pbr90lbpzs"))))
     (properties `((upstream-name . "RSC")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-foreach r-doparallel))
@@ -12293,13 +12293,13 @@ solver for solving nonlinear optimization problems.")
 (define-public r-roi-models-netlib
   (package
     (name "r-roi-models-netlib")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ROI.models.netlib" version))
               (sha256
                (base32
-                "1h59i7mc21kgwi4mz0qpfj855bp6d2qkrp40lm02dqhf79sps26k"))))
+                "1ip6xb9nvqs3dj2rnylhjwmql1wwdhhnvnp1gi86d22qjixnn8h3"))))
     (properties `((upstream-name . "ROI.models.netlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi))
@@ -20928,6 +20928,36 @@ open source software that builds installers for Windows programs
 with different implementations that represent different trade-offs.")
     (license license:expat)))
 
+(define-public r-rineq
+  (package
+    (name "r-rineq")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rineq" version))
+              (sha256
+               (base32
+                "0z8ngd11nbi0ibc3cqg20ihzhf2gcs4w4nkbb69wnyf86fxf001w"))))
+    (properties `((upstream-name . "rineq")))
+    (build-system r-build-system)
+    (home-page "https://github.com/kdevkdev/rineq/")
+    (synopsis "Concentration Index and Decomposition for Health Inequalities")
+    (description
+     "Relative, generalized, and Erreygers corrected concentration index; plot Lorenz
+curves; and decompose health inequalities into contributing factors.  The
+package currently works with (generalized) linear models, survival models,
+complex survey models, and marginal effects probit models.  originally forked by
+Brecht Devleesschauwer from the decomp package (no longer on CRAN), rineq is now
+maintained by Kaspar Walter Meili.  Compared to the earlier rineq version on
+github by Brecht Devleesschauwer (<https://github.com/brechtdv/rineq>), the
+regression tree functionality has been removed.  Improvements compared to
+earlier versions include improved plotting of decomposition and concentration,
+added functionality to calculate the concentration index with different methods,
+calculation of robust standard errors, and support for the decomposition
+analysis using marginal effects probit regression models.  The development
+version is available at <https://github.com/kdevkdev/rineq>.")
+    (license license:gpl2+)))
+
 (define-public r-rinat
   (package
     (name "r-rinat")
@@ -22868,13 +22898,13 @@ function.")
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rgoogleads" version))
               (sha256
                (base32
-                "0vsns2kizhn353q9sv5lgpcsc1h0sxvxyliqi6z6gaanky27vwm4"))))
+                "03y1dvshy6cadamig1gb72knz64g96w7s965k3cgvhnihm15fwd9"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -26742,6 +26772,33 @@ is more of a set of building blocks than a direct solution.  REPTILE regulatory
 prediction pipeline is built on this R package.  See
 <https://github.com/yupenghe/REPTILE> for more information.")
     (license license:bsd-2)))
+
+(define-public r-repsd
+  (package
+    (name "r-repsd")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "repsd" version))
+              (sha256
+               (base32
+                "102rnc2g31aijhwsmad86k2wjcvbvzi51c2rp0wk711riq5v7cm1"))))
+    (properties `((upstream-name . "repsd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress))
+    (home-page "https://cran.r-project.org/package=repsd")
+    (synopsis "Root Expected Proportion Squared Difference for Detecting DIF")
+    (description
+     "Root Expected Proportion Squared Difference (REPSD) is a nonparametric
+differential item functioning (DIF) method that (a) allows practitioners to
+explore for DIF related to small, fine-grained focal groups of examinees, and
+(b) compares the focal group directly to the composite group that will be used
+to develop the reported test score scale.  Using your provided response matrix
+with a column that identifies focal group membership, this package provides the
+REPSD values, a simulated null distribution of possible REPSD values, and the
+simulated p-values identifying items possibly displaying DIF without requiring
+enormous sample sizes.")
+    (license license:expat)))
 
 (define-public r-reproj
   (package
@@ -33109,41 +33166,6 @@ high variability of the RDS process.")
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
 
-(define-public r-rdss
-  (package
-    (name "r-rdss")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rdss" version))
-              (sha256
-               (base32
-                "0k3pdsygc7ckk78pkjd46babhqc9zxn6sw83g0p69p5jjiy1l4yf"))))
-    (properties `((upstream-name . "rdss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-randomizr
-                             r-purrr
-                             r-prediction
-                             r-ggplot2
-                             r-generics
-                             r-estimatr
-                             r-dplyr
-                             r-dataverse
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=rdss")
-    (synopsis
-     "Companion Datasets and Functions for Research Design in the Social Sciences")
-    (description
-     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
-Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
-<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
-plotting components to enable use and replication of the book.")
-    (license license:expat)))
-
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
@@ -33898,6 +33920,33 @@ dice is non-transitive with given probability.")
 (https://www.guardian.com/) and their API, this package allows users to search
 for Guardian articles and retrieve both the content and metadata.")
     (license license:expat)))
+
+(define-public r-rdiagnosislist
+  (package
+    (name "r-rdiagnosislist")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rdiagnosislist" version))
+              (sha256
+               (base32
+                "0jnjqwqvaj6brgpmd9xj04ax5dbwqpbb89hhn1m2bd3v9673k1v3"))))
+    (properties `((upstream-name . "Rdiagnosislist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Rdiagnosislist")
+    (synopsis "Manipulate SNOMED CT Diagnosis Lists")
+    (description
+     "This package provides functions and methods for manipulating SNOMED CT concepts.
+ The package contains functions for loading the SNOMED CT release into a
+convenient R environment, selecting SNOMED CT concepts using regular
+expressions, and navigating the SNOMED CT ontology.  It provides the
+SNOMEDconcept S3 class for a vector of SNOMED CT concepts (stored as 64-bit
+integers) and the SNOMEDcodelist S3 class for a table of concepts IDs with
+descriptions.  For more information about SNOMED CT visit
+<https://www.snomed.org/>.")
+    (license license:gpl3)))
 
 (define-public r-rdi
   (package
@@ -40833,13 +40882,13 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rasterpic" version))
               (sha256
                (base32
-                "00fjn9lyx81jncxml5pw0xfbmsi2kh3mvdrvz73jhqha52zxhpl6"))))
+                "1yccwv52hmkypcc3ym0nlda4imb2smizn113zfsdrq9f7inrlkhf"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-png))

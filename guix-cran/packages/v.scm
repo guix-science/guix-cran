@@ -1348,13 +1348,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-voice
   (package
     (name "r-voice")
-    (version "0.4.17")
+    (version "0.4.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voice" version))
               (sha256
                (base32
-                "17k9wnh475ygvk1xdmzbasvdhl8j91l4j1rrf9yn7af01bs7mw6z"))))
+                "0ljz0kfzv4si530kdhqdf3bia86v5cw8p1vdgk1vamv7fvjxzwpg"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

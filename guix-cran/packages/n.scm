@@ -4521,6 +4521,34 @@ specification methodology see: (i) Crone and Kourentzes (2010)
 <doi:10.1016/j.eswa.2013.12.011>.")
     (license license:gpl3)))
 
+(define-public r-nndiagram
+  (package
+    (name "r-nndiagram")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nndiagram" version))
+              (sha256
+               (base32
+                "0x6gv8rmvnqvvwxgqmkybmvmf4g94im0lardkmb5a043krvgh3i4"))))
+    (properties `((upstream-name . "nndiagram")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/ccfang2/nndiagram")
+    (synopsis
+     "Generator of 'LaTeX' Code for Drawing Neural Network Diagrams with 'TikZ'")
+    (description
+     "Generates LaTeX code for drawing well-formatted neural network diagrams with
+TikZ'.  Users have to define number of neurons on each layer, and optionally
+define neuron connections they would like to keep or omit, layers they consider
+to be oversized and neurons they would like to draw with lighter color.  They
+can also specify the title of diagram, color, opacity of figure, labels of
+layers, input and output neurons.  In addition, this package helps to produce
+LaTeX code for drawing activation functions which are crucial in neural network
+analysis.  To make the code work in a LaTeX editor, users need to install and
+import some TeX packages including TikZ in the setting of TeX file.")
+    (license license:expat)))
+
 (define-public r-nncc
   (package
     (name "r-nncc")
@@ -8229,13 +8257,13 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
 (define-public r-newsmd
   (package
     (name "r-newsmd")
-    (version "0.4.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "newsmd" version))
               (sha256
                (base32
-                "1pzsblkvs374nc6795llm9lbqj5z410g1mgr3q4fgpm0398zmsrv"))))
+                "06iq628ysfbaawhx5yxkxh8a9d3nmzq87n80l88kj84k1lg1s5ph"))))
     (properties `((upstream-name . "newsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
