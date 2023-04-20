@@ -3885,13 +3885,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "0hsn67h4plc47xg2sg6gbcw61mwyxqkqazlw9m73242cr4zy974r"))))
+                "0pryzappyninflcmv9q6bv87i0sa6rfv8mw18qqa9bhbf22cylf2"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -10204,13 +10204,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "0rwcv38md8w109sihc07441bvm99y6m60rff6jracsraymakb3yc"))))
+                "18gnf848ssxg43aac1fla32mkim9vq6lc9g6b4bgd4n1byln2n1d"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -18196,13 +18196,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebvcube" version))
               (sha256
                (base32
-                "138cnzfjz6pgv8s194d379ynw87n82znvb0skn78kb93g916885s"))))
+                "00fcz8ibs2jahkndsh3cz0gm8pmzhvmvpgwi2n5qgfljbb810mnx"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

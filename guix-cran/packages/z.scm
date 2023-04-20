@@ -817,6 +817,29 @@ articles for more information about the z-curves, expected discovery and
 replicability rates, validation studies, and limitations.")
     (license license:gpl3)))
 
+(define-public r-zctacrosswalk
+  (package
+    (name "r-zctacrosswalk")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "zctaCrosswalk" version))
+              (sha256
+               (base32
+                "14yda45nqn9ywb7zpwp4kmjziglj0qjgm02lmi8ndvc5wi2r1ma7"))))
+    (properties `((upstream-name . "zctaCrosswalk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rlang r-readr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MarketBridge/zctaCrosswalk")
+    (synopsis
+     "Crosswalk Between 2020 Census ZIP Code Tabulation Areas (ZCTAs), States and Counties")
+    (description
+     "This package contains the US Census Bureau's 2020 ZCTA to County Relationship
+File, as well as convenience functions to translate between States, Counties and
+ZIP Code Tabulation Areas (ZCTAs).")
+    (license license:expat)))
+
 (define-public r-zalpha
   (package
     (name "r-zalpha")

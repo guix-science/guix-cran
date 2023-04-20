@@ -5964,13 +5964,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.0.5")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew" version))
               (sha256
                (base32
-                "1v0vbg8k0lmy8wqldf7vp7i4j6dcl8pbrrqyr20fadg2qidm76gm"))))
+                "1v8jfcp939cphd8f60zgw7y3cdmab82mi9a1vhznnzas8zmwnm75"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5979,23 +5979,21 @@ discrete data with pairwise and unary potentials.")
                              r-rlang
                              r-r6
                              r-ps
-                             r-parallelly
+                             r-processx
                              r-nanonext
                              r-mirai
-                             r-getip
-                             r-callr
-                             r-bench))
+                             r-getip))
     (native-inputs (list r-knitr))
     (home-page "https://wlandau.github.io/crew/")
     (synopsis "Distributed Worker Launcher")
     (description
      "In computationally demanding analysis projects, statisticians and data
 scientists asynchronously deploy long-running tasks to distributed systems,
-ranging from traditional clusters to cloud services The NNG'-powered mirai R
+ranging from traditional clusters to cloud services.  The NNG'-powered mirai R
 package by Gao (2023) <https://CRAN.R-project.org/package=mirai> is a sleek and
 sophisticated scheduler that efficiently processes these intense workloads.  The
 crew package extends mirai with a unifying interface for third-party worker
-launchers.  Inspiration also comes from packages future by Bengtsson (2021)
+launchers.  Inspiration also comes from packages.  future by Bengtsson (2021)
 <doi:10.32614/RJ-2021-048>, rrq by FitzJohn and Ashton (2023)
 <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischel, and
@@ -6215,54 +6213,6 @@ elements which should be clustered as a CORE, 3) It calls COREs, 4) It filters
 the COREs with lowest order which does not pass the threshold considered in the
 approach.")
     (license license:gpl3+)))
-
-(define-public r-cre
-  (package
-    (name "r-cre")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CRE" version))
-              (sha256
-               (base32
-                "1igvm186dqgg65s7gk410cxw5aff8qj68m71cwgn4s3p22arw2k3"))))
-    (properties `((upstream-name . "CRE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-xgboost
-                             r-superlearner
-                             r-stringr
-                             r-stabs
-                             r-rrf
-                             r-randomforest
-                             r-mass
-                             r-magrittr
-                             r-logger
-                             r-intrees
-                             r-glmnet
-                             r-ggplot2
-                             r-gbm
-                             r-data-table
-                             r-bcf
-                             r-bartcause))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NSAPH-Software/CRE")
-    (synopsis
-     "Interpretable Subgroups Identification Through Ensemble Learning of Causal Rules")
-    (description
-     "This package provides an interpretable identification of subgroups with
-heterogeneous causal effect.  The heterogeneous subgroups are discovered through
-ensemble learning of causal rules.  Causal rules are highly interpretable
-if-then statement that recursively partition the features space into
-heterogeneous subgroups.  A small number of significant causal rules are
-selected through Stability Selection to control for family-wise error rate in
-the finite sample setting.  It proposes various estimation methods for the
-conditional causal effects for each discovered causal rule.  It is highly
-flexible and multiple causal estimands and imputation methods are implemented.
-Lee, K., Bargagli-Stoffi, F. J., & Dominici, F. (2020).  Causal rule ensemble:
-Interpretable inference of heterogeneous treatment effects.  arXiv preprint
-<arXiv:2009.09036>.")
-    (license license:gpl3)))
 
 (define-public r-crctstepdown
   (package
@@ -17008,6 +16958,36 @@ climate niches either unscaled or scaled relative to a regional species pool.
 These statistics can be used to describe biogeographic patterns and infer
 community assembly processes.  Includes a vignette outlining usage.")
     (license license:gpl3)))
+
+(define-public r-combo
+  (package
+    (name "r-combo")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "COMBO" version))
+              (sha256
+               (base32
+                "12k5lchxdxql3q7si05404f8dc26xjxqf95mq5jykgp9chgl6i5w"))))
+    (properties `((upstream-name . "COMBO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-turboem
+                             r-tidyr
+                             r-samba
+                             r-rjags
+                             r-matrix
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=COMBO")
+    (synopsis
+     "Correcting Misclassified Binary Outcomes in Association Studies")
+    (description
+     "Use frequentist and Bayesian methods to estimate parameters from a binary
+outcome misclassification model.  These methods correct for the problem of
+\"label switching\" by assuming that correct outcome classification occurs in at
+least 50% of observations.  A description of the analysis methods is available
+in Hochstedler and Wells (2023) <arXiv:2303.10215>.")
+    (license license:expat)))
 
 (define-public r-combiter
   (package
@@ -31811,6 +31791,30 @@ removed.  See Adamic, P. (2015)
      "Coordinate Descent Algorithms for Lasso Penalized L1, L2, and Logistic
 Regression")
     (license license:gpl2)))
+
+(define-public r-cdgd
+  (package
+    (name "r-cdgd")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cdgd" version))
+              (sha256
+               (base32
+                "1rk2ld8spiaif8ybc8kj84jfpi2gwhf4nj70k1in799lqqvfq894"))))
+    (properties `((upstream-name . "cdgd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-caret))
+    (home-page "https://github.com/ang-yu/cdgd")
+    (synopsis "Causal Decomposition of Group Disparities")
+    (description
+     "The causal decompositions of group disparities developed by Yu and Elwert (2023)
+<https://ang-yu.github.io/files/Causal_Decomposition_of_Group_Disparities_2023.pdf>.
+ This package implements the estimators for the decomposition components that
+are based on efficient influence functions.  For the nuisance functions of the
+estimators, both parametric and nonparametric options are provided, as well as
+manual options in case the default models are not satisfying.")
+    (license license:expat)))
 
 (define-public r-cdft
   (package

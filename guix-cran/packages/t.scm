@@ -449,42 +449,6 @@ weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
     (license license:gpl2+)))
 
-(define-public r-tworegression
-  (package
-    (name "r-tworegression")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TwoRegression" version))
-              (sha256
-               (base32
-                "0mpgdz7swrzabpf835pawlwvbzqajc329whcsxddwq4l6c71sb11"))))
-    (properties `((upstream-name . "TwoRegression")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-rcpproll
-                             r-proc
-                             r-pautilities
-                             r-magrittr
-                             r-lubridate
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulhibbing/TwoRegression")
-    (synopsis "Develop and Apply Two-Regression Algorithms")
-    (description
-     "Facilitates development and application of two-regression algorithms for
-research-grade wearable devices.  It provides an easy way for users to access
-previously-developed algorithms, and also to develop their own.  Initial
-motivation came from Hibbing PR, LaMunion SR, Kaplan AS, & Crouter SE (2018)
-<doi:10.1249/MSS.0000000000001532>.  However, other algorithms are now
-supported.  Please see the associated references in the package documentation
-for full details of the algorithms that are supported.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-twophaseind
   (package
     (name "r-twophaseind")
@@ -996,13 +960,13 @@ Airbender', Spongebob Squarepants', and more.")
 (define-public r-tvreg
   (package
     (name "r-tvreg")
-    (version "0.5.7")
+    (version "0.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tvReg" version))
               (sha256
                (base32
-                "0q34266qk621cna5sf87yyp2jf9s9zc945bm2qsl8mh2ag0wii86"))))
+                "0ivabcp1hm0rmr55lrqgsgbg23mkzdg6h11k95m2yg5pm853zbh8"))))
     (properties `((upstream-name . "tvReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars

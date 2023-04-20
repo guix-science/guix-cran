@@ -10327,21 +10327,21 @@ in palaeoecology.")
 (define-public r-analogsea
   (package
     (name "r-analogsea")
-    (version "1.0.6")
+    (version "1.0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "analogsea" version))
               (sha256
                (base32
-                "1bcykcsciv4s7071iw3a9sxpd3jslv1sg93mxzyhxy4y2pikg7q0"))))
+                "146n6z06nr3jyni8mg8gjb7r4w06mrpkfmpg8l8z6rw9aw1gh73p"))))
     (properties `((upstream-name . "analogsea")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-magrittr r-jsonlite r-httr))
     (home-page
      "https://github.com/pachadotdev/analogseahttps://pacha.dev/analogsea/")
-    (synopsis "Interface to 'Digital Ocean'")
+    (synopsis "Interface to 'DigitalOcean'")
     (description
-     "This package provides a set of functions for interacting with the Digital Ocean
+     "This package provides a set of functions for interacting with the DigitalOcean
 API <https://www.digitalocean.com/>, including creating images, destroying them,
 rebooting, getting details on regions, and available images.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))

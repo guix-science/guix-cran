@@ -3509,29 +3509,29 @@ downloaded from Github at <https://github.com/josherrickson/rrelaxiv/>.")
 (define-public r-multinttestfunc
   (package
     (name "r-multinttestfunc")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multIntTestFunc" version))
               (sha256
                (base32
-                "1psbjgg0dqd4nbmyja1mx4v1w0jqqhc67p7wqf1ipm93llv8sv6f"))))
+                "0z2wsbhb8lbmb5favqaang3rq4fk6ln9d5spssinzlbpqb04y6nk"))))
     (properties `((upstream-name . "multIntTestFunc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-gsl))
+    (propagated-inputs (list r-pracma r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/KlausHerrmann/multIntTestFunc")
     (synopsis "Provides Test Functions for Multivariate Integration")
     (description
      "This package provides implementations of functions that can be used to test
-multivariate integration routines.  The package covers five different
-integration domains (unit hypercube, unit ball, unit sphere, standard simplex
-and R^n).  For each domain several functions with different properties (smooth,
-non-differentiable, ...) are available.  The functions are available in all
-dimensions n >= 1.  For each function the exact value of the integral is known
-and implemented to allow testing the accuracy of multivariate integration
-routines.  Details on the available test functions can be found at on the
-development website.")
+multivariate integration routines.  The package covers six different integration
+domains (unit hypercube, unit ball, unit sphere, standard simplex, non-negative
+real numbers and R^n).  For each domain several functions with different
+properties (smooth, non-differentiable, ...) are available.  The functions are
+available in all dimensions n >= 1.  For each function the exact value of the
+integral is known and implemented to allow testing the accuracy of multivariate
+integration routines.  Details on the available test functions can be found at
+on the development website.")
     (license license:expat)))
 
 (define-public r-multinomineq
@@ -20744,16 +20744,16 @@ Rigoutsos I (2017) <doi:10.1038/srep41184>.")
 (define-public r-minsnps
   (package
     (name "r-minsnps")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "minSNPs" version))
               (sha256
                (base32
-                "1y1aawi4cfvbvb3zrmjvccgd8gdpfaag6lqkh9h05p4x72hd3j49"))))
+                "1l071mf940pjdzzb1shwkaljrjcxdpsgxn49x7ia446gpw8qrgpg"))))
     (properties `((upstream-name . "minSNPs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-biocparallel))
+    (propagated-inputs (list r-data-table r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ludwigHoon/minSNPs")
     (synopsis "Resolution-Optimised SNPs Searcher")
@@ -34870,13 +34870,13 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mathml" version))
               (sha256
                (base32
-                "0mh59m15qrksi8v4ls9sbj0sm483clma5vzklbk3xvy3f084zz3p"))))
+                "17r6qjs7zv3hn8nmkplg8s5jsv7dz9mv10zfks7j9smhyxhch8h0"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rolog))

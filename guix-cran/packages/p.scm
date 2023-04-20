@@ -19740,13 +19740,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pkgdepends" version))
               (sha256
                (base32
-                "0n648l0h2gczpwgkhd89ivwgygrcalry298vx4az41ib4ha02k0z"))))
+                "1g7izh5xkd9ppmfnvx6nzdk84c73byssbxqwnc8crlpr6pirip7a"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -29762,40 +29762,6 @@ of colour described in Maia, Eliason, Bitton, Doucet & Shawkey (2013)
 <doi:10.1111/2041-210X.13174>.")
     (license license:gpl2+)))
 
-(define-public r-pautilities
-  (package
-    (name "r-pautilities")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PAutilities" version))
-              (sha256
-               (base32
-                "0qqxizq856wkx2x5g5pdnb4srh5xj0xyaljbk3i6nq5q41vrw5xk"))))
-    (properties `((upstream-name . "PAutilities")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-rcpp
-                             r-magrittr
-                             r-lubridate
-                             r-lazyeval
-                             r-ggplot2
-                             r-equivalence
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulhibbing/PAutilities")
-    (synopsis "Streamline Physical Activity Research")
-    (description
-     "This package provides a collection of utilities that are useful for a broad
-range of tasks that are common in physical activity research, including the
-following: creation of Bland-Altman plots, formatted descriptive statistics,
-metabolic calculations (e.g. basal metabolic rate predictions) and conversions,
-demographic calculations (age and age-for-body-mass-index percentile), bout
-analysis of moderate-to-vigorous intensity physical activity, and analysis of
-bout detection algorithm performance.")
-    (license license:gpl3)))
-
 (define-public r-patterns
   (package
     (name "r-patterns")
@@ -32731,13 +32697,13 @@ by the intervention.")
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "0.17.0")
+    (version "0.19.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMpal" version))
               (sha256
                (base32
-                "09rd9h67y27xwgwfxp6k8nvhi0ccsw6h2kx1m1dd90iicbb03yk2"))))
+                "19dbyvlmp22n5qzbr229810r00ff4ikfpr7b094nzsm4km77iz3x"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -32756,6 +32722,7 @@ by the intervention.")
                              r-lubridate
                              r-knitr
                              r-ggplot2
+                             r-geosphere
                              r-gam
                              r-dplyr
                              r-data-table))
@@ -32817,22 +32784,22 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.10.4")
+    (version "1.11.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PAMmisc" version))
               (sha256
                (base32
-                "1bk1q6j5kzqjnlicb8lsz3833nr5p13jd8gqjhwr46f3h05k7anc"))))
+                "19qnipkis231fd3ys00hp98lja5l06fnqxyj6vj5pxzhqbrw2ql4"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-viridislite
                              r-tuner
                              r-suncalc
-                             r-stringr
                              r-seewave
+                             r-scales
                              r-rsqlite
+                             r-rjson
                              r-rerddap
                              r-rcpproll
                              r-purrr
@@ -32844,8 +32811,7 @@ visualization.")
                              r-hoardr
                              r-ggplot2
                              r-geosphere
-                             r-dplyr
-                             r-data-table))
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=PAMmisc")
     (synopsis "Miscellaneous Functions for Passive Acoustic Analysis")
     (description

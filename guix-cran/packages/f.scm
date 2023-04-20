@@ -5051,6 +5051,32 @@ the U.S. Army Engineer Research and Development Center's Environmental
 Laboratory.")
     (license license:cc0)))
 
+(define-public r-fqacalc
+  (package
+    (name "r-fqacalc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fqacalc" version))
+              (sha256
+               (base32
+                "0mip89m2caxky9g4znlsfxai4r7h9kccm9k59m9y3ksrihnz5wz6"))))
+    (properties `((upstream-name . "fqacalc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-fqadata r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fqacalc")
+    (synopsis "Calculate Floristic Quality Assessment Metrics")
+    (description
+     "This package provides a collection of functions for calculating Floristic
+Quality Assessment (FQA) metrics using regional FQA databases that have been
+approved or approved with reservations as ecological planning models by the U.S.
+Army Corps of Engineers (USACE).  For information on FQA see Spyreas (2019)
+<doi:10.1002/ecs2.2825>.  These databases are stored in a sister R package,
+fqadata'.  Both packages were developed for the USACE by the U.S. Army Engineer
+Research and Development Centerâs Environmental Laboratory.")
+    (license license:expat)))
+
 (define-public r-fpv
   (package
     (name "r-fpv")
@@ -11223,13 +11249,13 @@ sources contribution.")
 (define-public r-finetune
   (package
     (name "r-finetune")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finetune" version))
               (sha256
                (base32
-                "1zdipi15sk8scwgyixci4jvccvmlz3lwyra206cwiklbi2rg9720"))))
+                "1axcfjkdhpfx60rf14ywizmzxsl8ac5amqx8s2lv8hb2ahqs13yi"))))
     (properties `((upstream-name . "finetune")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows

@@ -18995,13 +18995,13 @@ Theil-Sen's slope estimator.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "0.7.5")
+    (version "0.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RKorAPClient" version))
               (sha256
                (base32
-                "0kdrv9y7zahcfsmrfnc8bxhln99girxv68jhjq164qwibvnzvsfk"))))
+                "1xvrgq07nrdi3jls6nf47af7cvln46vrhc234yn3clkzjn6nh6f5"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -22936,13 +22936,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rgof" version))
               (sha256
                (base32
-                "08sksi2vd5zzkvg51182qzp3p9b726xvd67k14d8210lhb1dcvbz"))))
+                "11lmi0zkrdgbp38py84bnxi7yb75abad8rw20pip48nnvrdjzrs4"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -27821,13 +27821,13 @@ the current session.")
 (define-public r-renvlp
   (package
     (name "r-renvlp")
-    (version "3.3")
+    (version "3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Renvlp" version))
               (sha256
                (base32
-                "0fas3h2kwvrp0pmfghp0131wzh6ds7ngrrpd6nk4x5z4s5adar8j"))))
+                "1lnjx33yhqjdbq9lx0b1ag45xyhg0j1gjfaplv14kn9jicx6ddnm"))))
     (properties `((upstream-name . "Renvlp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-pls r-orthogonalsplinebasis
@@ -40126,13 +40126,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ravetools" version))
               (sha256
                (base32
-                "0gr9nxzicb6yc9pqs7gn140acspw8ajbfrmgz8p00z6ld0qr142f"))))
+                "0cq6fsjl5cam4i2pvgxpsims6af5qg80nc8i15xv0fqx9qg2m06h"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list fftw))

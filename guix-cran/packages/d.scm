@@ -4971,13 +4971,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.1")
+    (version "3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DR.SC" version))
               (sha256
                (base32
-                "19yl47bi1mpgq7ppviazq0hl0d0yi3mrk1qkdpcbic6dwv2d04k0"))))
+                "0glf17ddq2h4wvzbwcdaw3a0whf7j4r5srmda05lx3bqrgaarwkr"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom
@@ -13101,13 +13101,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "diemr" version))
               (sha256
                (base32
-                "0r11ifgnx9ygsl3c7xmcnwzv4gdnxrk81zwvjzj8g04fmjk6rg4b"))))
+                "1k491cwi0qrhp3gp1x0hcqjwy6hl0ypc1ldwcfpfh3d04mmfkl9w"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-vcfr))
@@ -13118,7 +13118,7 @@ and calculates electivity indices in R. Borstein (2020)
      "Likelihood-based genome polarisation finds which alleles of genomic markers
 belong to which side of the barrier.  Co-estimates which individuals belong to
 either side of the barrier and barrier strength.  Uses expectation maximisation
-in likelihood framework.  The method is described in Baird et al. (2022)
+in likelihood framework.  The method is described in Baird et al. (2023)
 <doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
 

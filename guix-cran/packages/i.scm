@@ -7767,26 +7767,27 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "INLAspacetime" version))
               (sha256
                (base32
-                "1ymyp3ciwidgjys5110k1yh1wbksrvg06r4ppds583956sn7l174"))))
+                "11kkmmz4lm0qdqmbnx1j719kdwmq3zrvmd5kh099x3gmrmi90ivd"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-matrix))
+    (propagated-inputs (list r-sp r-sf r-matrix))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/eliaskrainski/INLAspacetime")
     (synopsis "Spatial and Spatio-Temporal Models using 'INLA'")
     (description
      "Prepare objects to implement models over spatial and spacetime domains with the
-INLA package (<https://www.r-inla.org>).  These objects contain data to be used
-in the cgeneric interface provided by INLA', enabling fast parallel
-computations.  It includes the spatial barrier model, see Bakka et.  al. (2019)
+INLA package (<https://www.r-inla.org>).  These objects contain data to for the
+cgeneric interface in INLA', enabling fast parallel computations.  We
+implemented the spatial barrier model, see Bakka et.  al. (2019)
 <doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models in
 Lindgren et.  al. (2023) <arXiv:2006.04917>.  Details are provided in the
-vignettes available in the provided link.")
+available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
 (define-public r-inlabru
@@ -8294,13 +8295,13 @@ detect changing levels of significance.")
 (define-public r-inflectssp
   (package
     (name "r-inflectssp")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "InflectSSP" version))
               (sha256
                (base32
-                "1wa1lwvp4rh0rhr52wr5a8xdfmcv0lzy1mzavv5nhz8jkwm7i35g"))))
+                "14i53bsy693yh28y1akg4xd6srz077v9a8i7hx07qf73w2m84v1z"))))
     (properties `((upstream-name . "InflectSSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx

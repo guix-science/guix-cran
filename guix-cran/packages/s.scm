@@ -19752,30 +19752,6 @@ in Boag (1949) <http://www.jstor.org/stable/2983694> and Berkson and Gage (1952)
 <doi:10.1016/0304-4076(89)90034-1>.")
     (license license:gpl3)))
 
-(define-public r-spdplyr
-  (package
-    (name "r-spdplyr")
-    (version "0.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "spdplyr" version))
-              (sha256
-               (base32
-                "0lijp78wgrky103137vfk3k4s051qppd6jq6s065k9i7y1azbpc1"))))
-    (properties `((upstream-name . "spdplyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-spbabel r-sp r-rlang r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mdsumner/spdplyr")
-    (synopsis "Data Manipulation Verbs for the Spatial Classes")
-    (description
-     "This package provides methods for dplyr verbs for sp Spatial classes.  The basic
-verbs that modify data attributes, remove or re-arrange rows are supported and
-provide complete Spatial analogues of the input data.  The group by and
-summarize work flow returns a non-topological spatial union.  There is limited
-support for joins, with left and inner to copy attributes from another table.")
-    (license license:gpl3)))
-
 (define-public r-spdownscale
   (package
     (name "r-spdownscale")
@@ -24884,38 +24860,6 @@ Ellingson LD, Schwabacher IJ, Kim Y, Welk GJ, & Cook DB (2016)
 Welk GJ (2018) <doi:10.1249/MSS.0000000000001486>.")
     (license license:gpl3)))
 
-(define-public r-sojourn
-  (package
-    (name "r-sojourn")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Sojourn" version))
-              (sha256
-               (base32
-                "0dy3xb6nazify29xir2krj9509bqa68b1jwq3lvvhfakxjqm0j05"))))
-    (properties `((upstream-name . "Sojourn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-svdialogs
-                             r-rlang
-                             r-pautilities
-                             r-nnet
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr))
-    (home-page "https://github.com/paulhibbing/Sojourn")
-    (synopsis
-     "Apply Sojourn Methods for Processing ActiGraph Accelerometer Data")
-    (description
-     "This package provides a simple way for utilizing Sojourn methods for
-accelerometer processing, as detailed in Lyden K, Keadle S, Staudenmayer J, &
-Freedson P (2014) <doi:10.1249/MSS.0b013e3182a42a2d>, Ellingson LD, Schwabacher
-IJ, Kim Y, Welk GJ, & Cook DB (2016) <doi:10.1249/MSS.0000000000000915>, and
-Hibbing PR, Ellingson LD, Dixon PM, & Welk GJ (2018)
-<doi:10.1249/MSS.0000000000001486>.")
-    (license license:gpl3)))
-
 (define-public r-soilwater
   (package
     (name "r-soilwater")
@@ -26859,21 +26803,26 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "0.1.5")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SMOTEWB" version))
               (sha256
                (base32
-                "07xxbpi5bmvryggvag9dnvh53x2w8dljif4s4j3w9w8wpna24i1n"))))
+                "0pgn4v08nf74v9p79901268sj97gl5ml0723hs948m9ajkdf1d2x"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rpart r-fnn))
+    (propagated-inputs (list r-rpart r-rfast r-rann r-fnn))
     (home-page "https://cran.r-project.org/package=SMOTEWB")
     (synopsis "Imbalanced Resampling using SMOTE with Boosting (SMOTEWB)")
     (description
      "This package provides the SMOTE with Boosting (SMOTEWB) algorithm.  See F.
-SaÄlam, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.")
+SaÄlam, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.  Also SMOTEWB
+provides faster versions of several resampling methods for imbalanced datasets,
+including SMOTE with Boosting (SMOTEWB), ADASYN, Borderline SMOTE (BLSMOTE),
+Random Over-Sampling (ROS), Random Under-Sampling (RUS), Safe-Level SMOTE
+(SLSMOTE), Relocating Safe-Level SMOTE (RSLSMOTE), and Random Over-Sampling
+Examples (ROSE).")
     (license license:expat)))
 
 (define-public r-smotefamily

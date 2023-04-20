@@ -8923,22 +8923,23 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "goeveg" version))
               (sha256
                (base32
-                "1dg0aw3sfar706jyiy5m5qz3nzs6sy3ljs9jp0p65b0v01rw8sbs"))))
+                "1x8apb0fhi74p88g4cpq0w4qkw77p96md68n5mi5a35dy7kz2cfl"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
-    (home-page "https://github.com/fgoral/goeveg/")
+    (home-page "https://github.com/fvlampe/goeveg/")
     (synopsis "Functions for Community Data and Ordinations")
     (description
      "This package provides a collection of functions useful in (vegetation) community
 analyses and ordinations.  Includes automatic species selection for ordination
-diagrams, NMDS stress plots, species response curves and rank-abundance curves.")
+diagrams, NMDS stress/scree plots, species response curves and rank-abundance
+curves as well as calculation and sorting of synoptic tables.")
     (license license:gpl2+)))
 
 (define-public r-gocompare
@@ -9299,6 +9300,27 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 time series models which take account of network structure.  Such models are
 described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
     (license license:gpl2)))
+
+(define-public r-gmwt
+  (package
+    (name "r-gmwt")
+    (version "1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gMWT" version))
+              (sha256
+               (base32
+                "1iv7dav6l9gx6vhghcyasdizjsz2f8yzcgkj2i50kpgw74ljg5ia"))))
+    (properties `((upstream-name . "gMWT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-clinfun))
+    (home-page "https://cran.r-project.org/package=gMWT")
+    (synopsis "Generalized Mann-Whitney Type Tests")
+    (description
+     "Generalized Mann-Whitney type tests based on probabilistic indices and new
+diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
+<doi:10.18637/jss.v065.i09>.")
+    (license license:gpl2+)))
 
 (define-public r-gmwmx
   (package

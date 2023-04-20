@@ -1348,13 +1348,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-voice
   (package
     (name "r-voice")
-    (version "0.4.20")
+    (version "0.4.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "voice" version))
               (sha256
                (base32
-                "0ljz0kfzv4si530kdhqdf3bia86v5cw8p1vdgk1vamv7fvjxzwpg"))))
+                "0fh1k0596npm6yah992g3hc79g6lh12b7k97nnxlm1pgpdbb503v"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2017,13 +2017,13 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.7")
+    (version "1.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visvow" version))
               (sha256
                (base32
-                "0bl03aackg417931m60m1bxlqny35lcqhrvlsjj944j8kxmw81zp"))))
+                "1nbhp1cmlk49p2fx1z21w5smxd11vhsly3rcswlqwkldn298692b"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls

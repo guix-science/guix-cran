@@ -6528,18 +6528,18 @@ or gls models.")
 (define-public r-lmdiallel
   (package
     (name "r-lmdiallel")
-    (version "0.9.5")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmDiallel" version))
               (sha256
                (base32
-                "1hgd4j5f23b4am8d8ljnvks9jzcy0z592np0j2kfjpiwca1zl31w"))))
+                "01z4lx9i7mz8wy6znwiqyygngqcf0ymbcpsshxykh1hcy4hsh4r6"))))
     (properties `((upstream-name . "lmDiallel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sommer r-plyr r-multcomp))
+    (propagated-inputs (list r-tidyr r-sommer r-plyr r-multcomp))
     (home-page "https://www.statforbiology.com/lmDiallel/")
-    (synopsis "Linear Fixed Effects Models for Diallel Crosses")
+    (synopsis "Linear Fixed/Mixed Effects Models for Diallel Crosses")
     (description
      "Several service functions to be used to analyse datasets obtained from diallel
 experiments within the frame of linear models in R, as described in Onofri et al
@@ -10161,13 +10161,13 @@ Semi-supervised Local Fisher Discriminant Analysis(SELF).")
 (define-public r-lfc
   (package
     (name "r-lfc")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lfc" version))
               (sha256
                (base32
-                "01qf9jizfrr5nvn1b1arhmmbkrvba7krm0r04b7vrqc30m79iikx"))))
+                "1fh3i5mhzgz8k6y32m2y7lilxvm10kjkp5b70zm06iygazsk8bvz"))))
     (properties `((upstream-name . "lfc")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

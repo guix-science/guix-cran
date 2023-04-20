@@ -18199,29 +18199,6 @@ approach given in Iachine (1995) and lognormal fit is based on the approach by
 Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
     (license license:gpl2+)))
 
-(define-public r-bcf
-  (package
-    (name "r-bcf")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bcf" version))
-              (sha256
-               (base32
-                "04vjvzh8y1dfk6ms5zwbylbfalwngvyjbjcszx26v2fakdk990p7"))))
-    (properties `((upstream-name . "bcf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=bcf")
-    (synopsis
-     "Causal Inference for a Binary Treatment and Continuous Outcome using Bayesian Causal Forests")
-    (description
-     "Causal inference for a binary treatment and continuous outcome using Bayesian
-Causal Forests.  See Hahn, Murray and Carvalho (2017) <arXiv:1706.09523> for
-additional information.  This implementation relies on code originally
-accompanying Pratola et.  al. (2013) <arXiv:1309.1906>.")
-    (license license:gpl3)))
-
 (define-public r-bcee
   (package
     (name "r-bcee")
