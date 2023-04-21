@@ -888,13 +888,13 @@ for partial matrix correlations and binary data (Aben et al., 2018,
 (define-public r-itol-toolkit
   (package
     (name "r-itol-toolkit")
-    (version "1.1.0")
+    (version "1.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itol.toolkit" version))
               (sha256
                (base32
-                "0lc7c7pfh09s460bc7gwbi12zj1sf5h1hrg65bk1cqd81hn44ndz"))))
+                "0akmjzp65vsl8hnh195lhm58f0qs1c3vy8ljd6njmq2f9fvjgxpj"))))
     (properties `((upstream-name . "itol.toolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson

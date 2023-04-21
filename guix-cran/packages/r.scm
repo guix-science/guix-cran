@@ -5166,13 +5166,13 @@ Contrastive Pessimistic Likelihood estimation, S4VM and WellSVM.")
 (define-public r-rssimulx
   (package
     (name "r-rssimulx")
-    (version "2.0.2")
+    (version "2023.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RsSimulx" version))
               (sha256
                (base32
-                "04z71idb9jhm7cmgm3vwr6y9wlji2q82gd3f73sy0n9sg0cl60dj"))))
+                "0j48d94r68lzjpkak67q455q09ivp9fnkcsbqh8qziikzglf2ac5"))))
     (properties `((upstream-name . "RsSimulx")))
     (build-system r-build-system)
     (inputs (list))
@@ -11721,13 +11721,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.11")
+    (version "0.9.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rolog" version))
               (sha256
                (base32
-                "14vldpnjfg4cgbzlnyar6vn2kmswryjwm4qqdy3dpn1alj1b0pkh"))))
+                "1rilvdr5kdscc06cp6c1s8y4vnv7p1kzr6lnmcm7ajp6adxp5il2"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -12363,23 +12363,23 @@ optimization problems.  More information can be found in the README file.")
 (define-public r-roi
   (package
     (name "r-roi")
-    (version "1.0-0")
+    (version "1.0-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ROI" version))
               (sha256
                (base32
-                "0hd3l219wanhanbf4pgrh1pbxah50gf5qg2gff1djdr1xns7zn5h"))))
+                "05hnj9fskfm2klz7zv97lb0r60akjq4a1cay8p62whpi0hri9zyl"))))
     (properties `((upstream-name . "ROI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-slam r-registry))
-    (home-page "http://roi.r-forge.r-project.org/")
+    (propagated-inputs (list r-slam r-registry r-checkmate))
+    (home-page "https://roi.r-forge.r-project.org/")
     (synopsis "R Optimization Infrastructure")
     (description
      "The R Optimization Infrastructure ('ROI') <doi:10.18637/jss.v094.i15> is a
 sophisticated framework for handling optimization problems in R. Additional
 information can be found on the ROI homepage
-<http://roi.r-forge.r-project.org/>.")
+<https://roi.r-forge.r-project.org/>.")
     (license license:gpl3)))
 
 (define-public r-rogue
@@ -24807,13 +24807,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.8.1")
+    (version "2.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfacebookstat" version))
               (sha256
                (base32
-                "16d0v5vglxc412zcnm343mkwxk4sv69xlgp9i9xka9vzvz9n5bfh"))))
+                "0fgphdgx11saq29hkfb13ba2avwazr47dgw18xka0sjg8wqppnja"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -26310,13 +26310,13 @@ persistence using the Hurst coefficient.")
 (define-public r-resemble
   (package
     (name "r-resemble")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "resemble" version))
               (sha256
                (base32
-                "1r1wanqwb7i9dr1himdgp9sl5c0582rixlf240rczfr7c4skn5mp"))))
+                "1qf1g0cq593lnvzac4z1v04bjp10aza786pfaivs74m726ihmzq6"))))
     (properties `((upstream-name . "resemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -40066,13 +40066,13 @@ details from Thrasher (1992) <doi:10.1002/dir.4000060408> and pyks
 (define-public r-rawhummus
   (package
     (name "r-rawhummus")
-    (version "0.3.0")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RawHummus" version))
               (sha256
                (base32
-                "1d7j7687jgmkspd6avpvz83pzq230xsmcdhiwsm7j45bl9rzicn0"))))
+                "0m88cywxwwiyvr2i7ipi9yf5znzdjfsmgz2x0ry4d6mm5469rws4"))))
     (properties `((upstream-name . "RawHummus")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinymatrix
@@ -42062,13 +42062,13 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 (define-public r-rankinma
   (package
     (name "r-rankinma")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rankinma" version))
               (sha256
                (base32
-                "1skwz137cv43nj4gvi21ii4iy5j1zfrn9cg8kblk15r2cdlxn5pz"))))
+                "0zb6c6bvzlr8dgr7xlmz4p2x0yq5v9svaq6p9jaykwdrrci4jx0l"))))
     (properties `((upstream-name . "rankinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-netmeta r-mvtnorm))

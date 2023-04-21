@@ -6733,38 +6733,6 @@ estimates of different parameters for the total finite population and in studio
 domains, using the main design drawings.")
     (license license:gpl2+)))
 
-(define-public r-probreco
-  (package
-    (name "r-probreco")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ProbReco" version))
-              (sha256
-               (base32
-                "1f56r0w3rxwdyiq7r18mm8a5j80p3dwcnphgxyy6h5binzdwyfgx"))))
-    (properties `((upstream-name . "ProbReco")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-purrr
-                             r-mvtnorm
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/anastasiospanagiotelis/ProbReco")
-    (synopsis "Score Optimal Probabilistic Forecast Reconciliation")
-    (description
-     "Training of reconciliation weights for probabilistic forecasts to optimise total
-energy (or variogram) score using Stochastic Gradient Descent with automatically
-differentiated gradients.  See Panagiotelis, Gamakumara, Athanasopoulos and
-Hyndman, (2020)
-<https://www.monash.edu/business/ebs/research/publications/ebs/wp26-2020.pdf>
-for a description of the methods.")
-    (license license:gpl3)))
-
 (define-public r-probout
   (package
     (name "r-probout")
@@ -11779,35 +11747,6 @@ graph.  Includes also non-parametric toos for post-hoc analysis.  It has S3
 methods for printing summarizing, and producing plots, line and barplots
 suitable for post-hoc analyses.")
     (license license:gpl3+)))
-
-(define-public r-postgistools
-  (package
-    (name "r-postgistools")
-    (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "postGIStools" version))
-              (sha256
-               (base32
-                "04d6iqnk7j2lgv1h5c94j6y89jk75pmv26sxa51s5iwkjq7rchym"))))
-    (properties `((upstream-name . "postGIStools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-rpostgresql
-                             r-rgeos
-                             r-rgdal
-                             r-jsonlite
-                             r-dbi))
-    (home-page "https://github.com/SESYNC-ci/postGIStools")
-    (synopsis "Tools for Interacting with 'PostgreSQL' / 'PostGIS' Databases")
-    (description
-     "This package provides functions to convert geometry and hstore data types from
-PostgreSQL into standard R objects, as well as to simplify the import of R data
-frames (including spatial data frames) into PostgreSQL'.  Note: This package is
-deprecated.  For new projects, we recommend using the sf package to interface
-with geodatabases.")
-    (license license:gpl3)))
 
 (define-public r-postggir
   (package
@@ -32526,6 +32465,31 @@ average treatment effects for the treated can be estimated with standard errors.
 assess the quality of matches by examining the resulting covariate balance.")
     (license license:gpl3+)))
 
+(define-public r-panelhetero
+  (package
+    (name "r-panelhetero")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "panelhetero" version))
+              (sha256
+               (base32
+                "162izdp7bnrrdpjrzhpavsz09vz7r5qgf4vaw44rl06knssv1bqp"))))
+    (properties `((upstream-name . "panelhetero")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rearrangement r-kernsmooth r-ggplot2 r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=panelhetero")
+    (synopsis "Panel Data Analysis with Heterogeneous Dynamics")
+    (description
+     "Understanding the dynamics of potentially heterogeneous variables is important
+in statistical applications.  This package provides tools for estimating the
+degree of heterogeneity across cross-sectional units in the panel data analysis.
+ The methods are developed by Okui and Yanagi (2019)
+<doi:10.1016/j.jeconom.2019.04.036> and Okui and Yanagi (2020)
+<doi:10.1093/ectj/utz019>.")
+    (license license:expat)))
+
 (define-public r-panelcount
   (package
     (name "r-panelcount")
@@ -33862,13 +33826,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pak" version))
               (sha256
                (base32
-                "1jlcfnx0gqvslc8idqh2p7z6h1r5vqz7vyzfpk4gl1rnlg26q894"))))
+                "0iqxz1a44qnkqjn1yjvx1kwi01h1acz7x1598nkjjgmd7za36d61"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (home-page "https://pak.r-lib.org/")

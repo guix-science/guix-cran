@@ -24363,35 +24363,6 @@ computational workflow for analysis of matabolomic data..")
 stochastic disability-adjusted life year (DALY) calculation.")
     (license license:gpl2+)))
 
-(define-public r-dalmatian
-  (package
-    (name "r-dalmatian")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dalmatian" version))
-              (sha256
-               (base32
-                "0hpyg8sl5v87l1hxax9sj863hy9njdyp7hnsaw3cida365p0dswa"))))
-    (properties `((upstream-name . "dalmatian")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-ggmcmc
-                             r-dplyr
-                             r-dglm
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dalmatian")
-    (synopsis
-     "Automating the Fitting of Double Linear Mixed Models in 'JAGS' and 'nimble'")
-    (description
-     "Automates fitting of double GLM in JAGS'.  Includes automatic generation of JAGS
-scripts, running JAGS or nimble via the rjags and nimble package, and
-summarizing the resulting output.  For further information see Bonner, Kim,
-Westneat, Mutzel, Wright, and Schofield <doi:10.18637/jss.v100.i10>.")
-    (license license:gpl2)))
-
 (define-public r-dalextra
   (package
     (name "r-dalextra")

@@ -3813,6 +3813,38 @@ using Kaplan-Meier, and the tail after the change point is fit using piecewise
 exponential.")
     (license license:gpl2+)))
 
+(define-public r-eventstudyr
+  (package
+    (name "r-eventstudyr")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "eventstudyr" version))
+              (sha256
+               (base32
+                "0v04r8agmjv72rrx52m3i7cxy13fd8lg8xvl9lwcpba4vzh747dy"))))
+    (properties `((upstream-name . "eventstudyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-pracma
+                             r-mass
+                             r-ggplot2
+                             r-estimatr
+                             r-dplyr
+                             r-data-table
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JMSLab/eventstudyr")
+    (synopsis "Estimation and Visualization of Linear Panel Event Studies")
+    (description
+     "Estimates linear panel event study models.  Plots coefficients following the
+recommendations in Freyaldenhoven et al. (2021) <doi:10.3386/w29170>.  Includes
+sup-t bands, testing for key hypotheses, least wiggly path through the Wald
+region.  Allows instrumental variables estimation following Freyaldenhoven et
+al. (2019) <doi:10.1257/aer.20180609>.")
+    (license license:expat)))
+
 (define-public r-eventstudy
   (package
     (name "r-eventstudy")
@@ -18091,13 +18123,13 @@ modified rejection sampling or uniformization.")
 (define-public r-ecb
   (package
     (name "r-ecb")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ecb" version))
               (sha256
                (base32
-                "1qs3si47bpvc7gvvzaq3sna0s241p6kygvhp1xwcn4117lhjlz5j"))))
+                "19ir0ywbzwyx90mgxqk9byb63afic2fvhrhy174di0pmj522vnr4"))))
     (properties `((upstream-name . "ecb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rsdmx r-httr r-curl))

@@ -635,13 +635,13 @@ does not require that the data be in geographic coordinates.")
 (define-public r-quickjsr
   (package
     (name "r-quickjsr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QuickJSR" version))
               (sha256
                (base32
-                "1aylg2334yyklpziw8i6qp109xavvpjfdm2jar467x78d1ikb5i6"))))
+                "11fj3in9bzljj1jzz0y49yib1dcpbl8qr01sbqwa3wh4pq4c7mc0"))))
     (properties `((upstream-name . "QuickJSR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6 r-jsonlite))
@@ -2915,16 +2915,15 @@ convergence and fitting results.")
 (define-public r-qrng
   (package
     (name "r-qrng")
-    (version "0.0-8")
+    (version "0.0-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qrng" version))
               (sha256
                (base32
-                "1yagh7llrg208mdmwyq7gy4c7h20hj4s5ikp6nc3q8pl7avmq3jc"))))
+                "1qkfaqj0bmfvray5cdv83ic967wf2lsvnr37z008vi7kwm2glpig"))))
     (properties `((upstream-name . "qrng")))
     (build-system r-build-system)
-    (propagated-inputs (list r-randtoolbox r-copula))
     (home-page "https://cran.r-project.org/package=qrng")
     (synopsis "(Randomized) Quasi-Random Number Generators")
     (description
@@ -3901,13 +3900,13 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qlcal" version))
               (sha256
                (base32
-                "11smsvbrdn2arlj8z54nwb667dgqsr3xmyfbywl8s93101pxbjsx"))))
+                "0azx6px89s7kq7sdjjnvjlkfb0d86a8xzsrh9bnij5q36dnw6pii"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

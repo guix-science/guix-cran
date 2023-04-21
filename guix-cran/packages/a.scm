@@ -7069,13 +7069,13 @@ functions to calculate the buffer factors.")
 (define-public r-aquadtree
   (package
     (name "r-aquadtree")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AQuadtree" version))
               (sha256
                (base32
-                "1nq2k8dkviazh09pglgla7vgvxwgckkbwx20rs8q9k0xnmsz86yz"))))
+                "1dlfa3jlac4dqad1yw1whcshf18adabwvjx2pxg0xnkpxs1n2rfm"))))
     (properties `((upstream-name . "AQuadtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-dplyr))
@@ -12172,6 +12172,38 @@ technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
 Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
     (license license:gpl3+)))
 
+(define-public r-allmt
+  (package
+    (name "r-allmt")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "allMT" version))
+              (sha256
+               (base32
+                "0d34w0gl369mq512x3h2nsrvd13ahy36p5hdyvz5gnpdlaql64c6"))))
+    (properties `((upstream-name . "allMT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-scales
+                             r-rio
+                             r-reshape2
+                             r-readxl
+                             r-plyr
+                             r-htmltable
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tmungle/allMT")
+    (synopsis "Acute Lymphoblastic Leukemia Maintenance Therapy Analysis")
+    (description
+     "Evaluates acute lymphoblastic leukemia maintenance therapy practice at patient
+and cohort level.")
+    (license license:gpl3+)))
+
 (define-public r-allmetrics
   (package
     (name "r-allmetrics")
@@ -16455,13 +16487,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.10.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adjustedCurves" version))
               (sha256
                (base32
-                "1vcyslv4kwhf2h5l6s60kws7ng9hyxvrvqlbflynkdnhdp4limxj"))))
+                "01929d6nyyj8l2abr4qk2ycp74m3b1ffzwjl6r32wqb9qkzd8b4i"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

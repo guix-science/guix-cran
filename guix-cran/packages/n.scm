@@ -7550,13 +7550,13 @@ directly is also provided.")
 (define-public r-nhdr
   (package
     (name "r-nhdr")
-    (version "0.5.9")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhdR" version))
               (sha256
                (base32
-                "0zgcsj7469dpmfda62322yxamq9lahl3d9nxizdp48kh0xrmx8pl"))))
+                "1rfvmla727l0x4vjqp2sjnbx9wy3996n6x7z8lrcz82lcq9hdbzl"))))
     (properties `((upstream-name . "nhdR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7565,7 +7565,6 @@ directly is also provided.")
                              r-sf
                              r-rvest
                              r-rlang
-                             r-rgdal
                              r-rappdirs
                              r-purrr
                              r-memoise
@@ -10893,6 +10892,44 @@ respective references are given.  In addition, the software includes Stevens
 <doi:10.1159/000180580> formulas.  The race-free CKD-EPI equations (2021)
 <doi:10.1056/NEJMoa2102953> are also implemented from ver.1.3.")
     (license license:gpl3+)))
+
+(define-public r-neotoma2
+  (package
+    (name "r-neotoma2")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "neotoma2" version))
+              (sha256
+               (base32
+                "0lw7v32w03fwn4pj3d7k95c2a2m1zqfjl03dr5ijh8b222zj1vsg"))))
+    (properties `((upstream-name . "neotoma2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wk
+                             r-uuid
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-mapview
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-gtools
+                             r-geojsonsf
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NeotomaDB/neotoma2")
+    (synopsis "Working with the Neotoma Paleoecology Database")
+    (description
+     "Access and manipulation of data using the Neotoma Paleoecology Database.
+<https://api.neotomadb.org/api-docs/>.")
+    (license license:expat)))
 
 (define-public r-neonutilities
   (package

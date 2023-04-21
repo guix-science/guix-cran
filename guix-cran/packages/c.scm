@@ -5296,13 +5296,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropcircles" version))
               (sha256
                (base32
-                "1lfkpg9l31l96cn3i2ssw6qrz5nw6pcip50x1gv69x4bzsgjzsy0"))))
+                "1jskyhl1fn8r0xzwijvlndarm4bni8g8y1paa2lc743lksi8wbay"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -31057,13 +31057,13 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.5.0")
+    (version "2.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cellWise" version))
               (sha256
                (base32
-                "1ls455d4y3mfkhz0g45qkhhd4jl7awipakcrsi87lskixzza73rr"))))
+                "1yi0l4fwsjvbqaka5dlk1vb88i243w83ywn5qr2xm26nipk7b5cf"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd

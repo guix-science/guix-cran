@@ -12045,18 +12045,18 @@ as data frame for later use.")
 (define-public r-timeperiodsr
   (package
     (name "r-timeperiodsr")
-    (version "0.6.2")
+    (version "0.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timeperiodsR" version))
               (sha256
                (base32
-                "09vwp04j7n176xs1lbdmbyi557byx6fdvqyjay1785hkb9ivws5q"))))
+                "0fb9xwpdg38nnghjarlp2svjs225ng3h8p7vxnsy7rh0g3qck450"))))
     (properties `((upstream-name . "timeperiodsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
-    (home-page "https://selesnow.github.io/timeperiodsR")
+    (home-page "https://selesnow.github.io/timeperiodsR/")
     (synopsis "Simple Definition Of Time Intervals")
     (description
      "Simple definition of time intervals for the current, previous, and next week,
@@ -12970,13 +12970,13 @@ Twitter'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.10.0")
+    (version "0.10.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytable" version))
               (sha256
                (base32
-                "0dm0iirlz255zrmwgl0d7am65rsrhwlqmdkgcy6909hm0n71dvry"))))
+                "1szyzfh0679i3q87j9c2bdsal6lg7fpis5jwasqvgig8zyi20ild"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12987,7 +12987,7 @@ Twitter'.")
                              r-lifecycle
                              r-glue
                              r-data-table))
-    (home-page "https://github.com/markfairbanks/tidytable")
+    (home-page "https://markfairbanks.github.io/tidytable/")
     (synopsis "Tidy Interface to 'data.table'")
     (description
      "This package provides a tidy interface to data.table', giving users the speed of
@@ -13859,31 +13859,6 @@ total number.  Default use of Brewer and Viridis palettes.")
     (description
      "In order to easily integrate geoRSS data into analysis, tidygeoRSS parses geo
 feeds and returns tidy simple features data frames.")
-    (license license:expat)))
-
-(define-public r-tidygeocoder
-  (package
-    (name "r-tidygeocoder")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tidygeocoder" version))
-              (sha256
-               (base32
-                "1ffj8ka5miv3jnds7fdrkcqdc3m2w1ab724z9m10biky213skqka"))))
-    (properties `((upstream-name . "tidygeocoder")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-progress
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://jessecambon.github.io/tidygeocoder/")
-    (synopsis "Geocoding Made Easy")
-    (description
-     "An intuitive interface for getting data from geocoding services.")
     (license license:expat)))
 
 (define-public r-tidygenomics
@@ -14811,13 +14786,13 @@ uncertainty bands.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyAML" version))
               (sha256
                (base32
-                "0zr2nmsyy9cx2kkg5z9nrf9mls8zg3d9lqv0vzvwzvrqc377yd88"))))
+                "0939wymf9k4v2nh0yr1anw5jpqpxnrq8b5c5ikdyrdk70zfpd67j"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -19914,6 +19889,28 @@ in Chesmore (2001) <doi:10.1016/S0003-682X(01)00009-3>, and related tasks.  This
 package creates the standard S-matrix and A-matrix (with variable lag), has
 tools to convert coding matrices into distributed matrices, provides published
 codebooks and allows for extraction of code sequences.")
+    (license license:gpl3)))
+
+(define-public r-tdsa
+  (package
+    (name "r-tdsa")
+    (version "1.0-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tdsa" version))
+              (sha256
+               (base32
+                "08sl4z8c5xvwi98i1z5676sdccwr79imqhz02jwwyymjmikw4zlj"))))
+    (properties `((upstream-name . "tdsa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-mathjaxr r-desolve))
+    (home-page "https://github.com/weehaong/tdsa")
+    (synopsis "Time-Dependent Sensitivity Analysis")
+    (description
+     "This package provides functions that can be used to calculate time-dependent
+state and parameter sensitivities for both continuous- and discrete-time
+deterministic models.  See Ng et al. (in review) <doi:10.1101/2023.04.13.536769>
+for more information about time-dependent sensitivity analysis.")
     (license license:gpl3)))
 
 (define-public r-tdroc

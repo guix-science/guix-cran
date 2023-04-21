@@ -1297,6 +1297,43 @@ version from the paper by Kuhnt and Rehage (2016).  See Kuhnt, S.; Rehage, A.
 detection, JMVA 146, 325-340, <doi:10.1016/j.jmva.2015.10.016> for details.")
     (license license:gpl3)))
 
+(define-public r-funstattest
+  (package
+    (name "r-funstattest")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "funStatTest" version))
+              (sha256
+               (base32
+                "1dqp4yh01w8xdbjhjzxrx33w0hgxcm5a43r27q17m34hqiv33y34"))))
+    (properties `((upstream-name . "funStatTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-pbapply
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-distr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://plmlab.math.cnrs.fr/gdurif/funStatTest/")
+    (synopsis "Statistical Testing for Functional Data")
+    (description
+     "Implementation of two sample comparison procedures based on median-based
+statistical tests for functional data, introduced in Smida et al (2022)
+<doi:10.1080/10485252.2022.2064997>.  Other competitive state-of-the-art
+approaches proposed by Chakraborty and Chaudhuri (2015)
+<doi:10.1093/biomet/asu072>, Horvath et al (2013)
+<doi:10.1111/j.1467-9868.2012.01032.x> or Cuevas et al (2004)
+<doi:10.1016/j.csda.2003.10.021> are also included in the package, as well as
+procedures to run test result comparisons and power analysis using simulations.")
+    (license license:agpl3+)))
+
 (define-public r-funspace
   (package
     (name "r-funspace")
@@ -9916,6 +9953,29 @@ respectively.  For users convenience, the functions also provide the output
 option for printing decision rules.")
     (license license:gpl2+)))
 
+(define-public r-fixr
+  (package
+    (name "r-fixr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fixr" version))
+              (sha256
+               (base32
+                "074dr1l3bw8v1lrih1mc51dmx02kambis04r9jpx64vnpajjfv8p"))))
+    (properties `((upstream-name . "fixr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rcurl r-httr))
+    (home-page "https://github.com/ambuvjyn/fixr")
+    (synopsis "Fixing Data Made Easy for Statistical Analysis")
+    (description
+     "This package provides a set of functions that facilitate basic data manipulation
+and cleaning for statistical analysis including functions for finding and fixing
+duplicate rows and columns, missing values, outliers, and special characters in
+column and row names and functions for checking data consistency, distribution,
+quality, reliability, and structure.")
+    (license license:gpl3)))
+
 (define-public r-fixest
   (package
     (name "r-fixest")
@@ -12330,13 +12390,13 @@ package AlphaSimR'.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.2.1")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FielDHub" version))
               (sha256
                (base32
-                "0ii6a1r3bfx9i8qvd30hbycwhfrm71177s0kivly9yhdvxpkpf2s"))))
+                "1kmzrf73a72sc96y5pv51n02lj98qgxv31yfsj09ls2z4fsh536v"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -15863,6 +15923,34 @@ website is behind a firewall.")
     (description
      "This package provides a replacement for dplyr::na_if().  Allows you to specify
 multiple values to be replaced with NA using a single function.")
+    (license license:expat)))
+
+(define-public r-faux
+  (package
+    (name "r-faux")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "faux" version))
+              (sha256
+               (base32
+                "143yc71cfsxnczi719ygrsynxry60nh8263gg8vwp3qrc80j80lh"))))
+    (properties `((upstream-name . "faux")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-rlang
+                             r-lme4
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/debruine/faux")
+    (synopsis "Simulation for Factorial Designs")
+    (description
+     "Create datasets with factorial structure through simulation by specifying
+variable parameters.  Extended documentation at
+<https://debruine.github.io/faux/>.  Described in DeBruine (2020)
+<doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 
 (define-public r-faulttree

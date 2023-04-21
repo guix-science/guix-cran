@@ -122,6 +122,30 @@ genes contributing to a transcriptome of interest (Drost et al. (2016)
 <doi:10.1101/051565>).")
     (license license:gpl3)))
 
+(define-public r-mycran
+  (package
+    (name "r-mycran")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "myCRAN" version))
+              (sha256
+               (base32
+                "0lx0l5z3z20xfil6f3c94by334girhca7ixyix88k5jn46a2s373"))))
+    (properties `((upstream-name . "myCRAN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cranlogs))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=myCRAN")
+    (synopsis "Graph of Daily and Cumulative Downloads of your Packages")
+    (description
+     "Plot the daily and cumulative number of downloads of your packages.  It is
+designed to be slightly more convenient than the several similar programs.  If
+you want to run this each morning, you do not need to keep typing in the names
+of your packages.  Also, this combines the daily and cumulative counts in one
+run, you do not need to run separate programs to get both types of information.")
+    (license license:gpl2+)))
+
 (define-public r-mycor
   (package
     (name "r-mycor")
@@ -15793,13 +15817,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.3.5")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3tuningspaces" version))
               (sha256
                (base32
-                "0a9lylpff7wj7b5c1xqdlazjvalyi7k94whsrzam6ggfmcd85w2b"))))
+                "1h5nz992i4bkgfg0gjnyfkiqfg09d15d6h4r6gnd7rbim73807xp"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -24733,20 +24757,16 @@ using a fixed amount of memory.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "1.14")
+    (version "1.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mev" version))
               (sha256
                (base32
-                "0pxjvvmrhjrdcznknncyhjghscajkw0q0y4r3ai22nkx70gln6bv"))))
+                "0ipb61gqwivcqzqsv2p3i96bhwv7wadh50rb8cd1j0pqb5q3s76k"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-nloptr
-                             r-nleqslv
-                             r-evd
+    (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-nleqslv
                              r-alabama))
     (native-inputs (list r-knitr))
     (home-page "https://lbelzile.github.io/mev/")
@@ -34319,13 +34339,13 @@ name.\"")
 (define-public r-matrixtests
   (package
     (name "r-matrixtests")
-    (version "0.2")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matrixTests" version))
               (sha256
                (base32
-                "096kh1fqa7c6y1pcnblxs6z231f8yic0r8bkgfm3c50yy1w4v4w1"))))
+                "1221ig7h1j2cw7rc5ap49nahwmzcmv9hnnkv7m172qgwhzgxq88g"))))
     (properties `((upstream-name . "matrixTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))

@@ -1155,13 +1155,13 @@ OpenMP'.")
 (define-public r-swmprextension
   (package
     (name "r-swmprextension")
-    (version "2.2.3")
+    (version "2.2.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SWMPrExtension" version))
               (sha256
                (base32
-                "1ig5wvf1h89v65xh1p69ab57flmlafjc02kgkcq3nfvm904ida4i"))))
+                "0vvmpghwrd66y92d9mb93i38siyd0jx6vlafbir1inkmpcpa62a0"))))
     (properties `((upstream-name . "SWMPrExtension")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1187,7 +1187,7 @@ OpenMP'.")
     (description
      "Tools for performing routine analysis and plotting tasks with environmental data
 from the System Wide Monitoring Program of the National Estuarine Research
-Reserve System <http://cdmo.baruch.sc.edu/>.  This package builds on the
+Reserve System <https://cdmo.baruch.sc.edu/>.  This package builds on the
 functionality of the SWMPr package <https://cran.r-project.org/package=SWMPr>,
 which is used to retrieve and organize the data.  The combined set of tools
 address common challenges associated with continuous time series data for
@@ -1199,7 +1199,7 @@ activities.  References: Beck, Marcus W. (2016) <ISSN
 United States Environmental Protection Agency (2015)
 <https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=OWOW&dirEntryId=327030>.
  United States Environmental Protection Agency (2012)
-<http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.646.1973&rep=rep1&type=pdf>.")
+<https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.646.1973&rep=rep1&type=pdf>.")
     (license license:cc0)))
 
 (define-public r-swmpr
@@ -3313,6 +3313,46 @@ the objective to maximize the concordance index for comparable pairs of
 observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-survivalsl
+  (package
+    (name "r-survivalsl")
+    (version "0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "survivalSL" version))
+              (sha256
+               (base32
+                "06dnypi4b3afg4adwcfkhr6in9wica0vf9b1cz4ais5cb929fiar"))))
+    (properties `((upstream-name . "survivalSL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tune
+                             r-timeroc
+                             r-survivalmodels
+                             r-survival
+                             r-superlearner
+                             r-rpart
+                             r-reticulate
+                             r-randomforestsrc
+                             r-prodlim
+                             r-nnet
+                             r-mosaiccalc
+                             r-mosaic
+                             r-mass
+                             r-kernlab
+                             r-hdnom
+                             r-glmnetutils
+                             r-glmnet
+                             r-flexsurv
+                             r-date
+                             r-cubature
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=survivalSL")
+    (synopsis "Super Learner for Survival Prediction from Censored Data")
+    (description
+     "Several functions and S3 methods to construct a super learner in the presence of
+censored times-to-event and to evaluate its prognostic capacities.")
+    (license license:gpl2+)))
 
 (define-public r-survivalmpldc
   (package
@@ -12760,18 +12800,18 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stacks" version))
               (sha256
                (base32
-                "1abd0h1nqxp4mmsgi6g6ki0j6v2gacq687d83zsixrx3vfvpwkn4"))))
+                "179jcgvsydkrg37yz01wj4x9fhvakpmmw2yl18m3aj2llf67ily8"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
-                             r-workflowsets
                              r-workflows
+                             r-vctrs
                              r-tune
                              r-tidyr
                              r-tibble
@@ -12783,6 +12823,7 @@ This version is available in French and English.  See
                              r-glue
                              r-glmnet
                              r-ggplot2
+                             r-generics
                              r-foreach
                              r-dplyr
                              r-cli
@@ -21550,23 +21591,23 @@ Design.")
 (define-public r-spas
   (package
     (name "r-spas")
-    (version "2020.1.1")
+    (version "2023.3.31")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPAS" version))
               (sha256
                (base32
-                "1bvnyxg3npxv63kikmr30jgc14f1s1a5vfh40qs50nbzq84pl6bx"))))
+                "1khblwl0b80c3hfizhcrlaxd2gcyjh7784gjc10mi21iy0q6pd2x"))))
     (properties `((upstream-name . "SPAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
+                             r-reshape2
                              r-rcppeigen
                              r-plyr
                              r-numderiv
                              r-msm
                              r-matrix
-                             r-mass
-                             r-bb))
+                             r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SPAS")
     (synopsis "Stratified-Petersen Analysis System")
@@ -21580,12 +21621,13 @@ marking takes place may differ from the t strata in which recoveries take place.
 <https://www.jstor.org/stable/2332748>.  When s<t, SPAS implements the methods
 described in Plante, Rivest, and Tremblay (1988)
 <https://www.jstor.org/stable/2533994>.  Schwarz and Taylor (1998)
-<doi:10.1139/f97-238> describe the use of SPAS in estimating return of salmon
-stratified by time and geography.  A related package, BTSPAS, deals with
-temporal stratification where a spline is used to model the distribution of the
-population over time as it passes the second capture location.  This is the
-R-version of the (now obsolete) standalone Windows program available at
-<http://www.cs.umanitoba.ca/~popan/spas/spas_home.html>.")
+<https://cdnsciencepub.com/doi/10.1139/f97-238> describe the use of SPAS in
+estimating return of salmon stratified by time and geography.  A related
+package, BTSPAS, deals with temporal stratification where a spline is used to
+model the distribution of the population over time as it passes the second
+capture location.  This is the R-version of the (now obsolete) standalone
+Windows program available at
+<https://home.cs.umanitoba.ca/~popan/spas/spas_home.html>.")
     (license license:gpl2+)))
 
 (define-public r-sparvaride
@@ -22689,6 +22731,35 @@ found in J. F. Bithell (1990) <doi:10.1002/sim.4780090616>.  More information
 about relative risk functions using kernel density estimation can be found in J.
 F. Bithell (1991) <doi:10.1002/sim.4780101112>.")
     (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
+
+(define-public r-sparrafairness
+  (package
+    (name "r-sparrafairness")
+    (version "0.0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SPARRAfairness" version))
+              (sha256
+               (base32
+                "0nyixdddqq3cmzj00gm637dm64iwb63mgp34wvmway5cflqr8yck"))))
+    (properties `((upstream-name . "SPARRAfairness")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-mvtnorm r-matrixstats r-cvauc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SPARRAfairness")
+    (synopsis
+     "Analysis of Differential Behaviour of SPARRA Score Across Demographic Groups")
+    (description
+     "The SPARRA risk score (Scottish Patients At Risk of admission and Re-Admission)
+estimates yearly risk of emergency hospital admission using electronic health
+records on a monthly basis for most of the Scottish population.  This package
+implements a suite of functions used to analyse the behaviour and performance of
+the score, focusing particularly on differential performance over
+demographically-defined groups.  It includes useful utility functions to plot
+receiver-operator-characteristic, precision-recall and calibration curves, draw
+stock human figures, estimate counterfactual quantities without the need to
+re-compute risk scores, to simulate a semi-realistic dataset.")
+    (license license:gpl3+)))
 
 (define-public r-sparr
   (package
@@ -42475,13 +42546,13 @@ a site worker guess the treatment of the next unit enrolled).")
 (define-public r-seq2r
   (package
     (name "r-seq2r")
-    (version "1.1.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seq2R" version))
               (sha256
                (base32
-                "10iyqiala5ggi2vr1gcfb2drpcc0n2y6iqa3drk0iw07jsrm0j7b"))))
+                "1ynhmfch8w2s0mh55km6v9afn0z3p43ckg79cz08d2z25lv5syrj"))))
     (properties `((upstream-name . "seq2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr))
@@ -48497,13 +48568,13 @@ sequencing) data <https://github.com/fumi-github/scPloidy>.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scpi" version))
               (sha256
                (base32
-                "1iwrzxpxj4c3hmjf8i7bf1gjlcf0wmv2lv20dwvj54ia355nxk2i"))))
+                "0hqa2razfpiazisb1r4hgcmqids959yypvb9rlnxnbgz1vb850j8"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

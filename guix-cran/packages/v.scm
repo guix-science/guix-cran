@@ -5521,13 +5521,13 @@ interpretation of the results.")
 (define-public r-varselectexposure
   (package
     (name "r-varselectexposure")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VARSELECTEXPOSURE" version))
               (sha256
                (base32
-                "04gx4by4xwyn9safk8mh5alrzs8ikh03mgqsix1ms9kmywkfd8n8"))))
+                "0yshhjv9kdwikcw7vqd7k7i91xms8wbbv0n1qhc03lw9lg9vhxh0"))))
     (properties `((upstream-name . "VARSELECTEXPOSURE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5535,7 +5535,7 @@ interpretation of the results.")
     (synopsis "Variable Selection Methods Including an Exposure Variable")
     (description
      "Utilizes multiple variable selection methods to estimate Average Treatment
-Effect and Relative Treatment Effect.")
+Effect.")
     (license license:gpl2)))
 
 (define-public r-varsel

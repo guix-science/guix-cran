@@ -6062,34 +6062,6 @@ covers Models, Completions, Chat, Edits, Images, Embeddings, Audio, Files,
 Fine-tunes, Moderations, and legacy Engines endpoints.")
     (license license:expat)))
 
-(define-public r-openadds
-  (package
-    (name "r-openadds")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "openadds" version))
-              (sha256
-               (base32
-                "1jb8zd3rpxfkjkg895iab6m4cfi53p5vy3nnpjkgq7ym6499qjcv"))))
-    (properties `((upstream-name . "openadds")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-readr
-                             r-rappdirs
-                             r-maptools
-                             r-jsonlite
-                             r-dplyr
-                             r-crul))
-    (home-page "https://github.com/sckott/openadds")
-    (synopsis "Client to Access 'Openaddresses' Data")
-    (description
-     "Openaddresses (<https://openaddresses.io/>) client.  Search, fetch data, and
-combine datasets'.  Outputs are easy to visualize with base plots, ggplot2', or
-leaflet'.")
-    (license license:expat)))
-
 (define-public r-opdoe
   (package
     (name "r-opdoe")

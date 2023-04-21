@@ -11676,13 +11676,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leaflet.extras2" version))
               (sha256
                (base32
-                "0l8bfia5cb3420icvij7yljdg04b9x783x2gnvy5360gmd0c9sqf"))))
+                "1jh2vpygx4fnj7s0p5hn1wgpddwffvrsfhv7l5lg4cvaf8xzwvn3"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-leaflet r-htmltools))

@@ -3791,13 +3791,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "2.2.1")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groundhog" version))
               (sha256
                (base32
-                "156x2l4i9lpl5qxisiajvqlq4vcwnmirx0j80vnyz0cd1p7mq5gf"))))
+                "1c8z9861w6wf5px0qm5iryczmxfv7kj8h8a398sidlny3faa7b45"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -3809,11 +3809,7 @@ the user running the script happens to have installed).  This is achieved by
 using the command groundhog.library() instead of the base command library(), and
 including a date in the call.  The date is used to call on the same version of
 the package every time (the most recent version available at that date).  Load
-packages from CRAN, GitHub, or Gitlab. =======================================
-Note: groundhog relied on Microsoft's MRAN archive which is being discontinued.
-This version of groundhog is transitioning away from MRAN, relying on it only
-for dates prior to Jan 31, 2023.  A future release of groundhog, v2.3.0,
-expected by May 2023, will discontinue relying on MRAN entirely.")
+packages from CRAN, GitHub, or Gitlab.")
     (license license:gpl3)))
 
 (define-public r-gromovlab
@@ -6240,13 +6236,13 @@ Montanari, 2018 <arXiv:1803.00374>.")
 (define-public r-grandr
   (package
     (name "r-grandr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grandR" version))
               (sha256
                (base32
-                "186jvqldhpyqj005g34lhvnig1ign5kkzmvsmpyfsz18zc8clmhz"))))
+                "1jxw2isjdgxyr9lf71zpn1bzpy1qs7v0918m846s0a71k6dlqr6f"))))
     (properties `((upstream-name . "grandR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -6345,23 +6341,23 @@ function.")
 (define-public r-grainscape
   (package
     (name "r-grainscape")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grainscape" version))
               (sha256
                (base32
-                "0mc9mgc70ysqal8pjslmr7dzig3d08jcdpba348hmgyh0w9b6s07"))))
+                "0c9ms97xnz7z5r2hhwbw0qpcmknp2wk327z95x751yjvgbps3lkg"))))
     (properties `((upstream-name . "grainscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
-                             r-rgdal
+                             r-sf
                              r-rcpp
                              r-raster
                              r-igraph
                              r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://alexchubaty.com/grainscape")
+    (home-page "https://www.alexchubaty.com/grainscape/")
     (synopsis "Landscape Connectivity, Habitat, and Protected Area Networks")
     (description
      "Given a landscape resistance surface, creates minimum planar graph (Fall et al.
@@ -6737,6 +6733,37 @@ al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
 mixed models with teachers modeled as \"G-side\" effects and students modeled with
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
+
+(define-public r-gpumatrix
+  (package
+    (name "r-gpumatrix")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GPUmatrix" version))
+              (sha256
+               (base32
+                "1zl8rbb50dlsnyym11p6k2l2ybq9lz6kbzb5b0bjsbcvigcvckwp"))))
+    (properties `((upstream-name . "GPUmatrix")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GPUmatrix")
+    (synopsis "Basic Linear Algebra with GPU")
+    (description
+     "Motivation: GPU power is a great resource for computational biology specifically
+in statistics and linear algebra.  Unfortunately, very few packages connect R
+with the GPU and none of them are transparent enough to perform the computations
+on the GPU without substantial changes to the code.  Most of them lack proper
+maintenance: several of the previous attempts were removed from the
+corresponding repositories.  It would be desirable to have an R package,
+properly maintained, that exploits the use of the GPU with minimal changes in
+the existing code.  Results: We have developed the GPUMatrix package.  GPUMatrix
+mimics the behavior of the Matrix package and extends R to use the GPU for
+computations.  It is easy to learn and very few changes in the code are required
+to work on the GPU. GPUMatrix relies on either Tensorflow or Torch R packages to
+perform the GPU operations.  Its vignette shows some toy examples on
+non-negative factorization and other factorization used in bioinformatics'.")
+    (license license:artistic2.0)))
 
 (define-public r-gptstudio
   (package
@@ -11185,6 +11212,33 @@ K., Sciacca, E., Cubuk, C., Giorli, G., ...  Lewis, M. J., & Pitzalis, C. (2022)
 Nature medicine <doi:10.1038/s41591-022-01789-0>.")
     (license license:expat)))
 
+(define-public r-glmmselect
+  (package
+    (name "r-glmmselect")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GLMMselect" version))
+              (sha256
+               (base32
+                "0ad5swpmh05v8mnj942m4wz32gj5k0vrd43shhxm90mlh0ff2zyl"))))
+    (properties `((upstream-name . "GLMMselect")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GLMMselect")
+    (synopsis "Bayesian Model Selection for Generalized Linear Mixed Models")
+    (description
+     "This package provides a Bayesian model selection approach for generalized linear
+mixed models.  Currently, GLMMselect can be used for Poisson GLMM and Bernoulli
+GLMM. GLMMselect can select fixed effects and random effects simultaneously.
+Covariance structures for the random effects are a product of a unknown scalar
+and a known semi-positive definite matrix.  GLMMselect can be widely used in
+areas such as longitudinal studies, genome-wide association studies, and spatial
+statistics.  GLMMselect is based on Xu, Ferreira, Porter, and Franck (202X),
+Bayesian Model Selection Method for Generalized Linear Mixed Models, Biometrics,
+under review.")
+    (license license:gpl3)))
+
 (define-public r-glmmrr
   (package
     (name "r-glmmrr")
@@ -11213,13 +11267,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrOptim" version))
               (sha256
                (base32
-                "1w14s27zh51q73d2zzhpqjkx47i5rjdn1x9c26i4gj6d1ma288fl"))))
+                "1jrrv9rfq90d9ahhqdj2f1zkzwmwzp2f0d3wf9cmlw0aams70w6i"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-glmmrbase r-digest))
@@ -11239,24 +11293,32 @@ this package can be found in Watson and Pan (2022) <arXiv:2207.09183>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.2.5")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmmrBase" version))
               (sha256
                (base32
-                "0l755m30zf264hkfyqhd4h8f9zsw2h1bmbvkmbwljfzwlrha2dc0"))))
+                "0rmarx86cgddjly9n51z4dif4d2mprq3ygz48pfxx58aypnd99gf"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix r-digest))
+    (propagated-inputs (list r-sparsechol
+                             r-rminqa
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-matrix
+                             r-digest
+                             r-bh))
     (home-page "https://github.com/samuel-watson/glmmrBase")
-    (synopsis "Specification of Generalised Linear Mixed Models")
+    (synopsis "Generalised Linear Mixed Models in R")
     (description
-     "Specification of generalised linear mixed models using the R6 object-orientated
-class system.  The package provides classes Covariance', MeanFunction and
-Model', which allow for flexible specification of generalised linear mixed
-models, as well as functionality to produce relevant matrices, values, and
-analyses.  See
+     "Specification of generalised linear mixed models with a range of related
+functions and calculations.  The package provides classes Covariance',
+MeanFunction and Model', which allow for flexible specification of generalised
+linear mixed models, as well as functionality to produce relevant matrices,
+values, and analyses.  See
 <https://github.com/samuel-watson/glmmrBase/blob/master/README.md> for a
 detailed manual.")
     (license license:gpl2+)))
@@ -12216,13 +12278,13 @@ special cases of GLAMs.")
 (define-public r-gkrls
   (package
     (name "r-gkrls")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gKRLS" version))
               (sha256
                (base32
-                "00mq7701h7mr9ki14vyggizcy0szwja56xlvssjdykg2jx94557x"))))
+                "0kkk463mgrypc5vihv9hvj7dsdwv6yvmhxp6iy6ip1k7nqi8xdvf"))))
     (properties `((upstream-name . "gKRLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -13454,13 +13516,13 @@ the sf and sp packages and for types in the trip and silicate packages.")
 (define-public r-gibasa
   (package
     (name "r-gibasa")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gibasa" version))
               (sha256
                (base32
-                "1jcdx49dmivqv3jlag87mliggmcar9cyxf6456bxg8wss0qpw8is"))))
+                "0ckzzb58jih3shq5f4xa9c41cgywvxv1v4hph8zyq0hfwxn6q5km"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
     (inputs (list mecab))
@@ -14891,6 +14953,29 @@ ggplot2 package plotting.")
     (description
      "The geom_rain() function adds different geoms together using ggplot2 to create
 raincloud plots.")
+    (license license:expat)))
+
+(define-public r-ggragged
+  (package
+    (name "r-ggragged")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggragged" version))
+              (sha256
+               (base32
+                "17hpzqslns2y7kpfjpw9lnwzilzshlkbhy69k0ql8k6xs2zaxn9m"))))
+    (properties `((upstream-name . "ggragged")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-rlang r-gtable r-ggplot2))
+    (home-page "https://github.com/mikmart/ggragged")
+    (synopsis "Ragged Grids for 'ggplot2'")
+    (description
+     "Extend ggplot2 facets to panel layouts arranged in a grid with ragged edges.
+facet_ragged_rows() groups panels in rows of (potentially) varying lengths,
+facet_ragged_cols() does the same for columns.  These can be useful, for
+example, to represent nested or partially crossed relationships between faceting
+variables.")
     (license license:expat)))
 
 (define-public r-ggquiver
@@ -18944,13 +19029,13 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "0.3-2")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GET" version))
               (sha256
                (base32
-                "0n0frlr4nxl62ffh8mir2pwgkp5d1bkazsrff0v6k0amibqknlly"))))
+                "0fvssxwwcdaqa6hir7z4cp4yabrc1afzyc3ib4nqdv6mpkhmzdxq"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
@@ -23551,6 +23636,28 @@ Calculus of M-Estimation in R with geex\" by Saul & Hudgens (2020)
 variance corrections.")
     (license license:expat)))
 
+(define-public r-geessbin
+  (package
+    (name "r-geessbin")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geessbin" version))
+              (sha256
+               (base32
+                "18rs345z9iy3zm27g9c2hr1di5563s6z62h5j4q0qw268iwacglz"))))
+    (properties `((upstream-name . "geessbin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/rtishii/geessbin")
+    (synopsis "Modified Generalized Estimating Equations for Binary Outcome")
+    (description
+     "Analyze small-sample clustered or longitudinal data with binary outcome using
+modified generalized estimating equations with bias-adjusted covariance
+estimator.  The package provides any combination of three modified generalized
+estimating equations and 11 bias-adjusted covariance estimators.")
+    (license license:gpl2+)))
+
 (define-public r-geesmv
   (package
     (name "r-geesmv")
@@ -24018,13 +24125,13 @@ Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
 (define-public r-gdistance
   (package
     (name "r-gdistance")
-    (version "1.6")
+    (version "1.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdistance" version))
               (sha256
                (base32
-                "1pjzslcnhqfs41zlxnwshq34pmnjh49lb239v74vjxq4rb2h5nrx"))))
+                "0aclsdh5jixlk7k27d64vd8zn92rbp67rs0v9nfd3wpi1021dvly"))))
     (properties `((upstream-name . "gdistance")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster r-matrix r-igraph))

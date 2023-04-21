@@ -781,13 +781,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "0646pz7kb63hfjyz9jl254i94v0g7fz7fcqxdcv4p02zsw5zq84y"))))
+                "0xd4vpv6060wrqs0jz6bcfkwg74vd24y13j0z8y1lcgqdw3mfars"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -802,7 +802,8 @@ quantitative (XIC) data.  Fasta-formatted proteomes (eg from UniProt Consortium
 annotation types (like species origin, abbreviated gene names, etc) extracted.
 Initial results from multiple software for protein (and peptide) quantitation
 can be imported (to a common format): MaxQuant (Tyanova et al 2016
-<doi:10.1038/nprot.2016.136>), Fragpipe(da Veiga et al 2020,
+<doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
+<doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020,
 <doi:10.1038/s41592-020-0912-y>), MassChroq (Valot et al 2011]
 <doi:10.1002/pmic.201100120>), OpenMS (<doi:10.1038/nmeth.3959>),
 ProteomeDiscoverer and Proline (Bouyssie et al 2020
@@ -812,8 +813,11 @@ proteomics measurements frequently contain multiple NA values, due to physical
 absence of given peptides in some samples, limitations in sensitivity or other
 reasons.  Help is provided to inspect the data graphically to investigate the
 nature of NA-values via their respective replicate measurements and to
-help/confirm the choice of NA-replacement algorithms.  Dedicated filtering and
-statistical testing using the framework of package limma
+help/confirm the choice of NA-replacement algorithms.  Meta-data in sdrf-format
+(Perez-Riverol et al 2020 <doi:10.1021/acs.jproteome.0c00376>) or similar
+tabular formats can be imported and included.  Missing values can be inspected
+and imputed based on the concept of NA-neighbours or other methods.  Dedicated
+filtering and statistical testing using the framework of package limma
 <doi:10.18129/B9.bioc.limma> can be run, enhanced by multiple rounds of
 NA-replacements to provide robustness towards rare stochastic events.
 Multi-species samples, as frequently used in benchmark-tests (eg Navarro et al
@@ -3112,17 +3116,17 @@ truncated distribution functions.")
 (define-public r-winch
   (package
     (name "r-winch")
-    (version "0.0.12")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "winch" version))
               (sha256
                (base32
-                "0k9pgwdp0v4wmqw42dkqakz5f4lhqycgp0c916sdsxxig14phn71"))))
+                "0v2kyfr5rm4nbh99ii17qh08i88yv0phyf3d59dxfhq1q8wrl6xb"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-procmaps))
+    (propagated-inputs (list r-procmaps r-lifecycle))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://r-prof.github.io/winch/")
     (synopsis "Portable Native and Joint Stack Traces")
@@ -5416,16 +5420,16 @@ statistic for the object of class htest'.")
 (define-public r-webpower
   (package
     (name "r-webpower")
-    (version "0.8.7")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebPower" version))
               (sha256
                (base32
-                "1ikdg4l9l95pygkn51ig0pl4bnvi4nn7vmgcfg4g3mnqcdzhybgw"))))
+                "1xzl1qg7953ws6kfm7dny3g648n034ynizg43ph4pyj2ky3mck0g"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan))
+    (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan r-dplyr))
     (home-page "https://webpower.psychstat.org")
     (synopsis "Basic and Advanced Statistical Power Analysis")
     (description
