@@ -11162,13 +11162,13 @@ parameters.")
 (define-public r-haplocatcher
   (package
     (name "r-haplocatcher")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HaploCatcher" version))
               (sha256
                (base32
-                "00q9z9lihw1acrl9p7bl87sz8hqvszchf85dqs72bcx7zz0k6dw3"))))
+                "182ihr45s2g452h054c6m8lgvj629spq1rd9vglzyy8ymg0l6w4j"))))
     (properties `((upstream-name . "HaploCatcher")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest

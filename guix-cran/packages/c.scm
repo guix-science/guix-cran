@@ -239,13 +239,13 @@ Projections: Understanding the Fan Chart
 (define-public r-cytobankapi
   (package
     (name "r-cytobankapi")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CytobankAPI" version))
               (sha256
                (base32
-                "0wzsrwc7a7zhpjgxc2ymr258zv9h7nwpyj83p6j8mrqzvkfvrqq8"))))
+                "0zhvxgqlzwv98b6ccl33x6jp71a14ysdmcc5a3v0d97r8haq1g3v"))))
     (properties `((upstream-name . "CytobankAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -3733,13 +3733,13 @@ etc.).")
 (define-public r-csdata
   (package
     (name "r-csdata")
-    (version "2022.11.22")
+    (version "2023.4.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csdata" version))
               (sha256
                (base32
-                "0gcjdkhbfg3dwivk0w23rdrjcq5vsa96x8l1fwjr86q4h4dyl8lw"))))
+                "1piyk46ss4hsppha49g356vq52h5b5d0i5vcrhcpg1gixw33yb0b"))))
     (properties `((upstream-name . "csdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -5964,13 +5964,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew" version))
               (sha256
                (base32
-                "1v8jfcp939cphd8f60zgw7y3cdmab82mi9a1vhznnzas8zmwnm75"))))
+                "0iijvm7q27hsq2pb3pax7ksiv2g5wwqj238i4zcksb5m15w2ca3y"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -11587,6 +11587,33 @@ the package implements functionality to compute or approximate the conditional
 expectation via the conditional copula.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-copulainference
+  (package
+    (name "r-copulainference")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CopulaInference" version))
+              (sha256
+               (base32
+                "10r2ni62fh6zl0im1n7apjf6kx2fprifn71rnaf7dh7xypdkqyw1"))))
+    (properties `((upstream-name . "CopulaInference")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvinecopulib r-matrix r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=CopulaInference")
+    (synopsis
+     "Estimation and Goodness-of-Fit of Copula-Based Models with Arbitrary Distributions")
+    (description
+     "Estimation and goodness-of-fit functions for copula-based models of bivariate
+data with arbitrary distributions (discrete, continuous, mixture of both types).
+ The copula families considered here are the Gaussian, Student, Clayton, Frank,
+Gumbel, Joe, Plackett, BB1, BB6, BB7,BB8, together with the following
+non-central squared copula families in Nasri (2020)
+<doi:10.1016/j.spl.2020.108704>: ncs-gaussian, ncs-clayton, ncs-gumbel,
+ncs-frank, ncs-joe, and ncs-plackett.  For theoretical details, see, e.g., Nasri
+and Remillard (2023) <arXiv:2301.13408>.")
+    (license license:gpl3)))
+
 (define-public r-copulaedas
   (package
     (name "r-copulaedas")
@@ -13133,13 +13160,13 @@ framework developed by Rodriguez et al.
 (define-public r-contentid
   (package
     (name "r-contentid")
-    (version "0.0.16")
+    (version "0.0.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "contentid" version))
               (sha256
                (base32
-                "17zb7fpnr1a2ixanxmgk9awwmb3njw1lk97s3a0w6cvd7dwz8iz2"))))
+                "1vnw5hw9vkdqfps8qmj5v523jkil9r9530ap6j4dwx40c6d7nyhb"))))
     (properties `((upstream-name . "contentid")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-httr r-fs r-curl))
@@ -27491,13 +27518,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "chisquare" version))
               (sha256
                (base32
-                "1cfarwvzz20f7sxbjhlxzrkg2p9vf51v4m50j96vwdlz4ng4cr5m"))))
+                "02yj8j7hn93yshz73kxwsf4yzkidf6mp9z3v7n3cqrvk03xx7zkx"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
@@ -29493,30 +29520,6 @@ assumptions.  See Liao X, Meyer MC (2019)<doi:10.18637/jss.v089.i05> for more
 details.")
     (license license:gpl2+)))
 
-(define-public r-cgalpolygons
-  (package
-    (name "r-cgalpolygons")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cgalPolygons" version))
-              (sha256
-               (base32
-                "12kgd2b2hbaicddgcym7vkn1y1vsjqdvmj3iwnq1x3fjnbmynqnd"))))
-    (properties `((upstream-name . "cgalPolygons")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-r6 r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/cgalPolygons")
-    (synopsis "R6 Based Utilities for Polygons using 'CGAL'")
-    (description
-     "This package provides some utilities for polygons: area calculation,
-decomposition into convex parts, Minkowski addition, Boolean operations, and
-more.  Polygons with holes are supported.  The algorithms are performed by the
-C++ library CGAL (<https://www.cgal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-cgalmeshes
   (package
     (name "r-cgalmeshes")
@@ -30282,37 +30285,36 @@ A. T. PeÃ±a, L. Liu, and R. A. Levine (2018) <doi:10.48550/arXiv.1709.04862>."
 (define-public r-ceramic
   (package
     (name "r-ceramic")
-    (version "0.6.0")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ceramic" version))
               (sha256
                (base32
-                "0n0l1b7gb05kqjrh696faq868q3nbwlg34y6wgr0w205kdq6qs17"))))
+                "03hjvqj7j0c0kg1jdxl4vr5rlrb4kvpakz223r7nf95f4gnnhcz9"))))
     (properties `((upstream-name . "ceramic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-spex
+    (propagated-inputs (list r-wk
+                             r-vapour
+                             r-tibble
+                             r-terra
+                             r-stringr
                              r-sp
                              r-slippymath
                              r-rlang
-                             r-reproj
-                             r-raster
                              r-rappdirs
                              r-purrr
-                             r-png
-                             r-magrittr
-                             r-jpeg
                              r-glue
                              r-fs
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-crsmeta))
     (home-page "https://github.com/hypertidy/ceramic")
     (synopsis "Download Online Imagery Tiles")
     (description
      "Download imagery tiles to a standard cache and load the data into raster
 objects.  Facilities for AWS terrain
-<https://aws.amazon.com/public-datasets/terrain/> terrain and Mapbox
+<https://registry.opendata.aws/terrain-tiles/> terrain and Mapbox
 <https://www.mapbox.com/> servers are provided.")
     (license license:gpl3)))
 

@@ -18305,24 +18305,6 @@ synthesis (S), fractional contribution of the 13C-tracers (D0, D1, D2),
 elongation (E) and desaturation (Des) based on mass isotopologue data.")
     (license license:gpl2+)))
 
-(define-public r-fame
-  (package
-    (name "r-fame")
-    (version "2.21.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fame" version))
-              (sha256
-               (base32
-                "18lzf2vxyzlmd73m9q0si663mjjm66nrf7q1iy0fw73gpvxqr9bf"))))
-    (properties `((upstream-name . "fame")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tis))
-    (home-page "https://cran.r-project.org/package=fame")
-    (synopsis "Interface for FAME Time Series Database")
-    (description "Read and write FAME databases.")
-    (license (license:fsdg-compatible "Unlimited"))))
-
 (define-public r-fam-recrisk
   (package
     (name "r-fam-recrisk")

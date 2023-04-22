@@ -3187,6 +3187,32 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 <arXiv:1808.09902>.")
     (license license:gpl3)))
 
+(define-public r-evt0
+  (package
+    (name "r-evt0")
+    (version "1.1-4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "evt0" version))
+              (sha256
+               (base32
+                "0hqsv72wswnmgirhwb671snmg65qb1j77pfvzaqw9mi8lmvqalpq"))))
+    (properties `((upstream-name . "evt0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-evd))
+    (home-page "https://cran.r-project.org/package=evt0")
+    (synopsis
+     "Mean of Order P, Peaks over Random Threshold Hill and High Quantile Estimates")
+    (description
+     "The R package proposes extreme value index estimators for heavy tailed models by
+mean of order p <DOI:10.1016/j.csda.2012.07.019>, peaks over random threshold
+<DOI:10.57805/revstat.v4i3.37> and a bias-reduced estimator
+<DOI:10.1080/00949655.2010.547196>.  The package also computes moment,
+generalised Hill <DOI:10.2307/3318416> and mixed moment estimates for the
+extreme value index.  High quantiles and value at risk estimators based on these
+estimators are implemented.")
+    (license license:gpl2+)))
+
 (define-public r-evreg
   (package
     (name "r-evreg")

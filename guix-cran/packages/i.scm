@@ -13555,13 +13555,13 @@ visit
 (define-public r-idarps
   (package
     (name "r-idarps")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "idarps" version))
               (sha256
                (base32
-                "0vy9gr8wyixi4aaz1wkzigdg3h6m4sr314bj42chrgq9bz2n4whc"))))
+                "15ckavi7j4afwyq3m0z2kpq2j93wxmjfnhn7lh6r4ymwmj7bbsvy"))))
     (properties `((upstream-name . "idarps")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=idarps")

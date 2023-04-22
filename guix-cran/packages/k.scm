@@ -4649,6 +4649,26 @@ is the first package implementing Karel in R.")
      "Attempts to remove vocals from a stereo .wav recording of a song.")
     (license license:gpl3)))
 
+(define-public r-karadacolor
+  (package
+    (name "r-karadacolor")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "KaradaColor" version))
+              (sha256
+               (base32
+                "0hndz1inl4s7vgkg570npk73zh9hglr7kwa1yrkgdsk5lf8l8z4m"))))
+    (properties `((upstream-name . "KaradaColor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-crayon))
+    (home-page "https://github.com/KaradaGood/KaradaColor")
+    (synopsis "Color Palettes Inspired by Japanese Landscape and Culture")
+    (description
+     "The palette includes motifs from Japanese landscape and culture.  And it
+provides commands for color manipulation and ggplot2 color scales.")
+    (license license:gpl3+)))
+
 (define-public r-kappasize
   (package
     (name "r-kappasize")

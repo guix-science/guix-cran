@@ -2689,16 +2689,16 @@ methods includes simulation and estimation of the parameters.")
 (define-public r-dtcompair
   (package
     (name "r-dtcompair")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DTComPair" version))
               (sha256
                (base32
-                "1q8fqjynyf5y753rbhy1dpjxxr1z5ffhn5pna03agshisnicdgpa"))))
+                "0wlbxqkm9jqqfr6h2a42zjixvlpq2fyij972372z4qk9qr06li2g"))))
     (properties `((upstream-name . "DTComPair")))
     (build-system r-build-system)
-    (propagated-inputs (list r-propcis r-gee))
+    (propagated-inputs (list r-propcis r-gee r-ellipse))
     (home-page "https://github.com/chstock/DTComPair")
     (synopsis "Comparison of Binary Diagnostic Tests in a Paired Study Design")
     (description
@@ -16642,13 +16642,13 @@ special, roxygen'-style comments.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.1.9")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEPONS2R" version))
               (sha256
                (base32
-                "10aldyl0qzmw8zxfv5p8h7jryhncqyy64y1n8h1pxry405mxadc0"))))
+                "080iq1b2hdsvjw7df4z1kjq1jzr14xd946nyiaw1xiz3kw8ld8iz"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22396,13 +22396,13 @@ in some case studies throughout the text.")
 (define-public r-datasets-load
   (package
     (name "r-datasets-load")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datasets.load" version))
               (sha256
                (base32
-                "1j6agly8icyn4kj88c69qzc1gyvjzhfg9ipax48qcm2m0wxzkk7n"))))
+                "187a1z0ljws5fvk91ap94cxm0yw6l47v0f4nhbq71jrk285zm1qr"))))
     (properties `((upstream-name . "datasets.load")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-miniui r-dt))

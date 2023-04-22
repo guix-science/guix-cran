@@ -5999,6 +5999,29 @@ methods, viz.  Refitted cross validation, k-fold refitted cross validation,
 Bootstrap-refitted cross validation, Ensemble method.")
     (license license:gpl3)))
 
+(define-public r-vares
+  (package
+    (name "r-vares")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VaRES" version))
+              (sha256
+               (base32
+                "0k65ip5q4zgyklvn8mbc1ykz7kpfr5xvz041g1pq88f43g2sgv4b"))))
+    (properties `((upstream-name . "VaRES")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=VaRES")
+    (synopsis
+     "Computes Value at Risk and Expected Shortfall for over 100 Parametric Distributions")
+    (description
+     "Computes Value at risk and expected shortfall, two most popular measures of
+financial risk, for over one hundred parametric distributions, including all
+commonly known distributions.  Also computed are the corresponding probability
+density function and cumulative distribution function.  See Chan, Nadarajah and
+Afuecheta (2015) <doi:10.1080/03610918.2014.944658> for more details.")
+    (license license:gpl2+)))
+
 (define-public r-vared
   (package
     (name "r-vared")

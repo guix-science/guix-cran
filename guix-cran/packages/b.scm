@@ -7795,13 +7795,13 @@ Multiple Related Phenotypes\", M. Stephens (2013)
 (define-public r-bmamevt
   (package
     (name "r-bmamevt")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BMAmevt" version))
               (sha256
                (base32
-                "10241cibzmgrmxzjw7fpw64qkayc1wig5xilahyc182841k4if6w"))))
+                "19mmrz54n8ai9sfjpb3815p4r2pzy0v18hk020vqkjxakh9zgpab"))))
     (properties `((upstream-name . "BMAmevt")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -14713,6 +14713,30 @@ hemispheres can also be fit using either mean-field variational Bayes or Gibbs
 sampling.  The model can also be used more generally for multivariate
 (non-imaging) phenotypes with spatial correlation.")
     (license license:gpl2)))
+
+(define-public r-bgms
+  (package
+    (name "r-bgms")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bgms" version))
+              (sha256
+               (base32
+                "0z3lj0phlx3agsr797fdnr6g4flrcln2b5rqv6m1w7gdghlffzpb"))))
+    (properties `((upstream-name . "bgms")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://maartenmarsman.github.io/bgms/")
+    (synopsis
+     "Bayesian Variable Selection for Networks of Binary and/or Ordinal Variables")
+    (description
+     "Bayesian variable selection methods for analyzing the structure of a Markov
+Random Field model for a network of binary and/or ordinal variables.  Details of
+the implemented methods can be found in: Marsman and Haslbeck (2023)
+<doi:10.31234/osf.io/ukwrf>.")
+    (license license:gpl2+)))
 
 (define-public r-bgmm
   (package
@@ -23205,6 +23229,38 @@ base plotting system.  Contains: 1) several custom pre-made themes 2) mechanism
 for creating new themes by making persistent changes to the graphical parameters
 of base plots.")
     (license license:gpl2)))
+
+(define-public r-basetempseed
+  (package
+    (name "r-basetempseed")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BaseTempSeed" version))
+              (sha256
+               (base32
+                "07b1611k639whrc32xcjdlqyxjsdyd9gmpgx3f7b8hcchnhx98ay"))))
+    (properties `((upstream-name . "BaseTempSeed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlcoptim))
+    (home-page "https://cran.r-project.org/package=BaseTempSeed")
+    (synopsis
+     "Estimation of Seed Germination Base Temperature in Thermal Modelling")
+    (description
+     "All the seeds do not germinate at a single point in time due to physiological
+mechanisms determined by temperature which vary among individual seeds in the
+population.  Seeds germinate by following accumulation of thermal time in degree
+days/hours, quantified by multiplying the time of germination with excess of
+base temperature required by each seed for its germination, which follows
+log-normal distribution.  The theoretical germination course can be obtained by
+regressing the rate of germination at various fractions against temperature
+(Garcia et al., 1982), where the fraction-wise regression lines intersect the
+temperature axis at base temperature and the methodology of determining optimum
+base temperature has been described by Ellis et al. (1987).  This package helps
+to find the base temperature of seed germination using algorithms of Garcia et
+al. (1982) and Ellis et al. (1982) <doi:10.1093/JXB/38.6.1033>
+<doi:10.1093/jxb/33.2.288>.")
+    (license license:gpl3)))
 
 (define-public r-baseset
   (package

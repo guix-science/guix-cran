@@ -9424,16 +9424,16 @@ by Yadlowsky et al. (2020) <doi:10.1080/01621459.2020.1772080>.")
 (define-public r-precisesums
   (package
     (name "r-precisesums")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PreciseSums" version))
               (sha256
                (base32
-                "18lkvh4p8cfh76530bsmb70qz32xi6qvv50v7jsd3f3bpyi5jsps"))))
+                "16ycz7rcslhfc9g4z04klq9hb9fpzmrn4rysyl4zky85mlhs60gk"))))
     (properties `((upstream-name . "PreciseSums")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=PreciseSums")
+    (home-page "https://github.com/nlmixr2/PreciseSums")
     (synopsis "Accurate Floating Point Sums and Products")
     (description
      "Most of the time floating point arithmetic does approximately the right thing.
@@ -12275,13 +12275,13 @@ generating tradelists and calculating exposures to user-specified risk factors."
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.3.11")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "portalr" version))
               (sha256
                (base32
-                "0li3simzryaakb96z6k64d2fzz1r5wpyzy9ib04xq8dvsfypb9fx"))))
+                "1sgbmsb5zf2fsi1abs1cigwp2qwiijrd06b3z4hdsb58n6dwim1z"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21628,6 +21628,30 @@ Bastide et al. (2017) <doi:10.1111/rssb.12206> and Bastide et al. (2018)
 <doi:10.1093/sysbio/syy005>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-phylocomr
+  (package
+    (name "r-phylocomr")
+    (version "0.3.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "phylocomr" version))
+              (sha256
+               (base32
+                "1ig9l4y9ma8fnzz7za1qmx8ibb24qsi3gcgn8v6fcksscj2agaad"))))
+    (properties `((upstream-name . "phylocomr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-sys))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/phylocomr/")
+    (synopsis "Interface to 'Phylocom'")
+    (description
+     "Interface to Phylocom (<https://phylodiversity.net/phylocom/>), a library for
+analysis of phylogenetic community structure and character evolution.  Includes
+low level methods for interacting with the three executables, as well as higher
+level interfaces for methods like aot', ecovolve', bladj', phylomatic', and
+more.")
+    (license license:bsd-2)))
 
 (define-public r-phyloclim
   (package

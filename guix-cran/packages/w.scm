@@ -2996,13 +2996,13 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
 (define-public r-wineq
   (package
     (name "r-wineq")
-    (version "1.1.2")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wINEQ" version))
               (sha256
                (base32
-                "0diwm01d50pq7zkglsz7gkn48q6iav2z90v0ldr7pwzgjrr60d4v"))))
+                "1b47dxa9q34xylp2bvzl0c9bbsd2l4fw8avq50575sc3w3v0bs62"))))
     (properties `((upstream-name . "wINEQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-dplyr))

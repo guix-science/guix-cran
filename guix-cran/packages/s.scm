@@ -13213,13 +13213,13 @@ high-dimensional case-control studies.")
 (define-public r-ssym
   (package
     (name "r-ssym")
-    (version "1.5.7")
+    (version "1.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssym" version))
               (sha256
                (base32
-                "0l5d921vlhd4qwddllrgcxpq3bhivvy5ikh3ixdy3s140rzpgwrv"))))
+                "06qmzlsk232d3vwzb7hjrbrfw0jn6br55v1nldjij3nl75c52xw7"))))
     (properties `((upstream-name . "ssym")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -21908,6 +21908,26 @@ this package both the standard SparseStep algorithm is implemented as well as a
 path algorithm which uses golden section search to determine solutions with
 different values for the regularization parameter.")
     (license license:gpl2+)))
+
+(define-public r-sparsesem
+  (package
+    (name "r-sparsesem")
+    (version "3.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sparseSEM" version))
+              (sha256
+               (base32
+                "12l8crs2i5nazp9mad09q6izbyj4479myp39rhsc0nfdmm1pkxi5"))))
+    (properties `((upstream-name . "sparseSEM")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sparseSEM")
+    (synopsis "Sparse-Aware Maximum Likelihood for Structural Equation Models")
+    (description
+     "This package provides Sparse-aware maximum likelihood for structural equation
+models in inferring network structure (topology).")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-sparsereg
   (package

@@ -7176,6 +7176,32 @@ the SauceLabs services current status and access supported platforms.  Send and
 retrieve files from SauceLabs and manage tunnels associated with SauceConnect'.")
     (license license:gpl3)))
 
+(define-public r-rsatscan
+  (package
+    (name "r-rsatscan")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rsatscan" version))
+              (sha256
+               (base32
+                "0dkv0iy3gjr5dairjylp4zzb12yr6rybrz47bcllm3rcqzrdq4wr"))))
+    (properties `((upstream-name . "rsatscan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreign))
+    (native-inputs (list r-knitr))
+    (home-page "<https://www.satscan.org>")
+    (synopsis
+     "Tools, Classes, and Methods for Interfacing with 'SaTScan' Stand-Alone Software")
+    (description
+     "SaTScan'(TM) <https://www.satscan.org> is software for finding regions in Time,
+Space, or Time-Space that have excess risk, based on scan statistics, and uses
+Monte Carlo hypothesis testing to generate P-values for these regions.  The
+rsatscan package provides functions for writing R data frames in
+SaTScan'-readable formats, for setting SaTScan parameters, for running SaTScan
+in the OS, and for reading the files that SaTScan creates.")
+    (license license:gpl3)))
+
 (define-public r-rsarules
   (package
     (name "r-rsarules")
@@ -9579,6 +9605,46 @@ atmospheric pressure).")
      "Really Poor Man's Graphical User Interface, used to create interactive R
 analysis sessions with simple R commands.")
     (license license:gpl2+)))
+
+(define-public r-rpm
+  (package
+    (name "r-rpm")
+    (version "0.7-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rpm" version))
+              (sha256
+               (base32
+                "0kr1hzhfx1kxrrszvvk6xwfy2vpp1vqn75xi3l70m275ay8kip6p"))))
+    (properties `((upstream-name . "rpm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-nloptr
+                             r-matrixstats
+                             r-mass
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dorng
+                             r-dofuture
+                             r-coda
+                             r-abind))
+    (home-page "https://github.com/handcock/rpm")
+    (synopsis "Modeling of Revealed Preferences Matchings")
+    (description
+     "Statistical estimation of revealed preference models from data collected on
+bipartite matchings.  The models are for matchings within a bipartite population
+where individuals have utility for people based on known and unknown
+characteristics.  People can form a partnership or remain unpartnered.  The
+model represents both the availability of potential partners of different types
+and preferences of individuals for such people.  The software estimates
+preference parameters based on sample survey data on partnerships and population
+composition.  The simulation of matchings and goodness-of-fit are considered.
+See Goyal, Handcock, Jackson, Rendall and Yeung (2022)
+<doi:10.1093/jrsssa/qnad031>.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-rplum
   (package
@@ -15446,13 +15512,13 @@ via the NOAA storm prediction center, and more.")
 (define-public r-rnn
   (package
     (name "r-rnn")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rnn" version))
               (sha256
                (base32
-                "1r8hwdc8i2rf4ma53n53hxcc637aizcqs6z6rjbhbvs56hgaxnz1"))))
+                "12js613gmmcpniq5adbmb3anqsza67m0jxk69486jv3am2vyqi5p"))))
     (properties `((upstream-name . "rnn")))
     (build-system r-build-system)
     (propagated-inputs (list r-sigmoid r-attention))
@@ -19898,19 +19964,20 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rivnet" version))
               (sha256
                (base32
-                "06b27qi8ij1x8bm2jajw39xn33l0x5kqqhwli2cxjygfk9sxz27c"))))
+                "076y42a5p40dnr4r9hxk2zk6qx8hcaghdsbz5hkswxz4sgbcmgl3"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
                              r-terra
                              r-spam
                              r-sf
+                             r-rcpp
                              r-raster
                              r-ocnet
                              r-elevatr))
@@ -39091,38 +39158,6 @@ trademark.")
 BinaryIndexedTree class supports construction of Binary Indexed Tree from a
 vector, update of a value in the vector and query for the sum of a interval of
 the vector.")
-    (license license:expat)))
-
-(define-public r-rbison
-  (package
-    (name "r-rbison")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rbison" version))
-              (sha256
-               (base32
-                "0g586hsqci4amci10zjq6xpjvxfjr6rv5i63vp85v3z6bkwfamwr"))))
-    (properties `((upstream-name . "rbison")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-plyr
-                             r-mapproj
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-crul))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/ropensci/rbisonhttps://docs.ropensci.org/rbison")
-    (synopsis "Interface to the 'USGS' 'BISON' API")
-    (description
-     "Interface to the USGS BISON (<https://bison.usgs.gov/>) API, a database for
-species occurrence data.  Data comes from species in the United States from
-participating data providers.  You can get data via taxonomic and location based
-queries.  A simple function is provided to help visualize data.")
     (license license:expat)))
 
 (define-public r-rbiouml

@@ -17262,6 +17262,26 @@ run a difference scaling experiment, to fit the resulting data by maximum
 likelihood and test the internal validity of the estimated scale.")
     (license license:gpl2+)))
 
+(define-public r-mldr-resampling
+  (package
+    (name "r-mldr-resampling")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mldr.resampling" version))
+              (sha256
+               (base32
+                "0jwdxcdkbzw80jas9xg6znj9crnv3f6h05kiwp9ykmry6bmbgzl9"))))
+    (properties `((upstream-name . "mldr.resampling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vecsets r-pbapply r-mldr r-e1071 r-data-table))
+    (home-page "https://cran.r-project.org/package=mldr.resampling")
+    (synopsis "Resampling Algorithms for Multi-Label Datasets")
+    (description
+     "Collection of the state of the art multi-label resampling algorithms.  The
+objective of these algorithms is to achieve balance in multi-label datasets.")
+    (license license:expat)))
+
 (define-public r-mldr-datasets
   (package
     (name "r-mldr-datasets")
@@ -19776,6 +19796,38 @@ results using different types of measures and graphs.  The methods implemented
 are described in Mason (2018) <doi:10.1002/hec.3793>, Molenberghs (2000)
 <doi:10.1007/978-1-4419-0300-6_18> and Gabrio (2019) <doi:10.1002/sim.8045>.")
     (license license:gpl2)))
+
+(define-public r-missinghandle
+  (package
+    (name "r-missinghandle")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MissingHandle" version))
+              (sha256
+               (base32
+                "19g4vgk7m6m0mc949kf92z1lgh4laa2070bavyszbq3bwsc0wgkc"))))
+    (properties `((upstream-name . "MissingHandle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-imputets r-dplyr))
+    (home-page "https://cran.r-project.org/package=MissingHandle")
+    (synopsis
+     "Handles Missing Dates and Data and Converts into Weekly from Daily")
+    (description
+     "Many times, you will not find data for all dates.  After first January, 2011 you
+may have next data on 20th January, 2011 and so on.  Also available dates may
+have zero values.  Try to gather all such kinds of data in different excel
+sheets of a single excel file.  Every sheet will contain two columns (1st one is
+dates and second one is the data).  After loading all the sheets into different
+elements of a list, using this you can fill the gaps for all the sheets and mark
+all the corresponding values as zeros.  Here I am talking about daily data.
+Finally, it will combine all the filled results into one data frame (first
+column is date and other columns will be corresponding values of your sheets)
+and give one csv file.  Number of columns in the data frame will be number of
+sheets plus one.  Then imputation will be done.  Daily to weekly conversion is
+also possible.  More details can be found in Garai and others (2023)
+<doi:10.13140/RG.2.2.11977.42087>.")
+    (license license:gpl3)))
 
 (define-public r-missdiag
   (package
@@ -34890,18 +34942,18 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "0.6")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mathml" version))
               (sha256
                (base32
-                "17r6qjs7zv3hn8nmkplg8s5jsv7dz9mv10zfks7j9smhyxhch8h0"))))
+                "1hh9a0bydiyccaijrahdfyjvycakl4ac6fmgpmza6wias4zqfcj3"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rolog))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=mathml")
+    (home-page "https://github.com/mgondan/mathml")
     (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
     (description
      "Translate R expressions to MathML or MathJax so that they can be rendered in

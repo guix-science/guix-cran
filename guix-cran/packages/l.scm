@@ -7913,13 +7913,13 @@ Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.12")
+    (version "1.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lingtypology" version))
               (sha256
                (base32
-                "0as9v3iwnmmdv9gjykkmxs0i2d4n13blf3lwx5kgmbbm272sikqs"))))
+                "0p8qxf8qpy9c5800sjdb4ljncx2xv0kgvqdqbccchf175bnpl1yn"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -12705,13 +12705,13 @@ results based on constrained optimization.")
 (define-public r-lcopula
   (package
     (name "r-lcopula")
-    (version "1.0.5")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lcopula" version))
               (sha256
                (base32
-                "1q45l5k2892ivzwp3h30z02j6w7nf4k4k7xfh22vy8q2zrv718jp"))))
+                "03qf9skls0h2z88ykm863m0w394n24rkxgg0qdjzxyizhv2arf3l"))))
     (properties `((upstream-name . "lcopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-copula))

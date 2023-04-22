@@ -4755,13 +4755,13 @@ enhanced standard errors based on Lashley and Bond (1997)
 (define-public r-tripestimation
   (package
     (name "r-tripestimation")
-    (version "0.0-45")
+    (version "0.0-46")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tripEstimation" version))
               (sha256
                (base32
-                "0671crpgxkd0zn22rn6a4d16syzrwa59sbpl9y4lkxizds39fls1"))))
+                "1zw8akawr0b63a6iz1p8rklk1jm304fwvvfanysghw8kc0jr16hn"))))
     (properties `((upstream-name . "tripEstimation")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-sp r-reproj r-mgcv r-lattice))
@@ -11177,13 +11177,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "0.0.12")
+    (version "0.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tipsae" version))
               (sha256
                (base32
-                "0g4js7fx51yliq5lkzm8p3180a5wyp17l53nx4iix36i3k17arn9"))))
+                "0fyw4q13cpdk5gzx3ny212jblhzzkbnk2vm7w5rs9fxdfpfkcqwm"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

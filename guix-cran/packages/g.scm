@@ -7716,13 +7716,13 @@ rmarkdown documents and shiny apps thanks to jQuery GoTop
 (define-public r-gosset
   (package
     (name "r-gosset")
-    (version "0.7")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gosset" version))
               (sha256
                (base32
-                "1yxrywsxixg98h8lhbsm0c7afbqmzay11ib1bg89ng1ix1b5qghv"))))
+                "1as3p5mpkhg205ssxzf26xn84b8abgzp413dw2fganidh7i9dmff"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10903,16 +10903,16 @@ relevant paper is available on arXiv: <arXiv:2105.14328>.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmtoolbox" version))
               (sha256
                (base32
-                "0bg1d7whdihjsm6rzq40a36dlg2v3asav9g2955i3w57kp0f8wwa"))))
+                "130mb2ylm8jy3212jbli4w87mx141jq2x223mysavrarjmmibxk1"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-numderiv r-formula))
+    (propagated-inputs (list r-statmod r-rfast r-numderiv r-mass r-formula))
     (home-page "https://cran.r-project.org/package=glmtoolbox")
     (synopsis "Set of Tools to Data Analysis using Generalized Linear Models")
     (description

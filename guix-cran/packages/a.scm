@@ -12207,13 +12207,13 @@ and cohort level.")
 (define-public r-allmetrics
   (package
     (name "r-allmetrics")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AllMetrics" version))
               (sha256
                (base32
-                "14fgs0khi7q8l07bpldqankx5inbggcnz88969vy90jy5f92zjx2"))))
+                "1cxnw5af2wxghndsmgmpcpsdy7v38fwkidn3aiag9kp3ys99g62z"))))
     (properties `((upstream-name . "AllMetrics")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=AllMetrics")
@@ -12223,7 +12223,12 @@ and cohort level.")
 actual and predicted values.  In total eight metrics will be calculated for
 particular actual and predicted series.  Helps to describe a Statistical model's
 performance in predicting a data.  Also helps to compare various models
-performance.  More details can be found from Garai and Paul (2023)
+performance.  The metrics are Root Mean Squared Error (RMSE), Relative Root Mean
+Squared Error (RRMSE), Mean absolute Error (MAE), Mean absolute percentage error
+(MAPE), Mean Absolute Scaled Error (MASE), Nash-Sutcliffe Efficiency (NSE),
+Willmottâs Index (WI), and Legates and McCabe Index (LME).  Among them, first
+five are expected to be lesser whereas, the last three are greater the better.
+More details can be found from Garai and Paul (2023)
 <doi:10.1016/j.iswa.2023.200202>.")
     (license license:gpl3)))
 

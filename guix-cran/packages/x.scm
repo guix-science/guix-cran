@@ -1318,13 +1318,13 @@ make plugin development easier.")
 (define-public r-xicor
   (package
     (name "r-xicor")
-    (version "0.3.3")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "XICOR" version))
               (sha256
                (base32
-                "0xhb58bk3r8spd8ah3r7568np27nlrc18cswcsgavaikjpfda9vr"))))
+                "0c9s0sriiasbdanmijgy41gvpwf8hlqy34avalvimyll7y206v1r"))))
     (properties `((upstream-name . "XICOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-psychtools))
@@ -1335,7 +1335,7 @@ make plugin development easier.")
 correlation (xicor) is based on cross correlation between ranked increments.
 The reference for the methods implemented here is Chatterjee, Sourav (2020)
 <arXiv:1909.10140> This package includes the Galton peas example.")
-    (license license:gpl3)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-xhaz
   (package
