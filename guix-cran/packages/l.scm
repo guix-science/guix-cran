@@ -1295,6 +1295,28 @@ lsplincom() for estimation and inference for linear combinations of regression
 functions from different groups.")
     (license license:gpl2)))
 
+(define-public r-lsnstat
+  (package
+    (name "r-lsnstat")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lsnstat" version))
+              (sha256
+               (base32
+                "1ydda46j5yv51yq1pgf4nihsg5ihayk603vn3yxzhnnb1r3azh4w"))))
+    (properties `((upstream-name . "lsnstat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/La-Societe-Nouvelle/lsnstat/")
+    (synopsis "'La Societe Nouvelle' API Access")
+    (description
+     "Tools facilitating access to the macro_data service of the La Societe Nouvelle
+API. It ensures an easy and fully-disclosed access to all macro-level data used
+in the La Societe Nouvelle systems and the related metadata.  Related API can be
+accessed from <https://api.lasocietenouvelle.org/>.")
+    (license license:cecill)))
+
 (define-public r-lsmrealoptions
   (package
     (name "r-lsmrealoptions")
@@ -10695,13 +10717,13 @@ These include every permutation of the final three letters.")
 (define-public r-lemna
   (package
     (name "r-lemna")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lemna" version))
               (sha256
                (base32
-                "1dm6kcbjkh12c7aa0kmygwj5vv61gmpmh06j0jsg0h7ys8hrdhjq"))))
+                "13ldgkzd1ggmqzipic9lw14zxq57zdzh1s83ih2mfib1n8f0pwg2"))))
     (properties `((upstream-name . "lemna")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2 r-desolve))
@@ -12814,24 +12836,6 @@ mixed models, joint latent latent class mixed models, mixed models for
 curvilinear outcomes, mixed models for multivariate longitudinal outcomes using
 a maximum likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
 <doi:10.18637/jss.v078.i02>).")
-    (license license:gpl2+)))
-
-(define-public r-lcmcr
-  (package
-    (name "r-lcmcr")
-    (version "0.4.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "LCMCR" version))
-              (sha256
-               (base32
-                "11vcqjjlcps3nqfrmncfqdadhrwk7fvrnx6xqwnc6l12hr98hic0"))))
-    (properties `((upstream-name . "LCMCR")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=LCMCR")
-    (synopsis "Bayesian Non-Parametric Latent-Class Capture-Recapture")
-    (description
-     "Bayesian population size estimation using non parametric latent-class models.")
     (license license:gpl2+)))
 
 (define-public r-lchemix

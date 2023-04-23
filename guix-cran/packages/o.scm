@@ -482,13 +482,13 @@ adaptive Metropolis samplers.  References: Roberts and Rosenthal (2009)
 (define-public r-overlapptest
   (package
     (name "r-overlapptest")
-    (version "1.2-4")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "overlapptest" version))
               (sha256
                (base32
-                "148vswcvy0anw6xrpfsskjn0i7jkn0jbfqlaf4bb13pkini2bahf"))))
+                "0qvsiwh76isiz3rcrizahp6p35lscrjijidnjwwwpmc0r9pm7xzd"))))
     (properties `((upstream-name . "overlapptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -8286,6 +8286,32 @@ monitor whether the first non-spiked eigenvalue diverges after a point in time
 in the monitoring horizon, thereby indicating the presence of a change point.
 See more details in He et al. (2021)<arXiv:2112.13479>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-okxapi
+  (package
+    (name "r-okxapi")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "okxAPI" version))
+              (sha256
+               (base32
+                "0wysfpkij9l265clw6qi4zpr1c860idxfp82xz2nmy1l5b2n8ri0"))))
+    (properties `((upstream-name . "okxAPI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-websocket
+                             r-r6
+                             r-jsonlite
+                             r-httr
+                             r-digest
+                             r-data-table
+                             r-base64enc))
+    (home-page "https://cran.r-project.org/package=okxAPI")
+    (synopsis "An Unofficial Wrapper for 'okx exchange v5' API")
+    (description
+     "An unofficial wrapper for okx exchange v5 API <https://www.okx.com/docs-v5/en/>,
+including REST API and WebSocket API.")
+    (license license:expat)))
 
 (define-public r-oknne
   (package

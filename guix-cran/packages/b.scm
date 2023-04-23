@@ -21760,13 +21760,13 @@ endpoint.")
 (define-public r-bayesdccgarch
   (package
     (name "r-bayesdccgarch")
-    (version "3.0.3")
+    (version "3.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bayesDccGarch" version))
               (sha256
                (base32
-                "0qgcy70sp3mlcpdkkg3nvxrvwgwy698r19yg31s3qjak17jnp8qn"))))
+                "1wv36yv43m8fkpk59hfrw3672p95lzhapr0d4n3jynsfhf6ivpm6"))))
     (properties `((upstream-name . "bayesDccGarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-coda))

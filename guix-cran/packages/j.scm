@@ -1605,6 +1605,28 @@ cancer studies.  The methods are described in Pierre-Jean, Rigaill and Neuvial
 (2015) <doi:10.1093/bib/bbu026>.")
     (license license:lgpl2.1+)))
 
+(define-public r-jointpm
+  (package
+    (name "r-jointpm")
+    (version "2.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jointPm" version))
+              (sha256
+               (base32
+                "0z3icbmgz0j3a2gg4gsw9h6wr0gd54kh36q57a7z71hlsrniwyfn"))))
+    (properties `((upstream-name . "jointPm")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=jointPm")
+    (synopsis "Risk Estimation Using the Joint Probability Method")
+    (description
+     "Estimate risk caused by two extreme and dependent forcing variables using
+bivariate extreme value models as described in Zheng, Westra, and Sisson (2013)
+<doi:10.1016/j.jhydrol.2013.09.054>; Zheng, Westra and Leonard (2014)
+<doi:10.1002/2013WR014616>; Zheng, Leonard and Westra (2015)
+<doi:10.2166/hydro.2015.052>.")
+    (license license:gpl2+)))
+
 (define-public r-jointnmix
   (package
     (name "r-jointnmix")

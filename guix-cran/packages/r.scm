@@ -558,13 +558,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.0.12")
+    (version "2.0.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rxode2" version))
               (sha256
                (base32
-                "1ngxnsj1aszm03zncbf8qnifvmria96cx29781hvqd15l0d0hvqy"))))
+                "0xrmbns7ly1ppliyr1yxp67fwdzshl5sw4kicrxfch2k2n9dnfb0"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -6760,19 +6760,18 @@ Drawing functions for depth bags are also provided.")
 (define-public r-rsda
   (package
     (name "r-rsda")
-    (version "3.0.13")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RSDA" version))
               (sha256
                (base32
-                "0w9ynkdsikm95w0w2yrmv0ak25iz4kmgnxb5x823jif5bdwldgx9"))))
+                "0xps9ivqgh64z26gbnsqr6cqr8q5ddc2dkfgl3bk6yrrlwp5fl0n"))))
     (properties `((upstream-name . "RSDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-vctrs
                              r-umap
-                             r-tsne
                              r-tidyselect
                              r-tibble
                              r-stringr
@@ -6799,7 +6798,7 @@ Drawing functions for depth bags are also provided.")
                              r-e1071
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "http://www.oldemarrodriguez.com")
+    (home-page "https://oldemarrodriguez.com/")
     (synopsis "R to Symbolic Data Analysis")
     (description
      "Symbolic Data Analysis (SDA) was proposed by professor Edwin Diday in 1987, the

@@ -18597,30 +18597,6 @@ might lower or change the direction of effect.  See the getspres website for
 documentation and examples <https://magosil86.github.io/getspres/>.")
     (license license:expat)))
 
-(define-public r-getspanel
-  (package
-    (name "r-getspanel")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "getspanel" version))
-              (sha256
-               (base32
-                "10b597gfqcm5gv83g3wrmys54dsnm1a1034rsmn76znhj9ndxvm8"))))
-    (properties `((upstream-name . "getspanel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/moritzpschwarz/getspanel")
-    (synopsis "General-to-Specific Modelling of Panel Data")
-    (description
-     "Uses several types of indicator saturation and automated General-to-Specific
-(GETS) modelling from the gets package and applies it to panel data.  This
-allows the detection of structural breaks in panel data, operationalising a
-reverse causal approach of causal inference, see Pretis and Schwarz (2022)
-<doi:10.2139/ssrn.4022745>.")
-    (license license:expat)))
-
 (define-public r-gets
   (package
     (name "r-gets")

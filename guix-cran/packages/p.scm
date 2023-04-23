@@ -11911,16 +11911,17 @@ and easy to personalize single page websites.")
 (define-public r-possa
   (package
     (name "r-possa")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "POSSA" version))
               (sha256
                (base32
-                "0rr3dc16kiym05fh58qpgdbwbmxvkwnphp7hkxp3prm1imgrw1v6"))))
+                "02lla3q3wkiw78b5v7pf7ali7s2l6aqc1bbaqf35zyihgiz3598g"))))
     (properties `((upstream-name . "POSSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/gasparl/possa")
     (synopsis
      "Power Simulation for Sequential Analyses and Multiple Hypotheses")
@@ -25656,13 +25657,13 @@ extensions and algorithms described in Kepplinger, D. (2020)
 (define-public r-penppml
   (package
     (name "r-penppml")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "penppml" version))
               (sha256
                (base32
-                "0zlxm379l9ik3152wmvqqin7wrnx9q8d89b4afdqssj24ab88jdl"))))
+                "0lspspk5bbxycfkwmw9sbz84rbhjsxmnza3692lrnadyrpaw3s39"))))
     (properties `((upstream-name . "penppml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

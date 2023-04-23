@@ -23134,13 +23134,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.10.0")
+    (version "2.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "08ggrsnmimpv384ig1apbxjjb6l4wp9lvmjw34dkn4jzckyclpc5"))))
+                "1vgjbsyy4xyrskjj0134l68k6x67dvbxy77h0lgls2pc6gbmp5nl"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -41907,13 +41907,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.5.3")
+    (version "2.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sequoia" version))
               (sha256
                (base32
-                "1srbd7q33a81bpc2hma4a7kix1y5xvhp2dcy5yb01867cbrhiqa9"))))
+                "1nw0yq6b4apm26dxzbrzqdndv55lkv8diayp6ghj93n6c0yws720"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr))
