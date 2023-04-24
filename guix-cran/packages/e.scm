@@ -16306,29 +16306,30 @@ EdBuild data processing please see EdBuild (2020) <http://data.edbuild.org/>.")
 (define-public r-eda4treer
   (package
     (name "r-eda4treer")
-    (version "0.3.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eda4treeR" version))
               (sha256
                (base32
-                "1shhajd9m9cxj9hdz34bnbs6sx20si37wh6ljw0wx5yrc9m7z9ib"))))
+                "0grfggbq11bhwxqi7pc158jchdk0zxz7zxblhgvncimgw5gml01h"))))
     (properties `((upstream-name . "eda4treeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-pbkrtest
+    (propagated-inputs (list r-supernova
+                             r-predictmeans
                              r-magrittr
-                             r-lme4
+                             r-lmertest
                              r-ggplot2
                              r-emmeans
                              r-dplyr
-                             r-dae))
-    (home-page "https://github.com/MYaseen208/eda4treeR")
+                             r-dae
+                             r-car))
+    (home-page "https://cran.r-project.org/package=eda4treeR")
     (synopsis "Experimental Design and Analysis for Tree Improvement")
     (description
-     "This package provides data sets and R Codes for Williams, E.R., Matheson, A.C.
-and Harwood, C.E. (2002).  Experimental Design and Analysis for Tree
-Improvement, CSIRO Publishing.")
+     "This package provides data sets and R Codes for E.R. Williams, C.E. Harwood and
+A.C. Matheson (2023).  Experimental Design and Analysis for Tree Improvement,
+CSIRO Publishing.")
     (license license:gpl3)))
 
 (define-public r-eda
@@ -17722,13 +17723,13 @@ individual periods or individual quantiles.")
 (define-public r-echor
   (package
     (name "r-echor")
-    (version "0.1.7")
+    (version "0.1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echor" version))
               (sha256
                (base32
-                "0x2vy9r51cgk35wgzrfl74w82vlcsj5vpfz5n9zcbxxk62lqd4kn"))))
+                "1x8yx4hhp8lwl3fs3sbnvza73dh3jnxzv6jkq3nm4q9ff7svmaja"))))
     (properties `((upstream-name . "echor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

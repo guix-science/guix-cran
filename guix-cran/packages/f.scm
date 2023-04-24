@@ -3133,13 +3133,13 @@ partial linear model and the multi-functional partial linear single-index model.
 (define-public r-fselectorrcpp
   (package
     (name "r-fselectorrcpp")
-    (version "0.3.8")
+    (version "0.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSelectorRcpp" version))
               (sha256
                (base32
-                "17wcrsp2jlinj6nhnqba8iv7kk9m9hbpwv4vww5cdghflrn2zwj1"))))
+                "1xqzn5b784szaayp9zan1411k0hs9mnq717gvnahflk9dhsc3fwg"))))
     (properties `((upstream-name . "FSelectorRcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

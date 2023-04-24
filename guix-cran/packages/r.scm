@@ -16233,13 +16233,13 @@ parameter.  The method is fully described in
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rmzqc" version))
               (sha256
                (base32
-                "07vj0n3498h595py8gfvv3yvscj9bhwj1swzqm1y14r5sg49laa9"))))
+                "0z1nxcyaqjz113xa4nwx9grkkp6k26dvwra9d01sjkwiag9nkj1f"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -31529,13 +31529,13 @@ monthly precipitation).")
 (define-public r-recmap
   (package
     (name "r-recmap")
-    (version "1.0.11")
+    (version "1.0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recmap" version))
               (sha256
                (base32
-                "08gbbgm6494s490lw9c85j1bvmd6wnk9r43dh8x4lijb3fhs0dq0"))))
+                "0v7wdvjk9nf2j01mw34y9d138hqzmmqswvsn7vspxs21s8cnrd3m"))))
     (properties `((upstream-name . "recmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rcpp r-ga))
@@ -37920,13 +37920,13 @@ Game notations.")
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.2.3.0")
+    (version "4.3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcheology" version))
               (sha256
                (base32
-                "1gdsqwl8b4n3xya3fzdh28nfrp2a4mcgj7zlx2awkz54gi71v5dg"))))
+                "1db0d3c2j4riy5sy2i9q3ik2fcqxppvijyabhp5qvgrwqxd18rba"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -42096,13 +42096,13 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 (define-public r-rankinma
   (package
     (name "r-rankinma")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rankinma" version))
               (sha256
                (base32
-                "0zb6c6bvzlr8dgr7xlmz4p2x0yq5v9svaq6p9jaykwdrrci4jx0l"))))
+                "1yrkbqfpwgyf6xffqcf84vihr63i1dfh449hqbjqhg7cvbcvqr21"))))
     (properties `((upstream-name . "rankinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-netmeta r-mvtnorm))

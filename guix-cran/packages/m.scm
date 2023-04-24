@@ -14151,6 +14151,28 @@ parliament.  Documentation for the API itself can be found here:
 <http://data.parliament.uk/membersdataplatform/default.aspx>.")
     (license license:expat)))
 
+(define-public r-mnet
+  (package
+    (name "r-mnet")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mnet" version))
+              (sha256
+               (base32
+                "1wvdz3l8bam7q9wynkd0xh44mi8lb8qmz9nqpbr46fvj71kpjivw"))))
+    (properties `((upstream-name . "mnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mlvar r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mnet")
+    (synopsis
+     "Modeling Group Differences and Moderation Effects in Statistical Network Models")
+    (description
+     "This package provides a toolbox for modeling manifest and latent group
+differences and moderation effects in various statistical network models.")
+    (license license:gpl2)))
+
 (define-public r-mnda
   (package
     (name "r-mnda")
@@ -31574,13 +31596,13 @@ marginalized zero-inflated Poisson model described in Long et al. (2014)
 (define-public r-mcompanion
   (package
     (name "r-mcompanion")
-    (version "0.5.5")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mcompanion" version))
               (sha256
                (base32
-                "13qqbvz0zq2pbf7r5civ01aqvwv5h7cbm7l72qbqnldr5rpn6ra7"))))
+                "1a0fbliszmsvjvfjsmgllira3fid05qj794kg7hmzdp949gn88m2"))))
     (properties `((upstream-name . "mcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-mass r-gbutils))

@@ -3685,13 +3685,13 @@ Office of Germany (DESTATIS) using their SOAP XML web service
 (define-public r-wienr
   (package
     (name "r-wienr")
-    (version "0.3-8")
+    (version "0.3-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WienR" version))
               (sha256
                (base32
-                "0ygh3khhwvlx86vjr6anlc12jpx13jma6hrannp9jvcip9vhxykv"))))
+                "0d544g4mgxxrk3aaw1v5r20kg44jpzp03dws9i5awix393mqsdcb"))))
     (properties `((upstream-name . "WienR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WienR")

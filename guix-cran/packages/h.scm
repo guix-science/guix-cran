@@ -2684,6 +2684,28 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
      "To test the homogeneity of stratum effects in stratified paired binary data.")
     (license license:gpl3)))
 
+(define-public r-hset
+  (package
+    (name "r-hset")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hset" version))
+              (sha256
+               (base32
+                "1bp892qm7k3n542pyfbnawfdj2211xgnbmp3sjcb5r0zhcgq2md1"))))
+    (properties `((upstream-name . "hset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-hash))
+    (home-page "https://cran.r-project.org/package=hset")
+    (synopsis "Sets of Numbers Implemented with Hash Tables")
+    (description
+     "Implementation of S4 class of sets and multisets of numbers.  The implementation
+is based on the hash table from the package hash'.  Quick operations are allowed
+when the set is a dynamic object.  The implementation is discussed in detail in
+Ceoldo and Wit (2023) <arXiv:2304.09809>.")
+    (license license:expat)))
+
 (define-public r-hsem
   (package
     (name "r-hsem")

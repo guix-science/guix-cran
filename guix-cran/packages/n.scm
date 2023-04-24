@@ -3009,13 +3009,13 @@ normal model.")
 (define-public r-norgeo
   (package
     (name "r-norgeo")
-    (version "2.1.5")
+    (version "2.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "norgeo" version))
               (sha256
                (base32
-                "06arxjqw2lqkz49smzgf81vb588b9d9jajqmmd4dgfxyahkq3ang"))))
+                "072mx0kmfn01gpdy48l7889i10kjr675bvwk3d87jldzls6y1pwb"))))
     (properties `((upstream-name . "norgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

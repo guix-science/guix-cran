@@ -24643,13 +24643,13 @@ Lloyd, C.J. (2020), Statistics in Medicine, Volume 38, 2389-2399,
 (define-public r-classmap
   (package
     (name "r-classmap")
-    (version "1.2.0")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "classmap" version))
               (sha256
                (base32
-                "0f5b1hx1n72042kkzkl4n9vr2w7q1pc1ivl0n907k4a7jzi3q63k"))))
+                "125895ym1jhdd4gm7ywlhfzn66kra1a8bbkq3502vg38zvdsm3ci"))))
     (properties `((upstream-name . "classmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -28273,6 +28273,29 @@ be incorporated into the laboratory.  These methods are aimed at discovering
 quantitative structure-activity relationships (QSARs).  However, the user can
 directly input their own choices of descriptors and responses, so the capability
 for comparing models is effectively unlimited.")
+    (license license:gpl3)))
+
+(define-public r-chemist
+  (package
+    (name "r-chemist")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CHEMIST" version))
+              (sha256
+               (base32
+                "14imzwx485ksjjhx259az9rpqadj3lq11f8kghl0pkzf27bmbyr6"))))
+    (properties `((upstream-name . "CHEMIST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xicor r-mass))
+    (home-page "https://cran.r-project.org/package=CHEMIST")
+    (synopsis
+     "Causal Inference with High-Dimensional Error-Prone Feature and Misclassified Treatments")
+    (description
+     "We aim to deal with the average treatment effect (ATE), where the data are
+subject to high-dimensional and measurement error.  This package primarily
+contains two functions, which are used to generate artificial data and estimate
+ATE with high-dimensional and error-prone data accommodated.")
     (license license:gpl3)))
 
 (define-public r-chemcal

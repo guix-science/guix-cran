@@ -2816,13 +2816,13 @@ methods described in Moss (2019, <arxiv:1911.01576>).")
 (define-public r-attention
   (package
     (name "r-attention")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "attention" version))
               (sha256
                (base32
-                "02k156k1yynr82f6rn3pdhc2ngsr0fr6k6rwvi7rhxl37ggh5id7"))))
+                "0fnh0chdr9zbng6jan9hhgjqzk71cyh5nqv7325w8layqzld095k"))))
     (properties `((upstream-name . "attention")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4978,13 +4978,13 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 (define-public r-artsy
   (package
     (name "r-artsy")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aRtsy" version))
               (sha256
                (base32
-                "0dr3qmw1i9gj1vag247f48k59jr3x0ywn5rlddczhnkpglhdmm1h"))))
+                "07pj1xm3ya04ksxzm1ln05z91rdqyn387ypd06c3ig1q7mlfffl1"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

@@ -13985,13 +13985,13 @@ techniques.")
 (define-public r-icr
   (package
     (name "r-icr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icr" version))
               (sha256
                (base32
-                "1xqvzn02x13d706irv83zycpxhm8yq1c34rh1nphddy5gri7gwjb"))))
+                "1g1gx0bbx6s8pqd5y0ckdi0r2kbg3lmr8djbaa7nj15jnf519zcx"))))
     (properties `((upstream-name . "icr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

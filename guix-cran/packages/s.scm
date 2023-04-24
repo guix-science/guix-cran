@@ -17067,13 +17067,13 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.2.2.7")
+    (version "0.2.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmoran" version))
               (sha256
                (base32
-                "1zj6m1ip2l1h1yddclx6wsakhmi28i1sjf4pcazwxl9qsm2y888v"))))
+                "08yyjyzl3a0va8dc319y0xicpw3p8js18fk9psqa4l509wy9jqnc"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -49094,13 +49094,13 @@ underwriting scorecard development, extensively used in financial domain.")
 (define-public r-scorecard
   (package
     (name "r-scorecard")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scorecard" version))
               (sha256
                (base32
-                "016dmamwczz6vpi5v59y9zyyz6s6phgrxjhz5v3fmsz82pf6mwl6"))))
+                "10z04v8k27qc5pbwkfqhq33d2m06piay40fl1bdv6lk0139685zl"))))
     (properties `((upstream-name . "scorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -50497,16 +50497,16 @@ of (conditional) mutual information for discrete data.")
 (define-public r-sccatch
   (package
     (name "r-sccatch")
-    (version "3.2.1")
+    (version "3.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scCATCH" version))
               (sha256
                (base32
-                "00z1lqs04i251gkp9c4iih9hspkgw7jafj66gb6rj1ql6kqhkny1"))))
+                "0skd6gsm30bsxr7qi63y890qrx7zq8fvp0ik8jrpwfnsvfgyzx8v"))))
     (properties `((upstream-name . "scCATCH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-progress r-matrix r-crayon))
+    (propagated-inputs (list r-reshape2 r-progress r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ZJUFanLab/scCATCH")
     (synopsis
