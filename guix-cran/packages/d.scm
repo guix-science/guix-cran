@@ -6564,26 +6564,6 @@ Conklin, M. (2001) <doi:10.1002/asmb.446>) based on the values returned from
 other functions.")
     (license license:gpl3+)))
 
-(define-public r-dominodatacapture
-  (package
-    (name "r-dominodatacapture")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DominoDataCapture" version))
-              (sha256
-               (base32
-                "168nvarg58x0w7bi365rd810gl5xz1b2kv8jv0myb7qwxdw1igm4"))))
-    (properties `((upstream-name . "DominoDataCapture")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid r-rjson r-lgr))
-    (home-page "https://www.dominodatalab.com")
-    (synopsis "Domino Data Capture")
-    (description
-     "Instrument prediction code that lets you capture inputs to the model,
-predictions, prediction properties, and other metadata.")
-    (license license:expat)))
-
 (define-public r-domino
   (package
     (name "r-domino")
@@ -6995,6 +6975,32 @@ Doing so by hand can be very tedious.  This task is made fast and reproducible
 using the functionality of documenter'.  It aggregates all text files in a
 directory and its subdirectories into a single word document in a semi-automated
 fashion.")
+    (license license:expat)))
+
+(define-public r-doctest
+  (package
+    (name "r-doctest")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "doctest" version))
+              (sha256
+               (base32
+                "1sszyza5c0rj23k8rl1anlkwblq27qhhl2pgwmbv6nq03dk8p60g"))))
+    (properties `((upstream-name . "doctest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-roxygen2
+                             r-rlang
+                             r-purrr
+                             r-pkgload
+                             r-fs
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://hughjonesd.github.io/doctest/")
+    (synopsis "Generate Tests from Examples Using 'roxygen' and 'testthat'")
+    (description
+     "This package creates testthat tests from roxygen examples using simple tags.")
     (license license:expat)))
 
 (define-public r-docstring
@@ -11236,13 +11242,13 @@ as prevalence.  The methods are described in Jackson et al. (2021)
 (define-public r-disaggregation
   (package
     (name "r-disaggregation")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "disaggregation" version))
               (sha256
                (base32
-                "1h59jpw9fcpmj8axnaymzxx7zc4qbd06cxgrpcv1xb30wnd62hm6"))))
+                "0n873a8bxqcgab0qkmxkr4xqg4mafm5qn2lmfclvibv2dhydpkjx"))))
     (properties `((upstream-name . "disaggregation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -11267,8 +11273,8 @@ as prevalence.  The methods are described in Jackson et al. (2021)
      "Fits disaggregation regression models using TMB ('Template Model Builder').
 When the response data are aggregated to polygon level but the predictor
 variables are at a higher resolution, these models can be useful.  Regression
-models with spatial random fields.  A useful reference for disaggregation
-modelling is Lucas et al. (2019) <doi:10.1101/548719>.")
+models with spatial random fields.  The package is described in detail in Nandi
+et al. (2023) <doi:10.18637/jss.v106.i11>.")
     (license license:expat)))
 
 (define-public r-disaggregatets
@@ -18027,6 +18033,33 @@ the squared Mahalanobis distance.  The package also contains functions for data
 handling and building of new classifiers as well as some test data set.")
     (license license:gpl3)))
 
+(define-public r-deflist
+  (package
+    (name "r-deflist")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "deflist" version))
+              (sha256
+               (base32
+                "0m19yz3x4gn8zad7lgf343r41bqjvd5a279ykll8cw04y74c43lm"))))
+    (properties `((upstream-name . "deflist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-memoise r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/deflist/")
+    (synopsis
+     "Deferred List - A Read-Only List-Like Object with Deferred Access")
+    (description
+     "This package implements the deflist class, a read-only list-like object that
+accesses its elements via a function.  The deflist class can be used to model
+deferred access to data or computations by routing indexed list access to a
+function.  This approach is particularly useful when sequential list-like access
+to data is required but holding all the data in memory at once is not feasible.
+The package also provides utilities for memoisation and caching to optimize
+access to frequently requested elements.")
+    (license license:lgpl2.1+)))
+
 (define-public r-deflatebr
   (package
     (name "r-deflatebr")
@@ -19750,13 +19783,13 @@ transformations.  Contains cDNA and shipping credit flow data.")
 (define-public r-dde
   (package
     (name "r-dde")
-    (version "1.0.1")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dde" version))
               (sha256
                (base32
-                "0qgnxb27a2wnrbfk5v22i985mqhjp4hp05vl1ccsapbxkpf0gqcv"))))
+                "1qwa9vmsjq9d4z08ja687058bpx7zg16k0pwk2knkjya3clz774k"))))
     (properties `((upstream-name . "dde")))
     (build-system r-build-system)
     (propagated-inputs (list r-ring))
@@ -24773,13 +24806,13 @@ can follow the tutorial in the vignette available at
 (define-public r-daewr
   (package
     (name "r-daewr")
-    (version "1.2-9")
+    (version "1.2-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daewr" version))
               (sha256
                (base32
-                "0ylil185g4l9m7camgjxv45pn4bjv6wqyjdwl3zq33sdmrraz1pv"))))
+                "0hckqjn12lkyjkbbql8l0pay5c430vhf0hp7hycp3v59i1aaz8bf"))))
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-lattice))
@@ -25236,6 +25269,32 @@ examples provided here are taken from the official D3Plus website
 it easy to build and customize sunburst, circle treemap, treemap, partition
 chart, ...")
     (license license:agpl3)))
+
+(define-public r-d3mirt
+  (package
+    (name "r-d3mirt")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "D3mirt" version))
+              (sha256
+               (base32
+                "0vxc48wmpmy8y29xswwaazvqgwsqz3v14nrv0gh75j60vjrpa7cx"))))
+    (properties `((upstream-name . "D3mirt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-mirt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ForsbergPyschometrics/D3mirt")
+    (synopsis "Descriptive 3D Multidimensional Item Response Theory Modeling")
+    (description
+     "The D3mirt package is used for identifying, estimating, and plotting descriptive
+multidimensional item response theory models, restricted to 3D and dichotomous
+or polytomous data that fit the two-parameter logistic model or the graded
+response model.  The method is foremost explorative and centered around the plot
+function that exposes item characteristics and constructs, represented by vector
+arrows, located in a three-dimensional interactive space.  The results can be
+useful for item-level analysis as well as test development.")
+    (license license:gpl3+)))
 
 (define-public r-d2mcs
   (package

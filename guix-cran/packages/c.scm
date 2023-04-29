@@ -1197,30 +1197,6 @@ interface to processed data.  Implements a very basic approach to estimate block
 level citizen voting age population from block group data.")
     (license license:expat)))
 
-(define-public r-cvam
-  (package
-    (name "r-cvam")
-    (version "0.9.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "cvam" version))
-              (sha256
-               (base32
-                "1fq1xwxhpny8fy2l1a45vj9gj3czkifb1bnbi33dlf99vv1pml7r"))))
-    (properties `((upstream-name . "cvam")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-formula r-coda))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=cvam")
-    (synopsis "Coarsened Variable Modeling")
-    (description
-     "Extends R's implementation of categorical variables (factors) to handle
-coarsened observations; implements log-linear models for coarsened categorical
-data, including latent-class models.  Detailed information and examples are
-provided in the package vignettes.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-cutpointsoehr
   (package
     (name "r-cutpointsoehr")
@@ -5296,13 +5272,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.2.2")
+    (version "0.2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropcircles" version))
               (sha256
                (base32
-                "1jskyhl1fn8r0xzwijvlndarm4bni8g8y1paa2lc743lksi8wbay"))))
+                "169gra2a3a2q7d82ds0adl5pd2jzv566vvby1wjxb1xsawigzi96"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -5605,16 +5581,17 @@ reassessment method.")
 (define-public r-critpath
   (package
     (name "r-critpath")
-    (version "0.1.5")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "critpath" version))
               (sha256
                (base32
-                "0fqzqxskvxlxggq0mfk3bqgyj2lj49ninklqwgcgrhklnry8j93q"))))
+                "185nl0jzw4k5pi8rq3afjksqqlyy41k0hyx007hr97y4i4lw8306"))))
     (properties `((upstream-name . "critpath")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-ggplot2 r-diagrammer))
+    (propagated-inputs (list r-stringr r-reshape2 r-ggplot2 r-dplyr
+                             r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=critpath")
     (synopsis "Setting the Critical Path")
@@ -5622,10 +5599,14 @@ reassessment method.")
      "Solving the problem of project management using CPM (Critical Path Method), PERT
 (Program Evaluation and Review Technique) and LESS (Least Cost Estimating and
 Scheduling) methods.  The package sets the critical path, schedule and Gantt
-chart.  In addition, it allows you to draw a graph with marked critical
-activities.  For more information about project management, see: Taha H. A.
-(2017, ISBN:978-1-292-16554-7), Konarzewska I., Jewczak M., Kucharski A. (2020,
-ISBN:978-83-8220-112-3), Rama Murthy P. (2007, ISBN:978-81-224-2944-2).")
+chart.  In addition, it allows to draw a graph even with marked critical
+activities.  For more information about project management see: Taha H. A.
+\"Operations Research.  An Introduction\" (2017, ISBN:978-1-292-16554-7), Rama
+Murthy P. \"Operations Research\" (2007, ISBN:978-81-224-2944-2), Yuval Cohen &
+Arik Sadeh (2006) \"A New Approach for Constructing and Generating AOA Networks\",
+Journal of Engineering, Computing and Architecture 1.  1-13, Konarzewska I.,
+Jewczak M., Kucharski A. (2020, ISBN:978-83-8220-112-3), MiszczyÅska D.,
+MiszczyÅski M. \"Wybrane metody badaÅ operacyjnych\" (2000, ISBN:83-907712-0-9).")
     (license license:gpl2)))
 
 (define-public r-criticalpath
@@ -6242,6 +6223,53 @@ elements which should be clustered as a CORE, 3) It calls COREs, 4) It filters
 the COREs with lowest order which does not pass the threshold considered in the
 approach.")
     (license license:gpl3+)))
+
+(define-public r-cre
+  (package
+    (name "r-cre")
+    (version "0.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CRE" version))
+              (sha256
+               (base32
+                "1az2qdskf8l0dfvs7qsnpdiv1mnw47i8pz6ic4v0i8kldar0w6bq"))))
+    (properties `((upstream-name . "CRE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-xgboost
+                             r-superlearner
+                             r-stringr
+                             r-stabs
+                             r-rrf
+                             r-randomforest
+                             r-mass
+                             r-magrittr
+                             r-logger
+                             r-intrees
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-data-table
+                             r-bartcause))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NSAPH-Software/CRE")
+    (synopsis
+     "Interpretable Subgroups Identification Through Ensemble Learning of Causal Rules")
+    (description
+     "This package provides an interpretable identification of subgroups with
+heterogeneous causal effect.  The heterogeneous subgroups are discovered through
+ensemble learning of causal rules.  Causal rules are highly interpretable
+if-then statement that recursively partition the features space into
+heterogeneous subgroups.  A small number of significant causal rules are
+selected through Stability Selection to control for family-wise error rate in
+the finite sample setting.  It proposes various estimation methods for the
+conditional causal effects for each discovered causal rule.  It is highly
+flexible and multiple causal estimands and imputation methods are implemented.
+Lee, K., Bargagli-Stoffi, F. J., & Dominici, F. (2020).  Causal rule ensemble:
+Interpretable inference of heterogeneous treatment effects.  arXiv preprint
+<arXiv:2009.09036>.")
+    (license license:gpl3)))
 
 (define-public r-crctstepdown
   (package
@@ -19882,13 +19910,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.0")
+    (version "4.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cobalt" version))
               (sha256
                (base32
-                "04z0w5wia9xrq766qwqwsphhn2mz0hzfg060ddfx2ikv9qdcp690"))))
+                "1h175i01xii07hzqrz6qkqvv0w2n64m8d158ql02ka9ka206i6vr"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -26177,13 +26205,13 @@ Parsons et al (2020) <doi:10.1093/bioinformatics/btz730>.")
 (define-public r-cir
   (package
     (name "r-cir")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cir" version))
               (sha256
                (base32
-                "10fjz4rqymib97rw38rb0w5qaq6hsd986p6mxv1mcp4czalqf1yn"))))
+                "0bgza663rynx2b2p00phfz806cwf2m30yjkqzk2s23hbc47hx9qs"))))
     (properties `((upstream-name . "cir")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -26193,7 +26221,7 @@ Parsons et al (2020) <doi:10.1093/bioinformatics/btz730>.")
      "Isotonic regression (IR) and its improvement: centered isotonic regression
 (CIR).  CIR is recommended in particular with small samples.  Also, interval
 estimates for both, and additional utilities such as plotting dose-response
-data.")
+data.  For dev version and change history, see GitHub assaforon/cir.")
     (license license:gpl2)))
 
 (define-public r-ciplot

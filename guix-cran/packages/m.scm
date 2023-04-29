@@ -12696,13 +12696,13 @@ and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.3")
+    (version "0.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "moderate.mediation" version))
               (sha256
                (base32
-                "1gwxjwvsavz6m30sy089dw07rpcqcfwr4wx3yprncrv3k8lvblg0"))))
+                "1d49mmadp9ln9sj0apgqhy7fqik0cdnjgq5jx5853bqpxx7iqffc"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -18300,6 +18300,65 @@ effects, source data types, priors, and error terms.  MixSIAR incorporates
 several years of advances since MixSIR and SIAR'.")
     (license license:gpl3)))
 
+(define-public r-mixsemirob
+  (package
+    (name "r-mixsemirob")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MixSemiRob" version))
+              (sha256
+               (base32
+                "07dj2j1cxyzr8dpxwzh2mqnsyz1l4zw4z51yfvsv4zy7x2k25164"))))
+    (properties `((upstream-name . "MixSemiRob")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ucminf
+                             r-robustbase
+                             r-rlab
+                             r-quadprog
+                             r-pracma
+                             r-mvtnorm
+                             r-mixtools
+                             r-mass
+                             r-gofkernel))
+    (home-page "https://cran.r-project.org/package=MixSemiRob")
+    (synopsis "Mixture Models: Parametric, Semiparametric, and Robust")
+    (description
+     "Various functions to estimate parametric (Gaussian, T - distribution, Laplace,
+Pareto, log-concave distribution and etc.), non-parametric mixture models;
+Perform hypothesis testing, root selection and provide treatment for label
+switching for mixture models; Estimate parameters for mixture of regressions,
+proportion varying mixture of regressions and robust mixture of regressions.
+The functions and their corresponding reference paper are as follows: KDEEM: Ma,
+Y., Wang, S., Xu, L. et al.(2021)<doi:10.1007/s11749-020-00725-z>;
+KDEEM.H/KDEEM.LSE: David R. Hunter & Derek S. Young
+(2012)<doi:10.1080/10485252.2011.608430>; RM2_mixreg: Yu C, Yao W, Chen
+K.(2017)<doi:10.1002/cjs.11310>; mixlinrb_bi: Xiuqin Bai, Weixin Yao, John E.
+Boyer(2012)<doi:10.1016/j.csda.2012.01.016>; trimmix: N. Neykov, P. Filzmoser,
+R. Dimova, P. Neytchev,(2007)<doi:10.1016/j.csda.2006.12.024>; mixlint: Weixin
+Yao, Yan Wei, Chun Yu(2014)<doi:10.1016/j.csda.2013.07.019>; mixreg_Lap: Weixing
+Song, Weixin Yao, Yanru Xing(2014)<doi:10.1016/j.csda.2013.06.022>; mixreg_CWRM:
+Garcia-Escudero, L.A., Gordaliza, A., Greselin, F. et al.(2017)
+<doi:10.1007/s11222-021-10061-3>; mphd:Jingjing Wu, Weixin Yao, Sijia Xiang
+(2017)<doi:10.1080/00949655.2017.1318136>; EMlogconc/EMlogconcHD: George T.
+Chang, Guenther Walther(2007)<doi:10.1016/j.csda.2007.01.008>;Hypothesis_test:
+Supawadee Wichitchan, Weixin Yao, Guangren
+Yang(2019)<doi:10.1016/j.csda.2018.05.005>; mixscale: Sijia Xiang, Weixin Yao,
+Byungtae Seo(2016)<doi:10.1016/j.csda.2016.06.001>; sim/simonestep:Xiang, S.,
+Yao, W.(2020)<doi:10.1007/s11634-020-00392-w>; paretomix1: Huang, M., Yao, W.,
+Wang, S., and Chen, Y.
+(2018)<doi:10.1111/sjos.12316>;complhfrequency/distlatfrequency: Weixin Yao
+(2015)<doi:10.1080/00949655.2013.859259>; MixReg_Pvary: Mian Huang and Weixin
+Yao (2012)<doi:10.1080/01621459.2012.682541>; pfmix: Weixin
+Yao(2010)<doi:10.1016/j.jspi.2010.02.004>; backfitlocal/backfitglobal: Xiang,
+S., Yao, W.(2018)<doi:10.1007/s10463-016-0584-7>;mixbspline: Dziak, J. J., Li,
+R., Tan, X., Shiffman, S., & Shiyko, M. P. (2015)<doi:10.1037/met0000048>;
+root_selection: Supawadee Wichitchan, Weixin Yao & Guangren Yang
+(2019)<doi:10.1080/03610926.2018.1481972>;
+mixbino/mixbinosemi/mixbinosemionestep/mixbinosemifull:J. Cao and W.
+Yao(2012)<https://www3.stat.sinica.edu.tw/sstest/oldpdf/A22n12.pdf>.")
+    (license license:expat)))
+
 (define-public r-mixsal
   (package
     (name "r-mixsal")
@@ -19078,6 +19137,43 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 <doi:10.1080/10618600.2021.1882468>.")
     (license license:gpl3)))
 
+(define-public r-mixedbayes
+  (package
+    (name "r-mixedbayes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mixedBayes" version))
+              (sha256
+               (base32
+                "1ialhbsxfzr8nf97zlbqi2nry028ykih6naf7ahzjm6n32c2vxdy"))))
+    (properties `((upstream-name . "mixedBayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/kunfa/mixedBayes")
+    (synopsis "Bayesian Longitudinal Regularized Quantile Mixed Model")
+    (description
+     "In longitudinal studies, the same subjects are measured repeatedly over time,
+leading to correlations among the repeated measurements.  Properly accounting
+for the intra-cluster correlations in the presence of data heterogeneity and
+long tailed distributions of the disease phenotype is challenging, especially in
+the context of high dimensional regressions.  Here, we aim at developing novel
+Bayesian regularized quantile mixed effect models to tackle these challenges.
+We have proposed a Bayesian variable selection in the mixed effect models for
+longitudinal genomics studies.  To dissect important gene - environment
+interactions, our model can simultaneously identify important main and
+interaction effects on the individual and group level, which have been
+facilitated by imposing the spike- and -slab priors through Laplacian shrinkage
+in the Bayesian quantile hierarchical models.  The within - subject dependence
+among data can be accommodated by incorporating the random effects.  An
+efficient Gibbs sampler has been developed to facilitate fast computation.  The
+Markov chain Monte Carlo algorithms of the proposed and alternative methods are
+efficiently implemented in C++'.  The development of this software package and
+the associated statistical methods have been partially supported by an
+Innovative Research Award from Johnson Cancer Research Center, Kansas State
+University.")
+    (license license:gpl2)))
+
 (define-public r-mixdist
   (package
     (name "r-mixdist")
@@ -19647,13 +19743,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.2.0")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "missRanger" version))
               (sha256
                (base32
-                "0s0zqfi2hhzxyrnfg83159g7q365glfnw7b81w2s51b10zjhxysh"))))
+                "05k74gkllsaqvf9prixg5dsjfvjjz1m60ing8iaznnka1nx7qqrg"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -22343,39 +22439,6 @@ Individual life-courses are specified by a continuous-time multi-state model as
 described in Zinn (2014) <doi:10.34196/IJM.00105>.")
     (license license:gpl2)))
 
-(define-public r-microstasis
-  (package
-    (name "r-microstasis")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "microSTASIS" version))
-              (sha256
-               (base32
-                "09zyf80l964lfil56vln70i0r2d8ry2ffx4zz3f3xcka22m94r78"))))
-    (properties `((upstream-name . "microSTASIS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-progressr
-                             r-ggside
-                             r-ggplot2
-                             r-future-apply
-                             r-future
-                             r-fmsb
-                             r-crayon))
-    (home-page "https://cran.r-project.org/package=microSTASIS")
-    (synopsis "Microbiota STability ASsessment via Iterative cluStering")
-    (description
-     "The toolkit ÂµSTASIS has been developed for the stability analysis of microbiota
-in a temporal framework by leveraging on iterative clustering.  Concretely, the
-core function uses Hartigan-Wong k-means algorithm as many times as possible for
-stressing out paired samples from the same individuals to test if they remain
-together for multiple numbers of clusters over a whole data set of individuals.
-Moreover, the package includes multiple functions to subset samples from paired
-times, validate the results or visualize the output.")
-    (license license:gpl3+)))
-
 (define-public r-microsoft365r
   (package
     (name "r-microsoft365r")
@@ -24140,6 +24203,33 @@ of multivariate generalised Gaussian distributions (methods presented by Gomez,
 Gomez-Villegas and Marin (1998) <doi:10.1080/03610929808832115> and Pascal,
 Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (license license:gpl3+)))
+
+(define-public r-mgee2
+  (package
+    (name "r-mgee2")
+    (version "0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mgee2" version))
+              (sha256
+               (base32
+                "03id3g6zbw06xracwjkwfcll62nx7psppjsd3gj05hzjvalqgwks"))))
+    (properties `((upstream-name . "mgee2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mgee2")
+    (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
+    (description
+     "Three estimating equation methods are provided in this package for marginal
+analysis of longitudinal ordinal data with misclassified responses and
+covariates.  The naive analysis which is solely based on the observed data
+without adjustment may lead to bias.  The corrected generalized estimating
+equations (GEE2) method which is unbiased requires the misclassification
+parameters to be known beforehand.  The corrected generalized estimating
+equations (GEE2) with validation subsample method estimates the
+misclassification parameters based on a given validation set.  This package is
+an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
+    (license license:gpl2+)))
 
 (define-public r-mgdrive2
   (package
@@ -33314,13 +33404,13 @@ effects models and/or by node-splitting at the treatment level.")
 (define-public r-mbmixture
   (package
     (name "r-mbmixture")
-    (version "0.2-5")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mbmixture" version))
               (sha256
                (base32
-                "0w6a77lavdsrg9sf6jmi3xyxgx4d0v2nf85fh9bnrjdp51g6d0zi"))))
+                "0g74jzhdf8grrp7pipj1m6hvyv4akycabm0ingy505a5a546ddzg"))))
     (properties `((upstream-name . "mbmixture")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -33331,7 +33421,7 @@ effects models and/or by node-splitting at the treatment level.")
      "Evaluate whether a microbiome sample is a mixture of two samples, by fitting a
 model for the number of read counts as a function of single nucleotide
 polymorphism (SNP) allele and the genotypes of two potential source samples.
-Lobo et al. (2019) <doi:10.1101/529040>.")
+Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
     (license license:expat)))
 
 (define-public r-mbmethpred

@@ -7498,13 +7498,13 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
 (define-public r-appriori
   (package
     (name "r-appriori")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "appRiori" version))
               (sha256
                (base32
-                "1b90768p9v8mha9jq0zw3d7knwav9kv4l3wz3shx2s1y2lcap1np"))))
+                "0qi840a3nlacbkiw3q6ikf2nddw5b1cq1v1llyhpbkmvd807bh8p"))))
     (properties `((upstream-name . "appRiori")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9635,13 +9635,13 @@ implementation that facilitates fast training through mini-batch learning.")
 (define-public r-anmc
   (package
     (name "r-anmc")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anMC" version))
               (sha256
                (base32
-                "01j3zbx5ihi1jlbffib7wpv7908lrjgkq8al1mkhh1qrihsj77qb"))))
+                "03yzyhqfc7g4aqn19iv3pc9413iz4jlh460p17dlbqwzzmici45p"))))
     (properties `((upstream-name . "anMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
@@ -16594,17 +16594,23 @@ and specificity as well as AUC and AUCPR can be evaluated.")
 (define-public r-adjclust
   (package
     (name "r-adjclust")
-    (version "0.6.6")
+    (version "0.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adjclust" version))
               (sha256
                (base32
-                "0kin57r12g1cv4pi6br3c71rpjhfvpkysx7jly3wf0ilj6bfs6vk"))))
+                "1pm22249y8pggvm2nnv0rznfh7qhrvbzlbmg4h0dm353b80sxczn"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparsematrixstats r-rcpparmadillo r-rcpp
-                             r-matrix r-capushe))
+    (propagated-inputs (list r-sparsematrixstats
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-dendextend
+                             r-capushe))
     (native-inputs (list r-knitr))
     (home-page "https://pneuvial.github.io/adjclust/")
     (synopsis
@@ -16617,7 +16623,7 @@ include Genome-Wide Association Studies or Hi-C data analysis, where the
 similarity between items is a decreasing function of their genomic distance.
 Taking advantage of this feature, the implemented algorithm is time and memory
 efficient.  This algorithm is described in Ambroise et al (2019)
-<https://almob.biomedcentral.com/articles/10.1186/s13015-019-0157-4>.")
+<doi:10.1186/s13015-019-0157-4>.")
     (license license:gpl3)))
 
 (define-public r-adiv

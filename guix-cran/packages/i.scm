@@ -1080,24 +1080,32 @@ this package uses Cyclops for an efficient implementation.")
 (define-public r-itensor
   (package
     (name "r-itensor")
-    (version "0.99.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iTensor" version))
               (sha256
                (base32
-                "0skv1nx4ik4j8b29v4rhykpjs7ykgiyix79hfcy98ia1g8c8p559"))))
+                "09js2kiw1prrkn03srz4xas37mwbx85zkawfb93wgl292r31j2x9"))))
     (properties `((upstream-name . "iTensor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rtensor r-mass))
-    (home-page "https://github.com/rikenbit/mwTensor")
+    (propagated-inputs (list r-rtensor
+                             r-mixomics
+                             r-mgcv
+                             r-mass
+                             r-jointdiag
+                             r-groupica
+                             r-geigen
+                             r-einsum))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rikenbit/iTensor")
     (synopsis "ICA-Based Matrix/Tensor Decomposition")
     (description
-     "Some functions for performing ICA, MICA, and Multilinear ICA are implemented.
-ICA, MICA, and Multilinear ICA extract statistically independent components from
-single matrix, multiple matrices, and single tensor, respectively.  For the
-details of these methods, see the reference section of GitHub README.md
-<https://github.com/rikenbit/iTensor>.")
+     "Some functions for performing ICA, MICA, Group ICA, and Multilinear ICA are
+implemented.  ICA, MICA/Group ICA, and Multilinear ICA extract statistically
+independent components from single matrix, multiple matrices, and single tensor,
+respectively.  For the details of these methods, see the reference section of
+GitHub README.md <https://github.com/rikenbit/iTensor>.")
     (license license:expat)))
 
 (define-public r-itemanalysis
@@ -10866,6 +10874,27 @@ are applicable to images of two, three or four dimensions, particularly medical
 images.")
     (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
 
+(define-public r-imbalancedatrel
+  (package
+    (name "r-imbalancedatrel")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "imbalanceDatRel" version))
+              (sha256
+               (base32
+                "017z434pshsc2v8w1nlrvlf6dswdjk060flrn951n59vdzvl5rhj"))))
+    (properties `((upstream-name . "imbalanceDatRel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-smotewb r-rfast r-rcccd r-rann))
+    (home-page "https://cran.r-project.org/package=imbalanceDatRel")
+    (synopsis "Relocated Data Oversampling for Imbalanced Data Classification")
+    (description
+     "Relocates oversampled data from a specific oversampling method to cover area
+determined by pure and proper class cover catch digraphs (PCCCD).  It prevents
+any data to be generated in class overlapping area.")
+    (license license:expat)))
+
 (define-public r-imbalance
   (package
     (name "r-imbalance")
@@ -10928,16 +10957,16 @@ psychometric quality standards (see Blum & Holling, 2018)
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "1.5.4")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "imagine" version))
               (sha256
                (base32
-                "0bbkxhwicjy0h24v93h8cvi17ipy82kb4zwkm7pyg8q48bqssdp0"))))
+                "0dwq7gb068wd87fclca3hmdfr50bxf39va7dp1ky1i6qhk8w8g2l"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/LuisLauM/imagine")
     (synopsis
@@ -12332,49 +12361,6 @@ for a list of copyright holders and authors.")
      "Tools, tutorials, and demos of Item Factor Analysis using OpenMx'.  This
 software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>.")
     (license license:agpl3+)))
-
-(define-public r-ifaa
-  (package
-    (name "r-ifaa")
-    (version "1.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "IFAA" version))
-              (sha256
-               (base32
-                "0phy8g1b0z1cv8sd1ynfnn29clm57wfj7qszlwnz12p20l7viwdd"))))
-    (properties `((upstream-name . "IFAA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment
-                             r-stringr
-                             r-s4vectors
-                             r-parallelly
-                             r-matrixextra
-                             r-matrix
-                             r-mathjaxr
-                             r-hdci
-                             r-glmnet
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-desctools))
-    (native-inputs (list r-knitr))
-    (home-page "https://pubmed.ncbi.nlm.nih.gov/35241863/")
-    (synopsis "Robust Inference for Absolute Abundance in Microbiome Analysis")
-    (description
-     "This package offers a robust approach to make inference on the association of
-covariates with the absolute abundance (AA) of microbiome in an ecosystem.  It
-can be also directly applied to relative abundance (RA) data to make inference
-on AA because the ratio of two RA is equal to the ratio of their AA. This
-algorithm can estimate and test the associations of interest while adjusting for
-potential confounders.  The estimates of this method have easy interpretation
-like a typical regression analysis.  High-dimensional covariates are handled
-with regularization and it is implemented by parallel computing.  False
-discovery rate is automatically controlled by this approach.  Zeros do not need
-to be imputed by a positive value for the analysis.  The IFAA package also
-offers the MZILN function for estimating and testing associations of abundance
-ratios with covariates.")
-    (license license:gpl2)))
 
 (define-public r-ietd
   (package

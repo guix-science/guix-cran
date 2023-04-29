@@ -2756,13 +2756,13 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
 (define-public r-hset
   (package
     (name "r-hset")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hset" version))
               (sha256
                (base32
-                "1bp892qm7k3n542pyfbnawfdj2211xgnbmp3sjcb5r0zhcgq2md1"))))
+                "16mlicwj11d3gjai1499vdmjibbr2iayni5zz2n516ir2s1cr48v"))))
     (properties `((upstream-name . "hset")))
     (build-system r-build-system)
     (propagated-inputs (list r-hash))
@@ -6000,13 +6000,13 @@ modelling and forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.0.1")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HIMA" version))
               (sha256
                (base32
-                "1ix86nc4jwqzr6jry5995lw9bsijg55har470wbvlljxmpyq6pn0"))))
+                "1wv3lp9bzzj0hdbaql1c9k82icfs6jr5dlicfw4d8dmv1h5n610a"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

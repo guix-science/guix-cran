@@ -18,7 +18,6 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gettext)
-  #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages sqlite)
@@ -26,6 +25,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages code)
   #:use-module (gnu packages pdf)
+  #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -8797,6 +8797,33 @@ including plotting calibration curves and model-based Receiver Operating
 Characteristic (mROC) based on Sadatsafavi et al (2021) <arXiv:2003.00316>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-predrupdate
+  (package
+    (name "r-predrupdate")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "predRupdate" version))
+              (sha256
+               (base32
+                "0166q1lriqnl74xmawxf4fpl826dc2j8l72k6rrakwjfbdznhgjy"))))
+    (properties `((upstream-name . "predRupdate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rlang r-proc r-ggplot2 r-ggextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GlenMartin31/predRupdate")
+    (synopsis "Prediction Model Validation and Updating")
+    (description
+     "Evaluate the predictive performance of an existing (i.e.  previously developed)
+prediction/ prognostic model given relevant information about the existing
+prediction model (e.g. coefficients) and a new dataset.  Provides a range of
+model updating methods that help tailor the existing model to the new dataset;
+see Su et al. (2018) <doi:10.1177/0962280215626466>.  Techniques to aggregate
+multiple existing prediction models on the new data are also provided; see
+Debray et al. (2014) <doi:10.1002/sim.6080> and Martin et al. (2018)
+<doi:10.1002/sim.7586>).")
+    (license license:expat)))
+
 (define-public r-predreliability
   (package
     (name "r-predreliability")
@@ -12110,58 +12137,6 @@ provided.  One function implements Benders decomposition algorithm and can be
 used for very large data sets.  The other, applicable for moderate sample sizes,
 finds optimal portfolio which has the smallest distance to a given benchmark
 portfolio.")
-    (license license:gpl3)))
-
-(define-public r-portfolioeffecthft
-  (package
-    (name "r-portfolioeffecthft")
-    (version "1.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PortfolioEffectHFT" version))
-              (sha256
-               (base32
-                "0y4x0d91j6g52136d921hfs5swzf85gkxafxfkf3c15dl5ns120v"))))
-    (properties `((upstream-name . "PortfolioEffectHFT")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-zoo r-rjava r-ggplot2))
-    (home-page "https://www.portfolioeffect.com/")
-    (synopsis "High Frequency Portfolio Analytics by PortfolioEffect")
-    (description
-     "R interface to PortfolioEffect cloud service for backtesting high frequency
-trading (HFT) strategies, intraday portfolio analysis and optimization.
-Includes auto-calibrating model pipeline for market microstructure noise, risk
-factors, price jumps/outliers, tail risk (high-order moments) and price
-fractality (long memory).  Constructed portfolios could use client-side market
-data or access HF intraday price history for all major US Equities.  See
-<https://www.portfolioeffect.com/> for more information on the PortfolioEffect
-high frequency portfolio analytics platform.")
-    (license license:gpl3)))
-
-(define-public r-portfolioeffectestim
-  (package
-    (name "r-portfolioeffectestim")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PortfolioEffectEstim" version))
-              (sha256
-               (base32
-                "1sfgkwyn7vfy3rqb1cglywiv5xmyxhzvj38vgrvfq5jf3hvzsg21"))))
-    (properties `((upstream-name . "PortfolioEffectEstim")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava r-portfolioeffecthft))
-    (home-page "https://www.portfolioeffect.com/")
-    (synopsis "High Frequency Price Estimators by PortfolioEffect")
-    (description
-     "R interface to PortfolioEffect cloud service for estimating high frequency price
-variance, quarticity, microstructure noise variance, and other metrics in both
-aggregate and rolling window flavors.  Constructed estimators could use
-client-side market data or access HF intraday price history for all major US
-Equities.  See <https://www.portfolioeffect.com/> for more information on the
-PortfolioEffect high frequency portfolio analytics platform.")
     (license license:gpl3)))
 
 (define-public r-portfoliobacktest
@@ -23843,13 +23818,13 @@ correlation and distance covariance options are available to generate the graph.
 (define-public r-pgpx
   (package
     (name "r-pgpx")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pGPx" version))
               (sha256
                (base32
-                "19hma2zm0gjwmam4r7zg1ayya6ab390idprpjhd3l0ld1y4zn606"))))
+                "1bv8fxy2rhb36201h4r4wx8gd5dsjw597n666mnk51r64wfmj62x"))))
     (properties `((upstream-name . "pGPx")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud
@@ -23860,7 +23835,7 @@ correlation and distance covariance options are available to generate the graph.
                              r-pbivnorm
                              r-kriginv
                              r-dicekriging))
-    (home-page "https://epubs.siam.org/doi/abs/10.1137/141000749")
+    (home-page "https://doi.org/10.1137/141000749")
     (synopsis "Pseudo-Realizations for Gaussian Process Excursions")
     (description
      "Computes pseudo-realizations from the posterior distribution of a Gaussian
@@ -23869,7 +23844,7 @@ Process (GP) with the method described in Azzimonti et al. (2016)
 field at few well chosen points that minimize the expected distance in measure
 between the true excursion set of the field and the approximate one.  Also
 implements a R interface for (the main function of) Distance Transform of
-sampled Functions (<http://cs.brown.edu/people/pfelzens/dt/index.html>).")
+sampled Functions (<https://cs.brown.edu/people/pfelzens/dt/index.html>).")
     (license license:gpl3)))
 
 (define-public r-pgnorm
@@ -30102,13 +30077,13 @@ require the use of an API key which can be obtained at
 (define-public r-pathfindr-data
   (package
     (name "r-pathfindr-data")
-    (version "1.1.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pathfindR.data" version))
               (sha256
                (base32
-                "1gvlfkpk4fxh10vs792qdj5k3yvlc3dizh780c5a2xvdy1jj6gwm"))))
+                "17gq9na4d6ls0dkvy4v1gjg29v7jm7ms9k83c2p6q2q1273ahxpb"))))
     (properties `((upstream-name . "pathfindR.data")))
     (build-system r-build-system)
     (home-page "https://github.com/egeulgen/pathfindR.data")
@@ -33854,13 +33829,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pak" version))
               (sha256
                (base32
-                "0iqxz1a44qnkqjn1yjvx1kwi01h1acz7x1598nkjjgmd7za36d61"))))
+                "00kn409bgpjbv1dixbaq0m0bfqpdvbq18l3ccqa1wjxph4z88l1h"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (home-page "https://pak.r-lib.org/")

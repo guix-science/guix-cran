@@ -1503,13 +1503,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.96.1")
+    (version "0.96.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quanteda.textstats" version))
               (sha256
                (base32
-                "0n4avavcl0rdjd7mg70h8jf6l24klqmqs5w4ij22l9qk20xg6fhp"))))
+                "0jgavpywwg852x0qpqr4bajv2jskysp0dn1pk1larn6xz7za70sk"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -2864,13 +2864,13 @@ python package which can be used to run on IBM's hardware
 (define-public r-qrnn
   (package
     (name "r-qrnn")
-    (version "2.0.5")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qrnn" version))
               (sha256
                (base32
-                "0ligz67kbfg5cmvacnb7y0ms1v0c7mbvbcfsxyfiz543ppl3xn1v"))))
+                "19lavs7r7xhwxgbaw6i6makfrbym7aiz8ar3vcb8ff1p2jdpqnag"))))
     (properties `((upstream-name . "qrnn")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qrnn")

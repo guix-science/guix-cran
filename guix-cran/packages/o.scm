@@ -8229,13 +8229,13 @@ data run on the Olink platform.")
 (define-public r-oldbailey
   (package
     (name "r-oldbailey")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oldbailey" version))
               (sha256
                (base32
-                "0w58q38rfb1siadib6hbsya82f9zpjvmvx46ys37fw59p1glilqw"))))
+                "17wvnz23rhl0n50mq2b93523kxdvc3imvfii9b33viwcm4cq6zkn"))))
     (properties `((upstream-name . "oldbailey")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

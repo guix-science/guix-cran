@@ -1422,13 +1422,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtsummary" version))
               (sha256
                (base32
-                "1l1ncdx3cnvjk81q4d8a8agv7mh3986r8v5qgdg3wby6nz20bvbk"))))
+                "0s5dpl5bxxhh0wvfbc7pk1fnff7qlii23b52i5amawr3c5xmgpp1"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1690,13 +1690,13 @@ functions that support checking the structure of GTFS objects.")
 (define-public r-gtfs2gps
   (package
     (name "r-gtfs2gps")
-    (version "2.1-0")
+    (version "2.1-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gtfs2gps" version))
               (sha256
                (base32
-                "1z9nlc5lcn9vhqc1y25m5cqvgb8rnnrwnqsxrnmq7cr9shs6dkm5"))))
+                "0k65iy7armdn13bs31wr6gq7hdxpz5nqqzpdxpm5g1mkxwc9fi1g"))))
     (properties `((upstream-name . "gtfs2gps")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -9330,22 +9330,23 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 (define-public r-gnar
   (package
     (name "r-gnar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GNAR" version))
               (sha256
                (base32
-                "1ryiv671nhhhif8xqj8lx6jfh503ayqvldnmzkwfma2ww1518y08"))))
+                "0a9xpdg1g1r1l4mga85bkyxqfrpac48f5bvi60bin7s46y2c5jam"))))
     (properties `((upstream-name . "GNAR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wordcloud r-igraph))
+    (propagated-inputs (list r-wordcloud r-matrixcalc r-igraph))
     (home-page "https://cran.r-project.org/package=GNAR")
     (synopsis "Methods for Fitting Network Time Series Models")
     (description
      "Simulation of, and fitting models for, Generalised Network Autoregressive (GNAR)
-time series models which take account of network structure.  Such models are
-described in Knight et al. (2020) <doi:10.18637/jss.v096.i05>.")
+time series models which take account of network structure, potentially with
+exogenous variables.  Such models are described in Knight et al. (2020)
+<doi:10.18637/jss.v096.i05> and Nason and Wei (2021) <doi:10.1111/rssa.12875>.")
     (license license:gpl2)))
 
 (define-public r-gmwt
@@ -16184,18 +16185,18 @@ ggplot2'.")
 (define-public r-ggmapinset
   (package
     (name "r-ggmapinset")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggmapinset" version))
               (sha256
                (base32
-                "12g41vgvwgw30cfmaawk0p6wi6v06j8nc7dc4zpns8r473zsr0wf"))))
+                "1cakn2iqjk117ngb0ssc68hxx8s4mgc8z8bl6mfvwffvjsyjyxyp"))))
     (properties `((upstream-name . "ggmapinset")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cidm-ph.github.io/ggmapinset/")
+    (home-page "https://github.com/cidm-ph/ggmapinset")
     (synopsis "Add Inset Panels to Maps")
     (description
      "Helper to add insets based on geom_sf() from ggplot2'.  This package gives you a
@@ -22671,20 +22672,22 @@ distance from pairwise comparisons of individuals or population samples.")
 (define-public r-genepi
   (package
     (name "r-genepi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genepi" version))
               (sha256
                (base32
-                "1whhdlq9p8gmygv7464hvfz6dhm65gqq1dqls6hgpmw822zxgbd5"))))
+                "0cms31s52r6027zc47fgd9nbr1li5vc39cajpg2fpdky4091rizz"))))
     (properties `((upstream-name . "genepi")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=genepi")
     (synopsis "Genetic Epidemiology Design and Inference")
     (description
-     "This package provides functions for Genetic Epi Methods Developed at MSKCC")
+     "Package for Genetic Epidemiologic Methods Developed at MSKCC. It contains
+functions to calculate haplotype specific odds ratio and the power of two stage
+design for GWAS studies.")
     (license license:gpl2+)))
 
 (define-public r-genemodel
@@ -27182,19 +27185,18 @@ Y. Ding, and D. Cabezon (2019) <arXiv:1906.05776>.")
 (define-public r-gaiah
   (package
     (name "r-gaiah")
-    (version "0.0.4")
+    (version "0.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gaiah" version))
               (sha256
                (base32
-                "1ibsbmmpagr7ix1c3bszrglqx95w44qyfy80vcq3w2dprs8vrrw6"))))
+                "1s2chr3zjgvmmic178c1fixbvf501q7jvxdg8204jalh9iii14vb"))))
     (properties `((upstream-name . "gaiah")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
                              r-rlang
                              r-raster
-                             r-maptools
                              r-magrittr
                              r-geosphere
                              r-dplyr))

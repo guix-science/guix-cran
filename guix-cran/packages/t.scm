@@ -1570,21 +1570,21 @@ HTML output.")
 (define-public r-tuflowr
   (package
     (name "r-tuflowr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TUFLOWR" version))
               (sha256
                (base32
-                "07mb60nphy4x4qv4dkd4qblf7nbbxhjn39nqalgyg6hjp87zhg8x"))))
+                "0z2fr8br7afy8sn0mn0cxpw39rcm5k7zb2gci9brl6c5ss5n2qsn"))))
     (properties `((upstream-name . "TUFLOWR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-sp
+                             r-sf
                              r-rlang
-                             r-rgdal
                              r-readr
                              r-raster
                              r-magrittr
@@ -5751,18 +5751,19 @@ Ranging) data.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.9.1")
+    (version "1.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeTools" version))
               (sha256
                (base32
-                "157xx91g2248ng868dxi692rh0w4b529yxay1cl1d8w65kym92b0"))))
+                "1lbwgbhqnyq0iy49vnqfclfdsn1f47wpa42l2mgyi741pwfgqg4a"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-r-cache
+                             r-plottools
                              r-lifecycle
                              r-fastmatch
                              r-colorspace
@@ -5955,13 +5956,13 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeSearch" version))
               (sha256
                (base32
-                "0m6v8gpr5wi51h6gky65sik6xvvha2xf98bi1zfjnvsm99mm5s6h"))))
+                "00khyb7myppcmw4y1wxzlp3x6835p8rfi9vmyfzg86bs5wlqg5g1"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -5973,6 +5974,7 @@ birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
                              r-rcpp
                              r-protoclust
                              r-promises
+                             r-plottools
                              r-future
                              r-fastmatch
                              r-cluster
@@ -7154,6 +7156,27 @@ seen as the spatial brother to the tweenr package.")
 before applying the rank based statistical techniques.  The method and its
 necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
 <arXiv:2004.11490>.")
+    (license license:expat)))
+
+(define-public r-transformer
+  (package
+    (name "r-transformer")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "transformer" version))
+              (sha256
+               (base32
+                "0nvgcw72mcmj3wy3bf72zahyzs3ir5f154hz03ybk9dydgfkxj8w"))))
+    (properties `((upstream-name . "transformer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-attention))
+    (home-page "https://cran.r-project.org/package=transformer")
+    (synopsis
+     "Implementation of Transformer Deep Neural Network with Vignettes")
+    (description
+     "Transformer is a Deep Neural Network Architecture based i.a.  on the Attention
+mechanism (Vaswani et al. (2017) <doi:10.48550/arXiv.1706.03762>).")
     (license license:expat)))
 
 (define-public r-transform-hazards
@@ -14846,6 +14869,32 @@ machine learning that fits the tidymodels framework.  The intention is to work
 for regression and classification problems with a simple verb framework.")
     (license license:expat)))
 
+(define-public r-tidier
+  (package
+    (name "r-tidier")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidier" version))
+              (sha256
+               (base32
+                "1l6w04szx92wcmfix8p3mvazjzclvjqcdkd7n6bf8sq3cmj8n0wa"))))
+    (properties `((upstream-name . "tidier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-slider
+                             r-rlang
+                             r-magrittr
+                             r-furrr
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/talegari/tidier")
+    (synopsis "Enhanced 'mutate'")
+    (description
+     "This package provides Apache Spark style window aggregation for R dataframes via
+mutate in dplyr flavour.")
+    (license license:gpl3+)))
+
 (define-public r-tidetables
   (package
     (name "r-tidetables")
@@ -15846,6 +15895,40 @@ accessible via GitHub at
 to thank Grant Duffy (University of Otago, Dundedin, New Zealand) for granting
 us permission to use the source code for the Test of Total Equivalency function.")
     (license license:gpl3)))
+
+(define-public r-theopenair
+  (package
+    (name "r-theopenair")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TheOpenAIR" version))
+              (sha256
+               (base32
+                "0ygv8hj3cnac8w8ppddnia03gw4cwi49gv9jddcc1132fkg6nbyr"))))
+    (properties `((upstream-name . "TheOpenAIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rstudioapi
+                             r-reticulate
+                             r-r-utils
+                             r-magrittr
+                             r-httr
+                             r-data-table
+                             r-cli))
+    (home-page "http://openair-lib.org/")
+    (synopsis
+     "Integrate 'OpenAI' Large Language Models into Your 'R' Workflows")
+    (description
+     "Utilizing the OpenAI API as the back end
+(<https://platform.openai.com/docs/api-reference>), TheOpenAIR offers R wrapper
+functions for the ChatGPT endpoint and several high-level functions that enable
+the integration of ChatGPT capabilities in diverse data-related tasks, such as
+data cleansing and automated analytics script generation.")
+    (license license:expat)))
 
 (define-public r-themis
   (package

@@ -2786,6 +2786,25 @@ Point', LineString', Polygon', MultiPoint', MultiLineString', and MultiPolygon'.
  Includes extensions to enable creation of maps with TIBCO Spotfire'.")
     (license license:bsd-3)))
 
+(define-public r-withdots
+  (package
+    (name "r-withdots")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "withdots" version))
+              (sha256
+               (base32
+                "0vpbw9swyi8qf5s2nlml9pdmrzvwn4rpm4gbfsc0vikbzp29dmvi"))))
+    (properties `((upstream-name . "withdots")))
+    (build-system r-build-system)
+    (home-page "https://github.com/NikKrieger/withdots")
+    (synopsis "Put ... in a Function's Argument List")
+    (description
+     "Adds ...  to a function's argument list so that it can tolerate non-matching
+arguments.")
+    (license license:expat)))
+
 (define-public r-wiser
   (package
     (name "r-wiser")

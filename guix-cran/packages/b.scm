@@ -15417,31 +15417,6 @@ Likelihood Ratio Chi Square, and Pseudo R Square.  Aberson, C. L. (2022)
 <doi:10.31234/osf.io/s2yqn>.")
     (license license:gpl3)))
 
-(define-public r-bettermc
-  (package
-    (name "r-bettermc")
-    (version "1.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bettermc" version))
-              (sha256
-               (base32
-                "1sii92s3n1brrh72nvg5qr68x56676q1ffgvf6axmrlh0h094yia"))))
-    (properties `((upstream-name . "bettermc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
-    (home-page "https://github.com/gfkse/bettermc")
-    (synopsis "Enhanced Fork-Based Parallelization")
-    (description
-     "Drop-in replacement for parallel::mclapply() adding e.g. tracebacks, crash
-dumps, retries, condition handling, improved seeding, progress bars and faster
-inter process communication.  Some of the internal functions are also exported
-for other use: etry() (extended try), copy2shm()/allocate_from_shm() (copy to
-and allocate from POSIX shared memory), char_map/map2char() (split a character
-vector into its unique elements and a mapping on these) and various semaphore
-related functions.")
-    (license license:expat)))
-
 (define-public r-bets-covid19
   (package
     (name "r-bets-covid19")
@@ -19964,44 +19939,6 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 <arXiv:1611.06649>.")
     (license license:gpl3+)))
 
-(define-public r-bayesqvgel
-  (package
-    (name "r-bayesqvgel")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BayesQVGEL" version))
-              (sha256
-               (base32
-                "15jh1lv0f4yrl20w53anrv0c26izdi17cv65l5k3dx0vyqg8djmb"))))
-    (properties `((upstream-name . "BayesQVGEL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/kunfa/BayesQVGEL")
-    (synopsis
-     "Bayesian Variable Selection for G - E in Longitudinal Quantile Regression")
-    (description
-     "In longitudinal studies, the same subjects are measured repeatedly over time,
-leading to correlations among the repeated measurements.  Properly accounting
-for the intra-cluster correlations in the presence of data heterogeneity and
-long tailed distributions of the disease phenotype is challenging, especially in
-the context of high dimensional regressions.  Here, we aim at developing novel
-Bayesian regularized quantile mixed effect models to tackle these challenges.
-We have proposed a Bayesian variable selection in the mixed effect models for
-longitudinal genomics studies.  To dissect important gene - environment
-interactions, our model can simultaneously identify important main and
-interaction effects on the individual and group level, which have been
-facilitated by imposing the spike- and -slab priors through Laplacian shrinkage
-in the Bayesian quantile hierarchical models.  The within - subject dependence
-among data can be accommodated by incorporating the random effects.  An
-efficient Gibbs sampler has been developed to facilitate fast computation.  The
-Markov chain Monte Carlo algorithms of the proposed and alternative methods are
-efficiently implemented in C++'.  The development of this software package and
-the associated statistical methods have been partially supported by an
-Innovative Research Award from Johnson Cancer Research Center, Kansas State
-University.")
-    (license license:gpl2)))
-
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
@@ -23330,13 +23267,13 @@ several data structures.")
 (define-public r-baseq
   (package
     (name "r-baseq")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baseq" version))
               (sha256
                (base32
-                "1kybsdrjxmvwfzbk2133rg76mn8yjbzpfmn3wbaw9k3b3s5dn479"))))
+                "1vvvrcalzsjgqnrrqqngz12k36bfid3yiiinfaf155n966972zvd"))))
     (properties `((upstream-name . "baseq")))
     (build-system r-build-system)
     (home-page "https://github.com/ambuvjyn/baseq")

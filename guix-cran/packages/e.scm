@@ -907,13 +907,13 @@ package.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extras" version))
               (sha256
                (base32
-                "1y9i2vxp06yy0p26n8l4ky9i5zwdhdny1nw62lk6h3yk4rn63qca"))))
+                "0129dg6y18dcv9rpry4jipaf5l4zsfrvx96ihj637fl1v8gspl43"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
@@ -8237,6 +8237,53 @@ exposures, omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
 analysis across all omics features using quantile-based g-Computation (as
 described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
     (license license:gpl3+)))
+
+(define-public r-epinow2
+  (package
+    (name "r-epinow2")
+    (version "1.3.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EpiNow2" version))
+              (sha256
+               (base32
+                "02sp6bzpg2bf8ziyxrmrjjcw6pklcfyjxck0i7g81kawgq9nfnfj"))))
+    (properties `((upstream-name . "EpiNow2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-stanheaders
+                             r-scales
+                             r-runner
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r-utils
+                             r-purrr
+                             r-progressr
+                             r-patchwork
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-futile-logger
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforecasts.io/EpiNow2/")
+    (synopsis
+     "Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters")
+    (description
+     "Estimates the time-varying reproduction number, rate of spread, and doubling
+time using a range of open-source tools (Abbott et al. (2020)
+<doi:10.12688/wellcomeopenres.16006.1>), and current best practices (Gostic et
+al. (2020) <doi:10.1101/2020.06.18.20134858>).  It aims to help users avoid some
+of the limitations of naive implementations in a framework that is informed by
+community feedback and is actively supported.")
+    (license license:expat)))
 
 (define-public r-epinetr
   (package
@@ -16122,13 +16169,13 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
 (define-public r-edear
   (package
     (name "r-edear")
-    (version "0.9.3")
+    (version "0.9.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "edeaR" version))
               (sha256
                (base32
-                "0piy046q4vzyi3dbkga9cfh8jxl0anrvj4klc1a4y4n8hxsddyya"))))
+                "120x95a5s51rvpr6kybgs875rbghqqmsrzdpq3jr1007yaxpl710"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -18270,18 +18317,19 @@ can be downloaded from the EBV Data Portal: Christian Langer/ iDiv (2020)
 (define-public r-ebsc
   (package
     (name "r-ebsc")
-    (version "4.15")
+    (version "4.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eBsc" version))
               (sha256
                (base32
-                "0xw2fbkd4z0k9a65izhnirssnbnhmwbmby12x25mda9711acsmw5"))))
+                "0mhmnd0lz0fl8l39kxxvxbn65pc2n440zj6g47f8flavl6p037s0"))))
     (properties `((upstream-name . "eBsc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-nlme
+                             r-mvtnorm
                              r-matrix
                              r-mass
                              r-brobdingnag))
@@ -18471,13 +18519,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "2.2021.1")
+    (version "2.2021.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "1vkq1q8758y6i31xjnbk2vxsilwvkyvcbl96dchkiqzqj28z275d"))))
+                "04gvxqfpqxdnwrhfjpfw8ssskhic72c5jwqw7rg6c2wis8354yrd"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

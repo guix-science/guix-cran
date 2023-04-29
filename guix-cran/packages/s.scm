@@ -959,13 +959,13 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
 (define-public r-symbol-equation-gpt
   (package
     (name "r-symbol-equation-gpt")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "symbol.equation.gpt" version))
               (sha256
                (base32
-                "0dq7hlzwr97kl2vppvign8c0r44sr87pyrhfbq6fxddi2fs0z2rj"))))
+                "02rww4rv3nrkdp845lcpi5aszbrvpynxv12kh4g91p9wan6afqzc"))))
     (properties `((upstream-name . "symbol.equation.gpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinystoreplus
@@ -976,9 +976,8 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
                              r-markdown
                              r-htmltools))
     (native-inputs (list r-knitr))
-    (home-page "https://symbols-ui.obi.obianom.com/")
-    (synopsis
-     "Powerful User Interface to Build and Insert Symbols and Equations")
+    (home-page "https://symbols-ui.obi.obianom.com")
+    (synopsis "Powerful User Interface to Build Equations and Add Symbols")
     (description
      "User Interface for adding symbols, smileys, arrows, building mathematical
 equations using LaTeX or r2symbols'.  Built for use in development of Markdown
@@ -11853,30 +11852,6 @@ rmarkdown and shiny packages.  Runtime examples are provided in the package
 function as well as at <https://jarvisatharva.shinyapps.io/StatisticsPrimer/>.")
     (license license:gpl2)))
 
-(define-public r-stat-extend
-  (package
-    (name "r-stat-extend")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stat.extend" version))
-              (sha256
-               (base32
-                "1qwjqnjds733xvxhby604yqvwlj1rkr3411diwzhbgwp89rhy11r"))))
-    (properties `((upstream-name . "stat.extend")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sets))
-    (home-page "https://cran.r-project.org/package=stat.extend")
-    (synopsis "Highest Density Regions and Other Functions of Distributions")
-    (description
-     "Highest Density Regions are the smallest set in the support of a probability
-distribution with the specified coverage probability.  HDRs may contain disjoint
-intervals, but can be calculated efficiently using iterative methods.  One can
-similarly construct optimal (i.e., shortest) confidence intervals for some basic
-inferential problems, including for population means, variances, or proportion
-parameters.")
-    (license license:expat)))
-
 (define-public r-stat
   (package
     (name "r-stat")
@@ -12605,28 +12580,27 @@ expressed using lme4 syntax (Bates, Maechler, Bolker, and Walker (2015)
 (define-public r-stampr
   (package
     (name "r-stampr")
-    (version "0.2")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stampr" version))
               (sha256
                (base32
-                "10mc71kgnw5712q2gvzd4bmjaw1879r7s599hfsjap21idqb2k2m"))))
+                "1vp9ks0fwnz7j1lwvjklys4ih0slhylzfm79kzvfbby9l3xq878j"))))
     (properties `((upstream-name . "stampr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
-                             r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-maptools
-                             r-deldir))
-    (home-page "https://cran.r-project.org/package=stampr")
+                             r-sf
+                             r-rlang
+                             r-lwgeom
+                             r-geosphere
+                             r-dplyr))
+    (home-page "https://github.com/jedalong/stampr")
     (synopsis "Spatial Temporal Analysis of Moving Polygons")
     (description
      "Perform spatial temporal analysis of moving polygons; a longstanding analysis
 problem in Geographic Information Systems.  Facilitates directional analysis,
-shape analysis, and some other simple functionality for examining
+distance analysis, and some other simple functionality for examining
 spatial-temporal patterns of moving polygons.")
     (license license:gpl3)))
 
@@ -15317,6 +15291,26 @@ calls in a clean structure.  It simplifies the process of extracting and
 transforming data into useful formats.")
     (license license:expat)))
 
+(define-public r-sql
+  (package
+    (name "r-sql")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SQL" version))
+              (sha256
+               (base32
+                "17cv2n042gh6yw2y0vq5zb0w4w1mcyv4azfxkkqc8kf3k105s74b"))))
+    (properties `((upstream-name . "SQL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-duckdb r-dbi r-arrow))
+    (home-page "https://cran.r-project.org/package=SQL")
+    (synopsis "Executes 'SQL' Statements")
+    (description
+     "Runs SQL statements on in-memory data frames within a temporary in-memory duckdb
+data base.")
+    (license license:gpl2+)))
+
 (define-public r-sqi
   (package
     (name "r-sqi")
@@ -17125,13 +17119,13 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.2.2.8")
+    (version "0.2.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmoran" version))
               (sha256
                (base32
-                "08yyjyzl3a0va8dc319y0xicpw3p8js18fk9psqa4l509wy9jqnc"))))
+                "1xbvr9wrp48a31ggr2j8kivkpjxl1n8cmhfmlz13dcd15byvjrcs"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17460,13 +17454,13 @@ panel data.")
 (define-public r-splittools
   (package
     (name "r-splittools")
-    (version "0.3.3")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "splitTools" version))
               (sha256
                (base32
-                "0w3pbkbyc46b32kw4jcw1lvrq311mqnfgihymkyf3cgmn51d30jb"))))
+                "1qcadczvvk236nfdx7glfqgqs9x1r6hkzspcxfx59r2n1bl85yna"))))
     (properties `((upstream-name . "splitTools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24570,6 +24564,34 @@ optimization, model validation, and hypothesis testing.")
 absorption and sonar equations.")
     (license license:gpl3+)))
 
+(define-public r-somspace
+  (package
+    (name "r-somspace")
+    (version "1.2.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "somspace" version))
+              (sha256
+               (base32
+                "1268sj89cbkp2nm0i905s991a92w4aki93hxia2vqk6fdh200rdl"))))
+    (properties `((upstream-name . "somspace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-maps r-kohonen r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=somspace")
+    (synopsis "Spatial Analysis with Self-Organizing Maps")
+    (description
+     "Application of the Self-Organizing Maps technique for spatial classification of
+time series.  The package uses spatial data, point or gridded, to create
+clusters with similar characteristics.  The clusters can be further refined to a
+smaller number of regions by hierarchical clustering and their spatial
+dependencies can be presented as complex networks.  Thus, meaningful maps can be
+created, representing the regional heterogeneity of a single variable.  More
+information and an example of implementation can be found in Markonis and Strnad
+(2020, <doi:10.1177/0959683620913924>).")
+    (license license:gpl3)))
+
 (define-public r-sommer
   (package
     (name "r-sommer")
@@ -28757,13 +28779,13 @@ implemented as well.")
 (define-public r-smaa
   (package
     (name "r-smaa")
-    (version "0.3-1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smaa" version))
               (sha256
                (base32
-                "13qf495glfz6r75kfdplr1x6fqmys961pzbgv96lw62lby5d2qgp"))))
+                "0cv6xa6miy45pj0lskg70bq7bmwxdprwjl51ghlxgifkv1qdxqhc"))))
     (properties `((upstream-name . "smaa")))
     (build-system r-build-system)
     (home-page "https://github.com/gertvv/rsmaa")
@@ -32636,13 +32658,13 @@ parameters, patient frailties and baseline hazard functions.")
 (define-public r-simsalapar
   (package
     (name "r-simsalapar")
-    (version "1.0-11")
+    (version "1.0-12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simsalapar" version))
               (sha256
                (base32
-                "1vf97q42vicmz5w6szzhiw73sc3c7rqwxs1nv7ybp13fvvg52p24"))))
+                "0aac4mjx4pdfhy52jvr3v2d8hp20qglzfhrvqmrvvn5pcn2qmlh4"))))
     (properties `((upstream-name . "simsalapar")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-gridbase r-colorspace))
@@ -33528,28 +33550,6 @@ using Gaussian or negative binomial distributions, and behavioral activity data
 using Bernoulli or Poisson distributions.  See Singer et al. (2019)
 <doi:10.7717/peerj.6985>.")
     (license license:gpl2)))
-
-(define-public r-simphe
-  (package
-    (name "r-simphe")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "SimPhe" version))
-              (sha256
-               (base32
-                "01kzypahw41jk8s2c92h0k9w32yaicis07wb6k8qlqcmv0zj8xry"))))
-    (properties `((upstream-name . "SimPhe")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/beibeiJ/SimPhe")
-    (synopsis "Tools to Simulate Phenotype(s) with Epistatic Interaction")
-    (description
-     "This package provides functions to simulate single or multiple, independent or
-correlated phenotype(s) with additive, dominance effects and their interactions.
- Also includes functions to generate phenotype(s) with specific heritability.
-Flexible and user-friendly options for simulation.")
-    (license license:gpl2+)))
 
 (define-public r-simph
   (package

@@ -1435,13 +1435,13 @@ estimation.")
 (define-public r-upg
   (package
     (name "r-upg")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UPG" version))
               (sha256
                (base32
-                "1rhf31smc25ip42id331vnqhaqwvi01b5g3kvlrnzkficgfrdbdf"))))
+                "09lalflqsl8rg1pfsg5v05wcqp77y29dcjiwxvcd0pgchx5d3x79"))))
     (properties `((upstream-name . "UPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

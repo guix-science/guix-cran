@@ -401,13 +401,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.4.3")
+    (version "1.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vtable" version))
               (sha256
                (base32
-                "039hfw99hyjyvjf0m9f9fqa7ff83v6avsh3x9wncf3v54k7fcqq4"))))
+                "1fc8p4d7c7jy2sxpcbf1qjaq2qz678v0ivlmrxphbmdh6x2lscwy"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
@@ -5524,13 +5524,13 @@ interpretation of the results.")
 (define-public r-varselectexposure
   (package
     (name "r-varselectexposure")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VARSELECTEXPOSURE" version))
               (sha256
                (base32
-                "0yshhjv9kdwikcw7vqd7k7i91xms8wbbv0n1qhc03lw9lg9vhxh0"))))
+                "0hfcy00zynrg2vfqym17zfs3ggm4wvsvjf2qib4pbd53qfhzabwa"))))
     (properties `((upstream-name . "VARSELECTEXPOSURE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

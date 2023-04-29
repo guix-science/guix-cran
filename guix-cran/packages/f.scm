@@ -3132,13 +3132,13 @@ partial linear model and the multi-functional partial linear single-index model.
 (define-public r-fselectorrcpp
   (package
     (name "r-fselectorrcpp")
-    (version "0.3.10")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FSelectorRcpp" version))
               (sha256
                (base32
-                "1xqzn5b784szaayp9zan1411k0hs9mnq717gvnahflk9dhsc3fwg"))))
+                "008zc270injmjhr2zqs0jw21f7vrmmclzjnin9xsx8drfk8bhdvn"))))
     (properties `((upstream-name . "FSelectorRcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -3367,16 +3367,21 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-frscore
   (package
     (name "r-frscore")
-    (version "0.2.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "frscore" version))
               (sha256
                (base32
-                "1ndmnfj8wxr07r8m8jzxv9hyyhg9f94wiab7qpqw470q9plgdrks"))))
+                "1nfl6jzghr3zg63l3vzkpx8fpr2mz60nxikmssngbcbv6qfyi8i8"))))
     (properties `((upstream-name . "frscore")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rfast r-magrittr r-dplyr r-cna))
+    (propagated-inputs (list r-rlang
+                             r-rfast
+                             r-magrittr
+                             r-lifecycle
+                             r-dplyr
+                             r-cna))
     (home-page "https://cran.r-project.org/package=frscore")
     (synopsis "Functions for Calculating Fit-Robustness of CNA-Solutions")
     (description
@@ -4919,6 +4924,29 @@ fraction form.")
 using the box-counting method.  See Klinkenberg B. (1994)
 <doi:10.1007/BF02065874>.")
     (license license:gpl3)))
+
+(define-public r-fractalregression
+  (package
+    (name "r-fractalregression")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fractalRegression" version))
+              (sha256
+               (base32
+                "00vmb9l1whwlcbskzpy2ql004l47ll3phvdsdmxg8728vinjbacf"))))
+    (properties `((upstream-name . "fractalRegression")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-colorramps))
+    (home-page "https://cran.r-project.org/package=fractalRegression")
+    (synopsis "Performs Fractal Analysis and Fractal Regression")
+    (description
+     "Various functions for performing fractal and multifractal analysis including
+performing fractal regression.  Please refer to Peng and colleagues (1994)
+<doi:10.1103/physreve.49.1685>, Kantelhardt and colleagues
+(2002)<doi:10.1016/S0378-4371(02)01383-3>, and Likens and colleagues (2019)
+<doi:10.1016/j.physa.2019.121580>.")
+    (license license:gpl3+)))
 
 (define-public r-fractalparameterestimation
   (package
@@ -10827,13 +10855,13 @@ log-normal, 2) Tweedie, or 3) Poisson-gamma (G)LMs.")
 (define-public r-fishmethods
   (package
     (name "r-fishmethods")
-    (version "1.12-0")
+    (version "1.12-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fishmethods" version))
               (sha256
                (base32
-                "1iy9df9wzr660byksga1j6kg9p8n45xf09iavpvya2cg9kw95gx3"))))
+                "0ladr3rl55v10kh0556725gygiw338mj3ncpifaij80rph99y66v"))))
     (properties `((upstream-name . "fishmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -15514,13 +15542,13 @@ GWAS p-values to generate re-weighted p-values.")
 (define-public r-fcar
   (package
     (name "r-fcar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fcaR" version))
               (sha256
                (base32
-                "04hmyndadrm6bs5vxbyh9wii6xm3vw71dy06q5b69x2344y3p5a9"))))
+                "07p6jvciawx0n11q6vqibqvwp8y1336wvpbw0imisw2ksw6vhdwa"))))
     (properties `((upstream-name . "fcaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tikzdevice

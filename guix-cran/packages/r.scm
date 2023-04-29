@@ -6772,13 +6772,13 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.24.0")
+    (version "0.26.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rscorecard" version))
               (sha256
                (base32
-                "097fkpzbri7nvqs931dkm3kbbkajmns6rpmyd6vqdds6yjj3mk2z"))))
+                "0l0xx5q93na2fbl1gb11mv4xd514jmkhz95w4054pdmrq6smdc97"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10228,6 +10228,37 @@ Aristide & Morlon (2019) <DOI:10.1111/ele.13385>, Maliet et al. (2020)
 Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478> and Perez-Lamarque et al.
 (2022) <DOI:10.1101/2021.08.30.458192>.")
     (license license:gpl2)))
+
+(define-public r-rpaleoclim
+  (package
+    (name "r-rpaleoclim")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rpaleoclim" version))
+              (sha256
+               (base32
+                "0dl6f77sdrzjhbmrdgbrpn2a9g9a0bcx9nc228r0mawxvd1h18kq"))))
+    (properties `((upstream-name . "rpaleoclim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rlang r-fs r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://rpaleoclim.joeroe.io")
+    (synopsis "Download Paleoclimate Data from 'PaleoClim'")
+    (description
+     "PaleoClim <http://www.paleoclim.org> (Brown et al.  2019,
+<doi:10.1038/sdata.2018.254>) is a set of free, high resolution paleoclimate
+surfaces covering the whole globe.  It includes data on surface temperature,
+precipitation and the standard bioclimatic variables commonly used in ecological
+modelling, derived from the HadCM3 general circulation model and downscaled to a
+spatial resolution of up to 2.5 minutes.  Simulations are available for key time
+periods from the Late Holocene to mid-Pliocene.  Data on current and Last
+Glacial Maximum climate is derived from CHELSA (Karger et al.  2017,
+<doi:10.1038/sdata.2017.122>) and reprocessed by PaleoClim to match their
+format; it is available at up to 30 seconds resolution.  This package provides a
+simple interface for downloading PaleoClim data in R, with support for caching
+and filtering retrieved data by period, resolution, and geographic extent.")
+    (license license:expat)))
 
 (define-public r-rpaex
   (package
@@ -14079,13 +14110,13 @@ the book above, as well as the scripts reproducing all the examples in the book.
 (define-public r-robslopes
   (package
     (name "r-robslopes")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "robslopes" version))
               (sha256
                (base32
-                "06j9n4p6pmiydhrm24skj7qlv5ia9f5qwbs8jss5cvmbjad7lqgq"))))
+                "0hhdpp03ybf71x6wz766glqlq4ywc4v65mj0ca3idv69p488mvb5"))))
     (properties `((upstream-name . "robslopes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -14095,10 +14126,9 @@ the book above, as well as the scripts reproducing all the examples in the book.
      "Fast algorithms for the Theil-Sen estimator, Siegel's repeated median slope
 estimator, and Passing-Bablok regression.  The implementation is based on
 algorithms by Dillencourt et.  al (1992) <doi:10.1142/S0218195992000020> and
-Matousek et.  al (1998) <doi:10.1007/PL00009190>.  The implementation of
-Passing-Bablok regression is explained in detail in Raymaekers J., Dufey F.
-(2022).  Equivariant Passing-Bablok regression in quasilinear time.
-<arXiv:2202.08060>.  All algorithms run in quasilinear time.")
+Matousek et.  al (1998) <doi:10.1007/PL00009190>.  The implementations are
+detailed in Raymaekers (2023) <doi:10.32614/RJ-2023-012> and Raymaekers J.,
+Dufey F. (2022) <arXiv:2202.08060>.  All algorithms run in quasilinear time.")
     (license license:gpl2+)))
 
 (define-public r-robservable
@@ -15432,13 +15462,13 @@ GrADS-DODS system.")
 (define-public r-rnoaa
   (package
     (name "r-rnoaa")
-    (version "1.3.8")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rnoaa" version))
               (sha256
                (base32
-                "12mrvvq93535pk9g52h0sl5wdlw0wpqdchghi24fjdr62r44p5sp"))))
+                "15rhnvzzfdxc37j4yixp21hw5p9ijg7c0la4cyrxj57wnc1r71m1"))))
     (properties `((upstream-name . "rnoaa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18344,13 +18374,13 @@ luminescence (ITL or ISO-TL).")
 (define-public r-rlt
   (package
     (name "r-rlt")
-    (version "3.2.5")
+    (version "3.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RLT" version))
               (sha256
                (base32
-                "1zqlk6pbbp4as3bkgjvhk9kq9jw0295apdbv5cgsjgmgirgiz5vk"))))
+                "0s2bb8cdvc5ab2n5xxi76c5szgizwbcy21z6762hpqms4g2yhvc6"))))
     (properties `((upstream-name . "RLT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RLT")
@@ -19690,15 +19720,16 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RJDemetra" version))
               (sha256
                (base32
-                "1g54kzfb97zba5898bz90cba5nyjkhd00hw3azsaic6xa7dwz5gr"))))
+                "0b7n8s2dizsrbia89wsxdycr30dm0xb9z4h2hk67m5kbr4mcgqkc"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/jdemetra/rjdemetra")
     (synopsis "Interface to 'JDemetra+' Seasonal Adjustment Software")
@@ -20938,13 +20969,13 @@ open source software that builds installers for Windows programs
 (define-public r-ring
   (package
     (name "r-ring")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ring" version))
               (sha256
                (base32
-                "1ljmqq7mngxs59nri36w0cx6a6d85qsbk9v9698hfx9asicv398d"))))
+                "166ma52axbmarwbzkqqcfcms9q9a4yqmsq9cqbmgpkkwm595ywij"))))
     (properties `((upstream-name . "ring")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -23707,27 +23738,42 @@ principal component analysis is incorporated.")
 (define-public r-rgcca
   (package
     (name "r-rgcca")
-    (version "2.1.2")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RGCCA" version))
               (sha256
                (base32
-                "0zcxakqnmih0243y5b6r9nmcfanzxd6q344pd5bca5pnm3y43wr0"))))
+                "0clij9ym0hl7r41nq7v2b2nmvma0ib6b0m5ckl1lqvc37471rdl0"))))
     (properties `((upstream-name . "RGCCA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-deriv))
+    (propagated-inputs (list r-rlang
+                             r-pbapply
+                             r-matrixstats
+                             r-mass
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-deriv
+                             r-caret))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RGCCA")
+    (home-page "https://github.com/rgcca-factory/RGCCA")
     (synopsis
      "Regularized and Sparse Generalized Canonical Correlation Analysis for Multiblock Data")
     (description
-     "Multiblock data analysis concerns the analysis of several sets of variables
+     "Multi-block data analysis concerns the analysis of several sets of variables
 (blocks) observed on the same group of individuals.  The main aims of the RGCCA
-package are: (i) to study the relationships between blocks and (ii) to identify
-subsets of variables of each block which are active in their relationships with
-the other blocks.")
-    (license license:gpl2+)))
+package are: to study the relationships between blocks and to identify subsets
+of variables of each block which are active in their relationships with the
+other blocks.  This package allows to (i) run R/SGCCA and related methods
+(\\link{rgcca}), (ii) help the user to find out the optimal parameters for
+R/SGCCA such as regularization parameters (tau or sparsity)
+(\\link{rgcca_permutation}, \\link{rgcca_cv}), (iii) evaluate the stability of the
+RGCCA results and their significance (\\link{rgcca_bootstrap} and
+\\link{rgcca_stability}), (iv) build predictive models from the R/SGCCA
+(\\link{rgcca_predict}), (v) Generic print() and plot() functions apply to all
+these functionalities.")
+    (license license:gpl3)))
 
 (define-public r-rgbp
   (package
@@ -29622,13 +29668,13 @@ spatial vector objects (regions) and spatial raster objects (cells with values).
 (define-public r-regfilter
   (package
     (name "r-regfilter")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "regfilter" version))
               (sha256
                (base32
-                "0b0msgx2ffcbd8aijxknwb54ha38dqbvgzwsggf4v7mlpqga1qm0"))))
+                "0ll3mikssqghn58mf1qspd1zbnx2vwk7rpmnp0vb4szci4gmz87x"))))
     (properties `((upstream-name . "regfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -30167,6 +30213,43 @@ NCBI GenBank <https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an
 environment for semi-automatic and assisted construction of reference databases
 and to improve standardization and repeatability in barcoding and metabarcoding
 studies.")
+    (license license:gpl3)))
+
+(define-public r-refbasedmi
+  (package
+    (name "r-refbasedmi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RefBasedMI" version))
+              (sha256
+               (base32
+                "1b28mm7wfrffwhr7zbhfgp5svbnvnahiwkh514977w1azbqsfcjd"))))
+    (properties `((upstream-name . "RefBasedMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pastecs
+                             r-norm2
+                             r-mice
+                             r-hmisc
+                             r-data-table
+                             r-assertthat))
+    (home-page "https://github.com/UCL/RefBasedMI")
+    (synopsis
+     "Reference-Based Imputation for Longitudinal Clinical Trials with Protocol Deviation")
+    (description
+     "Imputation of missing numerical outcomes for a longitudinal trial with protocol
+deviations.  The package uses distinct treatment arm-based assumptions for the
+unobserved data, following the general algorithm of Carpenter, Roger, and
+Kenward (2013) <doi:10.1080/10543406.2013.834911>, and the causal model of
+White, Royes and Best (2020) <doi:10.1080/10543406.2019.1684308>.  Sensitivity
+analyses to departures from these assumptions can be done by the Delta method of
+Roger.  The program is derived from the mimix Stata package written by Suzie
+Cro, with additional coding for the causal model and delta method.  The
+reference-based methods are jump to reference (J2R), copy increments in
+reference (CIR), copy reference (CR), and the causal model, all of which must
+specify the reference treatment arm.  Other methods are missing at random (MAR)
+and the last mean carried forward (LMCF).  Individual-specific imputation
+methods (and their reference groups) can be specified.")
     (license license:gpl3)))
 
 (define-public r-ref-icar
@@ -44005,23 +44088,22 @@ optimizing the parameters m', M', and n', during the process of assembling loci.
 (define-public r-radsafer
   (package
     (name "r-radsafer")
-    (version "2.2.6")
+    (version "2.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "radsafer" version))
               (sha256
                (base32
-                "0dmxdrmi8rvng69hsgqj60gw22daasxmy69z1xygd0w7vcsvn9aw"))))
+                "1f71yqvhssaskhkpqavm004455hgnhifw70l46bwh15y60hmk9q7"))))
     (properties `((upstream-name . "radsafer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-utf8
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-scatterplot3d
                              r-rlang
                              r-readr
                              r-raddata
-                             r-qpdf
                              r-magrittr
+                             r-lifecycle
                              r-ggthemes
                              r-ggplot2
                              r-dplyr))

@@ -2115,25 +2115,24 @@ al. (2017a) <doi:10.1016/j.csda.2016.08.002> and LÃ³pez-Cheda et al. (2017b)
 (define-public r-npcs
   (package
     (name "r-npcs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "npcs" version))
               (sha256
                (base32
-                "00gxi2yalp7pcykxmm1kafv3fpyqwc7xvmv10z6x3yngk62rj0r6"))))
+                "0bd81fi1zg06s39msdrnhh0yv7y7zr2nn110w8fm9vdlcx100gam"))))
     (properties `((upstream-name . "npcs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-smotefamily
-                             r-rpart
-                             r-randomforest
+    (propagated-inputs (list r-tidyr
+                             r-smotefamily
                              r-nnet
-                             r-naivebayes
-                             r-mass
                              r-magrittr
+                             r-ggplot2
                              r-formatr
                              r-foreach
-                             r-e1071
+                             r-forcats
+                             r-dplyr
                              r-dfoptim
                              r-caret))
     (native-inputs (list r-knitr))
@@ -2146,7 +2145,7 @@ NPMC-ER) to solve the multi-class NP problem through cost-sensitive learning
 tools.  Under certain conditions, the two algorithms are shown to satisfy
 multi-class NP properties.  More details are available in the paper
 \"Neyman-Pearson Multi-class Classification via Cost-sensitive Learning\" (Ye Tian
-and Yang Feng, 2021), which will be posted on arXiv soon.")
+and Yang Feng, 2021).")
     (license license:gpl2)))
 
 (define-public r-npcp
@@ -12638,6 +12637,33 @@ theoretical quantities of interest to marketing researchers.  Also provides
 functions for making tables that compare observed and theoretical statistics.")
     (license license:gpl3+)))
 
+(define-public r-nbconv
+  (package
+    (name "r-nbconv")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nbconv" version))
+              (sha256
+               (base32
+                "09clb9368v27fwgp9b2j2q9d4jg8rcr6qhwwzk5izvh0airc9k5w"))))
+    (properties `((upstream-name . "nbconv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixstats))
+    (home-page "https://github.com/gbedwell/nbconv")
+    (synopsis "Evaluate Arbitrary Negative Binomial Convolutions")
+    (description
+     "Three distinct methods are implemented for evaluating the sums of arbitrary
+negative binomial distributions.  These methods are: Furman's exact probability
+mass function (Furman (2007) <doi:10.1016/j.spl.2006.06.007>), saddlepoint
+approximation, and a method of moments approximation.  Functions are provided to
+calculate the density function, the distribution function and the quantile
+function of the convolutions in question given said evaluation methods.
+Functions for generating random deviates from negative binomial convolutions and
+for directly calculating the mean, variance, skewness, and excess kurtosis of
+said convolutions are also provided.")
+    (license license:gpl3+)))
+
 (define-public r-nbc4va
   (package
     (name "r-nbc4va")
@@ -12872,18 +12898,20 @@ operations on each item while maintaining the overall structure in attributes.")
 (define-public r-naturalist
   (package
     (name "r-naturalist")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "naturaList" version))
               (sha256
                (base32
-                "15kpv73a5bcjhnqp2q6fbw3wdwr3f1zijvaj60hybxv652p8b71f"))))
+                "0692bd7sdf3rlcp7sgjkvm7w5gyd3qv4390f7bz286krimsxaqzq"))))
     (properties `((upstream-name . "naturaList")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-tm
                              r-tidytext
                              r-stringr
+                             r-stringi
                              r-sp
                              r-shinywidgets
                              r-shinydashboard
