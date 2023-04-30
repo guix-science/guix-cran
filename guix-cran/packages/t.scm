@@ -12288,13 +12288,13 @@ elements such as title, key-value pairs, or colour to reveal trends.")
 (define-public r-timbr
   (package
     (name "r-timbr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "timbr" version))
               (sha256
                (base32
-                "17ri6mr9na9vfjr1jvxmj283j96hxz064kdlbbap1izkskpkhl86"))))
+                "1bz368s1iryxrrxsvq2sbzlm2cnrfqxafzvbsgm6smb3skwyp3sb"))))
     (properties `((upstream-name . "timbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -12304,12 +12304,13 @@ elements such as title, key-value pairs, or colour to reveal trends.")
                              r-purrr
                              r-pillar
                              r-memoise
+                             r-lifecycle
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/UchidaMizuki/timbr")
-    (synopsis "Forest Data Frames")
+    (synopsis "Forest/Tree Data Frames")
     (description
-     "This package provides data frames for forest (or tree) data structures.  You can
+     "This package provides data frames for forest or tree data structures.  You can
 create forest data structures from data frames and process them based on their
 hierarchies.")
     (license license:expat)))

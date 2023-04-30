@@ -17579,15 +17579,16 @@ of R Markdown templates (e.g., count words or post-process citations).")
 (define-public r-rmdconcord
   (package
     (name "r-rmdconcord")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RmdConcord" version))
               (sha256
                (base32
-                "08kjazcrkhssprmsxcyc0h0id1dzcgp5135ki051jgdl805qcr0n"))))
+                "08yd6g2yawxr4k5awgrvnm720w5jsq9g5q9xqlvdr9pvmv8xnv4c"))))
     (properties `((upstream-name . "RmdConcord")))
     (build-system r-build-system)
+    (inputs (list))
     (propagated-inputs (list r-rmarkdown r-knitr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/dmurdoch/RmdConcord")
@@ -41761,7 +41762,6 @@ LaTeX, PDF, ODT etc.) with pandoc as the converter backend.")
     (properties `((upstream-name . "RAppArmor")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-unix))
     (native-inputs (list r-r-rsp pkg-config))
     (home-page "https://www.jstatsoft.org/v55/i07/")
     (synopsis "Bindings to AppArmor and Security Related Linux Tools")

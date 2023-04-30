@@ -10657,20 +10657,19 @@ point process model.")
 (define-public r-ppcspatial
   (package
     (name "r-ppcspatial")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ppcSpatial" version))
               (sha256
                (base32
-                "1gi57zngc42wcrihg29nn7qa3gaq105ckp76qmczkldshlpd7x4r"))))
+                "0dxl5vv41462vhhdvbjczcghp0rv2f2101qygn4cldfihja397y9"))))
     (properties `((upstream-name . "ppcSpatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
                              r-tidyr
                              r-shiny
                              r-scales
-                             r-rgdal
                              r-pakpc2017
                              r-magrittr
                              r-leaflet
@@ -10682,7 +10681,8 @@ point process model.")
     (synopsis "Spatial Analysis of Pakistan Population Census")
     (description
      "Spatial Analysis for exploration of Pakistan Population Census 2017
-(<http://www.pbscensus.gov.pk/>).  It uses data from R package PakPC2017'.")
+(<https://www.pbs.gov.pk/content/population-census>).  It uses data from R
+package PakPC2017'.")
     (license license:gpl3)))
 
 (define-public r-ppcong
@@ -19256,13 +19256,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pknca
   (package
     (name "r-pknca")
-    (version "0.10.1")
+    (version "0.10.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PKNCA" version))
               (sha256
                (base32
-                "1haf3yd645rcw6nbrj1l5hvqlwmd35fnji9ibrqsqbj1fb5m70r9"))))
+                "1imaj6a8y53hllhfxvmci4qh04pviw0zpwmxm12sqi1nl2kdb5y4"))))
     (properties `((upstream-name . "PKNCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -28687,13 +28687,13 @@ dataset to be considered for model fitting.")
 (define-public r-pcds
   (package
     (name "r-pcds")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pcds" version))
               (sha256
                (base32
-                "00gwcqa66vbwsxar4q18j30wfi0d5dxzljhyanacb64bgddqsshx"))))
+                "1kkr6pdyqgrr1p5h435rklbygvbnav1qzzlgrhqwkg89gp5p8ic4"))))
     (properties `((upstream-name . "pcds")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

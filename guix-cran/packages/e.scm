@@ -1542,13 +1542,13 @@ Selected References: Chang et al. (2021)
 (define-public r-explor
   (package
     (name "r-explor")
-    (version "0.3.9")
+    (version "0.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "explor" version))
               (sha256
                (base32
-                "0sfpw9lgpr9hyn93jwxhijbfqnj466wc5ilszki2r7ziik3nb79i"))))
+                "102rjnllk5xxsik42dd8m1rryz5y2h2dwmidy2jy3zlylgc4dhdr"))))
     (properties `((upstream-name . "explor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

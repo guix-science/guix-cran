@@ -4335,21 +4335,16 @@ and analyzing fossil data from the Paleobiology Database
 (define-public r-vein
   (package
     (name "r-vein")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vein" version))
               (sha256
                (base32
-                "0x4b47k641cs041qjm36hxglb1vwvi7in3lcmp9nmf058zcrc5cf"))))
+                "0g0j9whhli4hhv4minciyj0dpnms85lzy6parlppjb2wfsxyp2aa"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-sf
-                             r-fields
-                             r-dotcall64
-                             r-data-table
-                             r-cptcity))
+    (propagated-inputs (list r-units r-sf r-dotcall64 r-data-table r-cptcity))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/atmoschem/vein")
     (synopsis "Vehicular Emissions Inventories")

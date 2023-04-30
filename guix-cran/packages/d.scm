@@ -220,13 +220,13 @@ consistent with wood formation mechanisms through time.")
 (define-public r-dynsurv
   (package
     (name "r-dynsurv")
-    (version "0.4-3")
+    (version "0.4-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynsurv" version))
               (sha256
                (base32
-                "1vqf0f3x671vz1w5s2axq159jb1pzjx402qjiwy5ymp05vi0kql3"))))
+                "0dpc0a7ijzi8my3ifipgyvq1p7kibbs7r89wsddpvlr290ls61vw"))))
     (properties `((upstream-name . "dynsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

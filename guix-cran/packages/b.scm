@@ -7091,13 +7091,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.8.1")
+    (version "4.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bnlearn" version))
               (sha256
                (base32
-                "1b6k9jjwfxll7w3gnwnx8r912f9kfrxikhq8143f53m3ngq1ng32"))))
+                "19yd6g3n7mbf03zpadwz4xcsq3d1n7fn3pgfgr1i1hjxhg2vg2n6"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")

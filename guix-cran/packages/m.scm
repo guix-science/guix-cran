@@ -38302,6 +38302,27 @@ calling hypervariable ChIP-seq signals across samples.  Refer to Tu et al.
 <doi:10.1186/s13059-022-02627-9> for associated statistical details.")
     (license license:gpl3)))
 
+(define-public r-manlymix
+  (package
+    (name "r-manlymix")
+    (version "0.1.15")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ManlyMix" version))
+              (sha256
+               (base32
+                "10knb2gzzsq5dkm7h70qvcw2cx7m7ra00vlkqbs36y6vw2gcjwmn"))))
+    (properties `((upstream-name . "ManlyMix")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ManlyMix")
+    (synopsis "Manly Mixture Modeling and Model-Based Clustering")
+    (description
+     "The utility of this package includes finite mixture modeling and model-based
+clustering through Manly mixture models by Zhu and Melnykov (2016)
+<DOI:10.1016/j.csda.2016.01.015>.  It also provides capabilities for forward and
+backward model selection procedures.")
+    (license license:gpl2+)))
+
 (define-public r-manipulate
   (package
     (name "r-manipulate")

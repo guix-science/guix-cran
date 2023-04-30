@@ -14145,13 +14145,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.5")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ichimoku" version))
               (sha256
                (base32
-                "1ky2rhy29xk7c5xgd7c201lklqrljfjgldmfsv4kv0ky6j25bwc7"))))
+                "0xjiz0r0h57l2zvknpp8nf2zfp2xpwpg5gshcwa122ykn8l988q0"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

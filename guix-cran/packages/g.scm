@@ -6448,13 +6448,13 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "3.0.1")
+    (version "3.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grafify" version))
               (sha256
                (base32
-                "05cmkscv8va1ihza3ry2hz3r2fvkraqacqrf20qrw5w6gimmvb8i"))))
+                "184ci2myn2x80l3zaan9bsyrq34ag0gqs14awh83khacxlkk7my8"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
