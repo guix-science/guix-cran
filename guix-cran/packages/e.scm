@@ -13761,15 +13761,16 @@ topology.")
 (define-public r-eiaapi
   (package
     (name "r-eiaapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EIAapi" version))
               (sha256
                (base32
-                "0mcm6j8w1ngix0wha6h8jcsrdiv2ydzm6jdf7v1b7h7slf2a4pg5"))))
+                "021mbyxx9swr2wn85mifqg8pwdvrx0hnds6l209zl8f79ndyhlz4"))))
     (properties `((upstream-name . "EIAapi")))
     (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-data-table))
     (home-page "https://github.com/RamiKrispin/EIAapi")
     (synopsis "Query Data from the 'EIA' API")
     (description
@@ -16330,13 +16331,13 @@ EdBuild data processing please see EdBuild (2020) <http://data.edbuild.org/>.")
 (define-public r-eda4treer
   (package
     (name "r-eda4treer")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eda4treeR" version))
               (sha256
                (base32
-                "0grfggbq11bhwxqi7pc158jchdk0zxz7zxblhgvncimgw5gml01h"))))
+                "0dah3pamlkc6iqskj0cp645l9hrinsmh678adxprsw0yp30727ab"))))
     (properties `((upstream-name . "eda4treeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-supernova

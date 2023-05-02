@@ -2567,13 +2567,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gsDesign2" version))
               (sha256
                (base32
-                "02n2kb7cbkjk1and7xk7lnn9hxhxafcwnpmfpjdys281yc3a0497"))))
+                "1pdldnqyq6qfhydikfm5r0swrbnv8q9lr0k3sf4p06zx2dsfkhsq"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5204,13 +5204,13 @@ responses in surveys.")
 (define-public r-grc
   (package
     (name "r-grc")
-    (version "0.4.4")
+    (version "0.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gRc" version))
               (sha256
                (base32
-                "0p1m816al9djv5fhzgsgrbbbcpx5c5wjxvxwni6gs2cwxbxmdvcp"))))
+                "051xypj0mcrmb4xyrbpicz08dj74klrfbzi463hvbgcvxyh75m3c"))))
     (properties `((upstream-name . "gRc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-magrittr r-grbase))
@@ -6876,6 +6876,36 @@ with three or more treatments.  This balancing score is used for propensity
 score matching and stratification in outcome analyses when analyzing either
 ordinal or multinomial treatments.")
     (license license:gpl3+)))
+
+(define-public r-gps
+  (package
+    (name "r-gps")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gps" version))
+              (sha256
+               (base32
+                "1n6llhl8vjy6lzw7icpizc5pcg0xm6547n57dydv8asz4hxs68jy"))))
+    (properties `((upstream-name . "gps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (home-page "https://github.com/ZheyuanLi/gps")
+    (synopsis "General P-Splines")
+    (description
+     "General P-splines are non-uniform B-splines penalized by a general difference
+penalty, proposed by Li and Cao (2022) <arXiv:2201.06808>.  Constructible on
+arbitrary knots, they extend the standard P-splines of Eilers and Marx (1996)
+<doi:10.1214/ss/1038425655>.  They are also related to the O-splines of
+O'Sullivan (1986) <doi:10.1214/ss/1177013525> via a sandwich formula that links
+a general difference penalty to a derivative penalty.  The package includes
+routines for setting up and handling difference and derivative penalties.  It
+also fits P-splines and O-splines to (x, y) data (optionally weighted) for a
+grid of smoothing parameter values in the automatic search intervals of Li and
+Cao (2023) <doi:10.1007/s11222-022-10178-z>.  It aims to facilitate other
+packages to implement P-splines or O-splines as a smoothing tool in their model
+estimation framework.")
+    (license license:gpl3)))
 
 (define-public r-gprmortality
   (package
@@ -22605,13 +22635,13 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
 (define-public r-generalcorr
   (package
     (name "r-generalcorr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "generalCorr" version))
               (sha256
                (base32
-                "1ncr3s5mpd8f2a1ijzmns380fj05xicnjmwlgfzabnrmhzh2pxcd"))))
+                "13p1z9bshbim4gm3ckmf5vf9alvbi97zwc5zb95c8gzyc52nf1n7"))))
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
@@ -22639,8 +22669,9 @@ decileVote(), momentVote(), dif4mtx(), exactSdMtx() can rank several stocks.
 Several functions whose names begin with boot provide bootstrap statistical
 inference including a new bootGcRsq() test for \"Granger-causality\" allowing
 nonlinear relations.  A new tool for evaluation of out-of-sample portfolio
-performance is outOFsamp().  See six vignettes of the package for theory and
-usage tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
+performance is outOFsamp().  Panel data implementation is now included.  See six
+vignettes of the package for theory and usage tips.  See Vinod (2019)
+\\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
 
 (define-public r-genepop

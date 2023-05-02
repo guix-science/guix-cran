@@ -237,13 +237,13 @@ chosen alpha level of 0.05.")
 (define-public r-mxnorm
   (package
     (name "r-mxnorm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mxnorm" version))
               (sha256
                (base32
-                "1bzip0rcw0vsz151ql8pcc59v100797ps6m60qiz95aldwcdmdrj"))))
+                "01845m5h4rd38n0fll2k2d9hw6j9dbjgs7kmwy30g9lkffvv73s8"))))
     (properties `((upstream-name . "mxnorm")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -2225,35 +2225,6 @@ the work by Paul Centore, \"The Munsell and Kubelka-Munk Toolbox\".")
      "Multidimensional unfolding using Schoenemann's algorithm for metric and
 Procrustes rotation of unfolding results.")
     (license license:gpl2)))
-
-(define-public r-mumm
-  (package
-    (name "r-mumm")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mumm" version))
-              (sha256
-               (base32
-                "1wjg2pqn2wb9hk9mqgpi3k26qwjnkmp4apx09lxcwrz35bbwhfzv"))))
-    (properties `((upstream-name . "mumm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmb
-                             r-stringr
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-lme4))
-    (home-page "http://github.com/sofpj/mumm")
-    (synopsis "Multiplicative Mixed Models using the Template Model Builder")
-    (description
-     "Fit multiplicative mixed models using maximum likelihood estimation via the
-Template Model Builder (TMB), Kristensen K, Nielsen A, Berg CW, Skaug H, Bell BM
-(2016) <doi:10.18637/jss.v070.i05>.  One version of the multiplicative mixed
-model is applied in Piepho (1999) <doi:10.1111/j.0006-341X.1999.01120.x>.  The
-package provides functions for calculating confidence intervals for the model
-parameters and for performing likelihood ratio tests.")
-    (license license:gpl2+)))
 
 (define-public r-mulvariaterandomforestvarimp
   (package
@@ -10951,13 +10922,13 @@ including two spin-off functions for unimodal and bivariate monotone regression
 (define-public r-monoreg
   (package
     (name "r-monoreg")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "monoreg" version))
               (sha256
                (base32
-                "059y5rj74b2rgkqmqqa4v74ih6knydj3kb2hr7hz4xj36cg01x54"))))
+                "1ra6mnn9m3989h6pcrpfhv5bl4q5i6856w4wp6lmaxipr6swlnk2"))))
     (properties `((upstream-name . "monoreg")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -10972,7 +10943,7 @@ time-to-event outcomes through case-base sampling.  The extension and its
 applications, including estimation of absolute risks, are described in Saarela &
 Arjas (2015) <DOI:10.1111/sjos.12125>.  The package also implements the
 nonparametric ordinal regression model described in Saarela, Rohrbeck & Arjas
-<arXiv:2007.01390>.")
+<DOI:10.1214/22-BA1310>.")
     (license license:gpl2+)))
 
 (define-public r-monopoly
@@ -16439,17 +16410,17 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.0.1")
+    (version "4.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlpack" version))
               (sha256
                (base32
-                "1vim94lib1w6f3m5j6pv9s53zwl935bxq5p5ma6ag0nsdzskr29r"))))
+                "0cx96ak6rrvac1wsakkl9zm7y1kqyg1npk86yn6af2z4zln8nqi2"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
-    (home-page "https://www.mlpack.org/doc/mlpack-4.0.1/r_documentation.html")
+    (home-page "https://www.mlpack.org/doc/mlpack-git/r_documentation.html")
     (synopsis "'Rcpp' Integration for the 'mlpack' Library")
     (description
      "This package provides a fast, flexible machine learning library, written in C++,
@@ -19972,19 +19943,19 @@ are described in Mason (2018) <doi:10.1002/hec.3793>, Molenberghs (2000)
 (define-public r-missinghandle
   (package
     (name "r-missinghandle")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MissingHandle" version))
               (sha256
                (base32
-                "19g4vgk7m6m0mc949kf92z1lgh4laa2070bavyszbq3bwsc0wgkc"))))
+                "09mfjyygxmcpd50148a5pcda0c7gvfrxgxbw1v6i01ymwpfb4b2p"))))
     (properties `((upstream-name . "MissingHandle")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-imputets r-dplyr))
     (home-page "https://cran.r-project.org/package=MissingHandle")
     (synopsis
-     "Handles Missing Dates and Data and Converts into Weekly from Daily")
+     "Handles Missing Dates and Data and Converts into Weekly and Monthly from Daily")
     (description
      "Many times, you will not find data for all dates.  After first January, 2011 you
 may have next data on 20th January, 2011 and so on.  Also available dates may
@@ -19995,10 +19966,10 @@ elements of a list, using this you can fill the gaps for all the sheets and mark
 all the corresponding values as zeros.  Here I am talking about daily data.
 Finally, it will combine all the filled results into one data frame (first
 column is date and other columns will be corresponding values of your sheets)
-and give one csv file.  Number of columns in the data frame will be number of
-sheets plus one.  Then imputation will be done.  Daily to weekly conversion is
-also possible.  More details can be found in Garai and others (2023)
-<doi:10.13140/RG.2.2.11977.42087>.")
+and give one combined data frame.  Number of columns in the data frame will be
+number of sheets plus one.  Then imputation will be done.  Daily to monthly and
+weekly conversion is also possible.  More details can be found in Garai and
+others (2023) <doi:10.13140/RG.2.2.11977.42087>.")
     (license license:gpl3)))
 
 (define-public r-missdiag
@@ -34495,6 +34466,29 @@ metrics implemented in this package refer to Khamis, H. J., & Roche, A. F.
 <doi:10.1519/SSC.0000000000000281>.")
     (license license:expat)))
 
+(define-public r-mattransmix
+  (package
+    (name "r-mattransmix")
+    (version "0.1.16")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MatTransMix" version))
+              (sha256
+               (base32
+                "1jvxwbs2914hqd5vr9kfwazh9d0vqpw7dhbpjdh3q4rgqk80gwpd"))))
+    (properties `((upstream-name . "MatTransMix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=MatTransMix")
+    (synopsis
+     "Clustering with Matrix Gaussian and Matrix Transformation Mixture Models")
+    (description
+     "This package provides matrix Gaussian mixture models, matrix transformation
+mixture models and their model-based clustering results.  The parsimonious
+models of the mean matrices and variance covariance matrices are implemented
+with a total of 196 variations.")
+    (license license:gpl2+)))
+
 (define-public r-matskew
   (package
     (name "r-matskew")
@@ -34575,13 +34569,13 @@ name.\"")
 (define-public r-matrixtests
   (package
     (name "r-matrixtests")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matrixTests" version))
               (sha256
                (base32
-                "1221ig7h1j2cw7rc5ap49nahwmzcmv9hnnkv7m172qgwhzgxq88g"))))
+                "0xgmgcs1awzh1h3j8sfb44gazgfrh9m2ngz3ziq43m84lv7vxn5r"))))
     (properties `((upstream-name . "matrixTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))

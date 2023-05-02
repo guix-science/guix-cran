@@ -4299,13 +4299,13 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prqlr" version))
               (sha256
                (base32
-                "0ysb4z6xvsap30wvigs9syr11h6nd7vvzcv04dch2sj7xc269vhv"))))
+                "0p25wrbb4gmgwr7afismlsgyly283zn1xfbqy218r1ia79hzs3b0"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -7264,13 +7264,13 @@ offers options to deal with block-wise missingness in multi-omics data.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "8.0.0")
+    (version "8.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prioritizr" version))
               (sha256
                (base32
-                "02mrrmhs72lp44dbzsj0snnqlkclync430bvznsw4401fgg8r7g5"))))
+                "1i3ckbjkabwi7gyjlgdvl0hrmvb8ww0641kp58p5p9r71sykfzhp"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

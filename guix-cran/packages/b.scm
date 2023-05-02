@@ -23668,13 +23668,13 @@ features for data analysis and visualization.")
 (define-public r-bartcs
   (package
     (name "r-bartcs")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartcs" version))
               (sha256
                (base32
-                "0xfyvm4pd0wcdhj3id1rrd5915ddv02rzy077ld111qnyvibmxld"))))
+                "1b2p2mwd5hb1rayaxcx8hkh6dys3361zaxid6sl9hv8np94ld696"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -23683,7 +23683,8 @@ features for data analysis and visualization.")
                              r-mcmcpack
                              r-invgamma
                              r-ggplot2
-                             r-ggcharts))
+                             r-ggcharts
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yooyh/bartcs")
     (synopsis "Bayesian Additive Regression Trees for Confounder Selection")

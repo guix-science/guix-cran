@@ -8499,13 +8499,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.17")
+    (version "0.4.18")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RQuantLib" version))
               (sha256
                (base32
-                "1sb6mpglqzwnf868gg7g6ys3l7z960721xj28y0v2pfc8vfk5ic2"))))
+                "0ninb84isvv10dxh1ga5vs0q2hny37b4a9snzdijn63hl3rgw97i"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -20835,13 +20835,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "0.5.3")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rintcal" version))
               (sha256
                (base32
-                "1qknbcyy1nla1d7nmwcbd76vgr97skr8ihrklhr6iskcx8pyysj6"))))
+                "0lba6jpbwingkyfcvm9557b6zj77w1mq67qy6w41980k4cjqjr0i"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -28593,23 +28593,26 @@ Poisson and Cox regression models.  See Tay, J. K., and Tibshirani, R., (2019)
 (define-public r-relevance
   (package
     (name "r-relevance")
-    (version "1.3")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "relevance" version))
               (sha256
                (base32
-                "185fb5vjq1l6q1yz4qyvm2qli1xpp3wc4d1s17y28daljmdijlw8"))))
+                "1n6b8b0mg60i4zmj9008wz49jq0i6b7wbs9hz0lr7d2cjvfnhf07"))))
     (properties `((upstream-name . "relevance")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=relevance")
-    (synopsis "Calculate Relevance")
+    (synopsis "Calculate Relevance and Significance Measures")
     (description
      "Calculates relevance and significance values for simple models and for many
 types of regression models.  These are introduced in Stahel, Werner A. (2021)
-\"New relevance and significance measures to replace p-values.\"
-<https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf>.")
+\"Measuring Significance and Relevance instead of p-values.\"
+<https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf>.  These
+notions are also applied to replication studies, as described in the manuscript
+Stahel, Werner A. (2022) \"'Replicability': Terminology, Measuring Success, and
+Strategy\" available in the documentation.")
     (license license:gpl2)))
 
 (define-public r-relen
@@ -31576,13 +31579,13 @@ monthly precipitation).")
 (define-public r-recmap
   (package
     (name "r-recmap")
-    (version "1.0.14")
+    (version "1.0.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "recmap" version))
               (sha256
                (base32
-                "0v7wdvjk9nf2j01mw34y9d138hqzmmqswvsn7vspxs21s8cnrd3m"))))
+                "1973lx65ifyrsxip4qyhba2is45riknaja1x84ybj2l9a9y12d4l"))))
     (properties `((upstream-name . "recmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-rcpp r-ga))
@@ -32216,13 +32219,13 @@ projects for changes.")
 (define-public r-readysignal
   (package
     (name "r-readysignal")
-    (version "0.0.7")
+    (version "0.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "readysignal" version))
               (sha256
                (base32
-                "19ml1fb1r23zhg9z1kbwi0sjn9qib136g36y1rrdb1j0mw12wgv8"))))
+                "0j715d5ci6bybfhw246b8ag5iikmrngnxqqrscm9mg5k8da3v1ay"))))
     (properties `((upstream-name . "readysignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-progress r-jsonlite r-httr))
@@ -45600,13 +45603,13 @@ plot_power() draws the corresponding power graphs.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2rtf" version))
               (sha256
                (base32
-                "12h3pm7kif1kj5096hd6c2xpdr3vy0b91cgsp6263fx4553pavbq"))))
+                "0szzri64jxalmvrcj9r70im8l4sq07mqngz7q097qswgnhjmrcqy"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

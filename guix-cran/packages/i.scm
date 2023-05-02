@@ -12913,27 +12913,6 @@ For more information on our model, see Chen et al. (2019)
 <doi:10.1080/19490976.2022.2106103>.")
     (license license:gpl3+)))
 
-(define-public r-idmtpreg
-  (package
-    (name "r-idmtpreg")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idmTPreg" version))
-              (sha256
-               (base32
-                "1329sjb4dnw3yiyg16whbj4l2v0kg8phg1x4ysvyp2kqkmw14yq6"))))
-    (properties `((upstream-name . "idmTPreg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=idmTPreg")
-    (synopsis "Regression Model for Progressive Illness Death Data")
-    (description
-     "Modeling of regression effects for transition probabilities in a progressive
-illness-death model.  Azarang, Scheike, and de Una-Alvarez (2017)
-<doi:10.1002/sim.7245>.")
-    (license license:gpl2)))
-
 (define-public r-idmodelr
   (package
     (name "r-idmodelr")

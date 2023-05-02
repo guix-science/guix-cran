@@ -9149,35 +9149,6 @@ Yao (2021) <doi:10.1093/biomet/asab034> and white noise test proposed by Chang,
 Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
     (license license:gpl3)))
 
-(define-public r-hdtg
-  (package
-    (name "r-hdtg")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hdtg" version))
-              (sha256
-               (base32
-                "11shszhgpm8aka2awxyrnxpq8f8sdgw9b97mvdz5yb9xbm9kl57z"))))
-    (properties `((upstream-name . "hdtg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-rcppxsimd
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mgcv))
-    (home-page "https://cran.r-project.org/package=hdtg")
-    (synopsis
-     "Generate Samples from Multivariate Truncated Normal Distributions")
-    (description
-     "Efficient sampling from high-dimensional truncated Gaussian distributions, or
-multivariate truncated normal (MTN).  Techniques include zigzag Hamiltonian
-Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2021)
-<arXiv:2104.07694>, and harmonic Monte in Ari Pakman and Liam Paninski (2014)
-<doi:10.1080/10618600.2013.788448>.")
-    (license license:expat)))
-
 (define-public r-hdtest
   (package
     (name "r-hdtest")

@@ -7822,13 +7822,13 @@ Probabilistic Prediction.")
 (define-public r-nftbart
   (package
     (name "r-nftbart")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nftbart" version))
               (sha256
                (base32
-                "1cdvfjr60nxjy79f41vm9p3dc9mn813w2py9pl4wzgdlq7wilm0b"))))
+                "193507ii4f78g81937dixk7mja23sdicb0fvi0g3ryi0xjh913q0"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet))
@@ -7841,8 +7841,7 @@ Trees (HBART) and Low Information Omnibus (LIO) Dirichlet Process Mixtures
 (DPM).  An NFT BART model is of the form Y = mu + f(x) + sd(x) E where functions
 f and sd have BART and HBART priors, respectively, while E is a nonparametric
 error distribution due to a DPM LIO prior hierarchy.  See the following for a
-technical description of the model
-<https://www.mcw.edu/-/media/MCW/Departments/Biostatistics/tr72.pdf?la=en>.")
+complete description of the model at <doi:10.1111/biom.13857>.")
     (license license:gpl2+)))
 
 (define-public r-nflverse
@@ -12265,13 +12264,13 @@ package can be found here: <https://repub.eur.nl/pub/78323/> or
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2020.8.6")
+    (version "2023.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nc" version))
               (sha256
                (base32
-                "19qsa5k38ajsbigccpch05m156n5wnd7c54j09fanjrpzy2048w2"))))
+                "1qkdm0yblvzlal24vcgwz2cl85m9fsbf3q12kj32zhyq8698h59q"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -12287,8 +12286,7 @@ simpler, re-usable sub-patterns.  Named R arguments are translated to column
 names in the output; capture groups without names are used internally in order
 to provide a standard interface to three regular expression C libraries (PCRE,
 RE2, ICU).  Output can also include numeric columns via user-specified type
-conversion functions.  RE2 engine (re2r package) was removed from CRAN in Mar
-2020 so must be installed from github.")
+conversion functions.")
     (license license:gpl3)))
 
 (define-public r-nbtransmission

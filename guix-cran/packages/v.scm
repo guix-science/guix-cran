@@ -937,13 +937,13 @@ check validity of ballots are also provided to ensure flexibility.")
 (define-public r-votesmart
   (package
     (name "r-votesmart")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "votesmart" version))
               (sha256
                (base32
-                "19pp0lnvvii9ac8zr7x775j7a4lzfnjkaall47a3lsv98ql85cza"))))
+                "184q553p8n76jch4xiyfsqbczbjza3v9s8xsd8zwckxq5j2cgyvp"))))
     (properties `((upstream-name . "votesmart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -955,7 +955,6 @@ check validity of ballots are also provided to ensure flexibility.")
                              r-jsonlite
                              r-httr
                              r-glue
-                             r-gestalt
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/decktools/votesmart/")

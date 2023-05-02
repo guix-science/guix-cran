@@ -5001,25 +5001,6 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 that incorporate some form of randomness.")
     (license license:gpl3+)))
 
-(define-public r-artp2
-  (package
-    (name "r-artp2")
-    (version "0.9.45")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ARTP2" version))
-              (sha256
-               (base32
-                "12nqxry2jkl1n07rbms38mrnp39cn00d0h272d9f1z5x883flv62"))))
-    (properties `((upstream-name . "ARTP2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-formula r-data-table))
-    (home-page "https://github.com/zhangh12/ARTP2")
-    (synopsis "Pathway and Gene-Level Association Test")
-    (description
-     "Pathway and gene level association test using raw data or summary statistics.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-artool
   (package
     (name "r-artool")
@@ -12292,13 +12273,13 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.0.2.2")
+    (version "0.0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AllelicSeries" version))
               (sha256
                (base32
-                "0frklwxszjh6x746pk3sb013wm8vri88b9qn1iqy5xqmvmwix2vs"))))
+                "1wh9nkq67n7ldipf7wl43j1w8w42izlimx3baxh1a3a07mahf2pz"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat r-rnomni r-rcpparmadillo r-rcpp))
@@ -18076,6 +18057,40 @@ information using Gaussian processes as well as sequential experimental design
 tools to minimize the amount of data required to do so.  Implements Wycoff et
 al. (2019) <arXiv:1907.11572>.")
     (license license:bsd-3)))
+
+(define-public r-activatr
+  (package
+    (name "r-activatr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "activatr" version))
+              (sha256
+               (base32
+                "0sk2wwfzms2cf6d4z91mi22vss2jiz8ins4pb9djpgi1mln57iqy"))))
+    (properties `((upstream-name . "activatr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-slider
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-glue
+                             r-ggmap
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dschafer/activatr")
+    (synopsis "Utilities for Parsing and Plotting Activities")
+    (description
+     "This contains helpful functions for parsing, managing, plotting, and visualizing
+activities, most often from GPX (GPS Exchange Format) files recorded by GPS
+devices.  It allows easy parsing of the source files into standard R data
+formats, along with functions to compute derived data for the activity, and to
+plot the activity in a variety of ways.")
+    (license license:expat)))
 
 (define-public r-activanalyzer
   (package

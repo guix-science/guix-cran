@@ -10506,13 +10506,13 @@ Bhattacharya et al. (2011) method for path integration
 (define-public r-fitheavytail
   (package
     (name "r-fitheavytail")
-    (version "0.1.4")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fitHeavyTail" version))
               (sha256
                (base32
-                "1cb7cnir7fpvf8j8abw8imz6zxg4dznjmkyrbcx0yr09qvjal81b"))))
+                "18iqqn33sznw4c77rl6ryk57grary350ygr58vg062jg1hyxybrg"))))
     (properties `((upstream-name . "fitHeavyTail")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-icsnp r-ghyp))
@@ -10526,8 +10526,9 @@ heavy-tailed distributions such as angular Gaussian (via Tyler's method),
 Cauchy, and Student's t distributions.  Additionally, a factor model structure
 can be specified for the covariance matrix.  The latest revision also includes
 the multivariate skewed t distribution.  The package is based on the papers:
-Sun, Babu, and Palomar (2014), Sun, Babu, and Palomar (2015), Liu and Rubin
-(1995), and Zhou, Liu, Kumar, and Palomar (2019).")
+Sun, Babu, and Palomar (2014); Sun, Babu, and Palomar (2015); Liu and Rubin
+(1995); Zhou, Liu, Kumar, and Palomar (2019); Pascal, Ollila, and Palomar
+(2021).")
     (license license:gpl3)))
 
 (define-public r-fitconic

@@ -609,13 +609,13 @@ in C++ (by Valerio Pillar, available at
 (define-public r-syncrng
   (package
     (name "r-syncrng")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SyncRNG" version))
               (sha256
                (base32
-                "05a5ifv5yy7brl76cmq7mgqm9s9gm7qgc1cfzih7q1jrw955k400"))))
+                "11v383acl2b9fjmi59rmckwjgl2f69wr5fgcym2zjvizpfp97h1z"))))
     (properties `((upstream-name . "SyncRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SyncRNG")
@@ -35907,13 +35907,13 @@ Gibilisco (2019) <doi:10.1017/psrm.2019.58>.")
 (define-public r-sightabilitymodel
   (package
     (name "r-sightabilitymodel")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SightabilityModel" version))
               (sha256
                (base32
-                "0i98gdk93ms2wlvah76ffhbc1143gfld6704ipi19wn5s16vli6a"))))
+                "0haxw2za05f7q06fcipqlkbfscmbqvyn1g30fpbdcx96rgbdlj67"))))
     (properties `((upstream-name . "SightabilityModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -45882,13 +45882,13 @@ experiments.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "0.8.4")
+    (version "0.9.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seededlda" version))
               (sha256
                (base32
-                "144417zvax6kw4snciv6mkf13ni1zgjvj483p5xvrzgvkf5487q4"))))
+                "0smw5hng5dd3v0jamypms82qwhnhj672hiz44hq06489mixd02mg"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -45898,14 +45898,13 @@ experiments.")
                              r-proxyc
                              r-matrix))
     (home-page "https://github.com/koheiw/seededlda")
-    (synopsis "Seeded-LDA for Topic Modeling")
+    (synopsis "Seeded Sequential LDA for Topic Modeling")
     (description
-     "This package implements the seeded-LDA model (Lu, Ott, Cardie & Tsou 2010)
-<doi:10.1109/ICDMW.2011.125> using the quanteda package and the GibbsLDA++
-library for semisupervised topic modeling.  Seeded-LDA allows users to
-pre-define topics with keywords to perform theory-driven analysis of textual
-data in social sciences and humanities (Watanabe & Zhou 2020)
-<doi:10.1177/0894439320907027>.")
+     "Seeded Sequential LDA can classify sentences of texts into pre-define topics
+with a small number of seed words (Watanabe & Baturo, forthcoming).  Implements
+Seeded LDA (Lu et al., 2010) <doi:10.1109/ICDMW.2011.125> and Sequential LDA (Du
+et al., 2012) <doi:10.1007/s10115-011-0425-1> algorithms based on the GibbsLDA++
+library.")
     (license license:gpl3)))
 
 (define-public r-seedcca
@@ -51366,13 +51365,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.1.21")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sbtools" version))
               (sha256
                (base32
-                "1b52lq2xdwaz37jnnwi7lp151448g2gr2nykm32bdwbrxm68smx1"))))
+                "1cbsn99sivqiwy2yd847y4aqk289kzrhdq49abnk68bzvx4nz9wa"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-mime
@@ -51381,7 +51380,7 @@ and <http://foges.github.io/pogs/stp/r>.")
                              r-httr
                              r-curl
                              r-cli))
-    (home-page "https://github.com/USGS-R/sbtools")
+    (home-page "https://github.com/DOI-USGS/sbtools")
     (synopsis "USGS ScienceBase Tools")
     (description
      "Tools for interacting with U.S. Geological Survey ScienceBase

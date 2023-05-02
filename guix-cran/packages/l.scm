@@ -910,13 +910,13 @@ palettes from users photos directly.")
 (define-public r-ltasr
   (package
     (name "r-ltasr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LTASR" version))
               (sha256
                (base32
-                "0mxm6raf1xfpzd0fdbd30cfxfc47zhwv5cxlp46pngby034wr175"))))
+                "1cq00w9pg4mmgsg7ydm9azr0f9hgxa7vskpfrmh90j6xixqmpn4c"))))
     (properties `((upstream-name . "LTASR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1835,13 +1835,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.11")
+    (version "0.1.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lrstat" version))
               (sha256
                (base32
-                "0bgxlyfwdyckv9pc3ajcabrxavfmhn4kmpij2xb276hvfrbprac3"))))
+                "1fazj78j065n9gg96r35drklfm3aj4ki3lg70g2xrjxwfaramg8y"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

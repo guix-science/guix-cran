@@ -500,17 +500,18 @@ periods of higher mortality can be identified as \"mortality seasons\".")
 (define-public r-cycloids
   (package
     (name "r-cycloids")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cycloids" version))
               (sha256
                (base32
-                "00pdxny11mhfi8hf76bfyhd1d53557wcbl2bqwjzlpw5x3vdnsan"))))
+                "0bb1izvcn33l4y0sk5p0rirm0zdkbzn48bh3zirncnhl1vby4mpz"))))
     (properties `((upstream-name . "cycloids")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cycloids")
-    (synopsis "cycloids")
+    (synopsis
+     "Tools for Calculating Hypocycloids, Epicycloids, Hypotrochoids, and Epitrochoids")
     (description
      "Tools for calculating coordinate representations of hypocycloids, epicyloids,
 hypotrochoids, and epitrochoids (altogether called cycloids here) with different
@@ -5272,13 +5273,13 @@ to 2014.")
 (define-public r-cropcircles
   (package
     (name "r-cropcircles")
-    (version "0.2.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropcircles" version))
               (sha256
                (base32
-                "169gra2a3a2q7d82ds0adl5pd2jzv566vvby1wjxb1xsawigzi96"))))
+                "1ggiw0qxwv3j36dhiq7fvw4zj0lqqsfcp9756hsr0cb83srfczwb"))))
     (properties `((upstream-name . "cropcircles")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magick r-glue))
@@ -16638,13 +16639,13 @@ coastline and administrative regions boundaries.")
 (define-public r-comorbidity
   (package
     (name "r-comorbidity")
-    (version "1.0.5")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "comorbidity" version))
               (sha256
                (base32
-                "1mhxnh39zzxmvbw5w8k4a7923zvs8qrwczjzrmffsq0qj098qg94"))))
+                "189z23a66mz10rzqzgljkygyrgishm4mzzrqhqs1ba335dzvzm3d"))))
     (properties `((upstream-name . "comorbidity")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-data-table r-checkmate))
@@ -16659,7 +16660,8 @@ using ICD-9-CM or ICD-10 codes (Quan, 2005
 <doi:10.1097/01.mlr.0000182534.19832.83>).  Australian and Swedish modifications
 of the Charlson Comorbidity Index are available as well (Sundararajan, 2004
 <doi:10.1016/j.jclinepi.2004.03.012> and Ludvigsson, 2021
-<doi:10.2147/CLEP.S282475>).")
+<doi:10.2147/CLEP.S282475>), together with different weighting algorithms for
+both the Charlson and Elixhauser comorbidity scores.")
     (license license:gpl3+)))
 
 (define-public r-communication
@@ -28407,22 +28409,22 @@ for comparing models is effectively unlimited.")
 (define-public r-chemist
   (package
     (name "r-chemist")
-    (version "0.1.3")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CHEMIST" version))
               (sha256
                (base32
-                "14imzwx485ksjjhx259az9rpqadj3lq11f8kghl0pkzf27bmbyr6"))))
+                "00alby5x01a2izmzk0ilkx5jgkwavsaj18w3kra444pib0ncrl92"))))
     (properties `((upstream-name . "CHEMIST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xicor r-mass))
+    (propagated-inputs (list r-xicor r-mass r-laplacesdemon))
     (home-page "https://cran.r-project.org/package=CHEMIST")
     (synopsis
-     "Causal Inference with High-Dimensional Error-Prone Feature and Misclassified Treatments")
+     "Causal Inference with High-Dimensional Error-Prone Covariates and Misclassified Treatments")
     (description
      "We aim to deal with the average treatment effect (ATE), where the data are
-subject to high-dimensional and measurement error.  This package primarily
+subject to high-dimensionality and measurement error.  This package primarily
 contains two functions, which are used to generate artificial data and estimate
 ATE with high-dimensional and error-prone data accommodated.")
     (license license:gpl3)))
@@ -28673,13 +28675,13 @@ easily readable argument checking to improve code robustness.")
 (define-public r-cheatsheet
   (package
     (name "r-cheatsheet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cheatsheet" version))
               (sha256
                (base32
-                "0pyvlpgfn2jh7asnc4dqd85b6q95hwv0m04a2x710jwnwp269297"))))
+                "0nhyz354hxnqbs3iwvaisssr4ciq6vary3ldkm8yanpdyw0p1k27"))))
     (properties `((upstream-name . "cheatsheet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -35532,16 +35534,16 @@ field calculations.")
 (define-public r-carletonstats
   (package
     (name "r-carletonstats")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CarletonStats" version))
               (sha256
                (base32
-                "0pgzvw6gf8kjv8ndprwp4wlgdgh5sb75ga8z5syfw57fb05v7ac3"))))
+                "05ljr9z8qfjrcwjk1rp19ra208dm910qc03hci0swkd0g2x3pyph"))))
     (properties `((upstream-name . "CarletonStats")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=CarletonStats")
+    (home-page "https://github.com/aloy/CarletonStats")
     (synopsis "Functions for Statistics Classes at Carleton College")
     (description
      "Includes commands for bootstrapping and permutation tests, a command for created
@@ -36038,13 +36040,13 @@ NE/N007352/1 and the TB Alliance.")
 (define-public r-carat
   (package
     (name "r-carat")
-    (version "2.1.0")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "carat" version))
               (sha256
                (base32
-                "12b6n99m1zcqxqsa2dk36i6g9qwmd8lzr3mlvj5454n4bgvqb4h0"))))
+                "1hdh96plf0cyhsijzfm7ydc24yf497wadcn91p7b2s1s42makzkn"))))
     (properties `((upstream-name . "carat")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-gridextra

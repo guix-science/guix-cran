@@ -6175,13 +6175,13 @@ model see: Mallo et al. (2015) <doi:10.1093/sysbio/syv082>, Rasmussen and Kellis
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.6.0")
+    (version "2.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeDist" version))
               (sha256
                (base32
-                "0wm2lgz54ryclf72gfrsh58a2621f0hvsnwcvdwf2q53xw74b9gz"))))
+                "0hv2fxvx9wml210dxq6bwzhn6vbn6qlhg2pi19fj47x9j65jx5q7"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -12902,13 +12902,13 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidytransit" version))
               (sha256
                (base32
-                "1cbny3vijlw7hamvznq9dk0546mprrkf6il8zdldkkb6y1pznab6"))))
+                "0q1zkvwzq0c2y6hnpf1wmwd38ll8mgfkyi9bmsgk5cf88arslaaq"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -13220,23 +13220,30 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidySEM" version))
               (sha256
                (base32
-                "0l1b006kl46zgqqxjr339s3is9i6vb08lrwrrh8kvlwi40iipyjy"))))
+                "13zm3i54ricxrrvvz8cdbbn7lykxm20f2gi19mvqvvpri57kzhcp"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych
+    (propagated-inputs (list r-rann
+                             r-psych
+                             r-progressr
                              r-openmx
                              r-mplusautomation
+                             r-matrix
                              r-lavaan
                              r-igraph
                              r-gtable
                              r-ggplot2
-                             r-blavaan))
+                             r-future-apply
+                             r-dbscan
+                             r-car
+                             r-blavaan
+                             r-bain))
     (native-inputs (list r-knitr))
     (home-page "https://cjvanlissa.github.io/tidySEM/")
     (synopsis "Tidy Structural Equation Modeling")

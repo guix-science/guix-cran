@@ -1911,13 +1911,13 @@ functions.")
 (define-public r-orthodr
   (package
     (name "r-orthodr")
-    (version "0.6.5")
+    (version "0.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "orthoDr" version))
               (sha256
                (base32
-                "0pnxm65k8c6hggixbyip0hyxkk29sqbpy933ivkmksnwg3ckzr8k"))))
+                "0nrrwqpjm5dp487kql0nv9gaarar3dw1fwwmjd1ib3ya9l7m77xq"))))
     (properties `((upstream-name . "orthoDr")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1936,10 +1936,14 @@ functions.")
 <DOI:10.1007/s10107-012-0584-1> to solve a variety of dimension reduction
 problems in the semiparametric framework, such as Ma & Zhu (2012)
 <DOI:10.1080/01621459.2011.646925>, Ma & Zhu (2013) <DOI:10.1214/12-AOS1072>,
-Sun, Zhu, Wang & Zeng (2019) <arXiv:1704.05046> and Zhou, Zhu & Zeng (2021)
-<arXiv:1802.06156>.  It also serves as a general purpose optimization solver for
-problems with orthogonality constraints.  Parallel computing for approximating
-the gradient is enabled through OpenMP'.")
+Sun, Zhu, Wang & Zeng (2019) <DOI:10.1093/biomet/asy064> and Zhou, Zhu & Zeng
+(2021) <DOI:10.1093/biomet/asaa087>.  The package also implements some existing
+dimension reduction methods such as hMave by Xia, Zhang, & Xu (2010)
+<DOI:10.1198/jasa.2009.tm09372> and partial SAVE by Feng, Wen & Zhu (2013)
+<DOI:10.1080/01621459.2012.746065>.  It also serves as a general purpose
+optimization solver for problems with orthogonality constraints, i.e., in
+Stiefel manifold.  Parallel computing for approximating the gradient is enabled
+through OpenMP'.")
     (license license:gpl2+)))
 
 (define-public r-orsk
@@ -9303,13 +9307,13 @@ method is described by Surmann, Ligges, and Weihs (2014)
 (define-public r-odeguts
   (package
     (name "r-odeguts")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "odeGUTS" version))
               (sha256
                (base32
-                "1c3w934dwh5jsh5z169isv9kqh8xbfgp4rk7k1sp8mj0kvy8nqc4"))))
+                "0ra9svfwdvsil5hqbmyxhnz80zm905v1m2lm8s5cbkjkfs5fsnls"))))
     (properties `((upstream-name . "odeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-tidyr r-magrittr r-dplyr r-desolve))

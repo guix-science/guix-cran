@@ -18176,13 +18176,13 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
 (define-public r-deet
   (package
     (name "r-deet")
-    (version "1.0.8")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEET" version))
               (sha256
                (base32
-                "1kbl329hks3i5sf89rg54l24dw1alxnvv3y9l65z6yfzs2kn3gjn"))))
+                "06i8grq4zkh8qcw6q4vvnxnlvm4ya6rclyaaw5xn1h833p5218xs"))))
     (properties `((upstream-name . "DEET")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
