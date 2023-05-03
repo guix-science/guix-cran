@@ -6005,13 +6005,13 @@ trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.16-0")
+    (version "2.17-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openair" version))
               (sha256
                (base32
-                "0bb88wy3iln4dn5ybi70g8mdjwpbffwmm1xijr4sd5hamczj0mkk"))))
+                "1bvwi6avr25bxxdinh918jqjfvxja8njd069lcabk7fwfm0g675q"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6028,7 +6028,8 @@ trajectories.")
                              r-lattice
                              r-hexbin
                              r-dplyr
-                             r-cluster))
+                             r-cluster
+                             r-cli))
     (home-page "https://davidcarslaw.github.io/openair/")
     (synopsis "Tools for the Analysis of Air Pollution Data")
     (description

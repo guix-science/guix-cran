@@ -4851,13 +4851,13 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etwfe" version))
               (sha256
                (base32
-                "0kyai3s1jfic76dqq7fb9cjln438klgfalzy5dmlbgk3mj1dba48"))))
+                "004vi5wrcypib4fnfv25cmcil92i7zqynnfzwzqnmdfhnvn2grf0"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
@@ -17378,13 +17378,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EcoEnsemble" version))
               (sha256
                (base32
-                "0k1gz1kak037rydhx8db0bnbg6fbhyrck8vl6mfqdhjhm8iwy6xb"))))
+                "0rprg2qcxf6kq0hp2c64l8vl9wcd0apjb1xvb79nbaa7pf28h57m"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

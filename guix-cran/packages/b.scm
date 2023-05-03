@@ -5076,13 +5076,13 @@ slowly-changing physiological variable.For more information see Signer
 (define-public r-box
   (package
     (name "r-box")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "box" version))
               (sha256
                (base32
-                "10hgq9v0bjzkcnya0k7fjlidri02c1p6ph70q3gvi29qp3b22plq"))))
+                "0nqvgbs47xlkq5gq1jdx3ikvwzvq71q44ddyz8pbh0bibayhkz52"))))
     (properties `((upstream-name . "box")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6431,25 +6431,17 @@ ISBN 978-1-118-09156-2.")
 (define-public r-bold
   (package
     (name "r-bold")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bold" version))
               (sha256
                (base32
-                "0r54ylxgmq9qnh1f36k4hafh80n86ibk4a994f8b1rnb9bq9f5cg"))))
+                "0pwglcykyl5dnhqs8jg4hzih286v17w5dafkg3ahqk3c73a13b8f"))))
     (properties `((upstream-name . "bold")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-stringr
-                             r-reshape
-                             r-plyr
-                             r-jsonlite
-                             r-data-table
-                             r-crul))
-    (home-page
-     "https://docs.ropensci.org/bold/https://github.com/ropensci/bold")
+    (propagated-inputs (list r-xml2 r-stringi r-jsonlite r-data-table r-crul))
+    (home-page "https://docs.ropensci.org/bold/")
     (synopsis "Interface to Bold Systems API")
     (description
      "This package provides a programmatic interface to the Web Service methods
@@ -18261,13 +18253,13 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.2")
+    (version "2.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BCEA" version))
               (sha256
                (base32
-                "1lvr07qdmh5gbpq9i8n9y6vl6m0q3nvgjj056hx3ax3fhkica4vr"))))
+                "010kcqydbk20s1jkkhhjbg185psxxnxc5ch1fsakvgsnl5axd8x2"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -18281,6 +18273,7 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
                              r-ggplot2
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://gianluca.statistica.it/software/bcea/")
     (synopsis "Bayesian Cost Effectiveness Analysis")
     (description
@@ -21024,13 +21017,13 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
               (sha256
                (base32
-                "0ygqzjyrd6jaqyb7agyhy1xy4d4ngv6dri4cis6v4bfml2ix2jv8"))))
+                "04rp0lxnyqrbl97973d073466krj62i010hgpzkh6b77nd7hlakz"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

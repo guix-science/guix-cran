@@ -763,13 +763,13 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
 (define-public r-zdeskr
   (package
     (name "r-zdeskr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zdeskR" version))
               (sha256
                (base32
-                "0kbdkxly20ai3nfwwqj04gncbg1g3sh9gy323hsif919wpid8qzg"))))
+                "0a22yhsvzc0z4xbj7cfy33gf73zi1a8ryp0x4na3kximwiiw6v09"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -783,8 +783,8 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
     (synopsis "Connect to Your 'Zendesk' Data")
     (description
      "Facilitates making a connection to the Zendesk API and executing various
-queries.  You can use it to get ticket data and ticket metrics.  The Zendesk
-documentation is available at <https://developer.zendesk.com/rest_api
+queries.  You can use it to get ticket, ticket metrics, and user data.  The
+Zendesk documentation is available at <https://developer.zendesk.com/rest_api
 /docs/support/introduction>.  This package is not supported by Zendesk (owner of
 the software).")
     (license license:cc0)))

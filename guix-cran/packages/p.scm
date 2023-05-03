@@ -11573,6 +11573,29 @@ and the gettext program.  This package provides some helper functions for
 building this support in R packages, e.g. common validation & I/O tasks.")
     (license license:gpl3)))
 
+(define-public r-potions
+  (package
+    (name "r-potions")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "potions" version))
+              (sha256
+               (base32
+                "1g25spjzh2l8xcv0vhy4rdlscs41cr9xa173gfafy3b1x3bik91p"))))
+    (properties `((upstream-name . "potions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-stringi r-rlang r-lobstr r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AtlasOfLivingAustralia/potions")
+    (synopsis "Easy Options Management")
+    (description
+     "Store and retrieve data from options() using syntax derived from the here
+package.  potions makes it straightforward to update and retrieve options,
+either in the workspace or during package development, without overwriting
+global options.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
+
 (define-public r-potential
   (package
     (name "r-potential")
@@ -27987,13 +28010,13 @@ extract features from an amplification curve.")
 (define-public r-pcra
   (package
     (name "r-pcra")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PCRA" version))
               (sha256
                (base32
-                "1rdlw9d3aihvgn8plik07cn3ni7ahjwh1akg5639h7gjkn9151vr"))))
+                "0326dcshyjvy4yjmr5vd5aqy2rjhzc2slagd7fzz0rdg9l4qy8rp"))))
     (properties `((upstream-name . "PCRA")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29325,6 +29348,27 @@ response function (PBRF) The estimates are presented in Tsai, Luo and Crowley
 parentheses or square brackets.")
     (license license:gpl3+)))
 
+(define-public r-pbr
+  (package
+    (name "r-pbr")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pbr" version))
+              (sha256
+               (base32
+                "0gzj4hhrqm7nbxndycqg135l42026xj7y4hpznyi7cib4gf8bqs4"))))
+    (properties `((upstream-name . "pbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-leaflet r-jsonlite r-httr r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pbr")
+    (synopsis "Find a Cold One Near You")
+    (description
+     "In short, this package is a locator for cool, refreshing beverages.  It will
+find and return the nearest location where you can get a cold one.")
+    (license license:expat)))
+
 (define-public r-pbo
   (package
     (name "r-pbo")
@@ -29894,6 +29938,38 @@ as demography, concomitant medication.  The visualizations can be tailored for
 specific domain(s) or endpoint(s) of interest.  Visualizations are exported into
 patient profile report(s) or can be embedded in custom report(s).")
     (license license:expat)))
+
+(define-public r-patientprofiles
+  (package
+    (name "r-patientprofiles")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PatientProfiles" version))
+              (sha256
+               (base32
+                "1kkynsiwvbfaic9jqnw4j7ym65a77smkb4s29n9lbwnv0jm022g5"))))
+    (properties `((upstream-name . "PatientProfiles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sqlrender
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://oxford-pharmacoepi.github.io/PatientProfiles/")
+    (synopsis
+     "Identify Characteristics of Patients in the OMOP Common Data Model")
+    (description
+     "Identify the characteristics of patients in data mapped to the Observational
+Medical Outcomes Partnership (OMOP) common data model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pathwaytmb
   (package
@@ -32636,6 +32712,36 @@ based on that noise level yielding a new value of R2 we refer to as R2k which is
 independent of both the number of degrees of freedom and the noise distribution
 function.")
     (license license:gpl2)))
+
+(define-public r-panacea
+  (package
+    (name "r-panacea")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PANACEA" version))
+              (sha256
+               (base32
+                "19d03bdynjnpfx1hgn4fjq8nqzwgykmkrv227p8jps4y45z8zzb3"))))
+    (properties `((upstream-name . "PANACEA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-org-hs-eg-db r-igraph r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/egeulgen/PANACEA")
+    (synopsis "Personalized Network-Based Anti-Cancer Therapy Evaluation")
+    (description
+     "Identification of the most appropriate pharmacotherapy for each patient based on
+genomic alterations is a major challenge in personalized oncology.  PANACEA is a
+collection of personalized anti-cancer drug prioritization approaches utilizing
+network methods.  The methods utilize personalized \"driverness\" scores from
+driveR to rank drugs, mapping these onto a protein-protein interaction network.
+The \"distance-based\" method scores each drug based on these scores and distances
+between drugs and genes to rank given drugs.  The \"RWR\" method propagates these
+scores via a random-walk with restart framework to rank the drugs.  The methods
+are described in detail in Ulgen E, Ozisik O, Sezerman OU. 2023.  PANACEA:
+network-based methods for pharmacotherapy prioritization in personalized
+oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
+    (license license:expat)))
 
 (define-public r-pampe
   (package

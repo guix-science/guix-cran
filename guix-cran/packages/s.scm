@@ -8540,13 +8540,13 @@ with jumps to linear models, and functions for various c-structuredness indices.
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stoppingrule" version))
               (sha256
                (base32
-                "045z4bfvqkf62bmm4zaifl34hbcd191jv77s8ddbv1a7nqc52ds1"))))
+                "0slrkzaj52cxv948djf9kkk60qrimjy6dn1mfzhv3vccs18kap1q"))))
     (properties `((upstream-name . "stoppingrule")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=stoppingrule")
@@ -8554,9 +8554,10 @@ with jumps to linear models, and functions for various c-structuredness indices.
     (description
      "This package provides functions for creating, displaying, and evaluating
 stopping rules for safety monitoring in clinical studies.  Implements stopping
-rule methods described in Goldman (1987) <doi:10.1016/0197-2456(87)90153-X>,
-Geller et al. (2003, ISBN:9781135524388), Ivanova, Qaqish, and Schell (2005)
-<doi:10.1111/j.1541-0420.2005.00311.x>, and Kulldorff et al. (2011)
+rule methods described in Goldman (1987) <doi:10.1016/0197-2456(87)90153-X>;
+Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
+<doi:10.1111/j.1541-0420.2005.00311.x>; Chen and Chaloner (2006)
+<doi:10.1002/sim.2429>; and Kulldorff et al. (2011)
 <doi:10.1080/07474946.2011.539924>.")
     (license license:gpl3)))
 
@@ -36816,19 +36817,19 @@ within a R script and returns all valid arguments of a selected function.")
 (define-public r-shoredate
   (package
     (name "r-shoredate")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shoredate" version))
               (sha256
                (base32
-                "0h34g4wpyrilli9c9qlyg0f2bc505nsr9v8mngsviviak5vymwx4"))))
+                "1kcqphgy1bjgr6yk1l0ng6d70rif0rlmwv0smgdisvpsbfjj7fdp"))))
     (properties `((upstream-name . "shoredate")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-sf
                              r-scales
-                             r-ggsn
+                             r-ggspatial
                              r-ggridges
                              r-ggrepel
                              r-ggplot2))
@@ -46707,6 +46708,46 @@ p).  This new weight assignment strategy is especially useful when the
 collinearity of the design matrix is a concern.")
     (license license:gpl2+)))
 
+(define-public r-seahors
+  (package
+    (name "r-seahors")
+    (version "1.6.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SEAHORS" version))
+              (sha256
+               (base32
+                "1i1ifj4xx9v4aq3k1jazq0rwyh2rs2ial6nzmg3p7f5snhr2j0zh"))))
+    (properties `((upstream-name . "SEAHORS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-stringr
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shiny
+                             r-rmarkdown
+                             r-readxl
+                             r-raster
+                             r-plotly
+                             r-mass
+                             r-htmlwidgets
+                             r-gridextra
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AurelienRoyer/SEAHORS")
+    (synopsis "Spatial Exploration of ArcHaeological Objects in R Shiny")
+    (description
+     "An R Shiny application dedicated to the intra-site spatial analysis of
+piece-plotted archaeological remains, making the two and three-dimensional
+spatial exploration of archaeological data as user-friendly as possible.
+Documentation about SEAHORS is provided by the vignette included in this package
+and by the companion scientific paper: Royer, Discamps, Plutniak, Thomas (2023,
+PCI Archaeology, <doi:10.5281/zenodo.7674698>).")
+    (license license:gpl3)))
+
 (define-public r-seagull
   (package
     (name "r-seagull")
@@ -47121,13 +47162,13 @@ occur.")
 (define-public r-sdmtune
   (package
     (name "r-sdmtune")
-    (version "1.2.1")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDMtune" version))
               (sha256
                (base32
-                "0farxd87b73ly3i844bj6gbpypf143vwf25vb1b77f0lldyhb5sc"))))
+                "0b5xpmqmm4zxj5l915xi04qdxv8gi8k0wvqbwa6nllw9yrjf5kvv"))))
     (properties `((upstream-name . "SDMtune")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -49839,13 +49880,13 @@ Observational Studies using R. Chapman & Hall/CRC.")
 (define-public r-sciber
   (package
     (name "r-sciber")
-    (version "0.1.6")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SCIBER" version))
               (sha256
                (base32
-                "1hd17i2xj249lhvgyqf1my9w1pg6nn7d2kyijkrbkpcml3fqmk7y"))))
+                "0mnpqwimvwln29lha7ylrrhd9j7nhlgkrg78vwkgqjmni8p6b351"))))
     (properties `((upstream-name . "SCIBER")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -52278,13 +52319,13 @@ R in just one step.")
 (define-public r-sas7bdat
   (package
     (name "r-sas7bdat")
-    (version "0.6")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sas7bdat" version))
               (sha256
                (base32
-                "13ybq0r5bza6pcih9876pmccggn5bm7mzmn071qs46sbbpq40kyk"))))
+                "0pwmngwmkybz64sqby86vzxq5wwfkh5hxnqncdv0fmp6w6x7jhjn"))))
     (properties `((upstream-name . "sas7bdat")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sas7bdat")

@@ -20576,49 +20576,48 @@ and described in Athanasopoulos et al. (2011)
 (define-public r-tcl
   (package
     (name "r-tcl")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tcl" version))
               (sha256
                (base32
-                "01klrzvw7vc0iwqpmcikgqm8jx3g7536r5f8gb6vwcik912maxnl"))))
+                "0n735xyl0fr3zgigw68xpy1ky3rfd2djwg9qhgbgif0cvgrrki1n"))))
     (properties `((upstream-name . "tcl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psychotools
-                             r-psych
+    (propagated-inputs (list r-rlang
+                             r-psychotools
                              r-numderiv
                              r-matrix
                              r-mass
                              r-ltm
                              r-lattice
-                             r-erm
-                             r-colorspace))
+                             r-erm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tcl")
     (synopsis "Testing in Conditional Likelihood Context")
     (description
-     "An implementation of hypothesis testing in an extended Rasch modelling
-framework, including sample size planning procedures and power computations.
-Provides 4 statistical tests, i.e., gradient test (GR), likelihood ratio test
-(LR), Rao score or Lagrange multiplier test (RS), and Wald test, for testing a
-number of hypotheses referring to the Rasch model (RM), linear logistic test
-model (LLTM), rating scale model (RSM), and partial credit model (PCM).  Three
-types of functions for power and sample size computations are provided.
-Firstly, functions to compute the sample size given a user-specified
-(predetermined) deviation from the hypothesis to be tested, the level alpha, and
-the power of the test.  Secondly, functions to evaluate the power of the tests
-given a user-specified (predetermined) deviation from the hypothesis to be
-tested, the level alpha of the test, and the sample size.  Thirdly, functions to
-evaluate the so-called post hoc power of the tests.  This is the power of the
-tests given the observed deviation of the data from the hypothesis to be tested
-and a user-specified level alpha of the test.  Power and sample size
-computations are based on a Monte Carlo simulation approach.  It is
-computationally very efficient.  The variance of the random error in computing
-power and sample size arising from the simulation approach is analytically
-derived by using the delta method.  Draxler, C., & Alexandrowicz, R. W. (2015),
+     "An implementation of hypothesis testing in an extended Rasch modeling framework,
+including sample size planning procedures and power computations.  Provides 4
+statistical tests, i.e., gradient test (GR), likelihood ratio test (LR), Rao
+score or Lagrange multiplier test (RS), and Wald test, for testing a number of
+hypotheses referring to the Rasch model (RM), linear logistic test model (LLTM),
+rating scale model (RSM), and partial credit model (PCM).  Three types of
+functions for power and sample size computations are provided.  Firstly,
+functions to compute the sample size given a user-specified (predetermined)
+deviation from the hypothesis to be tested, the level alpha, and the power of
+the test.  Secondly, functions to evaluate the power of the tests given a
+user-specified (predetermined) deviation from the hypothesis to be tested, the
+level alpha of the test, and the sample size.  Thirdly, functions to evaluate
+the so-called post hoc power of the tests.  This is the power of the tests given
+the observed deviation of the data from the hypothesis to be tested and a
+user-specified level alpha of the test.  Power and sample size computations are
+based on a Monte Carlo simulation approach.  It is computationally very
+efficient.  The variance of the random error in computing power and sample size
+arising from the simulation approach is analytically derived by using the delta
+method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
-    (license license:gpl3)))
+    (license license:gpl2)))
 
 (define-public r-tciu
   (package
@@ -22902,22 +22901,23 @@ data into machine-readable LongForm Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.5.8")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tablet" version))
               (sha256
                (base32
-                "0c5gjrvr6r4vqxh2dc7v2jads48wwijvbzadxa92qzfsmxw3p382"))))
+                "0jqk7gfsa3y0wd2crljlfxskghm0xbpll1nfcr28wawhqvv45xgk"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-yamlet
+                             r-tidyr
                              r-spork
                              r-rlang
+                             r-reactable
                              r-magrittr
                              r-kableextra
                              r-fs
-                             r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tablet")
@@ -23005,18 +23005,18 @@ abstraction.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.10")
+    (version "0.9.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tables" version))
               (sha256
                (base32
-                "0nf6wp38br81bdckr47xign6j10lsp9vmqccjblgd0jcirgg19fw"))))
+                "1ygf1jir32dwy7617imrr2pkqf5qf894lbxrjm7kqflq3ar6zf5z"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmltools))
     (native-inputs (list r-knitr))
-    (home-page "https://r-forge.r-project.org/projects/tables/")
+    (home-page "https://dmurdoch.github.io/tables/")
     (synopsis "Formula-Driven Table Generation")
     (description
      "Computes and displays complex tables of summary statistics.  Output may be in

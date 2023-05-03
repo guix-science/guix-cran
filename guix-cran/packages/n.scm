@@ -4907,13 +4907,13 @@ in network analysis.")
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.0.16")
+    (version "0.0.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NMdata" version))
               (sha256
                (base32
-                "00wswy7agaxc71ms76z3f8nnhr03dsqbh142vjna77b9jhk1p74p"))))
+                "1wg3i7cxmxsdmb062ifxffjjxcs309hcbdgklrm978ihks6h7c1c"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

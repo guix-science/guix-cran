@@ -1763,6 +1763,30 @@ requesting large datasets via email.")
 expressions in a chain-like fashion.")
     (license license:expat)))
 
+(define-public r-rveg
+  (package
+    (name "r-rveg")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rveg" version))
+              (sha256
+               (base32
+                "02bybiam93yafzwmxl4v34wv2bb60fwl9n053f9h7q1s4bs7y54m"))))
+    (properties `((upstream-name . "Rveg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://plant-ecology-lab-czu.com/rveg/")
+    (synopsis "Digitization of Phytosociological RelevÃ©s")
+    (description
+     "Simple and fast tool for transforming phytosociological vegetation data into
+digital form for the following analysis.  Danihelka, Chrtek, and Kaplan (2012,
+ISSN:00327786).  Hennekens, and SchaminÃ©e (2001) <doi:10.2307/3237010>.  TichÃ½
+(2002) <doi:10.1111/j.1654-1103.2002.tb02069.x>.  Wickham, FranÃ§ois, Henry,
+MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
+    (license license:gpl3+)))
+
 (define-public r-rvcompare
   (package
     (name "r-rvcompare")
@@ -9401,13 +9425,13 @@ performance.  For more information see, Markowitz, H.M. (1952),
 (define-public r-rpoppler
   (package
     (name "r-rpoppler")
-    (version "0.1-1")
+    (version "0.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rpoppler" version))
               (sha256
                (base32
-                "1hx3c6iqkxfwppv9168d2wrgfsxi1zl29cbi684w7ndvchfly49v"))))
+                "11m3vw1an91567nf72vz2cbm520vbh6h4dmfzbrxbw24qy3y58x3"))))
     (properties `((upstream-name . "Rpoppler")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))
@@ -16740,13 +16764,13 @@ Space.  It uses a Variation of Pattern Search Technique.  Described in the paper
 (define-public r-rmost
   (package
     (name "r-rmost")
-    (version "0.0.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rMOST" version))
               (sha256
                (base32
-                "0dy0sls9sl4n1hsyw6rczcffl1p03nlxs1m1jhdk9a00wrwkzvky"))))
+                "1g8g7hl937884l96cyz9wj486qgfm7lla47q8lmzn20fx1izjddr"))))
     (properties `((upstream-name . "rMOST")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr))
@@ -16762,8 +16786,8 @@ containing predictor weights as output.  Accepts between 3 and 10 selection
 predictors.  Maximum 2 objectives could be adverse impact objectives.  Partially
 modeled after De Corte (2006) TROFSS Fortran program
 <https://users.ugent.be/~wdecorte/trofss.pdf> and updated from ParetoR package
-described in Song et al. (2017) <doi:10.1037/apl0000240>.  For details, see Song
-et al. (in press).")
+described in Song et al. (2017) <doi:10.1037/apl0000240>.  For details, see
+Study 3 of Zhang et al. (in press).")
     (license license:expat)))
 
 (define-public r-rmosek
@@ -18947,13 +18971,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "2.10.0")
+    (version "2.11.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rlabkey" version))
               (sha256
                (base32
-                "0dvqf14z3k2x1zifp8ix8895vs8y25jia804fhnsb54z2r9pqcrm"))))
+                "090fpd8wn3k1xf5l0cy8q420hmp562kzb1vviq6plalnby667mhq"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -33282,6 +33306,41 @@ high variability of the RDS process.")
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
 
+(define-public r-rdss
+  (package
+    (name "r-rdss")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rdss" version))
+              (sha256
+               (base32
+                "05sm8ha7rb0wxl0wmvjsckr0gyar8jyah2vpy8s9rqrjkayzcdd5"))))
+    (properties `((upstream-name . "rdss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-randomizr
+                             r-purrr
+                             r-prediction
+                             r-ggplot2
+                             r-generics
+                             r-estimatr
+                             r-dplyr
+                             r-dataverse
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=rdss")
+    (synopsis
+     "Companion Datasets and Functions for Research Design in the Social Sciences")
+    (description
+     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
+Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
+<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
+plotting components to enable use and replication of the book.")
+    (license license:expat)))
+
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
@@ -39259,13 +39318,13 @@ operations are encoded in C with multi-thread support.")
 (define-public r-rbioapi
   (package
     (name "r-rbioapi")
-    (version "0.7.7")
+    (version "0.7.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbioapi" version))
               (sha256
                (base32
-                "12lwm9x2z9bvnksp6qpqllz2mg45iia4cvv5pqr7rh7p9gwibqsm"))))
+                "14hfv2icdabr4hlhd9c7121sha70r1js0wfq4dkfpxadijifvzjr"))))
     (properties `((upstream-name . "rbioapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -39275,11 +39334,11 @@ operations are encoded in C with multi-thread support.")
     (description
      "Currently fully supports Enrichr, JASPAR, miEAA, PANTHER, Reactome, STRING, and
 UniProt! The goal of rbioapi is to provide a user-friendly and consistent
-interface to biological databases and services: In a way that insulates the user
-from technicalities of using web services API and creates a unified and
-easy-to-use interface to biological and medical web services.  This an ongoing
-project; New databases and services will be added periodically.  Feel free to
-suggest any databases or services you often use.")
+interface to biological databases and services.  In a way that insulates the
+user from the technicalities of using web services API and creates a unified and
+easy-to-use interface to biological and medical web services.  This is an
+ongoing project; New databases and services will be added periodically.  Feel
+free to suggest any databases or services you often use.")
     (license license:gpl3)))
 
 (define-public r-rbioacc
@@ -44777,25 +44836,17 @@ trees by he StemID2 algorithm.  Herman, J.S., Sagar, GrÃ¼n D. (2018)
 (define-public r-rac
   (package
     (name "r-rac")
-    (version "1.5")
+    (version "1.5.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAC" version))
               (sha256
                (base32
-                "0q0kk9j3blrnhv0rfmryc35lli5j4kds2vmjdpg77znagb45609k"))))
+                "0ar2vbckfr26slbibbbcx409c8mw338x4apmxs7by6prnlwr6fpx"))))
     (properties `((upstream-name . "RAC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rstudioapi
-                             r-rgeos
-                             r-rgdal
-                             r-raster
-                             r-plotrix
-                             r-ncdf4
-                             r-matrixstats
-                             r-maptools
-                             r-maps))
+    (propagated-inputs (list r-sp r-rstudioapi r-raster r-plotrix
+                             r-matrixstats))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RAC")
     (synopsis "R Package for Aqua Culture")

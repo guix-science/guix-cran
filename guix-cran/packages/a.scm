@@ -2554,13 +2554,13 @@ data visualization and report generation functions.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "audubon" version))
               (sha256
                (base32
-                "09hq7ky2xfp81kajanjbx3j26xj2dkng4xi52ywagk40858nzfmx"))))
+                "17x4pk2anmj5gyf6wdg9n5zyqzbmp9hvj04ngv17jxv5b047pjc9"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -8919,13 +8919,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anticlust" version))
               (sha256
                (base32
-                "0014bp4j1nl5m3v20yjxpqjbya22rsfj9xagswy2bqpyqjycvds2"))))
+                "19v048455qklj136vgmdjqvsmprkkr6gwwr5c926xalzsrdcxl64"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -9577,6 +9577,32 @@ companies('Affymetrix','Illumina','Agilent'), by aligning the Fasta sequences of
 all probes of each platform to their corresponding reference genome, and then
 annotate them to genes.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-annmatrix
+  (package
+    (name "r-annmatrix")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "annmatrix" version))
+              (sha256
+               (base32
+                "0cvdy2gqliqzbgyxhw4k9mspwlkdaxhj85dxf56lq29qrcgk3gky"))))
+    (properties `((upstream-name . "annmatrix")))
+    (build-system r-build-system)
+    (home-page "https://github.com/karoliskoncevicius/annmatrix")
+    (synopsis
+     "Annotated Matrix: Matrices with Persistent Row and Column Annotations")
+    (description
+     "This package implements persistent row and column annotations for R matrices.
+The annotations associated with rows and columns are preserved after subsetting,
+transposition, and various other matrix-specific operations.  Intended use case
+is for storing and manipulating genomic datasets which typically consist of a
+matrix of measurements (like gene expression values) as well as annotations
+about rows (i.e.  genomic locations) and annotations about columns (i.e.
+meta-data about collected samples).  But annmatrix objects are also expected to
+be useful in various other contexts.")
+    (license license:gpl2)))
 
 (define-public r-ann2
   (package
@@ -17561,13 +17587,13 @@ Profiles for Tissue Specific cells <doi:10.1371/journal.pone.0224693>.")
 (define-public r-adaptr
   (package
     (name "r-adaptr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adaptr" version))
               (sha256
                (base32
-                "0565j3h64mwak6ihyxprc2jc3a586x3h217fzk28jpix8kwmb19l"))))
+                "0aka1rdzggm1yxia4zq9ipb74lah94l16idqscsakxbakk1hxk65"))))
     (properties `((upstream-name . "adaptr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

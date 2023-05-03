@@ -5129,16 +5129,16 @@ combination of greedy local search and a genetic algorithm (see
 (define-public r-grec
   (package
     (name "r-grec")
-    (version "1.4.1")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grec" version))
               (sha256
                (base32
-                "1vy3idjvayzx9j9pf5bv5bxycjca3w3c4x4lzzbrdi3c97508sa8"))))
+                "0k40j32l551qsnw7hry0slk0y89fiff7mgfwsk9fyz70kns64yk5"))))
     (properties `((upstream-name . "grec")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster r-imagine))
+    (propagated-inputs (list r-terra r-raster r-imagine r-abind))
     (home-page "https://github.com/LuisLauM/grec")
     (synopsis
      "Gradient-Based Recognition of Spatial Patterns in Environmental Data")
@@ -5288,6 +5288,41 @@ refer to the web page given below.")
 rectangular prisms at specific observation points using the method of Plouff
 (1976) <doi:10.1190/1.1440645>.")
     (license license:cc0)))
+
+(define-public r-gravity
+  (package
+    (name "r-gravity")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gravity" version))
+              (sha256
+               (base32
+                "05kkprv63x9m715yv9kx2k70bqnkacc72zr0aljcj0ry10nl40c6"))))
+    (properties `((upstream-name . "gravity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-sandwich
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-multiwayvcov
+                             r-mass
+                             r-magrittr
+                             r-lmtest
+                             r-glm2
+                             r-dplyr
+                             r-censreg))
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/gravity/")
+    (synopsis "Estimation Methods for Gravity Models")
+    (description
+     "This package provides a wrapper of different standard estimation methods for
+gravity models.  This package provides estimation methods for log-log models and
+multiplicative models.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-gravitas
   (package
@@ -5641,6 +5676,32 @@ simulated datasets using this framework.  This also allows for pathway
 structures to be considered as a confounding variable when simulating gene
 expression data to test the performance of genomic analyses.")
     (license license:gpl3)))
+
+(define-public r-graphseg
+  (package
+    (name "r-graphseg")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "graphseg" version))
+              (sha256
+               (base32
+                "108i6yrwg505ndgm7j48shxs8wd2ciwm486a2nq267wpk4jrkdrz"))))
+    (properties `((upstream-name . "graphseg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-matrix r-magrittr r-igraph r-flsa))
+    (home-page "https://github.com/goepp/graphseg")
+    (synopsis "Segmentation of Graph-Based Signals")
+    (description
+     "Perform segmentation of graph-based signals.  Assume a noisy observation of a
+signal two values correspond to vertices on a graph.  Assume the true value of
+the signal is piece-wise constant (where each \\italic{piece} is a connected
+subgraph).  The main function, agraph(), computes the segmentation of the
+signal.  The package also includes a wrapper around the competing method flsa()
+(from package flsa').  More information about this method in Goepp and van de
+Kassteele (2022) \"Graph-Based Spatial Segmentation of Health-Related Areal Data\"
+<doi:10.48550/arXiv.2206.06752>.")
+    (license license:gpl3+)))
 
 (define-public r-graphql
   (package
@@ -15479,48 +15540,6 @@ layout.")
     (home-page "https://github.com/showteeth/ggpie")
     (synopsis "Pie, Donut and Rose Pie Plots")
     (description "Create pie, donut and rose pie plot with ggplot2'.")
-    (license license:expat)))
-
-(define-public r-ggpicrust2
-  (package
-    (name "r-ggpicrust2")
-    (version "1.6.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggpicrust2" version))
-              (sha256
-               (base32
-                "1ghzwhd2jmdz18klyzyia84w1s9j3ccszldvfy3vpndppyg7cyh1"))))
-    (properties `((upstream-name . "ggpicrust2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-summarizedexperiment
-                             r-readr
-                             r-phyloseq
-                             r-patchwork
-                             r-microbiomestat
-                             r-metagenomeseq
-                             r-maaslin2
-                             r-limma
-                             r-ggprism
-                             r-ggplot2
-                             r-ggally
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-aplot
-                             r-aldex2))
-    (home-page "https://github.com/cafferychen777/ggpicrust2")
-    (synopsis "Make 'PICRUSt2' Output Analysis and Visualization Easier")
-    (description
-     "This package provides a convenient way to analyze and visualize PICRUSt2 output
-with pre-defined plots and functions.  Allows for generating statistical plots
-about microbiome functional predictions and offers customization options.
-Features a one-click option for creating publication-level plots, saving time
-and effort in producing professional-grade figures.  Streamlines the PICRUSt2
-analysis and visualization process.  For more details, see Yang et al. (2023)
-<arXiv:2303.10388>.")
     (license license:expat)))
 
 (define-public r-ggperiodic

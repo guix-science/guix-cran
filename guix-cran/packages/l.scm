@@ -3607,6 +3607,37 @@ data.")
 and kml3d).")
     (license license:gpl2+)))
 
+(define-public r-longitudinalcascade
+  (package
+    (name "r-longitudinalcascade")
+    (version "0.3.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "longitudinalcascade" version))
+              (sha256
+               (base32
+                "0ifslwmn71v6725xw3fa44qb01391dq8nsa95281x0crb5zrki8d"))))
+    (properties `((upstream-name . "longitudinalcascade")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-survival
+                             r-scales
+                             r-rlang
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=longitudinalcascade")
+    (synopsis "Longitudinal Cascade")
+    (description
+     "This package creates a series of sets of graphics and statistics related to the
+longitudinal cascade, all included in a single object.  The longitudinal cascade
+inputs longitudinal data to identify gaps in the HIV and related cascades by
+observing differences using time to event and survival methods.  The stage
+definitions are set by the user, with default standard options.  Outputs include
+graphics, datasets, and formal statistical tests.")
+    (license license:expat)))
+
 (define-public r-longit
   (package
     (name "r-longit")

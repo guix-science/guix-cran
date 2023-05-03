@@ -4683,23 +4683,24 @@ free database download.")
 (define-public r-ip2location
   (package
     (name "r-ip2location")
-    (version "8.1.2")
+    (version "8.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ip2location" version))
               (sha256
                (base32
-                "0yssfzzwx01kkhaa9mnlyqvg3w12vc5dc3cyxj22r31c3n0k6lj6"))))
+                "1nbqg4nnhxwcwi9kgbyjkikdwh8djglxkrw0lcqfvaqn4n7qf1i5"))))
     (properties `((upstream-name . "ip2location")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-reticulate r-maps r-jsonlite r-ggplot2))
     (home-page "https://github.com/ip2location/ip2location-r")
     (synopsis "Lookup for IP Address Information")
     (description
-     "Enables the user to find the country, region, city, coordinates, zip code, time
-zone, ISP, domain name, connection type, area code, weather station code,
-weather station name, mobile, usage type, address type and IAB category that any
-IP address or hostname originates from.  Supported IPv4 and IPv6.  Please visit
+     "Enables the user to find the country, region, district, city, coordinates, zip
+code, time zone, ISP, domain name, connection type, area code, weather, Mobile
+Country Code, Mobile Network Code, mobile brand name, elevation, usage type,
+address type, IAB category and Autonomous system information that any IP address
+or hostname originates from.  Supported IPv4 and IPv6.  Please visit
 <https://www.ip2location.com> to learn more.  You may also want to visit
 <https://lite.ip2location.com> for free database download.  This package
 requires IP2Location Python module.  At the terminal, please run pip install

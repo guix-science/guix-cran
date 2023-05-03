@@ -10774,20 +10774,20 @@ information about Moodle, visit <https://moodle.org>.")
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MonteCarloSEM" version))
               (sha256
                (base32
-                "1yqqvbj53111wlmi9c8xg7yylgasl97mn5bx0w5zkmnx0xvq004i"))))
+                "0mnva4hd02a6f4fpll6ra4nn0chlx8wjixp1jx40krg3xnikqkj1"))))
     (properties `((upstream-name . "MonteCarloSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lavaan))
     (home-page "https://cran.r-project.org/package=MonteCarloSEM")
     (synopsis "Monte Carlo Data Simulation Package")
     (description
-     "Monte Carlo simulation allows to test different conditions given to the correct
+     "Monte Carlo simulation allows testing different conditions given to the correct
 structural equation models.  This package runs Monte Carlo simulations under
 different conditions (such as sample size or normality of data).  Within the
 package data sets can be simulated and run based on the given model.  First,
@@ -14296,13 +14296,13 @@ Public Release; Distribution Unlimited.")
 (define-public r-mmstat4
   (package
     (name "r-mmstat4")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmstat4" version))
               (sha256
                (base32
-                "00d52l2r6waij7km4pfhv1k68xysyxxrgb7sarqixkvz24d5rcgj"))))
+                "0x1rgms440b446cnn3dw6dagvr7597s8p36xgcym2qkx9005q0n9"))))
     (properties `((upstream-name . "mmstat4")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rstudioapi r-rio r-rappdirs r-digest))
@@ -14310,12 +14310,13 @@ Public Release; Distribution Unlimited.")
     (home-page "https://cran.r-project.org/package=mmstat4")
     (synopsis "Access to Teaching Materials from a ZIP File or GitHub")
     (description
-     "Teaching materials, e.g. R programs, Shiny apps, data and PDF/HTML documents,
-which are stored on the Internet in a ZIP file (e.g. as a GitHub repository) can
-be downloaded.  They can be displayed or run locally.  The content of the ZIP
-file is temporarily (or permanently) stored.  The GitHub repository
-sigbertklinke/mmstat4.data is used as the default repository.  In addition, some
-auxiliary functions are implemented.")
+     "This package provides access to teaching materials for various statistics
+courses, including R programs, Shiny apps, data, and PDF/HTML documents.  These
+materials are stored on the Internet as a ZIP file (e.g., in a GitHub
+repository) and can be downloaded and displayed or run locally.  The content of
+the ZIP file is temporarily or permanently stored.  By default, the package uses
+the GitHub repository sigbertklinke/mmstat4.data.  Additionally, the package
+includes some auxiliary functions.")
     (license license:gpl3)))
 
 (define-public r-mmsample
@@ -19536,13 +19537,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.4.8")
+    (version "0.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "0gzhl5kfbvq4ilyqmd6f996a0bvhx2f90sp02br0ya7dydyblfg5"))))
+                "1zn22wykrfwwyak074kwp6dyswxfc2yaajw0bkdgngd59zq581si"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -20666,16 +20667,16 @@ step of the method is scalable and can handle large volumes of data.")
 (define-public r-mirnaqcd
   (package
     (name "r-mirnaqcd")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MiRNAQCD" version))
               (sha256
                (base32
-                "1alpa7xsk669rsh0s7kjdnk1ymlfm81rw011pk29fi7p2jc505iv"))))
+                "0512zv75adic1mw5ccs076b9yczmqrx514jibbbid33m5bv877hm"))))
     (properties `((upstream-name . "MiRNAQCD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-proc r-ggplot2))
+    (propagated-inputs (list r-qpdf r-proc r-ggplot2))
     (home-page "https://cran.r-project.org/package=MiRNAQCD")
     (synopsis "Micro-RNA Quality Control and Diagnosis")
     (description
@@ -22859,13 +22860,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.16.0")
+    (version "0.17.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "0flmcw1vncx3rxrkgbn1vkpza6lkq1yl7c686kikldhcda5l2v62"))))
+                "0pi65g5dcjascp378cqnb8q90gg16mgpwjak173w6cd5k9l4hwwb"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -22876,6 +22877,7 @@ curation of microhaplotypes from short read sequences.")
                              r-rcolorbrewer
                              r-r6
                              r-magrittr
+                             r-igraph
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -22959,38 +22961,6 @@ taxonomic classification based on 16S rRNA sequence data.")
      "This package provides functions for assigning 16S sequence data to a taxonomic
 level in the tree-of-life for prokaryotes.")
     (license license:gpl2+)))
-
-(define-public r-microbiomestat
-  (package
-    (name "r-microbiomestat")
-    (version "1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MicrobiomeStat" version))
-              (sha256
-               (base32
-                "1j5sar85a1gksc83pc4ypxwb0c7whxglx069zarphrgqfazcr1m4"))))
-    (properties `((upstream-name . "MicrobiomeStat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-statmod
-                             r-phyloseq
-                             r-modeest
-                             r-matrixstats
-                             r-matrix
-                             r-mass
-                             r-lmertest
-                             r-ggrepel
-                             r-ggplot2
-                             r-foreach))
-    (home-page "https://cran.r-project.org/package=MicrobiomeStat")
-    (synopsis "Statistical Methods for Microbiome Compositional Data")
-    (description
-     "This package provides a suite of methods for powerful and robust microbiome data
-analysis addressing zero-inflation, phylogenetic structure and compositional
-effects (Zhou et al. (2021)<arXiv:2104.00242>).  The methods can be applied to
-the analysis of other (high-dimensional) compositional data arising from
-sequencing experiments.")
-    (license license:gpl3)))
 
 (define-public r-microbial
   (package
@@ -33637,13 +33607,13 @@ ISBN:9781108644181).")
 (define-public r-mbc
   (package
     (name "r-mbc")
-    (version "0.10-5")
+    (version "0.10-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBC" version))
               (sha256
                (base32
-                "0iks5nhk4im7l1dxgwcwi4mlnh271zfq9mrlaklpk38zakzyf2n4"))))
+                "1680lnzga21qk5yddrciiaifxkkb9kk744m9fbj0hg5xw6v9dxic"))))
     (properties `((upstream-name . "MBC")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-fnn r-energy))
@@ -34884,6 +34854,38 @@ method is the Similarity of Matrices Index, while various related measures like
 r1, r2, r3, r4, Yanai's GCD, RV, RV2, adjusted RV, Rozeboom's linear correlation
 and Coxhead's coefficient are included for comparison and flexibility.")
     (license license:gpl2)))
+
+(define-public r-matrisk
+  (package
+    (name "r-matrisk")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matrisk" version))
+              (sha256
+               (base32
+                "1qfhpbxza1iz0075hq3ghs6djgr6l942yx1q7pjng35rs4xj2d48"))))
+    (properties `((upstream-name . "matrisk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn r-quantreg r-plot3d r-dfoptim))
+    (home-page "https://cran.r-project.org/package=matrisk")
+    (synopsis "Macroeconomic-at-Risk")
+    (description
+     "The Macroeconomics-at-Risk (MaR) approach is based on a two-step semi-parametric
+estimation procedure that allows to forecast the full conditional distribution
+of an economic variable at a given horizon, as a function of a set of factors.
+These density forecasts are then be used to produce coherent forecasts for any
+downside risk measure, e.g., value-at-risk, expected shortfall, downside
+entropy.  Initially introduced by Adrian et al. (2019)
+<doi:10.1257/aer.20161923> to reveal the vulnerability of economic growth to
+financial conditions, the MaR approach is currently extensively used by
+international financial institutions to provide Value-at-Risk (VaR) type
+forecasts for GDP growth (Growth-at-Risk) or inflation (Inflation-at-Risk).
+This package provides methods for estimating these models.  Datasets for the US
+and the Eurozone are available to allow testing of the Adrian et al (2019)
+model.  This package constitutes a useful toolbox (data and functions) for
+private practitioners, scholars as well as policymakers.")
+    (license license:gpl3)))
 
 (define-public r-matricks
   (package
@@ -36854,6 +36856,33 @@ structure of the movment.  Tests assess, for example, whether the shift was
      "Computation of various Markovian models for categorical data including
 homogeneous Markov chains of any order, MTD models, Hidden Markov models, and
 Double Chain Markov Models.")
+    (license license:gpl2)))
+
+(define-public r-marble
+  (package
+    (name "r-marble")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "marble" version))
+              (sha256
+               (base32
+                "09l3cvrbghypy26r891ysjp5vqk6f8ivww9i2blp04fvfx6972sw"))))
+    (properties `((upstream-name . "marble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/xilustat/marble")
+    (synopsis
+     "Robust Marginal Bayesian Variable Selection for Gene-Environment Interactions")
+    (description
+     "Recently, multiple marginal variable selection methods have been developed and
+shown to be effective in Gene-Environment interactions studies.  We propose a
+novel marginal Bayesian variable selection method for Gene-Environment
+interactions studies.  In particular, our marginal Bayesian method is robust to
+data contamination and outliers in the outcome variables.  With the
+incorporation of spike-and-slab priors, we have implemented the Gibbs sampler
+based on Markov Chain Monte Carlo.  The core algorithms of the package have been
+developed in C++'.")
     (license license:gpl2)))
 
 (define-public r-maraca
@@ -39893,22 +39922,25 @@ tropical Pacific Ocean.")
 (define-public r-madrat
   (package
     (name "r-madrat")
-    (version "2.3.2")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "madrat" version))
               (sha256
                (base32
-                "06gd77r8h7c3sqcq2iapqvsjj41x7qj1gqv2rp0y50g00cg2625d"))))
+                "12da7810yd9malnfgd5fc5ys72m8hmap7hqncaq7ajpv5xpv2sqz"))))
     (properties `((upstream-name . "madrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-withr
                              r-stringi
+                             r-renv
+                             r-pkgload
                              r-matrix
                              r-magclass
                              r-igraph
-                             r-digest))
+                             r-digest
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pik-piam/madrat")
     (synopsis "May All Data be Reproducible and Transparent (MADRaT) *")

@@ -6408,13 +6408,13 @@ and presentation of results.")
 (define-public r-doredis
   (package
     (name "r-doredis")
-    (version "3.0.1")
+    (version "3.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "doRedis" version))
               (sha256
                (base32
-                "1i04kpf24aafs2c7qd74ms2q6093in1x75vlpiw3pwprl6cwkb11"))))
+                "0vl81hy9aspaxns823m7wsbfxfcbx2xbxl140ci3l79pvz3rwyf5"))))
     (properties `((upstream-name . "doRedis")))
     (build-system r-build-system)
     (propagated-inputs (list r-redux r-iterators r-foreach))
@@ -19352,13 +19352,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.4")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "deaR" version))
               (sha256
                (base32
-                "15qwmrwpamm6flyhqhvmn3h06y7hpv6kxdf494f2x39sn7sw08pm"))))
+                "0rc12pr4br8kca90xcy5f8w1fyjzn6s7kyc3q3m3caxq8dlidn5v"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -22214,13 +22214,13 @@ versions <= 3.0, use the archived dvn package
 (define-public r-dataverifyr
   (package
     (name "r-dataverifyr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dataverifyr" version))
               (sha256
                (base32
-                "19g58lx67i6s94vpvmbmyjsmd917z1llh0m76q4w7bha7hbvrhqg"))))
+                "14jp4pzgj022b888df1s0p44v90ghr19bsdsa9hx3dx0i7ls8lzs"))))
     (properties `((upstream-name . "dataverifyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml))
@@ -22911,6 +22911,37 @@ over-the-counter (OTC) derivative markets.  Swap Execution Facilities (SEFs) and
 Swap Data Repositories (SDRs) now publish data on swaps that are traded on or
 reported to those facilities (respectively).  This package provides you the
 ability to get this data from supported sources.")
+    (license license:gpl2)))
+
+(define-public r-datanugget
+  (package
+    (name "r-datanugget")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datanugget" version))
+              (sha256
+               (base32
+                "1zvhbkpc1akzdfaz7jzgfmb287s88b8a5icgqkaq5zvlik6drw0q"))))
+    (properties `((upstream-name . "datanugget")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-dosnow))
+    (home-page "https://cran.r-project.org/package=datanugget")
+    (synopsis "Create, and Refine Data Nuggets")
+    (description
+     "Creating, and refining data nuggets.  Data nuggets reduce a large dataset into a
+small collection of nuggets of data, each containing a center (location), weight
+(importance), and scale (variability) parameter.  Data nugget centers are
+created by choosing observations in the dataset which are as equally spaced
+apart as possible.  Data nugget weights are created by counting the number
+observations closest to a given data nuggetâs center.  We then say the data
+nugget contains these observations and the data nugget center is recalculated as
+the mean of these observations.  Data nugget scales are created by calculating
+the trace of the covariance matrix of the observations contained within a data
+nugget divided by the dimension of the dataset.  Data nuggets are refined by
+splitting data nuggets which have scales or shapes (defined as the ratio of the
+two largest eigenvalues of the covariance matrix of the observations contained
+within the data nugget) deemed too large.")
     (license license:gpl2)))
 
 (define-public r-datana

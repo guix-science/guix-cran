@@ -5011,13 +5011,13 @@ applying multiple models to multiple subsets of a dataset.")
 (define-public r-crosshap
   (package
     (name "r-crosshap")
-    (version "1.1.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosshap" version))
               (sha256
                (base32
-                "1v4fazvcygbk6w8vmvima53j0b5xryr0cra2pnfzya3ybx68xb8k"))))
+                "18r4m5fplpiabgwir78qfacj0781ykqxbyfkf5zxnzs7yr0d1gl2"))))
     (properties `((upstream-name . "crosshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32739,13 +32739,13 @@ test and training samples with known classes.")
 (define-public r-cclust
   (package
     (name "r-cclust")
-    (version "0.6-25")
+    (version "0.6-26")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cclust" version))
               (sha256
                (base32
-                "1pdvhfs8jfl0xz60s6h3qcmh973fp9h2ji8ps2fbc49da9xzsi2a"))))
+                "0mwqna3751lff5n6bb0k09r7qwh0mpwdxgq68wd4wkl6l5akrv4j"))))
     (properties `((upstream-name . "cclust")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cclust")
@@ -34999,6 +34999,69 @@ machine.  Try to build your fortune before you succumb to the gambler's ruin!")
 statistical matching methods.")
     (license license:gpl2+)))
 
+(define-public r-casecohortcoxsurvival
+  (package
+    (name "r-casecohortcoxsurvival")
+    (version "0.0.31")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CaseCohortCoxSurvival" version))
+              (sha256
+               (base32
+                "1r1ki47i7dp3q9wpw2vbaglnq33b109wlc6s51kfvfnlm8vi4nkp"))))
+    (properties `((upstream-name . "CaseCohortCoxSurvival")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-nnet))
+    (home-page "https://cran.r-project.org/package=CaseCohortCoxSurvival")
+    (synopsis "Case-Cohort Cox Survival Inference")
+    (description
+     "Cox model inference for relative hazard and covariate-specific pure risk
+estimated from stratified and unstratified case-cohort data as described in
+Etievant, L., Gail, M.H. (2023) <arXiv:2304.03396>.")
+    (license license:gpl2)))
+
+(define-public r-casebasedreasoning
+  (package
+    (name "r-casebasedreasoning")
+    (version "0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CaseBasedReasoning" version))
+              (sha256
+               (base32
+                "0ayckjq53lmdm429bvb4fjsbyy7cp3jgds30swmzq9qf75bnaa55"))))
+    (properties `((upstream-name . "CaseBasedReasoning")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-rms
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ranger
+                             r-r6
+                             r-purrr
+                             r-pryr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sipemu/case-based-reasoning")
+    (synopsis "Case Based Reasoning")
+    (description
+     "Case-based reasoning is a problem-solving methodology that involves solving a
+new problem by referring to the solution of a similar problem in a large set of
+previously solved problems.  The key aspect of Case Based Reasoning is to
+determine the problem that \"most closely\" matches the new problem at hand.  This
+is achieved by defining a family of distance functions and using these distance
+functions as parameters for local averaging regression estimates of the final
+result.  The optimal distance function is chosen based on a specific error
+measure used in regression estimation.  This approach allows for efficient
+problem-solving by leveraging past experiences and adapting solutions from
+similar cases.  The underlying concept is inspired by the work of Dippon J.
+(2002) <doi:10.1016/S0167-9473(02)00058-0>.")
+    (license license:expat)))
+
 (define-public r-casebase
   (package
     (name "r-casebase")
@@ -35218,6 +35281,30 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (scale, north arrow, title...), labels or legends.  See Giraud and Lambert
 (2017) <doi:10.1007/978-3-319-57336-6_13>.")
     (license license:gpl3)))
+
+(define-public r-cartographer
+  (package
+    (name "r-cartographer")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cartographer" version))
+              (sha256
+               (base32
+                "0il0wc5mlz9qrb0lsbvcn4ha11wmm7hy40gbhvv86rfmh2jpp5nk"))))
+    (properties `((upstream-name . "cartographer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rlang r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cidm-ph/cartographer")
+    (synopsis "Turn Place Names into Map Data")
+    (description
+     "This package provides a tool for easily matching spatial data when you have a
+list of place/region names.  You might have a data frame that came from a
+spreadsheet tracking some data by suburb or state.  This package can convert it
+into a spatial data frame ready for plotting.  The actual map data is provided
+by other packages (or your own code).")
+    (license license:expat)))
 
 (define-public r-cartogramr
   (package
