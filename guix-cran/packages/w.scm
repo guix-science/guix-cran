@@ -2278,13 +2278,13 @@ in the tutorial paper by Van Lissa, Brandmaier, Brinkman, Lamprecht, Struiksma,
 (define-public r-wooldridge
   (package
     (name "r-wooldridge")
-    (version "1.4-2")
+    (version "1.4-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wooldridge" version))
               (sha256
                (base32
-                "06rc510wmkakc19hcqmya6mgrg2g3x0fkzjb3ix0rayh7lddhy4p"))))
+                "16lgdzbjp4yjhihbhz9kpagsdral802lhgg6m94vxprlz2sna1r4"))))
     (properties `((upstream-name . "wooldridge")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2300,7 +2300,7 @@ files contain page numbers, the original source, time of publication, and notes
 from the author suggesting avenues for further analysis and research.  If one
 needs an introduction to R model syntax, a vignette contains solutions to
 examples from chapters of the text.  Data sets are from the 7th edition
-(Wooldridge 2020, ISBN-13: 978-1-337-55886-0), and are backwards compatible with
+(Wooldridge 2020, ISBN-13 978-1-337-55886-0), and are backwards compatible with
 all previous versions of the text.")
     (license license:gpl3)))
 

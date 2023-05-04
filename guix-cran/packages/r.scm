@@ -12351,6 +12351,27 @@ constrained programming (MIQPQC) problems as well as all variants/combinations
 of LP, QP, QCP, IP.")
     (license license:gpl3)))
 
+(define-public r-roi-plugin-clarabel
+  (package
+    (name "r-roi-plugin-clarabel")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ROI.plugin.clarabel" version))
+              (sha256
+               (base32
+                "0r90h62f7hll0n9nv376caj1wy34m7pjcg0r3gfa30mmql2aznyp"))))
+    (properties `((upstream-name . "ROI.plugin.clarabel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slam r-roi r-clarabel))
+    (home-page "https://gitlab.com/roigrp/solver/roi.plugin.clarabel")
+    (synopsis "'clarabel' Plug-in for the 'R' Optimization Infrastructure")
+    (description
+     "Enhances the R Optimization Infrastructure ('ROI') package with the clarabel
+solver for solving convex cone problems.  More information about clarabel can be
+found at <https://oxfordcontrol.github.io/ClarabelDocs/stable/>.")
+    (license license:gpl3)))
+
 (define-public r-roi-plugin-alabama
   (package
     (name "r-roi-plugin-alabama")
@@ -17394,6 +17415,41 @@ Keelin (2016) <doi:10.1287/deca.2016.0338>.  This package provides functions to
 build these distributions from raw data.  Resulting metalog objects are then
 useful for exploratory and probabilistic analysis.")
     (license license:expat)))
+
+(define-public r-rmediation
+  (package
+    (name "r-rmediation")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RMediation" version))
+              (sha256
+               (base32
+                "02d67r1z5g5839p45q4nvgwpdwmchyyr24072l63zsa8ixz3l82m"))))
+    (properties `((upstream-name . "RMediation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-openmx
+                             r-modelr
+                             r-mass
+                             r-lavaan
+                             r-iterators
+                             r-foreach
+                             r-e1071
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=RMediation")
+    (synopsis "Mediation Analysis Confidence Intervals")
+    (description
+     "We provide functions to compute confidence intervals for a well-defined
+nonlinear function of the model parameters (e.g., product of k coefficients) in
+single--level and multilevel structural equation models.  It also computes a
+chi-square test statistic for a function of indirect effects.  Tofighi', D. and
+MacKinnon', D. P. (2011).  RMediation An R package for mediation analysis
+confidence intervals.  Behavior Research Methods, 43, 692--700.
+<doi:10.3758/s13428-011-0076-x>.  Tofighi', D. (2020).  Bootstrap Model-Based
+Constrained Optimization Tests of Indirect Effects.  Frontiers in Psychology,
+10, 2989. <doi:10.3389/fpsyg.2019.02989>.")
+    (license license:gpl2)))
 
 (define-public r-rmecabko
   (package

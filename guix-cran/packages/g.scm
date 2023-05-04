@@ -2995,6 +2995,49 @@ incorporating all available observations at both GRS construction and GxE
 testing.")
     (license license:expat)))
 
+(define-public r-grshiny
+  (package
+    (name "r-grshiny")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GRShiny" version))
+              (sha256
+               (base32
+                "0i8qcqk97lm2pwjl2s6lfa4p6c69p8xl3q88bpn706ib687f5j3x"))))
+    (properties `((upstream-name . "GRShiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-sirt
+                             r-shinywidgets
+                             r-shiny
+                             r-sass
+                             r-readr
+                             r-purrr
+                             r-openxlsx
+                             r-officer
+                             r-mirt
+                             r-mass
+                             r-magrittr
+                             r-lavaan
+                             r-gt
+                             r-ggplot2
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sooyongl/GRShiny")
+    (synopsis "Graded Response Model")
+    (description
+     "Simulation and analysis of graded response data with different types of
+estimators.  Also, an interactive shiny application is provided with graphics
+for characteristic and information curves.  Samejima (2018)
+<doi:10.1007/978-1-4757-2691-6_5>.")
+    (license license:gpl3+)))
+
 (define-public r-grs-test
   (package
     (name "r-grs-test")
@@ -7959,6 +8002,31 @@ survival data with a cure fraction, including the Proportional Hazards Mixture
 Cure (PHMC) model and the Proportional Odds Mixture Cure Model as special cases.
  This package fit the GORMC model with interval censored data.")
     (license license:gpl2+)))
+
+(define-public r-gor
+  (package
+    (name "r-gor")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gor" version))
+              (sha256
+               (base32
+                "05wjmp8r58jv0ppq54vjw8xbwdlmksh5zch8cjm3ss20fsvqxdsj"))))
+    (properties `((upstream-name . "gor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=gor")
+    (synopsis "Algorithms for the Subject Graphs and Network Optimization")
+    (description
+     "Informal implementation of some algorithms from Graph Theory and Combinatorial
+Optimization which arise in the subject \"Graphs and Network Optimization\" from
+first course of the EUPLA (Escuela Universitaria Politecnica de La Almunia)
+degree of Data Engineering in Industrial Processes.  References used are: Cook
+et al (1998, ISBN:0-471-55894-X), Korte, Vygen (2018)
+<doi:10.1007/978-3-662-56039-6>, Hromkovic (2004)
+<doi:10.1007/978-3-662-05269-3>, Hartmann, Weigt (2005, ISBN:978-3-527-40473-5).")
+    (license license:gpl3)))
 
 (define-public r-googleway
   (package
@@ -24466,13 +24534,13 @@ sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gcplyr" version))
               (sha256
                (base32
-                "02xhah02rghw7nayxc7qg34cvkgmkfgf241n606bp0p8hhg92k35"))))
+                "0wbvnx9hk20caj0ap4nw97b59zyy4q4kbp83am61gblrn257wahj"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -25275,13 +25343,13 @@ accounting for individual differences in data quality.")
 (define-public r-gawdis
   (package
     (name "r-gawdis")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gawdis" version))
               (sha256
                (base32
-                "1n6h8gi271792ykpmbja56v66rvdpaplq645jji0l4a6y537jrb6"))))
+                "13f7fx5j9r5wky2zriyqlr7vjda1y9c7n3iz0ajw6fxfr1c670dx"))))
     (properties `((upstream-name . "gawdis")))
     (build-system r-build-system)
     (propagated-inputs (list r-ga r-fd))

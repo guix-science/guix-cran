@@ -12500,6 +12500,30 @@ apps, in part by wrapping the js-cookie JavaScript library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
 
+(define-public r-cooccurrenceaffinity
+  (package
+    (name "r-cooccurrenceaffinity")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CooccurrenceAffinity" version))
+              (sha256
+               (base32
+                "0wn8jkvm5x30vj1vy196l691kbs5aa3j09s5dsa2r54cr34d16mn"))))
+    (properties `((upstream-name . "CooccurrenceAffinity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape r-plyr r-ggplot2 r-cowplot r-biasedurn))
+    (home-page "https://github.com/kpmainali/CooccurrenceAffinity")
+    (synopsis "Affinity in Co-Occurrence Data")
+    (description
+     "Computes a novel metric of affinity between two entities based on their
+co-occurrence (using binary presence/absence data).  The metric and its MLE,
+alpha hat, were advanced in Mainali, Slud, et al, 2021
+<doi:10.1126/sciadv.abj9204>.  Various types of confidence intervals and median
+interval were developed in Mainali and Slud, 2022
+<doi:10.1101/2022.11.01.514801>.")
+    (license license:expat)))
+
 (define-public r-cooccur
   (package
     (name "r-cooccur")

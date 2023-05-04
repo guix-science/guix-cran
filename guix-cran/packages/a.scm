@@ -18379,6 +18379,40 @@ When using this package, you acknowledge that you have read ACLED's terms and
 conditions of use, and that you agree with their attribution requirements.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
+(define-public r-achilles
+  (package
+    (name "r-achilles")
+    (version "1.7.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Achilles" version))
+              (sha256
+               (base32
+                "1qzcp8gjf7kq98il6ikpq29alcmxsszwm9dxvk1xay77nwqa2vky"))))
+    (properties `((upstream-name . "Achilles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries
+                             r-sqlrender
+                             r-rlang
+                             r-readr
+                             r-parallellogger
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr
+                             r-databaseconnector
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Achilles")
+    (synopsis "Achilles Data Source Characterization")
+    (description
+     "Automated Characterization of Health Information at Large-Scale Longitudinal
+Evidence Systems.  Creates a descriptive statistics summary for an Observational
+Medical Outcomes Partnership Common Data Model standardized data source.  This
+package includes functions for executing summary queries on the specified data
+source and exporting reporting content for use across a variety of Observational
+Health Data Sciences and Informatics community applications.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-acesimfit
   (package
     (name "r-acesimfit")

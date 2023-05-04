@@ -1238,6 +1238,30 @@ System Wide Monitoring Program of the National Estuarine Research Reserve System
 with continuous time series data for environmental decision making.")
     (license license:cc0)))
 
+(define-public r-switchselection
+  (package
+    (name "r-switchselection")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "switchSelection" version))
+              (sha256
+               (base32
+                "0jmyzfncy13ivgbrk5qllaxzn829izdpf6a1rlhybd7r1cbqv084"))))
+    (properties `((upstream-name . "switchSelection")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnorm r-hpa r-gena))
+    (home-page "https://cran.r-project.org/package=switchSelection")
+    (synopsis "Endogenous Switching and Sample Selection Regression Models")
+    (description
+     "Estimate the parameters of multivariate endogenous switching and sample
+selection models using methods described in Newey (2009)
+<doi:10.1111/j.1368-423X.2008.00263.x>, E. Kossova, B. Potanin (2018)
+<https:ideas.repec.org/a/ris/apltrx/0346.html>, E. Kossova, L. Kupriianova, B.
+Potanin (2020) <https://ideas.repec.org/a/ris/apltrx/0391.html> and E. Kossova,
+B. Potanin (2022) <https://ideas.repec.org/a/ris/apltrx/0455.html>.")
+    (license license:gpl2+)))
+
 (define-public r-switchr
   (package
     (name "r-switchr")
@@ -17202,13 +17226,13 @@ estimation for logistic models in case-mother control-mother designs.")
 (define-public r-spmc
   (package
     (name "r-spmc")
-    (version "0.3.12")
+    (version "0.3.15")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spMC" version))
               (sha256
                (base32
-                "1ybjpm6737yr0pyqhk4fz4288r5mgkmknzfcw8ffc680b8qnxknr"))))
+                "1fv6769xz44xc50ad00df7bacqbwy6xnqm2072zjgkl1dbskfjma"))))
     (properties `((upstream-name . "spMC")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=spMC")
@@ -46130,33 +46154,34 @@ data export the package works with is a standard non-rectangular export.")
 (define-public r-secsse
   (package
     (name "r-secsse")
-    (version "2.1.7")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secsse" version))
               (sha256
                (base32
-                "0cad1flym8bhra11chc16ylfa3i0nhi9jyy6r4nacwh6qpbbavjg"))))
+                "158jhj9n98qnrd6kar4lbn8970z3qd0nxfjba3fbvyabxp4azpcq"))))
     (properties `((upstream-name . "secsse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-phylobase
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-ggplot2
                              r-geiger
-                             r-foreach
-                             r-doparallel
-                             r-desolve
                              r-ddd
-                             r-aptreeshape
+                             r-bh
                              r-ape))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=secsse")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rsetienne/secsse")
     (synopsis
      "Several Examined and Concealed States-Dependent Speciation and Extinction")
     (description
      "Simultaneously infers state-dependent diversification across two or more states
 of a single or multiple traits while accounting for the role of a possible
-concealed trait.  See Herrera-Alsina et al.  2019 Systematic Biology 68: 317-328
-<DOI:10.1093/sysbio/syy057>.")
-    (license license:gpl3)))
+concealed trait.  See Herrera-Alsina et al. (2019) <doi:10.1093/sysbio/syy057>.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-secrlinear
   (package

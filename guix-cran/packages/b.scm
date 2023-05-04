@@ -4882,13 +4882,13 @@ reduction.")
 (define-public r-bpbounds
   (package
     (name "r-bpbounds")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bpbounds" version))
               (sha256
                (base32
-                "05knl0lmhbc399zwb35r8m1w5jvmwad8rg5m7m633pg7cfijayb9"))))
+                "0qzvy6a41p4nrsw91xh0bv03v8ksfv4fag365pzlwisa1ng88sqj"))))
     (properties `((upstream-name . "bpbounds")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9221,13 +9221,13 @@ with an option of filter change adjustment.")
 (define-public r-blackbox
   (package
     (name "r-blackbox")
-    (version "1.1.32")
+    (version "1.1.43")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blackbox" version))
               (sha256
                (base32
-                "180y19ls0vdk98smhs9hxpcwg3hwpl62d19zdiml38bjlxmr0kav"))))
+                "0q543vz4alg8i1ckh3w029gj9x8dminnq9l92d165w73r8adnalq"))))
     (properties `((upstream-name . "blackbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-spamm
@@ -9238,11 +9238,12 @@ with an option of filter change adjustment.")
                              r-pbapply
                              r-numderiv
                              r-nloptr
+                             r-matrixstats
                              r-mass
                              r-lattice
                              r-geometry
                              r-foreach))
-    (home-page "http://kimura.univ-montp2.fr/~rousset/Migraine.htm")
+    (home-page "https://kimura.univ-montp2.fr/~rousset/Migraine.htm")
     (synopsis "Black Box Optimization and Exploration of Parameter Space")
     (description
      "This package performs prediction of a response function from simulated response
@@ -9317,13 +9318,13 @@ of multiple concurrent exposures, as described in Bobb et al (2015)
 (define-public r-bizicount
   (package
     (name "r-bizicount")
-    (version "1.3.1")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bizicount" version))
               (sha256
                (base32
-                "10vxwysgi74dy2ypwhilrk7dd9p2iy0i0v6wabginb5w9009kz4b"))))
+                "10h99fzaa7b8wyzrpjkzqnn93f48sy1s9nhpw5l971mr2qss2zzz"))))
     (properties `((upstream-name . "bizicount")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg
@@ -19869,6 +19870,27 @@ hazard and survival functions for the piecewise exponential and piecewise linear
 log-hazard models.  Chapple, AG, Peak, T, Hemal, A (2020).  Under Revision.")
     (license license:gpl2)))
 
+(define-public r-bayesrepdesign
+  (package
+    (name "r-bayesrepdesign")
+    (version "0.42")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesRepDesign" version))
+              (sha256
+               (base32
+                "0xm3ap8lwg52760kyfp71i52mpkkh32753fprb4dfy1ry7g2qmyv"))))
+    (properties `((upstream-name . "BayesRepDesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lamw))
+    (home-page "https://github.com/SamCH93/BayesRepDesign")
+    (synopsis "Bayesian Design of Replication Studies")
+    (description
+     "This package provides functionality for determining the sample size of
+replication studies using Bayesian design approaches in the normal-normal
+hierarchical model (Pawel et al., 2022) <doi:10.48550/arXiv.2211.02552>.")
+    (license license:gpl3)))
+
 (define-public r-bayesrel
   (package
     (name "r-bayesrel")
@@ -23260,13 +23282,13 @@ several data structures.")
 (define-public r-baseq
   (package
     (name "r-baseq")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baseq" version))
               (sha256
                (base32
-                "1vvvrcalzsjgqnrrqqngz12k36bfid3yiiinfaf155n966972zvd"))))
+                "012p6xs9dkvpwcqkm9qgnc5v6sg6qhwpcaqxfnwx30fpim99liai"))))
     (properties `((upstream-name . "baseq")))
     (build-system r-build-system)
     (home-page "https://github.com/ambuvjyn/baseq")

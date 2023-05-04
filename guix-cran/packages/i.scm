@@ -538,6 +538,40 @@ regressions.  Package based on DiTraglia and Garcia-Jimeno (2020)
 <doi:10.1080/07350015.2020.1753528>.")
     (license license:cc0)))
 
+(define-public r-ivdiag
+  (package
+    (name "r-ivdiag")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ivDiag" version))
+              (sha256
+               (base32
+                "1kr6svbi4r3dfgx448q523c3ymfiwpg5k729n2bh19say4z6wk88"))))
+    (properties `((upstream-name . "ivDiag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wcorr
+                             r-testthat
+                             r-patchwork
+                             r-lfe
+                             r-haven
+                             r-glue
+                             r-ggplot2
+                             r-ggfortify
+                             r-future
+                             r-foreach
+                             r-fixest
+                             r-doparallel))
+    (home-page "https://yiqingxu.org/packages/ivDiag/")
+    (synopsis
+     "Estimation and Diagnostic Tools for Instrumental Variables Designs")
+    (description
+     "Estimation and diagnostic tools for instrumental variables designs, which
+implements the guidelines proposed in Lal et al. (2023) <arXiv:2303.11399>,
+including bootstrapped standard errors, effective F-statistics, Anderson-Rubin
+test, valid-t ratio test, and local-to-zero tests.")
+    (license license:expat)))
+
 (define-public r-ivdesign
   (package
     (name "r-ivdesign")
@@ -7948,13 +7982,13 @@ separates the responsibilities of use and construction.")
 (define-public r-infusion
   (package
     (name "r-infusion")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Infusion" version))
               (sha256
                (base32
-                "1f4j8qy6ykwp0xi8gbh2f4n6awc8zd5sqxgb7fgjmdw3k7gvs1ah"))))
+                "0dmbqwgavbfp54l47p6zdy75k9wi9zw3ai18q4gy8l4ag5vldzhi"))))
     (properties `((upstream-name . "Infusion")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -7964,6 +7998,7 @@ separates the responsibilities of use and construction.")
                              r-pbapply
                              r-numderiv
                              r-mvtnorm
+                             r-matrixstats
                              r-foreach
                              r-blackbox))
     (home-page "https://www.R-project.org")

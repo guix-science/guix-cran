@@ -4327,16 +4327,16 @@ misspecification in outcome variables.")
 (define-public r-logistf
   (package
     (name "r-logistf")
-    (version "1.24.1")
+    (version "1.25.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logistf" version))
               (sha256
                (base32
-                "0qd64sz8cj7s200fq00phjw6bfy8y7ys1bv3lcdj5wzp9h2xkq77"))))
+                "0w78jsynw5jh3l9r3ssjs8rza6givgrxzwnb5jwazcm8637d6gix"))))
     (properties `((upstream-name . "logistf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mice r-mgcv r-formula-tools))
+    (propagated-inputs (list r-mice r-mgcv r-matrix r-formula-tools))
     (home-page
      "https://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/firth-correction/")
     (synopsis "Firth's Bias-Reduced Logistic Regression")
@@ -10971,13 +10971,13 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.0.0")
+    (version "6.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lefko3" version))
               (sha256
                (base32
-                "0iqbdlcm57bdyrmhgy9ysmn2wyc9f86zwdj8159l18zv3ls7x51h"))))
+                "1gpmz6c26qzsgbp07y53ljbw795zaq17miqbba7cdqdspq6ir6kv"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

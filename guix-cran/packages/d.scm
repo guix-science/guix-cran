@@ -2943,6 +2943,26 @@ Custom models functions can be specified as long as they have a density
 function.")
     (license license:gpl2+)))
 
+(define-public r-dstabledist
+  (package
+    (name "r-dstabledist")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dstabledist" version))
+              (sha256
+               (base32
+                "07nvsv0xb6wv0yl7ia7sgm6ysi4w2714pjyqhbzl76mp4c7cx7cd"))))
+    (properties `((upstream-name . "dstabledist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stabledist r-rdpack))
+    (home-page "https://cran.r-project.org/package=dstabledist")
+    (synopsis "The Discrete Stable Distribution Functions")
+    (description
+     "Probability generating function, formulae for the probabilities (discrete
+density) and random generation for discrete stable random variables.")
+    (license license:gpl3)))
+
 (define-public r-dst
   (package
     (name "r-dst")
@@ -12423,13 +12443,13 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
 (define-public r-difnlr
   (package
     (name "r-difnlr")
-    (version "1.4.1")
+    (version "1.4.2-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "difNLR" version))
               (sha256
                (base32
-                "14q6qc27bsqax0ay6a17wfv2p1v5gn01snc71inwci85gr6a3ck6"))))
+                "1wrvsjbvvqwpv7cwc445n7l4ly8gvj8hyd66k02ib8r5854zn192"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

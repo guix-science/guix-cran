@@ -3231,13 +3231,13 @@ object from the graph package.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OralOpioids" version))
               (sha256
                (base32
-                "0bsbjfpv4wwb1nj6cpb1sqhd56lqziv0w7pgxjx8i02bhj676j7q"))))
+                "1i422my28dn9i2yxf7z856v9rw8g7xwabc9lw79y7ncb4f4qk0vz"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6171,16 +6171,16 @@ the R server side.  DataSHIELD administration tools are also provided.")
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.7.4")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "opa" version))
               (sha256
                (base32
-                "0jm4c3g0wv3vgq2cjv3s6n3l3a775ws6wc2ppjpr718lv88jw7vf"))))
+                "1dh7lzprcaz0j24npvmx7rr8yn8nlr5dp77zr4mmhwgv6912mv24"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/timbeechey/opa")
     (synopsis "An Implementation of Ordinal Pattern Analysis")
     (description
@@ -7000,13 +7000,13 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OneSampleMR" version))
               (sha256
                (base32
-                "1g2ia06450xy6mbkn13r9wzap1jxz1iw36jiy3699zm9azndd002"))))
+                "18d467bhym9mp41n65rp0wg75f40szc7w5804p3hh9xqw7c3q2qq"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-lmtest r-ivreg r-gmm r-formula))

@@ -15867,13 +15867,13 @@ cross-validation if ignored.")
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3spatial" version))
               (sha256
                (base32
-                "0fvfrnj6indmhbhs5z125kgiach56f1lr9hwzk5hhwj8d49mj4fl"))))
+                "0nwl97zirdnmhd322wxnwrscwwv5vym6nagmhj5wr80d4jwdmy45"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
