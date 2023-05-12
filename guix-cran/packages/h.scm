@@ -225,6 +225,31 @@ users to download data about public annotations, and create, retrieve, update,
 and delete their own annotations.")
     (license license:expat)))
 
+(define-public r-hypothesis
+  (package
+    (name "r-hypothesis")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hypothesis" version))
+              (sha256
+               (base32
+                "1s8c94fri033svgyhq9n9wx7cp4057xakv2c2vgf2dc58b3wb6hs"))))
+    (properties `((upstream-name . "hypothesis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue))
+    (home-page "https://cran.r-project.org/package=hypothesis")
+    (synopsis "Wrapper for 'hypothes.is'")
+    (description
+     "Add, share and manage annotations for Shiny applications and R Markdown
+documents via hypothes.is'.")
+    (license license:expat)))
+
 (define-public r-hyporf
   (package
     (name "r-hyporf")
@@ -287,17 +312,17 @@ model analysis.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.1.0")
+    (version "3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hypervolume" version))
               (sha256
                (base32
-                "1zyp7w2mc5icp928m3lgvil6lk5ck8877kxbgz0wiimsxm0sdgcp"))))
+                "0zkax7mawbd8sjdlvcg5nad5ayzxmhkv0r1mq76na4yv0k98iqqx"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
+    (propagated-inputs (list r-terra
+                             r-sp
                              r-rcpparmadillo
                              r-rcpp
                              r-raster
@@ -1301,6 +1326,28 @@ there are two link types among nodes: migration and influence (commuting).  More
 information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
 (2020) <doi:10.18637/jss.v094.i06>.")
     (license license:gpl2+)))
+
+(define-public r-hybridmicrobiomes
+  (package
+    (name "r-hybridmicrobiomes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HybridMicrobiomes" version))
+              (sha256
+               (base32
+                "0qn3pymx47a7r52mjj39n41aclmwmwspmwzlhjmdl84n8yy9c2fg"))))
+    (properties `((upstream-name . "HybridMicrobiomes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rgl r-phyloseq r-permanova
+                             r-compositions))
+    (home-page "https://cran.r-project.org/package=HybridMicrobiomes")
+    (synopsis "Analysis of Host-Associated Microbiomes from Hybrid Organisms")
+    (description
+     "This package provides tools to analyze and visualize the relationships between
+host-associated microbiomes of hybrid organisms and those of their progenitor
+species.")
+    (license license:gpl2)))
 
 (define-public r-hybriddesign
   (package
@@ -2816,35 +2863,6 @@ to handle two serious problems inadmissible solution and factor indeterminacy
     (description "Deprecated.")
     (license license:gpl2+)))
 
-(define-public r-hsdm
-  (package
-    (name "r-hsdm")
-    (version "1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "hSDM" version))
-              (sha256
-               (base32
-                "1jwqjzr0zpckzh2jpqh17v6ypq4mzn5khlv6p37y59zz8bh9mvxp"))))
-    (properties `((upstream-name . "hSDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://ecology.ghislainv.fr/hSDM")
-    (synopsis "Hierarchical Bayesian Species Distribution Models")
-    (description
-     "User-friendly and fast set of functions for estimating parameters of
-hierarchical Bayesian species distribution models (Latimer et al.  2006
-<doi:10.1890/04-0609>).  Such models allow interpreting the observations
-(occurrence and abundance of a species) as a result of several hierarchical
-processes including ecological processes (habitat suitability, spatial
-dependence and anthropogenic disturbance) and observation processes (species
-detectability).  Hierarchical species distribution models are essential for
-accurately characterizing the environmental response of species, predicting
-their probability of occurrence, and assessing uncertainty in the model results.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-hsdic
   (package
     (name "r-hsdic")
@@ -3410,13 +3428,13 @@ charts.")
 (define-public r-hpa
   (package
     (name "r-hpa")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hpa" version))
               (sha256
                (base32
-                "0vhpvvzwxbqv4qm9489rxs50pz0jcpd5dqpg5wi96i9npcymmqcb"))))
+                "18jjn02a34apd0iyq9h5ziqxqb0pcphprn9k8nnqyvjip8d6v3fz"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
@@ -4462,6 +4480,32 @@ algorithms are available.")
     (synopsis "Group Association Test using a Hidden Markov Model")
     (description
      "Perform association test between a group of variable and the outcome.")
+    (license license:gpl3)))
+
+(define-public r-hmtl
+  (package
+    (name "r-hmtl")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HMTL" version))
+              (sha256
+               (base32
+                "0pn192bikij1yqms6vnv1n313g4q21966314zvg1krrwisklny9r"))))
+    (properties `((upstream-name . "HMTL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc r-matrix))
+    (home-page "https://cran.r-project.org/package=HMTL")
+    (synopsis "Heterogeneous Multi-Task Feature Learning")
+    (description
+     "The heterogeneous multi-task feature learning is a data integration method to
+conduct joint feature selection across multiple related data sets with different
+distributions.  The algorithm can combine different types of learning tasks,
+including linear regression, Huber regression, adaptive Huber, and logistic
+regression.  The modified version of Bayesian Information Criterion (BIC) is
+produced to measure the model performance.  Package is based on Yuan Zhong, Wei
+Xu, and Xin Gao (2022)
+<https://www.fields.utoronto.ca/talk-media/1/53/65/slides.pdf>.")
     (license license:gpl3)))
 
 (define-public r-hmstimer
@@ -8112,13 +8156,13 @@ cheese, lettuce, and tomatoes.")
 (define-public r-hermiter
   (package
     (name "r-hermiter")
-    (version "2.2.0")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hermiter" version))
               (sha256
                (base32
-                "0cfww9klf6iziac6p8psjbjixq1p85bsb2fl8nldhjz9psi9fk5x"))))
+                "190arngwpiankyxyd47i9kagq4gbzj023y8qybd81bm4r9jn3ax6"))))
     (properties `((upstream-name . "hermiter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-bh))
@@ -8314,6 +8358,37 @@ ellipses (in two dimensions) and ellipsoids (in three dimensions).  The related
 candisc package provides visualizations in a reduced-rank canonical discriminant
 space when there are more than a few response variables.")
     (license license:gpl2+)))
+
+(define-public r-hemispher
+  (package
+    (name "r-hemispher")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hemispheR" version))
+              (sha256
+               (base32
+                "14pfzd99g4vq3lcfqhg3c44cm490c6692q5xvxh2vlby8fvi5y9s"))))
+    (properties `((upstream-name . "hemispheR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sp
+                             r-scales
+                             r-rlang
+                             r-raster
+                             r-plotrix
+                             r-magrittr
+                             r-jpeg
+                             r-dplyr
+                             r-autothresholdr))
+    (home-page "https://cran.r-project.org/package=hemispheR")
+    (synopsis "Processing Hemispherical Canopy Images")
+    (description
+     "Import and classify canopy fish-eye images, estimate angular gap fraction and
+derive canopy attributes like leaf area index and openness.  Additional
+information is provided in the study by Chianucci F., Macek M. (2023)
+<doi:10.1016/j.agrformet.2023.109470>.")
+    (license license:expat)))
 
 (define-public r-hemdag
   (package
@@ -8925,15 +9000,16 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "healthyR.data" version))
               (sha256
                (base32
-                "0hm3jp577bjzdv28dxxnz57yybhbfglwh9vgmrc4sz06y77gqbvc"))))
+                "1bbxy7x7q1jn5l48li3pfiqisxrfw87nql20v5c2f06m67mn2mq8"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-janitor r-dplyr))
     (home-page "https://github.com/spsanderson/healthyR.data")
     (synopsis "Data Only Package to 'healthyR'")
     (description
@@ -12118,16 +12194,16 @@ generators for the sample size estimations.")
 (define-public r-h2otools
   (package
     (name "r-h2otools")
-    (version "0.1")
+    (version "0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h2otools" version))
               (sha256
                (base32
-                "1fflk7zzvgxzs1cadpw519p41fcr8rinhjzyqkllf9lnv6hpq3yd"))))
+                "105zc76yi03ib5l6366an472hnf3m0pk1mwghwn8pwi91pfybzzr"))))
     (properties `((upstream-name . "h2otools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-h2o r-curl))
+    (propagated-inputs (list r-h2o r-curl r-boot))
     (home-page "https://github.com/haghish/h2otools")
     (synopsis "Machine Learning Model Evaluation for 'h2o' Package")
     (description

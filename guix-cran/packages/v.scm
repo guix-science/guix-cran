@@ -612,23 +612,24 @@ groups.")
 (define-public r-vscc
   (package
     (name "r-vscc")
-    (version "0.4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vscc" version))
               (sha256
                (base32
-                "0ym9wy661d6m2a9drix5jb6r2sm6kqs314yc46qgq7qmdscdw52b"))))
+                "0g2zhmysys4y5hpncm0mapv94chgrc5w5vvicbb4ic89nl31j3gm"))))
     (properties `((upstream-name . "vscc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-teigen r-mclust))
+    (propagated-inputs (list r-teigen r-mclust r-manlymix))
     (home-page "https://cran.r-project.org/package=vscc")
     (synopsis "Variable Selection for Clustering and Classification")
     (description
      "This package performs variable selection/feature reduction under a clustering or
 classification framework.  In particular, it can be used in an automated fashion
 using mixture model-based methods ('teigen and mclust are currently supported).
-See Andrews and McNicholas (2014) <doi:10.1007/s00357-013-9139-2>.")
+Can account for mixtures of non-Gaussian distributions via Manly transform (via
+ManlyMix').  See Andrews and McNicholas (2014) <doi:10.1007/s00357-013-9139-2>.")
     (license license:gpl2+)))
 
 (define-public r-vrtest
@@ -2016,13 +2017,13 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.8")
+    (version "1.3.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visvow" version))
               (sha256
                (base32
-                "1nbhp1cmlk49p2fx1z21w5smxd11vhsly3rcswlqwkldn298692b"))))
+                "08cbh2hqvxmd1j1y6p3aigmj6f6fdpw3ffda09j3himmfnxaw1y3"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -2046,6 +2047,7 @@ computation of evaluation criteria.")
                              r-ggplot2
                              r-ggdendro
                              r-formattable
+                             r-effectsize
                              r-dt
                              r-dplyr
                              r-cairo))
@@ -4552,13 +4554,13 @@ htmlwidget'.")
 (define-public r-vedicdatetime
   (package
     (name "r-vedicdatetime")
-    (version "0.1.2")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VedicDateTime" version))
               (sha256
                (base32
-                "0xhjw29zn2nmm6xq6s5j6ff9hfqh66q3zclga1w29vpcj7l7jb80"))))
+                "0rympbzj1iaksh512frb305gsk531zbwqj8cgaji1c1gikg1jaj7"))))
     (properties `((upstream-name . "VedicDateTime")))
     (build-system r-build-system)
     (propagated-inputs (list r-swephr))
@@ -4570,11 +4572,8 @@ htmlwidget'.")
 functionalities to facilitate conversion between Gregorian and Vedic calendar
 systems, and helpful in examining its impact in the time series analysis domain.
  The background is described in Neeraj Dhanraj Bokde et al. (2021)
-<doi:10.48550/arXiv.2111.03441>, Karanam L. Ramakumar et al. (2011)
-<https:archive.org/details/PanchangamCalculations>, K. S. Charak et al. (2012,
-ISBN:8190100807), Satish BD et al. (2013)
-<https:github.com/webresh/drik-panchanga>.")
-    (license license:gpl2+)))
+<doi:10.48550/arXiv.2111.03441>.")
+    (license license:gpl3)))
 
 (define-public r-vectorwavelet
   (package
@@ -4764,37 +4763,6 @@ distribution.  About what distribution of selected model is and how it work
 please see Qin,Y.and Wang,L. (2021) \"Visualization of Model Selection
 Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
     (license license:gpl2+)))
-
-(define-public r-vdra
-  (package
-    (name "r-vdra")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "vdra" version))
-              (sha256
-               (base32
-                "1ldl3wm55a5ywc5398lzky6l6x5a9djxwrqnrd570fg4iq6d30l1"))))
-    (properties `((upstream-name . "vdra")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=vdra")
-    (synopsis "Vertical Distributed Regression Analysis")
-    (description
-     "This package implements linear, logistic, and Cox regression on vertically
-partitioned data across several data partners.  Data is not shared between data
-partners or the analysis center and the computations can be considered secure.
-Three different protocols are implemented.  2-Party: two data partners which
-communicate directly without an intermediate analysis center; 2T-Party: two data
-partners communicate indirectly via an analysis center, and KT-Party: two or
-more data partners plus an analysis center are all allowed to communicate
-directly.  2-Party and 2^T-Party use a form of secure multiplication as found in
-Karr, et.  al. (2009) \"Privacy-Preserving Analysis of Vertically Partitioned
-Data Using Secure Matrix Products\" and Slavkovic et.  al. (2007) \"Secure
-Logistic Regression of Horizontally and Vertically Partitioned Distributed
-Databases\" <doi:10.1109/ICDMW.2007.114>.  Full details can be found in Samizo
-(In preparation).")
-    (license license:gpl3)))
 
 (define-public r-vdjgermlines
   (package
@@ -5297,6 +5265,29 @@ allows for secure storage and retrieval of secrets over a network, such as
 tokens, passwords and certificates.  Authentication with vault is supported
 through several backends including user name/password and authentication via
 GitHub'.")
+    (license license:expat)))
+
+(define-public r-vatcheckapi
+  (package
+    (name "r-vatcheckapi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vatcheckapi" version))
+              (sha256
+               (base32
+                "1jmfd6qksvw1dnlp4dyb33mr7y9phq9yw0k9qjla0z1jqc0gsnps"))))
+    (properties `((upstream-name . "vatcheckapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://vatcheckapi.com")
+    (synopsis "Client for the 'vatcheckapi.com' VAT Validation API")
+    (description
+     "An R client for the vatcheckapi.com VAT number validation API. The API requires
+registration of an API key.  Basic features are free, some require a paid
+subscription.  You can find the full API documentation at
+<https://vatcheckapi.com/docs> .")
     (license license:expat)))
 
 (define-public r-vasicekreg

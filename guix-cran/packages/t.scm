@@ -1221,6 +1221,39 @@ objective calibration in regional water balance modelling: case study in 320
 Austrian catchments, Hydrological Processes, 21, 435-446.")
     (license license:gpl2+)))
 
+(define-public r-tutorial-helpers
+  (package
+    (name "r-tutorial-helpers")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tutorial.helpers" version))
+              (sha256
+               (base32
+                "1k15si6qzilrf86v5al4wk22mbx4sbr3qhd05zqpf405c8haqpb6"))))
+    (properties `((upstream-name . "tutorial.helpers")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-readr
+                             r-purrr
+                             r-parsermd
+                             r-learnr
+                             r-gridextra
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ppbds.github.io/tutorial.helpers/")
+    (synopsis "Helper Functions for Creating Tutorials")
+    (description
+     "Helper functions for creating, editing, and testing tutorials created with the
+learnr package.  Provides a simple method for allowing students to download
+their answers to tutorial questions.  For examples of its use, see the
+r4ds.tutorials and all.primer.tutorials packages.")
+    (license license:expat)))
+
 (define-public r-tushare
   (package
     (name "r-tushare")
@@ -3925,13 +3958,13 @@ Virta and Taskinen (2021) <doi:10.18637/jss.v098.i15>.")
 (define-public r-tsbox
   (package
     (name "r-tsbox")
-    (version "0.4")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tsbox" version))
               (sha256
                (base32
-                "08h49y43h0cfa20x1jj6ywm58w7anxxpxnf98i7q1q566pv97jp4"))))
+                "1amv1rwa78phrgi5njq66kz42wkk0n1b6wzg232m4znq2jj2b6s7"))))
     (properties `((upstream-name . "tsbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-anytime))
@@ -5037,27 +5070,6 @@ distribution for individual parameters of the fitted distribution.  Allows for
 computation of LOO and WAIC information criteria (Vehtari A, Gelman A, Gabry J
 (2017) <doi:10.1007/s11222-016-9696-4>) as well as Bayesian R-squared (Gelman A,
 Goodrich B, Gabry J, and Vehtari A (2018) <doi:10.1080/00031305.2018.1549100>).")
-    (license license:gpl3)))
-
-(define-public r-tricolore
-  (package
-    (name "r-tricolore")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tricolore" version))
-              (sha256
-               (base32
-                "0pxahddc3dah4n4xk4i0dkiwvh4wf03gcx8q3nfrsk07zzap1zh1"))))
-    (properties `((upstream-name . "tricolore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-ggtern r-ggplot2 r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tricolore")
-    (synopsis "Flexible Color Scale for Ternary Compositions")
-    (description
-     "This package provides a flexible color scale for ternary compositions with
-options for discretization, centering and scaling.")
     (license license:gpl3)))
 
 (define-public r-tribe
@@ -8968,38 +8980,6 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 <doi:10.1177/1948550617697177>.")
     (license license:gpl3)))
 
-(define-public r-tosr
-  (package
-    (name "r-tosr")
-    (version "0.1.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tosr" version))
-              (sha256
-               (base32
-                "1jv5bh1b7x242rb97i1w6x0w76cjyva4p6w5xr5qazgz7lfm6ysb"))))
-    (properties `((upstream-name . "tosr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rebus
-                             r-magrittr
-                             r-igraph
-                             r-dplyr
-                             r-cinna
-                             r-bibliometrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/coreofscience/tosr")
-    (synopsis "Create the Tree of Science from WoS and Scopus")
-    (description
-     "The goal of tosr is to create the Tree of Science from Web of Science (WoS) and
-Scopus data.  It can read files from both sources at the same time.  More
-information can be found in Valencia-HernÃ¡ndez (2020)
-<https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
-    (license license:expat)))
-
 (define-public r-tosi
   (package
     (name "r-tosi")
@@ -10278,13 +10258,13 @@ functions for the simulation of several kinds of multistage designs.")
 (define-public r-tmsens
   (package
     (name "r-tmsens")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tmsens" version))
               (sha256
                (base32
-                "0ifgzkmwdkiq6x0y0n1qsf10ncir5cdfcb186pg3w6lpkh34v3mm"))))
+                "0xdcmz2mqfb7agjgmkv4kgschsdlxqsjv5z30z8bpqxbi45x9ry0"))))
     (properties `((upstream-name . "tmsens")))
     (build-system r-build-system)
     (home-page "https://github.com/dea-hazewinkel/tmsens")
@@ -12930,6 +12910,47 @@ perform spatial analysis on the routes and stops.  Please see the GTFS
 documentation here for more detail: <https://gtfs.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-tidytlg
+  (package
+    (name "r-tidytlg")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidytlg" version))
+              (sha256
+               (base32
+                "13008i7n1clqfpxchf8bz89k2i7bclgiyzab0ibvhxf402fs0ycc"))))
+    (properties `((upstream-name . "tidytlg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rstudioapi
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-png
+                             r-magrittr
+                             r-huxtable
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-crayon
+                             r-cellranger
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pharmaverse/tidytlg")
+    (synopsis "Create TLGs using the 'tidyverse'")
+    (description
+     "Generate tables, listings, and graphs (TLG) using tidyverse.  Tables can be
+created functionally, using a standard TLG process, or by specifying table and
+column metadata to create generic analysis summaries.  The envsetup package can
+also be leveraged to create environments for table creation.")
+    (license license:asl2.0)))
+
 (define-public r-tidytidbits
   (package
     (name "r-tidytidbits")
@@ -13620,13 +13641,13 @@ hyper_array().")
 (define-public r-tidymv
   (package
     (name "r-tidymv")
-    (version "3.3.2")
+    (version "3.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidymv" version))
               (sha256
                (base32
-                "15qs95cw2lfzp1apl398r0iw630ad2i88pz3ap29wbn8byixj5vi"))))
+                "0jl6lhi47nz8a7crlqmrqm0cnj4gx3l06gxjvdw8p52y706a478a"))))
     (properties `((upstream-name . "tidymv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13634,6 +13655,7 @@ hyper_array().")
                              r-rlang
                              r-mgcv
                              r-magrittr
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -14013,6 +14035,40 @@ sheets retrieved from Gapminder data web tools.  It will therefore contribute to
 reduce the time used in data cleaning of Gapminder indicator data sheets as they
 are very messy.")
     (license license:gpl2)))
+
+(define-public r-tidygam
+  (package
+    (name "r-tidygam")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidygam" version))
+              (sha256
+               (base32
+                "1m2lzmbvxflnyqf7m0waq0svgwhqh1snc2zn3n8wjh70lkzclpkx"))))
+    (properties `((upstream-name . "tidygam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-mgcv
+                             r-magrittr
+                             r-insight
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stefanocoretta/tidygam")
+    (synopsis "Tidy Prediction and Plotting of Generalised Additive Models")
+    (description
+     "This package provides functions that compute predictions from Generalised
+Additive Models (GAMs) fitted with mgcv and return them as a tibble.  These can
+be plotted with a generic plot()-method that uses ggplot2 or plotted as any
+other data frame.  The main function is predict_gam().")
+    (license license:expat)))
 
 (define-public r-tidyft
   (package
@@ -18602,16 +18658,17 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.1.3")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Ternary" version))
               (sha256
                (base32
-                "175nw6j6z2ij0mdaydm7jjch2g2lkjy6c2dfjiwm7f7s57ryxw0q"))))
+                "0hjn5bagr0sgggh614ls97vm35wfi99cfx23gc9cjysf7dbk5rl8"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridislite r-sp r-shiny))
+    (propagated-inputs (list r-viridislite r-sp r-shiny r-rcpphungarian
+                             r-plottools))
     (native-inputs (list r-knitr))
     (home-page "https://ms609.github.io/Ternary/")
     (synopsis "Create Ternary and Holdridge Plots")
@@ -18791,13 +18848,13 @@ Details of the methods are described in Gerard and Hoff (2015)
 (define-public r-tensorts
   (package
     (name "r-tensorts")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tensorTS" version))
               (sha256
                (base32
-                "0nbks7djd4wggn33f39zc2zacz6z4dpvgk9fj9a90kcmyiw0rckl"))))
+                "0qn6h3icgcg7ipyjk0cc9pbc97d58m56f1w8ijydms42r2xcnipg"))))
     (properties `((upstream-name . "tensorTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor
@@ -20619,63 +20676,6 @@ method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 <doi:10.1007/s11336-015-9472-y>.")
     (license license:gpl2)))
 
-(define-public r-tciu
-  (package
-    (name "r-tciu")
-    (version "1.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TCIU" version))
-              (sha256
-               (base32
-                "1n08jvc60gng3ziisrvgl9kfi55l6mh7bbnwp5mbnnqh0mkdhfv0"))))
-    (properties `((upstream-name . "TCIU")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-spatstat-geom
-                             r-spatstat-explore
-                             r-scales
-                             r-rrcov
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-pracma
-                             r-plotly
-                             r-multiwayregression
-                             r-icsnp
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-geometry
-                             r-forecast
-                             r-foreach
-                             r-fmri
-                             r-fancycut
-                             r-extradistr
-                             r-dt
-                             r-dplyr
-                             r-doparallel
-                             r-cubature))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/SOCR/TCIU")
-    (synopsis
-     "Spacekime Analytics, Time Complexity and Inferential Uncertainty")
-    (description
-     "Provide the core functionality to transform longitudinal data to complex-time
-(kime) data using analytic and numerical techniques, visualize the original
-time-series and reconstructed kime-surfaces, perform model based (e.g.,
-tensor-linear regression) and model-free classification and clustering methods
-in the book Dinov, ID and Velev, MV. (2021) \"Data Science: Time Complexity,
-Inferential Uncertainty, and Spacekime Analytics\", De Gruyter STEM Series, ISBN
-978-3-11-069780-3. <https://www.degruyter.com/view/title/576646>.  The package
-includes 18 core functions which can be separated into three groups.  1) draw
-longitudinal data, such as fMRI time-series, and forecast or transform the
-time-series data.  2) simulate real-valued time-series data, e.g., fMRI
-time-courses, detect the activated areas, report the corresponding p-values, and
-visualize the p-values in the 3D brain space.  3) Laplace transform and
-kimesurface reconstructions of the fMRI data.")
-    (license license:gpl3)))
-
 (define-public r-tciapathfinder
   (package
     (name "r-tciapathfinder")
@@ -21549,6 +21549,30 @@ O(n^2) time following the algorithm of Heller and Heller (2016)
 asymptotic distribution of t* as described by Nandy, Weihs, and Drton (2016)
 <arXiv:1602.04387>.")
     (license license:gpl3+)))
+
+(define-public r-tauprocess
+  (package
+    (name "r-tauprocess")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tauProcess" version))
+              (sha256
+               (base32
+                "17i3q7gdhhchcyiiv9jf27x4ig0hzsbfh1lvqhmndpgv9fjmrzjz"))))
+    (properties `((upstream-name . "tauProcess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://github.com/s07308/tauProcess")
+    (synopsis "Tau Measure with Right-Censored Data")
+    (description
+     "This package provides a clinically meaningful measure of treatment effect based
+on Kendall's tau with right-censored data along with corresponding inference
+procedure.  The plot of tau process is provided as a graphical tool for
+monitoring the progression.  It complements another summary measures under
+nonproportional hazards.  For details, please refer to Tai, Wang and Wells
+(2022) <doi:10.48550/arXiv.2207.14445>.")
+    (license license:expat)))
 
 (define-public r-tau
   (package
@@ -22828,13 +22852,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-tabnet
   (package
     (name "r-tabnet")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tabnet" version))
               (sha256
                (base32
-                "04m8bg1glnhxb2pjcxnwlcwzbxvk0bskz00dkd4lyvgsq74xwmvi"))))
+                "1wxarcl68s4v88b1x2qw4vc4ybm66zm10qcinwk892n3srs7isfc"))))
     (properties `((upstream-name . "tabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -22850,7 +22874,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
     (home-page "https://github.com/mlverse/tabnet")
     (synopsis "Fit 'TabNet' Models for Classification and Regression")
     (description
-     "This package implements the TabNet model by Sercan O. Arik et al (2019)
+     "This package implements the TabNet model by Sercan O. Arik et al. (2019)
 <arXiv:1908.07442> and provides a consistent interface for fitting and creating
 predictions.  It's also fully compatible with the tidymodels ecosystem.")
     (license license:expat)))
@@ -22901,13 +22925,13 @@ data into machine-readable LongForm Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tablet" version))
               (sha256
                (base32
-                "0jqk7gfsa3y0wd2crljlfxskghm0xbpll1nfcr28wawhqvv45xgk"))))
+                "1bsifjz2wdz416ws2iy203ipf1bcqw3r6d2fh124ha0hb1gvyikq"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet
@@ -23366,13 +23390,13 @@ to facilitate some common operations on a subset of the data.")
 (define-public r-tablaxlsx
   (package
     (name "r-tablaxlsx")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tablaxlsx" version))
               (sha256
                (base32
-                "19yg8m264f1hjsi8b7zxjpbvlaz2jrxj2bd9nv95g52dvlysg4nk"))))
+                "1cwjqxsqspyrv19wx1fvqk2x2jc3vv6h7k8flpr74a5la1jmxsbd"))))
     (properties `((upstream-name . "tablaxlsx")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx))

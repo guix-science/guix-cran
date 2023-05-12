@@ -1658,27 +1658,6 @@ available.  We're also providing the download function to retrieve the
 calculated distance matrices from figshare <https://figshare.com>.")
     (license license:expat)))
 
-(define-public r-worms
-  (package
-    (name "r-worms")
-    (version "0.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "worms" version))
-              (sha256
-               (base32
-                "183chjdi5qvsmdznvc9igcxaz769a37rwh5nzgvf5zf012a85wir"))))
-    (properties `((upstream-name . "worms")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-httr))
-    (home-page "https://cran.r-project.org/package=worms")
-    (synopsis
-     "Retriving Aphia Information from World Register of Marine Species")
-    (description
-     "Retrieves taxonomic information from <http://www.marinespecies.org> using WoRMS
-RESTful Webservice.  Utility functions aim at taxonomic consistency.")
-    (license (license:fsdg-compatible "GNU Affero General Public License"))))
-
 (define-public r-worldriskpollr
   (package
     (name "r-worldriskpollr")
@@ -4702,13 +4681,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "0.14.0")
+    (version "0.14.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeightIt" version))
               (sha256
                (base32
-                "1dh8l1s52z7ca4dkhm1hnp1w5hmagsgsipxmk9xqi6ynfaxrvw85"))))
+                "181qiwj137wh479kpwbrmflwza6n2y2ijd94bc3blfhvaqskld0d"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4802,16 +4781,16 @@ example-specific cost values).")
 (define-public r-weightedrank
   (package
     (name "r-weightedrank")
-    (version "0.1.6")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "weightedRank" version))
               (sha256
                (base32
-                "0nl0qynifxj3ndalliffj5mlyfcnmgmjz8hin9mjiras16fj7aas"))))
+                "0sz2d482cjp0z2wxlqjq745xz3ap6h7v03l19q4y99p86909i0v4"))))
     (properties `((upstream-name . "weightedRank")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
+    (propagated-inputs (list r-sensitivitymv r-mvtnorm))
     (home-page "https://cran.r-project.org/package=weightedRank")
     (synopsis "Sensitivity Analysis Using Weighted Rank Statistics")
     (description
@@ -4819,7 +4798,7 @@ example-specific cost values).")
 observational studies with I blocks of size J; see Rosenbaum (2018)
 <doi:10.1214/18-AOAS1153>.  The package can perform adaptive inference in block
 designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main functions
-are wgtRank() and wgtRanktt().")
+are wgtRank() and wgtRanktt() and ef2C().")
     (license license:gpl2)))
 
 (define-public r-weightedgcm
@@ -5439,13 +5418,13 @@ statistic for the object of class htest'.")
 (define-public r-webpower
   (package
     (name "r-webpower")
-    (version "0.9.0")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebPower" version))
               (sha256
                (base32
-                "1xzl1qg7953ws6kfm7dny3g648n034ynizg43ph4pyj2ky3mck0g"))))
+                "1g4hwgclxv1ykqkszmlizp3mcpyihpkv1v6n691mkcy7v4cxj2pv"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan r-dplyr))
@@ -6063,6 +6042,29 @@ attributed to Pervot et al.(1993) <doi:10.1016/0034-4257(93)90053-Z>.  The
 authors are grateful to SAC, ISRO, Ahmedabad for providing financial support to
 Dr. Prashant K Srivastava to conduct this research work.")
     (license license:gpl3+)))
+
+(define-public r-wcluster
+  (package
+    (name "r-wcluster")
+    (version "1.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WCluster" version))
+              (sha256
+               (base32
+                "1crzhg0kldmyamxvj5wf3ik9x36sm1nw9kd6jgpnb0jdqlx2pd2s"))))
+    (properties `((upstream-name . "WCluster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-datanugget r-cluster))
+    (home-page "https://cran.r-project.org/package=WCluster")
+    (synopsis "Clustering and PCA with Weights, and Data Nuggets Clustering")
+    (description
+     "K-means clustering, hierarchical clustering, and PCA with observational weights
+and/or variable weights.  It also includes the corresponding functions for data
+nuggets which serve as representative samples of large datasets.  Cherasia et
+al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
+<doi:10.1002/9780470317129>.")
+    (license license:gpl2)))
 
 (define-public r-wce
   (package

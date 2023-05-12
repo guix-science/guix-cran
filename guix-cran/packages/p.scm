@@ -2918,6 +2918,40 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 <DOI:10.1080/01621459.2016.1260466>.")
     (license license:gpl2+)))
 
+(define-public r-pstrata
+  (package
+    (name "r-pstrata")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PStrata" version))
+              (sha256
+               (base32
+                "0qdfww7csm8gri47gyrrn23q1a2z0gyfs0ywday6lvlmkyjahdzk"))))
+    (properties `((upstream-name . "PStrata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rstan
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=PStrata")
+    (synopsis
+     "Principal Stratification Analysis with Post-Randomization Intervention")
+    (description
+     "Estimating causal effects in the presence of post-treatment confounding using
+principal stratification.  PStrata allows for customized monotonicity
+assumptions and exclusion restriction assumptions, with automatic full Bayesian
+inference supported by Stan'.  The main function to use in this package is
+PStrata(), which provides posterior estimates of principal causal effect with
+uncertainty quantification.  Visualization tools are also provided for diagnosis
+and interpretation.  See Liu and Li (2023) <arXiv:2304.02740> for details.")
+    (license license:gpl2+)))
+
 (define-public r-pstest
   (package
     (name "r-pstest")
@@ -3765,6 +3799,28 @@ In case of equal sample sizes, pseudo-ranks and mid-ranks are equal.  When used
 for inference mid-ranks may lead to paradoxical results.  Pseudo-ranks are in
 general not affected by such a problem <doi:10.18637/jss.v095.c01>.")
     (license license:gpl3)))
+
+(define-public r-pseudohouseholds
+  (package
+    (name "r-pseudohouseholds")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pseudohouseholds" version))
+              (sha256
+               (base32
+                "0gliz6wv2da9sgyqd38sa1jaqmqii0gpqsg2ak9c91v24fa0qf5l"))))
+    (properties `((upstream-name . "pseudohouseholds")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-furrr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chris31415926535/pseudohouseholds")
+    (synopsis "Generate Pseudohouseholds on Road Networks in Regions")
+    (description
+     "Given an arbitrary set of spatial regions and road networks, generate a set of
+representative points, or pseudohouseholds, that can be used for travel burden
+analysis.  Parallel processing is supported.")
+    (license license:expat)))
 
 (define-public r-pseudo
   (package
@@ -7459,13 +7515,13 @@ be rendered in knitr documents.")
 (define-public r-prindt
   (package
     (name "r-prindt")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PrInDT" version))
               (sha256
                (base32
-                "1npbj95qyx2jp9g21ss6fhkzl5y9vkr8h6bkzs9hi9sj7fab9yay"))))
+                "0z03d87bnp2cf2k4m25il2wqglj53g5mdz7wpjzvsklnzsmxdbmy"))))
     (properties `((upstream-name . "PrInDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-splitstackshape r-party r-mass))
@@ -7500,13 +7556,13 @@ prediction, and ranking of predictors in ensembles\" <arXiv:2108.05129>.")
 (define-public r-primme
   (package
     (name "r-primme")
-    (version "3.2-3")
+    (version "3.2-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PRIMME" version))
               (sha256
                (base32
-                "019pcjqygn8v6nwhqrngymi1bkaj190jqvl3jidxx928frnn0b05"))))
+                "18xb9sznbahw13zy2x8qzl7qalk5md5vpjyfnq6y8a93pb9arzfv"))))
     (properties `((upstream-name . "PRIMME")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -8156,6 +8212,42 @@ Prettify addins also modify the code, e.g. trailing semi-colons are added to
 JavaScript code when they are missing.")
     (license license:gpl3)))
 
+(define-public r-pressure
+  (package
+    (name "r-pressure")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pressuRe" version))
+              (sha256
+               (base32
+                "0mr07nh8c411spc2ckl2gcdyfa1zivhypybbp4j8ip0hva3gydw6"))))
+    (properties `((upstream-name . "pressuRe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-stringr
+                             r-sf
+                             r-scales
+                             r-readxl
+                             r-pracma
+                             r-magrittr
+                             r-magick
+                             r-ggplot2
+                             r-ggmap
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=pressuRe")
+    (synopsis "Imports, Processes, and Visualizes Biomechanical Pressure Data")
+    (description
+     "Allows biomechanical pressure data from a range of systems to be imported and
+processed in a reproducible manner.  Automatic and manual tools are included to
+let the user define regions (masks) to be analyzed.  Also includes functions for
+visualizing and animating pressure data.  Example methods are described in Shi
+et al., (2022) <doi:10.1038/s41598-022-19814-0>, Lee et al., (2014)
+<doi:10.1186/1757-1146-7-18>, van der Zward et al., (2014)
+<doi:10.1186/1757-1146-7-20>, and Najafi et al., (2010)
+<doi:10.1016/j.gaitpost.2009.09.003>.")
+    (license license:expat)))
+
 (define-public r-presspurt
   (package
     (name "r-presspurt")
@@ -8373,13 +8465,13 @@ curves along with the associated AUC (area under the curve).")
 (define-public r-preregr
   (package
     (name "r-preregr")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "preregr" version))
               (sha256
                (base32
-                "1z5w2bi6fvd6dxwyp5607acl0v5idj8n1r4v28iyipk6jzxv4awi"))))
+                "011fplx40gnakallq24ak9sqvlxncpmihg474wplzppyv103pa50"))))
     (properties `((upstream-name . "preregr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rmdpartials r-jsonlite r-cli))
@@ -15195,13 +15287,13 @@ Poisson distribution.  The details of the method are explained in Amatya et al.
 (define-public r-pointres
   (package
     (name "r-pointres")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pointRes" version))
               (sha256
                (base32
-                "0j5flvjdg0iypybbimxphi8y4f5d7xxk6q4cqiqr7f52y9p9bz79"))))
+                "1a3yj94rg16fbc47ahwdq17i8pganm6vg6xfl3b0glybw5f2hpkj"))))
     (properties `((upstream-name . "pointRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tripler r-plyr r-ggplot2 r-dplr r-desctools))
@@ -16249,13 +16341,13 @@ learning to them on your own.")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmetar" version))
               (sha256
                (base32
-                "01ygxazc4j9w9dhmqfjgmjab4wws1n01xqikadxlj1i2i44cl1qp"))))
+                "03jh7x1nj3fgr9rl9f886sml2a14m7jlwad7vm1sw0pc7dqd04cd"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17654,45 +17746,6 @@ graphic using base plot command if it is printed.")
 causal inference modeling process.  Supplements the bartCause package.")
     (license license:expat)))
 
-(define-public r-plot3logit
-  (package
-    (name "r-plot3logit")
-    (version "3.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "plot3logit" version))
-              (sha256
-               (base32
-                "0p12xm7i9319h3rx732vh49gzz3f817mdwkp4y8ha6f7pf2fjwz8"))))
-    (properties `((upstream-name . "plot3logit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-ternary
-                             r-stringr
-                             r-rdpack
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-ggtern
-                             r-ggplot2
-                             r-generics
-                             r-forcats
-                             r-ellipse
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.flaviosanti.it/software/plot3logit/")
-    (synopsis "Ternary Plots for Trinomial Regression Models")
-    (description
-     "An implementation of the ternary plot for interpreting regression coefficients
-of trinomial regression models, as proposed in Santi, Dickson and Espa (2019)
-<doi:10.1080/00031305.2018.1442368>.  Ternary plots can be drawn using either
-ggtern package (based on ggplot2') or Ternary package (based on standard
-graphics).  The package and its features are illustrated in Santi, Dickson, Espa
-and Giuliani (2022) <doi:10.18637/jss.v103.c01>.")
-    (license license:gpl2+)))
-
 (define-public r-plot3drgl
   (package
     (name "r-plot3drgl")
@@ -18702,13 +18755,13 @@ with functions from the quantreg package.")
 (define-public r-planttracker
   (package
     (name "r-planttracker")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "plantTracker" version))
               (sha256
                (base32
-                "14q63fvp5r3hh36ydyj8cdhmmfirc7xzmx418jl2cljrn9c72rwl"))))
+                "0qn07pb84j110zrml24gwb27za4wdxn0a4yfhc0c1174fipl6az1"))))
     (properties `((upstream-name . "plantTracker")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-matrix r-igraph))
@@ -21860,19 +21913,20 @@ reactive-transport, and inverse geochemical calculations.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photosynthesis" version))
               (sha256
                (base32
-                "13wg8j0yp3jp76qbqh5cl1q0k8aj7bfxqhv6d07i28lnb2183yf9"))))
+                "0ahbfcbdrvh9x09x8fl4gh4lz2qk58kn8068ivsgnjmv6ais3ipd"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
                              r-tealeaves
                              r-stringr
                              r-rlang
+                             r-readr
                              r-purrr
                              r-progress
                              r-nlme
@@ -22975,13 +23029,13 @@ quantile estimates, mean estimates, or any statistical function of interest.")
 (define-public r-pheindicatormethods
   (package
     (name "r-pheindicatormethods")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PHEindicatormethods" version))
               (sha256
                (base32
-                "0amjkkilhgpk6mmwqslj3756pd4mfr2lyq78732pgns31bc9kv3d"))))
+                "0ypvzg7y7wh167pzblvjjah911kj29w2fr8ycqk03wf8ch9fay1c"))))
     (properties `((upstream-name . "PHEindicatormethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -25398,13 +25452,13 @@ analysis.")
 (define-public r-peptides
   (package
     (name "r-peptides")
-    (version "2.4.4")
+    (version "2.4.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Peptides" version))
               (sha256
                (base32
-                "1yppbcsa0rb74mmspb6f6c9slcjy5x6c484dk9gy48sg33chp1zw"))))
+                "1ld2xgrc6az2fqj4ib52z3kd6500mxyqcm5v9b5dz15pjbqgjgf1"))))
     (properties `((upstream-name . "Peptides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -25785,33 +25839,6 @@ trust-region algorithm with integrated automatic multiple tuning parameter
 selection (Geminiani et al., 2021 <doi:10.1007/s11336-021-09751-8>).  Available
 penalties include lasso, adaptive lasso, scad, mcp, and ridge.")
     (license license:gpl3)))
-
-(define-public r-pendvine
-  (package
-    (name "r-pendvine")
-    (version "0.2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "penDvine" version))
-              (sha256
-               (base32
-                "0znpvsr7zy2wgy7znha1qiajcrz1z6mypi3f5hpims33z7npa7dl"))))
-    (properties `((upstream-name . "penDvine")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tsp
-                             r-quadprog
-                             r-matrix
-                             r-latticeextra
-                             r-lattice
-                             r-foreach
-                             r-fda
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=penDvine")
-    (synopsis
-     "Flexible Pair-Copula Estimation in D-Vines using Bivariate Penalized Splines")
-    (description
-     "Flexible Pair-Copula Estimation in D-vines using Bivariate Penalized Splines.")
-    (license license:gpl2+)))
 
 (define-public r-pendensity
   (package
@@ -26418,13 +26445,13 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.1")
+    (version "0.2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedquant" version))
               (sha256
                (base32
-                "0kg29nsywrx8xczk6zw2xl83f5g0wxf6iwkhgawq1am3anr64ck6"))))
+                "1b7a9y7w3wa8v0wjg3n30ddf228fb17fgijcm680qqbh3sqrrl7k"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -26446,9 +26473,9 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
     (description
      "This package provides an interface to access public economic and financial data
 for economic research and quantitative analysis.  The data sources including
-NBS, FRED, 163, Sina, Eastmoney and etc.  It also provides quantitative
-functions for trading strategies based on the data.table', TTR',
-PerformanceAnalytics and etc packages.")
+NBS, FRED, Sina, Eastmoney and etc.  It also provides quantitative functions for
+trading strategies based on the data.table', TTR', PerformanceAnalytics and etc
+packages.")
     (license license:gpl3)))
 
 (define-public r-pedprobr
@@ -30174,13 +30201,13 @@ gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "1.6.4")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pathfindR" version))
               (sha256
                (base32
-                "140m63cwwk3xrmgr8jrxa0nv0wjmkzqlrdbgq6g2g837khwfjj7y"))))
+                "1fgrf8m3r5sizj2fzjryrmj0hl7x8hv47n1dbknm8n0n3vyy3786"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -31242,13 +31269,13 @@ on the analysis of poverty.  References, Fattore M. (2016)
 (define-public r-parquetize
   (package
     (name "r-parquetize")
-    (version "0.5.5")
+    (version "0.5.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parquetize" version))
               (sha256
                (base32
-                "0rxd3hqwpisy0fxzd1v9n6v62a4akgz8pklhk8k8xq1jxwvdmy8n"))))
+                "0wnq5naq50g159ii7s33v5yiaykmgcvbc6d6f8fgng4kbpkmc569"))))
     (properties `((upstream-name . "parquetize")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31257,6 +31284,8 @@ on the analysis of poverty.  References, Fattore M. (2016)
                              r-lifecycle
                              r-jsonlite
                              r-haven
+                             r-glue
+                             r-fst
                              r-dplyr
                              r-dbi
                              r-curl
@@ -31293,39 +31322,6 @@ of several formats (\"csv\", \"RData\", \"rds\", \"RSQLite\", \"json\", \"ndjson
 been previously coalesced into one file.  Convenient for reading in moderately
 sized, but split files.")
     (license license:cc0)))
-
-(define-public r-paropt
-  (package
-    (name "r-paropt")
-    (version "0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "paropt" version))
-              (sha256
-               (base32
-                "0ylnqz0yq3wykq6ypq9bg7k7xxbjmmaw7kh25wwy6xc4qfmdc0y5"))))
-    (properties `((upstream-name . "paropt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rcppthread
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-dfdr
-                             r-ast2ast))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=paropt")
-    (synopsis "Parameter Optimizing of ODE-Systems")
-    (description
-     "Enable optimization of parameters of ordinary differential equations.
-Therefore, using SUNDIALS to solve the ODE-System (see Hindmarsh, Alan C., Peter
-N. Brown, Keith E. Grant, Steven L. Lee, Radu Serban, Dan E. Shumaker, and Carol
-S. Woodward. (2005) <doi:10.1145/1089014.1089020>).  Furthermore, for
-optimization the particle swarm algorithm is used (see: Akman, Devin, Olcay
-Akman, and Elsa Schaefer. (2018) <doi:10.1155/2018/9160793> and Sengupta,
-Saptarshi, Sanchita Basak, and Richard Peters. (2018)
-<doi:10.3390/make1010010>).")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-parmsurvfit
   (package
@@ -32075,13 +32071,13 @@ visualization of economic inequalities.")
 (define-public r-parabar
   (package
     (name "r-parabar")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parabar" version))
               (sha256
                (base32
-                "0a5ashgy9qyp8iajizpabdbdsq4pzzchbh9p2is4a26imbhq4fra"))))
+                "19zzp6d86plyy7clwhq8yp40b38niy3bnk7da39xblp01wbc3sak"))))
     (properties `((upstream-name . "parabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-progress r-filelock r-callr))

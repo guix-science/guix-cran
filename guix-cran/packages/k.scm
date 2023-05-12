@@ -2262,13 +2262,13 @@ sources are only available from the project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "klassR" version))
               (sha256
                (base32
-                "0wrg8z88qilkhqnhcrijprxsbi3zq224wdrdwpz12igmvibhhjvf"))))
+                "01d0gb5pascgv1h4fgcc0ndlrg7z4mv76bigmw0mixx92i9x61jk"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-jsonlite r-httr))
@@ -3471,21 +3471,20 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "keyATM" version))
               (sha256
                (base32
-                "0zjdg5q38a1pw74id1hk9sxkk2k0gbwy1irvmg76i2q4x8cayd0w"))))
+                "1xrwdpv5jsak0ss45qlyifksg3bja6dcm00xdvg4rq55gax4885v"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
-                             r-scales
                              r-rlang
-                             r-rcppprogress
                              r-rcppeigen
                              r-rcpp
                              r-quanteda
@@ -3498,8 +3497,10 @@ publication.")
                              r-ggrepel
                              r-ggplot2
                              r-future-apply
+                             r-fs
                              r-fastmap
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://keyatm.github.io/keyATM/")
     (synopsis "Keyword Assisted Topic Models")
     (description
@@ -3508,7 +3509,7 @@ keyATM combines the latent dirichlet allocation (LDA) models with a small number
 of keywords selected by researchers in order to improve the interpretability and
 topic classification of the LDA. The keyATM can also incorporate covariates and
 directly model time trends.  The keyATM is proposed in Eshima, Imai, and Sasaki
-(2020) <arXiv:2004.05964>.")
+(2023) <doi:10.1111/ajps.12779>.")
     (license license:gpl3)))
 
 (define-public r-kesernetwork

@@ -14,6 +14,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages java)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
@@ -278,16 +279,17 @@ number of observations, etc.) as the model under consideration.")
 (define-public r-ezcox
   (package
     (name "r-ezcox")
-    (version "1.0.2")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ezcox" version))
               (sha256
                (base32
-                "0mikrdmi3q7qc2fvh1hk6fwy2y9xafwggyvx0cgnzzqi5gjjfki7"))))
+                "0k29c566mysmry8xn2b7chnmacnav0inbiadv1sb0gfmg5yv8zdm"))))
     (properties `((upstream-name . "ezcox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-utf8
+                             r-tibble
                              r-survival
                              r-scales
                              r-rlang
@@ -907,13 +909,13 @@ package.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extras" version))
               (sha256
                (base32
-                "0129dg6y18dcv9rpry4jipaf5l4zsfrvx96ihj637fl1v8gspl43"))))
+                "1m807qay8zj4wbghajvmph87rwsjfhra5090adf8i42bif29phwb"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
@@ -2628,13 +2630,13 @@ GitHub site, but works with any similarly-formatted Excel data.")
 (define-public r-excel-link
   (package
     (name "r-excel-link")
-    (version "0.9.10")
+    (version "0.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "excel.link" version))
               (sha256
                (base32
-                "1sxsrrxpmh99jic7mlnpqgj86c2sy2pblr9j42w4yaf7d4xaa7hh"))))
+                "05j1bqpchghlvayn803q85wc92sx0kpg2rqbcxhnj1ydddlsy44p"))))
     (properties `((upstream-name . "excel.link")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3656,15 +3658,16 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
 (define-public r-evidencesynthesis
   (package
     (name "r-evidencesynthesis")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EvidenceSynthesis" version))
               (sha256
                (base32
-                "13db4129bfi3ys2f4bq28c9rhik8cw7vmh8dfkr0x1pqhz40mg5s"))))
+                "0zyah27p1j7sxpcgpr05ws1whw7dd876nzygcvh5pyiikkahfmcm"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-survival
                              r-rlang
                              r-rjava
@@ -3672,7 +3675,9 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
                              r-hdinterval
                              r-gridextra
                              r-ggplot2
+                             r-ggdist
                              r-empiricalcalibration
+                             r-dplyr
                              r-cyclops
                              r-coda
                              r-beastjar))
@@ -3983,13 +3988,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "0pryzappyninflcmv9q6bv87i0sa6rfv8mw18qqa9bhbf22cylf2"))))
+                "051nnlmi7g1cinrz4r4j6yyvfi8zanmxkh8z2d21c5xq06qd7c8f"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -4630,13 +4635,13 @@ including both their metadata and their associated media files.")
 (define-public r-eurodata
   (package
     (name "r-eurodata")
-    (version "1.6.1")
+    (version "1.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurodata" version))
               (sha256
                (base32
-                "1b8p7vp6mk3y8v2yhh9pkhm8kqx9nncscy0wzfi6kqbnyn5i77dz"))))
+                "0xw6b178jpg4dlgx6af1bh6z2m6apd12lbz03yzp7ay93ghf7zsi"))))
     (properties `((upstream-name . "eurodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -4650,9 +4655,9 @@ including both their metadata and their associated media files.")
     (home-page "https://github.com/alekrutkowski/eurodata/")
     (synopsis "Fast and Easy Eurostat Data Import and Search")
     (description
-     "Interface to Eurostatâs Bulk Download Facility with fast data.table-based
-import of data, labels, and metadata.  On top of the core functionality, data
-search and data description/comparison functions are also provided.  Use
+     "Interface to Eurostatâs API (SDMX 2.1) with fast data.table-based import of
+data, labels, and metadata.  On top of the core functionality, data search and
+data description/comparison functions are also provided.  Use
 <https://github.com/alekrutkowski/eurodata_codegen> â a point-and-click app
 for rapid and easy generation of richly-commented R code â to import a
 Eurostat dataset or its subset (based on the eurodata::importData() function).")
@@ -6677,6 +6682,35 @@ text by Jenine K. Harris.  Network data set consists of 1283 local health
 departments and the communication links among them along with several
 attributes.")
     (license license:gpl3)))
+
+(define-public r-ergmargins
+  (package
+    (name "r-ergmargins")
+    (version "0.1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ergMargins" version))
+              (sha256
+               (base32
+                "18axdfg7nf2dcbm2hbpjkx821nrg8c97jn5nny2110cja9vi0qgw"))))
+    (properties `((upstream-name . "ergMargins")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-network r-matrix r-ergm r-btergm))
+    (home-page "https://cran.r-project.org/package=ergMargins")
+    (synopsis "Process Analysis for Exponential Random Graph Models")
+    (description
+     "Calculates marginal effects and conducts process analysis in exponential family
+random graph models (ERGM).  Includes functions to conduct mediation and
+moderation analyses and to diagnose multicollinearity.  URL:
+<https://github.com/sduxbury/ergMargins>.  BugReports:
+<https://github.com/sduxbury/ergMargins/issues>.  Duxbury, Scott W (2021)
+<doi:10.1177/0049124120986178>.  Long, J. Scott, and Sarah Mustillo (2018)
+<doi:10.1177/0049124118799374>.  Mize, Trenton D. (2019) <doi:10.15195/v6.a4>.
+Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
+<doi:10.1177/0081175012444861>.  Duxbury, Scott W (2018)
+<doi:10.1177/0049124118782543>.  Duxbury, Scott W, Jenna Wertsching (2023)
+<doi:10.1016/j.socnet.2023.02.003>.")
+    (license license:gpl2+)))
 
 (define-public r-ergm-rank
   (package
@@ -9925,32 +9959,6 @@ alpha.  Elastic Net SearcheR automates the simultaneous selection of both lambda
 and alpha.  Developed, in part, with support by NICHD R03 HD094912.")
     (license license:gpl2)))
 
-(define-public r-ensmodelvis
-  (package
-    (name "r-ensmodelvis")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ensModelVis" version))
-              (sha256
-               (base32
-                "06nhk616h32225p65ms4k9ia5qwd7kngpa4z6hxzn9nzmiirma60"))))
-    (properties `((upstream-name . "ensModelVis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/domijan/ensModelVis")
-    (synopsis "Visualisations for Model Ensembles")
-    (description
-     "Displays for model fits of multiple models and their ensembles.  For
-classification models, the plots are heatmaps, for regression, scatterplots.")
-    (license license:expat)))
-
 (define-public r-ensembletax
   (package
     (name "r-ensembletax")
@@ -12037,6 +12045,29 @@ Turner, S. D. (2018) <doi:10.21105/joss.00731>, Rosseel, D. (2012)
 <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
 
+(define-public r-emailvalidation
+  (package
+    (name "r-emailvalidation")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "emailvalidation" version))
+              (sha256
+               (base32
+                "1k2i2rnlqzgi7kn2knll86bax4pms68jddrycaqv6pkql8fja93a"))))
+    (properties `((upstream-name . "emailvalidation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://emailvalidation.io")
+    (synopsis "Client for the 'emailalvalidation.io' E-Mail Validation API")
+    (description
+     "An R client for the emailvalidation.io e-mail verification API. The API requires
+registration of an API key.  Basic features are free, some require a paid
+subscription.  You can find the full API documentation at
+<https://emailvalidation.io/docs> .")
+    (license license:expat)))
+
 (define-public r-emailjsr
   (package
     (name "r-emailjsr")
@@ -13725,13 +13756,13 @@ methods are based on King (1997) <ISBN: 0691012407>,
 (define-public r-eicm
   (package
     (name "r-eicm")
-    (version "1.0.1")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eicm" version))
               (sha256
                (base32
-                "0gil445xrsd1hhi5l6i3mn7kf4mbfwwhfkgmyja62dj68m4akwfz"))))
+                "0439ngwr8m7inljn8303g2a9v3izw81jz1jqxgbp6xdnvlwwpsyx"))))
     (properties `((upstream-name . "eicm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -17994,6 +18025,46 @@ Current version supports line chart, bar chart, pie chart, scatter plot, gauge,
 word cloud, radar chart, tree map, and heat map.")
     (license license:gpl2)))
 
+(define-public r-ech
+  (package
+    (name "r-ech")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ech" version))
+              (sha256
+               (base32
+                "092djklyw9j5cjbkndb1jby2mn896y93yrysrg704dfcjd04yv2g"))))
+    (properties `((upstream-name . "ech")))
+    (build-system r-build-system)
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-tidyr
+                             r-survey
+                             r-stringr
+                             r-statar
+                             r-srvyr
+                             r-rlang
+                             r-laeken
+                             r-labelled
+                             r-janitor
+                             r-haven
+                             r-glue
+                             r-geouy
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ech")
+    (synopsis "Downloading and Processing Microdata from ECH-INE (Uruguay)")
+    (description
+     "This package provides a consistent tool for downloading ECH data, processing
+them and generating new indicators: poverty, education, employment, etc.  All
+data are downloaded from the official site of the National Institute of
+Statistics at
+<https://www.gub.uy/instituto-nacional-estadistica/datos-y-estadisticas/encuestas/encuesta-continua-hogares>.")
+    (license license:gpl3)))
+
 (define-public r-ecgoftestdx
   (package
     (name "r-ecgoftestdx")
@@ -18217,41 +18288,6 @@ detailed in Guan, Y; Page, G.L.; Reich, B.J.; Ventrucci, M.; Yang, S; (2020)
 available.  The semi-parametric model relies on INLA'.  The INLA package can be
 obtained from <https://www.r-inla.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-ecan
-  (package
-    (name "r-ecan")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ecan" version))
-              (sha256
-               (base32
-                "0b0p8g20zh775539654agdpak6adgk9fzik6nazyv18irgnakbi8"))))
-    (properties `((upstream-name . "ecan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-mass
-                             r-magrittr
-                             r-labdsv
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-dave
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=ecan")
-    (synopsis "Ecological Analysis and Visualization")
-    (description
-     "Support ecological analyses such as ordination and clustering.  Contains
-consistent and easy wrapper functions of stat', vegan', labdsv and dave
-packages, and visualisation functions of ordination and clustering.")
-    (license license:expat)))
 
 (define-public r-ec50estimator
   (package
@@ -18520,13 +18556,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "2.2021.2")
+    (version "2.2021.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ebirdst" version))
               (sha256
                (base32
-                "04gvxqfpqxdnwrhfjpfw8ssskhic72c5jwqw7rg6c2wis8354yrd"))))
+                "1brd9awy43cl45jv7ndkvv21zrrd0fx1llwwxy1mqncdbwbnn65j"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

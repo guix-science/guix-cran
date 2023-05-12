@@ -622,6 +622,27 @@ DvoÅÃ¡k et al. (2022) <doi:10.1111/insr.12503>, DvoÅÃ¡k and MrkviÄk
 the number of vowel sequences for words not found.")
     (license license:gpl3)))
 
+(define-public r-nswgeo
+  (package
+    (name "r-nswgeo")
+    (version "0.3.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nswgeo" version))
+              (sha256
+               (base32
+                "0nny1dh0c3nkwglqi6rgwgri8hx1h66bzfpy388bjcyc31nkmihr"))))
+    (properties `((upstream-name . "nswgeo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-cartographer))
+    (home-page "https://github.com/cidm-ph/nswgeo")
+    (synopsis "Geospatial Data and Maps for New South Wales, Australia")
+    (description
+     "Geospatial data for creating maps of New South Wales (NSW), Australia, and some
+helpers to work with common problems like normalising postcodes.  Registers its
+data with cartographer'.")
+    (license license:expat)))
+
 (define-public r-nst
   (package
     (name "r-nst")
@@ -2117,6 +2138,31 @@ errors, a metric designed to evaluate non-linear mixed effect models such as
 those used in pharmacokinetics and pharmacodynamics.")
     (license license:gpl2+)))
 
+(define-public r-npcurepk
+  (package
+    (name "r-npcurepk")
+    (version "1.0-2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "npcurePK" version))
+              (sha256
+               (base32
+                "1p1vl9w8z8xq6bfsn1kgq5cnzyf4aiax8iis0vb4xcxrb2wl0mav"))))
+    (properties `((upstream-name . "npcurePK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-npcure r-foreach r-doparallel r-desctools
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=npcurePK")
+    (synopsis "Mixture Cure Model Estimation with Cure Status Partially Known")
+    (description
+     "This package performs nonparametric estimation in mixture cure models when the
+cure status is partially known.  For details, see Safari et al (2021)
+<doi:10.1002/bimj.202100156>, Safari et al (2022)
+<doi:10.1177/09622802221115880> and Safari et al (2023)
+<doi:10.1007/s10985-023-09591-x>.")
+    (license license:gpl2+)))
+
 (define-public r-npcure
   (package
     (name "r-npcure")
@@ -3356,13 +3402,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nonmemica" version))
               (sha256
                (base32
-                "0ssinsbgbxnplfnpxr94m9rz9q503acf8ddg0ih0dcs75ypqj4fx"))))
+                "06fn7iwc30la2k6ib9zr7hvlygbh0267rnk1ybys4swq4jdmmigd"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3739,16 +3785,16 @@ API documentation.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nominatimlite" version))
               (sha256
                (base32
-                "1zzlqhn26bgag2sjq57crldyw0q0cs56l6c69xqp15w88022d32q"))))
+                "1p5pl3jgshyhvx5cxi9rf2qr8kd2l9ll7gxfhbj6vxbs9hh1mrcw"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-sf r-rlang r-jsonlite r-dplyr))
+    (propagated-inputs (list r-sf r-jsonlite r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://dieghernan.github.io/nominatimlite/")
     (synopsis "Interface with 'Nominatim' API Service")
@@ -3995,13 +4041,13 @@ arguments and body.")
 (define-public r-nodiv
   (package
     (name "r-nodiv")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nodiv" version))
               (sha256
                (base32
-                "1k7pr9d1mgxw3szxcmnkkz498x7629wf2z65qlclywka3xgzpkxc"))))
+                "05ryspls03nwap54501mcxnhgvqpnf08c6iad6xcq056qi5glxp2"))))
     (properties `((upstream-name . "nodiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-sp r-raster r-picante r-ape))
@@ -4016,7 +4062,7 @@ species distributions.  The main function goes through each node in the
 phylogeny, compares the distributions of the two descendant nodes, and compares
 the result to a null model.  This highlights nodes where major distributional
 divergence have occurred.  The distributional divergence for these nodes is
-mapped using the SOS statistic.")
+mapped.")
     (license license:expat)))
 
 (define-public r-nodesub
@@ -4579,13 +4625,13 @@ import some TeX packages including TikZ in the setting of TeX file.")
 (define-public r-nncc
   (package
     (name "r-nncc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nncc" version))
               (sha256
                (base32
-                "1kgsz28j4ra0x3i8454fjmil7g62r2mjvnbljcp008q4slnp47sv"))))
+                "131mka187q7367ba0ac0ad45hfwnbfmdlxikjdqkbi7ci234yj8l"))))
     (properties `((upstream-name . "nncc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4658,13 +4704,13 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nmw" version))
               (sha256
                (base32
-                "1vj7b2p40x0h3xp45qzar86i9439mj8y3r5hnlbwa025jqdf2g0q"))))
+                "1wzqdg7cc5q9yw2axvzzlh60az1x6f7ycaqwadns1xr416x0kwfw"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -4672,10 +4718,9 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
     (synopsis
      "Understanding Nonlinear Mixed Effects Modeling for Population Pharmacokinetics")
     (description
-     "This shows how NONMEM(R) <http://www.iconplc.com/innovation/nonmem/> software
-works.  NONMEM's classical estimation methods like First Order(FO)
-approximation', First Order Conditional Estimation(FOCE)', and Laplacian
-approximation are explained.")
+     "This shows how NONMEM(R) software works.  NONMEM's classical estimation methods
+like First Order(FO) approximation', First Order Conditional Estimation(FOCE)',
+and Laplacian approximation are explained.")
     (license license:gpl3)))
 
 (define-public r-nmvanova
@@ -4770,6 +4815,32 @@ dimensions and/or non-metric spaces.  Hence, the main focus is on approximate
 methods\".  The wrapper also includes Approximate Kernel k-Nearest-Neighbor
 functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.")
     (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
+
+(define-public r-nmrrr
+  (package
+    (name "r-nmrrr")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nmrrr" version))
+              (sha256
+               (base32
+                "031rh5m52gznl65r7cxh0p6l7qdaygbda7kcx352958dycmnxfs1"))))
+    (properties `((upstream-name . "nmrrr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-ggplot2 r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kaizadp/nmrrr")
+    (synopsis "Binning and Visualizing NMR Spectra in Environmental Samples")
+    (description
+     "This package provides a reproducible workflow for binning and visualizing NMR
+(nuclear magnetic resonance) spectra from environmental samples.  The nmrrr
+package is intended for post-processing of NMR data, including importing,
+merging and, cleaning data from multiple files, visualizing NMR spectra,
+performing binning/integrations for compound classes, and relative abundance
+calculations.  This package can be easily inserted into existing analysis
+workflows by users to help with analyzing and interpreting NMR data.")
+    (license license:expat)))
 
 (define-public r-nmof
   (package
@@ -5323,13 +5394,13 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
 (define-public r-nlsr
   (package
     (name "r-nlsr")
-    (version "2023.2.12")
+    (version "2023.5.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlsr" version))
               (sha256
                (base32
-                "1a2ijg79w6j8sa2cz5dnrmgbx3l8hnmns47g08p23nh05r1pdrlg"))))
+                "1ya38hk1xwvxnlymlx86imq6ww98y2mswf5fdm4s8r2qs3hy4bf4"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -5683,13 +5754,13 @@ package.  It also provides four vignettes with extended examples.")
 (define-public r-nlputils
   (package
     (name "r-nlputils")
-    (version "0.0-5")
+    (version "0.0-5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NLPutils" version))
               (sha256
                (base32
-                "1jxxly85iajzb9qckkkar0przyxv005cyvry0qi5dkzhbyl5k490"))))
+                "1ca7cqfjzrhn0idgw8viqlr2w4lkzng64bqk8hvd08qm7bgg5vjl"))))
     (properties `((upstream-name . "NLPutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowballc r-qdap r-nlp))
@@ -9823,16 +9894,17 @@ NetMHCIIpan from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.8-1")
+    (version "2.8-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "netmeta" version))
               (sha256
                (base32
-                "0xxray1ljf8smvipbcb04v5xpd2s8dsgwxqcj2ih5dsyrfj1cwgn"))))
+                "132qkvpkami568w276qc269844z0d1l3yjbj71if4r2w8ra3p5wy"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=netmeta")
     (synopsis "Network Meta-Analysis using Frequentist Methods")
     (description
@@ -13552,13 +13624,13 @@ Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.8.2")
+    (version "0.8.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nanonext" version))
               (sha256
                (base32
-                "0y1nbima9ind9z2g06n36z6i8kz9g4s96sbg1d6zqx1cvw3l9sp5"))))
+                "1plvbgcik6v89bxjpi7aa71qfldmbyg9sd76fa7wavi12v7p89sp"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/nanonext/")

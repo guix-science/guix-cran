@@ -9295,13 +9295,13 @@ provided in a third dataset (myHouseID) from the BHPS.")
 (define-public r-lifecontingencies
   (package
     (name "r-lifecontingencies")
-    (version "1.3.9")
+    (version "1.3.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lifecontingencies" version))
               (sha256
                (base32
-                "192frkdk7y2v4611ln8b9jb2aaxpaklar4yi63yd60p69dc7s7nx"))))
+                "1nkkb3qq2mqc25x8lg9r0xmkdnfr9j8q6rx3cgy6kx94qwqp8yma"))))
     (properties `((upstream-name . "lifecontingencies")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-markovchain))
@@ -11797,13 +11797,13 @@ MapService', ImageMapService', TiledMapService etc.  to a leaflet map.")
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "leaflegend" version))
               (sha256
                (base32
-                "1f86gcz3dyc1n7d7ja1xb0jgag59x5zqxykfif8viajwl3rbgdfc"))))
+                "0jiv3cdkcil1krfzmyp0xa8j4c8vnwrd7vnrzsaqg9mkhcijvll7"))))
     (properties `((upstream-name . "leaflegend")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-base64enc))
@@ -15092,13 +15092,13 @@ estimating metabolism (e.g., oxygen saturation and optical conversion models).")
 (define-public r-lahman
   (package
     (name "r-lahman")
-    (version "10.0-1")
+    (version "11.0-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Lahman" version))
               (sha256
                (base32
-                "0k8vwcqnkp24n3micwwc63lagpll1np749az2imj4zyyhd8hyq7n"))))
+                "0jzxk9ykjm4mxwf2adqdy6gbv80569ynkqsrppfn8ag9d5a3k8bv"))))
     (properties `((upstream-name . "Lahman")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -15108,7 +15108,7 @@ estimating metabolism (e.g., oxygen saturation and optical conversion models).")
     (description
      "This package provides the tables from the Sean Lahman Baseball Database as a set
 of R data.frames.  It uses the data on pitching, hitting and fielding
-performance and other tables from 1871 through 2021, as recorded in the 2022
+performance and other tables from 1871 through 2022, as recorded in the 2023
 version of the database.  Documentation examples show how many baseball
 questions can be investigated.")
     (license (list license:gpl2+ license:gpl3+))))

@@ -809,13 +809,13 @@ are facilitated by demos in the package; see demo(package=\"dynaTree\").")
 (define-public r-dynatopgis
   (package
     (name "r-dynatopgis")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynatopGIS" version))
               (sha256
                (base32
-                "0g4v48nvzsby6h2rr65s7palc3bsp552cmrsins56kmh0dmwdm0c"))))
+                "1sv519dc7fs6zrwnyggkzrcy866a6pgag0shk6rr6cd3xa1blwpv"))))
     (properties `((upstream-name . "dynatopGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-r6 r-jsonlite))
@@ -972,13 +972,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.3.3")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "1ahv9prbajb5hnalzaw8g6vaakfwpb3wq5d9wkkkf10bi5r5qxk1"))))
+                "0ji3asffhisiwvf4yak6hpryl0hd4qcrqy3vcz7yqnr2spksqp1x"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1002,7 +1002,8 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (2022) <doi:10.31235/osf.io/mdwu5>.  The package supports joint modeling of
 multiple measurements per individual, time-varying and time-invariant effects,
 and a wide range of discrete and continuous distributions.  Estimation of these
-dynamic multivariate panel models is carried out via Stan'.")
+dynamic multivariate panel models is carried out via Stan'.  For an in-depth
+tutorial of the package, see (Tikka and Helske, 2023) <arxiv:2302.01607>.")
     (license license:gpl3+)))
 
 (define-public r-dynamicsdm
@@ -3396,13 +3397,13 @@ the API that is to be implemented by DataSHIELD compliant data repositories.")
 (define-public r-dsfa
   (package
     (name "r-dsfa")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dsfa" version))
               (sha256
                (base32
-                "0jx71fhn347czhbjg0aajaba8mzqf942j2d0vfyc0czmqnldcrg5"))))
+                "0wlwjn419h27xx60xrbgh3dw5xxr2y4cb20qfkk0yzh8k21ciws1"))))
     (properties `((upstream-name . "dsfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -4572,6 +4573,42 @@ to estimate the nuisance functions.")
 goodness-of-fit measures.  See Malyutina A., Tang J., and Pessia A. (2023)
 <doi:10.18637/jss.v106.i04>.")
     (license license:expat)))
+
+(define-public r-drcte
+  (package
+    (name "r-drcte")
+    (version "1.0.30")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "drcte" version))
+              (sha256
+               (base32
+                "0gpzpmk5v1lr03gl710kp4d4ldfskjr5s66wcl00abg3kz8jpixn"))))
+    (properties `((upstream-name . "drcte")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-sandwich
+                             r-plyr
+                             r-nor1mix
+                             r-multcomp
+                             r-mclust
+                             r-mass
+                             r-lmtest
+                             r-drc
+                             r-dplyr))
+    (home-page "https://www.statforbiology.com")
+    (synopsis "Statistical Approaches for Time-to-Event Data in Agriculture")
+    (description
+     "This package provides a specific and comprehensive framework for the analyses of
+time-to-event data in agriculture.  Fit non-parametric and parametric
+time-to-event models.  Compare time-to-event curves for different experimental
+groups.  Plots and other displays.  It is particularly tailored to the analyses
+of data from germination and emergence assays.  The methods are described in
+Onofri et al. (2020) \"A unified framework for the analysis of germination,
+emergence, and other time-to-event data in weed science\"\", Weed Science, 70,
+259-271 <doi:10.1017/wsc.2022.8>.")
+    (license license:gpl2+)))
 
 (define-public r-drbats
   (package
@@ -6821,13 +6858,13 @@ functionality in the stump CRAN R package Rmosek'.")
 (define-public r-doe-base
   (package
     (name "r-doe-base")
-    (version "1.2-1")
+    (version "1.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoE.base" version))
               (sha256
                (base32
-                "020gzszh65bbfhv58ry2jxmdn7cv96432f2fjpy6xz6gh6927i99"))))
+                "105i16pdhrbhc79czcpnfsx6cwvznscnrgl8i28c6gx2br5j37v9"))))
     (properties `((upstream-name . "DoE.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -9613,13 +9650,13 @@ distrEllipse'.")
 (define-public r-distr
   (package
     (name "r-distr")
-    (version "2.9.1")
+    (version "2.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distr" version))
               (sha256
                (base32
-                "0pqss05qs209nbv78n01zhap15pshjkpvk4czz3ja06l1flr1dw2"))))
+                "0c1fkb9jqj5mhs766hrwys9zd1xbf9j98bwy03xxwxbbsrz82amm"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-sfsmisc r-mass))
@@ -15836,6 +15873,27 @@ projections by the desparsified lasso, as described in Adamek et al. (2022)
 <arXiv:2209.03218>.")
     (license license:gpl2+)))
 
+(define-public r-desirability2
+  (package
+    (name "r-desirability2")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "desirability2" version))
+              (sha256
+               (base32
+                "0x5v6mak68h6a03hccf8gksj3wmgcd3l84bplx1s4jr755wdm5ih"))))
+    (properties `((upstream-name . "desirability2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-glue))
+    (home-page "https://desirability2.tidymodels.org")
+    (synopsis "Desirability Functions for Multiparameter Optimization")
+    (description
+     "In-line functions for multivariate optimization via desirability functions
+(Derringer and Suich, 1980, <doi:10.1080/00224065.1980.11980968>) with easy use
+within dplyr pipelines.")
+    (license license:expat)))
+
 (define-public r-desirability
   (package
     (name "r-desirability")
@@ -15900,13 +15958,13 @@ techniques are explained by Chow (2007) <doi:10.1201/9781584889830>.")
 (define-public r-designr
   (package
     (name "r-designr")
-    (version "0.1.12")
+    (version "0.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "designr" version))
               (sha256
                (base32
-                "1sn5cnqpczzvxmcib4mcwys8y98vx3pxdxcpy2v6rvrhjsqrc207"))))
+                "13rj2xxxxj35zl7q570c3i4p2wjpxf79dza0sg9bhbq3yal6j6r2"))))
     (properties `((upstream-name . "designr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-mass r-lme4 r-dplyr r-crossdes))
@@ -16373,13 +16431,13 @@ plugin.")
 (define-public r-describedf
   (package
     (name "r-describedf")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DescribeDF" version))
               (sha256
                (base32
-                "1hx7gh4d81f95jq2cmlaas3vcdkgfsv359z3qds3q20gsy1j5zbn"))))
+                "1nah46s4psi272idpkpzkx7zqy6vr6wdz5zfxyz17cld9q2lld47"))))
     (properties `((upstream-name . "DescribeDF")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-psych r-fnonlinear r-e1071 r-dplyr))
@@ -16535,33 +16593,6 @@ useful in teaching a course on financial derivatives.")
 parameters.  For explanatory purposes, the package also includes various short
 datasets of interest rates for the BRICS countries.")
     (license license:gpl2+)))
-
-(define-public r-dequer
-  (package
-    (name "r-dequer")
-    (version "2.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dequer" version))
-              (sha256
-               (base32
-                "0bc1gf5kbp36zxds70l40r4bsa4f1ih11cy7dkxc6yym6hp79789"))))
-    (properties `((upstream-name . "dequer")))
-    (build-system r-build-system)
-    (home-page "https://github.com/wrathematics/dequer")
-    (synopsis "Stacks, Queues, and 'Deques' for R")
-    (description
-     "Queues, stacks, and deques are list-like, abstract data types.  These are meant
-to be very cheap to \"grow\", or insert new objects into.  A typical use case
-involves storing data in a list in a streaming fashion, when you do not
-necessarily know how may elements need to be stored.  Unlike R's lists, the new
-data structures provided here are not necessarily stored contiguously, making
-insertions and deletions at the front/end of the structure much faster.  The
-underlying implementation is new and uses a head/tail doubly linked list; thus,
-we do not rely on R's environments or hashing.  To avoid unnecessary data
-copying, most operations on these data structures are performed via
-side-effects.")
-    (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-depthtools
   (package
@@ -20653,40 +20684,6 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
 (2016) <doi:10.1007/s41060-017-0062-1>.")
     (license license:gpl3)))
 
-(define-public r-dcd
-  (package
-    (name "r-dcd")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DCD" version))
-              (sha256
-               (base32
-                "0p6vk8fdvpcvb1bb5fwy3h1v8y3djlvcm5jl5lnx30ngqj6d7rcj"))))
-    (properties `((upstream-name . "DCD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wgcna
-                             r-rocr
-                             r-rdpack
-                             r-qlcmatrix
-                             r-plyr
-                             r-matrix
-                             r-lsa
-                             r-lattice
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://www.r-project.org")
-    (synopsis "Differential Community Detection in Paired Biological Networks")
-    (description
-     "This package provides a differential community detection (DCD) based approach to
-effectively locate differential sub-networks in paired scale-free biological
-networks, e.g. case vs control - Raghvendra Mall et al (2017)
-<doi:10.1145/3107411.3107418>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-dccpp
   (package
     (name "r-dccpp")
@@ -21695,26 +21692,6 @@ computes several estimations of the true error rate.")
     (description "Various utilities for the Davies distribution.")
     (license license:gpl2)))
 
-(define-public r-dave
-  (package
-    (name "r-dave")
-    (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dave" version))
-              (sha256
-               (base32
-                "1rraphpp34czyjj15xzvj1ihlnqzcppqls9n2g85n49zv0n1ngn8"))))
-    (properties `((upstream-name . "dave")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-tree r-nnet r-labdsv r-cluster))
-    (home-page "https://cran.r-project.org/package=dave")
-    (synopsis "Functions for \"Data Analysis in Vegetation Ecology\"")
-    (description
-     "This package provides a collection of functions accompanying the book \"Data
-Analysis in Vegetation Ecology\".  3rd ed.  CABI, Oxfordshire, Boston.")
-    (license license:lgpl2.0+)))
-
 (define-public r-dauphin
   (package
     (name "r-dauphin")
@@ -21955,13 +21932,13 @@ two fields allowing to select a start time and an end time.")
 (define-public r-datetimeoffset
   (package
     (name "r-datetimeoffset")
-    (version "0.2.1")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "datetimeoffset" version))
               (sha256
                (base32
-                "0jjiihx7fwg36v6n2mv0ly54f9jz5j7q7phla3axnqz68slb9dsf"))))
+                "11xxxfv3g8jf16cwpxjycrymx9baf8gkpd98x69djhbnrn3si0vn"))))
     (properties `((upstream-name . "datetimeoffset")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-purrr r-clock))
@@ -22007,13 +21984,13 @@ nominal durations such as seconds, hours, days, and weeks.  See ?datetime and
 (define-public r-daterangepicker
   (package
     (name "r-daterangepicker")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "daterangepicker" version))
               (sha256
                (base32
-                "1605ch84ad3nmmad0yy3id0izv0nz536lxwib6rkdkjik5761gqk"))))
+                "03y8r1n31ipapfbbg12myrnqd961ra3fb6r4mjxqfkppxcj9c6mi"))))
     (properties `((upstream-name . "daterangepicker")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonify r-htmltools))
@@ -22026,6 +22003,66 @@ for selecting dates, times, or predefined ranges like \"Last 30 Days\".  It wrap
 the JavaScript library daterangepicker which is available at
 <https://www.daterangepicker.com>.")
     (license license:expat)))
+
+(define-public r-datelife
+  (package
+    (name "r-datelife")
+    (version "0.6.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "datelife" version))
+              (sha256
+               (base32
+                "0jnx26lz6gvrgrlbdm7lf8lz08ddkw9cmk2587p1xv4lliw487f8"))))
+    (properties `((upstream-name . "datelife")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-treebase
+                             r-taxize
+                             r-stringr
+                             r-rotl
+                             r-plyr
+                             r-phytools
+                             r-phylocomr
+                             r-phylobase
+                             r-phangorn
+                             r-paleotree
+                             r-knitcitations
+                             r-ips
+                             r-httr
+                             r-geiger
+                             r-data-table
+                             r-curl
+                             r-compare
+                             r-cluster
+                             r-bold
+                             r-biocmanager
+                             r-ape
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phylotastic/datelife")
+    (synopsis "Scientific Data on Time of Lineage Divergence for Your Taxa")
+    (description
+     "This package provides methods and workflows to get chronograms (i.e.,
+phylogenetic trees with branch lengths proportional to time), using open,
+peer-reviewed, state-of-the-art scientific data on time of lineage divergence.
+This package constitutes the main underlying code of the DateLife web service at
+<https:www.datelife.org>.  To obtain a single summary chronogram from a group of
+relevant chronograms, we implement the Super Distance Matrix (SDM) method
+described in Criscuolo et al. (2006) <doi:10.1080/10635150600969872>.  To find
+the grove of chronograms with a sufficiently overlapping set of taxa for
+summarizing, we implement theorem 1.1.  from AnÃ© et al. (2009)
+<doi:10.1007/s00026-009-0017-x>.  A given phylogenetic tree can be dated using
+time of lineage divergence data as secondary calibrations (with caution, see
+Schenk (2016) <doi:10.1371/journal.pone.0148228>).  To obtain and apply
+secondary calibrations, the package implements the congruification method
+described in Eastman et al. (2013) <doi:10.1111/2041-210X.12051>.  Tree dating
+can be performed with different methods including BLADJ (Webb et al. (2008)
+<doi:10.1093/bioinformatics/btn358>), PATHd8 (Britton et al. (2007)
+<doi:10.1080/10635150701613783>), mrBayes (Huelsenbeck and Ronquist (2001)
+<doi:10.1093/bioinformatics/17.8.754>), and treePL (Smith and O'Meara (2012)
+<doi:10.1093/bioinformatics/bts492>).")
+    (license license:gpl2+)))
 
 (define-public r-datefixr
   (package
@@ -22278,29 +22315,6 @@ articles.  Including, for example: - de Carvalho (2012)
 <doi:10.1016/j.ijforecast.2015.09.004>.")
     (license license:gpl3+)))
 
-(define-public r-datastructures
-  (package
-    (name "r-datastructures")
-    (version "0.2.9")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "datastructures" version))
-              (sha256
-               (base32
-                "0prw24iy1af02g1nzw588dv085bdnl6pzvizpxspmwzj6vrfbaav"))))
-    (properties `((upstream-name . "datastructures")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-purrr r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dirmeier/datastructures")
-    (synopsis "Implementation of Core Data Structures")
-    (description
-     "Implementation of advanced data structures such as hashmaps, heaps, or queues.
-Advanced data structures are essential in many computer science and statistics
-problems, for example graph algorithms or string analysis.  The package uses
-Boost and STL data types and extends these to R with Rcpp modules.")
-    (license license:gpl3)))
-
 (define-public r-datastreamdsws2r
   (package
     (name "r-datastreamdsws2r")
@@ -22446,6 +22460,32 @@ within the CAVD DataSpace'(<https://dataspace.cavd.org>), a data sharing and
 discovery tool that facilitates exploration of HIV immunological data from
 pre-clinical and clinical HIV vaccine studies.")
     (license license:gpl3)))
+
+(define-public r-datasetsuni
+  (package
+    (name "r-datasetsuni")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "DataSetsUni" version))
+              (sha256
+               (base32
+                "0dbi0jgzh2qxwsid9yp4mdwhrm7mcksx8jvpa91qfnfc26ipdw6n"))))
+    (properties `((upstream-name . "DataSetsUni")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=DataSetsUni")
+    (synopsis "Collection of Univariate Data Sets")
+    (description
+     "This package provides a collection of widely used univariate data sets of
+various applied domains on applications of distribution theory.  The functions
+allow researchers and practitioners to quickly, easily, and efficiently access
+and use these data sets.  The data are related to different applied domains and
+as follows: Bio-medical, survival analysis, medicine, reliability analysis,
+hydrology, actuarial science, operational research, meteorology, extreme values,
+quality control, engineering, finance, sports and economics.  The total 100 data
+sets are documented along with associated references for further details and
+uses.")
+    (license license:gpl2+)))
 
 (define-public r-datasetsicr
   (package
@@ -23632,15 +23672,16 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.2.0")
+    (version "6.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabaseConnector" version))
               (sha256
                (base32
-                "17piyw9ng8wpyj256ca8k6cj9fns1k7n9dvhcga92vmy4n26rvbj"))))
+                "1dz9sjwfvw2xxygyi4h3d57qp2w7fl6w79ifkkacmypj52wv6384"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-urltools
                              r-stringr
                              r-sqlrender
@@ -23661,7 +23702,7 @@ platforms ('PostgreSQL', Oracle', Microsoft SQL Server', Amazon Redshift',
 Microsoft Parallel Database Warehouse', IBM Netezza', Apache Impala', Google
 BigQuery', Snowflake', Spark', and SQLite').  Also includes support for fetching
 data as Andromeda objects.  Uses either Java Database Connectivity ('JDBC') or
-other DB I drivers to connect to databases.")
+other DBI drivers to connect to databases.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-data360r
@@ -23693,19 +23734,18 @@ user-inputted query.")
 (define-public r-data-validator
   (package
     (name "r-data-validator")
-    (version "0.1.6")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "data.validator" version))
               (sha256
                (base32
-                "1qzgwi9agsli96whzsyx7qxqzc5sixpqrd7z6fh4yrcv1i3li8yr"))))
+                "0v6blwkaxb87n2zdvfwa9fjil4mablch9gsdxa6sbsryx5s373yw"))))
     (properties `((upstream-name . "data.validator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny-semantic
-                             r-shiny
                              r-rmarkdown
                              r-rlang
                              r-r6
@@ -23715,7 +23755,7 @@ user-inputted query.")
                              r-htmltools
                              r-dplyr
                              r-assertr))
-    (home-page "https://cran.r-project.org/package=data.validator")
+    (home-page "https://appsilon.github.io/data.validator/")
     (synopsis "Automatic Data Validation and Reporting")
     (description
      "Validate dataset by columns and rows using convenient predicates inspired by
@@ -25324,13 +25364,13 @@ chart, ...")
 (define-public r-d3mirt
   (package
     (name "r-d3mirt")
-    (version "1.0.1")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "D3mirt" version))
               (sha256
                (base32
-                "0vxc48wmpmy8y29xswwaazvqgwsqz3v14nrv0gh75j60vjrpa7cx"))))
+                "0959gfhpj1jxnkbafwkzqp08xygnjv6xqhhm3s7yhcfb1qfdfbsn"))))
     (properties `((upstream-name . "D3mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-mirt))

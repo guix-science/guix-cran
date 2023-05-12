@@ -2040,6 +2040,31 @@ and weights as well as customized optimization behavior.  Users can also
 construct parallel forms of the same test following the same pairing rules.")
     (license license:gpl3)))
 
+(define-public r-autoensemble
+  (package
+    (name "r-autoensemble")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "autoEnsemble" version))
+              (sha256
+               (base32
+                "106hfhc5hp6v51drkhrv8dgxflqx8rljn6l91cy8hf6h3m0qy5x2"))))
+    (properties `((upstream-name . "autoEnsemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-h2otools r-h2o r-curl))
+    (home-page "https://github.com/haghish/autoEnsemble")
+    (synopsis
+     "Automated Stacked Ensemble Classifier for Severe Class Imbalance")
+    (description
+     "An AutoML algorithm is developed to construct homogeneous or heterogeneous
+stacked ensemble models using specified base-learners.  Various criteria are
+employed to identify optimal models, enhancing diversity among them and
+resulting in more robust stacked ensembles.  The algorithm optimizes the model
+by incorporating an increasing number of top-performing models to create a
+diverse combination.  Presently, only models from h2o.ai are supported.")
+    (license license:expat)))
+
 (define-public r-autoencoder
   (package
     (name "r-autoencoder")
@@ -4459,13 +4484,13 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 (define-public r-askgpt
   (package
     (name "r-askgpt")
-    (version "0.0.2")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "askgpt" version))
               (sha256
                (base32
-                "1wsrag2354czrifyvyf46yc7jlanp2h68zqi8anxb9nrwsjm8cm5"))))
+                "1yl7c5h242j8b9cbvd709d5gw15hm9b4lvb2s3vcn9zkxbb9h29g"))))
     (properties `((upstream-name . "askgpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -5700,13 +5725,13 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arkhe" version))
               (sha256
                (base32
-                "0bhz4b37ii23dbqpgywv8q72lj4m41g3d43xfacn1qxc9khgwisn"))))
+                "0bvlypa692pdfns9kjx45m3qvckppa47mx5m7z783pxcxxw01fak"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -8340,6 +8365,37 @@ tables for several types of analyses.  Using this package minimizes
 transcription errors and reduces the number commands needed by the user.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
 
+(define-public r-apackoftheclones
+  (package
+    (name "r-apackoftheclones")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "APackOfTheClones" version))
+              (sha256
+               (base32
+                "0fzai68yjspigapcw383bzm4kz6cvv2nnn877gbg3qaqvlzx3ysz"))))
+    (properties `((upstream-name . "APackOfTheClones")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-rlang
+                             r-r6
+                             r-hash
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://qile0317.github.io/APackOfTheClones/")
+    (synopsis "Visualization of T-Cell Clonal Expansion")
+    (description
+     "Visualize T-cell clonal expansion via circle-packing.  APackOfTheClones can
+integrate single-cell RNA sequencing and T-cell receptor libraries from the 10X
+genomics Single Cell Immune Profiling and Cell Ranger pipeline, to produce a
+simple, publication-ready visualization of the clonal expansion.  The method was
+originally implemented by Murray Christian and Ben Murrell in the following
+immunology study: Ma et al. (2021) <doi:10.1126/sciimmunol.abg6356>.")
+    (license license:expat)))
+
 (define-public r-apachelogprocessor
   (package
     (name "r-apachelogprocessor")
@@ -10463,6 +10519,43 @@ use ribosome footprinting data to analyze estimate ribosome pausing times with
 and without nonsense error rate from ribosome footprinting data.")
     (license license:gpl2+)))
 
+(define-public r-anabel
+  (package
+    (name "r-anabel")
+    (version "3.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "anabel" version))
+              (sha256
+               (base32
+                "0m6jkbl3mf3kpaq9yj0qrbwcvgd1qrdakc14xcnd8awgvbqh6z01"))))
+    (properties `((upstream-name . "anabel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-reshape2
+                             r-qpdf
+                             r-purrr
+                             r-progress
+                             r-openxlsx
+                             r-minpack-lm
+                             r-kableextra
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=anabel")
+    (synopsis "Analysis of Binding Events + l")
+    (description
+     "This package provides a free software for a fast and easy analysis of 1:1
+molecular interaction studies.  This package is suitable for a high-throughput
+data analysis.  Both the online app and the package are completely open source.
+You provide a table of sensogram, tell anabel which method to use, and it takes
+care of all fitting details.  The first two releases of anabel were created and
+implemented as in (<doi:10.1177/1177932218821383>,
+<doi:10.1093/database/baz101>).")
+    (license license:expat)))
+
 (define-public r-amylogram
   (package
     (name "r-amylogram")
@@ -11515,42 +11608,6 @@ Research Laboratory Alternate Fuel Locator API
 Alternate Fuel Locator shows the location of alternate fuel stations in the
 United States and Canada.  This package also includes the data from the US
 Department of Energy Alternate Fuel database as a data set.")
-    (license license:expat)))
-
-(define-public r-altdoc
-  (package
-    (name "r-altdoc")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "altdoc" version))
-              (sha256
-               (base32
-                "0336p5yc2imr7r7qi1kzl4psy59m8k6c7j4db345n8i61z3dm0ll"))))
-    (properties `((upstream-name . "altdoc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xslt
-                             r-xml2
-                             r-usethis
-                             r-servr
-                             r-rstudioapi
-                             r-rmarkdown
-                             r-jsonlite
-                             r-htmltools
-                             r-here
-                             r-fs
-                             r-desc
-                             r-commonmark
-                             r-cli))
-    (home-page "https://github.com/etiennebacher/altdoc")
-    (synopsis
-     "Use 'Docsify.js', 'Docute', or 'Mkdocs' to Generate a Package Documentation")
-    (description
-     "Most developers use pkgdown to create a website for their packages.  Other
-documentation generators exist, such as Docute', Docsify.js', or Mkdocs'.  The
-aim of altdoc is to provide helpers to create, populate, update, and preview
-websites made with these tools.")
     (license license:expat)))
 
 (define-public r-altair
@@ -13319,13 +13376,13 @@ License.")
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
-    (version "0.3.9")
+    (version "0.3.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AirMonitor" version))
               (sha256
                (base32
-                "0n5pc0nazkn4g7lwl3nvfhx8nkyj1cfgnz2zfsv127waycd3p6m4"))))
+                "0wvgn5rq0qzzf58jga0y44b90hcp4adp9g3i5k7n15cnmq3llmhf"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -17917,13 +17974,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "actxps" version))
               (sha256
                (base32
-                "0cmccf5k8znhhajap0rjyjpsgp5zwc2y31yqf96h2ilmdqk2kxpg"))))
+                "1a02fmi6g0n125g0lszrg83hmlqnlpl3bw8n50c25q1ya4q7dngk"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -18382,13 +18439,13 @@ conditions of use, and that you agree with their attribution requirements.")
 (define-public r-achilles
   (package
     (name "r-achilles")
-    (version "1.7.1")
+    (version "1.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Achilles" version))
               (sha256
                (base32
-                "1qzcp8gjf7kq98il6ikpq29alcmxsszwm9dxvk1xay77nwqa2vky"))))
+                "1xkhplw7jpz7y86nac2z5vk2xs898kfv6apmk3rahjr0rmdijdqg"))))
     (properties `((upstream-name . "Achilles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -18533,39 +18590,6 @@ analyses.  To operate some functions in this package needs download of the bulk
 PRISM raster.  See the examples, testing versions and more details from:
 <https://github.com/ysd2004/acdcR>.")
     (license license:gpl2+)))
-
-(define-public r-acdc
-  (package
-    (name "r-acdc")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ACDC" version))
-              (sha256
-               (base32
-                "11nlg6pcmfa8pl1f5fxxcig1z1j74yizllh5y9rcdbdfzcasvnzn"))))
-    (properties `((upstream-name . "ACDC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-patchwork
-                             r-magrittr
-                             r-latex2exp
-                             r-ggplot2
-                             r-dplyr
-                             r-desolve
-                             r-colorspace))
-    (home-page "https://github.com/afmagee/ACDC")
-    (synopsis "Analysis of Congruent Diversification Classes")
-    (description
-     "Features tools for exploring congruent phylogenetic birth-death models.  It can
-construct the pulled speciation- and net-diversification rates from a reference
-model.  Given alternative speciation- or extinction rates, it can construct new
-models that are congruent with the reference model.  Functionality is included
-to sample new rate functions, and to visualize the distribution of one
-congruence class.  See also Louca & Pennell (2020)
-<doi:10.1038/s41586-020-2176-1>.")
-    (license license:gpl3)))
 
 (define-public r-accumulate
   (package

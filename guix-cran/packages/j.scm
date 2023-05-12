@@ -585,13 +585,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jstable" version))
               (sha256
                (base32
-                "11d25n4zy7720ad4zzdi6yhfs67nq7x33prc88j2k5fdby78800i"))))
+                "02sqb93kjz9pvycdgglvwrp1v3cv1v1gwcl35yk6jkwjl3apw4m4"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1965,13 +1965,13 @@ RStudio Addins can be used to run selected code as a job.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvReadWrite" version))
               (sha256
                (base32
-                "0jyrilrh85x5qrkmwp7fvwa9mg8p769qcfnrlj3chv1q2ddfn69j"))))
+                "09zch80lj5npwvsc9dnnc27w5rx0gh5ckpab3lpwwishlidwwdxl"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-rjson))
@@ -2592,6 +2592,32 @@ tagging.  This package provides the data files required by jiebaR.")
     (description
      "Chinese text segmentation, keyword extraction and speech tagging For R.")
     (license license:expat)))
+
+(define-public r-jico
+  (package
+    (name "r-jico")
+    (version "0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "JICO" version))
+              (sha256
+               (base32
+                "08ah7bjwkxm8fdk1s0vj3lpc7dvgz9llyhh4z9xsgpf4w98rwsvb"))))
+    (properties `((upstream-name . "JICO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlist r-nleqslv r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=JICO")
+    (synopsis "Joint and Individual Regression")
+    (description
+     "This package implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen,
+D., & Liu, Y. (2022). <arXiv:2209.12388>], which solves the multi-group
+regression problem.  The algorithm decomposes the responses from multiple groups
+into shared and group-specific components, which are driven by low-rank
+approximations of joint and individual structures from the covariates
+respectively.  It provides the implementation of the algorithm so solve the
+iterative continuum regression problem with fixed rank selection, as well as the
+cross-validation function to perform hyperparameter tuning.")
+    (license license:gpl3+)))
 
 (define-public r-jgsbook
   (package
@@ -3582,15 +3608,16 @@ Frontier Measurements for Outliers.\" <doi:10.1007/s11123-005-4702-4>.")
 (define-public r-jackknifer
   (package
     (name "r-jackknifer")
-    (version "1.0.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jackknifeR" version))
               (sha256
                (base32
-                "0axf5g3w36fjn6i2ak38pnqa0mhd1bahirh7yrzdhcrxcsxwv84x"))))
+                "0s2kf0r102gwcrjd2ggimyxw99nwcdd0pfwgyw922f2kzwf0rxq6"))))
     (properties `((upstream-name . "jackknifeR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=jackknifeR")
     (synopsis "Delete-d Jackknife for Point and Interval Estimation")
     (description
@@ -3665,13 +3692,13 @@ outputs can be written to standard file formats.")
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "5.0.1")
+    (version "5.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jack" version))
               (sha256
                (base32
-                "1l72aqnikgqrn327dkk1s6lxxrgs5xfvl8p5l986y61jpx0qdif8"))))
+                "16cgzfhzmn5cgsn1qh8q281dk0mz0a1c0y5vrrypypimr6wqdg43"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
     (inputs (list gmp))

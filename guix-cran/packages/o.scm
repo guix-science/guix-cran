@@ -2149,13 +2149,13 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
 (define-public r-orkm
   (package
     (name "r-orkm")
-    (version "0.4.0.0")
+    (version "0.6.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ORKM" version))
               (sha256
                (base32
-                "10bs8nh5pbnli80p0lgspicw0fkq5q5l14v76dq7y9c44gsh8m1z"))))
+                "1ssbbm6yp08hwdbrhvn3gwwqis8jswzxsfrpbkgajaphchkc3kkl"))))
     (properties `((upstream-name . "ORKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -2715,6 +2715,28 @@ toward the parallel model.  For details, refer to Wurm, Hanlon, and Rathouz
     (description
      "It implements functions for simulation and estimation of the ordinal latent
 block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
+    (license license:gpl2+)))
+
+(define-public r-ordinalgmifs
+  (package
+    (name "r-ordinalgmifs")
+    (version "1.0.8")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ordinalgmifs" version))
+              (sha256
+               (base32
+                "0c97c3zss34x9n8szr95z51qx8ix55mlrbqvg8dz128xpd3684rj"))))
+    (properties `((upstream-name . "ordinalgmifs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=ordinalgmifs")
+    (synopsis "Ordinal Regression for High-Dimensional Data")
+    (description
+     "This package provides a function for fitting cumulative link, adjacent category,
+forward and backward continuation ratio, and stereotype ordinal response models
+when the number of parameters exceeds the sample size, using the the generalized
+monotone incremental forward stagewise method.")
     (license license:gpl2+)))
 
 (define-public r-ordinalforest
@@ -3708,13 +3730,13 @@ package has been developed using concept of Wang et al. (2022)
 (define-public r-optisel
   (package
     (name "r-optisel")
-    (version "2.0.6")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "optiSel" version))
               (sha256
                (base32
-                "1qd8r0pa3rxrcs1jsj6wmif9nizgw7vg4sak8r5wfr167di8j4im"))))
+                "0rqwwc33rb4bp8j3m0lqrv8l539h6bbfhlj4gwa07xsdpvkyq4b5"))))
     (properties `((upstream-name . "optiSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5386,39 +5408,6 @@ Burr, King, & Heckmann (2020) <doi:10.1080/14780887.2020.1794088> for a
 description of the interpretive clustering (IC) method.")
     (license license:expat)))
 
-(define-public r-openrepgrid
-  (package
-    (name "r-openrepgrid")
-    (version "0.1.12")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "OpenRepGrid" version))
-              (sha256
-               (base32
-                "02p9b2y99z9yrrm2pl86p0yqwah0yjic2wdcd4k0mhccimmmkaip"))))
-    (properties `((upstream-name . "OpenRepGrid")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-rgl
-                             r-pvclust
-                             r-psych
-                             r-plyr
-                             r-openxlsx
-                             r-gparotation
-                             r-colorspace
-                             r-abind))
-    (home-page "http://openrepgrid.org")
-    (synopsis "Tools to Analyze Repertory Grid Data")
-    (description
-     "Analyze repertory grids, a qualitative-quantitative data collection technique
-devised by George A. Kelly in the 1950s.  Today, grids are used across various
-domains ranging from clinical psychology to marketing.  The package contains
-functions to quantitatively analyze and visualize repertory grid data (see e.g.
-Bell, 2005, <doi:10.1002/0470013370.ch9>; Fransella, Bell, & Bannister, 2004,
-ISBN: 978-0-470-09080-0).")
-    (license license:gpl2+)))
-
 (define-public r-opennlpdata
   (package
     (name "r-opennlpdata")
@@ -5944,16 +5933,16 @@ API.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.0.2.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openalexR" version))
               (sha256
                (base32
-                "01a4by6nalzk14hjpqn9d3fa03xnpfpqg9qyda3ar55sbylczm60"))))
+                "091q82vxp9yacc40ma7fjnraachgl7ricdc605ypiybg5aydd0s1"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr r-curl))
+    (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
     (home-page "https://github.com/ropensci/openalexR")
     (synopsis
      "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")
@@ -6299,29 +6288,6 @@ the weak assumptions, however, they can be mostly effective only in small
 dimensions, for example, for hyperparameter tuning.")
     (license license:lgpl2.0+)))
 
-(define-public r-oops
-  (package
-    (name "r-oops")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "oops" version))
-              (sha256
-               (base32
-                "0xg69riqphvsqqa953v4mlcakvl0invf29678nrljibg31n4wak5"))))
-    (properties `((upstream-name . "oops")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=oops")
-    (synopsis "S3 Style Object Oriented Programming")
-    (description
-     "Create simple, hassle-free classes with reference semantics similar to RefClass
-or R6 but relying on S3 methods. \"oops\" class instances tend to be lighter
-weight and faster to create.  Creating a class is as easy creating a list, while
-generating an instance is a simple function call.  Support for inheritance and
-fixed field classes.")
-    (license license:expat)))
-
 (define-public r-ooplah
   (package
     (name "r-ooplah")
@@ -6524,13 +6490,13 @@ with various graphical options - Greene et al.  2017
 (define-public r-ontologics
   (package
     (name "r-ontologics")
-    (version "0.6.5")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ontologics" version))
               (sha256
                (base32
-                "17nzh45m1mjn70qjcagxqcffg35ll5dh99nrsqn348awzrq5mvzf"))))
+                "1ggdnydxl5xdh8vjjxna778d3c3wvw1rcvvjdcnrllms8i30cvga"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8188,13 +8154,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.4.0")
+    (version "3.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OlinkAnalyze" version))
               (sha256
                (base32
-                "0f1mv3cn6kc957qp3jfqh9wsh8vvraszgw8xn0arbikkdrg8l6x4"))))
+                "122rj8ly79cn1l9011agxak560c4rjf1lm7ijj9m8n8k7fxqi8m8"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8596,6 +8562,31 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
 via Softmax regression, under the Harville <doi:10.1080/01621459.1973.10482425>
 and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
     (license license:lgpl3)))
+
+(define-public r-ohcspackage
+  (package
+    (name "r-ohcspackage")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OHCSpackage" version))
+              (sha256
+               (base32
+                "0dr2yxz9amqq9mpl8skhdvs7w01zc4y3sw4wqs0iwj1pj9jb96fz"))))
+    (properties `((upstream-name . "OHCSpackage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-readr r-openxlsx r-dplyr))
+    (home-page "https://cran.r-project.org/package=OHCSpackage")
+    (synopsis "Prepare Housing Data for Analysis")
+    (description
+     "Prepares census and core housing needs data, specifically designed for use with
+Statistics Canada data and standardized input data.  The package offers
+functions for tidying, organizing, and splitting complex data tables, making it
+easier for users to perform analyses on the data.  OHCSpackage is particularly
+useful for those working with census data that has a consistent format, number
+of rows, and number of columns.  With this package, users can save time and
+streamline their data preparation processes.")
+    (license license:gpl3)))
 
 (define-public r-ogrdbstats
   (package
@@ -10059,20 +10050,18 @@ technology). - Create frozen maps with the possibility to add labels.")
 (define-public r-oceanic
   (package
     (name "r-oceanic")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oceanic" version))
               (sha256
                (base32
-                "0mpvp19nmwk1wqiy4k938504ykrsklc37bkgv6r69kdx48i7pi14"))))
+                "12lrn13xfrxny8nqhjh5qg61bx1y8akyqxf7slbpg9npbwp04f1n"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdata
                              r-sp
                              r-sf
-                             r-rgeos
-                             r-rgdal
                              r-maps
                              r-ggplot2
                              r-broom))

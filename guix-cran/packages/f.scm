@@ -2362,6 +2362,27 @@ Zhang, F., and Gou, J. (2020), A unified framework for estimation in lognormal
 models, Technical report.")
     (license license:gpl3)))
 
+(define-public r-fude
+  (package
+    (name "r-fude")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fude" version))
+              (sha256
+               (base32
+                "1ap913fcm4ii1m42r9a0j80gyix87nk8wb8rv56nypb05cbaji6l"))))
+    (properties `((upstream-name . "fude")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf))
+    (home-page "https://github.com/takeshinishimura/fude")
+    (synopsis "Utilities for Fude Polygon")
+    (description
+     "This package provides utilities to facilitate handling of Fude Polygon data
+downloadable from the Ministry of Agriculture, Forestry and Fisheries website
+<https://open.fude.maff.go.jp>.")
+    (license license:expat)))
+
 (define-public r-ftsspec
   (package
     (name "r-ftsspec")
@@ -3682,13 +3703,13 @@ downloaded from the authors website.")
 (define-public r-frf2
   (package
     (name "r-frf2")
-    (version "2.2-3")
+    (version "2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FrF2" version))
               (sha256
                (base32
-                "1ra7gckbr786fcvvf3sn0n5yajblqfs1xbwcph5v0f6vk2lh883s"))))
+                "09ip8nrz7flrlk35x6yinfxchjs4g389f2yfmx5dmsi6s73r8gqm"))))
     (properties `((upstream-name . "FrF2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-scatterplot3d r-igraph r-doe-base))
@@ -4286,6 +4307,28 @@ according to Cameron and Baldock (1998) <doi:10.1016/S0167-5877(97)00081-0>.
 These are the methods used at the Swedish national veterinary institute (SVA) to
 evaluate the performance of our nation animal disease surveillance programmes.")
     (license license:gpl3)))
+
+(define-public r-freecurrencyapi
+  (package
+    (name "r-freecurrencyapi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "freecurrencyapi" version))
+              (sha256
+               (base32
+                "02j5jkx0hrv6brb1px782ilv4zlbnv4g2nc4a5d09lqxxvc09kjy"))))
+    (properties `((upstream-name . "freecurrencyapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://freecurrencyapi.com")
+    (synopsis "Client for the 'freecurrencyapi.com' Currency Conversion API")
+    (description
+     "An R client for the freecurrencyapi.com currency conversion API. The API
+requires registration of an API key.  You can find the full API documentation at
+<https://freecurrencyapi.com/docs> .")
+    (license license:expat)))
 
 (define-public r-freebird
   (package
@@ -8490,6 +8533,32 @@ Approximator.  For more details see the help files or the article by Hoefling
     (description "FLR algorithm for classification")
     (license license:gpl2+)))
 
+(define-public r-flps
+  (package
+    (name "r-flps")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "flps" version))
+              (sha256
+               (base32
+                "0kcxc425xg4y44j2rd1h6w5wf7dq11j9vvlf0jcs3irbr49q7y3g"))))
+    (properties `((upstream-name . "flps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstan
+                             r-rcpp
+                             r-mvtnorm
+                             r-mirt
+                             r-mass
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sooyongl.github.io/flps/")
+    (synopsis "Fully-Latent Principal Stratification")
+    (description
+     "Simulation and analysis of Fully-Latent Principal Stratification (FLPS) with
+measurement models.  Sales & Pane (2019). <doi:10.1214/18-AOAS1196>.")
+    (license license:gpl3)))
+
 (define-public r-flowtracer
   (package
     (name "r-flowtracer")
@@ -8592,6 +8661,37 @@ mind the needs of bioinformatics workflows.  However, it is easily extendable to
 any field where a series of steps (shell commands) are to be executed in a
 (work)flow.")
     (license license:expat)))
+
+(define-public r-floral
+  (package
+    (name "r-floral")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FLORAL" version))
+              (sha256
+               (base32
+                "0g1619ql4kima0yxm4spk530363mnpm4jmsqrvfvpz6fdyrp1y34"))))
+    (properties `((upstream-name . "FLORAL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-reshape
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://vdblab.github.io/FLORAL/")
+    (synopsis "Fit Log-Ratio Lasso Regression for Compositional Data")
+    (description
+     "Log-ratio Lasso regression for continuous, binary, and survival outcomes with
+compositional features.  See Fei and others (2023)
+<doi:10.1101/2023.05.02.538599>.")
+    (license license:gpl3+)))
 
 (define-public r-flora
   (package
@@ -9606,20 +9706,22 @@ function names.")
 (define-public r-flashlight
   (package
     (name "r-flashlight")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flashlight" version))
               (sha256
                (base32
-                "0gzpq3cmb8kspjhk74qrhlkdj8fjw75sywnwvkwbvy3cp11hffp6"))))
+                "0nyxx7zrqw8fgy1n81n30m80z7xwkydnhmxj6c22mq83md08rd8c"))))
     (properties `((upstream-name . "flashlight")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-rpart-plot
                              r-rpart
+                             r-rlang
                              r-metricsweighted
                              r-ggplot2
                              r-dplyr
@@ -9632,10 +9734,9 @@ function names.")
 performance, variable importance, global surrogate models, ICE profiles, partial
 dependence (Friedman J. H. (2001) <doi:10.1214/aos/1013203451>), accumulated
 local effects (Apley D. W. (2016) <arXiv:1612.08468>), further effects plots,
-scatter plots, interaction strength, and variable contribution breakdown
-(approximate SHAP) for single observations (Gosiewska and Biecek (2019)
-<arxiv:1903.11420>).  All tools are implemented to work with case weights and
-allow for stratified analysis.  Furthermore, multiple flashlights can be
+interaction strength, and variable contribution breakdown (Gosiewska and Biecek
+(2019) <arxiv:1903.11420>).  All tools are implemented to work with case weights
+and allow for stratified analysis.  Furthermore, multiple flashlights can be
 combined and analyzed together.")
     (license license:gpl2+)))
 
@@ -11826,18 +11927,18 @@ annuity calculation, bond pricing and financial data download.")
 (define-public r-finalsize
   (package
     (name "r-finalsize")
-    (version "0.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finalsize" version))
               (sha256
                (base32
-                "0ir5xgr4qc0bl5c3gl06afcvbkhixaadwlyh0np5fmzlfsl8mpv1"))))
+                "18nyyl8c121kfr22vanvgbma627w98v39d4n34kr8hd8iw8jx5lx"))))
     (properties `((upstream-name . "finalsize")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://epiverse-trace.github.io/finalsize/")
+    (home-page "https://github.com/epiverse-trace/finalsize")
     (synopsis "Calculate the Final Size of an Epidemic")
     (description
      "Calculate the final size of a susceptible-infectious-recovered epidemic in a
@@ -12150,13 +12251,13 @@ logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "file2meco" version))
               (sha256
                (base32
-                "04rvmkw9b640ras11z8na9ac8kddrdphbjhq8il3pyh0jrf15yvh"))))
+                "02kbpyfzr98ra55mbw7l9d1haz8p97fwbn5knglz7875b5knqx4b"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -12303,17 +12404,18 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.1.5")
+    (version "1.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTAutils" version))
               (sha256
                (base32
-                "1dqvb59jfbmv6p0qr6ica2mg9pg9dq4dgwx9dq2xc74j88vji2rz"))))
+                "14wnmk4zdi7lpmybpbvkx9apmjyppx0ik4bc5xb0jbjhawzziv2i"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-units
+                             r-terra
                              r-sqldf
                              r-sp
                              r-sf
@@ -12726,25 +12828,6 @@ endorsement of this product by HL7.")
      "Impute general multivariate missing data with the fractional hot deck imputation
 based on Jaekwang Kim (2011) <doi:10.1093/biomet/asq073>.")
     (license license:gpl2+)))
-
-(define-public r-fgsg
-  (package
-    (name "r-fgsg")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FGSG" version))
-              (sha256
-               (base32
-                "1r3sjhzf9gcnbcx6rqr1s555z8lcwm3fxl096md2jji336ijlk79"))))
-    (properties `((upstream-name . "FGSG")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=FGSG")
-    (synopsis "Feature Grouping and Selection Over an Undirected Graph")
-    (description
-     "Implement algorithms for feature grouping and selection over an undirected
-graph, solves problems like graph fused lasso, graph OSCAR and so on.")
-    (license license:gpl2)))
 
 (define-public r-fgmutils
   (package
@@ -13411,6 +13494,34 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
      "Collect your data on digital marketing campaigns from Google Analytics using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-fetch
+  (package
+    (name "r-fetch")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fetch" version))
+              (sha256
+               (base32
+                "06jwa4rkjkiylqfnkvvvk2g72m8889hm8w2rk36ggji0vy2cdywz"))))
+    (properties `((upstream-name . "fetch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-readxl
+                             r-readr
+                             r-haven
+                             r-foreign
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://fetch.r-sassy.org")
+    (synopsis "Fetch Data from Various Data Sources")
+    (description
+     "This package contains functions to fetch data from various data sources.  The
+user first creates a catalog of objects from a data source, then fetches data
+from the catalog.  The package provides an easy way to access data from many
+different types of sources.")
+    (license license:cc0)))
 
 (define-public r-festa
   (package
@@ -17327,13 +17438,13 @@ categorical covariates.")
 (define-public r-fastclime
   (package
     (name "r-fastclime")
-    (version "1.4.1")
+    (version "1.4.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fastclime" version))
               (sha256
                (base32
-                "0zcir8r11b2hxr9vvkmvxlzmhfcaxbr0wbjy86ysr912mp8fs9i3"))))
+                "17d0vblv1j8n8890dydfd8hkxrlvih8ygcg5krggq1mlz98x55ky"))))
     (properties `((upstream-name . "fastclime")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-lattice r-igraph))
@@ -17596,17 +17707,17 @@ between-series correlation (2015) <arXiv:1505.05660>.")
 (define-public r-fasano-franceschini-test
   (package
     (name "r-fasano-franceschini-test")
-    (version "2.1.1")
+    (version "2.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fasano.franceschini.test" version))
               (sha256
                (base32
-                "0h28ph562ac345l022x9jblzhkk7qn2knrp5jh38flw0xkv9g2yf"))))
+                "1d4ai05c81sslkvxsis4pvzigx306nly120k67jlj8vn7p8wdlhy"))))
     (properties `((upstream-name . "fasano.franceschini.test")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp))
-    (home-page "https://github.com/nesscoder/fasano.franceschini.test")
+    (home-page "https://github.com/braunlab-nu/fasano.franceschini.test")
     (synopsis
      "Fasano-Franceschini Test: A Multidimensional Kolmogorov-Smirnov Two-Sample Test")
     (description

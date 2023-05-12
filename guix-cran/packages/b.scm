@@ -2614,6 +2614,49 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
 <doi:10.1080/00273171.2020.1854082>.")
     (license license:expat)))
 
+(define-public r-brvm
+  (package
+    (name "r-brvm")
+    (version "5.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BRVM" version))
+              (sha256
+               (base32
+                "14bbl0b383ilj8zw8qw40gfyi6lpr0vqsb7hajzjycy5l0xnimjb"))))
+    (properties `((upstream-name . "BRVM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-xml2
+                             r-tseries
+                             r-timedate
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-nortest
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-httr
+                             r-highcharter
+                             r-gsheet
+                             r-goftest
+                             r-formattable
+                             r-fbasics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BRVM")
+    (synopsis
+     "Retrieve Historical Data of Companies Listed on the 'BRVM' Stock Exchange")
+    (description
+     "Provide real-time access to data from the Regional Securities Exchange SA,
+commonly known as the BRVM stock exchange.  The goal is to facilitate data
+access for users of the R programming language.  The package includes a variety
+of data that can be accessed by calling functions.")
+    (license license:expat)))
+
 (define-public r-brunnermunzel
   (package
     (name "r-brunnermunzel")
@@ -2961,47 +3004,6 @@ add variable labels, and more.")
      "Miscellaneous R functions, including functions related to graphics (mostly for
 base graphics), permutation tests, running mean/median, and general utilities.")
     (license license:gpl3)))
-
-(define-public r-brolgar
-  (package
-    (name "r-brolgar")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "brolgar" version))
-              (sha256
-               (base32
-                "0jw0cnszwdcj6jdxpr17bq338jaxihaacg62rr3n1ayig54bgbyn"))))
-    (properties `((upstream-name . "brolgar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tsibble
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-ggplot2
-                             r-fabletools
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/njtierney/brolgar")
-    (synopsis
-     "Browse Over Longitudinal Data Graphically and Analytically in R")
-    (description
-     "This package provides a framework of tools to summarise, visualise, and explore
-longitudinal data.  It builds upon the tidy time series data frames used in the
-tsibble package, and is designed to integrate within the tidyverse', and
-tidyverts (for time series) ecosystems.  The methods implemented include
-calculating features for understanding longitudinal data, including calculating
-summary statistics such as quantiles, medians, and numeric ranges, sampling
-individual series, identifying individual series representative of a group, and
-extending the facet system in ggplot2 to facilitate exploration of samples of
-data.  These methods are fully described in the paper \"brolgar: An R package to
-Browse Over Longitudinal Data Graphically and Analytically in R\", Nicholas
-Tierney, Dianne Cook, Tania Prvan (2020) <arXiv:2012.01619>.")
-    (license license:expat)))
 
 (define-public r-brokenstick
   (package
@@ -4580,13 +4582,13 @@ review).")
 (define-public r-bqror
   (package
     (name "r-bqror")
-    (version "1.6.0")
+    (version "1.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bqror" version))
               (sha256
                (base32
-                "0h0nhbid32m5fs97f5ypc2jz04yzik5bxpgf7rp5albr9rcbwnr4"))))
+                "0mg82bcc3cw2zhqz2j9539kw7cs159lzw363a2abcm7ys66dp6bd"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -5516,13 +5518,13 @@ Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
 (define-public r-bootur
   (package
     (name "r-bootur")
-    (version "0.5.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootUR" version))
               (sha256
                (base32
-                "1v79vi3jawiixph55r7ysjqkgjy1hk1n774sx3k2xzkll8bsm5l9"))))
+                "1v0yg5ldp37sm69wphhxsc62n2l8fnlagjxl83kg25waljqg95h1"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca
@@ -5537,7 +5539,8 @@ Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
     (description
      "Set of functions to perform various bootstrap unit root tests for both
 individual time series (including augmented Dickey-Fuller test and union tests),
-multiple time series and panel data; see Palm, Smeekes and Urbain (2008)
+multiple time series and panel data; see Smeekes and Wilms (2023)
+<doi:10.18637/jss.v106.i12>, Palm, Smeekes and Urbain (2008)
 <doi:10.1111/j.1467-9892.2007.00565.x>, Palm, Smeekes and Urbain (2011)
 <doi:10.1016/j.jeconom.2010.11.010>, Moon and Perron (2012)
 <doi:10.1016/j.jeconom.2012.01.008>, Smeekes and Taylor (2012)
@@ -9037,6 +9040,27 @@ body.  Messages can be sent through an SMTP server, through the RStudio Connect
 service, or through the Mailgun API service <https://www.mailgun.com/>.")
     (license license:expat)))
 
+(define-public r-blaster
+  (package
+    (name "r-blaster")
+    (version "1.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "blaster" version))
+              (sha256
+               (base32
+                "0a8481swn0c72q5vqb3zzki7xxd1bns2b606flcc5brvqh1jaqq4"))))
+    (properties `((upstream-name . "blaster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/tamminenlab/blaster")
+    (synopsis "Native R Implementation of an Efficient BLAST-Like Algorithm")
+    (description
+     "Implementation of an efficient BLAST-like sequence comparison algorithm, written
+in C++11 and using native R datatypes.  Blaster is based on nsearch - Schmid et
+al (2018) <doi:10.1101/399782>.")
+    (license license:bsd-3)))
+
 (define-public r-blapsr
   (package
     (name "r-blapsr")
@@ -9631,26 +9655,6 @@ for the hex and yaff bitmap font formats and if Python is installed can also
 read/write several more bitmap font formats using an embedded version of
 monobit'.")
     (license license:expat)))
-
-(define-public r-bitrina
-  (package
-    (name "r-bitrina")
-    (version "1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BiTrinA" version))
-              (sha256
-               (base32
-                "0sjq5a21vpsjs0ad0v8gsqlbk3n8virg1hzj0nvgm3h3xqhymh1d"))))
-    (properties `((upstream-name . "BiTrinA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-diptest))
-    (home-page "https://cran.r-project.org/package=BiTrinA")
-    (synopsis "Binarization and Trinarization of One-Dimensional Data")
-    (description
-     "This package provides methods for the binarization and trinarization of
-one-dimensional data and some visualization functions.")
-    (license license:artistic2.0)))
 
 (define-public r-bitmexr
   (package
@@ -10902,13 +10906,13 @@ networks, i.e.  data graph structured.")
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.2-2")
+    (version "4.2-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "biomod2" version))
               (sha256
                (base32
-                "06i30m3rv0ifbmdjcczma8nxakgyksf8g9jp1z2lmfl92n0n7s4v"))))
+                "04kzxzzacan59xbqznhykj22i80kdb9710ynvw5c5qfb2c1lqnvp"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -10928,7 +10932,6 @@ networks, i.e.  data graph structured.")
                              r-foreach
                              r-earth
                              r-dplyr
-                             r-data-table
                              r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=biomod2")
@@ -13283,13 +13286,13 @@ choosing and setting the number of cores used.")
 (define-public r-bignum
   (package
     (name "r-bignum")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bignum" version))
               (sha256
                (base32
-                "0a0hqsdh6mpkkqkdv7dhijbwnk6q200z0s6xnaa9mp23ih30pksq"))))
+                "0v2hiw9kirm78fcqbm2hzrqcvndgcslz9j8gmzba1d5xaivanhkj"))))
     (properties `((upstream-name . "bignum")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-cpp11 r-bh))
@@ -16378,13 +16381,13 @@ be used as a stand-alone package.")
 (define-public r-bench
   (package
     (name "r-bench")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bench" version))
               (sha256
                (base32
-                "16s3qa70bvfd692c0agvi27hp09b07qrzrz6jy2yd7xpimv0m4dg"))))
+                "05zky7l6103gabv9y0g3qlx8sgkq1sn9yl9jd3x8834cmlh67bmz"))))
     (properties `((upstream-name . "bench")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-profmem r-pillar r-glue))
@@ -16672,13 +16675,13 @@ want to know when it is ready.")
 (define-public r-beeguts
   (package
     (name "r-beeguts")
-    (version "1.0.0")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BeeGUTS" version))
               (sha256
                (base32
-                "0b0r8srh68m2kxdyvfx5kxrpchish5la7h44wkxfa59gcbsg96rc"))))
+                "059xa5rpnd92kmy8hd26ryx3gkls9vlwbwwbwl4my1z7vll5s59m"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16704,9 +16707,9 @@ want to know when it is ready.")
      "Tools to calibrate, validate, and make predictions with the General Unified
 Threshold model of Survival adapted for Bee species.  The model is presented in
 the publication from Baas, J., Goussen, B., Miles, M., Preuss, T.G., Roessing,
-I. (submitted) and is based on the GUTS framework Jager, T., Albert, C., Preuss,
-T.G. and Ashauer, R. (2011) <doi:10.1021/es103092a>.  The authors are grateful
-to Bayer A.G. for its financial support.")
+I. (2022) <doi:10.1002/etc.5423> and is based on the GUTS framework Jager, T.,
+Albert, C., Preuss, T.G. and Ashauer, R. (2011) <doi:10.1021/es103092a>.  The
+authors are grateful to Bayer A.G. for its financial support.")
     (license license:gpl3)))
 
 (define-public r-bedmatrix
@@ -17717,27 +17720,6 @@ features to visualize, document, and report data quality â which is essenti
 for making data quality assessment transparent and reproducible.  The reference
 for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
     (license license:gpl3+)))
-
-(define-public r-bda
-  (package
-    (name "r-bda")
-    (version "15.2.5")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "bda" version))
-              (sha256
-               (base32
-                "19m7xrsckw0lncmi0qsmy194f2c9lmi1vac37h9jfvkb3i30fx20"))))
-    (properties `((upstream-name . "bda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-boot))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=bda")
-    (synopsis "Binned Data Analysis")
-    (description
-     "Algorithms developed for binned data analysis, gene expression data analysis and
-measurement error models for ordinal data analysis.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-bct
   (package
@@ -20007,13 +19989,13 @@ segmentation wrapper for all algorithms.")
 (define-public r-bayesppd
   (package
     (name "r-bayesppd")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesPPD" version))
               (sha256
                (base32
-                "0nyzkg2lcvfk61xmxv7fjz626ik5bf9dbxfh6zyvjd9kjzw9kgdl"))))
+                "1rkbcz5kx8pxsm1q6rryyyc4j1dn049hysdj3piwk71jpl43b0jj"))))
     (properties `((upstream-name . "BayesPPD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
@@ -20024,8 +20006,8 @@ segmentation wrapper for all algorithms.")
     (description
      "Bayesian power/type I error calculation and model fitting using the power prior
 and the normalized power prior for generalized linear models.  Detailed examples
-of applying the package are available at <arXiv:2112.14616>.  The Bayesian
-clinical trial design methodology is described in Chen et al. (2011)
+of applying the package are available at <doi:10.32614/RJ-2023-016>.  The
+Bayesian clinical trial design methodology is described in Chen et al. (2011)
 <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and Ibrahim (2019)
 <doi:10.1093/biostatistics/kxy009>.  The normalized power prior is described in
 Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
@@ -20521,6 +20503,44 @@ results from the models.  This framework does not rely on standard parametric
 density functions, which provides flexibility during model fitting.  Further
 details regarding part of this framework can be found in Cullen et al. (2021)
 <doi:10.1101/2020.11.05.369702>.")
+    (license license:gpl3)))
+
+(define-public r-bayesmortalityplus
+  (package
+    (name "r-bayesmortalityplus")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BayesMortalityPlus" version))
+              (sha256
+               (base32
+                "0kk6lmvp162jxx22r87hxl2i089ghkksy1fw923fcd3iyi52x2r0"))))
+    (properties `((upstream-name . "BayesMortalityPlus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-progress
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=BayesMortalityPlus")
+    (synopsis "Bayesian Mortality Modelling")
+    (description
+     "Fit Bayesian graduation mortality using the Heligman-Pollard model, as seen in
+Heligman, L., & Pollard, J. H. (1980) <doi:10.1017/S0020268100040257> and
+Dellaportas, Petros, et al. (2001) <doi:10.1111/1467-985X.00202>, and dynamic
+linear model (Campagnoli, P., Petris, G., and Petrone, S. (2009)
+<doi:10.1007/b135794_2>).  While Heligman-Pollard has parameters with a
+straightforward interpretation yielding some rich analysis, the dynamic linear
+model provides a very flexible adjustment of the mortality curves by controlling
+the discount factor value.  Closing methods for both Heligman-Pollard and
+dynamic linear model were also implemented according to Dodd, Erengul, et al.
+(2018) <https://www.jstor.org/stable/48547511>.  The Bayesian Lee-Carter model
+is also implemented to fit historical mortality tables time series to predict
+the mortality in the following years and to do improvement analysis, as seen in
+Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
+Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
     (license license:gpl3)))
 
 (define-public r-bayesmixsurv
@@ -21039,13 +21059,13 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
 (define-public r-bayesianplatformdesigntimetrend
   (package
     (name "r-bayesianplatformdesigntimetrend")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesianPlatformDesignTimeTrend" version))
               (sha256
                (base32
-                "04rp0lxnyqrbl97973d073466krj62i010hgpzkh6b77nd7hlakz"))))
+                "0drgv3pcbzy57f6qx52ysa4rgq45wvmgir9g5n9vvl9pjm2kb7m3"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -21057,6 +21077,8 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
                              r-rcppeigen
                              r-rcpp
                              r-matrixstats
+                             r-lhs
+                             r-lagp
                              r-iterators
                              r-ggplot2
                              r-foreach
@@ -24756,19 +24778,18 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
 (define-public r-baizer
   (package
     (name "r-baizer")
-    (version "0.4.5")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baizer" version))
               (sha256
                (base32
-                "1jf1dkknsq2x44y7v3r1ikrdkz0absiw1spzs4ypd4jbak9kzab3"))))
+                "1smdiivh8d643y8cj5fsi0gd37c3jgld331zrdx4ykip7gqa1467"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-rstatix
                              r-rlang
                              r-purrr
                              r-openxlsx

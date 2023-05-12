@@ -1324,13 +1324,13 @@ pre-post transitions.  For details of the latent class model, see
 (define-public r-guerry
   (package
     (name "r-guerry")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Guerry" version))
               (sha256
                (base32
-                "1ch9s1zpynskld6jnw8iajj9syvmp35xi7igljjbrcc299dyk83y"))))
+                "1pci00b69sk9qlgpkbmvcijlbh48xdmshh57xgi84m85j16i4rlw"))))
     (properties `((upstream-name . "Guerry")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -2241,6 +2241,33 @@ variance components and the heritability through cross validation.")
     (synopsis "Smoothing tools")
     (description "Tools rewritten in C for various smoothing tasks")
     (license license:lgpl2.0+)))
+
+(define-public r-gsmams
+  (package
+    (name "r-gsmams")
+    (version "0.7.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gsMAMS" version))
+              (sha256
+               (base32
+                "00h6b0zxhiqpgngmwazx2lpzvy3x85mbishmmqn51v4k3568dw52"))))
+    (properties `((upstream-name . "gsMAMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=gsMAMS")
+    (synopsis "Group Sequential Designs of Multi-Arm Multi-Stage Trials")
+    (description
+     "It provides functions to generate operating characteristics and to calculate
+Sequential Conditional Probability Ratio Tests(SCPRT) efficacy and futility
+boundary values along with sample/event size of Multi-Arm Multi-Stage(MAMS)
+trials for different outcomes.  The package is based on Jianrong Wu, Yimei Li,
+Liang Zhu (2023) <doi:10.1002/sim.9682>, Jianrong Wu, Yimei Li (2023) \"Group
+Sequential Multi-Arm Multi-Stage Survival Trial Design with Treatment
+Selection\"(Manuscript accepted for publication) and Jianrong Wu, Yimei Li,
+Shengping Yang (2023) \"Group Sequential Multi-Arm Multi-Stage Trial Design with
+Ordinal Endpoints\"(In preparation).")
+    (license license:gpl3)))
 
 (define-public r-gsm
   (package
@@ -3831,13 +3858,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "groundhog" version))
               (sha256
                (base32
-                "1c8z9861w6wf5px0qm5iryczmxfv7kj8h8a398sidlny3faa7b45"))))
+                "12x0wm0acksgkg6ap6rzl76a9szfrpjvksyq768n6jqr5aixchv9"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -4376,13 +4403,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.2.1")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "grf" version))
               (sha256
                (base32
-                "0b8zhynfal3km5zsixn076z03d1gjd4if1bs8mll8pvg1dhgpqs9"))))
+                "0k9g53rhjv69bklvq4b7g54hl80dvfqpd075y34j7xmal4x5rbf4"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -5432,40 +5459,6 @@ generating sets of high-probability configurations.  Computations will typically
 not be so fast as they are with RHugin', but this package should assist users
 without access to Hugin to use code written to use RHugin'.")
     (license license:gpl2+)))
-
-(define-public r-grattan
-  (package
-    (name "r-grattan")
-    (version "2.0.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "grattan" version))
-              (sha256
-               (base32
-                "067acsrxzdj4bxybyah4c5j8lzrj1vbmarpbngf4r59qnryj4bf8"))))
-    (properties `((upstream-name . "grattan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-magrittr
-                             r-ineq
-                             r-hutilscpp
-                             r-hutils
-                             r-fy
-                             r-forecast
-                             r-fastmatch
-                             r-data-table
-                             r-checkmate
-                             r-assertthat))
-    (home-page "https://github.com/HughParsonage/grattan")
-    (synopsis "Australian Tax Policy Analysis")
-    (description
-     "Utilities to cost and evaluate Australian tax policy, including fast projections
-of personal income tax collections, high-performance tax and transfer
-calculators, and an interface to common indices from the Australian Bureau of
-Statistics.  Written to support Grattan Institute's Australian Perspectives
-program, and related projects.  Access to the Australian Taxation Office's
-sample files of personal income tax returns is assumed.")
-    (license license:gpl2)))
 
 (define-public r-gratis
   (package
@@ -9129,13 +9122,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "goeveg" version))
               (sha256
                (base32
-                "1x8apb0fhi74p88g4cpq0w4qkw77p96md68n5mi5a35dy7kz2cfl"))))
+                "1b3d986a254yxcra1qss1gwsbjc0cfk0hlybs7aj6z0v5b7j2raj"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -11284,38 +11277,49 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.1-2")
+    (version "0.2-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmnetr" version))
               (sha256
                (base32
-                "1m3xlzcv60l6wb7d6xbk60sdg3npq1ly7i7i9j45ndj28yb6yr6k"))))
+                "0q8zxm5pr8x2b81q0p3s6m03b9cdgi4n5sy6xiqakpdjfxm7wrh9"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rpart r-matrix r-glmnet))
+    (propagated-inputs (list r-xgboost
+                             r-torch
+                             r-survival
+                             r-smoof
+                             r-rpart
+                             r-paramhelpers
+                             r-mlrmbo
+                             r-matrix
+                             r-glmnet))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=glmnetr")
     (synopsis
-     "Relaxed Lasso Model for Data Which Might Have Long Run Times Using 'glmnet'")
+     "Nested Cross Validation for the Relaxed Lasso and Other Machine Learning Models")
     (description
-     "For some datasets, for example when the design matrix is not of full rank,
-glmnet may have very long run times when fitting the relaxed lasso model, in
-particular when fitting a Cox based model, making it difficult to get solutions
-either from glmnet() or cv.glmnet().  In this package, glmnetr', we provide a
-workaround and solve for the non penalized relaxed model where gamma=0 for model
-structures analogue to R functions like glm() or coxph() of the survival
-package.  If you are not fitting relaxed lasso models, or if you are able to get
-convergence using glmnet', then this package may not be of much benefit to you.
-Note, while this package may allow one to fit relaxed lasso models that have
-difficulties converging using glmnet', this package does not afford the full
-function and versatility of glmnet'.  In addition to fitting the relaxed lasso
-model this package also includes the function cv.glmnetr() to perform a cross
-validation to identify hyper-parameters for a lasso fit, much like the
-cv.glmnet() function of the glmnet package.  Additionally, the package includes
-the function nested.glmnetr() to perform a nested cross validation to assess the
-fit of a cross validated derived lasso model fit.  If though you are fitting not
-a relaxed lasso model but an elastic-net model, then the R-packages nestedcv
+     "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
+gradient boosting machine ('xgboost'), Recursive Partitioning ('RPART') or step
+wise regression models are fit.  Nested cross validation to estimate and compare
+performances between these models is also performed.  For some datasets, for
+example when the design matrix is not of full rank, glmnet may have very long
+run times when fitting the relaxed lasso model, from our experience when fitting
+Cox models on data with many predictors and many patients, making it difficult
+to get solutions from either glmnet() or cv.glmnet().  This may be remedied with
+the path=TRUE options when calling cv.glmnet().  This option is not described in
+the glmnet Reference Manual but is described in the glmnet \"The Relaxed Lasso\"
+vignette.  In this package, glmnetr', we provide a similar workaround and solve
+for the non penalized relaxed model where gamma=0 for model structures analogue
+to R functions like glm() or coxph() of the survival package.  If you are not
+fitting relaxed lasso models, or if you are able to get convergence using
+glmnet', then the glmnetr() and cv.glmnetr() functions may not be of much
+benefit to you.  Note, while this package may allow one to fit relaxed lasso
+models that have difficulties converging using glmnet', and provides some
+different functionality beyond that of cv.glmnet(), it does not afford the some
+of the versatility of glmnet'.  When fitting not a relaxed lasso model but an
+elastic-net model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, glmnetSE
 <https://cran.r-project.org/package=glmnetSE> or others may provide greater
 functionality when performing a nested CV. As with the glmnet package, this
@@ -14214,6 +14218,29 @@ some functions that facilitate the communication between R and GGUM2004'.
 Finally, a model-fit checking utility, MODFIT(), is also available.")
     (license license:gpl2+)))
 
+(define-public r-ggtricks
+  (package
+    (name "r-ggtricks")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggtricks" version))
+              (sha256
+               (base32
+                "1bpf3a5da8csqzwyqw0xqkbki4jgyhsybj2lw8zs00vcdsg9bhhv"))))
+    (properties `((upstream-name . "ggtricks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-cli))
+    (home-page "https://github.com/AbdoulMa/ggtricks")
+    (synopsis
+     "Create Sector and Other Charts Easily Using Grammar of Graphics")
+    (description
+     "This package provides a collection of several geoms to create graphics, using
+ggplot2 and the Cartesian coordinate system.  You use the familiar mapping
+Grammar of Graphics without the need to do another transformation into polar
+coordinates.")
+    (license license:expat)))
+
 (define-public r-ggtrendline
   (package
     (name "r-ggtrendline")
@@ -14904,6 +14931,28 @@ the genetic merit of animals (Quaas (1988)
 extensive.  There are computationally optimized functions to calculate Q.")
     (license license:gpl3)))
 
+(define-public r-ggrounded
+  (package
+    (name "r-ggrounded")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggrounded" version))
+              (sha256
+               (base32
+                "124khfv4fl3xgylq4s1pc3wzld0n68iclyl0pm19jcw97bmf1cxl"))))
+    (properties `((upstream-name . "ggrounded")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gridgeometry r-ggplot2))
+    (home-page "https://github.com/botan/ggrounded")
+    (synopsis "Rounded Bar Plots")
+    (description
+     "This package creates bar plots with rounded corners using ggplot2'.  The code in
+this package was adapted from a solution provided by Stack Overflow user sthoch
+in the following post
+<https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar>.")
+    (license license:expat)))
+
 (define-public r-ggrisk
   (package
     (name "r-ggrisk")
@@ -15551,6 +15600,31 @@ coding.  You can get resultant code for the plot.")
 ggplot2, but has been moved its own package to reduce the download size of
 ggplot2.")
     (license license:gpl3)))
+
+(define-public r-ggplot2-utils
+  (package
+    (name "r-ggplot2-utils")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggplot2.utils" version))
+              (sha256
+               (base32
+                "0p1074cqfb1gw6wrrwzfxsibgm0496k44rgcdd1198g8f0cizyl5"))))
+    (properties `((upstream-name . "ggplot2.utils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggpp r-ggplot2 r-ggally r-envstats))
+    (home-page "https://insightsengineering.github.io/ggplot2.utils/")
+    (synopsis "Selected Utilities Extending 'ggplot2'")
+    (description
+     "Selected utilities, in particular geoms and stats functions, extending the
+ggplot2 package.  Note that this package does not define the functions itself,
+but instead imports them from a collection of other packages and then exports
+them.  These functions are tested as well to make sure that they work reliably.
+Currently, the selected functions are from EnvStats
+<doi:10.1007/978-1-4614-8456-1>, GGally <doi:10.5281/zenodo.5009047> and ggpp
+<https://CRAN.R-project.org/package=ggpp>.")
+    (license license:asl2.0)))
 
 (define-public r-ggplate
   (package
@@ -16984,6 +17058,32 @@ the exact pixel dimensions needed.")
 creating scales to focus on subgroups of the data plotted without losing other
 information.")
     (license license:gpl3)))
+
+(define-public r-ggflowchart
+  (package
+    (name "r-ggflowchart")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggflowchart" version))
+              (sha256
+               (base32
+                "0n93ydnj4q95a67ch2i3yjg7f05vi2xdb4jss620ccaj33chwqzv"))))
+    (properties `((upstream-name . "ggflowchart")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://nrennie.github.io/ggflowchart/")
+    (synopsis "Flowcharts with 'ggplot2'")
+    (description
+     "Flowcharts can be a useful way to visualise complex processes.  This package
+uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
+    (license license:expat)))
 
 (define-public r-ggfittext
   (package
@@ -18707,6 +18807,30 @@ might lower or change the direction of effect.  See the getspres website for
 documentation and examples <https://magosil86.github.io/getspres/>.")
     (license license:expat)))
 
+(define-public r-getspanel
+  (package
+    (name "r-getspanel")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "getspanel" version))
+              (sha256
+               (base32
+                "18lgcaz8vqzp2pjld9cc2gkq42nk8216rgqsda8wdynsxc697wr2"))))
+    (properties `((upstream-name . "getspanel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/moritzpschwarz/getspanel")
+    (synopsis "General-to-Specific Modelling of Panel Data")
+    (description
+     "Uses several types of indicator saturation and automated General-to-Specific
+(GETS) modelling from the gets package and applies it to panel data.  This
+allows the detection of structural breaks in panel data, operationalising a
+reverse causal approach of causal inference, see Pretis and Schwarz (2022)
+<doi:10.2139/ssrn.4022745>.")
+    (license license:expat)))
+
 (define-public r-gets
   (package
     (name "r-gets")
@@ -20294,6 +20418,46 @@ Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
 <doi:10.1016/j.spasta.2022.100596>, Morales-Navarrete et al. (2022)
 <arXiv:2105.03734>, and a large class of examples and tutorials.")
     (license license:gpl3+)))
+
+(define-public r-geomod
+  (package
+    (name "r-geomod")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "geomod" version))
+              (sha256
+               (base32
+                "06a211cyhcicy5arpjxiglami56plkm6ybxbzbmjd0z6yn9yyd38"))))
+    (properties `((upstream-name . "geomod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rpart
+                             r-rastervis
+                             r-raster
+                             r-ranger
+                             r-randomforest
+                             r-quantregforest
+                             r-qrnn
+                             r-nnet
+                             r-kernlab
+                             r-e1071
+                             r-cubist
+                             r-caret
+                             r-arm))
+    (home-page "https://cran.r-project.org/package=geomod")
+    (synopsis "Computer Program for Geotechnical Investigations")
+    (description
+     "The geomod does spatial prediction of the Geotechnical soil properties.  It
+predicts the spatial distribution of Geotechnical properties of soil e.g. shear
+strength, permeability, plasticity index, Standard Penetration Test (SPT)
+counts, etc.  The output of the prediction takes the form of a map or a series
+of maps.  It uses the interpolation technique where a single or statistically
+âbestâ estimate of spatial occurrence soil property is determined.  The
+interpolation is based on both the sampled data and a variogram model for the
+spatial correlation of the sampled data.  The single estimate is produced by a
+Kriging technique.")
+    (license license:gpl3)))
 
 (define-public r-geometries
   (package
@@ -24260,6 +24424,36 @@ Differences are generated between raster images.  Comparisons can be performed
 between different package versions and between different R versions.")
     (license license:gpl2+)))
 
+(define-public r-gdi
+  (package
+    (name "r-gdi")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gdi" version))
+              (sha256
+               (base32
+                "0xhmj0j3v8q6pda4hhgzzcfjcghv93rrsyhgn4l1x8ljwqij67nf"))))
+    (properties `((upstream-name . "gdi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-png r-jpeg))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gdi")
+    (synopsis "Volumetric Analysis using Graphic Double Integration")
+    (description
+     "Tools implementing an automated version of the graphic double integration
+technique first employed by Jerison (1973) <ISBN:9780323141086> and Hurlburt
+(1999) <doi:10.1080/02724634.1999.10011145>.  Graphic double integration is
+primarily used for volume or mass estimation of (extinct) animals, and the
+package gdi aims to make this technique as convenient and versatile as possible.
+ The main functions of gdi provide utilities for automatically measuring
+diameters from digital silhouettes provided as image files, and for calculating
+volume via graphic double integration with a simple elliptical superelliptical
+(following Motani 2001
+<doi:10.1666/0094-8373(2001)027%3C0735:EBMFST%3E2.0.CO;2>) or complex
+cross-sectional model.")
+    (license license:gpl3+)))
+
 (define-public r-gdefrag
   (package
     (name "r-gdefrag")
@@ -26292,13 +26486,13 @@ Reference: Goodfellow et al. (2014) <arXiv:1406.2661v1>.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.3")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ganDataModel" version))
               (sha256
                (base32
-                "0x2halgs33x4ip2lrq55cswd9b8jwd8k8vcxx7v51wkwzp9zpyzb"))))
+                "1vpw5ijl0mr1vgzqavsmich0f0vhi94df6d92a7adi915inqvdaz"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))

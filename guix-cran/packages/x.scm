@@ -519,28 +519,25 @@ Described in the book \"Extending R\".")
 (define-public r-xqtlbiolinks
   (package
     (name "r-xqtlbiolinks")
-    (version "1.2.2")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xQTLbiolinks" version))
               (sha256
                (base32
-                "1gsjka4sy7cr852217sbf2v63yfg7gs94q9cvvhbl67l83r06l2c"))))
+                "0s2zar4zav9a3q2w5cn915mr2k7mcd570fjaw0yj6q89c74mlw82"))))
     (properties `((upstream-name . "xQTLbiolinks")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-summarizedexperiment
                              r-stringr
-                             r-scales
                              r-rmysql
-                             r-pupillometryr
                              r-jsonlite
                              r-iranges
-                             r-httr
-                             r-ggridges
                              r-ggrepel
                              r-ggplot2
                              r-genomicranges
+                             r-genomicfeatures
                              r-genomeinfodb
                              r-dbi
                              r-data-table
@@ -552,10 +549,11 @@ Described in the book \"Extending R\".")
     (synopsis
      "Integrative Analysis of Quantitative Trait Locus Data of 'xQTL'")
     (description
-     "User can query, download, and visualize of molecular quantitative trait locus
-and gene expression data from public resources through the application
-programming interface <https://gtexportal.org/home/api-docs/index.html> of
-GTEx'.")
+     "Enables users-customized data retrieval, processing, analysis, and data
+visualization of molecular quantitative trait locus and gene expression data
+from public resources through the application programming interface
+<https://gtexportal.org/home/api-docs/index.html> of GTEx and
+<http://www.ebi.ac.uk/eqtl/api> of eQTL cagalogue'.")
     (license license:gpl3+)))
 
 (define-public r-xpose4

@@ -723,13 +723,13 @@ CMCC-BioClimInd (see Noce, S., Caporaso, L. and Santini, M. (2020)
 (define-public r-itscalledsoccer
   (package
     (name "r-itscalledsoccer")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "itscalledsoccer" version))
               (sha256
                (base32
-                "03nic9v4bc2blncqp7hjgj7381bw7d8izp76kv7pdpvjvrwz1yxc"))))
+                "089zsqk5s1ny62jjgc77y64k0w47p81gd2606f3ys0qm1yl7bsfm"))))
     (properties `((upstream-name . "itscalledsoccer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2386,29 +2386,25 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.4.3")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "islasso" version))
               (sha256
                (base32
-                "0ym8yxpqhs8msi5svqa3mzp3x4jd7j4d8aampwchpkzyp2306rmv"))))
+                "0yw5sxsh4gvm4wmxrnpcz3wd3brrryg14wpaqnl7b23ihyxq2cq1"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://journals.sagepub.com/doi/abs/10.1177/0962280219842890")
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=islasso")
     (synopsis "The Induced Smoothed Lasso")
     (description
      "An implementation of the induced smoothing (IS) idea to lasso regularization
 models to allow estimation and inference on the model coefficients (currently
 hypothesis testing only).  Linear, logistic, Poisson and gamma regressions with
 several link functions are implemented.  The algorithm is described in the
-original paper: Cilluffo, G., Sottile, G., La Grutta, S. and Muggeo, V. (2019)
-The Induced Smoothed lasso: A practical framework for hypothesis testing in high
-dimensional regression. <doi:10.1177/0962280219842890>, and discussed in a
-tutorial: Sottile, G., Cilluffo, G., and Muggeo, V. (2019) The R package
-islasso: estimation and hypothesis testing in lasso regression.
+original paper; see <doi:10.1177/0962280219842890> and discussed in a tutorial
 <doi:10.13140/RG.2.2.16360.11521>.")
     (license license:gpl2+)))
 
@@ -2796,6 +2792,26 @@ In addition to cell-density count, it can derive statistics of intercellular
 spatial distance for each cell-type.")
     (license license:gpl2)))
 
+(define-public r-isar
+  (package
+    (name "r-isar")
+    (version "0.1.10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ISAR" version))
+              (sha256
+               (base32
+                "1khcs0azjbmrnn4i6wikrjr92x1w9z0jlrv4an5v59y25i0hwmvb"))))
+    (properties `((upstream-name . "ISAR")))
+    (build-system r-build-system)
+    (home-page "https://github.com/rtelmore/ISAR")
+    (synopsis "Introduction to Sports Analytics using R (ISAR) Data")
+    (description
+     "We provide data sets used in the forthcoming textbook \"Introduction to Sports
+Analytics using R\" by Elmore and Urbaczweski (2024).  The package currently
+contains sixteen datasets and should be published in early 2024.")
+    (license license:expat)))
+
 (define-public r-isa2
   (package
     (name "r-isa2")
@@ -2890,13 +2906,13 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "irtQ" version))
               (sha256
                (base32
-                "0730mf4b8al7ibljbi3ksl7mkm8yh54x68x5zrd3v4151azbpaq2"))))
+                "0l46zknn683p8p5p066p27dxmbnddj74ni0s29nipb1c2rp95sqz"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4153,6 +4169,28 @@ Schaub and Marc KÃ©ry (ISBN: 9780128205648).")
     (description "Interactive plots for R.")
     (license license:gpl2)))
 
+(define-public r-iplookupapi
+  (package
+    (name "r-iplookupapi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "iplookupapi" version))
+              (sha256
+               (base32
+                "1lkla7jz4jhpxb9bd1nzgr4ks5r6i0ng2dxidyv3072fxlpvih5p"))))
+    (properties `((upstream-name . "iplookupapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://iplookupapi.com")
+    (synopsis "Client for the 'iplookupapi.com' IP Lookup API")
+    (description
+     "An R client for the iplookupapi.com IP Lookup API. The API requires registration
+of an API key.  Basic features are free, some require a paid subscription.  You
+can find the full API documentation at <https://iplookupapi.com/docs> .")
+    (license license:expat)))
+
 (define-public r-iplgp
   (package
     (name "r-iplgp")
@@ -4614,6 +4652,28 @@ examples are provided showing how to perform useful tasks such as: updating
 reactive values from within a future, progress bars for long running async
 tasks, and interrupting async tasks based on user input.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-ipbase
+  (package
+    (name "r-ipbase")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ipbase" version))
+              (sha256
+               (base32
+                "0adddq34pvgwf535sliy455y9mlk1qfjln8w9wjjjjlg8vi166bg"))))
+    (properties `((upstream-name . "ipbase")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ipbase.com")
+    (synopsis "Client for the 'ipbase.com' IP Geolocation API")
+    (description
+     "An R client for the ipbase.com IP Geolocation API. The API requires registration
+of an API key.  Basic features are free, some require a paid subscription.  You
+can find the full API documentation at <https://ipbase.com/docs> .")
+    (license license:expat)))
 
 (define-public r-ipadmixture
   (package
@@ -8819,13 +8879,13 @@ that produce LaTeX code.")
 (define-public r-indicspecies
   (package
     (name "r-indicspecies")
-    (version "1.7.12")
+    (version "1.7.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "indicspecies" version))
               (sha256
                (base32
-                "0ihlbbqygjpp6ynpk047f6n041fghhcyy9xkkgvrciqqvnif17vq"))))
+                "12hcy5hadwf4gi9vs649r2msb35a0i9prwsrn7ng5fb4p6vhcq0c"))))
     (properties `((upstream-name . "indicspecies")))
     (build-system r-build-system)
     (propagated-inputs (list r-permute))
@@ -9234,24 +9294,26 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IncidencePrevalence" version))
               (sha256
                (base32
-                "1lqmvpdayhfgj771jvzicbw8gwb9gnlkm4m9z397jqln48csdp8x"))))
+                "0kiqwqb2pivl6yhkd50k4w9gqswk8r34xlkrma4xgrpv28vlplay"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-magrittr
                              r-lubridate
                              r-glue
+                             r-ggplot2
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -11557,13 +11619,13 @@ smoothing bootstrap resampling.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ijtiff" version))
               (sha256
                (base32
-                "1nf7d5qzsfm4l71simj7jmy742ll8drm2ygmnjwaxifyb9kgbr0c"))))
+                "1vc8y88ryn0xy67835w9zkknqqdwh5hfrbm193v7dm56yxm0nbf7"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (inputs (list zlib zlib libtiff libjpeg-turbo))
@@ -12478,13 +12540,13 @@ Engineering, US Presidential Elections].")
 (define-public r-iemisc
   (package
     (name "r-iemisc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iemisc" version))
               (sha256
                (base32
-                "01iab55vd1c59zdpql54y1nrfccvsf330gpvshjrm4jdw2hp7glr"))))
+                "1x7jnw6rrnq2wpv2xbk72fgkwwpxx7gzn113swnc6d6fhh16i32x"))))
     (properties `((upstream-name . "iemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12498,7 +12560,6 @@ Engineering, US Presidential Elections].")
                              r-roperators
                              r-rivr
                              r-ramify
-                             r-qdaptools
                              r-qdapregex
                              r-pracma
                              r-mgsub
@@ -14322,13 +14383,13 @@ collaboration in marine science.")
 (define-public r-icessag
   (package
     (name "r-icessag")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesSAG" version))
               (sha256
                (base32
-                "0y6sajhl8bj2yzyrdnmlaq2kfnf3jzz99s66gg1gjpdhksn77dba"))))
+                "0dsjsn3qx3k7grjgqsj120valzga7vjlj6jb8mfwmi85gmvlx329"))))
     (properties `((upstream-name . "icesSAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-png r-openssl r-icesvocab r-httr))
@@ -14383,13 +14444,13 @@ Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
 (define-public r-icesdatras
   (package
     (name "r-icesdatras")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icesDatras" version))
               (sha256
                (base32
-                "00vfd589y617lbjadmajjdq9c9d9w2c81pxqfzlsh50rz9y7qjsk"))))
+                "0xhv95zs1bwxplvvdh2flx9v97zwvc8pvckwfjxcrff64vxxb0f1"))))
     (properties `((upstream-name . "icesDatras")))
     (build-system r-build-system)
     (home-page "https://datras.ices.dk/WebServices/Webservices.aspx")

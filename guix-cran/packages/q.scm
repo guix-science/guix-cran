@@ -8,8 +8,8 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages xdisorg)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
@@ -920,29 +920,6 @@ algorithm VW (Variable-wise theta_j and Scaled variables through lambda_j).
 Hennig, C., Viroli, C., Anderlucci, L. (2019) \"Quantile-based clustering.\"
 Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-quasiseq
-  (package
-    (name "r-quasiseq")
-    (version "1.0-11-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "QuasiSeq" version))
-              (sha256
-               (base32
-                "0lbzmd3mxjfcmvp3p3c8az2kp2fxrrv5mn28sqmsxwhvx3bd26rw"))))
-    (properties `((upstream-name . "QuasiSeq")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-mgcv r-edger))
-    (home-page "https://cran.r-project.org/package=QuasiSeq")
-    (synopsis "Analyzing RNA Sequencing Count Tables Using Quasi-Likelihood")
-    (description
-     "Identify differentially expressed genes in RNA-seq count data using
-quasi-Poisson or quasi-negative binomial models with QL', QLShrink and QLSpline
-methods described by Lund, Nettleton, McCarthy, and Smyth (2012)
-<DOI:10.1515/1544-6115.1826>.  Report bias-reduced estimates of log fold
-changes.")
-    (license license:gpl2+)))
 
 (define-public r-quarto
   (package
@@ -3949,23 +3926,29 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Qindex" version))
               (sha256
                (base32
-                "1j0ncn18sxgnkd1dpmf8wndz8061zlmv2bvc7aq5v1vhihb9k41r"))))
+                "15xwnyimylixhv5p0y386ll2lj8b5l9pawfpnjahcf2j2mbkhmbn"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rpart r-mgcv r-matrixstats r-boot))
+    (propagated-inputs (list r-survival
+                             r-rpart
+                             r-pracma
+                             r-mgcv
+                             r-matrixstats
+                             r-boot))
     (home-page "https://cran.r-project.org/package=Qindex")
-    (synopsis "Quantile-Based Predictors for Survival Outcome")
+    (synopsis
+     "Continuous and Dichotomized Index Predictors Based on Distribution Quantiles")
     (description
-     "Select optimal quantile-based predictors for survival outcome, to include the
-means to handle dichotomizing the quantiles, mean-signal-intensity or other
-continuous markers, and to obtain estimates for dichotomized predictors by
-Bootstrap-based bias correction.")
+     "Select optimal functional regression or dichotomized quantile predictors for
+survival/logistic/numeric outcome and perform optimistic bias correction for any
+optimally dichotomized numeric predictor(s), as in Yi, et.  al. (2023)
+<doi:10.1016/j.labinv.2023.100158>.")
     (license license:gpl2)))
 
 (define-public r-qiitr
@@ -4654,17 +4637,17 @@ statistics.  The primary reference is Jungreis, D. (2019, Technical Report).")
 (define-public r-qdaptools
   (package
     (name "r-qdaptools")
-    (version "1.3.5")
+    (version "1.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qdapTools" version))
               (sha256
                (base32
-                "09byvv39qmdcavlykpcvk248l2f7sw0pq64ynq2xffmnga3ji24c"))))
+                "1cf42lxzqha2ah0yjl144pch50imfr5rf6g0b59xr5jf9x96dsjp"))))
     (properties `((upstream-name . "qdapTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rcurl r-data-table r-chron))
-    (home-page "http://trinker.github.com/qdapTools/")
+    (home-page "https://github.com/trinker/qdapTools")
     (synopsis "Tools for the 'qdap' Package")
     (description
      "This package provides a collection of tools associated with the qdap package
@@ -4693,13 +4676,13 @@ for use with the qdap package.")
 (define-public r-qdap
   (package
     (name "r-qdap")
-    (version "2.4.3")
+    (version "2.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qdap" version))
               (sha256
                (base32
-                "1fadzq7afavxfhcd8q6xy3g8d7jwy24zz1da2ig9bd8vrk5zjmnx"))))
+                "1dr48b0187w003v98qckzi4zxb6r0yi3jh8f6krknv4c4qasfn9n"))))
     (properties `((upstream-name . "qdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4725,7 +4708,7 @@ for use with the qdap package.")
                              r-gender
                              r-dplyr
                              r-chron))
-    (home-page "http://trinker.github.io/qdap/")
+    (home-page "https://trinker.github.io/qdap/")
     (synopsis
      "Bridging the Gap Between Qualitative Data and Quantitative Analysis")
     (description

@@ -2001,13 +2001,13 @@ general factor.")
 (define-public r-unittest
   (package
     (name "r-unittest")
-    (version "1.5-3")
+    (version "1.6-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unittest" version))
               (sha256
                (base32
-                "0lpihlga16qklha3i8j4yx9dkmvmsqp8iai0arza97cx63971xwx"))))
+                "10k1lx4pzl884m00mx191h5hxcgcsiz9486dbyjvsyhh0hv2xi0v"))))
     (properties `((upstream-name . "unittest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3734,6 +3734,37 @@ TARGET, GTEx, CCLE, and others.")
 Uniform Crime Report codebook for the \"Offenses Known and Clearance by Arrest\"
 datasets from 1998-2014.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ucomp
+  (package
+    (name "r-ucomp")
+    (version "4.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "UComp" version))
+              (sha256
+               (base32
+                "1s37xcwfi7mmfgi0ca2zpmyfnscsycqsl0dv8zfw61f5fcxzs78n"))))
+    (properties `((upstream-name . "UComp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsoutliers
+                             r-tsibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gridextra
+                             r-ggplot2
+                             r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UComp")
+    (synopsis "Automatic Unobserved Components and Other Time Series Models")
+    (description
+     "Comprehensive analysis and forecasting of univariate time series using automatic
+unobserved components models and algorithms.  Harvey, AC (1989)
+<doi:10.1017/CBO9781107049994>.  Pedregal DJ and Young PC (2002)
+<doi:10.1002/9780470996430>.  Durbin J and Koopman SJ (2012)
+<doi:10.1093/acprof:oso/9780199641178.001.0001>.  Hyndman RJ, Koehler AB, Ord
+JK, and Snyder RD (2008) <doi:10.1007/9783540719182>.")
+    (license license:gpl3)))
 
 (define-public r-uclust
   (package
