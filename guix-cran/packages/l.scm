@@ -2712,13 +2712,13 @@ summarized in a CD-plot as described in Algeri S. (2019) <arXiv:1906.06615>.")
 (define-public r-lpacf
   (package
     (name "r-lpacf")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lpacf" version))
               (sha256
                (base32
-                "0i9zd5ns6fxbyci34kwwilixqvbp1za403dv8jpwr6jq8nr5f7r4"))))
+                "0lg1r7pjg9f5msvjqaq93v43mssvq7jqgv2canhp3wybnmcw0p8v"))))
     (properties `((upstream-name . "lpacf")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-locits))

@@ -1258,13 +1258,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guidedpls
   (package
     (name "r-guidedpls")
-    (version "0.99.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "guidedPLS" version))
               (sha256
                (base32
-                "0afl7hrqy3y7rdzng6n4nmw8pacp2pymkzpmrm1f4kw8fsq0g2jv"))))
+                "1gmprd6a5nyglm36sdyk9dqbgqavf3a7gzjbm5jzb5ybhj9r2w61"))))
     (properties `((upstream-name . "guidedPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-irlba))
@@ -4207,30 +4207,6 @@ functionalities <https://github.com/gridstack/gridstack.js>.")
 category saturation for studies using multiple repertory grids in conjunction
 with content analysis.")
     (license license:gpl3)))
-
-(define-public r-gridpattern
-  (package
-    (name "r-gridpattern")
-    (version "1.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gridpattern" version))
-              (sha256
-               (base32
-                "13yypjsbpr61yn15y4cyz6s8jvcgg3mmr8rncskinpk8lsa8h2h4"))))
-    (properties `((upstream-name . "gridpattern")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rlang r-png r-memoise r-glue))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://trevorldavis.com/R/gridpattern/")
-    (synopsis "'grid' Pattern Grobs")
-    (description
-     "This package provides grid grobs that fill in a user-defined area with various
-patterns.  Includes enhanced versions of the geometric and image-based patterns
-originally contained in the ggpattern package as well as original pch',
-polygon_tiling', regular_polygon', rose', text', wave', and weave patterns plus
-support for custom user-defined patterns.")
-    (license license:expat)))
 
 (define-public r-gridot
   (package
@@ -15736,31 +15712,6 @@ rendering, we give full access to the users while keeping the number of
 parameters manageably low.")
     (license license:gpl3)))
 
-(define-public r-ggpattern
-  (package
-    (name "r-ggpattern")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ggpattern" version))
-              (sha256
-               (base32
-                "1b9bfxlg64gr39bz58fp6jmg4nziwk8rk94rzpjsqhfhpwi2lrgr"))))
-    (properties `((upstream-name . "ggpattern")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-rlang r-gridpattern r-glue r-ggplot2))
-    (native-inputs (list r-rmarkdown r-ragg r-knitr))
-    (home-page "https://github.com/coolbutuseless/ggpattern")
-    (synopsis "'ggplot2' Pattern Geoms")
-    (description
-     "This package provides ggplot2 geoms filled with various patterns.  Includes a
-patterned version of every ggplot2 geom that has a region that can be filled
-with a pattern.  Provides a suite of ggplot2 aesthetics and scales for
-controlling pattern appearances.  Supports over a dozen builtin patterns (every
-pattern implemented by gridpattern') as well as allowing custom user-defined
-patterns.")
-    (license license:expat)))
-
 (define-public r-ggpath
   (package
     (name "r-ggpath")
@@ -21718,13 +21669,13 @@ modeling to predict epidemic curves.  The method is described in Peng et al.
 (define-public r-genscore
   (package
     (name "r-genscore")
-    (version "1.0.2")
+    (version "1.0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genscore" version))
               (sha256
                (base32
-                "0i1wg65cpyc7x1h8dbq0i6q8979lw15zhmn7zn1r8gj3nxl7my0b"))))
+                "0am6x3bxqgarb47qfsnaqnjy4kl7w2j6wf1pf182mz5qjv82mlxk"))))
     (properties `((upstream-name . "genscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm r-stringr r-rdpack r-mvtnorm))
@@ -21733,7 +21684,7 @@ modeling to predict epidemic curves.  The method is described in Peng et al.
     (synopsis "Generalized Score Matching Estimators")
     (description
      "Implementation of the Generalized Score Matching estimator in Yu et al. (2019)
-<http://jmlr.org/papers/v20/18-278.html> for non-negative graphical models
+<https://jmlr.org/papers/v20/18-278.html> for non-negative graphical models
 (truncated Gaussian, exponential square-root, gamma, a-b models) and univariate
 truncated Gaussian distributions.  Also includes the original estimator for
 untruncated Gaussian graphical models from Lin et al. (2016)

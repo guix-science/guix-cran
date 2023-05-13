@@ -24190,13 +24190,13 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
 (define-public r-bandsfdp
   (package
     (name "r-bandsfdp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bandsfdp" version))
               (sha256
                (base32
-                "1rs86hfghr3wixqfm9x8s1zaid6nxmh8xkda1257k7q0gbdy8pf1"))))
+                "07w381i8cls1hf1mdl4qy3vxp7xx0czng3fl3bzrbk80mysjf47n"))))
     (properties `((upstream-name . "bandsfdp")))
     (build-system r-build-system)
     (home-page "https://github.com/uni-Arya/bandsfdp")

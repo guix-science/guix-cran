@@ -14001,6 +14001,32 @@ widely-used Vale and Maurelli's method.  It also contains a function to
 calculate univariate and multivariate (Mardia's Test) skew and kurtosis.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mnmer
+  (package
+    (name "r-mnmer")
+    (version "0.99.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mnmer" version))
+              (sha256
+               (base32
+                "0smy7n016nax4wng8pikmgwmbkrhykc2hzvh60hwfbqlbfda66yj"))))
+    (properties `((upstream-name . "mnmer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11 r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mnmer")
+    (synopsis
+     "'(m,n)-mer' - A Simple Statistical Feature for Sequence Classification")
+    (description
+     "The (m,n)-mer is a statistical feature calculated from conditional frequency
+distributions obtained from a FASTA file.  The resulting table, along with class
+information, is used to create the classification feature matrix.  For more
+information on this method and its benchmarking results, refer to Andrade et
+al.'s upcoming publication titled \"(m,n)-mer - A Simple Statistical Feature for
+Sequence Classification\".")
+    (license license:artistic2.0)))
+
 (define-public r-mnm
   (package
     (name "r-mnm")
@@ -23379,13 +23405,13 @@ and calculating elasticities and shadow prices.")
 (define-public r-micecondistray
   (package
     (name "r-micecondistray")
-    (version "0.1-0")
+    (version "0.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micEconDistRay" version))
               (sha256
                (base32
-                "1x5zyampz2vah4v0vszvyh9ljhxgm8d4jr5rz2rjczv953amfpkf"))))
+                "1q15a2sfxk9kdmx27j98q7is1nczxl7s464bzk445a5v8s0dnvs3"))))
     (properties `((upstream-name . "micEconDistRay")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfar))
@@ -31959,13 +31985,13 @@ tree problems.")
 (define-public r-mcmcvis
   (package
     (name "r-mcmcvis")
-    (version "0.15.5")
+    (version "0.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MCMCvis" version))
               (sha256
                (base32
-                "1sh8znwk2s6gx7q6h1ps5yid24ywj2fpng0c7nckrfkywb5h5j14"))))
+                "0sp6fpbsh485yybhxpaffvjbx4yybxkd7lj6haq8q02h2sjdy02c"))))
     (properties `((upstream-name . "MCMCvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-overlapping r-colorspace r-coda))
@@ -37719,13 +37745,13 @@ between a pathway and the rest of the genome can be rejected.")
 (define-public r-mapiso
   (package
     (name "r-mapiso")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mapiso" version))
               (sha256
                (base32
-                "1vdy5chs45zhrvm4zcqmpsz3sqgzwp8z6ssghkslc3kp2ka8f4px"))))
+                "11mrvk45znna6irsd8mmkk8h63dm6wjlpsy0h8p3bldvk5mc8fi9"))))
     (properties `((upstream-name . "mapiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-isoband))

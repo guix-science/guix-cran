@@ -1537,13 +1537,13 @@ post on user wall and etc.	For more information see API Documentation
 (define-public r-rvipkg
   (package
     (name "r-rvipkg")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RVIpkg" version))
               (sha256
                (base32
-                "1zczdrja65i4rkfld28pf6k3skm0vmsc46lvc5ahj8q1fcacpmrd"))))
+                "0s3fjagbd24cgymsfsjd0940kzyvla2cybsr0387q7l93lfr3rmd"))))
     (properties `((upstream-name . "RVIpkg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RVIpkg")
@@ -2881,6 +2881,36 @@ are detected.  This package supports following data provides: Yahoo
 (<https://data.nasdaq.com>), AlphaVantage (<https://www.alphavantage.co>),
 Tiingo (<https://www.tiingo.com>).")
     (license license:expat)))
+
+(define-public r-rtsa
+  (package
+    (name "r-rtsa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RTSA" version))
+              (sha256
+               (base32
+                "1dzfqhv9w7digh7fz93xknn70mjg235dwqh93pxn4n4sxxx2740y"))))
+    (properties `((upstream-name . "RTSA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rcpp r-metafor r-ggplot2))
+    (native-inputs (list r-knitr r-bookdown))
+    (home-page "https://cran.r-project.org/package=RTSA")
+    (synopsis
+     "'Trial Sequential Analysis' for Error Control and Inference in Sequential Meta-Analyses")
+    (description
+     "Frequentist meta-analysis and sequential meta-analysis based on Trial Sequential
+Analysis (TSA) by Copenhagen Trial Unit (CTU).  Primary usage is the calculation
+of group sequential designs for meta-analysis to be used for planning and
+analysis of both prospective and retrospective sequential meta-analyses to
+preserve type-I-error control under sequential testing.  RTSA includes tools for
+sample and trial size calculation for meta-analysis and core meta-analyses
+methods such as fixed-effect and random-effects models and forest plots.  TSA is
+described in Wetterslev et.  al (2008) <doi:10.1016/j.jclinepi.2007.03.013>.
+The methods for deriving the group sequential designs are based on Jennison and
+Turnbull (1999, ISBN:9780849303166).")
+    (license license:gpl2+)))
 
 (define-public r-rts2
   (package
@@ -17451,13 +17481,13 @@ useful for exploratory and probabilistic analysis.")
 (define-public r-rmediation
   (package
     (name "r-rmediation")
-    (version "1.2.1")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RMediation" version))
               (sha256
                (base32
-                "02d67r1z5g5839p45q4nvgwpdwmchyyr24072l63zsa8ixz3l82m"))))
+                "16zw8ic8h2q1qg627ddaxmr9dvj7ckdljbzfgwq557nxc2fgk1v2"))))
     (properties `((upstream-name . "RMediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -22442,13 +22472,13 @@ Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rhino" version))
               (sha256
                (base32
-                "1f3mh3f3ygbifxnfrfxjx0c7d0wy9zjqy982ayds7f9iqbxh5ysj"))))
+                "176p8h3sb6zsdpdk4ahlnr12nc91zmww6m9yxzn223blphvf1k48"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -27389,13 +27419,13 @@ and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.3.9")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reporter" version))
               (sha256
                (base32
-                "0g5b2q2sp8zhajvxqsz86cnalcp6cs0lfw2s4jiwsxfrwc5s3a14"))))
+                "1vpqb0s86p8dh7l3his31cjidhm7vxzfgqsjap3rfb6sq7hblzx6"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -38135,6 +38165,37 @@ Game notations.")
      "This package provides a dataset of functions in all base packages of R versions
 1.0.1 onwards.")
     (license license:cc0)))
+
+(define-public r-rchemo
+  (package
+    (name "r-rchemo")
+    (version "0.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rchemo" version))
+              (sha256
+               (base32
+                "18jcx4f4vs6qjhv2ypy4wgqdcprjpbi738lyr28f0ih7185fipm0"))))
+    (properties `((upstream-name . "rchemo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-signal r-fnn r-e1071 r-data-table))
+    (home-page "https://github.com/ChemHouse-group/rchemo/")
+    (synopsis
+     "Dimension Reduction, Regression and Discrimination for Chemometrics")
+    (description
+     "Data exploration and prediction with focus on high dimensional data and
+chemometrics.  The package was initially designed about partial least squares
+regression and discrimination models and variants, in particular locally
+weighted PLS models (LWPLS).  Then, it has been expanded to many other methods
+for analyzing high dimensional data.  The name rchemo comes from the fact that
+the package is orientated to chemometrics, but most of the provided methods are
+fully generic to other domains.  Functions such as transform(), predict(),
+coef() and summary() are available.  Tuning the predictive models is facilitated
+by generic functions gridscore() (validation dataset) and gridcv()
+(cross-validation).  Faster versions are also available for models based on
+latent variables (LVs) (gridscorelv() and gridcvlv()) and ridge regularization
+(gridscorelb() and gridcvlb()).")
+    (license license:gpl3)))
 
 (define-public r-rchallenge
   (package

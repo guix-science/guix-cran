@@ -1224,13 +1224,13 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tutorial.helpers" version))
               (sha256
                (base32
-                "1k15si6qzilrf86v5al4wk22mbx4sbr3qhd05zqpf405c8haqpb6"))))
+                "1gyd443js4g3n1mjsslwahqbks73czpmk24yrgdlyg4yd3gsi65h"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7657,6 +7657,36 @@ procedure involves (1) calculating 24 measures describing the features of the
 trajectories; (2) using factor analysis to select a subset of the 24 measures
 and (3) using cluster analysis to identify clusters of trajectories, and
 classify each individual trajectory in one of the clusters.")
+    (license license:expat)))
+
+(define-public r-traitstrap
+  (package
+    (name "r-traitstrap")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "traitstrap" version))
+              (sha256
+               (base32
+                "1yq4ngpqizlcmbcypdbsxrc9kixm6b44zimyijl7404bzz6hbs5a"))))
+    (properties `((upstream-name . "traitstrap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-fitdistrplus
+                             r-e1071
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Plant-Functional-Trait-Course/traitstrap/")
+    (synopsis "Bootstrap Trait Values to Calculate Moments")
+    (description
+     "Calculates trait moments from trait and community data using the methods
+developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
     (license license:expat)))
 
 (define-public r-traitstats
@@ -17811,6 +17841,32 @@ much extra effort when creating the document.")
 errors, incorrect quotation marks.  Also provides useful functions for parsing
 and linting bibliography files.")
     (license license:gpl2)))
+
+(define-public r-tex4exams
+  (package
+    (name "r-tex4exams")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Tex4exams" version))
+              (sha256
+               (base32
+                "0058xn98vy40d0lfxral56avmqck7n6x2gb7j2ngnnj356di5d8m"))))
+    (properties `((upstream-name . "Tex4exams")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-polynom r-numbers r-fractional))
+    (home-page "https://cran.r-project.org/package=Tex4exams")
+    (synopsis
+     "Generating 'Sweave' Code for 'R/exams' Questions in Mathematics")
+    (description
+     "When using the R package exams to write mathematics questions in Sweave files,
+the output of a lot of R functions need to be adjusted for display in
+mathematical formulas.  Specifically, the functions were accumulated when
+writing questions for the topics of the mathematics courses College Algebra,
+Precalculus, Calculus, Differential Equations, Introduction to Probability, and
+Linear Algebra.  The output of the developed functions can be used in Sweave
+files.")
+    (license license:gpl2+)))
 
 (define-public r-tetrascatt
   (package

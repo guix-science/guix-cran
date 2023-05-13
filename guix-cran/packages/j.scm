@@ -2817,6 +2817,36 @@ for auditing data, including (Bayesian) tests of digit distributions and tests
 for repeated values.")
     (license license:gpl3+)))
 
+(define-public r-jewel
+  (package
+    (name "r-jewel")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jewel" version))
+              (sha256
+               (base32
+                "0js2pacdcddqwxz20hws5rrhc7s5zqls2hpfvg5inv88abkrkd17"))))
+    (properties `((upstream-name . "jewel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-smut
+                             r-purrr
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/annaplaksienko/jewel")
+    (synopsis "Graphical Models Estimation from Multiple Sources")
+    (description
+     "Estimates networks of conditional dependencies (Gaussian graphical models) from
+multiple classes of data (similar but not exactly, i.e.  measurements on
+different equipment, in different locations or for various sub-types).  Package
+also allows to generate simulation data and evaluate the performance.
+Implementation of the method described in Angelini, De Canditiis and Plaksienko
+(2022) <doi:10.3390/math10213983>.")
+    (license license:gpl2)))
+
 (define-public r-jetpack
   (package
     (name "r-jetpack")

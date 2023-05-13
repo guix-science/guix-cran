@@ -18195,13 +18195,13 @@ different for the two functions.")
 (define-public r-coloc
   (package
     (name "r-coloc")
-    (version "5.1.0.1")
+    (version "5.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "coloc" version))
               (sha256
                (base32
-                "0iva1gin37yw4azwqllpmm5dhg7zi10j3j81jiqyzrkad9bglys2"))))
+                "0358y5ifpyldylqcqkipmdsysg98l9f12ss5pklz3zia3ja4wc2a"))))
     (properties `((upstream-name . "coloc")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-susier r-ggplot2 r-data-table))
@@ -18212,7 +18212,7 @@ different for the two functions.")
      "This package performs the colocalisation tests described in Giambartolomei et al
 (2013) <doi:10.1371/journal.pgen.1004383>, Wallace (2020)
 <doi:10.1371/journal.pgen.1008720>, Wallace (2021)
-<doi:10.1101/2021.02.23.432421>.")
+<doi:10.1371/journal.pgen.1009440>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-colmozzie

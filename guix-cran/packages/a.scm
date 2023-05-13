@@ -11388,19 +11388,19 @@ theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
 (define-public r-amapro
   (package
     (name "r-amapro")
-    (version "0.1.1")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "amapro" version))
               (sha256
                (base32
-                "11g5gfd3f019gdvxljib293a87l6316igj9cq68vxv6xvx4j2cvw"))))
+                "1cq65kcsr2yxhrnm98n4fzaj6xljjln92kkn96d758n2lk65lwlg"))))
     (properties `((upstream-name . "amapro")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmlwidgets))
+    (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helgasoft/amapro/")
-    (synopsis "Thin Wrapper for Mapping Library 'AMap' by 'AutoNavi'")
+    (synopsis "Thin Wrapper for Mapping Library 'AMap'")
     (description
      "Build and control interactive 2D and 3D maps with R/Shiny'.  Lean set of
 powerful commands wrapping native calls to AMap

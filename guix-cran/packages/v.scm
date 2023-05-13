@@ -3142,13 +3142,13 @@ fit researcher needs.")
 (define-public r-viking
   (package
     (name "r-viking")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "viking" version))
               (sha256
                (base32
-                "0ggnp96igmdzp8acyj57mkkd2xd3ixcnakpwp417yzsdqqlg20sf"))))
+                "1wrkv044646756fmc4bmij06pbmzyi8jydbpisngs3pa4wnixcvw"))))
     (properties `((upstream-name . "viking")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=viking")
@@ -3156,7 +3156,7 @@ fit researcher needs.")
     (description
      "Inference methods for state-space models, relying on the Kalman Filter or on
 Viking (Variational Bayesian VarIance tracKING).  See J. de Vilmarest (2022)
-<https://tel.archives-ouvertes.fr/tel-03716104/>.")
+<https://theses.hal.science/tel-03716104/>.")
     (license license:lgpl3)))
 
 (define-public r-vigor

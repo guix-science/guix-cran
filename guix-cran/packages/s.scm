@@ -14086,13 +14086,13 @@ Can also expand schedules into flights.")
 (define-public r-ssifs
   (package
     (name "r-ssifs")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssifs" version))
               (sha256
                (base32
-                "0xkvxpya8lncak0sbr8iwwbnav4m4d1ppd6cqyx3k5rl6aka4917"))))
+                "17q1p4cgdwmn3vlhkc4p49j1222wd8d6dcp7n5ngvqcfjn3lrarh"))))
     (properties `((upstream-name . "ssifs")))
     (build-system r-build-system)
     (propagated-inputs (list r-revecor
@@ -25703,17 +25703,17 @@ to continuous predicted and reference memberships in [0, 1].")
 (define-public r-softbib
   (package
     (name "r-softbib")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "softbib" version))
               (sha256
                (base32
-                "1nc8h9dlwwwv6bv499wxmrm3z7dkcwgwyif47s82s308j1h640ha"))))
+                "0rhia0vx53lhmykf2rmnr9kbcvld35n2and1l3riqdfr6jrdg8pb"))))
     (properties `((upstream-name . "softbib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-renv r-checkmate r-bibtex))
-    (home-page "https://cran.r-project.org/package=softbib")
+    (home-page "https://github.com/vincentarelbundock/softbib")
     (synopsis "Software Bibliographies for R Projects")
     (description
      "Detect libraries used in a project and automatically create software
