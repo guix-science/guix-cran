@@ -14818,13 +14818,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdasrvf" version))
               (sha256
                (base32
-                "1ym5my1kfynb3hh9dd6mxhwsb17ph51fd74mf54v4jpaan6g5x4a"))))
+                "1q7zk9cic1lbpsgv52gpz0y8ifb4ac0654n7imfv2nj4d2vnz0lb"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18709,16 +18709,16 @@ regression models.  Find more details in (WiÅniewski, Biecek (2021))
 (define-public r-fairml
   (package
     (name "r-fairml")
-    (version "0.7")
+    (version "0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fairml" version))
               (sha256
                (base32
-                "0j40hx8wbx4virs6zm0drdij8m7ir3ygp96rxhyzn0k1l0vz1j0k"))))
+                "17rzg2256nb4xnrzkc8c3fiwbwqf8fr69rk5k08wrbrnjr2c05dg"))))
     (properties `((upstream-name . "fairml")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optisolve r-glmnet r-cvxr))
+    (propagated-inputs (list r-glmnet))
     (home-page "https://cran.r-project.org/package=fairml")
     (synopsis "Fair Models in Machine Learning")
     (description
@@ -18726,7 +18726,9 @@ regression models.  Find more details in (WiÅniewski, Biecek (2021))
 account in model estimation.  Currently implementing Komiyama et al. (2018)
 <http://proceedings.mlr.press/v80/komiyama18a/komiyama18a.pdf>, Zafar et al.
 (2019) <https://www.jmlr.org/papers/volume20/18-262/18-262.pdf> and my own
-approach that uses ridge regression to enforce fairness.")
+approach from Scutari, Panero and Proissl (2022)
+<https://link.springer.com/content/pdf/10.1007/s11222-022-10143-w.pdf> that uses
+ridge regression to enforce fairness.")
     (license license:expat)))
 
 (define-public r-fairmclus

@@ -12995,6 +12995,34 @@ algorithm.  For more details about the method, please see Aliasghar Tarkhan and
 Noah Simon (2020) <arXiv:2003.00116v2>.")
     (license license:gpl2+)))
 
+(define-public r-bigstep
+  (package
+    (name "r-bigstep")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bigstep" version))
+              (sha256
+               (base32
+                "1bppvib57p6m91c2v9w9lgb1k3jg8mk3w2kkbjvwgsdwy4m8fhap"))))
+    (properties `((upstream-name . "bigstep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-speedglm
+                             r-rcppeigen
+                             r-r-utils
+                             r-matrixstats
+                             r-magrittr
+                             r-bigmemory))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pmszulc/bigstep")
+    (synopsis "Stepwise Selection for Large Data Sets")
+    (description
+     "Selecting linear and generalized linear models for large data sets using
+modified stepwise procedure and modern selection criteria (like modifications of
+Bayesian Information Criterion).  Selection can be performed on data which
+exceed RAM capacity.  Bogdan et al., (2004) <doi:10.1534/genetics.103.021683>.")
+    (license license:gpl3)))
+
 (define-public r-bigstatsr
   (package
     (name "r-bigstatsr")

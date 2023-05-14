@@ -18091,18 +18091,18 @@ cvdPlot() function to generate ggplot grobs of simulations were modified from
 (define-public r-colorblindcheck
   (package
     (name "r-colorblindcheck")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "colorblindcheck" version))
               (sha256
                (base32
-                "17bcnjzpnb0a0fw27y5slrakdg0p4mzhcj8684622ljinszvdz58"))))
+                "1vy4ls5fmzy1bx2garhkvy2f4wqwjy2ph9b3jlzdl5f2lpx2mwq2"))))
     (properties `((upstream-name . "colorblindcheck")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacesxyz r-colorspace))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Nowosad/colorblindcheck")
+    (home-page "https://jakubnowosad.com/colorblindcheck/")
     (synopsis "Check Color Palettes for Problems with Color Vision Deficiency")
     (description
      "Compare color palettes with simulations of color vision deficiencies -
@@ -36633,13 +36633,13 @@ et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS (2007)
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.42.9")
+    (version "1.43.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "canvasXpress" version))
               (sha256
                (base32
-                "00xsgh1i121waq7p7dvabd4ihaiknpnqx8isj6bajv06jh0nnp0j"))))
+                "05ax2r25d4v22m3br2v7sxz5j51vyvf1s91291ns99agpdds04c8"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))

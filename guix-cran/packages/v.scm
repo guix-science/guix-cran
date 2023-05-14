@@ -3996,13 +3996,13 @@ filter, and Frangi vesselness filter of 3-dimensional volumes.")
 (define-public r-verylargeintegers
   (package
     (name "r-verylargeintegers")
-    (version "0.1.9")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VeryLargeIntegers" version))
               (sha256
                (base32
-                "08gpsi6vrink2dd1ngwbhi8yxrasgh0xi5klc64v7ig49hky9wma"))))
+                "1a6hyipn9522zj69amlxmqip45gflml5kcyjlxi4vf4y1givb7qs"))))
     (properties `((upstream-name . "VeryLargeIntegers")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

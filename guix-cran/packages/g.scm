@@ -17383,13 +17383,13 @@ time models, using the population-based Markov Chain Monte Carlo.")
 (define-public r-ggdist
   (package
     (name "r-ggdist")
-    (version "3.2.1")
+    (version "3.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdist" version))
               (sha256
                (base32
-                "0a72yc58wr51xm6hp4rpqwd93hd36cbl6g7rwmdxp7q4kvcnl0bn"))))
+                "0b15b972wrllsvqqn0nc2c81fd9jl618fvqsfi50hjxwwpdach8l"))))
     (properties `((upstream-name . "ggdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -17400,11 +17400,11 @@ time models, using the population-based Markov Chain Monte Carlo.")
                              r-rlang
                              r-quadprog
                              r-numderiv
-                             r-hdinterval
                              r-glue
                              r-ggplot2
                              r-dplyr
-                             r-distributional))
+                             r-distributional
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://mjskay.github.io/ggdist/")
     (synopsis "Visualizations of Distributions and Uncertainty")

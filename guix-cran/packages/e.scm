@@ -988,16 +988,16 @@ approach.  For details, see Gallardo and Bourguignon (2022) <arXiv:2206.12973>."
 (define-public r-extracttraindata
   (package
     (name "r-extracttraindata")
-    (version "9.1.5")
+    (version "9.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ExtractTrainData" version))
               (sha256
                (base32
-                "132f43mk2mjsfv9pfhj1371b4vxnqmnj5lf8xvfznf57xjna7wp1"))))
+                "146jvjmdf4kw3d3dp2v6fb421kh8jggyg0lh4xg1ggjb4rphpjzd"))))
     (properties `((upstream-name . "ExtractTrainData")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-rgdal r-raster))
+    (propagated-inputs (list r-raster))
     (home-page "https://cran.r-project.org/package=ExtractTrainData")
     (synopsis "Extract Values from Raster")
     (description
@@ -5804,13 +5804,13 @@ used for model selection in decomposable graphical models.")
 (define-public r-esreg
   (package
     (name "r-esreg")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "esreg" version))
               (sha256
                (base32
-                "19ng9hk1xxn8qi2i0qnn58rqrrkvsiri7i2wipjnld1s69z8i4hd"))))
+                "1djyx8cc1pfza5n5ipg990jwwc1fjlsiz817iifwv9iw8g9vkda4"))))
     (properties `((upstream-name . "esreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-quantreg r-formula))
@@ -18593,13 +18593,13 @@ spatial and temporal resolution.")
 (define-public r-ebglmnet
   (package
     (name "r-ebglmnet")
-    (version "5.2")
+    (version "5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EBglmnet" version))
               (sha256
                (base32
-                "1nby88gflwx3y2bk4f1ga5bww14s2jb0005d6q91a5ivw2xj9ry8"))))
+                "094h4lhr1z2pqfjmdids7paahlwq25k1x2xzpqn4cs65qb5r0dsn"))))
     (properties `((upstream-name . "EBglmnet")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

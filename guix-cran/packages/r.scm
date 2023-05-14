@@ -1791,29 +1791,27 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvcompare
   (package
     (name "r-rvcompare")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RVCompare" version))
               (sha256
                (base32
-                "05pjqimgiqdskf3f60k5q3fd16f16a630rl1xs08y7qbc56rvrw8"))))
+                "17xidcn2p27ms4ssl9312i1pbv4dc4873096a7rv5b8ygkgnarrm"))))
     (properties `((upstream-name . "RVCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma r-ggplot2))
     (home-page "https://cran.r-project.org/package=RVCompare")
     (synopsis "Compare Real Valued Random Variables")
     (description
-     "This package provides a framework with tools to compare two random variables,
-and determine which of takes produces lower values.  See the README.md at
+     "This package provides a framework with tools to compare two random variables via
+stochastic dominance.  See the README.md at
 <https://github.com/EtorArza/RVCompare> for a quick start guide.  It can compute
-the Cp and Cd of two probability distributions, as explained in E. Arza (2021)
-<doi:10.48550/arXiv.2203.07889>.  Given the observed samples of two random
-variables X_A and X_B, it can compute the cumulative difference-plot (see E.
-Arza (2021) <> for details).  Uses bootstrap and DKW-bounds to compute the
-confidence bands of the cumulative distributions.  These two methods are
-described in B. Efron. (1979) <doi:10.1214/aos/1176344552> and P. Massart (1990)
-<doi:10.1214/aop/1176990746>.")
+the Cp and Cd of two probability distributions and the Cumulative Difference
+Plot as explained in E. Arza (2022) <doi:10.1080/10618600.2022.2084405>.  Uses
+bootstrap or DKW-bounds to compute the confidence bands of the cumulative
+distributions.  These two methods are described in B. Efron. (1979)
+<doi:10.1214/aos/1176344552> and P. Massart (1990) <doi:10.1214/aop/1176990746>.")
     (license license:cc0)))
 
 (define-public r-rvcg
@@ -32926,16 +32924,16 @@ and structure.")
 (define-public r-readdim
   (package
     (name "r-readdim")
-    (version "0.2.10")
+    (version "0.2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ReadDIM" version))
               (sha256
                (base32
-                "0lljl7iazjykgr5kr6j9is5hcs1h7x9im6rxflsniry6bm9j7qy3"))))
+                "1dyf1hrqcjqramb957kj7ngd65439p7ywa0r2rdlyn4bg89myi7c"))))
     (properties `((upstream-name . "ReadDIM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-sp r-rgeos r-rgdal r-raster))
+    (propagated-inputs (list r-stringr r-raster))
     (home-page "https://cran.r-project.org/package=ReadDIM")
     (synopsis "Read ESA SNAP Processed Raster Format in R")
     (description
@@ -38765,13 +38763,13 @@ Projection Wizard and Species batch processing.")
 (define-public r-rcartocolor
   (package
     (name "r-rcartocolor")
-    (version "2.0.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcartocolor" version))
               (sha256
                (base32
-                "08ljaag2mnhz2671zvwji1sp003z94lz30vjidmybm9fp8piqw5g"))))
+                "0lqipmrcvgjlh7ya4r3vf7qiypc2pwgqcxzmg4xmb5h5p5l37cq0"))))
     (properties `((upstream-name . "rcartocolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2))

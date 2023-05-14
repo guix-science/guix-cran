@@ -7703,13 +7703,13 @@ for binomial outcome are computed.")
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apollo" version))
               (sha256
                (base32
-                "129qa303fckan6n8zdgsa08720aiyv623rz5mdv4l2by53i7lb2s"))))
+                "076i64l1n84ljdnklkj63n4q7ssg692h21dfbw8c0nxv4wsgzrm3"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7725,7 +7725,9 @@ for binomial outcome are computed.")
                              r-maxlik
                              r-matrixstats
                              r-deriv
-                             r-coda))
+                             r-coda
+                             r-cli
+                             r-bgw))
     (native-inputs (list r-knitr))
     (home-page "http://www.apolloChoiceModelling.com")
     (synopsis "Tools for Choice Model Estimation and Application")
@@ -9812,26 +9814,26 @@ exploratory data analysis, and perhaps for preparation of presentations.")
 (define-public r-animl
   (package
     (name "r-animl")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "animl" version))
               (sha256
                (base32
-                "0rc82y5z1jkd9bfq2dnn50sr2lf6vhs7yyn1fwfn13krczc9zcbp"))))
+                "1r6vy8kc98av2xwxas59gzqiynaxvddc5dxdkbvfd5v9zsglqr0y"))))
     (properties `((upstream-name . "animl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tfdatasets
+                             r-tensorflow
                              r-reticulate
                              r-pbapply
+                             r-magrittr
                              r-keras
                              r-jpeg
                              r-imager
                              r-exifr
                              r-dplyr
-                             r-data-table
                              r-av))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=animl")
     (synopsis "Collection of ML Tools for Conservation Research")
     (description

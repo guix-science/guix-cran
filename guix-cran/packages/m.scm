@@ -36872,13 +36872,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.11.1")
+    (version "0.11.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "0ccy435r10ad5pd07n7fwf9xvr3ifspaih03fvwbibi0896723fa"))))
+                "101rkzynp4bqpbckrg3gjxj04d1sh9xwwvs8mic7f70zq1cb39rl"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

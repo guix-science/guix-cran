@@ -7136,13 +7136,13 @@ they are fast, reliable, and portable across different platforms.")
 (define-public r-stringstatic
   (package
     (name "r-stringstatic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stringstatic" version))
               (sha256
                (base32
-                "01rkjdaw30fj4yk3skpyxdzflnmf20j52vxjbnj7bgm3yj7d1fmw"))))
+                "1naj3in8w0h36rnwal5qad3gckiw14xf16k08yhlwip2xkyifxxb"))))
     (properties `((upstream-name . "stringstatic")))
     (build-system r-build-system)
     (home-page "https://github.com/rossellhayes/stringstatic")
