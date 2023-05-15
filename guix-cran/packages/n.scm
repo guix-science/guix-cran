@@ -6885,13 +6885,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "0.13.1")
+    (version "0.13.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimble" version))
               (sha256
                (base32
-                "0c45rylb52vm313y4sa6d3x5611adxzxd9izn57y9958cjmwlw6w"))))
+                "0q2zk2k5lj8l7b4grl1qaakc361cvxlmczrrdyakhqrcka4px434"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-igraph r-coda))

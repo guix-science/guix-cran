@@ -9744,13 +9744,13 @@ Sture Holm (1979) <doi:10.2307/4615733>; Yoav Benjamini and Yosef Hochberg
 (define-public r-hdivar
   (package
     (name "r-hdivar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdiVAR" version))
               (sha256
                (base32
-                "0rq5vsi0s3y9rkkzijkicrlg55vjqklniizmx4dqs3ib18jbh94l"))))
+                "1vvsi1irnbjnyliz9wh783kbjkyz8agfbrx10436fsf8x33d1qs8"))))
     (properties `((upstream-name . "hdiVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve r-abind))
@@ -9763,9 +9763,9 @@ known as linear gaussian state-space model.  Provable sparse
 expectation-maximization algorithm is provided for the estimation of transition
 matrix and noise variances.  Global and simultaneous testings are implemented
 for transition matrix with false discovery rate control.  For more information,
-see the accompanying paper: Lyu, X., Kang, J., & Li, L. (2020). \"Statistical
+see the accompanying paper: Lyu, X., Kang, J., & Li, L. (2023). \"Statistical
 inference for high-dimensional vector autoregression with measurement error\",
-arXiv preprint <arXiv:2009.08011>.")
+Statistica Sinica.")
     (license license:gpl2+)))
 
 (define-public r-hdir

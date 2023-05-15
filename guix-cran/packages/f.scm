@@ -9042,13 +9042,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flimo
   (package
     (name "r-flimo")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "flimo" version))
               (sha256
                (base32
-                "0b4f9cahmwhklb6h7qkgrfkm1nxpilj7zqjpj97bfqxx9zxysfig"))))
+                "00l0w9z1j2yy4sl1fly7lw4rrdwcwnb26va2d5vsvjldwcmsx5pd"))))
     (properties `((upstream-name . "flimo")))
     (build-system r-build-system)
     (propagated-inputs (list r-juliaconnector r-ggplot2))

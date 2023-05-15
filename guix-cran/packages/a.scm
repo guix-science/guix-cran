@@ -9639,13 +9639,13 @@ annotate them to genes.")
 (define-public r-annmatrix
   (package
     (name "r-annmatrix")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "annmatrix" version))
               (sha256
                (base32
-                "0cvdy2gqliqzbgyxhw4k9mspwlkdaxhj85dxf56lq29qrcgk3gky"))))
+                "0ljlxiyprvaa84skw5g2qfjf55fkdcsygvb09i5jws9dm0i8h80w"))))
     (properties `((upstream-name . "annmatrix")))
     (build-system r-build-system)
     (home-page "https://github.com/karoliskoncevicius/annmatrix")

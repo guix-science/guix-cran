@@ -10545,13 +10545,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.2.8")
+    (version "4.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lessR" version))
               (sha256
                (base32
-                "0vh7qqzk8fzf1hhc4kcx76iybppwqw1icim3c5gagbwzkdk4r61y"))))
+                "0xl26bbp4ksqqp769vgc591rvw9h9ivvm94cwk0nq06vy8v4fgxp"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -10815,13 +10815,13 @@ the coordinates.")
 (define-public r-lehdr
   (package
     (name "r-lehdr")
-    (version "1.0.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lehdr" version))
               (sha256
                (base32
-                "0hg5a4w37wi6bqks2298ajsj8q6y3lvbx80wwg5364vnv7na3308"))))
+                "0sal2qh2rcl4mkdh9a9zy6ixxb99gax04ldawrp091kzwscng9yz"))))
     (properties `((upstream-name . "lehdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

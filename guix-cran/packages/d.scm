@@ -3312,13 +3312,13 @@ non-parametric hypothesis testing and gene set enrichment analysis.")
 (define-public r-dslabs
   (package
     (name "r-dslabs")
-    (version "0.7.4")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dslabs" version))
               (sha256
                (base32
-                "05v51rckpfjz2cbms250sv0q34l0ip841w9ardvs51s2x7r8qypc"))))
+                "01ns4xav5lgv78rkikwic7zsh1skjigq8acf7pj3d4slf0pl56wj"))))
     (properties `((upstream-name . "dslabs")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

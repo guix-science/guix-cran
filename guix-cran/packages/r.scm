@@ -33675,35 +33675,6 @@ bandwidth selection for the different procedures implemented, and rdplot() to
 conduct exploratory data analysis (RD plots).")
     (license license:gpl2)))
 
-(define-public r-rdracor
-  (package
-    (name "r-rdracor")
-    (version "0.7.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rdracor" version))
-              (sha256
-               (base32
-                "006m1fppdfsmvyllks4x94z8v0q1d36m3af95yw53b1vrz6v9nvx"))))
-    (properties `((upstream-name . "rdracor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rdpack
-                             r-purrr
-                             r-jsonlite
-                             r-igraph
-                             r-httr
-                             r-data-table))
-    (home-page "https://github.com/dracor-org/rdracor")
-    (synopsis "Access to the 'DraCor' API")
-    (description
-     "Provide an interface for Drama Corpora Project ('DraCor') API:
-<https://dracor.org/documentation/api>.")
-    (license license:gpl3+)))
-
 (define-public r-rdpower
   (package
     (name "r-rdpower")
@@ -35587,13 +35558,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.9")
+    (version "0.1.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppSimdJson" version))
               (sha256
                (base32
-                "1vmi8jkvak9pbpvy3s36z9sllcrkcrwsaz1h2gb2mkajc7yqpx2y"))))
+                "1wfhn4lm1538053hr4nk8mqbx3r9lq4p98fk6vw6b9xv84sxsicl"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -39856,13 +39827,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rbeast" version))
               (sha256
                (base32
-                "0l6fri4pk3svzbwc8mhnphy7z9p3ym8qcqvggdy2zrkjcif5vgsy"))))
+                "1can7nlh5vg0imgid4p2zvffz507f716aa7krkyqmfpmw2wg9nc1"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (home-page "https://github.com/zhaokg/Rbeast")

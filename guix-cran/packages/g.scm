@@ -13127,31 +13127,30 @@ overall effect.")
 (define-public r-ginsarcorw
   (package
     (name "r-ginsarcorw")
-    (version "1.15.6")
+    (version "1.15.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GInSARCorW" version))
               (sha256
                (base32
-                "0rpq8ng9skxg6qzhainsc9jkznql6glq65a1bdbrkc6pwx3pc7lc"))))
+                "0hxcaixr8f3pq4kpzhfrbm7blvkq6sk3pz63bfjy6n1lhlashb13"))))
     (properties `((upstream-name . "GInSARCorW")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgeos r-rgdal r-raster r-circular))
+    (propagated-inputs (list r-sp r-raster r-circular))
     (home-page
-     "<https://subhadipdatta007.wixsite.com/profile/post/ginsarcorw-gacos-insar-correction-workflow>")
+     "<https://subhadipdatta.wixsite.com/profile/post/ginsarcorw-gacos-insar-correction-workflow>")
     (synopsis "GACOS InSAR Correction Workflow")
     (description
      "This package provides a workflow for correction of Differential Interferometric
 Synthetic Aperture Radar (DInSAR) atmospheric delay base on Generic Atmospheric
 Correction Online Service for InSAR (GACOS) data and correction algorithms
-proposed by Chen Yu.  You can find atmospheric delay data here:
-<http://ceg-research.ncl.ac.uk/v2/gacos>.This package calculate the Both Zenith
-and LOS direction (User Depend).  You have to just download GACOS product on
-your area and preprocessed D-InSAR unwrapped images.  Cite those references and
-this package in your work, when using this framework.  References: Yu, C., N. T.
-Penna, and Z. Li (2017) <doi:10.1016/j.rse.2017.10.038>.  Yu, C., Li, Z., &
-Penna, N. T. (2017) <doi:10.1016/j.rse.2017.10.038>.  Yu, C., Penna, N. T., and
-Li, Z. (2017) <doi:10.1002/2016JD025753>.")
+proposed by Chen Yu.  This package calculate the Both Zenith and LOS direction
+(User Depend).  You have to just download GACOS product on your area and
+preprocessed D-InSAR unwrapped images.  Cite those references and this package
+in your work, when using this framework.  References: Yu, C., N. T. Penna, and
+Z. Li (2017) <doi:10.1016/j.rse.2017.10.038>.  Yu, C., Li, Z., & Penna, N. T.
+(2017) <doi:10.1016/j.rse.2017.10.038>.  Yu, C., Penna, N. T., and Li, Z. (2017)
+<doi:10.1002/2016JD025753>.")
     (license license:gpl3)))
 
 (define-public r-giniwegneg

@@ -8604,13 +8604,13 @@ elements can be added (points, lines, barplot with add=TRUE and so forth).")
 (define-public r-prepdesigns
   (package
     (name "r-prepdesigns")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRepDesigns" version))
               (sha256
                (base32
-                "189jmh78vcr174lf0s283pbhknr87h3bq02gvvpg5r2hv31gdgjl"))))
+                "1bsdgd6zaywr5bh96khjinp5qrv72ibv9y60v63rqzpkdixdzp5z"))))
     (properties `((upstream-name . "pRepDesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pRepDesigns")
@@ -8621,18 +8621,18 @@ where it may not be possible to replicate all the lines in each environment due
 to scarcity of resources.  For such situations, partially replicated (p-Rep)
 designs have wide application potential as only a proportion of the test lines
 are replicated at each environment.  A collection of several utility functions
-related to p-Rep designs have been developed.  Here, the package contains four
-functions for a complete stepwise analytical study of these designs.  Three
-functions pRep1(), pRep2() and pRep3() are used to generate three new series of
-p-Rep designs and also compute canonical efficiency factors, variance factors
-between associates and average variance factors of these designs.  A fourth
-function NCEV() is used to generate incidence matrix (N), information matrix
-(C), canonical efficiency factor (E) and average variance factor (V).  This
-function is general in nature and can be used for studying the characterization
-properties of any block design.A construction procedure for p-Rep designs was
-given by Williams et al.(2011)<doi:10.1002/bimj.201000102> which was tidious and
-time consuming.  Here, in this package, three different methods have been given
-to generate p-Rep designs easily.")
+related to p-Rep designs have been developed.  Here, the package contains six
+functions for a complete stepwise analytical study of these designs.  Five
+functions pRep1(), pRep2(), pRep3(), pRep4() and pRep5(), are used to generate
+five new series of p-Rep designs and also compute average variance factors and
+canonical efficiency factors of generated designs.  A fourth function NCEV() is
+used to generate incidence matrix (N), information matrix (C), canonical
+efficiency factor (E) and average variance factor (V).  This function is general
+in nature and can be used for studying the characterization properties of any
+block design.  A construction procedure for p-Rep designs was given by Williams
+et al.(2011) <doi:10.1002/bimj.201000102> which was tedious and time consuming.
+Here, in this package, five different methods have been given to generate p-Rep
+designs easily.")
     (license license:gpl2+)))
 
 (define-public r-prepdat
@@ -11457,45 +11457,6 @@ family of power and reversal power distributions.")
     (synopsis "Binary Exponentiation")
     (description "Fast exponentiation when the exponent is an integer.")
     (license license:gpl3+)))
-
-(define-public r-povcalnetr
-  (package
-    (name "r-povcalnetr")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "povcalnetR" version))
-              (sha256
-               (base32
-                "0ah6n3wpjiwyh0mancqqpvyknx25dxr13p0nqnrfzmhfwyaywar0"))))
-    (properties `((upstream-name . "povcalnetR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-naniar
-                             r-memoise
-                             r-jsonlite
-                             r-js
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/worldbank/povcalnetR")
-    (synopsis "Client for the 'Povcalnet' API")
-    (description
-     "This package provides an interface to compute poverty and inequality indicators
-for more than 160 countries and regions from the World Bank's database of
-household surveys.  It has the same functionality as the Povcalnet website
-(<http://iresearch.worldbank.org/PovcalNet/>).  Povcalnet is a computational
-tool that allows users to estimate poverty rates for regions, sets of countries
-or individual countries, over time and at any poverty line.  Povcalnet is
-managed jointly by the data and research group in the World Bank's development
-economics division.  It draws heavily upon a strong collaboration with the
-poverty and equity global practice, which is responsible for the gathering and
-harmonization of the underlying survey data.")
-    (license license:expat)))
 
 (define-public r-pov
   (package
