@@ -10203,6 +10203,37 @@ filter for choosing the terms that will be evaluated by a hypothesis test.
 Pinto & Pereira (2021) <arXiv:2109.07978>.")
     (license license:gpl3)))
 
+(define-public r-stepgwr
+  (package
+    (name "r-stepgwr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "StepGWR" version))
+              (sha256
+               (base32
+                "0sqgixmxla1sv3jkjhby0gggzs3iyg1cwq267y9hymzx2gsafry5"))))
+    (properties `((upstream-name . "StepGWR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qpdf r-numbers r-mass))
+    (home-page "https://cran.r-project.org/package=StepGWR")
+    (synopsis
+     "Hybrid Spatial Model for Prediction and Capturing Spatial Variation in the Data")
+    (description
+     "It is a hybrid spatial model that combines the variable selection capabilities
+of stepwise regression methods with the predictive power of the Geographically
+Weighted Regression(GWR) model.The developed hybrid model follows a two-step
+approach where the stepwise variable selection method is applied first to
+identify the subset of predictors that have the most significant impact on the
+response variable, and then a GWR model is fitted using those selected variables
+for spatial prediction at test or unknown locations.  For method details,see
+Leung, Y., Mei, C. L. and Zhang, W. X. (2000).<DOI:10.1068/a3162>.This hybrid
+spatial model aims to improve the accuracy and interpretability of GWR
+predictions by selecting a subset of relevant variables through a stepwise
+selection process.This approach is particularly useful for modeling spatially
+varying relationships and improving the accuracy of spatial predictions.")
+    (license license:gpl2+)))
+
 (define-public r-stepgbm
   (package
     (name "r-stepgbm")
@@ -12149,40 +12180,6 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 <DOI:10.1037/met0000155>.")
     (license license:gpl2+)))
 
-(define-public r-startr
-  (package
-    (name "r-startr")
-    (version "2.2.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "startR" version))
-              (sha256
-               (base32
-                "09zdka2mgkqkanamza8izhn9xwdpmj91l88538zxm9ckbk2213kw"))))
-    (properties `((upstream-name . "startR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-s2dv
-                             r-pcict
-                             r-multiapply
-                             r-future
-                             r-easyncdf
-                             r-climprojdiags
-                             r-bigmemory
-                             r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/startR/")
-    (synopsis "Automatically Retrieve Multidimensional Distributed Data Sets")
-    (description
-     "Tool to automatically fetch, transform and arrange subsets of multi- dimensional
-data sets (collections of files) stored in local and/or remote file systems or
-servers, using multicore capabilities where possible.  The tool provides an
-interface to perceive a collection of data sets as a single large
-multidimensional data array, and enables the user to request for automatic
-retrieval, processing and arrangement of subsets of the large array.  Wrapper
-functions to add support for custom file formats can be plugged in/out, making
-the tool suitable for any research field where large multidimensional data sets
-are involved.")
-    (license license:gpl3)))
-
 (define-public r-starticles
   (package
     (name "r-starticles")
@@ -13830,6 +13827,35 @@ of Skew-Normal Distributions proposed by Jamalizadeh and Lin (2016)
 with sample selectivity and endogenous treatment model.  For details, see
 Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
     (license license:gpl2)))
+
+(define-public r-ssmrcd
+  (package
+    (name "r-ssmrcd")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ssMRCD" version))
+              (sha256
+               (base32
+                "16s7jpm9yik1l5s682hdrmh22hrxk5qzy31ls54g48125j8v96la"))))
+    (properties `((upstream-name . "ssMRCD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-robustbase
+                             r-plot3d
+                             r-ggplot2
+                             r-dplyr
+                             r-dbscan
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ssMRCD")
+    (synopsis "Spatially Smoothed MRCD Estimator")
+    (description
+     "Estimation of the Spatially Smoothed Minimum Regularized Determinant (ssMRCD)
+estimator and its usage in an ssMRCD-based outlier detection method as described
+in Puchhammer and Filzmoser (2023) <doi:10.48550/arXiv.2305.05371>.  Included
+are also complementary visualization and parameter tuning tools.")
+    (license license:gpl3)))
 
 (define-public r-ssmousetrack
   (package
@@ -28268,16 +28294,17 @@ Kulldorff (1997) <doi:10.1080/03610929708831995>.")
 (define-public r-smdocker
   (package
     (name "r-smdocker")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smdocker" version))
               (sha256
                (base32
-                "1af2mabw9yx6pb8lqs6n0f12zbiac8wfm1nxy0xwchpmy80md605"))))
+                "0l9d3schxzb047p9xlxb3a5f7h116gyr8hp592fmid1ly6bk7kh7"))))
     (properties `((upstream-name . "smdocker")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
+                             r-uuid
                              r-paws-storage
                              r-paws-security-identity
                              r-paws-management
@@ -44224,13 +44251,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "1.2.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semPower" version))
               (sha256
                (base32
-                "1y3j6b3ab19fqxzqrrssjcj7f0za0vkwq97s7qs6hwj9yfsg1nas"))))
+                "08g6h98wiiypjab1110h18srl76vr95g9qz59q7l0a55ljfk7akp"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -44238,8 +44265,7 @@ the functions to be chained by a pipe operator.")
     (synopsis "Power Analyses for SEM")
     (description
      "This package provides a-priori, post-hoc, and compromise power-analyses for
-structural equation models (SEM).  Moshagen & Erdfelder (2016)
-<doi:10.1080/10705511.2014.950896>.")
+structural equation models (SEM).")
     (license license:lgpl2.0+)))
 
 (define-public r-semnova
@@ -54362,6 +54388,30 @@ with valid standard errors as proposed in Beesley and Mukherjee (2020)
 <doi:10.1101/2019.12.26.19015859>, currently under review.")
     (license license:gpl3)))
 
+(define-public r-samadb
+  (package
+    (name "r-samadb")
+    (version "0.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "samadb" version))
+              (sha256
+               (base32
+                "1jmk94zf42msgpm3i6d1b1njnpxax3hnbs8w957f6frk97idwp27"))))
+    (properties `((upstream-name . "samadb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl r-rmysql r-dbi r-data-table r-collapse))
+    (home-page "https://cran.r-project.org/package=samadb")
+    (synopsis "South Africa Macroeconomic Database API")
+    (description
+     "An R API providing access to a relational database with macroeconomic time
+series data for South Africa, obtained from the South African Reserve Bank
+(SARB) and Statistics South Africa (STATSSA), and updated on a weekly basis via
+the EconData <https://www.econdata.co.za/> platform and automated scraping of
+the SARB and STATSSA websites.  The database is maintained at the Department of
+Economics at Stellenbosch University.")
+    (license license:gpl3)))
+
 (define-public r-sam
   (package
     (name "r-sam")
@@ -56088,45 +56138,6 @@ The package can be helpful in climate sciences for other purposes than
 forecasting.  To find more details, see the review paper Manubens, N.et al.
 (2018) <doi:10.1016/j.envsoft.2018.01.018>.")
     (license license:asl2.0)))
-
-(define-public r-s2dv
-  (package
-    (name "r-s2dv")
-    (version "1.4.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "s2dv" version))
-              (sha256
-               (base32
-                "1xx7rjrc3fjjzc4mmpfbmddlmrjdlizsb4dvqxl314mjp84bls79"))))
-    (properties `((upstream-name . "s2dv")))
-    (build-system r-build-system)
-    (inputs (list cdo))
-    (propagated-inputs (list r-specsverification
-                             r-plyr
-                             r-ncdf4
-                             r-nbclust
-                             r-multiapply
-                             r-maps
-                             r-mapproj
-                             r-easyverification
-                             r-easyncdf
-                             r-climprojdiags
-                             r-bigmemory
-                             r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/s2dv/")
-    (synopsis "Set of Common Tools for Seasonal to Decadal Verification")
-    (description
-     "The advanced version of package s2dverification'.  It is intended for seasonal
-to decadal (s2d) climate forecast verification, but it can also be used in other
-kinds of forecasts or general climate analysis.  This package is specially
-designed for the comparison between the experimental and observational datasets.
- The functionality of the included functions covers from data retrieval, data
-post-processing, skill scores against observation, to visualization.  Compared
-to s2dverification', s2dv is more compatible with the package startR', able to
-use multiple cores for computation and handle multi-dimensional arrays with a
-higher flexibility.  The CDO version used in development is 1.9.8.")
-    (license license:gpl3)))
 
 (define-public r-s20x
   (package

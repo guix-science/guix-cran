@@ -5572,16 +5572,17 @@ service.")
 (define-public r-webexercises
   (package
     (name "r-webexercises")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webexercises" version))
               (sha256
                (base32
-                "1z0dqiqk0v6h97qg89nwn9d57zn1png066va8dirk3mmk4jlfrqc"))))
+                "1r2wgg89a84q54mrwqv4wcsjvcndiwwjn6rk7qz37pfyciv68hzy"))))
     (properties `((upstream-name . "webexercises")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-rmarkdown r-knitr r-jsonlite))
+    (propagated-inputs (list r-yaml r-rstudioapi r-rmarkdown r-knitr
+                             r-jsonlite))
     (home-page "https://github.com/psyteachr/webexercises")
     (synopsis
      "Create Interactive Web Exercises in 'R Markdown' (Formerly 'webex')")
@@ -5733,6 +5734,36 @@ conversions for metrics of temperature, air moisture, wind speed, and
 precipitation.  This package also includes functions to calculate the heat index
 from air temperature and air moisture.")
     (license license:gpl2)))
+
+(define-public r-weatherindices
+  (package
+    (name "r-weatherindices")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "weatherindices" version))
+              (sha256
+               (base32
+                "1rqkrbzbihgygx2bg6lpkxqlwmdk88ljdp4j02xygvm0brqy2dc9"))))
+    (properties `((upstream-name . "weatherindices")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=weatherindices")
+    (synopsis "Calculate Weather Indices")
+    (description
+     "Weather indices represent the overall weekly effect of a weather variable on
+crop yield throughout the cropping season.  This package contains functions that
+can convert the weekly weather data into yearly weighted Weather indices with
+weights being the correlation coefficient between weekly weather data over the
+years and crop yield over the years.  This can be done for an individual weather
+variable and for two weather variables at a time as the interaction effect.
+This method was first devised by Jain, RC, Agrawal R, and Jha, MP (1980),
+\"Effect of climatic variables on rice yield and its forecast\",MAUSAM, 31(4),
+591â596, <doi:10.54302/mausam.v31i4.3477>.  Later, the method have been used
+by various researchers and the latest can found in Gupta, AK, Sarkar, KA,
+Dhakre, DS, & Bhattacharya, D (2022), \"Weather Based Potato Yield Modelling
+using Statistical and Machine Learning Technique\",Environment and Ecology,
+40(3B), 1444â1449,<https://www.environmentandecology.com/volume-40-2022>.")
+    (license license:gpl3+)))
 
 (define-public r-wearables
   (package

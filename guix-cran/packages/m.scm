@@ -31718,13 +31718,13 @@ Glimm, E. and Bretz, F. (2014) <doi:10.1002/sim.6052>.")
 (define-public r-mcpmodbc
   (package
     (name "r-mcpmodbc")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MCPModBC" version))
               (sha256
                (base32
-                "0mg7lzf5xvlaaxj4iwkwibw9sbp44dnizw9rlv1az4wg5yl4bhkn"))))
+                "0gzcxn3pf86k32ccvbsh4g5awcxcnsr5c48lkyrpqgwr0k3g0sjs"))))
     (properties `((upstream-name . "MCPModBC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -31741,8 +31741,7 @@ Glimm, E. and Bretz, F. (2014) <doi:10.1002/sim.6052>.")
     (description
      "Implementation of Multiple Comparison Procedures with Modeling (MCP-Mod)
 procedure with bias-corrected estimators and second-order covariance matrices as
-described in Diniz, Gallardo and MagalhÃ£es (2023)
-<doi:10.48550/arXiv.2301.00325>.")
+described in Diniz, Gallardo and Magalhaes (2023) <doi:10.1002/pst.2303>.")
     (license license:gpl2+)))
 
 (define-public r-mcpmod

@@ -5573,13 +5573,13 @@ models and estimation of SVAR and SVEC models.")
 (define-public r-varreg
   (package
     (name "r-varreg")
-    (version "1.0.2")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VarReg" version))
               (sha256
                (base32
-                "04235hr0r6sp7r3ccvcfb8l6p8yapcdrn6zl7mmvbyc4qb70gawh"))))
+                "06n8bb4h722k1d83hbzgjasl9jrcj7pwj895zdkkdalw7crim88m"))))
     (properties `((upstream-name . "VarReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-sn))
@@ -5587,8 +5587,9 @@ models and estimation of SVAR and SVEC models.")
     (synopsis "Semi-Parametric Variance Regression")
     (description
      "This package provides methods for fitting semi-parametric mean and variance
-models, with normal or censored data.  Also extended to allow a regression in
-the location, scale and shape parameters.")
+models, with normal or censored data.  Extended to allow a regression in the
+location, scale and shape parameters, and further for multiple regression in
+each.")
     (license license:gpl3)))
 
 (define-public r-varredopt

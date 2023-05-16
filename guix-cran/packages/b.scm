@@ -1309,13 +1309,13 @@ bubbly-bg JavaScript library.")
 (define-public r-bubbleheatmap
   (package
     (name "r-bubbleheatmap")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bubbleHeatmap" version))
               (sha256
                (base32
-                "1xrcdz6061gwi3bvkxz3bl9b0bp6q9rxn1v54gzjr2fyrlcx3bwc"))))
+                "0b12bhk0c65m5izp5ayy6fl4iv0jhk7hhwbnavyggawrpz23ikxr"))))
     (properties `((upstream-name . "bubbleHeatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape))
@@ -2739,13 +2739,13 @@ regression as well as multilayer perceptrons.")
 (define-public r-brugs
   (package
     (name "r-brugs")
-    (version "0.9-1")
+    (version "0.9-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BRugs" version))
               (sha256
                (base32
-                "1m3dlw6201bzf6fcm4qscpsmgjkpidwiil3m4iwfn0b0iv3dclcv"))))
+                "19gyh6lambhwi7bx7hqa9nqp2xzjryi84npvd9m9mr3bzbv8mgz2"))))
     (properties `((upstream-name . "BRugs")))
     (build-system r-build-system)
     (inputs (list))
@@ -2755,8 +2755,8 @@ regression as well as multilayer perceptrons.")
     (description
      "Fully-interactive R interface to the OpenBUGS software for Bayesian analysis
 using MCMC sampling.  Runs natively and stably in 32-bit R under Windows.
-Versions running on Linux and on 64-bit R under Windows are in \"beta\" status and
-less efficient.")
+Versions running on x86Linux and on 64-bit R under Windows are in \"beta\" status
+and less efficient.")
     (license license:gpl2)))
 
 (define-public r-brucer
@@ -2806,6 +2806,29 @@ tidy report of statistical models (to R Console and Microsoft Word); (7)
 mediation and moderation analyses (PROCESS); and (8) additional toolbox for
 statistics and graphics.")
     (license license:gpl3)))
+
+(define-public r-brsim
+  (package
+    (name "r-brsim")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "brsim" version))
+              (sha256
+               (base32
+                "0nqmmsxyarx0976yr0hrjyyklrr0i714cgsdg6gmxm9yy61a8578"))))
+    (properties `((upstream-name . "brsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcmdrmisc r-corrplot r-cluster))
+    (home-page "https://cran.r-project.org/package=brsim")
+    (synopsis "Brainerd-Robinson Similarity Coefficient Matrix")
+    (description
+     "This package provides the facility to calculate the Brainerd-Robinson similarity
+coefficient for the rows of an input table, and to calculate the significance of
+each coefficient based on a permutation approach; optionally, hierarchical
+agglomerative clustering can be performed and the silhouette method is used to
+identify an optimal number of clusters.")
+    (license license:gpl2+)))
 
 (define-public r-brr
   (package
@@ -6097,6 +6120,34 @@ Implementation details are provided in Pande et al. (2017), Mach Learn
      "Jointly models the multivariate longitudinal responses and multiple covariates
 and time using gradient boosting approach.")
     (license license:gpl2+)))
+
+(define-public r-boostingdea
+  (package
+    (name "r-boostingdea")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "boostingDEA" version))
+              (sha256
+               (base32
+                "0df19q44fsv0hvda4dwq302wsh6vlalwszyh0ir66r5ryrrmhas4"))))
+    (properties `((upstream-name . "boostingDEA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rglpk r-mlmetrics r-lpsolveapi r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/itsmeryguillen/boostingDEA")
+    (synopsis "Boosting Approach to Data Envelopment Analysis")
+    (description
+     "Includes functions to estimate production frontiers and make ideal output
+predictions in the Data Envelopment Analysis (DEA) context using both standard
+models from DEA and Free Disposal Hull (FDH) and boosting techniques.  In
+particular, EATBoosting (Guillen et al., 2023 <doi:10.1016/j.eswa.2022.119134>)
+and MARSBoosting.  Moreover, the package includes code for estimating several
+technical efficiency measures using different models such as the input and
+output-oriented radial measures, the input and output-oriented Russell measures,
+the Directional Distance Function (DDF), the Weighted Additive Measure (WAM) and
+the Slacks-Based Measure (SBM).")
+    (license license:agpl3+)))
 
 (define-public r-boomspikeslab
   (package
@@ -12715,13 +12766,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "2.3.0")
+    (version "3.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bimets" version))
               (sha256
                (base32
-                "1iqmkspclhvvwxkhn88c4vmwf1lc8zn4sv4r349fx7qkq2hpr8z1"))))
+                "03g0vkmg1lcpc6v3a4apj13920iv4lrbag3q0xih0b5d5479yr57"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))

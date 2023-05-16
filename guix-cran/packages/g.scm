@@ -706,13 +706,13 @@ GWAS Catalog data by accessing the REST API
 (define-public r-gwasinspector
   (package
     (name "r-gwasinspector")
-    (version "1.6.1")
+    (version "1.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GWASinspector" version))
               (sha256
                (base32
-                "0nymvx6a8wys1aby2ffmmflrab1gp7ig443b24y1j2ccpwkjvxl2"))))
+                "0nxh20gpgv5b2nkrczrcjknl9f531flw8fr9qiqd6ig5gxlcgs67"))))
     (properties `((upstream-name . "GWASinspector")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
@@ -7016,36 +7016,6 @@ are given in Wang H, Dwyer-Lindgren L, Lofgren KT, et al. (2012)
 (2014) <doi:10.1016/S0140-6736(14)60497-9> and Mohammadi, Parsaeian, Mehdipour
 et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gppm
-  (package
-    (name "r-gppm")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gppm" version))
-              (sha256
-               (base32
-                "1n9is3xj52lsck2fiy9j320p2ca6ib36s251i7g3iz99a77b0ahh"))))
-    (properties `((upstream-name . "gppm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstan
-                             r-rcpp
-                             r-mvtnorm
-                             r-mass
-                             r-ggthemes
-                             r-ggplot2))
-    (home-page "https://github.com/karchjd/gppm")
-    (synopsis "Gaussian Process Panel Modeling")
-    (description
-     "This package provides an implementation of Gaussian process panel modeling
-(GPPM).  GPPM is described in Karch (2016; <DOI:10.18452/17641>) and Karch,
-Brandmaier & Voelkle (2018; <DOI:10.17605/OSF.IO/KVW5Y>).  Essentially, GPPM is
-Gaussian process based modeling of longitudinal panel data.  gppm also supports
-regular Gaussian process regression (with a focus on flexible model
-specification), and multi-task learning.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-gpp
   (package
@@ -18698,25 +18668,29 @@ callable from R. The package also builds on Windows, but just returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.2")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GetTDData" version))
               (sha256
                (base32
-                "1ablrimcfif3kkzkyw9m2wwb2y39yzgvi96i14n8j4ddwdkalbn5"))))
+                "0g3clqnx4mvqsn743jzlai90ckylv5klkfxyg3lrqfds6n2mjxrh"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-rvest
                              r-readxl
+                             r-purrr
+                             r-lifecycle
+                             r-humanize
                              r-fs
                              r-dplyr
                              r-curl
+                             r-cli
                              r-bizdays))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetTDData/")
     (synopsis "Get Data for Brazilian Bonds (Tesouro Direto)")
     (description
@@ -25903,18 +25877,18 @@ likelihood method and the Hessian matrix.")
 (define-public r-gasfluxes
   (package
     (name "r-gasfluxes")
-    (version "0.4-4")
+    (version "0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasfluxes" version))
               (sha256
                (base32
-                "0gi0zk0h5rw75n6znada0cwa9qzy8higsiiqwgdm3q827j1x8iva"))))
+                "0y17lpry9q6lkkmnpj9sn0yql1g5q1z32zcc7hxxip6sd46qxjqn"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sfsmisc r-mass r-data-table r-aiccmodavg))
+    (propagated-inputs (list r-sfsmisc r-mass r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=gasfluxes")
+    (home-page "https://git-dmz.thuenen.de/fuss/gasfluxes")
     (synopsis "Greenhouse Gas Flux Calculation from Chamber Measurements")
     (description
      "This package provides functions for greenhouse gas flux calculation from chamber

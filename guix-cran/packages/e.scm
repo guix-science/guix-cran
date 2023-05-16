@@ -963,13 +963,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.5")
+    (version "1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "extrafrail" version))
               (sha256
                (base32
-                "0dn1zj7xfp1rygj88d9f5z1s0k8qhm33y43aip58b3m5vscawixk"))))
+                "02phbgkl7r3v382dq194pcnxbc24323dls99x6j0510fnhl92i2g"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -3988,13 +3988,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "051nnlmi7g1cinrz4r4j6yyvfi8zanmxkh8z2d21c5xq06qd7c8f"))))
+                "154jrlag5qjwl74f0ckrcbmv8xnjz82hwd21yckwvyyq825csi6r"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -4005,6 +4005,7 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
                              r-numderiv
                              r-mvtnorm
                              r-matrix
+                             r-flexsurv
                              r-erify
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=eventPred")
@@ -5671,17 +5672,16 @@ official statistics of the Japanese government.")
 (define-public r-estadistica
   (package
     (name "r-estadistica")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "estadistica" version))
               (sha256
                (base32
-                "05ad1wfy4682icprp7jgx09p8azjnk8wlxhpzjdkm6mz0ix7zqp5"))))
+                "1l5ngjqm301rr1amsqdkazf7dg7c8nd0pvwy0hrsjk0m630q1kc4"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-shinydashboard
                              r-shiny
                              r-rio
@@ -19280,27 +19280,6 @@ import specific functions from a package into the global environment.")
     (synopsis "Easy Nonlinear Model")
     (description "Fit and plot some nonlinear models.")
     (license license:gpl2)))
-
-(define-public r-easyncdf
-  (package
-    (name "r-easyncdf")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "easyNCDF" version))
-              (sha256
-               (base32
-                "1ffpl5zf9i62ifiasimv32j9s9bpmbqi9wrv520124arv4lwcyix"))))
-    (properties `((upstream-name . "easyNCDF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ncdf4 r-climprojdiags r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/easyNCDF/-/wikis/home")
-    (synopsis
-     "Tools to Easily Read/Write NetCDF Files into/from Multidimensional R Arrays")
-    (description
-     "Set of wrappers for the ncdf4 package to simplify and extend its reading/writing
-capabilities into/from multidimensional R arrays.")
-    (license license:asl2.0)))
 
 (define-public r-easymx
   (package

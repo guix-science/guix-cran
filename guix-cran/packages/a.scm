@@ -6632,13 +6632,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archeoViz" version))
               (sha256
                (base32
-                "0zz9km1mdxw6n0g7njfv7abayvd4jfc0vzbl9z0wql5a0l6h3qmd"))))
+                "1akyrsvjis97nsb4vzdk1x93695sw1ml1vr0psd2i9jkdd2l77dx"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -6647,13 +6647,14 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
                              r-reshape2
                              r-plotly
                              r-mgcv
+                             r-knitr
                              r-htmlwidgets
                              r-ggplot2
                              r-cxhull))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sebastien-plutniak/archeoviz")
     (synopsis
-     "Visualisation, Exploration, and Web Communication of Archaeological Excavation Data")
+     "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
     (description
      "An R Shiny application for the visualisation, interactive exploration, and web
 communication of archaeological excavation data.  It includes interactive 3D and
@@ -17389,13 +17390,13 @@ you to customize additional searches.")
 (define-public r-addinslist
   (package
     (name "r-addinslist")
-    (version "0.4.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "addinslist" version))
               (sha256
                (base32
-                "0dg91lcb2xgsg6sim9fi9m2p203g2dp5bm5q7k0hy084057c22a5"))))
+                "0gis7485m7gz3xz5wfxxm3136cg2j9i6f6zq8gbv206w261y1nfb"))))
     (properties `((upstream-name . "addinslist")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18045,6 +18046,36 @@ at the beginning or end of periods.  The package contains functions to easily
 refer to the first or last (working) day within a specific period relative to a
 base date to facilitate actuarial reporting and to compare results.")
     (license license:expat)))
+
+(define-public r-actuarialm
+  (package
+    (name "r-actuarialm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ActuarialM" version))
+              (sha256
+               (base32
+                "1545jmbbisw5fxk07xl86jw7sw4kysa2crjm57mq2qk4qg9hh5rb"))))
+    (properties `((upstream-name . "ActuarialM")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ActuarialM")
+    (synopsis "Computation of Actuarial Measures Using Bell G Family")
+    (description
+     "It computes two frequently applied actuarial measures, the expected shortfall
+and the value at risk.  Seven well-known classical distributions in connection
+to the Bell generalized family are used as follows: Bell-exponential
+distribution, Bell-extended exponential distribution, Bell-Weibull distribution,
+Bell-extended Weibull distribution, Bell-Lomax distribution, Bell-Burr-12
+distribution, and Bell-Burr-X distribution.  Related works include: a) Fayomi,
+A., Tahir, M. H., Algarni, A., Imran, M., & Jamal, F. (2022). \"A new useful
+exponential model with applications to quality control and actuarial data\".
+Computational Intelligence and Neuroscience, 2022. <doi:10.1155/2022/2489998>.
+b) Alsadat, N., Imran, M., Tahir, M. H., Jamal, F., Ahmad, H., & Elgarhy, M.
+(2023). \"Compounded Bell-G class of statistical models with applications to
+COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
+<doi:10.1515/phys-2022-0242>.")
+    (license license:gpl2+)))
 
 (define-public r-actuare
   (package

@@ -3738,13 +3738,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "4.0.0")
+    (version "4.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UComp" version))
               (sha256
                (base32
-                "1s37xcwfi7mmfgi0ca2zpmyfnscsycqsl0dv8zfw61f5fcxzs78n"))))
+                "0hzcbrqxzasl79zzdj2zk6v5jf5mszm2xf868cnr19f6zp5a1c45"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsoutliers
@@ -3763,7 +3763,7 @@ unobserved components models and algorithms.  Harvey, AC (1989)
 <doi:10.1017/CBO9781107049994>.  Pedregal DJ and Young PC (2002)
 <doi:10.1002/9780470996430>.  Durbin J and Koopman SJ (2012)
 <doi:10.1093/acprof:oso/9780199641178.001.0001>.  Hyndman RJ, Koehler AB, Ord
-JK, and Snyder RD (2008) <doi:10.1007/9783540719182>.")
+JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.")
     (license license:gpl3)))
 
 (define-public r-uclust

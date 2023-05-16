@@ -6111,13 +6111,13 @@ of bio-medical data.")
 (define-public r-opc
   (package
     (name "r-opc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OPC" version))
               (sha256
                (base32
-                "0m7yqk3drj0zz4184bsvzhqzjxl0smfqdkkr7rpg8z3jk8qkvah1"))))
+                "01ljrczj9ds18x40fas4rsca4phqsjaz8w8nvbr7xprf4fp8zpcj"))))
     (properties `((upstream-name . "OPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

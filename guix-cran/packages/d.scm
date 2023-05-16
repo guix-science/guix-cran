@@ -17148,6 +17148,26 @@ distribution for the counts that is a superposition of the binomial and negative
 binomial distribution.")
     (license license:gpl2)))
 
+(define-public r-denguedatahub
+  (package
+    (name "r-denguedatahub")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "denguedatahub" version))
+              (sha256
+               (base32
+                "0h7w7qnvh7cq9v6m9axmip0nkbas3sdhccq5h5n4yny5r1jilbq4"))))
+    (properties `((upstream-name . "denguedatahub")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-dplyr))
+    (home-page "https://denguedatahub.netlify.app/")
+    (synopsis "Tidy Format Datasets of Dengue by Country")
+    (description
+     "This package provides a weekly, monthly, yearly summary of dengue cases by
+state/ province/ country.")
+    (license license:gpl3)))
+
 (define-public r-dendser
   (package
     (name "r-dendser")
@@ -19492,6 +19512,32 @@ algorithms.")
 hypothesis is dynamically selected based on data).  In this package you will
 find various tests for exponent, Gaussian, Gumbel and uniform distribution.")
     (license license:gpl2)))
+
+(define-public r-ddspls
+  (package
+    (name "r-ddspls")
+    (version "1.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ddsPLS" version))
+              (sha256
+               (base32
+                "0b35znfd56lcswygq4h5k5zlsdazpva3pq4anvr96wljf4gwnffn"))))
+    (properties `((upstream-name . "ddsPLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rcppeigen r-rcpp r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ddsPLS")
+    (synopsis "Data-Driven Sparse Partial Least Squares")
+    (description
+     "Allows to build Data-Driven Sparse Partial Least Squares models with
+high-dimensional settings.  Number of components and regularization coefficients
+are automatically set.  It comes with visualization functions and uses Rcpp
+functions for fast computations and doParallel to parallelize bootstrap
+operations.  An applet has been developed to apply this procedure.  This is
+based on H Lorenzo, O Cloarec, R Thiebaut, J Saracco (2021)
+<doi:10.1002/sam.11558>.")
+    (license license:expat)))
 
 (define-public r-ddpna
   (package

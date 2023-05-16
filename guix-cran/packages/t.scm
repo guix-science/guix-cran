@@ -19045,31 +19045,6 @@ the projected data.  See Chen and Lam (2023) <arXiv:2208.04012> for more
 details.")
     (license license:gpl3)))
 
-(define-public r-tensorfun
-  (package
-    (name "r-tensorfun")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tensorFun" version))
-              (sha256
-               (base32
-                "0ij3dshnj448scws6d2pdw2ik34hbhq9mksmllgy0g8l257a3x8d"))))
-    (properties `((upstream-name . "tensorFun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-psychtools r-mass r-climprojdiags))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tensorFun")
-    (synopsis "Basic Functions to Handle Tensor Data in Array Class")
-    (description
-     "Basic functions to handle higher-order tensor data.  See Kolda and Bader (2009)
-<doi:10.1137/07070111X> for details on tensor.  While existing packages on
-tensor data extend the base array class to some S4 classes, this package serves
-as an alternative resort to handle tensor only as array class.  Some
-functionalities related to missingness and rearrangement, discussed in Bai and
-Ng (2021) <arXiv:1910.06677>, are also supported.")
-    (license license:gpl3)))
-
 (define-public r-tensorcomplete
   (package
     (name "r-tensorcomplete")

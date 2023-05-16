@@ -2386,13 +2386,13 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "islasso" version))
               (sha256
                (base32
-                "0yw5sxsh4gvm4wmxrnpcz3wd3brrryg14wpaqnl7b23ihyxq2cq1"))))
+                "1dq8i1b7n78nl1hnx0g80gc16ryqpf7x6mv4pz4f6n5fc24c6vx3"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
@@ -5704,6 +5704,32 @@ data corrected for missed arrival observations.")
 %[]% c(a, b)`), or if two closed intervals overlap (`c(a1, b1) %[]o[]% c(a2,
 b2)`).  Operators for negation and directional relations also implemented.")
     (license license:gpl2)))
+
+(define-public r-intrinsicfrp
+  (package
+    (name "r-intrinsicfrp")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intrinsicFRP" version))
+              (sha256
+               (base32
+                "1pjf3xkbqph40xxj51ddln1fq53dvndbp9hk6hyy6kkikdw22gi5"))))
+    (properties `((upstream-name . "intrinsicFRP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/a91quaini/intrinsicFRP")
+    (synopsis "Adaptive Estimation of Intrinsic Factor Risk Premia")
+    (description
+     "Efficient computation of intrinsic and adaptive intrinsic factor risk premia and
+their standard errors.  Intrinsic factor risk premia are defined as the negative
+factor covariance with the SDF projection on test asset returns.  As opposed to
+benchmark notions of factor risk premia, they are well-defined even in presence
+of useless and weak factors, they do not depend on the degree of
+misspecification of the factor model, and are one-to-one linked to two-pass
+mimicking factor risk premia coefficients, whenever the latter are also
+well-defined.")
+    (license license:gpl3+)))
 
 (define-public r-intrinsicdimension
   (package
@@ -9647,15 +9673,16 @@ abundances using gene expression data.")
 (define-public r-imrmc
   (package
     (name "r-imrmc")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "iMRMC" version))
               (sha256
                (base32
-                "1cs5ghrd78h92bmws5z8adawjalvplri9wx2p9w7nq76h31wqhzw"))))
+                "0a99arybhv5awlkrmzyv6m4cbdszw77qjw90ywwbddkccq1fq2h2"))))
     (properties `((upstream-name . "iMRMC")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (home-page "https://cran.r-project.org/package=iMRMC")
     (synopsis
      "Multi-Reader, Multi-Case Analysis Methods (ROC, Agreement, and Other Metrics)")

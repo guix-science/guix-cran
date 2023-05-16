@@ -10779,16 +10779,43 @@ parsnip and workflows packages.  Allows any model to be fit to nested data.")
 This is useful for hierarchical choices (e.g. continent, country, city).")
     (license license:gpl3)))
 
+(define-public r-nestedlogit
+  (package
+    (name "r-nestedlogit")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nestedLogit" version))
+              (sha256
+               (base32
+                "1ac8rlli6pwc9mhngglvw2xif7x3vqfl90kxbgjsaa148ywfa27f"))))
+    (properties `((upstream-name . "nestedLogit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr r-car r-broom))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/friendly/nestedLogit")
+    (synopsis "Nested Dichotomy Logistic Regression Models")
+    (description
+     "This package provides functions for specifying and fitting nested dichotomy
+logistic regression models for a multi-category response and methods for
+summarising those models.  Nested dichotomies are statistically independent, and
+hence provide an additive decomposition of tests for the overall polytomous
+response.  When the dichotomies make sense substantively, this method can be a
+simpler alternative to the standard multinomial logistic model which compares
+response categories to a reference level.  See: J. Fox (2016), \"Applied
+Regression Analysis and Generalized Linear Models\", 3rd Ed., ISBN 1452205663.")
+    (license license:gpl2+)))
+
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "1l0kvhhwsda7zmnirn3l7zyiyr7d634jic9i01q21f17gkpjhcnk"))))
+                "0v8x9cxlryjdxy1zxcrcs1iw6dv9asb3iy390wll2gg98rrd0ll8"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

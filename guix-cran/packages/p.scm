@@ -179,6 +179,28 @@ regression.  The procedure is described in detail in Pena, D., & Yohai, V.
 (1999) <doi:10.2307/2670164>.")
     (license license:gpl2+)))
 
+(define-public r-pycno
+  (package
+    (name "r-pycno")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pycno" version))
+              (sha256
+               (base32
+                "1a7a1cy75vrbyaziw9kywallxg6mxcxj4pz4haa66fcjqv5cqmxa"))))
+    (properties `((upstream-name . "pycno")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-rgeos r-maptools))
+    (home-page "https://cran.r-project.org/package=pycno")
+    (synopsis "Pycnophylactic Interpolation")
+    (description
+     "Given a SpatialPolygonsDataFrame and a set of populations for each polygon,
+compute a population density estimate based on Tobler's pycnophylactic
+interpolation algorithm.  The result is a SpatialGridDataFrame.  Methods are
+described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
+    (license license:gpl2+)))
+
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
@@ -7910,18 +7932,17 @@ prevalence to incidence - a new approach in the hospital setting;
 (define-public r-prevr
   (package
     (name "r-prevr")
-    (version "4.0.1")
+    (version "5.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prevR" version))
               (sha256
                (base32
-                "0r70ns7qg72bva712pqw3djp0lzz8bpm00d9s3q9qm30lhgcl124"))))
+                "17sygcfj29cvycsi1d2870gwcqq1ij6gppsqj46phc04r8q5hs5v"))))
     (properties `((upstream-name . "prevR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgdal
-                             r-maptools
+    (propagated-inputs (list r-stars
+                             r-sf
                              r-kernsmooth
                              r-gstat
                              r-ggplot2

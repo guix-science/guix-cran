@@ -3094,72 +3094,19 @@ X, Meyer MC and Opsomer JD (2021)<doi:10.1016/j.jspi.2021.02.004> for more
 details.")
     (license license:gpl2+)))
 
-(define-public r-cstools
-  (package
-    (name "r-cstools")
-    (version "5.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CSTools" version))
-              (sha256
-               (base32
-                "1jy6q0a98k2xwzbxmv8djfw2kaz266d66dil4wkr4kl5aan926ln"))))
-    (properties `((upstream-name . "CSTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-verification
-                             r-scales
-                             r-s2dv
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-rainfarmr
-                             r-qmap
-                             r-plyr
-                             r-ncdf4
-                             r-multiapply
-                             r-maps
-                             r-lubridate
-                             r-ggplot2
-                             r-easyverification
-                             r-data-table
-                             r-climprojdiags
-                             r-abind))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=CSTools")
-    (synopsis
-     "Assessing Skill of Climate Forecasts on Seasonal-to-Decadal Timescales")
-    (description
-     "Exploits dynamical seasonal forecasts in order to provide information relevant
-to stakeholders at the seasonal timescale.  The package contains process-based
-methods for forecast calibration, bias correction, statistical and stochastic
-downscaling, optimal forecast combination and multivariate verification, as well
-as basic and advanced tools to obtain tailored products.  This package was
-developed in the context of the ERA4CS project MEDSCOPE and the H2020 S2S4E
-project and includes contributions from ArticXchange project founded by
-EU-PolarNet 2.  PÃ©rez-ZanÃ³n et al. (2022) <doi:10.5194/gmd-15-6115-2022>.
-Doblas-Reyes et al. (2005) <doi:10.1111/j.1600-0870.2005.00104.x>.  Mishra et
-al. (2018) <doi:10.1007/s00382-018-4404-z>.  Sanchez-Garcia et al. (2019)
-<doi:10.5194/asr-16-165-2019>.  Straus et al. (2007) <doi:10.1175/JCLI4070.1>.
-Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>.  Torralba et al. (2017)
-<doi:10.1175/JAMC-D-16-0204.1>.  D'Onofrio et al. (2014)
-<doi:10.1175/JHM-D-13-096.1>.  Verfaillie et al. (2017)
-<doi:10.5194/gmd-10-4257-2017>.  Van Schaeybroeck et al. (2019)
-<doi:10.1016/B978-0-12-812372-0.00010-8>.  Yiou et al. (2013)
-<doi:10.1007/s00382-012-1626-3>.")
-    (license license:gpl3)))
-
 (define-public r-cstime
   (package
     (name "r-cstime")
-    (version "2022.11.22")
+    (version "2023.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cstime" version))
               (sha256
                (base32
-                "12nammfv9abf888zkhg3ng59r1v2pmxk9363p97mv8ssbjiil46x"))))
+                "0x6nilc1971fjb5s7im6jp3az13r7rd5z3pc0y7kglggp33aqw6i"))))
     (properties `((upstream-name . "cstime")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-purrr r-magrittr r-dplyr r-data-table))
+    (propagated-inputs (list r-magrittr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://www.csids.no/cstime/")
     (synopsis "Date and Time Functions for Public Health Purposes")
@@ -3454,38 +3401,6 @@ county, municipality, and ward (Oslo only) level for redistricting in 2017,
 insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
 without any geolibraries.")
     (license license:expat)))
-
-(define-public r-csindicators
-  (package
-    (name "r-csindicators")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CSIndicators" version))
-              (sha256
-               (base32
-                "17ziy101xvnw6a2x2xnl7846990jjpfq314x2j79cj9630i9n7l4"))))
-    (properties `((upstream-name . "CSIndicators")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-s2dv r-multiapply r-climprojdiags))
-    (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/es/csindicators/")
-    (synopsis
-     "Climate Services' Indicators Based on Sub-Seasonal to Decadal Predictions")
-    (description
-     "Set of generalised tools for the flexible computation of climate related
-indicators defined by the user.  Each method represents a specific mathematical
-approach which is combined with the possibility to select an arbitrary time
-period to define the indicator.  This enables a wide range of possibilities to
-tailor the most suitable indicator for each particular climate service
-application (agriculture, food security, energy, water managementâ¦).  This
-package is intended for sub-seasonal, seasonal and decadal climate predictions,
-but its methods are also applicable to other time-scales, provided the
-dimensional structure of the input is maintained.  Additionally, the outputs of
-the functions in this package are compatible with CSTools'.  This package was
-developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
- LledÃ³ et al. (2019) <doi:10.1016/j.renene.2019.04.135>.")
-    (license license:gpl3)))
 
 (define-public r-cshshydrology
   (package
@@ -15720,13 +15635,13 @@ of traits within species.")
 (define-public r-comriskmodel
   (package
     (name "r-comriskmodel")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ComRiskModel" version))
               (sha256
                (base32
-                "0f085xv0flck7jx9wbq68yakhw76imihj7bz9cx6isnsqznbsca5"))))
+                "0jpsmcpi7s0y4dff3k10daimb4gfq7r5sf1w8n51q21zfgf3mn4d"))))
     (properties `((upstream-name . "ComRiskModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-adequacymodel))
@@ -23858,32 +23773,6 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (2016) <doi:10.1371/journal.pone.0167980> for details.")
     (license license:gpl2)))
 
-(define-public r-climprojdiags
-  (package
-    (name "r-climprojdiags")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ClimProjDiags" version))
-              (sha256
-               (base32
-                "1dblw2m3lrzwv5avqsyvrainhssl3pgxff6dfab5jc72mg3c31ql"))))
-    (properties `((upstream-name . "ClimProjDiags")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-pcict r-multiapply r-climdex-pcic))
-    (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/es/ClimProjDiags")
-    (synopsis "Set of Tools to Compute Various Climate Indices")
-    (description
-     "Set of tools to compute metrics and indices for climate analysis.  The package
-provides functions to compute extreme indices, evaluate the agreement between
-models and combine theses models into an ensemble.  Multi-model time series of
-climate indices can be computed either after averaging the 2-D fields from
-different models provided they share a common grid or by combining time series
-computed on the model native grid.  Indices can be assigned weights and/or
-combined to construct new indices.")
-    (license license:gpl3)))
-
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
@@ -24019,28 +23908,6 @@ its support for building graphical models.  The computation uses linear
 programming.  The method was published in TT Cai, W Liu, X Luo (2011)
 <doi:10.1198/jasa.2011.tm10155>.")
     (license license:gpl2)))
-
-(define-public r-climdex-pcic
-  (package
-    (name "r-climdex-pcic")
-    (version "1.1-11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "climdex.pcic" version))
-              (sha256
-               (base32
-                "01ax0kas43g3h21ixzc80f9gl4m9846gmk8v48rr0gkhcmbcc6jx"))))
-    (properties `((upstream-name . "climdex.pcic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-pcict))
-    (home-page "https://www.r-project.org")
-    (synopsis "PCIC Implementation of Climdex Routines")
-    (description
-     "PCIC's implementation of Climdex routines for computation of extreme climate
-indices.  Further details on the extreme climate indices can be found at
-<http://etccdi.pacificclimate.org/list_27_indices.shtml> and in the package
-manual.")
-    (license license:gpl3)))
 
 (define-public r-climclass
   (package
