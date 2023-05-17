@@ -16034,6 +16034,30 @@ which also includes useful metadata on products, coupons, campaigns, and
 promotions.")
     (license license:cc0)))
 
+(define-public r-compindpca
+  (package
+    (name "r-compindpca")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "compindPCA" version))
+              (sha256
+               (base32
+                "1v7fppbb1pswd1d1bw0szmmjc51smnmal5psd98ms5cfm7yv597g"))))
+    (properties `((upstream-name . "compindPCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-factoextra))
+    (home-page "https://cran.r-project.org/package=compindPCA")
+    (synopsis
+     "Computation of Relative Weights of Variables and Composite Index Values Based on PCA")
+    (description
+     "It helps in development of a principal component analysis based composite index
+by assigning weights to variables and combining the weighted variables.  For
+method details see Sendhil, R., Jha, A., Kumar, A. and Singh, S. (2018).
+<doi:10.1016/j.ecolind.2018.02.053>, and Wu, T. (2021).
+<doi:10.1016/j.ecolind.2021.108006>.")
+    (license license:gpl3)))
+
 (define-public r-compindexr
   (package
     (name "r-compindexr")
@@ -33759,13 +33783,13 @@ get started.")
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalGPS" version))
               (sha256
                (base32
-                "0pkprqjg7gqq2sz7ci9lflpyamp20qzms1ckw28lh8kr821i7jjx"))))
+                "13qs958saf8775jialf1hdrb91yzm1q8gi11bdn2y38m5vcykkmf"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

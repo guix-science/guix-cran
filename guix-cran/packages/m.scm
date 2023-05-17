@@ -548,13 +548,13 @@ coefficients estimates are smoothed.")
 (define-public r-mwcsr
   (package
     (name "r-mwcsr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mwcsr" version))
               (sha256
                (base32
-                "0wrgmm1candyws9qcf6jqbqp1n0x5wzgi9i4gw8j7kh1apilqmmv"))))
+                "18idrn160m4yf24cbdgvjjawcw1hjxnsnc04jqqp7phlbfzcwi13"))))
     (properties `((upstream-name . "mwcsr")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -3986,13 +3986,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.1")
+    (version "1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multilevLCA" version))
               (sha256
                (base32
-                "08yfiq0pg4a8fcrv5xravsv5nf4m7lr7iq2nk1w2wrnzijdavwgv"))))
+                "1rb2prdgxyh4zxxffpgl96n508425r74hjl603pzqigwdyk2i40m"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4008,7 +4008,8 @@ python'.")
      "Estimates and Plots Single-Level and Multilevel Latent Class Models")
     (description
      "Efficiently estimates single- and multilevel latent class models with
-covariates, allowing for output visualization in all specifications.")
+covariates, allowing for output visualization in all specifications.  For more
+technical details, see Lyrvall et al (2023) <arXiv:2305.07276>.")
     (license license:gpl2+)))
 
 (define-public r-multileveltools
@@ -15527,13 +15528,13 @@ inter-level represents an affiliation relationship.")
 (define-public r-mlvar
   (package
     (name "r-mlvar")
-    (version "0.5")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlVAR" version))
               (sha256
                (base32
-                "11mn7gaqlmw01gvg7psqkkr5bgv4iclv0590av4xzbvq8496f5g2"))))
+                "0q902qcynkbwg9bnv0w24vzyqwky0skqck728id943lrvqi92667"))))
     (properties `((upstream-name . "mlVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

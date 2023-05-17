@@ -5741,16 +5741,17 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.5")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootnet" version))
               (sha256
                (base32
-                "13pfmr259yikkb3y9438xz4bjn6kx5w5d2jhx441a00rvv1kb3hi"))))
+                "1pbv37nqb05snnbvg5fqwnh0lnbzijb8dvm3f3ppv621rwd0vw8f"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-snow
                              r-rlang
@@ -8294,13 +8295,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.16")
+    (version "1.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blogdown" version))
               (sha256
                (base32
-                "15d89ii4ky6daflpv9iw7xrxfswylmj2mijmwysar4h2djs2wpn4"))))
+                "1p0qfw9vy2byrliq3n6dn6v10dp35nra036agic6mm9c5sakv7h8"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -14002,13 +14003,13 @@ implementation of the estimators proposed in Roll (1984)
 (define-public r-bidag
   (package
     (name "r-bidag")
-    (version "2.1.3")
+    (version "2.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiDAG" version))
               (sha256
                (base32
-                "103v2w1pgkgpin899jr3iz8yxj79bxmxv9k72gjb5lbmk27xwwcx"))))
+                "0gncxn558mdasr63jvqyavd6nhg6762rk0g0a2b7hfvcivjb6bd5"))))
     (properties `((upstream-name . "BiDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
@@ -22727,16 +22728,20 @@ downloading and uploading and record operation log.")
 (define-public r-batchmix
   (package
     (name "r-batchmix")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "batchmix" version))
               (sha256
                (base32
-                "03iz9j3m3ihgbyzincik2i8izw3g5cmjhnsmx8ys2q6c6qzw2mnn"))))
+                "18m0c6v5mjij9msnhy00lq6yjndb9b5cxjhzd6wqkvrykdl72q79"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-testthat r-rcpparmadillo r-rcpp
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-salso
+                             r-rcpparmadillo
+                             r-rcpp
                              r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/stcolema/batchmix")
@@ -23428,13 +23433,13 @@ sources such as OpenStreetMap', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.1-3")
+    (version "1.1-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "basefun" version))
               (sha256
                (base32
-                "1jn4dza9yh3mq57fvjkhsxl19hcbjmi667mcmhvk68x2vqxccl48"))))
+                "1m258ycxc9m2xdpvqzjk0hz3fg3bwbj3z2yx6raf315ws4s2h47f"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables r-polynom r-orthopolynom r-matrix))
@@ -24737,6 +24742,53 @@ context of ultra high dimensional data.  A fast implementation for large-scale
 multiple K-sample testing with ball divergence <doi: 10.1002/gepi.22423> is
 supported, which is particularly helpful for genome-wide association study.")
     (license license:gpl3)))
+
+(define-public r-baldur
+  (package
+    (name "r-baldur")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "baldur" version))
+              (sha256
+               (base32
+                "00b3z984c20i589arcylx3pgln0sqz1fg8mf69mnlxqrpr9yh88b"))))
+    (properties `((upstream-name . "baldur")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-multidplyr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.biorxiv.org/content/10.1101/2023.05.11.540411v1")
+    (synopsis "Bayesian Hierarchical Modeling for Label-Free Proteomics")
+    (description
+     "Statistical decision in proteomics data using a hierarchical Bayesian model.
+There are two regression models for describing the mean-variance trend, a gamma
+regression or a latent gamma mixture regression.  The regression model is then
+used as an Empirical Bayes estimator for the prior on the variance in a peptide.
+ Further, it assumes that each measurement has an uncertainty (increased
+variance) associated with it that is also inferred.  Finally, it tries to
+estimate the posterior distribution (by Hamiltonian Monte Carlo) for the
+differences in means for each peptide in the data.  Once the posterior is
+inferred, it integrates the tails to estimate the probability of error from
+which a statistical decision can be made.")
+    (license license:expat)))
 
 (define-public r-balancedsampling
   (package

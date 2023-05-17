@@ -1796,6 +1796,28 @@ Galbraith') plots.  Constructs total Pb-U, Pb-Pb, Th-Pb, K-Ca, Re-Os, Sm-Nd,
 Lu-Hf, Rb-Sr and 230Th-U isochrons as well as 230Th-U evolution plots.")
     (license license:gpl3)))
 
+(define-public r-isopleuros
+  (package
+    (name "r-isopleuros")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "isopleuros" version))
+              (sha256
+               (base32
+                "19hn9ydby2wi6aim6vb7wjj93f95md0g8sy41djlhr94m5v9xw3d"))))
+    (properties `((upstream-name . "isopleuros")))
+    (build-system r-build-system)
+    (home-page "https://packages.tesselle.org/isopleuros/")
+    (synopsis "Ternary Plots")
+    (description
+     "Ternary plots made simple.  This package allows to create ternary plots using
+graphics'.  It provides functions to display the data in the ternary space, to
+add or tune graphical elements and to display statistical summaries.  It also
+includes common ternary diagrams which are useful for the archaeologist (e.g.
+soil texture charts, ceramic phase diagram).")
+    (license license:gpl3+)))
+
 (define-public r-isopat
   (package
     (name "r-isopat")
@@ -8315,19 +8337,21 @@ provided.")
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.2.6")
+    (version "2.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "influential" version))
               (sha256
                (base32
-                "17w21kdc1nf5lrrgs8g6l90w8rxfi5xaz5c91v6sh769mfia7dq1"))))
+                "19ha1hcirvxpp5nfmgk86jhlq0zprb81rzghijcjb8vpz80ldcdm"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger
                              r-janitor
                              r-igraph
                              r-ggplot2
+                             r-foreach
+                             r-doparallel
                              r-data-table
                              r-coop))
     (native-inputs (list r-knitr))

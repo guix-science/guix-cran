@@ -2119,18 +2119,18 @@ Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
 (define-public r-orloca
   (package
     (name "r-orloca")
-    (version "4.10")
+    (version "5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "orloca" version))
               (sha256
                (base32
-                "113y76gyhslpfyq7n1nnbgnxhxgr213f28vnc3n3b9pghkkr0p4z"))))
+                "09xsas6qpv00p63n17yd95p88v4rcwwmp187n3y3p0nx9q3y3vrf"))))
     (properties `((upstream-name . "orloca")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-rmarkdown r-png r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "http://knuth.uca.es/orloca")
+    (home-page "http://knuth.uca.es/orloca/")
     (synopsis "Operations Research LOCational Analysis Models")
     (description
      "Objects and methods to handle and solve the min-sum location problem, also known
@@ -5407,6 +5407,41 @@ helper functions for data exploration and transformation.")
 Burr, King, & Heckmann (2020) <doi:10.1080/14780887.2020.1794088> for a
 description of the interpretive clustering (IC) method.")
     (license license:expat)))
+
+(define-public r-openrepgrid
+  (package
+    (name "r-openrepgrid")
+    (version "0.1.14")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "OpenRepGrid" version))
+              (sha256
+               (base32
+                "1gy06cyjb50673jb9548c9v37im4hsm245r7rwhx280q9fsn17ws"))))
+    (properties `((upstream-name . "OpenRepGrid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rgl
+                             r-pvclust
+                             r-psych
+                             r-plyr
+                             r-openxlsx
+                             r-igraph
+                             r-dplyr
+                             r-crayon
+                             r-colorspace
+                             r-abind))
+    (home-page "https://github.com/markheckmann/OpenRepGrid")
+    (synopsis "Tools to Analyze Repertory Grid Data")
+    (description
+     "Analyze repertory grids, a qualitative-quantitative data collection technique
+devised by George A. Kelly in the 1950s.  Today, grids are used across various
+domains ranging from clinical psychology to marketing.  The package contains
+functions to quantitatively analyze and visualize repertory grid data.")
+    (license license:gpl2+)))
 
 (define-public r-opennlpdata
   (package

@@ -18083,13 +18083,13 @@ DoseFinding package, which is used for the fitting of the models.  See
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.1.4")
+    (version "3.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TestGardener" version))
               (sha256
                (base32
-                "0lk4yrrzl5vhkhgcn7p1pfl5kg61h1kq36gmwfd6xpibwzfqxcpn"))))
+                "1vppjbpdbbf09m5bm57mq03g6xhk900yic3l774lj0h2gd7dq092"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -18098,6 +18098,7 @@ DoseFinding package, which is used for the fitting of the models.  See
                              r-rmarkdown
                              r-rgl
                              r-pracma
+                             r-plotly
                              r-knitr
                              r-ggpubr
                              r-ggplot2

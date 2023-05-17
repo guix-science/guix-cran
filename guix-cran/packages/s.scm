@@ -15844,13 +15844,13 @@ enough.")
 (define-public r-spsurvey
   (package
     (name "r-spsurvey")
-    (version "5.4.1")
+    (version "5.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spsurvey" version))
               (sha256
                (base32
-                "08wfdbjs6q8anfq0rvynjypivr4fyk4k10ri25caiwcw5s42df0c"))))
+                "19nfzw6ac394rn0w6zdn977mf4slxq0mpw2qj9r2ma7z0biwssxn"))))
     (properties `((upstream-name . "spsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -44251,13 +44251,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semPower" version))
               (sha256
                (base32
-                "08g6h98wiiypjab1110h18srl76vr95g9qz59q7l0a55ljfk7akp"))))
+                "0i2lzkg4j3igm249y0mpdbd9ff9b33lwgy0n015h43jjy9qmgp78"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

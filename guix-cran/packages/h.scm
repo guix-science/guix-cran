@@ -1463,13 +1463,13 @@ group by individual data according to methods described in Godde et al. (2013)
 (define-public r-hwep
   (package
     (name "r-hwep")
-    (version "2.0.1")
+    (version "2.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hwep" version))
               (sha256
                (base32
-                "1hnbf3m23ap1523aa6i1k9an0pwx9k1v06zvfgbq9wimvfr418wq"))))
+                "0cvy9s9kwc1jp4klgbjahidpk8gkvfa43vry8i0y77nvfys7x9v9"))))
     (properties `((upstream-name . "hwep")))
     (build-system r-build-system)
     (propagated-inputs (list r-updog
@@ -6317,13 +6317,13 @@ discovery rate, and the tail probability of false discovery proportion.")
 (define-public r-hightr
   (package
     (name "r-hightr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hightR" version))
               (sha256
                (base32
-                "1jks32b49rj94kxvjihfldsv00f7v3vhspj9hb3kvxmz4b2ik5xf"))))
+                "0d4p9qcj7z0ayk4nb3pxnfwww29d7ks0jzavxsbz6m82g7x1pmyh"))))
     (properties `((upstream-name . "hightR")))
     (build-system r-build-system)
     (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
@@ -6375,13 +6375,13 @@ University and lead by Drs.  Herman Staats and Soman Abraham.")
 (define-public r-highs
   (package
     (name "r-highs")
-    (version "0.1-6")
+    (version "0.1-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "highs" version))
               (sha256
                (base32
-                "1wfpgwqmz08dlfz33wlzswrk9b6sywa1g30srzpb1rfkdzv3ark0"))))
+                "1vjmzbfydlm434fa1mkwwfcdhmn6sq4ppib26nxfa9zakr7h7q2c"))))
     (properties `((upstream-name . "highs")))
     (build-system r-build-system)
     (inputs (list cmake bash))
@@ -9649,16 +9649,17 @@ for the corresponding papers can be found in their respective functions.")
 (define-public r-hdme
   (package
     (name "r-hdme")
-    (version "0.5.1")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hdme" version))
               (sha256
                (base32
-                "1lvy3h1dxs756755nzygg75pbg4lvsdvpchpp6kw11w3zsz9r7b1"))))
+                "04s9r29yjirkzki6drcyglh2hd712habzdgpw0fnf3cy9960wv4v"))))
     (properties `((upstream-name . "hdme")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rglpk
+    (propagated-inputs (list r-rlang
+                             r-rglpk
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp

@@ -3530,13 +3530,13 @@ variations in language, character set, and spelling.  For more information go to
 (define-public r-via
   (package
     (name "r-via")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "via" version))
               (sha256
                (base32
-                "0vb4hxfi4im3f4zvkl0zcak8mk49g9ypmga704klfwyx44aywml6"))))
+                "0mk6zrirf38a6qym15w9w76gw813mc7p265mcach90asrzfglb6q"))))
     (properties `((upstream-name . "via")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=via")
@@ -3936,13 +3936,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetiver" version))
               (sha256
                (base32
-                "1lyaq63wz4rdn2hi9rk7hl9wmq7jc0px7k8zj3gwvc1lmpcidkws"))))
+                "0pw6y7rs1hk9pc00f3bz1zrfk7pg4ygha7yp9mhs5jm7bkvpiqsl"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3959,6 +3959,7 @@ requirements, and auto-composing error messages when they do not.")
                              r-glue
                              r-generics
                              r-fs
+                             r-ellipsis
                              r-cli
                              r-butcher
                              r-bundle))
@@ -6707,6 +6708,32 @@ described in the ECB Working paper Advances in multivariate back-testing for
 credit risk underestimation'', by F. Coppens, M. Mayer, L. Millischer, F. Resch,
 S. Sauer, K. Schulze (ECB WP series, forthcoming).")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-validateit
+  (package
+    (name "r-validateit")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "validateIt" version))
+              (sha256
+               (base32
+                "16lcbn853rfnyh8hlvjdxh4abx6wkzsn876fh4mlfkpbcrnmp0ps"))))
+    (properties `((upstream-name . "validateIt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm r-snowballc r-rlang r-pymturkr r-here))
+    (home-page "https://cran.r-project.org/package=validateIt")
+    (synopsis "Validating Topic Coherence and Topic Labels")
+    (description
+     "By creating crowd-sourcing tasks that can be easily posted and results retrieved
+using Amazon's Mechanical Turk (MTurk) API, researchers can use this solution to
+validate the quality of topics obtained from unsupervised or semi-supervised
+learning methods, and the relevance of topic labels assigned.  This helps ensure
+that the topic modeling results are accurate and useful for research purposes.
+See Ying and others (2022) <doi:10.1101/2023.05.02.538599>.  For more
+information, please visit
+<https://github.com/Triads-Developer/Topic_Model_Validation>.")
+    (license license:gpl2+)))
 
 (define-public r-validate
   (package

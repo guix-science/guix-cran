@@ -6943,24 +6943,25 @@ advances.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "0.2.5")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FoReco" version))
               (sha256
                (base32
-                "1r4rgyi65wbbdlyz18hdfixww98wynf1yljq5a8wajpc0qqp8m9g"))))
+                "07ivfjs836g3k13kfv188lxv300n43vczmkcapxnwiii643y1kw8"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
     (propagated-inputs (list r-osqp r-matrix r-mathjaxr r-corpcor r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/daniGiro/FoReco")
-    (synopsis "Point Forecast Reconciliation")
+    (synopsis "Forecast Reconciliation")
     (description
      "Classical (bottom-up and top-down), optimal and heuristic combination forecast
-reconciliation procedures for cross-sectional, temporal, and cross-temporal
-linearly constrained time series (Di Fonzo and Girolimetto, 2021)
-<doi:10.1016/j.ijforecast.2021.08.004>.")
+point (Di Fonzo and Girolimetto, 2023) <doi:10.1016/j.ijforecast.2021.08.004>
+and probabilistic (Girolimetto et al.  2023) <arXiv:2303.17277> reconciliation
+procedures for cross-sectional, temporal, and cross-temporal linearly
+constrained time series.")
     (license license:gpl3)))
 
 (define-public r-forecasttb

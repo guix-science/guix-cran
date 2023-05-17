@@ -5550,13 +5550,13 @@ other pipeline or simultaneously analyze multiple gene lists.")
 (define-public r-webfakes
   (package
     (name "r-webfakes")
-    (version "1.1.7")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webfakes" version))
               (sha256
                (base32
-                "1f7n8i4z6vcd5p0kr3wg4g2hvnm0vsh3qwlmfbrkspi9k7x4w0kf"))))
+                "1wirc2g3nqb1nnj7ndgi6qmnn3j846wfsndfrgnhbg2if1pq5l37"))))
     (properties `((upstream-name . "webfakes")))
     (build-system r-build-system)
     (home-page "https://webfakes.r-lib.org/")
@@ -5565,8 +5565,7 @@ other pipeline or simultaneously analyze multiple gene lists.")
      "Create a web app that makes it easier to test web clients without using the
 internet.  It includes a web app framework with path matching, parameters and
 templates.  Can parse various HTTP request bodies.  Can send JSON data or files
-from the disk.  Includes a web app that implements the <https://httpbin.org> web
-service.")
+from the disk.  Includes a web app that implements the httpbin.org web service.")
     (license license:expat)))
 
 (define-public r-webexercises
@@ -6001,6 +6000,28 @@ Hollander et al. (2015, ISBN:9780470387375).")
 including the World Development Indicators ('WDI'), International Debt
 Statistics, Doing Business, Human Capital Index, and Sub-national Poverty
 indicators.")
+    (license license:gpl3)))
+
+(define-public r-wcox
+  (package
+    (name "r-wcox")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wcox" version))
+              (sha256
+               (base32
+                "13shz5iz2ab9yqp24m6z7ciw70sdg2jdyqifmshq4flp4a737fr7"))))
+    (properties `((upstream-name . "wcox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-survival r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wcox")
+    (synopsis
+     "Weights to Correct for Outcome Dependent Sampling in Time to Event Data")
+    (description
+     "This package provides a new inverse probability of selection weighted Cox model
+to deal with outcome-dependent sampling in survival analysis.")
     (license license:gpl3)))
 
 (define-public r-wcorr

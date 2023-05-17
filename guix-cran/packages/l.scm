@@ -8889,15 +8889,16 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "likelihoodR" version))
               (sha256
                (base32
-                "1mbadd9lg7h4g39vg0g86qjd5nx5j87jgkzdflcvnja0f3dxph5b"))))
+                "0m85jks9ymaly79nk453fc2bs85c6ihn9bbwkmi0q6k9s9p6j4kh"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-lme4))
     (home-page "https://cran.r-project.org/package=likelihoodR")
     (synopsis "Likelihood Analyses for Common Statistical Tests")
     (description

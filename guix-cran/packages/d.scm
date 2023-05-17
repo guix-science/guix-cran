@@ -4610,6 +4610,36 @@ emergence, and other time-to-event data in weed science\"\", Weed Science, 70,
 259-271 <doi:10.1017/wsc.2022.8>.")
     (license license:gpl2+)))
 
+(define-public r-drcseedgerm
+  (package
+    (name "r-drcseedgerm")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "drcSeedGerm" version))
+              (sha256
+               (base32
+                "19fyfw5r994l5sbfrh8ar4kqc27j0pgdks1cp7liql6dw5iliyp4"))))
+    (properties `((upstream-name . "drcSeedGerm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-plyr
+                             r-mvtnorm
+                             r-drcte
+                             r-drc
+                             r-dplyr))
+    (home-page "https://www.statforbiology.com")
+    (synopsis
+     "Utilities for Data Analyses in Seed Germination/Emergence Assays")
+    (description
+     "Utility functions to be used to analyse datasets obtained from seed
+germination/emergence assays.  Fits several types of seed germination/emergence
+models, including those reported in Onofri et al. (2018)
+\"Hydrothermal-time-to-event models for seed germination\", European Journal of
+Agronomy, 101, 129-139 <doi:10.1016/j.eja.2018.08.011>.  Contains several
+datasets for practicing.")
+    (license license:gpl2+)))
+
 (define-public r-drbats
   (package
     (name "r-drbats")
@@ -19049,13 +19079,13 @@ also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.20")
+    (version "0.21")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "declared" version))
               (sha256
                (base32
-                "05c46vl46b3ajx5dm141z240faky8xy6ql107v5fiq4xixl9crac"))))
+                "02b6jyx19fvqmvb300afcihy9sal0clnfnc7jmkkvh0hbx556i0i"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

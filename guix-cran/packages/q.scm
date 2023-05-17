@@ -5115,13 +5115,13 @@ diversity of the cases under analysis within and across partitions (see
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.18")
+    (version "3.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QCA" version))
               (sha256
                (base32
-                "0xkzyi20p23zjbrdidaa9ikn3pj4vs25qxpib2vhmix1q4gz3sxx"))))
+                "0j1p6pmqa8g7xwwxjgwjzr87mpd6v6y2fjvpbdgi2i0v3pqgks32"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-venn r-shiny r-admisc))

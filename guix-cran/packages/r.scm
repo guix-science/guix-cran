@@ -27,7 +27,6 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages documentation)
-  #:use-module (gnu packages gnupg)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages fontutils)
@@ -25027,13 +25026,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.9.2")
+    (version "2.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rfacebookstat" version))
               (sha256
                (base32
-                "0fgphdgx11saq29hkfb13ba2avwazr47dgw18xka0sjg8wqppnja"))))
+                "0g4fgl7d77h3wdp2r7r3smlfsykcfr1gm6chha02z4qg2159ldnk"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32365,17 +32364,17 @@ grants DRL-1336027 and DRL-1336265.")
 (define-public r-realtest
   (package
     (name "r-realtest")
-    (version "0.2.1")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "realtest" version))
               (sha256
                (base32
-                "0868ng2vg91c3wsx6c13k7cii2519k1algs8a6pgf4r01jvja5pz"))))
+                "1k2chcxpqrl4b4xfc80b8kvkn0nw8dfbl6n1965zjzszf7qaizkp"))))
     (properties `((upstream-name . "realtest")))
     (build-system r-build-system)
     (home-page "https://realtest.gagolewski.com")
-    (synopsis "When Expectations Meet Reality: Realistic Unit Testing")
+    (synopsis "Where Expectations Meet Reality: Realistic Unit Testing")
     (description
      "This package provides a framework for unit testing for realistic minimalists,
 where we distinguish between expected, acceptable, current, fallback, ideal, or
@@ -35175,29 +35174,6 @@ approximation of the ground surface
 CSDP may be used by passing the proper configure arguments to the installation
 command.  See the INSTALL file for further details.")
     (license (license:fsdg-compatible "CPL-1.0"))))
-
-(define-public r-rcrypt
-  (package
-    (name "r-rcrypt")
-    (version "0.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rcrypt" version))
-              (sha256
-               (base32
-                "002r5wr0bmqbj014iz8wacj883j6gqcxc786m6p9a7zdrjpx2pqi"))))
-    (properties `((upstream-name . "rcrypt")))
-    (build-system r-build-system)
-    (inputs (list gnupg))
-    (home-page "http://brettklamer.com/work/rcrypt/")
-    (synopsis "Symmetric File Encryption Using GPG")
-    (description
-     "This package provides easy symmetric file encryption using GPG with
-cryptographically strong defaults.  Only symmetric encryption is supported.  GPG
-is pre-installed with most Linux distributions.  Windows users will need to
-install Gpg4win (http://www.gpg4win.org/).  OS X users will need to install
-GPGTools (https://gpgtools.org/).")
-    (license license:expat)))
 
 (define-public r-rcrossref
   (package

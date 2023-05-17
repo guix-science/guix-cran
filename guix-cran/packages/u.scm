@@ -433,21 +433,24 @@ the update date from the service.")
 (define-public r-ustfd
   (package
     (name "r-ustfd")
-    (version "0.2.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ustfd" version))
               (sha256
                (base32
-                "1q2i1jlvgdyvx55r3h3f0g6zqyv197yyfkkiaixy4kzdzp9rxy9d"))))
+                "0xc0xhrny5gf0j9pp3yd46b46pkas5gwyjs0d3j94bp17ms8mi1z"))))
     (properties `((upstream-name . "ustfd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-snakecase
                              r-rlang
                              r-readr
                              r-purrr
                              r-lubridate
                              r-httr
+                             r-glue
                              r-dplyr))
     (home-page "https://github.com/groditi/ustfd")
     (synopsis "API Client for US Treasury Fiscal Data")

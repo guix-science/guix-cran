@@ -8108,13 +8108,13 @@ Prevention and Control.")
 (define-public r-episensr
   (package
     (name "r-episensr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "episensr" version))
               (sha256
                (base32
-                "0670h2x8mcd4g7m17k0zascq5yb3llsvpp9qwzghiha0f9ai8xw0"))))
+                "0nnl4sz7gmi09ik5g4qrh8ipv6rlskvn4sqdqj8nn47wxli52wdi"))))
     (properties `((upstream-name . "episensr")))
     (build-system r-build-system)
     (propagated-inputs (list r-triangle
@@ -8133,7 +8133,7 @@ Prevention and Control.")
 unmeasured confounding and misclassification of the exposure/outcome, or both.
 It follows the bias analysis methods and examples from the book by Lash T.L, Fox
 M.P, and Fink A.K. \"Applying Quantitative Bias Analysis to Epidemiologic Data\",
-('Springer', 2009).")
+('Springer', 2021).")
     (license license:gpl2)))
 
 (define-public r-episcan

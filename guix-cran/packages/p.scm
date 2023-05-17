@@ -31118,16 +31118,16 @@ but considering the SMN family.")
 (define-public r-parsim
   (package
     (name "r-parsim")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "parSim" version))
               (sha256
                (base32
-                "0iswcw52skx1hxb9bv9ihhwwyybprsk2615pmijsxp0bkzgsjc88"))))
+                "0gcycp0gcgz2a1w7nzrlwq41wvyg36931c9q4zjyq876nd43ah12"))))
     (properties `((upstream-name . "parSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-snow r-pbapply r-dplyr))
+    (propagated-inputs (list r-snow r-pbapply r-dplyr r-data-table))
     (home-page "https://cran.r-project.org/package=parSim")
     (synopsis "Parallel Simulation Studies")
     (description

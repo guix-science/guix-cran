@@ -5597,13 +5597,13 @@ global minimum.")
 (define-public r-nlrx
   (package
     (name "r-nlrx")
-    (version "0.4.3")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nlrx" version))
               (sha256
                (base32
-                "1w788fs9zkcbg99csiynd6cw9p8na2g5sg85065d17l6wxmxk7va"))))
+                "1ki8jhaa6ngqk046p61ssi0q9bskvc7vlz9j3d5ax0n118j5gx2q"))))
     (properties `((upstream-name . "nlrx")))
     (build-system r-build-system)
     (inputs (list udunits
@@ -12998,6 +12998,46 @@ average outcomes in missing outcome cases.")
 for hierarchical data structures.  By activating the menu items, you can perform
 operations on each item while maintaining the overall structure in attributes.")
     (license license:expat)))
+
+(define-public r-navigation
+  (package
+    (name "r-navigation")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "navigation" version))
+              (sha256
+               (base32
+                "129f2snh2mjp9mcifcxzh37zjhny8wlqhq00225pakl79kfzyyim"))))
+    (properties `((upstream-name . "navigation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simts
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rbenchmark
+                             r-plotly
+                             r-pbmcapply
+                             r-mass
+                             r-magrittr
+                             r-leaflet
+                             r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SMAC-Group/navigation")
+    (synopsis
+     "Analyze the Impact of Sensor Error Modelling on Navigation Performance")
+    (description
+     "This package implements the framework presented in Cucci, D. A., Voirol, L.,
+Khaghani, M. and Guerrier, S. (2023) <doi:10.1109/TIM.2023.3267360> which allows
+to analyze the impact of sensor error modeling on the performance of integrated
+navigation (sensor fusion) based on inertial measurement unit (IMU), Global
+Positioning System (GPS), and barometer data.  The framework relies on Monte
+Carlo simulations in which a Vanilla Extended Kalman filter is coupled with
+realistic and user-configurable noise generation mechanisms to recover a
+reference trajectory from noisy measurements.  The evaluation of several
+statistical metrics of the solution, aggregated over hundreds of simulated
+realizations, provides reasonable estimates of the expected performances of the
+system in real-world conditions.")
+    (license license:agpl3)))
 
 (define-public r-naturesounds
   (package

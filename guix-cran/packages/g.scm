@@ -5842,13 +5842,13 @@ and (4) the Weisfeiler-Lehman graph kernel (state-of-the-art).")
 (define-public r-graphicalvar
   (package
     (name "r-graphicalvar")
-    (version "0.3")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "graphicalVAR" version))
               (sha256
                (base32
-                "1mvv03zkqp5f7q2nnvpj2gq1v67vp42qr7cm0a20cfvp2gsxq0h5"))))
+                "1196h506lgp3ydm589j2r7356p6qidaffxc5qfhlkn7lnry0iil2"))))
     (properties `((upstream-name . "graphicalVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9068,13 +9068,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.6.1")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "goeveg" version))
               (sha256
                (base32
-                "1b3d986a254yxcra1qss1gwsbjc0cfk0hlybs7aj6z0v5b7j2raj"))))
+                "1ifvw7lsc8xk49cap2r0h9kf8wi12vhz3jqw9fycw8qrs8rl7sqw"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -9797,13 +9797,13 @@ model.")
 (define-public r-gmmsslm
   (package
     (name "r-gmmsslm")
-    (version "1.1.2")
+    (version "1.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gmmsslm" version))
               (sha256
                (base32
-                "116az9mm5ssz4zlgzf6a48jlwv9jbq4jfxpc2i2wbhnrr0iim0wd"))))
+                "1zhrcfs68r58qn0xkvvb3bnwavycy957v32pw0mh87pi5yw9n3iy"))))
     (properties `((upstream-name . "gmmsslm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -20694,13 +20694,13 @@ while others require an internet connection.")
 (define-public r-geojsonio
   (package
     (name "r-geojsonio")
-    (version "0.11.0")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geojsonio" version))
               (sha256
                (base32
-                "0rgwfp716197shy8mm2jia3cvz3472sbrmfryk5ipdik7j0xpffh"))))
+                "13nbgaz06gqgzn9yam0psikkpglgk6w66gqdh1cj4320jid09n3s"))))
     (properties `((upstream-name . "geojsonio")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8

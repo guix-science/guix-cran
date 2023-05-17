@@ -6290,19 +6290,21 @@ and their corresponding tests.")
 (define-public r-ardl
   (package
     (name "r-ardl")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ARDL" version))
               (sha256
                (base32
-                "0g9vxizyiaafqvn2ji4vhl6zylfh1y227prfkc2pgznai0ifhqv3"))))
+                "13w2dqfn2j186n7ycya7vn8vj3pay242m4gbcg7vjv0x8rm78jlk"))))
     (properties `((upstream-name . "ARDL")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-stringr
                              r-msm
                              r-lmtest
+                             r-gridextra
+                             r-ggplot2
                              r-dynlm
                              r-dplyr
                              r-aod))
