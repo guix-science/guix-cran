@@ -3875,13 +3875,13 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ubms" version))
               (sha256
                (base32
-                "0d83i27cc4wlw5pivmkf5msvxyj99yr0fb5fibxa3knfz8hwwaxw"))))
+                "1x2sf23qg1n4g82wbrbk8hjsn1j33fa0n15l6m18wvazydbhmrhi"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked
@@ -3889,6 +3889,7 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
                              r-rstantools
                              r-rstan
                              r-rspectra
+                             r-rlang
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpparmadillo

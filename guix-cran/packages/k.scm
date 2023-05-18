@@ -3715,13 +3715,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.3.6")
+    (version "0.3.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kernelshap" version))
               (sha256
                (base32
-                "0ndv063izs4dhaxlvh4vfxds2sw4zzi9r1aj81l3jd7jnc7kx1rf"))))
+                "123ngjs26062ips80iyg8kiwzdf7664im97a86mfmvndnkc0dvc7"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach))

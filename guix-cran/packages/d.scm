@@ -4239,20 +4239,20 @@ MATLAB code is available upon request, see:
 (define-public r-drhur
   (package
     (name "r-drhur")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "drhur" version))
               (sha256
                (base32
-                "1dnd9iwcfgxmrnwnhjdz7qfvnjsscps39q25bkk8jg2fh2k6jgyp"))))
+                "06zy2acgmhfc1criid35ci1802zl77qcif2vrhn0w8syixsbjiq8"))))
     (properties `((upstream-name . "drhur")))
     (build-system r-build-system)
     (propagated-inputs (list r-learnr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=drhur")
     (synopsis "Learning R with Dr. Hu")
-    (description "Tutorials of R learning easily and happily.")
+    (description "Tutarials of R learning easily and happily.")
     (license license:expat)))
 
 (define-public r-drhotnet
@@ -13264,49 +13264,6 @@ Purchase as the attributes.  The function returns a data frame with RFM data for
 the sales information.")
     (license license:gpl2)))
 
-(define-public r-didmultiplegt
-  (package
-    (name "r-didmultiplegt")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "DIDmultiplegt" version))
-              (sha256
-               (base32
-                "1jzc2ixb92mxlm39xf3rmab9c8959xylnxacr4xqjnhi9hlkq30n"))))
-    (properties `((upstream-name . "DIDmultiplegt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sampling
-                             r-plotrix
-                             r-fixest
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://cran.r-project.org/package=DIDmultiplegt")
-    (synopsis "Estimation in DID with Multiple Groups and Periods")
-    (description
-     "Estimate the effect of a treatment on an outcome in sharp
-Difference-in-Difference designs with multiple groups and periods.  It computes
-the DIDM estimator introduced in Section 4 of \"Two-Way Fixed Effects Estimators
-with Heterogeneous Treatment Effects\" (Chaisemartin, D'Haultfoeuille (2020)
-<doi:10.1257/aer.20181169>), which generalizes the standard DID estimator with
-two groups, two periods and a binary treatment to situations with many
-groups,many periods and a potentially non-binary treatment.  For each pair of
-consecutive time periods t-1 and t and for each value of the treatment d, the
-package computes a DID estimator comparing the outcome evolution among the
-switchers, the groups whose treatment changes from d to some other value between
-t-1 and t, to the same evolution among control groups whose treatment is equal
-to d both in t-1 and t.  Then the DIDM estimator is equal to the average of
-those DIDs across all pairs of consecutive time periods and across all values of
-the treatment.  Under a parallel trends assumption, DIDM is an unbiased and
-consistent estimator of the average treatment effect among switchers, at the
-time period when they switch.  The package can also compute placebo estimators
-that can be used to test the parallel trends assumption.  Finally, in staggered
-adoption designs where each group's treatment is weakly increasing over time, it
-can compute estimators of switchers dynamic treatment effects, one time period
-or more after they have started receiving the treatment.")
-    (license license:expat)))
-
 (define-public r-didimputation
   (package
     (name "r-didimputation")
@@ -19798,13 +19755,13 @@ in <arXiv:2004.03758>.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.13")
+    (version "0.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DDIwR" version))
               (sha256
                (base32
-                "0vczy1614k31s3skblzznpagwyf9qr3wdfrwvxdvck1c4albkmrp"))))
+                "0jv569743lpjjjg8qbmnib86i47bfn9qjpcjhrbx9j6zz3llk1y3"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

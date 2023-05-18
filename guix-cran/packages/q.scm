@@ -4490,19 +4490,20 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "1.2")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qfa" version))
               (sha256
                (base32
-                "1pn63b8qr36il1lhq4cr6qjv8xz8z7m1i5sg76hg2dblz4zsaa2s"))))
+                "0cvqgirfndwwlwpsqamhz9jmq8nqhaak1z908bw567h7l0skxc60"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl
                              r-quantreg
                              r-nlme
                              r-mgcv
+                             r-mass
                              r-foreach
                              r-fields
                              r-doparallel
@@ -4512,12 +4513,12 @@ fatty acid signature analysis (QFASA) to study predator diets.")
     (synopsis "Quantile-Frequency Analysis (QFA) of Time Series")
     (description
      "Quantile-frequency analysis (QFA) of univariate or multivariate time series
-based on the method of trigonometric quantile regression.  See Li, T.-H. (2012)
-\"Quantile periodograms\", Journal of the American Statistical Association, 107,
-765â776, <doi:10.1080/01621459.2012.682815>; Li, T.-H. (2014) Time Series with
-Mixed Spectra, CRC Press, <doi:10.1201/b15154>; Li, T.-H. (2022) \"Quantile
-Fourier transform, quantile series, and nonparametric estimation of quantile
-spectra\", <doi:10.48550/arXiv.2211.05844>.")
+based on trigonometric quantile regression.  See Li, T.-H. (2012) \"Quantile
+periodograms\", Journal of the American Statistical Association, 107, 765â776,
+<doi:10.1080/01621459.2012.682815>; Li, T.-H. (2014) Time Series with Mixed
+Spectra, CRC Press, <doi:10.1201/b15154>; Li, T.-H. (2022) \"Quantile Fourier
+transform, quantile series, and nonparametric estimation of quantile spectra\",
+<doi:10.48550/arXiv.2211.05844>.")
     (license license:gpl2+)))
 
 (define-public r-qf

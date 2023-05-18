@@ -7621,17 +7621,17 @@ adjusted p-values.")
 (define-public r-cp
   (package
     (name "r-cp")
-    (version "1.6")
+    (version "1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CP" version))
               (sha256
                (base32
-                "18zblf13riiz3mq3hkvg6vhiwjzpsn6mvgc2p0bqyldy98v4aisd"))))
+                "0fvsbg7jrqifzqjnk7mryc4ip9hvr0x1s5f0v68ih3gq3451klac"))))
     (properties `((upstream-name . "CP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
-    (home-page "https://www.imise.uni-leipzig.de")
+    (home-page "https://www.genstat.imise.uni-leipzig.de/")
     (synopsis "Conditional Power Calculations")
     (description
      "This package provides functions for calculating the conditional power for
@@ -14673,13 +14673,13 @@ manipulating confounded and fractional factorial designs.")
 (define-public r-conf
   (package
     (name "r-conf")
-    (version "1.7.1")
+    (version "1.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conf" version))
               (sha256
                (base32
-                "1nc59i5m7g5lz6hnlp8qgbszjzk63j63f2kpzlgm8w9pgi7wfvrz"))))
+                "0wmi7kn2hcbjkss6jigy9vq922hb0z65y9j0j5sb43ls1if6l9qq"))))
     (properties `((upstream-name . "conf")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rootsolve r-pracma r-fitdistrplus))
@@ -14689,20 +14689,22 @@ manipulating confounded and fractional factorial designs.")
      "Visualization and Analysis of Statistical Measures of Confidence")
     (description
      "Enables: (1) plotting two-dimensional confidence regions, (2) coverage analysis
-of confidence region simulations and (3) calculating confidence intervals and
-the associated actual coverage for binomial proportions.  Each is given in
-greater detail next. (1) Plots the two-dimensional confidence region for
-probability distribution parameters (supported distribution suffixes: cauchy,
-gamma, invgauss, logis, llogis, lnorm, norm, unif, weibull) corresponding to a
-user-given complete or right-censored dataset and level of significance.  The
-crplot() algorithm plots more points in areas of greater curvature to ensure a
-smooth appearance throughout the confidence region boundary.  An alternative
-heuristic plots a specified number of points at roughly uniform intervals along
-its boundary.  Both heuristics build upon the radial profile log-likelihood
-ratio technique for plotting confidence regions given by Jaeger (2016)
-<doi:10.1080/00031305.2016.1182946>, and are detailed in a publication by Weld
-(2019) <doi:10.1080/00031305.2018.1564696>. (2) Performs confidence region
-coverage simulations for a random sample drawn from a user- specified parametric
+of confidence region simulations, (3) calculating confidence intervals and the
+associated actual coverage for binomial proportions, and 4) calculating the
+support values and the probability mass function of the Kaplan-Meier
+product-limit estimator.  Each is given in greater detail next. (1) Plots the
+two-dimensional confidence region for probability distribution parameters
+(supported distribution suffixes: cauchy, gamma, invgauss, logis, llogis, lnorm,
+norm, unif, weibull) corresponding to a user-given complete or right-censored
+dataset and level of significance.  The crplot() algorithm plots more points in
+areas of greater curvature to ensure a smooth appearance throughout the
+confidence region boundary.  An alternative heuristic plots a specified number
+of points at roughly uniform intervals along its boundary.  Both heuristics
+build upon the radial profile log-likelihood ratio technique for plotting
+confidence regions given by Jaeger (2016) <doi:10.1080/00031305.2016.1182946>,
+and are detailed in a publication by Weld (2019)
+<doi:10.1080/00031305.2018.1564696>. (2) Performs confidence region coverage
+simulations for a random sample drawn from a user- specified parametric
 population distribution, or for a user-specified dataset and point of interest
 with coversim(). (3) Calculates confidence interval bounds for a binomial
 proportion with binomTest(), calculates the actual coverage with
@@ -14713,7 +14715,21 @@ Calculates confidence interval bounds for the binomial proportion using a
 complete enumeration of all possible transitions from one actual coverage
 acceptance curve to another which minimizes the root mean square error for n <=
 15 and follows the transitions for well-known confidence intervals for n > 15
-using binomTestMSE().")
+using binomTestMSE(). (4) The km.support() function calculates the support
+values of the Kaplan-Meier product-limit estimator for a given sample size
+\\code{n} using an induction algorithm described in Qin et al. (2023)
+<doi:10.1080/00031305.2022.2070279>.  The km.outcomes() function generates a
+matrix containing all possible outcomes (all possible sequences of failure times
+and right-censoring times) of the value of the Kaplan-Meier product-limit
+estimator for a particular sample size \\code{n}.  The km.pmf() function
+generates the probability mass function for the support values of the
+Kaplan-Meier product-limit estimator for a particular sample size \\code{n},
+probability of observing a failure \\code{h} at the time of interest expressed as
+the cumulative probability \\code{perc} associated with \\code{X = min(T, C)},
+where \\code{T} is the failure time and \\code{C} is the censoring time under a
+random-censoring scheme.  The km.surv() function generates multiple probability
+mass functions of the Kaplan-Meier product-limit estimator for the same
+arguments as those given for km.pmf().")
     (license (license:fsdg-compatible "GPL (<= 2)"))))
 
 (define-public r-coneproj
@@ -28411,6 +28427,32 @@ contains two functions, which are used to generate artificial data and estimate
 ATE with high-dimensional and error-prone data accommodated.")
     (license license:gpl3)))
 
+(define-public r-chemdeg
+  (package
+    (name "r-chemdeg")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "chemdeg" version))
+              (sha256
+               (base32
+                "0ipj7988bwrcz489wa5mx789aw9dij6003rbdndbl3m2r3hi9pnv"))))
+    (properties `((upstream-name . "chemdeg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/migliomatte/chemdeg")
+    (synopsis "Analysis of Chemical Degradation Kinetic Data")
+    (description
+     "This package provides a collection of functions that have been developed to
+assist experimenter in modeling chemical degradation kinetic data.  The
+selection of the appropriate degradation model and parameter estimation is
+carried out automatically as far as possible and is driven by a rigorous
+statistical interpretation of the results.  The package integrates already
+available goodness-of-fit statistics for nonlinear models.  In addition it
+allows data fitting with the nonlinear first-order multi-target (FOMT) model.")
+    (license license:gpl3+)))
+
 (define-public r-chemcal
   (package
     (name "r-chemcal")
@@ -28894,13 +28936,13 @@ user-friendly graphical interface for package ChannelAttribution'.")
 (define-public r-channelattribution
   (package
     (name "r-channelattribution")
-    (version "2.0.6")
+    (version "2.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChannelAttribution" version))
               (sha256
                (base32
-                "174mv7b9jfw240i29b457994iza3wwqx0mjxbpl28af0fba1h4xl"))))
+                "0ak7s5l990kfkf5bzggqplss5pd06rfalghk1rzy92js1n1qxrs7"))))
     (properties `((upstream-name . "ChannelAttribution")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -30647,13 +30689,13 @@ analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
 (define-public r-ceodata
   (package
     (name "r-ceodata")
-    (version "1.3.0.1")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CEOdata" version))
               (sha256
                (base32
-                "1w2lb7lghapaf29sqs8l60xzzd4639y32bd08xv881v1ks5sigzr"))))
+                "04996ia8b4hxgy0s5jfy1xgskqlg419z3lgyz9xf4bgavnk2qbrh"))))
     (properties `((upstream-name . "CEOdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools r-stringr r-jsonlite r-haven r-dplyr))
@@ -35167,6 +35209,27 @@ spectral clustering (CASC) and ADMM.")
 Avec R (Yves Aragon, edp sciences, 2016).  For all chapters, a vignette is
 available with some additional material and exercises solutions.")
     (license license:gpl2+)))
+
+(define-public r-cascadeselect
+  (package
+    (name "r-cascadeselect")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cascadeSelect" version))
+              (sha256
+               (base32
+                "1anvv35r2zpr4wxkpq95kry44x2c517hgygb1s24bsr5lk5q0f2c"))))
+    (properties `((upstream-name . "cascadeSelect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-reactr r-htmltools r-fontawesome))
+    (home-page "https://cran.r-project.org/package=cascadeSelect")
+    (synopsis "Cascade Select Input for 'Shiny'")
+    (description
+     "This package provides a cascade select widget for usage in Shiny applications.
+This is useful for selection of hierarchical choices (e.g. continent, country,
+city).  It is taken from the JavaScript library PrimeReact'.")
+    (license license:gpl3)))
 
 (define-public r-cascadedata
   (package

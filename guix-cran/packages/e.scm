@@ -5189,6 +5189,35 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
 (2017)<doi:10.18637/jss.v076.i03>.")
     (license license:gpl2+)))
 
+(define-public r-etasbootstrap
+  (package
+    (name "r-etasbootstrap")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ETASbootstrap" version))
+              (sha256
+               (base32
+                "0fianmqnbrscrkbqqg3lw53j0cczygrb3mhy80zcnsr0rmk02zj2"))))
+    (properties `((upstream-name . "ETASbootstrap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-etas))
+    (home-page "https://cran.r-project.org/package=ETASbootstrap")
+    (synopsis
+     "Bootstrap Confidence Interval Estimation for 'ETAS' Model Parameters")
+    (description
+     "The 2-D spatial and temporal Epidemic Type Aftershock Sequence ('ETAS') Model is
+widely used to decluster earthquake data catalogs.  Usually, the calculation of
+standard errors of the ETAS model parameter estimates is based on the Hessian
+matrix derived from the log-likelihood function of the fitted model.  However,
+when an ETAS model is fitted to a local data set over a time period that is
+limited or short, the standard errors based on the Hessian matrix may be
+inaccurate.  It follows that the asymptotic confidence intervals for parameters
+may not always be reliable.  As an alternative, this package allows the building
+of bootstrap confidence intervals based on empirical quantiles for the
+parameters of the 2-D spatial and temporal ETAS model.")
+    (license license:expat)))
+
 (define-public r-etas
   (package
     (name "r-etas")
@@ -7761,25 +7790,22 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.15.3")
+    (version "0.16.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eplusr" version))
               (sha256
                (base32
-                "04qbvawxzily2cd76lahi3nba49c2j4skjvqk8xy2rin7p0w6fxs"))))
+                "1a0m6qbnlv2xbqc02frgqaksaidk7b1vzx00d2jlxyiq3j96gw18"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
                              r-stringi
                              r-rsqlite
                              r-r6
-                             r-progress
                              r-processx
                              r-lubridate
-                             r-hms
                              r-data-table
-                             r-crayon
                              r-cli
                              r-checkmate
                              r-callr))

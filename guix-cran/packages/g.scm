@@ -16435,13 +16435,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGIRread" version))
               (sha256
                (base32
-                "10zgdac4vjf63s3d210v6b5lgfwj7an6xfjr4m1rfg7cm5qr2pps"))))
+                "05rsn4a751vvs7ari6df1vm2dx5rf861yg00by4z80byrc6c39w5"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner r-rcpp r-matlab r-bitops))
@@ -19647,17 +19647,18 @@ the rayshader package.")
 (define-public r-geouy
   (package
     (name "r-geouy")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geouy" version))
               (sha256
                (base32
-                "038ggx0kk1adcmw2mb0yal9c55hypwhcgqn3a30l4nlcdqp7z4mb"))))
+                "0wwz54jyq0qr3nw8zsnz4s0jl5j96xjarqxwzrkv1y1ni9g38gjw"))))
     (properties `((upstream-name . "geouy")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-viridis
+                             r-tidyselect
                              r-stringr
                              r-sp
                              r-sf

@@ -4855,16 +4855,22 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
 (define-public r-weightedcluster
   (package
     (name "r-weightedcluster")
-    (version "1.6-0")
+    (version "1.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeightedCluster" version))
               (sha256
                (base32
-                "1hrwvfiyqcxf864isf2qvhszmgwv9rabyly0ipkskjhi8cyx8h9j"))))
+                "07gjy9yjm9axv4dbv9636m03alkxk4jjfxwqxh7fcxjzy40zvqg1"))))
     (properties `((upstream-name . "WeightedCluster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-traminer r-rcolorbrewer r-cluster))
+    (propagated-inputs (list r-traminer
+                             r-rcolorbrewer
+                             r-progressr
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "http://mephisto.unige.ch/weightedcluster/")
     (synopsis "Clustering of Weighted Data")
@@ -5924,13 +5930,13 @@ Department of Natural Resources ArcGIS REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdnet" version))
               (sha256
                (base32
-                "1yzk49vryfws9yhhflpka1djlb98fa8lddayq3gia76ki2nj1yvk"))))
+                "0d5qyls9lsf3cwdayklw5hpk80ihp9pzp5jxmpnnc39s1amgpq2m"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -6301,16 +6307,17 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waywiser" version))
               (sha256
                (base32
-                "0l668f56k860b5vxb50z3nrxd3688xsrlwsrkyb3fi8xblmscqh5"))))
+                "0r1fw4738f7sq22ysxc13182db5zqvl9mh6zgcb2bmsd9s1mha0a"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
+                             r-vctrs
                              r-tidyselect
                              r-tibble
                              r-spdep

@@ -4582,13 +4582,13 @@ package, both methodological and graphical.")
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "0.7.1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multid" version))
               (sha256
                (base32
-                "0gvh7lfz47zy050wfjxdvy3s2q4gcvmbp5vb13xxgz0xl7iq8qlf"))))
+                "0kwbgnazg89542rjf764mn2bc50fnvcsx00pvighmdsanq5r4w5i"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -14603,13 +14603,13 @@ of the samples to form pools.")
 (define-public r-mmodely
   (package
     (name "r-mmodely")
-    (version "0.2.2")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mmodely" version))
               (sha256
                (base32
-                "1xbnivb5xvivz8by5hrr3g8g5w7yyw5n65jl1qhxf2lzvdr3prcw"))))
+                "0fw2ncva8y5jxybi51bbqygkag5zaswni8bfg4gf78yjvjw3iyj5"))))
     (properties `((upstream-name . "mmodely")))
     (build-system r-build-system)
     (propagated-inputs (list r-caroline r-caper r-ape))
@@ -14626,7 +14626,9 @@ averaging and visualization functionality.  Functions additionally support
 information theoretic approaches (Grueber, 2011
 <doi:10.1111/j.1420-9101.2010.02210.x>; Garamszegi, 2011
 <doi:10.1007/s00265-010-1028-7>) such as model averaging and selection of
-phylogenetic models.  There are other numerous functions for visualizing
+phylogenetic models.  Accessory functions are also implemented for coef
+standardization (Cade 2015), selection uncertainty, and variable importance
+(Burnham & Anderson 2000).  There are other numerous functions for visualizing
 confounded variables, plotting phylogenetic trees, as well as reporting and
 exporting modeling results.  Lastly, as challenges to ecology are inherently
 multifarious, and therefore often multi-dataset, this package features several
@@ -24893,13 +24895,13 @@ fisheries data and aggregating ready for use within a Gadget
 (define-public r-mfd
   (package
     (name "r-mfd")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mFD" version))
               (sha256
                (base32
-                "1kxiyvq7cs2hjprnj7snrdm5i2cnd00l1k59v18612d3z78b0nih"))))
+                "04rx17wxygfg333vxrrhqi6zwr2v5b3mgwz5wvgyikliahj9cj9g"))))
     (properties `((upstream-name . "mFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -30981,6 +30983,43 @@ approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
 <arXiv:1807.05504>.  Ditzhaus, M. and Pauly, M. (2018) <arXiv:1808.05627>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mdir
+  (package
+    (name "r-mdir")
+    (version "0.9.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mdir" version))
+              (sha256
+               (base32
+                "0zc5dacyfv1vfr86cyhjrwcmd6pws6sm7pqsw00nlp7b77l1qms5"))))
+    (properties `((upstream-name . "mdir")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-stringr
+                             r-salso
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2))
+    (home-page "https://github.com/stcolema/mdir")
+    (synopsis "Bayesian Model-Based Clustering of Multi-Modal Data")
+    (description
+     "Integrative clustering and semi-supervised prediction.  This package includes a
+C++ implementation of both semi-supervised and unsupervised Multiple Dataset
+Integration (MDI; Kirk et al., 2012
+<https://doi-org.ezp.lib.cam.ac.uk/10.1093/bioinformatics/bts595>), an extension
+of Bayesian mixture models to the integrative (multiple dataset or multi-modal)
+setting such as multi-omics analysis.  The package also includes Bayesian
+mixture models.  Densities allowed within MDI and the mixture model are Gaussian
+with full and diagonal covariance matrices, categorical, Gaussian with a
+Gaussian process (GP) prior on the mean parameter.  The GP model implemented
+canonly handle data with common time points of equal separation.  The Gaussian
+and GP models can be augmented with a global multivariate t distribution to
+handle outliers.")
+    (license license:gpl3)))
+
 (define-public r-mdimnormn
   (package
     (name "r-mdimnormn")
@@ -33284,16 +33323,16 @@ regression component.")
 (define-public r-mbsp
   (package
     (name "r-mbsp")
-    (version "3.0")
+    (version "4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MBSP" version))
               (sha256
                (base32
-                "0dya1bx3hz8hddf55m67dhkyx0ick71pb1vc6iv7rdf5hf7iymzn"))))
+                "1rfjykm2363m67ycm9vsxnddcsmlqxg5gx8sfg9ma8alwnh0s3fb"))))
     (properties `((upstream-name . "MBSP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mcmcpack r-mass r-gigrvg))
+    (propagated-inputs (list r-mvtnorm r-mcmcpack r-gigrvg))
     (home-page "https://cran.r-project.org/package=MBSP")
     (synopsis "Multivariate Bayesian Model with Shrinkage Priors")
     (description

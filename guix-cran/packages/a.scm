@@ -2347,17 +2347,19 @@ reproducible research is that uses this data.")
 (define-public r-ausplotsr
   (package
     (name "r-ausplotsr")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ausplotsR" version))
               (sha256
                (base32
-                "1acbdg85p00xjz6rknagrwhwlibqn5l0qbk4b8ma6v1iwfgs25pp"))))
+                "08iwcbsqlkbnj0jzc646x04sbwhq4pw7g9sxyr7bvfnfdj4ff3aa"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-stringr
                              r-sp
+                             r-r2r
                              r-r-utils
                              r-plyr
                              r-maptools
@@ -15023,6 +15025,29 @@ efficient conversion from an age to an interval, aggregation of ages with
 associated counts in to intervals and the splitting of interval counts based on
 specified age distributions.")
     (license license:gpl2)))
+
+(define-public r-agena-ai
+  (package
+    (name "r-agena-ai")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "agena.ai" version))
+              (sha256
+               (base32
+                "0wdn4iw2b2zq8zfrmjkqik8w8ydi3r45fwwq4ansjmjqh1j99gjf"))))
+    (properties `((upstream-name . "agena.ai")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjson r-rgraphviz r-openxlsx r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=agena.ai")
+    (synopsis "R Wrapper for 'agena.ai' API")
+    (description
+     "An R wrapper for agena.ai <https://www.agena.ai> which provides users
+capabilities to work with agena.ai using the R environment.  Users can create
+Bayesian network models from scratch or import existing models in R and export
+to agena.ai cloud or local API for calculations.")
+    (license license:expat)))
 
 (define-public r-ageg
   (package

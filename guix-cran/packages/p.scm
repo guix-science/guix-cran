@@ -1795,13 +1795,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.0.15")
+    (version "1.0.16")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PTXQC" version))
               (sha256
                (base32
-                "07v95vl83fmdrbn56d0dahxazg1hismjyg21n4w27iis8fqa9015"))))
+                "0p5qzjwwmsvc2b30yk8r543x8nh38ljj2rlb1im502vaxp0nbm19"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5724,13 +5724,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prolific-api
   (package
     (name "r-prolific-api")
-    (version "0.5")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "prolific.api" version))
               (sha256
                (base32
-                "0lnxkap6x4x5wvayfx1lm4h646wb0wsffn7xysrcysfdsaxa817d"))))
+                "04maca0pm5jkajafb7bc1qqlapawbbnsmml97xnwvdmi11hb9zsa"))))
     (properties `((upstream-name . "prolific.api")))
     (build-system r-build-system)
     (inputs (list curl))
@@ -22222,13 +22222,13 @@ package is part of the r4photobiology suite, Aphalo, P. J. (2015)
 (define-public r-phosphoricons
   (package
     (name "r-phosphoricons")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phosphoricons" version))
               (sha256
                (base32
-                "1pqp4awyvkq6yrhg97nvfpwz2fi8zajc819swgdfcd7497n4hnnq"))))
+                "0g9qqgxnzi773mjrrzvlykmvqb7dpi2gxc999arbxkdnbp1lv463"))))
     (properties `((upstream-name . "phosphoricons")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))
@@ -23110,6 +23110,60 @@ details about the methods can be found at Zhang et al. (2019)
 <doi:10.1038/s41596-019-0227-6>, Yu et al. (2017) <doi:10.1093/jamia/ocw135>,
 and Liao et al. (2015) <doi:10.1136/bmj.h1885>.")
     (license license:gpl3)))
+
+(define-public r-pheble
+  (package
+    (name "r-pheble")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "pheble" version))
+              (sha256
+               (base32
+                "14q66ldpksxsh5q7mpgp4d9p43kbx1v4yqd35p3gqi6qxrlb5q1z"))))
+    (properties `((upstream-name . "pheble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-themis
+                             r-sparselda
+                             r-rpartscore
+                             r-randomforest
+                             r-pls
+                             r-party
+                             r-nnet
+                             r-mlmetrics
+                             r-mda
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-klar
+                             r-kknn
+                             r-kernlab
+                             r-ipred
+                             r-hdclassif
+                             r-hda
+                             r-gmodels
+                             r-glmnet
+                             r-frbs
+                             r-evtree
+                             r-earth
+                             r-e1071
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-catools
+                             r-caret
+                             r-c50
+                             r-adabag))
+    (home-page "https://cran.r-project.org/package=pheble")
+    (synopsis "Classifying High-Dimensional Phenotypes with Ensemble Learning")
+    (description
+     "This package provides a system for binary and multi-class classification of
+high-dimensional phenotypic data using ensemble learning.  By combining
+predictions from different classification models, this package attempts to
+improve performance over individual learners.  The pre-processing, training,
+validation, and testing are performed end-to-end to minimize user input and
+simplify the process of classification.")
+    (license license:gpl3+)))
 
 (define-public r-phd
   (package

@@ -10793,6 +10793,32 @@ match taxonomic names to Open Tree identifiers'.  The Open Tree of Life aims at
 assembling a comprehensive phylogenetic tree for all named species.")
     (license license:bsd-2)))
 
+(define-public r-rotatogram
+  (package
+    (name "r-rotatogram")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rotatogram" version))
+              (sha256
+               (base32
+                "0y1kw8cjvdbdr9ghs7xb9wgj5g9h3nc0q36vxmz8jzjfh4lib68c"))))
+    (properties `((upstream-name . "rotatogram")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=rotatogram")
+    (synopsis "Non-Axis-Dominant Association Plotting Tool")
+    (description
+     "This package provides a rotatogram is a method of displaying an association
+which is axis non-dominant.  This is achieved in two ways: First, the method of
+estimating the slope and intercept uses the least-products method rather than
+more typical least squared error for the \"dependent\" variable.  The least
+products method has no \"dependent\" variable and is scale independent.  Second,
+the plot is rotated such that the resulting regression line is vertical,
+reducing the suggestion that the vertical axis is the dominant one.  The slope
+can be read relative to either axis equally.")
+    (license license:expat)))
+
 (define-public r-rotations
   (package
     (name "r-rotations")
@@ -13291,18 +13317,17 @@ calculate the aggregated precision-recall (PR) curve.")
 (define-public r-robyn
   (package
     (name "r-robyn")
-    (version "3.9.0")
+    (version "3.10.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Robyn" version))
               (sha256
                (base32
-                "10zsv3h3v4p922m4d27ym4prgx542qncm4wy7sxf7n8yb640yyx5"))))
+                "1nsicscgdp85mhvwb3i6liqhvkszj5x3z6rhm6v3vq7mfxwfn7rf"))))
     (properties `((upstream-name . "Robyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-rpref
                              r-reticulate
                              r-prophet
                              r-patchwork
@@ -40012,13 +40037,13 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rbacon" version))
               (sha256
                (base32
-                "0ajzl38x36lcb3r1ackk1z9vdvcgspgqj3varjm61pip13n333cd"))))
+                "0cbg75s0kmb0ya5mylrysc4cmkf23vyj7sdkcx0gpkzganqkwrvn"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rintcal r-rcpp r-data-table r-coda))
@@ -43468,19 +43493,17 @@ packages.")
 (define-public r-ramclustr
   (package
     (name "r-ramclustr")
-    (version "1.2.4")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RAMClustR" version))
               (sha256
                (base32
-                "11k106472wds10bvp7j2fr9vdzyvzfqndpvh2l5q5y9g25w0rpps"))))
+                "10l0gidlzalj1zx2wiiwg114hshqsx2639w29sks9g7w6dh20019"))))
     (properties `((upstream-name . "RAMClustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
                              r-stringr
-                             r-readxl
-                             r-rcurl
                              r-preprocesscore
                              r-pcamethods
                              r-jsonlite
@@ -43499,7 +43522,7 @@ packages.")
      "This package provides a feature clustering algorithm for non-targeted mass
 spectrometric metabolomics data.  This method is compatible with gas and liquid
 chromatography coupled mass spectrometry, including indiscriminant tandem mass
-spectrometry <DOI: 10.1021/ac501530d> data.")
+spectrometry data <DOI: 10.1021/ac501530d>.")
     (license license:gpl2+)))
 
 (define-public r-ramchoice

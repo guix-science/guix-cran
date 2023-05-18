@@ -959,13 +959,13 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
 (define-public r-symbol-equation-gpt
   (package
     (name "r-symbol-equation-gpt")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "symbol.equation.gpt" version))
               (sha256
                (base32
-                "02rww4rv3nrkdp845lcpi5aszbrvpynxv12kh4g91p9wan6afqzc"))))
+                "1z7ww9wvyd4ma7bk0ynp2rbkrajd8b3frb1msh8wn2msj5k7pfpg"))))
     (properties `((upstream-name . "symbol.equation.gpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinystoreplus
@@ -2312,13 +2312,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "svrep" version))
               (sha256
                (base32
-                "0f9w7g6kl5mwmz88gnsvabi4l26cgyr1fg65rgdrapwbngyfkqib"))))
+                "1wg3wrxvmq9ywnv2g8gghgg4bq0v7if5l80x3qsz24h31dxnqc05"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
@@ -13253,6 +13253,47 @@ Ecovalence, Shukla's stability variance parameter (1972)
 yielding and stable parameter.")
     (license license:gpl2)))
 
+(define-public r-stabiliser
+  (package
+    (name "r-stabiliser")
+    (version "1.0.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "stabiliser" version))
+              (sha256
+               (base32
+                "1zyqmj8s8x0h8dji50r3yhn3n3838vci81gm02p971px8x5wq9y8"))))
+    (properties `((upstream-name . "stabiliser")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-recipes
+                             r-purrr
+                             r-ncvreg
+                             r-matrixstats
+                             r-lmertest
+                             r-lme4
+                             r-knitr
+                             r-hmisc
+                             r-glmnet
+                             r-ggplot2
+                             r-expss
+                             r-dplyr
+                             r-caret
+                             r-broom
+                             r-bigstep))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stabiliser")
+    (synopsis "Stabilising Variable Selection")
+    (description
+     "This package provides a stable approach to variable selection through stability
+selection and the use of a permutation-based objective stability threshold.
+Lima et al (2021) <doi:10.1038/s41598-020-79317-8>, Meinshausen and Buhlmann
+(2010) <doi:10.1111/j.1467-9868.2010.00740.x>.")
+    (license license:expat)))
+
 (define-public r-sta
   (package
     (name "r-sta")
@@ -14363,13 +14404,13 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ssdtools" version))
               (sha256
                (base32
-                "08nzmwaqyd5vy9qxcqbp3pkv010p0b9rcvlsnvbrhnz208dmicib"))))
+                "124laicy7xzy0v695w280vz16jdx09x3vccqmrbml5w495283kb4"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -20455,13 +20496,13 @@ Bayesian Analysis.")
 (define-public r-spbayessurv
   (package
     (name "r-spbayessurv")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spBayesSurv" version))
               (sha256
                (base32
-                "1i5b0k1h2fq44n1hpb4cs5j2rz0s1x94d36yglvd24i55mjjzfk4"))))
+                "02fjc49yx15jqsflf6vxqwskj5gzfhpfzb8m81nxmc9vq8l475y8"))))
     (properties `((upstream-name . "spBayesSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20954,13 +20995,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatialsample" version))
               (sha256
                (base32
-                "1xfgd8ry7h231ic1zx85g331wg16c569br7dk55agfhpsg1kc8xj"))))
+                "1f44zzga5df5vqxzvc40sbivdhzx4x62qbqx5vkw9rxw5yrm9d2d"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -31137,13 +31178,13 @@ in order to shrink down the feature space into a small and yet robust set.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sits" version))
               (sha256
                (base32
-                "0l04a1mag3f6yf6qr1x38ma70j1immg0fzyk9mxq8fpw67lwycr2"))))
+                "1885i9p09qwi6mkw01s6qw1k974lc6siff28dzmw7z1nq27mdmry"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -46131,13 +46172,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seeker" version))
               (sha256
                (base32
-                "0wnn253c6m1dv929vnk8s5lchflx270ijgd6pbgsk5hlqs11xd84"))))
+                "1vfdjv9df60hyvhfa1ix9wg8ds6nz94gv72xdhx94x3dnv4jfhc3"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -46537,38 +46578,6 @@ data export the package works with is a standard non-rectangular export.")
     (description
      "Sequential factor extraction via co-sparse unit-rank estimation (SeCURE).")
     (license license:gpl3+)))
-
-(define-public r-secsse
-  (package
-    (name "r-secsse")
-    (version "2.5.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "secsse" version))
-              (sha256
-               (base32
-                "158jhj9n98qnrd6kar4lbn8970z3qd0nxfjba3fbvyabxp4azpcq"))))
-    (properties `((upstream-name . "secsse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcppparallel
-                             r-rcpp
-                             r-ggplot2
-                             r-geiger
-                             r-ddd
-                             r-bh
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rsetienne/secsse")
-    (synopsis
-     "Several Examined and Concealed States-Dependent Speciation and Extinction")
-    (description
-     "Simultaneously infers state-dependent diversification across two or more states
-of a single or multiple traits while accounting for the role of a possible
-concealed trait.  See Herrera-Alsina et al. (2019) <doi:10.1093/sysbio/syy057>.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-secrlinear
   (package

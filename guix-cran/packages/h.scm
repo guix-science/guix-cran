@@ -273,18 +273,19 @@ Hediger & Michel & Naef (2020) <arXiv:1903.06287>.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.3.0")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HYPEtools" version))
               (sha256
                (base32
-                "074js9315igkjkh6dc1s1vfya1z85x06gfv14w173h5md99glds2"))))
+                "07wp9i8jz23xlq8g0p3yyxlcsys8p02vv8791xf65y6aawlf0fs3"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-pbapply

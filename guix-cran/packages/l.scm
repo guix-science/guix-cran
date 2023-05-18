@@ -4135,13 +4135,13 @@ McLachlan (2018) <doi:10.21105/joss.00870>.")
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "logitr" version))
               (sha256
                (base32
-                "0brb0h39mwjmi249vqngggwlgr0fkz9zy6m68v97fvy2vxiwv5x7"))))
+                "0sk93j5mbpmll2vgl7s86siy1960wp9dj945dgc90ndbwmq2gj62"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-randtoolbox r-nloptr r-mass r-generics))

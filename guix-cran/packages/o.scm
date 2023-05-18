@@ -3079,13 +3079,13 @@ dose finding designs under various scenarios.")
 (define-public r-ordcd
   (package
     (name "r-ordcd")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OrdCD" version))
               (sha256
                (base32
-                "08cxp6rqwrr9k067ykh8ahzbkl6hxazc79ih7w41xddi23zs1qi1"))))
+                "1wg4sxirzp8r91qzzvrx4yashg1f574ayaxbviy8hdca3iydfl1j"))))
     (properties `((upstream-name . "OrdCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-igraph r-grbase r-bnlearn))

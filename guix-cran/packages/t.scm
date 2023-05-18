@@ -284,28 +284,6 @@ it assesses variance homogeneity and normality of data in each group via tests
 and plots.  All twowaytests functions are designed for two-way layout.")
     (license license:gpl2+)))
 
-(define-public r-twowayfeweights
-  (package
-    (name "r-twowayfeweights")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "TwoWayFEWeights" version))
-              (sha256
-               (base32
-                "0zjbh24jm77vj62rw433dqy57m0hciaw1l2l7x6hpzn34iggdwwv"))))
-    (properties `((upstream-name . "TwoWayFEWeights")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rlang r-fixest r-estimatr r-dplyr))
-    (home-page "https://cran.r-project.org/package=TwoWayFEWeights")
-    (synopsis
-     "Estimation of the Weights Attached to the Two-Way Fixed Effects Regressions")
-    (description
-     "Estimates the weights and measure of robustness to treatment effect
-heterogeneity attached to two-way fixed effects regressions.  ClÃ©ment de
-Chaisemartin, Xavier D'HaultfÅuille (2020) <DOI: 10.1257/aer.20181169>.")
-    (license license:expat)))
-
 (define-public r-twoway
   (package
     (name "r-twoway")

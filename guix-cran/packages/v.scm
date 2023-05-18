@@ -1319,6 +1319,40 @@ of more robust safety monitoring framework like the Shiny app from the
 safetyGraphics R package.")
     (license license:expat)))
 
+(define-public r-volcano3d
+  (package
+    (name "r-volcano3d")
+    (version "2.0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "volcano3D" version))
+              (sha256
+               (base32
+                "1k1n49pzsdkwia09mf9ra75cbnx49q99ygn5c92kyq8kqv83d1w8"))))
+    (properties `((upstream-name . "volcano3D")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rfast
+                             r-plotly
+                             r-matrixtests
+                             r-magrittr
+                             r-htmlwidgets
+                             r-ggpubr
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://katrionagoldmann.github.io/volcano3D/index.html")
+    (synopsis "3D Volcano Plots and Polar Plots for Three-Class Data")
+    (description
+     "Generates interactive plots for analysing and visualising three-class high
+dimensional data.  It is particularly suited to visualising differences in
+continuous attributes such as gene/protein/biomarker expression levels between
+three groups.  Differential gene/biomarker expression analysis between two
+classes is typically shown as a volcano plot.  However, with three groups this
+type of visualisation is particularly difficult to interpret.  This package
+generates 3D volcano plots and 3-way polar plots for easier interpretation of
+three-class data.")
+    (license license:gpl2)))
+
 (define-public r-volatilitytrader
   (package
     (name "r-volatilitytrader")
