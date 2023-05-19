@@ -1495,6 +1495,31 @@ syntax.  wpa is built with the beginner-to-intermediate R users in mind, and is
 optimised for simplicity.")
     (license license:expat)))
 
+(define-public r-woylier
+  (package
+    (name "r-woylier")
+    (version "0.0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "woylier" version))
+              (sha256
+               (base32
+                "1xa2qdkkqnd6c98a15rfsa3m8jil7gipr4mann3dhkf0zl59g0a4"))))
+    (properties `((upstream-name . "woylier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tourr r-tibble r-geozoo r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=woylier")
+    (synopsis "Alternative Tour Frame Interpolation Method")
+    (description
+     "This method generates a tour path by interpolating between d-D frames in p-D
+using Givens rotations.  The algorithm arises from the problem of zeroing
+elements of a matrix.  This interpolation method is useful for showing specific
+d-D frames in the tour, as opposed to d-D planes, as done by the geodesic
+interpolation.  It is useful for projection pursuit indexes which are not s
+invariant.  See Buja et al (2005) <doi:10.1016/S0169-7161(04)24014-7>.")
+    (license license:expat)))
+
 (define-public r-wowa
   (package
     (name "r-wowa")
@@ -2784,58 +2809,6 @@ Point', LineString', Polygon', MultiPoint', MultiLineString', and MultiPolygon'.
 arguments.")
     (license license:expat)))
 
-(define-public r-wiser
-  (package
-    (name "r-wiser")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wiseR" version))
-              (sha256
-               (base32
-                "187ylwhk06957x9zm5r0m6w9wg08im83myz3s4gr927ig8yv3b5f"))))
-    (properties `((upstream-name . "wiseR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-visnetwork
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shinybs
-                             r-shinyalert
-                             r-shiny
-                             r-rintrojs
-                             r-rhandsontable
-                             r-rgraphviz
-                             r-rbgl
-                             r-psych
-                             r-missranger
-                             r-linkcomm
-                             r-igraph
-                             r-hydenet
-                             r-graph
-                             r-dt
-                             r-dplyr
-                             r-desctools
-                             r-bnlearn
-                             r-arules))
-    (home-page "https://github.com/SAFE-ICU/wiseR")
-    (synopsis
-     "Shiny Application for End-to-End Bayesian Decision Network Analysis and Web-Deployment")
-    (description
-     "This package provides a Shiny application for learning Bayesian Decision
-Networks from data.  This package can be used for probabilistic reasoning (in
-the observational setting), causal inference (in the presence of interventions)
-and learning policy decisions (in Decision Network setting).  Functionalities
-include end-to-end implementations for data-preprocessing, structure-learning,
-exact inference, approximate inference, extending the learned structure to
-Decision Networks and policy optimization using statistically rigorous methods
-such as bootstraps, resampling, ensemble-averaging and cross-validation.  In
-addition to Bayesian Decision Networks, it also features correlation networks,
-community-detection, graph visualizations, graph exports and web-deployment of
-the learned models as Shiny dashboards.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-wisam
   (package
     (name "r-wisam")
@@ -2947,25 +2920,6 @@ of outcomes can be analyzed: survival \"failure-time\" events, repeated survival
 \"failure-time\" events and continuous or ordinal \"non-failure time\" events that
 are captured at specific time-points in the study.")
     (license license:gpl2+)))
-
-(define-public r-wingui
-  (package
-    (name "r-wingui")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wingui" version))
-              (sha256
-               (base32
-                "0yf6k33qpcjzyb7ckwsxpdw3pcsja2wsf08vaca7qw27yxrbmaa3"))))
-    (properties `((upstream-name . "wingui")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=wingui")
-    (synopsis "Advanced Windows Functions")
-    (description
-     "Helps for interfacing with the operating system particularly for Windows.")
-    (license (list license:gpl2 license:gpl3 license:expat))))
 
 (define-public r-winfapreader
   (package
@@ -5424,13 +5378,13 @@ statistic for the object of class htest'.")
 (define-public r-webpower
   (package
     (name "r-webpower")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebPower" version))
               (sha256
                (base32
-                "1g4hwgclxv1ykqkszmlizp3mcpyihpkv1v6n691mkcy7v4cxj2pv"))))
+                "1530jz99dvp79bk57mfyyd0iam7wf0pjz8d5msyy852zcqym5hrp"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan r-dplyr))

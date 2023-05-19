@@ -14405,13 +14405,13 @@ binary and continuous outcomes.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.1")
+    (version "5.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lares" version))
               (sha256
                (base32
-                "17dsvjsqzp2v2j1b07vln1xbccbfvn1zr7b2rq4039hx0zmr3wd6"))))
+                "0fcdwx8hgrlh7ghgvnp9i4hqr9n79sr1s9r4h7yssf1cyajc6x39"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15976,13 +15976,13 @@ spectral clustering method using l1-regularization\" (2022).")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.41-2")
+    (version "0.41-24")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "L1pack" version))
               (sha256
                (base32
-                "0j8sb2rbvd6nrijx18mhykgd4kj9032cwjcg23x12hr3rdlx56fb"))))
+                "1zbiiawvm1jfmsab7kxz2rr969xbz2nxxx4piadp5s5ln8v4jxil"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
@@ -15993,7 +15993,8 @@ spectral clustering method using l1-regularization\" (2022).")
      "L1 estimation for linear regression using Barrodale and Roberts method
 <doi:10.1145/355616.361024> and the EM algorithm <doi:10.1023/A:1020759012226>,
 density, distribution function, quantile function and random number generation
-for univariate and multivariate Laplace distribution.")
+for univariate and multivariate Laplace distribution
+<doi:10.1080/03610929808832115>.")
     (license license:gpl3)))
 
 (define-public r-l1kdeconv

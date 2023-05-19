@@ -3402,6 +3402,38 @@ insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
 without any geolibraries.")
     (license license:expat)))
 
+(define-public r-csindicators
+  (package
+    (name "r-csindicators")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CSIndicators" version))
+              (sha256
+               (base32
+                "01x5lyxw5ca8xqndfxdjzj2jak7kwndqwqb9shz53hj6p5z0wld2"))))
+    (properties `((upstream-name . "CSIndicators")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-multiapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://earth.bsc.es/gitlab/es/csindicators/")
+    (synopsis
+     "Climate Services' Indicators Based on Sub-Seasonal to Decadal Predictions")
+    (description
+     "Set of generalised tools for the flexible computation of climate related
+indicators defined by the user.  Each method represents a specific mathematical
+approach which is combined with the possibility to select an arbitrary time
+period to define the indicator.  This enables a wide range of possibilities to
+tailor the most suitable indicator for each particular climate service
+application (agriculture, food security, energy, water managementâ¦).  This
+package is intended for sub-seasonal, seasonal and decadal climate predictions,
+but its methods are also applicable to other time-scales, provided the
+dimensional structure of the input is maintained.  Additionally, the outputs of
+the functions in this package are compatible with CSTools'.  This package was
+developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787) projects.
+ LledÃ³ et al. (2019) <doi:10.1016/j.renene.2019.04.135>.")
+    (license license:gpl3)))
+
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
@@ -4706,13 +4738,13 @@ high-dimensional) set of surrogate markers.")
 (define-public r-crosstalkr
   (package
     (name "r-crosstalkr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crosstalkr" version))
               (sha256
                (base32
-                "0fwrb8sa1gdjhml079vqsry9q6a609iyb1d8b3p18hhc8k4p6y0m"))))
+                "0zbpy4lc4q6h9iz3gd1nfv96cc90ndbnr22l9n0hqia9jq9bkz7s"))))
     (properties `((upstream-name . "crosstalkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -29736,13 +29768,13 @@ details.")
 (define-public r-cgalmeshes
   (package
     (name "r-cgalmeshes")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cgalMeshes" version))
               (sha256
                (base32
-                "17pcklp76rn4clzlp2qxqq4syp4zjbfyh7li9w0i0fzggv2yk287"))))
+                "1xykd56ms3ah6wgnndy5f0chmhiy3zcqs8i725rbzfn6a3aqrb4b"))))
     (properties `((upstream-name . "cgalMeshes")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -29761,11 +29793,12 @@ details.")
     (description
      "This package provides some utilities for 3D meshes: clipping of a mesh to the
 volume bounded by another mesh, decomposition into convex parts, distance
-between a mesh and a point, triangulation, geodesic distance, Boolean operations
-(intersection, union, difference), connected components, volume, area, and
-centroid.  Also provides an algorithm for surface reconstruction from a cloud of
-points.  Meshes are represented by R6 classes.  All algorithms are performed by
-the C++ library CGAL (<https://www.cgal.org/>).")
+between a mesh and a point, Hausdorff distance between two meshes,
+triangulation, geodesic distance, Boolean operations (intersection, union,
+difference), connected components, subdivision algorithms, random sampling on a
+mesh, volume, area, and centroid.  Also provides two algorithms for surface
+reconstruction from a cloud of points.  Meshes are represented by R6 classes.
+All algorithms are performed by the C++ library CGAL (<https://www.cgal.org/>).")
     (license license:gpl3)))
 
 (define-public r-cgal4h
@@ -30389,6 +30422,34 @@ linear coefficients in regression models with grouped data.")
 pharmacometric packages and Shiny applications developed by Certara PMX and
 Integrated Drug Development (iDD).  The functions ensure the successful
 installation of packages from non-standard repositories.")
+    (license license:lgpl3)))
+
+(define-public r-certara-nlme8
+  (package
+    (name "r-certara-nlme8")
+    (version "1.2.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Certara.NLME8" version))
+              (sha256
+               (base32
+                "0c84xp4z28vflpj7yi1rwzwq5j6vh5bxi1jsb90fha8kp0l8pdya"))))
+    (properties `((upstream-name . "Certara.NLME8")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-reshape r-data-table r-batchtools))
+    (home-page "https://cran.r-project.org/package=Certara.NLME8")
+    (synopsis
+     "Utilities for Certara's Nonlinear Mixed-Effects Modeling Engine")
+    (description
+     "Perform Nonlinear Mixed-Effects (NLME) Modeling using Certara's NLME-Engine.
+Access the same Maximum Likelihood engines used in the Phoenix platform,
+including algorithms for parametric methods, individual, and pooled data
+analysis <https://www.certara.com/app/uploads/2020/06/BR_PhoenixNLME-v4.pdf>.
+The Quasi-Random Parametric Expectation-Maximization Method (QRPEM) is also
+supported <https://www.page-meeting.org/default.asp?abstract=2338>.  Execution
+is supported both locally or on remote machines.  Remote execution includes
+support for Linux Sun Grid Engine (SGE), Terascale Open-source Resource and
+Queue Manager (TORQUE) grids, Linux and Windows multicore, and individual runs.")
     (license license:lgpl3)))
 
 (define-public r-certainty
@@ -35017,6 +35078,41 @@ analyses, implementing the methods described in Llinares-LÃ³pez et al. (2017)
     (description
      "Play casino games in the R console, including poker, blackjack, and a slot
 machine.  Try to build your fortune before you succumb to the gambler's ruin!")
+    (license license:expat)))
+
+(define-public r-cases
+  (package
+    (name "r-cases")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cases" version))
+              (sha256
+               (base32
+                "16yfypaqjnl3b99a55mri2j55xaj7dixw76wbpbfa3s4y0zylwpz"))))
+    (properties `((upstream-name . "cases")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm
+                             r-multcomp
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-extradistr
+                             r-dplyr
+                             r-corrplot
+                             r-copula
+                             r-boot
+                             r-bindata))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/maxwestphal/cases")
+    (synopsis "Stratified Evaluation of Subgroup Classification Accuracy")
+    (description
+     "Enables simultaneous statistical inference for the accuracy of multiple
+classifiers in multiple subgroups (strata).  For instance, allows to perform
+multiple comparisons in diagnostic accuracy studies with co-primary endpoints
+sensitivity and specificity. (Westphal, Max, and Antonia Zapf. (2021).
+\"Statistical Inference for Diagnostic Test Accuracy Studies with Multiple
+Comparisons.\" <arXiv:2105.13469>.)")
     (license license:expat)))
 
 (define-public r-casematch

@@ -4940,13 +4940,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-28")
+    (version "0.2-29")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arulesSequences" version))
               (sha256
                (base32
-                "170xy0hdd41j0cgd6n6fhcib1igwh10nqs06afxz0z0gs0parjh4"))))
+                "1gi6zczvyrl3h7zis2niwllaynlw7l0l16icx6i2jq9ilgi59jia"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (propagated-inputs (list r-arules))
@@ -12442,34 +12442,32 @@ generations.")
 (define-public r-allelematch
   (package
     (name "r-allelematch")
-    (version "2.5.1")
+    (version "2.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "allelematch" version))
               (sha256
                (base32
-                "00117cj01psax4rjvy2nja5r2ss9l8zzjicczh46kp401i1ghmwc"))))
+                "15dkafz3gzrnwi3kmd4abyx4i29bm4lhy99lix2n2rjy123wc8fb"))))
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (propagated-inputs (list r-dynamictreecut))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=allelematch")
+    (home-page "<doi:10.1111%2Fj.1755-0998.2012.03137.x>")
     (synopsis
      "Identifying Unique Multilocus Genotypes where Genotyping Error and Missing Data may be Present")
     (description
      "Tools for the identification of unique of multilocus genotypes when both
-genotyping error and missing data may be present.  The package is targeted at
-those working with large datasets and databases containing multiple samples of
-each individual, a situation that is common in conservation genetics, and
-particularly in non-invasive wildlife sampling applications.  Functions
-explicitly incorporate missing data, and can tolerate allele mismatches created
-by genotyping error.  If you use this tool, please cite the package using the
-journal article in Molecular Ecology Resources (Galpern et al., 2012).  Please
-use citation('allelematch') to call the full citation.  For users with access to
-the associated journal article, tutorial material is also available as
-supplementary material to the article describing this software, the citation for
-which can be called using citation('allelematch').")
-    (license license:gpl3)))
+genotyping error and missing data may be present; targeted for use with large
+datasets and databases containing multiple samples of each individual (a common
+situation in conservation genetics, particularly in non-invasive wildlife
+sampling applications).  Functions explicitly incorporate missing data and can
+tolerate allele mismatches created by genotyping error.  If you use this
+package, please cite the original publication in Molecular Ecology Resources
+(Galpern et al., 2012), the details for which can be generated using
+citation('allelematch').  For a complete vignette, please access via the Data S1
+Supplementary documentation and tutorials (PDF) located at
+<doi:10.1111/j.1755-0998.2012.03137.x>.")
+    (license license:gpl2+)))
 
 (define-public r-allehap
   (package
@@ -12539,13 +12537,13 @@ any repository.")
 (define-public r-alkahest
   (package
     (name "r-alkahest")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alkahest" version))
               (sha256
                (base32
-                "1m9lp12vvlzpsscig1c5y07m7wkj0v8jj9f3bzhb9sp1ii4nyysh"))))
+                "0rajjszil8b8lira6x3jd8ccizb16s6qh98cynjqdfq9z70xi5g2"))))
     (properties `((upstream-name . "alkahest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

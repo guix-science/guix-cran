@@ -972,13 +972,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.4.1")
+    (version "1.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dynamite" version))
               (sha256
                (base32
-                "0ji3asffhisiwvf4yak6hpryl0hd4qcrqy3vcz7yqnr2spksqp1x"))))
+                "0idxaq07czvjkihhvkxs5faki5yk1xqdpymrfcyhrwxxrdh9l31b"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4531,13 +4531,13 @@ included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DRDID" version))
               (sha256
                (base32
-                "09dpl6fcl557vwhcr4zs5fdyfdd65jzj3hznkf1g138szpzqnphf"))))
+                "1grhnk0b6v5c31497mfr9b4n2fn3flkw40r3lznhxgn2psphpjz7"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust r-bmisc))
@@ -6327,13 +6327,13 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.0-3")
+    (version "1.0-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DoseFinding" version))
               (sha256
                (base32
-                "09456a5b2cjjsx45fmlzpcyg5mc7di0mh6v80pmil717qklxc0w6"))))
+                "1kywq7fqi8864bnzr66rn2ix3lkipg4yx3pdw81r0131wmxwddv2"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
@@ -13899,13 +13899,13 @@ approach.")
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.9")
+    (version "1.0.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DiagrammeR" version))
               (sha256
                (base32
-                "1gqaqk7jdh37zzadv0aymr9yb8lpqgj3l8n1n3cds38i4zz2d934"))))
+                "147q7zgwhd7vc0l134sqkkf6n6s6bznxvcmsrdx2f5df12bsixkj"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -13920,7 +13920,6 @@ approach.")
                              r-rcolorbrewer
                              r-purrr
                              r-magrittr
-                             r-influencer
                              r-igraph
                              r-htmlwidgets
                              r-htmltools

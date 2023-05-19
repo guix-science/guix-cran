@@ -8231,13 +8231,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.60")
+    (version "2.0.61")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "epiR" version))
               (sha256
                (base32
-                "0bbg8iidb7qxbas90q8g4wfsrysrkxymafz6xl9q03dmp9y1cfi7"))))
+                "1fnrr3g8zspl7c7d4ssyd20l2wcr3dy29apzplkssnrhp740s4a8"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15293,18 +15293,18 @@ potential EEG data.")
 (define-public r-eefanalytics
   (package
     (name "r-eefanalytics")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eefAnalytics" version))
               (sha256
                (base32
-                "0849zsryrawwlzplxx6zymi6qnidv8w7vk7an8b9p4k3whqhyx42"))))
+                "1mgbdsmbv5s87b2334rf057di4l36qmr1kw12qvmb8yz1pqrsx4w"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstanarm r-mvtnorm r-lme4 r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dimitris-90/eefanalytics")
+    (home-page "https://github.com/germaine86/eefAnalytics")
     (synopsis
      "Robust Analytical Methods for Evaluating Educational Interventions using Randomised Controlled Trials Designs")
     (description
@@ -15316,7 +15316,7 @@ can be used for simple randomised trials, cluster randomised trials and
 multisite trials.  The methods can also be used more widely beyond education
 trials.  This package can be used to evaluate other intervention designs using
 Frequentist and Bayesian multilevel models.")
-    (license license:gpl3+)))
+    (license license:agpl3+)))
 
 (define-public r-eechidna
   (package

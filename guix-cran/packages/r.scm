@@ -25405,43 +25405,6 @@ using the REDCap API. See the ReviewR website for additional information,
 documentation, and examples.")
     (license license:bsd-3)))
 
-(define-public r-revgadgets
-  (package
-    (name "r-revgadgets")
-    (version "1.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "RevGadgets" version))
-              (sha256
-               (base32
-                "1d14wf6zya1p9wrh1yvrl1gryldvnq7zvhi3b99002w9jph5zp25"))))
-    (properties `((upstream-name . "RevGadgets")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treeio
-                             r-tidytree
-                             r-tidyr
-                             r-tibble
-                             r-scales
-                             r-reshape
-                             r-png
-                             r-phytools
-                             r-ggtree
-                             r-ggthemes
-                             r-ggpp
-                             r-ggplotify
-                             r-ggplot2
-                             r-gginnards
-                             r-ggimage
-                             r-dplyr
-                             r-deeptime
-                             r-ape))
-    (home-page "https://github.com/revbayes/RevGadgets")
-    (synopsis "Visualization and Post-Processing of 'RevBayes' Analyses")
-    (description
-     "Processes and visualizes the output of complex phylogenetic analyses from the
-RevBayes phylogenetic graphical modeling software.")
-    (license license:gpl3)))
-
 (define-public r-reverser
   (package
     (name "r-reverser")
@@ -34927,13 +34890,13 @@ cubes without using external libraries (for example OpenGL').")
 (define-public r-rcts
   (package
     (name "r-rcts")
-    (version "0.2.3")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RCTS" version))
               (sha256
                (base32
-                "1g34fsgqw6fnqkqpj8g32yihnhdpcrx6g64b67zf83wkl1fqjn9l"))))
+                "0wx0c9sk8y1frjwifgszzp38yx5lmwndhvixbak1kcjw5n02rkyj"))))
     (properties `((upstream-name . "RCTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35329,18 +35292,17 @@ and will be transformed into a R data frame.")
 (define-public r-rcrimeanalysis
   (package
     (name "r-rcrimeanalysis")
-    (version "0.4.2")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rcrimeanalysis" version))
               (sha256
                (base32
-                "1b41f636bkr0mr72klyad4fyx5zf129c9h1523rkfkyxrlf527yx"))))
+                "0a7h3gblc69g1mkalb3yss9x609701zwd3hh4pr2v96fdmsxdpkc"))))
     (properties `((upstream-name . "rcrimeanalysis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgdal
-                             r-rcpp
+    (propagated-inputs (list r-terra
+                             r-sp
                              r-raster
                              r-pals
                              r-lubridate
@@ -35350,8 +35312,7 @@ and will be transformed into a R data frame.")
                              r-igraph
                              r-htmltools
                              r-ggmap
-                             r-forecast
-                             r-dplyr))
+                             r-forecast))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rcrimeanalysis")
     (synopsis "An Implementation of Crime Analysis Methods")

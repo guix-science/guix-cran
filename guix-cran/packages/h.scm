@@ -1164,48 +1164,6 @@ annual flood durations have been computed already and data products were
 published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
     (license license:gpl2)))
 
-(define-public r-hydenet
-  (package
-    (name "r-hydenet")
-    (version "0.10.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HydeNet" version))
-              (sha256
-               (base32
-                "1qi87k2drizqba1nz8psh697ks8ai8xz492kzsrs76xlxpbk1i9k"))))
-    (properties `((upstream-name . "HydeNet")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-stringr
-                             r-rjags
-                             r-plyr
-                             r-pixiedust
-                             r-nnet
-                             r-magrittr
-                             r-graph
-                             r-dplyr
-                             r-diagrammer
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nutterb/HydeNet")
-    (synopsis "Hybrid Bayesian Networks Using R and JAGS")
-    (description
-     "Facilities for easy implementation of hybrid Bayesian networks using R. Bayesian
-networks are directed acyclic graphs representing joint probability
-distributions, where each node represents a random variable and each edge
-represents conditionality.  The full joint distribution is therefore factorized
-as a product of conditional densities, where each node is assumed to be
-independent of its non-descendents given information on its parent nodes.  Since
-exact, closed-form algorithms are computationally burdensome for inference
-within hybrid networks that contain a combination of continuous and discrete
-nodes, particle-based approximation techniques like Markov Chain Monte Carlo are
-popular.  We provide a user-friendly interface to constructing these networks
-and running inference using the rjags package.  Econometric analyses (maximum
-expected utility under competing policies, value of information) involving
-decision and utility nodes are also supported.")
-    (license license:expat)))
-
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
@@ -4296,13 +4254,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hockeystick" version))
               (sha256
                (base32
-                "1zgqfl7n4whndbl6r00dy8xna1f2habfq0cly6mpka3w7qlcph1g"))))
+                "0yzkrhz2nl3jdrj3dy5clhhm0pjxdqil59dwpq49cl46yq8b6lrb"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify

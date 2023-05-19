@@ -1319,40 +1319,6 @@ al. (2019) <DOI:10.1093/sysbio/syy045>, and Clavel & Morlon (2020)
 <DOI:10.1093/sysbio/syaa010>.")
     (license license:gpl2+)))
 
-(define-public r-mvmonitoring
-  (package
-    (name "r-mvmonitoring")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mvMonitoring" version))
-              (sha256
-               (base32
-                "0nfkcbi29fprz3mb7rrnn2rvixi4wmfmdsfsw219hj21vafk1bqz"))))
-    (properties `((upstream-name . "mvMonitoring")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-robustbase
-                             r-rlang
-                             r-plyr
-                             r-lazyeval
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gabrielodom/mvMonitoring")
-    (synopsis
-     "Multi-State Adaptive Dynamic Principal Component Analysis for Multivariate Process Monitoring")
-    (description
-     "Use multi-state splitting to apply Adaptive-Dynamic PCA (ADPCA) to data
-generated from a continuous-time multivariate industrial or natural process.
-Employ PCA-based dimension reduction to extract linear combinations of relevant
-features, reducing computational burdens.  For a description of ADPCA, see
-<doi:10.1007/s00477-016-1246-2>, the 2016 paper from Kazor et al.  The
-multi-state application of ADPCA is from a manuscript under current revision
-entitled \"Multi-State Multivariate Statistical Process Control\" by Odom,
-Newhart, Cath, and Hering, and is expected to appear in Q1 of 2018.")
-    (license license:gpl2)))
-
 (define-public r-mvmise
   (package
     (name "r-mvmise")
@@ -10452,6 +10418,36 @@ nearest neighbours).  The philosophy of the package is described in Å lenker e
 al.  2022.")
     (license license:gpl3)))
 
+(define-public r-morphoscape
+  (package
+    (name "r-morphoscape")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Morphoscape" version))
+              (sha256
+               (base32
+                "1f4cj5086r1849dwmha8drf7jq56p7bp0fj2liqksppy7gxmdrs4"))))
+    (properties `((upstream-name . "Morphoscape")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-spatial
+                             r-sp
+                             r-scales
+                             r-ggplot2
+                             r-concaveman
+                             r-automap
+                             r-alphahull))
+    (native-inputs (list r-knitr))
+    (home-page "https://blakedickson.github.io/Morphoscape/")
+    (synopsis "Computation and Visualization of Adaptive Landscapes")
+    (description
+     "This package implements adaptive landscape methods first described by Polly et
+al. (2016) <doi:10.1080/02724634.2016.1111225> for the integration, analysis and
+visualization of biological trait data on a phenotypic morphospace - typically
+defined by shape metrics.")
+    (license license:gpl2+)))
+
 (define-public r-morphomap
   (package
     (name "r-morphomap")
@@ -14209,13 +14205,13 @@ parliament.  Documentation for the API itself can be found here:
 (define-public r-mnet
   (package
     (name "r-mnet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mnet" version))
               (sha256
                (base32
-                "1wvdz3l8bam7q9wynkd0xh44mi8lb8qmz9nqpbr46fvj71kpjivw"))))
+                "0k42gya9hklpwh5h269ib6d6kw76jx65bckbm4j55l22m2i0giyz"))))
     (properties `((upstream-name . "mnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-mlvar r-foreach r-doparallel))
@@ -19679,13 +19675,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.4.9")
+    (version "0.4.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "misty" version))
               (sha256
                (base32
-                "1zn22wykrfwwyak074kwp6dyswxfc2yaajw0bkdgngd59zq581si"))))
+                "0vspbqyngw7p5a7jbcxf8259vcrj1hrxgfsqmycm2s0cvq3z954k"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -25611,13 +25607,13 @@ conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.
 (define-public r-metevalue
   (package
     (name "r-metevalue")
-    (version "0.1.14")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metevalue" version))
               (sha256
                (base32
-                "1wfydiam9wcf5ilr8wpji1by5r9bs5vlhcv0vpjlavzfdjynim49"))))
+                "0w1nri5y6zcqmsc6k6nlsavg8ifk1bv07kg93gpg9vvsfxcpy7jn"))))
     (properties `((upstream-name . "metevalue")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-psych r-dplyr))
@@ -36521,13 +36517,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.9.1")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovchain" version))
               (sha256
                (base32
-                "1kb5dvanrwy6rqyz15wqw2rxi2bk5rnbfdhfvwk6fsn0vm4rax5w"))))
+                "1p8vjz8yfrbn0i4qz249lsrjvgayzcj97n51xwmi7bp7zvk2lx0r"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -36536,7 +36532,7 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
                              r-matrix
                              r-igraph
                              r-expm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rticles r-rmarkdown r-knitr r-bookdown))
     (home-page "https://github.com/spedygiorgio/markovchain/")
     (synopsis "Easy Handling Discrete Time Markov Chains")
     (description
@@ -36544,8 +36540,10 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 time Markov chains more easily.  In addition functions to perform statistical
 (fitting and drawing random variates) and probabilistic (analysis of their
 structural proprieties) analysis are provided.  See Spedicato (2017)
-<doi:10.32614/RJ-2017-036>.")
-    (license license:gpl2)))
+<doi:10.32614/RJ-2017-036>.  Some functions for continuous times Markov chains
+depends on the suggested ctmcd package, that, as May 2023, can be retrieved from
+<https://cran.r-project.org/src/contrib/Archive/ctmcd/ctmcd_1.4.2.tar.gz>.")
+    (license license:expat)))
 
 (define-public r-markophylo
   (package

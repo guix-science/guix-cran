@@ -5541,13 +5541,13 @@ Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
 (define-public r-bootur
   (package
     (name "r-bootur")
-    (version "1.0.0")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootUR" version))
               (sha256
                (base32
-                "1v0yg5ldp37sm69wphhxsc62n2l8fnlagjxl83kg25waljqg95h1"))))
+                "0wqirnj01jfn0q9sa36qixmzf8n8m1x5rrp348brzfbasm0gl9j6"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca
@@ -13952,6 +13952,31 @@ utilizing output from several programs that can fit confirmatory factor analysis
 or item response models.")
     (license license:gpl3+)))
 
+(define-public r-bidistances
+  (package
+    (name "r-bidistances")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "BIDistances" version))
+              (sha256
+               (base32
+                "1ajwa7ib0m3krhizi905rzkdqm9fhcypm58yqn4c6hnq4kpc9fm1"))))
+    (properties `((upstream-name . "BIDistances")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-paralleldist))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BIDistances")
+    (synopsis "Bioinformatic Distances")
+    (description
+     "This package provides a few high-performant methods for computing distances
+measures for bioinformatics data.  The weighted euclidean distance can be
+computed with OpenCL on the GPU or with a parallelized version on the CPU. Other
+important distance measures for bioinformatics data are selected from the R
+package parallelDist'.  A special distance measure for the Gene Ontology is
+available.")
+    (license license:gpl3)))
+
 (define-public r-bidimregression
   (package
     (name "r-bidimregression")
@@ -16206,6 +16231,39 @@ the unit hydrograph in a linear storage cascade, convert lists to data.frames
 and arrays, fit multiple functions.")
     (license license:gpl2+)))
 
+(define-public r-bernadette
+  (package
+    (name "r-bernadette")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Bernadette" version))
+              (sha256
+               (base32
+                "1wzk1snpjbjqn3z9vh05l61pmzd1kr359xjzf6pvdm569vzjaq7s"))))
+    (properties `((upstream-name . "Bernadette")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://bernadette-eu.github.io/")
+    (synopsis
+     "Bayesian Inference and Model Selection for Stochastic Epidemics")
+    (description
+     "Bayesian analysis for stochastic extensions of non-linear dynamic systems using
+advanced computational algorithms.  Described in Bouranis, L., Demiris, N.,
+Kalogeropoulos, K., and Ntzoufras, I. (2022) <arXiv:2211.15229>.")
+    (license license:gpl3+)))
+
 (define-public r-bergm
   (package
     (name "r-bergm")
@@ -17153,45 +17211,6 @@ programming interfaces in R that provides a flexible framework for handling
 common HTTP-requests, errors, logging, and an ability to integrate any R code as
 server middle-ware.")
     (license license:gpl3)))
-
-(define-public r-beadplexr
-  (package
-    (name "r-beadplexr")
-    (version "0.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "beadplexr" version))
-              (sha256
-               (base32
-                "1n37qk4p2kgcrb2w4xmgnrgibjv0pdmlzd1y0c1z6njszg2livgz"))))
-    (properties `((upstream-name . "beadplexr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-raster
-                             r-purrr
-                             r-mclust
-                             r-magrittr
-                             r-ggplot2
-                             r-fpc
-                             r-drc
-                             r-dplyr
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/ustervbo/beadplexr")
-    (synopsis "Analysis of Multiplex Cytometric Bead Assays")
-    (description
-     "Reproducible and automated analysis of multiplex bead assays such as CBA (Morgan
-et al.  2004; <doi: 10.1016/j.clim.2003.11.017>), LEGENDplex (Yu et al.  2015;
-<doi: 10.1084/jem.20142318>), and MACSPlex (Miltenyi Biotec 2014; Application
-note: Data acquisition and analysis without the MACSQuant analyzer;
-<https://www.miltenyibiotec.com/upload/assets/IM0021608.PDF>).  The package
-provides functions for streamlined reading of fcs files, and identification of
-bead clusters and analyte expression.  The package eases the calculation of
-standard curves and the subsequent calculation of the analyte concentration.")
-    (license license:expat)))
 
 (define-public r-beach
   (package

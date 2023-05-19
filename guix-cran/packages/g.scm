@@ -7343,13 +7343,13 @@ Taillandier, A. Habbal (2020) <arXiv:1902.06565v2>.")
 (define-public r-gpg
   (package
     (name "r-gpg")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gpg" version))
               (sha256
                (base32
-                "1yysjv335mq6lpdc01yiv56zhs0085bdlanh74k3ahjbszh9cy27"))))
+                "0k2f00l400dcxa8akhy48a34w7nhbdmpq3nz6lbwp0cqa7aj678z"))))
     (properties `((upstream-name . "gpg")))
     (build-system r-build-system)
     (propagated-inputs (list r-curl r-askpass))
@@ -18059,13 +18059,13 @@ Software: <doi:10.18637/jss.v106.i06>.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gfoRmula" version))
               (sha256
                (base32
-                "12xl64qh25rbpzcd2zlpadldalfsn0hkrx12mgznxk5r841iiy9d"))))
+                "1f6wddkj3mshk68qbkjfimwb8ws3xflnldilgy8h0dbcf7f14hyz"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -25841,6 +25841,33 @@ package also provides an interface to the SuiteSparse Matrix Collection,
 benchmarks collected from a wide range of applications.")
     (license license:lgpl2.0+)))
 
+(define-public r-gasp
+  (package
+    (name "r-gasp")
+    (version "1.0.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GaSP" version))
+              (sha256
+               (base32
+                "14wjg5zgas6zj98qlwjdmr32byrn6bazg1dxpjh02n6md5dfysbp"))))
+    (properties `((upstream-name . "GaSP")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GaSP")
+    (synopsis "Train and Apply a Gaussian Stochastic Process Model")
+    (description
+     "Train a Gaussian stochastic process model of an unknown function, possibly
+observed with error, via maximum likelihood or maximum a posteriori (MAP)
+estimation, run model diagnostics, and make predictions, following Sacks, J.,
+Welch, W.J., Mitchell, T.J., and Wynn, H.P. (1989) \"Design and Analysis of
+Computer Experiments\", Statistical Science, <doi:10.1214/ss/1177012413>.
+Perform sensitivity analysis and visualize low-order effects, following
+Schonlau, M. and Welch, W.J. (2006), \"Screening the Input Variables to a
+Computer Model Via Analysis of Variance and Visualization\",
+<doi:10.1007/0-387-28014-6_14>.")
+    (license license:gpl3)))
+
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
@@ -27496,13 +27523,13 @@ sum of residuals squared).")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.8-4")
+    (version "0.9-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gadget3" version))
               (sha256
                (base32
-                "12s91c0wy0xvy5f89w05rsa8299hbywsp98z0a14l8s18dbgwfrf"))))
+                "1h1xyhqzjks7dcnmf76xxx5kc659r3kafjc6bl07z66cv2zadmgi"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rlang r-matrix r-digest))

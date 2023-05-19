@@ -20558,24 +20558,22 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pins" version))
               (sha256
                (base32
-                "02xay3srzml5p9n3ssxfdxp9jnbw6d7zq11x8wqk3ygs9mz812b6"))))
+                "1ziqg9q9gqjv7m2rgqpki9khsl31am7ylb3jrc2n1ayzlvg8zam9"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-yaml
+    (propagated-inputs (list r-yaml
                              r-withr
                              r-whisker
                              r-tibble
                              r-rlang
                              r-rappdirs
-                             r-openssl
-                             r-mime
+                             r-purrr
                              r-magrittr
                              r-lifecycle
                              r-jsonlite
@@ -20583,7 +20581,6 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
                              r-glue
                              r-generics
                              r-fs
-                             r-filelock
                              r-ellipsis
                              r-digest
                              r-cli))

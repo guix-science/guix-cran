@@ -20769,13 +20769,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.31.0.0")
+    (version "0.32.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatPomp" version))
               (sha256
                (base32
-                "0zjsqpn536644fmyyarkmw46m053mx38k6dl1ahvpca414s0m5rh"))))
+                "01mdxkgkn6fl65yj7wqizy0hh6rhfh2rjy6cviydv4b3nml2sf6k"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -39641,30 +39641,28 @@ are available and have usage examples in R.")
 (define-public r-shiny-exe
   (package
     (name "r-shiny-exe")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shiny.exe" version))
               (sha256
                (base32
-                "14i8b6p94vivzq9djmngvk3n04kim619807gm2y4pzjccp7gjp62"))))
+                "0657ywbnkg3k67321v9rkmfqqrkn89qzyidri0gfhs53c96yrijm"))))
     (properties `((upstream-name . "shiny.exe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AODiakite")
-    (synopsis
-     "Schedule a Task that Runs a shinyApp then Creates a Shortcut in Current Directory")
+    (synopsis "Launch a Shiny Application without Opening R or RStudio")
     (description
      "Launch an application by a simple click without opening R or RStudio.  The
-package has 2 functions of which only one is essential in its use, shiny.exe().
-It generates a script in the open shiny project then creates a task that
-executes this script.  After creating the task, the function is responsible for
-creating a shortcut in the same folder that allows you to launch the task by
-clicking.If you set host = public', the application will be launched on the
-public server to which you are connected.  Thus, all other devices connected to
-the same server will be able to access the application through the link of your
-IPv4 extended by the port.  You can stop the application by leaving the terminal
-opened by the shortcut.")
+package has 3 functions of which only one is essential in its use,
+`shiny.exe()`.  It generates a script in the open shiny project then create a
+shortcut in the same folder that allows you to launch the app by clicking.If you
+set `host = public'`, the application will be launched on the public server to
+which you are connected.  Thus, all other devices connected to the same server
+will be able to access the application through the link of your `IPv4` extended
+by the port.  You can stop the application by leaving the terminal opened by the
+shortcut.")
     (license license:gpl2)))
 
 (define-public r-shiny-blueprint

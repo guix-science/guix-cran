@@ -887,13 +887,13 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
 (define-public r-ottrpal
   (package
     (name "r-ottrpal")
-    (version "1.0.1")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ottrpal" version))
               (sha256
                (base32
-                "02y917r48mqkga27f8019cdbx4mh45dr8l9s2ai1anxgvccnb4yi"))))
+                "07nn49h8a7ag4kk7dibh3idhg5sf0xg3qxbczb8d9hvxssia6h8x"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

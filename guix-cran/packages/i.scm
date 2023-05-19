@@ -1043,6 +1043,30 @@ for faster performance.  Note: iterpc is no longer being maintained.  Users are
 recommended to switch to arrangements'.")
     (license license:gpl2)))
 
+(define-public r-iterors
+  (package
+    (name "r-iterors")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "iterors" version))
+              (sha256
+               (base32
+                "0cvd1c9zmc43ks5sjbii9xvnlrdmyqw3qpf5bkn8c9i0dyrv6ap1"))))
+    (properties `((upstream-name . "iterors")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/crowding/iterors")
+    (synopsis "Fast, Compact Iterators and Tools")
+    (description
+     "This package provides a fresh take on iterators in R. Designed to be
+cross-compatible with the iterators package, but using the nextOr method will
+offer better performance as well as more compact code.  With batteries included:
+includes a collection of iterator constructors and combinators ported and
+refined from the iterators', itertools', and itertools2 packages.")
+    (license license:gpl3+)))
+
 (define-public r-iterlap
   (package
     (name "r-iterlap")
@@ -12765,13 +12789,13 @@ C, B, Br, Cl, K, S, Si, N, H, As, F, I, Na, O, and P.")
 (define-public r-idsl-ufa
   (package
     (name "r-idsl-ufa")
-    (version "1.9")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.UFA" version))
               (sha256
                (base32
-                "1s7y033nnk8qbpv7i6ksx7cxsra14aincrck87im0cj1mhwqbjp2"))))
+                "19kd3zp0864dfwkja4lvkiq58nqfb91jyfq2wm1qp84h9hj4bd8l"))))
     (properties `((upstream-name . "IDSL.UFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-ipa))
@@ -12811,26 +12835,21 @@ adduct formulas.")
 (define-public r-idsl-npa
   (package
     (name "r-idsl-npa")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.NPA" version))
               (sha256
                (base32
-                "13nrbr4dgwcv6zs5d6qlcwig8kanb7bqbhjhiy98y3gj88pwr490"))))
+                "03n23w1sk3pkc59dvvyag0wad0ydww32qgbsdg3xdpbk4mxi4dy2"))))
     (properties `((upstream-name . "IDSL.NPA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl
-                             r-idsl-mxp
-                             r-idsl-ipa
-                             r-idsl-fsa
-                             r-foreach
-                             r-doparallel))
+    (propagated-inputs (list r-readxl r-idsl-mxp r-idsl-ipa r-idsl-fsa))
     (home-page "https://github.com/idslme/idsl.npa")
     (synopsis "Nominal Peak Analysis (NPA)")
     (description
-     "This package provides a pipeline for processing nominal mass spectrometry data
-to create .msp files for untargeted nominal mass data processing.")
+     "This package provides a pipeline to process nominal mass spectrometry data to
+create .msp files for untargeted analyses.")
     (license license:expat)))
 
 (define-public r-idsl-mxp
@@ -12858,13 +12877,13 @@ files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
 (define-public r-idsl-ipa
   (package
     (name "r-idsl-ipa")
-    (version "2.7")
+    (version "2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.IPA" version))
               (sha256
                (base32
-                "1h7q9nf1gx63dsvpnw6qdkmhh1whg6jb26sp2sib6jbyhic83aha"))))
+                "172x91234rzg1g5h99zcccqxl4zij7w1dbbi8d1kc9bz8x1wgp0k"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp))
@@ -12883,16 +12902,15 @@ visualization of extracted ion chromatograms (EICs) and total ion chromatograms
 (define-public r-idsl-fsa
   (package
     (name "r-idsl-fsa")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.FSA" version))
               (sha256
                (base32
-                "1b6am1cpf01r80lzjq0clg4dbs2j62clv6h8fcb90c6vhivlgaw7"))))
+                "0shg7f628hla70z704qqrqcid0r4c10ilhxdr0w33nnrdd4d3c4p"))))
     (properties `((upstream-name . "IDSL.FSA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-foreach r-doparallel))
     (home-page "https://github.com/idslme/idsl.fsa")
     (synopsis "Fragmentation Spectra Analysis (FSA)")
     (description
@@ -12901,37 +12919,34 @@ format) and .mgf (Mascot generic format) files using mass spectral entropy
 similarity, dot product (cosine) similarity, and normalized Euclidean mass error
 (NEME) followed by intelligent pre-filtering steps for rapid spectra searches.
 IDSL.FSA also provides a number of modules to convert and manipulate .msp and
-.mgf files.")
+.mgf files.  The IDSL.FSA workflow was integrated in the IDSL.CSA and IDSL.NPA
+packages introduced in <doi:10.1101/2023.02.09.527886>.")
     (license license:expat)))
 
 (define-public r-idsl-csa
   (package
     (name "r-idsl-csa")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.CSA" version))
               (sha256
                (base32
-                "0mf8g6rdvdp6gr0xf9d8wld885jpqpazkqh82bafn7bgk1y30qgq"))))
+                "00fa95c9g34bnh8f9mvrw7mja0rmk1r4mdw91pzpxzgsg49jkxp0"))))
     (properties `((upstream-name . "IDSL.CSA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl
-                             r-idsl-mxp
-                             r-idsl-ipa
-                             r-idsl-fsa
-                             r-foreach
-                             r-doparallel))
+    (propagated-inputs (list r-readxl r-idsl-mxp r-idsl-ipa r-idsl-fsa))
     (home-page "https://github.com/idslme/idsl.csa")
     (synopsis
      "Composite Spectra Analysis (CSA) for High-Resolution Mass Spectrometry Analyses")
     (description
      "This package provides a fragmentation spectra detection pipeline for
 high-throughput LC/HRMS data processing using peaklists generated by the
-IDSL.IPA package.  The IDSL.CSA package can deconvolute fragmentation spectra
-from Composite Spectra Analysis (CSA), Data Dependent Acquisition (DDA)
-analysis, and various Data-Independent Acquisition (DIA) methods such as MS^E,
-All-Ion Fragmentation (AIF) and SWATH analysis.")
+IDSL.IPA workflow <doi:10.1021/acs.jproteome.2c00120>.  The IDSL.CSA package can
+deconvolute fragmentation spectra from Composite Spectra Analysis (CSA), Data
+Dependent Acquisition (DDA) analysis, and various Data-Independent Acquisition
+(DIA) methods such as MS^E, All-Ion Fragmentation (AIF) and SWATH-MS analysis.
+The IDSL.CSA package was introduced in <doi:10.1101/2023.02.09.527886>.")
     (license license:expat)))
 
 (define-public r-idsa
@@ -13155,6 +13170,39 @@ article by Linhart et al. (2019) <doi:10.1101/546143>: \"Measuring individual
 identity information in animal signals: Overview and performance of available
 identity metrics\".")
     (license license:cc0)))
+
+(define-public r-idmact
+  (package
+    (name "r-idmact")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "idmact" version))
+              (sha256
+               (base32
+                "1rkrmkmmwrqgj6d1ykjp4xrlb2823ks1pfibqg3pvvly2223wzcn"))))
+    (properties `((upstream-name . "idmact")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mncube/idmact")
+    (synopsis "Interpreting Differences Between Mean ACT Scores")
+    (description
+     "Interpreting the differences between mean scale scores across various forms of
+an assessment can be challenging.  This difficulty arises from different
+mappings between raw scores and scale scores, complex mathematical
+relationships, adjustments based on judgmental procedures, and diverse equating
+functions applied to different assessment forms.  An alternative method involves
+running simulations to explore the effect of incrementing raw scores on mean
+scale scores.  The idmact package provides an implementation of this approach
+based on the algorithm detailed in Schiel (1998)
+<https://www.act.org/content/dam/act/unsecured/documents/ACT_RR98-01.pdf> which
+was developed to help interpret differences between mean scale scores on the
+American College Testing (ACT) assessment.  The function idmact_subj() within
+the package offers a framework for running simulations on subject-level scores.
+In contrast, the idmact_comp() function provides a framework for conducting
+simulations on composite scores.")
+    (license license:expat)))
 
 (define-public r-idm
   (package

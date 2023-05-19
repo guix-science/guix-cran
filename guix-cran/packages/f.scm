@@ -15158,34 +15158,50 @@ H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
 (define-public r-fdacluster
   (package
     (name "r-fdacluster")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdacluster" version))
               (sha256
                (base32
-                "1rr1hcnpzya53h09p4yc1784kzrw7wlcylax4x2pdp1grzf1wakq"))))
+                "1r0xdrh52fxpmhj8b99adzpqi3bqpw7kj17913sfvi0yargkqxv5"))))
     (properties `((upstream-name . "fdacluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-progressr
                              r-nloptr
-                             r-magrittr
+                             r-lpsolve
                              r-ggplot2
-                             r-dplyr))
+                             r-furrr
+                             r-forcats
+                             r-fdasrvf
+                             r-dplyr
+                             r-dbscan
+                             r-cluster
+                             r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://astamm.github.io/fdacluster/index.html")
     (synopsis "Joint Clustering and Alignment of Functional Data")
     (description
-     "Revisited clustering approaches to accommodate functional data by allowing to
-jointly align the data during the clustering process.  Currently, shift,
-dilation and affine transformations only are available to perform alignment.
-The k-mean algorithm has been extended to integrate alignment and is fully
-parallelized.  Hierarchical clustering will soon be available as well.
-References: Sangalli L.M., Secchi P., Vantini S., Vitelli V. (2010) \"k-mean
-alignment for curve clustering\" <doi:10.1016/j.csda.2009.12.008>.")
+     "Implementations of the popular k-means and hierarchical agglomerative clustering
+(HAC) methods for functional data which allows for jointly aligning and
+clustering curves.  It supports functional data defined on one-dimensional
+domains but possibly evaluating in multivariate codomains.  It supports
+functional data defined in arrays but also via the fd and funData classes for
+functional data defined in the fda and funData packages respectively.  It
+currently supports shift, dilation and affine warping functions for functional
+data defined on the real line and uses the SRSF framework to handle
+boundary-preserving warping for functional data defined on a specific interval.
+Main reference for the k-means algorithm: Sangalli L.M., Secchi P., Vantini S.,
+Vitelli V. (2010) \"k-mean alignment for curve clustering\"
+<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRSF framework:
+Tucker, J. D., Wu, W., & Srivastava, A. (2013) \"Generative models for functional
+data using phase and amplitude separation\" <doi:10.1016/j.csda.2012.12.001>.")
     (license license:gpl3+)))
 
 (define-public r-fdaacf
