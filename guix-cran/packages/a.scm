@@ -8677,13 +8677,13 @@ through integer programming.  Communications in Statistics - Theory and Methods
 (define-public r-aopdata
   (package
     (name "r-aopdata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aopdata" version))
               (sha256
                (base32
-                "11d9aipqcasrpi0fl2qnnqmg4wlsj3y9vy9cym4ka9jn2x1xxjns"))))
+                "0vjx3zzfr4si09g6f3vk6yl5p4nr5x147ng2578mpa2kwf47yad8"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-httr r-data-table r-curl r-checkmate))

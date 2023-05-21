@@ -9155,13 +9155,13 @@ Learning, Support Vector Machines and Bayesian Methods.")
 (define-public r-predictnmb
   (package
     (name "r-predictnmb")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "predictNMB" version))
               (sha256
                (base32
-                "09ha78hqpqf8pbygb0pyg3c7cvn20q0gw91xvvwfjiknwp1q6k8m"))))
+                "06hhik21d3ah2w6jsr5qixn5mdfrcsba9dnj5hmvrfqpzpcq330k"))))
     (properties `((upstream-name . "predictNMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15984,13 +15984,13 @@ pharmacometric models.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.1")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmxcode" version))
               (sha256
                (base32
-                "1w780jdds9v5a6nsmnl4pfp9zr7z3y3adbr1qgiksy0vra3m0av3"))))
+                "0gzx142xi03mydlrzjzvl378jcqpp7a69p0j6zd8dggc4zva8c2q"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -17140,20 +17140,20 @@ color space based tools to modify colors or palettes.")
 (define-public r-plottools
   (package
     (name "r-plottools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PlotTools" version))
               (sha256
                (base32
-                "1dwyphms7zrn3hkayy24jvabd79sjsk0kkbisk1dj6242d5ncywv"))))
+                "00m98knn8swr430a1r4lnn9cby4w977vk80wfxsdm4pv5gsrl9z0"))))
     (properties `((upstream-name . "PlotTools")))
     (build-system r-build-system)
     (home-page "https://ms609.github.io/PlotTools/")
     (synopsis "Add Continuous Legends to Plots")
     (description
      "Annotate plots with legends for continuous variables and colour spectra using
-the base graphics plotting tools.")
+the base graphics plotting tools; and manipulate irregular polygons.")
     (license license:gpl2+)))
 
 (define-public r-plotsemm
@@ -18946,21 +18946,23 @@ binomial distribution.")
 (define-public r-planegeometry
   (package
     (name "r-planegeometry")
-    (version "1.3.1")
+    (version "1.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PlaneGeometry" version))
               (sha256
                (base32
-                "1ylf7770pz16gh823kf3r2lh5cipkm81s1d9nwp01rapi4zzb6cd"))))
+                "1na7rjkshmg4m0fmksrqbm5zzkb8aynv4n2ry27v5jvm9ji4jrw9"))))
     (properties `((upstream-name . "PlaneGeometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-uniformly
                              r-stringr
                              r-sdpt3r
+                             r-rcdd
                              r-r6
-                             r-gsl
-                             r-fitconic))
+                             r-fitconic
+                             r-cvxr
+                             r-carlson))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/PlaneGeometry")
     (synopsis "Plane Geometry")
@@ -27890,13 +27892,13 @@ models.  Some original methods including Boshnakov & Iqelan (2009)
 (define-public r-pct
   (package
     (name "r-pct")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pct" version))
               (sha256
                (base32
-                "0bnqkrlgr78bccvwwwcscy659ivrpgj8vb8bmh4416ni3hvsk2s9"))))
+                "15rshwdrfkr0ahnywss0qqbcyfxakknv9ffvb58nzc960c97zmy8"))))
     (properties `((upstream-name . "pct")))
     (build-system r-build-system)
     (propagated-inputs (list r-stplanr r-sf r-readr r-crul r-boot))

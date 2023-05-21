@@ -7231,6 +7231,32 @@ Johnson, F., & Sharma, A. (2020) <doi:10.1016/j.envsoft.2020.104907>, and Jiang,
 Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
     (license license:gpl3)))
 
+(define-public r-washi
+  (package
+    (name "r-washi")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "washi" version))
+              (sha256
+               (base32
+                "0b2fdnp92jny59q1qvgi3al83294pg8blfgg0q2lr4phjicxmcp5"))))
+    (properties `((upstream-name . "washi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-officer
+                             r-ggplot2
+                             r-flextable
+                             r-extrafont
+                             r-cli))
+    (home-page "https://github.com/WA-Department-of-Agriculture/washi")
+    (synopsis "Washington Soil Health Initiative Branding")
+    (description
+     "Create plots and tables in a consistent style with WaSHI (Washington Soil Health
+Initiative) branding.  Use washi to easily style your ggplot2 plots and
+flextable tables.")
+    (license license:expat)))
+
 (define-public r-washex
   (package
     (name "r-washex")

@@ -3992,13 +3992,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.21.0")
+    (version "1.21.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "surveillance" version))
               (sha256
                (base32
-                "17k5fxdr4cfgigvq03701z4assnx20xkq329mw2avv2dvic0mybn"))))
+                "1a33n91pp53rdfdr96d9sim00xr3bp6diaiqbc97zvri6ib35j8z"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5441,32 +5441,6 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 <doi:10.1117/12.2236939>.")
     (license license:bsd-3)))
 
-(define-public r-sundialr
-  (package
-    (name "r-sundialr")
-    (version "0.1.4.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "sundialr" version))
-              (sha256
-               (base32
-                "1ln8zbihxfa7dnbhrm254l8qzdw16fhva58p5bd0p8j43grq6qrv"))))
-    (properties `((upstream-name . "sundialr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sn248/sundialr")
-    (synopsis
-     "An Interface to 'SUNDIALS' Ordinary Differential Equation (ODE) Solvers")
-    (description
-     "This package provides a way to call the functions in SUNDIALS C ODE solving
-library (<https://computing.llnl.gov/projects/sundials>).  Currently the serial
-version of ODE solver, CVODE', sensitivity calculator CVODES and differential
-algebraic solver IDA from the SUNDIALS library are implemented.  The package
-requires ODE to be written as an R or Rcpp function and does not require the
-SUNDIALS library to be installed on the local machine.")
-    (license license:bsd-3)))
-
 (define-public r-sunclarco
   (package
     (name "r-sunclarco")
@@ -6578,28 +6552,6 @@ You are also encouraged to visit the Computational Stylistics Group's website
 <https://computationalstylistics.github.io/>, where a reasonable amount of
 information about the package and related projects are provided.")
     (license license:gpl3+)))
-
-(define-public r-stylest
-  (package
-    (name "r-stylest")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stylest" version))
-              (sha256
-               (base32
-                "1c036zsn1gi5vhsz37p56wz1bcr3pwdp2k62j7ikmrrnkcv2w9kz"))))
-    (properties `((upstream-name . "stylest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-corpus))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/leslie-huang/stylest")
-    (synopsis "Estimating Speaker Style Distinctiveness")
-    (description
-     "Estimates distinctiveness in speakers (authors') style.  Fits models that can be
-used for predicting speakers of new texts.  Methods developed in Huang et al
-(2020) <doi:10.1017/pan.2019.49>.")
-    (license license:gpl3)))
 
 (define-public r-stxplore
   (package
@@ -10035,31 +9987,6 @@ select best model with methods of forward selection, backward elimination,
 bidirectional selection and best subset selection.  A widely used selection
 criteria are available for variable selection.")
     (license license:expat)))
-
-(define-public r-stepr
-  (package
-    (name "r-stepr")
-    (version "2.1-4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "stepR" version))
-              (sha256
-               (base32
-                "18n368q7kc6q46ilvsvzjlrnlc93dgz01dzi4n10cn9sa2cvk496"))))
-    (properties `((upstream-name . "stepR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-r-cache r-lowpassfilter r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stepR")
-    (synopsis "Multiscale Change-Point Inference")
-    (description
-     "Allows fitting of step-functions to univariate serial data where neither the
-number of jumps nor their positions is known by implementing the multiscale
-regression estimators SMUCE (K. Frick, A. Munk and H. Sieling, 2014)
-<doi:10.1111/rssb.12047> and HSMUCE (F. Pein, H. Sieling and A. Munk, 2017)
-<doi:10.1111/rssb.12202>.  In addition, confidence intervals for the
-change-point locations and bands for the unknown signal can be obtained.")
-    (license license:gpl3)))
 
 (define-public r-stepplr
   (package
@@ -26290,6 +26217,46 @@ when collapsing levels to coarser strata.  Details are described in Groemping
 required, by delayed assignment.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-snvecr
+  (package
+    (name "r-snvecr")
+    (version "3.7.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "snvecR" version))
+              (sha256
+               (base32
+                "0hbzrqp7f014ppccdm8zvqdryp18i9qcmbwn4pnl0hqy6yp84yn5"))))
+    (properties `((upstream-name . "snvecR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pracma
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-desolve
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://japhir.github.io/snvecR/")
+    (synopsis "Calculate Earthâs Obliquity and Precession in the Past")
+    (description
+     "Easily calculate precession and obliquity from an orbital solution (defaults to
+ZB18a from Zeebe and Lourens (2019) <doi:10.1126/science.aax0612>) and assumed
+or reconstructed values for tidal dissipation (Td) and dynamical ellipticity
+(Ed).  This is a translation and adaptation of the C-code in the supplementary
+material to Zeebe and Lourens (2022) <doi:10.1029/2021PA004349>, with further
+details on the methodology described in Zeebe (2022)
+<doi:10.3847/1538-3881/ac80f8>.  The name of the C-routine is snvec, which
+refers to the key units of computation: spin vector s and orbit normal vector n.")
+    (license license:gpl3+)))
+
 (define-public r-snsmart
   (package
     (name "r-snsmart")
@@ -40925,6 +40892,38 @@ rasterized remote sensing data can be used, enabling data-driven stratifications
 and sampling approaches.")
     (license license:gpl3+)))
 
+(define-public r-sgs
+  (package
+    (name "r-sgs")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sgs" version))
+              (sha256
+               (base32
+                "0j1lcq8h4zz5786fmybm94fpb7s1dm6qjb8s9nqrpj76nblxkr0x"))))
+    (properties `((upstream-name . "sgs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slope
+                             r-rlab
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-faux
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ff1201/sgs")
+    (synopsis
+     "Sparse-Group SLOPE: Adaptive Bi-Level Selection with FDR Control")
+    (description
+     "Implementation of Sparse-group SLOPE: Adaptive bi-level with FDR-control (Feser
+et al. (2023) <arXiv:2305.09467>).  Linear and logistic regression models are
+supported, both of which can be fit using k-fold cross-validation.  Dense and
+sparse input matrices are supported.  In addition, a general adaptive three
+operator splitting (ATOS) implementation is provided.")
+    (license license:gpl3+)))
+
 (define-public r-sgr
   (package
     (name "r-sgr")
@@ -46580,21 +46579,16 @@ data export the package works with is a standard non-rectangular export.")
 (define-public r-secrlinear
   (package
     (name "r-secrlinear")
-    (version "1.1.4")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secrlinear" version))
               (sha256
                (base32
-                "1qa0vapnhiblz57jrbj9zd1gdmxc1nzzq41b4464373pjfvm5wvj"))))
+                "0bb8wy9rmlznlpcv2ffv1pgxv9lnsn1ppy3z6zqbnr82c57dk44v"))))
     (properties `((upstream-name . "secrlinear")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-secr
-                             r-rgdal
-                             r-mass
-                             r-maptools
-                             r-igraph))
+    (propagated-inputs (list r-sp r-sf r-secr r-mass r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://www.otago.ac.nz/density/")
     (synopsis "Spatially Explicit Capture-Recapture for Linear Habitats")
@@ -46793,16 +46787,16 @@ costs from fleet segment to metier level.")
 (define-public r-secdim
   (package
     (name "r-secdim")
-    (version "2.2")
+    (version "3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SecDim" version))
               (sha256
                (base32
-                "1v4rs4smid5jd2k181p1v1gk5w7yp28cw70jpb1gzw651qs1i4nm"))))
+                "04l4qpw409dj5i494vmf7vmksis6910599gh259nbyv0pdfw5svr"))))
     (properties `((upstream-name . "SecDim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo))
+    (propagated-inputs (list r-rcpparmadillo r-geosphere))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SecDim")
     (synopsis "The Second Dimension of Spatial Association")
@@ -46810,9 +46804,10 @@ costs from fleet segment to metier level.")
      "Most of the current methods explore spatial association using observations at
 sample locations, which are defined as the first dimension of spatial
 association (FDA).  The proposed concept of the second dimension of spatial
-association (SDA) aims to extract in-depth information about the geographical
-environment from locations outside sample locations for exploring spatial
-association.")
+association (SDA), as described in Yongze Song (2022)
+<doi:10.1016/j.jag.2022.102834>, aims to extract in-depth information about the
+geographical environment from locations outside sample locations for exploring
+spatial association.")
     (license license:gpl2)))
 
 (define-public r-seawaveq
@@ -47912,13 +47907,13 @@ Differential Equations With R Examples, ISBN 978-0-387-75838-1, Springer, NY.")
 (define-public r-sdctable
   (package
     (name "r-sdctable")
-    (version "0.32.4")
+    (version "0.32.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sdcTable" version))
               (sha256
                (base32
-                "07841anyxpxjm1r5yhcxjndpnbxclrdsf9ipppgysyk0lj2ij636"))))
+                "0fw2g541cqylj6l716x50yrp86kkdsz3cm7d1zzvvz48m9v6iv00"))))
     (properties `((upstream-name . "sdcTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -49115,13 +49110,13 @@ sequencing) data <https://github.com/fumi-github/scPloidy>.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.2.3")
+    (version "2.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scpi" version))
               (sha256
                (base32
-                "0fgydflbv4qvx1axdsz1hznacl6xzm0a3nnls8qlmxbah3pdhk8p"))))
+                "0yvxwq429qwf2v0shci8dk6w7rqcz15060ykrpv3wac42jw8qjzz"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -53843,13 +53838,13 @@ Spatial Sampling\".")
 (define-public r-samplingr
   (package
     (name "r-samplingr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "samplingR" version))
               (sha256
                (base32
-                "0wrnyqnjvd2bhifhar14nh71m6qfwys7jnyms04zsl8fjpmsh9c2"))))
+                "0n5iq8bbb87k4dn5p94afcp55hz5lk0myf09xhnsl0y0w4k3gr6k"))))
     (properties `((upstream-name . "samplingR")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -53858,7 +53853,7 @@ Spatial Sampling\".")
     (description
      "This package provides functions to take samples of data, sample size estimation
 and getting useful estimators such as total, mean, proportion about its
-population using simple random sampling and stratified sampling.")
+population using simple random, stratified and systematic sampling.")
     (license license:gpl2)))
 
 (define-public r-samplingestimates

@@ -2360,13 +2360,13 @@ input vector.  Reference: Quentin F. Stout (2008)
 (define-public r-uniformly
   (package
     (name "r-uniformly")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uniformly" version))
               (sha256
                (base32
-                "1xfwnklzmz72kp5qsb5zh3p6lwngpiaw5b4drjd41h9xvxdb3dyd"))))
+                "1vb1dg2qjnv7vr4nbnmif5xjzh2yv6mjm5l8227r7bvijgfd8hhd"))))
     (properties `((upstream-name . "uniformly")))
     (build-system r-build-system)
     (propagated-inputs (list r-pgnorm))
@@ -3741,13 +3741,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "4.0.1")
+    (version "4.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UComp" version))
               (sha256
                (base32
-                "0hzcbrqxzasl79zzdj2zk6v5jf5mszm2xf868cnr19f6zp5a1c45"))))
+                "0k89palrdifgrz45ar3dcnrwpxwb01nqsg9k1qkwrilhyj9c254k"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsoutliers
@@ -3757,7 +3757,6 @@ datasets from 1998-2014.")
                              r-gridextra
                              r-ggplot2
                              r-ggforce))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=UComp")
     (synopsis "Automatic Unobserved Components and Other Time Series Models")
     (description

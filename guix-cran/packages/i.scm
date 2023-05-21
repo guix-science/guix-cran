@@ -1396,6 +1396,28 @@ H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D., Lindon, J. C., Holmes, E.
 (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.")
     (license license:gpl3+)))
 
+(define-public r-iss
+  (package
+    (name "r-iss")
+    (version "0.1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ISS" version))
+              (sha256
+               (base32
+                "1z4i7rizwvsgbch70nb0in5r1402cr38rkjs0kcvdrnwa7rkb8mh"))))
+    (properties `((upstream-name . "ISS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://cran.r-project.org/package=ISS")
+    (synopsis "Isotonic Subgroup Selection")
+    (description
+     "Methodology for subgroup selection in the context of isotonic regression with
+sub-Gaussian errors, including, in particular, options for the classification
+setting.  See the documentation of ISS().  Details can be found in the paper by
+MÃ¼ller, Reeve, Cannings and Samworth (2023) <arXiv:2305.04852>.")
+    (license license:gpl3+)))
+
 (define-public r-isr
   (package
     (name "r-isr")
@@ -1769,13 +1791,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "5.2")
+    (version "5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotRgui" version))
               (sha256
                (base32
-                "00v2vlfzqbwdgpp2mrqcizzs6zkrjcrv6kj7l24ghplvljmz33lk"))))
+                "00g8k06bd5l6nifks60bp23l9af2wrrvx93cs4kj0dkqqzd0y9hs"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinylight r-isoplotr))
@@ -1792,13 +1814,13 @@ toolbox.")
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "5.2")
+    (version "5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IsoplotR" version))
               (sha256
                (base32
-                "1c2raxaayks7vzp71xb8xzd95gjm101xi85r23q52lkzjjrj164h"))))
+                "034i7d01zqam1nyaqvvgg4gsllclw88fpia0il3m0sf3rh5s45km"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

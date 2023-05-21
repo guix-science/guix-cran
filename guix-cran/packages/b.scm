@@ -1176,13 +1176,13 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.8")
+    (version "2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "buildmer" version))
               (sha256
                (base32
-                "0czkv2cpdxwj118f37zh81am4my1l6xmbbjr47k8mlw5kkahfh3l"))))
+                "1jcn7isgg2dh84rhyz8xnh3xwxbcli70hf70dbjm4sq6a854kkk3"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mgcv r-lme4))
@@ -1990,13 +1990,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.1")
+    (version "0.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspm" version))
               (sha256
                (base32
-                "1wd6khqwi7g9c3chf9idiv3paa9xc2l1p6vvg0x0061bk3syjm66"))))
+                "0m74l1nc2bx0n7bldqa18qpm4ls4kq74g76g2ki6vaf9klgv321d"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -8584,13 +8584,13 @@ omics covariate data.  BMC Bioinformatics 20:358.
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "3.1-1")
+    (version "3.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "blockCV" version))
               (sha256
                (base32
-                "1p8qyd1qvy4p6d5p0xbx9kfcrf8zrnd50056dmami7dj8zapl995"))))
+                "07asa9w5yfz9v44lxm1qcx87wd9zy2ycpsdbdf7bx3lc997w83ag"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp))
@@ -15263,13 +15263,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.4.6")
+    (version "0.4.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "1722wfa03pcbssyq38w0phjyzvrg0vk2x0qmplb71pg4qqa9hkvs"))))
+                "0782k3jvalpcp2amxyqy8n2z5011cy4srgvb1qcj9pi6ip33q76d"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17819,6 +17819,29 @@ features to visualize, document, and report data quality â which is essenti
 for making data quality assessment transparent and reproducible.  The reference
 for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
     (license license:gpl3+)))
+
+(define-public r-bcv
+  (package
+    (name "r-bcv")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bcv" version))
+              (sha256
+               (base32
+                "1fs7pj8lsn96cr1r5bagp9mq869q3pj9k71r7j1xi0i5l06pz90y"))))
+    (properties `((upstream-name . "bcv")))
+    (build-system r-build-system)
+    (home-page "https://github.com/michbur/bcv")
+    (synopsis "Cross-Validation for the SVD (Bi-Cross-Validation)")
+    (description
+     "This package provides methods for choosing the rank of an SVD (singular value
+decomposition) approximation via cross validation.  The package provides both
+Gabriel-style \"block\" holdouts and Wold-style \"speckled\" holdouts.  It also
+includes an implementation of the SVDImpute algorithm.  For more information
+about Bi-cross-validation, see Owen & Perry's 2009 AoAS article (at
+<arXiv:0908.2062>) and Perry's 2009 PhD thesis (at <arXiv:0909.3052>).")
+    (license license:bsd-3)))
 
 (define-public r-bct
   (package

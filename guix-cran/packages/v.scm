@@ -8,14 +8,14 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages gcc)
-  #:use-module (gnu packages geo)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1378,6 +1378,34 @@ ed.)â, 2015, ISBN: 9780133964028).  Zura Kakushadze, Juan A. Serur (â1
 Trading Strategiesâ, 2018, ISBN: 9783030027919).  John C. Hull (âOptions,
 Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
+
+(define-public r-vol2birdr
+  (package
+    (name "r-vol2birdr")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vol2birdR" version))
+              (sha256
+               (base32
+                "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
+    (properties `((upstream-name . "vol2birdR")))
+    (build-system r-build-system)
+    (inputs (list zlib proj hdf5 gsl))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rcppgsl
+                             r-rcpp
+                             r-pkgbuild
+                             r-assertthat))
+    (native-inputs (list r-knitr pkg-config))
+    (home-page "https://github.com/adokter/vol2birdR/")
+    (synopsis "Vertical Profiles of Biological Signals in Weather Radar Data")
+    (description
+     "R implementation of the vol2bird software for generating vertical profiles of
+birds and other biological signals in weather radar data.  See Dokter et al.
+(2011) <doi:10.1098/rsif.2010.0116> for a paper describing the methodology.")
+    (license license:lgpl3+)))
 
 (define-public r-voice
   (package

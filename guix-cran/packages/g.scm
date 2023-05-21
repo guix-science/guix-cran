@@ -13497,13 +13497,13 @@ queries can be accessed according the following scheme:
 (define-public r-gifski
   (package
     (name "r-gifski")
-    (version "1.6.6-1")
+    (version "1.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gifski" version))
               (sha256
                (base32
-                "1qfhg19iclsdyb583sf25fh7am951c7q53z1s64r3vv1ivdnn18k"))))
+                "05k4vkckrhrwif39bb8v0a0mzb491plfzzfvmj8q2kfipcq16x7q"))))
     (properties `((upstream-name . "gifski")))
     (build-system r-build-system)
     (inputs (list))
@@ -22498,41 +22498,6 @@ on Genesys (<https://www.genesys-pgr.org>).  Your use of data is subject to
 terms and conditions available at
 <https://www.genesys-pgr.org/content/legal/terms>.")
     (license license:asl2.0)))
-
-(define-public r-genest
-  (package
-    (name "r-genest")
-    (version "1.4.8")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "GenEst" version))
-              (sha256
-               (base32
-                "0kz9n0af79k9f03jrmqbjbspwn87hpbf0jav3nafg8m3ynvzjb3m"))))
-    (properties `((upstream-name . "GenEst")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-shinyjs
-                             r-shiny
-                             r-rcpp
-                             r-mvtnorm
-                             r-matrixstats
-                             r-mass
-                             r-lubridate
-                             r-htmltools
-                             r-hellno
-                             r-gtools
-                             r-gsl
-                             r-dt
-                             r-corpus))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GenEst")
-    (synopsis "Generalized Mortality Estimator")
-    (description
-     "Command-line and shiny GUI implementation of the GenEst models for estimating
-bird and bat mortality at wind and solar power facilities, following Dalthorp,
-et al. (2018) <doi:10.3133/tm7A2>.")
-    (license license:cc0)))
 
 (define-public r-geneset
   (package

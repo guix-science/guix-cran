@@ -636,13 +636,13 @@ available in GarcÃ­a-Callejas, D., Godoy, O., and Bartomeus, I. (2020)
 (define-public r-cxhull
   (package
     (name "r-cxhull")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cxhull" version))
               (sha256
                (base32
-                "1qhzsm59csdndyqmz3pqcsmblsipv28f6wzpq8qylkgak2d877pw"))))
+                "0k68da3sa3bn17aj525m0axk9yqzi6i966z6h95d727phg865rld"))))
     (properties `((upstream-name . "cxhull")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-morpho r-data-table))
@@ -4607,30 +4607,6 @@ master data sets from multiple smaller data sets that do not name or encode
 variables consistently across files.  Based on similar commands in Stata'.")
     (license license:expat)))
 
-(define-public r-crossvalidationcp
-  (package
-    (name "r-crossvalidationcp")
-    (version "1.0-2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crossvalidationCP" version))
-              (sha256
-               (base32
-                "0gwlpfqk3jsamkdx0sjvn4wmmcrdicgparks298hvi4gjlibp7mc"))))
-    (properties `((upstream-name . "crossvalidationCP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wbs r-stepr r-fdrseg r-changepoint))
-    (home-page "https://cran.r-project.org/package=crossvalidationCP")
-    (synopsis "Cross-Validation for Change-Point Regression")
-    (description
-     "This package implements the cross-validation methodology from Pein and Shah
-(2021) <arXiv:2112.03220>.  Can be customised by providing different
-cross-validation criteria, estimators for the change-point locations and local
-parameters, and freely chosen folds.  Pre-implemented estimators and criteria
-are available.  It also includes our own implementation of the COPPS procedure
-<doi:10.1214/19-AOS1814>.")
-    (license license:gpl3)))
-
 (define-public r-crossvalidate
   (package
     (name "r-crossvalidate")
@@ -4801,41 +4777,6 @@ or more categorical variables (LOGLINEAR).  The methods are described in Agresti
 Tabachnik & Fidell (2019, ISBN:9780134790541), and von Eye & Mun (2013,
 ISBN:978-1-118-14640-8).")
     (license license:gpl2+)))
-
-(define-public r-crosstable
-  (package
-    (name "r-crosstable")
-    (version "0.6.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "crosstable" version))
-              (sha256
-               (base32
-                "1syavk3yad7r3fybg37ppc3m6c5gz018bikxac6gdl887p858wi9"))))
-    (properties `((upstream-name . "crosstable")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-officer
-                             r-lifecycle
-                             r-glue
-                             r-forcats
-                             r-flextable
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://danchaltiel.github.io/crosstable/")
-    (synopsis "Crosstables for Descriptive Analyses")
-    (description
-     "Create descriptive tables for continuous and categorical variables.  Apply
-summary statistics and counting function, with or without a grouping variable,
-and create beautiful reports using rmarkdown or officer'.  You can also compute
-effect sizes and statistical tests if needed.")
-    (license license:gpl3)))
 
 (define-public r-crossrun
   (package
@@ -5897,16 +5838,16 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.0.2")
+    (version "0.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew.cluster" version))
               (sha256
                (base32
-                "07br4j3bpcb3rm1h2624fyqzsd4nzqfckzmh8i9hwzgy4cq13029"))))
+                "0l5pgm0hgr5286fczjmm4z1svl49aam5ypfg930cnx0l835w0181"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-r6 r-processx r-crew))
+    (propagated-inputs (list r-r6 r-lifecycle r-crew))
     (home-page "https://wlandau.github.io/crew.cluster/")
     (synopsis
      "Crew Launcher Plugins for Traditional High-Performance Computing Clusters")
@@ -7653,13 +7594,13 @@ adjusted p-values.")
 (define-public r-cp
   (package
     (name "r-cp")
-    (version "1.7")
+    (version "1.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CP" version))
               (sha256
                (base32
-                "0fvsbg7jrqifzqjnk7mryc4ip9hvr0x1s5f0v68ih3gq3451klac"))))
+                "1ydpkk3zqz3r2szny68wqa4hz5iczq1q0hkkcbw7na8sg68sgriq"))))
     (properties `((upstream-name . "CP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -10672,30 +10613,6 @@ documents, exporting to DTM for compatibility with many text analysis packages,
 and the possibility to reconstruct original text from tokens to facilitate
 interpretation.")
     (license license:gpl3)))
-
-(define-public r-corpus
-  (package
-    (name "r-corpus")
-    (version "0.10.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "corpus" version))
-              (sha256
-               (base32
-                "0fxa38xbd5fyhh0q1ycx8snj7ly8hv9jclbs77agkb6pb6p7yr64"))))
-    (properties `((upstream-name . "corpus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-utf8))
-    (native-inputs (list r-knitr))
-    (home-page "https://leslie-huang.github.io/r-corpus/")
-    (synopsis "Text Corpus Analysis")
-    (description
-     "Text corpus data analysis, with full support for international text (Unicode).
-Functions for reading data from newline-delimited JSON files, for normalizing
-and tokenizing text, for searching for term occurrences, and for computing term
-occurrence frequencies, including n-grams.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-corpower
   (package
@@ -14283,6 +14200,38 @@ all version 3 endpoints, including for bills, amendments, congresses, summaries,
 members, reports, communications, nominations, and treaties.")
     (license license:expat)))
 
+(define-public r-confzic
+  (package
+    (name "r-confzic")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ConfZIC" version))
+              (sha256
+               (base32
+                "0q0xhn54rcapi82wngysc6zgkp6jf30b1mbi3hxvahyqd46a1kpc"))))
+    (properties `((upstream-name . "ConfZIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytable
+                             r-psych
+                             r-mvtnorm
+                             r-mumin
+                             r-ltsa
+                             r-cmna))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ConfZIC")
+    (synopsis
+     "Confidence Envelopes for Model Selection Criteria Based on Minimum ZIC")
+    (description
+     "Narrow down the number of models to look at in model selection using the
+confidence envelopes based on the minimum ZIC (Generalized Information Criteria)
+values for regression and time series data.  Functions involve the computation
+of multivariate normal-probabilities with covariance matrices based on minimum
+ZIC inverting the CDF of the minimum ZIC. It involves both the computation of
+singular and non-singular probabilities as described in Genz (1992)
+<https:doi.org/10.2307/1390838>.")
+    (license license:gpl2)))
+
 (define-public r-confusiontabler
   (package
     (name "r-confusiontabler")
@@ -14705,13 +14654,13 @@ manipulating confounded and fractional factorial designs.")
 (define-public r-conf
   (package
     (name "r-conf")
-    (version "1.8.0")
+    (version "1.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "conf" version))
               (sha256
                (base32
-                "0wmi7kn2hcbjkss6jigy9vq922hb0z65y9j0j5sb43ls1if6l9qq"))))
+                "1g5lxw86nicariy7sxfpkwsfch44pf6cn23yk0a4rcvbhgyxaj58"))))
     (properties `((upstream-name . "conf")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rootsolve r-pracma r-fitdistrplus))
@@ -14722,7 +14671,7 @@ manipulating confounded and fractional factorial designs.")
     (description
      "Enables: (1) plotting two-dimensional confidence regions, (2) coverage analysis
 of confidence region simulations, (3) calculating confidence intervals and the
-associated actual coverage for binomial proportions, and 4) calculating the
+associated actual coverage for binomial proportions, and (4) calculating the
 support values and the probability mass function of the Kaplan-Meier
 product-limit estimator.  Each is given in greater detail next. (1) Plots the
 two-dimensional confidence region for probability distribution parameters
@@ -14734,7 +14683,7 @@ confidence region boundary.  An alternative heuristic plots a specified number
 of points at roughly uniform intervals along its boundary.  Both heuristics
 build upon the radial profile log-likelihood ratio technique for plotting
 confidence regions given by Jaeger (2016) <doi:10.1080/00031305.2016.1182946>,
-and are detailed in a publication by Weld (2019)
+and are detailed in a publication by Weld et al. (2019)
 <doi:10.1080/00031305.2018.1564696>. (2) Performs confidence region coverage
 simulations for a random sample drawn from a user- specified parametric
 population distribution, or for a user-specified dataset and point of interest
@@ -14748,20 +14697,19 @@ complete enumeration of all possible transitions from one actual coverage
 acceptance curve to another which minimizes the root mean square error for n <=
 15 and follows the transitions for well-known confidence intervals for n > 15
 using binomTestMSE(). (4) The km.support() function calculates the support
-values of the Kaplan-Meier product-limit estimator for a given sample size
-\\code{n} using an induction algorithm described in Qin et al. (2023)
+values of the Kaplan-Meier product-limit estimator for a given sample size n
+using an induction algorithm described in Qin et al. (2023)
 <doi:10.1080/00031305.2022.2070279>.  The km.outcomes() function generates a
 matrix containing all possible outcomes (all possible sequences of failure times
 and right-censoring times) of the value of the Kaplan-Meier product-limit
-estimator for a particular sample size \\code{n}.  The km.pmf() function
-generates the probability mass function for the support values of the
-Kaplan-Meier product-limit estimator for a particular sample size \\code{n},
-probability of observing a failure \\code{h} at the time of interest expressed as
-the cumulative probability \\code{perc} associated with \\code{X = min(T, C)},
-where \\code{T} is the failure time and \\code{C} is the censoring time under a
-random-censoring scheme.  The km.surv() function generates multiple probability
-mass functions of the Kaplan-Meier product-limit estimator for the same
-arguments as those given for km.pmf().")
+estimator for a particular sample size n.  The km.pmf() function generates the
+probability mass function for the support values of the Kaplan-Meier
+product-limit estimator for a particular sample size n, probability of observing
+a failure h at the time of interest expressed as the cumulative probability perc
+associated with X = min(T, C), where T is the failure time and C is the
+censoring time under a random-censoring scheme.  The km.surv() function
+generates multiple probability mass functions of the Kaplan-Meier product-limit
+estimator for the same arguments as those given for km.pmf().")
     (license (license:fsdg-compatible "GPL (<= 2)"))))
 
 (define-public r-coneproj
@@ -21544,13 +21492,13 @@ individuals.")
 (define-public r-clv
   (package
     (name "r-clv")
-    (version "0.3-2.2")
+    (version "0.3-2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "clv" version))
               (sha256
                (base32
-                "072jn3xh6ii7vfp0gx03k1hiafnla1lkyn5hpj17nmqc0jvzp683"))))
+                "0awjzy3mmd275rxp1h0rvl4l6401kyc90ndys6xnrb7ym46mb9bl"))))
     (properties `((upstream-name . "clv")))
     (build-system r-build-system)
     (propagated-inputs (list r-cluster r-class))
@@ -24508,13 +24456,13 @@ one function.")
 (define-public r-cleanrmd
   (package
     (name "r-cleanrmd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cleanrmd" version))
               (sha256
                (base32
-                "168aqns21rf0svjrbv8pn66vcvbka8zsjlfp8zn0qgyl2pfp4ajj"))))
+                "120jg8kp6m6pka5nvgvwjyl4ljybv193sqvyjr8p19w3q7665nm6"))))
     (properties `((upstream-name . "cleanrmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-jsonlite r-htmltools))
@@ -25073,31 +25021,6 @@ using a homogeneous embedding technique.")
      "Implementation of the Wilkinson and Ivany (2002) approach to paleoclimate
 analysis, applied to isotope data extracted from clams.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-clampseg
-  (package
-    (name "r-clampseg")
-    (version "1.1-1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "clampSeg" version))
-              (sha256
-               (base32
-                "1zrndnd8n7ssn2fm0l7y31a2la0nsybqsl4j44r0mmc1m0m94vks"))))
-    (properties `((upstream-name . "clampSeg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stepr r-lowpassfilter))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=clampSeg")
-    (synopsis "Idealisation of Patch Clamp Recordings")
-    (description
-     "This package implements the model-free multiscale idealisation approaches:
-Jump-Segmentation by MUltiResolution Filter (JSMURF)
-<doi:10.1109/TNB.2013.2284063>, JUmp Local dEconvolution Segmentation filter
-(JULES) <doi:10.1109/TNB.2018.2845126> and Heterogeneous Idealization by Local
-testing and DEconvolution (HILDE) <arXiv:2008.02658>.  Further details on how to
-use them are given in the accompanying vignette.")
-    (license license:gpl3)))
 
 (define-public r-clam
   (package
@@ -29487,13 +29410,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and plotCGP.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.6.2")
+    (version "0.6.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CGNM" version))
               (sha256
                (base32
-                "1fpmm8q25wnqf3l6126vhbjhlls0a8cwqrmy97hqssinh10b3kls"))))
+                "1h0102vmxhk1hzdb5apxilv5n0fcc0m0p3c3apf4yzgwwarkyg0b"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -32112,13 +32035,13 @@ Regression")
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cdgd" version))
               (sha256
                (base32
-                "1rk2ld8spiaif8ybc8kj84jfpi2gwhf4nj70k1in799lqqvfq894"))))
+                "01v37bb12wqgm5dffylibasm6cadrqqnk41n9fzsmwk53w9zcijk"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (propagated-inputs (list r-caret))
@@ -33825,38 +33748,6 @@ response through the use of Multivariate Bayesian Structural Time Series models
 (MBSTS) as described in Menchetti & Bojinov (2020) <arXiv:2006.12269>.  The
 package also includes functions for model building and forecasting.")
     (license license:gpl3+)))
-
-(define-public r-causalkinetix
-  (package
-    (name "r-causalkinetix")
-    (version "0.2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "CausalKinetiX" version))
-              (sha256
-               (base32
-                "0haxw4vvbw48hlvsl1d1y3xm48qm5vl0d3k5lj89ajwc618nk5jg"))))
-    (properties `((upstream-name . "CausalKinetiX")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sundialr
-                             r-randomforest
-                             r-quadprog
-                             r-pspline
-                             r-glmnet
-                             r-fda
-                             r-desolve
-                             r-cvtools))
-    (home-page "https://cran.r-project.org/package=CausalKinetiX")
-    (synopsis "Learning Stable Structures in Kinetic Systems")
-    (description
-     "Implementation of CausalKinetiX', a framework for learning stable structures in
-kinetic systems.  Apart from the main functions CausalKinetiX() and
-CausalKinetiX.modelranking() it includes functions to generate data from three
-simulations models, which can be used to benchmark structure learning methods
-for linear ordinary differential equation models.  A detailed description of the
-underlying methods as well as details on the examples are given in Pfister,
-Bauer and Peters (2018) <arXiv:1810.11776>.")
-    (license license:gpl3)))
 
 (define-public r-causalimpact
   (package

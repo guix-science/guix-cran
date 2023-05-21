@@ -1835,13 +1835,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.1.12")
+    (version "0.1.13")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lrstat" version))
               (sha256
                (base32
-                "1fazj78j065n9gg96r35drklfm3aj4ki3lg70g2xrjxwfaramg8y"))))
+                "0vrc9hjw0qqi7xh8xga4fxs4jpm1w04fc7fmzhskkf588xd1rhcg"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5521,35 +5521,6 @@ groups (PLS-ROG) loading (Yamamoto, H. (2017), multiset PLS and PLS-ROG loading
 (Yamamoto, H. (2022) <doi:10.1101/2022.08.30.505949>).")
     (license license:lgpl3)))
 
-(define-public r-loadflux
-  (package
-    (name "r-loadflux")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "loadflux" version))
-              (sha256
-               (base32
-                "08lbpd0nwwck36bkklmqx62lyj9p1ywwk80v1qx7f6zhgfjx8pj4"))))
-    (properties `((upstream-name . "loadflux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tsibble
-                             r-tidyr
-                             r-rlang
-                             r-lubridate
-                             r-ggplot2
-                             r-dygraphs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/atsyplenkov/loadflux")
-    (synopsis "Explore Intra-Event Suspended Sediment Dynamics")
-    (description
-     "This package provides a collection of functions created to study water discharge
-(Q) and suspended sediment concentration (SSC) relationship.")
-    (license license:expat)))
-
 (define-public r-loader
   (package
     (name "r-loader")
@@ -8235,28 +8206,6 @@ of errors is unknown, but errors are independent and symmetrically distributed.
 The package contains a function named LRMDE which takes Y and X as input and
 returns minimum distance estimator of parameter b in the model.")
     (license license:gpl2)))
-
-(define-public r-linearq
-  (package
-    (name "r-linearq")
-    (version "2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "linearQ" version))
-              (sha256
-               (base32
-                "0sx7bx0x1k193day5w1dbmc09kn5741pcilxijjn2y5aijhd5wk9"))))
-    (properties `((upstream-name . "linearQ")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stepr r-rcpp))
-    (home-page "https://cran.r-project.org/package=linearQ")
-    (synopsis
-     "Linear Algorithm for Simulating Quantiles in Multiscale Change-Point Segmentation Problem")
-    (description
-     "It is a linear algorithm to simulate quantiles of multiscale statistics under
-hull hypothesis for multiscale change-point segmentation.  The reference is in
-preparation.")
-    (license license:gpl2+)))
 
 (define-public r-linearmodel
   (package

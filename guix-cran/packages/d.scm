@@ -1392,43 +1392,6 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 modelled via a discrete Weibull distribution.")
     (license license:gpl2+)))
 
-(define-public r-dwp
-  (package
-    (name "r-dwp")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dwp" version))
-              (sha256
-               (base32
-                "1q8gbn18gsgknazzvdg5qg2lzqdaz3x14w210hw06q98dfpkvfih"))))
-    (properties `((upstream-name . "dwp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-statmod
-                             r-sf
-                             r-pracma
-                             r-plotrix
-                             r-numderiv
-                             r-mvtnorm
-                             r-matrixstats
-                             r-mass
-                             r-magrittr
-                             r-invgamma
-                             r-gtools
-                             r-genest
-                             r-expint
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=dwp")
-    (synopsis "Density-Weighted Proportion")
-    (description
-     "Fit a Poisson regression to carcass distance data and integrate over the
-searched area at a wind farm to estimate the fraction of carcasses falling in
-the searched area and format the output for use as the dwp parameter in the
-GenEst or eoa package for estimating bird and bat mortality, following Dalthorp,
-et al. (2022) <arXiv:2201.10064>.")
-    (license license:cc0)))
-
 (define-public r-dwls
   (package
     (name "r-dwls")

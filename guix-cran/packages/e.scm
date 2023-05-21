@@ -4667,13 +4667,13 @@ Eurostat dataset or its subset (based on the eurodata::importData() function).")
 (define-public r-eurocordexr
   (package
     (name "r-eurocordexr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eurocordexr" version))
               (sha256
                (base32
-                "081p9qs09xif2cck0gmmqgzaly1r2p77kla2nhcvjgxgdylbsdkd"))))
+                "0b31xdcf5z09nvxb7l34l37ysc0y5gdk3jyjsi1qf4kkzcpfbyng"))))
     (properties `((upstream-name . "eurocordexr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcict
@@ -9364,38 +9364,6 @@ figures to lots of different type of formats.  Now this package provide function
 to extract colors from all types of figures and pdf files.")
     (license license:gpl2)))
 
-(define-public r-eoa3
-  (package
-    (name "r-eoa3")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eoa3" version))
-              (sha256
-               (base32
-                "099irdxripakk6sjy5gdwvd1nv70yad0q4cdm9w3q4q0ks5gss5w"))))
-    (properties `((upstream-name . "eoa3")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-survival
-                             r-rjags
-                             r-mass
-                             r-genest
-                             r-actuar))
-    (home-page "https://cran.r-project.org/package=eoa3")
-    (synopsis
-     "Wildlife Mortality Estimator for Low Fatality Rates and Imperfect Detection")
-    (description
-     "Evidence of Absence software (EoA) is a user-friendly application for estimating
-bird and bat fatalities at wind farms and designing search protocols.  The
-software is particularly useful in addressing whether the number of fatalities
-has exceeded a given threshold and what search parameters are needed to give
-assurance that thresholds were not exceeded.  The models are applicable even
-when zero carcasses have been found in searches, following Huso et al. (2015)
-<doi:10.1890/14-0764.1>, Dalthorp et al. (2017) <doi:10.3133/ds1055>, and
-Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
-    (license license:gpl2)))
-
 (define-public r-envstats
   (package
     (name "r-envstats")
@@ -11296,13 +11264,13 @@ work with emojis when they are in strings.")
 (define-public r-emoa
   (package
     (name "r-emoa")
-    (version "0.5-0.1")
+    (version "0.5-0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "emoa" version))
               (sha256
                (base32
-                "0rkr4d4fyqxmsrlbzar27z97qkw4cl1dkvfnhbdwpgg9fi1cixmz"))))
+                "0fr4ia3hkv8c7wkl64a51s6ynldppc812ynwldvbwy25dhlbvs6r"))))
     (properties `((upstream-name . "emoa")))
     (build-system r-build-system)
     (home-page "http://www.statistik.tu-dortmund.de/~olafm/software/emoa/")
@@ -11969,6 +11937,36 @@ eventually with solar position covariate as a daytime indicator,
 (\"Expectation-Maximization Binary Clustering for Behavioural Annotation\").")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-embayes
+  (package
+    (name "r-embayes")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "emBayes" version))
+              (sha256
+               (base32
+                "1x9afzqv2xd85h8xgjwjrskjzd4igi2kzgg3c4d8wvmfrbavc8nm"))))
+    (properties `((upstream-name . "emBayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
+    (home-page "https://cran.r-project.org/package=emBayes")
+    (synopsis
+     "Robust Bayesian Variable Selection via Expectation-Maximization")
+    (description
+     "Variable selection methods have been extensively developed for analyzing
+high-dimensional omics data within both the frequentist and Bayesian frameworks.
+ This package implemented the spike-and-slab quantile LASSO which has been
+developed along the line of Bayesian hierarchical model but deeply rooted in the
+frequentist regularization methods by utilizing the ExpectationâMaximization
+(EM) algorithm.  Therefore, the proposed method borrows strength from both the
+frequentist and Bayesian frameworks while overcoming their respective
+limitations.  The spike-and-slab quantile LASSO can handle data irregularity in
+terms of skewness and outliers in the disease trait, compared to its nonrobust
+alternative, the spike-and-slab LASSO, which has also been implemented in the
+package.  The core module of this package is developed in C++'.")
+    (license license:gpl2)))
 
 (define-public r-emayili
   (package
@@ -16318,16 +16316,17 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EDCimport" version))
               (sha256
                (base32
-                "1d80dsfi94yg95lcnq60nnfpfd2bphqrd68k7ilcs809v95da4nx"))))
+                "0kb5m60x4pgj5d4m2wmq0mf5xv7v4j3nmlyx8ss4l6hlb3ykq03z"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -16336,6 +16335,7 @@ Collection and Processing\" course.")
                              r-labelled
                              r-haven
                              r-glue
+                             r-ggplot2
                              r-forcats
                              r-dplyr
                              r-cli))

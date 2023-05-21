@@ -22048,16 +22048,16 @@ of departure from the no unmeasured confounding assumption.")
 (define-public r-ria
   (package
     (name "r-ria")
-    (version "1.7.0")
+    (version "1.7.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RIA" version))
               (sha256
                (base32
-                "11pk8l6l4l7ylsavs86ava1hclgrhvdybd8w2bq1ihvfmb07617r"))))
+                "0q36xaikj4c208hk48zdlpgx0hfvc5dpwckr0ksk217n0h5hfk1x"))))
     (properties `((upstream-name . "RIA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-oro-nifti r-oro-dicom r-nat))
+    (propagated-inputs (list r-oro-nifti r-oro-dicom))
     (home-page "https://pubmed.ncbi.nlm.nih.gov/29233836/")
     (synopsis "Radiomics Image Analysis Toolbox for Medial Images")
     (description
@@ -26596,6 +26596,32 @@ these functions are based on the methods presented in Ramirez-Lopez et al.
 related to user-defined search query.")
     (license license:gpl3)))
 
+(define-public r-resde
+  (package
+    (name "r-resde")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "resde" version))
+              (sha256
+               (base32
+                "016m9z4agwklq7704vsic8ykyla1b1vj6rgkwjmirpfa11wqn3h1"))))
+    (properties `((upstream-name . "resde")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlme r-deriv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ogarciav/resde/")
+    (synopsis "Estimation in Reducible Stochastic Differential Equations")
+    (description
+     "Maximum likelihood estimation for univariate reducible stochastic differential
+equation models.  Discrete, possibly noisy observations, not necessarily evenly
+spaced in time.  Can fit multiple individuals/units with global and local
+parameters, by fixed-effects or mixed-effects methods.  Ref.: Garcia, O. (2019)
+\"Estimating reducible stochastic differential equations by conversion to a
+least-squares problem\", Computational Statistics 34(1): 23-46,
+<doi:10.1007/s00180-018-0837-4>.")
+    (license license:gpl2+)))
+
 (define-public r-rescue
   (package
     (name "r-rescue")
@@ -28274,13 +28300,13 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rempsyc" version))
               (sha256
                (base32
-                "1lhy11vqj7jj8g071mzx0mwhgm6mhfqfgfpi3x4a7qqk4svl9888"))))
+                "19k6hbkmzqmnw9yvjx3s7s34yav21i0ddzf7f3ixl064nxbdfacy"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dplyr))
@@ -30614,13 +30640,13 @@ criteria, publications and other information.")
 (define-public r-redland
   (package
     (name "r-redland")
-    (version "1.0.17-16")
+    (version "1.0.17-16.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redland" version))
               (sha256
                (base32
-                "1nzxyczsz274751z48glh8qzv1v9rdv3raq6whyp63nsi2xdri90"))))
+                "0x0ydhcrl5256mp5rvcjw09fa7hv1s950kclaqfaghjd5qy2a17x"))))
     (properties `((upstream-name . "redland")))
     (build-system r-build-system)
     (inputs (list))
@@ -33474,13 +33500,13 @@ plotting components to enable use and replication of the book.")
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
-    (version "1.0.5.2")
+    (version "1.0.5.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rdsdp" version))
               (sha256
                (base32
-                "02lp0p3myybs0fjvfc2jmqdx6xawk7vwj9jpfl9r4pmb74w9f62p"))))
+                "0lm5c1cv6jyxkmr09khfnsab4bzjbfcg8j04zc4zqimy1541i6yn"))))
     (properties `((upstream-name . "Rdsdp")))
     (build-system r-build-system)
     (home-page "https://www.mcs.anl.gov/hs/software/DSDP")
@@ -34378,6 +34404,27 @@ of the mathematical relationships between variables.  The package terminology
 follows Briggs \"Decision Modelling for Health Economic Evaluation\" (2006,
 ISBN:978-0-19-852662-9).")
     (license license:gpl3)))
+
+(define-public r-rdea
+  (package
+    (name "r-rdea")
+    (version "1.2-7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rDEA" version))
+              (sha256
+               (base32
+                "0ijyfkx4jgjcbhr5fpgc1v30408graskrc9kmy491hwcll6v4bvm"))))
+    (properties `((upstream-name . "rDEA")))
+    (build-system r-build-system)
+    (inputs (list glpk))
+    (propagated-inputs (list r-truncreg r-truncnorm r-slam r-maxlik))
+    (home-page "https://github.com/jaak-s/rDEA")
+    (synopsis "Robust Data Envelopment Analysis (DEA) for R")
+    (description
+     "Data Envelopment Analysis for R, estimating robust DEA scores without and with
+environmental variables and doing returns-to-scale tests.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-rde
   (package
@@ -38888,6 +38935,40 @@ with high-dimensional data, based on Tan (2020a) <doi:10.1093/biomet/asz059>,
 Tan (2020b) <doi:10.1214/19-AOS1824> and Sun and Tan (2020) <arXiv:2009.09286>.")
     (license license:gpl2+)))
 
+(define-public r-rcaiman
+  (package
+    (name "r-rcaiman")
+    (version "1.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rcaiman" version))
+              (sha256
+               (base32
+                "0qjbkfp571qv2i4z50vk48wrc9k0gayil88a3z85aa9k033y6kk8"))))
+    (properties `((upstream-name . "rcaiman")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-terra
+                             r-spatial
+                             r-rdpack
+                             r-pracma
+                             r-magrittr
+                             r-lidr
+                             r-filenamer
+                             r-colorspace))
+    (home-page "https://cran.r-project.org/package=rcaiman")
+    (synopsis "CAnopy IMage ANalysis")
+    (description
+     "Classify hemispherical photographs of the plant canopy with algorithms specially
+developed for such a task and well documented in DÃ­az and Lencinas (2015)
+<doi:10.1109/lgrs.2015.2425931> and DÃ­az and Lencinas (2018)
+<doi:10.1139/cjfr-2018-0006>.  It supports non-circular hemispherical
+photography, such as those acquired with 15mm lenses or with auxiliary fish-eye
+lenses attached to mobile devices.  For smartphone-based hemispherical
+photography see DÃ­az (2023) <doi:10.1111/2041-210x.14059>.  Most of the
+functions also support restricted view photography.")
+    (license license:gpl3)))
+
 (define-public r-rca
   (package
     (name "r-rca")
@@ -43139,6 +43220,52 @@ integers, randomized sequences and random strings.")
 context aware than the built-in functions.  The functions are also much safer,
 as they check for incompatible values, and more reproducible.")
     (license license:expat)))
+
+(define-public r-randnet
+  (package
+    (name "r-randnet")
+    (version "0.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "randnet" version))
+              (sha256
+               (base32
+                "1zb2arx63avjlqjpbf37cvix080khkihh6bb0g1h2alv4lbaaaak"))))
+    (properties `((upstream-name . "randnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparseflmm
+                             r-rspectra
+                             r-pracma
+                             r-powerlaw
+                             r-nnls
+                             r-mgcv
+                             r-matrix
+                             r-irlba
+                             r-entropy
+                             r-data-table
+                             r-auc))
+    (home-page "https://cran.r-project.org/package=randnet")
+    (synopsis
+     "Random Network Model Estimation, Selection and Parameter Tuning")
+    (description
+     "Model selection and parameter tuning procedures for a class of random network
+models.  The model selection can be done by a general cross-validation framework
+called ECV from Li et.  al. (2016) <arXiv:1612.04717> .  Several other
+model-based and task-specific methods are also included, such as NCV from Chen
+and Lei (2016) <arXiv:1411.1715>, likelihood ratio method from Wang and Bickel
+(2015) <arXiv:1502.02069>, spectral methods from Le and Levina (2015)
+<arXiv:1507.00827>.  Many network analysis methods are also implemented, such as
+the regularized spectral clustering (Amini et.  al.  2013
+<doi:10.1214/13-AOS1138>) and its degree corrected version and graphon
+neighborhood smoothing (Zhang et.  al.  2015 <arXiv:1509.08588>).  It also
+includes the consensus clustering of Gao et.  al. (2014) <arXiv:1410.5837>, the
+method of moments estimation of nomination SBM of Li et.  al. (2020)
+<arxiv:2008.03652>, and the network mixing method of Li and Le (2021)
+<arxiv:2106.02803>.  It also includes the informative core-periphery data
+processing method of Miao and Li (2021) <arXiv:2101.06388>.  The work to build
+and improve this package is partially supported by the NSF grants DMS-2015298
+and DMS-2015134.")
+    (license license:gpl2+)))
 
 (define-public r-randmeta
   (package

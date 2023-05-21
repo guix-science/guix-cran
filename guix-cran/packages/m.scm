@@ -12912,13 +12912,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "modelsummary" version))
               (sha256
                (base32
-                "0wg9jnaxxr534rxaxb9alira2fn6p4jvsphy9rmdxkhzr8csfkhs"))))
+                "0iaamyl5gvw4dp5by1jg59xnm5mpyx5dql2ik0bwybsj1d2bf7bc"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables
@@ -13147,6 +13147,28 @@ real-world analysis.")
      "Calculate the financial impact of using a churn model in terms of cost, revenue,
 profit and return on investment.")
     (license license:expat)))
+
+(define-public r-modelfree
+  (package
+    (name "r-modelfree")
+    (version "1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "modelfree" version))
+              (sha256
+               (base32
+                "08kqc5a5ray0wgnd8c6d1frqzg9q990j1p78j7j7c5xll402c8ns"))))
+    (properties `((upstream-name . "modelfree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsem r-polynomf))
+    (home-page "www.R-project.org")
+    (synopsis "Model-Free Estimation of a Psychometric Function")
+    (description
+     "Local linear estimation of psychometric functions.  Provides functions for
+nonparametric estimation of a psychometric function and for estimation of a
+derived threshold and slope, and their standard deviations and confidence
+intervals.")
+    (license license:lgpl3+)))
 
 (define-public r-modeler
   (package
@@ -17142,13 +17164,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.2.2")
+    (version "2.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlflow" version))
               (sha256
                (base32
-                "1f11pc80zdj42l0cxkrf3yl52bww2kdhh3yq67n9qimqkxycw98r"))))
+                "0m4mszyh6rynk1j8pp405ls22sf0mq1bk11497gfvhlnwzxyizcd"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -17859,13 +17881,13 @@ visualization by volcano and Bland-Altman plots (Bland and Altman (1986),
 (define-public r-mkin
   (package
     (name "r-mkin")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mkin" version))
               (sha256
                (base32
-                "1kqc9y3qd706bw2wsjzrpzbpyppgpnvf5fdi5cba3w94s5ksxh96"))))
+                "0gq5fij7ksc60ys91sbrd1d46w9nv4y5cqcknwc31xwhwi35q2vm"))))
     (properties `((upstream-name . "mkin")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -27005,13 +27027,13 @@ Study Reports and Submission\" by Zhang et al. (2022) <https://r4csr.org/>.")
 (define-public r-metalite
   (package
     (name "r-metalite")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metalite" version))
               (sha256
                (base32
-                "1q4yjfxfc9gmdqqrz43hjvvdszkq3515ajgjmy749xxg58llav2a"))))
+                "10rgk6qp6mpa7ag3w62n3kkz8yxf5h7k7bcj2xsi4cdqfc3xp357"))))
     (properties `((upstream-name . "metalite")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue))
@@ -35370,13 +35392,13 @@ rmarkdown documents and shiny apps.")
 (define-public r-materialmodifier
   (package
     (name "r-materialmodifier")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "materialmodifier" version))
               (sha256
                (base32
-                "116d8pppibi4kfd4jx4pc80n036lj86fprjnakkv4m890nkbznjr"))))
+                "0vawqviwh7acbi1f6jlfnwsh6axzwp1hvr697j5ws5g2hz16ib5r"))))
     (properties `((upstream-name . "materialmodifier")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -36227,33 +36249,32 @@ variables.")
 (define-public r-marss
   (package
     (name "r-marss")
-    (version "3.11.4")
+    (version "3.11.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MARSS" version))
               (sha256
                (base32
-                "10mf1vs51yqqg6s2435j84xbaxvr6wdraha07mqlr2rmprgl5a0r"))))
+                "0cmnybj6dqrmasc3y89azs10iq521p86l5sf0w3arypk6jjvif9g"))))
     (properties `((upstream-name . "MARSS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-mvtnorm r-kfas))
+    (propagated-inputs (list r-nlme r-mvtnorm r-kfas r-generics))
+    (native-inputs (list r-knitr))
     (home-page "https://atsa-es.github.io/MARSS/")
     (synopsis "Multivariate Autoregressive State-Space Modeling")
     (description
      "The MARSS package provides maximum-likelihood parameter estimation for
 constrained and unconstrained linear multivariate autoregressive state-space
-(MARSS) models fit to multivariate time-series data.  Fitting is primarily via
-an Expectation-Maximization (EM) algorithm, although fitting via the BFGS
-algorithm (using the optim function) is also provided.  MARSS models are a class
-of dynamic linear model (DLM) and vector autoregressive model (VAR) model.
-Functions are provided for parametric and innovations bootstrapping, Kalman
-filtering and smoothing, bootstrap model selection criteria (AICb), confidences
-intervals via the Hessian approximation and via bootstrapping and calculation of
-auxiliary residuals for detecting outliers and shocks.  The user guide shows
-examples of using MARSS for parameter estimation for a variety of applications,
-model selection, dynamic factor analysis, outlier and shock detection, and
-addition of covariates.  Online workshops (lectures, eBook, and computer labs)
-at <https://atsa-es.github.io/> See the NEWS file for update information.")
+(MARSS) models, including partially deterministic models.  MARSS models are a
+class of dynamic linear model (DLM) and vector autoregressive model (VAR) model.
+ Fitting available via Expectation-Maximization (EM), BFGS (using optim), and
+TMB (using the marssTMB companion package).  Functions are provided for
+parametric and innovations bootstrapping, Kalman filtering and smoothing, model
+selection criteria including bootstrap AICb, confidences intervals via the
+Hessian approximation or bootstrapping, and all conditional residual types.  See
+the user guide for examples of dynamic factor analysis, dynamic linear models,
+outlier and shock detection, and multivariate AR-p models.  Online workshops
+(lectures, eBook, and computer labs) at <https://atsa-es.github.io/>.")
     (license license:gpl2)))
 
 (define-public r-marsgwr
@@ -36909,13 +36930,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.11.2")
+    (version "0.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "marginaleffects" version))
               (sha256
                (base32
-                "101rkzynp4bqpbckrg3gjxj04d1sh9xwwvs8mic7f70zq1cb39rl"))))
+                "1nscx2ycjznc1678qiddyc2h7i5ibmv61p0b5s5xgkrq3dns2z8h"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

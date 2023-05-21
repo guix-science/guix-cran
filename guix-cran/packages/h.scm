@@ -9184,34 +9184,6 @@ Yao (2021) <doi:10.1093/biomet/asab034> and white noise test proposed by Chang,
 Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
     (license license:gpl3)))
 
-(define-public r-hdtest
-  (package
-    (name "r-hdtest")
-    (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HDtest" version))
-              (sha256
-               (base32
-                "1c9x4s59762sp7drbm5h1xv22kpifq7p0x3dkrfcd0ficbbma5v8"))))
-    (properties `((upstream-name . "HDtest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm
-                             r-mass
-                             r-foreach
-                             r-fastclime
-                             r-expm
-                             r-doparallel
-                             r-clime
-                             r-checkmate))
-    (native-inputs (list gfortran))
-    (home-page "http://www.stat.colostate.edu/~riczw/SW.html")
-    (synopsis
-     "High Dimensional Hypothesis Testing for Mean Vectors, Covariance Matrices, and White Noise of Vector Time Series")
-    (description
-     "High dimensional testing procedures on mean, covariance and white noises.")
-    (license license:asl2.0)))
-
 (define-public r-hdstim
   (package
     (name "r-hdstim")

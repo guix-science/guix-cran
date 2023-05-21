@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages java)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
@@ -2643,17 +2644,18 @@ by grosse Schlarmann (2022) <https://www.produnis.de/R/>.")
 (define-public r-jgr
   (package
     (name "r-jgr")
-    (version "1.9-1")
+    (version "1.9-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JGR" version))
               (sha256
                (base32
-                "0zh9v16ymq68xv1canfh0hafizb722632pv7r5xb1fsc230hbcc7"))))
+                "1rcmbgxwzwhzh5fa0lghjdllcfkpirdavdghvxx5fjysn7a38mjv"))))
     (properties `((upstream-name . "JGR")))
     (build-system r-build-system)
+    (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-javagd))
-    (home-page "http://rforge.net/JGR/")
+    (home-page "https://rforge.net/JGR/")
     (synopsis "Java GUI for R")
     (description
      "Java GUI for R - cross-platform, universal and unified Graphical User Interface

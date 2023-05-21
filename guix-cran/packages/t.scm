@@ -5244,13 +5244,13 @@ Weinberg, C.R.")
 (define-public r-triact
   (package
     (name "r-triact")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "triact" version))
               (sha256
                (base32
-                "0aw0k3l342l93rm31kls9bc4g0w4rlavvww2awnc164wj96xd9zr"))))
+                "1ndxqrs1mg6ch99cksd7gnrjvhsklwfrjwrdxns099a3n16m3r0h"))))
     (properties `((upstream-name . "triact")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-lubridate r-data-table r-checkmate))
@@ -5264,7 +5264,7 @@ determination of common measures for lying behavior including total lying
 duration, the number of lying bouts, and the mean duration of lying bouts.
 Further capabilities are the description of lying laterality and the calculation
 of proxies for the level of physical activity of the cow.  Reference: Simmler
-M., Brouwers S. (2023) <https://gitlab.com/AgroSimi/triact_manuscript>.")
+M., Brouwers S. P. (2023) <https://gitlab.com/AgroSimi/triact_manuscript>.")
     (license license:gpl3+)))
 
 (define-public r-trexselector
@@ -12516,13 +12516,13 @@ arbitrary LaTeX code to be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.0.1")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tigris" version))
               (sha256
                (base32
-                "132d0w5rdci7r7q0n4z1ac3iln42zby6np1lkmlngfgz2466nz6q"))))
+                "1kk1dbg6fs711bg5v6p97rbmvffxfhyc1vkmvpnh51ffkmd2hihv"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -14154,13 +14154,13 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.6.3")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyfit" version))
               (sha256
                (base32
-                "08w4rjxra2danag4la607r9lxq7lgg1hsrvwplr9mw4i0n25i0rb"))))
+                "0amqzqnxkv9a6ywmyqkvyqhls1mm7kqdnysg12zjhcx1bk6wg98d"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14337,13 +14337,13 @@ dice.  Experiments can be combined with the pipe-operator.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TidyDensity" version))
               (sha256
                (base32
-                "1dv035cj40817aya10vl8g9ij8wdxzxy2r2r3kfz44jhhynfr2hb"))))
+                "1r55yjclnf0n88scscivhixymibiz6d5mki9si04nn50bjv9qp2n"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -14660,13 +14660,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.3.2")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "05f58fa37mmky5jfl8gbnday9d3c99prhngggdv3qjn934zk4iya"))))
+                "1s786h7vs4z2rfbg7p9xb0c8w9rb1zsakplar2ck1wgcx7np46wh"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

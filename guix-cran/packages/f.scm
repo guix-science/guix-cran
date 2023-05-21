@@ -5799,13 +5799,13 @@ presence of all four gametes is also called phylogenetic incompatibility.")
 (define-public r-foundry
   (package
     (name "r-foundry")
-    (version "0.12.0")
+    (version "0.13.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "foundry" version))
               (sha256
                (base32
-                "0y28vrab5nd4q1094xil6nzbcfwgkgms8dbg0gwi4qmq572489xm"))))
+                "06mmqiaakha1xw2l5zib5nmwijjv4rjbpsx52ck7xihm6w192lss"))))
     (properties `((upstream-name . "foundry")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-r6 r-jsonlite r-httr r-arrow))
@@ -14531,27 +14531,6 @@ paper are available as continuous, discrete and weighted versions.")
 vector, data.frame and matrix objects for numerical and categorical variables.")
     (license license:gpl2+)))
 
-(define-public r-fdrseg
-  (package
-    (name "r-fdrseg")
-    (version "1.0-3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "FDRSeg" version))
-              (sha256
-               (base32
-                "0dh6m5vlx664kryh56jzi3zxydjwa5217nhbwn6adp0q5qdh6d8a"))))
-    (properties `((upstream-name . "FDRSeg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stepr r-rcpp))
-    (home-page "https://cran.r-project.org/package=FDRSeg")
-    (synopsis "FDR-Control in Multiscale Change-Point Segmentation")
-    (description
-     "Estimate step functions via multiscale inference with controlled false discovery
-rate (FDR).  For details see H. Li, A. Munk and H. Sieling (2016)
-<doi:10.1214/16-EJS1131>.")
-    (license license:gpl3)))
-
 (define-public r-fdrsampsize
   (package
     (name "r-fdrsampsize")
@@ -15158,13 +15137,13 @@ H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
 (define-public r-fdacluster
   (package
     (name "r-fdacluster")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdacluster" version))
               (sha256
                (base32
-                "1r0xdrh52fxpmhj8b99adzpqi3bqpw7kj17913sfvi0yargkqxv5"))))
+                "0whpjj59vdmzzxp6n2dwmzp4x3w2469rz67sm1bp93b7jidfsnf9"))))
     (properties `((upstream-name . "fdacluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15188,20 +15167,20 @@ H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
     (home-page "https://astamm.github.io/fdacluster/index.html")
     (synopsis "Joint Clustering and Alignment of Functional Data")
     (description
-     "Implementations of the popular k-means and hierarchical agglomerative clustering
-(HAC) methods for functional data which allows for jointly aligning and
-clustering curves.  It supports functional data defined on one-dimensional
-domains but possibly evaluating in multivariate codomains.  It supports
-functional data defined in arrays but also via the fd and funData classes for
-functional data defined in the fda and funData packages respectively.  It
-currently supports shift, dilation and affine warping functions for functional
-data defined on the real line and uses the SRSF framework to handle
-boundary-preserving warping for functional data defined on a specific interval.
-Main reference for the k-means algorithm: Sangalli L.M., Secchi P., Vantini S.,
-Vitelli V. (2010) \"k-mean alignment for curve clustering\"
-<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRSF framework:
-Tucker, J. D., Wu, W., & Srivastava, A. (2013) \"Generative models for functional
-data using phase and amplitude separation\" <doi:10.1016/j.csda.2012.12.001>.")
+     "Implementations of the k-means, hierarchical agglomerative and DBSCAN clustering
+methods for functional data which allows for jointly aligning and clustering
+curves.  It supports functional data defined on one-dimensional domains but
+possibly evaluating in multivariate codomains.  It supports functional data
+defined in arrays but also via the fd and funData classes for functional data
+defined in the fda and funData packages respectively.  It currently supports
+shift, dilation and affine warping functions for functional data defined on the
+real line and uses the SRSF framework to handle boundary-preserving warping for
+functional data defined on a specific interval.  Main reference for the k-means
+algorithm: Sangalli L.M., Secchi P., Vantini S., Vitelli V. (2010) \"k-mean
+alignment for curve clustering\" <doi:10.1016/j.csda.2009.12.008>.  Main
+reference for the SRSF framework: Tucker, J. D., Wu, W., & Srivastava, A. (2013)
+\"Generative models for functional data using phase and amplitude separation\"
+<doi:10.1016/j.csda.2012.12.001>.")
     (license license:gpl3+)))
 
 (define-public r-fdaacf
@@ -17451,29 +17430,6 @@ significant pattern mining to detect intervals in binary genotype data which are
 significantly associated with a particular phenotype, while accounting for
 categorical covariates.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-fastclime
-  (package
-    (name "r-fastclime")
-    (version "1.4.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "fastclime" version))
-              (sha256
-               (base32
-                "17d0vblv1j8n8890dydfd8hkxrlvih8ygcg5krggq1mlz98x55ky"))))
-    (properties `((upstream-name . "fastclime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass r-lattice r-igraph))
-    (home-page "https://cran.r-project.org/package=fastclime")
-    (synopsis
-     "Fast Solver for Parameterized LP Problems, Constrained L1 Minimization Approach to Sparse Precision Matrix Estimation and Dantzig Selector")
-    (description
-     "This package provides a method of recovering the precision matrix efficiently
-and solving for the dantzig selector by applying the parametric simplex method.
-The computation is based on a linear optimization solver.  It also contains a
-generic LP solver and a parameterized LP solver using parametric simplex method.")
-    (license license:gpl2)))
 
 (define-public r-fastbandchol
   (package

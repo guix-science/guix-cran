@@ -5667,13 +5667,13 @@ of Windows operating system.")
 (define-public r-openimager
   (package
     (name "r-openimager")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "OpenImageR" version))
               (sha256
                (base32
-                "1n6wmpg3ir3f23lv036p4k1ccc5mzs2i3m21xljkj4q87mic6nfn"))))
+                "073ayw6q8yc9kipb5jizg9271a8mcndl06c02b28d8igaj62jvn4"))))
     (properties `((upstream-name . "OpenImageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff

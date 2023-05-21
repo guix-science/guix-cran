@@ -577,13 +577,13 @@ Schmid, Marion Cremer, Thomas Cremer (2017) <doi:10.1016/j.ymeth.2017.03.013>.")
 (define-public r-ntss
   (package
     (name "r-ntss")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NTSS" version))
               (sha256
                (base32
-                "1a4p30pvyvfq90m60gfrhk5s7mna986baxpi9lpqkpwf5z0r862p"))))
+                "1i3y3psr17p8p7s799sdki3pndb82pydl2g3dcz18snynjpmd31j"))))
     (properties `((upstream-name . "NTSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -592,7 +592,8 @@ Schmid, Marion Cremer, Thomas Cremer (2017) <doi:10.1016/j.ymeth.2017.03.013>.")
                              r-spatstat-explore
                              r-spatstat
                              r-ks
-                             r-get))
+                             r-get
+                             r-geor))
     (home-page "https://cran.r-project.org/package=NTSS")
     (synopsis "Nonparametric Tests in Spatial Statistics")
     (description
@@ -3551,6 +3552,28 @@ settings.  For more details, see C. Heinze-Deml, J. Peters and N. Meinshausen:
 Invariant Causal Prediction for Nonlinear Models', <arXiv:1706.08576>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-nonlineardotplot
+  (package
+    (name "r-nonlineardotplot")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nonLinearDotPlot" version))
+              (sha256
+               (base32
+                "073qgada7bqz8jnpac4f3qb9iwsaiyb5m5y0fjgvyrjnjij29zxk"))))
+    (properties `((upstream-name . "nonLinearDotPlot")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=nonLinearDotPlot")
+    (synopsis "Non Linear Dot Plots")
+    (description
+     "Non linear dot plots are diagrams that allow dots of varying size to be
+constructed, so that columns with a large number of samples are reduced in
+height.  Implementation of algorithm described in: Nils Rodrigues and Daniel
+Weiskopf, \"Nonlinear Dot Plots\", IEEE Transactions on Visualization and Computer
+Graphics, vol.  24, no.  1, pp.  616-625, 2018. <doi:10.1109/TVCG.2017.2744018>.")
+    (license license:expat)))
+
 (define-public r-nonet
   (package
     (name "r-nonet")
@@ -4409,13 +4432,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "0.9.8")
+    (version "0.9.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "NNS" version))
               (sha256
                (base32
-                "02068di9k5h4fhgsxjk4hl05rpsnicbb87140as67nib0bch4zl5"))))
+                "0dxcmlvx9dac2w2fcvp6q1x1fpqipkfg369wrx68x735vybw4q27"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
