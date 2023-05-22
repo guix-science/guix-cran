@@ -716,13 +716,13 @@ from Schubert et al (2012) <doi:10.1137/1.9781611972825.90>, Chiang et al (2017)
 (define-public r-outforest
   (package
     (name "r-outforest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "outForest" version))
               (sha256
                (base32
-                "05h70lj8i78jr3xn9s71nlsjrnka7q0jxmgis4xyl23mr6r55yiv"))))
+                "03m3jfbydagv4skpijz1xjhsydfb0ci2n0qz4zigfys6hxhfzg36"))))
     (properties `((upstream-name . "outForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-missranger r-fnn))

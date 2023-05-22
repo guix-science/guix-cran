@@ -1202,13 +1202,13 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.2.3")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tutorial.helpers" version))
               (sha256
                (base32
-                "1gyd443js4g3n1mjsslwahqbks73czpmk24yrgdlyg4yd3gsi65h"))))
+                "0nbfd44pzhq41k3r78gm5fqsgb5smm126i27mmpl57kas94wzbs6"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6445,13 +6445,13 @@ dendroecology, see Zang and Biondi (2015) <doi:10.1111/ecog.01335>.")
 (define-public r-treebugs
   (package
     (name "r-treebugs")
-    (version "1.4.9")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TreeBUGS" version))
               (sha256
                (base32
-                "1jr3xjdb909rlc698swpi5znmam2v73mp717vfg157df36930yj8"))))
+                "0nxv2hh7flmyfm2pap97hwjyz29hfzybfv3b1v0ygqffgmh1j7mb"))))
     (properties `((upstream-name . "TreeBUGS")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -6854,17 +6854,17 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.13-0")
+    (version "0.14-1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "transport" version))
               (sha256
                (base32
-                "0msz7z4mcz4s8sffqxsxjv5pwg2cwsg55fg477pr4vp3jgfznpn5"))))
+                "1458lj4g5npr59m27c4c3444qv2wlvmzgxpd4h46ihxcp6cl9wjr"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
-    (home-page "http://www.dominic.schuhmacher.name")
+    (home-page "https://dschuhm1.pages.gwdg.de/software")
     (synopsis
      "Computation of Optimal Transport Plans and Wasserstein Distances")
     (description
@@ -13078,6 +13078,39 @@ Twitter'.")
     (description
      "This package provides a tidy interface to data.table', giving users the speed of
 data.table while using tidyverse-like syntax.")
+    (license license:expat)))
+
+(define-public r-tidysynth
+  (package
+    (name "r-tidysynth")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "tidysynth" version))
+              (sha256
+               (base32
+                "1arvjv3w6my47xwrzxrnpb2npskhqb9xmqhszgrxcqa55s1x6p15"))))
+    (properties `((upstream-name . "tidysynth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rgenoud
+                             r-optimx
+                             r-magrittr
+                             r-kernlab
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidysynth")
+    (synopsis "Tidy Implementation of the Synthetic Control Method")
+    (description
+     "This package provides a synthetic control offers a way of evaluating the effect
+of an intervention in comparative case studies.  The package makes a number of
+improvements when implementing the method in R. These improvements allow users
+to inspect, visualize, and tune the synthetic control more easily.  A key
+benefit of a tidy implementation is that the entire preparation process for
+building the synthetic control can be accomplished in a single pipe.")
     (license license:expat)))
 
 (define-public r-tidystringdist

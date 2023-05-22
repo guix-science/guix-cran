@@ -34789,13 +34789,13 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "0.7.1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAST" version))
               (sha256
                (base32
-                "05kz6dp37nfs3dq1ql7vy514857yqnqbznlbzp1qsgadqrs657a8"))))
+                "05faq7p8d4x1i174s2ig27ybd89i30d72kalsaaf2qjfsimjfp42"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

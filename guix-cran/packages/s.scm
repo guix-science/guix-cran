@@ -7058,19 +7058,18 @@ specific purposes, such as predict[ing], print[ing], summary[izing], etc.")
 (define-public r-stringx
   (package
     (name "r-stringx")
-    (version "0.2.4")
+    (version "0.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stringx" version))
               (sha256
                (base32
-                "1l87y6akq3a6fv1s7imn5g3rsmsbijqk6a3gcfws1i1g59ripznx"))))
+                "0h6j67krpk1yr0qiq76grlw1dwdxzj1h61fvlbah86k444mfg91a"))))
     (properties `((upstream-name . "stringx")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
     (home-page "https://stringx.gagolewski.com/")
-    (synopsis
-     "Drop-in Replacements for Base String Functions Powered by 'stringi'")
+    (synopsis "Replacements for Base String Functions Powered by 'stringi'")
     (description
      "English is the native language for only 5% of the World population.  Also, only
 17% of us can understand this text.  Moreover, the Latin alphabet is the main
@@ -47201,13 +47200,13 @@ Ipsen, Hsiao, Lin, Wang, Lee, Lu, and Tzeng. (2021+) <arXiv:2105.03228>.")
 (define-public r-seacarb
   (package
     (name "r-seacarb")
-    (version "3.3.1")
+    (version "3.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seacarb" version))
               (sha256
                (base32
-                "0fgz4cqmrp4gmf361mcjwxzpnj9zl03wpn6hrpym42b3l615day3"))))
+                "11jp08s9kjf4aqw1i9rdy9fba14pafqm00bhxx9ixhw60bb7zb4a"))))
     (properties `((upstream-name . "seacarb")))
     (build-system r-build-system)
     (propagated-inputs (list r-solvesaphe r-oce r-gsw))

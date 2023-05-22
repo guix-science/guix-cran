@@ -7704,13 +7704,13 @@ NHDPlus documentation available from the US Environmental Protection Agency
 (define-public r-nhanesa
   (package
     (name "r-nhanesa")
-    (version "0.7.2")
+    (version "0.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nhanesA" version))
               (sha256
                (base32
-                "1bnm9wwbiy92m3acsibwr79yx1d7qzvrvc0mqkkkv8nvxlnhxwpm"))))
+                "190zc2q0grc94rjlzs41rbzx4yyalrq8vnkw9vy1f15jps0jnwpp"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

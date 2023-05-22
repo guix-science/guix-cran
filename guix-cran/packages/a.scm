@@ -5005,16 +5005,17 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 (define-public r-artsy
   (package
     (name "r-artsy")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aRtsy" version))
               (sha256
                (base32
-                "07pj1xm3ya04ksxzm1ln05z91rdqyn387ypd06c3ig1q7mlfffl1"))))
+                "1h5l7774mg03gjvyl4296hqbcwckr5cq469fmibgh16lh812jakq"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-scales
+                             r-rcpparmadillo
                              r-rcpp
                              r-randomforest
                              r-kknn
@@ -6141,13 +6142,13 @@ interactively visualize Arena's results.")
 (define-public r-areaplot
   (package
     (name "r-areaplot")
-    (version "1.2.3")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "areaplot" version))
               (sha256
                (base32
-                "1j342mgjfxca38j4xx0bp35fjdx1xsfp1czdlpahavg5xm94lwbf"))))
+                "15lkdrk9xyhpskvr884a4c8ap6hh3n0c0wmi10vxyafi6p2pdsl0"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=areaplot")

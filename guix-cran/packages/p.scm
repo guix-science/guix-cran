@@ -33217,23 +33217,22 @@ surveys.")
 (define-public r-palinsol
   (package
     (name "r-palinsol")
-    (version "0.93")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "palinsol" version))
               (sha256
                (base32
-                "0k29sl2j7yf4yc0dhb047rxwg9np9l6pdwv6wyb4j80yc07vc9am"))))
+                "1xxpi81gf8wb2a3a42akvibrk8319h4x13k19zxjg02qyrq9gsfx"))))
     (properties `((upstream-name . "palinsol")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gsl))
-    (home-page "https://bitbucket.org/mcrucifix/insol")
+    (home-page "https://github.com/mcrucifix/palinsol")
     (synopsis "Insolation for Palaeoclimate Studies")
     (description
      "R package to compute Incoming Solar Radiation (insolation) for palaeoclimate
 studies.  Features three solutions: Berger (1978), Berger and Loutre (1991) and
-Laskar et al. (2004).  Computes daily-mean, season-averaged and annual means for
-all latitudes.")
+Laskar et al. (2004).  Computes daily-mean, season-averaged and annual means and
+for all latitudes, and polar night dates.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-palettetown

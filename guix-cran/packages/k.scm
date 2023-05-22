@@ -2755,6 +2755,36 @@ package rely heavily on these two popular R packages: Dowle et al. (2021)
 <https://CRAN.R-project.org/package=ggplot2>.")
     (license license:gpl3)))
 
+(define-public r-kidsides
+  (package
+    (name "r-kidsides")
+    (version "0.5.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kidsides" version))
+              (sha256
+               (base32
+                "0iw6mr5yqgj4sn3bvirzcdzzxdxpkyr2ci4flzyjb60p0gfwlr7b"))))
+    (properties `((upstream-name . "kidsides")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-r-utils r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ngiangre/kidsides")
+    (synopsis "Download, Cache, and Connect to KidSIDES")
+    (description
+     "Caches and then connects to a sqlite database containing half a million
+pediatric drug safety signals.  The database is part of a family of resources
+catalogued at <https://nsides.io>.  The database contains 17 tables where the
+description table provides a map between the fields the field's details.  The
+database was created by Nicholas Giangreco during his PhD thesis which you can
+read in Giangreco (2022) <doi:10.7916/d8-5d9b-6738>.  The observations are from
+the Food and Drug Administration's Adverse Event Reporting System.  Generalized
+additive models estimated drug effects across child development stages for the
+occurrence of an adverse event when exposed to a drug compared to other drugs.
+Read more at the methods detailed in Giangreco (2022)
+<doi:10.1016/j.medj.2022.06.001>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-kidney-epi
   (package
     (name "r-kidney-epi")

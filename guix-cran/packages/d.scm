@@ -21081,13 +21081,13 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.8-0")
+    (version "2.8-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dbmss" version))
               (sha256
                (base32
-                "145p4vv375nwglb7k6c97cfj9325rhv28nxy8i2b3486bjnkyvc7"))))
+                "1fz1hkzsqf8myii502hniw4pihj4nrj7rck3v7f7vhqm10w6zz0v"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (inputs (list pandoc))
