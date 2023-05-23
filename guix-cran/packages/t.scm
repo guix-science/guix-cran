@@ -7476,13 +7476,13 @@ page.")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "0.8-2")
+    (version "0.8-3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tram" version))
               (sha256
                (base32
-                "04jv6dhlrh2psrlmnfdlgmjncd6fg86r5cq82dy3z06qzh9rjvq0"))))
+                "1f1v5q9f74jbiqvcd5ncjp2lbkm68p46yi1w0fnlb20j4yfhp3kg"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -7505,9 +7505,11 @@ non-normal (Box-Cox type) linear models, and continuous outcome logistic
 regression (Lohse et al., 2017, <DOI:10.12688/f1000research.12934.1>).  The
 underlying theory is described in Hothorn et al. (2018)
 <DOI:10.1111/sjos.12291>.  An extension to transformation models for clustered
-data is provided (Barbanti and Hothorn, 2022, <arxiv:1910.09219>).  Multivariate
-conditional transformation models (Klein et al, 2022, <DOI:10.1111/sjos.12501>)
-can be fitted as well.")
+data is provided (Barbanti and Hothorn, 2022,
+<DOI:10.1093/biostatistics/kxac048>).  Multivariate conditional transformation
+models (Klein et al, 2022, <DOI:10.1111/sjos.12501>) and shift-scale
+transformation models (Siegfried et al, 2023,
+<DOI:10.1080/00031305.2023.2203177>) can be fitted as well.")
     (license license:gpl2)))
 
 (define-public r-trajr

@@ -1443,6 +1443,33 @@ genes.  DrugBank contains information on 13443 drugs and 5157 targets.
 MalaCards integrates human disease information, including disease-related genes.")
     (license license:gpl3+)))
 
+(define-public r-autoscorecard
+  (package
+    (name "r-autoscorecard")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "autoScorecard" version))
+              (sha256
+               (base32
+                "1q0x34ni8bz0ipclzmi9fc06l8j75gpmpni18dr6f3bzjhq9pbdm"))))
+    (properties `((upstream-name . "autoScorecard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart r-rocr r-infotheo r-discretization
+                             r-corrplot))
+    (home-page "https://cran.r-project.org/package=autoScorecard")
+    (synopsis "Fully Automatic Generation of Scorecards")
+    (description
+     "This package provides an efficient suite of R tools for scorecard modeling,
+analysis, and visualization.  Including equal frequency binning, equidistant
+binning, K-means binning, chi-square binning, decision tree binning, data
+screening, manual parameter modeling, fully automatic generation of scorecards,
+etc.  This package is designed to make scorecard development easier and faster.
+References include: 1. <http://shichen.name/posts/>.  2.  Dong-feng Li(Peking
+University),Class PPT. 3. <https://zhuanlan.zhihu.com/p/389710022>.  4.
+<https://www.zhangshengrong.com/p/281oqR9JNw/>.")
+    (license license:agpl3)))
+
 (define-public r-autoscore
   (package
     (name "r-autoscore")
@@ -7705,6 +7732,37 @@ distributions using density ratio method (Sugiyama et al., (2012,
 ISBN:9781139035613)).  L1 and L2 error for continuous outcome and C-statistics
 for binomial outcome are computed.")
     (license license:gpl2)))
+
+(define-public r-appeears
+  (package
+    (name "r-appeears")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "appeears" version))
+              (sha256
+               (base32
+                "1q01wzqhg9qzacdwh13bgr2v8z0mv673gh7sx5xa9a9z6g6spvwm"))))
+    (properties `((upstream-name . "appeears")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rstudioapi
+                             r-r6
+                             r-memoise
+                             r-keyring
+                             r-jsonlite
+                             r-httr
+                             r-getpass
+                             r-geojsonio))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bluegreen-labs/appeears")
+    (synopsis "Interface to 'AppEARS' NASA Web Services")
+    (description
+     "Programmatic interface to the NASA Application for Extracting and Exploring
+Analysis Ready Samples services (AppEEARS;
+<https://appeears.earthdatacloud.nasa.gov/>).  The package provides easy access
+to analysis ready earth observation data in R.")
+    (license license:agpl3)))
 
 (define-public r-apollo
   (package
@@ -15721,13 +15779,13 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 (define-public r-adw
   (package
     (name "r-adw")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "adw" version))
               (sha256
                (base32
-                "0zg553gk3r4nvc04g16kxrdw9xzmz558r1r0j9b5s0jyxiybbnym"))))
+                "00f4z7h4y1gmy9smxy8jwnr4alw641i1lmx4dyjk39jzzrx9fz1d"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf))

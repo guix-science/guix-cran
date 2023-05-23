@@ -23386,13 +23386,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.11.0")
+    (version "2.12.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spant" version))
               (sha256
                (base32
-                "1vgjbsyy4xyrskjj0134l68k6x67dvbxy77h0lgls2pc6gbmp5nl"))))
+                "10rm1h4xjc8lwss85nhfkv78dcbqyfnd8d4x7mvwgglvf365f7s4"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -23476,13 +23476,13 @@ detailed in Peruzzi and Dunson (2020) <arXiv:2012.00943>.  Funded by ERC grant
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "4.2.1")
+    (version "4.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spaMM" version))
               (sha256
                (base32
-                "0yb80sph04k5r7pfsrxcr9qlkl9jnfsy5ifhqxpkpkafx45hc4jb"))))
+                "0dk7vmv7wacd2sbjwbmgag0vbwbd4mdrvldrc5p0s90m5wriy76a"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -24085,13 +24085,13 @@ SoundShape repository on GitHub for news and updates
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.5.3")
+    (version "2.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "soundgen" version))
               (sha256
                (base32
-                "0mbf9c640gqx7amc94z0dc0b8lky1b6db4w60lsk0lad11f5zl9m"))))
+                "18chlzynbkfvqc4dipdxdlk90kz0wqd6qwcax0qg7rc85ghfx8hh"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24102,6 +24102,7 @@ SoundShape repository on GitHub for news and updates
                              r-shiny
                              r-seewave
                              r-phontools
+                             r-nonlineartseries
                              r-mvtnorm
                              r-foreach
                              r-dtw
@@ -41936,6 +41937,27 @@ estimate a stochastic frontier with technical inefficiency effects when one
 input is endogenous.")
     (license license:gpl3)))
 
+(define-public r-sewage
+  (package
+    (name "r-sewage")
+    (version "0.2.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sewage" version))
+              (sha256
+               (base32
+                "171rd59w90q29a9ywdx5225gw6m57bz9rcj25ql38jk62xdmrx69"))))
+    (properties `((upstream-name . "sewage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-glue r-diagrammer r-cli))
+    (home-page "https://github.com/mwhalen18/sewage")
+    (synopsis "Light-Weight Data Pipelining Tool")
+    (description
+     "This package provides a simple interface to developing complex data pipelines
+which can be executed in a single call.  sewage makes it easy to test, debug,
+and share data pipelines through it's interface and visualizations.")
+    (license license:expat)))
+
 (define-public r-sever
   (package
     (name "r-sever")
@@ -48838,13 +48860,13 @@ Zappia et al. (2017)
 (define-public r-scribe
   (package
     (name "r-scribe")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scribe" version))
               (sha256
                (base32
-                "19lq33z1kaw7xybqldmvbg70j8k7hk3mv8arvd7dqzyfxp6lg3kk"))))
+                "1xkzyfxgnh0725aya6v3jxc2sxhd2xlw9lzff7dif32ih2055vrl"))))
     (properties `((upstream-name . "scribe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

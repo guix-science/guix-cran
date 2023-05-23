@@ -3371,20 +3371,19 @@ The package growthPheno can also be installed from
 (define-public r-growthmodels
   (package
     (name "r-growthmodels")
-    (version "1.2.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "growthmodels" version))
               (sha256
                (base32
-                "1wy5z77819s3daa0mifafcjfkggsq0ac522yagj86ml3vf7yqppj"))))
+                "1lryxdjq5ns08sqfcrsi9q2h399xr6lhxgh7kasx6pajly35vg1r"))))
     (properties `((upstream-name . "growthmodels")))
     (build-system r-build-system)
     (home-page "https://github.com/drodriguezperez/growthmodels")
     (synopsis "Nonlinear Growth Models")
     (description
-     "This package provides a compilation of nonlinear growth models used in many
-areas")
+     "This package provides a compilation of nonlinear growth models.")
     (license license:gpl3)))
 
 (define-public r-growthcurver
@@ -17475,13 +17474,13 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdag" version))
               (sha256
                (base32
-                "1kfarzbcljmbcnkkdgg1isc9hcwbrbncr7zissh6qymasganf7zg"))))
+                "168mnjy37skd7sixg03gdlz1llmnhard189fpfn4wshl24ri1kzs"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -17499,7 +17498,7 @@ invert_geom_defaults().")
                              r-dplyr
                              r-dagitty))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/malcolmbarrett/ggdag")
+    (home-page "https://github.com/r-causal/ggdag")
     (synopsis "Analyze and Create Elegant Directed Acyclic Graphs")
     (description
      "Tidy, analyze, and plot directed acyclic graphs (DAGs).  ggdag is built on top
@@ -17867,6 +17866,32 @@ aesthetics supported by ggplot2'.")
      "This package provides a set of geometries to make line plots a little bit nicer.
  Use along with ggplot2 to: - Improve the clarity of line plots with many
 overlapping lines - Draw more realistic worms.")
+    (license license:expat)))
+
+(define-public r-ggblend
+  (package
+    (name "r-ggblend")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggblend" version))
+              (sha256
+               (base32
+                "0wzy9lnvqxjl3511vk1y6nxpvhk9hvk1xq18bbwsv6886npls56z"))))
+    (properties `((upstream-name . "ggblend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (home-page "https://mjskay.github.io/ggblend/")
+    (synopsis "Blending and Compositing Algebra for 'ggplot2'")
+    (description
+     "Algebra of operations for blending, copying, adjusting, and compositing layers
+in ggplot2'.  Supports copying and adjusting the aesthetics or parameters of an
+existing layer, partitioning a layer into multiple pieces for re-composition,
+applying affine transformations to layers, and combining layers (or partitions
+of layers) using blend modes (including commutative blend modes, like multiply
+and darken).  Blend mode support is particularly useful for creating plots with
+overlapping groups where the layer drawing order does not change the output; see
+Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
     (license license:expat)))
 
 (define-public r-ggblanket

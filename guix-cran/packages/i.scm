@@ -5934,6 +5934,34 @@ latex code.  Reference: Interpreting tree ensembles with inTrees (Houtao Deng,
 2019, <doi:10.1007/s41060-018-0144-8>).")
     (license license:gpl3+)))
 
+(define-public r-intradaymodel
+  (package
+    (name "r-intradaymodel")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intradayModel" version))
+              (sha256
+               (base32
+                "1rpcm6bix06lwkj7wndy3zarbxwm24x15vwwb2gfqj0527pvk0gl"))))
+    (properties `((upstream-name . "intradayModel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-scales
+                             r-reshape2
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
+    (home-page "https://github.com/convexfi/intradayModel")
+    (synopsis "Modeling and Forecasting Financial Intraday Signals")
+    (description
+     "Models, analyzes, and forecasts financial intraday signals.  This package
+currently supports a univariate state-space model for intraday trading volume
+provided by Chen (2016) <doi:10.2139/ssrn.3101695>.")
+    (license license:asl2.0)))
+
 (define-public r-intnmf
   (package
     (name "r-intnmf")

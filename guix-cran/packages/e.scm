@@ -10351,13 +10351,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.0.4")
+    (version "1.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "enmSdmX" version))
               (sha256
                (base32
-                "18gnf848ssxg43aac1fla32mkim9vq6lc9g6b4bgd4n1byln2n1d"))))
+                "0s63x1i7l2c14a8wd7g0jffdr2d39jfkfm9mg1a3xflh88h596js"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -18380,13 +18380,13 @@ can be downloaded from the EBV Data Portal: Christian Langer/ iDiv (2020)
 (define-public r-ebsc
   (package
     (name "r-ebsc")
-    (version "4.16")
+    (version "4.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eBsc" version))
               (sha256
                (base32
-                "0mhmnd0lz0fl8l39kxxvxbn65pc2n440zj6g47f8flavl6p037s0"))))
+                "18k622687qvp6q8m2ycn9ppwvv2jh76dj92vfkl0b99jng2hv1zl"))))
     (properties `((upstream-name . "eBsc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

@@ -12094,13 +12094,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.2")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DImodels" version))
               (sha256
                (base32
-                "0fylyadx7dph8iv5q25s86laxgwlsi399fj9l36g9dm3ngsffbsf"))))
+                "0w5kjmfiz3idvxrpsfazq4zqzh3sdrz928g2a5r754dk5bx0nai8"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-multcomp r-hnp))

@@ -1331,13 +1331,13 @@ model data fitting.")
 (define-public r-pump
   (package
     (name "r-pump")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PUMP" version))
               (sha256
                (base32
-                "1065w0dj8acjr3xrbwrrq65rgsb389xs4fsp8frgbarp0lhsrfmp"))))
+                "0q1yx46vfpdm5n5ci49aqfiiccv9g4dw6f2a8sn2m0b06r7kag0h"))))
     (properties `((upstream-name . "PUMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1366,7 +1366,7 @@ outcomes.  The estimation takes into account the use of multiple testing
 procedures.  Development of this package was supported by a grant from the
 Institute of Education Sciences (R305D170030).  For a full package description,
 including a detailed technical appendix, see <arXiv:2112.15273>.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-pumilior
   (package
@@ -20669,13 +20669,13 @@ Retrosheets or the Lahman package by merging by GameID.")
 (define-public r-pinma
   (package
     (name "r-pinma")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PINMA" version))
               (sha256
                (base32
-                "1vva1vjlxww2d59iyl131j2fylpdghabmrmgmx3rpc22vxj0iawk"))))
+                "18sm4j2srwkf1yp487d0hbmmy8max5h9966mq43pf9f2fwa0j4mc"))))
     (properties `((upstream-name . "PINMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-mass))
@@ -24437,6 +24437,28 @@ Petfinder database.  The Petfinder REST API allows access to the Petfinder
 database, one of the largest online databases of adoptable animals and animal
 welfare organizations across North America.")
     (license license:expat)))
+
+(define-public r-petests
+  (package
+    (name "r-petests")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PEtests" version))
+              (sha256
+               (base32
+                "053vnwbjyh197m3vvzgwl8xikl6dglln00r1jlpsj2w68h1kz4pi"))))
+    (properties `((upstream-name . "PEtests")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PEtests")
+    (synopsis "Power-Enhanced (PE) Tests for High-Dimensional Data")
+    (description
+     "Two-sample power-enhanced mean tests, covariance tests, and simultaneous tests
+on mean vectors and covariance matrices for high-dimensional data.  Methods of
+these PE tests are presented in Yu, Li, and Xue (2022)
+<doi:10.1080/01621459.2022.2126781>; Yu, Li, Xue, and Li (2022)
+<doi:10.1080/01621459.2022.2061354>.")
+    (license license:gpl3+)))
 
 (define-public r-pestr
   (package

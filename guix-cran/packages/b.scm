@@ -4291,13 +4291,13 @@ exploration, along with several functions for generating useful figures.")
 (define-public r-braincon
   (package
     (name "r-braincon")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BrainCon" version))
               (sha256
                (base32
-                "0a95jlbll4smi32z7ykf64cyrkscnb7shzj10i1p1hsf90dwi7sv"))))
+                "137pagkjb4xzk3skmsf5vlp8q0k79zl9xjz8wwda1mdrknkdnbj6"))))
     (properties `((upstream-name . "BrainCon")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-glmnet))
@@ -5160,23 +5160,22 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
 (define-public r-boutliers
   (package
     (name "r-boutliers")
-    (version "1.1-1")
+    (version "1.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "boutliers" version))
               (sha256
                (base32
-                "01dp1w5lxmn6nixajg6dz0qincm0i1in03q7g284v37qnszyimqs"))))
+                "0j2y6ndj03shssa7pgvg9cwbm5mv7ahy9kypj9z1ahskdi4xg1m1"))))
     (properties `((upstream-name . "boutliers")))
     (build-system r-build-system)
-    (propagated-inputs (list r-metafor))
+    (propagated-inputs (list r-metafor r-mass))
     (home-page "https://cran.r-project.org/package=boutliers")
     (synopsis "Outlier Detection and Influence Diagnostics for Meta-Analysis")
     (description
-     "This package provides a R package for implementing outlier detection and
-influence diagnostics for meta-analysis.  Bootstrap distributions of the
-influence statistics are calculated, and the thresholds to determine influential
-outliers are provided explicitly.")
+     "Computational tools for outlier detection and influence diagnostics of
+meta-analysis.  Bootstrap distributions of the influence statistics are
+calculated, and the thresholds to determine outliers are explicitly provided.")
     (license license:gpl3)))
 
 (define-public r-boussinesq
@@ -14161,13 +14160,13 @@ PMLR 89:1704-1713.")
 (define-public r-bicausality
   (package
     (name "r-bicausality")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiCausality" version))
               (sha256
                (base32
-                "0m2z16mfwxkrv1n8w56qxb8mwsgarl3sm54spngvf5mcqg9x30p5"))))
+                "063qf3vfwxn0xp4j7rs4rz4zqhp2al5r3yhkw5lvf1882b3dqmis"))))
     (properties `((upstream-name . "BiCausality")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14182,7 +14181,8 @@ in a form of causal graph G=(V,E) where V is a set of nodes representing binary
 variables and there is an edge from i to j in E if the variable i causes j.  The
 framework determines dependency among variables as well as analyzing confounding
 factors before deciding whether i causes j.  The publication of this package is
-at <arXiv:2205.06131>.")
+at Chainarong Amornbunchornvej, Navaporn Surasvadi, Anon Plangprasopchok, and
+Suttipong Thajchayapong (2023) <doi:10.1016/j.heliyon.2023.e15947>.")
     (license license:expat)))
 
 (define-public r-bibs

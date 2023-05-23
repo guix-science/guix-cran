@@ -983,13 +983,13 @@ Colorado State University Vice President for Research.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "future.tests" version))
               (sha256
                (base32
-                "0nngq10fgqq1ha6rb62zc8nnz9wxvmznskzjfnibfsgjirvld11r"))))
+                "10g1w99xqr7l0cn27642aphqcvfidgpas38f84r815yy6k1ryrlx"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
@@ -1001,8 +1001,8 @@ Colorado State University Vice President for Research.")
      "Backends implementing the Future API, as defined by the future package, should
 use the tests provided by this package to validate that they meet the minimal
 requirements of the Future API. The tests can be performed easily from within R
-or from outside of R from the command line making it easy to include them
-package tests and in Continuous Integration (CI) pipelines.")
+or from outside of R from the command line making it straightforward to include
+them in package tests and in Continuous Integration (CI) pipelines.")
     (license license:lgpl2.1+)))
 
 (define-public r-future-batchtools
@@ -2280,13 +2280,13 @@ models.  There are now six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fuj" version))
               (sha256
                (base32
-                "0arcfpxjrqp5dxh234i5s9lkzy4cbvxbapmz6lq6069vrhr54wmv"))))
+                "14bmk915xv50h51rmyq5y9gixaw4a1nzc08264c95jl0lvbnx28q"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (home-page "https://jmbarbone.github.io/fuj/")
@@ -6856,6 +6856,28 @@ using the methods described by Ender Konukoglu and Melanie Ganz (2014)
 false positive rates and selection frequency false positive rate feature
 selection.")
     (license license:expat)))
+
+(define-public r-forestat
+  (package
+    (name "r-forestat")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "forestat" version))
+              (sha256
+               (base32
+                "1p9scjavimflyzc62y1mrs6n6n1dy9kxhvscxr8a63yk1z71dxqx"))))
+    (properties `((upstream-name . "forestat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlme r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=forestat")
+    (synopsis "Evaluating the Quality of Natural Forest")
+    (description
+     "Including tree height classification, tree height model establishment, sectional
+area growth and stock growth modeling, and calculation of actual and potential
+forest productivity.")
+    (license license:gpl3+)))
 
 (define-public r-foresight
   (package

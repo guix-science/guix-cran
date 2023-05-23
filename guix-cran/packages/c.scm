@@ -3660,13 +3660,13 @@ etc.).")
 (define-public r-csdata
   (package
     (name "r-csdata")
-    (version "2023.4.21")
+    (version "2023.5.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csdata" version))
               (sha256
                (base32
-                "1piyk46ss4hsppha49g356vq52h5b5d0i5vcrhcpg1gixw33yb0b"))))
+                "0f0yc4kcfsbzssdlfhkk9n5v586f3jdgbyc1djf9nhlbn03nqbdq"))))
     (properties `((upstream-name . "csdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -4606,6 +4606,30 @@ using external crosswalk files.  It is especially useful when constructing
 master data sets from multiple smaller data sets that do not name or encode
 variables consistently across files.  Based on similar commands in Stata'.")
     (license license:expat)))
+
+(define-public r-crossvalidationcp
+  (package
+    (name "r-crossvalidationcp")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crossvalidationCP" version))
+              (sha256
+               (base32
+                "0cmny8sjz4ampvi1jc2h4dh3x930vnwv8png6xygs2vb6p19f2ph"))))
+    (properties `((upstream-name . "crossvalidationCP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wbs r-fpopw r-changepoint))
+    (home-page "https://cran.r-project.org/package=crossvalidationCP")
+    (synopsis "Cross-Validation for Change-Point Regression")
+    (description
+     "This package implements the cross-validation methodology from Pein and Shah
+(2021) <arXiv:2112.03220>.  Can be customised by providing different
+cross-validation criteria, estimators for the change-point locations and local
+parameters, and freely chosen folds.  Pre-implemented estimators and criteria
+are available.  It also includes our own implementation of the COPPS procedure
+<doi:10.1214/19-AOS1814>.")
+    (license license:gpl3)))
 
 (define-public r-crossvalidate
   (package
@@ -5867,17 +5891,16 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.1.1")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "crew" version))
               (sha256
                (base32
-                "0iijvm7q27hsq2pb3pax7ksiv2g5wwqj238i4zcksb5m15w2ca3y"))))
+                "1jv39j0n96dwkgww8h58k5sfziw15w4k08w70a4r2pfjqmw702gn"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-rlang
                              r-r6
@@ -5888,7 +5911,7 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-getip))
     (native-inputs (list r-knitr))
     (home-page "https://wlandau.github.io/crew/")
-    (synopsis "Distributed Worker Launcher")
+    (synopsis "Distributed Worker Launcher Framework")
     (description
      "In computationally demanding analysis projects, statisticians and data
 scientists asynchronously deploy long-running tasks to distributed systems,
@@ -20272,13 +20295,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.0.2")
+    (version "3.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cNORM" version))
               (sha256
                (base32
-                "06n9cq796zxiwz4myf6n9f8wik9az1rq5ckn2qbyapli2831l8ri"))))
+                "0bdhddg7gfa3lxyyi8a970rg3msa90p2kpspmw3kksbiq26i4h3w"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-latticeextra r-lattice))

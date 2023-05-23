@@ -4250,6 +4250,40 @@ once.  The files can be compressed and various filters can be deployed before
 joining.  Compiles only under Unix.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-multigroupsequential
+  (package
+    (name "r-multigroupsequential")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MultiGroupSequential" version))
+              (sha256
+               (base32
+                "1ks13nhxkfw3ys59gm7i0n0ab6613d6hxw9wdcc9qf4ga9796kn2"))))
+    (properties `((upstream-name . "MultiGroupSequential")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openmx r-mvtnorm r-hommel))
+    (home-page "https://cran.r-project.org/package=MultiGroupSequential")
+    (synopsis "Group-Sequential Procedures with Multiple Hypotheses")
+    (description
+     "It is often challenging to strongly control the family-wise type-1 error rate in
+the group-sequential trials with multiple endpoints (hypotheses).  The inflation
+of type-1 error rate comes from two sources (S1) repeated testing individual
+hypothesis and (S2) simultaneous testing multiple hypotheses.  The
+MultiGroupSequential package is intended to help researchers to tackle this
+challenge.  The procedures provided include the sequential procedures described
+in Luo and Quan (2023) <doi:10.1080/19466315.2023.2191989> and the graphical
+procedure proposed by Maurer and Bretz (2013)
+<doi:10.1080/19466315.2013.807748>.  Luo and Quan (2013) describes three
+procedure and the functions to implement these procedures are (1) seqgspgx()
+implements a sequential graphical procedure based on the group-sequential
+p-values; (2) seqgsphh() implements a sequential Hochberg/Hommel procedure based
+on the group-sequential p-values; and (3) seqqvalhh() implements a sequential
+Hochberg/Hommel procedure based on the q-values.  In addition, seqmbgx()
+implements the sequential graphical procedure described in Maurer and Bretz
+(2013).")
+    (license license:gpl2+)))
+
 (define-public r-multigroupo
   (package
     (name "r-multigroupo")
@@ -15653,13 +15687,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.4-6")
+    (version "1.4-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlt" version))
               (sha256
                (base32
-                "0hk9aba677p6i9v05xjsql50whl2bdgfdshv522457m2yx421ya6"))))
+                "0q7icsyqp3jxvk6ll8ai115qqg1ch7rndvbbxx3nd175h8cng4rb"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -34758,13 +34792,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.1")
+    (version "0.6.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsbyname" version))
               (sha256
                (base32
-                "1lcm2dv3mjm7jwq68qqp7f4i0fsf8s5pkn98xwpscg00ca38kv1v"))))
+                "1ncqjmcfbypysqqkrprb4xwqvzkrajbd7sp189ji8a9s982sv284"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

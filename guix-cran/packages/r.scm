@@ -7200,13 +7200,13 @@ retrieve files from SauceLabs and manage tunnels associated with SauceConnect'."
 (define-public r-rsatscan
   (package
     (name "r-rsatscan")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsatscan" version))
               (sha256
                (base32
-                "0dkv0iy3gjr5dairjylp4zzb12yr6rybrz47bcllm3rcqzrdq4wr"))))
+                "13mhay8ljiy9p5ihgfcbgnvwg4qjvs3sjd4w7z8y10j19pxqpvkn"))))
     (properties `((upstream-name . "rsatscan")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreign))
@@ -26886,13 +26886,13 @@ a string containing diverse packages from several resources like Github or CRAN.
 (define-public r-require
   (package
     (name "r-require")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Require" version))
               (sha256
                (base32
-                "0s1rqvahfbxhs0lcqzrx9nl9y4blczr76rk7b2dh1lqvyycrk1yy"))))
+                "1d87vzxix2lwqjkl5h5kcpvjyd794li5z8vxf1r5dyd7nzmkm1qq"))))
     (properties `((upstream-name . "Require")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

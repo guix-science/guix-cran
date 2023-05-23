@@ -6240,13 +6240,13 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 (define-public r-oosse
   (package
     (name "r-oosse")
-    (version "1.0.2")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "oosse" version))
               (sha256
                (base32
-                "0sdhzs99ff9fkyn96zqbk3b5kwir49427b9z31j7x2z5dg90838p"))))
+                "0xa14c7wxkaj8qww3jsw26x3rwayqvpf7qcsw2xaz80j56ss4w9p"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-biocparallel))
@@ -6254,8 +6254,8 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
     (home-page "https://cran.r-project.org/package=oosse")
     (synopsis "Out-of-Sample RÂ² with Standard Error Estimation")
     (description
-     "Estimates the out-of-sample RÂ² through bootstrap or cross-validation as a
-measure of predictive performance.  In addition, a standard error for this point
+     "Estimates out-of-sample RÂ² through bootstrap or cross-validation as a measure
+of predictive performance.  In addition, a standard error for this point
 estimate is provided, and confidence intervals are constructed.")
     (license license:gpl2)))
 
@@ -6660,13 +6660,13 @@ and standard data types.")
 (define-public r-onmarg
   (package
     (name "r-onmarg")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "onmaRg" version))
               (sha256
                (base32
-                "0pdzbfkli44cm83q3zfgnd6n9inkgk50nr7jrlwg4zmi3r0f8pdj"))))
+                "1vxmzszi2imwxr237xd67ykzh2r1y65ir9b0xq5hgdkqll2pva9h"))))
     (properties `((upstream-name . "onmaRg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-sf r-readxl r-httr r-dplyr))
