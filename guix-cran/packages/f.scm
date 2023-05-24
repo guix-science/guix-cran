@@ -6101,13 +6101,13 @@ nlme::lme().  Includes graphics functions to display the descriptive statistics.
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.5.1")
+    (version "1.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forrel" version))
               (sha256
                (base32
-                "0v37msgxhm33gxjbkfphlylp3ppmcffffvg1l7x5pbimyd6yfg9g"))))
+                "0aa54cvf3hfqdpixsnh54zmwgg2vvi11z7yjq597cpaqphsrbzlb"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedmut r-glue))
@@ -11837,13 +11837,13 @@ Systems\" (NeurIPS).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.8.0")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "finbif" version))
               (sha256
                (base32
-                "1iw5lcp8phm71fmr8lgj16wh1g3vijyzds4kwfvpdjrgkn2658ya"))))
+                "0d030kf7vl22x3amsyhj418a8vamas7d8c9g598diwcyv37b02y9"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-lubridate r-httr r-digest))

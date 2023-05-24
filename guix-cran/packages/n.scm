@@ -6908,16 +6908,16 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "0.13.2")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nimble" version))
               (sha256
                (base32
-                "0q2zk2k5lj8l7b4grl1qaakc361cvxlmczrrdyakhqrcka4px434"))))
+                "0440wjij6h30p485bjix9w85gxxcm80cdk08lyga1lsvhbhwkkns"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-igraph r-coda))
+    (propagated-inputs (list r-r6 r-pracma r-numderiv r-igraph r-coda))
     (home-page "https://r-nimble.org")
     (synopsis
      "MCMC, Particle Filtering, and Programmable Hierarchical Modeling")
@@ -10999,13 +10999,13 @@ respective references are given.  In addition, the software includes Stevens
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "neotoma2" version))
               (sha256
                (base32
-                "0lw7v32w03fwn4pj3d7k95c2a2m1zqfjl03dr5ijh8b222zj1vsg"))))
+                "1wrml1yx3fi9ik84f19m6g28wxw2fn06i49f8yl41fmkqql31aa2"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk

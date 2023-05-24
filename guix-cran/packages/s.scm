@@ -10897,13 +10897,13 @@ Analysis.")
 (define-public r-statsexpressions
   (package
     (name "r-statsexpressions")
-    (version "1.5.0")
+    (version "1.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statsExpressions" version))
               (sha256
                (base32
-                "0ryb6zc77v3b81dxyvdlwkhph0ynpabbi5mxmpq25alyb17c1y8c"))))
+                "1lq4h3a8yr7wnmjkg2rgr8524vdpfacr73pv4wxj44dbg9yh8l3x"))))
     (properties `((upstream-name . "statsExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -10913,6 +10913,7 @@ Analysis.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-pmcmrplus
                              r-performance
                              r-parameters
                              r-magrittr
@@ -10922,7 +10923,8 @@ Analysis.")
                              r-dplyr
                              r-datawizard
                              r-correlation
-                             r-bayesfactor))
+                             r-bayesfactor
+                             r-afex))
     (native-inputs (list r-knitr))
     (home-page "https://indrajeetpatil.github.io/statsExpressions/")
     (synopsis "Tidy Dataframes and Expressions with Statistical Details")
@@ -11815,13 +11817,13 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 (define-public r-statar
   (package
     (name "r-statar")
-    (version "0.7.4")
+    (version "0.7.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "statar" version))
               (sha256
                (base32
-                "0jf2h8lkpiz8y525n38707jnwzv1ixfwmfr1hnv5ajqmxvnvd73r"))))
+                "1rjl1k4xp1qlg9c568624cj1z4jv1vvi1zrxrkn48ydb0vivp7gm"))))
     (properties `((upstream-name . "statar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12407,30 +12409,6 @@ data from dissolved organic matter (DOM) samples (Murphy et al., 2013)
 validation.  Some additional functions allow the calculation of absorbance slope
 parameters and create beautiful plots.")
     (license (license:fsdg-compatible "AGPL"))))
-
-(define-public r-staplr
-  (package
-    (name "r-staplr")
-    (version "3.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "staplr" version))
-              (sha256
-               (base32
-                "0g3a13qndi4w35wq9bm0gb2b8v9svih9gbj5ymggqlcwz1dzywga"))))
-    (properties `((upstream-name . "staplr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-stringr r-rjava r-glue r-assertthat))
-    (home-page "https://cran.r-project.org/package=staplr")
-    (synopsis "Toolkit for PDF Files")
-    (description
-     "This package provides function to manipulate PDF files: fill out PDF forms;
-merge multiple PDF files into one; remove selected pages from a file; rename
-multiple files in a directory; rotate entire pdf document; rotate selected pages
-of a pdf file; Select pages from a file; splits single input PDF document into
-individual pages; splits single input PDF document into parts from given points.
- staplr requires Java 8 installed on your system.")
-    (license license:gpl3)))
 
 (define-public r-stapler
   (package
@@ -23564,26 +23542,20 @@ computational experiments testing the performance of such methods.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "1.0.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SpaDES.tools" version))
               (sha256
                (base32
-                "16myl9kfv6ab2a54kz9fmx84q7xqk2r99zqjycn6xw3zfg46j3bb"))))
+                "08x45bqxfsxp2q52r9jwqxyy3pfaz485q4mcb9zwjnqx4qyqcfp9"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-require
+    (propagated-inputs (list r-terra
+                             r-reproducible
                              r-rcpp
-                             r-raster
-                             r-quickplot
-                             r-magrittr
                              r-fpcompare
-                             r-fastmatch
                              r-data-table
-                             r-circstats
                              r-checkmate
                              r-backports))
     (home-page "https://spades-tools.predictiveecology.org")
@@ -46190,13 +46162,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seeker" version))
               (sha256
                (base32
-                "1vfdjv9df60hyvhfa1ix9wg8ds6nz94gv72xdhx94x3dnv4jfhc3"))))
+                "0vq7spb0wdlzgzgljqsrf7ym6in8vbis2607fj2gpxm0643gff3k"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -46697,13 +46669,13 @@ Extensions in version 2.5.0 include costing and evaluation of detector spacing."
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.5.10")
+    (version "4.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "secr" version))
               (sha256
                (base32
-                "1z7hg86bwckm2v9bm14b7gl2dqnc5d01b0ar190x6nbdcfkg1m1h"))))
+                "1fy60gjqxj7acic9kyg2d81lslvcizpx17hds58jhdr4ldw1rw8r"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -47804,13 +47776,13 @@ alternative probability-based approach as described in Shimada et al. (2021)
 (define-public r-sdgdetector
   (package
     (name "r-sdgdetector")
-    (version "2.7.2")
+    (version "2.7.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDGdetector" version))
               (sha256
                (base32
-                "1lsrdwc33nx4q9mrchkg9g6ny1dab2rn7wamxcq5bjqnkqc82j07"))))
+                "0gm23f0xqw2cgig44d17qw2mfp685bz0dr8wrly4r90w44l121z9"))))
     (properties `((upstream-name . "SDGdetector")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -51204,32 +51176,6 @@ means, feature variances, or more general differences.")
 : panning, zooming, tooltips, etc.")
     (license license:gpl3+)))
 
-(define-public r-scatter
-  (package
-    (name "r-scatter")
-    (version "0.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "scatteR" version))
-              (sha256
-               (base32
-                "0w6sf8zkp0jjgrx2nbp43crx3w3dbrld3pk6hzjrqhf2l9wrqygw"))))
-    (properties `((upstream-name . "scatteR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scagnostics r-rjava r-gensa))
-    (home-page "https://cran.r-project.org/package=scatteR")
-    (synopsis "Generate Instance Space Based on Scagnostics")
-    (description
-     "Generate bivariate data based on scatterplot features defined through
-scagnostics.  Scagnostics is an exploratory graphical tool that defines nine
-features of a scatterplot based on the characteristics of three geometric graphs
-defined on the scatterplot.  The exact calculation of these measurements are
-based on Wilkinson, L., Anand, A., & Grossman, R. (2005)
-<doi:10.1109/INFVIS.2005.1532142>.  Set the required values for the scagnostic
-measurement type and the number of points that are needed to generate a
-bivariate dataset that gives the expected scagnostic measurements.")
-    (license license:expat)))
-
 (define-public r-scatr
   (package
     (name "r-scatr")
@@ -53715,13 +53661,13 @@ cancer data <arXiv:2012.06093>.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.5.2")
+    (version "1.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SAMtool" version))
               (sha256
                (base32
-                "1rcx61d0rma6dr0s59xx51n109s19fbrryr6b5qixbjh09qs7jh2"))))
+                "0k1d8k9xfd04c5d4r8nqv5w0qdh10gmjqcknzpz1ipk3c2nc9h8z"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -53732,8 +53678,7 @@ cancer data <arXiv:2012.06093>.")
                              r-pbapply
                              r-msetool
                              r-gplots
-                             r-dplyr
-                             r-corpcor))
+                             r-dplyr))
     (home-page "https://openmse.com")
     (synopsis "Stock Assessment Methods Toolkit")
     (description

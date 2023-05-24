@@ -4369,13 +4369,13 @@ tests.")
 (define-public r-multigraph
   (package
     (name "r-multigraph")
-    (version "0.97-2")
+    (version "0.98")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multigraph" version))
               (sha256
                (base32
-                "0rc2imyarb9k3cxpf27gsmhpn9v3cxn35f5vlpa77irhryyzxy1s"))))
+                "07mzgbpbskrqdp1shsxgsdki2r6gy08723c3qwdcc8z6r5ffd2r8"))))
     (properties `((upstream-name . "multigraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-multiplex))
@@ -29312,13 +29312,13 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.9.0")
+    (version "1.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "melt" version))
               (sha256
                (base32
-                "04k8w06siskwn8g2x9p6p8gxl4l9mjmrk759czglpfb1h6lb953z"))))
+                "0rg2vm9gp65h4hgwhyrfhyh5h08dpffxhxg4hhzslai4f5yv7385"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-bh))
@@ -29332,9 +29332,9 @@ flexibility in specifying hypotheses and calibration methods, extending the
 framework to simultaneous inferences.  The core computational routines are
 implemented using the Eigen C++ library and RcppEigen interface, with OpenMP for
 parallel computation.  Details of the testing procedures are given in Kim,
-MacEachern, and Peruggia (2021) <arxiv:2112.09206>.  This work was supported by
-the U.S. National Science Foundation under Grants No.  SES-1921523 and
-DMS-2015552.")
+MacEachern, and Peruggia (2023) <doi:10.1080/10485252.2023.2206919>.  This work
+was supported by the U.S. National Science Foundation under Grants No.
+SES-1921523 and DMS-2015552.")
     (license license:gpl2+)))
 
 (define-public r-mekko
@@ -34764,13 +34764,13 @@ McNicholas (2017) <doi: 10.1002/sta4.143>.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.1")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "matsindf" version))
               (sha256
                (base32
-                "12lr52cbiziv87fdkhxy9ha2fif38yjyfb4jiwx9v5xqbjpl2k30"))))
+                "0zcfsvry7nna95lgyim8lb6yh0ikkn3plar04inwp8nfwlyanflx"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -34779,6 +34779,7 @@ McNicholas (2017) <doi: 10.1002/sta4.143>.")
                              r-purrr
                              r-matsbyname
                              r-magrittr
+                             r-lifecycle
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -39937,13 +39938,13 @@ R, as well as for uploading local data to magma'.")
 (define-public r-magmaclustr
   (package
     (name "r-magmaclustr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MagmaClustR" version))
               (sha256
                (base32
-                "0q8k1daagkzscnvigj8642nrp9d2f1kp0hav6zn9c625rjvsr2b1"))))
+                "0nmf3whngm1kz27aazq4pkgw76sw24w33n51ril0dsvsfirfk7dd"))))
     (properties `((upstream-name . "MagmaClustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -39968,16 +39969,16 @@ perform predictions for supervised learning problems, in particular for time
 series or any functional/continuous data applications.  The corresponding
 articles has been respectively proposed by Arthur Leroy, Pierre Latouche,
 Benjamin Guedj and Servane Gey (2022) <doi:10.1007/s10994-022-06172-1>, and
-Arthur Leroy, Pierre Latouche, Benjamin Guedj and Servane Gey (2020)
-<arXiv:2011.07866>.  Theses approaches leverage the learning of cluster-specific
-mean processes, which are common across similar tasks, to provide enhanced
-prediction performances (even far from data) at a linear computational cost (in
-the number of tasks).  MagmaClust is a generalisation of Magma where the tasks
-are simultaneously clustered into groups, each being associated to a specific
-mean process.  User-oriented functions in the package are decomposed into
-training, prediction and plotting functions.  Some basic features (classic
-kernels, training, prediction) of standard Gaussian processes are also
-implemented.")
+Arthur Leroy, Pierre Latouche, Benjamin Guedj and Servane Gey (2023)
+<https://jmlr.org/papers/v24/20-1321.html>.  Theses approaches leverage the
+learning of cluster-specific mean processes, which are common across similar
+tasks, to provide enhanced prediction performances (even far from data) at a
+linear computational cost (in the number of tasks).  MagmaClust is a
+generalisation of Magma where the tasks are simultaneously clustered into
+groups, each being associated to a specific mean process.  User-oriented
+functions in the package are decomposed into training, prediction and plotting
+functions.  Some basic features (classic kernels, training, prediction) of
+standard Gaussian processes are also implemented.")
     (license license:expat)))
 
 (define-public r-magiclamp

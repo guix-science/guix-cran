@@ -11644,16 +11644,16 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.0-9")
+    (version "0.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "glmm.hp" version))
               (sha256
                (base32
-                "1p7sw2q31l4zim55lmrs7400b8kdi26v6bnsbhy5wcvy3a639n25"))))
+                "1zs2aibvb4pykm80pi0rxbdf5qm05l8xhdz20rmx52101837lzjj"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mumin r-lme4 r-ggplot2))
+    (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
     (home-page "https://github.com/laijiangshan/glmm.hp")
     (synopsis
      "Hierarchical Partitioning of Marginal R2 for Generalized Mixed-Effect Models")
@@ -27537,37 +27537,6 @@ Anders Nielsen, Casper W. Berg, Hans Skaug, Bradley M. Bell (2016)
 Approximation.\".  Begley, J., & Howell, D. (2004)
 <https://core.ac.uk/download/pdf/225936648.pdf> \"An overview of Gadget, the
 globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
-    (license license:gpl2)))
-
-(define-public r-gadget2
-  (package
-    (name "r-gadget2")
-    (version "2.3.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "gadget2" version))
-              (sha256
-               (base32
-                "0z73jic0wq7cashqa88kvji4a0lk0h0a13l9iagwxnlfsk9z0d3l"))))
-    (properties `((upstream-name . "gadget2")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=gadget2")
-    (synopsis
-     "Gadget is the Globally-Applicable Area Disaggregated General Ecosystem Toolbox")
-    (description
-     "This package provides a statistical ecosystem modelling package, taking many
-features of the ecosystem into account.  Gadget works by running an internal
-model based on many parameters, and then comparing the data from the output of
-this model to real data to get a goodness-of-fit likelihood score.  These
-parameters can then be adjusted, and the model re-run, until an optimum is
-found, which corresponds to the model with the lowest likelihood score.  Gadget
-allows the user to include a number of features into an ecosystem model: One or
-more species, each of which may be split into multiple stocks; multiple areas
-with migration between areas; predation between and within species; maturation;
-reproduction and recruitment; multiple commercial and survey fleets taking
-catches from the populations.  For more details see
-<https://gadget-framework.github.io/gadget2/>.  This is the C++ Gadget2 runtime,
-making it available for R.")
     (license license:gpl2)))
 
 (define-public r-gadag

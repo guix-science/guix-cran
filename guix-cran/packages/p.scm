@@ -3419,13 +3419,13 @@ models with penalized basis splines (P-Splines).  See
 (define-public r-pspatreg
   (package
     (name "r-pspatreg")
-    (version "1.0.9")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pspatreg" version))
               (sha256
                (base32
-                "1nysrpk9hzdfsii7zwsfj5is2q2cwlmijpkl41fd5kvfv28w6gfc"))))
+                "1gf00i605fss6xn0gyk7y2cqpihmqm4klqd1z1pdxqq41cg8r34s"))))
     (properties `((upstream-name . "pspatreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9969,13 +9969,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.3")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PracTools" version))
               (sha256
                (base32
-                "0xnf61cm8gl9wxrhgw7f7c9lv20f43ixxbrspi5s8fgi024s85bs"))))
+                "1am672g4nqd8bpy1597hn945j36yphddscq2237np9nfv7rh8yx0"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
@@ -16152,13 +16152,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.16")
+    (version "1.0.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pmparser" version))
               (sha256
                (base32
-                "0waqlrr69yysbh8hbkgmkpkrws102i7ichvi5kgc99wvy2hdpfqy"))))
+                "0yilwy72c4qfk0xs9wjmpggmsm5ng551sdw4531ycw5qb226z7mg"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (inputs (list unzip sqlite))
@@ -21470,24 +21470,27 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosamp
   (package
     (name "r-phylosamp")
-    (version "0.1.6")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "phylosamp" version))
               (sha256
                (base32
-                "0bnj75hm6dlfx4milyl3idpaz0bxilmgwmcbai23gh5rgn2mpmcx"))))
+                "1y48c4qjcxcxia2ggp2dfi051z8zpp0a0ks3a7h69gsw34vh9kd7"))))
     (properties `((upstream-name . "phylosamp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-rcolorbrewer r-ggplot2 r-cowplot))
+    (propagated-inputs (list r-rlang r-lifecycle r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HopkinsIDD/phylosamp")
-    (synopsis "The Probability of Transmission Given Phylogenetic Linkage")
+    (synopsis
+     "Sample Size Calculations for Molecular and Phylogenetic Studies")
     (description
-     "This package implements novel tools that estimate the probability of true
-transmission between two cases given phylogenetic linkage and the expected
-number of true transmission links in a sample.  Methods described in Wohl,
-Giles, and Lessler (2021) <doi:10.1371/journal.pcbi.1009182>.")
+     "This package implements novel tools for estimating sample sizes needed for
+phylogenetic studies, including studies focused on estimating the probability of
+true pathogen transmission between two cases given phylogenetic linkage and
+studies focused on tracking pathogen variants at a population level.  Methods
+described in Wohl, Giles, and Lessler (2021) and in Wohl, Lee, DiPrete, and
+Lessler (2023).")
     (license license:gpl2)))
 
 (define-public r-phyloregion
@@ -23878,13 +23881,13 @@ sequencing pseudo-time information.")
 (define-public r-pgrdup
   (package
     (name "r-pgrdup")
-    (version "0.2.3.7")
+    (version "0.2.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "PGRdup" version))
               (sha256
                (base32
-                "0zm0cm98nps2bfr66mb4j7a0v3s407zqrl2l2nvzg9yyqlaznzc3"))))
+                "1vz5kjc87cr2f5h0p3079xda27f45wkz7yy50zdvjgs6fhg1jdqq"))))
     (properties `((upstream-name . "PGRdup")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -25115,6 +25118,28 @@ distributions are equal in the treatment and the control group and approximate
 imputation-permutation methods when the censoring distributions are different.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-permchacko
+  (package
+    (name "r-permchacko")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "permChacko" version))
+              (sha256
+               (base32
+                "0in292c8yclmhbzkdcv4abqh1gh2xwjlbd7k54mqhjj1m51y1l6p"))))
+    (properties `((upstream-name . "permChacko")))
+    (build-system r-build-system)
+    (home-page "https://ocbe-uio.github.io/permChacko/")
+    (synopsis "Chacko Test for Order-Restriction with Permutation")
+    (description
+     "This package implements an extension of the Chacko chi-square test for ordered
+vectors (Chacko, 1966, <https://www.jstor.org/stable/25051572>).  Our extension
+brings the Chacko test to the computer age by implementing a permutation test to
+offer a numeric estimate of the p-value, which is particularly useful when the
+analytic solution is not available.")
+    (license license:gpl3+)))
 
 (define-public r-permanova
   (package

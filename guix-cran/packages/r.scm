@@ -19585,34 +19585,6 @@ package.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-rkafka
-  (package
-    (name "r-rkafka")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rkafka" version))
-              (sha256
-               (base32
-                "00m9zj2fnd32dhm7gn3fclpmp9r2y06sd8yckdbhlvd784b2d4c9"))))
-    (properties `((upstream-name . "rkafka")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-runit r-rkafkajars r-rjava))
-    (home-page "https://cran.r-project.org/package=rkafka")
-    (synopsis "Using Apache 'Kafka' Messaging Queue Through 'R'")
-    (description
-     "Apache Kafka is an open-source message broker project developed by the Apache
-Software Foundation which can be thought of as a distributed, partitioned,
-replicated commit log service.At a high level, producers send messages over the
-network to the Kafka cluster which in turn serves them up to consumers.See
-<https://kafka.apache.org/> for more information.Functions included in this
-package enable:1.Creating Kafka producer 2.Writing messages to a topic 3.Closing
-Kafka producer 4.Creating Kafka consumer 5.Reading messages from a topic
-6.Closing Kafka consumer.  The jars required for this package are included in a
-separate package rkafkajars'.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
@@ -30640,13 +30612,13 @@ criteria, publications and other information.")
 (define-public r-redland
   (package
     (name "r-redland")
-    (version "1.0.17-16.1")
+    (version "1.0.17-17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "redland" version))
               (sha256
                (base32
-                "0x0ydhcrl5256mp5rvcjw09fa7hv1s950kclaqfaghjd5qy2a17x"))))
+                "135cfxn81dsafrnlcf7plp0d5hhdrw6w7kyjbrp65svky1fb0zsy"))))
     (properties `((upstream-name . "redland")))
     (build-system r-build-system)
     (inputs (list))
@@ -34732,13 +34704,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.0-9")
+    (version "1.1-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rdacca.hp" version))
               (sha256
                (base32
-                "1w8d3mzx2mip29lnb829m54vqvww3405sk241linfrywnxpmmizv"))))
+                "1ac558vwd0sfalmb39gaa5vrmrmj55l0lk6xp6cnig9gp60x1wcr"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-ggplot2))
@@ -39641,26 +39613,6 @@ reading and writing LibBi input/output files, for converting LibBi output to
 provide traces for use with the coda package, and for running LibBi to conduct
 inference.")
     (license license:gpl3)))
-
-(define-public r-rbgs
-  (package
-    (name "r-rbgs")
-    (version "0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rbgs" version))
-              (sha256
-               (base32
-                "1q0dnbcpgx7x9klr6z33z6g2p9p8mrmhnsqjy6qw15ch720rrgn3"))))
-    (properties `((upstream-name . "Rbgs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjava r-magrittr r-imager))
-    (home-page "https://cran.r-project.org/package=Rbgs")
-    (synopsis "Reading and Background Subtraction in Videos")
-    (description
-     "This package provides methods that allow video reading and loading in R. Also
-provides nine different methods for background subtraction.")
-    (license license:gpl2)))
 
 (define-public r-rbgm
   (package
@@ -46113,13 +46065,13 @@ interest for working with data.table objects are included.")
 (define-public r-r2dii-plot
   (package
     (name "r-r2dii-plot")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2dii.plot" version))
               (sha256
                (base32
-                "0xfirb7xq199mxngjva535nqfdfl8ff26bmfdk141hg9fysfs00v"))))
+                "090nb09dypsh13mridxiib32vm3fc49r1237rws5wzj4w3icyy6n"))))
     (properties `((upstream-name . "r2dii.plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -46133,7 +46085,7 @@ interest for working with data.table objects are included.")
                              r-ggplot2
                              r-forcats
                              r-dplyr))
-    (home-page "https://github.com/2DegreesInvesting/r2dii.plot")
+    (home-page "https://github.com/RMI-PACTA/r2dii.plot")
     (synopsis
      "Visualize the Climate Scenario Alignment of a Financial Portfolio")
     (description
@@ -46141,9 +46093,9 @@ interest for working with data.table objects are included.")
 portfolio to climate change scenarios based on climate indicators (production
 and emission intensities) across key climate relevant sectors of the PACTA
 methodology (Paris Agreement Capital Transition Assessment;
-<https://2degrees-investing.org/>).  Financial institutions use PACTA to study
-how their capital allocation decisions align with climate change mitigation
-goals.")
+<https://www.transitionmonitor.com/>).  Financial institutions use PACTA to
+study how their capital allocation decisions align with climate change
+mitigation goals.")
     (license license:expat)))
 
 (define-public r-r2dii-match

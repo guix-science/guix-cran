@@ -1545,13 +1545,13 @@ al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.19-1")
+    (version "0.5.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "isotree" version))
               (sha256
                (base32
-                "1l42dgfr51k6dnm07yxpawwqwy9a4rsc6k90fviw4sf71byazqa0"))))
+                "1xp6innz9rry21bhq8ask3pq20hn2nsqdkbqz0f9lckbhk2knl4z"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

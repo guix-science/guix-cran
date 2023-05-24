@@ -9371,13 +9371,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "topr" version))
               (sha256
                (base32
-                "1j6rqfxbvyhkrhwjln2ra4iax08m36isy889c5wxrvyhy54rh7zx"))))
+                "0pnwj0pq2xsdd7iydpd3ix9vxxhdm4y7zhabd8vl3xzh2y9scx5n"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-toprdata
@@ -11230,13 +11230,13 @@ launched to further simplify the process.")
 (define-public r-tips
   (package
     (name "r-tips")
-    (version "1.2.2")
+    (version "1.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TiPS" version))
               (sha256
                (base32
-                "1dh7rjxw35n96jcbf404qk14sh1w2zbrb9wf159n4pqdxa21kyn1"))))
+                "061lyai1kjm5glm69wxpnqvgp1xzj8j893pa73x5fl228dqm526f"))))
     (properties `((upstream-name . "TiPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-inline r-gtools))

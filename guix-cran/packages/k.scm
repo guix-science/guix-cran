@@ -4847,6 +4847,41 @@ set.  The Kantorovich distance is also known as the Monge-Kantorovich distance
 or the first Wasserstein distance.")
     (license license:gpl3)))
 
+(define-public r-kanjistat
+  (package
+    (name "r-kanjistat")
+    (version "0.9.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "kanjistat" version))
+              (sha256
+               (base32
+                "0yp5x1zvf8k4gaz2fpi6qa1mpfkmsvdv7y0b7scbf168yjqq8m7a"))))
+    (properties `((upstream-name . "kanjistat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-transport
+                             r-sysfonts
+                             r-stringr
+                             r-stringi
+                             r-showtext
+                             r-roi
+                             r-rlang
+                             r-purrr
+                             r-png
+                             r-lifecycle
+                             r-gsubfn
+                             r-dendextend
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://dschuhmacher.github.io/kanjistat/")
+    (synopsis
+     "Statistical Framework for the Analysis of Japanese Kanji Characters")
+    (description
+     "Various tools and data sets that support the study of kanji, including their
+morphology, decomposition and concepts of distance and similarity between them.")
+    (license license:gpl3+)))
+
 (define-public r-kangar00
   (package
     (name "r-kangar00")

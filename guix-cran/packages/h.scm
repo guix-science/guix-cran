@@ -6933,33 +6933,6 @@ NetCDF-4 file.  The technical details are described in Badr et al. (2015)
 <doi:10.1007/s12145-015-0221-7>.")
     (license license:gpl3)))
 
-(define-public r-hicfeat
-  (package
-    (name "r-hicfeat")
-    (version "1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "HiCfeat" version))
-              (sha256
-               (base32
-                "1imz7zfax74aakzk8457jww9r66qxpr2ncyvjj0y5paxdn76lnnq"))))
-    (properties `((upstream-name . "HiCfeat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtracklayer
-                             r-matrix
-                             r-iranges
-                             r-glmnet
-                             r-genomicranges
-                             r-genomeinfodb))
-    (home-page "https://cran.r-project.org/package=HiCfeat")
-    (synopsis
-     "Multiple Logistic Regression for 3D Chromatin Domain Border Analysis")
-    (description
-     "We propose a multiple logistic regression model to assess the influences of
-genomic features such as DNA-binding proteins and functional elements on
-topological domain borders.")
-    (license license:gpl2)))
-
 (define-public r-hibayes
   (package
     (name "r-hibayes")

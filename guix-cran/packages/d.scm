@@ -1829,13 +1829,13 @@ friendly way.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.7.1-1")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "duckdb" version))
               (sha256
                (base32
-                "19hwnwyp63fzg8i3spxxpr8nnxni3hvcbhnrkk0hp2jr79xpzky2"))))
+                "0j3nr4k87dfi1r7qfki85cm46g2c2k3hw4i1hp6477bkr2r3mxxl"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))

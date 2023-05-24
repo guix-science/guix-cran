@@ -8382,16 +8382,16 @@ the analysis does not rely on ad hoc identification.")
 (define-public r-apatext
   (package
     (name "r-apatext")
-    (version "0.1.1")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apaText" version))
               (sha256
                (base32
-                "1r217k60w027i63nbj24b1rm37m4qf7a6iirc941s945babkxcmb"))))
+                "1y3kwm6kldryqw9jb2dikvijmqxwxpkp4pw64c9pqshxjjnwfqiq"))))
     (properties `((upstream-name . "apaText")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-dplyr r-cocor))
     (home-page "https://cran.r-project.org/package=apaText")
     (synopsis
      "Create R Markdown Text for Results in the Style of the American Psychological Association (APA)")
@@ -11420,36 +11420,6 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
      "Collect your data on digital marketing campaigns from Amazon Ads using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-amapvox
-  (package
-    (name "r-amapvox")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "AMAPVox" version))
-              (sha256
-               (base32
-                "0pdcsdfflgss9zrc1biiwg7lrvr10irmi2q8zng6yaccnlw4v074"))))
-    (properties `((upstream-name . "AMAPVox")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rappdirs
-                             r-jsonlite
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://amapvox.org")
-    (synopsis "LiDAR Data Voxelisation")
-    (description
-     "Read, manipulate and write voxel spaces.  Voxel spaces are read from text-based
-output files of the AMAPVox software.  AMAPVox is a LiDAR point cloud
-voxelisation software that aims at estimating leaf area through several
-theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
-<doi:10.23708/1AJNMP> and the technical note Vincent et al. (2021)
-<doi:10.23708/1AJNMP>.")
-    (license (license:fsdg-compatible "CeCILL (>= 2)"))))
 
 (define-public r-amapro
   (package

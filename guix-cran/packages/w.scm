@@ -1065,6 +1065,27 @@ interfaces to parametric standard evaluation interfaces, inspired by
 gtools::strmacro() and base::bquote()'), and more.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-wrappr
+  (package
+    (name "r-wrappr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wrappr" version))
+              (sha256
+               (base32
+                "0n60var32fyk40mgk6crq565qcpif8cbgmqkqkl0a2ip1l0vrs30"))))
+    (properties `((upstream-name . "wrappr")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=wrappr")
+    (synopsis "Collection of Helper and Wrapper Functions")
+    (description
+     "Helper functions to easily add functionality to functions.  The package can
+assign functions to have an lazy evaluation allowing you to save and update the
+arguments before and after each function call.  You can set a temporary working
+directory within functions and wrap console messages around other functions.")
+    (license license:expat)))
+
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
@@ -4635,13 +4656,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "0.14.1")
+    (version "0.14.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeightIt" version))
               (sha256
                (base32
-                "181qiwj137wh479kpwbrmflwza6n2y2ijd94bc3blfhvaqskld0d"))))
+                "13gjmywqdrbyfrjx0lmizhsg8wbrb3frwks2hw7k387yjllzbvsb"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

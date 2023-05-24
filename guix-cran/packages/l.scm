@@ -5824,6 +5824,28 @@ treatment effects can be calculated and relative risks and odds ratios may be
 calculated for binary outcomes.")
     (license license:agpl3)))
 
+(define-public r-lmtestrob
+  (package
+    (name "r-lmtestrob")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lmtestrob" version))
+              (sha256
+               (base32
+                "1637x7wp2kb97xbllyd0kwxszcjlajfr0c9qa956cn6fdk9yi61d"))))
+    (properties `((upstream-name . "lmtestrob")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=lmtestrob")
+    (synopsis "Outlier Robust Specification Testing")
+    (description
+     "Robust test(s) for model diagnostics in regression.  The current version
+contains a robust test for functional specification (linearity).  The test is
+based on the robust bounded-influence test by Heritier and Ronchetti (1994)
+<doi:10.1080/01621459.1994.10476822>.")
+    (license license:gpl2)))
+
 (define-public r-lmsubsets
   (package
     (name "r-lmsubsets")

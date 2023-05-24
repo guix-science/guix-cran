@@ -3381,13 +3381,13 @@ conditions.")
 (define-public r-csmaps
   (package
     (name "r-csmaps")
-    (version "2022.12.15")
+    (version "2023.5.22")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "csmaps" version))
               (sha256
                (base32
-                "0qr68jbq6wzrrx6a701cwighcgbyg1ppbys0iajgc1v04z625jhh"))))
+                "02w3g6qc928fbic462nn22s6fcqxr4v9hhhrv632azcc2x83k100"))))
     (properties `((upstream-name . "csmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -3396,8 +3396,8 @@ conditions.")
     (synopsis "Preformatted Maps of Norway that Don't Need Geolibraries")
     (description
      "This package provides datasets containing preformatted maps of Norway at the
-county, municipality, and ward (Oslo only) level for redistricting in 2017,
-2018, and 2020.  Multiple layouts are provided (normal, split, and with an
+county, municipality, and ward (Oslo only) level for redistricting in 2024,
+2020, 2018, and 2017.  Multiple layouts are provided (normal, split, and with an
 insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
 without any geolibraries.")
     (license license:expat)))
@@ -25699,18 +25699,18 @@ well as on a graphics card.")
 (define-public r-cities
   (package
     (name "r-cities")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cities" version))
               (sha256
                (base32
-                "14wrv5pgzb0mf23ipp2j8d1ca73pgl5010h7qfkmgaxfvmn9j4yq"))))
+                "06xpf5knqdywscy678902ax5wqzbrxr5lh7y3n25c1z4jm1vgag9"))))
     (properties `((upstream-name . "cities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-plotly r-ggthemes r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cities")
+    (home-page "https://hakeemwahabapp.shinyapps.io/cities/")
     (synopsis "Clinical Trials with Intercurrent Events Simulator")
     (description
      "Simulates clinical trials and summarizes causal effects and treatment policy
@@ -33287,13 +33287,13 @@ with x in [0, size + 1], following Ilienko (2013) <arXiv:1303.5990>.")
 (define-public r-cbctools
   (package
     (name "r-cbctools")
-    (version "0.3.0")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cbcTools" version))
               (sha256
                (base32
-                "1f09d7vrx6awmpk20c8wfy1kqxqjr8h6qkmm5a0f0mlgy7lwz1c2"))))
+                "0kzrc279avwhzi4962p0s643slkdyxb6pzbcv56v15hkf2fx7mih"))))
     (properties `((upstream-name . "cbcTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -33302,7 +33302,8 @@ with x in [0, size + 1], following Ilienko (2013) <arXiv:1303.5990>.")
                              r-logitr
                              r-idefix
                              r-ggplot2
-                             r-fastdummies))
+                             r-fastdummies
+                             r-dplyr))
     (home-page "https://github.com/jhelvy/cbcTools")
     (synopsis "Design and Evaluate Choice-Based Conjoint Survey Experiments")
     (description
