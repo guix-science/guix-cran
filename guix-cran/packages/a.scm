@@ -6050,6 +6050,37 @@ to oceanographic analysis.  See Kelley, Harbin, and Richards (2021)
 applications.")
     (license license:gpl2+)))
 
+(define-public r-argo
+  (package
+    (name "r-argo")
+    (version "3.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "argo" version))
+              (sha256
+               (base32
+                "17ys6v2n84fp38zkc43whfgbc8qq1qx41q14899qgglz7xv4axzn"))))
+    (properties `((upstream-name . "argo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xtable
+                             r-xml
+                             r-matrix
+                             r-glmnet
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=argo")
+    (synopsis
+     "Accurate Estimation of Influenza Epidemics using Google Search Data")
+    (description
+     "Augmented Regression with General Online data (ARGO) for accurate estimation of
+influenza epidemics in United States on national level, regional level and state
+level.  It replicates the method introduced in paper Yang, S., Santillana, M.
+and Kou, S.C. (2015) <doi:10.1073/pnas.1515373112>; Ning, S., Yang, S. and Kou,
+S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
+(2021) <doi:10.1038/s41598-021-83084-5>.")
+    (license license:gpl2)))
+
 (define-public r-arfima
   (package
     (name "r-arfima")
@@ -6397,26 +6428,24 @@ fragmentation metrics.")
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arcpullr" version))
               (sha256
                (base32
-                "1nbz5br6vm0ka9jn2cnkf2g90l6d0pzvma2x5dlq5arpg5jmca4b"))))
+                "1wdr18y2fld69f9rjb3jhd0dsq2q386djncpwcwypysb60rs7lpa"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-rlang
-                             r-rgdal
                              r-raster
                              r-jsonlite
                              r-httr
                              r-ggplot2
                              r-dt
-                             r-dplyr
-                             r-bslib))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=arcpullr")
     (synopsis "Pull Data from an 'ArcGIS REST' API")
@@ -11006,6 +11035,44 @@ saved, thus tracking changes in knowledge through time.  A shiny application
 called AM Model Manager (modelMgr()) enables the use of these functions via a
 GUI.")
     (license license:gpl3)))
+
+(define-public r-ammistability
+  (package
+    (name "r-ammistability")
+    (version "0.1.4")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ammistability" version))
+              (sha256
+               (base32
+                "06hlbpwa0d1grs7k1vfhchrfi9zml76hkn41vnrayv35fx0sl1pz"))))
+    (properties `((upstream-name . "ammistability")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-rdpack
+                             r-mathjaxr
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-agricolae))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ammistability")
+    (synopsis
+     "Additive Main Effects and Multiplicative Interaction Model Stability Parameters")
+    (description
+     "Computes various stability parameters from Additive Main Effects and
+Multiplicative Interaction (AMMI) analysis results such as Modified AMMI
+Stability Value (MASV), Sums of the Absolute Value of the Interaction Principal
+Component Scores (SIPC), Sum Across Environments of Genotype-Environment
+Interaction Modelled by AMMI (AMGE), Sum Across Environments of Absolute Value
+of Genotype-Environment Interaction Modelled by AMMI (AV_(AMGE)), AMMI Stability
+Index (ASI), Modified ASI (MASI), AMMI Based Stability Parameter (ASTAB),
+Annicchiarico's D Parameter (DA), Zhang's D Parameter (DZ), Averages of the
+Squared Eigenvector Values (EV), Stability Measure Based on Fitted AMMI Model
+(FA), Absolute Value of the Relative Contribution of IPCs to the Interaction
+(Za).  Further calculates the Simultaneous Selection Index for Yield and
+Stability from the computed stability parameters.  See the vignette for complete
+list of citations for the methods implemented.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ammibayes
   (package

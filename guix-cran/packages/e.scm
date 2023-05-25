@@ -171,6 +171,31 @@ best optimize fluorometric enzyme assays.  A standardized approach would make
 studies more comparable and reproducible.")
     (license license:agpl3)))
 
+(define-public r-ezknitr
+  (package
+    (name "r-ezknitr")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ezknitr" version))
+              (sha256
+               (base32
+                "15ibkndqx8fbsrckkcj75mflqsryjpmn7qqygp5z1abzgpj05j6n"))))
+    (properties `((upstream-name . "ezknitr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r-utils r-markdown r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/ezknitr/")
+    (synopsis "Avoid the Typical Working Directory Pain When Using 'knitr'")
+    (description
+     "An extension of knitr that adds flexibility in several ways.  One common source
+of frustration with knitr is that it assumes the directory where the source file
+lives should be the working directory, which is often not true.  ezknitr
+addresses this problem by giving you complete control over where all the inputs
+and outputs are, and adds several other convenient features to make rendering
+markdown/HTML documents easier.")
+    (license license:expat)))
+
 (define-public r-ezglm
   (package
     (name "r-ezglm")

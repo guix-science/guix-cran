@@ -5071,16 +5071,46 @@ directories (e.g. box_fetch(), box_push()).")
 style.  Visualize the effect of factor.")
     (license license:expat)))
 
+(define-public r-boxplotcluster
+  (package
+    (name "r-boxplotcluster")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "boxplotcluster" version))
+              (sha256
+               (base32
+                "00pl2gq7j6mvq0hkryba9iqy2kxwkwp4f2rkfivaz69x5gg780f2"))))
+    (properties `((upstream-name . "boxplotcluster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cluster))
+    (home-page "https://cran.r-project.org/package=boxplotcluster")
+    (synopsis "Clustering Method Based on Boxplot Statistics")
+    (description
+     "Following Arroyo-MatÃ©-Roque (2006), the function calculates the distance
+between columns of the dataset using the generalized Minkowski metric as
+described by Ichino-Yaguchi (1994).  The distance measure gives more weight to
+differences between quartiles than to differences between extremes, making it
+less sensitive to outliers.  Further,the function calculates the silhouette
+width (Rousseeuw 1987) for different numbers of clusters and selects the number
+of clusters that maximizes the average silhouette width, unless a specific
+number of clusters is provided by the user.  The approach implemented in this
+package is based on the following publications: Rousseeuw (1987)
+<doi:10.1016/0377-0427(87)90125-7>; Ichino-Yaguchi (1994)
+<doi:10.1109/21.286391>; Arroyo-MatÃ©-Roque (2006)
+<doi:10.1007/3-540-34416-0_7>.")
+    (license license:gpl2+)))
+
 (define-public r-boxfilter
   (package
     (name "r-boxfilter")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "boxfilter" version))
               (sha256
                (base32
-                "1q3vs2js1l5416rc1krsglfv4hz00xdgb2cmmxdmhr6bzxq8mxdc"))))
+                "03qx2bsqg7kkpf2q6xrj7ap0aczgascdrnkj5bcl3aq278fahnxi"))))
     (properties `((upstream-name . "boxfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2))
@@ -5095,7 +5125,7 @@ rectangular frame as well as the cut-off value, i.e.  of a minimum proportion of
 neighbor-points, may be supplied or can be calculated automatically.  Originally
 designed for the cleaning of heart rates, but suitable for filtering any
 slowly-changing physiological variable.For more information see Signer
-(2010)<doi: 10.1111/j.2041-210X.2009.00010.x>.")
+(2010)<doi:10.1111/j.2041-210X.2009.00010.x>.")
     (license license:gpl3+)))
 
 (define-public r-box
@@ -22487,6 +22517,38 @@ researchers to perform professional level Bayesian data analysis without
 advanced knowledge in programming and Bayesian statistics.  This package is
 based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).")
     (license license:gpl3+)))
+
+(define-public r-bayenet
+  (package
+    (name "r-bayenet")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Bayenet" version))
+              (sha256
+               (base32
+                "1xcn6cyzsy1am6d6kmb2fd5pn1h26hz68jj2kwy99f9bz4473rgy"))))
+    (properties `((upstream-name . "Bayenet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-suppdists
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mcmcpack
+                             r-mass
+                             r-hbmem
+                             r-gsl))
+    (home-page "https://cran.r-project.org/package=Bayenet")
+    (synopsis "Bayesian Quantile Elastic Net for Genetic Study")
+    (description
+     "As heavy-tailed error distribution and outliers in the response variable widely
+exist, models which are robust to data contamination are highly demanded.  Here,
+we develop a novel robust Bayesian variable selection method with elastic net
+penalty for quantile regression in genetic analysis.  In particular, the
+spike-and-slab priors have been incorporated to impose sparsity.  An efficient
+Gibbs sampler has been developed to facilitate computation.The core modules of
+the package have been developed in C++ and R.")
+    (license license:gpl2)))
 
 (define-public r-bayefdr
   (package

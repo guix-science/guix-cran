@@ -8263,13 +8263,13 @@ pipe-friendly syntax.")
 (define-public r-dlstats
   (package
     (name "r-dlstats")
-    (version "0.1.6")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dlstats" version))
               (sha256
                (base32
-                "0bs7kgllii2nhb1sspajhlldhjav9gl0y96c949pgfijwbr01vn0"))))
+                "1qc7gp2glkbhnblqckz3l7jmlsarf3jlsp6cqm4wm0s87z038r9a"))))
     (properties `((upstream-name . "dlstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rcolorbrewer r-magrittr r-jsonlite
@@ -16648,13 +16648,13 @@ special, roxygen'-style comments.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DEPONS2R" version))
               (sha256
                (base32
-                "080iq1b2hdsvjw7df4z1kjq1jzr14xd946nyiaw1xiz3kw8ld8iz"))))
+                "09rd7bd855s7bs4fasdzc15fxi6191gfpjifqqyia0j857nr5n14"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

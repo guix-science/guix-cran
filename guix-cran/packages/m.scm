@@ -3653,13 +3653,13 @@ available at <DOI:10.18637/jss.v005.i06>.")
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.5.0")
+    (version "0.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multinma" version))
               (sha256
                (base32
-                "0s7wybp56f102khxjvlmd55rm1yc728cgp948376vkj0lz4hnsvr"))))
+                "083xwcvciap9la97zk9af2phsvakmh4lamn43a9dsvj93w2sv2rv"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -4803,6 +4803,29 @@ encompassing hypothesis, that all parameters vary freely or against the null
 hypothesis that all category proportions are equal.  For more information see
 Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
     (license license:gpl2)))
+
+(define-public r-multibreaker
+  (package
+    (name "r-multibreaker")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "multibreakeR" version))
+              (sha256
+               (base32
+                "1rg5k2ldaf5ygnrjpfk28gqqs7d8cfjq9cm5zli47yavqm43mq78"))))
+    (properties `((upstream-name . "multibreakeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-reshape2 r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/loicym/multibreakeR")
+    (synopsis "Tests for a Structural Change in Multivariate Time Series")
+    (description
+     "Flexible implementation of a structural change point detection algorithm for
+multivariate time series.  It authorizes inclusion of trends, exogenous
+variables, and break test on the intercept or on the full vector autoregression
+system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-multiblock
   (package
@@ -15979,13 +16002,13 @@ for a wide range of data sets.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.0.3")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3spatiotempcv" version))
               (sha256
                (base32
-                "0lxdg82fcgfb57f9n2rwriw43cx10103ymjmz8y6dpx5n006m3d8"))))
+                "1dk8n0jw5461ngnv3iazm3dhnlsj53ymn19lnh346mwyk7g5vr06"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

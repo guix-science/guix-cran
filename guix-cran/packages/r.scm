@@ -4873,13 +4873,13 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.1.4")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rStrava" version))
               (sha256
                (base32
-                "00y400znkwyr6y33wiz0jikpa31a60hdcmsi9x3724zwjh28vynj"))))
+                "069k20pjxrgm8gri2cslcvf69mflalfgf7q58a52b1043vflj136"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4893,13 +4893,11 @@ numbers from different sources.")
                              r-plyr
                              r-magrittr
                              r-httr
-                             r-httpuv
                              r-googleway
                              r-ggrepel
                              r-ggplot2
                              r-geosphere
-                             r-dplyr
-                             r-bitops))
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=rStrava")
     (synopsis "Access the 'Strava' API")
     (description
@@ -18277,6 +18275,32 @@ dissolving, and converting multi-part to single-part geometries.")
 package includes functions to work with the Mangal RESTful API methods
 (<https://mangal-interactions.github.io/mangal-api/>).")
     (license license:expat)))
+
+(define-public r-rmalschains
+  (package
+    (name "r-rmalschains")
+    (version "0.2-10")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Rmalschains" version))
+              (sha256
+               (base32
+                "15z2jz5zv3cw18kgvpm11g2i5p397h4a34j08wbkgmnjca76sgmd"))))
+    (properties `((upstream-name . "Rmalschains")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=Rmalschains")
+    (synopsis
+     "Continuous Optimization using Memetic Algorithms with Local Search Chains (MA-LS-Chains)")
+    (description
+     "An implementation of an algorithm family for continuous optimization called
+memetic algorithms with local search chains (MA-LS-Chains), as proposed in
+Molina et al. (2010) <doi:10.1162/evco.2010.18.1.18102> and Molina et al. (2011)
+<doi:10.1007/s00500-010-0647-2>.  Rmalschains is further discussed in Bergmeir
+et al. (2016) <doi:10.18637/jss.v075.i04>.  Memetic algorithms are
+hybridizations of genetic algorithms with local search methods.  They are
+especially suited for continuous optimization.")
+    (license license:gpl3)))
 
 (define-public r-rmallow
   (package
@@ -39852,6 +39876,29 @@ data, map forest disturbance and land degradation from satellite imagery, detect
 market trends in economic data, pinpoint anomaly and extreme events in climate
 data, and unravel system dynamics in biological data.  Details on BEAST are
 reported in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
+    (license license:gpl2+)))
+
+(define-public r-rbe3
+  (package
+    (name "r-rbe3")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RBE3" version))
+              (sha256
+               (base32
+                "1vkd06qzfbz3z3mq7sma05k81pz5xg2pw6s6z706b0g2jhqqnkh3"))))
+    (properties `((upstream-name . "RBE3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-gtools))
+    (home-page "https://cran.r-project.org/package=RBE3")
+    (synopsis
+     "Estimation and Additional Tools for Quantile Generalized Beta Regression Model")
+    (description
+     "Provide estimation and data generation tools for the quantile generalized beta
+regression model.  For details, see Bourguignon, Gallardo and Saulo
+<arXiv:2110.04428> The package also provides tools to perform covariates
+selection.")
     (license license:gpl2+)))
 
 (define-public r-rbdat

@@ -231,6 +231,28 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2020,
 <doi:10.1101/2020.09.10.292441>).")
     (license license:gpl2+)))
 
+(define-public r-jump
+  (package
+    (name "r-jump")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "JUMP" version))
+              (sha256
+               (base32
+                "0i84vpzgs9bj0idxxjl885x818hq23drxy0h2pl6zbyz2z1v331m"))))
+    (properties `((upstream-name . "JUMP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=JUMP")
+    (synopsis "Replicability Analysis of High-Throughput Experiments")
+    (description
+     "Implementing a computationally scalable false discovery rate control procedure
+for replicability analysis based on maximum of p-values.  Please cite the
+manuscript corresponding to this package [Lyu, P. et al., (2023),
+<https://www.biorxiv.org/content/10.1101/2023.02.13.528417v2>].")
+    (license license:gpl3)))
+
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")

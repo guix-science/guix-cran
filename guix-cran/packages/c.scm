@@ -2689,6 +2689,33 @@ modeling of movement in response to covariates (or covariate gradients) with
 model fitting possible within a Poisson GLM framework.")
     (license license:gpl2)))
 
+(define-public r-ctmcd
+  (package
+    (name "r-ctmcd")
+    (version "1.4.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ctmcd" version))
+              (sha256
+               (base32
+                "1xlhy816qcidkhpybkfmi2a59x5aajhh2407ninnnimlxk45kilh"))))
+    (properties `((upstream-name . "ctmcd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-expm r-coda))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://cran.r-project.org/package=ctmcd")
+    (synopsis
+     "Estimating the Parameters of a Continuous-Time Markov Chain from Discrete-Time Data")
+    (description
+     "Estimation of Markov generator matrices from discrete-time observations.  The
+implemented approaches comprise diagonal and weighted adjustment of matrix
+logarithm based candidate solutions as in Israel (2001)
+<doi:10.1111/1467-9965.00114> as well as a quasi-optimization approach.
+Moreover, the expectation-maximization algorithm and the Gibbs sampling approach
+of Bladt and Sorensen (2005) <doi:10.1111/j.1467-9868.2005.00508.x> are
+included.")
+    (license license:gpl3)))
+
 (define-public r-ctm
   (package
     (name "r-ctm")
@@ -3114,6 +3141,35 @@ details.")
      "This package provides easy and consistent time conversion for public health
 purposes.  The time conversion functions provided here are between date, ISO
 week, ISO yearweek, ISO year, calendar month/year, season, season week.")
+    (license license:expat)))
+
+(define-public r-cstidy
+  (package
+    (name "r-cstidy")
+    (version "2023.5.24")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cstidy" version))
+              (sha256
+               (base32
+                "01i5b1x6xfg8fbkhaam22ap64x6bqman5b5y57f07wiy413m65j2"))))
+    (properties `((upstream-name . "cstidy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-magrittr
+                             r-ggplot2
+                             r-digest
+                             r-data-table
+                             r-cstime
+                             r-csdata
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/cstidy/")
+    (synopsis "Helpful Functions for Cleaning Surveillance Data")
+    (description
+     "Helpful functions for the cleaning and manipulation of surveillance data,
+especially with regards to the creation and validation of panel data from
+individual level surveillance data.")
     (license license:expat)))
 
 (define-public r-cste
@@ -16497,13 +16553,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.6.0")
+    (version "4.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "compareGroups" version))
               (sha256
                (base32
-                "0w44dk3ba9dq68kl2y5665h6l8j0w59mx70rwi58c77w3bqz0jry"))))
+                "02g68vyx8z79jqmg3bvkqf0bsr2000ard26c4xp1g03ybn8xws06"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -32257,13 +32313,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.1.0")
+    (version "2.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CDatanet" version))
               (sha256
                (base32
-                "1gv66ck5c2qiwl13zi67k3bjxyai3a4q8klq98br10s1bj8spjv9"))))
+                "1rai76jgyd86fabdzhzpl2nr47zgnihnr8hscdkyp5dpazsc1swn"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress

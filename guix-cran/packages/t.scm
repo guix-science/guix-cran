@@ -719,6 +719,27 @@ maps and built-in support for LDAvis'.")
 National Science Foundation grants DMREF-1921873 and CMMI-1921646.")
     (license license:gpl2+)))
 
+(define-public r-twingp
+  (package
+    (name "r-twingp")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "twingp" version))
+              (sha256
+               (base32
+                "1ghcdlymqc7zr5gmgswlhamrrml7grfwkcflvbzsnalk7dy9s0d2"))))
+    (properties `((upstream-name . "twingp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-nloptr))
+    (home-page "https://cran.r-project.org/package=twingp")
+    (synopsis "Fast Global-Local Gaussian Process Approximation")
+    (description
+     "This package provides a global-local approximation framework for large-scale
+Gaussian process modeling.  This work is supported by U.S. NSF grants
+CMMI-1921646 and DMREF-1921873.")
+    (license license:gpl2+)))
+
 (define-public r-twilio
   (package
     (name "r-twilio")
@@ -10847,13 +10868,13 @@ and the transformed space of the variables.")
 (define-public r-tldr
   (package
     (name "r-tldr")
-    (version "0.2.3")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tldr" version))
               (sha256
                (base32
-                "0xagl35kz6vpqzxdgpmvjafgqrln07k65gnw8kfykj4rg7blfsxq"))))
+                "0p02ivcy5as46ffds1pg3ibhq0f06lrs2dygfair32cp21x0y9f7"))))
     (properties `((upstream-name . "tldr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tableone r-reshape2 r-ggplot2))
@@ -16468,6 +16489,28 @@ first-order, second-order, and general-order glow peaks.")
 and fill scale functions, colour palette helpers and a Globe-styled ggplot2
 theme object.")
     (license license:expat)))
+
+(define-public r-tfunhddc
+  (package
+    (name "r-tfunhddc")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "TFunHDDC" version))
+              (sha256
+               (base32
+                "00yjiqyr99vpk32ky5bnnapvb4rywm9bx1wpdfq26mxk1dqxr8xn"))))
+    (properties `((upstream-name . "TFunHDDC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tclust r-stringr r-mass r-fda-usc r-fda))
+    (home-page "https://cran.r-project.org/package=TFunHDDC")
+    (synopsis "Clustering of Functional Data via Mixtures of t-Distributions")
+    (description
+     "Extension of funHDDC Schmutz et al. (2018) <doi:10.1007/s00180-020-00958-4> for
+cases including outliers by fitting t-distributions for robust groups.  TFunHDDC
+can cluster univariate or multivariate data produced by the fda package for data
+using a b-splines or Fourier basis.")
+    (license license:gpl3)))
 
 (define-public r-tfse
   (package
@@ -22541,13 +22584,13 @@ forms a base layer for the icesTAF package and other scientific applications.")
 (define-public r-tactile
   (package
     (name "r-tactile")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tactile" version))
               (sha256
                (base32
-                "0jjfbsadxbf9s6vzi82rw5qa6hdc8iz4jci9xpbzwrjkb90dzd08"))))
+                "1yly05zin0isad69d6j1k2nb9ykvz0gj2xs9mqiq2cda0mdxmh65"))))
     (properties `((upstream-name . "tactile")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-mass r-latticeextra r-lattice

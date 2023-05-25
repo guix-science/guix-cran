@@ -4776,6 +4776,27 @@ designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main functions
 are wgtRank() and wgtRanktt() and ef2C().")
     (license license:gpl2)))
 
+(define-public r-weightedporttest
+  (package
+    (name "r-weightedporttest")
+    (version "1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WeightedPortTest" version))
+              (sha256
+               (base32
+                "0kv9ip38l659cwqkw6l831za2y2610w4cxpw1jxsph0h2qdfm8fx"))))
+    (properties `((upstream-name . "WeightedPortTest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=WeightedPortTest")
+    (synopsis "Weighted Portmanteau Tests for Time Series Goodness-of-Fit")
+    (description
+     "An implementation of the Weighted Portmanteau Tests described in \"New Weighted
+Portmanteau Statistics for Time Series Goodness-of-Fit Testing\" published by the
+Journal of the American Statistical Association, Volume 107, Issue 498, pages
+777-787, 2012.")
+    (license license:gpl3+)))
+
 (define-public r-weightedgcm
   (package
     (name "r-weightedgcm")

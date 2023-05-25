@@ -1113,13 +1113,13 @@ OpenMP'.")
 (define-public r-swtools
   (package
     (name "r-swtools")
-    (version "0.2.5")
+    (version "1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SWTools" version))
               (sha256
                (base32
-                "0hsyds0cd8pr41gjjbs5b5qmxldqfp899gjws0qa3851mrl1jadj"))))
+                "0mdkbzph4q989wi66xawkxca0zvpnnisk5wxbb91ylb05r84qpzf"))))
     (properties `((upstream-name . "SWTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12478,6 +12478,30 @@ the MCMC simulations for each parameter, the log likelihoods and predictions.
 Moreover, the package includes tools for model selection and Bayesian model
 averaging by leave future-out validation.")
     (license license:gpl3)))
+
+(define-public r-standby
+  (package
+    (name "r-standby")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "standby" version))
+              (sha256
+               (base32
+                "05kn866ibk0a0ncbsmfb31nhj7cfdidd8smvnpyrvw9rjs8k37hv"))))
+    (properties `((upstream-name . "standby")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://standby.rsquaredacademy.com/")
+    (synopsis "Alerts, Notifications and Loading Screen in 'Shiny'")
+    (description
+     "Easily create alerts, notifications, modals, info tips and loading screens in
+Shiny'.  Includes several options to customize alerts and notifications by
+including text, icons, images and buttons.  When wrapped around a Shiny output,
+loading screen is automatically displayed while the output is being
+recalculated.")
+    (license license:gpl3+)))
 
 (define-public r-standartox
   (package
@@ -51391,13 +51415,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.57")
+    (version "0.58")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "scan" version))
               (sha256
                (base32
-                "0vx2w68jsfihgy9qby0vx3qa0hk42ns4p7vb999i4fwkm5w526km"))))
+                "0k2l37rd5crpi6nhdzbnkpzz6xlzzgw6qh9hwg57v4ld4q97x48m"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -51414,11 +51438,12 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
     (description
      "This package provides a collection of procedures for analysing, visualising, and
 managing single-case data.  These include piecewise linear regression models,
-multilevel models, overlap indices (PND, PEM, PAND, PET, tau-u, baseline
-corrected tau, CDC), and randomization tests.  Data preparation functions
-support outlier detection, handling missing values, scaling, truncating, rank
-transformation, and smoothing.  An exporting function helps to generate html and
-latex tables in a publication friendly style.  More details can be found at
+multilevel models, overlap indices ('PND', PEM', PAND', PET', tau-u', baseline
+corrected tau', CDC'), and randomization tests.  Data preparation functions
+support outlier detection, handling missing values, scaling, truncation, rank
+transformation, and smoothing.  An export function helps to generate html and
+latex tables in a publication friendly style.  More details can be found in the
+online book Analyzing single-case data with R and scan', Juergen Wilbert (2013)
 <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 
@@ -52513,6 +52538,33 @@ dictionaries, formats and format catalogs, a data step, and a traceable log.
 The flagship package is a reporting package that can output in text, rich text,
 PDF', HTML', and DOCX file formats.")
     (license license:cc0)))
+
+(define-public r-sasr
+  (package
+    (name "r-sasr")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sasr" version))
+              (sha256
+               (base32
+                "1cpmfclxphk5s3nr1znricm195j9xix5pw8jkyq3hhg0h7xirzi7"))))
+    (properties `((upstream-name . "sasr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/sasr/")
+    (synopsis "'SAS' Interface")
+    (description
+     "This package provides a SAS interface, through
+SASPy'(<https://sassoftware.github.io/saspy/>) and
+reticulate'(<https://rstudio.github.io/reticulate/>).  This package helps you
+create SAS sessions, execute SAS code in remote SAS servers, retrieve execution
+results and log, and exchange datasets between SAS and R'.  It also helps you to
+install SASPy and create a configuration file for the connection.  Please review
+the SASPy license file as instructed so that you comply with its separate and
+independent license.")
+    (license license:asl2.0)))
 
 (define-public r-sasmixed
   (package

@@ -1443,16 +1443,21 @@ data.  The philosophy of the package is described in Guo G. (2020)
 (define-public r-ispdata
   (package
     (name "r-ispdata")
-    (version "1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ispdata" version))
               (sha256
                (base32
-                "1bs2qff15qh45wp3v6kyx4b1gd5vg36cj4cjzlxdfmgdjqjjwd3m"))))
+                "16vzfwn4q1q0k1m01ibknwm37j2d4x63a3zrrqj25mq8nrg134bs"))))
     (properties `((upstream-name . "ispdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-readr r-openxlsx r-janitor r-dplyr))
+    (propagated-inputs (list r-sf
+                             r-readr
+                             r-openxlsx
+                             r-janitor
+                             r-dplyr
+                             r-curl))
     (home-page "https://cran.r-project.org/package=ispdata")
     (synopsis
      "Access Data from the Public Security Institute of the State of Rio De Janeiro")

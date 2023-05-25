@@ -18838,6 +18838,33 @@ Generalized Linear Models\", first edition, by Ludwig Fahrmeir and Gerhard Tutz.
 Useful when using the book.")
     (license license:gpl2+)))
 
+(define-public r-faersquarterlydata
+  (package
+    (name "r-faersquarterlydata")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "faersquarterlydata" version))
+              (sha256
+               (base32
+                "0pzi76pl3a6a43khz4w0fydxdadg2lqv076l202wng81c429rsi4"))))
+    (properties `((upstream-name . "faersquarterlydata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-tableone
+                             r-stringr
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=faersquarterlydata")
+    (synopsis
+     "FDA Adverse Event Reporting System Quarterly Data Extracting Tool")
+    (description
+     "An easy framework to read FDA Adverse Event Reporting System XML/ASCII files
+<https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>.")
+    (license license:gpl3+)))
+
 (define-public r-fadpclust
   (package
     (name "r-fadpclust")

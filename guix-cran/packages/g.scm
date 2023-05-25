@@ -3114,6 +3114,32 @@ labels such as events in log files or areas of interest (AOIs) in eye tracking
 research.")
     (license license:gpl2)))
 
+(define-public r-grpslope
+  (package
+    (name "r-grpslope")
+    (version "0.3.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "grpSLOPE" version))
+              (sha256
+               (base32
+                "05417f0pnp21svi30vcbkkw16zyg1kxynfigh5w2jdjmd12cb899"))))
+    (properties `((upstream-name . "grpSLOPE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/agisga/grpSLOPE")
+    (synopsis "Group Sorted L1 Penalized Estimation")
+    (description
+     "Group SLOPE (Group Sorted L1 Penalized Estimation) is a penalized linear
+regression method that is used for adaptive selection of groups of significant
+predictors in a high-dimensional linear model.  The Group SLOPE method can
+control the (group) false discovery rate at a user-specified level (i.e.,
+control the expected proportion of irrelevant among all selected groups of
+predictors).  For additional information about the implemented methods please
+see Brzyski, Gossmann, Su, Bogdan (2018) <doi:10.1080/01621459.2017.1411269>.")
+    (license license:gpl3)))
+
 (define-public r-grpseq
   (package
     (name "r-grpseq")
@@ -15970,13 +15996,13 @@ package exploits).")
 (define-public r-ggmselect
   (package
     (name "r-ggmselect")
-    (version "0.1-12.5")
+    (version "0.1-12.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGMselect" version))
               (sha256
                (base32
-                "1lg42rra92f0n7w6mgg6sfhk9qk06j7bf56gifff5spjv9mmj6zc"))))
+                "1xdkpiwl80aq51f2010qq14h72p42agjklbiwrad8s43769yw34n"))))
     (properties `((upstream-name . "GGMselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lars r-gtools))
@@ -16593,13 +16619,13 @@ spaces.")
 (define-public r-gginnards
   (package
     (name "r-gginnards")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gginnards" version))
               (sha256
                (base32
-                "0rwg9yan73ca4s8nd8x6xyjs68mvz4lxns5xmkvb8lf0fs9pkahn"))))
+                "1z4wbh4biywvxr29j1rll6h4yh3hlhrypa5903pmzvpgdy9n2baw"))))
     (properties `((upstream-name . "gginnards")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-rlang r-magrittr r-ggplot2))
@@ -17925,6 +17951,39 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
     (synopsis "Simplify 'ggplot2' Visualisation")
     (description
      "Simplify ggplot2 visualisation with ggblanket wrapper functions.")
+    (license license:expat)))
+
+(define-public r-ggautomap
+  (package
+    (name "r-ggautomap")
+    (version "0.3.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ggautomap" version))
+              (sha256
+               (base32
+                "0fy1saym15l3d76ix26kz9il3nzsypchh028vigcvan7g0yg7168"))))
+    (properties `((upstream-name . "ggautomap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-sf
+                             r-rlang
+                             r-packcircles
+                             r-ggplot2
+                             r-ggmapinset
+                             r-dplyr
+                             r-cli
+                             r-cartographer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cidm-ph/ggautomap")
+    (synopsis "Create Maps from a Column of Place Names")
+    (description
+     "Mapping tools that convert place names to coordinates on the fly.  These ggplot2
+extensions make maps from a data frame where one of the columns contains place
+names, without having to directly work with the underlying geospatial data and
+tools.  The corresponding map data must be registered with cartographer either
+by the user or by another package.")
     (license license:expat)))
 
 (define-public r-ggasym
@@ -22912,23 +22971,23 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.1.9")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "genekitr" version))
               (sha256
                (base32
-                "1xmzpklas899gajrzwwyq9ssndypv11g4ahlydjx70bm2scsb9iy"))))
+                "0g22w1bqmcli0vvidcw2ywmc76l3x7zhk3a4fw3vrhwm7vjwnp7k"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-venndiagram
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stringi
                              r-rlang
                              r-openxlsx
                              r-magrittr
                              r-igraph
+                             r-ggvenn
                              r-ggraph
                              r-ggplot2
                              r-geneset
@@ -24480,6 +24539,44 @@ packages), first write them to disk, then process them with the package's
 wrapper functions before reading the outputted results back into R. GDAL
 function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
     (license license:gpl2+)))
+
+(define-public r-gdalraster
+  (package
+    (name "r-gdalraster")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gdalraster" version))
+              (sha256
+               (base32
+                "0lixy66glyiy1dc3gv70hxiaykh0pwh038a980cl17qlmxfpidfa"))))
+    (properties `((upstream-name . "gdalraster")))
+    (build-system r-build-system)
+    (inputs (list proj gdal))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/USDAForestService/gdalraster")
+    (synopsis
+     "Bindings to the 'Geospatial Data Abstraction Library' Raster API")
+    (description
+     "Interface to the raster API of the Geospatial Data Abstraction Library ('GDAL')
+supporting manual creation of uninitialized datasets, creation from existing
+raster as template, low level I/O, configuration of virtual raster (VRT),
+coordinate transformation, and access to gdalwarp for reprojection.  Convenience
+functions facilitate working with spatial reference systems.  Calling signatures
+resemble the native C, C++ and Python APIs provided by the GDAL project
+(<https://gdal.org>).  Bindings to GDAL are implemented in class GDALRaster
+along with several stand-alone functions.  Additional functionality includes:
+class RunningStats for efficient summary statistics on large data streams; class
+CmbTable for counting unique combinations of integer values with a hash table; a
+raster overlay utility to identify and count unique combinations across multiple
+inputs; and a calculation utility for evaluating an R expression on raster
+layers with pixel coordinates available as variables.  gdalraster may be
+suitable for applications that primarily need low-level raster I/O, explicit
+manipulation of VRT format, or prefer native GDAL'-like calling.  Additional
+functionality is somewhat aimed at thematic data analysis but may have other
+utility.")
+    (license license:expat)))
 
 (define-public r-gdalcubes
   (package

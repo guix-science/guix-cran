@@ -14,9 +14,9 @@
   #:use-module (gnu packages docker)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages linux)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -8955,6 +8955,31 @@ for the (modified) profile likelihood.")
 Based on Goffe et al (1994) <doi:10.1016/0304-4076(94)90038-8>.")
     (license license:gpl2)))
 
+(define-public r-lightsout
+  (package
+    (name "r-lightsout")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "lightsout" version))
+              (sha256
+               (base32
+                "1rb5qrd8piq079yfmn07np36zgawhw7s4wyy7q00yz4m4wp74lip"))))
+    (properties `((upstream-name . "lightsout")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs r-shiny r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/daattali/lightsout")
+    (synopsis "Implementation of the 'Lights Out' Puzzle Game")
+    (description
+     "Lights Out is a puzzle game consisting of a grid of lights that are either on or
+off.  Pressing any light will toggle it and its adjacent lights.  The goal of
+the game is to switch all the lights off.  This package provides an interface to
+play the game on different board sizes, both through the command line or with a
+visual application.  Puzzles can also be solved using the automatic solver
+included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
+    (license license:expat)))
+
 (define-public r-lightr
   (package
     (name "r-lightr")
@@ -12841,6 +12866,25 @@ a maximum likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
 <doi:10.18637/jss.v078.i02>).")
     (license license:gpl2+)))
 
+(define-public r-lcmcr
+  (package
+    (name "r-lcmcr")
+    (version "0.4.13")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "LCMCR" version))
+              (sha256
+               (base32
+                "07gw8djwm352fmcr78mpqab1w4jpwpwb75cr3ay0nhnadzd9wsfg"))))
+    (properties `((upstream-name . "LCMCR")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (home-page "https://cran.r-project.org/package=LCMCR")
+    (synopsis "Bayesian Non-Parametric Latent-Class Capture-Recapture")
+    (description
+     "Bayesian population size estimation using non parametric latent-class models.")
+    (license license:gpl2+)))
+
 (define-public r-lchemix
   (package
     (name "r-lchemix")
@@ -13736,16 +13780,16 @@ model without having to write the DOT language graph specification.")
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.1.4")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lavaanExtra" version))
               (sha256
                (base32
-                "1lk2bgj1gfp9cfj5wpbgif84imnwpdc55cyh9ajq1g2hr5kzb8xf"))))
+                "0i0cglbj2yyagxmd1wif7ayi6yq2cirhisdyahif2bsfwwjhmlzd"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lavaan))
+    (propagated-inputs (list r-lavaan r-insight))
     (native-inputs (list r-knitr))
     (home-page "https://lavaanExtra.remi-theriault.com")
     (synopsis "Convenience Functions for Package 'lavaan'")
