@@ -11846,13 +11846,13 @@ lead/lag).")
 (define-public r-statamarkdown
   (package
     (name "r-statamarkdown")
-    (version "0.7.2")
+    (version "0.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Statamarkdown" version))
               (sha256
                (base32
-                "0mkwdc0xsfnaq518g99jfm4hn88n8g2bf860gv185gim3m084nm1"))))
+                "1fx816n9n6qxann596ppqbrw84l8012z6hyiaxm3k56bf3xzfdfa"))))
     (properties `((upstream-name . "Statamarkdown")))
     (build-system r-build-system)
     (inputs (list))
@@ -15447,16 +15447,36 @@ calls in a clean structure.  It simplifies the process of extracting and
 transforming data into useful formats.")
     (license license:expat)))
 
+(define-public r-sqlhelpers
+  (package
+    (name "r-sqlhelpers")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sqlHelpers" version))
+              (sha256
+               (base32
+                "1h4mpssppicrxm4aga284q8z7dqzrdxzrh4sgnc5ylmgavzf29y9"))))
+    (properties `((upstream-name . "sqlHelpers")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-toolbox r-stringi r-odbc r-dbi r-data-table))
+    (home-page "https://cran.r-project.org/package=sqlHelpers")
+    (synopsis "Collection of 'SQL' Utilities for 'T-SQL' and 'Postgresql'")
+    (description
+     "Includes functions for interacting with common meta data fields, writing insert
+statements, calling functions, and more for T-SQL and Postgresql'.")
+    (license license:gpl3+)))
+
 (define-public r-sql
   (package
     (name "r-sql")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SQL" version))
               (sha256
                (base32
-                "17cv2n042gh6yw2y0vq5zb0w4w1mcyv4azfxkkqc8kf3k105s74b"))))
+                "1l949crb4fz13yxbr9gag7lfqs9ak3ab3i25g20mjrz6iix99hrd"))))
     (properties `((upstream-name . "SQL")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-duckdb r-dbi r-arrow))
@@ -21097,19 +21117,20 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.2-8")
+    (version "1.2-9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spatialreg" version))
               (sha256
                (base32
-                "1pprsznmj3hwzi1anifb3bjcg6nmf8048dyyywxdj04ql1ybf30m"))))
+                "0gmrrddhhs5fcgfgm8w3rkjk6g6vdndlj92jb8naihbwxkzgkya5"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
                              r-spdata
                              r-sf
                              r-nlme
+                             r-multcomp
                              r-matrix
                              r-mass
                              r-learnbayes
@@ -35095,13 +35116,13 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.10.1")
+    (version "2.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SimDesign" version))
               (sha256
                (base32
-                "0sab1cbm3sj3mnrrb91vrzv0n2mhzvxfms9krh0nqrd7f47mb83p"))))
+                "1wbvv38zn3x7b7dd8d5ih6sysihh82apw4vbrzglhyxvdaif2h2j"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo

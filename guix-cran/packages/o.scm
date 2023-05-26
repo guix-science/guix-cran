@@ -2149,13 +2149,13 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
 (define-public r-orkm
   (package
     (name "r-orkm")
-    (version "0.6.0.0")
+    (version "0.7.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ORKM" version))
               (sha256
                (base32
-                "1ssbbm6yp08hwdbrhvn3gwwqis8jswzxsfrpbkgajaphchkc3kkl"))))
+                "1sgxbydxl3gv34fnzc8615hziv6a3qmq8vnmys0lwxahxvix11j9"))))
     (properties `((upstream-name . "ORKM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -4565,6 +4565,40 @@ k-Xi, and a framework to compare k-Xi models using distance-based metrics to
 investigate datasets with unknown number of clusters.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-optical
+  (package
+    (name "r-optical")
+    (version "1.7.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "optical" version))
+              (sha256
+               (base32
+                "1g400s4xbf9c8ss02qhm6q31sv7mrki4a9x1fdjjsyrgmclv9q2s"))))
+    (properties `((upstream-name . "optical")))
+    (build-system r-build-system)
+    (home-page "https://scenic555.github.io/optical/")
+    (synopsis "Optimal Item Calibration")
+    (description
+     "The restricted optimal design method is implemented to optimally allocate a set
+of items that require calibration to a group of examinees.  The optimization
+process is based on the method described in detail by Ul Hassan and Miller in
+their works published in (2019) <doi:10.1177/0146621618824854> and (2021)
+<doi:10.1016/j.csda.2021.107177>.  To use the method, preliminary item
+characteristics must be provided as input.  These characteristics can either be
+expert guesses or based on previous calibration with a small number of
+examinees.  The item characteristics should be described in the form of
+parameters for an Item Response Theory (IRT) model.  These models can include
+the Rasch model, the 2-parameter logistic model, the 3-parameter logistic model,
+or a mixture of these models.  The output consists of a set of rules for each
+item that determine which examinees should be assigned to each item.  The
+efficiency or gain achieved through the optimal design is quantified by
+comparing it to a random allocation.  This comparison allows for an assessment
+of how much improvement or advantage is gained by using the optimal design
+approach.  This work was supported by the Swedish Research Council
+(VetenskapsrÃ¥det) Grant 2019-02706.")
+    (license license:gpl3+)))
 
 (define-public r-optholdoutsize
   (package

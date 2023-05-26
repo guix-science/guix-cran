@@ -18140,6 +18140,31 @@ negbin').  More details in the paper published in the Journal of Statistical
 Software: <doi:10.18637/jss.v106.i06>.")
     (license license:expat)))
 
+(define-public r-gformulami
+  (package
+    (name "r-gformulami")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "gFormulaMI" version))
+              (sha256
+               (base32
+                "1zp8gn83h7bnfygi46qqhda4z5n2axbvcmqvhz60ba0daknw0jx0"))))
+    (properties `((upstream-name . "gFormulaMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mice))
+    (native-inputs (list r-knitr))
+    (home-page "https://jwb133.github.io/gFormulaMI/")
+    (synopsis "G-Formula for Causal Inference via Multiple Imputation")
+    (description
+     "This package implements the G-Formula method for causal inference with
+time-varying treatments and confounders using Bayesian multiple imputation
+methods, as described by Bartlett, Olarte Parra and Daniel (2023)
+<arXiv:2301.12026>.  It creates multiple synthetic imputed datasets under
+treatment regimes of interest using the mice package.  These can then be
+analysed using rules developed for analysing multiple synthetic datasets.")
+    (license license:gpl3+)))
+
 (define-public r-gformula
   (package
     (name "r-gformula")
@@ -22583,6 +22608,40 @@ terms and conditions available at
 <https://www.genesys-pgr.org/content/legal/terms>.")
     (license license:asl2.0)))
 
+(define-public r-genest
+  (package
+    (name "r-genest")
+    (version "1.4.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "GenEst" version))
+              (sha256
+               (base32
+                "0ifqzpqrc9bgg6sp8zx30lvcz9kcbzivw5sf8f3axnwzfia9x376"))))
+    (properties `((upstream-name . "GenEst")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-shinyjs
+                             r-shiny
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrixstats
+                             r-mass
+                             r-lubridate
+                             r-htmltools
+                             r-hellno
+                             r-gtools
+                             r-gsl
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GenEst")
+    (synopsis "Generalized Mortality Estimator")
+    (description
+     "Command-line and shiny GUI implementation of the GenEst models for estimating
+bird and bat mortality at wind and solar power facilities, following Dalthorp,
+et al. (2018) <doi:10.3133/tm7A2>.")
+    (license license:cc0)))
+
 (define-public r-geneset
   (package
     (name "r-geneset")
@@ -25958,13 +26017,13 @@ Computer Model Via Analysis of Variance and Visualization\",
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gasmodel" version))
               (sha256
                (base32
-                "0b3z2b1n6m5cspy0mc41lm01q1frccbziha4fxya007pv15fhdlm"))))
+                "07vynmg9iy5ny7s4j6h3krpj3w5dfygqs5b9i7c079f54vlpsxib"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma
@@ -25972,6 +26031,7 @@ Computer Model Via Analysis of Variance and Visualization\",
                              r-nloptr
                              r-mvnfast
                              r-matrix
+                             r-circstats
                              r-arrangements
                              r-abind))
     (native-inputs (list r-knitr))

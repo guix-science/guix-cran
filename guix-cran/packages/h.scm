@@ -878,6 +878,29 @@ welcomed (in English, Spanish or Italian).  See Zambrano-Bigiarini and Rojas
 (2013) <doi:10.1016/j.envsoft.2013.01.004> for more details.")
     (license license:gpl2+)))
 
+(define-public r-hydroportailstats
+  (package
+    (name "r-hydroportailstats")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HydroPortailStats" version))
+              (sha256
+               (base32
+                "1f5h9xqn4vn9wbnvlshbc8r200vx1pwm9ic7sdzsv4z0j7z7wl1j"))))
+    (properties `((upstream-name . "HydroPortailStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-mvtnorm r-evd))
+    (home-page "https://cran.r-project.org/package=HydroPortailStats")
+    (synopsis "'HydroPortail' Statistical Functions")
+    (description
+     "Statistical functions used in the French HydroPortail
+<https://hydro.eaufrance.fr/>.  This includes functions to estimate
+distributions, quantile curves and uncertainties, along with various other
+utilities.  Technical details are available (in French) in Renard (2016)
+<https://hal.inrae.fr/hal-02605318>.")
+    (license license:gpl3)))
+
 (define-public r-hydropeak
   (package
     (name "r-hydropeak")
@@ -2821,6 +2844,34 @@ to handle two serious problems inadmissible solution and factor indeterminacy
     (synopsis "The hse Distribution")
     (description "Deprecated.")
     (license license:gpl2+)))
+
+(define-public r-hsdm
+  (package
+    (name "r-hsdm")
+    (version "1.4.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "hSDM" version))
+              (sha256
+               (base32
+                "11c1q7sxaisrpi0d9zskys71n2j36r0f66yay1w3bvkacpxnkwfd"))))
+    (properties `((upstream-name . "hSDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ecology.ghislainv.fr/hSDM/")
+    (synopsis "Hierarchical Bayesian Species Distribution Models")
+    (description
+     "User-friendly and fast set of functions for estimating parameters of
+hierarchical Bayesian species distribution models (Latimer and others 2006
+<doi:10.1890/04-0609>).  Such models allow interpreting the observations
+(occurrence and abundance of a species) as a result of several hierarchical
+processes including ecological processes (habitat suitability, spatial
+dependence and anthropogenic disturbance) and observation processes (species
+detectability).  Hierarchical species distribution models are essential for
+accurately characterizing the environmental response of species, predicting
+their probability of occurrence, and assessing uncertainty in the model results.")
+    (license license:gpl3)))
 
 (define-public r-hsdic
   (package
@@ -9199,13 +9250,13 @@ and generating diagnostic plots.")
 (define-public r-hdspatialscan
   (package
     (name "r-hdspatialscan")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "HDSpatialScan" version))
               (sha256
                (base32
-                "12aqqzqbapdh3zg2klhqwlhdvg35ayw126x54mj1iwlkmraxq2iv"))))
+                "1hwqdwr4jl887sgnjwq3gmxjhk6zz45nasvy3x7i7rmrqylxig60"))))
     (properties `((upstream-name . "HDSpatialScan")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos
@@ -9213,9 +9264,9 @@ and generating diagnostic plots.")
                              r-spatialnp
                              r-sp
                              r-sf
-                             r-rgeos
                              r-rcpparmadillo
                              r-rcpp
+                             r-raster
                              r-purrr
                              r-plotrix
                              r-pbapply
@@ -9231,11 +9282,11 @@ functional data.  Martin KULLDORFF and Lan HUANG and Kevin KONTY (2009)
 <doi:10.1186/s12942-015-0024-6>, Lionel CUCALA and Michael GENIN and Caroline
 LANIER and Florent OCCELLI (2017) <doi:10.1016/j.spasta.2017.06.001>, Lionel
 CUCALA and Michael GENIN and Florent OCCELLI and Julien SOULA (2019)
-<doi:10.1016/j.spasta.2018.10.002>, Zaineb SMIDA and Lionel CUCALA and Ali
-GANNOUN (2020) <https://hal.archives-ouvertes.fr/hal-02908496>, Camille FREVENT
-and Mohamed-Salem AHMED and Matthieu MARBAC and Michael GENIN (2021)
-<arXiv:2011.03482>, Camille FREVENT and Mohamed-Salem AHMED and Sophie
-DABO-NIANG and Michael GENIN (2021) <arXiv:2103.14401>.")
+<doi:10.1016/j.spasta.2018.10.002>, Camille FREVENT and Mohamed-Salem AHMED and
+Matthieu MARBAC and Michael GENIN (2021) <doi:10.1016/j.spasta.2021.100550>,
+Zaineb SMIDA and Lionel CUCALA and Ali GANNOUN and Ghislain Durif (2022)
+<doi:10.1016/j.csda.2021.107378>, Camille FREVENT and Mohamed-Salem AHMED and
+Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
     (license license:gpl3)))
 
 (define-public r-hdshop
@@ -12142,13 +12193,13 @@ solvers for machine learning algorithms.")
 (define-public r-h2o
   (package
     (name "r-h2o")
-    (version "3.40.0.1")
+    (version "3.40.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "h2o" version))
               (sha256
                (base32
-                "1q61hcyrjxj9xnkri9k4vc1g238wr916g23420y2qj0fr529bdhm"))))
+                "0yxb2vs5qfvs5qlxrraa3012xr84gx9pn842kbqmim344qvgd09w"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
     (inputs (list openjdk))

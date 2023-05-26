@@ -3445,21 +3445,17 @@ by Demirtas (2006) <DOI:10.1080/10629360600569246>.")
 (define-public r-multiocc
   (package
     (name "r-multiocc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiocc" version))
               (sha256
                (base32
-                "1043cckddrr1sgnxd3fmj9kcgglmgw52lckxbzc91g6s7p9h7wgx"))))
+                "1a3k5mqhx4d9p8cs76cngjmqilgh5jdmdf4k5hjx11pbrf6gknkl"))))
     (properties `((upstream-name . "multiocc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-tmvtnorm
-                             r-mcmcpack
-                             r-mass
-                             r-interp
-                             r-fields))
+    (propagated-inputs (list r-truncnorm r-tmvtnorm r-mass r-interp r-coda))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=multiocc")
     (synopsis "Fits Multivariate Spatio-Temporal Occupancy Model")
     (description
@@ -23077,13 +23073,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "0.17.0")
+    (version "0.19.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "microeco" version))
               (sha256
                (base32
-                "0pi65g5dcjascp378cqnb8q90gg16mgpwjak173w6cd5k9l4hwwb"))))
+                "1cfb9lrb527qpk29cgb20lkmdld2khpi98qr3260qz3dkqxkgnlc"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -32855,36 +32851,6 @@ model.  Currently accommodates the Gaussian and binomial likelihood.")
 Carlo EM. For a description of the algorithm see Brian S. Caffo, Wolfgang Jank
 and Galin L. Jones (2005) <DOI:10.1111/j.1467-9868.2005.00499.x>.")
     (license license:gpl2+)))
-
-(define-public r-mcda
-  (package
-    (name "r-mcda")
-    (version "0.0.24")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MCDA" version))
-              (sha256
-               (base32
-                "08xghwzb19ynzvl8l8z14lm97ggw5x05czjljhvm2ws4sknjpqy7"))))
-    (properties `((upstream-name . "MCDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-triangle
-                             r-rglpk
-                             r-rcolorbrewer
-                             r-plyr
-                             r-glpkapi
-                             r-ggplot2
-                             r-combinat))
-    (home-page "https://github.com/paterijk/MCDA")
-    (synopsis "Support for the Multicriteria Decision Aiding Process")
-    (description
-     "Support for the analyst in a Multicriteria Decision Aiding (MCDA) process with
-algorithms, preference elicitation and data visualisation functions.  SÃ©bastien
-Bigaret, Richard Hodgett, Patrick Meyer, Tatyana Mironova, Alexandru Olteanu
-(2017) Supporting the multi-criteria decision aiding process : R and the MCDA
-package, Euro Journal On Decision Processes, Volume 5, Issue 1 - 4, pages 169 -
-194 <doi:10.1007/s40070-017-0064-1>.")
-    (license (license:fsdg-compatible "EUPL (== 1.1)"))))
 
 (define-public r-mccr
   (package

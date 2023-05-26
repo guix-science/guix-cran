@@ -6855,13 +6855,13 @@ any common GIS format.")
 (define-public r-bnsp
   (package
     (name "r-bnsp")
-    (version "2.2.2")
+    (version "2.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BNSP" version))
               (sha256
                (base32
-                "0l2d1r601j2y3ksmlwiilk59l6zcip1bf8r4b56qxvfqmx4imkcn"))))
+                "01rrqvgz9655psm7xcysf50y94lkzl2q3davgjzymg73kzbv3s41"))))
     (properties `((upstream-name . "BNSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-threejs
@@ -16264,13 +16264,13 @@ and arrays, fit multiple functions.")
 (define-public r-bernadette
   (package
     (name "r-bernadette")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Bernadette" version))
               (sha256
                (base32
-                "1wzk1snpjbjqn3z9vh05l61pmzd1kr359xjzf6pvdm569vzjaq7s"))))
+                "0x7qh1b94ca8wzgdhf6knmh5lcmkn7xhch5gs492bhp5046fn3ds"))))
     (properties `((upstream-name . "Bernadette")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -19089,13 +19089,13 @@ others ('erase', %nin%', unwhich', top', bot', normalize').")
 (define-public r-baytrends
   (package
     (name "r-baytrends")
-    (version "2.0.8")
+    (version "2.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "baytrends" version))
               (sha256
                (base32
-                "0la75qngy09hvcyrgnra37m3v7hpn8y7crz2nw73vrm118prj9mq"))))
+                "1xkkww2mf961wdpyyxngz51i2yyhimca48vnm7s1j58p7zv3vsyz"))))
     (properties `((upstream-name . "baytrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

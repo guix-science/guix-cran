@@ -3324,16 +3324,21 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
 (define-public r-async
   (package
     (name "r-async")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "async" version))
               (sha256
                (base32
-                "19ws3kglk0qi4l2zhsl57vx7k1cf0lvcc6mm8svf0inf07dvivqn"))))
+                "0xf3c6gr04drv7xxzpshycd13h5lm7r529f5q4ajrsl0m3hp9xpv"))))
     (properties `((upstream-name . "async")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-stringr r-promises r-nseval r-later))
+    (propagated-inputs (list r-testthat
+                             r-stringr
+                             r-promises
+                             r-nseval
+                             r-later
+                             r-iterors))
     (native-inputs (list r-knitr))
     (home-page "https://crowding.github.io/async/")
     (synopsis "Coroutines: Generators / Yield, Async / Await, and Streams")
@@ -4967,13 +4972,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-29")
+    (version "0.2-30")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "arulesSequences" version))
               (sha256
                (base32
-                "1gi6zczvyrl3h7zis2niwllaynlw7l0l16icx6i2jq9ilgi59jia"))))
+                "1bnsgjjwrp1n5szhlyg3lhrhcz0sgdxsfdilbi5id9jbdkq9632a"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (propagated-inputs (list r-arules))
@@ -15096,6 +15101,30 @@ duration are supported.  There is also support for dummy variables in predictive
 contexts.  Code has been completely re-written in data.table for computational
 speed.")
     (license license:gpl2+)))
+
+(define-public r-agghoo
+  (package
+    (name "r-agghoo")
+    (version "0.1-0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "agghoo" version))
+              (sha256
+               (base32
+                "0vaqmydww494ql6xbhhjkpap3lqkhf8hkbcrr1pk81qpszs0pndm"))))
+    (properties `((upstream-name . "agghoo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart r-r6 r-fnn r-class))
+    (home-page "https://git.auder.net/?p=agghoo.git")
+    (synopsis "Aggregated Hold-Out Cross Validation")
+    (description
+     "The agghoo procedure is an alternative to usual cross-validation.  Instead of
+choosing the best model trained on V subsamples, it determines a winner model
+for each subsample, and then aggregates the V outputs.  For the details, see
+\"Aggregated hold-out\" by Guillaume Maillard, Sylvain Arlot, Matthieu Lerasle
+(2021) <arXiv:1909.04890> published in Journal of Machine Learning Research
+22(20):1--55.")
+    (license license:expat)))
 
 (define-public r-ageutils
   (package

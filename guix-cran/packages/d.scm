@@ -12062,13 +12062,13 @@ model parameters using the Gibbs sampler described by Culpepper (2015)
 (define-public r-dimora
   (package
     (name "r-dimora")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DIMORA" version))
               (sha256
                (base32
-                "045ngll2apr75skjwfrl6ypbihw0f4z6cf9awdhhbvm7bzld8jbj"))))
+                "0x289f8yppvl90c8j8w96m5bgb8khxnc8agxn77wkfisx4cczy1k"))))
     (properties `((upstream-name . "DIMORA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-numderiv r-minpack-lm r-forecast
@@ -24507,16 +24507,16 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-dalextra
   (package
     (name "r-dalextra")
-    (version "2.2.1")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DALEXtra" version))
               (sha256
                (base32
-                "0dlhchx9yk5frqbvdqaajs88k3hz6k3h40arfyyndgrcaqmcmn2a"))))
+                "1yxsk6cmqrhc7aw62vx5pr2g18lh32j5x73jbfxv4k0ia66mmwqf"))))
     (properties `((upstream-name . "DALEXtra")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-ggplot2 r-dalex))
+    (propagated-inputs (list r-ggplot2 r-dalex))
     (home-page "https://ModelOriented.github.io/DALEXtra/")
     (synopsis "Extension for 'DALEX' Package")
     (description

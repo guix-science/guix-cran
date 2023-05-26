@@ -26464,16 +26464,16 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.1.1")
+    (version "2.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pedtools" version))
               (sha256
                (base32
-                "1xj8bz63ylb14wdrplf4f1519gnnzlnpij0plvr07z611s6nf5yw"))))
+                "1vzh88bxd3mcas8c41l30xsimp242xahrslyrll4r9f9vs959v01"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-kinship2))
+    (propagated-inputs (list r-pedmut r-kinship2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/magnusdv/pedtools")
     (synopsis "Creating and Working with Pedigrees and Marker Data")

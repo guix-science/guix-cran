@@ -723,6 +723,27 @@ JSON string, merge two JSON strings, and more.")
 format for data dissemination.")
     (license license:expat)))
 
+(define-public r-jsonnormalize
+  (package
+    (name "r-jsonnormalize")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jsonNormalize" version))
+              (sha256
+               (base32
+                "1szvi8c0r75jv7y2y1jsampb783svvx04x4rvyw8v9qkiw0qpfis"))))
+    (properties `((upstream-name . "jsonNormalize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-v8 r-rstudioapi))
+    (home-page "https://github.com/stla/jsonNormalize")
+    (synopsis "Normalization of 'JSON' Strings")
+    (description
+     "This package provides a function allowing to normalize a JSON string, for
+example by adding double quotes around the keys when they are missing.  Also
+provides RStudio addins for the same purpose.")
+    (license license:gpl3)))
+
 (define-public r-jsonld
   (package
     (name "r-jsonld")

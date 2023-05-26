@@ -3519,13 +3519,13 @@ month.")
 (define-public r-ufs
   (package
     (name "r-ufs")
-    (version "0.5.2")
+    (version "0.5.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ufs" version))
               (sha256
                (base32
-                "1lqnib0pizx97isqbr4v2r4qp7fph6znbd5arbjnxmlh2wblfbsl"))))
+                "0w8fh92v6xiabyah56j68amn48gaa8ia0lk09273jlqc2q9fda62"))))
     (properties `((upstream-name . "ufs")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -3539,13 +3539,14 @@ month.")
                              r-htmltools
                              r-gtable
                              r-gridextra
+                             r-gparotation
                              r-ggridges
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-diptest
                              r-digest))
-    (home-page "https://r-packages.gitlab.io/ufs")
+    (home-page "https://ufs.opens.science")
     (synopsis "Collection of Utilities")
     (description
      "This is a new version of the userfriendlyscience package, which has grown a bit
@@ -3874,13 +3875,13 @@ Pseudomonas aeruginosa for the drug class is fetched from the database.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.3")
+    (version "1.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ubms" version))
               (sha256
                (base32
-                "1x2sf23qg1n4g82wbrbk8hjsn1j33fa0n15l6m18wvazydbhmrhi"))))
+                "10kya1im8czcrqaqq27iylf14v5qcq8nrsb3w0imafak4b8ikz4k"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked

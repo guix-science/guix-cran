@@ -2042,13 +2042,13 @@ creating hive plots.")
 (define-public r-funchisq
   (package
     (name "r-funchisq")
-    (version "2.5.2")
+    (version "2.5.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FunChisq" version))
               (sha256
                (base32
-                "0ds8gx86bi882nmdlivvigr53kq1dcq4cqj03szg44j8p6q3vhkx"))))
+                "091arn9d42zsa7ky21k77ak0qirz0x7nai72s54mi70nyjn173dk"))))
     (properties `((upstream-name . "FunChisq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-dqrng r-bh))
@@ -2062,12 +2062,13 @@ statistics are asymmetric and functionally optimal, unique from other related
 statistics.  Tests in this package reveal evidence for causality based on the
 causality-by- functionality principle.  They include asymptotic functional
 chi-squared tests (Zhang & Song 2013) <arXiv:1311.2707>, an adapted functional
-chi-squared test, and an exact functional test (Zhong & Song 2019)
-<doi:10.1109/TCBB.2018.2809743> (Nguyen et al.  2020)
-<doi:10.24963/ijcai.2020/372>.  The normalized functional chi-squared test was
-used by Best Performer NMSUSongLab in HPN-DREAM (DREAM8) Breast Cancer Network
-Inference Challenges (Hill et al.  2016) <doi:10.1038/nmeth.3773>.  A function
-index (Zhong & Song 2019) <doi:10.1186/s12920-019-0565-9> (Kumar et al.  2018)
+chi-squared test (Kumar & Song 2022) <doi:10.1093/bioinformatics/btac206>, and
+an exact functional test (Zhong & Song 2019) <doi:10.1109/TCBB.2018.2809743>
+(Nguyen et al.  2020) <doi:10.24963/ijcai.2020/372>.  The normalized functional
+chi-squared test was used by Best Performer NMSUSongLab in HPN-DREAM (DREAM8)
+Breast Cancer Network Inference Challenges (Hill et al.  2016)
+<doi:10.1038/nmeth.3773>.  A function index (Zhong & Song 2019)
+<doi:10.1186/s12920-019-0565-9> (Kumar et al.  2018)
 <doi:10.1109/BIBM.2018.8621502> derived from the functional test statistic
 offers a new effect size measure for the strength of functional dependency, a
 better alternative to conditional entropy in many aspects.  For continuous data,
@@ -6253,13 +6254,13 @@ extracting and replacing names and symbols from these objects.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "formatters" version))
               (sha256
                (base32
-                "17pfh70w8qpp4s885x0wbbgabwl55910flads5hws809j86q6az3"))))
+                "12bmfm2lm2x9bc1v4jr5kv96vlhnm72wbyjfzzx6j0d6cfssnl8n"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-checkmate))
@@ -6860,13 +6861,13 @@ selection.")
 (define-public r-forestat
   (package
     (name "r-forestat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "forestat" version))
               (sha256
                (base32
-                "1p9scjavimflyzc62y1mrs6n6n1dy9kxhvscxr8a63yk1z71dxqx"))))
+                "0m2f0s9153y2z4z6mi1sgp21blaamj1nshxdsvgf6daz38dk9cpb"))))
     (properties `((upstream-name . "forestat")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-ggplot2 r-dplyr))
@@ -14094,13 +14095,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "3.0.3")
+    (version "3.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FedData" version))
               (sha256
                (base32
-                "0wd1ri4rg3r2mfpspjrd8h9yd2lgq9ccppgs4vj26bg4aq8365d5"))))
+                "0qwfayp99nngwjl043y1snfsljnvm1vgdl6vd04hinr0gsrc330m"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))
@@ -15159,16 +15160,17 @@ H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
 (define-public r-fdacluster
   (package
     (name "r-fdacluster")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "fdacluster" version))
               (sha256
                (base32
-                "0whpjj59vdmzzxp6n2dwmzp4x3w2469rz67sm1bp93b7jidfsnf9"))))
+                "0xmmjpizdv2h38fskz420zyk3wvrjpfkh2ljsx7mvb3v7sfljr6y"))))
     (properties `((upstream-name . "fdacluster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-withr
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-rcpparmadillo

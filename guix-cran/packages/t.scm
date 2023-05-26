@@ -14902,13 +14902,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyBdE" version))
               (sha256
                (base32
-                "0qy3lrimm1ns25adb9mapc7w23v2n30a74pj4gpzkbbb53vpy90v"))))
+                "0rs97bsab1fmyrd6069i619vm1bwj8yvinv0libx59i0bac6lnhy"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

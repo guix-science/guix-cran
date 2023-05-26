@@ -6848,16 +6848,17 @@ models for portfolios.")
 (define-public r-lkt
   (package
     (name "r-lkt")
-    (version "1.3.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LKT" version))
               (sha256
                (base32
-                "1a2r70j4pbnvcriwpaaf3hp0mkm08nmk4nxbzfhhw4hzr09k8nz6"))))
+                "1hpvg10kj4c8cixpvgyp9wzy7h6fv02y9zf6rbply537lyni2igb"))))
     (properties `((upstream-name . "LKT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem
+                             r-proc
                              r-matrix
                              r-lme4
                              r-liblinear
@@ -6865,6 +6866,7 @@ models for portfolios.")
                              r-glmnetutils
                              r-glmnet
                              r-data-table
+                             r-crayon
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LKT")

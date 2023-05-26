@@ -5154,19 +5154,18 @@ continuous range.")
 (define-public r-cropgrowdays
   (package
     (name "r-cropgrowdays")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cropgrowdays" version))
               (sha256
                (base32
-                "0jgdfhywnlsz2mxb4skkrxf9fb55qyidd6y6nhb9324jm8d3xl0a"))))
+                "1vvyknbgnz0d5f4rjl3vw4a9adzgwqkzxb2wnf2x6yqfhniw6s2p"))))
     (properties `((upstream-name . "cropgrowdays")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-purrrlyr
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-httr
                              r-dplyr))
@@ -8783,13 +8782,13 @@ John Hopkins University's repository.")
 (define-public r-covid19-analytics
   (package
     (name "r-covid19-analytics")
-    (version "2.1.3")
+    (version "2.1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "covid19.analytics" version))
               (sha256
                (base32
-                "00ywgrzrzzsdvxd4zyimwl81pqlv9m68qv4ba7hg8mnj87q3vi3w"))))
+                "120ska2iyiihqb1mml5s28sav4d6cbs3lad5rfj6zi8lblli8ini"))))
     (properties `((upstream-name . "covid19.analytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinydashboard
@@ -9468,6 +9467,34 @@ written in R Markdown or Quarto'.  Integrates fully into Shiny apps.  Countdown
 to something amazing.")
     (license license:expat)))
 
+(define-public r-countdm
+  (package
+    (name "r-countdm")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "countDM" version))
+              (sha256
+               (base32
+                "14mm2pmzfca7z4l8a4pfv7xjcyljrs2k0vbsakxnngn7pwvq2y9v"))))
+    (properties `((upstream-name . "countDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numbers r-misctools r-maxlik r-lamw))
+    (home-page "https://cran.r-project.org/package=countDM")
+    (synopsis "Estimation of Count Data Models")
+    (description
+     "The maximum likelihood estimation (MLE) of the count data models along with
+standard error of the estimates and Akaike information model section criterion
+are provided.  The functions allow to compute the MLE for the following
+distributions such as the Bell distribution, the Borel distribution, the Poisson
+distribution, zero inflated Bell distribution, zero inflated Bell Touchard
+distribution, zero inflated Poisson distribution, zero one inflated Bell
+distribution and zero one inflated Poisson distribution.  Moreover, the
+probability mass function (PMF), distribution function (CDF), quantile function
+(QF) and random numbers generation of the Bell Touchard and zero inflated Bell
+Touchard distribution are also provided.")
+    (license license:gpl2+)))
+
 (define-public r-countdata
   (package
     (name "r-countdata")
@@ -9582,13 +9609,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.4-2")
+    (version "0.4-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "cotram" version))
               (sha256
                (base32
-                "0qgbckdjp53xd40b83xbnadgn375lmm69hvilmc4ka9h5drj2igb"))))
+                "152jxkfwcqs1k7xcr1dlqbf0jpc9423g48dxwgjy3bvqnwgi6k21"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -12292,6 +12319,33 @@ left (right) increasing (decreasing) are available.  Other features include
 Kullback-Leibler divergence, Vuong procedure, spectral measure, and Lcomoments
 for inference, maximum likelihood, and AIC, BIC, and RMSE for goodness-of-fit.")
     (license license:gpl2)))
+
+(define-public r-coortweet
+  (package
+    (name "r-coortweet")
+    (version "1.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "CooRTweet" version))
+              (sha256
+               (base32
+                "1svi2a18z6vgd30kx47pdfk4q08isgxa1pchlhmcff8qx969048h"))))
+    (properties `((upstream-name . "CooRTweet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytable
+                             r-stringi
+                             r-rcppsimdjson
+                             r-matrix
+                             r-lubridate
+                             r-igraph
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicolarighetti/CooRTweet")
+    (synopsis "Coordinated Networks Detection on Social Media")
+    (description
+     "Detects a variety of coordinated actions on Twitter and outputs the network of
+coordinated users along with related information.")
+    (license license:expat)))
 
 (define-public r-coordinatecleaner
   (package
@@ -33857,13 +33911,13 @@ get started.")
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CausalGPS" version))
               (sha256
                (base32
-                "13qs958saf8775jialf1hdrb91yzm1q8gi11bdn2y38m5vcykkmf"))))
+                "0bibrdqgnzbsai18v7x89vmjnrlgd27fzdrn219fiz41jyra40jn"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -33875,6 +33929,7 @@ get started.")
                              r-mass
                              r-logger
                              r-locpol
+                             r-kernsmooth
                              r-gnm
                              r-ggplot2
                              r-gam

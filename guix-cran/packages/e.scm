@@ -10907,6 +10907,46 @@ encoded text files, to convert all strings in an object to UTF-8', and to create
 character vectors with various encodings.")
     (license license:gpl3)))
 
+(define-public r-emur
+  (package
+    (name "r-emur")
+    (version "2.4.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "emuR" version))
+              (sha256
+               (base32
+                "1vwfzs02ga07z1risj4kc0iqqcwkx3wym996lp8kdipfclr4dr8i"))))
+    (properties `((upstream-name . "emuR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wrassp
+                             r-v8
+                             r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rstudioapi
+                             r-rsqlite
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-mime
+                             r-jsonlite
+                             r-httr
+                             r-httpuv
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-base64enc))
+    (home-page "https://github.com/IPS-LMU/emuR")
+    (synopsis "Main Package of the EMU Speech Database Management System")
+    (description
+     "Provide the EMU Speech Database Management System (EMU-SDMS) with database
+management, data extraction, data preparation and data visualization facilities.
+ See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/> for more details.")
+    (license license:gpl2+)))
+
 (define-public r-emulator
   (package
     (name "r-emulator")
@@ -13328,13 +13368,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eks" version))
               (sha256
                (base32
-                "04yq4l2zkgczzjz63lkix75sfh5z5w4h405sj0j4wwnk9apc41wz"))))
+                "14nyd2ipjy5kvcp3001ld7dv2k46paxg20w7dnq17sg8wy8iy4rd"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -17976,6 +18016,25 @@ data using extended harmonic oscillators.  For more information, see H. De los
 Santos et al. (2020) <doi:10.1093/bioinformatics/btz617> .")
     (license license:expat)))
 
+(define-public r-echo
+  (package
+    (name "r-echo")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "echo" version))
+              (sha256
+               (base32
+                "1m3dzdgkl6v9z0wv3ws1yn58zi6bxgdy3p6a5jmq2rwhb8wz1lr8"))))
+    (properties `((upstream-name . "echo")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jmbarbone/echo")
+    (synopsis "Echo Code Evaluations")
+    (description
+     "Capture code evaluations and script executions by expressions, outputs, and
+condition calls for logging.")
+    (license license:expat)))
+
 (define-public r-echem
   (package
     (name "r-echem")
@@ -18673,13 +18732,13 @@ spatial and temporal resolution.")
 (define-public r-ebglmnet
   (package
     (name "r-ebglmnet")
-    (version "5.3")
+    (version "6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EBglmnet" version))
               (sha256
                (base32
-                "094h4lhr1z2pqfjmdids7paahlwq25k1x2xzpqn4cs65qb5r0dsn"))))
+                "014rpci2lcrqaldir2ds1fvzbvkj6n00n9xzl5m0f60zzg9cckjm"))))
     (properties `((upstream-name . "EBglmnet")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

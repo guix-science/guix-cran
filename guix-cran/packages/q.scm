@@ -1144,13 +1144,13 @@ forest package ranger'.")
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
-    (version "1.6-1")
+    (version "1.6-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quantregGrowth" version))
               (sha256
                (base32
-                "0hxi7fd9h4m50hpgmjxl7gppmh8n70d8444qkza890gdfvhwmcap"))))
+                "1ycr6dlbkypv9wf4ivk8kv1hpcxzzqh3ds3lic6way4vaikmh6mq"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg))
@@ -3877,13 +3877,13 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.5")
+    (version "0.0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qlcal" version))
               (sha256
                (base32
-                "0azx6px89s7kq7sdjjnvjlkfb0d86a8xzsrh9bnij5q36dnw6pii"))))
+                "1mj34m1fp58s3kchav4g04y48aw3d175jry1cyqpr593x9nh6bi4"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
