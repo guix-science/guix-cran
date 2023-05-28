@@ -123,16 +123,16 @@ time series prediction, and series fit calculation.")
 (define-public r-qvcalc
   (package
     (name "r-qvcalc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qvcalc" version))
               (sha256
                (base32
-                "0banzv78kb53ybfbh1hmgx7kxvpbbdxzg4dsn7vrwhmxs72srkch"))))
+                "17sr4100ciy5jp0b8sxvqjxf4m176ayzd5yyaw40ri4xf6h0z7la"))))
     (properties `((upstream-name . "qvcalc")))
     (build-system r-build-system)
-    (home-page "https://davidfirth.github.io/qvcalc")
+    (home-page "https://davidfirth.github.io/qvcalc/")
     (synopsis "Quasi Variances for Factor Effects in Statistical Models")
     (description
      "This package provides functions to compute quasi variances and associated

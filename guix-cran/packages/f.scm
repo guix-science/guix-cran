@@ -12428,32 +12428,29 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.1.6")
+    (version "1.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTAutils" version))
               (sha256
                (base32
-                "14wnmk4zdi7lpmybpbvkx9apmjyppx0ik4bc5xb0jbjhawzziv2i"))))
+                "06j5la5ig28mh5vrk39q5f2i7gdhqskfsc5b14agmh12py1fh0zg"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-units
+    (propagated-inputs (list r-units
                              r-terra
                              r-sqldf
-                             r-sp
                              r-sf
                              r-sae
                              r-rsqlite
                              r-rpostgresql
-                             r-rgdal
                              r-rcpp
                              r-rcolorbrewer
                              r-nlme
                              r-mase
-                             r-largelist
                              r-josae
                              r-hbsae
+                             r-gdalraster
                              r-dbi
                              r-data-table))
     (home-page "https://github.com/USDAForestService/FIESTAutils")

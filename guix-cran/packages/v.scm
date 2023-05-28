@@ -1437,6 +1437,39 @@ birds and other biological signals in weather radar data.  See Dokter et al.
 Python tools to solve problems concerning voice and audio in general.")
     (license license:gpl3)))
 
+(define-public r-voi
+  (package
+    (name "r-voi")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "voi" version))
+              (sha256
+               (base32
+                "1ncxlswjh5z239kipb3mq5j0xvxawhrxd4w6jmdz150gq510nccq"))))
+    (properties `((upstream-name . "voi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress
+                             r-posterior
+                             r-mvtnorm
+                             r-mgcv
+                             r-matrix
+                             r-gridextra
+                             r-ggplot2
+                             r-earth
+                             r-dbarts))
+    (native-inputs (list r-knitr))
+    (home-page "https://chjackson.github.io/voi/")
+    (synopsis "Expected Value of Information")
+    (description
+     "This package provides methods to calculate the expected value of information
+from a decision-analytic model.  This includes the expected value of perfect
+information (EVPI), partial perfect information (EVPPI) and sample information
+(EVSI), and the expected net benefit of sampling (ENBS).  A range of alternative
+computational methods are provided under the same user interface.  See Jackson
+et al. (2022) <doi:10.1146/annurev-statistics-040120-010730>.")
+    (license license:gpl3)))
+
 (define-public r-vocaldia
   (package
     (name "r-vocaldia")

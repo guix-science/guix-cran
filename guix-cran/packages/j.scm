@@ -2009,13 +2009,13 @@ RStudio Addins can be used to run selected code as a job.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.3.4")
+    (version "0.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvReadWrite" version))
               (sha256
                (base32
-                "09zch80lj5npwvsc9dnnc27w5rx0gh5ckpab3lpwwishlidwwdxl"))))
+                "19dmz26scndfdwsn7zfpwbw9qdnxmh3b2nd2s67kvn1l5ranlhd8"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-rjson))

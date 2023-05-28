@@ -9751,13 +9751,13 @@ polynomials with rational coefficients.")
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.4.9")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gMOIP" version))
               (sha256
                (base32
-                "15lnn80shpdkc0qzchrpn939z3j581jjfl6m4032vmdpgyynmhak"))))
+                "1ihbwzc2vmbzs1rvmqv386n0snmsljdv1jqbpyx21c8xkx81wc4v"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13007,13 +13007,13 @@ primarily related to network analysis on the Norwegian road network.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.3.3")
+    (version "0.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "giscoR" version))
               (sha256
                (base32
-                "00c84j6smdj1c4d8asfa7ammfjyq7xsbd5v1xla77lqpizsi5lfp"))))
+                "0sv67kvsaf3y0p15kr81i4lpnjr260lf032izr7qvfmxmaixf4i4"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
@@ -16460,13 +16460,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GGIRread" version))
               (sha256
                (base32
-                "05rsn4a751vvs7ari6df1vm2dx5rf861yg00by4z80byrc6c39w5"))))
+                "16fxvwybcg63a9f0jvw5xyxg19ykaprxsq4cpqz4ja0gyrfz8gd8"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner r-rcpp r-matlab r-bitops))
@@ -17923,13 +17923,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "1.8.0")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggblanket" version))
               (sha256
                (base32
-                "0is0prcsmsnyha7c37w3c8c7pgjdfv694xwfkn99p1h5qh6nkl7a"))))
+                "0aifhpipi0mkajrnwb9lqiwxqvq12z220bdbh09n8my3ghc28rk4"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

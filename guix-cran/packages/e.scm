@@ -4013,13 +4013,13 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eventPred" version))
               (sha256
                (base32
-                "154jrlag5qjwl74f0ckrcbmv8xnjz82hwd21yckwvyyq825csi6r"))))
+                "0lzfwg544xh5zjgcxf3r695sb5x8lz5xggp7gvm7cxynrxr3rq3i"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnsim
@@ -4036,9 +4036,8 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
     (home-page "https://cran.r-project.org/package=eventPred")
     (synopsis "Event Prediction")
     (description
-     "Predicts enrollment and events at the design stage using assumed enrollment and
-treatment-specific time-to-event models, or at the analysis stage using blinded
-data and specified enrollment and time-to-event models through simulations.")
+     "Predicts enrollment and events at the design or analysis stage using specified
+enrollment and time-to-event models through simulations.")
     (license license:gpl2+)))
 
 (define-public r-eventinterval
@@ -4882,13 +4881,13 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "etwfe" version))
               (sha256
                (base32
-                "004vi5wrcypib4fnfv25cmcil92i7zqynnfzwzqnmdfhnvn2grf0"))))
+                "0v1n5n1k0kairynrj4hqli62zm1bkqrly92wpyiv7zg4zjal575m"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
@@ -14930,13 +14929,13 @@ Packalen et al. (2015) <doi:10.2788/153990>.")
 (define-public r-efautilities
   (package
     (name "r-efautilities")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "EFAutilities" version))
               (sha256
                (base32
-                "1mrkjj6dnk2b2zd1pccnglxyxjyz6wlyy7wlaflaj747148g08a7"))))
+                "09835x3nk8nnr3ibiddc5hx2l0jylz15fwsy2wjmv6jdrs0j9vsy"))))
     (properties `((upstream-name . "EFAutilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-mvtnorm r-mass r-gparotation))

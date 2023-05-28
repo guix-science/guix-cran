@@ -1823,13 +1823,13 @@ export data tables to files before being able to complete their analysis.")
 (define-public r-worldflora
   (package
     (name "r-worldflora")
-    (version "1.13")
+    (version "1.13-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WorldFlora" version))
               (sha256
                (base32
-                "0nfp927ppjzb3934g6rlh47v9jwyvl3id5brnm4qaqczgrs1bvmk"))))
+                "1x2sa6a1zri8c17b88cpwdjk7jyrk8xaish8bi5nlg5m3zkmnh6c"))))
     (properties `((upstream-name . "WorldFlora")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WorldFlora")
@@ -4209,6 +4209,50 @@ plots can be assembled using directives such as LeftOf', RightOf', TopOf', and
 Beneath and more.  Other features include clustering, dendrograms and
 integration with ggplot2 generated grid objects.  This package is particularly
 designed for bioinformaticians to assemble complex plots for publication.")
+    (license license:gpl3)))
+
+(define-public r-whatsr
+  (package
+    (name "r-whatsr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WhatsR" version))
+              (sha256
+               (base32
+                "1cc3ylfy9zbg6drx26g9rx3vak72scgwz5p3pl1m176kznypqxsz"))))
+    (properties `((upstream-name . "WhatsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-xml
+                             r-visnetwork
+                             r-tokenizers
+                             r-stringi
+                             r-rvest
+                             r-readr
+                             r-ragg
+                             r-qdapregex
+                             r-qdap
+                             r-mgsub
+                             r-lubridate
+                             r-ggwordcloud
+                             r-ggplot2
+                             r-ggmap
+                             r-dplyr
+                             r-data-table
+                             r-checkmate
+                             r-anytime))
+    (home-page "https://cran.r-project.org/package=WhatsR")
+    (synopsis
+     "Parsing, Anonymizing and Visualizing Exported 'WhatsApp' Chat Logs")
+    (description
+     "Imports WhatsApp chat logs and parses them into a usable dataframe object.  The
+parser works on chats exported from Android or iOS phones and on Linux, MacOS
+and Windows.  The parser has multiple options for extracting smilies and emojis
+from the messages, extracting urls and domains from the messages, extracting
+names and types of sent media files from the messages, extracting timestamps
+from messages, extracting and anonymizing author names from messages.  Can be
+used to create anonymized versions of data.")
     (license license:gpl3)))
 
 (define-public r-whatif

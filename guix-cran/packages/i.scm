@@ -15369,13 +15369,13 @@ analyse the output and performance of models.")
 (define-public r-icarus
   (package
     (name "r-icarus")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "icarus" version))
               (sha256
                (base32
-                "0ipbhzvwdn1cnzgdw33cwv901768srxfi588bimjx2ssl80mqn3a"))))
+                "0nk4z1xw8ca7nkxvkbrblpp42b1pim3dskj9sczpdva0s8ksnq43"))))
     (properties `((upstream-name . "icarus")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=icarus")

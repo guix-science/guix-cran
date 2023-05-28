@@ -3432,6 +3432,54 @@ output, builds run logs, creates derivative data, generates diagnostics.  NONMEM
 nonlinear mixed effects modeling.  See package?nonmemica'.")
     (license license:gpl3)))
 
+(define-public r-nonmem2rx
+  (package
+    (name "r-nonmem2rx")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nonmem2rx" version))
+              (sha256
+               (base32
+                "1fn5z1w1xjx5b6dfwgbkxqb6rn4251nbjy3dwc84if7pc71kb1nk"))))
+    (properties `((upstream-name . "nonmem2rx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rxode2parse
+                             r-rxode2
+                             r-rcpp
+                             r-qs
+                             r-magrittr
+                             r-lotri
+                             r-ggplot2
+                             r-ggforce
+                             r-dparser
+                             r-digest
+                             r-data-table
+                             r-crayon
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://nlmixr2.github.io/nonmem2rx/")
+    (synopsis "'nonmem2rx' Converts 'NONMEM' Models to 'rxode2'")
+    (description
+     "NONMEM has been a tool for running nonlinear mixed effects models since the 80s
+and is still used today (Bauer 2019 <doi:10.1002/psp4.12404>).  This tool allows
+you to convert NONMEM models to rxode2 (Wang, Hallow and James (2016)
+<doi:10.1002/psp4.12052>) and with simple models nlmixr2 syntax (Fidler et al
+(2019) <doi:10.1002/psp4.12445>).  The nlmixr2 syntax requires the residual
+specification to be included and it is not always translated.  If available, the
+rxode2 model will read in the NONMEM data and compare the simulation for the
+population model ('PRED') individual model ('IPRED') and residual model
+('IWRES') to immediately show how well the translation is performing.  This
+saves the model development time for people who are creating an rxode2 model
+manually.  Additionally, this package reads in all the information to allow
+simulation with uncertainty (that is the number of observations, the number of
+subjects, and the covariance matrix) with a rxode2 model.  This is complementary
+to the babelmixr2 package that translates nlmixr2 models to NONMEM and can
+convert the objects converted from nonmem2rx to a full nlmixr2 fit.")
+    (license license:gpl3+)))
+
 (define-public r-nonmem2r
   (package
     (name "r-nonmem2r")

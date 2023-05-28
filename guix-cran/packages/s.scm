@@ -14545,13 +14545,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.4.4")
+    (version "1.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SSBtools" version))
               (sha256
                (base32
-                "1aap2arvicr0y97jmjngfvxpamb1xwvpnyn1c2liiikkn4552ypg"))))
+                "0l61vnisl2k56ddys033mh629l7rf3pgfrsx1fbz7v79c2586cjf"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -17330,13 +17330,13 @@ coefficients.  For details see Murakami (2021) <arXiv:1703.04467>.")
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "spmodel" version))
               (sha256
                (base32
-                "1nkmvprjp1p5n2g8ikffdvfb5y26kbvm1nd0pwq3gacc14ghgxa7"))))
+                "0viv56fk4qq16grzhjx9fviyykwh2rki5q1fs92fnjpghnhjfwv7"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -18977,6 +18977,33 @@ linear as well as some generalized linear regression models.")
      "This package implements a group-bridge penalized function-on-scalar regression
 model proposed by Wang et al. (2020) <arXiv:2006.10163>, to simultaneously
 estimate functional coefficient and recover the local sparsity.")
+    (license license:expat)))
+
+(define-public r-spfa
+  (package
+    (name "r-spfa")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "spfa" version))
+              (sha256
+               (base32
+                "0xkq5679whrvxnbbcbari533jpima27gcyqbszvkg0z95q956ndj"))))
+    (properties `((upstream-name . "spfa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=spfa")
+    (synopsis "Semi-Parametric Factor Analysis")
+    (description
+     "Estimation, scoring, and plotting functions for the semi-parametric factor model
+proposed by Liu & Wang (2022) <doi:10.1007/s11336-021-09832-8> and Liu & Wang
+(2023) <arXiv:2303.10079>.  Both the conditional densities of observed responses
+given the latent factors and the joint density of latent factors are estimated
+non-parametrically.  Functional parameters are approximated by smoothing
+splines, whose coefficients are estimated by penalized maximum likelihood using
+an expectation-maximization (EM) algorithm.  E- and M-steps can be parallelized
+on multi-thread computing platforms that support OpenMP'.  Both continuous and
+unordered categorical response variables are supported.")
     (license license:expat)))
 
 (define-public r-spex
@@ -24332,13 +24359,13 @@ Sotkanet open data portal <https://sotkanet.fi/sotkanet/fi/index>.")
 (define-public r-sos
   (package
     (name "r-sos")
-    (version "2.1-4")
+    (version "2.1-7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sos" version))
               (sha256
                (base32
-                "0qa8plmdn4rky4i5gvgm4gny8nfvcd0hql7c5vlpwr4i2x1gid9p"))))
+                "11q698wr3xnzr0nmzb9frifrizfl27f1ymdi6mrvyzw0y9cv3sq6"))))
     (properties `((upstream-name . "sos")))
     (build-system r-build-system)
     (propagated-inputs (list r-brew))

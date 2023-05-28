@@ -9647,13 +9647,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "2.3.0")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "pRecipe" version))
               (sha256
                (base32
-                "0wpmmq6vxmd883k6cp6mbnzpqkiy8qb5a12bghj1z5vy9023abik"))))
+                "02dya9iica049sgwlb2hal4vgkch8y309v9kvgirk4j7aww5dslp"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -22187,13 +22187,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.10.16")
+    (version "0.10.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "photobiology" version))
               (sha256
                (base32
-                "1inrkk36zsnzj47qidv3w9yibywsdgcmxvk1gai50dqzsagc1n1s"))))
+                "1anrs6182wrcndnyfrdgyxh67xap0xxqzsl58fhiw611xbky5rw6"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

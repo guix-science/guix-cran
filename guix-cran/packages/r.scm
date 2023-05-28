@@ -2092,38 +2092,6 @@ can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
 
-(define-public r-rusquant
-  (package
-    (name "r-rusquant")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rusquant" version))
-              (sha256
-               (base32
-                "1ys8dwcvfdns6izyxbk2502mm8ir4009an5wmylpzf1fzbxkfms4"))))
-    (properties `((upstream-name . "rusquant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-xml
-                             r-stringr
-                             r-rvest
-                             r-quantmod
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-data-table))
-    (home-page "https://rusquant.ru")
-    (synopsis "Quantitative Trading Framework")
-    (description
-     "Collection of functions to retrieve financial data from various sources,
-including brokerage and exchange platforms, financial websites, and data
-providers.  Includes functions to retrieve account information, portfolio
-information, and place/cancel orders from different brokers.  Additionally,
-allows users to download historical data such as earnings, dividends, stock
-splits.")
-    (license license:gpl3)))
-
 (define-public r-rusk
   (package
     (name "r-rusk")
@@ -7306,13 +7274,13 @@ chl-a) and climate conditions using the Theil-Sen estimator.")
 (define-public r-rsagacmd
   (package
     (name "r-rsagacmd")
-    (version "0.2.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Rsagacmd" version))
               (sha256
                (base32
-                "1z92fk7j2n6zzplfc3xlhnaynn2i2cp6cq6hw621fmnf09ccq005"))))
+                "079xd2g76axdfqmkaz11xldqkadiaqszs6nsh9v8b7f758ffd31v"))))
     (properties `((upstream-name . "Rsagacmd")))
     (build-system r-build-system)
     (inputs (list))
@@ -7323,8 +7291,6 @@ chl-a) and climate conditions using the Theil-Sen estimator.")
                              r-sf
                              r-rvest
                              r-rlang
-                             r-rgdal
-                             r-raster
                              r-processx
                              r-generics
                              r-foreign))
@@ -7341,19 +7307,16 @@ experience by organizing the large number of SAGA-GIS geoprocessing tools (>700)
 by their respective library.  Interactive scripting can fully take advantage of
 code autocompletion tools (e.g. in Rstudio'), allowing for each tools syntax to
 be quickly recognized.  Furthermore, the most common types of spatial data (via
-the raster', terra', sp', and sf packages) along with non-spatial data are
-automatically passed from R to the SAGA-GIS command line tool for geoprocessing
-operations, and the results are loaded as the appropriate R object.  Outputs
-from individual SAGA-GIS tools can also be chained using pipes from the magrittr
-and dplyr packages to combine complex geoprocessing operations together in a
-single statement.  SAGA-GIS is available under a GPLv2 / LGPLv2 licence from
-<https://sourceforge.net/projects/saga-gis/> including Windows x86/x64 binaries.
- SAGA-GIS is also included in Debian/Ubuntu default software repositories and is
-available for macOS using homebrew (<https://brew.sh/>) from the osgeo/osgeo4mac
-(<https://github.com/OSGeo/homebrew-osgeo4mac>) formula tap, as well as being
-bundled within the QGIS application bundle for macOS. Rsagacmd has currently
-been tested on SAGA-GIS versions from 2.3.1 to 8.0.1 on Windows, Linux and
-macOS.")
+the terra', sp', and sf packages) along with non-spatial data are automatically
+passed from R to the SAGA-GIS command line tool for geoprocessing operations,
+and the results are loaded as the appropriate R object.  Outputs from individual
+SAGA-GIS tools can also be chained using pipes from the magrittr and dplyr
+packages to combine complex geoprocessing operations together in a single
+statement.  SAGA-GIS is available under a GPLv2 / LGPLv2 licence from
+<https://sourceforge.net/projects/saga-gis/> including Windows x86/x64 and macOS
+binaries.  SAGA-GIS is also included in Debian/Ubuntu default software
+repositories.  Rsagacmd has currently been tested on SAGA-GIS versions from
+2.3.1 to 9.0.1 on Windows, Linux and macOS.")
     (license license:gpl3)))
 
 (define-public r-rsaga
@@ -12991,13 +12954,13 @@ from diagnostic test.")
 (define-public r-roclang
   (package
     (name "r-roclang")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "roclang" version))
               (sha256
                (base32
-                "0w7f17ppgc2mc3zd34lx445y7g7sxl5lscdbhyw650lvmk7kfsqd"))))
+                "1irqscbj89mfkbq66kb7k1cx2ygilqwr6spxsm36rgqfbk1j5g6m"))))
     (properties `((upstream-name . "roclang")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32212,6 +32175,29 @@ observations by geographic location (latitude, longitude), eBird hotspots,
 location identifiers, by notable sightings, by region, and by taxonomic name.")
     (license license:expat)))
 
+(define-public r-rebib
+  (package
+    (name "r-rebib")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rebib" version))
+              (sha256
+               (base32
+                "0ajk25yya6b3lf5ixjkr95jby576lm5v4wvpjgdgq314q9dp6fvw"))))
+    (properties `((upstream-name . "rebib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun r-stringr r-logger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Abhi-1U/rebib#readme")
+    (synopsis "Convert and Aggregate Bibliographies")
+    (description
+     "Authors working with LaTeX articles use the built-in bibliography options and
+BibTeX files.  While this might work with LaTeX', it does not function well with
+Web articles.  As a way out, rebib offers tools to convert and combine
+bibliographies from both sources.")
+    (license license:expat)))
+
 (define-public r-rebayes
   (package
     (name "r-rebayes")
@@ -45827,13 +45813,13 @@ plot_power() draws the corresponding power graphs.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r2rtf" version))
               (sha256
                (base32
-                "0szzri64jxalmvrcj9r70im8l4sq07mqngz7q097qswgnhjmrcqy"))))
+                "06lfz118w8gfc7bd3a0gi15ggi5182wpv2q194m13vkifa9k97pa"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -55,13 +55,13 @@
 (define-public r-mzipmed
   (package
     (name "r-mzipmed")
-    (version "1.3.0")
+    (version "1.3.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mzipmed" version))
               (sha256
                (base32
-                "0aqjhjqhbb19l0wgz3brnp2d699ibwpmx5ksnz6frk937k4ix1s0"))))
+                "1yqj94v12xqnycqiqxb3b6kpqrzx7jyiq30rnw3fw0ny4v8npb24"))))
     (properties `((upstream-name . "mzipmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-robust r-matrixstats r-mass))
@@ -25682,13 +25682,13 @@ conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.
 (define-public r-metevalue
   (package
     (name "r-metevalue")
-    (version "0.2.2")
+    (version "0.2.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "metevalue" version))
               (sha256
                (base32
-                "0w1nri5y6zcqmsc6k6nlsavg8ifk1bv07kg93gpg9vvsfxcpy7jn"))))
+                "1iazpldafzq1rzg1hbp9yyqwngq00mbxmfahidlj3ybl1y459lah"))))
     (properties `((upstream-name . "metevalue")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-psych r-dplyr))
@@ -25697,14 +25697,15 @@ conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.
     (synopsis "E-Value in the Omics Data Association Studies")
     (description
      "In the omics data association studies, it is common to conduct the p-value
-corrections to control the false significance.  Among those p-value correction
-methods, E-value is recently studied based on V. Vovk and R. Wang (2021)
-<doi:10.1214/20-AOS2020>.  This package provides e-value calculation for several
-types of omics data association studies.  Currently, four data formats are
-supported: BiSeq, MDRfinder, methylKit and metilene data.  The relevant
-references are listed below: Katja Hebestreit and Hans-Ulrich Klein (2022)
-<doi:10.18129/B9.bioc.BiSeq>; Altuna Akalin et.al (2012)
-<doi:10.18129/B9.bioc.methylKit>.")
+corrections to control the false significance.  Beyond the P-value corrections,
+E-value is recently studied to facilitate multiple testing correction based on
+V. Vovk and R. Wang (2021) <doi:10.1214/20-AOS2020>.  This package provides
+E-value calculation for DNA methylation data and RNA-seq data.  Currently, five
+data formats are supported: DNA methylation levels using DMR detection tools
+(BiSeq, DMRfinder, MethylKit, Metilene and other DNA methylation tools) and
+RNA-seq data.  The relevant references are listed below: Katja Hebestreit and
+Hans-Ulrich Klein (2022) <doi:10.18129/B9.bioc.BiSeq>; Altuna Akalin et.al
+(2012) <doi:10.18129/B9.bioc.methylKit>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-metest
@@ -30416,13 +30417,13 @@ allows sending HTTP tracking events from R code.")
 (define-public r-measr
   (package
     (name "r-measr")
-    (version "0.2.1")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "measr" version))
               (sha256
                (base32
-                "036ddxfy6f8id2naq5bpi2qmxm0afjykjagywfpiv7rgh8qhxwga"))))
+                "002x784ganw4gny134ijpmssl1iq5yxfwral8q319395r6x2c90l"))))
     (properties `((upstream-name . "measr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36502,13 +36503,13 @@ Meira-Machado L (2021) <doi:10.1007/s00180-021-01139-7> and Titman AC, Putter H
 (define-public r-markovmix
   (package
     (name "r-markovmix")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "markovmix" version))
               (sha256
                (base32
-                "13j4ax1qr5jvw92bs4mfly9lshh07fz2vfg5hq4vxlywf6c76mnx"))))
+                "1paqdghzpaxvqashr4lcrgnp7k1821cmwbwszyml8h78bf9ldj9z"))))
     (properties `((upstream-name . "markovmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

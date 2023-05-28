@@ -719,27 +719,6 @@ maps and built-in support for LDAvis'.")
 National Science Foundation grants DMREF-1921873 and CMMI-1921646.")
     (license license:gpl2+)))
 
-(define-public r-twingp
-  (package
-    (name "r-twingp")
-    (version "1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "twingp" version))
-              (sha256
-               (base32
-                "1ghcdlymqc7zr5gmgswlhamrrml7grfwkcflvbzsnalk7dy9s0d2"))))
-    (properties `((upstream-name . "twingp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-nloptr))
-    (home-page "https://cran.r-project.org/package=twingp")
-    (synopsis "Fast Global-Local Gaussian Process Approximation")
-    (description
-     "This package provides a global-local approximation framework for large-scale
-Gaussian process modeling.  This work is supported by U.S. NSF grants
-CMMI-1921646 and DMREF-1921873.")
-    (license license:gpl2+)))
-
 (define-public r-twilio
   (package
     (name "r-twilio")
@@ -1515,27 +1494,6 @@ highest depth level, and its barycenter (= Tukey median) are calculated.  Tukey
 regions are visualized in dimension two and three.  For details see Liu, Mosler,
 and Mozharovskyi (2019, <doi:10.1080/10618600.2018.1546595>).  See file
 LICENSE.note for additional license information.")
-    (license license:gpl3+)))
-
-(define-public r-tukeygh
-  (package
-    (name "r-tukeygh")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "tukeyGH" version))
-              (sha256
-               (base32
-                "1nlhv8lyjaqq95l7j85bdqdrsphagwf69iq8g3ryyyckchirljjg"))))
-    (properties `((upstream-name . "tukeyGH")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-rdpack r-minqa r-magrittr))
-    (home-page "https://github.com/f-santi/tukeyGH")
-    (synopsis "Tukey's g-and-h Probability Distribution")
-    (description
-     "It provides distribution, density and quantile functions of the Tukey's g-and-h
-probability distribution, as well as functions for random number generation,
-parameter estimation and testing.")
     (license license:gpl3+)))
 
 (define-public r-tukeyc
@@ -6260,16 +6218,26 @@ dynamics and pathway expression specificity.")
 (define-public r-treediff
   (package
     (name "r-treediff")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "treediff" version))
               (sha256
                (base32
-                "14rf47g01xp7lgppjw5dzhh1lmnigg795zc4i1fyydggkf8zjvpd"))))
+                "0vd4b3d5a72zlql3wljh280lxabir7ksmpxng7n124dr4x5aza64"))))
     (properties `((upstream-name . "treediff")))
     (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-rlang r-reshape2 r-limma r-dplyr))
+    (propagated-inputs (list r-testthat
+                             r-summarizedexperiment
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-limma
+                             r-interactionset
+                             r-dplyr
+                             r-data-table
+                             r-biocgenerics
+                             r-adjclust))
     (home-page "https://forgemia.inra.fr/scales/treediff")
     (synopsis "Testing Differences Between Families of Trees")
     (description
@@ -6615,30 +6583,6 @@ models; and plot, evaluate, and compare markers.  Please see the reference Janes
 H, Brown MD, Huang Y, et al. (2014) <doi:10.1515/ijb-2012-0052> for further
 details.")
     (license license:gpl3)))
-
-(define-public r-treasurytr
-  (package
-    (name "r-treasurytr")
-    (version "0.1.6")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "treasuryTR" version))
-              (sha256
-               (base32
-                "1m7pw2y9q03vn32y63la56l816b3yqkix1yd3j3nk6mwmdyqcyjq"))))
-    (properties `((upstream-name . "treasuryTR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-quantmod r-lubridate r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mgei/treasuryTR")
-    (synopsis "Generate Treasury Total Returns from Yield Data")
-    (description
-     "Generate Total Returns (TR) from bond yield data with fixed maturity, e.g.
-reported treasury yields.  The generated TR series are very close to alternative
-series that can be purchased (e.g. CRSP, Bloomberg), suggesting they are a
-high-quality alternative for those, see Swinkels (2019)
-<doi:10.3390/data4030091>.")
-    (license license:expat)))
 
 (define-public r-trd
   (package
@@ -13239,13 +13183,13 @@ and most efficient data storage.")
 (define-public r-tidysmd
   (package
     (name "r-tidysmd")
-    (version "0.1.1")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidysmd" version))
               (sha256
                (base32
-                "0in324c940zlm2fg5r7hdybq0a8f31nvy8khzf4yq7dqxgki2n1b"))))
+                "1sbn4x59wdshc0xhxycvkf6ssm3w3pgfl64r8s3m77piara2i0dm"))))
     (properties `((upstream-name . "tidysmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13254,7 +13198,7 @@ and most efficient data storage.")
                              r-rlang
                              r-purrr
                              r-dplyr))
-    (home-page "https://github.com/malcolmbarrett/tidysmd")
+    (home-page "https://github.com/r-causal/tidysmd")
     (synopsis "Tidy Standardized Mean Differences")
     (description
      "Tidy standardized mean differences ('SMDs').  tidysmd uses the smd package to
@@ -14716,13 +14660,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.3.4")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidycensus" version))
               (sha256
                (base32
-                "1s786h7vs4z2rfbg7p9xb0c8w9rb1zsakplar2ck1wgcx7np46wh"))))
+                "12sc3riy5drnc2zs4xd35v6bj6amgc1k2wyagxnwxg07xr1nqi5k"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

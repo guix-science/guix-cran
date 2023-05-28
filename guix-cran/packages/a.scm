@@ -11718,6 +11718,40 @@ United States and Canada.  This package also includes the data from the US
 Department of Energy Alternate Fuel database as a data set.")
     (license license:expat)))
 
+(define-public r-altdoc
+  (package
+    (name "r-altdoc")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "altdoc" version))
+              (sha256
+               (base32
+                "1sxyh8avi2hand02p7rhg78hjgbfhz1nkqsgbgvr3pwxgmqz9c7s"))))
+    (properties `((upstream-name . "altdoc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-usethis
+                             r-tinkr
+                             r-servr
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-htmltools
+                             r-here
+                             r-fs
+                             r-desc
+                             r-cli))
+    (home-page "https://github.com/etiennebacher/altdoc")
+    (synopsis
+     "Use 'Docsify.js', 'Docute', or 'Mkdocs' to Generate a Package Documentation")
+    (description
+     "Most developers use pkgdown to create a website for their packages.  Other
+documentation generators exist, such as Docute', Docsify.js', or Mkdocs'.  The
+aim of altdoc is to provide helpers to create, populate, update, and preview
+websites made with these tools.")
+    (license license:expat)))
+
 (define-public r-altair
   (package
     (name "r-altair")

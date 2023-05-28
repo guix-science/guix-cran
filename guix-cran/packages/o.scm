@@ -4600,6 +4600,39 @@ approach.  This work was supported by the Swedish Research Council
 (VetenskapsrÃ¥det) Grant 2019-02706.")
     (license license:gpl3+)))
 
+(define-public r-optic
+  (package
+    (name "r-optic")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "optic" version))
+              (sha256
+               (base32
+                "0qd3h8cf5nzzp066ik9mnls2k7jpfwcf236blz7i666wbj9cpibx"))))
+    (properties `((upstream-name . "optic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sandwich
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-lmtest
+                             r-future-apply
+                             r-dplyr
+                             r-did))
+    (native-inputs (list r-knitr))
+    (home-page "https://randcorporation.github.io/optic/")
+    (synopsis "Simulation Tool for Causal Inference Using Longitudinal Data")
+    (description
+     "This package implements a simulation study to assess the strengths and
+weaknesses of causal inference methods for estimating policy effects using panel
+data.  See Griffin et al. (2021) <doi:10.1007/s10742-022-00284-w> and Griffin et
+al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
+    (license license:gpl3)))
+
 (define-public r-optholdoutsize
   (package
     (name "r-optholdoutsize")
@@ -5125,13 +5158,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "0.6.1")
+    (version "0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "openxlsx2" version))
               (sha256
                (base32
-                "00h4akkc2glqjdmp97ciprqjayl0cm5w7jf87vfcpizb249bgp7s"))))
+                "1c2mmlpki68hpjmgnk941sw13vq99hk89hsx3q3nmqmg82ghbr7g"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))

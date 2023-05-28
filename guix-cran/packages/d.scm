@@ -9581,13 +9581,13 @@ package distr').")
 (define-public r-distreg-vis
   (package
     (name "r-distreg-vis")
-    (version "1.7.3")
+    (version "1.7.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distreg.vis" version))
               (sha256
                (base32
-                "1dnpcd0dpbgvnwcc83n15gr9risyzvnp5f45wg11l9fp5yi63s8j"))))
+                "1wz1vfjcnsn1nd5hqw010is39nn2k0226hczg006jvgfr400hx4y"))))
     (properties `((upstream-name . "distreg.vis")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -11738,13 +11738,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.2.6")
+    (version "0.2.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dipsaus" version))
               (sha256
                (base32
-                "136r11nliy8lq7527w0h4lfwn3lmh4nzfj12xggcxvnh15k8mz6k"))))
+                "0jphpal8yk2qczhwijinwxflgni4xh10mz96n0rpiz8f4scw5mck"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

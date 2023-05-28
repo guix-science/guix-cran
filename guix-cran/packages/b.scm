@@ -2073,13 +2073,13 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.1")
+    (version "2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bspline" version))
               (sha256
                (base32
-                "17k9phl5xlk5gqr220gp2cz749apqfi94kka7q6rzywkn1fb85ff"))))
+                "0v7kbg7h0d0s2ywvjpahk2y2ncbv8kmacdznaixxakccqbl8piip"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlsic r-arrapply))
@@ -10619,6 +10619,35 @@ setting (Ternes N et al. (2016) <doi:10.1002/bimj.201500234>), or others.  A
 function generating simulated survival data set is also provided.")
     (license license:gpl2)))
 
+(define-public r-biosnr
+  (package
+    (name "r-biosnr")
+    (version "1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bioSNR" version))
+              (sha256
+               (base32
+                "19blfbw9d0did76llgffs8dyld8yr6wf4rmxmr2fb4vp1s8m2izc"))))
+    (properties `((upstream-name . "bioSNR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-pracma r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bioSNR")
+    (synopsis
+     "Bioacoustic Basic Operations with Decibels and the Passive Sonar Equation")
+    (description
+     "This package provides a beginners toolbox to help those in ecology who want to
+deepen their understanding or utilize Bioacoustics in their work.  The package
+has a number of utilizations from calculating frequency from waveform,
+performing operations in dB, and determining acoustic range of recorders.  The
+majority of this package is based on key concepts learned from the K. Lisa Yang
+Center for Conservation Bioacoustics at Cornell University and their associated
+course: Introduction to Bioacoustics course.  More information can be found
+within the walk through vignettes at
+<https://github.com/MattyD797/bioSNR/tree/main/vignettes>.")
+    (license license:gpl3+)))
+
 (define-public r-biosignalemg
   (package
     (name "r-biosignalemg")
@@ -11469,13 +11498,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.15-1")
+    (version "2.15-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BiodiversityR" version))
               (sha256
                (base32
-                "05ryfn517dwcdl84k4p9h66g4dzwqqmykylyvz5gsjj3x1gh9aa8"))))
+                "1hhv7amdf3lx5jymkn1pvgrdm1bzvvn270wk8pjpj3rdmfjszj4g"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
@@ -20088,6 +20117,30 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 <arXiv:1611.06649>.")
     (license license:gpl3+)))
 
+(define-public r-bayesrecon
+  (package
+    (name "r-bayesrecon")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "bayesRecon" version))
+              (sha256
+               (base32
+                "0gghr5h3i46xw6pi4zmx4gm55d4m3m2ihdkvg0j4qalrywb398ys"))))
+    (properties `((upstream-name . "bayesRecon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lpsolve))
+    (home-page "https://cran.r-project.org/package=bayesRecon")
+    (synopsis "Probabilistic Reconciliation via Conditioning")
+    (description
+     "This package provides methods for probabilistic reconciliation of hierarchical
+forecasts of time series.  The available methods include analytical Gaussian
+reconciliation (Corani et al., 2021) <doi:10.1007/978-3-030-67664-3_13>, MCMC
+reconciliation of count time series (Corani et al., 2022)
+<doi:10.48550/arXiv.2207.09322>, Bottom-Up Importance Sampling (Zambon et al.,
+2022) <doi:10.48550/arXiv.2210.02286>.")
+    (license license:lgpl3+)))
+
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
@@ -23893,13 +23946,13 @@ features for data analysis and visualization.")
 (define-public r-bartcs
   (package
     (name "r-bartcs")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bartcs" version))
               (sha256
                (base32
-                "1b2p2mwd5hb1rayaxcx8hkh6dys3361zaxid6sl9hv8np94ld696"))))
+                "11y4bal4acqcdc48hqbxmqq2kgdjkj4l4z2nadcgalflwjdzlbhw"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -25625,13 +25678,13 @@ phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "babelmixr2" version))
               (sha256
                (base32
-                "1h9q3szl3svfryvnmsgnvlm5vrm4sp30sayh6xc1dbcbhrnh9df0"))))
+                "1iwi4z4xsa0sv334yjf5cvh88408icgpsw19rj1mp31wa2pdj36h"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2parse
@@ -25641,6 +25694,7 @@ phylogenetics easily and reproducibly from R'.")
                              r-rcpparmadillo
                              r-rcpp
                              r-qs
+                             r-nonmem2rx
                              r-nlmixr2est
                              r-nlmixr2
                              r-lotri
@@ -25648,7 +25702,7 @@ phylogenetics easily and reproducibly from R'.")
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=babelmixr2")
+    (home-page "https://nlmixr2.github.io/babelmixr2/")
     (synopsis
      "Use 'nlmixr2' to Interact with Open Source and Commercial Software")
     (description

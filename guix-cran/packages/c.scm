@@ -8385,6 +8385,27 @@ has developed symptoms (which would warrant further investigation) and that
 everyone was tested on a given day, and all tested negative.")
     (license license:gpl3)))
 
+(define-public r-covidnor
+  (package
+    (name "r-covidnor")
+    (version "2023.05.18")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "covidnor" version))
+              (sha256
+               (base32
+                "1aidi1bwsp1a8iym5b6chmv95cxrafhjgzn1zaajbijlgrjdqixc"))))
+    (properties `((upstream-name . "covidnor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/covidnor/")
+    (synopsis "Public COVID-19 Data for Norway")
+    (description
+     "Publicly available COVID-19 data for Norway cleaned and merged into one dataset,
+including PCR confirmed cases, tests, hospitalisation and vaccination.")
+    (license license:expat)))
+
 (define-public r-covidmx
   (package
     (name "r-covidmx")
@@ -36531,6 +36552,30 @@ characterizations and population management evaluations see: \"Baquero, et al.\"
 dynamics see: \"Baquero et al.\" (2016), <doi:10.1016/j.prevetmed.2015.11.009>.
 For sampling methods see: \"Levy PS & Lemeshow S\" (2013), \"ISBN-10: 0470040076\";
 \"Lumley\" (2010), \"ISBN: 978-0-470-28430-8\".")
+    (license license:gpl2+)))
+
+(define-public r-caplot
+  (package
+    (name "r-caplot")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "caplot" version))
+              (sha256
+               (base32
+                "1b9chr0glrj5pg1anmkgl2ck18vxbd5qj6v5pvp5cmlh1f3nwzn9"))))
+    (properties `((upstream-name . "caplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-ca))
+    (home-page "https://cran.r-project.org/package=caplot")
+    (synopsis
+     "Correspondence Analysis with Geometric Frequency Interpretation")
+    (description
+     "This package performs Correspondence Analysis on the given dataframe and plots
+the results in a scatterplot that emphasizes the geometric interpretation aspect
+of the analysis, following Yelland (2010).  It is particularly useful for
+highlighting the relationships between a selected row (or column) category and
+the column (or row) categories.  See Yelland (2010) <doi:10.3888/tmj.12-4>.")
     (license license:gpl2+)))
 
 (define-public r-capl

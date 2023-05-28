@@ -7244,18 +7244,18 @@ included in the scripts directory of the package.")
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
-    (version "0.2-3")
+    (version "0.3-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hgwrr" version))
               (sha256
                (base32
-                "1lxmbl8jn54j1m91yr5dyr1wx4bsvq9pr3896hav78v465bhr4k5"))))
+                "0m3h5zwdnj4l7i6nh0mrjj4wprajgazninzffxpy14g7fy907ifn"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (inputs (list gsl))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=hgwrr")
+    (home-page "https://github.com/HPDell/hgwr/")
     (synopsis "Hierarchical and Geographically Weighted Regression")
     (description
      "This model divides coefficients into three types, i.e., local fixed effects,
