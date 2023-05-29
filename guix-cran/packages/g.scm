@@ -11245,63 +11245,6 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (2011) <doi:10.18637/jss.v039.i05>.")
     (license license:gpl3)))
 
-(define-public r-glmnetr
-  (package
-    (name "r-glmnetr")
-    (version "0.2-0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "glmnetr" version))
-              (sha256
-               (base32
-                "0q8zxm5pr8x2b81q0p3s6m03b9cdgi4n5sy6xiqakpdjfxm7wrh9"))))
-    (properties `((upstream-name . "glmnetr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-torch
-                             r-survival
-                             r-smoof
-                             r-rpart
-                             r-paramhelpers
-                             r-mlrmbo
-                             r-matrix
-                             r-glmnet))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=glmnetr")
-    (synopsis
-     "Nested Cross Validation for the Relaxed Lasso and Other Machine Learning Models")
-    (description
-     "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
-gradient boosting machine ('xgboost'), Recursive Partitioning ('RPART') or step
-wise regression models are fit.  Nested cross validation to estimate and compare
-performances between these models is also performed.  For some datasets, for
-example when the design matrix is not of full rank, glmnet may have very long
-run times when fitting the relaxed lasso model, from our experience when fitting
-Cox models on data with many predictors and many patients, making it difficult
-to get solutions from either glmnet() or cv.glmnet().  This may be remedied with
-the path=TRUE options when calling cv.glmnet().  This option is not described in
-the glmnet Reference Manual but is described in the glmnet \"The Relaxed Lasso\"
-vignette.  In this package, glmnetr', we provide a similar workaround and solve
-for the non penalized relaxed model where gamma=0 for model structures analogue
-to R functions like glm() or coxph() of the survival package.  If you are not
-fitting relaxed lasso models, or if you are able to get convergence using
-glmnet', then the glmnetr() and cv.glmnetr() functions may not be of much
-benefit to you.  Note, while this package may allow one to fit relaxed lasso
-models that have difficulties converging using glmnet', and provides some
-different functionality beyond that of cv.glmnet(), it does not afford the some
-of the versatility of glmnet'.  When fitting not a relaxed lasso model but an
-elastic-net model, then the R-packages nestedcv
-<https://cran.r-project.org/package=nestedcv>, glmnetSE
-<https://cran.r-project.org/package=glmnetSE> or others may provide greater
-functionality when performing a nested CV. As with the glmnet package, this
-package passes most relevant output to the output object and tabular and
-graphical summaries can be generated using the summary and plot functions.  Use
-of the glmnetr has many similarities to the glmnet package and it is recommended
-that the user of glmnetr first become familiar with the glmnet package
-<https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
-glmnet'\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
-    (license license:gpl3)))
-
 (define-public r-glmnetcr
   (package
     (name "r-glmnetcr")
@@ -17500,13 +17443,13 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.9")
+    (version "0.2.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggdag" version))
               (sha256
                (base32
-                "168mnjy37skd7sixg03gdlz1llmnhard189fpfn4wshl24ri1kzs"))))
+                "1vn93yys6lnv0nrhxhnfjb6p12wzhkc9dx8fxn7jci1zyqkb5kb6"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -24602,19 +24545,19 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gdalraster" version))
               (sha256
                (base32
-                "0lixy66glyiy1dc3gv70hxiaykh0pwh038a980cl17qlmxfpidfa"))))
+                "1kxlj17pzppayih7sl0g4n6ashz3g3h3439kcm172wmacm3aqm2q"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list proj gdal))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list pkg-config))
-    (home-page "https://github.com/USDAForestService/gdalraster")
+    (home-page "https://usdaforestservice.github.io/gdalraster/")
     (synopsis
      "Bindings to the 'Geospatial Data Abstraction Library' Raster API")
     (description

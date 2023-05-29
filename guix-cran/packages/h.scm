@@ -1999,13 +1999,13 @@ without access to a live server.")
 (define-public r-httptest
   (package
     (name "r-httptest")
-    (version "4.1.0")
+    (version "4.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "httptest" version))
               (sha256
                (base32
-                "1k5z55f5l7khi142787ignf57rfhxzf442rzbhpr04182g906xfx"))))
+                "16rx2vwkypppl6a4f99yxp24q5wycz2i7ggn9dv1mlclvd88bmzc"))))
     (properties `((upstream-name . "httptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-jsonlite r-httr r-digest r-curl))
@@ -3362,13 +3362,13 @@ indexes can be found at: <http://www.github.com/andykrause/hpi_research>.")
 (define-public r-hpfilter
   (package
     (name "r-hpfilter")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hpfilter" version))
               (sha256
                (base32
-                "1nld9j0p6lnmzpn4njrwr94b9k8va0bgqg3wpb81y7x324q6ll5r"))))
+                "1w1asqa4dszijwdmgdzx4ahl5bl34l0psczwvcal4kdkawy5kia2"))))
     (properties `((upstream-name . "hpfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

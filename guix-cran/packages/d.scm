@@ -969,43 +969,6 @@ hierarchies, which describe dominance relationships and their dynamics in a
 single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (license license:gpl2)))
 
-(define-public r-dynamite
-  (package
-    (name "r-dynamite")
-    (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "dynamite" version))
-              (sha256
-               (base32
-                "0idxaq07czvjkihhvkxs5faki5yk1xqdpymrfcyhrwxxrdh9l31b"))))
-    (properties `((upstream-name . "dynamite")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rstan
-                             r-rlang
-                             r-posterior
-                             r-patchwork
-                             r-loo
-                             r-glue
-                             r-ggplot2
-                             r-data-table
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/dynamite/")
-    (synopsis
-     "Bayesian Modeling and Causal Inference for Multivariate Longitudinal Data")
-    (description
-     "Easy-to-use and efficient interface for Bayesian inference of complex panel
-(time series) data using dynamic multivariate panel models by Helske and Tikka
-(2022) <doi:10.31235/osf.io/mdwu5>.  The package supports joint modeling of
-multiple measurements per individual, time-varying and time-invariant effects,
-and a wide range of discrete and continuous distributions.  Estimation of these
-dynamic multivariate panel models is carried out via Stan'.  For an in-depth
-tutorial of the package, see (Tikka and Helske, 2023) <arxiv:2302.01607>.")
-    (license license:gpl3+)))
-
 (define-public r-dynamicsdm
   (package
     (name "r-dynamicsdm")
@@ -6642,13 +6605,13 @@ workflows (see <http://www.dominodatalab.com> for more information).")
 (define-public r-dogesr
   (package
     (name "r-dogesr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dogesr" version))
               (sha256
                (base32
-                "1w2qmvpasi971dl0ll15f8nraad97qbhc5p9q2byw9q85j651ybr"))))
+                "05jlhzqqhmjb0s5h0g3ah9b491xn776yn3rsdmyvqzk742284knr"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown

@@ -4858,6 +4858,41 @@ Tabachnik & Fidell (2019, ISBN:9780134790541), and von Eye & Mun (2013,
 ISBN:978-1-118-14640-8).")
     (license license:gpl2+)))
 
+(define-public r-crosstable
+  (package
+    (name "r-crosstable")
+    (version "0.6.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "crosstable" version))
+              (sha256
+               (base32
+                "1i8ij5vzzjrxvbnbfxkdm37yl53y154l6csfi4d7i285x8k4bp9b"))))
+    (properties `((upstream-name . "crosstable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-officer
+                             r-lifecycle
+                             r-glue
+                             r-forcats
+                             r-flextable
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://danchaltiel.github.io/crosstable/")
+    (synopsis "Crosstables for Descriptive Analyses")
+    (description
+     "Create descriptive tables for continuous and categorical variables.  Apply
+summary statistics and counting function, with or without a grouping variable,
+and create beautiful reports using rmarkdown or officer'.  You can also compute
+effect sizes and statistical tests if needed.")
+    (license license:gpl3)))
+
 (define-public r-crossrun
   (package
     (name "r-crossrun")
@@ -18516,13 +18551,13 @@ functions provided only work for binary classification problems.")
 (define-public r-collapse
   (package
     (name "r-collapse")
-    (version "1.9.5")
+    (version "1.9.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "collapse" version))
               (sha256
                (base32
-                "1jiw3ihv4sl7asmii5l3y1y0lfwli0n5lfpl1zia14hq7dm4kca6"))))
+                "07mmmynkx0pz476vf16if5nwwjp1zp3nhzjlw0hmvkiiwdr590rg"))))
     (properties `((upstream-name . "collapse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -30941,30 +30976,6 @@ are made available.  More information on the SQL dialect used by the Censys
 engine can be found at
 <https://cloud.google.com/bigquery/docs/reference/legacy-sql>.")
     (license (license:fsdg-compatible "AGPL + file LICENSE"))))
-
-(define-public r-censusxy
-  (package
-    (name "r-censusxy")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "censusxy" version))
-              (sha256
-               (base32
-                "1gdry73xzcixa3hfchlf2xmmlnhk1vsg7k3axvynvlr493i7qf2a"))))
-    (properties `((upstream-name . "censusxy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://chris-prener.github.io/censusxy/")
-    (synopsis "Access the U.S. Census Bureau's Geocoding API System")
-    (description
-     "This package provides access to the U.S. Census Bureau's API for matching
-American street addresses with their longitude and latitude.  This includes both
-single address matching as well as batch functionality for multiple addresses.
-Census geographies can be appended to addresses if desired, and reverse
-geocoding of point locations to census geographies is also supported.")
-    (license license:gpl3)))
 
 (define-public r-censusr
   (package

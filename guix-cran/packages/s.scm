@@ -43281,13 +43281,13 @@ includes integration with the Plumber package.")
 (define-public r-sentopics
   (package
     (name "r-sentopics")
-    (version "0.7.1")
+    (version "0.7.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sentopics" version))
               (sha256
                (base32
-                "0xbs2ha6xl37169a8qmbslia8blm87x981q8rcv8p8dvbazy7vbf"))))
+                "0gi52lxkmhbhlsbpamwcrji1y664lrwk3k0pigc2gad3za9rdimc"))))
     (properties `((upstream-name . "sentopics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress

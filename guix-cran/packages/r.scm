@@ -36795,13 +36795,13 @@ minification and nonparametric models.")
 (define-public r-rcmdrplugin-worldflora
   (package
     (name "r-rcmdrplugin-worldflora")
-    (version "1.2")
+    (version "1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcmdrPlugin.WorldFlora" version))
               (sha256
                (base32
-                "1k3gx4m4j9yyaf1d069y863v8snpfb6njppan7dlhlg5nrc5my7k"))))
+                "1rcmn5drv3q09v9hz383010g8377lfiazhjq1vd0f90gf0nl5jfy"))))
     (properties `((upstream-name . "RcmdrPlugin.WorldFlora")))
     (build-system r-build-system)
     (propagated-inputs (list r-worldflora r-rcmdr))

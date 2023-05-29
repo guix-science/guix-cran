@@ -6880,13 +6880,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.4.0")
+    (version "4.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm" version))
               (sha256
                (base32
-                "0wv12bbcd3hp8bsvhffsj5jj0pmz61gl00sn0vqdcwfxgz655c9d"))))
+                "0lb3gdjnphgi8y478l98zrjjlr99f35ia9m6cn6m2h5n6nywfwik"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (inputs (list openmpi))
@@ -13822,54 +13822,6 @@ Candidate Support in Voting Rights Act Cases: Comparing Iterative EI and EI-RÃƒÂ
 Methods\" <doi:10.1177/0049124119852394>.")
     (license license:gpl3)))
 
-(define-public r-eicompare
-  (package
-    (name "r-eicompare")
-    (version "3.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "eiCompare" version))
-              (sha256
-               (base32
-                "0302czk1g1cdnp8jwwrim1y2iw0c0vv3cg7qg5n8dyrqzh4jqvyl"))))
-    (properties `((upstream-name . "eiCompare")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wru
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-overlapping
-                             r-mcmcse
-                             r-magrittr
-                             r-leaflet
-                             r-ggplot2
-                             r-foreach
-                             r-eipack
-                             r-ei
-                             r-dplyr
-                             r-dosnow
-                             r-doparallel
-                             r-data-table
-                             r-coda
-                             r-censusxy
-                             r-bayestestr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RPVote/eiCompare")
-    (synopsis "Compares Different Ecological Inference Methods")
-    (description
-     "This package provides a comprehensive suite of tools for estimating the
-candidate preferences of racial/ethnic voting blocs in elections.  Includes
-functions for geocoding, predicting voter race/ethnicity, and conducting
-ecological inference.  Race/ethnicity prediction builds on race prediction
-developed by Imai et al. (2016) <doi:10.1093/pan/mpw001>.  Ecological inference
-methods are based on King (1997) <ISBN: 0691012407>,
-<https://gking.harvard.edu/eicamera/kinroot.html>; King et.  al. (2004) <ISBN:
-0521542804>, <https://gking.harvard.edu/files/abs/ecinf04-abs.shtml>.")
-    (license license:gpl3)))
-
 (define-public r-eicm
   (package
     (name "r-eicm")
@@ -18085,21 +18037,16 @@ clusters using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.5.0")
+    (version "1.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "echarty" version))
               (sha256
                (base32
-                "0ipnci76yn8gqa5jk51aprywd54933fgqf2mdp2zfwcwirgz1642"))))
+                "0zhcy5l0zhh92pg47w1vfw5fvscdaschz5qsz7spmdxhpax0min9"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-htmltools
-                             r-dplyr
-                             r-data-tree))
+    (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
     (native-inputs (list esbuild))
     (home-page "https://github.com/helgasoft/echarty")
     (synopsis "Minimal R/Shiny Interface to JavaScript Library 'ECharts'")

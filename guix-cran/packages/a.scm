@@ -2573,19 +2573,21 @@ models trained on small data.")
 (define-public r-augmentedrcbd
   (package
     (name "r-augmentedrcbd")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "augmentedRCBD" version))
               (sha256
                (base32
-                "1bfb1jqakghf1nb3zwzf69cywwxwr1whzvyig8g3qa8ciq5f1h3i"))))
+                "0ng292zgq18zqqhwkq6600hrg3akb76b7i4lzh6hd7vcbifl3f6m"))))
     (properties `((upstream-name . "augmentedRCBD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
                              r-reshape2
                              r-rdpack
+                             r-openxlsx
                              r-officer
+                             r-numform
                              r-multcompview
                              r-multcomp
                              r-moments
@@ -2593,7 +2595,8 @@ models trained on small data.")
                              r-ggplot2
                              r-flextable
                              r-emmeans
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=augmentedRCBD")
     (synopsis "Analysis of Augmented Randomised Complete Block Designs")

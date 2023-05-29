@@ -5469,13 +5469,13 @@ package and its capabilities are described in (Dambon et al. (2021c)
 (define-public r-vartestnlme
   (package
     (name "r-vartestnlme")
-    (version "1.3.3")
+    (version "1.3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "varTestnlme" version))
               (sha256
                (base32
-                "1p3pa2z8z2i9qbyhxg4ng3fs1mkmy9gf6907hm37p0yj9nc0qsr4"))))
+                "0rj6zh9cga6h1562jw71iqrczzdrrl9rlmfglj55rjyl03sqr4n4"))))
     (properties `((upstream-name . "varTestnlme")))
     (build-system r-build-system)
     (propagated-inputs (list r-saemix
