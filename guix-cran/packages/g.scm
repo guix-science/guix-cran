@@ -19844,13 +19844,13 @@ background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.4.1")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geostan" version))
               (sha256
                (base32
-                "0ld8mhlii8hrzlxqm9wj4kzwafink5zm45mah804qa7p4i78l363"))))
+                "0yhnqqmmjxradv0nfm2w4z03cq6cf5ras2fh0g0fsr2qbs8hajim"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -19879,9 +19879,9 @@ Community Survey (ACS)) and censored population health surveillance data.
 Models are pre-specified using the Stan programming language, a platform for
 Bayesian inference using Markov chain Monte Carlo (MCMC).  References: Carpenter
 et al. (2017) <doi:10.18637/jss.v076.i01>; Donegan (2021)
-<doi:10.31219/osf.io/3ey65>; Donegan, Chun and Hughes (2020)
-<doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and Griffith (2021)
-<doi:10.3390/ijerph18136856>; Morris et al. (2019)
+<doi:10.31219/osf.io/3ey65>; Donegan (2022) <doi:10.21105/joss.04716>; Donegan,
+Chun and Hughes (2020) <doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and
+Griffith (2021) <doi:10.3390/ijerph18136856>; Morris et al. (2019)
 <doi:10.1016/j.sste.2019.100301>.")
     (license license:gpl3+)))
 

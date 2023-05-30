@@ -608,13 +608,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jstable" version))
               (sha256
                (base32
-                "02sqb93kjz9pvycdgglvwrp1v3cv1v1gwcl35yk6jkwjl3apw4m4"))))
+                "10lggan0rf9r0p8cf8blpz7plqq4dzwkvfm2dqrha5hparl6gka4"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

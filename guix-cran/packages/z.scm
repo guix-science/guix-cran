@@ -64,6 +64,30 @@ documentation is available at <https://developers.zoom.us/docs/api/>.  This
 package is not supported by Zoom (owner of the software).")
     (license license:cc0)))
 
+(define-public r-zonohedra
+  (package
+    (name "r-zonohedra")
+    (version "0.2-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "zonohedra" version))
+              (sha256
+               (base32
+                "03sbnvyhaq1ldg07g1499n7drvwcgmmwblmc3ccrapwlwaqdsl6b"))))
+    (properties `((upstream-name . "zonohedra")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-logger))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=zonohedra")
+    (synopsis "Compute and Plot Zonohedra from Vector Generators")
+    (description
+     "Computes a zonohedron from real vector generators.  The package also computes
+zonogons (2D zonotopes) and zonosegs (1D zonotopes).  An elementary S3 class for
+matroids is included, which supports matroids with rank 3, 2, and 1.
+Optimization methods are taken from Heckbert (1985)
+<https://www.cs.cmu.edu/~ph/zono.ps.gz>.")
+    (license license:gpl2+)))
+
 (define-public r-zoid
   (package
     (name "r-zoid")

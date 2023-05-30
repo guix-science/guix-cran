@@ -2730,13 +2730,13 @@ Approaches with Applications\"
 (define-public r-kim
   (package
     (name "r-kim")
-    (version "0.5.212")
+    (version "0.5.260")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "kim" version))
               (sha256
                (base32
-                "0ny9vcjb9fww3yyr4smjzxaxr24fdnph8csrlfsd40shk3vjbbrf"))))
+                "0kx03mfksnn9jv65318f6ahnq5jwz2rsr3pjwm9fcxlvwvhq9vrn"))))
     (properties `((upstream-name . "kim")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-data-table))

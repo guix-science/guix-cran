@@ -1479,13 +1479,13 @@ to linear regression and logistic curve models.")
 (define-public r-curvhdr
   (package
     (name "r-curvhdr")
-    (version "1.2-1.1")
+    (version "1.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "curvHDR" version))
               (sha256
                (base32
-                "0fr1qiq2qkd2nmkz6n9vrc42jdsyaz1h7qf2n5aapnpk7155c869"))))
+                "05i4q6lrzm23nvs5wkxxpa9c4ldz3khgsk5sw3cgzdzn3cm6a0xf"))))
     (properties `((upstream-name . "curvHDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -5661,13 +5661,13 @@ use Vanhoucke, M. (2009) <doi:10.1007/978-1-4419-1014-1>.")
 (define-public r-criticality
   (package
     (name "r-criticality")
-    (version "0.9.2")
+    (version "0.9.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "criticality" version))
               (sha256
                (base32
-                "0177dx8y93gg37244615y17lidk7hmji5k1dlrm3670flfnigf28"))))
+                "0cy08v2lqld9y9cc140hxk734r9pb66cx2c04303c9rl81gy1cmk"))))
     (properties `((upstream-name . "criticality")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

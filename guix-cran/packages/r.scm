@@ -36230,16 +36230,17 @@ package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "5.4.1")
+    (version "5.5.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RcppCGAL" version))
               (sha256
                (base32
-                "1ymnamvnhbx0nbqrlrk8f57py3ccdhirydn1ilvsn6yf1z9bs3sm"))))
+                "1lmir467ycs25q6a6xsck0x65nrlipzwwzfy204z9gir6g1w553p"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-gh r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RcppCGAL")
     (synopsis "Rcpp Integration for CGAL")
     (description
@@ -36249,7 +36250,7 @@ potential uses for the software such as Hilbert sorting, KDtree nearest
 neighbors, and convex hull algorithms.  There is only one R function in this
 package, which returns the current version of the CGAL library included.  For
 more information about how to use the header files, see the CGAL documentation
-at <https://www.cgal.org>.  Currently includes the CGAL 5.4 stable release.")
+at <https://www.cgal.org>.  Currently includes the CGAL 5.5.2 stable release.")
     (license license:gpl3+)))
 
 (define-public r-rcppcensspatial

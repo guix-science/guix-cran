@@ -2508,13 +2508,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ftExtra" version))
               (sha256
                (base32
-                "1bff931nk1yzda8awsmbmdbi6sabg48y6hywa5r0grc2gf4n6cih"))))
+                "1g1w62lkwdhc99ij8q39m61ya8dscc0bilabp5x3bypd9xd02hwv"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

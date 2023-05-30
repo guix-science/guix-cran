@@ -24102,27 +24102,6 @@ miscellaneous functions for field ecologists such as spatial statistics and
 inference on diversity indexes, writing data.frame with Chinese characters.")
     (license license:gpl2+)))
 
-(define-public r-pgenlibr
-  (package
-    (name "r-pgenlibr")
-    (version "0.3.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "pgenlibr" version))
-              (sha256
-               (base32
-                "0zyripm35r6pibi2g98vrysnyma8j24r8l4smmbhz10lf2fpzws4"))))
-    (properties `((upstream-name . "pgenlibr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=pgenlibr")
-    (synopsis "PLINK 2 Binary (.pgen) Reader")
-    (description
-     "This package provides a thin wrapper over PLINK 2's core libraries which
-provides an R interface for reading .pgen files.  A minimal .pvar loader is also
-included.  Chang et al. (2015) <doi:10.1186/s13742-015-0047-8>.")
-    (license license:lgpl3+)))
-
 (define-public r-pgee-mixed
   (package
     (name "r-pgee-mixed")

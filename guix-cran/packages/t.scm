@@ -13378,16 +13378,17 @@ filtering, joining and summarising Earth Engine image collections.")
 (define-public r-tidyredcap
   (package
     (name "r-tidyredcap")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tidyREDCap" version))
               (sha256
                (base32
-                "15rz0f04lv43m27dwh1dly2q11x2pkrx16l1lfg4l2091l6xfxkq"))))
+                "1k06bnxvq5k4j005h269n5ivxn1vr2i8nkdg048q8m7vmpanwz4m"))))
     (properties `((upstream-name . "tidyREDCap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr

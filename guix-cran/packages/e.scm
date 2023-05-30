@@ -6259,13 +6259,13 @@ this method, please see Dang et al. (2022) <arXiv:2210.05802>.")
 (define-public r-escalation
   (package
     (name "r-escalation")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "escalation" version))
               (sha256
                (base32
-                "1iyjp20rzz3lrgn183jvjcf7vvmk66f3rgyv22s2ja4b98598ha4"))))
+                "0667zmyvgr5lmshgxf1j5yny0kkij6z8d7gj0jcsdl0cq8g8pjm4"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -9899,6 +9899,34 @@ of Renyi's entropy, mutual information, Kullback-Leibler divergence, and
 generalized Simpson's indices.  The estimators used have a bias that decays
 exponentially fast.")
     (license license:gpl3+)))
+
+(define-public r-entropicstatistics
+  (package
+    (name "r-entropicstatistics")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EntropicStatistics" version))
+              (sha256
+               (base32
+                "1wi6kn4fhs3qsfikp9h9xjbdy5qcnvlm6zzyc2xprnjchg3lq5r5"))))
+    (properties `((upstream-name . "EntropicStatistics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-hrbrthemes
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=EntropicStatistics")
+    (synopsis "Functions Based on Entropic Statistics")
+    (description
+     "This package contains methods for data analysis in entropic perspective.  These
+entropic perspective methods are nonparametric, and perform better on
+non-ordinal data.  Currently, the package has a function HeatMap() for
+visualizing distributional characteristics among multiple populations (groups).")
+    (license license:gpl3)))
 
 (define-public r-entropart
   (package
@@ -15401,6 +15429,48 @@ incorporates data that is copyright Commonwealth of Australia (Australian
 Electoral Commission and Australian Bureau of Statistics) 2019.")
     (license license:gpl2+)))
 
+(define-public r-eeaaq
+  (package
+    (name "r-eeaaq")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EEAaq" version))
+              (sha256
+               (base32
+                "13hm3amlii7rxpa9x0x2y3bdl96r0s59zswmkfdxnm1pkcg7jig4"))))
+    (properties `((upstream-name . "EEAaq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-mondate
+                             r-lubridate
+                             r-leaflet
+                             r-htmlwidgets
+                             r-gstat
+                             r-ggspatial
+                             r-ggplot2
+                             r-dplyr
+                             r-aweek))
+    (home-page "https://cran.r-project.org/package=EEAaq")
+    (synopsis
+     "Handle Air Quality Data from the European Environmental Agency Data Portal")
+    (description
+     "This software downloads and manages air quality data at the European level from
+the European Environmental Agency (EEA) dataflows
+(<https://www.eea.europa.eu/data-and-maps/data/aqereporting-9>).  The package
+allows dynamically mapping the stations, summarising and time aggregating the
+measurements and building spatial interpolation maps.  See the webpage
+<https://www.eea.europa.eu/en> for further information on EEA's activities and
+history.")
+    (license license:gpl3+)))
+
 (define-public r-edwards97
   (package
     (name "r-edwards97")
@@ -18728,6 +18798,28 @@ and positional effect.  An ECM algorithm is implemented to estimate the model
 parameters, and then the genotypes and SNPs are inferred based on the empirical
 Bayes method.")
     (license license:gpl2)))
+
+(define-public r-eben
+  (package
+    (name "r-eben")
+    (version "5.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "EBEN" version))
+              (sha256
+               (base32
+                "13cvdx2mg1jhymvq49wm2rm1pajsd4ji274r7zaklcwy4lw5bml4"))))
+    (properties `((upstream-name . "EBEN")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=EBEN")
+    (synopsis "Empirical Bayesian Elastic Net")
+    (description
+     "This package provides the Empirical Bayesian Elastic Net for handling
+multicollinearity in generalized linear regression models.  As a special case of
+the EBglmnet package (also available on CRAN), this package encourages a
+grouping effects to select relevant variables and estimate the corresponding
+non-zero effects.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ebdbnet
   (package

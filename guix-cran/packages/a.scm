@@ -12302,13 +12302,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.1.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alone" version))
               (sha256
                (base32
-                "0z5rxq7f8ms3gmamd4qf538ymdmf76ipcrh5xm8aw0vhipxp8vg5"))))
+                "1qc3dbpyyc37x5ad2rrn3v5a39f00a0kmkm7xphc0w742zsl5p9y"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (home-page "https://github.com/doehm/alone")

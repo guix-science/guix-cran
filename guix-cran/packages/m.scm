@@ -912,6 +912,30 @@ estimating the parameters from data to fit a distribution to data is also
 provided, using the method from Nolan (2013) <DOI:10.1007/s00180-013-0396-7>.")
     (license license:expat)))
 
+(define-public r-mvpbt
+  (package
+    (name "r-mvpbt")
+    (version "1.1-1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MVPBT" version))
+              (sha256
+               (base32
+                "15swmaabfrqah97qz1z971h43vi2c1klniqhc21k7by7bqwsf9sy"))))
+    (properties `((upstream-name . "MVPBT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvmeta r-metafor r-mass r-mada))
+    (home-page "https://cran.r-project.org/package=MVPBT")
+    (synopsis
+     "Publication Bias Tests for Meta-Analysis of Diagnostic Accuracy Test")
+    (description
+     "Generalized Egger tests for detecting publication bias in meta-analysis for
+diagnostic accuracy test (Noma (2020) <doi:10.1111/biom.13343>, Noma (2022)
+<doi:10.48550/arXiv.2209.07270>).  These publication bias tests are generally
+more powerful compared with the conventional univariate publication bias tests
+and can incorporate correlation information between the outcome variables.")
+    (license license:gpl3)))
+
 (define-public r-mvp
   (package
     (name "r-mvp")
@@ -25848,27 +25872,24 @@ modelling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "meteoland" version))
               (sha256
                (base32
-                "1q7w5b0mafavjmpc5d96w0p6dqcrfn5m7x0kskss2240pbk3hlsp"))))
+                "1kms1932nk1a10sm6lgl898h9f72mhypi86s2bd8qi1w1lnr04df"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
                              r-tidyr
                              r-stars
-                             r-sp
                              r-sf
                              r-rlang
                              r-rcpp
                              r-purrr
                              r-ncmeta
                              r-ncdfgeom
-                             r-ncdf4
-                             r-meteospain
                              r-lubridate
                              r-lifecycle
                              r-dplyr
@@ -34858,6 +34879,42 @@ implements the chi-squared statistic described by Steiger (1980).  Please see
 Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
     (license license:gpl3+)))
 
+(define-public r-matrixset
+  (package
+    (name "r-matrixset")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "matrixset" version))
+              (sha256
+               (base32
+                "1xbp5g23x0b263nzw7nzpb3ybl17b1r60lbbv39ccsnfawd5fw89"))))
+    (properties `((upstream-name . "matrixset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-pillar
+                             r-dplyr
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pascalcroteau/matrixset")
+    (synopsis "Creating and Manipulating Matrix Ensemble")
+    (description
+     "This package creates an object that stores a matrix ensemble, matrices that
+share the same common properties, where rows and columns can be annotated.
+Matrices must have the same dimension and dimnames.  Operators to manipulate
+these objects are provided as well as mechanisms to apply functions to these
+objects.")
+    (license license:expat)))
+
 (define-public r-matrixsampling
   (package
     (name "r-matrixsampling")
@@ -40598,21 +40655,16 @@ information in R's environment.  No need to import or download additional files.
 (define-public r-macrobiome
   (package
     (name "r-macrobiome")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "macroBiome" version))
               (sha256
                (base32
-                "0mxz60q201irs7nfv5k7hiyk535ijhc6a372xb0aqxnml06cw7d7"))))
+                "0a4g3pp3g3iai8q8c1w230wldr0g788qcmfzc1qbmc5cnaxgs56r"))))
     (properties `((upstream-name . "macroBiome")))
     (build-system r-build-system)
-    (propagated-inputs (list r-strex
-                             r-sp
-                             r-rworldxtra
-                             r-rworldmap
-                             r-raster
-                             r-palinsol))
+    (propagated-inputs (list r-strex r-sp r-rworldxtra r-raster r-palinsol))
     (home-page "https://github.com/szelepcsenyi/macroBiome")
     (synopsis "Tool for Mapping the Distribution of the Biomes and Bioclimate")
     (description
@@ -40621,7 +40673,7 @@ special focus on paleoenvironmental applications.  Three widely used equilibrium
 biome models are currently implemented in the package: the Holdridge Life Zone
 (HLZ) system (Holdridge 1947, <doi:10.1126/science.105.2727.367>), the
 KÃ¶ppen-Geiger classification (KGC) system (KÃ¶ppen 1936,
-<http://koeppen-geiger.vu-wien.ac.at/pdf/Koppen_1936.pdf>) and the BIOME model
+<https://koeppen-geiger.vu-wien.ac.at/pdf/Koppen_1936.pdf>) and the BIOME model
 (Prentice et al.  1992, <doi:10.2307/2845499>).  Three climatic forest-steppe
 models are also implemented.  An approach for estimating monthly time series of
 relative sunshine duration from temperature and precipitation data (Yin 1999,

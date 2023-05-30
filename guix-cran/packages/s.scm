@@ -51227,6 +51227,34 @@ means, feature variances, or more general differences.")
      "Create a scatter plot matrix, using htmlwidgets package and d3.js'.")
     (license license:expat)))
 
+(define-public r-scatterdensity
+  (package
+    (name "r-scatterdensity")
+    (version "0.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ScatterDensity" version))
+              (sha256
+               (base32
+                "1dd9pgxq17j1gprf64vak3c6ncsgll73qya47jj116wil7z6jycz"))))
+    (properties `((upstream-name . "ScatterDensity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma))
+    (home-page "https://www.deepbionics.org/")
+    (synopsis "Density Estimation and Visualization of 2D Scatter Plots")
+    (description
+     "The user has the option to utilize the two-dimensional density estimation
+techniques called smoothed density published by Eilers and Goeman (2004)
+<doi:10.1093/bioinformatics/btg454>, and pareto density which was evaluated for
+univariate data by Thrun, Gehlert and Ultsch, 2020
+<doi:10.1371/journal.pone.0238835>.  Moreover, it provides visualizations of the
+density estimation in the form of two-dimensional scatter plots in which the
+points are color-coded based on increasing density.  Colors are defined by the
+one-dimensional clustering technique called 1D distribution cluster algorithm
+(DDCAL) published by Lux and Rinderle-Ma (2023)
+<doi:10.1007/s00357-022-09428-6>.")
+    (license license:gpl3)))
+
 (define-public r-scatterd3
   (package
     (name "r-scatterd3")

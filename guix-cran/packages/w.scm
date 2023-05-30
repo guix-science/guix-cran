@@ -2391,26 +2391,6 @@ standard deviations of grade determining properties from literature for a number
 of European countries are provided, as well.")
     (license license:expat)))
 
-(define-public r-woodendesc
-  (package
-    (name "r-woodendesc")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "woodendesc" version))
-              (sha256
-               (base32
-                "0x5gzzalldayb499sxg8rb2254ysqlc7cjq68qqn3yk0118ppdnq"))))
-    (properties `((upstream-name . "woodendesc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-versionsort r-httr r-digest))
-    (home-page "https://github.com/turtletopia/woodendesc")
-    (synopsis "Find Packages and Their Dependencies in Any 'R' Repository")
-    (description
-     "Simplifies getting the available packages, their version codes and dependencies
-from any R repository.  Uses extensive caching for repeated queries.")
-    (license license:gpl3+)))
-
 (define-public r-woodburymatrix
   (package
     (name "r-woodburymatrix")

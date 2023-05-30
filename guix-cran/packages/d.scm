@@ -17806,17 +17806,19 @@ library (<https://www.dask.org/>), for the Python language.")
 (define-public r-delaunay
   (package
     (name "r-delaunay")
-    (version "1.1.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "delaunay" version))
               (sha256
                (base32
-                "088a05hv7nr15bw3c3093ymamls2wlhg6bjv6px0ifvpn88a2rly"))))
+                "0rnbi17fsgh1k7sr2blnf7sgppxv1fqm0l85z16bryx5z7ab602p"))))
     (properties `((upstream-name . "delaunay")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rvcg
+    (propagated-inputs (list r-sets
+                             r-scales
+                             r-rvcg
                              r-rgl
                              r-rcppeigen
                              r-rcppcgal
@@ -17829,8 +17831,8 @@ library (<https://www.dask.org/>), for the Python language.")
     (synopsis "2d, 2.5d, and 3d Delaunay Tessellations")
     (description
      "Construction and visualization of 2d Delaunay triangulations, possibly
-constrained, 2.5d (i.e.  elevated) Delaunay triangulations, and 3d Delaunay
-triangulations.")
+constrained, 2.5d (i.e.  elevated) Delaunay triangulations, 3d Delaunay
+triangulations, and 2D VoronoÃ¯ tessellations.")
     (license license:gpl3)))
 
 (define-public r-dejavu

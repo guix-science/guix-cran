@@ -1813,13 +1813,13 @@ heterogeneity.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.0.2")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LRTesteR" version))
               (sha256
                (base32
-                "0lqn59ms8pyz6pg9y9mzqvfmizv7fnyxs5xszharwkv4jnjgb1cp"))))
+                "0wq4kjldrvc5m035qfmgpvfqlk50iji7ckgilnxqqiws8mmxjyic"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rlang))
