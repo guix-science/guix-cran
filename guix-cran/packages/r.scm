@@ -4249,13 +4249,13 @@ community assembly based on trait-values.")
 (define-public r-rtaxometrics
   (package
     (name "r-rtaxometrics")
-    (version "3.2")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RTaxometrics" version))
               (sha256
                (base32
-                "0nrj5iccxqj3nk28s9z6bncpih5zq2nz4pylmm0pkpl5dfz923m4"))))
+                "0f87r45lnygxxlwjq04q08ams7llnjlrfyavx81fbl2g26yp988l"))))
     (properties `((upstream-name . "RTaxometrics")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RTaxometrics")
@@ -14098,13 +14098,13 @@ and producing RVE-based forest plots.")
 (define-public r-robtt
   (package
     (name "r-robtt")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RoBTT" version))
               (sha256
                (base32
-                "0d6qzc7g8p6n7apw12a2x35yijyfcr4bpd5z6j236lxn86hknv63"))))
+                "01v5p2i3z88qkasnnaddkwb45fmds1434jjcvlk250kz6r7ac15d"))))
     (properties `((upstream-name . "RoBTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -14114,6 +14114,7 @@ and producing RVE-based forest plots.")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-ggplot2
                              r-bridgesampling
                              r-bh
                              r-bayestools))
@@ -14273,13 +14274,13 @@ and Sang-Yun Oh (2020) <http://proceedings.mlr.press/v108/cisneros20a.html>.")
 (define-public r-robsa
   (package
     (name "r-robsa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RoBSA" version))
               (sha256
                (base32
-                "1vmnhvvw50f6r8yqwx8f7ffmagxc4lxd2xjpprdlm3wacvqs2kln"))))
+                "1hk4pdkgqjqhn7wxzzgw1f1rz4kk3gri7wispzz0m3nxk7bksw6b"))))
     (properties `((upstream-name . "RoBSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -14300,7 +14301,7 @@ Bayesian model-averaging to combine the competing parametric survival models
 into a model ensemble, weights the posterior parameter distributions based on
 posterior model probabilities and uses Bayes factors to test for the presence or
 absence of the individual predictors or preference for a parametric family
-(BartoÅ¡, Aust & Haaf, 2021, <doi:10.48550/arXiv.2112.08311>).  The user can
+(BartoÅ¡, Aust & Haaf, 2022, <doi:10.1186/s12874-022-01676-9>).  The user can
 define a wide range of informative priors for all parameters of interest.  The
 package provides convenient functions for summary, visualizations, fit
 diagnostics, and prior distribution calibration.")
@@ -20314,6 +20315,27 @@ methods (<https://www.itis.gov/ws_description.html>), as well as the Solr web
 service (<https://www.itis.gov/solr_documentation.html>).")
     (license license:expat)))
 
+(define-public r-ritch
+  (package
+    (name "r-ritch")
+    (version "0.1.18")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RITCH" version))
+              (sha256
+               (base32
+                "0a3rbjdqsgd5nvd5kifk3gh0j54w8ivfbs9lisk503s779mf94n0"))))
+    (properties `((upstream-name . "RITCH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-nanotime r-data-table r-bit64))
+    (home-page "https://davzim.github.io/RITCH/")
+    (synopsis "R Parser for the ITCH-Protocol")
+    (description
+     "Allows to efficiently parse, filter, and write binary ITCH Files (Version 5.0)
+containing detailed financial transactions as distributed by NASDAQ to an R
+data.table.")
+    (license license:expat)))
+
 (define-public r-ritc
   (package
     (name "r-ritc")
@@ -25062,23 +25084,25 @@ documents by Facebook Marketing API
 (define-public r-rextendr
   (package
     (name "r-rextendr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rextendr" version))
               (sha256
                (base32
-                "0d5nkdphdlyyd9qi3dam16ag89b0h6n38q91pkp71n9xhb4ffrx8"))))
+                "0qc86rxs7i03zj5v5vhh84gwd58k13cy27fs5lca8mbrm9f3nm69"))))
     (properties `((upstream-name . "rextendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vctrs
                              r-tibble
                              r-stringi
                              r-rprojroot
                              r-rlang
                              r-purrr
-                             r-pkgload
+                             r-processx
                              r-pkgbuild
+                             r-jsonlite
                              r-glue
                              r-dplyr
                              r-desc
@@ -44213,6 +44237,28 @@ agGrid'.")
      "This package provides functions for calculating life history metrics using
 matrix population models ('MPMs').  Described in Jones et al. (2021)
 <doi:10.1101/2021.04.26.441330>.")
+    (license license:gpl3)))
+
+(define-public r-rafs
+  (package
+    (name "r-rafs")
+    (version "0.2.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RAFS" version))
+              (sha256
+               (base32
+                "1ny44lxyayy1cshflx2f70gs550mxf6cai1dj4gf8567h34nf65j"))))
+    (properties `((upstream-name . "RAFS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splittools r-mdfs r-fastcluster))
+    (home-page "https://www.mdfs.it/")
+    (synopsis "Robust Aggregative Feature Selection")
+    (description
+     "This package provides a cross-validated minimal-optimal feature selection
+algorithm.  It utilises popularity counting, hierarchical clustering with
+feature dissimilarity measures, and prefiltering with all-relevant feature
+selection method to obtain the minimal-optimal set of features.")
     (license license:gpl3)))
 
 (define-public r-radwords

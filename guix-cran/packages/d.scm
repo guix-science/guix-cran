@@ -969,6 +969,43 @@ hierarchies, which describe dominance relationships and their dynamics in a
 single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (license license:gpl2)))
 
+(define-public r-dynamite
+  (package
+    (name "r-dynamite")
+    (version "1.4.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dynamite" version))
+              (sha256
+               (base32
+                "1kbdw94qprgqc0m8j10glxkmf4x54vl86nsybwx27vj1zk1cbj5h"))))
+    (properties `((upstream-name . "dynamite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rstan
+                             r-rlang
+                             r-posterior
+                             r-patchwork
+                             r-loo
+                             r-glue
+                             r-ggplot2
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/dynamite/")
+    (synopsis
+     "Bayesian Modeling and Causal Inference for Multivariate Longitudinal Data")
+    (description
+     "Easy-to-use and efficient interface for Bayesian inference of complex panel
+(time series) data using dynamic multivariate panel models by Helske and Tikka
+(2022) <doi:10.31235/osf.io/mdwu5>.  The package supports joint modeling of
+multiple measurements per individual, time-varying and time-invariant effects,
+and a wide range of discrete and continuous distributions.  Estimation of these
+dynamic multivariate panel models is carried out via Stan'.  For an in-depth
+tutorial of the package, see (Tikka and Helske, 2023) <arxiv:2302.01607>.")
+    (license license:gpl3+)))
+
 (define-public r-dynamicsdm
   (package
     (name "r-dynamicsdm")
@@ -1487,6 +1524,35 @@ symmetric Gauss-Seidel based alternating direction method of multipliers (ADMM)
 method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
 <arXiv:1604.05473> for more details.")
     (license license:gpl2)))
+
+(define-public r-dwctaxon
+  (package
+    (name "r-dwctaxon")
+    (version "2.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dwctaxon" version))
+              (sha256
+               (base32
+                "1w6mdqr76gaiwj5bdrk6w544525zf0j0s1qqpszlfxymwqyax6nl"))))
+    (properties `((upstream-name . "dwctaxon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-settings
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/dwctaxon/")
+    (synopsis "Edit and Validate Darwin Core Taxon Data")
+    (description
+     "Edit and validate taxonomic data in compliance with Darwin Core standards
+(Darwin Core Taxon class <https://dwc.tdwg.org/terms/#taxon>).")
+    (license license:expat)))
 
 (define-public r-dwbmodelun
   (package
@@ -5613,13 +5679,13 @@ The fastest parsing, of course, occurs at the C level, and is suggested.")
 (define-public r-dowser
   (package
     (name "r-dowser")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "dowser" version))
               (sha256
                (base32
-                "1yp8l6ffmrl5xph35gg49yiavisxg710djbnwnqn12m4q6cpsa7a"))))
+                "17y46asi8zqzc8kn1safglbpi0sd9azgdh6q54lrbsnpmkfg5ki3"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8068,6 +8134,29 @@ learning methods are widely applied in feature extraction, dimensionality
 reduction, clustering, classification, information retrieval, and computer
 vision problems.")
     (license license:expat)))
+
+(define-public r-dmetatools
+  (package
+    (name "r-dmetatools")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "dmetatools" version))
+              (sha256
+               (base32
+                "0n62lfga8br3p3vn10rs56mbrbsrr7b6m8cb15za52nm2qn9m3a5"))))
+    (properties `((upstream-name . "dmetatools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-mada))
+    (home-page "https://cran.r-project.org/package=dmetatools")
+    (synopsis
+     "Computational Tools for Meta-Analysis of Diagnostic Accuracy Test")
+    (description
+     "Computational tools for meta-analysis of diagnostic accuracy test.
+Bootstrap-based computational methods of the confidence interval for AUC of
+summary ROC curve and some related AUC-based inference methods are available
+(Noma et al. (2021) <doi:10.1080/23737484.2021.1894408>).")
+    (license license:gpl3)))
 
 (define-public r-dmcfun
   (package
@@ -23570,17 +23659,18 @@ extra layer of validation around input and output data.")
 (define-public r-databionicswarm
   (package
     (name "r-databionicswarm")
-    (version "1.1.6")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "DatabionicSwarm" version))
               (sha256
                (base32
-                "0i96664h4d6b76xk7c2vdma2am627acfzr79wyy8i17ciis452ph"))))
+                "1x9i25wlp0gy1r4ilbkfj3f6c8hd67y8d8xj4alxmsin36nkm585"))))
     (properties `((upstream-name . "DatabionicSwarm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-generalizedumatrix
-                             r-deldir))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp
+                             r-generalizedumatrix r-deldir))
     (native-inputs (list r-knitr))
     (home-page "https://www.deepbionics.org/")
     (synopsis "Swarm Intelligence for Self-Organized Clustering")

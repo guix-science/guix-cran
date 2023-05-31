@@ -604,6 +604,32 @@ DvoÅÃ¡k et al. (2022) <doi:10.1111/insr.12503>, DvoÅÃ¡k and MrkviÄk
 <arxiv:2210.05424>.")
     (license license:gpl3)))
 
+(define-public r-ntdr
+  (package
+    (name "r-ntdr")
+    (version "0.3.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ntdr" version))
+              (sha256
+               (base32
+                "17z8iz1xw62ps6gibcc2lb4kj14q7v1b5g58zigha444fdwrzzcv"))))
+    (properties `((upstream-name . "ntdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rvest
+                             r-readxl
+                             r-purrr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://vgxhc.github.io/ntdr/")
+    (synopsis "Retrieve Data from the National Transit Database")
+    (description
+     "Downloads the latest National Transit Database data, processes it, and returns
+in a tidy data format.")
+    (license license:expat)))
+
 (define-public r-nsyllable
   (package
     (name "r-nsyllable")
@@ -3179,13 +3205,13 @@ equilibrium along a one-dimensional space.")
 (define-public r-nopaco
   (package
     (name "r-nopaco")
-    (version "1.0.6")
+    (version "1.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nopaco" version))
               (sha256
                (base32
-                "0q705b7bjzq0b6vfp6yargybc8h07adx8al1ip7pxkmfcpilj66v"))))
+                "0ffcbrk3l2xprd4jiilvk6i5l39x4mi7vrx4irzqnf3m9nwsz6w5"))))
     (properties `((upstream-name . "nopaco")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -10908,40 +10934,41 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedlogit
   (package
     (name "r-nestedlogit")
-    (version "0.2.1")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedLogit" version))
               (sha256
                (base32
-                "1ac8rlli6pwc9mhngglvw2xif7x3vqfl90kxbgjsaa148ywfa27f"))))
+                "1iraqdv3dwnjd4ixdim9b4bs8ljwds3hif1s1kin2d3pc2g3kkk9"))))
     (properties `((upstream-name . "nestedLogit")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr r-car r-broom))
+    (propagated-inputs (list r-tibble r-stringr r-dplyr r-car r-broom))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/friendly/nestedLogit")
     (synopsis "Nested Dichotomy Logistic Regression Models")
     (description
      "This package provides functions for specifying and fitting nested dichotomy
 logistic regression models for a multi-category response and methods for
-summarising those models.  Nested dichotomies are statistically independent, and
-hence provide an additive decomposition of tests for the overall polytomous
-response.  When the dichotomies make sense substantively, this method can be a
-simpler alternative to the standard multinomial logistic model which compares
-response categories to a reference level.  See: J. Fox (2016), \"Applied
-Regression Analysis and Generalized Linear Models\", 3rd Ed., ISBN 1452205663.")
+summarising and plotting those models.  Nested dichotomies are statistically
+independent, and hence provide an additive decomposition of tests for the
+overall polytomous response.  When the dichotomies make sense substantively,
+this method can be a simpler alternative to the standard multinomial logistic
+model which compares response categories to a reference level.  See: J. Fox
+(2016), \"Applied Regression Analysis and Generalized Linear Models\", 3rd Ed.,
+ISBN 1452205663.")
     (license license:gpl2+)))
 
 (define-public r-nestedcv
   (package
     (name "r-nestedcv")
-    (version "0.6.2")
+    (version "0.6.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nestedcv" version))
               (sha256
                (base32
-                "0v8x9cxlryjdxy1zxcrcs1iw6dv9asb3iy390wll2gg98rrd0ll8"))))
+                "005ivl5i4rxw8mljp5b6kvac8qxww4wqlkr21s42cl02gkggggyk"))))
     (properties `((upstream-name . "nestedcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

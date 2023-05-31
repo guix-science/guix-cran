@@ -1221,6 +1221,28 @@ biological processes.  The methods are described in Wei Xu, Meiling Hao (2017)
 Wei Xu (2019) <doi:10.1177/0962280219859037>.")
     (license license:gpl2)))
 
+(define-public r-xlcutter
+  (package
+    (name "r-xlcutter")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xlcutter" version))
+              (sha256
+               (base32
+                "0c1d8v7ald8ngq0jglr38bk04r2hs5w0kn57r69isvv2washbaw2"))))
+    (properties `((upstream-name . "xlcutter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyxl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bisaloo/xlcutter")
+    (synopsis "Parse Batches of 'xlsx' Files Based on a Template")
+    (description
+     "Parse entire folders of non-rectangular xlsx files into a single rectangular and
+tidy data.frame based on a custom template file defining the column names of the
+output.")
+    (license license:expat)))
+
 (define-public r-xlconnect
   (package
     (name "r-xlconnect")

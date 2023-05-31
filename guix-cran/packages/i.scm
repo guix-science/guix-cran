@@ -6120,13 +6120,13 @@ functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.0")
+    (version "0.6.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "inti" version))
               (sha256
                (base32
-                "13zqb4az77frxnj7sna95aj86q7ridqaa14shmlbvwm7aqr7iwn1"))))
+                "0ikzm7lvniazn1iqd1m6qqf90fc6ajk1xvf0g7bc4xxzbz96q548"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9463,13 +9463,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "incidence2" version))
               (sha256
                (base32
-                "0ycc1kv1jnzywwzm5smrvvw7rvgbpk989yp77v3vgsqf6wgfyi8r"))))
+                "15bpgsgfdzrdyfyrkczr11nwxbqshcgx91yhsqfmda8y119mylpx"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (propagated-inputs (list r-pillar r-grates r-data-table))
@@ -14107,13 +14107,13 @@ tests.  Please see the vignette for a quickstart guide.")
 (define-public r-ics
   (package
     (name "r-ics")
-    (version "1.3-1")
+    (version "1.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ICS" version))
               (sha256
                (base32
-                "0x3cwhvzcibgyb8gqy6dc6lgnvbf6x8425zai57g8yn5i6zzc1li"))))
+                "00k453h6bdlic0ldbbrdsaax9959r5dr5a39r9ma5hyyli3i2bik"))))
     (properties `((upstream-name . "ICS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-mvtnorm))
@@ -14123,7 +14123,7 @@ tests.  Please see the vignette for a quickstart guide.")
      "Implementation of Tyler, Critchley, Duembgen and Oja's (JRSS B, 2009,
 <doi:10.1111/j.1467-9868.2009.00706.x>) and Oja, Sirkia and Eriksson's (AJS,
 2006,
-<http://www.ajs.or.at/index.php/ajs/article/view/vol35,%20no2%263%20-%207>)
+<https://www.ajs.or.at/index.php/ajs/article/view/vol35,%20no2%263%20-%207>)
 method of two different scatter matrices to obtain an invariant coordinate
 system or independent components, depending on the underlying assumptions.")
     (license license:gpl2+)))

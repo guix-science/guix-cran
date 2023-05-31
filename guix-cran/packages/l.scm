@@ -6007,13 +6007,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.4.7")
+    (version "2.4.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "lmomco" version))
               (sha256
                (base32
-                "1hn74zj7c165qsq1icgx9qvdmgxxh4hhn062k7xnvm5yh94g4nvz"))))
+                "0y14zwwg5nnskjpjm9b1d12694c33x6micmshxwwdyl3d1pysqvh"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmoments r-goftest))
@@ -9883,13 +9883,13 @@ Multi-Ethnic Study of Atherosclerosis (MESA)\".")
 (define-public r-lgdtoolkit
   (package
     (name "r-lgdtoolkit")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LGDtoolkit" version))
               (sha256
                (base32
-                "0sl0fmp96mk9sgzw2mbn487iyzzxrcy06mxw8kv4vp4pi4jrrzcp"))))
+                "0ch3nmkwj3s9x5f5h9c5m5dcwl2dq0az0k49jw7szr4w25a8k3hh"))))
     (properties `((upstream-name . "LGDtoolkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-monobin r-dplyr))
@@ -9908,7 +9908,9 @@ Descriptions of these customized designs are available in Siddiqi (2016)
 model, the same designs are applicable for LGD model with different underlying
 regression methods (OLS and fractional logistic regression).  To cover other
 important steps for LGD model development, it is recommended to use LGDtoolkit
-package along with PDtoolkit', and monobin (or monobinShiny') packages.")
+package along with PDtoolkit', and monobin (or monobinShiny') packages.
+Additionally, LGDtoolkit provides set of procedures handy for initial and
+periodical model validation.")
     (license license:gpl3+)))
 
 (define-public r-lgcp
@@ -14376,26 +14378,6 @@ calculation and various options.  Important reference papers include Berrington
 de Gonzalez et al. (2012) <doi:10.1088/0952-4746/32/3/205>, National Research
 Council (2006, ISBN:978-0-309-09156-5).")
     (license license:lgpl3)))
-
-(define-public r-largelist
-  (package
-    (name "r-largelist")
-    (version "0.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "largeList" version))
-              (sha256
-               (base32
-                "0csijzlxajj0rh24w5n7fs6ss301zr6zfv5khyq4a9g437bwhc2i"))))
-    (properties `((upstream-name . "largeList")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Yuchun-Zhang/R_largeList")
-    (synopsis "Serialization Interface for Large List Objects")
-    (description
-     "This package provides functions to write or append a R list to a file, as well
-as read, remove, modify elements from it without restoring the whole list.")
-    (license license:gpl2+)))
 
 (define-public r-larf
   (package

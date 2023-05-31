@@ -18023,6 +18023,33 @@ characteristics under an adaptive design with futility assessment determined via
 the posterior predictive probabilities.")
     (license license:gpl3)))
 
+(define-public r-adapt4pv
+  (package
+    (name "r-adapt4pv")
+    (version "0.2-3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adapt4pv" version))
+              (sha256
+               (base32
+                "05z3dwcx7pyysf0ghz8m6ij3lj53qkqll50b0gd2yi7ffp9m9601"))))
+    (properties `((upstream-name . "adapt4pv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-speedglm
+                             r-matrix
+                             r-glmnet
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=adapt4pv")
+    (synopsis "Adaptive Approaches for Signal Detection in Pharmacovigilance")
+    (description
+     "This package provides a collection of several pharmacovigilance signal detection
+methods based on adaptive lasso.  Additional lasso-based and propensity
+score-based signal detection approaches are also supplied.  See Courtois et al
+<doi:10.1186/s12874-021-01450-3>.")
+    (license license:gpl2)))
+
 (define-public r-adana
   (package
     (name "r-adana")

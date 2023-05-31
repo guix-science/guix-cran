@@ -9125,13 +9125,13 @@ surface model.")
 (define-public r-torchvisionlib
   (package
     (name "r-torchvisionlib")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "torchvisionlib" version))
               (sha256
                (base32
-                "01l04zabja3ancay7ynb5i7knqm1gd5101sx07fbid185w5j8yh4"))))
+                "18fb3lc90267pmslc2wrafpdhdmrmrrgrz8b5yqbm6yc8p776bvn"))))
     (properties `((upstream-name . "torchvisionlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-torch r-rlang r-rcpp r-glue))
@@ -18552,13 +18552,13 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tessellation
   (package
     (name "r-tessellation")
-    (version "2.1.2")
+    (version "2.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tessellation" version))
               (sha256
                (base32
-                "1mlszcnycz4ys3ccp6287z15n30j24fls223dww7yknj3n1i1w9k"))))
+                "0ahf48h38gdrp9cdqdrhwia2xh9b972rmmgk8r1ca1mlqkis72zc"))))
     (properties `((upstream-name . "tessellation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets
@@ -18821,13 +18821,13 @@ exponential random graph models, implemented in the tergm package.")
 (define-public r-tergm
   (package
     (name "r-tergm")
-    (version "4.1.1")
+    (version "4.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "tergm" version))
               (sha256
                (base32
-                "09axlhf5n2jwc84ih05ywz8addqfai7g1cdlzhsbmjnsn1d89kai"))))
+                "0sfszgvm38y2j0j6hnwg2llf6djgxbw0ibq6cxv6blf4q9na5xfw"))))
     (properties `((upstream-name . "tergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -18837,6 +18837,7 @@ exponential random graph models, implemented in the tergm package.")
                              r-networkdynamic
                              r-network
                              r-mass
+                             r-ergm-multi
                              r-ergm
                              r-coda))
     (native-inputs (list r-rmarkdown r-knitr))

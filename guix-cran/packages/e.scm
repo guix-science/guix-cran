@@ -6792,13 +6792,13 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 (define-public r-ergm-multi
   (package
     (name "r-ergm-multi")
-    (version "0.1.2")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm.multi" version))
               (sha256
                (base32
-                "1nvr7f4ilhf9f3kyahaxhzq6wr4c2vx3afl5p6za72v8g6cnqjq0"))))
+                "0npvfkzba1ik5h6s5rqkkway0jhf6smcqvywng7hjzq8kfjppqhk"))))
     (properties `((upstream-name . "ergm.multi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6826,13 +6826,13 @@ Krivitsky, Coletti, and Hens (2022) <doi:10.48550/arXiv.2202.03685>.")
 (define-public r-ergm-ego
   (package
     (name "r-ergm-ego")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ergm.ego" version))
               (sha256
                (base32
-                "153xdry9y2wyqkq2hacy3gh4h6jwwyn0p0dakxmrrpfsa1my5h9f"))))
+                "1wflvj946xkiy0xzq53x13v9iqj64hc7wcqzqazkvlngigibh5gl"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7648,6 +7648,37 @@ testing on the mean of a normal random vector subject to linear constraints.")
      "This package performs analysis of polynomial regression in simple designs with
 quantitative treatments.")
     (license license:gpl2)))
+
+(define-public r-epoxy
+  (package
+    (name "r-epoxy")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "epoxy" version))
+              (sha256
+               (base32
+                "014fs2k4d5r7dlxr9s3r13s3lbir4ip61rfykr0h3n4b87zp6sah"))))
+    (properties `((upstream-name . "epoxy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-whisker
+                             r-scales
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-knitr
+                             r-htmltools
+                             r-glue
+                             r-and))
+    (native-inputs (list r-rmarkdown r-knitr r-cleanrmd esbuild))
+    (home-page "https://pkg.garrickadenbuie.com/epoxy/")
+    (synopsis "String Interpolation for Documents, Reports and Apps")
+    (description
+     "Extra strength glue for data-driven templates.  String interpolation for Shiny
+apps or R Markdown and knitr'-powered Quarto documents, built on the glue and
+whisker packages.")
+    (license license:expat)))
 
 (define-public r-epos
   (package
@@ -11996,16 +12027,17 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "embed" version))
               (sha256
                (base32
-                "1s526p48l3vvjnlb648icz05vhi7y6lngcbqlnmazxym1w2dc5zm"))))
+                "09a8a1p96dpcx5s5d9xhbcipys77zmfq3nnn7j200avjpfdzgjfv"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vctrs
                              r-uwot
                              r-tidyr
                              r-tibble
@@ -12903,13 +12935,13 @@ fetching and parsing Associated Press election results.")
 (define-public r-elevatr
   (package
     (name "r-elevatr")
-    (version "0.4.2")
+    (version "0.4.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "elevatr" version))
               (sha256
                (base32
-                "1a5j7hb9fsy9ybrdlywbm552kb2hj6ch1m8kvi2hybm99yw33n81"))))
+                "1q2izn66zddzfpcd0djapqxc1acr504p51fmbd2via4wy7q3fbj1"))))
     (properties `((upstream-name . "elevatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -12922,7 +12954,8 @@ fetching and parsing Associated Press election results.")
                              r-jsonlite
                              r-httr
                              r-future
-                             r-furrr))
+                             r-furrr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jhollist/elevatr/")
     (synopsis "Access Elevation Data from Various APIs")
@@ -12934,7 +12967,7 @@ object from raster elevation services.  Currently, the package supports access
 to the Amazon Web Services Terrain Tiles
 <https://registry.opendata.aws/terrain-tiles/>, the Open Topography Global
 Datasets API <https://opentopography.org/developers/>, and the USGS Elevation
-Point Query Service <https://nationalmap.gov/epqs/>.")
+Point Query Service <https://apps.nationalmap.gov/epqs/>.")
     (license license:cc0)))
 
 (define-public r-elementr

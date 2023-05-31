@@ -5152,13 +5152,13 @@ projects via a flexible, declarative dependency loading syntax.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.0.5")
+    (version "7.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BoutrosLab.plotting.general" version))
               (sha256
                (base32
-                "0l8fz1bl1bxmlgvsg5l94ahf0rxc4yr3da53sxv5r2x4kyq2ymx7"))))
+                "1za211paw4k586z6s92rwh2z7vjn3aqgja43b2zd5z6swg3ibhsv"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass
@@ -6588,6 +6588,37 @@ estimation through the bootstrap', <arXiv:0804.1302>.")
     (description
      "This package provides an interface to Bank of Japan <https://www.boj.or.jp>
 statistics.")
+    (license license:expat)))
+
+(define-public r-boinet
+  (package
+    (name "r-boinet")
+    (version "0.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "boinet" version))
+              (sha256
+               (base32
+                "1iskz3hr6c77fj3wfzz24xk1blakyys6hiwm9y9821ly3qms24i3"))))
+    (properties `((upstream-name . "boinet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mfp r-iso r-copula))
+    (home-page "https://cran.r-project.org/package=boinet")
+    (synopsis
+     "Conduct Simulation Study of Bayesian Optimal Interval Design with BOIN-ET Family")
+    (description
+     "Bayesian optimal interval based on both efficacy and toxicity outcomes (BOIN-ET)
+design is a model-assisted oncology phase I trial design, aiming to establish an
+optimal biological dose accounting for efficacy and toxicity in the framework of
+dose-finding.  Some extensions of BOIN-ET design are also available to allow for
+time-to-event efficacy and toxicity outcomes based on cumulative and pending
+data (time-to-event BOIN-ET: TITE-BOIN-ET), multicategorical efficacy and
+toxicity outcomes (generalized BOIN-ET: gBOIN-ET), and their combination
+(TITE-gBOIN-ET).  boinet is a package to implement the BOIN-ET design family and
+supports the conduct of simulation studies to assess operating characteristics
+of BOIN-ET, TITE-BOIN-ET, gBOIN-ET, and TITE-gBOIN-ET, where users can choose
+design parameters in flexible and straightforward ways depending on their own
+application.")
     (license license:expat)))
 
 (define-public r-boin
@@ -16293,13 +16324,13 @@ and arrays, fit multiple functions.")
 (define-public r-bernadette
   (package
     (name "r-bernadette")
-    (version "1.1.2")
+    (version "1.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Bernadette" version))
               (sha256
                (base32
-                "0x7qh1b94ca8wzgdhf6knmh5lcmkn7xhch5gs492bhp5046fn3ds"))))
+                "0g8fgi0rmfrn5m62hiycgkk3kadcqanqsixm1xh1yz0f8dhz6ngc"))))
     (properties `((upstream-name . "Bernadette")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -19538,16 +19569,17 @@ Chipman, George, McCulloch (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.13")
+    (version "0.2.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesTools" version))
               (sha256
                (base32
-                "1ww86hx31wkqs3f8gvr6szr4nd97pfw1pj00zhypk9ar42b440l8"))))
+                "1k9qxach6m1k07hlqzj9jy7kjgq7gcb4x6yzzf9q4y6dvr045kb3"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
+    (propagated-inputs (list r-rlang
+                             r-rdpack
                              r-mvtnorm
                              r-ggplot2
                              r-extradistr
@@ -19557,12 +19589,14 @@ Chipman, George, McCulloch (2010).")
     (home-page "https://fbartos.github.io/BayesTools/")
     (synopsis "Tools for Bayesian Analyses")
     (description
-     "This package provides tools for conducting Bayesian analyses.  The package
-contains functions for creating a wide range of prior distribution objects,
-mixing posterior samples from JAGS and Stan models, plotting posterior
-distributions, and etc...  The tools for working with prior distribution span
-from visualization, generating JAGS and bridgesampling syntax to basic functions
-such as rng, quantile, and distribution functions.")
+     "This package provides tools for conducting Bayesian analyses and Bayesian model
+averaging (Kass and Raftery, 1995, <doi:10.1080/01621459.1995.10476572>, Hoeting
+et al., 1999, <doi:10.1214/ss/1009212519>).  The package contains functions for
+creating a wide range of prior distribution objects, mixing posterior samples
+from JAGS and Stan models, plotting posterior distributions, and etc...  The
+tools for working with prior distribution span from visualization, generating
+JAGS and bridgesampling syntax to basic functions such as rng, quantile, and
+distribution functions.")
     (license license:gpl3)))
 
 (define-public r-bayestfr

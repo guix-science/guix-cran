@@ -32627,18 +32627,18 @@ assess the quality of matches by examining the resulting covariate balance.")
 (define-public r-panelhetero
   (package
     (name "r-panelhetero")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "panelhetero" version))
               (sha256
                (base32
-                "162izdp7bnrrdpjrzhpavsz09vz7r5qgf4vaw44rl06knssv1bqp"))))
+                "12csjgcjxwl7fxlqib0vgywf32frd7jri3dj9lyq5fmz9riqkdix"))))
     (properties `((upstream-name . "panelhetero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rearrangement r-kernsmooth r-ggplot2 r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=panelhetero")
+    (home-page "https://tkhdyanagi.github.io/panelhetero/")
     (synopsis "Panel Data Analysis with Heterogeneous Dynamics")
     (description
      "Understanding the dynamics of potentially heterogeneous variables is important

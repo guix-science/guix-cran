@@ -6886,25 +6886,34 @@ non-negative factorization and other factorization used in bioinformatics'.")
 (define-public r-gptstudio
   (package
     (name "r-gptstudio")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "gptstudio" version))
               (sha256
                (base32
-                "072h8fik8f9g2434dah3k3qs122zzbasadw62854a0a2dvbpnpff"))))
+                "0zb05nasss9g99s03kiwhq9jh54zvspvzwbhdgg56v05ia6g1mz3"))))
     (properties `((upstream-name . "gptstudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
+                             r-stringr
+                             r-shiny-i18n
                              r-shiny
                              r-rstudioapi
                              r-rlang
+                             r-r6
                              r-purrr
                              r-magrittr
                              r-jsonlite
-                             r-httr
+                             r-httr2
+                             r-htmlwidgets
+                             r-htmltools
                              r-glue
+                             r-fontawesome
+                             r-curl
+                             r-colorspace
                              r-cli
+                             r-bslib
                              r-assertthat))
     (home-page "https://github.com/MichelNivard/gptstudio")
     (synopsis
@@ -10761,6 +10770,32 @@ exploration, mapping, visualization and export.")
      "Read examples with interlinear glosses from files or from text and print them in
 a way compatible with both Latex and HTML outputs.")
     (license license:expat)))
+
+(define-public r-glossary
+  (package
+    (name "r-glossary")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "glossary" version))
+              (sha256
+               (base32
+                "0p3sn30gpi1zbh498iv08n55sjpls0120cxcg9dkz0yjs60y2snl"))))
+    (properties `((upstream-name . "glossary")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-rvest
+                             r-markdown
+                             r-knitr
+                             r-kableextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/debruine/glossary")
+    (synopsis "Glossaries for Markdown and Quarto Documents")
+    (description
+     "Add glossaries to markdown and quarto documents by tagging individual words.
+Definitions can be provided inline or in a separate file.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-glogis
   (package
@@ -20336,18 +20371,17 @@ package provides the R interface to Python modules, classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.0.7")
+    (version "1.0.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeoModels" version))
               (sha256
                (base32
-                "1k5q77mxgvhm21cqzkkcwnna3sxkq9ivwgj4bb7r2c3g4zl3gzdz"))))
+                "1ki1s6pkvh89lpx5p3nksxx8mfjs851wkf243g1dvhs70l9nw2w1"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
                              r-vgam
-                             r-ucminf
                              r-spam
                              r-sn
                              r-shape
@@ -22755,13 +22789,13 @@ Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 (define-public r-generalizedumatrix
   (package
     (name "r-generalizedumatrix")
-    (version "1.2.5")
+    (version "1.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "GeneralizedUmatrix" version))
               (sha256
                (base32
-                "0rdqf9idrgkl7b1pz0ys7a4j73jkz748rnk23v388vl7948zvxsa"))))
+                "1mzxszsk2mzswndrq0j125l1b5qdmjryg2swb7f2mnipa5k3mqbm"))))
     (properties `((upstream-name . "GeneralizedUmatrix")))
     (build-system r-build-system)
     (inputs (list pandoc))

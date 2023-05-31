@@ -2189,13 +2189,13 @@ facilities and fitting measures are also provided.")
 (define-public r-ctv
   (package
     (name "r-ctv")
-    (version "0.9-4")
+    (version "0.9-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ctv" version))
               (sha256
                (base32
-                "1m9gmfy05zn51qsvck2rg4nshn3rrpgbbsxvap2f3hp7mgc8nizw"))))
+                "1mr37p7mdv2p8rswz9clwj25ipm16pc4a7flwg3a4bgyj1n5mz55"))))
     (properties `((upstream-name . "ctv")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9244,13 +9244,13 @@ models (EPPM) as in the article Faddy and Smith (2011)
 (define-public r-countrycode
   (package
     (name "r-countrycode")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "countrycode" version))
               (sha256
                (base32
-                "1i6czp2x3q2ksmaqajbnhkggv8z7cc0hpb4g1yg1nqqy5ijygpwr"))))
+                "035c8dm1ppkdvjhc78dfmhbyc2n048gkx4q6y5s0ffn3bpymsxzw"))))
     (properties `((upstream-name . "countrycode")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/countrycode/")
@@ -15099,13 +15099,13 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-condor
   (package
     (name "r-condor")
-    (version "1.0.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "condor" version))
               (sha256
                (base32
-                "0s7hkvkcr54rl5ybqiy5rmzcjb4vxryv23q4yf9wb603lbifsiby"))))
+                "1f3h8zi2k9py96vnlif5p161s69ynkzq026n958031n2r9d45169"))))
     (properties `((upstream-name . "condor")))
     (build-system r-build-system)
     (inputs (list))
@@ -15116,7 +15116,9 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
      "Interact with Condor from R via SSH connection.  Files are first uploaded from
 user machine to submitter machine, and the job is then submitted from the
 submitter machine to Condor'.  Functions are provided to submit, list, and
-download Condor jobs from R.")
+download Condor jobs from R. Condor is an open source high-throughput computing
+software framework for distributed parallelization of computationally intensive
+tasks.")
     (license license:gpl3)))
 
 (define-public r-condmvt
@@ -19615,13 +19617,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CodelistGenerator" version))
               (sha256
                (base32
-                "0ay52ink9g7gbh1799561giz93ry5nfivpcv8xi6hccswl77smyw"))))
+                "0ngxsr8v74mhz9pqvlwwxasliwdjm99chjyn0xiy3mzbw7bj00jg"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -23010,28 +23012,25 @@ in Soale and Tsyawo (2019) <doi:10.13140/RG.2.2.32355.81441>.")
 (define-public r-clusboot
   (package
     (name "r-clusboot")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ClusBoot" version))
               (sha256
                (base32
-                "1wh9mv932zarl8w098lgv2jpanp6r8nzdkyayv8nxk7nddl0bn1k"))))
+                "0x7r287gz3ls3cr1g9bnvyj7i3m2fksay2h1idvq5x5kvjr1x0pk"))))
     (properties `((upstream-name . "ClusBoot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClusBoot")
-    (synopsis "Bootstrap Clustering")
+    (synopsis
+     "Bootstrap a Clustering Solution to Establish the Stability of the Clusters")
     (description
-     "Clustering algorithms are designed to cluster objects into a number of clusters.
- Any clustering algorithm provides the best grouping of objects according to
-some criterion.  This does not guarantee a good clustering solution in the sense
-that some allocations were not simply the result of chance.  This package allows
-the user to apply any clustering algorithm to a data set.  The cluster
-allocations are subjected to a bootstrap analysis to determine the extent to
-which the clustering structure is stable and fundamental to the data set.  For
-more information see
-<https://slubbe.wixsite.com/academic-cv/conference-presentations>.")
-    (license license:agpl3)))
+     "Providing a cluster allocation for n samples, either with an $n \\times p$ data
+matrix or an $n \\times n$ distance matrix, a bootstrap procedure is performed.
+The proportion of bootstrap replicates where a pair of samples cluster in the
+same cluster indicates who tightly the samples in a particular cluster clusters
+together.")
+    (license license:expat)))
 
 (define-public r-clump
   (package
@@ -28375,16 +28374,40 @@ among any subset of the hypotheses of interest, using the methods of Goeman and
 Solari (2011) <doi:10.1214/11-STS356>.")
     (license license:gpl2+)))
 
+(define-public r-chernoffdist
+  (package
+    (name "r-chernoffdist")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ChernoffDist" version))
+              (sha256
+               (base32
+                "0jyi0l29wqzrzgdlp3cbp8sdvi70rqzicy1wvb73anxa5r9pvjlf"))))
+    (properties `((upstream-name . "ChernoffDist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gsl))
+    (home-page "https://cran.r-project.org/package=ChernoffDist")
+    (synopsis "Chernoff's Distribution")
+    (description
+     "Computes Chernoff's distribution based on the method in Piet Groeneboom & Jon A
+Wellner (2001) Computing Chernoff's Distribution, Journal of Computational and
+Graphical Statistics, 10:2, 388-400, <doi:10.1198/10618600152627997>.
+Chernoff's distribution is defined as the distribution of the maximizer of the
+two-sided Brownian motion minus quadratic drift.  That is, Z = argmax
+(B(t)-t^2).")
+    (license license:gpl3)))
+
 (define-public r-chemospecutils
   (package
     (name "r-chemospecutils")
-    (version "1.0.2")
+    (version "1.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ChemoSpecUtils" version))
               (sha256
                (base32
-                "0px9aqkkpkhcnjjan22cr43d1qrgrkb2fgdam5cpmv1cfygckwvj"))))
+                "1y1sbsh60kv33b4hnb1r15z8q6hx21zsfmyq8aw3cby5q1my2hj3"))))
     (properties `((upstream-name . "ChemoSpecUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-magrittr r-ggrepel r-ggplot2
@@ -29876,6 +29899,30 @@ or concave regression surface with triangle splines without additivity
 assumptions.  See Liao X, Meyer MC (2019)<doi:10.18637/jss.v089.i05> for more
 details.")
     (license license:gpl2+)))
+
+(define-public r-cgalpolygons
+  (package
+    (name "r-cgalpolygons")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "cgalPolygons" version))
+              (sha256
+               (base32
+                "13gj0wkpcs51zpvas8rai8wk0wpvmkz91x9r99qfaz4fwzq692aj"))))
+    (properties `((upstream-name . "cgalPolygons")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-r6 r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/cgalPolygons")
+    (synopsis "R6 Based Utilities for Polygons using 'CGAL'")
+    (description
+     "This package provides some utilities for polygons: area calculation,
+decomposition into convex parts, Minkowski addition, Boolean operations, and
+more.  Polygons with holes are supported.  The algorithms are performed by the
+C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
 
 (define-public r-cgalmeshes
   (package
@@ -34956,13 +35003,13 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "0.8.0")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CAST" version))
               (sha256
                (base32
-                "05faq7p8d4x1i174s2ig27ybd89i30d72kalsaaf2qjfsimjfp42"))))
+                "1c38zq5h4f123kr4dx3nq3zcvys7jq6srpksm49jzv9yf2bnhf3k"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

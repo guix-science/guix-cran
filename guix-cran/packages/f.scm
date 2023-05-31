@@ -11363,6 +11363,32 @@ power system.  get_data() function holds the main application logic to retrieve
 time-series data.  API calls require free user account registration.")
     (license license:expat)))
 
+(define-public r-finnet
+  (package
+    (name "r-finnet")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "FinNet" version))
+              (sha256
+               (base32
+                "1xlhjxhw5pn7dwjzfxvqhrwng8hzii1hag8x9d9h02bdv5y02pjr"))))
+    (properties `((upstream-name . "FinNet")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://fatelarico.github.io/FinNet.html")
+    (synopsis "Quickly Build and Manipulate Financial Networks")
+    (description
+     "Providing classes, methods, and functions to deal with financial networks.
+Users can easily store information about both physical and legal persons by
+using pre-made classes that are studied for integration with scraping packages
+such as rvest and RSelenium'.  Moreover, the package assists in creating various
+types of financial networks depending on the type of relation between its units
+depending on the relation under scrutiny (ownership, board interlocks, etc.),
+the desired tie type (valued or binary), and renders them in the most common
+formats (adjacency matrix, incidence matrix, edge list, igraph', network').")
+    (license license:gpl3+)))
+
 (define-public r-finity
   (package
     (name "r-finity")
@@ -12466,20 +12492,19 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.5.3")
+    (version "3.5.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FIESTA" version))
               (sha256
                (base32
-                "031mqn4v0w4nl3wp9ns9kr1z8vqg865zxqn2vmchalh4ain8m6bc"))))
+                "1bq292msy0wssc0rysm0w9lw86b70sa3gzya68qb6ik5g0zs8sqh"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
                              r-sf
                              r-rsqlite
-                             r-rgdal
-                             r-largelist
+                             r-gdalraster
                              r-fiestautils
                              r-dbi
                              r-data-table))
@@ -13262,6 +13287,33 @@ for solving binary classification problems.  FFTs can be preferable to more
 complex algorithms because they require very little information, are easy to
 understand and communicate, and are robust against overfitting.")
     (license license:cc0)))
+
+(define-public r-ffstream
+  (package
+    (name "r-ffstream")
+    (version "0.1.7.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ffstream" version))
+              (sha256
+               (base32
+                "0xc549sp443isn3rk96m28wsrsg66qzsvz51nx9bykjzi3zy5wjk"))))
+    (properties `((upstream-name . "ffstream")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ffstream")
+    (synopsis
+     "Forgetting Factor Methods for Change Detection in Streaming Data")
+    (description
+     "An implementation of the adaptive forgetting factor scheme described in Bodenham
+and Adams (2016) <doi:10.1007/s11222-016-9684-8> which adaptively estimates the
+mean and variance of a stream in order to detect multiple changepoints in
+streaming data.  The implementation is in C++ and uses Rcpp'.  Additionally,
+implementations of the fixed forgetting factor scheme from the same paper, as
+well as the classic cumulative sum ('CUSUM') and exponentially weighted moving
+average ('EWMA') methods, are included.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ffsimulator
   (package
@@ -15431,13 +15483,13 @@ Medicine, <doi:10.1002/sim.7582>.")
 (define-public r-fcps
   (package
     (name "r-fcps")
-    (version "1.3.1")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FCPS" version))
               (sha256
                (base32
-                "05jzjzhr2ih0y1hr364ajsvjxs01ryw6b1ixv1gfwvll6fb07kcb"))))
+                "1zawlzyznmp5fk2c0p86ivgj8b3pfc97i0vrzm6zalgdin0lcvgr"))))
     (properties `((upstream-name . "FCPS")))
     (build-system r-build-system)
     (inputs (list pandoc))

@@ -16395,13 +16395,13 @@ mlr3 is loaded.")
 (define-public r-mlr3benchmark
   (package
     (name "r-mlr3benchmark")
-    (version "0.1.5")
+    (version "0.1.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mlr3benchmark" version))
               (sha256
                (base32
-                "052siwkg1cd38bxvhhfh5bzl10z2mxyrga4kzk7sj2giivcai8g0"))))
+                "1bhn0lm0k9dm9mbji6cwgqkwsa1qg928fbjs8chra9s3d3bzcb0x"))))
     (properties `((upstream-name . "mlr3benchmark")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mlr3misc r-ggplot2 r-data-table
@@ -20807,13 +20807,13 @@ banks.")
 (define-public r-mirt
   (package
     (name "r-mirt")
-    (version "1.38.1")
+    (version "1.39")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mirt" version))
               (sha256
                (base32
-                "124gnfkj1c901slq1fr5a59yzg2gq0wxgg4vnwxpdr62rcry6mmj"))))
+                "0ww16acxwa2qyg69n1ilh25bg871azbhck6m6ga9bhm82ydf5lkr"))))
     (properties `((upstream-name . "mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -22651,13 +22651,13 @@ described in Zinn (2014) <doi:10.34196/IJM.00105>.")
 (define-public r-microsoft365r
   (package
     (name "r-microsoft365r")
-    (version "2.3.4")
+    (version "2.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Microsoft365R" version))
               (sha256
                (base32
-                "1vra4g8xgpvy1i6ny1rkvi7xsc0za7i6dsldlbnf6mh5jqi3nhsm"))))
+                "0vcp8nhphl9yp4rp53nvkm82zqmn1jsc9m6agxmmsqby8795p7h1"))))
     (properties `((upstream-name . "Microsoft365R")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -31814,6 +31814,36 @@ user in making the decision for the chosen test.")
 parameters in a generalized linear model.  Multiple tests and simultaneous
 confidence intervals are provided.")
     (license license:gpl2+)))
+
+(define-public r-mcpmodpack
+  (package
+    (name "r-mcpmodpack")
+    (version "0.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MCPModPack" version))
+              (sha256
+               (base32
+                "00s5jx0affbphrl61i9x7vpccjbgnwskc4ly7kg7xff58i96fkri"))))
+    (properties `((upstream-name . "MCPModPack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-officer
+                             r-mvtnorm
+                             r-flextable
+                             r-devemf))
+    (home-page "https://github.com/medianasoft/MCPModPack")
+    (synopsis "Simulation-Based Design and Analysis of Dose-Finding Trials")
+    (description
+     "An efficient implementation of the MCPMod (Multiple Comparisons and Modeling)
+method to support a simulation-based design and analysis of dose-finding trials
+with normally distributed, binary and count endpoints (Bretz et al. (2005)
+<doi:10.1111/j.1541-0420.2005.00344.x>).")
+    (license license:gpl3)))
 
 (define-public r-mcpmodgeneral
   (package

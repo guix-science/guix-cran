@@ -2952,23 +2952,23 @@ events and competing risks.  See MoriÃ±a D, Navarro A. (2014)
 (define-public r-survsens
   (package
     (name "r-survsens")
-    (version "0.1.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "survSens" version))
               (sha256
                (base32
-                "1s4s5l31yps93s2zdxpidkdg8kmmwj6vb3zfndmnxvc07arwhvbv"))))
+                "08xh0jh99xq8lnw8xskmyan78mbk3n2sbjrfpwz7zwmfx4wbip35"))))
     (properties `((upstream-name . "survSens")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-ggplot2 r-directlabels))
+    (propagated-inputs (list r-survival r-reshape2 r-metr r-interp r-ggplot2))
     (home-page "https://github.com/Rong0707/survSens")
     (synopsis "Sensitivity Analysis with Time-to-Event Outcomes")
     (description
      "This package performs a dual-parameter sensitivity analysis of treatment effect
 to unmeasured confounding in observational studies with either survival or
-competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2019)
-<arXiv:1908.01444>.")
+competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
+<doi:10.1002/sim.8672>.")
     (license license:gpl2)))
 
 (define-public r-survrm2perm
@@ -9793,13 +9793,13 @@ values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "0.9.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "stevedata" version))
               (sha256
                (base32
-                "1gsi59f372d0n3ddl97svzhdw5hdnknia9yd5c6bqg53malrfvp0"))))
+                "18d6by3qb6xrlxs70hzfln5y5wxhd0zjvnc3rc7a2cz9qc2cln0w"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -36338,6 +36338,29 @@ can be used iteratively.")
     (description "Print function signatures and find overly complicated code.")
     (license (license:fsdg-compatible "Unlimited"))))
 
+(define-public r-siftr
+  (package
+    (name "r-siftr")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "siftr" version))
+              (sha256
+               (base32
+                "1r2vgrk02i6q0wbql94a3li6l0nj51n9kdlarn712jl1l4mq3699"))))
+    (properties `((upstream-name . "siftr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fastdigest r-cli))
+    (home-page "https://github.com/DesiQuintans/siftr")
+    (synopsis "Fuzzily Search a Dataframe to Find Relevant Columns")
+    (description
+     "Analysts who change projects frequently know that it can be hard to find the
+right column in an unfamiliar dataframe, especially when the dataframe spans
+hundreds of columns and millions of rows.  siftr is an interactive tool that
+finds relevant columns by fuzzily searching through a dataframe's column names,
+labels, factor levels, and unique values.")
+    (license license:expat)))
+
 (define-public r-sift
   (package
     (name "r-sift")
@@ -36891,13 +36914,13 @@ testing, see the book by Lehmann and Romano (2005) <doi:10.1007/0-387-27605-X>."
 (define-public r-shroomdk
   (package
     (name "r-shroomdk")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "shroomDK" version))
               (sha256
                (base32
-                "1kan97jfizprx3zrsdhp59s4j5dcjj4rqx7na5d7qspk7gc7g08p"))))
+                "0654pcj087zh7rfqwa87g9y1w5mxfw3vgqha4afnx2ak9s2wm40y"))))
     (properties `((upstream-name . "shroomDK")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -47563,13 +47586,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SDPDmod" version))
               (sha256
                (base32
-                "1gzkaa1rr6dfzpf6fv16hxwfz34cd9jdvizacfssmx7dg5ad6prr"))))
+                "1xasqx6alza9290a97an2dqnsab7x5av8nhv2zczi670443k2pcp"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep

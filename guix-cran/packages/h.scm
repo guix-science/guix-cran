@@ -9554,6 +9554,40 @@ challenge.  Methods used in the package refer to James Y. Dai, Janet L. Stanford
 & Michael LeBlanc (2020) <doi:10.1080/01621459.2020.1765785>.")
     (license license:expat)))
 
+(define-public r-hdmfa
+  (package
+    (name "r-hdmfa")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "HDMFA" version))
+              (sha256
+               (base32
+                "01gsz862m038y0b4y5aqq08n5514cjz9lxvqh0ybv2rd4gjmvnxs"))))
+    (properties `((upstream-name . "HDMFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-mass))
+    (home-page "https://cran.r-project.org/package=HDMFA")
+    (synopsis "High-Dimensional Matrix Factor Analysis")
+    (description
+     "Hign-dimensional matrix factor models have drawn much attention in view of the
+fact that observations are usually well structured to be an array such as in
+macroeconomics and finance.  In addition, data often exhibit heavy-tails and
+thus it is also important to develop robust procedures.  We aim to address this
+issue by replacing the least square loss with Huber loss function.  We propose
+two algorithms to do robust factor analysis by considering the Huber loss.  One
+is based on minimizing the Huber loss of the idiosyncratic error's Frobenius
+norm, which leads to a weighted iterative projection approach to compute and
+learn the parameters and thereby named as Robust-Matrix-Factor-Analysis (RMFA),
+see the details in He et al. (2023)<doi:10.1080/07350015.2023.2191676>.  The
+other one is based on minimizing the element-wise Huber loss, which can be
+solved by an iterative Huber regression algorithm (IHR).  In this package, we
+also provide the algorithm for alpha-PCA by Chen & Fan (2021)
+<doi:10.1080/01621459.2021.1970569>, the Projected estimation (PE) method by Yu
+et al. (2022)<doi:10.1016/j.jeconom.2021.04.001>.  In addition, the methods for
+determining the pair of factor numbers are also given.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-hdmed
   (package
     (name "r-hdmed")
@@ -11670,6 +11704,28 @@ patterns.")
      "This package provides methods for implementing hierarchical age length keys to
 estimate fish ages from lengths using data borrowing.  Users can create
 hierarchical age length keys and use them to assign ages given length.")
+    (license license:expat)))
+
+(define-public r-halfmoon
+  (package
+    (name "r-halfmoon")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "halfmoon" version))
+              (sha256
+               (base32
+                "19pclcrcbmmf1b1q2dhwh17a67xif992y3w6685si5bn0ripsj6h"))))
+    (properties `((upstream-name . "halfmoon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidysmd r-tidyselect r-ggplot2 r-cli))
+    (home-page "https://github.com/r-causal/halfmoon")
+    (synopsis "Techniques to Build Better Balance")
+    (description
+     "Build better balance in causal inference models.  halfmoon helps you assess
+propensity score models for balance between groups using metrics like
+standardized mean differences and visualization techniques like mirrored
+histograms.  halfmoon supports both weighting and matching techniques.")
     (license license:expat)))
 
 (define-public r-halfcircle
