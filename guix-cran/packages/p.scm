@@ -6921,29 +6921,41 @@ hybridization and next generation sequence experiments.")
 (define-public r-probably
   (package
     (name "r-probably")
-    (version "0.1.0")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "probably" version))
               (sha256
                (base32
-                "1m4gf5059bd6vmi5f3cn0amwzny6rd440q692bdya0ysklp2hk5l"))))
+                "08s8zv5m9q93i3wxqbdjkgm1jipb49i58jshj3n09kl4qzm9ncay"))))
     (properties `((upstream-name . "probably")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-withr
                              r-vctrs
+                             r-tune
                              r-tidyselect
+                             r-tidyr
                              r-rlang
-                             r-magrittr
+                             r-purrr
+                             r-pillar
+                             r-hardhat
+                             r-ggplot2
                              r-generics
-                             r-dplyr))
+                             r-furrr
+                             r-dplyr
+                             r-cli
+                             r-butcher))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/probably/")
     (synopsis "Tools for Post-Processing Class Probability Estimates")
     (description
      "Models can be improved by post-processing class probabilities, by:
 recalibration, conversion to hard probabilities, assessment of equivocal zones,
-and other activities.  probably contains tools for conducting these operations.")
+and other activities.  probably contains tools for conducting these operations
+as well as calibration tools and conformal inference techniques for regression
+models.")
     (license license:expat)))
 
 (define-public r-proae
@@ -12378,6 +12390,40 @@ from the Portal Project.  Portal is a long-term (and ongoing) experimental
 monitoring site in the Chihuahua desert.  The raw data files can be found at
 <https://github.com/weecology/portaldata>.")
     (license license:expat)))
+
+(define-public r-portalhacienda
+  (package
+    (name "r-portalhacienda")
+    (version "0.1.7")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "PortalHacienda" version))
+              (sha256
+               (base32
+                "0qxx4s5z0gsnymhbqxsw0hnp2jgqgq48iqdlanvzn5hgd92nhhiq"))))
+    (properties `((upstream-name . "PortalHacienda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-timetk
+                             r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-forecast
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fmgarciadiaz/PortalHacienda-CRAN")
+    (synopsis "Acceder Con R a Los Datos Del Portal De Hacienda")
+    (description
+     "Obtener listado de datos, acceder y extender series del Portal de Datos de
+Hacienda.Las proyecciones se realizan con forecast', Hyndman RJ, Khandakar Y
+(2008) <doi:10.18637/jss.v027.i03>.  Search, download and forecast time-series
+from the Ministry of Economy of Argentina.  Forecasts are built with the
+forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
+    (license license:gpl3)))
 
 (define-public r-port4me
   (package
@@ -25494,16 +25540,16 @@ considered.")
 (define-public r-peramo
   (package
     (name "r-peramo")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "peramo" version))
               (sha256
                (base32
-                "19mbaglafi77zfhnlsjlxs67jikw8jmairjjw0qaziyw5i2p3ygg"))))
+                "0ngzf6piglr00r4i1m3r9mvlw67hs96lbfxv832vwisf631fdvlf"))))
     (properties `((upstream-name . "peramo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-lme4 r-dplyr))
+    (propagated-inputs (list r-parameters r-magrittr r-lme4 r-emmeans r-dplyr))
     (home-page "https://cran.r-project.org/package=peramo")
     (synopsis "Permutation Tests for Randomization Model")
     (description
@@ -32512,51 +32558,6 @@ coef_map, coef_omit, coef_rename, gof_map, and gof_omit from modelsummary to
 clean the table, and additionally, add a row for the mean of the dependent
 variable without external manipulation.")
     (license license:gpl3+)))
-
-(define-public r-panelr
-  (package
-    (name "r-panelr")
-    (version "0.7.7")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "panelr" version))
-              (sha256
-               (base32
-                "0w3kzh2r6qshh1dmjafd5q92x26rc027mcm0vk570l4l39w05fpq"))))
-    (properties `((upstream-name . "panelr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lmertest
-                             r-lme4
-                             r-jtools
-                             r-ggplot2
-                             r-formula
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://panelr.jacob-long.com")
-    (synopsis
-     "Regression Models and Utilities for Repeated Measures and Panel Data")
-    (description
-     "This package provides an object type and associated tools for storing and
-wrangling panel data.  Implements several methods for creating regression models
-that take advantage of the unique aspects of panel data.  Among other
-capabilities, automates the \"within-between\" (also known as \"between-within\" and
-\"hybrid\") panel regression specification that combines the desirable aspects of
-both fixed effects and random effects econometric models and fits them as
-multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
-2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
-generalized estimating equations (GEE; McNeish, 2019
-<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
-supported via Stan'.  Supports estimation of asymmetric effects models via first
-differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
-generalized linear model extension thereof using GEE.")
-    (license license:expat)))
 
 (define-public r-panelpomp
   (package

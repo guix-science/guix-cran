@@ -7,7 +7,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages java)
   #:use-module (gnu packages image)
@@ -18,6 +17,7 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages backup)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages tcl)
@@ -102,7 +102,7 @@ decoding.  The method is fully described in Druet and Gautier (2017)
                 "1d05jw6ljk5qyv28f0ggvw8nd6hawsgmnk0i9dh902lkkzv158jm"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=rzmq")
     (synopsis "R Bindings for 'ZeroMQ'")
@@ -897,6 +897,26 @@ data, and converting degrees, minutes, and seconds latitude and longitude
 coordinates to decimal degrees.")
     (license license:gpl3+)))
 
+(define-public r-rwisp
+  (package
+    (name "r-rwisp")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rwisp" version))
+              (sha256
+               (base32
+                "0kks17xdvzxh3q83khaagzacd2xszchjk87lfmdhgcd8hb1kf59d"))))
+    (properties `((upstream-name . "rwisp")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rwisp")
+    (synopsis "WISP Multiple Criteria Sorting Method")
+    (description
+     "Implementation of the Integrated Simple Weighted Sum Product Method (WISP), a
+multiple criteria sorting method create by Dragisa Stanujkic (2021)
+<doi:10.1109/TEM.2021.3075783>.")
+    (license license:gpl3+)))
+
 (define-public r-rwishart
   (package
     (name "r-rwishart")
@@ -1417,7 +1437,7 @@ performance.")
                 "13c6d8n0v44xcvd46id48qgih9bw3hpnp6k4byvln9qjd9ji3pgy"))))
     (properties `((upstream-name . "RVowpalWabbit")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (propagated-inputs (list r-rcpp))
     (home-page "https://vowpalwabbit.org/")
     (synopsis "R Interface to the Vowpal Wabbit")
@@ -5919,13 +5939,13 @@ mixed effects models.")
 (define-public r-rsmatrix
   (package
     (name "r-rsmatrix")
-    (version "0.2.4")
+    (version "0.2.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "rsmatrix" version))
               (sha256
                (base32
-                "05gkah4fca2a5g5frmvsbjg8sh42swlb8ih3w138py0hh8l4mzr2"))))
+                "08d2qxwkfb3blqdzjq98b42jj6bv0n5dzmk8aqzy1mh8rr9jkps2"))))
     (properties `((upstream-name . "rsmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -14620,13 +14640,13 @@ found in Alfons, Ates, and Groenen (2022) <doi:10.18637/jss.v103.i13>.")
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "2.3.2")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RoBMA" version))
               (sha256
                (base32
-                "0px52w7rv8jpc3wd1k2kvxr4z57a82mh7g7pdqiihlzq8qrk14d1"))))
+                "16wca97m4d1n4dv30fsq9a4cyh5mm9g96zjyh5xw4dlgylvj62f6"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -14636,7 +14656,6 @@ found in Alfons, Ates, and Groenen (2022) <doi:10.18637/jss.v103.i13>.")
                              r-rdpack
                              r-mvtnorm
                              r-ggplot2
-                             r-coda
                              r-bayestools))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://fbartos.github.io/RoBMA/")
@@ -14648,11 +14667,11 @@ publication bias).  The RoBMA framework uses Bayesian model-averaging to combine
 the competing meta-analytic models into a model ensemble, weights the posterior
 parameter distributions based on posterior model probabilities and uses Bayes
 factors to test for the presence or absence of the individual components (e.g.,
-effect vs. no effect; BartoÅ¡ et al., 2021, <doi:10.31234/osf.io/kvsp7>; Maier,
-BartoÅ¡ & Wagenmakers, in press, <doi:10.31234/osf.io/u4cns>).  Users can define
-a wide range of non-informative or informative prior distributions for the
-effect size, heterogeneity, and publication bias components (including selection
-models and PET-PEESE).  The package provides convenient functions for summary,
+effect vs. no effect; BartoÅ¡ et al., 2022, <doi:10.1002/jrsm.1594>; Maier,
+BartoÅ¡ & Wagenmakers, 2022, <doi:10.1037/met0000405>).  Users can define a wide
+range of non-informative or informative prior distributions for the effect size,
+heterogeneity, and publication bias components (including selection models and
+PET-PEESE).  The package provides convenient functions for summary,
 visualizations, and fit diagnostics.")
     (license license:gpl3)))
 
@@ -15912,7 +15931,7 @@ enabled by UDUNITS version 2, also from Unidata.")
                 "14fwf4pqdjrrbnf2s9i0dbmqk2xv0mxs3zz1j1pwnm46fiiawa2g"))))
     (properties `((upstream-name . "rnetcarto")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rnetcarto")
     (synopsis
@@ -18777,7 +18796,7 @@ optimization.")
                 "0hzsnrz30429pavf7qghknykah9ks4msb96zwa1xgvqb4zd512dg"))))
     (properties `((upstream-name . "Rlibeemd")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=Rlibeemd")
     (synopsis
@@ -20318,13 +20337,13 @@ service (<https://www.itis.gov/solr_documentation.html>).")
 (define-public r-ritch
   (package
     (name "r-ritch")
-    (version "0.1.18")
+    (version "0.1.19")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RITCH" version))
               (sha256
                (base32
-                "0a3rbjdqsgd5nvd5kifk3gh0j54w8ivfbs9lisk503s779mf94n0"))))
+                "0caz38av3yv2bhysjfqkjndhnzpkk8sr9ivj60qf1vh6w1zbgm51"))))
     (properties `((upstream-name . "RITCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-nanotime r-data-table r-bit64))
@@ -21693,7 +21712,7 @@ The package provides replicability to GarcÃ­a-PortuguÃ©s and Prieto-Tirado
                 "1xb03ir706k2c3y2kpa4dvnz5i0qhm2ghm7syng0kalpdz7swbaw"))))
     (properties `((upstream-name . "ridge")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (home-page "https://github.com/SteffenMoritz/ridge")
     (synopsis
      "Ridge Regression with Automatic Selection of the Penalty Parameter")
@@ -23051,6 +23070,41 @@ a lot of changes between each environment, it just becomes quite cumbersome.")
 <https://developers.google.com/fit/rest/v1/reference/>).")
     (license license:expat)))
 
+(define-public r-rgoogleclassroom
+  (package
+    (name "r-rgoogleclassroom")
+    (version "0.9")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "rgoogleclassroom" version))
+              (sha256
+               (base32
+                "07dnnjvyg07vjz7swldk20wxw6ywkc3a5biaiac3jkirxrc65rqw"))))
+    (properties `((upstream-name . "rgoogleclassroom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-purrr
+                             r-ottrpal
+                             r-openssl
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-attempt
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/datatrail-jhu/rgoogleclassroom")
+    (synopsis "API Wrapper for Google Classroom and Google Forms")
+    (description
+     "This is a Google Forms and Google Classroom API Wrapper for R for managing
+Google Classrooms from R. The documentation for these APIs is here
+<https://developers.google.com/forms/api/guides> .")
+    (license license:gpl3)))
+
 (define-public r-rgoogleanalyticspremium
   (package
     (name "r-rgoogleanalyticspremium")
@@ -23986,6 +24040,45 @@ getting species occurrence records, getting counts of occurrence records, and
 using the GBIF tile map service to make rasters summarizing huge amounts of
 data.")
     (license license:expat)))
+
+(define-public r-rgap
+  (package
+    (name "r-rgap")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "RGAP" version))
+              (sha256
+               (base32
+                "0mc0cwwl6nlrjsgsqpbzzry8rx00fdj26a3g3wa9cw0n8nvh0p54"))))
+    (properties `((upstream-name . "RGAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-openxlsx
+                             r-kfas
+                             r-gridextra
+                             r-ggplot2
+                             r-dlm))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=RGAP")
+    (synopsis "Production Function Output Gap Estimation")
+    (description
+     "The output gap indicates the percentage difference between the actual output of
+an economy and its potential.  Since potential output is a latent process, the
+estimation of the output gap poses a challenge and numerous filtering techniques
+have been proposed.  RGAP facilitates the estimation of a Cobb-Douglas
+production function type output gap, as suggested by the European Commission
+(Havik et al.  2014) <https://ideas.repec.org/p/euf/ecopap/0535.html>.  To that
+end, the non-accelerating wage rate of unemployment (NAWRU) and the trend of
+total factor productivity (TFP) can be estimated in two bivariate unobserved
+component models by means of Kalman filtering and smoothing.  RGAP features a
+flexible modeling framework for the appropriate state-space models and offers
+frequentist as well as Bayesian estimation techniques.  Additional
+functionalities include direct access to the AMECO
+<https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en>
+database and automated model selection procedures.  See the paper by Streicher
+(2022) <http://hdl.handle.net/20.500.11850/552089> for details.")
+    (license license:gpl3)))
 
 (define-public r-rgan
   (package
@@ -27120,13 +27213,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.2")
+    (version "2.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "reproducible" version))
               (sha256
                (base32
-                "097504wd3di0yk70yz8d0jask6dkc131vr0l8ynkfih6bq6pam5d"))))
+                "0sqiw48qzgv89j1nhwbbca4ivq2bcp277qaa435dqnzyln1bfp35"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr r-fpcompare r-filelock r-digest
@@ -27136,18 +27229,17 @@ PROJ library is available at <https://proj.org/>.")
     (synopsis "Enhance Reproducibility of R Code")
     (description
      "This package provides a collection of high-level, machine- and OS-independent
-tools for making deeply reproducible and reusable content in R. The two
-workhorse functions are Cache() and prepInputs().  Cache() allows for nested
-caching, is robust to environments and objects with environments (like
-functions), and has deals with some classes of file-backed R objects e.g., from
-terra and raster packages.  Both functions have been developed to be
-foundational components of data retrieval and processing in continuous workflow
-situations.  In both functions, efforts are made to make the first and
-subsequent calls of functions have the same result, but faster at subsequent
-times by way of checksums and digesting.  Several features are still under
-development, including cloud storage of cached objects, allowing for sharing
-between users.  Several advanced options are available, see
-?reproducibleOptions().")
+tools for making reproducible and reusable content in R. The two workhorse
+functions are Cache() and prepInputs().  Cache() allows for nested caching, is
+robust to environments and objects with environments (like functions), and has
+deals with some classes of file-backed R objects e.g., from terra and raster
+packages.  Both functions have been developed to be foundational components of
+data retrieval and processing in continuous workflow situations.  In both
+functions, efforts are made to make the first and subsequent calls of functions
+have the same result, but faster at subsequent times by way of checksums and
+digesting.  Several features are still under development, including cloud
+storage of cached objects, allowing for sharing between users.  Several advanced
+options are available, see ?reproducibleOptions().")
     (license license:gpl3)))
 
 (define-public r-reproducer
@@ -28673,16 +28765,21 @@ family of distributions.  arXiv preprint <arXiv:2112.09319>.")
 (define-public r-relimppcr
   (package
     (name "r-relimppcr")
-    (version "0.2.4")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "RelimpPCR" version))
               (sha256
                (base32
-                "0svfyh313wawzqx9hfb4cg0wn2ir6nd769z1k3dckdsb8d7xkh3q"))))
+                "04ab20clx9hdk1mi3rvkkaqaxypyb27w5d90y3qpnxhgy1bjqs6r"))))
     (properties `((upstream-name . "RelimpPCR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmisc r-reshape2 r-relaimpo r-ggplot2 r-caret))
+    (propagated-inputs (list r-rmisc
+                             r-reshape2
+                             r-relaimpo
+                             r-logger
+                             r-ggplot2
+                             r-caret))
     (home-page "https://github.com/mhernan88/RelimpPCR")
     (synopsis "Relative Importance PCA Regression")
     (description
@@ -34183,7 +34280,7 @@ more details on the package, see the paper by You and Shung (2022)
                 "1djgy6al9f92i295bzc65lny7lz8gpk5js6hmfbflwfwcl9wg05b"))))
     (properties `((upstream-name . "RDieHarder")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (home-page "https://github.com/eddelbuettel/rdieharder")
     (synopsis "R Interface to the 'DieHarder' RNG Test Suite")
     (description
@@ -36547,7 +36644,7 @@ president quotes.")
                 "0zjkjvyqq76lyg61y0cd71v6yzyavqwv8zqw3fpky7jwv7szmnii"))))
     (properties `((upstream-name . "rcontroll")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-vroom
                              r-viridis
                              r-tidyr
@@ -45710,7 +45807,7 @@ by incorporating HTML hex codes.")
                 "1nlb2fshc5g53yqbq92z899mv9rknwah0p0s2l5r0rzp3v2np5yd"))))
     (properties `((upstream-name . "R2SWF")))
     (build-system r-build-system)
-    (inputs (list zlib zlib libpng freetype))
+    (inputs (list zlib libpng freetype))
     (propagated-inputs (list r-sysfonts))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/yixuan/R2SWF")
@@ -46468,13 +46565,13 @@ back regression coefficients.")
 (define-public r-r02pro
   (package
     (name "r-r02pro")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "r02pro" version))
               (sha256
                (base32
-                "1zciq86wpykvbd6zmh8b83dl4vpz53isi6hbbrz0h48sqb1g2006"))))
+                "1w8vq6ldhvvpcw6kq1nrfrr15ji5zc5p7nhqcr03ixw4qc20lx9w"))))
     (properties `((upstream-name . "r02pro")))
     (build-system r-build-system)
     (propagated-inputs (list r-learnr))
@@ -46554,37 +46651,6 @@ lexical summary, terms co-occurrences and documents similarity measures, graphs
 of terms, correspondence analysis and hierarchical clustering.  Corpora can be
 imported from spreadsheet-like files, directories of raw text files, as well as
 from Dow Jones Factiva', LexisNexis', Europresse and Alceste files.")
-    (license license:gpl2+)))
-
-(define-public r-r-sambada
-  (package
-    (name "r-r-sambada")
-    (version "0.1.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "R.SamBada" version))
-              (sha256
-               (base32
-                "020f7fy0w6hy3gh5i8icny7gdgz6g29zr26b6pjglq0nsyxk8wc0"))))
-    (properties `((upstream-name . "R.SamBada")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-gdsfmt))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=R.SamBada")
-    (synopsis "Processing Pipeline for 'SamBada' from Pre- To Post-Processing")
-    (description
-     "Processing pipeline for SamBada from pre- to post-processing.  SamBada is a
-landscape genomic software designed to run univariate or multivariate logistic
-regression between the presence of a genotype and one or several environmental
-variables.  See Stucki (2017) <doi:10.1111/1755-0998.12629> and
-<https://github.com/Sylvie/sambada>.  The package provides functions that can be
-classified into four categories: 1) Install SamBada 2) Preprocessing (prepare
-genomic file into standards compatible with SamBada and apply quality-control;
-retrieve environmental conditions at sampling location; prepare environmental
-file including removal of correlated variables and computation of population
-structure) 3) Processing (run SamBada on multiple cores using Supervision') 4)
-Post-processing (calculate p-values and q-values, produce interactive Manhattan
-plots and query Ensembl database, produce maps).")
     (license license:gpl2+)))
 
 (define-public r-r-proxy

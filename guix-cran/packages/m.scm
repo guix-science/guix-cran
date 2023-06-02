@@ -14,18 +14,16 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gl)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages c)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2963,13 +2961,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.8")
+    (version "0.8.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MultiscaleDTM" version))
               (sha256
                (base32
-                "12rsfmh2kq7lv205rin1lyzvrwd8r5jf2kw69as693rk04v1swil"))))
+                "0p9gym2db7y126glj0r2shcqpirfvykrvc5nma715vsiv9ymx9sh"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -2984,10 +2982,8 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
     (synopsis "Multi-Scale Geomorphometric Terrain Attributes")
     (description
      "Calculates multi-scale geomorphometric terrain attributes from regularly gridded
-digital terrain models using a variable focal windows size (Misiuk et al. (2021)
-<doi:10.1080/01490419.2021.1925789>; Wilson et al. (2007)
-<doi:10.1080/01490410701295962>; Wood (1996)
-<https://hdl.handle.net/2381/34503>).")
+digital terrain models using a variable focal windows size (Ilich et al. (2023)
+<doi:10.1111/tgis.13067>).")
     (license license:gpl3+)))
 
 (define-public r-multis
@@ -3469,13 +3465,13 @@ by Demirtas (2006) <DOI:10.1080/10629360600569246>.")
 (define-public r-multiocc
   (package
     (name "r-multiocc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "multiocc" version))
               (sha256
                (base32
-                "1a3k5mqhx4d9p8cs76cngjmqilgh5jdmdf4k5hjx11pbrf6gknkl"))))
+                "1ndwky6rjyb7x0mg2xx5lsxr5yyhg7a9jrwmwryjg6jsw23965qx"))))
     (properties `((upstream-name . "multiocc")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-tmvtnorm r-mass r-interp r-coda))
@@ -11042,7 +11038,7 @@ including two spin-off functions for unimodal and bivariate monotone regression
                 "1ra6mnn9m3989h6pcrpfhv5bl4q5i6856w4wp6lmaxipr6swlnk2"))))
     (properties `((upstream-name . "monoreg")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (home-page "https://cran.r-project.org/package=monoreg")
     (synopsis
      "Bayesian Monotonic Regression Using a Marked Point Process Construction")
@@ -11378,7 +11374,7 @@ database.")
                 "1x05w1ln1syi0b61q9gjpjdavn3g7bidhcrb82z9icwwxmxwrhaz"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
-    (inputs (list zlib openssl openssl))
+    (inputs (list r-openssl openssl))
     (propagated-inputs (list r-openssl r-mime r-jsonlite))
     (native-inputs (list pkg-config))
     (home-page
@@ -18262,7 +18258,7 @@ fitted density or probability mass function of the mixture model.")
                 "16ydhsgssd5jbhf03llxy2gjhv3h3bqi01s45jcb9dwc3mbd306b"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp r-lattice r-bh))
     (home-page "https://cran.r-project.org/package=mixture")
     (synopsis "Mixture Models for Clustering and Classification")
@@ -21087,6 +21083,32 @@ imputation of the number of previous episodes.  See HernÃ¡ndez-Herrera G,
 MoriÃ±a D, Navarro A. (2020) <arXiv:2007.15031>.")
     (license license:gpl2+)))
 
+(define-public r-mirai-promises
+  (package
+    (name "r-mirai-promises")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "mirai.promises" version))
+              (sha256
+               (base32
+                "1f7h0i0imz27fs58zcf78limqs3m41l7arhhcajprflki8ifwr6n"))))
+    (properties `((upstream-name . "mirai.promises")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-promises r-mirai r-later))
+    (home-page "https://github.com/shikokuchuo/mirai.promises/")
+    (synopsis "Make 'Mirai' 'Promises'")
+    (description
+     "Allows mirai objects encapsulating asynchronous computations, from the mirai
+package by Gao (2023) <doi:10.5281/zenodo.7912722>, to be used interchangeably
+with promise objects from the promises package by Cheng (2021)
+<https://CRAN.R-project.org/package=promises>.  This facilitates their use with
+packages plumber by Schloerke and Allen (2022)
+<https://CRAN.R-project.org/package=plumber> and shiny by Cheng, Allaire,
+Sievert, Schloerke, Xie, Allen, McPherson, Dipert and Borges (2022)
+<https://CRAN.R-project.org/package=shiny>.")
+    (license license:gpl3+)))
+
 (define-public r-mirai
   (package
     (name "r-mirai")
@@ -23402,23 +23424,28 @@ well as being simple to run in parallel.")
 (define-public r-micemd
   (package
     (name "r-micemd")
-    (version "1.8.0")
+    (version "1.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "micemd" version))
               (sha256
                (base32
-                "1vds5199bv3lgpn3qzra6gakvabyz6a83p55xjxgs9zk9chgf9yw"))))
+                "00biwwdqwj5szf969x2gf7ydba8g5d3z410avxcgi2blxdh0rza1"))))
     (properties `((upstream-name . "micemd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme
+    (propagated-inputs (list r-pbivnorm
+                             r-nlme
                              r-mvtnorm
                              r-mvmeta
+                             r-mixmeta
                              r-mice
+                             r-mgcv
                              r-matrix
                              r-mass
                              r-lme4
                              r-jomo
+                             r-gjrm
+                             r-ggplot2
                              r-digest
                              r-abind))
     (home-page "https://cran.r-project.org/package=micemd")
@@ -25444,6 +25471,46 @@ bar charts.  Support for laying out multiple charts into a grid layout is also
 provided.  All charts are interactive and many have an option for line, label
 and region annotations.")
     (license license:expat)))
+
+(define-public r-metricgraph
+  (package
+    (name "r-metricgraph")
+    (version "1.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "MetricGraph" version))
+              (sha256
+               (base32
+                "08iywysjr9dwa45s7hnr8mdasdc30zc1lc155sylg37kyhc91d9a"))))
+    (properties `((upstream-name . "MetricGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-sp
+                             r-sf
+                             r-rspde
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidbolin.github.io/MetricGraph/")
+    (synopsis "Random Fields on Metric Graphs")
+    (description
+     "Facilitates creation and manipulation of metric graphs, such as street or river
+networks.  Further facilitates operations and visualizations of data on metric
+graphs, and the creation of a large class of random fields and stochastic
+partial differential equations on such spaces.  These random fields can be used
+for simulation, prediction and inference.  In particular, linear mixed effects
+models including random field components can be fitted to data based on
+computationally efficient sparse matrix representations.  Interfaces to the R
+packages INLA and inlabru are also provided, which facilitate working with
+Bayesian statistical models on metric graphs.  The main references for the
+methods are Bolin, Simas and Wallin (2022) <doi:10.48550/arXiv.2205.06163>,
+Bolin, Kovacs, Kumar and Simas (2023) <doi:10.48550/arXiv.2302.03995> and Bolin,
+Simas and Wallin (2023) <doi:10.48550/arXiv.2304.03190> and
+<doi:10.48550/arXiv.2304.10372>.")
+    (license license:gpl2+)))
 
 (define-public r-metrica
   (package
@@ -30225,13 +30292,13 @@ by Chan, Imai, Yam and Zhang (2016) <arXiv:1601.03501>.")
 (define-public r-mecoturn
   (package
     (name "r-mecoturn")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "mecoturn" version))
               (sha256
                (base32
-                "1wlq0np18halr89x4x15kfy8s6klrikwra9gpy1qm5d50yhdgyg9"))))
+                "1075yh0b0vqdcvqzcc86ic4h9llxdcab2xiqk13q2mrpggzsy9jk"))))
     (properties `((upstream-name . "mecoturn")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-microeco r-magrittr r-ggpubr r-ggplot2))
@@ -31076,43 +31143,6 @@ approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
 <arXiv:1807.05504>.  Ditzhaus, M. and Pauly, M. (2018) <arXiv:1808.05627>.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-mdir
-  (package
-    (name "r-mdir")
-    (version "0.9.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mdir" version))
-              (sha256
-               (base32
-                "0zc5dacyfv1vfr86cyhjrwcmd6pws6sm7pqsw00nlp7b77l1qms5"))))
-    (properties `((upstream-name . "mdir")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-stringr
-                             r-salso
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggplot2))
-    (home-page "https://github.com/stcolema/mdir")
-    (synopsis "Bayesian Model-Based Clustering of Multi-Modal Data")
-    (description
-     "Integrative clustering and semi-supervised prediction.  This package includes a
-C++ implementation of both semi-supervised and unsupervised Multiple Dataset
-Integration (MDI; Kirk et al., 2012
-<https://doi-org.ezp.lib.cam.ac.uk/10.1093/bioinformatics/bts595>), an extension
-of Bayesian mixture models to the integrative (multiple dataset or multi-modal)
-setting such as multi-omics analysis.  The package also includes Bayesian
-mixture models.  Densities allowed within MDI and the mixture model are Gaussian
-with full and diagonal covariance matrices, categorical, Gaussian with a
-Gaussian process (GP) prior on the mean parameter.  The GP model implemented
-canonly handle data with common time points of equal separation.  The Gaussian
-and GP models can be augmented with a global multivariate t distribution to
-handle outliers.")
-    (license license:gpl3)))
-
 (define-public r-mdimnormn
   (package
     (name "r-mdimnormn")
@@ -31399,46 +31429,6 @@ values of the joint and conditional PDFs and CDFs.  Nagao M, Kadoya M (1971)
      "Projection based methods for preprocessing, exploring and analysis of
 multivariate data used in chemometrics.  S. Kucheryavskiy (2020)
 <doi:10.1016/j.chemolab.2020.103937>.")
-    (license license:expat)))
-
-(define-public r-mdapack
-  (package
-    (name "r-mdapack")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "mdapack" version))
-              (sha256
-               (base32
-                "1dfcjh8yax06m890ql0kc2rn539z4xbhw7bq9a8cbrm7jnkq03iq"))))
-    (properties `((upstream-name . "mdapack")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vim
-                             r-testthat
-                             r-spelling
-                             r-roxygen2
-                             r-rmarkdown
-                             r-rlang
-                             r-reshape2
-                             r-pkgbuild
-                             r-openssl
-                             r-mice
-                             r-knitr
-                             r-httr
-                             r-git2r
-                             r-gh
-                             r-ggplot2
-                             r-factominer
-                             r-devtools
-                             r-curl
-                             r-covr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mdapack")
-    (synopsis "Medical Data Analysis Pack")
-    (description
-     "An implementation of functions for medical data analysis which perform basic
-data pre processing, univariate and bivariate analysis.Kirkwood et al. (2003)
-<doi:10.1002/sim.1961>.")
     (license license:expat)))
 
 (define-public r-mdag
@@ -35985,13 +35975,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.0.2")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "MassWateR" version))
               (sha256
                (base32
-                "15zn8rrivl8nbr4s8zfzw8is9x8pvwrvx64x8nxmh2m9499a5wrm"))))
+                "12nhhay7hx6hcqvnrqp0svlgxdk5w992jhsr9xv2yb530pr6jm2j"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -36745,7 +36735,7 @@ test suites.")
                 "1s2c991m11c28xff7h5dg09qzs28f6gizn1frsxqfdddp03x70cg"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
-    (inputs (list tbb))
+    (inputs (list))
     (propagated-inputs (list r-rlang
                              r-rcppparallel
                              r-rcppgsl
@@ -40188,7 +40178,7 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
                 "0zgzns4vjr70p1wczar28dmkx8yms74z7vq1c4k30prjfsi1335r"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix

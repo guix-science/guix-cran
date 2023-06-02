@@ -11,7 +11,6 @@
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages fontutils)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages haskell-xyz)
@@ -1947,13 +1946,13 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubeau
   (package
     (name "r-hubeau")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hubeau" version))
               (sha256
                (base32
-                "1d98wpm1xxqbnzalhsipkfs23nvqv942wxlcj7gr6ma8dry46i82"))))
+                "0qvvd1a4plmhm6784xda75pn6751hjabr2x6i2h5y8hh85zidldy"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -2097,7 +2096,7 @@ requests'.  Designed to work with httr'.")
                 "1vns7bqzlgsgl45l4ijd14xh615ndf0q12i6jaxll00ayymf7gvd"))))
     (properties `((upstream-name . "httpgd")))
     (build-system r-build-system)
-    (inputs (list zlib libpng freetype fontconfig cairo))
+    (inputs (list libpng freetype fontconfig cairo))
     (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/nx10/httpgd")
@@ -4891,13 +4890,13 @@ accommodated in the univariate setting.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.4.0")
+    (version "1.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "hmer" version))
               (sha256
                (base32
-                "0whic6j78c58117iyxs3bc9f7ai3f6gnxcq84vjvb5g67g0kmz14"))))
+                "0q2sgkf1xwnnjgn6g4h87wamkjj0fyxwb12yvx559rhjy3sp3h8j"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -7253,7 +7252,7 @@ included in the scripts directory of the package.")
                 "0m3h5zwdnj4l7i6nh0mrjj4wprajgazninzffxpy14g7fy907ifn"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/HPDell/hgwr/")
     (synopsis "Hierarchical and Geographically Weighted Regression")

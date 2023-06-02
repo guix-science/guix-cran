@@ -9,7 +9,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
@@ -2493,7 +2492,7 @@ original paper; see <doi:10.1177/0962280219842890> and discussed in a tutorial
                 "0s76f1i22cnc5c1dzswflq43qgcpssdkb32xc2j0ajy4r8xak7kz"))))
     (properties `((upstream-name . "island")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=island")
     (synopsis "Stochastic Island Biogeography Theory Made Easy")
@@ -5778,6 +5777,33 @@ data corrected for missed arrival observations.")
 b2)`).  Operators for negation and directional relations also implemented.")
     (license license:gpl2)))
 
+(define-public r-intrinsickappa
+  (package
+    (name "r-intrinsickappa")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "intrinsicKappa" version))
+              (sha256
+               (base32
+                "13m0k1r6l2havl6qi8m6403zkdbma47i29yb6xr9xnyqij2392qz"))))
+    (properties `((upstream-name . "intrinsicKappa")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=intrinsicKappa")
+    (synopsis "Sample Size Planning Based on Intrinsic Kappa Value")
+    (description
+     "Kappa statistics is one of the most used methods to evaluate the effectiveness
+of inpsections based on attribute assessments in industry.  However, its
+estimation by available methods does not provide its \"real\" or \"intrinstic\"
+value.  This package provides functions for the computation of the intrinsic
+kappa value as it is described in: Rafael Sanchez-Marquez, Frank Gerhorst and
+David Schindler (2023) \"Effectiveness of quality inspections of attributive
+characteristics â A novel and practical method for estimating the
+âintrinsicâ value of kappa based on alpha and beta statistics.\"
+<doi:10.1016/j.cie.2023.109006>.")
+    (license license:gpl3+)))
+
 (define-public r-intrinsicfrp
   (package
     (name "r-intrinsicfrp")
@@ -7901,6 +7927,39 @@ condition.  The functions have several variants of operator types, including
 subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
+
+(define-public r-ino
+  (package
+    (name "r-ino")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ino" version))
+              (sha256
+               (base32
+                "138fnw3il9pgbphgp8qhm081sx6agkx1aw2czhigc1namsr0hcqj"))))
+    (properties `((upstream-name . "ino")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-reshape2
+                             r-optimizer
+                             r-mvtnorm
+                             r-glue
+                             r-ggplot2
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-dosnow
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/loelschlaeger/ino")
+    (synopsis "Initialization of Numerical Optimization")
+    (description
+     "Analysis of the initialization for numerical optimization of real-valued
+functions, including likelihood functions of statistical models.")
+    (license license:gpl3+)))
 
 (define-public r-innsight
   (package
@@ -11758,7 +11817,7 @@ smoothing bootstrap resampling.")
                 "1vc8y88ryn0xy67835w9zkknqqdwh5hfrbm193v7dm56yxm0nbf7"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
-    (inputs (list zlib zlib libtiff libjpeg-turbo))
+    (inputs (list zlib libtiff libjpeg-turbo))
     (propagated-inputs (list r-zeallot
                              r-withr
                              r-stringr
@@ -12932,13 +12991,13 @@ files introduced in <doi:10.1021/acs.jproteome.2c00120>.")
 (define-public r-idsl-ipa
   (package
     (name "r-idsl-ipa")
-    (version "2.8")
+    (version "2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "IDSL.IPA" version))
               (sha256
                (base32
-                "172x91234rzg1g5h99zcccqxl4zij7w1dbbi8d1kc9bz8x1wgp0k"))))
+                "05v3bpa7lqn62mb125g3nc6b8726cws521ils8w7qzwlh5ffa8gn"))))
     (properties `((upstream-name . "IDSL.IPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-idsl-mxp))
@@ -13446,43 +13505,6 @@ built-in heat map, but also in GGobi interactive plots and user-supplied plots.
 This is a backport of Qt-based idendro (<https://github.com/tsieger/idendro>) to
 base R graphics and Tcl/Tk GUI.")
     (license license:gpl2)))
-
-(define-public r-idem
-  (package
-    (name "r-idem")
-    (version "5.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "idem" version))
-              (sha256
-               (base32
-                "1i5h0hg76rrxharlfv33kcbwmvkfyfk92wim93dvpkflnbwsmzfl"))))
-    (properties `((upstream-name . "idem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-stanheaders
-                             r-sqldf
-                             r-rstan
-                             r-rcppeigen
-                             r-rcpp
-                             r-mice
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/olssol/idem/")
-    (synopsis
-     "Inference in Randomized Controlled Trials with Death and Missingness")
-    (description
-     "In randomized studies involving severely ill patients, functional outcomes are
-often unobserved due to missed clinic visits, premature withdrawal or death.  It
-is well known that if these unobserved functional outcomes are not handled
-properly, biased treatment comparisons can be produced.  In this package, we
-implement a procedure for comparing treatments that is based on the composite
-endpoint of both the functional outcome and survival.  The procedure was
-proposed in Wang et al. (2016) <DOI:10.1111/biom.12594> and Wang et al. (2020)
-<DOI:10.18637/jss.v093.i12>.  It considers missing data imputation with
-different sensitivity analysis strategies to handle the unobserved functional
-outcomes not due to death.")
-    (license license:gpl3+)))
 
 (define-public r-idefix
   (package

@@ -67,13 +67,13 @@ package is not supported by Zoom (owner of the software).")
 (define-public r-zonohedra
   (package
     (name "r-zonohedra")
-    (version "0.2-1")
+    (version "0.2-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "zonohedra" version))
               (sha256
                (base32
-                "03sbnvyhaq1ldg07g1499n7drvwcgmmwblmc3ccrapwlwaqdsl6b"))))
+                "0bvlrbc3nkaw9pjzl65idw8ybk7frhyihr3cp93jby5rnip8xpyz"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger))

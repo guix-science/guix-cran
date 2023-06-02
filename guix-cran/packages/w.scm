@@ -9,9 +9,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -3078,7 +3076,7 @@ truncated distribution functions.")
                 "0v2kyfr5rm4nbh99ii17qh08i88yv0phyf3d59dxfhq1q8wrl6xb"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (propagated-inputs (list r-procmaps r-lifecycle))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://r-prof.github.io/winch/")
@@ -4194,13 +4192,13 @@ designed for bioinformaticians to assemble complex plots for publication.")
 (define-public r-whatsr
   (package
     (name "r-whatsr")
-    (version "1.0")
+    (version "1.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WhatsR" version))
               (sha256
                (base32
-                "1cc3ylfy9zbg6drx26g9rx3vak72scgwz5p3pl1m176kznypqxsz"))))
+                "12pddpf84miq7693ifv00z41w555fqw110d4ldlgcb7vxyx0rh8m"))))
     (properties `((upstream-name . "WhatsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5003,6 +5001,28 @@ probability plotting as well as the addition of regression lines and confidence
 bounds to existing plots are supported.")
     (license license:gpl2)))
 
+(define-public r-weibullr-plotly
+  (package
+    (name "r-weibullr-plotly")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WeibullR.plotly" version))
+              (sha256
+               (base32
+                "082i7yg3h3ij4mhk4l4ni2pc9bjjh5pcdgq9rzvscrbqrz6iiqnq"))))
+    (properties `((upstream-name . "WeibullR.plotly")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weibullr r-plotly))
+    (home-page "https://paulgovan.github.io/WeibullR.plotly/")
+    (synopsis "Interactive Weibull Probability Plots with 'WeibullR'")
+    (description
+     "Build interactive Weibull Probability Plots with WeibullR by David Silkworth and
+Jurgen Symynck (2022) <https://CRAN.R-project.org/package=WeibullR>, an R
+package for Weibull analysis, and plotly by Carson Sievert (2020)
+<https://plotly-r.com>, an interactive web-based graphing library.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-weibullr-alt
   (package
     (name "r-weibullr-alt")
@@ -5285,7 +5305,7 @@ described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
                 "1ks9cyj39jnb0rkx2ii3ckmpl373m5f8sz0i4q3gk7kkv3js07r8"))))
     (properties `((upstream-name . "websocket")))
     (build-system r-build-system)
-    (inputs (list openssl))
+    (inputs (list r-openssl))
     (propagated-inputs (list r-r6 r-later r-cpp11 r-asioheaders))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://cran.r-project.org/package=websocket")
@@ -5538,13 +5558,13 @@ or webmorph templates.")
 (define-public r-webgestaltr
   (package
     (name "r-webgestaltr")
-    (version "0.4.5")
+    (version "0.4.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebGestaltR" version))
               (sha256
                (base32
-                "02skrnma0q08p32a03yzflf6fpwdc9ldais7pdkjvdnnqf8jvd5h"))))
+                "1xwadw9maj3n9yxm4bv63hx4x1lh6krqhfcnwn2ay6jgwh7y6zxw"))))
     (properties `((upstream-name . "WebGestaltR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -7045,13 +7065,13 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
 (define-public r-watson
   (package
     (name "r-watson")
-    (version "0.3")
+    (version "0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "watson" version))
               (sha256
                (base32
-                "1mxasg8mgmyngb9ln1kz4b3h7zakp4zr0grw0g7bpnfig6np3bby"))))
+                "02wf4nh8gqq0ks9mzv4w1ly194syiixrfr8b6c61m90qwswglx1l"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinflex r-rcpparmadillo r-rcpp))

@@ -14,9 +14,9 @@
   #:use-module (gnu packages docker)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages linux)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -12107,23 +12107,23 @@ with the rest of the inputs.")
 (define-public r-ldlinkr
   (package
     (name "r-ldlinkr")
-    (version "1.2.3")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "LDlinkR" version))
               (sha256
                (base32
-                "1lbrh70jhcfkk3d8mfyv8x7nk5hfw8prxjr7vqxvcmw6ikp6mgiw"))))
+                "0al36cdq7g14fqvxb1c26ih269704f8m0kyky526ravbgf0ydnw1"))))
     (properties `((upstream-name . "LDlinkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://ldlink.nci.nih.gov")
+    (home-page "https://ldlink.nih.gov")
     (synopsis
      "Calculating Linkage Disequilibrium (LD) in Human Population Groups of Interest")
     (description
      "This package provides access to the LDlink API
-(<https://ldlink.nci.nih.gov/?tab=apiaccess>) using the R console.  This
+(<https://ldlink.nih.gov/?tab=apiaccess>) using the R console.  This
 programmatic access facilitates researchers who are interested in performing
 batch queries in 1000 Genomes Project (2015) <doi:10.1038/nature15393> data
 using LDlink'.  LDlink is an interactive and powerful suite of web-based tools
@@ -12882,7 +12882,7 @@ a maximum likelihood estimation method (Proust-Lima, Philipps, Liquet (2017)
                 "07gw8djwm352fmcr78mpqab1w4jpwpwb75cr3ay0nhnadzd9wsfg"))))
     (properties `((upstream-name . "LCMCR")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (home-page "https://cran.r-project.org/package=LCMCR")
     (synopsis "Bayesian Non-Parametric Latent-Class Capture-Recapture")
     (description

@@ -11,11 +11,9 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages curl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1391,7 +1389,7 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
                 "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
-    (inputs (list zlib proj hdf5 gsl))
+    (inputs (list proj hdf5 gsl))
     (propagated-inputs (list r-withr
                              r-rlang
                              r-rcppgsl
@@ -2554,35 +2552,6 @@ forecasts of the visitor counts and percent changes in the visitor counts can be
 made.  A reference for generating social media-based visitor counts can be found
 at Wood, Guerry, Silver, and Lacayo (2013) <doi:10.1038/srep02976>.")
     (license license:gpl3)))
-
-(define-public r-visit
-  (package
-    (name "r-visit")
-    (version "2.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "visit" version))
-              (sha256
-               (base32
-                "0kkspih7m18g5pqlwrxpgjdwqxpp23c3xyvcnvv247abl9aq81rd"))))
-    (properties `((upstream-name . "visit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-sqldf
-                             r-rstan
-                             r-rcppeigen
-                             r-rcpp
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=visit")
-    (synopsis "Phase I Dose Escalation Study Design for Vaccines")
-    (description
-     "This package provides a Bayesian Phase I cancer vaccine trial design is
-implemented in this package.  The design allows simultaneous evaluation of
-safety and immunogenicity outcomes in the context of vaccine studies.  See Wang
-(2019) <DOI:10.1002/sim.8021> for the details of the Phase I cancer vaccine
-trial design.")
-    (license license:gpl3+)))
 
 (define-public r-visielse
   (package
@@ -5327,7 +5296,7 @@ variance of the random noise.")
                 "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
     (properties `((upstream-name . "VBLPCM")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-sna r-network r-mclust r-ergm))
     (home-page "https://www.r-project.org")
     (synopsis "Variational Bayes Latent Position Cluster Model for Networks")
@@ -5807,13 +5776,13 @@ variant information.")
 (define-public r-variskscore
   (package
     (name "r-variskscore")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vaRiskScore" version))
               (sha256
                (base32
-                "1nqm7c0wamr0alp610jdllnzr83bi5cjx1vllza5y458zlcpwnnk"))))
+                "031k19ric26xvrva3rs9894n7ak87h96d2c4ip1lrr0lhhbk3awv"))))
     (properties `((upstream-name . "vaRiskScore")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vaRiskScore")
@@ -6244,13 +6213,13 @@ initializations of cluster centers.")
 (define-public r-varbvs
   (package
     (name "r-varbvs")
-    (version "2.6-8")
+    (version "2.6-10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "varbvs" version))
               (sha256
                (base32
-                "1bn7i1dz6gbmvv6k178l233gnixay32r5n6k2z20lqi2i096a5qa"))))
+                "0sjna51mz433s24dkjcq2aal6ss41gx6xlm2l45rm6s1q1k4m87f"))))
     (properties `((upstream-name . "varbvs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-nor1mix r-matrix r-latticeextra
@@ -6355,7 +6324,7 @@ testing, prediction for stationary vector autoregressive models.")
                 "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
-    (inputs (list zlib proj gdal curl))
+    (inputs (list r-curl proj gdal))
     (propagated-inputs (list r-rcpp r-nanoarrow r-jsonlite))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/hypertidy/vapour")

@@ -16,12 +16,11 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages julia)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages networking)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
@@ -8074,13 +8073,13 @@ marginal Cox model, proposed by Wang et al. (under review).")
 (define-public r-coxaipw
   (package
     (name "r-coxaipw")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "CoxAIPW" version))
               (sha256
                (base32
-                "0nfammmlm92hz2d9z0qf2q0lfwxr4bv28c5yprcmxd19gphbl0q8"))))
+                "1m7af9x0wjrmfaxz1v3aalkgyg13mvijjp0bns7npvpk07drd6hr"))))
     (properties `((upstream-name . "CoxAIPW")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8104,8 +8103,8 @@ depends on Z. With the help of cross-fitting techniques, achieves the
 rate-doubly robust property that allows the use of most machine learning or
 non-parametric methods for all 3 working models, which are not permitted in
 classic inverse probability weighting or doubly robust estimators.  Reference:
-Robins & Finkelstein (2000)<doi:10.1111/j.0006-341x.2000.00779.x>; Hernan et al
-(2001)<doi:10.1198/016214501753168154>.")
+Luo & Xu (2022) <doi:10.48550/arXiv.2206.02296>; Rava (2021)
+<https://escholarship.org/uc/item/8h1846gs>.")
     (license license:gpl3)))
 
 (define-public r-cowsay
@@ -8547,16 +8546,17 @@ survey'.")
 (define-public r-covidcast
   (package
     (name "r-covidcast")
-    (version "0.4.5")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "covidcast" version))
               (sha256
                (base32
-                "0d9fhb3akm8rg4snq7biix2z7rjf03zsyfrbq2xxnf12hk52gixm"))))
+                "029fl4z47vsqs6f7hm57sa034m8prwsxgmiq6cvhx2wgdicmmis5"))))
     (properties `((upstream-name . "covidcast")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-sf
                              r-rlang
                              r-purrr
@@ -9169,55 +9169,6 @@ normalised data by library size and feature effective length.  It also provides
 the user with a quick and reliable function to generate FPKM heatmap plot of the
 highly variable features in RNA-Seq dataset.")
     (license license:gpl3)))
-
-(define-public r-countstar
-  (package
-    (name "r-countstar")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "countSTAR" version))
-              (sha256
-               (base32
-                "1331fpy0nyd0hf939lpg2km97ml5p1nfvzxx2aqj4s00c8fv32qi"))))
-    (properties `((upstream-name . "countSTAR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncdist
-                             r-truncatednormal
-                             r-splines2
-                             r-spikeslabgam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-randomforest
-                             r-matrix
-                             r-kfas
-                             r-gbm
-                             r-fastgp
-                             r-dbarts
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=countSTAR")
-    (synopsis "Flexible Modeling of Count Data")
-    (description
-     "For Bayesian and classical inference and prediction with count-valued data,
-Simultaneous Transformation and Rounding (STAR) Models provide a flexible,
-interpretable, and easy-to-use approach.  STAR models the observed count data
-using a rounded continuous data model and incorporates a transformation for
-greater flexibility.  Implicitly, STAR formalizes the commonly-applied yet
-incoherent procedure of (i) transforming count-valued data and subsequently (ii)
-modeling the transformed data using Gaussian models.  STAR is well-defined for
-count-valued data, which is reflected in predictive accuracy, and is designed to
-account for zero-inflation, bounded or censored data, and over- or
-underdispersion.  Importantly, STAR is easy to combine with existing MCMC or
-point estimation methods for continuous data, which allows seamless adaptation
-of continuous data models (such as linear regressions, additive models, BART,
-random forests, and gradient boosting machines) for count-valued data.  The
-package also includes several methods for modeling count time series data,
-namely via warped Dynamic Linear Models.  For more details and background on
-these methodologies, see the works of Kowal and Canale (2020)
-<doi:10.1214/20-EJS1707>, Kowal and Wu (2022) <doi:10.1111/biom.13617>, King and
-Kowal (2022) <arXiv:2110.14790>, and Kowal and Wu (2023) <arXiv:2110.12316>.")
-    (license license:gpl2+)))
 
 (define-public r-countseppm
   (package
@@ -19064,7 +19015,7 @@ Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
                 "0128x4qmln1ks7cqd5n22aw41f097lw785lw4ca80nyn2bz5jmqk"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcppgsl r-rcpp r-cubature))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ChaoranHu/coga")
@@ -22346,7 +22297,7 @@ clusters that exist across the datasets.")
                 "1hxfis2r1za7npb89lp3l1i01spmp78lqwry27wp572y98skm7pv"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
-    (inputs (list zlib zeromq))
+    (inputs (list zeromq))
     (propagated-inputs (list r-rcpp r-r6 r-purrr r-progress r-narray))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://mschubert.github.io/clustermq/")
@@ -36953,13 +36904,13 @@ outputs all configurations along with their confidence assessment.")
 (define-public r-canek
   (package
     (name "r-canek")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Canek" version))
               (sha256
                (base32
-                "1qqlxachv84a6d9c2akzqws3d8zjql0wzfinqh2d855avn3sk8s5"))))
+                "1hjgn6f5dxh7yw2l0fmpxdypfb9hrlh7lbgkq8g7nw2vgxspgr55"))))
     (properties `((upstream-name . "Canek")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers
@@ -36970,7 +36921,7 @@ outputs all configurations along with their confidence assessment.")
                              r-fnn
                              r-bluster))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Canek")
+    (home-page "https://martinloza.github.io/Canek/")
     (synopsis "Batch Correction of Single Cell Transcriptome Data")
     (description
      "Non-linear/linear hybrid method for batch-effect correction that uses Mutual

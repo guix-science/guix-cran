@@ -17,13 +17,11 @@
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages curl)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2325,7 +2323,7 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
                 "0x71rdjr39my7p6a6p9im343sdbpwqns86x4mryygxllp8zvwcgm"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
-    (inputs (list gsl gsl))
+    (inputs (list r-gsl gsl))
     (propagated-inputs (list r-matrix))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/JorisChau/gslnls")
@@ -7565,7 +7563,7 @@ methodology.")
                 "1yi1xc27kdylw23nc84phnmyzhlxca20pcjvlwxykpmkag81qygw"))))
     (properties `((upstream-name . "GPBayes")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=GPBayes")
     (synopsis
@@ -9886,7 +9884,7 @@ by Bayes rule.")
                 "0gb6h5qkx708l3dnmvnsl6nbdqi6szimr5227yhi7ysahy71fv1r"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
-    (inputs (list zlib))
+    (inputs (list))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -15395,19 +15393,18 @@ cutting algorithm to a path.")
 (define-public r-ggpmx
   (package
     (name "r-ggpmx")
-    (version "1.2.8")
+    (version "1.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ggPMX" version))
               (sha256
                (base32
-                "0k6svzywf9xiwak6a7wysn5v6b1yk89nx268bq8wvcdvl006fpfj"))))
+                "0r051bxabagvpplinqdk2ibpcr8g768q4lmbp43fiahdyp3ag56c"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-tidyr
-                             r-tibble
                              r-stringr
                              r-scales
                              r-rmarkdown
@@ -15419,6 +15416,7 @@ cutting algorithm to a path.")
                              r-knitr
                              r-gtable
                              r-ggplot2
+                             r-ggforce
                              r-ggally
                              r-dplyr
                              r-data-table
@@ -20134,13 +20132,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-geos
   (package
     (name "r-geos")
-    (version "0.2.2")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "geos" version))
               (sha256
                (base32
-                "0hmiskdwzlgabwhayw7hwi6nqria976xzz6xm95644w7fx723wd7"))))
+                "1c4g3gxri1ql3ycfvk70v7zp0hzv9yrd5qdwzb3v0vsc4hcxppq1"))))
     (properties `((upstream-name . "geos")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk r-libgeos))
@@ -24626,12 +24624,7 @@ utility.")
                 "1zvx6adc7i1811ri2i5c5w4rkh5wi1rmxi2xm8amf6cwqym8rnzd"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
-    (inputs (list zlib
-                  sqlite
-                  proj
-                  netcdf
-                  gdal
-                  curl))
+    (inputs (list sqlite r-curl proj netcdf gdal))
     (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/appelmar/gdalcubes")

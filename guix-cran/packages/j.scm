@@ -1182,13 +1182,13 @@ Bootstrap.")
 (define-public r-jpstat
   (package
     (name "r-jpstat")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpstat" version))
               (sha256
                (base32
-                "125pyw42xjwjdfr497qnikjmkmbp6x8db4v23b17hr94qlgfb34c"))))
+                "04dhra5vkyji96ipghi0w2pmg344sirgxmqndiifa2mvfdbzf84w"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

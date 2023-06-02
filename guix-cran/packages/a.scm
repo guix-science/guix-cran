@@ -1446,13 +1446,13 @@ MalaCards integrates human disease information, including disease-related genes.
 (define-public r-autoscorecard
   (package
     (name "r-autoscorecard")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoScorecard" version))
               (sha256
                (base32
-                "1q0x34ni8bz0ipclzmi9fc06l8j75gpmpni18dr6f3bzjhq9pbdm"))))
+                "1ksdj2yj1k1h96kl2qaa4h43fsfsgxxrbx6k3ykmcpkxgi6y9hl9"))))
     (properties `((upstream-name . "autoScorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-rocr r-infotheo r-discretization
@@ -2898,16 +2898,17 @@ Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.3.1")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "attachment" version))
               (sha256
                (base32
-                "0dzh8y5k19m5mv7g9xif4lmkimsvkd3hzvdbqwb1f711wn8dh46d"))))
+                "10icxxxg3xrq6gcb6mhd0krg2f9m4zi4smin5icgbqqf5023lyjv"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr
+    (propagated-inputs (list r-yaml
+                             r-withr
                              r-stringr
                              r-roxygen2
                              r-rmarkdown
@@ -3525,20 +3526,20 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
 (define-public r-asylum
   (package
     (name "r-asylum")
-    (version "1.0.3")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asylum" version))
               (sha256
                (base32
-                "01wkag64c8l5byjiqi0nq13fh0rz0n7ypk4jfqi5dabx3n91q7cp"))))
+                "1jgh9b76z9d81n9bgny3x5pbgmplq1mi55ag4wb0zzgykrfvaa1s"))))
     (properties `((upstream-name . "asylum")))
     (build-system r-build-system)
     (home-page "https://github.com/humaniverse/asylum")
     (synopsis "Data on Asylum and Resettlement for the UK")
     (description
      "Data on Asylum and Resettlement for the UK, provided by the Home Office
-<https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables-year-ending-december-2022>.")
+<https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables-year-ending-march-2023>.")
     (license license:expat)))
 
 (define-public r-asyk
@@ -15604,6 +15605,29 @@ harvesting user clicks on a graphics device to use for simple georeferencing of
 images.  Methods used are available from
 <https://en.wikipedia.org/wiki/World_file> and
 <https://gdal.org/user/raster_data_model.html>.")
+    (license license:gpl3)))
+
+(define-public r-affect
+  (package
+    (name "r-affect")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AFFECT" version))
+              (sha256
+               (base32
+                "03d08spgbcz7qxh0599rya5xp95c22jhk5y3d344g2ad4y1ryvxg"))))
+    (properties `((upstream-name . "AFFECT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=AFFECT")
+    (synopsis
+     "Accelerated Functional Failure Time Model with Error-Contaminated Survival Times")
+    (description
+     "We aim to deal with data with measurement error in the response and
+misclassification censoring status under an AFT model.  This package primarily
+contains three functions, which are used to generate artificial data, correction
+for error-prone data and estimate the functional covariates for an AFT model.")
     (license license:gpl3)))
 
 (define-public r-afdx

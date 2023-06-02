@@ -1532,18 +1532,18 @@ also be tailored.")
 (define-public r-funnelplotr
   (package
     (name "r-funnelplotr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FunnelPlotR" version))
               (sha256
                (base32
-                "0cfvg47fwxwjhgxd5if81jg9nkj42i1yvykqd7g01n7ymirp7kf6"))))
+                "0lsbxl4ilgszd3q8h00skbnl36q47ghi7afbcmbjqdqzkpl8yfig"))))
     (properties `((upstream-name . "FunnelPlotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggrepel r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://chrismainey.github.io/FunnelPlotR/")
+    (home-page "https://nhs-r-community.github.io/FunnelPlotR/")
     (synopsis "Funnel Plots for Comparing Institutional Performance")
     (description
      "An implementation of methods presented by Spiegelhalter (2005)
@@ -2410,13 +2410,13 @@ spectral density operator in frequencies and along the curve length.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.1")
+    (version "6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ftsa" version))
               (sha256
                (base32
-                "0j8jr0sbvxfzqfy8va7axljp660jkpqwg9djbis9ikf4x9n9f7n9"))))
+                "1m8rjivhc5mqsbxjv2v9ly8yb70x0iqcsapbl6kgi3gwvgk4c5pn"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -2444,7 +2444,8 @@ spectral density operator in frequencies and along the curve length.")
     (synopsis "Functional Time Series Analysis")
     (description
      "This package provides functions for visualizing, modeling, forecasting and
-hypothesis testing of functional time series.")
+hypothesis testing of functional time series. \\n Jim\\'{e}nez-Var\\'{o}n, C., Sun,
+Y. and Shang, H. L. (2023) <arXiv: 2305.19749>.")
     (license license:gpl3)))
 
 (define-public r-ftrcool
@@ -11366,15 +11367,16 @@ time-series data.  API calls require free user account registration.")
 (define-public r-finnet
   (package
     (name "r-finnet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "FinNet" version))
               (sha256
                (base32
-                "1xlhjxhw5pn7dwjzfxvqhrwng8hzii1hag8x9d9h02bdv5y02pjr"))))
+                "05d1qnzq4x8k5dynxywqhla2x26fg5yr4lij5l3n4irrkqnx4vjn"))))
     (properties `((upstream-name . "FinNet")))
     (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://fatelarico.github.io/FinNet.html")
     (synopsis "Quickly Build and Manipulate Financial Networks")
@@ -15148,6 +15150,26 @@ model framework.  Matrix computation are approximated by semi-explicit operator
 equivalents with linear computational complexity.  Markussen (2013)
 <doi:10.3150/11-BEJ389>.")
     (license license:gpl2)))
+
+(define-public r-fdakma
+  (package
+    (name "r-fdakma")
+    (version "1.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "fdakma" version))
+              (sha256
+               (base32
+                "03w519hpr4z610vrwkd2g03lsb781zsmplb9y0bagz33ik2342l0"))))
+    (properties `((upstream-name . "fdakma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-fdacluster r-cli))
+    (home-page "https://github.com/astamm/fdakma")
+    (synopsis "Functional Data Analysis: K-Mean Alignment")
+    (description
+     "It performs simultaneously clustering and alignment of a multidimensional or
+unidimensional functional dataset by means of k-mean alignment.")
+    (license license:gpl3+)))
 
 (define-public r-fdadensity
   (package

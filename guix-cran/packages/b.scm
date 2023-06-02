@@ -5859,13 +5859,13 @@ on nested models--for that, see epicalc::lrtest'.")
 (define-public r-bootimpute
   (package
     (name "r-bootimpute")
-    (version "1.2.0")
+    (version "1.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "bootImpute" version))
               (sha256
                (base32
-                "04i81dqxygl3hv55kn8nkrqzhqsxw2lpdmdfh8inf8rjcpql5bgw"))))
+                "1z7vhfn43rd91bnflygyx3f9bvlzz9djncxa8abqs8ip8rz1pqj0"))))
     (properties `((upstream-name . "bootImpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-smcfcs r-mice))
@@ -5874,7 +5874,7 @@ on nested models--for that, see epicalc::lrtest'.")
     (description
      "Bootstraps and imputes incomplete datasets.  Then performs inference on
 estimates obtained from analysing the imputed datasets as proposed by von Hippel
-and Bartlett (2019) <arXiv:1210.0870v10>.")
+and Bartlett (2021) <doi:10.1214/20-STS793>.")
     (license license:gpl3)))
 
 (define-public r-bootgof
@@ -14041,31 +14041,6 @@ utilizing output from several programs that can fit confirmatory factor analysis
 or item response models.")
     (license license:gpl3+)))
 
-(define-public r-bidistances
-  (package
-    (name "r-bidistances")
-    (version "0.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "BIDistances" version))
-              (sha256
-               (base32
-                "1ajwa7ib0m3krhizi905rzkdqm9fhcypm58yqn4c6hnq4kpc9fm1"))))
-    (properties `((upstream-name . "BIDistances")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-paralleldist))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BIDistances")
-    (synopsis "Bioinformatic Distances")
-    (description
-     "This package provides a few high-performant methods for computing distances
-measures for bioinformatics data.  The weighted euclidean distance can be
-computed with OpenCL on the GPU or with a parallelized version on the CPU. Other
-important distance measures for bioinformatics data are selected from the R
-package parallelDist'.  A special distance measure for the Gene Ontology is
-available.")
-    (license license:gpl3)))
-
 (define-public r-bidimregression
   (package
     (name "r-bidimregression")
@@ -15353,13 +15328,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.4.7")
+    (version "0.4.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BFS" version))
               (sha256
                (base32
-                "0782k3jvalpcp2amxyqy8n2z5011cy4srgvb1qcj9pi6ip33q76d"))))
+                "0pci1lfszv7ld116444fhiij0ff0nkf01kpja9npf4vw8yqiaqr1"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15367,9 +15342,10 @@ the bfsl solution.")
                              r-tibble
                              r-rvest
                              r-pxweb
+                             r-purrr
                              r-magrittr
-                             r-jsonlite
-                             r-janitor))
+                             r-janitor
+                             r-httr2))
     (home-page "https://felixluginbuhl.com/BFS/")
     (synopsis "Get Data from the Swiss Statistical Office")
     (description
@@ -15508,13 +15484,13 @@ used to fit the time series data and detect structural changes (breaks).")
 (define-public r-beyondwhittle
   (package
     (name "r-beyondwhittle")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "beyondWhittle" version))
               (sha256
                (base32
-                "0hx1j6vgq25qk966wkc8pq0y6whxqnp1nglm3d4majqp55iqi1lx"))))
+                "16k8ii45fnj7vvvgc19fzpyg3idz1979xvb2g5fpc88hskcb46g2"))))
     (properties `((upstream-name . "beyondWhittle")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -15524,13 +15500,14 @@ used to fit the time series data and detect structural changes (breaks).")
                              r-forecast
                              r-bh))
     (home-page "https://cran.r-project.org/package=beyondWhittle")
-    (synopsis "Bayesian Spectral Inference for Stationary Time Series")
+    (synopsis "Bayesian Spectral Inference for Time Series")
     (description
      "Implementations of Bayesian parametric, nonparametric and semiparametric
 procedures for univariate and multivariate time series.  The package is based on
-the methods presented in C. Kirch et al (2018) <doi:10.1214/18-BA1126> and A.
-Meier (2018) <https://opendata.uni-halle.de//handle/1981185920/13470>.  It was
-supported by DFG grant KI 1443/3-1.")
+the methods presented in C. Kirch et al (2018) <doi:10.1214/18-BA1126>, A. Meier
+(2018) <https://opendata.uni-halle.de//handle/1981185920/13470> and Y. Tang et
+al (2023) <arXiv:2303.11561>.  It was supported by DFG grants KI 1443/3-1 and KI
+1443/3-2.")
     (license license:gpl3+)))
 
 (define-public r-beyondbenford
@@ -17189,42 +17166,6 @@ Institute (\"Chartered Financial Analyst Program Curriculum 2020 Level I Volumes
 (âOptions, Futures, and Other Derivatives (11th ed.)â, 2022, ISBN:
 9780136939979).")
     (license license:gpl3)))
-
-(define-public r-beanz
-  (package
-    (name "r-beanz")
-    (version "2.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "beanz" version))
-              (sha256
-               (base32
-                "18i4ygz83l60fdfkl4yg9kp5n2vmqn6yd7qkpkiplq0mzg5s4nk9"))))
-    (properties `((upstream-name . "beanz")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppeigen
-                             r-rcpp
-                             r-loo
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=beanz")
-    (synopsis "Bayesian Analysis of Heterogeneous Treatment Effect")
-    (description
-     "It is vital to assess the heterogeneity of treatment effects (HTE) when making
-health care decisions for an individual patient or a group of patients.
-Nevertheless, it remains challenging to evaluate HTE based on information
-collected from clinical studies that are often designed and conducted to
-evaluate the efficacy of a treatment for the overall population.  The Bayesian
-framework offers a principled and flexible approach to estimate and compare
-treatment effects across subgroups of patients defined by their characteristics.
- This package allows users to explore a wide range of Bayesian HTE analysis
-models, and produce posterior inferences about HTE. See Wang et al. (2018)
-<DOI:10.18637/jss.v085.i07> for further details.")
-    (license license:gpl3+)))
 
 (define-public r-beans
   (package
@@ -19420,24 +19361,29 @@ installation.  A convenient R interface is provided in package R2BayesX.")
 (define-public r-bayesx
   (package
     (name "r-bayesx")
-    (version "0.3-1.1")
+    (version "0.3-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "BayesX" version))
               (sha256
                (base32
-                "0630p904fba4ink1rkccarhlqkz73fxqiy255jc5vb1qi2awl5vd"))))
+                "0yjk9jpp9mnmlwm3xywzhyzb36vgf6yi897mr8cw31zin3wcprb4"))))
     (properties `((upstream-name . "BayesX")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-shapefiles r-maptools r-colorspace r-coda))
+    (propagated-inputs (list r-sp
+                             r-shapefiles
+                             r-sf
+                             r-interp
+                             r-colorspace
+                             r-coda))
     (home-page "https://cran.r-project.org/package=BayesX")
     (synopsis "R Utilities Accompanying the Software Package BayesX")
     (description
      "This package provides functions for exploring and visualising estimation results
 obtained with BayesX, a free software for estimating structured additive
-regression models (<http://www.BayesX.org>).  In addition, functions that allow
-to read, write and manipulate map objects that are required in spatial analyses
-performed with BayesX.")
+regression models (<https://www.uni-goettingen.de/de/bayesx/550513.html>).  In
+addition, functions that allow to read, write and manipulate map objects that
+are required in spatial analyses performed with BayesX.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-bayesvl

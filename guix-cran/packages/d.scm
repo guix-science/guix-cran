@@ -8,9 +8,9 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
@@ -330,7 +330,7 @@ uses dynamic range boxes to overcome these problems.")
                 "0h2mgnqhcq420f0qqbgnkjk1wbgr9x2fk8hrk22j01mzhc4lmsm5"))))
     (properties `((upstream-name . "dynr")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-xtable
                              r-tibble
                              r-stringi
@@ -5773,18 +5773,18 @@ algorithm for downscaling.  This work was done based on this paper, Lianfa Li
 (define-public r-downscale
   (package
     (name "r-downscale")
-    (version "4.2-0")
+    (version "5.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "downscale" version))
               (sha256
                (base32
-                "1ha36jiahvrg75qwzp9wpgnqqizw6ivc02q24fyz5frzssda6wd8"))))
+                "1rcmn5f30l004rp8a7pmn0w5izsy31n9lwsk3sgj01fjzk0333wc"))))
     (properties `((upstream-name . "downscale")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rmpfr r-raster r-minpack-lm r-cubature))
+    (propagated-inputs (list r-terra r-sf r-rmpfr r-minpack-lm r-cubature))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=downscale")
+    (home-page "https://github.com/charliem2003/downscale")
     (synopsis "Downscaling Species Occupancy")
     (description
      "Uses species occupancy at coarse grain sizes to predict species occupancy at
@@ -10043,13 +10043,13 @@ similarity of their samples.")
 (define-public r-distanceto
   (package
     (name "r-distanceto")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "distanceto" version))
               (sha256
                (base32
-                "05wmv1slvwaw6cffnqad2bp8cn30fnyc4gmi106922ah98k3l5g0"))))
+                "0xsqvmakys75rz11w7mkhs7674lzgz2ml9bwbkydq3lkrg14hyww"))))
     (properties `((upstream-name . "distanceto")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-nabor r-geodist))
@@ -14653,39 +14653,27 @@ follows: W. La Cruz, J. M. Martinez, and M. Raydan (2006)
 <doi:10.1137/20M1388024>.")
     (license license:gpl3)))
 
-(define-public r-dfpk
+(define-public r-dfrr
   (package
-    (name "r-dfpk")
-    (version "3.5.1")
+    (name "r-dfrr")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
-              (uri (cran-uri "dfpk" version))
+              (uri (cran-uri "dfrr" version))
               (sha256
                (base32
-                "010rlxj66ar3y61fnm7ys3p6aimlr8ylqq4q4flzr9m88klz8701"))))
-    (properties `((upstream-name . "dfpk")))
+                "0kgsi2jysv0hpdvmv1fng41ar7p3pgzgf1vv0dcm954jdrl2dz6d"))))
+    (properties `((upstream-name . "dfrr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-rstan
-                             r-rcppeigen
-                             r-rcpp
-                             r-pk
-                             r-ggplot2
-                             r-dfcrm
-                             r-bh))
-    (home-page "http://github.com/artemis-toumazi/dfpk")
-    (synopsis
-     "Bayesian Dose-Finding Designs using Pharmacokinetics (PK) for Phase I Clinical Trials")
+    (propagated-inputs (list r-tmvtnorm r-plotly r-mass r-ggplot2 r-fda))
+    (home-page "https://github.com/asgari-fatemeh/dfrr")
+    (synopsis "Dichotomized Functional Response Regression")
     (description
-     "Statistical methods involving PK measures are provided, in the dose allocation
-process during a Phase I clinical trials.  These methods, proposed by Ursino et
-al, (2017) <doi:10.1002/bimj.201600084>, enter pharmacokinetics (PK) in the dose
-finding designs in different ways, including covariates models, dependent
-variable or hierarchical models.  This package provides functions to generate
-data from several scenarios and functions to run simulations which their
-objective is to determine the maximum tolerated dose (MTD).")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
+     "Implementing Function-on-Scalar Regression model in which the response function
+is dichotomized and observed sparsely.  This package provides smooth estimations
+of functional regression coefficients and principal components for the
+dichotomized functional response regression (dfrr) model.")
+    (license license:gpl3)))
 
 (define-public r-dfphase1
   (package

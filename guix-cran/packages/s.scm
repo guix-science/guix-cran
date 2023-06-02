@@ -8,7 +8,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages maths)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages bioinformatics)
@@ -17,14 +17,9 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages java)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
-  #:use-module (gnu packages ssh)
-  #:use-module (gnu packages tls)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
   #:use-module (gnu packages geo)
@@ -32,6 +27,8 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages curl)
+  #:use-module (gnu packages maths)
+  #:use-module (gnu packages tls)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -728,7 +725,7 @@ project <http://moby-thesaurus.org/>.")
                 "0v1vgsxq101fdxawdsdk2wa2llp79hzvmdphflnj8iblj8ncm6vc"))))
     (properties `((upstream-name . "SymTS")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (home-page "https://cran.r-project.org/package=SymTS")
     (synopsis "Symmetric Tempered Stable Distributions")
     (description
@@ -740,25 +737,25 @@ stable, and symmetric power tempered stable distributions.")
 (define-public r-symsem
   (package
     (name "r-symsem")
-    (version "0.1")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "symSEM" version))
               (sha256
                (base32
-                "084c47fkpgxjafx856d9xjijjz4l1da76bdqq63fvmhhiz17q8gs"))))
+                "05km458ffmy9sc93zjvfg0c7qcwb62fh3scllw67rv5919lq5hh9"))))
     (properties `((upstream-name . "symSEM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ryacas r-openmx r-mvtnorm r-metasem))
+    (inputs (list python))
+    (propagated-inputs (list r-openmx r-metasem r-caracas))
     (home-page "https://github.com/mikewlcheung/symsem")
     (synopsis "Symbolic Computation for Structural Equation Models")
     (description
      "This package provides a collection of functions for symbolic computation using
-Ryacas package for structural equation models.  This package includes functions
-to calculate model-implied covariance (and correlation) matrix and sampling
-covariance matrix of functions of variables using the first-order Taylor
-approximation.  Reference: McArdle and McDonald (1984)
-<doi:10.1111/j.2044-8317.1984.tb00802.x>.")
+the caracas package for structural equation models and other statistical
+analyses.  Among its features is the ability to calculate the model-implied
+covariance (and correlation) matrix and the sampling covariance matrix of
+variable functions using the delta method.")
     (license license:gpl2+)))
 
 (define-public r-symphony
@@ -2625,13 +2622,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.4")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SVDNF" version))
               (sha256
                (base32
-                "02nj3mdz2q4jabfl3w8yr1aw40jawbvzh9gl3n0ra2yv5nf3wp0z"))))
+                "08qks6saqzjf2l39fyqvxrdqw530if8w0nxqzrbak81dyjrzmbsi"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2916,7 +2913,7 @@ visualize bivariate survival data and bivariate probability mass function.")
                 "0fvmqlzg6j43d5bwvn70n4630n396wrykl5blkszadj3l118rmp4"))))
     (properties `((upstream-name . "survSNP")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-xtable r-survival r-rcpp r-lattice r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=survSNP")
@@ -11846,13 +11843,13 @@ lead/lag).")
 (define-public r-statamarkdown
   (package
     (name "r-statamarkdown")
-    (version "0.7.4")
+    (version "0.8.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Statamarkdown" version))
               (sha256
                (base32
-                "1fx816n9n6qxann596ppqbrw84l8012z6hyiaxm3k56bf3xzfdfa"))))
+                "0rick3fp8dpnq2i72pyhln1kxr6050vxlqpiji4f3348g72c2j0b"))))
     (properties `((upstream-name . "Statamarkdown")))
     (build-system r-build-system)
     (inputs (list))
@@ -12583,7 +12580,7 @@ exact methods are also provided for the lognormal model.  Revised from
                 "115mg6mffh0qyxjbd2y2q1j5b002rs23cslvwpgld4mi9ga3ld5s"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
-    (inputs (list tbb))
+    (inputs (list))
     (propagated-inputs (list r-rcppparallel
                              r-rcppeigen
                              r-rcpp
@@ -14205,7 +14202,7 @@ analyzes the allele frequency data described by Solberg et al. (2008)
                 "14sasc28ipjdhb0k8ziby2v4n8gfmsp917y9725h6fsq0n01p002"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
-    (inputs (list zlib openssl openssh))
+    (inputs (list r-openssl))
     (propagated-inputs (list r-credentials r-askpass))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://docs.ropensci.org/ssh/")
@@ -18579,6 +18576,45 @@ in degraded DNA studies.  Further information on the package has been published
 in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
     (license license:expat)))
 
+(define-public r-spicefp
+  (package
+    (name "r-spicefp")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "SpiceFP" version))
+              (sha256
+               (base32
+                "1vhsi9g925jc95589wp3cjlj8psvggkf1cws2awy94zi0z6lkiri"))))
+    (properties `((upstream-name . "SpiceFP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-matrix
+                             r-genlasso
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=SpiceFP")
+    (synopsis
+     "Sparse Method to Identify Joint Effects of Functional Predictors")
+    (description
+     "This package provides a set of functions allowing to implement the SpiceFP
+approach which is iterative.  It involves transformation of functional
+predictors into several candidate explanatory matrices (based on contingency
+tables), to which relative edge matrices with contiguity constraints are
+associated.  Generalized Fused Lasso regression are performed in order to
+identify the best candidate matrix, the best class intervals and related
+coefficients at each iteration.  The approach is stopped when the maximal number
+of iterations is reached or when retained coefficients are zeros.  Supplementary
+functions allow to get coefficients of any candidate matrix or mean of
+coefficients of many candidates.  The methods in this package are describing in
+Girault Gnanguenon Guesse, Patrice Loisel, BÃ©nedicte Fontez, Thierry Simonneau,
+Nadine Hilgert (2021) \"An exploratory penalized regression to identify combined
+effects of functional variables -Application to agri-environmental issues\"
+<https://hal.archives-ouvertes.fr/hal-03298977>.")
+    (license license:gpl3)))
+
 (define-public r-spiassay
   (package
     (name "r-spiassay")
@@ -18712,6 +18748,34 @@ endogeneous variables using instrumental variables.")
 sphere and ball in n-dimensional Euclidean space.  Routines for converting
 to/from multivariate polar/spherical coordinates are also provided.")
     (license license:gpl2+)))
+
+(define-public r-spheretessellation
+  (package
+    (name "r-spheretessellation")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "sphereTessellation" version))
+              (sha256
+               (base32
+                "0lv3bcyqcrkhkrn0va8fmciqfmlv0q19njdy4gq2yk1wjwsisvll"))))
+    (properties `((upstream-name . "sphereTessellation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s2
+                             r-rgl
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-randomcolor
+                             r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/sphereTessellation")
+    (synopsis "Delaunay and VoronoÃ¯ Tessellations on the Sphere")
+    (description
+     "This package performs Delaunay and VoronoÃ¯ tessellations on spheres and
+provides some functions to plot them.  The algorithms are mainly performed by
+the C++ library CGAL (<https://www.cgal.org/>).")
+    (license license:gpl3)))
 
 (define-public r-sphereplot
   (package
@@ -21961,13 +22025,13 @@ idiosyncratic variances are identified or not.")
 (define-public r-spartaas
   (package
     (name "r-spartaas")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "SPARTAAS" version))
               (sha256
                (base32
-                "0l8ffpad4iq6jdgb4w4lhsq1v4ccjz1485hi018jwd76kr2m0h8z"))))
+                "1a0jva5334khhp20x3vkaj413jb4s4nfr6xv7c05pp5k86v8avi7"))))
     (properties `((upstream-name . "SPARTAAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21978,14 +22042,16 @@ idiosyncratic variances are identified or not.")
                              r-shinyjs
                              r-shinyjqui
                              r-shinydashboard
+                             r-shinycssloaders
                              r-shiny
                              r-scatterd3
+                             r-scales
                              r-rstudioapi
-                             r-rgdal
                              r-plotly
-                             r-markdown
+                             r-nor1mix
+                             r-mass
                              r-mapview
-                             r-maptools
+                             r-lmtest
                              r-leaflet
                              r-ks
                              r-htmlwidgets
@@ -21994,22 +22060,26 @@ idiosyncratic variances are identified or not.")
                              r-ggdendro
                              r-fpc
                              r-foreign
+                             r-fastcluster
                              r-factominer
                              r-explor
                              r-dplyr
                              r-crayon
                              r-colorspace
                              r-cluster
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=SPARTAAS")
-    (synopsis "Statistical Methods for Archaeology")
+                             r-ape
+                             r-ade4))
+    (home-page "https://spartaas.gitpages.huma-num.fr/r-package/")
+    (synopsis
+     "Statistical Pattern Recognition and daTing using Archaeological Artefacts assemblageS")
     (description
      "Statistical pattern recognition and dating using archaeological artefacts
 assemblages.  Package of statistical tools for archaeology.
-hclustcompro(perioclust): Bellanger Lise, Coulon Arthur, Husi Philippe (2020,
+hclustcompro(perioclust): Bellanger Lise, Coulon Arthur, Husi Philippe (2021,
 ISBN:978-3-030-60103-4).  mapclust: Bellanger Lise, Coulon Arthur, Husi Philippe
 (2021) <doi:10.1016/j.jas.2021.105431>.  seriograph: Desachy Bruno (2004)
-<doi:10.3406/pica.2004.2396>.")
+<doi:10.3406/pica.2004.2396>.  cerardat: Bellanger Lise, Husi Philippe (2012)
+<doi:10.1016/j.jas.2011.06.031>.")
     (license license:gpl2+)))
 
 (define-public r-sparta
@@ -26264,13 +26334,13 @@ required, by delayed assignment.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.7.5")
+    (version "3.7.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "snvecR" version))
               (sha256
                (base32
-                "0hbzrqp7f014ppccdm8zvqdryp18i9qcmbwn4pnl0hqy6yp84yn5"))))
+                "1y30vwzk3b4i9qqw144m3mf3x3c4vakg6474i8scnlxg8qv5p0pw"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -27699,13 +27769,13 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "3.2.0")
+    (version "3.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "smooth" version))
               (sha256
                (base32
-                "12ziqka3i23108qf7x0mvvpbqr9pl6h3xzm11mj724qpwkyj54mk"))))
+                "1kczg9ww3xpjd1z2a6flcyg038sqaik72akw3sn71m9c63ka7q95"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27724,7 +27794,7 @@ effects, smooth one-dimensional period effects and random errors.")
     (description
      "This package provides functions implementing Single Source of Error state space
 models for purposes of time series analysis and forecasting.  The package
-includes ADAM (Svetunkov, 2021, <https://openforecast.org/adam/>), Exponential
+includes ADAM (Svetunkov, 2023, <https://openforecast.org/adam/>), Exponential
 Smoothing (Hyndman et al., 2008, <doi: 10.1007/978-3-540-71918-2>), SARIMA
 (Svetunkov & Boylan, 2019 <doi: 10.1080/00207543.2019.1600764>), Complex
 Exponential Smoothing (Svetunkov & Kourentzes, 2018, <doi:
@@ -28927,7 +28997,7 @@ with R. It includes functions to search for, acquire, and extract SMAP data.")
                 "1vgsx1n9gkkjnv5lrrznpfqvh019qcjki6gy625k3ykqg5zg229v"))))
     (properties `((upstream-name . "smam")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rcppparallel
                              r-rcppgsl
                              r-rcpp
@@ -32769,13 +32839,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.6.0")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simstudy" version))
               (sha256
                (base32
-                "011lim4qpid5sy8mv8lf40fy8n8wqc5mwpsxig96wk0jn6wbmrv2"))))
+                "049f81kl4kbrbk9883bp14n21g3m4ps0izswl7irhamhshj1anzb"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -33841,19 +33911,19 @@ receive the same anonymised factor even if located in different datasets.")
 (define-public r-simplace
   (package
     (name "r-simplace")
-    (version "5.0.11")
+    (version "5.0.12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "simplace" version))
               (sha256
                (base32
-                "0navn13i5nh61vax758q612d8acwawnm5gp3nhsr79gxd4y069rz"))))
+                "1g84a0v6lr70kwjcc2rwqnd5db02cyn51afz529njgmc5kh3675x"))))
     (properties `((upstream-name . "simplace")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=simplace")
+    (home-page "https://github.com/gk-crop/simplace_rpkg/")
     (synopsis "Interface to Use the Modelling Framework 'SIMPLACE'")
     (description
      "Interface to interact with the modelling framework SIMPLACE and to parse the
@@ -34450,7 +34520,7 @@ and copula models.")
                 "07yavv1qaahxgkni5rrnhpzspkb6g185njiyh3aay4pfiyn5945l"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-matrix r-mass r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stewid/SimInf")
@@ -40379,17 +40449,16 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "sharp" version))
               (sha256
                (base32
-                "16jclpxw8li21qi7j6bilc278fcrnipvd7lprqzjjzyw743x0rn0"))))
+                "0gpd7r7xmvgcl7kwj5rc7cjj34gglhiqkrq67b84ra1ygn703br6"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-regsem
                              r-rdpack
                              r-mclust
                              r-lavaan
@@ -44355,16 +44424,16 @@ associated R code, which provided the base for the development of this package."
 (define-public r-semptools
   (package
     (name "r-semptools")
-    (version "0.2.9.6")
+    (version "0.2.9.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "semptools" version))
               (sha256
                (base32
-                "18dvlms719wqnlcdd0qa81ij1a1m3bq94qxn5jf7s2gm9bmvxd5l"))))
+                "15bc9xdfff0zcip1g92285xxfbrgvay9m2c9xr7d7c5sxsdj293b"))))
     (properties `((upstream-name . "semptools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-lavaan r-dplyr))
+    (propagated-inputs (list r-semplot r-rlang r-lavaan r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://sfcheung.github.io/semptools/")
     (synopsis "Customizing Structural Equation Modelling Plots")
@@ -46420,16 +46489,17 @@ experiments.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "0.9.1")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "seededlda" version))
               (sha256
                (base32
-                "0smw5hng5dd3v0jamypms82qwhnhj672hiz44hq06489mixd02mg"))))
+                "0zk27ivvawva7xz57qfqa786chpvg9myly8cnc73pbvihgpsp7va"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel
+    (propagated-inputs (list r-testthat
+                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-quanteda
@@ -46439,10 +46509,11 @@ experiments.")
     (synopsis "Seeded Sequential LDA for Topic Modeling")
     (description
      "Seeded Sequential LDA can classify sentences of texts into pre-define topics
-with a small number of seed words (Watanabe & Baturo, forthcoming).  Implements
-Seeded LDA (Lu et al., 2010) <doi:10.1109/ICDMW.2011.125> and Sequential LDA (Du
-et al., 2012) <doi:10.1007/s10115-011-0425-1> algorithms based on the GibbsLDA++
-library.")
+with a small number of seed words (Watanabe & Baturo, 2023)
+<doi:10.1177/08944393231178605>.  Implements Seeded LDA (Lu et al., 2010)
+<doi:10.1109/ICDMW.2011.125> and Sequential LDA (Du et al., 2012)
+<doi:10.1007/s10115-011-0425-1> with the distributed LDA algorithm (Newman, et
+al., 2009) for parallel computing.")
     (license license:gpl3)))
 
 (define-public r-seedcca
@@ -50623,6 +50694,43 @@ between colour spaces.")
      "Fast and regularized version of GWR for large dataset, detailed in Murakami,
 Tsutsumida, Yoshida, Nakaya, and Lu (2019) <arXiv:1905.00266>.")
     (license license:gpl2+)))
+
+(define-public r-scgoclust
+  (package
+    (name "r-scgoclust")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "scGOclust" version))
+              (sha256
+               (base32
+                "0wkffbr1gzx9p86mv2zwhc582l3s5slnnq12h1q9yipca5cfj0sp"))))
+    (properties `((upstream-name . "scGOclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-slanter
+                             r-seurat
+                             r-networkd3
+                             r-matrix
+                             r-magrittr
+                             r-limma
+                             r-dplyr
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YY-SONG0718/scGOclust")
+    (synopsis
+     "Measuring Cell Type Similarity with Gene Ontology in Single-Cell RNA-Seq")
+    (description
+     "Traditional methods for analyzing single cell RNA-seq datasets focus solely on
+gene expression, but this package introduces a novel approach that goes beyond
+this limitation.  Using Gene Ontology terms as features, the package allows for
+the functional profile of cell populations, and comparison within and between
+datasets from the same or different species.  Our approach enables the discovery
+of previously unrecognized functional similarities and differences between cell
+types and has demonstrated success in identifying cell types functional
+correspondence even between evolutionarily distant species.")
+    (license license:expat)))
 
 (define-public r-scglr
   (package

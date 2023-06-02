@@ -3856,13 +3856,13 @@ cluster evaluation metrics.")
 (define-public r-tsci
   (package
     (name "r-tsci")
-    (version "2.0.0")
+    (version "3.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TSCI" version))
               (sha256
                (base32
-                "1h05k4lxvaqijf4xdvm7h7wvm49d0m57hixc5kkp0z0sq31y7vnp"))))
+                "12601z7w6rcv4hl7dj4h23r0hf6q3dgsqbb6msqnvh3i2i9zidgb"))))
     (properties `((upstream-name . "TSCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-rfast r-ranger r-fastdummies))
@@ -3874,9 +3874,10 @@ cluster evaluation metrics.")
 settings when instrumental variable regression is not suitable because of
 potentially invalid instrumental variables.  Based on Guo and Buehlmann (2022)
 \"Two Stage Curvature Identification with Machine Learning: Causal Inference with
-Possibly Invalid Instrumental Variables\" <arXiv:2203.12808> and Carl,
-Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two stage curvature identification
-for causal inference with invalid instruments\" <arXiv:2304.00513>.")
+Possibly Invalid Instrumental Variables\" <arXiv:2203.12808>.  The vignette is
+available in Carl, Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two stage
+curvature identification for causal inference with invalid instruments\"
+<arXiv:2304.00513>.")
     (license license:gpl3+)))
 
 (define-public r-tsbss
@@ -11100,17 +11101,16 @@ machine learing.")
 (define-public r-titan2
   (package
     (name "r-titan2")
-    (version "2.4.1")
+    (version "2.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "TITAN2" version))
               (sha256
                (base32
-                "16zf42s1as2xrvyhd0lnv36mgnr5w19xv11pkl0k8imb5bdkhxa2"))))
+                "0g7iklmc8hlx0iv6n7z5hdhzmayndix2lr2y7n8c5dnahh19rl4c"))))
     (properties `((upstream-name . "TITAN2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
-                             r-snow
                              r-purrr
                              r-glue
                              r-ggridges

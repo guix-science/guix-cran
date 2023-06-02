@@ -3461,13 +3461,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.0")
+    (version "0.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "nonmem2rx" version))
               (sha256
                (base32
-                "1fn5z1w1xjx5b6dfwgbkxqb6rn4251nbjy3dwc84if7pc71kb1nk"))))
+                "1f12b198qggnix4vbj6zmijv7rz2rmwbxn4z98y0bzjq48jjv3n7"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6956,6 +6956,32 @@ recent application of nimbleSCR, see Milleret et al. (2021)
 distributions transformed to the unbounded real line, for the purpose of
 increased MCMC efficiency.")
     (license license:bsd-3)))
+
+(define-public r-nimblehmc
+  (package
+    (name "r-nimblehmc")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "nimbleHMC" version))
+              (sha256
+               (base32
+                "1gw3f85dn2wxwqjwjwzy7k3z4wfhj6byky2ilcgc5sfh0yyalv57"))))
+    (properties `((upstream-name . "nimbleHMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nimble))
+    (home-page "https://cran.r-project.org/package=nimbleHMC")
+    (synopsis
+     "Hamiltonian Monte Carlo and Other Gradient-Based MCMC Sampling Algorithms for 'nimble'")
+    (description
+     "This package provides gradient-based MCMC sampling algorithms for use with the
+MCMC engine provided by the nimble package.  This includes Hamiltonian Monte
+Carlo (HMC) and (under development) Langevin samplers.  The HMC sampler
+dynamically determines step size and number of leapfrog steps using the
+No-U-Turn (NUTS) algorithm as described in Hoffman and Gelman (2014)
+<arXiv:1111.4246>.  In addition, convenience functions are provided for
+generating and modifying MCMC configuration objects which employ HMC sampling.")
+    (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimbleecology
   (package

@@ -12,7 +12,6 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages mpi)
@@ -2433,7 +2432,7 @@ methods implemented by this package are described in Wu et al. (2022)
                 "1ylkjj9hg6rgg6q5k46mrp90g3g8snxkrddlz5czj857lqwdir8j"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-withr r-sp r-matrix))
     (home-page "https://github.com/davidbolin/excursions")
     (synopsis
@@ -9962,13 +9961,13 @@ visualizing distributional characteristics among multiple populations (groups)."
 (define-public r-entropart
   (package
     (name "r-entropart")
-    (version "1.6-11")
+    (version "1.6-12")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "entropart" version))
               (sha256
                (base32
-                "1ihxry6lbc1krcg9yf3qj3pp2ryj1kxrv5z4m3wapdkjn0nr9v1f"))))
+                "151b3p36x051gqxfxvsfi6f9lcvl8rwhrp430pk65ibyd7ivklaj"))))
     (properties `((upstream-name . "entropart")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -15144,16 +15143,16 @@ Scholarly Excellence.")
 (define-public r-eeptools
   (package
     (name "r-eeptools")
-    (version "1.2.4")
+    (version "1.2.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "eeptools" version))
               (sha256
                (base32
-                "048gz26dqgfsnxhp4r99j7p4s4d5pxsjci5zw8wjvv35lizij573"))))
+                "1l8cjwkqgh9ywm8yc39kw684jhkw9afb0cxzpkjlap78jgb72xxf"))))
     (properties `((upstream-name . "eeptools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vcd r-maptools r-ggplot2 r-data-table r-arm))
+    (propagated-inputs (list r-vcd r-ggplot2 r-data-table r-arm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jknowles/eeptools")
     (synopsis "Convenience Functions for Education Data")
@@ -20185,7 +20184,7 @@ data, and for performing genome-wide analysis.")
                 "0qp6qq2fqlrpgyrwn1riwcwbjqc0bgbn6i909sclbj5blkc6kl5x"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
-    (inputs (list gsl))
+    (inputs (list r-gsl))
     (propagated-inputs (list r-rdpack r-modeltools r-matrixstats))
     (native-inputs (list pkg-config))
     (home-page "https://mlopez-ibanez.github.io/eaf/")
