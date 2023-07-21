@@ -12071,7 +12071,6 @@ constructed from stock market prices or returns, as explained in Andersen et al.
                 "1l03jmlhc32jbf6clxzdfxb0rinwl8sb67hikx6hzbk8k9x2xvc2"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
-    (native-inputs (list r-startup))
     (home-page "https://henrikbengtsson.github.io/startup/")
     (synopsis "Friendly R Startup Configuration")
     (description

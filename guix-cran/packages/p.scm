@@ -30518,7 +30518,7 @@ thus bypassing the intermediate TeX file.")
     (properties `((upstream-name . "patchDVI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmdconcord))
-    (native-inputs (list r-rmarkdown r-patchdvi r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/dmurdoch/patchDVI")
     (synopsis "Package to Patch '.dvi' or '.synctex' Files")
     (description

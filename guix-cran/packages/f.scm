@@ -994,7 +994,6 @@ Colorado State University Vice President for Research.")
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo r-prettyunits r-future r-crayon
                              r-cli))
-    (native-inputs (list r-future-tests))
     (home-page "https://future.tests.futureverse.org")
     (synopsis "Test Suite for 'Future API' Backends")
     (description
