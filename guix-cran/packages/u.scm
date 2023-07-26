@@ -7,8 +7,10 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages pcre)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
@@ -357,7 +359,8 @@ ggplot2.")
     (home-page "https://efinite.github.io/utile.tools/")
     (synopsis "Summarize Data for Publication")
     (description
-     "Tools for formatting and summarizing data for outcomes research.")
+     "This package provides tools for formatting and summarizing data for outcomes
+research.")
     (license license:lgpl2.0+)))
 
 (define-public r-utile-tables
@@ -509,7 +512,7 @@ includes variables that may be of further interest to historians, such as
 Southern Kingdom and Northern Kingdom discrepant dates, and the original
 amalgamated dating mechanic used by Ussher in the original text.  The raw data
 can also be called using \"usshraw\", as described in: Ussher, J. (1658)
-<https://archive.org/stream/AnnalsOfTheWorld/Annals_djvu.txt>.")
+@code{<https://archive.org/stream/AnnalsOfTheWorld/Annals_djvu.txt>.}")
     (license license:expat)))
 
 (define-public r-uspopcenters
@@ -550,10 +553,10 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
     (description
      "This package implements various independence tests for discrete, continuous, and
 infinite-dimensional data.  The tests are based on a U-statistic permutation
-test, the USP of Berrett, Kontoyiannis and Samworth (2020) <arXiv:2001.05513>,
-and shown to be minimax rate optimal in a wide range of settings.  As the
-permutation principle is used, all tests have exact, non-asymptotic Type I error
-control at the nominal level.")
+test, the USP of Berrett, Kontoyiannis and Samworth (2020)
+@code{<arXiv:2001.05513>,} and shown to be minimax rate optimal in a wide range
+of settings.  As the permutation principle is used, all tests have exact,
+non-asymptotic Type I error control at the nominal level.")
     (license license:expat)))
 
 (define-public r-usmapdata
@@ -581,13 +584,13 @@ Census bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.6.1")
+    (version "0.6.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usmap" version))
               (sha256
                (base32
-                "1q27xxvfrwin61jxba2k91brgcam7hqq5yv5hha4f8s7h3rqam6b"))))
+                "0d0j3q55ja0lm2dm8rans0v7gklywddxx79c6q2p99py80w2y73n"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))
@@ -847,13 +850,13 @@ ROC curve.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usedthese" version))
               (sha256
                (base32
-                "00xbyw9cym1rg4f2h9lzj9g35l83lrjif0vhncn70lqsfpf43p6d"))))
+                "0frdjwqhxkvhahm22vvcyfr464i3mi10y1ynm3k98zypcgp0lkdx"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -910,17 +913,17 @@ analysis and returned in a dataframe.")
 (define-public r-usdm
   (package
     (name "r-usdm")
-    (version "1.1-18")
+    (version "2.1-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "usdm" version))
               (sha256
                (base32
-                "1sis47fri2lrbx2ll5ps7bvycjqhncnia800izf11szgayim5lrv"))))
+                "1kr11yxvcb7mjdfw0432sf9280r29c02xcwbx6xggr7f18b0cq5h"))))
     (properties `((upstream-name . "usdm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster))
-    (home-page "http://r-gis.net")
+    (propagated-inputs (list r-terra r-raster))
+    (home-page "https://r-gis.net/")
     (synopsis "Uncertainty Analysis for Species Distribution Models")
     (description
      "This is a framework that aims to provide methods and tools for assessing the
@@ -1256,8 +1259,8 @@ Studies with Binary Dependent Variables\" that is included in this package.")
     (home-page "https://gabrielebaldassarre.com/r/uptimerobot")
     (synopsis "Access the UptimeRobot Ping API")
     (description
-     "Provide a set of wrappers to call all the endpoints of UptimeRobot API which
-includes various kind of ping, keep-alive and speed tests.  See
+     "Provide a set of wrappers to call all the endpoints of @code{UptimeRobot} API
+which includes various kind of ping, keep-alive and speed tests.  See
 <https://uptimerobot.com/> for more information.")
     (license license:expat)))
 
@@ -1313,7 +1316,7 @@ easy and fun.")
     (description
      "Variance approximations for the Horvitz-Thompson total estimator in Unequal
 Probability Sampling using only first-order inclusion probabilities.  See Matei
-and TillÃ© (2005) and Haziza, Mecatti and Rao (2008) for details.")
+and @code{TillÃ©} (2005) and Haziza, Mecatti and Rao (2008) for details.")
     (license license:gpl3)))
 
 (define-public r-upstartr
@@ -1402,11 +1405,34 @@ rdacca.hp R package.Methods in Ecology and Evolution, 13: 782-788
     (synopsis
      "'HTMLWidget' Wrapper of 'UpSet.js' for Exploring Large Set Intersections")
     (description
-     "UpSet.js is a re-implementation of UpSetR to create interactive set
-visualizations for more than three sets.  This is a htmlwidget wrapper around
-the JavaScript library UpSet.js'.")
+     "@code{UpSet.js} is a re-implementation of @code{UpSetR} to create interactive
+set visualizations for more than three sets.  This is a htmlwidget wrapper
+around the @code{JavaScript} library @code{UpSet.js'.}")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-upndown
+  (package
+    (name "r-upndown")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "upndown" version))
+              (sha256
+               (base32
+                "0yri819zib1m7cj669x007183x9062xgz0pmhghbh6mfaz6rbclj"))))
+    (properties `((upstream-name . "upndown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numbers r-expm r-cir))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=upndown")
+    (synopsis "Utilities and Design Aids for Up-and-Down Dose-Finding Studies")
+    (description
+     "Up-and-Down is the most popular design approach for dose-finding, but has been
+severely under-served by the statistical computing community.  This is the first
+package to address Up-and-Down's needs.  For a recent methodological tutorial on
+Up-and-Down, see Oron et al. (2022) <doi:10.1097/ALN.0000000000004282>.")
+    (license license:gpl2)))
 
 (define-public r-upmask
   (package
@@ -1464,8 +1490,39 @@ binomial logit models.  Functions for plotting and tabulating the estimation
 output are available as well.  Estimation is based on Gibbs sampling where the
 Markov chain Monte Carlo algorithms are based on the latent variable
 representations and marginal data augmentation algorithms outlined in
-Frühwirth-Schnatter S., Zens G., Wagner H. (2020) <arXiv:2011.06898>.")
+Frühwirth-Schnatter S., Zens G., Wagner H. (2020) @code{<arXiv:2011.06898>.}")
     (license license:gpl3)))
+
+(define-public r-updown
+  (package
+    (name "r-updown")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "UpDown" version))
+              (sha256
+               (base32
+                "0c1mi43mkadhpalrd3wlp94ri1sp9ii5wcn44pgz35ki7nngrnaj"))))
+    (properties `((upstream-name . "UpDown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-reshape2
+                             r-mixtools
+                             r-mclust
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=UpDown")
+    (synopsis "Detecting Group Disturbances from Longitudinal Observations")
+    (description
+     "This package provides an algorithm to detect and characterize disturbances
+(start, end dates, intensity) that can occur at different hierarchical levels by
+studying the dynamics of longitudinal observations at the unit level and group
+level based on Nadaraya-Watson's smoothing curves, but also a shiny app which
+allows to visualize the observations and the detected disturbances.  Finally the
+package provides a dataframe mimicking a pig farming system subsected to
+disturbances simulated according to Le et al.(2022)
+<doi:10.1016/j.animal.2022.100496>.")
+    (license license:gpl3+)))
 
 (define-public r-updog
   (package
@@ -1502,10 +1559,10 @@ distributions.  Also provided are functions to simulate genotypes, rgeno(), and
 read-counts, rflexdog(), as well as functions to calculate oracle genotyping
 error rates, oracle_mis(), and correlation with the true genotypes,
 oracle_cor().  These latter two functions are useful for read depth
-calculations.  Run browseVignettes(package = \"updog\") in R for example usage.
-See Gerard et al. (2018) <doi:10.1534/genetics.118.301468> and Gerard and Ferrao
-(2020) <doi:10.1093/bioinformatics/btz852> for details on the implemented
-methods.")
+calculations.  Run @code{browseVignettes(package} = \"updog\") in R for example
+usage.  See Gerard et al. (2018) <doi:10.1534/genetics.118.301468> and Gerard
+and Ferrao (2020) <doi:10.1093/bioinformatics/btz852> for details on the
+implemented methods.")
     (license license:gpl3)))
 
 (define-public r-updater
@@ -1717,13 +1774,14 @@ Informations-, Dokumentations- und Administrations-System'), see
                 "1pdii5l0z7dvcyzi7cbwqii1yn4g54nx1k2qshq86pabcjrka05s"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
+    (inputs (list pcre2))
     (propagated-inputs (list r-sys))
     (home-page "https://docs.ropensci.org/unrtf/")
     (synopsis "Extract Text from Rich Text Format (RTF) Documents")
     (description
      "Wraps the unrtf utility to extract text from RTF files.  Supports document
-conversion to HTML, LaTeX or plain text.  Output in HTML is recommended because
-unrtf has limited support for converting between character encodings.")
+conversion to HTML, @code{LaTeX} or plain text.  Output in HTML is recommended
+because unrtf has limited support for converting between character encodings.")
     (license license:gpl3)))
 
 (define-public r-unrepx
@@ -1778,12 +1836,12 @@ integrated in one package.")
     (home-page "https://github.com/nacnudus/unpivotr")
     (synopsis "Unpivot Complex and Irregular Data Layouts")
     (description
-     "Tools for converting data from complex or irregular layouts to a columnar
-structure.  For example, tables with multilevel column or row headers, or
-spreadsheets.  Header and data cells are selected by their contents and
-position, as well as formatting and comments where available, and are associated
-with one other by their proximity in given directions.  Functions for data
-frames and HTML tables are provided.")
+     "This package provides tools for converting data from complex or irregular
+layouts to a columnar structure.  For example, tables with multilevel column or
+row headers, or spreadsheets.  Header and data cells are selected by their
+contents and position, as well as formatting and comments where available, and
+are associated with one other by their proximity in given directions.  Functions
+for data frames and HTML tables are provided.")
     (license license:expat)))
 
 (define-public r-unpac
@@ -1836,20 +1894,19 @@ data.frames with a flexible spec language.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.2.5")
+    (version "1.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "unmarked" version))
               (sha256
                (base32
-                "1zl7gyijgpgwhxagla7ck9a8w7rfrp9h1ny3nsgad9rh5ps4jkx5"))))
+                "10zq1hqrpr9js1sfdwnai64ymh2pjkh15k26jvh1jx32r0cidlm1"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-plyr
                              r-pbapply
                              r-matrix
                              r-mass
@@ -1863,7 +1920,8 @@ data.frames with a flexible spec language.")
 using survey methods such as point counts, site occupancy sampling, distance
 sampling, removal sampling, and double observer sampling.  Parameters governing
 the state and observation processes can be modeled as functions of covariates.
-Reference: Fiske and Chandler (2011) <doi:10.18637/jss.v043.i10>.")
+References: Kellner et al. (2023) <doi:10.1111/2041-210X.14123>, Fiske and
+Chandler (2011) <doi:10.18637/jss.v043.i10>.")
     (license license:gpl3+)))
 
 (define-public r-unjoin
@@ -2233,8 +2291,8 @@ coefficients.")
 of fixed size k unique to that string, if it has one.  If no such unique
 substring exists, the least frequent substring is used.  If multiple unique
 substrings exist, the lexicographically smallest substring is used.  This
-lexicographically smallest substring of size k is called the \"UniqTag\" of that
-string.")
+lexicographically smallest substring of size k is called the @code{\"UniqTag\"} of
+that string.")
     (license license:expat)))
 
 (define-public r-uniprotr
@@ -2296,12 +2354,12 @@ information, For detailed information kindly read the publication
     (description
      "Implementation of \"light\" stemmers for French, German, Italian, Spanish,
 Portuguese, Finnish, Swedish.  They are based on the same work as the \"light\"
-stemmers found in SolR <https://lucene.apache.org/solr/> or ElasticSearch
-<https://www.elastic.co/fr/products/elasticsearch>.  A \"light\" stemmer consists
-in removing inflections only for noun and adjectives.  Indexing verbs for these
-languages is not of primary importance compared to nouns and adjectives.  The
-stemming procedure for French is described in (Savoy, 1999)
-<doi:10.1002/(SICI)1097-4571(1999)50:10%3C944::AID-ASI9%3E3.3.CO;2-H>.")
+stemmers found in @code{SolR} <https://lucene.apache.org/solr/> or
+@code{ElasticSearch} <https://www.elastic.co/fr/products/elasticsearch>.  A
+\"light\" stemmer consists in removing inflections only for noun and adjectives.
+Indexing verbs for these languages is not of primary importance compared to
+nouns and adjectives.  The stemming procedure for French is described in (Savoy,
+1999) <doi:10.1002/(SICI)1097-4571(1999)50:10%3C944::AID-ASI9%3E3.3.CO;2-H>.")
     (license license:expat)))
 
 (define-public r-unikn
@@ -2360,16 +2418,16 @@ input vector.  Reference: Quentin F. Stout (2008)
 (define-public r-uniformly
   (package
     (name "r-uniformly")
-    (version "0.3.0")
+    (version "0.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "uniformly" version))
               (sha256
                (base32
-                "1vb1dg2qjnv7vr4nbnmif5xjzh2yv6mjm5l8227r7bvijgfd8hhd"))))
+                "05zhx5a3ka3xa3h2j2dc17q7alq3zcnahvzbngyrz5ri0q3w1l5l"))))
     (properties `((upstream-name . "uniformly")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pgnorm))
+    (propagated-inputs (list r-rgl r-pgnorm r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/uniformly")
     (synopsis "Uniform Sampling")
@@ -2397,8 +2455,8 @@ simplices.")
     (description
      "This package provides functions for the creation and manipulation of scenes and
 objects within the Unity 3D video game engine (<https://unity.com/>).  Specific
-focuses include the creation and import of terrain data and GameObjects as well
-as scene management.")
+focuses include the creation and import of terrain data and @code{GameObjects}
+as well as scene management.")
     (license license:expat)))
 
 (define-public r-unifieddosefinding
@@ -2866,10 +2924,10 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
      "Unmatched regression refers to the regression setting where covariates and
 predictors are collected separately/independently and so are not paired
 together, as in the usual regression setting.  Balabdaoui, Doss, and Durot
-(2021) <arXiv:2007.00830> study the unmatched regression setting where the
-univariate regression function is known to be monotone.  This package implements
-methods for computing the estimator developed in Balabdaoui, Doss, and Durot
-(2021).  The main method is an active-set-trust-region-based method.")
+(2021) @code{<arXiv:2007.00830>} study the unmatched regression setting where
+the univariate regression function is known to be monotone.  This package
+implements methods for computing the estimator developed in Balabdaoui, Doss,
+and Durot (2021).  The main method is an active-set-trust-region-based method.")
     (license license:gpl3+)))
 
 (define-public r-umpire
@@ -2979,8 +3037,8 @@ sample moments and their powers and products.  Gerlovina and Hubbard (2019)
     (synopsis
      "Tools for Analyzing Sequencing Data with Unique Molecular Identifiers")
     (description
-     "Tools for analyzing sequencing data containing unique molecular identifiers
-generated by UMIErrorCorrect
+     "This package provides tools for analyzing sequencing data containing unique
+molecular identifiers generated by @code{UMIErrorCorrect}
 (<https://github.com/stahlberggroup/umierrorcorrect>).")
     (license license:gpl3)))
 
@@ -3010,20 +3068,19 @@ Jacobian actions etc.")
 (define-public r-umatrix
   (package
     (name "r-umatrix")
-    (version "3.3")
+    (version "3.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "Umatrix" version))
               (sha256
                (base32
-                "188h959s5pawnny0fxlqmma03iww6af4x0y8p514bwh5xh9rj3kg"))))
+                "1gsfk1vk19nf2bqndiiw700x8qv2cfg9k4330wbm6i31p0hr00wz"))))
     (properties `((upstream-name . "Umatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
                              r-shiny
                              r-reshape2
                              r-rcpp
-                             r-pracma
                              r-png
                              r-plyr
                              r-pdist
@@ -3031,6 +3088,7 @@ Jacobian actions etc.")
                              r-geometry
                              r-fields
                              r-deldir
+                             r-datavisualizations
                              r-adaptgauss
                              r-abind))
     (home-page "http://wscg.zcu.cz/wscg2016/short/A43-full.pdf")
@@ -3042,8 +3100,8 @@ projection by ESOM is a grid of neurons which can be visualised as a three
 dimensional landscape in form of the Umatrix.  Further details can be found in
 the referenced publications (see url).  This package offers tools for
 calculating and visualising the ESOM as well as Umatrix, Pmatrix and
-UStarMatrix.  All the functionality is also available through graphical user
-interfaces implemented in shiny'.")
+@code{UStarMatrix.} All the functionality is also available through graphical
+user interfaces implemented in shiny'.")
     (license license:gpl3)))
 
 (define-public r-ultimixt
@@ -3084,6 +3142,7 @@ simplex.")
                 "0xxkqrnlz3pkb3s1gacfzqav54w97gc0w8rh0fn1qy5rkmg2bplv"))))
     (properties `((upstream-name . "ulid")))
     (build-system r-build-system)
+    (inputs (list zlib))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/hrbrmstr/ulid")
@@ -3198,13 +3257,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.2.8")
+    (version "0.2.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "UKFE" version))
               (sha256
                (base32
-                "0a1y4qcawbnzjj0f2na9gnha9559lrqasb6jffqhwhv206wkm2z1"))))
+                "1qw82lsmaam0zw9vk96jzhw9c2jl7ja7zck902l5xgc5izj3viy2"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3213,21 +3272,22 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(ReFH).  Currently the package uses NRFA peak flow dataset version 11.1.  Aside
-from FEH functionality, further hydrological functions are available.  Most of
-the methods implemented in this package are described in one or more of the
-following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology (1999,
-ISBN:0 948540 94 X). \"Flood Estimation Handbook Supplementary Report No.  1\",
-Kjeldsen (2007, ISBN:0 903741 15 7). \"Regional Frequency Analysis - an approach
-based on L-moments\", Hosking & Wallis (1997, ISBN: 978 0 521 01940 8). \"Proposal
-of the extreme rank plot for extreme value analysis: with an emphasis on flood
-frequency studies\", Hammond (2019, <doi:10.2166/nh.2019.157>). \"Making better
-use of local data in flood frequency estimation\", Environment Agency (2017,
-ISBN: 978 1 84911 387 8). \"Sampling uncertainty of UK design flood estimation\" ,
-Hammond (2021, <doi:10.2166/nh.2021.059>). \"Improving the FEH statistical
-procedures for flood frequency estimation\", Environment Agency (2008, ISBN: 978
-1 84432 920 5). \"Low flow estimation in the United Kingdom\", Institute of
-Hydrology (1992, ISBN 0 948540 45 1).  Wallingford HydroSolutions, (2016,
+@code{(ReFH).} Currently the package uses NRFA peak flow dataset version 11.1.
+Aside from FEH functionality, further hydrological functions are available.
+Most of the methods implemented in this package are described in one or more of
+the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology
+(1999, ISBN:0 948540 94 X). \"Flood Estimation Handbook Supplementary Report No.
+1\", Kjeldsen (2007, ISBN:0 903741 15 7). \"Regional Frequency Analysis - an
+approach based on L-moments\", Hosking & Wallis (1997, ISBN: 978 0 521 01940 8).
+\"Proposal of the extreme rank plot for extreme value analysis: with an emphasis
+on flood frequency studies\", Hammond (2019, <doi:10.2166/nh.2019.157>). \"Making
+better use of local data in flood frequency estimation\", Environment Agency
+(2017, ISBN: 978 1 84911 387 8). \"Sampling uncertainty of UK design flood
+estimation\" , Hammond (2021, <doi:10.2166/nh.2021.059>). \"Improving the FEH
+statistical procedures for flood frequency estimation\", Environment Agency
+(2008, ISBN: 978 1 84432 920 5). \"Low flow estimation in the United Kingdom\",
+Institute of Hydrology (1992, ISBN 0 948540 45 1).  Wallingford
+@code{HydroSolutions,} (2016,
 <http://software.hydrosolutions.co.uk/winfap4/Urban-Adjustment-Procedure-Technical-Note.pdf>).
  Data from the UK National River Flow Archive (<https://nrfa.ceh.ac.uk/>, terms
 and conditions: <https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).")
@@ -3482,12 +3542,12 @@ Shape.")
      "Estimate Univariate Gaussian and Student's t Mixture Autoregressive Models")
     (description
      "Maximum likelihood estimation of univariate Gaussian Mixture Autoregressive
-(GMAR), Student's t Mixture Autoregressive (StMAR), and Gaussian and Student's t
-Mixture Autoregressive (G-StMAR) models, quantile residual tests, graphical
-diagnostics, forecast and simulate from GMAR, StMAR and G-StMAR processes.
-Leena Kalliovirta, Mika Meitz, Pentti Saikkonen (2015) <doi:10.1111/jtsa.12108>,
-Mika Meitz, Daniel Preve, Pentti Saikkonen (2023)
-<doi:10.1080/03610926.2021.1916531>, Savi Virolainen (2022)
+(GMAR), Student's t Mixture Autoregressive @code{(StMAR),} and Gaussian and
+Student's t Mixture Autoregressive @code{(G-StMAR)} models, quantile residual
+tests, graphical diagnostics, forecast and simulate from GMAR, @code{StMAR} and
+@code{G-StMAR} processes.  Leena Kalliovirta, Mika Meitz, Pentti Saikkonen
+(2015) <doi:10.1111/jtsa.12108>, Mika Meitz, Daniel Preve, Pentti Saikkonen
+(2023) <doi:10.1080/03610926.2021.1916531>, Savi Virolainen (2022)
 <doi:10.1515/snde-2020-0060>.")
     (license license:gpl3)))
 
@@ -3519,13 +3579,13 @@ month.")
 (define-public r-ufs
   (package
     (name "r-ufs")
-    (version "0.5.6")
+    (version "0.5.10")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ufs" version))
               (sha256
                (base32
-                "0w8fh92v6xiabyah56j68amn48gaa8ia0lk09273jlqc2q9fda62"))))
+                "09nrm8p95i8lksqyxxb2gqmyx650i05pv7a4gvgz4pbpsivxf9id"))))
     (properties `((upstream-name . "ufs")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -3577,14 +3637,14 @@ basic operations such as (dis)attenuate effect size estimates.")
     (home-page "https://wiwi.uni-paderborn.de/en/dep4/feng/")
     (synopsis "Risk Measure Calculation in Financial TS")
     (description
-     "Enables the user to calculate Value at Risk (VaR) and Expected Shortfall (ES) by
-means of various parametric and semiparametric GARCH-type models.  For the
-latter the estimation of the nonparametric scale function is carried out by
+     "Enables the user to calculate Value at Risk @code{(VaR)} and Expected Shortfall
+(ES) by means of various parametric and semiparametric GARCH-type models.  For
+the latter the estimation of the nonparametric scale function is carried out by
 means of a data-driven smoothing approach.  Model quality, in terms of
-forecasting VaR and ES, can be assessed by means of various backtesting methods
-such as the traffic light test for VaR and a newly developed traffic light test
-for ES. The approaches implemented in this package are described in e.g. Feng
-Y., Beran J., Letmathe S. and Ghosh S. (2020)
+forecasting @code{VaR} and ES, can be assessed by means of various backtesting
+methods such as the traffic light test for @code{VaR} and a newly developed
+traffic light test for ES. The approaches implemented in this package are
+described in e.g. Feng Y., Beran J., Letmathe S. and Ghosh S. (2020)
 <https://ideas.repec.org/p/pdn/ciepap/137.html> as well as Letmathe S., Feng Y.
 and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
     (license license:gpl3)))
@@ -3610,7 +3670,7 @@ and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
      "This natural language processing toolkit provides language-agnostic
 tokenization', parts of speech tagging', lemmatization and dependency parsing of
 raw text.  Next to text parsing, the package also allows you to train annotation
-models based on data of treebanks in CoNLL-U format as provided at
+models based on data of treebanks in @code{CoNLL-U} format as provided at
 <https://universaldependencies.org/format.html>.  The techniques are explained
 in detail in the paper: Tokenizing, POS Tagging, Lemmatizing and Parsing UD 2.0
 with UDPipe', available at <doi:10.18653/v1/K17-3009>.  The toolkit also
@@ -3793,7 +3853,7 @@ statistical power and are tailored for data in which the dimension L is much
 larger than sample size n.  See Gabriela B. Cybis, Marcio Valk and SÃ­lvia RC
 Lopes (2018) <doi:10.1080/00949655.2017.1374387>, Marcio Valk and Gabriela B.
 Cybis (2020) <doi:10.1080/10618600.2020.1796398>, Debora Z. Bello, Marcio Valk
-and Gabriela B. Cybis (2021) <arXiv:2106.09115>.")
+and Gabriela B. Cybis (2021) @code{<arXiv:2106.09115>.}")
     (license license:gpl3)))
 
 (define-public r-ucie
@@ -3826,28 +3886,38 @@ differences in CIELab color space, the result is a color encoding that aims to
 capture much of the structure of the original data.")
     (license license:expat)))
 
-(define-public r-uchardet
+(define-public r-uci
   (package
-    (name "r-uchardet")
-    (version "1.1.1")
+    (name "r-uci")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
-              (uri (cran-uri "uchardet" version))
+              (uri (cran-uri "uci" version))
               (sha256
                (base32
-                "0m3xy807smqdxhkhd9cwrcf3ljlyvfmnkd7831qzpgcadam2jcdj"))))
-    (properties `((upstream-name . "uchardet")))
+                "09lxal5bzi84zjl6nlx8jh93pasa8bkp2p5nzafyyqc69cxmp2ha"))))
+    (properties `((upstream-name . "uci")))
     (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sf
+                             r-pbapply
+                             r-future
+                             r-furrr
+                             r-fields
+                             r-data-table
+                             r-cpprouting
+                             r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://artemklevtsov.gitlab.io/uchardet")
-    (synopsis "The Universal Character Encoding Detector")
+    (home-page "https://github.com/ipeaGIT/uci")
+    (synopsis "Urban Centrality Index")
     (description
-     "R bindings of the uchardet', encoding detector library from Mozilla
-(<https://www.freedesktop.org/wiki/Software/uchardet/>).  It takes a sequence of
-bytes in an unknown character encoding and without any additional information,
-and attempts to get the encoding of the text.  All return names of the encodings
-are iconv-compatible.")
-    (license license:gpl2)))
+     "Calculates the Urban Centrality Index (UCI) as in Pereira et al., (2013)
+<doi:10.1111/gean.12002>.  The UCI measures the extent to which the spatial
+organization of a city or region varies from extreme polycentric to extreme
+monocentric in a continuous scale from 0 to 1.  Values closer to 0 indicate more
+polycentric patterns and values closer to 1 indicate a more monocentric urban
+form.")
+    (license license:expat)))
 
 (define-public r-ucarechemsuitecli
   (package
@@ -3983,7 +4053,7 @@ parameter estimation, individual/population based simulations, rule-based
 simulations for clinical trial design and modeling assays, deployment with a
 customizable Shiny app, and non-compartmental analysis.  System-specific
 analysis templates can be generated and each element includes integrated
-reporting with PowerPoint and Word'.")
+reporting with @code{PowerPoint} and Word'.")
     (license license:bsd-2)))
 
 (define-public r-ubcrm
@@ -4034,13 +4104,13 @@ options.")
     (synopsis "User-Guided Bayesian Framework for Ensemble Feature Selection")
     (description
      "The framework proposed in Jenul et al., (2022) <doi:10.1007/s10994-022-06221-9>,
-together with an interactive Shiny dashboard.  UBayFS is an ensemble feature
-selection technique embedded in a Bayesian statistical framework.  The method
-combines data and user knowledge, where the first is extracted via data-driven
-ensemble feature selection.  The user can control the feature selection by
-assigning prior weights to features and penalizing specific feature
-combinations.  UBayFS can be used for common feature selection as well as block
-feature selection.")
+together with an interactive Shiny dashboard. @code{UBayFS} is an ensemble
+feature selection technique embedded in a Bayesian statistical framework.  The
+method combines data and user knowledge, where the first is extracted via
+data-driven ensemble feature selection.  The user can control the feature
+selection by assigning prior weights to features and penalizing specific feature
+combinations. @code{UBayFS} can be used for common feature selection as well as
+block feature selection.")
     (license license:gpl3)))
 
 (define-public r-uavrmp

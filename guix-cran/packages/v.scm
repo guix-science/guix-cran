@@ -7,13 +7,19 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages curl)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
+  #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -96,6 +102,80 @@ maintenance and the addition of minor functionality.")
      "This package provides R functions to draw lines and curves with the width of the
 curve allowed to vary along the length of the curve.")
     (license license:gpl2+)))
+
+(define-public r-vvtableau
+  (package
+    (name "r-vvtableau")
+    (version "0.2.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvtableau" version))
+              (sha256
+               (base32
+                "0vlqp8m8ygknf1dak35w0kdzhsinazzwqp92488l9f447r8r7gz8"))))
+    (properties `((upstream-name . "vvtableau")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-xml
+                             r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vusaverse/vvtableau")
+    (synopsis "R Interface for 'Tableau' Services")
+    (description
+     "This package provides an R interface for interacting with the Tableau Server.
+It allows users to perform various operations such as publishing workbooks,
+refreshing data extracts, and managing users using the Tableau REST API (see
+<https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref.htm> for
+details).  Additionally, it includes functions to perform manipulations on local
+Tableau workbooks.")
+    (license license:expat)))
+
+(define-public r-vvshiny
+  (package
+    (name "r-vvshiny")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvshiny" version))
+              (sha256
+               (base32
+                "015rac6hz6k5wrg75abiyicjpljfs3cxibrala4dm5jxnwrm79sa"))))
+    (properties `((upstream-name . "vvshiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-forcats
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vvshiny")
+    (synopsis "Create Complex Shiny Apps More Easily")
+    (description
+     "Helper and Wrapper functions for making shiny dashboards more easily.  Functions
+are made modular and lower level functions are exported as well, so many
+use-cases are supported.")
+    (license license:expat)))
 
 (define-public r-vvsculptor
   (package
@@ -187,6 +267,38 @@ of Student Analytics.")
 Transformations are performed on character and numeric data.  As the scope of
 the package is within Student Analytics, there are functions focused around the
 academic year.")
+    (license license:expat)))
+
+(define-public r-vvcanvas
+  (package
+    (name "r-vvcanvas")
+    (version "0.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vvcanvas" version))
+              (sha256
+               (base32
+                "1f5xmgz08sx4a9mgc6id4y1jqnh5jf828vyd439gpbzr52b67dmm"))))
+    (properties `((upstream-name . "vvcanvas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-htm2txt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vusaverse/vvcanvas")
+    (synopsis "'Canvas' LMS API Integration")
+    (description
+     "Allow R users to interact with the Canvas Learning Management System (LMS) API
+(see <https://canvas.instructure.com/doc/api/all_resources.html> for details).
+It provides a set of functions to access and manipulate course data,
+assignments, grades, users, and other resources available through the Canvas
+API.")
     (license license:expat)))
 
 (define-public r-vvauditor
@@ -340,7 +452,8 @@ data.")
     (description
      "An interactive document on the topic of variance analysis using rmarkdown and
 shiny packages.  Runtime examples are provided in the package function as well
-as at <https://predanalyticssessions1.shinyapps.io/chisquareVarianceTest/>.")
+as at
+@code{<https://predanalyticssessions1.shinyapps.io/chisquareVarianceTest/>.}")
     (license license:gpl2)))
 
 (define-public r-vtree
@@ -463,11 +576,38 @@ purpose.  Genuer, R. Poggi, J.-M. and Tuleau-Malot, C. (2015)
     (home-page "https://github.com/ashbaldry/vstsr")
     (synopsis "Access to 'Azure DevOps' API via R")
     (description
-     "Implementation of Azure DevOps <https://azure.microsoft.com/> API calls.  It
-enables the extraction of information about repositories, build and release
+     "Implementation of Azure @code{DevOps} <https://azure.microsoft.com/> API calls.
+It enables the extraction of information about repositories, build and release
 definitions and individual releases.  It also helps create repositories and work
-items within a project without logging into Azure DevOps'.  There is the ability
-to use any API service with a shell for any non-predefined call.")
+items within a project without logging into Azure @code{DevOps'.} There is the
+ability to use any API service with a shell for any non-predefined call.")
+    (license license:gpl2)))
+
+(define-public r-vstdct
+  (package
+    (name "r-vstdct")
+    (version "0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vstdct" version))
+              (sha256
+               (base32
+                "0g26cplp5vjppyw8w37vdy3wah3i9wi14j64vl7i8d2fjbhqhqxp"))))
+    (properties `((upstream-name . "vstdct")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlme r-mass r-dtt))
+    (home-page "https://cran.r-project.org/package=vstdct")
+    (synopsis "Nonparametric Estimation of Toeplitz Covariance Matrices")
+    (description
+     "This package provides a nonparametric method to estimate Toeplitz covariance
+matrices from a sample of n independently and identically distributed
+p-dimensional vectors with mean zero.  The data is preprocessed with the
+discrete cosine matrix and a variance stabilization transformation to obtain an
+approximate Gaussian regression setting for the log-spectral density function.
+Estimates of the spectral density function and the inverse of the covariance
+matrix are provided as well.  Functions for simulating data and a protein data
+example are included.  For details see (Klockmann, Krivobokova; 2023),
+@code{<arXiv:2303.10018>.}")
     (license license:gpl2)))
 
 (define-public r-vsp
@@ -610,13 +750,13 @@ groups.")
 (define-public r-vscc
   (package
     (name "r-vscc")
-    (version "0.5")
+    (version "0.6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vscc" version))
               (sha256
                (base32
-                "0g2zhmysys4y5hpncm0mapv94chgrc5w5vvicbb4ic89nl31j3gm"))))
+                "100r5zs39b7wzn1wdxqjgh7nnxwqkwfvmz8xwm572vmwmnn7iv4i"))))
     (properties `((upstream-name . "vscc")))
     (build-system r-build-system)
     (propagated-inputs (list r-teigen r-mclust r-manlymix))
@@ -627,7 +767,9 @@ groups.")
 classification framework.  In particular, it can be used in an automated fashion
 using mixture model-based methods ('teigen and mclust are currently supported).
 Can account for mixtures of non-Gaussian distributions via Manly transform (via
-ManlyMix').  See Andrews and McNicholas (2014) <doi:10.1007/s00357-013-9139-2>.")
+@code{ManlyMix').} See Andrews and @code{McNicholas} (2014)
+<doi:10.1007/s00357-013-9139-2> and Neal and @code{McNicholas} (2023)
+@code{<doi:10.48550/arXiv.2305.16464>.}")
     (license license:gpl2+)))
 
 (define-public r-vrtest
@@ -679,10 +821,10 @@ covariance domain.  This algorithm was applied in Vladimir B. Seplyarskiy Ruslan
 A. Soldatov, et al. \"Population sequencing data reveal a compendium of
 mutational processes in the human germ line\".  Science, 12 Aug 2021.
 <doi:10.1126/science.aba7408>.  This package interacts with data available
-through the simulatedNMF package, which is available in a drat repository.  To
-access this data package, see the instructions at
-<https://github.com/kharchenkolab/vrnmf>.  The size of the simulatedNMF package
-is approximately 8 MB.")
+through the @code{simulatedNMF} package, which is available in a drat
+repository.  To access this data package, see the instructions at
+<https://github.com/kharchenkolab/vrnmf>.  The size of the @code{simulatedNMF}
+package is approximately 8 MB.")
     (license license:gpl3)))
 
 (define-public r-vrcp
@@ -819,12 +961,13 @@ for continuous, categorical, censored, and (repeated) time-to-event data.")
     (home-page "https://github.com/Blecigne/VoxR")
     (synopsis "Trees Geometry and Morphology from Unstructured TLS Data")
     (description
-     "Tools for 3D point cloud voxelisation, projection, geometrical and morphological
-description of trees (DBH, height, volume, crown diameter), analyses of temporal
-changes between different measurement times, distance based clustering and
-visualisation of 3D voxel clouds and 2D projection.  Most analyses and
-algorithms provided in the package are based on the concept of space exploration
-and are described in Lecigne et al. (2018, <doi:10.1093/aob/mcx095>).")
+     "This package provides tools for 3D point cloud voxelisation, projection,
+geometrical and morphological description of trees (DBH, height, volume, crown
+diameter), analyses of temporal changes between different measurement times,
+distance based clustering and visualisation of 3D voxel clouds and 2D
+projection.  Most analyses and algorithms provided in the package are based on
+the concept of space exploration and are described in Lecigne et al. (2018,
+<doi:10.1093/aob/mcx095>).")
     (license license:gpl3)))
 
 (define-public r-voxel
@@ -849,7 +992,8 @@ and are described in Lecigne et al. (2018, <doi:10.1093/aob/mcx095>).")
     (synopsis "Mass-Univariate Voxelwise Analysis of Medical Imaging Data")
     (description
      "This package provides functions for the mass-univariate voxelwise analysis of
-medical imaging data that follows the NIfTI <http://nifti.nimh.nih.gov> format.")
+medical imaging data that follows the @code{NIfTI} <http://nifti.nimh.nih.gov>
+format.")
     (license license:gpl2)))
 
 (define-public r-vowels
@@ -958,9 +1102,30 @@ check validity of ballots are also provided to ensure flexibility.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/decktools/votesmart/")
     (synopsis "Wrapper for the Project 'VoteSmart' API")
-    (description
-     "An R interface to the Project VoteSmart'<https://justfacts.votesmart.org/> API.")
+    (description "An R interface to the Project
+@code{VoteSmart'<https://justfacts.votesmart.org/>} API.")
     (license license:expat)))
+
+(define-public r-votesim
+  (package
+    (name "r-votesim")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "voteSim" version))
+              (sha256
+               (base32
+                "00i6jkfvb7dk6mbhl9hv08mhwj6sjkakmv02ybwxw1hy9gqbsacs"))))
+    (properties `((upstream-name . "voteSim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm r-genord r-extradistr))
+    (home-page "https://eric.univ-lyon2.fr/arolland/")
+    (synopsis "Generate Simulated Data for Voting Rules using Evaluations")
+    (description
+     "Provide functions to generate random simulated evaluations on candidates by
+voters for evaluation-based elections.  Functions are based on several models
+for continuous or discrete evaluations.")
+    (license license:gpl3)))
 
 (define-public r-voteogram
   (package
@@ -979,11 +1144,11 @@ check validity of ballots are also provided to ensure flexibility.")
     (home-page "https://github.com/hrbrmstr/voteogram")
     (synopsis "United States House and Senate Voting Cartogram Generators")
     (description
-     "ProPublica <https://projects.propublica.org/represent/> makes United States
-Congress member votes available and has developed their own unique cartogram to
-visually represent this data.  Tools are provided to retrieve voting data,
-prepare voting data for plotting with ggplot2', create vote cartograms and theme
-them.")
+     "@code{ProPublica} <https://projects.propublica.org/represent/> makes United
+States Congress member votes available and has developed their own unique
+cartogram to visually represent this data.  Tools are provided to retrieve
+voting data, prepare voting data for plotting with ggplot2', create vote
+cartograms and theme them.")
     (license (license:fsdg-compatible "AGPL"))))
 
 (define-public r-vote
@@ -1005,7 +1170,7 @@ them.")
      "Counting election votes and determining election results by different methods,
 including the single transferable vote or ranked choice, approval, score,
 plurality, condorcet and two-round runoff methods (Raftery et al. (2021)
-<arXiv:2102.05801>).")
+@code{<arXiv:2102.05801>).}")
     (license license:gpl2+)))
 
 (define-public r-voss
@@ -1058,8 +1223,8 @@ additions).")
      "Collecting Social Media Data and Generating Networks for Analysis")
     (description
      "This package provides a suite of easy to use functions for collecting social
-media data and generating networks for analysis.  Supports Twitter, YouTube,
-Reddit and web site data sources.")
+media data and generating networks for analysis.  Supports Twitter,
+@code{YouTube,} Reddit and web site data sources.")
     (license license:gpl3+)))
 
 (define-public r-vosondash
@@ -1094,7 +1259,7 @@ Reddit and web site data sources.")
     (description
      "This package provides a Shiny application for the interactive visualisation and
 analysis of networks that also provides a web interface for collecting social
-media data using vosonSML'.")
+media data using @code{vosonSML'.}")
     (license license:gpl3+)))
 
 (define-public r-voson-tcn
@@ -1143,8 +1308,8 @@ media data using vosonSML'.")
 (2016) <DOI:10.1080/14486563.2015.1028486> and Pacioni et al'. (2017)
 <DOI:10.1071/PC17002>.  The data is provided both as raw outputs from the
 population viability analysis software Vortex and packaged as R objects.  The R
-package vortexR uses the raw data provided here to illustrate its functionality
-of parsing raw Vortex output into R objects.")
+package @code{vortexR} uses the raw data provided here to illustrate its
+functionality of parsing raw Vortex output into R objects.")
     (license license:gpl3)))
 
 (define-public r-vorteksexport
@@ -1230,8 +1395,8 @@ one wishes to model can be found across a wide range of depths in the water
 column.  The package also contains functions to automatically generate marine
 training model training regions using machine learning, and interpolate and
 smooth patchily sampled environmental rasters using thin plate splines.  Davis
-Rabosky AR, Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, McGuire JA
-(2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
+Rabosky AR, Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, @code{McGuire}
+JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
 <doi:10.5065/D6W957CT>.  Pateiro-Lopez B, Rodriguez-Casal A (2022)
 <https://CRAN.R-project.org/package=alphahull>.")
     (license license:gpl3)))
@@ -1309,12 +1474,12 @@ volesti are described in A. Chalkis and V. Fisikopoulos (2022)
     (description
      "Interactive adverse event (AE) volcano plot for monitoring clinical trial
 safety.  This tool allows users to view the overall distribution of AEs in a
-clinical trial using standard (e.g. MedDRA preferred term) or custom (e.g.
-Gender) categories using a volcano plot similar to proposal by Zink et al.
+clinical trial using standard (e.g. @code{MedDRA} preferred term) or custom
+(e.g. Gender) categories using a volcano plot similar to proposal by Zink et al.
 (2013) <doi:10.1177/1740774513485311>.  This tool provides a stand-along shiny
 application and flexible shiny modules allowing this tool to be used as a part
 of more robust safety monitoring framework like the Shiny app from the
-safetyGraphics R package.")
+@code{safetyGraphics} R package.")
     (license license:expat)))
 
 (define-public r-volcano3d
@@ -1389,7 +1554,7 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
                 "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
-    (inputs (list proj hdf5 gsl))
+    (inputs (list zlib proj hdf5 gsl))
     (propagated-inputs (list r-withr
                              r-rlang
                              r-rcppgsl
@@ -1431,8 +1596,9 @@ birds and other biological signals in weather radar data.  See Dokter et al.
     (synopsis
      "Tools for Voice Analysis, Speaker Recognition and Mood Inference")
     (description
-     "Tools for voice analysis, speaker recognition and mood inference.  Gathers R and
-Python tools to solve problems concerning voice and audio in general.")
+     "This package provides tools for voice analysis, speaker recognition and mood
+inference.  Gathers R and Python tools to solve problems concerning voice and
+audio in general.")
     (license license:gpl3)))
 
 (define-public r-voi
@@ -1663,7 +1829,7 @@ Das (2020) <http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
     (home-page "https://github.com/mlampros/VMDecomp")
     (synopsis "Variational Mode Decomposition")
     (description
-     "RcppArmadillo implementation for the Matlab code of the Variational Mode
+     "@code{RcppArmadillo} implementation for the Matlab code of the Variational Mode
 Decomposition and Two-Dimensional Variational Mode Decomposition'.  For more
 information, see (i) Variational Mode Decomposition by K. Dragomiretskiy and D.
 Zosso in IEEE Transactions on Signal Processing, vol.  62, no.  3, pp.  531-544,
@@ -1882,13 +2048,13 @@ Partial Dependence Profiles.")
 (define-public r-vivid
   (package
     (name "r-vivid")
-    (version "0.2.7")
+    (version "0.2.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vivid" version))
               (sha256
                (base32
-                "08ngzzni1dyfnfqn7y6f6xxb6lvf2p06nnzydwn6n0psfg5976lp"))))
+                "0zl9p8dsrz9lmylnfxj4b50g1lvk7563ss0w3k1pidkwrs4kazin"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -2181,13 +2347,13 @@ computation of evaluation criteria.")
     (synopsis "Visualization 2D of Binary Classification Models")
     (description
      "Visual 2D point and contour plots for binary classification modeling under
-algorithms such as glm(), randomForest(), gbm(), nnet() and svm(), presented
-over two dimensions generated by FAMD and MCA methods.  Package FactoMineR for
-multivariate reduction functions and package MBA for interpolation functions are
-used.  The package can be used to visualize the discriminant power of input
-variables and algorithmic modeling, explore outliers, compare algorithm
-behaviour, etc.  It has been created initially for teaching purposes, but it has
-also many practical uses.")
+algorithms such as glm(), @code{randomForest(),} gbm(), nnet() and svm(),
+presented over two dimensions generated by FAMD and MCA methods.  Package
+@code{FactoMineR} for multivariate reduction functions and package MBA for
+interpolation functions are used.  The package can be used to visualize the
+discriminant power of input variables and algorithmic modeling, explore
+outliers, compare algorithm behaviour, etc.  It has been created initially for
+teaching purposes, but it has also many practical uses.")
     (license license:gpl3+)))
 
 (define-public r-visualizesimon2stage
@@ -2293,7 +2459,7 @@ visualization, statistical analysis, and clinical interpretation of visual-field
 loss and its change over time.  It is intended to be a tool for collaborative
 research.  The package is described in Marin-Franch and Swanson (2013)
 <doi:10.1167/13.4.10> and is part of the Open Perimetry Initiative (OPI)
-[Turpin, Artes, and McKendrick (2012) <doi:10.1167/12.11.22>].")
+[Turpin, Artes, and @code{McKendrick} (2012) <doi:10.1167/12.11.22>].")
     (license license:gpl3)))
 
 (define-public r-visualdom
@@ -2313,19 +2479,20 @@ research.  The package is described in Marin-Franch and Swanson (2013)
     (synopsis "Visualize Dominant Variables in Wavelet Multiple Correlation")
     (description
      "Estimates and plots as a heat map the correlation coefficients obtained via the
-wavelet local multiple correlation WLMC (FernÃ¡ndez-Macho 2018) and the dominant
-variable/s, i.e., the variable/s that maximizes the multiple correlation through
-time and scale (Polanco-MartÃ­nez et al.  2020, Polanco-MartÃ­nez 2022).  We
-improve the graphical outputs of WLMC proposing a didactic and useful way to
-visualize the dominant variable(s) for a set of time series.  The WLMC was
-designed for financial time series, but other kinds of data (e.g., climatic,
-ecological, etc.) can be used.  The functions contained in VisualDom are highly
-flexible since these contains several parameters to personalize the time series
-under analysis and the heat maps.  In addition, we have also included two data
-sets (named rdata_climate and rdata_Lorenz') to exemplify the use of the
-functions contained in VisualDom'.  Methods derived from FernÃ¡ndez-Macho (2018)
-<doi:10.1016/j.physa.2017.11.050>, Polanco-MartÃ­nez et al. (2020)
-<doi:10.1038/s41598-020-77767-8> and Polanco-MartÃ­nez (2023, in press).")
+wavelet local multiple correlation WLMC @code{(FernÃ¡ndez-Macho} 2018) and the
+dominant variable/s, i.e., the variable/s that maximizes the multiple
+correlation through time and scale @code{(Polanco-MartÃ­nez} et al.  2020,
+@code{Polanco-MartÃ­nez} 2022).  We improve the graphical outputs of WLMC
+proposing a didactic and useful way to visualize the dominant variable(s) for a
+set of time series.  The WLMC was designed for financial time series, but other
+kinds of data (e.g., climatic, ecological, etc.) can be used.  The functions
+contained in @code{VisualDom} are highly flexible since these contains several
+parameters to personalize the time series under analysis and the heat maps.  In
+addition, we have also included two data sets (named rdata_climate and
+rdata_Lorenz') to exemplify the use of the functions contained in
+@code{VisualDom'.} Methods derived from @code{FernÃ¡ndez-Macho} (2018)
+<doi:10.1016/j.physa.2017.11.050>, @code{Polanco-MartÃ­nez} et al. (2020)
+<doi:10.1038/s41598-020-77767-8> and @code{Polanco-MartÃ­nez} (2023, in press).")
     (license license:gpl2+)))
 
 (define-public r-vistributions
@@ -2376,13 +2543,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vistla" version))
               (sha256
                (base32
-                "1x5iighpdx1mf3gips1b5j39z2f52kjs2dd3b3l58v391j4q36sx"))))
+                "117gng2kp3ngmi9w6h3qcradqc0dmb2alm1j41zpygkby6v8b1jw"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
@@ -2457,15 +2624,16 @@ especially suited for browser based interfaces to server-based deployments of R.
 Implemented tests: lm(), t.test(), wilcox.test(), aov(), kruskal.test(),
 fisher.test(), chisqu.test().  Implemented tests to check the normal
 distribution of standardized residuals: shapiro.test() and ad.test().
-Implemented post-hoc tests: TukeyHSD() for aov() and pairwise.wilcox.test() for
-kruskal.test().  For the comparison of averages, the following algorithm is
-implemented: If the p-values of the standardized residuals of both
-shapiro.test() or ad.test() are smaller than 1-conf.level, kruskal.test() resp.
-wilcox.test() are performed, otherwise the oneway.test() and aov() resp.
-t.test() are performed and displayed.  Exception: If the sample size is bigger
-than 100, t.test() is always performed and wilcox.test() is never executed
-(Lumley et al. (2002) <doi:10.1146/annurev.publhealth.23.100901.140546>).  For
-the test of independence of count data, Cochran's rule (Cochran (1954)
+Implemented post-hoc tests: @code{TukeyHSD()} for aov() and
+pairwise.wilcox.test() for kruskal.test().  For the comparison of averages, the
+following algorithm is implemented: If the p-values of the standardized
+residuals of both shapiro.test() or ad.test() are smaller than 1-conf.level,
+kruskal.test() resp.  wilcox.test() are performed, otherwise the oneway.test()
+and aov() resp.  t.test() are performed and displayed.  Exception: If the sample
+size is bigger than 100, t.test() is always performed and wilcox.test() is never
+executed (Lumley et al. (2002)
+<doi:10.1146/annurev.publhealth.23.100901.140546>).  For the test of
+independence of count data, Cochran's rule (Cochran (1954)
 <doi:10.2307/3001666>) is implemented: If more than 20 percent of all cells have
 a count smaller than 5, fisher.test() is performed and displayed, otherwise
 chisqu.test().  In both cases case an additional mosaic plot is generated.")
@@ -2490,7 +2658,7 @@ chisqu.test().  In both cases case an additional mosaic plot is generated.")
     (description
      "This package provides a convenient interface for constructing plots to visualize
 the fit of regression models arising from a wide variety of models in R ('lm',
-glm', coxph', rlm', gam', locfit', lmer', randomForest', etc.)")
+glm', coxph', rlm', gam', locfit', lmer', @code{randomForest',} etc.)")
     (license license:gpl3)))
 
 (define-public r-visr
@@ -2577,12 +2745,13 @@ at Wood, Guerry, Silver, and Lacayo (2013) <doi:10.1038/srep02976>.")
     (description
      "This package provides a graphical R package designed to visualize behavioral
 observations over time.  Based on raw time data extracted from video recorded
-sessions of experimental observations, ViSiElse grants a global overview of a
-process by combining the visualization of multiple actions timestamps for all
-participants in a single graph.  Individuals and/or group behavior can easily be
-assessed.  Supplementary features allow users to further inspect their data by
-adding summary statistics (mean, standard deviation, quantile or statistical
-test) and/or time constraints to assess the accuracy of the realized actions.")
+sessions of experimental observations, @code{ViSiElse} grants a global overview
+of a process by combining the visualization of multiple actions timestamps for
+all participants in a single graph.  Individuals and/or group behavior can
+easily be assessed.  Supplementary features allow users to further inspect their
+data by adding summary statistics (mean, standard deviation, quantile or
+statistical test) and/or time constraints to assess the accuracy of the realized
+actions.")
     (license license:agpl3)))
 
 (define-public r-viscomplexr
@@ -2720,13 +2889,13 @@ analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
 (define-public r-visachartr
   (package
     (name "r-visachartr")
-    (version "3.0.0")
+    (version "3.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "visachartR" version))
               (sha256
                (base32
-                "1amizhkzqmvlagi4qpwwzjjwswd9f3mjvxiddq92cgj8rj5f4hjc"))))
+                "0jwhb5ad6n9pcxx2ss6jzxj9gzi448x2ssw07h3igs7bxjh47lp1"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
@@ -2784,10 +2953,10 @@ results of analysis in the ggplot2 style.")
     (home-page "https://github.com/themains/virustotal")
     (synopsis "R Client for the VirusTotal API")
     (description
-     "Use VirusTotal, a Google service that analyzes files and URLs for viruses,
-worms, trojans etc., provides category of the content hosted by a domain from a
-variety of prominent services, provides passive DNS information, among other
-things.  See <http://www.virustotal.com> for more information.")
+     "Use @code{VirusTotal,} a Google service that analyzes files and URLs for
+viruses, worms, trojans etc., provides category of the content hosted by a
+domain from a variety of prominent services, provides passive DNS information,
+among other things.  See <http://www.virustotal.com> for more information.")
     (license license:expat)))
 
 (define-public r-virtuoso
@@ -2909,12 +3078,12 @@ generations.  The genealogies that result facilitate the study of family ties.")
     (synopsis
      "Simulating Pollen Curves from Virtual Taxa with Different Life and Niche Traits")
     (description
-     "Tools to generate virtual environmental drivers with a given temporal
-autocorrelation, and to simulate pollen curves at annual resolution over
-millennial time-scales based on these drivers and virtual taxa with different
-life traits and niche features.  It also provides the means to simulate
-quasi-realistic pollen-data conditions by applying simulated accumulation rates
-and given depth intervals between consecutive samples.")
+     "This package provides tools to generate virtual environmental drivers with a
+given temporal autocorrelation, and to simulate pollen curves at annual
+resolution over millennial time-scales based on these drivers and virtual taxa
+with different life traits and niche features.  It also provides the means to
+simulate quasi-realistic pollen-data conditions by applying simulated
+accumulation rates and given depth intervals between consecutive samples.")
     (license license:gpl2+)))
 
 (define-public r-virf
@@ -2949,16 +3118,16 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 (define-public r-vip
   (package
     (name "r-vip")
-    (version "0.3.2")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vip" version))
               (sha256
                (base32
-                "1qsvyfms79sn46jdmq7q5r0d6gwjqhr9pll1y776rx0bj7vx1ax5"))))
+                "1x48hj6vq07vmvskcif9cjqbyhpbijn4s1kjy7z8ra1gbwxw4zyi"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-plyr r-magrittr r-gridextra r-ggplot2))
+    (propagated-inputs (list r-yardstick r-tibble r-ggplot2 r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/koalaverse/vip/")
     (synopsis "Variable Importance Plots")
@@ -2970,7 +3139,7 @@ provides model- agnostic approaches that can be applied to any supervised
 learning algorithm.  These include 1) an efficient permutation-based variable
 importance measure, 2) variable importance based on Shapley values (Strumbelj
 and Kononenko, 2014) <doi:10.1007/s10115-013-0679-x>, and 3) the variance-based
-approach described in Greenwell et al. (2018) <arXiv:1805.04755>.  A
+approach described in Greenwell et al. (2018) @code{<arXiv:1805.04755>.} A
 variance-based method for quantifying the relative strength of interaction
 effects is also included (see the previous reference for details).")
     (license license:gpl2+)))
@@ -3046,19 +3215,19 @@ function evaluation, and simulation.")
      "This package implements D-vine quantile regression models with parametric or
 nonparametric pair-copulas.  See Kraus and Czado (2017)
 <doi:10.1016/j.csda.2016.12.009> and Schallhorn et al. (2017)
-<arXiv:1705.08310>.")
+@code{<arXiv:1705.08310>.}")
     (license license:gpl3)))
 
 (define-public r-vinecopula
   (package
     (name "r-vinecopula")
-    (version "2.4.5")
+    (version "2.5.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VineCopula" version))
               (sha256
                (base32
-                "1k9k3kwzw7pdmr3hkhafyaqvnn2g5syys74r9kqcn9fm2iyzdf86"))))
+                "0s2v27i5cljvxzh3awpf3bcfbbghch0lphhghqnc7x51w1prxfai"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-lattice r-adgoftest))
@@ -3219,20 +3388,20 @@ fit researcher needs.")
     (synopsis "State-Space Models Inference by Kalman or Viking")
     (description
      "Inference methods for state-space models, relying on the Kalman Filter or on
-Viking (Variational Bayesian VarIance tracKING).  See J. de Vilmarest (2022)
-<https://theses.hal.science/tel-03716104/>.")
+Viking (Variational Bayesian @code{VarIance} @code{tracKING).} See J. de
+Vilmarest (2022) <https://theses.hal.science/tel-03716104/>.")
     (license license:lgpl3)))
 
 (define-public r-vigor
   (package
     (name "r-vigor")
-    (version "1.1.1")
+    (version "1.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VIGoR" version))
               (sha256
                (base32
-                "1dpl9y86i8hcrbyvgfkix4vpg5rsz5y6g8m73jl8kzpi686r9ikv"))))
+                "0ikyfla1c4x6plm05pihaas6qz43dip20i75c4cwk1lq7fqayq92"))))
     (properties `((upstream-name . "VIGoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VIGoR")
@@ -3309,8 +3478,8 @@ genomic information for autopolyploid species.  The app is meant for interactive
 use and allows users to optionally upload different sources of information,
 including gene annotation and alignment files, enabling the exploitation and
 search for candidate genes in a genome browser.  In its current version,
-VIEWpoly supports inputs from MAPpoly', polymapR', diaQTL', QTLpoly and polyqtlR
-packages.")
+VIEWpoly supports inputs from MAPpoly', @code{polymapR',} @code{diaQTL',}
+QTLpoly and @code{polyqtlR} packages.")
     (license license:gpl3+)))
 
 (define-public r-viewpipesteps
@@ -3419,20 +3588,20 @@ as playing and pausing the video to be triggered from the server.")
     (description
      "Compared with the similar graph embedding method such as Laplacian Eigenmaps,
 Vicus can exploit more local structures of graph data.  For the details of the
-methods, see the reference section of GitHub README.md
+methods, see the reference section of @code{GitHub} README.md
 <https://github.com/rikenbit/Vicus>.")
     (license license:expat)))
 
 (define-public r-vicmapr
   (package
     (name "r-vicmapr")
-    (version "0.2.0")
+    (version "0.2.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VicmapR" version))
               (sha256
                (base32
-                "0p10vj9d4x1ffv138zpr0c9lmlm23mxc6jm1yhyyf3xlivjmj45b"))))
+                "0djv95l32nz6wwslwgn0v037fjbl3fz15vybn39c6g1iw9a2a46s"))))
     (properties `((upstream-name . "VicmapR")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
@@ -3461,10 +3630,10 @@ methods, see the reference section of GitHub README.md
     (description
      "Easily interfaces R to spatial datasets available through the Victorian
 Government's WFS (Web Feature Service):
-<https://opendata.maps.vic.gov.au/geoserver/ows?request=GetCapabilities&service=wfs>,
-which allows users to read in sf data from these sources.  VicmapR uses the lazy
-querying approach and code developed by Teucher et al. (2021) for the bcdata R
-package <doi:10.21105/joss.02927>.")
+@code{<https://opendata.maps.vic.gov.au/geoserver/ows?request=GetCapabilities&service=wfs>,}
+which allows users to read in sf data from these sources. @code{VicmapR} uses
+the lazy querying approach and code developed by Teucher et al. (2021) for the
+bcdata R package <doi:10.21105/joss.02927>.")
     (license license:asl2.0)))
 
 (define-public r-vici
@@ -3606,11 +3775,12 @@ variations in language, character set, and spelling.  For more information go to
     (home-page "https://cran.r-project.org/package=via")
     (synopsis "Virtual Arrays")
     (description
-     "The base class VirtualArray is defined, which acts as a wrapper around lists
-allowing users to fold arbitrary sequential data into n-dimensional, R-style
-virtual arrays.  The derived XArray class is defined to be used for homogeneous
-lists that contain a single class of objects.  The RasterArray and SfArray
-classes enable the use of stacked spatial data instead of lists.")
+     "The base class @code{VirtualArray} is defined, which acts as a wrapper around
+lists allowing users to fold arbitrary sequential data into n-dimensional,
+R-style virtual arrays.  The derived XArray class is defined to be used for
+homogeneous lists that contain a single class of objects.  The
+@code{RasterArray} and @code{SfArray} classes enable the use of stacked spatial
+data instead of lists.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-vhica
@@ -3679,14 +3849,14 @@ there are many more variables than observations).")
 various codon usage bias measurements as: effective number of codons (ENc)
 Novembre (2002) <doi:10.1093/oxfordjournals.molbev.a004201>, codon adaptation
 index (CAI) Sharp and Li (1987) <doi:10.1093/nar/15.3.1281>, relative codon
-deoptimization index (RCDI) PuigbÃ² et al (2010) <doi:10.1186/1756-0500-3-87>,
-similarity index (SiD) Zhou et al (2013) <doi:10.1371/journal.pone.0077239>,
-synonymous codon usage orderliness (SCUO) Wan et al (2004)
-<doi:10.1186/1471-2148-4-19> and, relative synonymous codon usage (RSCU) Sharp
-et al (1986) <doi:10.1093/nar/14.13.5125>.  Also, it provides a statistical
-dinucleotide over- and underrepresentation with three different models.
-Implement several methods for visualization of codon usage as ENc.GC3plot() and
-PR2.plot().")
+deoptimization index (RCDI) @code{PuigbÃ²} et al (2010)
+<doi:10.1186/1756-0500-3-87>, similarity index @code{(SiD)} Zhou et al (2013)
+<doi:10.1371/journal.pone.0077239>, synonymous codon usage orderliness (SCUO)
+Wan et al (2004) <doi:10.1186/1471-2148-4-19> and, relative synonymous codon
+usage (RSCU) Sharp et al (1986) <doi:10.1093/nar/14.13.5125>.  Also, it provides
+a statistical dinucleotide over- and underrepresentation with three different
+models.  Implement several methods for visualization of codon usage as
+ENc.GC3plot() and PR2.plot().")
     (license license:gpl3)))
 
 (define-public r-vglmer
@@ -3952,7 +4122,7 @@ crossed over to the study vaccine.  The methods also allow adjustment for
 possible confounding via inverse probability weighting through specification of
 models for the trial entry process, unblinding mechanisms, and the probability
 an unblinded placebo participant accepts study vaccine: Tsiatis, A. A. and
-Davidian, M. (2021) <arXiv:2102.13103> .")
+Davidian, M. (2021) @code{<arXiv:2102.13103>} .")
     (license license:gpl2)))
 
 (define-public r-vetresearchlmm
@@ -4000,13 +4170,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.1")
+    (version "0.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vetiver" version))
               (sha256
                (base32
-                "0pw6y7rs1hk9pc00f3bz1zrfk7pg4ygha7yp9mhs5jm7bkvpiqsl"))))
+                "1ah7mcyzdc7cnhza8zhs8g7vwvffwxqnrhx24rfn6jrlng1yk6is"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4025,6 +4195,7 @@ requirements, and auto-composing error messages when they do not.")
                              r-fs
                              r-ellipsis
                              r-cli
+                             r-cereal
                              r-butcher
                              r-bundle))
     (native-inputs (list r-knitr))
@@ -4125,7 +4296,7 @@ preserving node out-degrees.")
     (description
      "This package creates Vertex Similarity matrix of an undirected graph based on
 the method stated by E. A. Leicht, Petter Holme, AND M. E. J. Newman in their
-paper <DOI:10.1103/PhysRevE.73.026120>.")
+paper @code{<DOI:10.1103/PhysRevE.73.026120>.}")
     (license license:gpl2)))
 
 (define-public r-versionsort
@@ -4171,9 +4342,9 @@ set may be downloaded from
 This data set is for a real-time quantitative polymerase chain reaction ('PCR')
 experiment that comprises the raw fluorescence data of 24,576 amplification
 curves.  This data set comprises 59 genes of interest and 5 reference genes.
-Each gene was assessed on 366 neuroblastoma complementary DNA ('cDNA') samples
-and on 18 standard dilution series samples (10-fold 5-point dilution series x 3
-replicates + no template controls ('NTC') x 3 replicates).")
+Each gene was assessed on 366 neuroblastoma complementary DNA @code{('cDNA')}
+samples and on 18 standard dilution series samples (10-fold 5-point dilution
+series x 3 replicates + no template controls ('NTC') x 3 replicates).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-verification
@@ -4237,7 +4408,7 @@ input number.")
      "Describe in words the genealogical relationship between two members of a given
 pedigree.  verbalisr is part of the ped suite collection of packages for
 pedigree analysis.  For a demonstration of verbalisr', see the online app
-QuickPed at <https://magnusdv.shinyapps.io/quickped>.")
+@code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>.")
     (license license:gpl3)))
 
 (define-public r-verbaliser
@@ -4307,8 +4478,8 @@ managing capitalisations in tidy data.")
     (synopsis "Variable Selection for Heterogeneous Populations")
     (description
      "This package provides variable selection and estimation routines for models with
-main effects stratified on multiple binary factors.  The vennLasso package is an
-implementation of the method introduced in Huling, et al. (2017)
+main effects stratified on multiple binary factors.  The @code{vennLasso}
+package is an implementation of the method introduced in Huling, et al. (2017)
 <doi:10.1111/biom.12769>.")
     (license license:gpl2+)))
 
@@ -4505,8 +4676,8 @@ based on daily mean temperatures and the day of the year.")
      "Handling of vegetation data from different sources ( Turboveg 2.0
 <https://www.synbiosys.alterra.nl/turboveg/>; the German national repository
 <https://www.vegetweb.de> and others.  Taxonomic harmonization (given
-appropriate taxonomic lists, e.g. the German taxonomic standard list \"GermanSL\",
-<https://germansl.infinitenature.org>).")
+appropriate taxonomic lists, e.g. the German taxonomic standard list
+@code{\"GermanSL\",} <https://germansl.infinitenature.org>).")
     (license license:gpl2+)))
 
 (define-public r-vegclust
@@ -4559,7 +4730,7 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
      "Vega and Vega-Lite parse text in JSON notation to render chart-specifications
 into HTML'.  This package is used to facilitate the rendering.  It also provides
 a means to interact with signals, events, and datasets in a Vega chart using
-JavaScript or Shiny'.")
+@code{JavaScript} or Shiny'.")
     (license license:expat)))
 
 (define-public r-vegan3d
@@ -4607,8 +4778,8 @@ analysis, especially with the vegan package.")
     (synopsis
      "Tools to Encode Visualizations with the 'Grammar of Graphics'-Like 'Vega-Lite' 'Spec'")
     (description
-     "The Vega-Lite JavaScript framework provides a higher-level grammar for visual
-analysis, akin to ggplot or Tableau', that generates complete Vega
+     "The Vega-Lite @code{JavaScript} framework provides a higher-level grammar for
+visual analysis, akin to ggplot or Tableau', that generates complete Vega
 specifications.  Functions exist which enable building a valid spec from scratch
 or importing a previously created spec file.  Functions also exist to export
 spec files and to generate code which will enable plots to be embedded in
@@ -4619,13 +4790,13 @@ htmlwidget'.")
 (define-public r-vedicdatetime
   (package
     (name "r-vedicdatetime")
-    (version "0.1.4")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "VedicDateTime" version))
               (sha256
                (base32
-                "0rympbzj1iaksh512frb305gsk531zbwqj8cgaji1c1gikg1jaj7"))))
+                "0rk8z2siawphdzs17hbjd0yxiav6lw01wxg5m3rwyal9wpca95l1"))))
     (properties `((upstream-name . "VedicDateTime")))
     (build-system r-build-system)
     (propagated-inputs (list r-swephr))
@@ -4637,8 +4808,8 @@ htmlwidget'.")
 functionalities to facilitate conversion between Gregorian and Vedic calendar
 systems, and helpful in examining its impact in the time series analysis domain.
  The background is described in Neeraj Dhanraj Bokde et al. (2021)
-<doi:10.48550/arXiv.2111.03441>.")
-    (license license:gpl3)))
+@code{<doi:10.48550/arXiv.2111.03441>.}")
+    (license license:gpl3+)))
 
 (define-public r-vectorwavelet
   (package
@@ -4669,6 +4840,34 @@ methodologies.  This package can be used to perform multiple wavelet coherence,
 quadruple wavelet coherence, and n-dimensional vector wavelet coherence
 analyses.")
     (license license:gpl2+)))
+
+(define-public r-vectorcoder
+  (package
+    (name "r-vectorcoder")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "VectorCodeR" version))
+              (sha256
+               (base32
+                "0qakd219a1955iqmp28vbhi3h7wpvayfcgv2dmxi5qsslw1ws21b"))))
+    (properties `((upstream-name . "VectorCodeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse r-tidyr r-readxl r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VectorCodeR")
+    (synopsis
+     "Easily Analyze Your Gait Patterns Using Vector Coding Technique")
+    (description
+     "Facilitate the analysis of inter-limb and intra-limb coordination in human
+movement.  It provides functions for calculating the phase angle between two
+segments, enabling researchers and practitioners to quantify the coordination
+patterns within and between limbs during various motor tasks.  Needham, R.,
+Naemi, R., & Chockalingam, N. (2014) <doi:10.1016/j.jbiomech.2013.12.032>.
+Needham, R., Naemi, R., & Chockalingam, N. (2015)
+<doi:10.1016/j.jbiomech.2015.07.023>.  Tepavac, D., & Field-Fote, E. C. (2001)
+<doi:10.1123/jab.17.3.259>.")
+    (license license:gpl3)))
 
 (define-public r-vecstatgraphs2d
   (package
@@ -4882,12 +5081,36 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (home-page "https://cran.r-project.org/package=vDiveR")
     (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
     (description
-     "To ease the visualization of outputs from Diversity Motif Analyser ('DiMA';
-<https://github.com/PU-SDS/DiMA>).  vDiveR allows visualization of the diversity
-motifs (index and its variants â major, minor and unique) for elucidation of
-the underlying inherent dynamics.  Please refer
+     "To ease the visualization of outputs from Diversity Motif Analyser
+@code{('DiMA';} @code{<https://github.com/PU-SDS/DiMA>).} @code{vDiveR} allows
+visualization of the diversity motifs (index and its variants â major, minor
+and unique) for elucidation of the underlying inherent dynamics.  Please refer
 <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
     (license license:expat)))
+
+(define-public r-vdgraph
+  (package
+    (name "r-vdgraph")
+    (version "2.2-6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "Vdgraph" version))
+              (sha256
+               (base32
+                "042p7r179i1q0369zf8kqwrr54laxlc7m3d4s5ngg3h755bhhgcd"))))
+    (properties `((upstream-name . "Vdgraph")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=Vdgraph")
+    (synopsis
+     "Variance Dispersion Graphs and Fraction of Design Space Plots for Response Surface Designs")
+    (description
+     "Uses a modification of the published FORTRAN code in \"A Computer Program for
+Generating Variance Dispersion Graphs\" by G. Vining, Journal of Quality
+Technology, Vol.  25 No.  1 January 1993, to produce variance dispersion graphs.
+ Also produces fraction of design space plots, and contains data frames for
+several minimal run response surface designs.")
+    (license license:gpl2)))
 
 (define-public r-vdg
   (package
@@ -5017,13 +5240,13 @@ information in a collection of time series.")
 (define-public r-vcr
   (package
     (name "r-vcr")
-    (version "1.2.0")
+    (version "1.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcr" version))
               (sha256
                (base32
-                "12xiw53dba7dcsdfb8c2cg4v6i9jzhf42plw6hwfp9v65bmq3b83"))))
+                "0vqq4lwgk9ss3x2vhkmgcymdwfppxjbaycm7pwik70sz9pkdk2d4"))))
     (properties `((upstream-name . "vcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5091,13 +5314,13 @@ time computing other summary statistics which are summarily ignored.")
 (define-public r-vcmeta
   (package
     (name "r-vcmeta")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "vcmeta" version))
               (sha256
                (base32
-                "02zfrdrl5ilaa7is1j8189p4f7n8zdy2jyzzh864zm1a4dkii2rk"))))
+                "070qlyhalnkvz1z2sd5ndirn6py44dfc95ncs7ddvlhpd8lxp6xm"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mathjaxr r-ggplot2))
@@ -5143,11 +5366,12 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (description
      "This package provides additional data sets, methods and documentation to
 complement the vcd package for Visualizing Categorical Data and the gnm package
-for Generalized Nonlinear Models.  In particular, vcdExtra extends mosaic, assoc
-and sieve plots from vcd to handle glm() and gnm() models and adds a 3D version
-in mosaic3d'.  Additionally, methods are provided for comparing and visualizing
-lists of glm and loglm objects.  This package is now a support package for the
-book, \"Discrete Data Analysis with R\" by Michael Friendly and David Meyer.")
+for Generalized Nonlinear Models.  In particular, @code{vcdExtra} extends
+mosaic, assoc and sieve plots from vcd to handle glm() and gnm() models and adds
+a 3D version in mosaic3d'.  Additionally, methods are provided for comparing and
+visualizing lists of glm and loglm objects.  This package is now a support
+package for the book, \"Discrete Data Analysis with R\" by Michael Friendly and
+David Meyer.")
     (license license:gpl2+)))
 
 (define-public r-vccp
@@ -5173,8 +5397,8 @@ various state-of-the-art segmentation methods to identify multiple change
 points, and a likelihood ratio test or the stationary bootstrap for inference.
 The vine copulas allow for various forms of dependence between time series
 including tail, symmetric and asymmetric dependence.  The functions have been
-extensively tested on simulated multivariate time series data and fMRI data.
-For details on the VCCP methodology, please see Xiong & Cribben (2021).")
+extensively tested on simulated multivariate time series data and @code{fMRI}
+data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
     (license license:expat)))
 
 (define-public r-vca
@@ -5229,7 +5453,7 @@ description of the features.")
      "This package provides new classes for (rotated) BB1, BB6, BB7, BB8, and Tawn
 copulas, extends the existing Gumbel and Clayton families with rotations, and
 allows to set up a vine copula model using the copula API. Corresponding objects
-from the VineCopula API can easily be converted.")
+from the @code{VineCopula} API can easily be converted.")
     (license license:gpl3)))
 
 (define-public r-vbv
@@ -5249,9 +5473,9 @@ from the VineCopula API can easily be converted.")
     (description
      "Time series decomposition for univariate time series using the \"Verallgemeinerte
 Berliner Verfahren\" (Generalized Berlin Method) as described in Kontinuierliche
-MessgrÃ¶Ãen und Stichprobenstrategien in Raum und Zeit mit Anwendungen in den
-Natur-, Umwelt-, Wirtschafts- und Finanzwissenschaften', by Hebbel and Steuer,
-Springer Berlin Heidelberg, 2022 <doi:10.1007/978-3-662-65638-9>, or
+@code{MessgrÃ¶Ãen} und Stichprobenstrategien in Raum und Zeit mit Anwendungen
+in den Natur-, Umwelt-, Wirtschafts- und Finanzwissenschaften', by Hebbel and
+Steuer, Springer Berlin Heidelberg, 2022 <doi:10.1007/978-3-662-65638-9>, or
 Decomposition of Time Series using the Generalised Berlin Method (VBV) by Hebbel
 and Steuer, in Jan Beran, Yuanhua Feng, Hartmut Hebbel (Eds.): Empirical
 Economic and Financial Research - Theory, Methods and Practice, Festschrift in
@@ -5276,12 +5500,12 @@ Applied Econometrics.  Springer 2014, p.  9-40.")
     (synopsis "The Variational Bayesian Method for Sparse PCA")
     (description
      "This package contains functions for a variational Bayesian method for sparse PCA
-proposed by Ning (2020) <arXiv:2102.00305>.  There are two algorithms: the
+proposed by Ning (2020) @code{<arXiv:2102.00305>.} There are two algorithms: the
 PX-CAVI algorithm (if assuming the loadings matrix is jointly row-sparse) and
 the batch PX-CAVI algorithm (if without this assumption).  The outputs of the
-main function, VBsparsePCA(), include the mean and covariance of the loadings
-matrix, the score functions, the variable selection results, and the estimated
-variance of the random noise.")
+main function, @code{VBsparsePCA(),} include the mean and covariance of the
+loadings matrix, the score functions, the variable selection results, and the
+estimated variance of the random noise.")
     (license license:gpl3)))
 
 (define-public r-vblpcm
@@ -5296,7 +5520,7 @@ variance of the random noise.")
                 "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
     (properties `((upstream-name . "VBLPCM")))
     (build-system r-build-system)
-    (inputs (list r-gsl))
+    (inputs (list gsl))
     (propagated-inputs (list r-sna r-network r-mclust r-ergm))
     (home-page "https://www.r-project.org")
     (synopsis "Variational Bayes Latent Position Cluster Model for Networks")
@@ -5324,12 +5548,12 @@ fast Variational Bayes approximation developed in Salter-Townshend and Murphy
     (home-page "https://github.com/vimc/vaultr")
     (synopsis "Vault Client for Secrets and Sensitive Data")
     (description
-     "This package provides an interface to a HashiCorp vault server over its http API
-(typically these are self-hosted; see <https://www.vaultproject.io>).  This
-allows for secure storage and retrieval of secrets over a network, such as
+     "This package provides an interface to a @code{HashiCorp} vault server over its
+http API (typically these are self-hosted; see <https://www.vaultproject.io>).
+This allows for secure storage and retrieval of secrets over a network, such as
 tokens, passwords and certificates.  Authentication with vault is supported
 through several backends including user name/password and authentication via
-GitHub'.")
+@code{GitHub'.}")
     (license license:expat)))
 
 (define-public r-vatcheckapi
@@ -5432,7 +5656,7 @@ coefficient (SVC) models (Dambon et al. (2021a)
 large data.  Further, it implements a joint variable selection of the fixed and
 random effects (Dambon et al. (2021b) <doi:10.1080/13658816.2022.2097684>).  The
 package and its capabilities are described in (Dambon et al. (2021c)
-<arXiv:2106.02364>).")
+@code{<arXiv:2106.02364>).}")
     (license license:gpl2)))
 
 (define-public r-vartestnlme
@@ -5472,7 +5696,8 @@ are equal to zero.  There is no restriction on the subset of variances that can
 be tested: for example, it is possible to test that all the variances are equal
 to zero.  Note that the implemented test is asymptotic.  This package should be
 used on model fits from packages nlme', lmer', and saemix'.  Charlotte Baey,
-Paul-Henry CournÃ¨de and Estelle Kuhn (2019) <doi:10.1016/j.csda.2019.01.014>.")
+Paul-Henry @code{CournÃ¨de} and Estelle Kuhn (2019)
+<doi:10.1016/j.csda.2019.01.014>.")
     (license license:gpl2+)))
 
 (define-public r-varshrink
@@ -5679,7 +5904,7 @@ Variates and Importance Sampling algorithms are available in the framework.
 User can write its own simulation function and use the Variance Reduction
 techniques in this package to obtain more efficient simulations.  An
 implementation of Asian Option simulation is already available within the
-package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
+package.  See Kemal @code{DinÃ§er} @code{DingeÃ§} & Wolfgang HÃ¶rmann (2012)
 <doi:10.1016/j.ejor.2012.03.046>.")
     (license license:gpl2)))
 
@@ -5837,9 +6062,9 @@ for hypothesis test.")
     (description
      "Computes the random forest variable importance (VIMP) for the conditional
 inference random forest (cforest) of the party package.  Includes a function
-(varImp) that computes the VIMP for arbitrary measures from the measures
+@code{(varImp)} that computes the VIMP for arbitrary measures from the measures
 package.  For calculating the VIMP regarding the measures accuracy and AUC two
-extra functions exist (varImpACC and varImpAUC).")
+extra functions exist @code{(varImpACC} and @code{varImpAUC).}")
     (license license:gpl3)))
 
 (define-public r-variantspark
@@ -5858,15 +6083,15 @@ extra functions exist (varImpACC and varImpAUC).")
     (home-page "https://cran.r-project.org/package=variantspark")
     (synopsis "'Sparklyr' Extension for 'VariantSpark'")
     (description
-     "This is a sparklyr extension integrating VariantSpark and R. VariantSpark is a
-framework based on scala and spark to analyze genome datasets, see
-<https://bioinformatics.csiro.au/>.  It was tested on datasets with 3000 samples
-each one containing 80 million features in either unsupervised clustering
-approaches and supervised applications, like classification and regression.  The
-genome datasets are usually writing in VCF, a specific text file format used in
-bioinformatics for storing gene sequence variations.  So, VariantSpark is a
-great tool for genome research, because it is able to read VCF files, run
-analyses and return the output in a spark data frame.")
+     "This is a sparklyr extension integrating @code{VariantSpark} and R.
+@code{VariantSpark} is a framework based on scala and spark to analyze genome
+datasets, see <https://bioinformatics.csiro.au/>.  It was tested on datasets
+with 3000 samples each one containing 80 million features in either unsupervised
+clustering approaches and supervised applications, like classification and
+regression.  The genome datasets are usually writing in VCF, a specific text
+file format used in bioinformatics for storing gene sequence variations.  So,
+@code{VariantSpark} is a great tool for genome research, because it is able to
+read VCF files, run analyses and return the output in a spark data frame.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -5934,11 +6159,12 @@ and use that as an outcome or a predictor in a second stage model.")
      "This package implements variable screening techniques for ultra-high dimensional
 regression settings.  Techniques for independent (iid) data, varying-coefficient
 models, and longitudinal data are implemented.  The package currently contains
-three screen functions: screenIID(), screenLD() and screenVCM(), and six methods
-for simulating dataset: simulateDCSIS(), simulateLD, simulateMVSIS(),
-simulateMVSISNY(), simulateSIRS() and simulateVCM().  The package is based on
-the work of Li-Ping ZHU, Lexin LI, Runze LI, and Li-Xing ZHU (2011)
-<DOI:10.1198/jasa.2011.tm10563>, Runze LI, Wei ZHONG, & Liping ZHU (2012)
+three screen functions: @code{screenIID(),} @code{screenLD()} and
+@code{screenVCM(),} and six methods for simulating dataset:
+@code{simulateDCSIS(),} @code{simulateLD,} @code{simulateMVSIS(),}
+@code{simulateMVSISNY(),} @code{simulateSIRS()} and @code{simulateVCM().} The
+package is based on the work of Li-Ping ZHU, Lexin LI, Runze LI, and Li-Xing ZHU
+(2011) <DOI:10.1198/jasa.2011.tm10563>, Runze LI, Wei ZHONG, & Liping ZHU (2012)
 <DOI:10.1080/01621459.2012.695654>, Jingyuan LIU, Runze LI, & Rongling WU (2014)
 <DOI:10.1080/01621459.2013.850086> Hengjian CUI, Runze LI, & Wei ZHONG (2015)
 <DOI:10.1080/01621459.2014.920256>, and Wanghuan CHU, Runze LI and Matthew
@@ -6012,23 +6238,24 @@ Chaudhary, B.D. (1977, ISBN:81766330709788176633079).")
 or a clinical feature from the public databases including HPO (Human Phenotype
 Ontology, <http://human-phenotype-ontology.github.io/about.html>), Orphanet
 <http://www.orpha.net/consor/cgi-bin/index.php>, OMIM (Online Mendelian
-Inheritance in Man, <http://www.omim.org>), ClinVar
-<http://www.ncbi.nlm.nih.gov/clinvar>, and UniProt (Universal Protein Resource,
-<http://www.uniprot.org>) and PubMed abstracts.  HPO provides a standardized
-vocabulary of phenotypic abnormalities encountered in human disease.  HPO
-currently contains approximately 11,000 terms and over 115,000 annotations to
-hereditary diseases.  Orphanet is the reference portal for information on rare
-diseases and orphan drugs, whose aim is to help improve the diagnosis, care and
-treatment of patients with rare diseases.  OMIM is a continuously updated
-catalog of human genes and genetic disorders and traits, with particular focus
-on the molecular relationship between genetic variation and phenotypic
-expression.  ClinVar is a freely accessible, public archive of reports of the
-relationships among human variations and phenotypes, with supporting evidence.
-UniProt focuses on amino acid altering variants imported from Ensembl Variation
-databases.  For Homo sapiens, the variants including human polymorphisms and
-disease mutations in the UniProt are manually curated from UniProtKB/Swiss-Prot.
- Additionally, PubMed provides the primary and latest source of the information.
- Text mining was employed to capture the information from PubMed abstracts.")
+Inheritance in Man, <http://www.omim.org>), @code{ClinVar}
+<http://www.ncbi.nlm.nih.gov/clinvar>, and @code{UniProt} (Universal Protein
+Resource, <http://www.uniprot.org>) and @code{PubMed} abstracts.  HPO provides a
+standardized vocabulary of phenotypic abnormalities encountered in human
+disease.  HPO currently contains approximately 11,000 terms and over 115,000
+annotations to hereditary diseases.  Orphanet is the reference portal for
+information on rare diseases and orphan drugs, whose aim is to help improve the
+diagnosis, care and treatment of patients with rare diseases.  OMIM is a
+continuously updated catalog of human genes and genetic disorders and traits,
+with particular focus on the molecular relationship between genetic variation
+and phenotypic expression. @code{ClinVar} is a freely accessible, public archive
+of reports of the relationships among human variations and phenotypes, with
+supporting evidence. @code{UniProt} focuses on amino acid altering variants
+imported from Ensembl Variation databases.  For Homo sapiens, the variants
+including human polymorphisms and disease mutations in the @code{UniProt} are
+manually curated from @code{UniProtKB/Swiss-Prot.} Additionally, @code{PubMed}
+provides the primary and latest source of the information.  Text mining was
+employed to capture the information from @code{PubMed} abstracts.")
     (license license:gpl2)))
 
 (define-public r-varest
@@ -6324,7 +6551,13 @@ testing, prediction for stationary vector autoregressive models.")
                 "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
-    (inputs (list r-curl proj gdal))
+    (inputs (list zlib
+                  proj
+                  pcre2
+                  openssl
+                  openssh
+                  gdal
+                  curl))
     (propagated-inputs (list r-rcpp r-nanoarrow r-jsonlite))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://github.com/hypertidy/vapour")
@@ -6434,9 +6667,9 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
     (description
      "Collection of functions to evaluate presence-absence models.  The main function
 corrects discrimination for the representativeness effect following:
-JimÃ©nez-Valverde (2022) \"The uniform AUC: dealing with the representativeness
-effect in presence-absence models.  Methods Ecol.  Evol, accepted on 28 January
-2022.")
+@code{JimÃ©nez-Valverde} (2022) \"The uniform AUC: dealing with the
+representativeness effect in presence-absence models.  Methods Ecol.  Evol,
+accepted on 28 January 2022.")
     (license license:gpl3)))
 
 (define-public r-vancouvr
@@ -6635,8 +6868,8 @@ of models is constructed, varying the level of sparsity and the number of
 clusters, and a model is selected using a model selection criterion (slope
 heuristic, BIC or AIC).  Details of the procedure are provided in \"Model-based
 clustering for high-dimensional data.  Application to functional data\" by Emilie
-Devijver (2016) <arXiv:1409.1333v2>, published in Advances in Data Analysis and
-Clustering.")
+Devijver (2016) @code{<arXiv:1409.1333v2>,} published in Advances in Data
+Analysis and Clustering.")
     (license license:expat)))
 
 (define-public r-valottery
@@ -6727,7 +6960,8 @@ Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
 allow valid post-clustering inference by testing if a given variable
 significantly separates two of the estimated clusters.  Methods are detailed in:
 Hivert B, Agniel D, Thiebaut R & Hejblum BP (2022). \"Post-clustering difference
-testing: valid inference and practical considerations\", <arXiv:2210.13172>.")
+testing: valid inference and practical considerations\",
+@code{<arXiv:2210.13172>.}")
     (license license:expat)))
 
 (define-public r-validatetools
@@ -7010,7 +7244,6 @@ by Wickham (2007) <https://CRAN.R-project.org/package=ggplot2>.")
                 "0104zcg3cw57ksgmb321hnyv095mn3frxci9vikj1smwarpnrpzc"))))
     (properties `((upstream-name . "valection")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-testthat))
     (home-page "http://labs.oicr.on.ca/boutros-lab/software/valection")
     (synopsis "Sampler for Verification Studies")
@@ -7148,12 +7381,13 @@ artists/bands.")
     (description
      "US VAERS vaccine data for 01/01/2018 - 06/14/2018.  If you want to explore the
 full VAERS data for 1990 - Present (data, symptoms, and vaccines), then check
-out the vaers package from the URL below.  The URL and BugReports below
+out the vaers package from the URL below.  The URL and @code{BugReports} below
 correspond to the vaers package, of which vaersvax is a small subset (2018
 only).  vaers is not hosted on CRAN due to the large size of the data set.  To
-install the Suggested vaers and vaersND packages, use the following R code:
-devtools::install_git(\"<https://gitlab.com/iembry/vaers.git>\", build_vignettes =
-TRUE) and devtools::install_git(\"<https://gitlab.com/iembry/vaersND.git>\",
+install the Suggested vaers and @code{vaersND} packages, use the following R
+code: devtools::install_git(\"<https://gitlab.com/iembry/vaers.git>\",
+build_vignettes = TRUE) and
+@code{devtools::install_git(\"<https://gitlab.com/iembry/vaersND.git>\",}
 build_vignettes = TRUE)'. \"The Vaccine Adverse Event Reporting System (VAERS) is
 a national early warning system to detect possible safety problems in
 U.S.-licensed vaccines.  VAERS is co-managed by the Centers for Disease Control
@@ -7181,21 +7415,21 @@ about vaccination/immunization hazards, visit
     (description
      "Non-Domestic VAERS vaccine data for 01/01/2016 - 06/14/2016.  If you want to
 explore the full VAERS data for 1990 - Present (data, symptoms, and vaccines),
-then check out the vaersND package from the URL below.  The URL and BugReports
-below correspond to the vaersND package, of which vaersNDvax is a small subset
-(2016 only).  vaersND is not hosted on CRAN due to the large size of the data
-set.  To install the Suggested vaers and vaersND packages, use the following R
-code: devtools::install_git(\"https://gitlab.com/iembry/vaers.git\",
-build_vignettes = TRUE) and
-devtools::install_git(\"https://gitlab.com/iembry/vaersND.git\", build_vignettes =
-TRUE)'. \"VAERS is a national vaccine safety surveillance program co-sponsored by
-the US Centers for Disease Control and Prevention (CDC) and the US Food and Drug
-Administration (FDA).  VAERS is a post-marketing safety surveillance program,
-collecting information about adverse events (possible side effects) that occur
-after the administration of vaccines licensed for use in the United States.\" For
-more information about the data, visit <https://vaers.hhs.gov/index>.  For
-information about vaccination/immunization hazards, visit
-<http://www.questionuniverse.com/rethink.html/#vaccine>.")
+then check out the @code{vaersND} package from the URL below.  The URL and
+@code{BugReports} below correspond to the @code{vaersND} package, of which
+@code{vaersNDvax} is a small subset (2016 only). @code{vaersND} is not hosted on
+CRAN due to the large size of the data set.  To install the Suggested vaers and
+@code{vaersND} packages, use the following R code:
+devtools::install_git(\"https://gitlab.com/iembry/vaers.git\", build_vignettes =
+TRUE) and @code{devtools::install_git(\"https://gitlab.com/iembry/vaersND.git\",}
+build_vignettes = TRUE)'. \"VAERS is a national vaccine safety surveillance
+program co-sponsored by the US Centers for Disease Control and Prevention (CDC)
+and the US Food and Drug Administration (FDA).  VAERS is a post-marketing safety
+surveillance program, collecting information about adverse events (possible side
+effects) that occur after the administration of vaccines licensed for use in the
+United States.\" For more information about the data, visit
+<https://vaers.hhs.gov/index>.  For information about vaccination/immunization
+hazards, visit <http://www.questionuniverse.com/rethink.html/#vaccine>.")
     (license license:cc0)))
 
 (define-public r-vader
@@ -7244,4 +7478,40 @@ outliers in two-way (i.e., contingency) tables, as described in his landmark
 paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 <https://www.jstor.org/stable/2237638>.")
     (license license:expat)))
+
+(define-public r-vaccine
+  (package
+    (name "r-vaccine")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "vaccine" version))
+              (sha256
+               (base32
+                "03kc9pgpqzfsd2xjkf5zvkbfzdffbpx26g1ispd5yn2y7mbliyjb"))))
+    (properties `((upstream-name . "vaccine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-survival
+                             r-superlearner
+                             r-simest
+                             r-rsolnp
+                             r-rlang
+                             r-memoise
+                             r-iso
+                             r-ggpubr
+                             r-ggplot2
+                             r-fdrtool
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vaccine")
+    (synopsis
+     "Statistical Tools for Immune Correlates Analysis of Vaccine Clinical Trial Data")
+    (description
+     "Various semiparametric and nonparametric statistical tools for immune correlates
+analysis of vaccine clinical trial data.  This includes calculation of summary
+statistics and estimation of risk, vaccine efficacy, controlled risk, and
+controlled vaccine efficacy.  See Gilbert P, Fong Y, Kenny A, and Carone, M
+(2022) <doi:10.1093/biostatistics/kxac24>.")
+    (license license:gpl3+)))
 

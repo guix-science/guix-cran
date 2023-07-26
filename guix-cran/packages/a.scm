@@ -8,6 +8,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
@@ -15,6 +16,7 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages video)
   #:use-module (gnu packages backup)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python)
   #:use-module (guix-cran packages z)
@@ -62,7 +64,7 @@
      "This package provides a simple interface to the instance metadata for a virtual
 machine running in Microsoft's Azure cloud.  This provides information about the
 VM's configuration, such as its processors, memory, networking, storage, and so
-on.  Part of the AzureR family of packages.")
+on.  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurevm
@@ -89,8 +91,8 @@ facilities to deploy, startup, shutdown, and cleanly delete VMs and VM clusters.
 existing resources as well as creating new ones.  A selection of predefined
 configurations is provided to allow easy deployment of commonly used Linux and
 Windows images, including Data Science Virtual Machines.  With a running VM,
-execute scripts and install optional extensions.  Part of the AzureR family of
-packages.")
+execute scripts and install optional extensions.  Part of the @code{AzureR}
+family of packages.")
     (license license:expat)))
 
 (define-public r-azurevision
@@ -114,10 +116,10 @@ packages.")
 <https://docs.microsoft.com/azure/cognitive-services/Computer-vision/Home> and
 Azure Custom Vision
 <https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/home>,
-building on the low-level functionality provided by the AzureCognitive package.
-These services allow users to leverage the cloud to carry out visual recognition
-tasks using advanced image processing models, without needing powerful hardware
-of their own.  Part of the AzureR family of packages.")
+building on the low-level functionality provided by the @code{AzureCognitive}
+package.  These services allow users to leverage the cloud to carry out visual
+recognition tasks using advanced image processing models, without needing
+powerful hardware of their own.  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azuretablestor
@@ -146,8 +148,8 @@ of their own.  Part of the AzureR family of packages.")
      "An interface to the table storage service in Azure':
 <https://azure.microsoft.com/en-us/services/storage/tables/>.  Supplies
 functionality for reading and writing data stored in tables, both as part of a
-storage account and from a CosmosDB database with the table service API. Part of
-the AzureR family of packages.")
+storage account and from a @code{CosmosDB} database with the table service API.
+Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurestor
@@ -175,12 +177,12 @@ the AzureR family of packages.")
     (description
      "Manage storage in Microsoft's Azure cloud:
 <https://azure.microsoft.com/en-us/product-categories/storage/>.  On the admin
-side, AzureStor includes features to create, modify and delete storage accounts.
- On the client side, it includes an interface to blob storage, file storage, and
-Azure Data Lake Storage Gen2': upload and download files and blobs; list
-containers and files/blobs; create containers; and so on.  Authenticated access
-to storage is supported, via either a shared access key or a shared access
-signature (SAS).  Part of the AzureR family of packages.")
+side, @code{AzureStor} includes features to create, modify and delete storage
+accounts.  On the client side, it includes an interface to blob storage, file
+storage, and Azure Data Lake Storage Gen2': upload and download files and blobs;
+list containers and files/blobs; create containers; and so on.  Authenticated
+access to storage is supported, via either a shared access key or a shared
+access signature (SAS).  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurermr
@@ -208,9 +210,10 @@ signature (SAS).  Part of the AzureR family of packages.")
      "This package provides a lightweight but powerful R interface to the Azure
 Resource Manager REST API. The package exposes a comprehensive class framework
 and related tools for creating, updating and deleting Azure resource groups,
-resources and templates.  While AzureRMR can be used to manage any Azure
+resources and templates.  While @code{AzureRMR} can be used to manage any Azure
 service, it can also be extended by other packages to provide extra
-functionality for specific services.  Part of the AzureR family of packages.")
+functionality for specific services.  Part of the @code{AzureR} family of
+packages.")
     (license license:expat)))
 
 (define-public r-azureqstor
@@ -233,8 +236,8 @@ functionality for specific services.  Part of the AzureR family of packages.")
      "An interface to Azure Queue Storage'.  This is a cloud service for storing large
 numbers of messages, for example from automated sensors, that can be accessed
 remotely via authenticated calls using HTTP or HTTPS. Queue storage is often
-used to create a backlog of work to process asynchronously.  Part of the AzureR
-family of packages.")
+used to create a backlog of work to process asynchronously.  Part of the
+@code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azuremlsdk
@@ -303,8 +306,8 @@ scalable data exploration service from Microsoft:
 dplyr interfaces, with the latter modelled after the dbplyr package, whereby
 queries are translated from R into the native KQL query language and executed
 lazily.  On the admin side, the package extends the object framework provided by
-AzureRMR to support creation and deletion of databases, and management of
-database principals.  Part of the AzureR family of packages.")
+@code{AzureRMR} to support creation and deletion of databases, and management of
+database principals.  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurekeyvault
@@ -334,10 +337,10 @@ database principals.  Part of the AzureR family of packages.")
      "Manage keys, certificates, secrets, and storage accounts in Microsoft's Key
 Vault service: <https://azure.microsoft.com/services/key-vault/>.  Provides
 facilities to store and retrieve secrets, use keys to encrypt, decrypt, sign and
-verify data, and manage certificates.  Integrates with the AzureAuth package to
-enable authentication with a certificate, and with the openssl package for
-importing and exporting cryptographic objects.  Part of the AzureR family of
-packages.")
+verify data, and manage certificates.  Integrates with the @code{AzureAuth}
+package to enable authentication with a certificate, and with the openssl
+package for importing and exporting cryptographic objects.  Part of the
+@code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azuregraph
@@ -369,7 +372,7 @@ was originally intended to provide an R interface only to the Azure Active
 Directory part, with a view to supporting interoperability of R and Azure':
 users, groups, registered apps and service principals.  However it has since
 been expanded into a more general tool for interacting with Graph.  Part of the
-AzureR family of packages.")
+@code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurecosmosr
@@ -395,12 +398,12 @@ AzureR family of packages.")
     (home-page "https://cran.r-project.org/package=AzureCosmosR")
     (synopsis "Interface to the 'Azure Cosmos DB' 'NoSQL' Database Service")
     (description
-     "An interface to Azure CosmosDB':
+     "An interface to Azure @code{CosmosDB':}
 <https://azure.microsoft.com/en-us/services/cosmos-db/>.  On the admin side,
-AzureCosmosR provides functionality to create and manage Cosmos DB instances in
-Microsoft's Azure cloud.  On the client side, it provides an interface to the
-Cosmos DB SQL API, letting the user store and query documents and attachments in
-Cosmos DB'.  Part of the AzureR family of packages.")
+@code{AzureCosmosR} provides functionality to create and manage Cosmos DB
+instances in Microsoft's Azure cloud.  On the client side, it provides an
+interface to the Cosmos DB SQL API, letting the user store and query documents
+and attachments in Cosmos DB'.  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azurecontainers
@@ -431,7 +434,8 @@ Cosmos DB'.  Part of the AzureR family of packages.")
 Azure Container Instance (ACI), Azure Container Registry (ACR) and Azure
 Kubernetes Service (AKS) resources, push and pull images, and deploy services.
 On the client side, lightweight shells to the docker', docker-compose', kubectl
-and helm commandline tools are provided.  Part of the AzureR family of packages.")
+and helm commandline tools are provided.  Part of the @code{AzureR} family of
+packages.")
     (license license:expat)))
 
 (define-public r-azurecognitive
@@ -454,10 +458,10 @@ and helm commandline tools are provided.  Part of the AzureR family of packages.
      "An interface to Azure Cognitive Services
 <https://docs.microsoft.com/en-us/azure/cognitive-services/>.  Both an Azure
 Resource Manager interface, for deploying Cognitive Services resources, and a
-client framework are supplied.  While AzureCognitive can be called by the
+client framework are supplied.  While @code{AzureCognitive} can be called by the
 end-user, it is meant to provide a foundation for other packages that will
 support specific services, like Computer Vision, Custom Vision, language
-translation, and so on.  Part of the AzureR family of packages.")
+translation, and so on.  Part of the @code{AzureR} family of packages.")
     (license license:expat)))
 
 (define-public r-azureauth
@@ -489,20 +493,20 @@ Manager, Azure Storage and others.  It supports both AAD v1.0 and v2.0, as well
 as multiple authentication methods, including device code and resource owner
 grant.  Tokens are cached in a user-specific directory obtained using the
 rappdirs package.  The interface is based on the OAuth framework in the httr
-package, but customised and streamlined for Azure.  Part of the AzureR family of
-packages.")
+package, but customised and streamlined for Azure.  Part of the @code{AzureR}
+family of packages.")
     (license license:expat)))
 
 (define-public r-azureappinsights
   (package
     (name "r-azureappinsights")
-    (version "0.3.0")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AzureAppInsights" version))
               (sha256
                (base32
-                "0dqk13r6iyaa54g21hda6fwijxlriq5dqnazvaw7cwh1zvivh8lm"))))
+                "09a53anvllap85cs2qg1vdjcyr50vlirlhigrn4x47zilrjsm0xx"))))
     (properties `((upstream-name . "AzureAppInsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rlang r-lubridate r-jsonlite
@@ -512,8 +516,8 @@ packages.")
     (synopsis "Include Azure Application Insights in Shiny Apps")
     (description
      "Imports Azure Application Insights for web pages into Shiny apps via Microsoft's
-JavaScript snippet.  Allows app developers to submit page tracking and submit
-events.")
+@code{JavaScript} snippet.  Allows app developers to submit page tracking and
+submit events.")
     (license license:expat)))
 
 (define-public r-azlogr
@@ -746,7 +750,7 @@ The credentials can be set via aws_set_credentials'.  The EC2 documentation can
 be found at
 <https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html> and ECS
 can be found at
-<https://docs.aws.amazon.com/AmazonECS/latest/APIReference/Welcome.html>.")
+@code{<https://docs.aws.amazon.com/AmazonECS/latest/APIReference/Welcome.html>.}")
     (license license:gpl3)))
 
 (define-public r-aws-ec2metadata
@@ -850,9 +854,10 @@ Amazon Web Services ('AWS') Key Management Service ('KMS'), on which see
     (home-page "https://github.com/cardcorp/AWR.Kinesis")
     (synopsis "Amazon 'Kinesis' Consumer Application for Stream Processing")
     (description
-     "Fetching data from Amazon Kinesis Streams using the Java-based MultiLangDaemon
-interacting with Amazon Web Services ('AWS') for easy stream processing from R.
-For more information on Kinesis', see <https://aws.amazon.com/kinesis>.")
+     "Fetching data from Amazon Kinesis Streams using the Java-based
+@code{MultiLangDaemon} interacting with Amazon Web Services ('AWS') for easy
+stream processing from R. For more information on Kinesis', see
+<https://aws.amazon.com/kinesis>.")
     (license license:agpl3)))
 
 (define-public r-awr
@@ -1031,12 +1036,13 @@ treatments groups.  This is an adaptation of the Jared Foster method
     (home-page "https://github.com/charvey23/AvInertia")
     (synopsis "Calculate the Inertial Properties of a Flying Bird")
     (description
-     "Tools to compute the center of gravity and moment of inertia tensor of any
-flying bird.  The tools function by modeling a bird as a composite structure of
-simple geometric objects.  This requires detailed morphological measurements of
-bird specimens although those obtained for the associated paper have been
-included in the package for use.  Refer to the vignettes and supplementary
-material for detailed information on the package function.")
+     "This package provides tools to compute the center of gravity and moment of
+inertia tensor of any flying bird.  The tools function by modeling a bird as a
+composite structure of simple geometric objects.  This requires detailed
+morphological measurements of bird specimens although those obtained for the
+associated paper have been included in the package for use.  Refer to the
+vignettes and supplementary material for detailed information on the package
+function.")
     (license license:gpl3)))
 
 (define-public r-avidar
@@ -1064,7 +1070,7 @@ material for detailed information on the package function.")
     (home-page "https://gitlab.com/fortunalab/avidaR")
     (synopsis "Computational Biologistâs Toolkit To Get Data From 'avidaDB'")
     (description
-     "Easy-to-use tools for performing complex queries on avidaDB', a semantic
+     "Easy-to-use tools for performing complex queries on @code{avidaDB',} a semantic
 database that stores genomic and transcriptomic data of self-replicating
 computer programs (known as digital organisms) that mutate and evolve within a
 user-defined computational environment.")
@@ -1149,8 +1155,8 @@ found, for example, in Guerrier, S., Molinari, R., & Stebler, Y. (2016)
      "Check if the Title of a Package is Available, Appropriate and Interesting")
     (description
      "Check if a given package name is available to use.  It checks the name's
-validity.  Checks if it is used on GitHub', CRAN and Bioconductor'.  Checks for
-unintended meanings by querying Wiktionary and Wikipedia.")
+validity.  Checks if it is used on @code{GitHub',} CRAN and Bioconductor'.
+Checks for unintended meanings by querying Wiktionary and Wikipedia.")
     (license license:expat)))
 
 (define-public r-av
@@ -1165,6 +1171,7 @@ unintended meanings by querying Wiktionary and Wikipedia.")
                 "1h04vr5r5h1jhqq542kzyf8bjiqp7iam8bvaxmmvbh7kq619issa"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
+    (inputs (list zlib))
     (native-inputs (list pkg-config))
     (home-page "https://ropensci.r-universe.dev/av")
     (synopsis "Working with Audio and Video in R")
@@ -1235,11 +1242,11 @@ A. Lama and B. Gurung in Mausam, vol.  72, pp.879-886,
      "Automatic Model Selection and Prediction for Univariate Time Series")
     (description
      "Offers a set of functions to easily make predictions for univariate time series.
- autoTS is a wrapper of existing functions of the forecast and prophet packages,
-harmonising their outputs in tidy dataframes and using default values for each.
-The core function getBestModel() allows the user to effortlessly benchmark seven
-algorithms along with a bagged estimator to identify which one performs the best
-for a given time series.")
+@code{autoTS} is a wrapper of existing functions of the forecast and prophet
+packages, harmonising their outputs in tidy dataframes and using default values
+for each.  The core function @code{getBestModel()} allows the user to
+effortlessly benchmark seven algorithms along with a bagged estimator to
+identify which one performs the best for a given time series.")
     (license license:gpl3)))
 
 (define-public r-autothresholdr
@@ -1267,7 +1274,7 @@ for a given time series.")
     (synopsis "An R Port of the 'ImageJ' Plugin 'Auto Threshold'")
     (description
      "Algorithms for automatically finding appropriate thresholds for numerical data,
-with special functions for thresholding images.  Provides the ImageJ Auto
+with special functions for thresholding images.  Provides the @code{ImageJ} Auto
 Threshold plugin functionality to R users.  See
 <https://imagej.net/plugins/auto-threshold> and Landini et al. (2017)
 <DOI:10.1111/jmi.12474>.")
@@ -1437,26 +1444,32 @@ server.R files or into a shiny app object).  See examples at
      "For researchers to quickly and comprehensively acquire disease genes, so as to
 understand the mechanism of disease, we developed this program to acquire
 disease-related genes.  The data is integrated from three public databases.  The
-three databases are eDGAR', DrugBank and MalaCards'.  The eDGAR is a
-comprehensive database, containing data on the relationship between disease and
-genes.  DrugBank contains information on 13443 drugs and 5157 targets.
-MalaCards integrates human disease information, including disease-related genes.")
+three databases are @code{eDGAR',} @code{DrugBank} and @code{MalaCards'.} The
+@code{eDGAR} is a comprehensive database, containing data on the relationship
+between disease and genes. @code{DrugBank} contains information on 13443 drugs
+and 5157 targets. @code{MalaCards} integrates human disease information,
+including disease-related genes.")
     (license license:gpl3+)))
 
 (define-public r-autoscorecard
   (package
     (name "r-autoscorecard")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "autoScorecard" version))
               (sha256
                (base32
-                "1ksdj2yj1k1h96kl2qaa4h43fsfsgxxrbx6k3ykmcpkxgi6y9hl9"))))
+                "03zq23x7gha02zvmb5vwmv1pz54ghcfr0sk75krh59cgprx5ysl5"))))
     (properties `((upstream-name . "autoScorecard")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rpart r-rocr r-infotheo r-discretization
+    (propagated-inputs (list r-rpart
+                             r-rocr
+                             r-infotheo
+                             r-ggplot2
+                             r-discretization
                              r-corrplot))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=autoScorecard")
     (synopsis "Fully Automatic Generation of Scorecards")
     (description
@@ -1467,7 +1480,7 @@ screening, manual parameter modeling, fully automatic generation of scorecards,
 etc.  This package is designed to make scorecard development easier and faster.
 References include: 1. <http://shichen.name/posts/>.  2.  Dong-feng Li(Peking
 University),Class PPT. 3. <https://zhuanlan.zhihu.com/p/389710022>.  4.
-<https://www.zhangshengrong.com/p/281oqR9JNw/>.")
+@code{<https://www.zhangshengrong.com/p/281oqR9JNw/>.}")
     (license license:agpl3)))
 
 (define-public r-autoscore
@@ -1510,11 +1523,12 @@ automate the development of a clinical scoring model for predefined outcomes.
 Our novel framework consists of six modules: variable ranking with machine
 learning, variable transformation, score derivation, model selection, domain
 knowledge-based score fine-tuning, and performance evaluation.The The original
-AutoScore structure is described in the research paper<doi:10.2196/21798>.  A
-full tutorial can be found here<https://nliulab.github.io/AutoScore/>.  Users or
-clinicians could seamlessly generate parsimonious sparse-score risk models
-(i.e., risk scores), which can be easily implemented and validated in clinical
-practice.  We hope to see its application in various medical case studies.")
+@code{AutoScore} structure is described in the research
+paper<doi:10.2196/21798>.  A full tutorial can be found
+@code{here<https://nliulab.github.io/AutoScore/>.} Users or clinicians could
+seamlessly generate parsimonious sparse-score risk models (i.e., risk scores),
+which can be easily implemented and validated in clinical practice.  We hope to
+see its application in various medical case studies.")
     (license license:gpl2+)))
 
 (define-public r-autoregressionmde
@@ -1579,8 +1593,8 @@ minimum distance estimator of the parameters in the model.")
 automatically in various regression models.  Support linear models, generalized
 linear models and cox-proportional hazard models.  Generate publication-ready
 tables summarizing result of regression analysis and plots.  The tables and
-plots can be exported in \"HTML\", \"pdf('LaTex')\", \"docx('MS Word')\" and \"pptx('MS
-Powerpoint')\" documents.")
+plots can be exported in \"HTML\", @code{\"pdf('LaTex')\",} \"docx('MS Word')\" and
+\"pptx('MS Powerpoint')\" documents.")
     (license license:gpl3)))
 
 (define-public r-autorasch
@@ -1794,8 +1808,8 @@ user as possible.")
      "Automagically Document and Install Packages Necessary to Run R Code")
     (description
      "Parse R code in a given directory for R packages and attempt to install them
-from CRAN or GitHub.  Optionally use a dependencies file for tighter control
-over which package versions to install.")
+from CRAN or @code{GitHub.} Optionally use a dependencies file for tighter
+control over which package versions to install.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-autokeras
@@ -1814,12 +1828,12 @@ over which package versions to install.")
     (home-page "https://github.com/r-tensorflow/autokeras")
     (synopsis "R Interface to 'AutoKeras'")
     (description
-     "R Interface to AutoKeras <https://autokeras.com/>.  AutoKeras is an open source
-software library for Automated Machine Learning (AutoML).  The ultimate goal of
-AutoML is to provide easily accessible deep learning tools to domain experts
-with limited data science or machine learning background.  AutoKeras provides
-functions to automatically search for architecture and hyperparameters of deep
-learning models.")
+     "R Interface to @code{AutoKeras} <https://autokeras.com/>. @code{AutoKeras} is an
+open source software library for Automated Machine Learning @code{(AutoML).} The
+ultimate goal of @code{AutoML} is to provide easily accessible deep learning
+tools to domain experts with limited data science or machine learning
+background. @code{AutoKeras} provides functions to automatically search for
+architecture and hyperparameters of deep learning models.")
     (license license:expat)))
 
 (define-public r-autoimage
@@ -1875,17 +1889,17 @@ package relies on the base graphics system, so graphics are rendered rapidly.")
     (synopsis
      "Automated Generation of Data-Informed GLM Models in Task-Based fMRI Data Analysis")
     (description
-     "Analysis of task-related functional magnetic resonance imaging (fMRI) activity
-at the level of individual participants is commonly based on general linear
-modelling (GLM) that allows us to estimate to what extent the blood oxygenation
-level dependent (BOLD) signal can be explained by task response predictors
-specified in the GLM model.  The predictors are constructed by convolving the
-hypothesised timecourse of neural activity with an assumed hemodynamic response
-function (HRF).  To get valid and precise estimates of task response, it is
-important to construct a model of neural activity that best matches actual
-neuronal activity.  The construction of models is most often driven by
-predefined assumptions on the components of brain activity and their duration
-based on the task design and specific aims of the study.  However, our
+     "Analysis of task-related functional magnetic resonance imaging @code{(fMRI)}
+activity at the level of individual participants is commonly based on general
+linear modelling (GLM) that allows us to estimate to what extent the blood
+oxygenation level dependent (BOLD) signal can be explained by task response
+predictors specified in the GLM model.  The predictors are constructed by
+convolving the hypothesised timecourse of neural activity with an assumed
+hemodynamic response function (HRF).  To get valid and precise estimates of task
+response, it is important to construct a model of neural activity that best
+matches actual neuronal activity.  The construction of models is most often
+driven by predefined assumptions on the components of brain activity and their
+duration based on the task design and specific aims of the study.  However, our
 assumptions about the onset and duration of component processes might be wrong
 and can also differ across brain regions.  This can result in inappropriate or
 suboptimal models, bad fitting of the model to the actual data and invalid
@@ -1897,10 +1911,10 @@ that allows for data-driven estimation of HRF models.  The package uses genetic
 algorithms to efficiently search for models that fit the underlying data well.
 The package uses automated parameter search to find the onset and duration of
 task predictors which result in the highest fitness of the resulting GLM based
-on the fMRI signal under predefined restrictions.  We evaluate the usefulness of
-the autohrf package on publicly available datasets of task-related fMRI
-activity.  Our results suggest that by using autohrf users can find better task
-related brain activity models in a quick and efficient manner.")
+on the @code{fMRI} signal under predefined restrictions.  We evaluate the
+usefulness of the autohrf package on publicly available datasets of task-related
+@code{fMRI} activity.  Our results suggest that by using autohrf users can find
+better task related brain activity models in a quick and efficient manner.")
     (license license:gpl3+)))
 
 (define-public r-autoharp
@@ -1959,6 +1973,7 @@ possible by representing R expressions using a tree structure.")
                              r-purrr
                              r-openxlsx
                              r-imgur
+                             r-gsva
                              r-ggrepel
                              r-ggplot2
                              r-enrichr
@@ -2021,7 +2036,7 @@ with missing values, the ML estimates are obtained using the expectation-
 maximization algorithm.  Apart from the number of basis functions, there are no
 other tuning parameters, making the method fully automatic.  Users can also
 include a stationary structure in the spatial covariance, which utilizes
-LatticeKrig package.")
+@code{LatticeKrig} package.")
     (license license:gpl2+)))
 
 (define-public r-autofc
@@ -2058,7 +2073,7 @@ an optimization process which is currently carried out manually.  However, given
 that we often need to simultaneously meet multiple objectives, manual pairing
 becomes impractical or even not feasible once the number of latent traits and/or
 number of items per trait are relatively large.  To address these problems,
-autoFC is developed as a practical tool for facilitating the automatic
+@code{autoFC} is developed as a practical tool for facilitating the automatic
 construction of FC tests, essentially exempting users from the burden of manual
 item pairing and reducing the computational costs and biases induced by simple
 ranking methods.  Given characteristics of each item (and item responses), FC
@@ -2084,11 +2099,11 @@ construct parallel forms of the same test following the same pairing rules.")
     (synopsis
      "Automated Stacked Ensemble Classifier for Severe Class Imbalance")
     (description
-     "An AutoML algorithm is developed to construct homogeneous or heterogeneous
-stacked ensemble models using specified base-learners.  Various criteria are
-employed to identify optimal models, enhancing diversity among them and
-resulting in more robust stacked ensembles.  The algorithm optimizes the model
-by incorporating an increasing number of top-performing models to create a
+     "An @code{AutoML} algorithm is developed to construct homogeneous or
+heterogeneous stacked ensemble models using specified base-learners.  Various
+criteria are employed to identify optimal models, enhancing diversity among them
+and resulting in more robust stacked ensembles.  The algorithm optimizes the
+model by incorporating an increasing number of top-performing models to create a
 diverse combination.  Presently, only models from h2o.ai are supported.")
     (license license:expat)))
 
@@ -2110,8 +2125,8 @@ diverse combination.  Presently, only models from h2o.ai are supported.")
     (description
      "Implementation of the sparse autoencoder in R environment, following the notes
 of Andrew Ng
-(http://www.stanford.edu/class/archive/cs/cs294a/cs294a.1104/sparseAutoencoder.pdf).
- The features learned by the hidden layer of the autoencoder (through
+@code{(http://www.stanford.edu/class/archive/cs/cs294a/cs294a.1104/sparseAutoencoder.pdf).}
+The features learned by the hidden layer of the autoencoder (through
 unsupervised learning of unlabeled data) can be used in constructing deep belief
 neural networks.")
     (license license:gpl2)))
@@ -2133,13 +2148,14 @@ neural networks.")
     (home-page "https://github.com/paulgovan/autodeskr")
     (synopsis "An Interface to the 'AutoDesk' 'API' Platform")
     (description
-     "An interface to the AutoDesk API Platform including the Authentication API for
-obtaining authentication to the AutoDesk Forge Platform, Data Management API for
-managing data across the platform's cloud services, Design Automation API for
-performing automated tasks on design files in the cloud, Model Derivative API
-for translating design files into different formats, sending them to the viewer
-app, and extracting design data, and Viewer for rendering 2D and 3D models (see
-<https://developer.autodesk.com> for more information).")
+     "An interface to the @code{AutoDesk} API Platform including the Authentication
+API for obtaining authentication to the @code{AutoDesk} Forge Platform, Data
+Management API for managing data across the platform's cloud services, Design
+Automation API for performing automated tasks on design files in the cloud,
+Model Derivative API for translating design files into different formats,
+sending them to the viewer app, and extracting design data, and Viewer for
+rendering 2D and 3D models (see <https://developer.autodesk.com> for more
+information).")
     (license (list (license:fsdg-compatible "Apache License")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -2233,7 +2249,7 @@ information.  Coordinate information can be used to evaluate measures of spatial
 autocorrelation and spatial compactness during the splitting phase of the tree,
 leading to better predictions and more physically realistic predictions on these
 types of datasets.  These methods are described in Ancell and Bean (2021)
-<arXiv:2101.08258>.")
+@code{<arXiv:2101.08258>.}")
     (license license:expat)))
 
 (define-public r-autobagging
@@ -2269,14 +2285,43 @@ the focus is on the optimisation of bagging workflows.  A bagging workflows is
 composed by three phases: (i) generation: which and how many predictive models
 to learn; (ii) pruning: after learning a set of models, the worst ones are cut
 off from the ensemble; and (iii) integration: how the models are combined for
-predicting a new observation.  autoBagging optimises these processes by
+predicting a new observation. @code{autoBagging} optimises these processes by
 combining metalearning and a learning to rank approach to learn from metadata.
 It automatically ranks 63 bagging workflows by exploiting past performance and
 dataset characterization.  A complete description of the method can be found in:
-Pinto, F., Cerqueira, V., Soares, C., Mendes-Moreira, J. (2017): \"autoBagging:
-Learning to Rank Bagging Workflows with Metalearning\" arXiv preprint
-arXiv:1706.09367.")
+Pinto, F., Cerqueira, V., Soares, C., Mendes-Moreira, J. (2017):
+@code{\"autoBagging:} Learning to Rank Bagging Workflows with Metalearning\"
+@code{arXiv} preprint @code{arXiv:1706.09367.}")
     (license license:gpl2+)))
+
+(define-public r-autoads
+  (package
+    (name "r-autoads")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AutoAds" version))
+              (sha256
+               (base32
+                "0w2v13bs4fjhavn38prsld972lygj8j9nilxy4lly3f9bc97hnj3"))))
+    (properties `((upstream-name . "AutoAds")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2 r-forecast))
+    (home-page "https://cran.r-project.org/package=AutoAds")
+    (synopsis "Advertisement Metrics Calculation")
+    (description
+     "Calculations of the most common metrics of automated advertisement and plotting
+of them with trend and forecast.  Calculations and description of metrics is
+taken from different RTB platforms support documentation.  Plotting and
+forecasting is based on packages forecast', described in Rob J Hyndman and
+George Athanasopoulos (2021) \"Forecasting: Principles and Practice\"
+<https://otexts.com/fpp3/> and Rob J Hyndman et al \"Documentation for forecast'\"
+(2003) <https://pkg.robjhyndman.com/forecast/>, and ggplot2', described in
+Hadley Wickham et al \"Documentation for ggplot2'\" (2015)
+<https://ggplot2.tidyverse.org/>, and Hadley Wickham, Danielle Navarro, and
+Thomas Lin Pedersen (2015) \"ggplot2: Elegant Graphics for Data Analysis\"
+<https://ggplot2-book.org/>.")
+    (license license:expat)))
 
 (define-public r-auto-pca
   (package
@@ -2374,23 +2419,20 @@ reproducible research is that uses this data.")
 (define-public r-ausplotsr
   (package
     (name "r-ausplotsr")
-    (version "1.2.9")
+    (version "2.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ausplotsR" version))
               (sha256
                (base32
-                "08iwcbsqlkbnj0jzc646x04sbwhq4pw7g9sxyr7bvfnfdj4ff3aa"))))
+                "15bf6bxz1193q7wf729v2wg6vy3w2ml8zfznw9kgpmjqmcyhyhvk"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-stringr
-                             r-sp
                              r-r2r
                              r-r-utils
                              r-plyr
-                             r-maptools
-                             r-maps
                              r-mapdata
                              r-jsonlite
                              r-jose
@@ -2401,18 +2443,18 @@ reproducible research is that uses this data.")
                              r-betapart))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ausplotsR")
-    (synopsis "TERN AusPlots Analysis Package")
+    (synopsis "TERN AusPlots Australian Ecosystem Monitoring Data")
     (description
-     "Extraction, preparation, visualisation and analysis of TERN AusPlots ecosystem
-monitoring data.  Direct access to plot-based data on vegetation and soils
-across Australia, including physical sample barcode numbers.  Simple function
-calls extract the data and merge them into species occurrence matrices for
-downstream analysis, or calculate things like basal area and fractional cover.
-TERN AusPlots is a national field plot-based ecosystem surveillance monitoring
-method and dataset for Australia.  The data have been collected across a
-national network of plots and transects by the Terrestrial Ecosystem Research
-Network (TERN - <https://www.tern.org.au>), an Australian Government
-NCRIS-enabled project, and its Ecosystem Surveillance platform
+     "Extraction, preparation, visualisation and analysis of TERN @code{AusPlots}
+ecosystem monitoring data.  Direct access to plot-based data on vegetation and
+soils across Australia, including physical sample barcode numbers.  Simple
+function calls extract the data and merge them into species occurrence matrices
+for downstream analysis, or calculate things like basal area and fractional
+cover.  TERN @code{AusPlots} is a national field plot-based ecosystem
+surveillance monitoring method and dataset for Australia.  The data have been
+collected across a national network of plots and transects by the Terrestrial
+Ecosystem Research Network (TERN - <https://www.tern.org.au>), an Australian
+Government NCRIS-enabled project, and its Ecosystem Surveillance platform
 (<https://www.tern.org.au/tern-land-observatory/ecosystem-surveillance-and-environmental-monitoring/>).")
     (license license:gpl3)))
 
@@ -2467,13 +2509,13 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
 (define-public r-aum
   (package
     (name "r-aum")
-    (version "2023.4.4")
+    (version "2023.6.14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aum" version))
               (sha256
                (base32
-                "10cx9r14s3izcdzfq717nhnh0ys8bsyibnrfsl71c785w5jgbad2"))))
+                "1y6wn8ycl4vvmzyjkyprxah7q5afa56bpj8xvgmvi6dahnfp52cq"))))
     (properties `((upstream-name . "aum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -2482,7 +2524,8 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
     (synopsis "Area Under Minimum of False Positives and Negatives")
     (description
      "Standard template library sort is used to implement an efficient algorithm
-<arXiv:2107.01285> for computing Area Under Minimum and directional derivatives.")
+@code{<arXiv:2107.01285>} for computing Area Under Minimum and directional
+derivatives.")
     (license license:gpl3)))
 
 (define-public r-auk
@@ -2511,13 +2554,13 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
     (home-page "https://github.com/CornellLabofOrnithology/auk")
     (synopsis "eBird Data Extraction and Processing in R")
     (description
-     "Extract and process bird sightings records from eBird (<http://ebird.org>), an
-online tool for recording bird observations.  Public access to the full eBird
-database is via the eBird Basic Dataset (EBD; see
-<http://ebird.org/ebird/data/download> for access), a downloadable text file.
-This package is an interface to AWK for extracting data from the EBD based on
-taxonomic, spatial, or temporal filters, to produce a manageable file size that
-can be imported into R.")
+     "Extract and process bird sightings records from @code{eBird}
+(<http://ebird.org>), an online tool for recording bird observations.  Public
+access to the full @code{eBird} database is via the @code{eBird} Basic Dataset
+(EBD; see <http://ebird.org/ebird/data/download> for access), a downloadable
+text file.  This package is an interface to AWK for extracting data from the EBD
+based on taxonomic, spatial, or temporal filters, to produce a manageable file
+size that can be imported into R.")
     (license license:gpl3)))
 
 (define-public r-augsimex
@@ -2635,9 +2678,9 @@ data visualization and report generation functions.")
      "This package provides a collection of Japanese text processing tools for filling
 Japanese iteration marks, Japanese character type conversions, segmentation by
 phrase, and text normalization which is based on rules for the Sudachi
-morphological analyzer and the NEologd (Neologism dictionary for MeCab').  These
-features are specific to Japanese and are not implemented in ICU (International
-Components for Unicode).")
+morphological analyzer and the NEologd (Neologism dictionary for @code{MeCab').}
+These features are specific to Japanese and are not implemented in ICU
+(International Components for Unicode).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-audrex
@@ -2761,8 +2804,8 @@ Association (2005), <doi:10.1044/policy.GL2005-00014>.")
     (synopsis "Audio Interface for R")
     (description
      "Interfaces to audio devices (mainly sample-based) from R to allow recording and
-playback of audio.  Built-in devices include Windows MM, Mac OS X AudioUnits and
-PortAudio (the last one is very experimental).")
+playback of audio.  Built-in devices include Windows MM, Mac OS X
+@code{AudioUnits} and @code{PortAudio} (the last one is very experimental).")
     (license license:expat)))
 
 (define-public r-auctionr
@@ -2783,9 +2826,9 @@ PortAudio (the last one is very experimental).")
     (synopsis "Estimate First-Price Auction Model")
     (description
      "Estimates a first-price auction model with conditionally independent private
-values as described in MacKay (2020) <doi:10.2139/ssrn.3096534>.  The model
-allows for unobserved heterogeneity that is common to all bidders in addition to
-observable heterogeneity.")
+values as described in @code{MacKay} (2020) <doi:10.2139/ssrn.3096534>.  The
+model allows for unobserved heterogeneity that is common to all bidders in
+addition to observable heterogeneity.")
     (license license:gpl3)))
 
 (define-public r-auctestr
@@ -2809,7 +2852,7 @@ observable heterogeneity.")
 multiple observations of the A statistic (also known as Area Under the Receiver
 Operating Characteristic Curve, or AUC).  Specifically, it implements a testing
 method based on the equivalence between the A statistic and the Wilcoxon
-statistic.  For more information, see Hanley and McNeil (1982)
+statistic.  For more information, see Hanley and @code{McNeil} (1982)
 <doi:10.1148/radiology.143.1.7063747>.")
     (license license:expat)))
 
@@ -2888,11 +2931,12 @@ methods described in Moss (2019, <arxiv:1911.01576>).")
     (description
      "Self-Attention algorithm helper functions and demonstration vignettes of
 increasing depth on how to construct the Self-Attention algorithm, this is based
-on Vaswani et al. (2017) <doi:10.48550/arXiv.1706.03762>, Dan Jurafsky and James
-H. Martin (2022, ISBN:978-0131873216) <https://web.stanford.edu/~jurafsky/slp3/>
-\"Speech and Language Processing (3rd ed.)\" and Alex Graves (2020)
-<https://www.youtube.com/watch?v=AIiwuClvH6k> \"Attention and Memory in Deep
-Learning\".")
+on Vaswani et al. (2017) @code{<doi:10.48550/arXiv.1706.03762>,} Dan Jurafsky
+and James H. Martin (2022, ISBN:978-0131873216)
+<https://web.stanford.edu/~jurafsky/slp3/> \"Speech and Language Processing (3rd
+ed.)\" and Alex Graves (2020)
+@code{<https://www.youtube.com/watch?v=AIiwuClvH6k>} \"Attention and Memory in
+Deep Learning\".")
     (license license:gpl3+)))
 
 (define-public r-attachment
@@ -2992,8 +3036,9 @@ layout.")
      "ATPOL is a rectangular grid system used for botanical studies in Poland.  The
 ATPOL grid was developed in Institute of Botany, Jagiellonian University,
 Krakow, Poland in 70.  Since then it is widely used to represent distribution of
-plants in Poland.  atpolR provides functions to translate geographic coordinates
-to the grid and vice versa.  It also allows to create a choreograph map.")
+plants in Poland. @code{atpolR} provides functions to translate geographic
+coordinates to the grid and vice versa.  It also allows to create a choreograph
+map.")
     (license license:gpl3)))
 
 (define-public r-atom4r
@@ -3021,7 +3066,7 @@ to the grid and vice versa.  It also allows to create a choreograph map.")
     (description
      "This package provides tools to read/write/publish metadata based on the Atom XML
 syndication format.  This includes support of Dublin Core XML implementation,
-and a client to API(s) implementing the AtomPub SWORD API specification.")
+and a client to API(s) implementing the @code{AtomPub} SWORD API specification.")
     (license license:expat)))
 
 (define-public r-atnr
@@ -3045,7 +3090,7 @@ and a client to API(s) implementing the AtomPub SWORD API specification.")
 versions of Allometric Trophic Models (ATN) to estimate the temporal dynamics of
 species biomasses in food webs.  It offers several features to generate
 synthetic food webs and to parametrise models as well as a wrapper to the ODE
-solver deSolve.")
+solver @code{deSolve.}")
     (license license:gpl2+)))
 
 (define-public r-atmopt
@@ -3067,7 +3112,7 @@ solver deSolve.")
      "This package provides functions for implementing the
 Analysis-of-marginal-Tail-Means (ATM) method, a robust optimization method for
 discrete black-box optimization.  Technical details can be found in Mak and Wu
-(2018+) <arXiv:1712.03589>.  This work was supported by USARO grant
+(2018+) @code{<arXiv:1712.03589>.} This work was supported by USARO grant
 W911NF-17-1-0007.")
     (license license:gpl2+)))
 
@@ -3099,6 +3144,30 @@ Ministry of the Environment and the Meteorological Directorate of Chile
 (D.M.C.)<http://www.meteochile.gob.cl/> dependent on the Directorate General of
 Civil Aeronautics.")
     (license license:gpl3)))
+
+(define-public r-atlasmaker
+  (package
+    (name "r-atlasmaker")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AtlasMaker" version))
+              (sha256
+               (base32
+                "0p7n73yc4044c4hlnjf4wzhg9zvpwlv6wqw1ams0zb2qw9fcc0fy"))))
+    (properties `((upstream-name . "AtlasMaker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-leaflet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rachel-greenlee/AtlasMaker")
+    (synopsis "Make Multiple 'leaflet' Maps in 'Shiny'")
+    (description
+     "Simplify creating multiple, related leaflet maps across tabs for a shiny
+application.  Users build lists of any polygons, points, and polylines needed
+for the project, use the map_server() function to assign built lists and other
+chosen aesthetics into each tab, and the package leverages modules to generate
+all map tabs.")
+    (license license:gpl3+)))
 
 (define-public r-atlas
   (package
@@ -3172,7 +3241,8 @@ conditioning variables take on a large number of different values in the
 observed sample, or when the overlap condition is violated.  This robustness is
 achieved by only using limited \"pooling\" of information across observations.
 For more details, see the paper by Lee and Weidner (2021), \"Bounding Treatment
-Effects by Pooling Limited Information across Observations,\" <arXiv:2111.05243>.")
+Effects by Pooling Limited Information across Observations,\"
+@code{<arXiv:2111.05243>.}")
     (license license:gpl3)))
 
 (define-public r-atakrig
@@ -3207,13 +3277,13 @@ area-to-area (co)Kriging and area-to-point (co)Kriging.")
 (define-public r-ataforecasting
   (package
     (name "r-ataforecasting")
-    (version "0.0.57")
+    (version "0.0.60")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ATAforecasting" version))
               (sha256
                (base32
-                "15ih8jmgp20iskgbn8v5gbbh3d724gmv0943lc09yvja7b6wxvba"))))
+                "0q21dg4p9xw28r3q0ayf2bvwwyccilw93849x4c7k82xpyfnwvpb"))))
     (properties `((upstream-name . "ATAforecasting")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -3242,7 +3312,7 @@ in terms of easy implementation and accurate forecasting.  It can be applied to
 non-seasonal or seasonal time series which can be decomposed into four
 components (remainder, level, trend and seasonal).  This methodology performed
 well on the M3 and M4-competition data.  This package was written based on Ali
-Sabri Taylanâs PhD dissertation.")
+Sabri Taylanâs @code{PhD} dissertation.")
     (license license:gpl3+)))
 
 (define-public r-atable
@@ -3270,7 +3340,7 @@ Sabri Taylanâs PhD dissertation.")
     (description
      "Create Tables for Reporting Clinical Trials.  Calculates descriptive statistics
 and hypothesis tests, arranges the results in a table ready for reporting with
-LaTeX, HTML or Word.")
+@code{LaTeX,} HTML or Word.")
     (license license:gpl3)))
 
 (define-public r-ata
@@ -3351,10 +3421,10 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
 generator, an iterator that returns a value and pauses each time it reaches a
 yield() call.  async() creates a promise, which runs until it reaches a call to
 await(), then resumes when information is available.  These work similarly to
-generator and async constructs from Python or JavaScript'.  Objects produced are
-compatible with the iterators and promises packages.  Version 0.3 supports
-on.exit, single-step debugging, stream() for making asynchronous iterators, and
-delimited goto() in switch() calls.")
+generator and async constructs from Python or @code{JavaScript'.} Objects
+produced are compatible with the iterators and promises packages.  Version 0.3
+supports on.exit, single-step debugging, stream() for making asynchronous
+iterators, and delimited goto() in switch() calls.")
     (license license:gpl2)))
 
 (define-public r-asymptor
@@ -3379,7 +3449,8 @@ the capture/recapture methods from BÃ¶hning et al. (2020)
 <doi:10.1101/2020.07.14.20153445>.  Note there is currently some discussion
 about the validity of the methods implemented in this package.  You should read
 carefully the original articles, alongside this answer from Li et al. (2022)
-<doi:10.48550/arXiv.2209.11334> before using this package in your project.")
+@code{<doi:10.48550/arXiv.2209.11334>} before using this package in your
+project.")
     (license license:gpl3)))
 
 (define-public r-asymptest
@@ -3704,8 +3775,9 @@ the SGP4 and SDP4 simplified perturbation models to propagate orbital state
 vectors, as well as utilities to read TLE files and convert coordinates between
 different frames of reference.  Several of the functionalities of the package
 (including the high-precision numerical orbit propagator) require the
-coefficients and data included in the asteRiskData package, available in a drat
-repository.  To install this data package, run install.packages(\"asteRiskData\",
+coefficients and data included in the @code{asteRiskData} package, available in
+a drat repository.  To install this data package, run
+@code{install.packages(\"asteRiskData\",}
 repos=\"https://rafael-ayala.github.io/drat/\")'.  Felix R. Hoots, Ronald L.
 Roehrich and T.S. Kelso (1988)
 <https://celestrak.org/NORAD/documentation/spacetrk.pdf>.  David Vallado, Paul
@@ -3870,7 +3942,7 @@ with discrete or continuous vertex values.")
     (description
      "Some procedures including EIGENSTRAT (a procedure for detecting and correcting
 for population stratification through searching for the eigenvectors in genetic
-association studies), PCoC (a procedure for correcting for population
+association studies), @code{PCoC} (a procedure for correcting for population
 stratification through calculating the principal coordinates and the clustering
 of the subjects), Tracy-Widom test (a procedure for detecting the significant
 eigenvalues of a matrix), distance regression (a procedure for detecting the
@@ -3887,9 +3959,9 @@ testing for the association between a biallelic single nucleotide polymorphism
 and a quantitative trait using the maximum value of the three nonparametric
 trend tests derived for the recessive, additive, and dominant models), which are
 commonly used in genetic association studies.  To cite this package in
-publications use: Lin Wang, Wei Zhang, and Qizhai Li.  AssocTests: An R Package
-for Genetic Association Studies.  Journal of Statistical Software.  2020; 94(5):
-1-26.")
+publications use: Lin Wang, Wei Zhang, and Qizhai Li. @code{AssocTests:} An R
+Package for Genetic Association Studies.  Journal of Statistical Software.
+2020; 94(5): 1-26.")
     (license license:gpl2)))
 
 (define-public r-assocind
@@ -3934,13 +4006,13 @@ association strength between individuals using each method.")
 control population.  In such cases it may be necessary to fall back on frequency
 based tests using well known sources for the frequencies in the control
 population, for instance, from the 1000 Genomes Project.  The Allele Frequency
-Comparison ('AssocAFC') package performs multiple rare variant association
-analyses in both population and family-based GWAS (Genome-Wide Association
-Study) designs.  It includes three score tests that are based on the difference
-of the sum of allele frequencies between cases and controls.  Two of these
-tests, Wcorrected() and Wqls(), are collapsing-based tests and suffer from
-having protective and risk variants.  The third test, afcSKAT(), is a score test
-that overcomes the mix of SNP (Single-Nucleotide Polymorphism) effect
+Comparison @code{('AssocAFC')} package performs multiple rare variant
+association analyses in both population and family-based GWAS (Genome-Wide
+Association Study) designs.  It includes three score tests that are based on the
+difference of the sum of allele frequencies between cases and controls.  Two of
+these tests, Wcorrected() and Wqls(), are collapsing-based tests and suffer from
+having protective and risk variants.  The third test, @code{afcSKAT(),} is a
+score test that overcomes the mix of SNP (Single-Nucleotide Polymorphism) effect
 directions.  For more details see Saad M and Wijsman EM (2017)
 <doi:10.1093/bib/bbx107>.")
     (license license:gpl3+)))
@@ -3997,22 +4069,16 @@ semiparametric nonlinear mixed-effects models.  See Wang (2011)
 (define-public r-assignr
   (package
     (name "r-assignr")
-    (version "2.2.3")
+    (version "2.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "assignR" version))
               (sha256
                (base32
-                "01p2sm5c105has0l8l0lcbf9nqzzyxif515qn825iz5r69wh16y7"))))
+                "1857diz9hb2cq5c8dch49mk64fvna4s1vrz95np8dd4vfwwsabf6"))))
     (properties `((upstream-name . "assignR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rlang
-                             r-rgdal
-                             r-raster
-                             r-mvnfast
-                             r-maptools
-                             r-geosphere))
+    (propagated-inputs (list r-terra r-rlang r-mvnfast r-geosphere))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=assignR")
     (synopsis "Infer Geographic Origin from Isotopic Data")
@@ -4078,7 +4144,7 @@ bookings) whose value becomes zero after a fixed ``expiry date''.  Assumes
 potential customers arrive (possibly in groups) according to a known
 inhomogeneous Poisson process.  Also assumes a known time-varying elasticity of
 demand (price sensitivity) function.  Uses elementary techniques based on
-ordinary differential equations.  Uses the package deSolve to effect the
+ordinary differential equations.  Uses the package @code{deSolve} to effect the
 solution of these differential equations.")
     (license license:gpl2+)))
 
@@ -4129,13 +4195,13 @@ well as the method of moments estimator of Frei and Wunsch (2018)
 (define-public r-assetallocation
   (package
     (name "r-assetallocation")
-    (version "1.0.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AssetAllocation" version))
               (sha256
                (base32
-                "02r9a21696y1gj5qw01jddnyda6hm962l1am7igrqyywh05canch"))))
+                "0qd58478bwg20x7ivfasmhs87swl6wj98vzlp608y208madl8ss6"))))
     (properties `((upstream-name . "AssetAllocation")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4144,7 +4210,8 @@ well as the method of moments estimator of Frei and Wunsch (2018)
                              r-riskparityportfolio
                              r-quantmod
                              r-performanceanalytics
-                             r-nmof))
+                             r-nmof
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rubetron/AssetAllocation")
     (synopsis "Backtesting Simple Asset Allocation Strategies")
@@ -4155,6 +4222,31 @@ Yahoo Finance (<https://finance.yahoo.com/>).  Several pre-loaded portfolios
 with data are available, including some which are discussed in Faber (2015,
 ISBN:9780988679924).")
     (license license:gpl3+)))
+
+(define-public r-assertions
+  (package
+    (name "r-assertions")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "assertions" version))
+              (sha256
+               (base32
+                "18926pk2g0hc4dyzm1ghp69sgj7mdx8vzi1vykyxbk0046sg53wp"))))
+    (properties `((upstream-name . "assertions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-glue r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/selkamand/assertions")
+    (synopsis
+     "Simple Assertions for Beautiful and Customisable Error Messages")
+    (description
+     "This package provides simple assertions with sensible defaults and customisable
+error messages.  It offers convenient assertion call wrappers and a general
+assert function that can handle any condition.  Default error messages are user
+friendly and easily customized with inline code evaluation and styling powered
+by the cli package.")
+    (license license:expat)))
 
 (define-public r-assert
   (package
@@ -4235,13 +4327,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.3.50")
+    (version "4.3.55")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asremlPlus" version))
               (sha256
                (base32
-                "12yj7pvplvsyzn4jyklidvv3m57pr9q6xzd03vdlz2p9ixaxw678"))))
+                "1axq36zb4v94094nsj0hi21gnc7zkgv1rj510n02q0f0d6j5g62f"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4249,6 +4341,7 @@ Galli, and Murray (2022)
                              r-rlang
                              r-reshape2
                              r-rcolorbrewer
+                             r-qqplotr
                              r-ggplot2
                              r-foreach
                              r-dplyr
@@ -4267,16 +4360,17 @@ between predictions.  The content falls into the following natural groupings:
 functions, (iv) Model testing functions, (v) Model diagnostics functions, (vi)
 Prediction production and presentation functions, (vii) Response transformation
 functions, and (viii) Miscellaneous functions (for further details see
-asremlPlus-package in help).  A history of the fitting of a sequence of models
-is kept in a data frame.  Procedures are available for choosing models that
-conform to the hierarchy or marginality principle and for displaying predictions
-for significant terms in tables and graphs.  The asreml package provides a
-computationally efficient algorithm for fitting mixed models using Residual
-Maximum Likelihood.  It is a commercial package that can be purchased from VSNi
-<https://vsni.co.uk/> as asreml-R', who will supply a zip file for local
-installation/updating (see <https://asreml.kb.vsni.co.uk/>).  It is not needed
-for functions that are methods for alldiffs and data.frame objects.  The package
-asremPlus can also be installed from <http://chris.brien.name/rpackages/>.")
+@code{asremlPlus-package} in help).  A history of the fitting of a sequence of
+models is kept in a data frame.  Procedures are available for choosing models
+that conform to the hierarchy or marginality principle and for displaying
+predictions for significant terms in tables and graphs.  The asreml package
+provides a computationally efficient algorithm for fitting mixed models using
+Residual Maximum Likelihood.  It is a commercial package that can be purchased
+from VSNi <https://vsni.co.uk/> as asreml-R', who will supply a zip file for
+local installation/updating (see <https://asreml.kb.vsni.co.uk/>).  It is not
+needed for functions that are methods for alldiffs and data.frame objects.  The
+package @code{asremPlus} can also be installed from
+<http://chris.brien.name/rpackages/>.")
     (license license:expat)))
 
 (define-public r-aspu
@@ -4296,26 +4390,27 @@ asremPlus can also be installed from <http://chris.brien.name/rpackages/>.")
     (home-page "https://github.com/ikwak2/aSPU")
     (synopsis "Adaptive Sum of Powered Score Test")
     (description
-     "R codes for the (adaptive) Sum of Powered Score ('SPU and aSPU') tests, inverse
-variance weighted Sum of Powered score ('SPUw and aSPUw') tests and gene-based
-and some pathway based association tests (Pathway based Sum of Powered Score
-tests ('SPUpath'), adaptive SPUpath ('aSPUpath') test, GEEaSPU test for multiple
-traits - single SNP (single nucleotide polymorphism) association in generalized
-estimation equations, MTaSPUs test for multiple traits - single SNP association
-with Genome Wide Association Studies ('GWAS') summary statistics, Gene-based
-Association Test that uses an extended Simes procedure ('GATES'), Hybrid
-Set-based Test ('HYST') and extended version of GATES test for pathway-based
-association testing ('GATES-Simes'). ).  The tests can be used with genetic and
-other data sets with covariates.  The response variable is binary or
-quantitative.  Summary; (1) Single trait-'SNP set association with
-individual-level data ('aSPU', aSPUw', aSPUr'), (2) Single trait-'SNP set
-association with summary statistics ('aSPUs'), (3) Single trait-pathway
-association with individual-level data ('aSPUpath'), (4) Single trait-pathway
-association with summary statistics ('aSPUsPath'), (5) Multiple traits-single
-SNP association with individual-level data ('GEEaSPU'), (6) Multiple traits-
-single SNP association with summary statistics ('MTaSPUs'), (7) Multiple
-traits-'SNP set association with summary statistics('MTaSPUsSet'), (8) Multiple
-traits-pathway association with summary statistics('MTaSPUsSetPath').")
+     "R codes for the (adaptive) Sum of Powered Score ('SPU and @code{aSPU')} tests,
+inverse variance weighted Sum of Powered score ('SPUw and @code{aSPUw')} tests
+and gene-based and some pathway based association tests (Pathway based Sum of
+Powered Score tests ('SPUpath'), adaptive SPUpath @code{('aSPUpath')} test,
+@code{GEEaSPU} test for multiple traits - single SNP (single nucleotide
+polymorphism) association in generalized estimation equations, @code{MTaSPUs}
+test for multiple traits - single SNP association with Genome Wide Association
+Studies ('GWAS') summary statistics, Gene-based Association Test that uses an
+extended Simes procedure ('GATES'), Hybrid Set-based Test ('HYST') and extended
+version of GATES test for pathway-based association testing ('GATES-Simes'). ).
+The tests can be used with genetic and other data sets with covariates.  The
+response variable is binary or quantitative.  Summary; (1) Single trait-'SNP set
+association with individual-level data @code{('aSPU',} @code{aSPUw',}
+@code{aSPUr'),} (2) Single trait-'SNP set association with summary statistics
+@code{('aSPUs'),} (3) Single trait-pathway association with individual-level
+data @code{('aSPUpath'),} (4) Single trait-pathway association with summary
+statistics @code{('aSPUsPath'),} (5) Multiple traits-single SNP association with
+individual-level data @code{('GEEaSPU'),} (6) Multiple traits- single SNP
+association with summary statistics @code{('MTaSPUs'),} (7) Multiple traits-'SNP
+set association with summary @code{statistics('MTaSPUsSet'),} (8) Multiple
+traits-pathway association with summary @code{statistics('MTaSPUsSetPath').}")
     (license license:gpl3)))
 
 (define-public r-aspline
@@ -4345,7 +4440,7 @@ traits-pathway association with summary statistics('MTaSPUsSetPath').")
      "Perform one-dimensional spline regression with automatic knot selection.  This
 package uses a penalized approach to select the most relevant knots.  B-splines
 of any degree can be fitted.  More details in Goepp et al. (2018)', \"Spline
-Regression with Automatic Knot Selection\", <arXiv:1808.01770>.")
+Regression with Automatic Knot Selection\", @code{<arXiv:1808.01770>.}")
     (license license:gpl3)))
 
 (define-public r-aspect
@@ -4391,10 +4486,10 @@ methods such as structural equation models.")
     (synopsis
      "An Adaptive Sum of Powered Correlation Test (aSPC) for Global Association Between Two Random Vectors")
     (description
-     "The aSPC test is designed to test global association between two groups of
-variables potentially with moderate to high dimension (e.g. in hundreds).  The
-aSPC is particularly useful when the association signals between two groups of
-variables are sparse.")
+     "The @code{aSPC} test is designed to test global association between two groups
+of variables potentially with moderate to high dimension (e.g. in hundreds).
+The @code{aSPC} is particularly useful when the association signals between two
+groups of variables are sparse.")
     (license license:gpl3)))
 
 (define-public r-asnipe
@@ -4450,11 +4545,11 @@ combinations by cross-validation.  By doing this, it enables us to do the
 feature selection for different blocks, and the selected features can then be
 further used to predict the outcome.  For example, in biomedical applications,
 clinical covariates plus different types of omics data such as microbiome,
-metabolome, mRNA data, methylation data, copy number variation data might be
-predictive for patients outcome such as survival time or response to therapy.
-Different types of data could be put in different blocks and along with survival
-time to fit the model.  The fitted model can then be used to predict the
-survival for the new samples with the corresponding clinical covariates and
+metabolome, @code{mRNA} data, methylation data, copy number variation data might
+be predictive for patients outcome such as survival time or response to therapy.
+ Different types of data could be put in different blocks and along with
+survival time to fit the model.  The fitted model can then be used to predict
+the survival for the new samples with the corresponding clinical covariates and
 omics data.  In addition, Adaptive Sparse Multi-block Partial Least Square
 Discriminant Analysis is also included, which extends Adaptive Sparse
 Multi-block Partial Least Square for classifying the categorical outcome.")
@@ -4463,18 +4558,18 @@ Multi-block Partial Least Square for classifying the categorical outcome.")
 (define-public r-asmap
   (package
     (name "r-asmap")
-    (version "1.0-5")
+    (version "1.0-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ASMap" version))
               (sha256
                (base32
-                "0zjgv2lbsk76605cblh74pc33i4slj785wwsw6s9gps0silg6hfp"))))
+                "0l48frd7qik70zw4qrs0kw9rz4gqb9lr1sa8kxzhfbsxjkildrxl"))))
     (properties `((upstream-name . "ASMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/DrJ001/ASMap")
+    (home-page "https://cran.r-project.org/package=ASMap")
     (synopsis "Linkage Map Construction using the MSTmap Algorithm")
     (description
      "This package provides functions for Accurate and Speedy linkage map
@@ -4522,13 +4617,13 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 (define-public r-askgpt
   (package
     (name "r-askgpt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "askgpt" version))
               (sha256
                (base32
-                "1yl7c5h242j8b9cbvd709d5gw15hm9b4lvb2s3vcn9zkxbb9h29g"))))
+                "0g4g8yw2akjbafmk26wfy92g0pifq752mvzp2cnvxdh4cn4qa16z"))))
     (properties `((upstream-name . "askgpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4543,8 +4638,8 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
     (home-page "https://github.com/JBGruber/askgpt")
     (synopsis "Asking GPT About R Stuff")
     (description
-     "This package provides a chat package connecting to API endpoints by OpenAI
-(<https://platform.openai.com/>) to answer questions (about R).")
+     "This package provides a chat package connecting to API endpoints by
+@code{OpenAI} (<https://platform.openai.com/>) to answer questions (about R).")
     (license license:gpl3+)))
 
 (define-public r-asip
@@ -4637,9 +4732,9 @@ Proschan, and Brittain <doi:10.1111/biom.12231>], one-way ANOVA allowing
 var.equal=FALSE [see Brown and Forsythe, 1974, Biometrics]), prevalence
 confidence intervals that adjust for sensitivity and specificity [see Lang and
 Reiczigel, 2014 <doi:10.1016/j.prevetmed.2013.09.015>] or Bayer, Fay, and
-Graubard, 2023 <doi:10.48550/arXiv.2205.13494>).  The focus is on hypothesis
-tests that have compatible confidence intervals, but some functions only have
-confidence intervals (e.g., prevSeSp).")
+Graubard, 2023 @code{<doi:10.48550/arXiv.2205.13494>).} The focus is on
+hypothesis tests that have compatible confidence intervals, but some functions
+only have confidence intervals (e.g., @code{prevSeSp).}")
     (license license:gpl3)))
 
 (define-public r-asgs-foyer
@@ -4679,7 +4774,7 @@ those shapefiles, as well as methods for converting coordinates to shapefiles.")
     (synopsis "Reading ASD Binary Files in R")
     (description
      "This package provides a simple driver that reads binary data created by the ASD
-Inc.  portable spectrometer instruments, such as the FieldSpec (for more
+Inc.  portable spectrometer instruments, such as the @code{FieldSpec} (for more
 information, see <http://www.asdi.com/products/fieldspec-spectroradiometers>).
 Spectral data can be extracted from the ASD files as raw (DN), white reference,
 radiance, or reflectance.  Additionally, the metadata information contained in
@@ -4719,13 +4814,13 @@ anthracnose in a lupin field.")
 (define-public r-asciisetupreader
   (package
     (name "r-asciisetupreader")
-    (version "2.4.0")
+    (version "2.5.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "asciiSetupReader" version))
               (sha256
                (base32
-                "02s3p0qqa9h1kyx96c29blwgfkdm50p10kr14wklh19gibiznyfj"))))
+                "1g21yycql1ik02gp37d0m5fxsn9d7sibxn5vm1ngmynx2a8a8jq7"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4769,8 +4864,8 @@ government data.")
     (description
      "An ASCII ruler is for measuring text and is especially useful for sequence
 analysis.  Included in this package are methods to create ASCII rulers and
-associated GenBank sequence blocks, multi-column text displays that make it easy
-for viewers to locate nucleotides by position.")
+associated @code{GenBank} sequence blocks, multi-column text displays that make
+it easy for viewers to locate nucleotides by position.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -4841,8 +4936,8 @@ Rmarkdown documents.")
     (home-page "https://github.com/mclements/ascii")
     (synopsis "Export R Objects to Several Markup Languages")
     (description
-     "Coerce R object to asciidoc', txt2tags', restructuredText', org', textile or
-pandoc syntax.  Package comes with a set of drivers for Sweave'.")
+     "Coerce R object to asciidoc', txt2tags', @code{restructuredText',} org', textile
+or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
     (license license:gpl2+)))
 
 (define-public r-ascenttraining
@@ -4934,8 +5029,8 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
     (home-page "https://docs.ropensci.org/aRxiv/")
     (synopsis "Interface to the arXiv API")
     (description
-     "An interface to the API for arXiv', a repository of electronic preprints for
-computer science, mathematics, physics, quantitative biology, quantitative
+     "An interface to the API for @code{arXiv',} a repository of electronic preprints
+for computer science, mathematics, physics, quantitative biology, quantitative
 finance, and statistics.")
     (license license:expat)))
 
@@ -4990,7 +5085,7 @@ visualizations for rule exploration.  Michael Hahsler (2017)
     (synopsis "Mining Frequent Sequences")
     (description
      "Add-on for arules to handle and mine frequent sequences.  Provides interfaces to
-the C++ implementation of cSPADE by Mohammed J. Zaki.")
+the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
     (license license:gpl2)))
 
 (define-public r-arulesnbminer
@@ -5110,8 +5205,9 @@ Higgins, and Wobbrock (2021) <doi:10.1145/3472749.3474784>.")
     (home-page "https://cran.r-project.org/package=ARTofR")
     (synopsis "To Insert Title, Divider, and Block of Comments")
     (description
-     "For instructions, check <https://github.com/Hzhang-ouce/ARTofR>.  This is a
-wrapper of bannerCommenter', for inserting neat comments, headers and dividers.")
+     "For instructions, check @code{<https://github.com/Hzhang-ouce/ARTofR>.} This is
+a wrapper of @code{bannerCommenter',} for inserting neat comments, headers and
+dividers.")
     (license license:expat)))
 
 (define-public r-arthistory
@@ -5401,13 +5497,13 @@ named after the dadaist Hans Arp, a friend of Rene Magritte.")
     (synopsis
      "Tools for Simulating Direct Behavioral Observation Recording Procedures Based on Alternating Renewal Processes")
     (description
-     "Tools for simulating data generated by direct observation recording.  Behavior
-streams are simulated based on an alternating renewal process, given specified
-distributions of event durations and interim times.  Different procedures for
-recording data can then be applied to the simulated behavior streams.  Functions
-are provided for the following recording methods: continuous duration recording,
-event counting, momentary time sampling, partial interval recording, whole
-interval recording, and augmented interval recording.")
+     "This package provides tools for simulating data generated by direct observation
+recording.  Behavior streams are simulated based on an alternating renewal
+process, given specified distributions of event durations and interim times.
+Different procedures for recording data can then be applied to the simulated
+behavior streams.  Functions are provided for the following recording methods:
+continuous duration recording, event counting, momentary time sampling, partial
+interval recording, whole interval recording, and augmented interval recording.")
     (license license:gpl3)))
 
 (define-public r-arplmec
@@ -5517,10 +5613,10 @@ with daily frequency by the regional agency.")
     (home-page "https://cran.r-project.org/package=Arothron")
     (synopsis "Geometric Morphometric Methods and Virtual Anthropology Tools")
     (description
-     "Tools for geometric morphometric analysis.  The package includes tools of
-virtual anthropology to align two not articulated parts belonging to the same
-specimen, to build virtual cavities as endocast (Profico et al, 2021
-<doi:10.1002/ajpa.24340>).")
+     "This package provides tools for geometric morphometric analysis.  The package
+includes tools of virtual anthropology to align two not articulated parts
+belonging to the same specimen, to build virtual cavities as endocast (Profico
+et al, 2021 <doi:10.1002/ajpa.24340>).")
     (license license:gpl2)))
 
 (define-public r-aroma-core
@@ -5583,20 +5679,20 @@ Project, e.g. aroma.affymetrix and aroma.cn'.")
      "This package provides methods for analyzing DNA copy-number data.  Specifically,
 this package implements the multi-source copy-number normalization (MSCN) method
 for normalizing copy-number data obtained on various platforms and technologies.
- It also implements the TumorBoost method for normalizing paired tumor-normal
-SNP data.")
+ It also implements the @code{TumorBoost} method for normalizing paired
+tumor-normal SNP data.")
     (license license:lgpl2.1+)))
 
 (define-public r-aroma-apd
   (package
     (name "r-aroma-apd")
-    (version "0.6.1")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aroma.apd" version))
               (sha256
                (base32
-                "0by8nss4m1hrd33bv9vdqgf67117a48y3wdkyc3q35anlz7kn3yk"))))
+                "1xni6zyrrhh0vaq9gyckls9hinmd4898h51g2y6vzdzd8z9flq4x"))))
     (properties `((upstream-name . "aroma.apd")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-r-oo r-r-methodss3 r-r-huge))
@@ -5675,10 +5771,10 @@ been used since 2006.")
     (description
      "Estimates the covariate-adjusted Receiver Operating Characteristic (AROC) curve
 and pooled (unadjusted) ROC curve by different methods.  Inacio de Carvalho, V.,
-and Rodriguez-Alvarez, M. X. (2018) <arXiv:1806.00473>.  NOTE: We have created a
-new package, ROCnReg', with more functionalities.  It also implements all the
-methods included in AROC'.  We, therefore, recommend using ROCnReg ('AROC will
-no longer be maintained).")
+and Rodriguez-Alvarez, M. X. (2018) @code{<arXiv:1806.00473>.} NOTE: We have
+created a new package, @code{ROCnReg',} with more functionalities.  It also
+implements all the methods included in AROC'.  We, therefore, recommend using
+@code{ROCnReg} ('AROC will no longer be maintained).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-arnie
@@ -5879,7 +5975,7 @@ can be obtained from Paul and Garai (2022) <doi:10.1007/s41096-022-00128-3>.")
     (synopsis "All-Resolution Inference")
     (description
      "It performs All-Resolutions Inference (ARI) on functional Magnetic Resonance
-Image (fMRI) data.  As a main feature, it estimates lower bounds for the
+Image @code{(fMRI)} data.  As a main feature, it estimates lower bounds for the
 proportion of active voxels in a set of clusters as, for example, given by a
 cluster-wise analysis.  The method is described in Rosenblatt, Finos, Weeda,
 Solari, Goeman (2018) <doi:10.1016/j.neuroimage.2018.07.060>.")
@@ -5936,9 +6032,9 @@ translatable, and reproducible lecture videos.  See
      "Adaptable Regularized Hotelling's T^2 Test for High-Dimensional Data")
     (description
      "Perform the Adaptable Regularized Hotelling's T^2 test (ARHT) proposed by Li et
-al., (2016) <arXiv:1609.08725>.  Both one-sample and two-sample mean test are
-available with various probabilistic alternative prior models.  It contains a
-function to consistently estimate higher order moments of the population
+al., (2016) @code{<arXiv:1609.08725>.} Both one-sample and two-sample mean test
+are available with various probabilistic alternative prior models.  It contains
+a function to consistently estimate higher order moments of the population
 covariance spectral distribution using the spectral of the sample covariance
 matrix (Bai et al. (2010) <doi:10.1111/j.1467-842X.2010.00590.x>).  In addition,
 it contains a function to sample from 3-variate chi-squared random vectors
@@ -6028,7 +6124,7 @@ predominantly of low-quality.")
     (synopsis "Argon Shiny Dashboard Template")
     (description
      "Create awesome Bootstrap 4 dashboards powered by Argon'.  See more here
-<https://rinterface.github.io/argonDash/>.")
+@code{<https://rinterface.github.io/argonDash/>.}")
     (license license:gpl2)))
 
 (define-public r-argofloats
@@ -6110,7 +6206,7 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
      "Simulates, fits, and predicts long-memory and anti-persistent time series,
 possibly mixed with ARMA, regression, transfer-function components.  Exact
 methods (MLE, forecasting, simulation) are used.  Bug reports should be done via
-GitHub (at <https://github.com/JQVeenstra/arfima>), where the development
+@code{GitHub} (at <https://github.com/JQVeenstra/arfima>), where the development
 version of this package lives; it can be installed using devtools.")
     (license license:expat)))
 
@@ -6142,7 +6238,7 @@ Methods for both are implemented in this package.  ARFs naturally handle
 unstructured data with mixed continuous and categorical covariates.  They
 inherit many of the benefits of random forests, including speed, flexibility,
 and solid performance with default parameters.  For details, see Watson et al.
-(2022) <arXiv:2205.09435>.")
+(2022) @code{<arXiv:2205.09435>.}")
     (license license:gpl3+)))
 
 (define-public r-arenar
@@ -6224,6 +6320,48 @@ interactively visualize Arena's results.")
      "Plot stacked areas and confidence bands as filled polygons, or add polygons to
 existing plots.  A variety of input formats are supported, including vectors,
 matrices, data frames, formulas, etc.")
+    (license license:gpl3)))
+
+(define-public r-arealdb
+  (package
+    (name "r-arealdb")
+    (version "0.6.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "arealDB" version))
+              (sha256
+               (base32
+                "08mmalw9ii4i6ills6i77bfgy3ybzd4161wmag36b0q9fvkkcyhr"))))
+    (properties `((upstream-name . "arealDB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-tabshiftr
+                             r-stringr
+                             r-sf
+                             r-rmapshaper
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-ontologics
+                             r-magrittr
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luckinet/arealDB")
+    (synopsis "Harmonise and Integrate Heterogeneous Areal Data")
+    (description
+     "Many relevant applications in the environmental and socioeconomic sciences use
+areal data, such as biodiversity checklists, agricultural statistics, or
+socioeconomic surveys.  For applications that surpass the spatial, temporal or
+thematic scope of any single data source, data must be integrated from several
+heterogeneous sources.  Inconsistent concepts, definitions, or messy data tables
+make this a tedious and error-prone process. @code{arealDB} tackles those
+problems and helps the user to integrate a harmonised databases of areal data.
+Read the paper at Ehrmann, Seppelt & Meyer (2020)
+<doi:10.1016/j.envsoft.2020.104799>.")
     (license license:gpl3)))
 
 (define-public r-areal
@@ -6459,7 +6597,7 @@ fragmentation metrics.")
     (home-page "https://cran.r-project.org/package=arcpullr")
     (synopsis "Pull Data from an 'ArcGIS REST' API")
     (description
-     "This package provides functions to efficiently query ArcGIS REST APIs
+     "This package provides functions to efficiently query @code{ArcGIS} REST APIs
 <https://developers.arcgis.com/rest/>.  Both spatial and SQL queries can be used
 to retrieve data.  Simple Feature (sf) objects are utilized to perform spatial
 queries.  This package was neither produced nor is maintained by Esri.")
@@ -6496,7 +6634,7 @@ development of objective priors for autoregressive cokriging models can be found
 in Pulong Ma (2020) <DOI:10.1137/19M1289893>.  The development of the
 multivariate autoregressive cokriging models with possibly non-nested design can
 be found in Pulong Ma, Georgios Karagiannis, Bledar A Konomi, Taylor G Asher,
-Gabriel R Toro, and Andrew T Cox (2019) <arXiv:1909.01836>.")
+Gabriel R Toro, and Andrew T Cox (2019) @code{<arXiv:1909.01836>.}")
     (license license:gpl2+)))
 
 (define-public r-arco
@@ -6536,8 +6674,8 @@ Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
     (home-page "http://marcinkosinski.github.io/archivist.github/")
     (synopsis "Tools for Archiving, Managing and Sharing R Objects via GitHub")
     (description
-     "The extension of the archivist package integrating the archivist with GitHub via
-GitHub API, git2r packages and httr package.")
+     "The extension of the archivist package integrating the archivist with
+@code{GitHub} via @code{GitHub} API, git2r packages and httr package.")
     (license license:gpl2)))
 
 (define-public r-archiveretriever
@@ -6572,7 +6710,7 @@ GitHub API, git2r packages and httr package.")
 mementos available from the respective homepage, retrieve the Urls and links of
 the page and finally scrape the content.  The final output is stored in tibbles,
 which can be then easily used for further analysis.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
+    (license license:asl2.0)))
 
 (define-public r-archive
   (package
@@ -6586,7 +6724,7 @@ which can be then easily used for further analysis.")
                 "0zq61bvma82fxvczy3bhfy3x8k5s36avmblvfl1vsa2f0rp63nmk"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
-    (inputs (list libarchive libarchive libarchive))
+    (inputs (list zlib openssl libarchive libarchive libarchive))
     (propagated-inputs (list r-tibble r-rlang r-glue r-cpp11 r-cli))
     (native-inputs (list pkg-config))
     (home-page "https://archive.r-lib.org/")
@@ -6624,8 +6762,8 @@ architecture and development from captured images\", Plant and Soil,
 Markup Language (RSML) (Lobet et al (2015) \"Root System Markup Language: toward
 a unified root architecture description language\", Plant Physiology,
 <DOI:10.1104/pp.114.253625>).  More information can be found in Delory et al
-(2016) \"archiDART: an R package for the automated computation of plant root
-architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
+(2016) @code{\"archiDART:} an R package for the automated computation of plant
+root architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
     (license license:gpl2)))
 
 (define-public r-archetyper
@@ -6702,13 +6840,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.1.1")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "archeoViz" version))
               (sha256
                (base32
-                "1akyrsvjis97nsb4vzdk1x93695sw1ml1vr0psd2i9jkdd2l77dx"))))
+                "1q3z8hi44aw6xrydylxj6w8ifr02cfinl5zwkc70fzzc3s1yqmhh"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -6727,10 +6865,10 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
      "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
     (description
      "An R Shiny application for the visualisation, interactive exploration, and web
-communication of archaeological excavation data.  It includes interactive 3D and
-2D visualisations, generation of cross sections and maps of the remains, basic
+communication of archaeological spatial data.  It includes interactive 3D and 2D
+visualisations, generation of cross sections and maps of the remains, basic
 spatial analysis methods (convex hull, regression surfaces, 2D kernel density
-estimation), and excavation timeline visualisation.  archeoViz can be used
+estimation), and excavation timeline visualisation. @code{archeoViz} can be used
 locally or deployed on a server, either with interactive input of data or with a
 static data set.")
     (license license:gpl3)))
@@ -6802,9 +6940,9 @@ in Archaeology.")
     (home-page "https://cran.r-project.org/package=ArchaeoPhases.dataset")
     (synopsis "Data Sets for 'ArchaeoPhases' Vignettes")
     (description
-     "This package provides the data sets used to build the ArchaeoPhases vignettes.
-The data sets were formerly distributed with ArchaeoPhases', however they exceed
-current CRAN policy for package size.")
+     "This package provides the data sets used to build the @code{ArchaeoPhases}
+vignettes.  The data sets were formerly distributed with @code{ArchaeoPhases',}
+however they exceed current CRAN policy for package size.")
     (license license:gpl3)))
 
 (define-public r-archaeophases
@@ -6842,13 +6980,13 @@ current CRAN policy for package size.")
 archaeological dates and groups of dates.  It is based on the post-processing of
 the Markov Chains whose stationary distribution is the posterior distribution of
 a series of dates.  Such output can be simulated by different applications as
-for instance ChronoModel (see <https://chronomodel.com/>), Oxcal (see
+for instance @code{ChronoModel} (see <https://chronomodel.com/>), Oxcal (see
 <https://c14.arch.ox.ac.uk/oxcal.html>) or BCal (see
 <https://bcal.shef.ac.uk/>).  The only requirement is to have a csv file
 containing a sample from the posterior distribution.  Note that this package
-interacts with data available through the ArchaeoPhases.dataset package which is
-available in a separate repository.  The size of the ArchaeoPhases.dataset
-package is approximately 4 MB.")
+interacts with data available through the @code{ArchaeoPhases.dataset} package
+which is available in a separate repository.  The size of the
+@code{ArchaeoPhases.dataset} package is approximately 4 MB.")
     (license license:gpl3)))
 
 (define-public r-archaeochron
@@ -6928,8 +7066,8 @@ that allow to automatically set CBA parameters (minimum confidence, minimum
 support) and it also natively handles numeric attributes by integrating a
 pre-discretization step.  The rule generation phase is handled by the arules
 package.  To further decrease the size of the CBA models produced by the arc
-package, postprocessing by the qCBA package is suggested.  QCBA package can be
-obtained from CRAN archive or from <https://github.com/kliegr/QCBA>.")
+package, postprocessing by the @code{qCBA} package is suggested.  QCBA package
+can be obtained from CRAN archive or from <https://github.com/kliegr/QCBA>.")
     (license license:agpl3)))
 
 (define-public r-ararredux
@@ -7135,24 +7273,24 @@ of the Aquo Standard and use them in R.")
      "Integrated Development Toolbox for Aquatic Chemical Model Generation")
     (description
      "Toolbox for the experimental aquatic chemist, focused on acidification and CO2
-air-water exchange.  It contains all elements to model the pH, the related CO2
-air-water exchange, and aquatic acid-base chemistry for an arbitrary marine,
-estuarine or freshwater system.  It contains a suite of tools for sensitivity
-analysis, visualisation, modelling of chemical batches, and can be used to build
-dynamic models of aquatic systems.  As from version 1.0-4, it also contains
-functions to calculate the buffer factors.")
+air-water exchange.  It contains all elements to model the @code{pH,} the
+related CO2 air-water exchange, and aquatic acid-base chemistry for an arbitrary
+marine, estuarine or freshwater system.  It contains a suite of tools for
+sensitivity analysis, visualisation, modelling of chemical batches, and can be
+used to build dynamic models of aquatic systems.  As from version 1.0-4, it also
+contains functions to calculate the buffer factors.")
     (license license:gpl2+)))
 
 (define-public r-aquadtree
   (package
     (name "r-aquadtree")
-    (version "1.0.3")
+    (version "1.0.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AQuadtree" version))
               (sha256
                (base32
-                "1dlfa3jlac4dqad1yw1whcshf18adabwvjx2pxg0xnkpxs1n2rfm"))))
+                "0i1qp1xr51l3gfvgnyyka06g4khj62hzxxkbsnlkv235i2bwnpzd"))))
     (properties `((upstream-name . "AQuadtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-dplyr))
@@ -7231,12 +7369,12 @@ information; freeing the scientist to focus on ideas rather than boilerplate
 data processing tasks <doi:10.1016/j.cageo.2012.10.020>.  These functions and
 data structures have been extensively tested and documented, applied to projects
 involving hundreds of thousands of soil profiles, and deeply integrated into
-widely used tools such as SoilWeb
+widely used tools such as @code{SoilWeb}
 <https://casoilresource.lawr.ucdavis.edu/soilweb-apps/>.  Components of the AQP
-project (aqp, soilDB, sharpshootR, soilReports packages) serve an important role
-in routine data analysis within the USDA-NRCS Soil Science Division.  The AQP
-suite of R packages offer a convenient platform for bridging the gap between
-pedometric theory and practice.")
+project (aqp, @code{soilDB,} @code{sharpshootR,} @code{soilReports} packages)
+serve an important role in routine data analysis within the USDA-NRCS Soil
+Science Division.  The AQP suite of R packages offer a convenient platform for
+bridging the gap between pedometric theory and practice.")
     (license license:gpl3+)))
 
 (define-public r-aqlschemes
@@ -7543,12 +7681,13 @@ methods are linkable to other R packages via their header files.")
     (synopsis
      "Approximately Optimal Fine Balance Matching with Multiple Groups")
     (description
-     "Tools for constructing a matched design with multiple comparison groups.
-Further specifications of refined covariate balance restriction and exact match
-on covariate can be imposed.  Matches are approximately optimal in the sense
-that the cost of the solution is at most twice the optimal cost, Crama and
-Spieksma (1992) <doi:10.1016/0377-2217(92)90078-N>, Karmakar, Small and
-Rosenbaum (2019) <doi:10.1080/10618600.2019.1584900>.")
+     "This package provides tools for constructing a matched design with multiple
+comparison groups.  Further specifications of refined covariate balance
+restriction and exact match on covariate can be imposed.  Matches are
+approximately optimal in the sense that the cost of the solution is at most
+twice the optimal cost, Crama and Spieksma (1992)
+<doi:10.1016/0377-2217(92)90078-N>, Karmakar, Small and Rosenbaum (2019)
+<doi:10.1080/10618600.2019.1584900>.")
     (license license:expat)))
 
 (define-public r-approximator
@@ -7598,8 +7737,8 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
     (home-page "https://github.com/Ugranziol/appRiori")
     (synopsis "Code and Obtain Customized Planned Comparisons with 'appRiori'")
     (description
-     "With appRiori', users upload the research variables and the app guides them to
-the best set of comparisons fitting the hypotheses, for both main and
+     "With @code{appRiori',} users upload the research variables and the app guides
+them to the best set of comparisons fitting the hypotheses, for both main and
 interaction effects.  Through a graphical explanation and empirical examples on
 reproducible data, it is shown that it is possible to understand both the logic
 behind the planned comparisons and the way to interpret them when a model is
@@ -7709,13 +7848,13 @@ samples can have from the training set.  See Gadaleta et al (2016)
 (define-public r-appler
   (package
     (name "r-appler")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "appler" version))
               (sha256
                (base32
-                "1xd9rk80rj2ksx7h5qdy0qalc61wnzp9vihmlk1v9npx46i4rng0"))))
+                "0y0nj8ac6cm1qvbzy2w93j638s0f4mj2b1b9g2rw046rrf7maiz4"))))
     (properties `((upstream-name . "appler")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-jsonlite r-httr))
@@ -7723,9 +7862,9 @@ samples can have from the training set.  See Gadaleta et al (2016)
     (home-page "https://ashbaldry.github.io/appler/")
     (synopsis "'Apple App Store' and 'iTunes' Data Extraction")
     (description
-     "Using Apple App Store <https://www.apple.com/app-store/> web scraping and iTunes
-API <https://performance-partners.apple.com/search-api> to extract content
-information, app ratings and reviews.")
+     "Using Apple App Store <https://www.apple.com/app-store/> web scraping and
+@code{iTunes} API <https://performance-partners.apple.com/search-api> to extract
+content information, app ratings and reviews.")
     (license license:gpl2)))
 
 (define-public r-appleadsr
@@ -7797,7 +7936,7 @@ for binomial outcome are computed.")
     (synopsis "Interface to 'AppEARS' NASA Web Services")
     (description
      "Programmatic interface to the NASA Application for Extracting and Exploring
-Analysis Ready Samples services (AppEEARS;
+Analysis Ready Samples services @code{(AppEEARS;}
 <https://appeears.earthdatacloud.nasa.gov/>).  The package provides easy access
 to analysis ready earth observation data in R.")
     (license license:agpl3)))
@@ -7845,7 +7984,7 @@ and multiple discrete continuous models are covered in addition to discrete
 choice.  Multi-threading processing is supported for estimation and a large
 number of pre and post-estimation routines, including for computing posterior
 (individual-level) distributions are available.  For examples, a manual, and a
-support forum, visit <http://www.ApolloChoiceModelling.com>.  For more
+support forum, visit @code{<http://www.ApolloChoiceModelling.com>.} For more
 information on choice models see Train, K. (2009) <isbn:978-0-521-74738-7> and
 Hess, S. & Daly, A.J. (2014) <isbn:978-1-781-00314-5> for an overview of the
 field.")
@@ -7988,37 +8127,49 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "1.0.1")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "APIS" version))
               (sha256
                (base32
-                "1af82mixamllly7v1jfvn1anpm1pafkv5mshwp6nmc27vaq201z5"))))
+                "1p3r8p5d32f8im8b851fs8hr54byw4yaggg4n08vrczpanlb29j7"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gridextra r-ggplot2 r-foreach r-doparallel))
-    (native-inputs (list r-knitr gfortran))
+    (propagated-inputs (list r-shinythemes
+                             r-shinybs
+                             r-shiny
+                             r-rlang
+                             r-plotly
+                             r-htmltools
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cowplot))
     (home-page "https://cran.r-project.org/package=APIS")
     (synopsis
      "Auto-Adaptive Parentage Inference Software Tolerant to Missing Parents")
     (description
      "Parentage assignment package.  Parentage assignment is performed based on
-observed average Mendelian transmission probability distributions.  The main
-function of this package is the function APIS(), which is the parentage
-assignment function.")
+observed average Mendelian transmission probability distributions or Exclusion.
+The main functions of this package are the function APIS_2n(), APIS_3n and
+launch_APIShiny(), which perform parentage assignment.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-api2lm
   (package
     (name "r-api2lm")
-    (version "0.1.4")
+    (version "0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "api2lm" version))
               (sha256
                (base32
-                "1hxamdf1332z8gfp5crvjhl26v9g3ibsg68vm0pas2aprh18rpjs"))))
+                "05g0lc2cz596hh0876600lfj9d69jqcc3r3f163knn7gqlbbxs6h"))))
     (properties `((upstream-name . "api2lm")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8028,7 +8179,7 @@ assignment function.")
     (description
      "Simplifies aspects of linear regression analysis, particularly simultaneous
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
-by Joshua French (<https://jfrench.github.io/LinearRegression/>).")
+by Joshua French @code{(<https://jfrench.github.io/LinearRegression/>).}")
     (license license:gpl3)))
 
 (define-public r-aphylo
@@ -8140,13 +8291,13 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apexcharter" version))
               (sha256
                (base32
-                "11qrjdcciy507q8v7w89zpln0fs3qn4lxndsrk002hbqrsdmxa5v"))))
+                "0wic3190agd9z1jb2dsq4a6s1glgnfn2137vmfjkbbf242div0gi"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -8162,7 +8313,7 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
      "Create Interactive Chart with the JavaScript 'ApexCharts' Library")
     (description
      "This package provides an htmlwidgets interface to apexcharts.js'.  Apexcharts is
-a modern JavaScript charting library to build interactive charts and
+a modern @code{JavaScript} charting library to build interactive charts and
 visualizations with simple API. Apexcharts examples and documentation are
 available here: <https://apexcharts.com/>.")
     (license license:expat)))
@@ -8186,8 +8337,8 @@ available here: <https://apexcharts.com/>.")
     (description
      "Toolkit for the analysis of multiple gene data (Jombart et al.  2017)
 <doi:10.1111/1755-0998.12567>.  Apex implements the new S4 classes multidna',
-multiphyDat and associated methods to handle aligned DNA sequences from multiple
-genes.")
+@code{multiphyDat} and associated methods to handle aligned DNA sequences from
+multiple genes.")
     (license license:gpl2+)))
 
 (define-public r-apercu
@@ -8206,12 +8357,48 @@ genes.")
     (home-page "https://cran.r-project.org/package=apercu")
     (synopsis "Quick Look at your Data")
     (description
-     "The goal is to print an \"aperÃ§u\", a short view of a vector, a matrix, a
+     "The goal is to print an @code{\"aperÃ§u\",} a short view of a vector, a matrix, a
 data.frame, a list or an array.  By default, it prints the first 5 elements of
 each dimension.  By default, the number of columns is equal to the number of
 lines.  If you want to control the selection of the elements, you can pass a
 list, with each element being a vector giving the selection for each dimension.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-apear
+  (package
+    (name "r-apear")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aPEAR" version))
+              (sha256
+               (base32
+                "08rlfcwwrdy8zz102p67zk4zazjjs7wb08y3kyljn2ps82hmwi19"))))
+    (properties `((upstream-name . "aPEAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-reshape2
+                             r-mcl
+                             r-lsa
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-data-table
+                             r-bayesbio
+                             r-arules))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/vugene/aPEAR")
+    (synopsis "Advanced Pathway Enrichment Analysis Representation")
+    (description
+     "Simplify pathway enrichment analysis results by detecting clusters of similar
+pathways and visualizing it as an enrichment network, where nodes and edges
+describe the pathways and similarity between them, respectively.  This reduces
+the redundancy of the overlapping pathways and helps to notice the most
+important biological themes in the data (Kerseviciute and Gordevicius (2023)
+<doi:10.1101/2023.03.28.534514>).")
+    (license license:expat)))
 
 (define-public r-apdesign
   (package
@@ -8293,13 +8480,14 @@ in the regression model.  See Weigert et al. (2021)
     (description
      "In fields such as ecology, microbiology, and genomics, non-Euclidean distances
 are widely applied to describe pairwise dissimilarity between samples.  Given
-these pairwise distances, principal coordinates analysis (PCoA) is commonly used
-to construct a visualization of the data.  However, confounding covariates can
-make patterns related to the scientific question of interest difficult to
-observe.  We provide aPCoA as an easy-to-use tool to improve data visualization
-in this context, enabling enhanced presentation of the effects of interest.
-Details are described in Yushu Shi, Liangliang Zhang, Kim-Anh Do, Christine
-Peterson and Robert Jenq (2020) Bioinformatics, Volume 36, Issue 13, 4099-4101.")
+these pairwise distances, principal coordinates analysis @code{(PCoA)} is
+commonly used to construct a visualization of the data.  However, confounding
+covariates can make patterns related to the scientific question of interest
+difficult to observe.  We provide @code{aPCoA} as an easy-to-use tool to improve
+data visualization in this context, enabling enhanced presentation of the
+effects of interest.  Details are described in Yushu Shi, Liangliang Zhang,
+Kim-Anh Do, Christine Peterson and Robert Jenq (2020) Bioinformatics, Volume 36,
+Issue 13, 4099-4101.")
     (license license:gpl2+)))
 
 (define-public r-apci
@@ -8472,18 +8660,19 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "APackOfTheClones" version))
               (sha256
                (base32
-                "0fzai68yjspigapcw383bzm4kz6cvv2nnn877gbg3qaqvlzx3ysz"))))
+                "0am6344qmlxq7ww9bqa1f33s1li0rwns1dqb6rc5kplf76b2nkkq"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
-    (propagated-inputs (list r-seurat
+    (propagated-inputs (list r-testthat
+                             r-seurat
                              r-rlang
-                             r-r6
+                             r-rcpp
                              r-hash
                              r-ggplot2
                              r-ggforce
@@ -8492,9 +8681,9 @@ transcription errors and reduces the number commands needed by the user.")
     (home-page "https://qile0317.github.io/APackOfTheClones/")
     (synopsis "Visualization of T-Cell Clonal Expansion")
     (description
-     "Visualize T-cell clonal expansion via circle-packing.  APackOfTheClones can
-integrate single-cell RNA sequencing and T-cell receptor libraries from the 10X
-genomics Single Cell Immune Profiling and Cell Ranger pipeline, to produce a
+     "Visualize T-cell clonal expansion via circle-packing. @code{APackOfTheClones}
+can integrate single-cell RNA sequencing and T-cell receptor libraries from the
+10X genomics Single Cell Immune Profiling and Cell Ranger pipeline, to produce a
 simple, publication-ready visualization of the clonal expansion.  The method was
 originally implemented by Murray Christian and Ben Murrell in the following
 immunology study: Ma et al. (2021) <doi:10.1126/sciimmunol.abg6356>.")
@@ -8525,13 +8714,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.4.0")
+    (version "1.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "apache.sedona" version))
               (sha256
                (base32
-                "0lz4rgqfhpq1n70yh0ag1xw0n8bq0lw2wakb4aszv2z3dkqlzr5h"))))
+                "1pfkkxilc8ggw9q44rk27ic97i8zqprf5gfnvr9dwk7q5icf3dnw"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
@@ -8618,8 +8807,8 @@ nonparametric equivalent of Kruskal Wallis, and the Bayesian approach.  These
 results are shown in an interactive shiny panel, which allows modifying the
 arguments of the tests, contains interactive graphics and presents automatic
 conclusions depending on the tests in order to contribute to the interpretation
-of these analyzes.  AovBay uses Stan and FactorBayes for Bayesian analysis and
-Highcharts for interactive charts.")
+of these analyzes. @code{AovBay} uses Stan and @code{FactorBayes} for Bayesian
+analysis and Highcharts for interactive charts.")
     (license license:expat)))
 
 (define-public r-aov1r
@@ -8665,7 +8854,8 @@ Graybill (1992, ISBN-13: 978-0824786441); Weerahandi (1995)
     (synopsis "Animate on Scroll Library for 'shiny'")
     (description
      "Trigger animation effects on scroll on any HTML element of shiny and rmarkdown',
-such as any text or plot, thanks to the AOS Animate On Scroll jQuery library.")
+such as any text or plot, thanks to the AOS Animate On Scroll @code{jQuery}
+library.")
     (license license:expat)))
 
 (define-public r-aorsf
@@ -8690,7 +8880,7 @@ Oblique decision trees are notoriously slow compared to their axis based
 counterparts, but aorsf runs as fast or faster than axis-based decision tree
 algorithms for right-censored time-to-event outcomes.  Methods to accelerate and
 interpret the oblique random survival forest are described in Jaeger et al.,
-(2022) <arXiv:2208.01129>.")
+(2022) @code{<arXiv:2208.01129>.}")
     (license license:expat)))
 
 (define-public r-aoristic
@@ -8883,7 +9073,8 @@ parameter subsets.")
      "Made to make your life simpler with packages, by installing and loading a list
 of packages, whether they are on CRAN, Bioconductor or github.  For github, if
 you do not have the full path, with the maintainer name in it (e.g.
-\"achateigner/topReviGO\"), it will be able to load it but not to install it.")
+@code{\"achateigner/topReviGO\"),} it will be able to load it but not to install
+it.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-anyflights
@@ -9000,7 +9191,7 @@ randomization: pre- and post-network (node and link permutations); 3) perform
 statistical permutation tests as correlation test (<doi:10.2307/2332226>),
 t-test (<doi:10.1037/h0041412>), General Linear Model (<doi:10.2307/2346786>),
 General Linear Mixed Model (<doi:10.2307/2346786>), deletion simulation
-(<doi:10.1098/rsbl.2003.0057>), Matrix TauKr correlations
+(<doi:10.1098/rsbl.2003.0057>), Matrix @code{TauKr} correlations
 (<doi:10.1016/S0022-5193(05)80036-0>).  The package is partially coded in C++
 using the R package Rcpp for an optimal coding speed.  The package gives
 researchers a workflow from the raw data to the achievement of statistical
@@ -9044,7 +9235,7 @@ versions.")
     (description
      "Fits finite Bayesian mixture models with a random number of components.  The
 MCMC algorithm implemented is based on point processes as proposed by Argiento
-and De Iorio (2019) <arXiv:1904.09733> and offers a more computationally
+and De Iorio (2019) @code{<arXiv:1904.09733>} and offers a more computationally
 efficient alternative to reversible jump.  Different mixture kernels can be
 specified: univariate Gaussian, multivariate Gaussian, univariate Poisson, and
 multivariate Bernoulli (latent class analysis).  For the parameters
@@ -9079,13 +9270,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.6.4")
+    (version "0.7.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "anticlust" version))
               (sha256
                (base32
-                "19v048455qklj136vgmdjqvsmprkkr6gwwr5c926xalzsrdcxl64"))))
+                "00py6va36imp5l7v7w46brb0v9ycv41460j8ydjbn123wajvxm5m"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-matrix))
@@ -9096,20 +9287,24 @@ simulate the effects of mergers under different competitive regimes.")
      "The method of anticlustering partitions a pool of elements into groups (i.e.,
 anticlusters) with the goal of maximizing between-group similarity or
 within-group heterogeneity.  The anticlustering approach thereby reverses the
-logic of cluster analysis that strives for high within-group homogeneity and low
-similarity of the different groups.  Computationally, anticlustering is
+logic of cluster analysis that strives for high within-group homogeneity and
+clear separation between groups.  Computationally, anticlustering is
 accomplished by maximizing instead of minimizing a clustering objective
 function, such as the intra-cluster variance (used in k-means clustering) or the
-sum of pairwise distances within clusters.  The function anticlustering()
-implements exact and heuristic anticlustering algorithms as described in
-Papenberg and Klau (2021; <doi:10.1037/met0000301>).  The exact algorithms
-require that the GNU linear programming kit
-(<https://www.gnu.org/software/glpk/glpk.html>) is available and the R package
-Rglpk (<https://cran.R-project.org/package=Rglpk>) is installed.  A bicriterion
-anticlustering method proposed by Brusco et al. (2020; <doi:10.1111/bmsp.12186>)
-is available through the function bicriterion_anticlustering(),
-kplus_anticlustering() implements the k-plus anticlustering approach proposed by
-Papenberg (2023; <doi:10.31234/osf.io/7jw6v>).  Some other functions are
+sum of pairwise distances within clusters.  The main function anticlustering()
+gives access to exact and heuristic anticlustering methods described in
+Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco et al. (2020;
+<doi:10.1111/bmsp.12186>), and Papenberg (2023; <doi:10.1111/bmsp.12315>).  The
+exact algorithms require that an integer linear programming solver is installed,
+either the GNU linear programming kit
+(<https://www.gnu.org/software/glpk/glpk.html>) together with the interface
+package Rglpk (<https://cran.R-project.org/package=Rglpk>), or the SYMPHONY ILP
+solver (<https://github.com/coin-or/SYMPHONY>) together with the interface
+package Rsymphony (<https://cran.r-project.org/package=Rsymphony>).  Full access
+to the bicriterion anticlustering method proposed by Brusco et al. (2020) is
+given via the function bicriterion_anticlustering(), while
+kplus_anticlustering() implements the full functionality of the k-plus
+anticlustering approach proposed by Papenberg (2023).  Some other functions are
 available to solve classical clustering problems.  The function
 balanced_clustering() applies a cluster analysis under size constraints, i.e.,
 creates equal-sized clusters.  The function matching() can be used for
@@ -9135,7 +9330,7 @@ correlation clustering, clique partitioning problem or transitivity clustering."
     (synopsis "Antibody Titer Analysis of Vaccinated Patients")
     (description
      "Visualization of antibody titer scores is valuable for examination of
-vaccination effects.  AntibodyTiters visualizes antibody titers of all or
+vaccination effects. @code{AntibodyTiters} visualizes antibody titers of all or
 selected patients.  This package also produces empty excel files in a specified
 format, in which users can fill in experimental data for visualization.  Excel
 files with toy data can also be produced, so that users can see how it is
@@ -9256,9 +9451,9 @@ online: <https://www.who.int/tools/child-growth-standards>.")
      "Visualize results generated by Antares, a powerful open source software
 developed by RTE to simulate and study electric power systems (more information
 about Antares here:
-<https://github.com/AntaresSimulatorTeam/Antares_Simulator>).  This package
-provides functions that create interactive charts to help Antares users visually
-explore the results of their simulations.")
+@code{<https://github.com/AntaresSimulatorTeam/Antares_Simulator>).} This
+package provides functions that create interactive charts to help Antares users
+visually explore the results of their simulations.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -9293,9 +9488,9 @@ explore the results of their simulations.")
      "Import, Manipulate and Explore the Results of an 'Antares' Simulation")
     (description
      "Import, manipulate and explore results generated by Antares', a powerful open
-source software developed by RTE (RÃ©seau de Transport dâÃlectricitÃ©) to
-simulate and study electric power systems (more information about Antares here :
-<https://antares-simulator.org/>).")
+source software developed by RTE (RÃ©seau de Transport @code{dâÃlectricitÃ©)}
+to simulate and study electric power systems (more information about Antares
+here : <https://antares-simulator.org/>).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -9317,12 +9512,12 @@ simulate and study electric power systems (more information about Antares here :
     (synopsis "'Antares' Results Processing")
     (description
      "Process results generated by Antares', a powerful open source software developed
-by RTE (RÃ©seau de Transport dâÃlectricitÃ©) to simulate and study electric
-power systems (more information about Antares here:
-<https://github.com/AntaresSimulatorTeam/Antares_Simulator>).  This package
-provides functions to create new columns like net load, load factors, upward and
-downward margins or to compute aggregated statistics like economic surpluses of
-consumers, producers and sectors.")
+by RTE (RÃ©seau de Transport @code{dâÃlectricitÃ©)} to simulate and study
+electric power systems (more information about Antares here:
+@code{<https://github.com/AntaresSimulatorTeam/Antares_Simulator>).} This
+package provides functions to create new columns like net load, load factors,
+upward and downward margins or to compute aggregated statistics like economic
+surpluses of consumers, producers and sectors.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -9381,12 +9576,12 @@ information available here : <https://antares-simulator.org/>.")
     (synopsis "Anti-Angiogenic Peptide Prediction")
     (description
      "Machine learning based package to predict anti-angiogenic peptides using
-heterogeneous sequence descriptors.  AntAngioCOOL exploits five descriptor types
-of a peptide of interest to do prediction including: pseudo amino acid
+heterogeneous sequence descriptors. @code{AntAngioCOOL} exploits five descriptor
+types of a peptide of interest to do prediction including: pseudo amino acid
 composition, k-mer composition, k-mer composition (reduced alphabet),
 physico-chemical profile and atomic profile.  According to the obtained results,
-AntAngioCOOL reached to a satisfactory performance in anti-angiogenic peptide
-prediction on a benchmark non-redundant independent test dataset.")
+@code{AntAngioCOOL} reached to a satisfactory performance in anti-angiogenic
+peptide prediction on a benchmark non-redundant independent test dataset.")
     (license license:gpl2)))
 
 (define-public r-anscombiser
@@ -9415,9 +9610,9 @@ coefficient of determination.  The user supplies an initial dataset, which is
 shifted, scaled and rotated in order to achieve target summary statistics.  The
 general shape of the initial dataset is retained.  The target statistics can be
 supplied directly or calculated based on a user-supplied dataset.  The
-datasauRus package <https://cran.r-project.org/package=datasauRus> provides
-further examples of datasets that have markedly different scatter plots but
-share many sample summary statistics.")
+@code{datasauRus} package @code{<https://cran.r-project.org/package=datasauRus>}
+provides further examples of datasets that have markedly different scatter plots
+but share many sample summary statistics.")
     (license license:gpl2+)))
 
 (define-public r-anovir
@@ -9520,47 +9715,8 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
     (description
      "An interactive document on the topic of one-way and two-way analysis of variance
 using rmarkdown and shiny packages.  Runtime examples are provided in the
-package function as well as at <https://tinyurl.com/ANOVAStatsTool>.")
+package function as well as at @code{<https://tinyurl.com/ANOVAStatsTool>.}")
     (license license:gpl2)))
-
-(define-public r-anomaly
-  (package
-    (name "r-anomaly")
-    (version "4.0.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "anomaly" version))
-              (sha256
-               (base32
-                "110rdzz6l80vjc0q0gb0f829vb70r97p19ywa7gbl2cbkj2s1cci"))))
-    (properties `((upstream-name . "anomaly")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-runner
-                             r-robustbase
-                             r-robust
-                             r-rlang
-                             r-reshape2
-                             r-rdpack
-                             r-rcpp
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-catools
-                             r-bh
-                             r-assertive))
-    (home-page "https://cran.r-project.org/package=anomaly")
-    (synopsis "Detecting Anomalies in Data")
-    (description
-     "This package implements Collective And Point Anomaly (CAPA) <arXiv:1806.01947>,
-Multi-Variate Collective And Point Anomaly (MVCAPA) <arXiv:1909.01691>,
-Proportion Adaptive Segment Selection (PASS) <doi:10.1093/biomet/ass059>, and
-Bayesian Abnormal Region Detector (BARD) <arXiv:1412.5565> methods for the
-detection of anomalies in time series data.  Also includes sequential versions
-of CAPA and MVCAPA <arXiv:2009.06670>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-anom
   (package
@@ -9581,7 +9737,7 @@ of CAPA and MVCAPA <arXiv:2009.06670>.")
     (description
      "Analysis of means (ANOM) as used in technometrical computing.  The package takes
 results from multiple comparisons with the grand mean (obtained with multcomp',
-SimComp', nparcomp', or MCPAN') or corresponding simultaneous confidence
+@code{SimComp',} nparcomp', or MCPAN') or corresponding simultaneous confidence
 intervals as input and produces ANOM decision charts that illustrate which group
 means deviate significantly from the grand mean.")
     (license license:gpl2+)))
@@ -9605,9 +9761,9 @@ means deviate significantly from the grand mean.")
     (description
      "This package provides ANOCVA (ANalysis Of Cluster VAriability), a non-parametric
 statistical test to compare clustering structures with applications in
-functional magnetic resonance imaging data (fMRI).  The ANOCVA allows us to
-compare the clustering structure of multiple groups simultaneously and also to
-identify features that contribute to the differential clustering.")
+functional magnetic resonance imaging data @code{(fMRI).} The ANOCVA allows us
+to compare the clustering structure of multiple groups simultaneously and also
+to identify features that contribute to the differential clustering.")
     (license license:gpl3+)))
 
 (define-public r-annuityrir
@@ -9654,7 +9810,8 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
      "This package provides functions to create image annotations through polygon
 outlining.  Annotator has the same function as graphics::locator() but achieves
 its purpose through drawing, rather than multiple mouse clicks.  It is based on
-the htmlwidgets package and fabric.js JavaScript library <http://fabricjs.com/>.")
+the htmlwidgets package and fabric.js @code{JavaScript} library
+<http://fabricjs.com/>.")
     (license license:gpl3+)))
 
 (define-public r-annotationbustr
@@ -9674,8 +9831,8 @@ the htmlwidgets package and fabric.js JavaScript library <http://fabricjs.com/>.
     (home-page "https://github.com/sborstein/AnnotationBustR")
     (synopsis "Extract Subsequences from GenBank Annotations")
     (description
-     "Extraction of subsequences into FASTA files from GenBank annotations where gene
-names may vary among accessions.  Borstein & O'Meara (2018)
+     "Extraction of subsequences into FASTA files from @code{GenBank} annotations
+where gene names may vary among accessions.  Borstein & O'Meara (2018)
 <doi:10.7717/peerj.5179>.")
     (license license:gpl2+)))
 
@@ -9837,7 +9994,7 @@ conservative estimates of excursion sets under Gaussian random field priors.")
     (synopsis "Animate Shiny and R Markdown Content when it Comes into View")
     (description
      "Animate Shiny and R Markdown content when it comes into view using animate-css
-effects thanks to jQuery AniView'.")
+effects thanks to @code{jQuery} @code{AniView'.}")
     (license license:expat)))
 
 (define-public r-anisna
@@ -9941,20 +10098,20 @@ exploratory data analysis, and perhaps for preparation of presentations.")
     (description
      "This package provides functions required to classify subjects within camera trap
 field data.  The package can handle both images and videos.  The authors
-recommend a two-step approach using Microsoft's MegaDector model and then a
-second model trained on the classes of interest.")
+recommend a two-step approach using Microsoft's @code{MegaDector} model and then
+a second model trained on the classes of interest.")
     (license license:expat)))
 
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2023.3.14")
+    (version "2023.6.11")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "animint2" version))
               (sha256
                (base32
-                "1x1aj1j1nqiwa8rq28qi8yppd8d6jmbzxyz9fzxlxbfkh1ds5kz8"))))
+                "0kx0nycxzxgl0ybd5faw7ycdajj202ibpdlgxwnh4j3z1zklpynf"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -10331,13 +10488,13 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
 (define-public r-and
   (package
     (name "r-and")
-    (version "0.1.3")
+    (version "0.1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "and" version))
               (sha256
                (base32
-                "0i4kalmk600f7ri3m8m46xr2p67ik0w82lbm8c3wghawlgiplav0"))))
+                "072hhh8f6pnchryv6aclspd20i05fx63qxfgdvghpycvwbsn8fyg"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-glue))
@@ -10364,8 +10521,8 @@ that automatically conform to the user's language settings.")
     (home-page "https://github.com/simzim96/AnchorRegression")
     (synopsis "Perform AnchorRegression")
     (description
-     "This package performs AnchorRegression proposed by RothenhÃ¤usler et al.  2020.
-The code is adapted from the original paper repository.
+     "This package performs @code{AnchorRegression} proposed by @code{RothenhÃ¤usler}
+et al.  2020.  The code is adapted from the original paper repository.
 (<https://github.com/rothenhaeusler/anchor-regression>) The code was developed
 independently from the authors of the paper.")
     (license license:expat)))
@@ -10508,9 +10665,10 @@ in palaeoecology.")
      "https://github.com/pachadotdev/analogseahttps://pacha.dev/analogsea/")
     (synopsis "Interface to 'DigitalOcean'")
     (description
-     "This package provides a set of functions for interacting with the DigitalOcean
-API <https://www.digitalocean.com/>, including creating images, destroying them,
-rebooting, getting details on regions, and available images.")
+     "This package provides a set of functions for interacting with the
+@code{DigitalOcean} API <https://www.digitalocean.com/>, including creating
+images, destroying them, rebooting, getting details on regions, and available
+images.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-anacor
@@ -10562,34 +10720,34 @@ including confidence ellipsoids are provided.")
      "Targeted Differential and Global Enrichment Analysis of Taxonomic Rank by Shared Asvs")
     (description
      "Targeted differential and global enrichment analysis of taxonomic rank by shared
-ASVs (Amplicon Sequence Variant), for high-throughput eDNA sequencing of fungi,
-bacteria, and metazoan.  Actually works in two steps: I) Targeted differential
-analysis from QIIME2 data and II) Global analysis by Taxon Mann-Whitney U test
-analysis from targeted analysis (I) (I) Estimate variance-mean dependence in
-count/abundance ASVs data from high-throughput sequencing assays and test for
-differential represented ASVs based on a model using the negative binomial
-distribution. (II) NCBITaxon_MWU uses continuous measure of significance (such
-as fold-change or -log(p-value)) to identify NCBITaxon that are significantly
-enriches with either up- or down-represented ASVs.  If the measure is binary (0
-or 1) the script will perform a typical NCBITaxon enrichment analysis based
-Fisher's exact test: it will show NCBITaxon over-represented among the ASVs that
-have 1 as their measure.  On the plot, different fonts are used to indicate
-significance and color indicates enrichment with either up (red) or down (blue)
-regulated ASVs.  No colors are shown for binary measure analysis.  The tree on
-the plot is hierarchical clustering of NCBITaxon based on shared ASVs.
-Categories with no branch length between them are subsets of each other.  The
-fraction next to the category name indicates the fraction of good ASVs in it;
-good ASVs are the ones exceeding the arbitrary absValue cutoff (option in
-taxon_mwuPlot()).  For Fisher's based test, specify absValue=0.5.  This value
-does not affect statistics and is used for plotting only.  The original idea was
-for genes differential expression analysis from Wright et al (2015)
-<doi:10.1186/s12864-015-1540-2>; adapted here for taxonomic analysis.  The
-Anaconda package makes it possible to carry out these analyses by automatically
-creating several graphs and tables and storing them in specially created
-subfolders.  You will need your QIIME2 pipeline output for each kingdom (eg;
-Fungi and/or Bacteria and/or Metazoan): i) taxonomy.tsv, ii)
-taxonomy_RepSeq.tsv, iii) ASV.tsv and iv) SampleSheet_comparison.txt (the latter
-being created by you).")
+ASVs (Amplicon Sequence Variant), for high-throughput @code{eDNA} sequencing of
+fungi, bacteria, and metazoan.  Actually works in two steps: I) Targeted
+differential analysis from QIIME2 data and II) Global analysis by Taxon
+Mann-Whitney U test analysis from targeted analysis (I) (I) Estimate
+variance-mean dependence in count/abundance ASVs data from high-throughput
+sequencing assays and test for differential represented ASVs based on a model
+using the negative binomial distribution. (II) NCBITaxon_MWU uses continuous
+measure of significance (such as fold-change or -log(p-value)) to identify
+NCBITaxon that are significantly enriches with either up- or down-represented
+ASVs.  If the measure is binary (0 or 1) the script will perform a typical
+NCBITaxon enrichment analysis based Fisher's exact test: it will show NCBITaxon
+over-represented among the ASVs that have 1 as their measure.  On the plot,
+different fonts are used to indicate significance and color indicates enrichment
+with either up (red) or down (blue) regulated ASVs.  No colors are shown for
+binary measure analysis.  The tree on the plot is hierarchical clustering of
+NCBITaxon based on shared ASVs.  Categories with no branch length between them
+are subsets of each other.  The fraction next to the category name indicates the
+fraction of good ASVs in it; good ASVs are the ones exceeding the arbitrary
+@code{absValue} cutoff (option in @code{taxon_mwuPlot()).} For Fisher's based
+test, specify @code{absValue=0.5.} This value does not affect statistics and is
+used for plotting only.  The original idea was for genes differential expression
+analysis from Wright et al (2015) <doi:10.1186/s12864-015-1540-2>; adapted here
+for taxonomic analysis.  The Anaconda package makes it possible to carry out
+these analyses by automatically creating several graphs and tables and storing
+them in specially created subfolders.  You will need your QIIME2 pipeline output
+for each kingdom (eg; Fungi and/or Bacteria and/or Metazoan): i) taxonomy.tsv,
+ii) @code{taxonomy_RepSeq.tsv,} iii) ASV.tsv and iv)
+@code{SampleSheet_comparison.txt} (the latter being created by you).")
     (license license:gpl2+)))
 
 (define-public r-anacoda
@@ -10615,12 +10773,13 @@ framework.  Provides visualization routines and checkpointing for model
 fittings.  Currently published models to analyze gene data for selection on
 codon usage based on Ribosome Overhead Cost (ROC) are: ROC (Gilchrist et al.
 (2015) <doi:10.1093/gbe/evv087>), and ROC with phi (Wallace & Drummond (2013)
-<doi:10.1093/molbev/mst051>).  In addition AnaCoDa contains three currently
-unpublished models.  The FONSE (First order approximation On NonSense Error)
-model analyzes gene data for selection on codon usage against of nonsense error
-rates.  The PA (PAusing time) and PANSE (PAusing time + NonSense Error) models
-use ribosome footprinting data to analyze estimate ribosome pausing times with
-and without nonsense error rate from ribosome footprinting data.")
+<doi:10.1093/molbev/mst051>).  In addition @code{AnaCoDa} contains three
+currently unpublished models.  The FONSE (First order approximation On
+@code{NonSense} Error) model analyzes gene data for selection on codon usage
+against of nonsense error rates.  The PA (PAusing time) and PANSE (PAusing time
++ @code{NonSense} Error) models use ribosome footprinting data to analyze
+estimate ribosome pausing times with and without nonsense error rate from
+ribosome footprinting data.")
     (license license:gpl2+)))
 
 (define-public r-anabel
@@ -10725,13 +10884,13 @@ simulation of space-use from fitted step-selection functions.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AMR" version))
               (sha256
                (base32
-                "18rs1m7l5snyyhs0x3m43xr1cdmn0h88xfckjil16lpapd33k8ca"))))
+                "0iwwgb55saw1irk8ln1zl44cm30dnwvl6y5vqx9kxyr346gacbf4"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -10769,9 +10928,9 @@ in the experimental process generating these sequences.  To overcome these
 limitations we propose an approach, where each sample is split and the same
 amplification and sequencing protocol is applied to both halves.  This procedure
 should allow to detect likely PCR and sequencing artifacts, and true rare
-species by comparison of the results of both parts.  The AmpliconDuo package,
-whereas amplicon duo from here on refers to the two amplicon data sets of a
-split sample, is intended to help interpret the obtained read frequency
+species by comparison of the results of both parts.  The @code{AmpliconDuo}
+package, whereas amplicon duo from here on refers to the two amplicon data sets
+of a split sample, is intended to help interpret the obtained read frequency
 distribution across split samples, and to filter the false positive reads.")
     (license license:gpl3+)))
 
@@ -10867,9 +11026,9 @@ package is also available via a Shiny based GUI at
     (description
      "Predicts antimicrobial peptides using random forests trained on the n-gram
 encoded peptides.  The implemented algorithm can be accessed from both the
-command line and shiny-based GUI. The AmpGram model is too large for CRAN and it
-has to be downloaded separately from the repository:
-<https://github.com/michbur/AmpGramModel>.")
+command line and shiny-based GUI. The @code{AmpGram} model is too large for CRAN
+and it has to be downloaded separately from the repository:
+@code{<https://github.com/michbur/AmpGramModel>.}")
     (license license:gpl3)))
 
 (define-public r-ampd
@@ -10921,8 +11080,8 @@ occurrences of local maxima.  For further information see
     (description
      "This package provides a testing framework for testing the multivariate point
 null hypothesis.  A testing framework described in Elder et al. (2022)
-<arXiv:2203.01897> to test the multivariate point null hypothesis.  After the
-user selects a parameter of interest and defines the assumed data generating
+@code{<arXiv:2203.01897>} to test the multivariate point null hypothesis.  After
+the user selects a parameter of interest and defines the assumed data generating
 mechanism, this information should be encoded in functions for the parameter
 estimator and its corresponding influence curve.  Some parameter and data
 generating mechanism combinations have codings in this package, and are
@@ -11016,8 +11175,8 @@ they generate M-plus syntax according to their own judgment.")
     (synopsis "Un-Ionized Ammonia Concentration")
     (description
      "This package provides a function to calculate the concentration of un-ionized
-ammonia in the total ammonia in aqueous solution using the pH and temperature
-values.")
+ammonia in the total ammonia in aqueous solution using the @code{pH} and
+temperature values.")
     (license license:expat)))
 
 (define-public r-ammodels
@@ -11041,8 +11200,8 @@ values.")
 generated from numerous analyses and data sets.  Facilitates this process by
 storing all models and data sets in a single object that can be updated and
 saved, thus tracking changes in knowledge through time.  A shiny application
-called AM Model Manager (modelMgr()) enables the use of these functions via a
-GUI.")
+called AM Model Manager @code{(modelMgr())} enables the use of these functions
+via a GUI.")
     (license license:gpl3)))
 
 (define-public r-ammistability
@@ -11114,6 +11273,28 @@ averages and regions of confidence can be generated.  The chains run in parallel
 on Linux systems and run serially on Windows.")
     (license license:gpl2+)))
 
+(define-public r-amim
+  (package
+    (name "r-amim")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AMIM" version))
+              (sha256
+               (base32
+                "1gpfsayic0hw2rwswxw7cwa0v47l1v7l4qhckbrwyq3dcxgl2rnv"))))
+    (properties `((upstream-name . "AMIM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (home-page "https://github.com/gelotran/AMIM")
+    (synopsis "Compute the Adjusted Market Inefficiency Measure")
+    (description
+     "Fast tool to calculate the Adjusted Market Inefficiency Measure following Tran &
+Leirvik (2019) <doi:10.1016/j.frl.2019.03.004>.  This tool provides rolling
+window estimates of the Adjusted Market Inefficiency Measure for multiple
+instruments simultaneously.")
+    (license license:expat)))
+
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
@@ -11136,6 +11317,28 @@ machine.  This package focuses on file types from the older Amiga operating
 systems (<= 3.0).  It will read and write specific file formats and coerces them
 into more contemporary data.")
     (license license:gpl3)))
+
+(define-public r-ami
+  (package
+    (name "r-ami")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ami" version))
+              (sha256
+               (base32
+                "0j3k4q1vm2nv108r1k0dr8ps4hxql9l9gnqmvd5gadladsy7444i"))))
+    (properties `((upstream-name . "ami")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))
+    (home-page "https://github.com/briandconnelly/ami")
+    (synopsis "Checks for Various Computing Environments")
+    (description
+     "This package provides a collection of lightweight functions that can be used to
+determine the computing environment in which your code is running.  This
+includes operating systems, continuous integration (CI) environments,
+containers, and more.")
+    (license license:expat)))
 
 (define-public r-ameshousing
   (package
@@ -11203,8 +11406,9 @@ on the source code (with permission) from Ram and Wickham (2015).")
     (home-page "https://github.com/chuhousen/amerifluxr")
     (synopsis "Interface to 'AmeriFlux' Data Services")
     (description
-     "Programmatic interface to the AmeriFlux database (<https://ameriflux.lbl.gov/>).
- Provide query, download, and data summary tools.")
+     "Programmatic interface to the @code{AmeriFlux} database
+(<https://ameriflux.lbl.gov/>).  Provide query, download, and data summary
+tools.")
     (license license:bsd-3)))
 
 (define-public r-americancallopt
@@ -11343,7 +11547,8 @@ user interface that does not require users to know R.")
     (description
      "Generate code for use with the Optical Mark Recognition free software Auto
 Multiple Choice (AMC).  More specifically, this package provides functions that
-use as input the question and answer texts, and output the LaTeX code for AMC.")
+use as input the question and answer texts, and output the @code{LaTeX} code for
+AMC.")
     (license license:gpl3)))
 
 (define-public r-amcp
@@ -11365,7 +11570,7 @@ use as input the question and answer texts, and output the LaTeX code for AMC.")
 perspective\" (3rd ed.) by Maxwell, Delaney, & Kelley (2018; Routledge).
 Contains all of the data sets in the book's chapters and end-of-chapter
 exercises.  Information about the book is available at
-<http://www.DesigningExperiments.com>.")
+@code{<http://www.DesigningExperiments.com>.}")
     (license license:gpl3+)))
 
 (define-public r-ambit
@@ -11407,9 +11612,9 @@ trawl processes and weighted trawl processes.")
     (description
      "Generation of natural looking noise has many application within simulation,
 procedural generation, and art, to name a few.  The ambient package provides an
-interface to the FastNoise C++ library and allows for efficient generation of
-perlin, simplex, worley, cubic, value, and white noise with optional
-perturbation in either 2, 3, or 4 (in case of simplex and white noise)
+interface to the @code{FastNoise} C++ library and allows for efficient
+generation of perlin, simplex, worley, cubic, value, and white noise with
+optional perturbation in either 2, 3, or 4 (in case of simplex and white noise)
 dimensions.")
     (license license:expat)))
 
@@ -11497,6 +11702,36 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-amapvox
+  (package
+    (name "r-amapvox")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AMAPVox" version))
+              (sha256
+               (base32
+                "1wflbq6ii1hmn24jl7a1acyn72fwkzsgsvijk7klj678pkb0sc80"))))
+    (properties `((upstream-name . "AMAPVox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rappdirs
+                             r-jsonlite
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://amapvox.org")
+    (synopsis "LiDAR Data Voxelisation")
+    (description
+     "Read, manipulate and write voxel spaces.  Voxel spaces are read from text-based
+output files of the AMAPVox software.  AMAPVox is a @code{LiDAR} point cloud
+voxelisation software that aims at estimating leaf area through several
+theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
+<doi:10.23708/1AJNMP> and the technical note Vincent et al. (2021)
+<doi:10.23708/1AJNMP>.")
+    (license (license:fsdg-compatible "CeCILL (>= 2)"))))
+
 (define-public r-amapro
   (package
     (name "r-amapro")
@@ -11544,7 +11779,8 @@ functionality with minimal overhead.")
     (synopsis "An Interface to the 'AutoNavi Maps' API Geocoding Services")
     (description
      "Getting and parsing data of location geocode/reverse-geocode and administrative
-regions from AutoNavi Maps'<https://lbs.amap.com/api/webservice/summary> API.")
+regions from @code{AutoNavi} Maps'<https://lbs.amap.com/api/webservice/summary>
+API.")
     (license license:expat)))
 
 (define-public r-amanpg
@@ -11564,10 +11800,10 @@ regions from AutoNavi Maps'<https://lbs.amap.com/api/webservice/summary> API.")
     (synopsis "Alternating Manifold Proximal Gradient Method for Sparse PCA")
     (description
      "Alternating Manifold Proximal Gradient Method for Sparse PCA uses the
-Alternating Manifold Proximal Gradient (AManPG) method to find sparse principal
-components from a data or covariance matrix.  Provides a novel algorithm for
-solving the sparse principal component analysis problem which provides
-advantages over existing methods in terms of efficiency and convergence
+Alternating Manifold Proximal Gradient @code{(AManPG)} method to find sparse
+principal components from a data or covariance matrix.  Provides a novel
+algorithm for solving the sparse principal component analysis problem which
+provides advantages over existing methods in terms of efficiency and convergence
 guarantees.  Chen, S., Ma, S., Xue, L., & Zou, H. (2020)
 <doi:10.1287/ijoo.2019.0032>.  Zou, H., Hastie, T., & Tibshirani, R. (2006)
 <doi:10.1198/106186006X113430>.  Zou, H., & Xue, L. (2018)
@@ -11722,16 +11958,39 @@ United States and Canada.  This package also includes the data from the US
 Department of Energy Alternate Fuel database as a data set.")
     (license license:expat)))
 
+(define-public r-alteredpqr
+  (package
+    (name "r-alteredpqr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AlteredPQR" version))
+              (sha256
+               (base32
+                "15zszn49c2a3lad2fzfj2yblyafbrhn6j3j1dcjbcz0fxgf6cmhw"))))
+    (properties `((upstream-name . "AlteredPQR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=AlteredPQR")
+    (synopsis "Detection of Altered Protein Quantitative Relationships")
+    (description
+     "Inference of protein complex states from quantitative proteomics data.  The
+package takes information on known stable protein interactions (i.e.  protein
+components of the same complex) and assesses how protein quantitative ratios
+change between different conditions.  It reports protein pairs for which
+relative protein quantities to each other have been significantly altered in the
+tested condition.")
+    (license license:gpl3+)))
+
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "altdoc" version))
               (sha256
                (base32
-                "1sxyh8avi2hand02p7rhg78hjgbfhz1nkqsgbgvr3pwxgmqz9c7s"))))
+                "0icvzxkmjnssiz4cpphm69drz3mla15i54j4gqfav4jxmz7166z0"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -11969,8 +12228,8 @@ symmetric stable and mixture of Cauchy distributions.")
     (home-page "https://github.com/gaynorr/AlphaSimR")
     (synopsis "Breeding Program Simulations")
     (description
-     "The successor to the AlphaSim software for breeding program simulation [Faux et
-al. (2016) <doi:10.3835/plantgenome2016.02.0013>].  Used for stochastic
+     "The successor to the @code{AlphaSim} software for breeding program simulation
+[Faux et al. (2016) <doi:10.3835/plantgenome2016.02.0013>].  Used for stochastic
 simulations of breeding programs to the level of DNA sequence for every
 individual.  Contained is a wide range of functions for modeling common tasks in
 a breeding program, such as selection and crossing.  These functions allow for
@@ -11978,7 +12237,7 @@ constructing simulations of highly complex plant and animal breeding programs
 via scripting in the R software environment.  Such simulations can be used to
 evaluate overall breeding program performance and conduct research into breeding
 program design, such as implementation of genomic selection.  Included is the
-Markovian Coalescent Simulator ('MaCS') for fast simulation of biallelic
+Markovian Coalescent Simulator @code{('MaCS')} for fast simulation of biallelic
 sequences according to a population demographic history [Chen et al. (2009)
 <doi:10.1101/gr.083634.108>].")
     (license license:expat)))
@@ -12038,7 +12297,7 @@ three-dimensional graphical visualization of the estimated set.")
 genetic trends to quantify the sources of genetic gain in breeding programmes.
 The partitioning method is described in Garcia-Cortes et al. (2008)
 <doi:10.1017/S175173110800205X>.  The package includes the main function
-AlphaPart for partitioning breeding values and auxiliary functions for
+@code{AlphaPart} for partitioning breeding values and auxiliary functions for
 manipulating data and summarizing, visualizing, and saving results.")
     (license license:gpl2+)))
 
@@ -12083,9 +12342,9 @@ Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
     (description
      "Sets the alpha level for coefficients in a regression model as a decreasing
 function of the sample size through the use of Jeffreys Approximate Bayes
-factor.  You tell alphaN() your sample size, and it tells you to which value you
-must lower alpha to avoid Lindley's Paradox.  For details, see Wulff and Taylor
-(2023) <doi:10.31234/osf.io/3cbh7>.")
+factor.  You tell @code{alphaN()} your sample size, and it tells you to which
+value you must lower alpha to avoid Lindley's Paradox.  For details, see Wulff
+and Taylor (2023) <doi:10.31234/osf.io/3cbh7>.")
     (license license:expat)))
 
 (define-public r-alphahull3d
@@ -12244,13 +12503,13 @@ and procedures as used in the original paper.")
      "This package provides a routine to partial out factors with many levels during
 the optimization of the log-likelihood function of the corresponding generalized
 linear model (glm).  The package is based on the algorithm described in Stammann
-(2018) <arXiv:1707.01815> and is restricted to glm's that are based on maximum
-likelihood estimation and nonlinear.  It also offers an efficient algorithm to
-recover estimates of the fixed effects in a post-estimation routine and includes
-robust and multi-way clustered standard errors.  Further the package provides
-analytical bias corrections for binary choice models derived by Fernandez-Val
-and Weidner (2016) <doi:10.1016/j.jeconom.2015.12.014> and Hinz, Stammann, and
-Wanner (2020) <arXiv:2004.12655>.")
+(2018) @code{<arXiv:1707.01815>} and is restricted to glm's that are based on
+maximum likelihood estimation and nonlinear.  It also offers an efficient
+algorithm to recover estimates of the fixed effects in a post-estimation routine
+and includes robust and multi-way clustered standard errors.  Further the
+package provides analytical bias corrections for binary choice models derived by
+Fernandez-Val and Weidner (2016) <doi:10.1016/j.jeconom.2015.12.014> and Hinz,
+Stammann, and Wanner (2020) @code{<arXiv:2004.12655>.}")
     (license license:gpl3)))
 
 (define-public r-alookr
@@ -12461,9 +12720,9 @@ performance in predicting a data.  Also helps to compare various models
 performance.  The metrics are Root Mean Squared Error (RMSE), Relative Root Mean
 Squared Error (RRMSE), Mean absolute Error (MAE), Mean absolute percentage error
 (MAPE), Mean Absolute Scaled Error (MASE), Nash-Sutcliffe Efficiency (NSE),
-Willmottâs Index (WI), and Legates and McCabe Index (LME).  Among them, first
-five are expected to be lesser whereas, the last three are greater the better.
-More details can be found from Garai and Paul (2023)
+Willmottâs Index (WI), and Legates and @code{McCabe} Index (LME).  Among them,
+first five are expected to be lesser whereas, the last three are greater the
+better.  More details can be found from Garai and Paul (2023)
 <doi:10.1016/j.iswa.2023.200202>.")
     (license license:gpl3)))
 
@@ -12523,9 +12782,10 @@ the benign missense variants (BMVs), deleterious missense variants (DMVs), and
 protein truncating variants (PTVs) within a gene.  COAST uses a set of
 adjustable weights that tailor the test towards rejecting the null hypothesis
 for genes where the average magnitude of effect increases monotonically from
-BMVs to DMVs to PTVs.  See McCaw ZR, Somineni H, Bereket M, Klein C, Karaletsos
-T, Casale FP, Koller D, Soare TW. (2022) \"An allelic series rare variant
-association test for candidate gene discovery\" <doi:10.1101/2022.12.23.521658>.")
+BMVs to DMVs to PTVs.  See @code{McCaw} ZR, Somineni H, Bereket M, Klein C,
+Karaletsos T, Casale FP, Koller D, Soare TW. (2022) \"An allelic series rare
+variant association test for candidate gene discovery\"
+<doi:10.1101/2022.12.23.521658>.")
     (license license:bsd-3)))
 
 (define-public r-alleleshift
@@ -12595,14 +12855,14 @@ generations.")
     (synopsis
      "Identifying Unique Multilocus Genotypes where Genotyping Error and Missing Data may be Present")
     (description
-     "Tools for the identification of unique of multilocus genotypes when both
-genotyping error and missing data may be present; targeted for use with large
-datasets and databases containing multiple samples of each individual (a common
-situation in conservation genetics, particularly in non-invasive wildlife
-sampling applications).  Functions explicitly incorporate missing data and can
-tolerate allele mismatches created by genotyping error.  If you use this
-package, please cite the original publication in Molecular Ecology Resources
-(Galpern et al., 2012), the details for which can be generated using
+     "This package provides tools for the identification of unique of multilocus
+genotypes when both genotyping error and missing data may be present; targeted
+for use with large datasets and databases containing multiple samples of each
+individual (a common situation in conservation genetics, particularly in
+non-invasive wildlife sampling applications).  Functions explicitly incorporate
+missing data and can tolerate allele mismatches created by genotyping error.  If
+you use this package, please cite the original publication in Molecular Ecology
+Resources (Galpern et al., 2012), the details for which can be generated using
 citation('allelematch').  For a complete vignette, please access via the Data S1
 Supplementary documentation and tutorials (PDF) located at
 <doi:10.1111/j.1755-0998.2012.03137.x>.")
@@ -12626,10 +12886,10 @@ Supplementary documentation and tutorials (PDF) located at
     (synopsis
      "Allele Imputation and Haplotype Reconstruction from Pedigree Databases")
     (description
-     "Tools to simulate alphanumeric alleles, impute genetic missing data and
-reconstruct non-recombinant haplotypes from pedigree databases in a
-deterministic way.  Allelic simulations can be implemented taking into account
-many factors (such as number of families, markers, alleles per marker,
+     "This package provides tools to simulate alphanumeric alleles, impute genetic
+missing data and reconstruct non-recombinant haplotypes from pedigree databases
+in a deterministic way.  Allelic simulations can be implemented taking into
+account many factors (such as number of families, markers, alleles per marker,
 probability and proportion of missing genotypes, recombination rate, etc).
 Genotype imputation can be used with simulated datasets or real databases
 (previously loaded in .ped format).  Haplotype reconstruction can be carried out
@@ -12676,13 +12936,13 @@ any repository.")
 (define-public r-alkahest
   (package
     (name "r-alkahest")
-    (version "1.1.0")
+    (version "1.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "alkahest" version))
               (sha256
                (base32
-                "0rajjszil8b8lira6x3jd8ccizb16s6qh98cynjqdfq9z70xi5g2"))))
+                "1wbdhvak4984rdglsx2h7wwazxkvz2wv93lnizw7b4dm8aqrnapg"))))
     (properties `((upstream-name . "alkahest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12754,9 +13014,10 @@ detailed in Hagen et al. (in review).")
      "Queries multiple resources authors HGNC (2019) <https://www.genenames.org>,
 authors limma (2015) <doi:10.1093/nar/gkv007> to find the correspondence between
 evolving nomenclature of human gene symbols, aliases, previous symbols or
-synonyms with stable, curated gene entrezID from NCBI database.  This allows
-fast, accurate and up-to-date correspondence between human gene expression
-datasets from various date and platform (e.g: gene symbol: BRCA1 - ID: 672).")
+synonyms with stable, curated gene @code{entrezID} from NCBI database.  This
+allows fast, accurate and up-to-date correspondence between human gene
+expression datasets from various date and platform (e.g: gene symbol: BRCA1 -
+ID: 672).")
     (license license:expat)))
 
 (define-public r-algorithmia
@@ -12803,8 +13064,8 @@ developers can be found at <https://algorithmia.com/developers>.")
      "Implement an Address Search Auto Completion Menu on 'Shiny' Text Inputs Using the 'Algolia Places' 'Javascript' Library")
     (description
      "Allows the user to implement an address search auto completion menu on shiny
-text inputs.  This is done using the Algolia Places JavaScript library.  See
-<https://community.algolia.com/places/>.")
+text inputs.  This is done using the Algolia Places @code{JavaScript} library.
+See <https://community.algolia.com/places/>.")
     (license license:expat)))
 
 (define-public r-algebraichaplopackage
@@ -12854,9 +13115,9 @@ University Press, New York).  Versions 1.3.0 and later no longer include the
 algae_search() function for querying the algaebase online taxonomic database
 (www.algaebase.org).  Users are advised to verify taxonomic names directly using
 algaebase and cite the database in resulting publications.  Note that none of
-the algaeClassify authors are affiliated with algaebase in any way.  The
-algaeClassify package is a product of the GEISHA (Global Evaluation of the
-Impacts of Storms on freshwater Habitat and Structure of phytoplankton
+the @code{algaeClassify} authors are affiliated with algaebase in any way.  The
+@code{algaeClassify} package is a product of the GEISHA (Global Evaluation of
+the Impacts of Storms on freshwater Habitat and Structure of phytoplankton
 Assemblages), funded by CESAB (Centre for Synthesis and Analysis of
 Biodiversity) and the USGS John Wesley Powell Center for Synthesis and Analysis,
 with data and other support provided by members of GLEON (Global Lake Ecology
@@ -13001,16 +13262,21 @@ Dependence (PD) plots, given a fitted supervised learning model.")
 (define-public r-aldvmm
   (package
     (name "r-aldvmm")
-    (version "0.8.5")
+    (version "0.8.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aldvmm" version))
               (sha256
                (base32
-                "1zmkzj0j7q26yvlinyc5z3papkvg57vziij5apwwpix0h9qpjq55"))))
+                "1v3qbk4pm8lk37bjkzcfn8rlcszxix690mjrf5k5w8kk7r6i8zpc"))))
     (properties `((upstream-name . "aldvmm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimr r-numderiv r-checkmate))
+    (propagated-inputs (list r-sandwich
+                             r-optimr
+                             r-numderiv
+                             r-lmtest
+                             r-formula
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pletschm/aldvmm/")
     (synopsis "Adjusted Limited Dependent Variable Mixture Models")
@@ -13092,13 +13358,13 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albatross
   (package
     (name "r-albatross")
-    (version "0.3-5")
+    (version "0.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "albatross" version))
               (sha256
                (base32
-                "153r9lmnf5mqy4i3i6ymqg57wvxyaf780zwzh0hm204v6v4l3nbq"))))
+                "0n4ndaa3a57k698xjrvgq091l6pvpgcmqan52g30la2qsrr109d5"))))
     (properties `((upstream-name . "albatross")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-multiway r-matrix r-lattice r-cmls))
@@ -13200,7 +13466,7 @@ Stern, Yaari and Vander Heiden, et al (2014) <doi:10.1126/scitranslmed.3008879>.
     (synopsis "Alternating K-Means Biclustering")
     (description
      "This package implements the alternating k-means biclustering algorithm in
-Fraiman and Li (2020) <arXiv:2009.04550>.")
+Fraiman and Li (2020) @code{<arXiv:2009.04550>.}")
     (license license:gpl3)))
 
 (define-public r-akima
@@ -13327,7 +13593,7 @@ solve other tasks in text mining as well.")
     (synopsis "Another JSON Schema Validator")
     (description
      "This package provides a thin wrapper around the ajv JSON validation package for
-JavaScript.  See <http://epoberezkin.github.io/ajv/> for details.")
+@code{JavaScript.} See <http://epoberezkin.github.io/ajv/> for details.")
     (license license:gpl2)))
 
 (define-public r-aisoph
@@ -13514,7 +13780,7 @@ License.")
     (home-page "https://github.com/briandconnelly/airnow")
     (synopsis "Retrieve 'AirNow' Air Quality Observations and Forecasts")
     (description
-     "Retrieve air quality data via the AirNow <https://www.airnow.gov/> API.")
+     "Retrieve air quality data via the @code{AirNow} <https://www.airnow.gov/> API.")
     (license license:expat)))
 
 (define-public r-airmonitor
@@ -13551,9 +13817,9 @@ small particulates (PM2.5).  A compact data model is structured as a list with
 two dataframes.  A meta dataframe contains spatial and measuring device metadata
 associated with deployments at known locations.  A data dataframe contains a
 datetime column followed by columns of measurements associated with each
-\"device-deployment\".  Algorithms to calculate NowCast and the associated Air
-Quality Index (AQI) are defined at the US Environmental Projection Agency AirNow
-program:
+\"device-deployment\".  Algorithms to calculate @code{NowCast} and the associated
+Air Quality Index (AQI) are defined at the US Environmental Projection Agency
+@code{AirNow} program:
 <https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf>.")
     (license license:gpl3)))
 
@@ -13579,13 +13845,13 @@ program:
 (define-public r-airgrteaching
   (package
     (name "r-airgrteaching")
-    (version "0.3.1")
+    (version "0.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "airGRteaching" version))
               (sha256
                (base32
-                "18mqwv5a4aj0j49li1xp759qhgqgj4ylkcgrk3hn6yb4qqq271xy"))))
+                "1lhzvhhrylp1c2znrz9b1vni9mqc6kkl7bjc6p3kjwph1vw9ka72"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -13600,9 +13866,9 @@ program:
     (synopsis
      "Teaching Hydrological Modelling with the GR Rainfall-Runoff Models ('Shiny' Interface Included)")
     (description
-     "Add-on package to the airGR package that simplifies its use and is aimed at
-being used for teaching hydrology.  The package provides 1) three functions that
-allow to complete very simply a hydrological modelling exercise 2) plotting
+     "Add-on package to the @code{airGR} package that simplifies its use and is aimed
+at being used for teaching hydrology.  The package provides 1) three functions
+that allow to complete very simply a hydrological modelling exercise 2) plotting
 functions to help students to explore observed data and to interpret the results
 of calibration and simulation of the GR ('GÃ©nie rural') models 3) a Shiny
 graphical interface that allows for displaying the impact of model parameters on
@@ -13626,8 +13892,8 @@ hydrographs and models internal variables.")
     (home-page "https://airgriwrm.g-eau.fr/")
     (synopsis "'airGR' Integrated Water Resource Management")
     (description
-     "Semi-distributed Precipitation-Runoff Modelling based on airGR package models
-integrating human infrastructures and their managements.")
+     "Semi-distributed Precipitation-Runoff Modelling based on @code{airGR} package
+models integrating human infrastructures and their managements.")
     (license license:agpl3)))
 
 (define-public r-airgrdatassim
@@ -13647,23 +13913,23 @@ integrating human infrastructures and their managements.")
     (home-page "https://cran.r-project.org/package=airGRdatassim")
     (synopsis "Ensemble-Based Data Assimilation with GR Hydrological Models")
     (description
-     "Add-on to the airGR package which provides the tools to assimilate observed
-discharges in daily GR hydrological models.  The package consists in two
-functions allowing to perform the assimilation of observed discharges via the
-Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
+     "Add-on to the @code{airGR} package which provides the tools to assimilate
+observed discharges in daily GR hydrological models.  The package consists in
+two functions allowing to perform the assimilation of observed discharges via
+the Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
 (2021) <doi:10.1029/2020WR028390>.")
     (license license:gpl2)))
 
 (define-public r-airgrdatasets
   (package
     (name "r-airgrdatasets")
-    (version "0.1.4")
+    (version "0.2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "airGRdatasets" version))
               (sha256
                (base32
-                "1gz7irz0kzdni0dksi4qa0xa6n018l31xjdh4w1r40v38g4c6hai"))))
+                "05059ylizjlb90yqllkw7c0gm8nx1a42mw0334zkm9xpgzsis8cb"))))
     (properties `((upstream-name . "airGRdatasets")))
     (build-system r-build-system)
     (home-page
@@ -13674,7 +13940,7 @@ Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
      "Sample of hydro-meteorological datasets extracted from the CAMELS-FR French
 database <https://hal.inrae.fr/hal-03687235>.  It provides metadata and
 catchment-scale aggregated hydro-meteorological time series on a pool of French
-catchments for use by the airGR packages.")
+catchments for use by the @code{airGR} packages.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-airgr
@@ -13697,9 +13963,9 @@ catchments for use by the airGR packages.")
      "Hydrological modelling tools developed at INRAE-Antony (HYCAR Research Unit,
 France).  The package includes several conceptual rainfall-runoff models (GR4H,
 GR5H, GR4J, GR5J, GR6J, GR2M, GR1A) that can be applied either on a lumped or
-semi-distributed way.  A snow accumulation and melt model (CemaNeige) and the
-associated functions for the calibration and evaluation of models are also
-included.  Use help(airGR) for package description and references.")
+semi-distributed way.  A snow accumulation and melt model @code{(CemaNeige)} and
+the associated functions for the calibration and evaluation of models are also
+included.  Use @code{help(airGR)} for package description and references.")
     (license license:gpl2)))
 
 (define-public r-aire-zmvm
@@ -13728,10 +13994,11 @@ included.  Use help(airGR) for package description and references.")
     (home-page "https://hoyodesmog.diegovalle.net/aire.zmvm/")
     (synopsis "Download Mexico City Pollution, Wind, and Temperature Data")
     (description
-     "Tools for downloading hourly averages, daily maximums and minimums from each of
-the pollution, wind, and temperature measuring stations or geographic zones in
-the Mexico City metro area.  The package also includes the locations of each of
-the stations and zones.  See <http://aire.cdmx.gob.mx/> for more information.")
+     "This package provides tools for downloading hourly averages, daily maximums and
+minimums from each of the pollution, wind, and temperature measuring stations or
+geographic zones in the Mexico City metro area.  The package also includes the
+locations of each of the stations and zones.  See <http://aire.cdmx.gob.mx/> for
+more information.")
     (license license:bsd-3)))
 
 (define-public r-aipw
@@ -13764,6 +14031,31 @@ Press).  AIPW: An R Package for Augmented Inverse Probability Weighted
 Estimation of Average Causal Effects.  American Journal of Epidemiology\".
 Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
     (license license:gpl3)))
+
+(define-public r-aion
+  (package
+    (name "r-aion")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "aion" version))
+              (sha256
+               (base32
+                "0vnj87r17qsbh9vyp82qsb67lib8ch3j6wban36i9xc1lfljzmri"))))
+    (properties `((upstream-name . "aion")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-arkhe))
+    (native-inputs (list r-knitr))
+    (home-page "https://packages.tesselle.org/aion/")
+    (synopsis "Archaeological Time Series")
+    (description
+     "This package provides a toolkit for archaeological time series.  This package
+provides a system of classes and methods to represent and work with
+archaeological time series.  Dates are represented as \"rata die\" and can be
+converted to (virtually) any calendar defined by Reingold and Dershowitz (2018)
+<doi:10.1017/9781107415058>.  This packages offers a simple API that can be used
+by other specialized packages.")
+    (license license:gpl3+)))
 
 (define-public r-aimsir17
   (package
@@ -13854,28 +14146,29 @@ those observations) only half of the study follow-up period.  We use them only
 to illustrate methods, not to draw substantive conclusions.")
     (license license:gpl2+)))
 
-(define-public r-aif360
+(define-public r-aides
   (package
-    (name "r-aif360")
-    (version "0.1.0")
+    (name "r-aides")
+    (version "1.0.0")
     (source (origin
               (method url-fetch)
-              (uri (cran-uri "aif360" version))
+              (uri (cran-uri "aides" version))
               (sha256
                (base32
-                "0r9x9q8kc9alk1j3p0y23ispcbfac89q0c043vh8dw89q267plf8"))))
-    (properties `((upstream-name . "aif360")))
+                "1b9pggvkpsid7wb4a4c8iwis1wvp13h833npbmfpz9267w7qrla4"))))
+    (properties `((upstream-name . "aides")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-reticulate))
-    (home-page "https://github.com/IBM/AIF360/tree/master/aif360/aif360-r")
-    (synopsis "Help Detect and Mitigate Bias in Machine Learning Models")
+    (propagated-inputs (list r-meta))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=aides")
+    (synopsis "Aides for Pooled Analysis of Aggregate Data")
     (description
-     "The AI Fairness 360 <https://aif360.mybluemix.net/> toolkit is an open-source
-library to help detect and mitigate bias in machine learning models.  The AI
-Fairness 360 R package includes a comprehensive set of metrics for datasets and
-models to test for biases, explanations for these metrics, and algorithms to
-mitigate bias in datasets and models.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
+     "This package provides a supportive collection of functions for pooled analysis
+of aggregate data.  The current version supports users to test assumptions
+before relevant analysis of bias from study size and sequential analysis such as
+mentioned by Wetterslev, J., Jakobsen, J. C., & Gluud, C. (2017)
+<doi:10.1186/s12874-017-0315-7>.")
+    (license license:gpl3+)))
 
 (define-public r-aidar
   (package
@@ -13956,14 +14249,15 @@ confidence interval for back transformed data.")
     (home-page "https://github.com/Sustainscapes/AICcPerm")
     (synopsis "Model Selection of PERMANOVA Models Using AICc")
     (description
-     "This package provides tools for model selection and model averaging of PerMANOVA
-models using Akaike Information Criterion corrected for small sample sizes
-(AICc) and Information Theoretic criteria principles.  The package is built
-around the PERMANOVA analysis from the vegan package and provides a streamlined
-workflow for generating and comparing models, obtaining model weights, and
-summarizing results using model averaging approaches.  The methods implemented
-in this package are based on the practical information- theoretic approach
-described by Burnham, K. P. and Anderson, D. R. (2002) (<doi:10.1007/b97636>).")
+     "This package provides tools for model selection and model averaging of
+@code{PerMANOVA} models using Akaike Information Criterion corrected for small
+sample sizes (AICc) and Information Theoretic criteria principles.  The package
+is built around the PERMANOVA analysis from the vegan package and provides a
+streamlined workflow for generating and comparing models, obtaining model
+weights, and summarizing results using model averaging approaches.  The methods
+implemented in this package are based on the practical information- theoretic
+approach described by Burnham, K. P. and Anderson, D. R. (2002)
+(<doi:10.1007/b97636>).")
     (license license:expat)))
 
 (define-public r-aiccmodavg
@@ -13996,12 +14290,12 @@ various model object classes.  The package implements classic model averaging
 for a given parameter of interest or predicted values, as well as a shrinkage
 version of model averaging parameter estimates or effect sizes.  The package
 includes diagnostics and goodness-of-fit statistics for certain model types
-including those of unmarkedFit classes estimating demographic parameters after
-accounting for imperfect detection probabilities.  Some functions also allow the
-creation of model selection tables for Bayesian models of the bugs', rjags', and
-jagsUI classes.  Functions also implement model selection using BIC. Objects
-following model selection and multimodel inference can be formatted to LaTeX
-using xtable methods included in the package.")
+including those of @code{unmarkedFit} classes estimating demographic parameters
+after accounting for imperfect detection probabilities.  Some functions also
+allow the creation of model selection tables for Bayesian models of the bugs',
+rjags', and @code{jagsUI} classes.  Functions also implement model selection
+using BIC. Objects following model selection and multimodel inference can be
+formatted to @code{LaTeX} using xtable methods included in the package.")
     (license license:gpl2+)))
 
 (define-public r-aic
@@ -14027,14 +14321,14 @@ using xtable methods included in the package.")
     (synopsis "Testing for Compositional Pathologies in Datasets")
     (description
      "This package provides a set of tests for compositional pathologies.  Tests for
-coherence of correlations with aIc.coherent() as suggested by (Erb et al. (2020)
-<doi:10.1016/j.acags.2020.100026>), compositional dominance of distance with
-aIc.dominant(), compositional perturbation invariance with aIc.perturb() as
-suggested by (Aitchison (1992) <doi:10.1007/BF00891269>) and singularity of the
-covariation matrix with aIc.singular().  Currently tests five data
-transformations: prop, clr, TMM, TMMwsp, and RLE from the R packages ALDEx2',
-edgeR and DESeq2 (Fernandes et al (2014) <doi:10.1186/2049-2618-2-15>, Anders et
-al. (2013)<doi:10.1038/nprot.2013.099>).")
+coherence of correlations with @code{aIc.coherent()} as suggested by (Erb et al.
+(2020) <doi:10.1016/j.acags.2020.100026>), compositional dominance of distance
+with @code{aIc.dominant(),} compositional perturbation invariance with
+@code{aIc.perturb()} as suggested by (Aitchison (1992) <doi:10.1007/BF00891269>)
+and singularity of the covariation matrix with @code{aIc.singular().} Currently
+tests five data transformations: prop, clr, TMM, TMMwsp, and RLE from the R
+packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
+<doi:10.1186/2049-2618-2-15>, Anders et al. (2013)<doi:10.1038/nprot.2013.099>).")
     (license license:gpl3+)))
 
 (define-public r-aibd
@@ -14056,7 +14350,7 @@ al. (2013)<doi:10.1038/nprot.2013.099>).")
      "An implementation of probability mass function and sampling algorithms is
 provided for the attraction Indian buffet distribution (AIBD), originally from
 Dahl (2016)
-<https://ww2.amstat.org/meetings/jsm/2016/onlineprogram/ActivityDetails.cfm?SessionID=213038>.")
+@code{<https://ww2.amstat.org/meetings/jsm/2016/onlineprogram/ActivityDetails.cfm?SessionID=213038>.}")
     (license license:gpl3)))
 
 (define-public r-ahw
@@ -14178,12 +14472,13 @@ Solution - with two normalizations).  This method is described in Souza et al.
     (synopsis "Consistency in the Analytic Hierarchy Process")
     (description
      "This package provides a set of three functions for AHP users, namely CR() which
-evaluates the Consistency Ratio for a given PCM', improveCR() for any input PCM
-suggests a matrix with preferences similar to the original preferences, having
-greater consistency than the input matrix and sensitivity() for an input PCM
-returns the average rank correlation of the principal eigenvector of the input
-PCM and of 500 sample matrices generated by random perturbations of elements of
-the input matrix to within the five nearest elements in the Fundamental Scale.")
+evaluates the Consistency Ratio for a given PCM', @code{improveCR()} for any
+input PCM suggests a matrix with preferences similar to the original
+preferences, having greater consistency than the input matrix and sensitivity()
+for an input PCM returns the average rank correlation of the principal
+eigenvector of the input PCM and of 500 sample matrices generated by random
+perturbations of elements of the input matrix to within the five nearest
+elements in the Fundamental Scale.")
     (license license:gpl3)))
 
 (define-public r-ahpsurvey
@@ -14244,6 +14539,29 @@ using quantitative data, by numerical representation, and qualitative data,
 using the Saaty scale, providing preference relation between variables by a
 pairwise evaluation.")
     (license license:gpl3)))
+
+(define-public r-ahpgaussian
+  (package
+    (name "r-ahpgaussian")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "AHPGaussian" version))
+              (sha256
+               (base32
+                "12sfh4nn4aj3jdga47dcwzf0qvhydgh56kv5kqmwg0bxw7g5r9z7"))))
+    (properties `((upstream-name . "AHPGaussian")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2))
+    (home-page "https://cran.r-project.org/package=AHPGaussian")
+    (synopsis "New Multicriteria Method: AHPGaussian")
+    (description
+     "This package implements the Analytic Hierarchy Process (AHP) method using
+Gaussian normalization (AHPGaussian) to derive the relative weights of the
+criteria and alternatives.  It also includes functions for visualizing the
+results and generating graphical outputs.  Method as described in: dos Santos,
+Marcos (2021) <doi:10.13033/ijahp.v13i1.833>.")
+    (license license:gpl2+)))
 
 (define-public r-ahocorasicktrie
   (package
@@ -14324,7 +14642,7 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
      "This package provides methods for fitting additive hazards model.  Perform the
 maximum likelihood method as well as the traditional Aalen's method for
 estimating the additive hazards model.  For details see Chengyuan Lu(2021)
-<arXiv:2004.06156>.")
+@code{<arXiv:2004.06156>.}")
     (license license:gpl2+)))
 
 (define-public r-ahmbook
@@ -14455,13 +14773,13 @@ on <http://agvgd.hci.utah.edu/>.")
 (define-public r-agua
   (package
     (name "r-agua")
-    (version "0.1.2")
+    (version "0.1.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agua" version))
               (sha256
                (base32
-                "0ab6k2bki5rslsy191k8knxrmpi2zhy017wz41z21j24hqx3rvaz"))))
+                "1mqx9a4cqplbq4llfyjh6mbyxr6in1a5f65hjnyhm7my6vhz4zr1"))))
     (properties `((upstream-name . "agua")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -14565,13 +14883,13 @@ or kg) to be added.  to the tank with each sprayer filling.  Two functions for
 graphs of the flow distribution of the nozzles (L/min) in the application bar
 and, of the temporal variability of the meteorological conditions (air
 temperature, relative humidity of the air and wind speed).  Two functions to
-determine the spray deposit (uL/cm2), through the methodology called
+determine the spray deposit @code{(uL/cm2),} through the methodology called
 spectrophotometry, with the aid of bright blue (Palladini, L.A., Raetano, C.G.,
 Velini, E.D. (2005), <doi:10.1590/S0103-90162005000500005>) or metallic markers
-(Chaim, A., Castro, V.L.S.S., Correles, F.M., GalvÃ£o, J.A.H., Cabral, O.M.R.,
-Nicolella, G. (1999), <doi:10.1590/S0100-204X1999000500003>).  The package
-supports the analysis and representation of information, using a single free
-software that meets the most diverse areas of activity in application
+(Chaim, A., Castro, V.L.S.S., Correles, F.M., @code{GalvÃ£o,} J.A.H., Cabral,
+O.M.R., Nicolella, G. (1999), <doi:10.1590/S0100-204X1999000500003>).  The
+package supports the analysis and representation of information, using a single
+free software that meets the most diverse areas of activity in application
 technology.")
     (license license:gpl2+)))
 
@@ -14718,16 +15036,16 @@ position of multiple modes.")
 (define-public r-agriwater
   (package
     (name "r-agriwater")
-    (version "1.0.1")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agriwater" version))
               (sha256
                (base32
-                "1mssd0nxj8ayc3b2qcc7qzx93cnwnlxrnhn3rdknxc8iixkf40l8"))))
+                "14zwpbr9wivnafdrfihvdmbv66cxprz41xgqyifc1nsmgrbr67cz"))))
     (properties `((upstream-name . "agriwater")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rgdal r-raster))
+    (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=agriwater")
     (synopsis "Evapotranspiration and Energy Fluxes Spatial Analysis")
@@ -14861,16 +15179,16 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
 (define-public r-agricolaeplotr
   (package
     (name "r-agricolaeplotr")
-    (version "0.2.2")
+    (version "0.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agricolaeplotr" version))
               (sha256
                (base32
-                "1xrsn9afdqzczaqam0aygm19vpgbq9aqh5b5qr9awj747sihpxjp"))))
+                "1z1p6f4xwky9mglm5bdpvzp3na4wkal6kvf2xscyrcm9slasxvay"))))
     (properties `((upstream-name . "agricolaeplotr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-ggplot2 r-agricolae))
+    (propagated-inputs (list r-sp r-raster r-ggplot2 r-fieldhub r-agricolae))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jensharbers/agricolaeplotr")
     (synopsis
@@ -14888,13 +15206,13 @@ extensions.")
 (define-public r-agricolae
   (package
     (name "r-agricolae")
-    (version "1.3-5")
+    (version "1.3-6")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agricolae" version))
               (sha256
                (base32
-                "0pgcpp3g7j9cnxajm98ppsqz5dx33v7xnrq0gp50flwbc0sjb0l3"))))
+                "0jnv4mii2r01prj08q75hbxss2y8v2acmkfc5dr3vl5bdmpinvy5"))))
     (properties `((upstream-name . "agricolae")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mass r-klar r-cluster r-algdesign))
@@ -14963,19 +15281,18 @@ detectable difference.")
 (define-public r-agpris
   (package
     (name "r-agpris")
-    (version "1.0")
+    (version "2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AGPRIS" version))
               (sha256
                (base32
-                "0xlaz75d19adfq79sh5aa52bzpmjqawshay2a3vw9mq8l23z64if"))))
+                "0c6aqrfl0iqpsdk4njzda60a8hcrm2637zwc5cdkrl9p2ayqj00c"))))
     (properties `((upstream-name . "AGPRIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
                              r-spacetime
                              r-sp
-                             r-rgdal
                              r-plyr
                              r-maxlik
                              r-matrixcalc
@@ -14990,7 +15307,8 @@ panel data models.  Estimators implemented are the BCML (Elhorst (2010),
 (Lindgren and Rue, (2015) <doi:10.18637/jss.v063.i19>; Bivand, Gomez-Rubio and
 Rue, (2015) <doi:10.18637/jss.v063.i20>) adapted to panel data.  The package
 contains functions to replicate the analyses of the scientific article entitled
-\"Agricultural Productivity in Space\" (Baldoni and Esposti (under revision)).")
+\"Agricultural Productivity in Space\" (Baldoni and Esposti (2021),
+<doi:10.1111/ajae.12155>)).")
     (license license:gpl3)))
 
 (define-public r-agop
@@ -15008,11 +15326,11 @@ contains functions to replicate the analyses of the scientific article entitled
     (home-page "http://www.gagolewski.com/software/")
     (synopsis "Aggregation Operators and Preordered Sets")
     (description
-     "Tools supporting multi-criteria and group decision making, including variable
-number of criteria, by means of aggregation operators, spread measures, fuzzy
-logic connectives, fusion functions, and preordered sets.  Possible applications
-include, but are not limited to, quality management, scientometrics, software
-engineering, etc.")
+     "This package provides tools supporting multi-criteria and group decision making,
+including variable number of criteria, by means of aggregation operators, spread
+measures, fuzzy logic connectives, fusion functions, and preordered sets.
+Possible applications include, but are not limited to, quality management,
+scientometrics, software engineering, etc.")
     (license license:lgpl3+)))
 
 (define-public r-aglm
@@ -15043,13 +15361,13 @@ Kenji Kondo and Hirokazu Iwasawa (2020)
 (define-public r-aghq
   (package
     (name "r-aghq")
-    (version "0.4.0")
+    (version "0.4.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "aghq" version))
               (sha256
                (base32
-                "12zzadx0qfh5wg8092w777c9ymd1m6gq3gwmfp9pf9bn3s31vij3"))))
+                "0hrgxxqzx38r2cfn3rflh8gddva9i6i89vk3jg4g27ywg5v7s41v"))))
     (properties `((upstream-name . "aghq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-polynom r-numderiv r-mvquad r-matrix))
@@ -15061,7 +15379,7 @@ normalizing posterior distributions and making Bayesian inferences based on
 them.  Functions are provided for doing quadrature and marginal Laplace
 approximations, and summary methods are provided for making inferences based on
 the results.  See Stringer (2021). \"Implementing Adaptive Quadrature for
-Bayesian Inference: the aghq Package\" <arXiv:2101.04468>.")
+Bayesian Inference: the aghq Package\" @code{<arXiv:2101.04468>.}")
     (license license:gpl3+)))
 
 (define-public r-aghmatrix
@@ -15160,9 +15478,33 @@ speed.")
 choosing the best model trained on V subsamples, it determines a winner model
 for each subsample, and then aggregates the V outputs.  For the details, see
 \"Aggregated hold-out\" by Guillaume Maillard, Sylvain Arlot, Matthieu Lerasle
-(2021) <arXiv:1909.04890> published in Journal of Machine Learning Research
-22(20):1--55.")
+(2021) @code{<arXiv:1909.04890>} published in Journal of Machine Learning
+Research 22(20):1--55.")
     (license license:expat)))
+
+(define-public r-agfh
+  (package
+    (name "r-agfh")
+    (version "0.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "agfh" version))
+              (sha256
+               (base32
+                "0wkagdhbf4hgl1vrb6bxyan5ryp42xd8w7kbyspahqx8agzbn8zg"))))
+    (properties `((upstream-name . "agfh")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-ks r-goftest r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=agfh")
+    (synopsis "Agnostic Fay-Herriot Model for Small Area Statistics")
+    (description
+     "This package implements the Agnostic Fay-Herriot model, an extension of the
+traditional small area model.  In place of normal sampling errors, the sampling
+error distribution is estimated with a Gaussian process to accommodate a broader
+class of distributions.  This flexibility is most useful in the presence of
+bounded, multi-modal, or heavily skewed sampling errors.")
+    (license license:gpl3+)))
 
 (define-public r-ageutils
   (package
@@ -15190,13 +15532,13 @@ specified age distributions.")
 (define-public r-agena-ai
   (package
     (name "r-agena-ai")
-    (version "1.0.0")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "agena.ai" version))
               (sha256
                (base32
-                "0wdn4iw2b2zq8zfrmjkqik8w8ydi3r45fwwq4ansjmjqh1j99gjf"))))
+                "1j7n04h2vdc4snlm32cgx1nbpfygqvk1za13y1shf82sn1ix30v4"))))
     (properties `((upstream-name . "agena.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-rgraphviz r-openxlsx r-httr))
@@ -15246,10 +15588,10 @@ custom age distributions are desired given a vector of birth dates.")
     (home-page "https://github.com/stefvanbuuren/AGD")
     (synopsis "Analysis of Growth Data")
     (description
-     "Tools for the analysis of growth data: to extract an LMS table from a gamlss
-object, to calculate the standard deviation scores and its inverse, and to
-superpose two wormplots from different models.  The package contains a some
-varieties of reference tables, especially for The Netherlands.")
+     "This package provides tools for the analysis of growth data: to extract an LMS
+table from a gamlss object, to calculate the standard deviation scores and its
+inverse, and to superpose two wormplots from different models.  The package
+contains a some varieties of reference tables, especially for The Netherlands.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ag5tools
@@ -15269,22 +15611,23 @@ varieties of reference tables, especially for The Netherlands.")
     (home-page "https://agrdatasci.github.io/ag5Tools/")
     (synopsis "Toolbox for Downloading and Extracting Copernicus AgERA5 Data")
     (description
-     "Tools for downloading and extracting data from the Copernicus
-\"Agrometeorological indicators from 1979 to present derived from reanalysis\"
+     "This package provides tools for downloading and extracting data from the
+Copernicus \"Agrometeorological indicators from 1979 to present derived from
+reanalysis\"
 <https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-agrometeorological-indicators?tab=overview>
-(AgERA5).")
+@code{(AgERA5).}")
     (license license:expat)))
 
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.2.3")
+    (version "4.3.1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "afttest" version))
               (sha256
                (base32
-                "0hmjn1cnyhpzpmy1kn920illzk7iz0h4kqa61xxdqbj51hznrhnf"))))
+                "0w08xhhjnsf4xdg52nfz1ks4n7mbajrnbix9q5mkd3nvsnlank0s"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -15527,7 +15870,7 @@ Fraction (AF) and a plot of the AF as a function of heritability, disease
 prevalence, size of target group and intervention effect.  Since the AF is a
 function of several factors, a shiny app is used to better illustrate how the
 relationship between the AF and heritability depends on several other factors.
-The app is ran by the function runShinyApp().  For more information see
+The app is ran by the function @code{runShinyApp().} For more information see
 Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -15569,13 +15912,13 @@ simple errors are fixed.")
     (home-page "https://cran.r-project.org/package=affinitymatrix")
     (synopsis "Estimation of Affinity Matrix")
     (description
-     "Tools to study sorting patterns in matching markets and to estimate the affinity
-matrix of both the bipartite one-to-one matching model without frictions and
-with Transferable Utility by Dupuy and Galichon (2014) <doi:10.1086/677191> and
-its unipartite variant by Ciscato', Galichon and Gousse (2020)
-<doi:10.1086/704611>.  It also contains all the necessary tools to implement the
-saliency analysis, to run rank tests of the affinity matrix and to build tables
-and plots summarizing the findings.")
+     "This package provides tools to study sorting patterns in matching markets and to
+estimate the affinity matrix of both the bipartite one-to-one matching model
+without frictions and with Transferable Utility by Dupuy and Galichon (2014)
+<doi:10.1086/677191> and its unipartite variant by Ciscato', Galichon and Gousse
+(2020) <doi:10.1086/704611>.  It also contains all the necessary tools to
+implement the saliency analysis, to run rank tests of the affinity matrix and to
+build tables and plots summarizing the findings.")
     (license license:gpl3)))
 
 (define-public r-affinity
@@ -15596,13 +15939,13 @@ and plots summarizing the findings.")
     (synopsis
      "Raster Georeferencing, Grid Affine Transforms, Cell Abstraction")
     (description
-     "Tools for raster georeferencing, grid affine transforms, and general raster
-logic.  These functions provide converters between raster specifications, world
-vector, geotransform, RasterIO window, and RasterIO window in sf package list
-format.  There are functions to offset a matrix by padding any of four corners
-(useful for vectorizing neighbourhood operations), and helper functions to
-harvesting user clicks on a graphics device to use for simple georeferencing of
-images.  Methods used are available from
+     "This package provides tools for raster georeferencing, grid affine transforms,
+and general raster logic.  These functions provide converters between raster
+specifications, world vector, geotransform, @code{RasterIO} window, and
+@code{RasterIO} window in sf package list format.  There are functions to offset
+a matrix by padding any of four corners (useful for vectorizing neighbourhood
+operations), and helper functions to harvesting user clicks on a graphics device
+to use for simple georeferencing of images.  Methods used are available from
 <https://en.wikipedia.org/wiki/World_file> and
 <https://gdal.org/user/raster_data_model.html>.")
     (license license:gpl3)))
@@ -15610,13 +15953,13 @@ images.  Methods used are available from
 (define-public r-affect
   (package
     (name "r-affect")
-    (version "0.1.0")
+    (version "0.1.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "AFFECT" version))
               (sha256
                (base32
-                "03d08spgbcz7qxh0599rya5xp95c22jhk5y3d344g2ad4y1ryvxg"))))
+                "0ri0wllf87nxma9i51j89yd4yhkgjnjj5kls3768bi0h9wlyvxmp"))))
     (properties `((upstream-name . "AFFECT")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -15827,7 +16170,7 @@ enrichment tests.  One is a modified Fisher's exact test based on pre-selected
 significant adverse events, while the other is based on a modified
 Kolmogorov-Smirnov statistic.  We add Covariate adjustment to improve the
 analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
-(2020) <arXiv:2007.02266>.")
+(2020) @code{<arXiv:2007.02266>.}")
     (license license:gpl2)))
 
 (define-public r-aedforecasting
@@ -15872,9 +16215,9 @@ is an online advertising service by Google', that delivers Ads to users.  This
 package offers a authentication process using OAUTH2'.  Currently, there are two
 methods of data of accessing the API, depending on the type of request.  One
 method uses SOAP requests which require building an XML structure and then sent
-to the API. These are used for the ManagedCustomerService and the
-TargetingIdeaService'.  The second method is by building AWQL queries for the
-reporting side of the Google Adwords API.")
+to the API. These are used for the @code{ManagedCustomerService} and the
+@code{TargetingIdeaService'.} The second method is by building AWQL queries for
+the reporting side of the Google Adwords API.")
     (license license:expat)))
 
 (define-public r-adwave
@@ -16291,7 +16634,7 @@ constraints are supported.  See <doi:10.1002/sim.8291> and
     (synopsis "R Client for 'Adobe Analytics' API 2.0")
     (description
      "Connect to the Adobe Analytics API v2.0
-<https://github.com/AdobeDocs/analytics-2.0-apis> which powers Analysis
+@code{<https://github.com/AdobeDocs/analytics-2.0-apis>} which powers Analysis
 Workspace'.  The package was developed with the analyst in mind, and it will
 continue to be developed with the guiding principles of iterative, repeatable,
 timely analysis.")
@@ -16430,7 +16773,7 @@ account the sparsity structure of coefficients.")
      "Alternating Direction Method of Multipliers to Solve Dense Dubmatrix Problem")
     (description
      "Solves the problem of identifying the densest submatrix in a given or sampled
-binary matrix, Bombina et al. (2019) <arXiv:1904.03272>.")
+binary matrix, Bombina et al. (2019) @code{<arXiv:1904.03272>.}")
     (license license:cc0)))
 
 (define-public r-admm
@@ -16495,13 +16838,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.1-0")
+    (version "2.1-2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admix" version))
               (sha256
                (base32
-                "0s1zdc3s7mxxpkpy7w28w5ijbh4371lvy87n80dzhd6zww8jgndq"))))
+                "1g6s2ll31g8klxmg6zg7scy5l84bqzc3ncjsbw8zxrbrjzyd2yzx"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -16509,7 +16852,8 @@ format is also provided.")
                              r-orthopolynom
                              r-mass
                              r-iso
-                             r-fdrtool))
+                             r-fdrtool
+                             r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/XavierMilhaud/admix")
     (synopsis "Package Admix for Admixture (aka Contamination) Models")
@@ -16553,16 +16897,58 @@ or as the candidate density in the Metropolis-Hastings algorithm to obtain
 quantities of interest for the target density itself.")
     (license license:gpl2+)))
 
+(define-public r-admiralvaccine
+  (package
+    (name "r-admiralvaccine")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "admiralvaccine" version))
+              (sha256
+               (base32
+                "0iwgglk0bz760898gpmw6wn745j5rk8b6zz4psdycik0vsamijp3"))))
+    (properties `((upstream-name . "admiralvaccine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-metatools
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-hms
+                             r-dplyr
+                             r-assertthat
+                             r-admiraldev
+                             r-admiral))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/admiralvaccine/")
+    (synopsis "Vaccine Extension Package for ADaM in 'R' Asset Library")
+    (description
+     "Programming vaccine specific Clinical Data Interchange Standards Consortium
+(CDISC) compliant Analysis Data Model @code{(ADaM)} datasets in R'.  Flat model
+is followed as per Center for Biologics Evaluation and Research (CBER)
+guidelines for creating vaccine specific domains. @code{ADaM} datasets are a
+mandatory part of any New Drug or Biologics License Application submitted to the
+United States Food and Drug Administration (FDA).  Analysis derivations are
+implemented in accordance with the \"Analysis Data Model Implementation Guide\"
+(CDISC Analysis Data Model Team (2021),
+<https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).
+ The package is an extension package of the admiral package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "0.1.0")
+    (version "0.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralophtha" version))
               (sha256
                (base32
-                "1bhcgq2fzprg0k7g77kiar1my99spnlar0lzs4r91icbd0ffimm0"))))
+                "1jhdnd8cpc5zjfnsrl5mkghyv3zswmxfbncb08cym0rg0hlqv5n9"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16575,7 +16961,6 @@ quantities of interest for the target density itself.")
                              r-lifecycle
                              r-hms
                              r-dplyr
-                             r-assertthat
                              r-admiraldev
                              r-admiral))
     (native-inputs (list r-knitr))
@@ -16583,24 +16968,24 @@ quantities of interest for the target density itself.")
     (synopsis "ADaM in R Asset Library - Ophthalmology")
     (description
      "Aids the programming of Clinical Data Standards Interchange Consortium (CDISC)
-compliant Ophthalmology Analysis Data Model (ADaM) datasets in R. ADaM datasets
-are a mandatory part of any New Drug or Biologics License Application submitted
-to the United States Food and Drug Administration (FDA).  Analysis derivations
-are implemented in accordance with the \"Analysis Data Model Implementation
-Guide\" (CDISC Analysis Data Model Team, 2021,
+compliant Ophthalmology Analysis Data Model @code{(ADaM)} datasets in R.
+@code{ADaM} datasets are a mandatory part of any New Drug or Biologics License
+Application submitted to the United States Food and Drug Administration (FDA).
+Analysis derivations are implemented in accordance with the \"Analysis Data Model
+Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 <https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiralonco" version))
               (sha256
                (base32
-                "0g8gr7mjqwnypa7zqshlgsqx3l3l3vmbhqjaav5x09xs8al4phfi"))))
+                "0ywrin1hp45j4r467bjijlpdcbqzqkqv3wwdwspjwfanqhyn4qcl"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16612,15 +16997,15 @@ Guide\" (CDISC Analysis Data Model Team, 2021,
                              r-admiraldev
                              r-admiral))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=admiralonco")
+    (home-page "https://pharmaverse.github.io/admiralonco/")
     (synopsis "Oncology Extension Package for ADaM in 'R' Asset Library")
     (description
      "Programming oncology specific Clinical Data Interchange Standards Consortium
-(CDISC) compliant Analysis Data Model (ADaM) datasets in R'.  ADaM datasets are
-a mandatory part of any New Drug or Biologics License Application submitted to
-the United States Food and Drug Administration (FDA).  Analysis derivations are
-implemented in accordance with the \"Analysis Data Model Implementation Guide\"
-(CDISC Analysis Data Model Team (2021),
+(CDISC) compliant Analysis Data Model @code{(ADaM)} datasets in R'. @code{ADaM}
+datasets are a mandatory part of any New Drug or Biologics License Application
+submitted to the United States Food and Drug Administration (FDA).  Analysis
+derivations are implemented in accordance with the \"Analysis Data Model
+Implementation Guide\" (CDISC Analysis Data Model Team (2021),
 <https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).
  The package is an extension package of the admiral package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
@@ -16628,13 +17013,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "0.3.0")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiraldev" version))
               (sha256
                (base32
-                "0kqwh22yrrj6d4cf9my9wl2nanbkq6cccj3izzlq5459l0qp7242"))))
+                "02xjwqjlk5nwfjs5y1glq4wdn5r9l88wvnx7pl0z9416rjjq2lqk"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16661,13 +17046,13 @@ admiral and admiral extension packages.")
 (define-public r-admiral-test
   (package
     (name "r-admiral-test")
-    (version "0.5.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral.test" version))
               (sha256
                (base32
-                "1nj0hl7jpyrblypk5gsqz578xqyp4bvxkiw5jyw6jzkvvx15mqk4"))))
+                "15c8njk81w8rp22n5knvh3jxkh8qk2pmqs1snjmyd4vjrxh1vqf7"))))
     (properties `((upstream-name . "admiral.test")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=admiral.test")
@@ -16675,20 +17060,20 @@ admiral and admiral extension packages.")
     (description
      "This package provides a set of Study Data Tabulation Model (SDTM) datasets from
 the Clinical Data Interchange Standards Consortium (CDISC) pilot project used
-for testing and developing Analysis Data Model (ADaM) derivations inside the
-admiral package.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
+for testing and developing Analysis Data Model @code{(ADaM)} derivations inside
+the admiral package.")
+    (license license:asl2.0)))
 
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "0.10.2")
+    (version "0.11.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "admiral" version))
               (sha256
                (base32
-                "1am3ay1s7n4gis10990f09d0dzyshr4rc0v3j1482fi7bd2bj2zk"))))
+                "1wl164falaw87rcahh1ip4zjp4kf87jiig6h8gqkja8p35x44h94"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16707,11 +17092,12 @@ admiral package.")
     (synopsis "ADaM in R Asset Library")
     (description
      "This package provides a toolbox for programming Clinical Data Interchange
-Standards Consortium (CDISC) compliant Analysis Data Model (ADaM) datasets in R.
-ADaM datasets are a mandatory part of any New Drug or Biologics License
-Application submitted to the United States Food and Drug Administration (FDA).
-Analysis derivations are implemented in accordance with the \"Analysis Data Model
-Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
+Standards Consortium (CDISC) compliant Analysis Data Model @code{(ADaM)}
+datasets in R. @code{ADaM} datasets are a mandatory part of any New Drug or
+Biologics License Application submitted to the United States Food and Drug
+Administration (FDA).  Analysis derivations are implemented in accordance with
+the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team,
+2021,
 <https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -16968,10 +17354,10 @@ phylogenetic differences between communities.")
     (home-page "https://github.com/ddediu/AdhereR")
     (synopsis "Adherence to Medications")
     (description
-     "Interactive graphical user interface (GUI) for the package AdhereR', allowing
-the user to access different data sources, to explore the patterns of medication
-use therein, and the computation of various measures of adherence.  It is
-implemented using Shiny and HTML/CSS/JavaScript.")
+     "Interactive graphical user interface (GUI) for the package @code{AdhereR',}
+allowing the user to access different data sources, to explore the patterns of
+medication use therein, and the computation of various measures of adherence.
+It is implemented using Shiny and @code{HTML/CSS/JavaScript.}")
     (license license:gpl2+)))
 
 (define-public r-adherer
@@ -17116,10 +17502,11 @@ import and export files from and to such virtual DOS-formatted disks.")
     (home-page "https://github.com/sdray/adespatial")
     (synopsis "Multivariate Multiscale Spatial Analysis")
     (description
-     "Tools for the multiscale spatial analysis of multivariate data.  Several methods
-are based on the use of a spatial weighting matrix and its eigenvector
-decomposition (Moran's Eigenvectors Maps, MEM).  Several approaches are
-described in the review Dray et al (2012) <doi:10.1890/11-1183.1>.")
+     "This package provides tools for the multiscale spatial analysis of multivariate
+data.  Several methods are based on the use of a spatial weighting matrix and
+its eigenvector decomposition (Moran's Eigenvectors Maps, MEM).  Several
+approaches are described in the review Dray et al (2012)
+<doi:10.1890/11-1183.1>.")
     (license license:gpl2+)))
 
 (define-public r-ader
@@ -17241,11 +17628,11 @@ during continuous walking activity.")
     (synopsis
      "'shiny' Application for the (Audio-)Visualization of Adverse Event Profiles")
     (description
-     "This package contains a shiny application called AdEPro (Animation of Adverse
-Event Profiles) which (audio-)visualizes adverse events occurring in clinical
-trials.  As this data is usually considered sensitive, this tool is provided as
-a stand-alone application that can be launched from any local machine on which
-the data is stored.")
+     "This package contains a shiny application called @code{AdEPro} (Animation of
+Adverse Event Profiles) which (audio-)visualizes adverse events occurring in
+clinical trials.  As this data is usually considered sensitive, this tool is
+provided as a stand-alone application that can be launched from any local
+machine on which the data is stored.")
     (license license:gpl3)))
 
 (define-public r-adephylo
@@ -17529,8 +17916,8 @@ several options: (i) constant and variable returns to scale; (ii) fixed
 (non-controllable) inputs and/or outputs; (iii) bounding the slacks so that
 unrealistically large slack values are avoided; and (iv) calculating the
 efficiency of specific Decision-Making Units (DMUs), rather than of the whole
-sample.  Package additiveDEA also provides a function for reducing computation
-time when datasets are large.")
+sample.  Package @code{additiveDEA} also provides a function for reducing
+computation time when datasets are large.")
     (license license:gpl2)))
 
 (define-public r-additive
@@ -17594,8 +17981,8 @@ for machine learning; see Kuhn and Wickham (2020) <https://www.tidymodels.org>).
 not for R Markdown projects with multiple files.  For this reason, I have
 developed several RStudio addins capable of show project outline.  Each addin is
 specialized in showing projects of different types: R Markdown project, bookdown
-package project and LaTeX project.  There is a configuration file that allows
-you to customize additional searches.")
+package project and @code{LaTeX} project.  There is a configuration file that
+allows you to customize additional searches.")
     (license license:gpl3)))
 
 (define-public r-addinslist
@@ -17742,6 +18129,29 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 <doi:10.1016/j.jhydrol.2016.12.052>.")
     (license license:gpl3+)))
 
+(define-public r-adbcdrivermanager
+  (package
+    (name "r-adbcdrivermanager")
+    (version "0.5.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "adbcdrivermanager" version))
+              (sha256
+               (base32
+                "0x7qxq09s7llk4ahw6grfsbycrg8rf320rnwj0f96wb9h3m7v06f"))))
+    (properties `((upstream-name . "adbcdrivermanager")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nanoarrow))
+    (home-page "https://github.com/apache/arrow-adbc")
+    (synopsis "'Arrow' Database Connectivity ('ADBC') Driver Manager")
+    (description
+     "This package provides a developer-facing interface to Arrow Database
+Connectivity ('ADBC') for the purposes of driver development, driver testing,
+and building high-level database interfaces for users.  ADBC
+<https://arrow.apache.org/adbc/> is an API standard for database access
+libraries that uses Arrow for result sets and query parameters.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-adasampling
   (package
     (name "r-adasampling")
@@ -17811,11 +18221,11 @@ Vandemeulebroecke, An investigation of two-stage tests, Statistica Sinica 2006."
     (synopsis "Adaptive Smoothing of FMRI Data")
     (description
      "Adaptive smoothing functions for estimating the blood oxygenation level
-dependent (BOLD) effect by using functional Magnetic Resonance Imaging (fMRI)
-data, based on adaptive Gauss Markov random fields, for real as well as
-simulated data.  The implemented models make use of efficient Markov Chain Monte
-Carlo methods.  Implemented methods are based on the research developed by A.
-Brezger, L. Fahrmeir, A. Hennerfeind (2007)
+dependent (BOLD) effect by using functional Magnetic Resonance Imaging
+@code{(fMRI)} data, based on adaptive Gauss Markov random fields, for real as
+well as simulated data.  The implemented models make use of efficient Markov
+Chain Monte Carlo methods.  Implemented methods are based on the research
+developed by A. Brezger, L. Fahrmeir, A. Hennerfeind (2007)
 <https://www.jstor.org/stable/4626770>.")
     (license license:gpl2)))
 
@@ -17847,12 +18257,13 @@ Brezger, L. Fahrmeir, A. Hennerfeind (2007)
     (synopsis
      "Automated Deconvolution Augmentation of Profiles for Tissue Specific Cells")
     (description
-     "Tools to construct (or add to) cell-type signature matrices using flow sorted or
-single cell samples and deconvolve bulk gene expression data.  Useful for
-assessing the quality of single cell RNAseq experiments, estimating the accuracy
-of signature matrices, and determining cell-type spillover.  Please cite:
-Danziger SA et al. (2019) ADAPTS: Automated Deconvolution Augmentation of
-Profiles for Tissue Specific cells <doi:10.1371/journal.pone.0224693>.")
+     "This package provides tools to construct (or add to) cell-type signature
+matrices using flow sorted or single cell samples and deconvolve bulk gene
+expression data.  Useful for assessing the quality of single cell RNAseq
+experiments, estimating the accuracy of signature matrices, and determining
+cell-type spillover.  Please cite: Danziger SA et al. (2019) ADAPTS: Automated
+Deconvolution Augmentation of Profiles for Tissue Specific cells
+<doi:10.1371/journal.pone.0224693>.")
     (license license:expat)))
 
 (define-public r-adaptr
@@ -17895,10 +18306,11 @@ Sygeforsikringen \"danmark\" (<https://www.sygeforsikring.dk/>).")
     (synopsis
      "Adaptive P-Value Thresholding for Multiple Hypothesis Testing with Side Information")
     (description
-     "Implementation of adaptive p-value thresholding (AdaPT), including both a
+     "Implementation of adaptive p-value thresholding @code{(AdaPT),} including both a
 framework that allows the user to specify any algorithm to learn local false
 discovery rate and a pool of convenient functions that implement specific
-algorithms.  See Lei, Lihua and Fithian, William (2016) <arXiv:1609.06035>.")
+algorithms.  See Lei, Lihua and Fithian, William (2016)
+@code{<arXiv:1609.06035>.}")
     (license license:expat)))
 
 (define-public r-adaptmcmc
@@ -17993,10 +18405,10 @@ Rustom Antia.")
     (home-page "https://cran.r-project.org/package=adaptiveGPCA")
     (synopsis "Adaptive Generalized PCA")
     (description
-     "This package implements adaptive gPCA, as described in: Fukuyama, J. (2017)
-<arXiv:1702.00501>.  The package also includes functionality for applying the
-method to phyloseq objects so that the method can be easily applied to
-microbiome data and a shiny app for interactive visualization.")
+     "This package implements adaptive @code{gPCA,} as described in: Fukuyama, J.
+(2017) @code{<arXiv:1702.00501>.} The package also includes functionality for
+applying the method to phyloseq objects so that the method can be easily applied
+to microbiome data and a shiny app for interactive visualization.")
     (license license:agpl3)))
 
 (define-public r-adaptgauss
@@ -18248,8 +18660,8 @@ component, and push it to an Acumos platform.")
 blocks of business and to inform assumption setting activities.  This package
 provides functions for preparing data, creating studies, and beginning
 assumption development.  Experience study methods, including exposure
-calculations, are described in: Atkinson & McGarry (2016) \"Experience Study
-Calculations\"
+calculations, are described in: Atkinson & @code{McGarry} (2016) \"Experience
+Study Calculations\"
 <https://www.soa.org/49378a/globalassets/assets/files/research/experience-study-calculations.pdf>.
  The limited fluctuation credibility method used by the exp_stats() function is
 described in: Herzog (1999, ISBN:1-56698-374-6) \"Introduction to Credibility
@@ -18378,7 +18790,8 @@ between model parameters.  See Campbell et al. (in press) It's time to expand
 our analyses of animal activity; Campbell et al. (in press) Temporal and
 microspatial niche partitioning; Campbell et al. (in press) A novel approach to
 comparing animal activity patterns.  News, updates, and tutorials will be
-available on www.atlasgoldenwolf.org/stats and www.github.com/LizADCampbell .")
+available on www.atlasgoldenwolf.org/stats and
+@code{www.github.com/LizADCampbell} .")
     (license license:gpl2+)))
 
 (define-public r-activegp
@@ -18409,7 +18822,7 @@ important linear combinations of input variables for a simulator.  This package
 provides functions allowing estimation of the active subspace without gradient
 information using Gaussian processes as well as sequential experimental design
 tools to minimize the amount of data required to do so.  Implements Wycoff et
-al. (2019) <arXiv:1907.11572>.")
+al. (2019) @code{<arXiv:1907.11572>.}")
     (license license:bsd-3)))
 
 (define-public r-activatr
@@ -18488,8 +18901,8 @@ plot the activity in a variety of ways.")
     (synopsis
      "'Shiny' App to Analyze Accelerometer-Measured Daily Physical Behavior Data")
     (description
-     "This package provides a tool to analyse ActiGraph accelerometer data and to
-implement the use of the PROactive Physical Activity in COPD (chronic
+     "This package provides a tool to analyse @code{ActiGraph} accelerometer data and
+to implement the use of the PROactive Physical Activity in COPD (chronic
 obstructive pulmonary disease) instruments.  Once analysis is completed, the app
 allows to export results to .csv files and to generate a report of the
 measurement.  All the configured inputs relevant for interpreting the results
@@ -18593,13 +19006,13 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
 (define-public r-act
   (package
     (name "r-act")
-    (version "1.3.0")
+    (version "1.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "act" version))
               (sha256
                (base32
-                "0zvlh48jidn6iicgpxanp4yb3bfv69wik2md91yd8x2kdr61whj8"))))
+                "0c5515mxw2ghdwmnqz1www84v3dn7wlvij47wankb4ak285ak30i"))))
     (properties `((upstream-name . "act")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18615,15 +19028,16 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
     (description
      "The Aligned Corpus Toolkit (act) is designed for linguists that work with time
 aligned transcription data.  It offers functions to import and export various
-annotation file formats ('ELAN .eaf, EXMARaLDA .exb and Praat .TextGrid files),
-create print transcripts in the style of conversation analysis, search
-transcripts (span searches across multiple annotations, search in normalized
-annotations, make concordances etc.), export and re-import search results (.csv
-and Excel .xlsx format), create cuts for the search results (print transcripts,
-audio/video cuts using FFmpeg and video sub titles in Subrib title .srt format),
-modify the data in a corpus (search/replace, delete, filter etc.), interact with
-Praat using Praat'-scripts, and exchange data with the rPraat package.  The
-package is itself written in R and may be expanded by other users.")
+annotation file formats ('ELAN .eaf, @code{EXMARaLDA} .exb and Praat
+@code{.TextGrid} files), create print transcripts in the style of conversation
+analysis, search transcripts (span searches across multiple annotations, search
+in normalized annotations, make concordances etc.), export and re-import search
+results (.csv and Excel .xlsx format), create cuts for the search results (print
+transcripts, audio/video cuts using FFmpeg and video sub titles in Subrib title
+.srt format), modify the data in a corpus (search/replace, delete, filter etc.),
+interact with Praat using Praat'-scripts, and exchange data with the
+@code{rPraat} package.  The package is itself written in R and may be expanded
+by other users.")
     (license license:gpl3)))
 
 (define-public r-acroname
@@ -18655,13 +19069,13 @@ arbitrary text input.")
 (define-public r-acne
   (package
     (name "r-acne")
-    (version "0.8.1")
+    (version "0.9.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "ACNE" version))
               (sha256
                (base32
-                "0kzapsalzw6jsi990qicp4glijh5ddnfimsg5pidgbwxg4i05grl"))))
+                "1mkm5pa7cf3qhzcvaf3775mvsi3r0rgpm0ndpiikmjpcmrv5rd2z"))))
     (properties `((upstream-name . "ACNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -18839,6 +19253,27 @@ languages.  It can be opened in the viewer pane of RStudio', and this provides a
 second source editor.")
     (license license:gpl3)))
 
+(define-public r-ace-coco
+  (package
+    (name "r-ace-coco")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ACE.CoCo" version))
+              (sha256
+               (base32
+                "105rb42cwzpbarvdm9zsbicy3xkr3p659bphzgnvcc4lh66rhiay"))))
+    (properties `((upstream-name . "ACE.CoCo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://github.com/hongyuan-cao/ACE")
+    (synopsis "Analysis of Correlated High-Dimensional Expression (ACE) Data")
+    (description
+     "This package provides a function for estimating factor models.  Give
+factor-adjusted statistics, factor-adjusted mean estimation (one-sample test) or
+factor-adjusted mean difference estimation (two-sample test).")
+    (license license:gpl3)))
+
 (define-public r-acdcr
   (package
     (name "r-acdcr")
@@ -18859,7 +19294,7 @@ second source editor.")
 variables in agricultural production or agricultural-climatic and weather
 analyses.  To operate some functions in this package needs download of the bulk
 PRISM raster.  See the examples, testing versions and more details from:
-<https://github.com/ysd2004/acdcR>.")
+@code{<https://github.com/ysd2004/acdcR>.}")
     (license license:gpl2+)))
 
 (define-public r-accumulate
@@ -18938,7 +19373,7 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
      "Tracking accrual in clinical trials is important for trial success.  If accrual
 is too slow, the trial will take too long and be too expensive.  If accrual is
 much faster than expected, time sensitive tasks such as the writing of
-statistical analysis plans might need to be rushed.  accrualPlot provides
+statistical analysis plans might need to be rushed. @code{accrualPlot} provides
 functions to aid the tracking of accrual and predict when a trial will reach
 it's intended sample size.")
     (license license:expat)))
@@ -18973,16 +19408,16 @@ for screen reader users.")
 (define-public r-accessibility
   (package
     (name "r-accessibility")
-    (version "1.0.1")
+    (version "1.1.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "accessibility" version))
               (sha256
                (base32
-                "1773h1hhq4h4gp6jkbg92ikppw8lnqhv4wlkncg6gr62nid0l3ik"))))
+                "1hnmxzzzfpkg76a1r927bf865bl49z4sfq3gbcxifc9nkf4rffym"))))
     (properties `((upstream-name . "accessibility")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-data-table r-checkmate))
+    (propagated-inputs (list r-rdpack r-hmisc r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/accessibility")
     (synopsis "Transport Accessibility Measures")
@@ -19017,8 +19452,8 @@ functions) and different floating catchment area methods.")
 on the correlation components.  The p-values are computed following the
 resampling method developed in Winkler, A. M., Renaud, O., Smith, S. M., &
 Nichols, T. E. (2020).  Permutation inference for canonical correlation
-analysis.  NeuroImage, <doi:10.1016/j.neuroimage.2020.117065>.  Furthermore, it
-provides plotting tools to visualize the results.")
+analysis. @code{NeuroImage,} <doi:10.1016/j.neuroimage.2020.117065>.
+Furthermore, it provides plotting tools to visualize the results.")
     (license license:gpl2+)))
 
 (define-public r-academictwitter
@@ -19141,13 +19576,13 @@ change <doi:10.1007/s10109-020-00342-2>.")
 (define-public r-abmr
   (package
     (name "r-abmr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "abmR" version))
               (sha256
                (base32
-                "077xinshk9am000ic5m70f4m7094ipqyx9cxyhq0smbpg0h6kn7f"))))
+                "0675981yq7zdxpky851nx0lz4vdxi1jaagagb6g6szg3kjmg59yd"))))
     (properties `((upstream-name . "abmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -19156,7 +19591,6 @@ change <doi:10.1007/s10109-020-00342-2>.")
                              r-sp
                              r-sf
                              r-rnaturalearth
-                             r-rgeos
                              r-raster
                              r-purrr
                              r-kableextra
@@ -19169,11 +19603,11 @@ change <doi:10.1007/s10109-020-00342-2>.")
     (synopsis "Agent-Based Models in R")
     (description
      "Supplies tools for running agent-based models (ABM) in R, as discussed in
-Gochanour et al. (2021) <doi:10.1101/2021.09.15.460374> The package contains two
+Gochanour et al. (2022) <doi:10.1111/2041-210X.14014>.  The package contains two
 movement functions, each of which is based on the Ornstein-Uhlenbeck (OU) model
-(Ornstein & Uhlenbeck, 1930) <doi:10.1103/PhysRev.36.823>.  It also contains
-several visualization and data summarization functions to facilitate the
-presentation of simulation results.")
+(Ornstein & Uhlenbeck, 1930) @code{<doi:10.1103/PhysRev.36.823>.} It also
+contains several visualization and data summarization functions to facilitate
+the presentation of simulation results.")
     (license license:gpl3+)))
 
 (define-public r-abm
@@ -19312,10 +19746,10 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
 diversity.  Ecological diversity comes in two flavors: alpha diversity measures
 the diversity within a single site or sample, and beta diversity measures the
 diversity across two sites or samples.  This package overlaps considerably with
-other R packages such as vegan', gUniFrac', betapart', and fossil'.  We also
-include a wide range of functions that are implemented in software outside the R
-ecosystem, such as scipy', Mothur', and scikit-bio'.  The implementations here
-are designed to be basic and clear to the reader.")
+other R packages such as vegan', @code{gUniFrac',} betapart', and fossil'.  We
+also include a wide range of functions that are implemented in software outside
+the R ecosystem, such as scipy', Mothur', and scikit-bio'.  The implementations
+here are designed to be basic and clear to the reader.")
     (license license:expat)))
 
 (define-public r-abclass
@@ -19355,6 +19789,31 @@ are designed to be basic and clear to the reader.")
     (description
      "Strings are abbreviated to at least \"minlength\" characters, such that they
 remain unique (if they were).  The abbreviations should be recognisable.")
+    (license license:gpl3)))
+
+(define-public r-abasequence
+  (package
+    (name "r-abasequence")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "abasequence" version))
+              (sha256
+               (base32
+                "033mbc1ghkadvxdckz1f04p8d5ml3ifmssdd1y4qj70nx7x9hs4l"))))
+    (properties `((upstream-name . "abasequence")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=abasequence")
+    (synopsis "Coding 'ABA' Patterns for Sequence Data")
+    (description
+     "This package provides a suite of functions for analyzing sequences of events.
+Users can generate and code sequences based on predefined rules, with a special
+focus on the identification of sequences coded as ABA (when one element appears,
+followed by a different one, and then followed by the first).  Additionally, the
+package offers the ability to calculate the length of consecutive ABA'-coded
+sequences sharing common elements.  The methods implemented in this package are
+based on the work by Ziembowicz, K., Rychwalska, A., & Nowak, A. (2022).
+<doi:10.1177/10464964221118674>.")
     (license license:gpl3)))
 
 (define-public r-aattools

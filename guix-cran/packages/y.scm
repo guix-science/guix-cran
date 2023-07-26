@@ -162,12 +162,13 @@ analysis.")
     (home-page "https://cran.r-project.org/package=ypssc")
     (synopsis "Yeast-Proteome Secondary-Structure Calculator")
     (description
-     "An extension for NetSurfP-2.0 (Klausen et al. (2019) <doi:10.1002/prot.25674>)
-which is specifically designed to analyze the results of bottom-up-proteomics
-that is primarily analyzed with MaxQuant (Cox, J., Mann, M. (2008)
-<doi:10.1038/nbt.1511>).  This tool is designed to process a large number of
-yeast peptides that produced as a results of whole yeast cell-proteome digestion
-and provide a coherent picture of secondary structure of proteins.")
+     "An extension for @code{NetSurfP-2.0} (Klausen et al. (2019)
+<doi:10.1002/prot.25674>) which is specifically designed to analyze the results
+of bottom-up-proteomics that is primarily analyzed with @code{MaxQuant} (Cox,
+J., Mann, M. (2008) <doi:10.1038/nbt.1511>).  This tool is designed to process a
+large number of yeast peptides that produced as a results of whole yeast
+cell-proteome digestion and provide a coherent picture of secondary structure of
+proteins.")
     (license license:gpl3+)))
 
 (define-public r-ypr
@@ -227,10 +228,42 @@ or just large (trophy) individuals.")
     (description
      "Semiparametric modeling of lifetime data with crossing survival curves via Yang
 and Prentice model with piecewise exponential baseline distribution.  Details
-about the model can be found in Demarqui and Mayrink (2019) <arXiv:1910.02406>.
-Model fitting carried out via likelihood-based and Bayesian approaches.  The
-package also provides point and interval estimation for the crossing survival
-times.")
+about the model can be found in Demarqui and Mayrink (2019)
+@code{<arXiv:1910.02406>.} Model fitting carried out via likelihood-based and
+Bayesian approaches.  The package also provides point and interval estimation
+for the crossing survival times.")
+    (license license:gpl2+)))
+
+(define-public r-ypmodelphreg
+  (package
+    (name "r-ypmodelphreg")
+    (version "1.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "YPmodelPhreg" version))
+              (sha256
+               (base32
+                "1bgzibrqdwsy93zscffmbjgxnnl3axip9l4amfp0g5517p7i78hp"))))
+    (properties `((upstream-name . "YPmodelPhreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=YPmodelPhreg")
+    (synopsis
+     "The Short-Term and Long-Term Hazard Ratio Model with Proportional Adjustment")
+    (description
+     "This package provides covariate-adjusted comparison of two groups of right
+censored data, where the binary group variable has separate short-term and
+long-term effects on the hazard function, while effects of covariates such as
+age, blood pressure, etc.  are proportional on the hazard.  The model was
+studied in Yang and Prentice (2015) <doi:10.1002/sim.6453> and it extends the
+two sample version of the short-term and long-term hazard ratio model proposed
+in Yang and Prentice (2005) <doi:10.1093/biomet/92.1.1>.  The model extends the
+usual Cox proportional hazards model to allow more flexible hazard ratio
+patterns, such as gradual onset of effect, diminishing effect, and crossing
+hazard or survival functions.  This package provides the following: 1) point
+estimates and confidence intervals for model parameters; 2) point estimate and
+confidence interval of the average hazard ratio; and 3) plots of estimated
+hazard ratio function with point-wise and simultaneous confidence bands.")
     (license license:gpl2+)))
 
 (define-public r-ypmodel
@@ -320,7 +353,7 @@ stopping boundaries is established in Yang (2018 <doi:10.1002/sim.7958>).")
      "Semiparametric modeling of lifetime data with crossing survival curves via Yang
 and Prentice model with baseline hazard/odds modeled with Bernstein polynomials.
  Details about the model can be found in Demarqui et al. (2019)
-<arXiv:1910.04475>.  Model fitting can be carried out via both maximum
+@code{<arXiv:1910.04475>.} Model fitting can be carried out via both maximum
 likelihood and Bayesian approaches.  The package also provides point and
 interval estimation for the crossing survival times.")
     (license license:gpl2+)))
@@ -705,8 +738,9 @@ sentences.")
     (synopsis "Companion to the e-Book \"YaRrr!: The Pirate's Guide to R\"")
     (description
      "This package contains a mixture of functions and data sets referred to in the
-introductory e-book \"YaRrr!: The Pirate's Guide to R\".  The latest version of
-the e-book is available for free at <https://www.thepiratesguidetor.com>.")
+introductory e-book @code{\"YaRrr!:} The Pirate's Guide to R\".  The latest
+version of the e-book is available for free at
+<https://www.thepiratesguidetor.com>.")
     (license license:gpl2)))
 
 (define-public r-yarr
@@ -759,13 +793,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "0.10.21")
+    (version "0.10.28")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "yamlet" version))
               (sha256
                (base32
-                "0s5p0rr6dnfh805h2s87v2s164vw35bg2mvq5vbb9b0g82cc9hb8"))))
+                "122rl8fzdpd7dqzjcdjqahkp5fw19kxf5gji6hia819qhblbik2h"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -789,8 +823,7 @@ packages taxlist and vegtable'.")
 Supports compact syntax for creating, modifying, viewing, exporting, importing,
 displaying, and plotting metadata coded as column attributes.  The yamlet
 dialect is valid YAML with defaults and conventions chosen to improve
-readability.  See ?yamlet, ?decorate.data.frame and ?modify.default.  See
-?read_yamlet ?write_yamlet, ?io_csv, and ?ggplot.decorated.")
+readability.  See ?yamlet, ?decorate, ?modify, ?io_csv, and ?ggplot.decorated.")
     (license license:gpl3)))
 
 (define-public r-yaletoolkit

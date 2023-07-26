@@ -7,10 +7,13 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -94,8 +97,8 @@ distributions, and generic functions for residual and model diagnostics.")
     (home-page "https://cran.r-project.org/package=jvnVaR")
     (synopsis "Value at Risk")
     (description
-     "Many method to compute, predict and back-test VaR. For more detail, see the
-report: Value at Risk <researchgate.net>.")
+     "Many method to compute, predict and back-test @code{VaR.} For more detail, see
+the report: Value at Risk <researchgate.net>.")
     (license license:gpl3)))
 
 (define-public r-jvcoords
@@ -344,7 +347,7 @@ your document into the body of the HTML. Many prominent email clients require
 integrated styles in HTML email; otherwise a received HTML email will be
 displayed without any styling.  This package will quickly and precisely perform
 these CSS transformations when given HTML text and it does so by using the
-JavaScript juice library.")
+@code{JavaScript} juice library.")
     (license license:expat)))
 
 (define-public r-juicr
@@ -409,13 +412,13 @@ cycles, optimal interest rate, and recession forecasts.")
 (define-public r-jtools
   (package
     (name "r-jtools")
-    (version "2.2.1")
+    (version "2.2.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jtools" version))
               (sha256
                (base32
-                "1z44rdywbaks471x8z36v3c0ydchycgksgxj9m408bbncb79y3n3"))))
+                "1fcpsh9kdr83ngxab6y9b00ridsz764qj3rdlc3dcmqbgas6m8vr"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -504,25 +507,25 @@ response curves.")
     (synopsis "Estimate Parameters of the Best-Fitting JohnsonSU Distribution")
     (description
      "Uses least squares optimisation to estimate the parameters of the best-fitting
-JohnsonSU distribution for a given dataset, with the possibility of the
-distributions corresponding to the limiting cases of the JohnsonSU distribution.
- The code for the Golden Section Search used in the optimisation has been
-adapted from E. Cai.  This package has been created as an extension of my
-Master's thesis.  E. Cai (2013, \"Scripts and Functions: Using R to Implement the
-Golden Section Search Method for Numerical Optimization\",
+@code{JohnsonSU} distribution for a given dataset, with the possibility of the
+distributions corresponding to the limiting cases of the @code{JohnsonSU}
+distribution.  The code for the Golden Section Search used in the optimisation
+has been adapted from E. Cai.  This package has been created as an extension of
+my Master's thesis.  E. Cai (2013, \"Scripts and Functions: Using R to Implement
+the Golden Section Search Method for Numerical Optimization\",
 <https://chemicalstatistician.wordpress.com/2013/04/22/using-r-to-implement-the-golden-bisection-method/>).")
     (license license:gpl3+)))
 
 (define-public r-jstreer
   (package
     (name "r-jstreer")
-    (version "2.3.1")
+    (version "2.3.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jsTreeR" version))
               (sha256
                (base32
-                "0502lphkq8axl9k89hnqjcsnppfxscdz8mm725kssk4d3bg8dgmy"))))
+                "0kxjh95habvfn0y4dv003wlvng3r8ljmic7q5iz8110rlf0m83l0"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyace
@@ -541,12 +544,13 @@ Golden Section Search Method for Numerical Optimization\",
     (description
      "This package creates interactive trees that can be included in Shiny apps and R
 markdown documents.  A tree allows to represent hierarchical data (e.g. the
-contents of a directory).  Similar to the shinyTree package but offers more
-features and options, such as the grid extension, restricting the drag-and-drop
-behavior, and settings for the search functionality.  It is possible to attach
-some data to the nodes of a tree and then to get these data in Shiny when a node
-is selected.  Also provides a Shiny gadget allowing to manipulate one or more
-folders, and a Shiny module allowing to navigate in the server side file system.")
+contents of a directory).  Similar to the @code{shinyTree} package but offers
+more features and options, such as the grid extension, restricting the
+drag-and-drop behavior, and settings for the search functionality.  It is
+possible to attach some data to the nodes of a tree and then to get these data
+in Shiny when a node is selected.  Also provides a Shiny gadget allowing to
+manipulate one or more folders, and a Shiny module allowing to navigate in the
+server side file system.")
     (license license:gpl3)))
 
 (define-public r-jstree
@@ -566,7 +570,7 @@ folders, and a Shiny module allowing to navigate in the server side file system.
     (home-page "https://github.com/yonicd/jsTree")
     (synopsis "Create Interactive Trees with the 'jQuery' 'jsTree' Plugin")
     (description
-     "Create and customize interactive trees using the jQuery jsTree
+     "Create and customize interactive trees using the @code{jQuery} @code{jsTree}
 <https://www.jstree.com/> plugin library and the htmlwidgets package.  These
 trees can be used directly from the R console, from RStudio', in Shiny apps and
 R Markdown documents.")
@@ -656,9 +660,10 @@ survey-weighted Cox model results for publication.")
     (synopsis
      "Joint Sparse Optimization via Proximal Gradient Method for Cell Fate Conversion")
     (description
-     "Implementation of joint sparse optimization (JSparO) to infer the gene
+     "Implementation of joint sparse optimization @code{(JSparO)} to infer the gene
 regulatory network for cell fate conversion.  The proximal gradient method is
-implemented to solve different low-order regularization models for JSparO.")
+implemented to solve different low-order regularization models for
+@code{JSparO.}")
     (license license:gpl3+)))
 
 (define-public r-jsonvalidate
@@ -764,8 +769,8 @@ provides RStudio addins for the same purpose.")
      "JSON-LD is a light-weight syntax for expressing linked data.  It is primarily
 intended for web-based programming environments, interoperable web services and
 for storing linked data in JSON-based databases.  This package provides bindings
-to the JavaScript library for converting, expanding and compacting JSON-LD
-documents.")
+to the @code{JavaScript} library for converting, expanding and compacting
+JSON-LD documents.")
     (license license:bsd-3)))
 
 (define-public r-json64
@@ -792,18 +797,18 @@ into a radix-64 representation, used when there is a need to encode binary data
 that needs to be stored and transferred over media that are designed to deal
 with textual data, ensuring that the data will remain intact and without
 modification during transport.
-<https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding>
-On the other side, JSON (JavaScript Object Notation) is a lightweight
+@code{<https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding>}
+On the other side, JSON @code{(JavaScript} Object Notation) is a lightweight
 data-interchange format.  Easy to read, write, parse and generate.  It is based
-on a subset of the JavaScript Programming Language.  JSON is a text format that
-is completely language independent but uses conventions that are familiar to
-programmers of the C-family of languages, including C, C++, C#, Java,
-JavaScript, Perl, Python, and many others.  JSON structure is built around
-name:value pairs and ordered list of values. <https://www.json.org> The first
-function, j_encode(), let you transform a data.frame or list to a base64 encoded
-JSON (or JSON string).  The j_decode() function takes a base64 string (could be
-an encoded JSON) and transform it to a data.frame (or list, depending of the
-JSON structure).")
+on a subset of the @code{JavaScript} Programming Language.  JSON is a text
+format that is completely language independent but uses conventions that are
+familiar to programmers of the C-family of languages, including C, C++, C#,
+Java, @code{JavaScript,} Perl, Python, and many others.  JSON structure is built
+around name:value pairs and ordered list of values. <https://www.json.org> The
+first function, j_encode(), let you transform a data.frame or list to a base64
+encoded JSON (or JSON string).  The j_decode() function takes a base64 string
+(could be an encoded JSON) and transform it to a data.frame (or list, depending
+of the JSON structure).")
     (license license:expat)))
 
 (define-public r-json2args
@@ -828,7 +833,8 @@ contains specifications on these keyword arguments, which are then passed as
 input to containerized R tools in the [tool-runner
 framework](<https://github.com/hydrocode-de/tool-runner>).  A template for a
 containerized R tool, which can be used as a basis for developing new tools, is
-available at the following URL: <https://github.com/VForWaTer/tool_template_r>.")
+available at the following URL:
+@code{<https://github.com/VForWaTer/tool_template_r>.}")
     (license license:gpl3)))
 
 (define-public r-jsmodule
@@ -971,8 +977,40 @@ tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
     (home-page "https://github.com/stla/jshintr")
     (synopsis "Lint 'JavaScript' Files")
     (description
-     "Allow to run jshint on JavaScript files with a R command or a RStudio addin.
-The report appears in the RStudio viewer pane.")
+     "Allow to run jshint on @code{JavaScript} files with a R command or a RStudio
+addin.  The report appears in the RStudio viewer pane.")
+    (license license:gpl3)))
+
+(define-public r-jsdm
+  (package
+    (name "r-jsdm")
+    (version "0.2.6")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jSDM" version))
+              (sha256
+               (base32
+                "1rqy6xh6qhvmfgjnjlbkq71dr6c0fdwddvs7cbvv1p5qvf12zhx9"))))
+    (properties `((upstream-name . "jSDM")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-stringi
+                             r-rcppgsl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-foreach
+                             r-doparallel
+                             r-corrplot
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ecology.ghislainv.fr/jSDM/")
+    (synopsis "Joint Species Distribution Models")
+    (description
+     "Fits joint species distribution models @code{('jSDM')} in a hierarchical
+Bayesian framework (Warton and al.  2015 <doi:10.1016/j.tree.2015.09.007>).  The
+Gibbs sampler is written in C++'.  It uses Rcpp', Armadillo and GSL to maximize
+computation efficiency.")
     (license license:gpl3)))
 
 (define-public r-jscore
@@ -994,7 +1032,7 @@ The report appears in the RStudio viewer pane.")
      "The jscore() function in the package calculates the J-Score metric between two
 clustering assignments.  The score is designed to address some problems with
 existing common metrics such as problem of matching.  The details of J-score is
-described in Ahmadinejad and Liu. (2021) <arXiv:2109.01306>.")
+described in Ahmadinejad and Liu. (2021) @code{<arXiv:2109.01306>.}")
     (license license:expat)))
 
 (define-public r-jsconsole
@@ -1013,9 +1051,9 @@ described in Ahmadinejad and Liu. (2021) <arXiv:2109.01306>.")
     (home-page "https://github.com/stla/JSconsole")
     (synopsis "'RStudio' Addin to Send 'JavaScript' Code to the 'V8' Console")
     (description
-     "This package provides a RStudio addin to send some JavaScript code to the V8
-console.  The user can send an entire JavaScript file or only some selected
-lines.  This is useful to test the code.")
+     "This package provides a RStudio addin to send some @code{JavaScript} code to the
+V8 console.  The user can send an entire @code{JavaScript} file or only some
+selected lines.  This is useful to test the code.")
     (license license:gpl3)))
 
 (define-public r-js
@@ -1035,9 +1073,9 @@ lines.  This is useful to test the code.")
     (home-page "https://github.com/jeroen/js")
     (synopsis "Tools for Working with JavaScript in R")
     (description
-     "This package provides a set of utilities for working with JavaScript syntax in
-R. Includes tools to parse, tokenize, compile, validate, reformat, optimize and
-analyze JavaScript code.")
+     "This package provides a set of utilities for working with @code{JavaScript}
+syntax in R. Includes tools to parse, tokenize, compile, validate, reformat,
+optimize and analyze @code{JavaScript} code.")
     (license license:expat)))
 
 (define-public r-jrvfinance
@@ -1096,6 +1134,54 @@ present category curves, as well as information, reliability and standard error
 functions.")
     (license license:gpl3)))
 
+(define-public r-jrsicklsnmf
+  (package
+    (name "r-jrsicklsnmf")
+    (version "1.2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jrSiCKLSNMF" version))
+              (sha256
+               (base32
+                "1ai3maxl1gmgr9bvc813xnfz5lk9kgzm6a46p8iidjpnv5p42c4v"))))
+    (properties `((upstream-name . "jrSiCKLSNMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-scran
+                             r-rlang
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbapply
+                             r-matrix
+                             r-mass
+                             r-kknn
+                             r-irlba
+                             r-igraph
+                             r-ggplot2
+                             r-foreach
+                             r-factoextra
+                             r-data-table
+                             r-clvalid
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=jrSiCKLSNMF")
+    (synopsis "Multimodal Single-Cell Omics Dimensionality Reduction")
+    (description
+     "This package provides methods to perform Joint graph Regularized Single-Cell
+Kullback-Leibler Sparse Non-negative Matrix Factorization @code{('jrSiCKLSNMF',}
+pronounced \"junior sickles NMF\") on quality controlled single-cell multimodal
+omics count data. @code{jrSiCKLSNMF} specifically deals with dual-assay
+@code{scRNA-seq} and @code{scATAC-seq} data.  This package contains functions to
+extract meaningful latent factors that are shared across omics modalities.
+These factors enable accurate cell-type clustering and facilitate
+visualizations.  Methods for pre-processing, clustering, and mini-batch updates
+and other adaptations for larger datasets are also included.  For further
+details on the methods used in this package please see Ellis, Roy, and Datta
+(2023) <doi:10.3389/fgene.2023.1179439>.")
+    (license license:gpl3)))
+
 (define-public r-jrich
   (package
     (name "r-jrich")
@@ -1143,7 +1229,7 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
     (home-page "https://github.com/anders-biostat/jrc")
     (synopsis "Exchange Commands Between R and 'JavaScript'")
     (description
-     "An httpuv based bridge between R and JavaScript'.  Provides an easy way to
+     "An httpuv based bridge between R and @code{JavaScript'.} Provides an easy way to
 exchange commands and data between a web page and a currently running R session.")
     (license license:gpl3)))
 
@@ -1182,13 +1268,13 @@ Bootstrap.")
 (define-public r-jpstat
   (package
     (name "r-jpstat")
-    (version "0.3.3")
+    (version "0.4.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jpstat" version))
               (sha256
                (base32
-                "04dhra5vkyji96ipghi0w2pmg344sirgxmqndiifa2mvfdbzf84w"))))
+                "1vzqipxk019f9chm9nxcsifiv3i2cmqvwgyx45zrh2cxsrn8bhvk"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1370,7 +1456,7 @@ flexibility of `dplyr`, and the diagnosis and features of the `merge` command in
     (synopsis "Implements Under/Oversampling for Probability Estimation")
     (description
      "This package implements under/oversampling for probability estimation.  To be
-used with machine learning methods such as AdaBoost, random forests, etc.")
+used with machine learning methods such as @code{AdaBoost,} random forests, etc.")
     (license license:expat)))
 
 (define-public r-journalabbr
@@ -1399,9 +1485,9 @@ used with machine learning methods such as AdaBoost, random forests, etc.")
 file journal abbreviation is not detailed enough, the journalabbr package only
 abbreviates the journal field of Bib file, and then outputs a new Bib file for
 generating reference format with journal abbreviation on other software (such as
-texstudio').  The abbreviation table is from JabRef'.  At the same time, Shiny
-application is provided to generate thebibliography', a reference format that
-can be directly used for latex paper writing based on Rmd files.")
+texstudio').  The abbreviation table is from @code{JabRef'.} At the same time,
+Shiny application is provided to generate thebibliography', a reference format
+that can be directly used for latex paper writing based on Rmd files.")
     (license license:gpl3+)))
 
 (define-public r-jot
@@ -1449,8 +1535,8 @@ version histories.")
      "Read and write JSON Web Keys (JWK, rfc7517), generate and verify JSON Web
 Signatures (JWS, rfc7515) and encode/decode JSON Web Tokens (JWT, rfc7519).
 These standards provide modern signing and encryption formats that are natively
-supported by browsers via the JavaScript WebCryptoAPI, and used by services like
-OAuth 2.0, LetsEncrypt, and Github Apps.")
+supported by browsers via the @code{JavaScript} @code{WebCryptoAPI,} and used by
+services like OAuth 2.0, @code{LetsEncrypt,} and Github Apps.")
     (license license:expat)))
 
 (define-public r-josaplay
@@ -1519,8 +1605,8 @@ vignette further explains the use of the implemented functions.")
      "This package provides a Jordan algebra is an algebraic object originally
 designed to study observables in quantum mechanics.  Jordan algebras are
 commutative but non-associative; they satisfy the Jordan identity.  The package
-follows the ideas and notation of K. McCrimmon (2004, ISBN:0-387-95447-3) \"A
-Taste of Jordan Algebras\".")
+follows the ideas and notation of K. @code{McCrimmon} (2004, ISBN:0-387-95447-3)
+\"A Taste of Jordan Algebras\".")
     (license license:gpl2+)))
 
 (define-public r-jops
@@ -1578,13 +1664,13 @@ Marx (2021, ISBN:978-1108482950).")
     (home-page "http://github.com/yvonneglanville/joinXL")
     (synopsis "Perform Joins or Minus Queries on 'Excel' Files")
     (description
-     "This package performs Joins and Minus Queries on Excel Files fulljoinXL() Merges
-all rows of 2 Excel files based upon a common column in the files.
-innerjoinXL() Merges all rows from base file and join file when the join
-condition is met.  leftjoinXL() Merges all rows from the base file, and all rows
-from the join file if the join condition is met.  rightjoinXL() Merges all rows
-from the join file, and all rows from the base file if the join condition is
-met.  minusXL() Performs 2 operations source-minus-target and
+     "This package performs Joins and Minus Queries on Excel Files @code{fulljoinXL()}
+Merges all rows of 2 Excel files based upon a common column in the files.
+@code{innerjoinXL()} Merges all rows from base file and join file when the join
+condition is met. @code{leftjoinXL()} Merges all rows from the base file, and
+all rows from the join file if the join condition is met. @code{rightjoinXL()}
+Merges all rows from the join file, and all rows from the base file if the join
+condition is met. @code{minusXL()} Performs 2 operations source-minus-target and
 target-minus-source If the files are identical all output files will be empty.
 Choose two Excel files via a dialog box, and then follow prompts at the console
 to choose a base or source file and columns to merge or minus on.")
@@ -1619,9 +1705,9 @@ tuning parameters in existing methods.  Post-matching and/or weighting plots can
 also be used to visualize and assess the quality of the observational study
 design.  The method motivation and derivation is presented in \"Using Joint
 Variable Importance Plots to Prioritize Variables in Assessing the Impact of
-Glyburide on Adverse Birth Outcomes\" by Liao et al. (2023) <arXiv:2301.09754>.
-See the package paper by Liao and Pimentel (2023) <arxiv:2302.10367> for a
-beginner friendly user introduction.")
+Glyburide on Adverse Birth Outcomes\" by Liao et al. (2023)
+@code{<arXiv:2301.09754>.} See the package paper by Liao and Pimentel (2023)
+<arxiv:2302.10367> for a beginner friendly user introduction.")
     (license license:expat)))
 
 (define-public r-jointseg
@@ -1851,8 +1937,8 @@ generalisation (Rauschenberger 2021 <doi:10.1093/bioinformatics/btab576>).  For
 positively correlated outcomes, a single multivariate regression is typically
 more predictive than multiple univariate regressions.  Includes functions for
 model fitting, extracting coefficients, outcome prediction, and performance
-measurement.  If required, install MRCE or remMap from GitHub
-(<https://github.com/cran/MRCE>, <https://github.com/cran/remMap>).")
+measurement.  If required, install MRCE or @code{remMap} from @code{GitHub}
+(<https://github.com/cran/MRCE>, @code{<https://github.com/cran/remMap>).}")
     (license license:gpl3)))
 
 (define-public r-joinerml
@@ -1947,7 +2033,7 @@ Research Council (Grant numbers G0400615 and MR/M013227/1).")
     (home-page "https://cran.r-project.org/package=JoF")
     (synopsis "Modelling and Simulating Judgments of Frequency")
     (description
-     "In a typical experiment for the intuitive judgment of frequencies (JoF)
+     "In a typical experiment for the intuitive judgment of frequencies @code{(JoF)}
 different stimuli with different frequencies are presented.  The participants
 consider these stimuli with a constant duration and give a judgment of
 frequency.  These judgments can be simulated by formal models: PASS 1 and PASS 2
@@ -2009,16 +2095,16 @@ RStudio Addins can be used to run selected code as a job.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.3.5")
+    (version "0.3.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmvReadWrite" version))
               (sha256
                (base32
-                "19dmz26scndfdwsn7zfpwbw9qdnxmh3b2nd2s67kvn1l5ranlhd8"))))
+                "0s12llrw2c8xij9spd5xkg51x55h9663g1nw5kn4s16pfbgzccjw"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip r-rjson))
+    (propagated-inputs (list r-zip r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://sjentsch.github.io/jmvReadWrite/")
     (synopsis "Read and Write 'jamovi' Files ('.omv')")
@@ -2027,7 +2113,7 @@ RStudio Addins can be used to run selected code as a job.")
 aims to make statistical analyses easy and intuitive.  jamovi produces syntax
 that can directly be used in R (in connection with the R-package jmv').  Having
 import / export routines for the data files jamovi produces ('.omv') permits an
-easy transfer of analyses between jamovi and R.")
+easy transfer of data and analyses between jamovi and R.")
     (license license:agpl3)))
 
 (define-public r-jmvcore
@@ -2162,9 +2248,9 @@ triangular distributions.  Performs power calculations for the binomial test.")
      "Time Series Analysis Toolkit Based on Symbolic Aggregate Discretization, i.e. SAX")
     (description
      "This package implements time series z-normalization, SAX, HOT-SAX, VSM, SAX-VSM,
-RePair, and RRA algorithms facilitating time series motif (i.e., recurrent
-pattern), discord (i.e., anomaly), and characteristic pattern discovery along
-with interpretable time series classification.")
+@code{RePair,} and RRA algorithms facilitating time series motif (i.e.,
+recurrent pattern), discord (i.e., anomaly), and characteristic pattern
+discovery along with interpretable time series classification.")
     (license license:gpl2)))
 
 (define-public r-jmisc
@@ -2205,6 +2291,42 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
 (2018) <doi:10.1073/pnas.1715593115>.")
     (license license:gpl2+)))
 
+(define-public r-jmh
+  (package
+    (name "r-jmh")
+    (version "1.0.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "JMH" version))
+              (sha256
+               (base32
+                "0085ka230hz9qxl7r907mwny9m5hdd15wnw7vy9j3z9c2lv2nhpb"))))
+    (properties `((upstream-name . "JMH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-statmod
+                             r-rcppeigen
+                             r-rcpp
+                             r-nlme
+                             r-mass
+                             r-dplyr
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=JMH")
+    (synopsis
+     "Joint Model of Heterogeneous Repeated Measures and Survival Data")
+    (description
+     "Maximum likelihood estimation for the semi-parametric joint modeling of
+competing risks and longitudinal data in the presence of heterogeneous
+within-subject variability, proposed by Li and colleagues (2023)
+@code{<arXiv:2301.06584>.} The proposed method models the within-subject
+variability of the biomarker and associates it with the risk of the competing
+risks event.  The time-to-event data is modeled using a (cause-specific) Cox
+proportional hazards regression model with time-fixed covariates.  The
+longitudinal outcome is modeled using a mixed-effects location and scale model.
+The association is captured by shared random effects.  The model is estimated
+using an Expectation Maximization algorithm.")
+    (license license:gpl3+)))
+
 (define-public r-jmetrik
   (package
     (name "r-jmetrik")
@@ -2220,15 +2342,15 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
     (home-page "https://cran.r-project.org/package=jmetrik")
     (synopsis "Tools for Interacting with 'jMetrik'")
     (description
-     "The main purpose of this package is to make it easy for userR's to interact with
-jMetrik an open source application for psychometric analysis.  For example it
-allows useR's to write data frames to file in a format that can be used by
-jMetrik'.  It also allows useR's to read *.jmetrik files (e.g. output from an
-analysis) for follow-up analysis in R. The *.jmetrik format is a flat file that
-includes a multiline header and the data as comma separated values.  The header
-includes metadata about the file and one row per variable with the following
-information in each row: variable name, data type, item scoring, special data
-codes, and variable label.")
+     "The main purpose of this package is to make it easy for @code{userR's} to
+interact with @code{jMetrik} an open source application for psychometric
+analysis.  For example it allows @code{useR's} to write data frames to file in a
+format that can be used by @code{jMetrik'.} It also allows @code{useR's} to read
+*.jmetrik files (e.g. output from an analysis) for follow-up analysis in R. The
+*.jmetrik format is a flat file that includes a multiline header and the data as
+comma separated values.  The header includes metadata about the file and one row
+per variable with the following information in each row: variable name, data
+type, item scoring, special data codes, and variable label.")
     (license license:gpl3+)))
 
 (define-public r-jmdesign
@@ -2297,7 +2419,7 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
      "Fit joint mean-covariance models for longitudinal data.  The models and their
 components are represented using S4 classes and methods.  The core computational
 algorithms are implemented using the Armadillo C++ library for numerical linear
-algebra and RcppArmadillo glue.")
+algebra and @code{RcppArmadillo} glue.")
     (license license:gpl2+)))
 
 (define-public r-jmbig
@@ -2340,18 +2462,19 @@ medical and health sciences.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.4-0")
+    (version "0.4-5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JMbayes2" version))
               (sha256
                (base32
-                "0az2isk2kjjg283icb47v29hg7rrl3ab90qcl9r2pkjhy6q7yis4"))))
+                "0qdfp3r7wfy955f956jhryvxbnnw2zrnkqq931191z2v0xmird97"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
+                             r-parallelly
                              r-nlme
                              r-matrixstats
                              r-gridextra
@@ -2403,13 +2526,13 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
 (define-public r-jmatrix
   (package
     (name "r-jmatrix")
-    (version "1.1")
+    (version "1.4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jmatrix" version))
               (sha256
                (base32
-                "1rww7fji1angch5az9cs599fii96189p9f92s8h4fpw54snz2hrw"))))
+                "0ydy93bfgci11dam45lqpskj4pdlwjk4qq57g1f4352558nh9hkp"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))
@@ -2455,36 +2578,6 @@ matrices of any standard data type.")
 data.")
     (license license:gpl2+)))
 
-(define-public r-jlsm
-  (package
-    (name "r-jlsm")
-    (version "0.1.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "jlsm" version))
-              (sha256
-               (base32
-                "01wmm7555v31kbmy6lcv9j0rr0cav5vsyhl09l7zh0qm6m3ddw7p"))))
-    (properties `((upstream-name . "jlsm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-proc
-                             r-network
-                             r-mvtnorm
-                             r-matrixcalc
-                             r-matrix
-                             r-mass
-                             r-lvm4net
-                             r-expm
-                             r-ellipse
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=jlsm")
-    (synopsis
-     "Joint Latent Space Model for Social Networks with Multivariate Attributes")
-    (description
-     "Joint latent space models for social networks and multivariate attributes using
-a fast inference approach (Wang et al. (2019) <arXiv:1910.12128>).")
-    (license license:gpl2+)))
-
 (define-public r-jlpm
   (package
     (name "r-jlpm")
@@ -2506,8 +2599,38 @@ a fast inference approach (Wang et al. (2019) <arXiv:1910.12128>).")
 data are handled in latent process models for continuous (Gaussian or
 curvilinear) and ordinal outcomes while proportional hazard models are used for
 the survival part.  We propose a frequentist approach using maximum likelihood
-estimation.  See Saulnier et al, 2021 <arXiv:2110.02612>.")
+estimation.  See Saulnier et al, 2021 @code{<arXiv:2110.02612>.}")
     (license license:gpl2+)))
+
+(define-public r-jlmerclusterperm
+  (package
+    (name "r-jlmerclusterperm")
+    (version "1.0.3")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "jlmerclusterperm" version))
+              (sha256
+               (base32
+                "1l27513896mzz6l88pzqffvj71sivxvswqgdrcpgrk1h8w84h658"))))
+    (properties `((upstream-name . "jlmerclusterperm")))
+    (build-system r-build-system)
+    (inputs (list julia))
+    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yjunechoe/jlmerclusterperm")
+    (synopsis
+     "Cluster-Based Permutation Analysis for Densely Sampled Time Data")
+    (description
+     "An implementation of fast cluster-based permutation analysis (CPA) for
+densely-sampled time data developed in Maris & Oostenveld, 2007
+<doi:10.1016/j.jneumeth.2007.03.024>.  Supports (generalized, mixed-effects)
+regression models for the calculation of timewise statistics.  Provides both a
+wholesale and a piecemeal interface to the CPA procedure with an emphasis on
+interpretability and diagnostics.  Integrates Julia libraries
+@code{MixedModels.jl} and GLM.jl for performance improvements, with additional
+functionalities for interfacing with Julia from R powered by the
+@code{JuliaConnectoR} package.")
+    (license license:expat)))
 
 (define-public r-jlctree
   (package
@@ -2530,7 +2653,7 @@ estimation.  See Saulnier et al, 2021 <arXiv:2110.02612>.")
 time-to-event and longitudinal data.  This approach looks for a tree-based
 partitioning such that within each estimated latent class defined by a terminal
 node, the time-to-event and longitudinal responses display a lack of
-association.  See Zhang and Simonoff (2018) <arXiv:1812.01774>.")
+association.  See Zhang and Simonoff (2018) @code{<arXiv:1812.01774>.}")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-jjb
@@ -2613,8 +2736,8 @@ such as variables, loops, conditions and inheritance.")
     (home-page "https://github.com/qinwf/jiebaRD/")
     (synopsis "Chinese Text Segmentation Data for jiebaR Package")
     (description
-     "jiebaR is a package for Chinese text segmentation, keyword extraction and speech
-tagging.  This package provides the data files required by jiebaR.")
+     "@code{jiebaR} is a package for Chinese text segmentation, keyword extraction and
+speech tagging.  This package provides the data files required by @code{jiebaR.}")
     (license license:expat)))
 
 (define-public r-jiebar
@@ -2654,7 +2777,7 @@ tagging.  This package provides the data files required by jiebaR.")
     (synopsis "Joint and Individual Regression")
     (description
      "This package implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen,
-D., & Liu, Y. (2022). <arXiv:2209.12388>], which solves the multi-group
+D., & Liu, Y. (2022). @code{<arXiv:2209.12388>],} which solves the multi-group
 regression problem.  The algorithm decomposes the responses from multiple groups
 into shared and group-specific components, which are driven by low-rank
 approximations of joint and individual structures from the covariates
@@ -2826,13 +2949,13 @@ Bacon (2004) <DOI:10.1002/9781119206309>.")
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.6.6")
+    (version "0.6.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jfa" version))
               (sha256
                (base32
-                "0zrr5bcjh56z11pwqjz99mf8l0fc6nav3g56y6an4r3bhjw90rf2"))))
+                "0ayir29lxj4kvqs7p78cma2ll46irkgf0x2j03iijv60pga2h0rb"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -2866,13 +2989,13 @@ for repeated values.")
 (define-public r-jewel
   (package
     (name "r-jewel")
-    (version "2.0.0")
+    (version "2.0.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jewel" version))
               (sha256
                (base32
-                "0js2pacdcddqwxz20hws5rrhc7s5zqls2hpfvg5inv88abkrkd17"))))
+                "0lj97bgqd2q3s2dcksn1nv4wwiw4ik9aimwa7kamfl0lmrlcz165"))))
     (properties `((upstream-name . "jewel")))
     (build-system r-build-system)
     (propagated-inputs (list r-smut
@@ -2981,19 +3104,19 @@ that take the form of graphs among entities.  Please run demo(jeek) to learn the
 basic functions provided by this package.  For further details, please read the
 original paper: Beilun Wang, Arshdeep Sekhon, Yanjun Qi \"A Fast and Scalable
 Joint Estimator for Integrating Additional Knowledge in Learning Multiple
-Related Sparse Gaussian Graphical Models\" (ICML 2018) <arXiv:1806.00548>.")
+Related Sparse Gaussian Graphical Models\" (ICML 2018) @code{<arXiv:1806.00548>.}")
     (license license:gpl2)))
 
 (define-public r-jds-rmd
   (package
     (name "r-jds-rmd")
-    (version "0.3.2")
+    (version "0.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jds.rmd" version))
               (sha256
                (base32
-                "0v874sxy4wyfmhby01zv53gdnzdfijmgpi83ppfy7nqkzy0b77zm"))))
+                "1ylpq3b6vqi8gj2q2vfkl9zshkwcn08mqms9rpvlwc34wrp09ian"))))
     (properties `((upstream-name . "jds.rmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-bookdown))
@@ -3134,13 +3257,13 @@ during the period considered for the analysis.  See Otero et al., (2017)
 (define-public r-jbrowser
   (package
     (name "r-jbrowser")
-    (version "0.9.1")
+    (version "0.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "JBrowseR" version))
               (sha256
                (base32
-                "08dqgi40l230cn0mp38zfcwv9fd5rawc8zmphf3klq5fkv861l7f"))))
+                "0siqg09lcjdkvqlywsp9fggn574f6yn207nda3q65n0p2xprl8ry"))))
     (properties `((upstream-name . "JBrowseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3207,8 +3330,8 @@ Rao (2016) <doi:10.5267/j.ijiec.2015.8.004> .")
     (synopsis "Java Graphics Device")
     (description
      "Graphics device routing all graphics commands to a Java program.  The actual
-functionality of the JavaGD depends on the Java-side implementation.  Simple AWT
-and Swing implementations are included.")
+functionality of the @code{JavaGD} depends on the Java-side implementation.
+Simple AWT and Swing implementations are included.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-jatsdecoder
@@ -3229,19 +3352,19 @@ and Swing implementations are included.")
     (description
      "This package provides a function collection to extract metadata, sectioned text
 and study characteristics from scientific articles in NISO-JATS format.
-Articles in PDF format can be converted to NISO-JATS with the Content ExtRactor
-and MINEr ('CERMINE', <https://github.com/CeON/CERMINE>).  For convenience, two
-functions bundle the extraction heuristics: JATSdecoder() converts
-NISO-JATS'-tagged XML files to a structured list with elements title, author,
-journal, history, DOI', abstract, sectioned text and reference list.
-study.character() extracts multiple study characteristics like number of
-included studies, statistical methods used, alpha error, power, statistical
-results, correction method for multiple testing, software used.  An estimation
-of the involved sample size is performed based on reports within the abstract
-and the reported degrees of freedom within statistical results.  In addition,
-the package contains some useful functions to process text (text2sentences(),
-text2num(), ngram(), strsplit2(), grep2()).  See BÃ¶schen, I. (2021)
-<doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
+Articles in PDF format can be converted to NISO-JATS with the Content
+@code{ExtRactor} and MINEr ('CERMINE',
+@code{<https://github.com/CeON/CERMINE>).} For convenience, two functions bundle
+the extraction heuristics: JATSdecoder() converts NISO-JATS'-tagged XML files to
+a structured list with elements title, author, journal, history, DOI', abstract,
+sectioned text and reference list.  study.character() extracts multiple study
+characteristics like number of included studies, statistical methods used, alpha
+error, power, statistical results, correction method for multiple testing,
+software used.  An estimation of the involved sample size is performed based on
+reports within the abstract and the reported degrees of freedom within
+statistical results.  In addition, the package contains some useful functions to
+process text (text2sentences(), text2num(), ngram(), strsplit2(), grep2()).  See
+BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
 <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 <doi:10.1038/s41598-022-27085-y>.")
     (license license:gpl3)))
@@ -3415,8 +3538,8 @@ sequence or in parallel.  Posterior distributions are automatically summarized
 (with the ability to exclude some monitored nodes if desired) and functions are
 available to generate figures based on the posteriors (e.g., predictive check
 plots, traceplots).  Function inputs, argument syntax, and output format are
-nearly identical to the R2WinBUGS'/'R2OpenBUGS packages to allow easy switching
-between MCMC samplers.")
+nearly identical to the @code{R2WinBUGS'/'R2OpenBUGS} packages to allow easy
+switching between MCMC samplers.")
     (license license:gpl3)))
 
 (define-public r-jagstargets
@@ -3477,12 +3600,12 @@ methodology, please refer to the documentation of targets
     (home-page "https://cran.r-project.org/package=jagshelper")
     (synopsis "Extracting and Visualizing Output from 'jagsUI'")
     (description
-     "Tools are provided to streamline Bayesian analyses in JAGS using the jagsUI
-package.  Included are functions for extracting output in simpler format,
-functions for streamlining assessment of convergence, and functions for
-producing summary plots of output.  Also included is a function that provides a
-simple template for running JAGS from R'.  Referenced materials can be found at
-<DOI:10.1214/ss/1177011136>.")
+     "This package provides tools are provided to streamline Bayesian analyses in JAGS
+using the @code{jagsUI} package.  Included are functions for extracting output
+in simpler format, functions for streamlining assessment of convergence, and
+functions for producing summary plots of output.  Also included is a function
+that provides a simple template for running JAGS from R'.  Referenced materials
+can be found at <DOI:10.1214/ss/1177011136>.")
     (license license:gpl2)))
 
 (define-public r-jaggr
@@ -3582,13 +3705,13 @@ Mainly as a programming example for teaching purposes.")
 (define-public r-jacobi
   (package
     (name "r-jacobi")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jacobi" version))
               (sha256
                (base32
-                "0w9gmfnwrp0b0xqrpxaq86c1x6867ry8i7xm33wwc8b1xmbcyqqk"))))
+                "1l2cmnd2z5a5308d5ri1bviyh8w41x2sg1gi8f79xghxwvf7djbp"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))
@@ -3737,6 +3860,7 @@ estimators.")
                 "1cslrl2cvcpi2kisb2plkz8c3wfxkbkf816nnyb06k4mv3gy4r5d"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
+    (inputs (list zlib))
     (propagated-inputs (list r-zlibbioc
                              r-rhtslib
                              r-rcppprogress
@@ -3751,41 +3875,40 @@ estimators.")
     (description
      "Simply and efficiently simulates (i) variants from reference genomes and (ii)
 reads from both Illumina <https://www.illumina.com/> and Pacific Biosciences
-(PacBio) <https://www.pacb.com/> platforms.  It can either read reference
+@code{(PacBio)} <https://www.pacb.com/> platforms.  It can either read reference
 genomes from FASTA files or simulate new ones.  Genomic variants can be
 simulated using summary statistics, phylogenies, Variant Call Format (VCF)
 files, and coalescent simulationsâthe latter of which can include selection,
 recombination, and demographic fluctuations.  jackalope can simulate single,
-paired-end, or mate-pair Illumina reads, as well as PacBio reads.  These
+paired-end, or mate-pair Illumina reads, as well as @code{PacBio} reads.  These
 simulations include sequencing errors, mapping qualities, multiplexing, and
 optical/polymerase chain reaction (PCR) duplicates.  Simulating Illumina
 sequencing is based on ART by Huang et al. (2012)
-<doi:10.1093/bioinformatics/btr708>.  PacBio sequencing simulation is based on
-SimLoRD by StÃ¶cker et al. (2016) <doi:10.1093/bioinformatics/btw286>.  All
-outputs can be written to standard file formats.")
+<doi:10.1093/bioinformatics/btr708>. @code{PacBio} sequencing simulation is
+based on @code{SimLoRD} by @code{StÃ¶cker} et al. (2016)
+<doi:10.1093/bioinformatics/btw286>.  All outputs can be written to standard
+file formats.")
     (license license:expat)))
 
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "5.1.0")
+    (version "5.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "jack" version))
               (sha256
                (base32
-                "16cgzfhzmn5cgsn1qh8q281dk0mz0a1c0y5vrrypypimr6wqdg43"))))
+                "0qxshhyrplq5bfgb1spjfh7iwazbjna5hv2rkn6fwbrpgvbc9jrg"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
     (inputs (list gmp))
     (propagated-inputs (list r-spray
-                             r-ryacas
                              r-rcpp
                              r-qspray
                              r-partitions
                              r-mvp
                              r-multicool
-                             r-juliaconnector
                              r-gmp
                              r-desctools
                              r-bh))

@@ -64,6 +64,31 @@ documentation is available at <https://developers.zoom.us/docs/api/>.  This
 package is not supported by Zoom (owner of the software).")
     (license license:cc0)))
 
+(define-public r-zooid
+  (package
+    (name "r-zooid")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "ZooID" version))
+              (sha256
+               (base32
+                "1i0kp5f4amczamajx5l56m63lmcgsjsvdakzncmllbsyg6nkqj0p"))))
+    (properties `((upstream-name . "ZooID")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ZooID")
+    (synopsis "Load, Segment and Classify Zooplankton Images")
+    (description
+     "This tool provides functions to load, segment and classify zooplankton images.
+The image processing algorithms and the machine learning classifiers in this
+package are (will be, since these have not been added yet) direct ports of an
+early python implementation that can be found at
+@code{<https://github.com/arickGrootveld/ZooID>.} The model weights and datasets
+(also not added yet) that are a part of this package can also be found at Arick
+Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
+<doi:10.5281/zenodo.7979996>.")
+    (license license:gpl3+)))
+
 (define-public r-zonohedra
   (package
     (name "r-zonohedra")
@@ -277,11 +302,11 @@ frequency distribution, Zipf's law.)")
     (description
      "Implementation of four extensions of the Zipf distribution: the Marshall-Olkin
 Extended Zipf (MOEZipf) PÃ©rez-Casany, M., & Casellas, A. (2013)
-<arXiv:1304.4540>, the Zipf-Poisson Extreme (Zipf-PE), the Zipf-Poisson Stopped
-Sum (Zipf-PSS) and the Zipf-Polylog distributions.  In log-log scale, the two
-first extensions allow for top-concavity and top-convexity while the third one
-only allows for top-concavity.  All the extensions maintain the linearity
-associated with the Zipf model in the tail.")
+@code{<arXiv:1304.4540>,} the Zipf-Poisson Extreme (Zipf-PE), the Zipf-Poisson
+Stopped Sum (Zipf-PSS) and the Zipf-Polylog distributions.  In log-log scale,
+the two first extensions allow for top-concavity and top-convexity while the
+third one only allows for top-concavity.  All the extensions maintain the
+linearity associated with the Zipf model in the tail.")
     (license license:gpl3)))
 
 (define-public r-zipfa
@@ -465,9 +490,9 @@ described in Garay et al. (2021) <doi:10.1007/978-3-030-82110-4_2>.")
     (synopsis "R Interface to Zillow Real Estate and Mortgage Data API")
     (description
      "Zillow, an online real estate company, provides real estate and mortgage data
-for the United States through a REST API. The ZillowR package provides an R
-function for each API service, making it easy to make API calls and process the
-response into convenient, R-friendly data structures.  See
+for the United States through a REST API. The @code{ZillowR} package provides an
+R function for each API service, making it easy to make API calls and process
+the response into convenient, R-friendly data structures.  See
 <https://www.zillow.com/howto/api/APIOverview.htm> for the Zillow API
 Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
 package is now deprecated as a result.")
@@ -564,19 +589,19 @@ dplyr or similar packages.")
     (description
      "The advent of genomic technologies has enabled the generation of two-dimensional
 or even multi-dimensional high-throughput data, e.g., monitoring multiple
-changes in gene expression in genome-wide siRNA screens across many different
-cell types (E Robert McDonald 3rd (2017) <doi: 10.1016/j.cell.2017.07.005> and
-Tsherniak A (2017) <doi: 10.1016/j.cell.2017.06.010>) or single cell
-transcriptomics under different experimental conditions.  We found that simple
-computational methods based on a single statistical criterion is no longer
-adequate for analyzing such multi-dimensional data.  We herein introduce
-ZetaSuite', a statistical package initially designed to score hits from
-two-dimensional RNAi screens.We also illustrate a unique utility of ZetaSuite in
-analyzing single cell transcriptomics to differentiate rare cells from damaged
-ones (Vento-Tormo R (2018) <doi: 10.1038/s41586-018-0698-6>).  In ZetaSuite', we
-have the following steps: QC of input datasets, normalization using
-Z-transformation, Zeta score calculation and hits selection based on defined
-Screen Strength.")
+changes in gene expression in genome-wide @code{siRNA} screens across many
+different cell types (E Robert @code{McDonald} 3rd (2017) <doi:
+10.1016/j.cell.2017.07.005> and Tsherniak A (2017) <doi:
+10.1016/j.cell.2017.06.010>) or single cell transcriptomics under different
+experimental conditions.  We found that simple computational methods based on a
+single statistical criterion is no longer adequate for analyzing such
+multi-dimensional data.  We herein introduce @code{ZetaSuite',} a statistical
+package initially designed to score hits from two-dimensional RNAi screens.We
+also illustrate a unique utility of @code{ZetaSuite} in analyzing single cell
+transcriptomics to differentiate rare cells from damaged ones (Vento-Tormo R
+(2018) <doi: 10.1038/s41586-018-0698-6>).  In @code{ZetaSuite',} we have the
+following steps: QC of input datasets, normalization using Z-transformation,
+Zeta score calculation and hits selection based on defined Screen Strength.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-zetadiv
@@ -855,13 +880,13 @@ the software).")
     (description
      "An implementation of z-curves - a method for estimating expected discovery and
 replicability rates on the bases of test-statistics of published studies.  The
-package provides functions for fitting the new density and EM version (BartoÅ¡ &
-Schimmack, 2020, <doi:10.31234/osf.io/urgtn>), censored observations, as well as
-the original density z-curve (Brunner & Schimmack, 2020,
-<doi:10.15626/MP.2018.874>).  Furthermore, the package provides summarizing and
-plotting functions for the fitted z-curve objects.  See the aforementioned
-articles for more information about the z-curves, expected discovery and
-replicability rates, validation studies, and limitations.")
+package provides functions for fitting the new density and EM version
+@code{(BartoÅ¡} & Schimmack, 2020, <doi:10.31234/osf.io/urgtn>), censored
+observations, as well as the original density z-curve (Brunner & Schimmack,
+2020, <doi:10.15626/MP.2018.874>).  Furthermore, the package provides
+summarizing and plotting functions for the fitted z-curve objects.  See the
+aforementioned articles for more information about the z-curves, expected
+discovery and replicability rates, validation studies, and limitations.")
     (license license:gpl3)))
 
 (define-public r-zctacrosswalk

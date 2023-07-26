@@ -7,10 +7,10 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages julia)
-  #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages java)
   #:use-module (gnu packages xml)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages julia)
+  #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (gnu packages perl)
@@ -62,7 +62,7 @@ likelihood for the 3PL, GPCM, and GRM; (2) parameter estimation using joint or
 marginal likelihood estimation method; (3) simulation of computerized adaptive
 testing using built-in or customized algorithms; (4) assembly and simulation of
 multistage testing.  The full documentation and tutorials are at
-<https://github.com/xluo11/xxIRT>.")
+@code{<https://github.com/xluo11/xxIRT>.}")
     (license license:gpl3+)))
 
 (define-public r-xwf
@@ -135,6 +135,33 @@ Currently it only contains a very efficient function of decoding HTML entities
 in character vectors by Rcpp routine.")
     (license license:expat)))
 
+(define-public r-xtune
+  (package
+    (name "r-xtune")
+    (version "2.0.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "xtune" version))
+              (sha256
+               (base32
+                "0k5cf7n84j73cdxzfr7ijjxc65h6lx6fjry81rsxa80fn0sn8qiz"))))
+    (properties `((upstream-name . "xtune")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-selectiveinference r-lbfgs r-glmnet r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JingxuanH/xtune")
+    (synopsis
+     "Regularized Regression with Feature-Specific Penalties Integrating External Information")
+    (description
+     "Extends standard penalized regression (Lasso, Ridge, and Elastic-net) to allow
+feature-specific shrinkage based on external information with the goal of
+achieving a better prediction accuracy and variable selection.  Examples of
+external information include the grouping of predictors, prior knowledge of
+biological importance, external p-values, function annotations, etc.  The choice
+of multiple tuning parameters is done using an Empirical Bayes approach.  A
+majorization-minimization algorithm is employed for implementation.")
+    (license license:expat)))
+
 (define-public r-xtranat
   (package
     (name "r-xtranat")
@@ -156,7 +183,7 @@ in character vectors by Rcpp routine.")
 metrics.  These measures of centrality and betweenness are particularly useful
 for the analysis of very dense weighted networks which include loops.
 Traditional measures do not work as well for those network characteristics.  The
-main reference is DePaolis at al (2022) <doi:10.1007/s41109-022-00519-2>.")
+main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.")
     (license license:gpl3)))
 
 (define-public r-xtermstyle
@@ -239,8 +266,8 @@ experiments, especially for ribosome from Mycobacterium tuberculosis.")
     (home-page "https://github.com/zhukovyuri/xSub")
     (synopsis "Cross-National Data on Sub-National Violence")
     (description
-     "Tools to download and merge data files on sub-national conflict, violence and
-protests from <http://www.x-sub.org>.")
+     "This package provides tools to download and merge data files on sub-national
+conflict, violence and protests from <http://www.x-sub.org>.")
     (license license:gpl3)))
 
 (define-public r-xsp
@@ -275,7 +302,7 @@ significance of the periodicity are calculated using the chi-square periodogram.
                 "0caci3mhqkl1bg1pzjhi22c431vgcy4ibsg2mg1p9d5c5pzwmak4"))))
     (properties `((upstream-name . "xslt")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list zlib libxml2))
     (propagated-inputs (list r-xml2 r-rcpp))
     (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=xslt")
@@ -361,15 +388,16 @@ form described in package XR and in the book \"Extending R\".")
 environmental scientists to study the environmental change for nearly a decade.
 However, a user-friendly, reliable, and robust platform to extract color-based
 statistics and time-series from a large stack of images is still lacking.  Here,
-we present an interactive open-source toolkit, called xROI', that facilitate the
-process time-series extraction and improve the quality of the final data.  xROI
-provides a responsive environment for scientists to interactively a) delineate
-regions of interest (ROI), b) handle field of view (FOV) shifts, and c) extract
-and export time series data characterizing image color (i.e.  red, green and
-blue channel digital numbers for the defined ROI).  Using xROI', user can detect
-FOV shifts without minimal difficulty.  The software gives user the opportunity
-to readjust the mask files or redraw new ones every time an FOV shift occurs.
-xROI helps to significantly improve data accuracy and continuity.")
+we present an interactive open-source toolkit, called @code{xROI',} that
+facilitate the process time-series extraction and improve the quality of the
+final data. @code{xROI} provides a responsive environment for scientists to
+interactively a) delineate regions of interest (ROI), b) handle field of view
+(FOV) shifts, and c) extract and export time series data characterizing image
+color (i.e.  red, green and blue channel digital numbers for the defined ROI).
+Using @code{xROI',} user can detect FOV shifts without minimal difficulty.  The
+software gives user the opportunity to readjust the mask files or redraw new
+ones every time an FOV shift occurs. @code{xROI} helps to significantly improve
+data accuracy and continuity.")
     (license license:agpl3)))
 
 (define-public r-xrnet
@@ -462,15 +490,15 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
     (home-page "https://github.com/holub008/xrf")
     (synopsis "eXtreme RuleFit")
     (description
-     "An implementation of the RuleFit algorithm as described in Friedman & Popescu
-(2008) <doi:10.1214/07-AOAS148>.  eXtreme Gradient Boosting ('XGBoost') is used
-to build rules, and glmnet is used to fit a sparse linear model on the raw and
-rule features.  The result is a model that learns similarly to a tree ensemble,
-while often offering improved interpretability and achieving improved scoring
-runtime in live applications.  Several algorithms for reducing rule complexity
-are provided, most notably hyperrectangle de-overlapping.  All algorithms scale
-to several million rows and support sparse representations to handle tens of
-thousands of dimensions.")
+     "An implementation of the @code{RuleFit} algorithm as described in Friedman &
+Popescu (2008) <doi:10.1214/07-AOAS148>. @code{eXtreme} Gradient Boosting
+('XGBoost') is used to build rules, and glmnet is used to fit a sparse linear
+model on the raw and rule features.  The result is a model that learns similarly
+to a tree ensemble, while often offering improved interpretability and achieving
+improved scoring runtime in live applications.  Several algorithms for reducing
+rule complexity are provided, most notably hyperrectangle de-overlapping.  All
+algorithms scale to several million rows and support sparse representations to
+handle tens of thousands of dimensions.")
     (license license:expat)))
 
 (define-public r-xray
@@ -489,9 +517,9 @@ thousands of dimensions.")
     (home-page "https://github.com/sicarul/xray/")
     (synopsis "X Ray Vision on your Datasets")
     (description
-     "Tools to analyze datasets previous to any statistical modeling.  Has various
-functions designed to find inconsistencies and understanding the distribution of
-the data.")
+     "This package provides tools to analyze datasets previous to any statistical
+modeling.  Has various functions designed to find inconsistencies and
+understanding the distribution of the data.")
     (license license:expat)))
 
 (define-public r-xr
@@ -515,46 +543,6 @@ evaluators and a combination of functions, classes and methods for
 communication.  Will be used through a specific language interface package.
 Described in the book \"Extending R\".")
     (license license:gpl2+)))
-
-(define-public r-xqtlbiolinks
-  (package
-    (name "r-xqtlbiolinks")
-    (version "1.4.2")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "xQTLbiolinks" version))
-              (sha256
-               (base32
-                "0s2zar4zav9a3q2w5cn915mr2k7mcd570fjaw0yj6q89c74mlw82"))))
-    (properties `((upstream-name . "xQTLbiolinks")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-summarizedexperiment
-                             r-stringr
-                             r-rmysql
-                             r-jsonlite
-                             r-iranges
-                             r-ggrepel
-                             r-ggplot2
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-dbi
-                             r-data-table
-                             r-curl
-                             r-cowplot
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dingruofan/xQTLbiolinks")
-    (synopsis
-     "Integrative Analysis of Quantitative Trait Locus Data of 'xQTL'")
-    (description
-     "Enables users-customized data retrieval, processing, analysis, and data
-visualization of molecular quantitative trait locus and gene expression data
-from public resources through the application programming interface
-<https://gtexportal.org/home/api-docs/index.html> of GTEx and
-<http://www.ebi.ac.uk/eqtl/api> of eQTL cagalogue'.")
-    (license license:gpl3+)))
 
 (define-public r-xpose4
   (package
@@ -622,13 +610,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.16")
+    (version "0.4.17")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xpose" version))
               (sha256
                (base32
-                "1lxfrmr051b5kzr7763lny3hwf4g6hhlqfib48yf8xhr587jwvv0"))))
+                "09c2l89gvlc8wm6i5ykkya5n2i4iifqfn30fymik6asl91q0n7vl"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -654,13 +642,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "xportr" version))
               (sha256
                (base32
-                "0dfa666mimva5gzzi9rwsah7i4p4l0ycbkzqcb4mrad5j4sbdm1j"))))
+                "02a6m3xcs5982vq58xysslv8hr624bkimigny2dv1x8a9jxc2xcc"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -670,6 +658,7 @@ graphics for data exploration and model diagnostics.")
                              r-readr
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-janitor
                              r-haven
                              r-glue
@@ -679,7 +668,8 @@ graphics for data exploration and model diagnostics.")
     (home-page "https://github.com/atorus-research/xportr")
     (synopsis "Utilities to Output CDISC SDTM/ADaM XPT Files")
     (description
-     "Tools to build CDISC compliant data sets and check for CDISC compliance.")
+     "This package provides tools to build CDISC compliant data sets and check for
+CDISC compliance.")
     (license license:expat)))
 
 (define-public r-xplortext
@@ -718,11 +708,11 @@ and agglomerative hierarchical clustering are available.  Chronologically
 constrained agglomerative hierarchical clustering enriched with
 labelled-by-words trees is offered.  Given a division of the corpus into parts,
 their characteristic words and documents are identified.  Further, accessing to
-FactoMineR functions is very easy.  Two of them are relevant in textual domain.
-MFA() addresses multiple lexical table allowing applications such as dealing
-with multilingual corpora as well as simultaneously analyzing both open-ended
-and closed questions in surveys.  See <http://xplortext.unileon.es> for
-examples.")
+@code{FactoMineR} functions is very easy.  Two of them are relevant in textual
+domain.  MFA() addresses multiple lexical table allowing applications such as
+dealing with multilingual corpora as well as simultaneously analyzing both
+open-ended and closed questions in surveys.  See <http://xplortext.unileon.es>
+for examples.")
     (license license:gpl2+)))
 
 (define-public r-xplorerr
@@ -741,9 +731,10 @@ examples.")
     (home-page "https://github.com/rsquaredacademy/xplorerr")
     (synopsis "Tools for Interactive Data Exploration")
     (description
-     "Tools for interactive data exploration built using shiny'.  Includes apps for
-descriptive statistics, visualizing probability distributions, inferential
-statistics, linear regression, logistic regression and RFM analysis.")
+     "This package provides tools for interactive data exploration built using shiny'.
+ Includes apps for descriptive statistics, visualizing probability
+distributions, inferential statistics, linear regression, logistic regression
+and RFM analysis.")
     (license license:expat)))
 
 (define-public r-xplain
@@ -1182,14 +1173,14 @@ other's coefficients unrealistically.")
     (description
      "This package provides a tool for non linear mapping (non linear regression)
 using a mixture of regression model and an inverse regression strategy.  The
-methods include the GLLiM model (see Deleforge et al (2015)
+methods include the @code{GLLiM} model (see Deleforge et al (2015)
 <DOI:10.1007/s11222-014-9461-5>) based on Gaussian mixtures and a robust version
-of GLLiM, named SLLiM (see Perthame et al (2016)
+of @code{GLLiM,} named @code{SLLiM} (see Perthame et al (2016)
 <https://hal.archives-ouvertes.fr/hal-01347455>) based on a mixture of
-Generalized Student distributions.  The methods also include BLLiM (see Devijver
-et al (2017) <arXiv:1701.07899>) which is an extension of GLLiM with a sparse
-block diagonal structure for large covariance matrices (particularly interesting
-for transcriptomic data).")
+Generalized Student distributions.  The methods also include @code{BLLiM} (see
+Devijver et al (2017) @code{<arXiv:1701.07899>)} which is an extension of
+@code{GLLiM} with a sparse block diagonal structure for large covariance
+matrices (particularly interesting for transcriptomic data).")
     (license license:gpl2+)))
 
 (define-public r-xlink
@@ -1308,8 +1299,8 @@ Excel data.")
     (synopsis "Color Names from the XKCD Color Survey")
     (description
      "The XKCD color survey asked participants to name colours.  Randall Munroe
-published the top thousand(roughly) names and their sRGB hex values.  This
-package lets you use them.")
+published the top thousand(roughly) names and their @code{sRGB} hex values.
+This package lets you use them.")
     (license license:expat)))
 
 (define-public r-ximple
@@ -1355,7 +1346,7 @@ make plugin development easier.")
      "Computes robust association measures that do not presuppose linearity.  The xi
 correlation (xicor) is based on cross correlation between ranked increments.
 The reference for the methods implemented here is Chatterjee, Sourav (2020)
-<arXiv:1909.10140> This package includes the Galton peas example.")
+@code{<arXiv:1909.10140>} This package includes the Galton peas example.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-xhaz
@@ -1496,7 +1487,7 @@ found in Chen & Guestrin (2016) <doi:10.1145/2939672.2939785>.")
     (home-page "http://www.bupar.net")
     (synopsis "Read and Write XES Files")
     (description
-     "Read and write XES Files to create event log objects used by the bupaR
+     "Read and write XES Files to create event log objects used by the @code{bupaR}
 framework.  XES (Extensible Event Stream) is the `IEEE` standard for storing and
 sharing event data (see
 <http://standards.ieee.org/findstds/standard/1849-2016.html> for more info).")
@@ -1582,7 +1573,7 @@ shrinkage estimation of covariance matrices by Ledoit and Wolf (2004,2015,2016).
                 "0mwpk84kp6r7f6fmlby0ka58fj50y592afxzp0wcrzmx65abp7md"))))
     (properties `((upstream-name . "XBRL")))
     (build-system r-build-system)
-    (inputs (list libxml2))
+    (inputs (list zlib libxml2 libxml2))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=XBRL")
     (synopsis
@@ -1686,7 +1677,7 @@ whole lot more!")
     (home-page "https://github.com/yihui/xaringan")
     (synopsis "Presentation Ninja")
     (description
-     "Create HTML5 slides with R Markdown and the JavaScript library remark.js
+     "Create HTML5 slides with R Markdown and the @code{JavaScript} library remark.js
 (<https://remarkjs.com>).")
     (license license:expat)))
 
@@ -1814,8 +1805,8 @@ binaries are provided by the R package x13binary'.")
 between them) in text datasets.  It also emphasizes the results exploration with
 graphical displays.  It is a rule-based system and works with hand-made
 dictionaries and local grammars defined by users.  x.ent uses parsing with Perl
-functions and JavaScript to define user preferences through a browser and R to
-display and support analysis of the results extracted.  Local grammars are
+functions and @code{JavaScript} to define user preferences through a browser and
+R to display and support analysis of the results extracted.  Local grammars are
 defined and compiled with the tool Unitex, a tool developed by University Paris
 Est that supports multiple languages.  See ?xconfig for an introduction.")
     (license license:gpl3)))

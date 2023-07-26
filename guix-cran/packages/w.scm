@@ -9,7 +9,9 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -62,7 +64,7 @@ test case production, be able to test immediately generated files without any
 need to view or modify them, and enter a zero time latency between code
 implementation and industrial testing.  As with testthat', you may complete
 provided test cases according to your needs to push testing further, but this
-need is nearly void when using wyz.code.offensiveProgramming'.")
+need is nearly void when using @code{wyz.code.offensiveProgramming'.}")
     (license license:gpl3)))
 
 (define-public r-wyz-code-rdoc
@@ -147,16 +149,16 @@ up processing as many checks will be reduced to one single check.")
     (description
      "Meta testing is the ability to test a function without having to provide its
 parameter values.  Those values will be generated, based on semantic naming of
-parameters, as introduced by package wyz.code.offensiveProgramming'.  Value
-generation logic can be completed with your own data types and generation
+parameters, as introduced by package @code{wyz.code.offensiveProgramming'.}
+Value generation logic can be completed with your own data types and generation
 schemes.  This to meet your most specific requirements and to answer to a wide
 variety of usages, from general use case to very specific ones.  While using
 meta testing, it becomes easier to generate stress test campaigns,
 non-regression test campaigns and robustness test campaigns, as generated tests
 can be saved and reused from session to session.  Main benefits of using
-wyz.code.metaTesting is ability to discover valid and invalid function parameter
-combinations, ability to infer valid parameter values, and to provide smart
-summaries that allows you to focus on dysfunctional cases.")
+@code{wyz.code.metaTesting} is ability to discover valid and invalid function
+parameter combinations, ability to infer valid parameter values, and to provide
+smart summaries that allows you to focus on dysfunctional cases.")
     (license license:gpl3)))
 
 (define-public r-wwr
@@ -285,7 +287,7 @@ matching theoretical distribution.")
 to classical and robust wavelet variance for time series and regular lattices.
 More details can be found, for example, in Serroukh, A., Walden, A.T., &
 Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
-(2016) <arXiv:1607.05858>.")
+(2016) @code{<arXiv:1607.05858>.}")
     (license license:agpl3)))
 
 (define-public r-wux
@@ -318,8 +320,8 @@ Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
     (description
      "This package provides methods to calculate and interpret climate change signals
 and time series from climate multi-model ensembles.  Climate model output in
-binary NetCDF format is read in and aggregated over a specified region to a
-data.frame for statistical analysis.  Global Circulation Models, as the CMIP5
+binary @code{NetCDF} format is read in and aggregated over a specified region to
+a data.frame for statistical analysis.  Global Circulation Models, as the CMIP5
 simulations, can be read in the same way as Regional Climate Models, as e.g. the
 CORDEX or ENSEMBLES simulations.  The package has been developed at the Wegener
 Center for Climate and Global Change at the University of Graz, Austria.")
@@ -393,14 +395,15 @@ Hwang CL. (1981, ISBN:978-3-540-10558-9).")
     (synopsis
      "Computing Weighted Topological Overlaps (wTO) & Consensus wTO Network")
     (description
-     "Computes the Weighted Topological Overlap with positive and negative signs (wTO)
-networks given a data frame containing the mRNA count/ expression/ abundance per
-sample, and a vector containing the interested nodes of interaction (a subset of
-the elements of the full data frame).  It also computes the cut-off threshold or
-p-value based on the individuals bootstrap or the values reshuffle per
-individual.  It also allows the construction of a consensus network, based on
-multiple wTO networks.  The package includes a visualization tool for the
-networks.  More about the methodology can be found at <arXiv:1711.04702>.")
+     "Computes the Weighted Topological Overlap with positive and negative signs
+@code{(wTO)} networks given a data frame containing the @code{mRNA} count/
+expression/ abundance per sample, and a vector containing the interested nodes
+of interaction (a subset of the elements of the full data frame).  It also
+computes the cut-off threshold or p-value based on the individuals bootstrap or
+the values reshuffle per individual.  It also allows the construction of a
+consensus network, based on multiple @code{wTO} networks.  The package includes
+a visualization tool for the networks.  More about the methodology can be found
+at @code{<arXiv:1711.04702>.}")
     (license license:gpl2)))
 
 (define-public r-wtest
@@ -440,11 +443,11 @@ frequency (MAF) and odds ratio.")
     (synopsis
      "Wavelet Approaches to Studies of Synchrony in Ecology and Other Fields")
     (description
-     "Tools for a wavelet-based approach to analyzing spatial synchrony, principally
-in ecological data.  Some tools will be useful for studying community synchrony.
- See, for instance, Sheppard et al (2016) <doi: 10.1038/NCLIMATE2991>, Sheppard
-et al (2017) <doi: 10.1051/epjnbp/2017000>, Sheppard et al (2019) <doi:
-10.1371/journal.pcbi.1006744>.")
+     "This package provides tools for a wavelet-based approach to analyzing spatial
+synchrony, principally in ecological data.  Some tools will be useful for
+studying community synchrony.  See, for instance, Sheppard et al (2016) <doi:
+10.1038/NCLIMATE2991>, Sheppard et al (2017) <doi: 10.1051/epjnbp/2017000>,
+Sheppard et al (2019) <doi: 10.1371/journal.pcbi.1006744>.")
     (license license:gpl3)))
 
 (define-public r-wsrf
@@ -779,13 +782,13 @@ based on robust location measures.")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.9.0")
+    (version "1.10.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrProteo" version))
               (sha256
                (base32
-                "0xd4vpv6060wrqs0jz6bcfkwg74vd24y13j0z8y1lcgqdw3mfars"))))
+                "02gzrgfcj3hzyppfvp7vnih99z4z0sd76yd6dyhpqyx9d64q5fpy"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -795,37 +798,37 @@ based on robust location measures.")
     (description
      "Data analysis of proteomics experiments by mass spectrometry is supported by
 this collection of functions mostly dedicated to the analysis of (bottom-up)
-quantitative (XIC) data.  Fasta-formatted proteomes (eg from UniProt Consortium
-<doi:10.1093/nar/gky1049>) can be read with automatic parsing and multiple
-annotation types (like species origin, abbreviated gene names, etc) extracted.
-Initial results from multiple software for protein (and peptide) quantitation
-can be imported (to a common format): MaxQuant (Tyanova et al 2016
-<doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
+quantitative (XIC) data.  Fasta-formatted proteomes (eg from @code{UniProt}
+Consortium <doi:10.1093/nar/gky1049>) can be read with automatic parsing and
+multiple annotation types (like species origin, abbreviated gene names, etc)
+extracted.  Initial results from multiple software for protein (and peptide)
+quantitation can be imported (to a common format): @code{MaxQuant} (Tyanova et
+al 2016 <doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
 <doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020,
-<doi:10.1038/s41592-020-0912-y>), MassChroq (Valot et al 2011]
-<doi:10.1002/pmic.201100120>), OpenMS (<doi:10.1038/nmeth.3959>),
-ProteomeDiscoverer and Proline (Bouyssie et al 2020
-<doi:10.1093/bioinformatics/btaa118>).  Meta-data provided by initial analysis
-software and/or in sdrf format can be integrated to the analysis.  Quantitative
-proteomics measurements frequently contain multiple NA values, due to physical
-absence of given peptides in some samples, limitations in sensitivity or other
-reasons.  Help is provided to inspect the data graphically to investigate the
-nature of NA-values via their respective replicate measurements and to
-help/confirm the choice of NA-replacement algorithms.  Meta-data in sdrf-format
-(Perez-Riverol et al 2020 <doi:10.1021/acs.jproteome.0c00376>) or similar
-tabular formats can be imported and included.  Missing values can be inspected
-and imputed based on the concept of NA-neighbours or other methods.  Dedicated
-filtering and statistical testing using the framework of package limma
-<doi:10.18129/B9.bioc.limma> can be run, enhanced by multiple rounds of
-NA-replacements to provide robustness towards rare stochastic events.
-Multi-species samples, as frequently used in benchmark-tests (eg Navarro et al
-2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
+<doi:10.1038/s41592-020-0912-y>), @code{MassChroq} (Valot et al 2011]
+<doi:10.1002/pmic.201100120>), @code{OpenMS} (<doi:10.1038/nmeth.3959>),
+@code{ProteomeDiscoverer,} Proline (Bouyssie et al 2020
+<doi:10.1093/bioinformatics/btaa118>) and Wombat-P. Meta-data provided by
+initial analysis software and/or in sdrf format can be integrated to the
+analysis.  Quantitative proteomics measurements frequently contain multiple NA
+values, due to physical absence of given peptides in some samples, limitations
+in sensitivity or other reasons.  Help is provided to inspect the data
+graphically to investigate the nature of NA-values via their respective
+replicate measurements and to help/confirm the choice of NA-replacement
+algorithms.  Meta-data in sdrf-format (Perez-Riverol et al 2020
+<doi:10.1021/acs.jproteome.0c00376>) or similar tabular formats can be imported
+and included.  Missing values can be inspected and imputed based on the concept
+of NA-neighbours or other methods.  Dedicated filtering and statistical testing
+using the framework of package limma <doi:10.18129/B9.bioc.limma> can be run,
+enhanced by multiple rounds of NA-replacements to provide robustness towards
+rare stochastic events.  Multi-species samples, as frequently used in
+benchmark-tests (eg Navarro et al 2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
 <doi:10.1016/j.jprot.2015.11.011>), can be run with special options considering
 such sub-groups during normalization and testing.  Subsequently, ROC curves
 (Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to compare
 multiple analysis approaches.  As detailed example the data-set from Ramus et al
-2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by MaxQuant,
-ProteomeDiscoverer, and Proline is provided with a detailed analysis of
+2016 <doi:10.1016/j.jprot.2015.11.011>) quantified by @code{MaxQuant,}
+@code{ProteomeDiscoverer,} and Proline is provided with a detailed analysis of
 heterologous spike-in proteins.")
     (license license:gpl3)))
 
@@ -905,18 +908,18 @@ multiple pair-wise combinations using the framework of limma is provided, too.")
 field of psychometrics is the Wright Map (also known as item maps or item-person
 maps), which presents the location of both respondents and items on the same
 scale.  Wright Maps are commonly used to present the results of dichotomous or
-polytomous item response models.  The WrightMap package provides functions to
-create these plots from item parameters and person estimates stored as R
-objects.  Although the package can be used in conjunction with any software used
-to estimate the IRT model (e.g. TAM', mirt', eRm or IRToys in R', or Stata',
-Mplus', etc.), WrightMap features special integration with ConQuest to
-facilitate reading and plotting its output directly.The wrightMap function
-creates Wright Maps based on person estimates and item parameters produced by an
-item response analysis.  The CQmodel function reads output files created using
-ConQuest software and creates a set of data frames for easy data manipulation,
-bundled in a CQmodel object.  The wrightMap function can take a CQmodel object
-as input or it can be used to create Wright Maps directly from data frames of
-person and item parameters.")
+polytomous item response models.  The @code{WrightMap} package provides
+functions to create these plots from item parameters and person estimates stored
+as R objects.  Although the package can be used in conjunction with any software
+used to estimate the IRT model (e.g. TAM', mirt', @code{eRm} or IRToys in R', or
+Stata', Mplus', etc.), @code{WrightMap} features special integration with
+@code{ConQuest} to facilitate reading and plotting its output directly.The
+@code{wrightMap} function creates Wright Maps based on person estimates and item
+parameters produced by an item response analysis.  The CQmodel function reads
+output files created using @code{ConQuest} software and creates a set of data
+frames for easy data manipulation, bundled in a CQmodel object.  The
+@code{wrightMap} function can take a CQmodel object as input or it can be used
+to create Wright Maps directly from data frames of person and item parameters.")
     (license license:bsd-2)))
 
 (define-public r-wri
@@ -1055,11 +1058,11 @@ user in a (hopefully) user-friendly manner.")
     (home-page "https://github.com/WinVector/wrapr")
     (synopsis "Wrap R Tools for Debugging and Parametric Programming")
     (description
-     "Tools for writing and debugging R code.  Provides: %.>% dot-pipe (an S3
-configurable pipe), unpack/to (R style multiple assignment/return),
-build_frame()'/'draw_frame() ('data.frame example tools), qc() (quoting
-concatenate), := (named map builder), let() (converts non-standard evaluation
-interfaces to parametric standard evaluation interfaces, inspired by
+     "This package provides tools for writing and debugging R code.  Provides: %.>%
+dot-pipe (an S3 configurable pipe), unpack/to (R style multiple
+assignment/return), build_frame()'/'draw_frame() ('data.frame example tools),
+qc() (quoting concatenate), := (named map builder), let() (converts non-standard
+evaluation interfaces to parametric standard evaluation interfaces, inspired by
 gtools::strmacro() and base::bquote()'), and more.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -1087,13 +1090,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.1")
+    (version "0.9.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wrappedtools" version))
               (sha256
                (base32
-                "11jbqs49qd4lra96bzs7vz0lqi96dm8aq90mqphy59q72aqr0y11"))))
+                "10rvx4plw2l9xbhlb9zv720m91dxy1wx3pf5l60abq5cl4npwjzq"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1119,11 +1122,11 @@ directory within functions and wrap console messages around other functions.")
      "The main functionalities of wrappedtools are: adding backticks to variable
 names; rounding to desired precision with special case for p-values; selecting
 columns based on pattern and storing their position, name, and backticked name;
-computing and formatting of descriptive statistics (e.g. meanÂ±SD), comparing
-groups and creating publication-ready tables with descriptive statistics and
-p-values; creating specialized plots for correlation matrices.  Functions were
-mainly written for my own daily work or teaching, but may be of use to others as
-well.")
+computing and formatting of descriptive statistics (e.g. @code{meanÂ±SD),}
+comparing groups and creating publication-ready tables with descriptive
+statistics and p-values; creating specialized plots for correlation matrices.
+Functions were mainly written for my own daily work or teaching, but may be of
+use to others as well.")
     (license license:gpl3)))
 
 (define-public r-wrangle
@@ -1204,13 +1207,13 @@ al., 2021 <doi:10.1111/biom.13501>).")
     (synopsis "Permutation Test for Weighted Quantile Sum Regression")
     (description
      "This package implements a permutation test method for the weighted quantile sum
-(WQS) regression, building off the gWQS package (Renzetti et al. (2021)
-<https://CRAN.R-project.org/package=gWQS>).  Weighted quantile sum regression is
-a statistical technique to evaluate the effect of complex exposure mixtures on
-an outcome (Carrico et al. (2015) <doi:10.1007/s13253-014-0180-3>).  The model
-features a statistical power and Type I error (i.e., false positive) rate
-trade-off, as there is a machine learning step to determine the weights that
-optimize the linear model fit.  This package provides an alternative method
+(WQS) regression, building off the @code{gWQS} package (Renzetti et al. (2021)
+@code{<https://CRAN.R-project.org/package=gWQS>).} Weighted quantile sum
+regression is a statistical technique to evaluate the effect of complex exposure
+mixtures on an outcome (Carrico et al. (2015) <doi:10.1007/s13253-014-0180-3>).
+The model features a statistical power and Type I error (i.e., false positive)
+rate trade-off, as there is a machine learning step to determine the weights
+that optimize the linear model fit.  This package provides an alternative method
 based on a permutation test that should reliably allow for both high power and
 low false positive rate when utilizing WQS regression (Day et al. (2022)
 <doi:10.1289/EHP10570>).")
@@ -1583,7 +1586,7 @@ H. Bustince, and T. Calvo (2016, ISBN: 978-3-319-24753-3), G. Beliakov(2018)
      "It shows the connections between selected clusters from the latest time point
 and the clusters from all the previous time points.  The transition matrices
 between time point t and t+1 are obtained from Waddington-OT analysis
-<https://github.com/ScialdoneLab/WOTPLY>.")
+@code{<https://github.com/ScialdoneLab/WOTPLY>.}")
     (license license:gpl3)))
 
 (define-public r-wosr
@@ -1602,10 +1605,10 @@ between time point t and t+1 are obtained from Waddington-OT analysis
     (home-page "https://vt-arc.github.io/wosr/index.html")
     (synopsis "Clients to the 'Web of Science' and 'InCites' APIs")
     (description
-     "R clients to the Web of Science and InCites
+     "R clients to the Web of Science and @code{InCites}
 <https://clarivate.com/products/data-integration/> APIs, which allow you to
 programmatically download publication and citation data indexed in the Web of
-Science and InCites databases.")
+Science and @code{InCites} databases.")
     (license license:expat)))
 
 (define-public r-worrrd
@@ -1643,21 +1646,21 @@ pencil!")
 (define-public r-worrms
   (package
     (name "r-worrms")
-    (version "0.4.2")
+    (version "0.4.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worrms" version))
               (sha256
                (base32
-                "1gpbyplfpcrapmci8axarrjjijsgh2dmhnsn79g1lhrafvm2ichs"))))
+                "1bdr3x1pg4l37p5kg36za32skmwwn7hlfrnf2a3hf65347wiif9j"))))
     (properties `((upstream-name . "worrms")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-data-table r-crul))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/worrms")
+    (home-page "https://docs.ropensci.org/worrms/")
     (synopsis "World Register of Marine Species (WoRMS) Client")
     (description
-     "Client for World Register of Marine Species (<http://www.marinespecies.org/>).
+     "Client for World Register of Marine Species (<https://www.marinespecies.org/>).
 Includes functions for each of the API methods, including searching for names by
 name, date and common names, searching using external identifiers, fetching
 synonyms, as well as fetching taxonomic children and taxonomic classification.")
@@ -1742,13 +1745,13 @@ about the World Risk Poll Survey can be found here
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.9.7")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "worldmet" version))
               (sha256
                (base32
-                "00kgaq5k85wbdj5kj3m1npfgfndhk1z9i1jjal2bc0612cajb44g"))))
+                "146zygpdlxgwv871mb5x1whh6lzj3s1cma3rmgfip9h0fypd17q4"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1768,7 +1771,7 @@ about the World Risk Poll Survey can be found here
     (description
      "This package provides functions to import data from more than 30,000 surface
 meteorological sites around the world managed by the National Oceanic and
-Atmospheric Administration (NOAA) Integrated Surface Database.")
+Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
     (license license:gpl2+)))
 
 (define-public r-worldfootballr
@@ -1878,8 +1881,8 @@ and magnitude of force development and relaxation (for isometric trials) or the
 magnitude of work, net power, and instantaneous power among other things (for
 work loops).  Although we do not provide plotting functions, all resultant
 objects are designed to be friendly to visualization via either base-R plotting
-or tidyverse functions.  This package has been peer-reviewed by rOpenSci (v.
-1.1.0).")
+or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
+(v.  1.1.0).")
     (license license:gpl3+)))
 
 (define-public r-workflowr
@@ -1971,9 +1974,9 @@ maintained by RStudio or the tidymodels maintainers.")
     (home-page "https://github.com/EmilHvitfeldt/wordsalad")
     (synopsis "Provide Tools to Extract and Analyze Word Vectors")
     (description
-     "This package provides access to various word embedding methods (GloVe, fasttext
-and word2vec) to extract word vectors using a unified framework to increase
-reproducibility and correctness.")
+     "This package provides access to various word embedding methods @code{(GloVe,}
+fasttext and word2vec) to extract word vectors using a unified framework to
+increase reproducibility and correctness.")
     (license license:expat)))
 
 (define-public r-words
@@ -2067,7 +2070,7 @@ For writing R extensions we referred to \"R Packages\",
     (description
      "Collects several classical word pools used most often to provide lists of words
 in psychological studies of learning and memory.  It provides a simple function,
-pickList for selecting random samples of words within given ranges.")
+@code{pickList} for selecting random samples of words within given ranges.")
     (license license:gpl2)))
 
 (define-public r-wordpiece-data
@@ -2115,9 +2118,9 @@ into an R-friendly format.")
     (home-page "https://github.com/macmillancontentscience/wordpiece")
     (synopsis "R Implementation of Wordpiece Tokenization")
     (description
-     "Apply Wordpiece (<arXiv:1609.08144>) tokenization to input text, given an
-appropriate vocabulary.  The BERT (<arXiv:1810.04805>) tokenization conventions
-are used by default.")
+     "Apply Wordpiece @code{(<arXiv:1609.08144>)} tokenization to input text, given an
+appropriate vocabulary.  The BERT @code{(<arXiv:1810.04805>)} tokenization
+conventions are used by default.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-wordofmouth
@@ -2156,13 +2159,14 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
     (home-page "https://wordnet.princeton.edu/")
     (synopsis "WordNet Interface")
     (description
-     "An interface to WordNet using the Jawbone Java API to WordNet.  WordNet
-(<https://wordnet.princeton.edu/>) is a large lexical database of English.
-Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms
-(synsets), each expressing a distinct concept.  Synsets are interlinked by means
-of conceptual-semantic and lexical relations.  Please note that WordNet(R) is a
-registered tradename.  Princeton University makes WordNet available to research
-and commercial users free of charge provided the terms of their license
+     "An interface to @code{WordNet} using the Jawbone Java API to @code{WordNet.}
+@code{WordNet} (<https://wordnet.princeton.edu/>) is a large lexical database of
+English.  Nouns, verbs, adjectives and adverbs are grouped into sets of
+cognitive synonyms (synsets), each expressing a distinct concept.  Synsets are
+interlinked by means of conceptual-semantic and lexical relations.  Please note
+that @code{WordNet(R)} is a registered tradename.  Princeton University makes
+@code{WordNet} available to research and commercial users free of charge
+provided the terms of their license
 (<https://wordnet.princeton.edu/license-and-commercial-use>) are followed, and
 proper reference is made to the project using an appropriate citation
 (<https://wordnet.princeton.edu/citing-wordnet>).")
@@ -2211,31 +2215,9 @@ programmatically.  Based on Josh Wardle's game
     (synopsis "Create Word Cloud by 'htmlwidget'")
     (description
      "This package provides a fast visualization tool for creating wordcloud by using
-wordcloud2.js'.  wordcloud2.js is a JavaScript library to create wordle
+wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
-
-(define-public r-word2vec
-  (package
-    (name "r-word2vec")
-    (version "0.3.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "word2vec" version))
-              (sha256
-               (base32
-                "0qj39vms6zgwb8lpmfkppayizdmhakic3pkacglary3ain61vnsk"))))
-    (properties `((upstream-name . "word2vec")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress r-rcpp))
-    (home-page "https://github.com/bnosac/word2vec")
-    (synopsis "Distributed Representations of Words")
-    (description
-     "Learn vector representations of words by continuous bag of words and skip-gram
-implementations of the word2vec algorithm.  The techniques are detailed in the
-paper \"Distributed Representations of Words and Phrases and their
-Compositionality\" by Mikolov et al. (2013), available at <arXiv:1310.4546>.")
-    (license (license:fsdg-compatible "Apache License (>= 2.0)"))))
 
 (define-public r-word-alignment
   (package
@@ -2356,7 +2338,7 @@ The consequences of disturbances refer to Dieter (2001), Moellmann and Moehring
 (2017), and Fuchs et al. (2022a, 2022b).  For the full references see
 documentation of the functions, package README, and Fuchs et al. (in
 preparation).  Apart from Dieter (2001) and Moellmann and Moehring (2017), all
-functions and factors are based on data from HessenForst, the forest
+functions and factors are based on data from @code{HessenForst,} the forest
 administration of the Federal State of Hesse in Germany.")
     (license license:expat)))
 
@@ -2382,23 +2364,24 @@ administration of the Federal State of Hesse in Germany.")
     (home-page "https://cran.r-project.org/package=WoodSimulatR")
     (synopsis "Generate Simulated Sawn Timber Strength Grading Data")
     (description
-     "Tools for generating simulated sawn timber strength grading data with a main
-focus on statistical simulation based on covariance matrices.  Simulation data
-for Norway spruce sawn timber from Austria and reference values of means and
-standard deviations of grade determining properties from literature for a number
-of European countries are provided, as well.")
+     "This package provides tools for generating simulated sawn timber strength
+grading data with a main focus on statistical simulation based on covariance
+matrices.  Simulation data for Norway spruce sawn timber from Austria and
+reference values of means and standard deviations of grade determining
+properties from literature for a number of European countries are provided, as
+well.")
     (license license:expat)))
 
 (define-public r-woodburymatrix
   (package
     (name "r-woodburymatrix")
-    (version "0.0.2")
+    (version "0.0.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WoodburyMatrix" version))
               (sha256
                (base32
-                "0qimpqzr2vjlb9dcx4ysw9vjzsslwli0ps2x7qfdkl7gqjn6wv7m"))))
+                "0pmm032lyk31bv30dwz7ajz2ihppp13i1ibpnnc9x9ga3axxhpj7"))))
     (properties `((upstream-name . "WoodburyMatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -2442,7 +2425,7 @@ as exponential or first-order autoregressive.  Full details of the package can
 be found in the accompanying vignette.  Furthermore, the details of the package
 can be found in \"Diagnosing Glaucoma Progression with Visual Field Data Using a
 Spatiotemporal Boundary Detection Method\", by Berchuck et al (2018),
-<arXiv:1805.11636>.  The paper is in press at the Journal of the American
+@code{<arXiv:1805.11636>.} The paper is in press at the Journal of the American
 Statistical Association.")
     (license license:gpl2+)))
 
@@ -2635,8 +2618,8 @@ Procedures in Factorial Designs - Using R and SAS, Springer Verlag, to appear.")
     (description
      "Power calculator for the two-sample Wilcoxon-Mann-Whitney rank-sum test for a
 continuous outcome (Mollan, Trumble, Reifeis et.  al., Mar.  2020)
-<doi:10.1080/10543406.2020.1730866> <arXiv:1901.04597>, (Mann and Whitney 1947)
-<doi:10.1214/aoms/1177730491>, (Shieh, Jan, and Randles 2006)
+<doi:10.1080/10543406.2020.1730866> @code{<arXiv:1901.04597>,} (Mann and Whitney
+1947) <doi:10.1214/aoms/1177730491>, (Shieh, Jan, and Randles 2006)
 <doi:10.1080/10485250500473099>.")
     (license license:gpl3)))
 
@@ -2667,7 +2650,7 @@ Chulliat et al (2020) <doi:10.25923/ytk1-yx35>, Chulliat et al (2019)
 <doi:10.25921/xhr3-0t19>, Chulliat et al (2015) <doi:10.7289/V5TB14V7>, Maus et
 al (2010)
 <https://www.ngdc.noaa.gov/geomag/WMM/data/WMMReports/WMM2010_Report.pdf>,
-McLean et al (2004)
+@code{McLean} et al (2004)
 <https://www.ngdc.noaa.gov/geomag/WMM/data/WMMReports/TRWMM_2005.pdf>, and
 Macmillian et al (2000)
 <https://www.ngdc.noaa.gov/geomag/WMM/data/WMMReports/wmm2000.pdf>.")
@@ -2693,6 +2676,38 @@ Macmillian et al (2000)
      "Use various regression models for the analysis of win loss endpoints adjusting
 for non-binary and multivariate covariates.")
     (license license:gpl2+)))
+
+(define-public r-wlogit
+  (package
+    (name "r-wlogit")
+    (version "2.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WLogit" version))
+              (sha256
+               (base32
+                "06mhc6n9mszqrj9hi61z5yfyny5aqsvv11a5n7l0wwhpirgi3i8m"))))
+    (properties `((upstream-name . "WLogit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-ggplot2
+                             r-genlasso
+                             r-cvcovest
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=WLogit")
+    (synopsis
+     "Variable Selection in High-Dimensional Logistic Regression Models using a Whitening Approach")
+    (description
+     "It proposes a novel variable selection approach in classification problem that
+takes into account the correlations that may exist between the predictors of the
+design matrix in a high-dimensional logistic model.  Our approach consists in
+rewriting the initial high-dimensional logistic model to remove the correlation
+between the predictors and in applying the generalized Lasso criterion.")
+    (license license:gpl2)))
 
 (define-public r-wkutils
   (package
@@ -2783,10 +2798,12 @@ include the cross-information among features.")
      "Utility functions to convert between the Spatial classes specified by the
 package sp', and the well-known binary (WKB) representation for geometry
 specified by the Open Geospatial Consortium'.  Supports Spatial objects of class
-SpatialPoints', SpatialPointsDataFrame', SpatialLines', SpatialLinesDataFrame',
-SpatialPolygons', and SpatialPolygonsDataFrame'.  Supports WKB geometry types
-Point', LineString', Polygon', MultiPoint', MultiLineString', and MultiPolygon'.
- Includes extensions to enable creation of maps with TIBCO Spotfire'.")
+@code{SpatialPoints',} @code{SpatialPointsDataFrame',} @code{SpatialLines',}
+@code{SpatialLinesDataFrame',} @code{SpatialPolygons',} and
+@code{SpatialPolygonsDataFrame'.} Supports WKB geometry types Point',
+@code{LineString',} Polygon', @code{MultiPoint',} @code{MultiLineString',} and
+@code{MultiPolygon'.} Includes extensions to enable creation of maps with TIBCO
+Spotfire'.")
     (license license:bsd-3)))
 
 (define-public r-withdots
@@ -2829,10 +2846,10 @@ that some phenotypes are known with greater precision than others.  It could be
 that some individuals are known to harbor more micro-environmental variance than
 others.  In the case of inbred strains of model organisms, it could be the case
 that more organisms were observed from some strains than others, so the strains
-with more organisms have better-estimated means.  Package wISAM handles this
-situation by allowing for weighting of each observation according to residual
-variance.  Specifically, the weight parameter to the function conduct_scan()
-takes the precision of each observation (one over the variance).")
+with more organisms have better-estimated means.  Package @code{wISAM} handles
+this situation by allowing for weighting of each observation according to
+residual variance.  Specifically, the weight parameter to the function
+conduct_scan() takes the precision of each observation (one over the variance).")
     (license license:gpl3)))
 
 (define-public r-wiqid
@@ -2867,13 +2884,13 @@ survival, species richness and distance measures.")
 (define-public r-wins
   (package
     (name "r-wins")
-    (version "1.3.2")
+    (version "1.3.3")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WINS" version))
               (sha256
                (base32
-                "05jrf77nzw7q8j0jifl6icrwwqw07aa9gqsjl6214gzr7c2ma8f3"))))
+                "0chw2v3ba766p8bjh1vzgrx6s7gm586ylvdsal1kmfxv4lkjc8rh"))))
     (properties `((upstream-name . "WINS")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3076,7 +3093,7 @@ truncated distribution functions.")
                 "0v2kyfr5rm4nbh99ii17qh08i88yv0phyf3d59dxfhq1q8wrl6xb"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list zlib))
     (propagated-inputs (list r-procmaps r-lifecycle))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://r-prof.github.io/winch/")
@@ -3343,7 +3360,7 @@ ISBN:013850363X).")
 information from the Wikimedia sources.  It is specifically created to work with
 names of celebrities, in which case their information and statistics can be
 downloaded.  Additionally, it also builds links and snippets to use in
-combination with the function gallery() in netCoin package.")
+combination with the function gallery() in @code{netCoin} package.")
     (license license:gpl3)))
 
 (define-public r-wikitaxa
@@ -3391,10 +3408,10 @@ the sources just listed, as well performing taxonomic search.")
     (home-page "https://github.com/Ironholds/WikipediR/")
     (synopsis "MediaWiki API Wrapper")
     (description
-     "This package provides a wrapper for the MediaWiki API, aimed particularly at the
-Wikimedia production wikis, such as Wikipedia.  It can be used to retrieve page
-text, information about users or the history of pages, and elements of the
-category tree.")
+     "This package provides a wrapper for the @code{MediaWiki} API, aimed particularly
+at the Wikimedia production wikis, such as Wikipedia.  It can be used to
+retrieve page text, information about users or the history of pages, and
+elements of the category tree.")
     (license license:expat)))
 
 (define-public r-wikipediatrend
@@ -3448,12 +3465,12 @@ specific Wikipedia page : all links that are present, all pages that link to,
 all the contributions (revisions for main pages, and discussions for talk
 pages).  Two functions provide details for a specific user : all contributions,
 and general information (as name, gender, rights or groups).  It provides
-additional information compared to others packages, as WikipediR. It does not
-need login.  The multiplex network that can be constructed from the results of
-the functions of WikipediaR can be modeled as Stochastic Block Model as in
-Barbillon P., Donnet, S., Lazega E., and Bar-Hen A. : Stochastic Block Models
-for Multiplex networks: an application to networks of researchers, ArXiv
-1501.06444, http://arxiv.org/abs/1501.06444.")
+additional information compared to others packages, as @code{WikipediR.} It does
+not need login.  The multiplex network that can be constructed from the results
+of the functions of @code{WikipediaR} can be modeled as Stochastic Block Model
+as in Barbillon P., Donnet, S., Lazega E., and Bar-Hen A. : Stochastic Block
+Models for Multiplex networks: an application to networks of researchers,
+@code{ArXiv} 1501.06444, http://arxiv.org/abs/1501.06444.")
     (license license:gpl3+)))
 
 (define-public r-wikilake
@@ -3537,8 +3554,8 @@ multilingual, interdisciplinary, semantic knowledgebase.  Includes functions to:
 read from wikidata (single items, properties, or properties); query wikidata
 (retrieving all items that match a set of criterial via Wikidata SPARQL query
 service); write to Wikidata (adding new items or statements via
-QuickStatements); and handle and manipulate Wikidata objects (as lists and
-tibbles).  Uses the Wikidata and Quickstatements APIs.")
+@code{QuickStatements);} and handle and manipulate Wikidata objects (as lists
+and tibbles).  Uses the Wikidata and Quickstatements APIs.")
     (license license:expat)))
 
 (define-public r-wikidataqueryservicer
@@ -3583,7 +3600,7 @@ tibbles).  Uses the Wikidata and Quickstatements APIs.")
     (synopsis "Functions and Datasets of the German WikiBook \"GNU R\"")
     (description
      "The german Wikibook \"GNU R\" introduces R to new users.  This package is a
-collection of functions and datas used in the german WikiBook \"GNU R\".")
+collection of functions and datas used in the german @code{WikiBook} \"GNU R\".")
     (license license:gpl2+)))
 
 (define-public r-wig
@@ -3636,13 +3653,13 @@ Office of Germany (DESTATIS) using their SOAP XML web service
 (define-public r-wienr
   (package
     (name "r-wienr")
-    (version "0.3-10")
+    (version "0.3-14")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WienR" version))
               (sha256
                (base32
-                "1nj2jki1r9agpfmfrx4j2x55j0rgxnk3wwbygw0cnvygdd09lpym"))))
+                "0f4djjrj929d0a1cd4nxgvbki92k462wgrj5k9ma5v2jjl7lijdj"))))
     (properties `((upstream-name . "WienR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WienR")
@@ -3725,14 +3742,14 @@ mathematically convenient on wide matrices.")
     (home-page "https://github.com/bhaskarvk/widgetframe")
     (synopsis "'Htmlwidgets' in Responsive 'iframes'")
     (description
-     "This package provides two functions frameableWidget()', and frameWidget()'.  The
-frameableWidget() is used to add extra code to a htmlwidget which allows is to
-be rendered correctly inside a responsive iframe'.  The frameWidget() is a
-htmlwidget which displays content of another htmlwidget inside a responsive
-iframe'.  These functions allow for easier embedding of htmlwidgets in content
-management systems such as wordpress', blogger etc.  They also allow for
-separation of widget content from main HTML content where CSS of the main HTML
-could interfere with the widget.")
+     "This package provides two functions @code{frameableWidget()',} and
+@code{frameWidget()'.} The @code{frameableWidget()} is used to add extra code to
+a htmlwidget which allows is to be rendered correctly inside a responsive
+iframe'.  The @code{frameWidget()} is a htmlwidget which displays content of
+another htmlwidget inside a responsive iframe'.  These functions allow for
+easier embedding of htmlwidgets in content management systems such as
+wordpress', blogger etc.  They also allow for separation of widget content from
+main HTML content where CSS of the main HTML could interfere with the widget.")
     (license license:expat)))
 
 (define-public r-widals
@@ -3877,8 +3894,8 @@ functions for implementing Rasch Analysis (see Andrich (2011)
      "Username, Full Name, Email Address, 'GitHub' Username of the Current User")
     (description
      "Look up the username and full name of the current user, the current user's email
-address and GitHub username, using various sources of system and configuration
-information.")
+address and @code{GitHub} username, using various sources of system and
+configuration information.")
     (license license:expat)))
 
 (define-public r-whoa
@@ -3972,11 +3989,12 @@ and additional statistical attributes are provided.")
     (home-page "https://cran.r-project.org/package=WhiteStripe")
     (synopsis "White Matter Normalization for Magnetic Resonance Images")
     (description
-     "Shinohara (2014) <doi:10.1016/j.nicl.2014.08.008> introduced WhiteStripe', an
-intensity-based normalization of T1 and T2 images, where normal appearing white
-matter performs well, but requires segmentation.  This method performs white
-matter mean and standard deviation estimates on data that has been
-rigidly-registered to the MNI template and uses histogram-based methods.")
+     "Shinohara (2014) <doi:10.1016/j.nicl.2014.08.008> introduced
+@code{WhiteStripe',} an intensity-based normalization of T1 and T2 images, where
+normal appearing white matter performs well, but requires segmentation.  This
+method performs white matter mean and standard deviation estimates on data that
+has been rigidly-registered to the MNI template and uses histogram-based
+methods.")
     (license license:gpl3)))
 
 (define-public r-whitestrap
@@ -4055,34 +4073,35 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
 (define-public r-whitebox
   (package
     (name "r-whitebox")
-    (version "2.3.0")
+    (version "2.3.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "whitebox" version))
               (sha256
                (base32
-                "0basrq7g9zvwgxwiin9jbzyipp7jpmrkxhabhw8nyj4hwkyym0a8"))))
+                "0bb6apb7yw625gw437n567l0w42l21s5819dria07v3apv4wsbjx"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
     (inputs (list))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/giswqs/whiteboxR")
+    (home-page "https://github.com/opengeos/whiteboxR")
     (synopsis "'WhiteboxTools' R Frontend")
     (description
-     "An R frontend for the WhiteboxTools library, which is an advanced geospatial
-data analysis platform developed by Prof. John Lindsay at the University of
-Guelph's Geomorphometry and Hydrogeomatics Research Group.  WhiteboxTools can be
-used to perform common geographical information systems (GIS) analysis
-operations, such as cost-distance analysis, distance buffering, and raster
-reclassification.  Remote sensing and image processing tasks include image
-enhancement (e.g. panchromatic sharpening, contrast adjustments), image
-mosaicing, numerous filtering operations, simple classification (k-means), and
-common image transformations.  WhiteboxTools also contains advanced tooling for
-spatial hydrological analysis (e.g. flow-accumulation, watershed delineation,
-stream network analysis, sink removal), terrain analysis (e.g. common terrain
-indices such as slope, curvatures, wetness index, hillshading; hypsometric
-analysis; multi-scale topographic position analysis), and LiDAR data processing.
- Suggested citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
+     "An R frontend for the @code{WhiteboxTools} library, which is an advanced
+geospatial data analysis platform developed by Prof. John Lindsay at the
+University of Guelph's Geomorphometry and Hydrogeomatics Research Group.
+@code{WhiteboxTools} can be used to perform common geographical information
+systems (GIS) analysis operations, such as cost-distance analysis, distance
+buffering, and raster reclassification.  Remote sensing and image processing
+tasks include image enhancement (e.g. panchromatic sharpening, contrast
+adjustments), image mosaicing, numerous filtering operations, simple
+classification (k-means), and common image transformations. @code{WhiteboxTools}
+also contains advanced tooling for spatial hydrological analysis (e.g.
+flow-accumulation, watershed delineation, stream network analysis, sink
+removal), terrain analysis (e.g. common terrain indices such as slope,
+curvatures, wetness index, hillshading; hypsometric analysis; multi-scale
+topographic position analysis), and @code{LiDAR} data processing.  Suggested
+citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
     (license license:expat)))
 
 (define-public r-whippr
@@ -4165,30 +4184,6 @@ commands or RStudio console, source editor, Rmarkdown document and a Shiny
 application.")
     (license license:expat)))
 
-(define-public r-wheatmap
-  (package
-    (name "r-wheatmap")
-    (version "0.2.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "wheatmap" version))
-              (sha256
-               (base32
-                "064idlrnb85xxav39gp3n854fic6514khvazrf5d0x48crpzyvdp"))))
-    (properties `((upstream-name . "wheatmap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zwdzwd/wheatmap")
-    (synopsis "Incrementally Build Complex Plots using Natural Semantics")
-    (description
-     "Builds complex plots, heatmaps in particular, using natural semantics.  Bigger
-plots can be assembled using directives such as LeftOf', RightOf', TopOf', and
-Beneath and more.  Other features include clustering, dendrograms and
-integration with ggplot2 generated grid objects.  This package is particularly
-designed for bioinformaticians to assemble complex plots for publication.")
-    (license license:gpl3)))
-
 (define-public r-whatsr
   (package
     (name "r-whatsr")
@@ -4224,13 +4219,13 @@ designed for bioinformaticians to assemble complex plots for publication.")
     (synopsis
      "Parsing, Anonymizing and Visualizing Exported 'WhatsApp' Chat Logs")
     (description
-     "Imports WhatsApp chat logs and parses them into a usable dataframe object.  The
-parser works on chats exported from Android or iOS phones and on Linux, MacOS
-and Windows.  The parser has multiple options for extracting smilies and emojis
-from the messages, extracting urls and domains from the messages, extracting
-names and types of sent media files from the messages, extracting timestamps
-from messages, extracting and anonymizing author names from messages.  Can be
-used to create anonymized versions of data.")
+     "Imports @code{WhatsApp} chat logs and parses them into a usable dataframe
+object.  The parser works on chats exported from Android or @code{iOS} phones
+and on Linux, @code{MacOS} and Windows.  The parser has multiple options for
+extracting smilies and emojis from the messages, extracting urls and domains
+from the messages, extracting names and types of sent media files from the
+messages, extracting timestamps from messages, extracting and anonymizing author
+names from messages.  Can be used to create anonymized versions of data.")
     (license license:gpl3)))
 
 (define-public r-whatif
@@ -4256,16 +4251,16 @@ statistical analyses become based largely on speculation hidden in convenient
 modeling assumptions that few would be willing to defend.  Unfortunately,
 standard statistical approaches assume the veracity of the model rather than
 revealing the degree of model-dependence, which makes this problem hard to
-detect.  WhatIf offers easy-to-apply methods to evaluate counterfactuals that do
-not require sensitivity testing over specified classes of models.  If an
+detect. @code{WhatIf} offers easy-to-apply methods to evaluate counterfactuals
+that do not require sensitivity testing over specified classes of models.  If an
 analysis fails the tests offered here, then we know that substantive inferences
 will be sensitive to at least some modeling choices that are not based on
 empirical evidence, no matter what method of inference one chooses to use.
-WhatIf implements the methods for evaluating counterfactuals discussed in Gary
-King and Langche Zeng, 2006, \"The Dangers of Extreme Counterfactuals,\" Political
-Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche Zeng, 2007,
-\"When Can History Be Our Guide? The Pitfalls of Counterfactual Inference,\"
-International Studies Quarterly 51 (March)
+@code{WhatIf} implements the methods for evaluating counterfactuals discussed in
+Gary King and Langche Zeng, 2006, \"The Dangers of Extreme Counterfactuals,\"
+Political Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche
+Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
+Inference,\" International Studies Quarterly 51 (March)
 <DOI:10.1111/j.1468-2478.2007.00445.x>.")
     (license license:gpl3+)))
 
@@ -4453,8 +4448,9 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
     (description
      "This package provides a suite of routines for Weyl algebras.  Notation follows
 Coutinho (1995, ISBN 0-521-55119-6, \"A Primer of Algebraic D-Modules\").  Uses
-disordR discipline (Hankin 2022 <doi:10.48550/ARXIV.2210.03856>).  To cite the
-package in publications, use Hankin 2022 <doi:10.48550/ARXIV.2212.09230>.")
+@code{disordR} discipline (Hankin 2022 <doi:10.48550/ARXIV.2210.03856>).  To
+cite the package in publications, use Hankin 2022
+<doi:10.48550/ARXIV.2212.09230>.")
     (license license:gpl2+)))
 
 (define-public r-wevid
@@ -4478,12 +4474,12 @@ package in publications, use Hankin 2022 <doi:10.48550/ARXIV.2212.09230>.")
      "The distributions of the weight of evidence (log Bayes factor) favouring case
 over noncase status in a test dataset (or test folds generated by
 cross-validation) can be used to quantify the performance of a diagnostic test
-(McKeigue (2019), <doi:10.1177/0962280218776989>).  The package can be used with
-any test dataset on which you have observed case-control status and have
-computed prior and posterior probabilities of case status using a model learned
-on a training dataset.  To quantify how the predictor will behave as a risk
-stratifier, the quantiles of the distributions of weight of evidence in cases
-and controls can be calculated and plotted.")
+@code{(McKeigue} (2019), <doi:10.1177/0962280218776989>).  The package can be
+used with any test dataset on which you have observed case-control status and
+have computed prior and posterior probabilities of case status using a model
+learned on a training dataset.  To quantify how the predictor will behave as a
+risk stratifier, the quantiles of the distributions of weight of evidence in
+cases and controls can be calculated and plotted.")
     (license license:gpl3)))
 
 (define-public r-wemix
@@ -4511,16 +4507,17 @@ and controls can be calculated and plotted.")
     (synopsis
      "Weighted Mixed-Effects Models Using Multilevel Pseudo Maximum Likelihood Estimation")
     (description
-     "Run mixed-effects models that include weights at every level.  The WeMix package
-fits a weighted mixed model, also known as a multilevel, mixed, or hierarchical
-linear model (HLM).  The weights could be inverse selection probabilities, such
-as those developed for an education survey where schools are sampled
-probabilistically, and then students inside of those schools are sampled
+     "Run mixed-effects models that include weights at every level.  The @code{WeMix}
+package fits a weighted mixed model, also known as a multilevel, mixed, or
+hierarchical linear model (HLM).  The weights could be inverse selection
+probabilities, such as those developed for an education survey where schools are
+sampled probabilistically, and then students inside of those schools are sampled
 probabilistically.  Although mixed-effects models are already available in R,
-WeMix is unique in implementing methods for mixed models using weights at
+@code{WeMix} is unique in implementing methods for mixed models using weights at
 multiple levels.  Both linear and logit models are supported.  Models may have
 up to three levels.  Random effects are estimated using the PIRLS algorithm from
-lme4pureR (Walker and Bates (2013) <https://github.com/lme4/lme4pureR>).")
+@code{lme4pureR} (Walker and Bates (2013)
+@code{<https://github.com/lme4/lme4pureR>).}")
     (license license:gpl2)))
 
 (define-public r-welo
@@ -4703,12 +4700,12 @@ treatments by easing and extending the functionality of several R packages and
 providing in-house estimation methods.  Available methods include propensity
 score weighting using generalized linear models, gradient boosting machines, the
 covariate balancing propensity score algorithm, Bayesian additive regression
-trees, and SuperLearner, and directly estimating balancing weights using entropy
-balancing, energy balancing, and optimization-based weights.  Also allows for
-assessment of weights and checking of covariate balance by interfacing directly
-with the cobalt package.  See the vignette \"Installing Supporting Packages\" for
-instructions on how to install any package WeightIt uses, including those that
-may not be on CRAN.")
+trees, and @code{SuperLearner,} and directly estimating balancing weights using
+entropy balancing, energy balancing, and optimization-based weights.  Also
+allows for assessment of weights and checking of covariate balance by
+interfacing directly with the cobalt package.  See the vignette \"Installing
+Supporting Packages\" for instructions on how to install any package
+@code{WeightIt} uses, including those that may not be on CRAN.")
     (license license:gpl2+)))
 
 (define-public r-weightedzdiff
@@ -4752,7 +4749,7 @@ without weights (e.g. generated by propensity score methods).")
 intermediate step for variable/correlation selection for longitudinal ordinal
 and count data in Nikoloulopoulos, Joe and Chaganty (2011)
 <doi:10.1093/biostatistics/kxr005>, Nikoloulopoulos (2016)
-<doi:10.1002/sim.6871> and Nikoloulopoulos (2017) <arXiv:1510.07376>.")
+<doi:10.1002/sim.6871> and Nikoloulopoulos (2017) @code{<arXiv:1510.07376>.}")
     (license license:gpl2+)))
 
 (define-public r-weightedroc
@@ -4795,7 +4792,7 @@ example-specific cost values).")
 observational studies with I blocks of size J; see Rosenbaum (2018)
 <doi:10.1214/18-AOAS1153>.  The package can perform adaptive inference in block
 designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main functions
-are wgtRank() and wgtRanktt() and ef2C().")
+are @code{wgtRank()} and @code{wgtRanktt()} and ef2C().")
     (license license:gpl2)))
 
 (define-public r-weightedporttest
@@ -4841,11 +4838,11 @@ to univariate and multivariate random variables.  The test is based on a
 weighted form of the sample covariance of the residuals after a nonlinear
 regression on the conditioning variables.  Details are described in Scheidegger,
 Hoerrmann and Buehlmann (2021) \"The Weighted Generalised Covariance Measure\"
-<arXiv:2111.04361>.  The test is a generalisation of the Generalised Covariance
-Measure (GCM) implemented in the R package GeneralisedCovarianceMeasure by Jonas
-Peters and Rajen D. Shah based on Shah and Peters (2020) \"The Hardness of
-Conditional Independence Testing and the Generalised Covariance Measure\"
-<arXiv:1804.07203>.")
+@code{<arXiv:2111.04361>.} The test is a generalisation of the Generalised
+Covariance Measure (GCM) implemented in the R package
+@code{GeneralisedCovarianceMeasure} by Jonas Peters and Rajen D. Shah based on
+Shah and Peters (2020) \"The Hardness of Conditional Independence Testing and the
+Generalised Covariance Measure\" @code{<arXiv:1804.07203>.}")
     (license license:gpl2)))
 
 (define-public r-weightedensemble
@@ -4873,18 +4870,19 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
 (define-public r-weightedcluster
   (package
     (name "r-weightedcluster")
-    (version "1.6-2")
+    (version "1.6-4")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeightedCluster" version))
               (sha256
                (base32
-                "07gjy9yjm9axv4dbv9636m03alkxk4jjfxwqxh7fcxjzy40zvqg1"))))
+                "1ayi50wjy7grzapfnyvmbi6rz7amfhdd1nxh56h1s4anv7rf20c4"))))
     (properties `((upstream-name . "WeightedCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
                              r-rcolorbrewer
                              r-progressr
+                             r-nnet
                              r-future
                              r-foreach
                              r-dofuture
@@ -4920,7 +4918,7 @@ typology of sequences are also provided.")
     (description
      "Estimates high-dimensional multivariate normal copula regression models with the
 weighted composite likelihood estimating equations in Nikoloulopoulos (2022)
-<arXiv:2203.04619>.  It provides autoregressive moving average correlation
+@code{<arXiv:2203.04619>.} It provides autoregressive moving average correlation
 structures and binary, ordinal, Poisson, and negative binomial regressions.")
     (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
@@ -5001,26 +4999,74 @@ probability plotting as well as the addition of regression lines and confidence
 bounds to existing plots are supported.")
     (license license:gpl2)))
 
+(define-public r-weibullr-shiny
+  (package
+    (name "r-weibullr-shiny")
+    (version "0.1.2")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WeibullR.shiny" version))
+              (sha256
+               (base32
+                "0vmz005qpra66frb9ljrn58ag5rczi8prb3v3y09ikfb0zbz6jn4"))))
+    (properties `((upstream-name . "WeibullR.shiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weibullr-plotly r-weibullr r-shinydashboard
+                             r-shiny r-rhandsontable))
+    (home-page "https://paulgovan.github.io/WeibullR.shiny/")
+    (synopsis "'Shiny' App for Weibull Analysis from 'WeibullR'")
+    (description
+     "This package provides a Shiny web application for life data analysis that
+depends on @code{WeibullR} by David Silkworth and Jurgen Symynck (2022)
+@code{<https://CRAN.R-project.org/package=WeibullR>,} an R package for Weibull
+analysis.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.1.2")
+    (version "0.1.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WeibullR.plotly" version))
               (sha256
                (base32
-                "082i7yg3h3ij4mhk4l4ni2pc9bjjh5pcdgq9rzvscrbqrz6iiqnq"))))
+                "1g16jkigzd8kmsdfzbz57sz5n8f9s1r3mhl059w76fsyvrc23cin"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr r-plotly))
     (home-page "https://paulgovan.github.io/WeibullR.plotly/")
     (synopsis "Interactive Weibull Probability Plots with 'WeibullR'")
     (description
-     "Build interactive Weibull Probability Plots with WeibullR by David Silkworth and
-Jurgen Symynck (2022) <https://CRAN.R-project.org/package=WeibullR>, an R
-package for Weibull analysis, and plotly by Carson Sievert (2020)
-<https://plotly-r.com>, an interactive web-based graphing library.")
+     "Build interactive Weibull Probability Plots with @code{WeibullR} by David
+Silkworth and Jurgen Symynck (2022)
+@code{<https://CRAN.R-project.org/package=WeibullR>,} an R package for Weibull
+analysis, and plotly by Carson Sievert (2020) <https://plotly-r.com>, an
+interactive web-based graphing library.")
+    (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-weibullr-learnr
+  (package
+    (name "r-weibullr-learnr")
+    (version "0.1.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WeibullR.learnr" version))
+              (sha256
+               (base32
+                "0m3dajyxr6m2w8s1qlwfr1iq2x2s5khs9x1qj4r4fr6zqhp53pbx"))))
+    (properties `((upstream-name . "WeibullR.learnr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weibullr r-learnr))
+    (home-page "https://paulgovan.github.io/WeibullR.learnr/")
+    (synopsis "An Interactive Introduction to Life Data Analysis")
+    (description
+     "An interactive introduction to Life Data Analysis that depends on
+@code{WeibullR} by David Silkworth and Jurgen Symynck (2022)
+@code{<https://CRAN.R-project.org/package=WeibullR>,} a R package for Weibull
+Analysis, and learnr by Garrick Aden-Buie et al. (2023)
+<https://CRAN.R-project.org/package=learnr>, a framework for building
+interactive learning modules in R.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-weibullr-alt
@@ -5065,7 +5111,7 @@ ISBN: 1-471-14328-6).")
      "Life data analysis in the graphical tradition of Waloddi Weibull.  Methods
 derived from Robert B. Abernethy (2008, ISBN 0-965306-3-2), Wayne Nelson (1982,
 ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
-1-471-14328-6), John I. McCool, (2012, ISBN: 9781118217986).")
+1-471-14328-6), John I. @code{McCool,} (2012, ISBN: 9781118217986).")
     (license license:gpl3+)))
 
 (define-public r-weibullness
@@ -5305,15 +5351,15 @@ described in Mangold & Scharkow (2022) <doi:10.1080/19312458.2022.2085249>.")
                 "1ks9cyj39jnb0rkx2ii3ckmpl373m5f8sz0i4q3gk7kkv3js07r8"))))
     (properties `((upstream-name . "websocket")))
     (build-system r-build-system)
-    (inputs (list r-openssl))
+    (inputs (list zlib openssl))
     (propagated-inputs (list r-r6 r-later r-cpp11 r-asioheaders))
     (native-inputs (list r-knitr pkg-config))
     (home-page "https://cran.r-project.org/package=websocket")
     (synopsis "'WebSocket' Client Library")
     (description
-     "This package provides a WebSocket client interface for R. WebSocket is a
-protocol for low-overhead real-time communication:
-<https://en.wikipedia.org/wiki/WebSocket>.")
+     "This package provides a @code{WebSocket} client interface for R.
+@code{WebSocket} is a protocol for low-overhead real-time communication:
+@code{<https://en.wikipedia.org/wiki/WebSocket>.}")
     (license license:gpl2)))
 
 (define-public r-webshot2
@@ -5393,7 +5439,7 @@ species as a function of its prey (or predators) and environmental conditions.
 It exploits the topological ordering of the known trophic interaction network to
 predict species distribution in space and/or time, where the prey (or predator)
 distribution is unavailable.  The method implemented by the package is described
-in Poggiato, AndrÃ©oletti, Pollock and Thuiller (2022)
+in Poggiato, @code{AndrÃ©oletti,} Pollock and Thuiller (2022)
 <doi:10.22541/au.166853394.45823739/v1>.")
     (license license:gpl3)))
 
@@ -5583,14 +5629,15 @@ or webmorph templates.")
     (home-page "https://github.com/bzhanglab/WebGestaltR")
     (synopsis "Gene Set Analysis Toolkit WebGestaltR")
     (description
-     "The web version WebGestalt <https://www.webgestalt.org> supports 12 organisms,
-354 gene identifiers and 321,251 function categories.  Users can upload the data
-and functional categories with their own gene identifiers.  In addition to the
-Over-Representation Analysis, WebGestalt also supports Gene Set Enrichment
-Analysis and Network Topology Analysis.  The user-friendly output report allows
-interactive and efficient exploration of enrichment results.  The WebGestaltR
-package not only supports all above functions but also can be integrated into
-other pipeline or simultaneously analyze multiple gene lists.")
+     "The web version @code{WebGestalt} <https://www.webgestalt.org> supports 12
+organisms, 354 gene identifiers and 321,251 function categories.  Users can
+upload the data and functional categories with their own gene identifiers.  In
+addition to the Over-Representation Analysis, @code{WebGestalt} also supports
+Gene Set Enrichment Analysis and Network Topology Analysis.  The user-friendly
+output report allows interactive and efficient exploration of enrichment
+results.  The @code{WebGestaltR} package not only supports all above functions
+but also can be integrated into other pipeline or simultaneously analyze
+multiple gene lists.")
     (license license:lgpl2.0+)))
 
 (define-public r-webfakes
@@ -5662,10 +5709,10 @@ R Markdown that students can use in self-guided learning.")
     (home-page "https://github.com/rstudio/webdriver")
     (synopsis "'WebDriver' Client for 'PhantomJS'")
     (description
-     "This package provides a client for the WebDriver API'.  It allows driving a
-(probably headless) web browser, and can be used to test web applications,
-including Shiny apps.  In theory it works with any WebDriver implementation, but
-it was only tested with PhantomJS'.")
+     "This package provides a client for the @code{WebDriver} API'.  It allows driving
+a (probably headless) web browser, and can be used to test web applications,
+including Shiny apps.  In theory it works with any @code{WebDriver}
+implementation, but it was only tested with @code{PhantomJS'.}")
     (license license:expat)))
 
 (define-public r-webdeveloper
@@ -5698,13 +5745,13 @@ to web development.")
 (define-public r-webchem
   (package
     (name "r-webchem")
-    (version "1.2.0")
+    (version "1.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "webchem" version))
               (sha256
                (base32
-                "0mvd0hppdrqngg1j7x2sdh3nkdb3zmsdf1gwqvzm128v6clsi7ls"))))
+                "06b9i9jipg564zyw4gkgiidz7501rlp40hxm4z3k5mzy148lr5vq"))))
     (properties `((upstream-name . "webchem")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5724,21 +5771,21 @@ to web development.")
     (description
      "Chemical information from around the web.  This package interacts with a suite
 of web services for chemical information.  Sources include: Alan Wood's
-Compendium of Pesticide Common Names, Chemical Identifier Resolver, ChEBI,
-Chemical Translation Service, ChemIDplus, ChemSpider, ETOX, Flavornet, NIST
-Chemistry WebBook, OPSIN, PAN Pesticide Database, PubChem, SRS, Wikidata.")
+Compendium of Pesticide Common Names, Chemical Identifier Resolver,
+@code{ChEBI,} Chemical Translation Service, @code{ChemSpider,} ETOX, Flavornet,
+NIST Chemistry @code{WebBook,} OPSIN, @code{PubChem,} SRS, Wikidata.")
     (license license:expat)))
 
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
-    (version "0.9.5")
+    (version "0.9.8")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "WebAnalytics" version))
               (sha256
                (base32
-                "1fas6pj9xqxdm2ln825bgghycn7226z6ha09d6a93w53m789dcby"))))
+                "0vdd4zc9aj7573fjsz4mclydj3h7p0av9kpgd1flppzsiscc94m4"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5867,9 +5914,9 @@ nonlinear time series models through weak ARMA representations.  It determines
 identification, estimation and validation for ARMA models and for AR and MA
 models in particular.  Functions can also be used in the strong case.  This
 package also works on white noises by omitting arguments p', q', ar and ma'.
-See Francq, C. and ZakoÃ¯an, J. (1998) <doi:10.1016/S0378-3758(97)00139-0> and
-Boubacar MaÃ¯nassara, Y. and Saussereau, B. (2018)
-<doi:10.1080/01621459.2017.1380030> for more details.")
+See Francq, C. and @code{ZakoÃ¯an,} J. (1998)
+<doi:10.1016/S0378-3758(97)00139-0> and Boubacar @code{MaÃ¯nassara,} Y. and
+Saussereau, B. (2018) <doi:10.1080/01621459.2017.1380030> for more details.")
     (license license:gpl3+)))
 
 (define-public r-weaana
@@ -5962,7 +6009,7 @@ package, see Hanson (2022) <doi:10.21105/joss.04594>.")
     (synopsis "Pull Spatial Layers from 'WDNR ArcGIS REST API'")
     (description
      "This package provides functions for finding and pulling data from the Wisconsin
-Department of Natural Resources ArcGIS REST APIs
+Department of Natural Resources @code{ArcGIS} REST APIs
 <https://dnrmaps.wi.gov/arcgis/rest/services> and
 <https://dnrmaps.wi.gov/arcgis2/rest/services>.")
     (license license:gpl3)))
@@ -5970,13 +6017,13 @@ Department of Natural Resources ArcGIS REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "1.1.0")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "wdnet" version))
               (sha256
                (base32
-                "0d5qyls9lsf3cwdayklw5hpk80ihp9pzp5jxmpnnc39s1amgpq2m"))))
+                "17bcyjag9fa5zmh14d0zsdc3abbxrfkhx11yr6dqm8hs587k17iy"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -5996,9 +6043,9 @@ weighted and directed networks, Yuan, Yan and Zhang (2021)
 networks, Opsahl, Agneessens and Skvoretz (2010)
 <doi:10.1016/j.socnet.2010.03.006>, Zhang, Wang and Yan (2022)
 <doi:10.1016/j.physa.2021.126438>, (3) clustering coefficient of weighted and
-directed networks, Fagiolo (2007) <doi:10.1103/PhysRevE.76.026107> and Clemente
-and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring networks with
-given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
+directed networks, Fagiolo (2007) @code{<doi:10.1103/PhysRevE.76.026107>} and
+Clemente and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring
+networks with given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
 <doi:10.1007/s11222-022-10161-8>, (5) preferential attachment network
 generation.")
     (license license:gpl3+)))
@@ -6164,6 +6211,26 @@ al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
 <doi:10.1002/9780470317129>.")
     (license license:gpl2)))
 
+(define-public r-wcep
+  (package
+    (name "r-wcep")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "wcep" version))
+              (sha256
+               (base32
+                "07x4yq51qsg152mxjavg5nfsim1v5g28py56mrzgwvxvaq3n4pz7"))))
+    (properties `((upstream-name . "wcep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-progress r-dplyr r-coin))
+    (home-page "https://github.com/sarah-0k/wcep")
+    (synopsis "Survival Analysis for Weighted Composite Endpoints")
+    (description
+     "Analyze given data frame with multiple endpoints and return Kaplan-Meier
+survival probabilities together with the specified confidence interval.")
+    (license license:expat)))
+
 (define-public r-wce
   (package
     (name "r-wce")
@@ -6291,9 +6358,9 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
     (description
      "This package implements the diagnostic \"theta\" developed in Poetscher and
 Preinerstorfer (2020) \"How Reliable are Bootstrap-based Heteroskedasticity
-Robust Tests?\" <arXiv:2005.04089>.  This diagnostic can be used to detect and
-weed out bootstrap-based procedures that provably have size equal to one for a
-given testing problem.  The implementation covers a large variety of
+Robust Tests?\" @code{<arXiv:2005.04089>.} This diagnostic can be used to detect
+and weed out bootstrap-based procedures that provably have size equal to one for
+a given testing problem.  The implementation covers a large variety of
 bootstrap-based procedures, cf.  the above mentioned article for details.  A
 function for computing bootstrap p-values is provided.")
     (license license:gpl2)))
@@ -6347,13 +6414,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.4.0")
+    (version "0.4.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "waywiser" version))
               (sha256
                (base32
-                "0r1fw4738f7sq22ysxc13182db5zqvl9mh6zgcb2bmsd9s1mha0a"))))
+                "0gi7488pza1syv58v33b1bq9yws3m799ilx95bch2bqnjjzapp1l"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -6416,8 +6483,8 @@ an implementation of multi-scale assessment as described in Riemann et al'.
  It is known from physics that only gradient fields, also known as conservative,
 have a well defined potential function.  Here we present an algorithm, based on
 the classical Helmholtz decomposition, to obtain an approximate potential
-function for non gradient fields.  More information in RodrÃ­guez-SÃ¡nchez
-(2020) <doi:10.1371/journal.pcbi.1007788>.")
+function for non gradient fields.  More information in
+@code{RodrÃ­guez-SÃ¡nchez} (2020) <doi:10.1371/journal.pcbi.1007788>.")
     (license license:expat)))
 
 (define-public r-wavscalogram
@@ -6489,8 +6556,8 @@ sample is well spread over space.  A new method to draw a sample from a
 population with spatial coordinates is proposed.  This method is called wave
 (Weakly Associated Vectors) sampling.  It uses the less correlated vector to a
 spatial weights matrix to update the inclusion probabilities vector into a
-sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
-<doi:10.1007/s13253-020-00407-1>.")
+sample.  For more details see @code{RaphaÃ«l} Jauslin and Yves @code{TillÃ©}
+(2019) <doi:10.1007/s13253-020-00407-1>.")
     (license license:gpl2+)))
 
 (define-public r-waves
@@ -6535,8 +6602,8 @@ cross-validation set formation, model training, and prediction functions to
 enable open-source association of spectral and reference data.  This package is
 documented in a peer-reviewed manuscript in the Plant Phenome Journal
 <doi:10.1002/ppj2.20012>.  Specialized cross-validation schemes are described in
-detail in JarquÃ­n et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.  Example
-data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
+detail in @code{JarquÃ­n} et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.
+Example data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
     (license license:expat)))
 
 (define-public r-waverr
@@ -6559,6 +6626,93 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
      "For multivariate datasets, this function enables the estimation of missing data
 using the Weighted AVERage of all possible Regressions using the data available.")
     (license license:gpl2)))
+
+(define-public r-waverider
+  (package
+    (name "r-waverider")
+    (version "0.3.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "WaverideR" version))
+              (sha256
+               (base32
+                "1gx7crfcr2pak8y8xidkrhlmdb63mcni2mcahq2fpi5496pnbnrj"))))
+    (properties `((upstream-name . "WaverideR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveletcomp
+                             r-viridis
+                             r-truncnorm
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-matrixstats
+                             r-matrix
+                             r-hmisc
+                             r-foreach
+                             r-fancova
+                             r-dosnow
+                             r-desctools
+                             r-decomposer
+                             r-colorramps
+                             r-colorednoise
+                             r-biwavelet
+                             r-astrochron))
+    (home-page "https://github.com/stratigraphy/WaverideR")
+    (synopsis "Extracting Signals from Wavelet Spectra")
+    (description
+     "The continuous wavelet transform enables the observation of
+transient/non-stationary cyclicity in time-series.  The goal of
+cyclostratigraphic studies is to define frequency/period in the depth/time
+domain.  By conducting the continuous wavelet transform on cyclostratigraphic
+data series one can observe and extract cyclic signals/signatures from signals.
+These results can then be visualized and interpreted enabling one to
+identify/interpret cyclicity in the geological record, which can be used to
+construct astrochronological age-models and identify and interpret cyclicity in
+past and present climate systems.  The @code{WaverideR} R package builds upon
+existing literature and existing codebase.  The list of articles which are
+relevant can be grouped in four subjects; cyclostratigraphic data
+analysis,example data sets,the (continuous) wavelet transform and astronomical
+solutions.  References for the cyclostratigraphic data analysis articles are:
+Stephen Meyers (2019) <doi:10.1016/j.earscirev.2018.11.015>.  Mingsong Li, Linda
+Hinnov, Lee Kump (2019) <doi:10.1016/j.cageo.2019.02.011> Stephen Meyers
+(2012)<doi:10.1029/2012PA002307> Mingsong Li, Lee R. Kump, Linda A. Hinnov,
+Michael E. Mann (2018) <doi:10.1016/j.epsl.2018.08.041>.  Wouters, S., Crucifix,
+M., Sinnesael, M., Da Silva, A.C., Zeeden, C., Zivanovic, M., Boulvain, F.,
+Devleeschouwer, X. (2022) <doi:10.1016/j.earscirev.2021.103894>.  Wouters, S.,
+Da Silva, A.-C., Boulvain, F., and Devleeschouwer, X. (2021)
+<doi:10.32614/RJ-2021-039>.  Huang, Norden E., Zhaohua Wu, Steven R. Long,
+Kenneth C. Arnold, Xianyao Chen, and Karin Blank (2009)
+<doi:10.1142/S1793536909000096>.  Cleveland, W. S.
+(1979)<doi:10.1080/01621459.1979.10481038> Hurvich, C.M., Simonoff, J.S., and
+Tsai, C.L. (1998) <doi:10.1111/1467-9868.00125>, Golub, G., Heath, M. and Wahba,
+G. (1979) <doi:10.2307/1268518>.  References for the example data articles are:
+Damien Pas, Linda Hinnov, James E. (Jed) Day, Kenneth Kodama, Matthias
+Sinnesael, Wei Liu (2018) <doi:10.1016/j.epsl.2018.02.010>.  Steinhilber,
+Friedhelm, Abreu, Jacksiel, Beer, Juerg , Brunner, Irene, Christl, Marcus,
+Fischer, Hubertus, @code{HeikkilA,} U., Kubik, Peter, Mann, Mathias, Mccracken,
+K. , Miller, Heinrich, Miyahara, Hiroko, Oerter, Hans , Wilhelms, Frank. (2012
+<doi:10.1073/pnas.1118965109>.  Christian Zeeden, Frederik Hilgen, Thomas
+Westerhold, Lucas Lourens, Ursula RÃ¶hl, Torsten Bickert (2013)
+<doi:10.1016/j.palaeo.2012.11.009>.  References for the (continuous) wavelet
+transform articles are: Morlet, Jean, Georges Arens, Eliane Fourgeau, and
+Dominique Glard (1982a) <doi:10.1190/1.1441328>.  J. Morlet, G. Arens, E.
+Fourgeau, D. Giard (1982b) <doi:10.1190/1.1441329>.  Torrence, C., and G. P.
+Compo (1998)<https://paos.colorado.edu/research/wavelets/bams_79_01_0061.pdf>,
+Gouhier TC, Grinsted A, Simko V (2021) <https://github.com/tgouhier/biwavelet>.
+Angi Roesch and Harald Schmidbauer (2018)
+@code{<https://CRAN.R-project.org/package=WaveletComp>.} Russell, Brian, and
+Jiajun Han
+@code{(2016)<https://www.crewes.org/Documents/ResearchReports/2016/CRR201668.pdf>.}
+Gabor, Dennis (1946) <http://genesis.eecg.toronto.edu/gabor1946.pdf>.  J.
+Laskar, P. Robutel, F. Joutel, M. Gastineau, A.C.M. Correia, and B. Levrard, B.
+(2004) <doi:10.1051/0004-6361:20041335>.  Laskar, J., Fienga, A., Gastineau, M.,
+Manche, H. (2011a) <doi:10.1051/0004-6361/201116836>.  References for the
+astronomical solutions articles are: Laskar, J., Gastineau, M., Delisle, J.-B.,
+Farres, A., Fienga, A. (2011b <doi:10.1051/0004-6361/201117504>.  J. Laskar
+(2019) <doi:10.1016/B978-0-12-824360-2.00004-8>.  Zeebe, Richard E (2017)
+<doi:10.3847/1538-3881/aa8cce>.  Zeebe, R. E. and Lourens, L. J. (2019)
+<doi:10.1016/j.epsl.2022.117595>.  Richard E. Zeebe Lucas J. Lourens (2022)
+<doi:10.1126/science.aax0612>.")
+    (license license:gpl2+)))
 
 (define-public r-waver
   (package
@@ -6987,8 +7141,8 @@ sum in the Hermite basis.  This representation is formally similar to the
 representation of quantum mechanical states as wave functions, whose squared
 modulus is a probability density.  This is described in more detail in \"Wave
 function representation of probability distributions,\" by Madeleine B. Thompson
-<arXiv:1712.07764>.  This package provides a reference implementation of the
-technique.")
+@code{<arXiv:1712.07764>.} This package provides a reference implementation of
+the technique.")
     (license license:asl2.0)))
 
 (define-public r-waved
@@ -7007,8 +7161,9 @@ technique.")
     (synopsis "Wavelet Deconvolution")
     (description
      "Makes available code necessary to reproduce figures and tables in papers on the
-WaveD method for wavelet deconvolution of noisy signals as presented in The
-WaveD Transform in R, Journal of Statistical Software Volume 21, No.  3, 2007.")
+@code{WaveD} method for wavelet deconvolution of noisy signals as presented in
+The @code{WaveD} Transform in R, Journal of Statistical Software Volume 21, No.
+3, 2007.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-waveband
@@ -7078,9 +7233,9 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
     (home-page "https://cran.r-project.org/package=watson")
     (synopsis "Fitting and Simulating Mixtures of Watson Distributions")
     (description
-     "Tools for fitting and simulating mixtures of Watson distributions.  The random
-sampling scheme of the package offers two sampling algorithms that are based of
-the results of Sablica, Hornik and Leydold (2022)
+     "This package provides tools for fitting and simulating mixtures of Watson
+distributions.  The random sampling scheme of the package offers two sampling
+algorithms that are based of the results of Sablica, Hornik and Leydold (2022)
 <https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution>.
  What is more, the package offers a smart tool to combine these two methods, and
 based on the selected parameters, it approximates the relative sampling speed
@@ -7291,6 +7446,43 @@ and distributed computation of the posterior in case of complex models and/or
 big datasets, thereby increasing computational speed tremendously.")
     (license license:gpl3)))
 
+(define-public r-waspasr
+  (package
+    (name "r-waspasr")
+    (version "0.1.5")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "waspasR" version))
+              (sha256
+               (base32
+                "09c1w9c8ql1xcpwsc0j2p9d0fmzkkq22jn16xvdl8hmlyc409br5"))))
+    (properties `((upstream-name . "waspasR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=waspasR")
+    (synopsis
+     "Tool Kit to Implement a W.A.S.P.A.S. Based Multi-Criteria Decision Analysis Solution")
+    (description
+     "This package provides a set of functions to implement decision-making systems
+based on the W.A.S.P.A.S. method (Weighted Aggregated Sum Product Assessment),
+Chakraborty and Zavadskas (2012) <doi:10.5755/j01.eee.122.6.1810>.  So this
+package offers functions that analyze and validate the raw data, which must be
+entered in a determined format; extract specific vectors and matrices from this
+raw database; normalize the input data; calculate rankings by intermediate
+methods; apply the lambda parameter for the main method; and a function that
+does everything at once.  The package has an example database called choppers,
+with which the user can see how the input data should be organized so that
+everything works as recommended by the decision methods based on multiple
+criteria that this package solves.  Basically, the data are composed of a set of
+alternatives, which will be ranked, a set of choice criteria, a matrix of values
+for each Alternative-Criterion relationship, a vector of weights associated with
+the criteria, since certain criteria are considered more important than others,
+as well as a vector that defines each criterion as cost or benefit, this
+determines the calculation formula, as there are those criteria that we want the
+highest possible value (e.g. durability) and others that we want the lowest
+possible value (e.g. price).")
+    (license license:gpl2+)))
+
 (define-public r-wasp
   (package
     (name "r-wasp")
@@ -7338,8 +7530,8 @@ Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
     (home-page "https://github.com/WA-Department-of-Agriculture/washi")
     (synopsis "Washington Soil Health Initiative Branding")
     (description
-     "Create plots and tables in a consistent style with WaSHI (Washington Soil Health
-Initiative) branding.  Use washi to easily style your ggplot2 plots and
+     "Create plots and tables in a consistent style with @code{WaSHI} (Washington Soil
+Health Initiative) branding.  Use washi to easily style your ggplot2 plots and
 flextable tables.")
     (license license:expat)))
 
@@ -7506,8 +7698,8 @@ this package.")
     (synopsis "Streamline Bioacoustic Analysis")
     (description
      "This package provides functions aiming to facilitate the analysis of the
-structure of animal acoustic signals in R'.  warbleR makes use of the basic
-sound analysis tools from the package seewave', and offers new tools for
+structure of animal acoustic signals in R'. @code{warbleR} makes use of the
+basic sound analysis tools from the package seewave', and offers new tools for
 acoustic structure analysis.  The main features of the package are the use of
 loops to apply tasks through acoustic signals referenced in a selection
 (annotation) table and the production of spectrograms in image files that allow
@@ -7593,9 +7785,9 @@ mapping MIME types from a database of over 1,500 extension mappings.")
      "Simulate Rehabilitation Strategies for Water Distribution Systems")
     (description
      "The outcome of various rehabilitation strategies for water distribution systems
-can be modeled with the Water Management Simulator (WaMaSim).  Pipe breaks and
-the corresponding damage and rehabilitation costs are simulated.  It is mainly
-intended to be used as educational tool for the Water Infrastructure
+can be modeled with the Water Management Simulator @code{(WaMaSim).} Pipe breaks
+and the corresponding damage and rehabilitation costs are simulated.  It is
+mainly intended to be used as educational tool for the Water Infrastructure
 Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
     (license license:gpl3)))
 
@@ -7700,7 +7892,7 @@ competing events.")
     (synopsis
      "Datasets for Multi-Omics Integration in a Plant Abiotic Stress Context")
     (description
-     "Datasets from the WallOmics project.  Contains phenomics, metabolomics,
+     "Datasets from the @code{WallOmics} project.  Contains phenomics, metabolomics,
 proteomics and transcriptomics data collected from two organs of five ecotypes
 of the model plant Arabidopsis thaliana exposed to two temperature growth
 conditions.  Exploratory and integrative analyses of these data are presented in
@@ -7752,7 +7944,7 @@ analysis, from the acquisition of species occurrence and environmental data to
 visualizing model predictions on an interactive map, thus bundling complex
 workflows into a single, streamlined interface.  An extensive vignette, which
 guides users through most package functionality can be found on the package's
-GitHub Pages website:
+@code{GitHub} Pages website:
 <https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
     (license license:gpl3)))
 
@@ -7845,6 +8037,46 @@ coefficients for efficient sampling.  For non-Gaussian models, the package uses
 the importance sampling type estimators based on approximate marginal MCMC as in
 Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
     (license license:gpl3+)))
+
+(define-public r-walkboutr
+  (package
+    (name "r-walkboutr")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "walkboutr" version))
+              (sha256
+               (base32
+                "1rv5pc2zqlx4b71mab3k6cjc1mfhg15aakl5vc1746z7ypsb2whn"))))
+    (properties `((upstream-name . "walkboutr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sp
+                             r-sf
+                             r-measurements
+                             r-magrittr
+                             r-lwgeom
+                             r-lubridate
+                             r-ggplot2
+                             r-ggforce
+                             r-geosphere
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rwalkbout/walkboutr")
+    (synopsis "Generate Walk Bouts from GPS and Accelerometry Data")
+    (description
+     "Process GPS and accelerometry data to generate walk bouts.  A walk bout is a
+period of activity with accelerometer movement matching the patterns of walking
+with corresponding GPS measurements that confirm travel.  The inputs of the
+walkboutr package are individual-level accelerometry and GPS data.  The outputs
+of the model are walk bouts with corresponding times, duration, and summary
+statistics on the sample population, which collapse all personally identifying
+information.  These bouts can be used to measure walking both as an outcome of a
+change to the built environment or as a predictor of health outcomes such as a
+cardioprotective behavior.  Kang B, Moudon AV, Hurvitz PM, Saelens BE (2017)
+<doi:10.1016/j.trd.2017.09.026>.")
+    (license license:bsd-3)))
 
 (define-public r-wal
   (package

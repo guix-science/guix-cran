@@ -12,6 +12,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -160,19 +161,19 @@ Quantile Universal Threshold (QUT) for lasso regularization of Generalized
 Linear Models (GLM) and square-root lasso to obtain a sparse model with a good
 compromise between high true positive rate and low false discovery rate.
 Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
-<arXiv:1708.02908>.")
+@code{<arXiv:1708.02908>.}")
     (license license:gpl2)))
 
 (define-public r-qurve
   (package
     (name "r-qurve")
-    (version "1.0")
+    (version "1.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QurvE" version))
               (sha256
                (base32
-                "0zkacaraxnb8br5yympc9fpbfri9pxn5nnsii9nq91ryqyzz3bf9"))))
+                "1i1cmwndi8vkl2hs06mlad53l1q19fmrg32vciyllvv3s9r45mgz"))))
     (properties `((upstream-name . "QurvE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -209,7 +210,8 @@ models.  Complete data analysis workflows can be executed in a single step via
 user-friendly wrapper functions.  The results of these workflows are summarized
 in detailed reports as well as intuitively navigable R data containers.  A shiny
 application provides access to all features without requiring any programming
-knowledge.")
+knowledge.  The package is described in further detail in Wirth et al. (2023)
+<doi:10.1038/s41596-023-00850-7>.")
     (license license:gpl3+)))
 
 (define-public r-quran
@@ -299,13 +301,13 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
 (define-public r-quincunx
   (package
     (name "r-quincunx")
-    (version "0.1.5")
+    (version "0.1.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quincunx" version))
               (sha256
                (base32
-                "1jny5q2sdndc26phqfr0vj3ry6pcdjcgdqqwqkhlf0x97vlicgb7"))))
+                "0r76rgzxqlm74brzh4kwxns3jb7hs9bfzfxdp8156cfrpjk7hxs0"))))
     (properties `((upstream-name . "quincunx")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -325,7 +327,7 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
                              r-glue
                              r-dplyr
                              r-concatenate))
-    (home-page "https://github.com/maialab/quincunx")
+    (home-page "https://github.com/ramiromagno/quincunx")
     (synopsis "REST API Client for the 'PGS' Catalog")
     (description
      "Programmatic access to the PGS Catalog.  This package provides easy access to
@@ -370,8 +372,8 @@ Format .txt file that read into Qualtrics.")
     (synopsis "Simplify Output Verbosity")
     (description
      "Simplifies output suppression logic in R packages, as it's common to develop
-some form of it in R. quietR intends to simplify that problem and allow a set of
-simple toggle functions to be used to suppress console output.")
+some form of it in R. @code{quietR} intends to simplify that problem and allow a
+set of simple toggle functions to be used to suppress console output.")
     (license license:expat)))
 
 (define-public r-quiddich
@@ -516,36 +518,29 @@ or any function defined by the user) for multiple groups.")
 (define-public r-quickplot
   (package
     (name "r-quickplot")
-    (version "0.1.8")
+    (version "1.0.2")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quickPlot" version))
               (sha256
                (base32
-                "1rrvwfzlpf9lrs7xwrjppkwyaylpyr58rllxqn124vfqpdp1h9sr"))))
+                "0228mcv6cz74whzxmgcdb79w0k8mibszw4kwnjjs6pljz41rxcbq"))))
     (properties `((upstream-name . "quickPlot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-rgeos
-                             r-rgdal
-                             r-rcolorbrewer
-                             r-raster
-                             r-igraph
-                             r-gridbase
-                             r-ggplot2
-                             r-fpcompare
-                             r-data-table
-                             r-backports))
+    (propagated-inputs (list r-terra r-fpcompare r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://quickplot.predictiveecology.org")
     (synopsis "System of Plotting Optimized for Speed and Modularity")
     (description
-     "This package provides a high-level plotting system, built using grid graphics,
-that is optimized for speed and modularity.  This has great utility for quick
-visualizations when testing code, with the key benefit that visualizations are
-updated independently of one another.  The suggested packages fastshp and
-visualTest can be installed with e.g., install.packages(\"fastshp\", repos =
-\"https://PredictiveEcology.r-universe.dev\")'.")
+     "This package provides a high-level plotting system, compatible with `ggplot2`
+objects, maps from `sf`, `terra`, `raster`, `sp`.  It is built primarily on the
+grid package.  The objective of the package is to provide a plotting system that
+is built for speed and modularity.  This is useful for quick visualizations when
+testing code and for plotting multiple figures to the same device from
+independent sources that may be independent of one another (i.e., different
+function or modules the create the visualizations).  The suggested package
+fastshp can be installed from the repository
+@code{(<https://PredictiveEcology.r-universe.dev>).}")
     (license license:gpl3)))
 
 (define-public r-quicknmix
@@ -648,9 +643,30 @@ does not require that the data be in geographic coordinates.")
     (home-page "https://cran.r-project.org/package=QuickJSR")
     (synopsis "Interface for the 'QuickJS' Lightweight 'JavaScript' Engine")
     (description
-     "An R interface to the QuickJS portable JavaScript engine.  The engine is bundled
-entirely within the package, requiring no external system dependencies beyond a
-C compiler.")
+     "An R interface to the @code{QuickJS} portable @code{JavaScript} engine.  The
+engine is bundled entirely within the package, requiring no external system
+dependencies beyond a C compiler.")
+    (license license:expat)))
+
+(define-public r-quickcode
+  (package
+    (name "r-quickcode")
+    (version "0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "quickcode" version))
+              (sha256
+               (base32
+                "0nfpzdfnh7974cx4lc1vbdm40amlzy0c135ynm1fvkw0wczdppc1"))))
+    (properties `((upstream-name . "quickcode")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi))
+    (native-inputs (list r-knitr))
+    (home-page "https://quickcode.obi.obianom.com")
+    (synopsis "Compilation of Some Frequently Used R Functions")
+    (description
+     "The NOT functions and a simple compilation of various functions for easy usage.
+Shorthand code to save memory usage.")
     (license license:expat)))
 
 (define-public r-quickcheck
@@ -675,9 +691,9 @@ C compiler.")
     (home-page "https://github.com/armcn/quickcheck")
     (synopsis "Property Based Testing")
     (description
-     "Property based testing, inspired by the original QuickCheck'.  This package
-builds on the property based testing framework provided by hedgehog and is
-designed to seamlessly integrate with testthat'.")
+     "Property based testing, inspired by the original @code{QuickCheck'.} This
+package builds on the property based testing framework provided by hedgehog and
+is designed to seamlessly integrate with testthat'.")
     (license license:expat)))
 
 (define-public r-quickblock
@@ -862,13 +878,13 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
 (define-public r-queryup
   (package
     (name "r-queryup")
-    (version "1.0.4")
+    (version "1.0.5")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "queryup" version))
               (sha256
                (base32
-                "11abm3rvgvyzx247rrs32g46idx4k32knlnmhvvahgm5y3hh8l6s"))))
+                "0rl31vs1m7qjbix1qgmvnxrvjf2k2ikd8p9frz1yia7xxaq1m286"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -876,7 +892,7 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
     (home-page "https://github.com/VoisinneG/queryup")
     (synopsis "Query the 'UniProtKB' REST API")
     (description
-     "Retrieve protein information from the UniProtKB REST API (see
+     "Retrieve protein information from the @code{UniProtKB} REST API (see
 <https://www.uniprot.org/help/api_queries>).")
     (license license:gpl3)))
 
@@ -968,12 +984,12 @@ demonstrate the importance of visualizing your data, the importance of not
 relying on statistical summary measures alone, and why additional assumptions
 about the data generating mechanism are needed when estimating causal effects.
 The package includes \"Anscombe's Quartet\" (Anscombe 1973)
-<doi:10.1080/00031305.1973.10478966>, D'Agostino McGowan & Barrett (2023)
-\"Causal Quartet\" <doi:10.48550/arXiv.2304.02683>, \"Datasaurus Dozen\" (Matejka &
-Fitzmaurice 2017), \"Interaction Triptych\" (Rohrer & Arslan 2021)
+<doi:10.1080/00031305.1973.10478966>, D'Agostino @code{McGowan} & Barrett (2023)
+\"Causal Quartet\" @code{<doi:10.48550/arXiv.2304.02683>,} \"Datasaurus Dozen\"
+(Matejka & Fitzmaurice 2017), \"Interaction Triptych\" (Rohrer & Arslan 2021)
 <doi:10.1177/25152459211007368>, \"Rashomon Quartet\" (Biecek et al.  2023)
-<doi:10.48550/arXiv.2302.13356>, and Gelman \"Variation and Heterogeneity Causal
-Quartets\" (Gelman et al.  2023) <doi:10.48550/arXiv.2302.12878>.")
+@code{<doi:10.48550/arXiv.2302.13356>,} and Gelman \"Variation and Heterogeneity
+Causal Quartets\" (Gelman et al.  2023) @code{<doi:10.48550/arXiv.2302.12878>.}")
     (license license:expat)))
 
 (define-public r-quartet
@@ -1003,10 +1019,10 @@ Quartets\" (Gelman et al.  2023) <doi:10.48550/arXiv.2302.12878>.")
 cladograms, calculating the symmetric quartet distance of Bandelt & Dress
 (1986), Reconstructing the shape of a tree from observed dissimilarity data,
 Advances in Applied Mathematics, 7, 309-343 <doi:10.1016/0196-8858(86)90038-2>,
-and using the tqDist algorithm of Sand et al. (2014), tqDist: a library for
-computing the quartet and triplet distances between binary or general trees,
-Bioinformatics, 30, 2079â2080 <doi:10.1093/bioinformatics/btu157> for pairs of
-binary trees.")
+and using the @code{tqDist} algorithm of Sand et al. (2014), @code{tqDist:} a
+library for computing the quartet and triplet distances between binary or
+general trees, Bioinformatics, 30, 2079â2080
+<doi:10.1093/bioinformatics/btu157> for pairs of binary trees.")
     (license license:gpl2+)))
 
 (define-public r-quarrint
@@ -1057,15 +1073,15 @@ and the other is relying on an artificial neural network.")
     (synopsis
      "Simple Methods for Calculating and Backtesting Value at Risk and Expected Shortfall")
     (description
-     "Enables the user to calculate Value at Risk (VaR) and Expected Shortfall (ES) by
-means of various types of historical simulation.  Currently plain-, age-,
-volatility-weighted- and filtered historical simulation are implemented in this
-package.  Volatility weighting can be carried out via an exponentially weighted
-moving average model (EWMA) or other GARCH-type models.  The performance can be
-assessed via Traffic Light Test, Coverage Tests and Loss Functions.  The methods
-of the package are described in Gurrola-Perez, P. and Murphy, D. (2015)
-<https://EconPapers.repec.org/RePEc:boe:boeewp:0525> as well as McNeil, J.,
-Frey, R., and Embrechts, P. (2015)
+     "Enables the user to calculate Value at Risk @code{(VaR)} and Expected Shortfall
+(ES) by means of various types of historical simulation.  Currently plain-,
+age-, volatility-weighted- and filtered historical simulation are implemented in
+this package.  Volatility weighting can be carried out via an exponentially
+weighted moving average model (EWMA) or other GARCH-type models.  The
+performance can be assessed via Traffic Light Test, Coverage Tests and Loss
+Functions.  The methods of the package are described in Gurrola-Perez, P. and
+Murphy, D. (2015) @code{<https://EconPapers.repec.org/RePEc:boe:boeewp:0525>} as
+well as @code{McNeil,} J., Frey, R., and Embrechts, P. (2015)
 <https://ideas.repec.org/b/pup/pbooks/10496.html>.")
     (license license:gpl3)))
 
@@ -1094,10 +1110,10 @@ versions of all gates and can simulate complete or partial measurements of kets.
 quantum noise.  Includes larger applications, such as Steane error correction
 <DOI:10.1103/physrevlett.77.793>, Quantum Fourier Transform and Shor's algorithm
 (Shor 1999), Grover's algorithm (1996), Quantum Approximation Optimization
-Algorithm (QAOA) (Farhi, Goldstone, and Gutmann 2014) <arXiv:1411.4028>, and a
-variational quantum classifier (Schuld 2018) <arXiv:1804.00633>.  Can be used
-with the gridsynth algorithm <arXiv:1212.6253> to perform decomposition into the
-Clifford+T set.")
+Algorithm (QAOA) (Farhi, Goldstone, and Gutmann 2014) @code{<arXiv:1411.4028>,}
+and a variational quantum classifier (Schuld 2018) @code{<arXiv:1804.00633>.}
+Can be used with the gridsynth algorithm @code{<arXiv:1212.6253>} to perform
+decomposition into the Clifford+T set.")
     (license license:gpl3)))
 
 (define-public r-quantspec
@@ -1144,16 +1160,16 @@ forest package ranger'.")
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
-    (version "1.6-2")
+    (version "1.7-0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "quantregGrowth" version))
               (sha256
                (base32
-                "1ycr6dlbkypv9wf4ivk8kv1hpcxzzqh3ds3lic6way4vaikmh6mq"))))
+                "0as226mcchbq41wrhl3vb8j4szqvcfk9zdsnf9fnyn50ymh4c5mb"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quantreg))
+    (propagated-inputs (list r-sparsem r-quantreg))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quantregGrowth")
     (synopsis
@@ -1190,7 +1206,7 @@ fitted curves are allowed, see Muggeo and others (2013)
      "Quantile Regression Forests is a tree-based ensemble method for estimation of
 conditional quantiles.  It is particularly well suited for high-dimensional
 data.  Predictor variables of mixed classes can be handled.  The package is
-dependent on the package randomForest', written by Andy Liaw.")
+dependent on the package @code{randomForest',} written by Andy Liaw.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-quantreg-nonpar
@@ -1260,8 +1276,8 @@ treatment regime is also included.")
 improve the performance of sample pattern detection, such as clustering,
 dimension reduction, and construction of networks between subjects.  The method
 has been published in Bioinformatics (Fei et al, 2018,
-<doi:10.1093/bioinformatics/bty117>).  Also available on GitHub
-<https://github.com/tengfei-emory/QuantNorm>.")
+<doi:10.1093/bioinformatics/bty117>).  Also available on @code{GitHub}
+@code{<https://github.com/tengfei-emory/QuantNorm>.}")
     (license license:gpl2+)))
 
 (define-public r-quantkriging
@@ -1572,10 +1588,10 @@ keyness plots.")
 data in the form of a document-feature matrix.  Includes original
 implementations of Laver', Benoit', and Garry's (2003)
 <doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
-<arXiv:1710.08963> class affinity scaling model, and the Slapin and Proksch
-(2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as methods
-for correspondence analysis, latent semantic analysis, and fast Naive Bayes and
-linear SVMs specially designed for sparse textual data.")
+@code{<arXiv:1710.08963>} class affinity scaling model, and the Slapin and
+Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as
+methods for correspondence analysis, latent semantic analysis, and fast Naive
+Bayes and linear SVMs specially designed for sparse textual data.")
     (license license:gpl3)))
 
 (define-public r-quantdr
@@ -1647,6 +1663,33 @@ See Fan and Gijbels (1996) <doi:10.1201/9780203748725> and Perperoglou et
 al.(2019) <doi:10.1186/s12874-019-0666-3>.")
     (license license:cecill)))
 
+(define-public r-quantbondcurves
+  (package
+    (name "r-quantbondcurves")
+    (version "0.1.0")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "QuantBondCurves" version))
+              (sha256
+               (base32
+                "035dd5q1jg3m2208khkg92k6ypskh85j04g9v4b83qff8lq91fg0"))))
+    (properties `((upstream-name . "QuantBondCurves")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=QuantBondCurves")
+    (synopsis "Calculates Bond Values and Interest Rate Curves for Finance")
+    (description
+     "Values different types of assets and calibrates discount curves for quantitative
+financial analysis.  It covers fixed coupon assets, floating note assets,
+interest and cross currency swaps with different payment frequencies.  Enables
+the calibration of spot, instantaneous forward and basis curves, making it a
+powerful tool for accurate and flexible bond valuation and curve generation.
+The valuation and calibration techniques presented here are consistent with
+industry standards and incorporates author's own calculations.  Tuckman, B.,
+Serrat, A. (2022, ISBN: 978-1-119-83555-4).")
+    (license license:gpl3+)))
+
 (define-public r-quandl
   (package
     (name "r-quandl")
@@ -1670,43 +1713,16 @@ Quandl API. For more information go to <https://docs.quandl.com>.  For more help
 on the package itself go to <https://www.quandl.com/tools/r>.")
     (license license:expat)))
 
-(define-public r-qualypsoss
-  (package
-    (name "r-qualypsoss")
-    (version "1.1.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "qualypsoss" version))
-              (sha256
-               (base32
-                "1kcdmbj0wyycp7i4d3hb1addnl1c7ndkc6qnbnds0vcfk1dfxd8h"))))
-    (properties `((upstream-name . "qualypsoss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-qualypso
-                             r-mvtnorm
-                             r-mass
-                             r-ggthemes
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qualypsoss")
-    (synopsis "Uncertainties of Climate Projections using Smoothing Splines")
-    (description
-     "These functions use smoothing-splines for the assessment of single-member
-ensembles of climate projections. - Cheng, C.-I. and P. L. Speckman (2012)
-<doi:10.1016/j.csda.2012.05.020>.")
-    (license license:gpl3)))
-
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "2.0")
+    (version "2.1")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QUALYPSO" version))
               (sha256
                (base32
-                "1g87763x5dzjlbq15wrpv46pgv5ds8gf9c4pqjj3l43827wzqxpb"))))
+                "0d75r2835x9926rfk7wjkj2rixdq0apakz50vmg2lbmfgcfhgks1"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-mass r-foreach r-expm r-doparallel))
@@ -1878,35 +1894,6 @@ defined on an interval measurement scale with only qualitative and ordinal
 information available.")
     (license license:gpl2+)))
 
-(define-public r-quadtree
-  (package
-    (name "r-quadtree")
-    (version "0.1.10")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "quadtree" version))
-              (sha256
-               (base32
-                "07n5fllbgd9n36hra373fbvwav43w6wil5iabncah4x6a49a5aha"))))
-    (properties `((upstream-name . "quadtree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-raster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dfriend21/quadtree/")
-    (synopsis "Region Quadtrees for Spatial Data")
-    (description
-     "This package provides functionality for working with raster-like quadtrees (also
-called âregion quadtreesâ), which allow for variable-sized cells.  The
-package allows for flexibility in the quadtree creation process.  Several
-functions defining how to split and aggregate cells are provided, and custom
-functions can be written for both of these processes.  In addition, quadtrees
-can be created using other quadtrees as âtemplatesâ, so that the new
-quadtree's structure is identical to the template quadtree.  The package also
-includes functionality for modifying quadtrees, querying values, saving
-quadtrees to a file, and calculating least-cost paths using the quadtree as a
-resistance surface.")
-    (license license:expat)))
-
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
@@ -1930,7 +1917,7 @@ resistance surface.")
     (description
      "Fits classical sparse regression models with efficient active set algorithms by
 solving quadratic problems as described by Grandvalet, Chiquet and Ambroise
-(2017) <arXiv:1210.2077>.  Also provides a few methods for model selection
+(2017) @code{<arXiv:1210.2077>.} Also provides a few methods for model selection
 purpose (cross-validation, stability selection).")
     (license license:gpl3+)))
 
@@ -2295,13 +2282,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.1.3")
+    (version "1.2.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QTLEMM" version))
               (sha256
                (base32
-                "1f0mb2v785qmjk7w6bmc0028q9rfm45i1abmpcbwq4qj1lb4s8zc"))))
+                "1cs4x5v85ad8lmi9alycz0kqnz07qh18ic3r4j3ww53l5p9wwj4g"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -2716,13 +2703,13 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "1.1.1")
+    (version "2.0.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qspray" version))
               (sha256
                (base32
-                "0z527hn2yvxglnazd0r75fw2qfm6dzyr47swkqarq6fphzk9r46b"))))
+                "0pg7d36d2s08bpsb7kq6k0h3mq869gx1ak3vn2bkfxnmfnn6099m"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -2738,7 +2725,9 @@ functions provided by similar packages.")
     (synopsis "Multivariate Polynomials with Rational Coefficients")
     (description
      "Symbolic calculation and evaluation of multivariate polynomials with rational
-coefficients.  This package is strongly inspired by the spray package.")
+coefficients.  This package is strongly inspired by the spray package.  It also
+provides a function to compute @code{GrÃ¶bner} bases (reference
+<doi:10.1007/978-3-319-16721-3>).")
     (license license:gpl3)))
 
 (define-public r-qsplines
@@ -2814,10 +2803,10 @@ Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
 qubits.  It allows to define general single qubit gates and general controlled
 single qubit gates.  For convenience, it currently provides the most common
 gates (X, Y, Z, H, Z, S, T, Rx, Ry, Rz, CNOT, SWAP, Toffoli or CCNOT, Fredkin or
-CSWAP).  qsimulatR also implements noise models.  qsimulatR supports plotting of
-circuits and is able to export circuits to Qiskit <https://qiskit.org/>, a
-python package which can be used to run on IBM's hardware
-<https://quantum-computing.ibm.com/>.")
+CSWAP). @code{qsimulatR} also implements noise models. @code{qsimulatR} supports
+plotting of circuits and is able to export circuits to Qiskit
+<https://qiskit.org/>, a python package which can be used to run on IBM's
+hardware <https://quantum-computing.ibm.com/>.")
     (license license:gpl3)))
 
 (define-public r-qsardata
@@ -3004,8 +2993,8 @@ practice.")
      "Provides R-Language Code to Examine Quantitative Risk Management Concepts")
     (description
      "This package provides functions/methods to accompany the book Quantitative Risk
-Management: Concepts, Techniques and Tools by Alexander J. McNeil, Ruediger
-Frey, and Paul Embrechts.")
+Management: Concepts, Techniques and Tools by Alexander J. @code{McNeil,}
+Ruediger Frey, and Paul Embrechts.")
     (license license:gpl2+)))
 
 (define-public r-qrlmm
@@ -3055,21 +3044,22 @@ regression setting.")
 (define-public r-qrisk3
   (package
     (name "r-qrisk3")
-    (version "0.4.0")
+    (version "0.6.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QRISK3" version))
               (sha256
                (base32
-                "1cya1va5msjrlfn49npvfqiyq9sm4kfxsaszxqwkxvxk8aw9ns1i"))))
+                "1qyipdmw7ygxlclnyf726bjkirskkkf4cygyv0y421c9x7dgznij"))))
     (properties `((upstream-name . "QRISK3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=QRISK3")
     (synopsis "10-Year Cardiovascular Disease Risk Calculator (QRISK3 2017)")
     (description
      "This function aims to calculate risk of developing cardiovascular disease of
-individual patients in next 10 years.  The package was based on published risk
-prediction algorithm <https://qrisk.org/three/src.php>.")
+individual patients in next 10 years.  This unofficial package was based on
+published open-sourced free risk prediction algorithm QRISK3-2017
+<https://qrisk.org/src.php>.")
     (license license:gpl3)))
 
 (define-public r-qris
@@ -3104,7 +3094,7 @@ partial multiplier bootstrap method and robust sandwich estimator.  Furthermore,
 a simultaneous procedure of estimating regression parameters and their standard
 errors via an iterative updating procedure is implemented (iterative).  See Kim,
 K. (2022) \"Smoothed quantile regression for censored residual life\",
-<arXiv:2205.00413>.")
+@code{<arXiv:2205.00413>.}")
     (license license:gpl3+)))
 
 (define-public r-qripkg
@@ -3158,8 +3148,8 @@ individual measurements.")
 in Quarto and RMarkdown reports and that produce Quarto elements for special
 formatting such as tabs and marginal notes and graphs.  Some of the functions
 produce entire report sections with tabs, e.g., the missing data report created
-by missChk().  Special clinical trial graphics for adverse event reporting is
-also included.")
+by @code{missChk().} Special clinical trial graphics for adverse event reporting
+is also included.")
     (license license:gpl2+)))
 
 (define-public r-qrencoder
@@ -3327,24 +3317,26 @@ expression quantitative trait loci.")
     (home-page "https://cran.r-project.org/package=qrage")
     (synopsis "Tools that Create D3 JavaScript Force Directed Graph from R")
     (description
-     "Tools that create D3 JavaScript force directed graph from R. D3 JavaScript was
-created by Michael Bostock.  See http://d3js.org/ and, more specifically for
-Force Directed Graph https://github.com/mbostock/d3/wiki/Force-Layout.")
+     "This package provides tools that create D3 @code{JavaScript} force directed
+graph from R. D3 @code{JavaScript} was created by Michael Bostock.  See
+http://d3js.org/ and, more specifically for Force Directed Graph
+https://github.com/mbostock/d3/wiki/Force-Layout.")
     (license license:expat)))
 
 (define-public r-qragadget
   (package
     (name "r-qragadget")
-    (version "0.1.0")
+    (version "0.3.0")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QRAGadget" version))
               (sha256
                (base32
-                "0vmhbpfbbpbcs6s9zjam893yl54spbx4x4698c504g96hcc19kkp"))))
+                "06ka6n9sh7h8ka6mklbvk8f7sqmz50mk74fjaj1r4l774wribxaq"))))
     (properties `((upstream-name . "QRAGadget")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
+                             r-shinywidgets
                              r-shiny
                              r-scales
                              r-raster
@@ -3358,8 +3350,7 @@ Force Directed Graph https://github.com/mbostock/d3/wiki/Force-Layout.")
      "Upload raster data and easily create interactive quantitative risk analysis QRA
 visualizations.  Select from numerous color palettes, base-maps, and different
 configurations.")
-    (license (list (license:fsdg-compatible "Apache License")
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-qra
   (package
@@ -3387,13 +3378,14 @@ configurations.")
 Fieller's formula methodology, for calculating a confidence interval for a ratio
 of (commonly, correlated) means.  See Fieller (1954)
 <doi:10.1111/j.2517-6161.1954.tb00159.x>.  Here, the application of primary
-interest is to studies ofÂ insect mortality response toÂ increasing doses of a
-fumigant, or, e.g., to time in coolstorage.  The formula is used to calculate a
-confidence interval for the dose or time required to achieve a specified
-mortality proportion, commonly 0.5 or 0.99.  Vignettes demonstrate link
-functions that may be considered, checks on fitted models, and alternative
-choices of error family.  Note in particular the betabinomial error family.  See
-also Maindonald, Waddell, and Petry (2001) <doi:10.1016/S0925-5214(01)00082-5>.")
+interest is to studies @code{ofÂ insect} mortality response
+@code{toÂ increasing} doses of a fumigant, or, e.g., to time in coolstorage.
+The formula is used to calculate a confidence interval for the dose or time
+required to achieve a specified mortality proportion, commonly 0.5 or 0.99.
+Vignettes demonstrate link functions that may be considered, checks on fitted
+models, and alternative choices of error family.  Note in particular the
+betabinomial error family.  See also Maindonald, Waddell, and Petry (2001)
+<doi:10.1016/S0925-5214(01)00082-5>.")
     (license license:gpl3)))
 
 (define-public r-qr
@@ -3570,8 +3562,8 @@ extend to the Q-Q boxplot.")
 profiles.  For each profile, data imputations and adjustments are made as
 necessary and basic parameters are estimated.  Supports single dose, multi-dose,
 and multi-subject data.  Supports steady-state calculations and various routes
-of drug administration.  See ?qpNCA and vignettes.  Methodology follows Rowland
-and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
+of drug administration.  See @code{?qpNCA} and vignettes.  Methodology follows
+Rowland and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
 ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
     (license license:gpl3)))
 
@@ -3629,12 +3621,12 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
     (home-page "https://github.com/lixiang117423/qPCRtools")
     (synopsis "Tools for qPCR")
     (description
-     "RT-qPCR is a widely used method to detect the expression level of genes in
-biological research.  A crucial step in processing qPCR data is to calculate the
-amplification efficiency of genes to determine which method should be used to
-calculate expression level of genes.  This Package can do it easily.  In
-addition to that, this package can calculate the expression level of genes based
-on three methods.")
+     "@code{RT-qPCR} is a widely used method to detect the expression level of genes
+in biological research.  A crucial step in processing @code{qPCR} data is to
+calculate the amplification efficiency of genes to determine which method should
+be used to calculate expression level of genes.  This Package can do it easily.
+In addition to that, this package can calculate the expression level of genes
+based on three methods.")
     (license license:expat)))
 
 (define-public r-qpcrhelper
@@ -3655,11 +3647,12 @@ on three methods.")
     (synopsis "qPCR Ct Values to Expression Values")
     (description
      "Computes normalized cycle threshold (Ct) values (delta Ct) from raw quantitative
-polymerase chain reaction (qPCR) Ct values and conducts test of significance
-using t.test().  Plots expression values based from log2(2^(-1*delta delta Ct))
-across groups per gene of interest.  Methods for calculation of delta delta Ct
-and relative expression (2^(-1*delta delta Ct)) values are described in: Livak &
-Schmittgen, (2001) <doi:10.1006/meth.2001.1262>.")
+polymerase chain reaction @code{(qPCR)} Ct values and conducts test of
+significance using t.test().  Plots expression values based from
+log2(2^(-1*delta delta Ct)) across groups per gene of interest.  Methods for
+calculation of delta delta Ct and relative expression (2^(-1*delta delta Ct))
+values are described in: Livak & Schmittgen, (2001)
+<doi:10.1006/meth.2001.1262>.")
     (license license:gpl3)))
 
 (define-public r-qolmiss
@@ -3780,11 +3773,11 @@ either principal components or centroid factor extraction, manual or automatic
 flagging, a number of mathematical methods for rotation (or none), and a number
 of correlation coefficients for the initial correlation matrix, among many other
 options.  Additional functions are available to import and export data (from raw
-*.CSV, HTMLQ and FlashQ *.CSV, PQMethod *.DAT and easy-htmlq *.JSON files), to
-print and plot, to import raw data from individual *.CSV files, and to make
-printable cards.  The package also offers functions to print Q cards and to
-generate Q distributions for study administration.  See further details in the
-package documentation, and in the web pages below, which include a cookbook,
+*.CSV, HTMLQ and @code{FlashQ} *.CSV, PQMethod *.DAT and easy-htmlq *.JSON
+files), to print and plot, to import raw data from individual *.CSV files, and
+to make printable cards.  The package also offers functions to print Q cards and
+to generate Q distributions for study administration.  See further details in
+the package documentation, and in the web pages below, which include a cookbook,
 guidelines for more advanced analysis (how to perform manual flagging or change
 the sign of factors), data management, and a graphical user interface (GUI) for
 online and offline use.")
@@ -3850,8 +3843,8 @@ Statistics, 16, 2206-2251.")
     (description
      "Manages, builds and computes statistics and datasets for the construction of
 quarterly (sub-annual) life tables by exploiting micro-data from either a
-general or an insured population.  References: PavÃ­a and LledÃ³ (2022)
-<doi:10.1111/rssa.12769>.")
+general or an insured population.  References: @code{PavÃ­a} and @code{LledÃ³}
+(2022) <doi:10.1111/rssa.12769>.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-qlearning
@@ -3877,23 +3870,23 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.6")
+    (version "0.0.7")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "qlcal" version))
               (sha256
                (base32
-                "1mj34m1fp58s3kchav4g04y48aw3d175jry1cyqpr593x9nh6bi4"))))
+                "1dl6bahdyimkw93fgqf7qz62dn1znp2ia972fdvj33sx0zgnwngy"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
     (home-page "https://github.com/qlcal/qlcal-r")
     (synopsis "R Bindings to the Calendaring Functionality of 'QuantLib'")
     (description
-     "QuantLib bindings are provided for R using Rcpp via an evolved version of the
-initial header-only Quantuccia project offering an subset of QuantLib (now
-maintained separately just for the calendaring subset).  See the included file
-AUTHORS for a full list of contributors to QuantLib (and hence also
+     "@code{QuantLib} bindings are provided for R using Rcpp via an evolved version of
+the initial header-only Quantuccia project offering an subset of @code{QuantLib}
+(now maintained separately just for the calendaring subset).  See the included
+file AUTHORS for a full list of contributors to @code{QuantLib} (and hence also
 Quantuccia').")
     (license license:gpl2+)))
 
@@ -4353,15 +4346,15 @@ q-gaussian distribution with parameters mu and sig.")
     (synopsis "Quantum Game Theory Simulator")
     (description
      "General purpose toolbox for simulating quantum versions of game theoretic models
-(Flitney and Abbott 2002) <arXiv:quant-ph/0208069>.  Quantum (Nielsen and Chuang
-2010, ISBN:978-1-107-00217-3) versions of models that have been handled are:
-Penny Flip Game (David A. Meyer 1998) <arXiv:quant-ph/9804010>, Prisoner's
-Dilemma (J. Orlin Grabbe 2005) <arXiv:quant-ph/0506219>, Two Person Duel
-(Flitney and Abbott 2004) <arXiv:quant-ph/0305058>, Battle of the Sexes (Nawaz
-and Toor 2004) <arXiv:quant-ph/0110096>, Hawk and Dove Game (Nawaz and Toor
-2010) <arXiv:quant-ph/0108075>, Newcomb's Paradox (Piotrowski and Sladkowski
-2002) <arXiv:quant-ph/0202074> and Monty Hall Problem (Flitney and Abbott 2002)
-<arXiv:quant-ph/0109035>.")
+(Flitney and Abbott 2002) @code{<arXiv:quant-ph/0208069>.} Quantum (Nielsen and
+Chuang 2010, ISBN:978-1-107-00217-3) versions of models that have been handled
+are: Penny Flip Game (David A. Meyer 1998) @code{<arXiv:quant-ph/9804010>,}
+Prisoner's Dilemma (J. Orlin Grabbe 2005) @code{<arXiv:quant-ph/0506219>,} Two
+Person Duel (Flitney and Abbott 2004) @code{<arXiv:quant-ph/0305058>,} Battle of
+the Sexes (Nawaz and Toor 2004) @code{<arXiv:quant-ph/0110096>,} Hawk and Dove
+Game (Nawaz and Toor 2010) @code{<arXiv:quant-ph/0108075>,} Newcomb's Paradox
+(Piotrowski and Sladkowski 2002) @code{<arXiv:quant-ph/0202074>} and Monty Hall
+Problem (Flitney and Abbott 2002) @code{<arXiv:quant-ph/0109035>.}")
     (license license:expat)))
 
 (define-public r-qfrm
@@ -4384,8 +4377,8 @@ Options, Futures and Other Derivatives', 9ed by John C.Hull, 2014.  Prentice
 Hall.  Implementations are via binomial tree option model (BOPM), Black-Scholes
 model, Monte Carlo simulations, etc.  This package is a result of Quantitative
 Financial Risk Management course (STAT 449 and STAT 649) at Rice University,
-Houston, TX, USA, taught by Oleg Melnikov, statistics PhD student, as of Spring
-2015.")
+Houston, TX, USA, taught by Oleg Melnikov, statistics @code{PhD} student, as of
+Spring 2015.")
     (license license:gpl2+)))
 
 (define-public r-qfratio
@@ -4400,6 +4393,7 @@ Houston, TX, USA, taught by Oleg Melnikov, statistics PhD student, as of Spring
                 "09cvayyryfll9zmwnlc9rcyc5p6hs4cmcv04hq9cs0pcx4n075j6"))))
     (properties `((upstream-name . "qfratio")))
     (build-system r-build-system)
+    (inputs (list gsl))
     (propagated-inputs (list r-rcppeigen r-rcpp r-mass))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/watanabe-j/qfratio")
@@ -4518,7 +4512,7 @@ periodograms\", Journal of the American Statistical Association, 107, 765â7
 <doi:10.1080/01621459.2012.682815>; Li, T.-H. (2014) Time Series with Mixed
 Spectra, CRC Press, <doi:10.1201/b15154>; Li, T.-H. (2022) \"Quantile Fourier
 transform, quantile series, and nonparametric estimation of quantile spectra\",
-<doi:10.48550/arXiv.2211.05844>.")
+@code{<doi:10.48550/arXiv.2211.05844>.}")
     (license license:gpl2+)))
 
 (define-public r-qf
@@ -4609,7 +4603,7 @@ Fechnerian distances can be computed.")
     (synopsis "Type 2 Diabetes Risk Calculator")
     (description
      "Calculate the risk of developing type 2 diabetes using risk prediction
-algorithms derived by ClinRisk'.")
+algorithms derived by @code{ClinRisk'.}")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
 
 (define-public r-qdcomparison
@@ -4836,8 +4830,8 @@ capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
     (home-page "https://cran.r-project.org/package=qcQpcr")
     (synopsis "Histone ChIP-Seq qPCR Analyzer")
     (description
-     "Quality control of chromatin immunoprecipitation libraries (ChIP-seq) by
-quantitative polymerase chain reaction (qPCR).  This function calculates
+     "Quality control of chromatin immunoprecipitation libraries @code{(ChIP-seq)} by
+quantitative polymerase chain reaction @code{(qPCR).} This function calculates
 Enrichment value with respect to reference for each histone modification
 (specific to Vii7 software
 <http://www.thermofisher.com/ca/en/home/life-science/pcr/real-time-pcr/real-time-pcr-instruments/viia-7-real-time-pcr-system/viia-7-software.html>).
@@ -4889,14 +4883,14 @@ among constructs and between constructs and observed variables.")
      "This package provides functions for the joint analysis of K sets of p-values
 obtained for a same list of items.  This joint analysis is performed by querying
 a composed hypothesis, i.e.  an arbitrary complex combination of simple
-hypotheses, as described in Mary-Huard et al. (2021) <arXiv:2104.14601>.  The
-null distribution corresponding to the composed hypothesis of interest is
+hypotheses, as described in Mary-Huard et al. (2021) @code{<arXiv:2104.14601>.}
+The null distribution corresponding to the composed hypothesis of interest is
 obtained by fitting non-parametric mixtures models (one for each of the simple
 hypothesis of the complex combination).  Type I error rate control is achieved
 through Bayesian False Discovery Rate control.  The 3 main functions of the
-package GetHinfo(), qch.fit() and qch.test() correspond to the 3 steps for
-querying a composed hypothesis (composed H0/H1 formulation, inferring the null
-distribution and testing the null hypothesis).")
+package @code{GetHinfo(),} qch.fit() and qch.test() correspond to the 3 steps
+for querying a composed hypothesis (composed H0/H1 formulation, inferring the
+null distribution and testing the null hypothesis).")
     (license license:gpl3)))
 
 (define-public r-qcgwas
@@ -4914,8 +4908,8 @@ distribution and testing the null hypothesis).")
     (home-page "https://cran.r-project.org/package=QCGWAS")
     (synopsis "Quality Control of Genome Wide Association Study Results")
     (description
-     "Tools for (automated and manual) quality control of the results of Genome Wide
-Association Studies.")
+     "This package provides tools for (automated and manual) quality control of the
+results of Genome Wide Association Studies.")
     (license license:gpl3+)))
 
 (define-public r-qcewas
@@ -4933,8 +4927,8 @@ Association Studies.")
     (home-page "https://cran.r-project.org/package=QCEWAS")
     (synopsis "Fast and Easy Quality Control of EWAS Results Files")
     (description
-     "Tools for (automated and manual) quality control of the results of
-Epigenome-Wide Association Studies.")
+     "This package provides tools for (automated and manual) quality control of the
+results of Epigenome-Wide Association Studies.")
     (license license:gpl3+)))
 
 (define-public r-qccrs
@@ -5000,7 +4994,7 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
     (description
      "CBA postprocessing algorithm that creates smaller models for datasets containing
 quantitative (numerical) attributes.  Article describing QCBA is published in
-Tomas Kliegr (2017) <arXiv:1711.10166>.  The package can also postprocess
+Tomas Kliegr (2017) @code{<arXiv:1711.10166>.} The package can also postprocess
 results of the SBRL package, which is no longer in CRAN, but can be obtained
 from <https://github.com/cran/sbrl>.")
     (license license:gpl3)))
@@ -5116,13 +5110,13 @@ diversity of the cases under analysis within and across partitions (see
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.19")
+    (version "3.20")
     (source (origin
               (method url-fetch)
               (uri (cran-uri "QCA" version))
               (sha256
                (base32
-                "0j1p6pmqa8g7xwwxjgwjzr87mpd6v6y2fjvpbdgi2i0v3pqgks32"))))
+                "1817sss1zxs57d7xnk625aic8swdzkw1h2q79zdnz2axmhf17bmg"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-venn r-shiny r-admisc))
@@ -5131,11 +5125,11 @@ diversity of the cases under analysis within and across partitions (see
     (synopsis "Qualitative Comparative Analysis")
     (description
      "An extensive set of functions to perform Qualitative Comparative Analysis: crisp
-sets ('csQCA'), temporal ('tQCA'), multi-value ('mvQCA') and fuzzy sets
-('fsQCA'), using a GUI - graphical user interface.  QCA is a methodology that
-bridges the qualitative and quantitative divide in social science research.  It
-uses a Boolean minimization algorithm, resulting in a minimal causal
-configuration associated with a given phenomenon.")
+sets @code{('csQCA'),} temporal @code{('tQCA'),} multi-value @code{('mvQCA')}
+and fuzzy sets @code{('fsQCA'),} using a GUI - graphical user interface.  QCA is
+a methodology that bridges the qualitative and quantitative divide in social
+science research.  It uses a Boolean minimization algorithm, resulting in a
+minimal causal configuration associated with a given phenomenon.")
     (license license:gpl3+)))
 
 (define-public r-qbr
@@ -5203,10 +5197,10 @@ follow tidyverse philosophy.")
     (description
      "Linking data management systems to analytics is an important step in breeding
 digitization.  Breeders can use this R package to Query the Breeding Management
-System(s) like BMS <https://bmspro.io>, BreedBase <https://breedbase.org>, and
-GIGWA <https://southgreen.fr/content/gigwa> (using BrAPI <https://brapi.org>
-calls) and help them to retrieve phenotypic and genotypic data directly into
-their analyzing pipelines.")
+System(s) like BMS <https://bmspro.io>, @code{BreedBase}
+<https://breedbase.org>, and GIGWA <https://southgreen.fr/content/gigwa> (using
+@code{BrAPI} <https://brapi.org> calls) and help them to retrieve phenotypic and
+genotypic data directly into their analyzing pipelines.")
     (license license:gpl3+)))
 
 (define-public r-qbld
@@ -5305,7 +5299,7 @@ short and long-run wald tests.")
      "Calculates the right-tail probability of quadratic forms of Gaussian variables
 using the skewness-kurtosis ratio matching method, modified Liu-Tang-Zhang
 method and Satterthwaite-Welch method.  The technical details can be found in
-Hong Zhang, Judong Shen and Zheyang Wu (2020) <arXiv:2005.00905>.")
+Hong Zhang, Judong Shen and Zheyang Wu (2020) @code{<arXiv:2005.00905>.}")
     (license license:gpl2)))
 
 (define-public r-qape
