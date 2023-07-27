@@ -8508,27 +8508,6 @@ Search <https://www.google.com/search>.  This array data may be suitable for a
 training data of machine learning or deep learning as a first trial.")
     (license license:artistic2.0)))
 
-(define-public r-googleformr
-  (package
-    (name "r-googleformr")
-    (version "0.0.3")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "googleformr" version))
-              (sha256
-               (base32
-                "0smykcjyqmk61ws5jk462l8x5hg0h9nwq55q5pqfgcq1j3yfniqh"))))
-    (properties `((upstream-name . "googleformr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-httr))
-    (home-page "https://cran.r-project.org/package=googleformr")
-    (synopsis "Collect Data Programmatically by POST Methods to Google Forms")
-    (description
-     "GET and POST data to Google Forms; an API to Google Forms, allowing users to
-POST data securely to Google Forms without needing authentication or
-permissioning.")
-    (license license:gpl2)))
-
 (define-public r-googleerrorreportingr
   (package
     (name "r-googleerrorreportingr")

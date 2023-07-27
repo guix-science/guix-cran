@@ -7,6 +7,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages fontutils)
@@ -14,7 +15,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bash)
   #:use-module (gnu packages cmake)
@@ -1552,7 +1552,7 @@ problems.")
                 "1rpyqkdck6cmh2a7f5j71ypk2v9gzl3jf2b0z9jjlfrv1d1b8x7l"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list calc))
     (propagated-inputs (list r-xml2
                              r-tidyselect
                              r-stringr
