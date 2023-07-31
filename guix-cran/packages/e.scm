@@ -19001,44 +19001,6 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
 
-(define-public r-ebvcube
-  (package
-    (name "r-ebvcube")
-    (version "0.1.4")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "ebvcube" version))
-              (sha256
-               (base32
-                "00fcz8ibs2jahkndsh3cz0gm8pmzhvmvpgwi2n5qgfljbb810mnx"))))
-    (properties `((upstream-name . "ebvcube")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyterra
-                             r-terra
-                             r-stringr
-                             r-rhdf5
-                             r-reshape2
-                             r-ncmeta
-                             r-ncdf4
-                             r-memuse
-                             r-jsonlite
-                             r-hdf5array
-                             r-ggplot2
-                             r-delayedarray
-                             r-curl
-                             r-checkmate))
-    (home-page "https://github.com/LuiseQuoss/ebvcube")
-    (synopsis "Working with netCDF for Essential Biodiversity Variables")
-    (description
-     "The concept of Essential Biodiversity Variables (EBV,
-<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
-the Network Common Data Form @code{(netCDF).} The ebvcube R package provides
-functionality to easily create, access and visualise this data.  The EBV
-@code{netCDFs} can be downloaded from the EBV Data Portal: Christian Langer/
-@code{iDiv} (2020) <https://portal.geobon.org/>.")
-    (license license:gpl3+)))
-
 (define-public r-ebtobit
   (package
     (name "r-ebtobit")

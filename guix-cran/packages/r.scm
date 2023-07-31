@@ -23669,37 +23669,6 @@ provides read and write functions to work with it.")
 format is used by several Virtual Learning Environments such as Moodle.")
     (license license:gpl2+)))
 
-(define-public r-rgho
-  (package
-    (name "r-rgho")
-    (version "3.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "rgho" version))
-              (sha256
-               (base32
-                "0wy7vl2ak4ik7bmvdlkqg4a0b0ykc9rafki8hh1gsjml0cc5yhrf"))))
-    (properties `((upstream-name . "rgho")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-odataquery
-                             r-magrittr
-                             r-lifecycle
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rgho")
-    (synopsis "Access WHO Global Health Observatory Data from R")
-    (description
-     "Access WHO Global Health Observatory (<https://www.who.int/data/gho/>) data from
-R via the `OData` API (<https://www.who.int/data/gho/info/gho-odata-api>), an
-application program interface providing a simple query interface to the World
-Health Organization's data and statistics content.")
-    (license license:gpl3+)))
-
 (define-public r-rghanacensus
   (package
     (name "r-rghanacensus")
