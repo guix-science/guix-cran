@@ -1872,37 +1872,6 @@ described in B. Efron. (1979) <doi:10.1214/aos/1176344552> and P. Massart (1990)
 <doi:10.1214/aop/1176990746>.")
     (license license:cc0)))
 
-(define-public r-rvcg
-  (package
-    (name "r-rvcg")
-    (version "0.22.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Rvcg" version))
-              (sha256
-               (base32
-                "16rr2kqw7lqb7m01pwn496zf2nr25gm6wcncz44kszjzzmv2xanv"))))
-    (properties `((upstream-name . "Rvcg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/zarquon42b/Rvcg")
-    (synopsis "Manipulations of Triangular Meshes Based on the 'VCGLIB' API")
-    (description
-     "Operations on triangular meshes based on VCGLIB'.  This package integrates
-nicely with the R-package rgl to render the meshes processed by Rvcg'.  The
-Visualization and Computer Graphics Library (VCG for short) is an open source
-portable C++ templated library for manipulation, processing and displaying with
-@code{OpenGL} of triangle and tetrahedral meshes.  The library, composed by more
-than 100k lines of code, is released under the GPL license, and it is the base
-of most of the software tools of the Visual Computing Lab of the Italian
-National Research Council Institute ISTI <http://vcg.isti.cnr.it>, like metro
-and @code{MeshLab'.} The VCGLIB source is pulled from trunk
-<https://github.com/cnr-isti-vclab/vcglib> and patched to work with options
-determined by the configure script as well as to work with the header files
-included by @code{RcppEigen'.}")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rvalues
   (package
     (name "r-rvalues")

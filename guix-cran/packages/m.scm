@@ -10776,40 +10776,6 @@ cross-sectional geometric parameters, and semilandmarks on the periosteal and
 endosteal contours of each cross section.")
     (license license:gpl2)))
 
-(define-public r-morpho
-  (package
-    (name "r-morpho")
-    (version "2.11")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "Morpho" version))
-              (sha256
-               (base32
-                "1c69n9284chygd375gkir4nk5bjglamhfyk2lz4z3kzy3z25qw50"))))
-    (properties `((upstream-name . "Morpho")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rvcg
-                             r-rgl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-jsonlite
-                             r-foreach
-                             r-doparallel
-                             r-colorramps
-                             r-bezier))
-    (home-page "https://github.com/zarquon42b/Morpho")
-    (synopsis
-     "Calculations and Visualisations Related to Geometric Morphometrics")
-    (description
-     "This package provides a toolset for Geometric Morphometrics and mesh processing.
- This includes (among other stuff) mesh deformations based on reference points,
-permutation tests, detection of outliers, processing of sliding semi-landmarks
-and semi-automated surface landmark placement.")
-    (license license:gpl2)))
-
 (define-public r-morpheus
   (package
     (name "r-morpheus")
