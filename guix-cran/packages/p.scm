@@ -18,11 +18,10 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gettext)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages code)
   #:use-module (gnu packages pdf)
@@ -14428,35 +14427,6 @@ haploblock, based on bi-allelic marker dosages, for any ploidy level.
 Reference: Voorrips and Tumino: @code{PolyHaplotyper:} haplotyping in polyploids
 based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).")
     (license license:gpl2)))
-
-(define-public r-polygonsoup
-  (package
-    (name "r-polygonsoup")
-    (version "1.0.1")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "PolygonSoup" version))
-              (sha256
-               (base32
-                "1b9hwgfcac8jrr8na5g2n779hhm24cy7q4xr3kz9nlr8sp5zymb8"))))
-    (properties `((upstream-name . "PolygonSoup")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rgl
-                             r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-gmp
-                             r-data-table
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/PolygonSoup")
-    (synopsis "Mesh from Polygon Soup")
-    (description
-     "Allows to get a consistent 3D mesh from a polygon soup, that is an unorganized
-set of polygons.  The mesh can be triangulated and its exterior edges are
-computed.")
-    (license license:gpl3)))
 
 (define-public r-polyglotr
   (package

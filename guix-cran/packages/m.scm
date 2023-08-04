@@ -21742,36 +21742,6 @@ to the @code{minMSE-method} as proposed by Schneider and Schlather (2017)
 <DOI:10419/161931>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-minkowskisum
-  (package
-    (name "r-minkowskisum")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MinkowskiSum" version))
-              (sha256
-               (base32
-                "1v7i3jzj65y8xy8kyl4jp651pqk5xd9bbfj8az1443ng9l39n57h"))))
-    (properties `((upstream-name . "MinkowskiSum")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-polygonsoup
-                             r-gmp
-                             r-data-table
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/MinkowskiSum")
-    (synopsis "Minkowski Addition Between 3D Meshes")
-    (description
-     "Computes the Minkowski sum of two 3D meshes, resulting in a new 3D mesh.  The
-Minkowski addition has applications in mathematical morphology and 3D computer
-graphics.  The computations are performed by the C++ library CGAL
-(<https://www.cgal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-minirand
   (package
     (name "r-minirand")
@@ -29167,38 +29137,6 @@ specialized syntax.")
 statistical functions, some of which may even be referenced in The R Primer
 book.")
     (license license:gpl2)))
-
-(define-public r-meshestools
-  (package
-    (name "r-meshestools")
-    (version "1.0.0")
-    (source (origin
-              (method url-fetch)
-              (uri (cran-uri "MeshesTools" version))
-              (sha256
-               (base32
-                "0vr7l9g53h1rxyhn8c8l3hmbsh7c2cfl3jvlrnm2jhpfcsp8851g"))))
-    (properties `((upstream-name . "MeshesTools")))
-    (build-system r-build-system)
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rvcg
-                             r-rgl
-                             r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-polygonsoup
-                             r-gmp
-                             r-data-table
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/MeshesTools")
-    (synopsis "Some Tools for 3D Meshes")
-    (description
-     "This package provides some utilities for 3D meshes: clipping of a mesh to the
-volume bounded by another mesh, decomposition into convex parts, distance
-between a mesh and a point, volume, area, and centroid.  All algorithms are
-performed by the C++ library CGAL (<https://www.cgal.org/>).")
-    (license license:gpl3)))
 
 (define-public r-meshed
   (package
